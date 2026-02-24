@@ -1,0 +1,566 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import MiningRoiCalculator from '../components/MiningRoiCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="mining-roi-calculator"
+  title="Mining ROI Calculator"
+  description="Model mining hardware return on investment with scenario analysis for revenue, costs, and break-even timing."
+>
+  <MiningRoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper {
+    width: 100%;
+  }
+
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .calc-input-panel,
+  .calc-results-panel {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+  }
+
+  .calc-input-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .calc-results-panel {
+    position: sticky;
+    top: 88px;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+  }
+
+  .input-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+  }
+
+  .label-hint {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-accent-green);
+  }
+
+  .input-with-prefix {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+
+  .input-with-prefix:focus-within {
+    border-color: var(--color-primary);
+  }
+
+  .input-prefix {
+    padding: 10px 0 10px 14px;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+
+  .input-unit {
+    margin-left: auto;
+    padding-right: 10px;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .input-with-prefix input,
+  .input-group > input {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    font-family: inherit;
+  }
+
+  .input-group > input {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s ease;
+  }
+
+  .input-group > input:focus {
+    border-color: var(--color-primary);
+  }
+
+  .select-wrap {
+    position: relative;
+  }
+
+  .input-select {
+    width: 100%;
+    appearance: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.95rem;
+    padding: 10px 36px 10px 12px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .input-select:focus {
+    border-color: var(--color-primary);
+  }
+
+  .select-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+  }
+
+  .toggle-group {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .toggle-btn {
+    flex: 1;
+    border: none;
+    background: none;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: inherit;
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .toggle-btn:not(:last-child) {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .toggle-btn.active {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .coin-search-wrapper {
+    position: relative;
+  }
+
+  .coin-search-wrapper input {
+    width: 100%;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s ease;
+    font-family: inherit;
+  }
+
+  .coin-search-wrapper input:focus {
+    border-color: var(--color-primary);
+  }
+
+  .coin-clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: var(--color-bg-card-hover);
+    color: var(--color-text-muted);
+    border-radius: 4px;
+    padding: 4px;
+    display: flex;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-card-hover);
+    margin-top: 4px;
+    z-index: 50;
+    overflow: hidden;
+  }
+
+  .suggestion-item {
+    width: 100%;
+    border: none;
+    background: none;
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-align: left;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .suggestion-item:hover {
+    background-color: var(--color-bg-card-hover);
+  }
+
+  .suggestion-item img {
+    border-radius: 50%;
+  }
+
+  .suggestion-name {
+    flex: 1;
+    font-weight: 500;
+  }
+
+  .suggestion-symbol {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .coin-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .coin-info-item {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .coin-info-label {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+
+  .coin-info-value {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .reset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .reset-btn:hover {
+    border-color: var(--color-accent-red);
+    color: var(--color-accent-red);
+  }
+
+  .result-hero {
+    text-align: center;
+    padding: 28px 20px;
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+    border: 1px solid var(--color-border);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(99, 102, 241, 0.02));
+  }
+
+  .result-hero.profit {
+    border-color: rgba(16, 185, 129, 0.25);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.03));
+  }
+
+  .result-hero.loss,
+  .result-hero.fee {
+    border-color: rgba(239, 68, 68, 0.25);
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.03));
+  }
+
+  .result-hero-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+  }
+
+  .result-hero-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+  }
+
+  .result-hero-roi {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    background: rgba(107, 114, 128, 0.12);
+  }
+
+  .result-hero-roi.profit {
+    color: var(--color-accent-green);
+    background: rgba(16, 185, 129, 0.12);
+  }
+
+  .result-hero-roi.loss,
+  .result-hero-roi.fee {
+    color: var(--color-accent-red);
+    background: rgba(239, 68, 68, 0.12);
+  }
+
+  .result-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    background: var(--color-bg);
+  }
+
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  .result-label {
+    color: var(--color-text-secondary);
+  }
+
+  .result-value {
+    color: var(--color-text);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .result-value.profit {
+    color: var(--color-accent-green);
+  }
+
+  .result-value.fee,
+  .result-value.loss {
+    color: var(--color-accent-red);
+  }
+
+  .result-divider {
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 4px 0;
+  }
+
+  .realism-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+  }
+
+  .realism-dot.realism-low {
+    background-color: var(--color-accent-green);
+  }
+
+  .result-value.realism-low {
+    color: var(--color-accent-green);
+    background-color: rgba(16, 185, 129, 0.12);
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .realism-dot.realism-medium {
+    background-color: var(--color-accent-amber);
+  }
+
+  .result-value.realism-medium {
+    color: var(--color-accent-amber);
+    background-color: rgba(245, 158, 11, 0.12);
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .realism-dot.realism-high {
+    background-color: var(--color-accent-red);
+  }
+
+  .result-value.realism-high {
+    color: var(--color-accent-red);
+    background-color: rgba(239, 68, 68, 0.12);
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .result-cta {
+    margin-top: 24px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .cta-btn {
+    display: block;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cta-btn:hover {
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.28);
+  }
+
+  .cta-btn.cta-secondary {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+  }
+
+  .cta-btn.cta-secondary:hover {
+    color: var(--color-text);
+    border-color: var(--color-primary);
+    box-shadow: none;
+  }
+
+  .calc-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 20px;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .calc-disclaimer svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .results-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .results-empty-icon {
+    margin-bottom: 16px;
+    opacity: 0.35;
+  }
+
+  .results-empty h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 1024px) {
+    .calc-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .calc-results-panel {
+      position: static;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .calc-input-panel,
+    .calc-results-panel {
+      padding: 18px;
+    }
+
+    .result-hero-value {
+      font-size: 1.45rem;
+    }
+
+    .coin-info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

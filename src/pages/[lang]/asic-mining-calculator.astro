@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import AsicMiningCalculator from '../../components/AsicMiningCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="asic-mining-calculator"
+  title="ASIC Mining Calculator"
+  description="Calculate ASIC mining profitability, electricity cost, and break-even period across leading mining hardware models."
+>
+  <AsicMiningCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>

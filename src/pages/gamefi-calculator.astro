@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import GamefiCalculator from '../components/GamefiCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="gamefi-calculator"
+  title="GameFi ROI Calculator"
+  description="Estimate payback period and annual ROI for play-to-earn strategies based on setup cost, token rewards, and running expenses."
+>
+  <GamefiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

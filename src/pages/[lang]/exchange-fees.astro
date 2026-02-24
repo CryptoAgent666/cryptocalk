@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import ExchangeFeeComparator from '../../components/ExchangeFeeComparator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="exchange-fees"
+  title="Exchange Fee Comparator"
+  description="Compare exchange trading costs and identify the lowest-fee venue for your trading profile."
+>
+  <ExchangeFeeComparator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>

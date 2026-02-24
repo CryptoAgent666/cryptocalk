@@ -1,0 +1,20 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import LendingCalculator from '../../components/LendingCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="lending-calculator"
+  title="Crypto Lending Calculator"
+  description="Calculate projected lending returns using APY, compounding model, term length, and platform performance fees."
+>
+  <LendingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>

@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import UniswapCalculator from '../components/UniswapCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="uniswap-calculator"
+  title="Uniswap Fee Calculator"
+  description="Estimate Uniswap LP fee income, impermanent loss impact, break-even time, and net outcome for selected pool assumptions."
+>
+  <UniswapCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

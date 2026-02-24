@@ -1,0 +1,958 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import ProfitCalculator from '../components/ProfitCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto Profit Calculator — Calculate Your Returns Instantly | CryptoCalk"
+  description="Free crypto profit and loss calculator. Enter your buy/sell price, see your ROI, total fees, and net profit. Supports 500+ cryptocurrencies. No signup required."
+  lang="en"
+>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/profit-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/profit-calculator" aria-current="page">Profit Calculator</a>
+      </div>
+    </nav>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto Profit Calculator</h1>
+          <p>Calculate your cryptocurrency profit & loss instantly. Supports Long & Short positions with fee breakdown.</p>
+        </div>
+
+        <ProfitCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Crypto Profit Calculator</h2>
+        <p>Our free crypto profit calculator helps you determine your exact profit or loss from any cryptocurrency trade. Simply enter your buy price, sell price, and investment amount to see your complete breakdown including trading fees.</p>
+
+        <p>Follow these steps to calculate your crypto profit or loss:</p>
+        <ol>
+          <li><strong>Select your position type</strong> — Choose "Long" if you bought and sold (or plan to sell) at a higher price, or "Short" if you're betting on the price going down.</li>
+          <li><strong>Search for your cryptocurrency</strong> — Type the coin name (e.g., Bitcoin, Ethereum) to auto-fill the current market price, or enter a custom price manually.</li>
+          <li><strong>Enter your entry price</strong> — The price at which you bought (for Long) or opened your short position.</li>
+          <li><strong>Enter your exit price</strong> — The price at which you sold or plan to sell. Leave blank to use the current market price.</li>
+          <li><strong>Input your investment amount or quantity</strong> — Choose between entering a dollar amount (e.g., $1,000) or the number of tokens (e.g., 0.5 BTC).</li>
+          <li><strong>Add trading fees</strong> — Optionally include entry and exit fees to see your true net profit after exchange costs.</li>
+        </ol>
+
+        <p><strong>Note:</strong> Toggle between Long and Short mode to see how your profit or loss changes based on your trading strategy. The calculator instantly updates all values as you type.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+          <li><strong>Long & Short positions</strong> — Calculate profit from both buying low and selling high (long) or selling high and buying low (short).</li>
+          <li><strong>Real-time prices</strong> — Search for any cryptocurrency and auto-fill the current market price from CoinGecko. Supports 500+ cryptocurrencies.</li>
+          <li><strong>Fee calculator</strong> — Include entry and exit trading fees to see your true net profit after exchange costs.</li>
+          <li><strong>Investment or quantity mode</strong> — Enter either a dollar amount or token quantity based on your preference.</li>
+          <li><strong>ROI calculation</strong> — See your return on investment as a percentage, not just absolute profit in dollars.</li>
+          <li><strong>Effective price display</strong> — View your true cost basis and exit price after fees are applied.</li>
+        </ul>
+
+        <h2>Crypto Profit Formula</h2>
+        <p>The basic formula for calculating cryptocurrency profit is:</p>
+        <div class="formula-block">
+          <code>Profit = (Sell Price × Quantity) − (Buy Price × Quantity) − Total Fees</code>
+        </div>
+        <p>Where Total Fees = Entry Fee (% of investment) + Exit Fee (% of total return). ROI (Return on Investment) is then calculated as:</p>
+        <div class="formula-block">
+          <code>ROI = (Profit ÷ Total Cost) × 100%</code>
+        </div>
+
+        <h3>Worked Example</h3>
+        <p>Let's say you buy 0.5 BTC at $60,000 and sell at $72,000 with 0.1% fees on both entry and exit:</p>
+        <ul>
+          <li><strong>Investment:</strong> 0.5 × $60,000 = $30,000</li>
+          <li><strong>Entry fee:</strong> $30,000 × 0.1% = $30</li>
+          <li><strong>Total invested:</strong> $30,000 + $30 = $30,030</li>
+          <li><strong>Gross return:</strong> 0.5 × $72,000 = $36,000</li>
+          <li><strong>Exit fee:</strong> $36,000 × 0.1% = $36</li>
+          <li><strong>Net return:</strong> $36,000 − $36 = $35,964</li>
+          <li><strong>Net profit:</strong> $35,964 − $30,030 = $5,934</li>
+          <li><strong>ROI:</strong> ($5,934 ÷ $30,030) × 100% = 19.76%</li>
+        </ul>
+        <p>Without fees, your profit would have been $6,000, but the $66 in total fees reduced your net profit by 1.1%.</p>
+
+        <h2>Long vs Short Positions Explained</h2>
+        <p>In cryptocurrency trading, you can profit in two ways: going long or going short. Understanding the difference is crucial for calculating your returns correctly.</p>
+
+        <p><strong>Long positions</strong> are the traditional buy-low-sell-high strategy. You purchase a cryptocurrency expecting its price to rise, then sell it later at a higher price. Your profit is the difference between your sell price and buy price, multiplied by the quantity you hold. Long positions are ideal when you believe the market is bullish or a specific cryptocurrency has strong fundamentals.</p>
+
+        <p><strong>Short positions</strong> work in reverse. You profit when the price goes down. In practice, you borrow cryptocurrency from a broker or exchange, sell it at the current high price, then buy it back later at a lower price to return to the lender. The difference is your profit. For example, if you short BTC at $70,000 and close your position at $63,000, you profit $7,000 per BTC (minus fees and borrowing costs). Shorting is used when you expect a market downturn or want to hedge against losses in your long positions.</p>
+
+        <p><strong>Example:</strong> You short 1 BTC at $70,000. The price drops to $63,000, and you close your position. Your profit is ($70,000 − $63,000) × 1 = $7,000 before fees. If you had gone long instead and the price dropped, you would have lost $7,000.</p>
+
+        <h2>How Trading Fees Impact Your Profit</h2>
+        <p>Trading fees can significantly eat into your profits, especially for high-frequency traders or those trading on exchanges with higher fee structures. Most exchanges charge a percentage fee on both your entry (buy) and exit (sell) transactions.</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Fee Rate</th>
+                <th>Trade Size</th>
+                <th>Round-Trip Fee</th>
+                <th>Impact on 5% Gain</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0.1%</td>
+                <td>$1,000</td>
+                <td>$2.00</td>
+                <td>-0.2%</td>
+              </tr>
+              <tr>
+                <td>0.25%</td>
+                <td>$1,000</td>
+                <td>$5.00</td>
+                <td>-0.5%</td>
+              </tr>
+              <tr>
+                <td>0.5%</td>
+                <td>$1,000</td>
+                <td>$10.00</td>
+                <td>-1.0%</td>
+              </tr>
+              <tr>
+                <td>1.0%</td>
+                <td>$1,000</td>
+                <td>$20.00</td>
+                <td>-2.0%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>As the table shows, a 1% fee rate on a $1,000 trade costs you $20 in round-trip fees, reducing a 5% gain to just 3%. Over time and across multiple trades, these fees compound significantly.</p>
+
+        <p><strong>Tips to minimize trading fees:</strong></p>
+        <ul>
+          <li><strong>Use limit orders instead of market orders</strong> — Many exchanges offer lower "maker" fees for limit orders compared to "taker" fees for market orders.</li>
+          <li><strong>Check maker vs taker fees</strong> — Binance, for example, charges 0.1% for makers and 0.1% for takers, but Coinbase Pro offers 0.5% taker and 0.5% maker fees.</li>
+          <li><strong>Consider VIP or volume tiers</strong> — High-volume traders can access discounted fee rates by holding exchange tokens (e.g., BNB on Binance) or reaching higher trading volume tiers.</li>
+          <li><strong>Compare exchanges</strong> — Fees vary widely. Kraken, Binance, and Bybit often have lower fees than Coinbase or Gemini.</li>
+        </ul>
+
+        <h2>Understanding ROI in Crypto Trading</h2>
+        <p>ROI (Return on Investment) is a percentage that shows how much profit you made relative to your initial investment. While absolute profit tells you how many dollars you earned, ROI tells you how efficient your trade was.</p>
+
+        <p>For example, earning $500 profit on a $1,000 investment (50% ROI) is far more impressive than earning $500 on a $10,000 investment (5% ROI), even though the dollar amount is the same. ROI is crucial for comparing trades of different sizes and evaluating your trading strategy's effectiveness.</p>
+
+        <p><strong>Why ROI matters more than absolute profit:</strong> If you have limited capital, you want to maximize returns per dollar invested. A trade with 20% ROI is better than a trade with 5% ROI, even if the latter produces higher absolute profits, because you can reinvest your capital more efficiently.</p>
+
+        <p><strong>Annualized ROI formula:</strong> If you want to compare trades held for different time periods, calculate annualized ROI:</p>
+        <div class="formula-block">
+          <code>Annualized ROI = (ROI ÷ Days Held) × 365</code>
+        </div>
+        <p>A 10% ROI over 30 days equals 121.7% annualized ROI, while a 10% ROI over 365 days equals 10% annualized ROI. This helps you compare a quick swing trade to a long-term hold.</p>
+
+        <h2>Common Profit Calculation Mistakes</h2>
+        <p>Even experienced traders sometimes miscalculate their profits. Here are the most common mistakes to avoid:</p>
+        <ul>
+          <li><strong>Forgetting to include fees</strong> — Entry and exit fees can reduce your profit by 0.2% to 2% or more. Always factor them in to see your true net profit.</li>
+          <li><strong>Not accounting for spread and slippage</strong> — The price you see on an exchange may not be the price you get, especially for large orders or low-liquidity coins. Slippage can reduce your profit by 0.1% to 1% or more.</li>
+          <li><strong>Confusing ROI with absolute return</strong> — A $1,000 profit on a $5,000 investment is a 20% ROI, not a $1,000 ROI. Percentage return matters more for comparing trades.</li>
+          <li><strong>Ignoring tax implications</strong> — Your pre-tax profit is not your take-home profit. Capital gains tax can reduce your net profit by 10% to 37% depending on your jurisdiction and holding period.</li>
+          <li><strong>Using the wrong entry price</strong> — If you placed a market order, your filled price may differ from the price you saw. Always use your actual filled price for accurate calculations.</li>
+          <li><strong>Not tracking multiple buys at different prices</strong> — If you dollar-cost averaged into a position, your true average entry price is the weighted average of all your buys, not just the most recent one.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>How accurate is this calculator?</summary>
+          <p>This calculator provides precise results based on the prices and fees you input. For real trades, actual results may vary slightly due to slippage, spread, and additional exchange fees.</p>
+        </details>
+        <details>
+          <summary>What fees should I enter?</summary>
+          <p>Enter the trading fee percentage charged by your exchange. For example, Binance charges 0.1% for spot trading, while Coinbase charges up to 0.6%. Default is set to 0.1%.</p>
+        </details>
+        <details>
+          <summary>How do Short positions work?</summary>
+          <p>In a short position, you profit when the price goes down. You essentially borrow and sell at a higher price, then buy back at a lower price. The profit formula is reversed: Profit = (Entry Price − Exit Price) × Quantity.</p>
+        </details>
+        <details>
+          <summary>Does this include taxes?</summary>
+          <p>No. This calculator shows your pre-tax profit. For tax estimation, use our <a href="/tax-calculator">Crypto Tax Calculator</a>.</p>
+        </details>
+        <details>
+          <summary>How do I account for slippage?</summary>
+          <p>Slippage is the difference between the expected price and the actual filled price. To account for it, use your actual filled price from your exchange's order history rather than the market price you saw when placing the order. For future trades, you can estimate slippage by adjusting your exit price down by 0.1% to 0.5% for market orders on liquid pairs, or more for low-liquidity coins.</p>
+        </details>
+        <details>
+          <summary>What's the difference between realized and unrealized profit?</summary>
+          <p>Unrealized profit (also called paper profit) is the profit you would make if you sold at the current market price, but you haven't sold yet. Realized profit is the actual profit you locked in by closing your position. This calculator shows realized profit if you enter both entry and exit prices, or unrealized profit if you only enter an entry price and use the current market price as your exit.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/tp-sl-calculator">Take Profit & Stop Loss Calculator</a> — Plan your risk management levels and position sizing.</li>
+          <li><a href="/tax-calculator">Crypto Tax Calculator</a> — Estimate capital gains taxes on your crypto profits.</li>
+          <li><a href="/break-even-calculator">Break-Even Calculator</a> — Find the exact price you need to break even after fees.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. For informational purposes only — not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* ===== Header (reused from homepage) ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-header);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+  .header-link:hover { color: var(--color-text); }
+
+  /* ===== Breadcrumb ===== */
+  .breadcrumb {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .breadcrumb .section-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+  .breadcrumb a[aria-current] {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ===== Calculator ===== */
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .calculator-section {
+    padding: 40px 0 60px;
+  }
+  .calc-header {
+    margin-bottom: 32px;
+  }
+  .calc-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+  .calc-header p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+  }
+
+  /* ===== SEO Content ===== */
+  .seo-content {
+    padding: 60px 0;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+  }
+  .seo-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .seo-content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 32px 0 12px;
+  }
+  .seo-content p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+  .seo-content ul {
+    padding-left: 24px;
+    margin-bottom: 16px;
+  }
+  .seo-content li {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+  .formula-block {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 12px 0 16px;
+    max-width: 600px;
+  }
+  .formula-block code {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+  }
+  .seo-content details {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    max-width: 720px;
+    cursor: pointer;
+  }
+  .seo-content summary {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .seo-content details p {
+    margin-top: 12px;
+  }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content ol { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content ol li { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 8px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .table-responsive { overflow-x: auto; margin: 16px 0; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg-card); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+
+  /* ===== Footer ===== */
+  .site-footer {
+    padding: 24px 0;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+</style>
+
+<style is:global>
+  /* ===== Calculator Component Styles ===== */
+  .calc-wrapper {
+    width: 100%;
+  }
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* Input Panel */
+  .calc-input-panel {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+  }
+
+  .input-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .label-hint {
+    font-size: 0.7rem;
+    color: var(--color-accent-green);
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .input-with-prefix {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+
+  .input-with-prefix:focus-within {
+    border-color: var(--color-primary);
+  }
+
+  .input-prefix {
+    padding: 10px 0 10px 14px;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+
+  .input-with-prefix input,
+  .input-group > input {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    font-family: inherit;
+  }
+
+  .input-group > input {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s ease;
+  }
+
+  .input-group > input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+  }
+
+  .input-group.compact {
+    flex: 1;
+  }
+
+  .input-group.compact input {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* Coin search */
+  .coin-search-wrapper {
+    position: relative;
+  }
+
+  .coin-search-wrapper input {
+    width: 100%;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .coin-search-wrapper input:focus {
+    border-color: var(--color-primary);
+  }
+
+  .coin-clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: var(--color-bg-card-hover);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    line-height: 1;
+  }
+
+  .suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-card-hover);
+    z-index: 50;
+    overflow: hidden;
+    margin-top: 4px;
+  }
+
+  .suggestion-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    background: none;
+    color: var(--color-text);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: inherit;
+    text-align: left;
+    transition: background-color 0.1s ease;
+  }
+
+  .suggestion-item:hover {
+    background-color: var(--color-bg-card-hover);
+  }
+
+  .suggestion-item img {
+    border-radius: 50%;
+  }
+
+  .suggestion-name {
+    flex: 1;
+    font-weight: 500;
+  }
+
+  .suggestion-symbol {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  /* Toggle buttons */
+  .toggle-group {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .toggle-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 16px;
+    border: none;
+    background: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .toggle-btn:not(:last-child) {
+    border-right: 1px solid var(--color-border);
+  }
+
+  .toggle-btn.active {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .toggle-btn.toggle-short.active {
+    background-color: rgba(239, 68, 68, 0.08);
+    color: var(--color-accent-red);
+  }
+
+  /* Fees */
+  .fees-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 0;
+    border: none;
+    background: none;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .fees-toggle:hover { color: var(--color-text); }
+
+  .fees-panel {
+    padding-bottom: 4px;
+  }
+
+  .fees-row {
+    display: flex;
+    gap: 12px;
+  }
+
+  /* Reset */
+  .reset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .reset-btn:hover {
+    border-color: var(--color-accent-red);
+    color: var(--color-accent-red);
+  }
+
+  /* ===== Results Panel ===== */
+  .calc-results-panel {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    position: sticky;
+    top: 88px;
+  }
+
+  .result-hero {
+    text-align: center;
+    padding: 28px 20px;
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+  }
+
+  .result-hero.profit {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .result-hero.loss {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02));
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+
+  .result-hero-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+  }
+
+  .result-hero-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .result-hero.profit .result-hero-value {
+    color: var(--color-accent-green);
+  }
+
+  .result-hero.loss .result-hero-value {
+    color: var(--color-accent-red);
+  }
+
+  .result-hero-roi {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .result-hero-roi.profit {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--color-accent-green);
+  }
+
+  .result-hero-roi.loss {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--color-accent-red);
+  }
+
+  /* Breakdown rows */
+  .result-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  .result-label {
+    color: var(--color-text-secondary);
+  }
+
+  .result-value {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .result-value.fee {
+    color: var(--color-text-muted);
+  }
+
+  .result-divider {
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 4px 0;
+  }
+
+  /* CTA */
+  .result-cta {
+    margin-top: 24px;
+  }
+
+  .cta-btn {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cta-btn:hover {
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+
+  /* Disclaimer */
+  .calc-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 20px;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .calc-disclaimer svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Empty state */
+  .results-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+  }
+
+  .results-empty-icon {
+    margin-bottom: 16px;
+    opacity: 0.3;
+  }
+
+  .results-empty h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 8px;
+  }
+
+  .results-empty p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .calc-grid {
+      grid-template-columns: 1fr;
+    }
+    .calc-results-panel {
+      position: static;
+    }
+    .result-hero-value {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Crypto Profit Calculator",
+  "url": "https://cryptocalk.com/profit-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free crypto profit and loss calculator. Enter your buy/sell price, see your ROI, total fees, and net profit."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How accurate is this calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This calculator provides precise results based on the prices and fees you input. For real trades, actual results may vary slightly due to slippage, spread, and additional exchange fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What fees should I enter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter the trading fee percentage charged by your exchange. For example, Binance charges 0.1% for spot trading, while Coinbase charges up to 0.6%. Default is set to 0.1%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do Short positions work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In a short position, you profit when the price goes down. You essentially borrow and sell at a higher price, then buy back at a lower price."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this include taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This calculator shows your pre-tax profit. For tax estimation, use our Crypto Tax Calculator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I account for slippage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Slippage is the difference between the expected price and the actual filled price. To account for it, use your actual filled price from your exchange's order history rather than the market price you saw when placing the order. For future trades, you can estimate slippage by adjusting your exit price down by 0.1% to 0.5% for market orders on liquid pairs, or more for low-liquidity coins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between realized and unrealized profit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unrealized profit (also called paper profit) is the profit you would make if you sold at the current market price, but you haven't sold yet. Realized profit is the actual profit you locked in by closing your position. This calculator shows realized profit if you enter both entry and exit prices, or unrealized profit if you only enter an entry price and use the current market price as your exit."
+      }
+    }
+  ]
+}
+</script>

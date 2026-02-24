@@ -1,0 +1,1066 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import { getHomepageCategories } from '../data/category-hubs';
+import {
+  Calculator,
+  TrendingUp,
+  Pickaxe,
+  PiggyBank,
+  Receipt,
+  ArrowLeftRight,
+  BarChart3,
+  Zap,
+  Search,
+  ChevronRight,
+  Sparkles,
+  Globe,
+} from 'lucide-react';
+
+const categories = getHomepageCategories('en');
+
+const popularCalculators = [
+  { name: 'Crypto Profit Calculator', href: '/profit-calculator', tag: 'Popular', tagType: 'popular' },
+  { name: 'Crypto Converter', href: '/converter', tag: 'Popular', tagType: 'popular' },
+  { name: 'Bitcoin Mining Calculator', href: '/mining-calculator', tag: 'Popular', tagType: 'popular' },
+  { name: 'DCA Calculator', href: '/dca-calculator', tag: 'Popular', tagType: 'popular' },
+  { name: 'Crypto Tax Calculator', href: '/tax-calculator', tag: 'Popular', tagType: 'popular' },
+  { name: 'Position Size Calculator', href: '/position-size-calculator', tag: 'Popular', tagType: 'popular' },
+  { name: 'Liquidation Calculator', href: '/liquidation-calculator', tag: 'Popular', tagType: 'popular' },
+  { name: 'Staking Rewards Calculator', href: '/staking-calculator', tag: 'Trending', tagType: 'trending' },
+  { name: 'Gas Fee Calculator', href: '/gas-calculator', tag: 'Trending', tagType: 'trending' },
+  { name: 'Portfolio VaR Calculator', href: '/var-calculator', tag: 'Trending', tagType: 'trending' },
+  { name: 'Break-Even Calculator', href: '/break-even-calculator', tag: 'Trending', tagType: 'trending' },
+  { name: 'What If Calculator', href: '/what-if', tag: 'Trending', tagType: 'trending' },
+];
+
+const footerCoreLinks = [
+  { name: 'Profit Calculator', href: '/profit-calculator' },
+  { name: 'Crypto Converter', href: '/converter' },
+  { name: 'Mining Calculator', href: '/mining-calculator' },
+  { name: 'DCA Calculator', href: '/dca-calculator' },
+  { name: 'Tax Calculator', href: '/tax-calculator' },
+  { name: 'Position Size Calculator', href: '/position-size-calculator' },
+];
+
+const footerExploreLinks = [
+  { name: 'Staking Rewards', href: '/staking-calculator' },
+  { name: 'Gas Fee Calculator', href: '/gas-calculator' },
+  { name: 'Portfolio Calculator', href: '/portfolio-calculator' },
+  { name: 'What If Calculator', href: '/what-if' },
+  { name: 'Break-Even Calculator', href: '/break-even-calculator' },
+  { name: 'All Categories', href: '#categories' },
+];
+
+const siteUrl = 'https://cryptocalk.com';
+const homepageUrl = `${siteUrl}/`;
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'CryptoCalk',
+  url: homepageUrl,
+  description:
+    'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 45+ more tools.',
+  inLanguage: 'en',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${homepageUrl}?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Global',
+  },
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'CryptoCalk',
+  url: siteUrl,
+  areaServed: 'Global',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    availableLanguage: ['en', 'es', 'pt', 'tr', 'hi', 'ru'],
+  },
+};
+
+const homepageSchemas = [websiteSchema, organizationSchema];
+---
+
+<Layout
+  title="CryptoCalk — 50+ Free Crypto Calculators | Profit, Mining, DCA, Tax"
+  description="Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 45+ more tools. Fast, accurate, no signup."
+  lang="en"
+>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+
+      <div class="header-search" role="search">
+        <label class="sr-only" for="search-input">Search calculators</label>
+        <Search size={16} />
+        <input type="search" placeholder="Search calculators..." id="search-input" autocomplete="off" spellcheck="false" />
+        <button type="button" id="search-clear-btn" class="search-clear-btn" aria-label="Clear search" hidden>
+          ×
+        </button>
+      </div>
+
+      <div class="header-actions">
+        <a href="#categories" class="header-link">Calculators</a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <Globe size={14} />
+          <span>50+ Free Calculators • No Signup Required</span>
+        </div>
+        <h1>
+          The <span class="text-gradient">Smartest</span> Crypto<br />
+          Calculator Hub
+        </h1>
+        <p class="hero-subtitle">
+          Profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and more — all in one place. Lightning fast, privacy-first.
+        </p>
+        <div class="hero-actions">
+          <a href="/profit-calculator" class="btn-primary">
+            Start Calculating
+            <ChevronRight size={16} />
+          </a>
+          <a href="#categories" class="btn-secondary">
+            Browse All Tools
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">50+</span>
+            <span class="stat-label">Calculators</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-value">6</span>
+            <span class="stat-label">Languages</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-value">0</span>
+            <span class="stat-label">Ads</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-value">&lt;1s</span>
+            <span class="stat-label">Load Time</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Calculators (Horizontal Scroll) -->
+    <section class="popular-section">
+      <div class="section-container">
+        <h2 class="section-title">🔥 Popular Calculators</h2>
+        <div class="popular-grid">
+          {popularCalculators.map((calc) => (
+            <a
+              href={calc.href}
+              class="popular-card card-hover"
+              data-search-item
+              data-search-text={`${calc.name} ${calc.tag ?? ''}`}
+            >
+              <div class="popular-card-content">
+                <span class="popular-name">{calc.name}</span>
+                {calc.tag && <span class="popular-tag" data-tag={calc.tagType}>{calc.tag}</span>}
+              </div>
+              <ChevronRight size={16} class="popular-arrow" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="search-feedback">
+      <div class="section-container">
+        <p id="search-status" class="search-status" aria-live="polite" hidden></p>
+        <div id="search-empty" class="search-empty" hidden>
+          <h3>No calculators found</h3>
+          <p>Try a broader keyword or clear search to browse all tools.</p>
+          <button type="button" id="search-empty-reset" class="search-reset-btn">Clear Search</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Bento Grid -->
+    <section class="categories-section" id="categories">
+      <div class="section-container">
+        <h2 class="section-title">All Calculator Categories</h2>
+        <p class="section-subtitle">Choose a category to find the right tool for your needs</p>
+
+        <div class="bento-grid">
+          {categories.map((cat) => (
+            <article
+              class:list={['bento-card', 'card-hover', { 'bento-featured': cat.featured }]}
+              style={`--card-accent: ${cat.color}`}
+              data-search-item
+              data-search-text={`${cat.title} ${cat.description} ${cat.calculators.map((tool) => tool.name).join(' ')}`}
+            >
+              <div class="bento-top">
+                <div class="bento-icon" style={`background-color: ${cat.color}15; color: ${cat.color}`}>
+                  {cat.icon === 'TrendingUp' && <TrendingUp size={24} />}
+                  {cat.icon === 'ArrowLeftRight' && <ArrowLeftRight size={24} />}
+                  {cat.icon === 'Pickaxe' && <Pickaxe size={24} />}
+                  {cat.icon === 'Sparkles' && <Sparkles size={24} />}
+                  {cat.icon === 'Receipt' && <Receipt size={24} />}
+                  {cat.icon === 'PiggyBank' && <PiggyBank size={24} />}
+                  {cat.icon === 'BarChart3' && <BarChart3 size={24} />}
+                  {cat.icon === 'Zap' && <Zap size={24} />}
+                </div>
+                <a href={cat.href} class="bento-title-link">
+                  <h3>{cat.title}</h3>
+                  <ChevronRight size={18} />
+                </a>
+              </div>
+              <p class="bento-description">{cat.description}</p>
+              <span class="bento-count">{cat.count} calculators</span>
+              <ul class="bento-list">
+                {cat.calculators.slice(0, 6).map((tool) => (
+                  <li>
+                    <a href={tool.href}>{tool.name}</a>
+                  </li>
+                ))}
+              </ul>
+              <a href={cat.href} class="bento-view-link">
+                View category
+                <ChevronRight size={16} />
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="section-container">
+        <h2 class="section-title">Why CryptoCalk?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981;">⚡</div>
+            <h3>Blazing Fast</h3>
+            <p>Static HTML + minimal JS. Pages load in under 1 second, even on 3G.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background-color: rgba(99, 102, 241, 0.1); color: #6366f1;">🔒</div>
+            <h3>Privacy First</h3>
+            <p>All calculations run in your browser. No data leaves your device. No tracking.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background-color: rgba(245, 158, 11, 0.1); color: #f59e0b;">🌍</div>
+            <h3>Multilingual</h3>
+            <p>Available in 6 languages: English, Spanish, Portuguese, Turkish, Hindi, and Russian.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background-color: rgba(236, 72, 153, 0.1); color: #ec4899;">📱</div>
+            <h3>Mobile Ready</h3>
+            <p>Responsive design with touch-optimized controls. Use anywhere, anytime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">Crypto<b>Calk</b></span>
+        <p>Free cryptocurrency calculators for everyone.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Core Calculators</h4>
+          {footerCoreLinks.map((link) => (
+            <a href={link.href}>{link.name}</a>
+          ))}
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          {footerExploreLinks.map((link) => (
+            <a href={link.href}>{link.name}</a>
+          ))}
+        </div>
+        <div class="footer-col">
+          <h4>Trust & Legal</h4>
+          <a href="/about">About Us</a>
+          <a href="/contact">Contact Us</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/editorial-policy">Editorial Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. For informational purposes only — not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    (() => {
+      const input = document.getElementById('search-input');
+      const clearButton = document.getElementById('search-clear-btn');
+      const status = document.getElementById('search-status');
+      const emptyState = document.getElementById('search-empty');
+      const emptyReset = document.getElementById('search-empty-reset');
+      if (!input) return;
+
+      const items = Array.from(document.querySelectorAll('[data-search-item]'));
+      const normalize = (value) => String(value || '').toLowerCase().trim();
+      const applyFilter = (query) => {
+        let visibleCount = 0;
+        items.forEach((item) => {
+          const text = normalize(item.getAttribute('data-search-text'));
+          const visible = !query || text.includes(query);
+          item.hidden = !visible;
+          if (visible) visibleCount += 1;
+        });
+        if (clearButton) clearButton.hidden = !query;
+        if (status) {
+          status.hidden = !query;
+          if (query) {
+            status.textContent = `${visibleCount} result${visibleCount === 1 ? '' : 's'} found for "${query}"`;
+          }
+        }
+        if (emptyState) {
+          emptyState.hidden = !(query && visibleCount === 0);
+        }
+      };
+
+      const syncQueryParam = (query) => {
+        const nextUrl = new URL(window.location.href);
+        if (query) {
+          nextUrl.searchParams.set('q', query);
+        } else {
+          nextUrl.searchParams.delete('q');
+        }
+        window.history.replaceState({}, '', `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
+      };
+
+      const initialQuery = normalize(new URL(window.location.href).searchParams.get('q'));
+      if (initialQuery) {
+        input.value = initialQuery;
+        applyFilter(initialQuery);
+      }
+
+      const clearSearch = () => {
+        input.value = '';
+        applyFilter('');
+        syncQueryParam('');
+        input.focus();
+      };
+
+      input.addEventListener('input', (event) => {
+        const query = normalize(event.target.value);
+        applyFilter(query);
+        syncQueryParam(query);
+      });
+
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && input.value) {
+          clearSearch();
+        }
+      });
+
+      if (clearButton) {
+        clearButton.addEventListener('click', clearSearch);
+      }
+
+      if (emptyReset) {
+        emptyReset.addEventListener('click', clearSearch);
+      }
+    })();
+  </script>
+
+  <script type="application/ld+json" set:html={JSON.stringify(homepageSchemas)} />
+</Layout>
+
+<style>
+  /* ===== Header ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-header);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-header);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo:hover { color: var(--color-text); }
+
+  .logo-text {
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-text b {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .header-search {
+    flex: 1;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    transition: border-color 0.2s ease;
+  }
+
+  .header-search:focus-within {
+    border-color: var(--color-primary);
+  }
+
+  .header-search input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    min-width: 0;
+  }
+
+  .header-search input::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .search-clear-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--color-bg-card-hover);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .header-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+
+  .header-link:hover {
+    color: var(--color-text);
+    border-color: var(--color-border-hover);
+    background-color: var(--color-bg-card-hover);
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    padding: 80px 24px 60px;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    max-width: 560px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 12px 28px;
+    background-color: var(--color-bg-card);
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    color: var(--color-text);
+    border-color: var(--color-border-hover);
+    background-color: var(--color-bg-card-hover);
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 32px;
+    background-color: var(--color-border);
+  }
+
+  /* ===== Popular Section ===== */
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .popular-section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle {
+    color: var(--color-text-secondary);
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+  }
+
+  .popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .popular-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .popular-card-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .popular-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .popular-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+  }
+
+  .popular-tag[data-tag="popular"] {
+    background-color: rgba(99, 102, 241, 0.15);
+    color: #3730a3;
+  }
+
+  .popular-tag[data-tag="trending"] {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #1d4ed8;
+  }
+
+  .popular-arrow {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  /* ===== Bento Grid ===== */
+  .categories-section {
+    padding: 60px 0;
+  }
+
+  .search-feedback {
+    padding: 0 0 16px;
+  }
+
+  .search-status {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin: 0 0 16px;
+  }
+
+  .search-empty {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    margin: 0 0 8px;
+  }
+
+  .search-empty h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .search-empty p {
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .search-reset-btn {
+    min-height: 40px;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .bento-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    color: var(--color-text);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bento-featured {
+    grid-column: span 1;
+  }
+
+  .bento-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .bento-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .bento-title-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .bento-title-link h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .bento-title-link svg {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .bento-title-link:hover {
+    color: var(--color-primary);
+  }
+
+  .bento-description {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .bento-count {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .bento-list {
+    list-style: none;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .bento-list li {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .bento-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--card-accent, var(--color-primary));
+    font-weight: 700;
+  }
+
+  .bento-list a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+
+  .bento-list a:hover {
+    color: var(--color-primary);
+  }
+
+  .bento-view-link {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  /* ===== Features ===== */
+  .features-section {
+    padding: 60px 0;
+    background-color: var(--color-bg-card);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .feature-card {
+    text-align: center;
+    padding: 24px 16px;
+  }
+
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 1.5rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .feature-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ===== Footer ===== */
+  .site-footer {
+    padding: 60px 0 24px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .footer-brand {
+    margin-bottom: 32px;
+  }
+
+  .footer-brand p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 48px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-col h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+  }
+
+  .footer-col a {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+
+  .footer-col a:hover {
+    color: var(--color-text);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--color-border);
+    padding-top: 24px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 1024px) {
+    .bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-inner {
+      height: auto;
+      padding: 12px 16px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .header-actions {
+      margin-left: auto;
+      gap: 8px;
+    }
+    .header-search {
+      order: 3;
+      flex-basis: 100%;
+      max-width: none;
+    }
+    .header-link {
+      min-height: 40px;
+      padding: 0 10px;
+    }
+    .hero {
+      padding: 48px 24px 40px;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero-stats {
+      gap: 20px;
+    }
+    .stat-divider {
+      display: none;
+    }
+    .bento-grid {
+      grid-template-columns: 1fr;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    .popular-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-links {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+</style>

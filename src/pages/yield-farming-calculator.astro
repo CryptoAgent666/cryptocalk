@@ -1,0 +1,280 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import YieldFarmingCalculator from '../components/YieldFarmingCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Yield Farming Calculator — DeFi Profitability Tool | CryptoCalk"
+  description="Free yield farming calculator. Calculate net profits from DeFi farming including gas costs, impermanent loss, and harvest frequency optimization. Find your true APY."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/yield-farming-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/yield-farming-calculator" aria-current="page">Yield Farming Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Yield Farming Calculator</h1>
+          <p>Calculate real yield farming returns after gas fees, impermanent loss, and harvest costs. Find the optimal harvest frequency for your deposit size.</p>
+        </div>
+        <YieldFarmingCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Yield Farming Calculator</h2>
+        <p>Our free yield farming calculator helps DeFi participants estimate their real returns after accounting for every cost that eats into farming profits. Whether you are providing liquidity on Uniswap, farming rewards on Aave, or chasing high-APY pools on newer protocols, this tool gives you a clear picture of your net profitability.</p>
+        <ol>
+          <li><strong>Enter your deposit amount</strong> — input the total value of the assets you plan to deposit into the farming pool, denominated in USD.</li>
+          <li><strong>Set the pool APR or APY</strong> — enter the advertised annual percentage rate or yield shown by the protocol. Our calculator converts between the two so you can work with either.</li>
+          <li><strong>Add gas costs</strong> — input the estimated gas cost per transaction on your chosen network. The calculator factors in deposit, harvest, and withdrawal transactions.</li>
+          <li><strong>Specify harvest frequency</strong> — choose how often you plan to claim and re-stake rewards (daily, weekly, bi-weekly, or monthly). More frequent harvesting compounds returns but incurs more gas.</li>
+          <li><strong>Review results</strong> — the calculator displays your gross yield, total gas costs, estimated impermanent loss, and net profit over 30, 90, 180, and 365-day periods.</li>
+        </ol>
+
+        <h2>What Is Yield Farming?</h2>
+        <p>Yield farming is the practice of depositing cryptocurrency into decentralised finance (DeFi) protocols to earn rewards. At its core, yield farming involves providing liquidity to automated market makers (AMMs) or lending platforms and receiving token incentives in return. Farmers typically deposit a pair of tokens into a liquidity pool — for example, ETH and USDC on Uniswap — and the protocol rewards them with a share of trading fees plus additional governance tokens.</p>
+        <p>The concept originated in 2020 when Compound Finance began distributing its COMP token to users who supplied or borrowed assets on the platform. This sparked the "DeFi Summer" phenomenon, where users rushed to find the highest-yielding opportunities across an expanding ecosystem of protocols. Today, yield farming spans lending markets, DEX liquidity pools, yield optimizers like Yearn Finance, and liquid staking derivatives.</p>
+        <p>While advertised APYs can look incredibly attractive — sometimes exceeding 100% or even 1,000% — the real returns that farmers take home are usually much lower once you account for gas fees, impermanent loss, token price depreciation, and the time value of capital. This calculator exists to bridge the gap between the headline APY and the actual profit you can expect.</p>
+
+        <h2>Hidden Costs of Yield Farming</h2>
+        <p>The advertised APY on a yield farming pool is almost never the return you actually earn. Several hidden costs significantly erode your real yield, and ignoring them is the most common mistake new DeFi participants make.</p>
+        <p><strong>Gas costs</strong> are the most immediate expense. Every on-chain action — depositing liquidity, harvesting rewards, re-staking, and eventually withdrawing — requires a gas fee. On Ethereum mainnet, a single swap or deposit can cost $5 to $50 depending on network congestion, and a full farming cycle (deposit, multiple harvests, withdrawal) can easily consume $100 or more.</p>
+        <p><strong>Impermanent loss (IL)</strong> occurs when the relative price of the two tokens in your liquidity pool changes. The greater the price divergence, the more value you lose compared to simply holding the tokens. In a standard 50/50 pool, a 2x price change in one token results in roughly 5.7% impermanent loss, while a 5x change causes about 25.5% loss.</p>
+        <p><strong>Opportunity cost</strong> is often overlooked. Capital locked in a farming pool cannot be used for other trades or investments. If the broader market rallies 50% while your farming pool earns 30% net, you have effectively lost 20% in relative terms.</p>
+        <p><strong>Reward token depreciation</strong> is particularly dangerous with high-APY farms. Many protocols emit governance tokens at unsustainable rates, causing continuous sell pressure. A farm advertising 500% APY in its native token is meaningless if that token loses 90% of its value over the farming period.</p>
+
+        <h2>APY vs APR in Yield Farming</h2>
+        <p>Understanding the difference between APR (Annual Percentage Rate) and APY (Annual Percentage Yield) is essential for evaluating farming opportunities. APR is the simple interest rate without compounding, while APY accounts for the effect of compounding rewards back into the pool at regular intervals.</p>
+        <div class="formula-block">
+          <code>APY = (1 + APR / n)^n - 1</code>
+        </div>
+        <p>In this formula, <em>n</em> represents the number of compounding periods per year. If you harvest and re-stake daily (n = 365), a 50% APR becomes approximately 64.8% APY. If you compound weekly (n = 52), the same APR produces about 63.2% APY. The difference between daily and weekly compounding is marginal, but the difference between compounding monthly versus not compounding at all can be substantial over a year.</p>
+        <p>Many protocols display APY assuming optimal daily compounding, but this only holds if you actually harvest and re-stake every single day — and each harvest costs gas. For small deposits, the gas cost of daily harvesting can exceed the additional yield from compounding, making less frequent harvesting more profitable in practice.</p>
+
+        <h2>Harvest Frequency Optimization</h2>
+        <p>One of the most important decisions in yield farming is how often to harvest and compound your rewards. The optimal frequency depends on three variables: your deposit size, the gas cost per harvest, and the pool's APR.</p>
+        <p>The principle is simple: you should harvest whenever the value of your accumulated rewards exceeds the gas cost of harvesting by a meaningful margin. Harvesting too frequently wastes gas; harvesting too infrequently leaves rewards un-compounded and vulnerable to token price drops.</p>
+        <p>A useful rule of thumb is to harvest when your pending rewards are at least 10 times the gas cost. This ensures that gas consumes no more than 10% of each harvest, preserving the compounding benefit. For a farmer on Ethereum mainnet paying $15 per harvest transaction, this means waiting until at least $150 in rewards have accumulated.</p>
+        <p>On Layer 2 networks where gas costs are pennies, daily harvesting becomes viable for almost any deposit size, which is one of the major advantages of farming on L2s.</p>
+
+        <h2>Gas Cost Impact by Deposit Size</h2>
+        <p>The following table illustrates how gas fees affect your net yield at different deposit sizes, assuming a 50% APR pool on Ethereum mainnet with $15 average gas per transaction and monthly harvesting (12 harvests per year plus deposit and withdrawal).</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Deposit Size</th><th>Gross Yield (50% APR)</th><th>Total Gas (14 txns)</th><th>Gas as % of Yield</th><th>Net Yield</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>$100</td><td>$50</td><td>$210</td><td>420%</td><td>-$160 (loss)</td></tr>
+              <tr><td>$500</td><td>$250</td><td>$210</td><td>84%</td><td>$40</td></tr>
+              <tr><td>$1,000</td><td>$500</td><td>$210</td><td>42%</td><td>$290</td></tr>
+              <tr><td>$5,000</td><td>$2,500</td><td>$210</td><td>8.4%</td><td>$2,290</td></tr>
+              <tr><td>$10,000</td><td>$5,000</td><td>$210</td><td>4.2%</td><td>$4,790</td></tr>
+              <tr><td>$50,000</td><td>$25,000</td><td>$210</td><td>0.8%</td><td>$24,790</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The table makes one thing immediately clear: yield farming on Ethereum L1 is not viable for small deposits. A $100 deposit farming at 50% APR would lose money after gas costs. Even a $500 deposit barely breaks even. To make L1 farming worthwhile, you generally need at least $2,000 to $5,000, depending on the pool's APR and how often you harvest.</p>
+
+        <h2>L1 vs L2 Yield Farming</h2>
+        <p>The choice of network dramatically changes the economics of yield farming. Ethereum mainnet (Layer 1) offers the deepest liquidity and most battle-tested protocols, but gas fees make it impractical for smaller farmers. Layer 2 networks and alternative L1 chains provide a much cheaper alternative.</p>
+        <p>On Arbitrum, Base, and Optimism, gas costs per transaction range from $0.01 to $0.20, making daily harvesting feasible even with deposits as small as $100. Polygon offers similarly low fees. This means L2 farmers can compound more frequently and achieve APYs closer to the theoretical maximum.</p>
+        <p>However, L2 protocols often have lower total value locked (TVL), which can mean higher slippage on large trades, less liquidity depth, and potentially higher smart contract risk from newer, less-audited codebases. There is also bridge risk: moving assets from L1 to L2 requires a bridge transaction, which has its own costs and security considerations.</p>
+        <p>For most farmers with deposits under $10,000, L2 farming offers substantially better net returns due to the gas savings alone. Larger depositors may prefer L1 for the deeper liquidity and protocol maturity, accepting the higher gas costs as a small percentage of their total yield.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>What is yield farming?</summary>
+          <p>Yield farming is the practice of depositing cryptocurrency into DeFi protocols — typically liquidity pools on decentralised exchanges or lending platforms — to earn rewards. These rewards come from trading fees generated by the pool and additional token incentives distributed by the protocol. Farmers allocate capital to the highest-yielding opportunities, often moving between protocols to maximise returns.</p>
+        </details>
+
+        <details>
+          <summary>How is yield farming APY calculated?</summary>
+          <p>APY (Annual Percentage Yield) is calculated by compounding the base APR over the number of compounding periods in a year. The formula is APY = (1 + APR/n)^n - 1, where n is the number of times you harvest and re-stake per year. Protocols typically display APY assuming daily compounding, but your actual APY depends on your harvest frequency and whether gas costs make frequent compounding practical.</p>
+        </details>
+
+        <details>
+          <summary>What is impermanent loss?</summary>
+          <p>Impermanent loss occurs when you provide liquidity to an AMM pool and the price ratio of the two tokens changes. The AMM automatically rebalances your position, selling the appreciating token and buying the depreciating one. This means you end up with less value than if you had simply held both tokens. The loss is called "impermanent" because it reverses if prices return to their original ratio, but in practice, prices rarely revert exactly.</p>
+        </details>
+
+        <details>
+          <summary>How often should I harvest rewards?</summary>
+          <p>The optimal harvest frequency depends on your deposit size, gas costs, and pool APR. A practical rule is to harvest when accumulated rewards are at least 10 times the gas cost of the harvest transaction. On Ethereum mainnet, this might mean monthly or bi-weekly harvesting for most deposit sizes. On L2 networks with sub-dollar gas costs, daily harvesting is often optimal.</p>
+        </details>
+
+        <details>
+          <summary>Is yield farming profitable for small amounts?</summary>
+          <p>On Ethereum mainnet, yield farming is generally not profitable for deposits under $1,000 due to gas costs. On Layer 2 networks (Arbitrum, Base, Polygon), deposits as small as $100 to $500 can be profitable because gas fees are negligible. The key is to choose a network where gas costs represent less than 10% of your expected yield.</p>
+        </details>
+
+        <details>
+          <summary>What are the risks of yield farming?</summary>
+          <p>The main risks include smart contract vulnerabilities (bugs or exploits in the protocol code), impermanent loss from price divergence, reward token depreciation that reduces the value of earned rewards, rug pulls or protocol abandonment, and regulatory uncertainty. Additionally, high-APY farms often carry the highest risk because unsustainable emission rates lead to severe token price declines.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/staking-calculator">Staking Rewards Calculator</a> — estimate earnings from proof-of-stake staking without impermanent loss risk.</li>
+          <li><a href="/impermanent-loss-calculator">Impermanent Loss Calculator</a> — calculate the exact impermanent loss for any price change scenario.</li>
+          <li><a href="/apy-apr-calculator">APY vs APR Calculator</a> — convert between APY and APR for any compounding frequency.</li>
+          <li><a href="/gas-calculator">Gas Fee Calculator</a> — estimate gas costs for transactions on Ethereum and L2 networks.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h2 + h3 { margin-top: 16px; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p, .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content summary:hover { background: var(--color-bg-card-hover); }
+  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
+  .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
+  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Yield Farming Calculator",
+  "url": "https://cryptocalk.com/yield-farming-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free yield farming calculator. Calculate net profits from DeFi farming including gas costs, impermanent loss, and harvest frequency optimization."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is yield farming?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yield farming is the practice of depositing cryptocurrency into DeFi protocols — typically liquidity pools or lending platforms — to earn rewards from trading fees and additional token incentives distributed by the protocol."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is yield farming APY calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "APY is calculated by compounding the base APR over the number of compounding periods in a year using the formula APY = (1 + APR/n)^n - 1, where n is the number of times you harvest and re-stake per year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is impermanent loss?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Impermanent loss occurs when you provide liquidity to an AMM pool and the price ratio of the two tokens changes. The AMM rebalances your position, resulting in less value than if you had simply held both tokens."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I harvest rewards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Harvest when accumulated rewards are at least 10 times the gas cost of the harvest transaction. On Ethereum mainnet this might mean monthly harvesting; on L2 networks with sub-dollar gas, daily harvesting is often optimal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is yield farming profitable for small amounts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Ethereum mainnet, farming is generally not profitable for deposits under $1,000 due to gas costs. On Layer 2 networks like Arbitrum and Base, deposits as small as $100-$500 can be profitable because gas fees are negligible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the risks of yield farming?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Main risks include smart contract vulnerabilities, impermanent loss from price divergence, reward token depreciation, rug pulls, and regulatory uncertainty. High-APY farms often carry the highest risk due to unsustainable token emission rates."
+      }
+    }
+  ]
+}
+</script>

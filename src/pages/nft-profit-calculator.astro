@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import NftProfitCalculator from '../components/NftProfitCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="NFT Profit Calculator — Real Profit After Fees | CryptoCalk"
+  description="Free NFT profit calculator. Calculate true NFT trading profit after marketplace fees, creator royalties, and gas costs. Compare fees across OpenSea, Blur, and Magic Eden."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/nft-profit-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/nft-profit-calculator" aria-current="page">NFT Profit Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>NFT Profit Calculator</h1>
+          <p>Calculate your real NFT trading profit after marketplace fees, creator royalties, and gas costs. See the break-even sell price and effective fee rate.</p>
+        </div>
+        <NftProfitCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the NFT Profit Calculator</h2>
+        <p>Our free NFT profit calculator shows you the true profit or loss from buying and selling NFTs after every fee is deducted. Most NFT traders focus on the buy and sell prices but forget that marketplace commissions, creator royalties, and gas costs can take a significant bite out of their returns. This tool makes the math transparent.</p>
+        <ol>
+          <li><strong>Enter the buy price</strong> — input the price you paid (or plan to pay) for the NFT in ETH or SOL, depending on the blockchain.</li>
+          <li><strong>Enter the sell price</strong> — input the price at which you sold or plan to sell the NFT.</li>
+          <li><strong>Select the marketplace</strong> — choose from OpenSea, Blur, Magic Eden, LooksRare, or X2Y2. The calculator auto-fills the marketplace fee for your selection.</li>
+          <li><strong>Set the creator royalty</strong> — enter the collection's creator royalty percentage. This varies by collection and may be optional on some marketplaces.</li>
+          <li><strong>Add gas costs</strong> — input the gas fee paid for both the buy and sell transactions. The calculator sums both to show total gas expenditure.</li>
+          <li><strong>Review your profit</strong> — the calculator shows gross profit, total fees deducted, net profit in ETH/SOL and USD, the break-even sell price, and the effective total fee rate.</li>
+        </ol>
+
+        <h2>Understanding NFT Trading Fees</h2>
+        <p>NFT trading involves three distinct layers of fees that reduce your profit on every sale. Understanding each layer is critical for setting realistic profit targets and identifying which trades are actually worth making.</p>
+        <p><strong>Marketplace fees</strong> are the commissions charged by the platform that facilitates the trade. These range from 0.5% on aggregator-style marketplaces like Blur to 2.5% on OpenSea. The fee is typically deducted from the seller's proceeds at the time of sale.</p>
+        <p><strong>Creator royalties</strong> are payments to the original NFT creator or collection team, set when the smart contract is deployed. Royalties typically range from 2.5% to 10% of the sale price. In 2023 and 2024, many marketplaces made royalties optional to attract traders, leading to a significant debate within the NFT community about the sustainability of creator revenue models.</p>
+        <p><strong>Gas fees</strong> are the blockchain transaction costs paid to network validators. On Ethereum, gas costs for NFT transactions can range from $2 to $50 depending on network congestion and the complexity of the smart contract interaction. On Solana, gas costs are typically under $0.01, making them negligible for trading calculations.</p>
+
+        <h2>NFT Marketplace Fee Comparison</h2>
+        <p>Choosing the right marketplace can meaningfully impact your net profit. Here is a comparison of the major NFT marketplaces and their fee structures as of 2025:</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Marketplace</th><th>Platform Fee</th><th>Creator Royalties</th><th>Blockchain</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>OpenSea</td><td>2.5%</td><td>Enforced (collection-set)</td><td>Ethereum, Polygon, others</td><td>Largest marketplace by volume</td></tr>
+              <tr><td>Blur</td><td>0.5%</td><td>Optional (min 0.5%)</td><td>Ethereum</td><td>Pro-trader focus, BLUR token rewards</td></tr>
+              <tr><td>Magic Eden</td><td>2.0%</td><td>Optional</td><td>Solana, Ethereum, Bitcoin</td><td>Multi-chain, low gas on Solana</td></tr>
+              <tr><td>LooksRare</td><td>2.0%</td><td>Enforced</td><td>Ethereum</td><td>LOOKS token staking rewards</td></tr>
+              <tr><td>X2Y2</td><td>0.5%</td><td>Optional</td><td>Ethereum</td><td>Low fees, flexible royalties</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>On a 1 ETH sale, the difference between OpenSea (2.5%) and Blur (0.5%) is 0.02 ETH — roughly $50 to $70 at typical ETH prices. For active traders making dozens of trades per month, this fee difference compounds into a substantial amount over time.</p>
+
+        <h2>The Hidden Cost of Creator Royalties</h2>
+        <p>Creator royalties were designed to provide ongoing revenue to NFT artists and project teams, but they have become one of the most debated topics in the NFT space. A 5% creator royalty on a 1 ETH sale costs the seller 0.05 ETH. Combined with a 2.5% marketplace fee, the total deduction reaches 7.5% before the seller receives their proceeds.</p>
+        <p>On marketplaces where royalties are optional, some traders choose to pay zero royalties to maximise their profit. Others voluntarily honour royalties to support creators. When calculating your profit, it is important to know whether the marketplace you are using enforces royalties or leaves them to the buyer or seller's discretion.</p>
+        <p>From a pure trading perspective, lower fees mean a lower break-even price, which means you can profit from smaller price movements. However, collections with strong royalty enforcement often have more engaged communities and development teams, which can support long-term floor price stability.</p>
+
+        <h2>How Gas Fees Affect NFT Profitability</h2>
+        <p>Gas fees are a fixed cost per transaction, meaning they disproportionately impact lower-priced NFTs. Buying and selling a 0.05 ETH NFT with $20 in total gas costs means you are paying roughly 12% of the NFT's value just in gas — before any marketplace fees or royalties.</p>
+        <p>The break-even sell price must cover your original purchase price plus all buy-side gas, sell-side gas, marketplace fees, and creator royalties. The formula is:</p>
+        <div class="formula-block">
+          <code>Break-Even Price = (Buy Price + Gas Buy + Gas Sell) / (1 - Marketplace Fee% - Royalty%)</code>
+        </div>
+        <p>For example, if you buy an NFT for 0.5 ETH with 0.005 ETH gas on each side, and the marketplace charges 2.5% fee plus 5% royalty, your break-even is (0.5 + 0.005 + 0.005) / (1 - 0.025 - 0.05) = 0.51 / 0.925 = 0.5514 ETH. You need a 10.3% price increase just to break even.</p>
+
+        <h2>Tips to Maximize NFT Trading Profits</h2>
+        <ul>
+          <li><strong>Time your transactions for low gas</strong> — Ethereum gas prices fluctuate dramatically throughout the day. Weekends and late-night UTC hours typically see the lowest gas costs. Use gas trackers to find optimal windows.</li>
+          <li><strong>Use low-fee marketplaces for trading</strong> — if you are actively trading (not collecting), platforms like Blur and X2Y2 with 0.5% fees significantly reduce your cost basis compared to OpenSea's 2.5%.</li>
+          <li><strong>Account for royalties in your target price</strong> — always calculate your net profit after royalties. A 10% price gain on a collection with 7.5% combined fees leaves you with only 2.5% actual profit.</li>
+          <li><strong>Consider bulk listing tools</strong> — some platforms offer bulk listing that can save gas by batching multiple operations into a single transaction.</li>
+          <li><strong>Factor in opportunity cost</strong> — capital locked in an illiquid NFT cannot be deployed elsewhere. If an NFT sits unsold for months, the true cost includes the opportunity cost of that capital.</li>
+          <li><strong>Trade on L2 or Solana for small-value NFTs</strong> — gas costs on Polygon or Solana are negligible, making them far more efficient for trading NFTs priced under 0.1 ETH equivalent.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>How do I calculate profit from selling an NFT?</summary>
+          <p>Subtract the total cost (buy price + buy gas + sell gas + marketplace fee + creator royalty) from the sell price. The marketplace fee and royalty are percentages of the sell price, so they scale with the sale amount. Our calculator handles this math automatically and shows your net profit in both crypto and USD.</p>
+        </details>
+
+        <details>
+          <summary>What are NFT marketplace fees?</summary>
+          <p>Marketplace fees are commissions charged by the platform where you sell your NFT. They typically range from 0.5% (Blur, X2Y2) to 2.5% (OpenSea) of the sale price. These fees are deducted from the seller's proceeds at the time of the sale and go to the marketplace operator.</p>
+        </details>
+
+        <details>
+          <summary>Are creator royalties mandatory?</summary>
+          <p>It depends on the marketplace and the collection's smart contract. OpenSea enforces creator-set royalties, while Blur and X2Y2 make them optional with a minimum of 0.5%. Some newer smart contract standards (like ERC-2981) encode royalties on-chain, but enforcement ultimately depends on the marketplace honouring those settings.</p>
+        </details>
+
+        <details>
+          <summary>Which NFT marketplace has the lowest fees?</summary>
+          <p>Blur and X2Y2 both charge 0.5% marketplace fees, making them the cheapest major Ethereum NFT marketplaces. On Solana, Magic Eden charges 2% but gas costs are near zero. For the lowest total cost of trading, Blur on Ethereum or Magic Eden on Solana are typically the most cost-effective options.</p>
+        </details>
+
+        <details>
+          <summary>How do gas fees affect NFT trading?</summary>
+          <p>Gas fees are fixed costs per transaction that impact lower-priced NFTs disproportionately. On Ethereum, buying and selling an NFT can cost $10 to $100 in total gas. For NFTs priced under 0.1 ETH, gas alone can represent 10-20% of the NFT's value, making it very difficult to trade profitably at those price levels on L1.</p>
+        </details>
+
+        <details>
+          <summary>What is the break-even price for my NFT?</summary>
+          <p>The break-even price is the minimum sell price at which you recover your total costs including the buy price, gas fees, marketplace commission, and creator royalty. Use the formula: Break-Even = (Buy Price + Total Gas) / (1 - Marketplace Fee% - Royalty%). This price is always higher than your purchase price due to the cumulative fees.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/profit-calculator">Crypto Profit Calculator</a> — calculate profit or loss on any cryptocurrency trade including fees.</li>
+          <li><a href="/gas-calculator">Gas Fee Calculator</a> — estimate Ethereum and L2 gas costs for any transaction type.</li>
+          <li><a href="/converter">ETH Converter</a> — convert between ETH, Gwei, and fiat currencies.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h2 + h3 { margin-top: 16px; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p, .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content summary:hover { background: var(--color-bg-card-hover); }
+  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
+  .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
+  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "NFT Profit Calculator",
+  "url": "https://cryptocalk.com/nft-profit-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free NFT profit calculator. Calculate true NFT trading profit after marketplace fees, creator royalties, and gas costs."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate profit from selling an NFT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subtract the total cost (buy price + buy gas + sell gas + marketplace fee + creator royalty) from the sell price. The marketplace fee and royalty are percentages of the sell price, so they scale with the sale amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are NFT marketplace fees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Marketplace fees are commissions charged by the platform where you sell your NFT. They typically range from 0.5% (Blur, X2Y2) to 2.5% (OpenSea) of the sale price and are deducted from the seller's proceeds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are creator royalties mandatory?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the marketplace. OpenSea enforces creator-set royalties, while Blur and X2Y2 make them optional with a minimum of 0.5%. Enforcement ultimately depends on the marketplace honouring the collection's smart contract settings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which NFT marketplace has the lowest fees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Blur and X2Y2 both charge 0.5% marketplace fees, making them the cheapest major Ethereum NFT marketplaces. On Solana, Magic Eden charges 2% but gas costs are near zero."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do gas fees affect NFT trading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gas fees are fixed costs per transaction that impact lower-priced NFTs disproportionately. On Ethereum, buying and selling an NFT can cost $10-$100 in total gas, representing 10-20% of value for NFTs priced under 0.1 ETH."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the break-even price for my NFT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The break-even price is the minimum sell price at which you recover all costs. Use the formula: Break-Even = (Buy Price + Total Gas) / (1 - Marketplace Fee% - Royalty%). This is always higher than your purchase price due to cumulative fees."
+      }
+    }
+  ]
+}
+</script>

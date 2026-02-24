@@ -1,0 +1,291 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import SatoshiConverter from '../components/SatoshiConverter.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Satoshi Converter — BTC to Sats, USD to Satoshi Calculator | CryptoCalk"
+  description="Free Satoshi converter and calculator. Convert between Bitcoin, Satoshis, and USD/EUR instantly. See how many sats per dollar, quick reference tables, and live BTC price from CoinGecko."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/satoshi-converter" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/satoshi-converter" aria-current="page">Satoshi Converter</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Satoshi Converter</h1>
+          <p>Convert between Bitcoin, Satoshis, and fiat currencies instantly. Live prices from CoinGecko with quick reference tables for common amounts.</p>
+        </div>
+        <SatoshiConverter lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Satoshi Converter</h2>
+        <p>Our free Satoshi converter makes it easy to translate between Bitcoin's smallest unit and fiat currencies like USD and EUR. Whether you want to know how many satoshis your dollars can buy or what your sats are worth in Bitcoin, this tool gives you instant answers using live market data from CoinGecko.</p>
+        <ol>
+          <li><strong>Choose your input mode</strong> — select Satoshi, BTC, or USD using the pill buttons at the top of the calculator. This determines which unit you are entering.</li>
+          <li><strong>Enter an amount</strong> — type a number or use the quick amount buttons to select common values like 10K sats, 100K sats, or $100.</li>
+          <li><strong>Select your fiat currency</strong> — toggle between USD and EUR to see conversions in your preferred currency.</li>
+          <li><strong>Read the results</strong> — the converter instantly displays the equivalent value in all three units: satoshis, BTC, and fiat. A quick reference table shows how common fiat and satoshi amounts compare at the current price.</li>
+          <li><strong>Refresh the price</strong> — click the refresh button to fetch the latest BTC price from CoinGecko at any time.</li>
+        </ol>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Bidirectional conversion</strong> — enter any of the three units (satoshis, BTC, or USD) and instantly see the equivalent in the other two.</li>
+          <li><strong>Live BTC price</strong> — real-time Bitcoin price fetched from CoinGecko's API, aggregated from hundreds of exchanges worldwide.</li>
+          <li><strong>Quick reference tables</strong> — see at a glance how many satoshis you get for $1, $10, $100, and $1,000, plus the fiat value of 1, 100, 1K, 10K, 100K, and 1M sats.</li>
+          <li><strong>Quick amount buttons</strong> — one-click presets for common satoshi amounts (1K to 50M), BTC amounts (0.001 to 1), and USD amounts ($1 to $500).</li>
+          <li><strong>Multi-currency support</strong> — toggle between USD and EUR for fiat conversions.</li>
+          <li><strong>Refresh on demand</strong> — fetch the latest BTC price at any moment without reloading the page.</li>
+        </ul>
+
+        <h2>What Is a Satoshi?</h2>
+        <p>A satoshi (often abbreviated as "sat") is the smallest unit of Bitcoin. Named after Bitcoin's pseudonymous creator Satoshi Nakamoto, one satoshi represents one hundred-millionth of a single Bitcoin. Just as a dollar is divided into 100 cents, a Bitcoin is divided into 100,000,000 satoshis. This granularity allows Bitcoin to be used for microtransactions and makes it practical even as the price of a whole Bitcoin reaches tens or hundreds of thousands of dollars.</p>
+        <p>Satoshis have become increasingly important as Bitcoin's price has risen. When Bitcoin costs $100,000, a single satoshi is worth $0.001 — small enough for everyday purchases, tips, and Lightning Network micropayments. Many Bitcoiners now price goods and services in satoshis rather than full Bitcoin, since most people hold fractions of a coin and dealing with numbers like "0.00015 BTC" is less intuitive than "15,000 sats."</p>
+
+        <h3>Satoshi Denominations</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Satoshis</th>
+                <th>BTC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1 Satoshi</td><td>1</td><td>0.00000001 BTC</td></tr>
+              <tr><td>100 Satoshis</td><td>100</td><td>0.00000100 BTC</td></tr>
+              <tr><td>1,000 Satoshis (1K sats)</td><td>1,000</td><td>0.00001000 BTC</td></tr>
+              <tr><td>10,000 Satoshis (10K sats)</td><td>10,000</td><td>0.00010000 BTC</td></tr>
+              <tr><td>100,000 Satoshis (100K sats)</td><td>100,000</td><td>0.00100000 BTC</td></tr>
+              <tr><td>1,000,000 Satoshis (1M sats)</td><td>1,000,000</td><td>0.01000000 BTC</td></tr>
+              <tr><td>100,000,000 Satoshis</td><td>100,000,000</td><td>1.00000000 BTC</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Conversion Formulas</h2>
+        <div class="formula-block">
+          <code>Satoshis = BTC &times; 100,000,000</code>
+        </div>
+        <div class="formula-block">
+          <code>BTC = Satoshis &divide; 100,000,000</code>
+        </div>
+        <div class="formula-block">
+          <code>USD Value = (Satoshis &divide; 100,000,000) &times; BTC Price in USD</code>
+        </div>
+        <p>The conversion between satoshis and Bitcoin is always fixed: 1 BTC = 100,000,000 sats. The fiat value, however, fluctuates in real-time based on Bitcoin's market price. For example, if Bitcoin is trading at $100,000, then 1,000 satoshis equals $0.001. If Bitcoin rises to $200,000, the same 1,000 satoshis would be worth $0.002.</p>
+
+        <h2>Why Satoshis Matter</h2>
+        <p>As Bitcoin adoption grows, thinking in satoshis becomes more natural and practical for several reasons. First, most people cannot afford to buy a whole Bitcoin, but they can easily understand owning 50,000 or 500,000 satoshis. Denominating in sats removes the psychological barrier of fractional ownership and makes Bitcoin feel more accessible.</p>
+        <p>Second, the Lightning Network — Bitcoin's layer-2 scaling solution — operates natively in satoshis. Lightning payments can be as small as 1 satoshi, enabling true micropayments for content tipping, pay-per-use APIs, streaming money, and machine-to-machine transactions. Understanding satoshi denominations is essential for anyone using Lightning.</p>
+        <p>Third, many Bitcoin exchanges and wallets now display balances in satoshis by default. Platforms like Strike, Cash App, and River allow users to buy and send specific satoshi amounts, and the "stacking sats" movement encourages people to regularly accumulate small amounts of Bitcoin over time through dollar-cost averaging.</p>
+
+        <h2>Satoshis and the Lightning Network</h2>
+        <p>The Lightning Network is a payment protocol built on top of Bitcoin that enables instant, low-cost transactions. While on-chain Bitcoin transactions can take 10-60 minutes to confirm and cost several dollars in fees, Lightning transactions settle in milliseconds for fees measured in fractions of a satoshi. This makes Lightning ideal for small everyday payments.</p>
+        <p>On Lightning, the base unit is the millisatoshi (msat), which is one-thousandth of a satoshi. While millisatoshis cannot exist on the Bitcoin blockchain (the minimum on-chain unit is 1 sat), they allow Lightning nodes to route payments with sub-satoshi precision. This ultra-fine granularity enables use cases like streaming payments where you pay per second of content consumption.</p>
+        <p>Popular Lightning wallets and exchanges include Phoenix, Breez, Wallet of Satoshi, and Kraken. These platforms make it easy to send and receive satoshis instantly, and many support both on-chain and Lightning transactions. Converting between satoshis and fiat helps users understand exactly how much value they are sending or receiving through Lightning channels.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>How many satoshis are in one Bitcoin?</summary>
+          <p>There are exactly 100,000,000 (one hundred million) satoshis in one Bitcoin. This ratio is fixed and never changes. A satoshi is the smallest unit that can be recorded on the Bitcoin blockchain, though the Lightning Network supports even smaller units called millisatoshis (1/1000th of a satoshi).</p>
+        </details>
+
+        <details>
+          <summary>How much is 1 satoshi worth in USD?</summary>
+          <p>The USD value of 1 satoshi depends on the current Bitcoin price. Divide the current BTC price by 100,000,000 to find the value of a single sat. For example, at a Bitcoin price of $100,000, one satoshi equals $0.001 (one tenth of a cent). Use the converter above to see the exact value at the current market price.</p>
+        </details>
+
+        <details>
+          <summary>Why do people use satoshis instead of Bitcoin?</summary>
+          <p>As Bitcoin's price has grown into the tens of thousands of dollars, most people own fractions of a coin. Saying "I have 50,000 sats" is more intuitive than "I have 0.0005 BTC." Satoshis also eliminate confusing decimal points and make it easier to compare prices, tip content creators, and transact on the Lightning Network where small amounts are common.</p>
+        </details>
+
+        <details>
+          <summary>Can I buy satoshis directly?</summary>
+          <p>Yes, many exchanges and apps let you buy Bitcoin in satoshi amounts. Platforms like Strike, Cash App, River, and Kraken allow you to purchase as little as 1 sat (though practical minimums are usually a few hundred sats due to fees). When you buy any fraction of a Bitcoin, you are effectively buying satoshis.</p>
+        </details>
+
+        <details>
+          <summary>What is the symbol for satoshi?</summary>
+          <p>There is no universally standardized symbol for satoshi yet, but the community commonly uses "sat" or "sats" as the abbreviation. Some proposals suggest using a lowercase "s" with a vertical stroke (similar to the dollar sign), and others use the lightning bolt emoji as an informal symbol. The ticker "SAT" or "SATS" is also widely recognized on social media and in Bitcoin communities.</p>
+        </details>
+
+        <details>
+          <summary>Are satoshis the same on Lightning Network and on-chain?</summary>
+          <p>Satoshis represent the same unit of value whether on-chain or on Lightning. However, Lightning can handle sub-satoshi amounts called millisatoshis (1 msat = 0.001 sat) for routing precision. When a Lightning payment settles on-chain, amounts are rounded to the nearest satoshi. For all practical purposes, 1 sat on Lightning equals 1 sat on the Bitcoin blockchain.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/converter">Crypto Converter</a> — convert between 500+ cryptocurrencies and 10+ fiat currencies in real time.</li>
+          <li><a href="/profit-calculator">Crypto Profit Calculator</a> — calculate your profit or loss on any Bitcoin trade including fees.</li>
+          <li><a href="/dca-calculator">DCA Calculator</a> — simulate dollar-cost averaging into Bitcoin with historical price data.</li>
+          <li><a href="/mining-calculator">Mining Calculator</a> — estimate Bitcoin mining profitability based on hash rate and electricity costs.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ul { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 16px; margin: 12px 0 16px; font-family: 'Courier New', monospace; color: var(--color-primary); font-size: 0.9rem; }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content ol { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content ol li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .table-responsive { overflow-x: auto; margin: 16px 0; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg-card); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content details { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 8px; max-width: 780px; cursor: pointer; }
+  .seo-content summary { font-weight: 600; color: var(--color-text); }
+  .seo-content details p { margin-top: 12px; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Satoshi Converter",
+    "description": "Free Satoshi converter and calculator. Convert between Bitcoin, Satoshis, and USD/EUR instantly with live BTC price from CoinGecko.",
+    "url": "https://cryptocalk.com/satoshi-converter",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many satoshis are in one Bitcoin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are exactly 100,000,000 (one hundred million) satoshis in one Bitcoin. This ratio is fixed and never changes. A satoshi is the smallest unit that can be recorded on the Bitcoin blockchain."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much is 1 satoshi worth in USD?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The USD value of 1 satoshi depends on the current Bitcoin price. Divide the current BTC price by 100,000,000 to find the value of a single sat. For example, at a Bitcoin price of $100,000, one satoshi equals $0.001."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do people use satoshis instead of Bitcoin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As Bitcoin's price has grown into the tens of thousands of dollars, most people own fractions of a coin. Saying 'I have 50,000 sats' is more intuitive than 'I have 0.0005 BTC.' Satoshis also eliminate confusing decimal points and make it easier to compare prices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I buy satoshis directly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, many exchanges and apps let you buy Bitcoin in satoshi amounts. Platforms like Strike, Cash App, River, and Kraken allow you to purchase as little as a few hundred sats. When you buy any fraction of a Bitcoin, you are effectively buying satoshis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the symbol for satoshi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no universally standardized symbol for satoshi yet, but the community commonly uses 'sat' or 'sats' as the abbreviation. The ticker 'SAT' or 'SATS' is also widely recognized on social media and in Bitcoin communities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are satoshis the same on Lightning Network and on-chain?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Satoshis represent the same unit of value whether on-chain or on Lightning. However, Lightning can handle sub-satoshi amounts called millisatoshis (1 msat = 0.001 sat) for routing precision. For all practical purposes, 1 sat on Lightning equals 1 sat on the Bitcoin blockchain."
+        }
+      }
+    ]
+  }
+]
+</script>

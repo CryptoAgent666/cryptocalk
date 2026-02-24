@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(ls:*)",
+      "Bash(lsof:*)",
+      "Bash(grep:*)",
+      "Bash(curl:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx astro build:*)",
+      "Bash(for comp in AirdropCalculator VestingCalculator)",
+      "Bash(do echo \"  $comp: checking...\")",
+      "Bash(done)",
+      "Bash(npm run ci:check:*)"
+    ]
+  }
+}

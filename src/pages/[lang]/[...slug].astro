@@ -1,0 +1,214 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import CryptoConverter from '../../components/CryptoConverter.tsx';
+import ProfitCalculator from '../../components/ProfitCalculator.tsx';
+import MiningCalculator from '../../components/MiningCalculator.tsx';
+import DCACalculator from '../../components/DCACalculator.tsx';
+import TaxCalculator from '../../components/TaxCalculator.tsx';
+import WhatIfCalculator from '../../components/WhatIfCalculator.tsx';
+import PositionSizeCalculator from '../../components/PositionSizeCalculator.tsx';
+import LiquidationCalculator from '../../components/LiquidationCalculator.tsx';
+import FundingRateCalculator from '../../components/FundingRateCalculator.tsx';
+import TpSlCalculator from '../../components/TpSlCalculator.tsx';
+import MarginCalculator from '../../components/MarginCalculator.tsx';
+import PipCalculator from '../../components/PipCalculator.tsx';
+import BreakEvenCalculator from '../../components/BreakEvenCalculator.tsx';
+import RiskRewardCalculator from '../../components/RiskRewardCalculator.tsx';
+import StakingRewardsCalculator from '../../components/StakingRewardsCalculator.tsx';
+import ImpermanentLossCalculator from '../../components/ImpermanentLossCalculator.tsx';
+import ApyAprCalculator from '../../components/ApyAprCalculator.tsx';
+import YieldFarmingCalculator from '../../components/YieldFarmingCalculator.tsx';
+import GasFeeCalculator from '../../components/GasFeeCalculator.tsx';
+import UniswapCalculator from '../../components/UniswapCalculator.tsx';
+import BridgeComparator from '../../components/BridgeComparator.tsx';
+import LendingCalculator from '../../components/LendingCalculator.tsx';
+import GpuMiningCalculator from '../../components/GpuMiningCalculator.tsx';
+import AsicMiningCalculator from '../../components/AsicMiningCalculator.tsx';
+import MiningRoiCalculator from '../../components/MiningRoiCalculator.tsx';
+import ElectricityCostCalculator from '../../components/ElectricityCostCalculator.tsx';
+import DifficultyEstimatorCalculator from '../../components/DifficultyEstimatorCalculator.tsx';
+import HashrateConverter from '../../components/HashrateConverter.tsx';
+import MarketCapCalculator from '../../components/MarketCapCalculator.tsx';
+import MarketCapComparator from '../../components/MarketCapComparator.tsx';
+import RoiCalculator from '../../components/RoiCalculator.tsx';
+import ReverseRoiCalculator from '../../components/ReverseRoiCalculator.tsx';
+import HodlVsTradeCalculator from '../../components/HodlVsTradeCalculator.tsx';
+import RebalancingCalculator from '../../components/RebalancingCalculator.tsx';
+import CompoundInterestCalculator from '../../components/CompoundInterestCalculator.tsx';
+import IcoRoiCalculator from '../../components/IcoRoiCalculator.tsx';
+import AirdropCalculator from '../../components/AirdropCalculator.tsx';
+import SatoshiConverter from '../../components/SatoshiConverter.tsx';
+import GweiConverter from '../../components/GweiConverter.tsx';
+import TimestampConverter from '../../components/TimestampConverter.tsx';
+import CryptoUnitConverter from '../../components/CryptoUnitConverter.tsx';
+import ExchangeFeeComparator from '../../components/ExchangeFeeComparator.tsx';
+import LoanCalculator from '../../components/LoanCalculator.tsx';
+import VestingCalculator from '../../components/VestingCalculator.tsx';
+import NftProfitCalculator from '../../components/NftProfitCalculator.tsx';
+import HalvingCalculator from '../../components/HalvingCalculator.tsx';
+import MevProtectionCalculator from '../../components/MevProtectionCalculator.tsx';
+import GamefiCalculator from '../../components/GamefiCalculator.tsx';
+import NodeCalculator from '../../components/NodeCalculator.tsx';
+import CryptoSalaryCalculator from '../../components/CryptoSalaryCalculator.tsx';
+import InflationHedgeCalculator from '../../components/InflationHedgeCalculator.tsx';
+import {
+  NON_DEFAULT_LANGS,
+  SPEC_CALCULATOR_SLUGS,
+  getCanonicalSlug,
+  getLocalizedSlug,
+  type Lang,
+  type SpecCalculatorSlug,
+} from '../../i18n/utils';
+
+interface AliasDefinition {
+  title: string;
+}
+
+const ALIAS_DEFINITIONS: Record<SpecCalculatorSlug, AliasDefinition> = {
+  'converter': { title: 'Crypto Converter' },
+  'profit-calculator': { title: 'Crypto Profit Calculator' },
+  'mining-calculator': { title: 'Bitcoin Mining Calculator' },
+  'dca-calculator': { title: 'DCA Calculator' },
+  'tax-calculator': { title: 'Crypto Tax Calculator' },
+  'what-if': { title: 'What If Calculator' },
+  'position-size-calculator': { title: 'Position Size Calculator' },
+  'liquidation-calculator': { title: 'Liquidation Calculator' },
+  'funding-rate-calculator': { title: 'Funding Rate Calculator' },
+  'tp-sl-calculator': { title: 'TP / SL Calculator' },
+  'margin-calculator': { title: 'Margin Calculator' },
+  'pip-calculator': { title: 'Pip / Tick Value Calculator' },
+  'break-even-calculator': { title: 'Break-Even Calculator' },
+  'risk-reward-calculator': { title: 'Risk / Reward Calculator' },
+  'staking-calculator': { title: 'Crypto Staking Calculator' },
+  'impermanent-loss-calculator': { title: 'Impermanent Loss Calculator' },
+  'apy-apr-calculator': { title: 'APY vs APR Calculator' },
+  'yield-farming-calculator': { title: 'Yield Farming Calculator' },
+  'gas-calculator': { title: 'Crypto Gas Calculator' },
+  'uniswap-calculator': { title: 'Uniswap Fee Calculator' },
+  'bridge-comparator': { title: 'Bridge Cost Comparator' },
+  'lending-calculator': { title: 'Crypto Lending Calculator' },
+  'gpu-mining-calculator': { title: 'GPU Mining Calculator' },
+  'asic-mining-calculator': { title: 'ASIC Mining Calculator' },
+  'mining-roi-calculator': { title: 'Mining ROI Calculator' },
+  'electricity-cost-calculator': { title: 'Mining Electricity Cost Calculator' },
+  'difficulty-calculator': { title: 'Mining Difficulty Estimator' },
+  'hashrate-converter': { title: 'Hashrate Converter' },
+  'market-cap-calculator': { title: 'Market Cap Calculator' },
+  'market-cap-comparator': { title: 'Market Cap Comparator' },
+  'roi-calculator': { title: 'ROI Calculator' },
+  'reverse-roi': { title: 'Reverse ROI Calculator' },
+  'hodl-vs-trade': { title: 'HODL vs Trade Calculator' },
+  'rebalancing-calculator': { title: 'Portfolio Rebalancing Calculator' },
+  'compound-calculator': { title: 'Compound Interest Calculator (Crypto)' },
+  'ico-roi-calculator': { title: 'ICO / IDO ROI Calculator' },
+  'airdrop-calculator': { title: 'Airdrop Value Calculator' },
+  'satoshi-converter': { title: 'Satoshi Converter' },
+  'gwei-converter': { title: 'Gwei Converter' },
+  'timestamp-converter': { title: 'Unix Timestamp Converter' },
+  'unit-converter': { title: 'Crypto Unit Converter' },
+  'exchange-fees': { title: 'Exchange Fee Comparator' },
+  'crypto-loan-calculator': { title: 'Crypto Loan Calculator' },
+  'vesting-calculator': { title: 'Token Vesting Calculator' },
+  'nft-profit-calculator': { title: 'NFT Profit Calculator' },
+  'halving-calculator': { title: 'Bitcoin Halving Calculator' },
+  'mev-calculator': { title: 'MEV Protection Calculator' },
+  'gamefi-calculator': { title: 'GameFi ROI Calculator' },
+  'node-calculator': { title: 'Validator Node Calculator' },
+  'salary-calculator': { title: 'Crypto Salary Calculator' },
+  'inflation-hedge': { title: 'Inflation Hedge Calculator' },
+};
+
+interface StaticPathProps {
+  canonicalSlug: SpecCalculatorSlug;
+  localizedSlug: string;
+}
+
+export function getStaticPaths() {
+  return NON_DEFAULT_LANGS.flatMap((lang) =>
+    SPEC_CALCULATOR_SLUGS.map((canonicalSlug) => ({
+      params: {
+        lang,
+        slug: getLocalizedSlug(canonicalSlug, lang),
+      },
+      props: {
+        canonicalSlug,
+        localizedSlug: getLocalizedSlug(canonicalSlug, lang),
+      } satisfies StaticPathProps,
+    }))
+  );
+}
+
+const { lang, slug } = Astro.params as { lang: Lang; slug: string };
+const { canonicalSlug, localizedSlug } = Astro.props as StaticPathProps;
+
+const canonicalFromParam = getCanonicalSlug(slug, lang);
+const canonicalRouteSlug = (canonicalFromParam || canonicalSlug) as SpecCalculatorSlug;
+const routeDef = ALIAS_DEFINITIONS[canonicalRouteSlug];
+
+if (!routeDef) {
+  throw new Error(`Unknown localized calculator slug: ${slug} (${lang})`);
+}
+
+const pagePath = `/${lang}/${localizedSlug}`;
+const description = `Free ${routeDef.title}. Calculate crypto outcomes instantly with transparent assumptions and updated market data.`;
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug={canonicalRouteSlug}
+  title={routeDef.title}
+  description={description}
+  pathOverride={pagePath}
+>
+  {canonicalRouteSlug === 'converter' && <CryptoConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'profit-calculator' && <ProfitCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'mining-calculator' && <MiningCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'dca-calculator' && <DCACalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'tax-calculator' && <TaxCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'what-if' && <WhatIfCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'position-size-calculator' && <PositionSizeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'liquidation-calculator' && <LiquidationCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'funding-rate-calculator' && <FundingRateCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'tp-sl-calculator' && <TpSlCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'margin-calculator' && <MarginCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'pip-calculator' && <PipCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'break-even-calculator' && <BreakEvenCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'risk-reward-calculator' && <RiskRewardCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'staking-calculator' && <StakingRewardsCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'impermanent-loss-calculator' && <ImpermanentLossCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'apy-apr-calculator' && <ApyAprCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'yield-farming-calculator' && <YieldFarmingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'gas-calculator' && <GasFeeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'uniswap-calculator' && <UniswapCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'bridge-comparator' && <BridgeComparator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'lending-calculator' && <LendingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'gpu-mining-calculator' && <GpuMiningCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'asic-mining-calculator' && <AsicMiningCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'mining-roi-calculator' && <MiningRoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'electricity-cost-calculator' && <ElectricityCostCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'difficulty-calculator' && <DifficultyEstimatorCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'hashrate-converter' && <HashrateConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'market-cap-calculator' && <MarketCapCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'market-cap-comparator' && <MarketCapComparator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'roi-calculator' && <RoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'reverse-roi' && <ReverseRoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'hodl-vs-trade' && <HodlVsTradeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'rebalancing-calculator' && <RebalancingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'compound-calculator' && <CompoundInterestCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'ico-roi-calculator' && <IcoRoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'airdrop-calculator' && <AirdropCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'satoshi-converter' && <SatoshiConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'gwei-converter' && <GweiConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'timestamp-converter' && <TimestampConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'unit-converter' && <CryptoUnitConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'exchange-fees' && <ExchangeFeeComparator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'crypto-loan-calculator' && <LoanCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'vesting-calculator' && <VestingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'nft-profit-calculator' && <NftProfitCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'halving-calculator' && <HalvingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'mev-calculator' && <MevProtectionCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'gamefi-calculator' && <GamefiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'node-calculator' && <NodeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'salary-calculator' && <CryptoSalaryCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'inflation-hedge' && <InflationHedgeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+</LocalizedCalculatorPage>

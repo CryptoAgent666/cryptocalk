@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import DrawdownCalculator from '../components/DrawdownCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="drawdown-calculator"
+  title="Drawdown Recovery Calculator"
+  description="Measure portfolio drawdown, required recovery gain, and estimated recovery time based on expected monthly return."
+>
+  <DrawdownCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

@@ -1,0 +1,182 @@
+---
+import { SUPPORTED_LANGS, DEFAULT_LANG, getLocalizedPath, getPathWithoutLang, type Lang } from '../i18n/utils';
+import CookieBanner from '../components/CookieBanner.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  lang?: Lang;
+  noindex?: boolean;
+  canonical?: string;
+}
+
+const {
+  title = 'CryptoCalk — Free Crypto Calculators',
+  description = 'Free online cryptocurrency calculators: profit, mining, DCA, tax, staking, and more. Fast, accurate, no signup required.',
+  lang = DEFAULT_LANG,
+  noindex = false,
+  canonical,
+} = Astro.props;
+
+const basePath = canonical
+  ? getPathWithoutLang(canonical)
+  : getPathWithoutLang(Astro.url.pathname);
+const canonicalPath = getLocalizedPath(basePath, lang);
+const canonicalUrl = `https://cryptocalk.com${canonicalPath}`;
+
+function normalizePath(pathname: string): string {
+  const cleaned = pathname.trim();
+  if (!cleaned) return '/';
+  const withLeadingSlash = cleaned.startsWith('/') ? cleaned : `/${cleaned}`;
+  const collapsed = withLeadingSlash.replace(/\/+/g, '/');
+  if (collapsed.length > 1 && collapsed.endsWith('/')) {
+    return collapsed.slice(0, -1);
+  }
+  return collapsed;
+}
+
+const isCanonicalPath = normalizePath(Astro.url.pathname) === normalizePath(canonicalPath);
+const shouldNoindex = noindex || !isCanonicalPath;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    {shouldNoindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- hreflang tags -->
+    {SUPPORTED_LANGS.map((l) => (
+      <link
+        rel="alternate"
+        hreflang={l}
+        href={`https://cryptocalk.com${getLocalizedPath(basePath, l)}`}
+      />
+    ))}
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={`https://cryptocalk.com${getLocalizedPath(basePath, DEFAULT_LANG)}`}
+    />
+
+    <!-- OG Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content="https://cryptocalk.com/og-default.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="CryptoCalk" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://cryptocalk.com/og-default.svg" />
+
+    <!-- Theme initialization (prevent FOUC) -->
+    <script is:inline>
+      (function() {
+        const stored = localStorage.getItem('theme');
+        const theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
+    <script>
+      import { installCoinGeckoFetchInterceptor } from '../utils/coingecko-fetch-client';
+
+      installCoinGeckoFetchInterceptor();
+    </script>
+  </head>
+  <body>
+    <slot />
+    <CookieBanner />
+    <script is:inline>
+      (() => {
+        const MOBILE_QUERY = '(max-width: 768px)';
+        const TOGGLE_SHOW = 'Read full guide';
+        const TOGGLE_HIDE = 'Hide full guide';
+
+        const isMobile = () => window.matchMedia(MOBILE_QUERY).matches;
+
+        const markCalculatorContext = () => {
+          const hasCalculator = Boolean(document.querySelector('main .calculator-section'));
+          document.body.classList.toggle('calc-mobile-ux', hasCalculator);
+        };
+
+        const enhanceSeoSections = () => {
+          if (!isMobile()) return;
+
+          document.querySelectorAll('section.seo-content').forEach((section) => {
+            if (section.getAttribute('data-mobile-collapsed') === 'true') return;
+
+            const container = section.querySelector('.section-container');
+            if (!container || container.children.length < 3) return;
+
+            const collapsible = document.createElement('div');
+            collapsible.className = 'seo-mobile-collapsible';
+
+            while (container.firstChild) {
+              collapsible.appendChild(container.firstChild);
+            }
+
+            const toggle = document.createElement('button');
+            toggle.type = 'button';
+            toggle.className = 'seo-mobile-toggle';
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.textContent = TOGGLE_SHOW;
+
+            const setExpanded = (expanded) => {
+              container.setAttribute('data-expanded', expanded ? 'true' : 'false');
+              toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+              toggle.textContent = expanded ? TOGGLE_HIDE : TOGGLE_SHOW;
+            };
+
+            toggle.addEventListener('click', () => {
+              const expanded = container.getAttribute('data-expanded') === 'true';
+              setExpanded(!expanded);
+            });
+
+            setExpanded(false);
+            container.append(toggle, collapsible);
+            section.setAttribute('data-mobile-collapsed', 'true');
+          });
+        };
+
+        const init = () => {
+          markCalculatorContext();
+          enhanceSeoSections();
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init, { once: true });
+        } else {
+          init();
+        }
+
+        document.addEventListener('astro:after-swap', init);
+      })();
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

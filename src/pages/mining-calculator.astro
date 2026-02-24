@@ -1,0 +1,861 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import MiningCalculator from '../components/MiningCalculator.tsx';
+import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
+---
+
+<Layout
+  title="Bitcoin Mining Calculator — Profitability & ROI Estimator | CryptoCalk"
+  description="Free Bitcoin mining profitability calculator. Enter your hashrate, power consumption, and electricity cost to estimate daily, monthly, and yearly BTC mining revenue. ASIC presets included."
+  lang="en"
+>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/mining-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/mining-calculator" aria-current="page">Mining Calculator</a>
+      </div>
+    </nav>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Bitcoin Mining Calculator</h1>
+          <p>Estimate your mining profitability with real-time BTC prices. Select an ASIC miner or enter custom specs.</p>
+        </div>
+
+        <MiningCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Mining Calculator</h2>
+        <ol>
+          <li><strong>Select your ASIC miner</strong> from the dropdown (e.g., Antminer S21, Whatsminer M60S), or choose "Custom" to enter your own hashrate and power consumption.</li>
+          <li><strong>Enter your electricity cost</strong> in dollars per kilowatt-hour ($/kWh). This varies by location — check your utility bill or see the table below for regional averages.</li>
+          <li><strong>Set the pool fee</strong> percentage. Most mining pools charge 1-2%, though some offer 0% promotional periods.</li>
+          <li><strong>Enter your hardware cost</strong> (optional) to see break-even estimates. This helps you understand how long it will take to recover your initial investment.</li>
+          <li><strong>Review your results</strong> in the table, which shows daily, weekly, monthly, and yearly estimates for BTC mined, revenue, electricity costs, and net profit.</li>
+          <li><strong>Monitor changes</strong> — Bitcoin's price, network difficulty, and hashrate fluctuate constantly. Re-run calculations weekly to stay informed.</li>
+        </ol>
+
+        <h2>How Bitcoin Mining Profitability Works</h2>
+        <p>Bitcoin mining profitability depends on several key factors: your hardware's hashrate, electricity costs, pool fees, and the current network conditions (difficulty, block reward, BTC price). Our calculator uses real-time data to give you accurate estimates.</p>
+        <p>Miners compete to solve complex mathematical puzzles, and the first to find a valid solution earns the block reward plus transaction fees. The probability of solving a block is proportional to your hashrate relative to the total network hashrate. With current network difficulty exceeding 100 trillion, solo mining with a single ASIC has virtually no chance of finding a block — which is why mining pools exist.</p>
+        <p>Profitability is measured as net profit after electricity costs. A miner consuming 3,500W at $0.12/kWh costs $10.08 per day to run. If that miner earns $12 per day in BTC, the net profit is $1.92/day. However, if electricity costs rise to $0.20/kWh, daily costs jump to $16.80, resulting in a loss of $4.80/day. Location matters tremendously.</p>
+
+        <h2>Key Factors Affecting Mining Profitability</h2>
+        <ul class="seo-list">
+          <li><strong>Hashrate (TH/s)</strong> — the mining power of your hardware. Higher hashrate = more BTC mined per day.</li>
+          <li><strong>Power Consumption (Watts)</strong> — how much electricity your miner uses. This is your biggest ongoing cost.</li>
+          <li><strong>Electricity Cost ($/kWh)</strong> — varies by region. Average US rate is ~$0.12/kWh, but mining-friendly locations can be as low as $0.03-0.05/kWh.</li>
+          <li><strong>Pool Fee (%)</strong> — most mining pools charge 1-3% of your rewards. Solo mining is possible but impractical for most miners.</li>
+          <li><strong>Network Difficulty</strong> — adjusts every ~2 weeks. Higher difficulty means less BTC per hash.</li>
+        </ul>
+
+        <h2>Mining Revenue Formula</h2>
+        <div class="formula-block">
+          <code>Daily BTC = (Hashrate × 10¹² × 86,400 × Block Reward) ÷ (Difficulty × 2³²)</code>
+        </div>
+        <p>After the April 2024 halving, the block reward is <strong>3.125 BTC</strong>. The next halving is expected around 2028, which will further reduce the reward to 1.5625 BTC.</p>
+
+        <h2>Popular ASIC Miners (2024-2025)</h2>
+        <div class="asic-table-wrap">
+          <table class="asic-table">
+            <thead>
+              <tr><th>Miner</th><th>Hashrate</th><th>Power</th><th>Efficiency</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Antminer S21 Hyd</td><td>335 TH/s</td><td>5,360W</td><td>16.0 J/TH</td><td>~$5,200</td></tr>
+              <tr><td>Antminer S21 XP</td><td>270 TH/s</td><td>3,645W</td><td>13.5 J/TH</td><td>~$4,800</td></tr>
+              <tr><td>Antminer S21</td><td>200 TH/s</td><td>3,500W</td><td>17.5 J/TH</td><td>~$3,500</td></tr>
+              <tr><td>Whatsminer M60S</td><td>186 TH/s</td><td>3,344W</td><td>18.0 J/TH</td><td>~$3,200</td></tr>
+              <tr><td>Whatsminer M56S++</td><td>230 TH/s</td><td>5,290W</td><td>23.0 J/TH</td><td>~$4,500</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Electricity Costs Around the World</h2>
+        <p>Electricity is the single largest ongoing expense for Bitcoin miners. Access to cheap, reliable power is what separates profitable operations from unprofitable ones. Here's how costs vary globally:</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Region</th><th>Avg $/kWh</th><th>Mining Friendly?</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>USA (Texas)</td><td>$0.05-0.08</td><td>Yes</td></tr>
+              <tr><td>USA (Average)</td><td>$0.12</td><td>Moderate</td></tr>
+              <tr><td>Europe (Average)</td><td>$0.20-0.35</td><td>No</td></tr>
+              <tr><td>China (Sichuan)</td><td>$0.03-0.04</td><td>Restricted</td></tr>
+              <tr><td>Kazakhstan</td><td>$0.03-0.05</td><td>Yes</td></tr>
+              <tr><td>Iceland</td><td>$0.04-0.06</td><td>Yes</td></tr>
+              <tr><td>UAE</td><td>$0.08-0.10</td><td>Yes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Industrial miners often negotiate rates below $0.05/kWh through direct agreements with power plants, renewable energy sources, or by locating in regions with excess generation capacity. Texas, Kazakhstan, and parts of the Middle East have become mining hotspots due to favorable energy markets. Conversely, Europe's high electricity costs make small-scale mining nearly impossible without access to subsidized or renewable power.</p>
+
+        <h2>Understanding Bitcoin Halvings</h2>
+        <p>Bitcoin's monetary policy includes a halving event approximately every four years (every 210,000 blocks). During a halving, the block reward paid to miners is cut in half. This mechanism ensures Bitcoin's supply remains capped at 21 million coins and makes the asset deflationary over time.</p>
+        <p>For miners, halvings are both predictable and disruptive. When the reward drops by 50%, revenue is immediately halved (assuming constant BTC price and difficulty). Inefficient miners are forced offline, difficulty decreases slightly, and the network stabilizes at a new equilibrium. Historically, Bitcoin's price has risen following halvings, but this is never guaranteed.</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Year</th><th>Block Reward (BTC)</th><th>Event</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2009</td><td>50.00</td><td>Genesis Block</td></tr>
+              <tr><td>2012</td><td>25.00</td><td>1st Halving</td></tr>
+              <tr><td>2016</td><td>12.50</td><td>2nd Halving</td></tr>
+              <tr><td>2020</td><td>6.25</td><td>3rd Halving</td></tr>
+              <tr><td>2024</td><td>3.125</td><td>4th Halving</td></tr>
+              <tr><td>2028 (est.)</td><td>1.5625</td><td>5th Halving</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Miners must plan for halvings by upgrading to more efficient hardware, securing cheaper electricity, or scaling operations. The 2024 halving eliminated many older-generation ASICs (like the S19 series) from profitability at average electricity rates. Only the most efficient miners (S21, M60S) remain competitive.</p>
+
+        <h2>Mining Pool vs Solo Mining</h2>
+        <p>Solo mining means operating independently and keeping 100% of block rewards if you find a block. However, with current network difficulty, even a 200 TH/s miner has less than a 0.01% chance of finding a block per year. Most miners would go months or years without earning anything, making solo mining economically unviable for individuals.</p>
+        <p>Mining pools solve this problem by combining hashrate from thousands of miners. When the pool finds a block, the reward is distributed proportionally based on each miner's contributed work. This creates predictable, steady income rather than rare, massive payouts.</p>
+        <p>Pools use different reward distribution methods:</p>
+        <ul class="seo-list">
+          <li><strong>PPS (Pay Per Share)</strong> — you're paid a fixed amount for each share submitted, regardless of whether the pool finds a block. Lowest variance, but pools charge higher fees (2-3%).</li>
+          <li><strong>PPLNS (Pay Per Last N Shares)</strong> — rewards are distributed only when the pool finds a block, based on shares submitted in the recent window. Lower fees (1-2%) but slightly more variance.</li>
+          <li><strong>FPPS (Full Pay Per Share)</strong> — like PPS, but includes transaction fees in addition to the block reward.</li>
+        </ul>
+        <p>Popular pools include Foundry USA, F2Pool, Antpool, and ViaBTC. Most charge 1-2% fees and pay out daily or weekly once you reach the minimum threshold (typically 0.001-0.01 BTC).</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>Is Bitcoin mining still profitable in 2025?</summary>
+          <p>It depends on your electricity cost and hardware efficiency. With modern ASIC miners (like the Antminer S21) and electricity below $0.08/kWh, mining can still be profitable. However, the 2024 halving reduced rewards by 50%, making efficiency more important than ever.</p>
+        </details>
+        <details>
+          <summary>What is the most efficient Bitcoin miner?</summary>
+          <p>The Antminer S21 XP is one of the most efficient miners at 13.5 J/TH. The S21 Hydro offers higher hashrate (335 TH/s) but consumes more power. Efficiency (J/TH) is the key metric — lower is better.</p>
+        </details>
+        <details>
+          <summary>How does network difficulty affect my profits?</summary>
+          <p>As more miners join the network, difficulty increases, meaning each miner earns less BTC. Difficulty adjusts approximately every 2 weeks (2,016 blocks). This calculator uses the current difficulty, but actual earnings will fluctuate.</p>
+        </details>
+        <details>
+          <summary>Should I join a mining pool?</summary>
+          <p>Yes. Solo mining with a single ASIC is extremely unlikely to find a block. Mining pools combine hashrate and distribute rewards proportionally. Popular pools include F2Pool, Foundry USA, and Antpool, with fees typically 1-2%.</p>
+        </details>
+        <details>
+          <summary>What about the break-even calculation?</summary>
+          <p>The break-even time estimates how long until your daily net profits cover the initial hardware cost. It assumes constant difficulty and BTC price, so treat it as an approximate guide — not a guarantee.</p>
+        </details>
+        <details>
+          <summary>What happens after all 21 million Bitcoin are mined?</summary>
+          <p>Once the final Bitcoin is mined (estimated around the year 2140), miners will no longer receive block rewards. Instead, they will earn income exclusively from transaction fees. By that time, Bitcoin's adoption and transaction volume are expected to be high enough to sustain miner profitability through fees alone.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <p>Explore more crypto calculators to optimize your investment and trading strategies:</p>
+        <ul class="seo-list">
+          <li><a href="/profit-calculator"><strong>Profit Calculator</strong></a> — calculate gains/losses from buying and selling Bitcoin or altcoins.</li>
+          <li><a href="/break-even-calculator"><strong>Break-Even Calculator</strong></a> — determine the price you need to sell at to recover your investment.</li>
+          <li><a href="/compound-calculator"><strong>Compound Interest Calculator</strong></a> — see how regular DCA or staking rewards grow over time.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. For informational purposes only — not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* ===== Header ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-header);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+  .header-link:hover { color: var(--color-text); }
+
+  /* ===== Breadcrumb ===== */
+  .breadcrumb {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .breadcrumb .section-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+  .breadcrumb a[aria-current] {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ===== Layout ===== */
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .calculator-section {
+    padding: 40px 0 60px;
+  }
+  .calc-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .calc-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+  .calc-header p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+  }
+
+  /* ===== SEO Content ===== */
+  .seo-content {
+    padding: 60px 0;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+  }
+  .seo-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .seo-content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 32px 0 12px;
+  }
+  .seo-content p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+  .seo-list {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    padding-left: 20px;
+    max-width: 720px;
+    margin-bottom: 16px;
+  }
+  .seo-list li {
+    margin-bottom: 6px;
+  }
+  .formula-block {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 12px 0 16px;
+    max-width: 600px;
+  }
+  .formula-block code {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+  }
+  .asic-table-wrap {
+    overflow-x: auto;
+    margin: 12px 0 24px;
+    max-width: 720px;
+  }
+  .asic-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .asic-table th, .asic-table td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .asic-table th {
+    font-weight: 700;
+    color: var(--color-text);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .asic-table td {
+    color: var(--color-text-secondary);
+  }
+  .seo-content details {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    max-width: 720px;
+    cursor: pointer;
+  }
+  .seo-content summary {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .seo-content details p {
+    margin-top: 12px;
+  }
+
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content ol { padding-left: 24px; margin-bottom: 16px; max-width: 720px; }
+  .seo-content ol li { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 8px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content strong { color: var(--color-text); }
+  .table-responsive { overflow-x: auto; margin: 16px 0; max-width: 720px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+
+  /* ===== Footer ===== */
+  .site-footer {
+    padding: 24px 0;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+</style>
+
+<style is:global>
+  /* ===== Mining Calculator Styles ===== */
+  .mining-wrapper {
+    width: 100%;
+  }
+
+  .mining-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .mining-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Input Panel */
+  .mining-input-panel {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .input-group {
+    margin-bottom: 16px;
+  }
+
+  .input-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+
+  .select-wrap {
+    position: relative;
+  }
+
+  .input-select {
+    width: 100%;
+    padding: 10px 36px 10px 14px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    transition: border-color 0.2s;
+  }
+
+  .input-select:focus {
+    border-color: var(--color-primary);
+  }
+
+  .select-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+  }
+
+  .input-with-unit {
+    display: flex;
+    align-items: center;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .input-with-unit:focus-within {
+    border-color: var(--color-primary);
+  }
+
+  .input-with-unit input {
+    flex: 1;
+    padding: 10px 12px;
+    border: none;
+    background: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    min-width: 0;
+  }
+
+  .input-prefix {
+    padding: 0 0 0 12px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .input-unit {
+    padding: 0 12px;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .reset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+
+  .reset-btn:hover {
+    border-color: var(--color-accent-red);
+    color: var(--color-accent-red);
+  }
+
+  /* Results Panel */
+  .mining-results-panel {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .mining-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  .mining-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+  }
+  .mining-empty h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 16px 0 8px;
+  }
+  .mining-empty p {
+    font-size: 0.85rem;
+  }
+
+  /* Network Info */
+  .network-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .network-item {
+    background: var(--color-bg);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    text-align: center;
+  }
+
+  .network-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .network-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  /* Mining Hero */
+  .mining-hero {
+    text-align: center;
+    padding: 24px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+  }
+
+  .mining-hero.profit {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .mining-hero.loss {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02));
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+
+  .mining-hero-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+  }
+
+  .mining-hero-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .mining-hero.profit .mining-hero-value {
+    color: var(--color-accent-green);
+  }
+
+  .mining-hero.loss .mining-hero-value {
+    color: var(--color-accent-red);
+  }
+
+  .mining-hero-neg {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .mining-hero-sub {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Mining Table */
+  .mining-table-wrap {
+    overflow-x: auto;
+    margin-bottom: 16px;
+  }
+
+  .mining-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .mining-table th {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .mining-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+  }
+
+  .period-cell {
+    font-weight: 600;
+    color: var(--color-text) !important;
+  }
+
+  .btc-cell {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.78rem;
+  }
+
+  .cost-cell {
+    color: var(--color-accent-red) !important;
+  }
+
+  .profit-cell {
+    color: var(--color-accent-green) !important;
+    font-weight: 600;
+  }
+
+  .loss-cell {
+    color: var(--color-accent-red) !important;
+    font-weight: 600;
+  }
+
+  /* Break Even */
+  .break-even-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 16px;
+  }
+
+  .break-even-never {
+    color: var(--color-accent-red);
+  }
+
+  /* CTA */
+  .mining-cta {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .mining-cta:hover {
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+
+  .calc-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  .spin-icon {
+    animation: spin 1s linear infinite;
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bitcoin Mining Calculator",
+  "url": "https://cryptocalk.com/mining-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free Bitcoin mining profitability calculator. Enter your hashrate, power consumption, and electricity cost to estimate daily, monthly, and yearly BTC mining revenue."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Bitcoin mining still profitable in 2025?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your electricity cost and hardware efficiency. With modern ASIC miners and electricity below $0.08/kWh, mining can still be profitable. However, the 2024 halving reduced rewards by 50%, making efficiency more important than ever."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most efficient Bitcoin miner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Antminer S21 XP is one of the most efficient miners at 13.5 J/TH. Efficiency (J/TH) is the key metric — lower is better."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does network difficulty affect my profits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As more miners join the network, difficulty increases, meaning each miner earns less BTC. Difficulty adjusts approximately every 2 weeks (2,016 blocks)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I join a mining pool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Solo mining with a single ASIC is extremely unlikely to find a block. Mining pools combine hashrate and distribute rewards proportionally, with fees typically 1-2%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about the break-even calculation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The break-even time estimates how long until your daily net profits cover the initial hardware cost. It assumes constant difficulty and BTC price, so treat it as an approximate guide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after all 21 million Bitcoin are mined?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Once the final Bitcoin is mined (estimated around the year 2140), miners will no longer receive block rewards. Instead, they will earn income exclusively from transaction fees. By that time, Bitcoin's adoption and transaction volume are expected to be high enough to sustain miner profitability through fees alone."
+      }
+    }
+  ]
+}
+</script>

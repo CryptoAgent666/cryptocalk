@@ -1,0 +1,20 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import CalmarCalculator from '../../components/CalmarCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="calmar-calculator"
+  title="Calmar Ratio Calculator"
+  description="Calculate Calmar ratio from annual return and maximum drawdown to compare return efficiency per drawdown risk."
+>
+  <CalmarCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>

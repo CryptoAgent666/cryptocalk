@@ -1,0 +1,957 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import DCACalculator from '../components/DCACalculator.tsx';
+import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
+---
+
+<Layout
+  title="DCA Calculator — Dollar Cost Averaging Crypto Simulator | CryptoCalk"
+  description="Free DCA calculator for Bitcoin, Ethereum, and 500+ cryptocurrencies. Simulate dollar-cost averaging strategies with historical data. Compare DCA vs lump sum investing."
+  lang="en"
+>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/dca-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/dca-calculator" aria-current="page">DCA Calculator</a>
+      </div>
+    </nav>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>DCA Calculator</h1>
+          <p>Simulate dollar-cost averaging into any cryptocurrency. See how regular purchases would have performed over time.</p>
+        </div>
+
+        <DCACalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the DCA Calculator</h2>
+        <ol>
+          <li><strong>Select a cryptocurrency</strong> — Choose from Bitcoin, Ethereum, or 500+ altcoins using the search dropdown</li>
+          <li><strong>Set your start date</strong> — Pick when you would have begun investing (historical data goes back several years)</li>
+          <li><strong>Choose purchase frequency</strong> — Daily, weekly, bi-weekly, or monthly intervals</li>
+          <li><strong>Enter your investment amount</strong> — How much you invest per purchase (or use quick amounts)</li>
+          <li><strong>Review results</strong> — See total invested, current value, ROI, average price, and performance vs lump sum</li>
+          <li><strong>Analyze the chart</strong> — Track your portfolio value over time compared to total invested</li>
+        </ol>
+
+        <h2>What Is Dollar Cost Averaging (DCA)?</h2>
+        <p>Dollar-cost averaging (DCA) is an investment strategy where you invest a fixed amount of money at regular intervals, regardless of the asset's price. Instead of trying to time the market, you buy consistently — whether prices are high or low.</p>
+        <p>This strategy reduces the impact of volatility and removes emotional decision-making from investing. It's especially popular in crypto, where price swings can be extreme. By spreading purchases over time, you avoid the risk of investing all your capital at a market peak.</p>
+
+        <h2>How DCA Works in Crypto</h2>
+        <ul class="seo-list">
+          <li><strong>Choose your amount</strong> — e.g., $100 per month</li>
+          <li><strong>Set a schedule</strong> — daily, weekly, bi-weekly, or monthly</li>
+          <li><strong>Buy automatically</strong> — most exchanges support recurring purchases</li>
+          <li><strong>Stay consistent</strong> — the key benefit comes from long-term discipline</li>
+        </ul>
+
+        <h2>DCA vs Lump Sum Investing</h2>
+        <p>Research shows that lump sum investing often outperforms DCA in traditionally rising markets. However, DCA has key advantages in volatile markets like crypto:</p>
+        <ul class="seo-list">
+          <li><strong>Lower risk</strong> — you avoid investing all your money at a market peak</li>
+          <li><strong>Reduced stress</strong> — no need to time the market</li>
+          <li><strong>Consistent habit</strong> — builds a disciplined investment routine</li>
+          <li><strong>Dollar-cost benefit</strong> — you buy more coins when prices are low, fewer when prices are high</li>
+        </ul>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Aspect</th>
+                <th>DCA</th>
+                <th>Lump Sum</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Timing risk</strong></td>
+                <td>Low</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td><strong>Emotional difficulty</strong></td>
+                <td>Low</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td><strong>Average performance</strong></td>
+                <td>Slightly lower</td>
+                <td>Slightly higher</td>
+              </tr>
+              <tr>
+                <td><strong>Bear market performance</strong></td>
+                <td>Better</td>
+                <td>Worse</td>
+              </tr>
+              <tr>
+                <td><strong>Best for</strong></td>
+                <td>Regular income, volatile assets</td>
+                <td>Windfalls, trending markets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>DCA Formula</h2>
+        <p>Understanding the math behind DCA helps you evaluate your strategy. Here are the core formulas:</p>
+        <div class="formula-block">
+          <code>Total Coins = Σ (Purchase Amount ÷ Price at Each Purchase Date)</code>
+          <br />
+          <code>Average Price = Total Invested ÷ Total Coins</code>
+          <br />
+          <code>ROI = ((Current Value − Total Invested) ÷ Total Invested) × 100</code>
+        </div>
+
+        <h2>The Psychology of DCA</h2>
+        <p>DCA succeeds not just because of the math, but because of human psychology. The strategy works with human nature instead of against it.</p>
+        <p><strong>Removes decision fatigue:</strong> You don't need to analyze charts, read news, or make judgment calls. The decision is already made — you buy on schedule, every time.</p>
+        <p><strong>Avoids regret:</strong> Because you're spreading purchases over time, you never have to worry about "I should have waited" or "I bought at the top." Some purchases will be high, some will be low — and that's the point.</p>
+        <p><strong>Builds discipline:</strong> DCA creates a consistent investing habit that compounds over time. The ritual of regular purchases keeps you engaged with your portfolio without obsessing over daily price movements.</p>
+
+        <h2>How to Automate DCA</h2>
+        <p>Most cryptocurrency exchanges now offer automated recurring purchase features, making DCA effortless. You set your parameters once, and the exchange executes purchases on your behalf.</p>
+        <p>Popular platforms with auto-DCA include Coinbase (Recurring Buy), Binance (Auto-Invest), Kraken (Buy Crypto), Gemini (Recurring Buy), and Cash App (Auto-Invest for Bitcoin). These tools let you choose your cryptocurrency, purchase amount, and frequency — then handle everything automatically.</p>
+        <p>When setting up automation, consider exchange fees, minimum purchase amounts, and whether the platform supports your preferred coins. Some platforms offer fee discounts for recurring purchases or higher-tier accounts.</p>
+
+        <h2>Common DCA Mistakes</h2>
+        <p>Even with a simple strategy like DCA, there are pitfalls to avoid:</p>
+        <ul class="seo-list">
+          <li><strong>Stopping during dips:</strong> The worst time to stop DCA is during a bear market. Lower prices mean you're accumulating more coins — exactly when the strategy provides the most benefit.</li>
+          <li><strong>DCA into bad projects:</strong> DCA doesn't fix a fundamentally flawed investment. Apply the strategy to established cryptocurrencies with long-term potential, not speculative meme coins.</li>
+          <li><strong>Not rebalancing:</strong> If you DCA into multiple assets, periodically review your portfolio allocation. Market movements can shift your target percentages over time.</li>
+          <li><strong>Using only one asset:</strong> While Bitcoin-only DCA is popular, diversifying across 2-3 quality projects can reduce concentration risk.</li>
+          <li><strong>Ignoring fees:</strong> Small recurring purchases can be eaten by fees. Calculate whether daily purchases make sense compared to weekly or monthly.</li>
+          <li><strong>Never taking profits:</strong> DCA is great for accumulation, but consider having an exit strategy or taking partial profits during strong bull markets.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>Is DCA a good strategy for Bitcoin?</summary>
+          <p>Historically, yes. Bitcoin DCA over any 3+ year period has been profitable for investors. The key advantage is that you don't need to worry about buying at the "right" time — consistent investing smooths out volatility.</p>
+        </details>
+        <details>
+          <summary>How often should I DCA into crypto?</summary>
+          <p>The most popular frequencies are weekly and monthly. Weekly DCA provides slightly better averaging in volatile markets, but monthly is simpler to manage. The difference in returns is usually small — consistency matters more than frequency.</p>
+        </details>
+        <details>
+          <summary>Can I automate DCA?</summary>
+          <p>Yes! Most major exchanges support recurring purchases. Coinbase, Binance, Kraken, and others offer automated buy schedules. You set the amount, frequency, and cryptocurrency — and the exchange handles the rest.</p>
+        </details>
+        <details>
+          <summary>What's the minimum amount for DCA?</summary>
+          <p>Most exchanges allow purchases as low as $1-10. Even small amounts like $25/week ($100/month) can build a meaningful portfolio over time through the power of consistent investing.</p>
+        </details>
+        <details>
+          <summary>Does DCA work in bear markets?</summary>
+          <p>DCA actually shines in bear markets. You're buying more coins at lower prices, which significantly reduces your average cost basis. When the market eventually recovers, your portfolio benefits from all those low-price purchases.</p>
+        </details>
+        <details>
+          <summary>Should I DCA into altcoins or just Bitcoin?</summary>
+          <p>Bitcoin is the most popular DCA choice due to its track record and lower volatility compared to altcoins. However, DCA into established altcoins like Ethereum can work if you believe in the project's long-term fundamentals. Avoid DCA into highly speculative or low-cap altcoins — the strategy works best with assets that have staying power.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul class="seo-list">
+          <li><a href="/compound-calculator"><strong>Compound Interest Calculator</strong></a> — Calculate how crypto holdings grow with reinvested returns</li>
+          <li><a href="/profit-calculator"><strong>Profit Calculator</strong></a> — Determine profit/loss for any crypto trade or investment</li>
+          <li><a href="/what-if"><strong>What If Calculator</strong></a> — Explore historical "what if" scenarios for crypto investments</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. For informational purposes only — not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* ===== Header ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-header);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+  .header-link:hover { color: var(--color-text); }
+
+  /* ===== Breadcrumb ===== */
+  .breadcrumb {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .breadcrumb .section-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+  .breadcrumb a[aria-current] {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ===== Layout ===== */
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .calculator-section {
+    padding: 40px 0 60px;
+  }
+  .calc-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .calc-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+  .calc-header p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+  }
+
+  /* ===== SEO Content ===== */
+  .seo-content {
+    padding: 60px 0;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+  }
+  .seo-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .seo-content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 32px 0 12px;
+  }
+  .seo-content p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+  .seo-list {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    padding-left: 20px;
+    max-width: 720px;
+    margin-bottom: 16px;
+  }
+  .seo-list li {
+    margin-bottom: 6px;
+  }
+  .formula-block {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 12px 0 16px;
+    max-width: 600px;
+  }
+  .formula-block code {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+  }
+  .seo-content details {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    max-width: 720px;
+    cursor: pointer;
+  }
+  .seo-content summary {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .seo-content details p {
+    margin-top: 12px;
+  }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content ol { padding-left: 24px; margin-bottom: 16px; max-width: 720px; }
+  .seo-content ol li { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 8px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content strong { color: var(--color-text); }
+  .table-responsive { overflow-x: auto; margin: 16px 0; max-width: 720px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+
+  /* ===== Footer ===== */
+  .site-footer {
+    padding: 24px 0;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+</style>
+
+<style is:global>
+  /* ===== DCA Calculator Styles ===== */
+  .dca-wrapper {
+    width: 100%;
+  }
+
+  .dca-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .dca-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Input Panel */
+  .dca-input-panel {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .selected-coin {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+
+  .selected-coin:hover {
+    border-color: var(--color-primary);
+  }
+
+  .coin-symbol {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+
+  .coin-name {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    flex: 1;
+  }
+
+  .coin-clear {
+    color: var(--color-text-muted);
+    cursor: pointer;
+  }
+
+  .search-input-wrap {
+    position: relative;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-input:focus {
+    border-color: var(--color-primary);
+  }
+
+  .suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    margin-top: 4px;
+    z-index: 50;
+    max-height: 240px;
+    overflow-y: auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .suggestion-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .suggestion-item:hover {
+    background: var(--color-bg);
+  }
+
+  .suggestion-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  .suggestion-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text);
+    flex: 1;
+  }
+
+  .suggestion-symbol {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
+
+  .suggestion-empty {
+    padding: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .input-date {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .input-date:focus {
+    border-color: var(--color-primary);
+  }
+
+  /* Frequency Pills */
+  .freq-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .freq-pill {
+    padding: 8px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+
+  .freq-pill:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .freq-pill.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+
+  /* Quick Amounts */
+  .quick-amounts {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .quick-amount {
+    padding: 6px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+
+  .quick-amount:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .quick-amount.active {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.05);
+  }
+
+  /* Calculate Button */
+  .calculate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .calculate-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+
+  .calculate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* Results Panel */
+  .dca-results-panel {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .dca-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+  }
+  .dca-empty h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 16px 0 8px;
+  }
+  .dca-empty p {
+    font-size: 0.85rem;
+  }
+
+  .dca-error {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--color-accent-red);
+    font-size: 0.9rem;
+  }
+
+  /* Hero */
+  .dca-hero {
+    text-align: center;
+    padding: 24px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+  }
+
+  .dca-hero.profit {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .dca-hero.loss {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02));
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+
+  .dca-hero-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+  }
+
+  .dca-hero-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .dca-hero.profit .dca-hero-value {
+    color: var(--color-accent-green);
+  }
+
+  .dca-hero.loss .dca-hero-value {
+    color: var(--color-accent-red);
+  }
+
+  .dca-hero-roi {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .dca-hero-roi.profit {
+    color: var(--color-accent-green);
+  }
+
+  .dca-hero-roi.loss {
+    color: var(--color-accent-red);
+  }
+
+  /* Chart */
+  .dca-chart {
+    margin-bottom: 20px;
+    background: var(--color-bg);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+  }
+
+  .chart-legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 8px;
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 3px;
+    border-radius: 1px;
+  }
+
+  .legend-dot.portfolio {
+    background: #10b981;
+  }
+
+  .legend-dot.invested {
+    background: var(--color-text-muted);
+    border-top: 1px dashed var(--color-text-muted);
+  }
+
+  .dca-chart-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Breakdown */
+  .dca-breakdown {
+    margin-bottom: 20px;
+  }
+
+  .breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.85rem;
+  }
+
+  .breakdown-label {
+    color: var(--color-text-secondary);
+  }
+
+  .breakdown-value {
+    font-weight: 600;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .text-profit {
+    color: var(--color-accent-green) !important;
+  }
+
+  .text-loss {
+    color: var(--color-accent-red) !important;
+  }
+
+  /* DCA vs Lump Sum Comparison */
+  .dca-comparison {
+    margin-bottom: 20px;
+  }
+
+  .comparison-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 10px;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .comparison-card {
+    padding: 14px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    text-align: center;
+  }
+
+  .comparison-card.winner {
+    border-color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.03);
+  }
+
+  .comparison-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+  }
+
+  .comparison-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .comparison-roi {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .comparison-note {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+
+  /* CTA */
+  .dca-cta {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .dca-cta:hover {
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "DCA Calculator",
+  "url": "https://cryptocalk.com/dca-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free DCA calculator for Bitcoin, Ethereum, and 500+ cryptocurrencies. Simulate dollar-cost averaging strategies with historical data."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is DCA a good strategy for crypto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Historically, yes. Bitcoin DCA over any 3+ year period has been profitable for investors. The key advantage is that you don't need to worry about buying at the right time — consistent investing smooths out volatility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I DCA into crypto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most popular frequencies are weekly and monthly. Weekly DCA provides slightly better averaging in volatile markets, but monthly is simpler to manage. Consistency matters more than frequency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I automate DCA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Most major exchanges support recurring purchases. Coinbase, Binance, Kraken, and others offer automated buy schedules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the minimum amount for DCA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most exchanges allow purchases as low as $1-10. Even small amounts like $25/week ($100/month) can build a meaningful portfolio over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does DCA work in bear markets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DCA actually shines in bear markets. You're buying more coins at lower prices, which significantly reduces your average cost basis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I DCA into altcoins or just Bitcoin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bitcoin is the most popular DCA choice due to its track record and lower volatility compared to altcoins. However, DCA into established altcoins like Ethereum can work if you believe in the project's long-term fundamentals. Avoid DCA into highly speculative or low-cap altcoins — the strategy works best with assets that have staying power."
+      }
+    }
+  ]
+}
+</script>

@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import VarCalculator from '../components/VarCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="var-calculator"
+  title="Value at Risk (VaR) Calculator"
+  description="Estimate portfolio downside risk with parametric VaR and expected shortfall (CVaR) across confidence levels."
+>
+  <VarCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

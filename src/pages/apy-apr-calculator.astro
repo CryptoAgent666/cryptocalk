@@ -1,0 +1,321 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import ApyAprCalculator from '../components/ApyAprCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="APY vs APR Calculator — Convert Between APR and APY Instantly | CryptoCalk"
+  description="Free APY vs APR calculator for crypto investors. Convert between APR and APY, compare compounding frequencies, and calculate real earnings on DeFi yields, staking rewards, and savings."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/apy-apr-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/apy-apr-calculator" aria-current="page">APY vs APR Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>APY vs APR Calculator</h1>
+          <p>Convert between APR and APY instantly. Compare how different compounding frequencies affect your real yield on DeFi protocols, staking rewards, and crypto savings accounts.</p>
+        </div>
+        <ApyAprCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the APY vs APR Calculator</h2>
+        <p>Our free APR to APY converter helps crypto investors and DeFi users understand the true yield they earn after compounding. Whether you are comparing lending protocols, staking options, or savings accounts, this tool shows the real numbers behind advertised rates.</p>
+        <ol>
+          <li><strong>Choose your conversion mode</strong> — select "APR to APY" if you have an annual percentage rate and want to see the effective yield, or "APY to APR" if you want to find the nominal rate behind a quoted APY.</li>
+          <li><strong>Enter the rate</strong> — type the advertised interest rate or use the quick preset buttons for common rates (3%, 5%, 8%, 12%, 20%, 50%, 100%).</li>
+          <li><strong>Select compounding frequency</strong> — choose how often interest is compounded: daily, weekly, monthly, quarterly, or yearly. DeFi protocols typically compound daily or per block.</li>
+          <li><strong>Enter your principal</strong> — type the amount you plan to deposit or stake in USD.</li>
+          <li><strong>Set the period</strong> — choose how long you plan to hold the position. Use the preset buttons or enter a custom number of years.</li>
+          <li><strong>Read the results</strong> — see the converted rate, earnings breakdown, compounding frequency comparison table, and monthly or yearly growth projections.</li>
+        </ol>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Two-way conversion</strong> — convert APR to APY or APY to APR with a single toggle.</li>
+          <li><strong>Compounding comparison table</strong> — see how daily, weekly, monthly, quarterly, and yearly compounding affect your yield side by side.</li>
+          <li><strong>Earnings breakdown</strong> — view compounded vs. simple interest earnings and the exact dollar advantage of compounding.</li>
+          <li><strong>Monthly and yearly growth tables</strong> — track how your balance grows over time with detailed period-by-period projections.</li>
+          <li><strong>DeFi-focused presets</strong> — rate presets cover common DeFi yields from conservative 3% to aggressive 100% APR.</li>
+          <li><strong>Instant results</strong> — all calculations update in real time as you adjust inputs.</li>
+        </ul>
+
+        <h2>APR vs APY: What Is the Difference?</h2>
+        <p>APR (Annual Percentage Rate) and APY (Annual Percentage Yield) both express annualized interest rates, but they account for compounding differently. Understanding the distinction is critical for comparing DeFi protocols, staking rewards, and crypto lending platforms accurately.</p>
+        <p><strong>APR</strong> is the simple annual rate without compounding. If a protocol advertises 12% APR, you earn exactly 12% of your principal over one year — but only if interest is paid once at the end. APR does not reflect the benefit of reinvesting earned interest.</p>
+        <p><strong>APY</strong> includes the effect of compounding. When interest is reinvested (compounded), you earn interest on your interest. The more frequently compounding occurs, the higher the effective APY relative to the stated APR. A 12% APR compounded daily produces an APY of approximately 12.7475%, meaning you earn more than the nominal 12%.</p>
+        <p>In DeFi, most protocols quote APY because it reflects what users actually earn. However, some platforms quote APR, especially for lending and borrowing rates. Always check which metric is being used before comparing yields across platforms.</p>
+
+        <h3>APR to APY Formula</h3>
+        <div class="formula-block">
+          <code>APY = (1 + APR / n)^n - 1</code>
+        </div>
+        <p>Where <strong>n</strong> is the number of compounding periods per year. For daily compounding, n = 365. For monthly, n = 12. For quarterly, n = 4.</p>
+        <p>Example: 12% APR compounded daily:</p>
+        <div class="formula-block">
+          <code>APY = (1 + 0.12 / 365)^365 - 1 = 0.127475 = 12.7475%</code>
+        </div>
+
+        <h3>APY to APR Formula</h3>
+        <div class="formula-block">
+          <code>APR = n * ((1 + APY)^(1/n) - 1)</code>
+        </div>
+        <p>This reverse formula lets you find the nominal APR when you know the effective APY and compounding frequency.</p>
+        <p>Example: 12.7475% APY with daily compounding:</p>
+        <div class="formula-block">
+          <code>APR = 365 * ((1 + 0.127475)^(1/365) - 1) = 0.12 = 12.00%</code>
+        </div>
+
+        <h2>How Compounding Frequency Affects Your Yield</h2>
+        <p>The frequency of compounding has a direct impact on how much you earn. More frequent compounding means interest is reinvested sooner, which generates more interest over time. Here is how the same 12% APR translates to different APYs depending on compounding frequency:</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Compounding</th>
+                <th>Periods/Year</th>
+                <th>APY (from 12% APR)</th>
+                <th>Extra Yield</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Yearly</td>
+                <td>1</td>
+                <td>12.0000%</td>
+                <td>+0.0000%</td>
+              </tr>
+              <tr>
+                <td>Quarterly</td>
+                <td>4</td>
+                <td>12.5509%</td>
+                <td>+0.5509%</td>
+              </tr>
+              <tr>
+                <td>Monthly</td>
+                <td>12</td>
+                <td>12.6825%</td>
+                <td>+0.6825%</td>
+              </tr>
+              <tr>
+                <td>Weekly</td>
+                <td>52</td>
+                <td>12.7341%</td>
+                <td>+0.7341%</td>
+              </tr>
+              <tr>
+                <td>Daily</td>
+                <td>365</td>
+                <td>12.7475%</td>
+                <td>+0.7475%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>As you can see, the jump from yearly to quarterly compounding is the most significant. The incremental gains from weekly to daily compounding are smaller, but they still add up over large principal amounts and long time horizons.</p>
+
+        <h2>APR and APY in DeFi and Crypto Staking</h2>
+        <p>DeFi protocols, liquidity pools, and staking platforms use APR and APY in different contexts. Lending protocols like Aave and Compound typically display both metrics. Yield aggregators like Yearn Finance optimize compounding frequency to maximize APY. Staking platforms may quote APR for the base reward rate, with actual APY depending on whether you manually restake or use auto-compounding vaults.</p>
+        <p>When evaluating crypto yield opportunities, always consider: the quoted metric (APR vs APY), the compounding frequency, whether auto-compounding is available, any fees for compounding transactions (gas costs on Ethereum can erode gains from frequent compounding), and the sustainability of the advertised rate.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>Is APY always higher than APR?</summary>
+          <p>Yes, APY is always equal to or higher than APR. They are equal only when compounding happens once per year (n = 1). With any compounding frequency greater than annual, APY will exceed APR because you earn interest on previously earned interest.</p>
+        </details>
+
+        <details>
+          <summary>Which is more accurate for comparing DeFi yields — APR or APY?</summary>
+          <p>APY is more accurate for comparison because it reflects the actual return you receive after compounding. Two protocols with the same APR but different compounding frequencies will produce different APYs. Always compare APY to APY or convert both to the same metric using this calculator.</p>
+        </details>
+
+        <details>
+          <summary>How does compounding frequency affect my earnings?</summary>
+          <p>More frequent compounding means your earned interest is reinvested sooner, generating additional interest. Daily compounding on a 12% APR produces about 0.75% more yield per year than annual compounding. The effect becomes more pronounced with higher rates and longer time periods.</p>
+        </details>
+
+        <details>
+          <summary>Do DeFi protocols really compound daily?</summary>
+          <p>Many DeFi yield aggregators and auto-compounding vaults compound multiple times per day. However, each compounding event requires a blockchain transaction, which has gas costs. On expensive networks like Ethereum, daily compounding may not be cost-effective for small positions. Layer 2 networks and alternative blockchains with lower fees make frequent compounding more practical.</p>
+        </details>
+
+        <details>
+          <summary>Can APY be higher than 100%?</summary>
+          <p>Yes, APY can exceed 100%, especially in DeFi. A 100% APR compounded daily produces an APY of approximately 171.46%. However, extremely high APYs in DeFi often come with significant risks including impermanent loss, smart contract vulnerabilities, and token inflation. Always research the source of yield before depositing funds.</p>
+        </details>
+
+        <details>
+          <summary>How do I convert between APR and APY manually?</summary>
+          <p>To convert APR to APY: APY = (1 + APR/n)^n - 1, where n is the number of compounding periods per year. To convert APY to APR: APR = n * ((1 + APY)^(1/n) - 1). For quick estimation, daily-compounded APY is roughly APR * 1.0618 for rates around 12%.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/compound-calculator">Compound Interest Calculator</a> — project long-term growth with regular contributions and compound interest.</li>
+          <li><a href="/staking-calculator">Staking Rewards Calculator</a> — estimate staking earnings for specific cryptocurrencies with validator fees.</li>
+          <li><a href="/impermanent-loss-calculator">Impermanent Loss Calculator</a> — calculate potential losses from providing liquidity to DeFi pools.</li>
+          <li><a href="/profit-calculator">Crypto Profit Calculator</a> — calculate profit and loss on any crypto trade with fees included.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p, .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content summary:hover { background: var(--color-bg-card-hover); }
+  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
+  .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
+  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "APY vs APR Calculator",
+  "url": "https://cryptocalk.com/apy-apr-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free APY vs APR calculator for crypto investors. Convert between APR and APY, compare compounding frequencies, and calculate real earnings on DeFi yields and staking rewards."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is APY always higher than APR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, APY is always equal to or higher than APR. They are equal only when compounding happens once per year. With any compounding frequency greater than annual, APY will exceed APR because you earn interest on previously earned interest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is more accurate for comparing DeFi yields — APR or APY?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "APY is more accurate for comparison because it reflects the actual return you receive after compounding. Two protocols with the same APR but different compounding frequencies will produce different APYs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does compounding frequency affect my earnings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "More frequent compounding means your earned interest is reinvested sooner, generating additional interest. Daily compounding on a 12% APR produces about 0.75% more yield per year than annual compounding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do DeFi protocols really compound daily?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many DeFi yield aggregators and auto-compounding vaults compound multiple times per day. However, each compounding event requires a blockchain transaction with gas costs. Lower-fee networks make frequent compounding more practical."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can APY be higher than 100%?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, APY can exceed 100%, especially in DeFi. A 100% APR compounded daily produces an APY of approximately 171.46%. However, extremely high APYs often come with significant risks including impermanent loss and smart contract vulnerabilities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert between APR and APY manually?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To convert APR to APY: APY = (1 + APR/n)^n - 1, where n is the number of compounding periods per year. To convert APY to APR: APR = n * ((1 + APY)^(1/n) - 1)."
+      }
+    }
+  ]
+}
+</script>

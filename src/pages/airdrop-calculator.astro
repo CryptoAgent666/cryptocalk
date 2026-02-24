@@ -1,0 +1,354 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import AirdropCalculator from '../components/AirdropCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Airdrop Value Calculator — Token Value & Tax Estimator | CryptoCalk"
+  description="Free airdrop calculator. Calculate the value of received crypto airdrops and estimate tax liability. Track profit/loss and compare with historical airdrops like UNI, ARB, and OP."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/airdrop-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/airdrop-calculator" aria-current="page">Airdrop Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Airdrop Value Calculator</h1>
+          <p>Calculate the current value of your crypto airdrops, estimate tax liability across different jurisdictions, and track your profit or loss since receipt. Compare with notable historical airdrops.</p>
+        </div>
+        <AirdropCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Airdrop Calculator</h2>
+        <ol>
+          <li><strong>Search for the airdropped token</strong> — Use the coin search to find and select the token you received. This auto-fills the current market price from CoinGecko.</li>
+          <li><strong>Enter the amount received</strong> — Input the exact number of tokens you received in the airdrop. Check your wallet history or the claiming transaction for the precise amount.</li>
+          <li><strong>Set the price at receipt</strong> — Enter the token's market price on the date you received/claimed the airdrop. This value determines your taxable income in most jurisdictions.</li>
+          <li><strong>Indicate if you sold</strong> — Toggle whether you've already sold the tokens. If sold, enter the sell price to calculate realized gains. If not, the calculator uses the current market price for unrealized P&L.</li>
+          <li><strong>Select your tax jurisdiction</strong> — Choose your country to apply the appropriate income tax and capital gains tax rates for an estimated tax liability calculation.</li>
+          <li><strong>Review your results</strong> — The calculator shows your current value, profit/loss, income tax on the airdrop, capital gains tax (if sold at a profit), and net value after tax obligations.</li>
+        </ol>
+
+        <h2>What Are Crypto Airdrops?</h2>
+        <p>Crypto airdrops are free distributions of tokens to wallet addresses, typically as a reward for early adoption, protocol usage, or community participation. Projects use airdrops to distribute governance tokens, incentivize user engagement, and decentralize token ownership. Some of the most valuable airdrops in crypto history have distributed thousands of dollars worth of tokens to individual wallets.</p>
+        <p>Airdrops generally fall into several categories: retroactive airdrops reward past users of a protocol (like Uniswap's UNI airdrop to anyone who used the DEX before September 2020); holder airdrops distribute tokens to holders of a specific cryptocurrency; task-based airdrops require completing certain actions like bridging funds or making swaps; and governance airdrops distribute voting tokens to decentralize protocol decision-making.</p>
+
+        <h2>Tax Implications of Airdrops</h2>
+        <p>In most jurisdictions, receiving an airdrop is considered taxable income valued at the fair market value (FMV) of the tokens at the time of receipt. This means you owe income tax on the dollar value of the airdrop even if you haven't sold the tokens yet. If you later sell the tokens at a different price, you may also owe capital gains tax (or be able to claim a capital loss) on the difference between your sale price and the value at receipt.</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Airdrop Treatment</th>
+                <th>Income Tax</th>
+                <th>Capital Gains</th>
+                <th>Special Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>USA</td>
+                <td>Ordinary income at FMV</td>
+                <td>Up to 37%</td>
+                <td>Up to 20% (long-term)</td>
+                <td>Report on Form 1040; cost basis = FMV at receipt</td>
+              </tr>
+              <tr>
+                <td>UK</td>
+                <td>Miscellaneous income</td>
+                <td>Up to 45%</td>
+                <td>Up to 20%</td>
+                <td>Subject to income tax; CGT applies on disposal</td>
+              </tr>
+              <tr>
+                <td>Germany</td>
+                <td>Other income</td>
+                <td>Up to 45%</td>
+                <td>0% if held > 1 year</td>
+                <td>Tax-free after 1-year holding period</td>
+              </tr>
+              <tr>
+                <td>Australia</td>
+                <td>Ordinary income at FMV</td>
+                <td>Up to 45%</td>
+                <td>50% CGT discount after 12 months</td>
+                <td>Cost basis = FMV at time of airdrop</td>
+              </tr>
+              <tr>
+                <td>Canada</td>
+                <td>Employment or business income</td>
+                <td>Up to 33%</td>
+                <td>50% inclusion rate</td>
+                <td>Only 50% of capital gains are taxable</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Important:</strong> Tax laws vary significantly between jurisdictions and change frequently. The rates above are simplified estimates. Always consult a qualified tax professional for advice specific to your situation.</p>
+
+        <h2>Notable Historical Airdrops</h2>
+        <p>Some of the most valuable airdrops in cryptocurrency history have created overnight wealth for early protocol users. These events demonstrate the potential value of participating in new protocols and being an early adopter in the crypto ecosystem.</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>Date</th>
+                <th>Avg Allocation</th>
+                <th>Value at Claim</th>
+                <th>ATH Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Uniswap (UNI)</td>
+                <td>Sep 2020</td>
+                <td>400 UNI</td>
+                <td>~$1,200</td>
+                <td>~$17,600</td>
+              </tr>
+              <tr>
+                <td>ENS</td>
+                <td>Nov 2021</td>
+                <td>~200 ENS</td>
+                <td>~$7,000</td>
+                <td>~$16,000</td>
+              </tr>
+              <tr>
+                <td>Optimism (OP)</td>
+                <td>Jun 2022</td>
+                <td>~1,000 OP</td>
+                <td>~$1,400</td>
+                <td>~$4,000</td>
+              </tr>
+              <tr>
+                <td>Arbitrum (ARB)</td>
+                <td>Mar 2023</td>
+                <td>~1,250 ARB</td>
+                <td>~$1,625</td>
+                <td>~$2,500</td>
+              </tr>
+              <tr>
+                <td>Jupiter (JUP)</td>
+                <td>Jan 2024</td>
+                <td>~500 JUP</td>
+                <td>~$350</td>
+                <td>~$1,000</td>
+              </tr>
+              <tr>
+                <td>Starknet (STRK)</td>
+                <td>Feb 2024</td>
+                <td>~800 STRK</td>
+                <td>~$1,500</td>
+                <td>~$2,400</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Strategies for Maximizing Airdrop Value</h2>
+        <p>While no airdrop is guaranteed, there are strategies that active crypto users employ to position themselves for potential token distributions. Engaging with new protocols early, providing liquidity, participating in testnets, and actively using bridges and DEXes across multiple chains are all common approaches. Many of the most valuable airdrops have rewarded users who performed specific on-chain actions months or even years before the token launch.</p>
+        <p>Once you receive an airdrop, the decision of when to sell is crucial. Historical data shows mixed results — some airdrops like UNI increased significantly after claiming, while others like ARB traded near or below their claim price. Consider your tax situation, market conditions, and the project's long-term potential when deciding whether to hold, sell immediately, or sell gradually.</p>
+
+        <h2>Recording Airdrops for Tax Purposes</h2>
+        <p>Proper record-keeping is essential for airdrop tax compliance. For each airdrop you receive, document the following: the exact date and time of receipt (or claiming), the number of tokens received, the fair market value per token at the time of receipt, the transaction hash, and the total dollar value. This information establishes both your taxable income and your cost basis for future capital gains calculations. Consider using crypto tax software like CoinLedger, Koinly, or CoinTracking to automate this process.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>Are crypto airdrops taxable?</summary>
+          <p>In most countries, yes. Receiving an airdrop is typically treated as taxable income valued at the fair market value of the tokens on the date of receipt. This means you owe income tax even if you haven't sold the tokens. The specific tax rate depends on your jurisdiction and income bracket. Some countries like Germany offer exemptions if you hold the tokens for more than one year before selling. Always consult a tax professional for guidance specific to your situation.</p>
+        </details>
+
+        <details>
+          <summary>How do I calculate the value of an airdrop for taxes?</summary>
+          <p>The taxable value is determined by the fair market value (FMV) of the tokens at the time you receive or claim them. Multiply the number of tokens received by the market price at the exact time of the claiming transaction. For example, if you claimed 400 UNI tokens when UNI was trading at $3, your taxable income is $1,200. This value also becomes your cost basis for calculating capital gains if you sell later.</p>
+        </details>
+
+        <details>
+          <summary>What if I received an airdrop but haven't claimed it?</summary>
+          <p>Tax treatment of unclaimed airdrops varies by jurisdiction. In the US, the IRS generally considers airdrops taxable when you gain "dominion and control" over the tokens — meaning when you can access and sell them. If tokens were sent directly to your wallet, they may be considered received immediately. If you need to actively claim them via a transaction, the taxable event likely occurs at the time of claiming. Consult a tax advisor for clarity on your specific situation.</p>
+        </details>
+
+        <details>
+          <summary>How do I report airdrop capital gains?</summary>
+          <p>When you sell airdropped tokens, you calculate capital gains as: Sell Price minus Cost Basis (value at time of receipt). If you received 400 UNI at $3 each (cost basis $1,200) and sold at $10 each ($4,000), your capital gain is $2,800. Short-term gains (held less than 1 year) are taxed at your ordinary income rate, while long-term gains (held more than 1 year) typically receive preferential lower tax rates. Report these on the appropriate tax forms for your jurisdiction.</p>
+        </details>
+
+        <details>
+          <summary>What are the best upcoming airdrops?</summary>
+          <p>Predicting future airdrops is speculative, but you can position yourself by being an active user of protocols that haven't launched tokens yet. Look for well-funded projects with active testnets or mainnets but no governance token. Engage genuinely with protocols — bridge assets, make swaps, provide liquidity, participate in governance proposals, and interact across multiple chains. However, never invest more than you can afford to lose in pursuit of potential airdrops, as many protocols never distribute tokens.</p>
+        </details>
+
+        <details>
+          <summary>Can I claim a tax loss on an airdrop that lost value?</summary>
+          <p>If you sell airdropped tokens for less than their value at receipt, you can claim a capital loss in most jurisdictions. For example, if you received tokens worth $1,000 (your cost basis) and sold them for $300, you have a $700 capital loss that can offset other capital gains. However, be aware of "wash sale" rules — in some jurisdictions, you cannot claim a loss if you repurchase the same or substantially identical asset within 30 days.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/tax-calculator">Tax Calculator</a> — Estimate crypto taxes with country-specific rates and FIFO/LIFO methods.</li>
+          <li><a href="/vesting-calculator">Vesting Calculator</a> — Visualize token unlock schedules and plan around vesting events.</li>
+          <li><a href="/profit-calculator">Profit Calculator</a> — Calculate exact profit or loss including all trading fees.</li>
+          <li><a href="/what-if">What If Calculator</a> — See how much your investment would be worth if you bought earlier.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h2 + h3 { margin-top: 16px; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p, .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content summary:hover { background: var(--color-bg-card-hover); }
+  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
+  .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
+  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Airdrop Value Calculator",
+  "url": "https://cryptocalk.com/airdrop-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free airdrop calculator. Calculate the value of received crypto airdrops and estimate tax liability across different jurisdictions."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are crypto airdrops taxable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most countries, yes. Receiving an airdrop is typically treated as taxable income valued at the fair market value of the tokens on the date of receipt. Some countries like Germany offer exemptions if you hold for more than one year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate the value of an airdrop for taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply the number of tokens received by the market price at the exact time of the claiming transaction. This value becomes both your taxable income and your cost basis for future capital gains calculations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I received an airdrop but haven't claimed it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tax treatment varies by jurisdiction. In the US, airdrops are generally taxable when you gain dominion and control over the tokens. If sent directly to your wallet, they may be immediately taxable. If you must claim them, the taxable event occurs at the time of claiming."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I report airdrop capital gains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calculate capital gains as Sell Price minus Cost Basis (value at time of receipt). Short-term gains (held less than 1 year) are taxed at ordinary income rates, while long-term gains typically receive preferential lower tax rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the best upcoming airdrops?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Predicting future airdrops is speculative. Position yourself by actively using protocols that haven't launched tokens yet — bridge assets, make swaps, provide liquidity, and participate in governance. Never invest more than you can afford to lose."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I claim a tax loss on an airdrop that lost value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you sell airdropped tokens for less than their value at receipt, you can claim a capital loss in most jurisdictions. This can offset other capital gains. Be aware of wash sale rules in some countries."
+      }
+    }
+  ]
+}
+</script>

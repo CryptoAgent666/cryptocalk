@@ -1,0 +1,115 @@
+---
+import CategoryHubPage from '../../components/CategoryHubPage.astro';
+import SiteChrome from '../../components/SiteChrome.astro';
+import {
+  getCategoryHubBySlug,
+  getCategoryHubs,
+  getCategoryHubUiCopy,
+  getCategorySlugs,
+  isCategorySlug,
+} from '../../data/category-hubs';
+import { DEFAULT_LANG } from '../../i18n/utils';
+import Layout from '../../layouts/Layout.astro';
+
+const SITE_URL = 'https://cryptocalk.com';
+const LAST_UPDATED = '2026-02-21';
+
+export function getStaticPaths() {
+  return getCategorySlugs().map((category) => ({
+    params: { category },
+  }));
+}
+
+const { category: categoryParam } = Astro.params as { category: string };
+
+if (!isCategorySlug(categoryParam)) {
+  throw new Error(`Unsupported category slug: ${categoryParam}`);
+}
+
+const category = getCategoryHubBySlug(categoryParam, DEFAULT_LANG);
+if (!category) {
+  throw new Error(`Category data not found for: ${categoryParam}`);
+}
+
+const relatedCategories = getCategoryHubs(DEFAULT_LANG)
+  .filter((item) => item.slug !== category.slug)
+  .slice(0, 4);
+
+const ui = getCategoryHubUiCopy(DEFAULT_LANG);
+const homeHref = '/';
+const categoriesHref = '/#categories';
+const categoryPageUrl = `${SITE_URL}${category.href}`;
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${category.title} Calculators`,
+    description: category.metaDescription,
+    url: categoryPageUrl,
+    inLanguage: DEFAULT_LANG,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'CryptoCalk',
+      url: `${SITE_URL}/`,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${category.title} calculators`,
+    numberOfItems: category.tools.length,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: category.tools.map((tool, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: tool.name,
+      url: `${SITE_URL}${tool.href}`,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: category.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: `${SITE_URL}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: category.title,
+        item: categoryPageUrl,
+      },
+    ],
+  },
+];
+---
+
+<Layout title={category.metaTitle} description={category.metaDescription} lang="en">
+  <SiteChrome lang="en" currentPath={category.href}>
+    <CategoryHubPage
+      category={category}
+      relatedCategories={relatedCategories}
+      ui={ui}
+      homeHref={homeHref}
+      categoriesHref={categoriesHref}
+      lastUpdated={LAST_UPDATED}
+    />
+  </SiteChrome>
+  <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
+</Layout>

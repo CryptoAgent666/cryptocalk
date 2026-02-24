@@ -1,0 +1,157 @@
+---
+---
+
+<div id="cookie-banner" class="cookie-banner" hidden>
+  <div class="cookie-content">
+    <p>
+      We use cookies to improve your experience, analyze site traffic, and serve tailored advertisements. By continuing to use our site, you consent to our use of cookies. 
+      <a href="/privacy">Read Privacy Policy</a>.
+    </p>
+    <div class="cookie-actions">
+      <button id="cookie-accept" class="btn-cookie btn-accept">Accept All</button>
+      <button id="cookie-decline" class="btn-cookie btn-decline">Decline Non-Essential</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+    
+    // Check if user already made a choice
+    const consentStatus = localStorage.getItem('cookie_consent');
+    
+    if (!consentStatus) {
+      // Show banner after a slight delay
+      setTimeout(() => {
+        banner.removeAttribute('hidden');
+      }, 1000);
+    }
+    
+    const setConsent = (status) => {
+      localStorage.setItem('cookie_consent', status);
+      banner.setAttribute('hidden', '');
+      
+      // If AdSense is loaded, this is where you'd trigger consent updates
+      if (status === 'accepted' && typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    };
+    
+    if (acceptBtn) acceptBtn.addEventListener('click', () => setConsent('accepted'));
+    if (declineBtn) declineBtn.addEventListener('click', () => setConsent('declined'));
+  })();
+</script>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .cookie-banner[hidden] {
+    display: none !important;
+  }
+  
+  .cookie-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  
+  .cookie-content p {
+    flex: 1 1 400px;
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+  
+  .cookie-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .cookie-content a:hover {
+    text-decoration: underline;
+  }
+  
+  .cookie-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  
+  .btn-cookie {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-accept {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+  }
+  
+  .btn-accept:hover {
+    background-color: var(--color-primary-dark);
+  }
+  
+  .btn-decline {
+    background-color: transparent;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+  }
+  
+  .btn-decline:hover {
+    background-color: var(--color-bg-card-hover);
+    color: var(--color-text);
+  }
+  
+  @media (max-width: 600px) {
+    .cookie-banner {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 16px 16px 0 0;
+      border-bottom: none;
+      border-left: none;
+      border-right: none;
+    }
+    
+    .cookie-actions {
+      width: 100%;
+      flex-direction: column;
+    }
+    
+    .btn-cookie {
+      width: 100%;
+    }
+  }
+</style>

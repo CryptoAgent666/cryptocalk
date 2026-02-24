@@ -1,0 +1,346 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import ReverseRoiCalculator from '../components/ReverseRoiCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Reverse ROI Calculator — Find Your Target Price | CryptoCalk"
+  description="Free reverse ROI calculator. Enter your investment and target profit to find the exact token price needed. See growth multiplier, probability assessment, and milestone table."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/reverse-roi" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/reverse-roi" aria-current="page">Reverse ROI Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Reverse ROI Calculator</h1>
+          <p>Enter your investment and target profit to discover the exact token price required. Get probability assessments and milestone projections for your crypto goals.</p>
+        </div>
+        <ReverseRoiCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+
+        <h2>How to Use the Reverse ROI Calculator</h2>
+        <p>This calculator works backwards from your desired outcome. Instead of asking "what will my investment be worth?" you ask "what price does the token need to reach for me to hit my goal?" Follow these steps to find your target price:</p>
+        <ol>
+          <li><strong>Enter the current token price.</strong> Use the live market price of the cryptocurrency you own or plan to buy. You can find this on any exchange or market data aggregator.</li>
+          <li><strong>Input your total investment amount.</strong> This is the dollar value you have invested or intend to invest. If you bought at different prices over time, enter the total amount of money you put in.</li>
+          <li><strong>Set your target profit.</strong> Enter the dollar amount of profit you want to achieve. This is the gain above your original investment, not the total portfolio value.</li>
+          <li><strong>Review the required target price.</strong> The calculator instantly shows the exact price the token must reach for you to realize your target profit. This accounts for every dollar of your investment.</li>
+          <li><strong>Check the growth multiplier.</strong> See how many times the current price must multiply to reach your target. A 5x multiplier means the price needs to increase fivefold from where it is now.</li>
+          <li><strong>Examine the probability assessment.</strong> The calculator provides a qualitative rating of how achievable your target is, based on the required multiplier and general market behavior. Use this as a sanity check, not a guarantee.</li>
+          <li><strong>Study the milestone table.</strong> A breakdown of intermediate price levels and the profit you would realize at each milestone helps you plan partial exits and manage risk along the way.</li>
+        </ol>
+
+        <h2>What Is Reverse ROI?</h2>
+        <p>Standard return-on-investment calculations start with a buy price and an exit price, then tell you the percentage gained or lost. Reverse ROI flips that equation. You begin with the outcome you want -- a specific dollar profit -- and the calculator determines what price movement is necessary to get there.</p>
+        <p>This approach is valuable because it forces you to confront the math behind your expectations. Many crypto investors set profit targets based on gut feeling or social media hype without checking whether the numbers are feasible. Reverse ROI converts an abstract goal into a concrete price level that you can then evaluate against market cap data, historical performance, and competitive positioning.</p>
+        <p>The core formula is straightforward. If you invest a total amount <em>I</em> at a current token price <em>P</em>, you hold <em>I / P</em> tokens. To earn a profit of <em>T</em>, the total portfolio value must equal <em>I + T</em>, meaning each token must be worth <em>(I + T) / (I / P)</em>. That simplifies to <em>P &times; (I + T) / I</em>. The growth multiplier is simply <em>(I + T) / I</em>.</p>
+        <div class="formula-block">
+          <code>Target Price = Current Price &times; (Investment + Target Profit) / Investment</code>
+        </div>
+        <p>Once you have the target price, you can compare it against the token's all-time high, the market caps of competing projects, and historical growth patterns in the broader market. This transforms speculative hope into an evidence-based evaluation.</p>
+
+        <h2>Understanding Growth Multipliers in Crypto</h2>
+        <p>Growth multipliers describe how many times the price of an asset must increase to reach a given level. They are a clearer way to think about returns than percentages once the numbers get large, because human intuition handles multiplication better than four-digit percentage figures.</p>
+        <h3>Common Multiplier Levels</h3>
+        <ul>
+          <li><strong>2x (100% gain):</strong> The price doubles. In crypto, this is a moderate move that many established tokens achieve during bullish periods. For a $1,000 investment, a 2x means your portfolio reaches $2,000.</li>
+          <li><strong>5x (400% gain):</strong> The price increases fivefold. Mid-cap altcoins have historically achieved 5x gains during major bull cycles. A $1,000 investment becomes $5,000.</li>
+          <li><strong>10x (900% gain):</strong> A tenfold increase. This is relatively common for smaller-cap tokens that gain significant adoption or narrative momentum during a bull market, but rare for large-cap assets. $1,000 becomes $10,000.</li>
+          <li><strong>50x (4,900% gain):</strong> Fifty times the entry price. This typically requires entering a project very early, often during its first year on the market, and holding through extreme volatility. $1,000 becomes $50,000.</li>
+          <li><strong>100x (9,900% gain):</strong> A hundred-fold increase. Achieving 100x generally means you invested in a token at a micro-cap stage (under $10 million market cap) and the project grew into a well-known asset. $1,000 becomes $100,000. Very few tokens ever reach this milestone, and survivorship bias makes it appear more common than it is.</li>
+        </ul>
+        <p>The higher the multiplier you need, the earlier you must enter and the smaller the project's starting market cap must be. There is a direct relationship between the required growth and the risk involved, because small-cap tokens also carry the highest probability of losing most or all of their value.</p>
+
+        <h2>Why Market Cap Matters for Price Targets</h2>
+        <p>Token price alone is almost meaningless without context. A coin priced at $0.001 might seem cheap, but if it has a circulating supply of 500 billion tokens, its market capitalization is already $500 million. For that coin to reach $0.01 -- a 10x increase -- the market cap would need to climb to $5 billion, placing it among the top 30 cryptocurrencies by value.</p>
+        <p>Market capitalization is calculated by multiplying the current token price by the circulating supply. This figure tells you the total value the market assigns to all tokens currently available for trading. When you set a price target, you are implicitly claiming that the market will value the project at the resulting market cap.</p>
+        <div class="formula-block">
+          <code>Market Cap = Token Price &times; Circulating Supply</code>
+        </div>
+        <p>Before accepting any price target, convert it to a market cap and ask whether that valuation is defensible. Would the project genuinely rank alongside Cardano, Solana, or Ethereum at that level? Does it have the user base, transaction volume, and ecosystem development to justify that position? If the answer is no, the price target is unrealistic regardless of how appealing the percentage gain looks.</p>
+        <p>This is why the reverse ROI calculator is most useful when paired with a <a href="/market-cap-comparator">market cap comparator</a>. Calculate the target price, multiply it by circulating supply, and then see which existing projects sit at that market cap tier. This comparison provides an immediate reality check.</p>
+
+        <h2>Setting Realistic Crypto Price Targets</h2>
+        <p>Realistic target-setting begins with acknowledging that most tokens will never achieve extreme multipliers. Research from on-chain analytics firms consistently shows that the majority of tokens launched in any given year lose value over the following 12 months. The tokens that deliver 10x or higher returns are statistical outliers.</p>
+        <h3>Factors to Consider</h3>
+        <ul>
+          <li><strong>Current market cap tier.</strong> Tokens already above $1 billion in market cap rarely deliver more than 5-10x in a single cycle. Tokens under $50 million have more room to grow but also far higher failure rates.</li>
+          <li><strong>Sector and narrative strength.</strong> Projects aligned with dominant market narratives (layer-2 scaling, real-world assets, artificial intelligence infrastructure) tend to attract capital flows that drive sustained price increases.</li>
+          <li><strong>Token supply dynamics.</strong> Deflationary mechanisms, vesting schedules, and upcoming unlocks all affect whether the price can sustain upward movement. A large token unlock can dilute gains even if demand is rising.</li>
+          <li><strong>Exchange listings and liquidity.</strong> Tokens listed on major centralized exchanges have access to a larger buyer pool. Low-liquidity tokens can spike quickly but also crash just as fast due to thin order books.</li>
+          <li><strong>Macro market conditions.</strong> Crypto markets move in cycles closely tied to Bitcoin halving events and broader economic sentiment. Setting a 10x target during the late stage of a bull market is far less realistic than setting it early in a new cycle.</li>
+        </ul>
+
+        <h2>Historical Growth Examples</h2>
+        <p>Looking at actual data from major cryptocurrencies provides a benchmark for what growth multiples have occurred in practice. The table below shows approximate multipliers from early accessible prices to cycle peaks.</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Early Price (Approx.)</th>
+                <th>Peak Price (Approx.)</th>
+                <th>Growth Multiple</th>
+                <th>Time Frame</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bitcoin (BTC)</td>
+                <td>$0.06 (2010)</td>
+                <td>$69,000 (2021)</td>
+                <td>~1,150,000x</td>
+                <td>11 years</td>
+              </tr>
+              <tr>
+                <td>Ethereum (ETH)</td>
+                <td>$0.31 (2015 ICO)</td>
+                <td>$4,878 (2021)</td>
+                <td>~15,700x</td>
+                <td>6 years</td>
+              </tr>
+              <tr>
+                <td>Solana (SOL)</td>
+                <td>$0.22 (2020 launch)</td>
+                <td>$260 (2021)</td>
+                <td>~1,180x</td>
+                <td>~1.5 years</td>
+              </tr>
+              <tr>
+                <td>BNB</td>
+                <td>$0.10 (2017 ICO)</td>
+                <td>$690 (2021)</td>
+                <td>~6,900x</td>
+                <td>4 years</td>
+              </tr>
+              <tr>
+                <td>Cardano (ADA)</td>
+                <td>$0.02 (2017)</td>
+                <td>$3.10 (2021)</td>
+                <td>~155x</td>
+                <td>4 years</td>
+              </tr>
+              <tr>
+                <td>Polygon (MATIC)</td>
+                <td>$0.004 (2019)</td>
+                <td>$2.92 (2021)</td>
+                <td>~730x</td>
+                <td>~2 years</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>These figures represent the absolute best-case scenario for each asset -- buying at the earliest accessible price and selling at the exact peak. In practice, almost no investor achieves these full multipliers. Most people buy well after the initial launch and sell before the top. The data is useful for understanding what the upper bound of growth looks like, not for setting personal expectations.</p>
+        <p>Also note that all of these tokens had market caps well under $10 million at their early prices. By the time an asset enters the top 100 by market cap, the remaining upside is typically measured in single-digit multipliers rather than triple-digit ones.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>How do I calculate the price needed for my crypto to reach a profit target?</summary>
+          <p>Divide your total desired portfolio value (investment plus target profit) by the number of tokens you hold. The result is the price each token must reach. Alternatively, multiply the current price by the ratio of your desired total value to your investment amount. This calculator automates that math -- enter your investment, current price, and profit goal, and it instantly returns the required price along with the growth multiplier and milestone breakdowns.</p>
+        </details>
+
+        <details>
+          <summary>What is a realistic growth multiplier for a cryptocurrency?</summary>
+          <p>It depends heavily on the token's current market cap. For large-cap coins (top 20 by market cap), a 2-5x return over a full market cycle is a strong outcome. Mid-cap tokens (ranked 50-200) might achieve 5-15x during a strong bull run. Small-cap and micro-cap tokens have the theoretical potential for 50x or even 100x, but the vast majority of them lose value instead. A realistic multiplier accounts for the project's current valuation, competitive landscape, and the general phase of the market cycle.</p>
+        </details>
+
+        <details>
+          <summary>Can any coin do a 100x?</summary>
+          <p>Mathematically, yes, but practically it is extremely rare. A 100x requires the market cap to grow by a factor of 100. A token with a $1 million market cap would need to reach $100 million, which is achievable for a project that gains significant adoption. However, a token already at $100 million would need to reach $10 billion -- a top-15 position globally -- which requires extraordinary fundamentals and market conditions. The lower the starting market cap, the more plausible a 100x becomes, but low-cap tokens also carry the highest risk of going to zero.</p>
+        </details>
+
+        <details>
+          <summary>How does circulating supply affect price targets?</summary>
+          <p>Circulating supply is the denominator in the price equation. A token with 1 billion circulating tokens at $1 each has a $1 billion market cap. The same $1 billion market cap applied to a token with 100 billion circulating tokens produces a price of just $0.01. When you set a price target, always multiply it by the circulating supply to see the implied market cap. Large circulating supplies make high per-token prices mathematically impossible without a market cap that would exceed the entire crypto market. Always check the supply before anchoring on a specific dollar price.</p>
+        </details>
+
+        <details>
+          <summary>Should I set price targets based on other coins' market caps?</summary>
+          <p>Comparative market cap analysis is one of the most grounded methods for setting price targets. If you believe a layer-1 blockchain token could eventually capture the same market share as Solana, you can take Solana's market cap, divide it by your token's circulating supply, and arrive at an implied price. This gives you a concrete benchmark rather than an arbitrary number. The <a href="/market-cap-comparator">market cap comparator</a> tool on this site is designed for exactly this purpose. Keep in mind that reaching another project's market cap assumes your token will achieve comparable adoption, which may or may not be realistic.</p>
+        </details>
+
+        <details>
+          <summary>How do I set realistic expectations for my crypto investment?</summary>
+          <p>Start by calculating the growth multiplier required to hit your target using this reverse ROI calculator. Then convert the target price to a market cap by multiplying it by the circulating supply. Compare that market cap to existing projects in the same category. If your target implies a market cap higher than every competitor in the sector, it is likely too aggressive. Also consider the time frame -- even realistic targets may take one to three full market cycles to achieve. Finally, plan for partial exits at intermediate milestones rather than waiting for a single perfect exit price. This approach captures gains along the way and reduces the risk of holding through an entire drawdown.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/roi-calculator">ROI Calculator</a> -- Calculate your return on investment from entry and exit prices with annualized performance tracking.</li>
+          <li><a href="/market-cap-comparator">Market Cap Comparator</a> -- Compare any token's potential price if it reached another project's market capitalization.</li>
+          <li><a href="/what-if">What If Calculator</a> -- Explore hypothetical scenarios to see what your portfolio would be worth at different price levels.</li>
+          <li><a href="/profit-calculator">Profit Calculator</a> -- Quickly calculate your total profit or loss from a crypto trade including fees.</li>
+        </ul>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h2 + h3 { margin-top: 16px; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p, .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content summary:hover { background: var(--color-bg-card-hover); }
+  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
+  .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
+  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Reverse ROI Calculator",
+      "description": "Free reverse ROI calculator. Enter your investment and target profit to find the exact token price needed. See growth multiplier, probability assessment, and milestone table.",
+      "url": "https://cryptocalk.com/reverse-roi",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "CryptoCalk",
+        "url": "https://cryptocalk.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate the price needed for my crypto to reach a profit target?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide your total desired portfolio value (investment plus target profit) by the number of tokens you hold. The result is the price each token must reach. Alternatively, multiply the current price by the ratio of your desired total value to your investment amount. This calculator automates that math -- enter your investment, current price, and profit goal, and it instantly returns the required price along with the growth multiplier and milestone breakdowns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a realistic growth multiplier for a cryptocurrency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends heavily on the token's current market cap. For large-cap coins (top 20 by market cap), a 2-5x return over a full market cycle is a strong outcome. Mid-cap tokens (ranked 50-200) might achieve 5-15x during a strong bull run. Small-cap and micro-cap tokens have the theoretical potential for 50x or even 100x, but the vast majority of them lose value instead. A realistic multiplier accounts for the project's current valuation, competitive landscape, and the general phase of the market cycle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can any coin do a 100x?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mathematically, yes, but practically it is extremely rare. A 100x requires the market cap to grow by a factor of 100. A token with a $1 million market cap would need to reach $100 million, which is achievable for a project that gains significant adoption. However, a token already at $100 million would need to reach $10 billion -- a top-15 position globally -- which requires extraordinary fundamentals and market conditions. The lower the starting market cap, the more plausible a 100x becomes, but low-cap tokens also carry the highest risk of going to zero."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does circulating supply affect price targets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Circulating supply is the denominator in the price equation. A token with 1 billion circulating tokens at $1 each has a $1 billion market cap. The same $1 billion market cap applied to a token with 100 billion circulating tokens produces a price of just $0.01. When you set a price target, always multiply it by the circulating supply to see the implied market cap. Large circulating supplies make high per-token prices mathematically impossible without a market cap that would exceed the entire crypto market. Always check the supply before anchoring on a specific dollar price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I set price targets based on other coins' market caps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Comparative market cap analysis is one of the most grounded methods for setting price targets. If you believe a layer-1 blockchain token could eventually capture the same market share as Solana, you can take Solana's market cap, divide it by your token's circulating supply, and arrive at an implied price. This gives you a concrete benchmark rather than an arbitrary number. Keep in mind that reaching another project's market cap assumes your token will achieve comparable adoption, which may or may not be realistic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I set realistic expectations for my crypto investment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start by calculating the growth multiplier required to hit your target using a reverse ROI calculator. Then convert the target price to a market cap by multiplying it by the circulating supply. Compare that market cap to existing projects in the same category. If your target implies a market cap higher than every competitor in the sector, it is likely too aggressive. Also consider the time frame -- even realistic targets may take one to three full market cycles to achieve. Finally, plan for partial exits at intermediate milestones rather than waiting for a single perfect exit price."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>

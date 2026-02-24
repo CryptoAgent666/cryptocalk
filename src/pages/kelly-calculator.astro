@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import KellyCalculator from '../components/KellyCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="kelly-calculator"
+  title="Kelly Criterion Calculator"
+  description="Find optimal position sizing from win rate and payoff ratio using Kelly, half-Kelly, and quarter-Kelly models."
+>
+  <KellyCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

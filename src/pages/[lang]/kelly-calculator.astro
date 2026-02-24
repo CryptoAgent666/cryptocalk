@@ -1,0 +1,20 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import KellyCalculator from '../../components/KellyCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="kelly-calculator"
+  title="Kelly Criterion Calculator"
+  description="Find optimal position sizing from win rate and payoff ratio using Kelly, half-Kelly, and quarter-Kelly models."
+>
+  <KellyCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>

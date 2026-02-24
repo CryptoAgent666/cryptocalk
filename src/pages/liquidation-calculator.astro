@@ -1,0 +1,391 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import LiquidationCalculator from '../components/LiquidationCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto Liquidation Price Calculator — Know Your Risk | CryptoCalk"
+  description="Free liquidation price calculator for crypto futures traders. Supports Binance, Bybit, OKX with Isolated and Cross margin modes. Know exactly when your position gets liquidated."
+  lang="en"
+>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/liquidation-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/liquidation-calculator" aria-current="page">Liquidation Calculator</a>
+      </div>
+    </nav>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto Liquidation Price Calculator</h1>
+          <p>Calculate exactly when your futures position will be liquidated. Supports Binance, Bybit, and OKX margin formulas.</p>
+        </div>
+
+        <LiquidationCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Liquidation Calculator</h2>
+        <ol>
+          <li><strong>Select your exchange</strong> — Choose Binance, Bybit, or OKX. Each has different maintenance margin rates that directly affect your liquidation price.</li>
+          <li><strong>Choose your margin mode</strong> — Isolated margin limits risk to the position only, while cross margin uses your entire wallet balance as collateral.</li>
+          <li><strong>Enter your entry price</strong> — The price at which you opened (or plan to open) your futures position.</li>
+          <li><strong>Set your leverage</strong> — The multiplier applied to your position. Higher leverage means less margin required but a liquidation price closer to entry.</li>
+          <li><strong>Specify your position size</strong> — The total notional value of your position in USDT or your chosen quote currency.</li>
+          <li><strong>Review the results</strong> — The calculator instantly shows your liquidation price, margin used, and how far the market can move before liquidation occurs.</li>
+        </ol>
+
+        <h2>How Liquidation Works in Crypto Futures</h2>
+        <p>When you open a leveraged position on a futures exchange, you post a fraction of the total position value as collateral (margin). If the market moves against you enough that your margin can no longer cover potential losses, the exchange forcibly closes your position — this is called <strong>liquidation</strong>.</p>
+        <p>Liquidation is an automatic risk management mechanism designed to prevent traders from losing more than their account balance. When your margin ratio (the percentage of equity relative to position size) falls below the exchange's maintenance margin requirement, the liquidation engine takes over and closes your position at the current market price.</p>
+        <p>The process happens instantly and automatically. You cannot stop it once triggered. In volatile markets, liquidations can occur in seconds, especially with high leverage. This is why understanding and monitoring your liquidation price is critical for risk management in futures trading.</p>
+
+        <h2>Liquidation Price Formulas</h2>
+        <p>For a Long position:</p>
+        <div class="formula-block">
+          <code>Liquidation Price = Entry Price × (1 − 1/Leverage + MMR)</code>
+        </div>
+        <p>For a Short position:</p>
+        <div class="formula-block">
+          <code>Liquidation Price = Entry Price × (1 + 1/Leverage − MMR)</code>
+        </div>
+        <p>Where MMR is the Maintenance Margin Rate — the minimum margin ratio the exchange requires to keep the position open.</p>
+
+        <h3>Worked Example: Long BTC Position</h3>
+        <p>Let's calculate the liquidation price for a realistic scenario on Binance:</p>
+        <ul>
+          <li><strong>Position:</strong> Long BTC/USDT</li>
+          <li><strong>Entry Price:</strong> $60,000</li>
+          <li><strong>Leverage:</strong> 20x</li>
+          <li><strong>Exchange:</strong> Binance (MMR = 0.4% = 0.004)</li>
+          <li><strong>Margin Mode:</strong> Isolated</li>
+        </ul>
+        <p>Using the formula:</p>
+        <div class="formula-block">
+          <code>Liquidation Price = $60,000 × (1 − 1/20 + 0.004)</code><br>
+          <code>= $60,000 × (1 − 0.05 + 0.004)</code><br>
+          <code>= $60,000 × 0.954</code><br>
+          <code>= $57,240</code>
+        </div>
+        <p>This means if BTC drops to $57,240 (a 4.6% decline), your position will be liquidated. At 20x leverage, you have very little room for price movement. Lowering leverage to 10x would push the liquidation price down to $54,240, giving you nearly double the buffer.</p>
+
+        <h2>Isolated vs Cross Margin</h2>
+        <p>Understanding the difference between isolated and cross margin is essential for managing liquidation risk. Both modes have distinct advantages and use cases depending on your trading strategy and risk tolerance.</p>
+        <p><strong>Isolated margin</strong> allocates a specific amount of margin to each position. If the position is liquidated, you only lose the margin assigned to that trade — your other positions and wallet balance remain safe. This mode is ideal for high-risk trades where you want to limit downside exposure. The liquidation price is fixed at the time you open the position (unless you manually add more margin).</p>
+        <p><strong>Cross margin</strong> uses your entire available wallet balance as collateral for all open positions. This provides a larger liquidation buffer because unrealized profits from other positions can offset losses. However, if one position is liquidated, you risk losing your entire margin wallet. Cross margin is better suited for experienced traders managing multiple correlated positions or hedging strategies.</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Isolated Margin</th>
+                <th>Cross Margin</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Risk Scope</td>
+                <td>Position only</td>
+                <td>Entire wallet</td>
+              </tr>
+              <tr>
+                <td>Liquidation Buffer</td>
+                <td>Less (fixed margin)</td>
+                <td>More (shared balance)</td>
+              </tr>
+              <tr>
+                <td>Default on Exchanges</td>
+                <td>Yes (Binance, Bybit)</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Best For</td>
+                <td>Single high-risk trades</td>
+                <td>Hedging, multiple positions</td>
+              </tr>
+              <tr>
+                <td>Max Loss per Trade</td>
+                <td>Allocated margin</td>
+                <td>Entire wallet</td>
+              </tr>
+              <tr>
+                <td>Margin Adjustment</td>
+                <td>Manual</td>
+                <td>Automatic</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Exchange Maintenance Margin Rates</h2>
+        <p>Each exchange sets its own maintenance margin requirements, which directly impact your liquidation price. These rates represent the minimum equity percentage you must maintain relative to your position size. Lower MMR means you can withstand larger price movements before liquidation.</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Exchange</th>
+                <th>Base MMR</th>
+                <th>Tier System</th>
+                <th>Liquidation Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Binance</td>
+                <td>0.4%</td>
+                <td>Position-based</td>
+                <td>0.02%</td>
+              </tr>
+              <tr>
+                <td>Bybit</td>
+                <td>0.5%</td>
+                <td>Tier-based</td>
+                <td>0.06%</td>
+              </tr>
+              <tr>
+                <td>OKX</td>
+                <td>0.5%</td>
+                <td>Position-based</td>
+                <td>0.02%</td>
+              </tr>
+              <tr>
+                <td>Kraken</td>
+                <td>0.5%</td>
+                <td>Tier-based</td>
+                <td>0.05%</td>
+              </tr>
+              <tr>
+                <td>Bitget</td>
+                <td>0.4%</td>
+                <td>Position-based</td>
+                <td>0.03%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Note: These are base rates for standard position sizes. Most exchanges implement tiered systems where larger positions face higher maintenance margin requirements. For example, on Binance, a BTC position over 50,000 USDT may have an MMR of 0.5% or higher. Always check your exchange's tier schedule for positions exceeding typical retail sizes.</p>
+
+        <h2>How to Avoid Liquidation</h2>
+        <p>Preventing liquidation is one of the most important skills in futures trading. Here are proven strategies to protect your positions:</p>
+        <ul>
+          <li><strong>Use conservative leverage</strong> — Stick to 3x-10x for most trades. Leverage above 20x leaves almost no room for normal market fluctuations. While 100x leverage may seem appealing, it can liquidate you on a 1% price move.</li>
+          <li><strong>Always set stop-losses</strong> — Place stop-loss orders at least 15-20% away from your liquidation price. Never rely on liquidation as your exit strategy. Stop-losses give you control and prevent total loss of margin.</li>
+          <li><strong>Add margin before it's too late</strong> — In isolated mode, you can manually add margin to push your liquidation price further away. Monitor your margin ratio and add collateral when it approaches 30-40% above maintenance levels.</li>
+          <li><strong>Monitor funding rates</strong> — Perpetual futures charge funding payments every 8 hours. High negative funding can slowly drain your margin, moving your liquidation price closer without any price movement. Factor funding into your risk calculations.</li>
+          <li><strong>Avoid overleveraging during high volatility</strong> — Major news events, liquidation cascades, and low-liquidity periods can cause extreme price swings. Reduce leverage or close positions before known volatility events like FOMC meetings or major token unlocks.</li>
+          <li><strong>Use cross margin strategically</strong> — If you're hedging or running multiple positions, cross margin can prevent individual liquidations by pooling collateral. However, ensure your total exposure doesn't exceed safe levels.</li>
+          <li><strong>Keep extra funds in your wallet</strong> — If using cross margin, maintain a reserve balance that isn't allocated to positions. This acts as a safety buffer during drawdowns.</li>
+          <li><strong>Scale into positions</strong> — Instead of opening your full position at once, scale in with smaller entries. This gives you better average entry prices and reduces the risk of immediate liquidation if you enter at a local extreme.</li>
+        </ul>
+
+        <h2>What Happens During a Liquidation Cascade?</h2>
+        <p>A liquidation cascade occurs when a large number of leveraged positions are liquidated simultaneously, triggering a chain reaction that accelerates price movement in one direction. This phenomenon is one of the most dangerous dynamics in cryptocurrency futures markets and can cause flash crashes or extreme rallies in minutes.</p>
+        <p>Here's how it unfolds: When the market moves sharply in one direction, highly leveraged positions begin hitting their liquidation prices. The exchange forcibly closes these positions by placing market sell orders (for longs) or market buy orders (for shorts). This sudden influx of sell or buy pressure pushes the price further in the same direction, triggering even more liquidations. The cycle repeats, creating a cascading effect.</p>
+        <p>During the May 2021 Bitcoin crash, cascading liquidations contributed to BTC dropping from $57,000 to $30,000 in a matter of days, with single-day drops exceeding 20%. Over $9 billion in leveraged positions were liquidated in 24 hours. Similar events occurred in September 2021, November 2022, and August 2024, each time wiping out billions in margin.</p>
+        <p>Liquidation cascades are particularly severe in low-liquidity conditions, such as weekends, Asian trading hours, or during periods of general market fear. Automated liquidation engines don't care about market conditions — they execute at any price. This can result in temporary wicks that liquidate positions before the price recovers, a phenomenon traders call "stop hunts" or "wick liquidations."</p>
+        <p>To protect yourself from cascades, avoid clustering your stop-loss and liquidation prices near obvious technical levels where many other traders are positioned. Use lower leverage during uncertain market conditions, and consider reducing or closing positions before historically volatile periods.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>What happens when my position is liquidated?</summary>
+          <p>When your margin ratio drops below the maintenance level, the exchange's liquidation engine takes over your position and closes it at the best available market price. You lose your entire initial margin in isolated mode, or potentially your entire wallet balance in cross mode. Most exchanges also charge a liquidation fee, typically 0.02-0.06% of the position size. The liquidation process is instant and cannot be reversed.</p>
+        </details>
+
+        <details>
+          <summary>Is the liquidation price exact?</summary>
+          <p>This calculator provides a close estimate based on standard formulas, but actual liquidation prices can differ slightly. Factors that affect precision include funding rate payments (which adjust your margin over time), unrealized PnL from other positions in cross margin mode, exchange-specific tier systems for large positions, trading fees, and rounding differences. Always verify your exact liquidation price on your exchange's trading interface.</p>
+        </details>
+
+        <details>
+          <summary>Can I get liquidated in spot trading?</summary>
+          <p>No. Liquidation only applies to leveraged trading products like margin trading, futures, and perpetual swaps. In spot trading, you purchase and own the asset outright with your own capital — there is no borrowed funds, no leverage, and therefore no liquidation risk. The worst that can happen in spot is that your asset decreases in value, but you still own it and can hold indefinitely.</p>
+        </details>
+
+        <details>
+          <summary>What leverage should I use?</summary>
+          <p>Most experienced traders recommend keeping leverage between 3x-10x for swing trades and 5x-20x for short-term day trades. Leverage above 20x is considered extremely risky and should only be used by professionals with strict risk management and deep understanding of market microstructure. Remember: higher leverage doesn't increase potential profit per dollar at risk — it only increases position size while bringing liquidation dangerously close to entry. A 2% stop-loss at 5x leverage has the same dollar risk as a 2% stop at 50x, but the latter has 10x higher liquidation risk.</p>
+        </details>
+
+        <details>
+          <summary>Can I add margin to avoid liquidation?</summary>
+          <p>Yes, but only in isolated margin mode. You can manually add additional margin to your position, which recalculates and lowers your liquidation price, giving you more breathing room. This is a common tactic when your position is temporarily underwater but you believe the market will reverse. In cross margin mode, you cannot add margin to individual positions because the system automatically uses your entire wallet balance. Instead, you would need to deposit more funds to your futures wallet or close other positions to free up margin.</p>
+        </details>
+
+        <details>
+          <summary>Do funding rates affect my liquidation price?</summary>
+          <p>Yes, in perpetual futures contracts. Funding rates are periodic payments exchanged between long and short traders every 8 hours. If you're paying funding (negative for your position), it slowly drains your margin, which effectively moves your liquidation price closer to the current market price over time. Conversely, if you're receiving funding, it adds to your margin and moves liquidation further away. During extreme market conditions, funding rates can exceed 0.1% per 8 hours (over 1% per day), significantly impacting your liquidation price if you hold positions for extended periods.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <p>Expand your trading toolkit with these related crypto trading calculators:</p>
+        <ul>
+          <li><a href="/leverage-calculator">Leverage Calculator</a> — Calculate position size, margin required, and potential profit/loss for leveraged trades</li>
+          <li><a href="/margin-calculator">Margin Calculator</a> — Determine initial margin, maintenance margin, and margin calls for futures positions</li>
+          <li><a href="/tp-sl-calculator">Take Profit & Stop Loss Calculator</a> — Plan your exits with precise TP/SL levels based on risk-reward ratios</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice. Past performance does not guarantee future results.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ul { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 16px; margin: 12px 0 16px; font-family: 'Courier New', monospace; color: var(--color-primary); font-size: 0.9rem; overflow-x: auto; }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content ol { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content ol li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .table-responsive { overflow-x: auto; margin: 16px 0; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg-card); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content details { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 8px; max-width: 780px; cursor: pointer; }
+  .seo-content summary { font-weight: 600; color: var(--color-text); }
+  .seo-content details p { margin-top: 12px; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Crypto Liquidation Price Calculator",
+    "description": "Free liquidation price calculator for crypto futures traders. Supports Binance, Bybit, OKX with Isolated and Cross margin modes.",
+    "url": "https://cryptocalk.com/liquidation-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What happens when my position is liquidated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When your margin ratio drops below the maintenance level, the exchange's liquidation engine takes over your position and closes it at the best available market price. You lose your entire initial margin in isolated mode, or potentially your entire wallet balance in cross mode. Most exchanges also charge a liquidation fee, typically 0.02-0.06% of the position size."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the liquidation price exact?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This calculator provides a close estimate based on standard formulas, but actual liquidation prices can differ slightly. Factors include funding rate payments, unrealized PnL from other positions in cross margin mode, exchange-specific tier systems for large positions, and trading fees. Always verify on your exchange's interface."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get liquidated in spot trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Liquidation only applies to leveraged trading products like margin trading, futures, and perpetual swaps. In spot trading, you purchase and own the asset outright with no borrowed funds, no leverage, and therefore no liquidation risk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What leverage should I use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most experienced traders recommend keeping leverage between 3x-10x for swing trades and 5x-20x for short-term day trades. Leverage above 20x is considered extremely risky. Higher leverage doesn't increase potential profit per dollar at risk — it only brings liquidation dangerously close to entry."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I add margin to avoid liquidation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but only in isolated margin mode. You can manually add additional margin to your position, which recalculates and lowers your liquidation price. In cross margin mode, the system automatically uses your entire wallet balance, so you would need to deposit more funds to your futures wallet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do funding rates affect my liquidation price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, in perpetual futures contracts. Funding rates are periodic payments every 8 hours. If you're paying funding, it drains your margin and moves your liquidation price closer to the current market price. During extreme conditions, funding rates can exceed 0.1% per 8 hours, significantly impacting liquidation price over time."
+        }
+      }
+    ]
+  }
+]
+</script>

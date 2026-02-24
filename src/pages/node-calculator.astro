@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import NodeCalculator from '../components/NodeCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="node-calculator"
+  title="Validator Node Calculator"
+  description="Model validator node economics using staked amount, APR, commission, uptime, and infrastructure costs."
+>
+  <NodeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>
