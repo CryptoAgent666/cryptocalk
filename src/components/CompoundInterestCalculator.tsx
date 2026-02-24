@@ -124,7 +124,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
         setAnnualRate('12'); setYears('5'); setCompoundFreq('daily');
     };
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
@@ -165,7 +165,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={initialAmount} onChange={(e) => setInitialAmount(e.target.value)}
+                            <input type="number" inputMode="decimal" value={initialAmount} onChange={(e) => setInitialAmount(e.target.value)}
                                 placeholder="1,000" id="ci-initial" step="any" min="0" />
                         </div>
                     </div>
@@ -185,7 +185,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)}
+                            <input type="number" inputMode="decimal" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)}
                                 placeholder="100" id="ci-monthly" step="any" min="0" />
                         </div>
                     </div>
@@ -202,7 +202,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
-                            <input type="number" value={annualRate} onChange={(e) => setAnnualRate(e.target.value)}
+                            <input type="number" inputMode="decimal" value={annualRate} onChange={(e) => setAnnualRate(e.target.value)}
                                 placeholder="12" id="ci-rate" step="0.1" min="0" />
                         </div>
                     </div>
@@ -218,7 +218,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <input type="number" value={years} onChange={(e) => setYears(e.target.value)}
+                            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)}
                                 placeholder="5" id="ci-years" step="1" min="1" max="30" />
                         </div>
                     </div>
@@ -302,8 +302,8 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                                     </div>
                                 </div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
-                                    <span>📦 Deposits</span>
-                                    <span>💰 Interest</span>
+                                    <span>{getUiString(lang, '📦 Deposits')}</span>
+                                    <span>{getUiString(lang, '💰 Interest')}</span>
                                 </div>
                             </div>
 
@@ -314,7 +314,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                                     <span className="result-value">{formatUSD(principal)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Monthly Contributions</span>
+                                    <span className="result-label">{getUiString(lang, 'Monthly Contributions')}</span>
                                     <span className="result-value">{formatUSD(monthly)} × {Math.floor(t * 12)} months</span>
                                 </div>
                                 <div className="result-row">
@@ -332,15 +332,15 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Total Interest Earned</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Total Interest Earned')}</strong></span>
                                     <span className="result-value profit"><strong>+{formatUSD(totalInterest)}</strong></span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Simple Interest Would Be</span>
+                                    <span className="result-label">{getUiString(lang, 'Simple Interest Would Be')}</span>
                                     <span className="result-value">{formatUSD(simpleTotal - totalDeposited)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Compound Advantage</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Compound Advantage')}</strong></span>
                                     <span className="result-value profit"><strong>+{formatUSD(compoundAdvantage)}</strong></span>
                                 </div>
                             </div>
@@ -348,7 +348,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                             {/* Year by Year Table */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Year-by-Year Growth
+                                    {getUiString(lang, 'Year-by-Year Growth')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
@@ -382,14 +382,14 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                This assumes a constant rate and regular contributions. Crypto yields vary over time. Not financial advice.
+                                {getUiString(lang, 'This assumes a constant rate and regular contributions. Crypto yields vary over time. Not financial advice.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><TrendingUp size={40} /></div>
-                            <h3>Watch Your Money Grow</h3>
-                            <p>Enter your initial investment, monthly contribution, and APY to see the power of compound interest over time.</p>
+                            <h3>{getUiString(lang, 'Watch Your Money Grow')}</h3>
+                            <p>{getUiString(lang, 'Enter your initial investment, monthly contribution, and APY to see the power of compound interest over time.')}</p>
                         </div>
                     )}
                 </div>

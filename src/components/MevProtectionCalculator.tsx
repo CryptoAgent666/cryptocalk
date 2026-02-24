@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, Shield } from 'lucide-react';
 
@@ -12,7 +13,7 @@ const MEV_SCENARIOS = [
 ] as const;
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -27,7 +28,7 @@ const networkRisk: Record<Network, number> = {
   BSC: 0.8,
 };
 
-export default function MevProtectionCalculator() {
+export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string }) {
   const [swapAmount, setSwapAmount] = useState('5000');
   const [slippage, setSlippage] = useState('1');
   const [network, setNetwork] = useState<Network>('Ethereum');
@@ -111,7 +112,7 @@ export default function MevProtectionCalculator() {
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix"><span className="input-prefix">$</span><input type="number" value={swapAmount} onChange={(e) => setSwapAmount(e.target.value)} min="0" step="any" id="mev-amount" /></div>
+            <div className="input-with-prefix"><span className="input-prefix">$</span><input type="number" inputMode="decimal" value={swapAmount} onChange={(e) => setSwapAmount(e.target.value)} min="0" step="any" id="mev-amount" /></div>
           </div>
           <div className="input-group">
             <label>Slippage Tolerance (%)</label>
@@ -128,7 +129,7 @@ export default function MevProtectionCalculator() {
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">%</span>
-              <input type="number" value={slippage} onChange={(e) => setSlippage(e.target.value)} min="0.1" step="any" id="mev-slippage" />
+              <input type="number" inputMode="decimal" value={slippage} onChange={(e) => setSlippage(e.target.value)} min="0.1" step="any" id="mev-slippage" />
             </div>
           </div>
           <div className="input-group">
@@ -159,22 +160,22 @@ export default function MevProtectionCalculator() {
           {result ? (
             <>
               <div className={`result-hero ${result.level === 'High' ? 'loss' : result.level === 'Medium' ? 'fee' : 'profit'}`}>
-                <span className="result-hero-label">MEV Risk Score</span>
+                <span className="result-hero-label">{getUiString(lang, 'MEV Risk Score')}</span>
                 <span className="result-hero-value"><AlertTriangle size={28} />{result.riskScore.toFixed(0)} / 100</span>
                 <span className={`result-hero-roi ${result.level === 'High' ? 'loss' : result.level === 'Medium' ? 'fee' : 'profit'}`}>{result.level} risk</span>
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Estimated max MEV loss</span><span className="result-value fee">-{formatUSD(result.estLoss)}</span></div>
-                <div className="result-row"><span className="result-label">With private orderflow</span><span className="result-value">{formatUSD(result.protectedLoss)}</span></div>
-                <div className="result-row"><span className="result-label">Potential savings</span><span className="result-value profit">{formatUSD(result.savings)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Estimated max MEV loss')}</span><span className="result-value fee">-{formatUSD(result.estLoss)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'With private orderflow')}</span><span className="result-value">{formatUSD(result.protectedLoss)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Potential savings')}</span><span className="result-value profit">{formatUSD(result.savings)}</span></div>
               </div>
 
-              <div className="result-cta"><a href="https://mevblocker.io" target="_blank" rel="noreferrer noopener" className="cta-btn"><Shield size={14} style={{ marginRight: '6px', verticalAlign: 'middle' }} />Check MEV protection tools</a></div>
-              <p className="calc-disclaimer"><Info size={14} />Model is heuristic and conservative. Real MEV impact depends on pool depth, mempool activity, and execution path.</p>
+              <div className="result-cta"><a href="https://mevblocker.io" target="_blank" rel="noopener noreferrer sponsored"  className="cta-btn"><Shield size={14} style={{ marginRight: '6px', verticalAlign: 'middle' }} />{getUiString(lang, 'Check MEV protection tools')}</a></div>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Model is heuristic and conservative. Real MEV impact depends on pool depth, mempool activity, and execution path.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><Shield size={40} /></div><h3>Enter swap settings</h3><p>Set amount, slippage, and network to estimate MEV exposure.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><Shield size={40} /></div><h3>{getUiString(lang, 'Enter swap settings')}</h3><p>{getUiString(lang, 'Set amount, slippage, and network to estimate MEV exposure.')}</p></div>
           )}
         </div>
       </div>

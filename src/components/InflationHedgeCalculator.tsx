@@ -117,7 +117,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 0,
@@ -354,7 +354,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
                                 placeholder="10,000"
@@ -438,7 +438,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                 }}
                             >
                                 <span className="result-hero-label">
-                                    Purchasing Power Loss
+                                    {getUiString(lang, 'Purchasing Power Loss')}
                                 </span>
                                 <span
                                     className="result-hero-value"
@@ -465,8 +465,8 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                         <tr style={{ borderBottom: '2px solid var(--color-border)' }}>
                                             <th style={{ padding: '10px 8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{getUiString(lang, 'Asset')}</th>
                                             <th style={{ padding: '10px 8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Value after {years}yr</th>
-                                            <th style={{ padding: '10px 8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Real Return</th>
-                                            <th style={{ padding: '10px 8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>vs Fiat</th>
+                                            <th style={{ padding: '10px 8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{getUiString(lang, 'Real Return')}</th>
+                                            <th style={{ padding: '10px 8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{getUiString(lang, 'vs Fiat')}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -571,25 +571,25 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                     <span className="result-label">
                                         <strong>
                                             <Globe size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
-                                            Country Info
+                                            {getUiString(lang, 'Country Info')}
                                         </strong>
                                     </span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Country</span>
+                                    <span className="result-label">{getUiString(lang, 'Country')}</span>
                                     <span className="result-value">{country.name}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Currency</span>
+                                    <span className="result-label">{getUiString(lang, 'Currency')}</span>
                                     <span className="result-value">{country.currency}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Current Inflation Rate</span>
+                                    <span className="result-label">{getUiString(lang, 'Current Inflation Rate')}</span>
                                     <span className="result-value fee">{(country.inflationRate * 100).toFixed(1)}%</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Crypto Adoption Rate</span>
+                                    <span className="result-label">{getUiString(lang, 'Crypto Adoption Rate')}</span>
                                     <span className="result-value profit">{country.adoptionRate}%</span>
                                 </div>
                             </div>
@@ -600,13 +600,13 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                     <span className="result-label">
                                         <strong>
                                             <TrendingDown size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
-                                            Fiat Erosion Details
+                                            {getUiString(lang, 'Fiat Erosion Details')}
                                         </strong>
                                     </span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Initial Savings</span>
+                                    <span className="result-label">{getUiString(lang, 'Initial Savings')}</span>
                                     <span className="result-value">{formatUSD(amountNum)}</span>
                                 </div>
                                 <div className="result-row">
@@ -614,7 +614,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                     <span className="result-value fee">{formatUSD(fiatValue)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Purchasing Power Lost</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Purchasing Power Lost')}</strong></span>
                                     <span className="result-value" style={{ color: '#ef4444', fontWeight: 700 }}>
                                         -{formatUSD(amountNum - fiatValue)}
                                     </span>
@@ -625,18 +625,18 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                             <div className="result-cta">
                                 <a
                                     href="https://www.binance.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Buy BTC on Binance &rarr;
+                                    {getUiString(lang, 'Buy BTC on Binance &rarr;')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Historical returns are not indicative of future performance. Crypto is highly volatile.
+                                {getUiString(lang, 'Historical returns are not indicative of future performance. Crypto is highly volatile.')}
                             </p>
                         </>
                     ) : (
@@ -644,8 +644,8 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                             <div className="results-empty-icon">
                                 <Shield size={40} />
                             </div>
-                            <h3>Inflation Hedge Calculator</h3>
-                            <p>Select a country, enter your savings amount, and choose a time period to see how crypto and other assets compare against fiat inflation.</p>
+                            <h3>{getUiString(lang, 'Inflation Hedge Calculator')}</h3>
+                            <p>{getUiString(lang, 'Select a country, enter your savings amount, and choose a time period to see how crypto and other assets compare against fiat inflation.')}</p>
                         </div>
                     )}
                 </div>

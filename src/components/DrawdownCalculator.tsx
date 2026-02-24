@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
@@ -9,7 +10,7 @@ const DRAWDOWN_SCENARIOS = [
 ] as const;
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -17,7 +18,7 @@ function formatUSD(value: number): string {
   }).format(value);
 }
 
-export default function DrawdownCalculator() {
+export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
   const [peakValue, setPeakValue] = useState('10000');
   const [currentValue, setCurrentValue] = useState('7000');
   const [monthlyReturn, setMonthlyReturn] = useState('5');
@@ -90,7 +91,7 @@ export default function DrawdownCalculator() {
             <label>Portfolio Peak Value (USD)</label>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={peakValue} onChange={(e) => setPeakValue(e.target.value)} min="0" step="any" id="drawdown-peak" />
+              <input type="number" inputMode="decimal" value={peakValue} onChange={(e) => setPeakValue(e.target.value)} min="0" step="any" id="drawdown-peak" />
             </div>
           </div>
 
@@ -98,7 +99,7 @@ export default function DrawdownCalculator() {
             <label>Current Portfolio Value (USD)</label>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)} min="0" step="any" id="drawdown-current" />
+              <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)} min="0" step="any" id="drawdown-current" />
             </div>
             <div className="pills-row">
               {[90, 80, 70, 60, 50].map((pct) => {
@@ -135,7 +136,7 @@ export default function DrawdownCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={monthlyReturn} onChange={(e) => setMonthlyReturn(e.target.value)} min="0" step="any" id="drawdown-monthly-return" />
+              <input type="number" inputMode="decimal" value={monthlyReturn} onChange={(e) => setMonthlyReturn(e.target.value)} min="0" step="any" id="drawdown-monthly-return" />
             </div>
           </div>
 
@@ -149,7 +150,7 @@ export default function DrawdownCalculator() {
           {result ? (
             <>
               <div className={`result-hero ${result.drawdownPct > 0 ? 'loss' : 'profit'}`}>
-                <span className="result-hero-label">Current Drawdown</span>
+                <span className="result-hero-label">{getUiString(lang, 'Current Drawdown')}</span>
                 <span className="result-hero-value"><AlertTriangle size={28} />{result.drawdownPct.toFixed(2)}%</span>
                 <span className={`result-hero-roi ${result.drawdownPct > 0 ? 'loss' : 'profit'}`}>
                   {result.drawdownPct > 0 ? `-${formatUSD(result.drawdownAmount)}` : 'No drawdown'}
@@ -157,22 +158,22 @@ export default function DrawdownCalculator() {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Drawdown amount</span><span className={`result-value ${result.drawdownAmount > 0 ? 'loss' : 'profit'}`}>{result.drawdownAmount > 0 ? '-' : ''}{formatUSD(result.drawdownAmount)}</span></div>
-                <div className="result-row"><span className="result-label">Required gain to recover</span><span className={`result-value ${result.requiredGainPct > 0 ? 'fee' : 'profit'}`}>{result.requiredGainPct.toFixed(2)}%</span></div>
-                <div className="result-row"><span className="result-label">Recovery risk level</span><span className={`result-value ${result.severity === 'High' ? 'loss' : result.severity === 'Medium' ? 'fee' : 'profit'}`}>{result.severity}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Drawdown amount')}</span><span className={`result-value ${result.drawdownAmount > 0 ? 'loss' : 'profit'}`}>{result.drawdownAmount > 0 ? '-' : ''}{formatUSD(result.drawdownAmount)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Required gain to recover')}</span><span className={`result-value ${result.requiredGainPct > 0 ? 'fee' : 'profit'}`}>{result.requiredGainPct.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Recovery risk level')}</span><span className={`result-value ${result.severity === 'High' ? 'loss' : result.severity === 'Medium' ? 'fee' : 'profit'}`}>{result.severity}</span></div>
                 <div className="result-divider" />
                 <div className="result-row">
-                  <span className="result-label">Estimated months to recover</span>
+                  <span className="result-label">{getUiString(lang, 'Estimated months to recover')}</span>
                   <span className="result-value">
                     {result.monthsToRecover === null ? 'N/A (no positive monthly return)' : `${result.monthsToRecover.toFixed(1)} months`}
                   </span>
                 </div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Large drawdowns require disproportionately larger gains. Recovery timing assumes stable monthly returns and no extra withdrawals.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Large drawdowns require disproportionately larger gains. Recovery timing assumes stable monthly returns and no extra withdrawals.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>Enter valid portfolio values</h3><p>Set peak and current value to estimate drawdown and required recovery gain.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid portfolio values')}</h3><p>{getUiString(lang, 'Set peak and current value to estimate drawdown and required recovery gain.')}</p></div>
           )}
         </div>
       </div>

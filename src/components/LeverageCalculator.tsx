@@ -158,7 +158,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
         setPriceChange('10'); setIsShort(false); clearCoin();
     };
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
@@ -244,7 +244,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
+                            <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
                                 placeholder="65,000" id="lev-entry" step="any" min="0" />
                         </div>
                     </div>
@@ -265,7 +265,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
+                            <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
                                 placeholder="1,000" id="lev-size" step="any" min="0" />
                         </div>
                     </div>
@@ -286,7 +286,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">×</span>
-                            <input type="number" value={leverage} onChange={(e) => setLeverage(e.target.value)}
+                            <input type="number" inputMode="decimal" value={leverage} onChange={(e) => setLeverage(e.target.value)}
                                 placeholder="10" id="lev-leverage" step="1" min="1" max="200" />
                         </div>
                     </div>
@@ -304,7 +304,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
-                            <input type="number" value={priceChange} onChange={(e) => setPriceChange(e.target.value)}
+                            <input type="number" inputMode="decimal" value={priceChange} onChange={(e) => setPriceChange(e.target.value)}
                                 placeholder="10" id="lev-change" step="1" />
                         </div>
                     </div>
@@ -339,7 +339,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                     border: '1px solid var(--color-border)', borderRadius: '12px',
                                 }}>
                                     <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                                        Without Leverage (1×)
+                                        {getUiString(lang, 'Without Leverage (1×)')}
                                     </div>
                                     <div style={{ fontSize: '1.2rem', fontWeight: 700, color: noLevPnl >= 0 ? 'var(--color-accent-green)' : '#ef4444', marginBottom: '4px' }}>
                                         {noLevPnl >= 0 ? '+' : ''}{formatUSD(noLevPnl)}
@@ -364,7 +364,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                     {isLiquidated ? (
                                         <>
                                             <div style={{ fontSize: '1.2rem', fontWeight: 700, color: '#ef4444', marginBottom: '4px' }}>
-                                                LIQUIDATED
+                                                {getUiString(lang, 'LIQUIDATED')}
                                             </div>
                                             <div style={{ fontSize: '0.85rem', color: '#ef4444' }}>
                                                 Loss: −{formatUSD(margin)}
@@ -392,9 +392,9 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                 border: '1px solid var(--color-border)', borderRadius: '10px',
                                 textAlign: 'center', marginBottom: '16px',
                             }}>
-                                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>Leverage amplifies your PnL by </span>
+                                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>{getUiString(lang, 'Leverage amplifies your PnL by')} </span>
                                 <strong style={{ color: 'var(--color-primary)', fontSize: '1rem' }}>{lev}×</strong>
-                                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}> — liquidation at <strong style={{ color: '#ef4444' }}>{liqPercent.toFixed(1)}%</strong> move</span>
+                                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}> {getUiString(lang, '— liquidation at')} <strong style={{ color: '#ef4444' }}>{liqPercent.toFixed(1)}%</strong> {getUiString(lang, 'move')}</span>
                             </div>
 
                             {/* Breakdown */}
@@ -404,7 +404,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-value">{formatUSD(size)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Initial Margin (collateral)</span>
+                                    <span className="result-label">{getUiString(lang, 'Initial Margin (collateral)')}</span>
                                     <span className="result-value">{formatUSD(margin)}</span>
                                 </div>
                                 <div className="result-row">
@@ -417,20 +417,20 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-value">{formatPercent(change)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Leveraged PnL</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Leveraged PnL')}</strong></span>
                                     <span className={`result-value ${levPnl >= 0 ? 'profit' : 'fee'}`}>
                                         <strong>{levPnl >= 0 ? '+' : ''}{formatUSD(levPnl)}</strong>
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Leveraged ROI</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Leveraged ROI')}</strong></span>
                                     <span className={`result-value ${levRoi >= 0 ? 'profit' : 'fee'}`}>
                                         <strong>{formatPercent(levRoi)}</strong>
                                     </span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Liquidation Distance</span>
+                                    <span className="result-label">{getUiString(lang, 'Liquidation Distance')}</span>
                                     <span className="result-value fee">{liqPercent.toFixed(2)}%</span>
                                 </div>
                             </div>
@@ -446,8 +446,8 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                     }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>Price Δ</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>PnL</th>
+                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Price Δ')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'PnL')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'ROI')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Balance')}</th>
                                             </tr>
@@ -486,21 +486,21 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* CTA */}
                             <div className="result-cta">
-                                <a href="https://www.bybit.com" target="_blank" rel="noopener noreferrer nofollow" className="cta-btn">
+                                <a href="https://www.bybit.com" target="_blank" rel="noopener noreferrer sponsored"  className="cta-btn">
                                     Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
                                 </a>
                             </div>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                For educational purposes only. Leverage amplifies both gains and losses. Trade responsibly.
+                                {getUiString(lang, 'For educational purposes only. Leverage amplifies both gains and losses. Trade responsibly.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Scale size={40} /></div>
-                            <h3>See Leverage in Action</h3>
-                            <p>Enter position details and leverage to see a side-by-side comparison of leveraged vs unleveraged PnL with a scenario table.</p>
+                            <h3>{getUiString(lang, 'See Leverage in Action')}</h3>
+                            <p>{getUiString(lang, 'Enter position details and leverage to see a side-by-side comparison of leveraged vs unleveraged PnL with a scenario table.')}</p>
                         </div>
                     )}
                 </div>

@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Info, RotateCcw, ServerCog, TrendingUp } from 'lucide-react';
 
@@ -14,7 +15,7 @@ const NODE_SCENARIOS = [
 ];
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -23,13 +24,13 @@ function formatUSD(value: number): string {
 }
 
 function formatNumber(value: number, digits = 4): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     minimumFractionDigits: 0,
     maximumFractionDigits: digits,
   }).format(value);
 }
 
-export default function NodeCalculator() {
+export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
   const [stakedTokens, setStakedTokens] = useState('5000');
   const [tokenPrice, setTokenPrice] = useState('2.2');
   const [apr, setApr] = useState('12');
@@ -133,7 +134,7 @@ export default function NodeCalculator() {
                 </button>
               ))}
             </div>
-            <input type="number" value={stakedTokens} onChange={(e) => setStakedTokens(e.target.value)} min="0" step="any" id="node-staked" />
+            <input type="number" inputMode="decimal" value={stakedTokens} onChange={(e) => setStakedTokens(e.target.value)} min="0" step="any" id="node-staked" />
           </div>
 
           <div className="input-group">
@@ -151,7 +152,7 @@ export default function NodeCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="node-price" />
+              <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="node-price" />
             </div>
           </div>
 
@@ -170,7 +171,7 @@ export default function NodeCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={apr} onChange={(e) => setApr(e.target.value)} min="0" step="any" id="node-apr" />
+              <input type="number" inputMode="decimal" value={apr} onChange={(e) => setApr(e.target.value)} min="0" step="any" id="node-apr" />
             </div>
           </div>
 
@@ -189,7 +190,7 @@ export default function NodeCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)} min="0" step="any" id="node-fee" />
+              <input type="number" inputMode="decimal" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)} min="0" step="any" id="node-fee" />
             </div>
           </div>
 
@@ -208,7 +209,7 @@ export default function NodeCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={uptime} onChange={(e) => setUptime(e.target.value)} min="0" max="100" step="any" id="node-uptime" />
+              <input type="number" inputMode="decimal" value={uptime} onChange={(e) => setUptime(e.target.value)} min="0" max="100" step="any" id="node-uptime" />
             </div>
           </div>
 
@@ -227,7 +228,7 @@ export default function NodeCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={monthlyInfraCost} onChange={(e) => setMonthlyInfraCost(e.target.value)} min="0" step="any" id="node-infra" />
+              <input type="number" inputMode="decimal" value={monthlyInfraCost} onChange={(e) => setMonthlyInfraCost(e.target.value)} min="0" step="any" id="node-infra" />
             </div>
           </div>
 
@@ -241,7 +242,7 @@ export default function NodeCalculator() {
           {result ? (
             <>
               <div className={`result-hero ${result.netMonthlyUsd >= 0 ? 'profit' : 'loss'}`}>
-                <span className="result-hero-label">Net Monthly Node Income</span>
+                <span className="result-hero-label">{getUiString(lang, 'Net Monthly Node Income')}</span>
                 <span className="result-hero-value"><ServerCog size={28} />{formatUSD(result.netMonthlyUsd)}</span>
                 <span className={`result-hero-roi ${result.effectiveApr >= 0 ? 'profit' : 'loss'}`}>
                   Effective APR {result.effectiveApr >= 0 ? '+' : ''}{result.effectiveApr.toFixed(2)}%
@@ -249,19 +250,19 @@ export default function NodeCalculator() {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Stake value</span><span className="result-value">{formatUSD(result.stakeValue)}</span></div>
-                <div className="result-row"><span className="result-label">Gross annual rewards</span><span className="result-value">{formatUSD(result.grossAnnualRewardsUsd)}</span></div>
-                <div className="result-row"><span className="result-label">Infrastructure cost (annual)</span><span className="result-value fee">-{formatUSD(result.infraAnnualCost)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Stake value')}</span><span className="result-value">{formatUSD(result.stakeValue)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Gross annual rewards')}</span><span className="result-value">{formatUSD(result.grossAnnualRewardsUsd)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Infrastructure cost (annual)')}</span><span className="result-value fee">-{formatUSD(result.infraAnnualCost)}</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label"><strong>Net annual income</strong></span><span className={`result-value ${result.netAnnualUsd >= 0 ? 'profit' : 'loss'}`}><strong>{formatUSD(result.netAnnualUsd)}</strong></span></div>
-                <div className="result-row"><span className="result-label">Net annual rewards</span><span className="result-value">{formatNumber(result.netAnnualTokens)} tokens</span></div>
-                <div className="result-row"><span className="result-label">Break-even stake value</span><span className="result-value">{result.breakEvenStakeValue ? formatUSD(result.breakEvenStakeValue) : 'N/A'}</span></div>
+                <div className="result-row"><span className="result-label"><strong>{getUiString(lang, 'Net annual income')}</strong></span><span className={`result-value ${result.netAnnualUsd >= 0 ? 'profit' : 'loss'}`}><strong>{formatUSD(result.netAnnualUsd)}</strong></span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Net annual rewards')}</span><span className="result-value">{formatNumber(result.netAnnualTokens)} tokens</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Break-even stake value')}</span><span className="result-value">{result.breakEvenStakeValue ? formatUSD(result.breakEvenStakeValue) : 'N/A'}</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Real validator rewards depend on inflation, commission policy, missed blocks, and slashing events. Keep a safety margin in planning.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Real validator rewards depend on inflation, commission policy, missed blocks, and slashing events. Keep a safety margin in planning.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>Enter valid node assumptions</h3><p>Set stake, APR, uptime, and costs to estimate validator profitability.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid node assumptions')}</h3><p>{getUiString(lang, 'Set stake, APR, uptime, and costs to estimate validator profitability.')}</p></div>
           )}
         </div>
       </div>

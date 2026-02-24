@@ -170,7 +170,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -178,7 +178,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
         }).format(n);
 
     const formatNumber = (n: number, decimals = 2) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             minimumFractionDigits: decimals,
             maximumFractionDigits: decimals,
         }).format(n);
@@ -246,7 +246,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">#</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={numDevices}
                                 onChange={(e) => setNumDevices(e.target.value)}
                                 placeholder="1"
@@ -276,7 +276,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={powerPerDevice}
                                 onChange={(e) => setPowerPerDevice(e.target.value)}
                                 placeholder="3000"
@@ -308,7 +308,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={electricityRate}
                                 onChange={(e) => setElectricityRate(e.target.value)}
                                 placeholder="0.10"
@@ -338,7 +338,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={uptimeHours}
                                 onChange={(e) => setUptimeHours(e.target.value)}
                                 placeholder="24"
@@ -372,7 +372,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={monthlyRevenue}
                                 onChange={(e) => setMonthlyRevenue(e.target.value)}
                                 placeholder="Enter revenue for profitability"
@@ -399,7 +399,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                         <>
                             {/* Hero: Monthly Cost */}
                             <div className="result-hero fee">
-                                <span className="result-hero-label">Monthly Electricity Cost</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Monthly Electricity Cost')}</span>
                                 <span className="result-hero-value">
                                     <Zap size={28} />
                                     {formatUSD(monthlyCost)}
@@ -413,8 +413,8 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                             <div className="result-breakdown">
                                 <div className="result-row">
                                     <span className="result-label"><strong>{getUiString(lang, 'Period')}</strong></span>
-                                    <span className="result-value" style={{ textAlign: 'right', flex: 1 }}><strong>kWh</strong></span>
-                                    <span className="result-value" style={{ textAlign: 'right', flex: 1 }}><strong>Cost ($)</strong></span>
+                                    <span className="result-value" style={{ textAlign: 'right', flex: 1 }}><strong>{getUiString(lang, 'kWh')}</strong></span>
+                                    <span className="result-value" style={{ textAlign: 'right', flex: 1 }}><strong>{getUiString(lang, 'Cost ($)')}</strong></span>
                                 </div>
                                 <div className="result-divider" />
                                 {consumption.map((row) => (
@@ -443,7 +443,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                         gap: '6px',
                                     }}>
                                         <TrendingUp size={14} />
-                                        Revenue vs Cost Analysis
+                                        {getUiString(lang, 'Revenue vs Cost Analysis')}
                                     </h4>
                                     <div className="result-breakdown">
                                         <div className="result-row">
@@ -453,7 +453,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                             </span>
                                         </div>
                                         <div className="result-row">
-                                            <span className="result-label">Monthly Electricity Cost</span>
+                                            <span className="result-label">{getUiString(lang, 'Monthly Electricity Cost')}</span>
                                             <span className="result-value fee">
                                                 -{formatUSD(monthlyCost)}
                                             </span>
@@ -461,7 +461,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                         <div className="result-divider" />
                                         <div className="result-row">
                                             <span className="result-label">
-                                                Electricity % of Revenue
+                                                {getUiString(lang, 'Electricity % of Revenue')}
                                             </span>
                                             <span className="result-value" style={{
                                                 color: getPctColor(profitability.electricityPctOfRevenue),
@@ -472,7 +472,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                         </div>
                                         <div className="result-divider" />
                                         <div className="result-row">
-                                            <span className="result-label"><strong>Net Profit After Electricity</strong></span>
+                                            <span className="result-label"><strong>{getUiString(lang, 'Net Profit After Electricity')}</strong></span>
                                             <span className={`result-value ${profitability.netProfitAfterElectricity >= 0 ? 'profit' : 'fee'}`}>
                                                 <strong>
                                                     {profitability.netProfitAfterElectricity >= 0 ? '+' : ''}
@@ -483,8 +483,8 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                         <div className="result-divider" />
                                         <div className="result-row">
                                             <span className="result-label">
-                                                Max Profitable Rate
-                                                <span className="label-hint">Before unprofitable</span>
+                                                {getUiString(lang, 'Max Profitable Rate')}
+                                                <span className="label-hint">{getUiString(lang, 'Before unprofitable')}</span>
                                             </span>
                                             <span className="result-value profit" style={{ fontWeight: 600 }}>
                                                 ${profitability.maxProfitableRate.toFixed(4)}/kWh
@@ -506,7 +506,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                     gap: '6px',
                                 }}>
                                     <Globe size={14} />
-                                    Electricity Cost Comparison
+                                    {getUiString(lang, 'Electricity Cost Comparison')}
                                 </h4>
                                 <div style={{
                                     overflowX: 'auto',
@@ -520,9 +520,9 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                     }}>
                                         <thead>
                                             <tr>
-                                                <th style={thStyle}>Country / Region</th>
-                                                <th style={thStyle}>Avg $/kWh</th>
-                                                <th style={thStyle}>Your Monthly Cost</th>
+                                                <th style={thStyle}>{getUiString(lang, 'Country / Region')}</th>
+                                                <th style={thStyle}>{getUiString(lang, 'Avg $/kWh')}</th>
+                                                <th style={thStyle}>{getUiString(lang, 'Your Monthly Cost')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -579,25 +579,25 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                     color: 'var(--color-text)',
                                 }}>
                                     <Gauge size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} />
-                                    Power Specifications
+                                    {getUiString(lang, 'Power Specifications')}
                                 </h4>
                                 <div className="result-breakdown" style={{ border: 'none', padding: 0 }}>
                                     <div className="result-row">
-                                        <span className="result-label">Total Wattage</span>
+                                        <span className="result-label">{getUiString(lang, 'Total Wattage')}</span>
                                         <span className="result-value">
                                             {formatNumber(totalWattage, 0)} W ({formatNumber(totalPowerKw, 2)} kW)
                                         </span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">Amps at 220V</span>
+                                        <span className="result-label">{getUiString(lang, 'Amps at 220V')}</span>
                                         <span className="result-value">{formatNumber(ampsAt220V, 1)} A</span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">Amps at 110V</span>
+                                        <span className="result-label">{getUiString(lang, 'Amps at 110V')}</span>
                                         <span className="result-value">{formatNumber(ampsAt110V, 1)} A</span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">BTU/hr Heat Output</span>
+                                        <span className="result-label">{getUiString(lang, 'BTU/hr Heat Output')}</span>
                                         <span className="result-value">{formatNumber(btuPerHr, 0)} BTU/hr</span>
                                     </div>
                                 </div>
@@ -607,18 +607,18 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                             <div className="result-cta">
                                 <a
                                     href="https://www.compassmining.io"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Compare hosting rates at Compass Mining &rarr;
+                                    {getUiString(lang, 'Compare hosting rates at Compass Mining &rarr;')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Costs are estimates. Actual electricity rates vary by provider and usage tier.
+                                {getUiString(lang, 'Costs are estimates. Actual electricity rates vary by provider and usage tier.')}
                             </p>
                         </>
                     ) : (
@@ -626,8 +626,8 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                             <div className="results-empty-icon">
                                 <Zap size={40} />
                             </div>
-                            <h3>Mining Electricity Cost Calculator</h3>
-                            <p>Enter your mining farm details to calculate electricity costs, compare rates across countries, and analyze profitability.</p>
+                            <h3>{getUiString(lang, 'Mining Electricity Cost Calculator')}</h3>
+                            <p>{getUiString(lang, 'Enter your mining farm details to calculate electricity costs, compare rates across countries, and analyze profitability.')}</p>
                         </div>
                     )}
                 </div>

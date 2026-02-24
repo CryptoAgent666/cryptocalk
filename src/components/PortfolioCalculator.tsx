@@ -137,7 +137,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
         setAssets(buildAssetsFromAllocation(DEFAULT_ALLOCATION, 10000));
     };
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0,
     }).format(n);
 
@@ -209,7 +209,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={totalInvestment} onChange={(e) => setTotalInvestment(e.target.value)}
+                            <input type="number" inputMode="decimal" value={totalInvestment} onChange={(e) => setTotalInvestment(e.target.value)}
                                 placeholder="10,000" id="pf-total" step="any" min="0" />
                         </div>
                     </div>
@@ -227,13 +227,13 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                                         className="portfolio-asset-name" />
                                     <div className="portfolio-asset-amount">
                                         <span className="portfolio-asset-prefix">$</span>
-                                        <input type="number" value={asset.amount || ''}
+                                        <input type="number" inputMode="decimal" value={asset.amount || ''}
                                             onChange={(e) => updateAsset(asset.id, 'amount', parseFloat(e.target.value) || 0)}
                                             placeholder="0"
                                             className="portfolio-asset-input" />
                                     </div>
                                     <div className="portfolio-asset-target">
-                                        <input type="number" value={asset.targetPct || ''}
+                                        <input type="number" inputMode="decimal" value={asset.targetPct || ''}
                                             onChange={(e) => updateAsset(asset.id, 'targetPct', parseFloat(e.target.value) || 0)}
                                             placeholder="%"
                                             className="portfolio-asset-input portfolio-asset-input-target" />
@@ -315,10 +315,10 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                                     <thead>
                                         <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
                                             <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Asset')}</th>
-                                            <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Value</th>
-                                            <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Actual %</th>
-                                            <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Target %</th>
-                                            <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Rebalance</th>
+                                            <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Value')}</th>
+                                            <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Actual %')}</th>
+                                            <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Target %')}</th>
+                                            <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Rebalance')}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -367,7 +367,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                                             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                                         }}>
                                             <div>
-                                                <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '2px' }}>Diversification</div>
+                                                <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '2px' }}>{getUiString(lang, 'Diversification')}</div>
                                                 <div style={{ fontSize: '1rem', fontWeight: 700, color: scoreColor }}>{score}</div>
                                             </div>
                                             <div style={{ textAlign: 'right' }}>
@@ -380,14 +380,14 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Portfolio allocation is for educational purposes. Diversification doesn't guarantee against loss. Not financial advice.
+                                {getUiString(lang, 'Portfolio allocation is for educational purposes. Diversification doesn\'t guarantee against loss. Not financial advice.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><PieChart size={40} /></div>
-                            <h3>Plan Your Portfolio</h3>
-                            <p>Add assets with their current values and target allocations. See a visual breakdown and rebalancing suggestions.</p>
+                            <h3>{getUiString(lang, 'Plan Your Portfolio')}</h3>
+                            <p>{getUiString(lang, 'Add assets with their current values and target allocations. See a visual breakdown and rebalancing suggestions.')}</p>
                         </div>
                     )}
                 </div>

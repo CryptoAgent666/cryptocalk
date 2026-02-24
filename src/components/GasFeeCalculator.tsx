@@ -109,7 +109,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
     const formatUSD = (n: number) => {
         if (n < 0.01 && n > 0) return `$${n.toFixed(6)}`;
         if (n < 1) return `$${n.toFixed(4)}`;
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
         }).format(n);
     };
@@ -175,7 +175,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                     {txType === 'custom' && (
                         <div className="input-group">
                             <label>Custom Gas Limit</label>
-                            <input type="number" value={customGas} onChange={(e) => setCustomGas(e.target.value)}
+                            <input type="number" inputMode="decimal" value={customGas} onChange={(e) => setCustomGas(e.target.value)}
                                 placeholder="21000" id="gas-custom" step="1000" min="21000" />
                         </div>
                     )}
@@ -185,7 +185,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                         <label><Zap size={14} /> Gas Price (Gwei)</label>
                         <div className="input-with-prefix">
                             <span className="input-prefix" style={{ fontSize: '0.7rem' }}>Gwei</span>
-                            <input type="number" value={gasPrice} onChange={(e) => setGasPrice(e.target.value)}
+                            <input type="number" inputMode="decimal" value={gasPrice} onChange={(e) => setGasPrice(e.target.value)}
                                 placeholder="15" id="gas-price-gwei" step="0.1" min="0" />
                         </div>
                         <div className="pills-row">
@@ -219,7 +219,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                         <label><DollarSign size={14} /> {currentNetwork.symbol} Price (USD)</label>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={ethPrice} onChange={(e) => setEthPrice(e.target.value)}
+                            <input type="number" inputMode="decimal" value={ethPrice} onChange={(e) => setEthPrice(e.target.value)}
                                 placeholder="3000" id="gas-eth-price" step="any" min="0" />
                         </div>
                     </div>
@@ -236,7 +236,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <input
-                            type="number"
+                            type="number" inputMode="decimal"
                             value={txCount}
                             onChange={(e) => setTxCount(e.target.value)}
                             min="1"
@@ -291,15 +291,15 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Network</span>
+                                    <span className="result-label">{getUiString(lang, 'Network')}</span>
                                     <span className="result-value" style={{ color: currentNetwork.color, fontWeight: 600 }}>{currentNetwork.label}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Gas Limit</span>
+                                    <span className="result-label">{getUiString(lang, 'Gas Limit')}</span>
                                     <span className="result-value">{gasLimit.toLocaleString()} gas</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Gas Price</span>
+                                    <span className="result-label">{getUiString(lang, 'Gas Price')}</span>
                                     <span className="result-value">{gasPriceGwei} Gwei × {currentSpeed.mult}x = {effectiveGwei.toFixed(2)} Gwei</span>
                                 </div>
                                 <div className="result-row">
@@ -330,9 +330,9 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>Transaction</th>
+                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Transaction')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Gas')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Cost</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Cost')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -355,14 +355,14 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Gas prices fluctuate constantly. Check current prices on your network's explorer. Actual gas used may differ from estimates.
+                                {getUiString(lang, 'Gas prices fluctuate constantly. Check current prices on your network\'s explorer. Actual gas used may differ from estimates.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Fuel size={40} /></div>
-                            <h3>Estimate Gas Fees</h3>
-                            <p>Select a network and transaction type to calculate gas costs in USD. Compare fees across different transaction types.</p>
+                            <h3>{getUiString(lang, 'Estimate Gas Fees')}</h3>
+                            <p>{getUiString(lang, 'Select a network and transaction type to calculate gas costs in USD. Compare fees across different transaction types.')}</p>
                         </div>
                     )}
                 </div>

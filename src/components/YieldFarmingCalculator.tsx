@@ -198,7 +198,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
         setHarvestFreq('weekly'); setIlPercent('2'); setFarmingDays('365');
     };
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
@@ -238,7 +238,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={deposit} onChange={(e) => setDeposit(e.target.value)}
+                            <input type="number" inputMode="decimal" value={deposit} onChange={(e) => setDeposit(e.target.value)}
                                 placeholder="1,000" id="yf-deposit" step="any" min="0" />
                         </div>
                     </div>
@@ -269,7 +269,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
-                            <input type="number" value={poolRate} onChange={(e) => setPoolRate(e.target.value)}
+                            <input type="number" inputMode="decimal" value={poolRate} onChange={(e) => setPoolRate(e.target.value)}
                                 placeholder="50" id="yf-rate" step="0.1" min="0" />
                         </div>
                     </div>
@@ -290,7 +290,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={gasEntry} onChange={(e) => setGasEntry(e.target.value)}
+                            <input type="number" inputMode="decimal" value={gasEntry} onChange={(e) => setGasEntry(e.target.value)}
                                 placeholder="15" id="yf-gas-entry" step="0.1" min="0" />
                         </div>
                     </div>
@@ -310,7 +310,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={gasExit} onChange={(e) => setGasExit(e.target.value)}
+                            <input type="number" inputMode="decimal" value={gasExit} onChange={(e) => setGasExit(e.target.value)}
                                 placeholder="15" id="yf-gas-exit" step="0.1" min="0" />
                         </div>
                     </div>
@@ -330,7 +330,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={gasHarvest} onChange={(e) => setGasHarvest(e.target.value)}
+                            <input type="number" inputMode="decimal" value={gasHarvest} onChange={(e) => setGasHarvest(e.target.value)}
                                 placeholder="5" id="yf-gas-harvest" step="0.1" min="0" />
                         </div>
                     </div>
@@ -365,7 +365,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">%</span>
-                            <input type="number" value={ilPercent} onChange={(e) => setIlPercent(e.target.value)}
+                            <input type="number" inputMode="decimal" value={ilPercent} onChange={(e) => setIlPercent(e.target.value)}
                                 placeholder="2" id="yf-il" step="0.1" min="0" max="50" />
                         </div>
                     </div>
@@ -383,7 +383,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <input type="number" value={farmingDays} onChange={(e) => setFarmingDays(e.target.value)}
+                            <input type="number" inputMode="decimal" value={farmingDays} onChange={(e) => setFarmingDays(e.target.value)}
                                 placeholder="365" id="yf-days" step="1" min="1" />
                         </div>
                     </div>
@@ -415,7 +415,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                             {/* Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Deposit</span>
+                                    <span className="result-label">{getUiString(lang, 'Deposit')}</span>
                                     <span className="result-value">{formatUSD(depositVal)}</span>
                                 </div>
                                 <div className="result-row">
@@ -424,16 +424,16 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Gross Yield</span>
+                                    <span className="result-label">{getUiString(lang, 'Gross Yield')}</span>
                                     <span className="result-value profit">+{formatUSD(grossYield)}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Gas: Entry</span>
+                                    <span className="result-label">{getUiString(lang, 'Gas: Entry')}</span>
                                     <span className="result-value fee">-{formatUSD(entryGas)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Gas: Exit</span>
+                                    <span className="result-label">{getUiString(lang, 'Gas: Exit')}</span>
                                     <span className="result-value fee">-{formatUSD(exitGas)}</span>
                                 </div>
                                 <div className="result-row">
@@ -441,7 +441,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                     <span className="result-value fee">-{formatUSD(harvestGas * numHarvests)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Total Gas Costs</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Total Gas Costs')}</strong></span>
                                     <span className="result-value fee"><strong>-{formatUSD(totalGas)}</strong></span>
                                 </div>
                                 <div className="result-divider" />
@@ -451,7 +451,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Net Yield</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Net Yield')}</strong></span>
                                     <span className={`result-value ${netYield >= 0 ? 'profit' : 'fee'}`}>
                                         <strong>{netYield >= 0 ? '+' : ''}{formatUSD(netYield)}</strong>
                                     </span>
@@ -470,7 +470,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                 }}>
                                     <Clock size={16} style={{ flexShrink: 0, color: '#6366f1' }} />
                                     <span>
-                                        <strong>Optimal harvest: {optimalHarvest.label}</strong> — harvesting more often costs more in gas than the compounding benefit.
+                                        <strong>Optimal harvest: {optimalHarvest.label}</strong> {getUiString(lang, '— harvesting more often costs more in gas than the compounding benefit.')}
                                     </span>
                                 </div>
                             )}
@@ -504,7 +504,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                 }}>
                                     <AlertTriangle size={16} style={{ flexShrink: 0 }} />
                                     <span>
-                                        At deposits under $500, gas fees on Ethereum L1 may significantly reduce or eliminate profits. Consider L2 chains.
+                                        {getUiString(lang, 'At deposits under $500, gas fees on Ethereum L1 may significantly reduce or eliminate profits. Consider L2 chains.')}
                                     </span>
                                 </div>
                             )}
@@ -513,28 +513,28 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                             <div className="result-cta">
                                 <a
                                     href="https://yearn.fi"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Farm on Yearn Finance →
+                                    {getUiString(lang, 'Farm on Yearn Finance →')}
                                 </a>
                             </div>
 
                             {/* Reference Table: Gas Impact at Different Deposit Sizes */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Gas Cost Impact at Different Deposit Sizes
+                                    {getUiString(lang, 'Gas Cost Impact at Different Deposit Sizes')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>Deposit</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Gross Yield</th>
+                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Deposit')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Gross Yield')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Gas')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Gas %</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Net</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Gas %')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Net')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -573,14 +573,14 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Yield farming returns vary based on pool TVL, token prices, and protocol emissions. Gas costs depend on network congestion. This calculator provides estimates only.
+                                {getUiString(lang, 'Yield farming returns vary based on pool TVL, token prices, and protocol emissions. Gas costs depend on network congestion. This calculator provides estimates only.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Sprout size={40} /></div>
-                            <h3>Calculate Yield Farming Profitability</h3>
-                            <p>Enter your deposit amount and pool rate to see net yield after gas costs, impermanent loss, and harvest optimization.</p>
+                            <h3>{getUiString(lang, 'Calculate Yield Farming Profitability')}</h3>
+                            <p>{getUiString(lang, 'Enter your deposit amount and pool rate to see net yield after gas costs, impermanent loss, and harvest optimization.')}</p>
                         </div>
                     )}
                 </div>

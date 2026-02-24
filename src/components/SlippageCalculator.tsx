@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ArrowRightLeft, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
@@ -12,7 +13,7 @@ const SLIPPAGE_SCENARIOS = [
 ] as const;
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -20,7 +21,7 @@ function formatUSD(value: number): string {
   }).format(value);
 }
 
-export default function SlippageCalculator() {
+export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
   const [poolTvl, setPoolTvl] = useState('2000000');
   const [tradeSize, setTradeSize] = useState('10000');
   const [dexFee, setDexFee] = useState('0.3');
@@ -115,7 +116,7 @@ export default function SlippageCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="0" step="any" id="slippage-tvl" />
+              <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="0" step="any" id="slippage-tvl" />
             </div>
           </div>
 
@@ -134,7 +135,7 @@ export default function SlippageCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={tradeSize} onChange={(e) => setTradeSize(e.target.value)} min="0" step="any" id="slippage-trade" />
+              <input type="number" inputMode="decimal" value={tradeSize} onChange={(e) => setTradeSize(e.target.value)} min="0" step="any" id="slippage-trade" />
             </div>
           </div>
 
@@ -153,7 +154,7 @@ export default function SlippageCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={dexFee} onChange={(e) => setDexFee(e.target.value)} min="0" step="any" id="slippage-fee" />
+              <input type="number" inputMode="decimal" value={dexFee} onChange={(e) => setDexFee(e.target.value)} min="0" step="any" id="slippage-fee" />
             </div>
           </div>
 
@@ -172,7 +173,7 @@ export default function SlippageCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={slippageTolerance} onChange={(e) => setSlippageTolerance(e.target.value)} min="0" step="any" id="slippage-tolerance" />
+              <input type="number" inputMode="decimal" value={slippageTolerance} onChange={(e) => setSlippageTolerance(e.target.value)} min="0" step="any" id="slippage-tolerance" />
             </div>
           </div>
 
@@ -186,7 +187,7 @@ export default function SlippageCalculator() {
           {result ? (
             <>
               <div className={`result-hero ${result.passTolerance ? 'profit' : 'loss'}`}>
-                <span className="result-hero-label">Estimated Slippage</span>
+                <span className="result-hero-label">{getUiString(lang, 'Estimated Slippage')}</span>
                 <span className="result-hero-value"><ArrowRightLeft size={28} />{result.slippagePct.toFixed(3)}%</span>
                 <span className={`result-hero-roi ${result.passTolerance ? 'profit' : 'loss'}`}>
                   {result.passTolerance ? 'Within tolerance' : 'Above tolerance'}
@@ -194,19 +195,19 @@ export default function SlippageCalculator() {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Trade share of pool</span><span className="result-value">{result.tradeSharePct.toFixed(2)}%</span></div>
-                <div className="result-row"><span className="result-label">Expected amount received</span><span className="result-value">{formatUSD(result.expectedOut)}</span></div>
-                <div className="result-row"><span className="result-label">Minimum received (tolerance)</span><span className="result-value">{formatUSD(result.minReceived)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Trade share of pool')}</span><span className="result-value">{result.tradeSharePct.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected amount received')}</span><span className="result-value">{formatUSD(result.expectedOut)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Minimum received (tolerance)')}</span><span className="result-value">{formatUSD(result.minReceived)}</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label">Price impact cost</span><span className="result-value fee">-{formatUSD(result.priceImpactCost)}</span></div>
-                <div className="result-row"><span className="result-label">Trading fee cost</span><span className="result-value fee">-{formatUSD(result.tradingFeeCost)}</span></div>
-                <div className="result-row"><span className="result-label"><strong>Total execution cost</strong></span><span className="result-value fee"><strong>-{formatUSD(result.totalExecutionCost)}</strong></span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Price impact cost')}</span><span className="result-value fee">-{formatUSD(result.priceImpactCost)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Trading fee cost')}</span><span className="result-value fee">-{formatUSD(result.tradingFeeCost)}</span></div>
+                <div className="result-row"><span className="result-label"><strong>{getUiString(lang, 'Total execution cost')}</strong></span><span className="result-value fee"><strong>-{formatUSD(result.totalExecutionCost)}</strong></span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />This is a constant-product estimate. Real execution can differ due to routing, MEV, oracle lag, and liquidity changes.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'This is a constant-product estimate. Real execution can differ due to routing, MEV, oracle lag, and liquidity changes.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>Enter valid trade assumptions</h3><p>Set pool size, trade amount, and fee to estimate slippage and execution cost.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid trade assumptions')}</h3><p>{getUiString(lang, 'Set pool size, trade amount, and fee to estimate slippage and execution cost.')}</p></div>
           )}
         </div>
       </div>

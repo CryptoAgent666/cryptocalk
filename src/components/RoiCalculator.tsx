@@ -180,7 +180,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -232,7 +232,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={initialInvestment}
                                 onChange={(e) => setInitialInvestment(e.target.value)}
                                 placeholder="10,000"
@@ -263,7 +263,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={currentValue}
                                 onChange={(e) => setCurrentValue(e.target.value)}
                                 placeholder="15,000"
@@ -293,7 +293,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={holdingDays}
                                 onChange={(e) => handleCustomDays(e.target.value)}
                                 placeholder="365"
@@ -325,7 +325,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={feesPaid}
                                 onChange={(e) => setFeesPaid(e.target.value)}
                                 placeholder="0.00"
@@ -353,7 +353,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Hero: Total ROI */}
                             <div className={`result-hero ${isProfit ? 'profit' : 'loss'}`}>
                                 <span className="result-hero-label">
-                                    Total ROI
+                                    {getUiString(lang, 'Total ROI')}
                                 </span>
                                 <span className="result-hero-value">
                                     {isProfit ? <TrendingUp size={28} /> : <TrendingDown size={28} />}
@@ -376,31 +376,31 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 {results.fees > 0 && (
                                     <div className="result-row">
-                                        <span className="result-label">Fees Paid</span>
+                                        <span className="result-label">{getUiString(lang, 'Fees Paid')}</span>
                                         <span className="result-value fee">−{formatUSD(results.fees)}</span>
                                     </div>
                                 )}
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Net Profit / Loss</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Net Profit / Loss')}</strong></span>
                                     <span className={`result-value ${isProfit ? 'profit' : 'loss'}`}>
                                         <strong>{isProfit ? '+' : ''}{formatUSD(results.netProfit)}</strong>
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Total ROI</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Total ROI')}</strong></span>
                                     <span className={`result-value ${isProfit ? 'profit' : 'loss'}`}>
                                         <strong>{formatPercent(results.totalRoi)}</strong>
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Annualized ROI</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Annualized ROI')}</strong></span>
                                     <span className={`result-value ${results.annualizedRoi >= 0 ? 'profit' : 'loss'}`}>
                                         <strong>{formatPercent(results.annualizedRoi)}</strong>
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Holding Period</span>
+                                    <span className="result-label">{getUiString(lang, 'Holding Period')}</span>
                                     <span className="result-value">
                                         {results.holdingDays} days ({(results.holdingDays / 365).toFixed(1)} years)
                                     </span>
@@ -411,22 +411,22 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)', display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <BarChart3 size={16} />
-                                    Comparison with Traditional Assets
+                                    {getUiString(lang, 'Comparison with Traditional Assets')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
                                                 <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Asset')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Avg Annual</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Period Return</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Would Be Worth</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Avg Annual')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Period Return')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Would Be Worth')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             {/* Your Crypto ROI row */}
                                             <tr style={{ borderBottom: '2px solid var(--color-primary)', background: 'rgba(99,102,241,0.06)' }}>
-                                                <td style={{ padding: '8px', fontWeight: 700, color: 'var(--color-primary)' }}>Your Crypto</td>
+                                                <td style={{ padding: '8px', fontWeight: 700, color: 'var(--color-primary)' }}>{getUiString(lang, 'Your Crypto')}</td>
                                                 <td style={{ padding: '8px', textAlign: 'right', fontWeight: 700, color: isProfit ? 'var(--color-accent-green)' : 'var(--color-accent-red)' }}>
                                                     {formatPercent(results.annualizedRoi)}
                                                 </td>
@@ -463,18 +463,18 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="result-cta">
                                 <a
                                     href="https://www.binance.com/en/register"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Trade on Binance →
+                                    {getUiString(lang, 'Trade on Binance →')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                For informational purposes only. Traditional asset returns are historical averages and not guaranteed. Crypto investments are volatile and carry significant risk. Not financial advice.
+                                {getUiString(lang, 'For informational purposes only. Traditional asset returns are historical averages and not guaranteed. Crypto investments are volatile and carry significant risk. Not financial advice.')}
                             </p>
                         </>
                     ) : (
@@ -482,8 +482,8 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <BarChart3 size={40} />
                             </div>
-                            <h3>Calculate Your Crypto ROI</h3>
-                            <p>Enter your initial investment, current value, and holding period to see your return on investment compared with traditional assets.</p>
+                            <h3>{getUiString(lang, 'Calculate Your Crypto ROI')}</h3>
+                            <p>{getUiString(lang, 'Enter your initial investment, current value, and holding period to see your return on investment compared with traditional assets.')}</p>
                         </div>
                     )}
                 </div>

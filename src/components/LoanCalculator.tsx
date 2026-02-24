@@ -125,7 +125,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
         setMarginCallLtv('75'); setLiquidationLtv('83');
     };
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
@@ -186,7 +186,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={collateralValue} onChange={(e) => setCollateralValue(e.target.value)}
+                            <input type="number" inputMode="decimal" value={collateralValue} onChange={(e) => setCollateralValue(e.target.value)}
                                 placeholder="10,000" id="loan-collateral" step="any" min="0" />
                         </div>
                     </div>
@@ -202,7 +202,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                 </button>
                             ))}
                         </div>
-                        <input type="number" value={ltv} onChange={(e) => setLtv(e.target.value)}
+                        <input type="number" inputMode="decimal" value={ltv} onChange={(e) => setLtv(e.target.value)}
                             placeholder="50" id="loan-ltv" step="1" min="1" max="100" />
                     </div>
 
@@ -222,7 +222,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">%</span>
-                            <input type="number" value={apr} onChange={(e) => setApr(e.target.value)}
+                            <input type="number" inputMode="decimal" value={apr} onChange={(e) => setApr(e.target.value)}
                                 placeholder="6.9" id="loan-apr" step="0.1" min="0" />
                         </div>
                     </div>
@@ -255,7 +255,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     </button>
                                 ))}
                             </div>
-                            <input type="number" value={marginCallLtv} onChange={(e) => setMarginCallLtv(e.target.value)}
+                            <input type="number" inputMode="decimal" value={marginCallLtv} onChange={(e) => setMarginCallLtv(e.target.value)}
                                 placeholder="75" id="loan-mc" step="1" min="1" max="100" />
                         </div>
                         <div className="input-group">
@@ -271,7 +271,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     </button>
                                 ))}
                             </div>
-                            <input type="number" value={liquidationLtv} onChange={(e) => setLiquidationLtv(e.target.value)}
+                            <input type="number" inputMode="decimal" value={liquidationLtv} onChange={(e) => setLiquidationLtv(e.target.value)}
                                 placeholder="83" id="loan-liq" step="1" min="1" max="100" />
                         </div>
                     </div>
@@ -290,7 +290,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                         <>
                             {/* Hero */}
                             <div className="result-hero" style={{ borderColor: 'var(--color-primary)' }}>
-                                <span className="result-hero-label">Loan Amount</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Loan Amount')}</span>
                                 <span className="result-hero-value" style={{ color: 'var(--color-primary)' }}>
                                     <Landmark size={28} />
                                     {formatUSD(loanAmount)}
@@ -303,7 +303,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* LTV Health Bar */}
                             <div style={{ margin: '16px 0' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', marginBottom: '4px' }}>
-                                    <span style={{ color: 'var(--color-text-muted)' }}>LTV Ratio</span>
+                                    <span style={{ color: 'var(--color-text-muted)' }}>{getUiString(lang, 'LTV Ratio')}</span>
                                     <span style={{ color: healthColor, fontWeight: 600 }}>{healthLabel} — {ltvPct}%</span>
                                 </div>
                                 <div style={{ height: '8px', borderRadius: '4px', background: 'var(--color-border)', overflow: 'hidden' }}>
@@ -317,11 +317,11 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Cost Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Collateral</span>
+                                    <span className="result-label">{getUiString(lang, 'Collateral')}</span>
                                     <span className="result-value">{formatUSD(collateral)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Loan Amount</span>
+                                    <span className="result-label">{getUiString(lang, 'Loan Amount')}</span>
                                     <span className="result-value">{formatUSD(loanAmount)}</span>
                                 </div>
                                 <div className="result-row">
@@ -329,20 +329,20 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-value">{aprPct}%</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Loan Term</span>
+                                    <span className="result-label">{getUiString(lang, 'Loan Term')}</span>
                                     <span className="result-value">{months} months</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Monthly Interest</span>
+                                    <span className="result-label">{getUiString(lang, 'Monthly Interest')}</span>
                                     <span className="result-value fee">{formatUSD(monthlyInterest)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Total Interest</span>
+                                    <span className="result-label">{getUiString(lang, 'Total Interest')}</span>
                                     <span className="result-value fee">{formatUSD(totalInterest)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Total Repayment</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Total Repayment')}</strong></span>
                                     <span className="result-value"><strong>{formatUSD(totalRepayment)}</strong></span>
                                 </div>
                             </div>
@@ -354,7 +354,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     border: '1px solid rgba(245,158,11,0.3)', background: 'rgba(245,158,11,0.06)',
                                 }}>
                                     <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '2px' }}>
-                                        ⚠️ Margin Call
+                                        {getUiString(lang, '⚠️ Margin Call')}
                                     </div>
                                     <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#f59e0b' }}>
                                         {formatUSD(marginCallPrice)}
@@ -368,7 +368,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     border: '1px solid rgba(239,68,68,0.3)', background: 'rgba(239,68,68,0.06)',
                                 }}>
                                     <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '2px' }}>
-                                        🔴 Liquidation
+                                        {getUiString(lang, '🔴 Liquidation')}
                                     </div>
                                     <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--color-accent-red)' }}>
                                         {formatUSD(liquidationPrice)}
@@ -383,7 +383,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             {schedule.length > 0 && (
                                 <div style={{ marginTop: '16px' }}>
                                     <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                        Monthly Interest Schedule (interest-only)
+                                        {getUiString(lang, 'Monthly Interest Schedule (interest-only)')}
                                     </h4>
                                     <div style={{ overflowX: 'auto', maxHeight: '280px', overflowY: 'auto' }}>
                                         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
@@ -414,14 +414,14 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Crypto-backed loans carry risk of liquidation if collateral value drops. Rates and terms vary by platform. Not financial advice.
+                                {getUiString(lang, 'Crypto-backed loans carry risk of liquidation if collateral value drops. Rates and terms vary by platform. Not financial advice.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Landmark size={40} /></div>
-                            <h3>Estimate Loan Costs</h3>
-                            <p>Enter your collateral value, LTV ratio, and loan term to calculate interest costs, repayment amounts, and liquidation thresholds.</p>
+                            <h3>{getUiString(lang, 'Estimate Loan Costs')}</h3>
+                            <p>{getUiString(lang, 'Enter your collateral value, LTV ratio, and loan term to calculate interest costs, repayment amounts, and liquidation thresholds.')}</p>
                         </div>
                     )}
                 </div>

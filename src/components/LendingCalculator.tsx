@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BadgeDollarSign, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
@@ -21,7 +22,7 @@ const LENDING_SCENARIOS: Array<{
 ];
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -29,7 +30,7 @@ function formatUSD(value: number): string {
   }).format(value);
 }
 
-export default function LendingCalculator() {
+export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
   const [principal, setPrincipal] = useState('5000');
   const [apy, setApy] = useState('8');
   const [termMonths, setTermMonths] = useState('12');
@@ -130,7 +131,7 @@ export default function LendingCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={principal} onChange={(e) => setPrincipal(e.target.value)} min="0" step="any" id="lending-principal" />
+              <input type="number" inputMode="decimal" value={principal} onChange={(e) => setPrincipal(e.target.value)} min="0" step="any" id="lending-principal" />
             </div>
           </div>
 
@@ -149,7 +150,7 @@ export default function LendingCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={apy} onChange={(e) => setApy(e.target.value)} min="0" step="any" id="lending-apy" />
+              <input type="number" inputMode="decimal" value={apy} onChange={(e) => setApy(e.target.value)} min="0" step="any" id="lending-apy" />
             </div>
           </div>
 
@@ -166,7 +167,7 @@ export default function LendingCalculator() {
                 </button>
               ))}
             </div>
-            <input type="number" value={termMonths} onChange={(e) => setTermMonths(e.target.value)} min="1" step="1" id="lending-term" />
+            <input type="number" inputMode="decimal" value={termMonths} onChange={(e) => setTermMonths(e.target.value)} min="1" step="1" id="lending-term" />
           </div>
 
           <div className="input-group">
@@ -184,7 +185,7 @@ export default function LendingCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={platformFee} onChange={(e) => setPlatformFee(e.target.value)} min="0" step="any" id="lending-fee" />
+              <input type="number" inputMode="decimal" value={platformFee} onChange={(e) => setPlatformFee(e.target.value)} min="0" step="any" id="lending-fee" />
             </div>
           </div>
 
@@ -213,7 +214,7 @@ export default function LendingCalculator() {
           {result ? (
             <>
               <div className={`result-hero ${result.netInterest >= 0 ? 'profit' : 'loss'}`}>
-                <span className="result-hero-label">Projected Final Balance</span>
+                <span className="result-hero-label">{getUiString(lang, 'Projected Final Balance')}</span>
                 <span className="result-hero-value"><BadgeDollarSign size={28} />{formatUSD(result.netFinal)}</span>
                 <span className={`result-hero-roi ${result.netInterest >= 0 ? 'profit' : 'loss'}`}>
                   Net interest {result.netInterest >= 0 ? '+' : ''}{formatUSD(result.netInterest)}
@@ -221,18 +222,18 @@ export default function LendingCalculator() {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Gross final balance</span><span className="result-value">{formatUSD(result.grossFinal)}</span></div>
-                <div className="result-row"><span className="result-label">Gross interest</span><span className="result-value">{formatUSD(result.grossInterest)}</span></div>
-                <div className="result-row"><span className="result-label">Performance fee</span><span className="result-value fee">-{formatUSD(result.feeCost)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Gross final balance')}</span><span className="result-value">{formatUSD(result.grossFinal)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Gross interest')}</span><span className="result-value">{formatUSD(result.grossInterest)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Performance fee')}</span><span className="result-value fee">-{formatUSD(result.feeCost)}</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label"><strong>Net final balance</strong></span><span className="result-value"><strong>{formatUSD(result.netFinal)}</strong></span></div>
-                <div className="result-row"><span className="result-label">Annualized net APY</span><span className={`result-value ${result.annualizedReturn >= 0 ? 'profit' : 'loss'}`}>{(result.annualizedReturn * 100).toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label"><strong>{getUiString(lang, 'Net final balance')}</strong></span><span className="result-value"><strong>{formatUSD(result.netFinal)}</strong></span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Annualized net APY')}</span><span className={`result-value ${result.annualizedReturn >= 0 ? 'profit' : 'loss'}`}>{(result.annualizedReturn * 100).toFixed(2)}%</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Rates, lock periods, and real payout schedules vary by protocol and platform. Use conservative assumptions for planning.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Rates, lock periods, and real payout schedules vary by protocol and platform. Use conservative assumptions for planning.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>Enter valid lending inputs</h3><p>Set deposit amount, APY, and duration to model your net lending return.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid lending inputs')}</h3><p>{getUiString(lang, 'Set deposit amount, APY, and duration to model your net lending return.')}</p></div>
           )}
         </div>
       </div>

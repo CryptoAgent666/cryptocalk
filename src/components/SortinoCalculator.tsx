@@ -34,7 +34,7 @@ const SORTINO_SCENARIOS = [
 ] as const;
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -124,7 +124,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
             <label>Portfolio Value (USD)</label>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sortino-value" />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sortino-value" />
             </div>
           </div>
 
@@ -143,7 +143,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sortino-return" />
+              <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sortino-return" />
             </div>
           </div>
 
@@ -162,7 +162,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sortino-rf" />
+              <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sortino-rf" />
             </div>
           </div>
 
@@ -181,7 +181,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={downsideDeviation} onChange={(e) => setDownsideDeviation(e.target.value)} min="0.01" step="any" id="sortino-dd" />
+              <input type="number" inputMode="decimal" value={downsideDeviation} onChange={(e) => setDownsideDeviation(e.target.value)} min="0.01" step="any" id="sortino-dd" />
             </div>
           </div>
 
@@ -198,7 +198,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="sortino-years" />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="sortino-years" />
           </div>
 
           <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
@@ -211,7 +211,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
           {result ? (
             <>
               <div className={`result-hero ${result.sortino >= 1 ? 'profit' : result.sortino >= 0.5 ? '' : 'loss'}`}>
-                <span className="result-hero-label">Sortino Ratio</span>
+                <span className="result-hero-label">{getUiString(lang, 'Sortino Ratio')}</span>
                 <span className="result-hero-value"><BarChart3 size={28} />{result.sortino.toFixed(3)}</span>
                 <span className={`result-hero-roi ${result.sortino >= 1 ? 'profit' : result.sortino >= 0.5 ? '' : 'loss'}`}>{result.rating}</span>
               </div>
@@ -220,13 +220,13 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row"><span className="result-label">Excess return (annual)</span><span className={`result-value ${result.excess >= 0 ? 'profit' : 'loss'}`}>{result.excess >= 0 ? '+' : ''}{result.excess.toFixed(2)}%</span></div>
                 <div className="result-row"><span className="result-label">Excess return (USD/year)</span><span className={`result-value ${result.annualExcessUsd >= 0 ? 'profit' : 'loss'}`}>{result.annualExcessUsd >= 0 ? '+' : ''}{formatUSD(result.annualExcessUsd)}</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label">Projected portfolio value</span><span className="result-value">{formatUSD(result.horizonExpectedValue)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Projected portfolio value')}</span><span className="result-value">{formatUSD(result.horizonExpectedValue)}</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Sortino focuses on downside volatility. It is useful for comparing strategies, but depends on stable return and risk assumptions.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Sortino focuses on downside volatility. It is useful for comparing strategies, but depends on stable return and risk assumptions.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid inputs')}</h3><p>Provide return, risk-free rate, and downside deviation to compute Sortino ratio.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid inputs')}</h3><p>{getUiString(lang, 'Provide return, risk-free rate, and downside deviation to compute Sortino ratio.')}</p></div>
           )}
         </div>
       </div>

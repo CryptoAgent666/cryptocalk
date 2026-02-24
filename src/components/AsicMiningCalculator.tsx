@@ -67,6 +67,14 @@ const NETWORK_DATA: Record<string, NetworkData> = {
     ZEC: { difficulty: 80000000, blockReward: 2.5, price: 25, blockTime: 75 },
 };
 
+// Map whattomine generic names to our symbols
+const COIN_MAPPING: Record<string, string> = {
+    Bitcoin: 'BTC',
+    Litecoin: 'LTC',
+    Dash: 'DASH',
+    Zcash: 'ZEC'
+};
+
 const ELECTRICITY_PILLS = [0.04, 0.06, 0.08, 0.10, 0.15];
 const POOL_FEE_PILLS = [0.5, 1, 1.5, 2, 3];
 const ASIC_PRICE_PILLS = [2500, 4000, 5500, 7000];
@@ -121,11 +129,55 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
     const [activeCoin, setActiveCoin] = useState(ASIC_PRESETS[0].coin);
     const [activeAlgo, setActiveAlgo] = useState(ASIC_PRESETS[0].algo);
 
-    // Results
+    // Live Data & Results
+    const [networkData, setNetworkData] = useState<Record<string, NetworkData>>(NETWORK_DATA);
+    const [liveDataStatus, setLiveDataStatus] = useState<'loading' | 'live' | 'error'>('loading');
+
     const [results, setResults] = useState<PeriodResult[]>([]);
     const [roiDays, setRoiDays] = useState<number | null>(null);
     const [dailyProfit, setDailyProfit] = useState(0);
     const [comparison, setComparison] = useState<AsicComparison[]>([]);
+
+    useEffect(() => {
+        let isMounted = true;
+        setLiveDataStatus('loading');
+        fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://whattomine.com/asic.json"))
+            .then(res => res.json())
+            .then(data => {
+                if (!isMounted) return;
+                try {
+                    const parsed = JSON.parse(data.contents);
+                    const coins = parsed.coins;
+                    const btcPrice = coins['Bitcoin']?.exchange_rate || NETWORK_DATA['BTC'].price;
+
+                    const updatedData = { ...NETWORK_DATA };
+
+                    for (const [name, info] of Object.entries(coins)) {
+                        const symbol = COIN_MAPPING[name];
+                        if (symbol && info) {
+                            const infoAny = info as any;
+                            updatedData[symbol] = {
+                                ...updatedData[symbol],
+                                difficulty: infoAny.difficulty24 || infoAny.difficulty,
+                                blockReward: infoAny.block_reward24 || infoAny.block_reward,
+                                price: symbol === 'BTC' ? infoAny.exchange_rate : (infoAny.exchange_rate * btcPrice),
+                            };
+                        }
+                    }
+
+                    setNetworkData(updatedData);
+                    setLiveDataStatus('live');
+                } catch (e) {
+                    console.error("Failed to parse live mining data", e);
+                    setLiveDataStatus('error');
+                }
+            })
+            .catch(() => {
+                if (isMounted) setLiveDataStatus('error');
+            });
+
+        return () => { isMounted = false; };
+    }, []);
 
     // Select ASIC preset
     const selectAsic = (name: string) => {
@@ -159,7 +211,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
         const elCost = parseFloat(electricityCost);
         const pFee = parseFloat(poolFee);
         const price = parseFloat(asicPrice);
-        const network = NETWORK_DATA[activeCoin];
+        const network = networkData[activeCoin];
 
         if (!hr || hr <= 0 || !network) {
             setResults([]);
@@ -209,7 +261,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
         const elRate = elCost || 0;
         const feeRate = pFee || 0;
         const comparisonData: AsicComparison[] = ASIC_PRESETS.map((preset) => {
-            const net = NETWORK_DATA[preset.coin];
+            const net = networkData[preset.coin];
             const mult = getHashrateMultiplier(preset.algo);
             const dCoins = calcDailyCoins(preset.hashrate, mult, net.difficulty, net.blockReward);
             const dRevenue = dCoins * net.price;
@@ -230,7 +282,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
         }).sort((a, b) => b.dailyProfit - a.dailyProfit);
 
         setComparison(comparisonData);
-    }, [hashrate, power, electricityCost, poolFee, asicPrice, activeCoin, activeAlgo]);
+    }, [hashrate, power, electricityCost, poolFee, asicPrice, activeCoin, activeAlgo, networkData]);
 
     // Auto-calculate on input change
     useEffect(() => {
@@ -255,7 +307,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -322,7 +374,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                         </label>
                         <div className="input-with-prefix">
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={hashrate}
                                 onChange={(e) => setHashrate(e.target.value)}
                                 placeholder={String(ASIC_PRESETS[0].hashrate)}
@@ -353,7 +405,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                         </label>
                         <div className="input-with-prefix">
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={power}
                                 onChange={(e) => setPower(e.target.value)}
                                 placeholder={String(ASIC_PRESETS[0].power)}
@@ -395,7 +447,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={electricityCost}
                                 onChange={(e) => setElectricityCost(e.target.value)}
                                 placeholder="0.08"
@@ -426,7 +478,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={poolFee}
                                 onChange={(e) => setPoolFee(e.target.value)}
                                 placeholder="1"
@@ -459,7 +511,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={asicPrice}
                                 onChange={(e) => setAsicPrice(e.target.value)}
                                 placeholder="5500"
@@ -482,6 +534,15 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
 
                 {/* Right: Results */}
                 <div className="calc-results-panel">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                        <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{getUiString('Estimated Profitability', lang)}</h3>
+                        {liveDataStatus === 'live' && (
+                            <span style={{ color: 'var(--color-accent-green)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(52, 211, 153, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
+                                <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-accent-green)' }}></span>
+                                {getUiString('Live Network Data', lang)}
+                            </span>
+                        )}
+                    </div>
                     {hasInputs && results.length > 0 ? (
                         <>
                             {/* Hero */}
@@ -570,7 +631,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                                     <strong>{(roiDays / 30.44).toFixed(1)} months ({roiDays} days)</strong>
                                                 ) : (
                                                     <strong style={{ color: 'var(--color-accent-red, #ef4444)' }}>
-                                                        Never (unprofitable)
+                                                        {getUiString(lang, 'Never (unprofitable)')}
                                                     </strong>
                                                 )}
                                             </span>
@@ -667,7 +728,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                         color: 'var(--color-text)',
                                     }}>
                                         <Server size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} />
-                                        ASIC Specs
+                                        {getUiString(lang, 'ASIC Specs')}
                                     </h4>
                                     <div className="result-breakdown" style={{ border: 'none', padding: 0 }}>
                                         <div className="result-row">
@@ -706,18 +767,18 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                             <div className="result-cta">
                                 <a
                                     href="https://www.f2pool.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Join F2Pool Mining Pool &rarr;
+                                    {getUiString(lang, 'Join F2Pool Mining Pool &rarr;')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Mining profitability fluctuates with price and difficulty changes. Hardcoded network data is approximate.
+                                {getUiString(lang, 'Mining profitability fluctuates with price and difficulty changes. Hardcoded network data is approximate.')}
                             </p>
                         </>
                     ) : (
@@ -725,8 +786,8 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                             <div className="results-empty-icon">
                                 <Server size={40} />
                             </div>
-                            <h3>Configure Your ASIC Miner</h3>
-                            <p>Select an ASIC model or enter your hashrate and power consumption to see profitability estimates, ROI projections, and device comparisons.</p>
+                            <h3>{getUiString(lang, 'Configure Your ASIC Miner')}</h3>
+                            <p>{getUiString(lang, 'Select an ASIC model or enter your hashrate and power consumption to see profitability estimates, ROI projections, and device comparisons.')}</p>
                         </div>
                     )}
                 </div>

@@ -106,7 +106,7 @@ export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) 
           <div className="input-group">
             <label>Amount</label>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               step="any"
@@ -179,14 +179,14 @@ export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) 
 
               <p className="calc-disclaimer">
                 <Info size={14} />
-                This converter uses denomination math only and does not fetch market prices. It converts units of the same asset.
+                {getUiString(lang, 'This converter uses denomination math only and does not fetch market prices. It converts units of the same asset.')}
               </p>
             </>
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-              <h3>Enter a valid amount</h3>
-              <p>Pick a crypto asset and units to convert values instantly.</p>
+              <h3>{getUiString(lang, 'Enter a valid amount')}</h3>
+              <p>{getUiString(lang, 'Pick a crypto asset and units to convert values instantly.')}</p>
             </div>
           )}
         </div>

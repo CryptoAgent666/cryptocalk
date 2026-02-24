@@ -240,7 +240,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -320,7 +320,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-unit">
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={hashrate}
                                 onChange={(e) => {
                                     setHashrate(e.target.value);
@@ -357,7 +357,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-unit">
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={power}
                                 onChange={(e) => {
                                     setPower(e.target.value);
@@ -392,7 +392,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-unit">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={electricityCost}
                                 onChange={(e) => setElectricityCost(e.target.value)}
                                 placeholder="0.10"
@@ -423,7 +423,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-unit">
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={poolFee}
                                 onChange={(e) => setPoolFee(e.target.value)}
                                 placeholder="2"
@@ -456,7 +456,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-unit">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={hardwareCost}
                                 onChange={(e) => setHardwareCost(e.target.value)}
                                 placeholder="For break-even calculation"
@@ -596,8 +596,8 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* CTA */}
                             <a
                                 href="https://www.f2pool.com"
-                                target="_blank"
-                                rel="noopener noreferrer nofollow"
+                                target="_blank" rel="noopener noreferrer sponsored"
+                                
                                 className="mining-cta"
                             >
                                 Start Mining with F2Pool →

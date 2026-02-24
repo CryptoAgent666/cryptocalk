@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { Gamepad2, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -155,7 +155,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">$</span>
-              <input type="number" value={initialCost} onChange={(e) => setInitialCost(e.target.value)} min="0" step="any" id="gamefi-initial" />
+              <input type="number" inputMode="decimal" value={initialCost} onChange={(e) => setInitialCost(e.target.value)} min="0" step="any" id="gamefi-initial" />
             </div>
           </div>
 
@@ -172,7 +172,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" value={dailyTokenRewards} onChange={(e) => setDailyTokenRewards(e.target.value)} min="0" step="any" id="gamefi-rewards" style={{ marginTop: '8px' }} />
+            <input type="number" inputMode="decimal" value={dailyTokenRewards} onChange={(e) => setDailyTokenRewards(e.target.value)} min="0" step="any" id="gamefi-rewards" style={{ marginTop: '8px' }} />
           </div>
 
           <div className="input-group">
@@ -190,7 +190,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">$</span>
-              <input type="number" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="gamefi-price" />
+              <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="gamefi-price" />
             </div>
           </div>
 
@@ -209,7 +209,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">%</span>
-              <input type="number" value={marketplaceFee} onChange={(e) => setMarketplaceFee(e.target.value)} min="0" step="any" id="gamefi-fee" />
+              <input type="number" inputMode="decimal" value={marketplaceFee} onChange={(e) => setMarketplaceFee(e.target.value)} min="0" step="any" id="gamefi-fee" />
             </div>
           </div>
 
@@ -228,7 +228,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">$</span>
-              <input type="number" value={dailyExpenses} onChange={(e) => setDailyExpenses(e.target.value)} min="0" step="any" id="gamefi-expenses" />
+              <input type="number" inputMode="decimal" value={dailyExpenses} onChange={(e) => setDailyExpenses(e.target.value)} min="0" step="any" id="gamefi-expenses" />
             </div>
           </div>
 
@@ -245,7 +245,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" value={activeDaysPerMonth} onChange={(e) => setActiveDaysPerMonth(e.target.value)} min="1" step="1" id="gamefi-active-days" style={{ marginTop: '8px' }} />
+            <input type="number" inputMode="decimal" value={activeDaysPerMonth} onChange={(e) => setActiveDaysPerMonth(e.target.value)} min="1" step="1" id="gamefi-active-days" style={{ marginTop: '8px' }} />
           </div>
 
           <div className="input-group">
@@ -263,7 +263,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">$</span>
-              <input type="number" value={assetResaleValue} onChange={(e) => setAssetResaleValue(e.target.value)} min="0" step="any" id="gamefi-resale" />
+              <input type="number" inputMode="decimal" value={assetResaleValue} onChange={(e) => setAssetResaleValue(e.target.value)} min="0" step="any" id="gamefi-resale" />
             </div>
           </div>
 
@@ -277,7 +277,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
           {result ? (
             <>
               <div className={`result-hero ${result.netDaily >= 0 ? 'profit' : 'loss'}`}>
-                <span className="result-hero-label">Net Daily Earnings</span>
+                <span className="result-hero-label">{getUiString(lang, 'Net Daily Earnings')}</span>
                 <span className="result-hero-value"><Gamepad2 size={28} />{formatUSD(result.netDaily)}</span>
                 <span className={`result-hero-roi ${result.annualRoi >= 0 ? 'profit' : 'loss'}`}>
                   Annual ROI {result.annualRoi >= 0 ? '+' : ''}{result.annualRoi.toFixed(2)}%
@@ -285,10 +285,10 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Gross daily rewards</span><span className="result-value">{formatUSD(result.grossDaily)}</span></div>
-                <div className="result-row"><span className="result-label">Net monthly earnings</span><span className={`result-value ${result.monthlyNet >= 0 ? 'profit' : 'loss'}`}>{formatUSD(result.monthlyNet)}</span></div>
-                <div className="result-row"><span className="result-label">Net annual earnings</span><span className={`result-value ${result.annualNet >= 0 ? 'profit' : 'loss'}`}>{formatUSD(result.annualNet)}</span></div>
-                <div className="result-row"><span className="result-label">Capital at risk (cost - resale)</span><span className="result-value">{formatUSD(result.capitalAtRisk)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Gross daily rewards')}</span><span className="result-value">{formatUSD(result.grossDaily)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Net monthly earnings')}</span><span className={`result-value ${result.monthlyNet >= 0 ? 'profit' : 'loss'}`}>{formatUSD(result.monthlyNet)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Net annual earnings')}</span><span className={`result-value ${result.annualNet >= 0 ? 'profit' : 'loss'}`}>{formatUSD(result.annualNet)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Capital at risk (cost - resale)')}</span><span className="result-value">{formatUSD(result.capitalAtRisk)}</span></div>
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Break-even time')}</span>
@@ -298,10 +298,10 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Token price and in-game emissions can change quickly. Recheck scenarios after major token unlocks or economy updates.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Token price and in-game emissions can change quickly. Recheck scenarios after major token unlocks or economy updates.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>Enter valid GameFi assumptions</h3><p>Set cost, rewards, and token price to estimate payback and ROI.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid GameFi assumptions')}</h3><p>{getUiString(lang, 'Set cost, rewards, and token price to estimate payback and ROI.')}</p></div>
           )}
         </div>
       </div>

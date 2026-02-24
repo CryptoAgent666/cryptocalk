@@ -196,7 +196,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 0,
@@ -204,7 +204,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
         }).format(n);
 
     const formatUSD2 = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -314,7 +314,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={equipmentCost}
                                 onChange={(e) => setEquipmentCost(e.target.value)}
                                 placeholder="5,000"
@@ -356,7 +356,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={monthlyRevenue}
                                 onChange={(e) => setMonthlyRevenue(e.target.value)}
                                 placeholder="300"
@@ -388,7 +388,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={monthlyExpenses}
                                 onChange={(e) => setMonthlyExpenses(e.target.value)}
                                 placeholder="150"
@@ -438,7 +438,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                             {/* Hero: Break-Even */}
                             <div className={`result-hero ${isProfit ? 'profit' : 'fee'}`}>
                                 <span className="result-hero-label">
-                                    Break-Even Period (Realistic)
+                                    {getUiString(lang, 'Break-Even Period (Realistic)')}
                                 </span>
                                 <span className="result-hero-value">
                                     {isProfit ? <TrendingUp size={28} /> : <TrendingDown size={28} />}
@@ -456,7 +456,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                             {/* Basic Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Equipment Cost</span>
+                                    <span className="result-label">{getUiString(lang, 'Equipment Cost')}</span>
                                     <span className="result-value fee">{formatUSD2(cost)}</span>
                                 </div>
                                 <div className="result-divider" />
@@ -465,18 +465,18 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                     <span className="result-value profit">{formatUSD2(revenue)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Monthly Expenses</span>
+                                    <span className="result-label">{getUiString(lang, 'Monthly Expenses')}</span>
                                     <span className="result-value fee">-{formatUSD2(expenses)}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Monthly Profit</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Monthly Profit')}</strong></span>
                                     <span className={`result-value ${isProfit ? 'profit' : 'fee'}`}>
                                         <strong>{isProfit ? '+' : ''}{formatUSD2(monthlyProfit)}</strong>
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Simple ROI / Month</span>
+                                    <span className="result-label">{getUiString(lang, 'Simple ROI / Month')}</span>
                                     <span className={`result-value ${simpleRoiPerMonth >= 0 ? 'profit' : 'fee'}`}>
                                         {simpleRoiPerMonth >= 0 ? '+' : ''}{simpleRoiPerMonth.toFixed(2)}%
                                     </span>
@@ -495,7 +495,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                     gap: '6px',
                                 }}>
                                     <BarChart3 size={14} />
-                                    Scenario Comparison
+                                    {getUiString(lang, 'Scenario Comparison')}
                                 </h4>
                                 <div style={{
                                     overflowX: 'auto',
@@ -509,11 +509,11 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                     }}>
                                         <thead>
                                             <tr>
-                                                <th style={thStyle}>Scenario</th>
+                                                <th style={thStyle}>{getUiString(lang, 'Scenario')}</th>
                                                 <th style={thStyle}>{getUiString(lang, 'Break-Even')}</th>
-                                                <th style={thStyle}>After 1yr</th>
-                                                <th style={thStyle}>After 2yr</th>
-                                                <th style={thStyle}>After 3yr</th>
+                                                <th style={thStyle}>{getUiString(lang, 'After 1yr')}</th>
+                                                <th style={thStyle}>{getUiString(lang, 'After 2yr')}</th>
+                                                <th style={thStyle}>{getUiString(lang, 'After 3yr')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -586,7 +586,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                         gap: '6px',
                                     }}>
                                         <Calendar size={14} />
-                                        Cumulative P&L (36 Months)
+                                        {getUiString(lang, 'Cumulative P&L (36 Months)')}
                                     </h4>
                                     <div style={{
                                         borderRadius: '10px',
@@ -729,7 +729,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                                     background: 'var(--color-accent-green, #22c55e)',
                                                     borderRadius: '2px',
                                                 }} />
-                                                Optimistic
+                                                {getUiString(lang, 'Optimistic')}
                                             </span>
                                             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                                                 <span style={{
@@ -739,7 +739,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                                     background: 'var(--color-primary, #6366f1)',
                                                     borderRadius: '2px',
                                                 }} />
-                                                Realistic
+                                                {getUiString(lang, 'Realistic')}
                                             </span>
                                             <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                                                 <span style={{
@@ -749,7 +749,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                                     background: '#ef4444',
                                                     borderRadius: '2px',
                                                 }} />
-                                                Pessimistic
+                                                {getUiString(lang, 'Pessimistic')}
                                             </span>
                                         </div>
                                     </div>
@@ -769,7 +769,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                         gap: '6px',
                                     }}>
                                         <Calendar size={14} />
-                                        Monthly Breakdown (Realistic, First 12 Months)
+                                        {getUiString(lang, 'Monthly Breakdown (Realistic, First 12 Months)')}
                                     </h4>
                                     <div style={{
                                         overflowX: 'auto',
@@ -785,9 +785,9 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                                 <tr>
                                                     <th style={thStyle}>{getUiString(lang, 'Month')}</th>
                                                     <th style={thStyle}>{getUiString(lang, 'Revenue')}</th>
-                                                    <th style={thStyle}>Expenses</th>
-                                                    <th style={thStyle}>Profit</th>
-                                                    <th style={thStyle}>Cumulative P&L</th>
+                                                    <th style={thStyle}>{getUiString(lang, 'Expenses')}</th>
+                                                    <th style={thStyle}>{getUiString(lang, 'Profit')}</th>
+                                                    <th style={thStyle}>{getUiString(lang, 'Cumulative P&L')}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -830,18 +830,18 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                             <div className="result-cta">
                                 <a
                                     href="https://www.amazon.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Buy mining equipment on Amazon &rarr;
+                                    {getUiString(lang, 'Buy mining equipment on Amazon &rarr;')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Projections are estimates. Mining profitability depends on price, difficulty, and market conditions.
+                                {getUiString(lang, 'Projections are estimates. Mining profitability depends on price, difficulty, and market conditions.')}
                             </p>
                         </>
                     ) : (
@@ -849,8 +849,8 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                             <div className="results-empty-icon">
                                 <Pickaxe size={40} />
                             </div>
-                            <h3>Mining ROI Calculator</h3>
-                            <p>Enter your equipment cost, expected monthly revenue, and expenses to see break-even projections across optimistic, realistic, and pessimistic scenarios.</p>
+                            <h3>{getUiString(lang, 'Mining ROI Calculator')}</h3>
+                            <p>{getUiString(lang, 'Enter your equipment cost, expected monthly revenue, and expenses to see break-even projections across optimistic, realistic, and pessimistic scenarios.')}</p>
                         </div>
                     )}
                 </div>

@@ -260,7 +260,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -268,7 +268,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
         }).format(n);
 
     const formatTokens = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
         }).format(n);
@@ -316,7 +316,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={totalTokens}
                                 onChange={(e) => setTotalTokens(e.target.value)}
                                 placeholder="1,000,000"
@@ -347,7 +347,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={tokenPrice}
                                 onChange={(e) => setTokenPrice(e.target.value)}
                                 placeholder="0.50"
@@ -379,7 +379,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={tgePct}
                                 onChange={(e) => setTgePct(e.target.value)}
                                 placeholder="10"
@@ -410,7 +410,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={cliffMonths}
                                 onChange={(e) => setCliffMonths(e.target.value)}
                                 placeholder="6"
@@ -441,7 +441,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={vestingMonths}
                                 onChange={(e) => setVestingMonths(e.target.value)}
                                 placeholder="24"
@@ -495,7 +495,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                         <>
                             {/* Hero */}
                             <div className="result-hero" style={{ borderColor: 'var(--color-primary)' }}>
-                                <span className="result-hero-label">Total Value</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Total Value')}</span>
                                 <span className="result-hero-value" style={{ color: 'var(--color-primary)' }}>
                                     <Coins size={28} />
                                     {formatUSD(totalValue)}
@@ -508,36 +508,36 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">TGE Unlock</span>
+                                    <span className="result-label">{getUiString(lang, 'TGE Unlock')}</span>
                                     <span className="result-value profit">
                                         {formatTokens(tgeTokens)} ({tge}%) &mdash; {formatUSD(tgeTokens * price)}
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Cliff Period</span>
+                                    <span className="result-label">{getUiString(lang, 'Cliff Period')}</span>
                                     <span className="result-value">{cliff} month{cliff !== 1 ? 's' : ''}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Vesting Duration</span>
+                                    <span className="result-label">{getUiString(lang, 'Vesting Duration')}</span>
                                     <span className="result-value">{vesting} month{vesting !== 1 ? 's' : ''} after cliff</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Unlock Frequency</span>
+                                    <span className="result-label">{getUiString(lang, 'Unlock Frequency')}</span>
                                     <span className="result-value">{frequencyLabel}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Unlock Periods</span>
+                                    <span className="result-label">{getUiString(lang, 'Unlock Periods')}</span>
                                     <span className="result-value">{periods}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Tokens per Unlock</span>
+                                    <span className="result-label">{getUiString(lang, 'Tokens per Unlock')}</span>
                                     <span className="result-value">
                                         {formatTokens(tokensPerPeriod)} &mdash; {formatUSD(tokensPerPeriod * price)}
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Full Unlock at Month</span>
+                                    <span className="result-label">{getUiString(lang, 'Full Unlock at Month')}</span>
                                     <span className="result-value">{cliff + vesting}</span>
                                 </div>
                             </div>
@@ -546,7 +546,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                             {chartSvg && (
                                 <div style={{ marginTop: '20px' }}>
                                     <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                        Unlock Schedule
+                                        {getUiString(lang, 'Unlock Schedule')}
                                     </h4>
                                     <svg
                                         viewBox={`0 0 ${chartSvg.W} ${chartSvg.H}`}
@@ -618,7 +618,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                                     fontSize="10"
                                                     fill="var(--color-accent-amber)"
                                                 >
-                                                    Cliff End
+                                                    {getUiString(lang, 'Cliff End')}
                                                 </text>
                                             </>
                                         )}
@@ -645,17 +645,17 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Unlock Schedule Table */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Full Unlock Schedule
+                                    {getUiString(lang, 'Full Unlock Schedule')}
                                 </h4>
                                 <div style={{ overflowX: 'auto', maxHeight: '350px', overflowY: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)', position: 'sticky', top: 0, background: 'var(--color-bg)' }}>
                                                 <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Month')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Tokens Unlocked</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Tokens Unlocked')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Cumulative')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>% Unlocked</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Value ($)</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, '% Unlocked')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Value ($)')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -675,7 +675,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                                             {isTGE ? 'TGE (0)' : row.month}
                                                             {isCliffEnd && (
                                                                 <span style={{ fontSize: '0.7rem', color: 'var(--color-accent-amber)', marginLeft: '6px' }}>
-                                                                    Cliff End
+                                                                    {getUiString(lang, 'Cliff End')}
                                                                 </span>
                                                             )}
                                                         </td>
@@ -719,7 +719,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 }}>
                                     <TrendingDown size={18} style={{ flexShrink: 0 }} />
                                     <span>
-                                        At current price, each unlock adds <strong>{formatUSD(sellPressure)}</strong> of potential sell pressure to the market.
+                                        {getUiString(lang, 'At current price, each unlock adds')} <strong>{formatUSD(sellPressure)}</strong> {getUiString(lang, 'of potential sell pressure to the market.')}
                                     </span>
                                 </div>
                             )}
@@ -728,18 +728,18 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="result-cta">
                                 <a
                                     href="https://cryptorank.io"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Track token unlocks on CryptoRank &rarr;
+                                    {getUiString(lang, 'Track token unlocks on CryptoRank &rarr;')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Actual vesting terms may differ. Check official tokenomics documentation.
+                                {getUiString(lang, 'Actual vesting terms may differ. Check official tokenomics documentation.')}
                             </p>
                         </>
                     ) : (
@@ -747,8 +747,8 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Unlock size={40} />
                             </div>
-                            <h3>Visualize Token Unlock Schedule</h3>
-                            <p>Enter your token allocation and vesting parameters to see a detailed unlock timeline with chart and schedule table.</p>
+                            <h3>{getUiString(lang, 'Visualize Token Unlock Schedule')}</h3>
+                            <p>{getUiString(lang, 'Enter your token allocation and vesting parameters to see a detailed unlock timeline with chart and schedule table.')}</p>
                         </div>
                     )}
                 </div>

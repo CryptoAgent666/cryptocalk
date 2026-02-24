@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ArrowRightLeft, Calendar, Clock, Info, RotateCcw } from 'lucide-react';
 
@@ -41,7 +42,7 @@ function parseTimestamp(value: string): Date | null {
   return Number.isNaN(date.getTime()) ? null : date;
 }
 
-export default function TimestampConverter() {
+export default function TimestampConverter({ lang = 'en' }: { lang?: string }) {
   const now = new Date();
   const [mode, setMode] = useState<Mode>('timestamp');
   const [zone, setZone] = useState<DisplayZone>('local');
@@ -158,7 +159,7 @@ export default function TimestampConverter() {
           {computed ? (
             <>
               <div className="result-hero">
-                <span className="result-hero-label">Converted Result</span>
+                <span className="result-hero-label">{getUiString(lang, 'Converted Result')}</span>
                 <span className="result-hero-value">
                   <Clock size={28} />
                   {zone === 'local' ? computed.local : computed.utc}
@@ -168,38 +169,38 @@ export default function TimestampConverter() {
 
               <div className="result-breakdown">
                 <div className="result-row">
-                  <span className="result-label">Unix (seconds)</span>
+                  <span className="result-label">{getUiString(lang, 'Unix (seconds)')}</span>
                   <span className="result-value">{computed.seconds.toLocaleString('en-US')}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Unix (milliseconds)</span>
+                  <span className="result-label">{getUiString(lang, 'Unix (milliseconds)')}</span>
                   <span className="result-value">{computed.ms.toLocaleString('en-US')}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">ISO 8601</span>
+                  <span className="result-label">{getUiString(lang, 'ISO 8601')}</span>
                   <span className="result-value" style={{ fontSize: '0.78rem' }}>{computed.iso}</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
-                  <span className="result-label">Estimated BTC Block</span>
+                  <span className="result-label">{getUiString(lang, 'Estimated BTC Block')}</span>
                   <span className="result-value">{computed.btcBlock.toLocaleString('en-US')}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Estimated ETH Block</span>
+                  <span className="result-label">{getUiString(lang, 'Estimated ETH Block')}</span>
                   <span className="result-value">{computed.ethBlock.toLocaleString('en-US')}</span>
                 </div>
               </div>
 
               <p className="calc-disclaimer">
                 <Info size={14} />
-                Block estimates use average intervals (BTC 10 min, ETH 12 sec). Use explorers for exact block mapping.
+                {getUiString(lang, 'Block estimates use average intervals (BTC 10 min, ETH 12 sec). Use explorers for exact block mapping.')}
               </p>
             </>
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><Clock size={40} /></div>
-              <h3>Enter timestamp or date</h3>
-              <p>Use Unix seconds/milliseconds or a date time value to convert instantly.</p>
+              <h3>{getUiString(lang, 'Enter timestamp or date')}</h3>
+              <p>{getUiString(lang, 'Use Unix seconds/milliseconds or a date time value to convert instantly.')}</p>
             </div>
           )}
         </div>

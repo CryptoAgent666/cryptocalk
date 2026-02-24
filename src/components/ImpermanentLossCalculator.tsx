@@ -163,7 +163,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
         setTokenASearch(''); setTokenBSearch('');
     };
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
@@ -254,7 +254,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={investmentAmount} onChange={(e) => setInvestmentAmount(e.target.value)}
+                            <input type="number" inputMode="decimal" value={investmentAmount} onChange={(e) => setInvestmentAmount(e.target.value)}
                                 placeholder="1,000" id="il-investment" step="any" min="0" />
                         </div>
                     </div>
@@ -272,7 +272,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
-                            <input type="number" value={priceChangeA} onChange={(e) => setPriceChangeA(e.target.value)}
+                            <input type="number" inputMode="decimal" value={priceChangeA} onChange={(e) => setPriceChangeA(e.target.value)}
                                 placeholder="50" id="il-change-a" step="1" />
                         </div>
                     </div>
@@ -290,7 +290,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
-                            <input type="number" value={priceChangeB} onChange={(e) => setPriceChangeB(e.target.value)}
+                            <input type="number" inputMode="decimal" value={priceChangeB} onChange={(e) => setPriceChangeB(e.target.value)}
                                 placeholder="0" id="il-change-b" step="1" />
                         </div>
                     </div>
@@ -308,7 +308,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
-                            <input type="number" value={poolFeeApr} onChange={(e) => setPoolFeeApr(e.target.value)}
+                            <input type="number" inputMode="decimal" value={poolFeeApr} onChange={(e) => setPoolFeeApr(e.target.value)}
                                 placeholder="20" id="il-fee" step="1" min="0" />
                         </div>
                     </div>
@@ -325,7 +325,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <input type="number" value={holdingDays} onChange={(e) => setHoldingDays(e.target.value)}
+                            <input type="number" inputMode="decimal" value={holdingDays} onChange={(e) => setHoldingDays(e.target.value)}
                                 placeholder="30" id="il-days" step="1" min="1" />
                         </div>
                     </div>
@@ -461,9 +461,9 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>Price Δ</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>IL %</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>IL $</th>
+                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Price Δ')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'IL %')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'IL $')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>

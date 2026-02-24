@@ -181,7 +181,7 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
         if (Math.abs(n) < 0.01 && n !== 0) {
             return '$' + n.toFixed(6);
         }
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -259,7 +259,7 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={entryPrice}
                                 onChange={(e) => setEntryPrice(e.target.value)}
                                 placeholder="65,000"
@@ -299,7 +299,7 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={stopLoss}
                                 onChange={(e) => setStopLoss(e.target.value)}
                                 placeholder="63,000"
@@ -330,7 +330,7 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={takeProfit}
                                 onChange={(e) => setTakeProfit(e.target.value)}
                                 placeholder="70,000"
@@ -362,7 +362,7 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={positionSize}
                                 onChange={(e) => setPositionSize(e.target.value)}
                                 placeholder="10,000"
@@ -426,13 +426,13 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                             {/* Required Win Rate */}
                             <div className="result-breakdown" style={{ marginTop: '16px' }}>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Required Win Rate</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Required Win Rate')}</strong></span>
                                     <span className="result-value" style={{ color: getRRColor(results.rrRatio), fontWeight: 600 }}>
                                         {formatPercent(results.requiredWinRate)}
                                     </span>
                                 </div>
                                 <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: '4px 0 0' }}>
-                                    Minimum win rate needed to break even with this R:R ratio
+                                    {getUiString(lang, 'Minimum win rate needed to break even with this R:R ratio')}
                                 </p>
                             </div>
 
@@ -442,9 +442,9 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                                     <span className="result-label">{getUiString(lang, 'Direction')}</span>
                                     <span className="result-value" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                                         {results.direction === 'long' ? (
-                                            <><TrendingUp size={14} /> Long</>
+                                            <><TrendingUp size={14} /> {getUiString(lang, 'Long')}</>
                                         ) : (
-                                            <><TrendingDown size={14} /> Short</>
+                                            <><TrendingDown size={14} /> {getUiString(lang, 'Short')}</>
                                         )}
                                     </span>
                                 </div>
@@ -454,11 +454,11 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Stop-Loss Price</span>
+                                    <span className="result-label">{getUiString(lang, 'Stop-Loss Price')}</span>
                                     <span className="result-value fee">{formatPrice(parseFloat(stopLoss))}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">SL Distance</span>
+                                    <span className="result-label">{getUiString(lang, 'SL Distance')}</span>
                                     <span className="result-value fee">
                                         {formatPrice(results.riskAmount)} ({formatPercent(results.riskPercent)})
                                     </span>
@@ -471,11 +471,11 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                                 )}
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Take-Profit Price</span>
+                                    <span className="result-label">{getUiString(lang, 'Take-Profit Price')}</span>
                                     <span className="result-value profit">{formatPrice(parseFloat(takeProfit))}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">TP Distance</span>
+                                    <span className="result-label">{getUiString(lang, 'TP Distance')}</span>
                                     <span className="result-value profit">
                                         {formatPrice(results.rewardAmount)} ({formatPercent(results.rewardPercent)})
                                     </span>
@@ -500,9 +500,9 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
 
                                 {/* Table Header */}
                                 <div className="result-row" style={{ marginBottom: '4px' }}>
-                                    <span className="result-label" style={{ flex: '0 0 60px', fontWeight: 600, fontSize: '0.75rem' }}>Win %</span>
-                                    <span className="result-label" style={{ flex: '0 0 50px', fontWeight: 600, fontSize: '0.75rem', textAlign: 'center' }}>W/L</span>
-                                    <span className="result-value" style={{ fontWeight: 600, fontSize: '0.75rem', textAlign: 'right' }}>Net P&L</span>
+                                    <span className="result-label" style={{ flex: '0 0 60px', fontWeight: 600, fontSize: '0.75rem' }}>{getUiString(lang, 'Win %')}</span>
+                                    <span className="result-label" style={{ flex: '0 0 50px', fontWeight: 600, fontSize: '0.75rem', textAlign: 'center' }}>{getUiString(lang, 'W/L')}</span>
+                                    <span className="result-value" style={{ fontWeight: 600, fontSize: '0.75rem', textAlign: 'right' }}>{getUiString(lang, 'Net P&L')}</span>
                                 </div>
                                 <div className="result-divider" />
 
@@ -532,18 +532,18 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                             <div className="result-cta">
                                 <a
                                     href="https://www.bybit.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Start Trading on Bybit →
+                                    {getUiString(lang, 'Start Trading on Bybit →')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                For informational purposes only. Not financial advice. Past performance does not guarantee future results.
+                                {getUiString(lang, 'For informational purposes only. Not financial advice. Past performance does not guarantee future results.')}
                             </p>
                         </>
                     ) : (
@@ -551,8 +551,8 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                             <div className="results-empty-icon">
                                 <Target size={40} />
                             </div>
-                            <h3>Evaluate Your Trade Setup</h3>
-                            <p>Enter your entry price, stop-loss, and take-profit to calculate the risk-reward ratio, required win rate, and simulated outcomes.</p>
+                            <h3>{getUiString(lang, 'Evaluate Your Trade Setup')}</h3>
+                            <p>{getUiString(lang, 'Enter your entry price, stop-loss, and take-profit to calculate the risk-reward ratio, required win rate, and simulated outcomes.')}</p>
                         </div>
                     )}
                 </div>

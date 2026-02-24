@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
@@ -14,7 +15,7 @@ const SHARPE_SCENARIOS = [
 ] as const;
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -22,7 +23,7 @@ function formatUSD(value: number): string {
   }).format(value);
 }
 
-export default function SharpeCalculator() {
+export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
   const [portfolioValue, setPortfolioValue] = useState('20000');
   const [expectedReturn, setExpectedReturn] = useState('22');
   const [volatility, setVolatility] = useState('35');
@@ -121,7 +122,7 @@ export default function SharpeCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sharpe-value" />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sharpe-value" />
             </div>
           </div>
 
@@ -140,7 +141,7 @@ export default function SharpeCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sharpe-return" />
+              <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sharpe-return" />
             </div>
           </div>
 
@@ -159,7 +160,7 @@ export default function SharpeCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={volatility} onChange={(e) => setVolatility(e.target.value)} min="0.01" step="any" id="sharpe-volatility" />
+              <input type="number" inputMode="decimal" value={volatility} onChange={(e) => setVolatility(e.target.value)} min="0.01" step="any" id="sharpe-volatility" />
             </div>
           </div>
 
@@ -178,7 +179,7 @@ export default function SharpeCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sharpe-rf" />
+              <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sharpe-rf" />
             </div>
           </div>
 
@@ -195,7 +196,7 @@ export default function SharpeCalculator() {
                 </button>
               ))}
             </div>
-            <input type="number" value={horizonYears} onChange={(e) => setHorizonYears(e.target.value)} min="0.1" step="any" id="sharpe-years" />
+            <input type="number" inputMode="decimal" value={horizonYears} onChange={(e) => setHorizonYears(e.target.value)} min="0.1" step="any" id="sharpe-years" />
           </div>
 
           <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
@@ -208,23 +209,23 @@ export default function SharpeCalculator() {
           {result ? (
             <>
               <div className={`result-hero ${result.sharpe >= 1 ? 'profit' : result.sharpe >= 0.5 ? '' : 'loss'}`}>
-                <span className="result-hero-label">Sharpe Ratio</span>
+                <span className="result-hero-label">{getUiString(lang, 'Sharpe Ratio')}</span>
                 <span className="result-hero-value"><BarChart3 size={28} />{result.sharpe.toFixed(3)}</span>
                 <span className={`result-hero-roi ${result.sharpe >= 1 ? 'profit' : result.sharpe >= 0.5 ? '' : 'loss'}`}>{result.rating}</span>
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Expected excess return</span><span className={`result-value ${result.excessReturn >= 0 ? 'profit' : 'loss'}`}>{result.excessReturn >= 0 ? '+' : ''}{result.excessReturn.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected excess return')}</span><span className={`result-value ${result.excessReturn >= 0 ? 'profit' : 'loss'}`}>{result.excessReturn >= 0 ? '+' : ''}{result.excessReturn.toFixed(2)}%</span></div>
                 <div className="result-row"><span className="result-label">Annual excess return (USD)</span><span className={`result-value ${result.annualExcessUsd >= 0 ? 'profit' : 'loss'}`}>{result.annualExcessUsd >= 0 ? '+' : ''}{formatUSD(result.annualExcessUsd)}</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label">1σ downside scenario value</span><span className="result-value">{formatUSD(result.lowerBoundValue)}</span></div>
-                <div className="result-row"><span className="result-label">1σ upside scenario value</span><span className="result-value">{formatUSD(result.upperBoundValue)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, '1σ downside scenario value')}</span><span className="result-value">{formatUSD(result.lowerBoundValue)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, '1σ upside scenario value')}</span><span className="result-value">{formatUSD(result.upperBoundValue)}</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Sharpe uses average return and volatility assumptions. Use it for comparative ranking, not guaranteed performance forecasting.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Sharpe uses average return and volatility assumptions. Use it for comparative ranking, not guaranteed performance forecasting.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>Enter valid portfolio inputs</h3><p>Set return, volatility, and risk-free rate to estimate Sharpe-adjusted performance.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid portfolio inputs')}</h3><p>{getUiString(lang, 'Set return, volatility, and risk-free rate to estimate Sharpe-adjusted performance.')}</p></div>
           )}
         </div>
       </div>

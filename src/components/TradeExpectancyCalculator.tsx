@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
@@ -14,7 +15,7 @@ const EXPECTANCY_SCENARIOS = [
 ];
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -22,7 +23,7 @@ function formatUSD(value: number): string {
   }).format(value);
 }
 
-export default function TradeExpectancyCalculator() {
+export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
   const [accountSize, setAccountSize] = useState('10000');
   const [winRate, setWinRate] = useState('48');
   const [avgWinR, setAvgWinR] = useState('1.9');
@@ -134,7 +135,7 @@ export default function TradeExpectancyCalculator() {
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">$</span>
-              <input type="number" value={accountSize} onChange={(e) => setAccountSize(e.target.value)} min="0" step="any" id="exp-account-size" />
+              <input type="number" inputMode="decimal" value={accountSize} onChange={(e) => setAccountSize(e.target.value)} min="0" step="any" id="exp-account-size" />
             </div>
           </div>
 
@@ -153,7 +154,7 @@ export default function TradeExpectancyCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="exp-win-rate" />
+              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="exp-win-rate" />
             </div>
           </div>
 
@@ -170,7 +171,7 @@ export default function TradeExpectancyCalculator() {
                 </button>
               ))}
             </div>
-            <input type="number" value={avgWinR} onChange={(e) => setAvgWinR(e.target.value)} min="0.01" step="any" id="exp-avg-win" />
+            <input type="number" inputMode="decimal" value={avgWinR} onChange={(e) => setAvgWinR(e.target.value)} min="0.01" step="any" id="exp-avg-win" />
           </div>
 
           <div className="input-group">
@@ -186,7 +187,7 @@ export default function TradeExpectancyCalculator() {
                 </button>
               ))}
             </div>
-            <input type="number" value={avgLossR} onChange={(e) => setAvgLossR(e.target.value)} min="0.01" step="any" id="exp-avg-loss" />
+            <input type="number" inputMode="decimal" value={avgLossR} onChange={(e) => setAvgLossR(e.target.value)} min="0.01" step="any" id="exp-avg-loss" />
           </div>
 
           <div className="input-group">
@@ -204,7 +205,7 @@ export default function TradeExpectancyCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="exp-risk-trade" />
+              <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="exp-risk-trade" />
             </div>
           </div>
 
@@ -221,7 +222,7 @@ export default function TradeExpectancyCalculator() {
                 </button>
               ))}
             </div>
-            <input type="number" value={tradesPerMonth} onChange={(e) => setTradesPerMonth(e.target.value)} min="1" step="1" id="exp-trades-month" />
+            <input type="number" inputMode="decimal" value={tradesPerMonth} onChange={(e) => setTradesPerMonth(e.target.value)} min="1" step="1" id="exp-trades-month" />
           </div>
 
           <button className="reset-btn" onClick={reset}>
@@ -236,7 +237,7 @@ export default function TradeExpectancyCalculator() {
           {result ? (
             <>
               <div className={`result-hero ${result.expectancyR > 0 ? 'profit' : 'loss'}`}>
-                <span className="result-hero-label">Expectancy per Trade</span>
+                <span className="result-hero-label">{getUiString(lang, 'Expectancy per Trade')}</span>
                 <span className="result-hero-value">
                   <BarChart3 size={28} />
                   {result.expectancyR >= 0 ? '+' : ''}
@@ -247,25 +248,25 @@ export default function TradeExpectancyCalculator() {
 
               <div className="result-breakdown">
                 <div className="result-row">
-                  <span className="result-label">Risk amount per trade</span>
+                  <span className="result-label">{getUiString(lang, 'Risk amount per trade')}</span>
                   <span className="result-value">{formatUSD(result.riskAmount)}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Expected P/L per trade</span>
+                  <span className="result-label">{getUiString(lang, 'Expected P/L per trade')}</span>
                   <span className={`result-value ${result.expectedPerTrade >= 0 ? 'profit' : 'loss'}`}>
                     {result.expectedPerTrade >= 0 ? '+' : ''}
                     {formatUSD(result.expectedPerTrade)}
                   </span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Expected monthly P/L</span>
+                  <span className="result-label">{getUiString(lang, 'Expected monthly P/L')}</span>
                   <span className={`result-value ${result.expectedMonthly >= 0 ? 'profit' : 'loss'}`}>
                     {result.expectedMonthly >= 0 ? '+' : ''}
                     {formatUSD(result.expectedMonthly)}
                   </span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Expected quarterly P/L</span>
+                  <span className="result-label">{getUiString(lang, 'Expected quarterly P/L')}</span>
                   <span className={`result-value ${result.expectedQuarter >= 0 ? 'profit' : 'loss'}`}>
                     {result.expectedQuarter >= 0 ? '+' : ''}
                     {formatUSD(result.expectedQuarter)}
@@ -273,18 +274,18 @@ export default function TradeExpectancyCalculator() {
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
-                  <span className="result-label">Break-even win rate</span>
+                  <span className="result-label">{getUiString(lang, 'Break-even win rate')}</span>
                   <span className="result-value">{result.breakEvenWinRate.toFixed(2)}%</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Profit factor</span>
+                  <span className="result-label">{getUiString(lang, 'Profit factor')}</span>
                   <span className={`result-value ${result.profitFactor >= 1 ? 'profit' : 'loss'}`}>{result.profitFactor.toFixed(2)}</span>
                 </div>
               </div>
 
               <p className="calc-disclaimer">
                 <Info size={14} />
-                Expectancy is a model, not a guarantee. Slippage, execution quality, and strategy drift can materially change real outcomes.
+                {getUiString(lang, 'Expectancy is a model, not a guarantee. Slippage, execution quality, and strategy drift can materially change real outcomes.')}
               </p>
             </>
           ) : (
@@ -292,8 +293,8 @@ export default function TradeExpectancyCalculator() {
               <div className="results-empty-icon">
                 <TrendingUp size={40} />
               </div>
-              <h3>Enter valid trading stats</h3>
-              <p>Set win rate, average win/loss in R, and monthly trade count to estimate expectancy.</p>
+              <h3>{getUiString(lang, 'Enter valid trading stats')}</h3>
+              <p>{getUiString(lang, 'Set win rate, average win/loss in R, and monthly trade count to estimate expectancy.')}</p>
             </div>
           )}
         </div>

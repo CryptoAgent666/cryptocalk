@@ -159,7 +159,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
 
     const formatUSD = (n: number) => {
         if (Math.abs(n) < 0.01 && n !== 0) return `$${n.toFixed(4)}`;
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
         }).format(n);
     };
@@ -200,7 +200,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={buyPrice}
                                 onChange={(e) => setBuyPrice(e.target.value)}
                                 placeholder="0.00"
@@ -228,7 +228,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={sellPrice}
                                 onChange={(e) => setSellPrice(e.target.value)}
                                 placeholder="0.00"
@@ -281,7 +281,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={marketplaceFee}
                                 onChange={(e) => { setMarketplaceFee(e.target.value); setMarketplace('custom'); }}
                                 placeholder="2.5"
@@ -309,7 +309,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={royalty}
                                 onChange={(e) => setRoyalty(e.target.value)}
                                 placeholder="5"
@@ -338,7 +338,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={gasBuy}
                                 onChange={(e) => setGasBuy(e.target.value)}
                                 placeholder="10"
@@ -366,7 +366,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={gasSell}
                                 onChange={(e) => setGasSell(e.target.value)}
                                 placeholder="10"
@@ -397,7 +397,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={ethPrice}
                                 onChange={(e) => setEthPrice(e.target.value)}
                                 placeholder="3000"
@@ -454,7 +454,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Gas Fees</span>
+                                    <span className="result-label">{getUiString(lang, 'Gas Fees')}</span>
                                     <span className="result-value fee">
                                         -{formatETH(gasTotalEth)} / -{formatUSD(gasTotalUsd)}
                                     </span>
@@ -467,7 +467,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Effective Fee Rate</span>
+                                    <span className="result-label">{getUiString(lang, 'Effective Fee Rate')}</span>
                                     <span className="result-value fee">
                                         {grossProfit > 0 ? `${effectiveFeeRate.toFixed(2)}%` : 'N/A'}
                                     </span>
@@ -507,22 +507,22 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                     display: 'flex', gap: '8px', alignItems: 'center', margin: '12px 0',
                                 }}>
                                     <AlertTriangle size={16} style={{ flexShrink: 0 }} />
-                                    Fees consume over 15% of your profit. Consider lower-fee marketplaces.
+                                    {getUiString(lang, 'Fees consume over 15% of your profit. Consider lower-fee marketplaces.')}
                                 </div>
                             )}
 
                             {/* Fee Comparison Table */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Marketplace Fee Comparison
+                                    {getUiString(lang, 'Marketplace Fee Comparison')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>Marketplace</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Fee</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Cost on this trade</th>
+                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Marketplace')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Fee')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Cost on this trade')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -560,24 +560,24 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                             <div className="result-cta">
                                 <a
                                     href="https://blur.io"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Trade NFTs on Blur <ExternalLink size={14} />
+                                    {getUiString(lang, 'Trade NFTs on Blur')} <ExternalLink size={14} />
                                 </a>
                             </div>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Fees and royalties vary by collection and marketplace. Gas costs fluctuate with network congestion. This is an estimate, not financial advice.
+                                {getUiString(lang, 'Fees and royalties vary by collection and marketplace. Gas costs fluctuate with network congestion. This is an estimate, not financial advice.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Image size={40} /></div>
-                            <h3>Calculate NFT Profit</h3>
-                            <p>Enter your buy and sell prices to see your real profit after marketplace fees, creator royalties, and gas costs.</p>
+                            <h3>{getUiString(lang, 'Calculate NFT Profit')}</h3>
+                            <p>{getUiString(lang, 'Enter your buy and sell prices to see your real profit after marketplace fees, creator royalties, and gas costs.')}</p>
                         </div>
                     )}
                 </div>

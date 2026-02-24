@@ -205,7 +205,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
         setValidatorFee('5'); setStakingDays('365'); setAutoCompound(true); clearCoin();
     };
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
@@ -293,7 +293,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={stakingAmount} onChange={(e) => setStakingAmount(e.target.value)}
+                            <input type="number" inputMode="decimal" value={stakingAmount} onChange={(e) => setStakingAmount(e.target.value)}
                                 placeholder="1,000" id="stk-amount" step="any" min="0" />
                         </div>
                         {tokenAmount > 0 && <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>≈ {formatTokens(tokenAmount)} {sym}</span>}
@@ -305,7 +305,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                             <label><Coins size={14} /> Token Price</label>
                             <div className="input-with-prefix">
                                 <span className="input-prefix">$</span>
-                                <input type="number" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)}
+                                <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)}
                                     placeholder="Auto" id="stk-price" step="any" min="0" />
                             </div>
                         </div>
@@ -324,7 +324,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
-                            <input type="number" value={stakingApy} onChange={(e) => setStakingApy(e.target.value)}
+                            <input type="number" inputMode="decimal" value={stakingApy} onChange={(e) => setStakingApy(e.target.value)}
                                 placeholder="7" id="stk-apy" step="0.1" min="0" />
                         </div>
                     </div>
@@ -342,7 +342,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
-                            <input type="number" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)}
+                            <input type="number" inputMode="decimal" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)}
                                 placeholder="5" id="stk-fee" step="1" min="0" max="100" />
                         </div>
                     </div>
@@ -359,7 +359,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <input type="number" value={stakingDays} onChange={(e) => setStakingDays(e.target.value)}
+                            <input type="number" inputMode="decimal" value={stakingDays} onChange={(e) => setStakingDays(e.target.value)}
                                 placeholder="365" id="stk-days" step="1" min="1" />
                         </div>
                     </div>
@@ -424,19 +424,19 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                             {/* Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Staked Amount</span>
+                                    <span className="result-label">{getUiString(lang, 'Staked Amount')}</span>
                                     <span className="result-value">{formatUSD(amount)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Staking APY</span>
+                                    <span className="result-label">{getUiString(lang, 'Staking APY')}</span>
                                     <span className="result-value">{stakingApy}%</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Validator Commission</span>
+                                    <span className="result-label">{getUiString(lang, 'Validator Commission')}</span>
                                     <span className="result-value fee">{validatorFee}%</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Effective APY</span>
+                                    <span className="result-label">{getUiString(lang, 'Effective APY')}</span>
                                     <span className="result-value profit">{(effectiveApy * 100).toFixed(2)}%</span>
                                 </div>
                                 <div className="result-divider" />
@@ -445,16 +445,16 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                                     <span className="result-value">{autoCompound ? 'Daily (365×/yr)' : 'None (simple)'}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Staking Period</span>
+                                    <span className="result-label">{getUiString(lang, 'Staking Period')}</span>
                                     <span className="result-value">{days} days ({years.toFixed(1)} years)</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Rewards Earned</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Rewards Earned')}</strong></span>
                                     <span className="result-value profit"><strong>+{formatUSD(rewardsEarned)}</strong></span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Fees Paid to Validator</span>
+                                    <span className="result-label">{getUiString(lang, 'Fees Paid to Validator')}</span>
                                     <span className="result-value fee">−{formatUSD(totalFees)}</span>
                                 </div>
                             </div>
@@ -462,14 +462,14 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                             {/* Monthly Table */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Monthly Earnings Breakdown
+                                    {getUiString(lang, 'Monthly Earnings Breakdown')}
                                 </h4>
                                 <div style={{ overflowX: 'auto', maxHeight: '300px', overflowY: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)', position: 'sticky', top: 0, background: 'var(--color-bg)' }}>
                                                 <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Month')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Reward</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Reward')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Cumulative')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Balance')}</th>
                                             </tr>
@@ -490,14 +490,14 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Staking yields vary over time. APY shown is an estimate. Validator commissions and unbonding periods may apply.
+                                {getUiString(lang, 'Staking yields vary over time. APY shown is an estimate. Validator commissions and unbonding periods may apply.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Coins size={40} /></div>
-                            <h3>Calculate Staking Rewards</h3>
-                            <p>Select a coin or enter staking details to see daily, weekly, monthly, and yearly rewards with compound growth.</p>
+                            <h3>{getUiString(lang, 'Calculate Staking Rewards')}</h3>
+                            <p>{getUiString(lang, 'Select a coin or enter staking details to see daily, weekly, monthly, and yearly rewards with compound growth.')}</p>
                         </div>
                     )}
                 </div>

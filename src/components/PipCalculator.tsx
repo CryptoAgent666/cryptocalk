@@ -247,7 +247,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
         if (Math.abs(n) < 0.01 && n !== 0) {
             return '$' + n.toFixed(6);
         }
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -374,7 +374,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={currentPrice}
                                 onChange={(e) => setCurrentPrice(e.target.value)}
                                 placeholder="65,000"
@@ -431,7 +431,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix">
                             <span className="input-prefix">{sizeMode === 'usd' ? '$' : '#'}</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={positionSize}
                                 onChange={(e) => setPositionSize(e.target.value)}
                                 placeholder={sizeMode === 'usd' ? '10,000' : '0.5'}
@@ -462,7 +462,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={tickSize}
                                 onChange={(e) => setTickSize(e.target.value)}
                                 placeholder="1.00"
@@ -490,7 +490,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Main Result: Value of 1 Pip */}
                             <div className="result-hero profit">
                                 <span className="result-hero-label">
-                                    Value of 1 Pip / Tick
+                                    {getUiString(lang, 'Value of 1 Pip / Tick')}
                                 </span>
                                 <span className="result-hero-value">
                                     <Ruler size={28} />
@@ -504,11 +504,11 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Position Info */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Position Size</span>
+                                    <span className="result-label">{getUiString(lang, 'Position Size')}</span>
                                     <span className="result-value">{formatUSD(results.positionUSD)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Position in Coins</span>
+                                    <span className="result-label">{getUiString(lang, 'Position in Coins')}</span>
                                     <span className="result-value">
                                         {formatCoins(results.positionCoins)} {selectedCoin ? selectedCoin.symbol.toUpperCase() : 'coins'}
                                     </span>
@@ -518,7 +518,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-value">{formatPrice(results.currentPrice)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Tick Size</span>
+                                    <span className="result-label">{getUiString(lang, 'Tick Size')}</span>
                                     <span className="result-value">{formatTick(results.tickSize)}</span>
                                 </div>
                             </div>
@@ -526,8 +526,8 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* P&L per N Pips Table */}
                             <div className="result-breakdown">
                                 <div className="result-row" style={{ marginBottom: '4px' }}>
-                                    <span className="result-label"><strong>Price Move</strong></span>
-                                    <span className="result-value"><strong>P&L</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Price Move')}</strong></span>
+                                    <span className="result-value"><strong>{getUiString(lang, 'P&L')}</strong></span>
                                 </div>
                                 <div className="result-divider" />
                                 {results.pnlTable.map(({ pips, value }) => (
@@ -549,27 +549,27 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Quick Reference */}
                             <div className="result-breakdown">
                                 <div className="result-row" style={{ marginBottom: '4px' }}>
-                                    <span className="result-label"><strong>Common Tick Sizes</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Common Tick Sizes')}</strong></span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">BTC/USDT</span>
+                                    <span className="result-label">{getUiString(lang, 'BTC/USDT')}</span>
                                     <span className="result-value">$0.10 — $10.00</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">ETH/USDT</span>
+                                    <span className="result-label">{getUiString(lang, 'ETH/USDT')}</span>
                                     <span className="result-value">$0.01 — $1.00</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">SOL/USDT</span>
+                                    <span className="result-label">{getUiString(lang, 'SOL/USDT')}</span>
                                     <span className="result-value">$0.001 — $0.10</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">XRP/USDT</span>
+                                    <span className="result-label">{getUiString(lang, 'XRP/USDT')}</span>
                                     <span className="result-value">$0.0001 — $0.01</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">DOGE/USDT</span>
+                                    <span className="result-label">{getUiString(lang, 'DOGE/USDT')}</span>
                                     <span className="result-value">$0.00001 — $0.001</span>
                                 </div>
                             </div>
@@ -578,8 +578,8 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="result-cta">
                                 <a
                                     href="https://www.bybit.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
                                     Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
@@ -589,7 +589,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                For informational purposes only. Not financial advice. Tick sizes vary by exchange and trading pair.
+                                {getUiString(lang, 'For informational purposes only. Not financial advice. Tick sizes vary by exchange and trading pair.')}
                             </p>
                         </>
                     ) : (
@@ -597,8 +597,8 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Ruler size={40} />
                             </div>
-                            <h3>Calculate Pip / Tick Value</h3>
-                            <p>Select a trading pair, enter your position size and tick size to see the dollar value of each price movement.</p>
+                            <h3>{getUiString(lang, 'Calculate Pip / Tick Value')}</h3>
+                            <p>{getUiString(lang, 'Select a trading pair, enter your position size and tick size to see the dollar value of each price movement.')}</p>
                         </div>
                     )}
                 </div>
