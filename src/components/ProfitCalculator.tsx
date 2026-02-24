@@ -263,7 +263,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -375,7 +375,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={buyPrice}
                                 onChange={(e) => setBuyPrice(e.target.value)}
                                 placeholder="0.00"
@@ -409,7 +409,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={sellPrice}
                                 onChange={(e) => setSellPrice(e.target.value)}
                                 placeholder="0.00"
@@ -458,7 +458,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">{inputMode === 'investment' ? '$' : '#'}</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={inputMode === 'investment' ? investmentAmount : quantity}
                                 onChange={(e) =>
                                     inputMode === 'investment'
@@ -503,7 +503,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                         ))}
                                     </div>
                                     <input
-                                        type="number"
+                                        type="number" inputMode="decimal"
                                         value={entryFee}
                                         onChange={(e) => setEntryFee(e.target.value)}
                                         placeholder="0.1"
@@ -526,7 +526,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                         ))}
                                     </div>
                                     <input
-                                        type="number"
+                                        type="number" inputMode="decimal"
                                         value={exitFee}
                                         onChange={(e) => setExitFee(e.target.value)}
                                         placeholder="0.1"
@@ -619,8 +619,8 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="result-cta">
                                 <a
                                     href="https://www.bybit.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
                                     Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →

@@ -1,8 +1,9 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Dice5, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -16,7 +17,7 @@ const KELLY_SCENARIOS = [
   { label: 'Aggressive', winRate: '60', avgWinPct: '2', avgLossPct: '1', capital: '25000' },
 ] as const;
 
-export default function KellyCalculator() {
+export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
   const WIN_RATE_PRESETS = [40, 45, 50, 55, 60];
   const AVG_WIN_PRESETS = [1, 1.5, 2, 3];
   const AVG_LOSS_PRESETS = [0.5, 1, 1.5, 2];
@@ -112,7 +113,7 @@ export default function KellyCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="kelly-win-rate" />
+              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="kelly-win-rate" />
             </div>
           </div>
 
@@ -131,7 +132,7 @@ export default function KellyCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={avgWinPct} onChange={(e) => setAvgWinPct(e.target.value)} min="0.01" step="any" id="kelly-avg-win" />
+              <input type="number" inputMode="decimal" value={avgWinPct} onChange={(e) => setAvgWinPct(e.target.value)} min="0.01" step="any" id="kelly-avg-win" />
             </div>
           </div>
 
@@ -150,7 +151,7 @@ export default function KellyCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={avgLossPct} onChange={(e) => setAvgLossPct(e.target.value)} min="0.01" step="any" id="kelly-avg-loss" />
+              <input type="number" inputMode="decimal" value={avgLossPct} onChange={(e) => setAvgLossPct(e.target.value)} min="0.01" step="any" id="kelly-avg-loss" />
             </div>
           </div>
 
@@ -169,7 +170,7 @@ export default function KellyCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={capital} onChange={(e) => setCapital(e.target.value)} min="0" step="any" id="kelly-capital" />
+              <input type="number" inputMode="decimal" value={capital} onChange={(e) => setCapital(e.target.value)} min="0" step="any" id="kelly-capital" />
             </div>
           </div>
 
@@ -183,7 +184,7 @@ export default function KellyCalculator() {
           {result ? (
             <>
               <div className={`result-hero ${result.halfKelly > 0 ? 'profit' : 'loss'}`}>
-                <span className="result-hero-label">Suggested Position Size (Half Kelly)</span>
+                <span className="result-hero-label">{getUiString(lang, 'Suggested Position Size (Half Kelly)')}</span>
                 <span className="result-hero-value"><Dice5 size={28} />{(result.halfKelly * 100).toFixed(2)}%</span>
                 <span className={`result-hero-roi ${result.halfKelly > 0 ? 'profit' : 'loss'}`}>
                   {formatUSD(result.halfKellyUsd)} per trade
@@ -191,18 +192,18 @@ export default function KellyCalculator() {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Full Kelly</span><span className={`result-value ${result.fullKelly > 0 ? 'profit' : 'loss'}`}>{(result.fullKelly * 100).toFixed(2)}% ({formatUSD(result.fullKellyUsd)})</span></div>
-                <div className="result-row"><span className="result-label">Half Kelly</span><span className={`result-value ${result.halfKelly > 0 ? 'profit' : 'loss'}`}>{(result.halfKelly * 100).toFixed(2)}% ({formatUSD(result.halfKellyUsd)})</span></div>
-                <div className="result-row"><span className="result-label">Quarter Kelly</span><span className={`result-value ${result.quarterKelly > 0 ? 'profit' : 'loss'}`}>{(result.quarterKelly * 100).toFixed(2)}% ({formatUSD(result.quarterKellyUsd)})</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Full Kelly')}</span><span className={`result-value ${result.fullKelly > 0 ? 'profit' : 'loss'}`}>{(result.fullKelly * 100).toFixed(2)}% ({formatUSD(result.fullKellyUsd)})</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Half Kelly')}</span><span className={`result-value ${result.halfKelly > 0 ? 'profit' : 'loss'}`}>{(result.halfKelly * 100).toFixed(2)}% ({formatUSD(result.halfKellyUsd)})</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Quarter Kelly')}</span><span className={`result-value ${result.quarterKelly > 0 ? 'profit' : 'loss'}`}>{(result.quarterKelly * 100).toFixed(2)}% ({formatUSD(result.quarterKellyUsd)})</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label">Expected edge per trade</span><span className={`result-value ${result.edgePerTradePct >= 0 ? 'profit' : 'loss'}`}>{result.edgePerTradePct >= 0 ? '+' : ''}{result.edgePerTradePct.toFixed(3)}%</span></div>
-                <div className="result-row"><span className="result-label">Chance of 5-loss streak</span><span className="result-value">{result.lossStreak5Prob.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected edge per trade')}</span><span className={`result-value ${result.edgePerTradePct >= 0 ? 'profit' : 'loss'}`}>{result.edgePerTradePct >= 0 ? '+' : ''}{result.edgePerTradePct.toFixed(3)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Chance of 5-loss streak')}</span><span className="result-value">{result.lossStreak5Prob.toFixed(2)}%</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Kelly assumes stable edge and independent outcomes. For volatile markets, fractional Kelly is typically safer than full Kelly.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Kelly assumes stable edge and independent outcomes. For volatile markets, fractional Kelly is typically safer than full Kelly.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>Enter valid strategy stats</h3><p>Set win rate and average win/loss to estimate Kelly-based sizing.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid strategy stats')}</h3><p>{getUiString(lang, 'Set win rate and average win/loss to estimate Kelly-based sizing.')}</p></div>
           )}
         </div>
       </div>

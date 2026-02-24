@@ -145,7 +145,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
         setYears('1');
     };
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
@@ -203,7 +203,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
-                            <input type="number" value={rateInput} onChange={(e) => setRateInput(e.target.value)}
+                            <input type="number" inputMode="decimal" value={rateInput} onChange={(e) => setRateInput(e.target.value)}
                                 placeholder="12" id="apy-rate" step="0.1" min="0" />
                         </div>
                     </div>
@@ -237,7 +237,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={principal} onChange={(e) => setPrincipal(e.target.value)}
+                            <input type="number" inputMode="decimal" value={principal} onChange={(e) => setPrincipal(e.target.value)}
                                 placeholder="10,000" id="apy-principal" step="any" min="0" />
                         </div>
                     </div>
@@ -254,7 +254,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <input type="number" value={years} onChange={(e) => setYears(e.target.value)}
+                            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)}
                                 placeholder="1" id="apy-years" step="1" min="1" max="30" />
                         </div>
                     </div>
@@ -322,14 +322,14 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                     padding: '12px', background: 'rgba(34,197,94,0.06)',
                                     border: '1px solid rgba(34,197,94,0.3)', borderRadius: '10px', textAlign: 'center',
                                 }}>
-                                    <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '3px' }}>With Compounding</div>
+                                    <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '3px' }}>{getUiString(lang, 'With Compounding')}</div>
                                     <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-accent-green)' }}>+{formatUSD(earningsWithCompounding)}</div>
                                 </div>
                                 <div style={{
                                     padding: '12px', background: 'var(--color-bg-card)',
                                     border: '1px solid var(--color-border)', borderRadius: '10px', textAlign: 'center',
                                 }}>
-                                    <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '3px' }}>Simple Interest</div>
+                                    <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '3px' }}>{getUiString(lang, 'Simple Interest')}</div>
                                     <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text)' }}>+{formatUSD(earningsSimple)}</div>
                                 </div>
                             </div>
@@ -354,19 +354,19 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Total with Compounding</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Total with Compounding')}</strong></span>
                                     <span className="result-value profit"><strong>{formatUSD(totalWithCompounding)}</strong></span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Earnings (Compounded)</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Earnings (Compounded)')}</strong></span>
                                     <span className="result-value profit"><strong>+{formatUSD(earningsWithCompounding)}</strong></span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Earnings (Simple Interest)</span>
+                                    <span className="result-label">{getUiString(lang, 'Earnings (Simple Interest)')}</span>
                                     <span className="result-value">+{formatUSD(earningsSimple)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Compounding Advantage</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Compounding Advantage')}</strong></span>
                                     <span className="result-value profit"><strong>+{formatUSD(compoundAdvantage)}</strong></span>
                                 </div>
                             </div>
@@ -374,7 +374,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Comparison Table */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Compounding Frequency Comparison
+                                    {getUiString(lang, 'Compounding Frequency Comparison')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
@@ -473,8 +473,8 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="result-cta">
                                 <a
                                     href="https://www.bybit.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
                                     Earn Up to {rateInput}% APY on Bybit Earn &rarr;
@@ -483,14 +483,14 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                APY assumes interest is reinvested at the same rate. Actual DeFi and staking yields fluctuate. This calculator is for educational purposes only and is not financial advice.
+                                {getUiString(lang, 'APY assumes interest is reinvested at the same rate. Actual DeFi and staking yields fluctuate. This calculator is for educational purposes only and is not financial advice.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-                            <h3>Convert APR to APY</h3>
-                            <p>Enter an interest rate, choose your compounding frequency, and see the real yield you earn after compounding. Compare across different frequencies instantly.</p>
+                            <h3>{getUiString(lang, 'Convert APR to APY')}</h3>
+                            <p>{getUiString(lang, 'Enter an interest rate, choose your compounding frequency, and see the real yield you earn after compounding. Compare across different frequencies instantly.')}</p>
                         </div>
                     )}
                 </div>

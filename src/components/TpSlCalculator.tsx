@@ -243,7 +243,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
         setAutoCalcTP(true);
     };
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
@@ -413,7 +413,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
+                            <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
                                 placeholder="65,000" id="tpsl-entry" step="any" min="0" />
                         </div>
                     </div>
@@ -434,7 +434,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={stopLoss} onChange={(e) => setStopLoss(e.target.value)}
+                            <input type="number" inputMode="decimal" value={stopLoss} onChange={(e) => setStopLoss(e.target.value)}
                                 placeholder={isShort ? '67,000' : '63,000'} id="tpsl-sl" step="any" min="0" />
                         </div>
                     </div>
@@ -455,7 +455,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
+                            <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
                                 placeholder="1,000" id="tpsl-size" step="any" min="0" />
                         </div>
                     </div>
@@ -473,7 +473,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">1:</span>
-                            <input type="number" value={rrRatio} onChange={(e) => { setRrRatio(e.target.value); setAutoCalcTP(true); }}
+                            <input type="number" inputMode="decimal" value={rrRatio} onChange={(e) => { setRrRatio(e.target.value); setAutoCalcTP(true); }}
                                 placeholder="2" id="tpsl-rr" step="0.1" min="0.1" />
                         </div>
                     </div>
@@ -500,7 +500,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                             </label>
                             <div className="input-with-prefix">
                                 <span className="input-prefix">$</span>
-                                <input type="number" value={level.price}
+                                <input type="number" inputMode="decimal" value={level.price}
                                     onChange={(e) => {
                                         const newLevels = [...tpLevels];
                                         newLevels[i] = { ...newLevels[i], price: e.target.value };
@@ -564,11 +564,11 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
 
                                 {/* Stop Loss */}
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Stop-Loss</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Stop-Loss')}</strong></span>
                                     <span className="result-value fee"><strong>{formatUSD(sl)}</strong></span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">SL Distance</span>
+                                    <span className="result-label">{getUiString(lang, 'SL Distance')}</span>
                                     <span className="result-value fee">{formatUSD(slDist)} ({formatPercent(slDistPercent)})</span>
                                 </div>
                                 {size > 0 && (
@@ -607,7 +607,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                     <>
                                         <div className="result-divider" />
                                         <div className="result-row">
-                                            <span className="result-label"><strong>Total Potential Profit</strong></span>
+                                            <span className="result-label"><strong>{getUiString(lang, 'Total Potential Profit')}</strong></span>
                                             <span className="result-value profit"><strong>+{formatUSD(totalTpPnl)}</strong></span>
                                         </div>
                                     </>
@@ -616,21 +616,21 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* CTA */}
                             <div className="result-cta">
-                                <a href="https://www.bybit.com" target="_blank" rel="noopener noreferrer nofollow" className="cta-btn">
+                                <a href="https://www.bybit.com" target="_blank" rel="noopener noreferrer sponsored"  className="cta-btn">
                                     Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
                                 </a>
                             </div>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                For informational purposes only. Always verify TP/SL levels on your exchange before placing orders.
+                                {getUiString(lang, 'For informational purposes only. Always verify TP/SL levels on your exchange before placing orders.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Target size={40} /></div>
-                            <h3>Plan Your Trade</h3>
-                            <p>Enter entry price, stop-loss, and R:R ratio to calculate optimal take-profit levels with a visual price scale.</p>
+                            <h3>{getUiString(lang, 'Plan Your Trade')}</h3>
+                            <p>{getUiString(lang, 'Enter entry price, stop-loss, and R:R ratio to calculate optimal take-profit levels with a visual price scale.')}</p>
                         </div>
                     )}
                 </div>

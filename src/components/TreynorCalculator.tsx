@@ -14,7 +14,7 @@ const TREYNOR_SCENARIOS = [
 ];
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -125,7 +125,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">$</span>
               <input
-                type="number"
+                type="number" inputMode="decimal"
                 value={portfolioValue}
                 onChange={(e) => setPortfolioValue(e.target.value)}
                 min="0"
@@ -151,7 +151,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
               <input
-                type="number"
+                type="number" inputMode="decimal"
                 value={expectedReturn}
                 onChange={(e) => setExpectedReturn(e.target.value)}
                 step="any"
@@ -176,7 +176,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
               <input
-                type="number"
+                type="number" inputMode="decimal"
                 value={riskFreeRate}
                 onChange={(e) => setRiskFreeRate(e.target.value)}
                 step="any"
@@ -199,7 +199,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <input
-              type="number"
+              type="number" inputMode="decimal"
               value={beta}
               onChange={(e) => setBeta(e.target.value)}
               min="0.01"
@@ -221,7 +221,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="treynor-years" />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="treynor-years" />
           </div>
 
           <button className="reset-btn" onClick={reset}>
@@ -236,7 +236,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           {result ? (
             <>
               <div className={`result-hero ${result.treynor >= 6 ? 'profit' : result.treynor >= 2 ? '' : 'loss'}`}>
-                <span className="result-hero-label">Treynor Ratio</span>
+                <span className="result-hero-label">{getUiString(lang, 'Treynor Ratio')}</span>
                 <span className="result-hero-value">
                   <ShieldCheck size={28} />
                   {result.treynor.toFixed(3)}
@@ -246,7 +246,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
 
               <div className="result-breakdown">
                 <div className="result-row">
-                  <span className="result-label">Excess return vs risk-free</span>
+                  <span className="result-label">{getUiString(lang, 'Excess return vs risk-free')}</span>
                   <span className={`result-value ${result.excessReturn >= 0 ? 'profit' : 'loss'}`}>
                     {result.excessReturn >= 0 ? '+' : ''}
                     {result.excessReturn.toFixed(2)}%
@@ -260,20 +260,20 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                   </span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Beta-adjusted exposure</span>
+                  <span className="result-label">{getUiString(lang, 'Beta-adjusted exposure')}</span>
                   <span className="result-value">{formatUSD(result.betaAdjustedExposure)}</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
-                  <span className="result-label">Projected portfolio value</span>
+                  <span className="result-label">{getUiString(lang, 'Projected portfolio value')}</span>
                   <span className="result-value">{formatUSD(result.projectedValue)}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Risk-free baseline value</span>
+                  <span className="result-label">{getUiString(lang, 'Risk-free baseline value')}</span>
                   <span className="result-value">{formatUSD(result.riskFreeProjection)}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Projected alpha vs baseline</span>
+                  <span className="result-label">{getUiString(lang, 'Projected alpha vs baseline')}</span>
                   <span className={`result-value ${result.projectionAlpha >= 0 ? 'profit' : 'loss'}`}>
                     {result.projectionAlpha >= 0 ? '+' : ''}
                     {formatUSD(result.projectionAlpha)}
@@ -283,7 +283,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
 
               <p className="calc-disclaimer">
                 <Info size={14} />
-                Treynor isolates return per unit of systematic market risk (beta). Use it to compare strategies with different beta exposures.
+                {getUiString(lang, 'Treynor isolates return per unit of systematic market risk (beta). Use it to compare strategies with different beta exposures.')}
               </p>
             </>
           ) : (
@@ -292,7 +292,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                 <TrendingUp size={40} />
               </div>
               <h3>{getUiString(lang, 'Enter valid inputs')}</h3>
-              <p>Provide expected return, risk-free rate, beta, and horizon to compute Treynor ratio.</p>
+              <p>{getUiString(lang, 'Provide expected return, risk-free rate, beta, and horizon to compute Treynor ratio.')}</p>
             </div>
           )}
         </div>

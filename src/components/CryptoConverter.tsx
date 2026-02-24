@@ -157,13 +157,13 @@ export default function CryptoConverter() {
 
     const formatNumber = (n: number, decimals = 2) => {
         if (n >= 1) {
-            return new Intl.NumberFormat('en-US', {
+            return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
                 minimumFractionDigits: decimals,
                 maximumFractionDigits: decimals,
             }).format(n);
         }
         // For small numbers, show more decimals
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 8,
         }).format(n);
@@ -202,7 +202,7 @@ export default function CryptoConverter() {
                     <label className="converter-label">Amount</label>
                     <div className="converter-amount-input">
                         <input
-                            type="number"
+                            type="number" inputMode="decimal"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
                             placeholder="1"
@@ -350,8 +350,8 @@ export default function CryptoConverter() {
                 {/* CTA */}
                 <a
                     href="https://www.binance.com"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
+                    target="_blank" rel="noopener noreferrer sponsored"
+                    
                     className="converter-cta"
                 >
                     Buy {fromCoin.symbol.toUpperCase()} on Binance →

@@ -164,7 +164,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
 
     /* ---- Formatters ---- */
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -177,7 +177,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
     };
 
     const formatNumber = (n: number) =>
-        new Intl.NumberFormat('en-US').format(n);
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US').format(n);
 
     const hasInputs = results !== null;
     const postHalvingNegative = results ? results.postHalvingNetProfit < 0 : false;
@@ -205,7 +205,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                         </label>
                         <div className="input-with-prefix">
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={hashrate}
                                 onChange={(e) => setHashrate(e.target.value)}
                                 placeholder="100"
@@ -237,7 +237,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={electricityCost}
                                 onChange={(e) => setElectricityCost(e.target.value)}
                                 placeholder="0.08"
@@ -268,7 +268,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                         </label>
                         <div className="input-with-prefix">
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={powerConsumption}
                                 onChange={(e) => setPowerConsumption(e.target.value)}
                                 placeholder="3000"
@@ -301,7 +301,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={btcPrice}
                                 onChange={(e) => setBtcPrice(e.target.value)}
                                 placeholder="Fetching..."
@@ -354,7 +354,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="result-hero" style={{ borderColor: 'var(--color-accent-orange, #f59e0b)' }}>
                         <span className="result-hero-label">
                             <Timer size={16} />
-                            Next Bitcoin Halving (#5)
+                            {getUiString(lang, 'Next Bitcoin Halving (#5)')}
                         </span>
                         <span className="result-hero-value" style={{ color: 'var(--color-accent-orange, #f59e0b)' }}>
                             <Clock size={28} />
@@ -368,19 +368,19 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Countdown details */}
                     <div className="result-breakdown">
                         <div className="result-row">
-                            <span className="result-label">Current Block (est.)</span>
+                            <span className="result-label">{getUiString(lang, 'Current Block (est.)')}</span>
                             <span className="result-value">{formatNumber(countdown.currentBlock)}</span>
                         </div>
                         <div className="result-row">
-                            <span className="result-label">Blocks Remaining</span>
+                            <span className="result-label">{getUiString(lang, 'Blocks Remaining')}</span>
                             <span className="result-value">{formatNumber(countdown.blocksRemaining)}</span>
                         </div>
                         <div className="result-row">
-                            <span className="result-label">Current Block Reward</span>
+                            <span className="result-label">{getUiString(lang, 'Current Block Reward')}</span>
                             <span className="result-value">{CURRENT_REWARD} BTC</span>
                         </div>
                         <div className="result-row">
-                            <span className="result-label">Post-Halving Reward</span>
+                            <span className="result-label">{getUiString(lang, 'Post-Halving Reward')}</span>
                             <span className="result-value">{POST_HALVING_REWARD} BTC</span>
                         </div>
                     </div>
@@ -391,42 +391,42 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     {hasInputs ? (
                         <>
                             <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '12px', color: 'var(--color-text)' }}>
-                                Mining Impact Analysis
+                                {getUiString(lang, 'Mining Impact Analysis')}
                             </h4>
 
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Your Daily BTC (current)</span>
+                                    <span className="result-label">{getUiString(lang, 'Your Daily BTC (current)')}</span>
                                     <span className="result-value">{formatBTC(results!.currentDailyBtc)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Your Daily BTC (post-halving)</span>
+                                    <span className="result-label">{getUiString(lang, 'Your Daily BTC (post-halving)')}</span>
                                     <span className="result-value">{formatBTC(results!.postHalvingDailyBtc)}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Current Daily Revenue</span>
+                                    <span className="result-label">{getUiString(lang, 'Current Daily Revenue')}</span>
                                     <span className="result-value profit">{formatUSD(results!.currentDailyRevenue)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Post-Halving Daily Revenue</span>
+                                    <span className="result-label">{getUiString(lang, 'Post-Halving Daily Revenue')}</span>
                                     <span className="result-value">{formatUSD(results!.postHalvingDailyRevenue)}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">
                                         <TrendingDown size={14} />
-                                        Revenue Drop
+                                        {getUiString(lang, 'Revenue Drop')}
                                     </span>
                                     <span className="result-value fee">-{formatUSD(results!.revenueDrop)}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Daily Electricity Cost</span>
+                                    <span className="result-label">{getUiString(lang, 'Daily Electricity Cost')}</span>
                                     <span className="result-value fee">-{formatUSD(results!.dailyElectricity)}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Current Net Profit / Day</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Current Net Profit / Day')}</strong></span>
                                     <span className={`result-value ${results!.currentNetProfit >= 0 ? 'profit' : 'fee'}`}>
                                         <strong>
                                             {results!.currentNetProfit >= 0 ? '+' : ''}{formatUSD(results!.currentNetProfit)}
@@ -434,7 +434,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Post-Halving Net Profit / Day</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Post-Halving Net Profit / Day')}</strong></span>
                                     <span className={`result-value ${results!.postHalvingNetProfit >= 0 ? 'profit' : 'fee'}`}>
                                         <strong>
                                             {results!.postHalvingNetProfit >= 0 ? '+' : ''}{formatUSD(results!.postHalvingNetProfit)}
@@ -459,7 +459,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 }}>
                                     <AlertTriangle size={18} />
                                     <span>
-                                        <strong>Warning:</strong> Mining will be <strong>unprofitable</strong> after the halving at current prices and electricity costs. Consider upgrading hardware or finding cheaper power.
+                                        <strong>{getUiString(lang, 'Warning:')}</strong> {getUiString(lang, 'Mining will be')} <strong>{getUiString(lang, 'unprofitable')}</strong> {getUiString(lang, 'after the halving at current prices and electricity costs. Consider upgrading hardware or finding cheaper power.')}
                                     </span>
                                 </div>
                             )}
@@ -469,26 +469,26 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Cpu size={40} />
                             </div>
-                            <h3>Enter Mining Details</h3>
-                            <p>Fill in your hashrate, electricity cost, and power consumption to see the halving impact on your mining profitability.</p>
+                            <h3>{getUiString(lang, 'Enter Mining Details')}</h3>
+                            <p>{getUiString(lang, 'Fill in your hashrate, electricity cost, and power consumption to see the halving impact on your mining profitability.')}</p>
                         </div>
                     )}
 
                     {/* Part 3 — Historical Halving Impact Table */}
                     <div style={{ marginTop: '24px' }}>
                         <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                            Historical Halving Price Impact
+                            {getUiString(lang, 'Historical Halving Price Impact')}
                         </h4>
                         <div style={{ overflowX: 'auto' }}>
                             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.78rem' }}>
                                 <thead>
                                     <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                        <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>Halving</th>
+                                        <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Halving')}</th>
                                         <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Date')}</th>
-                                        <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Price at Halving</th>
-                                        <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>+6 Months</th>
-                                        <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>+12 Months</th>
-                                        <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>+18 Months</th>
+                                        <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Price at Halving')}</th>
+                                        <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, '+6 Months')}</th>
+                                        <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, '+12 Months')}</th>
+                                        <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, '+18 Months')}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -526,18 +526,18 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="result-cta">
                         <a
                             href="https://www.f2pool.com"
-                            target="_blank"
-                            rel="noopener noreferrer nofollow"
+                            target="_blank" rel="noopener noreferrer sponsored"
+                            
                             className="cta-btn"
                         >
-                            Start Mining with F2Pool →
+                            {getUiString(lang, 'Start Mining with F2Pool →')}
                         </a>
                     </div>
 
                     {/* Disclaimer */}
                     <p className="calc-disclaimer">
                         <Info size={12} />
-                        Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~700 EH/s network hashrate. Not financial advice.
+                        {getUiString(lang, 'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~700 EH/s network hashrate. Not financial advice.')}
                     </p>
                 </div>
             </div>

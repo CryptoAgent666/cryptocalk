@@ -366,7 +366,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
         if (Math.abs(n) < 0.01 && n !== 0) {
             return '$' + n.toFixed(8);
         }
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -533,7 +533,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                             <div className="input-with-prefix">
                                 <span className="input-prefix">$</span>
                                 <input
-                                    type="number"
+                                    type="number" inputMode="decimal"
                                     value={targetMarketCap}
                                     onChange={(e) => setTargetMarketCap(e.target.value)}
                                     placeholder="1,000,000,000,000"
@@ -563,7 +563,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                             <div className="input-with-prefix">
                                 <span className="input-prefix">$</span>
                                 <input
-                                    type="number"
+                                    type="number" inputMode="decimal"
                                     value={targetPrice}
                                     onChange={(e) => setTargetPrice(e.target.value)}
                                     placeholder="100.00"
@@ -617,7 +617,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix">
                             <span className="input-prefix">#</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={circulatingSupply}
                                 onChange={(e) => setCirculatingSupply(e.target.value)}
                                 placeholder="21,000,000"
@@ -671,7 +671,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Is This Realistic?</span>
+                                    <span className="result-label">{getUiString(lang, 'Is This Realistic?')}</span>
                                     <span className={`result-value realism-${results.realism}`}>
                                         {getRealismIcon(results.realism)}
                                         {' '}
@@ -695,11 +695,11 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                     <span className="result-value">{results.currentPrice > 0 ? formatPrice(results.currentPrice) : 'N/A'}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Current Market Cap</span>
+                                    <span className="result-label">{getUiString(lang, 'Current Market Cap')}</span>
                                     <span className="result-value">{results.currentMarketCap > 0 ? formatBigNumber(results.currentMarketCap) : 'N/A'}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Circulating Supply</span>
+                                    <span className="result-label">{getUiString(lang, 'Circulating Supply')}</span>
                                     <span className="result-value">{formatSupply(results.circulatingSupply)}</span>
                                 </div>
                             </div>
@@ -732,26 +732,26 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                             <div className="result-cta">
                                 <a
                                     href="https://www.binance.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
                                     Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Binance
                                 </a>
                                 <a
                                     href="https://www.coingecko.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn cta-secondary"
                                 >
-                                    Research on CoinGecko
+                                    {getUiString(lang, 'Research on CoinGecko')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                For informational purposes only. Not financial advice. Market cap comparisons are hypothetical scenarios.
+                                {getUiString(lang, 'For informational purposes only. Not financial advice. Market cap comparisons are hypothetical scenarios.')}
                             </p>
                         </>
                     ) : (
@@ -759,8 +759,8 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                             <div className="results-empty-icon">
                                 <BarChart3 size={40} />
                             </div>
-                            <h3>Market Cap Calculator</h3>
-                            <p>Search for a cryptocurrency, set a target market cap or price, and see what the implied value would be. Compare with top coins like BTC, ETH, and more.</p>
+                            <h3>{getUiString(lang, 'Market Cap Calculator')}</h3>
+                            <p>{getUiString(lang, 'Search for a cryptocurrency, set a target market cap or price, and see what the implied value would be. Compare with top coins like BTC, ETH, and more.')}</p>
                         </div>
                     )}
                 </div>

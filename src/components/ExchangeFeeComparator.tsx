@@ -101,7 +101,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
     const formatUSD = (n: number) => {
         if (n < 0.01 && n > 0) return `$${n.toFixed(6)}`;
         if (n < 1) return `$${n.toFixed(4)}`;
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
         }).format(n);
     };
@@ -173,7 +173,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={tradeAmount}
                                 onChange={(e) => setTradeAmount(e.target.value)}
                                 placeholder="1,000"
@@ -206,7 +206,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                         <>
                             {/* Hero */}
                             <div className="result-hero" style={{ borderColor: 'var(--color-accent-green)' }}>
-                                <span className="result-hero-label">Cheapest Exchange</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Cheapest Exchange')}</span>
                                 <span className="result-hero-value" style={{ color: 'var(--color-accent-green)' }}>
                                     <Trophy size={28} />
                                     {cheapest.name}
@@ -234,19 +234,19 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                             {/* Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Trade Type</span>
+                                    <span className="result-label">{getUiString(lang, 'Trade Type')}</span>
                                     <span className="result-value" style={{ fontWeight: 600 }}>{tradeType === 'spot' ? 'Spot' : 'Futures'}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Order Type</span>
+                                    <span className="result-label">{getUiString(lang, 'Order Type')}</span>
                                     <span className="result-value">{orderType === 'maker' ? 'Maker' : 'Taker'}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Volume Tier</span>
+                                    <span className="result-label">{getUiString(lang, 'Volume Tier')}</span>
                                     <span className="result-value">{VOLUME_TIERS.find(t => t.id === volumeTier)?.label} ({tierMultiplier}x)</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Trade Amount</span>
+                                    <span className="result-label">{getUiString(lang, 'Trade Amount')}</span>
                                     <span className="result-value">{formatUSD(amount)}</span>
                                 </div>
                             </div>
@@ -262,9 +262,9 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
                                                 <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>#</th>
                                                 <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Exchange')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Fee Rate</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Fee ($)</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>With Discount</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Fee Rate')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Fee ($)')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'With Discount')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'center', color: 'var(--color-text-muted)', fontWeight: 500 }}></th>
                                             </tr>
                                         </thead>
@@ -314,8 +314,8 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                                                     <td style={{ padding: '8px', textAlign: 'center' }}>
                                                         <a
                                                             href={row.url}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer nofollow"
+                                                            target="_blank" rel="noopener noreferrer sponsored"
+                                                            
                                                             style={{
                                                                 display: 'inline-flex', alignItems: 'center', gap: '4px',
                                                                 padding: '5px 10px', borderRadius: '6px',
@@ -324,7 +324,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                                                                 textDecoration: 'none', whiteSpace: 'nowrap',
                                                             }}
                                                         >
-                                                            Sign Up <ExternalLink size={10} />
+                                                            {getUiString(lang, 'Sign Up')} <ExternalLink size={10} />
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -338,8 +338,8 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                             <div className="result-cta">
                                 <a
                                     href={cheapest.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
                                     Trade on {cheapest.name} — Lowest Fees →
@@ -348,14 +348,14 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Fee rates may change. Check each exchange for current rates.
+                                {getUiString(lang, 'Fee rates may change. Check each exchange for current rates.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><BarChart3 size={40} /></div>
-                            <h3>Compare Exchange Fees</h3>
-                            <p>Enter your trade details to compare fees across 10 major exchanges. Find the cheapest place to trade.</p>
+                            <h3>{getUiString(lang, 'Compare Exchange Fees')}</h3>
+                            <p>{getUiString(lang, 'Enter your trade details to compare fees across 10 major exchanges. Find the cheapest place to trade.')}</p>
                         </div>
                     )}
                 </div>

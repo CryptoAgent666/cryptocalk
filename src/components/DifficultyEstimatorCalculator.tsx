@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Activity, BarChart3, DollarSign, Info, Percent, RotateCcw } from 'lucide-react';
 
@@ -12,7 +13,7 @@ const DIFFICULTY_SCENARIOS = [
 ] as const;
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -20,7 +21,7 @@ function formatUSD(value: number): string {
   }).format(value);
 }
 
-export default function DifficultyEstimatorCalculator() {
+export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
   const [currentDifficulty, setCurrentDifficulty] = useState('85');
   const [expectedChange, setExpectedChange] = useState('8');
   const [dailyRevenue, setDailyRevenue] = useState('120');
@@ -105,7 +106,7 @@ export default function DifficultyEstimatorCalculator() {
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">T</span>
-              <input type="number" value={currentDifficulty} onChange={(e) => setCurrentDifficulty(e.target.value)} min="0" step="any" id="difficulty-current" />
+              <input type="number" inputMode="decimal" value={currentDifficulty} onChange={(e) => setCurrentDifficulty(e.target.value)} min="0" step="any" id="difficulty-current" />
             </div>
           </div>
           <div className="input-group">
@@ -126,7 +127,7 @@ export default function DifficultyEstimatorCalculator() {
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">%</span>
-              <input type="number" value={expectedChange} onChange={(e) => setExpectedChange(e.target.value)} step="any" id="difficulty-change" />
+              <input type="number" inputMode="decimal" value={expectedChange} onChange={(e) => setExpectedChange(e.target.value)} step="any" id="difficulty-change" />
             </div>
           </div>
           <div className="input-group">
@@ -147,7 +148,7 @@ export default function DifficultyEstimatorCalculator() {
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">$</span>
-              <input type="number" value={dailyRevenue} onChange={(e) => setDailyRevenue(e.target.value)} min="0" step="any" id="difficulty-revenue" />
+              <input type="number" inputMode="decimal" value={dailyRevenue} onChange={(e) => setDailyRevenue(e.target.value)} min="0" step="any" id="difficulty-revenue" />
             </div>
           </div>
           <div className="input-group">
@@ -167,7 +168,7 @@ export default function DifficultyEstimatorCalculator() {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" value={hashrateShare} onChange={(e) => setHashrateShare(e.target.value)} min="0" step="any" id="difficulty-share" />
+              <input type="number" inputMode="decimal" value={hashrateShare} onChange={(e) => setHashrateShare(e.target.value)} min="0" step="any" id="difficulty-share" />
               <span className="input-unit">e.g. 0.0025</span>
             </div>
           </div>
@@ -181,7 +182,7 @@ export default function DifficultyEstimatorCalculator() {
           {result ? (
             <>
               <div className={`result-hero ${result.dailyDelta >= 0 ? 'profit' : 'loss'}`}>
-                <span className="result-hero-label">Projected Daily Revenue</span>
+                <span className="result-hero-label">{getUiString(lang, 'Projected Daily Revenue')}</span>
                 <span className="result-hero-value"><BarChart3 size={28} />{formatUSD(result.projectedRevenue)}</span>
                 <span className={`result-hero-roi ${result.dailyDelta >= 0 ? 'profit' : 'loss'}`}>
                   {result.dailyDelta >= 0 ? '+' : ''}{formatUSD(result.dailyDelta)} / day
@@ -189,15 +190,15 @@ export default function DifficultyEstimatorCalculator() {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Projected difficulty</span><span className="result-value">{result.projectedDifficulty.toFixed(2)} T</span></div>
-                <div className="result-row"><span className="result-label">Revenue delta (monthly)</span><span className={`result-value ${result.monthlyDelta >= 0 ? 'profit' : 'fee'}`}>{result.monthlyDelta >= 0 ? '+' : ''}{formatUSD(result.monthlyDelta)}</span></div>
-                <div className="result-row"><span className="result-label">Estimated network share</span><span className="result-value">{result.networkSharePct.toFixed(4)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Projected difficulty')}</span><span className="result-value">{result.projectedDifficulty.toFixed(2)} T</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Revenue delta (monthly)')}</span><span className={`result-value ${result.monthlyDelta >= 0 ? 'profit' : 'fee'}`}>{result.monthlyDelta >= 0 ? '+' : ''}{formatUSD(result.monthlyDelta)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Estimated network share')}</span><span className="result-value">{result.networkSharePct.toFixed(4)}%</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Difficulty and price dynamics are independent in reality. Treat this as directional scenario planning only.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Difficulty and price dynamics are independent in reality. Treat this as directional scenario planning only.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><BarChart3 size={40} /></div><h3>Enter valid mining assumptions</h3><p>Provide difficulty and revenue inputs to model the next adjustment impact.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><BarChart3 size={40} /></div><h3>{getUiString(lang, 'Enter valid mining assumptions')}</h3><p>{getUiString(lang, 'Provide difficulty and revenue inputs to model the next adjustment impact.')}</p></div>
           )}
         </div>
       </div>

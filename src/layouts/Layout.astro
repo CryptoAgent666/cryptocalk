@@ -60,6 +60,15 @@ const shouldNoindex = noindex || !isCanonicalPath;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <!-- SEO -->
     <title>{title}</title>
     <link rel="canonical" href={canonicalUrl} />
@@ -83,12 +92,12 @@ const shouldNoindex = noindex || !isCanonicalPath;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content="https://cryptocalk.com/og-default.svg" />
+    <meta property="og:image" content="https://cryptocalk.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="CryptoCalk" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://cryptocalk.com/og-default.svg" />
+    <meta name="twitter:image" content="https://cryptocalk.com/og-image.png" />
 
     <!-- Theme initialization (prevent FOUC) -->
     <script is:inline>

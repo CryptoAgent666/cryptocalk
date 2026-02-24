@@ -308,7 +308,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={tokenAmount}
                                 onChange={(e) => setTokenAmount(e.target.value)}
                                 placeholder="e.g. 400"
@@ -340,7 +340,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={priceAtReceipt}
                                 onChange={(e) => setPriceAtReceipt(e.target.value)}
                                 placeholder="e.g. 5.00"
@@ -372,7 +372,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={currentPrice}
                                 onChange={(e) => setCurrentPrice(e.target.value)}
                                 placeholder="e.g. 12.50"
@@ -425,7 +425,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                                 <span className="input-prefix">$</span>
                                 <input
-                                    type="number"
+                                    type="number" inputMode="decimal"
                                     value={sellPrice}
                                     onChange={(e) => setSellPrice(e.target.value)}
                                     placeholder="e.g. 15.00"
@@ -495,7 +495,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Value at Receipt</span>
+                                    <span className="result-label">{getUiString(lang, 'Value at Receipt')}</span>
                                     <span className="result-value">{formatUSD(results.valueAtReceipt)}</span>
                                 </div>
                                 <div className="result-row">
@@ -539,7 +539,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-label">
                                         <strong>
                                             <Gift size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
-                                            Notable Airdrops
+                                            {getUiString(lang, 'Notable Airdrops')}
                                         </strong>
                                     </span>
                                 </div>
@@ -550,7 +550,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
                                                 <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Airdrop')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Date')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Avg Tokens</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Avg Tokens')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'ATH Value')}</th>
                                             </tr>
                                         </thead>
@@ -572,18 +572,18 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="result-cta">
                                 <a
                                     href="https://www.coingecko.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Track upcoming airdrops on CoinGecko &rarr;
+                                    {getUiString(lang, 'Track upcoming airdrops on CoinGecko &rarr;')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Tax rates are approximate. Consult a tax professional.
+                                {getUiString(lang, 'Tax rates are approximate. Consult a tax professional.')}
                             </p>
                         </>
                     ) : (
@@ -591,9 +591,9 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Gift size={40} />
                             </div>
-                            <h3>Airdrop Value Calculator</h3>
+                            <h3>{getUiString(lang, 'Airdrop Value Calculator')}</h3>
                             <p>
-                                Enter your airdrop details to calculate current value, profit/loss, and estimated tax liability across different jurisdictions.
+                                {getUiString(lang, 'Enter your airdrop details to calculate current value, profit/loss, and estimated tax liability across different jurisdictions.')}
                             </p>
                         </div>
                     )}

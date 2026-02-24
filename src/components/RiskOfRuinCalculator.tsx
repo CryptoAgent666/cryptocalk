@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
@@ -33,7 +34,7 @@ function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
 
-export default function RiskOfRuinCalculator() {
+export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string }) {
   const [winRate, setWinRate] = useState('45');
   const [rewardRisk, setRewardRisk] = useState('1.8');
   const [riskPerTrade, setRiskPerTrade] = useState('2');
@@ -128,7 +129,7 @@ export default function RiskOfRuinCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="ror-win-rate" />
+              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="ror-win-rate" />
             </div>
           </div>
 
@@ -145,7 +146,7 @@ export default function RiskOfRuinCalculator() {
                 </button>
               ))}
             </div>
-            <input type="number" value={rewardRisk} onChange={(e) => setRewardRisk(e.target.value)} min="0.01" step="any" id="ror-rr" />
+            <input type="number" inputMode="decimal" value={rewardRisk} onChange={(e) => setRewardRisk(e.target.value)} min="0.01" step="any" id="ror-rr" />
           </div>
 
           <div className="input-group">
@@ -163,7 +164,7 @@ export default function RiskOfRuinCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="ror-risk-trade" />
+              <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="ror-risk-trade" />
             </div>
           </div>
 
@@ -182,7 +183,7 @@ export default function RiskOfRuinCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.1" step="any" id="ror-max-dd" />
+              <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.1" step="any" id="ror-max-dd" />
             </div>
           </div>
 
@@ -196,21 +197,21 @@ export default function RiskOfRuinCalculator() {
           {result ? (
             <>
               <div className={`result-hero ${result.ruinProbability <= 0.1 ? 'profit' : result.ruinProbability <= 0.3 ? '' : 'loss'}`}>
-                <span className="result-hero-label">Estimated Risk of Ruin</span>
+                <span className="result-hero-label">{getUiString(lang, 'Estimated Risk of Ruin')}</span>
                 <span className="result-hero-value"><AlertTriangle size={28} />{(result.ruinProbability * 100).toFixed(2)}%</span>
                 <span className={`result-hero-roi ${result.ruinProbability <= 0.1 ? 'profit' : result.ruinProbability <= 0.3 ? '' : 'loss'}`}>{result.riskLabel}</span>
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Expectancy per trade (R)</span><span className={`result-value ${result.expectancyR >= 0 ? 'profit' : 'loss'}`}>{result.expectancyR >= 0 ? '+' : ''}{result.expectancyR.toFixed(3)}R</span></div>
-                <div className="result-row"><span className="result-label">Loss units to ruin threshold</span><span className="result-value">{result.unitsToRuin.toFixed(1)} units</span></div>
-                <div className="result-row"><span className="result-label">Suggested max risk (Half Kelly)</span><span className={`result-value ${result.halfKellyPct >= 0 ? 'profit' : 'loss'}`}>{result.halfKellyPct.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Expectancy per trade (R)')}</span><span className={`result-value ${result.expectancyR >= 0 ? 'profit' : 'loss'}`}>{result.expectancyR >= 0 ? '+' : ''}{result.expectancyR.toFixed(3)}R</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Loss units to ruin threshold')}</span><span className="result-value">{result.unitsToRuin.toFixed(1)} units</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Suggested max risk (Half Kelly)')}</span><span className={`result-value ${result.halfKellyPct >= 0 ? 'profit' : 'loss'}`}>{result.halfKellyPct.toFixed(2)}%</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Model uses simplified fixed-risk assumptions. Real trading outcomes vary due to slippage, regime changes, and non-independent outcomes.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Model uses simplified fixed-risk assumptions. Real trading outcomes vary due to slippage, regime changes, and non-independent outcomes.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>Enter valid strategy stats</h3><p>Set win rate, reward/risk, and risk per trade to estimate ruin probability.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid strategy stats')}</h3><p>{getUiString(lang, 'Set win rate, reward/risk, and risk per trade to estimate ruin probability.')}</p></div>
           )}
         </div>
       </div>

@@ -1,8 +1,9 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -42,7 +43,7 @@ const VAR_SCENARIOS = [
   },
 ] as const;
 
-export default function VarCalculator() {
+export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
   const [portfolioValue, setPortfolioValue] = useState('25000');
   const [dailyVolatility, setDailyVolatility] = useState('4');
   const [timeHorizonDays, setTimeHorizonDays] = useState('1');
@@ -118,7 +119,7 @@ export default function VarCalculator() {
             <label>Portfolio Value (USD)</label>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="var-portfolio" />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="var-portfolio" />
             </div>
           </div>
 
@@ -137,7 +138,7 @@ export default function VarCalculator() {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={dailyVolatility} onChange={(e) => setDailyVolatility(e.target.value)} min="0" step="any" id="var-daily-vol" />
+              <input type="number" inputMode="decimal" value={dailyVolatility} onChange={(e) => setDailyVolatility(e.target.value)} min="0" step="any" id="var-daily-vol" />
             </div>
           </div>
 
@@ -154,7 +155,7 @@ export default function VarCalculator() {
                 </button>
               ))}
             </div>
-            <input type="number" value={timeHorizonDays} onChange={(e) => setTimeHorizonDays(e.target.value)} min="1" step="1" id="var-horizon" />
+            <input type="number" inputMode="decimal" value={timeHorizonDays} onChange={(e) => setTimeHorizonDays(e.target.value)} min="1" step="1" id="var-horizon" />
           </div>
 
           <div className="input-group">
@@ -189,17 +190,17 @@ export default function VarCalculator() {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">VaR loss threshold</span><span className="result-value fee">-{formatUSD(result.varAmount)}</span></div>
-                <div className="result-row"><span className="result-label">VaR as % of portfolio</span><span className="result-value fee">-{result.varPct.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'VaR loss threshold')}</span><span className="result-value fee">-{formatUSD(result.varAmount)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'VaR as % of portfolio')}</span><span className="result-value fee">-{result.varPct.toFixed(2)}%</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label">Expected Shortfall (CVaR)</span><span className="result-value fee">-{formatUSD(result.expectedShortfall)}</span></div>
-                <div className="result-row"><span className="result-label">CVaR as % of portfolio</span><span className="result-value fee">-{result.expectedShortfallPct.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected Shortfall (CVaR)')}</span><span className="result-value fee">-{formatUSD(result.expectedShortfall)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'CVaR as % of portfolio')}</span><span className="result-value fee">-{result.expectedShortfallPct.toFixed(2)}%</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Parametric VaR assumes normally distributed returns and stable volatility. Stress scenarios can exceed these estimates.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Parametric VaR assumes normally distributed returns and stable volatility. Stress scenarios can exceed these estimates.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>Enter valid risk inputs</h3><p>Set portfolio size, volatility, and horizon to estimate VaR and CVaR.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid risk inputs')}</h3><p>{getUiString(lang, 'Set portfolio size, volatility, and horizon to estimate VaR and CVaR.')}</p></div>
           )}
         </div>
       </div>

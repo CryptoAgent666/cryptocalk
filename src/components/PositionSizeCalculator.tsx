@@ -290,7 +290,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -409,7 +409,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={accountBalance}
                                 onChange={(e) => setAccountBalance(e.target.value)}
                                 placeholder="10,000"
@@ -440,7 +440,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={riskPercent}
                                 onChange={(e) => setRiskPercent(e.target.value)}
                                 placeholder="2"
@@ -475,7 +475,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={entryPrice}
                                 onChange={(e) => setEntryPrice(e.target.value)}
                                 placeholder="65,000"
@@ -495,7 +495,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={stopLoss}
                                 onChange={(e) => setStopLoss(e.target.value)}
                                 placeholder={isShort ? '67,000' : '63,000'}
@@ -515,7 +515,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={takeProfit}
                                 onChange={(e) => setTakeProfit(e.target.value)}
                                 placeholder={isShort ? '60,000' : '70,000'}
@@ -546,7 +546,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">×</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={leverage}
                                 onChange={(e) => setLeverage(e.target.value)}
                                 placeholder="1"
@@ -575,7 +575,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={exchangeFee}
                                 onChange={(e) => setExchangeFee(e.target.value)}
                                 placeholder="0.1"
@@ -609,7 +609,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             {/* Main Result */}
                             <div className="result-hero profit">
                                 <span className="result-hero-label">
-                                    Recommended Position Size
+                                    {getUiString(lang, 'Recommended Position Size')}
                                 </span>
                                 <span className="result-hero-value">
                                     <Shield size={28} />
@@ -623,20 +623,20 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             {/* Risk Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Risk Amount</span>
+                                    <span className="result-label">{getUiString(lang, 'Risk Amount')}</span>
                                     <span className="result-value">{formatUSD(results.riskAmount)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Risk of Balance</span>
+                                    <span className="result-label">{getUiString(lang, 'Risk of Balance')}</span>
                                     <span className="result-value">{formatPercent(results.riskPercent)}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">SL Distance</span>
+                                    <span className="result-label">{getUiString(lang, 'SL Distance')}</span>
                                     <span className="result-value">{formatUSD(results.slDistance)} ({formatPercent(results.slDistancePercent)})</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Max Loss at SL</span>
+                                    <span className="result-label">{getUiString(lang, 'Max Loss at SL')}</span>
                                     <span className="result-value fee">{formatUSD(results.riskAmount)}</span>
                                 </div>
 
@@ -644,7 +644,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                     <>
                                         <div className="result-divider" />
                                         <div className="result-row">
-                                            <span className="result-label">Leveraged Position</span>
+                                            <span className="result-label">{getUiString(lang, 'Leveraged Position')}</span>
                                             <span className="result-value">{formatUSD(results.leveragedPosition)}</span>
                                         </div>
                                         <div className="result-row">
@@ -653,7 +653,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                         </div>
                                         <div className="result-row">
                                             <span className="result-label">
-                                                Est. Liquidation Price
+                                                {getUiString(lang, 'Est. Liquidation Price')}
                                             </span>
                                             <span className="result-value fee">
                                                 {formatUSD(results.liquidationPrice)}
@@ -664,12 +664,12 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Est. Trading Fees</span>
+                                    <span className="result-label">{getUiString(lang, 'Est. Trading Fees')}</span>
                                     <span className="result-value fee">{formatUSD(results.totalFees)}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">
-                                        <strong>Effective Risk (incl. fees)</strong>
+                                        <strong>{getUiString(lang, 'Effective Risk (incl. fees)')}</strong>
                                     </span>
                                     <span className="result-value fee">
                                         <strong>{formatUSD(results.effectiveRisk)}</strong>
@@ -681,7 +681,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                         <div className="result-divider" />
                                         <div className="result-row">
                                             <span className="result-label">
-                                                <strong>Risk : Reward</strong>
+                                                <strong>{getUiString(lang, 'Risk : Reward')}</strong>
                                             </span>
                                             <span className={`result-value ${rr >= 2 ? 'profit' : rr >= 1 ? '' : 'fee'}`}>
                                                 <strong>1 : {rr.toFixed(2)}</strong>
@@ -709,8 +709,8 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             <div className="result-cta">
                                 <a
                                     href="https://www.bybit.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
                                     Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
@@ -720,7 +720,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                For informational purposes only. Not financial advice. Always use proper risk management and never risk more than you can afford to lose.
+                                {getUiString(lang, 'For informational purposes only. Not financial advice. Always use proper risk management and never risk more than you can afford to lose.')}
                             </p>
                         </>
                     ) : (
@@ -728,8 +728,8 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             <div className="results-empty-icon">
                                 <Shield size={40} />
                             </div>
-                            <h3>Calculate Your Position Size</h3>
-                            <p>Enter your account balance, risk %, entry price, and stop-loss to see the optimal position size.</p>
+                            <h3>{getUiString(lang, 'Calculate Your Position Size')}</h3>
+                            <p>{getUiString(lang, 'Enter your account balance, risk %, entry price, and stop-loss to see the optimal position size.')}</p>
                         </div>
                     )}
                 </div>

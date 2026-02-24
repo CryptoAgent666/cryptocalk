@@ -208,7 +208,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
     );
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -258,7 +258,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={startingCapital}
                                 onChange={(e) => setStartingCapital(e.target.value)}
                                 placeholder="5,000"
@@ -317,7 +317,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                         <div className="input-with-prefix">
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={priceChange}
                                 onChange={(e) => setPriceChange(e.target.value)}
                                 placeholder="50"
@@ -364,7 +364,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={winRate}
                                 onChange={(e) => setWinRate(e.target.value)}
                                 placeholder="50"
@@ -396,7 +396,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                         <div className="input-with-prefix">
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={avgProfit}
                                 onChange={(e) => setAvgProfit(e.target.value)}
                                 placeholder="3"
@@ -427,7 +427,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                         <div className="input-with-prefix">
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={avgLoss}
                                 onChange={(e) => setAvgLoss(e.target.value)}
                                 placeholder="2"
@@ -457,7 +457,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={tradesPerMonth}
                                 onChange={(e) => setTradesPerMonth(e.target.value)}
                                 placeholder="10"
@@ -487,7 +487,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={tradingPeriod}
                                 onChange={(e) => setTradingPeriod(e.target.value)}
                                 placeholder="6"
@@ -518,7 +518,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                         <div className="input-with-prefix">
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={tradingFee}
                                 onChange={(e) => setTradingFee(e.target.value)}
                                 placeholder="0.1"
@@ -549,7 +549,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 style={{ borderColor: getWinnerColor(results.winner) }}
                             >
                                 <span className="result-hero-label">
-                                    Strategy Comparison
+                                    {getUiString(lang, 'Strategy Comparison')}
                                 </span>
                                 <span
                                     className="result-hero-value"
@@ -664,13 +664,13 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                     <span className="result-label">
                                         <strong>
                                             <TrendingUp size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
-                                            HODL Strategy
+                                            {getUiString(lang, 'HODL Strategy')}
                                         </strong>
                                     </span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Starting Capital</span>
+                                    <span className="result-label">{getUiString(lang, 'Starting Capital')}</span>
                                     <span className="result-value">{formatUSD(parseFloat(startingCapital))}</span>
                                 </div>
                                 <div className="result-row">
@@ -680,7 +680,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Final Value</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Final Value')}</strong></span>
                                     <span className={`result-value ${results.hodlProfit >= 0 ? 'profit' : 'fee'}`}>
                                         <strong>{formatUSD(results.hodlFinalValue)}</strong>
                                     </span>
@@ -705,32 +705,32 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                     <span className="result-label">
                                         <strong>
                                             <Activity size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
-                                            Trading Strategy
+                                            {getUiString(lang, 'Trading Strategy')}
                                         </strong>
                                     </span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Starting Capital</span>
+                                    <span className="result-label">{getUiString(lang, 'Starting Capital')}</span>
                                     <span className="result-value">{formatUSD(parseFloat(startingCapital))}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Win Rate</span>
+                                    <span className="result-label">{getUiString(lang, 'Win Rate')}</span>
                                     <span className="result-value">{winRate}%</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Avg Profit / Loss per Trade</span>
+                                    <span className="result-label">{getUiString(lang, 'Avg Profit / Loss per Trade')}</span>
                                     <span className="result-value">
                                         <span className="profit">+{avgProfit}%</span> / <span className="fee">-{avgLoss}%</span>
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Trading Period</span>
+                                    <span className="result-label">{getUiString(lang, 'Trading Period')}</span>
                                     <span className="result-value">{tradingPeriod} months</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Final Value</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Final Value')}</strong></span>
                                     <span className={`result-value ${results.tradingProfit >= 0 ? 'profit' : 'fee'}`}>
                                         <strong>{formatUSD(results.tradingFinalValue)}</strong>
                                     </span>
@@ -749,11 +749,11 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Total Trades</span>
+                                    <span className="result-label">{getUiString(lang, 'Total Trades')}</span>
                                     <span className="result-value">{results.totalTrades}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Total Fees Paid</span>
+                                    <span className="result-label">{getUiString(lang, 'Total Fees Paid')}</span>
                                     <span className="result-value fee">-{formatUSD(results.totalFeesPaid)}</span>
                                 </div>
                             </div>
@@ -772,18 +772,18 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                             <div className="result-cta">
                                 <a
                                     href="https://www.bybit.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Start Trading on Bybit →
+                                    {getUiString(lang, 'Start Trading on Bybit →')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                This is a simplified simulation. Actual trading results depend on market conditions, execution, slippage, and emotional discipline. Not financial advice.
+                                {getUiString(lang, 'This is a simplified simulation. Actual trading results depend on market conditions, execution, slippage, and emotional discipline. Not financial advice.')}
                             </p>
                         </>
                     ) : (
@@ -791,8 +791,8 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                             <div className="results-empty-icon">
                                 <Trophy size={40} />
                             </div>
-                            <h3>HODL vs Active Trading</h3>
-                            <p>Enter your starting capital, HODL price change, and trading parameters to compare which strategy would come out ahead.</p>
+                            <h3>{getUiString(lang, 'HODL vs Active Trading')}</h3>
+                            <p>{getUiString(lang, 'Enter your starting capital, HODL price change, and trading parameters to compare which strategy would come out ahead.')}</p>
                         </div>
                     )}
                 </div>

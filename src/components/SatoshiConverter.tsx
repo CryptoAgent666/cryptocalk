@@ -93,7 +93,7 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -102,21 +102,21 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
 
     const formatFiat = (n: number) => {
         if (n < 0.01 && n > 0) return `${FIAT_SYMBOLS[fiat]}${n.toFixed(8)}`;
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             minimumFractionDigits: 2,
             maximumFractionDigits: n < 1 ? 8 : 2,
         }).format(n);
     };
 
     const formatSats = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             maximumFractionDigits: 0,
         }).format(Math.round(n));
 
     const formatBTC = (n: number) => {
         if (n === 0) return '0';
         if (n < 0.00000001) return n.toExponential(2);
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 8,
         }).format(n);
@@ -156,7 +156,7 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                                 {inputMode === 'satoshi' ? 'sat' : inputMode === 'btc' ? '\u20bf' : '$'}
                             </span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
                                 placeholder={inputMode === 'satoshi' ? '100000' : inputMode === 'btc' ? '0.001' : '100'}
@@ -214,7 +214,7 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                                         <Loader2 size={14} className="spin-icon" /> Fetching...
                                     </span>
                                 ) : currentPrice ? (
-                                    `${FIAT_SYMBOLS[fiat]}${new Intl.NumberFormat('en-US').format(currentPrice)}`
+                                    `${FIAT_SYMBOLS[fiat]}${new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US').format(currentPrice)}`
                                 ) : (
                                     'Unavailable'
                                 )}
@@ -272,11 +272,11 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                             {/* Full Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Satoshis</span>
+                                    <span className="result-label">{getUiString(lang, 'Satoshis')}</span>
                                     <span className="result-value">{formatSats(sats)} sats</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Bitcoin</span>
+                                    <span className="result-label">{getUiString(lang, 'Bitcoin')}</span>
                                     <span className="result-value">{formatBTC(btc)} BTC</span>
                                 </div>
                                 <div className="result-row">
@@ -285,11 +285,11 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">BTC Price</span>
-                                    <span className="result-value">{FIAT_SYMBOLS[fiat]}{new Intl.NumberFormat('en-US').format(currentPrice!)}</span>
+                                    <span className="result-label">{getUiString(lang, 'BTC Price')}</span>
+                                    <span className="result-value">{FIAT_SYMBOLS[fiat]}{new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US').format(currentPrice!)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">1 Sat Value</span>
+                                    <span className="result-label">{getUiString(lang, '1 Sat Value')}</span>
                                     <span className="result-value">{FIAT_SYMBOLS[fiat]}{(currentPrice! / SATS_PER_BTC).toFixed(8)}</span>
                                 </div>
                             </div>
@@ -304,8 +304,8 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
                                                 <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{FIAT_LABELS[fiat]}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Satoshis</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>BTC</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Satoshis')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'BTC')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -334,9 +334,9 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>Satoshis</th>
+                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Satoshis')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{FIAT_LABELS[fiat]}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>BTC</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'BTC')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -360,25 +360,25 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                             <div className="result-cta">
                                 <a
                                     href="https://www.kraken.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Buy Bitcoin on Kraken (Lightning Network) &rarr;
+                                    {getUiString(lang, 'Buy Bitcoin on Kraken (Lightning Network) &rarr;')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Prices from CoinGecko. For informational purposes only — not financial advice. Actual exchange rates may vary.
+                                {getUiString(lang, 'Prices from CoinGecko. For informational purposes only — not financial advice. Actual exchange rates may vary.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><ArrowUpDown size={40} /></div>
-                            <h3>Convert Satoshis</h3>
-                            <p>Enter an amount in Satoshis, BTC, or USD to see instant conversions with a live reference table.</p>
+                            <h3>{getUiString(lang, 'Convert Satoshis')}</h3>
+                            <p>{getUiString(lang, 'Enter an amount in Satoshis, BTC, or USD to see instant conversions with a live reference table.')}</p>
                         </div>
                     )}
                 </div>

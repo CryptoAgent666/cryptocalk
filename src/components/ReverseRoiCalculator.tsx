@@ -301,7 +301,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -432,7 +432,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={currentPrice}
                                 onChange={(e) => setCurrentPrice(e.target.value)}
                                 placeholder="0.00"
@@ -463,7 +463,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={investmentAmount}
                                 onChange={(e) => handleInvestmentInput(e.target.value)}
                                 placeholder="10,000"
@@ -494,7 +494,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={targetProfit}
                                 onChange={(e) => handleProfitInput(e.target.value)}
                                 placeholder="1,000,000"
@@ -522,7 +522,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                             {/* Hero: Required Price */}
                             <div className="result-hero profit">
                                 <span className="result-hero-label">
-                                    Required Token Price
+                                    {getUiString(lang, 'Required Token Price')}
                                 </span>
                                 <span className="result-hero-value">
                                     <TrendingUp size={28} />
@@ -549,7 +549,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                 }}
                             >
                                 <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
-                                    Probability:
+                                    {getUiString(lang, 'Probability:')}
                                 </span>
                                 <span
                                     style={{
@@ -572,18 +572,18 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                     <span className="result-value">{formatPrice(results.currentPrice)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Required Price</span>
+                                    <span className="result-label">{getUiString(lang, 'Required Price')}</span>
                                     <span className="result-value profit">{formatPrice(results.requiredPrice)}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Growth Needed</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Growth Needed')}</strong></span>
                                     <span className="result-value profit">
                                         <strong>{results.growthMultiplier.toFixed(2)}x / +{results.growthPercent.toFixed(1)}%</strong>
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Coins Held</span>
+                                    <span className="result-label">{getUiString(lang, 'Coins Held')}</span>
                                     <span className="result-value">
                                         {results.coinsHeld < 1
                                             ? results.coinsHeld.toFixed(6)
@@ -593,15 +593,15 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Investment</span>
+                                    <span className="result-label">{getUiString(lang, 'Investment')}</span>
                                     <span className="result-value">{formatUSD(results.investment)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Target Profit</span>
+                                    <span className="result-label">{getUiString(lang, 'Target Profit')}</span>
                                     <span className="result-value profit">+{formatUSD(results.targetProfit)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Investment Value at Target</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Investment Value at Target')}</strong></span>
                                     <span className="result-value profit">
                                         <strong>{formatUSD(results.totalTarget)}</strong>
                                     </span>
@@ -624,13 +624,13 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                 >
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px', fontWeight: 600, color: 'var(--color-text)', fontSize: '0.85rem' }}>
                                         <BarChart3 size={14} />
-                                        Market Cap Analysis
+                                        {getUiString(lang, 'Market Cap Analysis')}
                                     </div>
                                     <div style={{ marginBottom: '4px' }}>
-                                        Current market cap: <strong>{formatBigNumber(results.currentMarketCap)}</strong>
+                                        {getUiString(lang, 'Current market cap:')} <strong>{formatBigNumber(results.currentMarketCap)}</strong>
                                     </div>
                                     <div style={{ marginBottom: '4px' }}>
-                                        Required market cap: <strong style={{ color: 'var(--color-primary)' }}>{formatBigNumber(results.requiredMarketCap)}</strong>
+                                        {getUiString(lang, 'Required market cap:')} <strong style={{ color: 'var(--color-primary)' }}>{formatBigNumber(results.requiredMarketCap)}</strong>
                                     </div>
                                     {(() => {
                                         const comparison = getMarketCapComparison(results.requiredMarketCap!);
@@ -647,15 +647,15 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                             <div style={{ marginTop: '4px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)', display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <TrendingUp size={16} />
-                                    Investment Milestones
+                                    {getUiString(lang, 'Investment Milestones')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>Growth</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Token Price</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Your Investment Worth</th>
+                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Growth')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Token Price')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Your Investment Worth')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -691,8 +691,8 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                             <div className="result-cta">
                                 <a
                                     href="https://www.binance.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
                                     Buy{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Binance →
@@ -702,7 +702,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                For informational purposes only. Not financial advice. Cryptocurrency investments are highly volatile and carry significant risk. Past performance does not guarantee future results. Never invest more than you can afford to lose.
+                                {getUiString(lang, 'For informational purposes only. Not financial advice. Cryptocurrency investments are highly volatile and carry significant risk. Past performance does not guarantee future results. Never invest more than you can afford to lose.')}
                             </p>
                         </>
                     ) : (
@@ -710,8 +710,8 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                             <div className="results-empty-icon">
                                 <Target size={40} />
                             </div>
-                            <h3>Reverse ROI Calculator</h3>
-                            <p>Enter your investment amount, target profit, and current token price to see the required price growth to reach your goal.</p>
+                            <h3>{getUiString(lang, 'Reverse ROI Calculator')}</h3>
+                            <p>{getUiString(lang, 'Enter your investment amount, target profit, and current token price to see the required price growth to reach your goal.')}</p>
                         </div>
                     )}
                 </div>

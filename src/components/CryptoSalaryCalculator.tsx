@@ -170,7 +170,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
 
     // Formatters
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -189,7 +189,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
             usd: '$', eur: '\u20AC', gbp: '\u00A3', brl: 'R$',
             try: '\u20BA', inr: '\u20B9', rub: '\u20BD',
         };
-        return `${symbols[currency]}${new Intl.NumberFormat('en-US', {
+        return `${symbols[currency]}${new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         }).format(n)}`;
@@ -297,7 +297,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 <div className="input-with-prefix">
                                     <span className="input-prefix">$</span>
                                     <input
-                                        type="number"
+                                        type="number" inputMode="decimal"
                                         value={salary}
                                         onChange={(e) => setSalary(e.target.value)}
                                         placeholder="60,000"
@@ -328,7 +328,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 <div className="input-with-prefix">
                                     <span className="input-prefix">%</span>
                                     <input
-                                        type="number"
+                                        type="number" inputMode="decimal"
                                         value={convertPct}
                                         onChange={(e) => setConvertPct(e.target.value)}
                                         placeholder="10"
@@ -391,7 +391,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                                     <span className="input-prefix">%</span>
                                     <input
-                                        type="number"
+                                        type="number" inputMode="decimal"
                                         value={conversionFee}
                                         onChange={(e) => setConversionFee(e.target.value)}
                                         placeholder="1"
@@ -444,7 +444,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                                     <span className="input-prefix">{CRYPTO_LABELS[cryptoType].symbol}</span>
                                     <input
-                                        type="number"
+                                        type="number" inputMode="decimal"
                                         value={cryptoAmount}
                                         onChange={(e) => setCryptoAmount(e.target.value)}
                                         placeholder="0.1"
@@ -516,7 +516,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                             <div className="results-empty-icon">
                                 <Loader2 size={40} className="spin-icon" />
                             </div>
-                            <h3>Fetching Exchange Rates...</h3>
+                            <h3>{getUiString(lang, 'Fetching Exchange Rates...')}</h3>
                             <p>{getUiString(lang, 'Loading live prices from CoinGecko.')}</p>
                         </div>
                     ) : mode === 'fiat-to-crypto' ? (
@@ -539,7 +539,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 {/* Breakdown */}
                                 <div className="result-breakdown">
                                     <div className="result-row">
-                                        <span className="result-label">Salary per Period</span>
+                                        <span className="result-label">{getUiString(lang, 'Salary per Period')}</span>
                                         <span className="result-value">{formatUSD(salaryPerPeriod)}</span>
                                     </div>
                                     <div className="result-row">
@@ -552,11 +552,11 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                     </div>
                                     <div className="result-divider" />
                                     <div className="result-row">
-                                        <span className="result-label"><strong>Net Crypto Amount</strong></span>
+                                        <span className="result-label"><strong>{getUiString(lang, 'Net Crypto Amount')}</strong></span>
                                         <span className="result-value profit"><strong>{formatUSD(netCryptoPerPeriod)}</strong></span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">Coins per Period</span>
+                                        <span className="result-label">{getUiString(lang, 'Coins per Period')}</span>
                                         <span className="result-value profit">
                                             {formatCrypto(coinsPerPeriod, targetCrypto)} {CRYPTO_LABELS[targetCrypto].symbol}
                                         </span>
@@ -567,17 +567,17 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         <span className="result-value">{formatUSD(cryptoPrice)}</span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">Annual Crypto Value</span>
+                                        <span className="result-label">{getUiString(lang, 'Annual Crypto Value')}</span>
                                         <span className="result-value profit">{formatUSD(annualCryptoValue)}</span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">Annual Coins</span>
+                                        <span className="result-label">{getUiString(lang, 'Annual Coins')}</span>
                                         <span className="result-value profit">
                                             {formatCrypto(coinsPerYear, targetCrypto)} {CRYPTO_LABELS[targetCrypto].symbol}
                                         </span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">Annual Fees Paid</span>
+                                        <span className="result-label">{getUiString(lang, 'Annual Fees Paid')}</span>
                                         <span className="result-value fee">-{formatUSD(annualFeeTotal)}</span>
                                     </div>
                                 </div>
@@ -590,7 +590,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         marginBottom: '10px',
                                         color: 'var(--color-text)',
                                     }}>
-                                        Accumulation Over Time
+                                        {getUiString(lang, 'Accumulation Over Time')}
                                     </h4>
                                     <div style={{ overflowX: 'auto' }}>
                                         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
@@ -619,7 +619,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         </table>
                                     </div>
                                     <p style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '6px' }}>
-                                        * No price appreciation assumed, accumulation only at current price.
+                                        {getUiString(lang, '* No price appreciation assumed, accumulation only at current price.')}
                                     </p>
                                 </div>
 
@@ -627,18 +627,18 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 <div className="result-cta">
                                     <a
                                         href="https://www.bitwage.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer nofollow"
+                                        target="_blank" rel="noopener noreferrer sponsored"
+                                        
                                         className="cta-btn"
                                     >
-                                        Get paid in crypto with Bitwage &rarr;
+                                        {getUiString(lang, 'Get paid in crypto with Bitwage &rarr;')}
                                     </a>
                                 </div>
 
                                 {/* Disclaimer */}
                                 <p className="calc-disclaimer">
                                     <Info size={12} />
-                                    Exchange rates fluctuate. Not financial advice.
+                                    {getUiString(lang, 'Exchange rates fluctuate. Not financial advice.')}
                                 </p>
                             </>
                         ) : (
@@ -646,8 +646,8 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 <div className="results-empty-icon">
                                     <Briefcase size={40} />
                                 </div>
-                                <h3>Crypto Salary Calculator</h3>
-                                <p>Enter your annual salary, choose how much to convert to crypto, and see exactly how much you'd receive per pay period.</p>
+                                <h3>{getUiString(lang, 'Crypto Salary Calculator')}</h3>
+                                <p>{getUiString(lang, 'Enter your annual salary, choose how much to convert to crypto, and see exactly how much you\'d receive per pay period.')}</p>
                             </div>
                         )
                     ) : (
@@ -657,7 +657,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 {/* Hero */}
                                 <div className="result-hero" style={{ borderColor: 'var(--color-accent-green)' }}>
                                     <span className="result-hero-label">
-                                        Monthly Salary in USD
+                                        {getUiString(lang, 'Monthly Salary in USD')}
                                     </span>
                                     <span className="result-hero-value" style={{ color: 'var(--color-accent-green)' }}>
                                         <DollarSign size={28} />
@@ -672,7 +672,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 <div className="result-breakdown">
                                     <div className="result-row" style={{ marginBottom: '4px' }}>
                                         <span className="result-label">
-                                            <strong>Monthly Fiat Equivalents</strong>
+                                            <strong>{getUiString(lang, 'Monthly Fiat Equivalents')}</strong>
                                         </span>
                                     </div>
                                     <div className="result-divider" />
@@ -690,12 +690,12 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 <div className="result-breakdown" style={{ marginTop: '16px' }}>
                                     <div className="result-row" style={{ marginBottom: '4px' }}>
                                         <span className="result-label">
-                                            <strong>Annual Salary Equivalent</strong>
+                                            <strong>{getUiString(lang, 'Annual Salary Equivalent')}</strong>
                                         </span>
                                     </div>
                                     <div className="result-divider" />
                                     <div className="result-row">
-                                        <span className="result-label">Annual USD</span>
+                                        <span className="result-label">{getUiString(lang, 'Annual USD')}</span>
                                         <span className="result-value profit"><strong>{formatUSD(annualUSD)}</strong></span>
                                     </div>
                                     {fiatEquivalents.map(eq => (
@@ -708,7 +708,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                     ))}
                                     <div className="result-divider" />
                                     <div className="result-row">
-                                        <span className="result-label">Annual Crypto</span>
+                                        <span className="result-label">{getUiString(lang, 'Annual Crypto')}</span>
                                         <span className="result-value profit">
                                             {(cryptoAmountNum * 12).toFixed(cryptoType === 'tether' ? 2 : 6)} {CRYPTO_LABELS[cryptoType].symbol}
                                         </span>
@@ -723,18 +723,18 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 <div className="result-cta">
                                     <a
                                         href="https://www.bitwage.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer nofollow"
+                                        target="_blank" rel="noopener noreferrer sponsored"
+                                        
                                         className="cta-btn"
                                     >
-                                        Get paid in crypto with Bitwage &rarr;
+                                        {getUiString(lang, 'Get paid in crypto with Bitwage &rarr;')}
                                     </a>
                                 </div>
 
                                 {/* Disclaimer */}
                                 <p className="calc-disclaimer">
                                     <Info size={12} />
-                                    Exchange rates fluctuate. Not financial advice.
+                                    {getUiString(lang, 'Exchange rates fluctuate. Not financial advice.')}
                                 </p>
                             </>
                         ) : (
@@ -742,8 +742,8 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 <div className="results-empty-icon">
                                     <Briefcase size={40} />
                                 </div>
-                                <h3>Crypto to Fiat Converter</h3>
-                                <p>Enter your monthly crypto salary to see the equivalent in multiple fiat currencies at current exchange rates.</p>
+                                <h3>{getUiString(lang, 'Crypto to Fiat Converter')}</h3>
+                                <p>{getUiString(lang, 'Enter your monthly crypto salary to see the equivalent in multiple fiat currencies at current exchange rates.')}</p>
                             </div>
                         )
                     )}

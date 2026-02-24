@@ -45,7 +45,7 @@ const REBALANCING_SCENARIOS = [
 ] as const;
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -211,7 +211,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
                     className="rebal-asset-symbol"
                   />
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={String(row.current)}
                     onChange={(e) => updateAsset(row.id, 'current', e.target.value)}
                     min="0"
@@ -220,7 +220,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
                     className="rebal-asset-current"
                   />
                   <input
-                    type="number"
+                    type="number" inputMode="decimal"
                     value={String(row.target)}
                     onChange={(e) => updateAsset(row.id, 'target', e.target.value)}
                     min="0"
@@ -255,7 +255,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
               <input
-                type="number"
+                type="number" inputMode="decimal"
                 value={additionalCash}
                 onChange={(e) => setAdditionalCash(e.target.value)}
                 min="0"
@@ -285,7 +285,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
           {totals ? (
             <>
               <div className="result-hero">
-                <span className="result-hero-label">Portfolio Rebalancing Plan</span>
+                <span className="result-hero-label">{getUiString(lang, 'Portfolio Rebalancing Plan')}</span>
                 <span className="result-hero-value">
                   <PieChart size={28} />
                   {formatUSD(totals.projectedTotal)}
@@ -303,15 +303,15 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
                       <span className="result-value">{row.afterPct.toFixed(2)}%</span>
                     </div>
                     <div className="result-row">
-                      <span className="result-label">Current / Target</span>
+                      <span className="result-label">{getUiString(lang, 'Current / Target')}</span>
                       <span className="result-value">{formatUSD(row.currentValue)} / {formatUSD(row.targetValue)}</span>
                     </div>
                     <div className="result-row">
-                      <span className="result-label">Buy</span>
+                      <span className="result-label">{getUiString(lang, 'Buy')}</span>
                       <span className="result-value profit">+{formatUSD(row.buy)}</span>
                     </div>
                     <div className="result-row">
-                      <span className="result-label">Sell</span>
+                      <span className="result-label">{getUiString(lang, 'Sell')}</span>
                       <span className="result-value fee">-{formatUSD(row.sell)}</span>
                     </div>
                   </div>
@@ -320,14 +320,14 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
 
               <p className="calc-disclaimer">
                 <Info size={14} />
-                This plan excludes trading fees, spreads, taxes, and minimum order size constraints. Validate execution on your exchange.
+                {getUiString(lang, 'This plan excludes trading fees, spreads, taxes, and minimum order size constraints. Validate execution on your exchange.')}
               </p>
             </>
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><PieChart size={40} /></div>
-              <h3>Add valid portfolio inputs</h3>
-              <p>Use at least two assets with non-zero current value and target weights.</p>
+              <h3>{getUiString(lang, 'Add valid portfolio inputs')}</h3>
+              <p>{getUiString(lang, 'Use at least two assets with non-zero current value and target weights.')}</p>
             </div>
           )}
         </div>

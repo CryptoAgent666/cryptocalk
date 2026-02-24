@@ -147,7 +147,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
         if (n < 0.0001 && n > 0) return `$${n.toExponential(2)}`;
         if (n < 0.01 && n > 0) return `$${n.toFixed(6)}`;
         if (n < 1) return `$${n.toFixed(4)}`;
-        return new Intl.NumberFormat('en-US', {
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
         }).format(n);
     };
@@ -227,7 +227,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={ethPrice}
                                 onChange={(e) => setEthPrice(e.target.value)}
                                 placeholder="3000"
@@ -267,7 +267,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                             {/* All Unit Conversions */}
                             <div style={{ marginTop: '16px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    All Ethereum Unit Conversions
+                                    {getUiString(lang, 'All Ethereum Unit Conversions')}
                                 </h4>
                                 <div className="result-breakdown">
                                     {conversions.map((c) => (
@@ -276,7 +276,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                                                 {c.label}
                                                 {c.alias && <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginLeft: '4px' }}>({c.alias})</span>}
                                                 <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', marginLeft: '6px' }}>
-                                                    10<sup>{c.exp}</sup> Wei
+                                                    10<sup>{c.exp}</sup> {getUiString(lang, 'Wei')}
                                                 </span>
                                             </span>
                                             <span
@@ -305,7 +305,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.78rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>Operation</th>
+                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Operation')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Gas')}</th>
                                                 {gweiLevels.map((g) => (
                                                     <th key={g} style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500, whiteSpace: 'nowrap' }}>
@@ -344,24 +344,24 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                             <div className="result-cta">
                                 <a
                                     href="https://l2beat.com/scaling/summary"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Explore L2 Networks on L2BEAT <ExternalLink size={14} />
+                                    {getUiString(lang, 'Explore L2 Networks on L2BEAT')} <ExternalLink size={14} />
                                 </a>
                             </div>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                ETH price is auto-fetched from CoinGecko. Gas costs are estimates based on typical gas limits. Actual costs depend on network congestion and priority fees.
+                                {getUiString(lang, 'ETH price is auto-fetched from CoinGecko. Gas costs are estimates based on typical gas limits. Actual costs depend on network congestion and priority fees.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-                            <h3>Convert Ethereum Units</h3>
-                            <p>Enter an amount and select a unit to instantly convert between Wei, Gwei, Ether, and all other Ethereum denominations. See gas cost estimates at different Gwei levels.</p>
+                            <h3>{getUiString(lang, 'Convert Ethereum Units')}</h3>
+                            <p>{getUiString(lang, 'Enter an amount and select a unit to instantly convert between Wei, Gwei, Ether, and all other Ethereum denominations. See gas cost estimates at different Gwei levels.')}</p>
                         </div>
                     )}
                 </div>

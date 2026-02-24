@@ -285,7 +285,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -472,7 +472,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">×</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={leverage}
                                 onChange={(e) => setLeverage(e.target.value)}
                                 placeholder="10"
@@ -507,7 +507,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={entryPrice}
                                 onChange={(e) => setEntryPrice(e.target.value)}
                                 placeholder="65,000"
@@ -538,7 +538,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={positionSize}
                                 onChange={(e) => setPositionSize(e.target.value)}
                                 placeholder="10,000"
@@ -570,7 +570,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                             <div className="input-with-prefix">
                                 <span className="input-prefix">$</span>
                                 <input
-                                    type="number"
+                                    type="number" inputMode="decimal"
                                     value={walletBalance}
                                     onChange={(e) => setWalletBalance(e.target.value)}
                                     placeholder="5,000"
@@ -610,7 +610,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                             {/* Main Result: Liquidation Price */}
                             <div className="result-hero" style={{ borderColor: getRiskColor(results.riskLevel) }}>
                                 <span className="result-hero-label">
-                                    Liquidation Price
+                                    {getUiString(lang, 'Liquidation Price')}
                                 </span>
                                 <span className="result-hero-value" style={{ color: getRiskColor(results.riskLevel) }}>
                                     <Gauge size={28} />
@@ -630,11 +630,11 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                     }} />
                                 </div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', marginTop: '4px' }}>
-                                    <span style={{ color: 'var(--color-accent-green)' }}>Safe</span>
+                                    <span style={{ color: 'var(--color-accent-green)' }}>{getUiString(lang, 'Safe')}</span>
                                     <span style={{ fontWeight: 600, color: getRiskColor(results.riskLevel) }}>
                                         {getRiskLabel(results.riskLevel)}
                                     </span>
-                                    <span style={{ color: '#ef4444' }}>Danger</span>
+                                    <span style={{ color: '#ef4444' }}>{getUiString(lang, 'Danger')}</span>
                                 </div>
                             </div>
 
@@ -649,7 +649,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                     <span className="result-value">{isShort ? '🔴 Short' : '🟢 Long'}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Margin Type</span>
+                                    <span className="result-label">{getUiString(lang, 'Margin Type')}</span>
                                     <span className="result-value" style={{ textTransform: 'capitalize' }}>{marginType}</span>
                                 </div>
                                 <div className="result-divider" />
@@ -659,14 +659,14 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">
-                                        <strong>Liquidation Price</strong>
+                                        <strong>{getUiString(lang, 'Liquidation Price')}</strong>
                                     </span>
                                     <span className="result-value fee">
                                         <strong>{formatUSD(results.liquidationPrice)}</strong>
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Distance to Liquidation</span>
+                                    <span className="result-label">{getUiString(lang, 'Distance to Liquidation')}</span>
                                     <span className="result-value" style={{ color: getRiskColor(results.riskLevel) }}>
                                         {formatPercent(results.distanceToLiquidation)}
                                     </span>
@@ -677,11 +677,11 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                     <span className="result-value">{lev}x</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Initial Margin</span>
+                                    <span className="result-label">{getUiString(lang, 'Initial Margin')}</span>
                                     <span className="result-value">{formatUSD(results.initialMargin)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Maintenance Margin</span>
+                                    <span className="result-label">{getUiString(lang, 'Maintenance Margin')}</span>
                                     <span className="result-value">{formatUSD(results.maintenanceMargin)}</span>
                                 </div>
                                 <div className="result-row">
@@ -690,7 +690,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Loss at Liquidation</span>
+                                    <span className="result-label">{getUiString(lang, 'Loss at Liquidation')}</span>
                                     <span className="result-value fee">
                                         <strong>{formatUSD(Math.abs(results.pnlAtLiquidation))}</strong>
                                     </span>
@@ -718,8 +718,8 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                             <div className="result-cta">
                                 <a
                                     href="https://www.bybit.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
                                     Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
@@ -729,7 +729,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Simplified estimate. Actual liquidation prices vary by exchange tier, funding, and fees. Always check your exchange for exact values.
+                                {getUiString(lang, 'Simplified estimate. Actual liquidation prices vary by exchange tier, funding, and fees. Always check your exchange for exact values.')}
                             </p>
                         </>
                     ) : (
@@ -737,8 +737,8 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                             <div className="results-empty-icon">
                                 <Gauge size={40} />
                             </div>
-                            <h3>Calculate Liquidation Price</h3>
-                            <p>Enter your leverage, entry price, and position size to see when your position would be liquidated.</p>
+                            <h3>{getUiString(lang, 'Calculate Liquidation Price')}</h3>
+                            <p>{getUiString(lang, 'Enter your leverage, entry price, and position size to see when your position would be liquidated.')}</p>
                         </div>
                     )}
                 </div>

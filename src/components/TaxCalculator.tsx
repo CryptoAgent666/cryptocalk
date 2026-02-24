@@ -358,7 +358,7 @@ export default function TaxCalculator() {
                         <div className="input-with-unit">
                             <span className="input-prefix">{config.currency}</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={buyPrice}
                                 onChange={(e) => setBuyPrice(e.target.value)}
                                 placeholder="30,000"
@@ -390,7 +390,7 @@ export default function TaxCalculator() {
                         <div className="input-with-unit">
                             <span className="input-prefix">{config.currency}</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={sellPrice}
                                 onChange={(e) => setSellPrice(e.target.value)}
                                 placeholder="65,000"
@@ -420,7 +420,7 @@ export default function TaxCalculator() {
                         <div className="input-with-unit">
                             <span className="input-prefix">#</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={quantity}
                                 onChange={(e) => setQuantity(e.target.value)}
                                 placeholder="1"
@@ -575,8 +575,8 @@ export default function TaxCalculator() {
                             {/* CTA */}
                             <a
                                 href="https://coinledger.io"
-                                target="_blank"
-                                rel="noopener noreferrer nofollow"
+                                target="_blank" rel="noopener noreferrer sponsored"
+                                
                                 className="tax-cta"
                             >
                                 Get Your Full Tax Report with CoinLedger — Save 20% →

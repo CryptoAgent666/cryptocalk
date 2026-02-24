@@ -1,91 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Calculator } from 'lucide-react';
+
+const title = "404 - Page Not Found";
+const description = "The page you are looking for does not exist.";
 ---
 
-<Layout
-  title="404 — Page Not Found | CryptoCalk"
-  description="The page you requested does not exist. Go back to CryptoCalk homepage or open a calculator."
-  lang="en"
-  noindex={true}
->
-  <main class="not-found">
-    <div class="not-found-card">
-      <p class="code">404</p>
-      <h1>Page Not Found</h1>
-      <p class="description">
-        The page you are looking for is unavailable or was moved.
-      </p>
-      <div class="actions">
-        <a href="/" class="btn-primary">Go to Homepage</a>
-        <a href="/profit-calculator" class="btn-secondary">Open Profit Calculator</a>
-      </div>
+<Layout title={title} description={description} lang="en">
+  <div style="min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px;">
+    <div style="margin-bottom: 24px; color: var(--color-primary);">
+      <Calculator size={64} />
     </div>
-  </main>
+    <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.02em;">404</h1>
+    <h2 style="font-size: 1.5rem; margin-bottom: 24px; color: var(--color-text-secondary);">Page Not Found</h2>
+    <p style="margin-bottom: 32px; color: var(--color-text-muted); max-width: 400px; line-height: 1.6;">
+      Sorry, we couldn't find the calculator or page you're looking for. It might have been moved or deleted.
+    </p>
+    <a href="/" style="display: inline-flex; align-items: center; justify-content: center; background: var(--color-primary); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: opacity 0.2s;">
+      Back to Calculators
+    </a>
+  </div>
 </Layout>
-
-<style>
-  .not-found {
-    min-height: 75vh;
-    display: grid;
-    place-items: center;
-    padding: 40px 20px;
-  }
-
-  .not-found-card {
-    width: 100%;
-    max-width: 560px;
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-card);
-    padding: 36px 28px;
-    text-align: center;
-  }
-
-  .code {
-    margin: 0;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--color-primary);
-  }
-
-  h1 {
-    margin: 10px 0 8px;
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .description {
-    margin: 0 auto;
-    color: var(--color-text-secondary);
-    max-width: 420px;
-  }
-
-  .actions {
-    margin-top: 22px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    text-decoration: none;
-    border-radius: var(--radius-sm);
-    padding: 10px 18px;
-    font-weight: 600;
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
-    color: #fff;
-  }
-
-  .btn-secondary {
-    background: var(--color-bg);
-    color: var(--color-text);
-    border: 1px solid var(--color-border);
-  }
-</style>

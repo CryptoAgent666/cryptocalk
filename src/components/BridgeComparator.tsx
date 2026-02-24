@@ -22,7 +22,7 @@ const BRIDGES: BridgeDef[] = [
 const CHAINS = ['Ethereum', 'Arbitrum', 'Optimism', 'Base', 'Polygon', 'BSC'];
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -111,7 +111,7 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
               <input
-                type="number"
+                type="number" inputMode="decimal"
                 min="1"
                 step="any"
                 value={amount}
@@ -131,7 +131,7 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
           {results.length > 0 ? (
             <>
               <div className="result-hero profit">
-                <span className="result-hero-label">Best Route</span>
+                <span className="result-hero-label">{getUiString(lang, 'Best Route')}</span>
                 <span className="result-hero-value">
                   <Shield size={28} />
                   {best.name}
@@ -161,7 +161,7 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
                       <span className="result-value">~{row.avgMinutes} min</span>
                     </div>
                     <div className="result-row">
-                      <span className="result-label">Security score</span>
+                      <span className="result-label">{getUiString(lang, 'Security score')}</span>
                       <span className="result-value">{row.securityScore.toFixed(1)} / 5</span>
                     </div>
                   </div>
@@ -169,21 +169,21 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <div className="result-cta">
-                <a href="https://www.across.to" target="_blank" rel="noreferrer noopener" className="cta-btn">
-                  Open Best Bridge <ExternalLink size={14} style={{ marginLeft: '6px', verticalAlign: 'middle' }} />
+                <a href="https://www.across.to" target="_blank" rel="noopener noreferrer sponsored"  className="cta-btn">
+                  {getUiString(lang, 'Open Best Bridge')} <ExternalLink size={14} style={{ marginLeft: '6px', verticalAlign: 'middle' }} />
                 </a>
               </div>
 
               <p className="calc-disclaimer">
                 <Info size={14} />
-                Fees and speed are estimates for comparison. Always verify current route quotes on the bridge before sending funds.
+                {getUiString(lang, 'Fees and speed are estimates for comparison. Always verify current route quotes on the bridge before sending funds.')}
               </p>
             </>
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-              <h3>Select two different networks</h3>
-              <p>Choose source and destination chains to compare bridge routes.</p>
+              <h3>{getUiString(lang, 'Select two different networks')}</h3>
+              <p>{getUiString(lang, 'Choose source and destination chains to compare bridge routes.')}</p>
             </div>
           )}
         </div>

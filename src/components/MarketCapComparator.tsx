@@ -461,7 +461,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                             {/* Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Hypothetical Price</span>
+                                    <span className="result-label">{getUiString(lang, 'Hypothetical Price')}</span>
                                     <span className="result-value profit">{formatPrice(hypotheticalPrice)}</span>
                                 </div>
                                 <div className="result-row">
@@ -529,15 +529,15 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                                 style={{ width: '100%', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginBottom: '12px' }}
                             >
                                 <Share2 size={14} />
-                                Share on X
+                                {getUiString(lang, 'Share on X')}
                             </button>
 
                             {/* CTA */}
                             <div className="result-cta">
                                 <a
                                     href="https://www.binance.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
                                     Buy {targetData.symbol.toUpperCase()} on Binance →
@@ -547,7 +547,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                For informational purposes only. Not financial advice. Market cap comparisons are hypothetical scenarios.
+                                {getUiString(lang, 'For informational purposes only. Not financial advice. Market cap comparisons are hypothetical scenarios.')}
                             </p>
                         </>
                     ) : (
@@ -555,12 +555,12 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                             <div className="results-empty-icon">
                                 <BarChart3 size={40} />
                             </div>
-                            <h3>Market Cap Comparator</h3>
+                            <h3>{getUiString(lang, 'Market Cap Comparator')}</h3>
                             <p>
                                 Select two coins to compare: "What if {targetCoin?.symbol.toUpperCase() || 'Coin A'} had {refCoin?.symbol.toUpperCase() || 'Coin B'}'s market cap?"
                                 {isFetching && (
                                     <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginTop: '12px', color: 'var(--color-text-muted)' }}>
-                                        <Loader2 size={16} className="spin" /> Loading coin data...
+                                        <Loader2 size={16} className="spin" /> {getUiString(lang, 'Loading coin data...')}
                                     </span>
                                 )}
                             </p>

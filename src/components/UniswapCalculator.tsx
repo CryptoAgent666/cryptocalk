@@ -14,7 +14,7 @@ const UNISWAP_SCENARIOS = [
 ] as const;
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -124,7 +124,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={deposit} onChange={(e) => setDeposit(e.target.value)} min="1" step="any" id="uni-deposit" />
+              <input type="number" inputMode="decimal" value={deposit} onChange={(e) => setDeposit(e.target.value)} min="1" step="any" id="uni-deposit" />
             </div>
           </div>
 
@@ -143,7 +143,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="1" step="any" id="uni-tvl" />
+              <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="1" step="any" id="uni-tvl" />
             </div>
           </div>
 
@@ -162,7 +162,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={dailyVolume} onChange={(e) => setDailyVolume(e.target.value)} min="1" step="any" id="uni-volume" />
+              <input type="number" inputMode="decimal" value={dailyVolume} onChange={(e) => setDailyVolume(e.target.value)} min="1" step="any" id="uni-volume" />
             </div>
           </div>
 
@@ -193,7 +193,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={priceMovePct} onChange={(e) => setPriceMovePct(e.target.value)} step="any" id="uni-price-move" />
+              <input type="number" inputMode="decimal" value={priceMovePct} onChange={(e) => setPriceMovePct(e.target.value)} step="any" id="uni-price-move" />
             </div>
           </div>
 
@@ -210,7 +210,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" value={days} onChange={(e) => setDays(e.target.value)} min="1" step="1" id="uni-days" />
+            <input type="number" inputMode="decimal" value={days} onChange={(e) => setDays(e.target.value)} min="1" step="1" id="uni-days" />
           </div>
 
           <button className="reset-btn" onClick={reset}>
@@ -225,7 +225,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           {result ? (
             <>
               <div className={`result-hero ${result.netPnL >= 0 ? 'profit' : 'loss'}`}>
-                <span className="result-hero-label">Estimated LP Outcome</span>
+                <span className="result-hero-label">{getUiString(lang, 'Estimated LP Outcome')}</span>
                 <span className="result-hero-value">
                   <TrendingUp size={28} />
                   {formatUSD(result.finalValue)}
@@ -237,19 +237,19 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
 
               <div className="result-breakdown">
                 <div className="result-row">
-                  <span className="result-label">LP share of pool</span>
+                  <span className="result-label">{getUiString(lang, 'LP share of pool')}</span>
                   <span className="result-value">{(result.share * 100).toFixed(4)}%</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Daily fee income</span>
+                  <span className="result-label">{getUiString(lang, 'Daily fee income')}</span>
                   <span className="result-value profit">{formatUSD(result.dailyFeeIncome)}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Gross fees (period)</span>
+                  <span className="result-label">{getUiString(lang, 'Gross fees (period)')}</span>
                   <span className="result-value profit">{formatUSD(result.grossFees)}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Estimated impermanent loss</span>
+                  <span className="result-label">{getUiString(lang, 'Estimated impermanent loss')}</span>
                   <span className="result-value fee">-{formatUSD(result.ilLoss)}</span>
                 </div>
                 <div className="result-divider" />
@@ -263,14 +263,14 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
 
               <p className="calc-disclaimer">
                 <Info size={14} />
-                This is a simplified model. Actual LP returns depend on pool composition, rebalancing path, gas costs, and live market volatility.
+                {getUiString(lang, 'This is a simplified model. Actual LP returns depend on pool composition, rebalancing path, gas costs, and live market volatility.')}
               </p>
             </>
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-              <h3>Enter valid values</h3>
-              <p>Add deposit, TVL, and volume assumptions to estimate Uniswap LP performance.</p>
+              <h3>{getUiString(lang, 'Enter valid values')}</h3>
+              <p>{getUiString(lang, 'Add deposit, TVL, and volume assumptions to estimate Uniswap LP performance.')}</p>
             </div>
           )}
         </div>

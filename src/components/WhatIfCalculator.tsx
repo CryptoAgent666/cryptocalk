@@ -323,7 +323,7 @@ export default function WhatIfCalculator() {
                         <div className="input-with-unit">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={amount}
                                 onChange={(e) => { setAmount(e.target.value); setResult(null); }}
                                 placeholder="1,000"
@@ -496,8 +496,8 @@ export default function WhatIfCalculator() {
                             {/* CTA */}
                             <a
                                 href="https://www.binance.com/en/register"
-                                target="_blank"
-                                rel="noopener noreferrer nofollow"
+                                target="_blank" rel="noopener noreferrer sponsored"
+                                
                                 className="whatif-cta"
                             >
                                 It's Not Too Late — Buy {result.coinSymbol} on Binance →

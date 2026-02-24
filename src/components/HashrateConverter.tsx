@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useState, useCallback, useEffect } from 'react';
 import {
     Cpu,
@@ -32,7 +33,7 @@ interface ConversionResult {
     value: number;
 }
 
-export default function HashrateConverter() {
+export default function HashrateConverter({ lang = 'en' }: { lang?: string }) {
     const [inputValue, setInputValue] = useState('');
     const [selectedUnit, setSelectedUnit] = useState('th');
     const [results, setResults] = useState<ConversionResult[]>([]);
@@ -122,7 +123,7 @@ export default function HashrateConverter() {
                     <div className="input-group">
                         <label><Zap size={14} /> Hash Rate Value</label>
                         <input
-                            type="number"
+                            type="number" inputMode="decimal"
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
                             placeholder="Enter hash rate..."
@@ -237,14 +238,14 @@ export default function HashrateConverter() {
                             {/* Quick Reference Table */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Typical Hash Rates by Device
+                                    {getUiString(lang, 'Typical Hash Rates by Device')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>Device / Algorithm</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Typical Hash Rate</th>
+                                                <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Device / Algorithm')}</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Typical Hash Rate')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -271,7 +272,7 @@ export default function HashrateConverter() {
                             {/* Conversion Reference */}
                             <div className="result-breakdown" style={{ marginTop: '16px' }}>
                                 <div className="result-row" style={{ marginBottom: '4px' }}>
-                                    <span className="result-label"><strong>Unit Scale Reference</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Unit Scale Reference')}</strong></span>
                                 </div>
                                 <div className="result-divider" />
                                 {UNITS.slice(1).map((unit) => (
@@ -291,18 +292,18 @@ export default function HashrateConverter() {
                             <div className="result-cta">
                                 <a
                                     href="https://www.f2pool.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Start Mining with F2Pool →
+                                    {getUiString(lang, 'Start Mining with F2Pool →')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Hash rates vary by algorithm, hardware condition, and overclocking settings. Values shown are for reference purposes only.
+                                {getUiString(lang, 'Hash rates vary by algorithm, hardware condition, and overclocking settings. Values shown are for reference purposes only.')}
                             </p>
                         </>
                     ) : (
@@ -310,8 +311,8 @@ export default function HashrateConverter() {
                             <div className="results-empty-icon">
                                 <ArrowRightLeft size={40} />
                             </div>
-                            <h3>Convert Hash Rate Units</h3>
-                            <p>Enter a hash rate value and select a unit to instantly convert between H/s, KH/s, MH/s, GH/s, TH/s, PH/s, and EH/s.</p>
+                            <h3>{getUiString(lang, 'Convert Hash Rate Units')}</h3>
+                            <p>{getUiString(lang, 'Enter a hash rate value and select a unit to instantly convert between H/s, KH/s, MH/s, GH/s, TH/s, PH/s, and EH/s.')}</p>
                         </div>
                     )}
                 </div>

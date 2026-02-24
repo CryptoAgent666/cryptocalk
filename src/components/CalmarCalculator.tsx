@@ -14,7 +14,7 @@ const CALMAR_SCENARIOS = [
 ] as const;
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -110,7 +110,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">$</span>
-              <input type="number" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="calmar-value" />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="calmar-value" />
             </div>
           </div>
 
@@ -129,7 +129,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)} step="any" id="calmar-return" />
+              <input type="number" inputMode="decimal" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)} step="any" id="calmar-return" />
             </div>
           </div>
 
@@ -148,7 +148,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.01" step="any" id="calmar-dd" />
+              <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.01" step="any" id="calmar-dd" />
             </div>
           </div>
 
@@ -165,7 +165,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="calmar-years" />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="calmar-years" />
           </div>
 
           <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
@@ -178,22 +178,22 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
           {result ? (
             <>
               <div className={`result-hero ${result.calmar >= 1 ? 'profit' : result.calmar >= 0.5 ? '' : 'loss'}`}>
-                <span className="result-hero-label">Calmar Ratio</span>
+                <span className="result-hero-label">{getUiString(lang, 'Calmar Ratio')}</span>
                 <span className="result-hero-value"><Gauge size={28} />{result.calmar.toFixed(3)}</span>
                 <span className={`result-hero-roi ${result.calmar >= 1 ? 'profit' : result.calmar >= 0.5 ? '' : 'loss'}`}>{result.rating}</span>
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Projected portfolio value</span><span className="result-value">{formatUSD(result.projectedValue)}</span></div>
-                <div className="result-row"><span className="result-label">Projected gain</span><span className={`result-value ${result.projectedGain >= 0 ? 'profit' : 'loss'}`}>{result.projectedGain >= 0 ? '+' : ''}{formatUSD(result.projectedGain)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Projected portfolio value')}</span><span className="result-value">{formatUSD(result.projectedValue)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Projected gain')}</span><span className={`result-value ${result.projectedGain >= 0 ? 'profit' : 'loss'}`}>{result.projectedGain >= 0 ? '+' : ''}{formatUSD(result.projectedGain)}</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label">Max drawdown amount</span><span className="result-value fee">-{formatUSD(result.drawdownAmount)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Max drawdown amount')}</span><span className="result-value fee">-{formatUSD(result.drawdownAmount)}</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Calmar compares annual return to max drawdown. It is most useful for evaluating trend-following and high-volatility strategies.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Calmar compares annual return to max drawdown. It is most useful for evaluating trend-following and high-volatility strategies.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid inputs')}</h3><p>Provide annual return and max drawdown to compute Calmar ratio.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid inputs')}</h3><p>{getUiString(lang, 'Provide annual return and max drawdown to compute Calmar ratio.')}</p></div>
           )}
         </div>
       </div>

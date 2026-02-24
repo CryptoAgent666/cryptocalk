@@ -63,6 +63,15 @@ const COINS: Record<string, CoinData> = {
     FLUX: { symbol: 'FLUX', name: 'Flux', price: 0.80, blockReward: 37.5, networkHashrate: 2500000, algo: 'ZelHash' },
 };
 
+// Map whattomine generic names to our symbols
+const COIN_MAPPING: Record<string, string> = {
+    EthereumClassic: 'ETC',
+    Ravencoin: 'RVN',
+    Ergo: 'ERGO',
+    Kaspa: 'KAS',
+    Flux: 'FLUX'
+};
+
 const COIN_KEYS = Object.keys(COINS);
 const GPU_COUNT_PILLS = [1, 2, 4, 6, 8, 12];
 const ELECTRICITY_PILLS = [0.05, 0.08, 0.10, 0.15, 0.20];
@@ -109,10 +118,66 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
     const [selectedCoin, setSelectedCoin] = useState('ETC');
     const [hardwareCost, setHardwareCost] = useState('');
 
-    // Results
+    // Live Data & Results
+    const [coinData, setCoinData] = useState<Record<string, CoinData>>(COINS);
+    const [liveDataStatus, setLiveDataStatus] = useState<'loading' | 'live' | 'error'>('loading');
+
     const [results, setResults] = useState<PeriodResult[]>([]);
     const [coinRanking, setCoinRanking] = useState<CoinRanking[]>([]);
     const [breakEvenDays, setBreakEvenDays] = useState<number | null>(null);
+
+    useEffect(() => {
+        let isMounted = true;
+        setLiveDataStatus('loading');
+
+        Promise.all([
+            fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://whattomine.com/asic.json")).then(r => r.json()),
+            fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://whattomine.com/coins.json")).then(r => r.json())
+        ])
+            .then(([asicData, coinsData]) => {
+                if (!isMounted) return;
+                try {
+                    const asicParsed = JSON.parse(asicData.contents);
+                    const btcPrice = asicParsed.coins['Bitcoin']?.exchange_rate || 65000;
+
+                    const coinsParsed = JSON.parse(coinsData.contents);
+                    const wtCoins = coinsParsed.coins;
+
+                    const updatedData = { ...COINS };
+
+                    for (const [name, info] of Object.entries(wtCoins)) {
+                        const symbol = COIN_MAPPING[name];
+                        if (symbol && info) {
+                            const infoAny = info as any;
+                            let networkHr = infoAny.nethash;
+                            // WhatToMine returns network hashrate in H/s, while this component uses MH/s. We divide by 1_000_000.
+                            if (networkHr) {
+                                networkHr = networkHr / 1000000;
+                            } else {
+                                networkHr = updatedData[symbol].networkHashrate;
+                            }
+                            updatedData[symbol] = {
+                                ...updatedData[symbol],
+                                blockReward: infoAny.block_reward24 || infoAny.block_reward,
+                                price: infoAny.exchange_rate * btcPrice,
+                                networkHashrate: networkHr
+                            };
+                        }
+                    }
+
+                    setCoinData(updatedData);
+                    setLiveDataStatus('live');
+                } catch (e) {
+                    console.error("Failed to parse live mining data", e);
+                    setLiveDataStatus('error');
+                }
+            })
+            .catch(() => {
+                if (isMounted) setLiveDataStatus('error');
+            });
+
+        return () => { isMounted = false; };
+    }, []);
 
     // Select GPU preset
     const selectGpu = (gpuName: string) => {
@@ -161,7 +226,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
         const pw = parseFloat(power);
         const elCost = parseFloat(electricityCost);
         const pFee = parseFloat(poolFee);
-        const coin = COINS[selectedCoin];
+        const coin = coinData[selectedCoin];
 
         if (!hr || hr <= 0 || !coin) {
             setResults([]);
@@ -196,7 +261,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
 
         // Coin ranking
         const rankings: CoinRanking[] = COIN_KEYS.map((key) => {
-            const c = COINS[key];
+            const c = coinData[key];
             const profit = calcDailyProfit(c, hr, gpus, elCost || 0, pFee || 0);
             return { symbol: c.symbol, name: c.name, dailyProfit: profit, algo: c.algo };
         }).sort((a, b) => b.dailyProfit - a.dailyProfit);
@@ -214,7 +279,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
         } else {
             setBreakEvenDays(null);
         }
-    }, [hashrate, numGpus, power, electricityCost, poolFee, selectedCoin, hardwareCost, calcDailyProfit]);
+    }, [hashrate, numGpus, power, electricityCost, poolFee, selectedCoin, hardwareCost, calcDailyProfit, coinData]);
 
     // Auto-calculate on input change
     useEffect(() => {
@@ -237,7 +302,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -311,7 +376,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">#</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={numGpus}
                                 onChange={(e) => setNumGpus(e.target.value)}
                                 placeholder="1"
@@ -331,7 +396,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                         </label>
                         <div className="input-with-prefix">
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={hashrate}
                                 onChange={(e) => {
                                     setHashrate(e.target.value);
@@ -354,7 +419,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                         </label>
                         <div className="input-with-prefix">
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={power}
                                 onChange={(e) => {
                                     setPower(e.target.value);
@@ -388,7 +453,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={electricityCost}
                                 onChange={(e) => setElectricityCost(e.target.value)}
                                 placeholder="0.10"
@@ -419,7 +484,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={poolFee}
                                 onChange={(e) => setPoolFee(e.target.value)}
                                 placeholder="1"
@@ -474,7 +539,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={hardwareCost}
                                 onChange={(e) => setHardwareCost(e.target.value)}
                                 placeholder="For break-even calculation"
@@ -497,6 +562,15 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
 
                 {/* Right: Results */}
                 <div className="calc-results-panel">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                        <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{getUiString('Estimated Profitability', lang)}</h3>
+                        {liveDataStatus === 'live' && (
+                            <span style={{ color: 'var(--color-accent-green)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(52, 211, 153, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
+                                <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-accent-green)' }}></span>
+                                {getUiString('Live Network Data', lang)}
+                            </span>
+                        )}
+                    </div>
                     {hasInputs && results.length > 0 ? (
                         <>
                             {/* Hero */}
@@ -548,7 +622,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                             {coinRanking.length > 0 && (
                                 <div style={{ marginTop: '20px' }}>
                                     <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                        Coin Profitability Ranking
+                                        {getUiString(lang, 'Coin Profitability Ranking')}
                                     </h4>
                                     <div className="result-breakdown">
                                         {coinRanking.map((cr, i) => (
@@ -584,11 +658,11 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                     <Calendar size={16} />
                                     {breakEvenDays > 0 ? (
                                         <span>
-                                            Break-even in <strong>{breakEvenDays} days</strong> (~{(breakEvenDays / 30).toFixed(1)} months)
+                                            {getUiString(lang, 'Break-even in')} <strong>{breakEvenDays} days</strong> (~{(breakEvenDays / 30).toFixed(1)} months)
                                         </span>
                                     ) : (
                                         <span style={{ color: 'var(--color-accent-red, #ef4444)' }}>
-                                            Mining is <strong>not profitable</strong> at current rates — hardware cost will not be recovered
+                                            {getUiString(lang, 'Mining is')} <strong>{getUiString(lang, 'not profitable')}</strong> {getUiString(lang, 'at current rates — hardware cost will not be recovered')}
                                         </span>
                                     )}
                                 </div>
@@ -606,7 +680,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 }}>
                                     <h4 style={{ fontSize: '0.8rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
                                         <Monitor size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} />
-                                        GPU Specs
+                                        {getUiString(lang, 'GPU Specs')}
                                     </h4>
                                     <div className="result-breakdown" style={{ border: 'none', padding: 0 }}>
                                         <div className="result-row">
@@ -633,18 +707,18 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                             <div className="result-cta">
                                 <a
                                     href="https://www.f2pool.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
-                                    Join F2Pool Mining Pool →
+                                    {getUiString(lang, 'Join F2Pool Mining Pool →')}
                                 </a>
                             </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Mining profitability fluctuates with price and difficulty changes.
+                                {getUiString(lang, 'Mining profitability fluctuates with price and difficulty changes.')}
                             </p>
                         </>
                     ) : (
@@ -652,8 +726,8 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                             <div className="results-empty-icon">
                                 <Cpu size={40} />
                             </div>
-                            <h3>Configure Your GPU Mining Rig</h3>
-                            <p>Select a GPU model and mining coin to see profitability estimates across multiple time periods and coins.</p>
+                            <h3>{getUiString(lang, 'Configure Your GPU Mining Rig')}</h3>
+                            <p>{getUiString(lang, 'Select a GPU model and mining coin to see profitability estimates across multiple time periods and coins.')}</p>
                         </div>
                     )}
                 </div>

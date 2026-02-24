@@ -1,3 +1,4 @@
+import { getUiString } from '../i18n/ui-strings';
 import { useState, useCallback, useEffect, useRef } from 'react';
 import {
     DollarSign,
@@ -74,7 +75,7 @@ const FUNDING_SCENARIOS = [
     },
 ] as const;
 
-export default function FundingRateCalculator() {
+export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
     const [coinSearch, setCoinSearch] = useState('');
     const [selectedCoin, setSelectedCoin] = useState<CoinSuggestion | null>(null);
     const [suggestions, setSuggestions] = useState<CoinSuggestion[]>([]);
@@ -210,7 +211,7 @@ export default function FundingRateCalculator() {
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency', currency: 'USD',
             minimumFractionDigits: 2, maximumFractionDigits: 2,
         }).format(n);
@@ -313,7 +314,7 @@ export default function FundingRateCalculator() {
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={positionSize}
                                 onChange={(e) => setPositionSize(e.target.value)}
                                 placeholder="10,000"
@@ -344,7 +345,7 @@ export default function FundingRateCalculator() {
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={fundingRate}
                                 onChange={(e) => setFundingRate(e.target.value)}
                                 placeholder="0.01"
@@ -431,28 +432,28 @@ export default function FundingRateCalculator() {
                             {/* Breakdown */}
                             <div className="result-breakdown">
                                 <div className="result-row">
-                                    <span className="result-label">Funding Rate</span>
+                                    <span className="result-label">{getUiString(lang, 'Funding Rate')}</span>
                                     <span className="result-value">{fundingRate}% per interval</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Intervals / Day</span>
+                                    <span className="result-label">{getUiString(lang, 'Intervals / Day')}</span>
                                     <span className="result-value">{intervalsPerDay}× (every {24 / intervalsPerDay}h)</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Position</span>
+                                    <span className="result-label">{getUiString(lang, 'Position')}</span>
                                     <span className="result-value">{isShort ? '🔴 Short' : '🟢 Long'} {formatUSD(parseFloat(positionSize) || 0)}</span>
                                 </div>
                                 <div className="result-divider" />
 
                                 <div className="result-row">
-                                    <span className="result-label">Cost Per Interval</span>
+                                    <span className="result-label">{getUiString(lang, 'Cost Per Interval')}</span>
                                     <span className={`result-value ${results.direction === 'receive' ? 'profit' : 'fee'}`}>
                                         {results.direction === 'pay' ? '−' : '+'}{formatUSD(results.costPerInterval)}
                                     </span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">
-                                        <strong>Daily Cost</strong>
+                                        <strong>{getUiString(lang, 'Daily Cost')}</strong>
                                     </span>
                                     <span className={`result-value ${results.direction === 'receive' ? 'profit' : 'fee'}`}>
                                         <strong>{results.direction === 'pay' ? '−' : '+'}{formatUSD(results.dailyCost)}</strong>
@@ -461,19 +462,19 @@ export default function FundingRateCalculator() {
                                 <div className="result-divider" />
 
                                 <div className="result-row">
-                                    <span className="result-label">Weekly</span>
+                                    <span className="result-label">{getUiString(lang, 'Weekly')}</span>
                                     <span className={`result-value ${results.direction === 'receive' ? 'profit' : 'fee'}`}>
                                         {results.direction === 'pay' ? '−' : '+'}{formatUSD(results.weeklyCost)}
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Monthly (30d)</span>
+                                    <span className="result-label">{getUiString(lang, 'Monthly (30d)')}</span>
                                     <span className={`result-value ${results.direction === 'receive' ? 'profit' : 'fee'}`}>
                                         {results.direction === 'pay' ? '−' : '+'}{formatUSD(results.monthlyCost)}
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Annual (365d)</span>
+                                    <span className="result-label">{getUiString(lang, 'Annual (365d)')}</span>
                                     <span className={`result-value ${results.direction === 'receive' ? 'profit' : 'fee'}`}>
                                         {results.direction === 'pay' ? '−' : '+'}{formatUSD(results.annualCost)} ({results.annualAsPercent.toFixed(2)}%)
                                     </span>
@@ -516,8 +517,8 @@ export default function FundingRateCalculator() {
                             <div className="result-cta">
                                 <a
                                     href="https://www.bybit.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
+                                    target="_blank" rel="noopener noreferrer sponsored"
+                                    
                                     className="cta-btn"
                                 >
                                     Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} Perpetuals on Bybit →
@@ -526,7 +527,7 @@ export default function FundingRateCalculator() {
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Funding rates fluctuate constantly. This calculator uses a fixed rate for projection. Actual costs may vary significantly.
+                                {getUiString(lang, 'Funding rates fluctuate constantly. This calculator uses a fixed rate for projection. Actual costs may vary significantly.')}
                             </p>
                         </>
                     ) : (
@@ -534,8 +535,8 @@ export default function FundingRateCalculator() {
                             <div className="results-empty-icon">
                                 <Zap size={40} />
                             </div>
-                            <h3>Calculate Funding Costs</h3>
-                            <p>Enter your position size and funding rate to see how much you'll pay or receive for holding perpetual futures.</p>
+                            <h3>{getUiString(lang, 'Calculate Funding Costs')}</h3>
+                            <p>{getUiString(lang, 'Enter your position size and funding rate to see how much you\'ll pay or receive for holding perpetual futures.')}</p>
                         </div>
                     )}
                 </div>

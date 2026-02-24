@@ -1,0 +1,137 @@
+---
+import { getTranslations } from '../i18n/translations';
+import { type Lang } from '../i18n/utils';
+import { Share2 } from 'lucide-react';
+
+export interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+---
+
+<div class="share-calc-wrapper">
+  <button id="share-calc-btn" class="share-calc-btn" title="Copy link with current inputs">
+    <Share2 size={16} />
+    <span class="share-text">Share Calculation</span>
+  </button>
+</div>
+
+<style>
+  .share-calc-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    margin-top: -16px;
+  }
+  
+  .share-calc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .share-calc-btn:hover {
+    background: var(--color-bg-hover);
+    color: var(--color-text);
+    border-color: var(--color-primary);
+  }
+  
+  .share-calc-btn.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--color-accent-green);
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+</style>
+
+<script>
+  // Script to save inputs to URL and load from URL
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('share-calc-btn');
+    const scope = document.querySelector('.calc-scope');
+    
+    if (!btn || !scope) return;
+    
+    const setReactValue = (input: HTMLInputElement | HTMLSelectElement, value: string) => {
+      let prototype = Object.getPrototypeOf(input);
+      // For cross-browser react setter
+      let setter = Object.getOwnPropertyDescriptor(prototype, 'value')?.set;
+      if (!setter && input.tagName.toLowerCase() === 'input') {
+        setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')?.set;
+      } else if (!setter && input.tagName.toLowerCase() === 'select') {
+        setter = Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value')?.set;
+      }
+      
+      if (setter) {
+        setter.call(input, value);
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+    };
+    
+    // 1. Restore from URL on load
+    const params = new URLSearchParams(window.location.search);
+    if (params.toString().length > 0) {
+      // Need to wait until React hydrated the inputs. 
+      // We use a small polling mechanism up to 2 seconds.
+      let attempts = 0;
+      const interval = setInterval(() => {
+        attempts++;
+        const inputs = Array.from(scope.querySelectorAll('input, select')) as (HTMLInputElement | HTMLSelectElement)[];
+        if (inputs.length > 0 || attempts > 20) {
+          clearInterval(interval);
+          let loaded = false;
+          
+          inputs.forEach(input => {
+            const key = input.id || input.name;
+            if (key && params.has(key)) {
+              setReactValue(input, params.get(key) || "");
+              loaded = true;
+            }
+          });
+        }
+      }, 100);
+    }
+    
+    // 2. Save to URL on click
+    btn.addEventListener('click', () => {
+      const inputs = Array.from(scope.querySelectorAll('input, select')) as (HTMLInputElement | HTMLSelectElement)[];
+      const newParams = new URLSearchParams();
+      
+      inputs.forEach(input => {
+        const key = input.id || input.name;
+        if (key && input.value) {
+          newParams.set(key, input.value);
+        }
+      });
+      
+      const newUrl = window.location.pathname + '?' + newParams.toString();
+      window.history.replaceState({}, '', newUrl); // update URL silently
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(window.location.origin + newUrl).then(() => {
+        const textSpan = btn.querySelector('.share-text');
+        if (textSpan) {
+          const original = textSpan.textContent;
+          textSpan.textContent = 'Copied to clipboard!';
+          btn.classList.add('success');
+          
+          setTimeout(() => {
+            textSpan.textContent = original;
+            btn.classList.remove('success');
+          }, 2000);
+        }
+      });
+    });
+  });
+</script>

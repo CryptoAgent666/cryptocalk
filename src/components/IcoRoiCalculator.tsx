@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { Info, Rocket, RotateCcw } from 'lucide-react';
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -112,7 +112,7 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix" style={{ marginTop: '8px' }}><span className="input-prefix">$</span><input type="number" value={icoPrice} onChange={(e) => setIcoPrice(e.target.value)} min="0" step="any" id="ico-price" /></div>
+            <div className="input-with-prefix" style={{ marginTop: '8px' }}><span className="input-prefix">$</span><input type="number" inputMode="decimal" value={icoPrice} onChange={(e) => setIcoPrice(e.target.value)} min="0" step="any" id="ico-price" /></div>
           </div>
           <div className="input-group">
             <label>{getUiString(lang, 'Current Price')}</label>
@@ -127,7 +127,7 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix" style={{ marginTop: '8px' }}><span className="input-prefix">$</span><input type="number" value={currentPrice} onChange={(e) => setCurrentPrice(e.target.value)} min="0" step="any" id="ico-current" /></div>
+            <div className="input-with-prefix" style={{ marginTop: '8px' }}><span className="input-prefix">$</span><input type="number" inputMode="decimal" value={currentPrice} onChange={(e) => setCurrentPrice(e.target.value)} min="0" step="any" id="ico-current" /></div>
           </div>
           <div className="input-group">
             <label>ATH Price</label>
@@ -142,7 +142,7 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix" style={{ marginTop: '8px' }}><span className="input-prefix">$</span><input type="number" value={athPrice} onChange={(e) => setAthPrice(e.target.value)} min="0" step="any" id="ico-ath" /></div>
+            <div className="input-with-prefix" style={{ marginTop: '8px' }}><span className="input-prefix">$</span><input type="number" inputMode="decimal" value={athPrice} onChange={(e) => setAthPrice(e.target.value)} min="0" step="any" id="ico-ath" /></div>
           </div>
           <div className="input-group">
             <label>Token Amount</label>
@@ -157,7 +157,7 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" value={tokens} onChange={(e) => setTokens(e.target.value)} min="0" step="any" id="ico-amount" style={{ marginTop: '8px' }} />
+            <input type="number" inputMode="decimal" value={tokens} onChange={(e) => setTokens(e.target.value)} min="0" step="any" id="ico-amount" style={{ marginTop: '8px' }} />
           </div>
           <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
           <span className="input-hint">
@@ -175,18 +175,18 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Initial investment</span><span className="result-value">{formatUSD(result.invested)}</span></div>
-                <div className="result-row"><span className="result-label">Current value</span><span className="result-value">{formatUSD(result.currentValue)}</span></div>
-                <div className="result-row"><span className="result-label">ATH value</span><span className="result-value">{formatUSD(result.athValue)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Initial investment')}</span><span className="result-value">{formatUSD(result.invested)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Current value')}</span><span className="result-value">{formatUSD(result.currentValue)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'ATH value')}</span><span className="result-value">{formatUSD(result.athValue)}</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label">ATH ROI</span><span className={`result-value ${result.athRoi >= 0 ? 'profit' : 'fee'}`}>{result.athRoi.toFixed(2)}%</span></div>
-                <div className="result-row"><span className="result-label">ATH multiple</span><span className="result-value">{result.xAth.toFixed(2)}x</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'ATH ROI')}</span><span className={`result-value ${result.athRoi >= 0 ? 'profit' : 'fee'}`}>{result.athRoi.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'ATH multiple')}</span><span className="result-value">{result.xAth.toFixed(2)}x</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />Historical ROI does not imply future returns. Use with market cap and liquidity checks before entering positions.</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Historical ROI does not imply future returns. Use with market cap and liquidity checks before entering positions.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><Rocket size={40} /></div><h3>Enter valid ICO assumptions</h3><p>Set ICO, current, ATH price and token amount to calculate ROI.</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><Rocket size={40} /></div><h3>{getUiString(lang, 'Enter valid ICO assumptions')}</h3><p>{getUiString(lang, 'Set ICO, current, ATH price and token amount to calculate ROI.')}</p></div>
           )}
         </div>
       </div>

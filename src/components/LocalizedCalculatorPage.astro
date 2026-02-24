@@ -7,6 +7,9 @@ import { getLocalizedCalculatorMeta, type Lang } from '../i18n/utils';
 import { defaultFaqByLang } from '../i18n/faq-dictionary';
 import { seoBodyText } from '../i18n/seo-body-text';
 import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+import AdSlot from './AdSlot.astro';
+import ChangeNowWidget from './ChangeNowWidget.astro';
+import ShareCalculator from './ShareCalculator.astro';
 import fs from 'node:fs';
 import path from 'node:path';
 import postcss from 'postcss';
@@ -254,12 +257,25 @@ const faqSchema = {
 
     <section class="calculator-section">
       <div class="section-container">
+        <!-- Top Ad Slot -->
+        <AdSlot type="banner" zoneId="header_banner" />
+        
         <div class="calc-header">
           <h1>{localizedTitle}</h1>
           <p>{localizedDescription}</p>
         </div>
         <div class="calc-scope" data-slug={slug}>
+          <ShareCalculator lang={lang} />
           <slot name="calculator" />
+        </div>
+        
+        <!-- Bottom Ad Slot -->
+        <AdSlot type="banner" zoneId="footer_banner" />
+        
+        <!-- ChangeNOW Widget -->
+        <div style="margin-top: 48px;">
+          <h2 style="text-align: center; font-size: 1.25rem; font-weight: 600; margin-bottom: 16px;">{t.exchangeCta || 'Exchange Crypto Instantly'}</h2>
+          <ChangeNowWidget lang={lang} />
         </div>
       </div>
     </section>

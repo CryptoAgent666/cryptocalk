@@ -30,7 +30,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
     const [exitFee, setExitFee] = useState('0.1');
     const [isShort, setIsShort] = useState(false);
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
@@ -152,7 +152,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                         </button>
                                     ))}
                                 </div>
-                                <input type="number" value={lossPct} onChange={(e) => setLossPct(e.target.value)}
+                                <input type="number" inputMode="decimal" value={lossPct} onChange={(e) => setLossPct(e.target.value)}
                                     placeholder="20" id="be-loss-pct" step="0.1" min="0" max="99.99" />
                             </div>
 
@@ -161,7 +161,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> {getUiString(lang, 'Original Value')}</label>
                                 <div className="input-with-prefix">
                                     <span className="input-prefix">$</span>
-                                    <input type="number" value={originalValue} onChange={(e) => setOriginalValue(e.target.value)}
+                                    <input type="number" inputMode="decimal" value={originalValue} onChange={(e) => setOriginalValue(e.target.value)}
                                         placeholder="10,000" id="be-original" step="any" min="0" />
                                 </div>
                             </div>
@@ -171,7 +171,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> {getUiString(lang, 'Current Value')}</label>
                                 <div className="input-with-prefix">
                                     <span className="input-prefix">$</span>
-                                    <input type="number" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)}
+                                    <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)}
                                         placeholder="8,000" id="be-current" step="any" min="0" />
                                 </div>
                             </div>
@@ -198,7 +198,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> {getUiString(lang, 'Entry Price')}</label>
                                 <div className="input-with-prefix">
                                     <span className="input-prefix">$</span>
-                                    <input type="number" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
+                                    <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
                                         placeholder="50,000" id="be-entry" step="any" min="0" />
                                 </div>
                             </div>
@@ -208,7 +208,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> Position Size (USD)</label>
                                 <div className="input-with-prefix">
                                     <span className="input-prefix">$</span>
-                                    <input type="number" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
+                                    <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
                                         placeholder="1,000" id="be-size" step="any" min="0" />
                                 </div>
                             </div>
@@ -217,12 +217,12 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                             <div className="calc-two-col-grid">
                                 <div className="input-group">
                                     <label>Entry Fee (%)</label>
-                                    <input type="number" value={entryFee} onChange={(e) => setEntryFee(e.target.value)}
+                                    <input type="number" inputMode="decimal" value={entryFee} onChange={(e) => setEntryFee(e.target.value)}
                                         placeholder="0.1" id="be-entry-fee" step="0.01" min="0" />
                                 </div>
                                 <div className="input-group">
                                     <label>Exit Fee (%)</label>
-                                    <input type="number" value={exitFee} onChange={(e) => setExitFee(e.target.value)}
+                                    <input type="number" inputMode="decimal" value={exitFee} onChange={(e) => setExitFee(e.target.value)}
                                         placeholder="0.1" id="be-exit-fee" step="0.01" min="0" />
                                 </div>
                             </div>
@@ -245,7 +245,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                         <>
                             {/* Hero */}
                             <div className="result-hero" style={{ borderColor: 'var(--color-accent-green)' }}>
-                                <span className="result-hero-label">Recovery Required</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Recovery Required')}</span>
                                 <span className="result-hero-value" style={{ color: 'var(--color-accent-green)' }}>
                                     <TrendingUp size={28} />
                                     +{recoveryPct.toFixed(2)}%
@@ -270,7 +270,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                     border: '1px solid rgba(34,197,94,0.3)', background: 'rgba(34,197,94,0.06)',
                                     textAlign: 'center',
                                 }}>
-                                    <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '4px' }}>Needed Gain</div>
+                                    <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '4px' }}>{getUiString(lang, 'Needed Gain')}</div>
                                     <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-accent-green)' }}>+{recoveryPct.toFixed(1)}%</div>
                                 </div>
                             </div>
@@ -291,7 +291,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                         <span className="result-value" style={{ color: 'var(--color-accent-green)' }}>{formatUSD(amountToRecover)}</span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">Gain Needed</span>
+                                        <span className="result-label">{getUiString(lang, 'Gain Needed')}</span>
                                         <span className="result-value" style={{ fontWeight: 600, color: 'var(--color-accent-green)' }}>+{recoveryNeeded.toFixed(2)}%</span>
                                     </div>
                                 </div>
@@ -300,14 +300,14 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                             {/* Reference Table */}
                             <div style={{ marginTop: '16px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Loss vs Recovery Reference
+                                    {getUiString(lang, 'Loss vs Recovery Reference')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
                                             <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
                                                 <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Loss')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Recovery Needed</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Recovery Needed')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -353,7 +353,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                     <span className="result-value" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>{formatUSD(breakEvenPrice)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Price Difference</span>
+                                    <span className="result-label">{getUiString(lang, 'Price Difference')}</span>
                                     <span className="result-value">{formatPct((breakEvenPrice / entry - 1) * 100)}</span>
                                 </div>
                                 <div className="result-divider" />
@@ -374,14 +374,14 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Target size={40} /></div>
-                            <h3>Calculate Break-Even</h3>
-                            <p>Use <strong>Loss Recovery</strong> to see how much gain you need to recover from a loss, or <strong>Trade Break-Even</strong> to find the exit price that covers your fees.</p>
+                            <h3>{getUiString(lang, 'Calculate Break-Even')}</h3>
+                            <p>{getUiString(lang, 'Use')} <strong>{getUiString(lang, 'Loss Recovery')}</strong> {getUiString(lang, 'to see how much gain you need to recover from a loss, or')} <strong>{getUiString(lang, 'Trade Break-Even')}</strong> {getUiString(lang, 'to find the exit price that covers your fees.')}</p>
                         </div>
                     )}
 
                     <p className="calc-disclaimer">
                         <Info size={12} />
-                        Break-even calculations are mathematical. Actual recovery depends on market conditions, timing, and fees.
+                        {getUiString(lang, 'Break-even calculations are mathematical. Actual recovery depends on market conditions, timing, and fees.')}
                     </p>
                 </div>
             </div>

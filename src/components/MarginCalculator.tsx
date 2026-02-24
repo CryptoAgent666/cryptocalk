@@ -209,7 +209,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
         setResults(null); clearCoin();
     };
 
-    const formatUSD = (n: number) => new Intl.NumberFormat('en-US', {
+    const formatUSD = (n: number) => new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
@@ -308,7 +308,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
+                            <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
                                 placeholder="65,000" id="margin-entry" step="any" min="0" />
                         </div>
                     </div>
@@ -329,7 +329,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
+                            <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
                                 placeholder="10,000" id="margin-size" step="any" min="0" />
                         </div>
                     </div>
@@ -350,7 +350,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">×</span>
-                            <input type="number" value={leverage} onChange={(e) => setLeverage(e.target.value)}
+                            <input type="number" inputMode="decimal" value={leverage} onChange={(e) => setLeverage(e.target.value)}
                                 placeholder="10" id="margin-leverage" step="1" min="1" max="200" />
                         </div>
                     </div>
@@ -377,7 +377,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <span className="input-prefix">$</span>
-                            <input type="number" value={walletBalance} onChange={(e) => setWalletBalance(e.target.value)}
+                            <input type="number" inputMode="decimal" value={walletBalance} onChange={(e) => setWalletBalance(e.target.value)}
                                 placeholder="Auto (= required margin)" id="margin-wallet" step="any" min="0" />
                         </div>
                         <span className="input-hint">
@@ -398,7 +398,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <span className="input-prefix">%</span>
-                            <input type="number" value={maintenanceRate} onChange={(e) => setMaintenanceRate(e.target.value)}
+                            <input type="number" inputMode="decimal" value={maintenanceRate} onChange={(e) => setMaintenanceRate(e.target.value)}
                                 placeholder="0.5" id="margin-mmr" step="0.1" min="0" />
                         </div>
                     </div>
@@ -440,7 +440,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Margin Usage Bar */}
                             <div style={{ margin: '16px 0' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', marginBottom: '6px', color: 'var(--color-text-secondary)' }}>
-                                    <span>Margin Usage</span>
+                                    <span>{getUiString(lang, 'Margin Usage')}</span>
                                     <span style={{ color: getHealthColor(results.healthStatus), fontWeight: 600 }}>
                                         {formatPercent(results.marginUsagePercent)}
                                     </span>
@@ -465,7 +465,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-value">{formatUSD(results.positionValue)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Effective Leverage</span>
+                                    <span className="result-label">{getUiString(lang, 'Effective Leverage')}</span>
                                     <span className="result-value">{results.effectiveLeverage}×</span>
                                 </div>
                                 <div className="result-row">
@@ -475,13 +475,13 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-divider" />
 
                                 <div className="result-row">
-                                    <span className="result-label">Free Margin</span>
+                                    <span className="result-label">{getUiString(lang, 'Free Margin')}</span>
                                     <span className={`result-value ${results.freeMargin >= 0 ? 'profit' : 'fee'}`}>
                                         {formatUSD(results.freeMargin)}
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Margin Level</span>
+                                    <span className="result-label">{getUiString(lang, 'Margin Level')}</span>
                                     <span className="result-value" style={{ color: getHealthColor(results.healthStatus) }}>
                                         {formatPercent(results.marginLevel)}
                                     </span>
@@ -489,11 +489,11 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-divider" />
 
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Margin Call Price</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Margin Call Price')}</strong></span>
                                     <span className="result-value fee"><strong>{formatUSD(results.marginCallPrice)}</strong></span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Max Loss Before Call</span>
+                                    <span className="result-label">{getUiString(lang, 'Max Loss Before Call')}</span>
                                     <span className="result-value fee">{formatUSD(results.maxLoss)}</span>
                                 </div>
                             </div>
@@ -518,21 +518,21 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* CTA */}
                             <div className="result-cta">
-                                <a href="https://www.bybit.com" target="_blank" rel="noopener noreferrer nofollow" className="cta-btn">
+                                <a href="https://www.bybit.com" target="_blank" rel="noopener noreferrer sponsored"  className="cta-btn">
                                     Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
                                 </a>
                             </div>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                This is an estimate. Actual margin requirements vary by exchange, tier level, and market conditions.
+                                {getUiString(lang, 'This is an estimate. Actual margin requirements vary by exchange, tier level, and market conditions.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Shield size={40} /></div>
-                            <h3>Calculate Required Margin</h3>
-                            <p>Enter position details and leverage to see how much margin is required and when you'll face a margin call.</p>
+                            <h3>{getUiString(lang, 'Calculate Required Margin')}</h3>
+                            <p>{getUiString(lang, 'Enter position details and leverage to see how much margin is required and when you\'ll face a margin call.')}</p>
                         </div>
                     )}
                 </div>

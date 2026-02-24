@@ -14,7 +14,7 @@ const IR_SCENARIOS = [
 ];
 
 function formatUSD(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
     style: 'currency',
     currency: 'USD',
     minimumFractionDigits: 2,
@@ -118,7 +118,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
               <span className="input-prefix">$</span>
               <input
-                type="number"
+                type="number" inputMode="decimal"
                 value={portfolioValue}
                 onChange={(e) => setPortfolioValue(e.target.value)}
                 min="0"
@@ -143,7 +143,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={portfolioReturn} onChange={(e) => setPortfolioReturn(e.target.value)} step="any" id="ir-portfolio-return" />
+              <input type="number" inputMode="decimal" value={portfolioReturn} onChange={(e) => setPortfolioReturn(e.target.value)} step="any" id="ir-portfolio-return" />
             </div>
           </div>
 
@@ -162,7 +162,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={benchmarkReturn} onChange={(e) => setBenchmarkReturn(e.target.value)} step="any" id="ir-benchmark-return" />
+              <input type="number" inputMode="decimal" value={benchmarkReturn} onChange={(e) => setBenchmarkReturn(e.target.value)} step="any" id="ir-benchmark-return" />
             </div>
           </div>
 
@@ -181,7 +181,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
             </div>
             <div className="input-with-prefix">
               <span className="input-prefix">%</span>
-              <input type="number" value={trackingError} onChange={(e) => setTrackingError(e.target.value)} min="0.01" step="any" id="ir-tracking-error" />
+              <input type="number" inputMode="decimal" value={trackingError} onChange={(e) => setTrackingError(e.target.value)} min="0.01" step="any" id="ir-tracking-error" />
             </div>
           </div>
 
@@ -198,7 +198,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
                 </button>
               ))}
             </div>
-            <input type="number" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="ir-years" />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="ir-years" />
           </div>
 
           <button className="reset-btn" onClick={reset}>
@@ -213,7 +213,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
           {result ? (
             <>
               <div className={`result-hero ${result.informationRatio >= 0.5 ? 'profit' : result.informationRatio >= 0.2 ? '' : 'loss'}`}>
-                <span className="result-hero-label">Information Ratio</span>
+                <span className="result-hero-label">{getUiString(lang, 'Information Ratio')}</span>
                 <span className="result-hero-value">
                   <BarChart3 size={28} />
                   {result.informationRatio.toFixed(3)}
@@ -223,14 +223,14 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
 
               <div className="result-breakdown">
                 <div className="result-row">
-                  <span className="result-label">Active return</span>
+                  <span className="result-label">{getUiString(lang, 'Active return')}</span>
                   <span className={`result-value ${result.activeReturn >= 0 ? 'profit' : 'loss'}`}>
                     {result.activeReturn >= 0 ? '+' : ''}
                     {result.activeReturn.toFixed(2)}%
                   </span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Annual alpha (USD)</span>
+                  <span className="result-label">{getUiString(lang, 'Annual alpha (USD)')}</span>
                   <span className={`result-value ${result.annualAlphaUsd >= 0 ? 'profit' : 'loss'}`}>
                     {result.annualAlphaUsd >= 0 ? '+' : ''}
                     {formatUSD(result.annualAlphaUsd)}
@@ -238,15 +238,15 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
-                  <span className="result-label">Portfolio projection</span>
+                  <span className="result-label">{getUiString(lang, 'Portfolio projection')}</span>
                   <span className="result-value">{formatUSD(result.portfolioProjection)}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Benchmark projection</span>
+                  <span className="result-label">{getUiString(lang, 'Benchmark projection')}</span>
                   <span className="result-value">{formatUSD(result.benchmarkProjection)}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Projected outperformance</span>
+                  <span className="result-label">{getUiString(lang, 'Projected outperformance')}</span>
                   <span className={`result-value ${result.relativeOutperformance >= 0 ? 'profit' : 'loss'}`}>
                     {result.relativeOutperformance >= 0 ? '+' : ''}
                     {formatUSD(result.relativeOutperformance)}
@@ -256,7 +256,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
 
               <p className="calc-disclaimer">
                 <Info size={14} />
-                Information ratio measures active return per unit of tracking error. It is useful when comparing active portfolio strategies against a benchmark.
+                {getUiString(lang, 'Information ratio measures active return per unit of tracking error. It is useful when comparing active portfolio strategies against a benchmark.')}
               </p>
             </>
           ) : (
@@ -265,7 +265,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
                 <TrendingUp size={40} />
               </div>
               <h3>{getUiString(lang, 'Enter valid inputs')}</h3>
-              <p>Provide portfolio return, benchmark return, and tracking error to compute information ratio.</p>
+              <p>{getUiString(lang, 'Provide portfolio return, benchmark return, and tracking error to compute information ratio.')}</p>
             </div>
           )}
         </div>

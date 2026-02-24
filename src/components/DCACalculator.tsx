@@ -289,7 +289,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
     };
 
     const formatUSD = (n: number) =>
-        new Intl.NumberFormat('en-US', {
+        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -498,7 +498,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-with-unit">
                             <span className="input-prefix">$</span>
                             <input
-                                type="number"
+                                type="number" inputMode="decimal"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
                                 placeholder="100"
@@ -644,8 +644,8 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                             {/* CTA */}
                             <a
                                 href="https://www.coinbase.com"
-                                target="_blank"
-                                rel="noopener noreferrer nofollow"
+                                target="_blank" rel="noopener noreferrer sponsored"
+                                
                                 className="dca-cta"
                             >
                                 Set Up Automatic DCA on Coinbase →
