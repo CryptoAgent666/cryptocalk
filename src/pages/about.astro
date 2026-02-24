@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Mail, Briefcase, Code, Award } from 'lucide-react';
+import { Mail, Briefcase, Code, Award, Twitter, Linkedin, Instagram, Globe } from 'lucide-react';
 ---
 
 <Layout
@@ -31,6 +31,11 @@ import { Mail, Briefcase, Code, Award } from 'lucide-react';
             <div class="author-social">
               <a href="/contact" class="btn-primary btn-sm">Contact Me</a>
             </div>
+            <div class="author-social-links">
+              <a href="https://x.com/yakovlevka3" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><Twitter size={20} /></a>
+              <a href="https://www.linkedin.com/in/konstantin-iakovlev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
+              <a href="https://www.instagram.com/iakovlevka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
+            </div>
           </div>
           <div class="author-bio-col">
             <h3>Konstantin Iakovlev</h3>
@@ -60,6 +65,13 @@ import { Mail, Briefcase, Code, Award } from 'lucide-react';
                 <div>
                   <strong>Vibecoding Architecture</strong>
                   <span>Leveraging advanced AI workflows to rapidly architect and deploy lightning-fast, static, privacy-first applications.</span>
+                </div>
+              </li>
+              <li>
+                <div class="highlight-icon"><Globe size={18} /></div>
+                <div>
+                  <strong>Other Projects</strong>
+                  <span>Creator of <a href="https://zanimaem.kz" target="_blank" rel="noopener noreferrer" class="project-link">zanimaem.kz</a> and <a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="project-link">calk.kz</a> — leading financial comparison & calculator platforms.</span>
                 </div>
               </li>
             </ul>
@@ -171,6 +183,30 @@ import { Mail, Briefcase, Code, Award } from 'lucide-react';
   }
   .btn-sm:hover {
     background: var(--color-primary-dark);
+  }
+  
+  .author-social-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    justify-content: center;
+  }
+  .author-social-links a {
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .author-social-links a:hover {
+    color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+  
+  .project-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .project-link:hover {
+    text-decoration: underline;
   }
   
   .author-bio-col {
