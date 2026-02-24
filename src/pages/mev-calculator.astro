@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import MevProtectionCalculator from '../components/MevProtectionCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="mev-calculator"
+  title="MEV Protection Calculator"
+  description="Estimate sandwich/frontrun risk and potential savings from MEV protection routes based on swap size and slippage."
+>
+  <MevProtectionCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

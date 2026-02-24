@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lastUpdated = '20/02/2026';
+const pageUrl = 'https://cryptocalk.com/privacy/';
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Privacy Policy',
+  url: pageUrl,
+  description:
+    'Read CryptoCalk privacy policy: what data is and is not collected, how client-side storage is used, and third-party data provider details.',
+  inLanguage: 'en',
+};
+---
+
+<Layout
+  title="Privacy Policy | CryptoCalk"
+  description="Read CryptoCalk privacy policy: what data is and is not collected, how client-side storage is used, and third-party data provider details."
+  lang="en"
+>
+  <main class="policy-page">
+    <article class="policy-card">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: {lastUpdated}</p>
+
+      <p>
+        CryptoCalk is a calculator-first website. Most computations are performed directly in your browser. We are committed to minimising data collection and explaining clearly what is stored on your device.
+      </p>
+
+      <h2>1. What We Collect</h2>
+      <p>
+        We do not require account registration and we do not ask for personal identity data to use calculators.
+      </p>
+      <ul>
+        <li>No signup forms and no profile creation.</li>
+        <li>No wallet connection required for basic calculator usage.</li>
+        <li>No KYC data collection through CryptoCalk calculators.</li>
+      </ul>
+
+      <h2>2. Browser Storage</h2>
+      <p>
+        To improve performance and user experience, CryptoCalk uses limited browser storage:
+      </p>
+      <ul>
+        <li>`localStorage`: theme preference (`light` or `dark`).</li>
+        <li>`sessionStorage`: short-lived cached market data from CoinGecko API responses.</li>
+      </ul>
+      <p>
+        You can clear this data at any time from your browser settings.
+      </p>
+
+      <h2>3. Third-Party Data Providers</h2>
+      <p>
+        Some calculators use live market prices sourced from CoinGecko API. Requests are made from your browser to their endpoints. Please review CoinGecko's policy for their own data handling terms.
+      </p>
+      <ul>
+        <li><a href="https://www.coingecko.com/en/privacy" target="_blank" rel="nofollow noopener noreferrer">CoinGecko Privacy Policy</a></li>
+      </ul>
+
+      <h2>4. Cookies and Tracking</h2>
+      <p>
+        We currently avoid heavy tracking scripts and do not run invasive profiling systems in calculator flows. If analytics are introduced in future releases, this policy will be updated with exact vendor and purpose disclosures.
+      </p>
+
+      <h2>5. Data Retention</h2>
+      <p>
+        Because most operations are client-side, retained data is primarily what your browser stores locally. Server-level logs may exist for operational security and uptime management, and are handled under standard hosting retention windows.
+      </p>
+
+      <h2>6. Financial Disclaimer</h2>
+      <p>
+        CryptoCalk provides educational tools and scenario calculators. Nothing on this site is financial, legal, or tax advice.
+      </p>
+
+      <h2>7. Contact</h2>
+      <p>
+        For privacy questions, use the contact channel listed on the site footer or update requests through project support.
+      </p>
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+</Layout>
+
+<style>
+  .policy-page {
+    padding: 48px 20px 72px;
+  }
+
+  .policy-card {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: 34px 28px;
+    line-height: 1.7;
+  }
+
+  h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.8rem, 2.8vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .meta {
+    margin: 0 0 20px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    margin-top: 28px;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  ul {
+    margin: 8px 0 12px 20px;
+    padding: 0;
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+</style>

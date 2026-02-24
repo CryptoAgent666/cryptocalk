@@ -1,0 +1,207 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Mail, MapPin, Clock } from 'lucide-react';
+---
+
+<Layout
+  title="Contact Us | CryptoCalk"
+  description="Get in touch with the CryptoCalk team. We welcome your feedback, calculator requests, and partnership inquiries."
+  lang="en"
+>
+  <div class="page-container">
+    <header class="page-header">
+      <h1>Contact Us</h1>
+      <p>We're here to help and listen to your feedback.</p>
+    </header>
+
+    <div class="content-wrapper">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Whether you have a question about a calculator, want to report a bug, or have a suggestion for a new tool, we'd love to hear from you!</p>
+          
+          <ul class="contact-details">
+            <li>
+              <Mail class="icon" size={20} />
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:support@cryptocalk.com">support@cryptocalk.com</a>
+                <span class="hint">For general inquiries and support.</span>
+              </div>
+            </li>
+            <li>
+              <Mail class="icon" size={20} />
+              <div>
+                <strong>Business & Partnerships</strong>
+                <a href="mailto:partners@cryptocalk.com">partners@cryptocalk.com</a>
+              </div>
+            </li>
+            <li>
+              <Clock class="icon" size={20} />
+              <div>
+                <strong>Response Time</strong>
+                <span>We aim to respond to all inquiries within 24-48 hours.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-container">
+          <h2>Send a Message</h2>
+          <form class="contact-form" action="mailto:support@cryptocalk.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Analysis</label>
+              <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Calculator Request">Calculator Request</option>
+                <option value="Bug Report">Bug Report</option>
+                <option value="Partnership">Partnership</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  .page-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .page-header p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: flex-start;
+  }
+  .contact-info h2, .contact-form-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .contact-info p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .contact-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .contact-details li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .contact-details .icon {
+    color: var(--color-primary);
+    margin-top: 4px;
+  }
+  .contact-details strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--color-text);
+  }
+  .contact-details a, .contact-details span {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+  .contact-details a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+  .hint {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+  }
+  
+  .contact-form-container {
+    background: var(--color-bg-card);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: inherit;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary-light);
+  }
+  .btn-primary {
+    padding: 14px;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover {
+    background: var(--color-primary-dark);
+  }
+  
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

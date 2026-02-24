@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import SortinoCalculator from '../components/SortinoCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="sortino-calculator"
+  title="Sortino Ratio Calculator"
+  description="Measure risk-adjusted portfolio performance with downside-volatility focus using the Sortino ratio."
+>
+  <SortinoCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

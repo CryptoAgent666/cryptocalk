@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import SharpeCalculator from '../components/SharpeCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="sharpe-calculator"
+  title="Sharpe Ratio Calculator"
+  description="Evaluate risk-adjusted portfolio performance using expected return, volatility, and risk-free rate."
+>
+  <SharpeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

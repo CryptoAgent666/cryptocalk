@@ -1,0 +1,336 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import GasFeeCalculator from '../components/GasFeeCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto Gas Fee Calculator — ETH, Polygon, Arbitrum Gas Estimator | CryptoCalk"
+  description="Free gas fee calculator for Ethereum, Polygon, Arbitrum, Optimism, BNB Chain and more. Estimate transaction costs for swaps, transfers, minting, and bridging."
+  lang="en"
+  canonical="/gas-calculator"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/gas-fee-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/gas-fee-calculator" aria-current="page">Gas Fee Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto Gas Fee Calculator</h1>
+          <p>Estimate gas costs across EVM networks. Select a chain, pick a transaction type, and see fees at different speed tiers. Compare costs across all transaction types.</p>
+        </div>
+        <GasFeeCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Gas Fee Calculator</h2>
+        <ol>
+          <li><strong>Select a Network</strong> — Choose from Ethereum, Arbitrum, Optimism, Base, Polygon, BNB Chain, or Solana to see network-specific gas estimates.</li>
+          <li><strong>Pick a Transaction Type</strong> — Select the action you want to perform: simple transfer, token swap, NFT minting, contract deployment, or bridging assets.</li>
+          <li><strong>Choose a Speed Tier</strong> — Pick between slow, standard, or fast confirmation speeds. Faster speeds cost more but confirm quicker.</li>
+          <li><strong>View Real-Time Results</strong> — See estimated costs in both native tokens (ETH, MATIC, BNB, SOL) and USD equivalents.</li>
+          <li><strong>Compare Networks</strong> — Toggle between networks to find the most cost-effective option for your transaction.</li>
+          <li><strong>Adjust Parameters</strong> — Fine-tune gas limits or priority fees if you need custom settings for advanced transactions.</li>
+        </ol>
+
+        <h2>Understanding Crypto Gas Fees</h2>
+        <p>Gas fees are transaction costs paid to network validators for processing and securing blockchain transactions. Every operation on a blockchain network requires computational resources, and gas fees compensate validators for providing those resources. Think of gas as the "fuel" that powers transactions on decentralized networks.</p>
+        <p>These fees aren't arbitrary — they serve critical functions in blockchain ecosystems. Gas fees prevent spam attacks by making it expensive to flood the network with junk transactions. They also create economic incentives for validators to maintain network security and process transactions reliably. When network demand is high, fees rise to prioritize transactions that users value most.</p>
+        <p>Gas costs vary dramatically based on network congestion, transaction complexity, and the blockchain you're using. A simple ETH transfer on Ethereum mainnet might cost $1-50 during normal conditions, while the same transaction on a Layer 2 network like Base or Arbitrum costs fractions of a cent. Understanding how gas works helps you choose the right network and timing for your transactions.</p>
+
+        <h2>Gas Fee Formula</h2>
+        <div class="formula-block">
+          <code>Total Fee = (Base Fee + Priority Fee) × Gas Used</code>
+        </div>
+        <p>Since <strong>EIP-1559</strong> was implemented in August 2021, Ethereum and most EVM-compatible chains use a two-part gas pricing model. The <strong>base fee</strong> is algorithmically determined by network congestion and is burned (removed from circulation), while the <strong>priority fee</strong> (also called a "tip") goes directly to validators as an incentive to include your transaction quickly.</p>
+        <p>The <strong>gas used</strong> depends on transaction complexity. Simple transfers consume exactly 21,000 gas units, while complex smart contract interactions can use hundreds of thousands of gas units. Your wallet multiplies the total fee per gas unit by the amount of gas consumed to calculate the final transaction cost in ETH, MATIC, BNB, or other native tokens.</p>
+
+        <h2>Gas Costs by Network</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Network</th>
+                <th>Avg Transfer</th>
+                <th>Avg Swap</th>
+                <th>Token Type</th>
+                <th>Settlement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ethereum</td>
+                <td>$1-50</td>
+                <td>$5-200</td>
+                <td>ETH</td>
+                <td>~12s</td>
+              </tr>
+              <tr>
+                <td>Arbitrum</td>
+                <td>$0.01-0.50</td>
+                <td>$0.05-1</td>
+                <td>ETH</td>
+                <td>~0.3s</td>
+              </tr>
+              <tr>
+                <td>Optimism</td>
+                <td>$0.01-0.50</td>
+                <td>$0.05-1</td>
+                <td>ETH</td>
+                <td>~2s</td>
+              </tr>
+              <tr>
+                <td>Base</td>
+                <td>$0.001-0.10</td>
+                <td>$0.01-0.50</td>
+                <td>ETH</td>
+                <td>~2s</td>
+              </tr>
+              <tr>
+                <td>Polygon</td>
+                <td>$0.001-0.05</td>
+                <td>$0.01-0.20</td>
+                <td>MATIC</td>
+                <td>~2s</td>
+              </tr>
+              <tr>
+                <td>BNB Chain</td>
+                <td>$0.05-0.30</td>
+                <td>$0.10-1</td>
+                <td>BNB</td>
+                <td>~3s</td>
+              </tr>
+              <tr>
+                <td>Solana</td>
+                <td>$0.001-0.01</td>
+                <td>$0.01-0.05</td>
+                <td>SOL</td>
+                <td>~0.4s</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Gas Costs by Transaction Type</h2>
+        <p>Different blockchain operations consume varying amounts of gas based on their computational complexity. Understanding these differences helps you budget for transaction costs and choose the most efficient way to accomplish your goals.</p>
+        <p><strong>Simple Transfer (21,000 gas)</strong> — Sending ETH or native tokens from one wallet to another is the cheapest operation on any EVM network. This consumes a fixed 21,000 gas units regardless of the amount transferred.</p>
+        <p><strong>ERC-20 Transfer (~65,000 gas)</strong> — Sending tokens like USDC, DAI, or LINK requires interacting with a smart contract, which costs roughly 3× more gas than a simple ETH transfer. The first interaction with a token contract costs more due to storage initialization.</p>
+        <p><strong>DEX Swap (150,000-300,000 gas)</strong> — Swapping tokens on Uniswap, SushiSwap, or similar decentralized exchanges involves multiple contract interactions: approving token spending, executing the swap, and updating liquidity pool states. Complex routes with multiple hops cost even more.</p>
+        <p><strong>NFT Mint (100,000-250,000 gas)</strong> — Minting NFTs writes new data to the blockchain permanently, requiring significant gas. Batch minting multiple NFTs in one transaction is more efficient than minting individually.</p>
+        <p><strong>Contract Deployment (500,000-5,000,000 gas)</strong> — Deploying new smart contracts is the most expensive operation, as it permanently stores contract code on-chain. Large contracts with extensive logic can cost hundreds or even thousands of dollars on Ethereum mainnet.</p>
+
+        <h2>How to Save on Gas Fees</h2>
+        <ul>
+          <li><strong>Use Layer 2 Networks</strong> — Arbitrum, Optimism, Base, and Polygon offer 10-100× lower fees than Ethereum mainnet while maintaining security through Ethereum settlement.</li>
+          <li><strong>Time Your Transactions</strong> — Gas fees are lowest during weekends and late-night hours (UTC). Avoid peak trading times (weekday afternoons in the US and Europe) when fees spike.</li>
+          <li><strong>Batch Operations</strong> — Combine multiple transactions into one when possible. Approving and swapping in separate transactions wastes gas; use interfaces that batch these operations together.</li>
+          <li><strong>Set Custom Gas Limits</strong> — Wallets often overestimate gas limits. If you know a transaction's requirements, manually setting a tighter limit can save 10-20% on fees.</li>
+          <li><strong>Use Gas Tokens Strategically</strong> — Some protocols offer gas rebates or allow you to mint "gas tokens" when fees are low and redeem them when fees are high, effectively hedging against volatility.</li>
+          <li><strong>Choose Efficient Protocols</strong> — Some DEXs and DeFi protocols are more gas-efficient than others. Research which implementations use optimized contracts before committing to a platform.</li>
+          <li><strong>Avoid Failed Transactions</strong> — Double-check wallet addresses, token approvals, and slippage settings before submitting transactions. Failed transactions still consume gas but accomplish nothing.</li>
+          <li><strong>Leverage Account Abstraction</strong> — Newer wallet standards like ERC-4337 allow transaction batching, gasless approvals, and sponsored transactions that can dramatically reduce costs for frequent users.</li>
+        </ul>
+
+        <h2>Understanding EIP-1559</h2>
+        <p>EIP-1559 fundamentally changed how Ethereum handles transaction fees in August 2021, introducing a more predictable and efficient fee market. Before EIP-1559, users bid for block space in a first-price auction, leading to overpayment and unpredictable costs. The upgrade introduced a dynamic base fee that adjusts automatically based on network congestion.</p>
+        <p>The <strong>base fee</strong> is burned (permanently removed from circulation) rather than paid to validators. This creates deflationary pressure on ETH supply during high network usage. When blocks are more than 50% full, the base fee increases by up to 12.5% per block; when blocks are less than 50% full, it decreases proportionally. This mechanism stabilizes fees and makes them more predictable.</p>
+        <p><strong>Priority fees</strong> (tips) go directly to validators and incentivize faster inclusion. Users can set low tips during calm periods or boost tips during congestion to jump the queue. Wallets now display "max fee" (the ceiling you're willing to pay) and "priority fee" separately, giving you fine-grained control over transaction costs and confirmation speed.</p>
+        <p>EIP-1559 also improved user experience by eliminating most gas price guesswork. Wallets can estimate the base fee for upcoming blocks with high accuracy, meaning you no longer need to manually adjust gas prices or risk transactions getting stuck in the mempool for hours.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>Why are Ethereum gas fees so high?</summary>
+          <p>Ethereum mainnet has limited block space — approximately 15 million gas per block, with a new block every 12 seconds. When demand for transactions exceeds this capacity, users compete in a fee market where higher fees get priority. Popular NFT mints, DeFi activity, and network congestion during bull markets can push fees above $50-100 per transaction. Layer 2 networks solve this by processing transactions off-chain and batching them for cheaper Ethereum settlement.</p>
+        </details>
+
+        <details>
+          <summary>What's the difference between gas limit and gas price?</summary>
+          <p>The gas limit is the maximum number of gas units you authorize a transaction to consume (e.g., 21,000 for ETH transfers, 200,000 for a token swap). It's like a spending cap. Gas price is the amount you're willing to pay per gas unit, measured in Gwei. Multiply gas limit by gas price to get the maximum fee. If your transaction uses less gas than the limit, you're refunded the difference. Setting the limit too low causes transaction failure; setting it too high doesn't cost extra but locks up funds temporarily.</p>
+        </details>
+
+        <details>
+          <summary>Do I get a refund for unused gas?</summary>
+          <p>Yes, absolutely. Wallets set a gas limit higher than typically needed as a safety buffer. If you set a 100,000 gas limit but the transaction only consumes 73,000 gas, you're automatically refunded for the unused 27,000 gas units. Only the gas actually consumed is deducted from your wallet. This is why you might notice your final transaction cost is lower than the initial estimate shown before confirming.</p>
+        </details>
+
+        <details>
+          <summary>When are gas fees lowest?</summary>
+          <p>Gas fees on Ethereum are typically lowest during weekends, especially Saturday and Sunday mornings in UTC time zones. Weekday nights (after 10 PM Eastern Time) also see reduced activity. Fees spike during US and European trading hours (9 AM - 5 PM ET/GMT) when DeFi trading volume is highest. Major events like popular NFT drops or protocol launches can cause temporary fee spikes regardless of time. Use gas tracking tools to identify low-fee windows before executing expensive transactions.</p>
+        </details>
+
+        <details>
+          <summary>Why do failed transactions still cost gas?</summary>
+          <p>When you submit a transaction, validators execute the smart contract code to process it. Even if the transaction fails (due to insufficient balance, slippage issues, or contract errors), validators already spent computational resources attempting to execute it. Gas fees compensate validators for that work. Think of it like paying a delivery fee even if the package can't be delivered — the driver still drove to your address. Always double-check transaction parameters to avoid costly failures.</p>
+        </details>
+
+        <details>
+          <summary>How do Layer 2 networks reduce gas fees?</summary>
+          <p>Layer 2 networks like Arbitrum, Optimism, and Base process transactions off the Ethereum mainnet, batching hundreds or thousands of transactions together before submitting a single proof to Ethereum for final settlement. This spreads Ethereum's high gas costs across many users, reducing individual fees by 10-100×. They inherit Ethereum's security because all transaction data is eventually posted to mainnet, but users pay only a fraction of the cost since computation happens on faster, cheaper infrastructure.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/profit-calculator">Crypto Profit Calculator</a> — Calculate gains, losses, and ROI on your trades</li>
+          <li><a href="/converter">Crypto Converter</a> — Convert between cryptocurrencies and fiat currencies</li>
+          <li><a href="/impermanent-loss-calculator">Impermanent Loss Calculator</a> — Estimate LP losses vs. holding in DeFi pools</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ul { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 16px; margin: 12px 0 16px; font-family: 'Courier New', monospace; color: var(--color-primary); font-size: 0.9rem; }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content ol { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content ol li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .table-responsive { overflow-x: auto; margin: 16px 0; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg-card); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content details { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 8px; max-width: 780px; cursor: pointer; }
+  .seo-content summary { font-weight: 600; color: var(--color-text); }
+  .seo-content details p { margin-top: 12px; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Crypto Gas Fee Calculator",
+    "description": "Free gas fee calculator for Ethereum, Polygon, Arbitrum, Optimism, BNB Chain and more. Estimate transaction costs for swaps, transfers, minting, and bridging.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why are Ethereum gas fees so high?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ethereum mainnet has limited block space — approximately 15 million gas per block, with a new block every 12 seconds. When demand for transactions exceeds this capacity, users compete in a fee market where higher fees get priority. Popular NFT mints, DeFi activity, and network congestion during bull markets can push fees above $50-100 per transaction. Layer 2 networks solve this by processing transactions off-chain and batching them for cheaper Ethereum settlement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between gas limit and gas price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The gas limit is the maximum number of gas units you authorize a transaction to consume (e.g., 21,000 for ETH transfers, 200,000 for a token swap). It's like a spending cap. Gas price is the amount you're willing to pay per gas unit, measured in Gwei. Multiply gas limit by gas price to get the maximum fee. If your transaction uses less gas than the limit, you're refunded the difference."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I get a refund for unused gas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, absolutely. Wallets set a gas limit higher than typically needed as a safety buffer. If you set a 100,000 gas limit but the transaction only consumes 73,000 gas, you're automatically refunded for the unused 27,000 gas units. Only the gas actually consumed is deducted from your wallet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When are gas fees lowest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gas fees on Ethereum are typically lowest during weekends, especially Saturday and Sunday mornings in UTC time zones. Weekday nights (after 10 PM Eastern Time) also see reduced activity. Fees spike during US and European trading hours (9 AM - 5 PM ET/GMT) when DeFi trading volume is highest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do failed transactions still cost gas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When you submit a transaction, validators execute the smart contract code to process it. Even if the transaction fails (due to insufficient balance, slippage issues, or contract errors), validators already spent computational resources attempting to execute it. Gas fees compensate validators for that work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do Layer 2 networks reduce gas fees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Layer 2 networks like Arbitrum, Optimism, and Base process transactions off the Ethereum mainnet, batching hundreds or thousands of transactions together before submitting a single proof to Ethereum for final settlement. This spreads Ethereum's high gas costs across many users, reducing individual fees by 10-100×."
+        }
+      }
+    ]
+  }
+]
+</script>

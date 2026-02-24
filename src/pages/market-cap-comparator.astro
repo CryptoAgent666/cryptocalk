@@ -1,0 +1,307 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import MarketCapComparator from '../components/MarketCapComparator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Market Cap Comparator — What If Calculator | CryptoCalk"
+  description="Free market cap comparison tool. What if DOGE had ETH's market cap? Compare any cryptocurrency against top coins. Calculate hypothetical prices and growth multipliers."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/market-cap-comparator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/market-cap-comparator" aria-current="page">Market Cap Comparator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Market Cap Comparator</h1>
+          <p>Compare any cryptocurrency's market cap against top coins. See what the price would be if one token had another's market cap, and calculate the growth multiplier needed.</p>
+        </div>
+        <MarketCapComparator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Market Cap Comparator</h2>
+        <ol>
+          <li><strong>Select your base token</strong> — Choose the cryptocurrency you want to analyze. This is the token whose hypothetical price you want to calculate.</li>
+          <li><strong>Select a comparison token</strong> — Choose the cryptocurrency whose market cap you want to apply. For example, select Ethereum to answer "What if my token had ETH's market cap?"</li>
+          <li><strong>Review the results</strong> — The calculator displays the hypothetical price your base token would reach if it had the comparison token's market capitalization, along with the growth multiplier required to get there.</li>
+          <li><strong>Compare multiple scenarios</strong> — Try different comparison tokens to see a range of potential outcomes. Compare against Bitcoin for the absolute ceiling, or against similar-category tokens for more realistic targets.</li>
+          <li><strong>Evaluate feasibility</strong> — A 2x multiplier is very different from a 500x multiplier. Use the results to gauge whether your price expectations are grounded in reality or driven by wishful thinking.</li>
+        </ol>
+
+        <h2>What Is Market Capitalization?</h2>
+        <p>Market capitalization, commonly called "market cap," is the total dollar value of all existing coins or tokens for a given cryptocurrency. It represents the aggregate market value that investors have assigned to a project and serves as one of the most widely used metrics for sizing up cryptocurrencies relative to each other.</p>
+        <p>Market cap is often compared to the concept of a company's market capitalization in stock markets. Just as a publicly traded company's market cap reflects the total value of its outstanding shares, a cryptocurrency's market cap reflects the total value of its circulating supply. However, there are important differences: crypto markets operate 24/7, token supplies can change through minting or burning mechanisms, and not all tokens in circulation are actively traded.</p>
+        <p>Despite its simplicity, market cap remains the primary benchmark for ranking cryptocurrencies. Websites like CoinMarketCap and CoinGecko rank thousands of tokens by market cap, and the metric serves as a quick shorthand for understanding a project's relative size and maturity within the broader crypto ecosystem.</p>
+
+        <h2>How Market Cap Affects Token Price</h2>
+        <p>The relationship between market cap and token price is governed by a straightforward formula:</p>
+        <div class="formula-block">
+          <code>Market Cap = Current Price × Circulating Supply</code>
+        </div>
+        <p>This formula can be rearranged to solve for price:</p>
+        <div class="formula-block">
+          <code>Price = Market Cap ÷ Circulating Supply</code>
+        </div>
+        <p>This is the fundamental equation that the Market Cap Comparator uses. When you ask "What if Token A had Token B's market cap?", the calculator takes Token B's market cap and divides it by Token A's circulating supply to produce the hypothetical price. The growth multiplier is then the ratio of the hypothetical price to the current price.</p>
+        <p>Understanding this formula reveals why tokens with vastly different supplies can have vastly different prices even at the same market cap. Bitcoin has roughly 19.8 million coins in circulation. Shiba Inu has hundreds of trillions. If both had a $1 trillion market cap, Bitcoin would be worth roughly $50,000 per coin, while each SHIB token would be worth a fraction of a cent. The price per token is meaningless without considering the supply — and that is exactly what market cap captures.</p>
+
+        <h2>Why Market Cap Matters More Than Price</h2>
+        <p>One of the most common mistakes beginners make in cryptocurrency investing is comparing tokens by their unit price. A new investor might look at Bitcoin at $60,000 and Cardano at $0.50 and conclude that Cardano is "cheaper" and therefore has more room to grow. This reasoning is fundamentally flawed because it ignores circulating supply entirely.</p>
+        <p>Consider two hypothetical tokens: Token X trades at $0.001 with 100 billion tokens in circulation. Token Y trades at $500 with 10 million tokens in circulation. Token X looks "cheaper," but its market cap is $100 million, while Token Y's market cap is $5 billion. Token Y is actually 50 times larger by total market value. For Token X to reach $1, its market cap would need to grow to $100 billion — a 1,000x increase that would place it among the top five cryptocurrencies globally. That is not "cheap"; it is astronomically ambitious.</p>
+        <p>This is precisely why the Market Cap Comparator exists. Instead of looking at price, you compare market caps. If your favorite altcoin has a $500 million market cap and you want it to match Solana's $80 billion market cap, that requires a 160x growth multiplier. The tool makes this math instant and visual, preventing you from falling into the "low price = high potential" trap.</p>
+
+        <h2>Fully Diluted vs Circulating Market Cap</h2>
+        <p>There are two versions of market cap you should understand:</p>
+        <p><strong>Circulating Market Cap</strong> uses the number of tokens currently available and trading on the open market. This is the standard metric used for rankings and the default in most calculators. It reflects the current state of supply and is the most relevant for short-to-medium-term price analysis.</p>
+        <p><strong>Fully Diluted Valuation (FDV)</strong> uses the maximum possible supply of a token. If a project has 1 billion tokens in circulation but a maximum supply of 10 billion, the FDV is 10 times the circulating market cap. FDV represents the theoretical market cap if all tokens were in circulation at the current price.</p>
+        <p>Why does this distinction matter? Many projects release tokens on a vesting schedule — team tokens, investor allocations, staking rewards, and ecosystem funds that unlock over months or years. When these tokens enter circulation, they increase the supply, which puts downward pressure on price if demand does not keep pace. A project with a $1 billion circulating market cap but a $20 billion FDV has 95% of its tokens yet to be released. That impending supply dilution is a significant risk factor that circulating market cap alone does not capture.</p>
+        <p>When using the Market Cap Comparator, be mindful of which metric you are comparing. Comparing the circulating market cap of a fully-vested token like Bitcoin against a project that has released only 10% of its supply can produce misleading results. For the most accurate analysis, compare like-for-like: circulating-to-circulating or FDV-to-FDV.</p>
+
+        <h2>Common Market Cap Comparison Scenarios</h2>
+        <p>Here are some popular comparison scenarios that investors frequently explore:</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>Base Token</th>
+                <th>Comparison</th>
+                <th>What It Tells You</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Meme coin ceiling</td>
+                <td>PEPE, WIF, BONK</td>
+                <td>DOGE or SHIB</td>
+                <td>Maximum realistic market cap for a meme coin based on the top meme coin valuations</td>
+              </tr>
+              <tr>
+                <td>L1 competition</td>
+                <td>SUI, APT, SEI</td>
+                <td>SOL or ETH</td>
+                <td>Growth potential if a newer Layer 1 achieves the adoption of established platforms</td>
+              </tr>
+              <tr>
+                <td>DeFi protocol growth</td>
+                <td>Newer DeFi tokens</td>
+                <td>UNI or AAVE</td>
+                <td>Upside if a newer DeFi project reaches the valuation of blue-chip DeFi protocols</td>
+              </tr>
+              <tr>
+                <td>Bitcoin dominance test</td>
+                <td>Any altcoin</td>
+                <td>BTC</td>
+                <td>The absolute theoretical maximum — what it would take for any token to match Bitcoin's market cap</td>
+              </tr>
+              <tr>
+                <td>Peer comparison</td>
+                <td>Token in a niche</td>
+                <td>Category leader</td>
+                <td>Realistic upside within the same category (e.g., AI tokens, gaming tokens, RWA tokens)</td>
+              </tr>
+              <tr>
+                <td>Cross-cycle potential</td>
+                <td>Current mid-caps</td>
+                <td>Previous cycle top 10</td>
+                <td>Whether a current mid-cap could enter the top 10 by market cap in the next cycle</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The most useful comparisons are between tokens in the same category. Comparing a meme coin to Bitcoin is interesting but unrealistic — meme coins derive value from community and speculation, not the same fundamentals as a global store-of-value asset. A more instructive comparison would be PEPE vs DOGE, or a new Layer 1 vs Solana, since these tokens compete for similar investor capital and serve comparable market functions.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>Can DOGE reach $10?</summary>
+          <p>For DOGE to reach $10 per coin, its market cap would need to exceed $1.4 trillion (based on its circulating supply of roughly 147 billion tokens). That would make DOGE more valuable than the entire current crypto market cap of most assets except Bitcoin at its peak. While crypto markets are unpredictable, a $10 DOGE would require an unprecedented concentration of capital into a meme coin with unlimited supply and annual inflation. Most analysts consider this extremely unlikely without a fundamental shift in how DOGE is used (such as becoming a widely accepted payment network). A more realistic ceiling for DOGE in a strong bull market might be found by comparing its market cap to that of other top-10 assets.</p>
+        </details>
+
+        <details>
+          <summary>What does "market cap" mean for crypto?</summary>
+          <p>Market cap (market capitalization) is the total value of all coins or tokens in circulation for a given cryptocurrency. It is calculated by multiplying the current price per token by the total circulating supply. For example, if a token trades at $2.00 and has 500 million tokens in circulation, its market cap is $1 billion. Market cap is used to rank cryptocurrencies by size and is a better measure of a project's total value than price alone, since price does not account for how many tokens exist. A token trading at $0.01 with 100 billion supply has a higher market cap than a token trading at $100 with 1 million supply.</p>
+        </details>
+
+        <details>
+          <summary>How is market cap calculated?</summary>
+          <p>Market cap is calculated using a simple formula: Market Cap = Current Price multiplied by Circulating Supply. The "circulating supply" is the number of tokens that are currently available and trading on the open market, excluding locked, vested, or burned tokens. Data providers like CoinGecko and CoinMarketCap track circulating supply for thousands of tokens and update market cap rankings in real time. Note that circulating supply can change over time through mechanisms like token unlocks, staking rewards, burns, or new minting, which means market cap fluctuates based on both price changes and supply changes.</p>
+        </details>
+
+        <details>
+          <summary>Is a low market cap coin a good investment?</summary>
+          <p>A low market cap can indicate higher growth potential, but it also comes with significantly higher risk. Small-cap cryptocurrencies (under $100 million market cap) are more volatile, less liquid, and more susceptible to manipulation than large-cap assets like Bitcoin or Ethereum. Many low-cap projects fail entirely — teams abandon development, funds run out, or the market simply loses interest. However, the tokens that do succeed from small-cap to mid-cap or large-cap deliver the largest percentage returns. The key is thorough research: evaluate the team, technology, tokenomics, community, and competitive landscape before investing. Never allocate more than you can afford to lose, and diversify across multiple projects to spread risk.</p>
+        </details>
+
+        <details>
+          <summary>What's the difference between market cap and fully diluted valuation?</summary>
+          <p>Market cap uses the circulating supply (tokens currently available), while fully diluted valuation (FDV) uses the maximum total supply (all tokens that will ever exist). For Bitcoin, the difference is small because most BTC has already been mined. But for newer projects, the difference can be enormous. A token might have a $500 million circulating market cap but a $5 billion FDV if only 10% of tokens have been released. The remaining 90% will enter circulation over time through vesting schedules, staking rewards, or ecosystem grants, potentially diluting the price. When evaluating an investment, check both metrics. A low circulating market cap with a very high FDV suggests significant future selling pressure from token unlocks.</p>
+        </details>
+
+        <details>
+          <summary>Can a coin's market cap exceed Bitcoin's?</summary>
+          <p>It is theoretically possible but has never happened and is considered extremely unlikely in the foreseeable future. Bitcoin holds a dominant position as the first, most recognized, and most liquid cryptocurrency, often comprising 40-60% of the total crypto market cap. For another token to surpass Bitcoin, it would need to either capture massive new capital that Bitcoin does not attract, or Bitcoin would need to lose significant market share. Ethereum came closest during the 2017 "flippening" hype when ETH briefly reached roughly 80% of BTC's market cap, but it has not surpassed it. While the possibility exists in theory, Bitcoin's network effect, brand recognition, institutional adoption, and fixed supply make it the hardest asset to dethrone.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/roi-calculator">Crypto ROI Calculator</a> — Calculate your return on investment with annualized performance metrics and asset class comparisons.</li>
+          <li><a href="/what-if-calculator">What If Calculator</a> — Explore hypothetical crypto investment scenarios and see what your portfolio would be worth today.</li>
+          <li><a href="/profit-calculator">Profit Calculator</a> — Calculate your exact profit or loss from any crypto trade including fees and multiple exit points.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; margin-top: 40px; color: var(--color-text); }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ul, .seo-content ol { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 16px; margin: 12px 0 16px; font-family: 'Courier New', monospace; color: var(--color-primary); font-size: 0.9rem; max-width: 780px; }
+  .table-responsive { overflow-x: auto; margin: 16px 0; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg-card); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content details { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 8px; max-width: 780px; }
+  .seo-content summary { font-weight: 600; color: var(--color-text); cursor: pointer; }
+  .seo-content details p { margin-top: 12px; margin-bottom: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Market Cap Comparator",
+    "description": "Free market cap comparison tool. Compare any cryptocurrency against top coins. Calculate hypothetical prices and growth multipliers.",
+    "url": "https://cryptocalk.com/market-cap-comparator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can DOGE reach $10?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For DOGE to reach $10, its market cap would need to exceed $1.4 trillion based on its circulating supply of roughly 147 billion tokens. That would make DOGE more valuable than nearly every asset in crypto. While theoretically possible, most analysts consider this extremely unlikely without a fundamental shift in DOGE's utility."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does market cap mean for crypto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Market cap is the total value of all coins in circulation for a given cryptocurrency, calculated by multiplying the current price per token by the circulating supply. It is used to rank cryptocurrencies by size and is a better measure of a project's total value than price alone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is market cap calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Market cap is calculated using the formula: Market Cap = Current Price × Circulating Supply. Circulating supply is the number of tokens currently available and trading on the open market, excluding locked, vested, or burned tokens."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a low market cap coin a good investment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A low market cap can indicate higher growth potential but also comes with significantly higher risk. Small-cap cryptocurrencies are more volatile, less liquid, and more susceptible to manipulation. Thorough research into the team, technology, tokenomics, and community is essential before investing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between market cap and fully diluted valuation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Market cap uses circulating supply (tokens currently available), while fully diluted valuation (FDV) uses the maximum total supply. A token might have a $500M circulating market cap but a $5B FDV if only 10% of tokens have been released. The remaining tokens will enter circulation over time, potentially diluting the price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a coin's market cap exceed Bitcoin's?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is theoretically possible but has never happened. Bitcoin holds a dominant position as the first, most recognized, and most liquid cryptocurrency, often comprising 40-60% of total crypto market cap. Ethereum came closest during the 2017 flippening hype but has not surpassed Bitcoin."
+        }
+      }
+    ]
+  }
+]
+</script>

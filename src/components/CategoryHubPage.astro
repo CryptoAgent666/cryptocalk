@@ -1,0 +1,328 @@
+---
+import { ChevronRight, Home, Layers } from 'lucide-react';
+import type { CategoryHub, CategoryHubUiCopy } from '../data/category-hubs';
+
+interface Props {
+  category: CategoryHub;
+  relatedCategories: CategoryHub[];
+  ui: CategoryHubUiCopy;
+  homeHref: string;
+  categoriesHref: string;
+  lastUpdated: string;
+}
+
+const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated } = Astro.props as Props;
+---
+
+<main class="category-main">
+  <section class="category-hero">
+    <div class="hero-breadcrumbs" aria-label="Breadcrumb">
+      <a href={homeHref} class="crumb-link">
+        <Home size={14} />
+        <span>{ui.backToHome}</span>
+      </a>
+      <ChevronRight size={14} />
+      <a href={categoriesHref} class="crumb-link">
+        <Layers size={14} />
+        <span>{ui.backToCategories}</span>
+      </a>
+      <ChevronRight size={14} />
+      <span>{category.title}</span>
+    </div>
+
+    <span class="hero-badge">{ui.heroBadge}</span>
+    <h1>{category.title}</h1>
+    <p class="hero-intro">{category.intro}</p>
+
+    <div class="hero-metadata">
+      <span>{category.count} {ui.calculatorCountSuffix}</span>
+      <span>{ui.lastUpdated}: {lastUpdated}</span>
+    </div>
+  </section>
+
+  <section class="category-tools" aria-labelledby="category-tools-title">
+    <div class="section-head">
+      <h2 id="category-tools-title">{ui.toolsTitle}</h2>
+      <p>{ui.toolsSubtitle}</p>
+    </div>
+
+    <div class="tools-grid">
+      {category.tools.map((tool, index) => (
+        <a href={tool.href} class="tool-card">
+          <div class="tool-header">
+            <span class="tool-index">{String(index + 1).padStart(2, '0')}</span>
+            <ChevronRight size={16} />
+          </div>
+          <h3>{tool.name}</h3>
+          <span class="tool-cta">{ui.openCalculator}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="category-faq" aria-labelledby="category-faq-title">
+    <div class="section-head">
+      <h2 id="category-faq-title">{ui.faqTitle}</h2>
+      <p>{ui.faqSubtitle}</p>
+    </div>
+
+    <div class="faq-list">
+      {category.faq.map((item) => (
+        <details class="faq-item">
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="category-related" aria-labelledby="category-related-title">
+    <div class="section-head">
+      <h2 id="category-related-title">{ui.relatedTitle}</h2>
+      <p>{ui.relatedSubtitle}</p>
+    </div>
+
+    <div class="related-grid">
+      {relatedCategories.map((related) => (
+        <a href={related.href} class="related-card">
+          <h3>{related.title}</h3>
+          <p>{related.description}</p>
+          <span>{related.count} {ui.calculatorCountSuffix}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</main>
+
+<style>
+  .category-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 20px 72px;
+    display: grid;
+    gap: 48px;
+  }
+
+  .category-hero {
+    display: grid;
+    gap: 16px;
+  }
+
+  .hero-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    flex-wrap: wrap;
+  }
+
+  .crumb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+  }
+
+  .crumb-link:hover {
+    color: var(--color-primary);
+  }
+
+  .hero-badge {
+    width: fit-content;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-card);
+    padding: 6px 10px;
+  }
+
+  .category-hero h1 {
+    font-size: clamp(1.9rem, 2.9vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .hero-intro {
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    max-width: 78ch;
+    margin: 0;
+  }
+
+  .hero-metadata {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+
+  .hero-metadata span {
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 6px 10px;
+    background-color: var(--color-bg-card);
+  }
+
+  .section-head {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    margin: 0;
+  }
+
+  .section-head p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .tool-card {
+    display: grid;
+    gap: 10px;
+    padding: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    background: var(--color-bg-card);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .tool-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .tool-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-text-muted);
+  }
+
+  .tool-index {
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+  }
+
+  .tool-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .tool-cta {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .faq-item {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-card);
+    padding: 12px 14px;
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .faq-item p {
+    margin: 10px 0 0;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    font-size: 0.92rem;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .related-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--color-text);
+    background-color: var(--color-bg-card);
+    padding: 14px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .related-card:hover {
+    border-color: var(--color-primary);
+  }
+
+  .related-card h3 {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .related-card p {
+    margin: 0;
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+  }
+
+  .related-card span {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1024px) {
+    .tools-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .related-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .category-main {
+      padding: 20px 14px 40px;
+      gap: 36px;
+    }
+
+    .tools-grid,
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

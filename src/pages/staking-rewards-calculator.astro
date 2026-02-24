@@ -1,0 +1,279 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import StakingRewardsCalculator from '../components/StakingRewardsCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto Staking Rewards Calculator — ETH, SOL, DOT Staking APY | CryptoCalk"
+  description="Free staking rewards calculator. Estimate daily, weekly, and monthly earnings for Ethereum, Solana, Polkadot, Cosmos and other PoS coins with validator commissions."
+  lang="en"
+  canonical="/staking-calculator"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/staking-rewards-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/staking-rewards-calculator" aria-current="page">Staking Rewards Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto Staking Rewards Calculator</h1>
+          <p>Estimate staking earnings for PoS tokens. Quick-select popular coins like ETH, SOL, DOT or search any coin. Factor in validator commissions and auto-compounding.</p>
+        </div>
+        <StakingRewardsCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Crypto Staking Rewards Calculator</h2>
+        <ol>
+          <li><strong>Select a coin</strong> — Pick from quick buttons (ETH, SOL, DOT, ATOM, ADA) or search 500+ PoS cryptocurrencies.</li>
+          <li><strong>Enter your staking amount</strong> — Input the number of coins you plan to stake.</li>
+          <li><strong>Set the APY</strong> — The calculator pre-fills typical APY for popular coins, or enter a custom rate.</li>
+          <li><strong>Adjust validator commission</strong> — Most validators charge 2-10%. This reduces your effective yield.</li>
+          <li><strong>Choose compounding</strong> — Toggle auto-compound on or off to compare linear vs exponential growth.</li>
+          <li><strong>Review your rewards</strong> — See daily, weekly, monthly, and yearly earnings in both coins and USD.</li>
+        </ol>
+
+        <h2>What Is Crypto Staking?</h2>
+        <p>Staking is the process of locking cryptocurrency in a Proof-of-Stake (PoS) network to help validate transactions and secure the blockchain. In return for committing your tokens, the network distributes rewards — typically quoted as an Annual Percentage Yield (APY). Unlike Proof-of-Work mining that requires expensive hardware and electricity, staking lets anyone participate with just a wallet and tokens.</p>
+        <p>When you stake, your tokens are delegated to a validator node that proposes and validates blocks. The more tokens staked on a network, the more secure it becomes. Rewards compensate stakers for the opportunity cost of locking their funds and for contributing to network security.</p>
+
+        <h2>Popular Staking Coins & APY Rates</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Coin</th><th>APY Range</th><th>Min Stake</th><th>Unbonding Period</th><th>Liquid Staking</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ethereum (ETH)</td><td>3-4%</td><td>32 ETH (solo) / Any (liquid)</td><td>Variable (exit queue)</td><td>Yes (Lido, Rocket Pool)</td></tr>
+              <tr><td>Solana (SOL)</td><td>6-8%</td><td>No minimum</td><td>~2 days</td><td>Yes (Marinade, Jito)</td></tr>
+              <tr><td>Polkadot (DOT)</td><td>10-14%</td><td>10 DOT (pools)</td><td>28 days</td><td>Yes (Acala LDOT)</td></tr>
+              <tr><td>Cosmos (ATOM)</td><td>15-20%</td><td>No minimum</td><td>21 days</td><td>Limited</td></tr>
+              <tr><td>Cardano (ADA)</td><td>3-4%</td><td>No minimum</td><td>No lock</td><td>No (but no lock needed)</td></tr>
+              <tr><td>Avalanche (AVAX)</td><td>8-10%</td><td>25 AVAX</td><td>14 days</td><td>Yes (Benqi sAVAX)</td></tr>
+              <tr><td>Near Protocol (NEAR)</td><td>9-11%</td><td>No minimum</td><td>2-3 days</td><td>Yes (Meta Pool)</td></tr>
+              <tr><td>Polygon (MATIC)</td><td>4-6%</td><td>No minimum</td><td>3-4 days</td><td>Yes (Lido stMATIC)</td></tr>
+              <tr><td>Celestia (TIA)</td><td>12-16%</td><td>No minimum</td><td>21 days</td><td>Limited (new chain)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>APY figures are approximate and fluctuate based on network participation, total tokens staked, and protocol inflation schedules. Always verify current rates before staking.</p>
+
+        <h2>Staking Rewards Formula</h2>
+        <p>Without compounding (simple rewards):</p>
+        <div class="formula-block">
+          <code>Annual Reward = Staked Amount × APY × (1 − Validator Commission)</code>
+        </div>
+        <p>With daily compounding:</p>
+        <div class="formula-block">
+          <code>Final Value = Staked Amount × (1 + (APY × (1 − Commission)) / 365) ^ (365 × Years)</code>
+        </div>
+        <p>The difference between simple and compound rewards grows significantly over longer time horizons. For a 10% APY position held for 5 years, compounding adds roughly 15% more total rewards compared to linear accumulation.</p>
+
+        <h2>Validator Commissions Explained</h2>
+        <p>Validators charge a commission (typically 2-10%) on the rewards they distribute. This fee covers server infrastructure, bandwidth, and maintenance costs. A validator with 5% commission on a 10% APY network delivers 9.5% effective APY to delegators.</p>
+        <p>When choosing a validator, consider more than just the lowest commission. Important factors include uptime history, total stake (avoid over-concentrated validators), governance participation, and community reputation. A validator with 5% commission and 99.9% uptime is better than one with 0% commission and frequent downtime that causes missed rewards.</p>
+
+        <h2>Compounding vs Non-Compounding Staking</h2>
+        <p>Compounding means automatically reinvesting your staking rewards so that your rewards also earn rewards — creating exponential growth. Non-compounding (simple interest) pays out rewards linearly without reinvestment. The difference becomes significant over time.</p>
+        <p>Example: Stake $10,000 at 8% APY. With simple interest, you earn $800/year every year. With daily compounding, your effective APY becomes 8.33%, earning $833 in year 1, then compounding on the new total. Over 3 years, simple interest yields $2,400 total while daily compounding yields $2,682. Over 5 years, the gap widens to $4,000 vs $4,898.</p>
+        <p>For native chain staking, you typically need to manually claim and restake rewards. The optimal restaking frequency depends on your position size and gas fees. If claiming costs $2 and your daily reward is $0.50, compound weekly or monthly instead of daily.</p>
+
+        <h2>Staking Risks You Should Know</h2>
+        <ul>
+          <li><strong>Slashing</strong> — Validators that misbehave (double-signing, extended downtime) can have a portion of delegated tokens destroyed. Choose reputable validators to minimize this risk.</li>
+          <li><strong>Price volatility</strong> — Your staking rewards are paid in the native token. If the token price drops 30% while you earn 10% APY, you still lose value in dollar terms.</li>
+          <li><strong>Unbonding period lockup</strong> — Most networks require a waiting period (7-28 days) before unstaked tokens become transferable. You cannot sell during this period.</li>
+          <li><strong>Smart contract risk</strong> — Liquid staking protocols (Lido, Rocket Pool) add a layer of smart contract risk. Bugs or exploits could result in loss of funds.</li>
+          <li><strong>Inflation dilution</strong> — High staking rewards often come from high inflation schedules. If everyone is staking, your percentage of the total supply remains constant while token supply grows, potentially diluting value.</li>
+          <li><strong>Opportunity cost</strong> — Staked tokens cannot be used for trading or other DeFi strategies. Consider whether staking yields justify the lock-up.</li>
+        </ul>
+
+        <h2>Liquid Staking vs Native Staking</h2>
+        <p>Native staking locks your tokens directly on the blockchain. Liquid staking protocols give you a derivative token (like stETH for Ethereum) that represents your staked position. This derivative can be used in DeFi — as collateral for borrowing, in liquidity pools, or for additional yield farming — while your original tokens continue earning staking rewards.</p>
+        <p>The trade-off is an additional layer of smart contract risk and a potential de-peg risk where the liquid staking token trades below the value of the underlying asset. For most users with moderate amounts, liquid staking offers the best balance of yield and flexibility.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>Is staking risk-free?</summary>
+          <p>No. Risks include slashing (penalties for validator misbehavior), token price volatility, opportunity cost during unbonding periods, and smart contract risk for liquid staking protocols. Always assess the risk-reward ratio before staking.</p>
+        </details>
+        <details>
+          <summary>What's the difference between APR and APY?</summary>
+          <p>APR (Annual Percentage Rate) is the raw annual rate without compounding. APY (Annual Percentage Yield) includes the effect of compounding. With daily compounding, 7% APR becomes approximately 7.25% APY. Many protocols quote APR, so check which metric is being used.</p>
+        </details>
+        <details>
+          <summary>Can I unstake at any time?</summary>
+          <p>Most PoS networks have an unbonding period: 2 days for Solana, 21 days for Cosmos, 28 days for Polkadot. During this time, you cannot access or trade your tokens. Liquid staking protocols offer tokenized positions that can be traded on secondary markets immediately, but possibly at a slight discount.</p>
+        </details>
+        <details>
+          <summary>How are staking rewards taxed?</summary>
+          <p>In most jurisdictions, staking rewards are taxable as income at the time they are received. The tax is based on the market value of the tokens at the moment of receipt. When you later sell the staked tokens, any price change from the income value triggers capital gains or losses. Consult a tax professional for your specific situation.</p>
+        </details>
+        <details>
+          <summary>What is liquid staking?</summary>
+          <p>Liquid staking allows you to stake tokens and receive a derivative token (like stETH for Ethereum) that represents your staked position. This derivative can be used in DeFi — as collateral, in liquidity pools, or for yield farming — while your original tokens continue earning staking rewards. The trade-off is added smart contract risk.</p>
+        </details>
+        <details>
+          <summary>Should I choose a high-APY coin for staking?</summary>
+          <p>Not necessarily. High APY often comes from high inflation, which can dilute token value. A coin with 20% APY but 25% inflation may be worse than one with 5% APY and low inflation. Consider the total supply growth, token utility, network security, and project fundamentals — not just the advertised APY.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/compound-interest-calculator">Compound Interest Calculator</a> — project long-term compounding growth for any APY.</li>
+          <li><a href="/profit-calculator">Crypto Profit Calculator</a> — calculate net returns from buying and selling staked tokens.</li>
+          <li><a href="/dca-calculator">DCA Calculator</a> — plan dollar-cost averaging strategies for accumulating tokens to stake.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; margin-top: 40px; color: var(--color-text); }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ul, .seo-content ol { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 16px; margin: 12px 0 16px; font-family: 'Courier New', monospace; color: var(--color-primary); font-size: 0.9rem; max-width: 780px; overflow-x: auto; }
+  .table-responsive { overflow-x: auto; margin: 16px 0; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg-card); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content details { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 8px; max-width: 780px; }
+  .seo-content summary { font-weight: 600; color: var(--color-text); cursor: pointer; }
+  .seo-content details p { margin-top: 12px; margin-bottom: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Crypto Staking Rewards Calculator",
+    "description": "Free staking rewards calculator. Estimate daily, weekly, and monthly earnings for Ethereum, Solana, Polkadot, Cosmos and other PoS coins.",
+    "url": "https://cryptocalk.com/staking-rewards-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is staking risk-free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Risks include slashing (penalties for validator misbehavior), token price volatility, opportunity cost during unbonding periods, and smart contract risk for liquid staking protocols. Always assess the risk-reward ratio before staking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between APR and APY?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "APR (Annual Percentage Rate) is the raw annual rate without compounding. APY (Annual Percentage Yield) includes the effect of compounding. With daily compounding, 7% APR becomes approximately 7.25% APY. Many protocols quote APR, so check which metric is being used."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I unstake at any time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most PoS networks have an unbonding period: 2 days for Solana, 21 days for Cosmos, 28 days for Polkadot. During this time, you cannot access or trade your tokens. Liquid staking protocols offer tokenized positions that can be traded on secondary markets immediately, but possibly at a slight discount."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are staking rewards taxed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In most jurisdictions, staking rewards are taxable as income at the time they are received. The tax is based on the market value of the tokens at the moment of receipt. When you later sell the staked tokens, any price change from the income value triggers capital gains or losses. Consult a tax professional for your specific situation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is liquid staking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Liquid staking allows you to stake tokens and receive a derivative token (like stETH for Ethereum) that represents your staked position. This derivative can be used in DeFi — as collateral, in liquidity pools, or for yield farming — while your original tokens continue earning staking rewards. The trade-off is added smart contract risk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I choose a high-APY coin for staking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. High APY often comes from high inflation, which can dilute token value. A coin with 20% APY but 25% inflation may be worse than one with 5% APY and low inflation. Consider the total supply growth, token utility, network security, and project fundamentals — not just the advertised APY."
+        }
+      }
+    ]
+  }
+]
+</script>

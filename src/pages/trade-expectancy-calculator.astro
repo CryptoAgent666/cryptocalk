@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import TradeExpectancyCalculator from '../components/TradeExpectancyCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="trade-expectancy-calculator"
+  title="Trade Expectancy Calculator"
+  description="Estimate strategy edge per trade and project monthly outcomes using win rate, R-multiples, and risk per trade."
+>
+  <TradeExpectancyCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

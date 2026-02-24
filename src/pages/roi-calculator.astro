@@ -1,0 +1,309 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import RoiCalculator from '../components/RoiCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto ROI Calculator — Return on Investment Calculator | CryptoCalk"
+  description="Free crypto ROI calculator with annualized returns. Calculate your cryptocurrency investment ROI, compare with S&P 500, Gold, and Real Estate. Track total and annualized performance."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/roi-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/roi-calculator" aria-current="page">ROI Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto ROI Calculator</h1>
+          <p>Calculate your cryptocurrency return on investment with annualized performance, benchmark comparisons against stocks and gold, and detailed profit breakdowns.</p>
+        </div>
+        <RoiCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the ROI Calculator</h2>
+        <ol>
+          <li><strong>Enter your initial investment</strong> — The total amount in USD (or your local currency) that you invested in the cryptocurrency.</li>
+          <li><strong>Enter the current value</strong> — The present value of your investment. If you sold already, enter the sale value. If you are still holding, enter the current portfolio value.</li>
+          <li><strong>Input fees (optional)</strong> — Add any trading fees, withdrawal fees, or gas fees you paid during the investment. These are subtracted from your profit to give a true net ROI.</li>
+          <li><strong>Set the investment period</strong> — Enter the start and end dates of your investment. This is required for calculating annualized ROI, which lets you compare performance across different holding periods.</li>
+          <li><strong>Review your results</strong> — The calculator displays your total ROI percentage, annualized ROI, absolute profit or loss, and how your performance compares to traditional benchmarks like the S&P 500, Gold, and Real Estate.</li>
+        </ol>
+
+        <h2>Understanding ROI in Cryptocurrency</h2>
+        <p>Return on Investment (ROI) measures the profitability of an investment as a percentage of the original cost. In cryptocurrency, ROI is the most fundamental metric for evaluating whether a trade or long-term hold was successful. It strips away the noise of dollar amounts and expresses your result as a clean, comparable number.</p>
+        <p>For example, turning $1,000 into $3,000 is a 200% ROI, regardless of the token involved. Turning $50,000 into $55,000 is a 10% ROI. Even though the second scenario earned more dollars ($5,000 vs $2,000), the first investment was far more efficient in percentage terms. This is why ROI is essential: it normalizes performance across different investment sizes, making it possible to compare a $100 altcoin bet against a $50,000 Bitcoin allocation on equal footing.</p>
+        <p>Cryptocurrency ROI can be wildly volatile. It is not uncommon for early investors in a successful token to see 10,000%+ returns, while the majority of altcoin investors experience negative ROI. Understanding how to calculate and interpret ROI helps you evaluate your performance objectively, set realistic expectations, and make data-driven decisions about future investments.</p>
+
+        <h2>ROI vs Annualized ROI</h2>
+        <p>Basic ROI tells you the total return over the entire holding period, but it does not account for time. A 50% ROI earned in one month is dramatically better than a 50% ROI earned over five years. Annualized ROI solves this problem by converting any holding period return into an equivalent annual rate, making it possible to compare investments held for different durations.</p>
+        <p>Imagine three scenarios: Investment A returns 30% in 3 months, Investment B returns 80% in 2 years, and Investment C returns 150% in 5 years. Without annualization, Investment C looks best. But when you annualize: Investment A has a 185% annualized ROI (compounding that 3-month return over a full year), Investment B has a 34% annualized ROI, and Investment C has a 20% annualized ROI. Suddenly, Investment A is the clear winner on a time-adjusted basis.</p>
+        <p>Annualized ROI is especially important in crypto because holding periods vary enormously. Some traders close positions in hours, while long-term holders sit on investments for years. Without annualizing, you cannot meaningfully compare these different strategies. It also enables comparison against traditional asset classes: if the S&P 500 returns roughly 10% annualized, you need to know your crypto's annualized ROI to decide whether the added risk was worth it.</p>
+
+        <h2>The ROI Formula</h2>
+        <p>The basic ROI formula is straightforward:</p>
+        <div class="formula-block">
+          <code>ROI = ((Current Value − Initial Investment) ÷ Initial Investment) × 100%</code>
+        </div>
+        <p>If you include fees, the formula becomes:</p>
+        <div class="formula-block">
+          <code>Net ROI = ((Current Value − Initial Investment − Total Fees) ÷ Initial Investment) × 100%</code>
+        </div>
+        <p>The annualized ROI formula uses compounding to convert the total return into an equivalent annual rate:</p>
+        <div class="formula-block">
+          <code>Annualized ROI = ((1 + ROI/100) ^ (365 / Days Held) − 1) × 100%</code>
+        </div>
+        <p>For example, if you invested $5,000 and it is now worth $8,000 after 18 months (548 days), with $50 in total fees: Net Profit = $8,000 - $5,000 - $50 = $2,950. ROI = ($2,950 / $5,000) x 100% = 59%. Annualized ROI = ((1 + 0.59) ^ (365 / 548) - 1) x 100% = 36.4%. So your 59% total return over 18 months equates to roughly 36.4% per year, which significantly outperforms most traditional assets.</p>
+
+        <h2>Crypto vs Traditional Assets</h2>
+        <p>Comparing your crypto ROI against traditional asset classes provides essential context. A 20% annual return on crypto might feel disappointing, but compared to the historical averages of traditional investments, it is exceptional. Here are approximate long-term annual averages:</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Asset Class</th>
+                <th>Avg. Annual Return</th>
+                <th>Volatility</th>
+                <th>Liquidity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bitcoin (10-year)</td>
+                <td>~50-80%</td>
+                <td>Very High</td>
+                <td>High (24/7)</td>
+              </tr>
+              <tr>
+                <td>S&P 500</td>
+                <td>~10%</td>
+                <td>Moderate</td>
+                <td>High (market hours)</td>
+              </tr>
+              <tr>
+                <td>Gold</td>
+                <td>~7-8%</td>
+                <td>Low-Moderate</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td>Real Estate (REITs)</td>
+                <td>~8-10%</td>
+                <td>Low-Moderate</td>
+                <td>Moderate</td>
+              </tr>
+              <tr>
+                <td>US Treasury Bonds</td>
+                <td>~3-5%</td>
+                <td>Low</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td>Savings Account</td>
+                <td>~4-5% (current)</td>
+                <td>None</td>
+                <td>Instant</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Bitcoin's historical annualized returns dwarf those of traditional assets, but its volatility is also dramatically higher. In some years, Bitcoin has returned over 300%, while in others it has dropped over 70%. The key insight is that higher returns always come with higher risk. When your crypto investment returns 50% in a year, you earned roughly 5x what an S&P 500 index fund delivered, but you also endured price swings that most stock investors would find unbearable.</p>
+        <p>For altcoins, the disparity is even more extreme. Some altcoins deliver 1,000%+ returns in a single year, while the vast majority lose value or go to zero entirely. This is why tracking your actual ROI across your entire portfolio (not just your winners) is critical for honest self-assessment.</p>
+
+        <h2>Why Fees Matter in ROI Calculations</h2>
+        <p>Trading fees, withdrawal fees, gas fees, and spread costs silently erode your returns. Many investors track their entry and exit prices but ignore the cumulative impact of fees, which can be substantial for active traders.</p>
+        <p>Consider an active trader who makes 200 trades per year on a $10,000 account. If each trade costs 0.1% in fees (a typical taker rate), that is $10 per trade in fees. Over 200 trades, fees total $2,000 — a 20% drag on the portfolio before any profit or loss from actual trading. Even for a profitable trader, this fee burden can reduce a 30% gross return to a 10% net return.</p>
+        <p>For long-term holders, fees are less impactful because you only pay entry and exit fees. But withdrawal fees and network gas costs can still add up, especially when moving assets between exchanges and wallets. Always include all fees in your ROI calculation to get an accurate picture of your true performance. The difference between gross ROI and net ROI often surprises investors who have never tracked their total fee expenditure.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>How do I calculate ROI on crypto?</summary>
+          <p>To calculate your crypto ROI, use the formula: ROI = ((Current Value - Initial Investment) / Initial Investment) x 100%. If you invested $2,000 and your holdings are now worth $5,000, your ROI is (($5,000 - $2,000) / $2,000) x 100% = 150%. For a more accurate result, subtract any fees you paid: Net ROI = ((Current Value - Investment - Fees) / Investment) x 100%. To compare investments held for different periods, calculate the annualized ROI using the formula: Annualized ROI = ((1 + ROI/100) ^ (365 / days held) - 1) x 100%.</p>
+        </details>
+
+        <details>
+          <summary>What is annualized ROI?</summary>
+          <p>Annualized ROI converts a return earned over any time period into an equivalent annual rate. This allows you to compare investments held for different durations on an equal basis. A 20% return in 6 months is roughly equivalent to a 44% annualized return (because of compounding), while a 20% return over 2 years is only about 9.5% annualized. The formula is: Annualized ROI = ((1 + total ROI) ^ (365 / days) - 1) x 100%. This metric is essential for comparing crypto returns against traditional benchmarks like the S&P 500's historical ~10% annual return.</p>
+        </details>
+
+        <details>
+          <summary>What is a good ROI for cryptocurrency?</summary>
+          <p>There is no universal answer because it depends on your risk tolerance, investment strategy, and market conditions. As a benchmark, the S&P 500 averages about 10% annually, so any annualized crypto return above that threshold is outperforming the stock market. Bitcoin's long-term annualized return has been 50-80% depending on the starting date. However, crypto is far more volatile. A "good" ROI for a conservative crypto investor might be 20-50% annually. For aggressive altcoin traders, expectations may be higher (100%+), but the risk of total loss is also much greater. Always evaluate ROI relative to the risk you took to achieve it.</p>
+        </details>
+
+        <details>
+          <summary>How does crypto ROI compare to stocks?</summary>
+          <p>Over the past decade, Bitcoin has dramatically outperformed the stock market on an annualized basis. The S&P 500 has averaged roughly 10% per year, while Bitcoin has averaged 50-80% depending on the measurement period. However, this comes with massive volatility — Bitcoin has experienced drawdowns exceeding 70% multiple times, while the worst S&P 500 drawdowns in recent history have been around 30-35%. Individual altcoins have even wider return dispersion: some return thousands of percent, while most underperform or go to zero. The key difference is risk-adjusted returns — crypto returns more, but you endure far greater price swings and uncertainty.</p>
+        </details>
+
+        <details>
+          <summary>Should I include fees in ROI calculations?</summary>
+          <p>Absolutely. Ignoring fees gives you a misleading picture of your actual performance. Fees include exchange trading fees (maker/taker), withdrawal fees, network gas fees, spread costs, and any platform subscription fees. For a single buy-and-hold investment, fees might be small (0.1-0.5% total). But for active traders making dozens or hundreds of trades, cumulative fees can easily consume 10-20% of the portfolio annually. Always calculate your net ROI (after all fees) rather than gross ROI to understand your true profitability. This calculator includes a fee field specifically for this purpose.</p>
+        </details>
+
+        <details>
+          <summary>How do I track ROI across multiple trades?</summary>
+          <p>To track ROI across multiple trades, you need to aggregate your total invested capital and total current value. Sum up all the money you put into crypto (every buy order) as your total investment. Then calculate the current value of all your holdings plus any profits already realized from sales. Your portfolio ROI = ((Total Current Value + Realized Profits - Total Invested) / Total Invested) x 100%. For more granular tracking, use a portfolio tracker that records each trade and calculates ROI per position and for the overall portfolio. Spreadsheets work for small portfolios, but dedicated tools like CoinTracker or Koinly are better for active traders with many transactions.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/profit-calculator">Profit Calculator</a> — Calculate exact profit or loss from individual crypto trades with fee breakdowns.</li>
+          <li><a href="/dca-calculator">DCA Calculator</a> — Simulate dollar-cost averaging strategies and compare performance against lump-sum investing.</li>
+          <li><a href="/what-if-calculator">What If Calculator</a> — Explore hypothetical scenarios to see what your investment would be worth today.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; margin-top: 40px; color: var(--color-text); }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ul, .seo-content ol { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 16px; margin: 12px 0 16px; font-family: 'Courier New', monospace; color: var(--color-primary); font-size: 0.9rem; max-width: 780px; }
+  .table-responsive { overflow-x: auto; margin: 16px 0; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg-card); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content details { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 8px; max-width: 780px; }
+  .seo-content summary { font-weight: 600; color: var(--color-text); cursor: pointer; }
+  .seo-content details p { margin-top: 12px; margin-bottom: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Crypto ROI Calculator",
+    "description": "Free crypto ROI calculator with annualized returns. Calculate your cryptocurrency investment ROI and compare with traditional assets.",
+    "url": "https://cryptocalk.com/roi-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate ROI on crypto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the formula: ROI = ((Current Value - Initial Investment) / Initial Investment) x 100%. For a more accurate result, subtract fees: Net ROI = ((Current Value - Investment - Fees) / Investment) x 100%. To compare across different holding periods, calculate annualized ROI."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is annualized ROI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Annualized ROI converts a return earned over any time period into an equivalent annual rate, allowing you to compare investments held for different durations. The formula is: Annualized ROI = ((1 + total ROI) ^ (365 / days) - 1) x 100%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good ROI for cryptocurrency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no universal answer. As a benchmark, the S&P 500 averages about 10% annually. Bitcoin's long-term annualized return has been 50-80%. A conservative crypto investor might target 20-50% annually, while aggressive altcoin traders may expect higher returns with greater risk of loss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does crypto ROI compare to stocks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Over the past decade, Bitcoin has dramatically outperformed the stock market. The S&P 500 averages roughly 10% per year, while Bitcoin has averaged 50-80%. However, crypto comes with massive volatility — Bitcoin has experienced drawdowns exceeding 70% multiple times."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I include fees in ROI calculations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Ignoring fees gives a misleading picture of performance. For active traders making many trades, cumulative fees can consume 10-20% of the portfolio annually. Always calculate net ROI (after all fees) to understand your true profitability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I track ROI across multiple trades?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sum up all money invested as your total investment, then calculate the current value of all holdings plus realized profits. Portfolio ROI = ((Total Current Value + Realized Profits - Total Invested) / Total Invested) x 100%. For many transactions, use dedicated portfolio tracking tools."
+        }
+      }
+    ]
+  }
+]
+</script>

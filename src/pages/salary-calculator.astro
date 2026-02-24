@@ -1,0 +1,292 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import CryptoSalaryCalculator from '../components/CryptoSalaryCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto Salary Calculator — Fiat to Crypto Conversion | CryptoCalk"
+  description="Free crypto salary calculator. Convert your fiat salary to BTC, ETH, or USDT. Calculate crypto accumulation over time with pay frequency and conversion fee estimates."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/salary-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/salary-calculator" aria-current="page">Salary Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto Salary Calculator</h1>
+          <p>Convert between fiat and crypto salaries. Calculate how much BTC, ETH, or USDT you'd accumulate by converting a portion of your paycheck, with conversion fees and pay frequency options.</p>
+        </div>
+        <CryptoSalaryCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Crypto Salary Calculator</h2>
+        <p>The crypto salary calculator offers two modes: fiat-to-crypto conversion and crypto accumulation projection. Whether you want a quick snapshot of what your salary looks like in Bitcoin or a detailed projection of how much crypto you could stack over months or years, this tool covers both scenarios. Follow these steps to get started:</p>
+        <ol>
+          <li><strong>Select your conversion mode</strong> — choose "Fiat to Crypto" to convert a lump-sum salary figure into its current crypto equivalent, or choose "Accumulation Projection" to model how regular paycheck conversions add up over time with dollar-cost averaging.</li>
+          <li><strong>Enter your salary details</strong> — input your gross or net salary in your local fiat currency (USD, EUR, GBP, etc.) and select your pay frequency: weekly, bi-weekly, semi-monthly, or monthly. The calculator adjusts all figures to match your pay cycle.</li>
+          <li><strong>Choose the percentage to convert</strong> — decide what portion of each paycheck you want to convert to cryptocurrency. Most people start with 5-20% of their net pay. The slider lets you experiment with different allocation levels to see the impact.</li>
+          <li><strong>Select your target cryptocurrency</strong> — pick from popular options such as Bitcoin (BTC), Ethereum (ETH), or stablecoins like USDT and USDC. The calculator fetches current market prices to give you accurate conversion figures.</li>
+          <li><strong>Set conversion fees</strong> — enter the fee percentage charged by your exchange or payroll conversion service. Typical fees range from 0.1% on major exchanges to 1-2% on payroll services. This ensures your projection reflects real-world costs rather than idealized numbers.</li>
+          <li><strong>Review your results</strong> — the calculator displays your per-paycheck crypto amount, monthly and annual accumulation totals, total fees paid, and a projection chart showing your crypto balance growth over the selected time horizon. Use these figures to decide whether the allocation level fits your financial goals.</li>
+        </ol>
+
+        <h2>Getting Paid in Crypto — How It Works</h2>
+        <p>Receiving part or all of your salary in cryptocurrency has moved from a niche experiment to a legitimate payroll option offered by a growing number of companies. Several platforms and services now bridge the gap between traditional employer payroll systems and employee crypto wallets, making the process straightforward for both parties.</p>
+
+        <h3>Crypto Payroll Services</h3>
+        <p>Platforms like Bitwage, Request Network, and Deel allow employees to receive a portion of their paycheck directly in crypto. The employer continues to process payroll in fiat as usual. The payroll service intercepts the designated amount, converts it to the chosen cryptocurrency at market rates, and deposits it into the employee's wallet. This means the employer does not need to hold or manage crypto at all — the conversion happens at the payroll layer.</p>
+        <p>Some larger companies, particularly in the tech and Web3 sectors, handle crypto payroll in-house. They purchase the required crypto on an exchange and distribute it to employee wallets on payday. This approach gives the company more control over timing and execution but requires treasury management capabilities and compliance infrastructure.</p>
+
+        <h3>Partial Salary Conversion</h3>
+        <p>The most popular approach is partial salary conversion, where an employee designates a fixed percentage — commonly 10-30% — of each paycheck to be converted to crypto. The remainder is paid in fiat as usual, covering rent, bills, and everyday expenses. This approach offers the benefits of crypto exposure without the volatility risk of relying entirely on a digital asset for living expenses. It also creates an automatic dollar-cost averaging strategy, since the conversion happens at regular intervals regardless of market conditions.</p>
+
+        <h2>Benefits of Converting Salary to Crypto</h2>
+        <p>Allocating a portion of your salary to cryptocurrency offers several strategic financial advantages that go beyond simple speculation on price appreciation.</p>
+        <ul>
+          <li><strong>Built-in dollar-cost averaging</strong> — by converting a fixed fiat amount each pay period, you automatically buy more crypto when prices are low and less when prices are high. Over time, this smooths out your average purchase price and reduces the impact of short-term volatility. You never have to worry about timing the market because the schedule is locked to your payroll cycle.</li>
+          <li><strong>Forced savings discipline</strong> — treating crypto allocation as a payroll deduction removes the temptation to skip or delay investing. The conversion happens before the money ever reaches your spending account, which is the same psychological trick that makes employer retirement contributions so effective. Consistency is the most important factor in long-term wealth building, and automated salary conversion enforces it.</li>
+          <li><strong>Potential long-term appreciation</strong> — Bitcoin and other major cryptocurrencies have historically appreciated over multi-year horizons despite significant short-term drawdowns. Employees who began converting a portion of their salary to BTC in its early years accumulated substantial wealth. While past performance does not guarantee future results, the asymmetric upside potential of crypto as an emerging asset class is a key reason people choose to allocate salary toward it.</li>
+          <li><strong>Portfolio diversification</strong> — most people have their wealth concentrated in fiat-denominated assets: bank accounts, stocks, bonds, and real estate. Adding cryptocurrency introduces an asset with low historical correlation to traditional markets. This diversification can reduce overall portfolio risk and provide a hedge against currency debasement, inflation, and geopolitical uncertainty.</li>
+        </ul>
+
+        <h2>Tax Implications of Crypto Salary</h2>
+        <p>Receiving salary in cryptocurrency creates tax obligations that vary significantly by jurisdiction. In most countries, crypto received as compensation is treated as ordinary income, taxed at its fair market value on the date of receipt. Understanding the rules in your country is essential to avoid surprises at tax time.</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Country</th><th>Tax Treatment</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>USA</td><td>Treated as ordinary income at FMV</td><td>Employer must withhold income tax and FICA. The fair market value on the date of receipt determines the taxable amount. Subsequent gains or losses when you sell the crypto are subject to capital gains tax.</td></tr>
+              <tr><td>UK</td><td>Treated as employment income, PAYE applies</td><td>Employers must report crypto salary through PAYE (Pay As You Earn) and withhold National Insurance contributions. The GBP value at the time of receipt is the taxable amount.</td></tr>
+              <tr><td>Germany</td><td>Income tax applies, crypto received as salary is taxable</td><td>Crypto salary is subject to standard income tax rates. If you hold the received crypto for more than one year before selling, the subsequent capital gains may be tax-free under German holding period rules.</td></tr>
+              <tr><td>Australia</td><td>Treated as ordinary income</td><td>The AUD value at the time of receipt is included in assessable income. The ATO requires employers to meet PAYG withholding obligations. Capital gains tax applies on disposal.</td></tr>
+              <tr><td>Canada</td><td>Employment income at FMV</td><td>The CAD fair market value on the receipt date is treated as employment income. CPP and EI contributions still apply. The cost basis for future capital gains calculations is the FMV at receipt.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Regardless of your jurisdiction, keep detailed records of every salary payment received in crypto: the date, amount of crypto, its fiat value at the time, and the transaction hash. This documentation simplifies tax filing and provides an audit trail if needed. Many crypto tax software tools can import wallet transactions automatically and generate the required tax reports.</p>
+
+        <h2>Salary Allocation Strategies</h2>
+        <p>The right crypto allocation depends on your financial situation, risk tolerance, existing savings, and conviction level. Here are four common strategy tiers that salary earners use when deciding how much of their paycheck to convert:</p>
+
+        <h3>Conservative (5-10%)</h3>
+        <p>This approach treats crypto as a small satellite allocation within a broader portfolio. Converting 5-10% of net pay provides meaningful exposure over time without introducing significant lifestyle risk. It is ideal for those who are new to crypto, have limited emergency savings, or want to test the waters before committing more. At this level, even a severe crypto bear market has minimal impact on overall financial stability.</p>
+
+        <h3>Moderate (10-25%)</h3>
+        <p>A moderate allocation strikes a balance between meaningful accumulation and financial prudence. At 10-25% of net pay, the crypto portion grows noticeably over months and years while leaving plenty of fiat income for fixed expenses and traditional savings. This is the most popular range among experienced crypto enthusiasts who have stable incomes and existing emergency funds. The DCA effect at this level produces a substantial position over a full market cycle.</p>
+
+        <h3>Aggressive (25-50%)</h3>
+        <p>Allocating a quarter to half of net salary requires high conviction in crypto's long-term trajectory and a financial cushion to absorb volatility. People at this level typically have low fixed expenses (no mortgage, no dependents), significant fiat savings already in place, and deep familiarity with crypto market cycles. The accumulation rate is rapid, but the lifestyle impact during bear markets can be stressful if the fiat portion barely covers expenses.</p>
+
+        <h3>All-In (100%)</h3>
+        <p>Receiving an entire salary in crypto is rare and requires careful planning. Most people who attempt this maintain a stablecoin buffer — receiving salary in USDT or USDC and converting a portion to volatile assets like BTC or ETH. This preserves the dollar value for expenses while keeping the entire flow within the crypto ecosystem. Without a stablecoin fallback, a 100% volatile crypto salary creates extreme cash flow risk during market downturns.</p>
+
+        <h2>The DCA Effect of Regular Salary Conversion</h2>
+        <p>Dollar-cost averaging is one of the simplest and most effective investment strategies, and regular salary conversion implements it automatically. By investing a fixed fiat amount at fixed intervals, you buy more units when the price is low and fewer units when the price is high. Over time, this produces an average cost per coin that is lower than the average price over the same period — a mathematical advantage that benefits patient accumulators.</p>
+        <div class="formula-block">
+          <code>Average Cost = Total Fiat Invested / Total Crypto Coins Acquired</code>
+        </div>
+        <p>For example, suppose you convert $500 per month into Bitcoin. In month one, BTC is $50,000, so you get 0.01 BTC. In month two, BTC drops to $40,000, so you get 0.0125 BTC. In month three, BTC recovers to $45,000, so you get 0.0111 BTC. Your total investment is $1,500 for 0.0336 BTC, giving you an average cost of $44,643 per BTC — lower than the simple average price of $45,000 over those three months.</p>
+        <p>This advantage compounds over longer time horizons. Salary conversion enforces the discipline that most manual DCA plans lack: you cannot skip a period because you feel bearish, and you cannot over-invest because you feel bullish. The automation removes emotion from the equation, which research consistently shows leads to better long-term investment outcomes. The key requirement is a sufficiently long time horizon — DCA works best over full market cycles of three to five years or more.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>Is it legal to get paid in crypto?</summary>
+          <p>In most countries, yes. However, employment law typically requires that minimum wage obligations be met in legal tender (fiat currency). This means employers may need to pay at least the minimum wage portion in fiat, with the remainder in crypto if both parties agree. In the US, the Department of Labor requires wages to be paid in cash or negotiable instruments, so crypto salary is usually structured as a benefit or bonus rather than base wage replacement. Always check your local labor laws and consult a tax professional before arranging crypto compensation.</p>
+        </details>
+
+        <details>
+          <summary>What percentage of my salary should I convert to crypto?</summary>
+          <p>There is no universal answer — it depends on your financial situation. A common starting point is 5-10% of net pay for beginners, scaling up to 15-25% as you become more comfortable with volatility and build a sufficient fiat emergency fund (typically three to six months of expenses). Never convert money you need for rent, debt payments, or essential living expenses. The right percentage is one that lets you accumulate crypto consistently without creating financial stress during market downturns.</p>
+        </details>
+
+        <details>
+          <summary>How do taxes work on crypto salary?</summary>
+          <p>In most jurisdictions, crypto received as salary is taxed as ordinary income at its fair market value on the date you receive it. Your employer may be required to withhold income tax and social contributions just as they would for fiat salary. When you later sell or exchange the crypto, any gain above the value at which it was received is subject to capital gains tax. Keep records of every receipt: the date, the crypto amount, and its fiat value at that moment. These records establish your cost basis for future capital gains calculations.</p>
+        </details>
+
+        <details>
+          <summary>Which crypto should I receive my salary in?</summary>
+          <p>The best choice depends on your goals. Bitcoin (BTC) is the most common choice for long-term accumulation due to its fixed supply, high liquidity, and status as the most established cryptocurrency. Ethereum (ETH) appeals to those who also want exposure to DeFi and smart contract ecosystems. Stablecoins like USDT or USDC are ideal if you want to keep your salary in the crypto ecosystem without volatility risk — useful as a base from which to make strategic purchases. Many people split their allocation: for example, 60% BTC, 30% ETH, and 10% stablecoins.</p>
+        </details>
+
+        <details>
+          <summary>What are the fees for converting salary to crypto?</summary>
+          <p>Fees vary by method. Dedicated payroll services like Bitwage typically charge 1-2% per conversion. If your employer pays you in fiat and you convert manually on an exchange, fees range from 0.1% (maker orders on major exchanges) to 0.5% (instant buy features). Bank transfer fees for depositing fiat to the exchange are usually $0-$5 per transfer. Over a year of biweekly conversions, the fee difference between methods can amount to hundreds of dollars, so choosing an efficient conversion path matters.</p>
+        </details>
+
+        <details>
+          <summary>Can I get paid in stablecoins instead?</summary>
+          <p>Yes, and it is increasingly popular. Stablecoins like USDC and USDT are pegged to the US dollar, so you receive the equivalent dollar value without exposure to crypto price volatility. This is particularly useful for remote workers paid by international companies, since stablecoin transfers settle in minutes with low fees compared to international wire transfers that can take days and cost $25-$50 per transaction. You can then hold the stablecoins, earn yield in DeFi protocols, or convert to volatile crypto assets on your own schedule.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/dca-calculator">DCA Calculator</a> — model the results of dollar-cost averaging into crypto over any time period with historical price data.</li>
+          <li><a href="/profit-calculator">Crypto Profit Calculator</a> — calculate your realized or unrealized profit and loss including trading fees and taxes.</li>
+          <li><a href="/tax-calculator">Crypto Tax Calculator</a> — estimate your capital gains tax liability across different jurisdictions and holding periods.</li>
+          <li><a href="/compound-calculator">Compound Interest Calculator</a> — project the growth of crypto holdings with staking rewards or DeFi yield compounding over time.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h2 + h3 { margin-top: 16px; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p, .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content summary:hover { background: var(--color-bg-card-hover); }
+  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
+  .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
+  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Crypto Salary Calculator",
+  "url": "https://cryptocalk.com/salary-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free crypto salary calculator. Convert your fiat salary to BTC, ETH, or USDT. Calculate crypto accumulation over time with pay frequency and conversion fee estimates."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it legal to get paid in crypto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most countries, yes. However, employment law typically requires that minimum wage obligations be met in legal tender. Crypto salary is usually structured as a benefit or bonus rather than base wage replacement. Always check your local labor laws."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What percentage of my salary should I convert to crypto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A common starting point is 5-10% of net pay for beginners, scaling up to 15-25% as you become comfortable with volatility and build a sufficient fiat emergency fund of three to six months of expenses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do taxes work on crypto salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most jurisdictions, crypto received as salary is taxed as ordinary income at its fair market value on the date you receive it. When you later sell the crypto, any gain above that value is subject to capital gains tax."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which crypto should I receive my salary in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bitcoin is the most common choice for long-term accumulation. Ethereum appeals to those wanting DeFi exposure. Stablecoins like USDT or USDC are ideal for avoiding volatility while staying in the crypto ecosystem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the fees for converting salary to crypto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dedicated payroll services typically charge 1-2% per conversion. Manual exchange conversions range from 0.1% for maker orders to 0.5% for instant buy features. Choosing an efficient conversion path can save hundreds of dollars annually."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get paid in stablecoins instead?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, stablecoins like USDC and USDT are pegged to the US dollar, providing equivalent dollar value without crypto price volatility. This is popular for remote workers paid internationally, as transfers settle in minutes with low fees."
+      }
+    }
+  ]
+}
+</script>

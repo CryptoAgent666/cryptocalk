@@ -1,0 +1,117 @@
+---
+import CategoryHubPage from '../../../components/CategoryHubPage.astro';
+import SiteChrome from '../../../components/SiteChrome.astro';
+import {
+  getCategoryHubBySlug,
+  getCategoryHubs,
+  getCategoryHubUiCopy,
+  getCategorySlugs,
+  isCategorySlug,
+} from '../../../data/category-hubs';
+import { NON_DEFAULT_LANGS, getLocalizedPath, type Lang } from '../../../i18n/utils';
+import Layout from '../../../layouts/Layout.astro';
+
+const SITE_URL = 'https://cryptocalk.com';
+const LAST_UPDATED = '2026-02-21';
+
+export function getStaticPaths() {
+  return NON_DEFAULT_LANGS.flatMap((lang) =>
+    getCategorySlugs().map((category) => ({
+      params: { lang, category },
+    }))
+  );
+}
+
+const { lang, category: categoryParam } = Astro.params as { lang: Lang; category: string };
+
+if (!isCategorySlug(categoryParam)) {
+  throw new Error(`Unsupported localized category slug: ${categoryParam} (${lang})`);
+}
+
+const category = getCategoryHubBySlug(categoryParam, lang);
+if (!category) {
+  throw new Error(`Localized category data not found for: ${categoryParam} (${lang})`);
+}
+
+const relatedCategories = getCategoryHubs(lang)
+  .filter((item) => item.slug !== category.slug)
+  .slice(0, 4);
+
+const ui = getCategoryHubUiCopy(lang);
+const homeHref = getLocalizedPath('/', lang);
+const categoriesHref = `${homeHref}#categories`;
+const categoryPageUrl = `${SITE_URL}${category.href}`;
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${category.title} Calculators`,
+    description: category.metaDescription,
+    url: categoryPageUrl,
+    inLanguage: lang,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'CryptoCalk',
+      url: `${SITE_URL}${homeHref}`,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${category.title} calculators`,
+    numberOfItems: category.tools.length,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: category.tools.map((tool, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: tool.name,
+      url: `${SITE_URL}${tool.href}`,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: category.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: `${SITE_URL}${homeHref}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: category.title,
+        item: categoryPageUrl,
+      },
+    ],
+  },
+];
+---
+
+<Layout title={category.metaTitle} description={category.metaDescription} lang={lang}>
+  <SiteChrome lang={lang} currentPath={category.href}>
+    <CategoryHubPage
+      category={category}
+      relatedCategories={relatedCategories}
+      ui={ui}
+      homeHref={homeHref}
+      categoriesHref={categoriesHref}
+      lastUpdated={LAST_UPDATED}
+    />
+  </SiteChrome>
+  <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
+</Layout>

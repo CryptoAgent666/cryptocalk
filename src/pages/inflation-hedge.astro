@@ -1,0 +1,280 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import InflationHedgeCalculator from '../components/InflationHedgeCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Inflation Hedge Calculator — Crypto vs Fiat Comparison | CryptoCalk"
+  description="Free inflation hedge calculator. Compare crypto (BTC, ETH), stablecoins, gold, and S&P 500 against inflation in Turkey, Argentina, Nigeria, USA, and more. See how your savings erode."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/inflation-hedge" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/inflation-hedge" aria-current="page">Inflation Hedge Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Inflation Hedge Calculator</h1>
+          <p>Compare your savings against inflation across 8 countries. See how BTC, ETH, stablecoins, gold, and the S&P 500 perform as inflation hedges.</p>
+        </div>
+        <InflationHedgeCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Inflation Hedge Calculator</h2>
+        <p>Our free inflation hedge calculator lets you visualise how inflation erodes your savings over time and compare the performance of different asset classes as hedges. Whether you hold cash in Turkish lira, Nigerian naira, or US dollars, this tool shows you the real purchasing power of your money after inflation — and how crypto, gold, and equities stack up as alternatives.</p>
+        <ol>
+          <li><strong>Enter your savings amount</strong> — input the current value of cash savings you want to analyse, in your local currency or USD equivalent.</li>
+          <li><strong>Select your country</strong> — choose from 8 countries (Turkey, Argentina, Nigeria, USA, Russia, India, Brazil, UK) to apply the local inflation rate to your savings.</li>
+          <li><strong>Choose your time horizon</strong> — select how many years into the future you want to project (1, 3, 5, or 10 years).</li>
+          <li><strong>Compare asset classes</strong> — toggle Bitcoin, Ethereum, stablecoins with yield, gold, and S&P 500 to see how each performs against inflation over your chosen period.</li>
+          <li><strong>Review results</strong> — the calculator displays your savings' future purchasing power in real terms, the total value lost to inflation, and a side-by-side comparison of each asset class's inflation-adjusted performance.</li>
+        </ol>
+
+        <h2>Why Inflation Matters for Crypto Investors</h2>
+        <p>Inflation is the silent tax on savings. When prices rise faster than the return on your savings, your purchasing power declines even if the nominal number in your bank account stays the same. A 10% annual inflation rate means that $10,000 in savings buys only $9,000 worth of goods a year later. After five years at that rate, the same $10,000 buys only about $5,905 worth of goods — a 41% loss in real purchasing power without a single dollar leaving your account.</p>
+        <p>For investors in developing countries with persistently high inflation, this erosion is not an abstract concept — it is a daily economic reality. This is one of the primary drivers of cryptocurrency adoption in countries like Turkey, Argentina, and Nigeria, where citizens seek alternatives to rapidly depreciating local currencies. Even in developed economies, periods of elevated inflation (such as 2022-2023 in the US and Europe) have pushed investors to re-evaluate their exposure to cash and traditional fixed-income instruments.</p>
+        <p>Understanding inflation is essential context for evaluating any investment return. A cryptocurrency that gains 20% in a year sounds impressive, but if inflation in your country is 25%, you have actually lost purchasing power. Real returns — returns adjusted for inflation — are the only metric that truly reflects whether your wealth is growing or shrinking.</p>
+
+        <h2>Country Inflation Comparison</h2>
+        <p>Inflation rates vary dramatically around the world. The following table shows approximate annual consumer price inflation rates for the countries supported by our calculator:</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Country</th><th>Currency</th><th>Annual Inflation Rate</th><th>$10,000 After 5 Years</th><th>Real Value Lost</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Argentina</td><td>ARS</td><td>~100%</td><td>$313</td><td>$9,687 (96.9%)</td></tr>
+              <tr><td>Turkey</td><td>TRY</td><td>~50%</td><td>$1,317</td><td>$8,683 (86.8%)</td></tr>
+              <tr><td>Nigeria</td><td>NGN</td><td>~30%</td><td>$2,693</td><td>$7,307 (73.1%)</td></tr>
+              <tr><td>Russia</td><td>RUB</td><td>~9%</td><td>$6,499</td><td>$3,501 (35.0%)</td></tr>
+              <tr><td>India</td><td>INR</td><td>~5%</td><td>$7,738</td><td>$2,262 (22.6%)</td></tr>
+              <tr><td>Brazil</td><td>BRL</td><td>~4.5%</td><td>$7,994</td><td>$2,006 (20.1%)</td></tr>
+              <tr><td>UK</td><td>GBP</td><td>~4%</td><td>$8,154</td><td>$1,846 (18.5%)</td></tr>
+              <tr><td>USA</td><td>USD</td><td>~3%</td><td>$8,587</td><td>$1,413 (14.1%)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The contrast is stark. An Argentine saver holding local currency loses nearly 97% of purchasing power over five years at 100% inflation. Even a US saver at a relatively moderate 3% inflation rate loses over 14% of real value in the same period. These figures assume no return on the savings — just the pure erosion of sitting in cash.</p>
+
+        <h2>Is Bitcoin Really an Inflation Hedge?</h2>
+        <p>The narrative of Bitcoin as digital gold and an inflation hedge is one of the most debated topics in cryptocurrency. Proponents argue that Bitcoin's fixed supply of 21 million coins, combined with its programmatic issuance schedule and halving events, makes it inherently deflationary and therefore a natural hedge against fiat currency debasement.</p>
+        <p>The evidence, however, is mixed. Over long time horizons (5+ years), Bitcoin has vastly outperformed inflation in every country. An investor who purchased Bitcoin in 2015 or 2020 has seen returns that far exceed cumulative inflation over those periods. In this sense, Bitcoin has been an outstanding store of value for long-term holders.</p>
+        <p>In the short term, the picture is more complicated. During 2022, when US inflation peaked above 9%, Bitcoin fell approximately 65% from its all-time high. This negative correlation with inflation in the short run undermines the argument that Bitcoin acts as a real-time inflation hedge similar to Treasury Inflation-Protected Securities (TIPS) or commodities. Bitcoin's price is driven primarily by market sentiment, liquidity conditions, and risk appetite rather than inflation data releases.</p>
+        <p>The most defensible position is nuanced: Bitcoin is a long-term hedge against monetary debasement and currency depreciation, but not a short-term hedge against consumer price inflation. For citizens of countries with collapsing currencies, Bitcoin has provided a lifeline. For US or European investors worried about a few percentage points of inflation, Bitcoin's volatility makes it a poor substitute for inflation-indexed bonds.</p>
+
+        <h2>Stablecoins + Yield as an Alternative</h2>
+        <p>For investors in high-inflation countries who want crypto exposure without Bitcoin's volatility, stablecoins paired with DeFi or CeFi yield represent a compelling middle ground. Stablecoins like USDC, USDT, and DAI are pegged to the US dollar, which typically inflates at 2-4% per year — far less than the Turkish lira or Argentine peso.</p>
+        <p>By depositing stablecoins into lending protocols (Aave, Compound) or centralised yield platforms, investors can earn 4-10% APY on their dollar-denominated holdings. This effectively hedges against local currency inflation while generating a real return on top. A Turkish citizen earning 8% APY on USDC is earning a positive real return even against US inflation, and a massively positive real return relative to the 50%+ depreciation of the lira.</p>
+        <p>The risks of this strategy include smart contract exploits in DeFi, counterparty risk in CeFi platforms (as demonstrated by the Celsius and FTX collapses), stablecoin de-peg events, and regulatory uncertainty. However, for many people in high-inflation economies, these risks are weighed against the near-certainty of losing 30-100% of purchasing power per year by holding local currency.</p>
+
+        <h2>The Power of Compounding Against Inflation</h2>
+        <p>Compounding is the most powerful tool for preserving and growing wealth against inflation. When your returns are reinvested and begin generating their own returns, the growth becomes exponential over time. The formula for future value with compounding is:</p>
+        <div class="formula-block">
+          <code>Future Value = PV x (1 + r)^n</code>
+        </div>
+        <p>Where PV is your present value (initial investment), r is the annual return rate, and n is the number of years. The key insight is that even modest returns, when compounded over long periods, can dramatically outpace inflation.</p>
+        <p>Consider $10,000 invested at 8% APY (stablecoin lending) versus held in cash at 5% inflation. After 10 years, the investment grows to $21,589 in nominal terms, while $10,000 in cash retains purchasing power equivalent to only $5,987. The gap widens exponentially with time: after 20 years, the investment is worth $46,610 while cash purchasing power has eroded to $3,585. Compounding turns a modest 3% real return (8% yield minus 5% inflation) into a transformative wealth-building advantage.</p>
+
+        <h2>Crypto Adoption in High-Inflation Countries</h2>
+        <p>Cryptocurrency adoption rates are highest in countries experiencing significant currency instability. Survey data and on-chain analytics consistently show that citizens in high-inflation economies are among the world's most active cryptocurrency users, driven by practical necessity rather than speculation.</p>
+        <p>Turkey has one of the highest crypto ownership rates globally, with studies estimating that approximately 25.6% of the population owns or has used cryptocurrency. With the Turkish lira losing roughly half its value annually against the dollar, Turks have turned to Bitcoin, USDT, and other crypto assets as a practical means of preserving purchasing power.</p>
+        <p>Argentina presents a similar picture, with an estimated 18.9% crypto ownership rate. Argentines have a long history of dollarisation — holding US dollars as a hedge against peso devaluation — and cryptocurrency has become the digital-era extension of this practice. Peer-to-peer USDT trading volumes in Argentina are among the highest in Latin America.</p>
+        <p>Nigeria leads globally with approximately 32% crypto ownership, driven by a combination of high inflation, currency controls that restrict dollar access, and a large, tech-savvy young population. The naira's persistent depreciation against the dollar has made stablecoins particularly popular as an accessible store of value.</p>
+        <p>These adoption patterns demonstrate that cryptocurrency's value proposition is strongest where it is needed most. While developed-world investors debate whether Bitcoin is a good inflation hedge, millions of people in emerging markets are already using crypto as a practical survival tool against currency debasement.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>Is crypto a good hedge against inflation?</summary>
+          <p>Over long time horizons (5+ years), Bitcoin and Ethereum have significantly outperformed inflation globally. However, in the short term, crypto is highly volatile and may decline even when inflation is rising. Stablecoins earning yield provide a more predictable inflation hedge with lower volatility. The answer depends on your time horizon and risk tolerance.</p>
+        </details>
+
+        <details>
+          <summary>Which countries have the highest inflation?</summary>
+          <p>As of 2025, Argentina (~100%), Turkey (~50%), and Nigeria (~30%) are among the countries with the highest consumer price inflation rates. Venezuela and Zimbabwe also experience extreme inflation but are not included in our calculator. Even moderate inflation in the US (~3%) and UK (~4%) erodes purchasing power significantly over multi-year periods.</p>
+        </details>
+
+        <details>
+          <summary>How does inflation affect savings?</summary>
+          <p>Inflation reduces the purchasing power of cash savings. If inflation is 10% and your savings earn 0% interest, your money buys 10% less after one year. Over five years at 10% inflation, $10,000 in cash retains the purchasing power of only about $6,209. The higher the inflation rate, the faster this erosion accelerates.</p>
+        </details>
+
+        <details>
+          <summary>Can stablecoins protect against inflation?</summary>
+          <p>Stablecoins pegged to the US dollar protect against high local-currency inflation (e.g., Turkish lira, Argentine peso) by maintaining dollar purchasing power. When combined with DeFi or CeFi yield (4-10% APY), stablecoins can generate positive real returns even against US inflation. The main risks are smart contract exploits, counterparty risk, and de-peg events.</p>
+        </details>
+
+        <details>
+          <summary>Is gold or Bitcoin a better inflation hedge?</summary>
+          <p>Gold has a multi-thousand-year track record as a store of value and tends to perform well during periods of high inflation and economic uncertainty. Bitcoin has a shorter track record but has outperformed gold significantly in its 15-year history. Gold offers lower volatility and wider institutional acceptance, while Bitcoin offers higher potential returns with greater risk. Many advisors suggest holding both as complementary hedges.</p>
+        </details>
+
+        <details>
+          <summary>How do I calculate the real return on my investment?</summary>
+          <p>The real return is your nominal return minus the inflation rate. The precise formula is: Real Return = ((1 + Nominal Return) / (1 + Inflation Rate)) - 1. For example, if your investment earns 12% and inflation is 5%, your real return is (1.12/1.05) - 1 = 6.67%, not simply 12% - 5% = 7%. The difference is small at low rates but significant with high inflation.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/dca-calculator">DCA Calculator</a> — plan a dollar-cost averaging strategy to build positions gradually and reduce timing risk.</li>
+          <li><a href="/compound-calculator">Compound Interest Calculator</a> — see how compounding grows your crypto holdings over time.</li>
+          <li><a href="/staking-calculator">Staking Rewards Calculator</a> — estimate passive income from proof-of-stake staking.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h2 + h3 { margin-top: 16px; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p, .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content summary:hover { background: var(--color-bg-card-hover); }
+  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
+  .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
+  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Inflation Hedge Calculator",
+  "url": "https://cryptocalk.com/inflation-hedge",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free inflation hedge calculator. Compare crypto, stablecoins, gold, and S&P 500 against inflation across 8 countries to see how your savings erode."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is crypto a good hedge against inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Over long time horizons (5+ years), Bitcoin and Ethereum have significantly outperformed inflation globally. Short-term, crypto is highly volatile and may decline even when inflation rises. Stablecoins with yield provide a more predictable hedge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which countries have the highest inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of 2025, Argentina (~100%), Turkey (~50%), and Nigeria (~30%) are among the countries with the highest consumer price inflation rates. Even moderate inflation in the US (~3%) and UK (~4%) erodes purchasing power significantly over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does inflation affect savings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inflation reduces the purchasing power of cash savings. At 10% inflation with 0% interest, your money buys 10% less after one year. Over five years at 10%, $10,000 retains purchasing power of only about $6,209."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can stablecoins protect against inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stablecoins pegged to USD protect against high local-currency inflation by maintaining dollar purchasing power. Combined with DeFi/CeFi yield (4-10% APY), they can generate positive real returns. Risks include smart contract exploits and de-peg events."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is gold or Bitcoin a better inflation hedge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gold has a multi-thousand-year track record and lower volatility. Bitcoin has outperformed gold significantly in its 15-year history but with much greater risk. Many advisors suggest holding both as complementary hedges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate the real return on my investment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Real Return = ((1 + Nominal Return) / (1 + Inflation Rate)) - 1. For example, 12% nominal return with 5% inflation gives a real return of (1.12/1.05) - 1 = 6.67%, not simply 7%."
+      }
+    }
+  ]
+}
+</script>

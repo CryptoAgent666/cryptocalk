@@ -1,0 +1,320 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import RiskRewardCalculator from '../components/RiskRewardCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Risk-Reward Ratio Calculator — Evaluate Trade Setups | CryptoCalk"
+  description="Free risk-reward ratio calculator for crypto traders. Calculate R:R ratio, required win rate, and simulate 100-trade outcomes for any trade setup. Instant results, no signup."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/risk-reward-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/risk-reward-calculator" aria-current="page">Risk-Reward Ratio Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Risk-Reward Ratio Calculator</h1>
+          <p>Evaluate any trade setup by calculating the risk-reward ratio, minimum win rate for profitability, and simulated P&L across 100 trades at different win rates.</p>
+        </div>
+        <RiskRewardCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Risk-Reward Ratio Calculator</h2>
+        <p>Our free risk-reward calculator helps crypto traders evaluate trade setups before entering a position. By comparing the distance to your stop-loss against the distance to your take-profit, the calculator determines whether a trade is worth taking based on the potential reward relative to the risk involved.</p>
+        <ol>
+          <li><strong>Enter your entry price</strong> — the price at which you plan to open the trade. This is the reference point for all risk and reward calculations.</li>
+          <li><strong>Set your stop-loss price</strong> — the price where you will exit the trade to limit your loss. Place it below entry for long trades, or above entry for short trades. The calculator automatically detects the direction.</li>
+          <li><strong>Set your take-profit price</strong> — the target price where you plan to close the trade for a profit. Place it above entry for long trades, or below entry for short trades.</li>
+          <li><strong>Optionally enter your position size</strong> — in USD. When provided, the simulator shows P&L in dollar terms instead of price units, giving you a concrete view of potential outcomes.</li>
+          <li><strong>Read the results</strong> — view the R:R ratio with a color indicator, the required win rate to break even, and a simulation table showing expected P&L over 100 trades at six different win rates.</li>
+        </ol>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Instant R:R calculation</strong> — results update in real time as you type, with no need to click a button.</li>
+          <li><strong>Color-coded ratio indicator</strong> — green for favorable ratios (1:2 or better), yellow for neutral (1:1 to 1:2), and red for unfavorable setups (below 1:1).</li>
+          <li><strong>Visual R:R bar</strong> — a proportional bar chart that instantly shows the balance between risk and reward.</li>
+          <li><strong>Required win rate</strong> — shows the exact win percentage you need to break even with the given risk-reward ratio.</li>
+          <li><strong>100-trade simulation</strong> — a table projecting net P&L across 30%, 40%, 50%, 60%, 70%, and 80% win rates.</li>
+          <li><strong>Automatic direction detection</strong> — the calculator determines whether you are going long or short based on your stop-loss placement relative to entry.</li>
+          <li><strong>Optional position sizing</strong> — add a dollar amount to see risk, reward, and simulation results in USD.</li>
+        </ul>
+
+        <h2>What Is the Risk-Reward Ratio?</h2>
+        <p>The risk-reward ratio (R:R) compares the potential loss of a trade to its potential gain. It is one of the most important metrics in trading because it determines whether a strategy is mathematically profitable over many trades, regardless of the win rate.</p>
+        <p>A ratio of 1:2 means the potential reward is twice the potential risk. If you risk $100 on a trade with a 1:2 R:R, your expected profit target is $200. This setup allows you to be profitable even with a win rate below 50%, because each winning trade earns more than each losing trade costs.</p>
+        <p>Professional traders and risk managers consistently emphasize the importance of maintaining favorable risk-reward ratios. While no single trade outcome is guaranteed, a disciplined approach to R:R helps ensure that winning trades compensate for losing ones over time.</p>
+
+        <h3>Risk-Reward Ratio Formula</h3>
+        <div class="formula-block">
+          <code>R:R Ratio = (Take-Profit Price - Entry Price) / (Entry Price - Stop-Loss Price)</code>
+        </div>
+        <p>For a long trade with entry at $65,000, stop-loss at $63,000, and take-profit at $69,000:</p>
+        <div class="formula-block">
+          <code>R:R = ($69,000 - $65,000) / ($65,000 - $63,000) = $4,000 / $2,000 = 1:2</code>
+        </div>
+        <p>This means for every $1 of risk, you stand to gain $2 in reward.</p>
+
+        <h3>Required Win Rate Formula</h3>
+        <div class="formula-block">
+          <code>Required Win Rate = 1 / (1 + R:R Ratio) x 100%</code>
+        </div>
+        <p>For a 1:2 ratio, the required win rate is 1 / (1 + 2) = 33.33%. This means you only need to win one out of every three trades to break even. Any win rate above 33.33% is profitable with this R:R.</p>
+
+        <h2>How the Simulation Table Works</h2>
+        <p>The simulation table projects the expected outcome of 100 trades at six different win rates. For each win rate, it calculates the number of winning and losing trades, then multiplies them by the reward and risk amounts respectively. The net P&L tells you whether the strategy would be profitable at that win rate.</p>
+        <p>For instance, with a 1:2 R:R and a $10,000 position: at a 50% win rate, you would win 50 trades (earning $200 each, totaling $10,000) and lose 50 trades (losing $100 each, totaling $5,000), for a net profit of $5,000 over 100 trades.</p>
+        <p>This table helps you assess whether your actual win rate, based on your trading history, aligns with the minimum needed for profitability. A higher R:R ratio provides more room for error in your directional accuracy.</p>
+
+        <h2>Understanding R:R Quality Levels</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>R:R Ratio</th>
+                <th>Quality</th>
+                <th>Required Win Rate</th>
+                <th>Assessment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Below 1:1</td>
+                <td>Poor</td>
+                <td>Above 50%</td>
+                <td>You need to be right more often than wrong just to break even. Avoid unless your strategy has a proven high win rate.</td>
+              </tr>
+              <tr>
+                <td>1:1</td>
+                <td>Neutral</td>
+                <td>50%</td>
+                <td>Break-even requires a coin-flip accuracy. Trading fees will push you into net loss territory.</td>
+              </tr>
+              <tr>
+                <td>1:2</td>
+                <td>Good</td>
+                <td>33.3%</td>
+                <td>Widely considered the minimum standard for swing trading. Provides meaningful room for error.</td>
+              </tr>
+              <tr>
+                <td>1:3</td>
+                <td>Excellent</td>
+                <td>25%</td>
+                <td>Only need to win 1 in 4 trades. Ideal for trend-following strategies and breakout setups.</td>
+              </tr>
+              <tr>
+                <td>1:5+</td>
+                <td>Outstanding</td>
+                <td>Below 17%</td>
+                <td>Rare but highly favorable. Common in asymmetric setups like early-stage altcoin positions or major breakouts.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Why Risk-Reward Matters More Than Win Rate</h2>
+        <p>Many beginner traders focus solely on finding trades with high win rates, but the risk-reward ratio is equally, if not more, important. A strategy that wins 80% of the time but has a 1:0.2 R:R (risking $5 for every $1 of profit) would still lose money over time. Conversely, a strategy that only wins 35% of trades but maintains a 1:3 R:R can be highly profitable.</p>
+        <p>The relationship between win rate and risk-reward is mathematical. Professional traders optimize both variables, but when forced to choose, a favorable R:R ratio provides a larger margin of safety. It allows for consecutive losses without destroying the account, and it ensures that a few good trades can recover from a string of bad ones.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>What is a good risk-reward ratio for crypto trading?</summary>
+          <p>A risk-reward ratio of 1:2 or higher is generally considered good for most crypto trading strategies. This means your potential profit is at least twice your potential loss. With a 1:2 ratio, you only need to win about 33% of your trades to break even. However, the ideal ratio depends on your strategy and win rate. Scalpers may accept 1:1 or lower with higher win rates, while swing traders typically aim for 1:2 to 1:5.</p>
+        </details>
+
+        <details>
+          <summary>How do I improve my risk-reward ratio?</summary>
+          <p>There are three ways to improve your R:R: tighten your stop-loss (move it closer to entry), extend your take-profit target (move it further from entry), or find better entry points. Tightening your stop-loss increases R:R but may result in more stop-outs. A better approach is usually to wait for higher-quality entries where the stop-loss is naturally close to a support or resistance level.</p>
+        </details>
+
+        <details>
+          <summary>Does the calculator account for trading fees?</summary>
+          <p>This calculator shows the raw risk-reward ratio without factoring in trading fees, slippage, or funding rates. In practice, fees reduce your net profit on winners and increase your net loss on losers. For spot trades on major exchanges, fees are typically 0.1% per trade (0.2% round trip). For precise fee-adjusted results, use our <a href="/break-even-calculator">Break-Even Calculator</a>.</p>
+        </details>
+
+        <details>
+          <summary>What does the required win rate mean?</summary>
+          <p>The required win rate is the minimum percentage of trades you need to win to break even over a large number of trades. It is derived directly from the R:R ratio using the formula: Win Rate = 1 / (1 + R:R). If your actual win rate is above this threshold, you are expected to be profitable over time. If it is below, you will lose money regardless of individual wins.</p>
+        </details>
+
+        <details>
+          <summary>Should I always aim for the highest R:R ratio possible?</summary>
+          <p>Not necessarily. While higher R:R ratios require lower win rates to be profitable, they often come with lower win rates naturally, because more ambitious targets are hit less frequently. The goal is to find the optimal balance between R:R and win rate for your specific strategy. A 1:5 setup is theoretically great, but if your strategy only hits that target 10% of the time, a 1:2 with a 50% hit rate would be more profitable.</p>
+        </details>
+
+        <details>
+          <summary>Can I use this calculator for short positions?</summary>
+          <p>Yes. The calculator automatically detects whether you are going long or short based on your stop-loss placement relative to your entry price. If your stop-loss is above entry, it detects a short trade. If your stop-loss is below entry, it detects a long trade. The R:R calculation works identically for both directions — it measures the absolute distance to stop-loss versus take-profit.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/tp-sl-calculator">Take Profit / Stop Loss Calculator</a> — set optimal TP and SL levels with visual price scale and multi-target support.</li>
+          <li><a href="/position-size-calculator">Position Size Calculator</a> — determine the right position size based on your risk tolerance and stop-loss distance.</li>
+          <li><a href="/profit-calculator">Profit Calculator</a> — calculate potential profit and ROI for any crypto trade.</li>
+          <li><a href="/break-even-calculator">Break-Even Calculator</a> — find the exact price where you cover all trading fees and commissions.</li>
+          <li><a href="/leverage-calculator">Leverage Calculator</a> — understand how leverage amplifies both profits and risks.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p, .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content summary:hover { background: var(--color-bg-card-hover); }
+  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
+  .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
+  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Risk-Reward Ratio Calculator",
+  "url": "https://cryptocalk.com/risk-reward-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free risk-reward ratio calculator for crypto traders. Calculate R:R ratio, required win rate, and simulate 100-trade outcomes for any trade setup."
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good risk-reward ratio for crypto trading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A risk-reward ratio of 1:2 or higher is generally considered good for most crypto trading strategies. This means your potential profit is at least twice your potential loss. With a 1:2 ratio, you only need to win about 33% of your trades to break even."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I improve my risk-reward ratio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are three ways to improve your R:R: tighten your stop-loss, extend your take-profit target, or find better entry points. Tightening your stop-loss increases R:R but may result in more stop-outs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator account for trading fees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This calculator shows the raw risk-reward ratio without factoring in trading fees, slippage, or funding rates. For spot trades on major exchanges, fees are typically 0.1% per trade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the required win rate mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The required win rate is the minimum percentage of trades you need to win to break even over a large number of trades. It is derived directly from the R:R ratio using the formula: Win Rate = 1 / (1 + R:R)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I always aim for the highest R:R ratio possible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. While higher R:R ratios require lower win rates to be profitable, they often come with lower win rates naturally. The goal is to find the optimal balance between R:R and win rate for your specific strategy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this calculator for short positions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The calculator automatically detects whether you are going long or short based on your stop-loss placement relative to your entry price. The R:R calculation works identically for both directions."
+      }
+    }
+  ]
+}
+</script>

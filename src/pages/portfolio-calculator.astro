@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import PortfolioCalculator from '../components/PortfolioCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto Portfolio Allocation Calculator — Balance & Rebalance | CryptoCalk"
+  description="Free portfolio allocation calculator. Visualize asset weights, set target allocations, and get rebalancing suggestions for your crypto portfolio."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/portfolio-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/portfolio-calculator" aria-current="page">Portfolio Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto Portfolio Allocation Calculator</h1>
+          <p>Visualize your portfolio allocation, set target weights, and see rebalancing suggestions. Choose from preset portfolios or build your own.</p>
+        </div>
+        <PortfolioCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Portfolio Allocation Calculator</h2>
+        <p>Our free portfolio calculator helps you visualize your current crypto holdings, set target allocation percentages, and get precise rebalancing instructions. Whether you are building a new portfolio from scratch or adjusting an existing one, this tool makes it easy to maintain disciplined asset allocation.</p>
+        <ol>
+          <li><strong>Add your assets</strong> — search for cryptocurrencies and enter the current value of each holding in USD. You can add as many assets as you like.</li>
+          <li><strong>View current allocation</strong> — see each asset's weight as a percentage of your total portfolio, with a visual breakdown.</li>
+          <li><strong>Set target weights</strong> — choose a preset allocation strategy (Conservative, Balanced, Aggressive) or define your own custom targets that add up to 100%.</li>
+          <li><strong>Get rebalancing actions</strong> — the calculator shows exactly which assets to buy or sell and by how much to reach your target allocation.</li>
+        </ol>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>Preset portfolios</strong> — choose from Conservative (BTC-heavy), Balanced, or Aggressive (altcoin-heavy) starting points.</li>
+          <li><strong>Custom targets</strong> — set any allocation percentages you want with real-time validation.</li>
+          <li><strong>Buy-only rebalancing</strong> — optionally add new capital and rebalance without selling existing positions (tax-efficient).</li>
+          <li><strong>Visual allocation chart</strong> — see your current vs target allocation at a glance.</li>
+          <li><strong>Live prices</strong> — asset values update with real-time CoinGecko data.</li>
+        </ul>
+
+        <h2>Why Portfolio Allocation Matters in Crypto</h2>
+        <p>Research across traditional and crypto markets consistently shows that asset allocation is the single largest determinant of portfolio returns over time — more important than individual asset selection or market timing. In the highly volatile crypto market, proper allocation becomes even more critical because individual assets can drop 50-90% in bear markets.</p>
+        <p>A well-allocated portfolio balances risk and reward by spreading investments across assets with different risk profiles. Bitcoin and Ethereum serve as the "blue chips" of crypto with relatively lower volatility, while smaller altcoins offer higher potential returns but with significantly more risk. Stablecoins provide a buffer and liquidity for buying opportunities during dips.</p>
+
+        <h3>Common Crypto Allocation Strategies</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Strategy</th><th>BTC</th><th>ETH</th><th>Large Alts</th><th>Small Caps</th><th>Stablecoins</th><th>Risk Level</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Conservative</td><td>50%</td><td>30%</td><td>0%</td><td>0%</td><td>20%</td><td>Low</td></tr>
+              <tr><td>Balanced</td><td>40%</td><td>25%</td><td>15%</td><td>10%</td><td>10%</td><td>Medium</td></tr>
+              <tr><td>Growth</td><td>30%</td><td>25%</td><td>25%</td><td>15%</td><td>5%</td><td>Medium-High</td></tr>
+              <tr><td>Aggressive</td><td>20%</td><td>20%</td><td>20%</td><td>30%</td><td>10%</td><td>High</td></tr>
+              <tr><td>Degen</td><td>10%</td><td>10%</td><td>20%</td><td>55%</td><td>5%</td><td>Very High</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The right strategy depends on your risk tolerance, investment timeline, and financial goals. Younger investors with a longer time horizon may prefer aggressive allocations, while those closer to needing the funds should lean conservative.</p>
+
+        <h2>How Portfolio Rebalancing Works</h2>
+        <p>Rebalancing is the process of buying or selling assets to return your portfolio to its target allocation. Over time, assets that outperform will grow to represent a larger share of your portfolio, while underperformers shrink. Without rebalancing, your portfolio naturally drifts toward a riskier allocation dominated by whichever asset has risen the most.</p>
+
+        <h3>Rebalancing Methods</h3>
+        <ul>
+          <li><strong>Calendar rebalancing</strong> — rebalance on a fixed schedule (monthly, quarterly, or annually). Simple to implement and avoids over-trading.</li>
+          <li><strong>Threshold rebalancing</strong> — rebalance whenever any asset drifts more than 5-10% from its target weight. More responsive to market moves but requires regular monitoring.</li>
+          <li><strong>Buy-only rebalancing</strong> — instead of selling overweight assets, direct new investments to underweight assets. This is the most tax-efficient method since you avoid triggering capital gains events.</li>
+        </ul>
+
+        <h3>Rebalancing Formula</h3>
+        <div class="formula-block">
+          <code>Trade Amount = (Target % - Current %) × Total Portfolio Value</code>
+        </div>
+        <p>If your target for ETH is 25% but it currently represents 35% of a $10,000 portfolio, you would sell $1,000 worth of ETH (10% × $10,000) and redistribute it to underweight assets.</p>
+
+        <h2>Portfolio Diversification Guidelines</h2>
+        <p>Diversification reduces the impact of any single asset's poor performance on your overall portfolio. However, in crypto, many assets are highly correlated — when Bitcoin drops, most altcoins drop harder. True diversification requires thoughtful asset selection across different categories:</p>
+        <ul>
+          <li><strong>Store of value</strong> — Bitcoin (BTC) serves as the foundation.</li>
+          <li><strong>Smart contract platforms</strong> — Ethereum (ETH), Solana (SOL), Avalanche (AVAX) provide exposure to different ecosystems.</li>
+          <li><strong>DeFi tokens</strong> — protocol tokens like AAVE, UNI, or MKR for decentralized finance exposure.</li>
+          <li><strong>Infrastructure</strong> — Layer 2 solutions, oracles (LINK), and cross-chain protocols.</li>
+          <li><strong>Stablecoins</strong> — USDT, USDC, or DAI for stability and buying-dip opportunities.</li>
+        </ul>
+        <p>A well-diversified crypto portfolio typically has 5-10 assets. Fewer than 4 concentrates risk, while more than 15 makes it difficult to track and may dilute returns from your best picks.</p>
+
+        <h2>Common Portfolio Mistakes to Avoid</h2>
+        <ul>
+          <li><strong>No rebalancing at all</strong> — letting winners run indefinitely creates concentration risk. The 2021 cycle showed that today's top performer can lose 90% in the next bear market.</li>
+          <li><strong>Over-diversifying into 30+ coins</strong> — spreading capital too thin means even a 10x on one asset barely moves the portfolio. Focus on quality over quantity.</li>
+          <li><strong>100% altcoins, 0% BTC/ETH</strong> — altcoins can outperform in bull markets but typically lose 90-99% in bear markets. A core BTC/ETH position provides stability.</li>
+          <li><strong>No stablecoin allocation</strong> — having 5-20% in stablecoins gives you liquidity to buy during major dips without selling other positions at a loss.</li>
+          <li><strong>Emotional rebalancing</strong> — selling everything that has dropped and buying everything that has pumped is the opposite of disciplined rebalancing.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>How often should I rebalance my crypto portfolio?</summary>
+          <p>Most investors rebalance monthly or quarterly. Calendar-based rebalancing is simple and effective. Some prefer threshold-based rebalancing — only adjusting when an asset drifts 5-10% from its target. In highly volatile crypto markets, quarterly rebalancing strikes a good balance between maintaining targets and avoiding excessive trading fees.</p>
+        </details>
+
+        <details>
+          <summary>What is a good diversification level for crypto?</summary>
+          <p>Having 5-10 assets with no single position over 40% of the portfolio provides good diversification. A core of BTC (30-50%) and ETH (20-30%) with smaller allocations to altcoins and stablecoins works well for most investors. Over-diversifying into 20+ coins can dilute returns and make tracking difficult.</p>
+        </details>
+
+        <details>
+          <summary>Should I include stablecoins in my portfolio?</summary>
+          <p>Yes, maintaining a 5-20% stablecoin allocation is recommended. Stablecoins provide stability during downturns, liquidity for buying opportunities, and can earn yield through lending or staking (typically 3-8% APY). They also reduce overall portfolio volatility.</p>
+        </details>
+
+        <details>
+          <summary>What is buy-only rebalancing?</summary>
+          <p>Buy-only rebalancing means directing new investments into underweight assets instead of selling overweight ones. This avoids triggering taxable events from selling and reduces trading fees. It works best when you regularly add new capital to your portfolio through DCA or periodic deposits.</p>
+        </details>
+
+        <details>
+          <summary>How do I handle a coin that has dropped 80%?</summary>
+          <p>First, evaluate whether the fundamentals have changed. If you still believe in the project, it may be underweight and a rebalancing buy. If fundamentals have deteriorated, consider selling even at a loss to redeploy capital into stronger assets. Tax-loss harvesting can offset gains from profitable trades.</p>
+        </details>
+
+        <details>
+          <summary>Is it better to hold more BTC or altcoins?</summary>
+          <p>It depends on your risk tolerance. BTC is the safest crypto asset with the lowest drawdowns in bear markets (typically -70% vs -90% for altcoins). Altcoins offer higher potential returns in bull markets but carry significantly more risk. A balanced approach with 40-60% BTC and 20-40% altcoins is common for most investors.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/dca-calculator">DCA Calculator</a> — simulate dollar-cost averaging strategies with historical data.</li>
+          <li><a href="/profit-calculator">Crypto Profit Calculator</a> — calculate profit and loss for individual trades.</li>
+          <li><a href="/staking-calculator">Staking Rewards Calculator</a> — estimate yield from staking your portfolio assets.</li>
+          <li><a href="/compound-calculator">Compound Interest Calculator</a> — project long-term growth with compounding.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content summary:hover { background: var(--color-bg-card-hover); }
+  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
+  .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
+  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Crypto Portfolio Allocation Calculator",
+  "url": "https://cryptocalk.com/portfolio-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free portfolio allocation calculator. Visualize asset weights, set target allocations, and get rebalancing suggestions."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How often should I rebalance my crypto portfolio?", "acceptedAnswer": { "@type": "Answer", "text": "Most investors rebalance monthly or quarterly. Threshold-based rebalancing when an asset drifts 5-10% from target is also effective." } },
+    { "@type": "Question", "name": "What is a good diversification level for crypto?", "acceptedAnswer": { "@type": "Answer", "text": "5-10 assets with no single position over 40% provides good diversification. A core of BTC and ETH with smaller altcoin allocations works well." } },
+    { "@type": "Question", "name": "Should I include stablecoins in my portfolio?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, maintaining 5-20% in stablecoins provides stability, liquidity for buying dips, and can earn 3-8% APY through lending." } },
+    { "@type": "Question", "name": "What is buy-only rebalancing?", "acceptedAnswer": { "@type": "Answer", "text": "Buy-only rebalancing directs new investments into underweight assets instead of selling overweight ones, avoiding taxable events and trading fees." } },
+    { "@type": "Question", "name": "How do I handle a coin that has dropped 80%?", "acceptedAnswer": { "@type": "Answer", "text": "Evaluate fundamentals. If still strong, it may be a rebalancing buy. If deteriorated, consider selling for tax-loss harvesting and redeploy capital." } },
+    { "@type": "Question", "name": "Is it better to hold more BTC or altcoins?", "acceptedAnswer": { "@type": "Answer", "text": "Depends on risk tolerance. BTC has lower drawdowns (-70% vs -90% for alts). A balanced approach with 40-60% BTC and 20-40% altcoins is common." } }
+  ]
+}
+</script>

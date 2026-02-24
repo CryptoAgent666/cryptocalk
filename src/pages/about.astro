@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Mail, Briefcase, Code, Award } from 'lucide-react';
+---
+
+<Layout
+  title="About Us | CryptoCalk"
+  description="Learn about CryptoCalk and Konstantin Iakovlev, the founder and developer behind our suite of fast, accurate crypto calculators."
+  lang="en"
+>
+  <div class="about-container">
+    <header class="about-header">
+      <h1>About CryptoCalk</h1>
+      <p>Building the fastest, most reliable financial tools for the crypto community.</p>
+    </header>
+
+    <div class="about-content">
+      <section class="mission-section">
+        <h2>Our Mission</h2>
+        <p>CryptoCalk was built with a single goal: to provide the cryptocurrency community with <strong>lightning-fast, accurate, and privacy-focused</strong> calculation tools. In a space cluttered with slow, ad-heavy websites, we believed there was a need for a clean, professional alternative.</p>
+        <p>Whether you are calculating mining profitability, forecasting your DCA strategy, or estimating your tax liability, our tools are designed to load instantly and run entirely in your browser. No signups, no data harvesting — just math.</p>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="author-section">
+        <h2>Meet the Creator</h2>
+        <div class="author-card">
+          <div class="author-avatar-col">
+            <img src="/images/author_avatar.jpg" alt="Konstantin Iakovlev" class="author-avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIwIDIxdi0yYTRgNCAwIDAwLTQtNEg4YTRgNCAwIDAwLTRgNHYyIj48L3BhdGg+PGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ij48L2NpcmNsZT48L3N2Zz4='" />
+            <div class="author-social">
+              <a href="/contact" class="btn-primary btn-sm">Contact Me</a>
+            </div>
+          </div>
+          <div class="author-bio-col">
+            <h3>Konstantin Iakovlev</h3>
+            <span class="author-role">Founder & Lead Vibecoder</span>
+            
+            <p>Hi! I'm Konstantin, a passionate vibecoder with a deep professional background in finance, cryptocurrency, and SEO. I created CryptoCalk combining my expertise in financial markets, technical SEO, and modern web creation to build tools that truly matter.</p>
+            
+            <p>I noticed that most crypto calculators online were either outdated, incredibly slow, or plagued with intrusive ads. Using an AI-driven vibecoding approach, I built CryptoCalk to create an ecosystem of calculators that load instantly, provide real value, and never compromise user privacy.</p>
+
+            <ul class="author-highlights">
+              <li>
+                <div class="highlight-icon"><Briefcase size={18} /></div>
+                <div>
+                  <strong>Finance & Crypto Background</strong>
+                  <span>Deep understanding of yields, tokenomics, loans, and trading mechanics, translating complex math into simple tools.</span>
+                </div>
+              </li>
+              <li>
+                <div class="highlight-icon"><Award size={18} /></div>
+                <div>
+                  <strong>SEO Expertise</strong>
+                  <span>Specialized in structuring and optimizing complex financial data into universally understandable, highly-ranked web content.</span>
+                </div>
+              </li>
+              <li>
+                <div class="highlight-icon"><Code size={18} /></div>
+                <div>
+                  <strong>Vibecoding Architecture</strong>
+                  <span>Leveraging advanced AI workflows to rapidly architect and deploy lightning-fast, static, privacy-first applications.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  .about-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .about-header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+  .about-header p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .mission-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 16px;
+  }
+  .mission-section strong {
+    color: var(--color-text);
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--color-text);
+  }
+  
+  .divider {
+    height: 1px;
+    background: var(--color-border);
+    width: 30%;
+    margin: 10px auto;
+  }
+  
+  .author-card {
+    display: flex;
+    gap: 40px;
+    background: var(--color-bg-card);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .author-avatar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    width: 200px;
+  }
+  
+  .author-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--color-bg);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    background-color: var(--color-bg-tertiary); /* fallback for svg icon */
+    padding: 2px;
+  }
+  
+  .author-social {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn-sm {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 999px;
+    text-decoration: none;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn-sm:hover {
+    background: var(--color-primary-dark);
+  }
+  
+  .author-bio-col {
+    flex: 1;
+  }
+  
+  .author-bio-col h3 {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+  
+  .author-role {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+  }
+  
+  .author-bio-col p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  
+  .author-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .author-highlights li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .highlight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+  
+  .author-highlights strong {
+    display: block;
+    color: var(--color-text);
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+  
+  .author-highlights span {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .author-card {
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      gap: 32px;
+    }
+    .author-avatar-col {
+      width: 100%;
+    }
+    .author-bio-col {
+      text-align: center;
+    }
+    .author-highlights li {
+      text-align: left;
+    }
+  }
+</style>

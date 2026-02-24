@@ -1,0 +1,319 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import VestingCalculator from '../components/VestingCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Token Vesting Schedule Calculator — Unlock Timeline Tool | CryptoCalk"
+  description="Free token vesting calculator. Visualize token unlock schedules with cliff periods, TGE unlocks, and monthly/quarterly vesting. Calculate sell pressure and plan your exit strategy."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/vesting-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/vesting-calculator" aria-current="page">Vesting Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Token Vesting Schedule Calculator</h1>
+          <p>Visualize token unlock schedules with cliff periods, TGE unlocks, and vesting timelines. Calculate cumulative unlocks, sell pressure, and plan your strategy around token releases.</p>
+        </div>
+        <VestingCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Vesting Calculator</h2>
+        <ol>
+          <li><strong>Enter total token allocation</strong> — The number of tokens you received or the total allocation you're analyzing (e.g., from a presale, team allocation, or advisor grant).</li>
+          <li><strong>Set the token price</strong> — Enter the current market price per token. This is used to calculate dollar values for each unlock event.</li>
+          <li><strong>Configure TGE unlock percentage</strong> — Choose what percentage of tokens unlock immediately at the Token Generation Event. Common values range from 0% (fully locked) to 25%.</li>
+          <li><strong>Set the cliff period</strong> — The number of months before any vesting begins. During the cliff, zero additional tokens unlock beyond the TGE allocation.</li>
+          <li><strong>Define vesting duration</strong> — The total months over which the remaining tokens will unlock after the cliff ends. Typical durations range from 6 to 48 months.</li>
+          <li><strong>Choose unlock frequency</strong> — Select monthly, quarterly, or linear (daily) vesting. Monthly and quarterly create step-function unlocks, while linear provides continuous gradual release.</li>
+        </ol>
+
+        <h2>What Is Token Vesting?</h2>
+        <p>Token vesting is a mechanism that gradually releases cryptocurrency tokens to their holders over a predetermined schedule rather than distributing them all at once. It is widely used in the crypto industry for team allocations, investor tokens, advisor grants, and community rewards. The primary purpose is to align long-term incentives by preventing large holders from dumping their entire allocation on the market immediately after a token launch.</p>
+        <p>Vesting schedules typically consist of several components: the TGE (Token Generation Event) unlock, which releases a portion immediately; the cliff period, during which no tokens are released; and the vesting period, during which tokens are gradually unlocked at regular intervals. Each of these parameters significantly affects both the token's market dynamics and the holder's liquidity options.</p>
+
+        <h2>Key Vesting Terms Explained</h2>
+        <h3>TGE Unlock</h3>
+        <p>The TGE unlock is the initial percentage of tokens released at the moment the token becomes tradeable. For public sale participants, TGE unlocks typically range from 10% to 100%, depending on the project. Private sale investors usually receive lower TGE unlocks (5-20%) to prevent immediate selling. A 0% TGE means all tokens remain locked until the cliff period ends.</p>
+
+        <h3>Cliff Period</h3>
+        <p>The cliff is a waiting period after TGE during which no additional tokens are released. It acts as a commitment mechanism — if you leave the project or sell before the cliff ends, you forfeit unvested tokens (in employee/contributor contexts). Common cliff periods are 3, 6, or 12 months. For team tokens, 12-month cliffs are standard to demonstrate long-term commitment.</p>
+
+        <h3>Vesting Duration</h3>
+        <p>After the cliff ends, tokens begin unlocking according to the vesting schedule. The duration can range from 6 months for aggressive short-term unlocks to 48 months or more for conservative long-term vesting. The total schedule length (cliff + vesting) determines when the last tokens become available.</p>
+
+        <h3>Unlock Frequency</h3>
+        <p>Tokens can unlock on different schedules: monthly (most common), quarterly (every 3 months), or linearly (continuously, often approximated as daily). Monthly unlocking creates predictable events where new supply enters the market, while linear vesting distributes sell pressure more evenly.</p>
+
+        <h2>How Token Unlocks Affect Price</h2>
+        <p>Token unlock events can significantly impact market prices due to the sudden increase in circulating supply. When a large batch of previously locked tokens becomes available for trading, holders who want to take profits or realize their investment gains may sell, creating downward price pressure. The magnitude of this impact depends on several factors:</p>
+        <ul>
+          <li><strong>Unlock size relative to circulating supply</strong> — A 5% unlock when 80% of tokens are already circulating has minimal impact. A 10% unlock when only 20% is circulating can be dramatic.</li>
+          <li><strong>Who receives the unlocked tokens</strong> — Team and investor unlocks tend to create more sell pressure than community or ecosystem unlocks, as early investors are more likely to realize profits.</li>
+          <li><strong>Market conditions</strong> — During bull markets, sell pressure from unlocks is often absorbed by new buying demand. In bear markets, even small unlocks can accelerate price declines.</li>
+          <li><strong>Token utility and staking</strong> — If unlocked tokens can be staked or used in governance, holders may choose to keep them rather than sell, reducing actual sell pressure.</li>
+        </ul>
+
+        <h2>Common Vesting Schedules by Category</h2>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>TGE Unlock</th>
+                <th>Cliff</th>
+                <th>Vesting</th>
+                <th>Total Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Team / Founders</td>
+                <td>0%</td>
+                <td>12 months</td>
+                <td>24-36 months</td>
+                <td>36-48 months</td>
+              </tr>
+              <tr>
+                <td>Private Sale</td>
+                <td>5-15%</td>
+                <td>3-6 months</td>
+                <td>12-24 months</td>
+                <td>15-30 months</td>
+              </tr>
+              <tr>
+                <td>Public Sale</td>
+                <td>20-100%</td>
+                <td>0-3 months</td>
+                <td>3-12 months</td>
+                <td>3-15 months</td>
+              </tr>
+              <tr>
+                <td>Advisors</td>
+                <td>0%</td>
+                <td>6-12 months</td>
+                <td>18-24 months</td>
+                <td>24-36 months</td>
+              </tr>
+              <tr>
+                <td>Ecosystem / Community</td>
+                <td>5-10%</td>
+                <td>0-3 months</td>
+                <td>24-48 months</td>
+                <td>24-51 months</td>
+              </tr>
+              <tr>
+                <td>Airdrop</td>
+                <td>50-100%</td>
+                <td>0 months</td>
+                <td>0-6 months</td>
+                <td>0-6 months</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Using Vesting Data for Trading Decisions</h2>
+        <p>Smart traders and investors monitor upcoming token unlock events as part of their analysis. Large unlock events can create predictable sell pressure, and understanding the schedule helps you make informed decisions about entry and exit timing.</p>
+        <p>Before buying a token, check what percentage of total supply is currently circulating versus locked. A token with only 10% circulating supply will face significant dilution as the remaining 90% unlocks over time. Even if the project is successful, the constant influx of new tokens can suppress price growth. Compare this to a fully circulated token where all potential sell pressure has already been absorbed by the market.</p>
+        <p>For projects you're already invested in, track upcoming unlock dates and plan accordingly. Some traders reduce positions before large unlock events and re-enter afterward if the project fundamentals remain strong. Others view post-unlock dips as buying opportunities, knowing that the selling pressure is temporary.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>What is a token vesting schedule?</summary>
+          <p>A token vesting schedule is a predetermined timeline that controls when locked tokens become available to their holders. Instead of receiving all tokens at once, holders gradually gain access over weeks, months, or years. This mechanism is used for team tokens, investor allocations, advisor grants, and sometimes community rewards. The schedule typically includes a TGE (immediate) unlock, a cliff period with no releases, and then regular unlocks until all tokens are distributed.</p>
+        </details>
+
+        <details>
+          <summary>Why do crypto projects use vesting?</summary>
+          <p>Vesting serves multiple purposes: it prevents early investors and team members from dumping tokens immediately after launch, which would crash the price. It aligns incentives by ensuring key stakeholders remain committed to the project's long-term success. It provides a more predictable token supply schedule for the market. And it helps maintain healthy tokenomics by controlling inflation. Without vesting, many tokens would see massive sell-offs at launch as all holders rush to take profits simultaneously.</p>
+        </details>
+
+        <details>
+          <summary>What happens when tokens unlock?</summary>
+          <p>When tokens unlock, they move from a locked state to a freely tradeable state. The holder can now sell, transfer, stake, or use them in DeFi protocols. In practice, not all unlocked tokens are sold immediately — some holders may continue to hold or stake them. However, large unlock events often create temporary downward price pressure as some holders sell. The actual impact depends on the unlock size relative to circulating supply, market conditions, and holder profiles.</p>
+        </details>
+
+        <details>
+          <summary>How does cliff period work?</summary>
+          <p>The cliff period is a waiting time after the Token Generation Event during which no tokens vest (beyond the initial TGE unlock, if any). For example, with a 6-month cliff and 10% TGE: you receive 10% of tokens at TGE, then nothing for 6 months. After the cliff ends, regular vesting begins (monthly, quarterly, or linear). In employment contexts, if someone leaves before the cliff ends, they typically forfeit all unvested tokens. The cliff creates a minimum commitment period.</p>
+        </details>
+
+        <details>
+          <summary>What is the difference between linear and monthly vesting?</summary>
+          <p>Monthly vesting releases a fixed batch of tokens once per month, creating discrete unlock events. For example, 100,000 tokens over 24 months means 4,167 tokens unlock on the same day each month. Linear (daily) vesting continuously releases tokens — in the same example, roughly 137 tokens would unlock every day. Monthly creates larger, more noticeable sell pressure events, while linear distributes the pressure more evenly. Most projects use monthly for simplicity, but some DeFi protocols implement linear vesting through smart contracts.</p>
+        </details>
+
+        <details>
+          <summary>How do I find a token's vesting schedule?</summary>
+          <p>Check the project's official documentation, whitepaper, or tokenomics page first. Many projects publish detailed allocation and vesting breakdowns. Third-party tools like Token Unlocks, CryptoRank, and Messari also aggregate vesting data for popular tokens. For on-chain verification, you can check the vesting smart contract on the relevant block explorer to see locked balances and release schedules. Always cross-reference multiple sources, as published schedules occasionally change through governance votes.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/airdrop-calculator">Airdrop Calculator</a> — Calculate the value and tax implications of received token airdrops.</li>
+          <li><a href="/market-cap-comparator">Market Cap Comparator</a> — Compare token valuations and project hypothetical prices at different market caps.</li>
+          <li><a href="/roi-calculator">ROI Calculator</a> — Calculate your total and annualized return on cryptocurrency investments.</li>
+          <li><a href="/profit-calculator">Profit Calculator</a> — Determine your exact profit or loss including all trading fees.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h2 + h3 { margin-top: 16px; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p, .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content summary:hover { background: var(--color-bg-card-hover); }
+  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
+  .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
+  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Token Vesting Schedule Calculator",
+  "url": "https://cryptocalk.com/vesting-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free token vesting calculator. Visualize unlock schedules with cliff periods, TGE unlocks, and monthly/quarterly vesting."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a token vesting schedule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A token vesting schedule is a predetermined timeline that controls when locked tokens become available to their holders. It typically includes a TGE unlock, a cliff period, and regular unlocks until all tokens are distributed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do crypto projects use vesting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vesting prevents early investors and team members from dumping tokens after launch, aligns long-term incentives, provides predictable token supply, and helps maintain healthy tokenomics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when tokens unlock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlocked tokens move from a locked to freely tradeable state. Not all are sold immediately, but large unlock events often create temporary downward price pressure as some holders sell."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does cliff period work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The cliff is a waiting time after TGE during which no tokens vest beyond the initial unlock. After the cliff ends, regular vesting begins. In employment contexts, leaving before the cliff means forfeiting unvested tokens."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between linear and monthly vesting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly vesting releases a fixed batch of tokens once per month. Linear vesting continuously releases tokens daily. Monthly creates larger sell pressure events, while linear distributes pressure more evenly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find a token's vesting schedule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check the project's official documentation or tokenomics page. Third-party tools like Token Unlocks and CryptoRank aggregate vesting data. For on-chain verification, check the vesting smart contract on a block explorer."
+      }
+    }
+  ]
+}
+</script>

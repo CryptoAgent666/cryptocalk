@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import IcoRoiCalculator from '../components/IcoRoiCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="ico-roi-calculator"
+  title="ICO / IDO ROI Calculator"
+  description="Calculate current and ATH ROI for ICO or IDO allocations using token amount, entry price, and market prices."
+>
+  <IcoRoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

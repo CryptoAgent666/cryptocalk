@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import CompoundInterestCalculator from '../components/CompoundInterestCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto Compound Interest Calculator — Staking & Yield Growth | CryptoCalk"
+  description="Free compound interest calculator for crypto staking and yield farming. See how daily, weekly, or monthly compounding grows your investment over time."
+  lang="en"
+  canonical="/compound-calculator"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/compound-interest-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/compound-interest-calculator" aria-current="page">Compound Interest Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto Compound Interest Calculator</h1>
+          <p>See the power of compounding on your crypto staking, yield farming, or savings. Compare daily vs monthly compounding and track year-by-year growth.</p>
+        </div>
+        <CompoundInterestCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Compound Interest Calculator</h2>
+        <p>Our crypto compound interest calculator helps you visualize how your investments can grow over time with the power of compounding. Follow these simple steps to get started:</p>
+        <ol>
+          <li><strong>Enter your initial principal</strong> — The amount you're starting with or planning to invest initially.</li>
+          <li><strong>Input your expected APY</strong> — The annual percentage yield you expect to earn from staking, yield farming, or lending. Be realistic with this number based on current market conditions.</li>
+          <li><strong>Select compounding frequency</strong> — Choose how often your rewards will be reinvested: daily, weekly, monthly, quarterly, or annually. Most DeFi protocols compound daily.</li>
+          <li><strong>Set your time period</strong> — How many years you plan to let your investment compound. Longer time periods show the true power of exponential growth.</li>
+          <li><strong>Add recurring contributions (optional)</strong> — If you plan to deposit additional funds regularly, enter the amount and frequency. This dramatically accelerates growth.</li>
+          <li><strong>Review the results</strong> — See your projected final balance, total interest earned, and year-by-year breakdown showing how your investment compounds over time.</li>
+        </ol>
+
+        <h2>What Is Compound Interest?</h2>
+        <p>Compound interest is the process of earning returns not just on your original investment, but also on all the accumulated interest from previous periods. It's often called "interest on interest" and creates exponential rather than linear growth. Albert Einstein allegedly called compound interest "the eighth wonder of the world" because those who understand it earn it, while those who don't pay it.</p>
+
+        <p>Unlike simple interest, which only calculates returns on the principal amount, compound interest reinvests your earnings automatically. For example, if you invest $1,000 at 10% simple interest, you earn $100 per year every year. With compound interest, you earn $100 in year one, but $110 in year two (because you're earning 10% on $1,100), $121 in year three, and so on. Over decades, this difference becomes massive.</p>
+
+        <p>In the cryptocurrency ecosystem, compound interest applies to several areas: proof-of-stake staking rewards that are automatically or manually reinvested, DeFi yield farming where you earn tokens that can be restaked, crypto lending protocols where interest accrues to your principal, and liquidity pool fees that get added back to your position. Many protocols now offer auto-compounding vaults that reinvest your rewards automatically, removing the need for manual claiming and restaking.</p>
+
+        <h2>The Compound Interest Formula</h2>
+        <p>The standard compound interest formula calculates the future value of an investment with regular compounding:</p>
+        <div class="formula-block">
+          <code>A = P × (1 + r/n)^(n×t)</code>
+        </div>
+        <p>Where each variable represents:</p>
+        <ul>
+          <li><strong>A</strong> = Final amount (future value of your investment)</li>
+          <li><strong>P</strong> = Principal (your initial deposit or investment)</li>
+          <li><strong>r</strong> = Annual interest rate (expressed as a decimal, so 10% = 0.10)</li>
+          <li><strong>n</strong> = Number of times interest compounds per year (365 for daily, 12 for monthly, 4 for quarterly, 1 for annually)</li>
+          <li><strong>t</strong> = Time period in years</li>
+        </ul>
+
+        <p>If you're making regular additional contributions (like dollar-cost averaging), the formula becomes more complex:</p>
+        <div class="formula-block">
+          <code>A = P × (1 + r/n)^(n×t) + PMT × [((1 + r/n)^(n×t) − 1) / (r/n)]</code>
+        </div>
+        <p>Where <strong>PMT</strong> is the recurring payment amount, adjusted for the frequency. This second component calculates the future value of all your additional contributions, each compounding from the time it was added.</p>
+
+        <h2>Compounding Frequency Comparison</h2>
+        <p>How often your interest compounds has a significant impact on your final returns. Here's how $10,000 invested at 10% APY grows differently over 5 years based on compounding frequency:</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Frequency</th>
+                <th>Compounds/Year</th>
+                <th>Final Value</th>
+                <th>Total Interest</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Annually</td>
+                <td>1</td>
+                <td>$16,105</td>
+                <td>$6,105</td>
+              </tr>
+              <tr>
+                <td>Quarterly</td>
+                <td>4</td>
+                <td>$16,386</td>
+                <td>$6,386</td>
+              </tr>
+              <tr>
+                <td>Monthly</td>
+                <td>12</td>
+                <td>$16,453</td>
+                <td>$6,453</td>
+              </tr>
+              <tr>
+                <td>Daily</td>
+                <td>365</td>
+                <td>$16,487</td>
+                <td>$6,487</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>As you can see, daily compounding earns $382 more than annual compounding on a $10,000 investment over 5 years. While the difference might seem small in absolute terms, it represents a 6.3% increase in returns. Over longer periods and larger principals, this gap widens significantly.</p>
+
+        <h2>Compound Interest in Crypto</h2>
+        <p>Cryptocurrency offers unique opportunities for compound growth that traditional finance often can't match. Here are the main areas where compound interest applies in crypto:</p>
+
+        <p><strong>Proof-of-Stake (PoS) Staking:</strong> When you stake coins like Ethereum, Cardano, or Solana, you earn rewards that can be restaked. Some networks auto-compound rewards, while others require manual claiming and restaking. Annual yields typically range from 3-15% depending on the network and total amount staked.</p>
+
+        <p><strong>DeFi Yield Farming:</strong> Decentralized finance protocols reward liquidity providers with token emissions. These earned tokens can be sold or restaked into the same pool for compound growth. Yields vary dramatically from 5% to over 100% APY, though higher yields usually carry higher risk.</p>
+
+        <p><strong>Crypto Lending Protocols:</strong> Platforms like Aave, Compound, and Venus allow you to deposit crypto and earn interest, which accrues continuously and compounds in real-time. Your lending balance grows every block without any action required. Rates fluctuate based on supply and demand for each asset.</p>
+
+        <p><strong>Liquidity Pool Fees:</strong> When you provide liquidity to decentralized exchanges like Uniswap or PancakeSwap, you earn a share of trading fees. These fees accumulate and effectively compound as they increase your share of the pool.</p>
+
+        <p><strong>Auto-Compounding Vaults:</strong> Protocols like Beefy Finance, Yearn Finance, and Convex automate the compounding process. They automatically harvest your rewards, swap them if necessary, and reinvest them back into your position. This happens multiple times per day, maximizing compound frequency. The trade-off is that these vaults typically charge a small performance fee (0.5-5%).</p>
+
+        <p><strong>Manual Compounding Considerations:</strong> If you're manually compounding on networks like Ethereum, gas fees can eat into your returns. It might cost $10-50 in gas to claim and restake rewards. For small positions, this can negate the benefits of frequent compounding. On low-fee chains like Polygon, Avalanche, or Binance Smart Chain, manual compounding becomes much more viable even for smaller amounts.</p>
+
+        <h2>The Power of Starting Early</h2>
+        <p>Time is the most powerful variable in the compound interest equation. Thanks to exponential growth, starting early has a far greater impact than contributing more later. Let's look at a real example that demonstrates this principle:</p>
+
+        <p><strong>Investor A</strong> starts investing at age 25, contributing $200 per month at 8% APY for 10 years, then stops contributing but leaves the money invested until age 65. Total contributions: $24,000 over 10 years.</p>
+
+        <p><strong>Investor B</strong> waits until age 35 to start, then contributes $200 per month at 8% APY for 30 years until age 65. Total contributions: $72,000 over 30 years.</p>
+
+        <p>Despite contributing three times less money, Investor A ends up with approximately $315,000 at age 65, while Investor B has around $298,000. Those 10 extra years of compound growth made all the difference. Investor A's money had 40 years to compound (even though they only contributed for 10), while Investor B's money only had up to 30 years.</p>
+
+        <p>This example illustrates why starting early is so crucial, even with modest amounts. If you're young and can only invest small amounts, do it anyway. A 20-year-old investing $50/month will likely beat a 35-year-old investing $300/month by retirement, assuming the same returns. The math is unforgiving: time in the market beats timing the market, and it definitely beats waiting to start.</p>
+
+        <h2>Common Mistakes with Compound Interest</h2>
+        <p>While compound interest is powerful, many investors make critical mistakes that reduce or eliminate its benefits. Avoid these common pitfalls:</p>
+        <ul>
+          <li><strong>Ignoring fees and gas costs</strong> — Protocol fees, performance fees, and transaction costs can significantly reduce your effective APY. A 20% APY with 5% fees is really 15%. On high-fee networks, frequent compounding can cost more than the extra interest earned.</li>
+          <li><strong>Chasing unsustainably high yields</strong> — A protocol offering 500% APY is either extremely risky, paying in rapidly inflating tokens, or an outright scam. If yields seem too good to be true, they probably are. Stick to established protocols with realistic returns.</li>
+          <li><strong>Not accounting for impermanent loss</strong> — If you're earning compound interest through liquidity pools, impermanent loss can exceed your earned fees, especially in volatile markets. This is a hidden cost that many overlook.</li>
+          <li><strong>Forgetting about inflation</strong> — Your investment might grow 6% annually, but if inflation is 4%, your real return is only 2%. Consider your returns in both nominal and real (inflation-adjusted) terms.</li>
+          <li><strong>Expecting constant rates</strong> — Crypto yields are variable and can change dramatically. Today's 12% APY might be 4% next month. Don't extrapolate current rates too far into the future when planning.</li>
+          <li><strong>Overlooking tax implications</strong> — In many jurisdictions, compounded rewards are taxable events. That 10% APY might effectively be 7% after taxes, depending on your tax bracket and local regulations.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>What's the difference between APR and APY?</summary>
+          <p>APR (Annual Percentage Rate) doesn't account for compounding effects, while APY (Annual Percentage Yield) does. For example, if a protocol offers 12% APR with daily compounding, the actual APY would be approximately 12.75%. This means you'd earn 12.75% over the year, not 12%. Always check whether a protocol quotes APR or APY, as APY gives you the true return including compounding. DeFi protocols sometimes advertise APR to make rates appear lower (for borrowing) or higher (for lending), so understanding the difference helps you compare apples to apples.</p>
+        </details>
+
+        <details>
+          <summary>Are crypto staking yields guaranteed?</summary>
+          <p>No. Unlike traditional bank deposits with fixed rates, crypto yields are highly variable and come with significant risks. Staking rewards change based on network conditions, total amount staked, protocol token emissions schedules, and governance decisions. A network offering 10% staking rewards today might offer 6% next year if more people stake. Additionally, the value of your staked tokens can fluctuate dramatically. Past yields never guarantee future returns, and high yields often indicate high risk. There's also smart contract risk, slashing risk (losing stake for validator misbehavior), and platform risk to consider.</p>
+        </details>
+
+        <details>
+          <summary>How often should I compound my rewards?</summary>
+          <p>Compound as often as economically viable. In theory, more frequent compounding is always better. In practice, transaction costs matter. If you're using an auto-compounding vault, this is handled automatically multiple times per day at optimized times. For manual compounding on Ethereum, gas fees might be $15-50, so you'd want a large enough position that the extra compound interest outweighs the cost. On cheaper chains like Polygon or BSC where transactions cost pennies, you can compound much more frequently. A good rule of thumb: if gas fees are less than 1% of your rewards, compound. Otherwise, wait until you've accumulated more rewards.</p>
+        </details>
+
+        <details>
+          <summary>Does compound interest work with volatile assets?</summary>
+          <p>Yes, the mathematical principle of compound interest still applies, but volatility introduces additional considerations. Your principal value fluctuates, so while you're earning compound interest in token terms, the USD value can swing wildly. You might earn 10% compound interest on your ETH stack, but if ETH drops 30% in price, you're still down overall. The compound interest calculator shows growth in token amounts, but remember to factor in price volatility for fiat-denominated returns. Stablecoins avoid this volatility but typically offer lower yields. Many investors diversify between high-yield volatile assets and lower-yield stables.</p>
+        </details>
+
+        <details>
+          <summary>What is the Rule of 72?</summary>
+          <p>The Rule of 72 is a quick mental math trick to estimate how long it takes for your investment to double with compound interest. Simply divide 72 by your annual return percentage. At 8% APY, your money doubles in approximately 72 ÷ 8 = 9 years. At 12% APY, it doubles in 72 ÷ 12 = 6 years. This rule works well for returns between 6% and 15% and helps you quickly understand the power of compounding without needing a calculator. It's a simplified approximation, but remarkably accurate for most practical purposes. For more precise calculations, use our compound interest calculator above.</p>
+        </details>
+
+        <details>
+          <summary>How do gas fees affect compounding returns?</summary>
+          <p>Gas fees can significantly reduce or even eliminate the benefits of compounding, especially on Ethereum mainnet and for smaller positions. If you have a $1,000 position earning 10% APY (about $8.33/month), but it costs $20 in gas to claim and restake rewards, you're losing money by compounding monthly. You'd be better off compounding quarterly or using an auto-compounding vault that spreads gas costs across many users. On low-fee networks like Polygon, Arbitrum, or Optimism, gas fees are negligible (often under $0.10), making frequent manual compounding practical even for small positions. Always calculate whether the extra compound interest earned exceeds the transaction costs.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <p>Explore our other crypto calculators to plan your investment strategy:</p>
+        <ul>
+          <li><a href="/staking-rewards-calculator">Staking Rewards Calculator</a> — Calculate earnings from staking crypto without compounding assumptions</li>
+          <li><a href="/dca-calculator">DCA Calculator</a> — See how dollar-cost averaging would have performed over time</li>
+          <li><a href="/profit-calculator">Profit Calculator</a> — Track your gains/losses and calculate ROI on trades</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ul { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content ol { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content ol li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 16px; margin: 12px 0 16px; font-family: 'Courier New', monospace; color: var(--color-primary); font-size: 0.9rem; }
+  .table-responsive { overflow-x: auto; margin: 16px 0; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg-card); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content details { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 8px; max-width: 780px; cursor: pointer; }
+  .seo-content summary { font-weight: 600; color: var(--color-text); }
+  .seo-content details p { margin-top: 12px; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Crypto Compound Interest Calculator",
+    "description": "Free compound interest calculator for crypto staking and yield farming. Calculate how daily, weekly, or monthly compounding grows your investment over time.",
+    "url": "https://cryptocalk.com/compound-interest-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What's the difference between APR and APY?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "APR (Annual Percentage Rate) doesn't account for compounding effects, while APY (Annual Percentage Yield) does. For example, if a protocol offers 12% APR with daily compounding, the actual APY would be approximately 12.75%. This means you'd earn 12.75% over the year, not 12%. Always check whether a protocol quotes APR or APY, as APY gives you the true return including compounding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are crypto staking yields guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Unlike traditional bank deposits with fixed rates, crypto yields are highly variable and come with significant risks. Staking rewards change based on network conditions, total amount staked, protocol token emissions schedules, and governance decisions. Past yields never guarantee future returns, and high yields often indicate high risk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I compound my rewards?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Compound as often as economically viable. If you're using an auto-compounding vault, this is handled automatically multiple times per day. For manual compounding on Ethereum, gas fees might be $15-50, so you'd want a large enough position that the extra compound interest outweighs the cost. On cheaper chains like Polygon or BSC where transactions cost pennies, you can compound much more frequently."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does compound interest work with volatile assets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the mathematical principle of compound interest still applies, but volatility introduces additional considerations. Your principal value fluctuates, so while you're earning compound interest in token terms, the USD value can swing wildly. You might earn 10% compound interest on your ETH stack, but if ETH drops 30% in price, you're still down overall."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Rule of 72?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Rule of 72 is a quick mental math trick to estimate how long it takes for your investment to double with compound interest. Simply divide 72 by your annual return percentage. At 8% APY, your money doubles in approximately 9 years. At 12% APY, it doubles in 6 years. This rule works well for returns between 6% and 15%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do gas fees affect compounding returns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gas fees can significantly reduce or even eliminate the benefits of compounding, especially on Ethereum mainnet and for smaller positions. If you have a $1,000 position earning 10% APY (about $8.33/month), but it costs $20 in gas to claim and restake rewards, you're losing money by compounding monthly. On low-fee networks like Polygon, Arbitrum, or Optimism, gas fees are negligible, making frequent manual compounding practical even for small positions."
+        }
+      }
+    ]
+  }
+]
+</script>

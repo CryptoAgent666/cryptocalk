@@ -1,0 +1,309 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import TpSlCalculator from '../components/TpSlCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Take Profit & Stop Loss Calculator — TP/SL Planning Tool | CryptoCalk"
+  description="Free TP/SL calculator for crypto traders. Set optimal take-profit and stop-loss levels with R:R ratio, partial TPs, and visual price scale. Plan your trade exits."
+  lang="en"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/tp-sl-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/tp-sl-calculator" aria-current="page">TP/SL Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Take Profit & Stop Loss Calculator</h1>
+          <p>Plan optimal trade exits with R:R ratio, partial take-profit levels, and a visual price scale for crypto futures and spot trading.</p>
+        </div>
+        <TpSlCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the TP/SL Calculator</h2>
+        <ol>
+          <li><strong>Enter your entry price</strong> — The exact price where you plan to open your position.</li>
+          <li><strong>Select your position direction</strong> — Choose whether you're going long (buy) or short (sell).</li>
+          <li><strong>Set your risk:reward ratio</strong> — Determine how much profit you're targeting relative to your risk. Common ratios are 1:2, 1:3, or 1:5.</li>
+          <li><strong>Input your stop-loss level</strong> — Choose a price that invalidates your trade setup (below support for longs, above resistance for shorts).</li>
+          <li><strong>Configure partial take-profit levels</strong> — Split your position across multiple exit points (TP1, TP2, TP3) to balance risk and reward.</li>
+          <li><strong>Review the visual price scale</strong> — See all your levels displayed on an intuitive chart to validate your trade plan before execution.</li>
+        </ol>
+
+        <h2>Why Every Trader Needs a TP/SL Strategy</h2>
+        <p>Studies of retail trader behavior consistently show that one of the biggest differences between profitable and unprofitable traders is their use of stop-losses and take-profits. According to industry reports, over 70% of losing traders either don't use stop-losses at all or move them further away when trades go against them. This fundamental mistake turns small losses into account-destroying disasters.</p>
+        <p>Predefined exit levels remove emotion from trading decisions. When you set your TP and SL before entering a trade, you're making rational decisions based on chart analysis and risk management principles. Once you're in the trade, emotions take over — fear makes you exit winning trades too early, while greed keeps you in losing trades too long. A TP/SL plan protects you from your own psychology.</p>
+        <p>Professional traders never enter a position without knowing exactly where they'll exit, both for profits and losses. They understand that protecting capital is more important than any single trade. By risking only 1-2% per trade and maintaining favorable risk:reward ratios, they ensure that even with a 50% win rate or lower, they remain profitable over time.</p>
+
+        <h2>Understanding Risk:Reward Ratio</h2>
+        <p>The risk:reward ratio (R:R) is the foundation of profitable trading. It measures how much profit you stand to gain relative to the amount you're risking. Here are the formulas for both long and short positions:</p>
+        <div class="formula-block">
+          <code>R:R Ratio = (Take Profit − Entry) ÷ (Entry − Stop Loss)</code>
+        </div>
+        <div class="formula-block">
+          <code>For Shorts: R:R = (Entry − Take Profit) ÷ (Stop Loss − Entry)</code>
+        </div>
+        <p>Understanding the relationship between your R:R ratio and required win rate is crucial. Here's a breakdown of different scenarios:</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>R:R Ratio</th>
+                <th>Required Win Rate</th>
+                <th>Example ($100 risk)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1:1</td>
+                <td>&gt;50%</td>
+                <td>Risk $100 to make $100</td>
+              </tr>
+              <tr>
+                <td>1:2</td>
+                <td>&gt;33%</td>
+                <td>Risk $100 to make $200</td>
+              </tr>
+              <tr>
+                <td>1:3</td>
+                <td>&gt;25%</td>
+                <td>Risk $100 to make $300</td>
+              </tr>
+              <tr>
+                <td>1:5</td>
+                <td>&gt;17%</td>
+                <td>Risk $100 to make $500</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>As you can see, a higher R:R ratio means you need fewer winning trades to be profitable. A trader with a 1:3 R:R ratio only needs to win 25% of their trades to break even (before fees). This mathematical edge is why professional traders obsess over R:R ratios and refuse to take trades that don't offer at least 1:2.</p>
+
+        <h2>How Take-Profit Orders Work</h2>
+        <p>A take-profit order is a preset instruction that automatically closes your position when the price reaches your target level, locking in your gains without requiring you to monitor the market constantly. There are two main types of TP orders:</p>
+        <p><strong>Limit orders</strong> are the most common for take-profits. When you set a TP limit order, it will execute at your specified price or better. For long positions, you place a sell limit above your entry. For shorts, you place a buy limit below your entry. The advantage is price certainty — you get filled at your target or better. The disadvantage is that during extreme volatility, price might wick to your level without filling your order if there's insufficient liquidity.</p>
+        <p><strong>Market orders</strong> for TP guarantee execution but not price. When price reaches your trigger level, a market order is sent to close your position at the best available price. This is useful in fast-moving markets where you prioritize getting out over price precision, but you may experience slippage — getting filled at a slightly worse price than your target.</p>
+        <p><strong>Trailing take-profits</strong> are an advanced technique where your TP level moves with the price, locking in profits as the market moves in your favor. For example, you might set a trailing TP at $500 below the peak price. If the price goes from $50,000 to $52,000, your TP trails up from $49,500 to $51,500. This lets you capture larger moves while still protecting profits if the market reverses. Trailing TPs work best in strong trending markets but can get you stopped out early in choppy conditions.</p>
+
+        <h2>How Stop-Loss Orders Work</h2>
+        <p>A stop-loss is your insurance policy against catastrophic losses. It's a predetermined exit point that closes your position when price moves against you, limiting your loss to an acceptable amount. Understanding the different types and placement strategies is essential for effective risk management.</p>
+        <p><strong>Fixed stop-losses</strong> remain at your chosen price level throughout the trade. This is the most common type. You calculate your stop based on technical levels (support/resistance), volatility (ATR-based stops), or a percentage of your entry price. Once set, it doesn't move unless you manually adjust it.</p>
+        <p><strong>Trailing stop-losses</strong> automatically move in your favor as the trade becomes profitable, but never move against you. For example, you might set a trailing stop $200 below the highest price reached. If your entry is $50,000 and price rises to $52,000, your stop trails up from its original level to $51,800. If price then reverses, your stop stays at $51,800, protecting your $1,800 profit. This technique helps you ride trends without constantly monitoring and manually adjusting stops.</p>
+        <p><strong>Time-based stop-losses</strong> close your position after a certain period regardless of price, useful for strategies based on specific timeframes or to avoid holding through known volatile events like economic data releases.</p>
+        <p><strong>Where to place your stop-loss</strong> is both an art and a science. For long positions, place stops below key support levels — support zones, swing lows, moving averages, or trend lines. For shorts, place stops above resistance levels. The idea is to give your trade room to breathe while ensuring that if your stop is hit, your trade thesis has been invalidated. Placing stops too tight leads to getting stopped out by normal market noise. Placing them too wide risks more capital than necessary.</p>
+        <p><strong>The 1-2% rule</strong> is a cardinal rule of risk management: never risk more than 1-2% of your total trading capital on a single trade. If you have a $10,000 account, your maximum loss on any trade should be $100-200. This ensures that even a string of losses won't devastate your account. Your stop-loss distance and position size must be calculated to respect this rule.</p>
+
+        <h2>Partial Take-Profit Strategy</h2>
+        <p>Instead of going all-in or all-out, partial take-profit strategies let you close portions of your position at different price levels. This approach balances the psychological benefits of securing profits with the potential of letting winners run. It's particularly popular among swing traders and position traders who deal with volatile assets like cryptocurrencies.</p>
+        <p>The core philosophy is to de-risk as you go. By taking partial profits at predefined levels, you reduce your exposure as the trade moves in your favor, securing gains while maintaining upside potential. This also helps combat the emotional rollercoaster of watching a winning trade reverse entirely.</p>
+        <p>A common partial TP structure looks like this:</p>
+        <ul>
+          <li><strong>TP1 at 50% of position size</strong> — Close half your position at 1× risk distance (a 1:1 R:R). This makes your trade "free" — even if the remaining position hits your stop-loss, you break even. The psychological relief of knowing you can't lose on the trade allows you to hold the rest without stress.</li>
+          <li><strong>TP2 at 30% of position size</strong> — Close another 30% at 2× risk distance (a 1:2 R:R on that portion). At this point, you've secured a solid profit, and only 20% of your original position remains at risk.</li>
+          <li><strong>TP3 at remaining 20%</strong> — Let the final portion run with a trailing stop, aiming for 3× to 5× risk distance or more. This is your "lottery ticket" for catching those rare but massive moves that make up a significant portion of annual profits for many traders.</li>
+        </ul>
+        <p><strong>Moving your stop-loss to break-even</strong> after TP1 is a crucial part of this strategy. Once you've secured half your position at a profit, move your stop-loss to your entry price (accounting for fees). This guarantees you won't take a loss on the trade, eliminating the psychological pressure that causes premature exits.</p>
+
+        <h2>Common TP/SL Mistakes</h2>
+        <ul>
+          <li><strong>Setting stop-losses too tight</strong> — Placing your SL just a few dollars below entry might feel safe, but you'll get stopped out by normal market volatility before your trade has a chance to work. Give your trades room to breathe based on the asset's typical volatility.</li>
+          <li><strong>Trading without a stop-loss</strong> — The most dangerous mistake. Some traders believe they can "manage" trades without predefined stops, but this leads to holding losing positions way too long, turning small losses into devastating ones. Always use a stop-loss.</li>
+          <li><strong>Moving stop-losses further away</strong> — When a trade moves against you and approaches your stop, moving the stop further away to "give it more room" is a classic beginner mistake. You're overriding your original analysis with hope. If your stop is hit, your thesis was wrong — accept the loss.</li>
+          <li><strong>Using equal TP and SL distances</strong> — A 1:1 risk:reward ratio (risking $100 to make $100) requires over 50% win rate just to break even after fees. Professional traders typically aim for at least 1:2, meaning their take-profits are twice as far from entry as their stop-losses.</li>
+          <li><strong>Ignoring trading fees</strong> — Every trade involves fees (maker/taker fees, spread, slippage). If you're targeting a $100 profit but pay $5 to enter and $5 to exit, your real profit is $90. If your stop-loss is $100 away but costs $10 in fees, you're actually risking $110. Always factor fees into your R:R calculations.</li>
+          <li><strong>Not adjusting for volatility</strong> — Using the same stop-loss distance for all assets is a mistake. Bitcoin might need a $500 stop for a swing trade, while a lower-cap altcoin might need $50 for the same timeframe strategy. Use ATR (Average True Range) or percentage-based stops to account for each asset's volatility.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>What's a good risk:reward ratio?</summary>
+          <p>Most professional traders aim for a minimum of 1:2, meaning they target profits at least twice the size of their risk. Scalpers with very high win rates (60%+) may accept 1:1 ratios, while swing traders often seek 1:3 or higher. The optimal ratio depends on your strategy's historical win rate — a 1:3 ratio with a 30% win rate is profitable, while a 1:1 ratio requires over 50% wins just to break even. Calculate your required win rate with this formula: Required Win Rate = 1 ÷ (1 + R:R ratio).</p>
+        </details>
+
+        <details>
+          <summary>Should I always use a stop-loss?</summary>
+          <p>Yes, absolutely. Every single trade should have a predefined stop-loss before you enter. The only exceptions are for advanced strategies like hedged positions or options strategies with defined maximum risk. Studies show that the majority of blown trading accounts come from traders who either don't use stop-losses or move them further away when losing. One bad trade without a stop-loss can erase months of gains. Place your SL at a level where, if hit, your trade thesis is invalidated — below support for longs, above resistance for shorts.</p>
+        </details>
+
+        <details>
+          <summary>How do I set TP levels for crypto?</summary>
+          <p>Combine technical analysis with risk:reward ratios. Start by identifying key levels: previous resistance zones, Fibonacci extension levels (1.272, 1.618, 2.618), round psychological numbers ($50,000, $100,000), or swing highs/lows. Then calculate whether these levels offer an acceptable R:R ratio given your stop-loss placement. If a resistance level gives you only a 1:1 ratio, consider waiting for a better entry or widening your TP target. For partial TP strategies, place TP1 near the first resistance, TP2 at a major level, and TP3 at an ambitious extension target.</p>
+        </details>
+
+        <details>
+          <summary>What is a trailing stop-loss?</summary>
+          <p>A trailing stop-loss is a dynamic stop that moves with the price in your favor but never moves against you. You set it at a fixed distance (dollar amount or percentage) from the highest price reached for longs, or lowest price for shorts. For example, a $500 trailing stop on a long position that enters at $50,000 starts at $49,500. If price rises to $52,000, the stop trails up to $51,500. If price then reverses to $51,500, you're stopped out with a $1,500 profit instead of watching gains evaporate. Trailing stops are excellent for trend-following strategies but can get you out too early in choppy markets.</p>
+        </details>
+
+        <details>
+          <summary>Should I use partial take-profit?</summary>
+          <p>Partial TP strategies offer a middle ground between taking profits too early and holding too long. They're especially valuable in volatile markets like crypto where large swings are common. The main benefit is psychological — by securing some profit at TP1, you eliminate the fear of the trade reversing entirely, which allows you to hold the remaining position with confidence. The downside is increased complexity and trading fees (you pay fees at each exit point). For beginners, start with a simple two-level exit: 50% at TP1 (1:2 R:R) and 50% at TP2 (1:3 or higher). As you gain experience, experiment with three or more levels.</p>
+        </details>
+
+        <details>
+          <summary>How do fees affect my TP/SL levels?</summary>
+          <p>Trading fees directly reduce your real risk:reward ratio. If you're paying 0.1% to open and 0.1% to close a position, on a $10,000 position you pay $20 in fees. If your TP is $200 away and your SL is $100 away (targeting 1:2 R:R), your actual profit is $180 and actual risk is $120, giving you a real R:R of 1.5:1, not 1:2. Always account for fees when calculating position sizes and profit targets. High-frequency traders and scalpers are particularly impacted — a 1:1 R:R ratio with fees requires close to 55% win rate to be profitable. Consider using maker orders (limit orders) instead of taker orders (market orders) to reduce fees, and factor slippage into your calculations for lower-liquidity assets.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/position-size-calculator">Position Size Calculator</a> — Calculate exact position sizes based on your account size and risk percentage.</li>
+          <li><a href="/break-even-calculator">Break-Even Calculator</a> — Determine the price needed to recover from losses or account for trading fees.</li>
+          <li><a href="/pip-calculator">Pip Calculator</a> — Calculate pip values and profit/loss for forex and crypto CFD trading.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; margin-top: 40px; color: var(--color-text); }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ul, .seo-content ol { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 16px; margin: 12px 0 16px; font-family: 'Courier New', monospace; color: var(--color-primary); font-size: 0.9rem; max-width: 780px; }
+  .table-responsive { overflow-x: auto; margin: 16px 0; max-width: 780px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg-card); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content details { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 8px; max-width: 780px; }
+  .seo-content summary { font-weight: 600; color: var(--color-text); cursor: pointer; }
+  .seo-content details p { margin-top: 12px; margin-bottom: 0; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Take Profit & Stop Loss Calculator",
+    "description": "Free TP/SL calculator for crypto traders. Set optimal take-profit and stop-loss levels with R:R ratio and partial TPs.",
+    "url": "https://cryptocalk.com/tp-sl-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good risk:reward ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most traders aim for at least 1:2. Scalpers may accept 1:1 due to high win rates, while swing traders prefer 1:3 or higher. The optimal ratio depends on your strategy's win rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I always use a stop-loss?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every trade should have a stop-loss. Without one, a single bad trade can wipe out weeks of profits. Place your SL at a level that invalidates your trade thesis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I set TP levels for crypto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Combine technical analysis with risk:reward ratios. Start by identifying key levels: previous resistance zones, Fibonacci extension levels, round psychological numbers, or swing highs/lows. Then calculate whether these levels offer an acceptable R:R ratio given your stop-loss placement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a trailing stop-loss?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A trailing stop-loss is a dynamic stop that moves with the price in your favor but never moves against you. You set it at a fixed distance from the highest price reached for longs, or lowest price for shorts. Trailing stops are excellent for trend-following strategies but can get you out too early in choppy markets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use partial take-profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Partial TP strategies offer a middle ground between taking profits too early and holding too long. They're especially valuable in volatile markets like crypto where large swings are common. The main benefit is psychological — by securing some profit at TP1, you eliminate the fear of the trade reversing entirely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do fees affect my TP/SL levels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trading fees directly reduce your real risk:reward ratio. If you're paying 0.1% to open and 0.1% to close a position, on a $10,000 position you pay $20 in fees. Always account for fees when calculating position sizes and profit targets. A 1:1 R:R ratio with fees requires close to 55% win rate to be profitable."
+        }
+      }
+    ]
+  }
+]
+</script>

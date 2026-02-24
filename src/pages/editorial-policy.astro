@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lastUpdated = '20/02/2026';
+const pageUrl = 'https://cryptocalk.com/editorial-policy/';
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Editorial Policy',
+  url: pageUrl,
+  description: 'CryptoCalk editorial policy: how calculator pages are written, reviewed, updated, and corrected.',
+  inLanguage: 'en',
+};
+---
+
+<Layout
+  title="Editorial Policy | CryptoCalk"
+  description="CryptoCalk editorial policy: how calculator pages are written, reviewed, updated, and corrected."
+  lang="en"
+>
+  <main class="policy-page">
+    <article class="policy-card">
+      <h1>Editorial Policy</h1>
+      <p class="meta">Last updated: {lastUpdated}</p>
+
+      <p>
+        This policy explains how CryptoCalk creates calculator content and supporting educational material. Our goal is practical clarity: users should understand inputs, assumptions, and output limitations before acting on any result.
+      </p>
+
+      <h2>1. Content Principles</h2>
+      <ul>
+        <li>Use plain language first, formulas second.</li>
+        <li>Show assumptions and ranges where outcomes are uncertain.</li>
+        <li>Separate educational guidance from promotional messaging.</li>
+        <li>State clearly that calculators are not financial advice.</li>
+      </ul>
+
+      <h2>2. Source Standards</h2>
+      <p>
+        Market prices and selected metadata are pulled from public API sources (primarily CoinGecko). Formula definitions are based on standard financial and trading math used in public documentation and exchange education centers.
+      </p>
+
+      <h2>3. Review Process</h2>
+      <p>
+        Major page updates follow a review pass before release:
+      </p>
+      <ul>
+        <li>Formula and unit sanity checks.</li>
+        <li>UI/UX checks for input clarity and result readability.</li>
+        <li>Basic SEO checks (title, description, heading structure, schema where applicable).</li>
+        <li>Build verification in production mode.</li>
+      </ul>
+
+      <h2>4. Update Frequency</h2>
+      <p>
+        We update pages when one of these happens:
+      </p>
+      <ul>
+        <li>New calculator feature is released.</li>
+        <li>Input assumptions need correction or clarification.</li>
+        <li>API behavior changes affect output interpretation.</li>
+        <li>Technical SEO or accessibility improvements are applied.</li>
+      </ul>
+
+      <h2>5. Corrections Policy</h2>
+      <p>
+        If an error is found, we prioritise correction over rewrite. Material corrections are reflected in project changelog records so updates remain auditable.
+      </p>
+
+      <h2>6. Conflict and Monetisation Disclosure</h2>
+      <p>
+        Some pages may contain affiliate links. Affiliate partnerships do not alter formula logic or ranking methodology for calculator outputs.
+      </p>
+
+      <h2>7. Financial Risk Notice</h2>
+      <p>
+        Crypto assets are volatile. Calculator outputs are estimates based on user-entered values and available market data. Always validate independently before making investment decisions.
+      </p>
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+</Layout>
+
+<style>
+  .policy-page {
+    padding: 48px 20px 72px;
+  }
+
+  .policy-card {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: 34px 28px;
+    line-height: 1.7;
+  }
+
+  h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.8rem, 2.8vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .meta {
+    margin: 0 0 20px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    margin-top: 28px;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  ul {
+    margin: 8px 0 12px 20px;
+    padding: 0;
+  }
+</style>

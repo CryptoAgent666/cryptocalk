@@ -1,0 +1,794 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import TaxCalculator from '../components/TaxCalculator.tsx';
+import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto Tax Calculator — Estimate Capital Gains Tax Instantly | CryptoCalk"
+  description="Free crypto tax calculator for US, UK, Germany, Australia, Canada, and India. Estimate capital gains tax, compare short vs long-term rates, FIFO vs LIFO methods."
+  lang="en"
+>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/tax-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/tax-calculator" aria-current="page">Tax Calculator</a>
+      </div>
+    </nav>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto Tax Calculator</h1>
+          <p>Estimate your capital gains tax for cryptocurrency trades. Supports 6 countries with local tax brackets.</p>
+        </div>
+
+        <TaxCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Tax Calculator</h2>
+        <p>Our crypto tax calculator helps you estimate your capital gains tax in seconds. Follow these simple steps to calculate your tax obligation:</p>
+        <ol>
+          <li><strong>Select your country</strong> — Choose from United States, United Kingdom, Germany, Australia, Canada, or India. Each country has unique tax rules and rates.</li>
+          <li><strong>Enter your purchase price</strong> — Input the total amount you paid for the cryptocurrency, including all fees paid at the time of purchase.</li>
+          <li><strong>Enter your sale price</strong> — Input the total amount you received when selling the crypto, minus any transaction fees.</li>
+          <li><strong>Choose the holding period</strong> — Select whether you held the asset for less than 1 year (short-term) or 1 year or more (long-term). This affects your tax rate significantly in most countries.</li>
+          <li><strong>Select an accounting method</strong> — Choose between FIFO (First In, First Out) or LIFO (Last In, Last Out) to see how different methods impact your tax liability.</li>
+          <li><strong>Review your results</strong> — The calculator will instantly show your capital gain or loss, applicable tax rate, estimated tax owed, and a comparison between short-term and long-term rates.</li>
+        </ol>
+
+        <h2>How Is Cryptocurrency Taxed?</h2>
+        <p>In most countries, cryptocurrency is treated as property rather than currency for tax purposes. This classification has important implications: every time you sell, trade, or exchange crypto, it triggers a taxable event. You owe taxes on any capital gains — the difference between your purchase price (cost basis) and sale price. The tax rate applied depends on your holding period, income bracket, and country of residence. Understanding these fundamentals is essential for proper tax planning and compliance.</p>
+
+        <h2>Country-by-Country Tax Rates</h2>
+        <div class="tax-table-wrap">
+          <table class="tax-country-table">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Short-Term Rate</th>
+                <th>Long-Term Rate</th>
+                <th>Special Rules</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>🇺🇸 USA</td>
+                <td>12–37%</td>
+                <td>0–20%</td>
+                <td>Property treatment, NIIT possible</td>
+              </tr>
+              <tr>
+                <td>🇬🇧 UK</td>
+                <td>10–20%</td>
+                <td>10–20%</td>
+                <td>£3,000 annual CGT exemption</td>
+              </tr>
+              <tr>
+                <td>🇩🇪 Germany</td>
+                <td>25–45%</td>
+                <td>Tax FREE</td>
+                <td>Held &gt;1 year = 0% tax!</td>
+              </tr>
+              <tr>
+                <td>🇦🇺 Australia</td>
+                <td>19–45%</td>
+                <td>9.5–22.5%</td>
+                <td>50% CGT discount after 12 months</td>
+              </tr>
+              <tr>
+                <td>🇨🇦 Canada</td>
+                <td>7.5–16.5%</td>
+                <td>7.5–16.5%</td>
+                <td>50% capital gains inclusion</td>
+              </tr>
+              <tr>
+                <td>🇮🇳 India</td>
+                <td>30%</td>
+                <td>30%</td>
+                <td>Flat rate + 4% cess, 1% TDS</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>FIFO vs LIFO Accounting</h2>
+        <p>The accounting method you choose affects your tax liability:</p>
+        <ul class="seo-list">
+          <li><strong>FIFO (First In, First Out)</strong> — assumes you're selling your oldest coins first. Usually results in higher gains in a rising market.</li>
+          <li><strong>LIFO (Last In, First Out)</strong> — assumes you're selling your newest coins first. Can reduce taxable gains if recent purchases were at higher prices.</li>
+        </ul>
+        <p>Note: Not all countries allow all methods. The IRS (US) permits specific identification. Check with a tax professional for your jurisdiction.</p>
+
+        <h2>Taxable vs Non-Taxable Crypto Events</h2>
+        <p>Understanding which cryptocurrency activities trigger taxes is crucial for compliance. Not every crypto transaction creates a taxable event. Here's a comprehensive breakdown:</p>
+        <p><strong>Taxable Events:</strong></p>
+        <ul class="seo-list">
+          <li><strong>Selling crypto for fiat currency</strong> — Converting Bitcoin, Ethereum, or any cryptocurrency to USD, EUR, or other traditional currency creates a capital gain or loss.</li>
+          <li><strong>Trading one crypto for another</strong> — Swapping BTC for ETH, or any crypto-to-crypto exchange, is treated as a sale followed by a purchase in most jurisdictions.</li>
+          <li><strong>Purchasing goods or services with crypto</strong> — Using cryptocurrency as payment is considered a disposal event, triggering capital gains tax on the appreciation since purchase.</li>
+          <li><strong>Receiving crypto as payment or income</strong> — Earnings from mining, staking rewards, airdrops, or salary paid in crypto are taxed as ordinary income at fair market value when received.</li>
+          <li><strong>Liquidations and margin trading</strong> — Forced liquidations and closing leveraged positions create taxable events based on the realized gain or loss.</li>
+        </ul>
+        <p><strong>Non-Taxable Events:</strong></p>
+        <ul class="seo-list">
+          <li><strong>Buying cryptocurrency with fiat</strong> — Purchasing crypto with traditional currency is not taxable. The purchase establishes your cost basis for future calculations.</li>
+          <li><strong>Holding cryptocurrency</strong> — Unrealized gains from price appreciation are not taxed until you dispose of the asset. You can hold indefinitely without tax consequences.</li>
+          <li><strong>Transferring between your own wallets</strong> — Moving crypto from an exchange to a hardware wallet, or between wallets you control, is not a taxable event.</li>
+          <li><strong>Gifting cryptocurrency</strong> — In most countries, giving crypto as a gift is not taxable for the donor (though the recipient inherits your cost basis and may owe tax when they sell).</li>
+          <li><strong>Donating to qualified charities</strong> — Charitable donations of cryptocurrency are generally not taxable and may provide a deduction based on fair market value in some jurisdictions.</li>
+        </ul>
+
+        <h2>Tax-Loss Harvesting Strategies</h2>
+        <p>Tax-loss harvesting is a powerful strategy where you deliberately sell cryptocurrency at a loss to offset capital gains from other investments, reducing your overall tax liability. This approach is particularly valuable in volatile crypto markets where portfolio values can fluctuate significantly. When you realize a capital loss, it can offset capital gains dollar-for-dollar, and in many jurisdictions like the United States, excess losses can offset up to $3,000 of ordinary income per year, with remaining losses carried forward indefinitely.</p>
+        <p>One key advantage cryptocurrency has over traditional securities is the absence of wash sale rules in most countries. In the US, the wash sale rule prevents you from claiming a tax loss if you repurchase the same or substantially identical security within 30 days. However, this rule currently does not apply to cryptocurrency, meaning you can sell Bitcoin at a loss and immediately repurchase it, maintaining your market position while harvesting the tax benefit. This regulatory gap may change in the future as cryptocurrency taxation evolves, so it's important to stay informed about current rules.</p>
+        <p>Timing is crucial for effective tax-loss harvesting. Many investors review their portfolios near year-end to identify positions with unrealized losses. By selling these assets before December 31st, you can claim the loss on the current year's tax return. However, don't let tax considerations override sound investment strategy — only harvest losses on assets you're comfortable selling or immediately repurchasing. The tax benefit should complement, not dictate, your investment decisions.</p>
+
+        <h2>How to Reduce Your Crypto Tax Bill</h2>
+        <p>Minimizing your cryptocurrency tax burden legally requires strategic planning and awareness of available options. Here are proven strategies to reduce what you owe:</p>
+        <ul class="seo-list">
+          <li><strong>Hold assets for more than one year</strong> — In countries like the US, Germany, and Australia, long-term capital gains receive preferential tax treatment. Germany offers the most generous benefit: zero tax on crypto held longer than 12 months. This simple strategy of patience can save you thousands in taxes.</li>
+          <li><strong>Actively harvest tax losses</strong> — Review your portfolio regularly for underperforming assets. Selling at a loss allows you to offset gains from profitable trades. In volatile crypto markets, this strategy can be employed throughout the year, not just at year-end.</li>
+          <li><strong>Utilize tax-advantaged retirement accounts</strong> — Some jurisdictions allow cryptocurrency investments within IRAs, Roth IRAs, or similar retirement accounts. Gains within these accounts can grow tax-deferred or even tax-free, depending on the account type. Check with a financial advisor about crypto IRA options in your country.</li>
+          <li><strong>Donate appreciated cryptocurrency to charity</strong> — In many countries including the US, donating crypto that has increased in value allows you to claim a charitable deduction for the full fair market value while avoiding capital gains tax on the appreciation. This creates a double tax benefit.</li>
+          <li><strong>Track your cost basis meticulously</strong> — Accurate record-keeping ensures you're not overpaying taxes. Include all fees paid when buying and selling, as these reduce your taxable gain. Use cryptocurrency tax software or detailed spreadsheets to maintain transaction history across all exchanges and wallets.</li>
+          <li><strong>Consult a crypto-specialized tax professional</strong> — Cryptocurrency tax law is complex and varies significantly by jurisdiction. A CPA or tax advisor with crypto expertise can identify deductions, credits, and strategies specific to your situation, potentially saving far more than their fee costs.</li>
+        </ul>
+
+        <h2>Capital Gains Formula</h2>
+        <p>Understanding how capital gains are calculated is essential for accurate tax estimation. The basic formulas used across most jurisdictions are:</p>
+        <div class="formula-block">
+          <code>Capital Gain = Sale Price − Cost Basis − Fees</code>
+        </div>
+        <div class="formula-block">
+          <code>Tax Owed = Capital Gain × Tax Rate</code>
+        </div>
+        <p>Your <strong>cost basis</strong> is the original purchase price plus any fees paid to acquire the crypto. The <strong>sale price</strong> is the amount received minus any transaction fees. The resulting capital gain (or loss if negative) is then multiplied by your applicable tax rate, which depends on your holding period and income level. For example, if you bought 1 BTC for $30,000 (plus $50 fee), sold it for $45,000 (minus $75 fee), your capital gain would be $14,875. If you're in the 24% tax bracket for short-term gains, you'd owe approximately $3,570 in taxes.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>When do I owe crypto taxes?</summary>
+          <p>You owe taxes whenever you sell crypto for fiat, trade crypto-to-crypto, use crypto to buy goods/services, or receive crypto as income (mining, staking, airdrops). Simply holding or transferring between your own wallets is generally not taxable.</p>
+        </details>
+        <details>
+          <summary>Can I claim crypto losses on my taxes?</summary>
+          <p>Yes! In most countries, capital losses can offset capital gains, reducing your tax liability. In the US, you can also deduct up to $3,000 in net losses from ordinary income per year, carrying unused losses forward.</p>
+        </details>
+        <details>
+          <summary>Is holding crypto for over a year always better?</summary>
+          <p>In the US and Germany, holding over 1 year provides significantly lower tax rates (or 0% in Germany). In the UK, Canada, and India, there's no holding period benefit — the rate is the same regardless.</p>
+        </details>
+        <details>
+          <summary>How is crypto-to-crypto trading taxed?</summary>
+          <p>In most jurisdictions, swapping one cryptocurrency for another is a taxable event. You must calculate the fair market value in your local currency at the time of the trade to determine gains or losses.</p>
+        </details>
+        <details>
+          <summary>Do I need to report small crypto transactions?</summary>
+          <p>Generally, yes — there is no de minimis exemption in most countries (though Germany has a €600 annual exemption for short-term gains, and the UK has a £3,000 CGT allowance). All transactions should be reported.</p>
+        </details>
+        <details>
+          <summary>What tools can help me track crypto taxes?</summary>
+          <p>Several specialized crypto tax software platforms can automatically import transactions from exchanges and wallets, calculate your gains and losses using various accounting methods, and generate tax reports. Popular options include CoinTracker, Koinly, CryptoTrader.Tax, and ZenLedger. For simple calculations, our free tax calculator provides instant estimates without requiring account creation.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <p>Explore our other cryptocurrency tools to make informed investment decisions:</p>
+        <ul class="seo-list">
+          <li><a href="/profit-calculator"><strong>Profit Calculator</strong></a> — Calculate potential returns and break-even points for your crypto investments.</li>
+          <li><a href="/converter"><strong>Crypto Converter</strong></a> — Convert between 100+ cryptocurrencies and fiat currencies with real-time exchange rates.</li>
+          <li><a href="/what-if"><strong>What-If Calculator</strong></a> — See historical "what if" scenarios: what would your investment be worth if you had bought at different times?</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. For informational purposes only — not tax or financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* ===== Header ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-header);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+  .header-link:hover { color: var(--color-text); }
+
+  /* ===== Breadcrumb ===== */
+  .breadcrumb {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .breadcrumb .section-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+  .breadcrumb a[aria-current] {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ===== Layout ===== */
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .calc-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+  .calc-header p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+  }
+
+  /* ===== SEO Content ===== */
+  .seo-content {
+    padding: 60px 0;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+  }
+  .seo-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .seo-content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 32px 0 12px;
+  }
+  .seo-content p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+  .seo-list {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    padding-left: 20px;
+    max-width: 720px;
+    margin-bottom: 16px;
+  }
+  .seo-list li { margin-bottom: 6px; }
+
+  /* Tax Country Table */
+  .tax-table-wrap {
+    overflow-x: auto;
+    margin: 16px 0 24px;
+  }
+  .tax-country-table {
+    width: 100%;
+    max-width: 720px;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .tax-country-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--color-bg);
+    font-weight: 600;
+    color: var(--color-text);
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+  }
+  .tax-country-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+  }
+  .tax-country-table tr:hover td {
+    background: var(--color-bg);
+  }
+
+  .seo-content details {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    max-width: 720px;
+    cursor: pointer;
+  }
+  .seo-content summary {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .seo-content details p { margin-top: 12px; }
+
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content ol { padding-left: 24px; margin-bottom: 16px; max-width: 720px; }
+  .seo-content ol li { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 8px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .seo-content strong { color: var(--color-text); }
+  .formula-block { background-color: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 600px; }
+  .formula-block code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9rem; color: var(--color-primary); }
+
+  /* ===== Footer ===== */
+  .site-footer { padding: 24px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+</style>
+
+<style is:global>
+  /* ===== Tax Calculator Styles ===== */
+  .tax-wrapper { width: 100%; }
+
+  .tax-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .tax-grid { grid-template-columns: 1fr; }
+  }
+
+  .tax-input-panel {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .select-wrap {
+    position: relative;
+  }
+  .select-input {
+    width: 100%;
+    padding: 10px 14px;
+    padding-right: 32px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-family: inherit;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .select-input:focus { border-color: var(--color-primary); }
+  .select-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+  }
+
+  /* Holding Period Pills */
+  .holding-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .holding-pill {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .holding-pill:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  .holding-pill.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+
+  /* Method Pills */
+  .method-pills {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .method-pill {
+    padding: 8px 18px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .method-pill:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  .method-pill.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+  .method-desc {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  /* Results */
+  .tax-results-panel {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .tax-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+  }
+  .tax-empty h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 16px 0 8px;
+  }
+  .tax-empty p { font-size: 0.85rem; margin-bottom: 16px; }
+  .tax-features {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Hero */
+  .tax-hero {
+    text-align: center;
+    padding: 24px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+  }
+  .tax-hero.gain {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+  .tax-hero.loss {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02));
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+  .tax-hero-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+  }
+  .tax-hero-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+  .tax-hero.gain .tax-hero-value { color: var(--color-accent-green); }
+  .tax-hero.loss .tax-hero-value { color: var(--color-accent-red); }
+
+  /* Tax Owed Card */
+  .tax-owed-card {
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+  }
+  .tax-owed-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 0.85rem;
+  }
+  .tax-owed-row + .tax-owed-row {
+    border-top: 1px solid var(--color-border);
+  }
+  .tax-owed-label { color: var(--color-text-secondary); }
+  .tax-owed-value {
+    font-weight: 700;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Tax Breakdown */
+  .tax-breakdown { margin-bottom: 20px; }
+  .tax-breakdown .breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.85rem;
+  }
+  .tax-breakdown .breakdown-label { color: var(--color-text-secondary); }
+  .tax-breakdown .breakdown-value {
+    font-weight: 600;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Comparison */
+  .tax-comparison { margin-bottom: 20px; }
+  .tax-comparison .comparison-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 10px;
+  }
+  .tax-comparison .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .tax-comparison .comparison-card {
+    padding: 14px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    text-align: center;
+  }
+  .tax-comparison .comparison-card.current {
+    border-color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.03);
+  }
+  .tax-comparison .comparison-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+  }
+  .tax-comparison .comparison-value {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 2px;
+  }
+  .tax-comparison .comparison-tax {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent-red);
+  }
+  .comparison-saving {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+
+  /* Notes */
+  .tax-notes {
+    display: flex;
+    gap: 8px;
+    padding: 14px;
+    background: rgba(99, 102, 241, 0.04);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+    align-items: flex-start;
+  }
+  .tax-notes p {
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* CTA */
+  .tax-cta {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tax-cta:hover {
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Crypto Tax Calculator",
+  "url": "https://cryptocalk.com/tax-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free crypto tax calculator for US, UK, Germany, Australia, Canada, and India. Estimate capital gains tax, compare short vs long-term rates, FIFO vs LIFO methods."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When do I owe crypto taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You owe taxes whenever you sell crypto for fiat, trade crypto-to-crypto, use crypto to buy goods/services, or receive crypto as income. Simply holding or transferring between your own wallets is generally not taxable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I claim crypto losses on my taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! In most countries, capital losses can offset capital gains, reducing your tax liability. In the US, you can also deduct up to $3,000 in net losses from ordinary income per year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is holding crypto for over a year always better?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the US and Germany, holding over 1 year provides significantly lower tax rates (or 0% in Germany). In the UK, Canada, and India, there's no holding period benefit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is crypto-to-crypto trading taxed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most jurisdictions, swapping one cryptocurrency for another is a taxable event. You must calculate the fair market value in your local currency at the time of the trade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to report small crypto transactions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally, yes — there is no de minimis exemption in most countries. Germany has a €600 annual exemption for short-term gains, and the UK has a £3,000 CGT allowance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What tools can help me track crypto taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Several specialized crypto tax software platforms can automatically import transactions from exchanges and wallets, calculate your gains and losses using various accounting methods, and generate tax reports. Popular options include CoinTracker, Koinly, CryptoTrader.Tax, and ZenLedger."
+      }
+    }
+  ]
+}
+</script>

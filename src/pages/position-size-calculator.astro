@@ -1,0 +1,341 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import PositionSizeCalculator from '../components/PositionSizeCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto Position Size Calculator — Risk Management Tool | CryptoCalk"
+  description="Free position size calculator for crypto traders. Determine optimal trade size based on your account balance, risk tolerance, and stop-loss. Supports leverage up to 125x."
+  lang="en"
+>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/position-size-calculator" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/position-size-calculator" aria-current="page">Position Size Calculator</a>
+      </div>
+    </nav>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto Position Size Calculator</h1>
+          <p>Calculate your optimal position size based on risk management rules. Never risk more than you can afford to lose.</p>
+        </div>
+
+        <PositionSizeCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Position Size Calculator</h2>
+        <p>Our free position size calculator helps you determine the optimal trade size for any cryptocurrency trade. Proper position sizing is the cornerstone of risk management — it ensures that no single trade can blow up your account. Whether you're trading Bitcoin, Ethereum, or any altcoin on spot or futures markets, this tool calculates the exact position size that aligns with your risk tolerance and trading strategy.</p>
+
+        <p>Follow these steps to calculate your ideal position size:</p>
+        <ol>
+          <li><strong>Enter your account balance</strong> — Input the total capital you're trading with (e.g., $10,000 USDT).</li>
+          <li><strong>Set your risk per trade</strong> — Choose how much of your account you're willing to lose on this trade (1-2% recommended).</li>
+          <li><strong>Input entry price</strong> — Enter your planned entry price or search for a crypto to auto-fill the current market price.</li>
+          <li><strong>Set your stop-loss</strong> — Define where you'll exit if the trade moves against you. This is critical for risk calculation.</li>
+          <li><strong>Choose leverage (optional)</strong> — If trading futures or perpetuals, set your leverage multiplier (1x for spot trading).</li>
+          <li><strong>Add take-profit (optional)</strong> — Enter your target exit price to see the risk:reward ratio for your trade setup.</li>
+        </ol>
+
+        <h2>Key Features</h2>
+        <ul>
+          <li><strong>Risk-based sizing</strong> — Set your risk per trade (1-3% recommended) and the calculator determines the exact position size.</li>
+          <li><strong>Leverage support</strong> — Calculate position sizes for leveraged trades up to 125x with liquidation price estimates.</li>
+          <li><strong>Risk:Reward visualization</strong> — See your R:R ratio with a visual bar when you enter a take-profit level.</li>
+          <li><strong>Real-time prices</strong> — Search for any cryptocurrency and auto-fill the current market price.</li>
+          <li><strong>Fee calculation</strong> — Include exchange fees to see your actual effective risk.</li>
+        </ul>
+
+        <h2>Position Size Formulas</h2>
+        <p>Understanding the math behind position sizing empowers you to make informed trading decisions. The formula for calculating position size based on risk:</p>
+        <div class="formula-block">
+          <code>Position Size = Risk Amount ÷ Stop-Loss Distance (%)</code>
+        </div>
+        <p>Where:</p>
+        <div class="formula-block">
+          <code>Risk Amount = Account Balance × Risk Per Trade (%)</code>
+        </div>
+        <div class="formula-block">
+          <code>Stop-Loss Distance = |Entry Price − Stop-Loss Price| ÷ Entry Price × 100</code>
+        </div>
+
+        <p><strong>Worked Example:</strong> Let's say you have a $10,000 account and want to risk 2% ($200) on a Bitcoin trade. Your entry price is $60,000 and your stop-loss is at $57,000. First, calculate the stop-loss distance: ($60,000 - $57,000) ÷ $60,000 × 100 = 5%. Then calculate position size: $200 ÷ 0.05 = $4,000. Your optimal position size is $4,000 worth of Bitcoin, which at $60,000 per BTC equals 0.0667 BTC. If the trade hits your stop-loss, you'll lose exactly $200 (2% of your account).</p>
+
+        <h2>The 1-2% Rule Explained</h2>
+        <p>Professional traders understand that protecting capital is more important than chasing profits. The 1-2% rule — risking only 1-2% of your account per trade — is the golden standard of risk management. This approach ensures your trading career survives inevitable losing streaks and gives you enough runway to let your edge play out over hundreds of trades.</p>
+
+        <p>Here's why amateur traders who risk 5-10% per trade eventually blow up: trading is a probabilistic game where even the best strategies have losing streaks. If you risk too much per trade, a normal variance can destroy your account before you have a chance to recover. The math is unforgiving:</p>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Risk Per Trade</th>
+                <th>Trades to 50% Drawdown</th>
+                <th>Recovery Needed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1%</td>
+                <td>69 consecutive losses</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <td>2%</td>
+                <td>34 consecutive losses</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <td>5%</td>
+                <td>13 consecutive losses</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <td>10%</td>
+                <td>7 consecutive losses</td>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Notice that after losing 50% of your account, you need a 100% return just to break even. A trader risking 10% per trade hits this devastating drawdown after just 7 losses — a streak that happens more often than you think. Meanwhile, a disciplined 1% risk trader can withstand 69 consecutive losses before reaching the same drawdown. This margin of safety is what separates long-term successful traders from those who blow up and quit.</p>
+
+        <h2>Position Sizing with Leverage</h2>
+        <p>Leverage is one of the most misunderstood concepts in crypto trading. Many beginners think leverage automatically increases their risk, but that's not quite accurate. Leverage changes your margin requirement, not your risk — if you calculate position size correctly.</p>
+
+        <p>Here's how leverage actually works: Without leverage (1x), if you want to open a $10,000 position, you need $10,000 in margin. With 10x leverage, you only need $1,000 in margin to control that same $10,000 position. The key insight: your dollar risk remains identical if you set the same stop-loss distance. What changes is your liquidation price — the point where the exchange forcibly closes your position.</p>
+
+        <p><strong>Example: Same Risk, Different Leverage</strong></p>
+        <p>Scenario: You have a $10,000 account and want to risk $200 (2%) on a Bitcoin long from $60,000 with a stop-loss at $57,000 (5% away).</p>
+        <ul>
+          <li><strong>1x Leverage (Spot):</strong> Position size = $4,000. Margin required = $4,000. Liquidation price = N/A (spot can't liquidate). If stop-loss hits, you lose $200.</li>
+          <li><strong>10x Leverage:</strong> Position size = $4,000. Margin required = $400. Liquidation price ≈ $56,000. If stop-loss hits, you lose $200.</li>
+          <li><strong>50x Leverage:</strong> Position size = $4,000. Margin required = $80. Liquidation price ≈ $58,800. If stop-loss hits, you lose $200.</li>
+        </ul>
+
+        <p>Notice that your actual risk ($200) stays the same across all leverage levels — but with higher leverage, your liquidation price creeps dangerously close to your entry. At 50x, a mere 2% move against you triggers liquidation, potentially closing your position before your stop-loss even triggers. This is why experienced traders keep leverage moderate (5-20x) and always place stop-losses well before liquidation levels.</p>
+
+        <h2>Risk:Reward Ratio Guide</h2>
+        <p>Your risk:reward ratio (R:R) determines how often you need to win to be profitable. A 1:2 R:R means you risk $1 to make $2 — if this trade wins, it covers two losing trades. Understanding R:R transforms your trading from gambling to a calculated probabilistic edge.</p>
+        <ul>
+          <li><strong>1:1 R:R</strong> — Break-even strategy. You need a >50% win rate to profit after fees. Not recommended for most strategies.</li>
+          <li><strong>1:2 R:R</strong> — Good ratio for swing trading. You only need a 34% win rate to break even (before fees). Every 1 winner covers 2 losers.</li>
+          <li><strong>1:3 R:R</strong> — Excellent ratio. Profitable with just a 25% win rate. Common for position traders with wider stops.</li>
+          <li><strong>1:5+ R:R</strong> — Asymmetric setups favored by patient traders. Even a 17% win rate is profitable, but requires discipline to hold for large targets.</li>
+        </ul>
+
+        <p>The trap many traders fall into: chasing high R:R ratios with unrealistic take-profit targets. A 1:10 R:R looks amazing on paper, but if your win rate drops to 5% because targets rarely hit, you'll bleed capital. The sweet spot for most crypto day traders is 1:2 to 1:3 R:R with a 40-50% win rate. Swing traders often target 1:3 to 1:5 R:R with 30-40% win rates.</p>
+
+        <h2>Common Position Sizing Mistakes</h2>
+        <p>Even traders who understand position sizing theory make critical mistakes in practice. Avoid these common pitfalls:</p>
+        <ul>
+          <li><strong>Sizing by "feeling" instead of math</strong> — Trading $100 on one setup and $5,000 on another because you "feel confident" is a recipe for disaster. Confidence doesn't predict outcomes. Stick to your calculated position size based on your risk percentage and stop-loss distance, regardless of conviction.</li>
+          <li><strong>Ignoring trading fees</strong> — Exchange fees (maker/taker fees, funding rates on perpetuals) eat into your risk budget. A 0.1% entry and exit fee means 0.2% of your position is gone before the market even moves. Account for fees when calculating true risk, especially on smaller trades where fees represent a larger percentage.</li>
+          <li><strong>Using the same position size for all trades</strong> — Not all setups are equal. A setup with a tight 2% stop-loss can have a larger position size than one requiring a 10% stop for the same dollar risk. Always recalculate position size based on your specific stop-loss distance for each trade.</li>
+          <li><strong>Revenge sizing after losses</strong> — After a losing streak, the temptation to "make it back" by doubling your position size is overwhelming — and deadly. This martingale approach guarantees eventual account destruction. Losing streaks are normal; maintain consistent risk per trade regardless of recent results.</li>
+          <li><strong>Overleveraging on high-conviction trades</strong> — "This setup is guaranteed" — famous last words before a blown account. No trade is guaranteed. Using 50-100x leverage because you're "sure" this one will work violates risk management principles. High leverage should only be used with proportionally smaller position sizes to maintain consistent dollar risk.</li>
+          <li><strong>Forgetting about correlated positions</strong> — Opening 5 different altcoin longs when everything is correlated to Bitcoin means you're actually risking 5x your intended amount if BTC dumps. Your real risk is the sum of all correlated positions, not individual trades.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>What is the ideal risk per trade?</summary>
+          <p>Most professional traders risk between 1-2% of their account per trade. If you're a beginner, start with 0.5-1% until you've proven your strategy is profitable over at least 100 trades. Aggressive traders occasionally risk up to 3% on exceptional setups, but never risk more than 5% on a single trade, regardless of how confident you are. The math is clear: smaller risk per trade = longer survival during losing streaks = higher chance of long-term success.</p>
+        </details>
+
+        <details>
+          <summary>How does leverage affect position size?</summary>
+          <p>Leverage doesn't change your dollar risk — it changes your margin requirement and liquidation price. With 10x leverage, you need only 1/10th of the position value as margin (collateral). However, your liquidation price is much closer to your entry, meaning a smaller adverse price move can forcibly close your position. The key is to calculate position size based on your risk amount and stop-loss distance first, then apply leverage to reduce margin required — not the other way around.</p>
+        </details>
+
+        <details>
+          <summary>What is a stop-loss and why do I need one?</summary>
+          <p>A stop-loss is a predetermined price level where you automatically exit a trade to limit losses. It's the single most important risk management tool in trading. Without a stop-loss, you're gambling, not trading — a single bad trade during a flash crash or unexpected news event can destroy your entire account. Always set your stop-loss before entering a position, and never move it further away once in the trade (moving it closer to lock in profits is acceptable).</p>
+        </details>
+
+        <details>
+          <summary>Can I use this for spot and futures trading?</summary>
+          <p>Yes! The position size calculator works for both spot and futures/perpetuals trading on any cryptocurrency exchange including Binance, Bybit, OKX, Coinbase, Kraken, and more. For spot trading, set leverage to 1x. For futures or perpetual contracts, adjust the leverage to match your intended position (common levels are 5x, 10x, 20x). The underlying math remains the same — you're calculating how much capital to allocate based on your risk tolerance and stop-loss distance.</p>
+        </details>
+
+        <details>
+          <summary>Should I adjust position size based on volatility?</summary>
+          <p>Absolutely. High-volatility assets like small-cap altcoins require smaller position sizes because wider stop-losses are needed to avoid getting stopped out by normal price fluctuation. For example, a Bitcoin trade might use a 3% stop-loss, while a low-cap altcoin might need an 8-10% stop to account for volatility. If you maintain the same risk percentage (say 2% of your account), your position size will automatically be smaller on the volatile altcoin. Some traders also reduce their risk percentage from 2% to 1% when trading highly volatile assets.</p>
+        </details>
+
+        <details>
+          <summary>How do I handle multiple open positions?</summary>
+          <p>Your total risk across all open positions should typically not exceed 10-15% of your account, even if each individual trade risks only 1-2%. If you have 5 trades open each risking 2%, that's 10% total capital at risk. Be especially careful with correlated trades — five long positions on different altcoins are not truly diversified if they all dump when Bitcoin drops. Consider your aggregate exposure across all positions, and reduce individual position sizes if you're running multiple concurrent trades.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/tp-sl-calculator">Take Profit & Stop Loss Calculator</a> — Calculate optimal TP/SL levels and visualize risk:reward ratios.</li>
+          <li><a href="/leverage-calculator">Crypto Leverage Calculator</a> — Understand how leverage affects your position, margin, and liquidation price.</li>
+          <li><a href="/liquidation-calculator">Liquidation Price Calculator</a> — Calculate exactly where your leveraged position will be liquidated.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice. Past performance does not guarantee future results.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
+  .header-link:hover { color: var(--color-text); }
+  .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
+  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
+  .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header { margin-bottom: 32px; }
+  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
+  .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
+  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); }
+  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
+  .seo-content p { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
+  .seo-content ul { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 16px; margin: 12px 0 16px; font-family: 'Courier New', monospace; color: var(--color-primary); font-size: 0.9rem; overflow-x: auto; }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content ol { padding-left: 20px; margin-bottom: 16px; }
+  .seo-content ol li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 6px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .table-responsive { overflow-x: auto; margin: 16px 0; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; border: 1px solid var(--color-border); text-align: left; }
+  .table-responsive th { background: var(--color-bg-card); font-weight: 600; color: var(--color-text); white-space: nowrap; }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .seo-content details { border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin-bottom: 8px; max-width: 780px; cursor: pointer; }
+  .seo-content summary { font-weight: 600; color: var(--color-text); }
+  .seo-content details p { margin-top: 12px; }
+  .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom { text-align: center; }
+  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Crypto Position Size Calculator",
+    "url": "https://cryptocalk.com/position-size-calculator",
+    "description": "Free position size calculator for crypto traders. Determine optimal trade size based on your account balance, risk tolerance, and stop-loss. Supports leverage up to 125x.",
+    "applicationCategory": "FinanceApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the ideal risk per trade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most professional traders risk between 1-2% of their account per trade. If you're a beginner, start with 0.5-1% until you've proven your strategy is profitable over at least 100 trades. Never risk more than 5% on a single trade, regardless of how confident you are."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does leverage affect position size?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Leverage doesn't change your dollar risk — it changes your margin requirement and liquidation price. With 10x leverage, you need only 1/10th of the position value as margin, but your liquidation price is much closer to your entry, meaning a smaller adverse price move can forcibly close your position."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a stop-loss and why do I need one?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A stop-loss is a predetermined price level where you automatically exit a trade to limit losses. It's the single most important risk management tool in trading. Without a stop-loss, a single bad trade during a flash crash or unexpected news event can destroy your entire account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this for spot and futures trading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! The position size calculator works for both spot and futures/perpetuals trading on any cryptocurrency exchange including Binance, Bybit, OKX, Coinbase, Kraken, and more. For spot trading, set leverage to 1x. For futures or perpetual contracts, adjust the leverage to match your intended position."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I adjust position size based on volatility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. High-volatility assets like small-cap altcoins require smaller position sizes because wider stop-losses are needed to avoid getting stopped out by normal price fluctuation. If you maintain the same risk percentage, your position size will automatically be smaller on volatile assets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I handle multiple open positions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your total risk across all open positions should typically not exceed 10-15% of your account, even if each individual trade risks only 1-2%. Be especially careful with correlated trades — five long positions on different altcoins are not truly diversified if they all dump when Bitcoin drops."
+        }
+      }
+    ]
+  }
+]
+</script>

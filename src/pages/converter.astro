@@ -1,0 +1,840 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import CryptoConverter from '../components/CryptoConverter.tsx';
+import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
+---
+
+<Layout
+  title="Crypto Converter — Real-Time Cryptocurrency Price Calculator | CryptoCalk"
+  description="Free crypto converter and price calculator. Convert Bitcoin, Ethereum, and 500+ cryptocurrencies to USD, EUR, GBP, and 10+ fiat currencies instantly. Real-time CoinGecko prices."
+  lang="en"
+>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/converter" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/converter" aria-current="page">Crypto Converter</a>
+      </div>
+    </nav>
+
+    <!-- Converter Section -->
+    <section class="calculator-section">
+      <div class="section-container converter-container">
+        <div class="calc-header">
+          <h1>Crypto Converter</h1>
+          <p>Convert any cryptocurrency to fiat instantly. Real-time prices from CoinGecko.</p>
+        </div>
+
+        <CryptoConverter lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the Crypto Converter</h2>
+        <p>Our free crypto converter lets you calculate the value of any cryptocurrency in your local fiat currency. Simply select a coin, choose your target currency, and enter an amount — the conversion happens instantly using live market data from CoinGecko.</p>
+        <ol>
+          <li><strong>Pick a quick pair</strong> — use the preset buttons (BTC/USD, ETH/USD, SOL/USD, etc.) for the most popular conversions, or search for any coin.</li>
+          <li><strong>Select your currencies</strong> — choose the cryptocurrency you want to convert from and the fiat currency you want to convert to.</li>
+          <li><strong>Enter an amount</strong> — type the number of coins or the fiat amount. The converter works in both directions.</li>
+          <li><strong>Read the result</strong> — see the converted value, the exchange rate, and the 24-hour price change percentage instantly.</li>
+        </ol>
+
+        <h3>Key Features</h3>
+        <ul>
+          <li><strong>500+ cryptocurrencies</strong> — search and convert any coin tracked by CoinGecko, from Bitcoin to the latest DeFi tokens.</li>
+          <li><strong>10+ fiat currencies</strong> — USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR, RUB, and more.</li>
+          <li><strong>Quick pair buttons</strong> — one-click access to the most popular conversion pairs.</li>
+          <li><strong>24h price change</strong> — see whether the price has gone up or down in the last 24 hours.</li>
+          <li><strong>Swap direction</strong> — instantly reverse the conversion with the swap button.</li>
+          <li><strong>Refresh on demand</strong> — click refresh to get the latest price at any time.</li>
+        </ul>
+
+        <h3>Supported Cryptocurrencies</h3>
+        <p>Search from over 500 cryptocurrencies including Bitcoin (BTC), Ethereum (ETH), Solana (SOL), XRP, Dogecoin (DOGE), Cardano (ADA), Polygon (MATIC), Avalanche (AVAX), Polkadot (DOT), Chainlink (LINK), Toncoin (TON), and all major altcoins and tokens. New coins are added automatically as they appear on CoinGecko.</p>
+
+        <h3>Supported Fiat Currencies</h3>
+        <p>Convert to fiat currencies used by the largest crypto markets worldwide: US Dollar (USD), Euro (EUR), British Pound (GBP), Japanese Yen (JPY), Australian Dollar (AUD), Canadian Dollar (CAD), Brazilian Real (BRL), Turkish Lira (TRY), Indian Rupee (INR), and Russian Ruble (RUB). Each currency uses the official exchange rate as reported by CoinGecko.</p>
+
+        <h2>How Cryptocurrency Prices Are Calculated</h2>
+        <p>Cryptocurrency prices are not set by a single authority — they emerge from supply and demand across hundreds of exchanges worldwide. CoinGecko aggregates price data from over 900 exchanges, weighting each by trading volume and liquidity to produce a reliable average price for every trading pair.</p>
+        <p>The price you see on this converter reflects the volume-weighted average across all exchanges where the coin is traded. This means it may differ slightly from the price on any individual exchange due to factors like regional demand, liquidity depth, and maker/taker ratios.</p>
+
+        <h3>Conversion Formula</h3>
+        <div class="formula-block">
+          <code>Converted Value = Amount × Current Price in Target Currency</code>
+        </div>
+        <p>For example, if Bitcoin is trading at $65,000 and you want to convert 0.5 BTC to USD: 0.5 × $65,000 = $32,500. The same principle applies to any crypto-to-fiat pair.</p>
+
+        <h3>Why Prices Differ Between Exchanges</h3>
+        <p>Several factors cause price differences between exchanges. Regional demand can push prices higher in countries with capital controls or strong retail interest. Liquidity depth affects how much the price moves with each trade — thin order books on smaller exchanges lead to wider spreads. Deposit and withdrawal speeds also matter: if it takes hours to move funds between exchanges, arbitrageurs cannot instantly equalize prices.</p>
+        <p>These differences are usually small (0.1-0.5%) for major coins on large exchanges but can be significant (1-5%+) for low-cap tokens on regional exchanges.</p>
+
+        <h2>Popular Cryptocurrency Conversions</h2>
+        <p>The most common conversions involve converting between the top cryptocurrencies and major fiat currencies. Here are the pairs traders search for most frequently:</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Conversion</th><th>Common Use Case</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>BTC to USD</td><td>Checking Bitcoin portfolio value in US dollars</td></tr>
+              <tr><td>ETH to USD</td><td>Valuing Ethereum holdings and DeFi positions</td></tr>
+              <tr><td>BTC to EUR</td><td>European investors tracking Bitcoin value</td></tr>
+              <tr><td>SOL to USD</td><td>Valuing Solana ecosystem investments</td></tr>
+              <tr><td>XRP to USD</td><td>Tracking Ripple value for remittance use cases</td></tr>
+              <tr><td>DOGE to USD</td><td>Checking meme coin value and profits</td></tr>
+              <tr><td>BTC to BRL</td><td>Brazilian investors — one of the top crypto markets</td></tr>
+              <tr><td>BTC to TRY</td><td>Turkish investors hedging against lira inflation</td></tr>
+              <tr><td>BTC to INR</td><td>Indian investors — the largest crypto user base</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Understanding the 24-Hour Price Change</h2>
+        <p>The 24-hour change percentage shows how much a cryptocurrency's price has moved compared to exactly 24 hours ago. A positive number (green) means the price has increased, while a negative number (red) means it has decreased. This metric gives you a quick sense of the current market direction without needing to check charts.</p>
+        <p>Keep in mind that 24-hour change can be misleading during volatile periods. A coin might show +5% for the day but could have been +15% just hours ago. For a more complete picture, check the 7-day and 30-day changes as well, which are available on most exchange platforms.</p>
+
+        <h2>Tips for Accurate Crypto Conversions</h2>
+        <ul>
+          <li><strong>Always refresh before making decisions</strong> — crypto prices can move 1-5% in minutes during volatile periods. Click the refresh button for the latest rate.</li>
+          <li><strong>Account for exchange fees</strong> — the converter shows the mid-market rate. When you actually buy or sell on an exchange, you will pay maker/taker fees (typically 0.1-0.5%) on top of this price.</li>
+          <li><strong>Consider spread costs</strong> — the buy price (ask) is always slightly higher than the sell price (bid). The difference is the spread, which is an additional cost beyond exchange fees.</li>
+          <li><strong>Watch out for slippage on large orders</strong> — converting large amounts on exchanges with thin liquidity can cause the actual price to deviate from the displayed rate.</li>
+          <li><strong>Use limit orders for precision</strong> — if the exact conversion rate matters, use limit orders on your exchange instead of market orders to control the execution price.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>How often are prices updated?</summary>
+          <p>Prices are fetched from CoinGecko's API each time you load the page or click the Refresh button. CoinGecko updates prices every 1-2 minutes by aggregating data from over 900 cryptocurrency exchanges worldwide.</p>
+        </details>
+        <details>
+          <summary>Why might the price differ from my exchange?</summary>
+          <p>CoinGecko shows a volume-weighted average price across all exchanges. Individual exchanges may have slightly different prices due to liquidity depth, regional demand, and the specific maker/taker ratios at that moment. Differences are typically small (under 0.5%) for major coins.</p>
+        </details>
+        <details>
+          <summary>Can I convert between two cryptocurrencies?</summary>
+          <p>This converter handles crypto-to-fiat conversions. To calculate crypto-to-crypto values, convert both coins to the same fiat currency and compare. For example, to find how much ETH equals 1 BTC, convert both to USD and divide.</p>
+        </details>
+        <details>
+          <summary>Is this converter free to use?</summary>
+          <p>Yes, CryptoCalk is completely free with no signup required. We use CoinGecko's API to provide accurate, real-time pricing data for over 500 cryptocurrencies and 10+ fiat currencies.</p>
+        </details>
+        <details>
+          <summary>Does this converter include exchange fees?</summary>
+          <p>No, the converter shows the mid-market rate without fees. When you actually buy or sell crypto on an exchange, you will pay additional fees (typically 0.05-0.5% depending on the exchange and your volume tier). Use our <a href="/profit-calculator">Profit Calculator</a> to factor in fees.</p>
+        </details>
+        <details>
+          <summary>What is the most accurate way to convert crypto?</summary>
+          <p>For the most accurate conversion, check the price directly on the exchange where you plan to trade. This converter provides an excellent reference rate based on the global average, but the actual price you get depends on your specific exchange, order type, and market conditions at the time of execution.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/profit-calculator">Crypto Profit Calculator</a> — calculate your profit or loss on any crypto trade including fees.</li>
+          <li><a href="/dca-calculator">DCA Calculator</a> — simulate dollar-cost averaging with historical price data.</li>
+          <li><a href="/tax-calculator">Crypto Tax Calculator</a> — estimate capital gains taxes on your conversions.</li>
+          <li><a href="/what-if">What If Calculator</a> — see what your investment would be worth if you had bought earlier.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. For informational purposes only — not financial advice.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* ===== Header ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-header);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+  .header-link:hover { color: var(--color-text); }
+
+  /* ===== Breadcrumb ===== */
+  .breadcrumb {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .breadcrumb .section-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+  .breadcrumb a[aria-current] {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ===== Layout ===== */
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .converter-container {
+    max-width: 720px;
+  }
+  .calculator-section {
+    padding: 40px 0 60px;
+  }
+  .calc-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .calc-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+  .calc-header p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+  }
+
+  /* ===== SEO Content ===== */
+  .seo-content {
+    padding: 60px 0;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+  }
+  .seo-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 32px 0 12px;
+  }
+  .seo-content p, .seo-content li {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content a { color: var(--color-primary); text-decoration: none; }
+  .seo-content a:hover { text-decoration: underline; }
+  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 720px; }
+  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
+  .table-responsive td { color: var(--color-text-secondary); }
+  .formula-block {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 12px 0 16px;
+    max-width: 600px;
+  }
+  .formula-block code {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+  }
+  .seo-content details {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    max-width: 720px;
+    cursor: pointer;
+  }
+  .seo-content summary {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .seo-content details p {
+    margin-top: 12px;
+  }
+
+  /* ===== Footer ===== */
+  .site-footer {
+    padding: 24px 0;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+</style>
+
+<style is:global>
+  /* ===== Converter Styles ===== */
+  .converter-wrapper {
+    width: 100%;
+  }
+
+  /* Quick Pairs */
+  .quick-pairs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .quick-pair-btn {
+    padding: 6px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-bg-card);
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+
+  .quick-pair-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .quick-pair-btn.active {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  /* Converter Card */
+  .converter-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+  }
+
+  .converter-row {
+    margin-bottom: 4px;
+    position: relative;
+  }
+
+  .converter-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .converter-amount-input input {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .converter-amount-input input:focus {
+    border-color: var(--color-primary);
+  }
+
+  /* Selector Button */
+  .selector-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    color: var(--color-text);
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.2s;
+  }
+
+  .selector-btn:hover {
+    border-color: var(--color-primary);
+  }
+
+  .selector-icon {
+    border-radius: 50%;
+  }
+
+  .selector-flag {
+    font-size: 1.3rem;
+  }
+
+  .selector-name {
+    flex: 1;
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .selector-symbol {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    background: var(--color-bg-card-hover);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  /* Selector Dropdown */
+  .selector-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card-hover);
+    z-index: 50;
+    overflow: hidden;
+  }
+
+  .selector-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  .selector-search input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-family: inherit;
+  }
+
+  .selector-list {
+    max-height: 240px;
+    overflow-y: auto;
+  }
+
+  .selector-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    background: none;
+    color: var(--color-text);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: inherit;
+    text-align: left;
+    transition: background-color 0.1s;
+  }
+
+  .selector-option:hover {
+    background: var(--color-bg-card-hover);
+  }
+
+  .selector-option.selected {
+    background: var(--color-primary-light);
+  }
+
+  .selector-option img {
+    border-radius: 50%;
+  }
+
+  .option-name {
+    flex: 1;
+    font-weight: 500;
+  }
+
+  .option-symbol {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
+  .option-flag {
+    font-size: 1.1rem;
+  }
+
+  /* Swap Button */
+  .swap-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .swap-line {
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  .swap-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .swap-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: rotate(180deg);
+  }
+
+  /* Result */
+  .converter-result {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--color-primary-light), rgba(99, 102, 241, 0.02));
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: var(--radius-md);
+  }
+
+  .converter-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .spin-icon {
+    animation: spin 1s linear infinite;
+  }
+
+  .result-main {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .result-from {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .result-to {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+  }
+
+  .result-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .result-rate {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .result-change {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .result-change.up {
+    color: var(--color-accent-green);
+    background: rgba(16, 185, 129, 0.1);
+  }
+
+  .result-change.down {
+    color: var(--color-accent-red);
+    background: rgba(239, 68, 68, 0.1);
+  }
+
+  .result-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .refresh-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-card);
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+
+  .refresh-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .last-updated {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+  }
+
+  /* CTA */
+  .converter-cta {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .converter-cta:hover {
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+
+  /* Info Grid */
+  .converter-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .info-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+  }
+
+  .info-card h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .info-card p {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .converter-info-grid {
+      grid-template-columns: 1fr;
+    }
+    .result-to {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Crypto Converter",
+  "url": "https://cryptocalk.com/converter",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free crypto converter and price calculator. Convert Bitcoin, Ethereum, and 500+ cryptocurrencies to USD, EUR, GBP, and 10+ fiat currencies instantly."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How often are prices updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prices are fetched from CoinGecko's API each time you load the page or click the Refresh button. CoinGecko updates prices every 1-2 minutes from major exchanges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why might the price differ from my exchange?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CoinGecko shows an average price across all exchanges. Individual exchanges may have slightly different prices due to liquidity, trading volume, and regional demand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert between two cryptocurrencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This converter handles crypto-to-fiat conversions. To calculate crypto-to-crypto, convert both to the same fiat currency and compare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this converter free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, CryptoCalk is completely free with no signup required. We use CoinGecko's API for accurate, real-time pricing data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this converter include exchange fees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, the converter shows the mid-market rate without fees. When you buy or sell on an exchange, you will pay additional fees typically 0.05-0.5%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most accurate way to convert crypto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For the most accurate conversion, check the price directly on the exchange where you plan to trade. This converter provides a global average reference rate."
+      }
+    }
+  ]
+}
+</script>

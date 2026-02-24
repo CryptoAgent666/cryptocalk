@@ -1,0 +1,878 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import WhatIfCalculator from '../components/WhatIfCalculator.tsx';
+import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
+---
+
+<Layout
+  title='Crypto "What If" Calculator — If I Had Invested in Bitcoin/Ethereum | CryptoCalk'
+  description='See what your investment would be worth today if you had bought Bitcoin, Ethereum, Solana, or any crypto in the past. Free historical ROI calculator with chart.'
+  lang="en"
+>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <div class="header-actions">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/what-if" />
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/what-if" aria-current="page">What If Calculator</a>
+      </div>
+    </nav>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto "What If" Calculator</h1>
+          <p>Travel back in time. See what your investment would be worth today if you had bought crypto in the past.</p>
+        </div>
+
+        <WhatIfCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="seo-content">
+      <div class="section-container">
+        <h2>How to Use the What If Calculator</h2>
+        <ol>
+          <li><strong>Select your cryptocurrency</strong> — Search for any coin by name or symbol (Bitcoin, Ethereum, Solana, etc.)</li>
+          <li><strong>Enter your investment amount</strong> — Input how much you would have invested in USD</li>
+          <li><strong>Choose a past date</strong> — Pick any date from the coin's listing history to present day</li>
+          <li><strong>Click Calculate</strong> — View your hypothetical returns, ROI percentage, and a visual chart</li>
+          <li><strong>Explore scenarios</strong> — Use the quick scenario buttons to test popular dates like "Bitcoin 2013" or "Ethereum ICO"</li>
+          <li><strong>Share your results</strong> — Generate a shareable snapshot of your calculation to post on social media</li>
+        </ol>
+
+        <h2>What If I Had Invested in Crypto Earlier?</h2>
+        <p>One of the most common questions in the crypto world: "What if I had bought Bitcoin at $1?" This calculator lets you answer that question with real historical data from CoinGecko. Enter any amount, pick any supported cryptocurrency, and choose a date in the past to see exactly how your investment would have performed.</p>
+        <p>The results can be eye-opening. Early Bitcoin investors who bought in 2010 at $0.08 and held through multiple boom-and-bust cycles have seen returns exceeding 100,000,000%. Ethereum buyers from the 2015 ICO at $0.31 witnessed gains of over 1,000,000% at the 2021 peak. Even more recent opportunities like Solana in 2020 or Cardano in 2017 delivered life-changing returns for those with patience and conviction.</p>
+
+        <h2>Notable Crypto Returns</h2>
+        <div class="returns-table-wrap">
+          <table class="returns-table">
+            <thead>
+              <tr>
+                <th>Investment</th>
+                <th>Date</th>
+                <th>Price Then</th>
+                <th>Value Today*</th>
+                <th>ROI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$100 in BTC</td>
+                <td>Jan 2013</td>
+                <td>$13.30</td>
+                <td>~$530,000+</td>
+                <td>530,000%+</td>
+              </tr>
+              <tr>
+                <td>$1,000 in ETH</td>
+                <td>Aug 2015</td>
+                <td>$1.20</td>
+                <td>~$2,800,000+</td>
+                <td>280,000%+</td>
+              </tr>
+              <tr>
+                <td>$500 in SOL</td>
+                <td>Apr 2020</td>
+                <td>$0.68</td>
+                <td>~$100,000+</td>
+                <td>20,000%+</td>
+              </tr>
+              <tr>
+                <td>$200 in BNB</td>
+                <td>Jul 2017</td>
+                <td>$0.15</td>
+                <td>~$800,000+</td>
+                <td>400,000%+</td>
+              </tr>
+              <tr>
+                <td>$100 in DOGE</td>
+                <td>Jan 2019</td>
+                <td>$0.002</td>
+                <td>~$8,000+</td>
+                <td>8,000%+</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="table-note">*Approximate values based on peak-to-current performance. Actual results vary by exact date and current price.</p>
+        </div>
+
+        <h2>The Power of Early Adoption</h2>
+        <p>Why did early crypto investors make such extraordinary returns? The answer lies in network effects and adoption curves. Bitcoin started as a niche experiment known only to cryptography enthusiasts and libertarians. Ethereum was a whitepaper proposal that most people dismissed. Solana was an unknown challenger in a sea of "Ethereum killers."</p>
+        <p>When you invest in a technology before mass adoption, you're taking on maximum risk — but also maximum potential reward. Early Bitcoin buyers faced uncertainty about whether the protocol would survive, whether governments would ban it, and whether it had any real use case beyond dark web transactions. Those who held through the Mt. Gox collapse, the China mining bans, and countless "Bitcoin is dead" articles were rewarded with generational wealth.</p>
+        <p>The adoption curve works like this: innovators and early adopters take the biggest risks at the lowest prices. As the technology proves itself and enters the "early majority" phase, prices rise exponentially. By the time mainstream adoption occurs, most of the gains have already been realized. This is why a $100 investment in Bitcoin in 2013 could be worth over $500,000 today, while a $100 investment in 2021 might be down 50%.</p>
+
+        <h2>Why Timing the Market Is Nearly Impossible</h2>
+        <p>Looking at historical returns creates a powerful illusion: that market timing is easy. With perfect hindsight, we can see exactly when to buy and sell. But real-world investing is nothing like that. In 2013, when Bitcoin hit $1,000, most people thought it was too late. In 2017, when it reached $20,000, experts declared it a bubble. Those who sold at these "tops" missed the subsequent run to $69,000 in 2021.</p>
+        <p>FOMO (fear of missing out) and hindsight bias cloud our judgment. We see the success stories and forget the countless failed projects. For every Bitcoin, there are a hundred altcoins that went to zero. BitConnect promised massive returns and collapsed as a Ponzi scheme. Countless ICO projects from 2017 are now worthless. Even high-profile projects like Terra/LUNA imploded overnight, wiping out billions in value.</p>
+        <p>Survivorship bias makes us believe timing is easier than it is. We remember Bitcoin, Ethereum, and Solana because they succeeded. We forget about Verge, Bitconnect, and thousands of other projects that failed. This calculator shows you what your gains would have been if you had picked the winners — but in reality, you would have been choosing from a sea of unknowns, most of which would have lost you money.</p>
+
+        <h2>Lessons from Historical Crypto Returns</h2>
+        <p>Despite the impossibility of perfect timing, historical returns teach us valuable lessons. First, <strong>HODLing through volatility</strong> is crucial. Bitcoin has experienced drawdowns of 80% or more multiple times in its history. Investors who sold in panic during these crashes missed the subsequent recoveries. Those who held (or "HODLed" in crypto slang) through the pain were rewarded.</p>
+        <p>Second, <strong>conviction matters</strong>. Understanding why you're investing helps you hold through downturns. If you bought Bitcoin in 2017 at $20,000 simply because prices were rising, you likely sold in fear when it crashed to $3,200 in 2018. But if you believed in the fundamental value proposition — decentralized money, limited supply, censorship resistance — you might have held through to $69,000 in 2021.</p>
+        <p>Third, <strong>bear markets are accumulation opportunities</strong>. The best time to invest is when everyone else is fearful and prices are depressed. Bitcoin's journey from the 2017 all-time high of $20,000 to the 2018 bottom of $3,200 felt catastrophic to those who bought the top. But investors who accumulated during the 2018-2020 bear market saw their holdings increase 20x by 2021. The market rewards patience and contrarian thinking.</p>
+
+        <h2>DCA vs Lump Sum: A Better Approach</h2>
+        <p>Since timing the market is nearly impossible, many successful crypto investors use dollar-cost averaging (DCA) instead of trying to buy the perfect bottom. DCA means investing a fixed amount at regular intervals — for example, $100 every week or $500 every month — regardless of price. This strategy reduces timing risk and removes emotion from the equation.</p>
+        <p>Historically, DCA has outperformed most attempts at market timing. While a lump sum investment at the perfect bottom would yield higher returns, most investors lack the discipline or luck to execute that strategy. DCA ensures you buy more when prices are low and less when prices are high, resulting in a better average entry price over time.</p>
+        <p>Our <a href="/dca-calculator">DCA Calculator</a> lets you compare dollar-cost averaging to lump sum investing across different time periods and cryptocurrencies. You can see exactly how consistent investing would have performed versus trying to time the market. For most investors, especially those with a long-term horizon, DCA combined with strong conviction in the asset is the winning strategy.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>Where does the price data come from?</summary>
+          <p>We use CoinGecko's historical price API, which provides daily price data for thousands of cryptocurrencies. Data availability depends on when the coin was first listed on exchanges.</p>
+        </details>
+        <details>
+          <summary>How far back can I calculate?</summary>
+          <p>Bitcoin data goes back to 2010. For other coins, data is available from their first listing on major exchanges. If a date is too early, the calculator will let you know.</p>
+        </details>
+        <details>
+          <summary>Does this account for fees and taxes?</summary>
+          <p>No — this is a simplified "what if" scenario. Real-world returns would be reduced by exchange fees, network fees, and capital gains taxes. Use our <a href="/tax-calculator">Tax Calculator</a> to estimate your tax liability.</p>
+        </details>
+        <details>
+          <summary>Should I invest based on past performance?</summary>
+          <p>Never. Past returns are not a guarantee of future results. This calculator is for educational and entertainment purposes. Always do your own research (DYOR) and consult a financial advisor before making investment decisions.</p>
+        </details>
+        <details>
+          <summary>Why did some cryptos have million-percent returns?</summary>
+          <p>Million-percent returns occurred when projects went from near-zero valuations to mass adoption. Bitcoin went from a $0.08 experiment to a $69,000 global asset. Ethereum went from a $0.31 ICO to a $4,800 platform powering DeFi and NFTs. These weren't overnight gains — they took years of development, community building, and surviving multiple bear markets. Early investors took enormous risk betting on unproven technology.</p>
+        </details>
+        <details>
+          <summary>What about coins that went to zero?</summary>
+          <p>For every Bitcoin or Ethereum, hundreds of projects failed completely. BitConnect, Terra/LUNA, FTX Token, and countless ICO scams wiped out billions in investor money. This calculator shows winners because they're the ones with surviving price data. Failed coins disappear from exchanges and APIs. Survivorship bias makes crypto history look more profitable than it really was for the average investor who didn't pick the winners.</p>
+        </details>
+
+        <h2>Related Calculators</h2>
+        <ul>
+          <li><a href="/dca-calculator">DCA Calculator</a> — Compare dollar-cost averaging to lump sum investing</li>
+          <li><a href="/profit-calculator">Profit Calculator</a> — Calculate realized gains and losses from actual trades</li>
+          <li><a href="/compound-calculator">Compound Interest Calculator</a> — See how staking and yield farming compound over time</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <p>&copy; 2026 CryptoCalk. All rights reserved. Past performance does not guarantee future results.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  /* ===== Header ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-header);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .logo:hover { color: var(--color-text); }
+  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .logo-text b {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+  .header-link:hover { color: var(--color-text); }
+
+  /* ===== Breadcrumb ===== */
+  .breadcrumb {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .breadcrumb .section-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+  .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+  .breadcrumb a[aria-current] {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ===== Layout ===== */
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .calculator-section { padding: 40px 0 60px; }
+  .calc-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .calc-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+  .calc-header p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+  }
+
+  /* ===== SEO Content ===== */
+  .seo-content {
+    padding: 60px 0;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+  }
+  .seo-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .seo-content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 32px 0 12px;
+  }
+  .seo-content p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+  .seo-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  /* Returns Table */
+  .returns-table-wrap {
+    overflow-x: auto;
+    margin: 16px 0 24px;
+  }
+  .returns-table {
+    width: 100%;
+    max-width: 720px;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .returns-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--color-bg);
+    font-weight: 600;
+    color: var(--color-text);
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+  }
+  .returns-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+  }
+  .returns-table tr:hover td {
+    background: var(--color-bg);
+  }
+  .table-note {
+    font-size: 0.75rem !important;
+    font-style: italic;
+    color: var(--color-text-muted) !important;
+    margin-top: 8px !important;
+  }
+
+  .seo-content details {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    max-width: 720px;
+    cursor: pointer;
+  }
+  .seo-content summary {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .seo-content details p { margin-top: 12px; }
+
+  .seo-content h2 { margin-top: 40px; }
+  .seo-content h2:first-child { margin-top: 0; }
+  .seo-content ol { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content ol li { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 8px; }
+  .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .seo-content li { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 6px; }
+  .seo-content strong { color: var(--color-text); }
+
+  /* ===== Footer ===== */
+  .site-footer { padding: 24px 0; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+</style>
+
+<style is:global>
+  /* ===== What If Calculator Styles ===== */
+  .whatif-wrapper { width: 100%; }
+
+  .whatif-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .whatif-grid { grid-template-columns: 1fr; }
+  }
+
+  .whatif-input-panel {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .whatif-prompt {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 16px;
+  }
+
+  /* Coin selected */
+  .coin-selected {
+    padding: 8px 12px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .input-with-icon {
+    position: relative;
+  }
+  .input-with-icon input {
+    width: 100%;
+    padding: 10px 14px;
+    padding-right: 32px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .input-with-icon input:focus { border-color: var(--color-primary); }
+  .input-clear {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .coin-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    max-height: 240px;
+    overflow-y: auto;
+  }
+  .coin-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+    text-align: left;
+  }
+  .coin-option:last-child { border-bottom: none; }
+  .coin-option:hover { background: var(--color-bg); }
+  .coin-option-name { font-size: 0.85rem; font-weight: 500; color: var(--color-text); }
+  .coin-option-symbol { font-size: 0.75rem; color: var(--color-text-muted); margin-left: auto; }
+
+  .date-input {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .date-input:focus { border-color: var(--color-primary); }
+
+  /* Quick scenarios */
+  .quick-scenarios {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+  }
+  .scenario-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .scenario-chip {
+    padding: 6px 12px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .scenario-chip:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.04);
+  }
+
+  /* Results */
+  .whatif-results-panel {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .whatif-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+  }
+  .whatif-empty h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 16px 0 8px;
+  }
+  .whatif-empty p { font-size: 0.85rem; margin-bottom: 16px; }
+  .whatif-features {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Hero */
+  .whatif-hero {
+    text-align: center;
+    padding: 28px 24px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+  }
+  .whatif-hero.gain {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+  .whatif-hero.loss {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02));
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+  .whatif-hero-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+  }
+  .whatif-hero-value {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+  }
+  .whatif-hero-roi {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .whatif-hero-roi.positive { color: var(--color-accent-green); }
+  .whatif-hero-roi.negative { color: var(--color-accent-red); }
+
+  /* Chart */
+  .whatif-chart { margin-bottom: 20px; }
+  .whatif-svg {
+    width: 100%;
+    height: 120px;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+  }
+  .chart-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+  }
+
+  /* Stats */
+  .whatif-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 480px) {
+    .whatif-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  .whatif-stat {
+    padding: 12px;
+    background: var(--color-bg);
+    border-radius: var(--radius-sm);
+    text-align: center;
+  }
+  .whatif-stat .stat-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+  }
+  .whatif-stat .stat-value {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Share */
+  .share-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .share-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* CTA */
+  .whatif-cta {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .whatif-cta:hover {
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+
+  /* Buttons */
+  .btn-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .calculate-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .calculate-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+  .calculate-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .reset-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .reset-btn:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+  }
+
+  /* Input groups */
+  .input-group { margin-bottom: 14px; position: relative; }
+  .input-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+  }
+  .input-with-unit {
+    position: relative;
+  }
+  .input-with-unit input {
+    width: 100%;
+    padding: 10px 14px 10px 28px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .input-with-unit input:focus { border-color: var(--color-primary); }
+  .input-prefix {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  /* Spin animation */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spin { animation: spin 1s linear infinite; }
+
+  /* Disclaimer */
+  .calc-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    padding: 10px;
+    background: var(--color-bg);
+    border-radius: var(--radius-sm);
+  }
+
+  .text-profit { color: var(--color-accent-green) !important; }
+  .text-loss { color: var(--color-accent-red) !important; }
+
+  .calc-error {
+    color: var(--color-accent-red);
+    font-size: 0.85rem;
+    padding: 10px 14px;
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    border-radius: var(--radius-sm);
+    margin-top: 10px;
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Crypto What If Calculator",
+  "url": "https://cryptocalk.com/what-if",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "See what your investment would be worth today if you had bought Bitcoin, Ethereum, Solana, or any crypto in the past."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where does the price data come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We use CoinGecko's historical price API, which provides daily price data for thousands of cryptocurrencies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far back can I calculate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bitcoin data goes back to 2010. For other coins, data is available from their first listing on major exchanges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this account for fees and taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — this is a simplified what-if scenario. Real-world returns would be reduced by exchange fees, network fees, and capital gains taxes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I invest based on past performance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never. Past returns are not a guarantee of future results. This calculator is for educational and entertainment purposes. Always do your own research."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did some cryptos have million-percent returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Million-percent returns occurred when projects went from near-zero valuations to mass adoption. Bitcoin went from a $0.08 experiment to a $69,000 global asset. Ethereum went from a $0.31 ICO to a $4,800 platform powering DeFi and NFTs. These weren't overnight gains — they took years of development, community building, and surviving multiple bear markets. Early investors took enormous risk betting on unproven technology."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about coins that went to zero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For every Bitcoin or Ethereum, hundreds of projects failed completely. BitConnect, Terra/LUNA, FTX Token, and countless ICO scams wiped out billions in investor money. This calculator shows winners because they're the ones with surviving price data. Failed coins disappear from exchanges and APIs. Survivorship bias makes crypto history look more profitable than it really was for the average investor who didn't pick the winners."
+      }
+    }
+  ]
+}
+</script>

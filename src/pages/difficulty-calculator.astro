@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import DifficultyEstimatorCalculator from '../components/DifficultyEstimatorCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="difficulty-calculator"
+  title="Mining Difficulty Estimator"
+  description="Estimate how the next mining difficulty adjustment may impact your projected revenue and profitability."
+>
+  <DifficultyEstimatorCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

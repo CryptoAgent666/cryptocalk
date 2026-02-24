@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import CompoundInterestCalculator from '../components/CompoundInterestCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="compound-calculator"
+  title="Compound Interest Calculator (Crypto)"
+  description="Project compound growth for crypto savings, staking, and yield strategies with recurring contributions."
+>
+  <CompoundInterestCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

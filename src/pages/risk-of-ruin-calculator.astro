@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import RiskOfRuinCalculator from '../components/RiskOfRuinCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="risk-of-ruin-calculator"
+  title="Risk of Ruin Calculator"
+  description="Estimate probability of account ruin from win rate, reward/risk profile, and fixed risk per trade."
+>
+  <RiskOfRuinCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>

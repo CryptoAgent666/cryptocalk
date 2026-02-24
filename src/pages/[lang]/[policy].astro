@@ -1,0 +1,753 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import type { Lang } from '../../i18n/utils';
+
+type PolicyKey = 'privacy' | 'editorial-policy' | 'methodology';
+type LocalizedLang = Exclude<Lang, 'en'>;
+
+interface PolicySection {
+  heading: string;
+  paragraphs?: string[];
+  bullets?: string[];
+  links?: Array<{ href: string; label: string }>;
+}
+
+interface PolicyContent {
+  pageTitle: string;
+  metaDescription: string;
+  heading: string;
+  updatedLabel: string;
+  intro: string;
+  sections: PolicySection[];
+}
+
+const LAST_UPDATED = '20/02/2026';
+
+const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> = {
+  privacy: {
+    es: {
+      pageTitle: 'Política de Privacidad | CryptoCalk',
+      metaDescription: 'Cómo CryptoCalk maneja datos, almacenamiento local y proveedores externos.',
+      heading: 'Política de Privacidad',
+      updatedLabel: 'Última actualización',
+      intro:
+        'CryptoCalk es un sitio centrado en calculadoras. La mayoría de los cálculos se ejecutan en tu navegador y minimizamos la recopilación de datos.',
+      sections: [
+        {
+          heading: '1. Datos que recopilamos',
+          paragraphs: ['No exigimos registro ni datos de identidad para usar las calculadoras.'],
+          bullets: [
+            'Sin creación de cuenta obligatoria.',
+            'Sin conexión de wallet para uso básico.',
+            'Sin recolección KYC dentro de las herramientas.',
+          ],
+        },
+        {
+          heading: '2. Almacenamiento en el navegador',
+          paragraphs: ['Usamos almacenamiento local limitado para rendimiento y preferencias.'],
+          bullets: [
+            '`localStorage`: preferencia de tema.',
+            '`sessionStorage`: caché temporal de respuestas de mercado.',
+          ],
+        },
+        {
+          heading: '3. Proveedores externos',
+          paragraphs: [
+            'Algunas calculadoras consumen datos de precios en tiempo real desde CoinGecko. Revisa su política para entender su propio tratamiento de datos.',
+          ],
+          links: [{ href: 'https://www.coingecko.com/en/privacy', label: 'Política de privacidad de CoinGecko' }],
+        },
+        {
+          heading: '4. Retención y aviso financiero',
+          paragraphs: [
+            'La retención principal depende del almacenamiento del navegador y de logs técnicos estándar del hosting.',
+            'CryptoCalk ofrece herramientas educativas. No es asesoramiento financiero, legal ni fiscal.',
+          ],
+        },
+      ],
+    },
+    pt: {
+      pageTitle: 'Política de Privacidade | CryptoCalk',
+      metaDescription: 'Como o CryptoCalk trata dados, armazenamento local e provedores externos.',
+      heading: 'Política de Privacidade',
+      updatedLabel: 'Última atualização',
+      intro:
+        'CryptoCalk é um site focado em calculadoras. A maior parte dos cálculos roda no navegador e a coleta de dados é minimizada.',
+      sections: [
+        {
+          heading: '1. Dados que coletamos',
+          paragraphs: ['Não exigimos cadastro nem dados pessoais para uso das calculadoras.'],
+          bullets: [
+            'Sem criação obrigatória de conta.',
+            'Sem conexão de carteira para uso básico.',
+            'Sem coleta de dados KYC nas ferramentas.',
+          ],
+        },
+        {
+          heading: '2. Armazenamento no navegador',
+          paragraphs: ['Usamos armazenamento local limitado para performance e preferências.'],
+          bullets: [
+            '`localStorage`: preferência de tema.',
+            '`sessionStorage`: cache temporário de dados de mercado.',
+          ],
+        },
+        {
+          heading: '3. Provedores externos',
+          paragraphs: [
+            'Algumas calculadoras usam preços em tempo real da API do CoinGecko. Consulte a política do provedor para detalhes de tratamento de dados.',
+          ],
+          links: [{ href: 'https://www.coingecko.com/en/privacy', label: 'Política de privacidade do CoinGecko' }],
+        },
+        {
+          heading: '4. Retenção e aviso financeiro',
+          paragraphs: [
+            'A retenção principal depende do seu navegador e de logs técnicos padrão de hospedagem.',
+            'CryptoCalk oferece ferramentas educacionais e não fornece aconselhamento financeiro, jurídico ou fiscal.',
+          ],
+        },
+      ],
+    },
+    tr: {
+      pageTitle: 'Gizlilik Politikasi | CryptoCalk',
+      metaDescription: 'CryptoCalk veri kullanimi, yerel depolama ve ucuncu taraf kaynaklari.',
+      heading: 'Gizlilik Politikasi',
+      updatedLabel: 'Son guncelleme',
+      intro:
+        'CryptoCalk hesaplayici odakli bir sitedir. Hesaplamalarin buyuk kismi tarayicinizda calisir ve veri toplama minimum seviyededir.',
+      sections: [
+        {
+          heading: '1. Toplanan veriler',
+          paragraphs: ['Hesaplayicilari kullanmak icin kayit veya kimlik bilgisi zorunlu degildir.'],
+          bullets: [
+            'Zorunlu hesap olusturma yoktur.',
+            'Temel kullanim icin cuzdan baglantisi gerekmez.',
+            'Araclar icinde KYC verisi toplanmaz.',
+          ],
+        },
+        {
+          heading: '2. Tarayici depolamasi',
+          paragraphs: ['Performans ve tercih yonetimi icin sinirli yerel depolama kullanilir.'],
+          bullets: [
+            '`localStorage`: tema tercihi.',
+            '`sessionStorage`: kisa sureli piyasa verisi onbellegi.',
+          ],
+        },
+        {
+          heading: '3. Ucuncu taraf kaynaklar',
+          paragraphs: [
+            'Bazi hesaplayicilar canli fiyatlar icin CoinGecko API kullanir. Veri politikasi icin ilgili saglayicinin metnini inceleyin.',
+          ],
+          links: [{ href: 'https://www.coingecko.com/en/privacy', label: 'CoinGecko Gizlilik Politikasi' }],
+        },
+        {
+          heading: '4. Saklama ve finansal uyari',
+          paragraphs: [
+            'Saklama buyuk olcude tarayicinizdaki yerel veriler ve standart sunucu loglari ile sinirlidir.',
+            'CryptoCalk egitsel araclar sunar; finansal, hukuki veya vergi danismanligi degildir.',
+          ],
+        },
+      ],
+    },
+    hi: {
+      pageTitle: 'गोपनीयता नीति | CryptoCalk',
+      metaDescription: 'CryptoCalk डेटा उपयोग, लोकल स्टोरेज और थर्ड-पार्टी सोर्स की जानकारी।',
+      heading: 'गोपनीयता नीति',
+      updatedLabel: 'अंतिम अपडेट',
+      intro:
+        'CryptoCalk एक कैलकुलेटर-केंद्रित वेबसाइट है। अधिकांश गणनाएं आपके ब्राउज़र में चलती हैं और डेटा संग्रह सीमित रखा जाता है।',
+      sections: [
+        {
+          heading: '1. हम क्या डेटा लेते हैं',
+          paragraphs: ['कैलकुलेटर उपयोग के लिए रजिस्ट्रेशन या पहचान डेटा आवश्यक नहीं है।'],
+          bullets: [
+            'अनिवार्य अकाउंट निर्माण नहीं।',
+            'बेसिक उपयोग के लिए वॉलेट कनेक्शन जरूरी नहीं।',
+            'टूल्स के भीतर KYC डेटा संग्रह नहीं।',
+          ],
+        },
+        {
+          heading: '2. ब्राउज़र स्टोरेज',
+          paragraphs: ['प्रदर्शन और यूज़र अनुभव के लिए सीमित लोकल स्टोरेज उपयोग होता है।'],
+          bullets: [
+            '`localStorage`: थीम प्रेफरेंस।',
+            '`sessionStorage`: अस्थायी मार्केट डेटा कैश।',
+          ],
+        },
+        {
+          heading: '3. थर्ड-पार्टी डेटा स्रोत',
+          paragraphs: [
+            'कुछ कैलकुलेटर लाइव प्राइस के लिए CoinGecko API का उपयोग करते हैं। उनके डेटा नियमों के लिए उनकी नीति देखें।',
+          ],
+          links: [{ href: 'https://www.coingecko.com/en/privacy', label: 'CoinGecko Privacy Policy' }],
+        },
+        {
+          heading: '4. डेटा रिटेंशन और वित्तीय चेतावनी',
+          paragraphs: [
+            'मुख्य डेटा आपके ब्राउज़र स्टोरेज और मानक सर्वर लॉग तक सीमित रहता है।',
+            'CryptoCalk केवल शैक्षिक टूल प्रदान करता है; यह वित्तीय, कानूनी या टैक्स सलाह नहीं है।',
+          ],
+        },
+      ],
+    },
+    ru: {
+      pageTitle: 'Политика конфиденциальности | CryptoCalk',
+      metaDescription: 'Как CryptoCalk обрабатывает данные, локальное хранение и внешние источники.',
+      heading: 'Политика конфиденциальности',
+      updatedLabel: 'Обновлено',
+      intro:
+        'CryptoCalk — сайт с упором на калькуляторы. Большинство расчетов выполняется в браузере, а сбор данных сведен к минимуму.',
+      sections: [
+        {
+          heading: '1. Какие данные мы собираем',
+          paragraphs: ['Для использования калькуляторов не требуется регистрация и персональные данные.'],
+          bullets: [
+            'Нет обязательного создания аккаунта.',
+            'Нет необходимости подключать кошелек для базового использования.',
+            'Нет сбора KYC-данных внутри калькуляторов.',
+          ],
+        },
+        {
+          heading: '2. Хранение данных в браузере',
+          paragraphs: ['Для скорости и удобства используется ограниченное локальное хранение.'],
+          bullets: [
+            '`localStorage`: тема интерфейса.',
+            '`sessionStorage`: временный кэш рыночных данных.',
+          ],
+        },
+        {
+          heading: '3. Внешние провайдеры данных',
+          paragraphs: [
+            'Часть калькуляторов использует рыночные цены из CoinGecko API. Ознакомьтесь с политикой провайдера отдельно.',
+          ],
+          links: [{ href: 'https://www.coingecko.com/en/privacy', label: 'Политика конфиденциальности CoinGecko' }],
+        },
+        {
+          heading: '4. Срок хранения и финансовое предупреждение',
+          paragraphs: [
+            'Основные данные ограничены локальным хранилищем браузера и стандартными техническими логами хостинга.',
+            'CryptoCalk — образовательный сервис и не является финансовой, юридической или налоговой консультацией.',
+          ],
+        },
+      ],
+    },
+  },
+  'editorial-policy': {
+    es: {
+      pageTitle: 'Política Editorial | CryptoCalk',
+      metaDescription: 'Cómo CryptoCalk crea, revisa y corrige contenido de calculadoras.',
+      heading: 'Política Editorial',
+      updatedLabel: 'Última actualización',
+      intro:
+        'Esta política describe cómo creamos y mantenemos contenido de calculadoras para que los resultados sean claros y verificables.',
+      sections: [
+        {
+          heading: '1. Principios editoriales',
+          bullets: [
+            'Lenguaje claro primero, fórmulas después.',
+            'Supuestos visibles junto a cada resultado.',
+            'Separación entre educación y promoción.',
+            'Aviso explícito de no asesoramiento financiero.',
+          ],
+        },
+        {
+          heading: '2. Revisión y control de calidad',
+          bullets: [
+            'Revisión de fórmulas y unidades.',
+            'Verificación de inputs y límites en UI.',
+            'Comprobación básica de SEO técnico y schema.',
+            'Build de producción antes de publicar.',
+          ],
+        },
+        {
+          heading: '3. Actualizaciones y correcciones',
+          paragraphs: [
+            'Actualizamos páginas cuando cambian supuestos, comportamiento de API o requisitos técnicos.',
+            'Las correcciones materiales se registran en el changelog del proyecto.',
+          ],
+        },
+        {
+          heading: '4. Divulgación de afiliación y riesgo',
+          paragraphs: [
+            'Algunas páginas pueden contener enlaces de afiliado. Esto no altera la lógica de cálculo.',
+            'Los resultados son estimaciones y deben validarse de forma independiente.',
+          ],
+        },
+      ],
+    },
+    pt: {
+      pageTitle: 'Política Editorial | CryptoCalk',
+      metaDescription: 'Como o CryptoCalk cria, revisa e corrige conteúdo das calculadoras.',
+      heading: 'Política Editorial',
+      updatedLabel: 'Última atualização',
+      intro:
+        'Esta política descreve como criamos e mantemos conteúdo para que os resultados das calculadoras sejam claros e auditáveis.',
+      sections: [
+        {
+          heading: '1. Princípios editoriais',
+          bullets: [
+            'Linguagem simples antes de fórmulas complexas.',
+            'Suposições visíveis ao lado dos resultados.',
+            'Separação entre conteúdo educativo e promoção.',
+            'Aviso explícito de que não é aconselhamento financeiro.',
+          ],
+        },
+        {
+          heading: '2. Revisão e qualidade',
+          bullets: [
+            'Revisão de fórmulas e unidades.',
+            'Validação de entradas e limites de interface.',
+            'Checagem de SEO técnico e schema.',
+            'Build de produção antes de publicar.',
+          ],
+        },
+        {
+          heading: '3. Atualizações e correções',
+          paragraphs: [
+            'Atualizamos páginas quando mudam suposições, APIs ou requisitos técnicos.',
+            'Correções relevantes ficam registradas no changelog do projeto.',
+          ],
+        },
+        {
+          heading: '4. Divulgação de afiliados e risco',
+          paragraphs: [
+            'Algumas páginas podem conter links de afiliado. Isso não altera a lógica dos cálculos.',
+            'Resultados são estimativas e devem ser validados antes de qualquer decisão.',
+          ],
+        },
+      ],
+    },
+    tr: {
+      pageTitle: 'Editor Politikasi | CryptoCalk',
+      metaDescription: 'CryptoCalk hesaplayici icerikleri nasil uretilir, incelenir ve duzeltilir.',
+      heading: 'Editor Politikasi',
+      updatedLabel: 'Son guncelleme',
+      intro:
+        'Bu politika, hesaplayici iceriklerinin acik ve denetlenebilir olmasi icin uyguladigimiz sureci aciklar.',
+      sections: [
+        {
+          heading: '1. Editoryal ilkeler',
+          bullets: [
+            'Once acik anlatim, sonra formula detayi.',
+            'Varsayimlar sonuc yaninda gorunur.',
+            'Egitim icerigi ile promosyon ayrilir.',
+            'Finansal tavsiye olmadigi acikca belirtilir.',
+          ],
+        },
+        {
+          heading: '2. Inceleme ve kalite',
+          bullets: [
+            'Formula ve birim kontrolleri.',
+            'Arayuz girisleri ve limit dogrulamasi.',
+            'Temel teknik SEO ve schema kontrolu.',
+            'Yayin oncesi production build dogrulamasi.',
+          ],
+        },
+        {
+          heading: '3. Guncelleme ve duzeltmeler',
+          paragraphs: [
+            'Varsayimlar, API davranisi veya teknik gereksinimler degistiginde icerik guncellenir.',
+            'Onemli duzeltmeler proje changelogunda kaydedilir.',
+          ],
+        },
+        {
+          heading: '4. Is ortakligi ve risk bildirimi',
+          paragraphs: [
+            'Bazi sayfalarda affiliate baglantilari olabilir; bu durum hesaplama mantigini etkilemez.',
+            'Sonuclar tahmindir; karar oncesi bagimsiz dogrulama yapilmalidir.',
+          ],
+        },
+      ],
+    },
+    hi: {
+      pageTitle: 'संपादकीय नीति | CryptoCalk',
+      metaDescription: 'CryptoCalk कैलकुलेटर कंटेंट कैसे लिखा, रिव्यू और अपडेट किया जाता है।',
+      heading: 'संपादकीय नीति',
+      updatedLabel: 'अंतिम अपडेट',
+      intro:
+        'यह नीति बताती है कि हम कैलकुलेटर कंटेंट कैसे तैयार करते हैं ताकि परिणाम स्पष्ट, सुसंगत और जांचने योग्य रहें।',
+      sections: [
+        {
+          heading: '1. संपादकीय सिद्धांत',
+          bullets: [
+            'पहले सरल भाषा, फिर फॉर्मूला विवरण।',
+            'मान्यताएं परिणाम के साथ स्पष्ट दिखती हैं।',
+            'शैक्षिक सामग्री और प्रचार को अलग रखा जाता है।',
+            'स्पष्ट अस्वीकरण: यह वित्तीय सलाह नहीं है।',
+          ],
+        },
+        {
+          heading: '2. समीक्षा और गुणवत्ता',
+          bullets: [
+            'फॉर्मूला और यूनिट की जांच।',
+            'इनपुट सीमा और UI व्यवहार की जांच।',
+            'बेसिक तकनीकी SEO और schema चेक।',
+            'पब्लिश से पहले प्रोडक्शन बिल्ड सत्यापन।',
+          ],
+        },
+        {
+          heading: '3. अपडेट और सुधार',
+          paragraphs: [
+            'जब API व्यवहार, मान्यताएं या तकनीकी आवश्यकताएं बदलती हैं, पेज अपडेट किए जाते हैं।',
+            'महत्वपूर्ण सुधार प्रोजेक्ट changelog में दर्ज किए जाते हैं।',
+          ],
+        },
+        {
+          heading: '4. एफिलिएट डिस्क्लोजर और जोखिम',
+          paragraphs: [
+            'कुछ पेजों में affiliate लिंक हो सकते हैं; इससे कैलकुलेशन लॉजिक नहीं बदलता।',
+            'परिणाम अनुमान हैं, अंतिम निर्णय से पहले स्वतंत्र सत्यापन जरूरी है।',
+          ],
+        },
+      ],
+    },
+    ru: {
+      pageTitle: 'Редакционная политика | CryptoCalk',
+      metaDescription: 'Как в CryptoCalk создаются, проверяются и обновляются материалы калькуляторов.',
+      heading: 'Редакционная политика',
+      updatedLabel: 'Обновлено',
+      intro:
+        'Эта политика описывает подход CryptoCalk к созданию и проверке материалов, чтобы результаты калькуляторов были понятными и проверяемыми.',
+      sections: [
+        {
+          heading: '1. Редакционные принципы',
+          bullets: [
+            'Сначала простое объяснение, затем формулы.',
+            'Допущения показываются рядом с результатом.',
+            'Образовательный контент отделен от промо-блоков.',
+            'Явный дисклеймер: это не финансовая консультация.',
+          ],
+        },
+        {
+          heading: '2. Ревью и контроль качества',
+          bullets: [
+            'Проверка формул и единиц измерения.',
+            'Проверка ограничений и валидности полей ввода.',
+            'Базовая проверка SEO-разметки и schema.',
+            'Сборка production перед публикацией.',
+          ],
+        },
+        {
+          heading: '3. Обновления и исправления',
+          paragraphs: [
+            'Мы обновляем материалы при изменении API, предпосылок расчетов или технических требований.',
+            'Существенные исправления фиксируются в changelog проекта.',
+          ],
+        },
+        {
+          heading: '4. Партнерские ссылки и риск',
+          paragraphs: [
+            'На отдельных страницах могут быть партнерские ссылки; это не влияет на логику расчетов.',
+            'Результаты являются оценочными и требуют самостоятельной проверки перед решениями.',
+          ],
+        },
+      ],
+    },
+  },
+  methodology: {
+    es: {
+      pageTitle: 'Metodología de Calculadoras | CryptoCalk',
+      metaDescription: 'Cómo se calculan y validan los resultados en CryptoCalk.',
+      heading: 'Cómo Construimos las Calculadoras',
+      updatedLabel: 'Última actualización',
+      intro:
+        'Las calculadoras de CryptoCalk son determinísticas: toman entradas explícitas y aplican fórmulas definidas para producir resultados.',
+      sections: [
+        {
+          heading: '1. Enfoque base',
+          bullets: [
+            'Definir fórmula por dominio (profit, ROI, liquidación, etc.).',
+            'Normalizar inputs a unidades consistentes.',
+            'Calcular en cliente en tiempo real.',
+            'Mostrar supuestos clave junto al resultado.',
+          ],
+        },
+        {
+          heading: '2. Fuentes y caché',
+          paragraphs: [
+            'Los precios en vivo provienen principalmente de CoinGecko API. El cliente aplica caché y deduplicación para estabilidad.',
+          ],
+          links: [{ href: 'https://www.coingecko.com/en/api/documentation', label: 'Documentación de CoinGecko API' }],
+        },
+        {
+          heading: '3. Familias de fórmulas',
+          paragraphs: [
+            'Cobertura principal: Profit/ROI, DCA/histórico y herramientas de riesgo/margen.',
+            'Ejemplos internos: Profit, ROI, DCA, What If, Position Size y Liquidation.',
+          ],
+        },
+        {
+          heading: '4. Limitaciones y uso responsable',
+          paragraphs: [
+            'La ejecución real puede diferir por spread, slippage, comisiones y timing.',
+            'Usa los resultados como apoyo de planificación, no como garantía.',
+          ],
+        },
+      ],
+    },
+    pt: {
+      pageTitle: 'Metodologia das Calculadoras | CryptoCalk',
+      metaDescription: 'Como os resultados do CryptoCalk são calculados e validados.',
+      heading: 'Como Construímos as Calculadoras',
+      updatedLabel: 'Última atualização',
+      intro:
+        'As calculadoras do CryptoCalk são determinísticas: aplicam fórmulas definidas sobre entradas explícitas do usuário.',
+      sections: [
+        {
+          heading: '1. Abordagem principal',
+          bullets: [
+            'Definir fórmula por tipo de problema (profit, ROI, liquidação etc.).',
+            'Normalizar entradas para unidades consistentes.',
+            'Calcular no cliente em tempo real.',
+            'Exibir suposições-chave junto ao resultado.',
+          ],
+        },
+        {
+          heading: '2. Fontes e cache',
+          paragraphs: [
+            'Preços em tempo real são obtidos principalmente via CoinGecko API. O cliente usa cache e deduplicação para melhorar estabilidade.',
+          ],
+          links: [{ href: 'https://www.coingecko.com/en/api/documentation', label: 'Documentação da API CoinGecko' }],
+        },
+        {
+          heading: '3. Famílias de fórmulas',
+          paragraphs: [
+            'Cobertura principal: Profit/ROI, DCA/histórico e ferramentas de risco/margem.',
+            'Exemplos: Profit, ROI, DCA, What If, Position Size e Liquidation.',
+          ],
+        },
+        {
+          heading: '4. Limitações e uso responsável',
+          paragraphs: [
+            'Execução real pode divergir por spread, slippage, taxas e timing de mercado.',
+            'Use os resultados como estimativas para planejamento, não como garantia.',
+          ],
+        },
+      ],
+    },
+    tr: {
+      pageTitle: 'Hesaplayici Metodolojisi | CryptoCalk',
+      metaDescription: 'CryptoCalk sonuc hesaplama ve dogrulama yaklasimi.',
+      heading: 'Hesaplayicilari Nasil Olusturuyoruz',
+      updatedLabel: 'Son guncelleme',
+      intro:
+        'CryptoCalk hesaplayicilari deterministik yapidadir: acik girisler tanimli formullerle islenerek sonuc uretilir.',
+      sections: [
+        {
+          heading: '1. Temel yaklasim',
+          bullets: [
+            'Alan bazli formula tanimi (profit, ROI, likidasyon vb.).',
+            'Girisleri tutarli birimlere normalize etme.',
+            'Gercek zamanli istemci tarafi hesaplama.',
+            'Sonucla birlikte ana varsayimlari gosterme.',
+          ],
+        },
+        {
+          heading: '2. Veri kaynagi ve onbellek',
+          paragraphs: [
+            'Canli fiyatlar agirlikli olarak CoinGecko API uzerinden alinir. Tarayici tarafinda onbellek ve istek birlestirme uygulanir.',
+          ],
+          links: [{ href: 'https://www.coingecko.com/en/api/documentation', label: 'CoinGecko API Dokumantasyonu' }],
+        },
+        {
+          heading: '3. Formula gruplari',
+          paragraphs: [
+            'Ana kapsama: Profit/ROI, DCA/tarihsel senaryolar ve risk/marjin araclari.',
+            'Ornekler: Profit, ROI, DCA, What If, Position Size ve Liquidation.',
+          ],
+        },
+        {
+          heading: '4. Sinirlar ve sorumlu kullanim',
+          paragraphs: [
+            'Gercek piyasa kosullari spread, slippage, komisyon ve zamanlamadan etkilenir.',
+            'Sonuclari planlama tahmini olarak kullanin; kesin sonuc olarak degil.',
+          ],
+        },
+      ],
+    },
+    hi: {
+      pageTitle: 'कैलकुलेटर मेथडोलॉजी | CryptoCalk',
+      metaDescription: 'CryptoCalk में कैलकुलेशन कैसे बनते, वैलिडेट होते और समझे जाते हैं।',
+      heading: 'हम कैलकुलेटर कैसे बनाते हैं',
+      updatedLabel: 'अंतिम अपडेट',
+      intro:
+        'CryptoCalk कैलकुलेटर deterministic हैं: स्पष्ट इनपुट पर तय फॉर्मूला लागू करके परिणाम बनाया जाता है।',
+      sections: [
+        {
+          heading: '1. मुख्य तरीका',
+          bullets: [
+            'डोमेन के अनुसार फॉर्मूला तय करना (profit, ROI, liquidation आदि)।',
+            'इनपुट को समान यूनिट में normalize करना।',
+            'रियल-टाइम क्लाइंट-साइड कैलकुलेशन।',
+            'परिणाम के साथ मान्यताएं दिखाना।',
+          ],
+        },
+        {
+          heading: '2. डेटा स्रोत और कैश',
+          paragraphs: [
+            'लाइव प्राइस मुख्य रूप से CoinGecko API से लिए जाते हैं। ब्राउज़र में cache और request deduplication लागू है।',
+          ],
+          links: [{ href: 'https://www.coingecko.com/en/api/documentation', label: 'CoinGecko API Documentation' }],
+        },
+        {
+          heading: '3. फॉर्मूला कैटेगरी',
+          paragraphs: [
+            'मुख्य समूह: Profit/ROI, DCA/ऐतिहासिक परिदृश्य, और risk/margin टूल्स।',
+            'उदाहरण: Profit, ROI, DCA, What If, Position Size, Liquidation।',
+          ],
+        },
+        {
+          heading: '4. सीमाएं और जिम्मेदार उपयोग',
+          paragraphs: [
+            'वास्तविक ट्रेड परिणाम spread, slippage, fee और timing से बदल सकते हैं।',
+            'आउटपुट को योजना अनुमान की तरह उपयोग करें, गारंटी की तरह नहीं।',
+          ],
+        },
+      ],
+    },
+    ru: {
+      pageTitle: 'Методология калькуляторов | CryptoCalk',
+      metaDescription: 'Как в CryptoCalk считаются и проверяются результаты калькуляторов.',
+      heading: 'Как мы строим калькуляторы',
+      updatedLabel: 'Обновлено',
+      intro:
+        'Калькуляторы CryptoCalk детерминированы: результат строится по заданным формулам на основе явных входных данных.',
+      sections: [
+        {
+          heading: '1. Базовый подход',
+          bullets: [
+            'Определяем формулу под задачу (profit, ROI, liquidation и т.д.).',
+            'Нормализуем входные значения в согласованные единицы.',
+            'Считаем на клиенте в реальном времени.',
+            'Показываем ключевые допущения рядом с результатами.',
+          ],
+        },
+        {
+          heading: '2. Источники данных и кэш',
+          paragraphs: [
+            'Основной источник live-цен — CoinGecko API. На клиенте применяется кэширование и дедупликация запросов.',
+          ],
+          links: [{ href: 'https://www.coingecko.com/en/api/documentation', label: 'Документация CoinGecko API' }],
+        },
+        {
+          heading: '3. Группы формул',
+          paragraphs: [
+            'Ключевые направления: Profit/ROI, DCA/исторические сценарии, инструменты риска и маржи.',
+            'Примеры: Profit, ROI, DCA, What If, Position Size и Liquidation.',
+          ],
+        },
+        {
+          heading: '4. Ограничения и корректное использование',
+          paragraphs: [
+            'Реальные результаты зависят от спреда, проскальзывания, комиссий и тайминга исполнения.',
+            'Используйте результаты как оценку для планирования, а не как гарантию.',
+          ],
+        },
+      ],
+    },
+  },
+};
+
+export function getStaticPaths() {
+  const langs: LocalizedLang[] = ['es', 'pt', 'tr', 'hi', 'ru'];
+  const policies: PolicyKey[] = ['privacy', 'editorial-policy', 'methodology'];
+  return langs.flatMap((lang) => policies.map((policy) => ({ params: { lang, policy } })));
+}
+
+const { lang, policy } = Astro.params as { lang: LocalizedLang; policy: PolicyKey };
+const content = contentByPolicy[policy]?.[lang];
+
+if (!content) {
+  throw new Error(`Unsupported localized policy page: ${lang}/${policy}`);
+}
+
+const pageUrl = `https://cryptocalk.com/${lang}/${policy}/`;
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: content.heading,
+  url: pageUrl,
+  description: content.metaDescription,
+  inLanguage: lang,
+};
+---
+
+<Layout title={content.pageTitle} description={content.metaDescription} lang={lang}>
+  <main class="policy-page">
+    <article class="policy-card">
+      <h1>{content.heading}</h1>
+      <p class="meta">{content.updatedLabel}: {LAST_UPDATED}</p>
+
+      <p>{content.intro}</p>
+
+      {content.sections.map((section) => (
+        <section>
+          <h2>{section.heading}</h2>
+          {section.paragraphs?.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+          {section.bullets && (
+            <ul>
+              {section.bullets.map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          )}
+          {section.links && (
+            <ul>
+              {section.links.map((link) => (
+                <li><a href={link.href} target="_blank" rel="nofollow noopener noreferrer">{link.label}</a></li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))}
+    </article>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+</Layout>
+
+<style>
+  .policy-page {
+    padding: 48px 20px 72px;
+  }
+
+  .policy-card {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: 34px 28px;
+    line-height: 1.7;
+  }
+
+  h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.8rem, 2.8vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .meta {
+    margin: 0 0 20px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    margin-top: 28px;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  ul {
+    margin: 8px 0 12px 20px;
+    padding: 0;
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+</style>
