@@ -85,7 +85,7 @@ export default function CryptoConverter() {
         setLoading(true);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${fromCoin.id}&vs_currencies=${toCurrency.id}&include_24hr_change=true`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${fromCoin.id}&vs_currencies=${toCurrency.id}&include_24hr_change=true&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
@@ -114,7 +114,7 @@ export default function CryptoConverter() {
         }
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}`
+                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
             );
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();

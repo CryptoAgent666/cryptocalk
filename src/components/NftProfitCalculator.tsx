@@ -82,7 +82,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
 
     // Auto-fetch ETH price on mount
     useEffect(() => {
-        fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
+        fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz')
             .then(r => r.json())
             .then(d => { if (d.ethereum?.usd) setEthPrice(String(d.ethereum.usd)); })
             .catch(() => {});

@@ -89,7 +89,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
 
     // Fetch BTC price on mount
     useEffect(() => {
-        fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
+        fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz')
             .then(r => r.json())
             .then(d => { if (d.bitcoin?.usd) setBtcPrice(String(d.bitcoin.usd)); })
             .catch(() => {});

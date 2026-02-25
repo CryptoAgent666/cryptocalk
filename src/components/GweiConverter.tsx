@@ -109,7 +109,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
     const fetchEthPrice = useCallback(async () => {
         setFetchingPrice(true);
         try {
-            const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
+            const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz');
             if (!res.ok) throw new Error('Failed');
             const data = await res.json();
             if (data.ethereum?.usd) {

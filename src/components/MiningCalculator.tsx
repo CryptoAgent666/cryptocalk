@@ -105,7 +105,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
             try {
                 // Fetch BTC price
                 const priceRes = await fetch(
-                    'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd'
+                    'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz'
                 );
                 if (!priceRes.ok) throw new Error('Failed to fetch BTC price');
                 const priceData = await priceRes.json();

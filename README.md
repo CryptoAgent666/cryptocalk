@@ -6,7 +6,7 @@ CryptoCalk is a multilingual Astro + React calculator hub for crypto finance use
 - `Astro 5`
 - `React 19` (islands)
 - `Tailwind CSS 4` (via `@tailwindcss/vite`)
-- `CoinGecko API v3` (client-side data)
+- `CoinGecko API v3` (client-side data using Demo API Key: `CG-Zeo2WrX3r7J1oUoX1kSnutmz`)
 - `@astrojs/sitemap`
 
 ## Quick Start
