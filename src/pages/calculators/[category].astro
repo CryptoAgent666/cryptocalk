@@ -1,7 +1,7 @@
 ---
 import CategoryHubPage from '../../components/CategoryHubPage.astro';
 import SiteChrome from '../../components/SiteChrome.astro';
-import SiteFooter from '../../components/SiteFooter.astro';
+
 import {
   getCategoryHubBySlug,
   getCategoryHubs,
@@ -112,6 +112,5 @@ const schemas = [
       lastUpdated={LAST_UPDATED}
     />
   </SiteChrome>
-  <SiteFooter lang="en" />
   <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
 </Layout>

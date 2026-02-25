@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
 const lastUpdated = '20/02/2026';
@@ -19,6 +20,7 @@ const webPageSchema = {
   description="CryptoCalk editorial policy: how calculator pages are written, reviewed, updated, and corrected."
   lang="en"
 >
+  <SiteHeader lang="en" currentPath="/editorial-policy" />
   <main class="policy-page">
     <article class="policy-card">
       <h1>Editorial Policy</h1>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import type { Lang } from '../../i18n/utils';
 
@@ -673,6 +674,7 @@ const webPageSchema = {
 ---
 
 <Layout title={content.pageTitle} description={content.metaDescription} lang={lang}>
+  <SiteHeader lang={lang} currentPath={`/${lang}/${policy}`} />
   <main class="policy-page">
     <article class="policy-card">
       <h1>{content.heading}</h1>

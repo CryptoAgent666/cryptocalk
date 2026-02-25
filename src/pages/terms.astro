@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 ---
 
@@ -8,6 +9,7 @@ import SiteFooter from '../components/SiteFooter.astro';
   description="Terms of Service and legal disclaimer for using CryptoCalk calculators. We provide informational tools, not financial advice."
   lang="en"
 >
+  <SiteHeader lang="en" currentPath="/terms" />
   <div class="legal-container">
     <header class="legal-header">
       <h1>Terms of Service</h1>
