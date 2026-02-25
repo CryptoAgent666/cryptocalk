@@ -3,7 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import ThemeToggle from "./ThemeToggle.tsx";
 import LanguageSwitcher from "./LanguageSwitcher.tsx";
 import { getTranslations } from "../i18n/translations";
-import { getLocalizedCalculatorMeta, type Lang } from "../i18n/utils";
+import { getLocalizedCalculatorMeta, getLocalizedSlug, type Lang, type SpecCalculatorSlug } from "../i18n/utils";
+import { CALCULATOR_META } from "../i18n/calculator-meta";
+import { RELATED_CALCULATORS } from "../data/related-calculators";
 import { defaultFaqByLang } from "../i18n/faq-dictionary";
 import { seoBodyText } from "../i18n/seo-body-text";
 import { Calculator, ChevronRight, ArrowLeft } from "lucide-react";
@@ -100,6 +102,15 @@ function getCalculatorScopedCss(currentSlug: string): string {
 }
 
 const calculatorScopedCss = getCalculatorScopedCss(slug);
+
+const relatedSlugs = RELATED_CALCULATORS[slug as SpecCalculatorSlug] ?? [];
+const relatedLinks = relatedSlugs.map((rSlug) => {
+  const meta = CALCULATOR_META[lang]?.[rSlug];
+  const title = meta?.title ?? CALCULATOR_META['en']?.[rSlug]?.title ?? rSlug;
+  const localizedSlug = getLocalizedSlug(rSlug, lang);
+  const href = lang === 'en' ? `/${localizedSlug}` : `/${lang}/${localizedSlug}`;
+  return { title, href };
+});
 
 const faqTemplate = faq.length
   ? faq
@@ -361,13 +372,13 @@ const faqSchema = {
         }
 
         <h2>{h.related}</h2>
-        <p>
-          To improve decision quality, pair {localizedTitle} with at least one complementary
-          tool: use Profit/ROI for return validation, Position Size and Risk/Reward
-          for risk control, Break-Even for fee-adjusted thresholds, and Tax tools
-          for post-trade net analysis. Using tools in combination gives better outcomes
-          than relying on a single isolated metric.
-        </p>
+        {relatedLinks.length > 0 && (
+          <ul class="related-calculators-list">
+            {relatedLinks.map((link) => (
+              <li><a href={link.href}>{link.title}</a></li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   </main>
@@ -541,6 +552,33 @@ const faqSchema = {
 
   .prose details p {
     margin-top: 8px;
+  }
+
+  .related-calculators-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .related-calculators-list li a {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+  }
+
+  .related-calculators-list li a:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background: var(--color-bg-card-hover, var(--color-bg-card));
   }
 
   .site-footer {
