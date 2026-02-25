@@ -113,6 +113,13 @@ interface Translations {
     editorialPolicy: string;
     methodologyPolicy: string;
     footerText: string;
+    footerTagline: string;
+    footerCoreCalculators: string;
+    footerExplore: string;
+    footerTrustLegal: string;
+    footerAboutUs: string;
+    footerContactUs: string;
+    footerTerms: string;
 }
 
 const translations: Record<Lang, Translations> = {
@@ -216,6 +223,13 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'Editorial Policy',
         methodologyPolicy: 'How We Build Calculators',
         footerText: '© 2026 CryptoCalk. All rights reserved. Past performance does not guarantee future results.',
+        footerTagline: 'Free cryptocurrency calculators for everyone.',
+        footerCoreCalculators: 'Core Calculators',
+        footerExplore: 'Explore',
+        footerTrustLegal: 'Trust & Legal',
+        footerAboutUs: 'About Us',
+        footerContactUs: 'Contact Us',
+        footerTerms: 'Terms of Service',
     },
 
     es: {
@@ -318,6 +332,13 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'Política Editorial',
         methodologyPolicy: 'Cómo Construimos las Calculadoras',
         footerText: '© 2026 CryptoCalk. Todos los derechos reservados. El rendimiento pasado no garantiza resultados futuros.',
+        footerTagline: 'Calculadoras de criptomonedas gratuitas para todos.',
+        footerCoreCalculators: 'Calculadoras Principales',
+        footerExplore: 'Explorar',
+        footerTrustLegal: 'Confianza y Legal',
+        footerAboutUs: 'Sobre Nosotros',
+        footerContactUs: 'Contáctenos',
+        footerTerms: 'Términos de Servicio',
     },
 
     pt: {
@@ -420,6 +441,13 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'Política Editorial',
         methodologyPolicy: 'Como Construímos as Calculadoras',
         footerText: '© 2026 CryptoCalk. Todos os direitos reservados. O desempenho passado não garante resultados futuros.',
+        footerTagline: 'Calculadoras de criptomoedas gratuitas para todos.',
+        footerCoreCalculators: 'Calculadoras Principais',
+        footerExplore: 'Explorar',
+        footerTrustLegal: 'Confiança e Legal',
+        footerAboutUs: 'Sobre Nós',
+        footerContactUs: 'Fale Conosco',
+        footerTerms: 'Termos de Serviço',
     },
 
     tr: {
@@ -522,6 +550,13 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'Editör Politikası',
         methodologyPolicy: 'Hesaplayıcıları Nasıl Oluşturuyoruz',
         footerText: '© 2026 CryptoCalk. Tüm hakları saklıdır. Geçmiş performans gelecekteki sonuçları garanti etmez.',
+        footerTagline: 'Herkes için ücretsiz kripto para hesap makineleri.',
+        footerCoreCalculators: 'Temel Hesap Makineleri',
+        footerExplore: 'Keşfet',
+        footerTrustLegal: 'Güven ve Yasal',
+        footerAboutUs: 'Hakkımızda',
+        footerContactUs: 'Bize Ulaşın',
+        footerTerms: 'Kullanım Koşulları',
     },
 
     hi: {
@@ -624,6 +659,13 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'संपादकीय नीति',
         methodologyPolicy: 'हम कैलकुलेटर कैसे बनाते हैं',
         footerText: '© 2026 CryptoCalk. सर्वाधिकार सुरक्षित। पिछला प्रदर्शन भविष्य के परिणामों की गारंटी नहीं देता।',
+        footerTagline: 'सभी के लिए मुफ़्त क्रिप्टोकरेंसी कैलकुलेटर।',
+        footerCoreCalculators: 'मुख्य कैलकुलेटर',
+        footerExplore: 'और देखें',
+        footerTrustLegal: 'विश्वास और कानूनी',
+        footerAboutUs: 'हमारे बारे में',
+        footerContactUs: 'संपर्क करें',
+        footerTerms: 'सेवा की शर्तें',
     },
 
     ru: {
@@ -726,6 +768,13 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'Редакционная политика',
         methodologyPolicy: 'Как мы строим калькуляторы',
         footerText: '© 2026 CryptoCalk. Все права защищены. Прошлые результаты не гарантируют будущих.',
+        footerTagline: 'Бесплатные калькуляторы криптовалют для всех.',
+        footerCoreCalculators: 'Основные Калькуляторы',
+        footerExplore: 'Обзор',
+        footerTrustLegal: 'Доверие и Правовая информация',
+        footerAboutUs: 'О Нас',
+        footerContactUs: 'Связаться с Нами',
+        footerTerms: 'Условия Использования',
     },
 };
 

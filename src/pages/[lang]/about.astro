@@ -1,0 +1,445 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { Mail, Briefcase, Code, Award, Twitter, Linkedin, Instagram, Globe } from 'lucide-react';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+
+interface AboutContent {
+  pageTitle: string;
+  metaDescription: string;
+  heading: string;
+  subtitle: string;
+  missionTitle: string;
+  missionP1: string;
+  missionP2: string;
+  meetCreator: string;
+  role: string;
+  bio1: string;
+  bio2: string;
+  highlightFinanceTitle: string;
+  highlightFinanceDesc: string;
+  highlightSeoTitle: string;
+  highlightSeoDesc: string;
+  highlightCodeTitle: string;
+  highlightCodeDesc: string;
+  highlightProjectsTitle: string;
+  highlightProjectsDesc: string;
+  contactMe: string;
+}
+
+const content: Record<Exclude<Lang, 'en'>, AboutContent> = {
+  es: {
+    pageTitle: 'Sobre Nosotros | CryptoCalk',
+    metaDescription: 'Conoce CryptoCalk y a Konstantin Iakovlev, el fundador y desarrollador detrás de nuestras calculadoras crypto rápidas y precisas.',
+    heading: 'Sobre CryptoCalk',
+    subtitle: 'Construyendo las herramientas financieras más rápidas y confiables para la comunidad crypto.',
+    missionTitle: 'Nuestra Misión',
+    missionP1: 'CryptoCalk fue creado con un único objetivo: proporcionar a la comunidad de criptomonedas herramientas de cálculo <strong>ultrarrápidas, precisas y centradas en la privacidad</strong>. En un espacio saturado de sitios web lentos y llenos de anuncios, creíamos que era necesaria una alternativa limpia y profesional.',
+    missionP2: 'Ya sea que estés calculando la rentabilidad de la minería, proyectando tu estrategia DCA o estimando tus obligaciones fiscales, nuestras herramientas están diseñadas para cargarse al instante y ejecutarse completamente en tu navegador. Sin registros, sin recolección de datos — solo matemáticas.',
+    meetCreator: 'Conoce al Creador',
+    role: 'Fundador & Vibecoder Principal',
+    bio1: '¡Hola! Soy Konstantin, un vibecoder apasionado con una sólida trayectoria profesional en finanzas, criptomonedas y SEO. Creé CryptoCalk combinando mi experiencia en mercados financieros, SEO técnico y creación web moderna para construir herramientas que realmente importan.',
+    bio2: 'Noté que la mayoría de las calculadoras crypto en línea estaban desactualizadas, eran increíblemente lentas o estaban plagadas de anuncios intrusivos. Usando un enfoque de vibecoding impulsado por IA, construí CryptoCalk para crear un ecosistema de calculadoras que se cargan al instante, brindan valor real y nunca comprometen la privacidad del usuario.',
+    highlightFinanceTitle: 'Experiencia en Finanzas & Crypto',
+    highlightFinanceDesc: 'Profundo conocimiento de rendimientos, tokenomics, préstamos y mecánicas de trading, traduciendo matemáticas complejas en herramientas simples.',
+    highlightSeoTitle: 'Experiencia en SEO',
+    highlightSeoDesc: 'Especializado en estructurar y optimizar datos financieros complejos en contenido web universalmente comprensible y altamente posicionado.',
+    highlightCodeTitle: 'Arquitectura Vibecoding',
+    highlightCodeDesc: 'Aprovechando flujos de trabajo avanzados de IA para diseñar y desplegar rápidamente aplicaciones estáticas, ultrarrápidas y centradas en la privacidad.',
+    highlightProjectsTitle: 'Otros Proyectos',
+    highlightProjectsDesc: 'Creador de <a href="https://zanimaem.kz" target="_blank" rel="noopener noreferrer" class="project-link">zanimaem.kz</a> y <a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="project-link">calk.kz</a> — plataformas líderes de comparación financiera y calculadoras.',
+    contactMe: 'Contáctame',
+  },
+  pt: {
+    pageTitle: 'Sobre Nós | CryptoCalk',
+    metaDescription: 'Conheça o CryptoCalk e Konstantin Iakovlev, o fundador e desenvolvedor por trás das nossas calculadoras crypto rápidas e precisas.',
+    heading: 'Sobre o CryptoCalk',
+    subtitle: 'Construindo as ferramentas financeiras mais rápidas e confiáveis para a comunidade crypto.',
+    missionTitle: 'Nossa Missão',
+    missionP1: 'O CryptoCalk foi criado com um único objetivo: fornecer à comunidade de criptomoedas ferramentas de cálculo <strong>ultrarrápidas, precisas e focadas em privacidade</strong>. Em um espaço lotado de sites lentos e cheios de anúncios, acreditávamos que era necessária uma alternativa limpa e profissional.',
+    missionP2: 'Seja calculando a lucratividade da mineração, projetando sua estratégia DCA ou estimando suas obrigações fiscais, nossas ferramentas são projetadas para carregar instantaneamente e rodar inteiramente no seu navegador. Sem cadastros, sem coleta de dados — apenas matemática.',
+    meetCreator: 'Conheça o Criador',
+    role: 'Fundador & Vibecoder Principal',
+    bio1: 'Olá! Sou Konstantin, um vibecoder apaixonado com uma sólida trajetória profissional em finanças, criptomoedas e SEO. Criei o CryptoCalk combinando minha experiência em mercados financeiros, SEO técnico e criação web moderna para construir ferramentas que realmente importam.',
+    bio2: 'Percebi que a maioria das calculadoras crypto online estavam desatualizadas, incrivelmente lentas ou cheias de anúncios intrusivos. Usando uma abordagem de vibecoding com IA, construí o CryptoCalk para criar um ecossistema de calculadoras que carregam instantaneamente, oferecem valor real e nunca comprometem a privacidade do usuário.',
+    highlightFinanceTitle: 'Experiência em Finanças & Crypto',
+    highlightFinanceDesc: 'Profundo conhecimento de rendimentos, tokenomics, empréstimos e mecânicas de trading, traduzindo matemática complexa em ferramentas simples.',
+    highlightSeoTitle: 'Experiência em SEO',
+    highlightSeoDesc: 'Especializado em estruturar e otimizar dados financeiros complexos em conteúdo web universalmente compreensível e altamente ranqueado.',
+    highlightCodeTitle: 'Arquitetura Vibecoding',
+    highlightCodeDesc: 'Aproveitando fluxos de trabalho avançados de IA para projetar e implantar rapidamente aplicações estáticas, ultrarrápidas e focadas em privacidade.',
+    highlightProjectsTitle: 'Outros Projetos',
+    highlightProjectsDesc: 'Criador de <a href="https://zanimaem.kz" target="_blank" rel="noopener noreferrer" class="project-link">zanimaem.kz</a> e <a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="project-link">calk.kz</a> — plataformas líderes de comparação financeira e calculadoras.',
+    contactMe: 'Fale Comigo',
+  },
+  tr: {
+    pageTitle: 'Hakkımızda | CryptoCalk',
+    metaDescription: 'CryptoCalk ve hızlı, doğru kripto hesap makinelerimizin arkasındaki kurucu ve geliştirici Konstantin Iakovlev hakkında bilgi edinin.',
+    heading: 'CryptoCalk Hakkında',
+    subtitle: 'Kripto topluluğu için en hızlı ve güvenilir finansal araçları geliştiriyoruz.',
+    missionTitle: 'Misyonumuz',
+    missionP1: 'CryptoCalk tek bir hedefle inşa edildi: kripto para topluluğuna <strong>ışık hızında, doğru ve gizlilik odaklı</strong> hesaplama araçları sunmak. Yavaş, reklam dolu web sitelerinin kalabalığında, temiz ve profesyonel bir alternatife ihtiyaç olduğuna inandık.',
+    missionP2: 'İster madencilik karlılığını hesaplıyor, ister DCA stratejinizi planlıyor, ister vergi yükümlülüğünüzü tahmin ediyor olun, araçlarımız anında yüklenecek ve tamamen tarayıcınızda çalışacak şekilde tasarlanmıştır. Kayıt yok, veri toplama yok — sadece matematik.',
+    meetCreator: 'Yaratıcıyla Tanışın',
+    role: 'Kurucu & Baş Vibecoder',
+    bio1: 'Merhaba! Ben Konstantin, finans, kripto para ve SEO alanında derin profesyonel geçmişe sahip tutkulu bir vibecoder. CryptoCalk\'ı finansal piyasalar, teknik SEO ve modern web geliştirme uzmanlığımı birleştirerek gerçekten önemli araçlar oluşturmak için kurdum.',
+    bio2: 'Çevrimiçi kripto hesap makinelerinin çoğunun ya güncel olmadığını, inanılmaz derecede yavaş olduğunu ya da müdahaleci reklamlarla dolu olduğunu fark ettim. Yapay zeka destekli vibecoding yaklaşımıyla CryptoCalk\'ı anında yüklenen, gerçek değer sunan ve kullanıcı gizliliğini asla tehlikeye atmayan bir hesap makinesi ekosistemi oluşturmak için inşa ettim.',
+    highlightFinanceTitle: 'Finans & Kripto Deneyimi',
+    highlightFinanceDesc: 'Getiriler, tokenomics, krediler ve ticaret mekanikleri hakkında derin anlayış, karmaşık matematiği basit araçlara dönüştürme.',
+    highlightSeoTitle: 'SEO Uzmanlığı',
+    highlightSeoDesc: 'Karmaşık finansal verileri evrensel olarak anlaşılabilir, yüksek sıralı web içeriğine dönüştürme ve optimize etme konusunda uzmanlaşma.',
+    highlightCodeTitle: 'Vibecoding Mimarisi',
+    highlightCodeDesc: 'Işık hızında, statik, gizlilik öncelikli uygulamaları hızla tasarlayıp dağıtmak için gelişmiş AI iş akışlarından yararlanma.',
+    highlightProjectsTitle: 'Diğer Projeler',
+    highlightProjectsDesc: '<a href="https://zanimaem.kz" target="_blank" rel="noopener noreferrer" class="project-link">zanimaem.kz</a> ve <a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="project-link">calk.kz</a> — önde gelen finansal karşılaştırma ve hesap makinesi platformlarının yaratıcısı.',
+    contactMe: 'Bana Ulaşın',
+  },
+  hi: {
+    pageTitle: 'हमारे बारे में | CryptoCalk',
+    metaDescription: 'CryptoCalk और हमारे तेज़, सटीक क्रिप्टो कैलकुलेटर के पीछे संस्थापक और डेवलपर Konstantin Iakovlev के बारे में जानें।',
+    heading: 'CryptoCalk के बारे में',
+    subtitle: 'क्रिप्टो समुदाय के लिए सबसे तेज़ और विश्वसनीय वित्तीय उपकरण बनाना।',
+    missionTitle: 'हमारा मिशन',
+    missionP1: 'CryptoCalk एक ही लक्ष्य के साथ बनाया गया था: क्रिप्टोकरेंसी समुदाय को <strong>बिजली की तरह तेज़, सटीक और गोपनीयता-केंद्रित</strong> गणना उपकरण प्रदान करना। धीमी, विज्ञापन-भरी वेबसाइटों से भरी जगह में, हमें विश्वास था कि एक साफ, पेशेवर विकल्प की आवश्यकता है।',
+    missionP2: 'चाहे आप माइनिंग लाभप्रदता की गणना कर रहे हों, अपनी DCA रणनीति की योजना बना रहे हों, या अपनी कर देनदारी का अनुमान लगा रहे हों, हमारे उपकरण तुरंत लोड होने और पूरी तरह से आपके ब्राउज़र में चलने के लिए डिज़ाइन किए गए हैं। कोई साइनअप नहीं, कोई डेटा संग्रह नहीं — बस गणित।',
+    meetCreator: 'निर्माता से मिलें',
+    role: 'संस्थापक और प्रमुख वाइबकोडर',
+    bio1: 'नमस्ते! मैं Konstantin हूं, वित्त, क्रिप्टोकरेंसी और SEO में गहरी पेशेवर पृष्ठभूमि वाला एक जुनूनी वाइबकोडर। मैंने वित्तीय बाजारों, तकनीकी SEO और आधुनिक वेब निर्माण में अपनी विशेषज्ञता को मिलाकर CryptoCalk बनाया ताकि ऐसे उपकरण बन सकें जो वास्तव में मायने रखते हैं।',
+    bio2: 'मैंने देखा कि ऑनलाइन अधिकांश क्रिप्टो कैलकुलेटर या तो पुराने थे, अविश्वसनीय रूप से धीमे थे, या दखलंदाज़ विज्ञापनों से भरे थे। AI-संचालित वाइबकोडिंग दृष्टिकोण का उपयोग करते हुए, मैंने CryptoCalk को ऐसे कैलकुलेटर पारिस्थितिकी तंत्र बनाने के लिए बनाया जो तुरंत लोड होते हैं, वास्तविक मूल्य प्रदान करते हैं, और उपयोगकर्ता की गोपनीयता से कभी समझौता नहीं करते।',
+    highlightFinanceTitle: 'वित्त और क्रिप्टो अनुभव',
+    highlightFinanceDesc: 'रिटर्न, टोकनोमिक्स, लोन और ट्रेडिंग मैकेनिक्स की गहरी समझ, जटिल गणित को सरल उपकरणों में बदलना।',
+    highlightSeoTitle: 'SEO विशेषज्ञता',
+    highlightSeoDesc: 'जटिल वित्तीय डेटा को सार्वभौमिक रूप से समझने योग्य, उच्च-रैंकिंग वेब सामग्री में संरचित और अनुकूलित करने में विशेषज्ञता।',
+    highlightCodeTitle: 'वाइबकोडिंग आर्किटेक्चर',
+    highlightCodeDesc: 'बिजली की तरह तेज़, स्थैतिक, गोपनीयता-प्रथम अनुप्रयोगों को तेज़ी से डिज़ाइन और तैनात करने के लिए उन्नत AI वर्कफ़्लो का लाभ उठाना।',
+    highlightProjectsTitle: 'अन्य प्रोजेक्ट',
+    highlightProjectsDesc: '<a href="https://zanimaem.kz" target="_blank" rel="noopener noreferrer" class="project-link">zanimaem.kz</a> और <a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="project-link">calk.kz</a> — प्रमुख वित्तीय तुलना और कैलकुलेटर प्लेटफॉर्म के निर्माता।',
+    contactMe: 'मुझसे संपर्क करें',
+  },
+  ru: {
+    pageTitle: 'О Нас | CryptoCalk',
+    metaDescription: 'Узнайте о CryptoCalk и Константине Яковлеве — основателе и разработчике быстрых и точных крипто-калькуляторов.',
+    heading: 'О CryptoCalk',
+    subtitle: 'Создаём самые быстрые и надёжные финансовые инструменты для крипто-сообщества.',
+    missionTitle: 'Наша Миссия',
+    missionP1: 'CryptoCalk был создан с единственной целью: предоставить крипто-сообществу <strong>молниеносные, точные и ориентированные на конфиденциальность</strong> инструменты для расчётов. В пространстве, переполненном медленными сайтами с навязчивой рекламой, мы видели потребность в чистой и профессиональной альтернативе.',
+    missionP2: 'Рассчитываете ли вы прибыльность майнинга, планируете стратегию DCA или оцениваете налоговые обязательства — наши инструменты загружаются мгновенно и работают полностью в вашем браузере. Без регистрации, без сбора данных — только математика.',
+    meetCreator: 'Создатель',
+    role: 'Основатель и Ведущий Вайбкодер',
+    bio1: 'Привет! Я Константин — увлечённый вайбкодер с глубоким профессиональным опытом в финансах, криптовалютах и SEO. Я создал CryptoCalk, объединив свою экспертизу в финансовых рынках, техническом SEO и современной веб-разработке, чтобы создавать инструменты, которые действительно важны.',
+    bio2: 'Я заметил, что большинство крипто-калькуляторов в интернете были либо устаревшими, невероятно медленными, либо заваленными навязчивой рекламой. Используя подход вайбкодинга на основе ИИ, я создал CryptoCalk — экосистему калькуляторов, которые загружаются мгновенно, приносят реальную пользу и никогда не нарушают конфиденциальность пользователей.',
+    highlightFinanceTitle: 'Опыт в Финансах и Крипто',
+    highlightFinanceDesc: 'Глубокое понимание доходности, токеномики, кредитов и торговых механик — перевод сложной математики в простые инструменты.',
+    highlightSeoTitle: 'SEO Экспертиза',
+    highlightSeoDesc: 'Специализация на структурировании и оптимизации сложных финансовых данных в универсально понятный, высокоранжируемый веб-контент.',
+    highlightCodeTitle: 'Архитектура Вайбкодинга',
+    highlightCodeDesc: 'Использование продвинутых AI-воркфлоу для быстрого проектирования и развёртывания молниеносных, статических приложений с приоритетом конфиденциальности.',
+    highlightProjectsTitle: 'Другие Проекты',
+    highlightProjectsDesc: 'Создатель <a href="https://zanimaem.kz" target="_blank" rel="noopener noreferrer" class="project-link">zanimaem.kz</a> и <a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="project-link">calk.kz</a> — ведущих платформ финансового сравнения и калькуляторов.',
+    contactMe: 'Связаться со Мной',
+  },
+};
+
+const c = content[lang];
+const prefix = lang === 'en' ? '' : `/${lang}`;
+---
+
+<Layout
+  title={c.pageTitle}
+  description={c.metaDescription}
+  lang={lang}
+>
+  <div class="about-container">
+    <header class="about-header">
+      <h1>{c.heading}</h1>
+      <p>{c.subtitle}</p>
+    </header>
+
+    <div class="about-content">
+      <section class="mission-section">
+        <h2>{c.missionTitle}</h2>
+        <p set:html={c.missionP1} />
+        <p>{c.missionP2}</p>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="author-section">
+        <h2>{c.meetCreator}</h2>
+        <div class="author-card">
+          <div class="author-avatar-col">
+            <img src="/images/author_avatar.jpg" alt="Konstantin Iakovlev" class="author-avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIwIDIxdi0yYTRgNCAwIDAwLTQtNEg4YTRgNCAwIDAwLTRgNHYyIj48L3BhdGg+PGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ij48L2NpcmNsZT48L3N2Zz4='" />
+            <div class="author-social">
+              <a href={`${prefix}/contact`} class="btn-primary btn-sm">{c.contactMe}</a>
+            </div>
+            <div class="author-social-links">
+              <a href="https://x.com/yakovlevka3" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><Twitter size={20} /></a>
+              <a href="https://www.linkedin.com/in/konstantin-iakovlev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
+              <a href="https://www.instagram.com/iakovlevka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
+            </div>
+          </div>
+          <div class="author-bio-col">
+            <h3>Konstantin Iakovlev</h3>
+            <span class="author-role">{c.role}</span>
+
+            <p>{c.bio1}</p>
+
+            <p>{c.bio2}</p>
+
+            <ul class="author-highlights">
+              <li>
+                <div class="highlight-icon"><Briefcase size={18} /></div>
+                <div>
+                  <strong>{c.highlightFinanceTitle}</strong>
+                  <span>{c.highlightFinanceDesc}</span>
+                </div>
+              </li>
+              <li>
+                <div class="highlight-icon"><Award size={18} /></div>
+                <div>
+                  <strong>{c.highlightSeoTitle}</strong>
+                  <span>{c.highlightSeoDesc}</span>
+                </div>
+              </li>
+              <li>
+                <div class="highlight-icon"><Code size={18} /></div>
+                <div>
+                  <strong>{c.highlightCodeTitle}</strong>
+                  <span>{c.highlightCodeDesc}</span>
+                </div>
+              </li>
+              <li>
+                <div class="highlight-icon"><Globe size={18} /></div>
+                <div>
+                  <strong>{c.highlightProjectsTitle}</strong>
+                  <span set:html={c.highlightProjectsDesc} />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <SiteFooter lang={lang} />
+</Layout>
+
+<style>
+  .about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  .about-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .about-header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+  .about-header p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .mission-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 16px;
+  }
+  .mission-section :global(strong) {
+    color: var(--color-text);
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--color-text);
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--color-border);
+    width: 30%;
+    margin: 10px auto;
+  }
+
+  .author-card {
+    display: flex;
+    gap: 40px;
+    background: var(--color-bg-card);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+  }
+
+  .author-avatar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    width: 200px;
+  }
+
+  .author-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--color-bg);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    background-color: var(--color-bg-tertiary);
+    padding: 2px;
+  }
+
+  .author-social {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-sm {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 999px;
+    text-decoration: none;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn-sm:hover {
+    background: var(--color-primary-dark);
+  }
+
+  .author-social-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    justify-content: center;
+  }
+  .author-social-links a {
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .author-social-links a:hover {
+    color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  .author-bio-col {
+    flex: 1;
+  }
+
+  .author-bio-col h3 {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+
+  .author-role {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+  }
+
+  .author-bio-col p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .author-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .author-highlights li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .highlight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .author-highlights strong {
+    display: block;
+    color: var(--color-text);
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+
+  .author-highlights span {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  :global(.project-link) {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  :global(.project-link:hover) {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .author-card {
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      gap: 32px;
+    }
+    .author-avatar-col {
+      width: 100%;
+    }
+    .author-bio-col {
+      text-align: center;
+    }
+    .author-highlights li {
+      text-align: left;
+    }
+  }
+</style>
