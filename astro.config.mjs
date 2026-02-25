@@ -4,6 +4,8 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from '@astrojs/cloudflare';
+
 const NON_DEFAULT_LANGS = new Set(['es', 'pt', 'tr', 'hi', 'ru']);
 const SPEC_CALCULATOR_SLUGS = new Set([
   'converter',
@@ -96,10 +98,13 @@ export default defineConfig({
       filter: (pageUrl) => !isLegacyLocalizedSpecUrl(pageUrl) && !isAliasUrl(pageUrl),
     }),
   ],
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   site: 'https://cryptocalk.com',
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es', 'pt', 'tr', 'hi', 'ru'],
@@ -107,4 +112,6 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+
+  adapter: cloudflare(),
 });
