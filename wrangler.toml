@@ -1,0 +1,8 @@
+name = "cryptocalk"
+main = "worker.js"
+compatibility_date = "2026-02-25"
+workers_dev = true
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
