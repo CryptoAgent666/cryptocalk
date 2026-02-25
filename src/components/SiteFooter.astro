@@ -1,27 +1,31 @@
 ---
+import type { Lang } from '../i18n/utils';
+import { getTranslations } from '../i18n/translations';
+
 export interface Props {
     lang?: string;
 }
 
 const { lang = "en" } = Astro.props;
 const prefix = lang === "en" ? "" : `/${lang}`;
+const t = getTranslations(lang as Lang);
 
 const coreLinks = [
-    { name: "Profit Calculator", href: `${prefix}/profit-calculator` },
-    { name: "Crypto Converter", href: `${prefix}/converter` },
-    { name: "Mining Calculator", href: `${prefix}/mining-calculator` },
-    { name: "DCA Calculator", href: `${prefix}/dca-calculator` },
-    { name: "Tax Calculator", href: `${prefix}/tax-calculator` },
-    { name: "Position Size", href: `${prefix}/position-size-calculator` },
+    { name: t.profitCalculator, href: `${prefix}/profit-calculator` },
+    { name: t.cryptoConverter, href: `${prefix}/converter` },
+    { name: t.miningCalculator, href: `${prefix}/mining-calculator` },
+    { name: t.dcaCalculator, href: `${prefix}/dca-calculator` },
+    { name: t.taxCalculator, href: `${prefix}/tax-calculator` },
+    { name: t.positionSizeCalculator, href: `${prefix}/position-size-calculator` },
 ];
 
 const exploreLinks = [
-    { name: "Staking Rewards", href: `${prefix}/staking-calculator` },
-    { name: "Gas Fee Calculator", href: `${prefix}/gas-calculator` },
-    { name: "Portfolio Calculator", href: `${prefix}/portfolio-calculator` },
-    { name: "What If Calculator", href: `${prefix}/what-if` },
-    { name: "Break-Even Calculator", href: `${prefix}/break-even-calculator` },
-    { name: "All Calculators", href: prefix || "/" },
+    { name: t.stakingCalculator, href: `${prefix}/staking-calculator` },
+    { name: t.gasCalculator, href: `${prefix}/gas-calculator` },
+    { name: t.portfolioCalculator, href: `${prefix}/portfolio-calculator` },
+    { name: t.whatIfCalculator, href: `${prefix}/what-if` },
+    { name: t.breakEvenCalculator, href: `${prefix}/break-even-calculator` },
+    { name: t.allCalculators.replace('← ', ''), href: prefix || "/" },
 ];
 ---
 
@@ -29,15 +33,15 @@ const exploreLinks = [
     <div class="footer-inner">
         <div class="footer-brand">
             <a href={prefix || "/"} class="footer-logo">Crypto<b>Calk</b></a>
-            <p>Free cryptocurrency calculators for everyone.</p>
+            <p>{t.footerTagline}</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">
-                <h4>Core Calculators</h4>
+                <h4>{t.footerCoreCalculators}</h4>
                 {coreLinks.map((link) => <a href={link.href}>{link.name}</a>)}
             </div>
             <div class="footer-col">
-                <h4>Explore</h4>
+                <h4>{t.footerExplore}</h4>
                 {
                     exploreLinks.map((link) => (
                         <a href={link.href}>{link.name}</a>
@@ -45,12 +49,12 @@ const exploreLinks = [
                 }
             </div>
             <div class="footer-col">
-                <h4>Trust &amp; Legal</h4>
-                <a href="/about">About Us</a>
-                <a href="/contact">Contact Us</a>
-                <a href="/privacy">Privacy Policy</a>
-                <a href="/terms">Terms of Service</a>
-                <a href="/editorial-policy">Editorial Policy</a>
+                <h4>{t.footerTrustLegal}</h4>
+                <a href={`${prefix}/about`}>{t.footerAboutUs}</a>
+                <a href={`${prefix}/contact`}>{t.footerContactUs}</a>
+                <a href={`${prefix}/privacy`}>{t.privacyPolicy}</a>
+                <a href={`${prefix}/terms`}>{t.footerTerms}</a>
+                <a href={`${prefix}/editorial-policy`}>{t.editorialPolicy}</a>
             </div>
         </div>
         <div class="footer-bottom">
