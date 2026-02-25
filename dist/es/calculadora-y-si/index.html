@@ -1,0 +1,731 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Herramienta gratuita: Calculadora Y Si (What If). Calcula resultados al instante con supuestos transparentes y datos de mercado actualizados."><meta name="generator" content="Astro v5.17.2"><!-- Preconnect to Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script><!-- SEO --><title>Calculadora Y Si (What If) — CryptoCalk</title><link rel="canonical" href="https://cryptocalk.com/es/calculadora-y-si"><!-- hreflang tags --><link rel="alternate" hreflang="en" href="https://cryptocalk.com/what-if"><link rel="alternate" hreflang="es" href="https://cryptocalk.com/es/calculadora-y-si"><link rel="alternate" hreflang="pt" href="https://cryptocalk.com/pt/calculadora-e-se"><link rel="alternate" hreflang="tr" href="https://cryptocalk.com/tr/ya-oyle-olsaydi"><link rel="alternate" hreflang="hi" href="https://cryptocalk.com/hi/agar-aisa-hota"><link rel="alternate" hreflang="ru" href="https://cryptocalk.com/ru/chto-esli"><link rel="alternate" hreflang="x-default" href="https://cryptocalk.com/what-if"><!-- OG Tags --><meta property="og:title" content="Calculadora Y Si (What If) — CryptoCalk"><meta property="og:description" content="Herramienta gratuita: Calculadora Y Si (What If). Calcula resultados al instante con supuestos transparentes y datos de mercado actualizados."><meta property="og:type" content="website"><meta property="og:url" content="https://cryptocalk.com/es/calculadora-y-si"><meta property="og:image" content="https://cryptocalk.com/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="CryptoCalk"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://cryptocalk.com/og-image.png"><!-- Theme initialization (prevent FOUC) --><script>
+      (function() {
+        const stored = localStorage.getItem('theme');
+        const theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script><script type="module">const g="api.coingecko.com";const A="cg-cache-v1:",d=new Map,l=new Map;class E extends Error{response;constructor(e){super(`Retriable CoinGecko response: ${e.status}`),this.name="RetriableHttpError",this.response=e}}function y(t){const e=new URL(t,window.location.origin);e.hash="";const r=new URLSearchParams(Array.from(e.searchParams.entries()).sort(([o,s],[a,i])=>o===a?s.localeCompare(i):o.localeCompare(a)));return e.search=r.toString(),e.toString()}function T(t,e){return e?.method?e.method.toUpperCase():t instanceof Request?t.method.toUpperCase():"GET"}function p(t){return typeof t=="string"?t:t instanceof URL?t.toString():t.url}function w(t){return`${A}${t}`}function _(t){try{const e=window.sessionStorage.getItem(w(t));if(!e)return null;const r=JSON.parse(e);return typeof r?.body!="string"||typeof r?.status!="number"||typeof r?.statusText!="string"||!Array.isArray(r?.headers)||typeof r?.createdAt!="number"||typeof r?.expiresAt!="number"?(window.sessionStorage.removeItem(w(t)),null):r}catch{return null}}function S(t,e){try{window.sessionStorage.setItem(w(t),JSON.stringify(e))}catch{}}function R(t,e){d.set(t,e),S(t,e)}function b(t){const e=d.get(t);if(e)return e;const r=_(t);return r?(d.set(t,r),r):null}function c(t,e="hit"){const r=new Headers(t.headers);return r.set("x-cg-cache",e),new Response(t.body,{status:t.status,statusText:t.statusText,headers:r})}function M(t){return Date.now()<=t.expiresAt}function C(t){return Date.now()-t.createdAt<=36e5}function I(t){const e=t.headers.get("retry-after");if(!e)return null;const r=Number(e);if(Number.isFinite(r)&&r>=0)return r*1e3;const o=Date.parse(e);if(Number.isFinite(o)){const s=o-Date.now();return s>0?s:0}return null}function L(t,e){if(e!==null)return e;const r=500*Math.pow(2,t),o=Math.random()*250;return r+o}function U(t){return new Promise(e=>{window.setTimeout(e,t)})}function F(t){const e=new AbortController,r=window.setTimeout(()=>e.abort(),8e3),o=()=>e.abort();return t?.addEventListener("abort",o,{once:!0}),t?.aborted&&e.abort(),{signal:e.signal,cleanup:()=>{window.clearTimeout(r),t?.removeEventListener("abort",o)}}}async function x(t,e,r,o){let s;const a={...r};let i=0;for(;i<=2;){const{signal:u,cleanup:f}=F(a.signal);try{const n=await t(e,{...a,signal:u});if(n.status===429||n.status>=500)throw new E(n);const m={body:await n.clone().text(),status:n.status,statusText:n.statusText,headers:Array.from(n.headers.entries()),createdAt:Date.now(),expiresAt:Date.now()+3e5};return R(o,m),m}catch(n){if(s=n,i===2)break;const h=n instanceof E?I(n.response):null;await U(L(i,h)),i+=1}finally{f()}}throw s instanceof Error?s:new Error("CoinGecko request failed")}function G(t,e){if(T(t,e)!=="GET")return!1;const o=p(t);return new URL(o,window.location.origin).hostname===g}function q(){if(typeof window>"u")return;const t=window;if(t.__coinGeckoFetchPatched__)return;t.__coinGeckoFetchPatched__=!0;const e=window.fetch.bind(window);window.fetch=async(r,o)=>{if(!G(r,o))return e(r,o);const s=y(p(r)),a=b(s);if(a&&M(a))return c(a,"hit");const i=a&&C(a)?a:null,u=l.get(s);if(u)try{const n=await u;return c(n,"hit")}catch(n){if(i)return c(i,"stale");throw n}const f=x(e,r,o??{},s);l.set(s,f);try{const n=await f;return c(n,"miss")}catch(n){if(i)return c(i,"stale");throw n}finally{l.delete(s)}}}q();</script><link rel="stylesheet" href="/_astro/_slug_.DJKglPl-.css">
+<style>.site-footer[data-astro-cid-gcn2mc3v]{border-top:1px solid var(--color-border);padding:48px 0 32px}.footer-inner[data-astro-cid-gcn2mc3v]{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:200px 1fr;grid-template-rows:auto auto;gap:32px 48px}.footer-brand[data-astro-cid-gcn2mc3v]{display:flex;flex-direction:column;gap:8px}.footer-logo[data-astro-cid-gcn2mc3v]{font-size:1.25rem;font-weight:400;letter-spacing:-.02em;color:var(--color-text);text-decoration:none}.footer-logo[data-astro-cid-gcn2mc3v] b[data-astro-cid-gcn2mc3v]{font-weight:800;background:linear-gradient(135deg,var(--color-primary),var(--color-accent-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.footer-brand[data-astro-cid-gcn2mc3v] p[data-astro-cid-gcn2mc3v]{font-size:.85rem;color:var(--color-text-muted)}.footer-links[data-astro-cid-gcn2mc3v]{display:flex;gap:48px;flex-wrap:wrap}.footer-col[data-astro-cid-gcn2mc3v]{display:flex;flex-direction:column;gap:10px;min-width:140px}.footer-col[data-astro-cid-gcn2mc3v] h4[data-astro-cid-gcn2mc3v]{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:4px}.footer-col[data-astro-cid-gcn2mc3v] a[data-astro-cid-gcn2mc3v]{font-size:.875rem;color:var(--color-text-secondary);text-decoration:none;transition:color .15s ease}.footer-col[data-astro-cid-gcn2mc3v] a[data-astro-cid-gcn2mc3v]:hover{color:var(--color-primary)}.footer-bottom[data-astro-cid-gcn2mc3v]{grid-column:1 / -1;border-top:1px solid var(--color-border);padding-top:24px;text-align:center}.footer-bottom[data-astro-cid-gcn2mc3v] p[data-astro-cid-gcn2mc3v]{font-size:.8rem;color:var(--color-text-muted)}@media(max-width:768px){.footer-inner[data-astro-cid-gcn2mc3v]{grid-template-columns:1fr}.footer-links[data-astro-cid-gcn2mc3v]{gap:28px}}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.DPgyHNq7.css"></head> <body>  <header class="site-header" data-astro-cid-vicll5v7> <div class="header-inner" data-astro-cid-vicll5v7> <a href="/es" class="logo" data-astro-cid-vicll5v7> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator" aria-hidden="true" data-astro-cid-vicll5v7="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg> <span class="logo-text" data-astro-cid-vicll5v7>Crypto<b data-astro-cid-vicll5v7>Calk</b></span> </a> <div class="header-actions" data-astro-cid-vicll5v7> <a href="/es" class="header-link" data-astro-cid-vicll5v7> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left" aria-hidden="true" data-astro-cid-vicll5v7="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg> ← Todas las Calculadoras </a> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="2emBki" prefix="r8" component-url="/_astro/LanguageSwitcher.wa8UXaE_.js" component-export="default" renderer-url="/_astro/client.Dc9Vh3na.js" props="{&quot;currentLang&quot;:[0,&quot;es&quot;],&quot;currentPath&quot;:[0,&quot;/es/calculadora-y-si&quot;],&quot;data-astro-cid-vicll5v7&quot;:[0,true]}" ssr client="idle" opts="{&quot;name&quot;:&quot;LanguageSwitcher&quot;,&quot;value&quot;:true}" await-children><div class="lang-switcher"><button type="button" class="lang-btn" aria-label="Switch language" aria-haspopup="menu" aria-controls="_r8R_0_" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg><span class="lang-current">🇪🇸<!-- --> <!-- -->Español</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down lang-chevron" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><!--astro:end--></astro-island> <astro-island uid="nto4I" prefix="r9" component-url="/_astro/ThemeToggle.Bl3L8Z77.js" component-export="default" renderer-url="/_astro/client.Dc9Vh3na.js" props="{&quot;data-astro-cid-vicll5v7&quot;:[0,true]}" ssr client="idle" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:true}" await-children><button type="button" aria-label="Switch to dark mode" class="theme-toggle-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg></button><!--astro:end--></astro-island> </div> </div> </header> <main data-astro-cid-vicll5v7> <nav class="breadcrumb" aria-label="Breadcrumb" data-astro-cid-vicll5v7> <div class="section-container" data-astro-cid-vicll5v7> <a href="/es" data-astro-cid-vicll5v7>Inicio</a> <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true" data-astro-cid-vicll5v7="true"><path d="m9 18 6-6-6-6"></path></svg> <a href="/es/calculadora-y-si" aria-current="page" data-astro-cid-vicll5v7>Calculadora Y Si (What If)</a> </div> </nav> <section class="calculator-section" data-astro-cid-vicll5v7> <div class="section-container" data-astro-cid-vicll5v7> <div class="calc-header" data-astro-cid-vicll5v7> <h1 data-astro-cid-vicll5v7>Calculadora Y Si (What If)</h1> <p data-astro-cid-vicll5v7>Herramienta gratuita: Calculadora Y Si (What If). Calcula resultados al instante con supuestos transparentes y datos de mercado actualizados.</p> </div> <div class="calc-scope" data-slug="what-if" data-astro-cid-vicll5v7> <div class="share-calc-wrapper" data-astro-cid-sebtitwd> <button id="share-calc-btn" class="share-calc-btn" title="Copy link with current inputs" data-astro-cid-sebtitwd> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share2 lucide-share-2" aria-hidden="true" data-astro-cid-sebtitwd="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line></svg> <span class="share-text" data-astro-cid-sebtitwd>Share Calculation</span> </button> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const a=document.getElementById("share-calc-btn"),c=document.querySelector(".calc-scope");if(!a||!c)return;const l=(t,r)=>{let n=Object.getPrototypeOf(t),e=Object.getOwnPropertyDescriptor(n,"value")?.set;!e&&t.tagName.toLowerCase()==="input"?e=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,"value")?.set:!e&&t.tagName.toLowerCase()==="select"&&(e=Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype,"value")?.set),e&&(e.call(t,r),t.dispatchEvent(new Event("input",{bubbles:!0})),t.dispatchEvent(new Event("change",{bubbles:!0})))},s=new URLSearchParams(window.location.search);if(s.toString().length>0){let t=0;const r=setInterval(()=>{t++;const n=Array.from(c.querySelectorAll("input, select"));(n.length>0||t>20)&&(clearInterval(r),n.forEach(e=>{const o=e.id||e.name;o&&s.has(o)&&l(e,s.get(o)||"")}))},100)}a.addEventListener("click",()=>{const t=Array.from(c.querySelectorAll("input, select")),r=new URLSearchParams;t.forEach(e=>{const o=e.id||e.name;o&&e.value&&r.set(o,e.value)});const n=window.location.pathname+"?"+r.toString();window.history.replaceState({},"",n),navigator.clipboard.writeText(window.location.origin+n).then(()=>{const e=a.querySelector(".share-text");if(e){const o=e.textContent;e.textContent="Copied to clipboard!",a.classList.add("success"),setTimeout(()=>{e.textContent=o,a.classList.remove("success")},2e3)}})})});</script> <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><astro-island uid="Z2aUAfn" prefix="r7" component-url="/_astro/WhatIfCalculator.BvDWfIt9.js" component-export="default" renderer-url="/_astro/client.Dc9Vh3na.js" props="{&quot;slot&quot;:[0,&quot;calculator&quot;],&quot;lang&quot;:[0,&quot;es&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;WhatIfCalculator&quot;,&quot;value&quot;:true}" await-children><div class="whatif-wrapper"><div class="whatif-grid"><div class="whatif-input-panel"><p class="whatif-prompt">If I had invested...</p><div class="input-group"><label class="input-label"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign" aria-hidden="true"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>INVESTMENT AMOUNT</label><div class="pills-row"><button class="pill-btn ">$<!-- -->100</button><button class="pill-btn ">$<!-- -->500</button><button class="pill-btn ">$<!-- -->1,000</button><button class="pill-btn ">$<!-- -->5,000</button><button class="pill-btn ">$<!-- -->10,000</button></div><div class="input-with-unit"><input type="number" inputMode="decimal" placeholder="" id="whatif-amount" min="1" step="any" value=""/></div></div><div class="input-group"><label class="input-label"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>IN CRYPTOCURRENCY</label><div class="coin-selected"><span class="coin-selected-name">Bitcoin<!-- --> (<!-- -->BTC<!-- -->)</span></div><div class="input-with-icon"><input type="text" placeholder="Search another coin..." id="whatif-coin-search" value=""/></div></div><div class="input-group"><label class="input-label"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>ON DATE</label><div class="pills-row"><button class="pill-btn ">1<!-- -->Y ago</button><button class="pill-btn ">2<!-- -->Y ago</button><button class="pill-btn ">3<!-- -->Y ago</button><button class="pill-btn ">5<!-- -->Y ago</button><button class="pill-btn ">10<!-- -->Y ago</button></div><input type="date" max="2026-02-25" min="2010-07-17" class="date-input" id="whatif-date" style="margin-top:8px" value=""/></div><div class="btn-row"><button class="calculate-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>Calculate What If</button><button class="reset-btn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>Reset</button></div><span class="input-hint">Use amount and date presets for quick setup, or pick a scenario and tap Calculate What If.</span><div class="quick-scenarios"><label class="input-label">⚡ QUICK SCENARIOS</label><div class="scenario-chips"><button class="scenario-chip">$100 in BTC (2013)</button><button class="scenario-chip">$1,000 in ETH (2015)</button><button class="scenario-chip">$500 in SOL (2020)</button><button class="scenario-chip">$200 in BNB (2017)</button><button class="scenario-chip">$100 in DOGE (2019)</button><button class="scenario-chip">$1,000 in ADA (2017)</button></div></div></div><div class="whatif-results-panel"><div class="whatif-empty"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><h3>Travel Back in Time</h3><p>See what your investment would be worth if you had bought crypto in the past. Try a quick scenario or enter your own!</p><div class="whatif-features"><span>🕰️ Historical prices</span><span>📈 Growth chart</span><span>🐦 Share on X</span></div></div></div></div></div><!--astro:end--></astro-island> </div> </div> </section> <section class="seo-content" data-astro-cid-vicll5v7> <div class="section-container prose" data-astro-cid-vicll5v7> <h2 data-astro-cid-vicll5v7>Cómo usar What If Calculator</h2> <p data-astro-cid-vicll5v7>La Calculadora Y Si (What If) está diseñada para convertir supuestos básicos en un marco de decisión claro en segundos. Comienza ingresando valores conservadores primero, y luego haz una segunda pasada con supuestos agresivos para entender tu rango de resultados. Este método de dos pasadas te da una línea base realista y un escenario optimista antes de comprometer capital. En la práctica, la buena toma de decisiones proviene de comparar escenarios en lugar de confiar en un solo resultado. Por esta razón, esta calculadora se actualiza en tiempo real y permite iterar rápidamente para que puedas probar múltiples casos con mínima fricción.</p><p data-astro-cid-vicll5v7>Un flujo de trabajo fiable es: define tu objetivo, establece tus restricciones, ingresa valores, revisa los resultados y luego valida con una calculadora relacionada. Por ejemplo, si tu resultado objetivo parece atractivo, verifícalo contra los supuestos de punto de equilibrio, comisiones e impuestos antes de actuar. Este proceso previene el exceso de confianza y te ayuda a evitar configuraciones débiles donde pequeños costos ocultos pueden borrar tu ventaja esperada. Al usar pasos repetibles, haces que tu análisis sea consistente y más fácil de mejorar con el tiempo.</p> <h2 data-astro-cid-vicll5v7>Guía de entradas y supuestos</h2> <p data-astro-cid-vicll5v7>La calidad de las entradas determina la calidad de los resultados. Usa precios confirmados por exchanges cuando sea posible y evita depender de una sola cotización durante alta volatilidad. Si tu escenario incluye comisiones, financiación, spread o deslizamiento (slippage), inclúyelos explícitamente. Incluso los costos porcentuales pequeños se acumulan rápidamente en condiciones apalancadas o de alta frecuencia. Un hábito sólido es aumentar los supuestos de fricción un poco por encima de tu expectativa más optimista para poner a prueba el modelo. Si la configuración sigue funcionando con supuestos conservadores, el riesgo de ejecución se vuelve más manejable.</p><p data-astro-cid-vicll5v7>El horizonte temporal importa tanto como los supuestos de precios. Una estrategia que parece viable en un horizonte de una semana puede fallar en tres meses debido a costos acumulativos y a la deriva del mercado. Alinea tus datos de entrada con tu período de retención previsto y vuelve a comprobar cuando las condiciones cambien materialmente. Si la estructura del mercado cambia, vuelve a ejecutar el mismo escenario en lugar de forzar viejos supuestos en un nuevo entorno. Esta disciplina mantiene tu planificación adaptable y reduce pérdidas evitables por datos desactualizados.</p> <h2 data-astro-cid-vicll5v7>Cómo interpretar correctamente los resultados</h2> <p data-astro-cid-vicll5v7>Trata los resultados de la calculadora como un rango de decisión, no como una predicción. Los valores clave a observar son la dirección, la sensibilidad y los puntos de ruptura. La dirección te dice si tu configuración es estructuralmente positiva o negativa bajo tus supuestos. La sensibilidad te indica qué variable puede dañar la configuración más rápido (precio, comisión, apalancamiento, duración o impuestos). Los puntos de ruptura definen exactamente dónde un plan rentable se convierte en uno débil. Si conoces esos límites antes de la ejecución, puedes reaccionar más rápido y preservar capital bajo estrés.</p><p data-astro-cid-vicll5v7>Otro enfoque útil es la planificación por umbrales: determina qué resultado mínimo hace que la configuración valga la pena y rechaza los escenarios que no cumplan con ese umbral. Esto evita forzar operaciones marginales. Para usuarios de carteras, combina esto con el tamaño de posición para que cada decisión se mantenga proporcional al riesgo de la cuenta. Para inversores a largo plazo, combínalo con herramientas de DCA, ROI y comparación de inflación para mantener los retornos alineados con el poder adquisitivo real. La consistencia en el uso de herramientas crea un proceso más fuerte que cálculos únicos y aislados.</p> <h2 data-astro-cid-vicll5v7>Escenarios prácticos y flujo de planificación</h2> <p data-astro-cid-vicll5v7>La planificación de escenarios mejora tanto el rendimiento como el control emocional. Construye al menos tres casos para cada configuración: caso base, caso favorable y caso adverso. En el caso base, usa supuestos realistas basados en el comportamiento actual del mercado. En el caso favorable, reduce la fricción y asume una ejecución más limpia. En el caso adverso, amplía el spread, incluye comisiones más altas y reduce la calidad del movimiento esperado. Al comparar los tres, obtienes una imagen de riesgo más completa y evitas sesgos hacia pronósticos optimistas.</p><p data-astro-cid-vicll5v7>Mantén un registro de decisiones simple con tu conjunto de entradas y tu elección final. Con el tiempo, esto se convierte en un sistema de retroalimentación para mejorar tus supuestos. Si los resultados rinden constantemente por debajo de tu modelo, ajusta tus supuestos. Si los resultados superan consistentemente las estimaciones conservadoras, puedes optimizar gradualmente. Este ciclo basado en evidencias es más valioso que adivinar la dirección del mercado y te ayuda a desarrollar una ventaja repetible con menor variación.</p> <h2 data-astro-cid-vicll5v7>Checklist de riesgo y ejecución</h2> <p data-astro-cid-vicll5v7>Antes de la ejecución, confirma cinco puntos de control: frescura de los datos, modelo de comisiones, condiciones de liquidez, límite de pérdida y lógica de salida. La frescura de los datos asegura que tus supuestos no estén obsoletos. El modelo de comisiones garantiza que incluyas todas las fuentes de fricción, no solo la tarifa principal. Las condiciones de liquidez aseguran que tus estimaciones de ejecución sean realistas. El límite de pérdida protege la supervivencia de la cuenta si la estructura del mercado colapsa. La lógica de salida previene la improvisación bajo presión. Si algún punto no está claro, retrasa la ejecución y vuelve a calcular.</p><p data-astro-cid-vicll5v7>Para usuarios avanzados, verifica la correlación entre posiciones abiertas. Una configuración puede parecer segura de forma aislada, pero volverse demasiado grande cuando se combina con otra exposición direccional similar en otro lugar. Si el riesgo total de la cartera ya es alto, la elección racional puede ser reducir el tamaño o saltarse la operación. La preservación del capital te mantiene en el juego para oportunidades de mayor calidad. En entornos inciertos, un resultado más pequeño pero controlado generalmente supera a uno sobredimensionado y frágil.</p> <h2 data-astro-cid-vicll5v7>Errores comunes a evitar</h2> <p data-astro-cid-vicll5v7>Los errores más comunes son sobreajustar los supuestos a los resultados deseados, ignorar los costos secundarios y usar valores estáticos en mercados dinámicos. Evita introducir datos solo para justificar una operación. En cambio, parte de supuestos realistas y deja que el resultado decida si la configuración es válida. Otro error frecuente es confundir el retorno bruto con el retorno neto. El resultado neto es lo que importa después de toda la fricción y el tratamiento fiscal. Una configuración con un rendimiento nominal más bajo puede ser superior si su perfil ajustado al riesgo es más fuerte.</p><p data-astro-cid-vicll5v7>Los usuarios también subestiman el riesgo de comportamiento. Si tu plan requiere una ejecución de precisión que rara vez logras, modélalo con tu calidad de ejecución real, no con la ideal. La mejor configuración es la que puedes ejecutar de manera consistente, no la que solo funciona bajo condiciones perfectas. Mantén los modelos simples, auditables y repetibles. La complejidad puede mejorar el nivel de detalle, pero solo si la calidad de la entrada y la disciplina de ejecución lo respaldan.</p> <h2 data-astro-cid-vicll5v7>Rangos de referencia y expectativas</h2> <p data-astro-cid-vicll5v7>Los puntos de referencia dan contexto a cada resultado. En lugar de preguntar si un resultado aislado parece bueno, compáralo con una línea base consistente como la tenencia pasiva, un rendimiento de bajo riesgo o el promedio histórico de tu estrategia. Una configuración que supera a un punto de referencia aún puede rendir por debajo de otro una vez que incluyes las comisiones y la volatilidad. Por eso, la selección del punto de referencia debe coincidir con el objetivo: las configuraciones a corto plazo deben compararse con alternativas de ciclos cortos, mientras que los planes a largo plazo deben compararse con líneas base de varios meses o años. Siempre separa la comparación bruta de la comparación neta después de tarifas e impuestos.</p><p data-astro-cid-vicll5v7>Otro buen punto de referencia es la calidad del proceso. Haz un seguimiento de la frecuencia con la que tu rango proyectado coincide con los resultados obtenidos y por qué margen. Si la variación es consistentemente demasiado amplia, simplifica los supuestos y reduce la dependencia a datos frágiles. Si la variación se reduce con el tiempo, la calibración de tu modelo está mejorando. Medir la calidad del proceso ayuda a evitar la ilusión de precisión y convierte a la calculadora en un sistema vivo en lugar de una estimación estática. Tras docenas de decisiones, esto suele mejorar los resultados mucho más que perseguir la operación perfecta o la entrada perfecta.</p> <h2 data-astro-cid-vicll5v7>Plantillas de ejecución reutilizables</h2> <p data-astro-cid-vicll5v7>Las plantillas de ejecución reutilizables aceleran las decisiones y reducen el sesgo emocional. Construye una plantilla para la continuación de tendencia, una para la reversión a la media y otra para la protección defensiva del capital. Cada plantilla debe definir la calidad mínima de la configuración, el riesgo máximo permitido, el período de retención esperado y la lógica de salida explícita. Luego usa esta calculadora para completar solo las partes variables: zona de precio, tamaño, fricción y desarrollo del escenario. Las plantillas crean consistencia, y la consistencia es la base de una mejora medible. Sin plantillas, cada decisión es improvisada y difícil de revisar objetivamente a posteriori.</p><p data-astro-cid-vicll5v7>Para los gestores de carteras, agrega una plantilla a nivel de cartera: limita la exposición correlacionada, limita el riesgo de cola agregado y limita la concentración de estrategias por régimen de mercado. Luego, pasa cada nueva configuración por ambas plantillas antes de entrar. Si alguna falla, rechaza la operación o reduce el tamaño de entrada. Este filtro de doble capa previene la sobreasignación durante períodos de alta convicción y reduce la severidad de las caídas durante cambios bruscos de mercado. El objetivo no es maximizar la actividad, sino maximizar el despliegue del capital ajustado a la calidad.</p> <h2 data-astro-cid-vicll5v7>Higiene de datos y mantenimiento del modelo</h2> <p data-astro-cid-vicll5v7>La higiene de datos suele ser la ventaja oculta. Mantén registros detallados de los precios y supuestos que usas en cada cálculo para poder auditar los resultados más tarde. Si confías en fuentes externas, comprueba la consistencia de origen y documenta cualquier comportamiento anómalo. En mercados volátiles, los datos obsoletos pueden invalidar un buen modelo en minutos. Crea el hábito de volver a calcular cuando el precio, la volatilidad o las comisiones se muevan más allá de tu tolerancia predefinida. Esto asegura que la herramienta se mantenga relevante en la ejecución real.</p><p data-astro-cid-vicll5v7>La higiene de modelo también incluye el control de versiones para tus supuestos. Al cambiar un esquema de entrada, documenta por qué y desde qué fecha aplica. Esto evitará mezclar la lógica antigua y nueva durante las revisiones de rendimiento. Periódicamente elimina la complejidad innecesaria que no mejora la calidad de decisión. Los modelos más limpios son más fáciles de validar, explicar y ejecutar. Con el tiempo, un flujo de trabajo con la calculadora bien mantenido se convierte en un sistema operativo duradero para tus decisiones de riesgo.</p> <h2 data-astro-cid-vicll5v7>Validación final antes de desplegar capital</h2> <p data-astro-cid-vicll5v7>La validación final debe ocurrir inmediatamente antes de la ejecución. Confirma que la configuración en vivo sigue coincidiendo con la del modelo, que la liquidez sigue siendo adecuada y que tu nivel de invalidación todavía tiene sentido bajo la volatilidad actual. Si alguna de estas condiciones varía, vuelve a iterar el modelo y actualiza el tamaño antes de entrar. Este filtro final reduce la fricción evitable entre el modelo y la realidad del mercado. El costo de esto son solo unos segundos; el beneficio son menos entradas de baja calidad y menos sorpresas después de la entrada.</p><p data-astro-cid-vicll5v7>Tras la ejecución, archiva tu proyección y compárala con las métricas obtenidas. Revisa no solo el PnL, sino también la calidad de ejecución, el seguimiento del plan y la disciplina de riesgo. Esto cierra el ciclo de aprendizaje y te da una señal procesable para futuras interacciones. Los sistemas de alto rendimiento se basan en pequeñas correcciones, no en un gran cambio dramático. Si mantienes el ciclo ajustado, la Calculadora Y Si (What If) será cada vez más valiosa con el paso del tiempo.</p> <h2 data-astro-cid-vicll5v7>Preguntas frecuentes</h2> <details data-astro-cid-vicll5v7> <summary data-astro-cid-vicll5v7>¿Cómo funciona la Calculadora Y Si (What If)?</summary> <p data-astro-cid-vicll5v7>La Calculadora Y Si (What If) combina tus datos con fórmulas cripto estándar y genera resultados prácticos al instante. Está diseñada para una planificación rápida y se actualiza en tiempo real al cambiar los valores.</p> </details><details data-astro-cid-vicll5v7> <summary data-astro-cid-vicll5v7>¿Qué tan precisos son los resultados?</summary> <p data-astro-cid-vicll5v7>Los resultados son matemáticamente exactos según tus datos y el mercado. Sin embargo, los precios en vivo, comisiones, deslizamiento (slippage) e impuestos pueden cambiar el resultado final real.</p> </details><details data-astro-cid-vicll5v7> <summary data-astro-cid-vicll5v7>¿Pueden los principiantes usar esta calculadora?</summary> <p data-astro-cid-vicll5v7>Sí. La interfaz está pensada tanto para principiantes como para usuarios avanzados, con etiquetas claras, valores predeterminados y guías prácticas debajo de la herramienta.</p> </details><details data-astro-cid-vicll5v7> <summary data-astro-cid-vicll5v7>¿Esta herramienta almacena mis datos?</summary> <p data-astro-cid-vicll5v7>No se requiere cuenta personal. La calculadora funciona íntegramente en tu navegador y está diseñada primando la privacidad.</p> </details><details data-astro-cid-vicll5v7> <summary data-astro-cid-vicll5v7>¿Puedo usar esto para decisiones reales de trading o inversión?</summary> <p data-astro-cid-vicll5v7>Úsala como una herramienta de apoyo, no como consejo garantizado. Valida siempre los riesgos, comisiones y suposiciones de tu estrategia antes de comprometer capital.</p> </details><details data-astro-cid-vicll5v7> <summary data-astro-cid-vicll5v7>¿Qué calculadoras relacionadas debería usar después?</summary> <p data-astro-cid-vicll5v7>Después de usar Calculadora Y Si (What If), compara los resultados con las calculadoras de Ganancias, ROI, Tamaño de Posición, Impuestos y Punto de Equilibrio para validar todo tu escenario.</p> </details> <h2 data-astro-cid-vicll5v7>Calculadoras relacionadas</h2> <p data-astro-cid-vicll5v7>
+To improve decision quality, pair Calculadora Y Si (What If) with at least one complementary
+          tool: use Profit/ROI for return validation, Position Size and Risk/Reward
+          for risk control, Break-Even for fee-adjusted thresholds, and Tax tools
+          for post-trade net analysis. Using tools in combination gives better outcomes
+          than relying on a single isolated metric.
+</p> </div> </section> </main> <footer class="site-footer" data-astro-cid-gcn2mc3v> <div class="footer-inner" data-astro-cid-gcn2mc3v> <div class="footer-brand" data-astro-cid-gcn2mc3v> <a href="/es" class="footer-logo" data-astro-cid-gcn2mc3v>Crypto<b data-astro-cid-gcn2mc3v>Calk</b></a> <p data-astro-cid-gcn2mc3v>Calculadoras de criptomonedas gratuitas para todos.</p> </div> <div class="footer-links" data-astro-cid-gcn2mc3v> <div class="footer-col" data-astro-cid-gcn2mc3v> <h4 data-astro-cid-gcn2mc3v>Calculadoras Principales</h4> <a href="/es/profit-calculator" data-astro-cid-gcn2mc3v>Calculadora de Ganancias</a><a href="/es/converter" data-astro-cid-gcn2mc3v>Convertidor Crypto</a><a href="/es/mining-calculator" data-astro-cid-gcn2mc3v>Calculadora de Minería</a><a href="/es/dca-calculator" data-astro-cid-gcn2mc3v>Calculadora DCA</a><a href="/es/tax-calculator" data-astro-cid-gcn2mc3v>Calculadora de Impuestos</a><a href="/es/position-size-calculator" data-astro-cid-gcn2mc3v>Calculadora de Tamaño de Posición</a> </div> <div class="footer-col" data-astro-cid-gcn2mc3v> <h4 data-astro-cid-gcn2mc3v>Explorar</h4> <a href="/es/staking-calculator" data-astro-cid-gcn2mc3v>Calculadora de Recompensas de Staking</a><a href="/es/gas-calculator" data-astro-cid-gcn2mc3v>Calculadora de Gas</a><a href="/es/portfolio-calculator" data-astro-cid-gcn2mc3v>Calculadora de Portafolio</a><a href="/es/what-if" data-astro-cid-gcn2mc3v>Calculadora ¿Qué Pasaría Si?</a><a href="/es/break-even-calculator" data-astro-cid-gcn2mc3v>Calculadora de Punto de Equilibrio</a><a href="/es" data-astro-cid-gcn2mc3v>Todas las Calculadoras</a> </div> <div class="footer-col" data-astro-cid-gcn2mc3v> <h4 data-astro-cid-gcn2mc3v>Confianza y Legal</h4> <a href="/es/about" data-astro-cid-gcn2mc3v>Sobre Nosotros</a> <a href="/es/contact" data-astro-cid-gcn2mc3v>Contáctenos</a> <a href="/es/privacy" data-astro-cid-gcn2mc3v>Política de Privacidad</a> <a href="/es/terms" data-astro-cid-gcn2mc3v>Términos de Servicio</a> <a href="/es/editorial-policy" data-astro-cid-gcn2mc3v>Política Editorial</a> </div> </div> <div class="footer-bottom" data-astro-cid-gcn2mc3v> <p data-astro-cid-gcn2mc3v>
+&copy; 2026 CryptoCalk. All rights reserved. For informational
+                purposes only &mdash; not financial advice.
+</p> </div> </div> </footer>  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora Y Si (What If)","description":"Herramienta gratuita: Calculadora Y Si (What If). Calcula resultados al instante con supuestos transparentes y datos de mercado actualizados.","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"inLanguage":"es","url":"https://cryptocalk.com/es/calculadora-y-si"}</script> <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo funciona la Calculadora Y Si (What If)?","acceptedAnswer":{"@type":"Answer","text":"La Calculadora Y Si (What If) combina tus datos con fórmulas cripto estándar y genera resultados prácticos al instante. Está diseñada para una planificación rápida y se actualiza en tiempo real al cambiar los valores."}},{"@type":"Question","name":"¿Qué tan precisos son los resultados?","acceptedAnswer":{"@type":"Answer","text":"Los resultados son matemáticamente exactos según tus datos y el mercado. Sin embargo, los precios en vivo, comisiones, deslizamiento (slippage) e impuestos pueden cambiar el resultado final real."}},{"@type":"Question","name":"¿Pueden los principiantes usar esta calculadora?","acceptedAnswer":{"@type":"Answer","text":"Sí. La interfaz está pensada tanto para principiantes como para usuarios avanzados, con etiquetas claras, valores predeterminados y guías prácticas debajo de la herramienta."}},{"@type":"Question","name":"¿Esta herramienta almacena mis datos?","acceptedAnswer":{"@type":"Answer","text":"No se requiere cuenta personal. La calculadora funciona íntegramente en tu navegador y está diseñada primando la privacidad."}},{"@type":"Question","name":"¿Puedo usar esto para decisiones reales de trading o inversión?","acceptedAnswer":{"@type":"Answer","text":"Úsala como una herramienta de apoyo, no como consejo garantizado. Valida siempre los riesgos, comisiones y suposiciones de tu estrategia antes de comprometer capital."}},{"@type":"Question","name":"¿Qué calculadoras relacionadas debería usar después?","acceptedAnswer":{"@type":"Answer","text":"Después de usar Calculadora Y Si (What If), compara los resultados con las calculadoras de Ganancias, ROI, Tamaño de Posición, Impuestos y Punto de Equilibrio para validar todo tu escenario."}}]}</script> <style is:global>/* ===== Header ===== */
+  .calc-scope[data-slug="what-if"] .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-header);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .calc-scope[data-slug="what-if"] .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .calc-scope[data-slug="what-if"] .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .calc-scope[data-slug="what-if"] .logo:hover { color: var(--color-text); }
+  .calc-scope[data-slug="what-if"] .logo-text { font-weight: 400; letter-spacing: -0.02em; }
+  .calc-scope[data-slug="what-if"] .logo-text b {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .calc-scope[data-slug="what-if"] .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .calc-scope[data-slug="what-if"] .header-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+  .calc-scope[data-slug="what-if"] .header-link:hover { color: var(--color-text); }
+
+  /* ===== Breadcrumb ===== */
+  .calc-scope[data-slug="what-if"] .breadcrumb {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .calc-scope[data-slug="what-if"] .breadcrumb .section-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+  .calc-scope[data-slug="what-if"] .breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+  .calc-scope[data-slug="what-if"] .breadcrumb a[aria-current] {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* ===== Layout ===== */
+  .calc-scope[data-slug="what-if"] .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .calc-scope[data-slug="what-if"] .calculator-section { padding: 40px 0 60px; }
+  .calc-scope[data-slug="what-if"] .calc-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .calc-scope[data-slug="what-if"] .calc-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+  .calc-scope[data-slug="what-if"] .calc-header p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+  }
+
+  /* ===== SEO Content ===== */
+  .calc-scope[data-slug="what-if"] .seo-content {
+    padding: 60px 0;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+  }
+  .calc-scope[data-slug="what-if"] .seo-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .calc-scope[data-slug="what-if"] .seo-content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 32px 0 12px;
+  }
+  .calc-scope[data-slug="what-if"] .seo-content p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 12px;
+    max-width: 720px;
+  }
+  .calc-scope[data-slug="what-if"] .seo-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  /* Returns Table */
+  .calc-scope[data-slug="what-if"] .returns-table-wrap {
+    overflow-x: auto;
+    margin: 16px 0 24px;
+  }
+  .calc-scope[data-slug="what-if"] .returns-table {
+    width: 100%;
+    max-width: 720px;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .calc-scope[data-slug="what-if"] .returns-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--color-bg);
+    font-weight: 600;
+    color: var(--color-text);
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+  }
+  .calc-scope[data-slug="what-if"] .returns-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+  }
+  .calc-scope[data-slug="what-if"] .returns-table tr:hover td {
+    background: var(--color-bg);
+  }
+  .calc-scope[data-slug="what-if"] .table-note {
+    font-size: 0.75rem !important;
+    font-style: italic;
+    color: var(--color-text-muted) !important;
+    margin-top: 8px !important;
+  }
+
+  .calc-scope[data-slug="what-if"] .seo-content details {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 8px;
+    max-width: 720px;
+    cursor: pointer;
+  }
+  .calc-scope[data-slug="what-if"] .seo-content summary {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .calc-scope[data-slug="what-if"] .seo-content details p { margin-top: 12px; }
+
+  .calc-scope[data-slug="what-if"] .seo-content h2 { margin-top: 40px; }
+  .calc-scope[data-slug="what-if"] .seo-content h2:first-child { margin-top: 0; }
+  .calc-scope[data-slug="what-if"] .seo-content ol { padding-left: 24px; margin-bottom: 16px; }
+  .calc-scope[data-slug="what-if"] .seo-content ol li { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 8px; }
+  .calc-scope[data-slug="what-if"] .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
+  .calc-scope[data-slug="what-if"] .seo-content li { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 6px; }
+  .calc-scope[data-slug="what-if"] .seo-content strong { color: var(--color-text); }
+
+  /* ===== Footer ===== */
+  .calc-scope[data-slug="what-if"] .site-footer { padding: 24px 0; }
+  .calc-scope[data-slug="what-if"] .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .calc-scope[data-slug="what-if"] .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+
+/* ===== What If Calculator Styles ===== */
+  .calc-scope[data-slug="what-if"] .whatif-wrapper { width: 100%; }
+
+  .calc-scope[data-slug="what-if"] .whatif-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .calc-scope[data-slug="what-if"] .whatif-grid { grid-template-columns: 1fr; }
+  }
+
+  .calc-scope[data-slug="what-if"] .whatif-input-panel {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .calc-scope[data-slug="what-if"] .whatif-prompt {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 16px;
+  }
+
+  /* Coin selected */
+  .calc-scope[data-slug="what-if"] .coin-selected {
+    padding: 8px 12px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .calc-scope[data-slug="what-if"] .input-with-icon {
+    position: relative;
+  }
+  .calc-scope[data-slug="what-if"] .input-with-icon input {
+    width: 100%;
+    padding: 10px 14px;
+    padding-right: 32px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .calc-scope[data-slug="what-if"] .input-with-icon input:focus { border-color: var(--color-primary); }
+  .calc-scope[data-slug="what-if"] .input-clear {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .calc-scope[data-slug="what-if"] .coin-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    max-height: 240px;
+    overflow-y: auto;
+  }
+  .calc-scope[data-slug="what-if"] .coin-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+    text-align: left;
+  }
+  .calc-scope[data-slug="what-if"] .coin-option:last-child { border-bottom: none; }
+  .calc-scope[data-slug="what-if"] .coin-option:hover { background: var(--color-bg); }
+  .calc-scope[data-slug="what-if"] .coin-option-name { font-size: 0.85rem; font-weight: 500; color: var(--color-text); }
+  .calc-scope[data-slug="what-if"] .coin-option-symbol { font-size: 0.75rem; color: var(--color-text-muted); margin-left: auto; }
+
+  .calc-scope[data-slug="what-if"] .date-input {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .calc-scope[data-slug="what-if"] .date-input:focus { border-color: var(--color-primary); }
+
+  /* Quick scenarios */
+  .calc-scope[data-slug="what-if"] .quick-scenarios {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+  }
+  .calc-scope[data-slug="what-if"] .scenario-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .calc-scope[data-slug="what-if"] .scenario-chip {
+    padding: 6px 12px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .calc-scope[data-slug="what-if"] .scenario-chip:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.04);
+  }
+
+  /* Results */
+  .calc-scope[data-slug="what-if"] .whatif-results-panel {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .calc-scope[data-slug="what-if"] .whatif-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+  }
+  .calc-scope[data-slug="what-if"] .whatif-empty h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 16px 0 8px;
+  }
+  .calc-scope[data-slug="what-if"] .whatif-empty p { font-size: 0.85rem; margin-bottom: 16px; }
+  .calc-scope[data-slug="what-if"] .whatif-features {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Hero */
+  .calc-scope[data-slug="what-if"] .whatif-hero {
+    text-align: center;
+    padding: 28px 24px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+  }
+  .calc-scope[data-slug="what-if"] .whatif-hero.gain {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+  .calc-scope[data-slug="what-if"] .whatif-hero.loss {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02));
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+  .calc-scope[data-slug="what-if"] .whatif-hero-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+  }
+  .calc-scope[data-slug="what-if"] .whatif-hero-value {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+  }
+  .calc-scope[data-slug="what-if"] .whatif-hero-roi {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .calc-scope[data-slug="what-if"] .whatif-hero-roi.positive { color: var(--color-accent-green); }
+  .calc-scope[data-slug="what-if"] .whatif-hero-roi.negative { color: var(--color-accent-red); }
+
+  /* Chart */
+  .calc-scope[data-slug="what-if"] .whatif-chart { margin-bottom: 20px; }
+  .calc-scope[data-slug="what-if"] .whatif-svg {
+    width: 100%;
+    height: 120px;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+  }
+  .calc-scope[data-slug="what-if"] .chart-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+  }
+
+  /* Stats */
+  .calc-scope[data-slug="what-if"] .whatif-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 480px) {
+    .calc-scope[data-slug="what-if"] .whatif-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  .calc-scope[data-slug="what-if"] .whatif-stat {
+    padding: 12px;
+    background: var(--color-bg);
+    border-radius: var(--radius-sm);
+    text-align: center;
+  }
+  .calc-scope[data-slug="what-if"] .whatif-stat .stat-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+  }
+  .calc-scope[data-slug="what-if"] .whatif-stat .stat-value {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Share */
+  .calc-scope[data-slug="what-if"] .share-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .calc-scope[data-slug="what-if"] .share-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }.calc-scope[data-slug="what-if"] .whatif-cta {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .calc-scope[data-slug="what-if"] .whatif-cta:hover {
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+
+  /* Buttons */
+  .calc-scope[data-slug="what-if"] .btn-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .calc-scope[data-slug="what-if"] .calculate-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .calc-scope[data-slug="what-if"] .calculate-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  }
+  .calc-scope[data-slug="what-if"] .calculate-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .calc-scope[data-slug="what-if"] .reset-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .calc-scope[data-slug="what-if"] .reset-btn:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+  }
+
+  /* Input groups */
+  .calc-scope[data-slug="what-if"] .input-group { margin-bottom: 14px; position: relative; }
+  .calc-scope[data-slug="what-if"] .input-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+  }
+  .calc-scope[data-slug="what-if"] .input-with-unit {
+    position: relative;
+  }
+  .calc-scope[data-slug="what-if"] .input-with-unit input {
+    width: 100%;
+    padding: 10px 14px 10px 28px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .calc-scope[data-slug="what-if"] .input-with-unit input:focus { border-color: var(--color-primary); }
+  .calc-scope[data-slug="what-if"] .input-prefix {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  /* Spin animation */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .calc-scope[data-slug="what-if"] .spin { animation: spin 1s linear infinite; }
+
+  /* Disclaimer */
+  .calc-scope[data-slug="what-if"] .calc-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    padding: 10px;
+    background: var(--color-bg);
+    border-radius: var(--radius-sm);
+  }
+
+  .calc-scope[data-slug="what-if"] .text-profit { color: var(--color-accent-green) !important; }
+  .calc-scope[data-slug="what-if"] .text-loss { color: var(--color-accent-red) !important; }
+
+  .calc-scope[data-slug="what-if"] .calc-error {
+    color: var(--color-accent-red);
+    font-size: 0.85rem;
+    padding: 10px 14px;
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    border-radius: var(--radius-sm);
+    margin-top: 10px;
+  }</style> <div id="cookie-banner" class="cookie-banner" hidden data-astro-cid-fzbxxtek> <div class="cookie-content" data-astro-cid-fzbxxtek> <p data-astro-cid-fzbxxtek>
+We use cookies to improve your experience and analyze site traffic. By continuing to use our site, you consent to our use of cookies.
+<a href="/privacy" data-astro-cid-fzbxxtek>Read Privacy Policy</a>.
+</p> <div class="cookie-actions" data-astro-cid-fzbxxtek> <button id="cookie-accept" class="btn-cookie btn-accept" data-astro-cid-fzbxxtek>Accept All</button> <button id="cookie-decline" class="btn-cookie btn-decline" data-astro-cid-fzbxxtek>Decline Non-Essential</button> </div> </div> </div> <script>
+  (() => {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+    
+    // Check if user already made a choice
+    const consentStatus = localStorage.getItem('cookie_consent');
+    
+    if (!consentStatus) {
+      // Show banner after a slight delay
+      setTimeout(() => {
+        banner.removeAttribute('hidden');
+      }, 1000);
+    }
+    
+    const setConsent = (status) => {
+      localStorage.setItem('cookie_consent', status);
+      banner.setAttribute('hidden', '');
+      
+      // Update analytics consent when the user accepts
+      if (status === 'accepted' && typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
+    };
+    
+    if (acceptBtn) acceptBtn.addEventListener('click', () => setConsent('accepted'));
+    if (declineBtn) declineBtn.addEventListener('click', () => setConsent('declined'));
+  })();
+</script>  <script>
+      (() => {
+        const MOBILE_QUERY = '(max-width: 768px)';
+        const TOGGLE_SHOW = 'Read full guide';
+        const TOGGLE_HIDE = 'Hide full guide';
+
+        const isMobile = () => window.matchMedia(MOBILE_QUERY).matches;
+
+        const markCalculatorContext = () => {
+          const hasCalculator = Boolean(document.querySelector('main .calculator-section'));
+          document.body.classList.toggle('calc-mobile-ux', hasCalculator);
+        };
+
+        const enhanceSeoSections = () => {
+          if (!isMobile()) return;
+
+          document.querySelectorAll('section.seo-content').forEach((section) => {
+            if (section.getAttribute('data-mobile-collapsed') === 'true') return;
+
+            const container = section.querySelector('.section-container');
+            if (!container || container.children.length < 3) return;
+
+            const collapsible = document.createElement('div');
+            collapsible.className = 'seo-mobile-collapsible';
+
+            while (container.firstChild) {
+              collapsible.appendChild(container.firstChild);
+            }
+
+            const toggle = document.createElement('button');
+            toggle.type = 'button';
+            toggle.className = 'seo-mobile-toggle';
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.textContent = TOGGLE_SHOW;
+
+            const setExpanded = (expanded) => {
+              container.setAttribute('data-expanded', expanded ? 'true' : 'false');
+              toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+              toggle.textContent = expanded ? TOGGLE_HIDE : TOGGLE_SHOW;
+            };
+
+            toggle.addEventListener('click', () => {
+              const expanded = container.getAttribute('data-expanded') === 'true';
+              setExpanded(!expanded);
+            });
+
+            setExpanded(false);
+            container.append(toggle, collapsible);
+            section.setAttribute('data-mobile-collapsed', 'true');
+          });
+        };
+
+        const init = () => {
+          markCalculatorContext();
+          enhanceSeoSections();
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init, { once: true });
+        } else {
+          init();
+        }
+
+        document.addEventListener('astro:after-swap', init);
+      })();
+    </script> </body> </html>  
