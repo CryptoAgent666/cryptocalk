@@ -4,7 +4,7 @@
 <div id="cookie-banner" class="cookie-banner" hidden>
   <div class="cookie-content">
     <p>
-      We use cookies to improve your experience, analyze site traffic, and serve tailored advertisements. By continuing to use our site, you consent to our use of cookies. 
+      We use cookies to improve your experience and analyze site traffic. By continuing to use our site, you consent to our use of cookies.
       <a href="/privacy">Read Privacy Policy</a>.
     </p>
     <div class="cookie-actions">
@@ -34,10 +34,9 @@
       localStorage.setItem('cookie_consent', status);
       banner.setAttribute('hidden', '');
       
-      // If AdSense is loaded, this is where you'd trigger consent updates
+      // Update analytics consent when the user accepts
       if (status === 'accepted' && typeof window.gtag === 'function') {
         window.gtag('consent', 'update', {
-          'ad_storage': 'granted',
           'analytics_storage': 'granted'
         });
       }

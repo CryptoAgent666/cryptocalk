@@ -7,7 +7,6 @@ import { getLocalizedCalculatorMeta, type Lang } from "../i18n/utils";
 import { defaultFaqByLang } from "../i18n/faq-dictionary";
 import { seoBodyText } from "../i18n/seo-body-text";
 import { Calculator, ChevronRight, ArrowLeft } from "lucide-react";
-import AdSlot from "./AdSlot.astro";
 import ShareCalculator from "./ShareCalculator.astro";
 import SiteFooter from "./SiteFooter.astro";
 import fs from "node:fs";
@@ -280,9 +279,6 @@ const faqSchema = {
 
     <section class="calculator-section">
       <div class="section-container">
-        <!-- Top Ad Slot -->
-        <AdSlot type="banner" zoneId="header_banner" />
-
         <div class="calc-header">
           <h1>{localizedTitle}</h1>
           <p>{localizedDescription}</p>
@@ -291,9 +287,6 @@ const faqSchema = {
           <ShareCalculator lang={lang} />
           <slot name="calculator" />
         </div>
-
-        <!-- Bottom Ad Slot -->
-        <AdSlot type="banner" zoneId="footer_banner" />
       </div>
     </section>
 

@@ -311,7 +311,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={tokenAmount}
                                 onChange={(e) => setTokenAmount(e.target.value)}
-                                placeholder="e.g. 400"
+                                placeholder=""
                                 id="airdrop-amount"
                                 step="any"
                                 min="0"
@@ -338,12 +338,11 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={priceAtReceipt}
                                 onChange={(e) => setPriceAtReceipt(e.target.value)}
-                                placeholder="e.g. 5.00"
+                                placeholder=""
                                 id="airdrop-receipt-price"
                                 step="any"
                                 min="0"
@@ -370,12 +369,11 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={currentPrice}
                                 onChange={(e) => setCurrentPrice(e.target.value)}
-                                placeholder="e.g. 12.50"
+                                placeholder=""
                                 id="airdrop-current-price"
                                 step="any"
                                 min="0"
@@ -423,12 +421,11 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 ))}
                             </div>
                             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                                <span className="input-prefix">$</span>
                                 <input
                                     type="number" inputMode="decimal"
                                     value={sellPrice}
                                     onChange={(e) => setSellPrice(e.target.value)}
-                                    placeholder="e.g. 15.00"
+                                    placeholder=""
                                     id="airdrop-sell-price"
                                     step="any"
                                     min="0"
@@ -566,18 +563,6 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.coingecko.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Track upcoming airdrops on CoinGecko &rarr;')}
-                                </a>
                             </div>
 
                             {/* Disclaimer */}

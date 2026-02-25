@@ -377,7 +377,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 type="number" inputMode="decimal"
                                 value={hashrate}
                                 onChange={(e) => setHashrate(e.target.value)}
-                                placeholder={String(ASIC_PRESETS[0].hashrate)}
+                                placeholder=""
                                 id="asic-hashrate-input"
                                 step="any"
                                 min="0"
@@ -408,7 +408,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 type="number" inputMode="decimal"
                                 value={power}
                                 onChange={(e) => setPower(e.target.value)}
-                                placeholder={String(ASIC_PRESETS[0].power)}
+                                placeholder=""
                                 id="asic-power-input"
                                 step="any"
                                 min="0"
@@ -445,12 +445,11 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={electricityCost}
                                 onChange={(e) => setElectricityCost(e.target.value)}
-                                placeholder="0.08"
+                                placeholder=""
                                 id="asic-electricity-input"
                                 step="0.01"
                                 min="0"
@@ -476,12 +475,11 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={poolFee}
                                 onChange={(e) => setPoolFee(e.target.value)}
-                                placeholder="1"
+                                placeholder=""
                                 id="asic-pool-fee-input"
                                 step="0.1"
                                 min="0"
@@ -509,12 +507,11 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={asicPrice}
                                 onChange={(e) => setAsicPrice(e.target.value)}
-                                placeholder="5500"
+                                placeholder=""
                                 id="asic-price-input"
                                 step="any"
                                 min="0"
@@ -762,18 +759,6 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                     </div>
                                 </div>
                             )}
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.f2pool.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Join F2Pool Mining Pool &rarr;')}
-                                </a>
-                            </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">

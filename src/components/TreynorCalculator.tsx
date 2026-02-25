@@ -123,7 +123,6 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">$</span>
               <input
                 type="number" inputMode="decimal"
                 value={portfolioValue}
@@ -149,7 +148,6 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input
                 type="number" inputMode="decimal"
                 value={expectedReturn}
@@ -174,7 +172,6 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input
                 type="number" inputMode="decimal"
                 value={riskFreeRate}

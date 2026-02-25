@@ -123,7 +123,7 @@ export default function TimestampConverter({ lang = 'en' }: { lang?: string }) {
               value={timestampInput}
               onChange={(e) => setTimestampInput(e.target.value)}
               disabled={mode !== 'timestamp'}
-              placeholder="1700000000"
+              placeholder=""
               id="timestamp-input"
             />
           </div>

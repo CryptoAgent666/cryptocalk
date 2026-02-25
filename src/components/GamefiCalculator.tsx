@@ -154,7 +154,6 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={initialCost} onChange={(e) => setInitialCost(e.target.value)} min="0" step="any" id="gamefi-initial" />
             </div>
           </div>
@@ -189,7 +188,6 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="gamefi-price" />
             </div>
           </div>
@@ -208,7 +206,6 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={marketplaceFee} onChange={(e) => setMarketplaceFee(e.target.value)} min="0" step="any" id="gamefi-fee" />
             </div>
           </div>
@@ -227,7 +224,6 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={dailyExpenses} onChange={(e) => setDailyExpenses(e.target.value)} min="0" step="any" id="gamefi-expenses" />
             </div>
           </div>
@@ -262,7 +258,6 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={assetResaleValue} onChange={(e) => setAssetResaleValue(e.target.value)} min="0" step="any" id="gamefi-resale" />
             </div>
           </div>

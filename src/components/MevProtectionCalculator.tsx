@@ -112,7 +112,7 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix"><span className="input-prefix">$</span><input type="number" inputMode="decimal" value={swapAmount} onChange={(e) => setSwapAmount(e.target.value)} min="0" step="any" id="mev-amount" /></div>
+            <div className="input-with-prefix"><input type="number" inputMode="decimal" value={swapAmount} onChange={(e) => setSwapAmount(e.target.value)} min="0" step="any" id="mev-amount" /></div>
           </div>
           <div className="input-group">
             <label>Slippage Tolerance (%)</label>
@@ -128,7 +128,6 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={slippage} onChange={(e) => setSlippage(e.target.value)} min="0.1" step="any" id="mev-slippage" />
             </div>
           </div>
@@ -169,10 +168,7 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Estimated max MEV loss')}</span><span className="result-value fee">-{formatUSD(result.estLoss)}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'With private orderflow')}</span><span className="result-value">{formatUSD(result.protectedLoss)}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Potential savings')}</span><span className="result-value profit">{formatUSD(result.savings)}</span></div>
-              </div>
-
-              <div className="result-cta"><a href="https://mevblocker.io" target="_blank" rel="noopener noreferrer sponsored"  className="cta-btn"><Shield size={14} style={{ marginRight: '6px', verticalAlign: 'middle' }} />{getUiString(lang, 'Check MEV protection tools')}</a></div>
-              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Model is heuristic and conservative. Real MEV impact depends on pool depth, mempool activity, and execution path.')}</p>
+              </div><p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Model is heuristic and conservative. Real MEV impact depends on pool depth, mempool activity, and execution path.')}</p>
             </>
           ) : (
             <div className="results-empty"><div className="results-empty-icon"><Shield size={40} /></div><h3>{getUiString(lang, 'Enter swap settings')}</h3><p>{getUiString(lang, 'Set amount, slippage, and network to estimate MEV exposure.')}</p></div>

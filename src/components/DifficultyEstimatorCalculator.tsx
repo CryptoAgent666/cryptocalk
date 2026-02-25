@@ -105,7 +105,6 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">T</span>
               <input type="number" inputMode="decimal" value={currentDifficulty} onChange={(e) => setCurrentDifficulty(e.target.value)} min="0" step="any" id="difficulty-current" />
             </div>
           </div>
@@ -126,7 +125,6 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={expectedChange} onChange={(e) => setExpectedChange(e.target.value)} step="any" id="difficulty-change" />
             </div>
           </div>
@@ -147,7 +145,6 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={dailyRevenue} onChange={(e) => setDailyRevenue(e.target.value)} min="0" step="any" id="difficulty-revenue" />
             </div>
           </div>

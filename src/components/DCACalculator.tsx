@@ -571,12 +571,11 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                             {getUiString(lang, 'AMOUNT PER PURCHASE')}
                         </label>
                         <div className="input-with-unit">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
-                                placeholder="100"
+                                placeholder=""
                                 id="dca-amount"
                                 step="any"
                                 min="1"
@@ -727,16 +726,6 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                                         : getUiString(lang, '📈 Lump sum outperformed DCA in this period (common in bull markets)')}
                                 </p>
                             </div>
-
-                            {/* CTA */}
-                            <a
-                                href="https://www.coinbase.com"
-                                target="_blank" rel="noopener noreferrer sponsored"
-
-                                className="dca-cta"
-                            >
-                                {getUiString(lang, 'Set Up Automatic DCA on Coinbase →')}
-                            </a>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />

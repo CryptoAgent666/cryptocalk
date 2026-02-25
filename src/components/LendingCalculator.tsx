@@ -130,7 +130,6 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={principal} onChange={(e) => setPrincipal(e.target.value)} min="0" step="any" id="lending-principal" />
             </div>
           </div>
@@ -149,7 +148,6 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={apy} onChange={(e) => setApy(e.target.value)} min="0" step="any" id="lending-apy" />
             </div>
           </div>
@@ -184,7 +182,6 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={platformFee} onChange={(e) => setPlatformFee(e.target.value)} min="0" step="any" id="lending-fee" />
             </div>
           </div>

@@ -430,12 +430,11 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={currentPrice}
                                 onChange={(e) => setCurrentPrice(e.target.value)}
-                                placeholder="0.00"
+                                placeholder=""
                                 id="reverse-roi-price"
                                 step="any"
                                 min="0"
@@ -461,12 +460,11 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={investmentAmount}
                                 onChange={(e) => handleInvestmentInput(e.target.value)}
-                                placeholder="10,000"
+                                placeholder=""
                                 id="reverse-roi-investment"
                                 step="any"
                                 min="0"
@@ -492,12 +490,11 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={targetProfit}
                                 onChange={(e) => handleProfitInput(e.target.value)}
-                                placeholder="1,000,000"
+                                placeholder=""
                                 id="reverse-roi-target"
                                 step="any"
                                 min="0"
@@ -685,18 +682,6 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.binance.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    Buy{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Binance →
-                                </a>
                             </div>
 
                             {/* Disclaimer */}

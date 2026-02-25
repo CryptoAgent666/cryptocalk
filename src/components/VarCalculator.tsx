@@ -118,7 +118,6 @@ export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
           <div className="input-group">
             <label>Portfolio Value (USD)</label>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="var-portfolio" />
             </div>
           </div>
@@ -137,7 +136,6 @@ export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={dailyVolatility} onChange={(e) => setDailyVolatility(e.target.value)} min="0" step="any" id="var-daily-vol" />
             </div>
           </div>

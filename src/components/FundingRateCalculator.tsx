@@ -312,12 +312,11 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={positionSize}
                                 onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="10,000"
+                                placeholder=""
                                 id="funding-position-size"
                                 step="any"
                                 min="0"
@@ -343,12 +342,11 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={fundingRate}
                                 onChange={(e) => setFundingRate(e.target.value)}
-                                placeholder="0.01"
+                                placeholder=""
                                 id="funding-rate-input"
                                 step="0.001"
                             />
@@ -511,18 +509,6 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                         }
                                     </span>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.bybit.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} Perpetuals on Bybit →
-                                </a>
                             </div>
 
                             <p className="calc-disclaimer">
