@@ -3,6 +3,16 @@ main = "worker.js"
 compatibility_date = "2026-02-25"
 workers_dev = true
 
+routes = [
+  { pattern = "cryptocalk.com/contact*", zone_name = "cryptocalk.com" },
+  { pattern = "cryptocalk.com/api/*", zone_name = "cryptocalk.com" },
+  { pattern = "cryptocalk.com/ru/contact*", zone_name = "cryptocalk.com" },
+  { pattern = "cryptocalk.com/es/contact*", zone_name = "cryptocalk.com" },
+  { pattern = "cryptocalk.com/pt/contact*", zone_name = "cryptocalk.com" },
+  { pattern = "cryptocalk.com/tr/contact*", zone_name = "cryptocalk.com" },
+  { pattern = "cryptocalk.com/hi/contact*", zone_name = "cryptocalk.com" }
+]
+
 [assets]
 directory = "./dist"
 binding = "ASSETS"
