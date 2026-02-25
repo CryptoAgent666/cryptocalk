@@ -1,10 +1,10 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ThemeToggle from '../../components/ThemeToggle.tsx';
-import LanguageSwitcher from '../../components/LanguageSwitcher.tsx';
-import { getHomepageCategories } from '../../data/category-hubs';
-import { getTranslations } from '../../i18n/translations';
-import { getLocalizedPath, type Lang } from '../../i18n/utils';
+import Layout from "../../layouts/Layout.astro";
+import ThemeToggle from "../../components/ThemeToggle.tsx";
+import LanguageSwitcher from "../../components/LanguageSwitcher.tsx";
+import { getHomepageCategories } from "../../data/category-hubs";
+import { getTranslations } from "../../i18n/translations";
+import { getLocalizedPath, type Lang } from "../../i18n/utils";
 import {
   Calculator,
   TrendingUp,
@@ -18,10 +18,10 @@ import {
   ChevronRight,
   Sparkles,
   Globe,
-} from 'lucide-react';
+} from "lucide-react";
 
 export function getStaticPaths() {
-  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+  return ["es", "pt", "tr", "hi", "ru"].map((lang) => ({
     params: { lang },
   }));
 }
@@ -34,69 +34,132 @@ const localPath = (route: string) => getLocalizedPath(route, lang);
 const categories = getHomepageCategories(lang);
 
 const popularCalculators = [
-  { name: t.profitCalculator, href: localPath('/profit-calculator'), tag: t.tagPopular, tagType: 'popular' },
-  { name: t.cryptoConverter, href: localPath('/converter'), tag: t.tagPopular, tagType: 'popular' },
-  { name: t.miningCalculator, href: localPath('/mining-calculator'), tag: t.tagPopular, tagType: 'popular' },
-  { name: t.dcaCalculator, href: localPath('/dca-calculator'), tag: t.tagPopular, tagType: 'popular' },
-  { name: t.taxCalculator, href: localPath('/tax-calculator'), tag: t.tagPopular, tagType: 'popular' },
-  { name: t.positionSizeCalculator, href: localPath('/position-size-calculator'), tag: t.tagPopular, tagType: 'popular' },
-  { name: t.liquidationCalculator, href: localPath('/liquidation-calculator'), tag: t.tagPopular, tagType: 'popular' },
-  { name: t.stakingCalculator, href: localPath('/staking-calculator'), tag: t.tagTrending, tagType: 'trending' },
-  { name: t.gasCalculator, href: localPath('/gas-calculator'), tag: t.tagTrending, tagType: 'trending' },
-  { name: t.portfolioCalculator, href: localPath('/portfolio-calculator'), tag: t.tagTrending, tagType: 'trending' },
-  { name: t.breakEvenCalculator, href: localPath('/break-even-calculator'), tag: t.tagTrending, tagType: 'trending' },
-  { name: t.whatIfCalculator, href: localPath('/what-if'), tag: t.tagTrending, tagType: 'trending' },
+  {
+    name: t.profitCalculator,
+    href: localPath("/profit-calculator"),
+    tag: t.tagPopular,
+    tagType: "popular",
+  },
+  {
+    name: t.cryptoConverter,
+    href: localPath("/converter"),
+    tag: t.tagPopular,
+    tagType: "popular",
+  },
+  {
+    name: t.miningCalculator,
+    href: localPath("/mining-calculator"),
+    tag: t.tagPopular,
+    tagType: "popular",
+  },
+  {
+    name: t.dcaCalculator,
+    href: localPath("/dca-calculator"),
+    tag: t.tagPopular,
+    tagType: "popular",
+  },
+  {
+    name: t.taxCalculator,
+    href: localPath("/tax-calculator"),
+    tag: t.tagPopular,
+    tagType: "popular",
+  },
+  {
+    name: t.positionSizeCalculator,
+    href: localPath("/position-size-calculator"),
+    tag: t.tagPopular,
+    tagType: "popular",
+  },
+  {
+    name: t.liquidationCalculator,
+    href: localPath("/liquidation-calculator"),
+    tag: t.tagPopular,
+    tagType: "popular",
+  },
+  {
+    name: t.stakingCalculator,
+    href: localPath("/staking-calculator"),
+    tag: t.tagTrending,
+    tagType: "trending",
+  },
+  {
+    name: t.gasCalculator,
+    href: localPath("/gas-calculator"),
+    tag: t.tagTrending,
+    tagType: "trending",
+  },
+  {
+    name: t.portfolioCalculator,
+    href: localPath("/portfolio-calculator"),
+    tag: t.tagTrending,
+    tagType: "trending",
+  },
+  {
+    name: t.breakEvenCalculator,
+    href: localPath("/break-even-calculator"),
+    tag: t.tagTrending,
+    tagType: "trending",
+  },
+  {
+    name: t.whatIfCalculator,
+    href: localPath("/what-if"),
+    tag: t.tagTrending,
+    tagType: "trending",
+  },
 ];
 
 const footerCoreLinks = [
-  { name: t.profitCalculator, href: localPath('/profit-calculator') },
-  { name: t.cryptoConverter, href: localPath('/converter') },
-  { name: t.miningCalculator, href: localPath('/mining-calculator') },
-  { name: t.dcaCalculator, href: localPath('/dca-calculator') },
-  { name: t.taxCalculator, href: localPath('/tax-calculator') },
-  { name: t.positionSizeCalculator, href: localPath('/position-size-calculator') },
+  { name: t.profitCalculator, href: localPath("/profit-calculator") },
+  { name: t.cryptoConverter, href: localPath("/converter") },
+  { name: t.miningCalculator, href: localPath("/mining-calculator") },
+  { name: t.dcaCalculator, href: localPath("/dca-calculator") },
+  { name: t.taxCalculator, href: localPath("/tax-calculator") },
+  {
+    name: t.positionSizeCalculator,
+    href: localPath("/position-size-calculator"),
+  },
 ];
 
 const footerExploreLinks = [
-  { name: t.stakingCalculator, href: localPath('/staking-calculator') },
-  { name: t.gasCalculator, href: localPath('/gas-calculator') },
-  { name: t.portfolioCalculator, href: localPath('/portfolio-calculator') },
-  { name: t.whatIfCalculator, href: localPath('/what-if') },
-  { name: t.breakEvenCalculator, href: localPath('/break-even-calculator') },
-  { name: t.allToolsTitle, href: '#categories' },
+  { name: t.stakingCalculator, href: localPath("/staking-calculator") },
+  { name: t.gasCalculator, href: localPath("/gas-calculator") },
+  { name: t.portfolioCalculator, href: localPath("/portfolio-calculator") },
+  { name: t.whatIfCalculator, href: localPath("/what-if") },
+  { name: t.breakEvenCalculator, href: localPath("/break-even-calculator") },
+  { name: t.allToolsTitle, href: "#categories" },
 ];
 
-const siteUrl = 'https://cryptocalk.com';
+const siteUrl = "https://cryptocalk.com";
 const localizedHomeUrl = `${siteUrl}${prefix}/`;
 
 const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'CryptoCalk',
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "CryptoCalk",
   url: localizedHomeUrl,
   description: t.heroSubtitle,
   inLanguage: lang,
   potentialAction: {
-    '@type': 'SearchAction',
+    "@type": "SearchAction",
     target: `${localizedHomeUrl}?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
+    "query-input": "required name=search_term_string",
   },
   areaServed: {
-    '@type': 'Country',
-    name: 'Global',
+    "@type": "Country",
+    name: "Global",
   },
 };
 
 const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'CryptoCalk',
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "CryptoCalk",
   url: siteUrl,
-  areaServed: 'Global',
+  areaServed: "Global",
   contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'customer support',
-    availableLanguage: ['en', 'es', 'pt', 'tr', 'hi', 'ru'],
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    availableLanguage: ["en", "es", "pt", "tr", "hi", "ru"],
   },
 };
 
@@ -119,15 +182,31 @@ const homepageSchemas = [websiteSchema, organizationSchema];
       <div class="header-search" role="search">
         <label class="sr-only" for="search-input">{t.searchFieldLabel}</label>
         <Search size={16} />
-        <input type="search" placeholder={t.searchPlaceholder} id="search-input" autocomplete="off" spellcheck="false" />
-        <button type="button" id="search-clear-btn" class="search-clear-btn" aria-label={t.clearSearch} hidden>
+        <input
+          type="search"
+          placeholder={t.searchPlaceholder}
+          id="search-input"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button
+          type="button"
+          id="search-clear-btn"
+          class="search-clear-btn"
+          aria-label={t.clearSearch}
+          hidden
+        >
           ×
         </button>
       </div>
 
       <div class="header-actions">
         <a href="#categories" class="header-link">{t.allToolsTitle}</a>
-        <LanguageSwitcher client:idle currentLang={lang} currentPath={`/${lang}`} />
+        <LanguageSwitcher
+          client:idle
+          currentLang={lang}
+          currentPath={`/${lang}`}
+        />
         <ThemeToggle client:idle />
       </div>
     </div>
@@ -144,7 +223,7 @@ const homepageSchemas = [websiteSchema, organizationSchema];
         <h1>{t.heroTitle}</h1>
         <p class="hero-subtitle">{t.heroSubtitle}</p>
         <div class="hero-actions">
-          <a href={localPath('/profit-calculator')} class="btn-primary">
+          <a href={localPath("/profit-calculator")} class="btn-primary">
             {t.startCalculating}
             <ChevronRight size={16} />
           </a>
@@ -183,31 +262,40 @@ const homepageSchemas = [websiteSchema, organizationSchema];
       <div class="section-container">
         <h2 class="section-title">{t.popularCalculators}</h2>
         <div class="popular-grid">
-          {popularCalculators.map((calc) => (
-            <a
-              href={calc.href}
-              class="popular-card card-hover"
-              data-search-item
-              data-search-text={`${calc.name} ${calc.tag ?? ''}`}
-            >
-              <div class="popular-card-content">
-                <span class="popular-name">{calc.name}</span>
-                {calc.tag && <span class="popular-tag" data-tag={calc.tagType}>{calc.tag}</span>}
-              </div>
-              <ChevronRight size={16} class="popular-arrow" />
-            </a>
-          ))}
+          {
+            popularCalculators.map((calc) => (
+              <a
+                href={calc.href}
+                class="popular-card card-hover"
+                data-search-item
+                data-search-text={`${calc.name} ${calc.tag ?? ""}`}
+              >
+                <div class="popular-card-content">
+                  <span class="popular-name">{calc.name}</span>
+                  {calc.tag && (
+                    <span class="popular-tag" data-tag={calc.tagType}>
+                      {calc.tag}
+                    </span>
+                  )}
+                </div>
+                <ChevronRight size={16} class="popular-arrow" />
+              </a>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <section class="search-feedback">
       <div class="section-container">
-        <p id="search-status" class="search-status" aria-live="polite" hidden></p>
+        <p id="search-status" class="search-status" aria-live="polite" hidden>
+        </p>
         <div id="search-empty" class="search-empty" hidden>
           <h3>{t.noResultsTitle}</h3>
           <p>{t.noResultsHint}</p>
-          <button type="button" id="search-empty-reset" class="search-reset-btn">{t.clearSearch}</button>
+          <button type="button" id="search-empty-reset" class="search-reset-btn"
+            >{t.clearSearch}</button
+          >
         </div>
       </div>
     </section>
@@ -219,44 +307,59 @@ const homepageSchemas = [websiteSchema, organizationSchema];
         <p class="section-subtitle">{t.allCategoriesSubtitle}</p>
 
         <div class="bento-grid">
-          {categories.map((cat) => (
-            <article
-              class:list={['bento-card', 'card-hover', { 'bento-featured': cat.featured }]}
-              style={`--card-accent: ${cat.color}`}
-              data-search-item
-              data-search-text={`${cat.title} ${cat.description} ${cat.calculators.map((tool) => tool.name).join(' ')}`}
-            >
-              <div class="bento-top">
-                <div class="bento-icon" style={`background-color: ${cat.color}15; color: ${cat.color}`}>
-                  {cat.icon === 'TrendingUp' && <TrendingUp size={24} />}
-                  {cat.icon === 'ArrowLeftRight' && <ArrowLeftRight size={24} />}
-                  {cat.icon === 'Pickaxe' && <Pickaxe size={24} />}
-                  {cat.icon === 'Sparkles' && <Sparkles size={24} />}
-                  {cat.icon === 'Receipt' && <Receipt size={24} />}
-                  {cat.icon === 'PiggyBank' && <PiggyBank size={24} />}
-                  {cat.icon === 'BarChart3' && <BarChart3 size={24} />}
-                  {cat.icon === 'Zap' && <Zap size={24} />}
+          {
+            categories.map((cat) => (
+              <article
+                class:list={[
+                  "bento-card",
+                  "card-hover",
+                  { "bento-featured": cat.featured },
+                ]}
+                style={`--card-accent: ${cat.color}`}
+                data-search-item
+                data-search-text={`${cat.title} ${
+                  cat.description
+                } ${cat.calculators.map((tool) => tool.name).join(" ")}`}
+              >
+                <div class="bento-top">
+                  <div
+                    class="bento-icon"
+                    style={`background-color: ${cat.color}15; color: ${cat.color}`}
+                  >
+                    {cat.icon === "TrendingUp" && <TrendingUp size={24} />}
+                    {cat.icon === "ArrowLeftRight" && (
+                      <ArrowLeftRight size={24} />
+                    )}
+                    {cat.icon === "Pickaxe" && <Pickaxe size={24} />}
+                    {cat.icon === "Sparkles" && <Sparkles size={24} />}
+                    {cat.icon === "Receipt" && <Receipt size={24} />}
+                    {cat.icon === "PiggyBank" && <PiggyBank size={24} />}
+                    {cat.icon === "BarChart3" && <BarChart3 size={24} />}
+                    {cat.icon === "Zap" && <Zap size={24} />}
+                  </div>
+                  <a href={cat.href} class="bento-title-link">
+                    <h3>{cat.title}</h3>
+                    <ChevronRight size={18} />
+                  </a>
                 </div>
-                <a href={cat.href} class="bento-title-link">
-                  <h3>{cat.title}</h3>
-                  <ChevronRight size={18} />
+                <p class="bento-description">{cat.description}</p>
+                <span class="bento-count">
+                  {cat.count} {t.nCalculators}
+                </span>
+                <ul class="bento-list">
+                  {cat.calculators.slice(0, 6).map((tool) => (
+                    <li>
+                      <a href={tool.href}>{tool.name}</a>
+                    </li>
+                  ))}
+                </ul>
+                <a href={cat.href} class="bento-view-link">
+                  {t.browseAllTools}
+                  <ChevronRight size={16} />
                 </a>
-              </div>
-              <p class="bento-description">{cat.description}</p>
-              <span class="bento-count">{cat.count} {t.nCalculators}</span>
-              <ul class="bento-list">
-                {cat.calculators.slice(0, 6).map((tool) => (
-                  <li>
-                    <a href={tool.href}>{tool.name}</a>
-                  </li>
-                ))}
-              </ul>
-              <a href={cat.href} class="bento-view-link">
-                {t.browseAllTools}
-                <ChevronRight size={16} />
-              </a>
-            </article>
-          ))}
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -267,22 +370,42 @@ const homepageSchemas = [websiteSchema, organizationSchema];
         <h2 class="section-title">{t.whyCryptoCalk}</h2>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981;">⚡</div>
+            <div
+              class="feature-icon"
+              style="background-color: rgba(16, 185, 129, 0.1); color: #10b981;"
+            >
+              ⚡
+            </div>
             <h3>{t.freeForever}</h3>
             <p>{t.freeForeverDesc}</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon" style="background-color: rgba(99, 102, 241, 0.1); color: #6366f1;">🔒</div>
+            <div
+              class="feature-icon"
+              style="background-color: rgba(99, 102, 241, 0.1); color: #6366f1;"
+            >
+              🔒
+            </div>
             <h3>{t.noSignup}</h3>
             <p>{t.noSignupDesc}</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon" style="background-color: rgba(245, 158, 11, 0.1); color: #f59e0b;">🌍</div>
+            <div
+              class="feature-icon"
+              style="background-color: rgba(245, 158, 11, 0.1); color: #f59e0b;"
+            >
+              🌍
+            </div>
             <h3>{t.darkMode}</h3>
             <p>{t.darkModeDesc}</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon" style="background-color: rgba(236, 72, 153, 0.1); color: #ec4899;">📱</div>
+            <div
+              class="feature-icon"
+              style="background-color: rgba(236, 72, 153, 0.1); color: #ec4899;"
+            >
+              📱
+            </div>
             <h3>{t.mobileReady}</h3>
             <p>{t.mobileReadyDesc}</p>
           </div>
@@ -301,21 +424,21 @@ const homepageSchemas = [websiteSchema, organizationSchema];
       <div class="footer-links">
         <div class="footer-col">
           <h4>{t.popularCalculators}</h4>
-          {footerCoreLinks.map((link) => (
-            <a href={link.href}>{link.name}</a>
-          ))}
+          {footerCoreLinks.map((link) => <a href={link.href}>{link.name}</a>)}
         </div>
         <div class="footer-col">
           <h4>{t.allToolsTitle}</h4>
-          {footerExploreLinks.map((link) => (
-            <a href={link.href}>{link.name}</a>
-          ))}
+          {
+            footerExploreLinks.map((link) => (
+              <a href={link.href}>{link.name}</a>
+            ))
+          }
         </div>
         <div class="footer-col">
           <h4>{t.trustTitle}</h4>
-          <a href={localPath('/privacy')}>{t.privacyPolicy}</a>
-          <a href={localPath('/editorial-policy')}>{t.editorialPolicy}</a>
-          <a href={localPath('/methodology')}>{t.methodologyPolicy}</a>
+          <a href={localPath("/privacy")}>{t.privacyPolicy}</a>
+          <a href={localPath("/editorial-policy")}>{t.editorialPolicy}</a>
+          <a href={localPath("/methodology")}>{t.methodologyPolicy}</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -326,20 +449,23 @@ const homepageSchemas = [websiteSchema, organizationSchema];
 
   <script is:inline>
     (() => {
-      const input = document.getElementById('search-input');
-      const clearButton = document.getElementById('search-clear-btn');
-      const status = document.getElementById('search-status');
-      const emptyState = document.getElementById('search-empty');
-      const emptyReset = document.getElementById('search-empty-reset');
+      const input = document.getElementById("search-input");
+      const clearButton = document.getElementById("search-clear-btn");
+      const status = document.getElementById("search-status");
+      const emptyState = document.getElementById("search-empty");
+      const emptyReset = document.getElementById("search-empty-reset");
       if (!input) return;
 
-      const items = Array.from(document.querySelectorAll('[data-search-item]'));
-      const resultsSuffix = {JSON.stringify(t.resultsFoundSuffix)};
-      const normalize = (value) => String(value || '').toLowerCase().trim();
+      const items = Array.from(document.querySelectorAll("[data-search-item]"));
+      const resultsFoundSuffix = "{t.resultsFoundSuffix}";
+      const normalize = (value) =>
+        String(value || "")
+          .toLowerCase()
+          .trim();
       const applyFilter = (query) => {
         let visibleCount = 0;
         items.forEach((item) => {
-          const text = normalize(item.getAttribute('data-search-text'));
+          const text = normalize(item.getAttribute("data-search-text"));
           const visible = !query || text.includes(query);
           item.hidden = !visible;
           if (visible) visibleCount += 1;
@@ -348,7 +474,7 @@ const homepageSchemas = [websiteSchema, organizationSchema];
         if (status) {
           status.hidden = !query;
           if (query) {
-            status.textContent = `${visibleCount} ${resultsSuffix} "${query}"`;
+            status.textContent = `${visibleCount} ${resultsFoundSuffix} "${query}"`;
           }
         }
         if (emptyState) {
@@ -359,49 +485,56 @@ const homepageSchemas = [websiteSchema, organizationSchema];
       const syncQueryParam = (query) => {
         const nextUrl = new URL(window.location.href);
         if (query) {
-          nextUrl.searchParams.set('q', query);
+          nextUrl.searchParams.set("q", query);
         } else {
-          nextUrl.searchParams.delete('q');
+          nextUrl.searchParams.delete("q");
         }
-        window.history.replaceState({}, '', `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
+        window.history.replaceState(
+          {},
+          "",
+          `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`
+        );
       };
 
-      const initialQuery = normalize(new URL(window.location.href).searchParams.get('q'));
+      const initialQuery = normalize(
+        new URL(window.location.href).searchParams.get("q")
+      );
       if (initialQuery) {
         input.value = initialQuery;
         applyFilter(initialQuery);
       }
 
       const clearSearch = () => {
-        input.value = '';
-        applyFilter('');
-        syncQueryParam('');
+        input.value = "";
+        applyFilter("");
+        syncQueryParam("");
         input.focus();
       };
 
-      input.addEventListener('input', (event) => {
+      input.addEventListener("input", (event) => {
         const query = normalize(event.target.value);
         applyFilter(query);
         syncQueryParam(query);
       });
 
-      input.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && input.value) {
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && input.value) {
           clearSearch();
         }
       });
 
       if (clearButton) {
-        clearButton.addEventListener('click', clearSearch);
+        clearButton.addEventListener("click", clearSearch);
       }
 
       if (emptyReset) {
-        emptyReset.addEventListener('click', clearSearch);
+        emptyReset.addEventListener("click", clearSearch);
       }
     })();
   </script>
 
-  <script type="application/ld+json" set:html={JSON.stringify(homepageSchemas)} />
+  <script type="application/ld+json" set:html={JSON.stringify(homepageSchemas)}
+  ></script>
 </Layout>
 
 <style>
@@ -438,7 +571,9 @@ const homepageSchemas = [websiteSchema, organizationSchema];
     flex-shrink: 0;
   }
 
-  .logo:hover { color: var(--color-text); }
+  .logo:hover {
+    color: var(--color-text);
+  }
 
   .logo-text {
     font-weight: 400;
@@ -447,7 +582,11 @@ const homepageSchemas = [websiteSchema, organizationSchema];
 
   .logo-text b {
     font-weight: 800;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-accent-purple)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -583,7 +722,11 @@ const homepageSchemas = [websiteSchema, organizationSchema];
     gap: 6px;
     min-height: 44px;
     padding: 12px 28px;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-accent-purple)
+    );
     color: white;
     font-weight: 600;
     font-size: 0.95rem;
@@ -880,7 +1023,7 @@ const homepageSchemas = [websiteSchema, organizationSchema];
   }
 
   .bento-list li::before {
-    content: '\203A';
+    content: "\203A";
     position: absolute;
     left: 0;
     color: var(--card-accent, var(--color-primary));

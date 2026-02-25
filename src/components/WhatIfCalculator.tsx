@@ -91,7 +91,7 @@ export default function WhatIfCalculator() {
         if (query.length < 2) { setSuggestions([]); setShowDropdown(false); return; }
         searchTimeout.current = setTimeout(async () => {
             try {
-                const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}`);
+                const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`);
                 if (!res.ok) throw new Error('Search failed');
                 const data = await res.json();
                 setSuggestions((data.coins || []).slice(0, 8));
@@ -132,7 +132,7 @@ export default function WhatIfCalculator() {
 
             // Get historical price
             const histRes = await fetch(
-                `https://api.coingecko.com/api/v3/coins/${cid}/history?date=${dateFormatted}&localization=false`
+                `https://api.coingecko.com/api/v3/coins/${cid}/history?date=${dateFormatted}&localization=false&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
             );
             if (!histRes.ok) throw new Error('Could not fetch historical price. Please try a different date.');
             const histData = await histRes.json();
@@ -141,7 +141,7 @@ export default function WhatIfCalculator() {
 
             // Get current price
             const curRes = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${cid}&vs_currencies=usd`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${cid}&vs_currencies=usd&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
             );
             if (!curRes.ok) throw new Error('Could not fetch current price.');
             const curData = await curRes.json();
@@ -152,7 +152,7 @@ export default function WhatIfCalculator() {
             const startTs = Math.floor(new Date(dt).getTime() / 1000);
             const endTs = Math.floor(Date.now() / 1000);
             const chartRes = await fetch(
-                `https://api.coingecko.com/api/v3/coins/${cid}/market_chart/range?vs_currency=usd&from=${startTs}&to=${endTs}`
+                `https://api.coingecko.com/api/v3/coins/${cid}/market_chart/range?vs_currency=usd&from=${startTs}&to=${endTs}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
             );
             let priceHistory: { date: string; value: number }[] = [];
             if (chartRes.ok) {

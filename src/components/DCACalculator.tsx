@@ -79,7 +79,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState<DCAResult | null>(null);
     const [error, setError] = useState('');
-    const [chartData, setChartData] = useState<{ date: string; value: number; invested: number }[]>([]);
+    const [chartData, setChartData] = useState<{ date: string; value: number; invested: number; price: number; ma200: number | null }[]>([]);
 
     // Set default start date (1 year ago)
     useEffect(() => {
@@ -104,7 +104,8 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
             return;
         }
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}`);
+            const apiKey = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
+            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${apiKey}`);
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
             setSuggestions(
@@ -190,8 +191,9 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                 return;
             }
 
+            const apiKey = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/coins/${selectedCoin.id}/market_chart?vs_currency=usd&days=${daysDiff}`
+                `https://api.coingecko.com/api/v3/coins/${selectedCoin.id}/market_chart?vs_currency=usd&days=${daysDiff}&x_cg_demo_api_key=${apiKey}`
             );
 
             if (!res.ok) throw new Error('Failed to fetch price data');
@@ -213,7 +215,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
             let totalInvested = 0;
             let totalCoins = 0;
             let purchases = 0;
-            const chart: { date: string; value: number; invested: number }[] = [];
+            const chart: { date: string; value: number; invested: number; price: number; ma200: number | null }[] = [];
 
             // Get price at start for lump sum comparison
             const startPrice = prices[0][1];
@@ -235,12 +237,24 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                     lastBuyTimestamp = timestamp;
                 }
 
+                // Calculate 200-day Moving Average (approx 200 data points if daily)
+                let ma200: number | null = null;
+                if (i >= 199) {
+                    let sum = 0;
+                    for (let j = 0; j < 200; j++) {
+                        sum += prices[i - j][1];
+                    }
+                    ma200 = sum / 200;
+                }
+
                 // Record chart point (sample to keep chart manageable)
                 if (i % Math.max(1, Math.floor(prices.length / 60)) === 0 || i === prices.length - 1) {
                     chart.push({
                         date: new Date(timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }),
                         value: totalCoins * price,
                         invested: totalInvested,
+                        price: price,
+                        ma200: ma200,
                     });
                 }
             }
@@ -338,6 +352,44 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
             valuePath +
             ` L${padding.left + (chartData.length - 1) * xStep},${padding.top + innerH} L${padding.left},${padding.top + innerH} Z`;
 
+        // Generate Accumulation / FOMO zones backgrounds
+        // Accumulation: Price < MA200
+        // FOMO: Price > MA200 * 1.5 (Arbitrary multiplier for FOMO zone)
+        const zones = chartData.map((d, i) => {
+            const x = padding.left + i * xStep;
+            let type: 'neutral' | 'acc' | 'fomo' = 'neutral';
+
+            if (d.ma200 !== null) {
+                if (d.price < d.ma200) {
+                    type = 'acc';
+                } else if (d.price > d.ma200 * 1.5) {
+                    type = 'fomo';
+                }
+            }
+            return { x, type };
+        });
+
+        const rects = [];
+        let currentRect = null;
+
+        for (let i = 0; i < zones.length; i++) {
+            const z = zones[i];
+            if (z.type !== 'neutral') {
+                if (!currentRect || currentRect.type !== z.type) {
+                    if (currentRect) rects.push(currentRect);
+                    currentRect = { startX: z.x, endX: z.x, type: z.type };
+                } else {
+                    currentRect.endX = z.x;
+                }
+            } else {
+                if (currentRect) {
+                    rects.push(currentRect);
+                    currentRect = null;
+                }
+            }
+        }
+        if (currentRect) rects.push(currentRect);
+
         // X-axis labels (show ~5)
         const labelInterval = Math.max(1, Math.floor(chartData.length / 5));
 
@@ -349,6 +401,20 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                         <stop offset="100%" stopColor={isProfit ? '#10b981' : '#ef4444'} stopOpacity="0" />
                     </linearGradient>
                 </defs>
+
+                {/* Draw DCA Zones */}
+                {rects.map((r, i) => (
+                    <rect
+                        key={i}
+                        x={r.startX}
+                        y={padding.top}
+                        width={Math.max(1, r.endX - r.startX)}
+                        height={innerH}
+                        fill={r.type === 'acc' ? '#10b981' : '#ef4444'}
+                        opacity="0.1"
+                    />
+                ))}
+
                 <path d={areaPath} fill="url(#valueGrad)" />
                 <path d={investedPath} fill="none" stroke="var(--color-text-muted)" strokeWidth="1.5" strokeDasharray="4,4" opacity="0.5" />
                 <path d={valuePath} fill="none" stroke={isProfit ? '#10b981' : '#ef4444'} strokeWidth="2" />
@@ -376,8 +442,17 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Left: Inputs */}
                 <div className="dca-input-panel">
                     <div className="input-group">
-                        <label className="input-label">Quick Scenarios</label>
+                        <label className="input-label">{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
+                            <button type="button" className="pill-btn" onClick={() => applyScenario({ label: 'BTC Monthly', coinId: 'bitcoin', frequency: 'monthly', amount: '100', yearsAgo: 1 })}>
+                                {getUiString(lang, 'BTC Monthly')}
+                            </button>
+                            <button type="button" className="pill-btn" onClick={() => applyScenario({ label: 'ETH Weekly', coinId: 'ethereum', frequency: 'weekly', amount: '100', yearsAgo: 1 })}>
+                                {getUiString(lang, 'ETH Weekly')}
+                            </button>
+                            <button type="button" className="pill-btn" onClick={() => applyScenario({ label: 'SOL Bi-weekly', coinId: 'solana', frequency: 'biweekly', amount: '100', yearsAgo: 1 })}>
+                                {getUiString(lang, 'SOL Bi-weekly')}
+                            </button>
                             {DCA_SCENARIOS.map((scenario) => (
                                 <button
                                     key={scenario.label}
@@ -394,7 +469,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group" ref={searchRef}>
                         <label className="input-label">
                             <Search size={14} />
-                            CRYPTOCURRENCY
+                            {getUiString(lang, 'CRYPTOCURRENCY')}
                         </label>
                         {selectedCoin && !showSuggestions ? (
                             <div className="selected-coin" onClick={() => { setShowSuggestions(true); setSuggestions(POPULAR_COINS); }}>
@@ -408,7 +483,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                                     type="text"
                                     value={coinSearch}
                                     onChange={(e) => handleCoinSearch(e.target.value)}
-                                    placeholder="Search cryptocurrency..."
+                                    placeholder={getUiString(lang, 'Search cryptocurrency...')}
                                     className="search-input"
                                     id="dca-coin-search"
                                     autoFocus={showSuggestions}
@@ -430,7 +505,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                                         </div>
                                     ))
                                 ) : (
-                                    <div className="suggestion-empty">No results</div>
+                                    <div className="suggestion-empty">{getUiString(lang, 'No results')}</div>
                                 )}
                             </div>
                         )}
@@ -440,7 +515,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <Calendar size={14} />
-                            START DATE
+                            {getUiString(lang, 'START DATE')}
                         </label>
                         <div className="pills-row">
                             {START_DATE_YEARS.map((years) => (
@@ -455,7 +530,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                                     })() ? 'active' : ''}`}
                                     onClick={() => setDateYearsAgo(years)}
                                 >
-                                    {years}Y ago
+                                    {years}{getUiString(lang, 'Y ago')}
                                 </button>
                             ))}
                         </div>
@@ -474,7 +549,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <Calendar size={14} />
-                            FREQUENCY
+                            {getUiString(lang, 'FREQUENCY')}
                         </label>
                         <div className="freq-pills">
                             {FREQUENCIES.map(f => (
@@ -483,7 +558,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`freq-pill ${frequency === f.id ? 'active' : ''}`}
                                     onClick={() => setFrequency(f.id)}
                                 >
-                                    {f.label}
+                                    {getUiString(lang, f.label)}
                                 </button>
                             ))}
                         </div>
@@ -493,7 +568,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <DollarSign size={14} />
-                            AMOUNT PER PURCHASE
+                            {getUiString(lang, 'AMOUNT PER PURCHASE')}
                         </label>
                         <div className="input-with-unit">
                             <span className="input-prefix">$</span>
@@ -531,20 +606,20 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                         {loading ? (
                             <>
                                 <Loader2 size={16} className="spin-icon" />
-                                Calculating...
+                                {getUiString(lang, 'Calculating...')}
                             </>
                         ) : (
-                            'Calculate DCA Returns'
+                            getUiString(lang, 'Calculate DCA Returns')
                         )}
                     </button>
 
                     {/* Reset */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Pick coin, date, and amount presets, then tap Calculate DCA Returns.
+                        {getUiString(lang, 'Pick coin, date, and amount presets, then tap Calculate DCA Returns.')}
                     </span>
                 </div>
 
@@ -552,19 +627,19 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="dca-results-panel">
                     {error ? (
                         <div className="dca-error">
-                            <p>⚠️ {error}</p>
+                            <p>⚠️ {getUiString(lang, error)}</p>
                         </div>
                     ) : result ? (
                         <>
                             {/* Hero */}
                             <div className={`dca-hero ${isProfit ? 'profit' : 'loss'}`}>
-                                <span className="dca-hero-label">Portfolio Value</span>
+                                <span className="dca-hero-label">{getUiString(lang, 'Portfolio Value')}</span>
                                 <span className="dca-hero-value">
                                     {isProfit ? <TrendingUp size={24} /> : <TrendingDown size={24} />}
                                     {formatUSD(result.currentValue)}
                                 </span>
                                 <span className={`dca-hero-roi ${isProfit ? 'profit' : 'loss'}`}>
-                                    {formatPercent(result.roi)} ROI
+                                    {formatPercent(result.roi)} {getUiString(lang, 'ROI')}
                                 </span>
                             </div>
 
@@ -572,14 +647,26 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                             {chartData.length > 1 && (
                                 <div className="dca-chart">
                                     <div className="chart-legend">
-                                        <span className="legend-item">
-                                            <span className="legend-dot portfolio"></span>
-                                            Portfolio Value
-                                        </span>
-                                        <span className="legend-item">
-                                            <span className="legend-dot invested"></span>
-                                            {getUiString(lang, 'Total Invested')}
-                                        </span>
+                                        <div className="legend-group">
+                                            <span className="legend-item">
+                                                <span className="legend-dot portfolio"></span>
+                                                Portfolio Value
+                                            </span>
+                                            <span className="legend-item">
+                                                <span className="legend-dot invested"></span>
+                                                {getUiString(lang, 'Total Invested')}
+                                            </span>
+                                        </div>
+                                        <div className="legend-group zones-legend">
+                                            <span className="legend-item">
+                                                <span className="legend-box acc"></span>
+                                                {getUiString(lang, 'Accumulation Zone')}
+                                            </span>
+                                            <span className="legend-item">
+                                                <span className="legend-box fomo"></span>
+                                                {getUiString(lang, 'FOMO Zone')}
+                                            </span>
+                                        </div>
                                     </div>
                                     {renderChart()}
                                 </div>
@@ -596,38 +683,38 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="breakdown-value">{formatUSD(result.currentValue)}</span>
                                 </div>
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">Profit / Loss</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'Profit / Loss')}</span>
                                     <span className={`breakdown-value ${isProfit ? 'text-profit' : 'text-loss'}`}>
                                         {isProfit ? '+' : ''}{formatUSD(result.profitLoss)}
                                     </span>
                                 </div>
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">Average Buy Price</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'Average Buy Price')}</span>
                                     <span className="breakdown-value">{formatUSD(result.averagePrice)}</span>
                                 </div>
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">Total {selectedCoin?.symbol.toUpperCase() ?? 'COIN'}</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'Total')} {selectedCoin?.symbol.toUpperCase() ?? 'COIN'}</span>
                                     <span className="breakdown-value">{result.totalCoins.toFixed(6)}</span>
                                 </div>
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">Number of Purchases</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'Number of Purchases')}</span>
                                     <span className="breakdown-value">{result.purchases}</span>
                                 </div>
                             </div>
 
                             {/* DCA vs Lump Sum */}
                             <div className="dca-comparison">
-                                <h4 className="comparison-title">DCA vs Lump Sum</h4>
+                                <h4 className="comparison-title">{getUiString(lang, 'DCA vs Lump Sum')}</h4>
                                 <div className="comparison-grid">
                                     <div className={`comparison-card ${dcaBetter ? 'winner' : ''}`}>
-                                        <span className="comparison-label">DCA Strategy</span>
+                                        <span className="comparison-label">{getUiString(lang, 'DCA Strategy')}</span>
                                         <span className="comparison-value">{formatUSD(result.currentValue)}</span>
                                         <span className={`comparison-roi ${result.roi >= 0 ? 'text-profit' : 'text-loss'}`}>
                                             {formatPercent(result.roi)}
                                         </span>
                                     </div>
                                     <div className={`comparison-card ${!dcaBetter ? 'winner' : ''}`}>
-                                        <span className="comparison-label">Lump Sum</span>
+                                        <span className="comparison-label">{getUiString(lang, 'Lump Sum')}</span>
                                         <span className="comparison-value">{formatUSD(result.lumpSumValue)}</span>
                                         <span className={`comparison-roi ${result.lumpSumRoi >= 0 ? 'text-profit' : 'text-loss'}`}>
                                             {formatPercent(result.lumpSumRoi)}
@@ -636,8 +723,8 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <p className="comparison-note">
                                     {dcaBetter
-                                        ? '✅ DCA outperformed lump sum in this period'
-                                        : '📈 Lump sum outperformed DCA in this period (common in bull markets)'}
+                                        ? getUiString(lang, '✅ DCA outperformed lump sum in this period')
+                                        : getUiString(lang, '📈 Lump sum outperformed DCA in this period (common in bull markets)')}
                                 </p>
                             </div>
 
@@ -645,22 +732,22 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                             <a
                                 href="https://www.coinbase.com"
                                 target="_blank" rel="noopener noreferrer sponsored"
-                                
+
                                 className="dca-cta"
                             >
-                                Set Up Automatic DCA on Coinbase →
+                                {getUiString(lang, 'Set Up Automatic DCA on Coinbase →')}
                             </a>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Historical simulation only. Past performance does not guarantee future results. Data from CoinGecko.
+                                {getUiString(lang, 'Historical simulation only. Past performance does not guarantee future results. Data from CoinGecko.')}
                             </p>
                         </>
                     ) : (
                         <div className="dca-empty">
                             <TrendingUp size={40} strokeWidth={1} />
-                            <h3>Simulate DCA Strategy</h3>
-                            <p>Select a cryptocurrency, choose your timeframe, and see how dollar-cost averaging would have performed.</p>
+                            <h3>{getUiString(lang, 'Simulate DCA Strategy')}</h3>
+                            <p>{getUiString(lang, 'Select a cryptocurrency, choose your timeframe, and see how dollar-cost averaging would have performed.')}</p>
                         </div>
                     )}
                 </div>

@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## [2026-02-25]
+
+### Changed
+- Removed the global `ChangeNowWidget.astro` ("Exchange Crypto Instantly") from the calculator shell to simplify the UI and remove third-party iframes per owner request.
+- Globally applied CoinGecko Demo API key (`REMOVED_COINGECKO_KEY`) as a query parameter (`x_cg_demo_api_key`) to all 22 calculator components to securely fetch market data and bypass 401 Unauthorized limits.
+
 ## [2026-02-24]
 
 ### Added
