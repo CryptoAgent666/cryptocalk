@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
 const lastUpdated = '20/02/2026';
@@ -20,6 +21,7 @@ const webPageSchema = {
   description="Read CryptoCalk privacy policy: what data is and is not collected, how client-side storage is used, and third-party data provider details."
   lang="en"
 >
+  <SiteHeader lang="en" currentPath="/privacy" />
   <main class="policy-page">
     <article class="policy-card">
       <h1>Privacy Policy</h1>

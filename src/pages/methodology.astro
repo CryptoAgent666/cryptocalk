@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
 const lastUpdated = '20/02/2026';
@@ -20,6 +21,7 @@ const webPageSchema = {
   description="How CryptoCalk calculator outputs are computed, validated, and interpreted across profit, DCA, tax, mining, and risk tools."
   lang="en"
 >
+  <SiteHeader lang="en" currentPath="/methodology" />
   <main class="method-page">
     <article class="method-card">
       <h1>How We Build Calculators</h1>
