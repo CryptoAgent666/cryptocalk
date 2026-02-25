@@ -109,7 +109,6 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="calmar-value" />
             </div>
           </div>
@@ -128,7 +127,6 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)} step="any" id="calmar-return" />
             </div>
           </div>
@@ -147,7 +145,6 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.01" step="any" id="calmar-dd" />
             </div>
           </div>

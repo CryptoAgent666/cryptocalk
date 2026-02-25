@@ -208,9 +208,8 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={totalInvestment} onChange={(e) => setTotalInvestment(e.target.value)}
-                                placeholder="10,000" id="pf-total" step="any" min="0" />
+                                placeholder="" id="pf-total" step="any" min="0" />
                         </div>
                     </div>
 
@@ -229,7 +228,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                                         <span className="portfolio-asset-prefix">$</span>
                                         <input type="number" inputMode="decimal" value={asset.amount || ''}
                                             onChange={(e) => updateAsset(asset.id, 'amount', parseFloat(e.target.value) || 0)}
-                                            placeholder="0"
+                                            placeholder=""
                                             className="portfolio-asset-input" />
                                     </div>
                                     <div className="portfolio-asset-target">

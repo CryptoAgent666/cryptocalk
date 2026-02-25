@@ -208,12 +208,11 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={hashrate}
                                 onChange={(e) => setHashrate(e.target.value)}
-                                placeholder="100"
+                                placeholder=""
                                 id="halving-hashrate"
                                 step="any"
                                 min="0"
                             />
-                            <span className="input-prefix" style={{ position: 'static', padding: '0 10px', opacity: 0.6 }}>TH/s</span>
                         </div>
                         <div className="pills-row">
                             {HASHRATE_PRESETS.map((value) => (
@@ -235,12 +234,11 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                             Electricity Cost
                         </label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={electricityCost}
                                 onChange={(e) => setElectricityCost(e.target.value)}
-                                placeholder="0.08"
+                                placeholder=""
                                 id="halving-electricity"
                                 step="0.01"
                                 min="0"
@@ -271,12 +269,11 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={powerConsumption}
                                 onChange={(e) => setPowerConsumption(e.target.value)}
-                                placeholder="3000"
+                                placeholder=""
                                 id="halving-power"
                                 step="any"
                                 min="0"
                             />
-                            <span className="input-prefix" style={{ position: 'static', padding: '0 10px', opacity: 0.6 }}>W</span>
                         </div>
                         <div className="pills-row">
                             {POWER_PRESETS.map((value) => (
@@ -299,7 +296,6 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                             {btcPrice && <span className="label-hint">Auto-filled</span>}
                         </label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={btcPrice}
@@ -520,18 +516,6 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="result-cta">
-                        <a
-                            href="https://www.f2pool.com"
-                            target="_blank" rel="noopener noreferrer sponsored"
-                            
-                            className="cta-btn"
-                        >
-                            {getUiString(lang, 'Start Mining with F2Pool →')}
-                        </a>
                     </div>
 
                     {/* Disclaimer */}

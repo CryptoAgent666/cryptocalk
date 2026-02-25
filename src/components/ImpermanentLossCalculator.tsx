@@ -253,9 +253,8 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={investmentAmount} onChange={(e) => setInvestmentAmount(e.target.value)}
-                                placeholder="1,000" id="il-investment" step="any" min="0" />
+                                placeholder="" id="il-investment" step="any" min="0" />
                         </div>
                     </div>
 
@@ -271,9 +270,8 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input type="number" inputMode="decimal" value={priceChangeA} onChange={(e) => setPriceChangeA(e.target.value)}
-                                placeholder="50" id="il-change-a" step="1" />
+                                placeholder="" id="il-change-a" step="1" />
                         </div>
                     </div>
 
@@ -289,9 +287,8 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input type="number" inputMode="decimal" value={priceChangeB} onChange={(e) => setPriceChangeB(e.target.value)}
-                                placeholder="0" id="il-change-b" step="1" />
+                                placeholder="" id="il-change-b" step="1" />
                         </div>
                     </div>
 
@@ -307,9 +304,8 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input type="number" inputMode="decimal" value={poolFeeApr} onChange={(e) => setPoolFeeApr(e.target.value)}
-                                placeholder="20" id="il-fee" step="1" min="0" />
+                                placeholder="" id="il-fee" step="1" min="0" />
                         </div>
                     </div>
 
@@ -326,7 +322,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={holdingDays} onChange={(e) => setHoldingDays(e.target.value)}
-                                placeholder="30" id="il-days" step="1" min="1" />
+                                placeholder="" id="il-days" step="1" min="1" />
                         </div>
                     </div>
 

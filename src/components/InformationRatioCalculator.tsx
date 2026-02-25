@@ -116,7 +116,6 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">$</span>
               <input
                 type="number" inputMode="decimal"
                 value={portfolioValue}
@@ -142,7 +141,6 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={portfolioReturn} onChange={(e) => setPortfolioReturn(e.target.value)} step="any" id="ir-portfolio-return" />
             </div>
           </div>
@@ -161,7 +159,6 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={benchmarkReturn} onChange={(e) => setBenchmarkReturn(e.target.value)} step="any" id="ir-benchmark-return" />
             </div>
           </div>
@@ -180,7 +177,6 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={trackingError} onChange={(e) => setTrackingError(e.target.value)} min="0.01" step="any" id="ir-tracking-error" />
             </div>
           </div>

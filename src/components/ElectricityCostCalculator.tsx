@@ -244,12 +244,11 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">#</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={numDevices}
                                 onChange={(e) => setNumDevices(e.target.value)}
-                                placeholder="1"
+                                placeholder=""
                                 id="num-devices-input"
                                 step="1"
                                 min="1"
@@ -279,7 +278,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 type="number" inputMode="decimal"
                                 value={powerPerDevice}
                                 onChange={(e) => setPowerPerDevice(e.target.value)}
-                                placeholder="3000"
+                                placeholder=""
                                 id="power-per-device-input"
                                 step="any"
                                 min="0"
@@ -306,12 +305,11 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={electricityRate}
                                 onChange={(e) => setElectricityRate(e.target.value)}
-                                placeholder="0.10"
+                                placeholder=""
                                 id="electricity-rate-input"
                                 step="0.01"
                                 min="0"
@@ -341,7 +339,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 type="number" inputMode="decimal"
                                 value={uptimeHours}
                                 onChange={(e) => setUptimeHours(e.target.value)}
-                                placeholder="24"
+                                placeholder=""
                                 id="uptime-input"
                                 step="1"
                                 min="0"
@@ -370,7 +368,6 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={monthlyRevenue}
@@ -601,18 +598,6 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                         <span className="result-value">{formatNumber(btuPerHr, 0)} BTU/hr</span>
                                     </div>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.compassmining.io"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Compare hosting rates at Compass Mining &rarr;')}
-                                </a>
                             </div>
 
                             {/* Disclaimer */}

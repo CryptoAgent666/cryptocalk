@@ -111,7 +111,7 @@ export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) 
               onChange={(e) => setAmount(e.target.value)}
               step="any"
               min="0"
-              placeholder="1"
+              placeholder=""
               id="unit-converter-amount"
             />
             <div className="pills-row">

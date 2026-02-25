@@ -256,12 +256,11 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                             Starting Capital
                         </label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={startingCapital}
                                 onChange={(e) => setStartingCapital(e.target.value)}
-                                placeholder="5,000"
+                                placeholder=""
                                 id="hodl-capital"
                                 step="any"
                                 min="0"
@@ -315,12 +314,11 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={priceChange}
                                 onChange={(e) => setPriceChange(e.target.value)}
-                                placeholder="50"
+                                placeholder=""
                                 id="hodl-price-change"
                                 step="any"
                             />
@@ -362,12 +360,11 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={winRate}
                                 onChange={(e) => setWinRate(e.target.value)}
-                                placeholder="50"
+                                placeholder=""
                                 id="hodl-win-rate"
                                 step="1"
                                 min="0"
@@ -394,12 +391,11 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={avgProfit}
                                 onChange={(e) => setAvgProfit(e.target.value)}
-                                placeholder="3"
+                                placeholder=""
                                 id="hodl-avg-profit"
                                 step="0.1"
                                 min="0"
@@ -425,12 +421,11 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={avgLoss}
                                 onChange={(e) => setAvgLoss(e.target.value)}
-                                placeholder="2"
+                                placeholder=""
                                 id="hodl-avg-loss"
                                 step="0.1"
                                 min="0"
@@ -460,7 +455,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 type="number" inputMode="decimal"
                                 value={tradesPerMonth}
                                 onChange={(e) => setTradesPerMonth(e.target.value)}
-                                placeholder="10"
+                                placeholder=""
                                 id="hodl-trades-month"
                                 step="1"
                                 min="1"
@@ -490,7 +485,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 type="number" inputMode="decimal"
                                 value={tradingPeriod}
                                 onChange={(e) => setTradingPeriod(e.target.value)}
-                                placeholder="6"
+                                placeholder=""
                                 id="hodl-period"
                                 step="1"
                                 min="1"
@@ -516,12 +511,11 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={tradingFee}
                                 onChange={(e) => setTradingFee(e.target.value)}
-                                placeholder="0.1"
+                                placeholder=""
                                 id="hodl-fee"
                                 step="0.01"
                                 min="0"
@@ -766,18 +760,6 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                         {formatUSD(results.differenceUSD)} ({results.differencePercent.toFixed(2)}%)
                                     </span>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.bybit.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Start Trading on Bybit →')}
-                                </a>
                             </div>
 
                             {/* Disclaimer */}

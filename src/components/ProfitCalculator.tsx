@@ -373,12 +373,11 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={buyPrice}
                                 onChange={(e) => setBuyPrice(e.target.value)}
-                                placeholder="0.00"
+                                placeholder=""
                                 id="buy-price"
                                 step="any"
                                 min="0"
@@ -407,12 +406,11 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={sellPrice}
                                 onChange={(e) => setSellPrice(e.target.value)}
-                                placeholder="0.00"
+                                placeholder=""
                                 id="sell-price"
                                 step="any"
                                 min="0"
@@ -456,7 +454,6 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">{inputMode === 'investment' ? '$' : '#'}</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={inputMode === 'investment' ? investmentAmount : quantity}
@@ -465,7 +462,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                         ? setInvestmentAmount(e.target.value)
                                         : setQuantity(e.target.value)
                                 }
-                                placeholder={inputMode === 'investment' ? '1000.00' : '1.0'}
+                                placeholder=""
                                 id="amount-input"
                                 step="any"
                                 min="0"
@@ -506,7 +503,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                         type="number" inputMode="decimal"
                                         value={entryFee}
                                         onChange={(e) => setEntryFee(e.target.value)}
-                                        placeholder="0.1"
+                                        placeholder=""
                                         id="entry-fee"
                                         step="0.01"
                                         min="0"
@@ -529,7 +526,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                         type="number" inputMode="decimal"
                                         value={exitFee}
                                         onChange={(e) => setExitFee(e.target.value)}
-                                        placeholder="0.1"
+                                        placeholder=""
                                         id="exit-fee"
                                         step="0.01"
                                         min="0"
@@ -613,18 +610,6 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-label">{getUiString(lang, 'Effective Sell Price')}</span>
                                     <span className="result-value">{formatUSD(results.effectiveSellPrice)}</span>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.bybit.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
-                                </a>
                             </div>
 
                             {/* Disclaimer */}

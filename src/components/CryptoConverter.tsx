@@ -205,7 +205,7 @@ export default function CryptoConverter() {
                             type="number" inputMode="decimal"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
-                            placeholder="1"
+                            placeholder=""
                             id="convert-amount"
                             step="any"
                             min="0"
@@ -347,16 +347,7 @@ export default function CryptoConverter() {
                     )}
                 </div>
 
-                {/* CTA */}
-                <a
-                    href="https://www.binance.com"
-                    target="_blank" rel="noopener noreferrer sponsored"
-                    
-                    className="converter-cta"
-                >
-                    Buy {fromCoin.symbol.toUpperCase()} on Binance →
-                </a>
-            </div>
+                </div>
 
             {/* Info Cards */}
             <div className="converter-info-grid">

@@ -121,7 +121,6 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sharpe-value" />
             </div>
           </div>
@@ -140,7 +139,6 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sharpe-return" />
             </div>
           </div>
@@ -159,7 +157,6 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={volatility} onChange={(e) => setVolatility(e.target.value)} min="0.01" step="any" id="sharpe-volatility" />
             </div>
           </div>
@@ -178,7 +175,6 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sharpe-rf" />
             </div>
           </div>

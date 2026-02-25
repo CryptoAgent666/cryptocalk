@@ -372,12 +372,11 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             )}
                         </label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={currentPrice}
                                 onChange={(e) => setCurrentPrice(e.target.value)}
-                                placeholder="65,000"
+                                placeholder=""
                                 id="pip-current-price"
                                 step="any"
                                 min="0"
@@ -429,12 +428,11 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             </button>
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">{sizeMode === 'usd' ? '$' : '#'}</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={positionSize}
                                 onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder={sizeMode === 'usd' ? '10,000' : '0.5'}
+                                placeholder=""
                                 id="pip-position-size"
                                 step="any"
                                 min="0"
@@ -460,12 +458,11 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={tickSize}
                                 onChange={(e) => setTickSize(e.target.value)}
-                                placeholder="1.00"
+                                placeholder=""
                                 id="pip-tick-size"
                                 step="any"
                                 min="0"
@@ -572,18 +569,6 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-label">{getUiString(lang, 'DOGE/USDT')}</span>
                                     <span className="result-value">$0.00001 — $0.001</span>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.bybit.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
-                                </a>
                             </div>
 
                             {/* Disclaimer */}

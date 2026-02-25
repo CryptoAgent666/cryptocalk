@@ -356,12 +356,11 @@ export default function TaxCalculator() {
                             ))}
                         </div>
                         <div className="input-with-unit">
-                            <span className="input-prefix">{config.currency}</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={buyPrice}
                                 onChange={(e) => setBuyPrice(e.target.value)}
-                                placeholder="30,000"
+                                placeholder=""
                                 id="tax-buy-price"
                                 step="any"
                                 min="0"
@@ -388,12 +387,11 @@ export default function TaxCalculator() {
                             ))}
                         </div>
                         <div className="input-with-unit">
-                            <span className="input-prefix">{config.currency}</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={sellPrice}
                                 onChange={(e) => setSellPrice(e.target.value)}
-                                placeholder="65,000"
+                                placeholder=""
                                 id="tax-sell-price"
                                 step="any"
                                 min="0"
@@ -418,12 +416,11 @@ export default function TaxCalculator() {
                             ))}
                         </div>
                         <div className="input-with-unit">
-                            <span className="input-prefix">#</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={quantity}
                                 onChange={(e) => setQuantity(e.target.value)}
-                                placeholder="1"
+                                placeholder=""
                                 id="tax-quantity"
                                 step="any"
                                 min="0.000001"
@@ -571,16 +568,6 @@ export default function TaxCalculator() {
                                 <Info size={14} />
                                 <p>{config.notes}</p>
                             </div>
-
-                            {/* CTA */}
-                            <a
-                                href="https://coinledger.io"
-                                target="_blank" rel="noopener noreferrer sponsored"
-                                
-                                className="tax-cta"
-                            >
-                                Get Your Full Tax Report with CoinLedger — Save 20% →
-                            </a>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />

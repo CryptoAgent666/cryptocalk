@@ -412,9 +412,8 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="65,000" id="tpsl-entry" step="any" min="0" />
+                                placeholder="" id="tpsl-entry" step="any" min="0" />
                         </div>
                     </div>
 
@@ -433,9 +432,8 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={stopLoss} onChange={(e) => setStopLoss(e.target.value)}
-                                placeholder={isShort ? '67,000' : '63,000'} id="tpsl-sl" step="any" min="0" />
+                                placeholder="" id="tpsl-sl" step="any" min="0" />
                         </div>
                     </div>
 
@@ -454,9 +452,8 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="1,000" id="tpsl-size" step="any" min="0" />
+                                placeholder="" id="tpsl-size" step="any" min="0" />
                         </div>
                     </div>
 
@@ -472,9 +469,8 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">1:</span>
                             <input type="number" inputMode="decimal" value={rrRatio} onChange={(e) => { setRrRatio(e.target.value); setAutoCalcTP(true); }}
-                                placeholder="2" id="tpsl-rr" step="0.1" min="0.1" />
+                                placeholder="" id="tpsl-rr" step="0.1" min="0.1" />
                         </div>
                     </div>
 
@@ -499,7 +495,6 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                 {tpLevelCount > 1 && <span className="label-hint">{level.percent}% of position</span>}
                             </label>
                             <div className="input-with-prefix">
-                                <span className="input-prefix">$</span>
                                 <input type="number" inputMode="decimal" value={level.price}
                                     onChange={(e) => {
                                         const newLevels = [...tpLevels];
@@ -507,7 +502,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                         setTpLevels(newLevels);
                                         setAutoCalcTP(false);
                                     }}
-                                    placeholder={isShort ? '60,000' : '70,000'}
+                                    placeholder=""
                                     id={`tpsl-tp-${i}`} step="any" min="0" />
                             </div>
                         </div>
@@ -612,13 +607,6 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                         </div>
                                     </>
                                 )}
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a href="https://www.bybit.com" target="_blank" rel="noopener noreferrer sponsored"  className="cta-btn">
-                                    Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
-                                </a>
                             </div>
 
                             <p className="calc-disclaimer">

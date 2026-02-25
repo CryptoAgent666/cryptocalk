@@ -295,12 +295,11 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                     Annual Salary
                                 </label>
                                 <div className="input-with-prefix">
-                                    <span className="input-prefix">$</span>
                                     <input
                                         type="number" inputMode="decimal"
                                         value={salary}
                                         onChange={(e) => setSalary(e.target.value)}
-                                        placeholder="60,000"
+                                        placeholder=""
                                         id="salary-input"
                                         step="any"
                                         min="0"
@@ -326,12 +325,11 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                     % to Convert to Crypto
                                 </label>
                                 <div className="input-with-prefix">
-                                    <span className="input-prefix">%</span>
                                     <input
                                         type="number" inputMode="decimal"
                                         value={convertPct}
                                         onChange={(e) => setConvertPct(e.target.value)}
-                                        placeholder="10"
+                                        placeholder=""
                                         id="convert-pct-input"
                                         step="1"
                                         min="0"
@@ -389,12 +387,11 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                     ))}
                                 </div>
                                 <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                                    <span className="input-prefix">%</span>
                                     <input
                                         type="number" inputMode="decimal"
                                         value={conversionFee}
                                         onChange={(e) => setConversionFee(e.target.value)}
-                                        placeholder="1"
+                                        placeholder=""
                                         id="fee-input"
                                         step="0.1"
                                         min="0"
@@ -442,12 +439,11 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                     ))}
                                 </div>
                                 <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                                    <span className="input-prefix">{CRYPTO_LABELS[cryptoType].symbol}</span>
                                     <input
                                         type="number" inputMode="decimal"
                                         value={cryptoAmount}
                                         onChange={(e) => setCryptoAmount(e.target.value)}
-                                        placeholder="0.1"
+                                        placeholder=""
                                         id="crypto-amount-input"
                                         step="any"
                                         min="0"
@@ -623,18 +619,6 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                     </p>
                                 </div>
 
-                                {/* CTA */}
-                                <div className="result-cta">
-                                    <a
-                                        href="https://www.bitwage.com"
-                                        target="_blank" rel="noopener noreferrer sponsored"
-                                        
-                                        className="cta-btn"
-                                    >
-                                        {getUiString(lang, 'Get paid in crypto with Bitwage &rarr;')}
-                                    </a>
-                                </div>
-
                                 {/* Disclaimer */}
                                 <p className="calc-disclaimer">
                                     <Info size={12} />
@@ -717,18 +701,6 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         <span className="result-label">{CRYPTO_LABELS[cryptoType].symbol} Price</span>
                                         <span className="result-value">{formatUSD(cryptoFiatPrice)}</span>
                                     </div>
-                                </div>
-
-                                {/* CTA */}
-                                <div className="result-cta">
-                                    <a
-                                        href="https://www.bitwage.com"
-                                        target="_blank" rel="noopener noreferrer sponsored"
-                                        
-                                        className="cta-btn"
-                                    >
-                                        {getUiString(lang, 'Get paid in crypto with Bitwage &rarr;')}
-                                    </a>
                                 </div>
 
                                 {/* Disclaimer */}

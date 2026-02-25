@@ -230,12 +230,11 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={initialInvestment}
                                 onChange={(e) => setInitialInvestment(e.target.value)}
-                                placeholder="10,000"
+                                placeholder=""
                                 id="roi-initial"
                                 step="any"
                                 min="0"
@@ -261,12 +260,11 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={currentValue}
                                 onChange={(e) => setCurrentValue(e.target.value)}
-                                placeholder="15,000"
+                                placeholder=""
                                 id="roi-current"
                                 step="any"
                                 min="0"
@@ -296,12 +294,11 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={holdingDays}
                                 onChange={(e) => handleCustomDays(e.target.value)}
-                                placeholder="365"
+                                placeholder=""
                                 id="roi-days"
                                 step="1"
                                 min="1"
                             />
-                            <span className="input-prefix" style={{ position: 'static', padding: '0 10px', color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>days</span>
                         </div>
                     </div>
 
@@ -323,12 +320,11 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={feesPaid}
                                 onChange={(e) => setFeesPaid(e.target.value)}
-                                placeholder="0.00"
+                                placeholder=""
                                 id="roi-fees"
                                 step="any"
                                 min="0"
@@ -457,18 +453,6 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.binance.com/en/register"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Trade on Binance →')}
-                                </a>
                             </div>
 
                             {/* Disclaimer */}

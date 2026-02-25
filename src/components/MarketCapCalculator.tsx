@@ -531,12 +531,11 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                 ))}
                             </div>
                             <div className="input-with-prefix">
-                                <span className="input-prefix">$</span>
                                 <input
                                     type="number" inputMode="decimal"
                                     value={targetMarketCap}
                                     onChange={(e) => setTargetMarketCap(e.target.value)}
-                                    placeholder="1,000,000,000,000"
+                                    placeholder=""
                                     id="mcap-target-marketcap"
                                     step="any"
                                     min="0"
@@ -561,12 +560,11 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                 ))}
                             </div>
                             <div className="input-with-prefix">
-                                <span className="input-prefix">$</span>
                                 <input
                                     type="number" inputMode="decimal"
                                     value={targetPrice}
                                     onChange={(e) => setTargetPrice(e.target.value)}
-                                    placeholder="100.00"
+                                    placeholder=""
                                     id="mcap-target-price"
                                     step="any"
                                     min="0"
@@ -615,12 +613,11 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">#</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={circulatingSupply}
                                 onChange={(e) => setCirculatingSupply(e.target.value)}
-                                placeholder="21,000,000"
+                                placeholder=""
                                 id="mcap-supply"
                                 step="any"
                                 min="0"
@@ -727,26 +724,6 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                     ))}
                                 </div>
                             )}
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.binance.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Binance
-                                </a>
-                                <a
-                                    href="https://www.coingecko.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn cta-secondary"
-                                >
-                                    {getUiString(lang, 'Research on CoinGecko')}
-                                </a>
-                            </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">

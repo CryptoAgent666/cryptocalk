@@ -321,12 +321,11 @@ export default function WhatIfCalculator() {
                             ))}
                         </div>
                         <div className="input-with-unit">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={amount}
                                 onChange={(e) => { setAmount(e.target.value); setResult(null); }}
-                                placeholder="1,000"
+                                placeholder=""
                                 id="whatif-amount"
                                 min="1"
                                 step="any"
@@ -492,16 +491,6 @@ export default function WhatIfCalculator() {
                                 <Share2 size={14} />
                                 Share Result on X
                             </button>
-
-                            {/* CTA */}
-                            <a
-                                href="https://www.binance.com/en/register"
-                                target="_blank" rel="noopener noreferrer sponsored"
-                                
-                                className="whatif-cta"
-                            >
-                                It's Not Too Late — Buy {result.coinSymbol} on Binance →
-                            </a>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />

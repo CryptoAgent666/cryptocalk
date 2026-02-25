@@ -326,7 +326,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     setHashrate(e.target.value);
                                     setSelectedPreset('Custom');
                                 }}
-                                placeholder="140"
+                                placeholder=""
                                 id="hashrate-input"
                                 step="any"
                                 min="0"
@@ -363,7 +363,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     setPower(e.target.value);
                                     setSelectedPreset('Custom');
                                 }}
-                                placeholder="3010"
+                                placeholder=""
                                 id="power-input"
                                 step="any"
                                 min="0"
@@ -390,12 +390,11 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-unit">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={electricityCost}
                                 onChange={(e) => setElectricityCost(e.target.value)}
-                                placeholder="0.10"
+                                placeholder=""
                                 id="electricity-input"
                                 step="0.01"
                                 min="0"
@@ -426,7 +425,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={poolFee}
                                 onChange={(e) => setPoolFee(e.target.value)}
-                                placeholder="2"
+                                placeholder=""
                                 id="pool-fee-input"
                                 step="0.1"
                                 min="0"
@@ -454,7 +453,6 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-unit">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={hardwareCost}
@@ -592,16 +590,6 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     )}
                                 </div>
                             )}
-
-                            {/* CTA */}
-                            <a
-                                href="https://www.f2pool.com"
-                                target="_blank" rel="noopener noreferrer sponsored"
-                                
-                                className="mining-cta"
-                            >
-                                Start Mining with F2Pool →
-                            </a>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">

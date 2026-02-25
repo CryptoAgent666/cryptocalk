@@ -176,7 +176,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-group">
                             <label>Custom Gas Limit</label>
                             <input type="number" inputMode="decimal" value={customGas} onChange={(e) => setCustomGas(e.target.value)}
-                                placeholder="21000" id="gas-custom" step="1000" min="21000" />
+                                placeholder="" id="gas-custom" step="1000" min="21000" />
                         </div>
                     )}
 
@@ -184,9 +184,8 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label><Zap size={14} /> Gas Price (Gwei)</label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix" style={{ fontSize: '0.7rem' }}>Gwei</span>
                             <input type="number" inputMode="decimal" value={gasPrice} onChange={(e) => setGasPrice(e.target.value)}
-                                placeholder="15" id="gas-price-gwei" step="0.1" min="0" />
+                                placeholder="" id="gas-price-gwei" step="0.1" min="0" />
                         </div>
                         <div className="pills-row">
                             {gasPricePresetValues.map((value) => (
@@ -218,9 +217,8 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label><DollarSign size={14} /> {currentNetwork.symbol} Price (USD)</label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={ethPrice} onChange={(e) => setEthPrice(e.target.value)}
-                                placeholder="3000" id="gas-eth-price" step="any" min="0" />
+                                placeholder="" id="gas-eth-price" step="any" min="0" />
                         </div>
                     </div>
 
