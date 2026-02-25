@@ -292,9 +292,8 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={stakingAmount} onChange={(e) => setStakingAmount(e.target.value)}
-                                placeholder="1,000" id="stk-amount" step="any" min="0" />
+                                placeholder="" id="stk-amount" step="any" min="0" />
                         </div>
                         {tokenAmount > 0 && <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>≈ {formatTokens(tokenAmount)} {sym}</span>}
                     </div>
@@ -304,7 +303,6 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         <div className="input-group">
                             <label><Coins size={14} /> Token Price</label>
                             <div className="input-with-prefix">
-                                <span className="input-prefix">$</span>
                                 <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)}
                                     placeholder="Auto" id="stk-price" step="any" min="0" />
                             </div>
@@ -323,9 +321,8 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input type="number" inputMode="decimal" value={stakingApy} onChange={(e) => setStakingApy(e.target.value)}
-                                placeholder="7" id="stk-apy" step="0.1" min="0" />
+                                placeholder="" id="stk-apy" step="0.1" min="0" />
                         </div>
                     </div>
 
@@ -341,9 +338,8 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input type="number" inputMode="decimal" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)}
-                                placeholder="5" id="stk-fee" step="1" min="0" max="100" />
+                                placeholder="" id="stk-fee" step="1" min="0" max="100" />
                         </div>
                     </div>
 
@@ -360,7 +356,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={stakingDays} onChange={(e) => setStakingDays(e.target.value)}
-                                placeholder="365" id="stk-days" step="1" min="1" />
+                                placeholder="" id="stk-days" step="1" min="1" />
                         </div>
                     </div>
 

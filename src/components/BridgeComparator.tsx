@@ -1,6 +1,6 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
-import { ArrowRightLeft, ExternalLink, Info, RotateCcw, Shield } from 'lucide-react';
+import { ArrowRightLeft, Info, RotateCcw, Shield } from 'lucide-react';
 
 interface BridgeDef {
   name: string;
@@ -109,7 +109,6 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
           <div className="input-group">
             <label>Amount</label>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input
                 type="number" inputMode="decimal"
                 min="1"
@@ -166,15 +165,7 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              <div className="result-cta">
-                <a href="https://www.across.to" target="_blank" rel="noopener noreferrer sponsored"  className="cta-btn">
-                  {getUiString(lang, 'Open Best Bridge')} <ExternalLink size={14} style={{ marginLeft: '6px', verticalAlign: 'middle' }} />
-                </a>
-              </div>
-
-              <p className="calc-disclaimer">
+              </div><p className="calc-disclaimer">
                 <Info size={14} />
                 {getUiString(lang, 'Fees and speed are estimates for comparison. Always verify current route quotes on the bridge before sending funds.')}
               </p>

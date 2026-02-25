@@ -128,7 +128,6 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="ror-win-rate" />
             </div>
           </div>
@@ -163,7 +162,6 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="ror-risk-trade" />
             </div>
           </div>
@@ -182,7 +180,6 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.1" step="any" id="ror-max-dd" />
             </div>
           </div>

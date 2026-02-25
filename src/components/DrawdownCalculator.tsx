@@ -90,7 +90,6 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
           <div className="input-group">
             <label>Portfolio Peak Value (USD)</label>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={peakValue} onChange={(e) => setPeakValue(e.target.value)} min="0" step="any" id="drawdown-peak" />
             </div>
           </div>
@@ -98,7 +97,6 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
           <div className="input-group">
             <label>Current Portfolio Value (USD)</label>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)} min="0" step="any" id="drawdown-current" />
             </div>
             <div className="pills-row">
@@ -135,7 +133,6 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={monthlyReturn} onChange={(e) => setMonthlyReturn(e.target.value)} min="0" step="any" id="drawdown-monthly-return" />
             </div>
           </div>

@@ -312,12 +312,11 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                             Equipment Cost ($)
                         </label>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={equipmentCost}
                                 onChange={(e) => setEquipmentCost(e.target.value)}
-                                placeholder="5,000"
+                                placeholder=""
                                 id="equipment-cost-input"
                                 step="any"
                                 min="0"
@@ -354,12 +353,11 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={monthlyRevenue}
                                 onChange={(e) => setMonthlyRevenue(e.target.value)}
-                                placeholder="300"
+                                placeholder=""
                                 id="monthly-revenue-input"
                                 step="any"
                                 min="0"
@@ -386,12 +384,11 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={monthlyExpenses}
                                 onChange={(e) => setMonthlyExpenses(e.target.value)}
-                                placeholder="150"
+                                placeholder=""
                                 id="monthly-expenses-input"
                                 step="any"
                                 min="0"
@@ -825,18 +822,6 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                     </div>
                                 </div>
                             )}
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.amazon.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Buy mining equipment on Amazon &rarr;')}
-                                </a>
-                            </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">

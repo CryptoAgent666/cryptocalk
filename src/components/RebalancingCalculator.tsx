@@ -253,7 +253,6 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input
                 type="number" inputMode="decimal"
                 value={additionalCash}

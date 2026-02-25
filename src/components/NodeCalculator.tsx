@@ -151,7 +151,6 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="node-price" />
             </div>
           </div>
@@ -170,7 +169,6 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={apr} onChange={(e) => setApr(e.target.value)} min="0" step="any" id="node-apr" />
             </div>
           </div>
@@ -189,7 +187,6 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)} min="0" step="any" id="node-fee" />
             </div>
           </div>
@@ -208,7 +205,6 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={uptime} onChange={(e) => setUptime(e.target.value)} min="0" max="100" step="any" id="node-uptime" />
             </div>
           </div>
@@ -227,7 +223,6 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={monthlyInfraCost} onChange={(e) => setMonthlyInfraCost(e.target.value)} min="0" step="any" id="node-infra" />
             </div>
           </div>

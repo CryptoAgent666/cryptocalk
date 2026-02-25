@@ -123,7 +123,6 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={deposit} onChange={(e) => setDeposit(e.target.value)} min="1" step="any" id="uni-deposit" />
             </div>
           </div>
@@ -142,7 +141,6 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="1" step="any" id="uni-tvl" />
             </div>
           </div>
@@ -161,7 +159,6 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={dailyVolume} onChange={(e) => setDailyVolume(e.target.value)} min="1" step="any" id="uni-volume" />
             </div>
           </div>
@@ -192,7 +189,6 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={priceMovePct} onChange={(e) => setPriceMovePct(e.target.value)} step="any" id="uni-price-move" />
             </div>
           </div>

@@ -407,12 +407,11 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={accountBalance}
                                 onChange={(e) => setAccountBalance(e.target.value)}
-                                placeholder="10,000"
+                                placeholder=""
                                 id="account-balance"
                                 step="any"
                                 min="0"
@@ -438,12 +437,11 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={riskPercent}
                                 onChange={(e) => setRiskPercent(e.target.value)}
-                                placeholder="2"
+                                placeholder=""
                                 id="risk-percent"
                                 step="0.1"
                                 min="0.1"
@@ -473,12 +471,11 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={entryPrice}
                                 onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="65,000"
+                                placeholder=""
                                 id="entry-price"
                                 step="any"
                                 min="0"
@@ -493,12 +490,11 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             Stop-Loss Price
                         </label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={stopLoss}
                                 onChange={(e) => setStopLoss(e.target.value)}
-                                placeholder={isShort ? '67,000' : '63,000'}
+                                placeholder=""
                                 id="stop-loss-price"
                                 step="any"
                                 min="0"
@@ -513,12 +509,11 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             Take-Profit Price (optional)
                         </label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={takeProfit}
                                 onChange={(e) => setTakeProfit(e.target.value)}
-                                placeholder={isShort ? '60,000' : '70,000'}
+                                placeholder=""
                                 id="take-profit-price"
                                 step="any"
                                 min="0"
@@ -544,12 +539,11 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">×</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={leverage}
                                 onChange={(e) => setLeverage(e.target.value)}
-                                placeholder="1"
+                                placeholder=""
                                 id="leverage-input"
                                 step="1"
                                 min="1"
@@ -573,12 +567,11 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={exchangeFee}
                                 onChange={(e) => setExchangeFee(e.target.value)}
-                                placeholder="0.1"
+                                placeholder=""
                                 id="exchange-fee"
                                 step="0.01"
                                 min="0"
@@ -703,18 +696,6 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                         </div>
                                     </>
                                 )}
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.bybit.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
-                                </a>
                             </div>
 
                             {/* Disclaimer */}

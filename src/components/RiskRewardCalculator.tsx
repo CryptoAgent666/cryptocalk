@@ -257,12 +257,11 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={entryPrice}
                                 onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="65,000"
+                                placeholder=""
                                 id="rr-entry-price"
                                 step="any"
                                 min="0"
@@ -297,12 +296,11 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={stopLoss}
                                 onChange={(e) => setStopLoss(e.target.value)}
-                                placeholder="63,000"
+                                placeholder=""
                                 id="rr-stop-loss"
                                 step="any"
                                 min="0"
@@ -328,12 +326,11 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={takeProfit}
                                 onChange={(e) => setTakeProfit(e.target.value)}
-                                placeholder="70,000"
+                                placeholder=""
                                 id="rr-take-profit"
                                 step="any"
                                 min="0"
@@ -360,12 +357,11 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={positionSize}
                                 onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="10,000"
+                                placeholder=""
                                 id="rr-position-size"
                                 step="any"
                                 min="0"
@@ -526,18 +522,6 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                                 <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
                                     Break-even at {formatPercent(results.requiredWinRate)} win rate. Values {hasSize ? 'in USD based on your position size.' : 'shown as price units. Enter a position size for USD values.'}
                                 </p>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.bybit.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Start Trading on Bybit →')}
-                                </a>
                             </div>
 
                             {/* Disclaimer */}

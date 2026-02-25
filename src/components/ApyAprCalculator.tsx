@@ -202,9 +202,8 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input type="number" inputMode="decimal" value={rateInput} onChange={(e) => setRateInput(e.target.value)}
-                                placeholder="12" id="apy-rate" step="0.1" min="0" />
+                                placeholder="" id="apy-rate" step="0.1" min="0" />
                         </div>
                     </div>
 
@@ -236,9 +235,8 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={principal} onChange={(e) => setPrincipal(e.target.value)}
-                                placeholder="10,000" id="apy-principal" step="any" min="0" />
+                                placeholder="" id="apy-principal" step="any" min="0" />
                         </div>
                     </div>
 
@@ -255,7 +253,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)}
-                                placeholder="1" id="apy-years" step="1" min="1" max="30" />
+                                placeholder="" id="apy-years" step="1" min="1" max="30" />
                         </div>
                     </div>
 
@@ -468,18 +466,6 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                     </div>
                                 </div>
                             )}
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.bybit.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    Earn Up to {rateInput}% APY on Bybit Earn &rarr;
-                                </a>
-                            </div>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />

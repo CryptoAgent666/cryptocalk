@@ -288,18 +288,6 @@ export default function HashrateConverter({ lang = 'en' }: { lang?: string }) {
                                 ))}
                             </div>
 
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.f2pool.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Start Mining with F2Pool →')}
-                                </a>
-                            </div>
-
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />

@@ -112,7 +112,7 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix" style={{ marginTop: '8px' }}><span className="input-prefix">$</span><input type="number" inputMode="decimal" value={icoPrice} onChange={(e) => setIcoPrice(e.target.value)} min="0" step="any" id="ico-price" /></div>
+            <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={icoPrice} onChange={(e) => setIcoPrice(e.target.value)} min="0" step="any" id="ico-price" /></div>
           </div>
           <div className="input-group">
             <label>{getUiString(lang, 'Current Price')}</label>
@@ -127,7 +127,7 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix" style={{ marginTop: '8px' }}><span className="input-prefix">$</span><input type="number" inputMode="decimal" value={currentPrice} onChange={(e) => setCurrentPrice(e.target.value)} min="0" step="any" id="ico-current" /></div>
+            <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={currentPrice} onChange={(e) => setCurrentPrice(e.target.value)} min="0" step="any" id="ico-current" /></div>
           </div>
           <div className="input-group">
             <label>ATH Price</label>
@@ -142,7 +142,7 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix" style={{ marginTop: '8px' }}><span className="input-prefix">$</span><input type="number" inputMode="decimal" value={athPrice} onChange={(e) => setAthPrice(e.target.value)} min="0" step="any" id="ico-ath" /></div>
+            <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={athPrice} onChange={(e) => setAthPrice(e.target.value)} min="0" step="any" id="ico-ath" /></div>
           </div>
           <div className="input-group">
             <label>Token Amount</label>

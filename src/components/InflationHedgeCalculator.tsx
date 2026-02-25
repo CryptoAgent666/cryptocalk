@@ -352,12 +352,11 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                             Savings Amount
                         </label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
-                                placeholder="10,000"
+                                placeholder=""
                                 id="inflation-amount"
                                 step="any"
                                 min="0"
@@ -619,18 +618,6 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                         -{formatUSD(amountNum - fiatValue)}
                                     </span>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.binance.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Buy BTC on Binance &rarr;')}
-                                </a>
                             </div>
 
                             {/* Disclaimer */}
