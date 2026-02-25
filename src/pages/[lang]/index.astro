@@ -19,6 +19,7 @@ import {
   Sparkles,
   Globe,
 } from "lucide-react";
+import SiteFooter from "../../components/SiteFooter.astro";
 
 export function getStaticPaths() {
   return ["es", "pt", "tr", "hi", "ru"].map((lang) => ({
@@ -414,38 +415,7 @@ const homepageSchemas = [websiteSchema, organizationSchema];
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo-text">Crypto<b>Calk</b></span>
-        <p>{t.heroSubtitle}</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>{t.popularCalculators}</h4>
-          {footerCoreLinks.map((link) => <a href={link.href}>{link.name}</a>)}
-        </div>
-        <div class="footer-col">
-          <h4>{t.allToolsTitle}</h4>
-          {
-            footerExploreLinks.map((link) => (
-              <a href={link.href}>{link.name}</a>
-            ))
-          }
-        </div>
-        <div class="footer-col">
-          <h4>{t.trustTitle}</h4>
-          <a href={localPath("/privacy")}>{t.privacyPolicy}</a>
-          <a href={localPath("/editorial-policy")}>{t.editorialPolicy}</a>
-          <a href={localPath("/methodology")}>{t.methodologyPolicy}</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>{t.footerText}</p>
-      </div>
-    </div>
-  </footer>
+  <SiteFooter lang={lang} />
 
   <script is:inline>
     (() => {
