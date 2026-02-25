@@ -80,3 +80,29 @@ site: 'https://your-domain.com',
 - Legacy localized calculator URLs are redirected via `dist/_redirects` (generated from `public/_redirects`)
 - All 6 languages generate prefixed routes (`/es/`, `/pt/`, `/tr/`, `/hi/`, `/ru/`)
 - English is at the root (`/`)
+
+---
+
+## Contact Form (Cloudflare Pages Function + Resend)
+
+The contact pages (`/contact`, `/ru/contact`, etc.) now submit to `POST /api/contact` implemented in:
+
+- `functions/api/contact.js`
+
+### Required Secrets
+
+Set these in **Cloudflare Pages → Project → Settings → Variables and Secrets**:
+
+- `RESEND_API_KEY` (required)
+- `CONTACT_FROM_EMAIL` (required in production, e.g. `CryptoCalk Contact <no-reply@cryptocalk.com>`)
+- `CONTACT_TO_EMAIL` (optional, defaults to `support@cryptocalk.com`)
+- `TURNSTILE_SECRET` (optional; only if Turnstile widget is enabled)
+
+### Notes
+
+- Do not commit API keys to the repository.
+- For Resend, verify your sending domain before using a custom `CONTACT_FROM_EMAIL`.
+- Built-in anti-spam includes a honeypot field and basic per-IP rate limiting.
+- For local function testing, copy `.dev.vars.example` to `.dev.vars` and run:
+  - `npm run build`
+  - `wrangler pages dev dist`

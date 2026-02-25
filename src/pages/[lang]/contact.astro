@@ -38,6 +38,9 @@ interface ContactContent {
   messageLabel: string;
   messagePlaceholder: string;
   sendButton: string;
+  sendingText: string;
+  successText: string;
+  errorText: string;
 }
 
 const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
@@ -66,6 +69,9 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
     messageLabel: 'Mensaje',
     messagePlaceholder: '¿En qué podemos ayudarte?',
     sendButton: 'Enviar Mensaje',
+    sendingText: 'Enviando...',
+    successText: 'Gracias. Tu mensaje ha sido enviado.',
+    errorText: 'No pudimos enviar tu mensaje ahora. Inténtalo de nuevo más tarde.',
   },
   pt: {
     pageTitle: 'Fale Conosco | CryptoCalk',
@@ -92,6 +98,9 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
     messageLabel: 'Mensagem',
     messagePlaceholder: 'Como podemos ajudar?',
     sendButton: 'Enviar Mensagem',
+    sendingText: 'Enviando...',
+    successText: 'Obrigado. Sua mensagem foi enviada.',
+    errorText: 'Não foi possível enviar sua mensagem agora. Tente novamente mais tarde.',
   },
   tr: {
     pageTitle: 'Bize Ulaşın | CryptoCalk',
@@ -118,6 +127,9 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
     messageLabel: 'Mesaj',
     messagePlaceholder: 'Size nasıl yardımcı olabiliriz?',
     sendButton: 'Mesaj Gönder',
+    sendingText: 'Gönderiliyor...',
+    successText: 'Teşekkürler. Mesajınız gönderildi.',
+    errorText: 'Mesajınızı şu anda gönderemiyoruz. Lütfen daha sonra tekrar deneyin.',
   },
   hi: {
     pageTitle: 'संपर्क करें | CryptoCalk',
@@ -144,6 +156,9 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
     messageLabel: 'संदेश',
     messagePlaceholder: 'हम आपकी कैसे मदद कर सकते हैं?',
     sendButton: 'संदेश भेजें',
+    sendingText: 'भेजा जा रहा है...',
+    successText: 'धन्यवाद। आपका संदेश भेज दिया गया है।',
+    errorText: 'अभी संदेश भेजा नहीं जा सका। कृपया बाद में फिर प्रयास करें।',
   },
   ru: {
     pageTitle: 'Связаться с Нами | CryptoCalk',
@@ -170,6 +185,9 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
     messageLabel: 'Сообщение',
     messagePlaceholder: 'Чем мы можем помочь?',
     sendButton: 'Отправить Сообщение',
+    sendingText: 'Отправка...',
+    successText: 'Спасибо. Ваше сообщение отправлено.',
+    errorText: 'Сейчас не удалось отправить сообщение. Попробуйте позже.',
   },
 };
 
@@ -222,7 +240,20 @@ const c = content[lang];
 
         <div class="contact-form-container">
           <h2>{c.sendMessage}</h2>
-          <form class="contact-form" action="mailto:support@cryptocalk.com" method="post" enctype="text/plain">
+          <form
+            class="contact-form js-contact-form"
+            action="/api/contact"
+            method="post"
+            data-sending-text={c.sendingText}
+            data-success-text={c.successText}
+            data-error-text={c.errorText}
+          >
+            <input type="hidden" name="redirectTo" value={`/${lang}/contact`} />
+            <input type="hidden" name="formLocale" value={lang} />
+            <div class="form-group honeypot" aria-hidden="true">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+            </div>
             <div class="form-group">
               <label for="name">{c.nameLabel}</label>
               <input type="text" id="name" name="name" required placeholder={c.namePlaceholder} />
@@ -245,6 +276,7 @@ const c = content[lang];
               <textarea id="message" name="message" rows="5" required placeholder={c.messagePlaceholder}></textarea>
             </div>
             <button type="submit" class="btn-primary">{c.sendButton}</button>
+            <p class="form-status" data-form-status aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -252,6 +284,53 @@ const c = content[lang];
   </div>
   <SiteFooter lang={lang} />
 </Layout>
+
+<script is:inline>
+  (() => {
+    const form = document.querySelector('.js-contact-form');
+    if (!(form instanceof HTMLFormElement)) return;
+
+    const statusEl = form.querySelector('[data-form-status]');
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (!(statusEl instanceof HTMLElement) || !(submitButton instanceof HTMLButtonElement)) return;
+
+    const sendingText = form.dataset.sendingText || 'Sending...';
+    const successText = form.dataset.successText || 'Thanks. Your message has been sent.';
+    const errorText = form.dataset.errorText || 'Unable to send right now. Please try again later.';
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      submitButton.disabled = true;
+      statusEl.textContent = sendingText;
+      statusEl.className = 'form-status pending';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+
+        const payload = await response.json().catch(() => ({}));
+
+        if (response.ok) {
+          statusEl.textContent = typeof payload.message === 'string' ? payload.message : successText;
+          statusEl.className = 'form-status success';
+          form.reset();
+          return;
+        }
+
+        statusEl.textContent = typeof payload.error === 'string' ? payload.error : errorText;
+        statusEl.className = 'form-status error';
+      } catch {
+        statusEl.textContent = errorText;
+        statusEl.className = 'form-status error';
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  })();
+</script>
 
 <style>
   .page-container {
@@ -337,6 +416,14 @@ const c = content[lang];
     flex-direction: column;
     gap: 20px;
   }
+  .honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
   .form-group {
     display: flex;
     flex-direction: column;
@@ -372,6 +459,24 @@ const c = content[lang];
   }
   .btn-primary:hover {
     background: var(--color-primary-dark);
+  }
+  .btn-primary:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+  .form-status {
+    margin: 4px 0 0;
+    min-height: 1.25em;
+    font-size: 0.9rem;
+  }
+  .form-status.pending {
+    color: var(--color-text-secondary);
+  }
+  .form-status.success {
+    color: #1ea971;
+  }
+  .form-status.error {
+    color: #d64545;
   }
 
   @media (max-width: 768px) {
