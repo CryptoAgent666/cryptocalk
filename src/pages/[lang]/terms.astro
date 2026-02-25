@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+
+interface TermsContent {
+  pageTitle: string;
+  metaDescription: string;
+  heading: string;
+  lastUpdated: string;
+  sections: Array<{ title: string; paragraphs: string[]; bullets?: string[] }>;
+}
+
+const content: Record<Exclude<Lang, 'en'>, TermsContent> = {
+  es: {
+    pageTitle: 'Términos de Servicio | CryptoCalk',
+    metaDescription: 'Términos de servicio y aviso legal para el uso de las calculadoras de CryptoCalk.',
+    heading: 'Términos de Servicio',
+    lastUpdated: 'Última actualización: 24 de febrero de 2026',
+    sections: [
+      { title: '1. Introducción', paragraphs: ['Bienvenido a CryptoCalk. Al acceder o utilizar nuestro sitio web (cryptocalk.com) y nuestras calculadoras, aceptas estos Términos de Servicio. Si no estás de acuerdo, por favor no uses nuestro sitio.'] },
+      { title: '2. No es Asesoramiento Financiero', paragraphs: ['TODO EL CONTENIDO Y LOS RESULTADOS DE LAS CALCULADORAS DE CRYPTOCALK SON SOLO PARA FINES INFORMATIVOS Y EDUCATIVOS.', 'No somos asesores financieros ni profesionales fiscales. Los resultados son estimaciones basadas en tus datos y condiciones actuales del mercado. No tomes decisiones financieras basándote únicamente en nuestras herramientas.', 'Las inversiones en criptomonedas son altamente volátiles y arriesgadas. Siempre consulta con un profesional calificado.'] },
+      { title: '3. Precisión de la Información', paragraphs: ['Nos esforzamos por proporcionar información precisa y actualizada, pero no garantizamos la exactitud o integridad de los datos o cálculos.'] },
+      { title: '4. Uso del Servicio', paragraphs: ['Aceptas usar nuestras herramientas de manera responsable. No debes:'], bullets: ['Usar el sitio para fines ilegales o no autorizados.', 'Intentar extraer datos del sitio de forma automatizada.', 'Interferir con la seguridad o el rendimiento del sitio.'] },
+      { title: '5. Enlaces y APIs de Terceros', paragraphs: ['Nuestro sitio utiliza APIs de terceros (como CoinGecko) para datos de precios en vivo. No somos responsables del contenido o prácticas de sitios de terceros.'] },
+      { title: '6. Propiedad Intelectual', paragraphs: ['Todo el contenido, diseños y algoritmos en CryptoCalk son propiedad intelectual de CryptoCalk y sus creadores.'] },
+      { title: '7. Limitación de Responsabilidad', paragraphs: ['En ningún caso CryptoCalk será responsable por daños directos, indirectos, incidentales o consecuentes derivados del uso de nuestro sitio o herramientas.'] },
+      { title: '8. Cambios en los Términos', paragraphs: ['Nos reservamos el derecho de modificar estos Términos en cualquier momento. El uso continuado del sitio implica la aceptación de los nuevos Términos.'] },
+      { title: '9. Contacto', paragraphs: ['Si tienes preguntas sobre estos Términos, contáctanos en support@cryptocalk.com.'] },
+    ],
+  },
+  pt: {
+    pageTitle: 'Termos de Serviço | CryptoCalk',
+    metaDescription: 'Termos de serviço e aviso legal para uso das calculadoras do CryptoCalk.',
+    heading: 'Termos de Serviço',
+    lastUpdated: 'Última atualização: 24 de fevereiro de 2026',
+    sections: [
+      { title: '1. Introdução', paragraphs: ['Bem-vindo ao CryptoCalk. Ao acessar ou usar nosso site (cryptocalk.com) e nossas calculadoras, você concorda com estes Termos de Serviço. Se não concordar, não use nosso site.'] },
+      { title: '2. Não é Aconselhamento Financeiro', paragraphs: ['TODO O CONTEÚDO E RESULTADOS DAS CALCULADORAS DO CRYPTOCALK SÃO APENAS PARA FINS INFORMATIVOS E EDUCACIONAIS.', 'Não somos consultores financeiros nem profissionais tributários. Os resultados são estimativas baseadas nos seus dados e condições atuais de mercado. Não tome decisões financeiras baseando-se apenas em nossas ferramentas.', 'Investimentos em criptomoedas são altamente voláteis e arriscados. Sempre consulte um profissional qualificado.'] },
+      { title: '3. Precisão das Informações', paragraphs: ['Nos esforçamos para fornecer informações precisas e atualizadas, mas não garantimos a exatidão ou completude dos dados ou cálculos.'] },
+      { title: '4. Uso do Serviço', paragraphs: ['Você concorda em usar nossas ferramentas de forma responsável. Você não deve:'], bullets: ['Usar o site para fins ilegais ou não autorizados.', 'Tentar extrair dados do site de forma automatizada.', 'Interferir na segurança ou desempenho do site.'] },
+      { title: '5. Links e APIs de Terceiros', paragraphs: ['Nosso site utiliza APIs de terceiros (como CoinGecko) para dados de preços em tempo real. Não somos responsáveis pelo conteúdo ou práticas de sites de terceiros.'] },
+      { title: '6. Propriedade Intelectual', paragraphs: ['Todo o conteúdo, designs e algoritmos do CryptoCalk são propriedade intelectual do CryptoCalk e seus criadores.'] },
+      { title: '7. Limitação de Responsabilidade', paragraphs: ['Em nenhuma circunstância o CryptoCalk será responsável por danos diretos, indiretos, incidentais ou consequentes decorrentes do uso do nosso site ou ferramentas.'] },
+      { title: '8. Alterações nos Termos', paragraphs: ['Reservamo-nos o direito de modificar estes Termos a qualquer momento. O uso continuado do site implica aceitação dos novos Termos.'] },
+      { title: '9. Contato', paragraphs: ['Se tiver dúvidas sobre estes Termos, entre em contato pelo support@cryptocalk.com.'] },
+    ],
+  },
+  tr: {
+    pageTitle: 'Kullanım Koşulları | CryptoCalk',
+    metaDescription: 'CryptoCalk hesap makinelerini kullanmak için hizmet şartları ve yasal uyarı.',
+    heading: 'Kullanım Koşulları',
+    lastUpdated: 'Son güncelleme: 24 Şubat 2026',
+    sections: [
+      { title: '1. Giriş', paragraphs: ['CryptoCalk\'a hoş geldiniz. Web sitemize (cryptocalk.com) ve hesap makinelerimize erişerek veya bunları kullanarak bu Kullanım Koşullarını kabul etmiş olursunuz. Kabul etmiyorsanız, sitemizi kullanmayın.'] },
+      { title: '2. Finansal Tavsiye Değildir', paragraphs: ['CRYPTOCALK\'TAKİ TÜM İÇERİK VE HESAP MAKİNESİ SONUÇLARI YALNIZCA BİLGİLENDİRME VE EĞİTİM AMAÇLIDIR.', 'Finansal danışman veya vergi uzmanı değiliz. Sonuçlar, girdiğiniz verilere ve mevcut piyasa koşullarına dayalı tahminlerdir. Yalnızca araçlarımıza dayanarak finansal kararlar almayın.', 'Kripto para yatırımları son derece volatil ve risklidir. Her zaman nitelikli bir uzmana danışın.'] },
+      { title: '3. Bilgi Doğruluğu', paragraphs: ['Doğru ve güncel bilgi sunmaya çalışıyoruz, ancak veri ve hesaplamaların doğruluğu veya eksiksizliği konusunda garanti vermiyoruz.'] },
+      { title: '4. Hizmetin Kullanımı', paragraphs: ['Araçlarımızı sorumlu bir şekilde kullanmayı kabul ediyorsunuz. Şunları yapmamalısınız:'], bullets: ['Siteyi yasadışı veya yetkisiz amaçlarla kullanmak.', 'Siteden otomatik olarak veri çekmeye çalışmak.', 'Sitenin güvenliğini veya performansını bozmak.'] },
+      { title: '5. Üçüncü Taraf Bağlantıları ve API\'ler', paragraphs: ['Sitemiz canlı fiyat verileri için üçüncü taraf API\'leri (CoinGecko gibi) kullanmaktadır. Üçüncü taraf sitelerin içeriğinden veya uygulamalarından sorumlu değiliz.'] },
+      { title: '6. Fikri Mülkiyet', paragraphs: ['CryptoCalk\'taki tüm içerik, tasarımlar ve algoritmalar CryptoCalk ve yaratıcılarının fikri mülkiyetidir.'] },
+      { title: '7. Sorumluluk Sınırlaması', paragraphs: ['Hiçbir durumda CryptoCalk, sitemizin veya araçlarımızın kullanımından kaynaklanan doğrudan, dolaylı, arızi veya sonuç olarak ortaya çıkan zararlardan sorumlu tutulamaz.'] },
+      { title: '8. Koşullarda Değişiklikler', paragraphs: ['Bu Koşulları herhangi bir zamanda değiştirme hakkımızı saklı tutarız. Siteyi kullanmaya devam etmeniz yeni Koşulları kabul ettiğiniz anlamına gelir.'] },
+      { title: '9. İletişim', paragraphs: ['Bu Koşullar hakkında sorularınız varsa support@cryptocalk.com adresinden bize ulaşın.'] },
+    ],
+  },
+  hi: {
+    pageTitle: 'सेवा की शर्तें | CryptoCalk',
+    metaDescription: 'CryptoCalk कैलकुलेटर के उपयोग के लिए सेवा की शर्तें और कानूनी अस्वीकरण।',
+    heading: 'सेवा की शर्तें',
+    lastUpdated: 'अंतिम अपडेट: 24 फरवरी 2026',
+    sections: [
+      { title: '1. परिचय', paragraphs: ['CryptoCalk में आपका स्वागत है। हमारी वेबसाइट (cryptocalk.com) और कैलकुलेटर तक पहुँच कर या उनका उपयोग करके, आप इन सेवा की शर्तों से सहमत होते हैं। यदि आप सहमत नहीं हैं, तो कृपया हमारी वेबसाइट का उपयोग न करें।'] },
+      { title: '2. यह वित्तीय सलाह नहीं है', paragraphs: ['CRYPTOCALK पर सभी सामग्री और कैलकुलेटर परिणाम केवल सूचनात्मक और शैक्षिक उद्देश्यों के लिए हैं।', 'हम वित्तीय सलाहकार या कर पेशेवर नहीं हैं। परिणाम आपके डेटा और वर्तमान बाज़ार स्थितियों पर आधारित अनुमान हैं। केवल हमारे टूल्स के आधार पर वित्तीय निर्णय न लें।', 'क्रिप्टोकरेंसी निवेश अत्यधिक अस्थिर और जोखिमपूर्ण हैं। हमेशा किसी योग्य पेशेवर से परामर्श करें।'] },
+      { title: '3. जानकारी की सटीकता', paragraphs: ['हम सटीक और अद्यतन जानकारी प्रदान करने का प्रयास करते हैं, लेकिन डेटा या गणनाओं की सटीकता या पूर्णता की गारंटी नहीं देते।'] },
+      { title: '4. सेवा का उपयोग', paragraphs: ['आप हमारे टूल्स का जिम्मेदारी से उपयोग करने के लिए सहमत हैं। आपको नहीं करना चाहिए:'], bullets: ['साइट का अवैध या अनधिकृत उद्देश्यों के लिए उपयोग करना।', 'साइट से स्वचालित रूप से डेटा निकालने का प्रयास करना।', 'वेबसाइट की सुरक्षा या प्रदर्शन में हस्तक्षेप करना।'] },
+      { title: '5. तृतीय-पक्ष लिंक और API', paragraphs: ['हमारी वेबसाइट लाइव प्राइसिंग डेटा के लिए तृतीय-पक्ष API (जैसे CoinGecko) का उपयोग करती है। हम तृतीय-पक्ष वेबसाइटों की सामग्री या प्रथाओं के लिए जिम्मेदार नहीं हैं।'] },
+      { title: '6. बौद्धिक संपदा', paragraphs: ['CryptoCalk पर सभी सामग्री, डिज़ाइन और एल्गोरिदम CryptoCalk और इसके निर्माताओं की बौद्धिक संपदा हैं।'] },
+      { title: '7. दायित्व की सीमा', paragraphs: ['किसी भी परिस्थिति में CryptoCalk हमारी वेबसाइट या टूल्स के उपयोग से उत्पन्न प्रत्यक्ष, अप्रत्यक्ष, आकस्मिक या परिणामी हानि के लिए उत्तरदायी नहीं होगा।'] },
+      { title: '8. शर्तों में परिवर्तन', paragraphs: ['हम किसी भी समय इन शर्तों को संशोधित करने का अधिकार सुरक्षित रखते हैं। वेबसाइट का निरंतर उपयोग नई शर्तों की स्वीकृति माना जाएगा।'] },
+      { title: '9. संपर्क', paragraphs: ['इन शर्तों के बारे में प्रश्नों के लिए support@cryptocalk.com पर संपर्क करें।'] },
+    ],
+  },
+  ru: {
+    pageTitle: 'Условия Использования | CryptoCalk',
+    metaDescription: 'Условия использования и правовая информация для калькуляторов CryptoCalk.',
+    heading: 'Условия Использования',
+    lastUpdated: 'Последнее обновление: 24 февраля 2026',
+    sections: [
+      { title: '1. Введение', paragraphs: ['Добро пожаловать на CryptoCalk. Получая доступ к нашему сайту (cryptocalk.com) и калькуляторам или используя их, вы соглашаетесь с настоящими Условиями. Если вы не согласны, пожалуйста, не используйте наш сайт.'] },
+      { title: '2. Не является финансовой консультацией', paragraphs: ['ВСЕ МАТЕРИАЛЫ И РЕЗУЛЬТАТЫ КАЛЬКУЛЯТОРОВ CRYPTOCALK ПРЕДНАЗНАЧЕНЫ ИСКЛЮЧИТЕЛЬНО ДЛЯ ИНФОРМАЦИОННЫХ И ОБРАЗОВАТЕЛЬНЫХ ЦЕЛЕЙ.', 'Мы не являемся финансовыми консультантами или налоговыми специалистами. Результаты — это оценки на основе введённых вами данных и текущих рыночных условий. Не принимайте финансовые решения, основываясь исключительно на наших инструментах.', 'Инвестиции в криптовалюты крайне волатильны и рискованны. Всегда консультируйтесь с квалифицированным специалистом.'] },
+      { title: '3. Точность информации', paragraphs: ['Мы стремимся предоставлять точную и актуальную информацию, но не гарантируем точность или полноту данных и расчётов.'] },
+      { title: '4. Использование сервиса', paragraphs: ['Вы соглашаетесь использовать наши инструменты ответственно. Вы не должны:'], bullets: ['Использовать сайт в незаконных или несанкционированных целях.', 'Пытаться автоматически извлекать данные с сайта.', 'Вмешиваться в безопасность или работоспособность сайта.'] },
+      { title: '5. Сторонние ссылки и API', paragraphs: ['Наш сайт использует сторонние API (например, CoinGecko) для получения рыночных данных в реальном времени. Мы не несём ответственности за содержание или практики сторонних сайтов.'] },
+      { title: '6. Интеллектуальная собственность', paragraphs: ['Весь контент, дизайн и алгоритмы на CryptoCalk являются интеллектуальной собственностью CryptoCalk и его создателей.'] },
+      { title: '7. Ограничение ответственности', paragraphs: ['Ни при каких обстоятельствах CryptoCalk не несёт ответственности за прямые, косвенные, случайные или последующие убытки, связанные с использованием нашего сайта или инструментов.'] },
+      { title: '8. Изменения условий', paragraphs: ['Мы оставляем за собой право изменять настоящие Условия в любое время. Продолжение использования сайта означает принятие новых Условий.'] },
+      { title: '9. Контакты', paragraphs: ['По вопросам об этих Условиях обращайтесь по адресу support@cryptocalk.com.'] },
+    ],
+  },
+};
+
+const c = content[lang];
+---
+
+<Layout
+  title={c.pageTitle}
+  description={c.metaDescription}
+  lang={lang}
+>
+  <div class="legal-container">
+    <header class="legal-header">
+      <h1>{c.heading}</h1>
+      <p>{c.lastUpdated}</p>
+    </header>
+
+    <div class="legal-content">
+      {c.sections.map((section) => (
+        <Fragment>
+          <h2>{section.title}</h2>
+          {section.paragraphs.map((p) => (
+            <p>{p}</p>
+          ))}
+          {section.bullets && (
+            <ul>
+              {section.bullets.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+          )}
+        </Fragment>
+      ))}
+    </div>
+  </div>
+  <SiteFooter lang={lang} />
+</Layout>
+
+<style>
+  .legal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  .legal-header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .legal-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .legal-header p {
+    color: var(--color-text-muted);
+  }
+  .legal-content {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+  .legal-content h2 {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 40px 0 16px;
+  }
+  .legal-content p {
+    margin-bottom: 16px;
+  }
+  .legal-content ul {
+    margin-bottom: 24px;
+    padding-left: 24px;
+  }
+  .legal-content li {
+    margin-bottom: 8px;
+  }
+  .legal-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .legal-content a:hover {
+    text-decoration: underline;
+  }
+</style>
