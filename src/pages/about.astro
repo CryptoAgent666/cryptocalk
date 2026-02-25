@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { Mail, Briefcase, Code, Award, Twitter, Linkedin, Instagram, Globe } from 'lucide-react';
 ---
@@ -9,6 +10,7 @@ import { Mail, Briefcase, Code, Award, Twitter, Linkedin, Instagram, Globe } fro
   description="Learn about CryptoCalk and Konstantin Iakovlev, the founder and developer behind our suite of fast, accurate crypto calculators."
   lang="en"
 >
+  <SiteHeader lang="en" currentPath="/about" />
   <div class="about-container">
     <header class="about-header">
       <h1>About CryptoCalk</h1>
