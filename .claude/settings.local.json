@@ -11,7 +11,11 @@
       "Bash(for comp in AirdropCalculator VestingCalculator)",
       "Bash(do echo \"  $comp: checking...\")",
       "Bash(done)",
-      "Bash(npm run ci:check:*)"
+      "Bash(npm run ci:check:*)",
+      "Bash(find:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ]
   }
 }
