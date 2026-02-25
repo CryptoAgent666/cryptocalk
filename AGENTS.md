@@ -33,11 +33,17 @@ Examples of contradictions to flag:
 - Deviating from the SEO architecture
 - Changing the performance budget targets
 
-## 3. Maintain the Changelog
+## 3. Maintain the Changelog & Commit Changes
 
 All code changes **must** be logged in `/CHANGELOG.md` in the project root.
+After updating the code and the changelog, you **must** stage and commit your changes to the Git repository.
 
-### Format:
+### Workflow:
+1. Make code changes and verify them.
+2. Update `/CHANGELOG.md`.
+3. Run `git add .` and `git commit -m "Description of changes"`.
+
+### Format for Changelog:
 ```markdown
 ## [YYYY-MM-DD]
 

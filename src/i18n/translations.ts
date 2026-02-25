@@ -113,7 +113,6 @@ interface Translations {
     editorialPolicy: string;
     methodologyPolicy: string;
     footerText: string;
-    exchangeCta: string;
 }
 
 const translations: Record<Lang, Translations> = {
@@ -217,7 +216,6 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'Editorial Policy',
         methodologyPolicy: 'How We Build Calculators',
         footerText: '© 2026 CryptoCalk. All rights reserved. Past performance does not guarantee future results.',
-        exchangeCta: 'Exchange Crypto Instantly',
     },
 
     es: {
@@ -320,7 +318,6 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'Política Editorial',
         methodologyPolicy: 'Cómo Construimos las Calculadoras',
         footerText: '© 2026 CryptoCalk. Todos los derechos reservados. El rendimiento pasado no garantiza resultados futuros.',
-        exchangeCta: 'Intercambie Criptomonedas al Instante',
     },
 
     pt: {
@@ -423,7 +420,6 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'Política Editorial',
         methodologyPolicy: 'Como Construímos as Calculadoras',
         footerText: '© 2026 CryptoCalk. Todos os direitos reservados. O desempenho passado não garante resultados futuros.',
-        exchangeCta: 'Trocar Criptomoedas Instantaneamente',
     },
 
     tr: {
@@ -526,7 +522,6 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'Editör Politikası',
         methodologyPolicy: 'Hesaplayıcıları Nasıl Oluşturuyoruz',
         footerText: '© 2026 CryptoCalk. Tüm hakları saklıdır. Geçmiş performans gelecekteki sonuçları garanti etmez.',
-        exchangeCta: 'Anında Kripto Takas Edin',
     },
 
     hi: {
@@ -629,7 +624,6 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'संपादकीय नीति',
         methodologyPolicy: 'हम कैलकुलेटर कैसे बनाते हैं',
         footerText: '© 2026 CryptoCalk. सर्वाधिकार सुरक्षित। पिछला प्रदर्शन भविष्य के परिणामों की गारंटी नहीं देता।',
-        exchangeCta: 'तुरंत क्रिप्टो एक्सचेंज करें',
     },
 
     ru: {
@@ -732,7 +726,6 @@ const translations: Record<Lang, Translations> = {
         editorialPolicy: 'Редакционная политика',
         methodologyPolicy: 'Как мы строим калькуляторы',
         footerText: '© 2026 CryptoCalk. Все права защищены. Прошлые результаты не гарантируют будущих.',
-        exchangeCta: 'Мгновенный обмен криптовалют',
     },
 };
 

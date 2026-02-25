@@ -90,7 +90,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
             try {
                 const ids = TOP_COINS.map(c => c.id).join(',');
                 const res = await fetch(
-                    `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_market_cap=true`
+                    `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_market_cap=true&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
                 );
                 if (!res.ok) return;
                 const data = await res.json();
@@ -123,7 +123,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
         if (query.length < 2) { setSuggestions([]); return; }
         setLoading(true);
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`);
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
             setSuggestions((data.coins || []).slice(0, 8).map((c: any) => ({
@@ -148,7 +148,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
 
     const fetchCoinData = async (coinId: string): Promise<CoinData | null> => {
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=false&community_data=false&developer_data=false`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=false&community_data=false&developer_data=false&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`);
             if (!res.ok) throw new Error('Failed to fetch coin data');
             const data = await res.json();
             const price = data.market_data?.current_price?.usd || 0;
