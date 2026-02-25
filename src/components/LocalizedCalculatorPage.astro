@@ -9,6 +9,7 @@ import { seoBodyText } from "../i18n/seo-body-text";
 import { Calculator, ChevronRight, ArrowLeft } from "lucide-react";
 import AdSlot from "./AdSlot.astro";
 import ShareCalculator from "./ShareCalculator.astro";
+import SiteFooter from "./SiteFooter.astro";
 import fs from "node:fs";
 import path from "node:path";
 import postcss from "postcss";
@@ -378,38 +379,7 @@ const faqSchema = {
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div
-        class="footer-links-row"
-        style="display: flex; gap: 16px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap;"
-      >
-        <a
-          href="/about"
-          style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;"
-          >About Us</a
-        >
-        <a
-          href="/contact"
-          style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;"
-          >Contact Us</a
-        >
-        <a
-          href="/privacy"
-          style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;"
-          >Privacy Policy</a
-        >
-        <a
-          href="/terms"
-          style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;"
-          >Terms of Service</a
-        >
-      </div>
-      <div class="footer-bottom" style="text-align: center;">
-        <p>{t.footerText}</p>
-      </div>
-    </div>
-  </footer>
+  <SiteFooter lang={lang} />
 
   <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)}
   ></script>

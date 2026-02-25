@@ -1,0 +1,166 @@
+---
+export interface Props {
+    lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
+const prefix = lang === "en" ? "" : `/${lang}`;
+
+const coreLinks = [
+    { name: "Profit Calculator", href: `${prefix}/profit-calculator` },
+    { name: "Crypto Converter", href: `${prefix}/converter` },
+    { name: "Mining Calculator", href: `${prefix}/mining-calculator` },
+    { name: "DCA Calculator", href: `${prefix}/dca-calculator` },
+    { name: "Tax Calculator", href: `${prefix}/tax-calculator` },
+    { name: "Position Size", href: `${prefix}/position-size-calculator` },
+];
+
+const exploreLinks = [
+    { name: "Staking Rewards", href: `${prefix}/staking-calculator` },
+    { name: "Gas Fee Calculator", href: `${prefix}/gas-calculator` },
+    { name: "Portfolio Calculator", href: `${prefix}/portfolio-calculator` },
+    { name: "What If Calculator", href: `${prefix}/what-if` },
+    { name: "Break-Even Calculator", href: `${prefix}/break-even-calculator` },
+    { name: "All Calculators", href: prefix || "/" },
+];
+---
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href={prefix || "/"} class="footer-logo">Crypto<b>Calk</b></a>
+            <p>Free cryptocurrency calculators for everyone.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Core Calculators</h4>
+                {coreLinks.map((link) => <a href={link.href}>{link.name}</a>)}
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                {
+                    exploreLinks.map((link) => (
+                        <a href={link.href}>{link.name}</a>
+                    ))
+                }
+            </div>
+            <div class="footer-col">
+                <h4>Trust &amp; Legal</h4>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/editorial-policy">Editorial Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 CryptoCalk. All rights reserved. For informational
+                purposes only &mdash; not financial advice.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 48px 0 32px;
+    }
+
+    .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto auto;
+        gap: 32px 48px;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-logo {
+        font-size: 1.25rem;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        color: var(--color-text);
+        text-decoration: none;
+    }
+
+    .footer-logo b {
+        font-weight: 800;
+        background: linear-gradient(
+            135deg,
+            var(--color-primary),
+            var(--color-accent-purple)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .footer-brand p {
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 48px;
+        flex-wrap: wrap;
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 140px;
+    }
+
+    .footer-col h4 {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--color-text-muted);
+        margin-bottom: 4px;
+    }
+
+    .footer-col a {
+        font-size: 0.875rem;
+        color: var(--color-text-secondary);
+        text-decoration: none;
+        transition: color 0.15s ease;
+    }
+
+    .footer-col a:hover {
+        color: var(--color-primary);
+    }
+
+    .footer-bottom {
+        grid-column: 1 / -1;
+        border-top: 1px solid var(--color-border);
+        padding-top: 24px;
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+    }
+
+    @media (max-width: 768px) {
+        .footer-inner {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-links {
+            gap: 28px;
+        }
+    }
+</style>

@@ -4,6 +4,7 @@ import ThemeToggle from '../components/ThemeToggle.tsx';
 import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
 import PortfolioCalculator from '../components/PortfolioCalculator.tsx';
 import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 
 <Layout
@@ -167,13 +168,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-bottom">
-        <p>© 2026 CryptoCalk. All rights reserved. Not financial advice.</p>
-      </div>
-    </div>
-  </footer>
+  <SiteFooter />
 </Layout>
 
 <style>
