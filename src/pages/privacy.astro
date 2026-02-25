@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 const lastUpdated = '20/02/2026';
 const pageUrl = 'https://cryptocalk.com/privacy/';
@@ -80,6 +81,7 @@ const webPageSchema = {
     </article>
   </main>
 
+  <SiteFooter lang="en" />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>
 

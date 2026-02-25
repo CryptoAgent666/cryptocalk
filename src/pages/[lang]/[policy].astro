@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import type { Lang } from '../../i18n/utils';
 
 type PolicyKey = 'privacy' | 'editorial-policy' | 'methodology';
@@ -704,6 +705,7 @@ const webPageSchema = {
     </article>
   </main>
 
+  <SiteFooter lang={lang} />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>
 
