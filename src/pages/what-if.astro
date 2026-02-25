@@ -4,6 +4,7 @@ import ThemeToggle from '../components/ThemeToggle.tsx';
 import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
 import WhatIfCalculator from '../components/WhatIfCalculator.tsx';
 import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 
 <Layout
@@ -178,13 +179,7 @@ import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-bottom">
-        <p>&copy; 2026 CryptoCalk. All rights reserved. Past performance does not guarantee future results.</p>
-      </div>
-    </div>
-  </footer>
+  <SiteFooter />
 </Layout>
 
 <style>
