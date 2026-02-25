@@ -1,0 +1,114 @@
+---
+import { Calculator, ArrowLeft } from 'lucide-react';
+import LanguageSwitcher from './LanguageSwitcher.tsx';
+import ThemeToggle from './ThemeToggle.tsx';
+import { getTranslations } from '../i18n/translations';
+import { getLocalizedPath, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  currentPath?: string;
+}
+
+const { lang, currentPath = '/' } = Astro.props as Props;
+const t = getTranslations(lang);
+
+const homeHref = getLocalizedPath('/', lang);
+const allToolsHref = `${homeHref}#categories`;
+---
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href={homeHref} class="site-header-logo">
+      <Calculator size={24} />
+      <span class="logo-text">Crypto<b>Calk</b></span>
+    </a>
+    <div class="site-header-actions">
+      <a href={allToolsHref} class="site-header-link">
+        <ArrowLeft size={14} />
+        {t.allToolsTitle}
+      </a>
+      <LanguageSwitcher client:idle currentLang={lang} currentPath={currentPath} />
+      <ThemeToggle client:idle />
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-header);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-header);
+  }
+
+  .site-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .site-header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .logo-text {
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-text b {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .site-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .site-header-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    font-size: 0.84rem;
+    font-weight: 600;
+  }
+
+  .site-header-link:hover {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .site-header-inner {
+      padding: 0 12px;
+      min-height: 56px;
+      gap: 8px;
+    }
+
+    .site-header-link {
+      font-size: 0.78rem;
+    }
+  }
+</style>
