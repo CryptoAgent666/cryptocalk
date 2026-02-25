@@ -95,7 +95,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
         }
         searchTimeout.current = setTimeout(async () => {
             try {
-                const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}`);
+                const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`);
                 if (!res.ok) throw new Error('Search failed');
                 const data = await res.json();
                 setSuggestions((data.coins || []).slice(0, 8).map((c: any) => ({
@@ -119,7 +119,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
         setFetchingPrice(true);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
             );
             if (res.ok) {
                 const data = await res.json();

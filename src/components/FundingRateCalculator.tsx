@@ -96,7 +96,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
         if (query.length < 2) { setSuggestions([]); return; }
         setLoading(true);
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`);
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
             setSuggestions((data.coins || []).slice(0, 8).map((c: any) => ({

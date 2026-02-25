@@ -121,7 +121,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
             try {
                 const ids = TOP_COMPARISON_COINS.map(c => c.id).join(',');
                 const res = await fetch(
-                    `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_market_cap=true`
+                    `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_market_cap=true&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
                 );
                 if (!res.ok) return;
                 const data = await res.json();
@@ -147,7 +147,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
         setLoading(true);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}`
+                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
             );
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
@@ -177,7 +177,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
         setShowSuggestions(false);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&include_market_cap=true`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&include_market_cap=true&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();

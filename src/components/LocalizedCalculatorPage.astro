@@ -1,18 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ThemeToggle from './ThemeToggle.tsx';
-import LanguageSwitcher from './LanguageSwitcher.tsx';
-import { getTranslations } from '../i18n/translations';
-import { getLocalizedCalculatorMeta, type Lang } from '../i18n/utils';
-import { defaultFaqByLang } from '../i18n/faq-dictionary';
-import { seoBodyText } from '../i18n/seo-body-text';
-import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
-import AdSlot from './AdSlot.astro';
-import ChangeNowWidget from './ChangeNowWidget.astro';
-import ShareCalculator from './ShareCalculator.astro';
-import fs from 'node:fs';
-import path from 'node:path';
-import postcss from 'postcss';
+import Layout from "../layouts/Layout.astro";
+import ThemeToggle from "./ThemeToggle.tsx";
+import LanguageSwitcher from "./LanguageSwitcher.tsx";
+import { getTranslations } from "../i18n/translations";
+import { getLocalizedCalculatorMeta, type Lang } from "../i18n/utils";
+import { defaultFaqByLang } from "../i18n/faq-dictionary";
+import { seoBodyText } from "../i18n/seo-body-text";
+import { Calculator, ChevronRight, ArrowLeft } from "lucide-react";
+import AdSlot from "./AdSlot.astro";
+import ShareCalculator from "./ShareCalculator.astro";
+import fs from "node:fs";
+import path from "node:path";
+import postcss from "postcss";
 
 interface FaqItem {
   q: string;
@@ -31,9 +30,14 @@ export interface Props {
 const { lang, slug, title, description, faq = [], pathOverride } = Astro.props;
 
 const t = getTranslations(lang);
-const prefix = lang === 'en' ? '' : `/${lang}`;
+const prefix = lang === "en" ? "" : `/${lang}`;
 const pagePath = pathOverride ?? `${prefix}/${slug}`;
-const localizedMeta = getLocalizedCalculatorMeta(slug, lang, title, description);
+const localizedMeta = getLocalizedCalculatorMeta(
+  slug,
+  lang,
+  title,
+  description
+);
 const localizedTitle = localizedMeta.title;
 const localizedDescription = localizedMeta.description;
 
@@ -42,9 +46,9 @@ const scopedCssCache = new Map<string, string>();
 
 function extractStyleBlocks(source: string): string {
   const blocks = Array.from(source.matchAll(STYLE_BLOCK_RE))
-    .map((match) => match[1]?.trim() ?? '')
+    .map((match) => match[1]?.trim() ?? "")
     .filter(Boolean);
-  return blocks.join('\n\n');
+  return blocks.join("\n\n");
 }
 
 function prefixCss(css: string, scope: string): string {
@@ -53,15 +57,16 @@ function prefixCss(css: string, scope: string): string {
   root.walkRules((rule) => {
     if (!rule.selector) return;
     const parent = rule.parent;
-    if (parent?.type === 'atrule' && /keyframes$/i.test(parent.name)) return;
+    if (parent?.type === "atrule" && /keyframes$/i.test(parent.name)) return;
 
-    const selectors = postcss.list.comma(rule.selector)
+    const selectors = postcss.list
+      .comma(rule.selector)
       .map((selector) => selector.trim())
       .filter(Boolean)
       .map((selector) => `${scope} ${selector}`);
 
     if (selectors.length > 0) {
-      rule.selector = selectors.join(', ');
+      rule.selector = selectors.join(", ");
     }
   });
 
@@ -73,129 +78,138 @@ function getCalculatorScopedCss(currentSlug: string): string {
   if (cached !== undefined) return cached;
 
   try {
-    const enPagePath = path.join(process.cwd(), 'src/pages', `${currentSlug}.astro`);
-    const source = fs.readFileSync(enPagePath, 'utf-8');
+    const enPagePath = path.join(
+      process.cwd(),
+      "src/pages",
+      `${currentSlug}.astro`
+    );
+    const source = fs.readFileSync(enPagePath, "utf-8");
     const rawStyle = extractStyleBlocks(source);
     if (!rawStyle) {
-      scopedCssCache.set(currentSlug, '');
-      return '';
+      scopedCssCache.set(currentSlug, "");
+      return "";
     }
     const scope = `.calc-scope[data-slug="${currentSlug}"]`;
     const scoped = prefixCss(rawStyle, scope);
     scopedCssCache.set(currentSlug, scoped);
     return scoped;
   } catch {
-    scopedCssCache.set(currentSlug, '');
-    return '';
+    scopedCssCache.set(currentSlug, "");
+    return "";
   }
 }
 
 const calculatorScopedCss = getCalculatorScopedCss(slug);
 
-const faqTemplate = faq.length ? faq : (defaultFaqByLang[lang] || defaultFaqByLang.en);
+const faqTemplate = faq.length
+  ? faq
+  : defaultFaqByLang[lang] || defaultFaqByLang.en;
 
-const faqItems = faqTemplate.map(item => ({
-  q: item.q.replace('{title}', localizedTitle),
-  a: item.a.replace('{title}', localizedTitle)
+const faqItems = faqTemplate.map((item) => ({
+  q: item.q.replace("{title}", localizedTitle),
+  a: item.a.replace("{title}", localizedTitle),
 }));
 
-const headingMap: Record<Lang, {
-  how: string;
-  inputs: string;
-  interpret: string;
-  scenarios: string;
-  checklist: string;
-  mistakes: string;
-  benchmarks: string;
-  execution: string;
-  hygiene: string;
-  validation: string;
-  faq: string;
-  related: string;
-}> = {
+const headingMap: Record<
+  Lang,
+  {
+    how: string;
+    inputs: string;
+    interpret: string;
+    scenarios: string;
+    checklist: string;
+    mistakes: string;
+    benchmarks: string;
+    execution: string;
+    hygiene: string;
+    validation: string;
+    faq: string;
+    related: string;
+  }
+> = {
   en: {
     how: `How to use ${title}`,
-    inputs: 'Input guide and assumptions',
-    interpret: 'How to interpret results correctly',
-    scenarios: 'Practical scenarios and planning workflow',
-    checklist: 'Risk and execution checklist',
-    mistakes: 'Common mistakes to avoid',
-    benchmarks: 'Performance benchmarks and expectation ranges',
-    execution: 'Execution templates you can reuse',
-    hygiene: 'Data hygiene and model maintenance',
-    validation: 'Final validation before capital deployment',
-    faq: 'Frequently asked questions',
-    related: 'Related calculators',
+    inputs: "Input guide and assumptions",
+    interpret: "How to interpret results correctly",
+    scenarios: "Practical scenarios and planning workflow",
+    checklist: "Risk and execution checklist",
+    mistakes: "Common mistakes to avoid",
+    benchmarks: "Performance benchmarks and expectation ranges",
+    execution: "Execution templates you can reuse",
+    hygiene: "Data hygiene and model maintenance",
+    validation: "Final validation before capital deployment",
+    faq: "Frequently asked questions",
+    related: "Related calculators",
   },
   es: {
     how: `Cómo usar ${title}`,
-    inputs: 'Guía de entradas y supuestos',
-    interpret: 'Cómo interpretar correctamente los resultados',
-    scenarios: 'Escenarios prácticos y flujo de planificación',
-    checklist: 'Checklist de riesgo y ejecución',
-    mistakes: 'Errores comunes a evitar',
-    benchmarks: 'Rangos de referencia y expectativas',
-    execution: 'Plantillas de ejecución reutilizables',
-    hygiene: 'Higiene de datos y mantenimiento del modelo',
-    validation: 'Validación final antes de desplegar capital',
-    faq: 'Preguntas frecuentes',
-    related: 'Calculadoras relacionadas',
+    inputs: "Guía de entradas y supuestos",
+    interpret: "Cómo interpretar correctamente los resultados",
+    scenarios: "Escenarios prácticos y flujo de planificación",
+    checklist: "Checklist de riesgo y ejecución",
+    mistakes: "Errores comunes a evitar",
+    benchmarks: "Rangos de referencia y expectativas",
+    execution: "Plantillas de ejecución reutilizables",
+    hygiene: "Higiene de datos y mantenimiento del modelo",
+    validation: "Validación final antes de desplegar capital",
+    faq: "Preguntas frecuentes",
+    related: "Calculadoras relacionadas",
   },
   pt: {
     how: `Como usar ${title}`,
-    inputs: 'Guia de entradas e premissas',
-    interpret: 'Como interpretar os resultados corretamente',
-    scenarios: 'Cenários práticos e fluxo de planejamento',
-    checklist: 'Checklist de risco e execução',
-    mistakes: 'Erros comuns para evitar',
-    benchmarks: 'Referências de desempenho e faixas esperadas',
-    execution: 'Modelos de execução reutilizáveis',
-    hygiene: 'Higiene de dados e manutenção do modelo',
-    validation: 'Validação final antes de alocar capital',
-    faq: 'Perguntas frequentes',
-    related: 'Calculadoras relacionadas',
+    inputs: "Guia de entradas e premissas",
+    interpret: "Como interpretar os resultados corretamente",
+    scenarios: "Cenários práticos e fluxo de planejamento",
+    checklist: "Checklist de risco e execução",
+    mistakes: "Erros comuns para evitar",
+    benchmarks: "Referências de desempenho e faixas esperadas",
+    execution: "Modelos de execução reutilizáveis",
+    hygiene: "Higiene de dados e manutenção do modelo",
+    validation: "Validação final antes de alocar capital",
+    faq: "Perguntas frequentes",
+    related: "Calculadoras relacionadas",
   },
   tr: {
     how: `${title} nasıl kullanılır`,
-    inputs: 'Girdi rehberi ve varsayımlar',
-    interpret: 'Sonuçları doğru yorumlama',
-    scenarios: 'Pratik senaryolar ve planlama akışı',
-    checklist: 'Risk ve uygulama kontrol listesi',
-    mistakes: 'Kaçınılması gereken yaygın hatalar',
-    benchmarks: 'Performans kıyasları ve beklenti aralıkları',
-    execution: 'Tekrar kullanılabilir uygulama şablonları',
-    hygiene: 'Veri hijyeni ve model bakımı',
-    validation: 'Sermaye dağıtımı öncesi son doğrulama',
-    faq: 'Sık sorulan sorular',
-    related: 'İlgili hesaplayıcılar',
+    inputs: "Girdi rehberi ve varsayımlar",
+    interpret: "Sonuçları doğru yorumlama",
+    scenarios: "Pratik senaryolar ve planlama akışı",
+    checklist: "Risk ve uygulama kontrol listesi",
+    mistakes: "Kaçınılması gereken yaygın hatalar",
+    benchmarks: "Performans kıyasları ve beklenti aralıkları",
+    execution: "Tekrar kullanılabilir uygulama şablonları",
+    hygiene: "Veri hijyeni ve model bakımı",
+    validation: "Sermaye dağıtımı öncesi son doğrulama",
+    faq: "Sık sorulan sorular",
+    related: "İlgili hesaplayıcılar",
   },
   hi: {
     how: `${title} का उपयोग कैसे करें`,
-    inputs: 'इनपुट गाइड और मान्यताएँ',
-    interpret: 'परिणामों को सही तरीके से समझना',
-    scenarios: 'व्यावहारिक परिदृश्य और योजना प्रक्रिया',
-    checklist: 'जोखिम और निष्पादन चेकलिस्ट',
-    mistakes: 'बचने योग्य सामान्य गलतियाँ',
-    benchmarks: 'प्रदर्शन बेंचमार्क और अपेक्षित रेंज',
-    execution: 'पुन: उपयोग योग्य निष्पादन टेम्पलेट',
-    hygiene: 'डेटा हाइजीन और मॉडल मेंटेनेंस',
-    validation: 'पूंजी लगाने से पहले अंतिम सत्यापन',
-    faq: 'अक्सर पूछे जाने वाले प्रश्न',
-    related: 'संबंधित कैलकुलेटर',
+    inputs: "इनपुट गाइड और मान्यताएँ",
+    interpret: "परिणामों को सही तरीके से समझना",
+    scenarios: "व्यावहारिक परिदृश्य और योजना प्रक्रिया",
+    checklist: "जोखिम और निष्पादन चेकलिस्ट",
+    mistakes: "बचने योग्य सामान्य गलतियाँ",
+    benchmarks: "प्रदर्शन बेंचमार्क और अपेक्षित रेंज",
+    execution: "पुन: उपयोग योग्य निष्पादन टेम्पलेट",
+    hygiene: "डेटा हाइजीन और मॉडल मेंटेनेंस",
+    validation: "पूंजी लगाने से पहले अंतिम सत्यापन",
+    faq: "अक्सर पूछे जाने वाले प्रश्न",
+    related: "संबंधित कैलकुलेटर",
   },
   ru: {
     how: `Как использовать ${title}`,
-    inputs: 'Гайд по входным параметрам и допущениям',
-    interpret: 'Как правильно интерпретировать результаты',
-    scenarios: 'Практические сценарии и рабочий процесс',
-    checklist: 'Чек-лист по рискам и исполнению',
-    mistakes: 'Типичные ошибки',
-    benchmarks: 'Бенчмарки доходности и диапазоны ожиданий',
-    execution: 'Повторяемые шаблоны исполнения',
-    hygiene: 'Гигиена данных и поддержка модели',
-    validation: 'Финальная проверка перед входом в позицию',
-    faq: 'Частые вопросы',
-    related: 'Связанные калькуляторы',
+    inputs: "Гайд по входным параметрам и допущениям",
+    interpret: "Как правильно интерпретировать результаты",
+    scenarios: "Практические сценарии и рабочий процесс",
+    checklist: "Чек-лист по рискам и исполнению",
+    mistakes: "Типичные ошибки",
+    benchmarks: "Бенчмарки доходности и диапазоны ожиданий",
+    execution: "Повторяемые шаблоны исполнения",
+    hygiene: "Гигиена данных и поддержка модели",
+    validation: "Финальная проверка перед входом в позицию",
+    faq: "Частые вопросы",
+    related: "Связанные калькуляторы",
   },
 };
 
@@ -203,44 +217,52 @@ const h = headingMap[lang] || headingMap.en;
 const txt = seoBodyText[lang] || seoBodyText.en;
 
 const webAppSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
   name: localizedTitle,
   description: localizedDescription,
-  applicationCategory: 'FinanceApplication',
-  operatingSystem: 'Web',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Web",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   inLanguage: lang,
   url: `https://cryptocalk.com${pagePath}`,
 };
 
 const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
   mainEntity: faqItems.map((item) => ({
-    '@type': 'Question',
+    "@type": "Question",
     name: item.q,
     acceptedAnswer: {
-      '@type': 'Answer',
+      "@type": "Answer",
       text: item.a,
     },
   })),
 };
 ---
 
-<Layout title={`${localizedTitle} — CryptoCalk`} description={localizedDescription} lang={lang}>
+<Layout
+  title={`${localizedTitle} — CryptoCalk`}
+  description={localizedDescription}
+  lang={lang}
+>
   <header class="site-header">
     <div class="header-inner">
-      <a href={prefix || '/'} class="logo">
+      <a href={prefix || "/"} class="logo">
         <Calculator size={24} />
         <span class="logo-text">Crypto<b>Calk</b></span>
       </a>
       <div class="header-actions">
-        <a href={prefix || '/'} class="header-link">
+        <a href={prefix || "/"} class="header-link">
           <ArrowLeft size={14} />
           {t.allCalculators}
         </a>
-        <LanguageSwitcher client:idle currentLang={lang} currentPath={pagePath} />
+        <LanguageSwitcher
+          client:idle
+          currentLang={lang}
+          currentPath={pagePath}
+        />
         <ThemeToggle client:idle />
       </div>
     </div>
@@ -249,7 +271,7 @@ const faqSchema = {
   <main>
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="section-container">
-        <a href={prefix || '/'}>{t.home}</a>
+        <a href={prefix || "/"}>{t.home}</a>
         <ChevronRight size={12} />
         <a href={pagePath} aria-current="page">{localizedTitle}</a>
       </div>
@@ -259,7 +281,7 @@ const faqSchema = {
       <div class="section-container">
         <!-- Top Ad Slot -->
         <AdSlot type="banner" zoneId="header_banner" />
-        
+
         <div class="calc-header">
           <h1>{localizedTitle}</h1>
           <p>{localizedDescription}</p>
@@ -268,15 +290,9 @@ const faqSchema = {
           <ShareCalculator lang={lang} />
           <slot name="calculator" />
         </div>
-        
+
         <!-- Bottom Ad Slot -->
         <AdSlot type="banner" zoneId="footer_banner" />
-        
-        <!-- ChangeNOW Widget -->
-        <div style="margin-top: 48px;">
-          <h2 style="text-align: center; font-size: 1.25rem; font-weight: 600; margin-bottom: 16px;">{t.exchangeCta || 'Exchange Crypto Instantly'}</h2>
-          <ChangeNowWidget lang={lang} />
-        </div>
       </div>
     </section>
 
@@ -289,43 +305,74 @@ const faqSchema = {
         {txt.inputs.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
 
         <h2>{h.interpret}</h2>
-        {txt.interpret.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        {
+          txt.interpret.map((p) => (
+            <p>{p.replace(/{title}/g, localizedTitle)}</p>
+          ))
+        }
 
         <h2>{h.scenarios}</h2>
-        {txt.scenarios.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        {
+          txt.scenarios.map((p) => (
+            <p>{p.replace(/{title}/g, localizedTitle)}</p>
+          ))
+        }
 
         <h2>{h.checklist}</h2>
-        {txt.checklist.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        {
+          txt.checklist.map((p) => (
+            <p>{p.replace(/{title}/g, localizedTitle)}</p>
+          ))
+        }
 
         <h2>{h.mistakes}</h2>
-        {txt.mistakes.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        {
+          txt.mistakes.map((p) => (
+            <p>{p.replace(/{title}/g, localizedTitle)}</p>
+          ))
+        }
 
         <h2>{h.benchmarks}</h2>
-        {txt.benchmarks.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        {
+          txt.benchmarks.map((p) => (
+            <p>{p.replace(/{title}/g, localizedTitle)}</p>
+          ))
+        }
 
         <h2>{h.execution}</h2>
-        {txt.execution.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        {
+          txt.execution.map((p) => (
+            <p>{p.replace(/{title}/g, localizedTitle)}</p>
+          ))
+        }
 
         <h2>{h.hygiene}</h2>
         {txt.hygiene.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
 
         <h2>{h.validation}</h2>
-        {txt.validation.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        {
+          txt.validation.map((p) => (
+            <p>{p.replace(/{title}/g, localizedTitle)}</p>
+          ))
+        }
 
         <h2>{h.faq}</h2>
-        {faqItems.map((item) => (
-          <details>
-            <summary>{item.q}</summary>
-            <p>{item.a}</p>
-          </details>
-        ))}
+        {
+          faqItems.map((item) => (
+            <details>
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))
+        }
 
         <h2>{h.related}</h2>
         <p>
-          To improve decision quality, pair {localizedTitle} with at least one complementary tool: use Profit/ROI for return
-          validation, Position Size and Risk/Reward for risk control, Break-Even for fee-adjusted thresholds, and Tax
-          tools for post-trade net analysis. Using tools in combination gives better outcomes than relying on a single
-          isolated metric.
+          To improve decision quality, pair {localizedTitle} with at least one complementary
+          tool: use Profit/ROI for return validation, Position Size and Risk/Reward
+          for risk control, Break-Even for fee-adjusted thresholds, and Tax tools
+          for post-trade net analysis. Using tools in combination gives better outcomes
+          than relying on a single isolated metric.
         </p>
       </div>
     </section>
@@ -333,11 +380,30 @@ const faqSchema = {
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-links-row" style="display: flex; gap: 16px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap;">
-        <a href="/about" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">About Us</a>
-        <a href="/contact" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Contact Us</a>
-        <a href="/privacy" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
-        <a href="/terms" style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;">Terms of Service</a>
+      <div
+        class="footer-links-row"
+        style="display: flex; gap: 16px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap;"
+      >
+        <a
+          href="/about"
+          style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;"
+          >About Us</a
+        >
+        <a
+          href="/contact"
+          style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;"
+          >Contact Us</a
+        >
+        <a
+          href="/privacy"
+          style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;"
+          >Privacy Policy</a
+        >
+        <a
+          href="/terms"
+          style="color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem;"
+          >Terms of Service</a
+        >
       </div>
       <div class="footer-bottom" style="text-align: center;">
         <p>{t.footerText}</p>
@@ -345,8 +411,10 @@ const faqSchema = {
     </div>
   </footer>
 
-  <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)}
+  ></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}
+  ></script>
   {calculatorScopedCss && <style is:global set:html={calculatorScopedCss} />}
 </Layout>
 
@@ -394,7 +462,11 @@ const faqSchema = {
 
   .logo-text b {
     font-weight: 800;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-accent-purple)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
