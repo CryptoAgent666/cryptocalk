@@ -123,7 +123,6 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
           <div className="input-group">
             <label>Portfolio Value (USD)</label>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sortino-value" />
             </div>
           </div>
@@ -142,7 +141,6 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sortino-return" />
             </div>
           </div>
@@ -161,7 +159,6 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sortino-rf" />
             </div>
           </div>
@@ -180,7 +177,6 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={downsideDeviation} onChange={(e) => setDownsideDeviation(e.target.value)} min="0.01" step="any" id="sortino-dd" />
             </div>
           </div>

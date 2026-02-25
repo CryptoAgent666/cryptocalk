@@ -185,9 +185,8 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={collateralValue} onChange={(e) => setCollateralValue(e.target.value)}
-                                placeholder="10,000" id="loan-collateral" step="any" min="0" />
+                                placeholder="" id="loan-collateral" step="any" min="0" />
                         </div>
                     </div>
 
@@ -203,7 +202,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <input type="number" inputMode="decimal" value={ltv} onChange={(e) => setLtv(e.target.value)}
-                            placeholder="50" id="loan-ltv" step="1" min="1" max="100" />
+                            placeholder="" id="loan-ltv" step="1" min="1" max="100" />
                     </div>
 
                     {/* APR */}
@@ -221,9 +220,8 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">%</span>
                             <input type="number" inputMode="decimal" value={apr} onChange={(e) => setApr(e.target.value)}
-                                placeholder="6.9" id="loan-apr" step="0.1" min="0" />
+                                placeholder="" id="loan-apr" step="0.1" min="0" />
                         </div>
                     </div>
 
@@ -256,7 +254,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                 ))}
                             </div>
                             <input type="number" inputMode="decimal" value={marginCallLtv} onChange={(e) => setMarginCallLtv(e.target.value)}
-                                placeholder="75" id="loan-mc" step="1" min="1" max="100" />
+                                placeholder="" id="loan-mc" step="1" min="1" max="100" />
                         </div>
                         <div className="input-group">
                             <label style={{ fontSize: '0.75rem' }}><TrendingDown size={12} /> Liquidation LTV %</label>
@@ -272,7 +270,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                 ))}
                             </div>
                             <input type="number" inputMode="decimal" value={liquidationLtv} onChange={(e) => setLiquidationLtv(e.target.value)}
-                                placeholder="83" id="loan-liq" step="1" min="1" max="100" />
+                                placeholder="" id="loan-liq" step="1" min="1" max="100" />
                         </div>
                     </div>
 

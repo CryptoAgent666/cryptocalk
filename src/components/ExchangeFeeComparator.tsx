@@ -7,7 +7,6 @@ import {
     ArrowRight,
     Trophy,
     TrendingDown,
-    ExternalLink,
     BarChart3,
 } from 'lucide-react';
 
@@ -17,23 +16,22 @@ type VolumeTier = '<10K' | '10K-50K' | '50K-1M' | '>1M';
 
 interface ExchangeData {
     name: string;
-    url: string;
     spot: { maker: number; taker: number };
     futures: { maker: number; taker: number };
     discount?: { token: string; percent: number };
 }
 
 const EXCHANGES: ExchangeData[] = [
-    { name: 'Binance', url: 'https://www.binance.com', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.05 }, discount: { token: 'BNB', percent: 25 } },
-    { name: 'Bybit', url: 'https://www.bybit.com', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.055 } },
-    { name: 'OKX', url: 'https://www.okx.com', spot: { maker: 0.08, taker: 0.10 }, futures: { maker: 0.02, taker: 0.05 }, discount: { token: 'OKB', percent: 25 } },
-    { name: 'Coinbase', url: 'https://www.coinbase.com', spot: { maker: 0.40, taker: 0.60 }, futures: { maker: 0.02, taker: 0.05 } },
-    { name: 'Kraken', url: 'https://www.kraken.com', spot: { maker: 0.25, taker: 0.40 }, futures: { maker: 0.02, taker: 0.05 } },
-    { name: 'KuCoin', url: 'https://www.kucoin.com', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.06 }, discount: { token: 'KCS', percent: 20 } },
-    { name: 'Gate.io', url: 'https://www.gate.io', spot: { maker: 0.20, taker: 0.20 }, futures: { maker: 0.015, taker: 0.05 }, discount: { token: 'GT', percent: 25 } },
-    { name: 'Bitget', url: 'https://www.bitget.com', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.06 }, discount: { token: 'BGB', percent: 20 } },
-    { name: 'MEXC', url: 'https://www.mexc.com', spot: { maker: 0.00, taker: 0.10 }, futures: { maker: 0.00, taker: 0.03 } },
-    { name: 'HTX', url: 'https://www.htx.com', spot: { maker: 0.20, taker: 0.20 }, futures: { maker: 0.02, taker: 0.05 }, discount: { token: 'HT', percent: 25 } },
+    { name: 'Binance', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.05 }, discount: { token: 'BNB', percent: 25 } },
+    { name: 'Bybit', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.055 } },
+    { name: 'OKX', spot: { maker: 0.08, taker: 0.10 }, futures: { maker: 0.02, taker: 0.05 }, discount: { token: 'OKB', percent: 25 } },
+    { name: 'Coinbase', spot: { maker: 0.40, taker: 0.60 }, futures: { maker: 0.02, taker: 0.05 } },
+    { name: 'Kraken', spot: { maker: 0.25, taker: 0.40 }, futures: { maker: 0.02, taker: 0.05 } },
+    { name: 'KuCoin', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.06 }, discount: { token: 'KCS', percent: 20 } },
+    { name: 'Gate.io', spot: { maker: 0.20, taker: 0.20 }, futures: { maker: 0.015, taker: 0.05 }, discount: { token: 'GT', percent: 25 } },
+    { name: 'Bitget', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.06 }, discount: { token: 'BGB', percent: 20 } },
+    { name: 'MEXC', spot: { maker: 0.00, taker: 0.10 }, futures: { maker: 0.00, taker: 0.03 } },
+    { name: 'HTX', spot: { maker: 0.20, taker: 0.20 }, futures: { maker: 0.02, taker: 0.05 }, discount: { token: 'HT', percent: 25 } },
 ];
 
 const VOLUME_MULTIPLIERS: Record<VolumeTier, number> = {
@@ -171,12 +169,11 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label><DollarSign size={14} /> Trade Amount</label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={tradeAmount}
                                 onChange={(e) => setTradeAmount(e.target.value)}
-                                placeholder="1,000"
+                                placeholder=""
                                 id="exchange-fee-amount"
                                 step="any"
                                 min="0"
@@ -265,7 +262,6 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Fee Rate')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Fee ($)')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'With Discount')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'center', color: 'var(--color-text-muted)', fontWeight: 500 }}></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -311,39 +307,11 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                                                             : '—'
                                                         }
                                                     </td>
-                                                    <td style={{ padding: '8px', textAlign: 'center' }}>
-                                                        <a
-                                                            href={row.url}
-                                                            target="_blank" rel="noopener noreferrer sponsored"
-                                                            
-                                                            style={{
-                                                                display: 'inline-flex', alignItems: 'center', gap: '4px',
-                                                                padding: '5px 10px', borderRadius: '6px',
-                                                                background: idx === 0 ? 'var(--color-accent-green)' : 'var(--color-primary)',
-                                                                color: '#fff', fontSize: '0.72rem', fontWeight: 600,
-                                                                textDecoration: 'none', whiteSpace: 'nowrap',
-                                                            }}
-                                                        >
-                                                            {getUiString(lang, 'Sign Up')} <ExternalLink size={10} />
-                                                        </a>
-                                                    </td>
                                                 </tr>
                                             ))}
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-
-                            {/* CTA for cheapest */}
-                            <div className="result-cta">
-                                <a
-                                    href={cheapest.url}
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    Trade on {cheapest.name} — Lowest Fees →
-                                </a>
                             </div>
 
                             <p className="calc-disclaimer">

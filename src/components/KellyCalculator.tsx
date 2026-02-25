@@ -112,7 +112,6 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="kelly-win-rate" />
             </div>
           </div>
@@ -131,7 +130,6 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={avgWinPct} onChange={(e) => setAvgWinPct(e.target.value)} min="0.01" step="any" id="kelly-avg-win" />
             </div>
           </div>
@@ -150,7 +148,6 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={avgLossPct} onChange={(e) => setAvgLossPct(e.target.value)} min="0.01" step="any" id="kelly-avg-loss" />
             </div>
           </div>
@@ -169,7 +166,6 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={capital} onChange={(e) => setCapital(e.target.value)} min="0" step="any" id="kelly-capital" />
             </div>
           </div>

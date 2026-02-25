@@ -134,7 +134,6 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={accountSize} onChange={(e) => setAccountSize(e.target.value)} min="0" step="any" id="exp-account-size" />
             </div>
           </div>
@@ -153,7 +152,6 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="exp-win-rate" />
             </div>
           </div>
@@ -204,7 +202,6 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="exp-risk-trade" />
             </div>
           </div>

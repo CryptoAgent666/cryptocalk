@@ -374,12 +374,11 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">#</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={numGpus}
                                 onChange={(e) => setNumGpus(e.target.value)}
-                                placeholder="1"
+                                placeholder=""
                                 id="num-gpus-input"
                                 step="1"
                                 min="1"
@@ -401,7 +400,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 onChange={(e) => {
                                     setHashrate(e.target.value);
                                 }}
-                                placeholder="120"
+                                placeholder=""
                                 id="hashrate-input"
                                 step="any"
                                 min="0"
@@ -424,7 +423,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 onChange={(e) => {
                                     setPower(e.target.value);
                                 }}
-                                placeholder="350"
+                                placeholder=""
                                 id="power-input"
                                 step="any"
                                 min="0"
@@ -451,12 +450,11 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={electricityCost}
                                 onChange={(e) => setElectricityCost(e.target.value)}
-                                placeholder="0.10"
+                                placeholder=""
                                 id="electricity-input"
                                 step="0.01"
                                 min="0"
@@ -482,12 +480,11 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={poolFee}
                                 onChange={(e) => setPoolFee(e.target.value)}
-                                placeholder="1"
+                                placeholder=""
                                 id="pool-fee-input"
                                 step="0.1"
                                 min="0"
@@ -537,7 +534,6 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={hardwareCost}
@@ -702,18 +698,6 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                     </div>
                                 </div>
                             )}
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.f2pool.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Join F2Pool Mining Pool →')}
-                                </a>
-                            </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">

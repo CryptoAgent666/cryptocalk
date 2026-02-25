@@ -532,18 +532,6 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                                 {getUiString(lang, 'Share on X')}
                             </button>
 
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.binance.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    Buy {targetData.symbol.toUpperCase()} on Binance →
-                                </a>
-                            </div>
-
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />

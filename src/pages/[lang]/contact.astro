@@ -22,7 +22,6 @@ interface ContactContent {
   introText: string;
   emailLabel: string;
   emailHint: string;
-  businessLabel: string;
   responseLabel: string;
   responseText: string;
   sendMessage: string;
@@ -34,7 +33,6 @@ interface ContactContent {
   subjectGeneral: string;
   subjectCalculator: string;
   subjectBug: string;
-  subjectPartnership: string;
   messageLabel: string;
   messagePlaceholder: string;
   sendButton: string;
@@ -46,14 +44,13 @@ interface ContactContent {
 const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
   es: {
     pageTitle: 'Contáctenos | CryptoCalk',
-    metaDescription: 'Ponte en contacto con el equipo de CryptoCalk. Recibimos comentarios, solicitudes de calculadoras y consultas de colaboración.',
+    metaDescription: 'Ponte en contacto con el equipo de CryptoCalk. Recibimos comentarios y solicitudes de calculadoras.',
     heading: 'Contáctenos',
     subtitle: 'Estamos aquí para ayudarte y escuchar tus comentarios.',
     getInTouch: 'Ponte en Contacto',
     introText: 'Ya sea que tengas una pregunta sobre una calculadora, quieras reportar un error o tengas una sugerencia para una nueva herramienta, ¡nos encantaría saber de ti!',
     emailLabel: 'Correo Electrónico',
     emailHint: 'Para consultas generales y soporte.',
-    businessLabel: 'Negocios y Colaboraciones',
     responseLabel: 'Tiempo de Respuesta',
     responseText: 'Nos esforzamos por responder a todas las consultas en 24-48 horas.',
     sendMessage: 'Enviar un Mensaje',
@@ -65,7 +62,6 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
     subjectGeneral: 'Consulta General',
     subjectCalculator: 'Solicitud de Calculadora',
     subjectBug: 'Reporte de Error',
-    subjectPartnership: 'Colaboración',
     messageLabel: 'Mensaje',
     messagePlaceholder: '¿En qué podemos ayudarte?',
     sendButton: 'Enviar Mensaje',
@@ -75,14 +71,13 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
   },
   pt: {
     pageTitle: 'Fale Conosco | CryptoCalk',
-    metaDescription: 'Entre em contato com a equipe CryptoCalk. Recebemos feedback, pedidos de calculadoras e consultas de parceria.',
+    metaDescription: 'Entre em contato com a equipe CryptoCalk. Recebemos feedback e pedidos de calculadoras.',
     heading: 'Fale Conosco',
     subtitle: 'Estamos aqui para ajudar e ouvir seu feedback.',
     getInTouch: 'Entre em Contato',
     introText: 'Seja uma dúvida sobre uma calculadora, um bug a reportar ou uma sugestão de nova ferramenta, adoraríamos ouvir você!',
     emailLabel: 'E-mail',
     emailHint: 'Para consultas gerais e suporte.',
-    businessLabel: 'Negócios e Parcerias',
     responseLabel: 'Tempo de Resposta',
     responseText: 'Procuramos responder todas as consultas em 24-48 horas.',
     sendMessage: 'Enviar uma Mensagem',
@@ -94,7 +89,6 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
     subjectGeneral: 'Consulta Geral',
     subjectCalculator: 'Pedido de Calculadora',
     subjectBug: 'Relatório de Bug',
-    subjectPartnership: 'Parceria',
     messageLabel: 'Mensagem',
     messagePlaceholder: 'Como podemos ajudar?',
     sendButton: 'Enviar Mensagem',
@@ -104,14 +98,13 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
   },
   tr: {
     pageTitle: 'Bize Ulaşın | CryptoCalk',
-    metaDescription: 'CryptoCalk ekibiyle iletişime geçin. Geri bildirimlerinizi, hesap makinesi taleplerinizi ve iş birliği tekliflerinizi bekliyoruz.',
+    metaDescription: 'CryptoCalk ekibiyle iletişime geçin. Geri bildirimlerinizi ve hesap makinesi taleplerinizi bekliyoruz.',
     heading: 'Bize Ulaşın',
     subtitle: 'Yardımcı olmak ve geri bildirimlerinizi dinlemek için buradayız.',
     getInTouch: 'İletişime Geçin',
     introText: 'Bir hesap makinesi hakkında sorunuz, bildirmek istediğiniz bir hata veya yeni bir araç öneriniz varsa, sizden duymak isteriz!',
     emailLabel: 'E-posta',
     emailHint: 'Genel sorular ve destek için.',
-    businessLabel: 'İş ve Ortaklıklar',
     responseLabel: 'Yanıt Süresi',
     responseText: 'Tüm sorulara 24-48 saat içinde yanıt vermeyi hedefliyoruz.',
     sendMessage: 'Mesaj Gönderin',
@@ -123,7 +116,6 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
     subjectGeneral: 'Genel Soru',
     subjectCalculator: 'Hesap Makinesi Talebi',
     subjectBug: 'Hata Bildirimi',
-    subjectPartnership: 'İş Birliği',
     messageLabel: 'Mesaj',
     messagePlaceholder: 'Size nasıl yardımcı olabiliriz?',
     sendButton: 'Mesaj Gönder',
@@ -133,14 +125,13 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
   },
   hi: {
     pageTitle: 'संपर्क करें | CryptoCalk',
-    metaDescription: 'CryptoCalk टीम से संपर्क करें। हम आपकी प्रतिक्रिया, कैलकुलेटर अनुरोध और साझेदारी पूछताछ का स्वागत करते हैं।',
+    metaDescription: 'CryptoCalk टीम से संपर्क करें। हम आपकी प्रतिक्रिया और कैलकुलेटर अनुरोधों का स्वागत करते हैं।',
     heading: 'संपर्क करें',
     subtitle: 'हम आपकी मदद करने और आपकी प्रतिक्रिया सुनने के लिए यहाँ हैं।',
     getInTouch: 'संपर्क में रहें',
     introText: 'चाहे आपका किसी कैलकुलेटर के बारे में सवाल हो, बग रिपोर्ट करना हो, या नए टूल का सुझाव हो, हम आपसे सुनना पसंद करेंगे!',
     emailLabel: 'ईमेल',
     emailHint: 'सामान्य पूछताछ और सहायता के लिए।',
-    businessLabel: 'व्यापार और साझेदारी',
     responseLabel: 'प्रतिक्रिया समय',
     responseText: 'हम सभी पूछताछ का 24-48 घंटे में जवाब देने का प्रयास करते हैं।',
     sendMessage: 'संदेश भेजें',
@@ -152,7 +143,6 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
     subjectGeneral: 'सामान्य पूछताछ',
     subjectCalculator: 'कैलकुलेटर अनुरोध',
     subjectBug: 'बग रिपोर्ट',
-    subjectPartnership: 'साझेदारी',
     messageLabel: 'संदेश',
     messagePlaceholder: 'हम आपकी कैसे मदद कर सकते हैं?',
     sendButton: 'संदेश भेजें',
@@ -162,14 +152,13 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
   },
   ru: {
     pageTitle: 'Связаться с Нами | CryptoCalk',
-    metaDescription: 'Свяжитесь с командой CryptoCalk. Мы приветствуем отзывы, запросы калькуляторов и предложения о сотрудничестве.',
+    metaDescription: 'Свяжитесь с командой CryptoCalk. Мы приветствуем отзывы и запросы калькуляторов.',
     heading: 'Связаться с Нами',
     subtitle: 'Мы здесь, чтобы помочь и выслушать ваши отзывы.',
     getInTouch: 'Свяжитесь с Нами',
     introText: 'Есть вопрос о калькуляторе, хотите сообщить об ошибке или предложить новый инструмент — мы будем рады услышать вас!',
     emailLabel: 'Электронная почта',
     emailHint: 'Для общих вопросов и поддержки.',
-    businessLabel: 'Бизнес и Партнёрство',
     responseLabel: 'Время ответа',
     responseText: 'Мы стремимся отвечать на все обращения в течение 24-48 часов.',
     sendMessage: 'Отправить Сообщение',
@@ -181,7 +170,6 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
     subjectGeneral: 'Общий вопрос',
     subjectCalculator: 'Запрос калькулятора',
     subjectBug: 'Сообщение об ошибке',
-    subjectPartnership: 'Сотрудничество',
     messageLabel: 'Сообщение',
     messagePlaceholder: 'Чем мы можем помочь?',
     sendButton: 'Отправить Сообщение',
@@ -219,13 +207,6 @@ const c = content[lang];
                 <strong>{c.emailLabel}</strong>
                 <a href="mailto:support@cryptocalk.com">support@cryptocalk.com</a>
                 <span class="hint">{c.emailHint}</span>
-              </div>
-            </li>
-            <li>
-              <Mail class="icon" size={20} />
-              <div>
-                <strong>{c.businessLabel}</strong>
-                <a href="mailto:partners@cryptocalk.com">partners@cryptocalk.com</a>
               </div>
             </li>
             <li>
@@ -268,7 +249,6 @@ const c = content[lang];
                 <option value={c.subjectGeneral}>{c.subjectGeneral}</option>
                 <option value={c.subjectCalculator}>{c.subjectCalculator}</option>
                 <option value={c.subjectBug}>{c.subjectBug}</option>
-                <option value={c.subjectPartnership}>{c.subjectPartnership}</option>
               </select>
             </div>
             <div class="form-group">

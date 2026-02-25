@@ -115,7 +115,6 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="0" step="any" id="slippage-tvl" />
             </div>
           </div>
@@ -134,7 +133,6 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">$</span>
               <input type="number" inputMode="decimal" value={tradeSize} onChange={(e) => setTradeSize(e.target.value)} min="0" step="any" id="slippage-trade" />
             </div>
           </div>
@@ -153,7 +151,6 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={dexFee} onChange={(e) => setDexFee(e.target.value)} min="0" step="any" id="slippage-fee" />
             </div>
           </div>
@@ -172,7 +169,6 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <span className="input-prefix">%</span>
               <input type="number" inputMode="decimal" value={slippageTolerance} onChange={(e) => setSlippageTolerance(e.target.value)} min="0" step="any" id="slippage-tolerance" />
             </div>
           </div>

@@ -152,14 +152,11 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                             {inputMode === 'satoshi' ? 'Amount (sats)' : inputMode === 'btc' ? 'Amount (BTC)' : 'Amount (USD)'}
                         </label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">
-                                {inputMode === 'satoshi' ? 'sat' : inputMode === 'btc' ? '\u20bf' : '$'}
-                            </span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
-                                placeholder={inputMode === 'satoshi' ? '100000' : inputMode === 'btc' ? '0.001' : '100'}
+                                placeholder=""
                                 id="satoshi-amount"
                                 step="any"
                                 min="0"
@@ -354,18 +351,6 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.kraken.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Buy Bitcoin on Kraken (Lightning Network) &rarr;')}
-                                </a>
                             </div>
 
                             {/* Disclaimer */}

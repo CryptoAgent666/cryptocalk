@@ -319,7 +319,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={totalTokens}
                                 onChange={(e) => setTotalTokens(e.target.value)}
-                                placeholder="1,000,000"
+                                placeholder=""
                                 id="vest-total"
                                 step="any"
                                 min="0"
@@ -345,12 +345,11 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={tokenPrice}
                                 onChange={(e) => setTokenPrice(e.target.value)}
-                                placeholder="0.50"
+                                placeholder=""
                                 id="vest-price"
                                 step="any"
                                 min="0"
@@ -377,12 +376,11 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={tgePct}
                                 onChange={(e) => setTgePct(e.target.value)}
-                                placeholder="10"
+                                placeholder=""
                                 id="vest-tge"
                                 step="1"
                                 min="0"
@@ -413,7 +411,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={cliffMonths}
                                 onChange={(e) => setCliffMonths(e.target.value)}
-                                placeholder="6"
+                                placeholder=""
                                 id="vest-cliff"
                                 step="1"
                                 min="0"
@@ -444,7 +442,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={vestingMonths}
                                 onChange={(e) => setVestingMonths(e.target.value)}
-                                placeholder="24"
+                                placeholder=""
                                 id="vest-duration"
                                 step="1"
                                 min="1"
@@ -723,18 +721,6 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                     </span>
                                 </div>
                             )}
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://cryptorank.io"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Track token unlocks on CryptoRank &rarr;')}
-                                </a>
-                            </div>
 
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">

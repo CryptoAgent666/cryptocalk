@@ -307,9 +307,8 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="65,000" id="margin-entry" step="any" min="0" />
+                                placeholder="" id="margin-entry" step="any" min="0" />
                         </div>
                     </div>
 
@@ -328,9 +327,8 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="10,000" id="margin-size" step="any" min="0" />
+                                placeholder="" id="margin-size" step="any" min="0" />
                         </div>
                     </div>
 
@@ -349,9 +347,8 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">×</span>
                             <input type="number" inputMode="decimal" value={leverage} onChange={(e) => setLeverage(e.target.value)}
-                                placeholder="10" id="margin-leverage" step="1" min="1" max="200" />
+                                placeholder="" id="margin-leverage" step="1" min="1" max="200" />
                         </div>
                     </div>
 
@@ -376,7 +373,6 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={walletBalance} onChange={(e) => setWalletBalance(e.target.value)}
                                 placeholder="Auto (= required margin)" id="margin-wallet" step="any" min="0" />
                         </div>
@@ -397,9 +393,8 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input type="number" inputMode="decimal" value={maintenanceRate} onChange={(e) => setMaintenanceRate(e.target.value)}
-                                placeholder="0.5" id="margin-mmr" step="0.1" min="0" />
+                                placeholder="" id="margin-mmr" step="0.1" min="0" />
                         </div>
                     </div>
 
@@ -514,13 +509,6 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                         {results.healthStatus === 'critical' && 'Critical margin level! You are at or below the margin call threshold. Immediate action required.'}
                                     </span>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a href="https://www.bybit.com" target="_blank" rel="noopener noreferrer sponsored"  className="cta-btn">
-                                    Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
-                                </a>
                             </div>
 
                             <p className="calc-disclaimer">

@@ -7,7 +7,6 @@ import {
     ArrowRightLeft,
     Fuel,
     Zap,
-    ExternalLink,
 } from 'lucide-react';
 
 const UNITS = [
@@ -181,7 +180,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                                     setAmount(v);
                                 }
                             }}
-                            placeholder="1"
+                            placeholder=""
                             id="gwei-amount"
                         />
                     </div>
@@ -225,12 +224,11 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                             {fetchingPrice && <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginLeft: '8px' }}>fetching...</span>}
                         </label>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={ethPrice}
                                 onChange={(e) => setEthPrice(e.target.value)}
-                                placeholder="3000"
+                                placeholder=""
                                 id="gwei-eth-price"
                                 step="any"
                                 min="0"
@@ -338,18 +336,6 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://l2beat.com/scaling/summary"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Explore L2 Networks on L2BEAT')} <ExternalLink size={14} />
-                                </a>
                             </div>
 
                             <p className="calc-disclaimer">

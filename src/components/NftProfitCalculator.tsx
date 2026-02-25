@@ -8,7 +8,6 @@ import {
     TrendingUp,
     TrendingDown,
     AlertTriangle,
-    ExternalLink,
     Image,
     Fuel,
 } from 'lucide-react';
@@ -203,12 +202,11 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                 type="number" inputMode="decimal"
                                 value={buyPrice}
                                 onChange={(e) => setBuyPrice(e.target.value)}
-                                placeholder="0.00"
+                                placeholder=""
                                 id="nft-buy-price"
                                 step="any"
                                 min="0"
                             />
-                            <span className="input-prefix">ETH</span>
                         </div>
                     </div>
 
@@ -231,12 +229,11 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                 type="number" inputMode="decimal"
                                 value={sellPrice}
                                 onChange={(e) => setSellPrice(e.target.value)}
-                                placeholder="0.00"
+                                placeholder=""
                                 id="nft-sell-price"
                                 step="any"
                                 min="0"
                             />
-                            <span className="input-prefix">ETH</span>
                         </div>
                     </div>
 
@@ -279,12 +276,11 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={marketplaceFee}
                                 onChange={(e) => { setMarketplaceFee(e.target.value); setMarketplace('custom'); }}
-                                placeholder="2.5"
+                                placeholder=""
                                 id="nft-mp-fee"
                                 step="0.1"
                                 min="0"
@@ -307,12 +303,11 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={royalty}
                                 onChange={(e) => setRoyalty(e.target.value)}
-                                placeholder="5"
+                                placeholder=""
                                 id="nft-royalty"
                                 step="0.5"
                                 min="0"
@@ -336,12 +331,11 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={gasBuy}
                                 onChange={(e) => setGasBuy(e.target.value)}
-                                placeholder="10"
+                                placeholder=""
                                 id="nft-gas-buy"
                                 step="1"
                                 min="0"
@@ -364,12 +358,11 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={gasSell}
                                 onChange={(e) => setGasSell(e.target.value)}
-                                placeholder="10"
+                                placeholder=""
                                 id="nft-gas-sell"
                                 step="1"
                                 min="0"
@@ -395,12 +388,11 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={ethPrice}
                                 onChange={(e) => setEthPrice(e.target.value)}
-                                placeholder="3000"
+                                placeholder=""
                                 id="nft-eth-price"
                                 step="any"
                                 min="0"
@@ -554,18 +546,6 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://blur.io"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Trade NFTs on Blur')} <ExternalLink size={14} />
-                                </a>
                             </div>
 
                             <p className="calc-disclaimer">

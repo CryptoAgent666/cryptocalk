@@ -237,9 +237,8 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={deposit} onChange={(e) => setDeposit(e.target.value)}
-                                placeholder="1,000" id="yf-deposit" step="any" min="0" />
+                                placeholder="" id="yf-deposit" step="any" min="0" />
                         </div>
                     </div>
 
@@ -268,9 +267,8 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">%</span>
                             <input type="number" inputMode="decimal" value={poolRate} onChange={(e) => setPoolRate(e.target.value)}
-                                placeholder="50" id="yf-rate" step="0.1" min="0" />
+                                placeholder="" id="yf-rate" step="0.1" min="0" />
                         </div>
                     </div>
 
@@ -289,9 +287,8 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={gasEntry} onChange={(e) => setGasEntry(e.target.value)}
-                                placeholder="15" id="yf-gas-entry" step="0.1" min="0" />
+                                placeholder="" id="yf-gas-entry" step="0.1" min="0" />
                         </div>
                     </div>
 
@@ -309,9 +306,8 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={gasExit} onChange={(e) => setGasExit(e.target.value)}
-                                placeholder="15" id="yf-gas-exit" step="0.1" min="0" />
+                                placeholder="" id="yf-gas-exit" step="0.1" min="0" />
                         </div>
                     </div>
 
@@ -329,9 +325,8 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input type="number" inputMode="decimal" value={gasHarvest} onChange={(e) => setGasHarvest(e.target.value)}
-                                placeholder="5" id="yf-gas-harvest" step="0.1" min="0" />
+                                placeholder="" id="yf-gas-harvest" step="0.1" min="0" />
                         </div>
                     </div>
 
@@ -364,9 +359,8 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">%</span>
                             <input type="number" inputMode="decimal" value={ilPercent} onChange={(e) => setIlPercent(e.target.value)}
-                                placeholder="2" id="yf-il" step="0.1" min="0" max="50" />
+                                placeholder="" id="yf-il" step="0.1" min="0" max="50" />
                         </div>
                     </div>
 
@@ -384,7 +378,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={farmingDays} onChange={(e) => setFarmingDays(e.target.value)}
-                                placeholder="365" id="yf-days" step="1" min="1" />
+                                placeholder="" id="yf-days" step="1" min="1" />
                         </div>
                     </div>
 
@@ -508,18 +502,6 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                     </span>
                                 </div>
                             )}
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://yearn.fi"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    {getUiString(lang, 'Farm on Yearn Finance →')}
-                                </a>
-                            </div>
 
                             {/* Reference Table: Gas Impact at Different Deposit Sizes */}
                             <div style={{ marginTop: '20px' }}>

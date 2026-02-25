@@ -470,12 +470,11 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                             ))}
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-                            <span className="input-prefix">×</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={leverage}
                                 onChange={(e) => setLeverage(e.target.value)}
-                                placeholder="10"
+                                placeholder=""
                                 id="liq-leverage"
                                 step="1"
                                 min="1"
@@ -505,12 +504,11 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={entryPrice}
                                 onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="65,000"
+                                placeholder=""
                                 id="liq-entry-price"
                                 step="any"
                                 min="0"
@@ -536,12 +534,11 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                             ))}
                         </div>
                         <div className="input-with-prefix">
-                            <span className="input-prefix">$</span>
                             <input
                                 type="number" inputMode="decimal"
                                 value={positionSize}
                                 onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="10,000"
+                                placeholder=""
                                 id="liq-position-size"
                                 step="any"
                                 min="0"
@@ -568,12 +565,11 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 ))}
                             </div>
                             <div className="input-with-prefix">
-                                <span className="input-prefix">$</span>
                                 <input
                                     type="number" inputMode="decimal"
                                     value={walletBalance}
                                     onChange={(e) => setWalletBalance(e.target.value)}
-                                    placeholder="5,000"
+                                    placeholder=""
                                     id="liq-wallet-balance"
                                     step="any"
                                     min="0"
@@ -712,18 +708,6 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                     <Shield size={16} style={{ flexShrink: 0, marginTop: '2px', color: getRiskColor(results.riskLevel) }} />
                                     <span>{getSafetyTip(results.riskLevel)}</span>
                                 </div>
-                            </div>
-
-                            {/* CTA */}
-                            <div className="result-cta">
-                                <a
-                                    href="https://www.bybit.com"
-                                    target="_blank" rel="noopener noreferrer sponsored"
-                                    
-                                    className="cta-btn"
-                                >
-                                    Trade{selectedCoin ? ` ${selectedCoin.symbol.toUpperCase()}` : ''} on Bybit →
-                                </a>
                             </div>
 
                             {/* Disclaimer */}
