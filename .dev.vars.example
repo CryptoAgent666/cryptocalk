@@ -1,0 +1,4 @@
+RESEND_API_KEY=replace_me
+CONTACT_FROM_EMAIL=CryptoCalk Contact <no-reply@cryptocalk.com>
+CONTACT_TO_EMAIL=support@cryptocalk.com
+# TURNSTILE_SECRET=optional_if_turnstile_widget_enabled

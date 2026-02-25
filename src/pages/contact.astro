@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { Mail, MapPin, Clock } from 'lucide-react';
+import { Mail, Clock } from 'lucide-react';
 ---
 
 <Layout
@@ -51,13 +51,26 @@ import { Mail, MapPin, Clock } from 'lucide-react';
 
         <div class="contact-form-container">
           <h2>Send a Message</h2>
-          <form class="contact-form" action="mailto:support@cryptocalk.com" method="post" enctype="text/plain">
+          <form
+            class="contact-form js-contact-form"
+            action="/api/contact"
+            method="post"
+            data-sending-text="Sending..."
+            data-success-text="Thanks. Your message has been sent."
+            data-error-text="Unable to send right now. Please try again later."
+          >
+            <input type="hidden" name="redirectTo" value="/contact" />
+            <input type="hidden" name="formLocale" value="en" />
+            <div class="form-group honeypot" aria-hidden="true">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+            </div>
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required placeholder="Your name" />
             </div>
             <div class="form-group">
-              <label for="email">Email Analysis</label>
+              <label for="email">Email</label>
               <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
             </div>
             <div class="form-group">
@@ -74,6 +87,7 @@ import { Mail, MapPin, Clock } from 'lucide-react';
               <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
             </div>
             <button type="submit" class="btn-primary">Send Message</button>
+            <p class="form-status" data-form-status aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -81,6 +95,53 @@ import { Mail, MapPin, Clock } from 'lucide-react';
   </div>
   <SiteFooter lang="en" />
 </Layout>
+
+<script is:inline>
+  (() => {
+    const form = document.querySelector('.js-contact-form');
+    if (!(form instanceof HTMLFormElement)) return;
+
+    const statusEl = form.querySelector('[data-form-status]');
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (!(statusEl instanceof HTMLElement) || !(submitButton instanceof HTMLButtonElement)) return;
+
+    const sendingText = form.dataset.sendingText || 'Sending...';
+    const successText = form.dataset.successText || 'Thanks. Your message has been sent.';
+    const errorText = form.dataset.errorText || 'Unable to send right now. Please try again later.';
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      submitButton.disabled = true;
+      statusEl.textContent = sendingText;
+      statusEl.className = 'form-status pending';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+
+        const payload = await response.json().catch(() => ({}));
+
+        if (response.ok) {
+          statusEl.textContent = typeof payload.message === 'string' ? payload.message : successText;
+          statusEl.className = 'form-status success';
+          form.reset();
+          return;
+        }
+
+        statusEl.textContent = typeof payload.error === 'string' ? payload.error : errorText;
+        statusEl.className = 'form-status error';
+      } catch {
+        statusEl.textContent = errorText;
+        statusEl.className = 'form-status error';
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  })();
+</script>
 
 <style>
   .page-container {
@@ -166,6 +227,14 @@ import { Mail, MapPin, Clock } from 'lucide-react';
     flex-direction: column;
     gap: 20px;
   }
+  .honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
   .form-group {
     display: flex;
     flex-direction: column;
@@ -201,6 +270,24 @@ import { Mail, MapPin, Clock } from 'lucide-react';
   }
   .btn-primary:hover {
     background: var(--color-primary-dark);
+  }
+  .btn-primary:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+  .form-status {
+    margin: 4px 0 0;
+    min-height: 1.25em;
+    font-size: 0.9rem;
+  }
+  .form-status.pending {
+    color: var(--color-text-secondary);
+  }
+  .form-status.success {
+    color: #1ea971;
+  }
+  .form-status.error {
+    color: #d64545;
   }
   
   @media (max-width: 768px) {
