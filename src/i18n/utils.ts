@@ -358,6 +358,11 @@ function normalizePath(path: string): string {
     return withoutTrailingSlash || '/';
 }
 
+function withTrailingSlash(path: string): string {
+    if (path === '/') return '/';
+    return path.endsWith('/') ? path : `${path}/`;
+}
+
 function splitPath(path: string): string[] {
     return path.split('/').filter(Boolean);
 }
@@ -448,10 +453,11 @@ export function getLocalizedPath(path: string, lang: Lang): string {
     const localizedPath = localizedSegments.length > 0 ? `/${localizedSegments.join('/')}` : '/';
 
     if (lang === DEFAULT_LANG) {
-        return localizedPath;
+        return withTrailingSlash(localizedPath);
     }
 
-    return localizedPath === '/' ? `/${lang}` : `/${lang}${localizedPath}`;
+    const prefixedPath = localizedPath === '/' ? `/${lang}` : `/${lang}${localizedPath}`;
+    return withTrailingSlash(prefixedPath);
 }
 
 /**

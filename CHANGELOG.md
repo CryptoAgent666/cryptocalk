@@ -2,6 +2,42 @@
 
 All notable changes to this project are documented here.
 
+## [2026-02-26]
+
+### Changed
+- Standardized trailing-slash URL behavior for localized routing and canonical generation:
+  - `src/i18n/utils.ts`
+  - `src/components/SiteFooter.astro`
+  - `src/components/LocalizedCalculatorPage.astro`
+  - `src/pages/[lang]/index.astro`
+- Aligned internal page links to trailing-slash format across core EN calculator pages and homepage/navigation templates to reduce avoidable `301` hops.
+- Updated redirect targets to trailing-slash canonical destinations:
+  - `public/_redirects`
+- Updated robots sitemap declaration to `/sitemap.xml`:
+  - `public/robots.txt`
+- Added immutable/static cache policies for built assets and hourly freshness for crawl files:
+  - `public/_headers`
+
+### Added
+- Added sitemap compatibility output so `dist/sitemap.xml` is generated from `dist/sitemap-index.xml` during build:
+  - `scripts/postbuild-platform-files.mjs`
+- Added `WebPage` JSON-LD on trust pages (EN + localized):
+  - `src/pages/about.astro`
+  - `src/pages/contact.astro`
+  - `src/pages/terms.astro`
+  - `src/pages/[lang]/about.astro`
+  - `src/pages/[lang]/contact.astro`
+  - `src/pages/[lang]/terms.astro`
+
+### Fixed
+- Marked custom 404 page as non-indexable via layout prop:
+  - `src/pages/404.astro`
+- Localized cookie-policy link generation now follows language path + trailing slash:
+  - `src/components/CookieBanner.astro`
+  - `src/layouts/Layout.astro`
+- Fixed localized style verification scope to skip non-calculator localized static pages (`about`, `contact`, `terms`) to keep CI checks aligned with their intended target set:
+  - `scripts/verify-localized-styles.mjs`
+
 ## [2026-02-25]
 
 ### Changed
