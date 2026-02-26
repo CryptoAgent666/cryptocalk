@@ -1,11 +1,19 @@
 ---
+import { getLocalizedPath, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'en' } = Astro.props as Props;
+const privacyHref = getLocalizedPath('/privacy', lang);
 ---
 
 <div id="cookie-banner" class="cookie-banner" hidden>
   <div class="cookie-content">
     <p>
       We use cookies to improve your experience and analyze site traffic. By continuing to use our site, you consent to our use of cookies.
-      <a href="/privacy">Read Privacy Policy</a>.
+      <a href={privacyHref}>Read Privacy Policy</a>.
     </p>
     <div class="cookie-actions">
       <button id="cookie-accept" class="btn-cookie btn-accept">Accept All</button>

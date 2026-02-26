@@ -109,6 +109,15 @@ const content: Record<Exclude<Lang, 'en'>, TermsContent> = {
 };
 
 const c = content[lang];
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: c.pageTitle,
+  description: c.metaDescription,
+  url: `https://cryptocalk.com/${lang}/terms/`,
+  inLanguage: lang,
+  dateModified: '2026-02-26',
+};
 ---
 
 <Layout
@@ -142,6 +151,7 @@ const c = content[lang];
     </div>
   </div>
   <SiteFooter lang={lang} />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>
 
 <style>

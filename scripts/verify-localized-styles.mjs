@@ -8,6 +8,7 @@ const EN_PAGES_DIR = path.join(ROOT, 'src', 'pages');
 const LOCALIZED_PAGES_DIR = path.join(ROOT, 'src', 'pages', '[lang]');
 const LANGS = ['es', 'pt', 'tr', 'hi', 'ru'];
 const STYLE_BLOCK_RE = /<style(?:\s[^>]*)?>([\s\S]*?)<\/style>/g;
+const NON_CALCULATOR_LOCALIZED_PAGES = new Set(['about.astro', 'contact.astro', 'terms.astro']);
 
 function extractStyleBlocks(source) {
   return Array.from(source.matchAll(STYLE_BLOCK_RE))
@@ -42,6 +43,7 @@ function readLocalizedSlugs() {
     .readdirSync(LOCALIZED_PAGES_DIR)
     .filter((name) => name.endsWith('.astro'))
     .filter((name) => name !== 'index.astro' && name !== '[policy].astro')
+    .filter((name) => !NON_CALCULATOR_LOCALIZED_PAGES.has(name))
     .filter((name) => !name.startsWith('['))
     .map((name) => name.replace(/\.astro$/, ''))
     .sort();

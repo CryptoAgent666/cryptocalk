@@ -1,5 +1,5 @@
 ---
-import type { Lang } from '../i18n/utils';
+import { getLocalizedPath, type Lang } from '../i18n/utils';
 import { getTranslations } from '../i18n/translations';
 
 export interface Props {
@@ -7,32 +7,33 @@ export interface Props {
 }
 
 const { lang = "en" } = Astro.props;
-const prefix = lang === "en" ? "" : `/${lang}`;
 const t = getTranslations(lang as Lang);
+const localPath = (route: string) => getLocalizedPath(route, lang as Lang);
+const homeHref = getLocalizedPath('/', lang as Lang);
 
 const coreLinks = [
-    { name: t.profitCalculator, href: `${prefix}/profit-calculator` },
-    { name: t.cryptoConverter, href: `${prefix}/converter` },
-    { name: t.miningCalculator, href: `${prefix}/mining-calculator` },
-    { name: t.dcaCalculator, href: `${prefix}/dca-calculator` },
-    { name: t.taxCalculator, href: `${prefix}/tax-calculator` },
-    { name: t.positionSizeCalculator, href: `${prefix}/position-size-calculator` },
+    { name: t.profitCalculator, href: localPath('/profit-calculator') },
+    { name: t.cryptoConverter, href: localPath('/converter') },
+    { name: t.miningCalculator, href: localPath('/mining-calculator') },
+    { name: t.dcaCalculator, href: localPath('/dca-calculator') },
+    { name: t.taxCalculator, href: localPath('/tax-calculator') },
+    { name: t.positionSizeCalculator, href: localPath('/position-size-calculator') },
 ];
 
 const exploreLinks = [
-    { name: t.stakingCalculator, href: `${prefix}/staking-calculator` },
-    { name: t.gasCalculator, href: `${prefix}/gas-calculator` },
-    { name: t.portfolioCalculator, href: `${prefix}/portfolio-calculator` },
-    { name: t.whatIfCalculator, href: `${prefix}/what-if` },
-    { name: t.breakEvenCalculator, href: `${prefix}/break-even-calculator` },
-    { name: t.allCalculators.replace('← ', ''), href: prefix || "/" },
+    { name: t.stakingCalculator, href: localPath('/staking-calculator') },
+    { name: t.gasCalculator, href: localPath('/gas-calculator') },
+    { name: t.portfolioCalculator, href: localPath('/portfolio-calculator') },
+    { name: t.whatIfCalculator, href: localPath('/what-if') },
+    { name: t.breakEvenCalculator, href: localPath('/break-even-calculator') },
+    { name: t.allCalculators.replace('← ', ''), href: homeHref },
 ];
 ---
 
 <footer class="site-footer">
     <div class="footer-inner">
         <div class="footer-brand">
-            <a href={prefix || "/"} class="footer-logo">Crypto<b>Calk</b></a>
+            <a href={homeHref} class="footer-logo">Crypto<b>Calk</b></a>
             <p>{t.footerTagline}</p>
         </div>
         <div class="footer-links">
@@ -50,11 +51,11 @@ const exploreLinks = [
             </div>
             <div class="footer-col">
                 <h4>{t.footerTrustLegal}</h4>
-                <a href={`${prefix}/about`}>{t.footerAboutUs}</a>
-                <a href={`${prefix}/contact`}>{t.footerContactUs}</a>
-                <a href={`${prefix}/privacy`}>{t.privacyPolicy}</a>
-                <a href={`${prefix}/terms`}>{t.footerTerms}</a>
-                <a href={`${prefix}/editorial-policy`}>{t.editorialPolicy}</a>
+                <a href={localPath('/about')}>{t.footerAboutUs}</a>
+                <a href={localPath('/contact')}>{t.footerContactUs}</a>
+                <a href={localPath('/privacy')}>{t.privacyPolicy}</a>
+                <a href={localPath('/terms')}>{t.footerTerms}</a>
+                <a href={localPath('/editorial-policy')}>{t.editorialPolicy}</a>
             </div>
         </div>
         <div class="footer-bottom">

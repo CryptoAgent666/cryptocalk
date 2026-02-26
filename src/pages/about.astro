@@ -3,6 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { Mail, Briefcase, Code, Award, Twitter, Linkedin, Instagram, Globe } from 'lucide-react';
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'About Us | CryptoCalk',
+  description:
+    'Learn about CryptoCalk and Konstantin Iakovlev, the founder and developer behind our suite of fast, accurate crypto calculators.',
+  url: 'https://cryptocalk.com/about/',
+  inLanguage: 'en',
+  dateModified: '2026-02-26',
+};
 ---
 
 <Layout
@@ -32,7 +43,7 @@ import { Mail, Briefcase, Code, Award, Twitter, Linkedin, Instagram, Globe } fro
           <div class="author-avatar-col">
             <img src="/images/author_avatar.jpg" alt="Konstantin Iakovlev" class="author-avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIwIDIxdi0yYTRgNCAwIDAwLTQtNEg4YTRgNCAwIDAwLTRgNHYyIj48L3BhdGg+PGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ij48L2NpcmNsZT48L3N2Zz4='" />
             <div class="author-social">
-              <a href="/contact" class="btn-primary btn-sm">Contact Me</a>
+              <a href="/contact/" class="btn-primary btn-sm">Contact Me</a>
             </div>
             <div class="author-social-links">
               <a href="https://x.com/yakovlevka3" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><Twitter size={20} /></a>
@@ -84,6 +95,7 @@ import { Mail, Briefcase, Code, Award, Twitter, Linkedin, Instagram, Globe } fro
     </div>
   </div>
   <SiteFooter lang="en" />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>
 
 <style>
