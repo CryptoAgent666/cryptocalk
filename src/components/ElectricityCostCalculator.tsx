@@ -402,7 +402,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                     {formatUSD(monthlyCost)}
                                 </span>
                                 <span className="result-hero-roi fee">
-                                    {formatNumber(totalPowerKw, 2)} kW total &middot; {formatNumber(dailyKwh, 1)} kWh/day
+                                    {formatNumber(totalPowerKw, 2)} kW {getUiString(lang, 'total')} &middot; {formatNumber(dailyKwh, 1)} kWh/{getUiString(lang, 'day')}
                                 </span>
                             </div>
 
@@ -416,7 +416,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 <div className="result-divider" />
                                 {consumption.map((row) => (
                                     <div className="result-row" key={row.period}>
-                                        <span className="result-label">{row.period}</span>
+                                        <span className="result-label">{getUiString(lang, row.period)}</span>
                                         <span className="result-value" style={{ textAlign: 'right', flex: 1 }}>
                                             {formatNumber(row.kwh, 1)}
                                         </span>

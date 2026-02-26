@@ -434,13 +434,13 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Marketplace Fee ({mpFeePct}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Marketplace Fee')} ({mpFeePct}%)</span>
                                     <span className="result-value fee">
                                         -{formatETH(marketplaceFeeEth)} / -{formatUSD(marketplaceFeeEth * ethPriceUsd)}
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Creator Royalty ({royaltyPct}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Creator Royalty')} ({royaltyPct}%)</span>
                                     <span className="result-value fee">
                                         -{formatETH(royaltyEth)} / -{formatUSD(royaltyEth * ethPriceUsd)}
                                     </span>
@@ -484,7 +484,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                     display: 'flex', gap: '8px', alignItems: 'center', margin: '12px 0',
                                 }}>
                                     <Info size={16} style={{ flexShrink: 0, color: '#6366f1' }} />
-                                    You need to sell above {formatETH(breakEvenSell)} ({formatUSD(breakEvenSell * ethPriceUsd)}) to break even
+                                    {getUiString(lang, 'You need to sell above')} {formatETH(breakEvenSell)} ({formatUSD(breakEvenSell * ethPriceUsd)}) {getUiString(lang, 'to break even')}
                                 </div>
                             )}
 

@@ -273,7 +273,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
             maximumFractionDigits: 0,
         }).format(n);
 
-    const frequencyLabel = unlockFrequency === 'monthly' ? 'Monthly' : unlockFrequency === 'quarterly' ? 'Quarterly' : 'Linear (daily)';
+    const frequencyLabel = unlockFrequency === 'monthly' ? getUiString(lang, 'Monthly') : unlockFrequency === 'quarterly' ? getUiString(lang, 'Quarterly') : getUiString(lang, 'Linear (daily)');
 
     return (
         <div className="calc-wrapper">
@@ -499,7 +499,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatUSD(totalValue)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-text-muted)' }}>
-                                    {formatTokens(total)} tokens @ {formatUSD(price)} each
+                                    {formatTokens(total)} {getUiString(lang, 'tokens')} @ {formatUSD(price)} {getUiString(lang, 'each')}
                                 </span>
                             </div>
 
@@ -513,11 +513,11 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Cliff Period')}</span>
-                                    <span className="result-value">{cliff} month{cliff !== 1 ? 's' : ''}</span>
+                                    <span className="result-value">{cliff} {cliff !== 1 ? getUiString(lang, 'months') : getUiString(lang, 'month')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Vesting Duration')}</span>
-                                    <span className="result-value">{vesting} month{vesting !== 1 ? 's' : ''} after cliff</span>
+                                    <span className="result-value">{vesting} {vesting !== 1 ? getUiString(lang, 'months') : getUiString(lang, 'month')} {getUiString(lang, 'after cliff')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Unlock Frequency')}</span>

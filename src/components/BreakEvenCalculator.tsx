@@ -247,7 +247,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                     +{recoveryPct.toFixed(2)}%
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-text-secondary)' }}>
-                                    to recover from a {loss}% loss
+                                    {getUiString(lang, 'to recover from a')} {loss}% {getUiString(lang, 'loss')}
                                 </span>
                             </div>
 
@@ -335,7 +335,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                     {formatUSD(breakEvenPrice)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-text-secondary)' }}>
-                                    {isShort ? 'Short' : 'Long'} from {formatUSD(entry)} ({formatPct((breakEvenPrice / entry - 1) * 100)})
+                                    {isShort ? getUiString(lang, 'Short') : getUiString(lang, 'Long')} {getUiString(lang, 'from')} {formatUSD(entry)} ({formatPct((breakEvenPrice / entry - 1) * 100)})
                                 </span>
                             </div>
 
@@ -354,11 +354,11 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Entry Fee ({eFee}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Entry Fee')} ({eFee}%)</span>
                                     <span className="result-value fee">{formatUSD(size * eFee / 100)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Exit Fee ({xFee}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Exit Fee')} ({xFee}%)</span>
                                     <span className="result-value fee">{formatUSD(size * xFee / 100)}</span>
                                 </div>
                                 <div className="result-row">

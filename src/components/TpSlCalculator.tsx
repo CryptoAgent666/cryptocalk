@@ -294,7 +294,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         position: 'absolute', left: '-60px', top: '-10px',
                         fontSize: '0.7rem', fontWeight: 600, color: 'var(--color-primary)',
                         width: '55px', textAlign: 'right',
-                    }}>Entry</span>
+                    }}>{getUiString(lang, 'Entry')}</span>
                     <span style={{
                         position: 'absolute', right: 0, top: '-10px',
                         fontSize: '0.7rem', fontWeight: 500, color: 'var(--color-text-secondary)',
@@ -312,7 +312,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         position: 'absolute', left: '-60px', top: '-10px',
                         fontSize: '0.7rem', fontWeight: 600, color: '#ef4444',
                         width: '55px', textAlign: 'right',
-                    }}>Stop Loss</span>
+                    }}>{getUiString(lang, 'Stop Loss')}</span>
                     <span style={{
                         position: 'absolute', right: 0, top: '-10px',
                         fontSize: '0.7rem', fontWeight: 500, color: '#ef4444',
@@ -532,7 +532,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                 <span className="result-hero-roi" style={{
                                     color: overallRR >= 2 ? 'var(--color-accent-green)' : overallRR >= 1 ? '#f59e0b' : '#ef4444'
                                 }}>
-                                    {overallRR >= 2 ? 'Excellent ratio' : overallRR >= 1.5 ? 'Good ratio' : overallRR >= 1 ? 'Acceptable' : 'Poor — consider adjusting'}
+                                    {overallRR >= 2 ? getUiString(lang, 'Excellent ratio') : overallRR >= 1.5 ? getUiString(lang, 'Good ratio') : overallRR >= 1 ? getUiString(lang, 'Acceptable') : getUiString(lang, 'Poor — consider adjusting')}
                                 </span>
                             </div>
 
@@ -543,7 +543,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                             </div>
                             <div className="rr-labels">
                                 <span className="rr-label-risk">{getUiString(lang, 'Risk')}</span>
-                                <span className="rr-label-reward">Reward ({overallRR.toFixed(1)}x)</span>
+                                <span className="rr-label-reward">{getUiString(lang, 'Reward')} ({overallRR.toFixed(1)}x)</span>
                             </div>
 
                             {/* Visual Price Scale */}
@@ -579,13 +579,13 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                     <div key={i}>
                                         <div className="result-row">
                                             <span className="result-label">
-                                                <strong>Take-Profit{tpLevelCount > 1 ? ` ${i + 1}` : ''}</strong>
+                                                <strong>{getUiString(lang, 'Take-Profit')}{tpLevelCount > 1 ? ` ${i + 1}` : ''}</strong>
                                                 {tpLevelCount > 1 && <span style={{ fontWeight: 400, color: 'var(--color-text-muted)' }}> ({tp.percent}%)</span>}
                                             </span>
                                             <span className="result-value profit"><strong>{formatUSD(tp.tp)}</strong></span>
                                         </div>
                                         <div className="result-row">
-                                            <span className="result-label">TP{tpLevelCount > 1 ? ` ${i + 1}` : ''} Distance</span>
+                                            <span className="result-label">TP{tpLevelCount > 1 ? ` ${i + 1}` : ''} {getUiString(lang, 'Distance')}</span>
                                             <span className="result-value profit">{formatUSD(tp.tpDist)} ({formatPercent(tp.tpDistPercent)})</span>
                                         </div>
                                         {size > 0 && (

@@ -195,13 +195,13 @@ export default function HashrateConverter({ lang = 'en' }: { lang?: string }) {
                         <>
                             {/* Hero */}
                             <div className="result-hero">
-                                <span className="result-hero-label">Converting from {fromUnit.label}</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Converting from')} {fromUnit.label}</span>
                                 <span className="result-hero-value">
                                     <ArrowRightLeft size={28} />
                                     {formatNumber(parseFloat(inputValue))} {fromUnit.label}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-text-secondary)' }}>
-                                    = {formatNumber(results.find(r => r.unitId === 'h')?.value || 0)} hashes per second
+                                    = {formatNumber(results.find(r => r.unitId === 'h')?.value || 0)} {getUiString(lang, 'hashes per second')}
                                 </span>
                             </div>
 

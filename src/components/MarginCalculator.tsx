@@ -229,10 +229,10 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
     const getHealthLabel = (status: Results['healthStatus']) => {
         switch (status) {
-            case 'healthy': return 'Healthy';
-            case 'warning': return 'Caution';
-            case 'danger': return 'At Risk';
-            case 'critical': return 'Margin Call Zone';
+            case 'healthy': return getUiString(lang, 'Healthy');
+            case 'warning': return getUiString(lang, 'Caution');
+            case 'danger': return getUiString(lang, 'At Risk');
+            case 'critical': return getUiString(lang, 'Margin Call Zone');
         }
     };
 
@@ -416,7 +416,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                     border: '1px solid rgba(249,115,22,0.3)', borderRadius: '10px',
                                     fontSize: '0.85rem', color: '#f97316', display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '12px',
                                 }}>
-                                    <AlertTriangle size={16} /> High leverage ({lev}×) significantly increases liquidation risk.
+                                    <AlertTriangle size={16} /> {getUiString(lang, 'High leverage')} ({lev}×) {getUiString(lang, 'significantly increases liquidation risk.')}
                                 </div>
                             )}
 
@@ -428,7 +428,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatUSD(results.requiredMargin)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: getHealthColor(results.healthStatus) }}>
-                                    {getHealthLabel(results.healthStatus)} — Margin Level {formatPercent(results.marginLevel)}
+                                    {getHealthLabel(results.healthStatus)} — {getUiString(lang, 'Margin Level')} {formatPercent(results.marginLevel)}
                                 </span>
                             </div>
 
@@ -503,10 +503,10 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
                                     <Info size={16} style={{ flexShrink: 0, marginTop: '2px', color: getHealthColor(results.healthStatus) }} />
                                     <span>
-                                        {results.healthStatus === 'healthy' && 'Your margin level is healthy. You have sufficient buffer before a margin call.'}
-                                        {results.healthStatus === 'warning' && 'Margin level is moderate. Consider reducing position size or adding margin for safety.'}
-                                        {results.healthStatus === 'danger' && 'Margin level is low! You are close to a margin call. Reduce leverage or add funds.'}
-                                        {results.healthStatus === 'critical' && 'Critical margin level! You are at or below the margin call threshold. Immediate action required.'}
+                                        {results.healthStatus === 'healthy' && getUiString(lang, 'Your margin level is healthy. You have sufficient buffer before a margin call.')}
+                                        {results.healthStatus === 'warning' && getUiString(lang, 'Margin level is moderate. Consider reducing position size or adding margin for safety.')}
+                                        {results.healthStatus === 'danger' && getUiString(lang, 'Margin level is low! You are close to a margin call. Reduce leverage or add funds.')}
+                                        {results.healthStatus === 'critical' && getUiString(lang, 'Critical margin level! You are at or below the margin call threshold. Immediate action required.')}
                                     </span>
                                 </div>
                             </div>

@@ -209,7 +209,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                                     {cheapest.name}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-accent-green)' }}>
-                                    {formatUSD(cheapest.bestFee)} fee ({formatRate(cheapest.discountedRate !== null ? cheapest.discountedRate : cheapest.effectiveRate)})
+                                    {formatUSD(cheapest.bestFee)} {getUiString(lang, 'fee')} ({formatRate(cheapest.discountedRate !== null ? cheapest.discountedRate : cheapest.effectiveRate)})
                                 </span>
                             </div>
 
@@ -224,7 +224,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                                     display: 'flex', gap: '8px', alignItems: 'center', margin: '12px 0',
                                 }}>
                                     <TrendingDown size={16} />
-                                    Save {formatUSD(savings)} vs most expensive ({mostExpensive.name})
+                                    {getUiString(lang, 'Save')} {formatUSD(savings)} {getUiString(lang, 'vs most expensive')} ({mostExpensive.name})
                                 </div>
                             )}
 
@@ -232,11 +232,11 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                             <div className="result-breakdown">
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Trade Type')}</span>
-                                    <span className="result-value" style={{ fontWeight: 600 }}>{tradeType === 'spot' ? 'Spot' : 'Futures'}</span>
+                                    <span className="result-value" style={{ fontWeight: 600 }}>{tradeType === 'spot' ? getUiString(lang, 'Spot') : getUiString(lang, 'Futures')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Order Type')}</span>
-                                    <span className="result-value">{orderType === 'maker' ? 'Maker' : 'Taker'}</span>
+                                    <span className="result-value">{orderType === 'maker' ? getUiString(lang, 'Maker') : getUiString(lang, 'Taker')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Volume Tier')}</span>
@@ -251,7 +251,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                             {/* Ranking Table */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Fee Comparison — {tradeType === 'spot' ? 'Spot' : 'Futures'} {orderType === 'maker' ? 'Maker' : 'Taker'}
+                                    {getUiString(lang, 'Fee Comparison')} — {tradeType === 'spot' ? getUiString(lang, 'Spot') : getUiString(lang, 'Futures')} {orderType === 'maker' ? getUiString(lang, 'Maker') : getUiString(lang, 'Taker')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>

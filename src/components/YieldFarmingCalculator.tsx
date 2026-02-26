@@ -396,13 +396,13 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         <>
                             {/* Hero */}
                             <div className="result-hero" style={{ borderColor: netYield >= 0 ? 'var(--color-accent-green)' : '#ef4444' }}>
-                                <span className="result-hero-label">Net Yield — {days} Days</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Net Yield')} — {days} {getUiString(lang, 'Days')}</span>
                                 <span className="result-hero-value" style={{ color: netYield >= 0 ? 'var(--color-accent-green)' : '#ef4444' }}>
                                     <Sprout size={28} />
                                     {netYield >= 0 ? '+' : ''}{formatUSD(netYield)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: netYield >= 0 ? 'var(--color-accent-green)' : '#ef4444' }}>
-                                    {depositVal > 0 ? `${netYield >= 0 ? '+' : ''}${((netYield / depositVal) * 100).toFixed(2)}% net ROI` : ''}
+                                    {depositVal > 0 ? `${netYield >= 0 ? '+' : ''}${((netYield / depositVal) * 100).toFixed(2)}% ${getUiString(lang, 'net ROI')}` : ''}
                                 </span>
                             </div>
 
@@ -413,7 +413,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                     <span className="result-value">{formatUSD(depositVal)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Pool {rateType}</span>
+                                    <span className="result-label">{getUiString(lang, 'Pool')} {rateType}</span>
                                     <span className="result-value">{poolRate}%</span>
                                 </div>
                                 <div className="result-divider" />
@@ -431,7 +431,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                     <span className="result-value fee">-{formatUSD(exitGas)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Gas: Harvests ({numHarvests}x @ {formatUSD(harvestGas)})</span>
+                                    <span className="result-label">{getUiString(lang, 'Gas: Harvests')} ({numHarvests}x @ {formatUSD(harvestGas)})</span>
                                     <span className="result-value fee">-{formatUSD(harvestGas * numHarvests)}</span>
                                 </div>
                                 <div className="result-row">
@@ -440,7 +440,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">Impermanent Loss ({ilPct}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Impermanent Loss')} ({ilPct}%)</span>
                                     <span className="result-value fee">-{formatUSD(ilLoss)}</span>
                                 </div>
                                 <div className="result-divider" />
@@ -464,7 +464,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                 }}>
                                     <Clock size={16} style={{ flexShrink: 0, color: '#6366f1' }} />
                                     <span>
-                                        <strong>Optimal harvest: {optimalHarvest.label}</strong> {getUiString(lang, '— harvesting more often costs more in gas than the compounding benefit.')}
+                                        <strong>{getUiString(lang, 'Optimal harvest')}: {optimalHarvest.label}</strong> {getUiString(lang, '— harvesting more often costs more in gas than the compounding benefit.')}
                                     </span>
                                 </div>
                             )}
@@ -481,8 +481,8 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                                 <Info size={16} style={{ flexShrink: 0, color: breakEvenDays !== null ? 'var(--color-accent-green)' : '#f97316' }} />
                                 <span>
                                     {breakEvenDays !== null
-                                        ? `Your gas costs are covered after ${breakEvenDays} day${breakEvenDays !== 1 ? 's' : ''}.`
-                                        : 'Gas costs may never be recovered at this rate and deposit size.'}
+                                        ? `${getUiString(lang, 'Your gas costs are covered after')} ${breakEvenDays} ${breakEvenDays !== 1 ? getUiString(lang, 'days') : getUiString(lang, 'day')}.`
+                                        : getUiString(lang, 'Gas costs may never be recovered at this rate and deposit size.')}
                                 </span>
                             </div>
 

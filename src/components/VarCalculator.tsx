@@ -182,9 +182,9 @@ export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
           {result ? (
             <>
               <div className="result-hero loss">
-                <span className="result-hero-label">Value at Risk ({confidence}%)</span>
+                <span className="result-hero-label">{getUiString(lang, 'Value at Risk')} ({confidence}%)</span>
                 <span className="result-hero-value"><AlertTriangle size={28} />{formatUSD(result.varAmount)}</span>
-                <span className="result-hero-roi loss">{result.varPct.toFixed(2)}% portfolio downside threshold</span>
+                <span className="result-hero-roi loss">{result.varPct.toFixed(2)}% {getUiString(lang, 'portfolio downside threshold')}</span>
               </div>
 
               <div className="result-breakdown">

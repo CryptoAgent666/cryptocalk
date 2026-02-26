@@ -308,23 +308,23 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
 
     const getRiskLabel = (level: Results['riskLevel']) => {
         switch (level) {
-            case 'safe': return 'Low Risk';
-            case 'moderate': return 'Moderate Risk';
-            case 'danger': return 'High Risk';
-            case 'extreme': return 'Extreme Risk';
+            case 'safe': return getUiString(lang, 'Low Risk');
+            case 'moderate': return getUiString(lang, 'Moderate Risk');
+            case 'danger': return getUiString(lang, 'High Risk');
+            case 'extreme': return getUiString(lang, 'Extreme Risk');
         }
     };
 
     const getSafetyTip = (level: Results['riskLevel']) => {
         switch (level) {
             case 'safe':
-                return 'Your liquidation price has a comfortable buffer. Good risk management!';
+                return getUiString(lang, 'Your liquidation price has a comfortable buffer. Good risk management!');
             case 'moderate':
-                return 'Consider reducing leverage or adding margin for extra safety.';
+                return getUiString(lang, 'Consider reducing leverage or adding margin for extra safety.');
             case 'danger':
-                return 'Your position is at high risk of liquidation. Consider reducing leverage.';
+                return getUiString(lang, 'Your position is at high risk of liquidation. Consider reducing leverage.');
             case 'extreme':
-                return '⚠️ Extremely close to liquidation. Reduce leverage or add more margin immediately.';
+                return '⚠️ ' + getUiString(lang, 'Extremely close to liquidation. Reduce leverage or add more margin immediately.');
         }
     };
 
@@ -599,7 +599,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                             {highLev && (
                                 <div className="leverage-warning">
                                     <AlertTriangle size={16} />
-                                    <span>{lev}x leverage — a {formatPercent(100 / lev)} price move against you triggers liquidation!</span>
+                                    <span>{lev}x {getUiString(lang, 'leverage')} — {getUiString(lang, 'a')} {formatPercent(100 / lev)} {getUiString(lang, 'price move against you triggers liquidation!')}</span>
                                 </div>
                             )}
 
@@ -613,7 +613,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                     {formatUSD(results.liquidationPrice)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: getRiskColor(results.riskLevel) }}>
-                                    {formatPercent(results.distanceToLiquidation)} from entry ({isShort ? 'above' : 'below'})
+                                    {formatPercent(results.distanceToLiquidation)} {getUiString(lang, 'from entry')} ({isShort ? getUiString(lang, 'above') : getUiString(lang, 'below')})
                                 </span>
                             </div>
 
@@ -642,7 +642,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Direction')}</span>
-                                    <span className="result-value">{isShort ? '🔴 Short' : '🟢 Long'}</span>
+                                    <span className="result-value">{isShort ? '🔴 ' + getUiString(lang, 'Short') : '🟢 ' + getUiString(lang, 'Long')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Margin Type')}</span>

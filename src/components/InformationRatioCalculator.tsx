@@ -214,7 +214,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
                   <BarChart3 size={28} />
                   {result.informationRatio.toFixed(3)}
                 </span>
-                <span className={`result-hero-roi ${result.informationRatio >= 0.5 ? 'profit' : result.informationRatio >= 0.2 ? '' : 'loss'}`}>{result.rating}</span>
+                <span className={`result-hero-roi ${result.informationRatio >= 0.5 ? 'profit' : result.informationRatio >= 0.2 ? '' : 'loss'}`}>{getUiString(lang, result.rating)}</span>
               </div>
 
               <div className="result-breakdown">

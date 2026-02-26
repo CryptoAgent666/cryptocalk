@@ -446,7 +446,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                             {/* Hero Result */}
                             <div className={`result-hero ${growthMultiplier >= 1 ? 'profit' : 'loss'}`}>
                                 <span className="result-hero-label">
-                                    If {targetData.symbol.toUpperCase()} had {refData.symbol.toUpperCase()}'s market cap
+                                    {getUiString(lang, 'If')} {targetData.symbol.toUpperCase()} {getUiString(lang, 'had')} {refData.symbol.toUpperCase()}{getUiString(lang, "'s market cap")}
                                 </span>
                                 <span className="result-hero-value">
                                     <DollarSign size={28} />
@@ -454,7 +454,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                                 </span>
                                 <span className={`result-hero-roi ${growthMultiplier >= 1 ? 'profit' : 'fee'}`}>
                                     <TrendingUp size={16} />
-                                    {growthMultiplier.toFixed(2)}x from current price
+                                    {growthMultiplier.toFixed(2)}x {getUiString(lang, 'from current price')}
                                 </span>
                             </div>
 
@@ -465,7 +465,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                                     <span className="result-value profit">{formatPrice(hypotheticalPrice)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Current Price ({targetData.symbol.toUpperCase()})</span>
+                                    <span className="result-label">{getUiString(lang, 'Current Price')} ({targetData.symbol.toUpperCase()})</span>
                                     <span className="result-value">{formatPrice(targetData.price)}</span>
                                 </div>
                                 <div className="result-divider" />
@@ -481,15 +481,15 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">{targetData.symbol.toUpperCase()} Market Cap</span>
+                                    <span className="result-label">{targetData.symbol.toUpperCase()} {getUiString(lang, 'Market Cap')}</span>
                                     <span className="result-value">{formatBigNumber(targetData.marketCap)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{refData.symbol.toUpperCase()} Market Cap</span>
+                                    <span className="result-label">{refData.symbol.toUpperCase()} {getUiString(lang, 'Market Cap')}</span>
                                     <span className="result-value">{formatBigNumber(refData.marketCap)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{targetData.symbol.toUpperCase()} Circulating Supply</span>
+                                    <span className="result-label">{targetData.symbol.toUpperCase()} {getUiString(lang, 'Circulating Supply')}</span>
                                     <span className="result-value">{formatSupply(targetData.circulatingSupply)}</span>
                                 </div>
                             </div>
@@ -501,7 +501,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                                         <span className="result-label">
                                             <strong>
                                                 <ArrowRightLeft size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />
-                                                {targetData.symbol.toUpperCase()} at other market caps
+                                                {targetData.symbol.toUpperCase()} {getUiString(lang, 'at other market caps')}
                                             </strong>
                                         </span>
                                     </div>

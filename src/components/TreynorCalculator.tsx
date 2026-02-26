@@ -238,7 +238,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                   <ShieldCheck size={28} />
                   {result.treynor.toFixed(3)}
                 </span>
-                <span className={`result-hero-roi ${result.treynor >= 6 ? 'profit' : result.treynor >= 2 ? '' : 'loss'}`}>{result.rating}</span>
+                <span className={`result-hero-roi ${result.treynor >= 6 ? 'profit' : result.treynor >= 2 ? '' : 'loss'}`}>{getUiString(lang, result.rating)}</span>
               </div>
 
               <div className="result-breakdown">
@@ -250,7 +250,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                   </span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">Annual excess return (USD)</span>
+                  <span className="result-label">{getUiString(lang, 'Annual excess return (USD)')}</span>
                   <span className={`result-value ${result.annualExcessUsd >= 0 ? 'profit' : 'loss'}`}>
                     {result.annualExcessUsd >= 0 ? '+' : ''}
                     {formatUSD(result.annualExcessUsd)}

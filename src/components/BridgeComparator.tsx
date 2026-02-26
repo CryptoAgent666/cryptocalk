@@ -136,7 +136,7 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
                   {best.name}
                 </span>
                 <span className="result-hero-roi profit">
-                  Total fee {formatUSD(best.totalFee)} ({best.feePercentEffective.toFixed(2)}%)
+                  {getUiString(lang, 'Total fee')} {formatUSD(best.totalFee)} ({best.feePercentEffective.toFixed(2)}%)
                 </span>
               </div>
 
@@ -157,7 +157,7 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
                     </div>
                     <div className="result-row">
                       <span className="result-label">{getUiString(lang, 'ETA')}</span>
-                      <span className="result-value">~{row.avgMinutes} min</span>
+                      <span className="result-value">~{row.avgMinutes} {getUiString(lang, 'min')}</span>
                     </div>
                     <div className="result-row">
                       <span className="result-label">{getUiString(lang, 'Security score')}</span>

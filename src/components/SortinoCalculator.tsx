@@ -209,12 +209,12 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               <div className={`result-hero ${result.sortino >= 1 ? 'profit' : result.sortino >= 0.5 ? '' : 'loss'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Sortino Ratio')}</span>
                 <span className="result-hero-value"><BarChart3 size={28} />{result.sortino.toFixed(3)}</span>
-                <span className={`result-hero-roi ${result.sortino >= 1 ? 'profit' : result.sortino >= 0.5 ? '' : 'loss'}`}>{result.rating}</span>
+                <span className={`result-hero-roi ${result.sortino >= 1 ? 'profit' : result.sortino >= 0.5 ? '' : 'loss'}`}>{getUiString(lang, result.rating)}</span>
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">Excess return (annual)</span><span className={`result-value ${result.excess >= 0 ? 'profit' : 'loss'}`}>{result.excess >= 0 ? '+' : ''}{result.excess.toFixed(2)}%</span></div>
-                <div className="result-row"><span className="result-label">Excess return (USD/year)</span><span className={`result-value ${result.annualExcessUsd >= 0 ? 'profit' : 'loss'}`}>{result.annualExcessUsd >= 0 ? '+' : ''}{formatUSD(result.annualExcessUsd)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Excess return (annual)')}</span><span className={`result-value ${result.excess >= 0 ? 'profit' : 'loss'}`}>{result.excess >= 0 ? '+' : ''}{result.excess.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Excess return (USD/year)')}</span><span className={`result-value ${result.annualExcessUsd >= 0 ? 'profit' : 'loss'}`}>{result.annualExcessUsd >= 0 ? '+' : ''}{formatUSD(result.annualExcessUsd)}</span></div>
                 <div className="result-divider" />
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Projected portfolio value')}</span><span className="result-value">{formatUSD(result.horizonExpectedValue)}</span></div>
               </div>

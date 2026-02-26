@@ -412,7 +412,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                 style={results.direction === 'pay' ? { borderColor: '#f97316' } : {}}
                             >
                                 <span className="result-hero-label">
-                                    {results.direction === 'pay' ? 'You Pay Funding' : 'You Receive Funding'}
+                                    {results.direction === 'pay' ? getUiString(lang, 'You Pay Funding') : getUiString(lang, 'You Receive Funding')}
                                 </span>
                                 <span className="result-hero-value" style={{
                                     color: results.direction === 'pay' ? '#f97316' : 'var(--color-accent-green)'
@@ -423,7 +423,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                 <span className="result-hero-roi" style={{
                                     color: results.direction === 'pay' ? '#f97316' : 'var(--color-accent-green)'
                                 }}>
-                                    {results.direction === 'pay' ? '−' : '+'}{totalAsPercent.toFixed(2)}% over {selectedPeriod?.label || `${holdingDays} days`}
+                                    {results.direction === 'pay' ? '−' : '+'}{totalAsPercent.toFixed(2)}% {getUiString(lang, 'over')} {selectedPeriod?.label || `${holdingDays} ${getUiString(lang, 'days')}`}
                                 </span>
                             </div>
 
@@ -431,15 +431,15 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                             <div className="result-breakdown">
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Funding Rate')}</span>
-                                    <span className="result-value">{fundingRate}% per interval</span>
+                                    <span className="result-value">{fundingRate}% {getUiString(lang, 'per interval')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Intervals / Day')}</span>
-                                    <span className="result-value">{intervalsPerDay}× (every {24 / intervalsPerDay}h)</span>
+                                    <span className="result-value">{intervalsPerDay}× ({getUiString(lang, 'every')} {24 / intervalsPerDay}h)</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Position')}</span>
-                                    <span className="result-value">{isShort ? '🔴 Short' : '🟢 Long'} {formatUSD(parseFloat(positionSize) || 0)}</span>
+                                    <span className="result-value">{isShort ? `🔴 ${getUiString(lang, 'Short')}` : `🟢 ${getUiString(lang, 'Long')}`} {formatUSD(parseFloat(positionSize) || 0)}</span>
                                 </div>
                                 <div className="result-divider" />
 
@@ -481,7 +481,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                 <div className="result-divider" />
                                 <div className="result-row">
                                     <span className="result-label">
-                                        <strong>Total for {selectedPeriod?.label || `${holdingDays}d`}</strong>
+                                        <strong>{getUiString(lang, 'Total for')} {selectedPeriod?.label || `${holdingDays}d`}</strong>
                                     </span>
                                     <span className={`result-value ${results.direction === 'receive' ? 'profit' : 'fee'}`}>
                                         <strong>{results.direction === 'pay' ? '−' : '+'}{formatUSD(totalCost)}</strong>
@@ -504,8 +504,8 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                     <Info size={16} style={{ flexShrink: 0, marginTop: '2px', color: 'var(--color-primary)' }} />
                                     <span>
                                         {results.direction === 'pay'
-                                            ? 'Funding fees erode your margin over time. Consider the total cost when planning holding duration.'
-                                            : 'Receiving funding can offset trading costs. Many traders use funding arbitrage strategies to profit from high rates.'
+                                            ? getUiString(lang, 'Funding fees erode your margin over time. Consider the total cost when planning holding duration.')
+                                            : getUiString(lang, 'Receiving funding can offset trading costs. Many traders use funding arbitrage strategies to profit from high rates.')
                                         }
                                     </span>
                                 </div>

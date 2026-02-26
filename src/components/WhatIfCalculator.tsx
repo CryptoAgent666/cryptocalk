@@ -1,4 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
+import { getUiString } from '../i18n/ui-strings';
 import {
     Search,
     Calendar,
@@ -45,7 +46,7 @@ const AMOUNT_PILLS = ['100', '500', '1000', '5000', '10000'];
 const DATE_PRESET_YEARS = [1, 2, 3, 5, 10];
 const EARLIEST_DATE = '2010-07-17';
 
-export default function WhatIfCalculator() {
+export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
     const [amount, setAmount] = useState('');
     const [coinId, setCoinId] = useState('bitcoin');
     const [coinName, setCoinName] = useState('Bitcoin');
@@ -285,7 +286,7 @@ export default function WhatIfCalculator() {
                 </svg>
                 <div className="chart-labels">
                     <span>{data[0].date}</span>
-                    <span style={{ opacity: 0.5 }}>── invested</span>
+                    <span style={{ opacity: 0.5 }}>── {getUiString(lang, 'invested')}</span>
                     <span>{data[data.length - 1].date}</span>
                 </div>
             </div>
@@ -445,11 +446,11 @@ export default function WhatIfCalculator() {
                         <>
                             {/* Hero */}
                             <div className={`whatif-hero ${result.roi >= 0 ? 'gain' : 'loss'}`}>
-                                <span className="whatif-hero-label">Your ${result.investedAmount.toLocaleString()} would be worth</span>
+                                <span className="whatif-hero-label">{getUiString(lang, 'Your $') + result.investedAmount.toLocaleString() + getUiString(lang, ' would be worth')}</span>
                                 <span className="whatif-hero-value">{formatBig(result.currentValue)}</span>
                                 <span className={`whatif-hero-roi ${result.roi >= 0 ? 'positive' : 'negative'}`}>
                                     {result.roi >= 0 ? <TrendingUp size={16} /> : null}
-                                    {result.roi >= 0 ? '+' : ''}{result.roi.toFixed(1)}% ROI
+                                    {result.roi >= 0 ? '+' : ''}{result.roi.toFixed(1)}% {getUiString(lang, 'ROI')}
                                 </span>
                             </div>
 
@@ -459,29 +460,29 @@ export default function WhatIfCalculator() {
                             {/* Stats Grid */}
                             <div className="whatif-stats">
                                 <div className="whatif-stat">
-                                    <span className="stat-label">Invested</span>
+                                    <span className="stat-label">{getUiString(lang, 'Invested')}</span>
                                     <span className="stat-value">${result.investedAmount.toLocaleString()}</span>
                                 </div>
                                 <div className="whatif-stat">
-                                    <span className="stat-label">Coins Bought</span>
+                                    <span className="stat-label">{getUiString(lang, 'Coins Bought')}</span>
                                     <span className="stat-value">{result.coinsBought < 1 ? result.coinsBought.toFixed(6) : result.coinsBought.toFixed(4)} {result.coinSymbol}</span>
                                 </div>
                                 <div className="whatif-stat">
-                                    <span className="stat-label">Price Then</span>
+                                    <span className="stat-label">{getUiString(lang, 'Price Then')}</span>
                                     <span className="stat-value">{formatPrice(result.priceThen)}</span>
                                 </div>
                                 <div className="whatif-stat">
-                                    <span className="stat-label">Price Now</span>
+                                    <span className="stat-label">{getUiString(lang, 'Price Now')}</span>
                                     <span className="stat-value">{formatPrice(result.priceNow)}</span>
                                 </div>
                                 <div className="whatif-stat">
-                                    <span className="stat-label">{result.profit >= 0 ? 'Profit' : 'Loss'}</span>
+                                    <span className="stat-label">{result.profit >= 0 ? getUiString(lang, 'Profit') : getUiString(lang, 'Loss')}</span>
                                     <span className={`stat-value ${result.profit >= 0 ? 'text-profit' : 'text-loss'}`}>
                                         {result.profit >= 0 ? '+' : '−'}{formatBig(Math.abs(result.profit))}
                                     </span>
                                 </div>
                                 <div className="whatif-stat">
-                                    <span className="stat-label">Purchased On</span>
+                                    <span className="stat-label">{getUiString(lang, 'Purchased On')}</span>
                                     <span className="stat-value">{new Date(result.datePurchased).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                                 </div>
                             </div>
@@ -489,23 +490,23 @@ export default function WhatIfCalculator() {
                             {/* Share */}
                             <button className="share-btn" onClick={shareOnX}>
                                 <Share2 size={14} />
-                                Share Result on X
+                                {getUiString(lang, 'Share Result on X')}
                             </button>
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Past performance does not guarantee future results. This is for educational purposes only.
+                                {getUiString(lang, 'Past performance does not guarantee future results. This is for educational purposes only.')}
                             </p>
                         </>
                     ) : (
                         <div className="whatif-empty">
                             <Sparkles size={40} strokeWidth={1} />
-                            <h3>Travel Back in Time</h3>
-                            <p>See what your investment would be worth if you had bought crypto in the past. Try a quick scenario or enter your own!</p>
+                            <h3>{getUiString(lang, 'Travel Back in Time')}</h3>
+                            <p>{getUiString(lang, 'See what your investment would be worth if you had bought crypto in the past. Try a quick scenario or enter your own!')}</p>
                             <div className="whatif-features">
-                                <span>🕰️ Historical prices</span>
-                                <span>📈 Growth chart</span>
-                                <span>🐦 Share on X</span>
+                                <span>🕰️ {getUiString(lang, 'Historical prices')}</span>
+                                <span>📈 {getUiString(lang, 'Growth chart')}</span>
+                                <span>🐦 {getUiString(lang, 'Share on X')}</span>
                             </div>
                         </div>
                     )}
