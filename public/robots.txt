@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: https://cryptocalk.com/sitemap.xml
+Sitemap: https://cryptocalk.com/sitemap-index.xml
