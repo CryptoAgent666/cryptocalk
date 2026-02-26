@@ -14,6 +14,8 @@ All notable changes to this project are documented here.
   - removed inline-style placeholder markup;
   - added responsive hero-style card with branded lockup, gradient background, CTA actions, and quick links to core calculators;
   - preserved `noindex` behavior for the error page.
+- Installed production Google Analytics tag ID `G-BVPMVV27NH` in the global layout head script:
+  - `src/layouts/Layout.astro`
 - Aligned internal page links to trailing-slash format across core EN calculator pages and homepage/navigation templates to reduce avoidable `301` hops.
 - Updated redirect targets to trailing-slash canonical destinations:
   - `public/_redirects`
