@@ -142,7 +142,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
         for (let y = 0; y <= years; y++) {
             fiatPoints.push(amountNum / Math.pow(1 + country.inflationRate, y));
         }
-        allLines.push({ id: 'fiat', label: `Fiat (${country.currency})`, color: '#ef4444', points: fiatPoints });
+        allLines.push({ id: 'fiat', label: `${getUiString(lang, 'Fiat')} (${country.currency})`, color: '#ef4444', points: fiatPoints });
 
         // Asset lines
         ASSETS.filter(a => activeAssets.includes(a.id)).forEach(asset => {
@@ -170,7 +170,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                     marginBottom: '10px',
                     color: 'var(--color-text)',
                 }}>
-                    Value Over Time
+                    {getUiString(lang, 'Value Over Time')}
                 </h4>
                 <svg
                     viewBox={`0 0 ${width} ${height}`}
@@ -254,7 +254,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                             fontSize="11"
                             fill="var(--color-text-muted)"
                         >
-                            {i === 0 ? 'Now' : `${i}y`}
+                            {i === 0 ? getUiString(lang, 'Now') : `${i}y`}
                         </text>
                     ))}
 
@@ -453,7 +453,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                         color: '#ef4444',
                                     }}
                                 >
-                                    Your {formatUSD(amountNum)} in {country.currency} would lose {fiatLossPercent.toFixed(1)}% in {years} {years === 1 ? 'year' : 'years'}
+                                    {getUiString(lang, 'Your')} {formatUSD(amountNum)} {getUiString(lang, 'in')} {country.currency} {getUiString(lang, 'would lose')} {fiatLossPercent.toFixed(1)}% {getUiString(lang, 'in')} {years} {years === 1 ? getUiString(lang, 'year') : getUiString(lang, 'years')}
                                 </span>
                             </div>
 
@@ -463,7 +463,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                     <thead>
                                         <tr style={{ borderBottom: '2px solid var(--color-border)' }}>
                                             <th style={{ padding: '10px 8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{getUiString(lang, 'Asset')}</th>
-                                            <th style={{ padding: '10px 8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Value after {years}yr</th>
+                                            <th style={{ padding: '10px 8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{getUiString(lang, 'Value after')} {years}{getUiString(lang, 'yr')}</th>
                                             <th style={{ padding: '10px 8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{getUiString(lang, 'Real Return')}</th>
                                             <th style={{ padding: '10px 8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{getUiString(lang, 'vs Fiat')}</th>
                                         </tr>
@@ -477,7 +477,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                             <td style={{ padding: '10px 8px', fontWeight: 600 }}>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                                     <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#ef4444' }} />
-                                                    Fiat ({country.currency})
+                                                    {getUiString(lang, 'Fiat')} ({country.currency})
                                                 </div>
                                             </td>
                                             <td style={{ padding: '10px 8px', textAlign: 'right', fontWeight: 600, color: 'var(--color-text)' }}>
@@ -529,7 +529,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                                     color: 'var(--color-accent-green)',
                                                     fontSize: '0.75rem',
                                                 }}>
-                                                    {formatPercent(asset.vsFiat)} vs fiat
+                                                    {formatPercent(asset.vsFiat)} {getUiString(lang, 'vs fiat')}
                                                 </td>
                                             </tr>
                                         ))}
@@ -552,10 +552,10 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                     <Trophy size={18} style={{ color: 'var(--color-accent-green)' }} />
                                     <div>
                                         <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-accent-green)' }}>
-                                            Best Performer: {bestAsset.label}
+                                            {getUiString(lang, 'Best Performer')}: {bestAsset.label}
                                         </div>
                                         <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>
-                                            {formatUSD(bestAsset.value)} ({formatPercent(bestAsset.realReturn)} return) over {years} {years === 1 ? 'year' : 'years'}
+                                            {formatUSD(bestAsset.value)} ({formatPercent(bestAsset.realReturn)} {getUiString(lang, 'return')}) {getUiString(lang, 'over')} {years} {years === 1 ? getUiString(lang, 'year') : getUiString(lang, 'years')}
                                         </div>
                                     </div>
                                 </div>
@@ -609,7 +609,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                     <span className="result-value">{formatUSD(amountNum)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Purchasing Power After {years}yr</span>
+                                    <span className="result-label">{getUiString(lang, 'Purchasing Power After')} {years}{getUiString(lang, 'yr')}</span>
                                     <span className="result-value fee">{formatUSD(fiatValue)}</span>
                                 </div>
                                 <div className="result-row">

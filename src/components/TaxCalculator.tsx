@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
+import { getUiString } from '../i18n/ui-strings';
 import {
     Globe,
     DollarSign,
@@ -164,7 +165,7 @@ interface TaxResult {
     bracketLabel: string;
 }
 
-export default function TaxCalculator() {
+export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
     const [country, setCountry] = useState('us');
     const [buyPrice, setBuyPrice] = useState('');
     const [sellPrice, setSellPrice] = useState('');
@@ -464,7 +465,7 @@ export default function TaxCalculator() {
                             {/* Hero */}
                             <div className={`tax-hero ${isGain ? 'gain' : 'loss'}`}>
                                 <span className="tax-hero-label">
-                                    {isGain ? 'Capital Gain' : 'Capital Loss'}
+                                    {isGain ? getUiString(lang, 'Capital Gain') : getUiString(lang, 'Capital Loss')}
                                 </span>
                                 <span className="tax-hero-value">
                                     {isGain ? <TrendingUp size={24} /> : <TrendingDown size={24} />}
@@ -475,17 +476,17 @@ export default function TaxCalculator() {
                             {/* Tax Owed */}
                             <div className="tax-owed-card">
                                 <div className="tax-owed-row">
-                                    <span className="tax-owed-label">Estimated Tax</span>
+                                    <span className="tax-owed-label">{getUiString(lang, 'Estimated Tax')}</span>
                                     <span className="tax-owed-value">
-                                        {result.estimatedTax > 0 ? formatCurrency(result.estimatedTax) : 'No tax owed'}
+                                        {result.estimatedTax > 0 ? formatCurrency(result.estimatedTax) : getUiString(lang, 'No tax owed')}
                                     </span>
                                 </div>
                                 <div className="tax-owed-row">
-                                    <span className="tax-owed-label">Applicable Rate</span>
+                                    <span className="tax-owed-label">{getUiString(lang, 'Applicable Rate')}</span>
                                     <span className="tax-owed-value">{result.taxRate}%</span>
                                 </div>
                                 <div className="tax-owed-row">
-                                    <span className="tax-owed-label">Effective Rate</span>
+                                    <span className="tax-owed-label">{getUiString(lang, 'Effective Rate')}</span>
                                     <span className="tax-owed-value">{result.effectiveRate.toFixed(1)}%</span>
                                 </div>
                             </div>
@@ -493,31 +494,31 @@ export default function TaxCalculator() {
                             {/* Breakdown */}
                             <div className="tax-breakdown">
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">Country</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'Country')}</span>
                                     <span className="breakdown-value">{config.name}</span>
                                 </div>
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">Income Bracket</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'Income Bracket')}</span>
                                     <span className="breakdown-value">{result.bracketLabel}</span>
                                 </div>
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">Holding Period</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'Holding Period')}</span>
                                     <span className="breakdown-value">{result.holdingPeriodLabel}</span>
                                 </div>
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">Method</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'Method')}</span>
                                     <span className="breakdown-value">{method.toUpperCase()}</span>
                                 </div>
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">Total Cost Basis</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'Total Cost Basis')}</span>
                                     <span className="breakdown-value">{formatCurrency(parseFloat(buyPrice) * (parseFloat(quantity) || 1))}</span>
                                 </div>
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">Total Proceeds</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'Total Proceeds')}</span>
                                     <span className="breakdown-value">{formatCurrency(parseFloat(sellPrice) * (parseFloat(quantity) || 1))}</span>
                                 </div>
                                 <div className="breakdown-row">
-                                    <span className="breakdown-label">After-Tax Proceeds</span>
+                                    <span className="breakdown-label">{getUiString(lang, 'After-Tax Proceeds')}</span>
                                     <span className={`breakdown-value ${isGain ? 'text-profit' : 'text-loss'}`}>
                                         {formatCurrency(parseFloat(sellPrice) * (parseFloat(quantity) || 1) - result.estimatedTax)}
                                     </span>
@@ -528,10 +529,10 @@ export default function TaxCalculator() {
                             {config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].shortTermRate !==
                                 config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].longTermRate && result.capitalGain > 0 && (
                                     <div className="tax-comparison">
-                                        <h4 className="comparison-title">Short-Term vs Long-Term</h4>
+                                        <h4 className="comparison-title">{getUiString(lang, 'Short-Term vs Long-Term')}</h4>
                                         <div className="comparison-grid">
                                             <div className={`comparison-card ${!result.isLongTerm ? 'current' : ''}`}>
-                                                <span className="comparison-label">Short-Term</span>
+                                                <span className="comparison-label">{getUiString(lang, 'Short-Term')}</span>
                                                 <span className="comparison-value">
                                                     {config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].shortTermRate}%
                                                 </span>
@@ -540,7 +541,7 @@ export default function TaxCalculator() {
                                                 </span>
                                             </div>
                                             <div className={`comparison-card ${result.isLongTerm ? 'current' : ''}`}>
-                                                <span className="comparison-label">Long-Term</span>
+                                                <span className="comparison-label">{getUiString(lang, 'Long-Term')}</span>
                                                 <span className="comparison-value">
                                                     {config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].longTermRate}%
                                                 </span>
@@ -550,7 +551,7 @@ export default function TaxCalculator() {
                                             </div>
                                         </div>
                                         <p className="comparison-saving">
-                                            💡 Holding longer could save you{' '}
+                                            💡 {getUiString(lang, 'Holding longer could save you')}{' '}
                                             <strong>
                                                 {formatCurrency(
                                                     result.capitalGain *
@@ -571,18 +572,18 @@ export default function TaxCalculator() {
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                This is an estimate only, not tax advice. Tax laws vary and change frequently. Consult a qualified tax professional for your specific situation.
+                                {getUiString(lang, 'This is an estimate only, not tax advice. Tax laws vary and change frequently. Consult a qualified tax professional for your specific situation.')}
                             </p>
                         </>
                     ) : (
                         <div className="tax-empty">
                             <Globe size={40} strokeWidth={1} />
-                            <h3>Estimate Your Crypto Taxes</h3>
-                            <p>Select your country, enter your trade details, and see your estimated capital gains tax instantly.</p>
+                            <h3>{getUiString(lang, 'Estimate Your Crypto Taxes')}</h3>
+                            <p>{getUiString(lang, 'Select your country, enter your trade details, and see your estimated capital gains tax instantly.')}</p>
                             <div className="tax-features">
-                                <span>🌍 6 countries</span>
+                                <span>🌍 {getUiString(lang, '6 countries')}</span>
                                 <span>📊 FIFO / LIFO</span>
-                                <span>📅 Short / Long-term</span>
+                                <span>📅 {getUiString(lang, 'Short / Long-term')}</span>
                             </div>
                         </div>
                     )}

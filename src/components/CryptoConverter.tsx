@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
+import { getUiString } from '../i18n/ui-strings';
 import {
     Search,
     TrendingUp,
@@ -47,7 +48,7 @@ const QUICK_PAIRS = [
     { from: 'dogecoin', to: 'usd', label: 'DOGE → USD' },
 ];
 
-export default function CryptoConverter() {
+export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
     // State
     const [amount, setAmount] = useState('1');
     const [fromCoin, setFromCoin] = useState<CoinData>(POPULAR_CRYPTOS[0]);
@@ -309,7 +310,7 @@ export default function CryptoConverter() {
                     {loading ? (
                         <div className="converter-loading">
                             <Loader2 size={20} className="spin-icon" />
-                            <span>Fetching rate...</span>
+                            <span>{getUiString(lang, 'Fetching rate...')}</span>
                         </div>
                     ) : convertedAmount !== null ? (
                         <>
@@ -324,25 +325,25 @@ export default function CryptoConverter() {
                                 {change24h !== null && (
                                     <span className={`result-change ${change24h >= 0 ? 'up' : 'down'}`}>
                                         {change24h >= 0 ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
-                                        {change24h >= 0 ? '+' : ''}{change24h.toFixed(2)}% (24h)
+                                        {change24h >= 0 ? '+' : ''}{change24h.toFixed(2)}% ({getUiString(lang, '24h')})
                                     </span>
                                 )}
                             </div>
                             <div className="result-actions">
                                 <button className="refresh-btn" onClick={fetchRate} aria-label="Refresh rate">
                                     <RefreshCw size={14} />
-                                    Refresh
+                                    {getUiString(lang, 'Refresh')}
                                 </button>
                                 {lastUpdated && (
                                     <span className="last-updated">
-                                        Updated {lastUpdated.toLocaleTimeString()}
+                                        {getUiString(lang, 'Updated')} {lastUpdated.toLocaleTimeString()}
                                     </span>
                                 )}
                             </div>
                         </>
                     ) : (
                         <div className="converter-loading">
-                            <span>Enter an amount to convert</span>
+                            <span>{getUiString(lang, 'Enter an amount to convert')}</span>
                         </div>
                     )}
                 </div>
@@ -352,16 +353,16 @@ export default function CryptoConverter() {
             {/* Info Cards */}
             <div className="converter-info-grid">
                 <div className="info-card">
-                    <h3>Real-Time Prices</h3>
-                    <p>Rates powered by CoinGecko API, updated in real-time. Click Refresh for the latest price.</p>
+                    <h3>{getUiString(lang, 'Real-Time Prices')}</h3>
+                    <p>{getUiString(lang, 'Rates powered by CoinGecko API, updated in real-time. Click Refresh for the latest price.')}</p>
                 </div>
                 <div className="info-card">
-                    <h3>500+ Cryptocurrencies</h3>
-                    <p>Search and convert any cryptocurrency — from Bitcoin to the latest altcoins and meme tokens.</p>
+                    <h3>{getUiString(lang, '500+ Cryptocurrencies')}</h3>
+                    <p>{getUiString(lang, 'Search and convert any cryptocurrency — from Bitcoin to the latest altcoins and meme tokens.')}</p>
                 </div>
                 <div className="info-card">
-                    <h3>10+ Fiat Currencies</h3>
-                    <p>Convert to USD, EUR, GBP, JPY, AUD, BRL, TRY, INR, RUB, and more local currencies.</p>
+                    <h3>{getUiString(lang, '10+ Fiat Currencies')}</h3>
+                    <p>{getUiString(lang, 'Convert to USD, EUR, GBP, JPY, AUD, BRL, TRY, INR, RUB, and more local currencies.')}</p>
                 </div>
             </div>
         </div>

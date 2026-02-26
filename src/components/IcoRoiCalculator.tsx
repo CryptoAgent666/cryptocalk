@@ -169,9 +169,9 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
           {result ? (
             <>
               <div className={`result-hero ${result.currentRoi >= 0 ? 'profit' : 'loss'}`}>
-                <span className="result-hero-label">{tokenName || 'TOKEN'} Current ROI</span>
+                <span className="result-hero-label">{tokenName || 'TOKEN'} {getUiString(lang, 'Current ROI')}</span>
                 <span className="result-hero-value"><Rocket size={28} />{result.currentRoi.toFixed(2)}%</span>
-                <span className={`result-hero-roi ${result.currentRoi >= 0 ? 'profit' : 'loss'}`}>{result.xNow.toFixed(2)}x from ICO price</span>
+                <span className={`result-hero-roi ${result.currentRoi >= 0 ? 'profit' : 'loss'}`}>{result.xNow.toFixed(2)}x {getUiString(lang, 'from ICO price')}</span>
               </div>
 
               <div className="result-breakdown">

@@ -240,7 +240,7 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
                   {result.expectancyR >= 0 ? '+' : ''}
                   {result.expectancyR.toFixed(3)}R
                 </span>
-                <span className={`result-hero-roi ${result.expectancyR > 0 ? 'profit' : 'loss'}`}>{result.rating}</span>
+                <span className={`result-hero-roi ${result.expectancyR > 0 ? 'profit' : 'loss'}`}>{getUiString(lang, result.rating)}</span>
               </div>
 
               <div className="result-breakdown">

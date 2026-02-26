@@ -150,19 +150,19 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
                 <span className="result-hero-label">{getUiString(lang, 'Current Drawdown')}</span>
                 <span className="result-hero-value"><AlertTriangle size={28} />{result.drawdownPct.toFixed(2)}%</span>
                 <span className={`result-hero-roi ${result.drawdownPct > 0 ? 'loss' : 'profit'}`}>
-                  {result.drawdownPct > 0 ? `-${formatUSD(result.drawdownAmount)}` : 'No drawdown'}
+                  {result.drawdownPct > 0 ? `-${formatUSD(result.drawdownAmount)}` : getUiString(lang, 'No drawdown')}
                 </span>
               </div>
 
               <div className="result-breakdown">
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Drawdown amount')}</span><span className={`result-value ${result.drawdownAmount > 0 ? 'loss' : 'profit'}`}>{result.drawdownAmount > 0 ? '-' : ''}{formatUSD(result.drawdownAmount)}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Required gain to recover')}</span><span className={`result-value ${result.requiredGainPct > 0 ? 'fee' : 'profit'}`}>{result.requiredGainPct.toFixed(2)}%</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Recovery risk level')}</span><span className={`result-value ${result.severity === 'High' ? 'loss' : result.severity === 'Medium' ? 'fee' : 'profit'}`}>{result.severity}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Recovery risk level')}</span><span className={`result-value ${result.severity === 'High' ? 'loss' : result.severity === 'Medium' ? 'fee' : 'profit'}`}>{getUiString(lang, result.severity)}</span></div>
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Estimated months to recover')}</span>
                   <span className="result-value">
-                    {result.monthsToRecover === null ? 'N/A (no positive monthly return)' : `${result.monthsToRecover.toFixed(1)} months`}
+                    {result.monthsToRecover === null ? getUiString(lang, 'N/A (no positive monthly return)') : `${result.monthsToRecover.toFixed(1)} ${getUiString(lang, 'months')}`}
                   </span>
                 </div>
               </div>

@@ -224,9 +224,9 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
     };
 
     const getWinnerLabel = (winner: string) => {
-        if (winner === 'hodl') return 'HODL Wins!';
-        if (winner === 'trading') return 'Trading Wins!';
-        return "It's a Tie!";
+        if (winner === 'hodl') return getUiString(lang, 'HODL Wins!');
+        if (winner === 'trading') return getUiString(lang, 'Trading Wins!');
+        return getUiString(lang, "It's a Tie!");
     };
 
     return (
@@ -557,8 +557,8 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                     style={{ color: getWinnerColor(results.winner) }}
                                 >
                                     {results.winner !== 'tie'
-                                        ? `by ${formatUSD(results.differenceUSD)} (${results.differencePercent.toFixed(2)}% margin)`
-                                        : 'Both strategies ended at the same value'}
+                                        ? `${getUiString(lang, 'by')} ${formatUSD(results.differenceUSD)} (${results.differencePercent.toFixed(2)}% ${getUiString(lang, 'margin')})`
+                                        : getUiString(lang, 'Both strategies ended at the same value')}
                                 </span>
                             </div>
 
@@ -631,7 +631,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                         gap: '4px',
                                     }}>
                                         <Activity size={12} />
-                                        Trading
+                                        {getUiString(lang, 'Trading')}
                                         {results.winner === 'trading' && <Trophy size={12} />}
                                     </div>
                                     <div style={{
@@ -720,7 +720,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Trading Period')}</span>
-                                    <span className="result-value">{tradingPeriod} months</span>
+                                    <span className="result-value">{tradingPeriod} {getUiString(lang, 'months')}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">

@@ -161,7 +161,7 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
               <div className={`result-hero ${result.level === 'High' ? 'loss' : result.level === 'Medium' ? 'fee' : 'profit'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'MEV Risk Score')}</span>
                 <span className="result-hero-value"><AlertTriangle size={28} />{result.riskScore.toFixed(0)} / 100</span>
-                <span className={`result-hero-roi ${result.level === 'High' ? 'loss' : result.level === 'Medium' ? 'fee' : 'profit'}`}>{result.level} risk</span>
+                <span className={`result-hero-roi ${result.level === 'High' ? 'loss' : result.level === 'Medium' ? 'fee' : 'profit'}`}>{getUiString(lang, result.level)} {getUiString(lang, 'risk')}</span>
               </div>
 
               <div className="result-breakdown">

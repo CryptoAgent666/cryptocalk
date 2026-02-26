@@ -214,7 +214,7 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
                 <span className="result-hero-label">{getUiString(lang, 'Projected Final Balance')}</span>
                 <span className="result-hero-value"><BadgeDollarSign size={28} />{formatUSD(result.netFinal)}</span>
                 <span className={`result-hero-roi ${result.netInterest >= 0 ? 'profit' : 'loss'}`}>
-                  Net interest {result.netInterest >= 0 ? '+' : ''}{formatUSD(result.netInterest)}
+                  {getUiString(lang, 'Net interest')} {result.netInterest >= 0 ? '+' : ''}{formatUSD(result.netInterest)}
                 </span>
               </div>
 

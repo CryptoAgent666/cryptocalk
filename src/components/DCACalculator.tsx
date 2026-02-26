@@ -649,7 +649,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                                         <div className="legend-group">
                                             <span className="legend-item">
                                                 <span className="legend-dot portfolio"></span>
-                                                Portfolio Value
+                                                {getUiString(lang, 'Portfolio Value')}
                                             </span>
                                             <span className="legend-item">
                                                 <span className="legend-dot invested"></span>

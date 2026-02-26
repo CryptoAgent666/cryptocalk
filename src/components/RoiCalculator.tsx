@@ -356,7 +356,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatPercent(results.totalRoi)}
                                 </span>
                                 <span className={`result-hero-roi ${isProfit ? 'profit' : 'loss'}`}>
-                                    {isProfit ? 'Profit' : 'Loss'}: {formatUSD(Math.abs(results.netProfit))}
+                                    {isProfit ? getUiString(lang, 'Profit') : getUiString(lang, 'Loss')}: {formatUSD(Math.abs(results.netProfit))}
                                 </span>
                             </div>
 
@@ -398,7 +398,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Holding Period')}</span>
                                     <span className="result-value">
-                                        {results.holdingDays} days ({(results.holdingDays / 365).toFixed(1)} years)
+                                        {results.holdingDays} {getUiString(lang, 'days')} ({(results.holdingDays / 365).toFixed(1)} {getUiString(lang, 'years')})
                                     </span>
                                 </div>
                             </div>

@@ -521,14 +521,14 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 {/* Hero */}
                                 <div className="result-hero" style={{ borderColor: 'var(--color-accent-green)' }}>
                                     <span className="result-hero-label">
-                                        {CRYPTO_LABELS[targetCrypto].symbol} per {FREQUENCY_LABELS[payFrequency].toLowerCase()} pay period
+                                        {CRYPTO_LABELS[targetCrypto].symbol} {getUiString(lang, 'per')} {FREQUENCY_LABELS[payFrequency].toLowerCase()} {getUiString(lang, 'pay period')}
                                     </span>
                                     <span className="result-hero-value" style={{ color: 'var(--color-accent-green)' }}>
                                         <Coins size={28} />
                                         {formatUSD(netCryptoPerPeriod)}
                                     </span>
                                     <span className="result-hero-roi" style={{ color: 'var(--color-accent-green)' }}>
-                                        {formatCrypto(coinsPerPeriod, targetCrypto)} {CRYPTO_LABELS[targetCrypto].symbol} per {payFrequency === 'biweekly' ? 'pay period' : payFrequency === 'weekly' ? 'week' : 'month'}
+                                        {formatCrypto(coinsPerPeriod, targetCrypto)} {CRYPTO_LABELS[targetCrypto].symbol} {getUiString(lang, 'per')} {payFrequency === 'biweekly' ? getUiString(lang, 'pay period') : payFrequency === 'weekly' ? getUiString(lang, 'week') : getUiString(lang, 'month')}
                                     </span>
                                 </div>
 
@@ -539,11 +539,11 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         <span className="result-value">{formatUSD(salaryPerPeriod)}</span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">Crypto Allocation ({pctNum}%)</span>
+                                        <span className="result-label">{getUiString(lang, 'Crypto Allocation')} ({pctNum}%)</span>
                                         <span className="result-value">{formatUSD(cryptoAllocationPerPeriod)}</span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">Conversion Fee ({feeNum}%)</span>
+                                        <span className="result-label">{getUiString(lang, 'Conversion Fee')} ({feeNum}%)</span>
                                         <span className="result-value fee">-{formatUSD(feeAmountPerPeriod)}</span>
                                     </div>
                                     <div className="result-divider" />
@@ -559,7 +559,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                     </div>
                                     <div className="result-divider" />
                                     <div className="result-row">
-                                        <span className="result-label">{CRYPTO_LABELS[targetCrypto].symbol} Price</span>
+                                        <span className="result-label">{CRYPTO_LABELS[targetCrypto].symbol} {getUiString(lang, 'Price')}</span>
                                         <span className="result-value">{formatUSD(cryptoPrice)}</span>
                                     </div>
                                     <div className="result-row">
@@ -593,7 +593,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                             <thead>
                                                 <tr style={{ borderBottom: '2px solid var(--color-border)' }}>
                                                     <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{getUiString(lang, 'Period')}</th>
-                                                    <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{CRYPTO_LABELS[targetCrypto].symbol} Accumulated</th>
+                                                    <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{CRYPTO_LABELS[targetCrypto].symbol} {getUiString(lang, 'Accumulated')}</th>
                                                     <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 600, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{getUiString(lang, 'USD Value')}</th>
                                                 </tr>
                                             </thead>
@@ -601,7 +601,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                                 {accumulationData.map(row => (
                                                     <tr key={row.year} style={{ borderBottom: '1px solid var(--color-border)' }}>
                                                         <td style={{ padding: '8px', fontWeight: 500 }}>
-                                                            {row.year} {row.year === 1 ? 'Year' : 'Years'}
+                                                            {row.year} {row.year === 1 ? getUiString(lang, 'Year') : getUiString(lang, 'Years')}
                                                         </td>
                                                         <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-accent-green)', fontWeight: 600 }}>
                                                             {formatCrypto(row.coins, targetCrypto)} {CRYPTO_LABELS[targetCrypto].symbol}
@@ -698,7 +698,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         </span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">{CRYPTO_LABELS[cryptoType].symbol} Price</span>
+                                        <span className="result-label">{CRYPTO_LABELS[cryptoType].symbol} {getUiString(lang, 'Price')}</span>
                                         <span className="result-value">{formatUSD(cryptoFiatPrice)}</span>
                                     </div>
                                 </div>

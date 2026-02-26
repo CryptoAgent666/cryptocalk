@@ -494,7 +494,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatUSD(results.pipValue)}
                                 </span>
                                 <span className="result-hero-roi profit">
-                                    per {formatTick(results.tickSize)} move
+                                    {getUiString(lang, 'per')} {formatTick(results.tickSize)} {getUiString(lang, 'move')}
                                 </span>
                             </div>
 
@@ -507,7 +507,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Position in Coins')}</span>
                                     <span className="result-value">
-                                        {formatCoins(results.positionCoins)} {selectedCoin ? selectedCoin.symbol.toUpperCase() : 'coins'}
+                                        {formatCoins(results.positionCoins)} {selectedCoin ? selectedCoin.symbol.toUpperCase() : getUiString(lang, 'coins')}
                                     </span>
                                 </div>
                                 <div className="result-row">
@@ -530,7 +530,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 {results.pnlTable.map(({ pips, value }) => (
                                     <div className="result-row" key={pips}>
                                         <span className="result-label">
-                                            {pips} {pips === 1 ? 'pip' : 'pips'} ({formatTick(results.tickSize * pips)})
+                                            {pips} {pips === 1 ? getUiString(lang, 'pip') : getUiString(lang, 'pips')} ({formatTick(results.tickSize * pips)})
                                         </span>
                                         <span className={`result-value ${isShort ? 'fee' : 'profit'}`}>
                                             {isShort ? '−' : '+'}{formatUSD(value)}
@@ -539,7 +539,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 ))}
                                 <div className="result-divider" />
                                 <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
-                                    {isShort ? 'Values shown as profit for short (price moves down). Reverse sign if price moves up.' : 'Values shown as profit for long (price moves up). Reverse sign if price moves down.'}
+                                    {isShort ? getUiString(lang, 'Values shown as profit for short (price moves down). Reverse sign if price moves up.') : getUiString(lang, 'Values shown as profit for long (price moves up). Reverse sign if price moves down.')}
                                 </p>
                             </div>
 

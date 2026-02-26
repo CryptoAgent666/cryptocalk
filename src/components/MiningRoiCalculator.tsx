@@ -440,13 +440,13 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                 <span className="result-hero-value">
                                     {isProfit ? <TrendingUp size={28} /> : <TrendingDown size={28} />}
                                     {realisticBreakEven
-                                        ? `${realisticBreakEven} months`
-                                        : 'Never (within 36mo)'}
+                                        ? <>{realisticBreakEven} {getUiString(lang, 'months')}</>
+                                        : getUiString(lang, 'Never (within 36mo)')}
                                 </span>
                                 <span className={`result-hero-roi ${isProfit ? 'profit' : 'fee'}`}>
                                     {isProfit
-                                        ? `Monthly profit: ${formatUSD2(monthlyProfit)}`
-                                        : `Monthly loss: ${formatUSD2(Math.abs(monthlyProfit))}`}
+                                        ? <>{getUiString(lang, 'Monthly profit:')} {formatUSD2(monthlyProfit)}</>
+                                        : <>{getUiString(lang, 'Monthly loss:')} {formatUSD2(Math.abs(monthlyProfit))}</>}
                                 </span>
                             </div>
 
@@ -532,12 +532,12 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                                                 ? '#ef4444'
                                                                 : 'var(--color-primary, #6366f1)',
                                                     }}>
-                                                        {s.label}
+                                                        {getUiString(lang, s.label)}
                                                     </td>
                                                     <td style={tdStyle}>
                                                         {s.breakEvenMonth
-                                                            ? `${s.breakEvenMonth} mo`
-                                                            : 'Never'}
+                                                            ? <>{s.breakEvenMonth} {getUiString(lang, 'mo')}</>
+                                                            : getUiString(lang, 'Never')}
                                                     </td>
                                                     <td style={{
                                                         ...tdStyle,
@@ -636,7 +636,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                                     fontSize="9"
                                                     fontFamily="inherit"
                                                 >
-                                                    {tick}mo
+                                                    {tick}{getUiString(lang, 'mo')}
                                                 </text>
                                             ))}
 

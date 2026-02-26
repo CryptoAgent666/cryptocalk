@@ -302,7 +302,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                                         fontSize: '0.75rem',
                                     }}>
                                         <div style={{ width: 8, height: 8, borderRadius: '50%', background: a.color }} />
-                                        <span style={{ fontWeight: 500 }}>{a.name || 'Unnamed'}</span>
+                                        <span style={{ fontWeight: 500 }}>{a.name || getUiString(lang, 'Unnamed')}</span>
                                         <span style={{ color: 'var(--color-text-muted)' }}>{a.actualPct.toFixed(1)}%</span>
                                     </div>
                                 ))}
@@ -330,7 +330,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                                                     <td style={{ padding: '8px', fontWeight: 500 }}>
                                                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                                             <div style={{ width: 8, height: 8, borderRadius: '50%', background: a.color }} />
-                                                            {a.name || 'Unnamed'}
+                                                            {a.name || getUiString(lang, 'Unnamed')}
                                                         </div>
                                                     </td>
                                                     <td style={{ padding: '8px', textAlign: 'right' }}>{formatUSD(a.amount)}</td>
@@ -354,10 +354,10 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                                 {(() => {
                                     const maxPct = Math.max(...assetData.map(a => a.actualPct));
                                     const count = assetData.length;
-                                    let score = 'Poor';
+                                    let score = getUiString(lang, 'Poor');
                                     let scoreColor = 'var(--color-accent-red)';
-                                    if (count >= 4 && maxPct < 50) { score = 'Good'; scoreColor = 'var(--color-accent-green)'; }
-                                    else if (count >= 3 && maxPct < 60) { score = 'Moderate'; scoreColor = '#f59e0b'; }
+                                    if (count >= 4 && maxPct < 50) { score = getUiString(lang, 'Good'); scoreColor = 'var(--color-accent-green)'; }
+                                    else if (count >= 3 && maxPct < 60) { score = getUiString(lang, 'Moderate'); scoreColor = '#f59e0b'; }
                                     return (
                                         <div style={{
                                             padding: '12px 16px', borderRadius: '10px',
@@ -370,7 +370,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                                                 <div style={{ fontSize: '1rem', fontWeight: 700, color: scoreColor }}>{score}</div>
                                             </div>
                                             <div style={{ textAlign: 'right' }}>
-                                                <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>{count} assets, largest {maxPct.toFixed(0)}%</div>
+                                                <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>{count} {getUiString(lang, 'assets, largest')} {maxPct.toFixed(0)}%</div>
                                             </div>
                                         </div>
                                     );

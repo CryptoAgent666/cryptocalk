@@ -480,22 +480,22 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                     {loadingNetwork ? (
                         <div className="mining-loading">
                             <Loader2 size={24} className="spin-icon" />
-                            <span>Fetching network data...</span>
+                            <span>{getUiString(lang, 'Fetching network data...')}</span>
                         </div>
                     ) : results.length > 0 ? (
                         <>
                             {/* Network Info Bar */}
                             <div className="network-info">
                                 <div className="network-item">
-                                    <span className="network-label">BTC Price</span>
+                                    <span className="network-label">{getUiString(lang, 'BTC Price')}</span>
                                     <span className="network-value">{formatUSD(network!.btcPrice)}</span>
                                 </div>
                                 <div className="network-item">
-                                    <span className="network-label">Block Reward</span>
+                                    <span className="network-label">{getUiString(lang, 'Block Reward')}</span>
                                     <span className="network-value">{network!.blockReward} BTC</span>
                                 </div>
                                 <div className="network-item">
-                                    <span className="network-label">Difficulty</span>
+                                    <span className="network-label">{getUiString(lang, 'Difficulty')}</span>
                                     <span className="network-value">
                                         {(network!.difficulty / 1e12).toFixed(1)}T
                                     </span>
@@ -504,14 +504,14 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Daily Highlight */}
                             <div className={`mining-hero ${isProfit ? 'profit' : 'loss'}`}>
-                                <span className="mining-hero-label">Daily Net Profit</span>
+                                <span className="mining-hero-label">{getUiString(lang, 'Daily Net Profit')}</span>
                                 <span className="mining-hero-value">
                                     {isProfit ? <TrendingUp size={24} /> : <span>⚠️</span>}
                                     {formatUSD(Math.abs(results[0].netProfit))}
-                                    {!isProfit && <span className="mining-hero-neg">(Loss)</span>}
+                                    {!isProfit && <span className="mining-hero-neg">({getUiString(lang, 'Loss')})</span>}
                                 </span>
                                 <span className="mining-hero-sub">
-                                    Revenue: {formatBTC(results[0].revenueBtc)}
+                                    {getUiString(lang, 'Revenue')}: {formatBTC(results[0].revenueBtc)}
                                 </span>
                             </div>
 
@@ -521,8 +521,8 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     <thead>
                                         <tr>
                                             <th>{getUiString(lang, 'Period')}</th>
-                                            <th>Revenue (BTC)</th>
-                                            <th>Revenue (USD)</th>
+                                            <th>{getUiString(lang, 'Revenue')} (BTC)</th>
+                                            <th>{getUiString(lang, 'Revenue')} (USD)</th>
                                             <th>{getUiString(lang, 'Electricity')}</th>
                                             <th>{getUiString(lang, 'Net Profit')}</th>
                                         </tr>
@@ -554,11 +554,11 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                         </div>
                                         <div className="mining-period-grid">
                                             <div className="mining-period-item">
-                                                <span className="mining-period-label">Revenue (BTC)</span>
+                                                <span className="mining-period-label">{getUiString(lang, 'Revenue')} (BTC)</span>
                                                 <span className="mining-period-value">{r.revenueBtc.toFixed(8)}</span>
                                             </div>
                                             <div className="mining-period-item">
-                                                <span className="mining-period-label">Revenue (USD)</span>
+                                                <span className="mining-period-label">{getUiString(lang, 'Revenue')} (USD)</span>
                                                 <span className="mining-period-value">{formatUSD(r.revenueUsd)}</span>
                                             </div>
                                             <div className="mining-period-item">
@@ -580,12 +580,12 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     <Calendar size={16} />
                                     {breakEvenDays > 0 ? (
                                         <span>
-                                            Break-even in <strong>{breakEvenDays} days</strong> (~
-                                            {(breakEvenDays / 30).toFixed(1)} months)
+                                            {getUiString(lang, 'Break-even in')} <strong>{breakEvenDays} {getUiString(lang, 'days')}</strong> (~
+                                            {(breakEvenDays / 30).toFixed(1)} {getUiString(lang, 'months')})
                                         </span>
                                     ) : (
                                         <span className="break-even-never">
-                                            ⚠️ Mining is <strong>not profitable</strong> at current rates — hardware cost will not be recovered
+                                            ⚠️ {getUiString(lang, 'Mining is not profitable at current rates — hardware cost will not be recovered')}
                                         </span>
                                     )}
                                 </div>
@@ -594,14 +594,14 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Disclaimer */}
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Estimates based on current network conditions. Actual results vary with difficulty adjustments, BTC price changes, and hardware degradation.
+                                {getUiString(lang, 'Estimates based on current network conditions. Actual results vary with difficulty adjustments, BTC price changes, and hardware degradation.')}
                             </p>
                         </>
                     ) : (
                         <div className="mining-empty">
                             <Cpu size={40} strokeWidth={1} />
-                            <h3>Configure Your Mining Rig</h3>
-                            <p>Select an ASIC miner or enter your hashrate to see profitability estimates.</p>
+                            <h3>{getUiString(lang, 'Configure Your Mining Rig')}</h3>
+                            <p>{getUiString(lang, 'Select an ASIC miner or enter your hashrate to see profitability estimates.')}</p>
                         </div>
                     )}
                 </div>

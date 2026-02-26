@@ -272,7 +272,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Hero Result */}
                             <div className="result-hero" style={{ borderColor: 'var(--color-primary)' }}>
                                 <span className="result-hero-label">
-                                    {mode === 'apr-to-apy' ? 'Equivalent APY' : 'Equivalent APR'}
+                                    {mode === 'apr-to-apy' ? getUiString(lang, 'Equivalent APY') : getUiString(lang, 'Equivalent APR')}
                                 </span>
                                 <span className="result-hero-value" style={{ color: 'var(--color-primary)' }}>
                                     <ArrowRightLeft size={28} />
@@ -339,16 +339,16 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-value">{formatUSD(principalAmount)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{mode === 'apr-to-apy' ? 'Input APR' : 'Input APY'}</span>
+                                    <span className="result-label">{mode === 'apr-to-apy' ? getUiString(lang, 'Input APR') : getUiString(lang, 'Input APY')}</span>
                                     <span className="result-value">{rateInput}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Compounding')}</span>
-                                    <span className="result-value">{freq.label} ({n}x/year)</span>
+                                    <span className="result-value">{freq.label} ({n}x/{getUiString(lang, 'year')})</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Period')}</span>
-                                    <span className="result-value">{t} year{t !== 1 ? 's' : ''}</span>
+                                    <span className="result-value">{t} {t !== 1 ? getUiString(lang, 'years') : getUiString(lang, 'year')}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
@@ -381,7 +381,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                                 <th style={{ padding: '8px', textAlign: 'left', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Frequency')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'APR')}</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'APY')}</th>
-                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>Earnings ({t}y)</th>
+                                                <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Earnings')} ({t}y)</th>
                                                 <th style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-muted)', fontWeight: 500 }}>{getUiString(lang, 'Total')}</th>
                                             </tr>
                                         </thead>
@@ -392,7 +392,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                                     background: row.label === freq.label ? 'rgba(99,102,241,0.06)' : 'transparent',
                                                 }}>
                                                     <td style={{ padding: '8px', fontWeight: row.label === freq.label ? 600 : 500 }}>
-                                                        {row.label} {row.label === freq.label && '(selected)'}
+                                                        {row.label} {row.label === freq.label && `(${getUiString(lang, 'selected')})`}
                                                     </td>
                                                     <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text)' }}>
                                                         {formatPercent(row.apr * 100)}
@@ -417,7 +417,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                             {monthlyBreakdown.length > 0 && (
                                 <div style={{ marginTop: '20px' }}>
                                     <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                        {t >= 2 ? 'Yearly Growth' : 'Monthly Earnings Breakdown'}
+                                        {t >= 2 ? getUiString(lang, 'Yearly Growth') : getUiString(lang, 'Monthly Earnings Breakdown')}
                                     </h4>
                                     <div style={{ overflowX: 'auto', maxHeight: '300px', overflowY: 'auto' }}>
                                         {t >= 2 && yearlyGrowth.length > 0 ? (
@@ -433,7 +433,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                                 <tbody>
                                                     {yearlyGrowth.map((row) => (
                                                         <tr key={row.year} style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                            <td style={{ padding: '8px', fontWeight: 500 }}>Year {row.year}</td>
+                                                            <td style={{ padding: '8px', fontWeight: 500 }}>{getUiString(lang, 'Year')} {row.year}</td>
                                                             <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-accent-green)' }}>+{formatUSD(row.yearEarning)}</td>
                                                             <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-accent-green)', fontWeight: 500 }}>+{formatUSD(row.cumEarnings)}</td>
                                                             <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text)', fontWeight: 600 }}>{formatUSD(row.balance)}</td>
@@ -454,7 +454,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                                 <tbody>
                                                     {monthlyBreakdown.map((row) => (
                                                         <tr key={row.month} style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                            <td style={{ padding: '8px', fontWeight: 500 }}>Month {row.month}</td>
+                                                            <td style={{ padding: '8px', fontWeight: 500 }}>{getUiString(lang, 'Month')} {row.month}</td>
                                                             <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-accent-green)' }}>+{formatUSD(row.monthlyEarning)}</td>
                                                             <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-accent-green)', fontWeight: 500 }}>+{formatUSD(row.cumEarnings)}</td>
                                                             <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text)', fontWeight: 600 }}>{formatUSD(row.balance)}</td>

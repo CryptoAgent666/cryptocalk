@@ -240,7 +240,7 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
                 <span className="result-hero-label">{getUiString(lang, 'Net Monthly Node Income')}</span>
                 <span className="result-hero-value"><ServerCog size={28} />{formatUSD(result.netMonthlyUsd)}</span>
                 <span className={`result-hero-roi ${result.effectiveApr >= 0 ? 'profit' : 'loss'}`}>
-                  Effective APR {result.effectiveApr >= 0 ? '+' : ''}{result.effectiveApr.toFixed(2)}%
+                  {getUiString(lang, 'Effective APR')} {result.effectiveApr >= 0 ? '+' : ''}{result.effectiveApr.toFixed(2)}%
                 </span>
               </div>
 
@@ -250,8 +250,8 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Infrastructure cost (annual)')}</span><span className="result-value fee">-{formatUSD(result.infraAnnualCost)}</span></div>
                 <div className="result-divider" />
                 <div className="result-row"><span className="result-label"><strong>{getUiString(lang, 'Net annual income')}</strong></span><span className={`result-value ${result.netAnnualUsd >= 0 ? 'profit' : 'loss'}`}><strong>{formatUSD(result.netAnnualUsd)}</strong></span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Net annual rewards')}</span><span className="result-value">{formatNumber(result.netAnnualTokens)} tokens</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Break-even stake value')}</span><span className="result-value">{result.breakEvenStakeValue ? formatUSD(result.breakEvenStakeValue) : 'N/A'}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Net annual rewards')}</span><span className="result-value">{formatNumber(result.netAnnualTokens)} {getUiString(lang, 'tokens')}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Break-even stake value')}</span><span className="result-value">{result.breakEvenStakeValue ? formatUSD(result.breakEvenStakeValue) : getUiString(lang, 'N/A')}</span></div>
               </div>
 
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Real validator rewards depend on inflation, commission policy, missed blocks, and slashing events. Keep a safety margin in planning.')}</p>
