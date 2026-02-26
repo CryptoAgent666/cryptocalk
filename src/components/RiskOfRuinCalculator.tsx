@@ -196,12 +196,12 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
               <div className={`result-hero ${result.ruinProbability <= 0.1 ? 'profit' : result.ruinProbability <= 0.3 ? '' : 'loss'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Estimated Risk of Ruin')}</span>
                 <span className="result-hero-value"><AlertTriangle size={28} />{(result.ruinProbability * 100).toFixed(2)}%</span>
-                <span className={`result-hero-roi ${result.ruinProbability <= 0.1 ? 'profit' : result.ruinProbability <= 0.3 ? '' : 'loss'}`}>{result.riskLabel}</span>
+                <span className={`result-hero-roi ${result.ruinProbability <= 0.1 ? 'profit' : result.ruinProbability <= 0.3 ? '' : 'loss'}`}>{getUiString(lang, result.riskLabel)}</span>
               </div>
 
               <div className="result-breakdown">
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Expectancy per trade (R)')}</span><span className={`result-value ${result.expectancyR >= 0 ? 'profit' : 'loss'}`}>{result.expectancyR >= 0 ? '+' : ''}{result.expectancyR.toFixed(3)}R</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Loss units to ruin threshold')}</span><span className="result-value">{result.unitsToRuin.toFixed(1)} units</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Loss units to ruin threshold')}</span><span className="result-value">{result.unitsToRuin.toFixed(1)} {getUiString(lang, 'units')}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Suggested max risk (Half Kelly)')}</span><span className={`result-value ${result.halfKellyPct >= 0 ? 'profit' : 'loss'}`}>{result.halfKellyPct.toFixed(2)}%</span></div>
               </div>
 

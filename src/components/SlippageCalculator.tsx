@@ -186,7 +186,7 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
                 <span className="result-hero-label">{getUiString(lang, 'Estimated Slippage')}</span>
                 <span className="result-hero-value"><ArrowRightLeft size={28} />{result.slippagePct.toFixed(3)}%</span>
                 <span className={`result-hero-roi ${result.passTolerance ? 'profit' : 'loss'}`}>
-                  {result.passTolerance ? 'Within tolerance' : 'Above tolerance'}
+                  {result.passTolerance ? getUiString(lang, 'Within tolerance') : getUiString(lang, 'Above tolerance')}
                 </span>
               </div>
 

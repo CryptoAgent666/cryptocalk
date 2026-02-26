@@ -275,7 +275,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                 <span className="result-hero-label">{getUiString(lang, 'Net Daily Earnings')}</span>
                 <span className="result-hero-value"><Gamepad2 size={28} />{formatUSD(result.netDaily)}</span>
                 <span className={`result-hero-roi ${result.annualRoi >= 0 ? 'profit' : 'loss'}`}>
-                  Annual ROI {result.annualRoi >= 0 ? '+' : ''}{result.annualRoi.toFixed(2)}%
+                  {getUiString(lang, 'Annual ROI')} {result.annualRoi >= 0 ? '+' : ''}{result.annualRoi.toFixed(2)}%
                 </span>
               </div>
 
@@ -288,7 +288,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Break-even time')}</span>
                   <span className={`result-value ${result.breakevenDays && result.breakevenDays <= 180 ? 'profit' : 'fee'}`}>
-                    {result.breakevenDays ? `${result.breakevenDays.toFixed(0)} days` : 'Not reachable with current inputs'}
+                    {result.breakevenDays ? `${result.breakevenDays.toFixed(0)} ${getUiString(lang, 'days')}` : getUiString(lang, 'Not reachable with current inputs')}
                   </span>
                 </div>
               </div>

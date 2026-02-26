@@ -559,11 +559,11 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                 {/* Right: Results */}
                 <div className="calc-results-panel">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                        <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{getUiString('Estimated Profitability', lang)}</h3>
+                        <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{getUiString(lang, 'Estimated Profitability')}</h3>
                         {liveDataStatus === 'live' && (
                             <span style={{ color: 'var(--color-accent-green)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(52, 211, 153, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
                                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-accent-green)' }}></span>
-                                {getUiString('Live Network Data', lang)}
+                                {getUiString(lang, 'Live Network Data')}
                             </span>
                         )}
                     </div>
@@ -572,14 +572,14 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                             {/* Hero */}
                             <div className={`result-hero ${isProfit ? 'profit' : 'loss'}`}>
                                 <span className="result-hero-label">
-                                    Daily Profit ({COINS[selectedCoin].symbol})
+                                    {getUiString(lang, 'Daily Profit')} ({COINS[selectedCoin].symbol})
                                 </span>
                                 <span className="result-hero-value">
                                     {isProfit ? <TrendingUp size={28} /> : <Zap size={28} />}
                                     {formatUSD(Math.abs(results[0].netProfit))}
                                 </span>
                                 <span className={`result-hero-roi ${isProfit ? 'profit' : 'loss'}`}>
-                                    {isProfit ? 'Profitable' : 'Unprofitable'} at ${electricityCost}/kWh
+                                    {isProfit ? getUiString(lang, 'Profitable') : getUiString(lang, 'Unprofitable')} {getUiString(lang, 'at')} ${electricityCost}/kWh
                                 </span>
                             </div>
 
@@ -589,8 +589,8 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                     <div key={r.period}>
                                         {i > 0 && <div className="result-divider" />}
                                         <div className="result-row" style={{ marginTop: i > 0 ? '4px' : 0 }}>
-                                            <span className="result-label"><strong>{r.period}</strong></span>
-                                            <span className="result-value"><strong>{r.period}</strong></span>
+                                            <span className="result-label"><strong>{getUiString(lang, r.period)}</strong></span>
+                                            <span className="result-value"><strong>{getUiString(lang, r.period)}</strong></span>
                                         </div>
                                         <div className="result-row">
                                             <span className="result-label">{getUiString(lang, 'Revenue')}</span>
@@ -629,7 +629,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                                         {i + 1}. {cr.symbol} ({cr.algo})
                                                     </span>
                                                     <span className={`result-value ${cr.dailyProfit >= 0 ? 'profit' : 'fee'}`}>
-                                                        {cr.dailyProfit >= 0 ? '+' : ''}{formatUSD(cr.dailyProfit)}/day
+                                                        {cr.dailyProfit >= 0 ? '+' : ''}{formatUSD(cr.dailyProfit)}/{getUiString(lang, 'day')}
                                                     </span>
                                                 </div>
                                             </div>
@@ -654,7 +654,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                     <Calendar size={16} />
                                     {breakEvenDays > 0 ? (
                                         <span>
-                                            {getUiString(lang, 'Break-even in')} <strong>{breakEvenDays} days</strong> (~{(breakEvenDays / 30).toFixed(1)} months)
+                                            {getUiString(lang, 'Break-even in')} <strong>{breakEvenDays} {getUiString(lang, 'days')}</strong> (~{(breakEvenDays / 30).toFixed(1)} {getUiString(lang, 'months')})
                                         </span>
                                     ) : (
                                         <span style={{ color: 'var(--color-accent-red, #ef4444)' }}>

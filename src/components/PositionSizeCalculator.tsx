@@ -595,7 +595,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             {highLeverage && (
                                 <div className="leverage-warning">
                                     <AlertTriangle size={16} />
-                                    <span>High leverage ({lev}x) significantly increases liquidation risk. Consider reducing leverage.</span>
+                                    <span>{getUiString(lang, 'High leverage')} ({lev}x) {getUiString(lang, 'significantly increases liquidation risk. Consider reducing leverage.')}</span>
                                 </div>
                             )}
 
@@ -609,7 +609,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                     {formatUSD(results.positionSize)}
                                 </span>
                                 <span className="result-hero-roi profit">
-                                    {formatCoins(results.numberOfCoins)} {selectedCoin ? selectedCoin.symbol.toUpperCase() : 'coins'}
+                                    {formatCoins(results.numberOfCoins)} {selectedCoin ? selectedCoin.symbol.toUpperCase() : getUiString(lang, 'coins')}
                                 </span>
                             </div>
 
@@ -692,7 +692,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                         </div>
                                         <div className="rr-labels">
                                             <span className="rr-label-risk">{getUiString(lang, 'Risk')}</span>
-                                            <span className="rr-label-reward">Reward ({rr.toFixed(1)}x)</span>
+                                            <span className="rr-label-reward">{getUiString(lang, 'Reward')} ({rr.toFixed(1)}x)</span>
                                         </div>
                                     </>
                                 )}

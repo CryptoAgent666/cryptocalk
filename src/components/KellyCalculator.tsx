@@ -183,7 +183,7 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
                 <span className="result-hero-label">{getUiString(lang, 'Suggested Position Size (Half Kelly)')}</span>
                 <span className="result-hero-value"><Dice5 size={28} />{(result.halfKelly * 100).toFixed(2)}%</span>
                 <span className={`result-hero-roi ${result.halfKelly > 0 ? 'profit' : 'loss'}`}>
-                  {formatUSD(result.halfKellyUsd)} per trade
+                  {formatUSD(result.halfKellyUsd)} {getUiString(lang, 'per trade')}
                 </span>
               </div>
 

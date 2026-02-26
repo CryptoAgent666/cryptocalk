@@ -297,7 +297,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                             {/* Gas Cost Reference */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Gas Cost Reference (at ETH {formatUSD(nativePrice)})
+                                    {getUiString(lang, 'Gas Cost Reference')} (at ETH {formatUSD(nativePrice)})
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.78rem' }}>

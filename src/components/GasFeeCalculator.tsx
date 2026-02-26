@@ -258,13 +258,13 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                         <>
                             {/* Hero */}
                             <div className="result-hero" style={{ borderColor: currentNetwork.color }}>
-                                <span className="result-hero-label">Gas Cost — {currentTx.label}</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Gas Cost')} — {currentTx.label}</span>
                                 <span className="result-hero-value" style={{ color: currentNetwork.color }}>
                                     <Fuel size={28} />
                                     {formatUSD(gasCostUSD)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-text-secondary)' }}>
-                                    {formatETH(gasCostETH)} on {currentNetwork.label}
+                                    {formatETH(gasCostETH)} {getUiString(lang, 'on')} {currentNetwork.label}
                                 </span>
                             </div>
 
@@ -301,18 +301,18 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-value">{gasPriceGwei} Gwei × {currentSpeed.mult}x = {effectiveGwei.toFixed(2)} Gwei</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">Cost in {currentNetwork.symbol}</span>
+                                    <span className="result-label">{getUiString(lang, 'Cost in')} {currentNetwork.symbol}</span>
                                     <span className="result-value">{formatETH(gasCostETH)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{currentNetwork.symbol} Price</span>
+                                    <span className="result-label">{currentNetwork.symbol} {getUiString(lang, 'Price')}</span>
                                     <span className="result-value">{formatUSD(nativePrice)}</span>
                                 </div>
                                 {count > 1 && (
                                     <>
                                         <div className="result-divider" />
                                         <div className="result-row">
-                                            <span className="result-label">× {count} transactions</span>
+                                            <span className="result-label">× {count} {getUiString(lang, 'transactions')}</span>
                                             <span className="result-value fee"><strong>{formatUSD(totalCostUSD)}</strong></span>
                                         </div>
                                     </>
@@ -322,7 +322,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* All Tx Types Comparison */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Fee Comparison — {currentNetwork.label} at {effectiveGwei.toFixed(1)} Gwei
+                                    {getUiString(lang, 'Fee Comparison')} — {currentNetwork.label} {getUiString(lang, 'at')} {effectiveGwei.toFixed(1)} Gwei
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>

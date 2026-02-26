@@ -182,7 +182,7 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
                 <span className="result-hero-label">{getUiString(lang, 'Projected Daily Revenue')}</span>
                 <span className="result-hero-value"><BarChart3 size={28} />{formatUSD(result.projectedRevenue)}</span>
                 <span className={`result-hero-roi ${result.dailyDelta >= 0 ? 'profit' : 'loss'}`}>
-                  {result.dailyDelta >= 0 ? '+' : ''}{formatUSD(result.dailyDelta)} / day
+                  {result.dailyDelta >= 0 ? '+' : ''}{formatUSD(result.dailyDelta)} / {getUiString(lang, 'day')}
                 </span>
               </div>
 
