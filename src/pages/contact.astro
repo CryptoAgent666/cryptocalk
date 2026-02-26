@@ -3,6 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { Mail, Clock } from 'lucide-react';
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Contact Us | CryptoCalk',
+  description:
+    'Get in touch with the CryptoCalk team. We welcome your feedback and calculator requests.',
+  url: 'https://cryptocalk.com/contact/',
+  inLanguage: 'en',
+  dateModified: '2026-02-26',
+};
 ---
 
 <Layout
@@ -52,7 +63,7 @@ import { Mail, Clock } from 'lucide-react';
             data-success-text="Thanks. Your message has been sent."
             data-error-text="Unable to send right now. Please try again later."
           >
-            <input type="hidden" name="redirectTo" value="/contact" />
+            <input type="hidden" name="redirectTo" value="/contact/" />
             <input type="hidden" name="formLocale" value="en" />
             <div class="form-group honeypot" aria-hidden="true">
               <label for="company">Company</label>
@@ -86,6 +97,7 @@ import { Mail, Clock } from 'lucide-react';
     </div>
   </div>
   <SiteFooter lang="en" />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>
 
 <script is:inline>
