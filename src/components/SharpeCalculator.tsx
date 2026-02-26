@@ -207,12 +207,12 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               <div className={`result-hero ${result.sharpe >= 1 ? 'profit' : result.sharpe >= 0.5 ? '' : 'loss'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Sharpe Ratio')}</span>
                 <span className="result-hero-value"><BarChart3 size={28} />{result.sharpe.toFixed(3)}</span>
-                <span className={`result-hero-roi ${result.sharpe >= 1 ? 'profit' : result.sharpe >= 0.5 ? '' : 'loss'}`}>{result.rating}</span>
+                <span className={`result-hero-roi ${result.sharpe >= 1 ? 'profit' : result.sharpe >= 0.5 ? '' : 'loss'}`}>{getUiString(lang, result.rating)}</span>
               </div>
 
               <div className="result-breakdown">
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected excess return')}</span><span className={`result-value ${result.excessReturn >= 0 ? 'profit' : 'loss'}`}>{result.excessReturn >= 0 ? '+' : ''}{result.excessReturn.toFixed(2)}%</span></div>
-                <div className="result-row"><span className="result-label">Annual excess return (USD)</span><span className={`result-value ${result.annualExcessUsd >= 0 ? 'profit' : 'loss'}`}>{result.annualExcessUsd >= 0 ? '+' : ''}{formatUSD(result.annualExcessUsd)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Annual excess return (USD)')}</span><span className={`result-value ${result.annualExcessUsd >= 0 ? 'profit' : 'loss'}`}>{result.annualExcessUsd >= 0 ? '+' : ''}{formatUSD(result.annualExcessUsd)}</span></div>
                 <div className="result-divider" />
                 <div className="result-row"><span className="result-label">{getUiString(lang, '1σ downside scenario value')}</span><span className="result-value">{formatUSD(result.lowerBoundValue)}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, '1σ upside scenario value')}</span><span className="result-value">{formatUSD(result.upperBoundValue)}</span></div>

@@ -294,7 +294,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatUSD(loanAmount)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-text-secondary)' }}>
-                                    at {ltvPct}% LTV on {formatUSD(collateral)} collateral
+                                    {getUiString(lang, 'at')} {ltvPct}% LTV {getUiString(lang, 'on')} {formatUSD(collateral)} {getUiString(lang, 'collateral')}
                                 </span>
                             </div>
 
@@ -302,7 +302,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             <div style={{ margin: '16px 0' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', marginBottom: '4px' }}>
                                     <span style={{ color: 'var(--color-text-muted)' }}>{getUiString(lang, 'LTV Ratio')}</span>
-                                    <span style={{ color: healthColor, fontWeight: 600 }}>{healthLabel} — {ltvPct}%</span>
+                                    <span style={{ color: healthColor, fontWeight: 600 }}>{getUiString(lang, healthLabel)} — {ltvPct}%</span>
                                 </div>
                                 <div style={{ height: '8px', borderRadius: '4px', background: 'var(--color-border)', overflow: 'hidden' }}>
                                     <div style={{ height: '100%', width: `${Math.min(healthPct, 100)}%`, background: healthColor, borderRadius: '4px', transition: 'width 0.3s ease' }} />
@@ -328,7 +328,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Loan Term')}</span>
-                                    <span className="result-value">{months} months</span>
+                                    <span className="result-value">{months} {getUiString(lang, 'months')}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
@@ -358,7 +358,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                         {formatUSD(marginCallPrice)}
                                     </div>
                                     <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>
-                                        −{marginCallDrop.toFixed(1)}% collateral drop
+                                        −{marginCallDrop.toFixed(1)}% {getUiString(lang, 'collateral drop')}
                                     </div>
                                 </div>
                                 <div style={{
@@ -372,7 +372,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                         {formatUSD(liquidationPrice)}
                                     </div>
                                     <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>
-                                        −{liquidationDrop.toFixed(1)}% collateral drop
+                                        −{liquidationDrop.toFixed(1)}% {getUiString(lang, 'collateral drop')}
                                     </div>
                                 </div>
                             </div>

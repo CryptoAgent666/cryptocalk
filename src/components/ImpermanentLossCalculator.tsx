@@ -340,13 +340,13 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         <>
                             {/* IL Hero */}
                             <div className="result-hero" style={{ borderColor: ilPercent < -5 ? '#ef4444' : ilPercent < -1 ? '#f59e0b' : 'var(--color-accent-green)' }}>
-                                <span className="result-hero-label">Impermanent Loss</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Impermanent Loss')}</span>
                                 <span className="result-hero-value" style={{ color: '#ef4444' }}>
                                     <Droplets size={28} />
                                     {ilPercent.toFixed(2)}%
                                 </span>
                                 <span className="result-hero-roi" style={{ color: '#ef4444' }}>
-                                    {formatUSD(Math.abs(ilAbsolute))} lost vs HODLing
+                                    {formatUSD(Math.abs(ilAbsolute))} {getUiString(lang, 'lost vs HODLing')}
                                 </span>
                             </div>
 
@@ -357,7 +357,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                                     border: '1px solid var(--color-border)', borderRadius: '12px', textAlign: 'center',
                                 }}>
                                     <div style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
-                                        HODL Value
+                                        {getUiString(lang, 'HODL Value')}
                                     </div>
                                     <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--color-text)' }}>
                                         {formatUSD(hodlValue)}
@@ -370,7 +370,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                                     borderRadius: '12px', textAlign: 'center',
                                 }}>
                                     <div style={{ fontSize: '0.7rem', fontWeight: 600, color: isFeesOvercomeIL ? 'var(--color-accent-green)' : '#ef4444', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
-                                        LP Value (with fees)
+                                        {getUiString(lang, 'LP Value (with fees)')}
                                     </div>
                                     <div style={{ fontSize: '1.1rem', fontWeight: 700, color: isFeesOvercomeIL ? 'var(--color-accent-green)' : '#ef4444' }}>
                                         {formatUSD(lpValueWithFees)}
@@ -389,8 +389,8 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                             }}>
                                 {isFeesOvercomeIL ? <TrendingUp size={16} /> : <AlertTriangle size={16} />}
                                 {isFeesOvercomeIL
-                                    ? `Fee earnings (${formatUSD(feeEarnings)}) overcome IL (${formatUSD(Math.abs(ilAbsolute))}) — LP is profitable vs HODL!`
-                                    : `Fee earnings (${formatUSD(feeEarnings)}) do NOT overcome IL (${formatUSD(Math.abs(ilAbsolute))}) — HODL is better.`
+                                    ? `${getUiString(lang, 'Fee earnings')} (${formatUSD(feeEarnings)}) ${getUiString(lang, 'overcome IL')} (${formatUSD(Math.abs(ilAbsolute))}) — ${getUiString(lang, 'LP is profitable vs HODL!')}`
+                                    : `${getUiString(lang, 'Fee earnings')} (${formatUSD(feeEarnings)}) ${getUiString(lang, 'do NOT overcome IL')} (${formatUSD(Math.abs(ilAbsolute))}) — ${getUiString(lang, 'HODL is better.')}`
                                 }
                             </div>
 

@@ -387,13 +387,13 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         <>
                             {/* Hero */}
                             <div className="result-hero" style={{ borderColor: 'var(--color-accent-green)' }}>
-                                <span className="result-hero-label">Total After {days >= 365 ? `${(days / 365).toFixed(1)} Years` : `${days} Days`}</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Total After')} {days >= 365 ? `${(days / 365).toFixed(1)} ${getUiString(lang, 'Years')}` : `${days} ${getUiString(lang, 'Days')}`}</span>
                                 <span className="result-hero-value" style={{ color: 'var(--color-accent-green)' }}>
                                     <Coins size={28} />
                                     {formatUSD(finalValueCompound)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-accent-green)' }}>
-                                    +{formatUSD(rewardsEarned)} rewards ({effectiveROI.toFixed(2)}%)
+                                    +{formatUSD(rewardsEarned)} {getUiString(lang, 'rewards')} ({effectiveROI.toFixed(2)}%)
                                     {tokensEarned > 0 && ` ≈ ${formatTokens(tokensEarned)} ${sym}`}
                                 </span>
                             </div>
@@ -401,10 +401,10 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                             {/* Earnings Grid */}
                             <div className="staking-metrics-grid">
                                 {[
-                                    { label: 'Daily', val: dailyReward },
-                                    { label: 'Weekly', val: weeklyReward },
-                                    { label: 'Monthly', val: monthlyReward },
-                                    { label: 'Yearly', val: yearlyReward },
+                                    { label: getUiString(lang, 'Daily'), val: dailyReward },
+                                    { label: getUiString(lang, 'Weekly'), val: weeklyReward },
+                                    { label: getUiString(lang, 'Monthly'), val: monthlyReward },
+                                    { label: getUiString(lang, 'Yearly'), val: yearlyReward },
                                 ].map((e) => (
                                     <div key={e.label} style={{
                                         padding: '10px 8px', background: 'var(--color-bg-card)',
@@ -438,11 +438,11 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                                 <div className="result-divider" />
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Compounding')}</span>
-                                    <span className="result-value">{autoCompound ? 'Daily (365×/yr)' : 'None (simple)'}</span>
+                                    <span className="result-value">{autoCompound ? getUiString(lang, 'Daily (365×/yr)') : getUiString(lang, 'None (simple)')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Staking Period')}</span>
-                                    <span className="result-value">{days} days ({years.toFixed(1)} years)</span>
+                                    <span className="result-value">{days} {getUiString(lang, 'days')} ({years.toFixed(1)} {getUiString(lang, 'years')})</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">

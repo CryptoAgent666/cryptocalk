@@ -312,7 +312,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Monthly Contributions')}</span>
-                                    <span className="result-value">{formatUSD(monthly)} × {Math.floor(t * 12)} months</span>
+                                    <span className="result-value">{formatUSD(monthly)} × {Math.floor(t * 12)} {getUiString(lang, 'months')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Total Deposited')}</span>
@@ -321,7 +321,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                                 <div className="result-divider" />
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Compound Frequency')}</span>
-                                    <span className="result-value">{freq.label} ({n}×/year)</span>
+                                    <span className="result-value">{freq.label} ({n}×/{getUiString(lang, 'year')})</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Annual Rate')}</span>
@@ -360,7 +360,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                                         <tbody>
                                             {properBreakdown.map((row) => (
                                                 <tr key={row.year} style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                    <td style={{ padding: '8px', fontWeight: 500 }}>Year {row.year}</td>
+                                                    <td style={{ padding: '8px', fontWeight: 500 }}>{getUiString(lang, 'Year')} {row.year}</td>
                                                     <td style={{ padding: '8px', textAlign: 'right', fontWeight: 600, color: 'var(--color-text)' }}>
                                                         {formatUSD(row.balance)}
                                                     </td>

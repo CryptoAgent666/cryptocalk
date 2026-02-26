@@ -290,7 +290,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
                   {formatUSD(totals.projectedTotal)}
                 </span>
                 <span className="result-hero-roi">
-                  Current {formatUSD(totals.currentTotal)} • Targets total {totals.targetSum.toFixed(2)}%
+                  {getUiString(lang, 'Current')} {formatUSD(totals.currentTotal)} • {getUiString(lang, 'Targets total')} {totals.targetSum.toFixed(2)}%
                 </span>
               </div>
 

@@ -177,7 +177,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               <div className={`result-hero ${result.calmar >= 1 ? 'profit' : result.calmar >= 0.5 ? '' : 'loss'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Calmar Ratio')}</span>
                 <span className="result-hero-value"><Gauge size={28} />{result.calmar.toFixed(3)}</span>
-                <span className={`result-hero-roi ${result.calmar >= 1 ? 'profit' : result.calmar >= 0.5 ? '' : 'loss'}`}>{result.rating}</span>
+                <span className={`result-hero-roi ${result.calmar >= 1 ? 'profit' : result.calmar >= 0.5 ? '' : 'loss'}`}>{getUiString(lang, result.rating)}</span>
               </div>
 
               <div className="result-breakdown">

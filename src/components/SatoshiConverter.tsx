@@ -277,7 +277,7 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-value">{formatBTC(btc)} BTC</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{FIAT_LABELS[fiat]} Value</span>
+                                    <span className="result-label">{FIAT_LABELS[fiat]} {getUiString(lang, 'Value')}</span>
                                     <span className="result-value">{FIAT_SYMBOLS[fiat]}{formatFiat(fiatValue)}</span>
                                 </div>
                                 <div className="result-divider" />
@@ -294,7 +294,7 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                             {/* Quick Reference: Fiat to Sats */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    {FIAT_LABELS[fiat]} to Satoshis
+                                    {FIAT_LABELS[fiat]} {getUiString(lang, 'to Satoshis')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
@@ -325,7 +325,7 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                             {/* Quick Reference: Sats to Fiat */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    Satoshis to {FIAT_LABELS[fiat]}
+                                    {getUiString(lang, 'Satoshis to')} {FIAT_LABELS[fiat]}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>

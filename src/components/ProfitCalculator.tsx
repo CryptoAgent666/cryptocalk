@@ -563,14 +563,14 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Main Result */}
                             <div className={`result-hero ${isProfit ? 'profit' : 'loss'}`}>
                                 <span className="result-hero-label">
-                                    {isProfit ? 'Profit' : 'Loss'}
+                                    {isProfit ? getUiString(lang, 'Profit') : getUiString(lang, 'Loss')}
                                 </span>
                                 <span className="result-hero-value">
                                     {isProfit ? <TrendingUp size={28} /> : <TrendingDown size={28} />}
                                     {formatUSD(Math.abs(results.profitLoss))}
                                 </span>
                                 <span className={`result-hero-roi ${isProfit ? 'profit' : 'loss'}`}>
-                                    {formatPercent(results.roi)} ROI
+                                    {formatPercent(results.roi)} {getUiString(lang, 'ROI')}
                                 </span>
                             </div>
 

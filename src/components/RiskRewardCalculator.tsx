@@ -205,10 +205,10 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
     };
 
     const getRRLabel = (rr: number): string => {
-        if (rr >= 3) return 'Excellent ratio';
-        if (rr >= 2) return 'Good ratio';
-        if (rr >= 1) return 'Acceptable';
-        return 'Poor — consider adjusting';
+        if (rr >= 3) return getUiString(lang, 'Excellent ratio');
+        if (rr >= 2) return getUiString(lang, 'Good ratio');
+        if (rr >= 1) return getUiString(lang, 'Acceptable');
+        return getUiString(lang, 'Poor — consider adjusting');
     };
 
     const getRRClass = (rr: number): string => {

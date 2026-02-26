@@ -642,7 +642,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                             {/* Main Result */}
                             <div className={`result-hero ${results.growthMultiplier >= 1 ? 'profit' : 'loss'}`}>
                                 <span className="result-hero-label">
-                                    {results.mode === 'price' ? 'Price per Coin' : 'Market Cap'}
+                                    {results.mode === 'price' ? getUiString(lang, 'Price per Coin') : getUiString(lang, 'Market Cap')}
                                 </span>
                                 <span className="result-hero-value">
                                     {results.mode === 'price'
@@ -652,8 +652,8 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                 </span>
                                 <span className={`result-hero-roi ${results.growthMultiplier >= 1 ? 'profit' : 'fee'}`}>
                                     {results.growthMultiplier > 0
-                                        ? `${results.growthMultiplier >= 1 ? '+' : ''}${results.growthMultiplier.toFixed(2)}x from current`
-                                        : 'Select a coin to see multiplier'}
+                                        ? `${results.growthMultiplier >= 1 ? '+' : ''}${results.growthMultiplier.toFixed(2)}x ${getUiString(lang, 'from current')}`
+                                        : getUiString(lang, 'Select a coin to see multiplier')}
                                 </span>
                             </div>
 
@@ -664,7 +664,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                     <span className={`result-value ${results.growthMultiplier >= 1 ? 'profit' : 'fee'}`}>
                                         {results.growthMultiplier > 0
                                             ? `${results.growthMultiplier.toFixed(2)}x`
-                                            : 'N/A'}
+                                            : getUiString(lang, 'N/A')}
                                     </span>
                                 </div>
                                 <div className="result-row">
@@ -672,7 +672,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                     <span className={`result-value realism-${results.realism}`}>
                                         {getRealismIcon(results.realism)}
                                         {' '}
-                                        {results.realism === 'green' ? 'Achievable' : results.realism === 'yellow' ? 'Ambitious' : 'Unlikely'}
+                                        {results.realism === 'green' ? getUiString(lang, 'Achievable') : results.realism === 'yellow' ? getUiString(lang, 'Ambitious') : getUiString(lang, 'Unlikely')}
                                     </span>
                                 </div>
                                 <div className="result-divider" />
@@ -684,16 +684,16 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                             {/* Current Stats */}
                             <div className="result-breakdown">
                                 <div className="result-row" style={{ marginBottom: '4px' }}>
-                                    <span className="result-label"><strong>Current Data ({results.coinSymbol.toUpperCase()})</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Current Data')} ({results.coinSymbol.toUpperCase()})</strong></span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Current Price')}</span>
-                                    <span className="result-value">{results.currentPrice > 0 ? formatPrice(results.currentPrice) : 'N/A'}</span>
+                                    <span className="result-value">{results.currentPrice > 0 ? formatPrice(results.currentPrice) : getUiString(lang, 'N/A')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Current Market Cap')}</span>
-                                    <span className="result-value">{results.currentMarketCap > 0 ? formatBigNumber(results.currentMarketCap) : 'N/A'}</span>
+                                    <span className="result-value">{results.currentMarketCap > 0 ? formatBigNumber(results.currentMarketCap) : getUiString(lang, 'N/A')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Circulating Supply')}</span>
@@ -705,7 +705,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                             {results.comparisons.length > 0 && (
                                 <div className="result-breakdown">
                                     <div className="result-row" style={{ marginBottom: '4px' }}>
-                                        <span className="result-label"><strong>If {results.coinSymbol.toUpperCase()} had the market cap of...</strong></span>
+                                        <span className="result-label"><strong>{getUiString(lang, 'If')} {results.coinSymbol.toUpperCase()} {getUiString(lang, 'had the market cap of...')}</strong></span>
                                     </div>
                                     <div className="result-divider" />
                                     {results.comparisons.map((comp) => (

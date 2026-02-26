@@ -472,7 +472,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Hero */}
                             <div className={`result-hero ${isProfit ? 'profit' : 'loss'}`}>
                                 <span className="result-hero-label">
-                                    {sold ? 'Sold Value' : 'Current Value'}
+                                    {sold ? getUiString(lang, 'Sold Value') : getUiString(lang, 'Current Value')}
                                 </span>
                                 <span className="result-hero-value">
                                     {isProfit ? <TrendingUp size={28} /> : <TrendingDown size={28} />}
@@ -496,11 +496,11 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-value">{formatUSD(results.valueAtReceipt)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{sold ? 'Sold Value' : 'Current Value'}</span>
+                                    <span className="result-label">{sold ? getUiString(lang, 'Sold Value') : getUiString(lang, 'Current Value')}</span>
                                     <span className="result-value">{formatUSD(results.currentValue)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{sold ? 'Realized P&L' : 'Unrealized P&L'}</span>
+                                    <span className="result-label">{sold ? getUiString(lang, 'Realized P&L') : getUiString(lang, 'Unrealized P&L')}</span>
                                     <span className={`result-value ${isProfit ? 'profit' : 'fee'}`}>
                                         {isProfit ? '+' : '-'}{formatUSD(results.profitLoss)} ({isProfit ? '+' : ''}{results.profitPct.toFixed(1)}%)
                                     </span>
@@ -510,12 +510,12 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
 
                                 {/* Tax Section */}
                                 <div className="result-row">
-                                    <span className="result-label">Income Tax on Airdrop ({taxConfig.incomeTaxRate}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Income Tax on Airdrop')} ({taxConfig.incomeTaxRate}%)</span>
                                     <span className="result-value fee">{formatUSD(results.incomeTax)}</span>
                                 </div>
                                 {sold && results.capitalGains > 0 && (
                                     <div className="result-row">
-                                        <span className="result-label">Capital Gains Tax ({taxConfig.capitalGainsRate}%)</span>
+                                        <span className="result-label">{getUiString(lang, 'Capital Gains Tax')} ({taxConfig.capitalGainsRate}%)</span>
                                         <span className="result-value fee">{formatUSD(results.capitalGainsTax)}</span>
                                     </div>
                                 )}

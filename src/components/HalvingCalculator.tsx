@@ -354,10 +354,10 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                         </span>
                         <span className="result-hero-value" style={{ color: 'var(--color-accent-orange, #f59e0b)' }}>
                             <Clock size={28} />
-                            {countdown.daysRemaining} Days, {countdown.hoursRemaining} Hours
+                            {countdown.daysRemaining} {getUiString(lang, 'Days')}, {countdown.hoursRemaining} {getUiString(lang, 'Hours')}
                         </span>
                         <span className="result-hero-roi" style={{ color: 'var(--color-text-muted)' }}>
-                            Est. {countdown.estimatedDate} &middot; Block {formatNumber(NEXT_HALVING_BLOCK)}
+                            {getUiString(lang, 'Est.')} {countdown.estimatedDate} &middot; {getUiString(lang, 'Block')} {formatNumber(NEXT_HALVING_BLOCK)}
                         </span>
                     </div>
 
@@ -497,19 +497,19 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                                 padding: '8px', textAlign: 'right',
                                                 color: h.priceAfter6m && h.priceAfter6m > h.priceAtHalving ? 'var(--color-accent-green, #10b981)' : 'var(--color-text)',
                                             }}>
-                                                {h.priceAfter6m !== null ? formatUSD(h.priceAfter6m) : 'TBD'}
+                                                {h.priceAfter6m !== null ? formatUSD(h.priceAfter6m) : getUiString(lang, 'TBD')}
                                             </td>
                                             <td style={{
                                                 padding: '8px', textAlign: 'right',
                                                 color: h.priceAfter12m && h.priceAfter12m > h.priceAtHalving ? 'var(--color-accent-green, #10b981)' : 'var(--color-text)',
                                             }}>
-                                                {h.priceAfter12m !== null ? formatUSD(h.priceAfter12m) : 'TBD'}
+                                                {h.priceAfter12m !== null ? formatUSD(h.priceAfter12m) : getUiString(lang, 'TBD')}
                                             </td>
                                             <td style={{
                                                 padding: '8px', textAlign: 'right',
                                                 color: h.priceAfter18m && h.priceAfter18m > h.priceAtHalving ? 'var(--color-accent-green, #10b981)' : 'var(--color-text)',
                                             }}>
-                                                {h.priceAfter18m !== null ? formatUSD(h.priceAfter18m) : 'TBD'}
+                                                {h.priceAfter18m !== null ? formatUSD(h.priceAfter18m) : getUiString(lang, 'TBD')}
                                             </td>
                                         </tr>
                                     ))}

@@ -227,7 +227,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
                   {formatUSD(result.finalValue)}
                 </span>
                 <span className={`result-hero-roi ${result.netPnL >= 0 ? 'profit' : 'loss'}`}>
-                  Net {result.netPnL >= 0 ? '+' : ''}{formatUSD(result.netPnL)}
+                  {getUiString(lang, 'Net')} {result.netPnL >= 0 ? '+' : ''}{formatUSD(result.netPnL)}
                 </span>
               </div>
 
@@ -252,7 +252,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label"><strong>{getUiString(lang, 'Break-even time')}</strong></span>
                   <span className="result-value">
-                    {result.breakEvenDays ? `${result.breakEvenDays.toFixed(1)} days` : 'N/A'}
+                    {result.breakEvenDays ? `${result.breakEvenDays.toFixed(1)} ${getUiString(lang, 'days')}` : getUiString(lang, 'N/A')}
                   </span>
                 </div>
               </div>

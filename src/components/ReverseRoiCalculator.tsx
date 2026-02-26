@@ -526,7 +526,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                     {formatPrice(results.requiredPrice)}
                                 </span>
                                 <span className="result-hero-roi profit">
-                                    {results.growthMultiplier.toFixed(2)}x growth needed
+                                    {results.growthMultiplier.toFixed(2)}x {getUiString(lang, 'growth needed')}
                                 </span>
                             </div>
 
@@ -555,7 +555,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                         color: results.probability.color,
                                     }}
                                 >
-                                    {results.probability.label}
+                                    {getUiString(lang, results.probability.label)}
                                 </span>
                                 <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>
                                     ({results.growthMultiplier.toFixed(1)}x)
@@ -633,7 +633,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                         const comparison = getMarketCapComparison(results.requiredMarketCap!);
                                         return comparison ? (
                                             <div style={{ marginTop: '6px', fontStyle: 'italic', color: 'var(--color-text-muted)' }}>
-                                                This would be {comparison}.
+                                                {getUiString(lang, 'This would be')} {comparison}.
                                             </div>
                                         ) : null;
                                     })()}

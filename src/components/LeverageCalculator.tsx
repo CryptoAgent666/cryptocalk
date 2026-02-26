@@ -323,7 +323,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                     border: '1px solid rgba(249,115,22,0.3)', borderRadius: '10px',
                                     fontSize: '0.85rem', color: '#f97316', display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '12px',
                                 }}>
-                                    <AlertTriangle size={16} /> Liquidation at just {liqPercent.toFixed(1)}% price move against you.
+                                    <AlertTriangle size={16} /> {getUiString(lang, 'Liquidation at just')} {liqPercent.toFixed(1)}% {getUiString(lang, 'price move against you.')}
                                 </div>
                             )}
 
@@ -344,7 +344,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                         ROI: {formatPercent(noLevRoi)}
                                     </div>
                                     <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginTop: '8px' }}>
-                                        Balance: {formatUSD(noLevFinalBalance)}
+                                        {getUiString(lang, 'Balance')}: {formatUSD(noLevFinalBalance)}
                                     </div>
                                 </div>
 
@@ -355,7 +355,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                     borderRadius: '12px',
                                 }}>
                                     <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--color-primary)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                                        With {lev}× Leverage
+                                        {getUiString(lang, 'With')} {lev}× {getUiString(lang, 'Leverage')}
                                     </div>
                                     {isLiquidated ? (
                                         <>
@@ -363,7 +363,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                                 {getUiString(lang, 'LIQUIDATED')}
                                             </div>
                                             <div style={{ fontSize: '0.85rem', color: '#ef4444' }}>
-                                                Loss: −{formatUSD(margin)}
+                                                {getUiString(lang, 'Loss')}: −{formatUSD(margin)}
                                             </div>
                                         </>
                                     ) : (
@@ -375,7 +375,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                                 ROI: {formatPercent(levRoi)}
                                             </div>
                                             <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginTop: '8px' }}>
-                                                Balance: {formatUSD(levFinalBalance)} (margin: {formatUSD(margin)})
+                                                {getUiString(lang, 'Balance')}: {formatUSD(levFinalBalance)} ({getUiString(lang, 'margin')}: {formatUSD(margin)})
                                             </div>
                                         </>
                                     )}
@@ -434,7 +434,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Scenarios Table */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    PnL at Different Price Moves ({lev}× leverage)
+                                    {getUiString(lang, 'PnL at Different Price Moves')} ({lev}× {getUiString(lang, 'leverage')})
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{
@@ -462,7 +462,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                                         padding: '8px', textAlign: 'right', fontWeight: 500,
                                                         color: s.liquidated ? '#ef4444' : s.pnl >= 0 ? 'var(--color-accent-green)' : '#ef4444',
                                                     }}>
-                                                        {s.liquidated ? 'LIQUIDATED' : `${s.pnl >= 0 ? '+' : ''}${formatUSD(s.pnl)}`}
+                                                        {s.liquidated ? getUiString(lang, 'LIQUIDATED') : `${s.pnl >= 0 ? '+' : ''}${formatUSD(s.pnl)}`}
                                                     </td>
                                                     <td style={{
                                                         padding: '8px', textAlign: 'right',
