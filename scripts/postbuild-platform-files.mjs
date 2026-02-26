@@ -24,3 +24,15 @@ for (const { from, to } of DIST_COPY_FILES) {
   fs.copyFileSync(sourcePath, destinationPath);
   console.log(`[postbuild] copied ${from} -> dist/${to}`);
 }
+
+// Some origins are configured to serve custom errors from /404 (not /404.html).
+// Keep both paths in sync so branded 404 renders in either case.
+const errorPageSource = path.join(DIST_DIR, '404.html');
+if (fs.existsSync(errorPageSource)) {
+  const errorPageDir = path.join(DIST_DIR, '404');
+  fs.mkdirSync(errorPageDir, { recursive: true });
+
+  const errorPageTarget = path.join(errorPageDir, 'index.html');
+  fs.copyFileSync(errorPageSource, errorPageTarget);
+  console.log('[postbuild] copied 404.html -> dist/404/index.html');
+}
