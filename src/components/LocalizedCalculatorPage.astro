@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ThemeToggle from "./ThemeToggle.tsx";
 import LanguageSwitcher from "./LanguageSwitcher.tsx";
 import { getTranslations } from "../i18n/translations";
-import { getLocalizedCalculatorMeta, getLocalizedSlug, type Lang, type SpecCalculatorSlug } from "../i18n/utils";
+import { getLocalizedCalculatorMeta, getLocalizedPath, type Lang, type SpecCalculatorSlug } from "../i18n/utils";
 import { CALCULATOR_META } from "../i18n/calculator-meta";
 import { RELATED_CALCULATORS } from "../data/related-calculators";
 import { defaultFaqByLang } from "../i18n/faq-dictionary";
@@ -33,7 +33,10 @@ const { lang, slug, title, description, faq = [], pathOverride } = Astro.props;
 
 const t = getTranslations(lang);
 const prefix = lang === "en" ? "" : `/${lang}`;
-const pagePath = pathOverride ?? `${prefix}/${slug}`;
+const homePath = getLocalizedPath('/', lang);
+const ensureTrailingSlash = (value: string) =>
+  value === '/' || value.endsWith('/') ? value : `${value}/`;
+const pagePath = ensureTrailingSlash(pathOverride ?? `${prefix}/${slug}`);
 const localizedMeta = getLocalizedCalculatorMeta(
   slug,
   lang,
@@ -107,8 +110,7 @@ const relatedSlugs = RELATED_CALCULATORS[slug as SpecCalculatorSlug] ?? [];
 const relatedLinks = relatedSlugs.map((rSlug) => {
   const meta = CALCULATOR_META[lang]?.[rSlug];
   const title = meta?.title ?? CALCULATOR_META['en']?.[rSlug]?.title ?? rSlug;
-  const localizedSlug = getLocalizedSlug(rSlug, lang);
-  const href = lang === 'en' ? `/${localizedSlug}` : `/${lang}/${localizedSlug}`;
+  const href = getLocalizedPath(`/${rSlug}`, lang);
   return { title, href };
 });
 
@@ -260,12 +262,12 @@ const faqSchema = {
 >
   <header class="site-header">
     <div class="header-inner">
-      <a href={prefix || "/"} class="logo">
+      <a href={homePath} class="logo">
         <Calculator size={24} />
         <span class="logo-text">Crypto<b>Calk</b></span>
       </a>
       <div class="header-actions">
-        <a href={prefix || "/"} class="header-link">
+        <a href={homePath} class="header-link">
           <ArrowLeft size={14} />
           {t.allCalculators}
         </a>
@@ -282,7 +284,7 @@ const faqSchema = {
   <main>
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="section-container">
-        <a href={prefix || "/"}>{t.home}</a>
+        <a href={homePath}>{t.home}</a>
         <ChevronRight size={12} />
         <a href={pagePath} aria-current="page">{localizedTitle}</a>
       </div>

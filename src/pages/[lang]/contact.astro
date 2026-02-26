@@ -180,6 +180,15 @@ const content: Record<Exclude<Lang, 'en'>, ContactContent> = {
 };
 
 const c = content[lang];
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: c.pageTitle,
+  description: c.metaDescription,
+  url: `https://cryptocalk.com/${lang}/contact/`,
+  inLanguage: lang,
+  dateModified: '2026-02-26',
+};
 ---
 
 <Layout
@@ -229,7 +238,7 @@ const c = content[lang];
             data-success-text={c.successText}
             data-error-text={c.errorText}
           >
-            <input type="hidden" name="redirectTo" value={`/${lang}/contact`} />
+            <input type="hidden" name="redirectTo" value={`/${lang}/contact/`} />
             <input type="hidden" name="formLocale" value={lang} />
             <div class="form-group honeypot" aria-hidden="true">
               <label for="company">Company</label>
@@ -263,6 +272,7 @@ const c = content[lang];
     </div>
   </div>
   <SiteFooter lang={lang} />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>
 
 <script is:inline>

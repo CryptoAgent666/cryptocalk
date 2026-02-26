@@ -2,6 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Terms of Service | CryptoCalk',
+  description:
+    'Terms of Service and legal disclaimer for using CryptoCalk calculators. We provide informational tools, not financial advice.',
+  url: 'https://cryptocalk.com/terms/',
+  inLanguage: 'en',
+  dateModified: '2026-02-26',
+};
 ---
 
 <Layout
@@ -49,10 +60,11 @@ import SiteFooter from '../components/SiteFooter.astro';
       <p>We reserve the right to modify or replace these Terms at any time without prior notice. Your continued use of the website after any changes constitutes acceptance of the new Terms.</p>
 
       <h2>9. Contact Us</h2>
-      <p>If you have any questions about these Terms, please contact us at <a href="mailto:support@cryptocalk.com">support@cryptocalk.com</a> or via our <a href="/contact">Contact page</a>.</p>
+      <p>If you have any questions about these Terms, please contact us at <a href="mailto:support@cryptocalk.com">support@cryptocalk.com</a> or via our <a href="/contact/">Contact page</a>.</p>
     </div>
   </div>
   <SiteFooter lang="en" />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>
 
 <style>
