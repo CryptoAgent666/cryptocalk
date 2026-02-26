@@ -10,6 +10,10 @@ All notable changes to this project are documented here.
   - `src/components/SiteFooter.astro`
   - `src/components/LocalizedCalculatorPage.astro`
   - `src/pages/[lang]/index.astro`
+- Rebuilt `src/pages/404.astro` into a branded CryptoCalk error experience:
+  - removed inline-style placeholder markup;
+  - added responsive hero-style card with branded lockup, gradient background, CTA actions, and quick links to core calculators;
+  - preserved `noindex` behavior for the error page.
 - Aligned internal page links to trailing-slash format across core EN calculator pages and homepage/navigation templates to reduce avoidable `301` hops.
 - Updated redirect targets to trailing-slash canonical destinations:
   - `public/_redirects`
