@@ -9,7 +9,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 
 <Layout
   title="Crypto Tax Calculator — Estimate Capital Gains Tax Instantly | CryptoCalk"
-  description="Free crypto tax calculator for US, UK, Germany, Australia, Canada, and India. Estimate capital gains tax, compare short vs long-term rates, FIFO vs LIFO methods."
+  description="Free crypto tax calculator for 17 countries: US, UK, Germany, Japan, France, Brazil, Spain, Australia, Canada, India, and more. Estimate capital gains tax, compare short vs long-term rates."
   lang="en"
 >
   <!-- Header -->
@@ -45,7 +45,7 @@ import SiteFooter from '../components/SiteFooter.astro';
       <div class="section-container">
         <div class="calc-header">
           <h1>Crypto Tax Calculator</h1>
-          <p>Estimate your capital gains tax for cryptocurrency trades. Supports 6 countries with local tax brackets.</p>
+          <p>Estimate your capital gains tax for cryptocurrency trades. Supports 17 countries with local tax brackets.</p>
         </div>
 
         <TaxCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
@@ -58,7 +58,7 @@ import SiteFooter from '../components/SiteFooter.astro';
         <h2>How to Use the Tax Calculator</h2>
         <p>Our crypto tax calculator helps you estimate your capital gains tax in seconds. Follow these simple steps to calculate your tax obligation:</p>
         <ol>
-          <li><strong>Select your country</strong> — Choose from United States, United Kingdom, Germany, Australia, Canada, or India. Each country has unique tax rules and rates.</li>
+          <li><strong>Select your country</strong> — Choose from 17 countries including the US, UK, Germany, Japan, France, Brazil, Spain, South Korea, Portugal, Italy, Switzerland, Austria, Poland, Netherlands, Australia, Canada, and India. Each country has unique tax rules and rates.</li>
           <li><strong>Enter your purchase price</strong> — Input the total amount you paid for the cryptocurrency, including all fees paid at the time of purchase.</li>
           <li><strong>Enter your sale price</strong> — Input the total amount you received when selling the crypto, minus any transaction fees.</li>
           <li><strong>Choose the holding period</strong> — Select whether you held the asset for less than 1 year (short-term) or 1 year or more (long-term). This affects your tax rate significantly in most countries.</li>
@@ -81,42 +81,23 @@ import SiteFooter from '../components/SiteFooter.astro';
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>🇺🇸 USA</td>
-                <td>12–37%</td>
-                <td>0–20%</td>
-                <td>Property treatment, NIIT possible</td>
-              </tr>
-              <tr>
-                <td>🇬🇧 UK</td>
-                <td>10–20%</td>
-                <td>10–20%</td>
-                <td>£3,000 annual CGT exemption</td>
-              </tr>
-              <tr>
-                <td>🇩🇪 Germany</td>
-                <td>25–45%</td>
-                <td>Tax FREE</td>
-                <td>Held &gt;1 year = 0% tax!</td>
-              </tr>
-              <tr>
-                <td>🇦🇺 Australia</td>
-                <td>19–45%</td>
-                <td>9.5–22.5%</td>
-                <td>50% CGT discount after 12 months</td>
-              </tr>
-              <tr>
-                <td>🇨🇦 Canada</td>
-                <td>7.5–16.5%</td>
-                <td>7.5–16.5%</td>
-                <td>50% capital gains inclusion</td>
-              </tr>
-              <tr>
-                <td>🇮🇳 India</td>
-                <td>30%</td>
-                <td>30%</td>
-                <td>Flat rate + 4% cess, 1% TDS</td>
-              </tr>
+              <tr><td>🇺🇸 USA</td><td>12–37%</td><td>0–20%</td><td>Property treatment, NIIT possible</td></tr>
+              <tr><td>🇬🇧 UK</td><td>10–20%</td><td>10–20%</td><td>£3,000 annual CGT exemption</td></tr>
+              <tr><td>🇩🇪 Germany</td><td>25–45%</td><td>Tax FREE</td><td>Held &gt;1 year = 0% tax!</td></tr>
+              <tr><td>🇦🇺 Australia</td><td>19–45%</td><td>9.5–22.5%</td><td>50% CGT discount after 12 months</td></tr>
+              <tr><td>🇨🇦 Canada</td><td>7.5–16.5%</td><td>7.5–16.5%</td><td>50% capital gains inclusion</td></tr>
+              <tr><td>🇮🇳 India</td><td>30%</td><td>30%</td><td>Flat rate + 4% cess, 1% TDS</td></tr>
+              <tr><td>🇯🇵 Japan</td><td>15–55%</td><td>15–55%</td><td>Miscellaneous income, incl. 10% local tax</td></tr>
+              <tr><td>🇧🇷 Brazil</td><td>17.5%</td><td>17.5%</td><td>Flat rate (2026 reform)</td></tr>
+              <tr><td>🇫🇷 France</td><td>30%</td><td>30%</td><td>Flat PFU, crypto-to-crypto exempt</td></tr>
+              <tr><td>🇪🇸 Spain</td><td>19–30%</td><td>19–30%</td><td>Progressive savings tax, FIFO required</td></tr>
+              <tr><td>🇰🇷 South Korea</td><td>22%</td><td>22%</td><td>Delayed to 2027, ₩50M threshold</td></tr>
+              <tr><td>🇵🇹 Portugal</td><td>28%</td><td>Tax FREE</td><td>Held &gt;365 days = 0% tax!</td></tr>
+              <tr><td>🇮🇹 Italy</td><td>26%</td><td>26%</td><td>Rising to 33% in 2026</td></tr>
+              <tr><td>🇨🇭 Switzerland</td><td>0%</td><td>0%</td><td>No CGT for private investors, wealth tax only</td></tr>
+              <tr><td>🇦🇹 Austria</td><td>27.5%</td><td>27.5%</td><td>Crypto-to-crypto swaps exempt</td></tr>
+              <tr><td>🇵🇱 Poland</td><td>19%</td><td>19%</td><td>Crypto-to-crypto swaps tax-neutral</td></tr>
+              <tr><td>🇳🇱 Netherlands</td><td>~2.12%</td><td>~2.12%</td><td>Deemed return model, €57,684 threshold</td></tr>
             </tbody>
           </table>
         </div>
@@ -707,7 +688,7 @@ import SiteFooter from '../components/SiteFooter.astro';
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "Free crypto tax calculator for US, UK, Germany, Australia, Canada, and India. Estimate capital gains tax, compare short vs long-term rates, FIFO vs LIFO methods."
+  "description": "Free crypto tax calculator for 17 countries including US, UK, Germany, Japan, France, Brazil, Spain, and more. Estimate capital gains tax, compare short vs long-term rates."
 }
 </script>
 <script type="application/ld+json">
