@@ -112,6 +112,137 @@ const COUNTRIES: Record<string, CountryConfig> = {
         ],
         notes: 'India: flat 30% tax on all crypto gains + 4% cess = 31.2% effective. No deduction allowed except cost of acquisition. 1% TDS on transfers above ₹10,000.',
     },
+    jp: {
+        name: 'Japan',
+        currency: 'JPY',
+        shortTermLabel: 'Miscellaneous income',
+        longTermLabel: 'Miscellaneous income',
+        longTermThreshold: 'N/A (no holding period benefit)',
+        brackets: [
+            { label: '¥0 – ¥1,950,000', shortTermRate: 15, longTermRate: 15 },
+            { label: '¥1,950,001 – ¥3,300,000', shortTermRate: 20, longTermRate: 20 },
+            { label: '¥3,300,001 – ¥6,950,000', shortTermRate: 30, longTermRate: 30 },
+            { label: '¥6,950,001 – ¥9,000,000', shortTermRate: 33, longTermRate: 33 },
+            { label: '¥9,000,001 – ¥18,000,000', shortTermRate: 43, longTermRate: 43 },
+            { label: '¥18,000,001 – ¥40,000,000', shortTermRate: 50, longTermRate: 50 },
+            { label: '¥40,000,001+', shortTermRate: 55, longTermRate: 55 },
+        ],
+        notes: 'Japan classifies crypto as miscellaneous income. Rates include 10% local inhabitant tax. Gains under ¥200,000 exempt from filing.',
+    },
+    br: {
+        name: 'Brazil',
+        currency: 'BRL',
+        shortTermLabel: 'Flat rate',
+        longTermLabel: 'Flat rate',
+        longTermThreshold: 'N/A (flat rate)',
+        brackets: [
+            { label: 'All gains', shortTermRate: 17.5, longTermRate: 17.5 },
+        ],
+        notes: 'Brazil: flat 17.5% on all crypto gains (2026 reform). No cross-asset loss offsetting. Losses carry forward 5 quarters.',
+    },
+    fr: {
+        name: 'France',
+        currency: 'EUR',
+        shortTermLabel: 'Flat tax (PFU)',
+        longTermLabel: 'Flat tax (PFU)',
+        longTermThreshold: 'N/A (flat rate)',
+        brackets: [
+            { label: 'All gains', shortTermRate: 30, longTermRate: 30 },
+        ],
+        notes: 'France: 30% flat tax (PFU). Crypto-to-crypto swaps are NOT taxable. Gains under €305/year exempt.',
+    },
+    es_country: {
+        name: 'Spain',
+        currency: 'EUR',
+        shortTermLabel: 'Savings tax',
+        longTermLabel: 'Savings tax',
+        longTermThreshold: 'N/A (no holding period benefit)',
+        brackets: [
+            { label: '€0 – €6,000', shortTermRate: 19, longTermRate: 19 },
+            { label: '€6,001 – €50,000', shortTermRate: 21, longTermRate: 21 },
+            { label: '€50,001 – €200,000', shortTermRate: 23, longTermRate: 23 },
+            { label: '€200,001 – €300,000', shortTermRate: 27, longTermRate: 27 },
+            { label: '€300,001+', shortTermRate: 30, longTermRate: 30 },
+        ],
+        notes: 'Spain: progressive savings tax. No holding period benefit. FIFO required. Losses carry forward 4 years.',
+    },
+    kr: {
+        name: 'South Korea',
+        currency: 'KRW',
+        shortTermLabel: 'Flat rate (delayed)',
+        longTermLabel: 'Flat rate (delayed)',
+        longTermThreshold: 'N/A (flat rate)',
+        brackets: [
+            { label: 'All gains above ₩50M', shortTermRate: 22, longTermRate: 22 },
+        ],
+        notes: 'South Korea: 22% (incl. local tax) on gains above ₩50M. Currently delayed to 2027. No crypto tax enforced yet.',
+    },
+    pt_country: {
+        name: 'Portugal',
+        currency: 'EUR',
+        shortTermLabel: 'Held < 365 days (28%)',
+        longTermLabel: 'Held ≥ 365 days (0%)',
+        longTermThreshold: '365 days',
+        brackets: [
+            { label: 'All gains', shortTermRate: 28, longTermRate: 0 },
+        ],
+        notes: 'Portugal: crypto held over 365 days is TAX FREE. Short-term gains taxed at 28%. Crypto-to-crypto swaps are not taxable.',
+    },
+    it: {
+        name: 'Italy',
+        currency: 'EUR',
+        shortTermLabel: 'Flat rate',
+        longTermLabel: 'Flat rate',
+        longTermThreshold: 'N/A (flat rate)',
+        brackets: [
+            { label: 'All gains', shortTermRate: 26, longTermRate: 26 },
+        ],
+        notes: 'Italy: flat 26% on all crypto gains (rising to 33% in 2026). No annual exemption since 2025.',
+    },
+    ch: {
+        name: 'Switzerland',
+        currency: 'CHF',
+        shortTermLabel: 'Private investor',
+        longTermLabel: 'Private investor',
+        longTermThreshold: 'N/A (no capital gains tax)',
+        brackets: [
+            { label: 'All gains', shortTermRate: 0, longTermRate: 0 },
+        ],
+        notes: 'Switzerland: 0% capital gains tax for private investors. Annual wealth tax of ~0.15–1% applies. Professional traders taxed as income.',
+    },
+    at: {
+        name: 'Austria',
+        currency: 'EUR',
+        shortTermLabel: 'Flat rate',
+        longTermLabel: 'Flat rate',
+        longTermThreshold: 'N/A (flat rate)',
+        brackets: [
+            { label: 'All gains', shortTermRate: 27.5, longTermRate: 27.5 },
+        ],
+        notes: 'Austria: flat 27.5% on crypto gains. Crypto-to-crypto swaps are NOT taxed. Legacy assets (pre-March 2021) may be exempt.',
+    },
+    pl: {
+        name: 'Poland',
+        currency: 'PLN',
+        shortTermLabel: 'Flat rate',
+        longTermLabel: 'Flat rate',
+        longTermThreshold: 'N/A (flat rate)',
+        brackets: [
+            { label: 'All gains', shortTermRate: 19, longTermRate: 19 },
+        ],
+        notes: 'Poland: flat 19% on crypto-to-fiat gains. Crypto-to-crypto swaps are tax-neutral. Acquisition costs are deductible.',
+    },
+    nl: {
+        name: 'Netherlands',
+        currency: 'EUR',
+        shortTermLabel: 'Deemed return',
+        longTermLabel: 'Deemed return',
+        longTermThreshold: 'N/A (wealth-based)',
+        brackets: [
+            { label: 'Above €57,684 threshold', shortTermRate: 2.12, longTermRate: 2.12 },
+        ],
+        notes: 'Netherlands: taxed on deemed return (~5.88%), not actual gains. Effective rate ~2.12%. Tax-free threshold: €57,684 per person.',
+    },
 };
 
 const METHODS = [
@@ -134,16 +265,6 @@ const TAX_SCENARIOS = [
         method: 'fifo',
     },
     {
-        label: 'AU Long-Term',
-        country: 'au',
-        buyPrice: '30000',
-        sellPrice: '65000',
-        quantity: '1',
-        holdingPeriod: 'long' as const,
-        bracketIndex: 2,
-        method: 'fifo',
-    },
-    {
         label: 'DE 1Y+ Exempt',
         country: 'de',
         buyPrice: '30000',
@@ -151,6 +272,36 @@ const TAX_SCENARIOS = [
         quantity: '1',
         holdingPeriod: 'long' as const,
         bracketIndex: 1,
+        method: 'fifo',
+    },
+    {
+        label: 'PT 365D Free',
+        country: 'pt_country',
+        buyPrice: '30000',
+        sellPrice: '65000',
+        quantity: '1',
+        holdingPeriod: 'long' as const,
+        bracketIndex: 0,
+        method: 'fifo',
+    },
+    {
+        label: 'CH 0% Tax',
+        country: 'ch',
+        buyPrice: '30000',
+        sellPrice: '65000',
+        quantity: '1',
+        holdingPeriod: 'short' as const,
+        bracketIndex: 0,
+        method: 'fifo',
+    },
+    {
+        label: 'JP High Rate',
+        country: 'jp',
+        buyPrice: '4500000',
+        sellPrice: '9500000',
+        quantity: '1',
+        holdingPeriod: 'short' as const,
+        bracketIndex: 4,
         method: 'fifo',
     },
 ] as const;
@@ -243,8 +394,14 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
     };
 
     const formatCurrency = (n: number) => {
-        const sym = config.currency === 'USD' ? '$' : config.currency === 'GBP' ? '£' : config.currency === 'EUR' ? '€' : config.currency === 'AUD' ? 'A$' : config.currency === 'CAD' ? 'C$' : '₹';
-        return `${sym}${Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        const symbols: Record<string, string> = {
+            USD: '$', GBP: '£', EUR: '€', AUD: 'A$', CAD: 'C$', INR: '₹',
+            JPY: '¥', BRL: 'R$', KRW: '₩', CHF: 'CHF ', PLN: 'zł',
+        };
+        const sym = symbols[config.currency] || '$';
+        const noDecimals = config.currency === 'JPY' || config.currency === 'KRW';
+        const digits = noDecimals ? 0 : 2;
+        return `${sym}${Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: digits, maximumFractionDigits: digits })}`;
     };
 
     const isGain = result ? result.capitalGain >= 0 : true;
@@ -351,7 +508,6 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${buyPrice === price ? 'active' : ''}`}
                                     onClick={() => setBuyPrice(price)}
                                 >
-                                    {config.currency === 'AUD' ? 'A$' : config.currency === 'USD' ? '$' : ''}
                                     {Number(price).toLocaleString('en-US')}
                                 </button>
                             ))}
@@ -382,7 +538,6 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${sellPrice === price ? 'active' : ''}`}
                                     onClick={() => setSellPrice(price)}
                                 >
-                                    {config.currency === 'AUD' ? 'A$' : config.currency === 'USD' ? '$' : ''}
                                     {Number(price).toLocaleString('en-US')}
                                 </button>
                             ))}
@@ -567,7 +722,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Country Notes */}
                             <div className="tax-notes">
                                 <Info size={14} />
-                                <p>{config.notes}</p>
+                                <p>{getUiString(lang, config.notes)}</p>
                             </div>
 
                             <p className="calc-disclaimer">
@@ -581,7 +736,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                             <h3>{getUiString(lang, 'Estimate Your Crypto Taxes')}</h3>
                             <p>{getUiString(lang, 'Select your country, enter your trade details, and see your estimated capital gains tax instantly.')}</p>
                             <div className="tax-features">
-                                <span>🌍 {getUiString(lang, '6 countries')}</span>
+                                <span>🌍 {getUiString(lang, '17 countries')}</span>
                                 <span>📊 FIFO / LIFO</span>
                                 <span>📅 {getUiString(lang, 'Short / Long-term')}</span>
                             </div>
