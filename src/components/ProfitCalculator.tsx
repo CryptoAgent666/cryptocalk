@@ -377,6 +377,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={buyPrice}
                                 onChange={(e) => setBuyPrice(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="buy-price"
                                 step="any"
@@ -410,6 +411,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={sellPrice}
                                 onChange={(e) => setSellPrice(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="sell-price"
                                 step="any"
@@ -462,6 +464,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                         ? setInvestmentAmount(e.target.value)
                                         : setQuantity(e.target.value)
                                 }
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="amount-input"
                                 step="any"
@@ -503,6 +506,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                         type="number" inputMode="decimal"
                                         value={entryFee}
                                         onChange={(e) => setEntryFee(e.target.value)}
+                                        onFocus={(e) => e.target.select()}
                                         placeholder=""
                                         id="entry-fee"
                                         step="0.01"
@@ -526,6 +530,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                         type="number" inputMode="decimal"
                                         value={exitFee}
                                         onChange={(e) => setExitFee(e.target.value)}
+                                        onFocus={(e) => e.target.select()}
                                         placeholder=""
                                         id="exit-fee"
                                         step="0.01"

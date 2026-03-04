@@ -17,6 +17,12 @@ All notable changes to this project are documented here.
   - Quick Scenarios dating back to 2013 (BTC), 2015 (ETH), 2017 (BNB, ADA) now work via CryptoCompare fallback
   - Coin search still uses CoinGecko search endpoint directly (not affected by historical data limits)
 
+### Fixed
+- Improved mobile UX and reliability across multiple calculators:
+  - Added `onFocus` auto-selection to all number inputs in DCA, Profit, NFT, and Risk/Reward calculators to prevent input appending errors.
+  - Added graceful 429 Rate Limit error handling to the DCA Calculator API requests.
+  - Added horizontal scroll indicators (padding and gradient mask) to the Quick Scenarios pills row on mobile to improve discoverability.
+
 ## [2026-02-26]
 
 ### Changed
