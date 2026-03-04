@@ -261,6 +261,7 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                                 type="number" inputMode="decimal"
                                 value={entryPrice}
                                 onChange={(e) => setEntryPrice(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="rr-entry-price"
                                 step="any"
@@ -300,6 +301,7 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                                 type="number" inputMode="decimal"
                                 value={stopLoss}
                                 onChange={(e) => setStopLoss(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="rr-stop-loss"
                                 step="any"
@@ -330,6 +332,7 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                                 type="number" inputMode="decimal"
                                 value={takeProfit}
                                 onChange={(e) => setTakeProfit(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="rr-take-profit"
                                 step="any"
@@ -361,6 +364,7 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
                                 type="number" inputMode="decimal"
                                 value={positionSize}
                                 onChange={(e) => setPositionSize(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="rr-position-size"
                                 step="any"

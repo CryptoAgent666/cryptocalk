@@ -196,7 +196,10 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                 `https://api.coingecko.com/api/v3/coins/${selectedCoin.id}/market_chart?vs_currency=usd&days=${daysDiff}&x_cg_demo_api_key=${apiKey}`
             );
 
-            if (!res.ok) throw new Error('Failed to fetch price data');
+            if (!res.ok) {
+                if (res.status === 429) throw new Error('API rate limit reached. Please wait a minute and try again.');
+                throw new Error('Failed to fetch price data');
+            }
 
             const data = await res.json();
             const prices: [number, number][] = data.prices || [];
@@ -575,6 +578,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="dca-amount"
                                 step="any"
