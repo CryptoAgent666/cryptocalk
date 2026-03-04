@@ -154,7 +154,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={initialCost} onChange={(e) => setInitialCost(e.target.value)} min="0" step="any" id="gamefi-initial" />
+              <input type="number" inputMode="decimal" value={initialCost} onChange={(e) => setInitialCost(e.target.value)} min="0" step="any" id="gamefi-initial"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -171,7 +171,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={dailyTokenRewards} onChange={(e) => setDailyTokenRewards(e.target.value)} min="0" step="any" id="gamefi-rewards" style={{ marginTop: '8px' }} />
+            <input type="number" inputMode="decimal" value={dailyTokenRewards} onChange={(e) => setDailyTokenRewards(e.target.value)} min="0" step="any" id="gamefi-rewards" style={{ marginTop: '8px' }}  onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
@@ -188,7 +188,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="gamefi-price" />
+              <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="gamefi-price"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -206,7 +206,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={marketplaceFee} onChange={(e) => setMarketplaceFee(e.target.value)} min="0" step="any" id="gamefi-fee" />
+              <input type="number" inputMode="decimal" value={marketplaceFee} onChange={(e) => setMarketplaceFee(e.target.value)} min="0" step="any" id="gamefi-fee"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -224,7 +224,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={dailyExpenses} onChange={(e) => setDailyExpenses(e.target.value)} min="0" step="any" id="gamefi-expenses" />
+              <input type="number" inputMode="decimal" value={dailyExpenses} onChange={(e) => setDailyExpenses(e.target.value)} min="0" step="any" id="gamefi-expenses"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -241,7 +241,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={activeDaysPerMonth} onChange={(e) => setActiveDaysPerMonth(e.target.value)} min="1" step="1" id="gamefi-active-days" style={{ marginTop: '8px' }} />
+            <input type="number" inputMode="decimal" value={activeDaysPerMonth} onChange={(e) => setActiveDaysPerMonth(e.target.value)} min="1" step="1" id="gamefi-active-days" style={{ marginTop: '8px' }}  onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
@@ -258,7 +258,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={assetResaleValue} onChange={(e) => setAssetResaleValue(e.target.value)} min="0" step="any" id="gamefi-resale" />
+              <input type="number" inputMode="decimal" value={assetResaleValue} onChange={(e) => setAssetResaleValue(e.target.value)} min="0" step="any" id="gamefi-resale"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 

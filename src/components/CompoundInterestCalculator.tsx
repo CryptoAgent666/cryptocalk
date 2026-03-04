@@ -165,7 +165,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={initialAmount} onChange={(e) => setInitialAmount(e.target.value)}
-                                placeholder="" id="ci-initial" step="any" min="0" />
+                                placeholder="" id="ci-initial" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -184,7 +184,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)}
-                                placeholder="" id="ci-monthly" step="any" min="0" />
+                                placeholder="" id="ci-monthly" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -200,7 +200,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={annualRate} onChange={(e) => setAnnualRate(e.target.value)}
-                                placeholder="" id="ci-rate" step="0.1" min="0" />
+                                placeholder="" id="ci-rate" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -216,7 +216,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)}
-                                placeholder="" id="ci-years" step="1" min="1" max="30" />
+                                placeholder="" id="ci-years" step="1" min="1" max="30"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

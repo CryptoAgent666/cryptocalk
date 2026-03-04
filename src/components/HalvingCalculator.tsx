@@ -212,7 +212,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="halving-hashrate"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {HASHRATE_PRESETS.map((value) => (
@@ -242,7 +242,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="halving-electricity"
                                 step="0.01"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="label-hint">per kWh</span>
                         </div>
                         <div className="pills-row">
@@ -273,7 +273,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="halving-power"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {POWER_PRESETS.map((value) => (
@@ -304,7 +304,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="halving-btc-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {BTC_PRICE_PRESETS.map((value) => (

@@ -415,7 +415,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 id="account-balance"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -446,7 +446,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 step="0.1"
                                 min="0.1"
                                 max="100"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -479,7 +479,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 id="entry-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -498,7 +498,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 id="stop-loss-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -517,7 +517,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 id="take-profit-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -548,7 +548,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 step="1"
                                 min="1"
                                 max="125"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -575,7 +575,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 id="exchange-fee"
                                 step="0.01"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

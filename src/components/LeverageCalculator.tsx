@@ -244,7 +244,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="" id="lev-entry" step="any" min="0" />
+                                placeholder="" id="lev-entry" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -264,7 +264,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="" id="lev-size" step="any" min="0" />
+                                placeholder="" id="lev-size" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -284,7 +284,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={leverage} onChange={(e) => setLeverage(e.target.value)}
-                                placeholder="" id="lev-leverage" step="1" min="1" max="200" />
+                                placeholder="" id="lev-leverage" step="1" min="1" max="200"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -301,7 +301,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={priceChange} onChange={(e) => setPriceChange(e.target.value)}
-                                placeholder="" id="lev-change" step="1" />
+                                placeholder="" id="lev-change" step="1"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

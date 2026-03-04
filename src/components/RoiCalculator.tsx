@@ -238,7 +238,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="roi-initial"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -268,7 +268,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="roi-current"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -298,7 +298,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="roi-days"
                                 step="1"
                                 min="1"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -328,7 +328,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="roi-fees"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

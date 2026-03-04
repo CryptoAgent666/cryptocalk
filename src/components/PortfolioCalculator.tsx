@@ -209,7 +209,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={totalInvestment} onChange={(e) => setTotalInvestment(e.target.value)}
-                                placeholder="" id="pf-total" step="any" min="0" />
+                                placeholder="" id="pf-total" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -229,13 +229,13 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                                         <input type="number" inputMode="decimal" value={asset.amount || ''}
                                             onChange={(e) => updateAsset(asset.id, 'amount', parseFloat(e.target.value) || 0)}
                                             placeholder=""
-                                            className="portfolio-asset-input" />
+                                            className="portfolio-asset-input"  onFocus={(e) => e.target.select()} />
                                     </div>
                                     <div className="portfolio-asset-target">
                                         <input type="number" inputMode="decimal" value={asset.targetPct || ''}
                                             onChange={(e) => updateAsset(asset.id, 'targetPct', parseFloat(e.target.value) || 0)}
                                             placeholder="%"
-                                            className="portfolio-asset-input portfolio-asset-input-target" />
+                                            className="portfolio-asset-input portfolio-asset-input-target"  onFocus={(e) => e.target.select()} />
                                         <span className="portfolio-asset-suffix">%</span>
                                     </div>
                                     <button onClick={() => removeAsset(asset.id)} className="portfolio-asset-remove">

@@ -116,7 +116,7 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 id="bridge-amount"
-              />
+               onFocus={(e) => e.target.select()} />
               <span className="input-unit">{token}</span>
             </div>
           </div>

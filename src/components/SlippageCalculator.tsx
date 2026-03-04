@@ -115,7 +115,7 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="0" step="any" id="slippage-tvl" />
+              <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="0" step="any" id="slippage-tvl"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -133,7 +133,7 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={tradeSize} onChange={(e) => setTradeSize(e.target.value)} min="0" step="any" id="slippage-trade" />
+              <input type="number" inputMode="decimal" value={tradeSize} onChange={(e) => setTradeSize(e.target.value)} min="0" step="any" id="slippage-trade"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -151,7 +151,7 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={dexFee} onChange={(e) => setDexFee(e.target.value)} min="0" step="any" id="slippage-fee" />
+              <input type="number" inputMode="decimal" value={dexFee} onChange={(e) => setDexFee(e.target.value)} min="0" step="any" id="slippage-fee"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -169,7 +169,7 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={slippageTolerance} onChange={(e) => setSlippageTolerance(e.target.value)} min="0" step="any" id="slippage-tolerance" />
+              <input type="number" inputMode="decimal" value={slippageTolerance} onChange={(e) => setSlippageTolerance(e.target.value)} min="0" step="any" id="slippage-tolerance"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 

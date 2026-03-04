@@ -130,7 +130,7 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={principal} onChange={(e) => setPrincipal(e.target.value)} min="0" step="any" id="lending-principal" />
+              <input type="number" inputMode="decimal" value={principal} onChange={(e) => setPrincipal(e.target.value)} min="0" step="any" id="lending-principal"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -148,7 +148,7 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={apy} onChange={(e) => setApy(e.target.value)} min="0" step="any" id="lending-apy" />
+              <input type="number" inputMode="decimal" value={apy} onChange={(e) => setApy(e.target.value)} min="0" step="any" id="lending-apy"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -165,7 +165,7 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={termMonths} onChange={(e) => setTermMonths(e.target.value)} min="1" step="1" id="lending-term" />
+            <input type="number" inputMode="decimal" value={termMonths} onChange={(e) => setTermMonths(e.target.value)} min="1" step="1" id="lending-term"  onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
@@ -182,7 +182,7 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={platformFee} onChange={(e) => setPlatformFee(e.target.value)} min="0" step="any" id="lending-fee" />
+              <input type="number" inputMode="decimal" value={platformFee} onChange={(e) => setPlatformFee(e.target.value)} min="0" step="any" id="lending-fee"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 

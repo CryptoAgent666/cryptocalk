@@ -112,7 +112,7 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix"><input type="number" inputMode="decimal" value={swapAmount} onChange={(e) => setSwapAmount(e.target.value)} min="0" step="any" id="mev-amount" /></div>
+            <div className="input-with-prefix"><input type="number" inputMode="decimal" value={swapAmount} onChange={(e) => setSwapAmount(e.target.value)} min="0" step="any" id="mev-amount"  onFocus={(e) => e.target.select()} /></div>
           </div>
           <div className="input-group">
             <label>Slippage Tolerance (%)</label>
@@ -128,7 +128,7 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={slippage} onChange={(e) => setSlippage(e.target.value)} min="0.1" step="any" id="mev-slippage" />
+              <input type="number" inputMode="decimal" value={slippage} onChange={(e) => setSlippage(e.target.value)} min="0.1" step="any" id="mev-slippage"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
           <div className="input-group">

@@ -320,7 +320,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="equipment-cost-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {EQUIPMENT_PILLS.map((pill) => (
@@ -361,7 +361,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="monthly-revenue-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -392,7 +392,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="monthly-expenses-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
