@@ -438,7 +438,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                 id="reverse-roi-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -468,7 +468,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                 id="reverse-roi-investment"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -498,7 +498,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                 id="reverse-roi-target"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

@@ -539,7 +539,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                     id="mcap-target-marketcap"
                                     step="any"
                                     min="0"
-                                />
+                                 onFocus={(e) => e.target.select()} />
                             </div>
                         </div>
                     ) : (
@@ -568,7 +568,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                     id="mcap-target-price"
                                     step="any"
                                     min="0"
-                                />
+                                 onFocus={(e) => e.target.select()} />
                             </div>
                         </div>
                     )}
@@ -621,7 +621,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="mcap-supply"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

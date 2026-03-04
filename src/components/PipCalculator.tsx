@@ -380,7 +380,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="pip-current-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -436,7 +436,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="pip-position-size"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -466,7 +466,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="pip-tick-size"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

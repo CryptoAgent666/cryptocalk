@@ -210,7 +210,7 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                             id="convert-amount"
                             step="any"
                             min="0"
-                        />
+                         onFocus={(e) => e.target.select()} />
                     </div>
                 </div>
 

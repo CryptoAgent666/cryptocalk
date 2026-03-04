@@ -113,7 +113,7 @@ export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) 
               min="0"
               placeholder=""
               id="unit-converter-amount"
-            />
+             onFocus={(e) => e.target.select()} />
             <div className="pills-row">
               {quickAmounts.map((value) => (
                 <button

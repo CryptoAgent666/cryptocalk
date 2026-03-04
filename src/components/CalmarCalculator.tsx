@@ -109,7 +109,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="calmar-value" />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="calmar-value"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -127,7 +127,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)} step="any" id="calmar-return" />
+              <input type="number" inputMode="decimal" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)} step="any" id="calmar-return"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -145,7 +145,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.01" step="any" id="calmar-dd" />
+              <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.01" step="any" id="calmar-dd"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -162,7 +162,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="calmar-years" />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="calmar-years"  onFocus={(e) => e.target.select()} />
           </div>
 
           <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>

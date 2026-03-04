@@ -123,7 +123,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={deposit} onChange={(e) => setDeposit(e.target.value)} min="1" step="any" id="uni-deposit" />
+              <input type="number" inputMode="decimal" value={deposit} onChange={(e) => setDeposit(e.target.value)} min="1" step="any" id="uni-deposit"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -141,7 +141,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="1" step="any" id="uni-tvl" />
+              <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="1" step="any" id="uni-tvl"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -159,7 +159,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={dailyVolume} onChange={(e) => setDailyVolume(e.target.value)} min="1" step="any" id="uni-volume" />
+              <input type="number" inputMode="decimal" value={dailyVolume} onChange={(e) => setDailyVolume(e.target.value)} min="1" step="any" id="uni-volume"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -189,7 +189,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={priceMovePct} onChange={(e) => setPriceMovePct(e.target.value)} step="any" id="uni-price-move" />
+              <input type="number" inputMode="decimal" value={priceMovePct} onChange={(e) => setPriceMovePct(e.target.value)} step="any" id="uni-price-move"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -206,7 +206,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={days} onChange={(e) => setDays(e.target.value)} min="1" step="1" id="uni-days" />
+            <input type="number" inputMode="decimal" value={days} onChange={(e) => setDays(e.target.value)} min="1" step="1" id="uni-days"  onFocus={(e) => e.target.select()} />
           </div>
 
           <button className="reset-btn" onClick={reset}>

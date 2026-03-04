@@ -238,7 +238,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={deposit} onChange={(e) => setDeposit(e.target.value)}
-                                placeholder="" id="yf-deposit" step="any" min="0" />
+                                placeholder="" id="yf-deposit" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -268,7 +268,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={poolRate} onChange={(e) => setPoolRate(e.target.value)}
-                                placeholder="" id="yf-rate" step="0.1" min="0" />
+                                placeholder="" id="yf-rate" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -288,7 +288,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={gasEntry} onChange={(e) => setGasEntry(e.target.value)}
-                                placeholder="" id="yf-gas-entry" step="0.1" min="0" />
+                                placeholder="" id="yf-gas-entry" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -307,7 +307,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={gasExit} onChange={(e) => setGasExit(e.target.value)}
-                                placeholder="" id="yf-gas-exit" step="0.1" min="0" />
+                                placeholder="" id="yf-gas-exit" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -326,7 +326,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={gasHarvest} onChange={(e) => setGasHarvest(e.target.value)}
-                                placeholder="" id="yf-gas-harvest" step="0.1" min="0" />
+                                placeholder="" id="yf-gas-harvest" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -360,7 +360,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={ilPercent} onChange={(e) => setIlPercent(e.target.value)}
-                                placeholder="" id="yf-il" step="0.1" min="0" max="50" />
+                                placeholder="" id="yf-il" step="0.1" min="0" max="50"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -378,7 +378,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={farmingDays} onChange={(e) => setFarmingDays(e.target.value)}
-                                placeholder="" id="yf-days" step="1" min="1" />
+                                placeholder="" id="yf-days" step="1" min="1"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

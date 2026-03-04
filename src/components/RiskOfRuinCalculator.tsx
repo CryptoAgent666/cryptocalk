@@ -128,7 +128,7 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="ror-win-rate" />
+              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="ror-win-rate"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -145,7 +145,7 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={rewardRisk} onChange={(e) => setRewardRisk(e.target.value)} min="0.01" step="any" id="ror-rr" />
+            <input type="number" inputMode="decimal" value={rewardRisk} onChange={(e) => setRewardRisk(e.target.value)} min="0.01" step="any" id="ror-rr"  onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
@@ -162,7 +162,7 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="ror-risk-trade" />
+              <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="ror-risk-trade"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -180,7 +180,7 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.1" step="any" id="ror-max-dd" />
+              <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.1" step="any" id="ror-max-dd"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 

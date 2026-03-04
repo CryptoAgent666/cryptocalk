@@ -308,7 +308,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="" id="margin-entry" step="any" min="0" />
+                                placeholder="" id="margin-entry" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -328,7 +328,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="" id="margin-size" step="any" min="0" />
+                                placeholder="" id="margin-size" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -348,7 +348,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={leverage} onChange={(e) => setLeverage(e.target.value)}
-                                placeholder="" id="margin-leverage" step="1" min="1" max="200" />
+                                placeholder="" id="margin-leverage" step="1" min="1" max="200"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -374,7 +374,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={walletBalance} onChange={(e) => setWalletBalance(e.target.value)}
-                                placeholder="Auto (= required margin)" id="margin-wallet" step="any" min="0" />
+                                placeholder="Auto (= required margin)" id="margin-wallet" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                         <span className="input-hint">
                             If empty, assumes isolated margin = required margin.
@@ -394,7 +394,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={maintenanceRate} onChange={(e) => setMaintenanceRate(e.target.value)}
-                                placeholder="" id="margin-mmr" step="0.1" min="0" />
+                                placeholder="" id="margin-mmr" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

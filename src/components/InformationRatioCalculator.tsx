@@ -123,7 +123,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
                 min="0"
                 step="any"
                 id="ir-value"
-              />
+               onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -141,7 +141,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={portfolioReturn} onChange={(e) => setPortfolioReturn(e.target.value)} step="any" id="ir-portfolio-return" />
+              <input type="number" inputMode="decimal" value={portfolioReturn} onChange={(e) => setPortfolioReturn(e.target.value)} step="any" id="ir-portfolio-return"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -159,7 +159,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={benchmarkReturn} onChange={(e) => setBenchmarkReturn(e.target.value)} step="any" id="ir-benchmark-return" />
+              <input type="number" inputMode="decimal" value={benchmarkReturn} onChange={(e) => setBenchmarkReturn(e.target.value)} step="any" id="ir-benchmark-return"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -177,7 +177,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={trackingError} onChange={(e) => setTrackingError(e.target.value)} min="0.01" step="any" id="ir-tracking-error" />
+              <input type="number" inputMode="decimal" value={trackingError} onChange={(e) => setTrackingError(e.target.value)} min="0.01" step="any" id="ir-tracking-error"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -194,7 +194,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="ir-years" />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="ir-years"  onFocus={(e) => e.target.select()} />
           </div>
 
           <button className="reset-btn" onClick={reset}>

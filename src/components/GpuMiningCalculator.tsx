@@ -382,7 +382,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="num-gpus-input"
                                 step="1"
                                 min="1"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -404,7 +404,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="hashrate-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="input-unit" style={{ marginLeft: 'auto', paddingRight: '10px', color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>MH/s</span>
                         </div>
                     </div>
@@ -427,7 +427,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="power-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="input-unit" style={{ marginLeft: 'auto', paddingRight: '10px', color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>W</span>
                         </div>
                     </div>
@@ -458,7 +458,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="electricity-input"
                                 step="0.01"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -489,7 +489,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 step="0.1"
                                 min="0"
                                 max="100"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -542,7 +542,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="hardware-cost-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

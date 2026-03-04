@@ -160,7 +160,7 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                                 id="satoshi-amount"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

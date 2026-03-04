@@ -303,7 +303,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         id="salary-input"
                                         step="any"
                                         min="0"
-                                    />
+                                     onFocus={(e) => e.target.select()} />
                                 </div>
                                 <div className="pills-row">
                                     {['30000', '60000', '100000', '150000', '200000'].map(a => (
@@ -334,7 +334,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         step="1"
                                         min="0"
                                         max="100"
-                                    />
+                                     onFocus={(e) => e.target.select()} />
                                 </div>
                                 <div className="pills-row">
                                     {['5', '10', '20', '50', '100'].map(p => (
@@ -396,7 +396,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         step="0.1"
                                         min="0"
                                         max="100"
-                                    />
+                                     onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
 
@@ -447,7 +447,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         id="crypto-amount-input"
                                         step="any"
                                         min="0"
-                                    />
+                                     onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
 

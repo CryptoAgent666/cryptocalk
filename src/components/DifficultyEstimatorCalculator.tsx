@@ -105,7 +105,7 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={currentDifficulty} onChange={(e) => setCurrentDifficulty(e.target.value)} min="0" step="any" id="difficulty-current" />
+              <input type="number" inputMode="decimal" value={currentDifficulty} onChange={(e) => setCurrentDifficulty(e.target.value)} min="0" step="any" id="difficulty-current"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
           <div className="input-group">
@@ -125,7 +125,7 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={expectedChange} onChange={(e) => setExpectedChange(e.target.value)} step="any" id="difficulty-change" />
+              <input type="number" inputMode="decimal" value={expectedChange} onChange={(e) => setExpectedChange(e.target.value)} step="any" id="difficulty-change"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
           <div className="input-group">
@@ -145,7 +145,7 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={dailyRevenue} onChange={(e) => setDailyRevenue(e.target.value)} min="0" step="any" id="difficulty-revenue" />
+              <input type="number" inputMode="decimal" value={dailyRevenue} onChange={(e) => setDailyRevenue(e.target.value)} min="0" step="any" id="difficulty-revenue"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
           <div className="input-group">
@@ -165,7 +165,7 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={hashrateShare} onChange={(e) => setHashrateShare(e.target.value)} min="0" step="any" id="difficulty-share" />
+              <input type="number" inputMode="decimal" value={hashrateShare} onChange={(e) => setHashrateShare(e.target.value)} min="0" step="any" id="difficulty-share"  onFocus={(e) => e.target.select()} />
               <span className="input-unit">e.g. 0.0025</span>
             </div>
           </div>
