@@ -84,7 +84,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
         fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz')
             .then(r => r.json())
             .then(d => { if (d.ethereum?.usd) setEthPrice(String(d.ethereum.usd)); })
-            .catch(() => {});
+            .catch(() => { });
     }, []);
 
     // Handle marketplace change
@@ -202,6 +202,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                 type="number" inputMode="decimal"
                                 value={buyPrice}
                                 onChange={(e) => setBuyPrice(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="nft-buy-price"
                                 step="any"
@@ -229,6 +230,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                 type="number" inputMode="decimal"
                                 value={sellPrice}
                                 onChange={(e) => setSellPrice(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="nft-sell-price"
                                 step="any"
@@ -280,6 +282,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                 type="number" inputMode="decimal"
                                 value={marketplaceFee}
                                 onChange={(e) => { setMarketplaceFee(e.target.value); setMarketplace('custom'); }}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="nft-mp-fee"
                                 step="0.1"
@@ -307,6 +310,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                 type="number" inputMode="decimal"
                                 value={royalty}
                                 onChange={(e) => setRoyalty(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="nft-royalty"
                                 step="0.5"
@@ -335,6 +339,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                 type="number" inputMode="decimal"
                                 value={gasBuy}
                                 onChange={(e) => setGasBuy(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="nft-gas-buy"
                                 step="1"
@@ -362,6 +367,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                 type="number" inputMode="decimal"
                                 value={gasSell}
                                 onChange={(e) => setGasSell(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="nft-gas-sell"
                                 step="1"
@@ -392,6 +398,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
                                 type="number" inputMode="decimal"
                                 value={ethPrice}
                                 onChange={(e) => setEthPrice(e.target.value)}
+                                onFocus={(e) => e.target.select()}
                                 placeholder=""
                                 id="nft-eth-price"
                                 step="any"
