@@ -1,5 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { getUiString } from '../i18n/ui-strings';
+import { getHistoricalPrice, getCurrentPrice, getPriceChart } from '../utils/cryptoPriceService';
 import {
     Search,
     Calendar,
@@ -85,7 +86,7 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
         return () => document.removeEventListener('mousedown', handler);
     }, []);
 
-    // Coin search
+    // Coin search (still uses CoinGecko search — it's not rate-limited the same way)
     const searchCoins = useCallback((query: string) => {
         setSearchQuery(query);
         if (searchTimeout.current) clearTimeout(searchTimeout.current);
@@ -127,42 +128,23 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
         setResult(null);
 
         try {
-            // Parse date parts
-            const [yyyy, mm, dd] = dt.split('-');
-            const dateFormatted = `${dd}-${mm}-${yyyy}`;
+            // Get historical and current price via fallback service
+            const [priceThen, priceNow] = await Promise.all([
+                getHistoricalPrice(cid, dt),
+                getCurrentPrice(cid),
+            ]);
 
-            // Get historical price
-            const histRes = await fetch(
-                `https://api.coingecko.com/api/v3/coins/${cid}/history?date=${dateFormatted}&localization=false&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
-            );
-            if (!histRes.ok) throw new Error('Could not fetch historical price. Please try a different date.');
-            const histData = await histRes.json();
-            const priceThen = histData.market_data?.current_price?.usd;
-            if (!priceThen) throw new Error('No price data available for this date. Try a more recent date.');
-
-            // Get current price
-            const curRes = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${cid}&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
-            );
-            if (!curRes.ok) throw new Error('Could not fetch current price.');
-            const curData = await curRes.json();
-            const priceNow = curData[cid]?.usd;
-            if (!priceNow) throw new Error('Current price not available.');
-
-            // Get price chart for the period
+            // Get price chart via fallback service
             const startTs = Math.floor(new Date(dt).getTime() / 1000);
             const endTs = Math.floor(Date.now() / 1000);
-            const chartRes = await fetch(
-                `https://api.coingecko.com/api/v3/coins/${cid}/market_chart/range?vs_currency=usd&from=${startTs}&to=${endTs}&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
-            );
+            const chartPrices = await getPriceChart(cid, startTs, endTs);
+
+            // Sample ~60 points for the chart
             let priceHistory: { date: string; value: number }[] = [];
-            if (chartRes.ok) {
-                const chartData = await chartRes.json();
-                const prices = chartData.prices || [];
-                // Sample ~60 points for the chart
-                const step = Math.max(1, Math.floor(prices.length / 60));
-                priceHistory = prices
-                    .filter((_: any, i: number) => i % step === 0 || i === prices.length - 1)
+            if (chartPrices.length > 0) {
+                const step = Math.max(1, Math.floor(chartPrices.length / 60));
+                priceHistory = chartPrices
+                    .filter((_: any, i: number) => i % step === 0 || i === chartPrices.length - 1)
                     .map(([ts, price]: [number, number]) => ({
                         date: new Date(ts).toLocaleDateString('en-US', { month: 'short', year: '2-digit' }),
                         value: (amt / priceThen) * price,
