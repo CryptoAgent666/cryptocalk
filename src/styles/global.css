@@ -1250,8 +1250,16 @@
     gap: 8px;
     overflow-x: auto;
     padding-bottom: 4px;
-    scrollbar-width: thin;
+    padding-right: 24px;
+    scrollbar-width: none;
+    /* Hide scrollbar if mask is used */
     -webkit-overflow-scrolling: touch;
+    -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  }
+
+  body.calc-mobile-ux .calculator-section .pills-row::-webkit-scrollbar {
+    display: none;
   }
 
   body.calc-mobile-ux .calculator-section .pill-btn {
