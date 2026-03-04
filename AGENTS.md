@@ -72,7 +72,9 @@ After updating the code and the changelog, you **must** stage and commit your ch
 | Icons | lucide-react | latest |
 | Utilities | clsx | latest |
 | Hosting | Cloudflare Pages | — |
-| Primary API | CoinGecko API v3 | free tier |
+| Primary API | CoinGecko API v3 | free tier (365-day historical limit) |
+| Fallback API | CryptoCompare API | free tier (full history 2010+) |
+| Fallback API | CoinCap API v2 | free tier (11 years history) |
 | Charts | (TBD — Recharts or Lightweight Charts) | — |
 
 ### ⛔ Prohibited Without Explicit Approval:
