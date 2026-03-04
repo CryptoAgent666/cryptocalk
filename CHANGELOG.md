@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-04]
+
+### Added
+- Created `src/utils/cryptoPriceService.ts` — unified crypto price service with automatic fallback chain:
+  - **CoinGecko → CryptoCompare → CoinCap** for historical price, current price, and chart data
+  - Smart routing: dates older than 365 days skip CoinGecko (free tier limitation) and try CryptoCompare first
+  - ID mapping for 30+ popular cryptocurrencies across all three API providers
+  - Graceful degradation: chart returns empty array if all providers fail; prices throw with descriptive error
+
+### Changed
+- Refactored `src/components/WhatIfCalculator.tsx` to use `cryptoPriceService` instead of direct CoinGecko API calls:
+  - Historical and current price now fetched in parallel via `Promise.all` (performance improvement)
+  - Quick Scenarios dating back to 2013 (BTC), 2015 (ETH), 2017 (BNB, ADA) now work via CryptoCompare fallback
+  - Coin search still uses CoinGecko search endpoint directly (not affected by historical data limits)
+
 ## [2026-02-26]
 
 ### Changed
