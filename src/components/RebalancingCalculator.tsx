@@ -218,7 +218,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
                     step="any"
                     aria-label={`Current value ${row.id}`}
                     className="rebal-asset-current"
-                  />
+                   onFocus={(e) => e.target.select()} />
                   <input
                     type="number" inputMode="decimal"
                     value={String(row.target)}
@@ -227,7 +227,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
                     step="any"
                     aria-label={`Target weight ${row.id}`}
                     className="rebal-asset-target"
-                  />
+                   onFocus={(e) => e.target.select()} />
                   <button className="pill-btn rebal-asset-remove" onClick={() => removeAsset(row.id)} aria-label={`Remove ${row.symbol}`}>
                     <Trash2 size={14} />
                   </button>
@@ -260,7 +260,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
                 min="0"
                 step="any"
                 id="rebalance-extra"
-              />
+               onFocus={(e) => e.target.select()} />
             </div>
           </div>
 

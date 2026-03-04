@@ -360,7 +360,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                 id="inflation-amount"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {SAVINGS_PRESETS.map((preset) => (

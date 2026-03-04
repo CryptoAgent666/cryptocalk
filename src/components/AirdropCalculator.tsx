@@ -315,7 +315,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="airdrop-amount"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -346,7 +346,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="airdrop-receipt-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -377,7 +377,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="airdrop-current-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -429,7 +429,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                     id="airdrop-sell-price"
                                     step="any"
                                     min="0"
-                                />
+                                 onFocus={(e) => e.target.select()} />
                             </div>
                         </div>
                     )}

@@ -252,7 +252,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 id="num-devices-input"
                                 step="1"
                                 min="1"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -282,7 +282,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 id="power-per-device-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="input-unit" style={{ marginLeft: 'auto', paddingRight: '10px', color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>W</span>
                         </div>
                     </div>
@@ -313,7 +313,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 id="electricity-rate-input"
                                 step="0.01"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -344,7 +344,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 step="1"
                                 min="0"
                                 max="24"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="input-unit" style={{ marginLeft: 'auto', paddingRight: '10px', color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>hrs/day</span>
                         </div>
                     </div>
@@ -376,7 +376,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 id="monthly-revenue-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

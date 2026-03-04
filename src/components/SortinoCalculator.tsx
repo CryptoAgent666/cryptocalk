@@ -123,7 +123,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
           <div className="input-group">
             <label>Portfolio Value (USD)</label>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sortino-value" />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sortino-value"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -141,7 +141,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sortino-return" />
+              <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sortino-return"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -159,7 +159,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sortino-rf" />
+              <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sortino-rf"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -177,7 +177,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={downsideDeviation} onChange={(e) => setDownsideDeviation(e.target.value)} min="0.01" step="any" id="sortino-dd" />
+              <input type="number" inputMode="decimal" value={downsideDeviation} onChange={(e) => setDownsideDeviation(e.target.value)} min="0.01" step="any" id="sortino-dd"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -194,7 +194,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="sortino-years" />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="sortino-years"  onFocus={(e) => e.target.select()} />
           </div>
 
           <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>

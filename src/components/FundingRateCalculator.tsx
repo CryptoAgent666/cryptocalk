@@ -320,7 +320,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                 id="funding-position-size"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -349,7 +349,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                 placeholder=""
                                 id="funding-rate-input"
                                 step="0.001"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                         <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
                             Positive rate = longs pay shorts. Negative = shorts pay longs.

@@ -130,7 +130,7 @@ export default function HashrateConverter({ lang = 'en' }: { lang?: string }) {
                             id="hashrate-value"
                             step="any"
                             min="0"
-                        />
+                         onFocus={(e) => e.target.select()} />
                     </div>
 
                     {/* Unit Selection */}

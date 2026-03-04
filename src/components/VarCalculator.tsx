@@ -118,7 +118,7 @@ export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
           <div className="input-group">
             <label>Portfolio Value (USD)</label>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="var-portfolio" />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="var-portfolio"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -136,7 +136,7 @@ export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={dailyVolatility} onChange={(e) => setDailyVolatility(e.target.value)} min="0" step="any" id="var-daily-vol" />
+              <input type="number" inputMode="decimal" value={dailyVolatility} onChange={(e) => setDailyVolatility(e.target.value)} min="0" step="any" id="var-daily-vol"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -153,7 +153,7 @@ export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={timeHorizonDays} onChange={(e) => setTimeHorizonDays(e.target.value)} min="1" step="1" id="var-horizon" />
+            <input type="number" inputMode="decimal" value={timeHorizonDays} onChange={(e) => setTimeHorizonDays(e.target.value)} min="1" step="1" id="var-horizon"  onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">

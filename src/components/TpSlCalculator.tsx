@@ -413,7 +413,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="" id="tpsl-entry" step="any" min="0" />
+                                placeholder="" id="tpsl-entry" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -433,7 +433,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={stopLoss} onChange={(e) => setStopLoss(e.target.value)}
-                                placeholder="" id="tpsl-sl" step="any" min="0" />
+                                placeholder="" id="tpsl-sl" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -453,7 +453,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="" id="tpsl-size" step="any" min="0" />
+                                placeholder="" id="tpsl-size" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -470,7 +470,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={rrRatio} onChange={(e) => { setRrRatio(e.target.value); setAutoCalcTP(true); }}
-                                placeholder="" id="tpsl-rr" step="0.1" min="0.1" />
+                                placeholder="" id="tpsl-rr" step="0.1" min="0.1"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -503,7 +503,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                         setAutoCalcTP(false);
                                     }}
                                     placeholder=""
-                                    id={`tpsl-tp-${i}`} step="any" min="0" />
+                                    id={`tpsl-tp-${i}`} step="any" min="0"  onFocus={(e) => e.target.select()} />
                             </div>
                         </div>
                     ))}

@@ -134,7 +134,7 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={stakedTokens} onChange={(e) => setStakedTokens(e.target.value)} min="0" step="any" id="node-staked" />
+            <input type="number" inputMode="decimal" value={stakedTokens} onChange={(e) => setStakedTokens(e.target.value)} min="0" step="any" id="node-staked"  onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
@@ -151,7 +151,7 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="node-price" />
+              <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="node-price"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -169,7 +169,7 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={apr} onChange={(e) => setApr(e.target.value)} min="0" step="any" id="node-apr" />
+              <input type="number" inputMode="decimal" value={apr} onChange={(e) => setApr(e.target.value)} min="0" step="any" id="node-apr"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -187,7 +187,7 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)} min="0" step="any" id="node-fee" />
+              <input type="number" inputMode="decimal" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)} min="0" step="any" id="node-fee"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -205,7 +205,7 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={uptime} onChange={(e) => setUptime(e.target.value)} min="0" max="100" step="any" id="node-uptime" />
+              <input type="number" inputMode="decimal" value={uptime} onChange={(e) => setUptime(e.target.value)} min="0" max="100" step="any" id="node-uptime"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -223,7 +223,7 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={monthlyInfraCost} onChange={(e) => setMonthlyInfraCost(e.target.value)} min="0" step="any" id="node-infra" />
+              <input type="number" inputMode="decimal" value={monthlyInfraCost} onChange={(e) => setMonthlyInfraCost(e.target.value)} min="0" step="any" id="node-infra"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 

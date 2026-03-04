@@ -90,14 +90,14 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
           <div className="input-group">
             <label>Portfolio Peak Value (USD)</label>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={peakValue} onChange={(e) => setPeakValue(e.target.value)} min="0" step="any" id="drawdown-peak" />
+              <input type="number" inputMode="decimal" value={peakValue} onChange={(e) => setPeakValue(e.target.value)} min="0" step="any" id="drawdown-peak"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
             <label>Current Portfolio Value (USD)</label>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)} min="0" step="any" id="drawdown-current" />
+              <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)} min="0" step="any" id="drawdown-current"  onFocus={(e) => e.target.select()} />
             </div>
             <div className="pills-row">
               {[90, 80, 70, 60, 50].map((pct) => {
@@ -133,7 +133,7 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={monthlyReturn} onChange={(e) => setMonthlyReturn(e.target.value)} min="0" step="any" id="drawdown-monthly-return" />
+              <input type="number" inputMode="decimal" value={monthlyReturn} onChange={(e) => setMonthlyReturn(e.target.value)} min="0" step="any" id="drawdown-monthly-return"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 

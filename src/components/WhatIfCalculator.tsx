@@ -312,7 +312,7 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="whatif-amount"
                                 min="1"
                                 step="any"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

@@ -479,7 +479,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 step="1"
                                 min="1"
                                 max="125"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -512,7 +512,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 id="liq-entry-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -542,7 +542,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 id="liq-position-size"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -573,7 +573,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                     id="liq-wallet-balance"
                                     step="any"
                                     min="0"
-                                />
+                                 onFocus={(e) => e.target.select()} />
                             </div>
                             <span className="input-hint" style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
                                 Your total available margin balance
