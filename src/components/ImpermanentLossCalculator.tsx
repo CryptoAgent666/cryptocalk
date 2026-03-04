@@ -254,7 +254,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={investmentAmount} onChange={(e) => setInvestmentAmount(e.target.value)}
-                                placeholder="" id="il-investment" step="any" min="0" />
+                                placeholder="" id="il-investment" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -271,7 +271,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={priceChangeA} onChange={(e) => setPriceChangeA(e.target.value)}
-                                placeholder="" id="il-change-a" step="1" />
+                                placeholder="" id="il-change-a" step="1"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -288,7 +288,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={priceChangeB} onChange={(e) => setPriceChangeB(e.target.value)}
-                                placeholder="" id="il-change-b" step="1" />
+                                placeholder="" id="il-change-b" step="1"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -305,7 +305,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={poolFeeApr} onChange={(e) => setPoolFeeApr(e.target.value)}
-                                placeholder="" id="il-fee" step="1" min="0" />
+                                placeholder="" id="il-fee" step="1" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -322,7 +322,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={holdingDays} onChange={(e) => setHoldingDays(e.target.value)}
-                                placeholder="" id="il-days" step="1" min="1" />
+                                placeholder="" id="il-days" step="1" min="1"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

@@ -330,7 +330,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="hashrate-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="input-unit">TH/s</span>
                         </div>
                     </div>
@@ -367,7 +367,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="power-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="input-unit">Watts</span>
                         </div>
                     </div>
@@ -398,7 +398,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="electricity-input"
                                 step="0.01"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="input-unit">per kWh</span>
                         </div>
                     </div>
@@ -430,7 +430,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 step="0.1"
                                 min="0"
                                 max="100"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="input-unit">%</span>
                         </div>
                     </div>
@@ -461,7 +461,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="hardware-cost-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

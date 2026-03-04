@@ -182,7 +182,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                             }}
                             placeholder=""
                             id="gwei-amount"
-                        />
+                         onFocus={(e) => e.target.select()} />
                     </div>
 
                     {/* Unit Selection */}
@@ -232,7 +232,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
                                 id="gwei-eth-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

@@ -264,7 +264,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-capital"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {['500', '1000', '5000', '10000'].map((a) => (
@@ -321,7 +321,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 placeholder=""
                                 id="hodl-price-change"
                                 step="any"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -369,7 +369,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 step="1"
                                 min="0"
                                 max="100"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -399,7 +399,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-avg-profit"
                                 step="0.1"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -429,7 +429,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-avg-loss"
                                 step="0.1"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -459,7 +459,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-trades-month"
                                 step="1"
                                 min="1"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -489,7 +489,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-period"
                                 step="1"
                                 min="1"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -519,7 +519,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-fee"
                                 step="0.01"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

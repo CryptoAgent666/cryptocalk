@@ -521,7 +521,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="tax-buy-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -551,7 +551,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="tax-sell-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -580,7 +580,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="tax-quantity"
                                 step="any"
                                 min="0.000001"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

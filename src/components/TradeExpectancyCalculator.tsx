@@ -134,7 +134,7 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={accountSize} onChange={(e) => setAccountSize(e.target.value)} min="0" step="any" id="exp-account-size" />
+              <input type="number" inputMode="decimal" value={accountSize} onChange={(e) => setAccountSize(e.target.value)} min="0" step="any" id="exp-account-size"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -152,7 +152,7 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="exp-win-rate" />
+              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="exp-win-rate"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -169,7 +169,7 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={avgWinR} onChange={(e) => setAvgWinR(e.target.value)} min="0.01" step="any" id="exp-avg-win" />
+            <input type="number" inputMode="decimal" value={avgWinR} onChange={(e) => setAvgWinR(e.target.value)} min="0.01" step="any" id="exp-avg-win"  onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
@@ -185,7 +185,7 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={avgLossR} onChange={(e) => setAvgLossR(e.target.value)} min="0.01" step="any" id="exp-avg-loss" />
+            <input type="number" inputMode="decimal" value={avgLossR} onChange={(e) => setAvgLossR(e.target.value)} min="0.01" step="any" id="exp-avg-loss"  onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
@@ -202,7 +202,7 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="exp-risk-trade" />
+              <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="exp-risk-trade"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -219,7 +219,7 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={tradesPerMonth} onChange={(e) => setTradesPerMonth(e.target.value)} min="1" step="1" id="exp-trades-month" />
+            <input type="number" inputMode="decimal" value={tradesPerMonth} onChange={(e) => setTradesPerMonth(e.target.value)} min="1" step="1" id="exp-trades-month"  onFocus={(e) => e.target.select()} />
           </div>
 
           <button className="reset-btn" onClick={reset}>

@@ -203,7 +203,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={rateInput} onChange={(e) => setRateInput(e.target.value)}
-                                placeholder="" id="apy-rate" step="0.1" min="0" />
+                                placeholder="" id="apy-rate" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -236,7 +236,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={principal} onChange={(e) => setPrincipal(e.target.value)}
-                                placeholder="" id="apy-principal" step="any" min="0" />
+                                placeholder="" id="apy-principal" step="any" min="0"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -253,7 +253,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)}
-                                placeholder="" id="apy-years" step="1" min="1" max="30" />
+                                placeholder="" id="apy-years" step="1" min="1" max="30"  onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

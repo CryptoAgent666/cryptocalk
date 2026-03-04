@@ -153,7 +153,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                     ))}
                                 </div>
                                 <input type="number" inputMode="decimal" value={lossPct} onChange={(e) => setLossPct(e.target.value)}
-                                    placeholder="" id="be-loss-pct" step="0.1" min="0" max="99.99" />
+                                    placeholder="" id="be-loss-pct" step="0.1" min="0" max="99.99"  onFocus={(e) => e.target.select()} />
                             </div>
 
                             {/* Original Value */}
@@ -161,7 +161,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> {getUiString(lang, 'Original Value')}</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={originalValue} onChange={(e) => setOriginalValue(e.target.value)}
-                                        placeholder="" id="be-original" step="any" min="0" />
+                                        placeholder="" id="be-original" step="any" min="0"  onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
 
@@ -170,7 +170,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> {getUiString(lang, 'Current Value')}</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)}
-                                        placeholder="" id="be-current" step="any" min="0" />
+                                        placeholder="" id="be-current" step="any" min="0"  onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
                         </>
@@ -196,7 +196,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> {getUiString(lang, 'Entry Price')}</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
-                                        placeholder="" id="be-entry" step="any" min="0" />
+                                        placeholder="" id="be-entry" step="any" min="0"  onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
 
@@ -205,7 +205,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> Position Size (USD)</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
-                                        placeholder="" id="be-size" step="any" min="0" />
+                                        placeholder="" id="be-size" step="any" min="0"  onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
 
@@ -214,12 +214,12 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <div className="input-group">
                                     <label>Entry Fee (%)</label>
                                     <input type="number" inputMode="decimal" value={entryFee} onChange={(e) => setEntryFee(e.target.value)}
-                                        placeholder="" id="be-entry-fee" step="0.01" min="0" />
+                                        placeholder="" id="be-entry-fee" step="0.01" min="0"  onFocus={(e) => e.target.select()} />
                                 </div>
                                 <div className="input-group">
                                     <label>Exit Fee (%)</label>
                                     <input type="number" inputMode="decimal" value={exitFee} onChange={(e) => setExitFee(e.target.value)}
-                                        placeholder="" id="be-exit-fee" step="0.01" min="0" />
+                                        placeholder="" id="be-exit-fee" step="0.01" min="0"  onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
                         </>

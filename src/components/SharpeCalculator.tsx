@@ -121,7 +121,7 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sharpe-value" />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sharpe-value"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -139,7 +139,7 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sharpe-return" />
+              <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sharpe-return"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -157,7 +157,7 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={volatility} onChange={(e) => setVolatility(e.target.value)} min="0.01" step="any" id="sharpe-volatility" />
+              <input type="number" inputMode="decimal" value={volatility} onChange={(e) => setVolatility(e.target.value)} min="0.01" step="any" id="sharpe-volatility"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -175,7 +175,7 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sharpe-rf" />
+              <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sharpe-rf"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -192,7 +192,7 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={horizonYears} onChange={(e) => setHorizonYears(e.target.value)} min="0.1" step="any" id="sharpe-years" />
+            <input type="number" inputMode="decimal" value={horizonYears} onChange={(e) => setHorizonYears(e.target.value)} min="0.1" step="any" id="sharpe-years"  onFocus={(e) => e.target.select()} />
           </div>
 
           <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>

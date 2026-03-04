@@ -112,7 +112,7 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="kelly-win-rate" />
+              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="kelly-win-rate"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -130,7 +130,7 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={avgWinPct} onChange={(e) => setAvgWinPct(e.target.value)} min="0.01" step="any" id="kelly-avg-win" />
+              <input type="number" inputMode="decimal" value={avgWinPct} onChange={(e) => setAvgWinPct(e.target.value)} min="0.01" step="any" id="kelly-avg-win"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -148,7 +148,7 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={avgLossPct} onChange={(e) => setAvgLossPct(e.target.value)} min="0.01" step="any" id="kelly-avg-loss" />
+              <input type="number" inputMode="decimal" value={avgLossPct} onChange={(e) => setAvgLossPct(e.target.value)} min="0.01" step="any" id="kelly-avg-loss"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -166,7 +166,7 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={capital} onChange={(e) => setCapital(e.target.value)} min="0" step="any" id="kelly-capital" />
+              <input type="number" inputMode="decimal" value={capital} onChange={(e) => setCapital(e.target.value)} min="0" step="any" id="kelly-capital"  onFocus={(e) => e.target.select()} />
             </div>
           </div>
 

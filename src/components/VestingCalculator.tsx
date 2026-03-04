@@ -323,7 +323,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="vest-total"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -353,7 +353,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="vest-price"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -385,7 +385,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 step="1"
                                 min="0"
                                 max="100"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -415,7 +415,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="vest-cliff"
                                 step="1"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="input-unit">months</span>
                         </div>
                     </div>
@@ -446,7 +446,7 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="vest-duration"
                                 step="1"
                                 min="1"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span className="input-unit">months</span>
                         </div>
                     </div>

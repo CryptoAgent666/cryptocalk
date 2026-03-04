@@ -381,7 +381,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 id="asic-hashrate-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span
                                 className="input-unit"
                                 style={{
@@ -412,7 +412,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 id="asic-power-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                             <span
                                 className="input-unit"
                                 style={{
@@ -453,7 +453,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 id="asic-electricity-input"
                                 step="0.01"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -484,7 +484,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 step="0.1"
                                 min="0"
                                 max="100"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -515,7 +515,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 id="asic-price-input"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

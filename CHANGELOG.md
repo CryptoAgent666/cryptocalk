@@ -18,8 +18,8 @@ All notable changes to this project are documented here.
   - Coin search still uses CoinGecko search endpoint directly (not affected by historical data limits)
 
 ### Fixed
-- Improved mobile UX and reliability across multiple calculators:
-  - Added `onFocus` auto-selection to all number inputs in DCA, Profit, NFT, and Risk/Reward calculators to prevent input appending errors.
+- Improved mobile UX and reliability across all calculators:
+  - Added `onFocus` auto-selection to all number inputs across all 62 calculator components to prevent input appending errors (e.g. Airdrop, Yield Farming, Mining, Converters, Risk tools, etc.).
   - Added graceful 429 Rate Limit error handling to the DCA Calculator API requests.
   - Added horizontal scroll indicators (padding and gradient mask) to the Quick Scenarios pills row on mobile to improve discoverability.
 

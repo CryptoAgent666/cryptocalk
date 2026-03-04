@@ -177,7 +177,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                                 id="exchange-fee-amount"
                                 step="any"
                                 min="0"
-                            />
+                             onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row" style={{ marginTop: '8px' }}>
                             {AMOUNT_PRESETS.map((a) => (
