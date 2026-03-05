@@ -2,14 +2,6 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Info, Rocket, RotateCcw } from 'lucide-react';
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
 
 const ICO_PRICE_PILLS = ['0.01', '0.05', '0.1', '0.5'];
 const CURRENT_PRICE_PILLS = ['0.1', '0.42', '1', '2'];
@@ -22,6 +14,14 @@ const ICO_SCENARIOS = [
 ] as const;
 
 export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
+  const formatUSD = (value: number): string =>
+    new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+
   const [tokenName, setTokenName] = useState('TOKEN');
   const [icoPrice, setIcoPrice] = useState('0.05');
   const [currentPrice, setCurrentPrice] = useState('0.42');
@@ -81,7 +81,7 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {ICO_SCENARIOS.map((scenario) => (
                 <button
@@ -96,11 +96,11 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Token Symbol</label>
+            <label>{getUiString(lang, 'Token Symbol')}</label>
             <input type="text" value={tokenName} onChange={(e) => setTokenName(e.target.value.toUpperCase().slice(0, 12))} id="ico-token" />
           </div>
           <div className="input-group">
-            <label>ICO / IDO Price</label>
+            <label>{getUiString(lang, 'ICO / IDO Price')}</label>
             <div className="pills-row">
               {ICO_PRICE_PILLS.map((value) => (
                 <button
@@ -112,7 +112,7 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={icoPrice} onChange={(e) => setIcoPrice(e.target.value)} min="0" step="any" id="ico-price"  onFocus={(e) => e.target.select()} /></div>
+            <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={icoPrice} onChange={(e) => setIcoPrice(e.target.value)} min="0" step="any" id="ico-price" onFocus={(e) => e.target.select()} /></div>
           </div>
           <div className="input-group">
             <label>{getUiString(lang, 'Current Price')}</label>
@@ -127,10 +127,10 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={currentPrice} onChange={(e) => setCurrentPrice(e.target.value)} min="0" step="any" id="ico-current"  onFocus={(e) => e.target.select()} /></div>
+            <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={currentPrice} onChange={(e) => setCurrentPrice(e.target.value)} min="0" step="any" id="ico-current" onFocus={(e) => e.target.select()} /></div>
           </div>
           <div className="input-group">
-            <label>ATH Price</label>
+            <label>{getUiString(lang, 'ATH Price')}</label>
             <div className="pills-row">
               {ATH_PRICE_PILLS.map((value) => (
                 <button
@@ -142,10 +142,10 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={athPrice} onChange={(e) => setAthPrice(e.target.value)} min="0" step="any" id="ico-ath"  onFocus={(e) => e.target.select()} /></div>
+            <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={athPrice} onChange={(e) => setAthPrice(e.target.value)} min="0" step="any" id="ico-ath" onFocus={(e) => e.target.select()} /></div>
           </div>
           <div className="input-group">
-            <label>Token Amount</label>
+            <label>{getUiString(lang, 'Token Amount')}</label>
             <div className="pills-row">
               {TOKEN_AMOUNT_PILLS.map((value) => (
                 <button
@@ -157,11 +157,11 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={tokens} onChange={(e) => setTokens(e.target.value)} min="0" step="any" id="ico-amount" style={{ marginTop: '8px' }}  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={tokens} onChange={(e) => setTokens(e.target.value)} min="0" step="any" id="ico-amount" style={{ marginTop: '8px' }} onFocus={(e) => e.target.select()} />
           </div>
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Check current ROI and ATH ROI against the same token amount.
+            {getUiString(lang, 'Auto-calculates as you type. Check current ROI and ATH ROI against the same token amount.')}
           </span>
         </div>
 

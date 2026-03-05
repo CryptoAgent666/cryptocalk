@@ -9,16 +9,18 @@ const DRAWDOWN_SCENARIOS = [
   { label: 'Deep Drawdown', peakValue: '10000', currentValue: '5000', monthlyReturn: '10' },
 ] as const;
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+// formatUSD is defined inside the component to access `lang` prop
 
 export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
+  const formatUSD = (value: number): string => {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
+
   const [peakValue, setPeakValue] = useState('10000');
   const [currentValue, setCurrentValue] = useState('7000');
   const [monthlyReturn, setMonthlyReturn] = useState('5');
@@ -73,7 +75,7 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {DRAWDOWN_SCENARIOS.map((scenario) => (
                 <button
@@ -88,16 +90,16 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Portfolio Peak Value (USD)</label>
+            <label>{getUiString(lang, 'Portfolio Peak Value (USD)')}</label>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={peakValue} onChange={(e) => setPeakValue(e.target.value)} min="0" step="any" id="drawdown-peak"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={peakValue} onChange={(e) => setPeakValue(e.target.value)} min="0" step="any" id="drawdown-peak" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Current Portfolio Value (USD)</label>
+            <label>{getUiString(lang, 'Current Portfolio Value (USD)')}</label>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)} min="0" step="any" id="drawdown-current"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)} min="0" step="any" id="drawdown-current" onFocus={(e) => e.target.select()} />
             </div>
             <div className="pills-row">
               {[90, 80, 70, 60, 50].map((pct) => {
@@ -112,7 +114,7 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
                       }
                     }}
                   >
-                    {pct}% of peak
+                    {pct}% {getUiString(lang, 'of peak')}
                   </button>
                 );
               })}
@@ -120,7 +122,7 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Assumed Monthly Return for Recovery (%)</label>
+            <label>{getUiString(lang, 'Assumed Monthly Return for Recovery (%)')}</label>
             <div className="pills-row">
               {MONTHLY_RETURN_PRESETS.map((preset) => (
                 <button
@@ -133,13 +135,13 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={monthlyReturn} onChange={(e) => setMonthlyReturn(e.target.value)} min="0" step="any" id="drawdown-monthly-return"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={monthlyReturn} onChange={(e) => setMonthlyReturn(e.target.value)} min="0" step="any" id="drawdown-monthly-return" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Large drawdowns require disproportionately higher recovery gains.
+            {getUiString(lang, 'Auto-calculates as you type. Large drawdowns require disproportionately higher recovery gains.')}
           </span>
         </div>
 

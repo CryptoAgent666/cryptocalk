@@ -143,7 +143,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {LOAN_SCENARIOS.map((scenario) => (
                                 <button
@@ -159,7 +159,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Platform */}
                     <div className="input-group">
-                        <label><Landmark size={14} /> Platform</label>
+                        <label><Landmark size={14} /> {getUiString(lang, 'Platform')}</label>
                         <div className="pills-row">
                             {PLATFORMS.map((p) => (
                                 <button key={p.id} className={`pill-btn ${platform === p.id ? 'active' : ''}`}
@@ -172,7 +172,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Collateral Value */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Collateral Value (USD)</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Collateral Value (USD)')}</label>
                         <div className="pills-row">
                             {COLLATERAL_PRESETS.map((preset) => (
                                 <button
@@ -186,13 +186,13 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={collateralValue} onChange={(e) => setCollateralValue(e.target.value)}
-                                placeholder="" id="loan-collateral" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="loan-collateral" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* LTV */}
                     <div className="input-group">
-                        <label><Shield size={14} /> Loan-to-Value (LTV %)</label>
+                        <label><Shield size={14} /> {getUiString(lang, 'Loan-to-Value (LTV %)')}</label>
                         <div className="pills-row">
                             {LTV_PRESETS.map((v) => (
                                 <button key={v} className={`pill-btn ${ltv === String(v) ? 'active' : ''}`}
@@ -202,12 +202,12 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <input type="number" inputMode="decimal" value={ltv} onChange={(e) => setLtv(e.target.value)}
-                            placeholder="" id="loan-ltv" step="1" min="1" max="100"  onFocus={(e) => e.target.select()} />
+                            placeholder="" id="loan-ltv" step="1" min="1" max="100" onFocus={(e) => e.target.select()} />
                     </div>
 
                     {/* APR */}
                     <div className="input-group">
-                        <label>Annual Interest Rate (APR %)</label>
+                        <label>{getUiString(lang, 'Annual Interest Rate (APR %)')}</label>
                         <div className="pills-row">
                             {APR_PRESETS.map((preset) => (
                                 <button
@@ -221,13 +221,13 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={apr} onChange={(e) => setApr(e.target.value)}
-                                placeholder="" id="loan-apr" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="loan-apr" step="0.1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Term */}
                     <div className="input-group">
-                        <label>Loan Term (months)</label>
+                        <label>{getUiString(lang, 'Loan Term (months)')}</label>
                         <div className="pills-row">
                             {[3, 6, 12, 24, 36].map((m) => (
                                 <button key={m} className={`pill-btn ${loanTerm === String(m) ? 'active' : ''}`}
@@ -241,7 +241,7 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Margin Call / Liquidation LTV */}
                     <div className="calc-two-col-grid">
                         <div className="input-group">
-                            <label style={{ fontSize: '0.75rem' }}><AlertTriangle size={12} /> Margin Call LTV %</label>
+                            <label style={{ fontSize: '0.75rem' }}><AlertTriangle size={12} /> {getUiString(lang, 'Margin Call LTV %')}</label>
                             <div className="pills-row">
                                 {MARGIN_CALL_PRESETS.map((preset) => (
                                     <button
@@ -254,10 +254,10 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                 ))}
                             </div>
                             <input type="number" inputMode="decimal" value={marginCallLtv} onChange={(e) => setMarginCallLtv(e.target.value)}
-                                placeholder="" id="loan-mc" step="1" min="1" max="100"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="loan-mc" step="1" min="1" max="100" onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="input-group">
-                            <label style={{ fontSize: '0.75rem' }}><TrendingDown size={12} /> Liquidation LTV %</label>
+                            <label style={{ fontSize: '0.75rem' }}><TrendingDown size={12} /> {getUiString(lang, 'Liquidation LTV %')}</label>
                             <div className="pills-row">
                                 {LIQUIDATION_PRESETS.map((preset) => (
                                     <button
@@ -270,15 +270,15 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                 ))}
                             </div>
                             <input type="number" inputMode="decimal" value={liquidationLtv} onChange={(e) => setLiquidationLtv(e.target.value)}
-                                placeholder="" id="loan-liq" step="1" min="1" max="100"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="loan-liq" step="1" min="1" max="100" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Keep LTV conservative and monitor margin-call/liquidation thresholds before borrowing.
+                        {getUiString(lang, 'Auto-calculates as you type. Keep LTV conservative and monitor margin-call/liquidation thresholds before borrowing.')}
                     </span>
                 </div>
 

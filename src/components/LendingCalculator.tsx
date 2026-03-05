@@ -16,21 +16,22 @@ const LENDING_SCENARIOS: Array<{
   platformFee: string;
   compounding: CompoundingMode;
 }> = [
-  { label: 'Conservative', principal: '5000', apy: '4', termMonths: '12', platformFee: '20', compounding: 'simple' },
-  { label: 'Balanced', principal: '10000', apy: '8', termMonths: '12', platformFee: '10', compounding: 'monthly' },
-  { label: 'Growth', principal: '25000', apy: '12', termMonths: '24', platformFee: '5', compounding: 'daily' },
-];
+    { label: 'Conservative', principal: '5000', apy: '4', termMonths: '12', platformFee: '20', compounding: 'simple' },
+    { label: 'Balanced', principal: '10000', apy: '8', termMonths: '12', platformFee: '10', compounding: 'monthly' },
+    { label: 'Growth', principal: '25000', apy: '12', termMonths: '24', platformFee: '5', compounding: 'daily' },
+  ];
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+
 
 export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
+  const formatUSD = (value: number): string =>
+    new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+
   const [principal, setPrincipal] = useState('5000');
   const [apy, setApy] = useState('8');
   const [termMonths, setTermMonths] = useState('12');
@@ -102,7 +103,7 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {LENDING_SCENARIOS.map((scenario) => (
                 <button
@@ -117,7 +118,7 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Deposit Amount (USD)</label>
+            <label>{getUiString(lang, 'Deposit Amount (USD)')}</label>
             <div className="pills-row">
               {DEPOSIT_PRESETS.map((preset) => (
                 <button
@@ -130,12 +131,12 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={principal} onChange={(e) => setPrincipal(e.target.value)} min="0" step="any" id="lending-principal"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={principal} onChange={(e) => setPrincipal(e.target.value)} min="0" step="any" id="lending-principal" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Quoted APY (%)</label>
+            <label>{getUiString(lang, 'Quoted APY (%)')}</label>
             <div className="pills-row">
               {APY_PRESETS.map((preset) => (
                 <button
@@ -148,12 +149,12 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={apy} onChange={(e) => setApy(e.target.value)} min="0" step="any" id="lending-apy"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={apy} onChange={(e) => setApy(e.target.value)} min="0" step="any" id="lending-apy" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Term (months)</label>
+            <label>{getUiString(lang, 'Term (months)')}</label>
             <div className="pills-row">
               {TERM_PRESETS.map((preset) => (
                 <button
@@ -165,11 +166,11 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={termMonths} onChange={(e) => setTermMonths(e.target.value)} min="1" step="1" id="lending-term"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={termMonths} onChange={(e) => setTermMonths(e.target.value)} min="1" step="1" id="lending-term" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>Platform Performance Fee (%)</label>
+            <label>{getUiString(lang, 'Platform Performance Fee (%)')}</label>
             <div className="pills-row">
               {FEE_PRESETS.map((preset) => (
                 <button
@@ -182,28 +183,28 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={platformFee} onChange={(e) => setPlatformFee(e.target.value)} min="0" step="any" id="lending-fee"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={platformFee} onChange={(e) => setPlatformFee(e.target.value)} min="0" step="any" id="lending-fee" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Compounding Model</label>
+            <label>{getUiString(lang, 'Compounding Model')}</label>
             <div className="toggle-group" role="tablist" aria-label="Compounding model">
               <button type="button" className={`toggle-btn ${compounding === 'simple' ? 'active' : ''}`} onClick={() => setCompounding('simple')}>
-                Simple
+                {getUiString(lang, 'Simple')}
               </button>
               <button type="button" className={`toggle-btn ${compounding === 'monthly' ? 'active' : ''}`} onClick={() => setCompounding('monthly')}>
-                Monthly
+                {getUiString(lang, 'Monthly')}
               </button>
               <button type="button" className={`toggle-btn ${compounding === 'daily' ? 'active' : ''}`} onClick={() => setCompounding('daily')}>
-                Daily
+                {getUiString(lang, 'Daily')}
               </button>
             </div>
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Compare net return across compounding models after platform fee.
+            {getUiString(lang, 'Auto-calculates as you type. Compare net return across compounding models after platform fee.')}
           </span>
         </div>
 

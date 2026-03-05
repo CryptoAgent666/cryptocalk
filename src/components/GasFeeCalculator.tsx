@@ -126,7 +126,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {GAS_SCENARIOS.map((scenario) => (
                                 <button
@@ -142,7 +142,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Network */}
                     <div className="input-group">
-                        <label><Fuel size={14} /> Network</label>
+                        <label><Fuel size={14} /> {getUiString(lang, 'Network')}</label>
                         <div className="network-grid">
                             {NETWORKS.map((n) => (
                                 <button key={n.id} onClick={() => handleNetworkChange(n.id)} className={`network-btn ${network === n.id ? 'active' : ''}`}
@@ -159,14 +159,14 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Transaction Type */}
                     <div className="input-group">
-                        <label><ArrowRight size={14} /> Transaction Type</label>
+                        <label><ArrowRight size={14} /> {getUiString(lang, 'Transaction Type')}</label>
                         <div className="select-wrap">
                             <select value={txType} onChange={(e) => setTxType(e.target.value)} id="gas-tx-type" className="input-select">
-                            {TX_TYPES.map((t) => (
-                                <option key={t.id} value={t.id}>
-                                    {t.label} {t.gas > 0 ? `(${t.gas.toLocaleString()} gas)` : ''}
-                                </option>
-                            ))}
+                                {TX_TYPES.map((t) => (
+                                    <option key={t.id} value={t.id}>
+                                        {t.label} {t.gas > 0 ? `(${t.gas.toLocaleString()} gas)` : ''}
+                                    </option>
+                                ))}
                             </select>
                         </div>
                     </div>
@@ -174,18 +174,18 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Custom Gas */}
                     {txType === 'custom' && (
                         <div className="input-group">
-                            <label>Custom Gas Limit</label>
+                            <label>{getUiString(lang, 'Custom Gas Limit')}</label>
                             <input type="number" inputMode="decimal" value={customGas} onChange={(e) => setCustomGas(e.target.value)}
-                                placeholder="" id="gas-custom" step="1000" min="21000"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="gas-custom" step="1000" min="21000" onFocus={(e) => e.target.select()} />
                         </div>
                     )}
 
                     {/* Gas Price */}
                     <div className="input-group">
-                        <label><Zap size={14} /> Gas Price (Gwei)</label>
+                        <label><Zap size={14} /> {getUiString(lang, 'Gas Price (Gwei)')}</label>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={gasPrice} onChange={(e) => setGasPrice(e.target.value)}
-                                placeholder="" id="gas-price-gwei" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="gas-price-gwei" step="0.1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {gasPricePresetValues.map((value) => (
@@ -202,7 +202,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Speed */}
                     <div className="input-group">
-                        <label>Transaction Speed</label>
+                        <label>{getUiString(lang, 'Transaction Speed')}</label>
                         <div className="pills-row">
                             {SPEED_MULTIPLIERS.map((s) => (
                                 <button key={s.id} className={`pill-btn ${speed === s.id ? 'active' : ''}`}
@@ -218,13 +218,13 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                         <label><DollarSign size={14} /> {currentNetwork.symbol} Price (USD)</label>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={ethPrice} onChange={(e) => setEthPrice(e.target.value)}
-                                placeholder="" id="gas-eth-price" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="gas-eth-price" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Transaction Count */}
                     <div className="input-group">
-                        <label>Number of Transactions</label>
+                        <label>{getUiString(lang, 'Number of Transactions')}</label>
                         <div className="pills-row">
                             {[1, 5, 10, 50, 100].map((c) => (
                                 <button key={c} className={`pill-btn ${txCount === String(c) ? 'active' : ''}`}
@@ -241,14 +241,14 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                             step="1"
                             id="gas-tx-count"
                             style={{ marginTop: '8px' }}
-                         onFocus={(e) => e.target.select()} />
+                            onFocus={(e) => e.target.select()} />
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Compare speed levels to avoid overpaying for urgency.
+                        {getUiString(lang, 'Auto-calculates as you type. Compare speed levels to avoid overpaying for urgency.')}
                     </span>
                 </div>
 

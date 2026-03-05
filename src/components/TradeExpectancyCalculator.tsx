@@ -14,16 +14,17 @@ const EXPECTANCY_SCENARIOS = [
   { label: 'Aggressive', winRate: '55', avgWinR: '2', avgLossR: '1', riskPerTrade: '2', tradesPerMonth: '30' },
 ];
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+
 
 export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
+  function formatUSD(value: number): string {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  }
   const [accountSize, setAccountSize] = useState('10000');
   const [winRate, setWinRate] = useState('48');
   const [avgWinR, setAvgWinR] = useState('1.9');
@@ -106,7 +107,7 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {EXPECTANCY_SCENARIOS.map((scenario) => (
                 <button
@@ -121,7 +122,7 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
           </div>
 
           <div className="input-group">
-            <label>Account Size (USD)</label>
+            <label>{getUiString(lang, 'Account Size (USD)')}</label>
             <div className="pills-row">
               {ACCOUNT_SIZE_PRESETS.map((preset) => (
                 <button
@@ -134,12 +135,12 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={accountSize} onChange={(e) => setAccountSize(e.target.value)} min="0" step="any" id="exp-account-size"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={accountSize} onChange={(e) => setAccountSize(e.target.value)} min="0" step="any" id="exp-account-size" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Win Rate (%)</label>
+            <label>{getUiString(lang, 'Win Rate (%)')}</label>
             <div className="pills-row">
               {WIN_RATE_PRESETS.map((preset) => (
                 <button
@@ -152,12 +153,12 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="exp-win-rate"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="exp-win-rate" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Average Win (R)</label>
+            <label>{getUiString(lang, 'Average Win (R)')}</label>
             <div className="pills-row">
               {AVG_WIN_R_PRESETS.map((preset) => (
                 <button
@@ -169,11 +170,11 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={avgWinR} onChange={(e) => setAvgWinR(e.target.value)} min="0.01" step="any" id="exp-avg-win"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={avgWinR} onChange={(e) => setAvgWinR(e.target.value)} min="0.01" step="any" id="exp-avg-win" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>Average Loss (R)</label>
+            <label>{getUiString(lang, 'Average Loss (R)')}</label>
             <div className="pills-row">
               {AVG_LOSS_R_PRESETS.map((preset) => (
                 <button
@@ -185,11 +186,11 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={avgLossR} onChange={(e) => setAvgLossR(e.target.value)} min="0.01" step="any" id="exp-avg-loss"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={avgLossR} onChange={(e) => setAvgLossR(e.target.value)} min="0.01" step="any" id="exp-avg-loss" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>Risk per Trade (%)</label>
+            <label>{getUiString(lang, 'Risk per Trade (%)')}</label>
             <div className="pills-row">
               {RISK_PER_TRADE_PRESETS.map((preset) => (
                 <button
@@ -202,12 +203,12 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="exp-risk-trade"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="exp-risk-trade" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Trades per Month</label>
+            <label>{getUiString(lang, 'Trades per Month')}</label>
             <div className="pills-row">
               {TRADES_PER_MONTH_PRESETS.map((preset) => (
                 <button
@@ -219,14 +220,14 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={tradesPerMonth} onChange={(e) => setTradesPerMonth(e.target.value)} min="1" step="1" id="exp-trades-month"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={tradesPerMonth} onChange={(e) => setTradesPerMonth(e.target.value)} min="1" step="1" id="exp-trades-month" onFocus={(e) => e.target.select()} />
           </div>
 
           <button className="reset-btn" onClick={reset}>
-            <RotateCcw size={14} /> Reset
+            <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
           </button>
           <span className="input-hint">
-            Auto-calculates as you type. Use conservative values first, then stress-test with aggressive assumptions.
+            {getUiString(lang, 'Auto-calculates as you type. Use conservative values first, then stress-test with aggressive assumptions.')}
           </span>
         </div>
 

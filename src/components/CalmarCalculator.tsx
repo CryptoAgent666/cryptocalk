@@ -13,16 +13,16 @@ const CALMAR_SCENARIOS = [
   { label: 'High Risk', portfolioValue: '100000', annualReturn: '40', maxDrawdown: '35', years: '5' },
 ] as const;
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
 
 export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
+  const formatUSD = (value: number): string => {
+    return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
   const [portfolioValue, setPortfolioValue] = useState('30000');
   const [annualReturn, setAnnualReturn] = useState('30');
   const [maxDrawdown, setMaxDrawdown] = useState('25');
@@ -81,7 +81,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {CALMAR_SCENARIOS.map((scenario) => (
                 <button
@@ -96,7 +96,7 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Portfolio Value (USD)</label>
+            <label>{getUiString(lang, 'Portfolio Value')} (USD)</label>
             <div className="pills-row">
               {PORTFOLIO_VALUE_PRESETS.map((preset) => (
                 <button
@@ -109,12 +109,12 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="calmar-value"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="calmar-value" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Expected Annual Return (%)</label>
+            <label>{getUiString(lang, 'Expected Annual Return')} (%)</label>
             <div className="pills-row">
               {ANNUAL_RETURN_PRESETS.map((preset) => (
                 <button
@@ -127,12 +127,12 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)} step="any" id="calmar-return"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={annualReturn} onChange={(e) => setAnnualReturn(e.target.value)} step="any" id="calmar-return" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Maximum Drawdown (%)</label>
+            <label>{getUiString(lang, 'Maximum Drawdown')} (%)</label>
             <div className="pills-row">
               {MAX_DRAWDOWN_PRESETS.map((preset) => (
                 <button
@@ -145,12 +145,12 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.01" step="any" id="calmar-dd"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.01" step="any" id="calmar-dd" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Projection Horizon (years)</label>
+            <label>{getUiString(lang, 'Projection Horizon')} ({getUiString(lang, 'years')})</label>
             <div className="pills-row">
               {HORIZON_PRESETS.map((preset) => (
                 <button
@@ -162,12 +162,12 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="calmar-years"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="calmar-years" onFocus={(e) => e.target.select()} />
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Calmar is most useful when drawdown and return come from the same backtest period.
+            {getUiString(lang, 'Auto-calculates as you type. Calmar is most useful when drawdown and return come from the same backtest period.')}
           </span>
         </div>
 

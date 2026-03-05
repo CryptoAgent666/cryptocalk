@@ -208,7 +208,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {YIELD_FARMING_SCENARIOS.map((scenario) => (
                                 <button
@@ -224,7 +224,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
 
                     {/* Deposit Amount */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Deposit Amount</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Deposit Amount')}</label>
                         <div className="pills-row">
                             {DEPOSIT_PRESETS.map((preset) => (
                                 <button
@@ -238,13 +238,13 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={deposit} onChange={(e) => setDeposit(e.target.value)}
-                                placeholder="" id="yf-deposit" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="yf-deposit" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Pool APY/APR */}
                     <div className="input-group">
-                        <label><Percent size={14} /> Pool {rateType}</label>
+                        <label><Percent size={14} /> {getUiString(lang, 'Pool')} {rateType}</label>
                         <div className="toggle-group">
                             <button className={`toggle-btn ${rateType === 'APY' ? 'active' : ''}`}
                                 onClick={() => setRateType('APY')}>
@@ -268,13 +268,13 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={poolRate} onChange={(e) => setPoolRate(e.target.value)}
-                                placeholder="" id="yf-rate" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="yf-rate" step="0.1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Gas Costs */}
                     <div className="input-group">
-                        <label><Fuel size={14} /> Gas Cost: Entry</label>
+                        <label><Fuel size={14} /> {getUiString(lang, 'Gas Cost: Entry')}</label>
                         <div className="pills-row">
                             {GAS_PRESETS.map((preset) => (
                                 <button
@@ -288,12 +288,12 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={gasEntry} onChange={(e) => setGasEntry(e.target.value)}
-                                placeholder="" id="yf-gas-entry" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="yf-gas-entry" step="0.1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     <div className="input-group">
-                        <label><Fuel size={14} /> Gas Cost: Exit</label>
+                        <label><Fuel size={14} /> {getUiString(lang, 'Gas Cost: Exit')}</label>
                         <div className="pills-row">
                             {GAS_PRESETS.map((preset) => (
                                 <button
@@ -307,12 +307,12 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={gasExit} onChange={(e) => setGasExit(e.target.value)}
-                                placeholder="" id="yf-gas-exit" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="yf-gas-exit" step="0.1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     <div className="input-group">
-                        <label><Fuel size={14} /> Gas Cost: Per Harvest</label>
+                        <label><Fuel size={14} /> {getUiString(lang, 'Gas Cost: Per Harvest')}</label>
                         <div className="pills-row">
                             {GAS_PRESETS.map((preset) => (
                                 <button
@@ -326,13 +326,13 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={gasHarvest} onChange={(e) => setGasHarvest(e.target.value)}
-                                placeholder="" id="yf-gas-harvest" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="yf-gas-harvest" step="0.1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Harvest Frequency */}
                     <div className="input-group">
-                        <label><Clock size={14} /> Harvest Frequency</label>
+                        <label><Clock size={14} /> {getUiString(lang, 'Harvest Frequency')}</label>
                         <div className="pills-row">
                             {HARVEST_FREQUENCIES.map((f) => (
                                 <button key={f.id}
@@ -346,7 +346,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
 
                     {/* Impermanent Loss */}
                     <div className="input-group">
-                        <label><Percent size={14} /> Expected Impermanent Loss</label>
+                        <label><Percent size={14} /> {getUiString(lang, 'Expected Impermanent Loss')}</label>
                         <div className="pills-row">
                             {IL_PRESETS.map((preset) => (
                                 <button
@@ -360,13 +360,13 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={ilPercent} onChange={(e) => setIlPercent(e.target.value)}
-                                placeholder="" id="yf-il" step="0.1" min="0" max="50"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="yf-il" step="0.1" min="0" max="50" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Farming Period */}
                     <div className="input-group">
-                        <label><Calendar size={14} /> Farming Period</label>
+                        <label><Calendar size={14} /> {getUiString(lang, 'Farming Period')}</label>
                         <div className="pills-row">
                             {PERIOD_PRESETS.map((p) => (
                                 <button key={p.days}
@@ -378,7 +378,7 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={farmingDays} onChange={(e) => setFarmingDays(e.target.value)}
-                                placeholder="" id="yf-days" step="1" min="1"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="yf-days" step="1" min="1" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

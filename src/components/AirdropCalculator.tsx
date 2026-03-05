@@ -62,8 +62,9 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
     const [showDropdown, setShowDropdown] = useState(false);
     const [selectedCoin, setSelectedCoin] = useState<CoinSuggestion | null>(null);
     const [fetchingPrice, setFetchingPrice] = useState(false);
+    const [searchError, setSearchError] = useState('');
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const searchTimeout = useRef<ReturnType<typeof setTimeout>>();
+    const searchTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
     // Input state
     const [tokenAmount, setTokenAmount] = useState('');
@@ -95,6 +96,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
         }
         searchTimeout.current = setTimeout(async () => {
             try {
+                setSearchError('');
                 const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`);
                 if (!res.ok) throw new Error('Search failed');
                 const data = await res.json();
@@ -107,6 +109,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                 setShowDropdown(true);
             } catch {
                 setSuggestions([]);
+                setSearchError(getUiString(lang, 'Failed to search. Check your connection and try again.'));
             }
         }, 300);
     }, []);
@@ -129,7 +132,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                 }
             }
         } catch {
-            // Silently fail — user can enter manually
+            setSearchError(getUiString(lang, 'Failed to fetch price. You can enter it manually.'));
         }
         setFetchingPrice(false);
     };
@@ -235,7 +238,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* ===== Left: Input Panel ===== */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {AIRDROP_SCENARIOS.map((scenario) => (
                                 <button
@@ -253,8 +256,8 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group" ref={dropdownRef}>
                         <label>
                             <Search size={14} />
-                            Airdrop Token
-                            <span className="label-hint">Search or enter manually</span>
+                            {getUiString(lang, 'Airdrop Token')}
+                            <span className="label-hint">{getUiString(lang, 'Search or enter manually')}</span>
                         </label>
                         <div className="coin-search-wrapper">
                             <input
@@ -284,9 +287,10 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                         )}
                         {fetchingPrice && (
                             <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                <Loader2 size={12} className="spin" /> Fetching price...
+                                <Loader2 size={12} className="spin" /> {getUiString(lang, 'Fetching price...')}
                             </div>
                         )}
+                        {searchError && <span className="input-hint" style={{ color: '#f97316' }}>{searchError}</span>}
                     </div>
 
                     {/* Token Amount */}
@@ -315,7 +319,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="airdrop-amount"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -323,8 +327,8 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Price at Receipt ($)
-                            <span className="label-hint">When you received the airdrop</span>
+                            {getUiString(lang, 'Price at Receipt ($)')}
+                            <span className="label-hint">{getUiString(lang, 'When you received the airdrop')}</span>
                         </label>
                         <div className="pills-row">
                             {RECEIPT_PRICE_PILLS.map((price) => (
@@ -346,7 +350,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="airdrop-receipt-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -354,8 +358,8 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Current Token Price ($)
-                            <span className="label-hint">Auto-filled if coin selected</span>
+                            {getUiString(lang, 'Current Token Price ($)')}
+                            <span className="label-hint">{getUiString(lang, 'Auto-filled if coin selected')}</span>
                         </label>
                         <div className="pills-row">
                             {CURRENT_PRICE_PILLS.map((price) => (
@@ -377,14 +381,14 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="airdrop-current-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Sold Toggle */}
                     <div className="input-group">
                         <label>
-                            Sold?
+                            {getUiString(lang, 'Sold?')}
                         </label>
                         <div className="toggle-group">
                             <button
@@ -407,7 +411,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-group">
                             <label>
                                 <DollarSign size={14} />
-                                Sell Price ($)
+                                {getUiString(lang, 'Sell Price ($)')}
                             </label>
                             <div className="pills-row">
                                 {SELL_PRICE_PILLS.map((price) => (
@@ -429,7 +433,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                     id="airdrop-sell-price"
                                     step="any"
                                     min="0"
-                                 onFocus={(e) => e.target.select()} />
+                                    onFocus={(e) => e.target.select()} />
                             </div>
                         </div>
                     )}
@@ -438,7 +442,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Globe size={14} />
-                            Tax Jurisdiction
+                            {getUiString(lang, 'Tax Jurisdiction')}
                         </label>
                         <div className="pills-row">
                             {Object.entries(TAX_COUNTRIES).map(([key, c]) => (

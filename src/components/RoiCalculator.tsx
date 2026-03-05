@@ -198,7 +198,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {ROI_SCENARIOS.map((scenario) => (
                                 <button
@@ -238,7 +238,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="roi-initial"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -246,7 +246,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Current Value / Exit Value
+                            {getUiString(lang, 'Current Value / Exit Value')}
                         </label>
                         <div className="pills-row">
                             {CURRENT_VALUE_MULTIPLIERS.map((preset) => (
@@ -268,7 +268,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="roi-current"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -276,7 +276,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Calendar size={14} />
-                            Holding Period
+                            {getUiString(lang, 'Holding Period')}
                         </label>
                         <div className="pills-row">
                             {PERIOD_PRESETS.map((p) => (
@@ -298,7 +298,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="roi-days"
                                 step="1"
                                 min="1"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -306,7 +306,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Percent size={14} />
-                            Total Fees Paid (optional)
+                            {getUiString(lang, 'Total Fees Paid (optional)')}
                         </label>
                         <div className="pills-row">
                             {FEES_PILLS.map((preset) => (
@@ -328,17 +328,17 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="roi-fees"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Reset Button */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Use investment presets and value multipliers for quick ROI scenarios.
+                        {getUiString(lang, 'Use investment presets and value multipliers for quick ROI scenarios.')}
                     </span>
                 </div>
 

@@ -167,8 +167,8 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
 
                     setCoinData(updatedData);
                     setLiveDataStatus('live');
-                } catch (e) {
-                    console.error("Failed to parse live mining data", e);
+                } catch {
+                    // parse failure — fallback to defaults
                     setLiveDataStatus('error');
                 }
             })
@@ -319,7 +319,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                 {/* Left: Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {GPU_SCENARIOS.map((scenario) => (
                                 <button
@@ -337,7 +337,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <Monitor size={14} />
-                            GPU Model
+                            {getUiString(lang, 'GPU Model')}
                         </label>
                         <div className="select-wrap">
                             <select
@@ -360,7 +360,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <Cpu size={14} />
-                            Number of GPUs
+                            {getUiString(lang, 'Number of GPUs')}
                         </label>
                         <div className="pills-row">
                             {GPU_COUNT_PILLS.map((n) => (
@@ -382,7 +382,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="num-gpus-input"
                                 step="1"
                                 min="1"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -390,8 +390,8 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <Hash size={14} />
-                            Hashrate (MH/s)
-                            <span className="label-hint">Auto-filled</span>
+                            {getUiString(lang, 'Hashrate (MH/s)')}
+                            <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -404,7 +404,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="hashrate-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                             <span className="input-unit" style={{ marginLeft: 'auto', paddingRight: '10px', color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>MH/s</span>
                         </div>
                     </div>
@@ -413,8 +413,8 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <Zap size={14} />
-                            Power per GPU (W)
-                            <span className="label-hint">Auto-filled</span>
+                            {getUiString(lang, 'Power per GPU (W)')}
+                            <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -427,7 +427,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="power-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                             <span className="input-unit" style={{ marginLeft: 'auto', paddingRight: '10px', color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>W</span>
                         </div>
                     </div>
@@ -436,7 +436,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Electricity Cost ($/kWh)
+                            {getUiString(lang, 'Electricity Cost ($/kWh)')}
                         </label>
                         <div className="pills-row">
                             {ELECTRICITY_PILLS.map((c) => (
@@ -458,7 +458,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="electricity-input"
                                 step="0.01"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -466,7 +466,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <TrendingUp size={14} />
-                            Pool Fee (%)
+                            {getUiString(lang, 'Pool Fee (%)')}
                         </label>
                         <div className="pills-row">
                             {POOL_FEE_PILLS.map((fee) => (
@@ -489,7 +489,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 step="0.1"
                                 min="0"
                                 max="100"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -497,7 +497,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Mining Coin
+                            {getUiString(lang, 'Mining Coin')}
                         </label>
                         <div className="select-wrap">
                             <select
@@ -520,7 +520,7 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <Calendar size={14} />
-                            GPU Hardware Cost (Optional)
+                            {getUiString(lang, 'GPU Hardware Cost (Optional)')}
                         </label>
                         <div className="pills-row">
                             {HARDWARE_COST_PILLS.map((cost) => (
@@ -538,21 +538,21 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                                 type="number" inputMode="decimal"
                                 value={hardwareCost}
                                 onChange={(e) => setHardwareCost(e.target.value)}
-                                placeholder="For break-even calculation"
+                                placeholder={getUiString(lang, 'For break-even calculation')}
                                 id="hardware-cost-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Reset */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use presets for a faster stress test on mobile.
+                        {getUiString(lang, 'Auto-calculates as you type. Use presets for a faster stress test on mobile.')}
                     </span>
                 </div>
 
@@ -564,6 +564,12 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                             <span style={{ color: 'var(--color-accent-green)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(52, 211, 153, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
                                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-accent-green)' }}></span>
                                 {getUiString(lang, 'Live Network Data')}
+                            </span>
+                        )}
+                        {liveDataStatus === 'error' && (
+                            <span style={{ color: 'var(--color-accent-red, #ef4444)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(239,68,68,0.1)', padding: '2px 8px', borderRadius: '12px' }}>
+                                <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-accent-red, #ef4444)' }}></span>
+                                {getUiString(lang, 'Using fallback data. Live feed unavailable.')}
                             </span>
                         )}
                     </div>

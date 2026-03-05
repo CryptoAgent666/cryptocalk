@@ -100,7 +100,7 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {RISK_OF_RUIN_SCENARIOS.map((scenario) => (
                 <button
@@ -115,7 +115,7 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
           </div>
 
           <div className="input-group">
-            <label>Win Rate (%)</label>
+            <label>{getUiString(lang, 'Win Rate (%)')}</label>
             <div className="pills-row">
               {WIN_RATE_PRESETS.map((preset) => (
                 <button
@@ -128,12 +128,12 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="ror-win-rate"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="ror-win-rate" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Reward-to-Risk Ratio</label>
+            <label>{getUiString(lang, 'Reward-to-Risk Ratio')}</label>
             <div className="pills-row">
               {REWARD_RISK_PRESETS.map((preset) => (
                 <button
@@ -145,11 +145,11 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={rewardRisk} onChange={(e) => setRewardRisk(e.target.value)} min="0.01" step="any" id="ror-rr"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={rewardRisk} onChange={(e) => setRewardRisk(e.target.value)} min="0.01" step="any" id="ror-rr" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>Risk per Trade (%)</label>
+            <label>{getUiString(lang, 'Risk per Trade (%)')}</label>
             <div className="pills-row">
               {RISK_PER_TRADE_PRESETS.map((preset) => (
                 <button
@@ -162,12 +162,12 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="ror-risk-trade"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={riskPerTrade} onChange={(e) => setRiskPerTrade(e.target.value)} min="0.01" step="any" id="ror-risk-trade" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Max Tolerable Drawdown (%)</label>
+            <label>{getUiString(lang, 'Max Tolerable Drawdown (%)')}</label>
             <div className="pills-row">
               {MAX_DRAWDOWN_PRESETS.map((preset) => (
                 <button
@@ -180,13 +180,13 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.1" step="any" id="ror-max-dd"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={maxDrawdown} onChange={(e) => setMaxDrawdown(e.target.value)} min="0.1" step="any" id="ror-max-dd" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Lower risk per trade usually reduces ruin probability fastest.
+            {getUiString(lang, 'Auto-calculates as you type. Lower risk per trade usually reduces ruin probability fastest.')}
           </span>
         </div>
 

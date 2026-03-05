@@ -178,7 +178,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {LEVERAGE_SCENARIOS.map((scenario) => (
                                 <button
@@ -194,10 +194,10 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label><Search size={14} /> Cryptocurrency (optional)</label>
+                        <label><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin..." id="leverage-coin-search" />
+                                placeholder={getUiString(lang, 'Search coin...')} id="leverage-coin-search" />
                             {selectedCoin && (
                                 <button className="coin-clear" onClick={clearCoin} aria-label="Clear"><X size={14} /></button>
                             )}
@@ -220,10 +220,10 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         <label>{getUiString(lang, 'Direction')}</label>
                         <div className="toggle-group">
                             <button className={`toggle-btn ${!isShort ? 'active' : ''}`} onClick={() => setIsShort(false)}>
-                                <TrendingUp size={14} /> Long
+                                <TrendingUp size={14} /> {getUiString(lang, 'Long')}
                             </button>
                             <button className={`toggle-btn toggle-short ${isShort ? 'active' : ''}`} onClick={() => setIsShort(true)}>
-                                <TrendingDown size={14} /> Short
+                                <TrendingDown size={14} /> {getUiString(lang, 'Short')}
                             </button>
                         </div>
                     </div>
@@ -244,13 +244,13 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="" id="lev-entry" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="lev-entry" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Position Size */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Position Size</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Position Size')}</label>
                         <div className="pills-row">
                             {POSITION_SIZE_PILLS.map((preset) => (
                                 <button
@@ -264,15 +264,15 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="" id="lev-size" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="lev-size" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Leverage */}
                     <div className="input-group">
                         <label>
-                            <Scale size={14} /> Leverage
-                            {highLev && <span style={{ color: '#f97316', fontSize: '0.75rem', marginLeft: '6px' }}>⚠ High risk</span>}
+                            <Scale size={14} /> {getUiString(lang, 'Leverage')}
+                            {highLev && <span style={{ color: '#f97316', fontSize: '0.75rem', marginLeft: '6px' }}>⚠ {getUiString(lang, 'High risk')}</span>}
                         </label>
                         <div className="pills-row">
                             {LEVERAGE_PRESETS.map((l) => (
@@ -284,13 +284,13 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={leverage} onChange={(e) => setLeverage(e.target.value)}
-                                placeholder="" id="lev-leverage" step="1" min="1" max="200"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="lev-leverage" step="1" min="1" max="200" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Price Change */}
                     <div className="input-group">
-                        <label><ArrowUpDown size={14} /> Price Change (%)</label>
+                        <label><ArrowUpDown size={14} /> {getUiString(lang, 'Price Change (%)')}</label>
                         <div className="pills-row">
                             {PRICE_CHANGE_PRESETS.map((p) => (
                                 <button key={p} className={`pill-btn ${priceChange === String(p) ? 'active' : ''} ${p < 0 ? 'pill-danger' : ''}`}
@@ -301,15 +301,15 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={priceChange} onChange={(e) => setPriceChange(e.target.value)}
-                                placeholder="" id="lev-change" step="1"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="lev-change" step="1" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use presets for fast stress-testing.
+                        {getUiString(lang, 'Auto-calculates as you type. Use presets for fast stress-testing.')}
                     </span>
                 </div>
 
