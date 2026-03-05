@@ -281,7 +281,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {PROFIT_SCENARIOS.map((scenario) => (
                                 <button
@@ -299,14 +299,14 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group" ref={suggestionsRef}>
                         <label>
                             <Search size={14} />
-                            Cryptocurrency (optional)
+                            {getUiString(lang, 'Cryptocurrency (optional)')}
                         </label>
                         <div className="coin-search-wrapper">
                             <input
                                 type="text"
                                 value={coinSearch}
                                 onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin (e.g. Bitcoin)..."
+                                placeholder={getUiString(lang, 'Search coin (e.g. Bitcoin)...')}
                                 id="coin-search"
                             />
                             {selectedCoin && (
@@ -336,21 +336,21 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Position Type */}
                     <div className="input-group">
-                        <label>Position Type</label>
+                        <label>{getUiString(lang, 'Position Type')}</label>
                         <div className="toggle-group">
                             <button
                                 className={`toggle-btn ${!isShort ? 'active' : ''}`}
                                 onClick={() => setIsShort(false)}
                             >
                                 <TrendingUp size={14} />
-                                Long
+                                {getUiString(lang, 'Long')}
                             </button>
                             <button
                                 className={`toggle-btn toggle-short ${isShort ? 'active' : ''}`}
                                 onClick={() => setIsShort(true)}
                             >
                                 <TrendingDown size={14} />
-                                Short
+                                {getUiString(lang, 'Short')}
                             </button>
                         </div>
                     </div>
@@ -359,7 +359,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            {isShort ? 'Entry Price (Sell)' : 'Buy Price'}
+                            {isShort ? getUiString(lang, 'Entry Price (Sell)') : getUiString(lang, 'Buy Price')}
                         </label>
                         <div className="pills-row">
                             {BUY_PRICE_PILLS.map((price) => (
@@ -390,9 +390,9 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            {isShort ? 'Exit Price (Buy)' : 'Sell / Current Price'}
+                            {isShort ? getUiString(lang, 'Exit Price (Buy)') : getUiString(lang, 'Sell / Current Price')}
                             {selectedCoin && (
-                                <span className="label-hint">Auto-filled</span>
+                                <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                             )}
                         </label>
                         <div className="pills-row">
@@ -422,20 +422,20 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Quantity / Investment Toggle */}
                     <div className="input-group">
-                        <label>Amount</label>
+                        <label>{getUiString(lang, 'Amount')}</label>
                         <div className="toggle-group">
                             <button
                                 className={`toggle-btn ${inputMode === 'investment' ? 'active' : ''}`}
                                 onClick={() => setInputMode('investment')}
                             >
                                 <DollarSign size={14} />
-                                Investment ($)
+                                {getUiString(lang, 'Investment ($)')}
                             </button>
                             <button
                                 className={`toggle-btn ${inputMode === 'quantity' ? 'active' : ''}`}
                                 onClick={() => setInputMode('quantity')}
                             >
-                                Quantity
+                                {getUiString(lang, 'Quantity')}
                             </button>
                         </div>
                         <div className="pills-row">
@@ -479,7 +479,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                         onClick={() => setShowFees(!showFees)}
                     >
                         <Percent size={14} />
-                        Trading Fees
+                        {getUiString(lang, 'Trading Fees')}
                         <ChevronDown
                             size={14}
                             style={{ transform: showFees ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}
@@ -490,7 +490,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="fees-panel">
                             <div className="fees-row">
                                 <div className="input-group compact">
-                                    <label>Entry Fee (%)</label>
+                                    <label>{getUiString(lang, 'Entry Fee (%)')}</label>
                                     <div className="pills-row">
                                         {FEE_PILLS.map((fee) => (
                                             <button
@@ -514,7 +514,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                     />
                                 </div>
                                 <div className="input-group compact">
-                                    <label>Exit Fee (%)</label>
+                                    <label>{getUiString(lang, 'Exit Fee (%)')}</label>
                                     <div className="pills-row">
                                         {FEE_PILLS.map((fee) => (
                                             <button
@@ -554,10 +554,10 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Reset Button */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Choose amount mode first, then use presets for faster setup.
+                        {getUiString(lang, 'Auto-calculates as you type. Choose amount mode first, then use presets for faster setup.')}
                     </span>
                 </div>
 

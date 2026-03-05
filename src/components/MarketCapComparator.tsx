@@ -298,14 +298,14 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group" ref={targetSuggestionsRef}>
                         <label>
                             <Search size={14} />
-                            Target Token (A)
+                            {getUiString(lang, 'Target Token (A)')}
                         </label>
                         <div className="coin-search-wrapper">
                             <input
                                 type="text"
                                 value={targetSearch}
                                 onChange={(e) => handleTargetSearch(e.target.value)}
-                                placeholder="Search coin (e.g. Dogecoin)..."
+                                placeholder={getUiString(lang, 'Search coin (e.g. Dogecoin)...')}
                                 id="mcc-target-search"
                             />
                             {targetCoin && (
@@ -327,7 +327,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                         )}
                         {fetchingTarget && (
                             <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                <Loader2 size={12} className="spin" /> Fetching data...
+                                <Loader2 size={12} className="spin" /> {getUiString(lang, 'Fetching data...')}
                             </div>
                         )}
                     </div>
@@ -337,19 +337,19 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-group">
                             <label>
                                 <Info size={14} />
-                                {targetData.symbol.toUpperCase()} Current Data
+                                {targetData.symbol.toUpperCase()} — {getUiString(lang, 'Current Data')}
                             </label>
                             <div className="coin-info-grid">
                                 <div className="coin-info-item">
-                                    <span className="coin-info-label">Price</span>
+                                    <span className="coin-info-label">{getUiString(lang, 'Price')}</span>
                                     <span className="coin-info-value">{formatPrice(targetData.price)}</span>
                                 </div>
                                 <div className="coin-info-item">
-                                    <span className="coin-info-label">Market Cap</span>
+                                    <span className="coin-info-label">{getUiString(lang, 'Market Cap')}</span>
                                     <span className="coin-info-value">{formatBigNumber(targetData.marketCap)}</span>
                                 </div>
                                 <div className="coin-info-item">
-                                    <span className="coin-info-label">Supply</span>
+                                    <span className="coin-info-label">{getUiString(lang, 'Supply')}</span>
                                     <span className="coin-info-value">{formatSupply(targetData.circulatingSupply)}</span>
                                 </div>
                             </div>
@@ -360,14 +360,14 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group" ref={refSuggestionsRef}>
                         <label>
                             <Search size={14} />
-                            Reference Token (B)
+                            {getUiString(lang, 'Reference Token (B)')}
                         </label>
                         <div className="coin-search-wrapper">
                             <input
                                 type="text"
                                 value={refSearch}
                                 onChange={(e) => handleRefSearch(e.target.value)}
-                                placeholder="Search coin (e.g. Ethereum)..."
+                                placeholder={getUiString(lang, 'Search coin (e.g. Ethereum)...')}
                                 id="mcc-ref-search"
                             />
                             {refCoin && (
@@ -389,7 +389,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                         )}
                         {fetchingRef && (
                             <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                <Loader2 size={12} className="spin" /> Fetching data...
+                                <Loader2 size={12} className="spin" /> {getUiString(lang, 'Fetching data...')}
                             </div>
                         )}
                     </div>
@@ -399,15 +399,15 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-group">
                             <label>
                                 <Info size={14} />
-                                {refData.symbol.toUpperCase()} Current Data
+                                {refData.symbol.toUpperCase()} — {getUiString(lang, 'Current Data')}
                             </label>
                             <div className="coin-info-grid">
                                 <div className="coin-info-item">
-                                    <span className="coin-info-label">Price</span>
+                                    <span className="coin-info-label">{getUiString(lang, 'Price')}</span>
                                     <span className="coin-info-value">{formatPrice(refData.price)}</span>
                                 </div>
                                 <div className="coin-info-item">
-                                    <span className="coin-info-label">Market Cap</span>
+                                    <span className="coin-info-label">{getUiString(lang, 'Market Cap')}</span>
                                     <span className="coin-info-value">{formatBigNumber(refData.marketCap)}</span>
                                 </div>
                             </div>
@@ -418,7 +418,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <Zap size={14} />
-                            Quick Scenarios
+                            {getUiString(lang, 'Quick Scenarios')}
                         </label>
                         <div className="pills-row">
                             {QUICK_SCENARIOS.map((s, i) => (
@@ -435,7 +435,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                 </div>
 
@@ -545,7 +545,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                             </div>
                             <h3>{getUiString(lang, 'Market Cap Comparator')}</h3>
                             <p>
-                                Select two coins to compare: "What if {targetCoin?.symbol.toUpperCase() || 'Coin A'} had {refCoin?.symbol.toUpperCase() || 'Coin B'}'s market cap?"
+                                {getUiString(lang, 'Select two coins to compare:')} "{getUiString(lang, 'What if')} {targetCoin?.symbol.toUpperCase() || getUiString(lang, 'Coin A')} {getUiString(lang, 'had')} {refCoin?.symbol.toUpperCase() || getUiString(lang, 'Coin B')}{getUiString(lang, "'s market cap?'")}"
                                 {isFetching && (
                                     <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginTop: '12px', color: 'var(--color-text-muted)' }}>
                                         <Loader2 size={16} className="spin" /> {getUiString(lang, 'Loading coin data...')}

@@ -365,7 +365,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 type="text"
                                 value={coinSearch}
                                 onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin (e.g. Bitcoin)..."
+                                placeholder={getUiString(lang, 'Search coin (e.g. Bitcoin)...')}
                                 id="liq-coin-search"
                             />
                             {selectedCoin && (
@@ -425,14 +425,14 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 onClick={() => setIsShort(false)}
                             >
                                 <TrendingUp size={14} />
-                                Long
+                                {getUiString(lang, 'Long')}
                             </button>
                             <button
                                 className={`toggle-btn toggle-short ${isShort ? 'active' : ''}`}
                                 onClick={() => setIsShort(true)}
                             >
                                 <TrendingDown size={14} />
-                                Short
+                                {getUiString(lang, 'Short')}
                             </button>
                         </div>
                     </div>
@@ -448,13 +448,13 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 className={`toggle-btn ${marginType === 'isolated' ? 'active' : ''}`}
                                 onClick={() => setMarginType('isolated')}
                             >
-                                Isolated
+                                {getUiString(lang, 'Isolated')}
                             </button>
                             <button
                                 className={`toggle-btn ${marginType === 'cross' ? 'active' : ''}`}
                                 onClick={() => setMarginType('cross')}
                             >
-                                Cross
+                                {getUiString(lang, 'Cross')}
                             </button>
                         </div>
                     </div>
@@ -583,7 +583,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                     onFocus={(e) => e.target.select()} />
                             </div>
                             <span className="input-hint" style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
-                                Your total available margin balance
+                                {getUiString(lang, 'Your total available margin balance')}
                             </span>
                         </div>
                     )}
@@ -591,10 +591,10 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                     {/* Reset */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use entry, size, and wallet presets for a faster estimate.
+                        {getUiString(lang, 'Auto-calculates as you type. Use entry, size, and wallet presets for a faster estimate.')}
                     </span>
                 </div>
 
@@ -653,7 +653,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Margin Type')}</span>
-                                    <span className="result-value" style={{ textTransform: 'capitalize' }}>{marginType}</span>
+                                    <span className="result-value" style={{ textTransform: 'capitalize' }}>{getUiString(lang, marginType === 'isolated' ? 'Isolated' : 'Cross')}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">

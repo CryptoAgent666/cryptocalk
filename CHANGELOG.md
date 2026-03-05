@@ -4,6 +4,9 @@ All notable changes to this project are documented here.
 
 ## [2026-03-06]
 
+### Added
+- **i18n: localized remaining hardcoded strings in 10 calculators**: Replaced ~80 hardcoded English strings with `getUiString(lang, ...)` calls in Airdrop, FundingRate, Liquidation, Margin, MarketCapComparator, PositionSize, Profit, ReverseRoi, StakingRewards, and TpSl calculators. Added ~230 new translations to `ui-strings.ts` (es, pt, tr, hi, ru) covering labels, placeholders, toggles, hints, and button text.
+
 ### Fixed
 - **P0 — DCA Calculator broken**: Replaced hardcoded CoinGecko API call with `cryptoPriceService.ts` fallback chain (CoinGecko → CryptoCompare → CoinCap). Fixes 401 errors from expired demo API key.
 - **P1 — Right-column truncation on mobile (S1)**: Fixed `.result-value` being clipped on 375px viewports across ~15 calculators. Applied `flex-shrink: 0` to values and `text-overflow: ellipsis` to labels so values are always visible.
@@ -22,6 +25,8 @@ All notable changes to this project are documented here.
 - `src/pages/index.astro` — search result counting logic
 - `src/components/SiteFooter.astro` — uses `t.footerDisclaimer`
 - `src/i18n/translations.ts` — added `footerDisclaimer` key for all 6 languages
+- `src/components/{AirdropCalculator,FundingRateCalculator,LiquidationCalculator,MarginCalculator,MarketCapComparator,PositionSizeCalculator,ProfitCalculator,ReverseRoiCalculator,StakingRewardsCalculator,TpSlCalculator}.tsx` — replaced hardcoded English with `getUiString()` calls
+- `src/i18n/ui-strings.ts` — added ~230 new string translations for 5 locales
 
 ## [2026-03-04]
 

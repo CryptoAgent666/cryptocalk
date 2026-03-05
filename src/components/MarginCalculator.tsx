@@ -270,7 +270,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         <label><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin..." id="margin-coin-search" />
+                                placeholder={getUiString(lang, 'Search coin...')} id="margin-coin-search" />
                             {selectedCoin && (
                                 <button className="coin-clear" onClick={clearCoin} aria-label="Clear"><X size={14} /></button>
                             )}
@@ -294,10 +294,10 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         <label>{getUiString(lang, 'Position Type')}</label>
                         <div className="toggle-group">
                             <button className={`toggle-btn ${!isShort ? 'active' : ''}`} onClick={() => setIsShort(false)}>
-                                <TrendingUp size={14} /> Long
+                                <TrendingUp size={14} /> {getUiString(lang, 'Long')}
                             </button>
                             <button className={`toggle-btn toggle-short ${isShort ? 'active' : ''}`} onClick={() => setIsShort(true)}>
-                                <TrendingDown size={14} /> Short
+                                <TrendingDown size={14} /> {getUiString(lang, 'Short')}
                             </button>
                         </div>
                     </div>
@@ -346,7 +346,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Scale size={14} /> {getUiString(lang, 'Leverage')}
-                            {highLev && <span style={{ color: '#f97316', fontSize: '0.75rem', marginLeft: '6px' }}>⚠ High risk</span>}
+                            {highLev && <span style={{ color: '#f97316', fontSize: '0.75rem', marginLeft: '6px' }}>⚠ {getUiString(lang, 'High risk')}</span>}
                         </label>
                         <div className="pills-row">
                             {LEVERAGE_PRESETS.map((l) => (
@@ -370,7 +370,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                 className={`pill-btn ${walletBalance === '' ? 'active' : ''}`}
                                 onClick={() => setWalletBalance('')}
                             >
-                                Auto
+                                {getUiString(lang, 'Auto')}
                             </button>
                             {WALLET_BALANCE_PILLS.map((preset) => (
                                 <button
@@ -384,10 +384,10 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={walletBalance} onChange={(e) => setWalletBalance(e.target.value)}
-                                placeholder="Auto (= required margin)" id="margin-wallet" step="any" min="0" onFocus={(e) => e.target.select()} />
+                                placeholder={getUiString(lang, 'Auto (= required margin)')} id="margin-wallet" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                         <span className="input-hint">
-                            If empty, assumes isolated margin = required margin.
+                            {getUiString(lang, 'If empty, assumes isolated margin = required margin.')}
                         </span>
                     </div>
 
@@ -409,7 +409,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
                         {getUiString(lang, 'Auto-calculates as you type. Leave wallet empty to estimate isolated margin.')}
