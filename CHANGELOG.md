@@ -2,6 +2,27 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-06]
+
+### Fixed
+- **P0 — DCA Calculator broken**: Replaced hardcoded CoinGecko API call with `cryptoPriceService.ts` fallback chain (CoinGecko → CryptoCompare → CoinCap). Fixes 401 errors from expired demo API key.
+- **P1 — Right-column truncation on mobile (S1)**: Fixed `.result-value` being clipped on 375px viewports across ~15 calculators. Applied `flex-shrink: 0` to values and `text-overflow: ellipsis` to labels so values are always visible.
+- **P2 — Long/Short toggle "Short" text hidden (S3)**: Added `white-space: nowrap`, `overflow: hidden`, `text-overflow: ellipsis` and tighter padding to `.toggle-btn` on mobile.
+- **P2 — What-If Calculator button & result truncated (S5)**: Shortened button text from "Calculate What If" to "Calculate"; added `word-break` and responsive `font-size` to `.whatif-hero-value` and `.whatif-stat` for mobile.
+- **P2 — Homepage search shows "2 results" for mining (S8)**: Updated search result count to show total calculator count (including tools within categories) instead of card count.
+- **P3 — Footer disclaimer not localized (S7)**: Replaced hardcoded English disclaimer in `SiteFooter.astro` with `t.footerDisclaimer`; added translations for all 6 languages.
+- **P3 — Hint text truncation (S2)**: Added `-webkit-line-clamp: 2` to `.input-hint` on mobile to gracefully truncate with ellipsis.
+- **P3 — Pill mask clipping (S4)**: Adjusted gradient mask from 90% to 92% black to show more of the last pill.
+
+### Changed
+- `src/components/DCACalculator.tsx` — imports and uses `getPriceChart()` from `cryptoPriceService.ts`
+- `src/styles/global.css` — mobile `.result-row`, `.result-label`, `.result-value`, `.toggle-btn`, `.input-hint`, `.pills-row` overrides
+- `src/pages/what-if.astro` — responsive hero value and stat sizing
+- `src/components/WhatIfCalculator.tsx` — shorter Calculate button text
+- `src/pages/index.astro` — search result counting logic
+- `src/components/SiteFooter.astro` — uses `t.footerDisclaimer`
+- `src/i18n/translations.ts` — added `footerDisclaimer` key for all 6 languages
+
 ## [2026-03-04]
 
 ### Added
