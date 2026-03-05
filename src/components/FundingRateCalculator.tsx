@@ -251,14 +251,14 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group" ref={suggestionsRef}>
                         <label>
                             <Search size={14} />
-                            Cryptocurrency (optional)
+                            {getUiString(lang, 'Cryptocurrency (optional)')}
                         </label>
                         <div className="coin-search-wrapper">
                             <input
                                 type="text"
                                 value={coinSearch}
                                 onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin (e.g. Bitcoin)..."
+                                placeholder={getUiString(lang, 'Search coin (e.g. Bitcoin)...')}
                                 id="funding-coin-search"
                             />
                             {selectedCoin && (
@@ -290,14 +290,14 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                 onClick={() => setIsShort(false)}
                             >
                                 <TrendingUp size={14} />
-                                Long
+                                {getUiString(lang, 'Long')}
                             </button>
                             <button
                                 className={`toggle-btn toggle-short ${isShort ? 'active' : ''}`}
                                 onClick={() => setIsShort(true)}
                             >
                                 <TrendingDown size={14} />
-                                Short
+                                {getUiString(lang, 'Short')}
                             </button>
                         </div>
                     </div>
@@ -360,7 +360,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                 onFocus={(e) => e.target.select()} />
                         </div>
                         <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
-                            Positive rate = longs pay shorts. Negative = shorts pay longs.
+                            {getUiString(lang, 'Positive rate = longs pay shorts. Negative = shorts pay longs.')}
                         </span>
                     </div>
 
@@ -404,7 +404,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
 
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
                         {getUiString(lang, 'Auto-calculates as you type. Use size, rate, and period presets for quick funding projections.')}
