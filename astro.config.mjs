@@ -67,6 +67,7 @@ const EN_ALIAS_SLUGS = new Set([
   'loan-calculator',
 ]);
 
+/** @param {string} pageUrl */
 function isLegacyLocalizedSpecUrl(pageUrl) {
   const { pathname } = new URL(pageUrl);
   const segments = pathname.split('/').filter(Boolean);
@@ -76,6 +77,7 @@ function isLegacyLocalizedSpecUrl(pageUrl) {
   return NON_DEFAULT_LANGS.has(lang) && SPEC_CALCULATOR_SLUGS.has(slug);
 }
 
+/** @param {string} pageUrl */
 function isAliasUrl(pageUrl) {
   const { pathname } = new URL(pageUrl);
   const segments = pathname.split('/').filter(Boolean);

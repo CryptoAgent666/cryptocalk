@@ -212,7 +212,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                 {/* Left: Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {ELECTRICITY_SCENARIOS.map((scenario) => (
                                 <button
@@ -230,7 +230,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                     <div className="input-group">
                         <label>
                             <Cpu size={14} />
-                            Number of Devices
+                            {getUiString(lang, 'Number of Devices')}
                         </label>
                         <div className="pills-row">
                             {DEVICE_PILLS.map((n) => (
@@ -252,7 +252,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 id="num-devices-input"
                                 step="1"
                                 min="1"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -260,7 +260,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                     <div className="input-group">
                         <label>
                             <Zap size={14} />
-                            Power per Device (W)
+                            {getUiString(lang, 'Power per Device (W)')}
                         </label>
                         <div className="pills-row">
                             {POWER_PER_DEVICE_PILLS.map((powerPill) => (
@@ -282,7 +282,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 id="power-per-device-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                             <span className="input-unit" style={{ marginLeft: 'auto', paddingRight: '10px', color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>W</span>
                         </div>
                     </div>
@@ -291,7 +291,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Electricity Rate ($/kWh)
+                            {getUiString(lang, 'Electricity Rate ($/kWh)')}
                         </label>
                         <div className="pills-row">
                             {ELECTRICITY_RATE_PILLS.map((r) => (
@@ -313,7 +313,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 id="electricity-rate-input"
                                 step="0.01"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -321,7 +321,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                     <div className="input-group">
                         <label>
                             <Clock size={14} />
-                            Uptime (hours/day)
+                            {getUiString(lang, 'Uptime (hours/day)')}
                         </label>
                         <div className="pills-row">
                             {UPTIME_PILLS.map((h) => (
@@ -344,7 +344,7 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 step="1"
                                 min="0"
                                 max="24"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                             <span className="input-unit" style={{ marginLeft: 'auto', paddingRight: '10px', color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>hrs/day</span>
                         </div>
                     </div>
@@ -353,8 +353,8 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                     <div className="input-group">
                         <label>
                             <TrendingUp size={14} />
-                            Monthly Mining Revenue ($)
-                            <span className="label-hint">Optional, for profitability analysis</span>
+                            {getUiString(lang, 'Monthly Mining Revenue ($)')}
+                            <span className="label-hint">{getUiString(lang, 'Optional, for profitability analysis')}</span>
                         </label>
                         <div className="pills-row">
                             {MONTHLY_REVENUE_PILLS.map((revenuePill) => (
@@ -372,21 +372,21 @@ export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: stri
                                 type="number" inputMode="decimal"
                                 value={monthlyRevenue}
                                 onChange={(e) => setMonthlyRevenue(e.target.value)}
-                                placeholder="Enter revenue for profitability"
+                                placeholder={getUiString(lang, 'Enter revenue for profitability')}
                                 id="monthly-revenue-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Reset */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Set power, uptime, and tariff first for realistic costs.
+                        {getUiString(lang, 'Auto-calculates as you type. Set power, uptime, and tariff first for realistic costs.')}
                     </span>
                 </div>
 

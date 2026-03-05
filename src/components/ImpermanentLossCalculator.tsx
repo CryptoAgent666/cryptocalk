@@ -46,6 +46,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
     const [poolFeeApr, setPoolFeeApr] = useState('20');
     const [holdingDays, setHoldingDays] = useState('30');
     const [loading, setLoading] = useState(false);
+    const [searchError, setSearchError] = useState('');
 
     const searchTimeoutA = useRef<ReturnType<typeof setTimeout> | null>(null);
     const searchTimeoutB = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -69,6 +70,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
     const searchCoins = useCallback(async (query: string, setter: (v: CoinSuggestion[]) => void, showSetter: (v: boolean) => void) => {
         if (query.length < 2) { setter([]); return; }
         setLoading(true);
+        setSearchError('');
         try {
             const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`);
             if (!res.ok) throw new Error('Search failed');
@@ -77,9 +79,12 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                 id: c.id, name: c.name, symbol: c.symbol, thumb: c.thumb,
             })));
             showSetter(true);
-        } catch { setter([]); }
+        } catch {
+            setter([]);
+            setSearchError(getUiString(lang, 'Failed to search coins. Please try again.'));
+        }
         setLoading(false);
-    }, []);
+    }, [lang]);
 
     const handleSearchA = (v: string) => {
         setTokenASearch(v);
@@ -178,7 +183,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {IL_SCENARIOS.map((scenario) => (
                                 <button
@@ -194,7 +199,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
 
                     {/* Token A Search */}
                     <div className="input-group" ref={sugRefA}>
-                        <label><Search size={14} /> Token A (optional)</label>
+                        <label><Search size={14} /> {getUiString(lang, 'Token A (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={tokenASearch} onChange={(e) => handleSearchA(e.target.value)}
                                 placeholder="e.g. Ethereum" id="il-token-a" />
@@ -217,7 +222,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
 
                     {/* Token B Search */}
                     <div className="input-group" ref={sugRefB}>
-                        <label><Search size={14} /> Token B (optional)</label>
+                        <label><Search size={14} /> {getUiString(lang, 'Token B (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={tokenBSearch} onChange={(e) => handleSearchB(e.target.value)}
                                 placeholder="e.g. USDC" id="il-token-b" />
@@ -240,7 +245,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
 
                     {/* Investment */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Total Liquidity Provided</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Total Liquidity Provided')}</label>
                         <div className="pills-row">
                             {LIQUIDITY_PRESETS.map((preset) => (
                                 <button
@@ -254,13 +259,13 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={investmentAmount} onChange={(e) => setInvestmentAmount(e.target.value)}
-                                placeholder="" id="il-investment" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="il-investment" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Token A Price Change */}
                     <div className="input-group">
-                        <label><ArrowUpDown size={14} /> {tokenALabel} Price Change (%)</label>
+                        <label><ArrowUpDown size={14} /> {tokenALabel} {getUiString(lang, 'Price Change (%)')}</label>
                         <div className="pills-row">
                             {PRICE_CHANGE_PRESETS.map((p) => (
                                 <button key={p} className={`pill-btn ${priceChangeA === String(p) ? 'active' : ''} ${p < 0 ? 'pill-danger' : ''}`}
@@ -271,13 +276,13 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={priceChangeA} onChange={(e) => setPriceChangeA(e.target.value)}
-                                placeholder="" id="il-change-a" step="1"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="il-change-a" step="1" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Token B Price Change */}
                     <div className="input-group">
-                        <label><ArrowUpDown size={14} /> {tokenBLabel} Price Change (%)</label>
+                        <label><ArrowUpDown size={14} /> {tokenBLabel} {getUiString(lang, 'Price Change (%)')}</label>
                         <div className="pills-row">
                             {PRICE_CHANGE_PRESETS.map((p) => (
                                 <button key={p} className={`pill-btn ${priceChangeB === String(p) ? 'active' : ''} ${p < 0 ? 'pill-danger' : ''}`}
@@ -288,13 +293,13 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={priceChangeB} onChange={(e) => setPriceChangeB(e.target.value)}
-                                placeholder="" id="il-change-b" step="1"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="il-change-b" step="1" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Pool Fee APR */}
                     <div className="input-group">
-                        <label><Percent size={14} /> Pool Fee APR</label>
+                        <label><Percent size={14} /> {getUiString(lang, 'Pool Fee APR')}</label>
                         <div className="pills-row">
                             {POOL_FEE_PRESETS.map((f) => (
                                 <button key={f} className={`pill-btn ${poolFeeApr === String(f) ? 'active' : ''}`}
@@ -305,13 +310,13 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={poolFeeApr} onChange={(e) => setPoolFeeApr(e.target.value)}
-                                placeholder="" id="il-fee" step="1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="il-fee" step="1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Holding Period */}
                     <div className="input-group">
-                        <label>Holding Period (days)</label>
+                        <label>{getUiString(lang, 'Holding Period (days)')}</label>
                         <div className="pills-row">
                             {HOLDING_DAY_PRESETS.map((d) => (
                                 <button key={d} className={`pill-btn ${holdingDays === String(d) ? 'active' : ''}`}
@@ -322,7 +327,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={holdingDays} onChange={(e) => setHoldingDays(e.target.value)}
-                                placeholder="" id="il-days" step="1" min="1"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="il-days" step="1" min="1" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

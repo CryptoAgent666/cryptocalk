@@ -21,16 +21,16 @@ const BRIDGES: BridgeDef[] = [
 
 const CHAINS = ['Ethereum', 'Arbitrum', 'Optimism', 'Base', 'Polygon', 'BSC'];
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
 
 export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
+  const formatUSD = (value: number): string => {
+    return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
   const [fromChain, setFromChain] = useState('Ethereum');
   const [toChain, setToChain] = useState('Arbitrum');
   const [token, setToken] = useState('USDC');
@@ -74,10 +74,10 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label><ArrowRightLeft size={14} /> Route</label>
+            <label><ArrowRightLeft size={14} /> {getUiString(lang, 'Route')}</label>
             <div className="toggle-group" style={{ marginBottom: '8px' }}>
-              <button className="toggle-btn active" type="button">From</button>
-              <button className="toggle-btn" type="button">To</button>
+              <button className="toggle-btn active" type="button">{getUiString(lang, 'From')}</button>
+              <button className="toggle-btn" type="button">{getUiString(lang, 'To')}</button>
             </div>
             <div className="select-wrap" style={{ marginBottom: '8px' }}>
               <select className="input-select" value={fromChain} onChange={(e) => setFromChain(e.target.value)} id="bridge-from">
@@ -92,7 +92,7 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Token</label>
+            <label>{getUiString(lang, 'Token')}</label>
             <div className="pills-row">
               {['USDC', 'USDT', 'ETH', 'DAI'].map((symbol) => (
                 <button
@@ -107,7 +107,7 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Amount</label>
+            <label>{getUiString(lang, 'Amount')}</label>
             <div className="input-with-prefix">
               <input
                 type="number" inputMode="decimal"
@@ -116,13 +116,13 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 id="bridge-amount"
-               onFocus={(e) => e.target.select()} />
+                onFocus={(e) => e.target.select()} />
               <span className="input-unit">{token}</span>
             </div>
           </div>
 
           <button className="reset-btn" onClick={reset}>
-            <RotateCcw size={14} /> Reset
+            <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
           </button>
         </div>
 

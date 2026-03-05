@@ -148,7 +148,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
     const setDateYearsAgo = (years: number) => {
         setStartDate(getDateYearsAgo(years));
     };
-    const applyScenario = (scenario: (typeof DCA_SCENARIOS)[number]) => {
+    const applyScenario = (scenario: { label: string; coinId: string; amount: string; frequency: string; yearsAgo: number }) => {
         const coin = POPULAR_COINS.find((c) => c.id === scenario.coinId) || POPULAR_COINS[0];
         setSelectedCoin(coin);
         setCoinSearch('');
@@ -160,7 +160,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
         setResult(null);
         setChartData([]);
     };
-    const isScenarioActive = (scenario: (typeof DCA_SCENARIOS)[number]) => (
+    const isScenarioActive = (scenario: { label: string; coinId: string; amount: string; frequency: string; yearsAgo: number }) => (
         selectedCoin?.id === scenario.coinId
         && amount === scenario.amount
         && frequency === scenario.frequency
@@ -286,8 +286,8 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
             });
 
             setChartData(chart);
-        } catch (err: any) {
-            setError(err.message || 'Failed to calculate. Try again.');
+        } catch (err: unknown) {
+            setError(err instanceof Error ? err.message : 'Failed to calculate. Try again.');
         }
 
         setLoading(false);
@@ -447,22 +447,13 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
-                            <button type="button" className="pill-btn" onClick={() => applyScenario({ label: 'BTC Monthly', coinId: 'bitcoin', frequency: 'monthly', amount: '100', yearsAgo: 1 })}>
-                                {getUiString(lang, 'BTC Monthly')}
-                            </button>
-                            <button type="button" className="pill-btn" onClick={() => applyScenario({ label: 'ETH Weekly', coinId: 'ethereum', frequency: 'weekly', amount: '100', yearsAgo: 1 })}>
-                                {getUiString(lang, 'ETH Weekly')}
-                            </button>
-                            <button type="button" className="pill-btn" onClick={() => applyScenario({ label: 'SOL Bi-weekly', coinId: 'solana', frequency: 'biweekly', amount: '100', yearsAgo: 1 })}>
-                                {getUiString(lang, 'SOL Bi-weekly')}
-                            </button>
                             {DCA_SCENARIOS.map((scenario) => (
                                 <button
                                     key={scenario.label}
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>

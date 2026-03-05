@@ -141,11 +141,11 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
             const res = await fetch(
                 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd,eur,gbp,brl,try,inr,rub&x_cg_demo_api_key=REMOVED_COINGECKO_KEY'
             );
-            if (!res.ok) throw new Error('Failed to fetch prices');
+            if (!res.ok) throw new Error(getUiString(lang, 'Failed to fetch prices'));
             const data = await res.json();
             setPrices(data as PriceData);
         } catch {
-            setError('Failed to fetch exchange rates. Please try again.');
+            setError(getUiString(lang, 'Failed to fetch exchange rates. Please try again.'));
         }
         setLoading(false);
     }, []);
@@ -248,7 +248,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {SALARY_SCENARIOS.map((scenario) => (
                                 <button
@@ -266,7 +266,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                     <div className="input-group">
                         <label>
                             <ArrowRightLeft size={14} />
-                            Calculator Mode
+                            {getUiString(lang, 'Calculator Mode')}
                         </label>
                         <div className="toggle-group">
                             <button
@@ -274,14 +274,14 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                 onClick={() => setMode('fiat-to-crypto')}
                             >
                                 <DollarSign size={14} />
-                                Fiat &rarr; Crypto
+                                {getUiString(lang, 'Fiat')} &rarr; {getUiString(lang, 'Crypto')}
                             </button>
                             <button
                                 className={`toggle-btn ${mode === 'crypto-to-fiat' ? 'active' : ''}`}
                                 onClick={() => setMode('crypto-to-fiat')}
                             >
                                 <Coins size={14} />
-                                Crypto &rarr; Fiat
+                                {getUiString(lang, 'Crypto')} &rarr; {getUiString(lang, 'Fiat')}
                             </button>
                         </div>
                     </div>
@@ -292,7 +292,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                             <div className="input-group">
                                 <label>
                                     <DollarSign size={14} />
-                                    Annual Salary
+                                    {getUiString(lang, 'Annual Salary')}
                                 </label>
                                 <div className="input-with-prefix">
                                     <input
@@ -303,7 +303,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         id="salary-input"
                                         step="any"
                                         min="0"
-                                     onFocus={(e) => e.target.select()} />
+                                        onFocus={(e) => e.target.select()} />
                                 </div>
                                 <div className="pills-row">
                                     {['30000', '60000', '100000', '150000', '200000'].map(a => (
@@ -322,7 +322,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                             <div className="input-group">
                                 <label>
                                     <Percent size={14} />
-                                    % to Convert to Crypto
+                                    {getUiString(lang, '% to Convert to Crypto')}
                                 </label>
                                 <div className="input-with-prefix">
                                     <input
@@ -334,7 +334,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         step="1"
                                         min="0"
                                         max="100"
-                                     onFocus={(e) => e.target.select()} />
+                                        onFocus={(e) => e.target.select()} />
                                 </div>
                                 <div className="pills-row">
                                     {['5', '10', '20', '50', '100'].map(p => (
@@ -353,7 +353,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                             <div className="input-group">
                                 <label>
                                     <Coins size={14} />
-                                    Target Cryptocurrency
+                                    {getUiString(lang, 'Target Cryptocurrency')}
                                 </label>
                                 <div className="pills-row">
                                     {(Object.keys(CRYPTO_LABELS) as CryptoType[]).map(c => (
@@ -372,8 +372,8 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                             <div className="input-group">
                                 <label>
                                     <Percent size={14} />
-                                    Conversion Fee
-                                    <span className="label-hint">Exchange/service fee</span>
+                                    {getUiString(lang, 'Conversion Fee')}
+                                    <span className="label-hint">{getUiString(lang, 'Exchange/service fee')}</span>
                                 </label>
                                 <div className="pills-row">
                                     {CONVERSION_FEE_PILLS.map((fee) => (
@@ -396,7 +396,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         step="0.1"
                                         min="0"
                                         max="100"
-                                     onFocus={(e) => e.target.select()} />
+                                        onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
 
@@ -404,7 +404,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                             <div className="input-group">
                                 <label>
                                     <Clock size={14} />
-                                    Pay Frequency
+                                    {getUiString(lang, 'Pay Frequency')}
                                 </label>
                                 <div className="pills-row">
                                     {(Object.keys(PERIODS_PER_YEAR) as PayFrequency[]).map(f => (
@@ -425,7 +425,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                             <div className="input-group">
                                 <label>
                                     <Coins size={14} />
-                                    Crypto Amount per Month
+                                    {getUiString(lang, 'Crypto Amount per Month')}
                                 </label>
                                 <div className="pills-row">
                                     {CRYPTO_AMOUNT_PILLS.map((amount) => (
@@ -447,7 +447,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                                         id="crypto-amount-input"
                                         step="any"
                                         min="0"
-                                     onFocus={(e) => e.target.select()} />
+                                        onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
 
@@ -455,7 +455,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                             <div className="input-group">
                                 <label>
                                     <Coins size={14} />
-                                    Cryptocurrency
+                                    {getUiString(lang, 'Cryptocurrency')}
                                 </label>
                                 <div className="pills-row">
                                     {(Object.keys(CRYPTO_LABELS) as CryptoType[]).map(c => (
@@ -480,16 +480,16 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
                         style={{ marginBottom: 0 }}
                     >
                         {loading ? <Loader2 size={14} className="spin-icon" /> : <TrendingUp size={14} />}
-                        {loading ? 'Fetching prices...' : 'Refresh Prices'}
+                        {loading ? getUiString(lang, 'Fetching prices...') : getUiString(lang, 'Refresh Prices')}
                     </button>
 
                     {/* Reset */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Refresh prices first for an accurate fiat equivalent.
+                        {getUiString(lang, 'Auto-calculates as you type. Refresh prices first for an accurate fiat equivalent.')}
                     </span>
                 </div>
 

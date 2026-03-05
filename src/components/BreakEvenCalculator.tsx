@@ -107,7 +107,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {BREAK_EVEN_SCENARIOS.map((scenario) => (
                                 <button
@@ -123,15 +123,15 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
 
                     {/* Mode Toggle */}
                     <div className="input-group">
-                        <label><Target size={14} /> Calculator Mode</label>
+                        <label><Target size={14} /> {getUiString(lang, 'Calculator Mode')}</label>
                         <div className="toggle-group">
                             <button className={`toggle-btn ${mode === 'loss' ? 'active' : ''}`}
                                 onClick={() => setMode('loss')}>
-                                <TrendingDown size={14} /> Loss Recovery
+                                <TrendingDown size={14} /> {getUiString(lang, 'Loss Recovery')}
                             </button>
                             <button className={`toggle-btn ${mode === 'trade' ? 'active' : ''}`}
                                 onClick={() => setMode('trade')}>
-                                <TrendingUp size={14} /> Trade Break-Even
+                                <TrendingUp size={14} /> {getUiString(lang, 'Trade Break-Even')}
                             </button>
                         </div>
                     </div>
@@ -140,7 +140,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                         <>
                             {/* Loss % */}
                             <div className="input-group">
-                                <label><Percent size={14} /> Loss Percentage</label>
+                                <label><Percent size={14} /> {getUiString(lang, 'Loss Percentage')}</label>
                                 <div className="pills-row">
                                     {[10, 20, 30, 50, 70, 90].map((v) => (
                                         <button key={v} className={`pill-btn ${lossPct === String(v) ? 'active' : ''}`}
@@ -153,7 +153,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                     ))}
                                 </div>
                                 <input type="number" inputMode="decimal" value={lossPct} onChange={(e) => setLossPct(e.target.value)}
-                                    placeholder="" id="be-loss-pct" step="0.1" min="0" max="99.99"  onFocus={(e) => e.target.select()} />
+                                    placeholder="" id="be-loss-pct" step="0.1" min="0" max="99.99" onFocus={(e) => e.target.select()} />
                             </div>
 
                             {/* Original Value */}
@@ -161,7 +161,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> {getUiString(lang, 'Original Value')}</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={originalValue} onChange={(e) => setOriginalValue(e.target.value)}
-                                        placeholder="" id="be-original" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                        placeholder="" id="be-original" step="any" min="0" onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
 
@@ -170,7 +170,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> {getUiString(lang, 'Current Value')}</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)}
-                                        placeholder="" id="be-current" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                        placeholder="" id="be-current" step="any" min="0" onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
                         </>
@@ -178,15 +178,15 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                         <>
                             {/* Direction */}
                             <div className="input-group">
-                                <label>Position Direction</label>
+                                <label>{getUiString(lang, 'Position Direction')}</label>
                                 <div className="toggle-group">
                                     <button className={`toggle-btn ${!isShort ? 'active long' : ''}`}
                                         onClick={() => setIsShort(false)}>
-                                        <TrendingUp size={14} /> Long
+                                        <TrendingUp size={14} /> {getUiString(lang, 'Long')}
                                     </button>
                                     <button className={`toggle-btn ${isShort ? 'active short' : ''}`}
                                         onClick={() => setIsShort(true)}>
-                                        <TrendingDown size={14} /> Short
+                                        <TrendingDown size={14} /> {getUiString(lang, 'Short')}
                                     </button>
                                 </div>
                             </div>
@@ -196,42 +196,42 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                                 <label><DollarSign size={14} /> {getUiString(lang, 'Entry Price')}</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
-                                        placeholder="" id="be-entry" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                        placeholder="" id="be-entry" step="any" min="0" onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
 
                             {/* Position Size */}
                             <div className="input-group">
-                                <label><DollarSign size={14} /> Position Size (USD)</label>
+                                <label><DollarSign size={14} /> {getUiString(lang, 'Position Size')} (USD)</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
-                                        placeholder="" id="be-size" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                        placeholder="" id="be-size" step="any" min="0" onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
 
                             {/* Fees */}
                             <div className="calc-two-col-grid">
                                 <div className="input-group">
-                                    <label>Entry Fee (%)</label>
+                                    <label>{getUiString(lang, 'Entry Fee')} (%)</label>
                                     <input type="number" inputMode="decimal" value={entryFee} onChange={(e) => setEntryFee(e.target.value)}
-                                        placeholder="" id="be-entry-fee" step="0.01" min="0"  onFocus={(e) => e.target.select()} />
+                                        placeholder="" id="be-entry-fee" step="0.01" min="0" onFocus={(e) => e.target.select()} />
                                 </div>
                                 <div className="input-group">
-                                    <label>Exit Fee (%)</label>
+                                    <label>{getUiString(lang, 'Exit Fee')} (%)</label>
                                     <input type="number" inputMode="decimal" value={exitFee} onChange={(e) => setExitFee(e.target.value)}
-                                        placeholder="" id="be-exit-fee" step="0.01" min="0"  onFocus={(e) => e.target.select()} />
+                                        placeholder="" id="be-exit-fee" step="0.01" min="0" onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
                         </>
                     )}
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
                         {mode === 'loss'
-                            ? 'Auto-updates as you type. Loss % instantly maps to required recovery.'
-                            : 'Auto-updates as you type. Fees are included in break-even price.'}
+                            ? getUiString(lang, 'Auto-updates as you type. Loss % instantly maps to required recovery.')
+                            : getUiString(lang, 'Auto-updates as you type. Fees are included in break-even price.')}
                     </span>
                 </div>
 

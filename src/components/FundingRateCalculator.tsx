@@ -87,6 +87,8 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
     const [isShort, setIsShort] = useState(false);
     const [results, setResults] = useState<Results | null>(null);
     const [loading, setLoading] = useState(false);
+    const [searchError, setSearchError] = useState('');
+    const [validationHint, setValidationHint] = useState('');
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
@@ -103,7 +105,10 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                 id: c.id, name: c.name, symbol: c.symbol, thumb: c.thumb,
             })));
             setShowSuggestions(true);
-        } catch { setSuggestions([]); }
+        } catch {
+            setSuggestions([]);
+            setSearchError(getUiString(lang, 'Failed to search. Check your connection and try again.'));
+        }
         setLoading(false);
     }, []);
 
@@ -157,8 +162,10 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
 
         if (isNaN(size) || isNaN(rate) || size <= 0) {
             setResults(null);
+            setValidationHint(getUiString(lang, 'Enter a valid position size and funding rate.'));
             return;
         }
+        setValidationHint('');
 
         // Funding rate is in % — e.g. 0.01 means 0.01%
         const rateDecimal = rate / 100;
@@ -226,7 +233,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                 {/* Left: Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {FUNDING_SCENARIOS.map((scenario) => (
                                 <button
@@ -271,11 +278,12 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                 ))}
                             </div>
                         )}
+                        {searchError && <span className="input-hint" style={{ color: '#f97316' }}>{searchError}</span>}
                     </div>
 
                     {/* Position Type */}
                     <div className="input-group">
-                        <label>Your Position</label>
+                        <label>{getUiString(lang, 'Your Position')}</label>
                         <div className="toggle-group">
                             <button
                                 className={`toggle-btn ${!isShort ? 'active' : ''}`}
@@ -298,7 +306,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Position Size
+                            {getUiString(lang, 'Position Size')}
                         </label>
                         <div className="pills-row">
                             {POSITION_SIZE_PILLS.map((preset) => (
@@ -320,7 +328,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                 id="funding-position-size"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -328,7 +336,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <Percent size={14} />
-                            Funding Rate (per interval)
+                            {getUiString(lang, 'Funding Rate (per interval)')}
                         </label>
                         <div className="pills-row">
                             {FUNDING_PRESETS.map((r) => (
@@ -349,7 +357,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                                 placeholder=""
                                 id="funding-rate-input"
                                 step="0.001"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                         <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
                             Positive rate = longs pay shorts. Negative = shorts pay longs.
@@ -360,7 +368,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <Clock size={14} />
-                            Funding Interval
+                            {getUiString(lang, 'Funding Interval')}
                         </label>
                         <div className="pills-row">
                             {INTERVALS_PER_DAY.map((iv) => (
@@ -379,7 +387,7 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <Calendar size={14} />
-                            Holding Period
+                            {getUiString(lang, 'Holding Period')}
                         </label>
                         <div className="pills-row">
                             {HOLDING_PERIODS.map((p) => (
@@ -399,8 +407,9 @@ export default function FundingRateCalculator({ lang = 'en' }: { lang?: string }
                         Reset
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use size, rate, and period presets for quick funding projections.
+                        {getUiString(lang, 'Auto-calculates as you type. Use size, rate, and period presets for quick funding projections.')}
                     </span>
+                    {validationHint && <span className="input-hint" style={{ color: '#f97316' }}>{validationHint}</span>}
                 </div>
 
                 {/* Right: Results */}

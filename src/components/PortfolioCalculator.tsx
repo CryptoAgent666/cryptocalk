@@ -163,7 +163,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {PORTFOLIO_SCENARIOS.map((scenario) => (
                                 <button
@@ -179,7 +179,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
 
                     {/* Presets */}
                     <div className="input-group">
-                        <label><Target size={14} /> Portfolio Presets</label>
+                        <label><Target size={14} /> {getUiString(lang, 'Portfolio Presets')}</label>
                         <div className="pills-row">
                             {PRESET_PORTFOLIOS.map((p) => (
                                 <button
@@ -195,7 +195,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
 
                     {/* Total Investment */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Total Investment</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Total Investment')}</label>
                         <div className="pills-row">
                             {TOTAL_INVESTMENT_PRESETS.map((preset) => (
                                 <button
@@ -209,33 +209,33 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={totalInvestment} onChange={(e) => setTotalInvestment(e.target.value)}
-                                placeholder="" id="pf-total" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="pf-total" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Assets List */}
                     <div className="input-group">
-                        <label><PieChart size={14} /> Assets ({assets.length})</label>
+                        <label><PieChart size={14} /> {getUiString(lang, 'Assets')} ({assets.length})</label>
                         <div className="portfolio-asset-stack">
                             {assets.map((asset) => (
                                 <div key={asset.id} className="portfolio-asset-row">
                                     <div className="portfolio-asset-dot" style={{ background: asset.color }} />
                                     <input type="text" value={asset.name}
                                         onChange={(e) => updateAsset(asset.id, 'name', e.target.value)}
-                                        placeholder="Asset name"
+                                        placeholder={getUiString(lang, 'Asset name')}
                                         className="portfolio-asset-name" />
                                     <div className="portfolio-asset-amount">
                                         <span className="portfolio-asset-prefix">$</span>
                                         <input type="number" inputMode="decimal" value={asset.amount || ''}
                                             onChange={(e) => updateAsset(asset.id, 'amount', parseFloat(e.target.value) || 0)}
                                             placeholder=""
-                                            className="portfolio-asset-input"  onFocus={(e) => e.target.select()} />
+                                            className="portfolio-asset-input" onFocus={(e) => e.target.select()} />
                                     </div>
                                     <div className="portfolio-asset-target">
                                         <input type="number" inputMode="decimal" value={asset.targetPct || ''}
                                             onChange={(e) => updateAsset(asset.id, 'targetPct', parseFloat(e.target.value) || 0)}
                                             placeholder="%"
-                                            className="portfolio-asset-input portfolio-asset-input-target"  onFocus={(e) => e.target.select()} />
+                                            className="portfolio-asset-input portfolio-asset-input-target" onFocus={(e) => e.target.select()} />
                                         <span className="portfolio-asset-suffix">%</span>
                                     </div>
                                     <button onClick={() => removeAsset(asset.id)} className="portfolio-asset-remove">
@@ -245,7 +245,7 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                             ))}
                         </div>
                         <button onClick={addAsset} className="portfolio-add-asset-btn">
-                            <Plus size={14} /> Add Asset
+                            <Plus size={14} /> {getUiString(lang, 'Add Asset')}
                         </button>
                     </div>
 
@@ -257,15 +257,15 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
                             color: 'var(--color-text-secondary)',
                         }}>
                             <AlertTriangle size={14} style={{ color: '#f59e0b' }} />
-                            Target allocation: {targetTotal.toFixed(1)}% (should be 100%)
+                            {getUiString(lang, 'Target allocation')}: {targetTotal.toFixed(1)}% ({getUiString(lang, 'should be 100%')})
                         </div>
                     )}
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Keep target allocation near 100% and avoid over-concentration in one asset.
+                        {getUiString(lang, 'Auto-calculates as you type. Keep target allocation near 100% and avoid over-concentration in one asset.')}
                     </span>
                 </div>
 

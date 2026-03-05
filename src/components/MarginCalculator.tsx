@@ -80,6 +80,8 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
     const [maintenanceRate, setMaintenanceRate] = useState('0.5');
     const [results, setResults] = useState<Results | null>(null);
     const [loading, setLoading] = useState(false);
+    const [searchError, setSearchError] = useState('');
+    const [validationHint, setValidationHint] = useState('');
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
@@ -96,7 +98,10 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                 id: c.id, name: c.name, symbol: c.symbol, thumb: c.thumb,
             })));
             setShowSuggestions(true);
-        } catch { setSuggestions([]); }
+        } catch {
+            setSuggestions([]);
+            setSearchError(getUiString(lang, 'Failed to search. Check your connection and try again.'));
+        }
         setLoading(false);
     }, []);
 
@@ -115,7 +120,9 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
             if (data[coin.id]?.usd) setEntryPrice(String(data[coin.id].usd));
-        } catch { }
+        } catch {
+            setSearchError(getUiString(lang, 'Failed to fetch price. You can enter it manually.'));
+        }
     };
 
     const clearCoin = () => { setSelectedCoin(null); setCoinSearch(''); setSuggestions([]); };
@@ -157,8 +164,10 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
         if (isNaN(entry) || isNaN(size) || entry <= 0 || size <= 0 || lev < 1) {
             setResults(null);
+            setValidationHint(getUiString(lang, 'Enter a valid entry price, position size, and leverage (≥ 1).'));
             return;
         }
+        setValidationHint('');
 
         const positionValue = size;
         const requiredMargin = positionValue / lev;
@@ -242,7 +251,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {MARGIN_SCENARIOS.map((scenario) => (
                                 <button
@@ -258,7 +267,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label><Search size={14} /> Cryptocurrency (optional)</label>
+                        <label><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
                                 placeholder="Search coin..." id="margin-coin-search" />
@@ -277,11 +286,12 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                 ))}
                             </div>
                         )}
+                        {searchError && <span className="input-hint" style={{ color: '#f97316' }}>{searchError}</span>}
                     </div>
 
                     {/* Direction */}
                     <div className="input-group">
-                        <label>Position Type</label>
+                        <label>{getUiString(lang, 'Position Type')}</label>
                         <div className="toggle-group">
                             <button className={`toggle-btn ${!isShort ? 'active' : ''}`} onClick={() => setIsShort(false)}>
                                 <TrendingUp size={14} /> Long
@@ -308,13 +318,13 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="" id="margin-entry" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="margin-entry" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Position Size */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Position Size (total value)</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Position Size (total value)')}</label>
                         <div className="pills-row">
                             {POSITION_SIZE_PILLS.map((preset) => (
                                 <button
@@ -328,14 +338,14 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="" id="margin-size" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="margin-size" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Leverage */}
                     <div className="input-group">
                         <label>
-                            <Scale size={14} /> Leverage
+                            <Scale size={14} /> {getUiString(lang, 'Leverage')}
                             {highLev && <span style={{ color: '#f97316', fontSize: '0.75rem', marginLeft: '6px' }}>⚠ High risk</span>}
                         </label>
                         <div className="pills-row">
@@ -348,13 +358,13 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={leverage} onChange={(e) => setLeverage(e.target.value)}
-                                placeholder="" id="margin-leverage" step="1" min="1" max="200"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="margin-leverage" step="1" min="1" max="200" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Wallet Balance */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Wallet Balance (optional)</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Wallet Balance (optional)')}</label>
                         <div className="pills-row">
                             <button
                                 className={`pill-btn ${walletBalance === '' ? 'active' : ''}`}
@@ -374,7 +384,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={walletBalance} onChange={(e) => setWalletBalance(e.target.value)}
-                                placeholder="Auto (= required margin)" id="margin-wallet" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="Auto (= required margin)" id="margin-wallet" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                         <span className="input-hint">
                             If empty, assumes isolated margin = required margin.
@@ -383,7 +393,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Maintenance Margin Rate */}
                     <div className="input-group">
-                        <label><Percent size={14} /> Maintenance Margin Rate</label>
+                        <label><Percent size={14} /> {getUiString(lang, 'Maintenance Margin Rate')}</label>
                         <div className="pills-row">
                             {[0.4, 0.5, 1.0].map((r) => (
                                 <button key={r} className={`pill-btn ${maintenanceRate === String(r) ? 'active' : ''}`}
@@ -394,7 +404,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={maintenanceRate} onChange={(e) => setMaintenanceRate(e.target.value)}
-                                placeholder="" id="margin-mmr" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="margin-mmr" step="0.1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -402,8 +412,9 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                         <RotateCcw size={14} /> Reset
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Leave wallet empty to estimate isolated margin.
+                        {getUiString(lang, 'Auto-calculates as you type. Leave wallet empty to estimate isolated margin.')}
                     </span>
+                    {validationHint && <span className="input-hint" style={{ color: '#f97316' }}>{validationHint}</span>}
                 </div>
 
                 {/* Results */}

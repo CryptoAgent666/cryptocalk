@@ -235,7 +235,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {HODL_VS_TRADE_SCENARIOS.map((scenario) => (
                                 <button
@@ -253,7 +253,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Starting Capital
+                            {getUiString(lang, 'Starting Capital')}
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -264,7 +264,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-capital"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {['500', '1000', '5000', '10000'].map((a) => (
@@ -293,14 +293,14 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                         gap: '6px',
                     }}>
                         <TrendingUp size={14} />
-                        HODL Strategy
+                        {getUiString(lang, 'HODL Strategy')}
                     </div>
 
                     {/* Price Change */}
                     <div className="input-group">
                         <label>
                             <Percent size={14} />
-                            Price Change (%)
+                            {getUiString(lang, 'Price Change (%)')}
                         </label>
                         <div className="pills-row">
                             {PRICE_CHANGE_PILLS.map((preset) => (
@@ -321,7 +321,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 placeholder=""
                                 id="hodl-price-change"
                                 step="any"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -339,14 +339,14 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                         gap: '6px',
                     }}>
                         <Activity size={14} />
-                        Trading Strategy
+                        {getUiString(lang, 'Trading Strategy')}
                     </div>
 
                     {/* Win Rate */}
                     <div className="input-group">
                         <label>
                             <BarChart3 size={14} />
-                            Win Rate (%)
+                            {getUiString(lang, 'Win Rate (%)')}
                         </label>
                         <div className="pills-row">
                             {['40', '50', '60', '70'].map((w) => (
@@ -369,7 +369,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 step="1"
                                 min="0"
                                 max="100"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -377,7 +377,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <TrendingUp size={14} />
-                            Avg Profit per Trade (%)
+                            {getUiString(lang, 'Avg Profit per Trade (%)')}
                         </label>
                         <div className="pills-row">
                             {AVG_PROFIT_PILLS.map((preset) => (
@@ -399,7 +399,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-avg-profit"
                                 step="0.1"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -407,7 +407,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <TrendingDown size={14} />
-                            Avg Loss per Trade (%)
+                            {getUiString(lang, 'Avg Loss per Trade (%)')}
                         </label>
                         <div className="pills-row">
                             {AVG_LOSS_PILLS.map((preset) => (
@@ -429,7 +429,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-avg-loss"
                                 step="0.1"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -437,7 +437,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <Repeat size={14} />
-                            Trades per Month
+                            {getUiString(lang, 'Trades per Month')}
                         </label>
                         <div className="pills-row">
                             {['5', '10', '20', '50'].map((t) => (
@@ -459,7 +459,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-trades-month"
                                 step="1"
                                 min="1"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -467,7 +467,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <Calendar size={14} />
-                            Trading Period (months)
+                            {getUiString(lang, 'Trading Period (months)')}
                         </label>
                         <div className="pills-row">
                             {['1', '3', '6', '12'].map((m) => (
@@ -489,7 +489,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-period"
                                 step="1"
                                 min="1"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -497,7 +497,7 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <Percent size={14} />
-                            Trading Fee per Trade (%)
+                            {getUiString(lang, 'Trading Fee per Trade (%)')}
                         </label>
                         <div className="pills-row">
                             {TRADING_FEE_PILLS.map((preset) => (
@@ -519,17 +519,17 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
                                 id="hodl-fee"
                                 step="0.01"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Reset Button */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use presets to stress-test HODL vs active trading outcomes.
+                        {getUiString(lang, 'Auto-calculates as you type. Use presets to stress-test HODL vs active trading outcomes.')}
                     </span>
                 </div>
 

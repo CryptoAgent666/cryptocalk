@@ -157,7 +157,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {APY_APR_SCENARIOS.map((scenario) => (
                                 <button
@@ -173,7 +173,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Mode Toggle */}
                     <div className="input-group">
-                        <label><ArrowRightLeft size={14} /> Conversion Mode</label>
+                        <label><ArrowRightLeft size={14} /> {getUiString(lang, 'Conversion Mode')}</label>
                         <div className="toggle-group">
                             <button
                                 className={`toggle-btn ${mode === 'apr-to-apy' ? 'active' : ''}`}
@@ -192,7 +192,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Rate Input */}
                     <div className="input-group">
-                        <label><Percent size={14} /> {mode === 'apr-to-apy' ? 'APR (Annual Percentage Rate)' : 'APY (Annual Percentage Yield)'}</label>
+                        <label><Percent size={14} /> {mode === 'apr-to-apy' ? getUiString(lang, 'APR (Annual Percentage Rate)') : getUiString(lang, 'APY (Annual Percentage Yield)')}</label>
                         <div className="pills-row">
                             {RATE_PRESETS.map((r) => (
                                 <button key={r} className={`pill-btn ${rateInput === String(r) ? 'active' : ''}`}
@@ -203,13 +203,13 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={rateInput} onChange={(e) => setRateInput(e.target.value)}
-                                placeholder="" id="apy-rate" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="apy-rate" step="0.1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Compounding Frequency */}
                     <div className="input-group">
-                        <label><Layers size={14} /> Compounding Frequency</label>
+                        <label><Layers size={14} /> {getUiString(lang, 'Compounding Frequency')}</label>
                         <div className="pills-row">
                             {COMPOUND_FREQUENCIES.map((f) => (
                                 <button key={f.id} className={`pill-btn ${compoundFreq === f.id ? 'active' : ''}`}
@@ -222,7 +222,7 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Principal */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Principal Amount</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Principal Amount')}</label>
                         <div className="pills-row">
                             {PRINCIPAL_PRESETS.map((preset) => (
                                 <button
@@ -236,13 +236,13 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={principal} onChange={(e) => setPrincipal(e.target.value)}
-                                placeholder="" id="apy-principal" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="apy-principal" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Period */}
                     <div className="input-group">
-                        <label><Calendar size={14} /> Investment Period (years)</label>
+                        <label><Calendar size={14} /> {getUiString(lang, 'Investment Period (years)')}</label>
                         <div className="pills-row">
                             {YEAR_PRESETS.map((y) => (
                                 <button key={y} className={`pill-btn ${years === String(y) ? 'active' : ''}`}
@@ -253,15 +253,15 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)}
-                                placeholder="" id="apy-years" step="1" min="1" max="30"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="apy-years" step="1" min="1" max="30" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Compare frequencies using the same principal and horizon for a fair APY/APR comparison.
+                        {getUiString(lang, 'Auto-calculates as you type. Compare frequencies using the same principal and horizon for a fair APY/APR comparison.')}
                     </span>
                 </div>
 

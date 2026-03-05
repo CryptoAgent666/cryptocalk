@@ -2,14 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Dice5, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+
 
 const KELLY_SCENARIOS = [
   { label: 'Conservative', winRate: '45', avgWinPct: '1.5', avgLossPct: '1', capital: '10000' },
@@ -18,6 +11,14 @@ const KELLY_SCENARIOS = [
 ] as const;
 
 export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
+  const formatUSD = (value: number): string =>
+    new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+
   const WIN_RATE_PRESETS = [40, 45, 50, 55, 60];
   const AVG_WIN_PRESETS = [1, 1.5, 2, 3];
   const AVG_LOSS_PRESETS = [0.5, 1, 1.5, 2];
@@ -84,7 +85,7 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {KELLY_SCENARIOS.map((scenario) => (
                 <button
@@ -99,7 +100,7 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Win Rate (%)</label>
+            <label>{getUiString(lang, 'Win Rate (%)')}</label>
             <div className="pills-row">
               {WIN_RATE_PRESETS.map((preset) => (
                 <button
@@ -112,12 +113,12 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="kelly-win-rate"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={winRate} onChange={(e) => setWinRate(e.target.value)} min="0.1" max="99.9" step="any" id="kelly-win-rate" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Average Win (%)</label>
+            <label>{getUiString(lang, 'Average Win (%)')}</label>
             <div className="pills-row">
               {AVG_WIN_PRESETS.map((preset) => (
                 <button
@@ -130,12 +131,12 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={avgWinPct} onChange={(e) => setAvgWinPct(e.target.value)} min="0.01" step="any" id="kelly-avg-win"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={avgWinPct} onChange={(e) => setAvgWinPct(e.target.value)} min="0.01" step="any" id="kelly-avg-win" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Average Loss (%)</label>
+            <label>{getUiString(lang, 'Average Loss (%)')}</label>
             <div className="pills-row">
               {AVG_LOSS_PRESETS.map((preset) => (
                 <button
@@ -148,12 +149,12 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={avgLossPct} onChange={(e) => setAvgLossPct(e.target.value)} min="0.01" step="any" id="kelly-avg-loss"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={avgLossPct} onChange={(e) => setAvgLossPct(e.target.value)} min="0.01" step="any" id="kelly-avg-loss" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Account Capital (USD)</label>
+            <label>{getUiString(lang, 'Account Capital (USD)')}</label>
             <div className="pills-row">
               {CAPITAL_PRESETS.map((preset) => (
                 <button
@@ -166,13 +167,13 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={capital} onChange={(e) => setCapital(e.target.value)} min="0" step="any" id="kelly-capital"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={capital} onChange={(e) => setCapital(e.target.value)} min="0" step="any" id="kelly-capital" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Half Kelly is usually safer than full Kelly in volatile markets.
+            {getUiString(lang, 'Auto-calculates as you type. Half Kelly is usually safer than full Kelly in volatile markets.')}
           </span>
         </div>
 

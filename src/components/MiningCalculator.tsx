@@ -93,6 +93,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
     // Network data
     const [network, setNetwork] = useState<NetworkData | null>(null);
     const [loadingNetwork, setLoadingNetwork] = useState(true);
+    const [networkError, setNetworkError] = useState('');
 
     // Results
     const [results, setResults] = useState<MiningResult[]>([]);
@@ -125,6 +126,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                     btcPrice: 70000,
                     blockReward: 3.125,
                 });
+                setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($70,000).'));
             }
             setLoadingNetwork(false);
         };
@@ -260,7 +262,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Left: Inputs */}
                 <div className="mining-input-panel">
                     <div className="input-group">
-                        <label className="input-label">Quick Scenarios</label>
+                        <label className="input-label">{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {MINING_SCENARIOS.map((scenario) => (
                                 <button
@@ -278,7 +280,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <Cpu size={14} />
-                            ASIC MINER
+                            {getUiString(lang, 'ASIC Miner')}
                         </label>
                         <div className="select-wrap">
                             <select
@@ -302,7 +304,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <Zap size={14} />
-                            HASHRATE
+                            {getUiString(lang, 'Hashrate')}
                         </label>
                         <div className="pills-row">
                             {HASHRATE_PILLS.map((preset) => (
@@ -330,7 +332,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="hashrate-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                             <span className="input-unit">TH/s</span>
                         </div>
                     </div>
@@ -339,7 +341,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <Zap size={14} />
-                            POWER CONSUMPTION
+                            {getUiString(lang, 'Power Consumption')}
                         </label>
                         <div className="pills-row">
                             {POWER_PILLS.map((preset) => (
@@ -367,7 +369,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="power-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                             <span className="input-unit">Watts</span>
                         </div>
                     </div>
@@ -376,7 +378,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <DollarSign size={14} />
-                            ELECTRICITY COST
+                            {getUiString(lang, 'Electricity Cost')}
                         </label>
                         <div className="pills-row">
                             {ELECTRICITY_PILLS.map((preset) => (
@@ -398,7 +400,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="electricity-input"
                                 step="0.01"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                             <span className="input-unit">per kWh</span>
                         </div>
                     </div>
@@ -407,7 +409,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <TrendingUp size={14} />
-                            POOL FEE
+                            {getUiString(lang, 'Pool Fee')}
                         </label>
                         <div className="pills-row">
                             {POOL_FEE_PILLS.map((preset) => (
@@ -430,7 +432,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 step="0.1"
                                 min="0"
                                 max="100"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                             <span className="input-unit">%</span>
                         </div>
                     </div>
@@ -439,7 +441,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <Calendar size={14} />
-                            HARDWARE COST (OPTIONAL)
+                            {getUiString(lang, 'Hardware Cost (optional)')}
                         </label>
                         <div className="pills-row">
                             {HARDWARE_COST_PILLS.map((preset) => (
@@ -461,7 +463,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="hardware-cost-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -471,8 +473,9 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                         Reset
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use hashrate, power, and cost presets for faster setup.
+                        {getUiString(lang, 'Auto-calculates as you type. Use hashrate, power, and cost presets for faster setup.')}
                     </span>
+                    {networkError && <span className="input-hint" style={{ color: '#f97316', marginTop: '0.5rem' }}>{networkError}</span>}
                 </div>
 
                 {/* Right: Results */}
