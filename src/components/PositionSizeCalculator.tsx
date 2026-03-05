@@ -348,7 +348,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 type="text"
                                 value={coinSearch}
                                 onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin (e.g. Bitcoin)..."
+                                placeholder={getUiString(lang, 'Search coin (e.g. Bitcoin)...')}
                                 id="position-coin-search"
                             />
                             {selectedCoin && (
@@ -386,14 +386,14 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 onClick={() => setIsShort(false)}
                             >
                                 <TrendingUp size={14} />
-                                Long
+                                {getUiString(lang, 'Long')}
                             </button>
                             <button
                                 className={`toggle-btn toggle-short ${isShort ? 'active' : ''}`}
                                 onClick={() => setIsShort(true)}
                             >
                                 <TrendingDown size={14} />
-                                Short
+                                {getUiString(lang, 'Short')}
                             </button>
                         </div>
                     </div>
@@ -591,9 +591,9 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                     {/* Reset Button */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
-                    <span className="input-hint">Use balance, entry, and fee presets for faster setup. Auto-calculates as you type.</span>
+                    <span className="input-hint">{getUiString(lang, 'Use balance, entry, and fee presets for faster setup. Auto-calculates as you type.')}</span>
                 </div>
 
                 {/* Right: Results Panel */}

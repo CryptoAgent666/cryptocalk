@@ -265,7 +265,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 value={searchQuery}
                                 onChange={(e) => searchCoins(e.target.value)}
                                 onFocus={() => suggestions.length > 0 && setShowDropdown(true)}
-                                placeholder="Search coin (e.g. Uniswap)..."
+                                placeholder={getUiString(lang, 'Search coin (e.g. Uniswap)...')}
                                 id="airdrop-coin-search"
                             />
                             {selectedCoin && (
@@ -395,13 +395,13 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 className={`toggle-btn ${!sold ? 'active' : ''}`}
                                 onClick={() => setSold(false)}
                             >
-                                No
+                                {getUiString(lang, 'No')}
                             </button>
                             <button
                                 className={`toggle-btn ${sold ? 'active' : ''}`}
                                 onClick={() => setSold(true)}
                             >
-                                Yes
+                                {getUiString(lang, 'Yes')}
                             </button>
                         </div>
                     </div>
@@ -462,10 +462,10 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Start with receipt and current price presets for a quick tax scenario.
+                        {getUiString(lang, 'Auto-calculates as you type. Start with receipt and current price presets for a quick tax scenario.')}
                     </span>
                 </div>
 

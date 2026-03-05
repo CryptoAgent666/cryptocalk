@@ -366,7 +366,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         <label><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin..." id="tpsl-coin-search" />
+                                placeholder={getUiString(lang, 'Search coin...')} id="tpsl-coin-search" />
                             {selectedCoin && (
                                 <button className="coin-clear" onClick={clearCoin} aria-label="Clear"><X size={14} /></button>
                             )}
