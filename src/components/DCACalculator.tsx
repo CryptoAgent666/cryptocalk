@@ -1,4 +1,5 @@
 import { getUiString } from '../i18n/ui-strings';
+import { getPriceChart } from '../utils/cryptoPriceService';
 import { useState, useCallback, useEffect, useRef } from 'react';
 import {
     TrendingUp,
@@ -191,18 +192,9 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                 return;
             }
 
-            const apiKey = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'CG-Zeo2WrX3r7J1oUoX1kSnutmz';
-            const res = await fetch(
-                `https://api.coingecko.com/api/v3/coins/${selectedCoin.id}/market_chart?vs_currency=usd&days=${daysDiff}&x_cg_demo_api_key=${apiKey}`
-            );
-
-            if (!res.ok) {
-                if (res.status === 429) throw new Error('API rate limit reached. Please wait a minute and try again.');
-                throw new Error('Failed to fetch price data');
-            }
-
-            const data = await res.json();
-            const prices: [number, number][] = data.prices || [];
+            const startTs = Math.floor(start.getTime() / 1000);
+            const nowTs = Math.floor(now.getTime() / 1000);
+            const prices: [number, number][] = await getPriceChart(selectedCoin.id, startTs, nowTs);
 
             if (prices.length === 0) {
                 setError('No price data available for this period');

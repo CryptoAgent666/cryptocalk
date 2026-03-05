@@ -332,17 +332,27 @@ const homepageSchemas = [websiteSchema, organizationSchema];
       const normalize = (value) => String(value || '').toLowerCase().trim();
       const applyFilter = (query) => {
         let visibleCount = 0;
+        let toolCount = 0;
         items.forEach((item) => {
           const text = normalize(item.getAttribute('data-search-text'));
           const visible = !query || text.includes(query);
           item.hidden = !visible;
-          if (visible) visibleCount += 1;
+          if (visible) {
+            visibleCount += 1;
+            const tools = item.querySelectorAll('.bento-list li');
+            if (tools.length > 0) {
+              toolCount += parseInt(item.querySelector('.bento-count')?.textContent) || tools.length;
+            } else {
+              toolCount += 1;
+            }
+          }
         });
         if (clearButton) clearButton.hidden = !query;
         if (status) {
           status.hidden = !query;
           if (query) {
-            status.textContent = `${visibleCount} result${visibleCount === 1 ? '' : 's'} found for "${query}"`;
+            const label = toolCount === 1 ? 'calculator' : 'calculators';
+            status.textContent = `${toolCount} ${label} found for "${query}"`;
           }
         }
         if (emptyState) {
