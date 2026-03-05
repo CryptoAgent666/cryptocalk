@@ -390,9 +390,9 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Calculate */}
                     <div className="btn-row">
                         <button className="calculate-btn" onClick={() => calculate()} disabled={loading}>
-                            {loading ? <><Loader2 size={16} className="spin" /> Calculating...</> : <>
+                            {loading ? <><Loader2 size={16} className="spin" /> {getUiString(lang, 'Calculating...')}</> : <>
                                 <Sparkles size={16} />
-                                Calculate What If
+                                {getUiString(lang, 'Calculate')}
                             </>}
                         </button>
 

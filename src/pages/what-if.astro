@@ -576,6 +576,13 @@ import SiteFooter from '../components/SiteFooter.astro';
     color: var(--color-text);
     letter-spacing: -0.03em;
     margin-bottom: 6px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  @media (max-width: 480px) {
+    .whatif-hero-value {
+      font-size: 1.6rem;
+    }
   }
   .whatif-hero-roi {
     display: inline-flex;
@@ -634,6 +641,16 @@ import SiteFooter from '../components/SiteFooter.astro';
     font-weight: 700;
     color: var(--color-text);
     font-variant-numeric: tabular-nums;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  @media (max-width: 480px) {
+    .whatif-stat .stat-value {
+      font-size: 0.78rem;
+    }
+    .whatif-stat .stat-label {
+      font-size: 0.62rem;
+    }
   }
 
   /* Share */
