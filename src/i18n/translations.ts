@@ -120,6 +120,7 @@ interface Translations {
     footerAboutUs: string;
     footerContactUs: string;
     footerTerms: string;
+    footerDisclaimer: string;
 }
 
 const translations: Record<Lang, Translations> = {
@@ -230,6 +231,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'About Us',
         footerContactUs: 'Contact Us',
         footerTerms: 'Terms of Service',
+        footerDisclaimer: '© 2026 CryptoCalk. All rights reserved. For informational purposes only — not financial advice.',
     },
 
     es: {
@@ -339,6 +341,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'Sobre Nosotros',
         footerContactUs: 'Contáctenos',
         footerTerms: 'Términos de Servicio',
+        footerDisclaimer: '© 2026 CryptoCalk. Todos los derechos reservados. Solo con fines informativos — no es asesoramiento financiero.',
     },
 
     pt: {
@@ -448,6 +451,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'Sobre Nós',
         footerContactUs: 'Fale Conosco',
         footerTerms: 'Termos de Serviço',
+        footerDisclaimer: '© 2026 CryptoCalk. Todos os direitos reservados. Apenas para fins informativos — não constitui aconselhamento financeiro.',
     },
 
     tr: {
@@ -557,6 +561,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'Hakkımızda',
         footerContactUs: 'Bize Ulaşın',
         footerTerms: 'Kullanım Koşulları',
+        footerDisclaimer: '© 2026 CryptoCalk. Tüm hakları saklıdır. Yalnızca bilgi amaçlıdır — finansal tavsiye değildir.',
     },
 
     hi: {
@@ -666,6 +671,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'हमारे बारे में',
         footerContactUs: 'संपर्क करें',
         footerTerms: 'सेवा की शर्तें',
+        footerDisclaimer: '© 2026 CryptoCalk. सर्वाधिकार सुरक्षित। केवल सूचनात्मक उद्देश्यों के लिए — वित्तीय सलाह नहीं।',
     },
 
     ru: {
@@ -775,6 +781,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'О Нас',
         footerContactUs: 'Связаться с Нами',
         footerTerms: 'Условия Использования',
+        footerDisclaimer: '© 2026 CryptoCalk. Все права защищены. Только для информационных целей — не является финансовой рекомендацией.',
     },
 };
 
