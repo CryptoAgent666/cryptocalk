@@ -44,16 +44,17 @@ const REBALANCING_SCENARIOS = [
   },
 ] as const;
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+
 
 export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }) {
+  function formatUSD(value: number): string {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  }
   const [assets, setAssets] = useState<AssetRow[]>([
     { id: 'btc', symbol: 'BTC', current: 6000, target: 50 },
     { id: 'eth', symbol: 'ETH', current: 2500, target: 30 },
@@ -177,7 +178,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {REBALANCING_SCENARIOS.map((scenario) => (
                 <button
@@ -192,11 +193,11 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
           </div>
 
           <div className="input-group">
-            <label><PieChart size={14} /> Portfolio Assets</label>
+            <label><PieChart size={14} /> {getUiString(lang, 'Portfolio Assets')}</label>
             <div className="rebal-asset-head">
               <span>{getUiString(lang, 'Asset')}</span>
-              <span>Current $</span>
-              <span>Target %</span>
+              <span>{getUiString(lang, 'Current $')}</span>
+              <span>{getUiString(lang, 'Target %')}</span>
               <span />
             </div>
             <div className="rebal-asset-stack">
@@ -218,7 +219,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
                     step="any"
                     aria-label={`Current value ${row.id}`}
                     className="rebal-asset-current"
-                   onFocus={(e) => e.target.select()} />
+                    onFocus={(e) => e.target.select()} />
                   <input
                     type="number" inputMode="decimal"
                     value={String(row.target)}
@@ -227,7 +228,7 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
                     step="any"
                     aria-label={`Target weight ${row.id}`}
                     className="rebal-asset-target"
-                   onFocus={(e) => e.target.select()} />
+                    onFocus={(e) => e.target.select()} />
                   <button className="pill-btn rebal-asset-remove" onClick={() => removeAsset(row.id)} aria-label={`Remove ${row.symbol}`}>
                     <Trash2 size={14} />
                   </button>
@@ -235,12 +236,12 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
               ))}
             </div>
             <button className="pill-btn" onClick={addAsset} style={{ width: 'fit-content' }}>
-              <Plus size={14} /> Add Asset
+              <Plus size={14} /> {getUiString(lang, 'Add Asset')}
             </button>
           </div>
 
           <div className="input-group">
-            <label>Additional Investment</label>
+            <label>{getUiString(lang, 'Additional Investment')}</label>
             <div className="pills-row">
               {ADDITIONAL_CASH_PRESETS.map((preset) => (
                 <button
@@ -260,23 +261,23 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
                 min="0"
                 step="any"
                 id="rebalance-extra"
-               onFocus={(e) => e.target.select()} />
+                onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Rebalance Mode</label>
+            <label>{getUiString(lang, 'Rebalance Mode')}</label>
             <div className="toggle-group">
-              <button className={`toggle-btn ${!buyOnly ? 'active' : ''}`} onClick={() => setBuyOnly(false)}>Buy + Sell</button>
-              <button className={`toggle-btn ${buyOnly ? 'active' : ''}`} onClick={() => setBuyOnly(true)}>Buy Only</button>
+              <button className={`toggle-btn ${!buyOnly ? 'active' : ''}`} onClick={() => setBuyOnly(false)}>{getUiString(lang, 'Buy + Sell')}</button>
+              <button className={`toggle-btn ${buyOnly ? 'active' : ''}`} onClick={() => setBuyOnly(true)}>{getUiString(lang, 'Buy Only')}</button>
             </div>
           </div>
 
           <button className="reset-btn" onClick={reset}>
-            <RotateCcw size={14} /> Reset
+            <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
           </button>
           <span className="input-hint">
-            Auto-calculates as you type. Use `Buy Only` when adding cash and `Buy + Sell` for full target rebalance.
+            {getUiString(lang, 'Auto-calculates as you type. Use Buy Only when adding cash and Buy + Sell for full target rebalance.')}
           </span>
         </div>
 

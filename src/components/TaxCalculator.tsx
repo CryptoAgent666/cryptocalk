@@ -412,7 +412,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Left: Inputs */}
                 <div className="tax-input-panel">
                     <div className="input-group">
-                        <label className="input-label">Quick Scenarios</label>
+                        <label className="input-label">{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {TAX_SCENARIOS.map((scenario) => (
                                 <button
@@ -430,7 +430,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <Globe size={14} />
-                            COUNTRY
+                            {getUiString(lang, 'COUNTRY')}
                         </label>
                         <div className="select-wrap">
                             <select
@@ -454,7 +454,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <DollarSign size={14} />
-                            INCOME BRACKET
+                            {getUiString(lang, 'INCOME BRACKET')}
                         </label>
                         <div className="select-wrap">
                             <select
@@ -477,7 +477,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <Calendar size={14} />
-                            HOLDING PERIOD
+                            {getUiString(lang, 'HOLDING PERIOD')}
                         </label>
                         <div className="holding-pills">
                             <button
@@ -499,7 +499,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <DollarSign size={14} />
-                            BUY PRICE (per coin)
+                            {getUiString(lang, 'BUY PRICE (per coin)')}
                         </label>
                         <div className="pills-row">
                             {BUY_PRICE_PILLS.map((price) => (
@@ -521,7 +521,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="tax-buy-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -529,7 +529,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <DollarSign size={14} />
-                            SELL PRICE (per coin)
+                            {getUiString(lang, 'SELL PRICE (per coin)')}
                         </label>
                         <div className="pills-row">
                             {SELL_PRICE_PILLS.map((price) => (
@@ -551,14 +551,14 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="tax-sell-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Quantity */}
                     <div className="input-group">
                         <label className="input-label">
-                            QUANTITY
+                            {getUiString(lang, 'QUANTITY')}
                         </label>
                         <div className="pills-row">
                             {QUANTITY_PILLS.map((qty) => (
@@ -580,13 +580,13 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="tax-quantity"
                                 step="any"
                                 min="0.000001"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Method */}
                     <div className="input-group">
-                        <label className="input-label">ACCOUNTING METHOD</label>
+                        <label className="input-label">{getUiString(lang, 'ACCOUNTING METHOD')}</label>
                         <div className="method-pills">
                             {METHODS.map(m => (
                                 <button
@@ -606,10 +606,10 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
 
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use price and quantity presets for a quick tax estimate.
+                        {getUiString(lang, 'Auto-calculates as you type. Use price and quantity presets for a quick tax estimate.')}
                     </span>
                 </div>
 

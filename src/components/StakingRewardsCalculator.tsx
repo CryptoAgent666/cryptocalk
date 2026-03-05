@@ -74,6 +74,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
     const [stakingDays, setStakingDays] = useState('365');
     const [autoCompound, setAutoCompound] = useState(true);
     const [loading, setLoading] = useState(false);
+    const [searchError, setSearchError] = useState('');
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
@@ -81,6 +82,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
     const searchCoins = useCallback(async (query: string) => {
         if (query.length < 2) { setSuggestions([]); return; }
         setLoading(true);
+        setSearchError('');
         try {
             const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`);
             if (!res.ok) throw new Error('Search failed');
@@ -89,9 +91,12 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                 id: c.id, name: c.name, symbol: c.symbol, thumb: c.thumb,
             })));
             setShowSuggestions(true);
-        } catch { setSuggestions([]); }
+        } catch {
+            setSuggestions([]);
+            setSearchError(getUiString(lang, 'Failed to search coins. Please try again.'));
+        }
         setLoading(false);
-    }, []);
+    }, [lang]);
 
     const handleCoinSearch = (v: string) => {
         setCoinSearch(v);
@@ -108,7 +113,9 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
             if (data[coin.id]?.usd) setTokenPrice(String(data[coin.id].usd));
-        } catch { }
+        } catch {
+            setSearchError(getUiString(lang, 'Failed to fetch price. Please enter manually.'));
+        }
         // Auto-fill APY from popular stakes
         const known = POPULAR_STAKES.find(s => s.id === coin.id);
         if (known) setStakingApy(String(known.apy));
@@ -223,7 +230,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {STAKING_SCENARIOS.map((scenario) => (
                                 <button
@@ -239,7 +246,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
 
                     {/* Quick Select */}
                     <div className="input-group">
-                        <label><Zap size={14} /> Quick Select</label>
+                        <label><Zap size={14} /> {getUiString(lang, 'Quick Select')}</label>
                         <div className="pills-row">
                             {POPULAR_STAKES.map((s) => (
                                 <button key={s.id}
@@ -253,7 +260,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label><Search size={14} /> Or search any coin</label>
+                        <label><Search size={14} /> {getUiString(lang, 'Or search any coin')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
                                 placeholder="Search coin..." id="stk-coin-search" />
@@ -275,11 +282,12 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         {loading && (
                             <span className="input-hint">Searching coins...</span>
                         )}
+                        {searchError && <span className="input-hint" style={{ color: '#f97316' }}>{searchError}</span>}
                     </div>
 
                     {/* Amount */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Staking Amount (USD)</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Staking Amount (USD)')}</label>
                         <div className="pills-row">
                             {STAKING_AMOUNT_PRESETS.map((value) => (
                                 <button
@@ -293,7 +301,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={stakingAmount} onChange={(e) => setStakingAmount(e.target.value)}
-                                placeholder="" id="stk-amount" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="stk-amount" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                         {tokenAmount > 0 && <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>≈ {formatTokens(tokenAmount)} {sym}</span>}
                     </div>
@@ -301,17 +309,17 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                     {/* Token Price */}
                     {selectedCoin && (
                         <div className="input-group">
-                            <label><Coins size={14} /> Token Price</label>
+                            <label><Coins size={14} /> {getUiString(lang, 'Token Price')}</label>
                             <div className="input-with-prefix">
                                 <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)}
-                                    placeholder="Auto" id="stk-price" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                    placeholder="Auto" id="stk-price" step="any" min="0" onFocus={(e) => e.target.select()} />
                             </div>
                         </div>
                     )}
 
                     {/* APY */}
                     <div className="input-group">
-                        <label><Percent size={14} /> Staking APY</label>
+                        <label><Percent size={14} /> {getUiString(lang, 'Staking APY')}</label>
                         <div className="pills-row">
                             {[3, 5, 7, 10, 15, 20].map((a) => (
                                 <button key={a} className={`pill-btn ${stakingApy === String(a) ? 'active' : ''}`}
@@ -322,13 +330,13 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={stakingApy} onChange={(e) => setStakingApy(e.target.value)}
-                                placeholder="" id="stk-apy" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="stk-apy" step="0.1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Validator Fee */}
                     <div className="input-group">
-                        <label><Lock size={14} /> Validator Commission</label>
+                        <label><Lock size={14} /> {getUiString(lang, 'Validator Commission')}</label>
                         <div className="pills-row">
                             {[0, 2, 5, 8, 10].map((f) => (
                                 <button key={f} className={`pill-btn ${validatorFee === String(f) ? 'active' : ''}`}
@@ -339,13 +347,13 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)}
-                                placeholder="" id="stk-fee" step="1" min="0" max="100"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="stk-fee" step="1" min="0" max="100" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Staking Period */}
                     <div className="input-group">
-                        <label><Calendar size={14} /> Staking Period</label>
+                        <label><Calendar size={14} /> {getUiString(lang, 'Staking Period')}</label>
                         <div className="pills-row">
                             {PERIOD_PRESETS.map((d) => (
                                 <button key={d} className={`pill-btn ${stakingDays === String(d) ? 'active' : ''}`}
@@ -356,13 +364,13 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={stakingDays} onChange={(e) => setStakingDays(e.target.value)}
-                                placeholder="" id="stk-days" step="1" min="1"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="stk-days" step="1" min="1" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Auto-compound toggle */}
                     <div className="input-group">
-                        <label>Auto-Compound</label>
+                        <label>{getUiString(lang, 'Auto-Compound')}</label>
                         <div className="toggle-group">
                             <button className={`toggle-btn ${autoCompound ? 'active' : ''}`} onClick={() => setAutoCompound(true)}>
                                 <TrendingUp size={14} /> Yes (daily)

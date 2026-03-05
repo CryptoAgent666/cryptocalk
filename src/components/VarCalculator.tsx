@@ -2,15 +2,6 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
-
 const Z_SCORE: Record<string, number> = {
   '90': 1.2816,
   '95': 1.6449,
@@ -44,6 +35,15 @@ const VAR_SCENARIOS = [
 ] as const;
 
 export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
+  function formatUSD(value: number): string {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  }
+
   const [portfolioValue, setPortfolioValue] = useState('25000');
   const [dailyVolatility, setDailyVolatility] = useState('4');
   const [timeHorizonDays, setTimeHorizonDays] = useState('1');
@@ -118,7 +118,7 @@ export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
           <div className="input-group">
             <label>Portfolio Value (USD)</label>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="var-portfolio"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="var-portfolio" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -136,7 +136,7 @@ export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={dailyVolatility} onChange={(e) => setDailyVolatility(e.target.value)} min="0" step="any" id="var-daily-vol"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={dailyVolatility} onChange={(e) => setDailyVolatility(e.target.value)} min="0" step="any" id="var-daily-vol" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -153,7 +153,7 @@ export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={timeHorizonDays} onChange={(e) => setTimeHorizonDays(e.target.value)} min="1" step="1" id="var-horizon"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={timeHorizonDays} onChange={(e) => setTimeHorizonDays(e.target.value)} min="1" step="1" id="var-horizon" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">

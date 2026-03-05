@@ -93,6 +93,8 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
     const [walletBalance, setWalletBalance] = useState('');
     const [results, setResults] = useState<Results | null>(null);
     const [loading, setLoading] = useState(false);
+    const [searchError, setSearchError] = useState('');
+    const [validationHint, setValidationHint] = useState('');
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
@@ -106,6 +108,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
             return;
         }
         setLoading(true);
+        setSearchError('');
         try {
             const res = await fetch(
                 `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
@@ -122,9 +125,10 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
             setShowSuggestions(true);
         } catch {
             setSuggestions([]);
+            setSearchError(getUiString(lang, 'Failed to search coins. Please try again.'));
         }
         setLoading(false);
-    }, []);
+    }, [lang]);
 
     const handleCoinSearch = (value: string) => {
         setCoinSearch(value);
@@ -147,7 +151,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                 setEntryPrice(String(price));
             }
         } catch {
-            // Silently fail
+            setSearchError(getUiString(lang, 'Failed to fetch price. Please enter manually.'));
         }
     };
 
@@ -196,8 +200,10 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
 
         if (isNaN(entry) || isNaN(size) || entry <= 0 || size <= 0 || lev < 1) {
             setResults(null);
+            setValidationHint(entryPrice || positionSize ? getUiString(lang, 'Please enter valid entry price and position size.') : '');
             return;
         }
+        setValidationHint('');
 
         // Initial margin
         const initialMargin = size / lev;
@@ -334,7 +340,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {LIQUIDATION_SCENARIOS.map((scenario) => (
                                 <button
@@ -352,7 +358,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group" ref={suggestionsRef}>
                         <label>
                             <Search size={14} />
-                            Cryptocurrency (optional)
+                            {getUiString(lang, 'Cryptocurrency (optional)')}
                         </label>
                         <div className="coin-search-wrapper">
                             <input
@@ -385,6 +391,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 ))}
                             </div>
                         )}
+                        {searchError && <span className="input-hint" style={{ color: '#f97316' }}>{searchError}</span>}
                     </div>
 
                     {/* Exchange */}
@@ -411,7 +418,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
 
                     {/* Position Type */}
                     <div className="input-group">
-                        <label>Position Type</label>
+                        <label>{getUiString(lang, 'Position Type')}</label>
                         <div className="toggle-group">
                             <button
                                 className={`toggle-btn ${!isShort ? 'active' : ''}`}
@@ -434,7 +441,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <Shield size={14} />
-                            Margin Type
+                            {getUiString(lang, 'Margin Type')}
                         </label>
                         <div className="toggle-group">
                             <button
@@ -479,7 +486,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 step="1"
                                 min="1"
                                 max="125"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -487,9 +494,9 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <Crosshair size={14} />
-                            Entry Price
+                            {getUiString(lang, 'Entry Price')}
                             {selectedCoin && (
-                                <span className="label-hint">Auto-filled</span>
+                                <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                             )}
                         </label>
                         <div className="pills-row">
@@ -512,7 +519,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 id="liq-entry-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -520,7 +527,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Position Size (Total Value)
+                            {getUiString(lang, 'Position Size (Total Value)')}
                         </label>
                         <div className="pills-row">
                             {POSITION_SIZE_PILLS.map((preset) => (
@@ -542,7 +549,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                 id="liq-position-size"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -551,7 +558,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                         <div className="input-group">
                             <label>
                                 <DollarSign size={14} />
-                                Wallet Balance
+                                {getUiString(lang, 'Wallet Balance')}
                             </label>
                             <div className="pills-row">
                                 {WALLET_BALANCE_PILLS.map((preset) => (
@@ -573,7 +580,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                     id="liq-wallet-balance"
                                     step="any"
                                     min="0"
-                                 onFocus={(e) => e.target.select()} />
+                                    onFocus={(e) => e.target.select()} />
                             </div>
                             <span className="input-hint" style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
                                 Your total available margin balance
@@ -723,6 +730,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                             </div>
                             <h3>{getUiString(lang, 'Calculate Liquidation Price')}</h3>
                             <p>{getUiString(lang, 'Enter your leverage, entry price, and position size to see when your position would be liquidated.')}</p>
+                            {validationHint && <p style={{ color: '#f97316', fontSize: '0.85rem', marginTop: '8px' }}>{validationHint}</p>}
                         </div>
                     )}
                 </div>

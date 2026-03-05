@@ -12,16 +12,18 @@ const DIFFICULTY_SCENARIOS = [
   { label: 'Hashrate Surge', currentDifficulty: '100', expectedChange: '15', dailyRevenue: '250', hashrateShare: '0.005' },
 ] as const;
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+// formatUSD is defined inside the component to access `lang` prop
 
 export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
+  const formatUSD = (value: number): string => {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
+
   const [currentDifficulty, setCurrentDifficulty] = useState('85');
   const [expectedChange, setExpectedChange] = useState('8');
   const [dailyRevenue, setDailyRevenue] = useState('120');
@@ -75,7 +77,7 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {DIFFICULTY_SCENARIOS.map((scenario) => (
                 <button
@@ -91,7 +93,7 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
           <div className="input-group">
             <label>
               <Activity size={14} />
-              Current Difficulty (T)
+              {getUiString(lang, 'Current Difficulty (T)')}
             </label>
             <div className="pills-row">
               {DIFFICULTY_PILLS.map((pill) => (
@@ -105,13 +107,13 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={currentDifficulty} onChange={(e) => setCurrentDifficulty(e.target.value)} min="0" step="any" id="difficulty-current"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={currentDifficulty} onChange={(e) => setCurrentDifficulty(e.target.value)} min="0" step="any" id="difficulty-current" onFocus={(e) => e.target.select()} />
             </div>
           </div>
           <div className="input-group">
             <label>
               <Percent size={14} />
-              Expected Difficulty Change (%)
+              {getUiString(lang, 'Expected Difficulty Change (%)')}
             </label>
             <div className="pills-row">
               {CHANGE_PILLS.map((pill) => (
@@ -125,13 +127,13 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={expectedChange} onChange={(e) => setExpectedChange(e.target.value)} step="any" id="difficulty-change"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={expectedChange} onChange={(e) => setExpectedChange(e.target.value)} step="any" id="difficulty-change" onFocus={(e) => e.target.select()} />
             </div>
           </div>
           <div className="input-group">
             <label>
               <DollarSign size={14} />
-              Current Daily Revenue (USD)
+              {getUiString(lang, 'Current Daily Revenue (USD)')}
             </label>
             <div className="pills-row">
               {REVENUE_PILLS.map((pill) => (
@@ -145,13 +147,13 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={dailyRevenue} onChange={(e) => setDailyRevenue(e.target.value)} min="0" step="any" id="difficulty-revenue"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={dailyRevenue} onChange={(e) => setDailyRevenue(e.target.value)} min="0" step="any" id="difficulty-revenue" onFocus={(e) => e.target.select()} />
             </div>
           </div>
           <div className="input-group">
             <label>
               <Percent size={14} />
-              Your Network Share (fraction)
+              {getUiString(lang, 'Your Network Share (fraction)')}
             </label>
             <div className="pills-row">
               {SHARE_PILLS.map((pill) => (
@@ -165,13 +167,13 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={hashrateShare} onChange={(e) => setHashrateShare(e.target.value)} min="0" step="any" id="difficulty-share"  onFocus={(e) => e.target.select()} />
-              <span className="input-unit">e.g. 0.0025</span>
+              <input type="number" inputMode="decimal" value={hashrateShare} onChange={(e) => setHashrateShare(e.target.value)} min="0" step="any" id="difficulty-share" onFocus={(e) => e.target.select()} />
+              <span className="input-unit">{getUiString(lang, 'e.g.')} 0.0025</span>
             </div>
           </div>
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. `0.0025` equals `0.25%` network share.
+            {getUiString(lang, 'Auto-calculates as you type.')} 0.0025 = 0.25% {getUiString(lang, 'network share')}.
           </span>
         </div>
 

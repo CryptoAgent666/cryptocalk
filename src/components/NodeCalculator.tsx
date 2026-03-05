@@ -14,23 +14,14 @@ const NODE_SCENARIOS = [
   { label: 'Pro', stakedTokens: '10000', apr: '20', validatorFee: '5', uptime: '99', monthlyInfraCost: '250' },
 ];
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
 
-function formatNumber(value: number, digits = 4): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: digits,
-  }).format(value);
-}
 
 export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
+  const locale = lang === 'en' ? 'en-US' : lang;
+  const formatUSD = (value: number): string =>
+    new Intl.NumberFormat(locale, { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
+  const formatNumber = (value: number, digits = 4): string =>
+    new Intl.NumberFormat(locale, { minimumFractionDigits: 0, maximumFractionDigits: digits }).format(value);
   const [stakedTokens, setStakedTokens] = useState('5000');
   const [tokenPrice, setTokenPrice] = useState('2.2');
   const [apr, setApr] = useState('12');
@@ -107,7 +98,7 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {NODE_SCENARIOS.map((scenario) => (
                 <button
@@ -122,7 +113,7 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Staked Tokens</label>
+            <label>{getUiString(lang, 'Staked Tokens')}</label>
             <div className="pills-row">
               {STAKED_TOKEN_PRESETS.map((preset) => (
                 <button
@@ -134,11 +125,11 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={stakedTokens} onChange={(e) => setStakedTokens(e.target.value)} min="0" step="any" id="node-staked"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={stakedTokens} onChange={(e) => setStakedTokens(e.target.value)} min="0" step="any" id="node-staked" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>Token Price (USD)</label>
+            <label>{getUiString(lang, 'Token Price (USD)')}</label>
             <div className="pills-row">
               {TOKEN_PRICE_PRESETS.map((preset) => (
                 <button
@@ -151,12 +142,12 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="node-price"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="node-price" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Network APR (%)</label>
+            <label>{getUiString(lang, 'Network APR (%)')}</label>
             <div className="pills-row">
               {APR_PRESETS.map((preset) => (
                 <button
@@ -169,12 +160,12 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={apr} onChange={(e) => setApr(e.target.value)} min="0" step="any" id="node-apr"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={apr} onChange={(e) => setApr(e.target.value)} min="0" step="any" id="node-apr" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Validator Commission (%)</label>
+            <label>{getUiString(lang, 'Validator Commission (%)')}</label>
             <div className="pills-row">
               {VALIDATOR_FEE_PRESETS.map((preset) => (
                 <button
@@ -187,12 +178,12 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)} min="0" step="any" id="node-fee"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={validatorFee} onChange={(e) => setValidatorFee(e.target.value)} min="0" step="any" id="node-fee" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Node Uptime (%)</label>
+            <label>{getUiString(lang, 'Node Uptime (%)')}</label>
             <div className="pills-row">
               {UPTIME_PRESETS.map((preset) => (
                 <button
@@ -205,12 +196,12 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={uptime} onChange={(e) => setUptime(e.target.value)} min="0" max="100" step="any" id="node-uptime"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={uptime} onChange={(e) => setUptime(e.target.value)} min="0" max="100" step="any" id="node-uptime" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Monthly Infrastructure Cost (USD)</label>
+            <label>{getUiString(lang, 'Monthly Infrastructure Cost (USD)')}</label>
             <div className="pills-row">
               {INFRA_COST_PRESETS.map((preset) => (
                 <button
@@ -223,13 +214,13 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={monthlyInfraCost} onChange={(e) => setMonthlyInfraCost(e.target.value)} min="0" step="any" id="node-infra"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={monthlyInfraCost} onChange={(e) => setMonthlyInfraCost(e.target.value)} min="0" step="any" id="node-infra" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Small uptime drops and validator fees can materially reduce net node APR.
+            {getUiString(lang, 'Auto-calculates as you type. Small uptime drops and validator fees can materially reduce net node APR.')}
           </span>
         </div>
 

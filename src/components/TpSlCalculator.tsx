@@ -347,7 +347,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Left: Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {TPSL_SCENARIOS.map((scenario) => (
                                 <button
@@ -363,7 +363,7 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label><Search size={14} /> Cryptocurrency (optional)</label>
+                        <label><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
                                 placeholder="Search coin..." id="tpsl-coin-search" />
@@ -389,17 +389,17 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         <label>{getUiString(lang, 'Direction')}</label>
                         <div className="toggle-group">
                             <button className={`toggle-btn ${!isShort ? 'active' : ''}`} onClick={() => setIsShort(false)}>
-                                <TrendingUp size={14} /> Long
+                                <TrendingUp size={14} /> {getUiString(lang, 'Long')}
                             </button>
                             <button className={`toggle-btn toggle-short ${isShort ? 'active' : ''}`} onClick={() => setIsShort(true)}>
-                                <TrendingDown size={14} /> Short
+                                <TrendingDown size={14} /> {getUiString(lang, 'Short')}
                             </button>
                         </div>
                     </div>
 
                     {/* Entry Price */}
                     <div className="input-group">
-                        <label><Crosshair size={14} /> Entry Price {selectedCoin && <span className="label-hint">Auto-filled</span>}</label>
+                        <label><Crosshair size={14} /> {getUiString(lang, 'Entry Price')} {selectedCoin && <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>}</label>
                         <div className="pills-row">
                             {ENTRY_PRICE_PILLS.map((preset) => (
                                 <button
@@ -413,13 +413,13 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
-                                placeholder="" id="tpsl-entry" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="tpsl-entry" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Stop-Loss */}
                     <div className="input-group">
-                        <label><Target size={14} /> Stop-Loss Price</label>
+                        <label><Target size={14} /> {getUiString(lang, 'Stop-Loss Price')}</label>
                         <div className="pills-row">
                             {STOP_LOSS_PERCENT_PRESETS.map((percent) => (
                                 <button
@@ -433,13 +433,13 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={stopLoss} onChange={(e) => setStopLoss(e.target.value)}
-                                placeholder="" id="tpsl-sl" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="tpsl-sl" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Position Size */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Position Size</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Position Size')}</label>
                         <div className="pills-row">
                             {POSITION_SIZE_PILLS.map((preset) => (
                                 <button
@@ -453,13 +453,13 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
-                                placeholder="" id="tpsl-size" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="tpsl-size" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* R:R Ratio */}
                     <div className="input-group">
-                        <label><Percent size={14} /> Risk:Reward Ratio</label>
+                        <label><Percent size={14} /> {getUiString(lang, 'Risk:Reward Ratio')}</label>
                         <div className="pills-row">
                             {RR_PRESETS.map((r) => (
                                 <button key={r.value} className={`pill-btn ${rrRatio === String(r.value) ? 'active' : ''}`}
@@ -470,18 +470,18 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={rrRatio} onChange={(e) => { setRrRatio(e.target.value); setAutoCalcTP(true); }}
-                                placeholder="" id="tpsl-rr" step="0.1" min="0.1"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="tpsl-rr" step="0.1" min="0.1" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* TP Level Count */}
                     <div className="input-group">
-                        <label><Layers size={14} /> Take-Profit Levels</label>
+                        <label><Layers size={14} /> {getUiString(lang, 'Take-Profit Levels')}</label>
                         <div className="pills-row">
                             {TP_LEVEL_CONFIGS.map((c) => (
                                 <button key={c.count} className={`pill-btn ${tpLevelCount === c.count ? 'active' : ''}`}
                                     onClick={() => { setTpLevelCount(c.count); setAutoCalcTP(true); }}>
-                                    {c.count === 1 ? 'Single TP' : `${c.count} TPs`}
+                                    {c.count === 1 ? getUiString(lang, 'Single TP') : `${c.count} ${getUiString(lang, 'TPs')}`}
                                 </button>
                             ))}
                         </div>
@@ -491,8 +491,8 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                     {tpLevels.map((level, i) => (
                         <div className="input-group" key={i}>
                             <label>
-                                TP{tpLevelCount > 1 ? ` ${i + 1}` : ''} Price
-                                {tpLevelCount > 1 && <span className="label-hint">{level.percent}% of position</span>}
+                                TP{tpLevelCount > 1 ? ` ${i + 1}` : ''} {getUiString(lang, 'Price')}
+                                {tpLevelCount > 1 && <span className="label-hint">{level.percent}% {getUiString(lang, 'of position')}</span>}
                             </label>
                             <div className="input-with-prefix">
                                 <input type="number" inputMode="decimal" value={level.price}
@@ -503,16 +503,16 @@ export default function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                         setAutoCalcTP(false);
                                     }}
                                     placeholder=""
-                                    id={`tpsl-tp-${i}`} step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                    id={`tpsl-tp-${i}`} step="any" min="0" onFocus={(e) => e.target.select()} />
                             </div>
                         </div>
                     ))}
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-updates from entry, stop-loss, and R:R. Editing TP fields switches to manual TP mode.
+                        {getUiString(lang, 'Auto-updates from entry, stop-loss, and R:R. Editing TP fields switches to manual TP mode.')}
                     </span>
                 </div>
 

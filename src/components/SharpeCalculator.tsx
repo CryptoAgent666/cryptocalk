@@ -14,16 +14,17 @@ const SHARPE_SCENARIOS = [
   { label: 'Aggressive', portfolioValue: '100000', expectedReturn: '30', volatility: '45', riskFreeRate: '5', horizonYears: '5' },
 ] as const;
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+
 
 export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
+  function formatUSD(value: number): string {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  }
   const [portfolioValue, setPortfolioValue] = useState('20000');
   const [expectedReturn, setExpectedReturn] = useState('22');
   const [volatility, setVolatility] = useState('35');
@@ -93,7 +94,7 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {SHARPE_SCENARIOS.map((scenario) => (
                 <button
@@ -108,7 +109,7 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Portfolio Value (USD)</label>
+            <label>{getUiString(lang, 'Portfolio Value (USD)')}</label>
             <div className="pills-row">
               {PORTFOLIO_VALUE_PRESETS.map((preset) => (
                 <button
@@ -121,12 +122,12 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sharpe-value"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sharpe-value" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Expected Annual Return (%)</label>
+            <label>{getUiString(lang, 'Expected Annual Return (%)')}</label>
             <div className="pills-row">
               {EXPECTED_RETURN_PRESETS.map((preset) => (
                 <button
@@ -139,12 +140,12 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sharpe-return"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sharpe-return" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Annual Volatility (%)</label>
+            <label>{getUiString(lang, 'Annual Volatility (%)')}</label>
             <div className="pills-row">
               {VOLATILITY_PRESETS.map((preset) => (
                 <button
@@ -157,12 +158,12 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={volatility} onChange={(e) => setVolatility(e.target.value)} min="0.01" step="any" id="sharpe-volatility"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={volatility} onChange={(e) => setVolatility(e.target.value)} min="0.01" step="any" id="sharpe-volatility" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Risk-Free Rate (%)</label>
+            <label>{getUiString(lang, 'Risk-Free Rate (%)')}</label>
             <div className="pills-row">
               {RISK_FREE_PRESETS.map((preset) => (
                 <button
@@ -175,12 +176,12 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sharpe-rf"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sharpe-rf" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Analysis Horizon (years)</label>
+            <label>{getUiString(lang, 'Analysis Horizon (years)')}</label>
             <div className="pills-row">
               {HORIZON_PRESETS.map((preset) => (
                 <button
@@ -192,12 +193,12 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={horizonYears} onChange={(e) => setHorizonYears(e.target.value)} min="0.1" step="any" id="sharpe-years"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={horizonYears} onChange={(e) => setHorizonYears(e.target.value)} min="0.1" step="any" id="sharpe-years" onFocus={(e) => e.target.select()} />
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Keep return, volatility, and risk-free assumptions on the same horizon.
+            {getUiString(lang, 'Auto-calculates as you type. Keep return, volatility, and risk-free assumptions on the same horizon.')}
           </span>
         </div>
 

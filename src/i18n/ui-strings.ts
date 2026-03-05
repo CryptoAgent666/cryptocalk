@@ -661,7 +661,6 @@ export const uiStrings: Record<Exclude<Lang, 'en'>, Record<string, string>> = {
         'Select your country, enter your trade details, and see your estimated capital gains tax instantly.': 'Selecciona tu país, ingresa los detalles de tu operación y ve tu impuesto estimado al instante.',
         'Set cost, rewards, and token price to estimate payback and ROI.': 'Configura costo, recompensas y precio del token para estimar el retorno.',
         'Share Result on X': 'Compartir en X',
-        'Share on X': 'Compartir en X',
         'Short / Long-term': 'Corto / Largo plazo',
         'Short-Term': 'Corto Plazo',
         'Short-Term vs Long-Term': 'Corto Plazo vs Largo Plazo',
@@ -782,7 +781,6 @@ export const uiStrings: Record<Exclude<Lang, 'en'>, Record<string, string>> = {
         'year': 'año',
         'years': 'años',
         'yr': 'año',
-        ': \'\'} H/s': ': \'\'} H/s',
         'Hash rates vary by algorithm, hardware condition, and overclocking settings. Values shown are for reference purposes only.': 'Las tasas varían según algoritmo y hardware. Los valores son solo para referencia.',
         'Convert Hash Rate Units': 'Convertir Unidades de Taza de Hash',
         'Enter a hash rate value and select a unit to instantly convert between H/s, KH/s, MH/s, GH/s, TH/s, PH/s, and EH/s.': 'Ingresa una tasa de hash y selecciona una unidad para convertirla instantáneamente entre diversas unidades.',
@@ -935,8 +933,6 @@ export const uiStrings: Record<Exclude<Lang, 'en'>, Record<string, string>> = {
         'Exchange': 'Intercambio',
         'Break-even time': 'Tiempo para Equilibrio',
         'ROI': 'ROI',
-        'Total Return': 'Retorno Total',
-        'Price \u0394': '\u0394 de Precio',
         'Position Value': 'Valor de Posición',
         'Leverage': 'Apalancamiento',
         'Direction': 'Dirección',
@@ -1978,7 +1974,7 @@ export const uiStrings: Record<Exclude<Lang, 'en'>, Record<string, string>> = {
         'Austria: flat 27.5% on crypto gains. Crypto-to-crypto swaps are NOT taxed. Legacy assets (pre-March 2021) may be exempt.': 'Áustria: 27.5% fixo sobre ganhos cripto. Trocas cripto-por-cripto NÃO são tributadas. Ativos legados (anteriores a março de 2021) podem ser isentos.',
         'Poland: flat 19% on crypto-to-fiat gains. Crypto-to-crypto swaps are tax-neutral. Acquisition costs are deductible.': 'Polônia: 19% fixo sobre ganhos cripto-para-fiat. Trocas cripto-por-cripto são fiscalmente neutras. Custos de aquisição são dedutíveis.',
         'Netherlands: taxed on deemed return (~5.88%), not actual gains. Effective rate ~2.12%. Tax-free threshold: €57,684 per person.': 'Países Baixos: tributado sobre retorno presumido (~5.88%), não sobre ganhos reais. Taxa efetiva ~2.12%. Faixa de isenção: €57,684 por pessoa.',
-},
+    },
     tr: {
         'BTC Monthly': 'BTC Aylık',
         'ETH Weekly': 'ETH Haftalık',
@@ -2952,7 +2948,7 @@ export const uiStrings: Record<Exclude<Lang, 'en'>, Record<string, string>> = {
         'Austria: flat 27.5% on crypto gains. Crypto-to-crypto swaps are NOT taxed. Legacy assets (pre-March 2021) may be exempt.': 'Avusturya: kripto kazançlarında sabit %27.5. Kriptodan kriptoya takaslar vergilendirilMEZ. Eski varlıklar (Mart 2021 öncesi) muaf olabilir.',
         'Poland: flat 19% on crypto-to-fiat gains. Crypto-to-crypto swaps are tax-neutral. Acquisition costs are deductible.': 'Polonya: kriptodan fiat\'a kazançlarda sabit %19. Kriptodan kriptoya takaslar vergi açısından nötrdür. Edinme maliyetleri indirilebilir.',
         'Netherlands: taxed on deemed return (~5.88%), not actual gains. Effective rate ~2.12%. Tax-free threshold: €57,684 per person.': 'Hollanda: gerçek kazançlar değil, varsayılan getiri (~%5.88) üzerinden vergilendirilir. Efektif oran ~%2.12. Vergiden muaf eşik: kişi başına €57,684.',
-},
+    },
     hi: {
         'BTC Monthly': 'BTC मासिक',
         'ETH Weekly': 'ETH साप्ताहिक',
@@ -3925,7 +3921,7 @@ export const uiStrings: Record<Exclude<Lang, 'en'>, Record<string, string>> = {
         'Austria: flat 27.5% on crypto gains. Crypto-to-crypto swaps are NOT taxed. Legacy assets (pre-March 2021) may be exempt.': 'ऑस्ट्रिया: क्रिप्टो लाभ पर समान 27.5%। क्रिप्टो-से-क्रिप्टो स्वैप पर कर नहीं। पुरानी संपत्तियाँ (मार्च 2021 से पहले) मुक्त हो सकती हैं।',
         'Poland: flat 19% on crypto-to-fiat gains. Crypto-to-crypto swaps are tax-neutral. Acquisition costs are deductible.': 'पोलैंड: क्रिप्टो-से-फिएट लाभ पर समान 19%। क्रिप्टो-से-क्रिप्टो स्वैप कर तटस्थ। अधिग्रहण लागत कटौतीयोग्य।',
         'Netherlands: taxed on deemed return (~5.88%), not actual gains. Effective rate ~2.12%. Tax-free threshold: €57,684 per person.': 'नीदरलैंड: वास्तविक लाभ नहीं बल्कि अनुमानित रिटर्न (~5.88%) पर कर। प्रभावी दर ~2.12%। कर-मुक्त सीमा: प्रति व्यक्ति €57,684।',
-},
+    },
     ru: {
         'BTC Monthly': 'BTC Ежемесячно',
         'ETH Weekly': 'ETH Еженедельно',
@@ -4899,7 +4895,7 @@ export const uiStrings: Record<Exclude<Lang, 'en'>, Record<string, string>> = {
         'Austria: flat 27.5% on crypto gains. Crypto-to-crypto swaps are NOT taxed. Legacy assets (pre-March 2021) may be exempt.': 'Австрия: единый налог 27.5% на крипто-доходы. Обмен крипто-на-крипто НЕ облагается. Унаследованные активы (до марта 2021) могут быть освобождены.',
         'Poland: flat 19% on crypto-to-fiat gains. Crypto-to-crypto swaps are tax-neutral. Acquisition costs are deductible.': 'Польша: единый налог 19% на доход от крипто-в-фиат. Обмен крипто-на-крипто налогово нейтрален. Расходы на приобретение вычитаются.',
         'Netherlands: taxed on deemed return (~5.88%), not actual gains. Effective rate ~2.12%. Tax-free threshold: €57,684 per person.': 'Нидерланды: налог на предполагаемый доход (~5.88%), а не на реальный. Эффективная ставка ~2.12%. Необлагаемый порог: €57,684 на человека.',
-}
+    }
 };
 
 export function getUiString(lang: string | undefined, key: string): string {

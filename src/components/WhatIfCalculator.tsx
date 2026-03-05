@@ -60,7 +60,7 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
     const [error, setError] = useState('');
     const [result, setResult] = useState<WhatIfResult | null>(null);
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const searchTimeout = useRef<ReturnType<typeof setTimeout>>();
+    const searchTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
     const maxDate = new Date().toISOString().split('T')[0];
 
     const formatISODate = (value: Date) => value.toISOString().split('T')[0];
@@ -177,8 +177,8 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                 datePurchased: dt,
                 priceHistory,
             });
-        } catch (e: any) {
-            setError(e.message || 'Something went wrong.');
+        } catch (e: unknown) {
+            setError(e instanceof Error ? e.message : 'Something went wrong.');
         } finally {
             setLoading(false);
         }
@@ -312,7 +312,7 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="whatif-amount"
                                 min="1"
                                 step="any"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 

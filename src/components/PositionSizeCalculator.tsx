@@ -94,6 +94,8 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
     const [isShort, setIsShort] = useState(false);
     const [results, setResults] = useState<Results | null>(null);
     const [loading, setLoading] = useState(false);
+    const [searchError, setSearchError] = useState('');
+    const [validationHint, setValidationHint] = useState('');
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
@@ -105,6 +107,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
             return;
         }
         setLoading(true);
+        setSearchError('');
         try {
             const res = await fetch(
                 `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
@@ -121,9 +124,10 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
             setShowSuggestions(true);
         } catch {
             setSuggestions([]);
+            setSearchError(getUiString(lang, 'Failed to search coins. Please try again.'));
         }
         setLoading(false);
-    }, []);
+    }, [lang]);
 
     const handleCoinSearch = (value: string) => {
         setCoinSearch(value);
@@ -146,7 +150,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                 setEntryPrice(String(price));
             }
         } catch {
-            // Silently fail
+            setSearchError(getUiString(lang, 'Failed to fetch price. Please enter manually.'));
         }
     };
 
@@ -200,18 +204,22 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
         if (isNaN(balance) || isNaN(risk) || isNaN(entry) || isNaN(sl) || balance <= 0 || entry <= 0 || sl <= 0) {
             setResults(null);
+            setValidationHint((accountBalance || entryPrice || stopLoss) ? getUiString(lang, 'Please enter valid account balance, entry price, and stop-loss.') : '');
             return;
         }
 
         // Validate SL direction
         if (!isShort && sl >= entry) {
             setResults(null);
+            setValidationHint(getUiString(lang, 'Stop-loss must be below entry price for Long positions.'));
             return;
         }
         if (isShort && sl <= entry) {
             setResults(null);
+            setValidationHint(getUiString(lang, 'Stop-loss must be above entry price for Short positions.'));
             return;
         }
+        setValidationHint('');
 
         // Risk amount in dollars
         const riskAmount = balance * (risk / 100);
@@ -315,7 +323,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {POSITION_SIZE_SCENARIOS.map((scenario) => (
                                 <button
@@ -333,7 +341,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                     <div className="input-group" ref={suggestionsRef}>
                         <label>
                             <Search size={14} />
-                            Cryptocurrency (optional)
+                            {getUiString(lang, 'Cryptocurrency (optional)')}
                         </label>
                         <div className="coin-search-wrapper">
                             <input
@@ -366,11 +374,12 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 ))}
                             </div>
                         )}
+                        {searchError && <span className="input-hint" style={{ color: '#f97316' }}>{searchError}</span>}
                     </div>
 
                     {/* Position Type */}
                     <div className="input-group">
-                        <label>Position Type</label>
+                        <label>{getUiString(lang, 'Position Type')}</label>
                         <div className="toggle-group">
                             <button
                                 className={`toggle-btn ${!isShort ? 'active' : ''}`}
@@ -393,7 +402,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Account Balance
+                            {getUiString(lang, 'Account Balance')}
                         </label>
                         <div className="pills-row">
                             {ACCOUNT_BALANCE_PILLS.map((preset) => (
@@ -415,7 +424,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 id="account-balance"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -423,7 +432,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                     <div className="input-group">
                         <label>
                             <Shield size={14} />
-                            Risk Per Trade
+                            {getUiString(lang, 'Risk Per Trade')}
                         </label>
                         <div className="pills-row">
                             {RISK_PRESETS.map((r) => (
@@ -446,7 +455,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 step="0.1"
                                 min="0.1"
                                 max="100"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -454,9 +463,9 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                     <div className="input-group">
                         <label>
                             <Crosshair size={14} />
-                            Entry Price
+                            {getUiString(lang, 'Entry Price')}
                             {selectedCoin && (
-                                <span className="label-hint">Auto-filled</span>
+                                <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                             )}
                         </label>
                         <div className="pills-row">
@@ -479,7 +488,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 id="entry-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -487,7 +496,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                     <div className="input-group">
                         <label>
                             <Target size={14} />
-                            Stop-Loss Price
+                            {getUiString(lang, 'Stop-Loss Price')}
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -498,7 +507,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 id="stop-loss-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -506,7 +515,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                     <div className="input-group">
                         <label>
                             <TrendingUp size={14} />
-                            Take-Profit Price (optional)
+                            {getUiString(lang, 'Take-Profit Price (optional)')}
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -517,7 +526,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 id="take-profit-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -548,13 +557,13 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 step="1"
                                 min="1"
                                 max="125"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Exchange Fee */}
                     <div className="input-group">
-                        <label>Exchange Fee (per side)</label>
+                        <label>{getUiString(lang, 'Exchange Fee (per side)')}</label>
                         <div className="pills-row">
                             {EXCHANGE_FEE_PILLS.map((preset) => (
                                 <button
@@ -575,7 +584,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                 id="exchange-fee"
                                 step="0.01"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -711,6 +720,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                             </div>
                             <h3>{getUiString(lang, 'Calculate Your Position Size')}</h3>
                             <p>{getUiString(lang, 'Enter your account balance, risk %, entry price, and stop-loss to see the optimal position size.')}</p>
+                            {validationHint && <p style={{ color: '#f97316', fontSize: '0.85rem', marginTop: '8px' }}>{validationHint}</p>}
                         </div>
                     )}
                 </div>

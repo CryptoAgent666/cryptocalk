@@ -13,16 +13,17 @@ const IR_SCENARIOS = [
   { label: 'High Alpha', portfolioReturn: '20', benchmarkReturn: '10', trackingError: '9', years: '3' },
 ];
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+
 
 export default function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
+  const formatUSD = (value: number): string =>
+    new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+
   const [portfolioValue, setPortfolioValue] = useState('30000');
   const [portfolioReturn, setPortfolioReturn] = useState('16');
   const [benchmarkReturn, setBenchmarkReturn] = useState('10');
@@ -88,7 +89,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {IR_SCENARIOS.map((scenario) => (
                 <button
@@ -103,7 +104,7 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
           </div>
 
           <div className="input-group">
-            <label>Portfolio Value (USD)</label>
+            <label>{getUiString(lang, 'Portfolio Value (USD)')}</label>
             <div className="pills-row">
               {PORTFOLIO_VALUE_PRESETS.map((preset) => (
                 <button
@@ -123,12 +124,12 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
                 min="0"
                 step="any"
                 id="ir-value"
-               onFocus={(e) => e.target.select()} />
+                onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Portfolio Return (%)</label>
+            <label>{getUiString(lang, 'Portfolio Return (%)')}</label>
             <div className="pills-row">
               {PORTFOLIO_RETURN_PRESETS.map((preset) => (
                 <button
@@ -141,12 +142,12 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={portfolioReturn} onChange={(e) => setPortfolioReturn(e.target.value)} step="any" id="ir-portfolio-return"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={portfolioReturn} onChange={(e) => setPortfolioReturn(e.target.value)} step="any" id="ir-portfolio-return" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Benchmark Return (%)</label>
+            <label>{getUiString(lang, 'Benchmark Return (%)')}</label>
             <div className="pills-row">
               {BENCHMARK_RETURN_PRESETS.map((preset) => (
                 <button
@@ -159,12 +160,12 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={benchmarkReturn} onChange={(e) => setBenchmarkReturn(e.target.value)} step="any" id="ir-benchmark-return"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={benchmarkReturn} onChange={(e) => setBenchmarkReturn(e.target.value)} step="any" id="ir-benchmark-return" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Tracking Error (%)</label>
+            <label>{getUiString(lang, 'Tracking Error (%)')}</label>
             <div className="pills-row">
               {TRACKING_ERROR_PRESETS.map((preset) => (
                 <button
@@ -177,12 +178,12 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={trackingError} onChange={(e) => setTrackingError(e.target.value)} min="0.01" step="any" id="ir-tracking-error"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={trackingError} onChange={(e) => setTrackingError(e.target.value)} min="0.01" step="any" id="ir-tracking-error" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Projection Horizon (years)</label>
+            <label>{getUiString(lang, 'Projection Horizon (years)')}</label>
             <div className="pills-row">
               {HORIZON_YEAR_PRESETS.map((preset) => (
                 <button
@@ -194,14 +195,14 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="ir-years"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="ir-years" onFocus={(e) => e.target.select()} />
           </div>
 
           <button className="reset-btn" onClick={reset}>
-            <RotateCcw size={14} /> Reset
+            <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
           </button>
           <span className="input-hint">
-            Auto-calculates as you type. Keep benchmark and horizon consistent across comparisons.
+            {getUiString(lang, 'Auto-calculates as you type. Keep benchmark and horizon consistent across comparisons.')}
           </span>
         </div>
 

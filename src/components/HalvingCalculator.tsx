@@ -92,7 +92,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
         fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=REMOVED_COINGECKO_KEY')
             .then(r => r.json())
             .then(d => { if (d.bitcoin?.usd) setBtcPrice(String(d.bitcoin.usd)); })
-            .catch(() => {});
+            .catch(() => { });
     }, []);
 
     /* ---- Countdown calculations ---- */
@@ -201,7 +201,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Cpu size={14} />
-                            Your Hashrate
+                            {getUiString(lang, 'Your Hashrate')}
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -212,7 +212,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="halving-hashrate"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {HASHRATE_PRESETS.map((value) => (
@@ -231,7 +231,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Zap size={14} />
-                            Electricity Cost
+                            {getUiString(lang, 'Electricity Cost')}
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -242,8 +242,8 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="halving-electricity"
                                 step="0.01"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
-                            <span className="label-hint">per kWh</span>
+                                onFocus={(e) => e.target.select()} />
+                            <span className="label-hint">{getUiString(lang, 'per kWh')}</span>
                         </div>
                         <div className="pills-row">
                             {ELECTRICITY_COST_PRESETS.map((value) => (
@@ -262,7 +262,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Zap size={14} />
-                            Power Consumption
+                            {getUiString(lang, 'Power Consumption')}
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -273,7 +273,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="halving-power"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {POWER_PRESETS.map((value) => (
@@ -292,19 +292,19 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Current BTC Price
-                            {btcPrice && <span className="label-hint">Auto-filled</span>}
+                            {getUiString(lang, 'Current BTC Price')}
+                            {btcPrice && <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>}
                         </label>
                         <div className="input-with-prefix">
                             <input
                                 type="number" inputMode="decimal"
                                 value={btcPrice}
                                 onChange={(e) => setBtcPrice(e.target.value)}
-                                placeholder="Fetching..."
+                                placeholder={getUiString(lang, 'Fetching...')}
                                 id="halving-btc-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {BTC_PRICE_PRESETS.map((value) => (
@@ -320,7 +320,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {HALVING_SCENARIOS.map((scenario) => (
                                 <button
@@ -337,10 +337,10 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Reset */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use miner profiles, then adjust power and electricity to stress-test post-halving margin.
+                        {getUiString(lang, 'Auto-calculates as you type. Use miner profiles, then adjust power and electricity to stress-test post-halving margin.')}
                     </span>
                 </div>
 
