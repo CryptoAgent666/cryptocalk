@@ -263,7 +263,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         <label><Search size={14} /> {getUiString(lang, 'Or search any coin')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin..." id="stk-coin-search" />
+                                placeholder={getUiString(lang, 'Search coin...')} id="stk-coin-search" />
                             {selectedCoin && (
                                 <button className="coin-clear" onClick={clearCoin} aria-label="Clear"><X size={14} /></button>
                             )}
@@ -280,7 +280,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                             </div>
                         )}
                         {loading && (
-                            <span className="input-hint">Searching coins...</span>
+                            <span className="input-hint">{getUiString(lang, 'Searching coins...')}</span>
                         )}
                         {searchError && <span className="input-hint" style={{ color: '#f97316' }}>{searchError}</span>}
                     </div>
@@ -373,19 +373,19 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                         <label>{getUiString(lang, 'Auto-Compound')}</label>
                         <div className="toggle-group">
                             <button className={`toggle-btn ${autoCompound ? 'active' : ''}`} onClick={() => setAutoCompound(true)}>
-                                <TrendingUp size={14} /> Yes (daily)
+                                <TrendingUp size={14} /> {getUiString(lang, 'Yes (daily)')}
                             </button>
                             <button className={`toggle-btn ${!autoCompound ? 'active' : ''}`} onClick={() => setAutoCompound(false)}>
-                                No (simple)
+                                {getUiString(lang, 'No (simple)')}
                             </button>
                         </div>
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Start with a quick coin preset, then compare auto-compound vs simple rewards.
+                        {getUiString(lang, 'Auto-calculates as you type. Start with a quick coin preset, then compare auto-compound vs simple rewards.')}
                     </span>
                 </div>
 

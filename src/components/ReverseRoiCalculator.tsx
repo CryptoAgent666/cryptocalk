@@ -376,7 +376,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                 type="text"
                                 value={coinSearch}
                                 onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin (e.g. Bitcoin)..."
+                                placeholder={getUiString(lang, 'Search coin (e.g. Bitcoin)...')}
                                 id="reverse-roi-coin-search"
                             />
                             {selectedCoin && (
@@ -404,7 +404,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                         )}
                         {loading && (
                             <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                <Loader2 size={12} className="spin" /> Searching...
+                                <Loader2 size={12} className="spin" /> {getUiString(lang, 'Searching...')}
                             </div>
                         )}
                     </div>
