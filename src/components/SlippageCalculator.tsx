@@ -12,16 +12,17 @@ const SLIPPAGE_SCENARIOS = [
   { label: 'Large Impact', poolTvl: '500000', tradeSize: '25000', dexFee: '1', slippageTolerance: '2' },
 ] as const;
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+
 
 export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
+  function formatUSD(value: number): string {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  }
   const [poolTvl, setPoolTvl] = useState('2000000');
   const [tradeSize, setTradeSize] = useState('10000');
   const [dexFee, setDexFee] = useState('0.3');
@@ -87,7 +88,7 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {SLIPPAGE_SCENARIOS.map((scenario) => (
                 <button
@@ -102,7 +103,7 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Pool TVL (USD)</label>
+            <label>{getUiString(lang, 'Pool TVL (USD)')}</label>
             <div className="pills-row">
               {TVL_PRESETS.map((preset) => (
                 <button
@@ -115,12 +116,12 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="0" step="any" id="slippage-tvl"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="0" step="any" id="slippage-tvl" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Trade Size (USD)</label>
+            <label>{getUiString(lang, 'Trade Size (USD)')}</label>
             <div className="pills-row">
               {TRADE_PRESETS.map((preset) => (
                 <button
@@ -133,12 +134,12 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={tradeSize} onChange={(e) => setTradeSize(e.target.value)} min="0" step="any" id="slippage-trade"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={tradeSize} onChange={(e) => setTradeSize(e.target.value)} min="0" step="any" id="slippage-trade" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>DEX Fee (%)</label>
+            <label>{getUiString(lang, 'DEX Fee (%)')}</label>
             <div className="pills-row">
               {DEX_FEE_PRESETS.map((preset) => (
                 <button
@@ -151,12 +152,12 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={dexFee} onChange={(e) => setDexFee(e.target.value)} min="0" step="any" id="slippage-fee"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={dexFee} onChange={(e) => setDexFee(e.target.value)} min="0" step="any" id="slippage-fee" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Slippage Tolerance (%)</label>
+            <label>{getUiString(lang, 'Slippage Tolerance (%)')}</label>
             <div className="pills-row">
               {TOLERANCE_PRESETS.map((preset) => (
                 <button
@@ -169,13 +170,13 @@ export default function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={slippageTolerance} onChange={(e) => setSlippageTolerance(e.target.value)} min="0" step="any" id="slippage-tolerance"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={slippageTolerance} onChange={(e) => setSlippageTolerance(e.target.value)} min="0" step="any" id="slippage-tolerance" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Keep trade size small relative to pool TVL to minimise execution cost.
+            {getUiString(lang, 'Auto-calculates as you type. Keep trade size small relative to pool TVL to minimise execution cost.')}
           </span>
         </div>
 

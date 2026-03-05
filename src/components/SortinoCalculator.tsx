@@ -33,16 +33,17 @@ const SORTINO_SCENARIOS = [
   },
 ] as const;
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+
 
 export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
+  function formatUSD(value: number): string {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  }
   const [portfolioValue, setPortfolioValue] = useState('25000');
   const [expectedReturn, setExpectedReturn] = useState('24');
   const [riskFreeRate, setRiskFreeRate] = useState('4');
@@ -106,7 +107,7 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {SORTINO_SCENARIOS.map((scenario) => (
                 <button
@@ -121,14 +122,14 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Portfolio Value (USD)</label>
+            <label>{getUiString(lang, 'Portfolio Value (USD)')}</label>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sortino-value"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sortino-value" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Expected Annual Return (%)</label>
+            <label>{getUiString(lang, 'Expected Annual Return (%)')}</label>
             <div className="pills-row">
               {EXPECTED_RETURN_PRESETS.map((preset) => (
                 <button
@@ -141,12 +142,12 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sortino-return"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={expectedReturn} onChange={(e) => setExpectedReturn(e.target.value)} step="any" id="sortino-return" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Risk-Free Rate (%)</label>
+            <label>{getUiString(lang, 'Risk-Free Rate (%)')}</label>
             <div className="pills-row">
               {RISK_FREE_PRESETS.map((preset) => (
                 <button
@@ -159,12 +160,12 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sortino-rf"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={riskFreeRate} onChange={(e) => setRiskFreeRate(e.target.value)} step="any" id="sortino-rf" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Downside Deviation (%)</label>
+            <label>{getUiString(lang, 'Downside Deviation (%)')}</label>
             <div className="pills-row">
               {DOWNSIDE_DEV_PRESETS.map((preset) => (
                 <button
@@ -177,12 +178,12 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={downsideDeviation} onChange={(e) => setDownsideDeviation(e.target.value)} min="0.01" step="any" id="sortino-dd"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={downsideDeviation} onChange={(e) => setDownsideDeviation(e.target.value)} min="0.01" step="any" id="sortino-dd" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Projection Horizon (years)</label>
+            <label>{getUiString(lang, 'Projection Horizon (years)')}</label>
             <div className="pills-row">
               {HORIZON_YEAR_PRESETS.map((preset) => (
                 <button
@@ -194,12 +195,12 @@ export default function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="sortino-years"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="sortino-years" onFocus={(e) => e.target.select()} />
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Use the same horizon and assumptions when comparing strategies.
+            {getUiString(lang, 'Auto-calculates as you type. Use the same horizon and assumptions when comparing strategies.')}
           </span>
         </div>
 

@@ -57,6 +57,8 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
     const [searchResults, setSearchResults] = useState<CoinData[]>([]);
     const [showFromDropdown, setShowFromDropdown] = useState(false);
     const [showToDropdown, setShowToDropdown] = useState(false);
+    const [searchError, setSearchError] = useState('');
+    const [fetchError, setFetchError] = useState('');
 
     const [conversionRate, setConversionRate] = useState<number | null>(null);
     const [change24h, setChange24h] = useState<number | null>(null);
@@ -84,6 +86,7 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
     // Fetch conversion rate
     const fetchRate = useCallback(async () => {
         setLoading(true);
+        setFetchError('');
         try {
             const res = await fetch(
                 `https://api.coingecko.com/api/v3/simple/price?ids=${fromCoin.id}&vs_currencies=${toCurrency.id}&include_24hr_change=true&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
@@ -98,9 +101,10 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
             }
         } catch {
             setConversionRate(null);
+            setFetchError(getUiString(lang, 'Failed to fetch price data. Please try again.'));
         }
         setLoading(false);
-    }, [fromCoin.id, toCurrency.id]);
+    }, [fromCoin.id, toCurrency.id, lang]);
 
     // Fetch rate on coin/currency change
     useEffect(() => {
@@ -129,8 +133,9 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
             );
         } catch {
             setSearchResults([]);
+            setSearchError(getUiString(lang, 'Failed to search coins. Please try again.'));
         }
-    }, []);
+    }, [lang]);
 
     const handleSearchFrom = (value: string) => {
         setSearchFrom(value);
@@ -200,7 +205,7 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
             <div className="converter-card">
                 {/* Amount Input */}
                 <div className="converter-row">
-                    <label className="converter-label">Amount</label>
+                    <label className="converter-label">{getUiString(lang, 'Amount')}</label>
                     <div className="converter-amount-input">
                         <input
                             type="number" inputMode="decimal"
@@ -210,13 +215,13 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                             id="convert-amount"
                             step="any"
                             min="0"
-                         onFocus={(e) => e.target.select()} />
+                            onFocus={(e) => e.target.select()} />
                     </div>
                 </div>
 
                 {/* From Selector */}
                 <div className="converter-row" ref={fromRef}>
-                    <label className="converter-label">From</label>
+                    <label className="converter-label">{getUiString(lang, 'From')}</label>
                     <button
                         className="selector-btn"
                         onClick={() => {
@@ -259,6 +264,7 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                             </div>
                         </div>
                     )}
+                    {searchError && <span className="input-hint" style={{ color: '#f97316' }}>{searchError}</span>}
                 </div>
 
                 {/* Direction Marker */}
@@ -270,7 +276,7 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
 
                 {/* To Selector */}
                 <div className="converter-row" ref={toRef}>
-                    <label className="converter-label">To</label>
+                    <label className="converter-label">{getUiString(lang, 'To')}</label>
                     <button
                         className="selector-btn"
                         onClick={() => {
@@ -347,8 +353,9 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                         </div>
                     )}
                 </div>
+                {fetchError && <div className="input-hint" style={{ color: '#f97316', marginTop: '0.5rem' }}>{fetchError}</div>}
 
-                </div>
+            </div>
 
             {/* Info Cards */}
             <div className="converter-info-grid">

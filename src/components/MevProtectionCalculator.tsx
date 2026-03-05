@@ -12,14 +12,7 @@ const MEV_SCENARIOS = [
   { label: 'Stable Route', swapAmount: '25000', slippage: '0.5', network: 'Ethereum', dex: 'Curve' },
 ] as const;
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+
 
 const networkRisk: Record<Network, number> = {
   Ethereum: 1,
@@ -29,6 +22,10 @@ const networkRisk: Record<Network, number> = {
 };
 
 export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string }) {
+  const formatUSD = (value: number): string =>
+    new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
+    }).format(value);
   const [swapAmount, setSwapAmount] = useState('5000');
   const [slippage, setSlippage] = useState('1');
   const [network, setNetwork] = useState<Network>('Ethereum');
@@ -85,7 +82,7 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {MEV_SCENARIOS.map((scenario) => (
                 <button
@@ -100,7 +97,7 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
           </div>
 
           <div className="input-group">
-            <label>Swap Amount</label>
+            <label>{getUiString(lang, 'Swap Amount')}</label>
             <div className="pills-row">
               {SWAP_AMOUNT_PRESETS.map((preset) => (
                 <button
@@ -112,10 +109,10 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
                 </button>
               ))}
             </div>
-            <div className="input-with-prefix"><input type="number" inputMode="decimal" value={swapAmount} onChange={(e) => setSwapAmount(e.target.value)} min="0" step="any" id="mev-amount"  onFocus={(e) => e.target.select()} /></div>
+            <div className="input-with-prefix"><input type="number" inputMode="decimal" value={swapAmount} onChange={(e) => setSwapAmount(e.target.value)} min="0" step="any" id="mev-amount" onFocus={(e) => e.target.select()} /></div>
           </div>
           <div className="input-group">
-            <label>Slippage Tolerance (%)</label>
+            <label>{getUiString(lang, 'Slippage Tolerance (%)')}</label>
             <div className="pills-row">
               {SLIPPAGE_PRESETS.map((preset) => (
                 <button
@@ -128,11 +125,11 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={slippage} onChange={(e) => setSlippage(e.target.value)} min="0.1" step="any" id="mev-slippage"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={slippage} onChange={(e) => setSlippage(e.target.value)} min="0.1" step="any" id="mev-slippage" onFocus={(e) => e.target.select()} />
             </div>
           </div>
           <div className="input-group">
-            <label>Network</label>
+            <label>{getUiString(lang, 'Network')}</label>
             <div className="pills-row">
               {(Object.keys(networkRisk) as Network[]).map((name) => (
                 <button key={name} className={`pill-btn ${network === name ? 'active' : ''}`} onClick={() => setNetwork(name)}>
@@ -142,16 +139,16 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
             </div>
           </div>
           <div className="input-group">
-            <label>DEX</label>
+            <label>{getUiString(lang, 'DEX')}</label>
             <div className="pills-row">
               {['Uniswap', 'PancakeSwap', 'Curve'].map((name) => (
                 <button key={name} className={`pill-btn ${dex === name ? 'active' : ''}`} onClick={() => setDex(name)}>{name}</button>
               ))}
             </div>
           </div>
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Lower slippage and private orderflow usually reduce MEV exposure.
+            {getUiString(lang, 'Auto-calculates as you type. Lower slippage and private orderflow usually reduce MEV exposure.')}
           </span>
         </div>
 

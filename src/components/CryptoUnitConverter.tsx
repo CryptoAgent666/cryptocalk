@@ -104,7 +104,7 @@ export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) 
           </div>
 
           <div className="input-group">
-            <label>Amount</label>
+            <label>{getUiString(lang, 'Amount')}</label>
             <input
               type="number" inputMode="decimal"
               value={amount}
@@ -113,7 +113,7 @@ export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) 
               min="0"
               placeholder=""
               id="unit-converter-amount"
-             onFocus={(e) => e.target.select()} />
+              onFocus={(e) => e.target.select()} />
             <div className="pills-row">
               {quickAmounts.map((value) => (
                 <button
@@ -128,7 +128,7 @@ export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) 
           </div>
 
           <div className="input-group">
-            <label><ArrowRightLeft size={14} /> From Unit</label>
+            <label><ArrowRightLeft size={14} /> {getUiString(lang, 'From Unit')}</label>
             <div className="select-wrap">
               <select className="input-select" value={fromUnit} onChange={(e) => setFromUnit(e.target.value)} id="unit-from">
                 {units.map((unit) => (
@@ -139,7 +139,7 @@ export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) 
           </div>
 
           <div className="input-group">
-            <label>To Unit</label>
+            <label>{getUiString(lang, 'To Unit')}</label>
             <div className="select-wrap">
               <select className="input-select" value={toUnit} onChange={(e) => setToUnit(e.target.value)} id="unit-to">
                 {units.map((unit) => (
@@ -150,7 +150,7 @@ export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) 
           </div>
 
           <button className="reset-btn" onClick={reset}>
-            <RotateCcw size={14} /> Reset
+            <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
           </button>
         </div>
 

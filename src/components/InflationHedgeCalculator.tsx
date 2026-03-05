@@ -312,7 +312,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {INFLATION_SCENARIOS.map((scenario) => (
                                 <button
@@ -330,7 +330,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                     <div className="input-group">
                         <label>
                             <Globe size={14} />
-                            Country
+                            {getUiString(lang, 'Country')}
                         </label>
                         <div className="pills-row">
                             {COUNTRIES.map(c => (
@@ -349,7 +349,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Savings Amount
+                            {getUiString(lang, 'Savings Amount')}
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -360,7 +360,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                                 id="inflation-amount"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {SAVINGS_PRESETS.map((preset) => (
@@ -379,7 +379,7 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                     <div className="input-group">
                         <label>
                             <Clock size={14} />
-                            Time Period
+                            {getUiString(lang, 'Time Period')}
                         </label>
                         <div className="pills-row">
                             {PERIODS.map(p => (
@@ -398,9 +398,9 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                     <div className="input-group">
                         <label>
                             <Shield size={14} />
-                            Comparison Assets
+                            {getUiString(lang, 'Comparison Assets')}
                         </label>
-                        <span className="label-hint">Assumptions: BTC 50%, ETH 40%, USDC Yield 8%, Gold 8%, S&P 500 10% (annual)</span>
+                        <span className="label-hint">{getUiString(lang, 'Assumptions: BTC 50%, ETH 40%, USDC Yield 8%, Gold 8%, S&P 500 10% (annual)')}</span>
                         <div className="pills-row">
                             {ASSETS.map(asset => (
                                 <button
@@ -417,10 +417,10 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
                     {/* Reset */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Compare multiple assets at the same country inflation and horizon.
+                        {getUiString(lang, 'Auto-calculates as you type. Compare multiple assets at the same country inflation and horizon.')}
                     </span>
                 </div>
 

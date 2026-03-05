@@ -351,7 +351,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {REVERSE_ROI_SCENARIOS.map((scenario) => (
                                 <button
@@ -369,7 +369,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                     <div className="input-group" ref={suggestionsRef}>
                         <label>
                             <Search size={14} />
-                            Cryptocurrency (optional)
+                            {getUiString(lang, 'Cryptocurrency (optional)')}
                         </label>
                         <div className="coin-search-wrapper">
                             <input
@@ -413,9 +413,9 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Current Token Price
+                            {getUiString(lang, 'Current Token Price')}
                             {selectedCoin && (
-                                <span className="label-hint">Auto-filled</span>
+                                <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                             )}
                         </label>
                         <div className="pills-row">
@@ -438,7 +438,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                 id="reverse-roi-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -446,7 +446,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Current Investment Amount
+                            {getUiString(lang, 'Current Investment Amount')}
                         </label>
                         <div className="pills-row">
                             {INVESTMENT_PILLS.map((p) => (
@@ -468,7 +468,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                 id="reverse-roi-investment"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -476,7 +476,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                     <div className="input-group">
                         <label>
                             <Target size={14} />
-                            Target Profit
+                            {getUiString(lang, 'Target Profit')}
                         </label>
                         <div className="pills-row">
                             {PROFIT_PILLS.map((p) => (
@@ -498,17 +498,17 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                 id="reverse-roi-target"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Reset Button */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use price, investment, and target presets for quick planning.
+                        {getUiString(lang, 'Auto-calculates as you type. Use price, investment, and target presets for quick planning.')}
                     </span>
                 </div>
 

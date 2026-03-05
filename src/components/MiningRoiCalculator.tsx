@@ -291,7 +291,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {MINING_ROI_SCENARIOS.map((scenario) => (
                                 <button
@@ -309,7 +309,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <Pickaxe size={14} />
-                            Equipment Cost ($)
+                            {getUiString(lang, 'Equipment Cost ($)')}
                         </label>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input
@@ -320,7 +320,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="equipment-cost-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row">
                             {EQUIPMENT_PILLS.map((pill) => (
@@ -339,7 +339,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Monthly Mining Revenue ($)
+                            {getUiString(lang, 'Monthly Mining Revenue ($)')}
                         </label>
                         <div className="pills-row">
                             {MONTHLY_REVENUE_PILLS.map((pill) => (
@@ -361,7 +361,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="monthly-revenue-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -369,8 +369,8 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <Zap size={14} />
-                            Monthly Expenses ($)
-                            <span className="label-hint">Electricity, internet, maintenance</span>
+                            {getUiString(lang, 'Monthly Expenses ($)')}
+                            <span className="label-hint">{getUiString(lang, 'Electricity, internet, maintenance')}</span>
                         </label>
                         <div className="pills-row">
                             {MONTHLY_EXPENSE_PILLS.map((pill) => (
@@ -392,7 +392,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="monthly-expenses-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -400,7 +400,7 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <BarChart3 size={14} />
-                            Scenario
+                            {getUiString(lang, 'Scenario')}
                         </label>
                         <div className="pills-row">
                             {SCENARIO_PILLS.map((pill) => (
@@ -421,10 +421,10 @@ export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) 
                     {/* Reset */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Compare realistic vs pessimistic before buying hardware.
+                        {getUiString(lang, 'Auto-calculates as you type. Compare realistic vs pessimistic before buying hardware.')}
                     </span>
                 </div>
 

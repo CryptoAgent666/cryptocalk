@@ -2,14 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Gamepad2, Info, RotateCcw, TrendingUp } from 'lucide-react';
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
+// formatUSD is defined inside the component to access `lang` prop
 
 const INITIAL_COST_PILLS = ['500', '1200', '2500', '5000'];
 const DAILY_REWARD_PILLS = ['15', '30', '45', '80'];
@@ -52,6 +45,15 @@ const GAMEFI_SCENARIOS = [
 ] as const;
 
 export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
+  const formatUSD = (value: number): string => {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
+
   const [initialCost, setInitialCost] = useState('1200');
   const [dailyTokenRewards, setDailyTokenRewards] = useState('45');
   const [tokenPrice, setTokenPrice] = useState('0.08');
@@ -126,7 +128,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {GAMEFI_SCENARIOS.map((scenario) => (
                 <button
@@ -141,7 +143,7 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Initial Setup Cost (USD)</label>
+            <label>{getUiString(lang, 'Initial Setup Cost (USD)')}</label>
             <div className="pills-row">
               {INITIAL_COST_PILLS.map((value) => (
                 <button
@@ -154,12 +156,12 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={initialCost} onChange={(e) => setInitialCost(e.target.value)} min="0" step="any" id="gamefi-initial"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={initialCost} onChange={(e) => setInitialCost(e.target.value)} min="0" step="any" id="gamefi-initial" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Daily Token Rewards</label>
+            <label>{getUiString(lang, 'Daily Token Rewards')}</label>
             <div className="pills-row">
               {DAILY_REWARD_PILLS.map((value) => (
                 <button
@@ -171,11 +173,11 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={dailyTokenRewards} onChange={(e) => setDailyTokenRewards(e.target.value)} min="0" step="any" id="gamefi-rewards" style={{ marginTop: '8px' }}  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={dailyTokenRewards} onChange={(e) => setDailyTokenRewards(e.target.value)} min="0" step="any" id="gamefi-rewards" style={{ marginTop: '8px' }} onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>Token Price (USD)</label>
+            <label>{getUiString(lang, 'Token Price (USD)')}</label>
             <div className="pills-row">
               {TOKEN_PRICE_PILLS.map((value) => (
                 <button
@@ -188,12 +190,12 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="gamefi-price"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)} min="0" step="any" id="gamefi-price" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Marketplace / Claim Fee (%)</label>
+            <label>{getUiString(lang, 'Marketplace / Claim Fee (%)')}</label>
             <div className="pills-row">
               {MARKETPLACE_FEE_PILLS.map((value) => (
                 <button
@@ -206,12 +208,12 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={marketplaceFee} onChange={(e) => setMarketplaceFee(e.target.value)} min="0" step="any" id="gamefi-fee"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={marketplaceFee} onChange={(e) => setMarketplaceFee(e.target.value)} min="0" step="any" id="gamefi-fee" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Daily In-Game Expenses (USD)</label>
+            <label>{getUiString(lang, 'Daily In-Game Expenses (USD)')}</label>
             <div className="pills-row">
               {DAILY_EXPENSE_PILLS.map((value) => (
                 <button
@@ -224,12 +226,12 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={dailyExpenses} onChange={(e) => setDailyExpenses(e.target.value)} min="0" step="any" id="gamefi-expenses"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={dailyExpenses} onChange={(e) => setDailyExpenses(e.target.value)} min="0" step="any" id="gamefi-expenses" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Active Days per Month</label>
+            <label>{getUiString(lang, 'Active Days per Month')}</label>
             <div className="pills-row">
               {ACTIVE_DAYS_PILLS.map((value) => (
                 <button
@@ -241,11 +243,11 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={activeDaysPerMonth} onChange={(e) => setActiveDaysPerMonth(e.target.value)} min="1" step="1" id="gamefi-active-days" style={{ marginTop: '8px' }}  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={activeDaysPerMonth} onChange={(e) => setActiveDaysPerMonth(e.target.value)} min="1" step="1" id="gamefi-active-days" style={{ marginTop: '8px' }} onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>Estimated Resale Value (USD)</label>
+            <label>{getUiString(lang, 'Estimated Resale Value (USD)')}</label>
             <div className="pills-row">
               {RESALE_VALUE_PILLS.map((value) => (
                 <button
@@ -258,13 +260,13 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix" style={{ marginTop: '8px' }}>
-              <input type="number" inputMode="decimal" value={assetResaleValue} onChange={(e) => setAssetResaleValue(e.target.value)} min="0" step="any" id="gamefi-resale"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={assetResaleValue} onChange={(e) => setAssetResaleValue(e.target.value)} min="0" step="any" id="gamefi-resale" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. Compare at least two token price presets before deciding.
+            {getUiString(lang, 'Auto-calculates as you type. Compare at least two token price presets before deciding.')}
           </span>
         </div>
 

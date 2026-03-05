@@ -113,7 +113,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                 <div className="calc-input-panel">
                     {/* Trade Type */}
                     <div className="input-group">
-                        <label><BarChart3 size={14} /> Trade Type</label>
+                        <label><BarChart3 size={14} /> {getUiString(lang, 'Trade Type')}</label>
                         <div className="toggle-group">
                             <button
                                 className={`toggle-btn ${tradeType === 'spot' ? 'active' : ''}`}
@@ -132,7 +132,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
 
                     {/* Order Type */}
                     <div className="input-group">
-                        <label><ArrowRight size={14} /> Order Type</label>
+                        <label><ArrowRight size={14} /> {getUiString(lang, 'Order Type')}</label>
                         <div className="toggle-group">
                             <button
                                 className={`toggle-btn ${orderType === 'maker' ? 'active' : ''}`}
@@ -151,7 +151,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
 
                     {/* 30-Day Volume Tier */}
                     <div className="input-group">
-                        <label><TrendingDown size={14} /> 30-Day Volume Tier</label>
+                        <label><TrendingDown size={14} /> {getUiString(lang, '30-Day Volume Tier')}</label>
                         <div className="pills-row">
                             {VOLUME_TIERS.map((tier) => (
                                 <button
@@ -167,7 +167,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
 
                     {/* Trade Amount */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Trade Amount</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Trade Amount')}</label>
                         <div className="input-with-prefix">
                             <input
                                 type="number" inputMode="decimal"
@@ -177,7 +177,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                                 id="exchange-fee-amount"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="pills-row" style={{ marginTop: '8px' }}>
                             {AMOUNT_PRESETS.map((a) => (
@@ -193,7 +193,7 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                 </div>
 

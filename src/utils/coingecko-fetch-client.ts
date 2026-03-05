@@ -180,7 +180,7 @@ async function fetchAndCache(
   let attempt = 0;
 
   while (attempt <= MAX_RETRIES) {
-    const { signal, cleanup } = withTimeoutSignal(requestInit.signal);
+    const { signal, cleanup } = withTimeoutSignal(requestInit.signal ?? undefined);
     try {
       const response = await originalFetch(input, { ...requestInit, signal });
 

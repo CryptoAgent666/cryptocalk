@@ -13,16 +13,16 @@ const TREYNOR_SCENARIOS = [
   { label: 'Aggressive', expectedReturn: '24', riskFreeRate: '5', beta: '1.5', years: '3' },
 ];
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
-
 export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
+  function formatUSD(value: number): string {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  }
+
   const [portfolioValue, setPortfolioValue] = useState('25000');
   const [expectedReturn, setExpectedReturn] = useState('18');
   const [riskFreeRate, setRiskFreeRate] = useState('4');
@@ -130,7 +130,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                 min="0"
                 step="any"
                 id="treynor-value"
-               onFocus={(e) => e.target.select()} />
+                onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -154,7 +154,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                 onChange={(e) => setExpectedReturn(e.target.value)}
                 step="any"
                 id="treynor-return"
-               onFocus={(e) => e.target.select()} />
+                onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -178,7 +178,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                 onChange={(e) => setRiskFreeRate(e.target.value)}
                 step="any"
                 id="treynor-rf"
-               onFocus={(e) => e.target.select()} />
+                onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -202,7 +202,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
               min="0.01"
               step="any"
               id="treynor-beta"
-             onFocus={(e) => e.target.select()} />
+              onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
@@ -218,7 +218,7 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="treynor-years"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)} min="0.1" step="any" id="treynor-years" onFocus={(e) => e.target.select()} />
           </div>
 
           <button className="reset-btn" onClick={reset}>

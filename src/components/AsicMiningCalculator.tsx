@@ -167,8 +167,8 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
 
                     setNetworkData(updatedData);
                     setLiveDataStatus('live');
-                } catch (e) {
-                    console.error("Failed to parse live mining data", e);
+                } catch {
+                    // parse failure — fallback to defaults
                     setLiveDataStatus('error');
                 }
             })
@@ -328,7 +328,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                 {/* Left: Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {ASIC_SCENARIOS.map((scenario) => (
                                 <button
@@ -346,7 +346,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                     <div className="input-group">
                         <label>
                             <Server size={14} />
-                            ASIC Model
+                            {getUiString(lang, 'ASIC Model')}
                         </label>
                         <div className="select-wrap">
                             <select
@@ -369,8 +369,8 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                     <div className="input-group">
                         <label>
                             <Hash size={14} />
-                            Hashrate ({hashrateUnit})
-                            <span className="label-hint">Auto-filled</span>
+                            {getUiString(lang, 'Hashrate')} ({hashrateUnit})
+                            <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -381,7 +381,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 id="asic-hashrate-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                             <span
                                 className="input-unit"
                                 style={{
@@ -400,8 +400,8 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                     <div className="input-group">
                         <label>
                             <Zap size={14} />
-                            Power Consumption (W)
-                            <span className="label-hint">Auto-filled</span>
+                            {getUiString(lang, 'Power Consumption')} (W)
+                            <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -412,7 +412,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 id="asic-power-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                             <span
                                 className="input-unit"
                                 style={{
@@ -431,7 +431,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Electricity Cost ($/kWh)
+                            {getUiString(lang, 'Electricity Cost')} ($/kWh)
                         </label>
                         <div className="pills-row">
                             {ELECTRICITY_PILLS.map((c) => (
@@ -453,7 +453,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 id="asic-electricity-input"
                                 step="0.01"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -461,7 +461,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                     <div className="input-group">
                         <label>
                             <TrendingUp size={14} />
-                            Pool Fee (%)
+                            {getUiString(lang, 'Pool Fee')} (%)
                         </label>
                         <div className="pills-row">
                             {POOL_FEE_PILLS.map((fee) => (
@@ -484,7 +484,7 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 step="0.1"
                                 min="0"
                                 max="100"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -492,8 +492,8 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                     <div className="input-group">
                         <label>
                             <Calendar size={14} />
-                            ASIC Purchase Price ($)
-                            <span className="label-hint">For ROI calculation</span>
+                            {getUiString(lang, 'ASIC Purchase Price')} ($)
+                            <span className="label-hint">{getUiString(lang, 'For ROI calculation')}</span>
                         </label>
                         <div className="pills-row">
                             {ASIC_PRICE_PILLS.map((price) => (
@@ -515,18 +515,23 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                                 id="asic-price-input"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Reset */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Pick a preset first for realistic ASIC assumptions.
+                        {getUiString(lang, 'Auto-calculates as you type. Pick a preset first for realistic ASIC assumptions.')}
                     </span>
+                    {liveDataStatus === 'error' && (
+                        <span className="input-hint" style={{ color: 'var(--color-accent-red, #ef4444)', marginTop: '8px', display: 'block' }}>
+                            {getUiString(lang, 'Failed to fetch live network data. Using fallback metrics.')}
+                        </span>
+                    )}
                 </div>
 
                 {/* Right: Results */}

@@ -290,7 +290,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {PIP_SCENARIOS.map((scenario) => (
                                 <button
@@ -308,7 +308,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <ArrowUpDown size={14} />
-                            Quick Pairs
+                            {getUiString(lang, 'Quick Pairs')}
                         </label>
                         <div className="pills-row">
                             {POPULAR_PAIRS.map((pair) => (
@@ -327,14 +327,14 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group" ref={suggestionsRef}>
                         <label>
                             <Search size={14} />
-                            Cryptocurrency
+                            {getUiString(lang, 'Cryptocurrency')}
                         </label>
                         <div className="coin-search-wrapper">
                             <input
                                 type="text"
                                 value={coinSearch}
                                 onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin (e.g. Bitcoin)..."
+                                placeholder={getUiString(lang, 'Search coin (e.g. Bitcoin)...')}
                                 id="pip-coin-search"
                             />
                             {selectedCoin && (
@@ -366,9 +366,9 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Current Price
+                            {getUiString(lang, 'Current Price')}
                             {selectedCoin && (
-                                <span className="label-hint">Auto-filled</span>
+                                <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                             )}
                         </label>
                         <div className="input-with-prefix">
@@ -380,7 +380,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="pip-current-price"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -393,14 +393,14 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 onClick={() => setIsShort(false)}
                             >
                                 <TrendingUp size={14} />
-                                Long
+                                {getUiString(lang, 'Long')}
                             </button>
                             <button
                                 className={`toggle-btn toggle-short ${isShort ? 'active' : ''}`}
                                 onClick={() => setIsShort(true)}
                             >
                                 <TrendingDown size={14} />
-                                Short
+                                {getUiString(lang, 'Short')}
                             </button>
                         </div>
                     </div>
@@ -409,7 +409,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Hash size={14} />
-                            Position Size
+                            {getUiString(lang, 'Position Size')}
                         </label>
                         <div className="toggle-group" style={{ marginBottom: '8px' }}>
                             <button
@@ -417,14 +417,14 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 onClick={() => setSizeMode('usd')}
                             >
                                 <DollarSign size={14} />
-                                USD
+                                {getUiString(lang, 'USD')}
                             </button>
                             <button
                                 className={`toggle-btn ${sizeMode === 'coins' ? 'active' : ''}`}
                                 onClick={() => setSizeMode('coins')}
                             >
                                 <Hash size={14} />
-                                Coins
+                                {getUiString(lang, 'Coins')}
                             </button>
                         </div>
                         <div className="input-with-prefix">
@@ -436,7 +436,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="pip-position-size"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -444,7 +444,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Ruler size={14} />
-                            Tick / Pip Size
+                            {getUiString(lang, 'Tick / Pip Size')}
                         </label>
                         <div className="pills-row">
                             {getTickPresets().map((t) => (
@@ -466,17 +466,17 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="pip-tick-size"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Reset Button */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Choose USD or Coins to match your position model.
+                        {getUiString(lang, 'Auto-calculates as you type. Choose USD or Coins to match your position model.')}
                     </span>
                 </div>
 

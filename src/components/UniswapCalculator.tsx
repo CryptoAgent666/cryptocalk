@@ -13,16 +13,16 @@ const UNISWAP_SCENARIOS = [
   { label: 'High-Vol LP', deposit: '25000', poolTvl: '2000000', dailyVolume: '1000000', feeTier: '1', priceMovePct: '50', days: '90' },
 ] as const;
 
-function formatUSD(value: number): string {
-  return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-}
-
 export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
+  function formatUSD(value: number): string {
+    return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  }
+
   const [deposit, setDeposit] = useState('10000');
   const [poolTvl, setPoolTvl] = useState('5000000');
   const [dailyVolume, setDailyVolume] = useState('2000000');
@@ -123,7 +123,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={deposit} onChange={(e) => setDeposit(e.target.value)} min="1" step="any" id="uni-deposit"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={deposit} onChange={(e) => setDeposit(e.target.value)} min="1" step="any" id="uni-deposit" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -141,7 +141,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="1" step="any" id="uni-tvl"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={poolTvl} onChange={(e) => setPoolTvl(e.target.value)} min="1" step="any" id="uni-tvl" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -159,7 +159,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={dailyVolume} onChange={(e) => setDailyVolume(e.target.value)} min="1" step="any" id="uni-volume"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={dailyVolume} onChange={(e) => setDailyVolume(e.target.value)} min="1" step="any" id="uni-volume" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -189,7 +189,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
             <div className="input-with-prefix">
-              <input type="number" inputMode="decimal" value={priceMovePct} onChange={(e) => setPriceMovePct(e.target.value)} step="any" id="uni-price-move"  onFocus={(e) => e.target.select()} />
+              <input type="number" inputMode="decimal" value={priceMovePct} onChange={(e) => setPriceMovePct(e.target.value)} step="any" id="uni-price-move" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
@@ -206,7 +206,7 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
                 </button>
               ))}
             </div>
-            <input type="number" inputMode="decimal" value={days} onChange={(e) => setDays(e.target.value)} min="1" step="1" id="uni-days"  onFocus={(e) => e.target.select()} />
+            <input type="number" inputMode="decimal" value={days} onChange={(e) => setDays(e.target.value)} min="1" step="1" id="uni-days" onFocus={(e) => e.target.select()} />
           </div>
 
           <button className="reset-btn" onClick={reset}>

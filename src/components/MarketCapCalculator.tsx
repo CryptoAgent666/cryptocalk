@@ -411,7 +411,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {MARKET_CAP_SCENARIOS.map((scenario) => (
                                 <button
@@ -429,14 +429,14 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group" ref={suggestionsRef}>
                         <label>
                             <Search size={14} />
-                            Select Cryptocurrency
+                            {getUiString(lang, 'Select Cryptocurrency')}
                         </label>
                         <div className="coin-search-wrapper">
                             <input
                                 type="text"
                                 value={coinSearch}
                                 onChange={(e) => handleCoinSearch(e.target.value)}
-                                placeholder="Search coin (e.g. Bitcoin)..."
+                                placeholder={getUiString(lang, 'Search coin (e.g. Bitcoin)...')}
                                 id="mcap-coin-search"
                             />
                             {selectedCoin && (
@@ -469,19 +469,19 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-group">
                             <label>
                                 <Info size={14} />
-                                Current Data (Auto-filled)
+                                Current Data ({getUiString(lang, 'Auto-filled')})
                             </label>
                             <div className="coin-info-grid">
                                 <div className="coin-info-item">
-                                    <span className="coin-info-label">Price</span>
+                                    <span className="coin-info-label">{getUiString(lang, 'Price')}</span>
                                     <span className="coin-info-value">{formatPrice(coinData.price)}</span>
                                 </div>
                                 <div className="coin-info-item">
-                                    <span className="coin-info-label">Market Cap</span>
+                                    <span className="coin-info-label">{getUiString(lang, 'Market Cap')}</span>
                                     <span className="coin-info-value">{formatBigNumber(coinData.marketCap)}</span>
                                 </div>
                                 <div className="coin-info-item">
-                                    <span className="coin-info-label">Supply</span>
+                                    <span className="coin-info-label">{getUiString(lang, 'Supply')}</span>
                                     <span className="coin-info-value">{formatSupply(coinData.circulatingSupply)}</span>
                                 </div>
                             </div>
@@ -492,7 +492,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <ArrowUpDown size={14} />
-                            Calculation Mode
+                            {getUiString(lang, 'Calculation Mode')}
                         </label>
                         <div className="toggle-group">
                             <button
@@ -500,14 +500,14 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                 onClick={() => setMode('price')}
                             >
                                 <DollarSign size={14} />
-                                What price?
+                                {getUiString(lang, 'What price?')}
                             </button>
                             <button
                                 className={`toggle-btn ${mode === 'marketcap' ? 'active' : ''}`}
                                 onClick={() => setMode('marketcap')}
                             >
                                 <BarChart3 size={14} />
-                                What market cap?
+                                {getUiString(lang, 'What market cap?')}
                             </button>
                         </div>
                     </div>
@@ -517,7 +517,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                         <div className="input-group">
                             <label>
                                 <Target size={14} />
-                                Target Market Cap
+                                {getUiString(lang, 'Target Market Cap')}
                             </label>
                             <div className="pills-row">
                                 {TARGET_MARKET_CAP_PRESETS.map((preset) => (
@@ -539,14 +539,14 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                     id="mcap-target-marketcap"
                                     step="any"
                                     min="0"
-                                 onFocus={(e) => e.target.select()} />
+                                    onFocus={(e) => e.target.select()} />
                             </div>
                         </div>
                     ) : (
                         <div className="input-group">
                             <label>
                                 <DollarSign size={14} />
-                                Target Price
+                                {getUiString(lang, 'Target Price')}
                             </label>
                             <div className="pills-row">
                                 {TARGET_PRICE_PRESETS.map((preset) => (
@@ -568,7 +568,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                     id="mcap-target-price"
                                     step="any"
                                     min="0"
-                                 onFocus={(e) => e.target.select()} />
+                                    onFocus={(e) => e.target.select()} />
                             </div>
                         </div>
                     )}
@@ -577,7 +577,7 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <BarChart3 size={14} />
-                            {selectedCoin ? `If ${selectedCoin.symbol.toUpperCase()} had the market cap of...` : 'Compare with top coins'}
+                            {selectedCoin ? `${getUiString(lang, 'If')} ${selectedCoin.symbol.toUpperCase()} ${getUiString(lang, 'had the market cap of...')}` : getUiString(lang, 'Compare with top coins')}
                         </label>
                         <div className="pills-row">
                             {QUICK_COMPARE_COINS.filter(c => c.id !== selectedCoin?.id).map((coin) => (
@@ -596,9 +596,9 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                     <div className="input-group">
                         <label>
                             <BarChart3 size={14} />
-                            Circulating Supply
+                            {getUiString(lang, 'Circulating Supply')}
                             {coinData && (
-                                <span className="label-hint">Auto-filled</span>
+                                <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                             )}
                         </label>
                         <div className="pills-row">
@@ -621,17 +621,17 @@ export default function MarketCapCalculator({ lang = 'en' }: { lang?: string }) 
                                 id="mcap-supply"
                                 step="any"
                                 min="0"
-                             onFocus={(e) => e.target.select()} />
+                                onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     {/* Reset Button */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use top-coin comparisons as a reality check for target cap and implied price.
+                        {getUiString(lang, 'Auto-calculates as you type. Use top-coin comparisons as a reality check for target cap and implied price.')}
                     </span>
                 </div>
 

@@ -136,7 +136,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {COMPOUND_SCENARIOS.map((scenario) => (
                                 <button
@@ -165,12 +165,12 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={initialAmount} onChange={(e) => setInitialAmount(e.target.value)}
-                                placeholder="" id="ci-initial" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="ci-initial" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Monthly Contribution</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Monthly Contribution')}</label>
                         <div className="pills-row">
                             {MONTHLY_PRESETS.map((preset) => (
                                 <button
@@ -184,12 +184,12 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={monthlyContribution} onChange={(e) => setMonthlyContribution(e.target.value)}
-                                placeholder="" id="ci-monthly" step="any" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="ci-monthly" step="any" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     <div className="input-group">
-                        <label><Percent size={14} /> Annual Interest Rate (APY)</label>
+                        <label><Percent size={14} /> {getUiString(lang, 'Annual Interest Rate (APY)')}</label>
                         <div className="pills-row">
                             {APY_PRESETS.map((a) => (
                                 <button key={a} className={`pill-btn ${annualRate === String(a) ? 'active' : ''}`}
@@ -200,12 +200,12 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={annualRate} onChange={(e) => setAnnualRate(e.target.value)}
-                                placeholder="" id="ci-rate" step="0.1" min="0"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="ci-rate" step="0.1" min="0" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
                     <div className="input-group">
-                        <label><Calendar size={14} /> Investment Period (years)</label>
+                        <label><Calendar size={14} /> {getUiString(lang, 'Investment Period (years)')}</label>
                         <div className="pills-row">
                             {YEAR_PRESETS.map((y) => (
                                 <button key={y} className={`pill-btn ${years === String(y) ? 'active' : ''}`}
@@ -216,7 +216,7 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                         </div>
                         <div className="input-with-prefix" style={{ marginTop: '8px' }}>
                             <input type="number" inputMode="decimal" value={years} onChange={(e) => setYears(e.target.value)}
-                                placeholder="" id="ci-years" step="1" min="1" max="30"  onFocus={(e) => e.target.select()} />
+                                placeholder="" id="ci-years" step="1" min="1" max="30" onFocus={(e) => e.target.select()} />
                         </div>
                     </div>
 
@@ -233,10 +233,10 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use the same monthly contribution across scenarios to compare compounding impact fairly.
+                        {getUiString(lang, 'Auto-calculates as you type. Use the same monthly contribution across scenarios to compare compounding impact fairly.')}
                     </span>
                 </div>
 
