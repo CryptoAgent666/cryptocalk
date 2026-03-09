@@ -256,7 +256,7 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                                         className={`selector-option ${fromCoin.id === coin.id ? 'selected' : ''}`}
                                         onClick={() => selectFromCoin(coin)}
                                     >
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} />}
+                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
                                         <span className="option-name">{coin.name}</span>
                                         <span className="option-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>

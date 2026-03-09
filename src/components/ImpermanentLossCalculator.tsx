@@ -211,7 +211,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                             <div className="suggestions-dropdown">
                                 {suggestionsA.map((coin) => (
                                     <button key={coin.id} className="suggestion-item" onClick={() => selectTokenA(coin)}>
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} />}
+                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>
@@ -234,7 +234,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                             <div className="suggestions-dropdown">
                                 {suggestionsB.map((coin) => (
                                     <button key={coin.id} className="suggestion-item" onClick={() => selectTokenB(coin)}>
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} />}
+                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>

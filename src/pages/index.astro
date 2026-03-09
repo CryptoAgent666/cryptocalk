@@ -64,11 +64,6 @@ const websiteSchema = {
   description:
     'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 45+ more tools.',
   inLanguage: 'en',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${homepageUrl}?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
   areaServed: {
     '@type': 'Country',
     name: 'Global',
@@ -92,7 +87,7 @@ const homepageSchemas = [websiteSchema, organizationSchema];
 ---
 
 <Layout
-  title="CryptoCalk — 50+ Free Crypto Calculators | Profit, Mining, DCA, Tax"
+  title="CryptoCalk — 50+ Free Crypto Calculators"
   description="Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 45+ more tools. Fast, accurate, no signup."
   lang="en"
 >
