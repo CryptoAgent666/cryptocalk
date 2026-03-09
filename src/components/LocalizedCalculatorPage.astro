@@ -8,6 +8,8 @@ import { CALCULATOR_META } from "../i18n/calculator-meta";
 import { RELATED_CALCULATORS } from "../data/related-calculators";
 import { defaultFaqByLang } from "../i18n/faq-dictionary";
 import { seoBodyText } from "../i18n/seo-body-text";
+import { calculatorSeoContent } from "../i18n/calculator-seo-content";
+import { calculatorSeoExt } from "../i18n/calculator-seo-ext";
 import { Calculator, ChevronRight, ArrowLeft } from "lucide-react";
 import ShareCalculator from "./ShareCalculator.astro";
 import SiteFooter from "./SiteFooter.astro";
@@ -227,7 +229,14 @@ const headingMap: Record<
 };
 
 const h = headingMap[lang] || headingMap.en;
-const txt = seoBodyText[lang] || seoBodyText.en;
+
+// Per-calculator unique content overrides generic template.
+// Merge order: genericTxt → calcOverride (how/inputs) → calcExtOverride (interpret…validation)
+// Non-EN pages never receive English-only content — they use translated generic template.
+const genericTxt = seoBodyText[lang] || seoBodyText.en;
+const calcOverride = calculatorSeoContent[slug as string]?.[lang] ?? null;
+const calcExtOverride = calculatorSeoExt[slug as string]?.[lang] ?? null;
+const txt = { ...genericTxt, ...(calcOverride ?? {}), ...(calcExtOverride ?? {}) };
 
 const siteUrl = "https://cryptocalk.com";
 const pageUrl = `${siteUrl}${pagePath}`;
