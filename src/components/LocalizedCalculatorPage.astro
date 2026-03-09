@@ -229,6 +229,10 @@ const headingMap: Record<
 const h = headingMap[lang] || headingMap.en;
 const txt = seoBodyText[lang] || seoBodyText.en;
 
+const siteUrl = "https://cryptocalk.com";
+const pageUrl = `${siteUrl}${pagePath}`;
+const homeUrl = `${siteUrl}${homePath}`;
+
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -238,7 +242,33 @@ const webAppSchema = {
   operatingSystem: "Web",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   inLanguage: lang,
-  url: `https://cryptocalk.com${pagePath}`,
+  url: pageUrl,
+  datePublished: "2025-11-01",
+  dateModified: "2026-03-09",
+  author: {
+    "@type": "Person",
+    name: "Konstantin Iakovlev",
+    url: `${siteUrl}/about/`,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "CryptoCalk",
+      item: homeUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: localizedTitle,
+      item: pageUrl,
+    },
+  ],
 };
 
 const faqSchema = {
@@ -390,6 +420,8 @@ const faqSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)}
   ></script>
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}
+  ></script>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}
   ></script>
   {calculatorScopedCss && <style is:global set:html={calculatorScopedCss} />}
 </Layout>

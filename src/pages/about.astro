@@ -6,13 +6,34 @@ import { Mail, Briefcase, Code, Award, Twitter, Linkedin, Instagram, Globe } fro
 
 const webPageSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
+  '@type': 'ProfilePage',
   name: 'About Us | CryptoCalk',
   description:
     'Learn about CryptoCalk and Konstantin Iakovlev, the founder and developer behind our suite of fast, accurate crypto calculators.',
   url: 'https://cryptocalk.com/about/',
   inLanguage: 'en',
-  dateModified: '2026-02-26',
+  dateModified: '2026-03-09',
+  mainEntity: {
+    '@type': 'Person',
+    '@id': 'https://cryptocalk.com/about/#founder',
+    name: 'Konstantin Iakovlev',
+    jobTitle: 'Founder & Lead Developer',
+    description:
+      'Passionate developer with a deep professional background in finance, cryptocurrency, and SEO. Creator of CryptoCalk.',
+    url: 'https://cryptocalk.com/about/',
+    image: 'https://cryptocalk.com/images/author_avatar.jpg',
+    sameAs: [
+      'https://x.com/yakovlevka3',
+      'https://www.linkedin.com/in/konstantin-iakovlev/',
+      'https://www.instagram.com/iakovlevka/',
+    ],
+    worksFor: {
+      '@type': 'Organization',
+      name: 'CryptoCalk',
+      url: 'https://cryptocalk.com',
+    },
+    knowsAbout: ['Cryptocurrency', 'Financial Calculators', 'Web Development', 'SEO', 'DeFi', 'Crypto Trading'],
+  },
 };
 ---
 
@@ -41,7 +62,7 @@ const webPageSchema = {
         <h2>Meet the Creator</h2>
         <div class="author-card">
           <div class="author-avatar-col">
-            <img src="/images/author_avatar.jpg" alt="Konstantin Iakovlev" class="author-avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIwIDIxdi0yYTRgNCAwIDAwLTQtNEg4YTRgNCAwIDAwLTRgNHYyIj48L3BhdGg+PGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ij48L2NpcmNsZT48L3N2Zz4='" />
+            <img src="/images/author_avatar.jpg" alt="Konstantin Iakovlev" class="author-avatar" loading="lazy" width="120" height="120" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIwIDIxdi0yYTRgNCAwIDAwLTQtNEg4YTRgNCAwIDAwLTRgNHYyIj48L3BhdGg+PGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ij48L2NpcmNsZT48L3N2Zz4='" />
             <div class="author-social">
               <a href="/contact/" class="btn-primary btn-sm">Contact Me</a>
             </div>

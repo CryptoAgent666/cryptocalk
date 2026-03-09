@@ -206,7 +206,7 @@ export default function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="suggestions-dropdown">
                                 {suggestions.map((coin) => (
                                     <button key={coin.id} className="suggestion-item" onClick={() => selectCoin(coin)}>
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} />}
+                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>
