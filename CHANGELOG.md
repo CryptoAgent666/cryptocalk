@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-09]
+
+### Added
+- **SEO: BreadcrumbList JSON-LD на всех страницах калькуляторов**: Добавлена схема `BreadcrumbList` в `LocalizedCalculatorPage.astro` (Home → Калькулятор). Обеспечивает rich results хлебных крошек во всех 6 языках.
+- **SEO: Person + ProfilePage схема на странице About**: Заменили `WebPage` на `ProfilePage` с вложенной `Person`-сущностью (имя, должность, soialLinks, knowsAbout). Укрепляет E-E-A-T entity graph.
+
+### Changed
+- **SEO: WebApplication schema обогащена**: Добавлены `datePublished` (2025-11-01), `dateModified` (2026-03-09) и `author` (Person) во все 300+ локализованных страниц калькуляторов через `LocalizedCalculatorPage.astro`.
+- **SEO: Title главной страницы сокращён**: С 69 до 44 символов (`CryptoCalk — 50+ Free Crypto Calculators`) — теперь не обрезается в SERP.
+- **SEO: SearchAction-схема удалена с главной**: Схема `potentialAction: SearchAction` была некорректна (поиск клиентский, URL `?q=` не индексируется). Удалена во избежание ошибок в GSC.
+- **Perf: Google Fonts загружается неблокирующе**: Заменён `<link rel="stylesheet">` на `<link rel="preload" as="style" onload=...>` с `<noscript>`-фолбеком. Устраняет render-blocking ресурс, улучшает LCP.
+- **Perf: loading=lazy на все изображения**: Добавлен `loading="lazy"` и явные `width`/`height` на аватар автора (about.astro, [lang]/about.astro) и все миниатюры монет в 20+ компонентах калькуляторов.
+- **Tech: robots.txt очищен от дублирующей ссылки**: Оставлена одна ссылка `sitemap-index.xml` вместо двух.
+
 ## [2026-03-06]
 
 ### Added

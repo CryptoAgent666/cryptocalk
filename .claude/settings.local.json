@@ -114,7 +114,11 @@
       "Bash(npx @tailwindcss/cli -i css/input.css -o css/output.css --minify)",
       "Bash(npx html-minifier-terser --collapse-whitespace --remove-comments --remove-redundant-attributes --minify-js true --minify-css true index.html -o index.html)",
       "Bash(npx html-minifier-terser --collapse-whitespace --remove-comments --remove-redundant-attributes --minify-js true --minify-css true kz/index.html -o kz/index.html)",
-      "Bash(npx html-minifier-terser --collapse-whitespace --remove-comments --remove-redundant-attributes --minify-js true --minify-css true 404.html -o 404.html)"
+      "Bash(npx html-minifier-terser --collapse-whitespace --remove-comments --remove-redundant-attributes --minify-js true --minify-css true 404.html -o 404.html)",
+      "Bash(xargs -I {} basename {} .astro)",
+      "Bash(pkill -f \"astro dev\")",
+      "Bash(xargs -r kill)",
+      "Bash(git push origin main)"
     ]
   }
 }
