@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-09] (update 3)
+
+### Added
+- **SEO: Уникальный контент для оставшихся 8 секций (Вариант C)**: Создан файл `src/i18n/calculator-seo-ext.ts` с уникальным контентом для секций `interpret`, `scenarios`, `checklist`, `mistakes`, `benchmarks`, `execution`, `hygiene`, `validation` для каждого из 51 калькулятора во всех 6 языках. Контент объединяется в `LocalizedCalculatorPage.astro` через merge: `genericTxt → calcOverride → calcExtOverride`.
+- **Инфраструктура merger**: Обновлён `LocalizedCalculatorPage.astro` для импорта `calculatorSeoExt` и применения трёхуровневого слияния текстов.
+
 ## [2026-03-09] (update 2)
 
 ### Added
