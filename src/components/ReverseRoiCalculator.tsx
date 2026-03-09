@@ -394,7 +394,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                         onClick={() => selectCoin(coin)}
                                     >
                                         {coin.thumb && (
-                                            <img src={coin.thumb} alt="" width={20} height={20} />
+                                            <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />
                                         )}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
