@@ -9,6 +9,7 @@ import {
   getCategorySlugs,
   isCategorySlug,
 } from '../../data/category-hubs';
+import { CATEGORY_HUB_BODY } from '../../data/category-hub-body';
 import { DEFAULT_LANG } from '../../i18n/utils';
 import Layout from '../../layouts/Layout.astro';
 
@@ -110,6 +111,7 @@ const schemas = [
       homeHref={homeHref}
       categoriesHref={categoriesHref}
       lastUpdated={LAST_UPDATED}
+      bodyCopy={CATEGORY_HUB_BODY[category.slug]}
     />
   </SiteChrome>
   <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
