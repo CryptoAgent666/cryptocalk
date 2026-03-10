@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-09] (update 7)
+
+### Changed
+- **D1 — Убран дублирующий Related блок**: Удалён inline "See also" callout из `LocalizedCalculatorPage.astro` и из 10 custom EN страниц. Related calculators теперь отображается единожды — в конце страницы в полном виде.
+- **D2 — ShareCalculator перенесён после калькулятора**: В `LocalizedCalculatorPage.astro` `<ShareCalculator>` теперь рендерится после `<slot name="calculator">`, а не до. Пользователь сначала пользуется инструментом, потом делится результатом.
+- **D3 — Мобильный UX: уменьшен padding**: `calculator-section` padding снижен с 40px до 28px (десктоп) и 16px (мобиль). `calc-header` на мобиле выровнен по левому краю. Калькулятор теперь виден выше на смартфонах без скролла.
+- **D4 — CategoryHubPage: карточки на мобиле, таблица на десктопе**: Убрано дублирование списка инструментов. `tools-mobile` (grid карточек) показывается при ширине < 860px; `tools-desktop` (таблица) — при ≥ 860px. Два варианта дополняют, а не дублируют друг друга.
+- **D5 — headingMap использует localizedTitle**: Переработан в функцию `buildHeadings(localizedTitle, lang)`. Заголовок "How to use [Calculator Name]" теперь содержит локализованное название для всех 6 языков, а не EN-строку из props.
+- **D6 — Ограничение SEO-секций по типу калькулятора**: Создан `src/data/calculator-sections.ts` с маппингом `slug → active sections[]`. Конвертеры показывают 4 секции вместо 10; налоговые — 6; simple tools — 5; DeFi — 8-9. Устраняет near-duplicate content risk.
+
+### Added
+- `src/data/calculator-sections.ts` — конфигурация активных SEO-секций для 25+ калькуляторов.
+
 ## [2026-03-09] (update 6)
 
 ### Added
