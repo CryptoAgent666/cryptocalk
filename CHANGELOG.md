@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-09] (update 4)
+
+### Added
+- **SEO: Батч 4 завершён — уникальный контент для калькуляторов 42-51**: Добавлен контент в `src/i18n/calculator-seo-ext.ts` для `exchange-fees`, `portfolio-rebalancer`, `tax-calculator`, `dollar-cost-averaging`, `break-even`, `position-size`, `liquidation-price`, `nft-rarity-price`, `leverage-calculator`, `inflation-hedge`. Все 6 языков, 8 секций каждый. Сборка: 754 страницы, 0 ошибок.
+- **SEO: Батч 3 — уникальный контент для калькуляторов 29-41**: Добавлен контент для `market-cap`, `fully-diluted-valuation`, `token-unlock`, `vesting-schedule`, `airdrop-value`, `ico-roi`, `token-distribution`, `token-gating-access`, `tokenomics-modeling`, `dao-voting-power`, `wallet-address-balance`, `transaction-fees`, `unit-converter`.
+
 ## [2026-03-09] (update 3)
 
 ### Added
