@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Bridge Cost Comparator"
   description="Compare crypto bridge routes by estimated total fee, speed, and security score across major L2 and multichain bridges."
 >
-  <BridgeComparator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <BridgeComparator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

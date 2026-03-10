@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Value at Risk (VaR) Calculator"
   description="Estimate portfolio downside risk with parametric VaR and expected shortfall (CVaR) across confidence levels."
 >
-  <VarCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <VarCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Risk / Reward Calculator"
   description="Evaluate risk-to-reward structure and validate setup quality before execution."
 >
-  <RiskRewardCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <RiskRewardCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Crypto Tax Calculator"
   description="Estimate capital gains tax impact and compare post-tax outcomes across scenarios."
 >
-  <TaxCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <TaxCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

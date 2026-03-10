@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Mining Calculator"
   description="Estimate mining profitability using hashrate, power cost, network conditions, and asset price assumptions."
 >
-  <MiningCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <MiningCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -9,7 +9,7 @@ import DrawdownCalculator from '../components/DrawdownCalculator.tsx';
   title="Drawdown Recovery Calculator"
   description="Measure portfolio drawdown, required recovery gain, and estimated recovery time based on expected monthly return."
 >
-  <DrawdownCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <DrawdownCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>
 
 <style>

@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Market Cap Calculator"
   description="Calculate token price from market cap and supply, or market cap from token price, with live crypto reference data."
 >
-  <MarketCapCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <MarketCapCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

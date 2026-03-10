@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="HODL vs Trade Calculator"
   description="Compare long-term holding and active trading outcomes under realistic friction assumptions."
 >
-  <HodlVsTradeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <HodlVsTradeCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

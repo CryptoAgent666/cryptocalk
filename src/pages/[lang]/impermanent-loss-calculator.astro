@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Impermanent Loss Calculator"
   description="Measure impermanent loss and evaluate LP fee income versus passive holding alternatives."
 >
-  <ImpermanentLossCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <ImpermanentLossCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -5,6 +5,8 @@ import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
 import PipCalculator from '../components/PipCalculator.tsx';
 import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
+import ShareCalculator from '../components/ShareCalculator.astro';
+import '../styles/calculator-page.css';
 ---
 
 <Layout
@@ -47,7 +49,10 @@ import SiteFooter from '../components/SiteFooter.astro';
           <h1>Crypto Pip / Tick Value Calculator</h1>
           <p>Calculate the exact dollar value of each price movement for your position size. Essential for precise stop-loss, take-profit, and risk planning.</p>
         </div>
-        <PipCalculator lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+        <div class="calc-scope">
+        <PipCalculator lang={'en'} client:load />
+                <ShareCalculator lang="en" />
+        </div>
       </div>
     </section>
 
@@ -187,53 +192,29 @@ import SiteFooter from '../components/SiteFooter.astro';
     </section>
   </main>
 
-  <SiteFooter />
+  <SiteFooter lang="en" />
 </Layout>
 
 <style>
   .site-header { position: sticky; top: 0; z-index: 100; background-color: var(--color-bg-header); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border-bottom: 1px solid var(--color-border); }
-  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { display: flex; align-items: center; gap: 8px; color: var(--color-text); font-size: 1.25rem; font-weight: 600; text-decoration: none; }
-  .logo:hover { color: var(--color-text); }
-  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
-  .logo-text b { font-weight: 800; background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .header-actions { display: flex; align-items: center; gap: 16px; }
-  .header-link { display: flex; align-items: center; gap: 4px; font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; }
-  .header-link:hover { color: var(--color-text); }
   .breadcrumb { padding: 16px 0; border-bottom: 1px solid var(--color-border); }
-  .breadcrumb .section-container { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--color-text-muted); }
-  .breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
   .breadcrumb a:hover { color: var(--color-primary); }
-  .breadcrumb a[aria-current] { color: var(--color-text); font-weight: 500; }
   .section-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-  .calculator-section { padding: 40px 0 60px; }
-  .calc-header { margin-bottom: 32px; }
-  .calc-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
-  .calc-header p { color: var(--color-text-secondary); font-size: 0.95rem; max-width: 650px; }
   .seo-content { padding: 60px 0; border-top: 1px solid var(--color-border); }
-  .seo-content h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; color: var(--color-text); margin-top: 40px; }
-  .seo-content h2:first-child { margin-top: 0; }
-  .seo-content h3 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 8px; color: var(--color-text); }
-  .seo-content p, .seo-content li { color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 12px; max-width: 780px; }
-  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
-  .seo-content a { color: var(--color-primary); text-decoration: none; }
-  .seo-content a:hover { text-decoration: underline; }
-  .seo-content details { margin-bottom: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
-  .seo-content summary { padding: 12px 16px; font-weight: 600; cursor: pointer; color: var(--color-text); background: var(--color-bg-card); }
+  .seo-content p,
+  .seo-content ol,
   .seo-content summary:hover { background: var(--color-bg-card-hover); }
-  .seo-content details p { padding: 0 16px 12px; margin-bottom: 0; }
   .seo-content details[open] summary { border-bottom: 1px solid var(--color-border); }
-  .formula-block { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 16px 20px; margin: 12px 0 16px; max-width: 780px; }
-  .formula-block code { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
-  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 780px; }
-  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
-  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
-  .table-responsive td { color: var(--color-text-secondary); }
   .site-footer { border-top: 1px solid var(--color-border); padding: 32px 0; }
-  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
   .footer-bottom { text-align: center; }
-  .footer-bottom p { font-size: 0.8rem; color: var(--color-text-muted); }
+
+  @media (max-width: 640px) {
+
+    .section-container {
+      padding: 0 16px;
+    }
+  }
+
 </style>
 
 <script type="application/ld+json">

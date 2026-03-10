@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Pip / Tick Value Calculator"
   description="Calculate pip and tick value impact on PnL to improve risk and execution planning."
 >
-  <PipCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <PipCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

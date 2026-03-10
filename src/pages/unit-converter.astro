@@ -9,7 +9,7 @@ import CryptoUnitConverter from '../components/CryptoUnitConverter.tsx';
   title="Crypto Unit Converter"
   description="Convert denomination units for BTC, ETH, SOL, and USDT including satoshi, gwei, lamport, and micro units."
 >
-  <CryptoUnitConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <CryptoUnitConverter slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>
 
 <style>
