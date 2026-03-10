@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="GPU Mining Calculator"
   description="Estimate GPU mining profitability with live assumptions for hashrate, power draw, electricity rates, and pool fees."
 >
-  <GpuMiningCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <GpuMiningCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

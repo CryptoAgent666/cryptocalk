@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Margin Calculator"
   description="Calculate required margin, maintenance levels, and collateral efficiency for leveraged positions."
 >
-  <MarginCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <MarginCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

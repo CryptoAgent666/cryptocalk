@@ -4,6 +4,7 @@ interface Translations {
     // Header / Nav
     siteName: string;
     allCalculators: string;
+    allCategoryCalculators: string;
     home: string;
 
     // Calculator names
@@ -127,6 +128,7 @@ const translations: Record<Lang, Translations> = {
     en: {
         siteName: 'CryptoCalk',
         allCalculators: '← All Calculators',
+        allCategoryCalculators: '← All {category} calculators',
         home: 'Home',
         profitCalculator: 'Profit Calculator',
         cryptoConverter: 'Crypto Converter',
@@ -237,6 +239,7 @@ const translations: Record<Lang, Translations> = {
     es: {
         siteName: 'CryptoCalk',
         allCalculators: '← Todas las Calculadoras',
+        allCategoryCalculators: '← Todas las herramientas: {category}',
         home: 'Inicio',
         profitCalculator: 'Calculadora de Ganancias',
         cryptoConverter: 'Convertidor Crypto',
@@ -347,6 +350,7 @@ const translations: Record<Lang, Translations> = {
     pt: {
         siteName: 'CryptoCalk',
         allCalculators: '← Todas as Calculadoras',
+        allCategoryCalculators: '← Todas as ferramentas: {category}',
         home: 'Início',
         profitCalculator: 'Calculadora de Lucro',
         cryptoConverter: 'Conversor Crypto',
@@ -457,6 +461,7 @@ const translations: Record<Lang, Translations> = {
     tr: {
         siteName: 'CryptoCalk',
         allCalculators: '← Tüm Hesap Makineleri',
+        allCategoryCalculators: '← Tüm araçlar: {category}',
         home: 'Ana Sayfa',
         profitCalculator: 'Kâr Hesaplayıcı',
         cryptoConverter: 'Kripto Dönüştürücü',
@@ -567,6 +572,7 @@ const translations: Record<Lang, Translations> = {
     hi: {
         siteName: 'CryptoCalk',
         allCalculators: '← सभी कैलकुलेटर',
+        allCategoryCalculators: '← सभी टूल्स: {category}',
         home: 'होम',
         profitCalculator: 'प्रॉफिट कैलकुलेटर',
         cryptoConverter: 'क्रिप्टो कनवर्टर',
@@ -677,6 +683,7 @@ const translations: Record<Lang, Translations> = {
     ru: {
         siteName: 'CryptoCalk',
         allCalculators: '← Все Калькуляторы',
+        allCategoryCalculators: '← Все инструменты: {category}',
         home: 'Главная',
         profitCalculator: 'Калькулятор Прибыли',
         cryptoConverter: 'Крипто Конвертер',

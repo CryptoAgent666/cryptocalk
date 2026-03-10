@@ -9,7 +9,7 @@ import LoanCalculator from '../components/LoanCalculator.tsx';
   title="Crypto Loan Calculator"
   description="Estimate crypto-backed loan amount, interest costs, margin call threshold, and liquidation risk."
 >
-  <LoanCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <LoanCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>
 
 <style>

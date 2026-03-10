@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Hashrate Converter"
   description="Convert mining hashrate units from H/s up to EH/s and compare typical ranges for ASIC and GPU hardware."
 >
-  <HashrateConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <HashrateConverter slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="APY vs APR Calculator"
   description="Compare APY and APR correctly and estimate compounding effects over your selected horizon."
 >
-  <ApyAprCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <ApyAprCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

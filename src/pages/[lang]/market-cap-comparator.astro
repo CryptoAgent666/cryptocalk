@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Market Cap Comparator"
   description="Compare market cap scenarios and estimate hypothetical token prices under alternate cap assumptions."
 >
-  <MarketCapComparator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <MarketCapComparator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

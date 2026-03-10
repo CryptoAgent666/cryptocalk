@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Staking Rewards Calculator"
   description="Estimate staking rewards, compounding outcomes, and validator fee impact over time."
 >
-  <StakingRewardsCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <StakingRewardsCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Gwei Converter"
   description="Convert Wei, Gwei, and Ether units instantly with live ETH price and practical gas cost examples."
 >
-  <GweiConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <GweiConverter slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

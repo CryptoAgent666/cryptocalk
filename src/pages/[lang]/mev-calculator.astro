@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="MEV Protection Calculator"
   description="Estimate sandwich/frontrun risk and potential savings from MEV protection routes based on swap size and slippage."
 >
-  <MevProtectionCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <MevProtectionCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

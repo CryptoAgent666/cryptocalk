@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Risk of Ruin Calculator"
   description="Estimate probability of account ruin from win rate, reward/risk profile, and fixed risk per trade."
 >
-  <RiskOfRuinCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <RiskOfRuinCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

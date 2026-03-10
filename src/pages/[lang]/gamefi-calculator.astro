@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="GameFi ROI Calculator"
   description="Estimate payback period and annual ROI for play-to-earn strategies based on setup cost, token rewards, and running expenses."
 >
-  <GamefiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <GamefiCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

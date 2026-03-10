@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="ROI Calculator"
   description="Measure total and annualized ROI across different investment periods and assumptions."
 >
-  <RoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <RoiCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

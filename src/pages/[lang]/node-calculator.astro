@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Validator Node Calculator"
   description="Model validator node economics using staked amount, APR, commission, uptime, and infrastructure costs."
 >
-  <NodeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <NodeCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -5,6 +5,8 @@ import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
 import CryptoConverter from '../components/CryptoConverter.tsx';
 import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
+import ShareCalculator from '../components/ShareCalculator.astro';
+import '../styles/calculator-page.css';
 ---
 
 <Layout
@@ -51,7 +53,10 @@ import SiteFooter from '../components/SiteFooter.astro';
           <p>Convert any cryptocurrency to fiat instantly. Real-time prices from CoinGecko.</p>
         </div>
 
-        <CryptoConverter lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+        <div class="calc-scope">
+        <CryptoConverter lang={'en'} client:load />
+                <ShareCalculator lang="en" />
+        </div>
       </div>
     </section>
 
@@ -170,82 +175,10 @@ import SiteFooter from '../components/SiteFooter.astro';
   </main>
 
   <!-- Footer -->
-  <SiteFooter />
+  <SiteFooter lang="en" />
 </Layout>
 
 <style>
-  /* ===== Header ===== */
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: var(--color-bg-header);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border-bottom: 1px solid var(--color-border);
-  }
-  .header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--color-text);
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .logo:hover { color: var(--color-text); }
-  .logo-text { font-weight: 400; letter-spacing: -0.02em; }
-  .logo-text b {
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .header-link {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-  }
-  .header-link:hover { color: var(--color-text); }
-
-  /* ===== Breadcrumb ===== */
-  .breadcrumb {
-    padding: 16px 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .breadcrumb .section-container {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
-  }
-  .breadcrumb a {
-    color: var(--color-text-muted);
-    text-decoration: none;
-  }
-  .breadcrumb a[aria-current] {
-    color: var(--color-text);
-    font-weight: 600;
-  }
 
   /* ===== Layout ===== */
   .section-container {
@@ -256,100 +189,8 @@ import SiteFooter from '../components/SiteFooter.astro';
   .converter-container {
     max-width: 720px;
   }
-  .calculator-section {
-    padding: 40px 0 60px;
-  }
-  .calc-header {
-    text-align: center;
-    margin-bottom: 32px;
-  }
-  .calc-header h1 {
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 8px;
-  }
-  .calc-header p {
-    color: var(--color-text-secondary);
-    font-size: 1rem;
-  }
-
-  /* ===== SEO Content ===== */
-  .seo-content {
-    padding: 60px 0;
-    border-top: 1px solid var(--color-border);
-    background-color: var(--color-bg-card);
-  }
-  .seo-content h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
-  }
-  .seo-content h2 { margin-top: 40px; }
-  .seo-content h2:first-child { margin-top: 0; }
-  .seo-content h3 {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin: 32px 0 12px;
-  }
-  .seo-content p, .seo-content li {
-    color: var(--color-text-secondary);
-    line-height: 1.8;
-    margin-bottom: 12px;
-    max-width: 720px;
-  }
-  .seo-content ol, .seo-content ul { padding-left: 24px; margin-bottom: 16px; }
-  .seo-content a { color: var(--color-primary); text-decoration: none; }
-  .seo-content a:hover { text-decoration: underline; }
-  .table-responsive { overflow-x: auto; margin: 16px 0 24px; max-width: 720px; }
-  .table-responsive table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-  .table-responsive th, .table-responsive td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--color-border); }
-  .table-responsive th { font-weight: 600; color: var(--color-text); background: var(--color-bg-card); }
-  .table-responsive td { color: var(--color-text-secondary); }
-  .formula-block {
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: 16px 20px;
-    margin: 12px 0 16px;
-    max-width: 600px;
-  }
-  .formula-block code {
-    font-family: 'SF Mono', 'Fira Code', monospace;
-    font-size: 0.9rem;
-    color: var(--color-primary);
-  }
-  .seo-content details {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: 16px 20px;
-    margin-bottom: 8px;
-    max-width: 720px;
-    cursor: pointer;
-  }
-  .seo-content summary {
-    font-weight: 600;
-    color: var(--color-text);
-  }
-  .seo-content details p {
-    margin-top: 12px;
-  }
-
-  /* ===== Footer ===== */
-  .site-footer {
-    padding: 24px 0;
-  }
-  .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-  .footer-bottom p {
-    font-size: 0.8rem;
-    color: var(--color-text-muted);
-    text-align: center;
-  }
+  .seo-content p,
+  .seo-content ol,
 </style>
 
 <style is:global>

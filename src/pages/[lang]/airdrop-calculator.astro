@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Airdrop Value Calculator"
   description="Estimate gross and net airdrop value with tax impact and after-fee outcome scenarios."
 >
-  <AirdropCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <AirdropCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

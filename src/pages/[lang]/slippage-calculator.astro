@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="DEX Slippage Calculator"
   description="Estimate swap slippage, minimum received amount, and total execution cost for DEX trades."
 >
-  <SlippageCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <SlippageCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>
