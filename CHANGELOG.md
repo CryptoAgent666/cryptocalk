@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-09] (update 10) — React hydration fix + dark mode FOUC
+
+### Fixed
+- **React Error #418 (hydration mismatch)**: Корневая причина — `ThemeToggle.tsx` вызывал `getInitialTheme()` прямо в `useState(getInitialTheme)`, что читало `localStorage` при инициализации. SSR рендерил `'light'` (нет `window`), а клиент при гидрации получал `'dark'` — несовпадение. **Фикс**: убрана функция `getInitialTheme`, начальное состояние всегда `'light'`, реальное значение считывается в `useEffect`. Ошибка устранена на всех 754 страницах.
+- **Dark mode FOUC (Flash Of Unstyled Content)**: Скрипт инициализации темы был расположен в конце `<head>` после шрифтов, фавиконов и GA-скриптов. Браузер успевал отрисовать страницу в светлой теме до применения `data-theme`. **Фикс**: скрипт перенесён на самый верх `<head>` (сразу после `<meta viewport>`), обёрнут в try/catch. Тема применяется до парсинга CSS.
+
 ## [2026-03-09] (update 9) — AdSense readiness fixes
 
 ### Changed
