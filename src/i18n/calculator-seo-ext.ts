@@ -5788,4 +5788,1575 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
   },
 
+
+  'market-cap': {
+    en: {
+      interpret: [
+        "Market capitalization figures give you a snapshot of how the market collectively values a crypto asset at a specific moment. A rising market cap typically signals growing investor confidence and capital inflows, while a declining market cap often points to profit-taking, fear, or reduced network activity. Context matters enormously: a $500 million market cap project in a niche sector may be a dominant player, while the same figure in a crowded category could indicate an underperformer. Always compare market cap changes against trading volume — large market cap moves on thin volume can be misleading.",
+        "When interpreting results, pay attention to the relationship between circulating supply and total supply. A coin with 10% of its tokens in circulation will have a very different market cap trajectory than one with 90% circulating. Low circulating supply creates potential for future dilution that the market cap number alone won't reveal. For a complete picture, pair market cap data with fully diluted valuation (FDV) to understand the project's theoretical ceiling if all tokens were released today."
+      ],
+      scenarios: [
+        "A DeFi protocol launches with a $2 million market cap and gains $800,000 in TVL over three weeks. Investors watch the market cap-to-TVL ratio compress from 2.5x to 1.8x, signaling improving fundamental value. This ratio tightening attracts value-oriented buyers who see the protocol becoming more efficiently priced relative to its actual usage and locked capital.",
+        "A layer-1 blockchain has a $40 billion market cap but only 15% of tokens are circulating. Its FDV stands at $267 billion, exceeding many established blockchain networks. A sophisticated investor recognizes this as a red flag: once vesting schedules release the remaining 85%, enormous sell pressure could materialize, potentially collapsing the price even if the project executes flawlessly on its roadmap."
+      ],
+      checklist: [
+        "Before acting on market cap data, verify you're using circulating supply (not total supply) for the calculation, check whether the current figure represents a multi-month high or low, and cross-reference with on-chain data to confirm the supply figures reported by price aggregators are accurate and up-to-date.",
+        "Evaluate market cap in relation to at least three other metrics: FDV ratio, price-to-earnings equivalent for yield-generating protocols, and market cap dominance within the asset's sector. A single market cap figure without these comparisons provides limited actionable insight and can lead to poorly timed entry or exit decisions."
+      ],
+      mistakes: [
+        "Treating market cap as equivalent to the total money invested in a project is a fundamental misunderstanding. If a token has 100,000 units and trades at $10, its $1 million market cap doesn't mean $1 million of cash flowed into it — it might have required just a few thousand dollars of buying pressure to move the last price to that level. This illusion of size fools many investors into overestimating project liquidity and stability.",
+        "Ignoring sector context when evaluating market cap leads to poor comparisons. Comparing a DeFi token's market cap to a Layer-1 blockchain's market cap without adjusting for fundamentals, revenue, and user metrics produces meaningless rankings. Projects in different sectors have entirely different valuation multiples — applying uniform standards across sectors distorts your analysis."
+      ],
+      benchmarks: [
+        "Large-cap cryptocurrencies (above $10 billion) historically exhibit lower volatility and better liquidity than mid-caps ($1–10 billion) and small-caps (below $1 billion). During the 2021 bull market, large-caps averaged 4x–8x gains from trough to peak, while small-caps frequently delivered 20x–100x — with correspondingly higher drawdowns of 90%+ during subsequent corrections.",
+        "Market cap dominance metrics show Bitcoin typically capturing 40%–60% of total crypto market cap during consolidation phases, often rising to 65%–70% during bear market capitulation. Altcoin seasons historically begin when Bitcoin dominance drops below 45% and altcoin market caps collectively expand. Monitoring these dominance ratios helps time sector rotation between Bitcoin and altcoins."
+      ],
+      execution: [
+        "When using market cap data to time entries, focus on market cap relative to recent peaks rather than absolute values. Buying at 30%–50% below a 90-day market cap high has historically provided better risk-adjusted returns than chasing tokens near all-time-high market caps. Set price alerts at key market cap thresholds — round numbers like $1B, $5B, and $10B often act as psychological resistance levels.",
+        "For portfolio sizing based on market cap tiers, consider allocating the majority of crypto exposure to large-caps for stability, a smaller portion to mid-caps for growth, and a limited allocation to small-caps for asymmetric upside. Rebalance when individual positions exceed target allocations by more than 25%, selling into strength and buying on weakness to maintain intended risk levels."
+      ],
+      hygiene: [
+        "Refresh market cap data at minimum every 24 hours for long-term positions, and every few minutes for active trading decisions. Stale data during fast-moving markets can lead to decisions based on prices that are 5%–15% off from reality. Use aggregator APIs with WebSocket streaming support for real-time market cap tracking during periods of high volatility.",
+        "Maintain a log of market cap readings at key dates — project announcements, token unlock events, and major news — to build your own historical reference database. This record helps you identify whether the market has already priced in anticipated events or whether the market cap reflects outdated information. Personal data logs also reduce reliance on third-party historical data that may be inconsistent."
+      ],
+      validation: [
+        "Validate market cap calculations by cross-referencing at least two independent data sources: CoinGecko, CoinMarketCap, or on-chain analytics platforms. Discrepancies of more than 2%–3% in circulating supply figures warrant investigation — sometimes tokens are burned, locked in smart contracts, or incorrectly counted as circulating. Verify supply data directly from blockchain explorers when precision matters.",
+        "Test your market cap thesis against historical scenarios: would your investment rationale have held during the 2018 crypto winter when market caps fell 80%–95%? Would it have survived the March 2020 COVID crash? Stress-testing your thesis against these historical events reveals whether your market cap analysis accounts for tail risks or relies entirely on continued favorable conditions."
+      ]
+    },
+    es: {
+      interpret: [
+        "La capitalización de mercado proporciona una instantánea del valor colectivo que el mercado asigna a un activo criptográfico en un momento específico. Un aumento de la capitalización generalmente señala creciente confianza inversora y flujos de capital, mientras que una caída suele indicar toma de ganancias, miedo o reducción de actividad en la red. El contexto es fundamental: una capitalización de $500 millones en un sector de nicho puede representar al jugador dominante, mientras que la misma cifra en una categoría saturada podría indicar bajo rendimiento.",
+        "Al interpretar los resultados, presta atención a la relación entre la oferta circulante y la oferta total. Una moneda con el 10% de sus tokens en circulación tendrá una trayectoria de capitalización muy diferente a una con el 90% circulando. La baja oferta circulante crea el potencial de una dilución futura que el número de capitalización por sí solo no revelará. Para una imagen completa, combina datos de capitalización con la valoración completamente diluida (FDV)."
+      ],
+      scenarios: [
+        "Un protocolo DeFi lanza con una capitalización de $2 millones y gana $800,000 en TVL en tres semanas. Los inversores observan cómo la relación capitalización-TVL se comprime de 2.5x a 1.8x, señalando una mejora en el valor fundamental. Esta compresión atrae compradores orientados al valor que ven el protocolo valorándose de manera más eficiente en relación con su uso real.",
+        "Una blockchain de capa 1 tiene una capitalización de $40 mil millones, pero solo el 15% de los tokens están en circulación. Su FDV asciende a $267 mil millones, superando a muchas redes blockchain establecidas. Un inversor sofisticado reconoce esto como una señal de alerta: una vez que los calendarios de adquisición liberen el 85% restante, podría materializarse una enorme presión vendedora."
+      ],
+      checklist: [
+        "Antes de actuar sobre datos de capitalización, verifica que estás usando la oferta circulante (no la oferta total) para el cálculo, comprueba si la cifra actual representa un máximo o mínimo de varios meses, y contrasta con datos on-chain para confirmar que las cifras de oferta reportadas por los agregadores de precios sean precisas y actualizadas.",
+        "Evalúa la capitalización en relación con al menos otros tres métricas: ratio FDV, equivalente precio-ganancias para protocolos que generan rendimiento, y dominancia de capitalización dentro del sector del activo. Una sola cifra de capitalización sin estas comparaciones proporciona información accionable limitada."
+      ],
+      mistakes: [
+        "Tratar la capitalización de mercado como equivalente al dinero total invertido en un proyecto es un malentendido fundamental. Si un token tiene 100,000 unidades y cotiza a $10, su capitalización de $1 millón no significa que $1 millón de efectivo fluyó hacia él — podría haber requerido solo unos pocos miles de dólares de presión compradora para mover el último precio a ese nivel.",
+        "Ignorar el contexto sectorial al evaluar la capitalización lleva a comparaciones pobres. Comparar la capitalización de un token DeFi con la de una blockchain de Capa 1 sin ajustar por fundamentos, ingresos y métricas de usuarios produce rankings sin sentido. Los proyectos en diferentes sectores tienen múltiplos de valoración completamente diferentes."
+      ],
+      benchmarks: [
+        "Las criptomonedas de gran capitalización (más de $10 mil millones) históricamente exhiben menor volatilidad y mejor liquidez que las de mediana ($1–10 mil millones) y pequeña capitalización (menos de $1 mil millones). Durante el mercado alcista de 2021, las de gran capitalización promediaron ganancias de 4x–8x desde el mínimo al máximo, mientras que las de pequeña capitalización frecuentemente entregaron 20x–100x.",
+        "Las métricas de dominancia de capitalización muestran que Bitcoin típicamente captura el 40%–60% de la capitalización total del mercado cripto durante fases de consolidación, a menudo subiendo al 65%–70% durante la capitulación del mercado bajista. Las temporadas altcoin históricamente comienzan cuando la dominancia de Bitcoin cae por debajo del 45%."
+      ],
+      execution: [
+        "Al usar datos de capitalización para temporizar entradas, enfócate en la capitalización relativa a picos recientes en lugar de valores absolutos. Comprar al 30%–50% por debajo de un máximo de capitalización de 90 días históricamente ha proporcionado mejores retornos ajustados al riesgo que perseguir tokens cerca de máximos históricos de capitalización.",
+        "Para el dimensionamiento de cartera basado en niveles de capitalización, considera asignar la mayoría de la exposición cripto a grandes capitalizaciones para estabilidad, una porción menor a medianas capitalizaciones para crecimiento, y una asignación limitada a pequeñas capitalizaciones para potencial alcista asimétrico."
+      ],
+      hygiene: [
+        "Actualiza los datos de capitalización al menos cada 24 horas para posiciones a largo plazo, y cada pocos minutos para decisiones de trading activo. Los datos obsoletos durante mercados de rápido movimiento pueden llevar a decisiones basadas en precios que difieren un 5%–15% de la realidad.",
+        "Mantén un registro de lecturas de capitalización en fechas clave — anuncios del proyecto, eventos de desbloqueo de tokens y noticias importantes — para construir tu propia base de datos de referencia histórica. Este registro te ayuda a identificar si el mercado ya ha descontado eventos anticipados."
+      ],
+      validation: [
+        "Valida los cálculos de capitalización cruzando al menos dos fuentes de datos independientes: CoinGecko, CoinMarketCap o plataformas de análisis on-chain. Discrepancias superiores al 2%–3% en las cifras de oferta circulante justifican investigación — a veces los tokens se queman, se bloquean en contratos inteligentes o se cuentan incorrectamente.",
+        "Prueba tu tesis de capitalización contra escenarios históricos: ¿habría mantenido tu razonamiento de inversión durante el invierno cripto de 2018 cuando las capitalizaciones cayeron un 80%–95%? ¿Habría sobrevivido al crash de COVID de marzo de 2020? Estas pruebas de estrés revelan si tu análisis tiene en cuenta riesgos extremos."
+      ]
+    },
+    pt: {
+      interpret: [
+        "A capitalização de mercado fornece um instantâneo do valor coletivo que o mercado atribui a um ativo criptográfico em um momento específico. Uma capitalização crescente tipicamente sinaliza crescente confiança dos investidores e influxos de capital, enquanto uma capitalização em declínio frequentemente aponta para realização de lucros, medo ou redução da atividade da rede. O contexto importa enormemente: uma capitalização de $500 milhões em um setor de nicho pode representar o player dominante.",
+        "Ao interpretar os resultados, preste atenção ao relacionamento entre o fornecimento circulante e o fornecimento total. Uma moeda com 10% de seus tokens em circulação terá uma trajetória de capitalização muito diferente de uma com 90% circulando. Baixo fornecimento circulante cria potencial para diluição futura que o número de capitalização sozinho não revelará."
+      ],
+      scenarios: [
+        "Um protocolo DeFi lança com uma capitalização de $2 milhões e ganha $800.000 em TVL em três semanas. Os investidores observam a relação capitalização-TVL comprimir de 2,5x para 1,8x, sinalizando melhoria do valor fundamental. Esta compressão da relação atrai compradores orientados ao valor.",
+        "Uma blockchain de camada 1 tem uma capitalização de $40 bilhões, mas apenas 15% dos tokens estão em circulação. Seu FDV fica em $267 bilhões, superando muitas redes blockchain estabelecidas. Um investidor sofisticado reconhece isso como um sinal de alerta: uma vez que os cronogramas de vesting liberem os 85% restantes, enorme pressão de venda pode se materializar."
+      ],
+      checklist: [
+        "Antes de agir sobre dados de capitalização, verifique se está usando o fornecimento circulante (não o fornecimento total) para o cálculo, verifique se a figura atual representa um máximo ou mínimo de vários meses, e faça referência cruzada com dados on-chain para confirmar que as figuras de fornecimento reportadas pelos agregadores de preços são precisas.",
+        "Avalie a capitalização em relação a pelo menos três outras métricas: razão FDV, equivalente preço-lucro para protocolos geradores de rendimento, e dominância de capitalização dentro do setor do ativo. Uma única figura de capitalização sem essas comparações fornece insight acionável limitado."
+      ],
+      mistakes: [
+        "Tratar a capitalização de mercado como equivalente ao dinheiro total investido em um projeto é um mal-entendido fundamental. Se um token tem 100.000 unidades e negocia a $10, sua capitalização de $1 milhão não significa que $1 milhão de dinheiro fluiu para ele — pode ter exigido apenas alguns milhares de dólares de pressão de compra para mover o último preço a esse nível.",
+        "Ignorar o contexto setorial ao avaliar a capitalização leva a comparações pobres. Comparar a capitalização de um token DeFi com a de uma blockchain de Camada 1 sem ajustar por fundamentos, receitas e métricas de usuários produz rankings sem sentido. Projetos em diferentes setores têm múltiplos de avaliação completamente diferentes."
+      ],
+      benchmarks: [
+        "Criptomoedas de grande capitalização (acima de $10 bilhões) historicamente exibem menor volatilidade e melhor liquidez do que as de média ($1–10 bilhões) e pequena capitalização (abaixo de $1 bilhão). Durante o mercado em alta de 2021, as de grande capitalização tiveram ganhos médios de 4x–8x do fundo ao pico.",
+        "Métricas de dominância de capitalização mostram que o Bitcoin tipicamente captura 40%–60% da capitalização total do mercado cripto durante fases de consolidação, frequentemente subindo para 65%–70% durante a capitulação do mercado de baixa. Temporadas de altcoins historicamente começam quando a dominância do Bitcoin cai abaixo de 45%."
+      ],
+      execution: [
+        "Ao usar dados de capitalização para temporizar entradas, concentre-se na capitalização relativa a picos recentes em vez de valores absolutos. Comprar a 30%–50% abaixo de um máximo de capitalização de 90 dias historicamente proporcionou melhores retornos ajustados ao risco do que perseguir tokens perto de capitalizações de máximos históricos.",
+        "Para dimensionamento de portfólio com base em níveis de capitalização, considere alocar a maioria da exposição cripto para grandes capitalizações para estabilidade, uma porção menor para capitalizações médias para crescimento, e uma alocação limitada para pequenas capitalizações para potencial de alta assimétrico."
+      ],
+      hygiene: [
+        "Atualize os dados de capitalização no mínimo a cada 24 horas para posições de longo prazo, e a cada poucos minutos para decisões de trading ativo. Dados obsoletos durante mercados de movimento rápido podem levar a decisões baseadas em preços que diferem 5%–15% da realidade.",
+        "Mantenha um registro das leituras de capitalização em datas-chave — anúncios do projeto, eventos de desbloqueio de tokens e notícias importantes — para construir seu próprio banco de dados de referência histórica. Este registro ajuda a identificar se o mercado já precificou eventos antecipados."
+      ],
+      validation: [
+        "Valide os cálculos de capitalização cruzando pelo menos duas fontes de dados independentes: CoinGecko, CoinMarketCap ou plataformas de análise on-chain. Discrepâncias de mais de 2%–3% nas figuras de fornecimento circulante justificam investigação — às vezes os tokens são queimados, bloqueados em contratos inteligentes ou incorretamente contabilizados.",
+        "Teste sua tese de capitalização contra cenários históricos: seu raciocínio de investimento teria se sustentado durante o inverno cripto de 2018 quando as capitalizações caíram 80%–95%? Teria sobrevivido ao crash COVID de março de 2020? O teste de estresse de sua tese contra esses eventos históricos revela se sua análise leva em conta riscos extremos."
+      ]
+    },
+    tr: {
+      interpret: [
+        "Piyasa değeri rakamları, piyasanın belirli bir anda bir kripto varlığına kolektif olarak atadığı değerin anlık görüntüsünü sağlar. Artan bir piyasa değeri genellikle büyüyen yatırımcı güvenini ve sermaye girişlerini işaret ederken, düşen bir piyasa değeri genellikle kâr realizasyonuna, korku veya azalan ağ aktivitesine işaret eder. Bağlam büyük önem taşır: niş bir sektörde 500 milyon dolarlık piyasa değeri baskın oyuncuyu temsil edebilir.",
+        "Sonuçları yorumlarken, dolaşımdaki arz ile toplam arz arasındaki ilişkiye dikkat edin. Tokenlerinin %10'u dolaşımda olan bir coin, %90'ı dolaşımda olana göre çok farklı bir piyasa değeri yörüngesine sahip olacaktır. Düşük dolaşımdaki arz, piyasa değeri rakamının tek başına ortaya koymayacağı gelecekteki seyreltme potansiyeli yaratır."
+      ],
+      scenarios: [
+        "Bir DeFi protokolü 2 milyon dolarlık piyasa değeriyle başlatılır ve üç haftada 800.000 dolar TVL kazanır. Yatırımcılar piyasa değeri-TVL oranının 2.5x'ten 1.8x'e sıkışmasını izler; bu, temel değerde iyileşmeye işaret eder. Bu oran sıkışması, protokolün gerçek kullanımına göre daha verimli fiyatlandırıldığını gören değer odaklı alıcıları çeker.",
+        "Bir Layer-1 blockchain'in piyasa değeri 40 milyar dolar ancak tokenlerinin yalnızca %15'i dolaşımda. FDV'si 267 milyar dolara yükseliyor, pek çok köklü blockchain ağını geçiyor. Deneyimli bir yatırımcı bunu kırmızı bayrak olarak tanır: vesting takvimi kalan %85'i serbest bıraktığında, muazzam satış baskısı ortaya çıkabilir."
+      ],
+      checklist: [
+        "Piyasa değeri verilerine göre işlem yapmadan önce, hesaplama için dolaşımdaki arzı (toplam arzı değil) kullandığınızı doğrulayın, mevcut rakamin birkaç aylık yüksek veya düşük seviyeyi temsil edip etmediğini kontrol edin ve fiyat toplayıcıları tarafından bildirilen arz rakamlarının doğru olduğunu doğrulamak için zincir üstü verilerle çapraz referans yapın.",
+        "Piyasa değerini en az üç diğer metrikle ilişkili olarak değerlendirin: FDV oranı, getiri sağlayan protokoller için fiyat-kazanç eşdeğeri ve varlığın sektörü içindeki piyasa değeri baskınlığı. Bu karşılaştırmalar olmaksızın tek bir piyasa değeri rakamı sınırlı eyleme geçirilebilir içgörü sağlar."
+      ],
+      mistakes: [
+        "Piyasa değerini bir projeye yatırılan toplam parayla eşdeğer olarak ele almak temel bir yanlış anlamadır. Bir tokenin 100.000 birimi varsa ve 10 dolara işlem görüyorsa, 1 milyon dolarlık piyasa değeri 1 milyon doların ona aktığı anlamına gelmez — son fiyatı o seviyeye taşımak için yalnızca birkaç bin dolarlık alım baskısı gerekmiş olabilir.",
+        "Piyasa değerini değerlendirirken sektör bağlamını görmezden gelmek zayıf karşılaştırmalara yol açar. Bir DeFi tokeninin piyasa değerini bir Layer-1 blockchain'inkiyle temeller, gelirler ve kullanıcı metrikleri açısından ayarlamadan karşılaştırmak anlamsız sıralamalar üretir."
+      ],
+      benchmarks: [
+        "Büyük piyasa değerli kripto paralar (10 milyar doların üzerinde) tarihsel olarak orta (1–10 milyar dolar) ve küçük piyasa değerlilerine (1 milyar doların altında) kıyasla daha düşük oynaklık ve daha iyi likidite göstermektedir. 2021 boğa piyasasında, büyük piyasa değerliler dipten tepeye ortalama 4x–8x kazanç sağladı.",
+        "Piyasa değeri baskınlığı metrikleri, Bitcoin'in konsolidasyon aşamalarında genellikle toplam kripto piyasa değerinin %40–%60'ını yakaladığını gösteriyor; bu oran ayı piyasası kapitülasyonu sırasında genellikle %65–%70'e yükseliyor. Altcoin sezonları tarihsel olarak Bitcoin baskınlığı %45'in altına düştüğünde başlar."
+      ],
+      execution: [
+        "Girişleri zamanlamak için piyasa değeri verilerini kullanırken, mutlak değerler yerine son zirvelere göre piyasa değerine odaklanın. 90 günlük piyasa değeri zirvesinin %30–%50 altından almak, tarihsel olarak tüm zamanların yüksek piyasa değerlerine yakın token kovalamaktan daha iyi risk-ayarlı getiriler sağlamıştır.",
+        "Piyasa değeri katmanlarına dayalı portföy boyutlandırması için, kripto maruziyetinin büyük bölümünü stabilite için büyük piyasa değerlilerine, daha küçük bir bölümünü büyüme için orta piyasa değerlilerine ve asimetrik yükseliş potansiyeli için sınırlı bir miktarını küçük piyasa değerlilerine tahsis etmeyi düşünün."
+      ],
+      hygiene: [
+        "Uzun vadeli pozisyonlar için piyasa değeri verilerini en az 24 saatte bir, aktif işlem kararları için ise birkaç dakikada bir yenileyin. Hızlı hareket eden piyasalardaki eski veriler, gerçeklikten %5–%15 uzakta fiyatlara dayalı kararlara yol açabilir.",
+        "Önemli tarihler için piyasa değeri okumalarının kaydını tutun — proje duyuruları, token kilidi açma etkinlikleri ve büyük haberler — kendi tarihsel referans veri tabanınızı oluşturmak için. Bu kayıt, piyasanın beklenen olayları zaten fiyatlandırıp fiyatlandırmadığını belirlemenize yardımcı olur."
+      ],
+      validation: [
+        "Piyasa değeri hesaplamalarını en az iki bağımsız veri kaynağı ile çapraz referans yaparak doğrulayın: CoinGecko, CoinMarketCap veya zincir üstü analitik platformlar. Dolaşımdaki arz rakamlarında %2–%3'ü aşan tutarsızlıklar araştırma gerektirir.",
+        "Piyasa değeri tezinizi tarihsel senaryolara karşı test edin: yatırım gerekçeniz piyasa değerlerinin %80–%95 düştüğü 2018 kripto kışında ayakta kalır mıydı? Mart 2020 COVID çöküşünden sağ çıkabilir miydi?"
+      ]
+    },
+    hi: {
+      interpret: [
+        "मार्केट कैपिटलाइज़ेशन के आंकड़े यह दिखाते हैं कि बाज़ार किसी क्रिप्टो संपत्ति को किसी विशेष समय पर सामूहिक रूप से कितना मूल्यवान समझता है। बढ़ती मार्केट कैप आमतौर पर निवेशकों का बढ़ता विश्वास और पूंजी प्रवाह दर्शाती है, जबकि गिरती मार्केट कैप अक्सर मुनाफावसूली, डर या नेटवर्क गतिविधि में कमी का संकेत देती है। संदर्भ बहुत महत्वपूर्ण है: एक आला क्षेत्र में $500 मिलियन की मार्केट कैप प्रमुख खिलाड़ी हो सकती है।",
+        "परिणामों की व्याख्या करते समय, सर्कुलेटिंग सप्लाई और कुल सप्लाई के बीच संबंध पर ध्यान दें। जिस कॉइन के 10% टोकन सर्कुलेशन में हैं, उसकी मार्केट कैप का रास्ता 90% सर्कुलेट करने वाले कॉइन से बहुत अलग होगा। कम सर्कुलेटिंग सप्लाई भविष्य के डाइल्यूशन की संभावना बनाती है जो अकेले मार्केट कैप नंबर से नहीं दिखती।"
+      ],
+      scenarios: [
+        "एक DeFi प्रोटोकॉल $2 मिलियन की मार्केट कैप के साथ लॉन्च होता है और तीन हफ्तों में $800,000 TVL हासिल करता है। निवेशक देखते हैं कि मार्केट कैप-TVL अनुपात 2.5x से 1.8x तक सिकुड़ गया है, जो मूलभूत मूल्य में सुधार का संकेत है। यह अनुपात का सिकुड़ना उन मूल्य-उन्मुख खरीदारों को आकर्षित करता है जो देखते हैं कि प्रोटोकॉल अपने वास्तविक उपयोग के सापेक्ष अधिक कुशलतापूर्वक मूल्यांकित हो रहा है।",
+        "एक Layer-1 ब्लॉकचेन में $40 बिलियन की मार्केट कैप है लेकिन केवल 15% टोकन सर्कुलेशन में हैं। इसका FDV $267 बिलियन है, जो कई स्थापित ब्लॉकचेन नेटवर्क से अधिक है। एक परिष्कृत निवेशक इसे चेतावनी संकेत के रूप में पहचानता है: एक बार जब वेस्टिंग शेड्यूल शेष 85% जारी करते हैं, तो भारी बिक्री दबाव आ सकता है।"
+      ],
+      checklist: [
+        "मार्केट कैप डेटा पर कार्रवाई करने से पहले, सत्यापित करें कि आप गणना के लिए सर्कुलेटिंग सप्लाई (कुल सप्लाई नहीं) का उपयोग कर रहे हैं, जांचें कि मौजूदा आंकड़ा कई महीनों के उच्च या निम्न को दर्शाता है, और ऑन-चेन डेटा से क्रॉस-रेफरेंस करें।",
+        "मार्केट कैप का मूल्यांकन कम से कम तीन अन्य मेट्रिक्स के संबंध में करें: FDV अनुपात, उपज-उत्पन्न करने वाले प्रोटोकॉल के लिए मूल्य-आय समकक्ष, और संपत्ति के क्षेत्र के भीतर मार्केट कैप प्रभुत्व। इन तुलनाओं के बिना एकल मार्केट कैप आंकड़ा सीमित उपयोगी जानकारी प्रदान करता है।"
+      ],
+      mistakes: [
+        "मार्केट कैप को किसी प्रोजेक्ट में निवेश की गई कुल राशि के बराबर मानना एक मूलभूत गलतफहमी है। यदि एक टोकन की 100,000 इकाइयाँ हैं और यह $10 पर ट्रेड होता है, तो इसकी $1 मिलियन की मार्केट कैप का मतलब यह नहीं है कि $1 मिलियन नकद उसमें प्रवाहित हुआ।",
+        "मार्केट कैप का मूल्यांकन करते समय क्षेत्र के संदर्भ को नजरअंदाज करना खराब तुलनाओं की ओर ले जाता है। DeFi टोकन की मार्केट कैप की तुलना Layer-1 ब्लॉकचेन की मार्केट कैप से मूल बातों, राजस्व और उपयोगकर्ता मेट्रिक्स को समायोजित किए बिना करना अर्थहीन रैंकिंग उत्पन्न करता है।"
+      ],
+      benchmarks: [
+        "बड़े मार्केट कैप क्रिप्टोकरेंसी (10 बिलियन डॉलर से ऊपर) ऐतिहासिक रूप से मध्यम ($1–10 बिलियन) और छोटे मार्केट कैप (1 बिलियन डॉलर से नीचे) की तुलना में कम अस्थिरता और बेहतर तरलता प्रदर्शित करती हैं। 2021 के बुल मार्केट में, बड़े मार्केट कैप ने ट्रफ से शिखर तक औसतन 4x–8x लाभ दिया।",
+        "मार्केट कैप प्रभुत्व मेट्रिक्स दिखाते हैं कि बिटकॉइन आमतौर पर समेकन चरणों के दौरान कुल क्रिप्टो मार्केट कैप का 40%–60% पकड़ता है, अक्सर बेयर मार्केट कैपिटुलेशन के दौरान 65%–70% तक बढ़ जाता है।"
+      ],
+      execution: [
+        "प्रवेश को समय देने के लिए मार्केट कैप डेटा का उपयोग करते समय, निरपेक्ष मूल्यों के बजाय हाल के शिखरों के सापेक्ष मार्केट कैप पर ध्यान केंद्रित करें। 90-दिन के मार्केट कैप उच्च से 30%–50% नीचे खरीदना ऐतिहासिक रूप से सर्वकालिक उच्च मार्केट कैप के पास टोकन का पीछा करने की तुलना में बेहतर जोखिम-समायोजित रिटर्न प्रदान करता है।",
+        "मार्केट कैप स्तरों के आधार पर पोर्टफोलियो आकार के लिए, स्थिरता के लिए अधिकांश क्रिप्टो एक्सपोज़र बड़े मार्केट कैप को, विकास के लिए एक छोटा हिस्सा मध्य मार्केट कैप को, और असममित ऊपरी क्षमता के लिए सीमित आवंटन छोटे मार्केट कैप को देने पर विचार करें।"
+      ],
+      hygiene: [
+        "दीर्घकालिक पोजीशन के लिए कम से कम हर 24 घंटे में और सक्रिय ट्रेडिंग निर्णयों के लिए हर कुछ मिनटों में मार्केट कैप डेटा को रीफ्रेश करें। तेजी से बदलते बाज़ारों में पुराना डेटा उन कीमतों पर आधारित निर्णयों की ओर ले जा सकता है जो वास्तविकता से 5%–15% दूर हैं।",
+        "प्रमुख तारीखों पर मार्केट कैप रीडिंग का लॉग बनाए रखें — प्रोजेक्ट घोषणाएं, टोकन अनलॉक इवेंट और प्रमुख समाचार — अपना खुद का ऐतिहासिक संदर्भ डेटाबेस बनाने के लिए।"
+      ],
+      validation: [
+        "कम से कम दो स्वतंत्र डेटा स्रोतों को क्रॉस-रेफरेंस करके मार्केट कैप गणनाओं को मान्य करें: CoinGecko, CoinMarketCap, या ऑन-चेन एनालिटिक्स प्लेटफॉर्म। सर्कुलेटिंग सप्लाई आंकड़ों में 2%–3% से अधिक की विसंगतियां जांच की मांग करती हैं।",
+        "अपनी मार्केट कैप थीसिस को ऐतिहासिक परिदृश्यों के विरुद्ध परखें: क्या आपका निवेश तर्क 2018 के क्रिप्टो शीतकाल में टिका होता जब मार्केट कैप 80%–95% गिरी? क्या यह मार्च 2020 COVID क्रैश से बच सकता था?"
+      ]
+    },
+    ru: {
+      interpret: [
+        "Показатели рыночной капитализации дают мгновенный снимок того, как рынок коллективно оценивает криптоактив в конкретный момент. Растущая капитализация обычно сигнализирует о росте доверия инвесторов и притоке капитала, тогда как снижающаяся часто указывает на фиксацию прибыли, страх или снижение активности сети. Контекст имеет огромное значение: капитализация в $500 млн в нишевом секторе может представлять доминирующего игрока.",
+        "При интерпретации результатов обратите внимание на соотношение между обращающимся предложением и общим предложением. Монета с 10% токенов в обращении будет иметь совершенно иную траекторию капитализации, чем та, где в обращении находится 90%. Низкое обращающееся предложение создаёт потенциал будущего размывания, которое одно число капитализации не раскроет."
+      ],
+      scenarios: [
+        "DeFi-протокол запускается с капитализацией $2 млн и за три недели набирает $800 тыс. TVL. Инвесторы наблюдают, как соотношение капитализации к TVL сжимается с 2,5x до 1,8x, сигнализируя об улучшении фундаментальной ценности. Это сжатие привлекает ценностно-ориентированных покупателей, которые видят, что протокол становится более эффективно оценённым.",
+        "Блокчейн первого уровня имеет капитализацию $40 млрд, но в обращении находится лишь 15% токенов. Его FDV составляет $267 млрд, превышая многие устоявшиеся блокчейн-сети. Опытный инвестор распознаёт в этом красный флаг: как только графики вестинга высвободят оставшиеся 85%, может материализоваться огромное давление продавцов."
+      ],
+      checklist: [
+        "Перед принятием решений на основе данных о капитализации убедитесь, что используете обращающееся предложение (а не общее) для расчёта, проверьте, является ли текущая цифра многомесячным максимумом или минимумом, и сверьтесь с данными on-chain для подтверждения точности цифр предложения.",
+        "Оценивайте капитализацию в соотношении как минимум с тремя другими метриками: коэффициент FDV, аналог P/E для протоколов, генерирующих доход, и доминирование капитализации внутри сектора актива. Единственное число капитализации без этих сравнений даёт ограниченные полезные выводы."
+      ],
+      mistakes: [
+        "Отождествление рыночной капитализации с общей суммой вложенных в проект денег — фундаментальное заблуждение. Если токен имеет 100 000 единиц и торгуется по $10, его капитализация $1 млн не означает, что в него вложен $1 млн — возможно, потребовалось лишь несколько тысяч долларов покупательного давления, чтобы поднять цену до этого уровня.",
+        "Игнорирование отраслевого контекста при оценке капитализации приводит к некорректным сравнениям. Сравнение капитализации DeFi-токена с капитализацией блокчейна первого уровня без учёта фундаментальных показателей, выручки и пользовательских метрик даёт бессмысленные рейтинги."
+      ],
+      benchmarks: [
+        "Крупные криптовалюты (выше $10 млрд) исторически демонстрируют меньшую волатильность и лучшую ликвидность по сравнению со средними ($1–10 млрд) и малыми (ниже $1 млрд). В бычьем рынке 2021 года крупные выросли в среднем в 4–8 раз от минимума до максимума.",
+        "Метрики доминирования показывают, что Bitcoin обычно захватывает 40–60% общей капитализации крипторынка в фазах консолидации, нередко поднимаясь до 65–70% во время капитуляции медвежьего рынка. Сезоны альткоинов исторически начинаются, когда доминирование Bitcoin опускается ниже 45%."
+      ],
+      execution: [
+        "При использовании данных о капитализации для выбора момента входа ориентируйтесь на капитализацию относительно недавних пиков, а не на абсолютные значения. Покупка при снижении на 30–50% от 90-дневного максимума капитализации исторически давала лучший результат с поправкой на риск, чем погоня за токенами вблизи исторических максимумов.",
+        "При распределении портфеля по уровням капитализации рассмотрите выделение большей части крипто-экспозиции в крупные (для стабильности), меньшей — в средние (для роста) и ограниченной доли — в малые (для асимметричного потенциала роста)."
+      ],
+      hygiene: [
+        "Обновляйте данные о капитализации не реже одного раза в 24 часа для долгосрочных позиций и каждые несколько минут для активной торговли. Устаревшие данные в быстро меняющихся рынках могут приводить к решениям, основанным на ценах, которые отличаются от реальных на 5–15%.",
+        "Ведите журнал показателей капитализации на ключевые даты — объявления проекта, события разблокировки токенов, крупные новости — для формирования собственной базы исторических данных. Этот журнал помогает определить, заложил ли рынок ожидаемые события в цену."
+      ],
+      validation: [
+        "Проверяйте расчёты капитализации, сверяясь не менее чем с двумя независимыми источниками: CoinGecko, CoinMarketCap или платформами on-chain аналитики. Расхождения в цифрах обращающегося предложения более 2–3% требуют выяснения — иногда токены сожжены, заблокированы в смарт-контрактах или неправильно учтены.",
+        "Проверяйте вашу теорию капитализации на исторических сценариях: выстоял бы ваш инвестиционный аргумент в криптозиму 2018 года, когда капитализации упали на 80–95%? Пережил бы обвал COVID в марте 2020 года? Стресс-тестирование показывает, учитывает ли ваш анализ хвостовые риски."
+      ]
+    }
+  },
+  'fully-diluted-valuation': {
+    en: {
+      interpret: [
+        "Fully diluted valuation (FDV) represents the maximum possible market cap if every token that will ever exist — including those locked in vesting schedules, team allocations, and future emissions — were circulating and priced at the current rate. A high FDV relative to current market cap signals massive future supply that could dilute existing holders. When FDV is 5x–10x the market cap, it means the market is valuing only a fraction of the total project, and future token releases will exert sustained sell pressure unless demand grows proportionally.",
+        "The FDV-to-market-cap ratio tells a critical story about supply dynamics. A ratio of 1.0 means all tokens are already circulating — there's no hidden dilution risk. A ratio of 10x means 90% of tokens haven't entered the market yet. Projects often choose low initial circulating supply to inflate price metrics and attract headline-chasing investors. Sophisticated analysis requires adjusting for anticipated unlock schedules and modeling the price impact of each major release event."
+      ],
+      scenarios: [
+        "A new DeFi protocol launches with 5% of total tokens circulating, priced at $2 each. Its market cap is $10 million, but FDV is $200 million. Six months later, team vesting unlocks an additional 20% of supply. If demand doesn't increase proportionally, basic supply-demand mechanics suggest the price could fall 15%–25% around the unlock date. Investors who modeled this FDV scenario entered at a discount and positioned short-term hedges to protect gains.",
+        "A governance token with FDV of $8 billion launches when comparable governance tokens have market caps of $300–500 million. The protocol is unproven, has minimal TVL, and its roadmap shows three years of continuous token emissions. The $8 billion FDV implies the market is pricing in extraordinary future growth that most comparable projects never achieved. This scenario warns of significant overvaluation relative to fundamentals."
+      ],
+      checklist: [
+        "Before investing in any project, verify the complete token unlock schedule, identify all vesting cliffs (sudden large releases), and calculate the monthly token inflation rate. If a project releases 20%+ of supply in a single month, assess whether protocol revenue and user growth realistically justify the associated demand that would absorb that supply without significant price impact.",
+        "Compare FDV to total value locked (TVL), annualized protocol revenue, and unique active wallets. For DeFi projects, an FDV-to-TVL ratio below 1x suggests potential undervaluation. An FDV-to-revenue multiple above 100x suggests extreme growth priced in that may not materialize — assess whether projected growth rates are consistent with comparable protocol benchmarks."
+      ],
+      mistakes: [
+        "Ignoring FDV and focusing only on market cap is one of the most expensive mistakes in crypto investing. Many retail investors bought tokens appearing 'cheap' by market cap without realizing the 95% of tokens held by team and VCs would hit the market within 12–18 months, eliminating any price gains. Always model the token supply schedule as thoroughly as you model the technology.",
+        "Assuming FDV is a price ceiling is another common error. FDV is calculated using the current price — if demand surges, the price increases and so does FDV. Some high-FDV projects have delivered strong returns when adoption significantly exceeded token emission rates. The key is evaluating whether the project's growth trajectory can outpace dilution — not treating FDV as an automatic rejection criterion."
+      ],
+      benchmarks: [
+        "During the 2021 cycle, many successful DeFi protocols maintained FDV-to-TVL ratios between 0.5x and 2x at their growth phase. Projects above 5x FDV-to-TVL frequently underperformed as token unlocks consistently outpaced organic demand growth. Using this ratio as a screening tool would have eliminated many of the worst-performing tokens from candidate lists.",
+        "Venture-backed tokens with FDV above $1 billion at launch have historically underperformed compared to lower-FDV alternatives over 12-month holding periods. This pattern reflects the structural reality that early investors and teams need liquidity events, and high-FDV launches make these exits more impactful on price. Projects launching at sub-$100 million FDV with strong fundamentals have shown the best risk-adjusted returns over 24-month periods."
+      ],
+      execution: [
+        "Build a token release model in a spreadsheet before committing significant capital. Map every known unlock event with date, quantity, and current dollar value at time of expected release. Model three scenarios: base case (price unchanged), bull case (price up 50%), and bear case (price down 50%). This exercise reveals the actual financial impact of each unlock and helps you decide whether to hold through events or reduce exposure beforehand.",
+        "Set calendar reminders for major unlock events 30 days and 7 days in advance. In the weeks before significant vesting cliffs, monitor on-chain activity for team and VC wallet addresses. If large addresses are moving tokens to exchanges, this on-chain intelligence can signal imminent selling pressure. Respond by either reducing exposure or implementing options hedges if available on the asset."
+      ],
+      hygiene: [
+        "Maintain a vesting calendar for every project in your portfolio. This document should include: total token supply, current circulating supply, monthly inflation rate, and dates of each unlock greater than 1% of total supply. Review this calendar monthly and recalculate FDV at current prices to track how the dilution risk evolves as token price changes.",
+        "Cross-reference vesting information from at least three sources: the project's official tokenomics documentation, a blockchain explorer showing actual token contract data, and a third-party tracker like TokenUnlocks or Vestlab. Discrepancies between official documentation and on-chain reality are rare but critically important to identify — projects have occasionally misrepresented their vesting schedules."
+      ],
+      validation: [
+        "Verify FDV calculations using blockchain data rather than relying solely on price aggregators. Read the token contract to confirm max supply, check the actual distribution across addresses, and identify large unlocked wallets that haven't moved tokens yet. This ground-truth verification often reveals token supply realities that differ from what project documentation states.",
+        "Test your FDV analysis by modeling historical unlock events. Take a project where you can access historical price data alongside known unlock dates. Calculate whether price actually declined around major vesting cliffs and by how much. If historical events match your model predictions, it validates your methodology. If reality consistently differed from your model, identify which variables you're systematically underestimating."
+      ]
+    },
+    es: {
+      interpret: [
+        "La valoración completamente diluida (FDV) representa la capitalización de mercado máxima posible si todos los tokens que existirán alguna vez —incluidos los bloqueados en calendarios de adquisición, asignaciones de equipo y emisiones futuras— estuvieran en circulación y valorados al precio actual. Una FDV alta en relación con la capitalización actual señala una oferta futura masiva que podría diluir a los tenedores existentes.",
+        "La relación FDV-capitalización de mercado cuenta una historia crítica sobre las dinámicas de oferta. Un ratio de 1,0 significa que todos los tokens ya están en circulación: no hay riesgo de dilución oculto. Un ratio de 10x significa que el 90% de los tokens aún no ha entrado al mercado. Los proyectos a menudo eligen una oferta circulante inicial baja para inflar las métricas de precio y atraer a inversores que persiguen titulares."
+      ],
+      scenarios: [
+        "Un nuevo protocolo DeFi lanza con el 5% del total de tokens en circulación, a $2 cada uno. Su capitalización es de $10 millones, pero la FDV es de $200 millones. Seis meses después, el vesting del equipo desbloquea un 20% adicional de la oferta. Si la demanda no aumenta proporcionalmente, la mecánica básica de oferta-demanda sugiere que el precio podría caer un 15%–25% en torno a la fecha de desbloqueo.",
+        "Un token de gobernanza con FDV de $8 mil millones lanza cuando los tokens de gobernanza comparables tienen capitalizaciones de $300–500 millones. El protocolo no está probado, tiene TVL mínimo y su hoja de ruta muestra tres años de emisiones continuas de tokens. La FDV de $8 mil millones implica que el mercado está valorando un crecimiento futuro extraordinario que la mayoría de los proyectos comparables nunca lograron."
+      ],
+      checklist: [
+        "Antes de invertir en cualquier proyecto, verifica el calendario completo de desbloqueo de tokens, identifica todos los acantilados de vesting (liberaciones repentinas grandes) y calcula la tasa mensual de inflación de tokens. Si un proyecto libera más del 20% de la oferta en un solo mes, evalúa si el crecimiento de los ingresos del protocolo y los usuarios justifica realistamente la demanda asociada.",
+        "Compara la FDV con el valor total bloqueado (TVL), los ingresos anualizados del protocolo y las billeteras activas únicas. Para proyectos DeFi, una relación FDV-TVL por debajo de 1x sugiere una posible infravaloración. Un múltiplo FDV-ingresos superior a 100x sugiere un crecimiento extremo incorporado que puede no materializarse."
+      ],
+      mistakes: [
+        "Ignorar la FDV y centrarse solo en la capitalización de mercado es uno de los errores más costosos en la inversión en criptomonedas. Muchos inversores minoristas compraron tokens que parecían 'baratos' por capitalización sin darse cuenta de que el 95% de los tokens en manos del equipo y los VCs llegarían al mercado en 12–18 meses, eliminando cualquier ganancia de precio.",
+        "Asumir que la FDV es un techo de precio es otro error común. La FDV se calcula usando el precio actual — si la demanda aumenta, el precio sube y también la FDV. Algunos proyectos de alta FDV han entregado fuertes retornos cuando la adopción superó significativamente las tasas de emisión de tokens."
+      ],
+      benchmarks: [
+        "Durante el ciclo de 2021, muchos protocolos DeFi exitosos mantuvieron ratios FDV-TVL entre 0,5x y 2x en su fase de crecimiento. Los proyectos por encima de 5x FDV-TVL frecuentemente tuvieron un rendimiento inferior ya que los desbloqueos de tokens superaron consistentemente el crecimiento de demanda orgánica.",
+        "Los tokens respaldados por capital de riesgo con FDV superior a $1 mil millones en el lanzamiento históricamente han tenido un rendimiento inferior en comparación con alternativas de menor FDV durante períodos de tenencia de 12 meses. Este patrón refleja la realidad estructural de que los inversores tempranos y los equipos necesitan eventos de liquidez."
+      ],
+      execution: [
+        "Construye un modelo de liberación de tokens en una hoja de cálculo antes de comprometer capital significativo. Mapea cada evento de desbloqueo conocido con fecha, cantidad y valor en dólares actuales en el momento del lanzamiento esperado. Modela tres escenarios: caso base (precio sin cambios), caso alcista (precio sube 50%) y caso bajista (precio baja 50%).",
+        "Establece recordatorios de calendario para los principales eventos de desbloqueo con 30 y 7 días de antelación. En las semanas previas a los acantilados de vesting significativos, monitorea la actividad on-chain para las direcciones de carteras del equipo y VC. Si las direcciones grandes están moviendo tokens a los intercambios, esta inteligencia on-chain puede señalar presión de venta inminente."
+      ],
+      hygiene: [
+        "Mantén un calendario de vesting para cada proyecto en tu cartera. Este documento debe incluir: oferta total de tokens, oferta circulante actual, tasa de inflación mensual y fechas de cada desbloqueo superior al 1% del suministro total. Revisa este calendario mensualmente y recalcula la FDV a los precios actuales.",
+        "Contrarresta la información de vesting de al menos tres fuentes: la documentación oficial de tokenomics del proyecto, un explorador de blockchain que muestre los datos reales del contrato de tokens y un rastreador de terceros como TokenUnlocks o Vestlab."
+      ],
+      validation: [
+        "Verifica los cálculos de FDV usando datos de blockchain en lugar de depender únicamente de agregadores de precios. Lee el contrato de tokens para confirmar la oferta máxima, verifica la distribución real entre direcciones e identifica las grandes carteras desbloqueadas que aún no han movido tokens.",
+        "Prueba tu análisis de FDV modelando eventos de desbloqueo históricos. Toma un proyecto donde puedas acceder a datos históricos de precios junto con fechas de desbloqueo conocidas. Calcula si el precio realmente disminuyó alrededor de los principales acantilados de vesting y en qué medida."
+      ]
+    },
+    pt: {
+      interpret: [
+        "A avaliação totalmente diluída (FDV) representa a capitalização de mercado máxima possível se todos os tokens que existirão — incluindo aqueles bloqueados em cronogramas de vesting, alocações de equipe e emissões futuras — estivessem circulando e precificados à taxa atual. Um FDV alto em relação à capitalização atual sinaliza fornecimento futuro massivo que pode diluir os detentores existentes.",
+        "A relação FDV-capitalização de mercado conta uma história crítica sobre as dinâmicas de fornecimento. Uma razão de 1,0 significa que todos os tokens já estão circulando — não há risco de diluição oculto. Uma razão de 10x significa que 90% dos tokens ainda não entraram no mercado. Os projetos frequentemente escolhem baixo fornecimento circulante inicial para inflar métricas de preço."
+      ],
+      scenarios: [
+        "Um novo protocolo DeFi lança com 5% do total de tokens circulando, precificado a $2 cada. Sua capitalização é de $10 milhões, mas o FDV é de $200 milhões. Seis meses depois, o vesting da equipe desbloqueia 20% adicionais do fornecimento. Se a demanda não aumentar proporcionalmente, a mecânica básica de oferta-demanda sugere que o preço pode cair 15%–25%.",
+        "Um token de governança com FDV de $8 bilhões lança quando tokens de governança comparáveis têm capitalizações de $300–500 milhões. O protocolo é não comprovado, tem TVL mínimo e seu roteiro mostra três anos de emissões contínuas de tokens. O FDV de $8 bilhões implica que o mercado está precificando crescimento futuro extraordinário."
+      ],
+      checklist: [
+        "Antes de investir em qualquer projeto, verifique o cronograma completo de desbloqueio de tokens, identifique todos os vesting cliffs (liberações grandes repentinas) e calcule a taxa mensal de inflação de tokens.",
+        "Compare o FDV com o valor total bloqueado (TVL), receita anualizada do protocolo e carteiras ativas únicas. Para projetos DeFi, uma razão FDV-TVL abaixo de 1x sugere possível subavaliação. Um múltiplo FDV-receita acima de 100x sugere crescimento extremo precificado que pode não se materializar."
+      ],
+      mistakes: [
+        "Ignorar o FDV e focar apenas na capitalização de mercado é um dos erros mais caros em investimentos em cripto. Muitos investidores de varejo compraram tokens parecendo 'baratos' pela capitalização sem perceber que 95% dos tokens mantidos pela equipe e VCs chegariam ao mercado em 12–18 meses.",
+        "Assumir que o FDV é um teto de preço é outro erro comum. O FDV é calculado usando o preço atual — se a demanda aumentar, o preço sobe e o FDV também. Alguns projetos de alto FDV entregaram retornos fortes quando a adoção superou significativamente as taxas de emissão de tokens."
+      ],
+      benchmarks: [
+        "Durante o ciclo de 2021, muitos protocolos DeFi bem-sucedidos mantiveram razões FDV-TVL entre 0,5x e 2x em sua fase de crescimento. Projetos acima de 5x FDV-TVL frequentemente tiveram desempenho inferior à medida que os desbloqueios de tokens superavam consistentemente o crescimento orgânico da demanda.",
+        "Tokens com suporte de capital de risco com FDV acima de $1 bilhão no lançamento historicamente tiveram desempenho inferior em comparação com alternativas de FDV mais baixo durante períodos de detenção de 12 meses."
+      ],
+      execution: [
+        "Construa um modelo de liberação de tokens em uma planilha antes de comprometer capital significativo. Mapeie cada evento de desbloqueio conhecido com data, quantidade e valor em dólares atuais no momento do lançamento esperado. Modele três cenários: caso base, caso otimista e caso pessimista.",
+        "Defina lembretes de calendário para eventos importantes de desbloqueio com 30 e 7 dias de antecedência. Nas semanas antes de vesting cliffs significativos, monitore a atividade on-chain para endereços de carteiras da equipe e VC."
+      ],
+      hygiene: [
+        "Mantenha um calendário de vesting para cada projeto em seu portfólio. Este documento deve incluir: fornecimento total de tokens, fornecimento circulante atual, taxa de inflação mensal e datas de cada desbloqueio maior que 1% do fornecimento total.",
+        "Contrarreste informações de vesting de pelo menos três fontes: a documentação oficial de tokenomics do projeto, um explorador de blockchain mostrando dados reais do contrato de tokens e um rastreador de terceiros."
+      ],
+      validation: [
+        "Verifique os cálculos de FDV usando dados de blockchain em vez de depender apenas de agregadores de preços. Leia o contrato de tokens para confirmar o fornecimento máximo, verifique a distribuição real entre endereços.",
+        "Teste sua análise de FDV modelando eventos de desbloqueio históricos. Pegue um projeto onde você pode acessar dados históricos de preços ao lado de datas de desbloqueio conhecidas."
+      ]
+    },
+    tr: {
+      interpret: [
+        "Tam seyreltilmiş değerleme (FDV), varlık tahsisleri, ekip tahsisleri ve gelecekteki emisyonlar dahil olmak üzere var olacak her token dolaşımda olsaydı ve mevcut fiyattan değerlenseydi mümkün olan maksimum piyasa değerini temsil eder. Mevcut piyasa değerine göre yüksek bir FDV, mevcut sahipleri seyreltebilecek büyük bir gelecek arzına işaret eder.",
+        "FDV-piyasa değeri oranı, arz dinamikleri hakkında kritik bir hikaye anlatır. 1,0 oranı, tüm tokenlerin zaten dolaşımda olduğu anlamına gelir — gizli bir seyreltme riski yoktur. 10x oranı, tokenlerin %90'ının henüz piyasaya girmediği anlamına gelir."
+      ],
+      scenarios: [
+        "Yeni bir DeFi protokolü, toplam tokenlerin %5'i dolaşımda, her biri 2 dolara fiyatlanarak başlatılır. Piyasa değeri 10 milyon dolar iken FDV 200 milyon dolardır. Altı ay sonra ekip vestingi ek %20 arzı açar. Talep orantılı olarak artmazsa temel arz-talep mekaniği, kilit açma tarihi civarında fiyatın %15–%25 düşebileceğini gösteriyor.",
+        "8 milyar dolarlık FDV'ye sahip bir yönetişim tokeni, karşılaştırılabilir yönetişim tokenlerinin 300–500 milyon dolarlık piyasa değerine sahip olduğu dönemde başlatılıyor. Protokol kanıtlanmamış, minimum TVL'ye sahip ve yol haritası üç yıllık sürekli token emisyonlarını gösteriyor."
+      ],
+      checklist: [
+        "Herhangi bir projeye yatırım yapmadan önce, tam token kilit açma takvimini doğrulayın, tüm vesting uçurumlarını (ani büyük sürümler) belirleyin ve aylık token enflasyon oranını hesaplayın.",
+        "FDV'yi toplam kilitli değer (TVL), yıllık protokol geliri ve benzersiz aktif cüzdanlarla karşılaştırın. DeFi projeleri için 1x'in altında bir FDV-TVL oranı potansiyel düşük değerlemeye işaret eder."
+      ],
+      mistakes: [
+        "FDV'yi görmezden gelmek ve yalnızca piyasa değerine odaklanmak, kripto yatırımcılığındaki en pahalı hatalardan biridir. Pek çok perakende yatırımcı, ekip ve VC'lerin elindeki tokenlerin %95'inin 12–18 ay içinde piyasaya çıkacağını fark etmeden piyasa değeri açısından 'ucuz' görünen tokenler satın aldı.",
+        "FDV'nin bir fiyat tavanı olduğunu varsaymak da yaygın bir hatadır. FDV, mevcut fiyat kullanılarak hesaplanır — talep artarsa fiyat da artar ve FDV de artar."
+      ],
+      benchmarks: [
+        "2021 döngüsünde birçok başarılı DeFi protokolü, büyüme aşamalarında 0,5x ile 2x arasında FDV-TVL oranlarını korudu. 5x FDV-TVL'nin üzerindeki projeler, token kilidi açmaları organik talep büyümesini sürekli olarak aştığı için sıklıkla daha düşük performans gösterdi.",
+        "Lansmanında 1 milyar doların üzerinde FDV'ye sahip risk sermayesi destekli tokenler, tarihsel olarak 12 aylık elde tutma dönemlerinde daha düşük FDV alternatiflerine kıyasla daha düşük performans gösterdi."
+      ],
+      execution: [
+        "Önemli sermaye taahhüt etmeden önce bir e-tabloda token serbest bırakma modeli oluşturun. Her bilinen kilit açma olayını tarih, miktar ve beklenen serbest bırakma sırasındaki mevcut dolar değeriyle eşleştirin.",
+        "Önemli kilit açma olayları için 30 gün ve 7 gün öncesinden takvim hatırlatıcıları ayarlayın. Önemli vesting uçurumlarından önceki haftalarda, ekip ve VC cüzdan adresleri için zincir üstü aktiviteyi izleyin."
+      ],
+      hygiene: [
+        "Portföyünüzdeki her proje için bir vesting takvimi tutun. Bu belge şunları içermelidir: toplam token arzı, mevcut dolaşımdaki arz, aylık enflasyon oranı ve toplam arzın %1'inden fazlasını kapsayan her kilit açma tarihi.",
+        "En az üç kaynaktan vesting bilgilerini çapraz referans alın: projenin resmi tokenomics belgeleri, gerçek token sözleşme verilerini gösteren bir blockchain gezgini ve üçüncü taraf bir takipçi."
+      ],
+      validation: [
+        "FDV hesaplamalarını yalnızca fiyat toplayıcılara güvenmek yerine blockchain verilerini kullanarak doğrulayın. Maksimum arzı onaylamak için token sözleşmesini okuyun, adresler arasındaki gerçek dağılımı kontrol edin.",
+        "Tarihsel kilit açma olaylarını modelleyerek FDV analizinizi test edin. Bilinen kilit açma tarihleriyle birlikte tarihi fiyat verilerine erişebildiğiniz bir proje seçin."
+      ]
+    },
+    hi: {
+      interpret: [
+        "फुली डाइल्यूटेड वैल्यूएशन (FDV) वह अधिकतम संभावित मार्केट कैप दर्शाता है जो तब होगी जब हर टोकन जो कभी अस्तित्व में आएगा — वेस्टिंग शेड्यूल में बंद, टीम आवंटन, और भविष्य की एमिशन सहित — सर्कुलेट हो रहा होगा और वर्तमान दर पर मूल्यांकित होगा। वर्तमान मार्केट कैप के सापेक्ष उच्च FDV भविष्य में विशाल सप्लाई का संकेत देता है।",
+        "FDV-टू-मार्केट-कैप अनुपात सप्लाई डायनामिक्स के बारे में एक महत्वपूर्ण कहानी बताता है। 1.0 का अनुपात का मतलब है कि सभी टोकन पहले से सर्कुलेट हो रहे हैं — कोई छिपा हुआ डाइल्यूशन जोखिम नहीं है। 10x का अनुपात का मतलब है कि 90% टोकन अभी बाजार में नहीं आए हैं।"
+      ],
+      scenarios: [
+        "एक नया DeFi प्रोटोकॉल कुल टोकन के 5% सर्कुलेशन के साथ लॉन्च होता है, प्रत्येक $2 पर मूल्यांकित। इसकी मार्केट कैप $10 मिलियन है, लेकिन FDV $200 मिलियन है। छह महीने बाद, टीम वेस्टिंग अतिरिक्त 20% सप्लाई अनलॉक करती है।",
+        "$8 बिलियन FDV वाला एक गवर्नेंस टोकन उस समय लॉन्च होता है जब तुलनीय गवर्नेंस टोकन की मार्केट कैप $300–500 मिलियन है। प्रोटोकॉल अप्रमाणित है, न्यूनतम TVL है, और रोडमैप तीन साल के निरंतर टोकन एमिशन दिखाता है।"
+      ],
+      checklist: [
+        "किसी भी प्रोजेक्ट में निवेश करने से पहले, पूरे टोकन अनलॉक शेड्यूल को सत्यापित करें, सभी वेस्टिंग क्लिफ (अचानक बड़ी रिलीज) की पहचान करें, और मासिक टोकन मुद्रास्फीति दर की गणना करें।",
+        "FDV की तुलना कुल वैल्यू लॉक्ड (TVL), वार्षिक प्रोटोकॉल राजस्व और अद्वितीय सक्रिय वॉलेट से करें। DeFi प्रोजेक्ट के लिए, 1x से नीचे FDV-TVL अनुपात संभावित अंडरवैल्यूएशन का सुझाव देता है।"
+      ],
+      mistakes: [
+        "FDV को नजरअंदाज करना और केवल मार्केट कैप पर ध्यान देना क्रिप्टो निवेश में सबसे महंगी गलतियों में से एक है। कई रिटेल निवेशकों ने मार्केट कैप से 'सस्ते' दिखने वाले टोकन खरीदे, बिना यह जाने कि टीम और VC के पास 95% टोकन 12–18 महीनों में बाजार में आ जाएंगे।",
+        "FDV को मूल्य की छत मानना एक और सामान्य गलती है। FDV की गणना वर्तमान मूल्य का उपयोग करके की जाती है — अगर मांग बढ़ती है, तो कीमत बढ़ती है और FDV भी बढ़ता है।"
+      ],
+      benchmarks: [
+        "2021 के चक्र के दौरान, कई सफल DeFi प्रोटोकॉल ने अपने विकास चरण में 0.5x से 2x के बीच FDV-TVL अनुपात बनाए रखा। 5x FDV-TVL से ऊपर के प्रोजेक्ट अक्सर कम प्रदर्शन करते थे।",
+        "लॉन्च पर $1 बिलियन से ऊपर FDV वाले वेंचर-समर्थित टोकन ऐतिहासिक रूप से 12 महीने की होल्डिंग अवधि में कम FDV विकल्पों की तुलना में कम प्रदर्शन करते रहे हैं।"
+      ],
+      execution: [
+        "महत्वपूर्ण पूंजी लगाने से पहले एक स्प्रेडशीट में टोकन रिलीज़ मॉडल बनाएं। प्रत्येक ज्ञात अनलॉक इवेंट को तारीख, मात्रा और अपेक्षित रिलीज़ के समय वर्तमान डॉलर मूल्य के साथ मैप करें।",
+        "प्रमुख अनलॉक इवेंट से 30 दिन और 7 दिन पहले कैलेंडर रिमाइंडर सेट करें। महत्वपूर्ण वेस्टिंग क्लिफ से पहले के हफ्तों में, टीम और VC वॉलेट पते के लिए ऑन-चेन गतिविधि की निगरानी करें।"
+      ],
+      hygiene: [
+        "अपने पोर्टफोलियो में प्रत्येक प्रोजेक्ट के लिए एक वेस्टिंग कैलेंडर बनाए रखें। इस दस्तावेज़ में शामिल होना चाहिए: कुल टोकन सप्लाई, वर्तमान सर्कुलेटिंग सप्लाई, मासिक मुद्रास्फीति दर, और प्रत्येक अनलॉक की तारीखें।",
+        "कम से कम तीन स्रोतों से वेस्टिंग जानकारी को क्रॉस-रेफरेंस करें: प्रोजेक्ट का आधिकारिक टोकनोमिक्स दस्तावेज़ीकरण, ब्लॉकचेन एक्सप्लोरर, और तृतीय-पक्ष ट्रैकर।"
+      ],
+      validation: [
+        "केवल प्राइस एग्रीगेटर पर निर्भर न रहकर ब्लॉकचेन डेटा का उपयोग करके FDV गणनाओं को सत्यापित करें। अधिकतम सप्लाई की पुष्टि के लिए टोकन कॉन्ट्रैक्ट पढ़ें।",
+        "ऐतिहासिक अनलॉक इवेंट को मॉडल करके अपने FDV विश्लेषण का परीक्षण करें। ऐसा प्रोजेक्ट लें जहां आप ज्ञात अनलॉक तारीखों के साथ ऐतिहासिक मूल्य डेटा एक्सेस कर सकते हैं।"
+      ]
+    },
+    ru: {
+      interpret: [
+        "Полностью размытая оценка (FDV) представляет максимально возможную рыночную капитализацию, если бы каждый токен, который когда-либо будет существовать — включая заблокированные по графикам вестинга, командные аллокации и будущие эмиссии — находился бы в обращении и оценивался по текущей цене. Высокий FDV относительно текущей капитализации сигнализирует о масштабном будущем предложении, способном размыть существующих держателей.",
+        "Соотношение FDV к рыночной капитализации раскрывает критически важную картину динамики предложения. Коэффициент 1,0 означает, что все токены уже в обращении — скрытого риска размывания нет. Коэффициент 10x означает, что 90% токенов ещё не вышли на рынок."
+      ],
+      scenarios: [
+        "Новый DeFi-протокол запускается с 5% токенов в обращении по $2 каждый. Его рыночная капитализация составляет $10 млн, но FDV — $200 млн. Через шесть месяцев вестинг команды разблокирует дополнительные 20% предложения. Если спрос не вырастет пропорционально, базовая механика спроса-предложения предполагает снижение цены на 15–25% вокруг даты разблокировки.",
+        "Токен управления с FDV $8 млрд выходит в момент, когда сопоставимые токены управления имеют капитализации $300–500 млн. Протокол не проверен, имеет минимальный TVL, а дорожная карта предусматривает три года непрерывной эмиссии токенов."
+      ],
+      checklist: [
+        "Перед инвестированием в любой проект проверьте полный график разблокировки токенов, определите все вестинг-клиффы (внезапные крупные выпуски) и рассчитайте ежемесячный уровень инфляции токенов.",
+        "Сравните FDV с общей заблокированной стоимостью (TVL), годовой выручкой протокола и уникальными активными кошельками. Для DeFi-проектов соотношение FDV-TVL ниже 1x указывает на возможную недооценку."
+      ],
+      mistakes: [
+        "Игнорирование FDV и концентрация только на рыночной капитализации — одна из самых дорогостоящих ошибок в криптоинвестировании. Многие розничные инвесторы покупали токены, казавшиеся «дешёвыми» по капитализации, не осознавая, что 95% токенов у команды и венчурных фондов выйдут на рынок в течение 12–18 месяцев.",
+        "Принятие FDV за потолок цены — ещё одна распространённая ошибка. FDV рассчитывается по текущей цене: если спрос растёт, цена растёт, а вместе с ней и FDV."
+      ],
+      benchmarks: [
+        "В цикле 2021 года многие успешные DeFi-протоколы поддерживали соотношение FDV-TVL от 0,5x до 2x на этапе роста. Проекты с FDV-TVL выше 5x зачастую показывали худшие результаты, поскольку разблокировки токенов постоянно опережали органический рост спроса.",
+        "Токены при венчурной поддержке с FDV выше $1 млрд на запуске исторически уступали альтернативам с более низким FDV за 12-месячные периоды удержания."
+      ],
+      execution: [
+        "До вложения значительного капитала создайте модель выпуска токенов в таблице. Нанесите на карту каждое известное событие разблокировки с датой, количеством и текущей долларовой стоимостью на момент ожидаемого выпуска.",
+        "Устанавливайте напоминания за 30 и 7 дней до крупных событий разблокировки. В недели перед значительными вестинг-клиффами отслеживайте активность on-chain по адресам кошельков команды и венчурных фондов."
+      ],
+      hygiene: [
+        "Ведите календарь вестинга для каждого проекта в портфеле. Документ должен включать: общее предложение токенов, текущее обращающееся предложение, ежемесячный уровень инфляции и даты каждой разблокировки более 1% общего предложения.",
+        "Сверяйте информацию о вестинге не менее чем по трём источникам: официальная документация по токеномике, блокчейн-эксплорер с данными реального контракта токена и сторонний трекер."
+      ],
+      validation: [
+        "Проверяйте расчёты FDV с использованием данных блокчейна, а не полагаясь только на агрегаторы цен. Прочитайте контракт токена для подтверждения максимального предложения, проверьте фактическое распределение по адресам.",
+        "Тестируйте анализ FDV, моделируя исторические события разблокировки. Возьмите проект, для которого доступны исторические ценовые данные наряду с известными датами разблокировки."
+      ]
+    }
+  },
+
+  'token-unlock': {
+    en: {
+      interpret: [
+        "Token unlock events are scheduled moments when previously locked tokens become transferable, introducing new supply into the market. When you model an unlock event, the most critical question isn't the quantity of tokens unlocking — it's the financial motivation of the entities receiving them. Team and advisor tokens unlock after vesting periods designed to align incentives during development, but once vested, economic pressure to take profits can be substantial, especially if the token price has appreciated significantly since initial allocation.",
+        "The market impact of an unlock depends on two counterbalancing forces: selling pressure from newly liquid holders versus buy pressure from investors who see the unlock as a non-event (or already priced in). Large, sudden unlock events at major vesting cliffs tend to create price weakness 7–14 days before the date as sophisticated traders anticipate selling, and potential price recovery 30+ days after if actual selling was less than feared. Monitor the ratio of total unlock value to 30-day average trading volume to estimate potential market impact."
+      ],
+      scenarios: [
+        "A gaming protocol has 200 million tokens unlocking in 30 days, valued at $0.15 each ($30 million total). The token's 30-day average daily volume is $5 million. The unlock amount represents 6 days of typical trading volume, suggesting meaningful but manageable sell pressure. An investor models that if just 30% of newly liquid tokens are sold (typical for team allocations), that's $9 million of selling spread over 2–4 weeks — roughly 25% of daily volume per day, enough to create 10%–20% price downward pressure.",
+        "A DeFi protocol's investor unlock is worth $400 million at current prices. The investors paid $0.002 per token; the current price is $0.50 — a 250x gain. Even if investors sell only 5% of their position immediately, that's $20 million hitting the market. Given daily volume of $8 million, this represents 2.5 days of volume in a single liquidation event. Historical data shows that when unlock-to-volume ratios exceed 1:1, prices typically correct 25%–45% in the 30 days following the unlock date."
+      ],
+      checklist: [
+        "For each unlock event, calculate: (1) total dollar value at current price, (2) percentage of total supply being unlocked, (3) ratio of unlock value to 30-day average daily volume, (4) percentage gain for unlock recipients since initial allocation. When unlock recipients are sitting on 50x+ gains, sell pressure likelihood increases significantly. When they're at or below their cost basis, organic holding is more likely.",
+        "Examine on-chain wallet behavior in the 7 days immediately before major unlock events. If wallets that received token allocations are already moving tokens to exchanges before the official unlock, this indicates pre-positioning for sales — potentially a contract exploit or OTC deal being executed. This advance on-chain movement is a stronger signal than the unlock date itself."
+      ],
+      mistakes: [
+        "Assuming that 'team tokens unlocking means the team will sell' is an oversimplification that misses market nuance. Many team members and advisors believe deeply in their projects and hold long-term, especially if they're receiving ongoing project revenue. The actual sell pressure depends on individual financial circumstances, tax obligations, and personal conviction levels — not just that tokens unlocked. Behavioral data shows that founders typically sell less than investors do at unlock events.",
+        "Focusing only on single unlock events while missing the cumulative unlock schedule is a common modeling error. A project might have a manageable single unlock of 2% of supply monthly, but if this pattern continues for 36 months, the total dilution is enormous. Always model the complete 12-to-24-month emission schedule, not just the next unlock date, to understand the sustained headwind to price appreciation."
+      ],
+      benchmarks: [
+        "Analysis of 50+ token unlock events from 2020–2023 shows that tokens with unlock-to-daily-volume ratios above 5:1 (unlock worth more than 5x average daily volume) experienced median price declines of 28% in the 30 days following the event. Below 1:1, median price impact was near zero, with high variance in both directions — suggesting the market had successfully priced in anticipated selling.",
+        "Investor unlock events (VCs and private sale participants) historically produce 40%–60% larger price impacts than equivalent-sized team unlocks. This reflects the profit-maximizing behavior of financial investors compared to founders who often prioritize project success. Foundation and ecosystem unlocks produce the smallest price impacts, as these tokens typically enter liquidity pools or ecosystem grants rather than immediate exchange sales."
+      ],
+      execution: [
+        "30 days before a major unlock, reduce position size to your minimum comfortable allocation — ideally 50%–70% of your peak position. Use the proceeds to set limit buy orders at your target re-entry prices post-unlock. This strategy lets you benefit from anticipated selling pressure without attempting to time the exact bottom, while also protecting accumulated gains from an event with predictable downward pressure.",
+        "Consider structured options strategies if available on the unlocking token: buying put options 45 days before the unlock with a 30-day expiration can provide downside protection at relatively affordable implied volatility. If puts are unavailable, holding a cash reserve equivalent to 20%–30% of your exposure gives you dry powder to buy the post-unlock dip rather than riding it down fully."
+      ],
+      hygiene: [
+        "Subscribe to token unlock tracking services that send notifications 90, 30, and 7 days before scheduled events. Services like TokenUnlocks.app provide calendar views across hundreds of projects. Set personal rules around how much exposure you'll carry through different sizes of unlock events — and stick to those rules without making exception-based decisions in the heat of the moment.",
+        "After each unlock event passes, document the actual price impact versus your model prediction. Build a personal database of unlock impact data over time. This institutional memory improves your modeling accuracy and helps you calibrate expectations for future events. The most valuable insight you can develop is a calibrated sense of which unlock scenarios produce the most reliable price impacts."
+      ],
+      validation: [
+        "Verify unlock dates and quantities by reading the actual smart contract vesting logic, not just the project's stated documentation. Some projects have modified their vesting schedules after launch — a change that may not be prominently disclosed. Tools like Etherscan's token contract reader can show the actual vesting contract parameters that govern when tokens can be transferred.",
+        "Cross-validate your modeling by finding a comparable historical unlock from a similar project (same sector, similar market cap, similar unlock size relative to volume) and checking how the price actually behaved. If your model predicted a 20% decline and the historical comparable showed 5%, recalibrate your assumptions. If your model predicted 20% and reality was 35%, identify which factors you underweighted."
+      ]
+    },
+    es: {
+      interpret: [
+        "Los eventos de desbloqueo de tokens son momentos programados en que los tokens previamente bloqueados se vuelven transferibles, introduciendo nueva oferta al mercado. Al modelar un evento de desbloqueo, la pregunta más crítica no es la cantidad de tokens que se desbloquean — sino la motivación financiera de las entidades que los reciben.",
+        "El impacto en el mercado de un desbloqueo depende de dos fuerzas contrarrestantes: presión vendedora de los nuevos tenedores líquidos versus presión compradora de inversores que ven el desbloqueo como un no-evento. Los grandes eventos de desbloqueo repentinos en los principales acantilados de vesting tienden a crear debilidad de precios 7–14 días antes de la fecha."
+      ],
+      scenarios: [
+        "Un protocolo de juegos tiene 200 millones de tokens desbloqueándose en 30 días, valorados en $0,15 cada uno ($30 millones en total). El volumen diario promedio de 30 días del token es de $5 millones. La cantidad del desbloqueo representa 6 días de volumen de negociación típico, lo que sugiere una presión vendedora significativa pero manejable.",
+        "El desbloqueo de inversores de un protocolo DeFi vale $400 millones a los precios actuales. Los inversores pagaron $0,002 por token; el precio actual es $0,50 — una ganancia de 250x. Incluso si los inversores venden solo el 5% de su posición inmediatamente, eso son $20 millones llegando al mercado."
+      ],
+      checklist: [
+        "Para cada evento de desbloqueo, calcula: (1) valor total en dólares al precio actual, (2) porcentaje del suministro total que se desbloquea, (3) relación del valor del desbloqueo con el volumen diario promedio de 30 días, (4) ganancia porcentual para los receptores del desbloqueo desde la asignación inicial.",
+        "Examina el comportamiento de las billeteras on-chain en los 7 días inmediatamente anteriores a los principales eventos de desbloqueo. Si las billeteras que recibieron asignaciones de tokens ya están moviendo tokens a los intercambios antes del desbloqueo oficial, esto indica un pre-posicionamiento para ventas."
+      ],
+      mistakes: [
+        "Asumir que 'los tokens del equipo que se desbloquean significa que el equipo venderá' es una simplificación excesiva. Muchos miembros del equipo y asesores creen profundamente en sus proyectos y mantienen a largo plazo. La presión de venta real depende de las circunstancias financieras individuales, las obligaciones fiscales y los niveles de convicción personal.",
+        "Centrarse solo en eventos de desbloqueo individuales mientras se pierde el calendario de desbloqueo acumulativo es un error de modelado común. Un proyecto podría tener un desbloqueo mensual manejable del 2% del suministro, pero si este patrón continúa durante 36 meses, la dilución total es enorme."
+      ],
+      benchmarks: [
+        "El análisis de más de 50 eventos de desbloqueo de tokens de 2020–2023 muestra que los tokens con ratios de desbloqueo a volumen diario superiores a 5:1 experimentaron caídas de precios medianas del 28% en los 30 días posteriores al evento.",
+        "Los eventos de desbloqueo de inversores (VCs y participantes en ventas privadas) históricamente producen impactos en los precios un 40%–60% mayores que los desbloqueos del equipo de tamaño equivalente."
+      ],
+      execution: [
+        "30 días antes de un desbloqueo importante, reduce el tamaño de la posición a tu asignación mínima cómoda — idealmente el 50%–70% de tu posición máxima. Usa los ingresos para establecer órdenes de compra límite a tus precios de reentrada objetivo después del desbloqueo.",
+        "Considera estrategias de opciones estructuradas si están disponibles en el token que se desbloquea: comprar opciones de venta 45 días antes del desbloqueo con vencimiento de 30 días puede proporcionar protección a la baja a una volatilidad implícita relativamente asequible."
+      ],
+      hygiene: [
+        "Suscríbete a servicios de seguimiento de desbloqueo de tokens que envíen notificaciones 90, 30 y 7 días antes de los eventos programados. Servicios como TokenUnlocks.app proporcionan vistas de calendario en cientos de proyectos.",
+        "Después de que pase cada evento de desbloqueo, documenta el impacto real en el precio versus tu predicción del modelo. Construye una base de datos personal de datos de impacto de desbloqueo con el tiempo."
+      ],
+      validation: [
+        "Verifica las fechas y cantidades de desbloqueo leyendo la lógica real de vesting del contrato inteligente, no solo la documentación declarada del proyecto.",
+        "Valida cruzadamente tu modelado encontrando un desbloqueo histórico comparable de un proyecto similar (mismo sector, capitalización similar, tamaño de desbloqueo similar relativo al volumen) y verificando cómo se comportó realmente el precio."
+      ]
+    },
+    pt: {
+      interpret: [
+        "Eventos de desbloqueio de tokens são momentos agendados em que tokens anteriormente bloqueados se tornam transferíveis, introduzindo novo fornecimento no mercado. Ao modelar um evento de desbloqueio, a questão mais crítica não é a quantidade de tokens sendo desbloqueados — é a motivação financeira das entidades que os recebem.",
+        "O impacto de mercado de um desbloqueio depende de duas forças contrabalanceadoras: pressão de venda de detentores recém-líquidos versus pressão de compra de investidores que veem o desbloqueio como um não-evento. Grandes eventos de desbloqueio repentinos em vesting cliffs importantes tendem a criar fraqueza de preço 7–14 dias antes da data."
+      ],
+      scenarios: [
+        "Um protocolo de jogos tem 200 milhões de tokens sendo desbloqueados em 30 dias, avaliados em $0,15 cada ($30 milhões no total). O volume diário médio de 30 dias do token é de $5 milhões. A quantidade de desbloqueio representa 6 dias de volume de negociação típico.",
+        "O desbloqueio de investidores de um protocolo DeFi vale $400 milhões aos preços atuais. Os investidores pagaram $0,002 por token; o preço atual é $0,50 — um ganho de 250x. Mesmo que os investidores vendam apenas 5% de sua posição imediatamente, isso são $20 milhões chegando ao mercado."
+      ],
+      checklist: [
+        "Para cada evento de desbloqueio, calcule: (1) valor total em dólares ao preço atual, (2) percentagem do fornecimento total sendo desbloqueado, (3) razão do valor de desbloqueio para o volume diário médio de 30 dias.",
+        "Examine o comportamento das carteiras on-chain nos 7 dias imediatamente antes dos principais eventos de desbloqueio. Se as carteiras que receberam alocações de tokens já estão movendo tokens para exchanges antes do desbloqueio oficial, isso indica pré-posicionamento para vendas."
+      ],
+      mistakes: [
+        "Supor que 'tokens da equipe sendo desbloqueados significa que a equipe venderá' é uma simplificação excessiva. Muitos membros da equipe e consultores acreditam profundamente em seus projetos e mantêm a longo prazo.",
+        "Focar apenas em eventos de desbloqueio únicos enquanto perde o cronograma de desbloqueio cumulativo é um erro de modelagem comum. Um projeto pode ter um desbloqueio mensal gerenciável de 2% do fornecimento, mas se esse padrão continuar por 36 meses, a diluição total é enorme."
+      ],
+      benchmarks: [
+        "Análise de mais de 50 eventos de desbloqueio de tokens de 2020–2023 mostra que tokens com razões de desbloqueio para volume diário acima de 5:1 experimentaram quedas medianas de preço de 28% nos 30 dias após o evento.",
+        "Eventos de desbloqueio de investidores historicamente produzem impactos no preço 40%–60% maiores do que desbloqueios de equipe de tamanho equivalente."
+      ],
+      execution: [
+        "30 dias antes de um grande desbloqueio, reduza o tamanho da posição para sua alocação mínima confortável — idealmente 50%–70% de sua posição de pico. Use os recursos para definir ordens de compra limite nos preços-alvo de reentrada pós-desbloqueio.",
+        "Considere estratégias de opções estruturadas se disponíveis no token sendo desbloqueado: comprar opções de venda 45 dias antes do desbloqueio com vencimento de 30 dias pode fornecer proteção contra baixas."
+      ],
+      hygiene: [
+        "Assine serviços de rastreamento de desbloqueio de tokens que enviem notificações 90, 30 e 7 dias antes de eventos agendados.",
+        "Após cada evento de desbloqueio, documente o impacto real no preço versus sua previsão do modelo. Construa um banco de dados pessoal de dados de impacto de desbloqueio ao longo do tempo."
+      ],
+      validation: [
+        "Verifique datas e quantidades de desbloqueio lendo a lógica real de vesting do contrato inteligente, não apenas a documentação declarada do projeto.",
+        "Valide cruzadamente sua modelagem encontrando um desbloqueio histórico comparável de um projeto similar e verificando como o preço realmente se comportou."
+      ]
+    },
+    tr: {
+      interpret: [
+        "Token kilit açma olayları, daha önce kilitlenmiş tokenlerin transfere edilebilir hale geldiği ve piyasaya yeni arz getirdiği planlanmış anlardır. Bir kilit açma olayını modellerken en kritik soru, açılan tokenlerin miktarı değil — onları alan varlıkların finansal motivasyonudur.",
+        "Kilit açma olayının piyasa üzerindeki etkisi, iki dengeleyici kuvvete bağlıdır: yeni likit sahiplerden gelen satış baskısı ile kilit açmayı bir olaysızlık olarak gören yatırımcılardan gelen alım baskısı."
+      ],
+      scenarios: [
+        "Bir oyun protokolünün 30 gün içinde 200 milyon tokeni açılıyor, her biri 0,15 dolara değerleniyor (toplam 30 milyon dolar). Tokenin 30 günlük ortalama günlük hacmi 5 milyon dolar. Kilit açma miktarı tipik işlem hacminin 6 gününü temsil ediyor.",
+        "Bir DeFi protokolünün yatırımcı kilit açması mevcut fiyatlarla 400 milyon dolar değerinde. Yatırımcılar token başına 0,002 dolar ödedi; mevcut fiyat 0,50 dolar — 250 katlık bir kazanç."
+      ],
+      checklist: [
+        "Her kilit açma olayı için şunları hesaplayın: (1) mevcut fiyatta toplam dolar değeri, (2) açılan toplam arzın yüzdesi, (3) kilit açma değerinin 30 günlük ortalama günlük hacme oranı.",
+        "Büyük kilit açma olaylarından hemen önce 7 gün boyunca zincir üstü cüzdan davranışını inceleyin. Token tahsisi almış cüzdanlar resmi kilit açmadan önce tokenları exchange'lere taşıyorsa, bu satışlar için ön konumlandırmayı gösterir."
+      ],
+      mistakes: [
+        "'Ekip tokenlarının açılması, ekibin sateceği anlamına gelir' varsayımı, piyasa nüansını kaçıran aşırı bir basitleştirmedir. Pek çok ekip üyesi ve danışman, projelerine derinden inanır ve uzun vadeli tutar.",
+        "Yalnızca tek kilit açma olaylarına odaklanmak ve kümülatif kilit açma takvimini kaçırmak yaygın bir modelleme hatasıdır."
+      ],
+      benchmarks: [
+        "2020–2023 arası 50'den fazla token kilit açma olayının analizi, 5:1'in üzerinde kilit açma-günlük hacim oranına sahip tokenlerin olaydan sonraki 30 günde ortalama %28 fiyat düşüşü yaşadığını gösteriyor.",
+        "Yatırımcı kilit açma olayları (VCs ve özel satış katılımcıları) tarihsel olarak eşdeğer boyuttaki ekip kilit açmalarından %40–%60 daha büyük fiyat etkileri üretir."
+      ],
+      execution: [
+        "Büyük bir kilit açmadan 30 gün önce, pozisyon büyüklüğünü minimum rahat tahsisinize indirin — ideal olarak tepe pozisyonunuzun %50–%70'i. Gelirleri kilit açma sonrası hedef yeniden giriş fiyatlarınızda limit alış emirleri ayarlamak için kullanın.",
+        "Açılmakta olan token için mevcut yapılandırılmış opsiyon stratejilerini düşünün: kilit açmadan 45 gün önce 30 günlük vadeli satım opsiyonu satın almak görece uygun fiyatlı ima edilmiş oynaklıkta aşağı yönlü koruma sağlayabilir."
+      ],
+      hygiene: [
+        "Planlanan etkinliklerden 90, 30 ve 7 gün önce bildirim gönderen token kilit açma takip servislerine abone olun.",
+        "Her kilit açma olayı geçtikten sonra, gerçek fiyat etkisini model öngörünüzle karşılaştırarak belgeleyin."
+      ],
+      validation: [
+        "Kilit açma tarihlerini ve miktarlarını, yalnızca projenin beyan edilen belgelerine değil, gerçek akıllı sözleşme vesting mantığını okuyarak doğrulayın.",
+        "Modelinizi, benzer bir projeden (aynı sektör, benzer piyasa değeri) karşılaştırılabilir bir tarihsel kilit açma bularak ve fiyatın gerçekte nasıl davrandığını kontrol ederek çapraz olarak doğrulayın."
+      ]
+    },
+    hi: {
+      interpret: [
+        "टोकन अनलॉक इवेंट निर्धारित क्षण होते हैं जब पहले से लॉक किए गए टोकन ट्रांसफर योग्य हो जाते हैं, बाजार में नई सप्लाई लाते हैं। जब आप एक अनलॉक इवेंट को मॉडल करते हैं, तो सबसे महत्वपूर्ण प्रश्न अनलॉक होने वाले टोकन की मात्रा नहीं है — यह उन्हें प्राप्त करने वाली संस्थाओं की वित्तीय प्रेरणा है।",
+        "एक अनलॉक का बाजार प्रभाव दो संतुलन करने वाली शक्तियों पर निर्भर करता है: नए तरल धारकों से बिक्री दबाव बनाम उन निवेशकों से खरीद दबाव जो अनलॉक को गैर-घटना के रूप में देखते हैं।"
+      ],
+      scenarios: [
+        "एक गेमिंग प्रोटोकॉल के 30 दिनों में 200 मिलियन टोकन अनलॉक हो रहे हैं, प्रत्येक $0.15 मूल्य के (कुल $30 मिलियन)। टोकन का 30-दिन का औसत दैनिक वॉल्यूम $5 मिलियन है।",
+        "एक DeFi प्रोटोकॉल का निवेशक अनलॉक वर्तमान कीमतों पर $400 मिलियन मूल्य का है। निवेशकों ने $0.002 प्रति टोकन चुकाया; वर्तमान मूल्य $0.50 है — 250x का लाभ।"
+      ],
+      checklist: [
+        "प्रत्येक अनलॉक इवेंट के लिए गणना करें: (1) वर्तमान मूल्य पर कुल डॉलर मूल्य, (2) अनलॉक हो रही कुल सप्लाई का प्रतिशत, (3) अनलॉक मूल्य का 30-दिन के औसत दैनिक वॉल्यूम से अनुपात।",
+        "प्रमुख अनलॉक इवेंट से ठीक पहले 7 दिनों में ऑन-चेन वॉलेट व्यवहार की जांच करें।"
+      ],
+      mistakes: [
+        "यह मानना कि 'टीम टोकन अनलॉक होने का मतलब है टीम बेचेगी' एक अत्यधिक सरलीकरण है जो बाजार की बारीकियों को चूकता है।",
+        "केवल एकल अनलॉक इवेंट पर ध्यान केंद्रित करते हुए संचयी अनलॉक शेड्यूल को मिस करना एक सामान्य मॉडलिंग त्रुटि है।"
+      ],
+      benchmarks: [
+        "2020–2023 से 50+ टोकन अनलॉक इवेंट के विश्लेषण से पता चलता है कि 5:1 से ऊपर के अनलॉक-टू-डेली-वॉल्यूम अनुपात वाले टोकन ने इवेंट के बाद 30 दिनों में औसतन 28% मूल्य गिरावट का अनुभव किया।",
+        "निवेशक अनलॉक इवेंट ऐतिहासिक रूप से समकक्ष आकार के टीम अनलॉक की तुलना में 40%–60% बड़े मूल्य प्रभाव उत्पन्न करते हैं।"
+      ],
+      execution: [
+        "एक बड़े अनलॉक से 30 दिन पहले, पोजीशन का आकार अपनी न्यूनतम आरामदायक आवंटन तक कम करें — आदर्श रूप से अपनी पीक पोजीशन का 50%–70%।",
+        "यदि अनलॉक होने वाले टोकन पर उपलब्ध हो तो संरचित ऑप्शन रणनीतियों पर विचार करें।"
+      ],
+      hygiene: [
+        "टोकन अनलॉक ट्रैकिंग सेवाओं की सदस्यता लें जो निर्धारित इवेंट से 90, 30 और 7 दिन पहले नोटिफिकेशन भेजती हैं।",
+        "प्रत्येक अनलॉक इवेंट के बाद, वास्तविक मूल्य प्रभाव को अपनी मॉडल भविष्यवाणी के खिलाफ दस्तावेज़ करें।"
+      ],
+      validation: [
+        "केवल प्रोजेक्ट की बताई गई दस्तावेज़ीकरण पर निर्भर न रहकर वास्तविक स्मार्ट कॉन्ट्रैक्ट वेस्टिंग लॉजिक पढ़कर अनलॉक तारीखों और मात्राओं को सत्यापित करें।",
+        "एक समान ऐतिहासिक अनलॉक खोजकर और मूल्य वास्तव में कैसे व्यवहार किया यह जांचकर अपनी मॉडलिंग को क्रॉस-वैलिडेट करें।"
+      ]
+    },
+    ru: {
+      interpret: [
+        "События разблокировки токенов — это запланированные моменты, когда ранее заблокированные токены становятся передаваемыми, вводя на рынок новое предложение. При моделировании события разблокировки наиболее критичный вопрос — не количество разблокируемых токенов, а финансовая мотивация получающих их субъектов.",
+        "Рыночное воздействие разблокировки определяется двумя противодействующими силами: давлением продаж со стороны новых ликвидных держателей и давлением покупок со стороны инвесторов, расценивающих разблокировку как несобытие."
+      ],
+      scenarios: [
+        "У игрового протокола через 30 дней разблокируется 200 млн токенов стоимостью $0,15 каждый ($30 млн итого). Средний дневной объём торгов за 30 дней составляет $5 млн. Объём разблокировки эквивалентен 6 дням типичного торгового оборота.",
+        "Разблокировка инвесторов DeFi-протокола оценивается в $400 млн по текущим ценам. Инвесторы платили $0,002 за токен; текущая цена — $0,50 — рост в 250 раз."
+      ],
+      checklist: [
+        "Для каждого события разблокировки рассчитайте: (1) общую стоимость в долларах по текущей цене, (2) процент общего предложения, разблокируемого за раз, (3) соотношение объёма разблокировки к среднедневному за 30 дней.",
+        "Изучайте поведение on-chain кошельков в 7 дней, непосредственно предшествующих крупным событиям разблокировки."
+      ],
+      mistakes: [
+        "Предположение о том, что «разблокировка токенов команды означает, что команда будет продавать», — это чрезмерное упрощение, не учитывающее рыночных нюансов.",
+        "Фокусирование только на одиночных событиях разблокировки, пропуская совокупный график — распространённая ошибка моделирования."
+      ],
+      benchmarks: [
+        "Анализ 50+ событий разблокировки токенов за 2020–2023 годы показывает, что токены с соотношением разблокировки к среднедневному объёму выше 5:1 испытывали медианное снижение цены на 28% в течение 30 дней после события.",
+        "События разблокировки для инвесторов исторически производят на 40–60% больший ценовой эффект, чем сопоставимые по объёму разблокировки для команды."
+      ],
+      execution: [
+        "За 30 дней до крупной разблокировки сократите размер позиции до минимально комфортного уровня — в идеале 50–70% от пиковой позиции. Используйте высвободившиеся средства для выставления лимитных ордеров на покупку по целевым ценам после разблокировки.",
+        "Рассмотрите структурированные опционные стратегии, если они доступны: покупка пут-опционов за 45 дней до разблокировки со сроком истечения 30 дней обеспечивает защиту от снижения при относительно умеренной подразумеваемой волатильности."
+      ],
+      hygiene: [
+        "Подпишитесь на сервисы отслеживания разблокировок, отправляющие уведомления за 90, 30 и 7 дней до запланированных событий.",
+        "После каждого прошедшего события разблокировки документируйте фактическое ценовое воздействие в сравнении с прогнозом вашей модели."
+      ],
+      validation: [
+        "Проверяйте даты и объёмы разблокировки, читая реальную логику вестинга смарт-контракта, а не только официальную документацию проекта.",
+        "Перекрёстно проверяйте моделирование, находя исторически сопоставимое событие разблокировки аналогичного проекта и проверяя, как цена вела себя на самом деле."
+      ]
+    }
+  },
+  'vesting-schedule': {
+    en: {
+      interpret: [
+        "A vesting schedule defines the timeline over which token holders — primarily teams, investors, and advisors — gain full ownership of their allocated tokens. When analyzing a vesting schedule, look beyond the stated percentages and focus on the economic implications: at current market price, what is the dollar value of tokens becoming liquid each month? How does that compare to the project's daily trading volume? Projects with monthly unlock values exceeding 30 days of average trading volume face structural selling headwinds that are difficult to overcome with organic buyer demand alone.",
+        "The shape of the vesting curve matters as much as the total duration. Cliff-based vesting — where no tokens unlock for 6–12 months, then a large percentage unlocks at once — creates episodic risk that's predictable but concentrated. Linear daily vesting creates constant, low-level sell pressure that can be less impactful but sustained. Back-loaded vesting (heavier unlocks in years 2–4) is most founder-friendly and least disruptive to early price discovery. Map the specific monthly release amounts over a 36-month horizon to understand the complete supply dynamics."
+      ],
+      scenarios: [
+        "A Layer-2 protocol has the following vesting: Team (20% of supply): 1-year cliff, then linear over 24 months. Investors (15%): 6-month cliff, then linear over 18 months. Ecosystem fund (30%): 3-year linear with no cliff. Foundation (10%): 5-year linear. Public sale (25%): fully liquid at launch. At current price, the ecosystem and foundation unlocks average $2.5M per month for 36 months — a persistent source of selling pressure that project growth must outpace to maintain price appreciation.",
+        "An NFT marketplace token has aggressive vesting: the team's 35% allocation vests over just 12 months with no cliff. In month 13, the full 35% of circulating supply equivalent is available for sale — if the market cap has grown to $500M, that's $175M potentially hitting the market. Historically, tokens with such aggressive team vesting have underperformed sector benchmarks by 40%–60% in the 12–18 months following team unlock completion."
+      ],
+      checklist: [
+        "Build a complete month-by-month vesting model in a spreadsheet: list every category (team, investors, advisors, ecosystem, foundation, public sale), its percentage of total supply, cliff date, and linear release schedule. Sum all monthly releases to get total monthly inflation. Divide monthly inflation by average daily volume × 30 to get a monthly impact ratio — values above 0.5 represent significant structural headwinds.",
+        "Identify the top 5 largest single-month unlock events in the next 24 months. For each, calculate the dollar value at current price and as a multiple of average daily volume. These are your highest-risk calendar dates. Plan position sizing and hedge strategies specifically around these 5 dates rather than trying to manage the full 24-month schedule uniformly."
+      ],
+      mistakes: [
+        "Overlooking the distinction between cliff vesting and linear vesting leads to systematic miscalculation of risk timing. A project that says '4-year vesting' might mean very different things: 25% at cliff, then nothing for 3 years (extremely back-loaded) versus equal monthly releases over 48 months. Always model the actual release cadence, not just the headline vesting duration.",
+        "Failing to account for accelerated vesting clauses in team and investor agreements. Some vesting schedules include provisions for early release upon token listing on major exchanges, project acquisition, or reaching certain price targets. If such clauses exist and trigger, the announced vesting schedule becomes irrelevant — tracking on-chain token movements from team/investor wallets provides earlier warning than official announcements."
+      ],
+      benchmarks: [
+        "Industry best practices for team token vesting have evolved to: 1-year cliff followed by 36-month linear release. Projects deviating significantly from this standard — shorter cliffs, faster vesting, larger team allocations above 20% — have historically correlated with worse long-term price performance. This isn't causal, but reflects that aggressive vesting often accompanies weaker tokenomics design overall.",
+        "Investor vesting best practices: 6-month to 1-year cliff, then 12–24 month linear release. Investor allocations above 25% of total supply, combined with short vesting, represent the most toxic combination for retail holders. Projects with these characteristics have historically produced negative returns for investors who bought at or after listing, regardless of project quality."
+      ],
+      execution: [
+        "Use your vesting model to identify 'value windows' — periods when sell pressure from vesting decreases significantly. These windows often represent the best risk-adjusted entry points. For example, if a major 12-month investor unlock ends in month 18 and the next large unlock isn't until month 36, months 19–35 may represent lower structural headwind periods that enable cleaner price appreciation.",
+        "For projects already in your portfolio, review the remaining vesting schedule quarterly and adjust position size based on upcoming unlock concentrations. If the next quarter contains 3x your normal monthly unlock volume, consider reducing exposure by 20%–30% heading into that quarter and rebuilding after the concentrated selling pressure has cleared."
+      ],
+      hygiene: [
+        "Create a shared vesting calendar that integrates with your portfolio tracking system. Tag each major unlock event with its estimated dollar value at current price, and set up automated alerts when that value exceeds predefined thresholds (e.g., >$10M for large positions, >$1M for smaller ones). This systematic approach prevents individual events from being overlooked during busy market periods.",
+        "Annually reconcile your vesting models against actual token releases. Compare your projected release amounts to actual on-chain token movements from team and investor wallets. Discrepancies reveal whether the project is following its stated schedule — significant deviations (early or delayed releases) warrant investigation of project health and potential changes to your position."
+      ],
+      validation: [
+        "Verify vesting schedules by reviewing the project's smart contract code directly, not just the published tokenomics documentation. Look for hardcoded unlock dates, cliff logic, and linear release functions. Third-party audits of vesting contracts provide additional assurance that the on-chain logic matches stated schedules. Be especially cautious of upgradeable vesting contracts where admins can modify the schedule post-deployment.",
+        "Cross-validate stated vesting by monitoring large wallet addresses associated with team and investors. If the project claims tokens are locked until a specific date but on-chain data shows these wallets receiving tokens earlier, the stated vesting schedule is inaccurate. Set up wallet tracking alerts using services like Nansen or Dune Analytics to monitor these addresses continuously."
+      ]
+    },
+    es: {
+      interpret: [
+        "Un calendario de adquisición define el cronograma durante el cual los tenedores de tokens —principalmente equipos, inversores y asesores— obtienen la propiedad total de sus tokens asignados. Al analizar un calendario de adquisición, mira más allá de los porcentajes declarados y concéntrate en las implicaciones económicas: al precio actual del mercado, ¿cuál es el valor en dólares de los tokens que se vuelven líquidos cada mes?",
+        "La forma de la curva de adquisición importa tanto como la duración total. La adquisición basada en acantilados —donde no se desbloquean tokens durante 6–12 meses, luego un gran porcentaje se desbloquea de una vez— crea riesgo episódico predecible pero concentrado. La adquisición lineal diaria crea una presión vendedora constante y de bajo nivel."
+      ],
+      scenarios: [
+        "Un protocolo de Capa 2 tiene el siguiente vesting: Equipo (20% del suministro): acantilado de 1 año, luego lineal durante 24 meses. Inversores (15%): acantilado de 6 meses, luego lineal durante 18 meses. Fondo del ecosistema (30%): lineal de 3 años sin acantilado. Al precio actual, los desbloqueos del ecosistema y la fundación promedian $2,5M por mes durante 36 meses.",
+        "Un token de mercado NFT tiene un vesting agresivo: la asignación del 35% del equipo se adquiere en solo 12 meses sin acantilado. En el mes 13, el equivalente al 35% completo del suministro en circulación está disponible para la venta."
+      ],
+      checklist: [
+        "Construye un modelo de vesting completo mes a mes en una hoja de cálculo: lista cada categoría (equipo, inversores, asesores, ecosistema, fundación, venta pública), su porcentaje del suministro total, fecha del acantilado y calendario de lanzamiento lineal.",
+        "Identifica los 5 eventos de desbloqueo de mes único más grandes en los próximos 24 meses. Para cada uno, calcula el valor en dólares al precio actual y como múltiplo del volumen diario promedio."
+      ],
+      mistakes: [
+        "Pasar por alto la distinción entre el vesting de acantilado y el vesting lineal lleva a un cálculo sistemático erróneo del tiempo del riesgo. Siempre modela la cadencia de lanzamiento real, no solo la duración del vesting titular.",
+        "No tener en cuenta las cláusulas de vesting acelerado en los acuerdos de equipo e inversores. Algunos calendarios de adquisición incluyen disposiciones para lanzamiento anticipado al cotizar en los principales exchanges."
+      ],
+      benchmarks: [
+        "Las mejores prácticas de la industria para el vesting de tokens de equipo han evolucionado a: acantilado de 1 año seguido de lanzamiento lineal de 36 meses. Los proyectos que se desvían significativamente de este estándar han correlacionado históricamente con peor rendimiento de precios a largo plazo.",
+        "Las mejores prácticas de vesting para inversores: acantilado de 6 meses a 1 año, luego lanzamiento lineal de 12–24 meses."
+      ],
+      execution: [
+        "Usa tu modelo de vesting para identificar 'ventanas de valor' — períodos en que la presión vendedora del vesting disminuye significativamente. Estas ventanas a menudo representan los mejores puntos de entrada ajustados al riesgo.",
+        "Para proyectos ya en tu cartera, revisa el calendario de vesting restante trimestralmente y ajusta el tamaño de la posición según las próximas concentraciones de desbloqueo."
+      ],
+      hygiene: [
+        "Crea un calendario de vesting compartido que se integre con tu sistema de seguimiento de cartera. Etiqueta cada evento de desbloqueo importante con su valor estimado en dólares al precio actual.",
+        "Reconcilia anualmente tus modelos de vesting con las liberaciones reales de tokens. Compara tus montos de lanzamiento proyectados con los movimientos reales de tokens on-chain de las billeteras del equipo e inversores."
+      ],
+      validation: [
+        "Verifica los calendarios de vesting revisando directamente el código del contrato inteligente del proyecto, no solo la documentación de tokenomics publicada.",
+        "Valida cruzadamente el vesting declarado monitoreando las grandes direcciones de billetera asociadas con el equipo y los inversores."
+      ]
+    },
+    pt: {
+      interpret: [
+        "Um cronograma de vesting define o prazo durante o qual os detentores de tokens — principalmente equipes, investidores e consultores — obtêm propriedade total de seus tokens alocados. Ao analisar um cronograma de vesting, olhe além dos percentuais declarados e foque nas implicações econômicas.",
+        "A forma da curva de vesting importa tanto quanto a duração total. Vesting baseado em cliff — onde nenhum token é desbloqueado por 6–12 meses, depois uma grande porcentagem é desbloqueada de uma vez — cria risco episódico que é previsível, mas concentrado."
+      ],
+      scenarios: [
+        "Um protocolo Layer-2 tem o seguinte vesting: Equipe (20% do fornecimento): cliff de 1 ano, depois linear por 24 meses. Investidores (15%): cliff de 6 meses, depois linear por 18 meses. Fundo do ecossistema (30%): linear de 3 anos sem cliff.",
+        "Um token de mercado NFT tem vesting agressivo: a alocação de 35% da equipe veste em apenas 12 meses sem cliff. No mês 13, o equivalente completo de 35% do fornecimento circulante está disponível para venda."
+      ],
+      checklist: [
+        "Construa um modelo de vesting completo mês a mês em uma planilha: liste cada categoria (equipe, investidores, consultores, ecossistema, fundação, venda pública), seu percentual do fornecimento total, data do cliff e cronograma de lançamento linear.",
+        "Identifique os 5 maiores eventos de desbloqueio de um único mês nos próximos 24 meses. Para cada um, calcule o valor em dólares ao preço atual e como múltiplo do volume diário médio."
+      ],
+      mistakes: [
+        "Ignorar a distinção entre vesting cliff e vesting linear leva a erros sistemáticos no cálculo do timing de risco.",
+        "Deixar de contabilizar cláusulas de vesting acelerado em acordos de equipe e investidores."
+      ],
+      benchmarks: [
+        "As melhores práticas do setor para vesting de tokens de equipe evoluíram para: cliff de 1 ano seguido de lançamento linear de 36 meses.",
+        "Melhores práticas de vesting para investidores: cliff de 6 meses a 1 ano, depois lançamento linear de 12–24 meses."
+      ],
+      execution: [
+        "Use seu modelo de vesting para identificar 'janelas de valor' — períodos em que a pressão de venda do vesting diminui significativamente.",
+        "Para projetos já em seu portfólio, revise o cronograma de vesting restante trimestralmente e ajuste o tamanho da posição com base nas próximas concentrações de desbloqueio."
+      ],
+      hygiene: [
+        "Crie um calendário de vesting compartilhado que se integre ao seu sistema de rastreamento de portfólio.",
+        "Reconcilie anualmente seus modelos de vesting com as liberações reais de tokens."
+      ],
+      validation: [
+        "Verifique os cronogramas de vesting revisando o código do contrato inteligente do projeto diretamente.",
+        "Valide cruzadamente o vesting declarado monitorando grandes endereços de carteira associados à equipe e investidores."
+      ]
+    },
+    tr: {
+      interpret: [
+        "Bir vesting takvimi, token sahiplerinin — öncelikle ekipler, yatırımcılar ve danışmanlar — tahsis edilen tokenlarının tam sahipliğini kazandığı zaman çizelgesini tanımlar. Bir vesting takvimini analiz ederken, belirtilen yüzdeler ötesine bakın ve ekonomik çıkarımları odaklanın.",
+        "Vesting eğrisinin şekli, toplam süresi kadar önem taşır. Uçurum tabanlı vesting — 6–12 ay boyunca hiç token açılmadığında, ardından tek seferde büyük bir yüzde açıldığında — öngörülebilir ancak yoğunlaşmış episodik risk yaratır."
+      ],
+      scenarios: [
+        "Bir Layer-2 protokolü şu şekilde vesting'e sahip: Ekip (%20 arz): 1 yıl uçurum, ardından 24 ay boyunca doğrusal. Yatırımcılar (%15): 6 ay uçurum, ardından 18 ay boyunca doğrusal. Ekosistem fonu (%30): Uçurum olmaksızın 3 yıllık doğrusal.",
+        "Bir NFT pazaryeri tokeni agresif vesting'e sahip: ekibin %35 tahsisi uçurum olmaksızın yalnızca 12 ayda kazanılıyor."
+      ],
+      checklist: [
+        "Bir elektronik tabloda eksiksiz bir aylık vesting modeli oluşturun: her kategoriyi (ekip, yatırımcılar, danışmanlar, ekosistem, vakıf, halka satış) listeleyin.",
+        "Önümüzdeki 24 aydaki en büyük 5 tek aylık kilit açma olayını belirleyin."
+      ],
+      mistakes: [
+        "Uçurum vesting ile doğrusal vesting arasındaki farkı gözden kaçırmak, risk zamanlamasının sistematik olarak yanlış hesaplanmasına yol açar.",
+        "Ekip ve yatırımcı anlaşmalarındaki hızlandırılmış vesting maddelerini hesaba katmamak."
+      ],
+      benchmarks: [
+        "Ekip token vesting'i için sektör en iyi uygulamaları şu şekilde gelişti: 1 yıl uçurum, ardından 36 aylık doğrusal yayın.",
+        "Yatırımcı vesting için en iyi uygulamalar: 6 ay ile 1 yıl arası uçurum, ardından 12–24 aylık doğrusal yayın."
+      ],
+      execution: [
+        "Vesting modelinizi 'değer pencereleri' — vesting'den kaynaklanan satış baskısının önemli ölçüde azaldığı dönemleri — belirlemek için kullanın.",
+        "Portföyünüzdeki projeler için kalan vesting takvimini üç ayda bir gözden geçirin."
+      ],
+      hygiene: [
+        "Portföy takip sisteminizle entegre olan paylaşımlı bir vesting takvimi oluşturun.",
+        "Vesting modellerinizi yıllık olarak gerçek token sürümleriyle mutabık hale getirin."
+      ],
+      validation: [
+        "Vesting takvimlerini yalnızca yayınlanan tokenomics belgelerine değil, projenin akıllı sözleşme kodunu doğrudan inceleyerek doğrulayın.",
+        "Ekip ve yatırımcılarla ilişkili büyük cüzdan adreslerini izleyerek beyan edilen vesting'i çapraz olarak doğrulayın."
+      ]
+    },
+    hi: {
+      interpret: [
+        "एक वेस्टिंग शेड्यूल वह समयरेखा परिभाषित करता है जिस पर टोकन धारक — मुख्य रूप से टीम, निवेशक और सलाहकार — अपने आवंटित टोकन का पूर्ण स्वामित्व प्राप्त करते हैं। वेस्टिंग शेड्यूल का विश्लेषण करते समय, बताए गए प्रतिशत से परे देखें और आर्थिक प्रभावों पर ध्यान दें।",
+        "वेस्टिंग वक्र का आकार कुल अवधि जितना ही महत्वपूर्ण है। क्लिफ-आधारित वेस्टिंग — जहां 6–12 महीनों के लिए कोई टोकन अनलॉक नहीं होता, फिर एक बड़ा प्रतिशत एक बार में अनलॉक होता है — भविष्यवाणी योग्य लेकिन केंद्रित एपिसोडिक जोखिम बनाता है।"
+      ],
+      scenarios: [
+        "एक Layer-2 प्रोटोकॉल में निम्नलिखित वेस्टिंग है: टीम (सप्लाई का 20%): 1-वर्ष क्लिफ, फिर 24 महीनों में लीनियर। निवेशक (15%): 6-महीने क्लिफ, फिर 18 महीनों में लीनियर। इकोसिस्टम फंड (30%): बिना क्लिफ के 3-वर्ष लीनियर।",
+        "एक NFT मार्केटप्लेस टोकन में आक्रामक वेस्टिंग है: टीम का 35% आवंटन बिना क्लिफ के मात्र 12 महीनों में वेस्ट होता है।"
+      ],
+      checklist: [
+        "एक स्प्रेडशीट में महीने-दर-महीने पूर्ण वेस्टिंग मॉडल बनाएं: प्रत्येक श्रेणी (टीम, निवेशक, सलाहकार, इकोसिस्टम, फाउंडेशन, पब्लिक सेल) को सूचीबद्ध करें।",
+        "अगले 24 महीनों में 5 सबसे बड़े एकल-माह अनलॉक इवेंट की पहचान करें।"
+      ],
+      mistakes: [
+        "क्लिफ वेस्टिंग और लीनियर वेस्टिंग के बीच के अंतर को नजरअंदाज करना जोखिम के समय की व्यवस्थित गणना में गलतियां करने की ओर ले जाता है।",
+        "टीम और निवेशक समझौतों में त्वरित वेस्टिंग खंडों का हिसाब न रखना।"
+      ],
+      benchmarks: [
+        "टीम टोकन वेस्टिंग के लिए उद्योग की सर्वोत्तम प्रथाएं: 1-वर्ष क्लिफ के बाद 36-महीने का लीनियर रिलीज।",
+        "निवेशक वेस्टिंग के लिए सर्वोत्तम प्रथाएं: 6-महीने से 1-वर्ष का क्लिफ, फिर 12–24 महीने का लीनियर रिलीज।"
+      ],
+      execution: [
+        "अपने वेस्टिंग मॉडल का उपयोग 'वैल्यू विंडो' — ऐसी अवधि जब वेस्टिंग से बिक्री दबाव काफी कम हो जाता है — पहचानने के लिए करें।",
+        "पहले से अपने पोर्टफोलियो में मौजूद प्रोजेक्ट के लिए, त्रैमासिक रूप से शेष वेस्टिंग शेड्यूल की समीक्षा करें।"
+      ],
+      hygiene: [
+        "एक साझा वेस्टिंग कैलेंडर बनाएं जो आपके पोर्टफोलियो ट्रैकिंग सिस्टम के साथ एकीकृत हो।",
+        "वास्तविक टोकन रिलीज के खिलाफ अपने वेस्टिंग मॉडल को वार्षिक रूप से मिलाएं।"
+      ],
+      validation: [
+        "केवल प्रकाशित टोकनोमिक्स दस्तावेज़ीकरण पर नहीं, बल्कि प्रोजेक्ट के स्मार्ट कॉन्ट्रैक्ट कोड की सीधे समीक्षा करके वेस्टिंग शेड्यूल सत्यापित करें।",
+        "टीम और निवेशकों से जुड़े बड़े वॉलेट पते की निगरानी करके बताए गए वेस्टिंग को क्रॉस-वैलिडेट करें।"
+      ]
+    },
+    ru: {
+      interpret: [
+        "График вестинга определяет временные рамки, в течение которых держатели токенов — прежде всего команды, инвесторы и советники — получают полное право собственности на свои аллоцированные токены. Анализируя график вестинга, смотрите не только на объявленные проценты — изучайте экономические последствия.",
+        "Форма кривой вестинга не менее важна, чем общая продолжительность. Клиффовый вестинг — когда токены не высвобождаются в течение 6–12 месяцев, а затем единовременно разблокируется большой процент — создаёт предсказуемый, но концентрированный эпизодический риск."
+      ],
+      scenarios: [
+        "Протокол второго уровня имеет следующий вестинг: Команда (20% предложения): клифф 1 год, затем линейно 24 месяца. Инвесторы (15%): клифф 6 месяцев, затем линейно 18 месяцев. Экосистемный фонд (30%): линейно 3 года без клиффа.",
+        "Токен NFT-маркетплейса имеет агрессивный вестинг: аллокация команды в 35% вестится всего за 12 месяцев без клиффа."
+      ],
+      checklist: [
+        "Постройте полную помесячную модель вестинга в таблице: укажите каждую категорию (команда, инвесторы, советники, экосистема, фонд, публичная продажа), её долю в общем предложении, дату клиффа и график линейного высвобождения.",
+        "Определите 5 крупнейших разблокировок в единственный месяц в ближайшие 24 месяца."
+      ],
+      mistakes: [
+        "Непонимание различия между клиффовым и линейным вестингом приводит к систематическим ошибкам в оценке временных рисков.",
+        "Игнорирование условий об ускоренном вестинге в соглашениях с командой и инвесторами."
+      ],
+      benchmarks: [
+        "Лучшие отраслевые практики вестинга токенов команды: клифф 1 год, затем линейный выпуск 36 месяцев.",
+        "Лучшие практики вестинга для инвесторов: клифф от 6 месяцев до 1 года, затем линейный выпуск 12–24 месяца."
+      ],
+      execution: [
+        "Используйте модель вестинга для выявления «ценных окон» — периодов, когда давление продаж от вестинга значительно снижается.",
+        "Для проектов в портфеле ежеквартально пересматривайте оставшийся график вестинга и корректируйте размер позиции."
+      ],
+      hygiene: [
+        "Создайте общий календарь вестинга, интегрированный с системой отслеживания портфеля.",
+        "Ежегодно сверяйте модели вестинга с фактическими выпусками токенов."
+      ],
+      validation: [
+        "Проверяйте графики вестинга, просматривая исходный код смарт-контракта проекта напрямую, а не только опубликованную документацию.",
+        "Перекрёстно проверяйте заявленный вестинг, отслеживая крупные адреса кошельков команды и инвесторов."
+      ]
+    }
+  },
+  'airdrop-value': {
+    en: {
+      interpret: [
+        "Airdrop value calculations represent the potential dollar value of tokens distributed to qualifying addresses — but interpreting this value requires understanding the gap between nominal allocation and realizable value. The price at which an airdrop is announced and the price at which recipients can actually sell are often dramatically different. Large airdrops to many wallets create simultaneous selling pressure at the moment of claim: if 500,000 wallets each receive $200 worth of tokens and all sell on day one, that's $100M of selling pressure hitting the market instantly — typically collapsing the price below the announced value.",
+        "The quality of airdrop value depends on the distribution design. Airdrops with cliff periods before claiming, graduated release schedules, or activity-based vesting create a more favorable demand-supply dynamic than cliff-free immediate claims. Similarly, airdrops targeting users with demonstrated long-term engagement (6+ month usage history, multiple protocol interactions) produce higher-quality recipients who are more likely to hold than speculative farmers who qualified through minimal cost basis transactions."
+      ],
+      scenarios: [
+        "A DEX airdrop distributes 5% of token supply to historical users. At launch price, total airdrop value is $150M across 800,000 wallets, averaging $187 per wallet. However, 60% of wallets contain addresses that only performed 1–2 transactions to qualify (typical airdrop farming behavior). On day one, approximately 480,000 farmers sell their full allocation. If only 40% of remaining genuine users sell, total day-one selling is $100M+ against a token with $2M daily trading volume — price declines 40%–70% within hours.",
+        "A Layer-2 network's airdrop explicitly excludes addresses with fewer than 5 distinct protocol interactions and minimum 3-month usage. Only 120,000 wallets qualify for an average of $1,200 each. Farmer exclusions eliminate the majority of mercenary capital. Day-one selling pressure is 30%–40% of recipients × $1,200 average × 120,000 wallets = $43–$58M against $15M daily volume — still meaningful but manageable without catastrophic price collapse."
+      ],
+      checklist: [
+        "Before claiming an airdrop, calculate your realistic sell price rather than the announced value. If you're receiving $5,000 worth of tokens at announcement, and the token has $500K daily volume with 200,000 total airdrop recipients, your realistic sell price may be 30%–60% below announcement price. Use this adjusted figure for financial planning rather than the nominal allocation value.",
+        "Review the airdrop's claim design: is there a claim window (reducing simultaneous selling pressure)? Are tokens immediately liquid or subject to a lock-up? Are there bonus allocations for long-term holders? These design choices dramatically affect actual realized value. Airdrops with 30–90 day claim windows allow price discovery to stabilize before the full recipient pool has acted."
+      ],
+      mistakes: [
+        "Treating airdrop announcements as confirmed wealth before price discovery occurs. Many projects announce airdrops when their token hasn't yet launched publicly — the $X value calculation uses a hypothetical launch price that may be 10x higher or lower than where the token actually trades once liquidity is established. Airdrop value is theoretical until you've successfully sold at or near the expected price.",
+        "Ignoring tax implications of airdrop value. In most jurisdictions, received airdrops are taxable income at fair market value on the date of receipt or claim. If you receive $10,000 in airdrop value but don't sell immediately, and the price drops 80% before you sell, you may still owe taxes on the original $10,000 income basis. Always consult tax professionals before making airdrop claiming and selling decisions."
+      ],
+      benchmarks: [
+        "Historical airdrop price data shows that 70%+ of airdrops trade at or below their day-one high within 30 days of launch. The median airdrop token loses 45%–65% of initial value within 6 months of distribution. Notable exceptions include protocols with strong fundamentals, active development, and genuine user bases — UNI, DYDX, ENS, and ARB represent cases where airdrop recipients who held long-term realized 3x–10x on their initial allocation.",
+        "Airdrop farming ROI has declined significantly as protocols implement increasingly sophisticated anti-farming filters. In 2020–2021, $50–$200 of on-chain activity could yield $10,000–$50,000 in airdrops. By 2023–2024, the same spend typically generates $500–$2,000 in airdrop value after accounting for gas costs, time spent, and the probability of failing eligibility filters. This declining ROI has reduced the mercenary capital problem somewhat."
+      ],
+      execution: [
+        "Develop a claim-and-sell strategy before claiming any airdrop worth more than $1,000. Decide in advance what percentage you'll sell immediately (for tax and liquidity purposes), what percentage you'll convert to stablecoins (market-neutral retention), and what percentage you'll hold as a long-term position. Making this decision before emotional market movements influence you produces better outcomes than deciding ad hoc in real-time.",
+        "If you believe in a project's long-term prospects, sell 50%–70% of your airdrop on day one to cover taxes and crystallize some profit, then hold the remaining 30%–50% as a cost-free speculative position. This strategy eliminates regret in both scenarios: if the token rises, you participated; if it falls, you already captured value. Never hold 100% of a large airdrop without deliberate conviction about the project."
+      ],
+      hygiene: [
+        "Track airdrop claims in a dedicated tax register with date of receipt, quantity received, fair market value at receipt, and subsequent sales with prices and dates. This documentation is legally required in most jurisdictions and prevents scrambled record-keeping when tax season arrives. For high-volume airdrop farmers, dedicated crypto tax software with airdrop tracking features becomes essential.",
+        "Set realistic expectations by researching how previous airdrops from the same team or sector performed. A team that previously ran an airdrop that collapsed 90% in 30 days may repeat the pattern — while a team with a track record of post-airdrop price appreciation and active development provides better holding signals. Historical performance of the team's previous airdrop is often more predictive than the project's current fundamentals."
+      ],
+      validation: [
+        "Before claiming, verify airdrop legitimacy through official channels only — the project's verified Twitter account, official website, and Discord announcements. Phishing attacks disguised as airdrop claims steal private keys or drain wallets by requesting approval of malicious smart contracts. Never connect your primary wallet to unverified claim sites. Use a dedicated secondary wallet for claiming airdrops from new or unvetted projects.",
+        "Verify your airdrop allocation before the claim window closes by checking the official eligibility checker or Merkle proof verification system. Some airdrops have technical requirements (holding tokens, active positions, governance participation) that may disqualify late-checkers who assumed they qualified. Missing the claim window due to oversight permanently forfeits the allocation."
+      ]
+    },
+    es: {
+      interpret: [
+        "Los cálculos de valor de airdrop representan el valor potencial en dólares de los tokens distribuidos a las direcciones calificadas — pero interpretar este valor requiere comprender la brecha entre la asignación nominal y el valor realizable. El precio en que se anuncia un airdrop y el precio al que los destinatarios pueden realmente vender son a menudo dramáticamente diferentes.",
+        "La calidad del valor del airdrop depende del diseño de la distribución. Los airdrops con períodos de espera antes de reclamar, calendarios de lanzamiento graduado o vesting basado en actividad crean una dinámica de oferta-demanda más favorable que las reclamaciones inmediatas sin espera."
+      ],
+      scenarios: [
+        "Un airdrop de DEX distribuye el 5% del suministro de tokens a usuarios históricos. Al precio de lanzamiento, el valor total del airdrop es de $150M en 800,000 billeteras, con un promedio de $187 por billetera. Sin embargo, el 60% de las billeteras contienen direcciones que solo realizaron 1–2 transacciones para calificar.",
+        "El airdrop de una red Layer-2 excluye explícitamente las direcciones con menos de 5 interacciones de protocolo distintas y un uso mínimo de 3 meses. Solo 120,000 billeteras califican para un promedio de $1,200 cada una."
+      ],
+      checklist: [
+        "Antes de reclamar un airdrop, calcula tu precio de venta realista en lugar del valor anunciado. Si recibes $5,000 en tokens al anuncio, y el token tiene un volumen diario de $500K con 200,000 destinatarios totales de airdrop, tu precio de venta realista puede ser un 30%–60% por debajo del precio de anuncio.",
+        "Revisa el diseño de reclamación del airdrop: ¿hay una ventana de reclamación (que reduce la presión vendedora simultánea)? ¿Los tokens son inmediatamente líquidos o están sujetos a un período de bloqueo?"
+      ],
+      mistakes: [
+        "Tratar los anuncios de airdrop como riqueza confirmada antes de que ocurra el descubrimiento de precios. Muchos proyectos anuncian airdrops cuando su token aún no se ha lanzado públicamente — el cálculo de valor de $X usa un precio de lanzamiento hipotético.",
+        "Ignorar las implicaciones fiscales del valor del airdrop. En la mayoría de las jurisdicciones, los airdrops recibidos son ingresos gravables al valor de mercado justo en la fecha de recepción o reclamación."
+      ],
+      benchmarks: [
+        "Los datos históricos de precios de airdrop muestran que más del 70% de los airdrops cotizan al nivel de su máximo del primer día o por debajo dentro de los 30 días posteriores al lanzamiento. El token airdrop mediano pierde el 45%–65% del valor inicial dentro de los 6 meses de la distribución.",
+        "El ROI del farming de airdrops ha disminuido significativamente a medida que los protocolos implementan filtros anti-farming cada vez más sofisticados."
+      ],
+      execution: [
+        "Desarrolla una estrategia de reclamar y vender antes de reclamar cualquier airdrop que valga más de $1,000. Decide de antemano qué porcentaje venderás inmediatamente, qué porcentaje convertirás en stablecoins y qué porcentaje mantendrás como posición a largo plazo.",
+        "Si crees en las perspectivas a largo plazo de un proyecto, vende el 50%–70% de tu airdrop el primer día para cubrir impuestos y cristalizar alguna ganancia, luego mantén el 30%–50% restante como posición especulativa de costo cero."
+      ],
+      hygiene: [
+        "Registra las reclamaciones de airdrop en un registro fiscal dedicado con fecha de recepción, cantidad recibida, valor de mercado justo al momento de la recepción y ventas posteriores con precios y fechas.",
+        "Establece expectativas realistas investigando cómo se desempeñaron los airdrops anteriores del mismo equipo o sector."
+      ],
+      validation: [
+        "Antes de reclamar, verifica la legitimidad del airdrop solo a través de canales oficiales — la cuenta de Twitter verificada del proyecto, el sitio web oficial y los anuncios de Discord.",
+        "Verifica tu asignación de airdrop antes de que se cierre la ventana de reclamación comprobando el verificador de elegibilidad oficial o el sistema de verificación de prueba Merkle."
+      ]
+    },
+    pt: {
+      interpret: [
+        "Os cálculos de valor de airdrop representam o valor potencial em dólares dos tokens distribuídos para endereços qualificados — mas interpretar esse valor requer entender a lacuna entre a alocação nominal e o valor realizável.",
+        "A qualidade do valor do airdrop depende do design da distribuição. Airdrops com períodos de espera antes da reivindicação, cronogramas de lançamento graduados ou vesting baseado em atividade criam uma dinâmica de oferta-demanda mais favorável."
+      ],
+      scenarios: [
+        "Um airdrop de DEX distribui 5% do fornecimento de tokens para usuários históricos. Ao preço de lançamento, o valor total do airdrop é de $150M em 800.000 carteiras, com média de $187 por carteira.",
+        "O airdrop de uma rede Layer-2 exclui explicitamente endereços com menos de 5 interações de protocolo distintas e uso mínimo de 3 meses. Apenas 120.000 carteiras se qualificam para uma média de $1.200 cada."
+      ],
+      checklist: [
+        "Antes de reivindicar um airdrop, calcule seu preço de venda realista em vez do valor anunciado.",
+        "Revise o design de reivindicação do airdrop: há uma janela de reivindicação? Os tokens são imediatamente líquidos ou sujeitos a um período de bloqueio?"
+      ],
+      mistakes: [
+        "Tratar anúncios de airdrop como riqueza confirmada antes que a descoberta de preço ocorra.",
+        "Ignorar as implicações fiscais do valor do airdrop."
+      ],
+      benchmarks: [
+        "Os dados históricos de preços de airdrop mostram que mais de 70% dos airdrops são negociados abaixo de seu máximo do dia um dentro de 30 dias após o lançamento.",
+        "O ROI do farming de airdrops diminuiu significativamente à medida que os protocolos implementam filtros anti-farming cada vez mais sofisticados."
+      ],
+      execution: [
+        "Desenvolva uma estratégia de reivindicar e vender antes de reivindicar qualquer airdrop que valha mais de $1.000.",
+        "Se você acredita nas perspectivas de longo prazo de um projeto, venda 50%–70% de seu airdrop no primeiro dia para cobrir impostos e cristalizar algum lucro."
+      ],
+      hygiene: [
+        "Registre as reivindicações de airdrop em um registro fiscal dedicado com data de recebimento, quantidade recebida, valor justo de mercado no recebimento e vendas subsequentes.",
+        "Defina expectativas realistas pesquisando como airdrops anteriores da mesma equipe ou setor se saíram."
+      ],
+      validation: [
+        "Antes de reivindicar, verifique a legitimidade do airdrop apenas por canais oficiais.",
+        "Verifique sua alocação de airdrop antes que a janela de reivindicação feche."
+      ]
+    },
+    tr: {
+      interpret: [
+        "Airdrop değeri hesaplamaları, uygun adreslere dağıtılan tokenlerin potansiyel dolar değerini temsil eder — ancak bu değeri yorumlamak, nominal tahsis ile gerçekleştirilebilir değer arasındaki boşluğu anlamayı gerektirir.",
+        "Airdrop değerinin kalitesi dağıtım tasarımına bağlıdır. Talep etmeden önce uçurum süreleri olan, kademeli serbest bırakma takvimleri olan veya aktiviteye dayalı vesting'e sahip airdropslar, anında talep olmaksızın daha olumlu bir arz-talep dinamiği yaratır."
+      ],
+      scenarios: [
+        "Bir DEX airdropu, geçmiş kullanıcılara token arzının %5'ini dağıtıyor. Lansman fiyatında toplam airdrop değeri, ortalama 187 dolar olan 800.000 cüzdanda 150 milyon dolardır.",
+        "Bir Layer-2 ağının airdrop'u, 5'ten az farklı protokol etkileşimine sahip ve minimum 3 aylık kullanımı olan adresleri açıkça dışlıyor. Yalnızca 120.000 cüzdan, her biri ortalama 1.200 dolar için uygun."
+      ],
+      checklist: [
+        "Bir airdrop talep etmeden önce, duyurulan değer yerine gerçekçi satış fiyatınızı hesaplayın.",
+        "Airdrop'un talep tasarımını inceleyin: bir talep penceresi var mı? Tokenlar anında likit mi yoksa bir kilitlenme süresine mi tabi?"
+      ],
+      mistakes: [
+        "Fiyat keşfi gerçekleşmeden airdrop duyurularını teyit edilmiş servet olarak değerlendirmek.",
+        "Airdrop değerinin vergi etkilerini göz ardı etmek."
+      ],
+      benchmarks: [
+        "Tarihsel airdrop fiyat verileri, airdropsların %70'inden fazlasının lansmanın 30 günü içinde ilk gün yüksek seviyelerinde veya altında işlem gördüğünü gösteriyor.",
+        "Airdrop farming ROI'si, protokollerin giderek daha sofistike anti-farming filtreleri uygulamasıyla önemli ölçüde düştü."
+      ],
+      execution: [
+        "1.000 doların üzerinde herhangi bir airdrop talep etmeden önce bir talep et ve sat stratejisi geliştirin.",
+        "Bir projenin uzun vadeli beklentilerine inanıyorsanız, vergileri karşılamak ve bir miktar kâr elde etmek için airdrop'unuzun %50–%70'ini ilk gün satın."
+      ],
+      hygiene: [
+        "Airdrop taleplerini, alım tarihi, alınan miktar, alım tarihindeki adil piyasa değeri ve sonraki satışları içeren özel bir vergi kaydında takip edin.",
+        "Aynı ekibin veya sektörün önceki airdroplarının nasıl performans gösterdiğini araştırarak gerçekçi beklentiler belirleyin."
+      ],
+      validation: [
+        "Talep etmeden önce airdrop meşruiyetini yalnızca resmi kanallar aracılığıyla doğrulayın.",
+        "Talep penceresi kapanmadan önce resmi uygunluk denetleyicisini kontrol ederek airdrop tahsisinizi doğrulayın."
+      ]
+    },
+    hi: {
+      interpret: [
+        "एयरड्रॉप वैल्यू गणनाएं योग्य पते पर वितरित टोकन के संभावित डॉलर मूल्य का प्रतिनिधित्व करती हैं — लेकिन इस मूल्य की व्याख्या करने के लिए नाममात्र आवंटन और वास्तविक मूल्य के बीच के अंतर को समझना आवश्यक है।",
+        "एयरड्रॉप मूल्य की गुणवत्ता वितरण डिज़ाइन पर निर्भर करती है। क्लेम करने से पहले क्लिफ पीरियड, क्रमिक रिलीज शेड्यूल, या गतिविधि-आधारित वेस्टिंग वाले एयरड्रॉप अधिक अनुकूल सप्लाई-डिमांड डायनामिक बनाते हैं।"
+      ],
+      scenarios: [
+        "एक DEX एयरड्रॉप ऐतिहासिक उपयोगकर्ताओं को टोकन सप्लाई का 5% वितरित करता है। लॉन्च मूल्य पर, 800,000 वॉलेट में कुल एयरड्रॉप मूल्य $150M है, प्रति वॉलेट औसत $187।",
+        "एक Layer-2 नेटवर्क का एयरड्रॉप 5 से कम अलग प्रोटोकॉल इंटरैक्शन और न्यूनतम 3 महीने के उपयोग वाले पते को स्पष्ट रूप से बाहर करता है। केवल 120,000 वॉलेट प्रत्येक औसत $1,200 के लिए योग्य हैं।"
+      ],
+      checklist: [
+        "एयरड्रॉप क्लेम करने से पहले, घोषित मूल्य के बजाय अपना यथार्थवादी बिक्री मूल्य गणना करें।",
+        "एयरड्रॉप के क्लेम डिज़ाइन की समीक्षा करें: क्या कोई क्लेम विंडो है? क्या टोकन तुरंत लिक्विड हैं या किसी लॉक-अप के अधीन हैं?"
+      ],
+      mistakes: [
+        "मूल्य खोज होने से पहले एयरड्रॉप घोषणाओं को पुष्टि की गई संपत्ति मानना।",
+        "एयरड्रॉप मूल्य के कर प्रभावों को नजरअंदाज करना।"
+      ],
+      benchmarks: [
+        "ऐतिहासिक एयरड्रॉप मूल्य डेटा दिखाता है कि 70%+ एयरड्रॉप लॉन्च के 30 दिनों के भीतर अपने पहले दिन के उच्च स्तर पर या उससे नीचे ट्रेड करते हैं।",
+        "एयरड्रॉप फार्मिंग ROI में काफी गिरावट आई है क्योंकि प्रोटोकॉल तेजी से परिष्कृत एंटी-फार्मिंग फिल्टर लागू करते हैं।"
+      ],
+      execution: [
+        "$1,000 से अधिक मूल्य के किसी भी एयरड्रॉप को क्लेम करने से पहले क्लेम-एंड-सेल रणनीति विकसित करें।",
+        "यदि आप किसी प्रोजेक्ट की दीर्घकालिक संभावनाओं में विश्वास करते हैं, तो करों को कवर करने और कुछ लाभ क्रिस्टलाइज़ करने के लिए पहले दिन अपने एयरड्रॉप का 50%–70% बेचें।"
+      ],
+      hygiene: [
+        "एयरड्रॉप क्लेम को प्राप्ति की तारीख, प्राप्त मात्रा, प्राप्ति पर उचित बाजार मूल्य और बाद की बिक्री के साथ एक समर्पित कर रजिस्टर में ट्रैक करें।",
+        "उसी टीम या क्षेत्र के पिछले एयरड्रॉप के प्रदर्शन की जांच करके यथार्थवादी अपेक्षाएं निर्धारित करें।"
+      ],
+      validation: [
+        "क्लेम करने से पहले, केवल आधिकारिक चैनलों के माध्यम से एयरड्रॉप की वैधता सत्यापित करें।",
+        "क्लेम विंडो बंद होने से पहले आधिकारिक पात्रता जांचकर्ता की जांच करके अपना एयरड्रॉप आवंटन सत्यापित करें।"
+      ]
+    },
+    ru: {
+      interpret: [
+        "Расчёты ценности аирдропа представляют потенциальную стоимость в долларах токенов, распределяемых по подходящим адресам — но интерпретация этой ценности требует понимания разрыва между номинальной аллокацией и реализуемой стоимостью.",
+        "Качество ценности аирдропа зависит от дизайна распределения. Аирдропы с клифф-периодами перед клеймингом, постепенными графиками выпуска или вестингом на основе активности создают более благоприятную динамику спроса-предложения."
+      ],
+      scenarios: [
+        "Аирдроп DEX распределяет 5% общего предложения токенов среди исторических пользователей. По цене запуска общая стоимость аирдропа составляет $150 млн по 800 000 кошелькам, в среднем $187 на кошелёк.",
+        "Аирдроп сети второго уровня явно исключает адреса с менее чем 5 различными взаимодействиями с протоколом и минимальным 3-месячным использованием. Только 120 000 кошельков соответствуют требованиям со средним значением $1 200 каждый."
+      ],
+      checklist: [
+        "Перед клеймингом аирдропа рассчитайте реалистичную цену продажи, а не объявленную стоимость.",
+        "Изучите дизайн клейминга аирдропа: есть ли окно клейминга? Токены немедленно ликвидны или подлежат локап-периоду?"
+      ],
+      mistakes: [
+        "Восприятие объявлений об аирдропе как подтверждённого богатства до того, как произошло ценовое открытие.",
+        "Игнорирование налоговых последствий стоимости аирдропа."
+      ],
+      benchmarks: [
+        "Исторические данные о ценах аирдропов показывают, что более 70% аирдропов торгуются на уровне своего максимума первого дня или ниже в течение 30 дней после запуска.",
+        "Доходность фарминга аирдропов значительно снизилась по мере того, как протоколы внедряют всё более сложные анти-фарминговые фильтры."
+      ],
+      execution: [
+        "Разработайте стратегию «заклеймить и продать» до того, как клеймить любой аирдроп стоимостью более $1 000.",
+        "Если вы верите в долгосрочные перспективы проекта, продайте 50–70% аирдропа в первый день для покрытия налогов и фиксации прибыли, затем удерживайте оставшиеся 30–50% как бесплатную спекулятивную позицию."
+      ],
+      hygiene: [
+        "Отслеживайте клеймы аирдропов в специальном налоговом реестре с датой получения, количеством, справедливой рыночной стоимостью на дату получения и последующими продажами.",
+        "Формируйте реалистичные ожидания, исследуя результаты предыдущих аирдропов той же команды или сектора."
+      ],
+      validation: [
+        "Перед клеймингом проверяйте легитимность аирдропа только через официальные каналы.",
+        "Проверьте свою аллокацию аирдропа до закрытия окна клейминга через официальный проверочный инструмент."
+      ]
+    }
+  },
+  'ico-roi': {
+    en: {
+      interpret: [
+        "ICO ROI calculations measure the return on investment from initial coin offering participation relative to current market price. A positive ICO ROI figure means early investors are currently sitting on unrealized gains — but this calculation is backward-looking and tells you nothing about future performance. The more relevant question is whether the project's current market price reflects fair value relative to its progress since the ICO: has development delivered on roadmap promises? Has user adoption grown proportionally to the ICO valuation implied?",
+        "When analyzing ICO ROI data across a portfolio or comparing projects, adjust for time elapsed since the ICO. A 500% ROI achieved in 18 months represents dramatically different risk-adjusted performance than the same return achieved in 5 years. Annualized ICO ROI — calculated as (current_return)^(1/years_held) - 1 — normalizes for time and enables meaningful cross-project comparison. Many ICO investors focus on total return percentages without accounting for the 3–7 years of capital lockup that many investments actually required."
+      ],
+      scenarios: [
+        "An investor participated in three ICOs in 2020: Project A at $0.01 (current price $0.18, ROI: 1,700%), Project B at $0.50 (current price $0.08, ROI: -84%), Project C at $2.00 (current price $4.50, ROI: 125%). Portfolio average ROI is 580%, but capital-weighted analysis tells a different story — if Project B received 60% of capital allocation, the portfolio is actually slightly negative in dollar terms despite the headline positive average. Always weight ROI by actual capital deployed, not by equal-weight averaging.",
+        "A DeFi protocol ICO raised $8M at $0.004 per token in 2021. Today the token trades at $0.12 — an ROI of 2,900%. However, during this period the protocol generated $3.2M in cumulative fees, suggesting the current price implies a price-to-earnings multiple of 45x on annualized fee revenue — reasonable for a growing DeFi protocol. An investor using this ROI to decide whether to hold must assess whether 45x P/E is justified by growth rate, or whether early ICO participants are simply still sitting on inflated positions."
+      ],
+      checklist: [
+        "When calculating ICO ROI for decision-making purposes, include all costs: ICO token price, transaction fees during purchase, any currency conversion costs if you bought with BTC or ETH, and tax events triggered by any interim sales or swaps. Your true cost basis may be 5%–15% higher than the raw ICO price, meaningfully reducing calculated ROI. For accurate comparison, use actual cost basis not the ICO list price.",
+        "Segment your ICO portfolio by vintage year (2017, 2018, 2019, 2020, 2021) and measure performance against relevant benchmarks: Bitcoin total return and Ethereum total return for the same periods. Many ICO investments that show positive absolute ROI are actually negative in BTC or ETH terms — meaning you would have done better simply buying and holding Bitcoin. This benchmark comparison separates genuine alpha from the beta of general crypto market appreciation."
+      ],
+      mistakes: [
+        "Conflating ICO ROI with investment merit. A token that has risen 10,000% from its ICO price may now be significantly overvalued relative to fundamentals — high ICO ROI is backward-looking information that says the ICO was a good deal at the time, not that the current price represents a buying opportunity. Always evaluate the token against current fundamentals and comparable projects, regardless of where you personally are in your ICO P&L.",
+        "Selling ICO holdings purely based on hitting round-number ROI targets (10x, 50x, 100x) without fundamental analysis. This price-anchoring to ICO cost basis creates arbitrary selling decisions disconnected from project valuation. The correct question is: 'At today's price, is this the best use of this capital?' not 'Have I made enough profit relative to my ICO price?' The opportunity cost of holding vs. redeploying is the relevant consideration."
+      ],
+      benchmarks: [
+        "Comprehensive studies of 2017–2018 ICOs show that 90%+ of projects are below their ICO price six years after raising. Of those, 40%+ represent total losses (project abandoned, exit scammed, or token delisted). The top 10% of performers account for the majority of aggregate ICO investor returns — a power-law distribution where winners compensate for many losers. This data supports sizing ICO participation as a portfolio of small bets rather than concentrated positions.",
+        "2020–2021 ICO vintage data is more favorable: approximately 60% of projects from this period show positive returns, reflecting the stronger market environment. However, performance is highly correlated with sector: DeFi and Layer-2 ICOs from this period averaged 800%+ returns, while NFT gaming and metaverse ICOs averaged -30% as of 2024. Sector selection at ICO stage is more predictive of returns than individual project fundamentals."
+      ],
+      execution: [
+        "Set a tiered exit strategy before ICO tokens unlock: sell 20%–25% at 3x ROI (recovering initial investment and locking a 200% profit), sell another 20%–25% at 10x ROI, and hold the remaining 50%–60% as a free-ride position with no forced exit. This strategy creates a self-funding ICO portfolio where profits from winners are recycled into new positions without requiring additional capital.",
+        "For ICO positions with large unrealized gains, model the tax-optimal liquidation schedule. In many jurisdictions, spreading sales across tax years can reduce effective tax rates significantly. For example, selling 25% in December and 25% in January creates two separate tax events that may each fall in lower marginal rate brackets compared to a single large sale. Coordinate with a crypto-aware accountant to structure exits for tax efficiency."
+      ],
+      hygiene: [
+        "Maintain a dedicated ICO ledger with the following fields for each investment: ICO date, project name, token symbol, amount invested, ICO price, tokens received, vesting unlock schedule, current token balance, current price, current value, realized gains from partial sales, and unrealized gain/loss. Update this ledger monthly and use it as the source of truth for portfolio performance reporting.",
+        "Review your ICO investment thesis annually for each active position. Compare current project status against the original whitepaper promises: What milestones were achieved? What was delayed or abandoned? Does the team composition remain? Is TVL/user growth tracking with projections? This structured review prevents 'hope holding' — staying in positions based on sunk cost rather than current merit."
+      ],
+      validation: [
+        "Verify ICO ROI calculations by reconciling token quantities against blockchain data. Confirm that your expected token allocation was fully delivered — some ICOs delivered partial allocations or experienced smart contract issues during distribution. Use a blockchain explorer to verify that the tokens in your wallet match the allocation stated in your ICO participation confirmation.",
+        "Cross-validate ROI calculations using multiple price data sources for both ICO price and current price. ICO prices can vary across different exchanges where the token first listed — using the wrong reference price can overstate or understate your actual ROI. Always use the price at which you actually purchased (your confirmed cost basis) rather than an average ICO price that may differ from your specific transaction."
+      ]
+    },
+    es: {
+      interpret: [
+        "Los cálculos de ROI de ICO miden el retorno de inversión de la participación en ofertas iniciales de monedas en relación con el precio de mercado actual. Una cifra positiva de ROI de ICO significa que los primeros inversores actualmente tienen ganancias no realizadas — pero este cálculo mira hacia atrás y no te dice nada sobre el rendimiento futuro.",
+        "Al analizar datos de ROI de ICO en una cartera o comparar proyectos, ajusta por el tiempo transcurrido desde la ICO. Un ROI del 500% logrado en 18 meses representa un rendimiento ajustado al riesgo dramáticamente diferente al mismo retorno logrado en 5 años."
+      ],
+      scenarios: [
+        "Un inversor participó en tres ICOs en 2020: Proyecto A a $0,01 (precio actual $0,18, ROI: 1,700%), Proyecto B a $0,50 (precio actual $0,08, ROI: -84%), Proyecto C a $2,00 (precio actual $4,50, ROI: 125%). El ROI promedio de cartera es del 580%, pero el análisis ponderado por capital cuenta una historia diferente.",
+        "Una ICO de protocolo DeFi recaudó $8M a $0,004 por token en 2021. Hoy el token cotiza a $0,12 — un ROI del 2,900%. Sin embargo, durante este período el protocolo generó $3,2M en comisiones acumuladas."
+      ],
+      checklist: [
+        "Al calcular el ROI de ICO para tomar decisiones, incluye todos los costos: precio del token ICO, comisiones de transacción durante la compra, cualquier costo de conversión de moneda si compraste con BTC o ETH, y eventos fiscales desencadenados por ventas o intercambios intermedios.",
+        "Segmenta tu cartera de ICO por año de inversión (2017, 2018, 2019, 2020, 2021) y mide el rendimiento frente a referencias relevantes: retorno total de Bitcoin y retorno total de Ethereum para los mismos períodos."
+      ],
+      mistakes: [
+        "Confundir el ROI de ICO con el mérito de inversión. Un token que ha subido un 10,000% desde su precio de ICO puede estar ahora significativamente sobrevalorado en relación con los fundamentos.",
+        "Vender participaciones en ICO basándose únicamente en alcanzar objetivos de ROI de números redondos (10x, 50x, 100x) sin análisis fundamental."
+      ],
+      benchmarks: [
+        "Estudios completos de ICOs de 2017–2018 muestran que más del 90% de los proyectos están por debajo de su precio de ICO seis años después de recaudar.",
+        "Los datos del vintage de ICO de 2020–2021 son más favorables: aproximadamente el 60% de los proyectos de este período muestran retornos positivos."
+      ],
+      execution: [
+        "Establece una estrategia de salida escalonada antes de que se desbloqueen los tokens ICO: vende el 20%–25% en 3x ROI, vende otro 20%–25% en 10x ROI, y mantén el 50%–60% restante como posición de paseo libre.",
+        "Para posiciones de ICO con grandes ganancias no realizadas, modela el calendario de liquidación óptimo desde el punto de vista fiscal."
+      ],
+      hygiene: [
+        "Mantén un libro de ICO dedicado con los siguientes campos para cada inversión: fecha de ICO, nombre del proyecto, símbolo del token, monto invertido, precio ICO, tokens recibidos, calendario de desbloqueo de vesting, saldo actual de tokens, precio actual, valor actual, ganancias realizadas por ventas parciales y ganancia/pérdida no realizada.",
+        "Revisa anualmente tu tesis de inversión en ICO para cada posición activa. Compara el estado actual del proyecto con las promesas del whitepaper original."
+      ],
+      validation: [
+        "Verifica los cálculos de ROI de ICO reconciliando las cantidades de tokens con los datos de blockchain.",
+        "Valida cruzadamente los cálculos de ROI usando múltiples fuentes de datos de precios tanto para el precio ICO como para el precio actual."
+      ]
+    },
+    pt: {
+      interpret: [
+        "Os cálculos de ROI de ICO medem o retorno sobre o investimento da participação em ofertas iniciais de moedas em relação ao preço de mercado atual. Uma figura positiva de ROI de ICO significa que os primeiros investidores estão atualmente com ganhos não realizados.",
+        "Ao analisar dados de ROI de ICO em um portfólio ou comparar projetos, ajuste pelo tempo decorrido desde o ICO. Um ROI de 500% alcançado em 18 meses representa desempenho ajustado ao risco dramaticamente diferente do mesmo retorno alcançado em 5 anos."
+      ],
+      scenarios: [
+        "Um investidor participou de três ICOs em 2020: Projeto A a $0,01 (preço atual $0,18, ROI: 1.700%), Projeto B a $0,50 (preço atual $0,08, ROI: -84%), Projeto C a $2,00 (preço atual $4,50, ROI: 125%).",
+        "Um ICO de protocolo DeFi arrecadou $8M a $0,004 por token em 2021. Hoje o token é negociado a $0,12 — um ROI de 2.900%."
+      ],
+      checklist: [
+        "Ao calcular o ROI de ICO para fins de tomada de decisão, inclua todos os custos: preço do token ICO, taxas de transação durante a compra, quaisquer custos de conversão de moeda.",
+        "Segmente seu portfólio de ICO por ano de vintage (2017, 2018, 2019, 2020, 2021) e meça o desempenho em relação a benchmarks relevantes."
+      ],
+      mistakes: [
+        "Confundir o ROI de ICO com mérito de investimento.",
+        "Vender participações de ICO puramente com base em atingir metas de ROI de números redondos sem análise fundamental."
+      ],
+      benchmarks: [
+        "Estudos abrangentes de ICOs de 2017–2018 mostram que mais de 90% dos projetos estão abaixo de seu preço de ICO seis anos após a captação.",
+        "Os dados de vintage de ICO de 2020–2021 são mais favoráveis: aproximadamente 60% dos projetos deste período mostram retornos positivos."
+      ],
+      execution: [
+        "Defina uma estratégia de saída em níveis antes que os tokens ICO sejam desbloqueados.",
+        "Para posições de ICO com grandes ganhos não realizados, modele o cronograma de liquidação otimizado para impostos."
+      ],
+      hygiene: [
+        "Mantenha um livro de ICO dedicado com os seguintes campos para cada investimento: data do ICO, nome do projeto, símbolo do token, valor investido, preço ICO, tokens recebidos.",
+        "Revise anualmente sua tese de investimento em ICO para cada posição ativa."
+      ],
+      validation: [
+        "Verifique os cálculos de ROI de ICO reconciliando as quantidades de tokens com os dados de blockchain.",
+        "Valide cruzadamente os cálculos de ROI usando múltiplas fontes de dados de preços."
+      ]
+    },
+    tr: {
+      interpret: [
+        "ICO ROI hesaplamaları, ilk coin teklifine katılımın getirisini mevcut piyasa fiyatına göre ölçer. Pozitif bir ICO ROI rakamı, erken yatırımcıların şu anda gerçekleşmemiş kazançlara sahip olduğu anlamına gelir — ancak bu hesaplama geçmişe dönük olup gelecekteki performans hakkında hiçbir şey söylemiyor.",
+        "Bir portföyde ICO ROI verilerini analiz ederken veya projeleri karşılaştırırken ICO'dan bu yana geçen süreyi düzeltin. 18 ayda elde edilen %500 ROI, 5 yılda elde edilen aynı getiriden dramatik biçimde farklı bir risk-ayarlı performansı temsil eder."
+      ],
+      scenarios: [
+        "Bir yatırımcı 2020'de üç ICO'ya katıldı: Proje A 0,01 dolardan (mevcut fiyat 0,18 dolar, ROI: %1.700), Proje B 0,50 dolardan (mevcut fiyat 0,08 dolar, ROI: -%84), Proje C 2,00 dolardan (mevcut fiyat 4,50 dolar, ROI: %125).",
+        "Bir DeFi protokolü ICO'su 2021'de token başına 0,004 dolardan 8 milyon dolar topladı. Bugün token 0,12 dolardan işlem görüyor — %2.900 ROI."
+      ],
+      checklist: [
+        "Karar alma amacıyla ICO ROI hesaplarken tüm maliyetleri dahil edin: ICO token fiyatı, satın alma sırasındaki işlem ücretleri, BTC veya ETH ile satın aldıysanız herhangi bir para birimi dönüştürme maliyeti.",
+        "ICO portföyünüzü vintage yılına (2017, 2018, 2019, 2020, 2021) göre segmentleyin ve performansı ilgili kıyaslamalarla ölçün."
+      ],
+      mistakes: [
+        "ICO ROI'yi yatırım değeriyle karıştırmak.",
+        "Temel analiz yapmaksızın yalnızca yuvarlak sayı ROI hedeflerine ulaşmaya dayanarak ICO varlıklarını satmak."
+      ],
+      benchmarks: [
+        "2017–2018 ICO'larının kapsamlı çalışmaları, projelerin %90'ından fazlasının toplamadan altı yıl sonra ICO fiyatlarının altında olduğunu gösteriyor.",
+        "2020–2021 ICO vintage verileri daha olumludur: bu dönemdeki projelerin yaklaşık %60'ı pozitif getiri gösteriyor."
+      ],
+      execution: [
+        "ICO tokenleri açılmadan önce kademeli bir çıkış stratejisi belirleyin.",
+        "Büyük gerçekleşmemiş kazançlara sahip ICO pozisyonları için vergi açısından en uygun tasfiye takvimini modelleyin."
+      ],
+      hygiene: [
+        "Her yatırım için şu alanları içeren özel bir ICO defteri tutun: ICO tarihi, proje adı, token sembolü, yatırılan miktar, ICO fiyatı, alınan tokenlar.",
+        "Her aktif pozisyon için ICO yatırım tezisinizi yıllık olarak gözden geçirin."
+      ],
+      validation: [
+        "ICO ROI hesaplamalarını blockchain verileriyle token miktarlarını mutabık hale getirerek doğrulayın.",
+        "Hem ICO fiyatı hem de mevcut fiyat için birden fazla fiyat veri kaynağı kullanarak ROI hesaplamalarını çapraz olarak doğrulayın."
+      ]
+    },
+    hi: {
+      interpret: [
+        "ICO ROI गणनाएं वर्तमान बाजार मूल्य के सापेक्ष प्रारंभिक सिक्का पेशकश भागीदारी से निवेश पर रिटर्न मापती हैं। एक सकारात्मक ICO ROI आंकड़े का मतलब है कि शुरुआती निवेशक वर्तमान में अप्राप्त लाभ पर बैठे हैं।",
+        "किसी पोर्टफोलियो में ICO ROI डेटा का विश्लेषण करते समय या परियोजनाओं की तुलना करते समय, ICO के बाद बीते समय के लिए समायोजित करें। 18 महीनों में हासिल किए गए 500% ROI का जोखिम-समायोजित प्रदर्शन 5 साल में हासिल किए गए समान रिटर्न से नाटकीय रूप से अलग होता है।"
+      ],
+      scenarios: [
+        "एक निवेशक ने 2020 में तीन ICO में भाग लिया: प्रोजेक्ट A $0.01 पर (वर्तमान मूल्य $0.18, ROI: 1,700%), प्रोजेक्ट B $0.50 पर (वर्तमान मूल्य $0.08, ROI: -84%), प्रोजेक्ट C $2.00 पर (वर्तमान मूल्य $4.50, ROI: 125%)।",
+        "एक DeFi प्रोटोकॉल ICO ने 2021 में $0.004 प्रति टोकन पर $8M जुटाए। आज टोकन $0.12 पर ट्रेड होता है — 2,900% का ROI।"
+      ],
+      checklist: [
+        "निर्णय लेने के उद्देश्यों के लिए ICO ROI की गणना करते समय, सभी लागतें शामिल करें: ICO टोकन मूल्य, खरीद के दौरान लेनदेन शुल्क।",
+        "अपने ICO पोर्टफोलियो को विंटेज वर्ष (2017, 2018, 2019, 2020, 2021) द्वारा विभाजित करें और प्रासंगिक बेंचमार्क के खिलाफ प्रदर्शन मापें।"
+      ],
+      mistakes: [
+        "ICO ROI को निवेश मेरिट के साथ भ्रमित करना।",
+        "मूलभूत विश्लेषण के बिना केवल राउंड-नंबर ROI लक्ष्य (10x, 50x, 100x) तक पहुंचने के आधार पर ICO होल्डिंग बेचना।"
+      ],
+      benchmarks: [
+        "2017–2018 ICO के व्यापक अध्ययन दिखाते हैं कि 90%+ परियोजनाएं अपने ICO मूल्य से छह साल बाद नीचे हैं।",
+        "2020–2021 ICO विंटेज डेटा अधिक अनुकूल है: इस अवधि की लगभग 60% परियोजनाएं सकारात्मक रिटर्न दिखाती हैं।"
+      ],
+      execution: [
+        "ICO टोकन अनलॉक होने से पहले एक स्तरीय निकास रणनीति निर्धारित करें।",
+        "बड़े अप्राप्त लाभ वाले ICO पोजीशन के लिए, कर-इष्टतम परिसमापन शेड्यूल को मॉडल करें।"
+      ],
+      hygiene: [
+        "प्रत्येक निवेश के लिए निम्नलिखित फ़ील्ड के साथ एक समर्पित ICO लेज़र बनाए रखें: ICO तिथि, प्रोजेक्ट नाम, टोकन प्रतीक, निवेश राशि, ICO मूल्य, प्राप्त टोकन।",
+        "प्रत्येक सक्रिय पोजीशन के लिए वार्षिक रूप से अपनी ICO निवेश थीसिस की समीक्षा करें।"
+      ],
+      validation: [
+        "ब्लॉकचेन डेटा के साथ टोकन मात्राओं का मिलान करके ICO ROI गणनाओं को सत्यापित करें।",
+        "ICO मूल्य और वर्तमान मूल्य दोनों के लिए कई मूल्य डेटा स्रोतों का उपयोग करके ROI गणनाओं को क्रॉस-वैलिडेट करें।"
+      ]
+    },
+    ru: {
+      interpret: [
+        "Расчёты ROI ICO измеряют возврат инвестиций от участия в первичном предложении монет относительно текущей рыночной цены. Положительный показатель ROI ICO означает, что ранние инвесторы в настоящее время имеют нереализованную прибыль.",
+        "При анализе данных ROI ICO по портфелю или при сравнении проектов делайте поправку на время, прошедшее с момента ICO. ROI в 500%, достигнутый за 18 месяцев, представляет собой кардинально иную результативность с поправкой на риск, чем тот же доход за 5 лет."
+      ],
+      scenarios: [
+        "Инвестор участвовал в трёх ICO в 2020 году: Проект A по $0,01 (текущая цена $0,18, ROI: 1 700%), Проект B по $0,50 (текущая цена $0,08, ROI: -84%), Проект C по $2,00 (текущая цена $4,50, ROI: 125%).",
+        "ICO DeFi-протокола привлекло $8 млн по $0,004 за токен в 2021 году. Сегодня токен торгуется по $0,12 — ROI 2 900%."
+      ],
+      checklist: [
+        "При расчёте ROI ICO для принятия решений включайте все затраты: цену токена на ICO, комиссии за транзакции при покупке, любые расходы на конвертацию валюты.",
+        "Сегментируйте свой ICO-портфель по году инвестирования (2017, 2018, 2019, 2020, 2021) и измеряйте результативность относительно соответствующих бенчмарков."
+      ],
+      mistakes: [
+        "Смешение ROI ICO с инвестиционными достоинствами проекта.",
+        "Продажа позиций ICO исключительно на основе достижения целевых показателей ROI в круглых числах без фундаментального анализа."
+      ],
+      benchmarks: [
+        "Всестороннее исследование ICO 2017–2018 годов показывает, что более 90% проектов торгуются ниже цены ICO через шесть лет после привлечения средств.",
+        "Данные ICO 2020–2021 годов более обнадёживающие: около 60% проектов этого периода демонстрируют положительную доходность."
+      ],
+      execution: [
+        "Установите поэтапную стратегию выхода до разблокировки токенов ICO.",
+        "Для позиций ICO с большой нереализованной прибылью смоделируйте оптимальный с точки зрения налогов график ликвидации."
+      ],
+      hygiene: [
+        "Ведите специальный реестр ICO со следующими полями для каждой инвестиции: дата ICO, название проекта, тикер токена, вложенная сумма, цена ICO, полученные токены.",
+        "Ежегодно пересматривайте инвестиционный тезис ICO для каждой активной позиции."
+      ],
+      validation: [
+        "Проверяйте расчёты ROI ICO, сверяя количество токенов с данными блокчейна.",
+        "Перекрёстно проверяйте расчёты ROI с использованием нескольких источников данных о ценах как для цены ICO, так и для текущей цены."
+      ]
+    }
+  },
+
+  'token-distribution': {
+    en: {
+      interpret: [
+        "Token distribution analysis reveals how ownership is concentrated or dispersed across wallet addresses, providing a critical lens on governance risk, sell pressure potential, and project decentralization claims. A distribution where the top 10 wallets hold 60%+ of supply indicates high centralization — even if the team claims decentralization as a core value. Concentrated distributions create significant price risk: a single large holder deciding to exit can move markets dramatically. Evaluate distributions in the context of who holds the concentrated positions: known team wallets are different from anonymous concentrated holders who may represent undisclosed insiders or early whales.",
+        "Healthy token distribution typically shows a large number of wallets with meaningful (but not overwhelming) allocations across diverse holder categories: small retail holders, medium active users, institutional holders, and project treasury. The Gini coefficient — a measure of inequality from 0 (perfect equality) to 1 (one entity holds everything) — provides a single comparable metric. Most successful protocols hover between 0.6–0.8 Gini coefficient at maturity; values above 0.9 indicate problematic concentration worth investigating further."
+      ],
+      scenarios: [
+        "A new Layer-1 blockchain claims to be fully decentralized but its token distribution shows: top wallet holds 22% (team multisig), next 5 wallets average 8% each (VC firms), next 44 wallets hold 1%–3% each (angel investors), and 50,000+ wallets hold less than 0.01% combined. Effective governance is controlled by fewer than 50 entities. A governance proposal requires 10% vote — something the top holder can veto unilaterally. The decentralization claim is marketing, not reality.",
+        "An established DEX has been distributing tokens through liquidity mining for 3 years. Current distribution: top 100 wallets hold 35% (down from 80% at launch), next 10,000 wallets hold 40%, and 200,000+ wallets hold the remaining 25%. The distribution is improving — becoming more dispersed through continuous LM rewards. Governance is competitive with no single dominant faction. This distribution profile supports the protocol's decentralization narrative and reduces single-point-of-failure risk."
+      ],
+      checklist: [
+        "Before investing in any token, run a distribution analysis using a blockchain explorer or analytics platform. Calculate: percentage held by top 10 wallets, percentage held by top 100 wallets, number of wallets holding more than 1% of supply, and whether large wallet addresses are publicly identified (team, VCs) or anonymous. Anonymous large holders represent unknown risk that identified holders don't.",
+        "Evaluate distribution changes over time: is the token becoming more or less decentralized? A project where the top-10 wallet percentage has declined from 70% to 40% over 2 years is demonstrating healthy distribution through its reward mechanisms. A project where concentration has remained static or increased suggests that token emissions are recycling to existing whales rather than reaching new participants."
+      ],
+      mistakes: [
+        "Equating number of wallets with decentralization. A token with 1 million wallets but 80% held by the top 20 addresses is effectively as centralized as a token with 1,000 wallets where the top 20 hold 80%. Wallet count is a vanity metric — distribution by percentage is the actual decentralization measure. Projects sometimes highlight large wallet counts to obscure highly concentrated ownership.",
+        "Assuming exchange cold wallets represent diverse ownership. Many top-10 token holders are exchange custody wallets (Binance, Coinbase, Kraken) that represent thousands of individual customers pooled in a single address. These should be excluded from concentration analysis or treated separately — exchange holdings don't represent the same governance or selling risk as equivalent holdings in a single individual's wallet."
+      ],
+      benchmarks: [
+        "Mature Layer-1 blockchains (Ethereum, Solana, Avalanche) at 3+ years of operation typically show top-10 wallet concentration of 20%–35%, with exchange wallets accounting for 30%–50% of that. DeFi protocols with active liquidity mining show faster decentralization, often reaching below 40% top-10 concentration within 12–18 months. Newly launched tokens under 6 months old often show 70%–90% top-10 concentration — this is expected and not inherently alarming if it's declining.",
+        "Historical data shows a strong correlation between token distribution concentration and price volatility. Tokens with top-10 concentration above 60% show average 30-day price volatility that is 2.5x higher than tokens with top-10 concentration below 30%. This reflects the market impact potential of concentrated holders moving positions — a structural risk that broad-based distribution eliminates over time."
+      ],
+      execution: [
+        "Use distribution data to identify potential sell walls before they materialize. Monitor large wallet addresses (holding >1% of supply) monthly using on-chain analytics tools. When these addresses begin transferring tokens to exchanges, it's an early signal of upcoming selling pressure — typically 3–7 days before market impact. This early warning gives you time to reduce exposure before the sell-off hits.",
+        "Factor distribution concentration into your position sizing decisions. For tokens with top-10 concentration above 50%, apply a 30%–40% reduction to your standard position size to account for elevated single-holder risk. Restore full position sizing only after distribution metrics improve to below 40% top-10 concentration, indicating the structural risk has diminished."
+      ],
+      hygiene: [
+        "Run distribution analyses quarterly for all tokens in your portfolio exceeding 5% of your total crypto allocation. Use Nansen, Etherscan's rich list, or similar tools to capture the current distribution snapshot. Store historical snapshots to track whether distribution is improving (decentralizing) or worsening (concentrating) over time. Consistent concentration increases are red flags requiring immediate investigation.",
+        "Distinguish between different types of concentrated holders when interpreting distribution data: team wallets (expected, monitored through vesting), exchange custody wallets (neutral — pooled customer funds), protocol treasury (positive — fund future development), and unknown large holders (investigate — could be undisclosed insiders or market manipulators)."
+      ],
+      validation: [
+        "Verify distribution data by pulling fresh on-chain data rather than relying on cached analytics. Token distribution can change rapidly after major events — liquidity mining launches, large OTC deals, or protocol migrations. Analytics platforms sometimes display 24–72 hour delayed data. For time-sensitive decisions, query the blockchain directly using tools like The Graph or direct RPC calls.",
+        "Cross-check distribution interpretation against community governance participation data. If a protocol has 200,000 token holders but only 300 unique addresses participate in governance votes, true engaged ownership is far more concentrated than distribution numbers suggest. Low governance participation relative to holder count indicates apathetic small holders who may not buffer against large-holder decisions."
+      ]
+    },
+    es: {
+      interpret: [
+        "El análisis de distribución de tokens revela cómo se concentra o dispersa la propiedad entre las direcciones de billeteras, proporcionando una lente crítica sobre el riesgo de gobernanza, el potencial de presión vendedora y las afirmaciones de descentralización del proyecto.",
+        "Una distribución de tokens saludable típicamente muestra un gran número de billeteras con asignaciones significativas (pero no abrumadoras) en diversas categorías de tenedores. El coeficiente de Gini proporciona una única métrica comparable."
+      ],
+      scenarios: [
+        "Una nueva blockchain de Capa 1 afirma ser completamente descentralizada, pero su distribución de tokens muestra: la billetera principal tiene el 22% (multisig del equipo), las siguientes 5 billeteras promedian el 8% cada una (firmas de VC).",
+        "Un DEX establecido ha distribuido tokens a través de minería de liquidez durante 3 años. Distribución actual: las 100 billeteras principales tienen el 35% (frente al 80% en el lanzamiento), las siguientes 10,000 billeteras tienen el 40%."
+      ],
+      checklist: [
+        "Antes de invertir en cualquier token, realiza un análisis de distribución usando un explorador de blockchain o una plataforma de análisis. Calcula: porcentaje en manos de las 10 principales billeteras, porcentaje en manos de las 100 principales billeteras.",
+        "Evalúa los cambios de distribución a lo largo del tiempo: ¿el token se está volviendo más o menos descentralizado?"
+      ],
+      mistakes: [
+        "Equiparar el número de billeteras con la descentralización. Un token con 1 millón de billeteras pero el 80% en manos de las 20 principales direcciones es efectivamente tan centralizado como un token con 1,000 billeteras.",
+        "Asumir que las billeteras frías de los exchanges representan una propiedad diversa."
+      ],
+      benchmarks: [
+        "Las blockchains de Capa 1 maduras (Ethereum, Solana, Avalanche) con 3+ años de operación típicamente muestran una concentración en las 10 principales billeteras del 20%–35%.",
+        "Los datos históricos muestran una fuerte correlación entre la concentración de distribución de tokens y la volatilidad de precios."
+      ],
+      execution: [
+        "Usa los datos de distribución para identificar posibles paredes de venta antes de que se materialicen. Monitorea las grandes direcciones de billetera (con más del 1% del suministro) mensualmente usando herramientas de análisis on-chain.",
+        "Factoriza la concentración de distribución en tus decisiones de dimensionamiento de posición."
+      ],
+      hygiene: [
+        "Realiza análisis de distribución trimestralmente para todos los tokens en tu cartera que superen el 5% de tu asignación total de criptomonedas.",
+        "Distingue entre diferentes tipos de tenedores concentrados cuando interpretes datos de distribución."
+      ],
+      validation: [
+        "Verifica los datos de distribución obteniendo datos on-chain frescos en lugar de depender de análisis en caché.",
+        "Contrasta la interpretación de la distribución con los datos de participación en la gobernanza de la comunidad."
+      ]
+    },
+    pt: {
+      interpret: [
+        "A análise de distribuição de tokens revela como a propriedade está concentrada ou dispersa entre endereços de carteiras, fornecendo uma lente crítica sobre risco de governança, potencial de pressão de venda e reivindicações de descentralização do projeto.",
+        "A distribuição saudável de tokens tipicamente mostra um grande número de carteiras com alocações significativas (mas não esmagadoras) em diversas categorias de detentores."
+      ],
+      scenarios: [
+        "Uma nova blockchain Layer-1 afirma ser totalmente descentralizada, mas sua distribuição de tokens mostra: a carteira principal detém 22% (multisig da equipe), as próximas 5 carteiras têm em média 8% cada (firmas de VC).",
+        "Uma DEX estabelecida tem distribuído tokens através de mineração de liquidez por 3 anos. Distribuição atual: as 100 principais carteiras detêm 35% (abaixo de 80% no lançamento)."
+      ],
+      checklist: [
+        "Antes de investir em qualquer token, execute uma análise de distribuição usando um explorador de blockchain ou plataforma de análise.",
+        "Avalie as mudanças de distribuição ao longo do tempo: o token está se tornando mais ou menos descentralizado?"
+      ],
+      mistakes: [
+        "Equiparar o número de carteiras com descentralização.",
+        "Assumir que carteiras frias de exchanges representam propriedade diversa."
+      ],
+      benchmarks: [
+        "Blockchains Layer-1 maduras (Ethereum, Solana, Avalanche) com 3+ anos de operação tipicamente mostram concentração nas 10 principais carteiras de 20%–35%.",
+        "Dados históricos mostram forte correlação entre concentração de distribuição de tokens e volatilidade de preços."
+      ],
+      execution: [
+        "Use dados de distribuição para identificar paredes de venda potenciais antes que se materializem.",
+        "Considere a concentração de distribuição em suas decisões de dimensionamento de posição."
+      ],
+      hygiene: [
+        "Execute análises de distribuição trimestralmente para todos os tokens em seu portfólio que excedam 5% de sua alocação total de cripto.",
+        "Distinga entre diferentes tipos de detentores concentrados ao interpretar dados de distribuição."
+      ],
+      validation: [
+        "Verifique os dados de distribuição obtendo dados on-chain frescos em vez de depender de análises em cache.",
+        "Contraste a interpretação da distribuição com dados de participação em governança da comunidade."
+      ]
+    },
+    tr: {
+      interpret: [
+        "Token dağılımı analizi, sahipliğin cüzdan adresleri arasında nasıl yoğunlaştığını veya dağıldığını ortaya koyarak yönetişim riski, satış baskısı potansiyeli ve projenin merkeziyetsizlik iddiaları hakkında kritik bir mercek sağlar.",
+        "Sağlıklı token dağılımı tipik olarak çeşitli tutucu kategorilerinde anlamlı (ancak bunaltıcı olmayan) tahsislerle çok sayıda cüzdan gösterir."
+      ],
+      scenarios: [
+        "Yeni bir Layer-1 blockchain tamamen merkeziyetsiz olduğunu iddia ediyor ancak token dağılımı şunu gösteriyor: en büyük cüzdan %22 tutuyor (ekip multisig), sonraki 5 cüzdan ortalama her biri %8 tutuyor (VC firmaları).",
+        "Köklü bir DEX, 3 yıl boyunca likidite madenciliği aracılığıyla tokenları dağıtıyor. Mevcut dağılım: ilk 100 cüzdan %35 tutuyor (lansmandaki %80'den düşüş)."
+      ],
+      checklist: [
+        "Herhangi bir tokena yatırım yapmadan önce bir blockchain gezgini veya analitik platform kullanarak dağılım analizi yapın.",
+        "Zaman içinde dağılım değişikliklerini değerlendirin: token giderek daha az mı yoksa daha fazla mı merkeziyetsizleşiyor?"
+      ],
+      mistakes: [
+        "Cüzdan sayısını merkeziyetsizlikle eşitleştirmek.",
+        "Exchange soğuk cüzdanlarının çeşitlendirilmiş mülkiyeti temsil ettiğini varsaymak."
+      ],
+      benchmarks: [
+        "3+ yıllık olgun Layer-1 blockchainler tipik olarak ilk 10 cüzdanda %20–%35 yoğunlaşma gösterir.",
+        "Tarihsel veriler token dağılımı yoğunlaşması ile fiyat oynaklığı arasında güçlü bir korelasyon gösteriyor."
+      ],
+      execution: [
+        "Potansiyel satış duvarlarını gerçekleşmeden önce belirlemek için dağılım verilerini kullanın.",
+        "Pozisyon boyutlandırma kararlarınıza dağılım yoğunlaşmasını dahil edin."
+      ],
+      hygiene: [
+        "Toplam kripto tahsisinizin %5'ini aşan tüm tokenlar için üç ayda bir dağılım analizi yapın.",
+        "Dağılım verilerini yorumlarken farklı yoğunlaşmış tutucu türlerini birbirinden ayırın."
+      ],
+      validation: [
+        "Önbelleğe alınmış analitiğe güvenmek yerine taze zincir üstü verileri çekerek dağılım verilerini doğrulayın.",
+        "Dağılım yorumunu topluluk yönetişim katılım verileriyle çapraz olarak kontrol edin."
+      ]
+    },
+    hi: {
+      interpret: [
+        "टोकन वितरण विश्लेषण प्रकट करता है कि वॉलेट पते में स्वामित्व कैसे केंद्रित या फैला हुआ है, शासन जोखिम, बिक्री दबाव क्षमता और परियोजना विकेंद्रीकरण दावों पर एक महत्वपूर्ण दृष्टिकोण प्रदान करता है।",
+        "स्वस्थ टोकन वितरण आमतौर पर विविध धारक श्रेणियों में महत्वपूर्ण (लेकिन अत्यधिक नहीं) आवंटन के साथ बड़ी संख्या में वॉलेट दिखाता है।"
+      ],
+      scenarios: [
+        "एक नई Layer-1 ब्लॉकचेन पूरी तरह से विकेंद्रीकृत होने का दावा करती है लेकिन इसका टोकन वितरण दिखाता है: शीर्ष वॉलेट 22% रखता है (टीम मल्टीसिग)।",
+        "एक स्थापित DEX 3 साल से लिक्विडिटी माइनिंग के माध्यम से टोकन वितरित कर रहा है। वर्तमान वितरण: शीर्ष 100 वॉलेट 35% रखते हैं (लॉन्च पर 80% से नीचे)।"
+      ],
+      checklist: [
+        "किसी भी टोकन में निवेश करने से पहले, ब्लॉकचेन एक्सप्लोरर या एनालिटिक्स प्लेटफॉर्म का उपयोग करके वितरण विश्लेषण चलाएं।",
+        "समय के साथ वितरण परिवर्तनों का मूल्यांकन करें: क्या टोकन अधिक या कम विकेंद्रीकृत हो रहा है?"
+      ],
+      mistakes: [
+        "वॉलेट की संख्या को विकेंद्रीकरण के बराबर मानना।",
+        "यह मानना कि एक्सचेंज कोल्ड वॉलेट विविध स्वामित्व का प्रतिनिधित्व करते हैं।"
+      ],
+      benchmarks: [
+        "परिपक्व Layer-1 ब्लॉकचेन (Ethereum, Solana, Avalanche) 3+ वर्षों के संचालन पर आमतौर पर शीर्ष 10 वॉलेट एकाग्रता 20%–35% दिखाते हैं।",
+        "ऐतिहासिक डेटा टोकन वितरण एकाग्रता और मूल्य अस्थिरता के बीच मजबूत सहसंबंध दिखाता है।"
+      ],
+      execution: [
+        "बिक्री दीवारों को भौतिक होने से पहले पहचानने के लिए वितरण डेटा का उपयोग करें।",
+        "अपने पोजीशन साइजिंग निर्णयों में वितरण एकाग्रता को शामिल करें।"
+      ],
+      hygiene: [
+        "अपने कुल क्रिप्टो आवंटन के 5% से अधिक वाले सभी टोकन के लिए त्रैमासिक वितरण विश्लेषण चलाएं।",
+        "वितरण डेटा की व्याख्या करते समय विभिन्न प्रकार के केंद्रित धारकों के बीच अंतर करें।"
+      ],
+      validation: [
+        "कैश किए गए एनालिटिक्स पर निर्भर रहने के बजाय ताजा ऑन-चेन डेटा खींचकर वितरण डेटा सत्यापित करें।",
+        "समुदाय शासन भागीदारी डेटा के खिलाफ वितरण व्याख्या को क्रॉस-चेक करें।"
+      ]
+    },
+    ru: {
+      interpret: [
+        "Анализ распределения токенов показывает, насколько сосредоточена или рассредоточена собственность по адресам кошельков, обеспечивая критически важный взгляд на риск управления, потенциал давления продаж и заявления о децентрализации проекта.",
+        "Здоровое распределение токенов обычно характеризуется большим количеством кошельков со значимыми (но не чрезмерными) аллокациями в различных категориях держателей."
+      ],
+      scenarios: [
+        "Новый блокчейн первого уровня заявляет о полной децентрализации, но распределение токенов показывает: топ-кошелёк держит 22% (мультисиг команды), следующие 5 кошельков в среднем по 8% (венчурные фирмы).",
+        "Устоявшаяся DEX три года распределяет токены через майнинг ликвидности. Текущее распределение: топ-100 кошельков держат 35% (снижение с 80% при запуске)."
+      ],
+      checklist: [
+        "Перед инвестированием в любой токен проведите анализ распределения с помощью блокчейн-эксплорера или аналитической платформы.",
+        "Отслеживайте изменения распределения во времени: становится ли токен более или менее децентрализованным?"
+      ],
+      mistakes: [
+        "Приравнивание количества кошельков к децентрализации.",
+        "Допущение, что холодные кошельки бирж представляют разнообразное владение."
+      ],
+      benchmarks: [
+        "Зрелые блокчейны первого уровня (Ethereum, Solana, Avalanche) при 3+ годах работы обычно показывают концентрацию в топ-10 кошельков 20–35%.",
+        "Исторические данные демонстрируют сильную корреляцию между концентрацией распределения токенов и ценовой волатильностью."
+      ],
+      execution: [
+        "Используйте данные распределения для заблаговременного выявления потенциальных стен продаж.",
+        "Учитывайте концентрацию распределения в решениях о размере позиции."
+      ],
+      hygiene: [
+        "Ежеквартально проводите анализ распределения по всем токенам в портфеле, превышающим 5% общей крипто-аллокации.",
+        "При интерпретации данных распределения разграничивайте различные типы концентрированных держателей."
+      ],
+      validation: [
+        "Проверяйте данные распределения, получая свежие on-chain данные, а не полагаясь на кэшированную аналитику.",
+        "Сопоставляйте интерпретацию распределения с данными об участии сообщества в управлении."
+      ]
+    }
+  },
+  'token-gating-access': {
+    en: {
+      interpret: [
+        "Token gating analysis determines the minimum token holding required to access specific features, communities, or content — and the implied dollar cost of that access threshold. When evaluating token gating setups, consider both the current dollar cost of the required tokens and the price volatility that could make access unpredictable for users. A gating threshold set at 100 tokens when the token was $0.50 creates $50 access cost; the same threshold when the token rises to $5.00 becomes $500 — potentially pricing out the core user base that was intended to benefit from the gated feature.",
+        "From an investment angle, token gating creates structural holding demand — users who need access must maintain their positions, creating price support. The strength of this demand depends on how valuable the gated content is perceived to be: exclusive tools, alpha communities, and governance rights create stronger demand than cosmetic features. Analyze gating mechanics across comparable protocols to assess whether this project's gating design creates authentic holding utility or superficial demand that evaporates when user interest wanes."
+      ],
+      scenarios: [
+        "A research platform gates premium crypto analysis behind a 500-token holding requirement. At launch ($0.20/token), access costs $100 — accessible to most users. After 18 months, the token rises to $2.50, making access cost $1,250. New user acquisition collapses as the cost exceeds the perceived value of the research. The protocol must either lower the threshold (diluting existing gated access value) or accept declining growth — a design tension inherent in fixed-threshold token gating.",
+        "A DeFi protocol gates its institutional-grade analytics dashboard behind a tiered system: 1,000 tokens for basic access, 10,000 for intermediate, 100,000 for full suite. At $0.05/token, these tiers cost $50, $500, and $5,000 respectively — aligned with the value each tier delivers. This tiered approach creates three distinct holder categories with different economic incentives, distributing buy pressure across multiple access points rather than concentrating it at a single threshold."
+      ],
+      checklist: [
+        "Evaluate token gating requirements by calculating the current dollar cost of each tier and assessing whether that cost aligns with the perceived value of access. If the cheapest gating tier costs more than comparable subscription-based alternatives, the gating mechanism creates friction rather than value, and users will seek alternatives. Gating is most effective when it provides exclusive benefits genuinely unavailable elsewhere.",
+        "Analyze the sensitivity of gating economics to price changes. Model what happens to access costs if the token price triples or drops by 70%. If your protocol's gating thresholds become either inaccessible (too expensive) or trivially cheap (no signal value) under realistic price scenarios, the fixed-threshold design may need dynamic adjustment mechanisms tied to dollar value rather than token quantity."
+      ],
+      mistakes: [
+        "Setting token gating thresholds based on current price without building in adjustment mechanisms. Static token quantity thresholds become economically misaligned as price changes. Best-practice designs use USD-denominated thresholds ('$50 equivalent in tokens') with automatic adjustment, or governance mechanisms that allow the community to adjust thresholds as market conditions change without requiring a full protocol upgrade.",
+        "Overestimating the holding incentive created by token gating. Many users who need gated access prefer to rent tokens via DeFi borrowing protocols rather than permanently holding, bypassing the intended holding demand. When token borrowing rates are low (1%–3% annually), the economic cost of temporary gating access through borrowing is negligible — meaning the protocol captures little permanent buy pressure from its gating mechanics."
+      ],
+      benchmarks: [
+        "Successful token-gated communities typically show 60%–80% of gated access users maintaining their positions for 6+ months, suggesting genuine value perception in the exclusive content. Communities with retention below 40% indicate that users are accessing, consuming, and leaving — the gating mechanism creates a one-time purchase rather than sustained holding demand. Monitor retention rates as a key performance indicator of gating utility.",
+        "Token gating has proven most effective for protocols where the gated access is non-replicable: exclusive governance rights, early protocol access, real-world event access, or private communities with high-value participants. Gated access to content that's eventually made public shows much lower retention rates — users access during the exclusivity window then reduce positions once content becomes freely available."
+      ],
+      execution: [
+        "If participating in a token-gated ecosystem, optimize your holding position around gating tiers. Holding just enough tokens to access the highest valuable tier (and no more) maximizes the ROI of your capital allocation: you get full access benefits with minimum capital tied up in the gating requirement. Review quarterly whether your tier requirements have changed and adjust positions accordingly.",
+        "For protocol designers, implement dynamic gating thresholds using on-chain oracle price feeds. Set gating in USD-equivalent terms ($100 worth of tokens) rather than fixed quantities. This ensures access costs remain stable for users as token price fluctuates, maintaining consistent user acquisition economics and preventing the price-appreciation access problem."
+      ],
+      hygiene: [
+        "If you hold tokens specifically for gating access, track these positions separately in your portfolio as 'utility holdings' distinct from speculative positions. Apply different decision criteria: utility holdings should be evaluated based on whether the gated access continues to deliver value exceeding the opportunity cost of the capital, not on price appreciation potential.",
+        "Set alerts for your gating threshold positions: if the token price rises to the point where your holding value exceeds 5x the annual value of gated access, consider whether it makes economic sense to sell some tokens and replace gating access with alternative methods (borrowing, subscriptions, or reduced tier access)."
+      ],
+      validation: [
+        "Verify token gating mechanics by testing the actual access controls on the platform. Sometimes announced gating requirements differ from implemented smart contract logic — testing with a wallet that holds exactly the minimum required tokens confirms the mechanism works as documented. Check whether the access control checks are real-time (continuous holding required) or snapshot-based (one-time verification).",
+        "Cross-validate the claimed benefits of gated access against actual user testimonials and on-chain data. If a protocol claims premium research access drives superior returns, check whether gated-access user wallets show measurably different trading performance than non-gated wallets. Real value creation should be demonstrable through on-chain behavior patterns."
+      ]
+    },
+    es: { interpret: ["El análisis de acceso con token gating determina el mínimo de tokens requeridos para acceder a características específicas, comunidades o contenido — y el costo implícito en dólares de ese umbral de acceso.", "Desde un ángulo de inversión, el token gating crea demanda estructural de tenencia — los usuarios que necesitan acceso deben mantener sus posiciones, creando soporte de precio."], scenarios: ["Una plataforma de investigación cierra el análisis cripto premium detrás de un requisito de tenencia de 500 tokens. Al lanzamiento ($0,20/token), el acceso cuesta $100 — accesible para la mayoría de los usuarios.", "Un protocolo DeFi cierra su panel de análisis de grado institucional detrás de un sistema escalonado: 1,000 tokens para acceso básico, 10,000 para intermedio, 100,000 para la suite completa."], checklist: ["Evalúa los requisitos de token gating calculando el costo actual en dólares de cada nivel y evaluando si ese costo está alineado con el valor percibido del acceso.", "Analiza la sensibilidad de la economía del gating a los cambios de precio."], mistakes: ["Establecer umbrales de token gating basados en el precio actual sin mecanismos de ajuste incorporados.", "Sobreestimar el incentivo de tenencia creado por el token gating."], benchmarks: ["Las comunidades exitosas con token gating típicamente muestran que el 60%–80% de los usuarios con acceso cerrado mantienen sus posiciones durante 6+ meses.", "El token gating ha demostrado ser más efectivo para protocolos donde el acceso cerrado no es replicable."], execution: ["Si participas en un ecosistema con token gating, optimiza tu posición de tenencia alrededor de los niveles de acceso.", "Para los diseñadores de protocolos, implementa umbrales de gating dinámicos usando feeds de precios de oráculos on-chain."], hygiene: ["Si tienes tokens específicamente para acceso de gating, realiza un seguimiento de estas posiciones por separado en tu cartera como 'tenencias de utilidad'.", "Establece alertas para tus posiciones de umbral de gating."], validation: ["Verifica los mecanismos de token gating probando los controles de acceso reales en la plataforma.", "Valida cruzadamente los beneficios declarados del acceso cerrado contra los testimonios reales de usuarios y datos on-chain."] },
+    pt: { interpret: ["A análise de acesso por token gating determina o mínimo de tokens necessários para acessar recursos específicos, comunidades ou conteúdo — e o custo implícito em dólares desse limite de acesso.", "Do ponto de vista do investimento, o token gating cria demanda estrutural de detenção."], scenarios: ["Uma plataforma de pesquisa bloqueia análises premium de cripto por trás de um requisito de detenção de 500 tokens.", "Um protocolo DeFi bloqueia seu painel de análise de grau institucional por trás de um sistema em camadas."], checklist: ["Avalie os requisitos de token gating calculando o custo atual em dólares de cada camada.", "Analise a sensibilidade da economia de gating a mudanças de preço."], mistakes: ["Definir limites de token gating com base no preço atual sem mecanismos de ajuste.", "Superestimar o incentivo de detenção criado pelo token gating."], benchmarks: ["Comunidades bem-sucedidas com token gating tipicamente mostram que 60%–80% dos usuários com acesso bloqueado mantêm suas posições por 6+ meses.", "O token gating provou ser mais eficaz para protocolos onde o acesso bloqueado não é replicável."], execution: ["Se participar de um ecossistema com token gating, otimize sua posição de detenção em torno das camadas de acesso.", "Para designers de protocolos, implemente limites de gating dinâmicos usando feeds de preço de oráculos on-chain."], hygiene: ["Se você detém tokens especificamente para acesso de gating, rastreie essas posições separadamente em seu portfólio.", "Defina alertas para suas posições de limite de gating."], validation: ["Verifique os mecanismos de token gating testando os controles de acesso reais na plataforma.", "Valide cruzadamente os benefícios declarados do acesso bloqueado contra depoimentos reais de usuários e dados on-chain."] },
+    tr: { interpret: ["Token gating erişim analizi, belirli özelliklere, topluluklara veya içeriklere erişmek için gereken minimum token tutumunu — ve bu erişim eşiğinin ima edilen dolar maliyetini — belirler.", "Yatırım açısından bakıldığında, token gating yapısal tutma talebi yaratır."], scenarios: ["Bir araştırma platformu, 500 token tutma gereksinimiyle premium kripto analizini kilitliyor.", "Bir DeFi protokolü, kurumsal düzeydeki analitik panosunu kademeli bir sistemin arkasına kilitliyor."], checklist: ["Token gating gereksinimlerini her katmanın mevcut dolar maliyetini hesaplayarak ve bu maliyetin erişimin algılanan değeriyle uyumlu olup olmadığını değerlendirerek değerlendirin.", "Gating ekonomisinin fiyat değişikliklerine duyarlılığını analiz edin."], mistakes: ["Ayarlama mekanizmaları oluşturmadan mevcut fiyata dayalı token gating eşikleri belirlemek.", "Token gating tarafından oluşturulan tutma teşvikini abartmak."], benchmarks: ["Başarılı token-gated topluluklarda gated erişim kullanıcılarının %60–%80'i 6+ ay boyunca pozisyonlarını korumaktadır.", "Token gating en çok, gated erişimin çoğaltılamaz olduğu protokollerde etkili olduğunu kanıtlamıştır."], execution: ["Token gated bir ekosisteme katılıyorsanız tutma pozisyonunuzu gating katmanları etrafında optimize edin.", "Protokol tasarımcıları için, zincir üstü kehanet fiyat akışlarını kullanarak dinamik gating eşikleri uygulayın."], hygiene: ["Özellikle gating erişimi için token tutuyorsanız, bu pozisyonları portföyünüzde 'yardımcı program tutumları' olarak ayrı takip edin.", "Gating eşiği pozisyonlarınız için uyarılar ayarlayın."], validation: ["Token gating mekanizmalarını platformdaki gerçek erişim kontrollerini test ederek doğrulayın.", "Gated erişimin iddia edilen faydalarını gerçek kullanıcı yorumları ve zincir üstü verilerle çapraz olarak doğrulayın."] },
+    hi: { interpret: ["टोकन गेटिंग एक्सेस विश्लेषण निर्धारित करता है कि विशिष्ट सुविधाओं, समुदायों या सामग्री तक पहुंचने के लिए न्यूनतम कितने टोकन की आवश्यकता है।", "निवेश के दृष्टिकोण से, टोकन गेटिंग संरचनात्मक होल्डिंग मांग बनाता है।"], scenarios: ["एक रिसर्च प्लेटफॉर्म 500-टोकन होल्डिंग आवश्यकता के पीछे प्रीमियम क्रिप्टो विश्लेषण को गेट करता है।", "एक DeFi प्रोटोकॉल अपने संस्थागत-ग्रेड एनालिटिक्स डैशबोर्ड को एक स्तरीय प्रणाली के पीछे गेट करता है।"], checklist: ["प्रत्येक स्तर की वर्तमान डॉलर लागत की गणना करके और यह आकलन करके टोकन गेटिंग आवश्यकताओं का मूल्यांकन करें कि वह लागत एक्सेस के कथित मूल्य के साथ संरेखित है या नहीं।", "मूल्य परिवर्तनों के प्रति गेटिंग अर्थशास्त्र की संवेदनशीलता का विश्लेषण करें।"], mistakes: ["समायोजन तंत्र बनाए बिना वर्तमान मूल्य के आधार पर टोकन गेटिंग थ्रेशोल्ड निर्धारित करना।", "टोकन गेटिंग द्वारा बनाई गई होल्डिंग प्रोत्साहना को अधिक अनुमानित करना।"], benchmarks: ["सफल टोकन-गेटेड समुदाय आमतौर पर 60%–80% गेटेड एक्सेस उपयोगकर्ताओं को 6+ महीने तक पोजीशन बनाए रखते हुए दिखाते हैं।", "टोकन गेटिंग उन प्रोटोकॉल के लिए सबसे प्रभावी साबित हुआ है जहां गेटेड एक्सेस गैर-प्रतिकृति योग्य है।"], execution: ["यदि टोकन-गेटेड इकोसिस्टम में भाग लेते हैं, तो गेटिंग स्तरों के आसपास अपनी होल्डिंग पोजीशन को अनुकूलित करें।", "प्रोटोकॉल डिजाइनरों के लिए, ऑन-चेन ओरेकल प्राइस फीड का उपयोग करके डायनामिक गेटिंग थ्रेशोल्ड लागू करें।"], hygiene: ["यदि आप विशेष रूप से गेटिंग एक्सेस के लिए टोकन रखते हैं, तो इन पोजीशन को अपने पोर्टफोलियो में 'यूटिलिटी होल्डिंग' के रूप में अलग से ट्रैक करें।", "अपनी गेटिंग थ्रेशोल्ड पोजीशन के लिए अलर्ट सेट करें।"], validation: ["प्लेटफॉर्म पर वास्तविक एक्सेस नियंत्रणों का परीक्षण करके टोकन गेटिंग मेकेनिज्म को सत्यापित करें।", "गेटेड एक्सेस के दावा किए गए लाभों को वास्तविक उपयोगकर्ता प्रशंसापत्र और ऑन-चेन डेटा के खिलाफ क्रॉस-वैलिडेट करें।"] },
+    ru: { interpret: ["Анализ токен-гейтинга определяет минимальное количество токенов, необходимое для доступа к определённым функциям, сообществам или контенту, а также подразумеваемую долларовую стоимость этого порогового значения.", "С инвестиционной точки зрения, токен-гейтинг создаёт структурный спрос на удержание."], scenarios: ["Исследовательская платформа закрывает премиум-аналитику за требованием держать 500 токенов.", "DeFi-протокол закрывает институциональный аналитический дашборд за многоуровневой системой."], checklist: ["Оценивайте требования токен-гейтинга, рассчитывая текущую долларовую стоимость каждого уровня и сопоставляя её с воспринимаемой ценностью доступа.", "Анализируйте чувствительность экономики гейтинга к изменениям цены."], mistakes: ["Установка порогов без механизмов корректировки на основе текущей цены.", "Переоценка стимула к удержанию, создаваемого токен-гейтингом."], benchmarks: ["Успешные сообщества с токен-гейтингом обычно удерживают 60–80% пользователей в позициях 6+ месяцев.", "Токен-гейтинг наиболее эффективен для протоколов с нереплицируемым закрытым доступом."], execution: ["При участии в экосистеме с токен-гейтингом оптимизируйте позицию под нужный уровень доступа.", "Для разработчиков протоколов — внедряйте динамические пороги с привязкой к on-chain оракулам цен."], hygiene: ["Если вы держите токены исключительно для гейтинга, учитывайте эти позиции отдельно как «утилитарные холдинги».", "Установите алерты по пороговым позициям гейтинга."], validation: ["Проверяйте механику токен-гейтинга, тестируя фактические контроли доступа на платформе.", "Сопоставляйте заявленные преимущества закрытого доступа с реальными отзывами пользователей и on-chain данными."] }
+  },
+  'tokenomics-modeling': {
+    en: {
+      interpret: ["Tokenomics modeling output tells you whether a project's economic design creates sustainable value alignment between protocol users, token holders, and the development team — or whether structural incentives create inevitable value destruction over time. The most important signal from a tokenomics model is the relationship between token emission (supply growth) and protocol value capture (demand drivers): if a protocol emits 20% new tokens annually but only generates 5% annual value growth in TVL and fees, token holders face persistent dilution that price appreciation cannot fully compensate.", "Good tokenomics models demonstrate positive feedback loops: more users → more protocol revenue → more value distributed to token holders → more token holding incentive → more liquidity → more users. Red flag models show reverse feedback: high token emissions attract yield farmers → emissions stop → farmers exit → liquidity collapses → TVL falls → fundamentals weaken → price corrects. Identify which type of loop your target protocol exhibits before committing capital."],
+      scenarios: ["A lending protocol emits 15% of token supply annually as liquidity mining rewards. At $100M TVL, this emission costs $3M annually (3% of TVL). The protocol earns $4M annually in fees, of which 50% goes to token stakers. Net value to stakers: $2M fee income - $3M emission cost = -$1M annual value destruction per $100M TVL. This protocol's tokenomics mathematically destroy value at current parameters — price appreciation requires continuous new capital inflow to compensate.", "A decentralized exchange models its tokenomics showing: 2% annual token emission for 5 years, 100% of trading fees distributed to veToken lockers, veToken locking averages 2.5-year duration. At $500M annual volume, the protocol generates $1.5M in fees. With 40M tokens locked for an average 2.5 years and 10M tokens emitted annually, the emission-to-locked ratio is 25% — meaning emissions don't significantly dilute locked holders. This model creates genuine value accrual for long-term participants."],
+      checklist: ["When analyzing any token model, explicitly map out: (1) all emission sources and their annual rates, (2) all value capture mechanisms and their magnitudes, (3) who receives what value flows, and (4) under what conditions does the model remain sustainable. A model that only works above certain TVL or price thresholds has structural fragility — model the break-even point explicitly.", "Stress-test tokenomics models against bear market scenarios. If the model requires continued price appreciation to sustain emissions, it's a Ponzi structure — emissions are paid for by new buyers, not protocol revenue. Ask: 'If the token price drops 80% tomorrow, does the protocol still create value for users and generate enough fee revenue to justify continued operation?' Models that answer 'yes' have genuine utility; those that answer 'no' are speculation vehicles."],
+      mistakes: ["Confusing token price appreciation with tokenomics quality. A token can double in price due to market sentiment while having fundamentally unsustainable tokenomics. Price performance and tokenomics quality are independent variables — high price despite poor tokenomics indicates speculative demand that eventually corrects to fundamental value. Conversely, good tokenomics with low current price may represent the better risk-adjusted opportunity.", "Failing to account for governance token dilution effects on value per token. Even if a protocol generates $10M annual fees and distributes them to governance token holders, if the token supply grows 30% annually through emissions, each individual token's share of future fee distributions shrinks by 30% per year. Value per token must be calculated using future diluted supply, not current supply, to accurately assess investment merit."],
+      benchmarks: ["Sustainable DeFi protocol tokenomics typically show: emission rates below 10% annually at maturity, fee distribution above 50% of gross revenue to token holders, and TVL-to-market-cap ratios between 0.3x and 3x. Protocols with emission rates above 20% at maturity and TVL-to-market-cap ratios above 5x are typically in an unsustainable growth phase that requires constant new capital to maintain.", "veToken models (pioneered by Curve Finance) have shown superior long-term price resilience compared to linear distribution models. Projects implementing veToken mechanics show 30%–50% higher token retention rates than comparable projects with simpler distributions, reflecting stronger alignment between long-term holders and protocol success."],
+      execution: ["Build a 3-year tokenomics projection model before investing in any protocol with complex emission schedules. Project token supply growth, fee revenue growth at different TVL scenarios, and the resulting yield for token holders at each price point. Identify the price and TVL thresholds below which token holder ROI becomes negative — these are your exit triggers if the market approaches these levels.", "For veToken protocols, model the additional return from lock-up voting versus simple holding. Calculate: annual emission APR × your allocation vs. veToken boost multiplier × lock-adjusted emission. If the veToken lock increases your emission income by 2.5x and the unlock opportunity cost is 0.5% annually in lost flexibility, locking is economically rational for any investment horizon above 6 months."],
+      hygiene: ["Review protocol tokenomics documentation for changes quarterly. Teams frequently adjust emission schedules, fee distribution parameters, and lock-up mechanics through governance votes — these changes can significantly alter the economic value proposition for token holders. Set up governance notification alerts to ensure you're aware of proposed parameter changes before they're enacted.", "Maintain a running yield calculation for each protocol position: current annual emissions at today's price vs. current annual fee distributions vs. token price change. This three-component yield analysis gives you a realistic total return figure that you can compare against alternatives to assess whether the position continues to deserve capital allocation."],
+      validation: ["Verify tokenomics claims by reading the actual smart contract parameters, not just the documentation. Emission rates, fee splits, and lock-up mechanics are encoded in contract logic that may differ from stated documentation — especially for protocols that have made governance updates. Use blockchain analytics to track actual emission rates over the past 3–6 months and compare against stated parameters.", "Test tokenomics model assumptions against actual historical data. If the model assumes $50M TVL generates $500K in fees, verify this relationship against historical protocol data. If actual fee generation consistently underperforms model assumptions, the tokenomics are less favorable than represented — adjust your valuation and expected yield accordingly."]
+    },
+    es: { interpret: ["La salida del modelo de tokenomics te dice si el diseño económico de un proyecto crea una alineación de valor sostenible entre los usuarios del protocolo, los tenedores de tokens y el equipo de desarrollo.", "Los buenos modelos de tokenomics demuestran bucles de retroalimentación positivos."], scenarios: ["Un protocolo de préstamos emite el 15% del suministro de tokens anualmente como recompensas de minería de liquidez.", "Un intercambio descentralizado modela su tokenomics mostrando: 2% de emisión anual de tokens durante 5 años, 100% de las comisiones de negociación distribuidas a los bloqueadores de veToken."], checklist: ["Al analizar cualquier modelo de tokens, mapea explícitamente: (1) todas las fuentes de emisión y sus tasas anuales, (2) todos los mecanismos de captura de valor y sus magnitudes.", "Realiza pruebas de estrés a los modelos de tokenomics frente a escenarios de mercado bajista."], mistakes: ["Confundir la apreciación del precio del token con la calidad de los tokenomics.", "No tener en cuenta los efectos de dilución de los tokens de gobernanza en el valor por token."], benchmarks: ["Los tokenomics de protocolos DeFi sostenibles típicamente muestran: tasas de emisión inferiores al 10% anualmente en la madurez, distribución de comisiones superior al 50% de los ingresos brutos a los tenedores de tokens.", "Los modelos veToken han mostrado una resistencia de precios a largo plazo superior en comparación con los modelos de distribución lineal."], execution: ["Construye un modelo de proyección de tokenomics de 3 años antes de invertir en cualquier protocolo con calendarios de emisión complejos.", "Para protocolos veToken, modela el rendimiento adicional del bloqueo de votación versus la tenencia simple."], hygiene: ["Revisa la documentación de tokenomics del protocolo en busca de cambios trimestralmente.", "Mantén un cálculo de rendimiento en curso para cada posición del protocolo."], validation: ["Verifica las afirmaciones de tokenomics leyendo los parámetros reales del contrato inteligente, no solo la documentación.", "Prueba los supuestos del modelo de tokenomics frente a datos históricos reales."] },
+    pt: { interpret: ["A saída do modelo de tokenomics diz se o design econômico de um projeto cria alinhamento de valor sustentável entre usuários do protocolo, detentores de tokens e a equipe de desenvolvimento.", "Bons modelos de tokenomics demonstram loops de feedback positivos."], scenarios: ["Um protocolo de empréstimos emite 15% do fornecimento de tokens anualmente como recompensas de mineração de liquidez.", "Uma exchange descentralizada modela sua tokenomics mostrando: 2% de emissão anual de tokens por 5 anos."], checklist: ["Ao analisar qualquer modelo de token, mapeie explicitamente: (1) todas as fontes de emissão e suas taxas anuais, (2) todos os mecanismos de captura de valor.", "Faça testes de estresse em modelos de tokenomics contra cenários de mercado de baixa."], mistakes: ["Confundir apreciação do preço do token com qualidade de tokenomics.", "Deixar de contabilizar os efeitos de diluição dos tokens de governança no valor por token."], benchmarks: ["Tokenomics sustentáveis de protocolos DeFi tipicamente mostram: taxas de emissão abaixo de 10% anualmente na maturidade.", "Modelos veToken mostraram resiliência de preço de longo prazo superior em comparação com modelos de distribuição linear."], execution: ["Construa um modelo de projeção de tokenomics de 3 anos antes de investir em qualquer protocolo com cronogramas de emissão complexos.", "Para protocolos veToken, modele o retorno adicional do bloqueio de votação versus detenção simples."], hygiene: ["Revise a documentação de tokenomics do protocolo para mudanças trimestralmente.", "Mantenha um cálculo de rendimento em andamento para cada posição de protocolo."], validation: ["Verifique as alegações de tokenomics lendo os parâmetros reais do contrato inteligente.", "Teste os pressupostos do modelo de tokenomics contra dados históricos reais."] },
+    tr: { interpret: ["Tokenomics modelleme çıktısı, bir projenin ekonomik tasarımının protokol kullanıcıları, token sahipleri ve geliştirme ekibi arasında sürdürülebilir değer uyumu yaratıp yaratmadığını söyler.", "İyi tokenomics modelleri pozitif geri bildirim döngüleri gösterir."], scenarios: ["Bir borç verme protokolü, likidite madenciliği ödülleri olarak token arzının %15'ini yıllık olarak yayıyor.", "Bir merkezi olmayan borsa tokenomics'ini şöyle modelliyor: 5 yıl için yıllık %2 token emisyonu."], checklist: ["Herhangi bir token modelini analiz ederken açıkça şunları haritalayın: (1) tüm emisyon kaynakları ve yıllık oranları, (2) tüm değer yakalama mekanizmaları ve büyüklükleri.", "Tokenomics modellerini ayı piyasası senaryolarına karşı stres testi yapın."], mistakes: ["Token fiyat takdirini tokenomics kalitesiyle karıştırmak.", "Yönetişim token seyreltme etkilerini değer başına tokena dahil etmemek."], benchmarks: ["Sürdürülebilir DeFi protokolü tokenomics'leri tipik olarak şunu gösterir: olgunlukta yıllık %10'un altında emisyon oranları.", "veToken modelleri doğrusal dağıtım modellerine kıyasla uzun vadeli fiyat dayanıklılığında üstün olduğunu kanıtladı."], execution: ["Karmaşık emisyon takvimlerine sahip herhangi bir protokole yatırım yapmadan önce 3 yıllık bir tokenomics projeksiyon modeli oluşturun.", "veToken protokolleri için, oylama kilitleme ile basit tutmanın ek getirisini modelleyin."], hygiene: ["Protokol tokenomics belgelerini değişiklikler için üç ayda bir gözden geçirin.", "Her protokol pozisyonu için çalışan bir verim hesabı tutun."], validation: ["Tokenomics iddialarını yalnızca belgelere değil, gerçek akıllı sözleşme parametrelerini okuyarak doğrulayın.", "Tokenomics modeli varsayımlarını gerçek tarihsel verilere karşı test edin."] },
+    hi: { interpret: ["टोकनोमिक्स मॉडलिंग आउटपुट आपको बताता है कि क्या किसी परियोजना का आर्थिक डिज़ाइन प्रोटोकॉल उपयोगकर्ताओं, टोकन धारकों और विकास टीम के बीच टिकाऊ मूल्य संरेखण बनाता है।", "अच्छे टोकनोमिक्स मॉडल सकारात्मक फीडबैक लूप प्रदर्शित करते हैं।"], scenarios: ["एक लेंडिंग प्रोटोकॉल तरलता खनन पुरस्कार के रूप में सालाना टोकन सप्लाई का 15% एमिट करता है।", "एक विकेंद्रीकृत एक्सचेंज अपनी टोकनोमिक्स को मॉडल करता है: 5 वर्षों के लिए वार्षिक 2% टोकन एमिशन।"], checklist: ["किसी भी टोकन मॉडल का विश्लेषण करते समय, स्पष्ट रूप से मैप करें: (1) सभी एमिशन स्रोत और उनकी वार्षिक दरें, (2) सभी मूल्य कैप्चर तंत्र।", "टोकनोमिक्स मॉडल को बेयर मार्केट परिदृश्यों के खिलाफ तनाव-परीक्षण करें।"], mistakes: ["टोकन मूल्य प्रशंसा को टोकनोमिक्स गुणवत्ता के साथ भ्रमित करना।", "प्रति टोकन मूल्य पर गवर्नेंस टोकन डाइल्यूशन प्रभावों का हिसाब न रखना।"], benchmarks: ["टिकाऊ DeFi प्रोटोकॉल टोकनोमिक्स आमतौर पर दिखाते हैं: परिपक्वता पर सालाना 10% से कम एमिशन दरें।", "veToken मॉडल ने लीनियर वितरण मॉडल की तुलना में बेहतर दीर्घकालिक मूल्य लचीलापन दिखाया है।"], execution: ["जटिल एमिशन शेड्यूल वाले किसी भी प्रोटोकॉल में निवेश करने से पहले 3-वर्ष का टोकनोमिक्स प्रोजेक्शन मॉडल बनाएं।", "veToken प्रोटोकॉल के लिए, लॉक-अप वोटिंग बनाम सरल होल्डिंग से अतिरिक्त रिटर्न मॉडल करें।"], hygiene: ["त्रैमासिक रूप से परिवर्तनों के लिए प्रोटोकॉल टोकनोमिक्स दस्तावेज़ीकरण की समीक्षा करें।", "प्रत्येक प्रोटोकॉल पोजीशन के लिए एक रनिंग यील्ड गणना बनाए रखें।"], validation: ["केवल दस्तावेज़ीकरण पर नहीं, बल्कि वास्तविक स्मार्ट कॉन्ट्रैक्ट पैरामीटर पढ़कर टोकनोमिक्स दावों को सत्यापित करें।", "ऐतिहासिक वास्तविक डेटा के खिलाफ टोकनोमिक्स मॉडल मान्यताओं का परीक्षण करें।"] },
+    ru: { interpret: ["Результаты моделирования токеномики говорят о том, создаёт ли экономическая конструкция проекта устойчивое согласование интересов пользователей протокола, держателей токенов и команды разработчиков.", "Качественные модели токеномики демонстрируют положительные обратные связи."], scenarios: ["Лендинг-протокол ежегодно эмитирует 15% предложения токенов в качестве вознаграждений за майнинг ликвидности.", "Децентрализованная биржа моделирует токеномику: годовая эмиссия 2% токенов в течение 5 лет."], checklist: ["При анализе любой токен-модели явно составьте карту: (1) всех источников эмиссии и их годовых ставок, (2) всех механизмов захвата ценности.", "Проводите стресс-тестирование моделей токеномики в медвежьих рыночных сценариях."], mistakes: ["Смешение роста цены токена с качеством токеномики.", "Неучёт эффектов размывания токенов управления на стоимость одного токена."], benchmarks: ["Устойчивая токеномика DeFi-протоколов обычно характеризуется: ставками эмиссии ниже 10% в год на этапе зрелости.", "Модели veToken демонстрируют более высокую долгосрочную ценовую устойчивость по сравнению с линейными моделями распределения."], execution: ["Перед инвестированием в любой протокол со сложными графиками эмиссии стройте 3-летнюю проекционную модель токеномики.", "Для протоколов veToken моделируйте дополнительный доход от лок-апа с правом голоса по сравнению с простым удержанием."], hygiene: ["Ежеквартально проверяйте документацию по токеномике на предмет изменений.", "Ведите текущий расчёт доходности для каждой позиции в протоколе."], validation: ["Проверяйте заявления о токеномике, читая реальные параметры смарт-контракта, а не только документацию.", "Тестируйте допущения модели токеномики против реальных исторических данных."] }
+  },
+  'dao-voting-power': {
+    en: {
+      interpret: ["DAO voting power calculations reveal how influence is distributed across token holders in a governance system. A governance architecture where the top 10 wallets control 60%+ of voting power is effectively an oligarchy — regardless of how democratic the DAO process appears. Meaningful decentralization requires that no single entity can unilaterally pass proposals and that a diverse coalition of perspectives must converge for governance actions to succeed. Evaluate governance power distribution with the same rigor as financial distribution: concentration risks apply equally to governance outcomes as to market price.", "The relationship between token holdings and voting power isn't always 1:1. Quadratic voting reduces the power of large holders by weighting votes as the square root of tokens held. Conviction voting time-weights votes to reward long-term participation. Delegation systems allow token holders to assign their votes to subject-matter experts. Understand the specific voting mechanics before calculating governance influence — the same token holdings can represent dramatically different voting power across different DAO frameworks."],
+      scenarios: ["A protocol DAO has 50M tokens in governance. Top wallet: 12M tokens (24% voting power). Next 4 wallets: 4M each (8% each). Quorum requirement: 10M votes. A coalition of the top wallet and any one of the next four can reach quorum and pass any proposal. In practice, this means two entities control governance outcomes — every DAO 'vote' is effectively a negotiation between these major players, with small holders providing democratic theater.", "A quadratic voting DAO has identical token distribution but calculates voting power as sqrt(tokens). Top wallet: sqrt(12M) = 3,464 votes. Next 4 wallets: sqrt(4M) = 2,000 each. Quorum: sqrt(10M) = 3,162 votes. Now the top wallet alone can reach quorum — but passing a proposal still requires majority of votes cast. The 46M tokens held by smaller wallets produce 6,781 aggregate votes (>2x the top holder), giving the distributed small holders actual decisive influence over governance outcomes."],
+      checklist: ["Before participating in or building on a DAO, map the actual governance power distribution: what percentage of voting power is needed for quorum, what percentage to pass a proposal, and how many independent entities currently control enough tokens to meet each threshold. This analysis reveals whether governance is genuinely contested or effectively controlled by a small number of actors.", "Evaluate the delegation system if one exists: are votes being concentrated through delegation to a few addresses? A DAO with 10,000 token holders but 80% of voting power delegated to 5 delegates creates de facto oligarchy. Monitor delegation concentrations alongside raw token concentrations to get a complete picture of governance power."],
+      mistakes: ["Equating on-chain governance participation with meaningful decentralization. A DAO can have 1,000 proposals and 500 votes per proposal while still being controlled by 3 whale wallets. The volume of governance activity is less important than the distribution of effective voting power. Low voter turnout with concentrated holdings is the most common pattern — small holders rarely participate because their individual votes rarely affect outcomes.", "Ignoring governance attack vectors when analyzing voting power. 51% attacks in DAO governance don't require a majority of all tokens — they require a majority of tokens participating in any specific vote. If typical turnout is 15% of tokens, an attacker needs just 8% of total supply to control governance outcomes during low-participation periods. Model the governance security under realistic turnout assumptions, not theoretical maximum participation."],
+      benchmarks: ["Healthy governance participation in established DAOs averages 3%–8% of total token supply per vote, with peak controversial proposals reaching 15%–25%. DAOs with consistent participation below 2% face governance legitimacy risks — decisions made with minimal participation can be challenged as unrepresentative. Building minimum participation thresholds (5% of tokens must vote for a proposal to pass) provides governance legitimacy protection.", "Governance power concentration correlates with protocol age: newly launched DAOs often show 85%+% top-10 concentration, while mature protocols (3+ years) average 40%–60% top-10 concentration. The trajectory matters: protocols actively working to disperse governance power through delegation tools, governance mining, and participation incentives show healthier long-term decentralization trends."],
+      execution: ["If you're a significant token holder in a DAO, engage with governance by voting or delegating to aligned representatives. Passive large holders who don't vote effectively cede their governance power to active participants — often resulting in governance outcomes misaligned with your interests. Even holding a $10,000 position, engaging in governance provides disproportionate benefit if your vote tips outcomes on proposals affecting your investment.", "For DAOs with delegation, carefully evaluate potential delegates before assigning voting power. Assess their voting history: are they consistent with their stated values? Do they vote in ways that protect token holder interests? Have they taken positions you would endorse? High-quality delegates who represent aligned values can amplify your governance influence beyond what your token holdings alone would provide."],
+      hygiene: ["Monitor governance proposals weekly for any DAO where you hold significant positions. Governance changes — fee adjustments, emission schedule changes, treasury allocations, parameter updates — can significantly affect your returns. A single governance proposal that changes protocol fees from 0.3% to 0.1% can reduce your yield position by 67% overnight if you're positioned in fee-bearing assets.", "Track governance power concentration monthly using analytics tools. If a previously healthy distribution suddenly concentrates (due to large OTC purchases, delegation aggregation, or whale accumulation), this signals elevated governance attack risk. Concentration increases above 20% in a single month warrant immediate investigation of who the new concentrated holder is and what their governance history indicates."],
+      validation: ["Verify voting power calculations by querying the governance contract directly rather than relying on DAO dashboards, which may show outdated snapshots or use different calculation methodologies. The governance contract holds the definitive source of truth for voting power at any block height. Particularly important for snapshot-based voting systems where historical holdings determine current voting power.", "Test DAO governance security by simulating potential attacks: 'If I wanted to pass a malicious proposal without community consent, how much capital would I need and what would it cost at current market prices?' This analysis reveals actual governance security levels — DAOs where a governance attack costs less than the potential extraction from a malicious proposal are fundamentally insecure regardless of how decentralized they appear."]
+    },
+    es: { interpret: ["Los cálculos del poder de voto en DAO revelan cómo se distribuye la influencia entre los tenedores de tokens en un sistema de gobernanza.", "La relación entre los tokens en poder y el poder de voto no siempre es 1:1."], scenarios: ["Un DAO de protocolo tiene 50M de tokens en gobernanza. La cartera principal: 12M de tokens (24% del poder de voto).", "Un DAO de votación cuadrática tiene una distribución de tokens idéntica pero calcula el poder de voto como sqrt(tokens)."], checklist: ["Antes de participar en un DAO, mapea la distribución real del poder de gobernanza.", "Evalúa el sistema de delegación si existe uno."], mistakes: ["Equiparar la participación en la gobernanza on-chain con una descentralización significativa.", "Ignorar los vectores de ataque de gobernanza al analizar el poder de voto."], benchmarks: ["La participación saludable en la gobernanza en DAOs establecidos promedia el 3%–8% del suministro total de tokens por voto.", "La concentración del poder de gobernanza se correlaciona con la edad del protocolo."], execution: ["Si eres un tenedor significativo de tokens en un DAO, participa en la gobernanza votando o delegando a representantes alineados.", "Para DAOs con delegación, evalúa cuidadosamente a los posibles delegados antes de asignar el poder de voto."], hygiene: ["Monitorea las propuestas de gobernanza semanalmente para cualquier DAO donde tengas posiciones significativas.", "Rastrea la concentración del poder de gobernanza mensualmente utilizando herramientas de análisis."], validation: ["Verifica los cálculos del poder de voto consultando directamente el contrato de gobernanza.", "Prueba la seguridad de la gobernanza de la DAO simulando posibles ataques."] },
+    pt: { interpret: ["Os cálculos de poder de voto em DAO revelam como a influência é distribuída entre os detentores de tokens em um sistema de governança.", "A relação entre holdings de tokens e poder de voto nem sempre é 1:1."], scenarios: ["Um DAO de protocolo tem 50M de tokens em governança. Carteira principal: 12M de tokens (24% do poder de voto).", "Um DAO de votação quadrática tem distribuição de tokens idêntica, mas calcula o poder de voto como sqrt(tokens)."], checklist: ["Antes de participar de um DAO, mapeie a distribuição real do poder de governança.", "Avalie o sistema de delegação, se existir."], mistakes: ["Equiparar a participação na governança on-chain com descentralização significativa.", "Ignorar vetores de ataque de governança ao analisar o poder de voto."], benchmarks: ["A participação saudável na governança em DAOs estabelecidos tem em média 3%–8% do fornecimento total de tokens por voto.", "A concentração de poder de governança correlaciona-se com a idade do protocolo."], execution: ["Se você for um detentor significativo de tokens em um DAO, envolva-se com a governança votando ou delegando a representantes alinhados.", "Para DAOs com delegação, avalie cuidadosamente possíveis delegados antes de atribuir poder de voto."], hygiene: ["Monitore propostas de governança semanalmente para qualquer DAO onde você detém posições significativas.", "Rastreie a concentração de poder de governança mensualmente usando ferramentas de análise."], validation: ["Verifique os cálculos de poder de voto consultando o contrato de governança diretamente.", "Teste a segurança da governança do DAO simulando ataques potenciais."] },
+    tr: { interpret: ["DAO oylama gücü hesaplamaları, bir yönetişim sisteminde token sahipleri arasında etkinin nasıl dağıldığını ortaya koyar.", "Token tutumları ile oy gücü arasındaki ilişki her zaman 1:1 değildir."], scenarios: ["Bir protokol DAO'sunda 50M token yönetişimde. En büyük cüzdan: 12M token (%24 oy gücü).", "Kuadratik oy kullanımı DAO'su, token dağılımı aynı olmasına karşın oy gücünü sqrt(token) olarak hesaplar."], checklist: ["Bir DAO'ya katılmadan önce gerçek yönetişim güç dağılımını haritalayın.", "Varsa delegasyon sistemini değerlendirin."], mistakes: ["Zincir üstü yönetişim katılımını anlamlı merkeziyetsizlikle eşitleştirmek.", "Oy gücünü analiz ederken yönetişim saldırı vektörlerini görmezden gelmek."], benchmarks: ["Köklü DAO'larda sağlıklı yönetişim katılımı, oy başına toplam token arzının ortalama %3–%8'ine denk gelmektedir.", "Yönetişim güç yoğunlaşması protokol yaşıyla ilişkilidir."], execution: ["DAO'da önemli bir token sahibiyseniz, oylama yaparak veya uyumlu temsilcilere delege ederek yönetişime katılın.", "Delegasyonlu DAO'lar için oy gücü atamadan önce potansiyel delegeleri dikkatlice değerlendirin."], hygiene: ["Önemli pozisyonlara sahip olduğunuz her DAO için yönetişim önerilerini haftalık izleyin.", "Yönetişim güç yoğunlaşmasını analitik araçları kullanarak aylık izleyin."], validation: ["Oy gücü hesaplamalarını DAO gösterge tablolarına güvenmek yerine yönetişim sözleşmesini doğrudan sorgulayarak doğrulayın.", "Potansiyel saldırıları simüle ederek DAO yönetişim güvenliğini test edin."] },
+    hi: { interpret: ["DAO वोटिंग पावर गणनाएं प्रकट करती हैं कि एक शासन प्रणाली में टोकन धारकों में प्रभाव कैसे वितरित किया जाता है।", "टोकन होल्डिंग और वोटिंग पावर के बीच संबंध हमेशा 1:1 नहीं होता।"], scenarios: ["एक प्रोटोकॉल DAO में गवर्नेंस में 50M टोकन हैं। शीर्ष वॉलेट: 12M टोकन (24% वोटिंग पावर)।", "एक क्वाड्रेटिक वोटिंग DAO में समान टोकन वितरण है लेकिन वोटिंग पावर की गणना sqrt(tokens) के रूप में करता है।"], checklist: ["किसी DAO में भाग लेने से पहले, वास्तविक शासन शक्ति वितरण को मैप करें।", "यदि कोई प्रत्यायोजन प्रणाली मौजूद है तो उसका मूल्यांकन करें।"], mistakes: ["ऑन-चेन शासन भागीदारी को सार्थक विकेंद्रीकरण के बराबर मानना।", "वोटिंग पावर का विश्लेषण करते समय शासन हमले के वेक्टर को नजरअंदाज करना।"], benchmarks: ["स्थापित DAO में स्वस्थ शासन भागीदारी प्रति वोट कुल टोकन सप्लाई के औसतन 3%–8% है।", "शासन शक्ति एकाग्रता प्रोटोकॉल आयु के साथ सहसंबद्ध है।"], execution: ["यदि आप किसी DAO में महत्वपूर्ण टोकन धारक हैं, तो वोट करके या संरेखित प्रतिनिधियों को प्रत्यायोजित करके शासन में संलग्न हों।", "प्रत्यायोजन वाले DAO के लिए, वोटिंग पावर असाइन करने से पहले संभावित प्रत्यायोजितों का सावधानीपूर्वक मूल्यांकन करें।"], hygiene: ["किसी भी DAO जहां आपके पास महत्वपूर्ण पोजीशन हैं, उसके लिए साप्ताहिक शासन प्रस्तावों की निगरानी करें।", "एनालिटिक्स टूल का उपयोग करके मासिक रूप से शासन शक्ति एकाग्रता को ट्रैक करें।"], validation: ["DAO डैशबोर्ड पर निर्भर रहने के बजाय शासन अनुबंध को सीधे क्वेरी करके वोटिंग पावर गणनाओं को सत्यापित करें।", "संभावित हमलों का अनुकरण करके DAO शासन सुरक्षा का परीक्षण करें।"] },
+    ru: { interpret: ["Расчёты голосовательной силы в DAO показывают, как распределено влияние между держателями токенов в системе управления.", "Соотношение между долей токенов и голосовательной силой не всегда 1:1."], scenarios: ["Протокольный DAO имеет 50 млн токенов в управлении. Топ-кошелёк: 12 млн токенов (24% голосовательной силы).", "DAO с квадратичным голосованием имеет идентичное распределение токенов, но рассчитывает голосовательную силу как sqrt(токены)."], checklist: ["Перед участием в DAO составьте карту фактического распределения управленческой власти.", "Оцените систему делегирования, если она существует."], mistakes: ["Приравнивание участия в on-chain-управлении к реальной децентрализации.", "Игнорирование векторов атак на управление при анализе голосовательной силы."], benchmarks: ["Здоровое участие в управлении устоявшихся DAO в среднем составляет 3–8% общего предложения токенов на голосование.", "Концентрация управленческой власти коррелирует с возрастом протокола."], execution: ["Если вы являетесь значимым держателем токенов в DAO, участвуйте в управлении путём голосования или делегирования согласованным представителям.", "Для DAO с делегированием тщательно оценивайте потенциальных делегатов перед передачей голосовательной силы."], hygiene: ["Еженедельно отслеживайте предложения по управлению для любого DAO, где у вас есть значимые позиции.", "Ежемесячно отслеживайте концентрацию управленческой власти с помощью аналитических инструментов."], validation: ["Проверяйте расчёты голосовательной силы, напрямую запрашивая контракт управления, а не полагаясь на дашборды DAO.", "Тестируйте безопасность управления DAO, моделируя потенциальные атаки."] }
+  },
+  'wallet-address-balance': {
+    en: {
+      interpret: ["Wallet balance analysis goes beyond simply knowing your current holdings — it provides context for portfolio risk management, tax planning, and performance attribution. A wallet holding 20 different assets with highly correlated price movements has lower effective diversification than the asset count suggests. Calculate the correlation-adjusted portfolio exposure to understand how concentrated your risk actually is across different market conditions. Bitcoin and Ethereum, despite being different assets, historically move within 0.7–0.9 correlation during both bull and bear phases, meaning a portfolio of only BTC and ETH is effectively a single-factor bet.", "When reviewing wallet balances, assess not just current dollar value but historical performance contribution. Which positions have contributed positively? Which have been net drags? This attribution analysis reveals whether your portfolio is thriving because of your selection decisions or simply because the entire market rose. Assets that underperformed the general market during bull phases while correlating fully on the downside are doubly punishing — they reduce gains and amplify losses."],
+      scenarios: ["A crypto wallet shows: BTC ($15,000), ETH ($8,000), SOL ($5,000), AVAX ($3,000), and 12 DeFi tokens totaling $9,000. Total: $40,000. Despite appearing diversified across 15+ assets, BTC, ETH, and SOL account for 70% of value. During the May 2022 correction, all three dropped 40%–55%, and the DeFi tokens dropped 65%–85%. Effective diversification was minimal — the portfolio declined 52% average despite appearing widely spread across multiple blockchains.", "A DeFi investor's wallet shows: 60% in stablecoin LP positions, 30% in ETH, and 10% in governance tokens. This distribution appears conservative, but the stablecoin LP positions have smart contract risk exposure. A protocol hack or depeg event affecting any LP position could impact the 60% stablecoin allocation just as severely as a price crash would impact ETH. True risk assessment requires modeling non-price risks alongside market risks."],
+      checklist: ["For each wallet you manage, calculate: (1) total dollar value across all assets, (2) percentage allocation by asset, (3) correlation-adjusted effective concentration, (4) percentage in high-risk vs. lower-risk positions, and (5) estimated tax liability from unrealized gains. This five-factor assessment gives a complete risk picture that raw balance figures don't provide alone.", "Identify your single largest source of risk — the position whose adverse movement would cause the most portfolio damage. If this position represents more than 40% of portfolio value, it dominates your portfolio returns in both directions. Deliberate about whether this concentration is intentional (you have high conviction) or accidental (the position grew through appreciation without active management)."],
+      mistakes: ["Ignoring gas wallet allocation as a portfolio component. Many DeFi investors hold ETH specifically for gas costs but don't track it as part of their portfolio — leading to underreported holdings and incorrect allocation percentages. Every crypto asset in every connected wallet should be included in portfolio tracking, including native tokens held for network fees.", "Treating wallet balance as a static figure when DeFi positions are dynamic. LP positions, staking positions, and yield farming allocations change continuously as fees accumulate, rewards compound, and impermanent loss materializes. A point-in-time balance snapshot may misrepresent actual holdings by 5%–15% compared to the true liquidation value of all positions. Use portfolio trackers that account for dynamic position values, not just static token balances."],
+      benchmarks: ["Institutional crypto portfolio management standards suggest: no single asset above 40% of portfolio, minimum 3 asset classes (Layer-1s, DeFi, stablecoins), and a risk-adjusted volatility target of 50%–70% of Bitcoin volatility for diversified portfolios. Portfolios with these characteristics historically show better Sharpe ratios than concentrated single-asset holdings over 3+ year periods.", "Average crypto retail portfolio concentration data shows that 60%+ of retail investors hold 80%+ of their crypto value in a single asset (usually BTC or ETH). While this reflects genuine conviction beliefs, it also represents high idiosyncratic risk. Adding just 2–3 non-correlated assets to a single-asset portfolio historically improved risk-adjusted returns by 15%–25% without meaningfully reducing upside exposure."],
+      execution: ["Review your complete wallet balance across all wallets and chains monthly. Consolidate a unified portfolio view using tools like DeBank, Zapper, or Zerion that aggregate balances across EVM chains, Solana, and other ecosystems. Identify the full picture of your crypto exposure before making any new investment decisions — it's common for investors to hold significant positions they've forgotten about in wallets from previous cycles.", "Set rebalancing triggers based on asset allocation percentages rather than absolute dollar values. If you target a 40% BTC / 30% ETH / 30% altcoin split, trigger rebalancing whenever any single allocation drifts more than 15 percentage points from target. Percentage-based rebalancing automatically sells into appreciation and buys into weakness — implementing a systematic rule that outperforms most emotional decision-making."],
+      hygiene: ["Maintain a master record of all wallet addresses you control across all blockchains, including hardware wallets, software wallets, and exchange accounts. This master list is essential for: complete portfolio tracking, tax reporting, security audits (ensuring all wallets are properly backed up), and inheritance planning. Update this record whenever you create new wallets or decommission old ones.", "Perform a quarterly security audit of all active wallets: review token approvals using Revoke.cash or similar tools and revoke any unused permissions, verify hardware wallet firmware is current, ensure seed phrases are securely backed up in at least two separate physical locations, and scan for dust attacks or address poisoning attempts in transaction history."],
+      validation: ["Verify wallet balances by querying blockchain data directly through a block explorer rather than relying solely on wallet application displays. Wallet interfaces can fail to display pending transactions, recently received assets, or assets on chain forks. Direct blockchain queries provide ground-truth balance information that matches what's actually recorded on-chain.", "Cross-validate portfolio value calculations by comparing the aggregated wallet balance output with your own manual calculation for at least your top 5 holdings. Aggregation tools sometimes misidentify tokens (treating wrapped versions as original, or including defunct tokens with incorrect prices) — manual spot-checking ensures the automated summary accurately reflects your actual holdings."]
+    },
+    es: { interpret: ["El análisis de saldo de billeteras va más allá de conocer simplemente tus tenencias actuales — proporciona contexto para la gestión de riesgos de cartera, la planificación fiscal y la atribución de rendimiento.", "Al revisar los saldos de billeteras, evalúa no solo el valor actual en dólares sino también la contribución al rendimiento histórico."], scenarios: ["Una billetera cripto muestra: BTC ($15,000), ETH ($8,000), SOL ($5,000), AVAX ($3,000) y 12 tokens DeFi que suman $9,000.", "La billetera de un inversor DeFi muestra: 60% en posiciones LP de stablecoins, 30% en ETH, y 10% en tokens de gobernanza."], checklist: ["Para cada billetera que gestionas, calcula: (1) valor total en dólares en todos los activos, (2) porcentaje de asignación por activo.", "Identifica tu mayor fuente única de riesgo."], mistakes: ["Ignorar la asignación de la billetera de gas como componente de cartera.", "Tratar el saldo de la billetera como una cifra estática cuando las posiciones DeFi son dinámicas."], benchmarks: ["Los estándares de gestión de carteras cripto institucionales sugieren: ningún activo único por encima del 40% de la cartera.", "Los datos de concentración de cartera cripto minorista promedio muestran que más del 60% de los inversores minoristas tienen más del 80% de su valor cripto en un solo activo."], execution: ["Revisa el saldo completo de tu billetera en todas las billeteras y cadenas mensualmente.", "Establece disparadores de reequilibrio basados en porcentajes de asignación de activos en lugar de valores absolutos en dólares."], hygiene: ["Mantén un registro maestro de todas las direcciones de billetera que controlas en todas las blockchains.", "Realiza una auditoría de seguridad trimestral de todas las billeteras activas."], validation: ["Verifica los saldos de la billetera consultando los datos de blockchain directamente a través de un explorador de bloques.", "Valida cruzadamente los cálculos del valor de cartera comparando el resultado del saldo de billetera agregado con tu propio cálculo manual."] },
+    pt: { interpret: ["A análise de saldo de carteiras vai além de simplesmente conhecer suas participações atuais — fornece contexto para gestão de risco de portfólio, planejamento tributário e atribuição de desempenho.", "Ao revisar os saldos de carteiras, avalie não apenas o valor atual em dólares, mas a contribuição histórica de desempenho."], scenarios: ["Uma carteira de cripto mostra: BTC ($15.000), ETH ($8.000), SOL ($5.000), AVAX ($3.000) e 12 tokens DeFi totalizando $9.000.", "A carteira de um investidor DeFi mostra: 60% em posições LP de stablecoin, 30% em ETH e 10% em tokens de governança."], checklist: ["Para cada carteira que você gerencia, calcule: (1) valor total em dólares em todos os ativos, (2) percentual de alocação por ativo.", "Identifique sua maior fonte única de risco."], mistakes: ["Ignorar a alocação da carteira de gas como componente de portfólio.", "Tratar o saldo da carteira como uma figura estática quando as posições DeFi são dinâmicas."], benchmarks: ["Os padrões de gestão de portfólio institucional de cripto sugerem: nenhum único ativo acima de 40% do portfólio.", "Os dados médios de concentração de portfólio cripto varejo mostram que mais de 60% dos investidores varejo mantêm mais de 80% de seu valor cripto em um único ativo."], execution: ["Revise o saldo completo de sua carteira em todas as carteiras e cadeias mensalmente.", "Defina gatilhos de rebalanceamento com base em percentuais de alocação de ativos em vez de valores absolutos em dólares."], hygiene: ["Mantenha um registro mestre de todos os endereços de carteira que você controla em todas as blockchains.", "Realize uma auditoria de segurança trimestral de todas as carteiras ativas."], validation: ["Verifique os saldos de carteira consultando os dados de blockchain diretamente através de um explorador de blocos.", "Valide cruzadamente os cálculos de valor de portfólio comparando a saída de saldo de carteira agregado com seu próprio cálculo manual."] },
+    tr: { interpret: ["Cüzdan bakiye analizi, mevcut tutumlarınızı bilmenin ötesine geçer — portföy risk yönetimi, vergi planlaması ve performans atfı için bağlam sağlar.", "Cüzdan bakiyelerini incelerken, yalnızca mevcut dolar değerini değil, geçmiş performans katkısını da değerlendirin."], scenarios: ["Bir kripto cüzdanı şunu gösteriyor: BTC (15.000 dolar), ETH (8.000 dolar), SOL (5.000 dolar), AVAX (3.000 dolar) ve toplam 9.000 dolar tutan 12 DeFi tokeni.", "Bir DeFi yatırımcısının cüzdanı şunu gösteriyor: %60 stablecoin LP pozisyonlarında, %30 ETH'de ve %10 yönetişim tokenlerinde."], checklist: ["Yönettiğiniz her cüzdan için şunları hesaplayın: (1) tüm varlıklardaki toplam dolar değeri, (2) varlığa göre yüzde tahsisi.", "En büyük tek risk kaynağınızı belirleyin."], mistakes: ["Gas cüzdan tahsisini portföy bileşeni olarak görmezden gelmek.", "DeFi pozisyonları dinamikken cüzdan bakiyesini statik bir rakam olarak ele almak."], benchmarks: ["Kurumsal kripto portföy yönetimi standartları şunu öneriyor: portföyün %40'ının üzerinde tek bir varlık olmamalı.", "Ortalama kripto perakende portföy yoğunlaşma verileri, perakende yatırımcıların %60'ından fazlasının kripto değerlerinin %80'inden fazlasını tek bir varlıkta tuttuğunu gösteriyor."], execution: ["Tüm cüzdanlarınızda ve zincirlerde aylık tam cüzdan bakiyenizi gözden geçirin.", "Mutlak dolar değerleri yerine varlık tahsis yüzdelerine dayalı yeniden dengeleme tetikleyicileri belirleyin."], hygiene: ["Tüm blockchainlerde kontrol ettiğiniz tüm cüzdan adreslerinin ana kaydını tutun.", "Tüm aktif cüzdanların üç aylık güvenlik denetimini gerçekleştirin."], validation: ["Cüzdan bakiyelerini yalnızca cüzdan uygulama ekranlarına güvenmek yerine bir blok gezgini aracılığıyla blockchain verilerini doğrudan sorgulayarak doğrulayın.", "Portföy değeri hesaplamalarını, en az ilk 5 tutumunuz için toplanmış cüzdan bakiye çıktısını kendi manuel hesaplamanızla karşılaştırarak çapraz olarak doğrulayın."] },
+    hi: { interpret: ["वॉलेट बैलेंस विश्लेषण केवल अपनी वर्तमान होल्डिंग जानने से परे है — यह पोर्टफोलियो जोखिम प्रबंधन, कर नियोजन और प्रदर्शन एट्रीब्यूशन के लिए संदर्भ प्रदान करता है।", "वॉलेट बैलेंस की समीक्षा करते समय, न केवल वर्तमान डॉलर मूल्य का मूल्यांकन करें बल्कि ऐतिहासिक प्रदर्शन योगदान का भी।"], scenarios: ["एक क्रिप्टो वॉलेट दिखाता है: BTC ($15,000), ETH ($8,000), SOL ($5,000), AVAX ($3,000) और 12 DeFi टोकन कुल $9,000।", "एक DeFi निवेशक के वॉलेट में: 60% स्टेबलकॉइन LP पोजीशन में, 30% ETH में, और 10% गवर्नेंस टोकन में।"], checklist: ["प्रत्येक वॉलेट के लिए गणना करें: (1) सभी संपत्तियों में कुल डॉलर मूल्य, (2) संपत्ति द्वारा प्रतिशत आवंटन।", "जोखिम के अपने एकल सबसे बड़े स्रोत की पहचान करें।"], mistakes: ["गैस वॉलेट आवंटन को पोर्टफोलियो घटक के रूप में नजरअंदाज करना।", "जब DeFi पोजीशन गतिशील हों तो वॉलेट बैलेंस को स्थिर आंकड़े के रूप में मानना।"], benchmarks: ["संस्थागत क्रिप्टो पोर्टफोलियो प्रबंधन मानक सुझाते हैं: कोई एकल संपत्ति पोर्टफोलियो के 40% से ऊपर नहीं।", "औसत क्रिप्टो रिटेल पोर्टफोलियो एकाग्रता डेटा दिखाता है कि 60%+ रिटेल निवेशक एकल संपत्ति में अपने क्रिप्टो मूल्य का 80%+ रखते हैं।"], execution: ["मासिक रूप से सभी वॉलेट और चेन में अपना पूरा वॉलेट बैलेंस समीक्षा करें।", "निरपेक्ष डॉलर मूल्यों के बजाय संपत्ति आवंटन प्रतिशत के आधार पर रीबैलेंसिंग ट्रिगर सेट करें।"], hygiene: ["सभी ब्लॉकचेन में आपके नियंत्रण में सभी वॉलेट पते का मास्टर रिकॉर्ड बनाए रखें।", "सभी सक्रिय वॉलेट का त्रैमासिक सुरक्षा ऑडिट करें।"], validation: ["वॉलेट एप्लिकेशन डिस्प्ले पर निर्भर रहने के बजाय ब्लॉक एक्सप्लोरर के माध्यम से सीधे ब्लॉकचेन डेटा क्वेरी करके वॉलेट बैलेंस सत्यापित करें।", "कम से कम शीर्ष 5 होल्डिंग के लिए एग्रीगेटेड वॉलेट बैलेंस आउटपुट को अपनी मैनुअल गणना से तुलना करके पोर्टफोलियो मूल्य गणनाओं को क्रॉस-वैलिडेट करें।"] },
+    ru: { interpret: ["Анализ баланса кошелька выходит за рамки простого знания текущих активов — он обеспечивает контекст для управления рисками портфеля, налогового планирования и атрибуции доходности.", "При просмотре балансов кошельков оценивайте не только текущую стоимость в долларах, но и вклад в историческую доходность."], scenarios: ["Крипто-кошелёк показывает: BTC ($15 000), ETH ($8 000), SOL ($5 000), AVAX ($3 000) и 12 DeFi-токенов на $9 000.", "Кошелёк DeFi-инвестора показывает: 60% в стейблкоин LP-позициях, 30% в ETH и 10% в токенах управления."], checklist: ["Для каждого кошелька рассчитайте: (1) общую стоимость в долларах по всем активам, (2) процентное распределение по активу.", "Определите свой единственный крупнейший источник риска."], mistakes: ["Игнорирование газ-кошелька как компонента портфеля.", "Рассмотрение баланса кошелька как статической величины, когда DeFi-позиции динамичны."], benchmarks: ["Институциональные стандарты управления крипто-портфелем предполагают: ни один актив не должен превышать 40% портфеля.", "Данные о среднем розничном крипто-портфеле показывают, что более 60% розничных инвесторов держат 80%+ своей крипто-стоимости в одном активе."], execution: ["Ежемесячно проверяйте полный баланс кошелька по всем кошелькам и чейнам.", "Устанавливайте триггеры ребалансировки на основе процентов распределения активов, а не абсолютных долларовых значений."], hygiene: ["Ведите мастер-реестр всех адресов кошельков, которыми управляете, по всем блокчейнам.", "Ежеквартально проводите аудит безопасности всех активных кошельков."], validation: ["Проверяйте балансы кошельков, напрямую запрашивая данные блокчейна через эксплорер, а не полагаясь только на отображение в приложении кошелька.", "Перекрёстно проверяйте расчёты стоимости портфеля, сравнивая агрегированные балансы с собственными ручными расчётами как минимум по топ-5 позициям."] }
+  },
+  'transaction-fees': {
+    en: {
+      interpret: ["Transaction fee analysis reveals the true cost of on-chain activity and its impact on your investment returns. A trade that appears profitable on price movement alone may be unprofitable once gas costs, exchange fees, bridge fees, and slippage are factored in. For small positions, transaction costs can consume 5%–20% of the trade value — a significant drag that requires proportionally higher price movement to achieve the same net return. Always calculate the break-even price movement required to cover all transaction costs before entering any trade.", "Fee structures vary dramatically across blockchains and protocols: Ethereum mainnet gas can spike to $100+ during congestion, while Layer-2 transactions on Arbitrum or Optimism cost cents. Cross-chain bridge fees range from 0.05% to 0.5% of transferred value, plus underlying network fees. DEX fees add 0.01%–1% per trade depending on pool tier. Frequent traders accumulate fee drags that compound over time — a trader making 100 trades annually at 0.5% per trade pays the equivalent of 50% of position size in aggregate fees."],
+      scenarios: ["A trader wants to move $5,000 from Ethereum to a DeFi protocol on Arbitrum, swap for a specific token, add liquidity, and stake the LP tokens. Cost breakdown: ETH bridge fee ($0.50 Arbitrum gas + 0.05% of $5,000 = $2.50 bridge fee = $3), Arbitrum swap fee (0.3% of $5,000 = $15), LP addition gas ($0.30), staking gas ($0.20). Total fees: ~$18.50, or 0.37% of position. Break-even on the staking yield requires earning at least 0.37% before this trade becomes profitable — achievable at typical DeFi yields, but meaningful for sizing decisions.", "A day trader on Ethereum mainnet makes 20 trades in a day, each $2,000 in size. Average gas cost per trade: $15. Average DEX fee: 0.3% = $6 per trade. Total daily fee: (15 + 6) × 20 = $420. To break even on fees alone, average trades must generate at least 1.05% return per trade. Given that most intraday crypto price movements are smaller than this, the trader is likely fee-negative on average — a mathematical guarantee of long-term losses regardless of directional accuracy."],
+      checklist: ["Before any transaction, explicitly calculate total fee costs: network gas estimate, protocol trading fee percentage, bridge fee if applicable, and estimated slippage at current liquidity depth. Sum these and calculate as a percentage of transaction size. If total fees exceed 1% of transaction value for a non-yield-bearing trade, question whether the position size justifies the cost, or whether waiting for lower gas or consolidating transactions reduces the fee burden.", "Compare fee costs across alternative execution routes. For the same trade: direct DEX vs. DEX aggregator (1inch, Paraswap) may offer different gas and slippage; on-chain execution vs. CEX with withdrawal may differ by 0.1%–0.5%; bridge A vs. bridge B may differ by 0.2%–0.3%. Mapping these alternatives before executing identifies the optimal route that minimizes fee drag on your returns."],
+      mistakes: ["Executing transactions without checking current gas prices. Gas prices on Ethereum can vary 10x–20x between peak and off-peak hours. A transaction costing $80 at 8am EST may cost $8 at 3am EST — for non-urgent transactions, scheduling execution during historically low-gas periods saves meaningful amounts over many transactions. Use tools like Etherscan Gas Tracker to identify optimal timing windows.", "Ignoring slippage as a fee component. For large trades relative to pool liquidity, price slippage can far exceed the stated trading fee. A $100,000 swap in a $500,000 liquidity pool may show 0.3% stated fee but incur 2%–5% actual slippage — making the effective fee 2.3%–5.3%. Always check the price impact percentage in DEX interfaces and split large trades across multiple blocks if slippage exceeds 0.5%."],
+      benchmarks: ["Optimal fee burden targets for different trading strategies: DeFi yield farming — fees should not exceed 10% of expected annual yield; swing trading — fees should not exceed 0.5% per round trip; active DeFi strategies — annualized fee cost should be below 2% of capital managed. These benchmarks help you assess whether your current fee structure is compatible with your strategy's return profile.", "Cross-chain fee comparison at representative values: Ethereum mainnet averages $5–$50 per transaction. Arbitrum/Optimism: $0.05–$0.50. Polygon: $0.01–$0.05. Solana: $0.00025–$0.005. BNB Chain: $0.20–$2.00. For strategies involving many small transactions, chain selection dramatically affects total fee costs — the same 1,000 transactions cost $10,000–$50,000 on Ethereum vs. $25–$250 on Solana."],
+      execution: ["Batch multiple transactions where protocol design allows. Many DeFi interactions can be combined using multicall contracts: approve + swap + stake in a single transaction costs 40%–60% less gas than three separate transactions. Research whether your target protocols support batching, or use wallet interfaces (Rabby, Frame) that automatically identify batching opportunities.", "Set gas price strategies based on transaction urgency. For non-time-sensitive transactions (moving assets to cold storage, claiming rewards weekly), use slow/economy gas settings that may take 10–30 minutes to confirm but cost 40%–70% less than fast gas. Reserve high gas settings for time-sensitive arbitrage, liquidation protection, and NFT mints — contexts where speed genuinely justifies premium cost."],
+      hygiene: ["Track all transaction fees in your crypto tax records. Transaction fees paid in ETH or other native tokens are typically tax-deductible against crypto gains in most jurisdictions — failing to track these deductions means overpaying taxes. Use crypto tax software that automatically imports and categorizes gas costs from your wallet transaction history.", "Monitor your monthly total fee expenditure across all chains. If you're paying more than 2% of your active portfolio value in fees monthly, your trading frequency is likely excessive relative to your strategy's expected alpha. This fee awareness metric prevents the common trap of active trading with positive gross returns but negative net returns after fee deduction."],
+      validation: ["After every significant transaction, compare the actual fee paid to your pre-transaction estimate. If actuals consistently exceed estimates by more than 20%, your estimation methodology needs refinement — common causes include underestimating gas limits, not accounting for MEV fees, or missing protocol-specific fee tiers. Accurate estimation prevents budget overruns and informs strategy sizing.", "Periodically audit the fee efficiency of your DeFi strategies. Calculate total fees paid over the past 90 days and compare against total returns generated in the same period. If fee ratio exceeds 30% of gross returns, the strategy's alpha is being consumed by friction costs — either execution optimization (better routing, batching, timing) or strategy re-evaluation is warranted."]
+    },
+    es: { interpret: ["El análisis de comisiones de transacción revela el costo real de la actividad on-chain y su impacto en los retornos de inversión. Una operación que parece rentable solo por el movimiento de precios puede ser no rentable una vez que se consideran los costos de gas, comisiones de intercambio, comisiones de puente y deslizamiento.", "Las estructuras de comisiones varían dramáticamente entre blockchains y protocolos."], scenarios: ["Un trader quiere mover $5,000 de Ethereum a un protocolo DeFi en Arbitrum, intercambiar por un token específico, agregar liquidez y apostar los tokens LP.", "Un trader diario en Ethereum mainnet realiza 20 operaciones en un día, cada una de $2,000 en tamaño."], checklist: ["Antes de cualquier transacción, calcula explícitamente los costos totales de comisiones.", "Compara los costos de comisiones en rutas de ejecución alternativas."], mistakes: ["Ejecutar transacciones sin verificar los precios actuales del gas.", "Ignorar el deslizamiento como componente de comisión."], benchmarks: ["Objetivos óptimos de carga de comisiones para diferentes estrategias de negociación.", "Comparación de comisiones entre cadenas a valores representativos."], execution: ["Agrupa múltiples transacciones donde el diseño del protocolo lo permita.", "Establece estrategias de precio de gas basadas en la urgencia de la transacción."], hygiene: ["Registra todas las comisiones de transacción en tus registros fiscales de cripto.", "Monitorea tu gasto total mensual en comisiones en todas las cadenas."], validation: ["Después de cada transacción significativa, compara la comisión real pagada con tu estimación previa.", "Audita periódicamente la eficiencia de comisiones de tus estrategias DeFi."] },
+    pt: { interpret: ["A análise de taxas de transação revela o custo real da atividade on-chain e seu impacto nos retornos de investimento.", "As estruturas de taxas variam dramaticamente entre blockchains e protocolos."], scenarios: ["Um trader quer mover $5.000 do Ethereum para um protocolo DeFi no Arbitrum.", "Um day trader na mainnet Ethereum faz 20 negociações em um dia, cada uma de $2.000."], checklist: ["Antes de qualquer transação, calcule explicitamente os custos totais de taxas.", "Compare os custos de taxas em rotas de execução alternativas."], mistakes: ["Executar transações sem verificar os preços atuais de gas.", "Ignorar o slippage como componente de taxa."], benchmarks: ["Metas ideais de carga de taxa para diferentes estratégias de negociação.", "Comparação de taxas entre cadeias a valores representativos."], execution: ["Agrupe múltiplas transações onde o design do protocolo permitir.", "Defina estratégias de preço de gas com base na urgência da transação."], hygiene: ["Rastreie todas as taxas de transação em seus registros fiscais de cripto.", "Monitore seus gastos mensais totais em taxas em todas as cadeias."], validation: ["Após cada transação significativa, compare a taxa real paga com sua estimativa pré-transação.", "Periodicamente audite a eficiência de taxas de suas estratégias DeFi."] },
+    tr: { interpret: ["İşlem ücreti analizi, zincir üstü aktivitenin gerçek maliyetini ve yatırım getirilerine etkisini ortaya koyar.", "Ücret yapıları, blockchainler ve protokoller arasında dramatik biçimde farklılık gösterir."], scenarios: ["Bir trader, 5.000 doları Ethereum'dan Arbitrum'daki bir DeFi protokolüne taşımak, belirli bir token için takas yapmak, likidite eklemek ve LP tokenlerini stake etmek istiyor.", "Ethereum mainnet'te bir günlük trader, günde 20 işlem yapıyor, her biri 2.000 dolar büyüklüğünde."], checklist: ["Herhangi bir işlemden önce, toplam ücret maliyetlerini açıkça hesaplayın.", "Alternatif yürütme güzergahlarında ücret maliyetlerini karşılaştırın."], mistakes: ["Mevcut gas fiyatlarını kontrol etmeden işlem yapmak.", "Kayma maliyetini ücret bileşeni olarak görmezden gelmek."], benchmarks: ["Farklı ticaret stratejileri için optimal ücret yükü hedefleri.", "Temsili değerlerde zincirler arası ücret karşılaştırması."], execution: ["Protokol tasarımının izin verdiği durumlarda birden fazla işlemi toplu yapın.", "İşlem aciliyetine göre gas fiyatı stratejileri belirleyin."], hygiene: ["Tüm işlem ücretlerini kripto vergi kayıtlarınızda takip edin.", "Tüm zincirlerdeki aylık toplam ücret harcamalarınızı izleyin."], validation: ["Her önemli işlemden sonra ödenen gerçek ücreti işlem öncesi tahmininizle karşılaştırın.", "DeFi stratejilerinizin ücret verimliliğini periyodik olarak denetleyin."] },
+    hi: { interpret: ["लेनदेन शुल्क विश्लेषण ऑन-चेन गतिविधि की वास्तविक लागत और निवेश रिटर्न पर इसके प्रभाव को प्रकट करता है।", "शुल्क संरचनाएं ब्लॉकचेन और प्रोटोकॉल में नाटकीय रूप से भिन्न होती हैं।"], scenarios: ["एक ट्रेडर $5,000 को Ethereum से Arbitrum पर एक DeFi प्रोटोकॉल में ले जाना, एक विशिष्ट टोकन के लिए स्वैप करना, तरलता जोड़ना और LP टोकन को स्टेक करना चाहता है।", "Ethereum मेननेट पर एक दिवसीय ट्रेडर एक दिन में 20 ट्रेड करता है, प्रत्येक $2,000 आकार में।"], checklist: ["किसी भी लेनदेन से पहले, कुल शुल्क लागतों की स्पष्ट रूप से गणना करें।", "वैकल्पिक निष्पादन मार्गों में शुल्क लागतों की तुलना करें।"], mistakes: ["वर्तमान गैस मूल्यों की जांच किए बिना लेनदेन निष्पादित करना।", "स्लिपेज को शुल्क घटक के रूप में नजरअंदाज करना।"], benchmarks: ["विभिन्न ट्रेडिंग रणनीतियों के लिए इष्टतम शुल्क बोझ लक्ष्य।", "प्रतिनिधि मूल्यों पर क्रॉस-चेन शुल्क तुलना।"], execution: ["जहां प्रोटोकॉल डिज़ाइन अनुमति देता है वहां कई लेनदेन बैच करें।", "लेनदेन की तात्कालिकता के आधार पर गैस मूल्य रणनीतियां सेट करें।"], hygiene: ["अपने क्रिप्टो कर रिकॉर्ड में सभी लेनदेन शुल्कों को ट्रैक करें।", "सभी चेन में अपने मासिक कुल शुल्क व्यय की निगरानी करें।"], validation: ["प्रत्येक महत्वपूर्ण लेनदेन के बाद, वास्तविक भुगतान किए गए शुल्क की अपनी पूर्व-लेनदेन अनुमान से तुलना करें।", "अपनी DeFi रणनीतियों की शुल्क दक्षता का समय-समय पर ऑडिट करें।"] },
+    ru: { interpret: ["Анализ комиссий за транзакции раскрывает реальную стоимость on-chain активности и её влияние на инвестиционные доходы.", "Структура комиссий кардинально различается между блокчейнами и протоколами."], scenarios: ["Трейдер хочет перевести $5 000 с Ethereum в DeFi-протокол на Arbitrum, обменять на конкретный токен, добавить ликвидность и застейкать LP-токены.", "Дей-трейдер в основной сети Ethereum делает 20 сделок в день по $2 000 каждая."], checklist: ["Перед любой транзакцией явно рассчитайте совокупные комиссионные затраты.", "Сравните комиссии по альтернативным маршрутам исполнения."], mistakes: ["Выполнение транзакций без проверки текущих цен на газ.", "Игнорирование проскальзывания как составляющей комиссии."], benchmarks: ["Оптимальные целевые уровни комиссионной нагрузки для различных торговых стратегий.", "Сравнение комиссий между чейнами при репрезентативных значениях."], execution: ["Пакетируйте несколько транзакций там, где это позволяет дизайн протокола.", "Устанавливайте стратегии цены газа в зависимости от срочности транзакции."], hygiene: ["Отслеживайте все комиссии за транзакции в крипто-налоговых записях.", "Отслеживайте ежемесячные совокупные расходы на комиссии по всем чейнам."], validation: ["После каждой значимой транзакции сравнивайте фактически уплаченную комиссию с доп-транзакционной оценкой.", "Периодически проверяйте эффективность затрат на комиссии в ваших DeFi-стратегиях."] }
+  },
+  'unit-converter': {
+    en: {
+      interpret: ["Cryptocurrency unit conversions reveal the underlying scale of blockchain systems and help contextualize value transfers across drastically different denominations. When you see 0.00001 BTC, converting to satoshis (1,000 sats) makes the quantity immediately tangible. When evaluating Ethereum gas costs in gwei, converting to USD at current ETH price transforms abstract technical metrics into economic reality. The ability to fluidly convert between denominations is essential for comparing value across networks: 1 MATIC at $0.80 vs. 1 SOL at $150 vs. 1 ETH at $3,000 require common units to enable meaningful comparison of transaction cost efficiency.", "Denomination differences create persistent confusion for new crypto participants. Bitcoin's 8-decimal precision (1 BTC = 100,000,000 satoshis) enables microtransactions at the satoshi level while maintaining the psychological significance of whole-BTC milestones. Ethereum's 18-decimal precision (1 ETH = 10^18 wei) serves different technical purposes — gas calculations require granular unit precision to properly price computational resources. Understanding why each network chose its denomination structure provides insight into the network's design philosophy and intended use cases."],
+      scenarios: ["A developer is estimating the gas cost of a smart contract function. The function costs 50,000 gas units. Current gas price: 30 gwei. Calculation: 50,000 × 30 gwei = 1,500,000 gwei = 0.0015 ETH. At $3,000/ETH, this = $4.50 per call. For a DeFi protocol expecting 1,000 calls per day, this is $4,500 daily gas cost — a critical business viability metric that unit conversion makes immediately apparent.", "An investor is comparing the unit economics of two payment networks: Network A charges 0.001 BTC per transaction (1,000 sats). Network B charges 0.0001 ETH per transaction (100,000 gwei). At BTC = $50,000 and ETH = $3,000: Network A = $0.05 per tx. Network B = $0.30 per tx. Without unit conversion to common dollar terms, these fee structures appear incomparable — the conversion reveals Network A is 6x cheaper per transaction at current prices."],
+      checklist: ["When presenting converted values, always include: (1) the source value and unit, (2) the conversion rate used (with timestamp), (3) the converted value and target unit. This three-component format ensures the conversion is reproducible and verifiable, preventing confusion when rates change or when values are referenced later without context.", "For cross-chain comparisons, standardize on USD as the common unit with explicit conversion rates. When comparing fee structures across Ethereum, Solana, and Polygon, convert all fees to USD at current rates to enable apples-to-apples comparison. Include the underlying native token price as context for how conversion rates may change as token prices fluctuate."],
+      mistakes: ["Conflating different token units when comparing 'amounts.' Saying '1 ETH worth of tokens' means dramatically different things depending on whether you're discussing WETH, ETH2, stETH, or rETH — all of which may have slightly different values. Similarly, '1 BTC' on different chains (WBTC on Ethereum, BTC on Bitcoin, renBTC on various chains) may have fractional price discrepancies due to minting/redemption dynamics. Always specify the exact token contract when precision matters.", "Using stale conversion rates for financial calculations. In a market that moves 5%–10% daily, a rate from even 4 hours ago can be meaningfully inaccurate. For tax calculations, always use the market price at the exact transaction timestamp. For investment decisions, use real-time rates from reliable oracles. Never use memory or approximation for conversion rates in any financial context."],
+      benchmarks: ["Common unit conversion reference points worth memorizing: 1 BTC = 100,000,000 satoshis; 1 ETH = 10^9 gwei = 10^18 wei; 1 SOL = 10^9 lamports; 1 DOT = 10^10 plancks. These base relationships enable rapid mental estimates without calculator dependency — useful for quick sanity checks during time-sensitive trading decisions.", "Practical fee benchmarks by transaction type: simple token transfer on ETH mainnet ≈ 21,000 gas; ERC-20 approval ≈ 45,000 gas; DEX swap ≈ 100,000–200,000 gas; complex DeFi interaction ≈ 300,000–500,000 gas. Multiplying these by current gwei prices gives immediate cost estimates for any contemplated on-chain action."],
+      execution: ["Integrate unit conversion tools into your regular workflow. Bookmark reliable conversion utilities (CoinGecko's conversion tool, blockchain explorers with unit calculators) and reference them before every on-chain interaction involving unfamiliar denominations. The time investment in accurate pre-trade conversion calculation is trivially small compared to the cost of errors from denomination confusion.", "For DeFi development, implement unit tests that verify all conversion calculations across the full range of expected inputs, including edge cases near minimum and maximum values, and inputs with maximum decimal precision. Smart contract bugs arising from integer overflow or precision loss in unit conversions have caused millions in losses — rigorous unit testing prevents these vulnerabilities."],
+      hygiene: ["When recording crypto transactions for tax or accounting purposes, always document both the original native token amount and the USD equivalent at time of transaction. This dual-denomination record eliminates ambiguity when preparing tax filings months later, when native token prices may have changed substantially from transaction-time values.", "Update your mental models for 'standard' unit values quarterly. As crypto adoption grows and network upgrades change fee economics, what constituted a 'normal' gas price in 2021 (50–100 gwei) may be dramatically different from the normal in 2024 (10–20 gwei). Recalibrating your intuitive reference points prevents systematic overestimation or underestimation of network costs."],
+      validation: ["Verify unit conversions for large-value transactions using two independent sources before executing. A conversion error of one decimal place changes the transaction value by 10x — catastrophic for transfers above a few thousand dollars. Cross-reference your calculated amount in the sending application with the preview shown by the receiving protocol to catch any input errors before confirming.", "For protocol integrations involving unit conversions, validate that your conversion logic handles all token decimal configurations correctly. Not all ERC-20 tokens use 18 decimals — USDC uses 6 decimals, WBTC uses 8, and some tokens use non-standard decimals that break generic conversion logic. Test against tokens with 6, 8, and 18 decimal places before deploying any conversion-dependent code to production."]
+    },
+    es: { interpret: ["Las conversiones de unidades de criptomonedas revelan la escala subyacente de los sistemas blockchain y ayudan a contextualizar las transferencias de valor entre denominaciones drásticamente diferentes.", "Las diferencias de denominación crean una confusión persistente para los nuevos participantes en cripto."], scenarios: ["Un desarrollador está estimando el costo de gas de una función de contrato inteligente. La función cuesta 50,000 unidades de gas.", "Un inversor está comparando la economía de unidades de dos redes de pago."], checklist: ["Al presentar valores convertidos, incluye siempre: (1) el valor fuente y la unidad, (2) la tasa de conversión utilizada (con marca de tiempo), (3) el valor convertido y la unidad destino.", "Para comparaciones entre cadenas, estandariza en USD como la unidad común con tasas de conversión explícitas."], mistakes: ["Confundir diferentes unidades de token al comparar 'cantidades'.", "Usar tasas de conversión obsoletas para cálculos financieros."], benchmarks: ["Puntos de referencia de conversión de unidades comunes que vale la pena memorizar.", "Puntos de referencia prácticos de comisiones por tipo de transacción."], execution: ["Integra herramientas de conversión de unidades en tu flujo de trabajo regular.", "Para el desarrollo DeFi, implementa pruebas unitarias que verifiquen todos los cálculos de conversión."], hygiene: ["Al registrar transacciones cripto para fines fiscales o contables, documenta siempre tanto el monto nativo del token original como el equivalente en USD en el momento de la transacción.", "Actualiza tus modelos mentales para los valores de unidades 'estándar' trimestralmente."], validation: ["Verifica las conversiones de unidades para transacciones de alto valor usando dos fuentes independientes antes de ejecutar.", "Para integraciones de protocolo que involucren conversiones de unidades, valida que tu lógica de conversión maneje correctamente todas las configuraciones decimales de tokens."] },
+    pt: { interpret: ["As conversões de unidades de criptomoedas revelam a escala subjacente dos sistemas blockchain e ajudam a contextualizar transferências de valor entre denominações drasticamente diferentes.", "As diferenças de denominação criam confusão persistente para novos participantes de cripto."], scenarios: ["Um desenvolvedor está estimando o custo de gas de uma função de contrato inteligente. A função custa 50.000 unidades de gas.", "Um investidor está comparando a economia de unidades de duas redes de pagamento."], checklist: ["Ao apresentar valores convertidos, sempre inclua: (1) o valor fonte e unidade, (2) a taxa de conversão usada (com timestamp), (3) o valor convertido e unidade alvo.", "Para comparações entre cadeias, padronize em USD como a unidade comum com taxas de conversão explícitas."], mistakes: ["Confundir diferentes unidades de token ao comparar 'quantidades'.", "Usar taxas de conversão obsoletas para cálculos financeiros."], benchmarks: ["Pontos de referência de conversão de unidades comuns que vale a pena memorizar.", "Benchmarks práticos de taxas por tipo de transação."], execution: ["Integre ferramentas de conversão de unidades em seu fluxo de trabalho regular.", "Para desenvolvimento DeFi, implemente testes unitários que verifiquem todos os cálculos de conversão."], hygiene: ["Ao registrar transações de cripto para fins fiscais ou contábeis, sempre documente tanto o valor nativo do token original quanto o equivalente em USD no momento da transação.", "Atualize seus modelos mentais para valores de unidades 'padrão' trimestralmente."], validation: ["Verifique as conversões de unidades para transações de alto valor usando duas fontes independentes antes de executar.", "Para integrações de protocolo envolvendo conversões de unidades, valide que sua lógica de conversão lida corretamente com todas as configurações decimais de tokens."] },
+    tr: { interpret: ["Kripto para birimi birim dönüşümleri, blockchain sistemlerinin temel ölçeğini ortaya koyar ve çarpıcı biçimde farklı birimler arasındaki değer transferlerini bağlamlandırmaya yardımcı olur.", "Birim farklılıkları, kripto alanına yeni katılanlar için kalıcı bir kafa karışıklığı yaratır."], scenarios: ["Bir geliştirici, bir akıllı sözleşme işlevinin gas maliyetini tahmin ediyor. Fonksiyon 50.000 gas birimi harcıyor.", "Bir yatırımcı, iki ödeme ağının birim ekonomilerini karşılaştırıyor."], checklist: ["Dönüştürülmüş değerleri sunarken her zaman şunları ekleyin: (1) kaynak değer ve birimi, (2) kullanılan dönüşüm oranı (zaman damgasıyla), (3) dönüştürülmüş değer ve hedef birimi.", "Zincirler arası karşılaştırmalar için açık dönüşüm oranlarıyla USD'yi ortak birim olarak standartlaştırın."], mistakes: ["'Miktarları' karşılaştırırken farklı token birimlerini karıştırmak.", "Finansal hesaplamalar için güncel olmayan dönüşüm oranları kullanmak."], benchmarks: ["Ezberlemek için değerli yaygın birim dönüşümü referans noktaları.", "İşlem türüne göre pratik ücret kıyaslamaları."], execution: ["Birim dönüşüm araçlarını düzenli iş akışınıza entegre edin.", "DeFi geliştirmesi için tüm dönüşüm hesaplamalarını doğrulayan birim testleri uygulayın."], hygiene: ["Vergi veya muhasebe amaçlı kripto işlemlerini kaydederken her zaman hem orijinal yerel token miktarını hem de işlem anındaki USD karşılığını belgeleyin.", "Üç ayda bir 'standart' birim değerleri için zihinsel modellerinizi güncelleyin."], validation: ["Yüksek değerli işlemler için birim dönüşümlerini yürütmeden önce iki bağımsız kaynakla doğrulayın.", "Birim dönüşümleri içeren protokol entegrasyonları için dönüşüm mantığınızın tüm token ondalık yapılandırmalarını doğru şekilde işlediğini doğrulayın."] },
+    hi: { interpret: ["क्रिप्टोकरेंसी यूनिट रूपांतरण ब्लॉकचेन सिस्टम के अंतर्निहित पैमाने को प्रकट करते हैं और नाटकीय रूप से अलग-अलग मूल्यवर्ग में मूल्य हस्तांतरण को संदर्भित करने में मदद करते हैं।", "मूल्यवर्ग के अंतर नए क्रिप्टो प्रतिभागियों के लिए लगातार भ्रम पैदा करते हैं।"], scenarios: ["एक डेवलपर एक स्मार्ट कॉन्ट्रैक्ट फ़ंक्शन की गैस लागत का अनुमान लगा रहा है।", "एक निवेशक दो भुगतान नेटवर्क की इकाई अर्थशास्त्र की तुलना कर रहा है।"], checklist: ["परिवर्तित मूल्य प्रस्तुत करते समय हमेशा शामिल करें: (1) स्रोत मूल्य और इकाई, (2) उपयोग की गई रूपांतरण दर (टाइमस्टैम्प के साथ), (3) परिवर्तित मूल्य और लक्ष्य इकाई।", "क्रॉस-चेन तुलनाओं के लिए, स्पष्ट रूपांतरण दरों के साथ USD को सामान्य इकाई के रूप में मानकीकृत करें।"], mistakes: ["'मात्राओं' की तुलना करते समय विभिन्न टोकन इकाइयों को भ्रमित करना।", "वित्तीय गणनाओं के लिए पुरानी रूपांतरण दरों का उपयोग करना।"], benchmarks: ["सामान्य यूनिट रूपांतरण संदर्भ बिंदु जो याद करने योग्य हैं।", "लेनदेन प्रकार के आधार पर व्यावहारिक शुल्क बेंचमार्क।"], execution: ["यूनिट रूपांतरण टूल को अपने नियमित वर्कफ़्लो में एकीकृत करें।", "DeFi विकास के लिए, ऐसे यूनिट टेस्ट लागू करें जो सभी रूपांतरण गणनाओं को सत्यापित करें।"], hygiene: ["कर या लेखांकन उद्देश्यों के लिए क्रिप्टो लेनदेन रिकॉर्ड करते समय, हमेशा मूल नेटिव टोकन राशि और लेनदेन के समय USD समकक्ष दोनों को दस्तावेज़ करें।", "त्रैमासिक रूप से 'मानक' इकाई मूल्यों के लिए अपने मानसिक मॉडल को अपडेट करें।"], validation: ["निष्पादन से पहले दो स्वतंत्र स्रोतों का उपयोग करके उच्च-मूल्य लेनदेन के लिए यूनिट रूपांतरण सत्यापित करें।", "यूनिट रूपांतरण शामिल करने वाले प्रोटोकॉल एकीकरण के लिए, सत्यापित करें कि आपका रूपांतरण तर्क सभी टोकन दशमलव कॉन्फ़िगरेशन को सही ढंग से संभालता है।"] },
+    ru: { interpret: ["Конвертация единиц криптовалют раскрывает базовый масштаб блокчейн-систем и помогает контекстуализировать передачу ценности между кардинально разными деноминациями.", "Различия в деноминациях создают постоянную путаницу у новых участников крипторынка."], scenarios: ["Разработчик оценивает стоимость газа для функции смарт-контракта. Функция потребляет 50 000 единиц газа.", "Инвестор сравнивает экономику единиц двух платёжных сетей."], checklist: ["При представлении конвертированных значений всегда указывайте: (1) исходное значение и единицу, (2) использованный курс конвертации (с временной меткой), (3) конвертированное значение и целевую единицу.", "Для межсетевых сравнений стандартизируйте на USD как общую единицу с явными курсами конвертации."], mistakes: ["Смешение различных единиц токенов при сравнении «количеств».", "Использование устаревших курсов конвертации для финансовых расчётов."], benchmarks: ["Общие ориентиры конвертации единиц, которые стоит запомнить.", "Практические ориентиры комиссий по типу транзакции."], execution: ["Интегрируйте инструменты конвертации единиц в свой обычный рабочий процесс.", "Для разработки DeFi реализуйте юнит-тесты, проверяющие все расчёты конвертации."], hygiene: ["При записи крипто-транзакций для налоговых или бухгалтерских целей всегда документируйте как исходную сумму в нативном токене, так и эквивалент в USD на момент транзакции.", "Ежеквартально обновляйте ментальные модели «стандартных» значений единиц."], validation: ["Для транзакций с высокой стоимостью проверяйте конвертацию единиц с помощью двух независимых источников перед выполнением.", "Для интеграций протоколов, включающих конвертацию единиц, убедитесь, что ваша логика конвертации корректно обрабатывает все конфигурации десятичных знаков токенов."] }
+  },
 };
