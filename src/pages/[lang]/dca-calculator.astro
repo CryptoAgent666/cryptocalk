@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="DCA Calculator"
   description="Simulate dollar-cost averaging outcomes and compare structured accumulation strategies."
 >
-  <DCACalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <DCACalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

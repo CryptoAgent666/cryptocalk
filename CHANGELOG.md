@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-09] (update 8)
+
+### Changed
+- **N1 — Related заголовок обёрнут условием**: `<h2>Related</h2>` теперь не рендерится если нет ни related-ссылок, ни хаба категории.
+- **N2 — FAQ/Related в систему has()**: Секции FAQ и Related теперь контролируются через `calculator-sections.ts` наравне со всеми остальными 10 SEO-секциями. По умолчанию — включены.
+- **N3 — ShareCalculator + mobile CSS в 35 custom EN страницах**: Добавлен импорт `ShareCalculator` + обёртка `.calc-scope`, добавлены mobile media queries, исправлен `<SiteFooter lang="en" />` с пропом `lang`.
+- **N4 — Убран мёртвый код `typeof lang`**: Во всех 137 файлах заменён `typeof lang !== 'undefined' ? lang : 'en'` на `'en'` (для root-страниц) или `lang` (для `[lang]`-страниц).
+- **N5 — Hub backlink текст в translations.ts**: Добавлен ключ `allCategoryCalculators` для всех 6 языков. Тернарный каскад в шаблоне заменён на `t.allCategoryCalculators.replace('{category}', categoryName)`.
+- **N7 — CSS дедупликация**: Создан `src/styles/calculator-page.css` с ~200 строками общих стилей (header, breadcrumb, calculator-section, seo-content, mobile breakpoints). Импортируется из шаблона + 35 custom EN страниц. Удалено ~500 строк дублированного CSS из `LocalizedCalculatorPage.astro` и ~180 строк из каждой custom EN страницы.
+
+### Added
+- `src/styles/calculator-page.css` — единый файл общих стилей для всех калькуляторных страниц.
+- `allCategoryCalculators` ключ в `src/i18n/translations.ts` для 6 языков.
+- `faq` и `related` как управляемые секции в `src/data/calculator-sections.ts`.
+
 ## [2026-03-09] (update 7)
 
 ### Changed

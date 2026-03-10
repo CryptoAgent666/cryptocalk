@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Treynor Ratio Calculator"
   description="Measure return per unit of market risk (beta) and benchmark strategy efficiency against the risk-free rate."
 >
-  <TreynorCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <TreynorCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

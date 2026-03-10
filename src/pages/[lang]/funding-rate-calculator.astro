@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Funding Rate Calculator"
   description="Estimate perpetual funding costs across holding periods and position sizes."
 >
-  <FundingRateCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <FundingRateCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

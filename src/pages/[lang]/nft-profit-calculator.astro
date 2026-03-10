@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="NFT Profit Calculator"
   description="Calculate NFT trade profitability after marketplace fees, royalties, and network costs."
 >
-  <NftProfitCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <NftProfitCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

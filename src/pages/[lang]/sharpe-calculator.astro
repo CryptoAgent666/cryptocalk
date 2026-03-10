@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Sharpe Ratio Calculator"
   description="Evaluate risk-adjusted portfolio performance using expected return, volatility, and risk-free rate."
 >
-  <SharpeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <SharpeCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

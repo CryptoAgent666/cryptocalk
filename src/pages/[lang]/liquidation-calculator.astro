@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Liquidation Calculator"
   description="Calculate liquidation thresholds and distance-to-liquidation for leveraged long and short setups."
 >
-  <LiquidationCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <LiquidationCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

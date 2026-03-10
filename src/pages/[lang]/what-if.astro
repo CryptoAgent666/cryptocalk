@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="What If Calculator"
   description="Backtest hypothetical crypto entries and evaluate opportunity cost and alternative outcomes."
 >
-  <WhatIfCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <WhatIfCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -160,55 +160,55 @@ const description = `Free ${routeDef.title}. Calculate crypto outcomes instantly
   description={description}
   pathOverride={pagePath}
 >
-  {canonicalRouteSlug === 'converter' && <CryptoConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'profit-calculator' && <ProfitCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'mining-calculator' && <MiningCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'dca-calculator' && <DCACalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'tax-calculator' && <TaxCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'what-if' && <WhatIfCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'position-size-calculator' && <PositionSizeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'liquidation-calculator' && <LiquidationCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'funding-rate-calculator' && <FundingRateCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'tp-sl-calculator' && <TpSlCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'margin-calculator' && <MarginCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'pip-calculator' && <PipCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'break-even-calculator' && <BreakEvenCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'risk-reward-calculator' && <RiskRewardCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'staking-calculator' && <StakingRewardsCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'impermanent-loss-calculator' && <ImpermanentLossCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'apy-apr-calculator' && <ApyAprCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'yield-farming-calculator' && <YieldFarmingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'gas-calculator' && <GasFeeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'uniswap-calculator' && <UniswapCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'bridge-comparator' && <BridgeComparator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'lending-calculator' && <LendingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'gpu-mining-calculator' && <GpuMiningCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'asic-mining-calculator' && <AsicMiningCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'mining-roi-calculator' && <MiningRoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'electricity-cost-calculator' && <ElectricityCostCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'difficulty-calculator' && <DifficultyEstimatorCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'hashrate-converter' && <HashrateConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'market-cap-calculator' && <MarketCapCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'market-cap-comparator' && <MarketCapComparator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'roi-calculator' && <RoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'reverse-roi' && <ReverseRoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'hodl-vs-trade' && <HodlVsTradeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'rebalancing-calculator' && <RebalancingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'compound-calculator' && <CompoundInterestCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'ico-roi-calculator' && <IcoRoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'airdrop-calculator' && <AirdropCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'satoshi-converter' && <SatoshiConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'gwei-converter' && <GweiConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'timestamp-converter' && <TimestampConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'unit-converter' && <CryptoUnitConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'exchange-fees' && <ExchangeFeeComparator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'crypto-loan-calculator' && <LoanCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'vesting-calculator' && <VestingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'nft-profit-calculator' && <NftProfitCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'halving-calculator' && <HalvingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'mev-calculator' && <MevProtectionCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'gamefi-calculator' && <GamefiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'node-calculator' && <NodeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'salary-calculator' && <CryptoSalaryCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
-  {canonicalRouteSlug === 'inflation-hedge' && <InflationHedgeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />}
+  {canonicalRouteSlug === 'converter' && <CryptoConverter slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'profit-calculator' && <ProfitCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'mining-calculator' && <MiningCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'dca-calculator' && <DCACalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'tax-calculator' && <TaxCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'what-if' && <WhatIfCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'position-size-calculator' && <PositionSizeCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'liquidation-calculator' && <LiquidationCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'funding-rate-calculator' && <FundingRateCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'tp-sl-calculator' && <TpSlCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'margin-calculator' && <MarginCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'pip-calculator' && <PipCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'break-even-calculator' && <BreakEvenCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'risk-reward-calculator' && <RiskRewardCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'staking-calculator' && <StakingRewardsCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'impermanent-loss-calculator' && <ImpermanentLossCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'apy-apr-calculator' && <ApyAprCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'yield-farming-calculator' && <YieldFarmingCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'gas-calculator' && <GasFeeCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'uniswap-calculator' && <UniswapCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'bridge-comparator' && <BridgeComparator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'lending-calculator' && <LendingCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'gpu-mining-calculator' && <GpuMiningCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'asic-mining-calculator' && <AsicMiningCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'mining-roi-calculator' && <MiningRoiCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'electricity-cost-calculator' && <ElectricityCostCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'difficulty-calculator' && <DifficultyEstimatorCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'hashrate-converter' && <HashrateConverter slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'market-cap-calculator' && <MarketCapCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'market-cap-comparator' && <MarketCapComparator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'roi-calculator' && <RoiCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'reverse-roi' && <ReverseRoiCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'hodl-vs-trade' && <HodlVsTradeCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'rebalancing-calculator' && <RebalancingCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'compound-calculator' && <CompoundInterestCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'ico-roi-calculator' && <IcoRoiCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'airdrop-calculator' && <AirdropCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'satoshi-converter' && <SatoshiConverter slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'gwei-converter' && <GweiConverter slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'timestamp-converter' && <TimestampConverter slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'unit-converter' && <CryptoUnitConverter slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'exchange-fees' && <ExchangeFeeComparator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'crypto-loan-calculator' && <LoanCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'vesting-calculator' && <VestingCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'nft-profit-calculator' && <NftProfitCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'halving-calculator' && <HalvingCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'mev-calculator' && <MevProtectionCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'gamefi-calculator' && <GamefiCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'node-calculator' && <NodeCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'salary-calculator' && <CryptoSalaryCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'inflation-hedge' && <InflationHedgeCalculator slot="calculator" lang={lang} client:load />}
 </LocalizedCalculatorPage>

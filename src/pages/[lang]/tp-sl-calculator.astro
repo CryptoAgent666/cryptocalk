@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="TP / SL Calculator"
   description="Plan take-profit and stop-loss levels aligned with position size and risk budget."
 >
-  <TpSlCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <TpSlCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

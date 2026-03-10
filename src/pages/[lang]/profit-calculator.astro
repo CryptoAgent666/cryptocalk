@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Crypto Profit Calculator"
   description="Calculate crypto profit, net return, and ROI with fee-aware assumptions."
 >
-  <ProfitCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <ProfitCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>
