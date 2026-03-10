@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-09] (update 9) — AdSense readiness fixes
+
+### Changed
+- **A1 — Privacy Policy: Google Ads/AdSense раздел**: Расширен раздел 4 "Cookies and Tracking" — добавлено подробное описание Google Analytics, Google AdSense, DoubleClick cookies и ссылки на opt-out. Старый раздел с CoinGecko перемещён в новый раздел 4.
+- **A2 — Privacy Policy: email контакт**: В разделе "Contact" теперь явно указан адрес `support@cryptocalk.com` и ссылка на форму.
+- **A1/A2 — Privacy Policy: дополнительные разделы**: Добавлены разделы "Children's Privacy", "Your Rights", "Changes to This Policy". Дата last updated обновлена до 09/03/2026.
+- **A3 — 404: SiteFooter**: Добавлены импорт и рендер `<SiteFooter lang="en" />` на странице 404 для консистентной навигации.
+- **A4 — Footer: Methodology ссылка**: В колонку "Trust & Legal" добавлена ссылка на `/methodology/` (`t.methodologyPolicy`).
+- **A5 — Organization Schema: email**: В `organizationSchema` на `index.astro` добавлены поля `email` и `logo`. В `contactPoint` добавлен `email`.
+- **A7 — Cookie Consent Banner (CMP)**: Полностью переписан `src/components/CookieBanner.astro` с поддержкой 6 языков, accept/decline кнопок, анимации slide-in/out. В `Layout.astro` добавлены consent defaults (`ad_storage: denied`) перед загрузкой GA — AdSense CMP compliance. Согласие сохраняется в `localStorage` и восстанавливается мгновенно при следующей загрузке страницы.
+
+### Added
+- Consent mode v2 defaults в `Layout.astro` (блокирует рекламные cookies до согласия пользователя).
+
 ## [2026-03-09] (update 8)
 
 ### Changed
