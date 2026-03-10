@@ -55,7 +55,8 @@ const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated, 
       <p>{ui.toolsSubtitle}</p>
     </div>
 
-    <div class="tools-grid">
+    <!-- карточки: показываются на мобиле -->
+    <div class="tools-grid tools-mobile">
       {category.tools.map((tool, index) => (
         <a href={tool.href} class="tool-card">
           <div class="tool-header">
@@ -67,23 +68,22 @@ const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated, 
         </a>
       ))}
     </div>
-  </section>
 
-  <section class="category-tools-table" aria-label="Tools overview">
-    <div class="table-wrapper">
+    <!-- таблица: показывается на десктопе -->
+    <div class="table-wrapper tools-desktop">
       <table>
         <thead>
           <tr>
             <th>#</th>
-            <th>Tool</th>
-            <th>Link</th>
+            <th>{ui.toolsTitle}</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {category.tools.map((tool, index) => (
             <tr>
               <td class="col-num">{index + 1}</td>
-              <td>{tool.name}</td>
+              <td><strong>{tool.name}</strong></td>
               <td><a href={tool.href}>{ui.openCalculator} →</a></td>
             </tr>
           ))}
@@ -135,8 +135,13 @@ const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated, 
     gap: 48px;
   }
 
-  .category-tools-table {
-    overflow-x: auto;
+  /* На мобиле — карточки, на десктопе — таблица */
+  .tools-mobile { display: grid; }
+  .tools-desktop { display: none; }
+
+  @media (min-width: 860px) {
+    .tools-mobile { display: none; }
+    .tools-desktop { display: block; }
   }
 
   .table-wrapper {

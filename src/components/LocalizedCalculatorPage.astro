@@ -7,6 +7,7 @@ import { getLocalizedCalculatorMeta, getLocalizedPath, type Lang, type SpecCalcu
 import { CALCULATOR_META } from "../i18n/calculator-meta";
 import { RELATED_CALCULATORS } from "../data/related-calculators";
 import { CALCULATOR_CATEGORY, CATEGORY_NAMES } from "../data/calculator-category-map";
+import { getActiveSections } from "../data/calculator-sections";
 import { defaultFaqByLang } from "../i18n/faq-dictionary";
 import { seoBodyText } from "../i18n/seo-body-text";
 import { calculatorSeoContent } from "../i18n/calculator-seo-content";
@@ -126,110 +127,100 @@ const faqItems = faqTemplate.map((item) => ({
   a: item.a.replace("{title}", localizedTitle),
 }));
 
-const headingMap: Record<
-  Lang,
-  {
-    how: string;
-    inputs: string;
-    interpret: string;
-    scenarios: string;
-    checklist: string;
-    mistakes: string;
-    benchmarks: string;
-    execution: string;
-    hygiene: string;
-    validation: string;
-    faq: string;
-    related: string;
-  }
-> = {
-  en: {
-    how: `How to use ${title}`,
-    inputs: "Input guide and assumptions",
-    interpret: "How to interpret results correctly",
-    scenarios: "Practical scenarios and planning workflow",
-    checklist: "Risk and execution checklist",
-    mistakes: "Common mistakes to avoid",
-    benchmarks: "Performance benchmarks and expectation ranges",
-    execution: "Execution templates you can reuse",
-    hygiene: "Data hygiene and model maintenance",
-    validation: "Final validation before capital deployment",
-    faq: "Frequently asked questions",
-    related: "Related calculators",
-  },
-  es: {
-    how: `Cómo usar ${title}`,
-    inputs: "Guía de entradas y supuestos",
-    interpret: "Cómo interpretar correctamente los resultados",
-    scenarios: "Escenarios prácticos y flujo de planificación",
-    checklist: "Checklist de riesgo y ejecución",
-    mistakes: "Errores comunes a evitar",
-    benchmarks: "Rangos de referencia y expectativas",
-    execution: "Plantillas de ejecución reutilizables",
-    hygiene: "Higiene de datos y mantenimiento del modelo",
-    validation: "Validación final antes de desplegar capital",
-    faq: "Preguntas frecuentes",
-    related: "Calculadoras relacionadas",
-  },
-  pt: {
-    how: `Como usar ${title}`,
-    inputs: "Guia de entradas e premissas",
-    interpret: "Como interpretar os resultados corretamente",
-    scenarios: "Cenários práticos e fluxo de planejamento",
-    checklist: "Checklist de risco e execução",
-    mistakes: "Erros comuns para evitar",
-    benchmarks: "Referências de desempenho e faixas esperadas",
-    execution: "Modelos de execução reutilizáveis",
-    hygiene: "Higiene de dados e manutenção do modelo",
-    validation: "Validação final antes de alocar capital",
-    faq: "Perguntas frequentes",
-    related: "Calculadoras relacionadas",
-  },
-  tr: {
-    how: `${title} nasıl kullanılır`,
-    inputs: "Girdi rehberi ve varsayımlar",
-    interpret: "Sonuçları doğru yorumlama",
-    scenarios: "Pratik senaryolar ve planlama akışı",
-    checklist: "Risk ve uygulama kontrol listesi",
-    mistakes: "Kaçınılması gereken yaygın hatalar",
-    benchmarks: "Performans kıyasları ve beklenti aralıkları",
-    execution: "Tekrar kullanılabilir uygulama şablonları",
-    hygiene: "Veri hijyeni ve model bakımı",
-    validation: "Sermaye dağıtımı öncesi son doğrulama",
-    faq: "Sık sorulan sorular",
-    related: "İlgili hesaplayıcılar",
-  },
-  hi: {
-    how: `${title} का उपयोग कैसे करें`,
-    inputs: "इनपुट गाइड और मान्यताएँ",
-    interpret: "परिणामों को सही तरीके से समझना",
-    scenarios: "व्यावहारिक परिदृश्य और योजना प्रक्रिया",
-    checklist: "जोखिम और निष्पादन चेकलिस्ट",
-    mistakes: "बचने योग्य सामान्य गलतियाँ",
-    benchmarks: "प्रदर्शन बेंचमार्क और अपेक्षित रेंज",
-    execution: "पुन: उपयोग योग्य निष्पादन टेम्पलेट",
-    hygiene: "डेटा हाइजीन और मॉडल मेंटेनेंस",
-    validation: "पूंजी लगाने से पहले अंतिम सत्यापन",
-    faq: "अक्सर पूछे जाने वाले प्रश्न",
-    related: "संबंधित कैलकुलेटर",
-  },
-  ru: {
-    how: `Как использовать ${title}`,
-    inputs: "Гайд по входным параметрам и допущениям",
-    interpret: "Как правильно интерпретировать результаты",
-    scenarios: "Практические сценарии и рабочий процесс",
-    checklist: "Чек-лист по рискам и исполнению",
-    mistakes: "Типичные ошибки",
-    benchmarks: "Бенчмарки доходности и диапазоны ожиданий",
-    execution: "Повторяемые шаблоны исполнения",
-    hygiene: "Гигиена данных и поддержка модели",
-    validation: "Финальная проверка перед входом в позицию",
-    faq: "Частые вопросы",
-    related: "Связанные калькуляторы",
-  },
-};
+function buildHeadings(lt: string, lang: Lang) {
+  const maps: Record<Lang, ReturnType<typeof buildHeadings>> = {
+    en: {
+      how: `How to use ${lt}`,
+      inputs: "Input guide and assumptions",
+      interpret: "How to interpret results correctly",
+      scenarios: "Practical scenarios and planning workflow",
+      checklist: "Risk and execution checklist",
+      mistakes: "Common mistakes to avoid",
+      benchmarks: "Performance benchmarks and expectation ranges",
+      execution: "Execution templates you can reuse",
+      hygiene: "Data hygiene and model maintenance",
+      validation: "Final validation before capital deployment",
+      faq: "Frequently asked questions",
+      related: "Related calculators",
+    },
+    es: {
+      how: `Cómo usar ${lt}`,
+      inputs: "Guía de entradas y supuestos",
+      interpret: "Cómo interpretar correctamente los resultados",
+      scenarios: "Escenarios prácticos y flujo de planificación",
+      checklist: "Checklist de riesgo y ejecución",
+      mistakes: "Errores comunes a evitar",
+      benchmarks: "Rangos de referencia y expectativas",
+      execution: "Plantillas de ejecución reutilizables",
+      hygiene: "Higiene de datos y mantenimiento del modelo",
+      validation: "Validación final antes de desplegar capital",
+      faq: "Preguntas frecuentes",
+      related: "Calculadoras relacionadas",
+    },
+    pt: {
+      how: `Como usar ${lt}`,
+      inputs: "Guia de entradas e premissas",
+      interpret: "Como interpretar os resultados corretamente",
+      scenarios: "Cenários práticos e fluxo de planejamento",
+      checklist: "Checklist de risco e execução",
+      mistakes: "Erros comuns para evitar",
+      benchmarks: "Referências de desempenho e faixas esperadas",
+      execution: "Modelos de execução reutilizáveis",
+      hygiene: "Higiene de dados e manutenção do modelo",
+      validation: "Validação final antes de alocar capital",
+      faq: "Perguntas frequentes",
+      related: "Calculadoras relacionadas",
+    },
+    tr: {
+      how: `${lt} nasıl kullanılır`,
+      inputs: "Girdi rehberi ve varsayımlar",
+      interpret: "Sonuçları doğru yorumlama",
+      scenarios: "Pratik senaryolar ve planlama akışı",
+      checklist: "Risk ve uygulama kontrol listesi",
+      mistakes: "Kaçınılması gereken yaygın hatalar",
+      benchmarks: "Performans kıyasları ve beklenti aralıkları",
+      execution: "Tekrar kullanılabilir uygulama şablonları",
+      hygiene: "Veri hijyeni ve model bakımı",
+      validation: "Sermaye dağıtımı öncesi son doğrulama",
+      faq: "Sık sorulan sorular",
+      related: "İlgili hesaplayıcılar",
+    },
+    hi: {
+      how: `${lt} का उपयोग कैसे करें`,
+      inputs: "इनपुट गाइड और मान्यताएँ",
+      interpret: "परिणामों को सही तरीके से समझना",
+      scenarios: "व्यावहारिक परिदृश्य और योजना प्रक्रिया",
+      checklist: "जोखिम और निष्पादन चेकलिस्ट",
+      mistakes: "बचने योग्य सामान्य गलतियाँ",
+      benchmarks: "प्रदर्शन बेंचमार्क और अपेक्षित रेंज",
+      execution: "पुन: उपयोग योग्य निष्पादन टेम्पलेट",
+      hygiene: "डेटा हाइजीन और मॉडल मेंटेनेंस",
+      validation: "पूंजी लगाने से पहले अंतिम सत्यापन",
+      faq: "अक्सर पूछे जाने वाले प्रश्न",
+      related: "संबंधित कैलकुलेटर",
+    },
+    ru: {
+      how: `Как использовать ${lt}`,
+      inputs: "Гайд по входным параметрам и допущениям",
+      interpret: "Как правильно интерпретировать результаты",
+      scenarios: "Практические сценарии и рабочий процесс",
+      checklist: "Чек-лист по рискам и исполнению",
+      mistakes: "Типичные ошибки",
+      benchmarks: "Бенчмарки доходности и диапазоны ожиданий",
+      execution: "Повторяемые шаблоны исполнения",
+      hygiene: "Гигиена данных и поддержка модели",
+      validation: "Финальная проверка перед входом в позицию",
+      faq: "Частые вопросы",
+      related: "Связанные калькуляторы",
+    },
+  };
+  return maps[lang] ?? maps.en;
+}
 
-const h = headingMap[lang] || headingMap.en;
+const h = buildHeadings(localizedTitle, lang);
+
+const activeSections = getActiveSections(slug);
+const has = (s: string) => activeSections.includes(s as Parameters<typeof activeSections.includes>[0]);
 
 // Per-calculator unique content overrides generic template.
 // Merge order: genericTxt → calcOverride (how/inputs) → calcExtOverride (interpret…validation)
@@ -344,84 +335,71 @@ const faqSchema = {
           <p>{localizedDescription}</p>
         </div>
         <div class="calc-scope" data-slug={slug}>
-          <ShareCalculator lang={lang} />
           <slot name="calculator" />
+          <ShareCalculator lang={lang} />
         </div>
       </div>
     </section>
 
     <section class="seo-content">
       <div class="section-container prose">
-        <h2>{h.how}</h2>
-        {txt.how.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        {has('how') && <>
+          <h2>{h.how}</h2>
+          {txt.how.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        </>}
 
-        {relatedLinks.length > 0 && (
-          <p class="seealso-inline">
-            <strong>{lang === 'ru' ? 'Смотрите также:' : lang === 'es' ? 'Véase también:' : lang === 'pt' ? 'Veja também:' : lang === 'tr' ? 'Ayrıca bakın:' : lang === 'hi' ? 'यह भी देखें:' : 'See also:'}</strong>
-            {' '}
-            {relatedLinks.slice(0, 3).map((link, i) => (
-              <>
-                <a href={link.href}>{link.title}</a>
-                {i < Math.min(2, relatedLinks.length - 1) ? ', ' : ''}
-              </>
+        {has('inputs') && <>
+          <h2>{h.inputs}</h2>
+          {txt.inputs.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        </>}
+
+        {has('interpret') && <>
+          <h2>{h.interpret}</h2>
+          {txt.interpret.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        </>}
+
+        {has('scenarios') && <>
+          <h2>{h.scenarios}</h2>
+          {txt.scenarios.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        </>}
+
+        {has('checklist') && <>
+          <h2>{h.checklist}</h2>
+          <ol class="checklist-list">
+            {txt.checklist.map((p) => (
+              <li>{p.replace(/{title}/g, localizedTitle)}</li>
             ))}
-          </p>
-        )}
+          </ol>
+        </>}
 
-        <h2>{h.inputs}</h2>
-        {txt.inputs.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        {has('mistakes') && <>
+          <h2>{h.mistakes}</h2>
+          <ul class="mistakes-list">
+            {txt.mistakes.map((p) => (
+              <li>{p.replace(/{title}/g, localizedTitle)}</li>
+            ))}
+          </ul>
+        </>}
 
-        <h2>{h.interpret}</h2>
-        {
-          txt.interpret.map((p) => (
-            <p>{p.replace(/{title}/g, localizedTitle)}</p>
-          ))
-        }
+        {has('benchmarks') && <>
+          <h2>{h.benchmarks}</h2>
+          {txt.benchmarks.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        </>}
 
-        <h2>{h.scenarios}</h2>
-        {
-          txt.scenarios.map((p) => (
-            <p>{p.replace(/{title}/g, localizedTitle)}</p>
-          ))
-        }
+        {has('execution') && <>
+          <h2>{h.execution}</h2>
+          {txt.execution.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        </>}
 
-        <h2>{h.checklist}</h2>
-        <ol class="checklist-list">
-          {txt.checklist.map((p) => (
-            <li>{p.replace(/{title}/g, localizedTitle)}</li>
-          ))}
-        </ol>
+        {has('hygiene') && <>
+          <h2>{h.hygiene}</h2>
+          {txt.hygiene.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        </>}
 
-        <h2>{h.mistakes}</h2>
-        <ul class="mistakes-list">
-          {txt.mistakes.map((p) => (
-            <li>{p.replace(/{title}/g, localizedTitle)}</li>
-          ))}
-        </ul>
-
-        <h2>{h.benchmarks}</h2>
-        {
-          txt.benchmarks.map((p) => (
-            <p>{p.replace(/{title}/g, localizedTitle)}</p>
-          ))
-        }
-
-        <h2>{h.execution}</h2>
-        {
-          txt.execution.map((p) => (
-            <p>{p.replace(/{title}/g, localizedTitle)}</p>
-          ))
-        }
-
-        <h2>{h.hygiene}</h2>
-        {txt.hygiene.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
-
-        <h2>{h.validation}</h2>
-        {
-          txt.validation.map((p) => (
-            <p>{p.replace(/{title}/g, localizedTitle)}</p>
-          ))
-        }
+        {has('validation') && <>
+          <h2>{h.validation}</h2>
+          {txt.validation.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+        </>}
 
         <h2>{h.faq}</h2>
         {
@@ -564,12 +542,12 @@ const faqSchema = {
   }
 
   .calculator-section {
-    padding: 40px 0 56px;
+    padding: 28px 0 48px;
   }
 
   .calc-header {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
 
   .calc-header h1 {
@@ -584,6 +562,25 @@ const faqSchema = {
     font-size: 1rem;
     max-width: 820px;
     margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .calculator-section {
+      padding: 16px 0 32px;
+    }
+
+    .calc-header {
+      text-align: left;
+      margin-bottom: 14px;
+    }
+
+    .calc-header h1 {
+      font-size: 1.5rem;
+    }
+
+    .calc-header p {
+      font-size: 0.9rem;
+    }
   }
 
   .seo-content {
@@ -720,26 +717,6 @@ const faqSchema = {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .seealso-inline {
-    background: var(--color-bg-card);
-    border-left: 3px solid var(--color-primary);
-    padding: 10px 16px;
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-    margin: 4px 0 16px;
-  }
-
-  .seealso-inline a {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .seealso-inline a:hover {
-    text-decoration: underline;
   }
 
   .hub-backlink {
