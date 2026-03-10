@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Crypto Unit Converter"
   description="Convert denomination units for BTC, ETH, SOL, and USDT including satoshi, gwei, lamport, and micro units."
 >
-  <CryptoUnitConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <CryptoUnitConverter slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Mining Electricity Cost Calculator"
   description="Calculate mining electricity consumption and operating cost by device count, power usage, uptime, and local energy price."
 >
-  <ElectricityCostCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <ElectricityCostCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

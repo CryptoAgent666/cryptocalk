@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Drawdown Recovery Calculator"
   description="Measure portfolio drawdown, required recovery gain, and estimated recovery time based on expected monthly return."
 >
-  <DrawdownCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <DrawdownCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

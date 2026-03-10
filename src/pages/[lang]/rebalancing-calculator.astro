@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Portfolio Rebalancing Calculator"
   description="Calculate buy/sell actions to rebalance your crypto portfolio toward target allocations with optional buy-only mode."
 >
-  <RebalancingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <RebalancingCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

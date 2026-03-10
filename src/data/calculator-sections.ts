@@ -16,11 +16,14 @@ export type SeoSection =
   | 'benchmarks'
   | 'execution'
   | 'hygiene'
-  | 'validation';
+  | 'validation'
+  | 'faq'
+  | 'related';
 
 export const ALL_SECTIONS: SeoSection[] = [
   'how', 'inputs', 'interpret', 'scenarios', 'checklist',
   'mistakes', 'benchmarks', 'execution', 'hygiene', 'validation',
+  'faq', 'related',
 ];
 
 /**

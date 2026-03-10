@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Yield Farming Calculator"
   description="Estimate farming returns after APY, IL, and fee drag under realistic assumptions."
 >
-  <YieldFarmingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <YieldFarmingCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Break-Even Calculator"
   description="Find the exact break-even point after fees, losses, or adverse price movement."
 >
-  <BreakEvenCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <BreakEvenCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

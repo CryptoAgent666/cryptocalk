@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Position Size Calculator"
   description="Define position size from account risk so losses stay controlled by design."
 >
-  <PositionSizeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <PositionSizeCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Crypto Loan Calculator"
   description="Estimate crypto-backed loan costs, collateral risk, and repayment outcomes across scenarios."
 >
-  <LoanCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <LoanCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

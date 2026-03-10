@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Satoshi Converter"
   description="Convert sats, BTC, and fiat values instantly for clear denomination planning."
 >
-  <SatoshiConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <SatoshiConverter slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Uniswap Fee Calculator"
   description="Estimate Uniswap LP fee income, impermanent loss impact, break-even time, and net outcome for selected pool assumptions."
 >
-  <UniswapCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <UniswapCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

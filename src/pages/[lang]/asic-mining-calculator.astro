@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="ASIC Mining Calculator"
   description="Calculate ASIC mining profitability, electricity cost, and break-even period across leading mining hardware models."
 >
-  <AsicMiningCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <AsicMiningCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Leverage Calculator"
   description="Model leveraged exposure and understand how gains, losses, and liquidation risk scale with leverage."
 >
-  <LeverageCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <LeverageCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

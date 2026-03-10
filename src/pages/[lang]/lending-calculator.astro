@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Crypto Lending Calculator"
   description="Calculate projected lending returns using APY, compounding model, term length, and platform performance fees."
 >
-  <LendingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <LendingCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="ICO / IDO ROI Calculator"
   description="Calculate current and ATH ROI for ICO or IDO allocations using token amount, entry price, and market prices."
 >
-  <IcoRoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <IcoRoiCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

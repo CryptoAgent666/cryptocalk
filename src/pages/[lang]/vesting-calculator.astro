@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Token Vesting Calculator"
   description="Model vesting unlock schedules and estimate circulating supply pressure over time."
 >
-  <VestingCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <VestingCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

@@ -9,7 +9,7 @@ import TimestampConverter from '../components/TimestampConverter.tsx';
   title="Unix Timestamp Converter"
   description="Convert Unix timestamp to date/time and date/time to Unix format with UTC/local display and block-time estimates."
 >
-  <TimestampConverter slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <TimestampConverter slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>
 
 <style>

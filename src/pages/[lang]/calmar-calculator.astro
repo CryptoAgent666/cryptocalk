@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Calmar Ratio Calculator"
   description="Calculate Calmar ratio from annual return and maximum drawdown to compare return efficiency per drawdown risk."
 >
-  <CalmarCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <CalmarCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

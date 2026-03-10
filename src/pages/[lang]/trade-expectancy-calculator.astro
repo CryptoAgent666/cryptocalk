@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Trade Expectancy Calculator"
   description="Estimate strategy edge per trade and project monthly outcomes using win rate, R-multiples, and risk per trade."
 >
-  <TradeExpectancyCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <TradeExpectancyCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

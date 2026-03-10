@@ -9,7 +9,7 @@ import KellyCalculator from '../components/KellyCalculator.tsx';
   title="Kelly Criterion Calculator"
   description="Find optimal position sizing from win rate and payoff ratio using Kelly, half-Kelly, and quarter-Kelly models."
 >
-  <KellyCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <KellyCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>
 
 <style>

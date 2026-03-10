@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Gas Fee Calculator"
   description="Estimate blockchain gas fees and compare network execution costs before confirming transactions."
 >
-  <GasFeeCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <GasFeeCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

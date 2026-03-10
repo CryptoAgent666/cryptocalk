@@ -18,5 +18,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Reverse ROI Calculator"
   description="Work backwards from a target outcome to required entry, growth, and probability range."
 >
-  <ReverseRoiCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <ReverseRoiCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>

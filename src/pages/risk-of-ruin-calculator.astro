@@ -9,7 +9,7 @@ import RiskOfRuinCalculator from '../components/RiskOfRuinCalculator.tsx';
   title="Risk of Ruin Calculator"
   description="Estimate probability of account ruin from win rate, reward/risk profile, and fixed risk per trade."
 >
-  <RiskOfRuinCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <RiskOfRuinCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>
 
 <style>

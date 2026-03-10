@@ -16,5 +16,5 @@ const { lang } = Astro.params as { lang: Lang };
   title="Mining Difficulty Estimator"
   description="Estimate how the next mining difficulty adjustment may impact your projected revenue and profitability."
 >
-  <DifficultyEstimatorCalculator slot="calculator" lang={typeof lang !== 'undefined' ? lang : 'en'} client:load />
+  <DifficultyEstimatorCalculator slot="calculator" lang={lang} client:load />
 </LocalizedCalculatorPage>
