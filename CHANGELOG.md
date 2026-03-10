@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-09] (update 6)
+
+### Added
+- **calculator-category-map.ts** — маппинг всех 60+ слагов калькуляторов на категорию хаба + локализованные названия категорий на 6 языках.
+- **category-hub-body.ts** — уникальный SEO-текст (~600 слов, 5 параграфов) для каждого из 8 хабов категорий (en). Рендерится в `CategoryHubPage.astro` как prose-секция перед сеткой инструментов.
+- **11 новых записей в related-calculators.ts** — кластер risk/performance analytics: sharpe, sortino, calmar, treynor, information-ratio, drawdown, var, risk-of-ruin, kelly, slippage, trade-expectancy.
+
+### Changed
+- **3-уровневый breadcrumb (Home → Категория → Калькулятор)**: Обновлён `LocalizedCalculatorPage.astro` (HTML breadcrumb + BreadcrumbList JSON-LD schema), обновлены 35 custom EN .astro страниц через Python-скрипт. BreadcrumbList schema стала 3-элементной для всех калькуляторных страниц.
+- **Обратные ссылки на хаб**: В `LocalizedCalculatorPage.astro` добавлена ссылка "All [Category] calculators" после Related блока. В 28 custom EN страниц добавлен hub-backlink в Related секцию.
+- **Контекстные "See also" ссылки**: В шаблоне добавлен inline callout с первыми 3 related calculators после секции "How to use". В топ-10 custom EN страниц (profit, dca, mining, staking, liquidation, position-size, tax, converter, roi, risk-reward) добавлены inline "See also" блоки.
+- **Формат checklist/mistakes**: В `LocalizedCalculatorPage.astro` секция checklist рендерится как нумерованный `<ol>` с пронумерованными кружками, mistakes — как `<ul>` с предупреждающими иконками.
+- **Таблица инструментов в хабах**: В `CategoryHubPage.astro` добавлена таблица всех инструментов категории с прямыми ссылками (дополняет существующую сетку карточек).
+
 ## [2026-03-09] (update 5)
 
 ### Changed

@@ -9,9 +9,10 @@ interface Props {
   homeHref: string;
   categoriesHref: string;
   lastUpdated: string;
+  bodyCopy?: string[];
 }
 
-const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated } = Astro.props as Props;
+const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated, bodyCopy } = Astro.props as Props;
 ---
 
 <main class="category-main">
@@ -40,6 +41,14 @@ const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated }
     </div>
   </section>
 
+  {bodyCopy && bodyCopy.length > 0 && (
+    <section class="category-body-prose">
+      <div class="prose-inner">
+        {bodyCopy.map((para) => <p>{para}</p>)}
+      </div>
+    </section>
+  )}
+
   <section class="category-tools" aria-labelledby="category-tools-title">
     <div class="section-head">
       <h2 id="category-tools-title">{ui.toolsTitle}</h2>
@@ -57,6 +66,29 @@ const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated }
           <span class="tool-cta">{ui.openCalculator}</span>
         </a>
       ))}
+    </div>
+  </section>
+
+  <section class="category-tools-table" aria-label="Tools overview">
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Tool</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          {category.tools.map((tool, index) => (
+            <tr>
+              <td class="col-num">{index + 1}</td>
+              <td>{tool.name}</td>
+              <td><a href={tool.href}>{ui.openCalculator} →</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -101,6 +133,87 @@ const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated }
     padding: 28px 20px 72px;
     display: grid;
     gap: 48px;
+  }
+
+  .category-tools-table {
+    overflow-x: auto;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md, 8px);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  thead tr {
+    background: var(--color-bg-card);
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr:hover {
+    background: var(--color-bg-card);
+  }
+
+  .col-num {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    width: 40px;
+    text-align: center;
+  }
+
+  td a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  td a:hover {
+    text-decoration: underline;
+  }
+
+  .category-body-prose {
+    border-top: 1px solid var(--color-border);
+    padding-top: 8px;
+  }
+
+  .prose-inner {
+    max-width: 760px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .prose-inner p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+    margin: 0;
   }
 
   .category-hero {
