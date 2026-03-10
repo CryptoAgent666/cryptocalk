@@ -97,10 +97,30 @@ const breadcrumbSchema = pageType === 'calculator' ? {
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVPMVV27NH"></script>
+    <!-- Consent defaults (set before GA loads — AdSense CMP compliance) -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      // Default: deny ad cookies until user accepts via cookie banner
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_personalization: 'denied',
+        ad_user_data: 'denied',
+        wait_for_update: 500,
+      });
+      // Restore saved consent immediately (before banner is painted)
+      try {
+        var saved = localStorage.getItem('cc_consent');
+        if (saved === 'all') {
+          gtag('consent', 'update', { ad_storage: 'granted', analytics_storage: 'granted', ad_personalization: 'granted', ad_user_data: 'granted' });
+        } else if (saved === 'essential') {
+          gtag('consent', 'update', { ad_storage: 'denied', analytics_storage: 'granted', ad_personalization: 'denied', ad_user_data: 'denied' });
+        }
+      } catch(e) {}
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVPMVV27NH"></script>
+    <script is:inline>
       gtag('js', new Date());
       gtag('config', 'G-BVPMVV27NH');
     </script>
