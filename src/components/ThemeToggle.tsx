@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
 
-function getInitialTheme(): string {
-    if (typeof window === 'undefined') return 'light';
-    const stored = localStorage.getItem('theme');
-    if (stored) return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
 export default function ThemeToggle() {
-    const [theme, setTheme] = useState(getInitialTheme);
+    // Always initialise to 'light' so SSR HTML matches the first client render.
+    // useEffect corrects to the real stored/system value after hydration — this
+    // eliminates React Error #418 (hydration mismatch).
+    const [theme, setTheme] = useState<string>('light');
 
     useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-    }, [theme]);
+        const stored = localStorage.getItem('theme');
+        const actual = stored ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        setTheme(actual);
+        // Sync attribute in case the inline script ran before hydration finished
+        document.documentElement.setAttribute('data-theme', actual);
+    }, []);
 
     const toggle = () => {
         const next = theme === 'light' ? 'dark' : 'light';

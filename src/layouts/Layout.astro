@@ -70,6 +70,17 @@ const breadcrumbSchema = pageType === 'calculator' ? {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Theme init: MUST be first script in <head> to prevent dark-mode FOUC.
+         Runs synchronously before any CSS is applied. -->
+    <script is:inline>
+      (function() {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch(e) {}
+      })();
+    </script>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     {shouldNoindex && <meta name="robots" content="noindex, nofollow" />}
@@ -160,15 +171,6 @@ const breadcrumbSchema = pageType === 'calculator' ? {
 
     <!-- Schema.org: BreadcrumbList for EN calculator pages -->
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
-
-    <!-- Theme initialization (prevent FOUC) -->
-    <script is:inline>
-      (function() {
-        const stored = localStorage.getItem('theme');
-        const theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      })();
-    </script>
 
     <script>
       import { installCoinGeckoFetchInterceptor } from '../utils/coingecko-fetch-client';
