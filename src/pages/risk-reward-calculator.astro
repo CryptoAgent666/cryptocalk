@@ -35,6 +35,8 @@ import SiteFooter from '../components/SiteFooter.astro';
       <div class="section-container">
         <a href="/">Home</a>
         <ChevronRight size={12} />
+        <a href="/calculators/trading-tools/">Trading Tools</a>
+        <ChevronRight size={12} />
         <a href="/risk-reward-calculator/" aria-current="page">Risk-Reward Ratio Calculator</a>
       </div>
     </nav>
@@ -53,6 +55,7 @@ import SiteFooter from '../components/SiteFooter.astro';
       <div class="section-container">
         <h2>How to Use the Risk-Reward Ratio Calculator</h2>
         <p>Our free risk-reward calculator helps crypto traders evaluate trade setups before entering a position. By comparing the distance to your stop-loss against the distance to your take-profit, the calculator determines whether a trade is worth taking based on the potential reward relative to the risk involved.</p>
+        <p class="seealso-inline"><strong>See also:</strong> <a href="/position-size-calculator/">Position Size Calculator</a>, <a href="/tp-sl-calculator/">TP/SL Calculator</a>, <a href="/kelly-calculator/">Kelly Criterion Calculator</a></p>
         <ol>
           <li><strong>Enter your entry price</strong> — the price at which you plan to open the trade. This is the reference point for all risk and reward calculations.</li>
           <li><strong>Set your stop-loss price</strong> — the price where you will exit the trade to limit your loss. Place it below entry for long trades, or above entry for short trades. The calculator automatically detects the direction.</li>
@@ -188,6 +191,7 @@ import SiteFooter from '../components/SiteFooter.astro';
           <li><a href="/break-even-calculator/">Break-Even Calculator</a> — find the exact price where you cover all trading fees and commissions.</li>
           <li><a href="/leverage-calculator/">Leverage Calculator</a> — understand how leverage amplifies both profits and risks.</li>
         </ul>
+        <p class="hub-backlink"><a href="/calculators/trading-tools/">← All Trading Tools calculators</a></p>
       </div>
     </section>
   </main>

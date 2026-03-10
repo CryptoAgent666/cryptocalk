@@ -56,4 +56,16 @@ export const RELATED_CALCULATORS: Record<SpecCalculatorSlug, SpecCalculatorSlug[
   'node-calculator': ['staking-calculator', 'mining-roi-calculator', 'electricity-cost-calculator', 'roi-calculator'],
   'salary-calculator': ['tax-calculator', 'converter', 'dca-calculator', 'inflation-hedge'],
   'inflation-hedge': ['what-if', 'dca-calculator', 'roi-calculator', 'hodl-vs-trade'],
+  // Risk/performance analytics cluster
+  'sharpe-calculator': ['sortino-calculator', 'calmar-calculator', 'treynor-calculator', 'var-calculator'],
+  'sortino-calculator': ['sharpe-calculator', 'calmar-calculator', 'drawdown-calculator', 'risk-of-ruin-calculator'],
+  'calmar-calculator': ['sharpe-calculator', 'sortino-calculator', 'drawdown-calculator', 'var-calculator'],
+  'treynor-calculator': ['sharpe-calculator', 'sortino-calculator', 'calmar-calculator', 'information-ratio-calculator'],
+  'information-ratio-calculator': ['sharpe-calculator', 'treynor-calculator', 'sortino-calculator', 'calmar-calculator'],
+  'drawdown-calculator': ['var-calculator', 'risk-of-ruin-calculator', 'sortino-calculator', 'sharpe-calculator'],
+  'var-calculator': ['drawdown-calculator', 'risk-of-ruin-calculator', 'position-size-calculator', 'sharpe-calculator'],
+  'risk-of-ruin-calculator': ['var-calculator', 'drawdown-calculator', 'kelly-calculator', 'position-size-calculator'],
+  'kelly-calculator': ['risk-of-ruin-calculator', 'position-size-calculator', 'risk-reward-calculator', 'var-calculator'],
+  'slippage-calculator': ['exchange-fees', 'gas-calculator', 'bridge-comparator', 'mev-calculator'],
+  'trade-expectancy-calculator': ['risk-reward-calculator', 'kelly-calculator', 'position-size-calculator', 'tp-sl-calculator'],
 };

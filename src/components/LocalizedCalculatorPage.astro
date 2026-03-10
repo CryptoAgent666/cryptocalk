@@ -6,6 +6,7 @@ import { getTranslations } from "../i18n/translations";
 import { getLocalizedCalculatorMeta, getLocalizedPath, type Lang, type SpecCalculatorSlug } from "../i18n/utils";
 import { CALCULATOR_META } from "../i18n/calculator-meta";
 import { RELATED_CALCULATORS } from "../data/related-calculators";
+import { CALCULATOR_CATEGORY, CATEGORY_NAMES } from "../data/calculator-category-map";
 import { defaultFaqByLang } from "../i18n/faq-dictionary";
 import { seoBodyText } from "../i18n/seo-body-text";
 import { calculatorSeoContent } from "../i18n/calculator-seo-content";
@@ -242,6 +243,12 @@ const siteUrl = "https://cryptocalk.com";
 const pageUrl = `${siteUrl}${pagePath}`;
 const homeUrl = `${siteUrl}${homePath}`;
 
+// Category hub for breadcrumb & backlink
+const categorySlug = CALCULATOR_CATEGORY[slug] ?? null;
+const categoryName = categorySlug ? (CATEGORY_NAMES[categorySlug]?.[lang] ?? CATEGORY_NAMES[categorySlug]?.['en'] ?? '') : '';
+const categoryHubPath = categorySlug ? getLocalizedPath(`/calculators/${categorySlug}`, lang) : null;
+const categoryHubUrl = categoryHubPath ? `${siteUrl}${categoryHubPath}` : null;
+
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -261,23 +268,18 @@ const webAppSchema = {
   },
 };
 
+const breadcrumbItems = [
+  { "@type": "ListItem", position: 1, name: "CryptoCalk", item: homeUrl },
+  ...(categoryHubUrl
+    ? [{ "@type": "ListItem", position: 2, name: categoryName, item: categoryHubUrl },
+       { "@type": "ListItem", position: 3, name: localizedTitle, item: pageUrl }]
+    : [{ "@type": "ListItem", position: 2, name: localizedTitle, item: pageUrl }]),
+];
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "CryptoCalk",
-      item: homeUrl,
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: localizedTitle,
-      item: pageUrl,
-    },
-  ],
+  itemListElement: breadcrumbItems,
 };
 
 const faqSchema = {
@@ -324,6 +326,12 @@ const faqSchema = {
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="section-container">
         <a href={homePath}>{t.home}</a>
+        {categoryHubPath && (
+          <>
+            <ChevronRight size={12} />
+            <a href={categoryHubPath}>{categoryName}</a>
+          </>
+        )}
         <ChevronRight size={12} />
         <a href={pagePath} aria-current="page">{localizedTitle}</a>
       </div>
@@ -347,6 +355,19 @@ const faqSchema = {
         <h2>{h.how}</h2>
         {txt.how.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
 
+        {relatedLinks.length > 0 && (
+          <p class="seealso-inline">
+            <strong>{lang === 'ru' ? 'Смотрите также:' : lang === 'es' ? 'Véase también:' : lang === 'pt' ? 'Veja também:' : lang === 'tr' ? 'Ayrıca bakın:' : lang === 'hi' ? 'यह भी देखें:' : 'See also:'}</strong>
+            {' '}
+            {relatedLinks.slice(0, 3).map((link, i) => (
+              <>
+                <a href={link.href}>{link.title}</a>
+                {i < Math.min(2, relatedLinks.length - 1) ? ', ' : ''}
+              </>
+            ))}
+          </p>
+        )}
+
         <h2>{h.inputs}</h2>
         {txt.inputs.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
 
@@ -365,18 +386,18 @@ const faqSchema = {
         }
 
         <h2>{h.checklist}</h2>
-        {
-          txt.checklist.map((p) => (
-            <p>{p.replace(/{title}/g, localizedTitle)}</p>
-          ))
-        }
+        <ol class="checklist-list">
+          {txt.checklist.map((p) => (
+            <li>{p.replace(/{title}/g, localizedTitle)}</li>
+          ))}
+        </ol>
 
         <h2>{h.mistakes}</h2>
-        {
-          txt.mistakes.map((p) => (
-            <p>{p.replace(/{title}/g, localizedTitle)}</p>
-          ))
-        }
+        <ul class="mistakes-list">
+          {txt.mistakes.map((p) => (
+            <li>{p.replace(/{title}/g, localizedTitle)}</li>
+          ))}
+        </ul>
 
         <h2>{h.benchmarks}</h2>
         {
@@ -419,6 +440,11 @@ const faqSchema = {
               <li><a href={link.href}>{link.title}</a></li>
             ))}
           </ul>
+        )}
+        {categoryHubPath && (
+          <p class="hub-backlink">
+            <a href={categoryHubPath}>← {lang === 'ru' ? `Все инструменты: ${categoryName}` : lang === 'es' ? `Ver todas las herramientas: ${categoryName}` : lang === 'pt' ? `Ver todas as ferramentas: ${categoryName}` : lang === 'tr' ? `Tüm araçlar: ${categoryName}` : lang === 'hi' ? `सभी टूल्स: ${categoryName}` : `All ${categoryName} calculators`}</a>
+          </p>
         )}
       </div>
     </section>
@@ -622,6 +648,113 @@ const faqSchema = {
     color: var(--color-primary);
     border-color: var(--color-primary);
     background: var(--color-bg-card-hover, var(--color-bg-card));
+  }
+
+  .checklist-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+    counter-reset: checklist-counter;
+  }
+
+  .checklist-list li {
+    padding: 12px 16px 12px 48px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    position: relative;
+    counter-increment: checklist-counter;
+  }
+
+  .checklist-list li::before {
+    content: counter(checklist-counter);
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    width: 22px;
+    height: 22px;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mistakes-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .mistakes-list li {
+    padding: 12px 16px 12px 44px;
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    position: relative;
+  }
+
+  .mistakes-list li::before {
+    content: '✕';
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    width: 22px;
+    height: 22px;
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .seealso-inline {
+    background: var(--color-bg-card);
+    border-left: 3px solid var(--color-primary);
+    padding: 10px 16px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin: 4px 0 16px;
+  }
+
+  .seealso-inline a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .seealso-inline a:hover {
+    text-decoration: underline;
+  }
+
+  .hub-backlink {
+    margin-top: 12px;
+    font-size: 0.9rem;
+  }
+
+  .hub-backlink a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .hub-backlink a:hover {
+    text-decoration: underline;
   }
 
   .site-footer {

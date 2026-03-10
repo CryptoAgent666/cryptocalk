@@ -1,0 +1,90 @@
+import type { CategorySlug } from './category-hubs';
+import type { Lang } from '../i18n/utils';
+
+/** Maps every calculator slug to its category hub slug. */
+export const CALCULATOR_CATEGORY: Record<string, CategorySlug> = {
+  // Profit & Loss
+  'profit-calculator': 'profit-loss',
+  'roi-calculator': 'profit-loss',
+  'reverse-roi': 'profit-loss',
+  'hodl-vs-trade': 'profit-loss',
+  'nft-profit-calculator': 'profit-loss',
+  'ico-roi-calculator': 'profit-loss',
+  'what-if': 'profit-loss',
+  'break-even-calculator': 'profit-loss',
+  // Converters
+  'converter': 'converters',
+  'satoshi-converter': 'converters',
+  'gwei-converter': 'converters',
+  'hashrate-converter': 'converters',
+  'timestamp-converter': 'converters',
+  'unit-converter': 'converters',
+  // Mining
+  'mining-calculator': 'mining',
+  'gpu-mining-calculator': 'mining',
+  'asic-mining-calculator': 'mining',
+  'mining-roi-calculator': 'mining',
+  'electricity-cost-calculator': 'mining',
+  'difficulty-calculator': 'mining',
+  'halving-calculator': 'mining',
+  // DeFi & Yield
+  'staking-calculator': 'defi-yield',
+  'impermanent-loss-calculator': 'defi-yield',
+  'compound-calculator': 'defi-yield',
+  'apy-apr-calculator': 'defi-yield',
+  'yield-farming-calculator': 'defi-yield',
+  'uniswap-calculator': 'defi-yield',
+  'lending-calculator': 'defi-yield',
+  'node-calculator': 'defi-yield',
+  'crypto-loan-calculator': 'defi-yield',
+  // Tax & Reporting
+  'tax-calculator': 'tax-reporting',
+  'airdrop-calculator': 'tax-reporting',
+  'salary-calculator': 'tax-reporting',
+  'vesting-calculator': 'tax-reporting',
+  // Investment
+  'dca-calculator': 'investment',
+  'portfolio-calculator': 'investment',
+  'rebalancing-calculator': 'investment',
+  'market-cap-calculator': 'investment',
+  'market-cap-comparator': 'investment',
+  'gamefi-calculator': 'investment',
+  'inflation-hedge': 'investment',
+  // Trading Tools
+  'position-size-calculator': 'trading-tools',
+  'liquidation-calculator': 'trading-tools',
+  'funding-rate-calculator': 'trading-tools',
+  'tp-sl-calculator': 'trading-tools',
+  'margin-calculator': 'trading-tools',
+  'leverage-calculator': 'trading-tools',
+  'pip-calculator': 'trading-tools',
+  'risk-reward-calculator': 'trading-tools',
+  'kelly-calculator': 'trading-tools',
+  'var-calculator': 'trading-tools',
+  'drawdown-calculator': 'trading-tools',
+  'sortino-calculator': 'trading-tools',
+  'risk-of-ruin-calculator': 'trading-tools',
+  'treynor-calculator': 'trading-tools',
+  'information-ratio-calculator': 'trading-tools',
+  'trade-expectancy-calculator': 'trading-tools',
+  'sharpe-calculator': 'trading-tools',
+  'calmar-calculator': 'trading-tools',
+  'mev-calculator': 'trading-tools',
+  // Gas & Fees
+  'gas-calculator': 'gas-fees',
+  'exchange-fees': 'gas-fees',
+  'bridge-comparator': 'gas-fees',
+  'slippage-calculator': 'gas-fees',
+};
+
+/** Human-readable category names per language. */
+export const CATEGORY_NAMES: Record<CategorySlug, Record<Lang, string>> = {
+  'profit-loss':   { en: 'Profit & Loss', es: 'Ganancias y Pérdidas', pt: 'Lucro & Perda', tr: 'Kâr & Zarar', hi: 'लाभ और हानि', ru: 'Прибыль и убыток' },
+  'converters':    { en: 'Converters',    es: 'Conversores',           pt: 'Conversores',   tr: 'Dönüştürücüler', hi: 'कनवर्टर्स',    ru: 'Конвертеры' },
+  'mining':        { en: 'Mining',        es: 'Minería',               pt: 'Mineração',     tr: 'Madencilik',     hi: 'माइनिंग',      ru: 'Майнинг' },
+  'defi-yield':    { en: 'DeFi & Yield',  es: 'DeFi y Rendimiento',    pt: 'DeFi & Yield',  tr: 'DeFi & Getiri',  hi: 'DeFi & यील्ड', ru: 'DeFi и доходность' },
+  'tax-reporting': { en: 'Tax & Reporting', es: 'Impuestos', pt: 'Impostos', tr: 'Vergi & Raporlama', hi: 'टैक्स',        ru: 'Налоги и отчётность' },
+  'investment':    { en: 'Investment',    es: 'Inversión',             pt: 'Investimento',  tr: 'Yatırım',        hi: 'निवेश',        ru: 'Инвестиции' },
+  'trading-tools': { en: 'Trading Tools', es: 'Herramientas Trading',  pt: 'Ferramentas',   tr: 'Trading Araçları', hi: 'ट्रेडिंग टूल्स', ru: 'Торговые инструменты' },
+  'gas-fees':      { en: 'Gas & Fees',    es: 'Gas y Comisiones',      pt: 'Gas & Taxas',   tr: 'Gas & Ücretler', hi: 'गैस और फीस',   ru: 'Газ и комиссии' },
+};

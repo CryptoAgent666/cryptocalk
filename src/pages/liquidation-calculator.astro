@@ -37,6 +37,8 @@ import SiteFooter from '../components/SiteFooter.astro';
       <div class="section-container">
         <a href="/">Home</a>
         <ChevronRight size={12} />
+        <a href="/calculators/trading-tools/">Trading Tools</a>
+        <ChevronRight size={12} />
         <a href="/liquidation-calculator/" aria-current="page">Liquidation Calculator</a>
       </div>
     </nav>
@@ -68,6 +70,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 
         <h2>How Liquidation Works in Crypto Futures</h2>
         <p>When you open a leveraged position on a futures exchange, you post a fraction of the total position value as collateral (margin). If the market moves against you enough that your margin can no longer cover potential losses, the exchange forcibly closes your position — this is called <strong>liquidation</strong>.</p>
+        <p class="seealso-inline"><strong>See also:</strong> <a href="/margin-calculator/">Margin Calculator</a>, <a href="/position-size-calculator/">Position Size Calculator</a>, <a href="/funding-rate-calculator/">Funding Rate Calculator</a></p>
         <p>Liquidation is an automatic risk management mechanism designed to prevent traders from losing more than their account balance. When your margin ratio (the percentage of equity relative to position size) falls below the exchange's maintenance margin requirement, the liquidation engine takes over and closes your position at the current market price.</p>
         <p>The process happens instantly and automatically. You cannot stop it once triggered. In volatile markets, liquidations can occur in seconds, especially with high leverage. This is why understanding and monitoring your liquidation price is critical for risk management in futures trading.</p>
 
