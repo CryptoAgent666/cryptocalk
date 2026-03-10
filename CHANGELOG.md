@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-09] (update 5)
+
+### Changed
+- **SEO F1 — BreadcrumbList + enriched WebApplication schema на 35 EN страницах**: Добавлен `pageType="calculator"` prop в `Layout.astro` для авто-генерации `BreadcrumbList` JSON-LD. Все 35 EN `.astro` калькуляторных страниц обновлены. Кроме того, в каждую inline `WebApplication` схему добавлены `datePublished: "2025-11-01"`, `dateModified: "2026-03-09"`, `author: Person`. Итог: все EN страницы теперь имеют 3 схемы (BreadcrumbList + WebApplication + FAQPage), совпадая с локализованными версиями.
+- **SEO F3 — og:locale на всех страницах**: Добавлен `<meta property="og:locale">` в `Layout.astro` с маппингом lang→locale (en→en_US, es→es_ES, pt→pt_BR, tr→tr_TR, hi→hi_IN, ru→ru_RU). Охватывает все 754 страницы.
+- **SEO F4 — twitter:title + twitter:description**: Добавлены `<meta name="twitter:title">` и `<meta name="twitter:description">` в `Layout.astro`. Улучшает отображение в X/Twitter при шеринге.
+- **SEO F5 — Meta description главной сокращена**: С 174 до 126 символов. Было: "Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 45+ more tools. Fast, accurate, no signup." Стало: "Free crypto calculators: profit & loss, mining, DCA, tax, staking, and 45+ more tools. Fast, accurate, no signup required."
+- **SEO F6 — Title страницы About улучшен**: С "About Us | CryptoCalk" (21 симв.) до "About CryptoCalk — Free Crypto Calculators by Konstantin Iakovlev" (65 симв.). Содержит ключевые слова, выделяется в SERP.
+
 ## [2026-03-09] (update 4)
 
 ### Added
