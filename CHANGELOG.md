@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 6) — Localized category hub body copy
+
+### Added
+- **Localized bodyCopy for 40 category hub pages**: 8 categories × 5 languages (es, pt, tr, hi, ru), 3 paragraphs each. Previously these pages had no body prose, making them thinner than EN versions.
+
 ## [2026-03-18] (update 5) — FAQ, internal links, OG images
 
 ### Added
