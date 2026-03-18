@@ -9,6 +9,7 @@ import {
   getCategorySlugs,
   isCategorySlug,
 } from '../../../data/category-hubs';
+import { CATEGORY_HUB_BODY_LOCALIZED } from '../../../data/category-hub-body';
 import { NON_DEFAULT_LANGS, getLocalizedPath, type Lang } from '../../../i18n/utils';
 import Layout from '../../../layouts/Layout.astro';
 
@@ -42,6 +43,7 @@ const ui = getCategoryHubUiCopy(lang);
 const homeHref = getLocalizedPath('/', lang);
 const categoriesHref = `${homeHref}#categories`;
 const categoryPageUrl = `${SITE_URL}${category.href}`;
+const bodyCopy = CATEGORY_HUB_BODY_LOCALIZED[lang]?.[category.slug];
 
 const schemas = [
   {
@@ -112,6 +114,7 @@ const schemas = [
       homeHref={homeHref}
       categoriesHref={categoriesHref}
       lastUpdated={LAST_UPDATED}
+      bodyCopy={bodyCopy}
     />
   </SiteChrome>
   <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
