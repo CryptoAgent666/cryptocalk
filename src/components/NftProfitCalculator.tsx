@@ -12,19 +12,19 @@ import {
     Fuel,
 } from 'lucide-react';
 
+// Marketplace fees updated 2026-03-18.
 const MARKETPLACES = [
-    { id: 'opensea', label: 'OpenSea', fee: 2.5 },
+    { id: 'opensea', label: 'OpenSea', fee: 1.0 },
     { id: 'blur', label: 'Blur', fee: 0.5 },
     { id: 'magic_eden', label: 'Magic Eden', fee: 2 },
     { id: 'custom', label: 'Custom', fee: 0 },
 ];
 
 const FEE_COMPARISON = [
-    { name: 'OpenSea', fee: '2.5%' },
+    { name: 'OpenSea', fee: '1%' },
     { name: 'Blur', fee: '0.5%' },
     { name: 'Magic Eden', fee: '2%' },
-    { name: 'LooksRare', fee: '2%' },
-    { name: 'X2Y2', fee: '0.5%' },
+    { name: 'LooksRare', fee: '0.5%' },
 ];
 
 const BUY_PRICE_PILLS = ['0.2', '0.5', '1', '2'];
@@ -32,18 +32,18 @@ const SELL_PRICE_PILLS = ['0.5', '1', '2', '4'];
 const MARKETPLACE_FEE_PILLS = ['0.5', '1', '2', '2.5', '5'];
 const ROYALTY_PILLS = ['0', '2.5', '5', '7.5', '10'];
 const GAS_COST_PILLS = ['5', '10', '20', '40'];
-const ETH_PRICE_PILLS = ['2500', '3000', '3500', '4000'];
+const ETH_PRICE_PILLS = ['1800', '2327', '2800', '3500'];
 const NFT_SCENARIOS = [
     {
         label: 'Starter Flip',
         buyPrice: '0.2',
         sellPrice: '0.5',
         marketplace: 'opensea',
-        marketplaceFee: '2.5',
+        marketplaceFee: '1',
         royalty: '5',
-        gasBuy: '10',
-        gasSell: '10',
-        ethPrice: '3000',
+        gasBuy: '2',
+        gasSell: '2',
+        ethPrice: '2327',
     },
     {
         label: 'Low Fee',
@@ -52,9 +52,9 @@ const NFT_SCENARIOS = [
         marketplace: 'blur',
         marketplaceFee: '0.5',
         royalty: '2.5',
-        gasBuy: '5',
-        gasSell: '5',
-        ethPrice: '3500',
+        gasBuy: '1',
+        gasSell: '1',
+        ethPrice: '2327',
     },
     {
         label: 'High Gas',
@@ -63,9 +63,9 @@ const NFT_SCENARIOS = [
         marketplace: 'magic_eden',
         marketplaceFee: '2',
         royalty: '5',
-        gasBuy: '40',
-        gasSell: '40',
-        ethPrice: '3000',
+        gasBuy: '10',
+        gasSell: '10',
+        ethPrice: '2327',
     },
 ] as const;
 
@@ -73,11 +73,11 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
     const [buyPrice, setBuyPrice] = useState('');
     const [sellPrice, setSellPrice] = useState('');
     const [marketplace, setMarketplace] = useState('opensea');
-    const [marketplaceFee, setMarketplaceFee] = useState('2.5');
+    const [marketplaceFee, setMarketplaceFee] = useState('1');
     const [royalty, setRoyalty] = useState('5');
-    const [gasBuy, setGasBuy] = useState('10');
-    const [gasSell, setGasSell] = useState('10');
-    const [ethPrice, setEthPrice] = useState('3000');
+    const [gasBuy, setGasBuy] = useState('2');
+    const [gasSell, setGasSell] = useState('2');
+    const [ethPrice, setEthPrice] = useState('2327');
 
     // Auto-fetch ETH price on mount
     useEffect(() => {
@@ -146,8 +146,8 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
 
     const reset = () => {
         setBuyPrice(''); setSellPrice(''); setMarketplace('opensea');
-        setMarketplaceFee('2.5'); setRoyalty('5'); setGasBuy('10');
-        setGasSell('10'); setEthPrice('3000');
+        setMarketplaceFee('1'); setRoyalty('5'); setGasBuy('2');
+        setGasSell('2'); setEthPrice('2327');
     };
 
     const formatETH = (n: number) => {

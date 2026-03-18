@@ -53,7 +53,7 @@ const HALVINGS: HalvingEvent[] = [
         number: 4, block: 840_000, date: 'Apr 20, 2024',
         timestamp: Date.UTC(2024, 3, 20),
         rewardBefore: 6.25, rewardAfter: 3.125,
-        priceAtHalving: 64000, priceAfter6m: 67000, priceAfter12m: 100000, priceAfter18m: null,
+        priceAtHalving: 64000, priceAfter6m: 67000, priceAfter12m: 100000, priceAfter18m: 126000,
     },
 ];
 
@@ -64,8 +64,8 @@ const BLOCKS_PER_DAY = 144;
 const REFERENCE_BLOCK = 840_000;
 const REFERENCE_DATE = Date.UTC(2024, 3, 20); // Apr 20 2024
 
-// Simplified network hashrate for revenue estimation
-const NETWORK_HASHRATE_THS = 700_000_000; // 700 EH/s in TH/s
+// Simplified network hashrate for revenue estimation (updated 2026-03-18)
+const NETWORK_HASHRATE_THS = 800_000_000; // 800 EH/s in TH/s
 const HASHRATE_PRESETS = ['50', '100', '200', '500', '1000'];
 const ELECTRICITY_COST_PRESETS = ['0.04', '0.06', '0.08', '0.10', '0.15'];
 const POWER_PRESETS = ['1800', '2500', '3000', '4500', '6000'];
@@ -521,7 +521,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Disclaimer */}
                     <p className="calc-disclaimer">
                         <Info size={12} />
-                        {getUiString(lang, 'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~700 EH/s network hashrate. Not financial advice.')}
+                        {getUiString(lang, 'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~800 EH/s network hashrate. Not financial advice.')}
                     </p>
                 </div>
             </div>

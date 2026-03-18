@@ -47,10 +47,12 @@ interface AsicComparison {
     efficiency: number;
 }
 
+// Difficulty & price fallbacks updated 2026-03-18. Fetch live data when available.
 const ASIC_PRESETS: AsicPreset[] = [
     { name: 'Antminer S21 Hyd', hashrate: 335, power: 5360, algo: 'SHA-256', coin: 'BTC', price: 5500 },
+    { name: 'Antminer S21 Pro', hashrate: 234, power: 3510, algo: 'SHA-256', coin: 'BTC', price: 4500 },
     { name: 'Antminer S21', hashrate: 200, power: 3500, algo: 'SHA-256', coin: 'BTC', price: 4200 },
-    { name: 'Antminer S19 XP', hashrate: 140, power: 3010, algo: 'SHA-256', coin: 'BTC', price: 2800 },
+    { name: 'Antminer S19 XP', hashrate: 140, power: 3010, algo: 'SHA-256', coin: 'BTC', price: 1200 },
     { name: 'Antminer T21', hashrate: 190, power: 3610, algo: 'SHA-256', coin: 'BTC', price: 3500 },
     { name: 'Whatsminer M60S', hashrate: 186, power: 3420, algo: 'SHA-256', coin: 'BTC', price: 3800 },
     { name: 'Whatsminer M50S', hashrate: 126, power: 3276, algo: 'SHA-256', coin: 'BTC', price: 2200 },
@@ -61,7 +63,7 @@ const ASIC_PRESETS: AsicPreset[] = [
 ];
 
 const NETWORK_DATA: Record<string, NetworkData> = {
-    BTC: { difficulty: 85000000000000, blockReward: 3.125, price: 65000, blockTime: 600 },
+    BTC: { difficulty: 145000000000000, blockReward: 3.125, price: 73700, blockTime: 600 },
     LTC: { difficulty: 25000000, blockReward: 6.25, price: 80, blockTime: 150 },
     DASH: { difficulty: 200000000, blockReward: 2.31, price: 30, blockTime: 150 },
     ZEC: { difficulty: 80000000, blockReward: 2.5, price: 25, blockTime: 75 },
