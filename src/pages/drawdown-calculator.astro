@@ -8,6 +8,32 @@ import DrawdownCalculator from '../components/DrawdownCalculator.tsx';
   slug="drawdown-calculator"
   title="Drawdown Recovery Calculator"
   description="Measure portfolio drawdown, required recovery gain, and estimated recovery time based on expected monthly return."
+  faq={[
+    {
+      q: "Why does a 50% loss require a 100% gain to recover?",
+      a: "Drawdown recovery is asymmetric due to how percentages work on a smaller base. After a 50% loss, your remaining capital is half the original. You need to double that reduced amount (100% gain) to get back to breakeven. A 75% loss requires a 300% gain to recover — this asymmetry is why risk management is critical."
+    },
+    {
+      q: "What is the typical drawdown for Bitcoin during a bear market?",
+      a: "Bitcoin has historically experienced drawdowns of 50-85% during bear markets. The 2018 cycle saw an 84% drawdown, the 2022 cycle about 77%. Understanding these historical ranges helps set realistic expectations and position sizes for long-term crypto holdings."
+    },
+    {
+      q: "How long does it typically take to recover from a crypto drawdown?",
+      a: "Recovery time depends on the drawdown severity and your monthly return rate. A 50% drawdown with 5% monthly returns takes about 15 months to recover. Historically, Bitcoin has taken 2-3 years to recover from major bear market lows to new all-time highs."
+    },
+    {
+      q: "How can I limit portfolio drawdown in crypto?",
+      a: "Use stop-losses, diversify across uncorrelated assets, size positions using the Kelly Criterion or fixed-percentage rules, and keep a cash allocation for rebalancing. Reducing max position size to 5-10% of your portfolio caps the damage any single asset can cause."
+    },
+    {
+      q: "What maximum drawdown is acceptable for a crypto portfolio?",
+      a: "This depends on your risk tolerance, but most professional portfolio managers target maximum drawdowns of 15-25%. For crypto-heavy portfolios, drawdowns of 30-40% may be acceptable if the strategy has strong long-term returns. The Calmar ratio (annual return / max drawdown) helps evaluate if the drawdown is compensated."
+    },
+    {
+      q: "Does dollar-cost averaging help during drawdowns?",
+      a: "Yes, DCA during drawdowns allows you to buy at lower prices, reducing your average entry cost and shortening recovery time. However, it only works if the asset eventually recovers. DCA into a permanently declining asset accelerates losses rather than aiding recovery."
+    }
+  ]}
 >
   <DrawdownCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>
