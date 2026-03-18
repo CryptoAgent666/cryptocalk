@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] — Content quality audit fixes
+
+### Fixed
+- **About page rewrite**: Removed "Vibecoder" title — replaced with "Founder & Lead Developer". Expanded from ~300 words to ~1000 words with four new sections: Mission (3 paragraphs), Meet the Creator (verifiable credentials, since-2017 crypto experience, zanimaem.kz/calk.kz track record), How We Build Our Calculators (formula verification, real-time data, edge case testing, regular audits), and Why Trust CryptoCalk (open formulas, client-side execution, no ads, no signups, 6 languages, regular updates). Strengthens E-E-A-T for YMYL compliance.
+- **Localized About pages (5 languages)**: Replaced all vibecoder/vibecoding/вайбкодинг/वाइबकोडिंग references with professional developer terminology across ES, PT, TR, HI, RU. Updated role titles, bios, and highlight descriptions.
+- **calculator-seo-ext.ts phantom keys**: Fixed 20 slug keys that did not match actual calculator-meta slugs (e.g., `'market-cap'` → `'market-cap-calculator'`, `'ico-roi'` → `'ico-roi-calculator'`). These entries were effectively dead code — the content existed but was never loaded. All 51 calculators now have unique overrides for 8 sections (interpret, scenarios, checklist, mistakes, benchmarks, execution, hygiene, validation) in all 6 languages.
+- **Content parity**: Previously 20 of 51 calculators fell back to generic template text for 8 out of 10 SEO sections. Now all 51 × 6 = 306 localized calculator pages receive unique content.
+
+### Changed
+- `src/pages/about.astro` — full rewrite with methodology and trust sections
+- `src/pages/[lang]/about.astro` — updated all 5 language content blocks
+- `src/i18n/calculator-seo-ext.ts` — fixed 20 phantom keys, added missing calculator entries
+
 ## [2026-03-09] (update 10) — React hydration fix + dark mode FOUC
 
 ### Fixed
