@@ -9,6 +9,7 @@ import { RELATED_CALCULATORS } from "../data/related-calculators";
 import { CALCULATOR_CATEGORY, CATEGORY_NAMES } from "../data/calculator-category-map";
 import { getActiveSections } from "../data/calculator-sections";
 import { defaultFaqByLang } from "../i18n/faq-dictionary";
+import { CALCULATOR_FAQ } from "../i18n/calculator-faq";
 import { seoBodyText } from "../i18n/seo-body-text";
 import { calculatorSeoContent } from "../i18n/calculator-seo-content";
 import { calculatorSeoExt } from "../i18n/calculator-seo-ext";
@@ -121,7 +122,7 @@ const relatedLinks = relatedSlugs.map((rSlug) => {
 
 const faqTemplate = faq.length
   ? faq
-  : defaultFaqByLang[lang] || defaultFaqByLang.en;
+  : CALCULATOR_FAQ[slug]?.[lang] ?? defaultFaqByLang[lang] ?? defaultFaqByLang.en;
 
 const faqItems = faqTemplate.map((item) => ({
   q: item.q.replace("{title}", localizedTitle),
