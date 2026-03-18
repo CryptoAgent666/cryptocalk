@@ -13,6 +13,7 @@ import {
     TrendingUp,
     TrendingDown,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -31,7 +32,7 @@ const IL_SCENARIOS = [
     { label: 'Volatile Season', investmentAmount: '10000', priceChangeA: '100', priceChangeB: '-25', poolFeeApr: '50', holdingDays: '180' },
 ] as const;
 
-export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
+function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
     const [tokenASearch, setTokenASearch] = useState('');
     const [tokenBSearch, setTokenBSearch] = useState('');
     const [selectedTokenA, setSelectedTokenA] = useState<CoinSuggestion | null>(null);
@@ -72,10 +73,10 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
         setLoading(true);
         setSearchError('');
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`);
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
-            setter((data.coins || []).slice(0, 6).map((c: any) => ({
+            setter((data.coins || []).slice(0, 6).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                 id: c.id, name: c.name, symbol: c.symbol, thumb: c.thumb,
             })));
             showSetter(true);
@@ -211,7 +212,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                             <div className="suggestions-dropdown">
                                 {suggestionsA.map((coin) => (
                                     <button key={coin.id} className="suggestion-item" onClick={() => selectTokenA(coin)}>
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
+                                        {coin.thumb && <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>
@@ -234,7 +235,7 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
                             <div className="suggestions-dropdown">
                                 {suggestionsB.map((coin) => (
                                     <button key={coin.id} className="suggestion-item" onClick={() => selectTokenB(coin)}>
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
+                                        {coin.thumb && <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>
@@ -506,3 +507,5 @@ export default function ImpermanentLossCalculator({ lang = 'en' }: { lang?: stri
         </div>
     );
 }
+
+export default withErrorBoundary(ImpermanentLossCalculator);

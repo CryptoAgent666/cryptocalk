@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const Z_SCORE: Record<string, number> = {
   '90': 1.2816,
@@ -34,7 +35,7 @@ const VAR_SCENARIOS = [
   },
 ] as const;
 
-export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
+function VarCalculator({ lang = 'en' }: { lang?: string }) {
   function formatUSD(value: number): string {
     return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
       style: 'currency',
@@ -205,3 +206,5 @@ export default function VarCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(VarCalculator);

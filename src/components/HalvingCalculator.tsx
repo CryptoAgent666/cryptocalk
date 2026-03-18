@@ -12,6 +12,7 @@ import {
     RotateCcw,
     Timer,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 /* ------------------------------------------------------------------ */
 /*  Halving history (hardcoded, accurate)                             */
@@ -80,7 +81,7 @@ const HALVING_SCENARIOS = [
 /*  Component                                                         */
 /* ------------------------------------------------------------------ */
 
-export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
+function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
     // Mining impact inputs
     const [hashrate, setHashrate] = useState('100');
     const [electricityCost, setElectricityCost] = useState('0.08');
@@ -89,7 +90,7 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
 
     // Fetch BTC price on mount
     useEffect(() => {
-        fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=REMOVED_COINGECKO_KEY')
+        fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`)
             .then(r => r.json())
             .then(d => { if (d.bitcoin?.usd) setBtcPrice(String(d.bitcoin.usd)); })
             .catch(() => { });
@@ -528,3 +529,5 @@ export default function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(HalvingCalculator);

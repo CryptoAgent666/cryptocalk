@@ -13,6 +13,7 @@ import {
     Calendar,
     Repeat,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface Results {
     hodlFinalValue: number;
@@ -67,7 +68,7 @@ const HODL_VS_TRADE_SCENARIOS = [
     },
 ] as const;
 
-export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
+function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
     const [startingCapital, setStartingCapital] = useState('');
     const [priceChange, setPriceChange] = useState('');
     const [winRate, setWinRate] = useState('50');
@@ -782,3 +783,5 @@ export default function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }
         </div>
     );
 }
+
+export default withErrorBoundary(HodlVsTradeCalculator);

@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const MONTHLY_RETURN_PRESETS = [2, 5, 10, 15];
 const DRAWDOWN_SCENARIOS = [
@@ -11,7 +12,7 @@ const DRAWDOWN_SCENARIOS = [
 
 // formatUSD is defined inside the component to access `lang` prop
 
-export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
+function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
   const formatUSD = (value: number): string => {
     return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
       style: 'currency',
@@ -179,3 +180,5 @@ export default function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(DrawdownCalculator);

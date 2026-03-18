@@ -7,6 +7,7 @@ import {
     Info,
     ArrowRightLeft,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const UNITS = [
     { id: 'h', label: 'H/s', power: 0 },
@@ -33,7 +34,7 @@ interface ConversionResult {
     value: number;
 }
 
-export default function HashrateConverter({ lang = 'en' }: { lang?: string }) {
+function HashrateConverter({ lang = 'en' }: { lang?: string }) {
     const [inputValue, setInputValue] = useState('');
     const [selectedUnit, setSelectedUnit] = useState('th');
     const [results, setResults] = useState<ConversionResult[]>([]);
@@ -308,3 +309,5 @@ export default function HashrateConverter({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(HashrateConverter);

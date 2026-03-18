@@ -15,6 +15,7 @@ import {
     Gauge,
     Building2,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -79,7 +80,7 @@ const LIQUIDATION_SCENARIOS = [
     },
 ] as const;
 
-export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
+function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
     const [coinSearch, setCoinSearch] = useState('');
     const [selectedCoin, setSelectedCoin] = useState<CoinSuggestion | null>(null);
     const [suggestions, setSuggestions] = useState<CoinSuggestion[]>([]);
@@ -98,6 +99,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
 
     const currentExchange = EXCHANGES.find((e) => e.id === exchange)!;
 
@@ -111,11 +113,11 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
         setSearchError('');
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
+                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
-            const coins = (data.coins || []).slice(0, 8).map((c: any) => ({
+            const coins = (data.coins || []).slice(0, 8).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                 id: c.id,
                 name: c.name,
                 symbol: c.symbol,
@@ -142,7 +144,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
         setShowSuggestions(false);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
@@ -356,7 +358,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label>
+                        <label htmlFor="liq-coin-search">
                             <Search size={14} />
                             {getUiString(lang, 'Cryptocurrency (optional)')}
                         </label>
@@ -383,7 +385,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                                         onClick={() => selectCoin(coin)}
                                     >
                                         {coin.thumb && (
-                                            <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />
+                                            <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />
                                         )}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
@@ -461,7 +463,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
 
                     {/* Leverage */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="liq-leverage">
                             <Percent size={14} />
                             {getUiString(lang, 'Leverage')}
                         </label>
@@ -492,7 +494,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
 
                     {/* Entry Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="liq-entry-price">
                             <Crosshair size={14} />
                             {getUiString(lang, 'Entry Price')}
                             {selectedCoin && (
@@ -525,7 +527,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
 
                     {/* Position Size */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="liq-position-size">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Position Size (Total Value)')}
                         </label>
@@ -556,7 +558,7 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
                     {/* Wallet Balance (Cross mode) */}
                     {marginType === 'cross' && (
                         <div className="input-group">
-                            <label>
+                            <label htmlFor="liq-wallet-balance">
                                 <DollarSign size={14} />
                                 {getUiString(lang, 'Wallet Balance')}
                             </label>
@@ -738,3 +740,5 @@ export default function LiquidationCalculator({ lang = 'en' }: { lang?: string }
         </div>
     );
 }
+
+export default withErrorBoundary(LiquidationCalculator);

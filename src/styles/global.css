@@ -10,7 +10,7 @@
   --color-bg-header: rgba(255, 255, 255, 0.85);
   --color-text: #1a1d2e;
   --color-text-secondary: #4b5563;
-  --color-text-muted: #5f6b7a;
+  --color-text-muted: #586170;
   --color-border: #e5e7eb;
   --color-border-hover: #c7d0e0;
   --color-primary: #6366f1;
@@ -100,6 +100,21 @@
 /* ===== Utility Classes ===== */
 
 @layer utilities {
+  .skip-to-content {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 9999;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    border-radius: 0 0 var(--radius-sm) 0;
+    text-decoration: none;
+  }
+  .skip-to-content:focus {
+    left: 0;
+  }
   .glass {
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
@@ -144,7 +159,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  min-height: 44px;
+  min-height: 48px;
   min-width: 44px;
   padding: 0 12px;
   border: 1px solid var(--color-border);
@@ -197,7 +212,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 44px;
+  min-height: 48px;
   padding: 10px 14px;
   color: var(--color-text-secondary);
   text-decoration: none;
@@ -1213,7 +1228,7 @@
   }
 
   body.calc-mobile-ux .site-header .header-link {
-    min-height: 44px;
+    min-height: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1231,7 +1246,7 @@
   body.calc-mobile-ux .calculator-section input,
   body.calc-mobile-ux .calculator-section select,
   body.calc-mobile-ux .calculator-section textarea {
-    min-height: 44px;
+    min-height: 48px;
     font-size: 16px !important;
   }
 
@@ -1246,7 +1261,7 @@
   body.calc-mobile-ux .calculator-section .selector-btn,
   body.calc-mobile-ux .calculator-section .reset-btn,
   body.calc-mobile-ux .calculator-section .calculate-btn {
-    min-height: 44px !important;
+    min-height: 48px !important;
   }
 
   body.calc-mobile-ux .calculator-section .pills-row {
@@ -1277,7 +1292,7 @@
   body.calc-mobile-ux .calculator-section .suggestion-item,
   body.calc-mobile-ux .calculator-section .coin-option,
   body.calc-mobile-ux .calculator-section .scenario-chip {
-    min-height: 44px;
+    min-height: 48px;
   }
 
   body.calc-mobile-ux .calculator-section .input-clear,
@@ -1456,7 +1471,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
+    min-height: 48px;
     padding: 0 14px;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);

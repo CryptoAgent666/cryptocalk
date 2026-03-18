@@ -11,6 +11,7 @@ import {
     Clock,
     Trophy,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CountryData {
     id: string;
@@ -55,7 +56,7 @@ const INFLATION_SCENARIOS = [
     { label: 'Stable Focus', selectedCountry: 'uk', amount: '10000', years: 1, activeAssets: ['usdc_yield', 'gold', 'sp500'] },
 ] as const;
 
-export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
+function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
     const [selectedCountry, setSelectedCountry] = useState('turkey');
     const [amount, setAmount] = useState('10000');
     const [years, setYears] = useState(5);
@@ -640,3 +641,5 @@ export default function InflationHedgeCalculator({ lang = 'en' }: { lang?: strin
         </div>
     );
 }
+
+export default withErrorBoundary(InflationHedgeCalculator);

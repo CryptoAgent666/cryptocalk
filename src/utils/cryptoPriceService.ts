@@ -6,8 +6,8 @@
  * CryptoCompare and CoinCap provide full historical data going back 10+ years.
  */
 
-const COINGECKO_KEY = 'REMOVED_COINGECKO_KEY';
-const CRYPTOCOMPARE_KEY = 'REMOVED_CRYPTOCOMPARE_KEY';
+const COINGECKO_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
+const CRYPTOCOMPARE_KEY = import.meta.env.PUBLIC_CRYPTOCOMPARE_API_KEY || 'REMOVED_CRYPTOCOMPARE_KEY';
 
 // ═══════════════════════════════════════════════
 // ID Mapping: CoinGecko ID → CryptoCompare symbol
@@ -227,8 +227,8 @@ async function getPriceChartCryptoCompare(geckoId: string, fromTs: number, toTs:
     if (!entries || entries.length === 0) throw new Error('No CryptoCompare chart data');
     // Convert to [timestamp_ms, price] format (same as CoinGecko)
     return entries
-        .filter((e: any) => e.close > 0)
-        .map((e: any) => [e.time * 1000, e.close] as [number, number]);
+        .filter((e: { close: number; time: number }) => e.close > 0)
+        .map((e: { close: number; time: number }) => [e.time * 1000, e.close] as [number, number]);
 }
 
 async function getPriceChartCoinCap(geckoId: string, fromTs: number, toTs: number): Promise<[number, number][]> {
@@ -240,7 +240,7 @@ async function getPriceChartCoinCap(geckoId: string, fromTs: number, toTs: numbe
     if (!res.ok) throw new Error(`CoinCap chart ${res.status}`);
     const data = await res.json();
     if (!data.data || data.data.length === 0) throw new Error('No CoinCap chart data');
-    return data.data.map((e: any) => [e.time, parseFloat(e.priceUsd)] as [number, number]);
+    return data.data.map((e: { time: number; priceUsd: string }) => [e.time, parseFloat(e.priceUsd)] as [number, number]);
 }
 
 /** Get price chart data with automatic fallback */

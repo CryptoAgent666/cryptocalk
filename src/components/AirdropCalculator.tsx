@@ -13,6 +13,7 @@ import {
     Globe,
     Gift,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -55,7 +56,7 @@ const AIRDROP_SCENARIOS = [
     { label: 'Underwater Bag', tokenAmount: '2500', priceAtReceipt: '10', currentPrice: '2', sold: false, sellPrice: '', taxCountry: 'germany' },
 ] as const;
 
-export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
+function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
     // Coin search state
     const [searchQuery, setSearchQuery] = useState('');
     const [suggestions, setSuggestions] = useState<CoinSuggestion[]>([]);
@@ -65,6 +66,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
     const [searchError, setSearchError] = useState('');
     const dropdownRef = useRef<HTMLDivElement>(null);
     const searchTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
 
     // Input state
     const [tokenAmount, setTokenAmount] = useState('');
@@ -97,10 +99,10 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
         searchTimeout.current = setTimeout(async () => {
             try {
                 setSearchError('');
-                const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`);
+                const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${CG_KEY}`);
                 if (!res.ok) throw new Error('Search failed');
                 const data = await res.json();
-                setSuggestions((data.coins || []).slice(0, 8).map((c: any) => ({
+                setSuggestions((data.coins || []).slice(0, 8).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                     id: c.id,
                     name: c.name,
                     symbol: c.symbol,
@@ -122,7 +124,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
         setFetchingPrice(true);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=${CG_KEY}`
             );
             if (res.ok) {
                 const data = await res.json();
@@ -278,7 +280,7 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="suggestions-dropdown">
                                 {suggestions.map((coin) => (
                                     <button key={coin.id} className="suggestion-item" onClick={() => selectCoin(coin)}>
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
+                                        {coin.thumb && <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>
@@ -591,3 +593,5 @@ export default function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(AirdropCalculator);

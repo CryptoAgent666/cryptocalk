@@ -13,6 +13,7 @@ import {
     Search,
     X,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -63,7 +64,7 @@ function getDateYearsAgo(years: number): string {
     return d.toISOString().split('T')[0];
 }
 
-export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
+function DCACalculator({ lang = 'en' }: { lang?: string }) {
     // Coin search
     const [coinSearch, setCoinSearch] = useState('');
     const [selectedCoin, setSelectedCoin] = useState<CoinSuggestion | null>(POPULAR_COINS[0]);
@@ -110,7 +111,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
             setSuggestions(
-                (data.coins || []).slice(0, 8).map((c: any) => ({
+                (data.coins || []).slice(0, 8).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                     id: c.id,
                     name: c.name,
                     symbol: c.symbol,
@@ -136,7 +137,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
         setChartData([]);
     };
 
-    const clearSelectedCoin = (e: any) => {
+    const clearSelectedCoin = (e: React.MouseEvent) => {
         e.stopPropagation();
         setSelectedCoin(null);
         setCoinSearch('');
@@ -453,7 +454,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Selector */}
                     <div className="input-group" ref={searchRef}>
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="dca-coin-search">
                             <Search size={14} />
                             {getUiString(lang, 'CRYPTOCURRENCY')}
                         </label>
@@ -485,7 +486,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
                                             className="suggestion-item"
                                             onClick={() => selectCoin(s)}
                                         >
-                                            {s.thumb && <img src={s.thumb} alt="" className="suggestion-thumb" />}
+                                            {s.thumb && <img src={s.thumb} alt={s.name} className="suggestion-thumb" />}
                                             <span className="suggestion-name">{s.name}</span>
                                             <span className="suggestion-symbol">{s.symbol.toUpperCase()}</span>
                                         </div>
@@ -499,7 +500,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Start Date */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="dca-start-date">
                             <Calendar size={14} />
                             {getUiString(lang, 'START DATE')}
                         </label>
@@ -552,7 +553,7 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Amount per purchase */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="dca-amount">
                             <DollarSign size={14} />
                             {getUiString(lang, 'AMOUNT PER PURCHASE')}
                         </label>
@@ -731,3 +732,5 @@ export default function DCACalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(DCACalculator);

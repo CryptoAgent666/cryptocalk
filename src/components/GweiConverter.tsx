@@ -8,6 +8,7 @@ import {
     Fuel,
     Zap,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const UNITS = [
     { id: 'wei', label: 'Wei', exp: 0, alias: '' },
@@ -93,7 +94,7 @@ function formatDisplay(val: string, maxDecimals: number = 18): string {
     return trimmed ? `${formatted}.${trimmed}` : formatted;
 }
 
-export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
+function GweiConverter({ lang = 'en' }: { lang?: string }) {
     const [amount, setAmount] = useState('1');
     const [selectedUnit, setSelectedUnit] = useState('gwei');
     const [ethPrice, setEthPrice] = useState('3000');
@@ -108,7 +109,7 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
     const fetchEthPrice = useCallback(async () => {
         setFetchingPrice(true);
         try {
-            const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&x_cg_demo_api_key=REMOVED_COINGECKO_KEY');
+            const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`);
             if (!res.ok) throw new Error('Failed');
             const data = await res.json();
             if (data.ethereum?.usd) {
@@ -355,3 +356,5 @@ export default function GweiConverter({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(GweiConverter);

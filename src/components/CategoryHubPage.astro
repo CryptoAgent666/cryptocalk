@@ -15,7 +15,7 @@ interface Props {
 const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated, bodyCopy } = Astro.props as Props;
 ---
 
-<main class="category-main">
+<main id="main-content" class="category-main">
   <section class="category-hero">
     <div class="hero-breadcrumbs" aria-label="Breadcrumb">
       <a href={homeHref} class="crumb-link">

@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Info, PieChart, Plus, RotateCcw, Trash2 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface AssetRow {
   id: string;
@@ -46,7 +47,7 @@ const REBALANCING_SCENARIOS = [
 
 
 
-export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }) {
+function RebalancingCalculator({ lang = 'en' }: { lang?: string }) {
   function formatUSD(value: number): string {
     return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
       style: 'currency',
@@ -335,3 +336,5 @@ export default function RebalancingCalculator({ lang = 'en' }: { lang?: string }
     </div>
   );
 }
+
+export default withErrorBoundary(RebalancingCalculator);

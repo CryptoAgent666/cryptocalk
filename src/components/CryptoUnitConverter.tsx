@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ArrowRightLeft, Info, Layers, RotateCcw } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 type AssetKey = 'BTC' | 'ETH' | 'SOL' | 'USDT';
 
@@ -40,7 +41,7 @@ function formatNum(value: number): string {
   return value.toLocaleString('en-US', { maximumFractionDigits: 12 });
 }
 
-export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) {
+function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) {
   const [asset, setAsset] = useState<AssetKey>('BTC');
   const [amount, setAmount] = useState('1');
   const [fromUnit, setFromUnit] = useState('btc');
@@ -194,3 +195,5 @@ export default function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) 
     </div>
   );
 }
+
+export default withErrorBoundary(CryptoUnitConverter);
