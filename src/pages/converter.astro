@@ -138,28 +138,28 @@ import '../styles/calculator-page.css';
 
         <h2>Frequently Asked Questions</h2>
         <details>
-          <summary>How often are prices updated?</summary>
-          <p>Prices are fetched from CoinGecko's API each time you load the page or click the Refresh button. CoinGecko updates prices every 1-2 minutes by aggregating data from over 900 cryptocurrency exchanges worldwide.</p>
+          <summary>How much is 1 Bitcoin worth in US dollars right now?</summary>
+          <p>Bitcoin's price changes every few seconds. This converter fetches real-time data from CoinGecko, which aggregates prices across 900+ exchanges. Select BTC and USD, enter 1, and you will see the current global average price. Prices update each time you load the page or click the Refresh button, with CoinGecko updating every 1-2 minutes.</p>
         </details>
         <details>
-          <summary>Why might the price differ from my exchange?</summary>
-          <p>CoinGecko shows a volume-weighted average price across all exchanges. Individual exchanges may have slightly different prices due to liquidity depth, regional demand, and the specific maker/taker ratios at that moment. Differences are typically small (under 0.5%) for major coins.</p>
+          <summary>How do I convert Bitcoin to my local currency?</summary>
+          <p>Select Bitcoin (BTC) in the "From" field, then choose your local currency from the "To" dropdown. This converter supports 10+ fiat currencies including USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR, and RUB. Enter any amount of BTC and the equivalent fiat value appears instantly using live exchange rates.</p>
         </details>
         <details>
-          <summary>Can I convert between two cryptocurrencies?</summary>
-          <p>This converter handles crypto-to-fiat conversions. To calculate crypto-to-crypto values, convert both coins to the same fiat currency and compare. For example, to find how much ETH equals 1 BTC, convert both to USD and divide.</p>
+          <summary>Why is the crypto price different on this converter vs my exchange?</summary>
+          <p>This converter shows a volume-weighted global average from 900+ exchanges via CoinGecko. Your specific exchange may show a slightly different price due to local liquidity, regional demand, and order book depth. Differences are typically under 0.5% for major coins like BTC and ETH, but can reach 1-5% for low-cap tokens on smaller exchanges.</p>
         </details>
         <details>
-          <summary>Is this converter free to use?</summary>
-          <p>Yes, CryptoCalk is completely free with no signup required. We use CoinGecko's API to provide accurate, real-time pricing data for over 500 cryptocurrencies and 10+ fiat currencies.</p>
+          <summary>How many satoshis are in 1 Bitcoin?</summary>
+          <p>One Bitcoin equals 100,000,000 satoshis (100 million). A satoshi is the smallest unit of Bitcoin. At a BTC price of $70,000, one satoshi equals $0.0007. This converter lets you enter fractional BTC amounts (like 0.001 BTC) to see the exact fiat equivalent for any amount, down to the satoshi level.</p>
         </details>
         <details>
-          <summary>Does this converter include exchange fees?</summary>
-          <p>No, the converter shows the mid-market rate without fees. When you actually buy or sell crypto on an exchange, you will pay additional fees (typically 0.05-0.5% depending on the exchange and your volume tier). Use our <a href="/profit-calculator/">Profit Calculator</a> to factor in fees.</p>
+          <summary>Can I use this to convert Ethereum to USD?</summary>
+          <p>Yes. Search for Ethereum in the crypto dropdown, select it, and the converter will show the current ETH/USD rate. You can convert any amount in either direction -- enter ETH to see USD, or enter USD to see how much ETH you could buy. Over 500 cryptocurrencies are supported including SOL, XRP, DOGE, ADA, and all major tokens.</p>
         </details>
         <details>
-          <summary>What is the most accurate way to convert crypto?</summary>
-          <p>For the most accurate conversion, check the price directly on the exchange where you plan to trade. This converter provides an excellent reference rate based on the global average, but the actual price you get depends on your specific exchange, order type, and market conditions at the time of execution.</p>
+          <summary>Does this converter account for exchange fees when buying crypto?</summary>
+          <p>No, this shows the mid-market rate without fees. When you actually buy on an exchange, you will pay 0.05-0.6% in trading fees depending on the platform (Binance charges 0.1%, Coinbase up to 0.6%). The actual amount of crypto you receive will be slightly less than shown here. Use our <a href="/profit-calculator/">Profit Calculator</a> to factor in exact fees.</p>
         </details>
 
         <h2>Related Calculators</h2>
@@ -633,50 +633,50 @@ import '../styles/calculator-page.css';
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How often are prices updated?",
+      "name": "How much is 1 Bitcoin worth in US dollars right now?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Prices are fetched from CoinGecko's API each time you load the page or click the Refresh button. CoinGecko updates prices every 1-2 minutes from major exchanges."
+        "text": "Bitcoin's price changes every few seconds. This converter fetches real-time data from CoinGecko, which aggregates prices across 900+ exchanges. Select BTC and USD, enter 1, and you will see the current global average price updated every 1-2 minutes."
       }
     },
     {
       "@type": "Question",
-      "name": "Why might the price differ from my exchange?",
+      "name": "How do I convert Bitcoin to my local currency?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "CoinGecko shows an average price across all exchanges. Individual exchanges may have slightly different prices due to liquidity, trading volume, and regional demand."
+        "text": "Select Bitcoin (BTC) in the From field, then choose your local currency from the To dropdown. This converter supports 10+ fiat currencies including USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR, and RUB. Enter any amount for instant conversion using live exchange rates."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I convert between two cryptocurrencies?",
+      "name": "Why is the crypto price different on this converter vs my exchange?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "This converter handles crypto-to-fiat conversions. To calculate crypto-to-crypto, convert both to the same fiat currency and compare."
+        "text": "This converter shows a volume-weighted global average from 900+ exchanges via CoinGecko. Your specific exchange may show a slightly different price due to local liquidity and regional demand. Differences are typically under 0.5% for major coins but can reach 1-5% for low-cap tokens on smaller exchanges."
       }
     },
     {
       "@type": "Question",
-      "name": "Is this converter free to use?",
+      "name": "How many satoshis are in 1 Bitcoin?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, CryptoCalk is completely free with no signup required. We use CoinGecko's API for accurate, real-time pricing data."
+        "text": "One Bitcoin equals 100,000,000 satoshis (100 million). A satoshi is the smallest unit of Bitcoin. At a BTC price of $70,000, one satoshi equals $0.0007. This converter lets you enter fractional BTC amounts to see the exact fiat equivalent."
       }
     },
     {
       "@type": "Question",
-      "name": "Does this converter include exchange fees?",
+      "name": "Can I use this to convert Ethereum to USD?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No, the converter shows the mid-market rate without fees. When you buy or sell on an exchange, you will pay additional fees typically 0.05-0.5%."
+        "text": "Yes. Search for Ethereum in the crypto dropdown, select it, and the converter will show the current ETH/USD rate. Over 500 cryptocurrencies are supported including SOL, XRP, DOGE, ADA, and all major tokens."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the most accurate way to convert crypto?",
+      "name": "Does this converter account for exchange fees when buying crypto?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For the most accurate conversion, check the price directly on the exchange where you plan to trade. This converter provides a global average reference rate."
+        "text": "No, this shows the mid-market rate without fees. When you buy on an exchange, you will pay 0.05-0.6% in trading fees depending on the platform. The actual amount of crypto you receive will be slightly less than shown here."
       }
     }
   ]

@@ -181,33 +181,33 @@ import '../styles/calculator-page.css';
         <h2>Frequently Asked Questions</h2>
 
         <details>
-          <summary>What is the ideal risk per trade?</summary>
-          <p>Most professional traders risk between 1-2% of their account per trade. If you're a beginner, start with 0.5-1% until you've proven your strategy is profitable over at least 100 trades. Aggressive traders occasionally risk up to 3% on exceptional setups, but never risk more than 5% on a single trade, regardless of how confident you are. The math is clear: smaller risk per trade = longer survival during losing streaks = higher chance of long-term success.</p>
+          <summary>How do I calculate the right position size for a crypto trade?</summary>
+          <p>Divide your risk amount by the stop-loss distance as a percentage. For example, with a $10,000 account risking 2% ($200) and a 5% stop-loss distance, your position size is $200 / 0.05 = $4,000. This ensures you lose exactly $200 if your stop-loss is hit, regardless of the asset or leverage used. Enter your parameters in this position size calculator for instant results.</p>
         </details>
 
         <details>
-          <summary>How does leverage affect position size?</summary>
-          <p>Leverage doesn't change your dollar risk — it changes your margin requirement and liquidation price. With 10x leverage, you need only 1/10th of the position value as margin (collateral). However, your liquidation price is much closer to your entry, meaning a smaller adverse price move can forcibly close your position. The key is to calculate position size based on your risk amount and stop-loss distance first, then apply leverage to reduce margin required — not the other way around.</p>
+          <summary>What percentage of my account should I risk per trade?</summary>
+          <p>Professional traders risk 1-2% per trade. At 1% risk, you can survive 69 consecutive losses before a 50% drawdown. At 5% risk, just 13 losses wipe half your account. Beginners should start at 0.5-1% until their strategy proves profitable over at least 50-100 trades. Never exceed 3% on any single trade, no matter how strong the setup looks.</p>
         </details>
 
         <details>
-          <summary>What is a stop-loss and why do I need one?</summary>
-          <p>A stop-loss is a predetermined price level where you automatically exit a trade to limit losses. It's the single most important risk management tool in trading. Without a stop-loss, you're gambling, not trading — a single bad trade during a flash crash or unexpected news event can destroy your entire account. Always set your stop-loss before entering a position, and never move it further away once in the trade (moving it closer to lock in profits is acceptable).</p>
+          <summary>Does leverage increase my risk in crypto trading?</summary>
+          <p>Leverage itself does not increase your dollar risk if you keep position size constant. A $4,000 position at 1x and 10x leverage risks the same $200 at a 5% stop-loss. However, leverage moves your liquidation price closer to entry -- at 10x, a 10% drop liquidates you; at 50x, a 2% drop does. The danger is that liquidation can occur before your stop-loss triggers during flash crashes.</p>
         </details>
 
         <details>
-          <summary>Can I use this for spot and futures trading?</summary>
-          <p>Yes! The position size calculator works for both spot and futures/perpetuals trading on any cryptocurrency exchange including Binance, Bybit, OKX, Coinbase, Kraken, and more. For spot trading, set leverage to 1x. For futures or perpetual contracts, adjust the leverage to match your intended position (common levels are 5x, 10x, 20x). The underlying math remains the same — you're calculating how much capital to allocate based on your risk tolerance and stop-loss distance.</p>
+          <summary>What is a good risk-to-reward ratio for crypto trading?</summary>
+          <p>A minimum 1:2 risk-to-reward ratio is recommended for most strategies. This means risking $100 to potentially make $200. With a 1:2 R:R, you only need a 34% win rate to break even. Swing traders often target 1:3 to 1:5 R:R. Higher ratios are better mathematically but harder to achieve since targets are further away and less likely to be reached.</p>
         </details>
 
         <details>
-          <summary>Should I adjust position size based on volatility?</summary>
-          <p>Absolutely. High-volatility assets like small-cap altcoins require smaller position sizes because wider stop-losses are needed to avoid getting stopped out by normal price fluctuation. For example, a Bitcoin trade might use a 3% stop-loss, while a low-cap altcoin might need an 8-10% stop to account for volatility. If you maintain the same risk percentage (say 2% of your account), your position size will automatically be smaller on the volatile altcoin. Some traders also reduce their risk percentage from 2% to 1% when trading highly volatile assets.</p>
+          <summary>How do I size my position when trading volatile altcoins?</summary>
+          <p>Volatile altcoins require wider stop-losses (8-15% vs 2-5% for Bitcoin) to avoid being stopped out by normal price noise. Since position size = risk amount / stop-loss distance, a wider stop automatically produces a smaller position. For a $200 risk with a 10% stop-loss, your position is only $2,000 versus $4,000 with a 5% stop. Some traders also reduce their risk percentage from 2% to 1% for altcoins.</p>
         </details>
 
         <details>
-          <summary>How do I handle multiple open positions?</summary>
-          <p>Your total risk across all open positions should typically not exceed 10-15% of your account, even if each individual trade risks only 1-2%. If you have 5 trades open each risking 2%, that's 10% total capital at risk. Be especially careful with correlated trades — five long positions on different altcoins are not truly diversified if they all dump when Bitcoin drops. Consider your aggregate exposure across all positions, and reduce individual position sizes if you're running multiple concurrent trades.</p>
+          <summary>Can I use the same position size for every trade?</summary>
+          <p>No, and this is one of the most common beginner mistakes. Each trade has a different stop-loss distance based on the chart setup, so position size must be recalculated every time. A trade with a tight 2% stop can be twice as large as one requiring a 4% stop while risking the same dollar amount. Always calculate position size fresh using your specific entry price, stop-loss level, and risk percentage.</p>
         </details>
 
         <h2>Related Calculators</h2>
@@ -271,50 +271,50 @@ import '../styles/calculator-page.css';
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is the ideal risk per trade?",
+        "name": "How do I calculate the right position size for a crypto trade?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most professional traders risk between 1-2% of their account per trade. If you're a beginner, start with 0.5-1% until you've proven your strategy is profitable over at least 100 trades. Never risk more than 5% on a single trade, regardless of how confident you are."
+          "text": "Divide your risk amount by the stop-loss distance as a percentage. For example, with a $10,000 account risking 2% ($200) and a 5% stop-loss distance, your position size is $200 / 0.05 = $4,000. This ensures you lose exactly $200 if your stop-loss is hit."
         }
       },
       {
         "@type": "Question",
-        "name": "How does leverage affect position size?",
+        "name": "What percentage of my account should I risk per trade?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Leverage doesn't change your dollar risk — it changes your margin requirement and liquidation price. With 10x leverage, you need only 1/10th of the position value as margin, but your liquidation price is much closer to your entry, meaning a smaller adverse price move can forcibly close your position."
+          "text": "Professional traders risk 1-2% per trade. At 1% risk, you can survive 69 consecutive losses before a 50% drawdown. At 5% risk, just 13 losses wipe half your account. Beginners should start at 0.5-1% until their strategy proves profitable."
         }
       },
       {
         "@type": "Question",
-        "name": "What is a stop-loss and why do I need one?",
+        "name": "Does leverage increase my risk in crypto trading?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A stop-loss is a predetermined price level where you automatically exit a trade to limit losses. It's the single most important risk management tool in trading. Without a stop-loss, a single bad trade during a flash crash or unexpected news event can destroy your entire account."
+          "text": "Leverage itself does not increase your dollar risk if you keep position size constant. A $4,000 position at 1x and 10x leverage risks the same $200 at a 5% stop-loss. However, leverage moves your liquidation price closer to entry, and liquidation can occur before your stop-loss triggers during flash crashes."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I use this for spot and futures trading?",
+        "name": "What is a good risk-to-reward ratio for crypto trading?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! The position size calculator works for both spot and futures/perpetuals trading on any cryptocurrency exchange including Binance, Bybit, OKX, Coinbase, Kraken, and more. For spot trading, set leverage to 1x. For futures or perpetual contracts, adjust the leverage to match your intended position."
+          "text": "A minimum 1:2 risk-to-reward ratio is recommended. This means risking $100 to potentially make $200. With a 1:2 R:R, you only need a 34% win rate to break even. Swing traders often target 1:3 to 1:5 R:R."
         }
       },
       {
         "@type": "Question",
-        "name": "Should I adjust position size based on volatility?",
+        "name": "How do I size my position when trading volatile altcoins?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. High-volatility assets like small-cap altcoins require smaller position sizes because wider stop-losses are needed to avoid getting stopped out by normal price fluctuation. If you maintain the same risk percentage, your position size will automatically be smaller on volatile assets."
+          "text": "Volatile altcoins require wider stop-losses (8-15% vs 2-5% for Bitcoin). Since position size = risk amount / stop-loss distance, a wider stop automatically produces a smaller position. Some traders also reduce their risk percentage from 2% to 1% for altcoins."
         }
       },
       {
         "@type": "Question",
-        "name": "How do I handle multiple open positions?",
+        "name": "Can I use the same position size for every trade?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Your total risk across all open positions should typically not exceed 10-15% of your account, even if each individual trade risks only 1-2%. Be especially careful with correlated trades — five long positions on different altcoins are not truly diversified if they all dump when Bitcoin drops."
+          "text": "No. Each trade has a different stop-loss distance based on the chart setup, so position size must be recalculated every time. A trade with a tight 2% stop can be twice as large as one requiring a 4% stop while risking the same dollar amount."
         }
       }
     ]

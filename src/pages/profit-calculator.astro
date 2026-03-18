@@ -199,28 +199,28 @@ import '../styles/calculator-page.css';
 
         <h2>Frequently Asked Questions</h2>
         <details>
-          <summary>How accurate is this calculator?</summary>
-          <p>This calculator provides precise results based on the prices and fees you input. For real trades, actual results may vary slightly due to slippage, spread, and additional exchange fees.</p>
+          <summary>How much profit will I make if Bitcoin goes up 10%?</summary>
+          <p>That depends on your investment amount and fees. If you invested $1,000 in Bitcoin and it rises 10%, your gross profit is $100. After typical exchange fees of 0.1% on entry and exit ($2 total), your net profit is about $98 with an ROI of 9.8%. Use this crypto profit calculator to model any percentage gain with your exact investment amount and fee structure.</p>
         </details>
         <details>
-          <summary>What fees should I enter?</summary>
-          <p>Enter the trading fee percentage charged by your exchange. For example, Binance charges 0.1% for spot trading, while Coinbase charges up to 0.6%. Default is set to 0.1%.</p>
+          <summary>How do I calculate my crypto profit and loss?</summary>
+          <p>Multiply your number of coins by the difference between your sell price and buy price, then subtract trading fees. For example, if you bought 0.5 ETH at $2,000 and sold at $2,500, your gross profit is $250 minus fees on both trades. Our calculator handles this automatically, including separate entry and exit fee inputs.</p>
         </details>
         <details>
-          <summary>How do Short positions work?</summary>
-          <p>In a short position, you profit when the price goes down. You essentially borrow and sell at a higher price, then buy back at a lower price. The profit formula is reversed: Profit = (Entry Price − Exit Price) × Quantity.</p>
+          <summary>What is a good ROI on crypto?</summary>
+          <p>ROI benchmarks vary by strategy and timeframe. Day traders typically target 1-5% per trade, while swing traders aim for 10-30% over days or weeks. Long-term holders have historically earned 50-200%+ annually on Bitcoin during bull cycles, though past performance does not guarantee future results. An ROI above 100% in a single year is considered exceptional.</p>
         </details>
         <details>
-          <summary>Does this include taxes?</summary>
-          <p>No. This calculator shows your pre-tax profit. For tax estimation, use our <a href="/tax-calculator/">Crypto Tax Calculator</a>.</p>
+          <summary>Should I calculate profit before or after taxes?</summary>
+          <p>This calculator shows pre-tax profit. Your actual take-home profit depends on your country's capital gains tax rate, which ranges from 0% (Germany for holdings over 1 year) to 37% (US short-term). For after-tax estimates, use our <a href="/tax-calculator/">Crypto Tax Calculator</a> alongside this tool to see what you actually keep.</p>
         </details>
         <details>
-          <summary>How do I account for slippage?</summary>
-          <p>Slippage is the difference between the expected price and the actual filled price. To account for it, use your actual filled price from your exchange's order history rather than the market price you saw when placing the order. For future trades, you can estimate slippage by adjusting your exit price down by 0.1% to 0.5% for market orders on liquid pairs, or more for low-liquidity coins.</p>
+          <summary>How do exchange fees affect my crypto profit?</summary>
+          <p>Exchange fees reduce your profit on every trade. With 0.1% maker fees on Binance, a $10,000 round-trip trade costs $20 in fees. On Coinbase at 0.6%, that same trade costs $120 in fees. Over 50 trades per month, the difference adds up to $5,000 annually. Always factor in both entry and exit fees when calculating true net profit.</p>
         </details>
         <details>
-          <summary>What's the difference between realized and unrealized profit?</summary>
-          <p>Unrealized profit (also called paper profit) is the profit you would make if you sold at the current market price, but you haven't sold yet. Realized profit is the actual profit you locked in by closing your position. This calculator shows realized profit if you enter both entry and exit prices, or unrealized profit if you only enter an entry price and use the current market price as your exit.</p>
+          <summary>Can I calculate profit on short positions?</summary>
+          <p>Yes. Toggle to Short mode and the calculator reverses the formula: profit equals the difference between your entry (higher) and exit (lower) price multiplied by quantity, minus fees. For example, shorting 1 BTC at $70,000 and closing at $63,000 yields $7,000 gross profit. Short selling is available on futures exchanges like Binance and Bybit.</p>
         </details>
 
         <h2>Related Calculators</h2>
@@ -720,50 +720,50 @@ import '../styles/calculator-page.css';
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How accurate is this calculator?",
+      "name": "How much profit will I make if Bitcoin goes up 10%?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "This calculator provides precise results based on the prices and fees you input. For real trades, actual results may vary slightly due to slippage, spread, and additional exchange fees."
+        "text": "That depends on your investment amount and fees. If you invested $1,000 in Bitcoin and it rises 10%, your gross profit is $100. After typical exchange fees of 0.1% on entry and exit ($2 total), your net profit is about $98 with an ROI of 9.8%. Use this crypto profit calculator to model any percentage gain with your exact investment amount and fee structure."
       }
     },
     {
       "@type": "Question",
-      "name": "What fees should I enter?",
+      "name": "How do I calculate my crypto profit and loss?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Enter the trading fee percentage charged by your exchange. For example, Binance charges 0.1% for spot trading, while Coinbase charges up to 0.6%. Default is set to 0.1%."
+        "text": "Multiply your number of coins by the difference between your sell price and buy price, then subtract trading fees. For example, if you bought 0.5 ETH at $2,000 and sold at $2,500, your gross profit is $250 minus fees on both trades. Our calculator handles this automatically, including separate entry and exit fee inputs."
       }
     },
     {
       "@type": "Question",
-      "name": "How do Short positions work?",
+      "name": "What is a good ROI on crypto?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In a short position, you profit when the price goes down. You essentially borrow and sell at a higher price, then buy back at a lower price."
+        "text": "ROI benchmarks vary by strategy and timeframe. Day traders typically target 1-5% per trade, while swing traders aim for 10-30% over days or weeks. Long-term holders have historically earned 50-200%+ annually on Bitcoin during bull cycles, though past performance does not guarantee future results."
       }
     },
     {
       "@type": "Question",
-      "name": "Does this include taxes?",
+      "name": "Should I calculate profit before or after taxes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. This calculator shows your pre-tax profit. For tax estimation, use our Crypto Tax Calculator."
+        "text": "This calculator shows pre-tax profit. Your actual take-home profit depends on your country's capital gains tax rate, which ranges from 0% (Germany for holdings over 1 year) to 37% (US short-term). Use the Crypto Tax Calculator alongside this tool to see what you actually keep."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I account for slippage?",
+      "name": "How do exchange fees affect my crypto profit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Slippage is the difference between the expected price and the actual filled price. To account for it, use your actual filled price from your exchange's order history rather than the market price you saw when placing the order. For future trades, you can estimate slippage by adjusting your exit price down by 0.1% to 0.5% for market orders on liquid pairs, or more for low-liquidity coins."
+        "text": "Exchange fees reduce your profit on every trade. With 0.1% maker fees on Binance, a $10,000 round-trip trade costs $20 in fees. On Coinbase at 0.6%, that same trade costs $120. Over 50 trades per month, the difference adds up to $5,000 annually. Always factor in both entry and exit fees when calculating true net profit."
       }
     },
     {
       "@type": "Question",
-      "name": "What's the difference between realized and unrealized profit?",
+      "name": "Can I calculate profit on short positions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Unrealized profit (also called paper profit) is the profit you would make if you sold at the current market price, but you haven't sold yet. Realized profit is the actual profit you locked in by closing your position. This calculator shows realized profit if you enter both entry and exit prices, or unrealized profit if you only enter an entry price and use the current market price as your exit."
+        "text": "Yes. Toggle to Short mode and the calculator reverses the formula: profit equals the difference between your entry (higher) and exit (lower) price multiplied by quantity, minus fees. Short selling is available on futures exchanges like Binance and Bybit."
       }
     }
   ]

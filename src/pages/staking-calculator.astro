@@ -8,6 +8,32 @@ import StakingRewardsCalculator from '../components/StakingRewardsCalculator.tsx
   slug="staking-calculator"
   title="Crypto Staking Calculator"
   description="Calculate daily, weekly, and annual staking rewards after validator commission and token-price assumptions."
+  faq={[
+    {
+      q: "How much can I earn staking crypto per year?",
+      a: "Annual staking rewards vary by network: Ethereum pays 3-5% APY, Solana 6-8%, Cosmos 15-20%, and Polkadot 10-15%. On a $10,000 ETH stake at 4% APY, you would earn roughly $400/year in ETH rewards before validator commission. Use this staking calculator to model exact returns with your amount, APY, and compounding frequency."
+    },
+    {
+      q: "Is crypto staking worth it in 2026?",
+      a: "Staking is worth it for long-term holders who would otherwise leave coins idle. You earn passive income on assets you already own, and rewards compound over time. However, staking rewards are paid in the native token, so a 5% APY is meaningless if the token price drops 50%. Consider staking only assets you plan to hold regardless of short-term price action."
+    },
+    {
+      q: "What is the difference between APY and APR in staking?",
+      a: "APR (Annual Percentage Rate) is the simple interest rate without compounding. APY (Annual Percentage Yield) includes the effect of compounding rewards. A 5% APR compounded daily results in roughly 5.13% APY. The difference grows with higher rates and more frequent compounding. This calculator lets you compare both and adjust compounding frequency."
+    },
+    {
+      q: "Are staking rewards taxable income?",
+      a: "Yes, in most countries. In the US, staking rewards are taxed as ordinary income at fair market value when received (10-37% tax rate), then subject to capital gains tax when you sell the rewarded tokens. Germany exempts staking rewards if held for more than 1 year. Always track the USD value of each reward payout for accurate tax reporting."
+    },
+    {
+      q: "What is validator commission and how does it affect my rewards?",
+      a: "Validator commission is the fee charged by the node operator who processes your staked transactions. Typical commissions range from 5-15% of your rewards. A 10% commission on an 8% APY network means you effectively earn 7.2% APY. Choosing a validator with low commission and high uptime directly increases your net staking income."
+    },
+    {
+      q: "Can I lose money staking crypto?",
+      a: "You cannot lose your staked principal through the staking mechanism itself, but you face other risks. Slashing penalties on some networks (like Ethereum) can reduce your stake if your validator misbehaves. Token price depreciation can make your position worth less in fiat despite earning rewards. Lockup periods may prevent you from selling during crashes. Always research slashing conditions and unstaking timelines before committing."
+    }
+  ]}
 >
   <StakingRewardsCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>

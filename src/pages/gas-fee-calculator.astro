@@ -176,33 +176,33 @@ import '../styles/calculator-page.css';
         <h2>Frequently Asked Questions</h2>
 
         <details>
-          <summary>Why are Ethereum gas fees so high?</summary>
-          <p>Ethereum mainnet has limited block space — approximately 15 million gas per block, with a new block every 12 seconds. When demand for transactions exceeds this capacity, users compete in a fee market where higher fees get priority. Popular NFT mints, DeFi activity, and network congestion during bull markets can push fees above $50-100 per transaction. Layer 2 networks solve this by processing transactions off-chain and batching them for cheaper Ethereum settlement.</p>
+          <summary>How much does it cost to send Ethereum right now?</summary>
+          <p>A simple ETH transfer uses exactly 21,000 gas units. At a typical base fee of 1-10 Gwei during low congestion, the cost ranges from $0.05 to $2.00. During peak activity, fees can spike to $10-50. This gas fee calculator uses live Etherscan data to show you the current cost at slow, standard, and fast confirmation speeds. Layer 2 networks like Arbitrum and Base reduce this to under $0.01.</p>
         </details>
 
         <details>
-          <summary>What's the difference between gas limit and gas price?</summary>
-          <p>The gas limit is the maximum number of gas units you authorize a transaction to consume (e.g., 21,000 for ETH transfers, 200,000 for a token swap). It's like a spending cap. Gas price is the amount you're willing to pay per gas unit, measured in Gwei. Multiply gas limit by gas price to get the maximum fee. If your transaction uses less gas than the limit, you're refunded the difference. Setting the limit too low causes transaction failure; setting it too high doesn't cost extra but locks up funds temporarily.</p>
+          <summary>Why is swapping tokens so much more expensive than a simple transfer?</summary>
+          <p>A simple ETH transfer uses 21,000 gas, but a Uniswap token swap consumes 150,000-300,000 gas because it executes complex smart contract logic: token approval, price calculation, liquidity pool updates, and token transfers. More complex routes with multiple hops use even more gas. This is why a swap can cost 7-15x more than a basic transfer. Using DEX aggregators like 1inch can find gas-optimal routes.</p>
         </details>
 
         <details>
-          <summary>Do I get a refund for unused gas?</summary>
-          <p>Yes, absolutely. Wallets set a gas limit higher than typically needed as a safety buffer. If you set a 100,000 gas limit but the transaction only consumes 73,000 gas, you're automatically refunded for the unused 27,000 gas units. Only the gas actually consumed is deducted from your wallet. This is why you might notice your final transaction cost is lower than the initial estimate shown before confirming.</p>
+          <summary>Which blockchain has the cheapest gas fees?</summary>
+          <p>Solana has the lowest fees at $0.001-0.01 per transaction. Among EVM chains, Base and Polygon offer the cheapest fees at $0.001-0.10 per swap. Arbitrum and Optimism cost $0.01-1.00 per swap. BNB Chain ranges from $0.05-1.00. Ethereum mainnet is the most expensive at $1-200 per swap depending on congestion. All these networks are supported in this gas fee calculator for side-by-side comparison.</p>
         </details>
 
         <details>
-          <summary>When are gas fees lowest?</summary>
-          <p>Gas fees on Ethereum are typically lowest during weekends, especially Saturday and Sunday mornings in UTC time zones. Weekday nights (after 10 PM Eastern Time) also see reduced activity. Fees spike during US and European trading hours (9 AM - 5 PM ET/GMT) when DeFi trading volume is highest. Major events like popular NFT drops or protocol launches can cause temporary fee spikes regardless of time. Use gas tracking tools to identify low-fee windows before executing expensive transactions.</p>
+          <summary>What is the best time to make Ethereum transactions?</summary>
+          <p>Gas fees are lowest on weekends (especially Saturday and Sunday mornings UTC) and weekday nights after 10 PM Eastern Time. Fees spike during US and European business hours (9 AM - 5 PM ET) when DeFi trading volume peaks. Avoid transacting during popular NFT mints, major protocol launches, or sudden market crashes, which can push fees above $100 per transaction.</p>
         </details>
 
         <details>
-          <summary>Why do failed transactions still cost gas?</summary>
-          <p>When you submit a transaction, validators execute the smart contract code to process it. Even if the transaction fails (due to insufficient balance, slippage issues, or contract errors), validators already spent computational resources attempting to execute it. Gas fees compensate validators for that work. Think of it like paying a delivery fee even if the package can't be delivered — the driver still drove to your address. Always double-check transaction parameters to avoid costly failures.</p>
+          <summary>What is Gwei and how does it relate to ETH?</summary>
+          <p>Gwei is a denomination of Ether, where 1 Gwei = 0.000000001 ETH (one billionth of an ETH). Gas prices are measured in Gwei because full ETH amounts would be inconveniently small decimals. A 10 Gwei gas price on a 21,000 gas transaction costs 0.00021 ETH. When ETH is $2,500, that equals about $0.52. The higher the Gwei price, the more expensive your transaction and the faster it will be confirmed.</p>
         </details>
 
         <details>
-          <summary>How do Layer 2 networks reduce gas fees?</summary>
-          <p>Layer 2 networks like Arbitrum, Optimism, and Base process transactions off the Ethereum mainnet, batching hundreds or thousands of transactions together before submitting a single proof to Ethereum for final settlement. This spreads Ethereum's high gas costs across many users, reducing individual fees by 10-100×. They inherit Ethereum's security because all transaction data is eventually posted to mainnet, but users pay only a fraction of the cost since computation happens on faster, cheaper infrastructure.</p>
+          <summary>How do I save money on Ethereum gas fees?</summary>
+          <p>Use Layer 2 networks (Arbitrum, Base, Optimism) for 10-100x lower fees while maintaining Ethereum security. Time transactions for weekends or late nights when fees drop 50-80%. Batch multiple operations into single transactions when possible. Set custom gas limits instead of accepting wallet defaults. Avoid failed transactions by double-checking approvals and slippage settings before confirming.</p>
         </details>
 
         <h2>Related Calculators</h2>
@@ -266,50 +266,50 @@ import '../styles/calculator-page.css';
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Why are Ethereum gas fees so high?",
+        "name": "How much does it cost to send Ethereum right now?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ethereum mainnet has limited block space — approximately 15 million gas per block, with a new block every 12 seconds. When demand for transactions exceeds this capacity, users compete in a fee market where higher fees get priority. Popular NFT mints, DeFi activity, and network congestion during bull markets can push fees above $50-100 per transaction. Layer 2 networks solve this by processing transactions off-chain and batching them for cheaper Ethereum settlement."
+          "text": "A simple ETH transfer uses 21,000 gas units. At a typical base fee of 1-10 Gwei during low congestion, the cost ranges from $0.05 to $2.00. During peak activity, fees can spike to $10-50. Layer 2 networks like Arbitrum and Base reduce this to under $0.01."
         }
       },
       {
         "@type": "Question",
-        "name": "What's the difference between gas limit and gas price?",
+        "name": "Why is swapping tokens so much more expensive than a simple transfer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The gas limit is the maximum number of gas units you authorize a transaction to consume (e.g., 21,000 for ETH transfers, 200,000 for a token swap). It's like a spending cap. Gas price is the amount you're willing to pay per gas unit, measured in Gwei. Multiply gas limit by gas price to get the maximum fee. If your transaction uses less gas than the limit, you're refunded the difference."
+          "text": "A simple ETH transfer uses 21,000 gas, but a Uniswap token swap consumes 150,000-300,000 gas because it executes complex smart contract logic: token approval, price calculation, liquidity pool updates, and token transfers. A swap can cost 7-15x more than a basic transfer."
         }
       },
       {
         "@type": "Question",
-        "name": "Do I get a refund for unused gas?",
+        "name": "Which blockchain has the cheapest gas fees?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, absolutely. Wallets set a gas limit higher than typically needed as a safety buffer. If you set a 100,000 gas limit but the transaction only consumes 73,000 gas, you're automatically refunded for the unused 27,000 gas units. Only the gas actually consumed is deducted from your wallet."
+          "text": "Solana has the lowest fees at $0.001-0.01 per transaction. Among EVM chains, Base and Polygon offer the cheapest at $0.001-0.10 per swap. Arbitrum and Optimism cost $0.01-1.00. Ethereum mainnet is the most expensive at $1-200 per swap depending on congestion."
         }
       },
       {
         "@type": "Question",
-        "name": "When are gas fees lowest?",
+        "name": "What is the best time to make Ethereum transactions?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Gas fees on Ethereum are typically lowest during weekends, especially Saturday and Sunday mornings in UTC time zones. Weekday nights (after 10 PM Eastern Time) also see reduced activity. Fees spike during US and European trading hours (9 AM - 5 PM ET/GMT) when DeFi trading volume is highest."
+          "text": "Gas fees are lowest on weekends (especially Saturday and Sunday mornings UTC) and weekday nights after 10 PM Eastern Time. Fees spike during US and European business hours when DeFi trading volume peaks. Avoid transacting during popular NFT mints or sudden market crashes."
         }
       },
       {
         "@type": "Question",
-        "name": "Why do failed transactions still cost gas?",
+        "name": "What is Gwei and how does it relate to ETH?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "When you submit a transaction, validators execute the smart contract code to process it. Even if the transaction fails (due to insufficient balance, slippage issues, or contract errors), validators already spent computational resources attempting to execute it. Gas fees compensate validators for that work."
+          "text": "Gwei is a denomination of Ether, where 1 Gwei = 0.000000001 ETH (one billionth of an ETH). Gas prices are measured in Gwei because full ETH amounts would be inconveniently small decimals. A 10 Gwei gas price on a 21,000 gas transaction costs 0.00021 ETH."
         }
       },
       {
         "@type": "Question",
-        "name": "How do Layer 2 networks reduce gas fees?",
+        "name": "How do I save money on Ethereum gas fees?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Layer 2 networks like Arbitrum, Optimism, and Base process transactions off the Ethereum mainnet, batching hundreds or thousands of transactions together before submitting a single proof to Ethereum for final settlement. This spreads Ethereum's high gas costs across many users, reducing individual fees by 10-100×."
+          "text": "Use Layer 2 networks (Arbitrum, Base, Optimism) for 10-100x lower fees. Time transactions for weekends or late nights when fees drop 50-80%. Batch multiple operations into single transactions. Set custom gas limits instead of accepting wallet defaults. Avoid failed transactions by double-checking approvals."
         }
       }
     ]
