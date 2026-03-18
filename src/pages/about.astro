@@ -4,6 +4,15 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { Mail, Briefcase, Code, Award, Twitter, Linkedin, Instagram, Globe } from 'lucide-react';
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cryptocalk.com/' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://cryptocalk.com/about/' },
+  ],
+};
+
 const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
@@ -12,7 +21,7 @@ const webPageSchema = {
     'Learn about CryptoCalk and Konstantin Iakovlev, the founder and developer behind our suite of fast, accurate crypto calculators.',
   url: 'https://cryptocalk.com/about/',
   inLanguage: 'en',
-  dateModified: '2026-03-09',
+  dateModified: '2026-03-18',
   mainEntity: {
     '@type': 'Person',
     '@id': 'https://cryptocalk.com/about/#founder',
@@ -145,6 +154,7 @@ const webPageSchema = {
     </div>
   </div>
   <SiteFooter lang="en" />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>
 

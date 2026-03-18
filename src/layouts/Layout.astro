@@ -51,16 +51,34 @@ function normalizePath(pathname: string): string {
 const isCanonicalPath = normalizePath(Astro.url.pathname) === normalizePath(canonicalPath);
 const shouldNoindex = noindex || !isCanonicalPath;
 
-// BreadcrumbList for EN calculator pages.
+// BreadcrumbList for EN calculator pages — 3-level: Home > Category > Calculator.
 // Localized pages generate their own schemas in LocalizedCalculatorPage.astro.
 // WebApplication schemas live inline in each EN .astro page.
+import { CALCULATOR_CATEGORY } from '../data/calculator-category-map';
+
+const CATEGORY_NAMES: Record<string, string> = {
+  'profit-loss': 'Profit & Loss',
+  'converters': 'Converters',
+  'mining': 'Mining',
+  'defi-yield': 'DeFi & Yield',
+  'tax-reporting': 'Tax & Reporting',
+  'investment': 'Investment',
+  'trading-tools': 'Trading Tools',
+  'gas-fees': 'Gas & Fees',
+};
+
 const calcName = title.split(' — ')[0].split(' | ')[0].trim();
+const calcSlug = basePath.replace(/^\//, '').replace(/\/$/, '');
+const categorySlug = CALCULATOR_CATEGORY[calcSlug] ?? null;
+const categoryName = categorySlug ? CATEGORY_NAMES[categorySlug] : null;
+
 const breadcrumbSchema = pageType === 'calculator' ? {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cryptocalk.com/' },
-    { '@type': 'ListItem', position: 2, name: calcName, item: canonicalUrl },
+    ...(categorySlug && categoryName ? [{ '@type': 'ListItem', position: 2, name: categoryName, item: `https://cryptocalk.com/calculators/${categorySlug}/` }] : []),
+    { '@type': 'ListItem', position: categorySlug ? 3 : 2, name: calcName, item: canonicalUrl },
   ],
 } : null;
 ---
@@ -165,6 +183,8 @@ const breadcrumbSchema = pageType === 'calculator' ? {
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="CryptoCalk" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@yakovlevka3" />
+    <meta name="twitter:creator" content="@yakovlevka3" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://cryptocalk.com/og-image.png" />
