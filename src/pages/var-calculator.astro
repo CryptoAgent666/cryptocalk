@@ -8,6 +8,32 @@ import VarCalculator from '../components/VarCalculator.tsx';
   slug="var-calculator"
   title="Value at Risk (VaR) Calculator"
   description="Estimate portfolio downside risk with parametric VaR and expected shortfall (CVaR) across confidence levels."
+  faq={[
+    {
+      q: "What does 95% Value at Risk (VaR) mean for my crypto portfolio?",
+      a: "A 95% daily VaR of $5,000 means there is a 5% chance (1 in 20 trading days) that your portfolio will lose more than $5,000 in a single day. It does not tell you how much worse the loss could be beyond that threshold — that is what CVaR (Expected Shortfall) measures."
+    },
+    {
+      q: "Is VaR reliable for cryptocurrency portfolios?",
+      a: "VaR has known limitations for crypto because it assumes normally distributed returns, while crypto returns have fat tails and extreme events occur more often than the model predicts. Always supplement VaR with CVaR (Expected Shortfall) and stress testing for a more complete risk picture."
+    },
+    {
+      q: "What confidence level should I use — 95% or 99%?",
+      a: "95% VaR is standard for daily risk monitoring and gives a practical sense of regular worst-case scenarios. 99% VaR is used for stress testing and regulatory purposes. In crypto, the 99% level is more informative because tail events happen frequently and 95% VaR may understate real risk."
+    },
+    {
+      q: "How do I calculate daily VaR for Bitcoin?",
+      a: "Enter your Bitcoin portfolio value, the expected daily return (often close to 0% for short periods), and the daily volatility (Bitcoin typically ranges from 2-5% daily standard deviation). The calculator applies the parametric VaR formula using the normal distribution z-score for your chosen confidence level."
+    },
+    {
+      q: "What is the difference between VaR and CVaR (Expected Shortfall)?",
+      a: "VaR tells you the maximum loss at a given confidence level, but nothing about losses beyond that point. CVaR (Conditional VaR or Expected Shortfall) calculates the average loss in the worst scenarios beyond the VaR threshold, giving you a better estimate of tail risk in extreme market crashes."
+    },
+    {
+      q: "How often should I recalculate VaR for my crypto positions?",
+      a: "Recalculate VaR daily or at minimum weekly, since crypto volatility changes rapidly. After major market events, update your volatility inputs immediately. Using a rolling 30-60 day window for volatility estimation keeps the model responsive to current market conditions."
+    }
+  ]}
 >
   <VarCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>

@@ -8,6 +8,32 @@ import KellyCalculator from '../components/KellyCalculator.tsx';
   slug="kelly-calculator"
   title="Kelly Criterion Calculator"
   description="Find optimal position sizing from win rate and payoff ratio using Kelly, half-Kelly, and quarter-Kelly models."
+  faq={[
+    {
+      q: "What is the Kelly Criterion in crypto trading?",
+      a: "The Kelly Criterion is a formula that determines the optimal percentage of your bankroll to risk on each trade to maximize long-term growth. It balances between betting too much (risking ruin) and too little (leaving returns on the table) based on your win rate and average payoff ratio."
+    },
+    {
+      q: "Why should I use half-Kelly instead of full Kelly?",
+      a: "Full Kelly sizing assumes your win rate and payoff estimates are perfectly accurate, which they never are in practice. Half-Kelly risks 50% of the optimal amount, reducing volatility by about 50% while only sacrificing roughly 25% of the growth rate. Most professional traders use half-Kelly or less for this reason."
+    },
+    {
+      q: "What win rate do I need for the Kelly Criterion to work?",
+      a: "The Kelly formula works at any win rate as long as your expected value is positive. Even a 30% win rate works if your average win is more than 2.33x your average loss. If the Kelly output is zero or negative, your strategy has no edge and you should not trade it."
+    },
+    {
+      q: "Is the Kelly Criterion reliable for crypto trading?",
+      a: "The Kelly Criterion provides a mathematically optimal framework, but crypto markets have fat-tailed distributions and regime changes that can make historical win rates unreliable. Always use fractional Kelly (half or quarter) and update your parameters regularly as market conditions shift."
+    },
+    {
+      q: "How do I estimate my win rate and payoff ratio?",
+      a: "Review your last 50-100 trades to calculate your actual win rate (winning trades / total trades) and payoff ratio (average win amount / average loss amount). Use only trades from a consistent strategy, and update these numbers at least quarterly as market conditions change."
+    },
+    {
+      q: "What happens if I bet more than the Kelly percentage?",
+      a: "Over-betting beyond the Kelly percentage actually decreases your long-term growth rate and dramatically increases the risk of large drawdowns or total ruin. At 2x Kelly, your expected growth rate drops to zero. This is why conservative fractional Kelly approaches are strongly recommended."
+    }
+  ]}
 >
   <KellyCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>

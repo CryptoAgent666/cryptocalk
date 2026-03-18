@@ -8,6 +8,32 @@ import TradeExpectancyCalculator from '../components/TradeExpectancyCalculator.t
   slug="trade-expectancy-calculator"
   title="Trade Expectancy Calculator"
   description="Estimate strategy edge per trade and project monthly outcomes using win rate, R-multiples, and risk per trade."
+  faq={[
+    {
+      q: "What is trade expectancy and why does it matter?",
+      a: "Trade expectancy is the average amount you expect to win or lose per trade over a large number of trades. It combines your win rate, average win size, and average loss size into a single number. A positive expectancy means your strategy is profitable over time; a negative expectancy means you will lose money regardless of individual winning streaks."
+    },
+    {
+      q: "How do I calculate trade expectancy for my crypto strategy?",
+      a: "Expectancy = (Win Rate x Average Win) - (Loss Rate x Average Loss). For example, with a 45% win rate, $200 average win, and $100 average loss: (0.45 x $200) - (0.55 x $100) = $90 - $55 = $35 positive expectancy per trade. This means each trade is worth $35 on average."
+    },
+    {
+      q: "What is a good expectancy per trade in crypto?",
+      a: "Any positive expectancy is better than zero, but aim for at least 0.2R to 0.5R per trade (where R is your risk unit). For example, if you risk $100 per trade, a 0.3R expectancy means $30 average profit per trade. Higher expectancy strategies are rarer but allow smaller sample sizes to be profitable."
+    },
+    {
+      q: "What are R-multiples in trading?",
+      a: "R-multiples express your wins and losses as multiples of your initial risk (R). If you risk $100 on a trade and make $250, that is a +2.5R trade. If you lose $100, it is -1R. Using R-multiples normalizes results across different position sizes and makes it easier to evaluate strategy performance."
+    },
+    {
+      q: "How many trades do I need for expectancy to be reliable?",
+      a: "A minimum of 30 trades provides a rough estimate, but 100+ trades gives much more statistical confidence. Crypto strategies should be measured over at least one full market cycle. If your sample size is small, your true expectancy could be significantly different from your measured expectancy."
+    },
+    {
+      q: "Can a low win rate strategy still be profitable?",
+      a: "Absolutely. Trend-following and breakout strategies in crypto often have win rates of 30-40% but achieve large R-multiples on winners (3R to 10R or more). A 35% win rate with a 4R average win and 1R average loss yields an expectancy of (0.35 x 4) - (0.65 x 1) = 0.75R per trade, which is excellent."
+    }
+  ]}
 >
   <TradeExpectancyCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>
