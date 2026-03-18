@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 4) — Risk calculator unique content
+
+### Added
+- **Unique SEO content for 11 risk calculators**: calculator-seo-content.ts entries for Sharpe, Sortino, Calmar, Treynor, Information Ratio, Kelly, VaR, Drawdown, Risk of Ruin, Slippage, Trade Expectancy. All 6 languages, specific formulas and thresholds.
+
 ## [2026-03-18] (update 3) — Title + meta description SEO fixes
 
 ### Fixed
