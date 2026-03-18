@@ -8,6 +8,32 @@ import RiskOfRuinCalculator from '../components/RiskOfRuinCalculator.tsx';
   slug="risk-of-ruin-calculator"
   title="Risk of Ruin Calculator"
   description="Estimate probability of account ruin from win rate, reward/risk profile, and fixed risk per trade."
+  faq={[
+    {
+      q: "What is risk of ruin in crypto trading?",
+      a: "Risk of ruin is the probability that your trading account will lose a specified percentage of capital (e.g., 50% or 100%) given your win rate, reward-to-risk ratio, and the percentage risked per trade. Even profitable strategies can lead to ruin if position sizes are too large."
+    },
+    {
+      q: "What risk per trade keeps the risk of ruin near zero?",
+      a: "Risking 1-2% of your account per trade keeps the risk of ruin extremely low for most strategies with a positive edge. At 1% risk per trade, even a strategy with a 40% win rate and 2:1 reward-to-risk ratio has a negligible probability of hitting a 50% drawdown."
+    },
+    {
+      q: "How does win rate affect the risk of ruin?",
+      a: "A higher win rate dramatically reduces the risk of ruin, but only when paired with appropriate position sizing. A 60% win rate with 5% risk per trade can still have a meaningful ruin probability, while a 45% win rate with 1% risk per trade and a 3:1 reward-to-risk may have virtually zero ruin risk."
+    },
+    {
+      q: "What is the difference between risk of ruin and maximum drawdown?",
+      a: "Maximum drawdown is the largest peak-to-trough decline you have experienced historically. Risk of ruin is a forward-looking probability that estimates how likely you are to hit a catastrophic loss level. You can have small historical drawdowns but still face meaningful ruin risk if position sizes are too large."
+    },
+    {
+      q: "Can I have a positive expectancy but still go bankrupt?",
+      a: "Yes. A positive expected value per trade does not prevent ruin if your position sizing is too aggressive. The classic example is a coin flip paying 2:1 — positive expectancy, but betting 100% each time guarantees eventual ruin. The Kelly Criterion helps find the position size that avoids this trap."
+    },
+    {
+      q: "How many trades does the risk of ruin calculation assume?",
+      a: "The standard risk of ruin formula assumes an infinite series of trades, giving you the probability of ever hitting the ruin threshold regardless of how many trades you take. For a fixed number of trades, the actual ruin probability is lower, but using the infinite-horizon formula provides a conservative safety margin."
+    }
+  ]}
 >
   <RiskOfRuinCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>
