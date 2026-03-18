@@ -62,7 +62,7 @@ const websiteSchema = {
   name: 'CryptoCalk',
   url: homepageUrl,
   description:
-    'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 55+ more tools.',
+    'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 60+ more tools.',
   inLanguage: 'en',
   areaServed: {
     '@type': 'Country',
@@ -77,7 +77,7 @@ const organizationSchema = {
   url: siteUrl,
   logo: `${siteUrl}/og-image.png`,
   email: 'support@cryptocalk.com',
-  areaServed: 'Global',
+  areaServed: { '@type': 'Place', name: 'Worldwide' },
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'support@cryptocalk.com',
@@ -91,7 +91,7 @@ const homepageSchemas = [websiteSchema, organizationSchema];
 
 <Layout
   title="CryptoCalk — 60+ Free Crypto Calculators"
-  description="Free crypto calculators: profit & loss, mining, DCA, tax, staking, and 55+ more tools. Fast, accurate, no signup required."
+  description="Free crypto calculators: profit & loss, mining, DCA, tax, staking, and 60+ more tools. Fast, accurate, no signup required."
   lang="en"
 >
   <!-- Header -->
