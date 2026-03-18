@@ -4,207 +4,207 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
   'en': {
     'converter': {
       title: 'Crypto Converter',
-      description: 'Free Crypto Converter. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Crypto Converter. Convert Bitcoin, Ethereum, and 500+ cryptocurrencies to USD, EUR, and 10+ fiat currencies with real-time CoinGecko prices.'
     },
     'profit-calculator': {
       title: 'Crypto Profit Calculator',
-      description: 'Free Crypto Profit Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Crypto Profit Calculator. Enter buy and sell prices to see ROI, total fees, and net profit for 500+ cryptocurrencies. No signup required.'
     },
     'mining-calculator': {
       title: 'Bitcoin Mining Calculator',
-      description: 'Free Bitcoin Mining Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Bitcoin Mining Calculator. Enter hashrate, power consumption, and electricity cost to estimate daily, monthly, and yearly BTC mining revenue.'
     },
     'dca-calculator': {
       title: 'DCA Calculator',
-      description: 'Free DCA Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free DCA Calculator for Bitcoin, Ethereum, and 500+ cryptocurrencies. Simulate dollar-cost averaging strategies with historical data and compare DCA vs lump sum.'
     },
     'tax-calculator': {
       title: 'Crypto Tax Calculator',
-      description: 'Free Crypto Tax Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Crypto Tax Calculator for 17 countries. Estimate capital gains tax, compare short vs long-term rates for the US, UK, Germany, Japan, and more.'
     },
     'what-if': {
       title: 'What If Calculator',
-      description: 'Free What If Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free What If Calculator. Backtest hypothetical crypto entries, evaluate opportunity cost, and compare alternative investment outcomes instantly.'
     },
     'position-size-calculator': {
       title: 'Position Size Calculator',
-      description: 'Free Position Size Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Position Size Calculator for crypto traders. Determine optimal trade size based on account balance, risk tolerance, and stop-loss. Supports up to 125x leverage.'
     },
     'liquidation-calculator': {
       title: 'Liquidation Calculator',
-      description: 'Free Liquidation Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Liquidation Price Calculator for crypto futures. Supports Binance, Bybit, OKX with Isolated and Cross margin modes. Know when your position gets liquidated.'
     },
     'funding-rate-calculator': {
       title: 'Funding Rate Calculator',
-      description: 'Free Funding Rate Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Funding Rate Calculator for perpetual futures. Calculate the daily, weekly, monthly, and annual cost of holding a leveraged position.'
     },
     'tp-sl-calculator': {
       title: 'TP / SL Calculator',
-      description: 'Free TP / SL Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free TP/SL Calculator for crypto traders. Set optimal take-profit and stop-loss levels with R:R ratio, partial TPs, and visual price scale.'
     },
     'margin-calculator': {
       title: 'Margin Calculator',
-      description: 'Free Margin Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Margin Calculator for crypto futures. Calculate required margin, margin level, free margin, and margin call price for Binance, Bybit, and OKX.'
     },
     'pip-calculator': {
       title: 'Pip / Tick Value Calculator',
-      description: 'Free Pip / Tick Value Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Pip and Tick Value Calculator for crypto traders. Calculate the dollar value of price movements for any position size across BTC, ETH, SOL, and 500+ coins.'
     },
     'break-even-calculator': {
       title: 'Break-Even Calculator',
-      description: 'Free Break-Even Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Break-Even Calculator. See how much gain you need to recover from a loss, or calculate the exit price that covers your trading fees.'
     },
     'risk-reward-calculator': {
       title: 'Risk / Reward Calculator',
-      description: 'Free Risk / Reward Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Risk-Reward Ratio Calculator for crypto traders. Calculate R:R ratio, required win rate, and simulate 100-trade outcomes for any setup.'
     },
     'staking-calculator': {
       title: 'Crypto Staking Calculator',
-      description: 'Free Crypto Staking Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Crypto Staking Calculator. Calculate daily, weekly, and annual staking rewards after validator commission and token-price assumptions.'
     },
     'impermanent-loss-calculator': {
       title: 'Impermanent Loss Calculator',
-      description: 'Free Impermanent Loss Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Impermanent Loss Calculator for DeFi. Calculate IL for AMM liquidity pools, compare LP returns vs HODLing, and see if fee earnings overcome IL.'
     },
     'apy-apr-calculator': {
       title: 'APY vs APR Calculator',
-      description: 'Free APY vs APR Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free APY vs APR Calculator. Convert between APR and APY, compare compounding frequencies, and calculate real earnings on DeFi yields and staking rewards.'
     },
     'yield-farming-calculator': {
       title: 'Yield Farming Calculator',
-      description: 'Free Yield Farming Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Yield Farming Calculator. Calculate net DeFi farming profits including gas costs, impermanent loss, and harvest frequency to find your true APY.'
     },
     'gas-calculator': {
       title: 'Crypto Gas Calculator',
-      description: 'Free Crypto Gas Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Crypto Gas Calculator. Estimate gas costs across major EVM networks for swaps, transfers, and DeFi actions before confirming transactions.'
     },
     'uniswap-calculator': {
       title: 'Uniswap Fee Calculator',
-      description: 'Free Uniswap Fee Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Uniswap Fee Calculator. Estimate LP fee income, impermanent loss impact, break-even time, and net outcome for selected pool assumptions.'
     },
     'bridge-comparator': {
       title: 'Bridge Cost Comparator',
-      description: 'Free Bridge Cost Comparator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Bridge Cost Comparator. Compare crypto bridge routes by estimated total fee, speed, and security score across major L2 and multichain bridges.'
     },
     'lending-calculator': {
       title: 'Crypto Lending Calculator',
-      description: 'Free Crypto Lending Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Crypto Lending Calculator. Calculate projected lending returns using APY, compounding model, term length, and platform performance fees.'
     },
     'gpu-mining-calculator': {
       title: 'GPU Mining Calculator',
-      description: 'Free GPU Mining Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free GPU Mining Calculator. Estimate GPU mining profitability with live assumptions for hashrate, power draw, electricity rates, and pool fees.'
     },
     'asic-mining-calculator': {
       title: 'ASIC Mining Calculator',
-      description: 'Free ASIC Mining Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free ASIC Mining Calculator. Calculate ASIC mining profitability, electricity cost, and break-even period across leading mining hardware models.'
     },
     'mining-roi-calculator': {
       title: 'Mining ROI Calculator',
-      description: 'Free Mining ROI Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Mining ROI Calculator. Model mining hardware return on investment with scenario analysis for revenue, costs, and break-even timing.'
     },
     'electricity-cost-calculator': {
       title: 'Mining Electricity Cost Calculator',
-      description: 'Free Mining Electricity Cost Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Mining Electricity Cost Calculator. Calculate power consumption and operating cost by device count, power usage, uptime, and local energy price.'
     },
     'difficulty-calculator': {
       title: 'Mining Difficulty Estimator',
-      description: 'Free Mining Difficulty Estimator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Mining Difficulty Estimator. Estimate how the next difficulty adjustment may impact your projected mining revenue and profitability.'
     },
     'hashrate-converter': {
       title: 'Hashrate Converter',
-      description: 'Free Hashrate Converter. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Hashrate Converter. Convert mining hashrate units from H/s up to EH/s and compare typical ranges for ASIC and GPU hardware.'
     },
     'market-cap-calculator': {
       title: 'Market Cap Calculator',
-      description: 'Free Market Cap Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Market Cap Calculator. Calculate token price from market cap and supply, or market cap from token price, with live crypto reference data.'
     },
     'market-cap-comparator': {
       title: 'Market Cap Comparator',
-      description: 'Free Market Cap Comparator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Market Cap Comparator. Compare any cryptocurrency against top coins. Calculate hypothetical prices and growth multipliers across market cap scenarios.'
     },
     'roi-calculator': {
       title: 'ROI Calculator',
-      description: 'Free ROI Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Crypto ROI Calculator with annualized returns. Calculate total and annualized ROI and compare performance with S&P 500, Gold, and Real Estate.'
     },
     'reverse-roi': {
       title: 'Reverse ROI Calculator',
-      description: 'Free Reverse ROI Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Reverse ROI Calculator. Enter your investment and target profit to find the exact token price needed. See growth multiplier and milestone table.'
     },
     'hodl-vs-trade': {
       title: 'HODL vs Trade Calculator',
-      description: 'Free HODL vs Trade Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free HODL vs Trade Simulator. Compare buy-and-hold with active trading strategies. Simulate trades with custom win rates, profit targets, and fees.'
     },
     'rebalancing-calculator': {
       title: 'Portfolio Rebalancing Calculator',
-      description: 'Free Portfolio Rebalancing Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Portfolio Rebalancing Calculator. Calculate buy/sell actions to rebalance your crypto portfolio toward target allocations with optional buy-only mode.'
     },
     'compound-calculator': {
       title: 'Compound Interest Calculator (Crypto)',
-      description: 'Free Compound Interest Calculator (Crypto). Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Compound Interest Calculator for crypto. Project compound growth for staking, yield farming, and savings with recurring contributions.'
     },
     'ico-roi-calculator': {
       title: 'ICO / IDO ROI Calculator',
-      description: 'Free ICO / IDO ROI Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free ICO / IDO ROI Calculator. Calculate current and ATH ROI for ICO or IDO allocations using token amount, entry price, and market prices.'
     },
     'airdrop-calculator': {
       title: 'Airdrop Value Calculator',
-      description: 'Free Airdrop Value Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Airdrop Value Calculator. Calculate the value of received crypto airdrops, estimate tax liability, and track profit or loss after fees.'
     },
     'satoshi-converter': {
       title: 'Satoshi Converter',
-      description: 'Free Satoshi Converter. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Satoshi Converter. Convert between Bitcoin, Satoshis, and USD/EUR instantly. See sats per dollar, quick reference tables, and live BTC price.'
     },
     'gwei-converter': {
       title: 'Gwei Converter',
-      description: 'Free Gwei Converter. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Gwei Converter. Convert Wei, Gwei, and Ether units instantly with live ETH price and practical gas cost examples for Ethereum transactions.'
     },
     'timestamp-converter': {
       title: 'Unix Timestamp Converter',
-      description: 'Free Unix Timestamp Converter. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Unix Timestamp Converter. Convert Unix timestamp to date/time and date/time to Unix format with UTC/local display and block-time estimates.'
     },
     'unit-converter': {
       title: 'Crypto Unit Converter',
-      description: 'Free Crypto Unit Converter. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Crypto Unit Converter. Convert denomination units for BTC, ETH, SOL, and USDT including satoshi, gwei, lamport, and micro units.'
     },
     'exchange-fees': {
       title: 'Exchange Fee Comparator',
-      description: 'Free Exchange Fee Comparator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Exchange Fee Comparator. Compare trading fees across Binance, Bybit, OKX, Coinbase, Kraken, and more with maker/taker fee breakdowns.'
     },
     'crypto-loan-calculator': {
       title: 'Crypto Loan Calculator',
-      description: 'Free Crypto Loan Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Crypto Loan Calculator. Estimate crypto-backed loan amount, interest costs, margin call threshold, and liquidation risk for DeFi and CeFi loans.'
     },
     'vesting-calculator': {
       title: 'Token Vesting Calculator',
-      description: 'Free Token Vesting Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Token Vesting Calculator. Visualize unlock schedules with cliff periods, TGE unlocks, and monthly or quarterly vesting to plan your exit strategy.'
     },
     'nft-profit-calculator': {
       title: 'NFT Profit Calculator',
-      description: 'Free NFT Profit Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free NFT Profit Calculator. Calculate true NFT trading profit after marketplace fees, creator royalties, and gas costs across OpenSea, Blur, and more.'
     },
     'halving-calculator': {
       title: 'Bitcoin Halving Calculator',
-      description: 'Free Bitcoin Halving Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Bitcoin Halving Calculator with live countdown timer. See how the next BTC halving affects mining revenue with historical halving data and price analysis.'
     },
     'mev-calculator': {
       title: 'MEV Protection Calculator',
-      description: 'Free MEV Protection Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free MEV Protection Calculator. Estimate sandwich and frontrun risk and potential savings from MEV protection routes based on swap size and slippage.'
     },
     'gamefi-calculator': {
       title: 'GameFi ROI Calculator',
-      description: 'Free GameFi ROI Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free GameFi ROI Calculator. Estimate payback period and annual ROI for play-to-earn strategies based on setup cost, token rewards, and running expenses.'
     },
     'node-calculator': {
       title: 'Validator Node Calculator',
-      description: 'Free Validator Node Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Validator Node Calculator. Model validator node economics using staked amount, APR, commission, uptime, and infrastructure costs.'
     },
     'salary-calculator': {
       title: 'Crypto Salary Calculator',
-      description: 'Free Crypto Salary Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Crypto Salary Calculator. Convert your fiat salary to BTC, ETH, or USDT. Calculate crypto accumulation over time with pay frequency and fee estimates.'
     },
     'inflation-hedge': {
       title: 'Inflation Hedge Calculator',
-      description: 'Free Inflation Hedge Calculator. Calculate crypto outcomes instantly with transparent assumptions and updated market data.'
+      description: 'Free Inflation Hedge Calculator. Compare crypto, stablecoins, gold, and S&P 500 against inflation in Turkey, Argentina, Nigeria, USA, and more.'
     },
   },
   'es': {
