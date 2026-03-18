@@ -111,15 +111,15 @@ const homepageSchemas = [websiteSchema, organizationSchema];
         </button>
       </div>
 
-      <div class="header-actions">
+      <nav class="header-actions" aria-label="Main navigation">
         <a href="#categories" class="header-link">Calculators</a>
         <LanguageSwitcher client:idle currentLang="en" currentPath="/" />
         <ThemeToggle client:idle />
-      </div>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-inner">

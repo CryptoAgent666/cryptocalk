@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Activity, BarChart3, DollarSign, Info, Percent, RotateCcw } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const DIFFICULTY_PILLS = ['70', '85', '100', '120'];
 const CHANGE_PILLS = ['-10', '-5', '5', '8', '15'];
@@ -14,7 +15,7 @@ const DIFFICULTY_SCENARIOS = [
 
 // formatUSD is defined inside the component to access `lang` prop
 
-export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
+function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
   const formatUSD = (value: number): string => {
     return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
       style: 'currency',
@@ -204,3 +205,5 @@ export default function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: 
     </div>
   );
 }
+
+export default withErrorBoundary(DifficultyEstimatorCalculator);

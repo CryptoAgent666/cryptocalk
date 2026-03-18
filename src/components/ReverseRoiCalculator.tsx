@@ -11,6 +11,7 @@ import {
     BarChart3,
     Loader2,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -108,7 +109,7 @@ function getProbability(multiplier: number): { label: string; color: string } {
     return { label: 'Extremely Unlikely', color: 'var(--color-accent-red)' };
 }
 
-export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
+function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
     const [coinSearch, setCoinSearch] = useState('');
     const [selectedCoin, setSelectedCoin] = useState<CoinSuggestion | null>(null);
     const [suggestions, setSuggestions] = useState<CoinSuggestion[]>([]);
@@ -126,6 +127,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
 
     // Search coins via CoinGecko
     const searchCoins = useCallback(async (query: string) => {
@@ -136,11 +138,11 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
         setLoading(true);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
+                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
-            const coins = (data.coins || []).slice(0, 8).map((c: any) => ({
+            const coins = (data.coins || []).slice(0, 8).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                 id: c.id,
                 name: c.name,
                 symbol: c.symbol,
@@ -168,7 +170,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
         setShowSuggestions(false);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&include_market_cap=true&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&include_market_cap=true&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
@@ -394,7 +396,7 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
                                         onClick={() => selectCoin(coin)}
                                     >
                                         {coin.thumb && (
-                                            <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />
+                                            <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />
                                         )}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
@@ -704,3 +706,5 @@ export default function ReverseRoiCalculator({ lang = 'en' }: { lang?: string })
         </div>
     );
 }
+
+export default withErrorBoundary(ReverseRoiCalculator);

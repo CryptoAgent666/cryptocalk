@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const WIN_RATE_PRESETS = [40, 45, 50, 55];
 const AVG_WIN_R_PRESETS = [1, 1.5, 2, 3];
@@ -16,7 +17,7 @@ const EXPECTANCY_SCENARIOS = [
 
 
 
-export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
+function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
   function formatUSD(value: number): string {
     return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
       style: 'currency',
@@ -300,3 +301,5 @@ export default function TradeExpectancyCalculator({ lang = 'en' }: { lang?: stri
     </div>
   );
 }
+
+export default withErrorBoundary(TradeExpectancyCalculator);

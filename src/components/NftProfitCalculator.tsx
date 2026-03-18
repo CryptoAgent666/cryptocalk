@@ -11,6 +11,7 @@ import {
     Image,
     Fuel,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 // Marketplace fees updated 2026-03-18.
 const MARKETPLACES = [
@@ -69,7 +70,7 @@ const NFT_SCENARIOS = [
     },
 ] as const;
 
-export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
+function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
     const [buyPrice, setBuyPrice] = useState('');
     const [sellPrice, setSellPrice] = useState('');
     const [marketplace, setMarketplace] = useState('opensea');
@@ -81,7 +82,7 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
 
     // Auto-fetch ETH price on mount
     useEffect(() => {
-        fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&x_cg_demo_api_key=REMOVED_COINGECKO_KEY')
+        fetch(`https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`)
             .then(r => r.json())
             .then(d => { if (d.ethereum?.usd) setEthPrice(String(d.ethereum.usd)); })
             .catch(() => { });
@@ -572,3 +573,5 @@ export default function NftProfitCalculator({ lang = 'en' }: { lang?: string }) 
         </div>
     );
 }
+
+export default withErrorBoundary(NftProfitCalculator);

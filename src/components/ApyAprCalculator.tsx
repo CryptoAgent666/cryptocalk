@@ -10,6 +10,7 @@ import {
     DollarSign,
     Layers,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const COMPOUND_FREQUENCIES = [
     { id: 'daily', label: 'Daily', n: 365 },
@@ -31,7 +32,7 @@ const APY_APR_SCENARIOS = [
     { label: 'APY Check', mode: 'apy-to-apr', rateInput: '20', compoundFreq: 'monthly', principal: '10000', years: '1' },
 ] as const;
 
-export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
+function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
     const [mode, setMode] = useState<ConversionMode>('apr-to-apy');
     const [rateInput, setRateInput] = useState('12');
     const [compoundFreq, setCompoundFreq] = useState('daily');
@@ -484,3 +485,5 @@ export default function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(ApyAprCalculator);

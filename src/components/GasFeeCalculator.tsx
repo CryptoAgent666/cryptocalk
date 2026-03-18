@@ -8,6 +8,7 @@ import {
     Zap,
     ArrowRight,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const TX_TYPES = [
     { id: 'transfer', label: 'ETH Transfer', gas: 21000 },
@@ -46,7 +47,7 @@ const GAS_SCENARIOS = [
     { label: 'NFT Mint', network: 'base', txType: 'nft_mint', speed: 'fast', txCount: '1' },
 ] as const;
 
-export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
+function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
     const [network, setNetwork] = useState('ethereum');
     const [txType, setTxType] = useState('transfer');
     const [customGas, setCustomGas] = useState('21000');
@@ -160,7 +161,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Transaction Type */}
                     <div className="input-group">
-                        <label><ArrowRight size={14} /> {getUiString(lang, 'Transaction Type')}</label>
+                        <label htmlFor="gas-tx-type"><ArrowRight size={14} /> {getUiString(lang, 'Transaction Type')}</label>
                         <div className="select-wrap">
                             <select value={txType} onChange={(e) => setTxType(e.target.value)} id="gas-tx-type" className="input-select">
                                 {TX_TYPES.map((t) => (
@@ -175,7 +176,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Custom Gas */}
                     {txType === 'custom' && (
                         <div className="input-group">
-                            <label>{getUiString(lang, 'Custom Gas Limit')}</label>
+                            <label htmlFor="gas-custom">{getUiString(lang, 'Custom Gas Limit')}</label>
                             <input type="number" inputMode="decimal" value={customGas} onChange={(e) => setCustomGas(e.target.value)}
                                 placeholder="" id="gas-custom" step="1000" min="21000" onFocus={(e) => e.target.select()} />
                         </div>
@@ -183,7 +184,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Gas Price */}
                     <div className="input-group">
-                        <label><Zap size={14} /> {getUiString(lang, 'Gas Price (Gwei)')}</label>
+                        <label htmlFor="gas-price-gwei"><Zap size={14} /> {getUiString(lang, 'Gas Price (Gwei)')}</label>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={gasPrice} onChange={(e) => setGasPrice(e.target.value)}
                                 placeholder="" id="gas-price-gwei" step="0.1" min="0" onFocus={(e) => e.target.select()} />
@@ -216,7 +217,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Native Price */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {currentNetwork.symbol} Price (USD)</label>
+                        <label htmlFor="gas-eth-price"><DollarSign size={14} /> {currentNetwork.symbol} Price (USD)</label>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={ethPrice} onChange={(e) => setEthPrice(e.target.value)}
                                 placeholder="" id="gas-eth-price" step="any" min="0" onFocus={(e) => e.target.select()} />
@@ -225,7 +226,7 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Transaction Count */}
                     <div className="input-group">
-                        <label>{getUiString(lang, 'Number of Transactions')}</label>
+                        <label htmlFor="gas-tx-count">{getUiString(lang, 'Number of Transactions')}</label>
                         <div className="pills-row">
                             {[1, 5, 10, 50, 100].map((c) => (
                                 <button key={c} className={`pill-btn ${txCount === String(c) ? 'active' : ''}`}
@@ -369,3 +370,5 @@ export default function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(GasFeeCalculator);

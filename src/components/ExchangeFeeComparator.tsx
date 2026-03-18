@@ -9,6 +9,7 @@ import {
     TrendingDown,
     BarChart3,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 type TradeType = 'spot' | 'futures';
 type OrderType = 'maker' | 'taker';
@@ -50,7 +51,7 @@ const VOLUME_TIERS: { id: VolumeTier; label: string }[] = [
 
 const AMOUNT_PRESETS = [100, 500, 1000, 5000, 10000, 50000];
 
-export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }) {
+function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }) {
     const [tradeType, setTradeType] = useState<TradeType>('spot');
     const [orderType, setOrderType] = useState<OrderType>('taker');
     const [volumeTier, setVolumeTier] = useState<VolumeTier>('<10K');
@@ -331,3 +332,5 @@ export default function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }
         </div>
     );
 }
+
+export default withErrorBoundary(ExchangeFeeComparator);

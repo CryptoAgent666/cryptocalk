@@ -12,6 +12,7 @@ import {
     Hash,
     Monitor,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface GpuPreset {
     name: string;
@@ -107,7 +108,7 @@ const GPU_SCENARIOS = [
     },
 ] as const;
 
-export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
+function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
     // Inputs
     const [selectedGpu, setSelectedGpu] = useState('RTX 4090');
     const [numGpus, setNumGpus] = useState('1');
@@ -148,8 +149,8 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                     for (const [name, info] of Object.entries(wtCoins)) {
                         const symbol = COIN_MAPPING[name];
                         if (symbol && info) {
-                            const infoAny = info as any;
-                            let networkHr = infoAny.nethash;
+                            const coinInfo = info as { nethash?: number; block_reward24?: number; block_reward?: number; exchange_rate: number };
+                            let networkHr = coinInfo.nethash;
                             // WhatToMine returns network hashrate in H/s, while this component uses MH/s. We divide by 1_000_000.
                             if (networkHr) {
                                 networkHr = networkHr / 1000000;
@@ -158,8 +159,8 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
                             }
                             updatedData[symbol] = {
                                 ...updatedData[symbol],
-                                blockReward: infoAny.block_reward24 || infoAny.block_reward,
-                                price: infoAny.exchange_rate * btcPrice,
+                                blockReward: coinInfo.block_reward24 || coinInfo.block_reward,
+                                price: coinInfo.exchange_rate * btcPrice,
                                 networkHashrate: networkHr
                             };
                         }
@@ -725,3 +726,5 @@ export default function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) 
         </div>
     );
 }
+
+export default withErrorBoundary(GpuMiningCalculator);

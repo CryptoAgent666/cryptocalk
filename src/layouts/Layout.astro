@@ -105,22 +105,22 @@ const ogImagePath = OG_IMAGE_SLUGS.has(calcSlug) ? `/og/${calcSlug}.png` : '/og-
       })();
     </script>
     <meta name="description" content={description} />
-    <meta name="generator" content={Astro.generator} />
     {shouldNoindex && <meta name="robots" content="noindex, nofollow" />}
 
-    <!-- Preconnect to Google Fonts -->
+    <!-- Preconnect to Google Fonts + CoinGecko API -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Non-blocking font load: preload + onload swap to avoid render-blocking -->
+    <link rel="preconnect" href="https://api.coingecko.com" crossorigin />
+    <!-- Non-blocking font load: preload + onload swap, subset to used weights -->
     <link
       rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet"
       />
     </noscript>
@@ -204,6 +204,7 @@ const ogImagePath = OG_IMAGE_SLUGS.has(calcSlug) ? `/og/${calcSlug}.png` : '/og-
     </script>
   </head>
   <body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <slot />
     <CookieBanner lang={lang} />
     <script is:inline>

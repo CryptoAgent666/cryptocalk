@@ -14,6 +14,7 @@ import {
     Target,
     Crosshair,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -78,7 +79,7 @@ const POSITION_SIZE_SCENARIOS = [
     },
 ] as const;
 
-export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string }) {
+function PositionSizeCalculator({ lang = 'en' }: { lang?: string }) {
     // Inputs
     const [coinSearch, setCoinSearch] = useState('');
     const [selectedCoin, setSelectedCoin] = useState<CoinSuggestion | null>(null);
@@ -99,6 +100,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
 
     // Search coins via CoinGecko
     const searchCoins = useCallback(async (query: string) => {
@@ -110,11 +112,11 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
         setSearchError('');
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
+                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
-            const coins = (data.coins || []).slice(0, 8).map((c: any) => ({
+            const coins = (data.coins || []).slice(0, 8).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                 id: c.id,
                 name: c.name,
                 symbol: c.symbol,
@@ -141,7 +143,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
         setShowSuggestions(false);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
@@ -339,7 +341,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label>
+                        <label htmlFor="position-coin-search">
                             <Search size={14} />
                             {getUiString(lang, 'Cryptocurrency (optional)')}
                         </label>
@@ -366,7 +368,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
                                         onClick={() => selectCoin(coin)}
                                     >
                                         {coin.thumb && (
-                                            <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />
+                                            <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />
                                         )}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
@@ -400,7 +402,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
                     {/* Account Balance */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="account-balance">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Account Balance')}
                         </label>
@@ -430,7 +432,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
                     {/* Risk Per Trade */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="risk-percent">
                             <Shield size={14} />
                             {getUiString(lang, 'Risk Per Trade')}
                         </label>
@@ -461,7 +463,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
                     {/* Entry Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="entry-price">
                             <Crosshair size={14} />
                             {getUiString(lang, 'Entry Price')}
                             {selectedCoin && (
@@ -494,7 +496,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
                     {/* Stop-Loss Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="stop-loss-price">
                             <Target size={14} />
                             {getUiString(lang, 'Stop-Loss Price')}
                         </label>
@@ -513,7 +515,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
                     {/* Take-Profit Price (Optional) */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="take-profit-price">
                             <TrendingUp size={14} />
                             {getUiString(lang, 'Take-Profit Price (optional)')}
                         </label>
@@ -532,7 +534,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
                     {/* Leverage */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="leverage-input">
                             <Percent size={14} />
                             {getUiString(lang, 'Leverage')}
                         </label>
@@ -563,7 +565,7 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
 
                     {/* Exchange Fee */}
                     <div className="input-group">
-                        <label>{getUiString(lang, 'Exchange Fee (per side)')}</label>
+                        <label htmlFor="exchange-fee">{getUiString(lang, 'Exchange Fee (per side)')}</label>
                         <div className="pills-row">
                             {EXCHANGE_FEE_PILLS.map((preset) => (
                                 <button
@@ -728,3 +730,5 @@ export default function PositionSizeCalculator({ lang = 'en' }: { lang?: string 
         </div>
     );
 }
+
+export default withErrorBoundary(PositionSizeCalculator);

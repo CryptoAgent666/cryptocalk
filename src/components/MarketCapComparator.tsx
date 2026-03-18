@@ -13,6 +13,7 @@ import {
     Loader2,
     Zap,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -59,7 +60,7 @@ const QUICK_SCENARIOS = [
     { targetId: 'ripple', targetLabel: 'XRP', refId: 'bitcoin', refLabel: 'BTC' },
 ];
 
-export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) {
+function MarketCapComparator({ lang = 'en' }: { lang?: string }) {
     // Target coin (A) state
     const [targetSearch, setTargetSearch] = useState('');
     const [targetCoin, setTargetCoin] = useState<CoinSuggestion | null>(null);
@@ -83,6 +84,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
     const refSearchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const targetSuggestionsRef = useRef<HTMLDivElement>(null);
     const refSuggestionsRef = useRef<HTMLDivElement>(null);
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
 
     // Fetch top coin market caps on mount
     useEffect(() => {
@@ -90,7 +92,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
             try {
                 const ids = TOP_COINS.map(c => c.id).join(',');
                 const res = await fetch(
-                    `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_market_cap=true&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
+                    `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_market_cap=true&x_cg_demo_api_key=${CG_KEY}`
                 );
                 if (!res.ok) return;
                 const data = await res.json();
@@ -123,10 +125,10 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
         if (query.length < 2) { setSuggestions([]); return; }
         setLoading(true);
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${CG_KEY}`);
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
-            setSuggestions((data.coins || []).slice(0, 8).map((c: any) => ({
+            setSuggestions((data.coins || []).slice(0, 8).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                 id: c.id, name: c.name, symbol: c.symbol, thumb: c.thumb,
             })));
             setShow(true);
@@ -148,7 +150,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
 
     const fetchCoinData = async (coinId: string): Promise<CoinData | null> => {
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=false&community_data=false&developer_data=false&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=false&community_data=false&developer_data=false&x_cg_demo_api_key=${CG_KEY}`);
             if (!res.ok) throw new Error('Failed to fetch coin data');
             const data = await res.json();
             const price = data.market_data?.current_price?.usd || 0;
@@ -318,7 +320,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                             <div className="suggestions-dropdown">
                                 {targetSuggestions.map((coin) => (
                                     <button key={coin.id} className="suggestion-item" onClick={() => selectTargetCoin(coin)}>
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
+                                        {coin.thumb && <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>
@@ -380,7 +382,7 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
                             <div className="suggestions-dropdown">
                                 {refSuggestions.map((coin) => (
                                     <button key={coin.id} className="suggestion-item" onClick={() => selectRefCoin(coin)}>
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
+                                        {coin.thumb && <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>
@@ -559,3 +561,5 @@ export default function MarketCapComparator({ lang = 'en' }: { lang?: string }) 
         </div>
     );
 }
+
+export default withErrorBoundary(MarketCapComparator);

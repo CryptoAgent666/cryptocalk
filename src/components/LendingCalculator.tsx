@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BadgeDollarSign, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 type CompoundingMode = 'simple' | 'monthly' | 'daily';
 
@@ -23,7 +24,7 @@ const LENDING_SCENARIOS: Array<{
 
 
 
-export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
+function LendingCalculator({ lang = 'en' }: { lang?: string }) {
   const formatUSD = (value: number): string =>
     new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
       style: 'currency',
@@ -238,3 +239,5 @@ export default function LendingCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(LendingCalculator);

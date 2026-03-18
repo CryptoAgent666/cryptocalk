@@ -10,6 +10,7 @@ import {
     PiggyBank,
     Layers,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const COMPOUND_FREQUENCIES = [
     { id: 'daily', label: 'Daily', n: 365 },
@@ -50,7 +51,7 @@ const COMPOUND_SCENARIOS = [
     },
 ] as const;
 
-export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
+function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
     const [initialAmount, setInitialAmount] = useState('1000');
     const [monthlyContribution, setMonthlyContribution] = useState('100');
     const [annualRate, setAnnualRate] = useState('12');
@@ -394,3 +395,5 @@ export default function CompoundInterestCalculator({ lang = 'en' }: { lang?: str
         </div>
     );
 }
+
+export default withErrorBoundary(CompoundInterestCalculator);

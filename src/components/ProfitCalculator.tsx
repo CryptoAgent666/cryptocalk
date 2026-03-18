@@ -12,6 +12,7 @@ import {
     Search,
     X,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -74,7 +75,7 @@ const PROFIT_SCENARIOS = [
     },
 ] as const;
 
-export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
+function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
     // Inputs
     const [coinSearch, setCoinSearch] = useState('');
     const [selectedCoin, setSelectedCoin] = useState<CoinSuggestion | null>(null);
@@ -94,6 +95,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
 
     // Search coins via CoinGecko
     const searchCoins = useCallback(async (query: string) => {
@@ -104,11 +106,11 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
         setLoading(true);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
+                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
-            const coins = (data.coins || []).slice(0, 8).map((c: any) => ({
+            const coins = (data.coins || []).slice(0, 8).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                 id: c.id,
                 name: c.name,
                 symbol: c.symbol,
@@ -136,7 +138,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
         setShowSuggestions(false);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=REMOVED_COINGECKO_KEY`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
@@ -297,7 +299,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label>
+                        <label htmlFor="coin-search">
                             <Search size={14} />
                             {getUiString(lang, 'Cryptocurrency (optional)')}
                         </label>
@@ -324,7 +326,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                         onClick={() => selectCoin(coin)}
                                     >
                                         {coin.thumb && (
-                                            <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />
+                                            <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />
                                         )}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
@@ -357,7 +359,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Buy Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="buy-price">
                             <DollarSign size={14} />
                             {isShort ? getUiString(lang, 'Entry Price (Sell)') : getUiString(lang, 'Buy Price')}
                         </label>
@@ -388,7 +390,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Sell Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="sell-price">
                             <DollarSign size={14} />
                             {isShort ? getUiString(lang, 'Exit Price (Buy)') : getUiString(lang, 'Sell / Current Price')}
                             {selectedCoin && (
@@ -422,7 +424,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Quantity / Investment Toggle */}
                     <div className="input-group">
-                        <label>{getUiString(lang, 'Amount')}</label>
+                        <label htmlFor="amount-input">{getUiString(lang, 'Amount')}</label>
                         <div className="toggle-group">
                             <button
                                 className={`toggle-btn ${inputMode === 'investment' ? 'active' : ''}`}
@@ -490,7 +492,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="fees-panel">
                             <div className="fees-row">
                                 <div className="input-group compact">
-                                    <label>{getUiString(lang, 'Entry Fee (%)')}</label>
+                                    <label htmlFor="entry-fee">{getUiString(lang, 'Entry Fee (%)')}</label>
                                     <div className="pills-row">
                                         {FEE_PILLS.map((fee) => (
                                             <button
@@ -514,7 +516,7 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                     />
                                 </div>
                                 <div className="input-group compact">
-                                    <label>{getUiString(lang, 'Exit Fee (%)')}</label>
+                                    <label htmlFor="exit-fee">{getUiString(lang, 'Exit Fee (%)')}</label>
                                     <div className="pills-row">
                                         {FEE_PILLS.map((fee) => (
                                             <button
@@ -637,3 +639,5 @@ export default function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(ProfitCalculator);

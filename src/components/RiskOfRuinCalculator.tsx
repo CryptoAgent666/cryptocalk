@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const WIN_RATE_PRESETS = [40, 45, 50, 55];
 const REWARD_RISK_PRESETS = [1, 1.5, 2, 3];
@@ -34,7 +35,7 @@ function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
 
-export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string }) {
+function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string }) {
   const [winRate, setWinRate] = useState('45');
   const [rewardRisk, setRewardRisk] = useState('1.8');
   const [riskPerTrade, setRiskPerTrade] = useState('2');
@@ -215,3 +216,5 @@ export default function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string })
     </div>
   );
 }
+
+export default withErrorBoundary(RiskOfRuinCalculator);

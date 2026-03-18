@@ -11,6 +11,7 @@ import {
     Unlock,
     TrendingDown,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 type UnlockFrequency = 'monthly' | 'quarterly' | 'linear';
 
@@ -57,7 +58,7 @@ const VESTING_SCENARIOS = [
     },
 ] as const;
 
-export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
+function VestingCalculator({ lang = 'en' }: { lang?: string }) {
     const [totalTokens, setTotalTokens] = useState('1000000');
     const [tokenPrice, setTokenPrice] = useState('0.50');
     const [tgePct, setTgePct] = useState('10');
@@ -742,3 +743,5 @@ export default function VestingCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(VestingCalculator);

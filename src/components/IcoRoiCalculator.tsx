@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Info, Rocket, RotateCcw } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 
 const ICO_PRICE_PILLS = ['0.01', '0.05', '0.1', '0.5'];
@@ -13,7 +14,7 @@ const ICO_SCENARIOS = [
   { label: 'Recovery', tokenName: 'ALT', icoPrice: '0.1', currentPrice: '0.1', athPrice: '3', tokens: '5000' },
 ] as const;
 
-export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
+function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
   const formatUSD = (value: number): string =>
     new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
       style: 'currency',
@@ -193,3 +194,5 @@ export default function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(IcoRoiCalculator);

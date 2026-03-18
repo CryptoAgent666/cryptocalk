@@ -10,6 +10,7 @@ import {
     Target,
     AlertTriangle,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface Asset {
     id: number;
@@ -80,7 +81,7 @@ function buildAssetsFromAllocation(
     }));
 }
 
-export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
+function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
     const [totalInvestment, setTotalInvestment] = useState('10000');
     const [assets, setAssets] = useState<Asset[]>(() => buildAssetsFromAllocation(DEFAULT_ALLOCATION, 10000));
 
@@ -394,3 +395,5 @@ export default function PortfolioCalculator({ lang = 'en' }: { lang?: string }) 
         </div>
     );
 }
+
+export default withErrorBoundary(PortfolioCalculator);
