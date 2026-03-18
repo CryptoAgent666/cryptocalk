@@ -8,6 +8,32 @@ import SortinoCalculator from '../components/SortinoCalculator.tsx';
   slug="sortino-calculator"
   title="Sortino Ratio Calculator"
   description="Measure risk-adjusted portfolio performance with downside-volatility focus using the Sortino ratio."
+  faq={[
+    {
+      q: "What is a good Sortino ratio for crypto investments?",
+      a: "A Sortino ratio above 2.0 is considered good, and above 3.0 is excellent. Because the Sortino only measures downside deviation, values tend to be higher than corresponding Sharpe ratios. In crypto, a sustained Sortino above 2.0 indicates strong downside risk management."
+    },
+    {
+      q: "Why is the Sortino ratio better than the Sharpe ratio for crypto?",
+      a: "Crypto assets often have large upside spikes that inflate total volatility. The Sharpe ratio penalizes these positive moves, while the Sortino ratio ignores upside volatility and focuses only on harmful downside moves, giving a fairer picture of risk-adjusted returns."
+    },
+    {
+      q: "What is downside deviation and how is it calculated?",
+      a: "Downside deviation measures the volatility of returns that fall below a minimum acceptable return (MAR), typically 0% or the risk-free rate. Only negative deviations are squared and averaged, then the square root is taken. This isolates the risk investors actually care about — losses."
+    },
+    {
+      q: "What minimum acceptable return (MAR) should I use?",
+      a: "Common choices are 0% (capital preservation), the risk-free rate (Treasury yields or stablecoin yields), or your personal target return. Using 0% is simplest and most common for crypto portfolios where the primary goal is avoiding losses."
+    },
+    {
+      q: "Can the Sortino ratio be misleading in crypto markets?",
+      a: "Yes. During prolonged bull markets with few drawdowns, the Sortino can appear extremely high because downside deviation is near zero. Always check the ratio over a full market cycle that includes both bull and bear phases to get a realistic assessment."
+    },
+    {
+      q: "How many data points do I need for a reliable Sortino ratio?",
+      a: "Use at least 30 return observations for statistical significance. Daily returns over 3 months or weekly returns over 6 months are common approaches. Fewer data points produce unreliable results, especially if the period lacked meaningful drawdowns."
+    }
+  ]}
 >
   <SortinoCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>

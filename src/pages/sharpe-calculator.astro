@@ -8,6 +8,32 @@ import SharpeCalculator from '../components/SharpeCalculator.tsx';
   slug="sharpe-calculator"
   title="Sharpe Ratio Calculator"
   description="Evaluate risk-adjusted portfolio performance using expected return, volatility, and risk-free rate."
+  faq={[
+    {
+      q: "What is a good Sharpe ratio for a crypto portfolio?",
+      a: "A Sharpe ratio above 1.0 is generally considered acceptable, above 2.0 is very good, and above 3.0 is excellent. In crypto markets, where volatility is much higher than traditional assets, achieving a sustained Sharpe above 1.5 is considered strong performance."
+    },
+    {
+      q: "How is the Sharpe ratio different from the Sortino ratio?",
+      a: "The Sharpe ratio penalizes all volatility equally — both upside and downside. The Sortino ratio only penalizes downside volatility, making it more relevant for crypto traders who want to keep large upside swings without being penalized for positive price moves."
+    },
+    {
+      q: "What risk-free rate should I use for crypto Sharpe calculation?",
+      a: "Most analysts use the U.S. 10-year Treasury yield (around 4-5%) or the stablecoin lending rate on platforms like Aave or Compound. Some crypto-native approaches use 0% since there is no truly risk-free crypto asset."
+    },
+    {
+      q: "Can the Sharpe ratio be negative?",
+      a: "Yes. A negative Sharpe ratio means your portfolio returned less than the risk-free rate, indicating you took on volatility risk without being compensated for it. In crypto bear markets, negative Sharpe ratios are common for buy-and-hold strategies."
+    },
+    {
+      q: "How often should I recalculate my portfolio Sharpe ratio?",
+      a: "Recalculate monthly or quarterly using at least 30 data points. In fast-moving crypto markets, a rolling 90-day Sharpe gives a more current picture than annual calculations, which may include outdated market regimes."
+    },
+    {
+      q: "Does the Sharpe ratio work for Bitcoin specifically?",
+      a: "Yes, but interpret results carefully. Bitcoin's high volatility can depress the Sharpe ratio even when absolute returns are strong. Compare Bitcoin's Sharpe against other crypto assets rather than traditional equities for a more meaningful benchmark."
+    }
+  ]}
 >
   <SharpeCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>

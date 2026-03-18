@@ -8,6 +8,32 @@ import CalmarCalculator from '../components/CalmarCalculator.tsx';
   slug="calmar-calculator"
   title="Calmar Ratio Calculator"
   description="Calculate Calmar ratio from annual return and maximum drawdown to compare return efficiency per drawdown risk."
+  faq={[
+    {
+      q: "What is a good Calmar ratio for a crypto trading strategy?",
+      a: "A Calmar ratio above 1.0 means your annual return exceeds your maximum drawdown, which is a reasonable baseline. Ratios above 3.0 are considered excellent. Most crypto buy-and-hold strategies have Calmar ratios well below 1.0 due to severe drawdowns of 50-80%."
+    },
+    {
+      q: "How is the Calmar ratio different from the Sharpe ratio?",
+      a: "The Sharpe ratio uses standard deviation (overall volatility) as the risk measure, while the Calmar ratio uses maximum drawdown — the worst peak-to-trough loss. The Calmar ratio is more intuitive for traders because it directly answers how much return you earn per unit of worst-case pain."
+    },
+    {
+      q: "Over what time period should I calculate the Calmar ratio?",
+      a: "The standard Calmar ratio uses a 3-year lookback period for both annualized return and maximum drawdown. In crypto, where market cycles are shorter, some analysts use 1-year or 2-year windows, but shorter periods may miss significant drawdown events."
+    },
+    {
+      q: "Why does the Calmar ratio drop so much during bear markets?",
+      a: "The Calmar ratio uses maximum drawdown in the denominator. During bear markets, the max drawdown increases sharply while returns decline or go negative, causing the ratio to collapse. This sensitivity to the single worst drawdown is both a strength and limitation of the metric."
+    },
+    {
+      q: "Can I use the Calmar ratio to compare different crypto assets?",
+      a: "Yes, it is ideal for comparing assets or strategies with different return and drawdown profiles. A coin with 100% annual return but 80% max drawdown (Calmar 1.25) is worse risk-adjusted than one with 50% return and 20% max drawdown (Calmar 2.5)."
+    },
+    {
+      q: "What maximum drawdown is typical for Bitcoin?",
+      a: "Bitcoin has historically experienced maximum drawdowns of 50-85% during bear markets. The 2022 cycle saw roughly a 77% drawdown from the all-time high. This large drawdown is why Bitcoin's Calmar ratio tends to be low despite strong long-term annual returns."
+    }
+  ]}
 >
   <CalmarCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>

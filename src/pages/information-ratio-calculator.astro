@@ -8,6 +8,32 @@ import InformationRatioCalculator from '../components/InformationRatioCalculator
   slug="information-ratio-calculator"
   title="Information Ratio Calculator"
   description="Compare active portfolio performance versus a benchmark using active return and tracking error."
+  faq={[
+    {
+      q: "What is a good Information Ratio for a crypto portfolio?",
+      a: "An Information Ratio above 0.5 is considered good, above 0.75 is very good, and above 1.0 is exceptional. In crypto markets, where outperforming a volatile benchmark is difficult to do consistently, even an IR of 0.3-0.5 over a full market cycle is noteworthy."
+    },
+    {
+      q: "What is tracking error and why does it matter?",
+      a: "Tracking error measures the standard deviation of the difference between your portfolio returns and the benchmark returns. A high tracking error means your portfolio deviates significantly from the benchmark, taking on more active risk. The Information Ratio tells you whether that deviation is rewarded with higher returns."
+    },
+    {
+      q: "What benchmark should I use for crypto Information Ratio?",
+      a: "Use Bitcoin if your portfolio is mostly large-cap crypto, or a total market cap index for diversified portfolios. For DeFi-focused portfolios, a DeFi index is more appropriate. The benchmark should represent the opportunity cost of your active strategy versus passive holding."
+    },
+    {
+      q: "How is the Information Ratio different from the Sharpe ratio?",
+      a: "The Sharpe ratio measures excess return over the risk-free rate per unit of total volatility. The Information Ratio measures excess return over a benchmark per unit of tracking error. Use the IR when you want to evaluate how well your active decisions add value versus simply holding the benchmark."
+    },
+    {
+      q: "Can the Information Ratio be negative?",
+      a: "Yes. A negative Information Ratio means your portfolio underperformed the benchmark on a risk-adjusted basis. This indicates your active management decisions destroyed value compared to a passive benchmark strategy. It is common during periods when a single asset like Bitcoin outperforms most altcoins."
+    },
+    {
+      q: "How many data points are needed for a reliable Information Ratio?",
+      a: "At least 36 monthly observations (3 years) is the standard for statistically meaningful results. With fewer data points, the tracking error estimate is unreliable. In crypto, using weekly returns over 1-2 years can provide enough observations, but ensure the period covers varied market conditions."
+    }
+  ]}
 >
   <InformationRatioCalculator slot="calculator" lang={'en'} client:load />
 </LocalizedCalculatorPage>
