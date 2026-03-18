@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 18) — Localized FAQ for 11 risk/analytics calculators (ES/PT/TR/HI/RU)
+
+### Added
+- **src/i18n/calculator-faq.ts**: New file containing custom localized FAQ for 11 risk/analytics calculators (sharpe, sortino, calmar, treynor, information-ratio, kelly, var, drawdown, risk-of-ruin, slippage, trade-expectancy) across 5 non-EN languages (ES, PT, TR, HI, RU). Each calculator has 6 Q&A pairs per language targeting real search queries. Total: 330 localized Q&A pairs.
+- **LocalizedCalculatorPage.astro**: Updated FAQ resolution logic to check `CALCULATOR_FAQ[slug][lang]` before falling back to generic template FAQ from `faq-dictionary.ts`. EN pages are unaffected (they pass FAQ inline via props). Localized pages (55 total: 11 calcs x 5 langs) now display calculator-specific FAQ instead of generic boilerplate.
+
 ## [2026-03-18] (update 17) — Brand titles and unique meta descriptions for all 51 calculators x 6 languages
 
 ### Changed
