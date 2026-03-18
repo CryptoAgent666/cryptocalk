@@ -32,7 +32,7 @@ const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated, 
     </div>
 
     <span class="hero-badge">{ui.heroBadge}</span>
-    <h1>{category.title}</h1>
+    <h1>{category.title} {ui.calculatorCountSuffix.charAt(0).toUpperCase() + ui.calculatorCountSuffix.slice(1)}</h1>
     <p class="hero-intro">{category.intro}</p>
 
     <div class="hero-metadata">
