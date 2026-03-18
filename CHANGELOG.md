@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 5) — FAQ, internal links, OG images
+
+### Added
+- **Custom FAQ for 11 risk calculators**: 6 keyword-rich Q&A per page replacing generic template FAQ
+- **20 contextual internal links in seo-body-text.ts**: 2 per section across 10 EN generic sections
+- **7 internal links in About page**: staking, tax, DCA, liquidation, mining, profit, converter
+- **10 per-calculator OG images**: unique 1200x630 PNGs for top-10 calcs. Layout.astro auto-selects per-page image when available, falls back to default.
+
 ## [2026-03-18] (update 4) — Risk calculator unique content
 
 ### Added
