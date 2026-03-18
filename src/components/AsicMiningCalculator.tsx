@@ -12,6 +12,7 @@ import {
     Hash,
     Server,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface AsicPreset {
     name: string;
@@ -120,7 +121,7 @@ function calcDailyCoins(
     return (hashrateHps / (difficulty * Math.pow(2, 32))) * 86400 * blockReward;
 }
 
-export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
+function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
     // Inputs
     const [selectedAsic, setSelectedAsic] = useState(ASIC_PRESETS[0].name);
     const [hashrate, setHashrate] = useState(String(ASIC_PRESETS[0].hashrate));
@@ -157,12 +158,12 @@ export default function AsicMiningCalculator({ lang = 'en' }: { lang?: string })
                     for (const [name, info] of Object.entries(coins)) {
                         const symbol = COIN_MAPPING[name];
                         if (symbol && info) {
-                            const infoAny = info as any;
+                            const coinInfo = info as { difficulty24?: number; difficulty?: number; block_reward24?: number; block_reward?: number; exchange_rate: number };
                             updatedData[symbol] = {
                                 ...updatedData[symbol],
-                                difficulty: infoAny.difficulty24 || infoAny.difficulty,
-                                blockReward: infoAny.block_reward24 || infoAny.block_reward,
-                                price: symbol === 'BTC' ? infoAny.exchange_rate : (infoAny.exchange_rate * btcPrice),
+                                difficulty: coinInfo.difficulty24 || coinInfo.difficulty,
+                                blockReward: coinInfo.block_reward24 || coinInfo.block_reward,
+                                price: symbol === 'BTC' ? coinInfo.exchange_rate : (coinInfo.exchange_rate * btcPrice),
                             };
                         }
                     }
@@ -807,3 +808,5 @@ const tdStyle: React.CSSProperties = {
     whiteSpace: 'nowrap',
     color: 'var(--color-text)',
 };
+
+export default withErrorBoundary(AsicMiningCalculator);

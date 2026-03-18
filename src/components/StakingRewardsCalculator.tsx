@@ -13,6 +13,7 @@ import {
     Lock,
     Zap,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -63,7 +64,7 @@ const STAKING_SCENARIOS = [
     },
 ] as const;
 
-export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
+function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
     const [coinSearch, setCoinSearch] = useState('');
     const [selectedCoin, setSelectedCoin] = useState<CoinSuggestion | null>(null);
     const [suggestions, setSuggestions] = useState<CoinSuggestion[]>([]);
@@ -79,16 +80,17 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'CG-Zeo2WrX3r7J1oUoX1kSnutmz';
 
     const searchCoins = useCallback(async (query: string) => {
         if (query.length < 2) { setSuggestions([]); return; }
         setLoading(true);
         setSearchError('');
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${CG_KEY}`);
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
-            setSuggestions((data.coins || []).slice(0, 8).map((c: any) => ({
+            setSuggestions((data.coins || []).slice(0, 8).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                 id: c.id, name: c.name, symbol: c.symbol, thumb: c.thumb,
             })));
             setShowSuggestions(true);
@@ -110,7 +112,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
         setCoinSearch(coin.name);
         setShowSuggestions(false);
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=${CG_KEY}`);
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
             if (data[coin.id]?.usd) setTokenPrice(String(data[coin.id].usd));
@@ -261,7 +263,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label><Search size={14} /> {getUiString(lang, 'Or search any coin')}</label>
+                        <label htmlFor="stk-coin-search"><Search size={14} /> {getUiString(lang, 'Or search any coin')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
                                 placeholder={getUiString(lang, 'Search coin...')} id="stk-coin-search" />
@@ -273,7 +275,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                             <div className="suggestions-dropdown">
                                 {suggestions.map((coin) => (
                                     <button key={coin.id} className="suggestion-item" onClick={() => selectCoin(coin)}>
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
+                                        {coin.thumb && <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>
@@ -288,7 +290,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
 
                     {/* Amount */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Staking Amount (USD)')}</label>
+                        <label htmlFor="stk-amount"><DollarSign size={14} /> {getUiString(lang, 'Staking Amount (USD)')}</label>
                         <div className="pills-row">
                             {STAKING_AMOUNT_PRESETS.map((value) => (
                                 <button
@@ -310,7 +312,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
                     {/* Token Price */}
                     {selectedCoin && (
                         <div className="input-group">
-                            <label><Coins size={14} /> {getUiString(lang, 'Token Price')}</label>
+                            <label htmlFor="stk-price"><Coins size={14} /> {getUiString(lang, 'Token Price')}</label>
                             <div className="input-with-prefix">
                                 <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)}
                                     placeholder="Auto" id="stk-price" step="any" min="0" onFocus={(e) => e.target.select()} />
@@ -320,7 +322,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
 
                     {/* APY */}
                     <div className="input-group">
-                        <label><Percent size={14} /> {getUiString(lang, 'Staking APY')}</label>
+                        <label htmlFor="stk-apy"><Percent size={14} /> {getUiString(lang, 'Staking APY')}</label>
                         <div className="pills-row">
                             {[3, 5, 7, 10, 15, 20].map((a) => (
                                 <button key={a} className={`pill-btn ${stakingApy === String(a) ? 'active' : ''}`}
@@ -337,7 +339,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
 
                     {/* Validator Fee */}
                     <div className="input-group">
-                        <label><Lock size={14} /> {getUiString(lang, 'Validator Commission')}</label>
+                        <label htmlFor="stk-fee"><Lock size={14} /> {getUiString(lang, 'Validator Commission')}</label>
                         <div className="pills-row">
                             {[0, 2, 5, 8, 10].map((f) => (
                                 <button key={f} className={`pill-btn ${validatorFee === String(f) ? 'active' : ''}`}
@@ -354,7 +356,7 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
 
                     {/* Staking Period */}
                     <div className="input-group">
-                        <label><Calendar size={14} /> {getUiString(lang, 'Staking Period')}</label>
+                        <label htmlFor="stk-days"><Calendar size={14} /> {getUiString(lang, 'Staking Period')}</label>
                         <div className="pills-row">
                             {PERIOD_PRESETS.map((d) => (
                                 <button key={d} className={`pill-btn ${stakingDays === String(d) ? 'active' : ''}`}
@@ -510,3 +512,5 @@ export default function StakingRewardsCalculator({ lang = 'en' }: { lang?: strin
         </div>
     );
 }
+
+export default withErrorBoundary(StakingRewardsCalculator);

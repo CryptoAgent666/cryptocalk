@@ -9,6 +9,7 @@ import {
     Loader2,
     ArrowUpDown,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const SATS_PER_BTC = 100_000_000;
 
@@ -22,7 +23,7 @@ const QUICK_SATS = [1000, 10_000, 100_000, 1_000_000, 10_000_000, 50_000_000];
 const QUICK_USD = [1, 5, 10, 50, 100, 500];
 const QUICK_BTC = [0.001, 0.01, 0.1, 0.25, 0.5, 1];
 
-export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
+function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
     const [inputMode, setInputMode] = useState<InputMode>('satoshi');
     const [amount, setAmount] = useState('');
     const [fiat, setFiat] = useState<FiatCurrency>('usd');
@@ -36,7 +37,7 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
         setLoading(true);
         try {
             const res = await fetch(
-                'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz'
+                `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'CG-Zeo2WrX3r7J1oUoX1kSnutmz'}`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
@@ -371,3 +372,5 @@ export default function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(SatoshiConverter);

@@ -9,6 +9,7 @@ import {
     Target,
     Percent,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const BREAK_EVEN_SCENARIOS = [
     { label: '20% Drawdown', mode: 'loss', lossPct: '20', originalValue: '10000', currentValue: '8000' },
@@ -17,7 +18,7 @@ const BREAK_EVEN_SCENARIOS = [
     { label: 'Short Fees', mode: 'trade', entryPrice: '65000', positionSize: '10000', entryFee: '0.1', exitFee: '0.1', isShort: true },
 ] as const;
 
-export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
+function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
     const [mode, setMode] = useState<'loss' | 'trade'>('loss');
     // Loss Recovery mode
     const [lossPct, setLossPct] = useState('20');
@@ -140,7 +141,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                         <>
                             {/* Loss % */}
                             <div className="input-group">
-                                <label><Percent size={14} /> {getUiString(lang, 'Loss Percentage')}</label>
+                                <label htmlFor="be-loss-pct"><Percent size={14} /> {getUiString(lang, 'Loss Percentage')}</label>
                                 <div className="pills-row">
                                     {[10, 20, 30, 50, 70, 90].map((v) => (
                                         <button key={v} className={`pill-btn ${lossPct === String(v) ? 'active' : ''}`}
@@ -158,7 +159,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
 
                             {/* Original Value */}
                             <div className="input-group">
-                                <label><DollarSign size={14} /> {getUiString(lang, 'Original Value')}</label>
+                                <label htmlFor="be-original"><DollarSign size={14} /> {getUiString(lang, 'Original Value')}</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={originalValue} onChange={(e) => setOriginalValue(e.target.value)}
                                         placeholder="" id="be-original" step="any" min="0" onFocus={(e) => e.target.select()} />
@@ -167,7 +168,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
 
                             {/* Current Value */}
                             <div className="input-group">
-                                <label><DollarSign size={14} /> {getUiString(lang, 'Current Value')}</label>
+                                <label htmlFor="be-current"><DollarSign size={14} /> {getUiString(lang, 'Current Value')}</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)}
                                         placeholder="" id="be-current" step="any" min="0" onFocus={(e) => e.target.select()} />
@@ -193,7 +194,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
 
                             {/* Entry Price */}
                             <div className="input-group">
-                                <label><DollarSign size={14} /> {getUiString(lang, 'Entry Price')}</label>
+                                <label htmlFor="be-entry"><DollarSign size={14} /> {getUiString(lang, 'Entry Price')}</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={entryPrice} onChange={(e) => setEntryPrice(e.target.value)}
                                         placeholder="" id="be-entry" step="any" min="0" onFocus={(e) => e.target.select()} />
@@ -202,7 +203,7 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
 
                             {/* Position Size */}
                             <div className="input-group">
-                                <label><DollarSign size={14} /> {getUiString(lang, 'Position Size')} (USD)</label>
+                                <label htmlFor="be-size"><DollarSign size={14} /> {getUiString(lang, 'Position Size')} (USD)</label>
                                 <div className="input-with-prefix">
                                     <input type="number" inputMode="decimal" value={positionSize} onChange={(e) => setPositionSize(e.target.value)}
                                         placeholder="" id="be-size" step="any" min="0" onFocus={(e) => e.target.select()} />
@@ -212,12 +213,12 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
                             {/* Fees */}
                             <div className="calc-two-col-grid">
                                 <div className="input-group">
-                                    <label>{getUiString(lang, 'Entry Fee')} (%)</label>
+                                    <label htmlFor="be-entry-fee">{getUiString(lang, 'Entry Fee')} (%)</label>
                                     <input type="number" inputMode="decimal" value={entryFee} onChange={(e) => setEntryFee(e.target.value)}
                                         placeholder="" id="be-entry-fee" step="0.01" min="0" onFocus={(e) => e.target.select()} />
                                 </div>
                                 <div className="input-group">
-                                    <label>{getUiString(lang, 'Exit Fee')} (%)</label>
+                                    <label htmlFor="be-exit-fee">{getUiString(lang, 'Exit Fee')} (%)</label>
                                     <input type="number" inputMode="decimal" value={exitFee} onChange={(e) => setExitFee(e.target.value)}
                                         placeholder="" id="be-exit-fee" step="0.01" min="0" onFocus={(e) => e.target.select()} />
                                 </div>
@@ -384,3 +385,5 @@ export default function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) 
         </div>
     );
 }
+
+export default withErrorBoundary(BreakEvenCalculator);

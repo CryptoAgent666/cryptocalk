@@ -11,6 +11,7 @@ import {
     Loader2,
     Info,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface AsicPreset {
     name: string;
@@ -82,7 +83,7 @@ interface MiningResult {
     netProfit: number;
 }
 
-export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
+function MiningCalculator({ lang = 'en' }: { lang?: string }) {
     // Inputs
     const [selectedPreset, setSelectedPreset] = useState('Custom');
     const [hashrate, setHashrate] = useState('140');
@@ -107,7 +108,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
             try {
                 // Fetch BTC price
                 const priceRes = await fetch(
-                    'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz'
+                    `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'CG-Zeo2WrX3r7J1oUoX1kSnutmz'}`
                 );
                 if (!priceRes.ok) throw new Error('Failed to fetch BTC price');
                 const priceData = await priceRes.json();
@@ -279,7 +280,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* ASIC Preset */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="asic-select">
                             <Cpu size={14} />
                             {getUiString(lang, 'ASIC Miner')}
                         </label>
@@ -303,7 +304,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Hashrate */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="hashrate-input">
                             <Zap size={14} />
                             {getUiString(lang, 'Hashrate')}
                         </label>
@@ -340,7 +341,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Power Consumption */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="power-input">
                             <Zap size={14} />
                             {getUiString(lang, 'Power Consumption')}
                         </label>
@@ -377,7 +378,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Electricity Cost */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="electricity-input">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Electricity Cost')}
                         </label>
@@ -408,7 +409,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Pool Fee */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="pool-fee-input">
                             <TrendingUp size={14} />
                             {getUiString(lang, 'Pool Fee')}
                         </label>
@@ -440,7 +441,7 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Hardware Cost */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="hardware-cost-input">
                             <Calendar size={14} />
                             {getUiString(lang, 'Hardware Cost (optional)')}
                         </label>
@@ -613,3 +614,5 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(MiningCalculator);

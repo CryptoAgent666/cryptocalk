@@ -13,6 +13,7 @@ import {
     AlertTriangle,
     Scale,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -67,7 +68,7 @@ const MARGIN_SCENARIOS = [
     },
 ] as const;
 
-export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
+function MarginCalculator({ lang = 'en' }: { lang?: string }) {
     const [coinSearch, setCoinSearch] = useState('');
     const [selectedCoin, setSelectedCoin] = useState<CoinSuggestion | null>(null);
     const [suggestions, setSuggestions] = useState<CoinSuggestion[]>([]);
@@ -85,16 +86,17 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'CG-Zeo2WrX3r7J1oUoX1kSnutmz';
 
     // Coin search
     const searchCoins = useCallback(async (query: string) => {
         if (query.length < 2) { setSuggestions([]); return; }
         setLoading(true);
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${CG_KEY}`);
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
-            setSuggestions((data.coins || []).slice(0, 8).map((c: any) => ({
+            setSuggestions((data.coins || []).slice(0, 8).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                 id: c.id, name: c.name, symbol: c.symbol, thumb: c.thumb,
             })));
             setShowSuggestions(true);
@@ -116,7 +118,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
         setCoinSearch(coin.name);
         setShowSuggestions(false);
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=${CG_KEY}`);
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
             if (data[coin.id]?.usd) setEntryPrice(String(data[coin.id].usd));
@@ -279,7 +281,7 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="suggestions-dropdown">
                                 {suggestions.map((coin) => (
                                     <button key={coin.id} className="suggestion-item" onClick={() => selectCoin(coin)}>
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
+                                        {coin.thumb && <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>
@@ -539,3 +541,5 @@ export default function MarginCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(MarginCalculator);

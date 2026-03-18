@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Gamepad2, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 // formatUSD is defined inside the component to access `lang` prop
 
@@ -44,7 +45,7 @@ const GAMEFI_SCENARIOS = [
   },
 ] as const;
 
-export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
+function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
   const formatUSD = (value: number): string => {
     return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
       style: 'currency',
@@ -305,3 +306,5 @@ export default function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(GamefiCalculator);

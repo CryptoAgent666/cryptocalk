@@ -11,6 +11,7 @@ import {
     ShieldAlert,
     Crosshair,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface Results {
     rrRatio: number;
@@ -64,7 +65,7 @@ const RISK_REWARD_SCENARIOS = [
     },
 ] as const;
 
-export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
+function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
     const [entryPrice, setEntryPrice] = useState('');
     const [stopLoss, setStopLoss] = useState('');
     const [takeProfit, setTakeProfit] = useState('');
@@ -548,3 +549,5 @@ export default function RiskRewardCalculator({ lang = 'en' }: { lang?: string })
         </div>
     );
 }
+
+export default withErrorBoundary(RiskRewardCalculator);

@@ -10,6 +10,7 @@ import {
     TrendingDown,
     ChevronDown,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface TaxBracket {
     label: string;
@@ -316,7 +317,7 @@ interface TaxResult {
     bracketLabel: string;
 }
 
-export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
+function TaxCalculator({ lang = 'en' }: { lang?: string }) {
     const [country, setCountry] = useState('us');
     const [buyPrice, setBuyPrice] = useState('');
     const [sellPrice, setSellPrice] = useState('');
@@ -428,7 +429,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Country Selector */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="tax-country">
                             <Globe size={14} />
                             {getUiString(lang, 'COUNTRY')}
                         </label>
@@ -452,7 +453,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Income Bracket */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="tax-bracket">
                             <DollarSign size={14} />
                             {getUiString(lang, 'INCOME BRACKET')}
                         </label>
@@ -497,7 +498,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Buy Price */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="tax-buy-price">
                             <DollarSign size={14} />
                             {getUiString(lang, 'BUY PRICE (per coin)')}
                         </label>
@@ -527,7 +528,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Sell Price */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="tax-sell-price">
                             <DollarSign size={14} />
                             {getUiString(lang, 'SELL PRICE (per coin)')}
                         </label>
@@ -557,7 +558,7 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Quantity */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label className="input-label" htmlFor="tax-quantity">
                             {getUiString(lang, 'QUANTITY')}
                         </label>
                         <div className="pills-row">
@@ -747,3 +748,5 @@ export default function TaxCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(TaxCalculator);

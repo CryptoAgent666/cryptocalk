@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Info, RotateCcw, ServerCog, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const STAKED_TOKEN_PRESETS = [1000, 5000, 10000, 25000];
 const TOKEN_PRICE_PRESETS = [1, 2.2, 5, 10];
@@ -16,7 +17,7 @@ const NODE_SCENARIOS = [
 
 
 
-export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
+function NodeCalculator({ lang = 'en' }: { lang?: string }) {
   const locale = lang === 'en' ? 'en-US' : lang;
   const formatUSD = (value: number): string =>
     new Intl.NumberFormat(locale, { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
@@ -255,3 +256,5 @@ export default function NodeCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(NodeCalculator);

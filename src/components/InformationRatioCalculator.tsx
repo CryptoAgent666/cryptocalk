@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const PORTFOLIO_RETURN_PRESETS = [10, 12, 16, 20];
 const BENCHMARK_RETURN_PRESETS = [6, 8, 10, 12];
@@ -15,7 +16,7 @@ const IR_SCENARIOS = [
 
 
 
-export default function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
+function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
   const formatUSD = (value: number): string =>
     new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
       style: 'currency',
@@ -270,3 +271,5 @@ export default function InformationRatioCalculator({ lang = 'en' }: { lang?: str
     </div>
   );
 }
+
+export default withErrorBoundary(InformationRatioCalculator);

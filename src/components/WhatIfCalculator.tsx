@@ -13,6 +13,7 @@ import {
     Share2,
     Sparkles,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -47,7 +48,7 @@ const AMOUNT_PILLS = ['100', '500', '1000', '5000', '10000'];
 const DATE_PRESET_YEARS = [1, 2, 3, 5, 10];
 const EARLIEST_DATE = '2010-07-17';
 
-export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
+function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
     const [amount, setAmount] = useState('');
     const [coinId, setCoinId] = useState('bitcoin');
     const [coinName, setCoinName] = useState('Bitcoin');
@@ -93,7 +94,7 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
         if (query.length < 2) { setSuggestions([]); setShowDropdown(false); return; }
         searchTimeout.current = setTimeout(async () => {
             try {
-                const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`);
+                const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'CG-Zeo2WrX3r7J1oUoX1kSnutmz'}`);
                 if (!res.ok) throw new Error('Search failed');
                 const data = await res.json();
                 setSuggestions((data.coins || []).slice(0, 8));
@@ -144,7 +145,7 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
             if (chartPrices.length > 0) {
                 const step = Math.max(1, Math.floor(chartPrices.length / 60));
                 priceHistory = chartPrices
-                    .filter((_: any, i: number) => i % step === 0 || i === chartPrices.length - 1)
+                    .filter((_: [number, number], i: number) => i % step === 0 || i === chartPrices.length - 1)
                     .map(([ts, price]: [number, number]) => ({
                         date: new Date(ts).toLocaleDateString('en-US', { month: 'short', year: '2-digit' }),
                         value: (amt / priceThen) * price,
@@ -344,7 +345,7 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="coin-dropdown">
                                 {suggestions.map(c => (
                                     <button key={c.id} className="coin-option" onClick={() => selectCoin(c)}>
-                                        {c.thumb && <img src={c.thumb} alt="" width={20} height={20} />}
+                                        {c.thumb && <img src={c.thumb} alt={c.name} width={20} height={20} />}
                                         <span className="coin-option-name">{c.name}</span>
                                         <span className="coin-option-symbol">{c.symbol.toUpperCase()}</span>
                                     </button>
@@ -497,3 +498,5 @@ export default function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(WhatIfCalculator);

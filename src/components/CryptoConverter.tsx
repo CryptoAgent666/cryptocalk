@@ -7,6 +7,7 @@ import {
     Loader2,
     RefreshCw,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinData {
     id: string;
@@ -48,7 +49,7 @@ const QUICK_PAIRS = [
     { from: 'dogecoin', to: 'usd', label: 'DOGE → USD' },
 ];
 
-export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
+function CryptoConverter({ lang = 'en' }: { lang?: string }) {
     // State
     const [amount, setAmount] = useState('1');
     const [fromCoin, setFromCoin] = useState<CoinData>(POPULAR_CRYPTOS[0]);
@@ -68,6 +69,7 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const fromRef = useRef<HTMLDivElement>(null);
     const toRef = useRef<HTMLDivElement>(null);
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'CG-Zeo2WrX3r7J1oUoX1kSnutmz';
 
     // Close dropdowns on outside click
     useEffect(() => {
@@ -89,7 +91,7 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
         setFetchError('');
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${fromCoin.id}&vs_currencies=${toCurrency.id}&include_24hr_change=true&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${fromCoin.id}&vs_currencies=${toCurrency.id}&include_24hr_change=true&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
@@ -119,12 +121,12 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
         }
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
+                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
             setSearchResults(
-                (data.coins || []).slice(0, 10).map((c: any) => ({
+                (data.coins || []).slice(0, 10).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                     id: c.id,
                     name: c.name,
                     symbol: c.symbol,
@@ -232,7 +234,7 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                         id="from-selector"
                     >
                         {fromCoin.thumb && (
-                            <img src={fromCoin.thumb} alt="" width={24} height={24} className="selector-icon" />
+                            <img src={fromCoin.thumb} alt={fromCoin.name} width={24} height={24} className="selector-icon" />
                         )}
                         <span className="selector-name">{fromCoin.name}</span>
                         <span className="selector-symbol">{fromCoin.symbol.toUpperCase()}</span>
@@ -256,7 +258,7 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                                         className={`selector-option ${fromCoin.id === coin.id ? 'selected' : ''}`}
                                         onClick={() => selectFromCoin(coin)}
                                     >
-                                        {coin.thumb && <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />}
+                                        {coin.thumb && <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />}
                                         <span className="option-name">{coin.name}</span>
                                         <span className="option-symbol">{coin.symbol.toUpperCase()}</span>
                                     </button>
@@ -375,3 +377,5 @@ export default function CryptoConverter({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(CryptoConverter);

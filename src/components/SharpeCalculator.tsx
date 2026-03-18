@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const PORTFOLIO_VALUE_PRESETS = [10000, 20000, 50000, 100000];
 const EXPECTED_RETURN_PRESETS = [8, 12, 18, 22, 30];
@@ -16,7 +17,7 @@ const SHARPE_SCENARIOS = [
 
 
 
-export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
+function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
   function formatUSD(value: number): string {
     return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
       style: 'currency',
@@ -229,3 +230,5 @@ export default function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(SharpeCalculator);

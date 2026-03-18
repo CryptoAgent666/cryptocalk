@@ -2,6 +2,52 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 16) — Add htmlFor accessibility attributes to 10 calculator components
+
+### Fixed
+- **Form label accessibility across 10 calculators**: Added `htmlFor` attributes to 55 `<label>` elements, properly associating each label with its corresponding `<input>`, `<select>`, or `<textarea>` element via matching `id`. This enables screen readers to announce the correct label when an input receives focus and allows users to click the label text to focus the input. Calculators updated: ProfitCalculator (6 labels), DCACalculator (3), MiningCalculator (6), TaxCalculator (5), StakingRewardsCalculator (6), RoiCalculator (4), BreakEvenCalculator (7), LiquidationCalculator (5), PositionSizeCalculator (8), GasFeeCalculator (5). Labels for toggle-button groups (Position Type, Margin Type, etc.) were intentionally skipped since they control button groups rather than focusable inputs.
+
+## [2026-03-18] (update 15) — Update year references in localized seo-ext sections
+
+### Changed
+- **calculator-seo-ext.ts**: Updated 27 benchmark year references from "(2024)" to "(2026)" across all 5 localized language sections (es, pt, tr, hi, ru). Categories updated: bridge cost benchmarks (ES, RU), lending parameters (all 5 langs), GPU mining benchmarks (all 5), ASIC mining benchmarks (all 5), electricity cost benchmarks (all 5), hashrate reference units (all 5), crypto salary adoption (all 5). Historical references (e.g. "2024 halving", timestamp examples) preserved unchanged.
+
+## [2026-03-18] (update 14) — Comprehensive quality audit implementation
+
+### Added
+- **Skip-to-content accessibility link**: Added `<a href="#main-content" class="skip-to-content">` as first element in `<body>` (Layout.astro). Visually hidden, appears on focus for keyboard navigation. Added `id="main-content"` to all 44 `<main>` elements across all page templates.
+- **Vitest testing infrastructure**: Added vitest 4.1 + @testing-library/react + jsdom. Created 32 tests covering ErrorBoundary component (6 tests) and core calculator math formulas (26 tests: ROI, break-even, DCA, compound interest, liquidation price, impermanent loss). Added `npm run test` and `npm run test:watch` scripts.
+- **Environment variable support for API keys**: Created `.env` and `.env.example` with `PUBLIC_COINGECKO_API_KEY` and `PUBLIC_CRYPTOCOMPARE_API_KEY`. Updated `cryptoPriceService.ts` to use `import.meta.env` with hardcoded fallbacks for zero-downtime migration.
+
+### Changed
+- **Sitemap lastmod removed**: Removed `serialize` function from astro.config.mjs that was setting identical `lastmod` dates on all 1,147 URLs (actively harmful for SEO). Astro now generates sitemap without misleading lastmod, which is better per Google's crawl efficiency guidelines.
+
+## [2026-03-18] (update 11) — Fix TypeScript `any` types across 20 files
+
+### Fixed
+- **TypeScript strict typing in cryptoPriceService.ts**: Replaced 3 `any` annotations with proper inline types for CryptoCompare (`{ close: number; time: number }`) and CoinCap (`{ time: number; priceUsd: string }`) API response entries.
+- **TypeScript strict typing in 16 calculator components**: Replaced `(c: any)` with `(c: { id: string; name: string; symbol: string; thumb: string })` in CoinGecko search response mapping across DCACalculator, CryptoConverter, FundingRateCalculator, LeverageCalculator, LiquidationCalculator, MarginCalculator, MarketCapCalculator, MarketCapComparator, PipCalculator, PositionSizeCalculator, ProfitCalculator, ReverseRoiCalculator, StakingRewardsCalculator, TpSlCalculator, ImpermanentLossCalculator, AirdropCalculator.
+- **DCACalculator.tsx**: Changed event handler `(e: any)` to `(e: React.MouseEvent)`.
+- **WhatIfCalculator.tsx**: Changed `(_: any, i: number)` to `(_: [number, number], i: number)` in chart price filter.
+- **AsicMiningCalculator.tsx**: Replaced `as any` with typed inline interface `{ difficulty24?: number; difficulty?: number; block_reward24?: number; block_reward?: number; exchange_rate: number }`.
+- **GpuMiningCalculator.tsx**: Replaced `as any` with typed inline interface `{ nethash?: number; block_reward24?: number; block_reward?: number; exchange_rate: number }`.
+
+## [2026-03-18] (update 10) — Update stale year references in SEO content
+
+### Changed
+- **calculator-seo-ext.ts**: Updated 7 year references: Tax Calculator "2024" → "2025" (current tax year), Bridge Cost "2024" → "2026", GPU Mining "2024" → "2026" (2 instances), ASIC Mining "2024" → "2026", Mining Electricity "2024" → "2026", Crypto Salary "2024" → "2026".
+- **ui-strings.ts**: Updated UK CGT exemption year from "(2024/25)" to "(2025/26)" across all 5 localized language sections (es, pt, tr, hi, ru) — 10 string occurrences total (key + value per language).
+
+## [2026-03-18] (update 9) — Descriptive alt text on coin thumbnail images
+
+### Fixed
+- **Accessibility: coin thumbnail alt attributes across 17 calculator components (20 instances)**: Replaced empty `alt=""` with descriptive `alt={coin.name}` (or equivalent variable) on all coin thumbnail `<img>` elements in dropdown suggestion lists. Affected files: PipCalculator, DCACalculator, LeverageCalculator, CryptoConverter (2), PositionSizeCalculator, TpSlCalculator, MarginCalculator, ProfitCalculator, StakingRewardsCalculator, WhatIfCalculator, MarketCapComparator (2), ReverseRoiCalculator, ImpermanentLossCalculator (2), FundingRateCalculator, LiquidationCalculator, MarketCapCalculator, AirdropCalculator. Improves screen reader support and image SEO.
+
+## [2026-03-18] (update 8) — ErrorBoundary wrapping for all calculators
+
+### Added
+- **ErrorBoundary HOC wrapping on all 64 calculator components**: Each calculator is now wrapped with `withErrorBoundary()` HOC from `ErrorBoundary.tsx`. If a calculator throws a runtime error during rendering, users see a friendly "Something went wrong" message with a Reload button instead of a white screen. Affected: all Calculator, Comparator, and Converter `.tsx` components. Non-calculator components (ThemeToggle, LanguageSwitcher) are excluded. Build verified: 754 pages, no errors.
+
 ## [2026-03-18] (update 7) — Calculator defaults refresh to March 2026
 
 ### Fixed

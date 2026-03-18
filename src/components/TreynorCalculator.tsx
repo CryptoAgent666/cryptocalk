@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Info, RotateCcw, ShieldCheck, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const EXPECTED_RETURN_PRESETS = [12, 18, 24, 30];
 const RISK_FREE_PRESETS = [3, 4, 5];
@@ -13,7 +14,7 @@ const TREYNOR_SCENARIOS = [
   { label: 'Aggressive', expectedReturn: '24', riskFreeRate: '5', beta: '1.5', years: '3' },
 ];
 
-export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
+function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
   function formatUSD(value: number): string {
     return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
       style: 'currency',
@@ -297,3 +298,5 @@ export default function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(TreynorCalculator);

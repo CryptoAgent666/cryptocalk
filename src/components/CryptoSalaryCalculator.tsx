@@ -12,6 +12,7 @@ import {
     Coins,
     Clock,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 type Mode = 'fiat-to-crypto' | 'crypto-to-fiat';
 type CryptoType = 'bitcoin' | 'ethereum' | 'tether';
@@ -90,7 +91,7 @@ const SALARY_SCENARIOS = [
     },
 ] as const;
 
-export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
+function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
     // Mode
     const [mode, setMode] = useState<Mode>('fiat-to-crypto');
 
@@ -139,7 +140,7 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
         setError('');
         try {
             const res = await fetch(
-                'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd,eur,gbp,brl,try,inr,rub&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz'
+                `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd,eur,gbp,brl,try,inr,rub&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'CG-Zeo2WrX3r7J1oUoX1kSnutmz'}`
             );
             if (!res.ok) throw new Error(getUiString(lang, 'Failed to fetch prices'));
             const data = await res.json();
@@ -724,3 +725,5 @@ export default function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string 
         </div>
     );
 }
+
+export default withErrorBoundary(CryptoSalaryCalculator);

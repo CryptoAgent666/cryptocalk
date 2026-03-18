@@ -299,7 +299,7 @@ const faqSchema = {
         <Calculator size={24} />
         <span class="logo-text">Crypto<b>Calk</b></span>
       </a>
-      <div class="header-actions">
+      <nav class="header-actions" aria-label="Main navigation">
         <a href={homePath} class="header-link">
           <ArrowLeft size={14} />
           {t.allCalculators}
@@ -310,11 +310,11 @@ const faqSchema = {
           currentPath={pagePath}
         />
         <ThemeToggle client:idle />
-      </div>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="section-container">
         <a href={homePath}>{t.home}</a>
