@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 7) — Calculator defaults refresh to March 2026
+
+### Fixed
+- **Mining**: BTC difficulty 100T→145T (+45%), price fallback→$73,700, added S21 Pro (234 TH/s), removed phantom S21 XP
+- **ASIC Mining**: difficulty 85T→145T (+70%), price→$73,700, added S21 Pro
+- **Gas Fee**: ETH gas 15→1 gwei (post-Dencun reality), ETH price $3,000→$2,327, BNB→$580, AVAX→$30
+- **Tax**: UK CGT 10%/20%→18%/24% (Oct 2024 Budget), Canada 66.67% inclusion for gains >$250K (Jan 2026)
+- **NFT**: removed X2Y2 (dead Apr 2025), OpenSea 2.5%→1%, LooksRare 2%→0.5%, gas $10-40→$1-10
+- **Staking**: ATOM APY 18%→13%, ETH APY 3.5%→3.2%, SOL scenario $150→$95
+- **Halving**: priceAfter18m filled ($126K Oct 2025 ATH), hashrate 700→800 EH/s
+- **Profit**: BTC scenario $50K→$65K, ETH $3,500→$2,300
+- **Leverage**: entry price $65K→$73K
+- **Bridge**: ETH gas $4.50→$0.50, added Solana chain
+
 ## [2026-03-18] (update 6) — Localized category hub body copy
 
 ### Added
