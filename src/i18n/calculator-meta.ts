@@ -794,23 +794,23 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'vesting-calculator': {
       title: 'Token Hak Ediş Hesaplayıcı',
-      description: 'Ücretsiz araç: Token Hak Ediş Hesaplayıcı. Şeffaf varsayımlar ve güncel piyasa verileriyle sonuçları anında hesaplayın.'
+      description: 'Ücretsiz Token Hak Ediş Hesaplayıcı. Cliff dönemleri, TGE kilidi açılışları ve aylık veya üç aylık vesting ile kilit açma takvimlerini görselleştirin.'
     },
     'nft-profit-calculator': {
       title: 'NFT Kar Hesaplayıcı',
-      description: 'Ücretsiz araç: NFT Kar Hesaplayıcı. Şeffaf varsayımlar ve güncel piyasa verileriyle sonuçları anında hesaplayın.'
+      description: 'Ücretsiz NFT Kar Hesaplayıcı. OpenSea, Blur ve daha fazlasında pazar yeri komisyonları, yaratıcı telif hakları ve gas maliyetleri sonrası gerçek NFT işlem karını hesaplayın.'
     },
     'halving-calculator': {
       title: 'Bitcoin Halving Hesaplayıcı',
-      description: 'Ücretsiz araç: Bitcoin Halving Hesaplayıcı. Şeffaf varsayımlar ve güncel piyasa verileriyle sonuçları anında hesaplayın.'
+      description: 'Ücretsiz Bitcoin Halving Hesaplayıcı. Canlı geri sayım ile sonraki BTC halving madencilik gelirini nasıl etkiler, geçmiş veriler ve fiyat analiziyle görün.'
     },
     'mev-calculator': {
       title: 'MEV Koruma Hesaplayıcı',
-      description: 'Ücretsiz araç: MEV Koruma Hesaplayıcı. Şeffaf varsayımlar ve güncel piyasa verileriyle sonuçları anında hesaplayın.'
+      description: 'Ücretsiz MEV Koruma Hesaplayıcı. Swap boyutu ve slippage bazında sandwich ve frontrun riskini, MEV korumalı rotaların potansiyel tasarruflarını tahmin edin.'
     },
     'gamefi-calculator': {
       title: 'GameFi ROI Hesaplayıcı',
-      description: 'Ücretsiz araç: GameFi ROI Hesaplayıcı. Şeffaf varsayımlar ve güncel piyasa verileriyle sonuçları anında hesaplayın.'
+      description: 'Ücretsiz GameFi ROI Hesaplayıcı. Kurulum maliyeti, token ödülleri ve işletme giderlerine dayalı play-to-earn stratejileri için geri ödeme süresi ve yıllık ROI tahmin edin.'
     },
     'node-calculator': {
       title: 'Doğrulayıcı Düğüm Hesaplayıcı',
