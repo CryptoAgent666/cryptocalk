@@ -23,12 +23,12 @@ interface CoinSuggestion {
 
 const LEVERAGE_PRESETS = [1, 2, 3, 5, 10, 20, 25, 50, 75, 100, 125];
 const PRICE_CHANGE_PRESETS = [-50, -25, -10, -5, 5, 10, 25, 50];
-const ENTRY_PRICE_PILLS = ['1000', '30000', '65000', '100000'];
+const ENTRY_PRICE_PILLS = ['1000', '30000', '73000', '100000'];
 const POSITION_SIZE_PILLS = ['1000', '5000', '10000', '25000'];
 const LEVERAGE_SCENARIOS = [
     {
         label: 'Long 10x',
-        entryPrice: '65000',
+        entryPrice: '73000',
         positionSize: '10000',
         leverage: '10',
         priceChange: '10',
@@ -36,7 +36,7 @@ const LEVERAGE_SCENARIOS = [
     },
     {
         label: 'Short 10x',
-        entryPrice: '65000',
+        entryPrice: '73000',
         positionSize: '10000',
         leverage: '10',
         priceChange: '-10',
@@ -44,7 +44,7 @@ const LEVERAGE_SCENARIOS = [
     },
     {
         label: 'High Risk 25x',
-        entryPrice: '65000',
+        entryPrice: '73000',
         positionSize: '5000',
         leverage: '25',
         priceChange: '5',

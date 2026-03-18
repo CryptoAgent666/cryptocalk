@@ -19,7 +19,8 @@ const BRIDGES: BridgeDef[] = [
   { name: 'LayerZero OFT', feePercent: 0.05, fixedFee: 1.5, avgMinutes: 10, securityScore: 4.7, maxAmount: 1000000 },
 ];
 
-const CHAINS = ['Ethereum', 'Arbitrum', 'Optimism', 'Base', 'Polygon', 'BSC'];
+// Chains & gas estimates updated 2026-03-18.
+const CHAINS = ['Ethereum', 'Arbitrum', 'Optimism', 'Base', 'Polygon', 'BSC', 'Solana'];
 
 
 export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
@@ -40,8 +41,8 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
     const amountNum = Number(amount);
     if (!Number.isFinite(amountNum) || amountNum <= 0 || fromChain === toChain) return [];
 
-    const sourceGas = fromChain === 'Ethereum' ? 4.5 : 0.8;
-    const destinationGas = toChain === 'Ethereum' ? 3.5 : 0.6;
+    const sourceGas = fromChain === 'Ethereum' ? 0.50 : fromChain === 'Solana' ? 0.01 : 0.10;
+    const destinationGas = toChain === 'Ethereum' ? 0.50 : toChain === 'Solana' ? 0.01 : 0.10;
 
     return BRIDGES.map((bridge) => {
       const protocolFee = amountNum * (bridge.feePercent / 100) + bridge.fixedFee;

@@ -19,12 +19,13 @@ interface AsicPreset {
     price: number; // USD
 }
 
+// Difficulty & price fallbacks updated 2026-03-18. Fetch live data when available.
 const ASIC_PRESETS: AsicPreset[] = [
     { name: 'Custom', hashrate: 0, power: 0, price: 0 },
     { name: 'Antminer S21 Hyd', hashrate: 335, power: 5360, price: 5200 },
-    { name: 'Antminer S21 XP', hashrate: 270, power: 3645, price: 4800 },
+    { name: 'Antminer S21 Pro', hashrate: 234, power: 3510, price: 4500 },
     { name: 'Antminer S21', hashrate: 200, power: 3500, price: 3500 },
-    { name: 'Antminer S19 XP', hashrate: 140, power: 3010, price: 2800 },
+    { name: 'Antminer S19 XP', hashrate: 140, power: 3010, price: 1200 },
     { name: 'Antminer S19k Pro', hashrate: 120, power: 2760, price: 1800 },
     { name: 'Whatsminer M60S', hashrate: 186, power: 3344, price: 3200 },
     { name: 'Whatsminer M56S++', hashrate: 230, power: 5290, price: 4500 },
@@ -110,23 +111,23 @@ export default function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                 );
                 if (!priceRes.ok) throw new Error('Failed to fetch BTC price');
                 const priceData = await priceRes.json();
-                const btcPrice = priceData.bitcoin?.usd || 70000;
+                const btcPrice = priceData.bitcoin?.usd || 73700;
 
                 // Use reasonable defaults for difficulty (auto-fetch from a mining API can be added later)
-                // Current Bitcoin difficulty as of 2025: ~100T
+                // Current Bitcoin difficulty as of 2026-03: ~145T
                 // Block reward after 2024 halving: 3.125 BTC
                 setNetwork({
-                    difficulty: 100_000_000_000_000, // ~100T
+                    difficulty: 145_000_000_000_000, // ~145T
                     btcPrice,
                     blockReward: 3.125,
                 });
             } catch {
                 setNetwork({
-                    difficulty: 100_000_000_000_000,
-                    btcPrice: 70000,
+                    difficulty: 145_000_000_000_000,
+                    btcPrice: 73700,
                     blockReward: 3.125,
                 });
-                setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($70,000).'));
+                setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($73,700).'));
             }
             setLoadingNetwork(false);
         };
