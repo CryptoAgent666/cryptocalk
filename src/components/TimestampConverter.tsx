@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ArrowRightLeft, Calendar, Clock, Info, RotateCcw } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 type Mode = 'timestamp' | 'datetime';
 type DisplayZone = 'local' | 'utc';
@@ -42,7 +43,7 @@ function parseTimestamp(value: string): Date | null {
   return Number.isNaN(date.getTime()) ? null : date;
 }
 
-export default function TimestampConverter({ lang = 'en' }: { lang?: string }) {
+function TimestampConverter({ lang = 'en' }: { lang?: string }) {
   const now = new Date();
   const [mode, setMode] = useState<Mode>('timestamp');
   const [zone, setZone] = useState<DisplayZone>('local');
@@ -208,3 +209,5 @@ export default function TimestampConverter({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(TimestampConverter);

@@ -11,6 +11,7 @@ import {
     Gauge,
     TrendingUp,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface ConsumptionRow {
     period: string;
@@ -72,7 +73,7 @@ const COUNTRY_RATES: CountryRate[] = [
     { name: 'Paraguay', rate: 0.03 },
 ];
 
-export default function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
+function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
     const [numDevices, setNumDevices] = useState('1');
     const [powerPerDevice, setPowerPerDevice] = useState('3000');
     const [electricityRate, setElectricityRate] = useState('0.10');
@@ -640,3 +641,5 @@ const tdStyle: React.CSSProperties = {
     whiteSpace: 'nowrap',
     color: 'var(--color-text)',
 };
+
+export default withErrorBoundary(ElectricityCostCalculator);

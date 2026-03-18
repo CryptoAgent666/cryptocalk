@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Gauge, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const PORTFOLIO_VALUE_PRESETS = [10000, 30000, 50000, 100000];
 const ANNUAL_RETURN_PRESETS = [10, 20, 30, 40];
@@ -14,7 +15,7 @@ const CALMAR_SCENARIOS = [
 ] as const;
 
 
-export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
+function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
   const formatUSD = (value: number): string => {
     return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
       style: 'currency',
@@ -197,3 +198,5 @@ export default function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(CalmarCalculator);

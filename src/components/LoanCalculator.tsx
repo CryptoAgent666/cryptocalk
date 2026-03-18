@@ -9,6 +9,7 @@ import {
     AlertTriangle,
     TrendingDown,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const LTV_PRESETS = [25, 33, 50, 67, 75];
 const COLLATERAL_PRESETS = [5000, 10000, 25000, 50000];
@@ -55,7 +56,7 @@ const LOAN_SCENARIOS = [
     },
 ] as const;
 
-export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
+function LoanCalculator({ lang = 'en' }: { lang?: string }) {
     const [collateralValue, setCollateralValue] = useState('10000');
     const [ltv, setLtv] = useState('50');
     const [apr, setApr] = useState('6.9');
@@ -427,3 +428,5 @@ export default function LoanCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(LoanCalculator);

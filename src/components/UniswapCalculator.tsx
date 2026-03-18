@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ArrowRightLeft, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const DEPOSIT_PRESETS = [1000, 5000, 10000, 25000];
 const POOL_TVL_PRESETS = [500000, 1000000, 5000000, 10000000];
@@ -13,7 +14,7 @@ const UNISWAP_SCENARIOS = [
   { label: 'High-Vol LP', deposit: '25000', poolTvl: '2000000', dailyVolume: '1000000', feeTier: '1', priceMovePct: '50', days: '90' },
 ] as const;
 
-export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
+function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
   function formatUSD(value: number): string {
     return new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
       style: 'currency',
@@ -274,3 +275,5 @@ export default function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(UniswapCalculator);

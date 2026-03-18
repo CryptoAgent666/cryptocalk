@@ -11,6 +11,7 @@ import {
     Calendar,
     BarChart3,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 type Scenario = 'optimistic' | 'realistic' | 'pessimistic';
 
@@ -117,7 +118,7 @@ function findBreakEvenMonth(data: MonthData[]): number | null {
     return null;
 }
 
-export default function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
+function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
     const [equipmentCost, setEquipmentCost] = useState('5000');
     const [monthlyRevenue, setMonthlyRevenue] = useState('300');
     const [monthlyExpenses, setMonthlyExpenses] = useState('150');
@@ -863,3 +864,5 @@ const tdStyle: React.CSSProperties = {
     whiteSpace: 'nowrap',
     color: 'var(--color-text)',
 };
+
+export default withErrorBoundary(MiningRoiCalculator);

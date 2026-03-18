@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ArrowRightLeft, Info, RotateCcw, Shield } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface BridgeDef {
   name: string;
@@ -23,7 +24,7 @@ const BRIDGES: BridgeDef[] = [
 const CHAINS = ['Ethereum', 'Arbitrum', 'Optimism', 'Base', 'Polygon', 'BSC', 'Solana'];
 
 
-export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
+function BridgeComparator({ lang = 'en' }: { lang?: string }) {
   const formatUSD = (value: number): string => {
     return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
       style: 'currency',
@@ -183,3 +184,5 @@ export default function BridgeComparator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(BridgeComparator);

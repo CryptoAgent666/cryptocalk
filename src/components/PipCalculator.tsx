@@ -12,6 +12,7 @@ import {
     ArrowUpDown,
     Ruler,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface CoinSuggestion {
     id: string;
@@ -76,7 +77,7 @@ function getDefaultTickSize(price: number): number {
     return 0.00000001;
 }
 
-export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
+function PipCalculator({ lang = 'en' }: { lang?: string }) {
     const [coinSearch, setCoinSearch] = useState('');
     const [selectedCoin, setSelectedCoin] = useState<CoinSuggestion | null>(null);
     const [suggestions, setSuggestions] = useState<CoinSuggestion[]>([]);
@@ -91,6 +92,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'CG-Zeo2WrX3r7J1oUoX1kSnutmz';
 
     const searchCoins = useCallback(async (query: string) => {
         if (query.length < 2) {
@@ -100,11 +102,11 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
         setLoading(true);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
+                `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
-            const coins = (data.coins || []).slice(0, 8).map((c: any) => ({
+            const coins = (data.coins || []).slice(0, 8).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({
                 id: c.id,
                 name: c.name,
                 symbol: c.symbol,
@@ -130,7 +132,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
         setShowSuggestions(false);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${coin.id}&vs_currencies=usd&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
@@ -152,7 +154,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
         setShowSuggestions(false);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=${pair.id}&vs_currencies=usd&x_cg_demo_api_key=CG-Zeo2WrX3r7J1oUoX1kSnutmz`
+                `https://api.coingecko.com/api/v3/simple/price?ids=${pair.id}&vs_currencies=usd&x_cg_demo_api_key=${CG_KEY}`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();
@@ -352,7 +354,7 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
                                         onClick={() => selectCoin(coin)}
                                     >
                                         {coin.thumb && (
-                                            <img src={coin.thumb} alt="" width={20} height={20} loading="lazy" />
+                                            <img src={coin.thumb} alt={coin.name} width={20} height={20} loading="lazy" />
                                         )}
                                         <span className="suggestion-name">{coin.name}</span>
                                         <span className="suggestion-symbol">{coin.symbol.toUpperCase()}</span>
@@ -591,3 +593,5 @@ export default function PipCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(PipCalculator);

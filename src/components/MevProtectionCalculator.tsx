@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, Shield } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 type Network = 'Ethereum' | 'Arbitrum' | 'Base' | 'BSC';
 
@@ -21,7 +22,7 @@ const networkRisk: Record<Network, number> = {
   BSC: 0.8,
 };
 
-export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string }) {
+function MevProtectionCalculator({ lang = 'en' }: { lang?: string }) {
   const formatUSD = (value: number): string =>
     new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, {
       style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
@@ -175,3 +176,5 @@ export default function MevProtectionCalculator({ lang = 'en' }: { lang?: string
     </div>
   );
 }
+
+export default withErrorBoundary(MevProtectionCalculator);

@@ -1,6 +1,7 @@
 import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Dice5, Info, RotateCcw, TrendingUp } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 
 
@@ -10,7 +11,7 @@ const KELLY_SCENARIOS = [
   { label: 'Aggressive', winRate: '60', avgWinPct: '2', avgLossPct: '1', capital: '25000' },
 ] as const;
 
-export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
+function KellyCalculator({ lang = 'en' }: { lang?: string }) {
   const formatUSD = (value: number): string =>
     new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
       style: 'currency',
@@ -207,3 +208,5 @@ export default function KellyCalculator({ lang = 'en' }: { lang?: string }) {
     </div>
   );
 }
+
+export default withErrorBoundary(KellyCalculator);

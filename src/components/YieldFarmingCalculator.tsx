@@ -11,6 +11,7 @@ import {
     Calendar,
     Clock,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 const HARVEST_FREQUENCIES = [
     { id: 'daily', label: 'Daily', days: 1 },
@@ -72,7 +73,7 @@ const YIELD_FARMING_SCENARIOS = [
     },
 ] as const;
 
-export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
+function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
     const [deposit, setDeposit] = useState('1000');
     const [poolRate, setPoolRate] = useState('50');
     const [rateType, setRateType] = useState<YieldRateType>('APY');
@@ -570,3 +571,5 @@ export default function YieldFarmingCalculator({ lang = 'en' }: { lang?: string 
         </div>
     );
 }
+
+export default withErrorBoundary(YieldFarmingCalculator);

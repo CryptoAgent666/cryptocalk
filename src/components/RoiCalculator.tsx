@@ -10,6 +10,7 @@ import {
     RotateCcw,
     BarChart3,
 } from 'lucide-react';
+import { withErrorBoundary } from './ErrorBoundary';
 
 interface Results {
     totalRoi: number;
@@ -75,7 +76,7 @@ const TRADITIONAL_ASSETS = [
     { name: 'Savings Account', annualReturn: 4.0 },
 ];
 
-export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
+function RoiCalculator({ lang = 'en' }: { lang?: string }) {
     const [initialInvestment, setInitialInvestment] = useState('');
     const [currentValue, setCurrentValue] = useState('');
     const [holdingDays, setHoldingDays] = useState('365');
@@ -214,7 +215,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Initial Investment */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="roi-initial">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Initial Investment')}
                         </label>
@@ -244,7 +245,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Current Value */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="roi-current">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Current Value / Exit Value')}
                         </label>
@@ -274,7 +275,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Holding Period */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="roi-days">
                             <Calendar size={14} />
                             {getUiString(lang, 'Holding Period')}
                         </label>
@@ -304,7 +305,7 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Fees Paid */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="roi-fees">
                             <Percent size={14} />
                             {getUiString(lang, 'Total Fees Paid (optional)')}
                         </label>
@@ -475,3 +476,5 @@ export default function RoiCalculator({ lang = 'en' }: { lang?: string }) {
         </div>
     );
 }
+
+export default withErrorBoundary(RoiCalculator);

@@ -22,18 +22,18 @@ import '../styles/calculator-page.css';
         <Calculator size={24} />
         <span class="logo-text">Crypto<b>Calk</b></span>
       </a>
-      <div class="header-actions">
+      <nav class="header-actions" aria-label="Main navigation">
         <a href="/" class="header-link">
           <ArrowLeft size={14} />
           All Calculators
         </a>
         <LanguageSwitcher client:idle currentLang="en" currentPath="/mining-calculator" />
         <ThemeToggle client:idle />
-      </div>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Breadcrumb -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="section-container">
