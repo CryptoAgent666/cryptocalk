@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 3) — Title + meta description SEO fixes
+
+### Fixed
+- **27 EN title tags shortened to < 60 chars**: Dropped secondary descriptors, standardized ` | CryptoCalk` separator. Longest: 48 chars. Previously 27 titles exceeded 60 chars (worst: 77).
+- **51 boilerplate meta descriptions replaced**: All generic "Calculate crypto outcomes instantly with transparent assumptions..." patterns in `calculator-meta.ts` replaced with unique, keyword-rich descriptions per calculator. Each starts with "Free", includes the tool name, and describes specific functionality.
+
 ## [2026-03-18] (update 2) — SEO audit Phase 1+2 technical fixes
 
 ### Fixed
