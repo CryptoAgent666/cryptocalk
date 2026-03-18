@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 21) — Contextual internal links in calculator-seo-ext.ts EN sections
+
+### Added
+- **Contextual internal links in calculator-seo-ext.ts EN section**: Added 2-3 HTML anchor links per calculator entry across 32 calculator EN sections in the extended SEO content file. Total: 62 new internal links targeting 18 high-value calculator pages (profit, DCA, mining, tax, staking, converter, liquidation, position-size, impermanent-loss, gas, break-even, risk-reward, ROI, margin, TP/SL, funding-rate, halving, what-if, electricity-cost). Links are contextually relevant with descriptive anchor text, naturally placed within the existing content, spread across different sections (interpret, scenarios, checklist, mistakes, benchmarks, execution, hygiene, validation). No calculator links to itself. EN sections only — localized content untouched. Build verified: 754 pages, no errors.
+
+### Calculators with new internal links (32 total)
+converter, profit-calculator, mining-calculator, dca-calculator, tax-calculator, what-if, position-size-calculator, liquidation-calculator, staking-calculator, gas-calculator, break-even-calculator, funding-rate-calculator, tp-sl-calculator, margin-calculator, risk-reward-calculator, impermanent-loss-calculator, roi-calculator, halving-calculator, apy-apr-calculator, yield-farming-calculator, gpu-mining-calculator, asic-mining-calculator, mining-roi-calculator, electricity-cost-calculator, hodl-vs-trade, uniswap-calculator, pip-calculator, market-cap-calculator, vesting-calculator, difficulty-calculator, bridge-comparator, lending-calculator
+
 ## [2026-03-18] (update 20) — Custom FAQ for top 10 EN calculators
 
 ### Changed
