@@ -96,6 +96,10 @@ export default defineConfig({
       // Exclude legacy localized calculator URLs (e.g. /es/profit-calculator)
       // and EN alias pages that canonical to a spec URL (e.g. /staking-rewards-calculator → /staking-calculator).
       filter: (pageUrl) => !isLegacyLocalizedSpecUrl(pageUrl) && !isAliasUrl(pageUrl),
+      serialize: (item) => ({
+        ...item,
+        lastmod: new Date().toISOString().split('T')[0],
+      }),
     }),
   ],
   vite: {
