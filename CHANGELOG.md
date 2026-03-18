@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 2) — SEO audit Phase 1+2 technical fixes
+
+### Fixed
+- **BreadcrumbList 2→3 levels on ~35 EN pages**: Home → Category → Calculator. Uses calculator-category-map lookup.
+- **Sitemap `<lastmod>`**: All 1154 URLs now include modification date via serialize callback.
+- **`twitter:site` / `twitter:creator`**: Added @yakovlevka3 on all pages.
+- **Homepage H1**: "The Smartest Crypto Calculator Hub" → "50+ Free Crypto Calculators".
+- **Category hub H1**: Now appends "Calculators" in all languages (e.g., "Investment Calculators").
+- **About page BreadcrumbList**: Added Home → About schema. Updated dateModified.
+
 ## [2026-03-18] — Content quality audit fixes
 
 ### Fixed
