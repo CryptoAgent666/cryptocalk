@@ -51,11 +51,11 @@ const COUNTRIES: Record<string, CountryConfig> = {
         longTermLabel: 'Higher rate taxpayer',
         longTermThreshold: 'N/A (no holding period benefit)',
         brackets: [
-            { label: '£0 – £37,700', shortTermRate: 10, longTermRate: 10 },
-            { label: '£37,701 – £125,140', shortTermRate: 20, longTermRate: 20 },
-            { label: '£125,141+', shortTermRate: 20, longTermRate: 20 },
+            { label: '£0 – £37,700', shortTermRate: 18, longTermRate: 18 },
+            { label: '£37,701 – £125,140', shortTermRate: 24, longTermRate: 24 },
+            { label: '£125,141+', shortTermRate: 24, longTermRate: 24 },
         ],
-        notes: 'UK has a £3,000 annual CGT exemption (2024/25). No distinction for holding period. 10% basic / 20% higher rate.',
+        notes: 'UK has a £3,000 annual CGT exemption (2025/26). No distinction for holding period. 18% basic / 24% higher rate (updated Oct 2024 Budget).',
     },
     de: {
         name: 'Germany',
@@ -89,8 +89,8 @@ const COUNTRIES: Record<string, CountryConfig> = {
     ca: {
         name: 'Canada',
         currency: 'CAD',
-        shortTermLabel: 'Capital gains (50% inclusion)',
-        longTermLabel: 'Capital gains (50% inclusion)',
+        shortTermLabel: 'Capital gains (50%/66.67% inclusion)',
+        longTermLabel: 'Capital gains (50%/66.67% inclusion)',
         longTermThreshold: 'N/A (no holding period benefit)',
         brackets: [
             { label: 'C$0 – C$55,867', shortTermRate: 7.5, longTermRate: 7.5 },
@@ -99,7 +99,7 @@ const COUNTRIES: Record<string, CountryConfig> = {
             { label: 'C$154,907 – C$220,000', shortTermRate: 14.5, longTermRate: 14.5 },
             { label: 'C$220,001+', shortTermRate: 16.5, longTermRate: 16.5 },
         ],
-        notes: 'Canada: only 50% of capital gains are taxable, included in your regular income. No distinction by holding period.',
+        notes: 'Canada: 50% of capital gains are taxable up to C$250K; gains above C$250K have a 66.67% inclusion rate (effective Jan 1, 2026). Rates shown use the 50% inclusion. No distinction by holding period.',
     },
     in: {
         name: 'India',

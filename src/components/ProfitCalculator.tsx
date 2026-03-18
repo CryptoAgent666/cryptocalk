@@ -41,8 +41,8 @@ const FEE_PILLS = ['0.05', '0.1', '0.2', '0.5'];
 const PROFIT_SCENARIOS = [
     {
         label: 'BTC Long +20%',
-        buyPrice: '50000',
-        sellPrice: '60000',
+        buyPrice: '65000',
+        sellPrice: '78000',
         inputMode: 'investment' as const,
         investmentAmount: '1000',
         quantity: '',
@@ -52,8 +52,8 @@ const PROFIT_SCENARIOS = [
     },
     {
         label: 'ETH Short',
-        buyPrice: '3500',
-        sellPrice: '3000',
+        buyPrice: '2300',
+        sellPrice: '2000',
         inputMode: 'investment' as const,
         investmentAmount: '5000',
         quantity: '',

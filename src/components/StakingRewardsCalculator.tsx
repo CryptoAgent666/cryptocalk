@@ -21,12 +21,13 @@ interface CoinSuggestion {
     thumb?: string;
 }
 
+// APY & price defaults updated 2026-03-18.
 const POPULAR_STAKES = [
-    { name: 'Ethereum', symbol: 'ETH', apy: 3.5, id: 'ethereum' },
+    { name: 'Ethereum', symbol: 'ETH', apy: 3.2, id: 'ethereum' },
     { name: 'Solana', symbol: 'SOL', apy: 7.0, id: 'solana' },
     { name: 'Cardano', symbol: 'ADA', apy: 3.2, id: 'cardano' },
     { name: 'Polkadot', symbol: 'DOT', apy: 11.0, id: 'polkadot' },
-    { name: 'Cosmos', symbol: 'ATOM', apy: 18.0, id: 'cosmos' },
+    { name: 'Cosmos', symbol: 'ATOM', apy: 13.0, id: 'cosmos' },
     { name: 'Avalanche', symbol: 'AVAX', apy: 8.5, id: 'avalanche-2' },
 ];
 
@@ -36,8 +37,8 @@ const STAKING_SCENARIOS = [
     {
         label: 'ETH Conservative',
         stakingAmount: '1000',
-        tokenPrice: '2500',
-        stakingApy: '3.5',
+        tokenPrice: '2327',
+        stakingApy: '3.2',
         validatorFee: '5',
         stakingDays: '365',
         autoCompound: true,
@@ -45,7 +46,7 @@ const STAKING_SCENARIOS = [
     {
         label: 'SOL Growth',
         stakingAmount: '2500',
-        tokenPrice: '150',
+        tokenPrice: '95',
         stakingApy: '7',
         validatorFee: '5',
         stakingDays: '365',
