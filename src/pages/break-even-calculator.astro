@@ -143,33 +143,33 @@ import '../styles/calculator-page.css';
         <h2>Frequently Asked Questions</h2>
 
         <details>
-          <summary>Why does a 50% loss need a 100% gain to recover?</summary>
-          <p>If you start with $10,000 and lose 50%, you have $5,000. To get back to $10,000, that $5,000 needs to double — a 100% gain. The key insight is that the gain percentage is calculated on the smaller, post-loss amount, not the original amount.</p>
+          <summary>How much do I need to gain to recover from a 50% crypto loss?</summary>
+          <p>You need a 100% gain to recover from a 50% loss. If your $10,000 portfolio drops to $5,000, that remaining $5,000 must double to reach $10,000 again. The math is asymmetric because gains are calculated on the smaller post-loss balance. A 75% loss requires a 300% gain, and a 90% loss requires a 900% gain (10x) to fully recover.</p>
         </details>
 
         <details>
-          <summary>How do trading fees affect my break-even price?</summary>
-          <p>Trading fees push your break-even price further from entry. With 0.1% entry and 0.1% exit fees on a $10,000 long position, your break-even is approximately $10,020 — you need a $20 price increase before you start profiting. For leveraged positions, fees are calculated on the full notional value, amplifying the effect.</p>
+          <summary>What is my break-even price if I bought Bitcoin at different prices?</summary>
+          <p>Your break-even is the weighted average of all purchases. For example, buying 0.1 BTC at $60,000 ($6,000) and 0.2 BTC at $50,000 ($10,000) gives you 0.3 BTC for $16,000 total. Your break-even price is $16,000 / 0.3 = $53,333 per BTC. This calculator handles multiple entries automatically and shows your exact average cost basis.</p>
         </details>
 
         <details>
-          <summary>Should I average down to lower my break-even?</summary>
-          <p>Averaging down can be a valid strategy if you have high conviction and the price decline is within your risk tolerance. However, it increases your total exposure to the asset. Only average down with a predetermined plan, maximum position size, and a final stop-loss. Never average down on a losing leveraged position.</p>
+          <summary>How much do trading fees add to my break-even price?</summary>
+          <p>Fees push your break-even above your entry price. With 0.1% entry and exit fees on a $10,000 trade, you need $20 in price movement just to cover fees. On Coinbase at 0.6% fees, that jumps to $120. For leveraged positions, fees apply to the full notional value -- a 10x position multiplies fee impact by 10x, making the break-even gap even wider.</p>
         </details>
 
         <details>
-          <summary>How do I calculate break-even for multiple buy orders?</summary>
-          <p>Add up the total cost of all purchases and divide by the total number of coins. For example: Buy 1 ETH at $3,000 and 2 ETH at $2,500 = $8,000 total for 3 ETH = $2,666.67 break-even. This weighted average gives you the true average cost per coin.</p>
+          <summary>Should I buy more crypto to lower my average price?</summary>
+          <p>Averaging down reduces your break-even price but increases your total risk exposure. Only do this with a predetermined plan: set a maximum total position size, define the price levels where you will add, and place a hard stop-loss below your final entry. Never average down on leveraged positions or speculative altcoins without strong fundamentals. Disciplined averaging can work; emotional panic buying rarely does.</p>
         </details>
 
         <details>
-          <summary>Does break-even change with leverage?</summary>
-          <p>The price break-even doesn't change with leverage, but the fees do. On a 10x leveraged position, you pay fees on the full notional value (10x your margin), which pushes the break-even price further from entry. Additionally, funding fees on perpetual futures accumulate over time and shift the break-even.</p>
+          <summary>Why is my portfolio down 80% but the coin only needs to 5x to recover?</summary>
+          <p>An 80% loss requires a 400% gain (5x) to break even. This dramatic asymmetry is why risk management is more important than finding winning trades. The deeper the drawdown, the more unrealistic recovery becomes. A 90% loss needs 900% (10x), and a 95% loss needs 1,900% (20x). This calculator visualizes this relationship so you can understand exactly how far you need to go.</p>
         </details>
 
         <details>
-          <summary>What is the best way to avoid large drawdowns?</summary>
-          <p>Use stop-losses, limit position sizes to 1-5% of your portfolio per trade, diversify across uncorrelated assets, and never risk more than you can afford to lose. The break-even math shows that prevention (small losses) is far more effective than recovery (trying to make back large losses).</p>
+          <summary>How do I calculate break-even after accounting for taxes?</summary>
+          <p>Your after-tax break-even is higher than the raw price because profits are taxed while losses may only partially offset income. For a US trader in the 24% bracket, a position needs to profit roughly 32% more than the pre-tax break-even to cover taxes on gains. Use our <a href="/tax-calculator/">Crypto Tax Calculator</a> to estimate your tax liability, then factor that into your target exit price.</p>
         </details>
 
         <h2>Related Calculators</h2>
@@ -236,50 +236,50 @@ import '../styles/calculator-page.css';
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Why does a 50% loss need a 100% gain to recover?",
+      "name": "How much do I need to gain to recover from a 50% crypto loss?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If you start with $10,000 and lose 50%, you have $5,000. To get back to $10,000, that $5,000 needs to double — a 100% gain calculated on the smaller post-loss amount."
+        "text": "You need a 100% gain to recover from a 50% loss. If your $10,000 portfolio drops to $5,000, that remaining $5,000 must double to reach $10,000 again. A 75% loss requires a 300% gain, and a 90% loss requires a 900% gain to fully recover."
       }
     },
     {
       "@type": "Question",
-      "name": "How do trading fees affect my break-even price?",
+      "name": "What is my break-even price if I bought Bitcoin at different prices?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Trading fees push your break-even price further from entry. With 0.1% entry and 0.1% exit fees on a $10,000 long position, your break-even is approximately $10,020."
+        "text": "Your break-even is the weighted average of all purchases. For example, buying 0.1 BTC at $60,000 ($6,000) and 0.2 BTC at $50,000 ($10,000) gives you 0.3 BTC for $16,000 total. Your break-even price is $53,333 per BTC."
       }
     },
     {
       "@type": "Question",
-      "name": "Should I average down to lower my break-even?",
+      "name": "How much do trading fees add to my break-even price?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Averaging down can be valid with high conviction, but it increases total exposure. Only average down with a predetermined plan, maximum position size, and a final stop-loss."
+        "text": "With 0.1% entry and exit fees on a $10,000 trade, you need $20 in price movement just to cover fees. On Coinbase at 0.6%, that jumps to $120. For leveraged positions, fees apply to the full notional value, making the break-even gap even wider."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I calculate break-even for multiple buy orders?",
+      "name": "Should I buy more crypto to lower my average price?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Add up the total cost of all purchases and divide by the total number of coins. This weighted average gives you the true average cost per coin."
+        "text": "Averaging down reduces your break-even price but increases total risk exposure. Only do this with a predetermined plan: set a maximum position size, define price levels where you will add, and place a hard stop-loss below your final entry. Never average down on leveraged positions."
       }
     },
     {
       "@type": "Question",
-      "name": "Does break-even change with leverage?",
+      "name": "Why is my portfolio down 80% but the coin only needs to 5x to recover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The price break-even doesn't change with leverage, but fees are calculated on the full notional value, pushing the break-even price further from entry."
+        "text": "An 80% loss requires a 400% gain (5x) to break even. This dramatic asymmetry is why risk management is more important than finding winning trades. A 90% loss needs 900% (10x), and a 95% loss needs 1,900% (20x)."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the best way to avoid large drawdowns?",
+      "name": "How do I calculate break-even after accounting for taxes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use stop-losses, limit position sizes to 1-5% of your portfolio per trade, diversify across uncorrelated assets, and never risk more than you can afford to lose."
+        "text": "Your after-tax break-even is higher than the raw price because profits are taxed while losses may only partially offset income. For a US trader in the 24% bracket, a position needs to profit roughly 32% more than the pre-tax break-even to cover taxes on gains."
       }
     }
   ]
