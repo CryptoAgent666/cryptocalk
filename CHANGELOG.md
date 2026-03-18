@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 17) — Brand titles and unique meta descriptions for all 51 calculators x 6 languages
+
+### Changed
+- **EN title branding (calculator-meta.ts)**: Appended " | CryptoCalk" to all 51 EN calculator titles. All titles verified under 60-character limit. Longest: "Compound Interest Calculator (Crypto) | CryptoCalk" (51 chars).
+- **EN meta descriptions**: Already unique and specific — no changes needed.
+- **ES meta descriptions**: Replaced 51 boilerplate "Herramienta gratuita: [Tool]. Calcula resultados al instante con supuestos transparentes..." descriptions with unique, calculator-specific descriptions in Spanish.
+- **PT meta descriptions**: Replaced 51 boilerplate "Ferramenta gratuita: [Tool]. Calcule resultados em segundos com premissas claras..." descriptions with unique, calculator-specific descriptions in Portuguese.
+- **TR meta descriptions**: Replaced 51 boilerplate "Ücretsiz araç: [Tool]. Şeffaf varsayımlar ve güncel piyasa verileriyle..." descriptions with unique, calculator-specific descriptions in Turkish.
+- **HI meta descriptions**: Replaced 51 boilerplate "मुफ्त टूल: [Tool]। पारदर्शी मान्यताओं और अपडेटेड मार्केट डेटा..." descriptions with unique, calculator-specific descriptions in Hindi.
+- **RU meta descriptions**: Replaced 51 boilerplate "Бесплатный инструмент: [Tool]. Считайте результаты мгновенно с прозрачными допущениями..." descriptions with unique, calculator-specific descriptions in Russian.
+
+Total: 51 titles branded + 255 boilerplate descriptions replaced (51 x 5 languages) with unique, SEO-optimized descriptions specific to each calculator's function.
+
 ## [2026-03-18] (update 16) — Add htmlFor accessibility attributes to 10 calculator components
 
 ### Fixed
