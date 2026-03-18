@@ -7198,12 +7198,14 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Miner capitulation benchmarks: hashrate typically declines 5-15% in the 2-3 months following a halving as unprofitable miners shut down. Hashrate recovery to pre-halving levels historically takes 4-8 months. This recovery timeline provides a rough estimate for when miner selling pressure normalizes post-halving."
       ],
       execution: [
-        `Consider a halving-aware <a href="/dca-calculator/">DCA strategy</a>: increase your regular Bitcoin purchase amount by 50% starting 6 months before the expected halving date, maintain the increased rate for 12 months post-halving, then reassess based on market conditions. This approach increases accumulation during the historically favorable pre/post-halving window.`,
+        "Consider a halving-aware <a href=\"/dca-calculator/\">DCA strategy</a>: increase your regular Bitcoin purchase amount by 50% starting 6 months before the expected halving date, maintain the increased rate for 12 months post-halving, then reassess based on market conditions. This approach increases accumulation during the historically favorable pre/post-halving window.",
+
         "Plan your halving investment around the miner capitulation phase. Monitor network hashrate in the months following the halving — when hashrate begins recovering (typically 2-4 months post-halving), this signals that the weakest miners have exited and sell pressure is diminishing."
       ],
       hygiene: [
         "Track the block count progress toward the next halving using a block explorer. The exact halving date shifts based on actual block production speed. Maintaining awareness of the precise timeline prevents being caught off-guard by an earlier-than-expected halving event.",
         "Document your pre-halving investment thesis and return expectations. Use our <a href=\"/what-if/\">what-if calculator</a> to compare actual post-halving returns against your projections at 6-month and 12-month intervals. This structured approach prevents hindsight bias and builds a personal knowledge base of how your expectations compared to reality."
+
       ],
       validation: [
         "Verify halving date projections by comparing multiple calculators and adjusting for recent block time variability. The exact halving block is fixed (every 210,000 blocks), but the date depends on actual average block times, which fluctuate with hashrate changes.",
