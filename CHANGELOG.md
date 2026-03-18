@@ -2,6 +2,38 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-18] (update 20) — Custom FAQ for top 10 EN calculators
+
+### Changed
+- **profit-calculator.astro**: Replaced 6 generic FAQ Q&A pairs with search-targeted questions: "How much profit will I make if Bitcoin goes up 10%?", "How do I calculate my crypto profit and loss?", "What is a good ROI on crypto?", "Should I calculate profit before or after taxes?", "How do exchange fees affect my crypto profit?", "Can I calculate profit on short positions?". Updated both visible `<details>` FAQ and JSON-LD `FAQPage` schema.
+- **mining-calculator.astro**: Replaced 6 FAQ pairs with 2026-relevant questions: "Is Bitcoin mining still profitable in 2026?", "How much does it cost to mine 1 Bitcoin?", "What is the best ASIC miner to buy right now?", "How much electricity does a Bitcoin miner use per month?", "How long does it take to break even on a mining rig?", "What happens to mining profitability after the next halving?".
+- **dca-calculator.astro**: Replaced 6 FAQ pairs with DCA-specific questions: "What if I had invested $100 per month in Bitcoin for the last 5 years?", "Is DCA better than buying crypto all at once?", "How much should I invest in crypto per month?", "Should I DCA daily, weekly, or monthly?", "When should I stop dollar-cost averaging?", "Does DCA work for Ethereum and altcoins too?".
+- **tax-calculator.astro**: Replaced 6 FAQ pairs with tax-focused queries: "How much tax do I pay on crypto profits in the US?", "Do I have to pay taxes if I convert Bitcoin to Ethereum?", "Which countries have zero crypto tax?", "Can I deduct crypto losses from my taxes?", "Are staking rewards and airdrops taxable?", "What is the difference between FIFO and LIFO for crypto taxes?".
+- **staking-calculator.astro**: Added `faq` prop with 6 custom Q&A pairs (previously used generic template FAQ): "How much can I earn staking crypto per year?", "Is crypto staking worth it in 2026?", "What is the difference between APY and APR in staking?", "Are staking rewards taxable income?", "What is validator commission and how does it affect my rewards?", "Can I lose money staking crypto?".
+- **liquidation-calculator.astro**: Replaced 6 FAQ pairs with liquidation-specific queries: "At what price will my Bitcoin futures position get liquidated?", "What is the difference between isolated and cross margin liquidation?", "How do I avoid getting liquidated on Binance or Bybit?", "Does leverage change how much I can lose?", "Why was I liquidated even though my stop-loss was set?", "How much margin do I need for a $10,000 Bitcoin futures position?".
+- **position-size-calculator.astro**: Replaced 6 FAQ pairs with position sizing queries: "How do I calculate the right position size for a crypto trade?", "What percentage of my account should I risk per trade?", "Does leverage increase my risk in crypto trading?", "What is a good risk-to-reward ratio for crypto trading?", "How do I size my position when trading volatile altcoins?", "Can I use the same position size for every trade?".
+- **converter.astro**: Replaced 6 FAQ pairs with conversion queries: "How much is 1 Bitcoin worth in US dollars right now?", "How do I convert Bitcoin to my local currency?", "Why is the crypto price different on this converter vs my exchange?", "How many satoshis are in 1 Bitcoin?", "Can I use this to convert Ethereum to USD?", "Does this converter account for exchange fees when buying crypto?".
+- **gas-fee-calculator.astro**: Replaced 6 FAQ pairs with gas fee queries: "How much does it cost to send Ethereum right now?", "Why is swapping tokens so much more expensive than a simple transfer?", "Which blockchain has the cheapest gas fees?", "What is the best time to make Ethereum transactions?", "What is Gwei and how does it relate to ETH?", "How do I save money on Ethereum gas fees?".
+- **break-even-calculator.astro**: Replaced 6 FAQ pairs with break-even queries: "How much do I need to gain to recover from a 50% crypto loss?", "What is my break-even price if I bought Bitcoin at different prices?", "How much do trading fees add to my break-even price?", "Should I buy more crypto to lower my average price?", "Why is my portfolio down 80% but the coin only needs to 5x to recover?", "How do I calculate break-even after accounting for taxes?".
+
+Total: 60 new FAQ Q&A pairs across 10 calculators (6 per page), all targeting real search queries with specific numbers and examples. Both visible HTML `<details>` sections and JSON-LD `FAQPage` structured data updated in sync. Build verified: 754 pages, no errors.
+
+## [2026-03-18] (update 19) — Fix stale data references in calculator-seo-ext.ts
+
+### Fixed
+- **Bitcoin hashrate references**: Updated all 7 occurrences of "≈600 EH/s" to "≈800 EH/s" across EN + 5 localized sections (es, pt, tr, hi, ru) in hashrate-converter benchmarks. Also updated inline network share math example (600M TH/s -> 800M TH/s, solo mining estimate 28 -> 38 years).
+- **ETH current-price references**: Replaced "$3,000/ETH" with "$2,300/ETH" in 6 EN sections (converter validation, gas-fee validation, unit-converter interpret/scenarios, gas benchmarks, node-calculator scenario) plus all localized equivalents. Recalculated dependent math: gas cost benchmarks (e.g., ETH transfer $1.26 -> $0.97), validator staking economics ($96K -> $73.6K for 32 ETH), unit-converter DeFi cost example ($4.50 -> $3.45/call).
+- **BTC current-price reference**: Updated ASIC mining benchmark from "$60,000 BTC" to "$73,000 BTC" with adjusted profitability range ($8-15/day -> $10-18/day).
+- **Stale year labels**: Changed "Typical lending parameters (2024)" to "(2026)" and "Reference hashrate units by coin/algorithm (2024)" to "(2026)" in EN section.
+- **MEV benchmarks**: Added 2024-2025 context note ("with 2024-2025 estimates surpassing $900 million annually") to the 2023 MEV extraction benchmark in the MEV calculator section.
+
+### Not changed (correctly historical)
+- Halving calculator "$60,000/BTC" references (describe pre-2024 halving conditions)
+- Pip-value "$60,000" (illustrative historical comparison)
+- Tax calculator "$3,000" (taxable gain math, not ETH price)
+- Hardware cost "$3,000 ASIC" and "$500-$3,000" ranges
+- Exchange-fees "$3,000" trade size examples
+
 ## [2026-03-18] (update 18) — Localized FAQ for 11 risk/analytics calculators (ES/PT/TR/HI/RU)
 
 ### Added
