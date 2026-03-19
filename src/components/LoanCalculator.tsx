@@ -308,7 +308,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div style={{ height: '8px', borderRadius: '4px', background: 'var(--color-border)', overflow: 'hidden' }}>
                                     <div style={{ height: '100%', width: `${Math.min(healthPct, 100)}%`, background: healthColor, borderRadius: '4px', transition: 'width 0.3s ease' }} />
                                 </div>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.6rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '2px' }}>
                                     <span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span>
                                 </div>
                             </div>
@@ -352,7 +352,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     padding: '12px', borderRadius: '10px',
                                     border: '1px solid rgba(245,158,11,0.3)', background: 'rgba(245,158,11,0.06)',
                                 }}>
-                                    <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '2px' }}>
+                                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '2px' }}>
                                         {getUiString(lang, '⚠️ Margin Call')}
                                     </div>
                                     <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#f59e0b' }}>
@@ -366,7 +366,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     padding: '12px', borderRadius: '10px',
                                     border: '1px solid rgba(239,68,68,0.3)', background: 'rgba(239,68,68,0.06)',
                                 }}>
-                                    <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '2px' }}>
+                                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '2px' }}>
                                         {getUiString(lang, '🔴 Liquidation')}
                                     </div>
                                     <div style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--color-accent-red)' }}>

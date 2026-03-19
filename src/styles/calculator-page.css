@@ -242,4 +242,36 @@
   .section-container {
     padding: 0 16px;
   }
+
+  /* Breadcrumbs: horizontal scroll instead of wrapping */
+  .breadcrumb .section-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 2px;
+  }
+  .breadcrumb .section-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Touch targets: breadcrumb links + footer links ≥ 44px */
+  .breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .site-footer a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* FAQ summary touch target */
+  .faq-section details summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
 }

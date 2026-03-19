@@ -287,7 +287,7 @@ function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
                                         background: 'var(--color-bg)', display: 'flex',
                                         flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                                     }}>
-                                        <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase' }}>{getUiString(lang, 'Total')}</span>
+                                        <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase' }}>{getUiString(lang, 'Total')}</span>
                                         <span style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text)' }}>{formatUSD(actualTotal)}</span>
                                     </div>
                                 </div>
