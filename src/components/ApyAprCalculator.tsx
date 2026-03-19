@@ -321,14 +321,14 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                     padding: '12px', background: 'rgba(34,197,94,0.06)',
                                     border: '1px solid rgba(34,197,94,0.3)', borderRadius: '10px', textAlign: 'center',
                                 }}>
-                                    <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '3px' }}>{getUiString(lang, 'With Compounding')}</div>
+                                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '3px' }}>{getUiString(lang, 'With Compounding')}</div>
                                     <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-accent-green)' }}>+{formatUSD(earningsWithCompounding)}</div>
                                 </div>
                                 <div style={{
                                     padding: '12px', background: 'var(--color-bg-card)',
                                     border: '1px solid var(--color-border)', borderRadius: '10px', textAlign: 'center',
                                 }}>
-                                    <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '3px' }}>{getUiString(lang, 'Simple Interest')}</div>
+                                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '3px' }}>{getUiString(lang, 'Simple Interest')}</div>
                                     <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-text)' }}>+{formatUSD(earningsSimple)}</div>
                                 </div>
                             </div>

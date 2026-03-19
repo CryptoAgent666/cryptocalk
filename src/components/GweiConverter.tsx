@@ -274,7 +274,7 @@ function GweiConverter({ lang = 'en' }: { lang?: string }) {
                                             <span className="result-label">
                                                 {c.label}
                                                 {c.alias && <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginLeft: '4px' }}>({c.alias})</span>}
-                                                <span style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', marginLeft: '6px' }}>
+                                                <span style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginLeft: '6px' }}>
                                                     10<sup>{c.exp}</sup> {getUiString(lang, 'Wei')}
                                                 </span>
                                             </span>

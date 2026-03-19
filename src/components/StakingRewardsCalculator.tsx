@@ -421,9 +421,9 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
                                         padding: '10px 8px', background: 'var(--color-bg-card)',
                                         border: '1px solid var(--color-border)', borderRadius: '10px', textAlign: 'center',
                                     }}>
-                                        <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '3px' }}>{e.label}</div>
+                                        <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '3px' }}>{e.label}</div>
                                         <div style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--color-accent-green)' }}>+{formatUSD(e.val)}</div>
-                                        {price > 0 && <div style={{ fontSize: '0.65rem', color: 'var(--color-text-muted)' }}>{formatTokens(e.val / price)} {sym}</div>}
+                                        {price > 0 && <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>{formatTokens(e.val / price)} {sym}</div>}
                                     </div>
                                 ))}
                             </div>
