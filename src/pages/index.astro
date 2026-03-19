@@ -50,7 +50,7 @@ const footerExploreLinks = [
   { name: 'Portfolio Calculator', href: '/portfolio-calculator/' },
   { name: 'What If Calculator', href: '/what-if/' },
   { name: 'Break-Even Calculator', href: '/break-even-calculator/' },
-  { name: 'All Categories', href: '#categories' },
+  { name: 'All Categories', href: '/#categories' },
 ];
 
 const siteUrl = 'https://cryptocalk.com';
@@ -64,9 +64,13 @@ const websiteSchema = {
   description:
     'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 60+ more tools.',
   inLanguage: 'en',
-  areaServed: {
-    '@type': 'Country',
-    name: 'Global',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${homepageUrl}?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
   },
 };
 
@@ -77,7 +81,7 @@ const organizationSchema = {
   url: siteUrl,
   logo: `${siteUrl}/og-image.png`,
   email: 'support@cryptocalk.com',
-  areaServed: { '@type': 'Place', name: 'Worldwide' },
+  areaServed: { '@type': 'AdministrativeArea', name: 'Worldwide' },
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'support@cryptocalk.com',
@@ -86,7 +90,20 @@ const organizationSchema = {
   },
 };
 
-const homepageSchemas = [websiteSchema, organizationSchema];
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Popular Crypto Calculators',
+  numberOfItems: popularCalculators.length,
+  itemListElement: popularCalculators.map((calc, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: calc.name,
+    url: `${siteUrl}${calc.href}`,
+  })),
+};
+
+const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
 ---
 
 <Layout
@@ -172,7 +189,7 @@ const homepageSchemas = [websiteSchema, organizationSchema];
     <!-- Popular Calculators (Horizontal Scroll) -->
     <section class="popular-section">
       <div class="section-container">
-        <h2 class="section-title">🔥 Popular Calculators</h2>
+        <h2 class="section-title"><span aria-hidden="true">🔥</span> Popular Calculators</h2>
         <div class="popular-grid">
           {popularCalculators.map((calc) => (
             <a
@@ -258,22 +275,22 @@ const homepageSchemas = [websiteSchema, organizationSchema];
         <h2 class="section-title">Why CryptoCalk?</h2>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981;">⚡</div>
+            <div class="feature-icon" aria-hidden="true" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981;">⚡</div>
             <h3>Blazing Fast</h3>
             <p>Static HTML + minimal JS. Pages load in under 1 second, even on 3G.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon" style="background-color: rgba(99, 102, 241, 0.1); color: #6366f1;">🔒</div>
+            <div class="feature-icon" aria-hidden="true" style="background-color: rgba(99, 102, 241, 0.1); color: #6366f1;">🔒</div>
             <h3>Privacy First</h3>
             <p>All calculations run in your browser. No data leaves your device. No tracking.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon" style="background-color: rgba(245, 158, 11, 0.1); color: #f59e0b;">🌍</div>
+            <div class="feature-icon" aria-hidden="true" style="background-color: rgba(245, 158, 11, 0.1); color: #f59e0b;">🌍</div>
             <h3>Multilingual</h3>
             <p>Available in 6 languages: English, Spanish, Portuguese, Turkish, Hindi, and Russian.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon" style="background-color: rgba(236, 72, 153, 0.1); color: #ec4899;">📱</div>
+            <div class="feature-icon" aria-hidden="true" style="background-color: rgba(236, 72, 153, 0.1); color: #ec4899;">📱</div>
             <h3>Mobile Ready</h3>
             <p>Responsive design with touch-optimized controls. Use anywhere, anytime.</p>
           </div>
@@ -804,7 +821,7 @@ const homepageSchemas = [websiteSchema, organizationSchema];
   }
 
   .bento-featured {
-    grid-column: span 1;
+    grid-column: span 2;
   }
 
   .bento-top {
@@ -1059,6 +1076,9 @@ const homepageSchemas = [websiteSchema, organizationSchema];
     }
     .bento-grid {
       grid-template-columns: 1fr;
+    }
+    .bento-featured {
+      grid-column: span 1;
     }
     .features-grid {
       grid-template-columns: 1fr;
