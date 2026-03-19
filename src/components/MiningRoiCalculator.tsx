@@ -411,7 +411,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                     onClick={() => setActiveScenario(pill.value)}
                                 >
                                     {pill.label}
-                                    <span style={{ fontSize: '0.65rem', opacity: 0.7, display: 'block' }}>
+                                    <span style={{ fontSize: '0.75rem', opacity: 0.7, display: 'block' }}>
                                         {pill.hint}
                                     </span>
                                 </button>
