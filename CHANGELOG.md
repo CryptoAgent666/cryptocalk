@@ -2,6 +2,36 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-19] (update 24) — Mobile usability audit fixes
+
+### Fixed
+- **Horizontal overflow on 59 calculator pages**: Added `max-width: 100%` and `overflow: hidden` to `.calc-input-panel` and `.calc-results-panel`. Form panels no longer expand beyond mobile viewport (375px).
+- **Table overflow on ~40 pages**: Added `display: block; overflow-x: auto` to tables inside `.calc-mobile-ux .calculator-section`. Tables now scroll horizontally instead of breaking layout.
+- **Breadcrumb wrapping on localized pages**: Made `.breadcrumb .section-container` horizontally scrollable with `white-space: nowrap; overflow-x: auto`. No more 74px-tall double-line breadcrumbs on ES/RU/HI/TR/PT pages.
+- **Touch targets < 44px**: Increased `min-height: 44px` on breadcrumb links, footer links, and FAQ `<summary>` elements across all pages.
+- **Tiny text (< 12px)**: Changed `fontSize: '0.65rem'` → `'0.75rem'` in 6 components (GweiConverter, LoanCalculator, PortfolioCalculator, StakingRewardsCalculator, ApyAprCalculator, MiningRoiCalculator). Changed `'0.6rem'` → `'0.7rem'` in LoanCalculator slider labels.
+
+### Not an issue (confirmed OK)
+- iOS Safari input zoom: all inputs already ≥ 16px font
+- Dark mode on mobile: works correctly
+
+## [2026-03-19] (update 23) — Homepage SEO & accessibility improvements
+
+### Added
+- **SearchAction schema**: Added `potentialAction: SearchAction` to WebSite JSON-LD schema with `?q={search_term_string}` URL template. Enables Google Sitelinks Search Box in SERP.
+- **ItemList schema**: Added structured data listing 12 popular calculators with positions and URLs, improving rich result eligibility.
+- **bento-featured 2-column span**: Featured category cards now span 2 grid columns on desktop for visual hierarchy. Responsive fallback to 1 column on mobile.
+
+### Fixed
+- **areaServed schema**: Removed invalid `"@type": "Country", "name": "Global"` from WebSite schema. Kept `AdministrativeArea: Worldwide` in Organization schema.
+- **Emoji accessibility**: Added `aria-hidden="true"` to decorative emojis in "Popular Calculators" heading and 4 feature icon divs. Screen readers no longer announce "fire", "lock", etc.
+- **Footer link**: Changed "All Categories" from `#categories` to `/#categories` (works from any page).
+
+## [2026-03-19] (update 22) — Remove duplicate brand from calculator titles
+
+### Fixed
+- **Duplicate brand in titles**: Removed `| CryptoCalk` and `— CryptoCalk` from all 306 titles in `calculator-meta.ts`. Brand was appearing twice ("Calculator Name | CryptoCalk — CryptoCalk") because Layout.astro and LocalizedCalculatorPage.astro already append brand automatically. Affects all 6 languages × 51 calculators.
+
 ## [2026-03-18] (update 21) — Contextual internal links in calculator-seo-ext.ts EN sections
 
 ### Added
