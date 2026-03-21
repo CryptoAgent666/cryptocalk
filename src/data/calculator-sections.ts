@@ -32,49 +32,49 @@ export const ALL_SECTIONS: SeoSection[] = [
  */
 export const CALCULATOR_SECTIONS: Partial<Record<string, SeoSection[]>> = {
   // --- Converters: no risk/validation/benchmarks context ---
-  'converter':           ['how', 'inputs', 'interpret', 'mistakes'],
-  'satoshi-converter':   ['how', 'inputs', 'interpret', 'mistakes'],
-  'gwei-converter':      ['how', 'inputs', 'interpret', 'mistakes'],
-  'hashrate-converter':  ['how', 'inputs', 'interpret', 'mistakes'],
-  'timestamp-converter': ['how', 'inputs', 'interpret', 'mistakes'],
-  'unit-converter':      ['how', 'inputs', 'interpret', 'mistakes'],
+  'converter':           ['how', 'inputs', 'interpret', 'mistakes', 'faq', 'related'],
+  'satoshi-converter':   ['how', 'inputs', 'interpret', 'mistakes', 'faq', 'related'],
+  'gwei-converter':      ['how', 'inputs', 'interpret', 'mistakes', 'faq', 'related'],
+  'hashrate-converter':  ['how', 'inputs', 'interpret', 'mistakes', 'faq', 'related'],
+  'timestamp-converter': ['how', 'inputs', 'interpret', 'mistakes', 'faq', 'related'],
+  'unit-converter':      ['how', 'inputs', 'interpret', 'mistakes', 'faq', 'related'],
 
   // --- Tax calculators: compliance context; no execution/hygiene templates ---
-  'tax-calculator':      ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes'],
-  'airdrop-calculator':  ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes'],
-  'salary-calculator':   ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes'],
-  'vesting-calculator':  ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes'],
+  'tax-calculator':      ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'faq', 'related'],
+  'airdrop-calculator':  ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'faq', 'related'],
+  'salary-calculator':   ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'faq', 'related'],
+  'vesting-calculator':  ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'faq', 'related'],
 
   // --- Simple informational tools ---
-  'halving-calculator':  ['how', 'inputs', 'interpret', 'scenarios', 'mistakes'],
-  'market-cap-calculator': ['how', 'inputs', 'interpret', 'scenarios', 'mistakes'],
-  'market-cap-comparator': ['how', 'inputs', 'interpret', 'scenarios', 'mistakes'],
-  'difficulty-calculator': ['how', 'inputs', 'interpret', 'scenarios', 'mistakes'],
+  'halving-calculator':  ['how', 'inputs', 'interpret', 'scenarios', 'mistakes', 'faq', 'related'],
+  'market-cap-calculator': ['how', 'inputs', 'interpret', 'scenarios', 'mistakes', 'faq', 'related'],
+  'market-cap-comparator': ['how', 'inputs', 'interpret', 'scenarios', 'mistakes', 'faq', 'related'],
+  'difficulty-calculator': ['how', 'inputs', 'interpret', 'scenarios', 'mistakes', 'faq', 'related'],
 
   // --- Mining: physical/operational context; all sections relevant ---
   'mining-calculator':            ALL_SECTIONS,
   'gpu-mining-calculator':        ALL_SECTIONS,
   'asic-mining-calculator':       ALL_SECTIONS,
   'mining-roi-calculator':        ALL_SECTIONS,
-  'electricity-cost-calculator':  ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks'],
+  'electricity-cost-calculator':  ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'faq', 'related'],
 
   // --- Gas/fee tools: transactional, not investment ---
-  'gas-calculator':      ['how', 'inputs', 'interpret', 'mistakes'],
-  'exchange-fees':       ['how', 'inputs', 'interpret', 'scenarios', 'mistakes'],
-  'bridge-comparator':   ['how', 'inputs', 'interpret', 'scenarios', 'mistakes'],
-  'slippage-calculator': ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes'],
-  'mev-calculator':      ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes'],
+  'gas-calculator':      ['how', 'inputs', 'interpret', 'mistakes', 'faq', 'related'],
+  'exchange-fees':       ['how', 'inputs', 'interpret', 'scenarios', 'mistakes', 'faq', 'related'],
+  'bridge-comparator':   ['how', 'inputs', 'interpret', 'scenarios', 'mistakes', 'faq', 'related'],
+  'slippage-calculator': ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'faq', 'related'],
+  'mev-calculator':      ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'faq', 'related'],
 
   // --- DeFi tools: full set except execution templates ---
-  'staking-calculator':          ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'hygiene', 'validation'],
-  'impermanent-loss-calculator': ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'hygiene'],
-  'apy-apr-calculator':          ['how', 'inputs', 'interpret', 'scenarios', 'mistakes'],
-  'compound-calculator':         ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks'],
-  'yield-farming-calculator':    ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'hygiene'],
-  'uniswap-calculator':          ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes'],
-  'lending-calculator':          ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks'],
-  'node-calculator':             ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks'],
-  'crypto-loan-calculator':      ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'hygiene'],
+  'staking-calculator':          ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'hygiene', 'validation', 'faq', 'related'],
+  'impermanent-loss-calculator': ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'hygiene', 'faq', 'related'],
+  'apy-apr-calculator':          ['how', 'inputs', 'interpret', 'scenarios', 'mistakes', 'faq', 'related'],
+  'compound-calculator':         ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'faq', 'related'],
+  'yield-farming-calculator':    ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'hygiene', 'faq', 'related'],
+  'uniswap-calculator':          ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'faq', 'related'],
+  'lending-calculator':          ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'faq', 'related'],
+  'node-calculator':             ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'faq', 'related'],
+  'crypto-loan-calculator':      ['how', 'inputs', 'interpret', 'scenarios', 'checklist', 'mistakes', 'benchmarks', 'hygiene', 'faq', 'related'],
 };
 
 export function getActiveSections(slug: string): SeoSection[] {
