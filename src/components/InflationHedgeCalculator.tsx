@@ -42,7 +42,7 @@ const COUNTRIES: CountryData[] = [
 
 const ASSETS: AssetConfig[] = [
     { id: 'btc', label: 'BTC', annualReturn: 0.50, color: '#f59e0b' },
-    { id: 'eth', label: 'ETH', annualReturn: 0.40, color: '#6366f1' },
+    { id: 'eth', label: 'ETH', annualReturn: 0.40, color: '#0891b2' },
     { id: 'usdc_yield', label: 'USDC + Yield', annualReturn: 0.08, color: '#3b82f6' },
     { id: 'gold', label: 'Gold', annualReturn: 0.08, color: '#eab308' },
     { id: 'sp500', label: 'S&P 500', annualReturn: 0.10, color: '#10b981' },

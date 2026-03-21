@@ -531,7 +531,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                                             ? 'var(--color-accent-green, #22c55e)'
                                                             : s.key === 'pessimistic'
                                                                 ? '#ef4444'
-                                                                : 'var(--color-primary, #6366f1)',
+                                                                : 'var(--color-primary, #0891b2)',
                                                     }}>
                                                         {getUiString(lang, s.label)}
                                                     </td>
@@ -676,7 +676,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                             <path
                                                 d={chartData.paths.realistic}
                                                 fill="none"
-                                                stroke="var(--color-primary, #6366f1)"
+                                                stroke="var(--color-primary, #0891b2)"
                                                 strokeWidth="2.5"
                                                 strokeLinecap="round"
                                                 strokeLinejoin="round"
@@ -734,7 +734,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                                     display: 'inline-block',
                                                     width: '16px',
                                                     height: '3px',
-                                                    background: 'var(--color-primary, #6366f1)',
+                                                    background: 'var(--color-primary, #0891b2)',
                                                     borderRadius: '2px',
                                                 }} />
                                                 {getUiString(lang, 'Realistic')}

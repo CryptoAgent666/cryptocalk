@@ -280,7 +280,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
             <p>Static HTML + minimal JS. Pages load in under 1 second, even on 3G.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true" style="background-color: rgba(99, 102, 241, 0.1); color: #6366f1;">🔒</div>
+            <div class="feature-icon" aria-hidden="true" style="background-color: rgba(8, 145, 178, 0.1); color: #0891b2;">🔒</div>
             <h3>Privacy First</h3>
             <p>All calculations run in your browser. No data leaves your device. No tracking.</p>
           </div>
@@ -550,11 +550,30 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
 
   /* ===== Hero ===== */
   .hero {
+    position: relative;
     padding: 80px 24px 60px;
     text-align: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--color-primary) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  [data-theme="dark"] .hero::before {
+    opacity: 0.07;
   }
 
   .hero-inner {
+    position: relative;
+    z-index: 1;
     max-width: 720px;
     margin: 0 auto;
   }
@@ -614,7 +633,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
   .btn-primary:hover {
     color: white;
     transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 15px rgba(8, 145, 178, 0.4);
   }
 
   .btn-secondary {
@@ -654,8 +673,10 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
   }
 
   .stat-value {
+    font-family: var(--font-mono);
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
     color: var(--color-primary);
   }
 
@@ -739,8 +760,8 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
   }
 
   .popular-tag[data-tag="popular"] {
-    background-color: rgba(99, 102, 241, 0.15);
-    color: #3730a3;
+    background-color: rgba(8, 145, 178, 0.15);
+    color: #0e7490;
   }
 
   .popular-tag[data-tag="trending"] {
