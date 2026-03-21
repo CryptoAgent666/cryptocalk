@@ -2,6 +2,65 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-21] (update 31) — Comprehensive content audit fixes
+
+### Fixed
+- **Canonical link fix**: Replaced 3 broken `/staking-rewards-calculator/` links with `/staking-calculator/` in `seo-body-text.ts` and `about.astro`
+- **English text leaks in seo-ext.ts**: Translated ~800 paragraphs across 10 calculators (hodl-vs-trade, satoshi-converter, timestamp-converter, crypto-loan, halving, mev, gamefi, node, salary, gwei-converter) in all 5 non-EN languages. Each had English text mixed with target-language boilerplate.
+
+### Added
+- **16 new localized calculator entries**: Added bitcoin-unit-converter, cross-chain-bridge, correlation, index-fund, inheritance, portfolio-rebalance, sentiment, defi-yield-aggregator, dust-attack, exchange-fee-comparator, flash-loan, gas-optimization, governance-voting, nft-rarity, token-unlock, whale-alert to CALCULATOR_META (96 title/desc pairs), utils.ts (localized URL slugs), alias definitions, category map, and related calculators. Build: 754 → 919 pages.
+- **6 missing seo-content entries**: Added compound-interest, gas-fee, leverage, loan, portfolio, staking-rewards to calculator-seo-content.ts (63 → 69 entries, all 6 languages)
+- **11 risk/analytics seo-ext entries**: sharpe, sortino, calmar, treynor, information-ratio, kelly, var, drawdown, risk-of-ruin, slippage, trade-expectancy (51 → 62 entries, 6 langs × 8 sections × 2 paragraphs each = ~1,056 new paragraphs)
+- **2 missing tools in category hub**: Sharpe and Calmar added to trading-tools grid (18 → 20)
+
+### Verified
+- Build: 919 pages, 0 errors
+- TypeScript: clean compilation
+- All meta descriptions ≤ 160 characters (no fix needed)
+
+## [2026-03-21] (update 30) — SEO extended content for 4 risk metric calculators
+
+### Added
+- **4 new entries in `calculator-seo-ext.ts`**: Added unique extended SEO content for `information-ratio-calculator`, `kelly-calculator`, `var-calculator`, and `drawdown-calculator`. Each entry covers all 6 languages (EN, ES, PT, TR, HI, RU) with 8 sections x 2 paragraphs per section. EN paragraphs include 2-3 contextual HTML links to related calculators (sharpe, drawdown, var, risk-reward, position-size, impermanent-loss, calmar). Non-EN paragraphs are fully translated with matching links. Content includes specific benchmark numbers (IR thresholds 0.2/0.5/1.0, Kelly fractional sizing 10-50%, VaR daily benchmarks 3-5% for BTC, drawdown history BTC 83%/54%/77%), practical crypto scenarios (DeFi yield farming IR, correlated bet Kelly adjustment, portfolio VaR budgeting, drawdown recovery asymmetry), and common mistakes (inappropriate benchmarks, win rate overestimation, normal distribution assumptions, unrealized loss blindness). Total calculator-seo-ext entries: 62 (was 58).
+
+## [2026-03-21] (update 29) — SEO extended content for 4 ratio calculators
+
+### Added
+- **4 new entries in `calculator-seo-ext.ts`**: Added unique extended SEO content for `sharpe-calculator`, `sortino-calculator`, `calmar-calculator`, and `treynor-calculator`. Each entry covers all 6 languages (EN, ES, PT, TR, HI, RU) with 8 sections x 2 paragraphs per section. EN paragraphs include 2-3 contextual HTML links to related calculators (sortino, drawdown, risk-reward, calmar, dca, position-size, tp-sl, var). Non-EN paragraphs are fully translated with matching links. Content includes specific benchmark numbers (Sharpe 0.5 average / 1.0 good / 2.0+ hedge-fund tier, Sortino-to-Sharpe ratio interpretation, Calmar benchmarks by strategy type, Treynor with BTC beta examples), practical crypto portfolio scenarios, and common calculation mistakes (period mismatch, annualization errors, inappropriate benchmarks). Total calculator-seo-ext entries: 58 (was 54).
+
+## [2026-03-21] (update 28) — SEO extended content for 3 trade risk calculators
+
+### Added
+- **3 new entries in `calculator-seo-ext.ts`**: Added unique extended SEO content for `risk-of-ruin-calculator`, `slippage-calculator`, and `trade-expectancy-calculator`. Each entry covers all 6 languages (EN, ES, PT, TR, HI, RU) with 8 sections x 2 paragraphs per section. EN paragraphs include 2-3 contextual HTML links to related calculators (kelly, drawdown, position-size, risk-reward, gas, exchange-fees, impermanent-loss). Non-EN paragraphs are fully translated with matching links. Content includes specific numbers, formulas, and practical crypto trading examples (e.g., ruin probability at different risk levels, slippage benchmarks by market cap tier, expectancy formula breakdowns). Total calculator-seo-ext entries: 54 (was 51).
+
+## [2026-03-21] (update 27) — SEO content for 6 missing calculators
+
+### Added
+- **6 new entries in `calculator-seo-content.ts`**: Added localized `how` and `inputs` SEO sections for `compound-interest-calculator`, `gas-fee-calculator`, `leverage-calculator`, `loan-calculator`, `portfolio-calculator`, `staking-rewards-calculator`. Each entry covers all 6 languages (EN, ES, PT, TR, HI, RU) with calculator-specific content (60-120 words per section). EN entries have full two-paragraph format; non-EN entries use compact single-line format matching existing style. These calculators had EN pages but were missing from the SEO content map, meaning localized pages fell back to generic boilerplate text.
+
+## [2026-03-21] (update 26) — 16 new calculator meta entries (i18n)
+
+### Added
+- **16 new calculator slugs in `utils.ts`**: Added `bitcoin-unit-converter`, `cross-chain-bridge-calculator`, `crypto-correlation-calculator`, `crypto-index-fund-calculator`, `crypto-inheritance-calculator`, `crypto-portfolio-rebalance-calculator`, `crypto-sentiment-calculator`, `defi-yield-aggregator`, `dust-attack-calculator`, `exchange-fee-comparator`, `flash-loan-calculator`, `gas-optimization-calculator`, `governance-voting-calculator`, `nft-rarity-calculator`, `token-unlock-calculator`, `whale-alert-calculator` to `SPEC_CALCULATOR_SLUGS`.
+- **Localized URL slugs for 16 calculators x 5 languages**: Added natural-language URL slugs in `LOCALIZED_SPEC_SLUGS` for es, pt, tr, hi, ru. Examples: `calculadora-ataque-dust` (es), `calculadora-ponte-cross-chain` (pt), `kripto-korelasyon-hesaplayici` (tr), `flash-loan-calculator-hindi` (hi), `kalkulyator-dust-ataki` (ru).
+- **CALCULATOR_META entries for 16 calculators x 6 languages** (96 title+description pairs): Each entry has a 130-160 character keyword-rich description with CTA. Covers EN, ES, PT, TR, HI, RU.
+- **ALIAS_DEFINITIONS entries for 16 calculators** in `[lang]/[...slug].astro`: Enables localized page generation for new slugs (pages render with SEO content; calculator widgets to be added later).
+- **RELATED_CALCULATORS entries for 16 new + 6 previously missing calculators** in `related-calculators.ts`: Each new calculator mapped to 4 topically related calculators.
+- **CALCULATOR_CATEGORY entries for 16 new calculators** in `calculator-category-map.ts`: Mapped to appropriate category hubs for breadcrumb navigation.
+- Build verified: 919 pages (up from 754), no errors.
+
+## [2026-03-21] (update 25) — Design identity refresh
+
+### Changed
+- **Color system: Indigo → Teal/Cyan**: Replaced entire indigo primary color palette (`#6366f1`) with teal (`#0891b2` light / `#22d3ee` dark). Updated CSS custom properties in global.css, hardcoded RGBA values across 14 page files, and inline styles in 5 component files. Eliminates the most common "AI-generated design" visual marker.
+- **Typography: Space Grotesk + JetBrains Mono**: Added Space Grotesk (600/700) as display font for all h1/h2/h3 headings — geometric, techy character vs generic Inter. Added JetBrains Mono (600/700) for calculator result values (`.result-hero-value`, `.result-value`, `.stat-value`) with `font-variant-numeric: tabular-nums`. Creates two-font visual hierarchy and "precision calculator" identity.
+- **Accent gradient**: Updated `--color-accent-purple` from `#6d28d9` to `#0e7490` (deep teal) for cohesive gradient endpoints on CTA buttons and logo text.
+
+### Added
+- **Dot grid hero background**: Subtle radial-gradient dot pattern (`24px` grid, `opacity: 0.05` light / `0.07` dark) on homepage hero section via `::before` pseudo-element. Adds texture without clutter. Applied to both EN and localized homepages.
+- **Result snap-in animation**: CSS `@keyframes resultSnap` with spring-curve (`cubic-bezier(0.34, 1.56, 0.64, 1)`) on `.result-hero-value` and `.result-hero-roi`. Numbers slide up with slight overshoot and blur-to-sharp transition (0.4s). Works across all 57 calculators without any React component changes.
+
 ## [2026-03-19] (update 24) — Mobile usability audit fixes
 
 ### Fixed

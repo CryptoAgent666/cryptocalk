@@ -51,6 +51,19 @@ import GamefiCalculator from '../../components/GamefiCalculator.tsx';
 import NodeCalculator from '../../components/NodeCalculator.tsx';
 import CryptoSalaryCalculator from '../../components/CryptoSalaryCalculator.tsx';
 import InflationHedgeCalculator from '../../components/InflationHedgeCalculator.tsx';
+import CalmarCalculator from '../../components/CalmarCalculator.tsx';
+import DrawdownCalculator from '../../components/DrawdownCalculator.tsx';
+import InformationRatioCalculator from '../../components/InformationRatioCalculator.tsx';
+import KellyCalculator from '../../components/KellyCalculator.tsx';
+import LeverageCalculator from '../../components/LeverageCalculator.tsx';
+import PortfolioCalculator from '../../components/PortfolioCalculator.tsx';
+import RiskOfRuinCalculator from '../../components/RiskOfRuinCalculator.tsx';
+import SharpeCalculator from '../../components/SharpeCalculator.tsx';
+import SlippageCalculator from '../../components/SlippageCalculator.tsx';
+import SortinoCalculator from '../../components/SortinoCalculator.tsx';
+import TradeExpectancyCalculator from '../../components/TradeExpectancyCalculator.tsx';
+import TreynorCalculator from '../../components/TreynorCalculator.tsx';
+import VarCalculator from '../../components/VarCalculator.tsx';
 import {
   NON_DEFAULT_LANGS,
   SPEC_CALCULATOR_SLUGS,
@@ -116,6 +129,39 @@ const ALIAS_DEFINITIONS: Record<SpecCalculatorSlug, AliasDefinition> = {
   'node-calculator': { title: 'Validator Node Calculator' },
   'salary-calculator': { title: 'Crypto Salary Calculator' },
   'inflation-hedge': { title: 'Inflation Hedge Calculator' },
+  'calmar-calculator': { title: 'Calmar Ratio Calculator' },
+  'compound-interest-calculator': { title: 'Compound Interest Calculator' },
+  'drawdown-calculator': { title: 'Drawdown Recovery Calculator' },
+  'gas-fee-calculator': { title: 'Gas Fee Calculator' },
+  'information-ratio-calculator': { title: 'Information Ratio Calculator' },
+  'kelly-calculator': { title: 'Kelly Criterion Calculator' },
+  'leverage-calculator': { title: 'Leverage Calculator' },
+  'loan-calculator': { title: 'Crypto Loan Calculator' },
+  'portfolio-calculator': { title: 'Portfolio Allocation Calculator' },
+  'risk-of-ruin-calculator': { title: 'Risk of Ruin Calculator' },
+  'sharpe-calculator': { title: 'Sharpe Ratio Calculator' },
+  'slippage-calculator': { title: 'DEX Slippage Calculator' },
+  'sortino-calculator': { title: 'Sortino Ratio Calculator' },
+  'staking-rewards-calculator': { title: 'Staking Rewards Calculator' },
+  'trade-expectancy-calculator': { title: 'Trade Expectancy Calculator' },
+  'treynor-calculator': { title: 'Treynor Ratio Calculator' },
+  'var-calculator': { title: 'Value at Risk (VaR) Calculator' },
+  'bitcoin-unit-converter': { title: 'Bitcoin Unit Converter' },
+  'cross-chain-bridge-calculator': { title: 'Cross-Chain Bridge Calculator' },
+  'crypto-correlation-calculator': { title: 'Crypto Correlation Calculator' },
+  'crypto-index-fund-calculator': { title: 'Crypto Index Fund Calculator' },
+  'crypto-inheritance-calculator': { title: 'Crypto Inheritance Calculator' },
+  'crypto-portfolio-rebalance-calculator': { title: 'Crypto Portfolio Rebalance Calculator' },
+  'crypto-sentiment-calculator': { title: 'Crypto Sentiment Calculator' },
+  'defi-yield-aggregator': { title: 'DeFi Yield Aggregator' },
+  'dust-attack-calculator': { title: 'Dust Attack Calculator' },
+  'exchange-fee-comparator': { title: 'Exchange Fee Comparator' },
+  'flash-loan-calculator': { title: 'Flash Loan Calculator' },
+  'gas-optimization-calculator': { title: 'Gas Optimization Calculator' },
+  'governance-voting-calculator': { title: 'Governance Voting Calculator' },
+  'nft-rarity-calculator': { title: 'NFT Rarity Calculator' },
+  'token-unlock-calculator': { title: 'Token Unlock Calculator' },
+  'whale-alert-calculator': { title: 'Whale Alert Calculator' },
 };
 
 interface StaticPathProps {
@@ -211,4 +257,21 @@ const description = `Free ${routeDef.title}. Calculate crypto outcomes instantly
   {canonicalRouteSlug === 'node-calculator' && <NodeCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'salary-calculator' && <CryptoSalaryCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'inflation-hedge' && <InflationHedgeCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'calmar-calculator' && <CalmarCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'compound-interest-calculator' && <CompoundInterestCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'drawdown-calculator' && <DrawdownCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'gas-fee-calculator' && <GasFeeCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'information-ratio-calculator' && <InformationRatioCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'kelly-calculator' && <KellyCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'leverage-calculator' && <LeverageCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'loan-calculator' && <LoanCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'portfolio-calculator' && <PortfolioCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'risk-of-ruin-calculator' && <RiskOfRuinCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'sharpe-calculator' && <SharpeCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'slippage-calculator' && <SlippageCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'sortino-calculator' && <SortinoCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'staking-rewards-calculator' && <StakingRewardsCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'trade-expectancy-calculator' && <TradeExpectancyCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'treynor-calculator' && <TreynorCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'var-calculator' && <VarCalculator slot="calculator" lang={lang} client:load />}
 </LocalizedCalculatorPage>
