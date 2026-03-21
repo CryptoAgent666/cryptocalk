@@ -491,7 +491,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                     color: 'var(--color-text)',
                                     display: 'flex', gap: '8px', alignItems: 'center', margin: '12px 0',
                                 }}>
-                                    <Info size={16} style={{ flexShrink: 0, color: '#6366f1' }} />
+                                    <Info size={16} style={{ flexShrink: 0, color: '#0891b2' }} />
                                     {getUiString(lang, 'You need to sell above')} {formatETH(breakEvenSell)} ({formatUSD(breakEvenSell * ethPriceUsd)}) {getUiString(lang, 'to break even')}
                                 </div>
                             )}
