@@ -1,0 +1,17 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import ExchangeFeeComparator from '../components/ExchangeFeeComparator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="exchange-fee-comparator"
+  title="Exchange Fee Comparator"
+  description="Free Exchange Fee Comparator. Side-by-side fee comparison for Binance, Coinbase, Kraken, OKX, and Bybit across spot, futures, and withdrawal fees."
+>
+  <ExchangeFeeComparator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>
+
+<style>
+  .calc-wrapper { width: 100%; }
+</style>
