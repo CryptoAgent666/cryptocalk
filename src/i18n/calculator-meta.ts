@@ -44,7 +44,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'margin-calculator': {
       title: 'Margin Calculator',
-      description: 'Free Margin Calculator for crypto futures. Calculate required margin, margin level, free margin, and margin call price for Binance, Bybit, and OKX.'
+      description: 'Free Margin Calculator for crypto futures. Calculate required collateral, available balance, and margin call price for Binance, Bybit, and OKX positions.'
     },
     'pip-calculator': {
       title: 'Pip / Tick Value Calculator',
@@ -167,8 +167,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Crypto Unit Converter. Convert denomination units for BTC, ETH, SOL, and USDT including satoshi, gwei, lamport, and micro units.'
     },
     'exchange-fees': {
-      title: 'Exchange Fee Comparator',
-      description: 'Free Exchange Fee Comparator. Compare trading fees across Binance, Bybit, OKX, Coinbase, Kraken, and more with maker/taker fee breakdowns.'
+      title: 'Exchange Trading Fee Calculator',
+      description: 'Free Exchange Trading Fee Calculator. Calculate total trading fees for any order size with maker/taker rates across Binance, Bybit, OKX, and more.'
     },
     'crypto-loan-calculator': {
       title: 'Crypto Loan Calculator',
@@ -235,8 +235,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free leverage calculator for crypto. See how leverage amplifies gains and losses with side-by-side comparison, liquidation distance, and PnL table.'
     },
     'loan-calculator': {
-      title: 'Crypto Loan Calculator',
-      description: 'Free crypto-backed loan calculator. Estimate loan costs, monthly interest, margin call thresholds, and liquidation prices for DeFi and CeFi loans.'
+      title: 'Crypto Loan Repayment Calculator',
+      description: 'Free crypto loan repayment calculator. Build amortization schedules, estimate monthly payments, and track principal vs. interest over the loan term.'
     },
     'portfolio-calculator': {
       title: 'Portfolio Allocation Calculator',
@@ -573,8 +573,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Calculadora de apalancamiento gratuita para cripto. Mira cómo el apalancamiento amplifica ganancias y pérdidas con distancia de liquidación y tabla PnL.'
     },
     'loan-calculator': {
-      title: 'Calculadora de Préstamo Cripto',
-      description: 'Calculadora de préstamo cripto gratuita. Estima costes del préstamo, interés mensual, umbral de margin call y precios de liquidación para DeFi y CeFi.'
+      title: 'Calculadora de Amortización de Préstamo Cripto',
+      description: 'Calculadora de amortización de préstamo cripto gratuita. Genera calendarios de amortización, estima pagos mensuales y rastrea capital vs. interés.'
     },
     'portfolio-calculator': {
       title: 'Calculadora de Asignación de Cartera',
@@ -911,8 +911,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Calculadora de alavancagem gratuita para cripto. Veja como a alavancagem amplifica ganhos e perdas com comparação, distância de liquidação e tabela PnL.'
     },
     'loan-calculator': {
-      title: 'Calculadora de Empréstimo Cripto',
-      description: 'Calculadora de empréstimo cripto gratuita. Estime custos do empréstimo, juros mensais, limiar de margin call e preços de liquidação para DeFi e CeFi.'
+      title: 'Calculadora de Amortização de Empréstimo Cripto',
+      description: 'Calculadora de amortização de empréstimo cripto gratuita. Gere cronogramas de amortização, estime pagamentos mensais e acompanhe capital vs. juros.'
     },
     'portfolio-calculator': {
       title: 'Calculadora de Alocação de Carteira',
@@ -1249,8 +1249,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Kripto için ücretsiz kaldıraç hesaplayıcı. Kaldıracın kazanç ve kayıpları nasıl büyüttüğünü, likidasyon mesafesini ve PnL tablosunu görün.'
     },
     'loan-calculator': {
-      title: 'Kripto Kredi Hesaplayıcı',
-      description: 'Ücretsiz kripto teminatlı kredi hesaplayıcı. Kredi maliyetlerini, aylık faizi, margin call eşiğini ve DeFi/CeFi likidasyon fiyatlarını tahmin edin.'
+      title: 'Kripto Kredi Geri Ödeme Hesaplayıcı',
+      description: 'Ücretsiz kripto kredi geri ödeme hesaplayıcı. Amortisman planları oluşturun, aylık ödemeleri hesaplayın ve anapara ile faizi takip edin.'
     },
     'portfolio-calculator': {
       title: 'Portföy Dağılım Hesaplayıcı',
@@ -1322,7 +1322,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'dust-attack-calculator': {
       title: 'Dust Saldırı Hesaplayıcı',
-      description: 'Ücretsiz Dust Saldırı Hesaplayıcı. Cüzdanınızdaki küçük istenmeyen işlemleri tespit edin, birleştirme maliyetini hesaplayın ve zincir üstü gizliliğinizi koruyun.'
+      description: 'Ücretsiz Dust Saldırı Hesaplayıcı. Cüzdanınızdaki küçük istenmeyen işlemleri tespit edin, birleştirme maliyetini hesaplayın ve gizliliğinizi koruyun.'
     },
     'exchange-fee-comparator': {
       title: 'Borsa Ücret Karşılaştırma Hesaplayıcı',
@@ -1342,7 +1342,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'nft-rarity-calculator': {
       title: 'NFT Nadirlik Hesaplayıcı',
-      description: 'Ücretsiz NFT Nadirlik Hesaplayıcı. İstatistiksel nadirlik, ortalama özellik ve bilgi içeriği yöntemleriyle herhangi bir koleksiyonun özellik nadirliğini puanlayın.'
+      description: 'Ücretsiz NFT Nadirlik Hesaplayıcı. İstatistiksel nadirlik, ortalama özellik ve bilgi içeriği yöntemleriyle koleksiyon nadirliğini puanlayın.'
     },
     'token-unlock-calculator': {
       title: 'Token Kilit Açma Hesaplayıcı',
@@ -1350,7 +1350,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'whale-alert-calculator': {
       title: 'Balina Uyarı Hesaplayıcı',
-      description: 'Ücretsiz Balina Uyarı Hesaplayıcı. Büyük transferlerin piyasa etkisini tahmin edin, balina emirlerinden kaynaklanan slippage hesaplayın ve uyarı eşikleri belirleyin.'
+      description: 'Ücretsiz Balina Uyarı Hesaplayıcı. Büyük transferlerin piyasa etkisini tahmin edin, balina slippage hesaplayın ve uyarı eşikleri belirleyin.'
     },
   },
   'hi': {
@@ -1587,8 +1587,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'क्रिप्टो के लिए मुफ्त लीवरेज कैलकुलेटर। देखें कि लीवरेज लाभ और हानि को कैसे बढ़ाता है, लिक्विडेशन दूरी और PnL तालिका के साथ।'
     },
     'loan-calculator': {
-      title: 'क्रिप्टो लोन कैलकुलेटर',
-      description: 'मुफ्त क्रिप्टो-समर्थित लोन कैलकुलेटर। लोन लागत, मासिक ब्याज, मार्जिन कॉल सीमा और DeFi/CeFi लिक्विडेशन मूल्य का अनुमान लगाएं।'
+      title: 'क्रिप्टो लोन पुनर्भुगतान कैलकुलेटर',
+      description: 'मुफ्त क्रिप्टो लोन पुनर्भुगतान कैलकुलेटर। अमॉर्टाइजेशन शेड्यूल बनाएं, मासिक भुगतान का अनुमान लगाएं और मूलधन बनाम ब्याज ट्रैक करें।'
     },
     'portfolio-calculator': {
       title: 'पोर्टफोलियो आवंटन कैलकुलेटर',
@@ -1857,8 +1857,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Бесплатный конвертер крипто-единиц. Конвертируйте единицы для BTC, ETH, SOL и USDT, включая сатоши, gwei, lamport и микро-единицы.'
     },
     'exchange-fees': {
-      title: 'Сравнение комиссий бирж',
-      description: 'Бесплатное сравнение комиссий бирж. Сравните торговые комиссии на Binance, Bybit, OKX, Coinbase, Kraken и других с разбивкой мейкер/тейкер.'
+      title: 'Калькулятор торговых комиссий биржи',
+      description: 'Бесплатный калькулятор торговых комиссий. Рассчитайте итоговую комиссию для любого объёма ордера с тарифами мейкер/тейкер на Binance, Bybit и OKX.'
     },
     'crypto-loan-calculator': {
       title: 'Калькулятор крипто-ссуд',
@@ -1925,8 +1925,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Бесплатный калькулятор плеча для крипто. Узнайте, как плечо усиливает прибыль и убытки, с расстоянием до ликвидации и таблицей PnL.'
     },
     'loan-calculator': {
-      title: 'Калькулятор криптозайма',
-      description: 'Бесплатный калькулятор криптозайма. Оцените стоимость кредита, ежемесячный процент, порог margin call и цену ликвидации для DeFi и CeFi.'
+      title: 'Калькулятор погашения криптозайма',
+      description: 'Бесплатный калькулятор погашения криптозайма. Составьте график амортизации, рассчитайте ежемесячные платежи и отследите основной долг vs. проценты.'
     },
     'portfolio-calculator': {
       title: 'Калькулятор распределения портфеля',
@@ -2026,7 +2026,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'whale-alert-calculator': {
       title: 'Калькулятор китовых операций',
-      description: 'Бесплатный калькулятор китовых операций. Оцените влияние крупных переводов на рынок, рассчитайте проскальзывание от крупных ордеров и настройте пороги оповещений.'
+      description: 'Бесплатный калькулятор китовых операций. Оцените влияние крупных переводов, рассчитайте проскальзывание и настройте пороги оповещений.'
     },
   },
 };
