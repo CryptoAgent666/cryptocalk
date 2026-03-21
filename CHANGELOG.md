@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-21] (update 32) — 16 missing seo-content entries for new calculators
+
+### Added
+- **16 new calculator-seo-content entries**: Added unique `how` + `inputs` content (2 paragraphs each, all 6 languages) for bitcoin-unit-converter, cross-chain-bridge-calculator, crypto-correlation-calculator, crypto-index-fund-calculator, crypto-inheritance-calculator, crypto-portfolio-rebalance-calculator, crypto-sentiment-calculator, defi-yield-aggregator, dust-attack-calculator, exchange-fee-comparator, flash-loan-calculator, gas-optimization-calculator, governance-voting-calculator, nft-rarity-calculator, token-unlock-calculator, whale-alert-calculator. Total entries: 69 → 85. Each entry includes specific numbers, practical advice, and calculator-specific terminology.
+
+### Verified
+- TypeScript: no new errors
+- All 16 slugs match SPEC_CALCULATOR_SLUGS in utils.ts
+
 ## [2026-03-21] (update 31) — Comprehensive content audit fixes
 
 ### Fixed
