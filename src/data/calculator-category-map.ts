@@ -75,6 +75,28 @@ export const CALCULATOR_CATEGORY: Record<string, CategorySlug> = {
   'exchange-fees': 'gas-fees',
   'bridge-comparator': 'gas-fees',
   'slippage-calculator': 'gas-fees',
+  // Aliases (redirect pages that need 3-level breadcrumbs)
+  'compound-interest-calculator': 'defi-yield',
+  'gas-fee-calculator': 'gas-fees',
+  'loan-calculator': 'defi-yield',
+  'staking-rewards-calculator': 'defi-yield',
+  // New calculators
+  'bitcoin-unit-converter': 'converters',
+  'cross-chain-bridge-calculator': 'gas-fees',
+  'crypto-correlation-calculator': 'investment',
+  'crypto-index-fund-calculator': 'investment',
+  'crypto-inheritance-calculator': 'tax-reporting',
+  'crypto-portfolio-rebalance-calculator': 'investment',
+  'crypto-sentiment-calculator': 'trading-tools',
+  'defi-yield-aggregator': 'defi-yield',
+  'dust-attack-calculator': 'trading-tools',
+  'exchange-fee-comparator': 'gas-fees',
+  'flash-loan-calculator': 'defi-yield',
+  'gas-optimization-calculator': 'gas-fees',
+  'governance-voting-calculator': 'defi-yield',
+  'nft-rarity-calculator': 'profit-loss',
+  'token-unlock-calculator': 'tax-reporting',
+  'whale-alert-calculator': 'trading-tools',
 };
 
 /** Human-readable category names per language. */
