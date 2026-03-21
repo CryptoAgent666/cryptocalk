@@ -70,11 +70,11 @@ export const RELATED_CALCULATORS: Record<SpecCalculatorSlug, SpecCalculatorSlug[
   'trade-expectancy-calculator': ['risk-reward-calculator', 'kelly-calculator', 'position-size-calculator', 'tp-sl-calculator'],
   // Additional calculators
   'staking-rewards-calculator': ['staking-calculator', 'apy-apr-calculator', 'compound-interest-calculator', 'yield-farming-calculator'],
-  'gas-fee-calculator': ['gas-calculator', 'gas-optimization-calculator', 'mev-calculator', 'bridge-comparator'],
+  'gas-fee-calculator': ['gas-calculator', 'gwei-converter', 'mev-calculator', 'bridge-comparator'],
   'compound-interest-calculator': ['compound-calculator', 'apy-apr-calculator', 'staking-calculator', 'dca-calculator'],
   'loan-calculator': ['crypto-loan-calculator', 'lending-calculator', 'liquidation-calculator', 'margin-calculator'],
   'leverage-calculator': ['margin-calculator', 'liquidation-calculator', 'position-size-calculator', 'funding-rate-calculator'],
-  'portfolio-calculator': ['rebalancing-calculator', 'crypto-portfolio-rebalance-calculator', 'roi-calculator', 'sharpe-calculator'],
+  'portfolio-calculator': ['rebalancing-calculator', 'dca-calculator', 'roi-calculator', 'sharpe-calculator'],
   // New calculator cluster
   'bitcoin-unit-converter': ['satoshi-converter', 'gwei-converter', 'unit-converter', 'converter'],
   'cross-chain-bridge-calculator': ['bridge-comparator', 'gas-fee-calculator', 'gas-optimization-calculator', 'slippage-calculator'],

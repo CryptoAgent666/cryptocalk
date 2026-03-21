@@ -1283,10 +1283,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       how: [
       `The NFT Profit Calculator computes the net gain or loss from buying and selling an NFT after accounting for marketplace fees, gas costs, and royalties. Enter your purchase price (including gas), sale price, marketplace fee percentage, creator royalty percentage, and gas fees for the sale transaction to see your actual profit margin.`,
-      `Use it before listing an NFT to determine the minimum sale price needed to break even or hit a profit target. With typical OpenSea fees of 2.5% and creator royalties of 5–10%, you need to sell at 7.5–12.5% above your purchase price just to break even. The calculator makes this threshold explicit and helps you avoid underpricing your listing.`
+      `Use it before listing an NFT to determine the minimum sale price needed to break even or hit a profit target. With typical OpenSea fees of ~1% and creator royalties of 5–10%, you need to sell at 6–11% above your purchase price just to break even. The calculator makes this threshold explicit and helps you avoid underpricing your listing.`
       ],
       inputs: [
-      `Purchase price is the amount you paid for the NFT in ETH or USD, including any gas fees at the time of purchase. Sale price is your planned or actual sale price. Marketplace fee percentage varies by platform (OpenSea: 2.5%, Blur: 0.5%, LooksRare: 2%). Creator royalty is set by the NFT project and typically ranges from 0% to 10%.`,
+      `Purchase price is the amount you paid for the NFT in ETH or USD, including any gas fees at the time of purchase. Sale price is your planned or actual sale price. Marketplace fee percentage varies by platform (OpenSea: ~1%, Blur: 0.5%, Magic Eden: ~2%). Creator royalty is set by the NFT project and typically ranges from 0% to 10%.`,
       `Gas fees for the sale transaction are network-dependent — on Ethereum mainnet during peak periods, gas can add $20–100+ to your costs, while Polygon or Arbitrum gas is negligible. For collections trading on multiple marketplaces, compare the fee structures side by side using different fee percentages to find where selling is most profitable.`
       ],
     },
@@ -1296,7 +1296,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       `Úsala antes de listar un NFT para determinar el precio mínimo de venta necesario para llegar al punto de equilibrio o alcanzar un objetivo de ganancia.`
       ],
       inputs: [
-      `El precio de compra es el importe que pagaste por el NFT en ETH o USD, incluyendo cualquier tarifa de gas. Las comisiones del marketplace varían según la plataforma (OpenSea: 2.5%, Blur: 0.5%).`,
+      `El precio de compra es el importe que pagaste por el NFT en ETH o USD, incluyendo cualquier tarifa de gas. Las comisiones del marketplace varían según la plataforma (OpenSea: ~1%, Blur: 0.5%, Magic Eden: ~2%).`,
       `Las tarifas de gas para la transacción de venta dependen de la red. Para colecciones que se negocian en varios marketplaces, compara las estructuras de comisiones con diferentes porcentajes.`
       ],
     },
@@ -1306,7 +1306,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       `Use-a antes de listar um NFT para determinar o preço mínimo de venda necessário para atingir o ponto de equilíbrio ou uma meta de lucro.`
       ],
       inputs: [
-      `O preço de compra é o valor que você pagou pelo NFT em ETH ou USD, incluindo taxas de gas. A taxa de marketplace varia por plataforma (OpenSea: 2,5%, Blur: 0,5%).`,
+      `O preço de compra é o valor que você pagou pelo NFT em ETH ou USD, incluindo taxas de gas. A taxa de marketplace varia por plataforma (OpenSea: ~1%, Blur: 0,5%, Magic Eden: ~2%).`,
       `As taxas de gas para a transação de venda dependem da rede. Para coleções negociadas em múltiplos marketplaces, compare as estruturas de taxas.`
       ],
     },
@@ -1316,7 +1316,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       `Minimum satış fiyatını belirlemek için bir NFT'yi listelemeden önce kullanın.`
       ],
       inputs: [
-      `Alış fiyatı, gas ücretleri dahil ETH veya USD olarak NFT için ödediğiniz tutardır. Marketplace ücreti platforma göre değişir (OpenSea: %2.5, Blur: %0.5).`,
+      `Alış fiyatı, gas ücretleri dahil ETH veya USD olarak NFT için ödediğiniz tutardır. Marketplace ücreti platforma göre değişir (OpenSea: ~%1, Blur: %0.5, Magic Eden: ~%2).`,
       `Satış işlemi için gas ücretleri ağa bağlıdır. Birden fazla marketplace'te işlem gören koleksiyonlar için farklı ücret yapılarını karşılaştırın.`
       ],
     },
@@ -1336,7 +1336,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       `Используйте перед выставлением NFT, чтобы определить минимальную цену продажи для выхода в ноль или достижения целевой прибыли.`
       ],
       inputs: [
-      `Цена покупки — сумма, уплаченная за NFT в ETH или USD, включая комиссию за газ. Комиссия маркетплейса варьируется по платформам (OpenSea: 2,5%, Blur: 0,5%). Роялти — установлено создателем коллекции.`,
+      `Цена покупки — сумма, уплаченная за NFT в ETH или USD, включая комиссию за газ. Комиссия маркетплейса варьируется по платформам (OpenSea: ~1%, Blur: 0,5%, Magic Eden: ~2%). Роялти — установлено создателем коллекции.`,
       `Стоимость газа при продаже зависит от сети. Для коллекций, торгующихся на нескольких маркетплейсах, сравните структуру комиссий, вводя разные процентные значения.`
       ],
     },
@@ -3455,5 +3455,1013 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     tr: { how: [`Kazanma oranı ve ortalama kazanç/kayıp işlemine dayalı olarak işlem başına beklenen dolar getirisini hesaplar.`, `%40 kazanma oranı $300 kazanç ve $100 kayıpla işlem başına $60 üretir.`], inputs: [`Oran en az 50-100 tarihsel işlemden belirlenir.`, `Sizing için Kelly ile ve hayatta kalma doğrulaması için Risk of Ruin ile birleştirin.`] },
     hi: { how: [`जीत दर और औसत जीत/हार ट्रेड के आधार पर प्रति ट्रेड अपेक्षित डॉलर रिटर्न की गणना करता है।`, `40% जीत दर, $300 औसत जीत और $100 औसत हार के साथ प्रति ट्रेड $60 उत्पन्न होता है।`], inputs: [`दर कम से कम 50-100 ऐतिहासिक ट्रेडों से निर्धारित होती है।`, `साइजिंग के लिए केली और सर्वाइवल के लिए रिस्क ऑफ रुइन के साथ जोड़ें।`] },
     ru: { how: [`Вычисляет ожидаемый долларовый доход на сделку на основе винрейта и средней прибыльной/убыточной сделки.`, `40% винрейт с $300 средним выигрышем и $100 средним проигрышем даёт $60 на сделку.`], inputs: [`Винрейт определяется минимум по 50-100 сделкам.`, `Комбинируйте с Келли для сайзинга и Risk of Ruin для проверки выживаемости.`] },
+  },
+
+  'bitcoin-unit-converter': {
+    en: {
+      how: [
+        `The Bitcoin Unit Converter instantly translates between BTC, millibitcoin (mBTC), microbitcoin (μBTC), satoshis, and USD equivalents. Enter any amount in one field and every other denomination updates in real time. With 1 BTC = 100,000,000 satoshis and prices above $73,000, even small fractions carry meaningful dollar value — 10,000 sats ≈ $7.37 at current rates.`,
+        `Use the converter when quoting Lightning Network invoices (typically denominated in sats), comparing on-chain fees across wallets that display different units, or converting merchant prices shown in mBTC back to full BTC for portfolio tracking. The tool eliminates the most common decimal-place errors that cost traders real money.`
+      ],
+      inputs: [
+        `Each unit field accepts any positive decimal number. BTC supports up to 8 decimal places (the smallest on-chain unit is 1 satoshi = 0.00000001 BTC). mBTC uses 5 decimals, μBTC uses 2, and satoshis are always whole integers. The USD field is calculated from a live CoinGecko BTC price that refreshes automatically.`,
+        `When pasting values from an exchange or wallet, the converter auto-detects standard number formats including comma separators. For very large sat amounts (e.g., Lightning channel capacities of 10,000,000+ sats), the result in BTC is displayed with full precision so you can verify decimal placement before sending a transaction.`
+      ],
+    },
+    es: {
+      how: [
+        `El Conversor de Unidades Bitcoin traduce instantáneamente entre BTC, milibitcoin (mBTC), microbitcoin (μBTC), satoshis y equivalentes en USD. Ingresa cualquier cantidad en un campo y todas las demás denominaciones se actualizan en tiempo real. Con 1 BTC = 100.000.000 satoshis y precios por encima de $73.000, incluso fracciones pequeñas tienen valor significativo — 10.000 sats ≈ $7,37.`,
+        `Usa el conversor al cotizar facturas de Lightning Network (generalmente en sats), comparar comisiones on-chain entre wallets que muestran diferentes unidades, o convertir precios comerciales en mBTC a BTC completo para seguimiento de cartera.`
+      ],
+      inputs: [
+        `Cada campo de unidad acepta cualquier número decimal positivo. BTC admite hasta 8 decimales (la unidad más pequeña on-chain es 1 satoshi = 0,00000001 BTC). El campo USD se calcula con el precio BTC en vivo de CoinGecko.`,
+        `Al pegar valores de un exchange o wallet, el conversor detecta automáticamente formatos numéricos estándar incluyendo separadores de coma. Para cantidades grandes de sats, el resultado en BTC se muestra con precisión completa para verificar la posición decimal antes de enviar una transacción.`
+      ],
+    },
+    pt: {
+      how: [
+        `O Conversor de Unidades Bitcoin traduz instantaneamente entre BTC, milibitcoin (mBTC), microbitcoin (μBTC), satoshis e equivalentes em USD. Insira qualquer valor em um campo e todas as outras denominações se atualizam em tempo real. Com 1 BTC = 100.000.000 satoshis e preços acima de $73.000, até frações pequenas têm valor significativo.`,
+        `Use o conversor ao cotar faturas da Lightning Network (geralmente em sats), comparar taxas on-chain entre carteiras que exibem unidades diferentes, ou converter preços em mBTC para BTC completo no acompanhamento do portfólio.`
+      ],
+      inputs: [
+        `Cada campo aceita qualquer número decimal positivo. BTC suporta até 8 casas decimais (a menor unidade on-chain é 1 satoshi = 0,00000001 BTC). O campo USD é calculado com o preço BTC ao vivo do CoinGecko.`,
+        `Ao colar valores de uma exchange ou carteira, o conversor detecta automaticamente formatos numéricos padrão. Para quantias grandes de sats, o resultado em BTC é exibido com precisão total para verificar o posicionamento decimal antes de enviar uma transação.`
+      ],
+    },
+    tr: {
+      how: [
+        `Bitcoin Birim Dönüştürücü, BTC, milibitcoin (mBTC), microbitcoin (μBTC), satoshi ve USD karşılıkları arasında anında çeviri yapar. Herhangi bir alana miktar girin ve diğer tüm birimler gerçek zamanlı güncellenir. 1 BTC = 100.000.000 satoshi ve fiyatlar $73.000 üzerindeyken küçük kesirler bile önemli dolar değeri taşır.`,
+        `Lightning Network faturalarını (genellikle sat cinsinden), farklı birimler gösteren cüzdanlar arasındaki on-chain ücretlerini karşılaştırırken veya mBTC'deki fiyatları portföy takibi için tam BTC'ye çevirirken kullanın.`
+      ],
+      inputs: [
+        `Her birim alanı pozitif ondalık sayı kabul eder. BTC 8 ondalık basamağa kadar destekler (en küçük on-chain birimi 1 satoshi = 0,00000001 BTC). USD alanı CoinGecko'dan canlı BTC fiyatıyla hesaplanır.`,
+        `Bir exchange veya cüzdandan değer yapıştırırken dönüştürücü virgül ayırıcıları dahil standart sayı formatlarını otomatik algılar. Büyük sat miktarları için BTC sonucu tam hassasiyetle gösterilir.`
+      ],
+    },
+    hi: {
+      how: [
+        `बिटकॉइन यूनिट कन्वर्टर BTC, मिलीबिटकॉइन (mBTC), माइक्रोबिटकॉइन (μBTC), सातोशी और USD समकक्ष के बीच तुरंत रूपांतरण करता है। किसी भी फील्ड में राशि दर्ज करें और बाकी सभी यूनिट रियल-टाइम अपडेट होती हैं। 1 BTC = 100,000,000 सातोशी और $73,000+ कीमतों पर छोटे अंश भी महत्वपूर्ण डॉलर मूल्य रखते हैं।`,
+        `Lightning Network इनवॉइस (आमतौर पर sats में), अलग-अलग यूनिट दिखाने वाले वॉलेट के बीच ऑन-चेन फीस की तुलना, या पोर्टफोलियो ट्रैकिंग के लिए mBTC को पूर्ण BTC में बदलने के लिए उपयोग करें।`
+      ],
+      inputs: [
+        `हर यूनिट फील्ड कोई भी पॉजिटिव डेसिमल नंबर स्वीकार करता है। BTC 8 डेसिमल प्लेस तक सपोर्ट करता है (सबसे छोटी ऑन-चेन यूनिट 1 सातोशी = 0.00000001 BTC)। USD फील्ड CoinGecko के लाइव BTC प्राइस से कैलकुलेट होता है।`,
+        `एक्सचेंज या वॉलेट से वैल्यू पेस्ट करते समय कन्वर्टर स्टैंडर्ड नंबर फॉर्मेट ऑटो-डिटेक्ट करता है। बड़ी sat राशियों के लिए BTC रिजल्ट पूरी प्रिसीजन के साथ दिखाया जाता है।`
+      ],
+    },
+    ru: {
+      how: [
+        `Конвертер единиц биткоина мгновенно переводит между BTC, милибиткоинами (mBTC), микробиткоинами (μBTC), сатоши и долларовым эквивалентом. Введите сумму в любое поле — все остальные единицы обновятся в реальном времени. При 1 BTC = 100 000 000 сатоши и цене выше $73 000 даже мелкие доли несут значительную долларовую стоимость.`,
+        `Используйте конвертер при выставлении счетов в Lightning Network (обычно в сатоши), сравнении on-chain комиссий между кошельками с разными единицами или пересчёте цен в mBTC обратно в полные BTC для учёта портфеля.`
+      ],
+      inputs: [
+        `Каждое поле принимает любое положительное десятичное число. BTC поддерживает до 8 десятичных знаков (минимальная on-chain единица — 1 сатоши = 0,00000001 BTC). Поле USD рассчитывается по актуальному курсу BTC с CoinGecko.`,
+        `При вставке значений из биржи или кошелька конвертер автоматически распознаёт стандартные форматы чисел с разделителями. Для больших сумм в сатоши результат в BTC отображается с полной точностью для проверки разрядов перед отправкой транзакции.`
+      ],
+    },
+  },
+
+  'cross-chain-bridge-calculator': {
+    en: {
+      how: [
+        `The Cross-Chain Bridge Calculator estimates the total cost and time of bridging tokens between blockchains such as Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana, and Avalanche. Select your source and destination chains, enter the token and amount, and the tool returns estimated bridge fees, gas costs on both chains, and expected transfer duration.`,
+        `Compare multiple bridging paths side by side — for example, bridging ETH from mainnet to Arbitrum via the native bridge (free but 7-day withdrawal) versus a third-party bridge like Stargate or Across (instant but 0.05-0.15% fee). The calculator helps you decide whether speed or cost savings matter more for your specific transfer size.`
+      ],
+      inputs: [
+        `Source chain and destination chain are selected from dropdown menus covering 10+ supported networks. The token field accepts any bridgeable asset on the source chain. Amount determines the dollar value being transferred, which directly affects whether percentage-based bridge fees or flat minimum fees dominate the cost.`,
+        `Gas price inputs default to current network averages but can be overridden manually for off-peak timing strategies. The estimated time output reflects typical confirmation times: L2 native bridges may take 7 days for fraud-proof withdrawal, while liquidity-based bridges settle in 2-15 minutes. Always verify the bridge provider's current status before executing large transfers.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Puente Cross-Chain estima el costo total y tiempo de transferir tokens entre blockchains como Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana y Avalanche. Selecciona las cadenas de origen y destino, introduce el token y la cantidad, y la herramienta devuelve comisiones estimadas del puente, costos de gas en ambas cadenas y duración esperada.`,
+        `Compara múltiples rutas de puente — por ejemplo, ETH de mainnet a Arbitrum via puente nativo (gratis pero 7 días de retiro) versus un puente tercero como Stargate (instantáneo pero 0,05-0,15% de comisión). La calculadora ayuda a decidir si la velocidad o el ahorro importan más para tu monto.`
+      ],
+      inputs: [
+        `Las cadenas de origen y destino se seleccionan de menús con 10+ redes soportadas. El campo de token acepta cualquier activo puenteable. La cantidad determina el valor en dólares transferido, lo que afecta si dominan las comisiones porcentuales o las mínimas fijas.`,
+        `Los precios de gas por defecto son promedios actuales pero pueden ajustarse manualmente. El tiempo estimado refleja confirmaciones típicas: puentes nativos L2 pueden tomar 7 días, mientras que puentes de liquidez se liquidan en 2-15 minutos.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Ponte Cross-Chain estima o custo total e tempo de transferência de tokens entre blockchains como Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana e Avalanche. Selecione as redes de origem e destino, insira o token e valor, e a ferramenta retorna taxas estimadas, custos de gas em ambas as redes e duração esperada.`,
+        `Compare múltiplas rotas — por exemplo, ETH do mainnet para Arbitrum via ponte nativa (grátis mas 7 dias de saque) versus ponte terceirizada como Stargate (instantâneo mas 0,05-0,15% de taxa). A calculadora ajuda a decidir entre velocidade e economia.`
+      ],
+      inputs: [
+        `As redes de origem e destino são selecionadas em menus com 10+ redes suportadas. O campo de token aceita qualquer ativo transferível. O valor determina se taxas percentuais ou mínimas fixas dominam o custo.`,
+        `Os preços de gas padrão são médias atuais mas podem ser ajustados manualmente. O tempo estimado reflete confirmações típicas: pontes nativas L2 podem levar 7 dias, enquanto pontes de liquidez liquidam em 2-15 minutos.`
+      ],
+    },
+    tr: {
+      how: [
+        `Cross-Chain Köprü Hesaplayıcısı, Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana ve Avalanche gibi blok zincirleri arasında token transfer maliyetini ve süresini tahmin eder. Kaynak ve hedef zincirleri seçin, token ve miktarı girin; araç tahmini köprü ücretlerini, her iki zincirdeki gas maliyetlerini ve beklenen süreyi gösterir.`,
+        `Birden fazla köprü yolunu karşılaştırın — örneğin yerel köprü (ücretsiz ama 7 gün çekim) ile Stargate gibi üçüncü taraf köprü (anlık ama %0,05-0,15 ücret). Hesaplayıcı hız mı yoksa maliyet tasarrufu mu daha önemli olduğuna karar vermenize yardımcı olur.`
+      ],
+      inputs: [
+        `Kaynak ve hedef zincirler 10+ desteklenen ağ içeren açılır menülerden seçilir. Token alanı kaynak zincirdeki herhangi bir köprülenebilir varlığı kabul eder. Miktar, yüzde bazlı mı yoksa sabit minimum ücretlerin mi baskın olduğunu belirler.`,
+        `Gas fiyat girdileri varsayılan olarak güncel ağ ortalamalarıdır. Tahmini süre tipik onay sürelerini yansıtır: L2 yerel köprüler 7 gün sürebilirken likidite köprüleri 2-15 dakikada tamamlanır.`
+      ],
+    },
+    hi: {
+      how: [
+        `क्रॉस-चेन ब्रिज कैलकुलेटर Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana और Avalanche जैसी ब्लॉकचेन के बीच टोकन ट्रांसफर की कुल लागत और समय का अनुमान लगाता है। सोर्स और डेस्टिनेशन चेन चुनें, टोकन और राशि दर्ज करें।`,
+        `कई ब्रिजिंग पथों की तुलना करें — उदाहरण के लिए, नेटिव ब्रिज (मुफ्त लेकिन 7 दिन विड्रॉल) बनाम Stargate जैसे थर्ड-पार्टी ब्रिज (तुरंत लेकिन 0.05-0.15% फीस)। कैलकुलेटर आपको स्पीड या कॉस्ट सेविंग में से चुनने में मदद करता है।`
+      ],
+      inputs: [
+        `सोर्स और डेस्टिनेशन चेन 10+ सपोर्टेड नेटवर्क के ड्रॉपडाउन से चुनी जाती हैं। टोकन फील्ड सोर्स चेन पर कोई भी ब्रिजेबल एसेट स्वीकार करता है। राशि यह निर्धारित करती है कि परसेंटेज फीस या फ्लैट मिनिमम फीस कौन सी प्रमुख होगी।`,
+        `गैस प्राइस इनपुट डिफॉल्ट रूप से करंट नेटवर्क एवरेज हैं। अनुमानित समय L2 नेटिव ब्रिज के लिए 7 दिन और लिक्विडिटी ब्रिज के लिए 2-15 मिनट दर्शाता है।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор кроссчейн-моста оценивает общую стоимость и время перевода токенов между блокчейнами: Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana, Avalanche. Выберите исходную и целевую сети, введите токен и сумму — инструмент покажет комиссию моста, расходы на газ в обеих сетях и ожидаемое время.`,
+        `Сравнивайте маршруты — например, нативный мост (бесплатно, но 7 дней на вывод) и сторонний мост вроде Stargate (мгновенно, но 0,05-0,15% комиссии). Калькулятор помогает решить, что важнее: скорость или экономия.`
+      ],
+      inputs: [
+        `Исходная и целевая сети выбираются из списка 10+ поддерживаемых блокчейнов. Поле токена принимает любой мостовой актив. Сумма определяет, какие комиссии преобладают — процентные или фиксированные минимальные.`,
+        `Цены газа по умолчанию — текущие средние по сети, но можно задать вручную. Время нативных L2-мостов — до 7 дней, мосты ликвидности — 2-15 минут.`
+      ],
+    },
+  },
+
+  'crypto-correlation-calculator': {
+    en: {
+      how: [
+        `The Crypto Correlation Calculator measures how closely two cryptocurrency prices move together over a chosen time period. Enter two assets (e.g., BTC and ETH), select a lookback window (7, 30, 90, or 365 days), and the tool returns a Pearson correlation coefficient from -1.0 (perfect inverse) to +1.0 (perfect lockstep). A score above +0.7 means the pair tends to rise and fall together; below -0.3 suggests meaningful diversification benefit.`,
+        `Use correlation data to build a portfolio where assets don't all crash simultaneously. For example, BTC-ETH correlation typically hovers around +0.85, meaning they offer minimal diversification from each other. Pairing crypto with stablecoins (correlation near 0) or certain DeFi tokens that track protocol revenue rather than market sentiment can lower overall portfolio volatility.`
+      ],
+      inputs: [
+        `The two asset fields accept any cryptocurrency ticker available on CoinGecko (5,000+ coins). The time window determines the lookback period for daily closing prices used in the correlation calculation. Shorter windows (7-30 days) capture recent regime changes; longer windows (90-365 days) provide more stable, statistically significant results.`,
+        `The output includes the correlation coefficient, a scatter plot of daily returns, and a rolling correlation chart. When the rolling correlation diverges sharply from its historical average, it may signal a structural market shift — such as a sector rotation where altcoins decouple from Bitcoin's trend.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Correlación Cripto mide cuán estrechamente se mueven juntos los precios de dos criptomonedas. Ingresa dos activos, selecciona una ventana temporal (7, 30, 90 o 365 días) y la herramienta devuelve un coeficiente de Pearson de -1,0 a +1,0. Una puntuación superior a +0,7 indica que el par tiende a subir y bajar juntos.`,
+        `Usa datos de correlación para construir un portafolio donde los activos no caigan todos simultáneamente. BTC-ETH típicamente ronda +0,85, ofreciendo mínima diversificación entre sí. Combinar cripto con stablecoins o tokens DeFi puede reducir la volatilidad total del portafolio.`
+      ],
+      inputs: [
+        `Los campos aceptan cualquier ticker disponible en CoinGecko (5.000+ monedas). La ventana temporal determina el período de precios de cierre diarios usados. Ventanas cortas (7-30 días) capturan cambios recientes; ventanas largas (90-365 días) dan resultados más estables.`,
+        `La salida incluye el coeficiente, un gráfico de dispersión de retornos diarios y correlación móvil. Divergencias marcadas de la media histórica pueden señalar cambios estructurales del mercado.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Correlação Cripto mede quão próximos os preços de duas criptomoedas se movem juntos. Insira dois ativos, selecione uma janela temporal (7, 30, 90 ou 365 dias) e a ferramenta retorna um coeficiente de Pearson de -1,0 a +1,0. Acima de +0,7 indica que o par tende a subir e cair juntos.`,
+        `Use dados de correlação para construir um portfólio onde os ativos não caiam todos simultaneamente. BTC-ETH tipicamente fica em +0,85, oferecendo mínima diversificação. Combinar cripto com stablecoins pode reduzir a volatilidade geral.`
+      ],
+      inputs: [
+        `Os campos aceitam qualquer ticker disponível no CoinGecko (5.000+ moedas). A janela temporal determina o período de preços diários usados. Janelas curtas (7-30 dias) capturam mudanças recentes; janelas longas (90-365 dias) fornecem resultados mais estáveis.`,
+        `A saída inclui o coeficiente, gráfico de dispersão de retornos diários e correlação móvel. Divergências acentuadas da média histórica podem sinalizar mudanças estruturais de mercado.`
+      ],
+    },
+    tr: {
+      how: [
+        `Kripto Korelasyon Hesaplayıcısı, iki kripto para fiyatının seçilen zaman diliminde ne kadar birlikte hareket ettiğini ölçer. İki varlık girin, geriye dönük pencere seçin (7, 30, 90 veya 365 gün) ve araç -1,0 ile +1,0 arasında bir Pearson korelasyon katsayısı döndürür. +0,7 üzeri ikisinin birlikte yükselip düştüğünü gösterir.`,
+        `Varlıkların aynı anda çökmediği bir portföy oluşturmak için korelasyon verilerini kullanın. BTC-ETH tipik olarak +0,85 civarında olup birbirinden minimal çeşitlendirme sunar. Kripto'yu stablecoin'lerle eşleştirmek genel portföy oynaklığını düşürebilir.`
+      ],
+      inputs: [
+        `Varlık alanları CoinGecko'daki 5.000+ coin'den herhangi birini kabul eder. Zaman penceresi korelasyon hesaplamasında kullanılan günlük kapanış fiyatlarının dönemini belirler. Kısa pencereler (7-30 gün) son değişimleri yakalar; uzun pencereler (90-365 gün) daha kararlı sonuçlar verir.`,
+        `Çıktı korelasyon katsayısını, günlük getiri dağılım grafiğini ve yuvarlanmalı korelasyon grafiğini içerir. Tarihsel ortalamadan keskin sapmalar yapısal piyasa değişimlerini işaret edebilir.`
+      ],
+    },
+    hi: {
+      how: [
+        `क्रिप्टो कोरिलेशन कैलकुलेटर मापता है कि चुनी गई अवधि में दो क्रिप्टोकरेंसी की कीमतें कितनी करीब से एक साथ चलती हैं। दो एसेट दर्ज करें, लुकबैक विंडो चुनें (7, 30, 90 या 365 दिन) और टूल -1.0 से +1.0 तक पियर्सन कोरिलेशन कोएफिशिएंट लौटाता है। +0.7 से ऊपर का स्कोर बताता है कि दोनों साथ ऊपर-नीचे होते हैं।`,
+        `ऐसा पोर्टफोलियो बनाने के लिए कोरिलेशन डेटा का उपयोग करें जहां सभी एसेट एक साथ क्रैश न हों। BTC-ETH कोरिलेशन आमतौर पर +0.85 के आसपास रहता है। क्रिप्टो को स्टेबलकॉइन के साथ जोड़ने से कुल पोर्टफोलियो वोलैटिलिटी कम हो सकती है।`
+      ],
+      inputs: [
+        `दोनों एसेट फील्ड CoinGecko पर उपलब्ध कोई भी टिकर स्वीकार करते हैं (5,000+ कॉइन)। टाइम विंडो डेली क्लोजिंग प्राइस की अवधि निर्धारित करती है। छोटी विंडो (7-30 दिन) हालिया बदलाव पकड़ती हैं; लंबी विंडो (90-365 दिन) अधिक स्थिर रिजल्ट देती हैं।`,
+        `आउटपुट में कोरिलेशन कोएफिशिएंट, डेली रिटर्न्स का स्कैटर प्लॉट और रोलिंग कोरिलेशन चार्ट शामिल है। ऐतिहासिक औसत से तीव्र विचलन बाजार में संरचनात्मक बदलाव का संकेत हो सकता है।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор корреляции криптовалют измеряет, насколько синхронно движутся цены двух активов за выбранный период. Введите два актива, выберите окно (7, 30, 90 или 365 дней) — инструмент вернёт коэффициент Пирсона от -1,0 до +1,0. Значение выше +0,7 означает, что пара растёт и падает синхронно.`,
+        `Используйте данные корреляции для построения портфеля, где активы не обваливаются одновременно. BTC-ETH обычно около +0,85 — минимальная диверсификация. Сочетание крипто со стейблкоинами может снизить общую волатильность портфеля.`
+      ],
+      inputs: [
+        `Поля активов принимают любой тикер из CoinGecko (5 000+ монет). Временное окно определяет период дневных цен закрытия. Короткие окна (7-30 дней) улавливают свежие сдвиги; длинные (90-365 дней) дают статистически устойчивые результаты.`,
+        `На выходе — коэффициент корреляции, диаграмма рассеяния дневных доходностей и график скользящей корреляции. Резкие отклонения от исторического среднего могут сигнализировать о структурном сдвиге рынка.`
+      ],
+    },
+  },
+
+  'crypto-index-fund-calculator': {
+    en: {
+      how: [
+        `The Crypto Index Fund Calculator simulates the performance of a custom-weighted basket of cryptocurrencies over any historical period. Select 2-20 assets, assign percentage weights (must total 100%), choose a start date, and the tool computes how your index would have performed — including total return, annualized return, max drawdown, and Sharpe ratio.`,
+        `Use it to backtest passive strategies before committing capital. For example, a 60% BTC / 30% ETH / 10% SOL portfolio rebalanced quarterly would have returned differently than an equal-weight top-10 basket. The calculator shows which weighting scheme delivered the best risk-adjusted returns for your chosen period, helping you design an allocation before executing trades.`
+      ],
+      inputs: [
+        `Each asset row requires a ticker (any CoinGecko-supported coin) and a weight percentage. Weights must sum to exactly 100%. The start date and end date define the backtest window — historical data availability varies by coin, with BTC data going back to 2013 and newer altcoins having shorter histories.`,
+        `The rebalancing frequency selector offers daily, weekly, monthly, or quarterly options. More frequent rebalancing captures momentum but incurs higher trading costs; quarterly rebalancing is the most common passive strategy. The output table compares your index against a BTC-only benchmark to quantify the diversification benefit.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Fondo Índice Cripto simula el rendimiento de una cesta personalizada de criptomonedas ponderada sobre cualquier período histórico. Selecciona 2-20 activos, asigna pesos porcentuales (deben sumar 100%), elige fecha de inicio y la herramienta calcula retorno total, retorno anualizado, drawdown máximo y ratio Sharpe.`,
+        `Úsala para backtestear estrategias pasivas antes de comprometer capital. Por ejemplo, un portafolio 60% BTC / 30% ETH / 10% SOL rebalanceado trimestralmente habría tenido rendimiento diferente a una cesta equi-ponderada del top-10. La calculadora muestra qué esquema de ponderación entregó mejor rendimiento ajustado al riesgo.`
+      ],
+      inputs: [
+        `Cada fila requiere un ticker y un peso porcentual que sumen 100%. La fecha de inicio y fin definen la ventana de backtest — la disponibilidad histórica varía por moneda, con datos BTC desde 2013.`,
+        `El selector de frecuencia de rebalanceo ofrece diario, semanal, mensual o trimestral. Rebalanceo más frecuente captura momentum pero incurre más costos. La tabla de salida compara tu índice contra BTC solo para cuantificar el beneficio de diversificación.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Fundo Índice Cripto simula o desempenho de uma cesta personalizada de criptomoedas ponderada ao longo de qualquer período histórico. Selecione 2-20 ativos, atribua pesos percentuais (devem somar 100%), escolha data de início e a ferramenta calcula retorno total, anualizado, drawdown máximo e índice Sharpe.`,
+        `Use para fazer backtest de estratégias passivas antes de investir. Por exemplo, um portfólio 60% BTC / 30% ETH / 10% SOL rebalanceado trimestralmente teria desempenho diferente de uma cesta equi-ponderada do top-10. A calculadora mostra qual esquema de peso entregou melhor retorno ajustado ao risco.`
+      ],
+      inputs: [
+        `Cada linha requer um ticker e peso percentual que somem 100%. A data de início e fim definem a janela de backtest — dados históricos variam por moeda, com BTC desde 2013.`,
+        `O seletor de frequência de rebalanceamento oferece diário, semanal, mensal ou trimestral. Rebalanceamento mais frequente captura momentum mas gera mais custos. A tabela compara seu índice contra BTC isolado para quantificar o benefício da diversificação.`
+      ],
+    },
+    tr: {
+      how: [
+        `Kripto Endeks Fon Hesaplayıcısı, herhangi bir tarihsel dönemde özel ağırlıklı bir kripto para sepetinin performansını simüle eder. 2-20 varlık seçin, yüzde ağırlıklar atayın (toplamı %100 olmalı), başlangıç tarihi belirleyin; araç toplam getiri, yıllık getiri, maksimum düşüş ve Sharpe oranını hesaplar.`,
+        `Sermaye ayırmadan önce pasif stratejileri geriye dönük test etmek için kullanın. Örneğin %60 BTC / %30 ETH / %10 SOL portföyü ile eşit ağırlıklı top-10 sepet farklı performans gösterir. Hesaplayıcı hangi ağırlık şemasının en iyi risk-ayarlı getiri sağladığını gösterir.`
+      ],
+      inputs: [
+        `Her satır bir ticker ve toplamı %100 olan ağırlık yüzdesi gerektirir. Başlangıç ve bitiş tarihleri backtest penceresini tanımlar — BTC verileri 2013'e kadar uzanır.`,
+        `Yeniden dengeleme sıklığı günlük, haftalık, aylık veya üç aylık olarak seçilebilir. Daha sık dengeleme momentum yakalar ama daha yüksek işlem maliyeti getirir. Çıktı tablosu indeksinizi sadece BTC ile kıyaslar.`
+      ],
+    },
+    hi: {
+      how: [
+        `क्रिप्टो इंडेक्स फंड कैलकुलेटर किसी भी ऐतिहासिक अवधि में कस्टम-वेटेड क्रिप्टोकरेंसी बास्केट के प्रदर्शन का सिमुलेशन करता है। 2-20 एसेट चुनें, परसेंटेज वेट असाइन करें (कुल 100% होना चाहिए), स्टार्ट डेट चुनें — टूल टोटल रिटर्न, एनुअलाइज्ड रिटर्न, मैक्स ड्रॉडाउन और शार्प रेशियो कैलकुलेट करता है।`,
+        `कैपिटल लगाने से पहले पैसिव स्ट्रैटेजी का बैकटेस्ट करने के लिए उपयोग करें। उदाहरण के लिए, 60% BTC / 30% ETH / 10% SOL क्वार्टरली रीबैलेंस्ड पोर्टफोलियो का प्रदर्शन इक्वल-वेट टॉप-10 बास्केट से अलग होगा।`
+      ],
+      inputs: [
+        `हर एसेट रो में टिकर और परसेंटेज वेट चाहिए जो कुल 100% हो। स्टार्ट और एंड डेट बैकटेस्ट विंडो परिभाषित करते हैं — BTC डेटा 2013 तक उपलब्ध है।`,
+        `रीबैलेंसिंग फ्रीक्वेंसी डेली, वीकली, मंथली या क्वार्टरली में से चुनें। आउटपुट टेबल आपके इंडेक्स की तुलना सिर्फ BTC बेंचमार्क से करती है ताकि डाइवर्सिफिकेशन बेनिफिट मापा जा सके।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор крипто-индексного фонда симулирует доходность пользовательской корзины криптовалют за любой исторический период. Выберите 2-20 активов, задайте процентные веса (сумма 100%), укажите начальную дату — инструмент рассчитает общую доходность, годовую доходность, максимальную просадку и коэффициент Шарпа.`,
+        `Используйте для бэктеста пассивных стратегий перед вложением капитала. Например, портфель 60% BTC / 30% ETH / 10% SOL с квартальной ребалансировкой показал бы иные результаты, чем равновесная корзина топ-10. Калькулятор покажет, какая схема весов дала лучшую доходность с поправкой на риск.`
+      ],
+      inputs: [
+        `Каждая строка требует тикер и процентный вес, в сумме — 100%. Даты начала и конца задают окно бэктеста — данные BTC доступны с 2013 года.`,
+        `Частота ребалансировки: ежедневная, еженедельная, ежемесячная или ежеквартальная. Таблица результатов сравнивает ваш индекс с бенчмарком «только BTC» для количественной оценки выгоды диверсификации.`
+      ],
+    },
+  },
+
+  'crypto-inheritance-calculator': {
+    en: {
+      how: [
+        `The Crypto Inheritance Calculator helps plan the transfer of digital assets to heirs by estimating portfolio value at projected future dates, tax implications, and the steps needed to ensure safe custody transfer. Enter your current holdings, expected annual growth rate, and the planning horizon (5-30 years), and the tool projects how much your crypto estate will be worth when inheritance is triggered.`,
+        `Use the results to determine whether a multi-signature wallet setup, dead man's switch, or traditional trust structure makes sense for your estate size. For a portfolio currently worth $100,000 growing at 15% annually, the projected value in 20 years exceeds $1.6 million — justifying the cost of professional estate planning and secure key management solutions.`
+      ],
+      inputs: [
+        `Portfolio value accepts the current total dollar value of all crypto holdings. The annual growth rate should reflect your realistic expectation — historical BTC CAGR since 2015 is roughly 50%, but conservative planning uses 10-20%. The planning horizon sets how many years into the future to project. Tax rate represents the expected estate or inheritance tax bracket in your jurisdiction.`,
+        `The output breaks down projected value year by year, estimated tax liability, and net inheritance amount. It also provides a checklist: secure seed phrase backup locations, designate a crypto-literate executor, consider multi-sig setups requiring M-of-N keys, and document wallet addresses and exchange accounts for heirs.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Herencia Cripto ayuda a planificar la transferencia de activos digitales a herederos estimando el valor del portafolio en fechas futuras, implicaciones fiscales y los pasos necesarios para asegurar la custodia. Ingresa tus holdings actuales, tasa de crecimiento anual esperada y horizonte de planificación (5-30 años).`,
+        `Usa los resultados para determinar si una wallet multi-firma, un dead man's switch o un fideicomiso tradicional tiene sentido. Un portafolio de $100.000 creciendo al 15% anual supera $1,6 millones en 20 años — justificando la planificación patrimonial profesional.`
+      ],
+      inputs: [
+        `El valor del portafolio acepta el valor total actual en dólares. La tasa de crecimiento debe ser realista — el CAGR histórico de BTC es ~50% pero la planificación conservadora usa 10-20%. La tasa impositiva representa el tramo esperado de impuesto de herencia.`,
+        `La salida muestra el valor proyectado año por año, obligación fiscal estimada y monto neto de herencia. También incluye una lista de verificación: ubicaciones de backup de seed phrase, designar un ejecutor y documentar wallets para herederos.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Herança Cripto ajuda a planejar a transferência de ativos digitais para herdeiros estimando o valor do portfólio em datas futuras, implicações fiscais e passos para garantir transferência segura de custódia. Insira seus holdings atuais, taxa de crescimento anual esperada e horizonte de planejamento (5-30 anos).`,
+        `Use os resultados para determinar se uma carteira multi-assinatura, dead man's switch ou estrutura fiduciária faz sentido. Um portfólio de $100.000 crescendo a 15% ao ano ultrapassa $1,6 milhão em 20 anos — justificando planejamento patrimonial profissional.`
+      ],
+      inputs: [
+        `O valor do portfólio aceita o total atual em dólares. A taxa de crescimento deve ser realista — CAGR histórico do BTC é ~50%, mas planejamento conservador usa 10-20%. A taxa tributária representa a faixa esperada de imposto sobre herança.`,
+        `A saída mostra valor projetado ano a ano, obrigação fiscal estimada e valor líquido da herança. Inclui checklist: backup de seed phrase, designar executor familiarizado com cripto e documentar carteiras para herdeiros.`
+      ],
+    },
+    tr: {
+      how: [
+        `Kripto Miras Hesaplayıcısı, dijital varlıkların mirasçılara transferini planlamaya yardımcı olur — portföy değerini gelecek tarihlerde, vergi sonuçlarını ve güvenli saklama transferi adımlarını tahmin eder. Mevcut varlıklarınızı, beklenen yıllık büyüme oranını ve planlama ufkunu (5-30 yıl) girin.`,
+        `Sonuçları, çoklu imza cüzdanı, dead man's switch veya geleneksel güven yapısının mantıklı olup olmadığını belirlemek için kullanın. %15 yıllık büyümeyle $100.000'lık bir portföy 20 yılda $1,6 milyonu aşar.`
+      ],
+      inputs: [
+        `Portföy değeri tüm kripto varlıkların güncel dolar toplamını kabul eder. Büyüme oranı gerçekçi olmalıdır — BTC'nin tarihi CAGR'si ~%50'dir ama muhafazakâr planlama %10-20 kullanır. Vergi oranı beklenen miras vergisi dilimini temsil eder.`,
+        `Çıktı yıldan yıla tahmini değeri, vergi yükümlülüğünü ve net miras tutarını gösterir. Ayrıca kontrol listesi sunar: seed phrase yedek konumları, kripto bilen bir vasiyetname yürütücüsü atamak ve mirasçılar için cüzdanları belgelemek.`
+      ],
+    },
+    hi: {
+      how: [
+        `क्रिप्टो इनहेरिटेंस कैलकुलेटर डिजिटल एसेट को वारिसों को ट्रांसफर करने की योजना बनाने में मदद करता है — भविष्य की तारीखों पर पोर्टफोलियो वैल्यू, टैक्स प्रभाव और सुरक्षित कस्टडी ट्रांसफर के कदमों का अनुमान लगाता है। अपनी करंट होल्डिंग्स, अपेक्षित वार्षिक ग्रोथ रेट और प्लानिंग होराइजन (5-30 वर्ष) दर्ज करें।`,
+        `$100,000 का पोर्टफोलियो 15% वार्षिक ग्रोथ पर 20 वर्षों में $1.6 मिलियन से अधिक होगा — प्रोफेशनल एस्टेट प्लानिंग को जस्टिफाई करता है।`
+      ],
+      inputs: [
+        `पोर्टफोलियो वैल्यू सभी क्रिप्टो होल्डिंग्स का करंट डॉलर वैल्यू स्वीकार करता है। ग्रोथ रेट रियलिस्टिक होनी चाहिए — BTC का ऐतिहासिक CAGR ~50% है लेकिन कंज़र्वेटिव प्लानिंग 10-20% इस्तेमाल करती है। टैक्स रेट इनहेरिटेंस टैक्स ब्रैकेट दर्शाता है।`,
+        `आउटपुट साल-दर-साल प्रोजेक्टेड वैल्यू, अनुमानित टैक्स लायबिलिटी और नेट इनहेरिटेंस अमाउंट दिखाता है। चेकलिस्ट भी शामिल है: सीड फ्रेज बैकअप लोकेशन, क्रिप्टो-जानकार एक्जीक्यूटर नामित करना और वारिसों के लिए वॉलेट डॉक्यूमेंट करना।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор наследования криптовалют помогает спланировать передачу цифровых активов наследникам — оценивает стоимость портфеля на будущие даты, налоговые последствия и шаги для безопасной передачи. Введите текущие активы, ожидаемый темп роста и горизонт планирования (5-30 лет).`,
+        `Портфель $100 000 при росте 15% в год превысит $1,6 млн через 20 лет — это оправдывает профессиональное планирование наследования и решения для безопасного хранения ключей.`
+      ],
+      inputs: [
+        `Стоимость портфеля — текущая общая долларовая стоимость. Темп роста должен быть реалистичным — исторический CAGR BTC ~50%, но консервативное планирование использует 10-20%. Ставка налога — ожидаемый уровень налога на наследство.`,
+        `На выходе — прогноз стоимости по годам, расчётная налоговая нагрузка и чистая сумма наследства. Также чек-лист: места хранения сид-фразы, назначение крипто-грамотного исполнителя, документирование кошельков для наследников.`
+      ],
+    },
+  },
+
+  'crypto-portfolio-rebalance-calculator': {
+    en: {
+      how: [
+        `The Crypto Portfolio Rebalance Calculator shows exactly which trades to execute to restore your portfolio to its target allocation. Enter each asset's current value and target weight percentage, and the tool calculates the dollar amount to buy or sell for every position. If BTC drifted from a 50% target to 62% during a rally while ETH fell from 30% to 22%, the calculator tells you to sell $X of BTC and buy $X of ETH.`,
+        `Rebalancing forces a "sell high, buy low" discipline that most traders struggle to follow manually. Research shows quarterly rebalancing of a diversified crypto portfolio can reduce annualized volatility by 15-25% versus a buy-and-hold approach, while maintaining comparable returns. The calculator also estimates trading fees so you can verify the rebalance cost doesn't exceed the expected benefit.`
+      ],
+      inputs: [
+        `Each row requires the asset name, current dollar value, and target weight as a percentage. Weights must sum to 100%. The fee field applies a uniform trading fee percentage (e.g., 0.1% for Binance VIP) to all rebalance trades. The minimum trade threshold filters out micro-adjustments below a set dollar value to avoid dust positions.`,
+        `The output table shows for each asset: current weight, target weight, deviation, and the exact dollar trade needed (positive = buy, negative = sell). The total rebalance turnover and estimated fee cost help decide whether the drift is large enough to justify action — most strategies trigger rebalancing only when any single asset deviates by more than 5% from its target.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Rebalanceo de Portafolio Cripto muestra exactamente qué operaciones ejecutar para restaurar tu portafolio a su asignación objetivo. Ingresa el valor actual de cada activo y el peso objetivo, y la herramienta calcula el monto en dólares a comprar o vender por cada posición.`,
+        `El rebalanceo fuerza la disciplina de "vender alto, comprar bajo". Estudios muestran que el rebalanceo trimestral puede reducir la volatilidad anualizada un 15-25% versus comprar y mantener. La calculadora estima comisiones para verificar que el costo no exceda el beneficio esperado.`
+      ],
+      inputs: [
+        `Cada fila requiere nombre del activo, valor actual en dólares y peso objetivo en porcentaje (deben sumar 100%). El campo de comisión aplica una tasa uniforme a todas las operaciones. El umbral mínimo filtra micro-ajustes para evitar posiciones de polvo.`,
+        `La tabla muestra peso actual, peso objetivo, desviación y la operación exacta en dólares necesaria. La mayoría de estrategias disparan rebalanceo solo cuando un activo se desvía más del 5% de su objetivo.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Rebalanceamento de Portfólio Cripto mostra exatamente quais trades executar para restaurar seu portfólio à alocação alvo. Insira o valor atual de cada ativo e o peso alvo percentual, e a ferramenta calcula o valor em dólares a comprar ou vender.`,
+        `O rebalanceamento força a disciplina de "vender na alta, comprar na baixa". Pesquisas mostram que o rebalanceamento trimestral pode reduzir a volatilidade anualizada em 15-25%. A calculadora estima taxas de negociação para verificar se o custo justifica a ação.`
+      ],
+      inputs: [
+        `Cada linha requer nome do ativo, valor atual em dólares e peso alvo percentual (devem somar 100%). O campo de taxa aplica uma taxa uniforme a todos os trades. O limiar mínimo filtra micro-ajustes para evitar posições de poeira.`,
+        `A tabela mostra peso atual, peso alvo, desvio e o trade exato em dólares. A maioria das estratégias aciona rebalanceamento apenas quando um ativo desvia mais de 5% do alvo.`
+      ],
+    },
+    tr: {
+      how: [
+        `Kripto Portföy Yeniden Dengeleme Hesaplayıcısı, portföyünüzü hedef dağılımına geri döndürmek için hangi işlemleri yapacağınızı tam olarak gösterir. Her varlığın güncel değerini ve hedef ağırlık yüzdesini girin; araç her pozisyon için alınacak veya satılacak dolar tutarını hesaplar.`,
+        `Yeniden dengeleme, çoğu yatırımcının manuel olarak takip edemediği "yüksekte sat, düşükte al" disiplinini zorlar. Çeyreklik yeniden dengeleme, al-ve-tut yaklaşımına kıyasla yıllık oynaklığı %15-25 azaltabilir. Hesaplayıcı işlem ücretlerini de tahmin eder.`
+      ],
+      inputs: [
+        `Her satır varlık adı, güncel dolar değeri ve toplamı %100 olan hedef ağırlık yüzdesi gerektirir. Ücret alanı tüm işlemlere tek tip oran uygular. Minimum işlem eşiği toz pozisyonlarını önlemek için küçük ayarlamaları filtreler.`,
+        `Çıktı tablosu her varlık için güncel ağırlık, hedef ağırlık, sapma ve gereken dolar işlemini gösterir. Stratejilerin çoğu yalnızca bir varlık hedefinden %5'ten fazla saptığında dengelemeyi tetikler.`
+      ],
+    },
+    hi: {
+      how: [
+        `क्रिप्टो पोर्टफोलियो रीबैलेंस कैलकुलेटर दिखाता है कि आपके पोर्टफोलियो को टार्गेट एलोकेशन पर वापस लाने के लिए कौन से ट्रेड करने हैं। हर एसेट की करंट वैल्यू और टार्गेट वेट परसेंटेज दर्ज करें — टूल हर पोजीशन के लिए खरीदने या बेचने की डॉलर राशि कैलकुलेट करता है।`,
+        `रीबैलेंसिंग "हाई पर बेचो, लो पर खरीदो" अनुशासन लागू करता है। क्वार्टरली रीबैलेंसिंग बाय-एंड-होल्ड की तुलना में वार्षिक वोलैटिलिटी 15-25% कम कर सकता है। कैलकुलेटर ट्रेडिंग फीस भी एस्टिमेट करता है।`
+      ],
+      inputs: [
+        `हर रो में एसेट नाम, करंट डॉलर वैल्यू और टार्गेट वेट (कुल 100%) चाहिए। फीस फील्ड सभी ट्रेड पर यूनिफॉर्म रेट लागू करता है। मिनिमम ट्रेड थ्रेशोल्ड डस्ट पोजीशन से बचने के लिए छोटे एडजस्टमेंट फिल्टर करता है।`,
+        `आउटपुट टेबल हर एसेट का करंट वेट, टार्गेट वेट, डेविएशन और जरूरी डॉलर ट्रेड दिखाती है। ज्यादातर स्ट्रैटेजी तभी रीबैलेंस ट्रिगर करती हैं जब कोई एसेट टार्गेट से 5% से ज्यादा विचलित हो।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор ребалансировки крипто-портфеля показывает, какие именно сделки нужно совершить, чтобы вернуть портфель к целевому распределению. Введите текущую стоимость каждого актива и целевой вес — инструмент рассчитает сумму покупки или продажи для каждой позиции в долларах.`,
+        `Ребалансировка заставляет следовать дисциплине «продавай дорого, покупай дёшево». Ежеквартальная ребалансировка может снизить годовую волатильность на 15-25% по сравнению с buy-and-hold. Калькулятор также оценивает комиссии, чтобы убедиться, что расходы не превышают ожидаемую выгоду.`
+      ],
+      inputs: [
+        `Каждая строка требует название актива, текущую долларовую стоимость и целевой вес (сумма 100%). Поле комиссии применяет единую ставку ко всем сделкам. Минимальный порог сделки отфильтровывает микрокоррекции, предотвращая пылевые позиции.`,
+        `Таблица результатов показывает текущий вес, целевой вес, отклонение и точную сделку в долларах. Большинство стратегий запускают ребалансировку только при отклонении актива от цели более чем на 5%.`
+      ],
+    },
+  },
+
+  'crypto-sentiment-calculator': {
+    en: {
+      how: [
+        `The Crypto Sentiment Calculator aggregates multiple market sentiment indicators into a single composite score from 0 (Extreme Fear) to 100 (Extreme Greed). It combines the Fear & Greed Index, social media mention volume, funding rates across perpetual futures exchanges, put/call ratio, and on-chain metrics like exchange inflow/outflow to produce a real-time market mood reading.`,
+        `Use the score as a contrarian signal: historically, buying when the composite falls below 20 (Extreme Fear) and taking profits above 80 (Extreme Greed) has outperformed dollar-cost averaging. For example, the index dropped below 15 during the March 2020 crash and the June 2022 bottom — both turned out to be excellent long-term entry points within weeks.`
+      ],
+      inputs: [
+        `The primary input is the cryptocurrency you want to analyze (default: BTC). The tool automatically fetches the latest data for each sentiment component. You can adjust the weight of each indicator (social, funding rate, Fear & Greed, on-chain) using slider controls if you believe certain signals are more relevant to current market conditions.`,
+        `The output displays the composite score, a historical chart of sentiment over 30/90/365 days, and a breakdown showing each component's individual reading. The trend direction (improving or deteriorating sentiment) matters as much as the absolute score — a rising score from 15 to 35 suggests accumulation phase even though sentiment is still technically fearful.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Sentimiento Cripto agrega múltiples indicadores de sentimiento de mercado en una puntuación compuesta de 0 (Miedo Extremo) a 100 (Codicia Extrema). Combina el Índice Fear & Greed, volumen de menciones en redes sociales, funding rates, ratio put/call y métricas on-chain.`,
+        `Usa la puntuación como señal contraria: comprar cuando cae por debajo de 20 y tomar ganancias por encima de 80 ha superado al DCA históricamente. El índice cayó por debajo de 15 durante el crash de marzo 2020 y el fondo de junio 2022 — ambos resultaron excelentes puntos de entrada.`
+      ],
+      inputs: [
+        `El input principal es la criptomoneda a analizar (default: BTC). La herramienta obtiene datos automáticamente para cada componente. Puedes ajustar el peso de cada indicador usando controles deslizantes si crees que ciertas señales son más relevantes.`,
+        `La salida muestra la puntuación compuesta, un gráfico histórico de 30/90/365 días y el desglose de cada componente. La dirección de la tendencia importa tanto como la puntuación absoluta — una subida de 15 a 35 sugiere fase de acumulación.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Sentimento Cripto agrega múltiplos indicadores de sentimento de mercado em uma pontuação composta de 0 (Medo Extremo) a 100 (Ganância Extrema). Combina o Índice Fear & Greed, volume de menções sociais, funding rates, razão put/call e métricas on-chain.`,
+        `Use a pontuação como sinal contrário: comprar abaixo de 20 e realizar lucros acima de 80 tem superado o DCA historicamente. O índice caiu abaixo de 15 no crash de março 2020 e no fundo de junho 2022 — ambos foram excelentes pontos de entrada.`
+      ],
+      inputs: [
+        `O input principal é a criptomoeda a analisar (padrão: BTC). A ferramenta busca dados automaticamente para cada componente. Você pode ajustar o peso de cada indicador usando controles deslizantes.`,
+        `A saída exibe a pontuação composta, gráfico histórico de 30/90/365 dias e detalhamento de cada componente. A direção da tendência importa tanto quanto a pontuação absoluta — subida de 15 para 35 sugere fase de acumulação.`
+      ],
+    },
+    tr: {
+      how: [
+        `Kripto Duygu Analizi Hesaplayıcısı, birden fazla piyasa duyarlılığı göstergesini 0 (Aşırı Korku) ile 100 (Aşırı Açgözlülük) arasında tek bir bileşik puana toplar. Fear & Greed Endeksi, sosyal medya bahsetme hacmi, fonlama oranları, put/call oranı ve on-chain metrikleri birleştirir.`,
+        `Puanı karşıt sinyal olarak kullanın: 20'nin altında almak ve 80'in üzerinde kâr almak tarihsel olarak DCA'yı geçmiştir. Endeks Mart 2020 çöküşünde ve Haziran 2022 dibinde 15'in altına düştü — her ikisi de mükemmel giriş noktaları oldu.`
+      ],
+      inputs: [
+        `Ana girdi analiz edilecek kripto paradır (varsayılan: BTC). Araç her bileşen için en son verileri otomatik alır. Her göstergenin ağırlığını kaydırıcı kontrollerle ayarlayabilirsiniz.`,
+        `Çıktı bileşik puanı, 30/90/365 günlük tarihsel grafiği ve her bileşenin bireysel okumasını gösterir. Trend yönü mutlak puan kadar önemlidir — 15'ten 35'e çıkış, duyarlılık hâlâ korkulu olsa da birikim aşamasını gösterir.`
+      ],
+    },
+    hi: {
+      how: [
+        `क्रिप्टो सेंटिमेंट कैलकुलेटर कई मार्केट सेंटिमेंट इंडिकेटर्स को 0 (एक्सट्रीम फियर) से 100 (एक्सट्रीम ग्रीड) तक एक कम्पोजिट स्कोर में एग्रीगेट करता है। Fear & Greed इंडेक्स, सोशल मीडिया मेंशन वॉल्यूम, फंडिंग रेट्स, पुट/कॉल रेशियो और ऑन-चेन मेट्रिक्स को जोड़ता है।`,
+        `स्कोर को कॉन्ट्रेरियन सिग्नल के रूप में उपयोग करें: 20 से नीचे खरीदना और 80 से ऊपर प्रॉफिट लेना ऐतिहासिक रूप से DCA से बेहतर प्रदर्शन करता है। मार्च 2020 क्रैश और जून 2022 बॉटम पर इंडेक्स 15 से नीचे गिरा — दोनों बेहतरीन एंट्री पॉइंट साबित हुए।`
+      ],
+      inputs: [
+        `प्राइमरी इनपुट विश्लेषित करने वाली क्रिप्टोकरेंसी है (डिफॉल्ट: BTC)। टूल हर कंपोनेंट के लिए ऑटोमैटिकली लेटेस्ट डेटा फेच करता है। आप स्लाइडर से हर इंडिकेटर का वेट एडजस्ट कर सकते हैं।`,
+        `आउटपुट कम्पोजिट स्कोर, 30/90/365 दिनों का हिस्टोरिकल चार्ट और हर कंपोनेंट का ब्रेकडाउन दिखाता है। ट्रेंड डायरेक्शन एब्सोल्यूट स्कोर जितनी ही अहम है — 15 से 35 तक बढ़ना एक्यूमुलेशन फेज सुझाता है।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор настроений крипторынка объединяет несколько индикаторов в единый балл от 0 (Крайний страх) до 100 (Крайняя жадность). Используются Fear & Greed Index, объём упоминаний в соцсетях, фандинг-рейты, соотношение пут/колл и ончейн-метрики.`,
+        `Используйте балл как контрарный сигнал: покупка при значении ниже 20 и фиксация прибыли выше 80 исторически превосходила DCA. Индекс падал ниже 15 при обвале в марте 2020 и на дне в июне 2022 — оба оказались отличными точками входа.`
+      ],
+      inputs: [
+        `Основной ввод — криптовалюта для анализа (по умолчанию BTC). Инструмент автоматически получает свежие данные по каждому компоненту. Можно регулировать вес каждого индикатора ползунками.`,
+        `На выходе — композитный балл, исторический график за 30/90/365 дней и разбивка по компонентам. Направление тренда важно не менее абсолютного значения — рост с 15 до 35 указывает на фазу накопления, даже если настроение формально «страх».`
+      ],
+    },
+  },
+
+  'defi-yield-aggregator': {
+    en: {
+      how: [
+        `The DeFi Yield Aggregator Calculator compares yield farming opportunities across major DeFi protocols — Aave, Compound, Curve, Yearn, Convex, Lido, and others — to find the highest risk-adjusted return for your capital. Enter the token you want to deploy, your deposit amount, and the tool displays current APY, TVL, protocol age, and audit status for every matching pool.`,
+        `The calculator accounts for auto-compounding effects, which can turn a 12% base APR into 12.75% effective APY with daily compounding. It also estimates gas costs for deposit and withdrawal transactions so you can calculate the minimum holding period needed to break even on gas. For a $5,000 USDC deposit at 8% APY with $15 in gas costs, you need at least 14 days before the yield exceeds the entry fee.`
+      ],
+      inputs: [
+        `The token selector covers major assets: ETH, WBTC, USDC, USDT, DAI, and popular LP tokens. Deposit amount in dollars determines which pools are practical — small deposits under $500 may lose most yield to gas fees on Ethereum mainnet. The chain filter lets you narrow results to specific networks (Ethereum, Arbitrum, Polygon, Base) where gas costs differ dramatically.`,
+        `Risk tolerance slider filters pools by protocol audit status, TVL floor, and time since launch. Conservative mode shows only audited protocols with $100M+ TVL and 6+ months of operation. Aggressive mode includes newer protocols with higher yields but higher smart contract risk. The output table ranks results by net APY after estimated gas costs.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora Agregadora de Rendimiento DeFi compara oportunidades de farming entre protocolos principales — Aave, Compound, Curve, Yearn, Convex, Lido — para encontrar el mayor rendimiento ajustado al riesgo. Ingresa el token, monto de depósito y la herramienta muestra APY actual, TVL, antigüedad del protocolo y estado de auditoría.`,
+        `Calcula el efecto de auto-composición: un 12% APR base se convierte en 12,75% APY con composición diaria. También estima costos de gas para depósito y retiro. Para $5.000 USDC al 8% APY con $15 en gas, necesitas al menos 14 días para superar la comisión de entrada.`
+      ],
+      inputs: [
+        `El selector de token cubre ETH, WBTC, USDC, USDT, DAI y tokens LP populares. El monto determina qué pools son prácticos — depósitos menores a $500 pueden perder rendimiento en gas de Ethereum. El filtro de cadena limita resultados a redes específicas.`,
+        `El control de tolerancia al riesgo filtra pools por auditoría, TVL mínimo y tiempo de operación. Modo conservador muestra solo protocolos auditados con $100M+ TVL. Modo agresivo incluye protocolos nuevos con mayor rendimiento pero mayor riesgo.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora Agregadora de Rendimento DeFi compara oportunidades de farming entre protocolos principais — Aave, Compound, Curve, Yearn, Convex, Lido — para encontrar o maior retorno ajustado ao risco. Insira o token, valor do depósito e a ferramenta exibe APY atual, TVL, idade do protocolo e status de auditoria.`,
+        `Calcula o efeito de auto-composição: 12% APR base vira 12,75% APY com composição diária. Estima custos de gas para depósito e saque. Para $5.000 USDC a 8% APY com $15 em gas, são necessários pelo menos 14 dias para o yield superar a taxa de entrada.`
+      ],
+      inputs: [
+        `O seletor de token cobre ETH, WBTC, USDC, USDT, DAI e tokens LP populares. O valor do depósito determina quais pools são práticas — depósitos abaixo de $500 podem perder yield em gas no Ethereum. O filtro de rede limita resultados a blockchains específicas.`,
+        `O controle de tolerância a risco filtra pools por auditoria, TVL mínimo e tempo de operação. Modo conservador mostra apenas protocolos auditados com $100M+ TVL. Modo agressivo inclui protocolos novos com maior rendimento mas maior risco.`
+      ],
+    },
+    tr: {
+      how: [
+        `DeFi Getiri Toplayıcı Hesaplayıcısı, büyük DeFi protokolleri arasında — Aave, Compound, Curve, Yearn, Convex, Lido — yield farming fırsatlarını karşılaştırarak en yüksek risk-ayarlı getiriyi bulur. Token ve yatırım tutarını girin; araç güncel APY, TVL, protokol yaşı ve denetim durumunu gösterir.`,
+        `Oto-bileşik etkisini hesaplar: %12 temel APR günlük bileşikle %12,75 efektif APY'ye dönüşür. Gas maliyetlerini de tahmin eder. $5.000 USDC'de %8 APY ve $15 gas ile getirinin giriş ücretini aşması en az 14 gün sürer.`
+      ],
+      inputs: [
+        `Token seçici ETH, WBTC, USDC, USDT, DAI ve popüler LP tokenlerini kapsar. Yatırım tutarı hangi havuzların pratik olduğunu belirler — $500 altı yatırımlar Ethereum gas'ında getirinin çoğunu kaybedebilir. Zincir filtresi sonuçları belirli ağlarla sınırlar.`,
+        `Risk toleransı kaydırıcısı havuzları denetim durumu, minimum TVL ve işletim süresine göre filtreler. Muhafazakâr mod yalnızca $100M+ TVL'li denetimli protokolleri gösterir. Agresif mod daha yüksek getirili ama daha riskli yeni protokolleri içerir.`
+      ],
+    },
+    hi: {
+      how: [
+        `DeFi यील्ड एग्रीगेटर कैलकुलेटर प्रमुख DeFi प्रोटोकॉल — Aave, Compound, Curve, Yearn, Convex, Lido — में यील्ड फार्मिंग अवसरों की तुलना करके सबसे अधिक रिस्क-एडजस्टेड रिटर्न खोजता है। टोकन और डिपॉजिट अमाउंट दर्ज करें; टूल करंट APY, TVL, प्रोटोकॉल उम्र और ऑडिट स्टेटस दिखाता है।`,
+        `ऑटो-कंपाउंडिंग इफेक्ट कैलकुलेट करता है: 12% बेस APR डेली कंपाउंडिंग से 12.75% इफेक्टिव APY बन जाता है। गैस कॉस्ट भी एस्टिमेट करता है। $5,000 USDC पर 8% APY और $15 गैस के साथ, यील्ड को एंट्री फीस से ज्यादा होने में कम से कम 14 दिन लगते हैं।`
+      ],
+      inputs: [
+        `टोकन सेलेक्टर ETH, WBTC, USDC, USDT, DAI और पॉपुलर LP टोकन कवर करता है। डिपॉजिट अमाउंट निर्धारित करता है कौन से पूल प्रैक्टिकल हैं — $500 से कम डिपॉजिट Ethereum गैस में ज्यादातर यील्ड खो सकते हैं।`,
+        `रिस्क टॉलरेंस स्लाइडर ऑडिट स्टेटस, मिनिमम TVL और ऑपरेशन टाइम से पूल फिल्टर करता है। कंज़र्वेटिव मोड सिर्फ $100M+ TVL वाले ऑडिटेड प्रोटोकॉल दिखाता है। एग्रेसिव मोड ज्यादा यील्ड वाले नए प्रोटोकॉल शामिल करता है।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор-агрегатор DeFi-доходности сравнивает возможности фарминга в крупных протоколах — Aave, Compound, Curve, Yearn, Convex, Lido — для поиска максимальной доходности с поправкой на риск. Введите токен и сумму депозита — инструмент покажет текущий APY, TVL, возраст протокола и статус аудита.`,
+        `Учитывает эффект автокомпаундинга: 12% базового APR превращаются в 12,75% APY при ежедневном реинвестировании. Оценивает расходы на газ для депозита и вывода. Для депозита $5 000 USDC при 8% APY и $15 газа потребуется минимум 14 дней, чтобы доходность превысила комиссию входа.`
+      ],
+      inputs: [
+        `Селектор токенов включает ETH, WBTC, USDC, USDT, DAI и популярные LP-токены. Сумма депозита определяет практичность пулов — депозиты менее $500 могут потерять большую часть дохода на газе Ethereum. Фильтр по сети ограничивает результаты конкретным блокчейном.`,
+        `Ползунок допустимого риска фильтрует пулы по статусу аудита, минимальному TVL и сроку работы. Консервативный режим — только аудированные протоколы с TVL $100M+. Агрессивный — включает новые протоколы с высокой доходностью, но повышенным риском.`
+      ],
+    },
+  },
+
+  'dust-attack-calculator': {
+    en: {
+      how: [
+        `The Dust Attack Calculator helps you identify and assess tiny unsolicited crypto deposits (dust) that may be used to track your wallet activity. Enter your wallet address or paste a list of small incoming transactions, and the tool flags any amounts below the dust threshold — typically under 546 satoshis ($0.40) for Bitcoin or under 0.001 ETH ($2.30) for Ethereum.`,
+        `Dust attacks work by sending minuscule amounts to thousands of addresses, then monitoring which outputs get combined in future transactions to deanonymize wallet owners. The calculator estimates the privacy risk level based on how many dust UTXOs exist in your wallet and whether you've already inadvertently spent them alongside larger outputs, potentially linking your addresses.`
+      ],
+      inputs: [
+        `The wallet address field accepts Bitcoin (legacy, SegWit, Taproot), Ethereum, and major EVM-compatible addresses. The dust threshold can be customized — Bitcoin Core defaults to 546 satoshis, but some wallets use 1,000 sats. For Ethereum, dust is typically defined as any amount below the gas cost required to move it (currently ~$0.10 on L2s, ~$2 on mainnet).`,
+        `The output shows: total number of dust inputs, their combined value, the dates received, and a risk score from Low to Critical. It also provides recommended actions — whether to leave dust unspent (safest), consolidate using a coin-mixing service, or send all dust to a fresh address that is never combined with your main wallet funds.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Ataque Dust ayuda a identificar y evaluar pequeños depósitos cripto no solicitados que pueden usarse para rastrear tu actividad. Ingresa tu dirección de wallet o pega una lista de transacciones entrantes pequeñas; la herramienta señala montos bajo el umbral de dust — típicamente menos de 546 satoshis ($0,40) para Bitcoin o menos de 0,001 ETH ($2,30).`,
+        `Los ataques dust envían cantidades mínimas a miles de direcciones para monitorear qué outputs se combinan en futuras transacciones. La calculadora estima el riesgo de privacidad basándose en cuántos UTXOs dust existen y si ya los gastaste junto con outputs mayores.`
+      ],
+      inputs: [
+        `El campo de dirección acepta Bitcoin (legacy, SegWit, Taproot), Ethereum y direcciones EVM compatibles. El umbral de dust es personalizable — Bitcoin Core usa 546 satoshis por defecto. Para Ethereum, dust es cualquier monto menor al costo de gas para moverlo.`,
+        `La salida muestra: número total de inputs dust, valor combinado, fechas recibidas y una puntuación de riesgo de Bajo a Crítico. Incluye acciones recomendadas — dejar el dust sin gastar (más seguro), consolidar vía mixing o enviar a una dirección fresca.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Ataque Dust ajuda a identificar e avaliar pequenos depósitos cripto não solicitados que podem rastrear sua atividade. Insira seu endereço de carteira ou cole uma lista de transações pequenas; a ferramenta sinaliza valores abaixo do limiar de dust — tipicamente menos de 546 satoshis ($0,40) para Bitcoin ou menos de 0,001 ETH ($2,30).`,
+        `Ataques dust enviam quantias mínimas para milhares de endereços e monitoram quais outputs são combinados em transações futuras. A calculadora estima o risco de privacidade com base em quantos UTXOs dust existem e se você já os gastou junto com outputs maiores.`
+      ],
+      inputs: [
+        `O campo de endereço aceita Bitcoin (legacy, SegWit, Taproot), Ethereum e endereços EVM compatíveis. O limiar de dust é personalizável — Bitcoin Core usa 546 satoshis por padrão. Para Ethereum, dust é qualquer valor menor que o custo de gas para movê-lo.`,
+        `A saída mostra: total de inputs dust, valor combinado, datas recebidas e pontuação de risco de Baixo a Crítico. Inclui ações recomendadas — deixar dust sem gastar (mais seguro), consolidar via mixing ou enviar para endereço novo.`
+      ],
+    },
+    tr: {
+      how: [
+        `Dust Saldırı Hesaplayıcısı, cüzdan aktivitenizi izlemek için kullanılabilecek küçük istenmeyen kripto yatırımlarını (dust) belirlemenize yardımcı olur. Cüzdan adresinizi girin veya küçük gelen işlemleri yapıştırın; araç dust eşiğinin altındaki miktarları işaretler — Bitcoin için genellikle 546 satoshi altı ($0,40) veya Ethereum için 0,001 ETH altı ($2,30).`,
+        `Dust saldırıları binlerce adrese küçük miktarlar göndererek gelecek işlemlerde hangi çıktıların birleştirildiğini izler. Hesaplayıcı, cüzdanınızdaki dust UTXO sayısına ve bunları daha büyük çıktılarla birlikte harcayıp harcamadığınıza göre gizlilik risk seviyesini tahmin eder.`
+      ],
+      inputs: [
+        `Adres alanı Bitcoin (legacy, SegWit, Taproot), Ethereum ve EVM uyumlu adresleri kabul eder. Dust eşiği özelleştirilebilir — Bitcoin Core varsayılan olarak 546 satoshi kullanır. Ethereum için dust, taşıma gas maliyetinin altındaki herhangi bir miktardır.`,
+        `Çıktı: toplam dust girdi sayısı, birleşik değer, alınma tarihleri ve Düşük-Kritik arası risk puanı. Önerilen eylemler — dust'ı harcanmamış bırakmak (en güvenli), karıştırma servisi ile birleştirmek veya yeni adrese göndermek.`
+      ],
+    },
+    hi: {
+      how: [
+        `डस्ट अटैक कैलकुलेटर आपको छोटे अनचाहे क्रिप्टो डिपॉजिट (डस्ट) की पहचान करने में मदद करता है जो आपकी वॉलेट एक्टिविटी ट्रैक करने के लिए इस्तेमाल हो सकते हैं। अपना वॉलेट एड्रेस दर्ज करें; टूल डस्ट थ्रेशोल्ड से नीचे के अमाउंट फ्लैग करता है — Bitcoin के लिए 546 सातोशी ($0.40) या Ethereum के लिए 0.001 ETH ($2.30) से कम।`,
+        `डस्ट अटैक हजारों एड्रेस पर छोटी राशि भेजकर मॉनिटर करते हैं कि भविष्य के ट्रांजैक्शन में कौन से आउटपुट कंबाइन होते हैं। कैलकुलेटर प्राइवेसी रिस्क लेवल एस्टिमेट करता है कि कितने डस्ट UTXO मौजूद हैं और क्या आपने उन्हें बड़े आउटपुट के साथ खर्च किया है।`
+      ],
+      inputs: [
+        `एड्रेस फील्ड Bitcoin (legacy, SegWit, Taproot), Ethereum और EVM-कम्पैटिबल एड्रेस स्वीकार करता है। डस्ट थ्रेशोल्ड कस्टमाइज़ हो सकता है — Bitcoin Core 546 सातोशी डिफॉल्ट करता है। Ethereum के लिए डस्ट गैस कॉस्ट से कम कोई भी अमाउंट है।`,
+        `आउटपुट दिखाता है: कुल डस्ट इनपुट, कंबाइंड वैल्यू, रिसीव डेट और Low से Critical तक रिस्क स्कोर। रेकमेंडेड एक्शन भी शामिल हैं — डस्ट को अनस्पेंट छोड़ना (सबसे सुरक्षित), मिक्सिंग से कंसोलिडेट करना या फ्रेश एड्रेस पर भेजना।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор пылевых атак помогает выявить и оценить крошечные незапрошенные крипто-депозиты (dust), которые могут использоваться для отслеживания активности вашего кошелька. Введите адрес или список мелких входящих транзакций — инструмент отметит суммы ниже порога dust: обычно менее 546 сатоши ($0,40) для Bitcoin или менее 0,001 ETH ($2,30).`,
+        `Пылевые атаки рассылают мизерные суммы на тысячи адресов, затем отслеживают, какие выходы объединяются в будущих транзакциях. Калькулятор оценивает уровень риска конфиденциальности по количеству пылевых UTXO и тому, были ли они уже потрачены вместе с крупными выходами.`
+      ],
+      inputs: [
+        `Поле адреса принимает Bitcoin (legacy, SegWit, Taproot), Ethereum и EVM-совместимые адреса. Порог dust настраивается — Bitcoin Core по умолчанию 546 сатоши. Для Ethereum dust — любая сумма ниже стоимости газа на её перемещение.`,
+        `На выходе: количество пылевых входов, их совокупная стоимость, даты получения и балл риска от Низкого до Критического. Рекомендуемые действия: оставить dust неизрасходованным (безопаснее всего), консолидировать через миксер или отправить на чистый адрес.`
+      ],
+    },
+  },
+
+  'exchange-fee-comparator': {
+    en: {
+      how: [
+        `The Exchange Fee Comparator calculates the real trading cost across major exchanges — Binance, Coinbase, Kraken, Bybit, OKX, and others — for any trade size and trading pair. Enter your trade amount, select the pair (e.g., BTC/USDT), and the tool shows maker fees, taker fees, withdrawal fees, and total round-trip cost for each exchange side by side.`,
+        `The true cost of a trade goes beyond the posted fee schedule. A $10,000 BTC purchase on Coinbase Pro at 0.50% costs $50, while Binance at 0.10% costs just $10 — saving $40 per trade. Over 50 trades per year, that difference compounds to $2,000. The comparator also factors in withdrawal fees, which vary from $0 (Binance for certain networks) to $25+ for BTC on some platforms.`
+      ],
+      inputs: [
+        `Trade amount accepts any dollar value. The pair selector covers major crypto-crypto and crypto-fiat pairs. VIP tier toggle lets you see fee rates at different volume levels — most exchanges offer 5-8 tiers where fees drop from 0.10% to as low as 0.02% for monthly volumes above $10M. The maker/taker switch shows whether you're placing limit or market orders.`,
+        `The output comparison table ranks exchanges by total cost (entry fee + exit fee + withdrawal fee). A separate column shows the spread cost if applicable — some exchanges quote wider spreads that act as hidden fees. For fiat on/off ramp comparisons, the tool also includes bank transfer and card payment fees where available.`
+      ],
+    },
+    es: {
+      how: [
+        `El Comparador de Comisiones de Exchange calcula el costo real de trading en exchanges principales — Binance, Coinbase, Kraken, Bybit, OKX — para cualquier tamaño de operación. Ingresa el monto, selecciona el par y la herramienta muestra comisiones maker, taker, retiro y costo total ida y vuelta lado a lado.`,
+        `El costo real va más allá del esquema publicado. Una compra de $10.000 BTC en Coinbase Pro al 0,50% cuesta $50, mientras Binance al 0,10% cuesta solo $10. En 50 operaciones anuales, la diferencia suma $2.000. El comparador incluye comisiones de retiro que varían de $0 a $25+.`
+      ],
+      inputs: [
+        `El monto acepta cualquier valor en dólares. El selector de par cubre pares principales cripto-cripto y cripto-fiat. El toggle de nivel VIP muestra tasas a diferentes volúmenes — la mayoría ofrece 5-8 niveles donde las comisiones bajan de 0,10% a 0,02% para volúmenes mensuales superiores a $10M.`,
+        `La tabla comparativa clasifica exchanges por costo total (entrada + salida + retiro). Una columna separada muestra el costo de spread si aplica. Para comparaciones de rampa fiat, incluye comisiones de transferencia bancaria y pago con tarjeta.`
+      ],
+    },
+    pt: {
+      how: [
+        `O Comparador de Taxas de Exchange calcula o custo real de negociação em exchanges principais — Binance, Coinbase, Kraken, Bybit, OKX — para qualquer tamanho de operação. Insira o valor, selecione o par e a ferramenta mostra taxas maker, taker, saque e custo total ida e volta lado a lado.`,
+        `O custo real vai além da tabela publicada. Uma compra de $10.000 BTC na Coinbase Pro a 0,50% custa $50, enquanto Binance a 0,10% custa apenas $10. Em 50 operações anuais, a diferença acumula $2.000. O comparador inclui taxas de saque que variam de $0 a $25+.`
+      ],
+      inputs: [
+        `O valor aceita qualquer montante em dólares. O seletor de par cobre pares cripto-cripto e cripto-fiat principais. O toggle de nível VIP mostra taxas em diferentes volumes — a maioria oferece 5-8 níveis com taxas de 0,10% até 0,02% para volumes mensais acima de $10M.`,
+        `A tabela comparativa classifica exchanges por custo total (entrada + saída + saque). Uma coluna separada mostra custo de spread se aplicável. Para comparações de rampa fiat, inclui taxas de transferência bancária e cartão.`
+      ],
+    },
+    tr: {
+      how: [
+        `Exchange Ücret Karşılaştırma Hesaplayıcısı, büyük borsalar — Binance, Coinbase, Kraken, Bybit, OKX — arasında herhangi bir işlem boyutu için gerçek trading maliyetini hesaplar. İşlem tutarını girin, çifti seçin; araç maker, taker, çekim ücretlerini ve toplam gidiş-dönüş maliyetini yan yana gösterir.`,
+        `Gerçek maliyet ilan edilen ücret tarifesinin ötesindedir. Coinbase Pro'da %0,50 ile $10.000 BTC alımı $50, Binance'da %0,10 ile sadece $10 tutar. Yılda 50 işlemde fark $2.000'e ulaşır. Çekim ücretleri $0'dan $25+'ya kadar değişir.`
+      ],
+      inputs: [
+        `İşlem tutarı herhangi bir dolar değerini kabul eder. Çift seçici büyük kripto-kripto ve kripto-fiat çiftlerini kapsar. VIP seviye anahtarı farklı hacimlerdeki ücret oranlarını gösterir — çoğu borsa aylık $10M üzeri hacimlerde %0,10'dan %0,02'ye düşen 5-8 seviye sunar.`,
+        `Karşılaştırma tablosu borsaları toplam maliyete göre (giriş + çıkış + çekim) sıralar. Ayrı bir sütun spread maliyetini gösterir. Fiat rampa karşılaştırmaları için banka transferi ve kart ödeme ücretlerini de içerir.`
+      ],
+    },
+    hi: {
+      how: [
+        `एक्सचेंज फीस कम्पेरेटर प्रमुख एक्सचेंजों — Binance, Coinbase, Kraken, Bybit, OKX — पर किसी भी ट्रेड साइज के लिए रियल ट्रेडिंग कॉस्ट कैलकुलेट करता है। ट्रेड अमाउंट दर्ज करें, पेयर चुनें; टूल maker, taker, विड्रॉल फीस और टोटल राउंड-ट्रिप कॉस्ट साइड बाय साइड दिखाता है।`,
+        `असली कॉस्ट पोस्टेड फीस शेड्यूल से परे है। Coinbase Pro पर 0.50% से $10,000 BTC खरीदना $50 कॉस्ट है, Binance पर 0.10% से सिर्फ $10। साल में 50 ट्रेड पर फर्क $2,000 तक पहुंचता है। विड्रॉल फीस $0 से $25+ तक वैरी करती हैं।`
+      ],
+      inputs: [
+        `ट्रेड अमाउंट कोई भी डॉलर वैल्यू स्वीकार करता है। VIP टियर टॉगल अलग-अलग वॉल्यूम लेवल पर फीस रेट दिखाता है — ज्यादातर एक्सचेंज $10M+ मंथली वॉल्यूम पर 0.10% से 0.02% तक के 5-8 टियर ऑफर करते हैं।`,
+        `कम्पैरिजन टेबल एक्सचेंजों को टोटल कॉस्ट (एंट्री + एग्जिट + विड्रॉल) से रैंक करती है। एक अलग कॉलम स्प्रेड कॉस्ट दिखाता है। फिएट रैम्प कम्पैरिजन के लिए बैंक ट्रांसफर और कार्ड फीस भी शामिल हैं।`
+      ],
+    },
+    ru: {
+      how: [
+        `Сравнитель комиссий бирж рассчитывает реальную стоимость торговли на крупных площадках — Binance, Coinbase, Kraken, Bybit, OKX — для любого объёма. Введите сумму, выберите пару — инструмент покажет комиссии мейкера, тейкера, вывода и полную стоимость туда-обратно для каждой биржи.`,
+        `Реальная стоимость выходит за рамки тарифной сетки. Покупка BTC на $10 000 на Coinbase Pro (0,50%) стоит $50, а на Binance (0,10%) — лишь $10. При 50 сделках в год разница составляет $2 000. Комиссии за вывод варьируются от $0 до $25+.`
+      ],
+      inputs: [
+        `Сумма сделки принимает любое долларовое значение. Переключатель VIP-уровня показывает ставки при разных объёмах — большинство бирж предлагают 5-8 уровней с комиссиями от 0,10% до 0,02% при месячном объёме более $10M.`,
+        `Таблица ранжирует биржи по общей стоимости (вход + выход + вывод). Отдельный столбец показывает стоимость спреда. Для сравнения фиатных рамп включены комиссии за банковские переводы и оплату картой.`
+      ],
+    },
+  },
+
+  'flash-loan-calculator': {
+    en: {
+      how: [
+        `The Flash Loan Calculator estimates the profitability of atomic flash loan arbitrage opportunities across DeFi protocols. Enter the loan amount, the price spread between two DEXes (e.g., Uniswap vs. SushiSwap), and the gas cost — the tool calculates whether the arbitrage profit exceeds the flash loan fee (typically 0.05-0.09% on Aave) plus gas costs.`,
+        `A flash loan borrows and repays within a single transaction, requiring zero collateral. For example, borrowing $100,000 USDC to exploit a 0.3% price difference on ETH between two DEXes yields $300 gross profit minus ~$9 flash loan fee minus ~$30 in gas = $261 net. The calculator helps you determine the minimum spread needed for profitability at different loan sizes.`
+      ],
+      inputs: [
+        `Loan amount sets the borrowed capital — flash loans on Aave V3 support up to the full liquidity pool size, often $100M+. The price spread percentage is the difference between buy and sell prices across the two venues. Gas cost in gwei converts to a dollar amount based on current ETH price and estimated transaction complexity (~300,000-500,000 gas units for a typical flash loan arbitrage).`,
+        `The protocol fee is preset by the lending protocol (Aave: 0.05%, dYdX: 0%). The output shows gross revenue, total costs (fee + gas), net profit, and the breakeven spread. It also calculates the maximum gas price you can pay while remaining profitable, helping you set gas limits for your MEV bot or arbitrage script.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Préstamo Flash estima la rentabilidad de oportunidades de arbitraje atómico con flash loans entre protocolos DeFi. Ingresa el monto del préstamo, el spread de precio entre dos DEXes y el costo de gas; la herramienta calcula si el beneficio supera la comisión del flash loan (0,05-0,09% en Aave) más los costos de gas.`,
+        `Un flash loan toma prestado y devuelve en una sola transacción sin colateral. Por ejemplo, pedir $100.000 USDC para explotar un 0,3% de diferencia en ETH genera $300 bruto menos ~$9 de comisión menos ~$30 de gas = $261 neto.`
+      ],
+      inputs: [
+        `El monto del préstamo determina el capital — Aave V3 soporta hasta el tamaño completo del pool. El spread es la diferencia de precio entre las dos plataformas. El costo de gas en gwei se convierte a dólares según el precio de ETH y la complejidad estimada (~300.000-500.000 unidades de gas).`,
+        `La comisión del protocolo es fija (Aave: 0,05%, dYdX: 0%). La salida muestra ingresos brutos, costos totales, beneficio neto y spread de equilibrio. También calcula el gas máximo que puedes pagar siendo rentable.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Empréstimo Flash estima a lucratividade de oportunidades de arbitragem atômica com flash loans entre protocolos DeFi. Insira o valor do empréstimo, o spread de preço entre dois DEXes e o custo de gas; a ferramenta calcula se o lucro supera a taxa do flash loan (0,05-0,09% no Aave) mais custos de gas.`,
+        `Um flash loan empresta e devolve em uma única transação sem colateral. Por exemplo, pegar $100.000 USDC para explorar 0,3% de diferença em ETH rende $300 bruto menos ~$9 de taxa menos ~$30 de gas = $261 líquido.`
+      ],
+      inputs: [
+        `O valor do empréstimo define o capital — Aave V3 suporta até o tamanho total do pool. O spread é a diferença de preço entre as duas plataformas. O custo de gas em gwei converte para dólares baseado no preço do ETH e complexidade estimada (~300.000-500.000 unidades).`,
+        `A taxa do protocolo é fixa (Aave: 0,05%, dYdX: 0%). A saída mostra receita bruta, custos totais, lucro líquido e spread de equilíbrio. Também calcula o gas máximo que você pode pagar permanecendo lucrativo.`
+      ],
+    },
+    tr: {
+      how: [
+        `Flash Kredi Hesaplayıcısı, DeFi protokolleri arasında atomik flash kredi arbitraj fırsatlarının kârlılığını tahmin eder. Kredi tutarını, iki DEX arasındaki fiyat farkını ve gas maliyetini girin; araç arbitraj kârının flash kredi ücretini (%0,05-0,09 Aave) ve gas maliyetlerini aşıp aşmadığını hesaplar.`,
+        `Flash kredi tek bir işlemde ödünç alıp geri öder, sıfır teminat gerektirir. Örneğin, ETH'de %0,3 fiyat farkı için $100.000 USDC ödünç almak $300 brüt kâr eksi ~$9 ücret eksi ~$30 gas = $261 net üretir.`
+      ],
+      inputs: [
+        `Kredi tutarı ödünç alınan sermayeyi belirler — Aave V3 havuz büyüklüğüne kadar destekler. Fiyat spread'i iki platform arasındaki farkı temsil eder. Gas maliyeti gwei cinsinden, ETH fiyatına ve tahmini karmaşıklığa (~300.000-500.000 gas birimi) göre dolara çevrilir.`,
+        `Protokol ücreti sabittir (Aave: %0,05, dYdX: %0). Çıktı brüt geliri, toplam maliyetleri, net kârı ve başa baş spread'i gösterir. Kârlı kalırken ödeyebileceğiniz maksimum gas fiyatını da hesaplar.`
+      ],
+    },
+    hi: {
+      how: [
+        `फ्लैश लोन कैलकुलेटर DeFi प्रोटोकॉल में एटॉमिक फ्लैश लोन आर्बिट्राज अवसरों की प्रॉफिटेबिलिटी एस्टिमेट करता है। लोन अमाउंट, दो DEX के बीच प्राइस स्प्रेड और गैस कॉस्ट दर्ज करें; टूल कैलकुलेट करता है कि आर्बिट्राज प्रॉफिट फ्लैश लोन फीस (Aave पर 0.05-0.09%) प्लस गैस कॉस्ट से अधिक है या नहीं।`,
+        `फ्लैश लोन एक ही ट्रांजैक्शन में उधार लेता और चुकाता है, ज़ीरो कोलैटरल चाहिए। उदाहरण: ETH पर 0.3% प्राइस डिफरेंस के लिए $100,000 USDC उधार लेने से $300 ग्रॉस माइनस ~$9 फीस माइनस ~$30 गैस = $261 नेट मिलता है।`
+      ],
+      inputs: [
+        `लोन अमाउंट उधार कैपिटल सेट करता है — Aave V3 पूल साइज तक सपोर्ट करता है। प्राइस स्प्रेड दो प्लेटफॉर्म के बीच का अंतर है। गैस कॉस्ट gwei में ETH प्राइस और अनुमानित कॉम्प्लेक्सिटी (~300,000-500,000 गैस यूनिट) पर आधारित है।`,
+        `प्रोटोकॉल फीस फिक्स्ड है (Aave: 0.05%, dYdX: 0%)। आउटपुट ग्रॉस रेवेन्यू, टोटल कॉस्ट, नेट प्रॉफिट और ब्रेकइवन स्प्रेड दिखाता है। प्रॉफिटेबल रहते हुए अधिकतम गैस प्राइस भी कैलकुलेट करता है।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор флеш-займа оценивает прибыльность атомарного арбитража через флеш-займы между DeFi-протоколами. Введите сумму займа, ценовой спред между двумя DEX и стоимость газа — инструмент рассчитает, превышает ли прибыль комиссию флеш-займа (0,05-0,09% на Aave) плюс расходы на газ.`,
+        `Флеш-займ берётся и возвращается в одной транзакции без залога. Например, заём $100 000 USDC для использования 0,3% разницы в цене ETH даёт $300 валовой прибыли минус ~$9 комиссии минус ~$30 газа = $261 чистыми.`
+      ],
+      inputs: [
+        `Сумма займа определяет капитал — Aave V3 поддерживает до полного размера пула ликвидности. Ценовой спред — разница между ценами на двух площадках. Стоимость газа в gwei пересчитывается в доллары по текущей цене ETH и расчётной сложности (~300-500 тыс. единиц газа).`,
+        `Комиссия протокола фиксирована (Aave: 0,05%, dYdX: 0%). На выходе — валовой доход, общие затраты, чистая прибыль и безубыточный спред. Также рассчитывается максимальная цена газа, при которой операция остаётся прибыльной.`
+      ],
+    },
+  },
+
+  'gas-optimization-calculator': {
+    en: {
+      how: [
+        `The Gas Optimization Calculator helps you find the cheapest time to execute Ethereum transactions by analyzing historical gas price patterns. Enter your transaction type (simple transfer, ERC-20 approval, DEX swap, NFT mint, or custom gas limit), and the tool shows the estimated cost at current gas prices versus the optimal time windows when gas is typically 30-60% cheaper.`,
+        `Weekend mornings (UTC) consistently offer the lowest gas prices because US and European trading activity drops. The calculator shows you that a Uniswap swap costing $12 at 50 gwei during peak hours would cost just $5 at 20 gwei on a Sunday morning. For batch transactions or non-urgent operations, timing your execution can save hundreds of dollars per month.`
+      ],
+      inputs: [
+        `Transaction type presets set the gas limit automatically: simple ETH transfer (21,000 gas), ERC-20 transfer (65,000), Uniswap V3 swap (150,000-300,000), NFT mint (100,000-200,000). For custom transactions, enter the gas limit manually. The current gas price is fetched live from Etherscan but can be overridden for simulation.`,
+        `The output shows: current cost in USD, average cost by hour-of-day and day-of-week (heatmap), recommended execution windows, and savings potential. The L2 comparison section shows the same transaction cost on Arbitrum, Optimism, Base, and Polygon — often 50-100x cheaper than mainnet, making L2s the obvious choice for routine operations.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Optimización de Gas ayuda a encontrar el momento más barato para ejecutar transacciones Ethereum analizando patrones históricos de precios de gas. Ingresa tu tipo de transacción y la herramienta muestra el costo estimado actual versus las ventanas óptimas cuando el gas es típicamente 30-60% más barato.`,
+        `Las mañanas de fin de semana (UTC) ofrecen los precios de gas más bajos. Un swap de Uniswap que cuesta $12 a 50 gwei en horas pico costaría solo $5 a 20 gwei un domingo por la mañana. Para transacciones por lotes, programar la ejecución puede ahorrar cientos de dólares mensuales.`
+      ],
+      inputs: [
+        `Los presets de tipo de transacción configuran el gas limit automáticamente: transferencia ETH (21.000), transferencia ERC-20 (65.000), swap Uniswap V3 (150.000-300.000), mint NFT (100.000-200.000). Para transacciones personalizadas, ingresa el gas limit manualmente.`,
+        `La salida muestra: costo actual en USD, costo promedio por hora y día (mapa de calor), ventanas recomendadas y potencial de ahorro. La sección de comparación L2 muestra el mismo costo en Arbitrum, Optimism, Base y Polygon — a menudo 50-100x más barato que mainnet.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Otimização de Gas ajuda a encontrar o momento mais barato para executar transações Ethereum analisando padrões históricos de preços de gas. Insira seu tipo de transação e a ferramenta mostra o custo estimado atual versus janelas ótimas quando o gas é tipicamente 30-60% mais barato.`,
+        `Manhãs de fim de semana (UTC) oferecem os preços de gas mais baixos. Um swap no Uniswap custando $12 a 50 gwei em horário de pico custaria apenas $5 a 20 gwei num domingo de manhã. Para transações em lote, programar a execução pode economizar centenas de dólares mensais.`
+      ],
+      inputs: [
+        `Os presets de tipo de transação configuram o gas limit automaticamente: transferência ETH (21.000), transferência ERC-20 (65.000), swap Uniswap V3 (150.000-300.000), mint NFT (100.000-200.000). Para transações personalizadas, insira o gas limit manualmente.`,
+        `A saída mostra: custo atual em USD, custo médio por hora e dia (mapa de calor), janelas recomendadas e potencial de economia. A seção de comparação L2 mostra o mesmo custo em Arbitrum, Optimism, Base e Polygon — frequentemente 50-100x mais barato que mainnet.`
+      ],
+    },
+    tr: {
+      how: [
+        `Gas Optimizasyon Hesaplayıcısı, tarihsel gas fiyat kalıplarını analiz ederek Ethereum işlemlerini en ucuz zamanda yürütmenize yardımcı olur. İşlem tipinizi girin; araç mevcut gas fiyatlarındaki tahmini maliyeti ile gas'ın tipik olarak %30-60 daha ucuz olduğu optimal zaman pencerelerini gösterir.`,
+        `Hafta sonu sabahları (UTC) sürekli olarak en düşük gas fiyatlarını sunar. Yoğun saatlerde 50 gwei'de $12 olan bir Uniswap swap'ı Pazar sabahı 20 gwei'de sadece $5 tutar. Toplu işlemler için zamanlamayı optimize etmek ayda yüzlerce dolar tasarruf sağlayabilir.`
+      ],
+      inputs: [
+        `İşlem tipi ön ayarları gas limitini otomatik belirler: basit ETH transferi (21.000), ERC-20 transferi (65.000), Uniswap V3 swap (150.000-300.000), NFT mint (100.000-200.000). Özel işlemler için gas limitini manuel girin.`,
+        `Çıktı: güncel USD maliyeti, saat ve güne göre ortalama maliyet (ısı haritası), önerilen pencereler ve tasarruf potansiyeli. L2 karşılaştırma bölümü aynı işlem maliyetini Arbitrum, Optimism, Base ve Polygon'da gösterir — genellikle mainnet'ten 50-100x daha ucuz.`
+      ],
+    },
+    hi: {
+      how: [
+        `गैस ऑप्टिमाइज़ेशन कैलकुलेटर हिस्टोरिकल गैस प्राइस पैटर्न एनालाइज करके Ethereum ट्रांजैक्शन एक्सीक्यूट करने का सबसे सस्ता समय खोजने में मदद करता है। ट्रांजैक्शन टाइप दर्ज करें; टूल करंट गैस प्राइस पर एस्टिमेटेड कॉस्ट बनाम ऑप्टिमल टाइम विंडो दिखाता है जब गैस 30-60% सस्ता होता है।`,
+        `वीकेंड मॉर्निंग (UTC) लगातार सबसे कम गैस प्राइस ऑफर करती हैं। पीक आवर्स में 50 gwei पर $12 कॉस्ट वाला Uniswap स्वैप रविवार सुबह 20 gwei पर सिर्फ $5 होगा। बैच ट्रांजैक्शन के लिए टाइमिंग ऑप्टिमाइज़ करने से महीने में सैकड़ों डॉलर बच सकते हैं।`
+      ],
+      inputs: [
+        `ट्रांजैक्शन टाइप प्रीसेट गैस लिमिट ऑटोमैटिक सेट करते हैं: सिंपल ETH ट्रांसफर (21,000), ERC-20 (65,000), Uniswap V3 स्वैप (150,000-300,000), NFT मिंट (100,000-200,000)। कस्टम ट्रांजैक्शन के लिए गैस लिमिट मैन्युअली दर्ज करें।`,
+        `आउटपुट दिखाता है: करंट USD कॉस्ट, आवर और डे-ऑफ-वीक के अनुसार एवरेज कॉस्ट (हीटमैप), रेकमेंडेड विंडो और सेविंग्स पोटेंशियल। L2 कम्पैरिजन Arbitrum, Optimism, Base और Polygon पर सेम कॉस्ट दिखाता है — अक्सर मेननेट से 50-100x सस्ता।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор оптимизации газа помогает найти самое дешёвое время для транзакций в Ethereum, анализируя исторические паттерны цен на газ. Введите тип транзакции — инструмент покажет текущую стоимость и оптимальные временные окна, когда газ обычно на 30-60% дешевле.`,
+        `Утро выходных (UTC) стабильно предлагает самые низкие цены на газ. Свап на Uniswap стоимостью $12 при 50 gwei в пиковое время обойдётся в $5 при 20 gwei в воскресенье утром. Для пакетных операций оптимизация по времени экономит сотни долларов в месяц.`
+      ],
+      inputs: [
+        `Предустановки типа транзакции задают лимит газа автоматически: простой перевод ETH (21 000), ERC-20 (65 000), свап Uniswap V3 (150-300 тыс.), минт NFT (100-200 тыс.). Для нестандартных транзакций лимит вводится вручную.`,
+        `На выходе: текущая стоимость в USD, средняя стоимость по часам и дням (тепловая карта), рекомендуемые окна и потенциал экономии. Раздел сравнения L2 показывает ту же стоимость на Arbitrum, Optimism, Base и Polygon — часто в 50-100 раз дешевле мейннета.`
+      ],
+    },
+  },
+
+  'governance-voting-calculator': {
+    en: {
+      how: [
+        `The Governance Voting Calculator estimates the voting power and potential influence of your token holdings in DAO governance proposals. Enter the governance token (e.g., UNI, AAVE, COMP, MKR, ARB), your token balance, and the tool shows your percentage of total supply, voting weight relative to the quorum threshold, and historical participation rates for that protocol.`,
+        `Understanding your governance power helps decide whether to participate directly or delegate. If you hold 1,000 UNI tokens out of a 1 billion total supply, your voting power is 0.0001% — meaningful in tight votes but unlikely to sway outcomes alone. The calculator shows how many tokens are needed to reach the proposal threshold (e.g., 2.5M UNI to create a new proposal on Uniswap) and the typical quorum (40M UNI for Uniswap votes).`
+      ],
+      inputs: [
+        `The token selector covers major governance tokens across DeFi, L2s, and DAOs. Token balance is the number of tokens you hold (or plan to acquire). The tool fetches current total supply, circulating supply, and delegation data automatically. Some protocols (Compound, Aave) require explicit delegation before tokens count toward voting — the calculator flags whether self-delegation is needed.`,
+        `The output displays: your voting power percentage, the quorum threshold and your share of it, average voter turnout for recent proposals, and the top delegate addresses for comparison. For protocols with delegated voting (Optimism, Arbitrum), it also shows how delegation could amplify your influence by combining with aligned voters.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Votación de Gobernanza estima el poder de voto e influencia potencial de tus tokens en propuestas de gobernanza DAO. Ingresa el token (UNI, AAVE, COMP, MKR, ARB), tu balance y la herramienta muestra tu porcentaje del suministro total, peso relativo al quórum y tasas de participación históricas.`,
+        `Si tienes 1.000 UNI de 1.000 millones totales, tu poder de voto es 0,0001%. La calculadora muestra cuántos tokens se necesitan para alcanzar el umbral de propuesta (2,5M UNI en Uniswap) y el quórum típico (40M UNI).`
+      ],
+      inputs: [
+        `El selector cubre tokens de gobernanza principales de DeFi, L2s y DAOs. El balance es la cantidad de tokens que posees. La herramienta obtiene automáticamente el suministro total y datos de delegación. Algunos protocolos requieren delegación explícita antes de que los tokens cuenten — la calculadora señala si es necesaria auto-delegación.`,
+        `La salida muestra: porcentaje de poder de voto, umbral de quórum, participación promedio de votantes recientes y los principales delegados. Para protocolos con voto delegado (Optimism, Arbitrum), también muestra cómo la delegación puede amplificar tu influencia.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Votação de Governança estima o poder de voto e influência potencial dos seus tokens em propostas de governança DAO. Insira o token (UNI, AAVE, COMP, MKR, ARB), seu saldo e a ferramenta mostra sua porcentagem do supply total, peso relativo ao quórum e taxas de participação históricas.`,
+        `Se você possui 1.000 UNI de 1 bilhão total, seu poder de voto é 0,0001%. A calculadora mostra quantos tokens são necessários para atingir o limiar de proposta (2,5M UNI no Uniswap) e o quórum típico (40M UNI).`
+      ],
+      inputs: [
+        `O seletor cobre tokens de governança principais de DeFi, L2s e DAOs. O saldo é a quantidade de tokens que você possui. A ferramenta busca automaticamente supply total e dados de delegação. Alguns protocolos exigem delegação explícita — a calculadora sinaliza se auto-delegação é necessária.`,
+        `A saída mostra: porcentagem do poder de voto, limiar de quórum, participação média recente e principais delegados. Para protocolos com voto delegado (Optimism, Arbitrum), também mostra como a delegação pode amplificar sua influência.`
+      ],
+    },
+    tr: {
+      how: [
+        `Yönetişim Oylama Hesaplayıcısı, DAO yönetişim tekliflerinde token varlıklarınızın oy gücünü ve potansiyel etkisini tahmin eder. Yönetişim tokenını (UNI, AAVE, COMP, MKR, ARB) ve bakiyenizi girin; araç toplam arz yüzdenizi, yeter sayıya göre ağırlığınızı ve tarihsel katılım oranlarını gösterir.`,
+        `1 milyar toplam arzdan 1.000 UNI tutuyorsanız oy gücünüz %0,0001'dir. Hesaplayıcı teklif eşiğine (Uniswap'ta 2,5M UNI) ve tipik yeter sayıya (40M UNI) ulaşmak için kaç token gerektiğini gösterir.`
+      ],
+      inputs: [
+        `Token seçici DeFi, L2 ve DAO'lardan büyük yönetişim tokenlarını kapsar. Token bakiyesi sahip olduğunuz miktardır. Araç toplam arzı ve delegasyon verilerini otomatik alır. Bazı protokoller oy sayımı için açık delegasyon gerektirir — hesaplayıcı öz-delegasyon gerekip gerekmediğini belirtir.`,
+        `Çıktı: oy gücü yüzdesi, yeter sayı eşiği, son tekliflerde ortalama seçmen katılımı ve karşılaştırma için en büyük delege adresleri. Delegasyonlu oylama olan protokollerde (Optimism, Arbitrum) delegasyonun etkinizi nasıl artırabileceğini de gösterir.`
+      ],
+    },
+    hi: {
+      how: [
+        `गवर्नेंस वोटिंग कैलकुलेटर DAO गवर्नेंस प्रपोज़ल में आपकी टोकन होल्डिंग्स की वोटिंग पावर और संभावित प्रभाव का अनुमान लगाता है। गवर्नेंस टोकन (UNI, AAVE, COMP, MKR, ARB) और बैलेंस दर्ज करें; टूल टोटल सप्लाई का परसेंटेज, कोरम थ्रेशोल्ड के सापेक्ष वेट और हिस्टोरिकल पार्टिसिपेशन रेट दिखाता है।`,
+        `1 बिलियन में से 1,000 UNI होने पर वोटिंग पावर 0.0001% है। कैलकुलेटर दिखाता है कि प्रपोज़ल थ्रेशोल्ड (Uniswap पर 2.5M UNI) और टिपिकल कोरम (40M UNI) तक पहुंचने के लिए कितने टोकन चाहिए।`
+      ],
+      inputs: [
+        `टोकन सेलेक्टर DeFi, L2 और DAO के प्रमुख गवर्नेंस टोकन कवर करता है। टोकन बैलेंस आपके पास मौजूद टोकन की संख्या है। कुछ प्रोटोकॉल को वोटिंग से पहले एक्सप्लिसिट डेलिगेशन की जरूरत होती है — कैलकुलेटर फ्लैग करता है कि सेल्फ-डेलिगेशन जरूरी है या नहीं।`,
+        `आउटपुट दिखाता है: वोटिंग पावर परसेंटेज, कोरम थ्रेशोल्ड, हालिया प्रपोज़ल में एवरेज वोटर टर्नआउट और टॉप डेलिगेट्स। डेलिगेटेड वोटिंग प्रोटोकॉल (Optimism, Arbitrum) में डेलिगेशन से प्रभाव कैसे बढ़ सकता है यह भी दिखाता है।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор голосования в DAO оценивает силу голоса и потенциальное влияние ваших токенов в предложениях по управлению. Введите токен (UNI, AAVE, COMP, MKR, ARB) и баланс — инструмент покажет долю от общего предложения, вес относительно кворума и исторический уровень участия.`,
+        `При 1 000 UNI из 1 млрд общего предложения ваша сила голоса — 0,0001%. Калькулятор показывает, сколько токенов нужно для порога создания предложения (2,5M UNI в Uniswap) и типичного кворума (40M UNI).`
+      ],
+      inputs: [
+        `Селектор охватывает основные токены управления из DeFi, L2 и DAO. Баланс — количество токенов. Инструмент автоматически получает общее предложение и данные делегирования. Некоторые протоколы требуют явного делегирования — калькулятор предупреждает, если нужно само-делегирование.`,
+        `На выходе: процент силы голоса, порог кворума, средняя явка на недавних голосованиях и крупнейшие делегаты. Для протоколов с делегированным голосованием (Optimism, Arbitrum) показывает, как делегирование может усилить ваше влияние.`
+      ],
+    },
+  },
+
+  'nft-rarity-calculator': {
+    en: {
+      how: [
+        `The NFT Rarity Calculator scores individual NFTs based on the statistical rarity of their combined traits within a collection. Enter the collection name or contract address, then select a specific token ID — the tool computes a rarity score by analyzing how uncommon each trait is relative to the total supply. A CryptoPunk with the "Alien" skin type (9 out of 10,000) scores far higher than one with "Male" skin (6,039 out of 10,000).`,
+        `Rarity scoring uses the Information Content method: each trait's rarity contribution = -log2(trait frequency). The total rarity score is the sum across all trait categories. This penalizes common traits more heavily than simple percentage ranking. Use it before bidding on NFTs to verify that the listed "rare" traits genuinely make the item uncommon within its collection.`
+      ],
+      inputs: [
+        `The collection field accepts collection names (e.g., "Bored Ape Yacht Club") or Ethereum contract addresses. Token ID is the specific NFT number within the collection. The tool fetches trait metadata from on-chain data and marketplace APIs. For collections with unrevealed metadata, rarity scoring is not available until reveal.`,
+        `The output shows: total rarity score, rarity rank within the collection (e.g., #142 of 10,000), individual trait scores with frequency percentages, and the rarest trait highlighted. A comparison with the collection floor price and recent sales of similarly-ranked items helps assess whether the rarity premium is priced in or represents an opportunity.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Rareza NFT puntúa NFTs individuales basándose en la rareza estadística de sus traits combinados dentro de una colección. Ingresa el nombre de la colección o dirección del contrato, selecciona un token ID y la herramienta computa una puntuación analizando cuán infrecuente es cada trait respecto al suministro total.`,
+        `La puntuación usa el método de Contenido de Información: contribución = -log2(frecuencia del trait). La puntuación total es la suma de todas las categorías. Esto penaliza traits comunes más fuertemente que el ranking por porcentaje simple. Úsala antes de pujar para verificar que los traits "raros" son genuinamente infrecuentes.`
+      ],
+      inputs: [
+        `El campo de colección acepta nombres o direcciones de contrato Ethereum. Token ID es el número específico del NFT. La herramienta obtiene metadatos de traits desde datos on-chain y APIs de marketplace. Para colecciones sin revelar, la puntuación no está disponible.`,
+        `La salida muestra: puntuación total, ranking dentro de la colección, puntuaciones individuales por trait con porcentajes de frecuencia y el trait más raro resaltado. Una comparación con el precio floor y ventas recientes de items similarmente clasificados ayuda a evaluar si la prima de rareza está reflejada en el precio.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Raridade NFT pontua NFTs individuais com base na raridade estatística dos seus traits combinados dentro de uma coleção. Insira o nome da coleção ou endereço do contrato, selecione um token ID e a ferramenta computa uma pontuação analisando quão incomum é cada trait em relação ao supply total.`,
+        `A pontuação usa o método de Conteúdo de Informação: contribuição = -log2(frequência do trait). A pontuação total é a soma de todas as categorias. Isso penaliza traits comuns mais fortemente. Use antes de dar lances para verificar que traits "raros" são genuinamente incomuns na coleção.`
+      ],
+      inputs: [
+        `O campo de coleção aceita nomes ou endereços de contrato Ethereum. Token ID é o número específico do NFT. A ferramenta busca metadados on-chain e APIs de marketplace. Para coleções não reveladas, a pontuação não está disponível.`,
+        `A saída mostra: pontuação total, ranking na coleção, pontuações individuais por trait com porcentagens e o trait mais raro destacado. Comparação com preço floor e vendas recentes de itens similarmente classificados ajuda a avaliar se o prêmio de raridade está precificado.`
+      ],
+    },
+    tr: {
+      how: [
+        `NFT Nadirlik Hesaplayıcısı, bir koleksiyondaki birleşik özelliklerinin istatistiksel nadirliğine göre bireysel NFT'leri puanlar. Koleksiyon adı veya kontrat adresini girin, token ID seçin; araç her özelliğin toplam arza göre ne kadar nadir olduğunu analiz ederek bir nadirlik puanı hesaplar.`,
+        `Puanlama Bilgi İçeriği yöntemini kullanır: her özelliğin katkısı = -log2(özellik frekansı). Toplam puan tüm kategorilerin toplamıdır. Teklif vermeden önce listelenen "nadir" özelliklerin gerçekten nadir olduğunu doğrulamak için kullanın.`
+      ],
+      inputs: [
+        `Koleksiyon alanı isim veya Ethereum kontrat adresi kabul eder. Token ID koleksiyondaki belirli NFT numarasıdır. Araç on-chain verilerden ve marketplace API'lerinden özellik meta verilerini alır. Ortaya çıkarılmamış koleksiyonlar için puanlama mevcut değildir.`,
+        `Çıktı: toplam nadirlik puanı, koleksiyon içi sıralama, bireysel özellik puanları ve en nadir özellik vurgulanmış. Taban fiyatı ve benzer sıralamadaki öğelerin son satışlarıyla karşılaştırma nadirlik priminin fiyatlanıp fiyatlanmadığını değerlendirmeye yardımcı olur.`
+      ],
+    },
+    hi: {
+      how: [
+        `NFT रेरिटी कैलकुलेटर किसी कलेक्शन में कंबाइंड ट्रेट्स की स्टैटिस्टिकल रेरिटी के आधार पर इंडिविजुअल NFT को स्कोर करता है। कलेक्शन नाम या कॉन्ट्रैक्ट एड्रेस दर्ज करें, टोकन ID चुनें; टूल हर ट्रेट की अनकॉमनेस एनालाइज करके रेरिटी स्कोर कंप्यूट करता है।`,
+        `स्कोरिंग इंफॉर्मेशन कंटेंट मेथड का उपयोग करती है: हर ट्रेट का कंट्रीब्यूशन = -log2(ट्रेट फ्रीक्वेंसी)। बिड लगाने से पहले वेरिफाई करने के लिए इस्तेमाल करें कि लिस्टेड "रेयर" ट्रेट्स वास्तव में अनकॉमन हैं।`
+      ],
+      inputs: [
+        `कलेक्शन फील्ड नाम या Ethereum कॉन्ट्रैक्ट एड्रेस स्वीकार करता है। टोकन ID कलेक्शन में स्पेसिफिक NFT नंबर है। टूल ऑन-चेन डेटा और मार्केटप्लेस API से ट्रेट मेटाडेटा फेच करता है। अनरिवील्ड कलेक्शन के लिए स्कोरिंग उपलब्ध नहीं है।`,
+        `आउटपुट दिखाता है: टोटल रेरिटी स्कोर, कलेक्शन में रैंक, इंडिविजुअल ट्रेट स्कोर और सबसे रेयर ट्रेट हाइलाइटेड। फ्लोर प्राइस और समान रैंक वाले आइटम की हालिया सेल्स से कम्पैरिजन रेरिटी प्रीमियम का आकलन करने में मदद करता है।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор редкости NFT оценивает отдельные токены по статистической редкости их комбинированных свойств внутри коллекции. Введите название коллекции или адрес контракта, выберите Token ID — инструмент рассчитает балл, анализируя частоту каждого свойства относительно общего выпуска.`,
+        `Используется метод информационного содержания: вклад каждого свойства = -log2(частота). Итоговый балл — сумма по всем категориям. Используйте перед ставкой, чтобы убедиться, что указанные «редкие» свойства действительно необычны в коллекции.`
+      ],
+      inputs: [
+        `Поле коллекции принимает название или адрес контракта Ethereum. Token ID — конкретный номер NFT. Инструмент получает метаданные свойств из ончейн-данных и API маркетплейсов. Для нераскрытых коллекций расчёт недоступен.`,
+        `На выходе: общий балл редкости, ранг внутри коллекции, индивидуальные баллы свойств с процентами частоты и самое редкое свойство. Сравнение с ценой пола и недавними продажами аналогичных по рангу предметов помогает оценить, заложена ли премия за редкость в цену.`
+      ],
+    },
+  },
+
+  'token-unlock-calculator': {
+    en: {
+      how: [
+        `The Token Unlock Calculator projects the circulating supply impact and potential price pressure from upcoming token vesting events. Enter the token name, and the tool displays the full unlock schedule — showing how many tokens unlock on each date, what percentage of total supply they represent, and who receives them (team, investors, ecosystem fund, community rewards).`,
+        `Large unlocks create selling pressure because early investors and team members often liquidate portions of their vested tokens. A 10% supply unlock (e.g., 100M tokens from a 1B supply) with $50M in daily trading volume could take 5-10 trading days to absorb, historically causing 10-25% price declines around cliff unlock dates. The calculator helps you avoid buying before major unlocks or identify post-unlock entry opportunities.`
+      ],
+      inputs: [
+        `The token selector covers 200+ tokens with known vesting schedules tracked via on-chain data and project documentation. The date range filter lets you focus on upcoming unlocks (next 30/90/365 days) or view the complete multi-year schedule. The unlock type filter separates cliff unlocks (large one-time events) from linear vesting (continuous daily/monthly releases).`,
+        `The output timeline shows: unlock date, token amount, USD value at current price, percentage of circulating supply, and recipient category. The supply inflation chart visualizes how circulating supply increases over time. A price impact estimate uses historical data from similar unlock events to project potential selling pressure relative to the token's average daily trading volume.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Desbloqueo de Tokens proyecta el impacto en el suministro circulante y la presión de venta potencial de próximos eventos de vesting. Ingresa el nombre del token y la herramienta muestra el calendario completo de desbloqueo — cuántos tokens se liberan en cada fecha, qué porcentaje representan y quién los recibe (equipo, inversores, fondo del ecosistema).`,
+        `Los grandes desbloqueos crean presión vendedora. Un desbloqueo del 10% del suministro con $50M en volumen diario podría tomar 5-10 días para absorberse, causando históricamente caídas del 10-25%. La calculadora ayuda a evitar comprar antes de grandes desbloqueos o identificar oportunidades post-desbloqueo.`
+      ],
+      inputs: [
+        `El selector cubre 200+ tokens con calendarios de vesting conocidos. El filtro de fecha permite enfocarse en próximos desbloqueos (30/90/365 días) o ver el calendario completo. El filtro de tipo separa desbloqueos cliff (eventos únicos grandes) de vesting lineal (liberaciones continuas).`,
+        `La línea temporal muestra: fecha, cantidad de tokens, valor USD, porcentaje del suministro circulante y categoría del receptor. El gráfico de inflación visualiza cómo aumenta el suministro. Una estimación de impacto en precio usa datos históricos de eventos similares.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Desbloqueio de Tokens projeta o impacto no supply circulante e a pressão de venda potencial de próximos eventos de vesting. Insira o nome do token e a ferramenta exibe o cronograma completo — quantos tokens desbloqueiam em cada data, que porcentagem representam e quem os recebe (equipe, investidores, fundo do ecossistema).`,
+        `Grandes desbloqueios criam pressão vendedora. Um desbloqueio de 10% do supply com $50M em volume diário pode levar 5-10 dias para ser absorvido, causando historicamente quedas de 10-25%. A calculadora ajuda a evitar compras antes de grandes desbloqueios ou identificar oportunidades pós-desbloqueio.`
+      ],
+      inputs: [
+        `O seletor cobre 200+ tokens com cronogramas de vesting conhecidos. O filtro de data permite focar em próximos desbloqueios (30/90/365 dias) ou ver o cronograma completo. O filtro de tipo separa desbloqueios cliff de vesting linear.`,
+        `A timeline mostra: data, quantidade de tokens, valor USD, porcentagem do supply circulante e categoria do receptor. O gráfico de inflação do supply visualiza o aumento ao longo do tempo. A estimativa de impacto no preço usa dados históricos de eventos similares.`
+      ],
+    },
+    tr: {
+      how: [
+        `Token Kilit Açma Hesaplayıcısı, yaklaşan token vesting olaylarından kaynaklanan dolaşımdaki arz etkisini ve potansiyel fiyat baskısını tahmin eder. Token adını girin; araç tam kilit açma takvimini gösterir — her tarihte kaç token açılacak, toplam arzın yüzde kaçını temsil ettiklerini ve kimlerin alacağını (ekip, yatırımcılar, ekosistem fonu).`,
+        `Büyük kilit açmalar satış baskısı yaratır. $50M günlük işlem hacminde %10 arz açılması 5-10 gün sürebilir ve tarihsel olarak %10-25 düşüşlere neden olur. Hesaplayıcı büyük açılmalardan önce alım yapmaktan kaçınmanıza veya sonrasında giriş fırsatları belirlemenize yardımcı olur.`
+      ],
+      inputs: [
+        `Token seçici bilinen vesting takvimleri olan 200+ token'ı kapsar. Tarih filtresi yaklaşan açılmalara (30/90/365 gün) veya tam takvime odaklanmanızı sağlar. Tip filtresi cliff açılmalarını (büyük tek seferlik) doğrusal vesting'den (sürekli serbest bırakma) ayırır.`,
+        `Çıktı zaman çizelgesi: tarih, token miktarı, USD değeri, dolaşımdaki arz yüzdesi ve alıcı kategorisi. Arz enflasyon grafiği dolaşımdaki arzın zaman içinde nasıl arttığını görselleştirir. Fiyat etkisi tahmini benzer olaylardan tarihsel verileri kullanır.`
+      ],
+    },
+    hi: {
+      how: [
+        `टोकन अनलॉक कैलकुलेटर आगामी टोकन वेस्टिंग इवेंट्स से सर्कुलेटिंग सप्लाई इम्पैक्ट और पोटेंशियल प्राइस प्रेशर प्रोजेक्ट करता है। टोकन नाम दर्ज करें; टूल पूरा अनलॉक शेड्यूल दिखाता है — हर डेट पर कितने टोकन अनलॉक होंगे, टोटल सप्लाई का कितना परसेंट हैं और कौन प्राप्त करेगा (टीम, इन्वेस्टर्स, इकोसिस्टम फंड)।`,
+        `बड़े अनलॉक सेलिंग प्रेशर बनाते हैं। $50M डेली वॉल्यूम में 10% सप्लाई अनलॉक को एब्जॉर्ब होने में 5-10 दिन लग सकते हैं, ऐतिहासिक रूप से 10-25% प्राइस डिक्लाइन का कारण बनता है।`
+      ],
+      inputs: [
+        `टोकन सेलेक्टर 200+ टोकन कवर करता है जिनकी वेस्टिंग शेड्यूल ज्ञात है। डेट फिल्टर आगामी अनलॉक (30/90/365 दिन) या पूरे शेड्यूल पर फोकस करने देता है। टाइप फिल्टर क्लिफ अनलॉक (बड़े वन-टाइम) को लीनियर वेस्टिंग (कंटीन्यूअस रिलीज) से अलग करता है।`,
+        `टाइमलाइन दिखाती है: अनलॉक डेट, टोकन अमाउंट, USD वैल्यू, सर्कुलेटिंग सप्लाई का परसेंटेज और रिसीपिएंट कैटेगरी। सप्लाई इन्फ्लेशन चार्ट समय के साथ सप्लाई कैसे बढ़ती है विज़ुअलाइज़ करता है। प्राइस इम्पैक्ट एस्टिमेट समान इवेंट्स के हिस्टोरिकल डेटा का उपयोग करता है।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор разблокировки токенов прогнозирует влияние на оборотное предложение и потенциальное давление на цену от предстоящих событий вестинга. Введите название токена — инструмент покажет полный график: сколько токенов разблокируется в каждую дату, какой процент от общего предложения они составляют и кто их получает (команда, инвесторы, фонд экосистемы).`,
+        `Крупные разблокировки создают давление продаж. Разблокировка 10% предложения при дневном объёме $50M может потребовать 5-10 дней на поглощение, исторически вызывая снижение на 10-25%. Калькулятор помогает избежать покупки перед крупными разблокировками или найти точки входа после них.`
+      ],
+      inputs: [
+        `Селектор охватывает 200+ токенов с известными графиками вестинга. Фильтр даты позволяет сфокусироваться на ближайших разблокировках (30/90/365 дней) или просмотреть полный график. Фильтр типа разделяет клифф-разблокировки (крупные разовые) и линейный вестинг (непрерывное высвобождение).`,
+        `Таймлайн показывает: дату, количество токенов, стоимость в USD, процент от оборотного предложения и категорию получателя. График инфляции предложения визуализирует рост оборота во времени. Оценка влияния на цену использует исторические данные аналогичных событий.`
+      ],
+    },
+  },
+
+  'whale-alert-calculator': {
+    en: {
+      how: [
+        `The Whale Alert Calculator analyzes large cryptocurrency transactions to estimate their potential market impact. Enter a transaction amount (e.g., 5,000 BTC moved to Binance), and the tool calculates what percentage of the 24-hour trading volume it represents, the estimated price slippage if sold as a market order, and the likely time to fully liquidate the position without moving the market more than 2%.`,
+        `Whale movements to exchanges often precede selling — historically, BTC deposits to exchange hot wallets exceeding 1,000 BTC have been followed by 3-8% price drops within 48 hours about 60% of the time. The calculator helps you contextualize whale alerts by comparing the transaction size against current market depth and order book liquidity, turning raw numbers into actionable risk assessments.`
+      ],
+      inputs: [
+        `The amount field accepts either token quantity (e.g., 5,000 BTC) or dollar value (e.g., $350M). The token selector covers all major cryptocurrencies. The destination type (exchange deposit, exchange withdrawal, wallet-to-wallet, or cold storage) affects the analysis — exchange deposits are bearish signals while withdrawals to cold storage are bullish (reducing sell-side supply).`,
+        `The output shows: transaction value in USD, percentage of 24h volume, estimated market impact (slippage) for immediate liquidation, recommended TWAP (time-weighted average price) execution time to minimize impact, and a historical context showing how many transactions of similar size have occurred in the past 30 days. The alert severity rating (Low/Medium/High/Critical) provides a quick risk assessment.`
+      ],
+    },
+    es: {
+      how: [
+        `La Calculadora de Alerta de Ballenas analiza grandes transacciones cripto para estimar su potencial impacto de mercado. Ingresa un monto (ej. 5.000 BTC movidos a Binance) y la herramienta calcula qué porcentaje del volumen de 24h representa, el deslizamiento estimado si se vende como orden de mercado y el tiempo probable para liquidar sin mover el mercado más del 2%.`,
+        `Los movimientos de ballenas a exchanges preceden ventas — depósitos superiores a 1.000 BTC han sido seguidos por caídas del 3-8% en 48 horas ~60% de las veces. La calculadora contextualiza alertas comparando el tamaño de la transacción contra la profundidad del mercado y liquidez del libro de órdenes.`
+      ],
+      inputs: [
+        `El campo acepta cantidad de tokens o valor en dólares. El tipo de destino (depósito a exchange, retiro, wallet-a-wallet, almacenamiento frío) afecta el análisis — depósitos son señal bajista, retiros a cold storage son alcistas.`,
+        `La salida muestra: valor en USD, porcentaje del volumen 24h, impacto estimado, tiempo TWAP recomendado y contexto histórico de transacciones similares en los últimos 30 días. La calificación de severidad (Bajo/Medio/Alto/Crítico) proporciona evaluación rápida de riesgo.`
+      ],
+    },
+    pt: {
+      how: [
+        `A Calculadora de Alerta de Baleias analisa grandes transações cripto para estimar seu impacto potencial no mercado. Insira um valor (ex. 5.000 BTC movidos para Binance) e a ferramenta calcula que porcentagem do volume de 24h representa, o slippage estimado e o tempo provável para liquidar sem mover o mercado mais de 2%.`,
+        `Movimentos de baleias para exchanges frequentemente precedem vendas — depósitos superiores a 1.000 BTC foram seguidos por quedas de 3-8% em 48 horas ~60% das vezes. A calculadora contextualiza alertas comparando o tamanho contra a profundidade do mercado e liquidez do livro de ordens.`
+      ],
+      inputs: [
+        `O campo aceita quantidade de tokens ou valor em dólares. O tipo de destino (depósito em exchange, saque, wallet-para-wallet, cold storage) afeta a análise — depósitos são sinais baixistas, saques para cold storage são altistas.`,
+        `A saída mostra: valor em USD, porcentagem do volume 24h, impacto estimado, tempo TWAP recomendado e contexto histórico de transações similares nos últimos 30 dias. A classificação de severidade (Baixo/Médio/Alto/Crítico) fornece avaliação rápida de risco.`
+      ],
+    },
+    tr: {
+      how: [
+        `Balina Uyarı Hesaplayıcısı, büyük kripto işlemlerini analiz ederek potansiyel piyasa etkisini tahmin eder. Bir işlem tutarı girin (ör. Binance'a taşınan 5.000 BTC); araç 24 saatlik işlem hacminin yüzde kaçını temsil ettiğini, piyasa emri olarak satılırsa tahmini kayma miktarını ve piyasayı %2'den fazla hareket ettirmeden tasfiye süresini hesaplar.`,
+        `Exchange'lere balina hareketleri genellikle satıştan önce gelir — 1.000 BTC'yi aşan exchange yatırımları zamanın ~%60'ında 48 saat içinde %3-8 düşüşle takip edilmiştir. Hesaplayıcı, işlem büyüklüğünü piyasa derinliğiyle karşılaştırarak ham sayıları eyleme dönüştürülebilir risk değerlendirmelerine çevirir.`
+      ],
+      inputs: [
+        `Miktar alanı token miktarı veya dolar değeri kabul eder. Hedef türü (exchange yatırımı, çekim, cüzdandan cüzdana, soğuk depolama) analizi etkiler — exchange yatırımları düşüş sinyali, soğuk depolama çekimleri yükseliş sinyalidir.`,
+        `Çıktı: USD değeri, 24s hacim yüzdesi, tahmini etki, önerilen TWAP süresi ve son 30 günde benzer boyuttaki işlemlerin tarihsel bağlamı. Uyarı ciddiyet derecesi (Düşük/Orta/Yüksek/Kritik) hızlı risk değerlendirmesi sağlar.`
+      ],
+    },
+    hi: {
+      how: [
+        `व्हेल अलर्ट कैलकुलेटर बड़े क्रिप्टो ट्रांजैक्शन एनालाइज करके उनके पोटेंशियल मार्केट इम्पैक्ट का अनुमान लगाता है। ट्रांजैक्शन अमाउंट दर्ज करें (जैसे Binance में मूव किए गए 5,000 BTC); टूल 24 घंटे के वॉल्यूम का कितना परसेंट है, मार्केट ऑर्डर में एस्टिमेटेड स्लिपेज और मार्केट को 2% से ज्यादा मूव किए बिना लिक्विडेट करने का समय कैलकुलेट करता है।`,
+        `एक्सचेंज में व्हेल मूवमेंट अक्सर सेलिंग से पहले होता है — 1,000 BTC से अधिक एक्सचेंज डिपॉजिट ~60% बार 48 घंटों में 3-8% प्राइस ड्रॉप के बाद आते हैं। कैलकुलेटर मार्केट डेप्थ से तुलना करके रॉ नंबर को एक्शनेबल रिस्क असेसमेंट में बदलता है।`
+      ],
+      inputs: [
+        `अमाउंट फील्ड टोकन क्वांटिटी या डॉलर वैल्यू स्वीकार करता है। डेस्टिनेशन टाइप (एक्सचेंज डिपॉजिट, विड्रॉल, वॉलेट-टू-वॉलेट, कोल्ड स्टोरेज) एनालिसिस को प्रभावित करता है — एक्सचेंज डिपॉजिट बेयरिश सिग्नल हैं, कोल्ड स्टोरेज विड्रॉल बुलिश हैं।`,
+        `आउटपुट दिखाता है: USD वैल्यू, 24h वॉल्यूम का परसेंटेज, एस्टिमेटेड इम्पैक्ट, रेकमेंडेड TWAP टाइम और पिछले 30 दिनों में समान साइज के ट्रांजैक्शन का हिस्टोरिकल कॉन्टेक्स्ट। अलर्ट सेवेरिटी रेटिंग (Low/Medium/High/Critical) क्विक रिस्क असेसमेंट प्रदान करती है।`
+      ],
+    },
+    ru: {
+      how: [
+        `Калькулятор китовых операций анализирует крупные криптотранзакции для оценки их потенциального влияния на рынок. Введите сумму (например, 5 000 BTC переведённых на Binance) — инструмент рассчитает, какой процент от 24-часового объёма торгов это составляет, ожидаемое проскальзывание при рыночном ордере и время полной ликвидации без движения рынка более чем на 2%.`,
+        `Переводы китов на биржи часто предшествуют продажам — депозиты свыше 1 000 BTC в ~60% случаев сопровождались падением на 3-8% в течение 48 часов. Калькулятор контекстуализирует оповещения, сравнивая размер транзакции с глубиной рынка и ликвидностью стакана.`
+      ],
+      inputs: [
+        `Поле суммы принимает количество токенов или долларовую стоимость. Тип назначения (ввод на биржу, вывод, кошелёк-кошелёк, холодное хранение) влияет на анализ — ввод на биржу — медвежий сигнал, вывод в холодное хранилище — бычий.`,
+        `На выходе: стоимость в USD, процент от 24-часового объёма, расчётное влияние на цену, рекомендуемое время TWAP-исполнения и исторический контекст аналогичных транзакций за 30 дней. Рейтинг серьёзности (Низкий/Средний/Высокий/Критический) даёт быструю оценку риска.`
+      ],
+    },
   },
 };
