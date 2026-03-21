@@ -16,7 +16,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'dca-calculator': {
       title: 'DCA Calculator',
-      description: 'Free DCA Calculator for Bitcoin, Ethereum, and 500+ cryptocurrencies. Simulate dollar-cost averaging strategies with historical data and compare DCA vs lump sum.'
+      description: 'Free DCA Calculator for Bitcoin, Ethereum, and 500+ cryptos. Simulate dollar-cost averaging with historical data and compare DCA vs lump sum.'
     },
     'tax-calculator': {
       title: 'Crypto Tax Calculator',
@@ -28,11 +28,11 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'position-size-calculator': {
       title: 'Position Size Calculator',
-      description: 'Free Position Size Calculator for crypto traders. Determine optimal trade size based on account balance, risk tolerance, and stop-loss. Supports up to 125x leverage.'
+      description: 'Free Position Size Calculator for crypto traders. Determine optimal trade size based on balance, risk tolerance, and stop-loss. Up to 125x leverage.'
     },
     'liquidation-calculator': {
       title: 'Liquidation Calculator',
-      description: 'Free Liquidation Price Calculator for crypto futures. Supports Binance, Bybit, OKX with Isolated and Cross margin modes. Know when your position gets liquidated.'
+      description: 'Free Liquidation Price Calculator for crypto futures. Supports Binance, Bybit, OKX in Isolated and Cross margin. Know your liquidation price.'
     },
     'funding-rate-calculator': {
       title: 'Funding Rate Calculator',
@@ -206,6 +206,138 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       title: 'Inflation Hedge Calculator',
       description: 'Free Inflation Hedge Calculator. Compare crypto, stablecoins, gold, and S&P 500 against inflation in Turkey, Argentina, Nigeria, USA, and more.'
     },
+    'calmar-calculator': {
+      title: 'Calmar Ratio Calculator',
+      description: 'Calculate Calmar ratio from annual return and maximum drawdown to compare return efficiency per drawdown risk.'
+    },
+    'compound-interest-calculator': {
+      title: 'Compound Interest Calculator',
+      description: 'Free compound interest calculator for crypto staking and yield farming. See how daily, weekly, or monthly compounding grows your investment over time.'
+    },
+    'drawdown-calculator': {
+      title: 'Drawdown Recovery Calculator',
+      description: 'Measure portfolio drawdown, required recovery gain, and estimated recovery time based on expected monthly return.'
+    },
+    'gas-fee-calculator': {
+      title: 'Gas Fee Calculator',
+      description: 'Free gas fee calculator for Ethereum, Polygon, Arbitrum, Optimism, BNB Chain and more. Estimate transaction costs for swaps, transfers, and minting.'
+    },
+    'information-ratio-calculator': {
+      title: 'Information Ratio Calculator',
+      description: 'Compare active portfolio performance versus a benchmark using active return and tracking error.'
+    },
+    'kelly-calculator': {
+      title: 'Kelly Criterion Calculator',
+      description: 'Find optimal position sizing from win rate and payoff ratio using Kelly, half-Kelly, and quarter-Kelly models.'
+    },
+    'leverage-calculator': {
+      title: 'Leverage Calculator',
+      description: 'Free leverage calculator for crypto. See how leverage amplifies gains and losses with side-by-side comparison, liquidation distance, and PnL table.'
+    },
+    'loan-calculator': {
+      title: 'Crypto Loan Calculator',
+      description: 'Free crypto-backed loan calculator. Estimate loan costs, monthly interest, margin call thresholds, and liquidation prices for DeFi and CeFi loans.'
+    },
+    'portfolio-calculator': {
+      title: 'Portfolio Allocation Calculator',
+      description: 'Free portfolio allocation calculator. Visualize asset weights, set target allocations, and get rebalancing suggestions for your crypto portfolio.'
+    },
+    'risk-of-ruin-calculator': {
+      title: 'Risk of Ruin Calculator',
+      description: 'Estimate probability of account ruin from win rate, reward/risk profile, and fixed risk per trade.'
+    },
+    'sharpe-calculator': {
+      title: 'Sharpe Ratio Calculator',
+      description: 'Evaluate risk-adjusted portfolio performance using expected return, volatility, and risk-free rate.'
+    },
+    'slippage-calculator': {
+      title: 'DEX Slippage Calculator',
+      description: 'Estimate swap slippage, minimum received amount, and total execution cost for DEX trades.'
+    },
+    'sortino-calculator': {
+      title: 'Sortino Ratio Calculator',
+      description: 'Measure risk-adjusted portfolio performance with downside-volatility focus using the Sortino ratio.'
+    },
+    'staking-rewards-calculator': {
+      title: 'Staking Rewards Calculator',
+      description: 'Free staking rewards calculator. Estimate daily, weekly, and monthly earnings for Ethereum, Solana, Polkadot, Cosmos and other PoS coins.'
+    },
+    'trade-expectancy-calculator': {
+      title: 'Trade Expectancy Calculator',
+      description: 'Estimate strategy edge per trade and project monthly outcomes using win rate, R-multiples, and risk per trade.'
+    },
+    'treynor-calculator': {
+      title: 'Treynor Ratio Calculator',
+      description: 'Measure return per unit of market risk (beta) and benchmark strategy efficiency against the risk-free rate.'
+    },
+    'var-calculator': {
+      title: 'Value at Risk (VaR) Calculator',
+      description: 'Estimate portfolio downside risk with parametric VaR and expected shortfall (CVaR) across confidence levels.'
+    },
+    'bitcoin-unit-converter': {
+      title: 'Bitcoin Unit Converter',
+      description: 'Free Bitcoin Unit Converter. Convert between BTC, mBTC, bits, and satoshis instantly. Includes live USD value and a quick-reference denomination table.'
+    },
+    'cross-chain-bridge-calculator': {
+      title: 'Cross-Chain Bridge Calculator',
+      description: 'Free Cross-Chain Bridge Calculator. Estimate bridge fees, transfer time, and slippage for moving tokens between Ethereum, Arbitrum, Solana, and 20+ chains.'
+    },
+    'crypto-correlation-calculator': {
+      title: 'Crypto Correlation Calculator',
+      description: 'Free Crypto Correlation Calculator. Measure price correlation between any two cryptocurrencies and build a diversified portfolio with lower overall risk.'
+    },
+    'crypto-index-fund-calculator': {
+      title: 'Crypto Index Fund Calculator',
+      description: 'Free Crypto Index Fund Calculator. Build a custom crypto index by market cap or equal weight, track allocations, and compare performance vs BTC.'
+    },
+    'crypto-inheritance-calculator': {
+      title: 'Crypto Inheritance Calculator',
+      description: 'Free Crypto Inheritance Calculator. Plan digital asset succession with multi-sig setup costs, estate tax estimates, and heir distribution modeling.'
+    },
+    'crypto-portfolio-rebalance-calculator': {
+      title: 'Crypto Portfolio Rebalance Calculator',
+      description: 'Free Crypto Portfolio Rebalance Calculator. Enter current holdings and target weights to see exact buy/sell amounts needed to rebalance your portfolio.'
+    },
+    'crypto-sentiment-calculator': {
+      title: 'Crypto Sentiment Calculator',
+      description: 'Free Crypto Sentiment Calculator. Aggregate Fear & Greed index, social volume, and funding rates into a single composite sentiment score for any coin.'
+    },
+    'defi-yield-aggregator': {
+      title: 'DeFi Yield Aggregator',
+      description: 'Free DeFi Yield Aggregator. Compare real-time APY across Aave, Compound, Lido, and 50+ protocols. Filter by chain, asset, and TVL to find the best yield.'
+    },
+    'dust-attack-calculator': {
+      title: 'Dust Attack Calculator',
+      description: 'Free Dust Attack Calculator. Detect tiny unsolicited transactions in your wallet, estimate consolidation costs, and learn how to protect your privacy on-chain.'
+    },
+    'exchange-fee-comparator': {
+      title: 'Exchange Fee Comparator',
+      description: 'Free Exchange Fee Comparator. Side-by-side fee comparison for Binance, Coinbase, Kraken, OKX, and Bybit across spot, futures, and withdrawal fees.'
+    },
+    'flash-loan-calculator': {
+      title: 'Flash Loan Calculator',
+      description: 'Free Flash Loan Calculator. Estimate flash loan profitability including protocol fees, gas costs, and arbitrage spread for Aave, dYdX, and Uniswap.'
+    },
+    'gas-optimization-calculator': {
+      title: 'Gas Optimization Calculator',
+      description: 'Free Gas Optimization Calculator. Find the cheapest time to transact on Ethereum and L2s. Compare gas costs by hour, batch transactions, and save on fees.'
+    },
+    'governance-voting-calculator': {
+      title: 'Governance Voting Calculator',
+      description: 'Free Governance Voting Calculator. Estimate voting power, quorum requirements, and delegation impact for DAO proposals across major governance tokens.'
+    },
+    'nft-rarity-calculator': {
+      title: 'NFT Rarity Calculator',
+      description: 'Free NFT Rarity Calculator. Score trait rarity for any NFT collection using statistical rarity, average trait, and information-content methods.'
+    },
+    'token-unlock-calculator': {
+      title: 'Token Unlock Calculator',
+      description: 'Free Token Unlock Calculator. Track upcoming token unlock events, estimate sell pressure impact, and visualize vesting schedules for any project.'
+    },
+    'whale-alert-calculator': {
+      title: 'Whale Alert Calculator',
+      description: 'Free Whale Alert Calculator. Estimate market impact of large transfers, calculate slippage from whale-sized orders, and set custom alert thresholds.'
+    },
   },
   'es': {
     'converter': {
@@ -218,7 +350,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'mining-calculator': {
       title: 'Calculadora de Minería de Bitcoin',
-      description: 'Calculadora de Minería de Bitcoin gratuita. Ingresa hashrate, consumo eléctrico y coste de electricidad para estimar ingresos diarios, mensuales y anuales en BTC.'
+      description: 'Calculadora de Minería de Bitcoin gratuita. Ingresa hashrate, consumo y coste eléctrico para estimar ingresos diarios, mensuales y anuales en BTC.'
     },
     'dca-calculator': {
       title: 'Calculadora DCA',
@@ -226,7 +358,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'tax-calculator': {
       title: 'Calculadora de Impuestos Cripto',
-      description: 'Calculadora de Impuestos Cripto gratuita para 17 países. Estima impuestos sobre ganancias de capital y compara tasas a corto y largo plazo para EE.UU., España y más.'
+      description: 'Calculadora de Impuestos Cripto gratuita para 17 países. Estima impuestos sobre ganancias de capital y compara tasas a corto y largo plazo.'
     },
     'what-if': {
       title: 'Calculadora Y Si (What If)',
@@ -234,11 +366,11 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'position-size-calculator': {
       title: 'Calculadora de Tamaño de Posición',
-      description: 'Calculadora de Tamaño de Posición gratuita para traders de cripto. Determina el tamaño óptimo según balance, tolerancia al riesgo y stop-loss. Hasta 125x apalancamiento.'
+      description: 'Calculadora de Tamaño de Posición gratuita para traders cripto. Determina el tamaño óptimo según balance, riesgo y stop-loss. Hasta 125x.'
     },
     'liquidation-calculator': {
       title: 'Calculadora de Liquidación',
-      description: 'Calculadora de Precio de Liquidación gratuita para futuros cripto. Compatible con Binance, Bybit, OKX en modos Aislado y Cruzado. Conoce cuándo se liquida tu posición.'
+      description: 'Calculadora de Precio de Liquidación gratuita para futuros cripto. Compatible con Binance, Bybit, OKX en modos Aislado y Cruzado.'
     },
     'funding-rate-calculator': {
       title: 'Calculadora de Tasa de Financiación',
@@ -254,23 +386,23 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'pip-calculator': {
       title: 'Calculadora de Valor de Pip',
-      description: 'Calculadora de Valor de Pip gratuita para traders de cripto. Calcula el valor en dólares de los movimientos de precio para cualquier tamaño de posición en BTC, ETH, SOL y más.'
+      description: 'Calculadora de Valor de Pip gratuita para traders cripto. Calcula el valor en dólares de movimientos de precio para cualquier posición en BTC, ETH y más.'
     },
     'break-even-calculator': {
       title: 'Calculadora de Punto de Equilibrio',
-      description: 'Calculadora de Punto de Equilibrio gratuita. Descubre cuánta ganancia necesitas para recuperarte de una pérdida o calcula el precio de salida que cubre tus comisiones.'
+      description: 'Calculadora de Punto de Equilibrio gratuita. Descubre cuánta ganancia necesitas para recuperarte de una pérdida o el precio de salida que cubre comisiones.'
     },
     'risk-reward-calculator': {
       title: 'Calculadora de Riesgo / Beneficio',
-      description: 'Calculadora de Ratio Riesgo-Beneficio gratuita para traders de cripto. Calcula el ratio R:R, la tasa de acierto requerida y simula 100 operaciones para cualquier setup.'
+      description: 'Calculadora de Ratio Riesgo-Beneficio gratuita para traders cripto. Calcula el ratio R:R, tasa de acierto requerida y simula 100 operaciones.'
     },
     'staking-calculator': {
       title: 'Calculadora de Staking Cripto',
-      description: 'Calculadora de Staking Cripto gratuita. Calcula recompensas diarias, semanales y anuales de staking tras comisión del validador y proyecciones de precio del token.'
+      description: 'Calculadora de Staking Cripto gratuita. Calcula recompensas diarias, semanales y anuales tras comisión del validador y proyecciones de precio.'
     },
     'impermanent-loss-calculator': {
       title: 'Calculadora de Pérdida Impermanente',
-      description: 'Calculadora de Pérdida Impermanente gratuita para DeFi. Calcula IL para pools AMM, compara rendimientos LP vs HODL y evalúa si las comisiones compensan la pérdida.'
+      description: 'Calculadora de Pérdida Impermanente gratuita para DeFi. Calcula IL para pools AMM, compara rendimientos LP vs HODL y evalúa si las comisiones compensan.'
     },
     'apy-apr-calculator': {
       title: 'Calculadora APY vs APR',
@@ -278,7 +410,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'yield-farming-calculator': {
       title: 'Calculadora de Yield Farming',
-      description: 'Calculadora de Yield Farming gratuita. Calcula beneficios netos de farming DeFi incluyendo costes de gas, pérdida impermanente y frecuencia de cosecha para tu APY real.'
+      description: 'Calculadora de Yield Farming gratuita. Calcula beneficios netos de farming DeFi incluyendo gas, pérdida impermanente y frecuencia de cosecha.'
     },
     'gas-calculator': {
       title: 'Calculadora de Gas Cripto',
@@ -286,11 +418,11 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'uniswap-calculator': {
       title: 'Calculadora de Comisiones Uniswap',
-      description: 'Calculadora de Comisiones Uniswap gratuita. Estima ingresos por comisiones LP, impacto de pérdida impermanente, tiempo de recuperación y resultado neto del pool.'
+      description: 'Calculadora de Comisiones Uniswap gratuita. Estima ingresos LP, impacto de pérdida impermanente, tiempo de recuperación y resultado neto del pool.'
     },
     'bridge-comparator': {
       title: 'Comparador de Costes de Bridge',
-      description: 'Comparador de Costes de Bridge gratuito. Compara rutas de puentes cripto por comisión total estimada, velocidad y puntuación de seguridad entre bridges L2 y multichain.'
+      description: 'Comparador de Costes de Bridge gratuito. Compara rutas de puentes cripto por comisión estimada, velocidad y seguridad entre bridges L2 y multichain.'
     },
     'lending-calculator': {
       title: 'Calculadora de Préstamos Cripto',
@@ -306,11 +438,11 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'mining-roi-calculator': {
       title: 'Calculadora ROI de Minería',
-      description: 'Calculadora ROI de Minería gratuita. Modela el retorno de inversión en hardware de minería con análisis de escenarios para ingresos, costes y punto de equilibrio.'
+      description: 'Calculadora ROI de Minería gratuita. Modela el retorno de inversión en hardware de minería con análisis de escenarios para ingresos y costes.'
     },
     'electricity-cost-calculator': {
       title: 'Calculadora de Coste Eléctrico de Minería',
-      description: 'Calculadora de Coste Eléctrico de Minería gratuita. Calcula consumo energético y coste operativo por número de dispositivos, potencia, tiempo de actividad y tarifa local.'
+      description: 'Calculadora de Coste Eléctrico de Minería gratuita. Calcula consumo energético y coste operativo por dispositivos, potencia, uptime y tarifa local.'
     },
     'difficulty-calculator': {
       title: 'Estimador de Dificultad de Minería',
@@ -322,11 +454,11 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'market-cap-calculator': {
       title: 'Calculadora de Capitalización de Mercado',
-      description: 'Calculadora de Capitalización de Mercado gratuita. Calcula precio del token a partir de market cap y suministro, o market cap a partir del precio, con datos cripto en vivo.'
+      description: 'Calculadora de Capitalización de Mercado gratuita. Calcula precio del token desde market cap y suministro, o market cap desde el precio, con datos en vivo.'
     },
     'market-cap-comparator': {
       title: 'Comparador de Capitalización de Mercado',
-      description: 'Comparador de Capitalización de Mercado gratuito. Compara cualquier cripto con las principales monedas. Calcula precios hipotéticos y multiplicadores de crecimiento.'
+      description: 'Comparador de Capitalización de Mercado gratuito. Compara cualquier cripto con las principales monedas. Calcula precios y multiplicadores hipotéticos.'
     },
     'roi-calculator': {
       title: 'Calculadora de ROI',
@@ -334,15 +466,15 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'reverse-roi': {
       title: 'Calculadora de ROI Inverso',
-      description: 'Calculadora de ROI Inverso gratuita. Ingresa tu inversión y beneficio objetivo para encontrar el precio exacto del token necesario. Incluye multiplicador y tabla de hitos.'
+      description: 'Calculadora de ROI Inverso gratuita. Ingresa tu inversión y beneficio objetivo para encontrar el precio exacto del token. Multiplicador y tabla de hitos.'
     },
     'hodl-vs-trade': {
       title: 'Calculadora HODL vs Trading',
-      description: 'Simulador HODL vs Trading gratuito. Compara buy-and-hold con trading activo. Simula operaciones con tasas de acierto, objetivos de beneficio y comisiones personalizadas.'
+      description: 'Simulador HODL vs Trading gratuito. Compara buy-and-hold con trading activo. Simula operaciones con tasas de acierto, objetivos y comisiones.'
     },
     'rebalancing-calculator': {
       title: 'Calculadora de Rebalanceo de Cartera',
-      description: 'Calculadora de Rebalanceo de Cartera gratuita. Calcula acciones de compra/venta para rebalancear tu portafolio cripto hacia asignaciones objetivo con modo solo-compra.'
+      description: 'Calculadora de Rebalanceo de Cartera gratuita. Calcula acciones de compra/venta para rebalancear tu portafolio cripto hacia asignaciones objetivo.'
     },
     'compound-calculator': {
       title: 'Calculadora de Interés Compuesto (Cripto)',
@@ -350,15 +482,15 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'ico-roi-calculator': {
       title: 'Calculadora de ROI de ICO / IDO',
-      description: 'Calculadora de ROI de ICO / IDO gratuita. Calcula el ROI actual y en ATH para asignaciones de ICO o IDO usando cantidad de tokens, precio de entrada y precios de mercado.'
+      description: 'Calculadora de ROI de ICO/IDO gratuita. Calcula el ROI actual y en ATH para asignaciones de ICO o IDO usando cantidad de tokens y precio de entrada.'
     },
     'airdrop-calculator': {
       title: 'Calculadora de Valor de Airdrop',
-      description: 'Calculadora de Valor de Airdrop gratuita. Calcula el valor de airdrops cripto recibidos, estima la obligación fiscal y rastrea ganancia o pérdida tras comisiones.'
+      description: 'Calculadora de Valor de Airdrop gratuita. Calcula el valor de airdrops cripto recibidos, estima la obligación fiscal y rastrea ganancia o pérdida.'
     },
     'satoshi-converter': {
       title: 'Conversor de Satoshis',
-      description: 'Conversor de Satoshis gratuito. Convierte entre Bitcoin, Satoshis y USD/EUR al instante. Muestra sats por dólar, tablas de referencia rápida y precio BTC en vivo.'
+      description: 'Conversor de Satoshis gratuito. Convierte entre Bitcoin, Satoshis y USD/EUR al instante. Sats por dólar, tablas de referencia y precio BTC en vivo.'
     },
     'gwei-converter': {
       title: 'Conversor de Gwei',
@@ -374,7 +506,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'exchange-fees': {
       title: 'Comparador de Comisiones de Exchanges',
-      description: 'Comparador de Comisiones de Exchanges gratuito. Compara comisiones de trading en Binance, Bybit, OKX, Coinbase, Kraken y más con desglose de tarifas maker/taker.'
+      description: 'Comparador de Comisiones de Exchanges gratuito. Compara comisiones en Binance, Bybit, OKX, Coinbase, Kraken y más con desglose maker/taker.'
     },
     'crypto-loan-calculator': {
       title: 'Calculadora de Préstamo Cripto',
@@ -382,23 +514,23 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'vesting-calculator': {
       title: 'Calculadora de Vesting de Tokens',
-      description: 'Calculadora de Vesting de Tokens gratuita. Visualiza calendarios de desbloqueo con períodos de cliff, TGE y vesting mensual o trimestral para planificar tu estrategia de salida.'
+      description: 'Calculadora de Vesting de Tokens gratuita. Visualiza calendarios de desbloqueo con cliff, TGE y vesting mensual o trimestral para planificar tu salida.'
     },
     'nft-profit-calculator': {
       title: 'Calculadora de Ganancias NFT',
-      description: 'Calculadora de Ganancias NFT gratuita. Calcula el beneficio real del trading de NFT tras comisiones del marketplace, regalías del creador y costes de gas en OpenSea, Blur y más.'
+      description: 'Calculadora de Ganancias NFT gratuita. Calcula el beneficio real del trading de NFT tras comisiones del marketplace, regalías y costes de gas.'
     },
     'halving-calculator': {
       title: 'Calculadora de Halving de Bitcoin',
-      description: 'Calculadora de Halving de Bitcoin gratuita con cuenta regresiva en vivo. Descubre cómo el próximo halving de BTC afecta los ingresos de minería con datos históricos y análisis de precios.'
+      description: 'Calculadora de Halving de Bitcoin gratuita con cuenta regresiva en vivo. Descubre cómo el próximo halving afecta la minería con datos históricos.'
     },
     'mev-calculator': {
       title: 'Calculadora de Protección MEV',
-      description: 'Calculadora de Protección MEV gratuita. Estima el riesgo de ataques sandwich y frontrun, y los ahorros potenciales de rutas con protección MEV según tamaño del swap y slippage.'
+      description: 'Calculadora de Protección MEV gratuita. Estima riesgo de ataques sandwich y frontrun, y ahorros potenciales de rutas con protección MEV.'
     },
     'gamefi-calculator': {
       title: 'Calculadora ROI de GameFi',
-      description: 'Calculadora ROI de GameFi gratuita. Estima período de recuperación y ROI anual para estrategias play-to-earn basado en coste de setup, recompensas de token y gastos operativos.'
+      description: 'Calculadora ROI de GameFi gratuita. Estima período de recuperación y ROI anual para estrategias play-to-earn según coste de setup y recompensas.'
     },
     'node-calculator': {
       title: 'Calculadora de Nodo Validador',
@@ -406,11 +538,143 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'salary-calculator': {
       title: 'Calculadora de Salario Cripto',
-      description: 'Calculadora de Salario Cripto gratuita. Convierte tu salario fiat a BTC, ETH o USDT. Calcula acumulación de cripto a lo largo del tiempo con frecuencia de pago y comisiones.'
+      description: 'Calculadora de Salario Cripto gratuita. Convierte tu salario fiat a BTC, ETH o USDT. Calcula acumulación cripto con frecuencia de pago y comisiones.'
     },
     'inflation-hedge': {
       title: 'Calculadora de Cobertura de Inflación',
       description: 'Calculadora de Cobertura de Inflación gratuita. Compara cripto, stablecoins, oro y S&P 500 contra la inflación en Turquía, Argentina, Nigeria, EE.UU. y más.'
+    },
+    'calmar-calculator': {
+      title: 'Calculadora de Ratio Calmar',
+      description: 'Calcula el ratio Calmar a partir del rendimiento anual y el drawdown máximo para comparar la eficiencia del retorno por riesgo de caída.'
+    },
+    'compound-interest-calculator': {
+      title: 'Calculadora de Interés Compuesto Cripto',
+      description: 'Calculadora de interés compuesto gratuita para staking y yield farming. Mira cómo la capitalización diaria, semanal o mensual hace crecer tu inversión.'
+    },
+    'drawdown-calculator': {
+      title: 'Calculadora de Recuperación de Drawdown',
+      description: 'Mide el drawdown del portafolio, la ganancia de recuperación requerida y el tiempo estimado de recuperación según el rendimiento mensual esperado.'
+    },
+    'gas-fee-calculator': {
+      title: 'Calculadora de Comisión de Gas',
+      description: 'Calculadora de gas gratuita para Ethereum, Polygon, Arbitrum, Optimism, BNB Chain y más. Estima costes de transacción para swaps, transferencias y minting.'
+    },
+    'information-ratio-calculator': {
+      title: 'Calculadora de Ratio de Información',
+      description: 'Compara el rendimiento activo del portafolio frente a un benchmark usando retorno activo y tracking error.'
+    },
+    'kelly-calculator': {
+      title: 'Calculadora del Criterio de Kelly',
+      description: 'Encuentra el tamaño óptimo de posición a partir del win rate y ratio de pago usando modelos Kelly, half-Kelly y quarter-Kelly.'
+    },
+    'leverage-calculator': {
+      title: 'Calculadora de Apalancamiento',
+      description: 'Calculadora de apalancamiento gratuita para cripto. Mira cómo el apalancamiento amplifica ganancias y pérdidas con distancia de liquidación y tabla PnL.'
+    },
+    'loan-calculator': {
+      title: 'Calculadora de Préstamo Cripto',
+      description: 'Calculadora de préstamo cripto gratuita. Estima costes del préstamo, interés mensual, umbral de margin call y precios de liquidación para DeFi y CeFi.'
+    },
+    'portfolio-calculator': {
+      title: 'Calculadora de Asignación de Cartera',
+      description: 'Calculadora de asignación de cartera gratuita. Visualiza pesos de activos, establece asignaciones objetivo y obtén sugerencias de rebalanceo cripto.'
+    },
+    'risk-of-ruin-calculator': {
+      title: 'Calculadora de Riesgo de Ruina',
+      description: 'Estima la probabilidad de ruina de la cuenta a partir del win rate, perfil de riesgo/beneficio y riesgo fijo por operación.'
+    },
+    'sharpe-calculator': {
+      title: 'Calculadora de Ratio de Sharpe',
+      description: 'Evalúa el rendimiento ajustado al riesgo del portafolio usando retorno esperado, volatilidad y tasa libre de riesgo.'
+    },
+    'slippage-calculator': {
+      title: 'Calculadora de Slippage DEX',
+      description: 'Estima el slippage del swap, el monto mínimo recibido y el coste total de ejecución para operaciones en DEX.'
+    },
+    'sortino-calculator': {
+      title: 'Calculadora de Ratio de Sortino',
+      description: 'Mide el rendimiento ajustado al riesgo del portafolio con enfoque en volatilidad a la baja usando el ratio Sortino.'
+    },
+    'staking-rewards-calculator': {
+      title: 'Calculadora de Recompensas de Staking',
+      description: 'Calculadora de staking gratuita. Estima ganancias diarias, semanales y mensuales para Ethereum, Solana, Polkadot, Cosmos y otras monedas PoS.'
+    },
+    'trade-expectancy-calculator': {
+      title: 'Calculadora de Expectativa de Trading',
+      description: 'Estima la ventaja por operación y proyecta resultados mensuales usando win rate, múltiplos R y riesgo por operación.'
+    },
+    'treynor-calculator': {
+      title: 'Calculadora de Ratio de Treynor',
+      description: 'Mide el retorno por unidad de riesgo de mercado (beta) y evalúa la eficiencia de la estrategia frente a la tasa libre de riesgo.'
+    },
+    'var-calculator': {
+      title: 'Calculadora de Valor en Riesgo (VaR)',
+      description: 'Estima el riesgo a la baja del portafolio con VaR paramétrico y pérdida esperada (CVaR) en múltiples niveles de confianza.'
+    },
+    'bitcoin-unit-converter': {
+      title: 'Conversor de Unidades Bitcoin',
+      description: 'Conversor de Unidades Bitcoin gratuito. Convierte entre BTC, mBTC, bits y satoshis al instante con valor en USD en tiempo real y tabla de denominaciones.'
+    },
+    'cross-chain-bridge-calculator': {
+      title: 'Calculadora de Puente Cross-Chain',
+      description: 'Calculadora de Puente Cross-Chain gratuita. Estima comisiones, tiempo de transferencia y slippage al mover tokens entre Ethereum, Arbitrum, Solana y más.'
+    },
+    'crypto-correlation-calculator': {
+      title: 'Calculadora de Correlación Cripto',
+      description: 'Calculadora de Correlación Cripto gratuita. Mide la correlación de precios entre criptomonedas y construye un portafolio diversificado con menor riesgo.'
+    },
+    'crypto-index-fund-calculator': {
+      title: 'Calculadora de Fondo Índice Cripto',
+      description: 'Calculadora de Fondo Índice Cripto gratuita. Crea un índice personalizado por capitalización o peso igual, y compara rendimiento frente a BTC.'
+    },
+    'crypto-inheritance-calculator': {
+      title: 'Calculadora de Herencia Cripto',
+      description: 'Calculadora de Herencia Cripto gratuita. Planifica la sucesión de activos digitales con costes multi-firma, impuestos sucesorios y distribución a herederos.'
+    },
+    'crypto-portfolio-rebalance-calculator': {
+      title: 'Calculadora de Rebalanceo de Portafolio Cripto',
+      description: 'Calculadora de Rebalanceo gratuita. Ingresa tus tenencias y pesos objetivo para ver las cantidades exactas de compra y venta necesarias.'
+    },
+    'crypto-sentiment-calculator': {
+      title: 'Calculadora de Sentimiento Cripto',
+      description: 'Calculadora de Sentimiento Cripto gratuita. Agrega el índice Fear & Greed, volumen social y tasas de funding en una puntuación compuesta de sentimiento.'
+    },
+    'defi-yield-aggregator': {
+      title: 'Agregador de Rendimientos DeFi',
+      description: 'Agregador de Rendimientos DeFi gratuito. Compara APY en tiempo real en Aave, Compound, Lido y 50+ protocolos. Filtra por cadena, activo y TVL.'
+    },
+    'dust-attack-calculator': {
+      title: 'Calculadora de Ataque Dust',
+      description: 'Calculadora de Ataque Dust gratuita. Detecta transacciones diminutas no solicitadas, estima costes de consolidación y protege tu privacidad on-chain.'
+    },
+    'exchange-fee-comparator': {
+      title: 'Comparador de Comisiones de Exchange',
+      description: 'Comparador de Comisiones gratuito. Compara comisiones de Binance, Coinbase, Kraken, OKX y Bybit en spot, futuros y retiros lado a lado.'
+    },
+    'flash-loan-calculator': {
+      title: 'Calculadora de Préstamo Flash',
+      description: 'Calculadora de Préstamo Flash gratuita. Estima la rentabilidad incluyendo comisiones del protocolo, gas y spread de arbitraje para Aave, dYdX y Uniswap.'
+    },
+    'gas-optimization-calculator': {
+      title: 'Calculadora de Optimización de Gas',
+      description: 'Calculadora de Optimización de Gas gratuita. Encuentra la hora más económica para operar en Ethereum y L2. Compara costes por hora y ahorra en comisiones.'
+    },
+    'governance-voting-calculator': {
+      title: 'Calculadora de Votación de Gobernanza',
+      description: 'Calculadora de Votación DAO gratuita. Estima poder de voto, requisitos de quórum e impacto de delegación para propuestas de gobernanza descentralizada.'
+    },
+    'nft-rarity-calculator': {
+      title: 'Calculadora de Rareza NFT',
+      description: 'Calculadora de Rareza NFT gratuita. Puntúa la rareza de atributos con métodos de rareza estadística, promedio de rasgos y contenido informacional.'
+    },
+    'token-unlock-calculator': {
+      title: 'Calculadora de Desbloqueo de Tokens',
+      description: 'Calculadora de Desbloqueo de Tokens gratuita. Rastrea próximos desbloqueos, estima la presión de venta y visualiza calendarios de vesting de cualquier proyecto.'
+    },
+    'whale-alert-calculator': {
+      title: 'Calculadora de Alerta de Ballenas',
+      description: 'Calculadora de Alerta de Ballenas gratuita. Estima el impacto de grandes transferencias, calcula slippage de órdenes masivas y configura umbrales de alerta.'
     },
   },
   'pt': {
@@ -428,23 +692,23 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'dca-calculator': {
       title: 'Calculadora DCA',
-      description: 'Calculadora DCA gratuita para Bitcoin, Ethereum e 500+ criptos. Simule estratégias de investimento periódico com dados históricos e compare DCA vs investimento único.'
+      description: 'Calculadora DCA gratuita para Bitcoin, Ethereum e 500+ criptos. Simule estratégias de investimento periódico com dados históricos e compare DCA.'
     },
     'tax-calculator': {
       title: 'Calculadora de Impostos Cripto',
-      description: 'Calculadora de Impostos Cripto gratuita para 17 países. Estime impostos sobre ganhos de capital e compare taxas de curto e longo prazo para EUA, Brasil, Portugal e mais.'
+      description: 'Calculadora de Impostos Cripto gratuita para 17 países. Estime impostos sobre ganhos de capital e compare taxas de curto e longo prazo.'
     },
     'what-if': {
       title: 'Calculadora E Se (What If)',
-      description: 'Calculadora E Se gratuita. Simule entradas hipotéticas em cripto, avalie o custo de oportunidade e compare resultados de investimentos alternativos instantaneamente.'
+      description: 'Calculadora E Se gratuita. Simule entradas hipotéticas em cripto, avalie o custo de oportunidade e compare resultados de investimentos alternativos.'
     },
     'position-size-calculator': {
       title: 'Calculadora de Tamanho de Posição',
-      description: 'Calculadora de Tamanho de Posição gratuita para traders de cripto. Determine o tamanho ideal da operação com base no saldo, tolerância ao risco e stop-loss. Até 125x de alavancagem.'
+      description: 'Calculadora de Tamanho de Posição gratuita para traders cripto. Determine o tamanho ideal com base no saldo, risco e stop-loss. Até 125x.'
     },
     'liquidation-calculator': {
       title: 'Calculadora de Liquidação',
-      description: 'Calculadora de Preço de Liquidação gratuita para futuros cripto. Compatível com Binance, Bybit, OKX nos modos Isolado e Cruzado. Saiba quando sua posição será liquidada.'
+      description: 'Calculadora de Preço de Liquidação gratuita para futuros cripto. Compatível com Binance, Bybit, OKX nos modos Isolado e Cruzado.'
     },
     'funding-rate-calculator': {
       title: 'Calculadora de Taxa de Financiamento',
@@ -460,7 +724,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'pip-calculator': {
       title: 'Calculadora de Valor de Pip',
-      description: 'Calculadora de Valor de Pip gratuita para traders de cripto. Calcule o valor em dólares dos movimentos de preço para qualquer tamanho de posição em BTC, ETH, SOL e mais.'
+      description: 'Calculadora de Valor de Pip gratuita para traders cripto. Calcule o valor em dólares dos movimentos de preço para qualquer posição em BTC, ETH e mais.'
     },
     'break-even-calculator': {
       title: 'Calculadora de Ponto de Equilíbrio',
@@ -484,7 +748,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'yield-farming-calculator': {
       title: 'Calculadora de Yield Farming',
-      description: 'Calculadora de Yield Farming gratuita. Calcule lucros líquidos de farming DeFi incluindo custos de gas, perda impermanente e frequência de colheita para seu APY real.'
+      description: 'Calculadora de Yield Farming gratuita. Calcule lucros líquidos de farming DeFi incluindo gas, perda impermanente e frequência de colheita.'
     },
     'gas-calculator': {
       title: 'Calculadora de Gas Cripto',
@@ -496,7 +760,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'bridge-comparator': {
       title: 'Comparador de Custos de Bridge',
-      description: 'Comparador de Custos de Bridge gratuito. Compare rotas de pontes cripto por taxa total estimada, velocidade e pontuação de segurança entre bridges L2 e multichain.'
+      description: 'Comparador de Custos de Bridge gratuito. Compare rotas de pontes cripto por taxa estimada, velocidade e segurança entre bridges L2 e multichain.'
     },
     'lending-calculator': {
       title: 'Calculadora de Empréstimos Cripto',
@@ -508,11 +772,11 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'asic-mining-calculator': {
       title: 'Calculadora de Mineração ASIC',
-      description: 'Calculadora de Mineração ASIC gratuita. Calcule rentabilidade de mineração ASIC, custo de eletricidade e período de retorno para os principais modelos de hardware.'
+      description: 'Calculadora de Mineração ASIC gratuita. Calcule rentabilidade de mineração ASIC, custo de eletricidade e período de retorno para os principais modelos.'
     },
     'mining-roi-calculator': {
       title: 'Calculadora ROI de Mineração',
-      description: 'Calculadora ROI de Mineração gratuita. Modele o retorno sobre investimento em hardware de mineração com análise de cenários para receita, custos e ponto de equilíbrio.'
+      description: 'Calculadora ROI de Mineração gratuita. Modele o retorno sobre investimento em hardware de mineração com análise de cenários para receita e custos.'
     },
     'electricity-cost-calculator': {
       title: 'Calculadora de Custo de Eletricidade para Mineração',
@@ -528,7 +792,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'market-cap-calculator': {
       title: 'Calculadora de Capitalização de Mercado',
-      description: 'Calculadora de Capitalização de Mercado gratuita. Calcule preço do token a partir do market cap e oferta, ou market cap a partir do preço, com dados cripto em tempo real.'
+      description: 'Calculadora de Capitalização de Mercado gratuita. Calcule preço do token pelo market cap e oferta, ou market cap pelo preço, com dados em tempo real.'
     },
     'market-cap-comparator': {
       title: 'Comparador de Capitalização de Mercado',
@@ -540,7 +804,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'reverse-roi': {
       title: 'Calculadora de ROI Reverso',
-      description: 'Calculadora de ROI Reverso gratuita. Insira seu investimento e lucro alvo para encontrar o preço exato do token necessário. Inclui multiplicador e tabela de marcos.'
+      description: 'Calculadora de ROI Reverso gratuita. Insira investimento e lucro alvo para encontrar o preço exato do token. Multiplicador e tabela de marcos.'
     },
     'hodl-vs-trade': {
       title: 'Calculadora HODL vs Trading',
@@ -548,7 +812,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'rebalancing-calculator': {
       title: 'Calculadora de Rebalanceamento de Carteira',
-      description: 'Calculadora de Rebalanceamento de Carteira gratuita. Calcule ações de compra/venda para rebalancear seu portfólio cripto para alocações alvo com modo somente-compra.'
+      description: 'Calculadora de Rebalanceamento de Carteira gratuita. Calcule ações de compra/venda para rebalancear seu portfólio cripto para alocações alvo.'
     },
     'compound-calculator': {
       title: 'Calculadora de Juros Compostos (Cripto)',
@@ -556,7 +820,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'ico-roi-calculator': {
       title: 'Calculadora de ROI de ICO / IDO',
-      description: 'Calculadora de ROI de ICO / IDO gratuita. Calcule ROI atual e em ATH para alocações de ICO ou IDO usando quantidade de tokens, preço de entrada e preços de mercado.'
+      description: 'Calculadora de ROI de ICO/IDO gratuita. Calcule ROI atual e em ATH para alocações de ICO ou IDO usando quantidade de tokens e preço de entrada.'
     },
     'airdrop-calculator': {
       title: 'Calculadora de Valor de Airdrop',
@@ -564,7 +828,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'satoshi-converter': {
       title: 'Conversor de Satoshi',
-      description: 'Conversor de Satoshi gratuito. Converta entre Bitcoin, Satoshis e USD/EUR instantaneamente. Veja sats por dólar, tabelas de referência rápida e preço BTC ao vivo.'
+      description: 'Conversor de Satoshi gratuito. Converta entre Bitcoin, Satoshis e USD/EUR instantaneamente. Sats por dólar, tabelas de referência e preço BTC ao vivo.'
     },
     'gwei-converter': {
       title: 'Conversor de Gwei',
@@ -584,27 +848,27 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'crypto-loan-calculator': {
       title: 'Calculadora de Empréstimo Cripto',
-      description: 'Calculadora de Empréstimo Cripto gratuita. Estime valor do empréstimo, custos de juros, limite de margin call e risco de liquidação para empréstimos DeFi e CeFi.'
+      description: 'Calculadora de Empréstimo Cripto gratuita. Estime valor do empréstimo, custos de juros, limite de margin call e risco de liquidação em DeFi e CeFi.'
     },
     'vesting-calculator': {
       title: 'Calculadora de Vesting de Tokens',
-      description: 'Calculadora de Vesting de Tokens gratuita. Visualize cronogramas de desbloqueio com períodos de cliff, TGE e vesting mensal ou trimestral para planejar sua estratégia de saída.'
+      description: 'Calculadora de Vesting de Tokens gratuita. Visualize cronogramas de desbloqueio com cliff, TGE e vesting mensal ou trimestral para planejar sua saída.'
     },
     'nft-profit-calculator': {
       title: 'Calculadora de Lucro NFT',
-      description: 'Calculadora de Lucro NFT gratuita. Calcule o lucro real do trading de NFT após taxas do marketplace, royalties do criador e custos de gas no OpenSea, Blur e mais.'
+      description: 'Calculadora de Lucro NFT gratuita. Calcule o lucro real do trading de NFT após taxas do marketplace, royalties do criador e custos de gas.'
     },
     'halving-calculator': {
       title: 'Calculadora de Halving do Bitcoin',
-      description: 'Calculadora de Halving do Bitcoin gratuita com contagem regressiva ao vivo. Veja como o próximo halving do BTC afeta a receita de mineração com dados históricos e análise de preços.'
+      description: 'Calculadora de Halving do Bitcoin gratuita com contagem regressiva ao vivo. Veja como o próximo halving afeta a mineração com dados históricos.'
     },
     'mev-calculator': {
       title: 'Calculadora de Proteção MEV',
-      description: 'Calculadora de Proteção MEV gratuita. Estime risco de ataques sandwich e frontrun, e economias potenciais de rotas com proteção MEV baseado no tamanho do swap e slippage.'
+      description: 'Calculadora de Proteção MEV gratuita. Estime risco de ataques sandwich e frontrun, e economias potenciais de rotas com proteção MEV.'
     },
     'gamefi-calculator': {
       title: 'Calculadora de ROI GameFi',
-      description: 'Calculadora de ROI GameFi gratuita. Estime período de retorno e ROI anual para estratégias play-to-earn com base no custo de setup, recompensas de token e despesas.'
+      description: 'Calculadora de ROI GameFi gratuita. Estime período de retorno e ROI anual para estratégias play-to-earn com base no custo de setup e recompensas.'
     },
     'node-calculator': {
       title: 'Calculadora de Nó Validador',
@@ -612,11 +876,143 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'salary-calculator': {
       title: 'Calculadora de Salário Cripto',
-      description: 'Calculadora de Salário Cripto gratuita. Converta seu salário fiat para BTC, ETH ou USDT. Calcule acumulação de cripto ao longo do tempo com frequência de pagamento e taxas.'
+      description: 'Calculadora de Salário Cripto gratuita. Converta seu salário fiat para BTC, ETH ou USDT. Calcule acumulação cripto com frequência de pagamento e taxas.'
     },
     'inflation-hedge': {
       title: 'Calculadora de Proteção contra Inflação',
       description: 'Calculadora de Proteção contra Inflação gratuita. Compare cripto, stablecoins, ouro e S&P 500 contra a inflação na Turquia, Argentina, Nigéria, EUA e mais.'
+    },
+    'calmar-calculator': {
+      title: 'Calculadora de Ratio Calmar',
+      description: 'Calcule o ratio Calmar a partir do retorno anual e drawdown máximo para comparar a eficiência do retorno por risco de queda.'
+    },
+    'compound-interest-calculator': {
+      title: 'Calculadora de Juros Compostos Cripto',
+      description: 'Calculadora de juros compostos gratuita para staking e yield farming. Veja como a capitalização diária, semanal ou mensal faz seu investimento crescer.'
+    },
+    'drawdown-calculator': {
+      title: 'Calculadora de Recuperação de Drawdown',
+      description: 'Meça o drawdown do portfólio, o ganho de recuperação necessário e o tempo estimado de recuperação com base no retorno mensal esperado.'
+    },
+    'gas-fee-calculator': {
+      title: 'Calculadora de Taxa de Gas',
+      description: 'Calculadora de gas gratuita para Ethereum, Polygon, Arbitrum, Optimism, BNB Chain e mais. Estime custos de transação para swaps, transferências e minting.'
+    },
+    'information-ratio-calculator': {
+      title: 'Calculadora de Ratio de Informação',
+      description: 'Compare o desempenho ativo do portfólio versus um benchmark usando retorno ativo e tracking error.'
+    },
+    'kelly-calculator': {
+      title: 'Calculadora do Critério de Kelly',
+      description: 'Encontre o tamanho ideal de posição a partir do win rate e razão de payoff usando modelos Kelly, half-Kelly e quarter-Kelly.'
+    },
+    'leverage-calculator': {
+      title: 'Calculadora de Alavancagem',
+      description: 'Calculadora de alavancagem gratuita para cripto. Veja como a alavancagem amplifica ganhos e perdas com comparação, distância de liquidação e tabela PnL.'
+    },
+    'loan-calculator': {
+      title: 'Calculadora de Empréstimo Cripto',
+      description: 'Calculadora de empréstimo cripto gratuita. Estime custos do empréstimo, juros mensais, limiar de margin call e preços de liquidação para DeFi e CeFi.'
+    },
+    'portfolio-calculator': {
+      title: 'Calculadora de Alocação de Carteira',
+      description: 'Calculadora de alocação de carteira gratuita. Visualize pesos de ativos, defina alocações alvo e obtenha sugestões de rebalanceamento para seu portfólio cripto.'
+    },
+    'risk-of-ruin-calculator': {
+      title: 'Calculadora de Risco de Ruína',
+      description: 'Estime a probabilidade de ruína da conta a partir do win rate, perfil de risco/retorno e risco fixo por operação.'
+    },
+    'sharpe-calculator': {
+      title: 'Calculadora de Ratio de Sharpe',
+      description: 'Avalie o desempenho ajustado ao risco do portfólio usando retorno esperado, volatilidade e taxa livre de risco.'
+    },
+    'slippage-calculator': {
+      title: 'Calculadora de Slippage DEX',
+      description: 'Estime o slippage do swap, valor mínimo recebido e custo total de execução para operações em DEX.'
+    },
+    'sortino-calculator': {
+      title: 'Calculadora de Ratio de Sortino',
+      description: 'Meça o desempenho ajustado ao risco do portfólio com foco em volatilidade negativa usando o ratio Sortino.'
+    },
+    'staking-rewards-calculator': {
+      title: 'Calculadora de Recompensas de Staking',
+      description: 'Calculadora de staking gratuita. Estime ganhos diários, semanais e mensais para Ethereum, Solana, Polkadot, Cosmos e outras moedas PoS.'
+    },
+    'trade-expectancy-calculator': {
+      title: 'Calculadora de Expectativa de Trade',
+      description: 'Estime a vantagem por operação e projete resultados mensais usando win rate, múltiplos R e risco por operação.'
+    },
+    'treynor-calculator': {
+      title: 'Calculadora de Ratio de Treynor',
+      description: 'Meça o retorno por unidade de risco de mercado (beta) e avalie a eficiência da estratégia contra a taxa livre de risco.'
+    },
+    'var-calculator': {
+      title: 'Calculadora de Valor em Risco (VaR)',
+      description: 'Estime o risco de queda do portfólio com VaR paramétrico e perda esperada (CVaR) em múltiplos níveis de confiança.'
+    },
+    'bitcoin-unit-converter': {
+      title: 'Conversor de Unidades Bitcoin',
+      description: 'Conversor de Unidades Bitcoin gratuito. Converta entre BTC, mBTC, bits e satoshis instantaneamente com valor em USD ao vivo e tabela de denominações.'
+    },
+    'cross-chain-bridge-calculator': {
+      title: 'Calculadora de Ponte Cross-Chain',
+      description: 'Calculadora de Ponte Cross-Chain gratuita. Estime taxas de bridge, tempo de transferência e slippage ao mover tokens entre Ethereum, Arbitrum, Solana e mais.'
+    },
+    'crypto-correlation-calculator': {
+      title: 'Calculadora de Correlação Cripto',
+      description: 'Calculadora de Correlação Cripto gratuita. Meça a correlação de preços entre criptomoedas e construa um portfólio diversificado com menor risco geral.'
+    },
+    'crypto-index-fund-calculator': {
+      title: 'Calculadora de Fundo Índice Cripto',
+      description: 'Calculadora de Fundo Índice Cripto gratuita. Crie um índice personalizado por capitalização ou peso igual, e compare desempenho versus BTC.'
+    },
+    'crypto-inheritance-calculator': {
+      title: 'Calculadora de Herança Cripto',
+      description: 'Calculadora de Herança Cripto gratuita. Planeje a sucessão de ativos digitais com custos multi-sig, impostos sobre herança e distribuição aos herdeiros.'
+    },
+    'crypto-portfolio-rebalance-calculator': {
+      title: 'Calculadora de Rebalanceamento de Portfólio Cripto',
+      description: 'Calculadora de Rebalanceamento gratuita. Insira suas posições e pesos-alvo para ver os valores exatos de compra e venda necessários.'
+    },
+    'crypto-sentiment-calculator': {
+      title: 'Calculadora de Sentimento Cripto',
+      description: 'Calculadora de Sentimento Cripto gratuita. Agregue o índice Fear & Greed, volume social e taxas de funding em uma pontuação composta de sentimento.'
+    },
+    'defi-yield-aggregator': {
+      title: 'Agregador de Rendimentos DeFi',
+      description: 'Agregador de Rendimentos DeFi gratuito. Compare APY em tempo real em Aave, Compound, Lido e 50+ protocolos. Filtre por rede, ativo e TVL.'
+    },
+    'dust-attack-calculator': {
+      title: 'Calculadora de Ataque Dust',
+      description: 'Calculadora de Ataque Dust gratuita. Detecte transações minúsculas não solicitadas, estime custos de consolidação e proteja sua privacidade on-chain.'
+    },
+    'exchange-fee-comparator': {
+      title: 'Comparador de Taxas de Exchange',
+      description: 'Comparador de Taxas gratuito. Compare taxas de Binance, Coinbase, Kraken, OKX e Bybit em spot, futuros e saques lado a lado.'
+    },
+    'flash-loan-calculator': {
+      title: 'Calculadora de Empréstimo Flash',
+      description: 'Calculadora de Empréstimo Flash gratuita. Estime a rentabilidade incluindo taxas do protocolo, gas e spread de arbitragem para Aave, dYdX e Uniswap.'
+    },
+    'gas-optimization-calculator': {
+      title: 'Calculadora de Otimização de Gas',
+      description: 'Calculadora de Otimização de Gas gratuita. Encontre o horário mais barato para transacionar no Ethereum e L2s. Compare custos por hora e economize em taxas.'
+    },
+    'governance-voting-calculator': {
+      title: 'Calculadora de Votação de Governança',
+      description: 'Calculadora de Votação DAO gratuita. Estime poder de voto, requisitos de quórum e impacto de delegação para propostas de governança descentralizada.'
+    },
+    'nft-rarity-calculator': {
+      title: 'Calculadora de Raridade NFT',
+      description: 'Calculadora de Raridade NFT gratuita. Pontue a raridade dos atributos com métodos de raridade estatística, média de traços e conteúdo informacional.'
+    },
+    'token-unlock-calculator': {
+      title: 'Calculadora de Desbloqueio de Tokens',
+      description: 'Calculadora de Desbloqueio de Tokens gratuita. Acompanhe próximos desbloqueios, estime pressão de venda e visualize cronogramas de vesting de qualquer projeto.'
+    },
+    'whale-alert-calculator': {
+      title: 'Calculadora de Alerta de Baleias',
+      description: 'Calculadora de Alerta de Baleias gratuita. Estime o impacto de grandes transferências, calcule slippage de ordens massivas e configure limites de alerta.'
     },
   },
   'tr': {
@@ -634,15 +1030,15 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'dca-calculator': {
       title: 'DCA Hesaplayıcı',
-      description: 'Ücretsiz DCA Hesaplayıcı. Bitcoin, Ethereum ve 500+ kripto için düzenli yatırım stratejilerini geçmiş verilerle simüle edin, DCA ve toplu yatırımı karşılaştırın.'
+      description: 'Ücretsiz DCA Hesaplayıcı. Bitcoin, Ethereum ve 500+ kripto için düzenli yatırım stratejilerini geçmiş verilerle simüle edin ve karşılaştırın.'
     },
     'tax-calculator': {
       title: 'Kripto Vergi Hesaplayıcı',
-      description: 'Ücretsiz Kripto Vergi Hesaplayıcı. 17 ülke için sermaye kazancı vergisini tahmin edin, ABD, Türkiye, Almanya ve daha fazlası için kısa ve uzun vadeli oranları karşılaştırın.'
+      description: 'Ücretsiz Kripto Vergi Hesaplayıcı. 17 ülke için sermaye kazancı vergisini tahmin edin, kısa ve uzun vadeli oranları karşılaştırın.'
     },
     'what-if': {
       title: 'Ya Öyle Olsaydı Hesaplayıcı',
-      description: 'Ücretsiz Ya Öyle Olsaydı Hesaplayıcı. Varsayımsal kripto girişlerini simüle edin, fırsat maliyetini değerlendirin ve alternatif yatırım sonuçlarını karşılaştırın.'
+      description: 'Ücretsiz Ya Öyle Olsaydı Hesaplayıcı. Varsayımsal kripto girişlerini simüle edin, fırsat maliyetini değerlendirin ve alternatif sonuçları karşılaştırın.'
     },
     'position-size-calculator': {
       title: 'Pozisyon Boyutu Hesaplayıcı',
@@ -682,7 +1078,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'impermanent-loss-calculator': {
       title: 'Geçici Kayıp Hesaplayıcı',
-      description: 'Ücretsiz Geçici Kayıp Hesaplayıcı. AMM likidite havuzları için IL hesaplayın, LP getirilerini HODL ile karşılaştırın ve komisyon gelirinin kaybı telafi edip etmediğini görün.'
+      description: 'Ücretsiz Geçici Kayıp Hesaplayıcı. AMM likidite havuzları için IL hesaplayın, LP getirilerini HODL ile karşılaştırın ve komisyon gelirini değerlendirin.'
     },
     'apy-apr-calculator': {
       title: 'APY ve APR Hesaplayıcı',
@@ -702,7 +1098,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'bridge-comparator': {
       title: 'Köprü Maliyet Karşılaştırıcı',
-      description: 'Ücretsiz Köprü Maliyet Karşılaştırıcı. Kripto köprü rotalarını tahmini toplam ücret, hız ve güvenlik puanına göre L2 ve multichain köprüler arasında karşılaştırın.'
+      description: 'Ücretsiz Köprü Maliyet Karşılaştırıcı. Kripto köprü rotalarını tahmini ücret, hız ve güvenlik puanına göre L2 ve multichain köprülerde karşılaştırın.'
     },
     'lending-calculator': {
       title: 'Kripto Borç Verme Hesaplayıcı',
@@ -722,7 +1118,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'electricity-cost-calculator': {
       title: 'Madencilik Elektrik Maliyeti Hesaplayıcı',
-      description: 'Ücretsiz Madencilik Elektrik Maliyeti Hesaplayıcı. Cihaz sayısı, güç kullanımı, çalışma süresi ve yerel enerji fiyatına göre güç tüketimini ve işletme maliyetini hesaplayın.'
+      description: 'Ücretsiz Madencilik Elektrik Maliyeti Hesaplayıcı. Cihaz sayısı, güç kullanımı, çalışma süresi ve yerel enerji fiyatına göre maliyeti hesaplayın.'
     },
     'difficulty-calculator': {
       title: 'Madencilik Zorluk Tahmincisi',
@@ -766,7 +1162,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'airdrop-calculator': {
       title: 'Airdrop Değer Hesaplayıcı',
-      description: 'Ücretsiz Airdrop Değer Hesaplayıcı. Alınan kripto airdroplarının değerini hesaplayın, vergi yükümlülüğünü tahmin edin ve komisyonlar sonrası kar/zararı takip edin.'
+      description: 'Ücretsiz Airdrop Değer Hesaplayıcı. Alınan kripto airdroplarının değerini hesaplayın, vergi yükümlülüğünü tahmin edin ve kar/zararı takip edin.'
     },
     'satoshi-converter': {
       title: 'Satoshi Dönüştürücü',
@@ -798,7 +1194,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'nft-profit-calculator': {
       title: 'NFT Kar Hesaplayıcı',
-      description: 'Ücretsiz NFT Kar Hesaplayıcı. OpenSea, Blur ve daha fazlasında pazar yeri komisyonları, yaratıcı telif hakları ve gas maliyetleri sonrası gerçek NFT işlem karını hesaplayın.'
+      description: 'Ücretsiz NFT Kar Hesaplayıcı. Pazar yeri komisyonları, yaratıcı telif hakları ve gas maliyetleri sonrası gerçek NFT işlem karını hesaplayın.'
     },
     'halving-calculator': {
       title: 'Bitcoin Halving Hesaplayıcı',
@@ -810,7 +1206,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'gamefi-calculator': {
       title: 'GameFi ROI Hesaplayıcı',
-      description: 'Ücretsiz GameFi ROI Hesaplayıcı. Kurulum maliyeti, token ödülleri ve işletme giderlerine dayalı play-to-earn stratejileri için geri ödeme süresi ve yıllık ROI tahmin edin.'
+      description: 'Ücretsiz GameFi ROI Hesaplayıcı. Kurulum maliyeti ve token ödüllerine dayalı play-to-earn stratejileri için geri ödeme süresi ve yıllık ROI tahmin edin.'
     },
     'node-calculator': {
       title: 'Doğrulayıcı Düğüm Hesaplayıcı',
@@ -818,11 +1214,143 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'salary-calculator': {
       title: 'Kripto Maaş Hesaplayıcı',
-      description: 'Ücretsiz Kripto Maaş Hesaplayıcı. Fiat maaşınızı BTC, ETH veya USDT olarak dönüştürün. Ödeme sıklığı ve komisyon tahminleriyle zaman içinde kripto birikimini hesaplayın.'
+      description: 'Ücretsiz Kripto Maaş Hesaplayıcı. Fiat maaşınızı BTC, ETH veya USDT olarak dönüştürün. Ödeme sıklığı ve komisyonlarla kripto birikimini hesaplayın.'
     },
     'inflation-hedge': {
       title: 'Enflasyon Koruması Hesaplayıcı',
-      description: 'Ücretsiz Enflasyon Koruması Hesaplayıcı. Kripto, stablecoin, altın ve S&P 500 performansını Türkiye, Arjantin, Nijerya, ABD ve daha fazlasında enflasyonla karşılaştırın.'
+      description: 'Ücretsiz Enflasyon Koruması Hesaplayıcı. Kripto, stablecoin, altın ve S&P 500 performansını Türkiye, Arjantin, ABD ve daha fazlasında karşılaştırın.'
+    },
+    'calmar-calculator': {
+      title: 'Calmar Oranı Hesaplayıcı',
+      description: 'Yıllık getiri ve maksimum düşüşten Calmar oranını hesaplayarak düşüş riskine göre getiri verimliliğini karşılaştırın.'
+    },
+    'compound-interest-calculator': {
+      title: 'Kripto Bileşik Faiz Hesaplayıcı',
+      description: 'Staking ve yield farming için ücretsiz bileşik faiz hesaplayıcı. Günlük, haftalık veya aylık bileşik faizin yatırımınızı nasıl büyüttüğünü görün.'
+    },
+    'drawdown-calculator': {
+      title: 'Drawdown Toparlanma Hesaplayıcı',
+      description: 'Portföy düşüşünü, gerekli toparlanma kazancını ve beklenen aylık getiriye göre tahmini toparlanma süresini ölçün.'
+    },
+    'gas-fee-calculator': {
+      title: 'Gas Ücreti Hesaplayıcı',
+      description: 'Ethereum, Polygon, Arbitrum, Optimism, BNB Chain ve daha fazlası için ücretsiz gas hesaplayıcı. Swap, transfer ve minting işlem maliyetlerini tahmin edin.'
+    },
+    'information-ratio-calculator': {
+      title: 'Bilgi Oranı Hesaplayıcı',
+      description: 'Aktif getiri ve takip hatası kullanarak aktif portföy performansını benchmark ile karşılaştırın.'
+    },
+    'kelly-calculator': {
+      title: 'Kelly Kriteri Hesaplayıcı',
+      description: 'Kazanma oranı ve ödeme oranından Kelly, yarım-Kelly ve çeyrek-Kelly modelleriyle optimal pozisyon boyutunu bulun.'
+    },
+    'leverage-calculator': {
+      title: 'Kaldıraç Hesaplayıcı',
+      description: 'Kripto için ücretsiz kaldıraç hesaplayıcı. Kaldıracın kazanç ve kayıpları nasıl büyüttüğünü, likidasyon mesafesini ve PnL tablosunu görün.'
+    },
+    'loan-calculator': {
+      title: 'Kripto Kredi Hesaplayıcı',
+      description: 'Ücretsiz kripto teminatlı kredi hesaplayıcı. Kredi maliyetlerini, aylık faizi, margin call eşiğini ve DeFi/CeFi likidasyon fiyatlarını tahmin edin.'
+    },
+    'portfolio-calculator': {
+      title: 'Portföy Dağılım Hesaplayıcı',
+      description: 'Ücretsiz portföy dağılım hesaplayıcı. Varlık ağırlıklarını görselleştirin, hedef dağılımları belirleyin ve kripto portföyünüz için dengeleme önerileri alın.'
+    },
+    'risk-of-ruin-calculator': {
+      title: 'İflas Riski Hesaplayıcı',
+      description: 'Kazanma oranı, ödül/risk profili ve işlem başına sabit riskten hesap iflas olasılığını tahmin edin.'
+    },
+    'sharpe-calculator': {
+      title: 'Sharpe Oranı Hesaplayıcı',
+      description: 'Beklenen getiri, volatilite ve risksiz faiz oranı kullanarak riske göre düzeltilmiş portföy performansını değerlendirin.'
+    },
+    'slippage-calculator': {
+      title: 'DEX Slippage Hesaplayıcı',
+      description: 'DEX işlemleri için swap slippage, minimum alınan miktar ve toplam uygulama maliyetini tahmin edin.'
+    },
+    'sortino-calculator': {
+      title: 'Sortino Oranı Hesaplayıcı',
+      description: 'Sortino oranını kullanarak aşağı yönlü volatiliteye odaklanarak riske göre düzeltilmiş portföy performansını ölçün.'
+    },
+    'staking-rewards-calculator': {
+      title: 'Staking Ödül Hesaplayıcı',
+      description: 'Ücretsiz staking hesaplayıcı. Ethereum, Solana, Polkadot, Cosmos ve diğer PoS coinleri için günlük, haftalık ve aylık kazançları tahmin edin.'
+    },
+    'trade-expectancy-calculator': {
+      title: 'İşlem Beklentisi Hesaplayıcı',
+      description: 'İşlem başına strateji avantajını tahmin edin ve kazanma oranı, R-katları ve işlem başına riskle aylık sonuçları yansıtın.'
+    },
+    'treynor-calculator': {
+      title: 'Treynor Oranı Hesaplayıcı',
+      description: 'Piyasa riski (beta) birimi başına getiriyi ölçün ve strateji verimliliğini risksiz faiz oranına göre değerlendirin.'
+    },
+    'var-calculator': {
+      title: 'Riske Maruz Değer (VaR) Hesaplayıcı',
+      description: 'Parametrik VaR ve beklenen kayıp (CVaR) ile birden fazla güven düzeyinde portföy aşağı yönlü riskini tahmin edin.'
+    },
+    'bitcoin-unit-converter': {
+      title: 'Bitcoin Birim Dönüştürücü',
+      description: 'Ücretsiz Bitcoin Birim Dönüştürücü. BTC, mBTC, bits ve satoshi arasında anında dönüşüm yapın. Canlı USD değeri ve hızlı referans tablosu içerir.'
+    },
+    'cross-chain-bridge-calculator': {
+      title: 'Cross-Chain Köprü Hesaplayıcı',
+      description: 'Ücretsiz Cross-Chain Köprü Hesaplayıcı. Ethereum, Arbitrum, Solana ve 20+ zincir arasında token transferi için köprü ücreti, süre ve slippage tahmin edin.'
+    },
+    'crypto-correlation-calculator': {
+      title: 'Kripto Korelasyon Hesaplayıcı',
+      description: 'Ücretsiz Kripto Korelasyon Hesaplayıcı. İki kripto para arasındaki fiyat korelasyonunu ölçün ve daha düşük riskli çeşitlendirilmiş portföy oluşturun.'
+    },
+    'crypto-index-fund-calculator': {
+      title: 'Kripto Endeks Fon Hesaplayıcı',
+      description: 'Ücretsiz Kripto Endeks Fon Hesaplayıcı. Piyasa değeri veya eşit ağırlıklı özel kripto endeksi oluşturun ve performansı BTC ile karşılaştırın.'
+    },
+    'crypto-inheritance-calculator': {
+      title: 'Kripto Miras Hesaplayıcı',
+      description: 'Ücretsiz Kripto Miras Hesaplayıcı. Dijital varlık devir planlaması yapın: çoklu imza maliyetleri, veraset vergisi tahmini ve mirasçı dağılımı modelleme.'
+    },
+    'crypto-portfolio-rebalance-calculator': {
+      title: 'Kripto Portföy Dengeleme Hesaplayıcı',
+      description: 'Ücretsiz Kripto Portföy Dengeleme Hesaplayıcı. Mevcut varlıklarınızı ve hedef ağırlıkları girerek gereken alım-satım miktarlarını hesaplayın.'
+    },
+    'crypto-sentiment-calculator': {
+      title: 'Kripto Duygu Analizi Hesaplayıcı',
+      description: 'Ücretsiz Kripto Duygu Analizi Hesaplayıcı. Fear & Greed endeksi, sosyal hacim ve fonlama oranlarını tek bir bileşik skor olarak birleştirin.'
+    },
+    'defi-yield-aggregator': {
+      title: 'DeFi Getiri Toplayıcı',
+      description: 'Ücretsiz DeFi Getiri Toplayıcı. Aave, Compound, Lido ve 50+ protokolde gerçek zamanlı APY karşılaştırın. Zincir, varlık ve TVL ile filtreleyin.'
+    },
+    'dust-attack-calculator': {
+      title: 'Dust Saldırı Hesaplayıcı',
+      description: 'Ücretsiz Dust Saldırı Hesaplayıcı. Cüzdanınızdaki küçük istenmeyen işlemleri tespit edin, birleştirme maliyetini hesaplayın ve zincir üstü gizliliğinizi koruyun.'
+    },
+    'exchange-fee-comparator': {
+      title: 'Borsa Ücret Karşılaştırma Hesaplayıcı',
+      description: 'Ücretsiz Borsa Ücret Karşılaştırma. Binance, Coinbase, Kraken, OKX ve Bybit ücretlerini spot, vadeli ve çekim bazında yan yana karşılaştırın.'
+    },
+    'flash-loan-calculator': {
+      title: 'Flash Kredi Hesaplayıcı',
+      description: 'Ücretsiz Flash Kredi Hesaplayıcı. Aave, dYdX ve Uniswap için protokol ücreti, gas maliyeti ve arbitraj spread dahil kârlılığı hesaplayın.'
+    },
+    'gas-optimization-calculator': {
+      title: 'Gas Optimizasyon Hesaplayıcı',
+      description: 'Ücretsiz Gas Optimizasyon Hesaplayıcı. Ethereum ve L2lerde en ucuz işlem saatini bulun. Saatlik gas maliyetlerini karşılaştırın ve ücretlerden tasarruf edin.'
+    },
+    'governance-voting-calculator': {
+      title: 'Yönetişim Oylama Hesaplayıcı',
+      description: 'Ücretsiz Yönetişim Oylama Hesaplayıcı. DAO teklifleri için oy gücü, yeter sayı gereksinimleri ve delegasyon etkisini tahmin edin.'
+    },
+    'nft-rarity-calculator': {
+      title: 'NFT Nadirlik Hesaplayıcı',
+      description: 'Ücretsiz NFT Nadirlik Hesaplayıcı. İstatistiksel nadirlik, ortalama özellik ve bilgi içeriği yöntemleriyle herhangi bir koleksiyonun özellik nadirliğini puanlayın.'
+    },
+    'token-unlock-calculator': {
+      title: 'Token Kilit Açma Hesaplayıcı',
+      description: 'Ücretsiz Token Kilit Açma Hesaplayıcı. Yaklaşan token açılışlarını takip edin, satış baskısını tahmin edin ve vesting takvimlerini görselleştirin.'
+    },
+    'whale-alert-calculator': {
+      title: 'Balina Uyarı Hesaplayıcı',
+      description: 'Ücretsiz Balina Uyarı Hesaplayıcı. Büyük transferlerin piyasa etkisini tahmin edin, balina emirlerinden kaynaklanan slippage hesaplayın ve uyarı eşikleri belirleyin.'
     },
   },
   'hi': {
@@ -1024,11 +1552,143 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'salary-calculator': {
       title: 'क्रिप्टो सैलरी कैलकुलेटर',
-      description: 'मुफ्त क्रिप्टो सैलरी कैलकुलेटर। अपनी फिएट सैलरी को BTC, ETH या USDT में कन्वर्ट करें। भुगतान आवृत्ति और फीस अनुमान के साथ समय के साथ क्रिप्टो संचय कैलकुलेट करें।'
+      description: 'मुफ्त क्रिप्टो सैलरी कैलकुलेटर। फिएट सैलरी को BTC, ETH या USDT में कन्वर्ट करें। भुगतान आवृत्ति और फीस के साथ क्रिप्टो संचय कैलकुलेट करें।'
     },
     'inflation-hedge': {
       title: 'मुद्रास्फीति बचाव कैलकुलेटर',
-      description: 'मुफ्त मुद्रास्फीति बचाव कैलकुलेटर। तुर्की, अर्जेंटीना, नाइजीरिया, अमेरिका और अन्य देशों में मुद्रास्फीति के खिलाफ क्रिप्टो, स्टेबलकॉइन, गोल्ड और S&P 500 की तुलना करें।'
+      description: 'मुफ्त मुद्रास्फीति बचाव कैलकुलेटर। मुद्रास्फीति के खिलाफ क्रिप्टो, स्टेबलकॉइन, गोल्ड और S&P 500 की तुलना करें। तुर्की, अमेरिका और अन्य देश।'
+    },
+    'calmar-calculator': {
+      title: 'कैल्मर अनुपात कैलकुलेटर',
+      description: 'वार्षिक रिटर्न और अधिकतम ड्रॉडाउन से कैल्मर अनुपात की गणना करें और ड्रॉडाउन जोखिम के अनुसार रिटर्न दक्षता की तुलना करें।'
+    },
+    'compound-interest-calculator': {
+      title: 'क्रिप्टो चक्रवृद्धि ब्याज कैलकुलेटर',
+      description: 'स्टेकिंग और यील्ड फार्मिंग के लिए मुफ्त चक्रवृद्धि ब्याज कैलकुलेटर। देखें कि दैनिक, साप्ताहिक या मासिक कंपाउंडिंग आपके निवेश को कैसे बढ़ाती है।'
+    },
+    'drawdown-calculator': {
+      title: 'ड्रॉडाउन रिकवरी कैलकुलेटर',
+      description: 'पोर्टफोलियो ड्रॉडाउन, आवश्यक रिकवरी लाभ और अपेक्षित मासिक रिटर्न के आधार पर अनुमानित रिकवरी समय मापें।'
+    },
+    'gas-fee-calculator': {
+      title: 'गैस फीस कैलकुलेटर',
+      description: 'Ethereum, Polygon, Arbitrum, Optimism, BNB Chain और अन्य के लिए मुफ्त गैस कैलकुलेटर। स्वैप, ट्रांसफर और मिंटिंग लागत का अनुमान लगाएं।'
+    },
+    'information-ratio-calculator': {
+      title: 'इंफॉर्मेशन रेशियो कैलकुलेटर',
+      description: 'एक्टिव रिटर्न और ट्रैकिंग एरर का उपयोग करके बेंचमार्क के विरुद्ध सक्रिय पोर्टफोलियो प्रदर्शन की तुलना करें।'
+    },
+    'kelly-calculator': {
+      title: 'केली क्राइटेरियन कैलकुलेटर',
+      description: 'विन रेट और पेऑफ रेशियो से Kelly, half-Kelly और quarter-Kelly मॉडल का उपयोग करके इष्टतम पोजीशन साइज ज्ञात करें।'
+    },
+    'leverage-calculator': {
+      title: 'लीवरेज कैलकुलेटर',
+      description: 'क्रिप्टो के लिए मुफ्त लीवरेज कैलकुलेटर। देखें कि लीवरेज लाभ और हानि को कैसे बढ़ाता है, लिक्विडेशन दूरी और PnL तालिका के साथ।'
+    },
+    'loan-calculator': {
+      title: 'क्रिप्टो लोन कैलकुलेटर',
+      description: 'मुफ्त क्रिप्टो-समर्थित लोन कैलकुलेटर। लोन लागत, मासिक ब्याज, मार्जिन कॉल सीमा और DeFi/CeFi लिक्विडेशन मूल्य का अनुमान लगाएं।'
+    },
+    'portfolio-calculator': {
+      title: 'पोर्टफोलियो आवंटन कैलकुलेटर',
+      description: 'मुफ्त पोर्टफोलियो आवंटन कैलकुलेटर। एसेट वेट देखें, लक्ष्य आवंटन सेट करें और अपने क्रिप्टो पोर्टफोलियो के लिए रीबैलेंसिंग सुझाव पाएं।'
+    },
+    'risk-of-ruin-calculator': {
+      title: 'रिस्क ऑफ रुइन कैलकुलेटर',
+      description: 'विन रेट, रिवॉर्ड/रिस्क प्रोफाइल और प्रति ट्रेड निश्चित जोखिम से खाता बर्बादी की संभावना का अनुमान लगाएं।'
+    },
+    'sharpe-calculator': {
+      title: 'शार्प रेशियो कैलकुलेटर',
+      description: 'अपेक्षित रिटर्न, अस्थिरता और जोखिम-मुक्त दर का उपयोग करके जोखिम-समायोजित पोर्टफोलियो प्रदर्शन का मूल्यांकन करें।'
+    },
+    'slippage-calculator': {
+      title: 'DEX स्लिपेज कैलकुलेटर',
+      description: 'DEX ट्रेड्स के लिए स्वैप स्लिपेज, न्यूनतम प्राप्त राशि और कुल निष्पादन लागत का अनुमान लगाएं।'
+    },
+    'sortino-calculator': {
+      title: 'सॉर्टिनो रेशियो कैलकुलेटर',
+      description: 'सॉर्टिनो रेशियो का उपयोग करके डाउनसाइड-वोलैटिलिटी फोकस के साथ जोखिम-समायोजित पोर्टफोलियो प्रदर्शन मापें।'
+    },
+    'staking-rewards-calculator': {
+      title: 'स्टेकिंग रिवॉर्ड्स कैलकुलेटर',
+      description: 'मुफ्त स्टेकिंग कैलकुलेटर। Ethereum, Solana, Polkadot, Cosmos और अन्य PoS कॉइन्स के लिए दैनिक, साप्ताहिक और मासिक कमाई का अनुमान लगाएं।'
+    },
+    'trade-expectancy-calculator': {
+      title: 'ट्रेड एक्सपेक्टेंसी कैलकुलेटर',
+      description: 'विन रेट, R-मल्टीपल्स और प्रति ट्रेड जोखिम का उपयोग करके प्रति ट्रेड रणनीति का लाभ और मासिक परिणाम प्रक्षेपित करें।'
+    },
+    'treynor-calculator': {
+      title: 'ट्रेनर रेशियो कैलकुलेटर',
+      description: 'बाजार जोखिम (बीटा) की प्रति इकाई रिटर्न मापें और जोखिम-मुक्त दर के विरुद्ध रणनीति दक्षता का मूल्यांकन करें।'
+    },
+    'var-calculator': {
+      title: 'वैल्यू एट रिस्क (VaR) कैलकुलेटर',
+      description: 'पैरामेट्रिक VaR और अपेक्षित शॉर्टफॉल (CVaR) के साथ विभिन्न विश्वास स्तरों पर पोर्टफोलियो डाउनसाइड जोखिम का अनुमान लगाएं।'
+    },
+    'bitcoin-unit-converter': {
+      title: 'बिटकॉइन यूनिट कनवर्टर',
+      description: 'मुफ्त बिटकॉइन यूनिट कनवर्टर। BTC, mBTC, bits और सतोशी के बीच तुरंत रूपांतरण करें। लाइव USD मूल्य और त्वरित संदर्भ तालिका शामिल है।'
+    },
+    'cross-chain-bridge-calculator': {
+      title: 'क्रॉस-चेन ब्रिज कैलकुलेटर',
+      description: 'मुफ्त क्रॉस-चेन ब्रिज कैलकुलेटर। Ethereum, Arbitrum, Solana और 20+ चेन के बीच टोकन ट्रांसफर के लिए ब्रिज शुल्क, समय और स्लिपेज का अनुमान लगाएं।'
+    },
+    'crypto-correlation-calculator': {
+      title: 'क्रिप्टो कोरिलेशन कैलकुलेटर',
+      description: 'मुफ्त क्रिप्टो कोरिलेशन कैलकुलेटर। किन्हीं दो क्रिप्टोकरेंसी के बीच मूल्य सहसंबंध मापें और कम समग्र जोखिम वाला विविध पोर्टफोलियो बनाएं।'
+    },
+    'crypto-index-fund-calculator': {
+      title: 'क्रिप्टो इंडेक्स फंड कैलकुलेटर',
+      description: 'मुफ्त क्रिप्टो इंडेक्स फंड कैलकुलेटर। मार्केट कैप या समान वज़न से कस्टम क्रिप्टो इंडेक्स बनाएं और BTC के मुकाबले प्रदर्शन की तुलना करें।'
+    },
+    'crypto-inheritance-calculator': {
+      title: 'क्रिप्टो विरासत कैलकुलेटर',
+      description: 'मुफ्त क्रिप्टो विरासत कैलकुलेटर। मल्टी-सिग सेटअप लागत, संपत्ति कर अनुमान और उत्तराधिकारी वितरण मॉडलिंग के साथ डिजिटल संपत्ति उत्तराधिकार की योजना बनाएं।'
+    },
+    'crypto-portfolio-rebalance-calculator': {
+      title: 'क्रिप्टो पोर्टफोलियो रीबैलेंस कैलकुलेटर',
+      description: 'मुफ्त क्रिप्टो पोर्टफोलियो रीबैलेंस कैलकुलेटर। वर्तमान होल्डिंग्स और लक्ष्य वज़न दर्ज करें और रीबैलेंस के लिए सटीक खरीद-बिक्री राशि देखें।'
+    },
+    'crypto-sentiment-calculator': {
+      title: 'क्रिप्टो सेंटिमेंट कैलकुलेटर',
+      description: 'मुफ्त क्रिप्टो सेंटिमेंट कैलकुलेटर। Fear & Greed इंडेक्स, सोशल वॉल्यूम और फंडिंग रेट को एक समग्र सेंटिमेंट स्कोर में एकत्रित करें।'
+    },
+    'defi-yield-aggregator': {
+      title: 'DeFi यील्ड एग्रीगेटर',
+      description: 'मुफ्त DeFi यील्ड एग्रीगेटर। Aave, Compound, Lido और 50+ प्रोटोकॉल पर रियल-टाइम APY की तुलना करें। चेन, एसेट और TVL से फ़िल्टर करें।'
+    },
+    'dust-attack-calculator': {
+      title: 'डस्ट अटैक कैलकुलेटर',
+      description: 'मुफ्त डस्ट अटैक कैलकुलेटर। अपने वॉलेट में छोटे अनचाहे लेनदेन का पता लगाएं, समेकन लागत का अनुमान लगाएं और ऑन-चेन प्राइवेसी सुरक्षित करें।'
+    },
+    'exchange-fee-comparator': {
+      title: 'एक्सचेंज फीस कम्पेरेटर',
+      description: 'मुफ्त एक्सचेंज फीस कम्पेरेटर। Binance, Coinbase, Kraken, OKX और Bybit की स्पॉट, फ्यूचर्स और निकासी शुल्क की साथ-साथ तुलना करें।'
+    },
+    'flash-loan-calculator': {
+      title: 'फ्लैश लोन कैलकुलेटर',
+      description: 'मुफ्त फ्लैश लोन कैलकुलेटर। Aave, dYdX और Uniswap के लिए प्रोटोकॉल शुल्क, गैस लागत और आर्बिट्राज स्प्रेड सहित लाभप्रदता का अनुमान लगाएं।'
+    },
+    'gas-optimization-calculator': {
+      title: 'गैस ऑप्टिमाइज़ेशन कैलकुलेटर',
+      description: 'मुफ्त गैस ऑप्टिमाइज़ेशन कैलकुलेटर। Ethereum और L2 पर सबसे सस्ते लेनदेन समय का पता लगाएं। घंटे के अनुसार गैस लागत तुलना करें और बचत करें।'
+    },
+    'governance-voting-calculator': {
+      title: 'गवर्नेंस वोटिंग कैलकुलेटर',
+      description: 'मुफ्त गवर्नेंस वोटिंग कैलकुलेटर। DAO प्रस्तावों के लिए मतदान शक्ति, कोरम आवश्यकताएं और प्रतिनिधिमंडल प्रभाव का अनुमान लगाएं।'
+    },
+    'nft-rarity-calculator': {
+      title: 'NFT रेयरिटी कैलकुलेटर',
+      description: 'मुफ्त NFT रेयरिटी कैलकुलेटर। सांख्यिकीय दुर्लभता, औसत विशेषता और सूचना-सामग्री विधियों से किसी भी NFT संग्रह की विशेषता दुर्लभता स्कोर करें।'
+    },
+    'token-unlock-calculator': {
+      title: 'टोकन अनलॉक कैलकुलेटर',
+      description: 'मुफ्त टोकन अनलॉक कैलकुलेटर। आगामी टोकन अनलॉक इवेंट ट्रैक करें, बिक्री दबाव प्रभाव का अनुमान लगाएं और वेस्टिंग शेड्यूल विज़ुअलाइज़ करें।'
+    },
+    'whale-alert-calculator': {
+      title: 'व्हेल अलर्ट कैलकुलेटर',
+      description: 'मुफ्त व्हेल अलर्ट कैलकुलेटर। बड़े ट्रांसफर के बाज़ार प्रभाव का अनुमान लगाएं, व्हेल ऑर्डर से स्लिपेज की गणना करें और कस्टम अलर्ट थ्रेशोल्ड सेट करें।'
     },
   },
   'ru': {
@@ -1046,7 +1706,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'dca-calculator': {
       title: 'Калькулятор DCA',
-      description: 'Бесплатный DCA-калькулятор для Bitcoin, Ethereum и 500+ криптовалют. Симулируйте стратегии усреднения с историческими данными, сравните DCA и единовременное вложение.'
+      description: 'Бесплатный DCA-калькулятор для Bitcoin, Ethereum и 500+ криптовалют. Симулируйте стратегии усреднения с историческими данными и сравните DCA.'
     },
     'tax-calculator': {
       title: 'Калькулятор налогов на криптовалюту',
@@ -1058,7 +1718,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'position-size-calculator': {
       title: 'Калькулятор размера позиции',
-      description: 'Бесплатный калькулятор размера позиции. Определите оптимальный размер сделки на основе баланса, допустимого риска и стоп-лосса. Поддержка кредитного плеча до 125x.'
+      description: 'Бесплатный калькулятор размера позиции. Определите оптимальный размер сделки на основе баланса, риска и стоп-лосса. Плечо до 125x.'
     },
     'liquidation-calculator': {
       title: 'Калькулятор ликвидации',
@@ -1134,7 +1794,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'electricity-cost-calculator': {
       title: 'Калькулятор стоимости электроэнергии для майнинга',
-      description: 'Бесплатный калькулятор электроэнергии для майнинга. Рассчитайте энергопотребление и эксплуатационные расходы по количеству устройств, мощности и местному тарифу.'
+      description: 'Бесплатный калькулятор электроэнергии для майнинга. Рассчитайте энергопотребление и расходы по количеству устройств, мощности и тарифу.'
     },
     'difficulty-calculator': {
       title: 'Калькулятор сложности майнинга',
@@ -1182,7 +1842,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'satoshi-converter': {
       title: 'Конвертер сатоши',
-      description: 'Бесплатный конвертер сатоши. Мгновенно конвертируйте между Bitcoin, сатоши и USD/EUR. Сатоши за доллар, таблицы быстрого справочника и курс BTC в реальном времени.'
+      description: 'Бесплатный конвертер сатоши. Мгновенно конвертируйте между Bitcoin, сатоши и USD/EUR. Сатоши за доллар, таблицы и курс BTC в реальном времени.'
     },
     'gwei-converter': {
       title: 'Конвертер Gwei',
@@ -1210,7 +1870,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'nft-profit-calculator': {
       title: 'Калькулятор прибыли NFT',
-      description: 'Бесплатный калькулятор прибыли NFT. Рассчитайте реальную прибыль от торговли NFT после комиссий маркетплейса, роялти создателя и стоимости газа на OpenSea, Blur и др.'
+      description: 'Бесплатный калькулятор прибыли NFT. Рассчитайте реальную прибыль от торговли NFT после комиссий маркетплейса, роялти создателя и стоимости газа.'
     },
     'halving-calculator': {
       title: 'Калькулятор халвинга биткоина',
@@ -1235,6 +1895,138 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     'inflation-hedge': {
       title: 'Калькулятор хеджирования инфляции',
       description: 'Бесплатный калькулятор хеджирования инфляции. Сравните крипто, стейблкоины, золото и S&P 500 с инфляцией в Турции, Аргентине, Нигерии, США и других странах.'
+    },
+    'calmar-calculator': {
+      title: 'Калькулятор коэффициента Кальмара',
+      description: 'Рассчитайте коэффициент Кальмара по годовой доходности и максимальной просадке для сравнения эффективности доходности на единицу риска.'
+    },
+    'compound-interest-calculator': {
+      title: 'Калькулятор сложного процента для крипто',
+      description: 'Бесплатный калькулятор сложного процента для стейкинга и фарминга. Узнайте, как ежедневное, еженедельное или ежемесячное начисление увеличивает ваши вложения.'
+    },
+    'drawdown-calculator': {
+      title: 'Калькулятор восстановления после просадки',
+      description: 'Измерьте просадку портфеля, необходимый для восстановления прирост и расчётное время восстановления на основе ожидаемой месячной доходности.'
+    },
+    'gas-fee-calculator': {
+      title: 'Калькулятор комиссии газа',
+      description: 'Бесплатный калькулятор газа для Ethereum, Polygon, Arbitrum, Optimism, BNB Chain и других. Оцените стоимость свопов, переводов и минтинга.'
+    },
+    'information-ratio-calculator': {
+      title: 'Калькулятор информационного коэффициента',
+      description: 'Сравните активную доходность портфеля с бенчмарком, используя активный доход и ошибку отслеживания.'
+    },
+    'kelly-calculator': {
+      title: 'Калькулятор критерия Келли',
+      description: 'Найдите оптимальный размер позиции по винрейту и коэффициенту выплат с моделями Келли, полу-Келли и четверть-Келли.'
+    },
+    'leverage-calculator': {
+      title: 'Калькулятор кредитного плеча',
+      description: 'Бесплатный калькулятор плеча для крипто. Узнайте, как плечо усиливает прибыль и убытки, с расстоянием до ликвидации и таблицей PnL.'
+    },
+    'loan-calculator': {
+      title: 'Калькулятор криптозайма',
+      description: 'Бесплатный калькулятор криптозайма. Оцените стоимость кредита, ежемесячный процент, порог margin call и цену ликвидации для DeFi и CeFi.'
+    },
+    'portfolio-calculator': {
+      title: 'Калькулятор распределения портфеля',
+      description: 'Бесплатный калькулятор распределения портфеля. Визуализируйте веса активов, задайте целевые доли и получите рекомендации по ребалансировке.'
+    },
+    'risk-of-ruin-calculator': {
+      title: 'Калькулятор риска разорения',
+      description: 'Оцените вероятность разорения счёта на основе винрейта, профиля риск/доходность и фиксированного риска на сделку.'
+    },
+    'sharpe-calculator': {
+      title: 'Калькулятор коэффициента Шарпа',
+      description: 'Оцените доходность портфеля с поправкой на риск, используя ожидаемый доход, волатильность и безрисковую ставку.'
+    },
+    'slippage-calculator': {
+      title: 'Калькулятор проскальзывания DEX',
+      description: 'Оцените проскальзывание свопа, минимальную получаемую сумму и общую стоимость исполнения для сделок на DEX.'
+    },
+    'sortino-calculator': {
+      title: 'Калькулятор коэффициента Сортино',
+      description: 'Измерьте доходность портфеля с поправкой на риск с акцентом на нисходящую волатильность, используя коэффициент Сортино.'
+    },
+    'staking-rewards-calculator': {
+      title: 'Калькулятор наград за стейкинг',
+      description: 'Бесплатный калькулятор стейкинга. Оцените ежедневный, еженедельный и ежемесячный заработок для Ethereum, Solana, Polkadot, Cosmos и других PoS-монет.'
+    },
+    'trade-expectancy-calculator': {
+      title: 'Калькулятор ожидания сделки',
+      description: 'Оцените преимущество стратегии на сделку и спрогнозируйте месячные результаты по винрейту, R-мультипликаторам и риску на сделку.'
+    },
+    'treynor-calculator': {
+      title: 'Калькулятор коэффициента Трейнора',
+      description: 'Измерьте доходность на единицу рыночного риска (бета) и оцените эффективность стратегии относительно безрисковой ставки.'
+    },
+    'var-calculator': {
+      title: 'Калькулятор стоимости под риском (VaR)',
+      description: 'Оцените нисходящий риск портфеля с параметрическим VaR и ожидаемым дефицитом (CVaR) на разных уровнях доверия.'
+    },
+    'bitcoin-unit-converter': {
+      title: 'Конвертер единиц биткоина',
+      description: 'Бесплатный конвертер единиц биткоина. Мгновенно переводите между BTC, mBTC, bits и сатоши с актуальным курсом в USD и справочной таблицей номиналов.'
+    },
+    'cross-chain-bridge-calculator': {
+      title: 'Калькулятор кроссчейн-моста',
+      description: 'Бесплатный калькулятор кроссчейн-моста. Оцените комиссию, время перевода и проскальзывание при переводе токенов между Ethereum, Arbitrum, Solana и 20+ сетями.'
+    },
+    'crypto-correlation-calculator': {
+      title: 'Калькулятор корреляции криптовалют',
+      description: 'Бесплатный калькулятор корреляции криптовалют. Измерьте ценовую корреляцию между любыми двумя криптовалютами и создайте диверсифицированный портфель.'
+    },
+    'crypto-index-fund-calculator': {
+      title: 'Калькулятор крипто-индексного фонда',
+      description: 'Бесплатный калькулятор крипто-индексного фонда. Создайте индекс по рыночной капитализации или равным весам и сравните доходность с BTC.'
+    },
+    'crypto-inheritance-calculator': {
+      title: 'Калькулятор наследования криптовалют',
+      description: 'Бесплатный калькулятор наследования криптовалют. Планируйте передачу цифровых активов: мультиподпись, налоги на наследство и распределение между наследниками.'
+    },
+    'crypto-portfolio-rebalance-calculator': {
+      title: 'Калькулятор ребалансировки крипто-портфеля',
+      description: 'Бесплатный калькулятор ребалансировки портфеля. Введите текущие активы и целевые доли, чтобы увидеть точные суммы покупки и продажи.'
+    },
+    'crypto-sentiment-calculator': {
+      title: 'Калькулятор настроений крипторынка',
+      description: 'Бесплатный калькулятор настроений крипторынка. Агрегирует индекс Fear & Greed, социальные объёмы и ставки фандинга в единый составной показатель.'
+    },
+    'defi-yield-aggregator': {
+      title: 'Агрегатор доходности DeFi',
+      description: 'Бесплатный агрегатор доходности DeFi. Сравните APY в реальном времени на Aave, Compound, Lido и 50+ протоколах. Фильтр по сети, активу и TVL.'
+    },
+    'dust-attack-calculator': {
+      title: 'Калькулятор dust-атаки',
+      description: 'Бесплатный калькулятор dust-атаки. Обнаруживайте мелкие нежелательные транзакции, оцените стоимость консолидации и защитите приватность в блокчейне.'
+    },
+    'exchange-fee-comparator': {
+      title: 'Сравнение комиссий бирж',
+      description: 'Бесплатное сравнение комиссий бирж. Сравните тарифы Binance, Coinbase, Kraken, OKX и Bybit для спота, фьючерсов и вывода средств бок о бок.'
+    },
+    'flash-loan-calculator': {
+      title: 'Калькулятор флеш-займа',
+      description: 'Бесплатный калькулятор флеш-займа. Оцените прибыльность с учётом комиссий протокола, газа и арбитражного спреда для Aave, dYdX и Uniswap.'
+    },
+    'gas-optimization-calculator': {
+      title: 'Калькулятор оптимизации газа',
+      description: 'Бесплатный калькулятор оптимизации газа. Найдите самое дешёвое время для транзакций в Ethereum и L2. Сравните стоимость газа по часам и экономьте.'
+    },
+    'governance-voting-calculator': {
+      title: 'Калькулятор голосования DAO',
+      description: 'Бесплатный калькулятор голосования DAO. Оцените силу голоса, требования кворума и влияние делегирования для предложений децентрализованного управления.'
+    },
+    'nft-rarity-calculator': {
+      title: 'Калькулятор редкости NFT',
+      description: 'Бесплатный калькулятор редкости NFT. Оцените редкость атрибутов методами статистической редкости, среднего признака и информационного содержания.'
+    },
+    'token-unlock-calculator': {
+      title: 'Калькулятор разблокировки токенов',
+      description: 'Бесплатный калькулятор разблокировки токенов. Отслеживайте предстоящие анлоки, оцените давление продаж и визуализируйте график вестинга любого проекта.'
+    },
+    'whale-alert-calculator': {
+      title: 'Калькулятор китовых операций',
+      description: 'Бесплатный калькулятор китовых операций. Оцените влияние крупных переводов на рынок, рассчитайте проскальзывание от крупных ордеров и настройте пороги оповещений.'
     },
   },
 };
