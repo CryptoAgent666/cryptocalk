@@ -59,11 +59,13 @@ const homepageUrl = `${siteUrl}/`;
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
   name: 'CryptoCalk',
   url: homepageUrl,
   description:
     'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 60+ more tools.',
   inLanguage: 'en',
+  publisher: { '@type': 'Organization', '@id': `${siteUrl}/#organization` },
   potentialAction: {
     '@type': 'SearchAction',
     target: {
@@ -77,11 +79,12 @@ const websiteSchema = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
   name: 'CryptoCalk',
   url: siteUrl,
   logo: {
     '@type': 'ImageObject',
-    url: `${siteUrl}/favicon.svg`,
+    url: `${siteUrl}/logo-200x200.png`,
     width: 200,
     height: 200,
   },
@@ -96,6 +99,11 @@ const organizationSchema = {
     email: 'support@cryptocalk.com',
     contactType: 'customer support',
     availableLanguage: ['en', 'es', 'pt', 'tr', 'hi', 'ru'],
+  },
+  founder: {
+    '@type': 'Person',
+    '@id': `${siteUrl}/about/#founder`,
+    name: 'Konstantin Iakovlev',
   },
 };
 
@@ -112,18 +120,24 @@ const itemListSchema = {
   })),
 };
 
+const buildDate = new Date().toISOString().split('T')[0];
+
 const softwareAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
+  '@id': `${homepageUrl}#app`,
   name: 'CryptoCalk',
   url: homepageUrl,
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'All',
   description: 'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 60+ more tools.',
   inLanguage: 'en',
+  datePublished: '2025-11-01',
+  dateModified: buildDate,
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   author: {
     '@type': 'Person',
+    '@id': `${siteUrl}/about/#founder`,
     name: 'Konstantin Iakovlev',
     url: `${siteUrl}/about/`,
   },
