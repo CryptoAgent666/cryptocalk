@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-22] (update 36) — Non-EN content quality audit
+
+### Fixed
+- **Turkish corrupted text** (ui-strings.ts:2117): Garbled "Ağ yoğunlk (Kzım T Cns..." replaced with proper Turkish translation for block estimate disclaimer
+- **Hindi English leak** (ui-strings.ts:3138): Removed stray English word "conditional" from Hindi "No price data" string
+- **Russian mixed script** (ui-strings.ts:4162): Fixed EN key containing Cyrillic "и" → "and"; rewrote incomplete Russian translation to fully cover routing, MEV, oracle lag, and liquidity changes
+
+### Verified
+- ES/PT: 600+ entries — 0 issues found, professional quality
+- TR/HI/RU: 3 issues fixed, remaining content clean
+- All 15 live pages (3 calcs × 5 langs) fully localized, 0 console errors
+- Build: 935 pages, 0 errors
+
 ## [2026-03-22] (update 35) — UI/UX audit: performance, anti-patterns, accessibility
 
 ### Fixed — Performance (/optimize)
