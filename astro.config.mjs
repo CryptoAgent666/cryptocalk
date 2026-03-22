@@ -106,12 +106,15 @@ export default defineConfig({
       rollupOptions: {
         output: {
           manualChunks(id) {
-            // Isolate the large ui-strings translation dictionary into its own chunk.
-            // EN pages never use the dictionary data (getUiString returns the key directly),
-            // but Vite tree-shakes the function, not the data. By isolating it, the chunk
-            // is still loaded but browsers can cache it independently and it no longer
-            // inflates the ErrorBoundary shared chunk.
-            if (id.includes('ui-strings')) return 'ui-translations';
+            // Split UI translation dictionaries into per-language chunks.
+            // Each localized page loads only its language (~80KB instead of ~424KB).
+            // EN pages load zero translation data (getUiString returns the key directly).
+            if (id.includes('ui-strings/es')) return 'ui-strings-es';
+            if (id.includes('ui-strings/pt')) return 'ui-strings-pt';
+            if (id.includes('ui-strings/tr')) return 'ui-strings-tr';
+            if (id.includes('ui-strings/hi')) return 'ui-strings-hi';
+            if (id.includes('ui-strings/ru')) return 'ui-strings-ru';
+            if (id.includes('ui-string-registry')) return 'ui-string-registry';
           },
         },
       },

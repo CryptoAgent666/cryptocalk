@@ -12515,4 +12515,1246 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     hi: { interpret: ["व्हेल अलर्ट कैलकुलेटर बड़े क्रिप्टो लेनदेन की निगरानी करता है, दैनिक वॉल्यूम के सापेक्ष आकार, गंतव्य प्रकार और प्रेषक के ऐतिहासिक पैटर्न के आधार पर संभावित बाजार प्रभाव का स्कोर करता है। 'उच्च प्रभाव' में 24 घंटों में 2–5% मूल्य चाल से पहले आने की 60–75% संभावना है।", "सिग्नल प्रकारों में अंतर करें: एक्सचेंज जमा (मंदी), निकासी (तेजी), whale-to-whale (तटस्थ)।"], scenarios: ["मंदी सिग्नल: पुराने वॉलेट से Coinbase में 5,000 BTC जमा। दैनिक वॉल्यूम का 8%। पैटर्न: 48 घंटों में 3–8% गिरावट।", "संचय सिग्नल: वही पता 6 सप्ताह से Binance से साप्ताहिक 2,000 BTC निकाल रहा। दीर्घकालिक तेजी सिग्नल।"], checklist: ["पहले: 1) ब्लॉक एक्सप्लोरर में लेनदेन सत्यापित करें। 2) गंतव्य पहचानें। 3) ज्ञात संस्था है या नहीं जांचें। 4) 24h वॉल्यूम से तुलना करें।", "बाद में: आवेगी प्रतिक्रिया न दें। व्यक्तिगत लेनदेन नहीं, पैटर्न पर प्रतिक्रिया दें।"], mistakes: ["सबसे आम गलती हर बड़े लेनदेन को सिग्नल मानना है। >80% नियमित संचालन हैं।", "एक और गलती समय अंतर को अनदेखा करना है। बिक्री 5–14 दिनों में फैल सकती है।"], benchmarks: ["BTC >1,000 एक्सचेंज पर: 48h में −2–5% के साथ 65% सहसंबंध।", "सीमाएं: <0.1% वॉल्यूम = शोर। >2% = मजबूत सिग्नल।"], execution: ["वर्कफ़्लो: 1) >$10M अलर्ट। 2) वर्गीकृत करें। 3) प्रेषक इतिहास सत्यापित करें। 4) उच्च प्रभाव जमा पर स्टॉप कसें।", "जोखिम प्रबंधन: प्रत्येक टोकन के शीर्ष 10 धारकों के लिए whale गतिविधि डैशबोर्ड।"], hygiene: ["अलर्ट स्रोत फ़िल्टर करें। ज्ञात संस्थाओं को लेबल करने वाली सेवाएं उपयोग करें।", "मासिक सटीकता ट्रैक करें।"], validation: ["कार्रवाई से पहले ऑन-चेन डेटा से मान्य करें।", "90-दिन बैक-टेस्ट: 50 अलर्ट ट्रैक करें, हिट रेट गणना करें।"] },
     ru: { interpret: ["Калькулятор мониторит крупные криптотранзакции, оценивая потенциальное рыночное воздействие по размеру/объёму, типу назначения и историческим паттернам. «Высокое воздействие» на 60–75% предшествует движению 2–5% за 24 часа.", "Различайте типы: депозит на биржу (медвежий), вывод (бычий), whale-to-whale (нейтральный)."], scenarios: ["Медвежий сигнал: 5 000 BTC с древнего кошелька на Coinbase. 8% дневного объёма. Паттерн: падение 3–8% за 48 часов.", "Сигнал накопления: тот же адрес выводит 2 000 BTC еженедельно с Binance 6 недель подряд. Долгосрочный бычий сигнал."], checklist: ["Перед действиями: 1) Проверьте транзакцию в обозревателе. 2) Определите назначение. 3) Проверьте, известная ли организация. 4) Сравните размер с объёмом.", "После: не реагируйте импульсивно. Реагируйте на паттерны."], mistakes: ["Самая частая ошибка — считать каждую крупную транзакцию сигналом. >80% — рутина.", "Другая — игнорировать временной лаг. Продажа может растянуться на 5–14 дней."], benchmarks: ["BTC >1 000 на биржу: 65% корреляция с −2–5% за 48ч.", "Пороги: <0,1% объёма = шум. >2% = сильный сигнал."], execution: ["Процесс: 1) Оповещения >$10M. 2) Классификация. 3) Проверка истории отправителя. 4) При высоком импакте — сжать стопы.", "Для управления рисками: панель активности китов по топ-10 держателям каждого токена."], hygiene: ["Фильтруйте источники. Используйте сервисы с маркировкой известных организаций.", "Ежемесячно отслеживайте точность."], validation: ["Проверяйте по ончейн-данным перед действиями.", "Бэктест 90 дней: 50 оповещений, рассчитайте процент попаданий."] },
   },
+
+  'compound-interest-calculator': {
+    en: {
+      interpret: [
+        "The compound interest output shows your projected balance after a specified period, factoring in the compounding frequency you selected (daily, weekly, monthly, or annually). If you deposited $5,000 in a DeFi protocol at 8% APY compounded daily, the result after one year is approximately $5,416 — roughly $16 more than monthly compounding would yield. The difference grows dramatically over multi-year periods, so always confirm which compounding frequency matches your actual protocol.",
+        "Pay close attention to the effective annual rate versus the stated nominal rate. A 12% nominal rate compounded monthly produces an effective rate of 12.68%, while daily compounding pushes it to 12.75%. Use these outputs to compare protocols on equal footing — a protocol offering 11.5% daily compounding may actually outperform one advertising 12% with monthly compounding. Cross-check results with our <a href=\"/apy-apr-calculator/\">APY/APR calculator</a> to verify rate conversions."
+      ],
+      scenarios: [
+        "Long-term HODL projection: you deposit $10,000 into a stablecoin lending protocol at 6.5% APY compounded daily. After 3 years, the calculator shows $21,137 — more than doubling your capital. Use this projection to compare against simply holding volatile assets, and run the same scenario through our <a href=\"/staking-calculator/\">staking calculator</a> to compare yield sources side by side.",
+        "DCA with compounding: you add $200 monthly to a yield-bearing position at 9% APY compounded monthly. After 5 years, contributions total $12,000 but the compounded balance reaches $15,176 — a $3,176 gain from compound growth alone. Model this scenario to understand how regular deposits amplify compound returns versus a single lump-sum deposit."
+      ],
+      checklist: [
+        "Before calculating: 1) Confirm the APY/APR distinction — many protocols advertise APR but compound more frequently, making the effective yield higher. 2) Verify the compounding frequency your protocol actually uses (most DeFi auto-compounds daily or per-block). 3) Ensure your principal amount is net of deposit fees — a 0.3% deposit fee on $10,000 means your actual compounding base is $9,970.",
+        "After calculating: subtract estimated gas fees for claiming/re-staking rewards if the protocol does not auto-compound. On Ethereum mainnet, weekly manual compounding at $2–5 per transaction costs $104–260/year — which can erase gains on positions under $5,000. Factor in protocol risk: even high APYs are worthless if the protocol is exploited."
+      ],
+      mistakes: [
+        "The most common mistake is using APY as the input rate when the calculator expects APR (or vice versa). APY already includes compounding effects; entering a 12% APY into a field that compounds it again produces an inflated 12.68% effective rate that will never materialize. Always read the input label carefully and convert between APR and APY using our <a href=\"/apy-apr-calculator/\">APY/APR calculator</a> if needed.",
+        "Another frequent error is ignoring the impact of token price volatility on yield. A 15% APY paid in a governance token that drops 40% in value results in a net loss, not a gain. Always model your compound interest scenario in both USD-stable terms and in token terms, and consider whether the yield token has sufficient liquidity to actually realize the projected returns."
+      ],
+      benchmarks: [
+        "As of 2026, typical DeFi lending rates range from 3–8% APY for major stablecoins (USDC, USDT, DAI) and 1–4% for ETH/BTC. Rates above 15% APY on stablecoins carry elevated smart contract or depeg risk. Use these benchmarks to reality-check any projected returns — if your compound interest calculation shows 25% APY on a stablecoin, investigate the risk before depositing.",
+        "Compounding frequency impact at 10% nominal rate on $10,000 over 1 year: annual compounding = $11,000, monthly = $11,047, daily = $11,052, continuous = $11,052. The difference between monthly and daily is only $5 on $10,000 — meaningful only at scale (above $100,000) or over long timeframes (5+ years). Focus on finding the highest base rate rather than optimizing compounding frequency."
+      ],
+      execution: [
+        "Standard projection workflow: enter your principal amount → select the APY or APR (match your protocol's stated rate type) → set compounding frequency to match the protocol's actual schedule → enter the time horizon → review the projected balance. For DCA scenarios, use the monthly contribution field and ensure the contribution is added before each compounding period in the model.",
+        "For multi-protocol comparison: run the calculator three times with identical principal and timeframe but different rates and compounding frequencies for each protocol you are considering. Export or screenshot each result, then rank by final balance after subtracting estimated gas/claim fees. This 5-minute exercise can reveal thousands of dollars in difference over a 3-year horizon."
+      ],
+      hygiene: [
+        "DeFi rates are variable — update your compound interest projections monthly. A protocol offering 8% APY today may drop to 4% as more capital flows in. Use a 90-day rolling average rate rather than the current spot rate for more realistic long-term projections. Bookmark this calculator and re-run each month with updated rates.",
+        "Track actual versus projected returns quarterly. If your real returns trail the projection by more than 1.5 percentage points, investigate: rate compression, impermanent loss on LP positions, unclaimed rewards losing value, or gas costs eating into yields are the most common culprits. Adjust your model inputs to match reality and re-project going forward."
+      ],
+      validation: [
+        "Verify the calculator output with manual math for simple cases: $10,000 at 10% APR compounded annually for 1 year = $11,000 exactly. For monthly compounding: $10,000 x (1 + 0.10/12)^12 = $11,047.13. If the calculator shows a different number, check whether you entered APY instead of APR or selected the wrong compounding frequency.",
+        "Cross-validate long-term projections against historical DeFi protocol performance. No major stablecoin lending protocol has sustained above 10% APY for more than 18 consecutive months. If your 5-year projection assumes a constant 12% rate, it is likely optimistic — model a conservative scenario at 5–6% alongside your base case to bracket the realistic range."
+      ],
+    },
+    es: {
+      interpret: [
+        "La salida muestra tu saldo proyectado considerando la frecuencia de capitalización seleccionada. Si depositas $5,000 en un protocolo DeFi al 8% APY capitalizado diariamente, el resultado tras un año es aproximadamente $5,416 — unos $16 más que con capitalización mensual. La diferencia crece dramáticamente en períodos multianuales.",
+        "Presta atención a la tasa anual efectiva versus la tasa nominal. Un 12% nominal capitalizado mensualmente produce un 12,68% efectivo. Usa estos resultados para comparar protocolos en igualdad de condiciones — un protocolo al 11,5% con capitalización diaria puede superar a uno que anuncia 12% mensual. Verifica con nuestra <a href=\"/es/calculadora-interes-compuesto-cripto/\">calculadora APY/APR</a>."
+      ],
+      scenarios: [
+        "Proyección HODL: depositas $10,000 en préstamo de stablecoins al 6,5% APY diario. Tras 3 años, el calculador muestra $21,137. Compara contra mantener activos volátiles usando nuestra <a href=\"/es/calculadora-recompensas-staking/\">calculadora de staking</a>.",
+        "DCA con capitalización: aportas $200 mensuales a una posición con rendimiento al 9% APY mensual. Tras 5 años, las contribuciones suman $12,000 pero el saldo capitalizado alcanza $15,176 — $3,176 de ganancia solo por crecimiento compuesto."
+      ],
+      checklist: [
+        "Antes de calcular: 1) Confirma la distinción APY/APR — muchos protocolos anuncian APR pero capitalizan con más frecuencia. 2) Verifica la frecuencia de capitalización real de tu protocolo. 3) Asegúrate de que tu capital es neto de comisiones de depósito.",
+        "Después: resta comisiones de gas estimadas si el protocolo no auto-capitaliza. En Ethereum, la capitalización manual semanal a $2–5 por transacción cuesta $104–260/año, lo que puede borrar ganancias en posiciones menores a $5,000."
+      ],
+      mistakes: [
+        "El error más común es usar APY como tasa de entrada cuando la calculadora espera APR. El APY ya incluye efectos de capitalización; ingresarlo nuevamente produce una tasa inflada del 12,68% que nunca se materializará.",
+        "Otro error frecuente es ignorar la volatilidad del precio del token de rendimiento. Un 15% APY pagado en un token de gobernanza que cae 40% resulta en pérdida neta, no ganancia."
+      ],
+      benchmarks: [
+        "En 2026, las tasas típicas de préstamo DeFi oscilan entre 3–8% APY para stablecoins principales y 1–4% para ETH/BTC. Tasas superiores al 15% APY en stablecoins conllevan riesgo elevado de smart contract o depeg.",
+        "Impacto de frecuencia al 10% nominal sobre $10,000 en 1 año: anual = $11,000, mensual = $11,047, diario = $11,052. La diferencia entre mensual y diario es solo $5 — significativa solo a escala o en plazos largos."
+      ],
+      execution: [
+        "Flujo estándar: ingresa capital → selecciona APY o APR → establece frecuencia de capitalización → ingresa horizonte temporal → revisa saldo proyectado. Para DCA, usa el campo de aporte mensual.",
+        "Para comparar protocolos: ejecuta la calculadora tres veces con capital y plazo idénticos pero diferentes tasas y frecuencias. Compara saldos finales tras restar gas estimado."
+      ],
+      hygiene: [
+        "Las tasas DeFi son variables — actualiza tus proyecciones mensualmente. Usa un promedio móvil de 90 días en lugar de la tasa actual para proyecciones más realistas.",
+        "Rastrea rendimientos reales vs proyectados trimestralmente. Si la diferencia supera 1,5 puntos porcentuales, investiga: compresión de tasas, pérdida impermanente o costos de gas."
+      ],
+      validation: [
+        "Verifica con cálculo manual: $10,000 al 10% APR anual = $11,000. Para mensual: $10,000 × (1 + 0,10/12)^12 = $11,047,13.",
+        "Ningún protocolo de stablecoins ha sostenido más de 10% APY por 18 meses consecutivos. Modela un escenario conservador al 5–6% junto a tu caso base."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A saída mostra seu saldo projetado considerando a frequência de capitalização selecionada. Se você depositar $5.000 num protocolo DeFi a 8% APY capitalizado diariamente, o resultado após um ano é aproximadamente $5.416 — cerca de $16 a mais que capitalização mensal.",
+        "Preste atenção à taxa efetiva anual versus a taxa nominal. Um 12% nominal capitalizado mensalmente produz 12,68% efetivo. Use esses resultados para comparar protocolos em igualdade — um protocolo a 11,5% com capitalização diária pode superar um que anuncia 12% mensal."
+      ],
+      scenarios: [
+        "Projeção HODL: você deposita $10.000 em empréstimo de stablecoins a 6,5% APY diário. Após 3 anos, a calculadora mostra $21.137. Compare com manter ativos voláteis usando nossa <a href=\"/pt/calculadora-recompensas-staking/\">calculadora de staking</a>.",
+        "DCA com capitalização: você aporta $200 mensais a uma posição com rendimento a 9% APY mensal. Após 5 anos, contribuições somam $12.000 mas o saldo capitalizado alcança $15.176 — $3.176 de ganho apenas por crescimento composto."
+      ],
+      checklist: [
+        "Antes de calcular: 1) Confirme a distinção APY/APR. 2) Verifique a frequência de capitalização real do seu protocolo. 3) Certifique-se de que seu capital é líquido de taxas de depósito.",
+        "Após calcular: subtraia taxas de gas estimadas se o protocolo não auto-capitaliza. No Ethereum, capitalização manual semanal a $2–5 por transação custa $104–260/ano."
+      ],
+      mistakes: [
+        "O erro mais comum é usar APY quando a calculadora espera APR. O APY já inclui efeitos de capitalização; inseri-lo novamente produz uma taxa inflada que nunca se materializará.",
+        "Outro erro frequente é ignorar a volatilidade do token de rendimento. Um 15% APY pago em token de governança que cai 40% resulta em perda líquida."
+      ],
+      benchmarks: [
+        "Em 2026, taxas típicas de empréstimo DeFi variam de 3–8% APY para stablecoins principais e 1–4% para ETH/BTC. Taxas acima de 15% APY em stablecoins carregam risco elevado.",
+        "Impacto da frequência a 10% nominal sobre $10.000 em 1 ano: anual = $11.000, mensal = $11.047, diário = $11.052. A diferença é significativa apenas em escala ou prazos longos."
+      ],
+      execution: [
+        "Fluxo padrão: insira capital → selecione APY ou APR → defina frequência de capitalização → insira horizonte temporal → revise saldo projetado.",
+        "Para comparar protocolos: execute a calculadora três vezes com capital e prazo idênticos mas taxas e frequências diferentes. Compare saldos finais após subtrair gas estimado."
+      ],
+      hygiene: [
+        "Taxas DeFi são variáveis — atualize suas projeções mensalmente. Use média móvel de 90 dias para projeções mais realistas.",
+        "Rastreie retornos reais vs projetados trimestralmente. Se a diferença exceder 1,5 pontos percentuais, investigue: compressão de taxas, perda impermanente ou custos de gas."
+      ],
+      validation: [
+        "Verifique com cálculo manual: $10.000 a 10% APR anual = $11.000. Para mensal: $10.000 × (1 + 0,10/12)^12 = $11.047,13.",
+        "Nenhum protocolo de stablecoins sustentou acima de 10% APY por 18 meses consecutivos. Modele cenário conservador a 5–6% junto ao caso base."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Çıktı, seçtiğiniz bileşik faiz sıklığına göre öngörülen bakiyenizi gösterir. Günlük bileşik %8 APY ile bir DeFi protokolüne $5.000 yatırırsanız, bir yıl sonra sonuç yaklaşık $5.416'dır — aylık bileşikten yaklaşık $16 fazla.",
+        "Efektif yıllık oranı nominal orana karşı dikkatle inceleyin. Aylık bileşik %12 nominal, %12,68 efektif oran üretir. Bu sonuçları protokolleri eşit koşullarda karşılaştırmak için kullanın."
+      ],
+      scenarios: [
+        "Uzun vadeli projeksiyon: günlük bileşik %6,5 APY ile stablecoin lending protokolüne $10.000 yatırıyorsunuz. 3 yıl sonra hesaplayıcı $21.137 gösteriyor.",
+        "DCA ile bileşik: aylık bileşik %9 APY ile her ay $200 ekliyorsunuz. 5 yıl sonra katkılar $12.000 toplarken bileşik bakiye $15.176'ya ulaşıyor — yalnızca bileşik büyümeden $3.176 kazanç."
+      ],
+      checklist: [
+        "Hesaplamadan önce: 1) APY/APR ayrımını onaylayın. 2) Protokolünüzün gerçek bileşik sıklığını doğrulayın. 3) Anaparanızın yatırma komisyonlarından arındırılmış olduğundan emin olun.",
+        "Hesapladıktan sonra: protokol otomatik bileşik yapmıyorsa tahmini gas ücretlerini çıkarın. Ethereum'da haftalık manuel bileşik işlem başına $2–5 ile yılda $104–260 maliyettir."
+      ],
+      mistakes: [
+        "En yaygın hata, hesaplayıcı APR beklerken APY girmektir. APY zaten bileşik etkileri içerir; tekrar bileşik uygulamak asla gerçekleşmeyecek şişirilmiş bir oran üretir.",
+        "Diğer sık hata, getiri tokenının fiyat oynaklığını görmezden gelmektir. %40 değer kaybeden bir yönetişim tokenında ödenen %15 APY, kazanç değil net kayıp oluşturur."
+      ],
+      benchmarks: [
+        "2026 itibarıyla tipik DeFi lending oranları: büyük stablecoinler için %3–8 APY, ETH/BTC için %1–4. Stablecoinlerde %15 APY üzeri yüksek risk taşır.",
+        "Sıklık etkisi $10.000 üzerinde %10 nominal 1 yılda: yıllık = $11.000, aylık = $11.047, günlük = $11.052. Fark yalnızca büyük ölçekte veya uzun vadede anlamlıdır."
+      ],
+      execution: [
+        "Standart iş akışı: anapara girin → APY veya APR seçin → bileşik sıklığı ayarlayın → zaman ufku girin → öngörülen bakiyeyi inceleyin.",
+        "Protokol karşılaştırması: aynı anapara ve süreyle farklı oranlar ve sıklıklarda üç kez çalıştırın. Tahmini gas çıkardıktan sonra nihai bakiyeleri karşılaştırın."
+      ],
+      hygiene: [
+        "DeFi oranları değişkendir — projeksiyonlarınızı aylık güncelleyin. Daha gerçekçi projeksiyonlar için mevcut spot oran yerine 90 günlük hareketli ortalama kullanın.",
+        "Gerçek ve öngörülen getirileri üç ayda bir karşılaştırın. Fark 1,5 yüzde puanını aşarsa araştırın: oran sıkışması, geçici kayıp veya gas maliyetleri."
+      ],
+      validation: [
+        "Manuel hesaplamayla doğrulayın: $10.000 yıllık bileşik %10 APR = $11.000. Aylık: $10.000 × (1 + 0,10/12)^12 = $11.047,13.",
+        "Hiçbir büyük stablecoin protokolü 18 aydan fazla %10 APY üzerinde sürdürmemiştir. Temel senaryonuzun yanında %5–6'lık muhafazakâr senaryo modelleyin."
+      ],
+    },
+    hi: {
+      interpret: [
+        "आउटपुट आपके द्वारा चुनी गई कंपाउंडिंग फ्रीक्वेंसी के अनुसार अनुमानित शेष दिखाता है। यदि आप DeFi प्रोटोकॉल में दैनिक कंपाउंडिंग पर 8% APY पर $5,000 जमा करते हैं, तो एक वर्ष बाद परिणाम लगभग $5,416 है — मासिक कंपाउंडिंग से लगभग $16 अधिक।",
+        "प्रभावी वार्षिक दर बनाम नाममात्र दर पर ध्यान दें। मासिक कंपाउंडिंग पर 12% नाममात्र दर 12.68% प्रभावी दर उत्पन्न करती है। प्रोटोकॉल की समान तुलना के लिए इन परिणामों का उपयोग करें।"
+      ],
+      scenarios: [
+        "दीर्घकालिक प्रक्षेपण: आप दैनिक कंपाउंडिंग पर 6.5% APY पर स्टेबलकॉइन लेंडिंग में $10,000 जमा करते हैं। 3 वर्ष बाद कैलकुलेटर $21,137 दिखाता है।",
+        "कंपाउंडिंग के साथ DCA: आप मासिक कंपाउंडिंग पर 9% APY पर हर महीने $200 जोड़ते हैं। 5 वर्ष बाद योगदान $12,000 है लेकिन कंपाउंड शेष $15,176 तक पहुंचता है।"
+      ],
+      checklist: [
+        "गणना से पहले: 1) APY/APR अंतर की पुष्टि करें। 2) अपने प्रोटोकॉल की वास्तविक कंपाउंडिंग फ्रीक्वेंसी सत्यापित करें। 3) सुनिश्चित करें कि मूलधन जमा शुल्क से शुद्ध है।",
+        "गणना के बाद: यदि प्रोटोकॉल ऑटो-कंपाउंड नहीं करता तो अनुमानित गैस शुल्क घटाएं। Ethereum पर साप्ताहिक मैनुअल कंपाउंडिंग $2–5 प्रति लेनदेन पर वार्षिक $104–260 खर्च होता है।"
+      ],
+      mistakes: [
+        "सबसे आम गलती कैलकुलेटर APR अपेक्षा करते समय APY दर्ज करना है। APY में पहले से कंपाउंडिंग प्रभाव शामिल हैं; इसे फिर से कंपाउंड करना एक फुली हुई दर उत्पन्न करता है।",
+        "एक और बार-बार होने वाली गलती यील्ड टोकन की कीमत अस्थिरता को अनदेखा करना है। 40% गिरने वाले गवर्नेंस टोकन में भुगतान किया 15% APY शुद्ध हानि है।"
+      ],
+      benchmarks: [
+        "2026 में, प्रमुख स्टेबलकॉइन के लिए विशिष्ट DeFi लेंडिंग दरें 3–8% APY और ETH/BTC के लिए 1–4% हैं। स्टेबलकॉइन पर 15% APY से ऊपर उच्च जोखिम है।",
+        "फ्रीक्वेंसी प्रभाव $10,000 पर 10% नाममात्र 1 वर्ष: वार्षिक = $11,000, मासिक = $11,047, दैनिक = $11,052। अंतर केवल बड़े पैमाने या लंबी अवधि में महत्वपूर्ण है।"
+      ],
+      execution: [
+        "मानक वर्कफ़्लो: मूलधन दर्ज करें → APY या APR चुनें → कंपाउंडिंग फ्रीक्वेंसी सेट करें → समय सीमा दर्ज करें → अनुमानित शेष की समीक्षा करें।",
+        "प्रोटोकॉल तुलना: समान मूलधन और अवधि के साथ भिन्न दरों और फ्रीक्वेंसी पर तीन बार चलाएं। अनुमानित गैस घटाने के बाद अंतिम शेष की तुलना करें।"
+      ],
+      hygiene: [
+        "DeFi दरें परिवर्तनशील हैं — अपने प्रक्षेपण मासिक अपडेट करें। अधिक यथार्थवादी प्रक्षेपणों के लिए वर्तमान स्पॉट दर के बजाय 90-दिवसीय चलती औसत का उपयोग करें।",
+        "वास्तविक बनाम अनुमानित रिटर्न तिमाही ट्रैक करें। यदि अंतर 1.5 प्रतिशत अंक से अधिक है, तो जांच करें: दर संपीड़न, अस्थायी हानि या गैस लागत।"
+      ],
+      validation: [
+        "मैनुअल गणित से सत्यापित करें: $10,000 पर 10% APR वार्षिक = $11,000। मासिक: $10,000 × (1 + 0.10/12)^12 = $11,047.13।",
+        "किसी भी प्रमुख स्टेबलकॉइन प्रोटोकॉल ने 18 लगातार महीनों से अधिक 10% APY बनाए नहीं रखा है। अपने आधार केस के साथ 5–6% पर रूढ़िवादी परिदृश्य मॉडल करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Вывод показывает прогнозируемый баланс с учётом выбранной частоты капитализации. При вложении $5 000 в DeFi-протокол под 8% APY с ежедневной капитализацией результат через год — примерно $5 416, на $16 больше, чем при ежемесячной.",
+        "Обращайте внимание на эффективную годовую ставку в сравнении с номинальной. 12% номинальных с ежемесячной капитализацией дают 12,68% эффективных. Используйте это для справедливого сравнения протоколов."
+      ],
+      scenarios: [
+        "Долгосрочная проекция: вы вносите $10 000 в лендинг стейблкоинов под 6,5% APY с ежедневной капитализацией. Через 3 года калькулятор показывает $21 137.",
+        "DCA с капитализацией: вы добавляете $200 ежемесячно под 9% APY. Через 5 лет взносы составят $12 000, но баланс с капитализацией достигает $15 176 — $3 176 прибыли только от сложного процента."
+      ],
+      checklist: [
+        "Перед расчётом: 1) Подтвердите различие APY/APR. 2) Проверьте реальную частоту капитализации протокола. 3) Убедитесь, что основная сумма очищена от комиссий за депозит.",
+        "После расчёта: вычтите предполагаемые комиссии за gas, если протокол не автокапитализирует. На Ethereum еженедельная ручная капитализация при $2–5 за транзакцию стоит $104–260/год."
+      ],
+      mistakes: [
+        "Самая частая ошибка — вводить APY, когда калькулятор ожидает APR. APY уже учитывает капитализацию; повторное применение создаёт завышенную ставку, которая не реализуется.",
+        "Другая частая ошибка — игнорировать волатильность цены токена доходности. 15% APY, выплачиваемых в токене управления, упавшем на 40%, означает чистый убыток."
+      ],
+      benchmarks: [
+        "В 2026 году типичные ставки DeFi-лендинга: 3–8% APY для основных стейблкоинов и 1–4% для ETH/BTC. Выше 15% APY на стейблкоинах — повышенный риск.",
+        "Влияние частоты при 10% номинальных на $10 000 за год: годовая = $11 000, месячная = $11 047, дневная = $11 052. Разница значима лишь при крупных суммах или длинных сроках."
+      ],
+      execution: [
+        "Стандартный процесс: введите основную сумму → выберите APY или APR → установите частоту капитализации → введите горизонт → проверьте прогнозируемый баланс.",
+        "Для сравнения протоколов: запустите калькулятор трижды с одинаковым капиталом и сроком, но разными ставками и частотами. Сравните итоговые балансы за вычетом gas."
+      ],
+      hygiene: [
+        "Ставки DeFi переменны — обновляйте прогнозы ежемесячно. Для реалистичных проекций используйте 90-дневную скользящую среднюю вместо текущей спот-ставки.",
+        "Сравнивайте фактическую и прогнозируемую доходность ежеквартально. Если разница превышает 1,5 п.п., исследуйте причины: сжатие ставок, непостоянные потери или расходы на gas."
+      ],
+      validation: [
+        "Проверьте вручную: $10 000 под 10% APR годовых = $11 000. Помесячно: $10 000 × (1 + 0,10/12)^12 = $11 047,13.",
+        "Ни один крупный протокол стейблкоинов не поддерживал APY выше 10% более 18 месяцев подряд. Моделируйте консервативный сценарий на 5–6% рядом с базовым."
+      ],
+    },
+  },
+
+  'gas-fee-calculator': {
+    en: {
+      interpret: [
+        "The gas fee output shows the estimated transaction cost in both the network's native token and USD equivalent. For Ethereum, a standard ETH transfer at 3 Gwei base fee costs approximately $0.15, while a Uniswap swap at 150,000 gas units costs roughly $0.75 during low-congestion periods. If your output shows dramatically higher costs, check whether you are using a peak-hour gas price or an L1 estimate when you could use an L2.",
+        "Compare the calculated gas fee against your transaction's economic value. A $0.50 gas fee on a $10,000 swap is negligible (0.005%), but that same fee on a $5 trade represents 10% — making the trade economically irrational. Use this output alongside our <a href=\"/break-even-calculator/\">break-even calculator</a> to determine the minimum trade size that justifies the gas cost for your intended operation."
+      ],
+      scenarios: [
+        "DEX trade optimization: you want to swap $500 of ETH to USDC on Uniswap. The calculator shows $0.82 gas on Ethereum L1 at 3 Gwei vs $0.03 on Arbitrum. For a $500 trade, the L1 fee is 0.16% — acceptable but not optimal. Routing through Arbitrum saves $0.79 per swap, which compounds to $41/year if you trade weekly. Use our <a href=\"/gas-calculator/\">gas optimization calculator</a> to find the cheapest execution route.",
+        "NFT minting cost analysis: minting an NFT requires approximately 150,000–250,000 gas units. At 15 Gwei during a congestion spike, the cost jumps to $8–13 on Ethereum L1. If your NFT will sell for $50, the gas cost consumes 16–26% of revenue. Calculate the break-even mint price by adding gas cost to your production costs, and consider minting on Polygon or Base where the same operation costs under $0.01."
+      ],
+      checklist: [
+        "Before calculating: 1) Select the correct network — Ethereum L1, Arbitrum, Optimism, Base, and Polygon all have vastly different gas costs. 2) Use real-time gas prices if available; default values may be outdated during congestion spikes. 3) Verify the gas limit for your specific operation (21,000 for simple transfers, 65,000–300,000 for smart contract interactions).",
+        "After calculating: add a 10–20% buffer to the estimated gas for smart contract transactions, as actual gas consumption can vary based on contract state. Time your transaction for off-peak hours (weekends, early UTC mornings) to reduce costs by 30–60%. Set a max fee cap in your wallet to prevent overpaying during sudden gas spikes."
+      ],
+      mistakes: [
+        "The most common mistake is using Ethereum L1 gas estimates for transactions that could execute on an L2 rollup. As of 2026, Arbitrum and Base process identical Uniswap swaps for 95–99% less gas than L1. Before calculating, confirm whether your assets are on L1 or L2, and bridge if the gas savings justify the bridging cost — typically worthwhile if you plan more than 3 transactions.",
+        "Another frequent error is ignoring priority fees (tips) that validators require for timely inclusion. During moderate congestion, a 0.5–2 Gwei priority fee is needed on top of the base fee. Submitting with zero priority fee during busy periods may leave your transaction pending for hours or days. Always include a reasonable tip in your gas calculation, especially for time-sensitive trades."
+      ],
+      benchmarks: [
+        "Gas cost benchmarks by operation type on Ethereum L1 at 3 Gwei (March 2026): simple ETH transfer (21,000 gas) = $0.15, ERC-20 token transfer (65,000 gas) = $0.45, Uniswap V3 swap (150,000 gas) = $1.05, NFT mint (200,000 gas) = $1.40, complex DeFi interaction (300,000+ gas) = $2.10+. Multiply these by 5x during congestion spikes (15 Gwei).",
+        "L2 cost comparison at equivalent operations: Arbitrum swap = $0.02–0.05, Base swap = $0.01–0.03, Optimism swap = $0.02–0.06, Polygon swap = $0.001–0.01. L2 costs are 50–200x cheaper than L1 for identical operations. If your portfolio is primarily on L1, calculate whether the one-time <a href=\"/bridge-comparator/\">bridge cost</a> is recovered within your expected number of transactions."
+      ],
+      execution: [
+        "Standard fee estimation workflow: select network → enter gas price (live or manual) → select operation type or enter custom gas limit → note the USD cost → compare against your transaction value → proceed if gas is under 1% of transaction value, reconsider if over 5%. For DEX trades, also factor in slippage using our <a href=\"/slippage-calculator/\">slippage calculator</a>.",
+        "Gas timing strategy: monitor gas prices over a 24-hour cycle before executing non-urgent transactions. Ethereum L1 gas typically drops 40–60% during weekend nights (Saturday–Sunday, 02:00–08:00 UTC). Set a gas price alert at your target level and execute when triggered. For urgent transactions, pay the current rate but cap your max fee at 2x the current base fee to limit overpayment."
+      ],
+      hygiene: [
+        "Gas prices change every block (12 seconds on Ethereum). Always refresh the calculator immediately before submitting a transaction. A gas estimate from 5 minutes ago may be 50% higher or lower than the current price. Bookmark this calculator on your phone for quick pre-transaction checks.",
+        "Track your monthly gas expenditure by exporting transaction history from your wallet or block explorer. If gas costs exceed 2% of your portfolio's total return, you are likely over-trading or using L1 when L2 would suffice. Set a monthly gas budget and optimize execution timing to stay within it."
+      ],
+      validation: [
+        "Validate the calculator output against your wallet's gas estimate before signing. If the calculator shows $0.80 but your wallet displays $2.50, check whether the wallet is using a higher gas price, a larger gas limit, or including a priority fee that the calculator did not. The two estimates should agree within 20% when using the same inputs.",
+        "For complex DeFi transactions, simulate the transaction using Tenderly or your wallet's simulation feature before submitting. This reveals the exact gas consumption and prevents failed transactions that still charge gas. A failed swap on Ethereum can cost $1–5 in wasted gas — simulation eliminates this risk entirely."
+      ],
+    },
+    es: {
+      interpret: [
+        "La salida muestra el costo estimado de transacción en el token nativo y equivalente en USD. Una transferencia ETH estándar a 3 Gwei cuesta aproximadamente $0,15, mientras que un swap en Uniswap a 150.000 unidades de gas cuesta $0,75 en períodos de baja congestión.",
+        "Compara la comisión de gas calculada con el valor económico de tu transacción. Una comisión de $0,50 en un swap de $10.000 es insignificante (0,005%), pero en una operación de $5 representa el 10%. Usa nuestra <a href=\"/es/calculadora-comision-gas/\">calculadora de punto de equilibrio</a> para determinar el tamaño mínimo de operación."
+      ],
+      scenarios: [
+        "Optimización de swap DEX: quieres cambiar $500 de ETH a USDC. La calculadora muestra $0,82 en L1 vs $0,03 en Arbitrum. Enrutar por Arbitrum ahorra $0,79 por swap, $41/año si operas semanalmente.",
+        "Análisis de costo de minting NFT: acuñar un NFT requiere 150.000–250.000 unidades de gas. A 15 Gwei durante congestión, el costo sube a $8–13 en L1. Si tu NFT se venderá por $50, el gas consume 16–26% de los ingresos."
+      ],
+      checklist: [
+        "Antes: 1) Selecciona la red correcta — L1, Arbitrum, Base y Polygon tienen costos muy diferentes. 2) Usa precios de gas en tiempo real. 3) Verifica el límite de gas para tu operación específica.",
+        "Después: añade 10–20% de margen al gas estimado para contratos inteligentes. Programa tu transacción en horas de baja actividad (fines de semana, madrugadas UTC) para reducir costos 30–60%."
+      ],
+      mistakes: [
+        "El error más común es usar estimaciones de gas L1 para transacciones que podrían ejecutarse en L2. En 2026, Arbitrum y Base procesan swaps idénticos por 95–99% menos gas.",
+        "Otro error frecuente es ignorar las comisiones de prioridad (propinas) necesarias para inclusión oportuna. Durante congestión moderada, se necesitan 0,5–2 Gwei de prioridad adicionales."
+      ],
+      benchmarks: [
+        "Benchmarks en Ethereum L1 a 3 Gwei: transferencia ETH = $0,15, transferencia ERC-20 = $0,45, swap Uniswap = $1,05, mint NFT = $1,40, interacción DeFi compleja = $2,10+.",
+        "Comparación L2: swap en Arbitrum = $0,02–0,05, Base = $0,01–0,03, Optimism = $0,02–0,06, Polygon = $0,001–0,01. Los costos L2 son 50–200x más baratos."
+      ],
+      execution: [
+        "Flujo estándar: selecciona red → ingresa precio de gas → selecciona tipo de operación → anota costo USD → compara con valor de transacción → procede si el gas es menor al 1% del valor.",
+        "Estrategia de timing: monitorea precios de gas durante 24 horas antes de ejecutar transacciones no urgentes. El gas de Ethereum L1 baja 40–60% en noches de fin de semana."
+      ],
+      hygiene: [
+        "Los precios de gas cambian cada bloque (12 segundos). Actualiza siempre la calculadora inmediatamente antes de enviar una transacción.",
+        "Rastrea tu gasto mensual en gas. Si supera el 2% del retorno total de tu portafolio, probablemente estés sobre-operando o usando L1 cuando L2 bastaría."
+      ],
+      validation: [
+        "Valida la salida contra la estimación de gas de tu wallet antes de firmar. Los dos estimados deberían coincidir en un 20% con las mismas entradas.",
+        "Para transacciones DeFi complejas, simula la transacción usando Tenderly antes de enviarla. Un swap fallido puede costar $1–5 en gas desperdiciado."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A saída mostra o custo estimado da transação no token nativo e equivalente em USD. Uma transferência ETH padrão a 3 Gwei custa aproximadamente $0,15, enquanto um swap no Uniswap a 150.000 unidades de gas custa cerca de $0,75 em períodos de baixo congestionamento.",
+        "Compare a taxa de gas calculada com o valor econômico da sua transação. Uma taxa de $0,50 num swap de $10.000 é insignificante (0,005%), mas numa operação de $5 representa 10%. Use nossa <a href=\"/pt/calculadora-taxa-gas/\">calculadora de ponto de equilíbrio</a> para determinar o tamanho mínimo."
+      ],
+      scenarios: [
+        "Otimização de swap DEX: você quer trocar $500 de ETH por USDC. A calculadora mostra $0,82 na L1 vs $0,03 na Arbitrum. Rotear pela Arbitrum economiza $0,79 por swap, $41/ano se negociar semanalmente.",
+        "Análise de custo de minting NFT: cunhar um NFT requer 150.000–250.000 unidades de gas. A 15 Gwei durante congestionamento, o custo sobe para $8–13 na L1. Se seu NFT será vendido por $50, o gas consome 16–26% da receita."
+      ],
+      checklist: [
+        "Antes: 1) Selecione a rede correta — L1, Arbitrum, Base e Polygon têm custos muito diferentes. 2) Use preços de gas em tempo real. 3) Verifique o limite de gas para sua operação específica.",
+        "Após: adicione margem de 10–20% ao gas estimado para contratos inteligentes. Programe transações em horários de baixa atividade (fins de semana, madrugadas UTC) para reduzir custos em 30–60%."
+      ],
+      mistakes: [
+        "O erro mais comum é usar estimativas de gas L1 para transações que poderiam ser executadas em L2. Em 2026, Arbitrum e Base processam swaps idênticos por 95–99% menos gas.",
+        "Outro erro frequente é ignorar taxas de prioridade (gorjetas) necessárias para inclusão oportuna. Durante congestionamento moderado, 0,5–2 Gwei de prioridade são necessários."
+      ],
+      benchmarks: [
+        "Benchmarks no Ethereum L1 a 3 Gwei: transferência ETH = $0,15, transferência ERC-20 = $0,45, swap Uniswap = $1,05, mint NFT = $1,40, interação DeFi complexa = $2,10+.",
+        "Comparação L2: swap Arbitrum = $0,02–0,05, Base = $0,01–0,03, Optimism = $0,02–0,06, Polygon = $0,001–0,01. Custos L2 são 50–200x mais baratos."
+      ],
+      execution: [
+        "Fluxo padrão: selecione rede → insira preço do gas → selecione tipo de operação → anote custo USD → compare com valor da transação → prossiga se gas for menor que 1% do valor.",
+        "Estratégia de timing: monitore preços de gas por 24 horas antes de executar transações não urgentes. O gas do Ethereum L1 cai 40–60% em noites de fim de semana."
+      ],
+      hygiene: [
+        "Preços de gas mudam a cada bloco (12 segundos). Sempre atualize a calculadora imediatamente antes de enviar uma transação.",
+        "Rastreie seu gasto mensal com gas. Se exceder 2% do retorno total do portfólio, provavelmente está negociando demais ou usando L1 quando L2 bastaria."
+      ],
+      validation: [
+        "Valide a saída contra a estimativa de gas da sua carteira antes de assinar. As duas estimativas devem concordar em 20% com as mesmas entradas.",
+        "Para transações DeFi complexas, simule usando Tenderly antes de enviar. Um swap falho pode custar $1–5 em gas desperdiçado."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Çıktı, ağın yerel tokenı ve USD eşdeğeri cinsinden tahmini işlem maliyetini gösterir. 3 Gwei baz ücretle standart bir ETH transferi yaklaşık $0,15, 150.000 gas biriminde bir Uniswap swapı düşük tıkanıklık dönemlerinde yaklaşık $0,75 maliyettir.",
+        "Hesaplanan gas ücretini işleminizin ekonomik değeriyle karşılaştırın. $10.000'lık bir swapta $0,50 gas ihmal edilebilir (%0,005), ancak $5'lık bir işlemde %10'dur."
+      ],
+      scenarios: [
+        "DEX swap optimizasyonu: $500 ETH'yi USDC'ye takas etmek istiyorsunuz. Hesaplayıcı L1'de $0,82 vs Arbitrum'da $0,03 gösteriyor. Arbitrum üzerinden yönlendirme swap başına $0,79 tasarruf sağlar.",
+        "NFT basım maliyet analizi: bir NFT basmak yaklaşık 150.000–250.000 gas birimi gerektirir. Tıkanıklık sırasında 15 Gwei'de maliyet L1'de $8–13'e çıkar."
+      ],
+      checklist: [
+        "Önce: 1) Doğru ağı seçin — L1, Arbitrum, Base ve Polygon çok farklı maliyetlere sahip. 2) Gerçek zamanlı gas fiyatları kullanın. 3) İşleminiz için gas limitini doğrulayın.",
+        "Sonra: akıllı sözleşme işlemleri için tahmini gaza %10–20 tampon ekleyin. Maliyetleri %30–60 azaltmak için yoğun olmayan saatlerde işlem yapın."
+      ],
+      mistakes: [
+        "En yaygın hata, L2'de yürütülebilecek işlemler için L1 gas tahminleri kullanmaktır. 2026'da Arbitrum ve Base aynı swapları %95–99 daha az gasla işler.",
+        "Diğer sık hata, zamanında dahil edilme için gereken öncelik ücretlerini (bahşişleri) görmezden gelmektir. Orta düzey tıkanıklıkta baz ücrete ek 0,5–2 Gwei gerekir."
+      ],
+      benchmarks: [
+        "Ethereum L1 3 Gwei'de benchmarklar: ETH transferi = $0,15, ERC-20 transferi = $0,45, Uniswap swapı = $1,05, NFT basımı = $1,40, karmaşık DeFi etkileşimi = $2,10+.",
+        "L2 karşılaştırması: Arbitrum swapı = $0,02–0,05, Base = $0,01–0,03, Optimism = $0,02–0,06, Polygon = $0,001–0,01. L2 maliyetleri 50–200x daha ucuz."
+      ],
+      execution: [
+        "Standart iş akışı: ağ seçin → gas fiyatı girin → işlem türü seçin → USD maliyetini not edin → işlem değeriyle karşılaştırın → gas %1'in altındaysa devam edin.",
+        "Gas zamanlama stratejisi: acil olmayan işlemlerden önce 24 saatlik gas fiyatlarını izleyin. Ethereum L1 gası hafta sonu gecelerinde %40–60 düşer."
+      ],
+      hygiene: [
+        "Gas fiyatları her blokta değişir (12 saniye). İşlem göndermeden hemen önce hesaplayıcıyı her zaman yenileyin.",
+        "Aylık gas harcamanızı takip edin. Portföy getirinizin %2'sini aşarsa, muhtemelen fazla işlem yapıyor veya L2 yeterli olacakken L1 kullanıyorsunuz."
+      ],
+      validation: [
+        "İmzalamadan önce çıktıyı cüzdanınızın gas tahminiyle doğrulayın. Aynı girdilerle iki tahmin %20 içinde uyuşmalıdır.",
+        "Karmaşık DeFi işlemleri için göndermeden önce Tenderly ile simüle edin. Başarısız bir swap $1–5 boşa gas harcar."
+      ],
+    },
+    hi: {
+      interpret: [
+        "आउटपुट नेटवर्क के मूल टोकन और USD समकक्ष दोनों में अनुमानित लेनदेन लागत दिखाता है। 3 Gwei बेस फीस पर एक मानक ETH ट्रांसफर लगभग $0.15 खर्च होता है, जबकि 150,000 गैस यूनिट पर Uniswap स्वैप कम भीड़ अवधि में लगभग $0.75 है।",
+        "गणना की गई गैस फीस की तुलना अपने लेनदेन के आर्थिक मूल्य से करें। $10,000 के स्वैप पर $0.50 गैस नगण्य है (0.005%), लेकिन $5 के ट्रेड पर यह 10% है।"
+      ],
+      scenarios: [
+        "DEX स्वैप अनुकूलन: आप $500 ETH को USDC में स्वैप करना चाहते हैं। कैलकुलेटर L1 पर $0.82 बनाम Arbitrum पर $0.03 दिखाता है। Arbitrum के माध्यम से रूटिंग प्रति स्वैप $0.79 बचाता है।",
+        "NFT मिंटिंग लागत विश्लेषण: एक NFT मिंट करने के लिए लगभग 150,000–250,000 गैस यूनिट चाहिए। भीड़ के दौरान 15 Gwei पर, L1 पर लागत $8–13 तक बढ़ जाती है।"
+      ],
+      checklist: [
+        "पहले: 1) सही नेटवर्क चुनें — L1, Arbitrum, Base और Polygon की लागत बहुत अलग है। 2) रीयल-टाइम गैस कीमतें उपयोग करें। 3) अपने ऑपरेशन के लिए गैस लिमिट सत्यापित करें।",
+        "बाद में: स्मार्ट कॉन्ट्रैक्ट लेनदेन के लिए अनुमानित गैस में 10–20% बफर जोड़ें। लागत 30–60% कम करने के लिए ऑफ-पीक घंटों में लेनदेन करें।"
+      ],
+      mistakes: [
+        "सबसे आम गलती L2 पर निष्पादित हो सकने वाले लेनदेन के लिए L1 गैस अनुमान उपयोग करना है। 2026 में Arbitrum और Base समान स्वैप 95–99% कम गैस पर प्रोसेस करते हैं।",
+        "एक और बार-बार होने वाली गलती समय पर शामिल होने के लिए आवश्यक प्राथमिकता शुल्क (टिप्स) को अनदेखा करना है। मध्यम भीड़ में बेस फीस के ऊपर 0.5–2 Gwei प्राथमिकता चाहिए।"
+      ],
+      benchmarks: [
+        "Ethereum L1 3 Gwei पर बेंचमार्क: ETH ट्रांसफर = $0.15, ERC-20 ट्रांसफर = $0.45, Uniswap स्वैप = $1.05, NFT मिंट = $1.40, जटिल DeFi इंटरैक्शन = $2.10+।",
+        "L2 तुलना: Arbitrum स्वैप = $0.02–0.05, Base = $0.01–0.03, Optimism = $0.02–0.06, Polygon = $0.001–0.01। L2 लागत 50–200x सस्ती है।"
+      ],
+      execution: [
+        "मानक वर्कफ़्लो: नेटवर्क चुनें → गैस मूल्य दर्ज करें → ऑपरेशन प्रकार चुनें → USD लागत नोट करें → लेनदेन मूल्य से तुलना करें → गैस मूल्य का 1% से कम हो तो आगे बढ़ें।",
+        "गैस टाइमिंग रणनीति: गैर-तत्काल लेनदेन से पहले 24 घंटे गैस कीमतों की निगरानी करें। Ethereum L1 गैस सप्ताहांत की रातों में 40–60% गिरती है।"
+      ],
+      hygiene: [
+        "गैस की कीमतें हर ब्लॉक (12 सेकंड) बदलती हैं। लेनदेन भेजने से ठीक पहले कैलकुलेटर हमेशा रिफ्रेश करें।",
+        "अपने मासिक गैस खर्च को ट्रैक करें। यदि यह पोर्टफोलियो के कुल रिटर्न का 2% से अधिक है, तो शायद आप अधिक ट्रेडिंग कर रहे हैं या L2 पर्याप्त होने पर L1 उपयोग कर रहे हैं।"
+      ],
+      validation: [
+        "साइन करने से पहले अपने वॉलेट के गैस अनुमान से आउटपुट मान्य करें। समान इनपुट के साथ दोनों अनुमान 20% के भीतर मेल खाने चाहिए।",
+        "जटिल DeFi लेनदेन के लिए, भेजने से पहले Tenderly से सिमुलेट करें। एक विफल स्वैप $1–5 गैस बर्बाद कर सकता है।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Вывод показывает расчётную стоимость транзакции в нативном токене сети и эквиваленте USD. Стандартный перевод ETH при 3 Gwei обходится примерно в $0,15, а свап на Uniswap при 150 000 единиц газа — около $0,75 при низкой загрузке.",
+        "Сравните рассчитанную комиссию за газ с экономической ценностью транзакции. $0,50 на свапе в $10 000 — ничтожно (0,005%), но на сделке в $5 это 10%."
+      ],
+      scenarios: [
+        "Оптимизация DEX-свапа: вы хотите обменять $500 ETH на USDC. Калькулятор показывает $0,82 на L1 против $0,03 на Arbitrum. Маршрут через Arbitrum экономит $0,79 за свап, $41/год при еженедельной торговле.",
+        "Анализ стоимости минтинга NFT: минтинг требует около 150 000–250 000 единиц газа. При 15 Gwei во время загрузки стоимость на L1 взлетает до $8–13."
+      ],
+      checklist: [
+        "Перед расчётом: 1) Выберите правильную сеть — L1, Arbitrum, Base и Polygon имеют очень разные затраты. 2) Используйте актуальные цены газа. 3) Проверьте лимит газа для конкретной операции.",
+        "После: добавьте буфер 10–20% для смарт-контрактов. Планируйте транзакции на часы минимальной нагрузки (выходные, раннее UTC) для снижения затрат на 30–60%."
+      ],
+      mistakes: [
+        "Самая частая ошибка — использовать оценки газа L1 для транзакций, которые можно выполнить на L2. В 2026 году Arbitrum и Base обрабатывают идентичные свапы на 95–99% дешевле.",
+        "Другая частая ошибка — игнорировать приоритетные комиссии (чаевые), необходимые для своевременного включения. При умеренной загрузке требуется 0,5–2 Gwei сверх базовой комиссии."
+      ],
+      benchmarks: [
+        "Бенчмарки на Ethereum L1 при 3 Gwei: перевод ETH = $0,15, ERC-20 = $0,45, Uniswap свап = $1,05, минт NFT = $1,40, сложное DeFi-взаимодействие = $2,10+.",
+        "Сравнение L2: свап Arbitrum = $0,02–0,05, Base = $0,01–0,03, Optimism = $0,02–0,06, Polygon = $0,001–0,01. L2 в 50–200 раз дешевле."
+      ],
+      execution: [
+        "Стандартный процесс: выберите сеть → введите цену газа → выберите тип операции → запишите стоимость в USD → сравните со стоимостью транзакции → продолжайте, если газ меньше 1%.",
+        "Стратегия тайминга: мониторьте цены газа 24 часа перед неcрочными транзакциями. Газ Ethereum L1 падает на 40–60% в ночи выходных."
+      ],
+      hygiene: [
+        "Цены на газ меняются каждый блок (12 секунд). Всегда обновляйте калькулятор непосредственно перед отправкой транзакции.",
+        "Отслеживайте месячные расходы на газ. Если они превышают 2% общей доходности портфеля, вы, вероятно, торгуете слишком часто или используете L1 вместо L2."
+      ],
+      validation: [
+        "Сверьте вывод с оценкой газа в кошельке перед подписанием. При одинаковых вводных оценки должны совпадать в пределах 20%.",
+        "Для сложных DeFi-транзакций симулируйте через Tenderly перед отправкой. Неудачный свап может стоить $1–5 потраченного газа."
+      ],
+    },
+  },
+
+  'leverage-calculator': {
+    en: {
+      interpret: [
+        "The leverage calculator output shows your amplified position size, required margin, and liquidation price for a given leverage multiplier. At 10x leverage on a $1,000 margin deposit, you control a $10,000 position — meaning a 1% price move generates a 10% return (or loss) on your margin. If the liquidation price shows $900 for a long position, that means a 10% adverse move wipes out your entire deposit.",
+        "Focus on the liquidation price output above all else — it is the single most critical number for risk management. Compare the liquidation price to recent support/resistance levels and the asset's average daily volatility. If BTC's 30-day average daily range is 3.5% and your liquidation distance is only 5%, you are one above-average volatile day away from liquidation. Use our <a href=\"/liquidation-calculator/\">liquidation calculator</a> for more detailed liquidation scenarios across different exchanges."
+      ],
+      scenarios: [
+        "Conservative BTC long: you deposit $5,000 margin with 3x leverage, creating a $15,000 position at $73,700/BTC (0.2035 BTC). Liquidation occurs at approximately $49,133 — a 33% drop. Given BTC's max drawdown in bull markets is typically 20–30%, 3x leverage provides reasonable buffer. Your potential gain on a 20% BTC rally is $3,000 (60% on margin) versus $1,000 (20%) without leverage.",
+        "High-risk altcoin trade: you use 20x leverage on $500 margin for a $10,000 SOL position at $180. Liquidation price is approximately $171 — just 5% below entry. SOL regularly moves 5–8% daily, meaning liquidation within hours is likely during volatile sessions. This scenario demonstrates why leverage above 10x on altcoins is essentially gambling. Run this through our <a href=\"/position-size-calculator/\">position size calculator</a> to find the appropriate leverage for your risk tolerance."
+      ],
+      checklist: [
+        "Before using leverage: 1) Calculate the liquidation price and compare it to the asset's 30-day low — if liquidation is closer than the recent low, reduce leverage. 2) Determine your maximum acceptable loss in dollar terms and set a stop-loss well above the liquidation price. 3) Verify the exchange's margin maintenance requirement (typically 0.5–5%) and funding rate for perpetual futures.",
+        "After opening a leveraged position: set a stop-loss order immediately — never rely on manually closing during a crash. Monitor funding rates every 8 hours; if you are paying over 0.1% per period (0.3%/day), the cost erodes your margin over time. Calculate your break-even including funding costs using our <a href=\"/funding-rate-calculator/\">funding rate calculator</a>."
+      ],
+      mistakes: [
+        "The most dangerous mistake is using maximum available leverage because it is offered. Most exchanges allow 50–125x leverage, but even professional traders rarely exceed 5–10x. At 100x, a 1% adverse move liquidates you completely. There is no stop-loss that can save you at 100x leverage during a flash crash — the position is liquidated before the stop can execute. Limit leverage to 3–5x for swing trades and 10x maximum for scalps.",
+        "Another critical error is ignoring the cumulative cost of funding rates on perpetual futures. At 0.05% per 8 hours (moderate bullish market), holding a 10x leveraged long costs 0.15%/day on the full position — that is 1.5% of your margin daily, or 45% per month. Many traders are slowly liquidated by funding costs rather than price movement. Always factor funding into your holding period calculation."
+      ],
+      benchmarks: [
+        "Professional crypto trading firms typically use 2–5x leverage for directional trades and up to 10x for hedged positions. Retail traders using above 20x have a liquidation rate exceeding 80% within 30 days according to exchange data. Target a liquidation distance of at least 2x the asset's average daily volatility: for BTC (3.5% avg daily range), minimum 7% liquidation buffer means maximum ~14x leverage.",
+        "Funding rate benchmarks: neutral market 0.01% per 8 hours, bullish 0.03–0.10%, extremely bullish 0.1–0.3%, bearish −0.01% to −0.05%. At 10x leverage, a 0.05% funding rate costs 0.5% of your margin every 8 hours. Break-even daily price move needed to overcome funding: funding_rate × leverage × 3 periods = 0.05% × 10 × 3 = 1.5%/day."
+      ],
+      execution: [
+        "Standard leverage trade workflow: 1) Determine conviction level and assign position size (1–3% of portfolio for high conviction, 0.5% for speculative). 2) Enter margin amount into this calculator. 3) Adjust leverage until the liquidation price sits below strong support (longs) or above strong resistance (shorts). 4) Calculate funding cost for your expected holding period. 5) Set stop-loss at 50% of the distance to liquidation. 6) Enter the trade.",
+        "Emergency deleverage procedure: if your position approaches liquidation (within 2x the stop-loss distance), add margin to push the liquidation price further out rather than closing at a large loss — but only if your original thesis remains intact. If the thesis is broken, close immediately regardless of loss size. Never average down on a leveraged position that has moved against you by more than your original stop-loss level."
+      ],
+      hygiene: [
+        "Review your leverage exposure daily. Sum up the total notional value of all leveraged positions and compare to your total portfolio — if leveraged exposure exceeds 3x your total capital, you are overexposed. Reduce positions until total notional leverage is below 2x portfolio value for a sustainable risk profile.",
+        "Track your leveraged trade performance separately from spot trades. Calculate the Sharpe ratio and win rate for leveraged positions independently. If your leveraged trade Sharpe ratio is below 0.5 over 90 days, leverage is destroying rather than enhancing your returns — reduce to spot-only trading until you identify and fix the strategy issue."
+      ],
+      validation: [
+        "Verify the liquidation price manually: for a 10x long at $73,700 entry, liquidation occurs when unrealized loss equals margin. At 10x, a 10% move = 100% loss, so liquidation price = entry × (1 − 1/leverage) = $73,700 × 0.90 = $66,330. If the calculator shows a different number, it may be accounting for maintenance margin (typically 0.5–1%) — check your exchange's specific liquidation formula.",
+        "Cross-validate leveraged P&L: a 5% price increase on a 10x long should show 50% profit on margin. If you deposited $1,000 margin at 10x and price rises 5%, your profit should be $500. If the calculator shows a significantly different number, check whether it is deducting trading fees (0.02–0.06% per trade) and funding costs from the P&L."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora muestra tu posición amplificada, margen requerido y precio de liquidación. Con 10x de apalancamiento sobre $1.000 de margen, controlas una posición de $10.000 — un movimiento de 1% genera 10% de retorno (o pérdida). Si el precio de liquidación muestra $900 para un long, un movimiento adverso del 10% elimina tu depósito.",
+        "Enfócate en el precio de liquidación — es el número más crítico. Compáralo con niveles recientes de soporte/resistencia y la volatilidad diaria promedio. Si el rango diario promedio de BTC es 3,5% y tu distancia de liquidación es solo 5%, estás a un día volátil de la liquidación. Usa nuestra <a href=\"/es/calculadora-apalancamiento/\">calculadora de liquidación</a> para escenarios más detallados."
+      ],
+      scenarios: [
+        "BTC long conservador: depositas $5.000 de margen con 3x, creando posición de $15.000 a $73.700/BTC. Liquidación a ~$49.133 (caída del 33%). Con drawdown típico de BTC en mercados alcistas de 20–30%, 3x ofrece colchón razonable.",
+        "Operación altcoin de alto riesgo: 20x sobre $500 de margen para posición SOL de $10.000 a $180. Liquidación a ~$171 — solo 5% debajo. SOL se mueve regularmente 5–8% diario, haciendo probable la liquidación en horas."
+      ],
+      checklist: [
+        "Antes: 1) Calcula el precio de liquidación y compáralo con el mínimo de 30 días. 2) Determina tu pérdida máxima aceptable y coloca stop-loss bien por encima de la liquidación. 3) Verifica el requisito de margen de mantenimiento y la tasa de financiamiento.",
+        "Después de abrir: coloca stop-loss inmediatamente. Monitorea tasas de financiamiento cada 8 horas; si pagas más de 0,1% por período, el costo erosiona tu margen."
+      ],
+      mistakes: [
+        "El error más peligroso es usar el apalancamiento máximo disponible. A 100x, un movimiento adverso del 1% te liquida. Limita el apalancamiento a 3–5x para swing trades y 10x máximo para scalps.",
+        "Otro error crítico es ignorar el costo acumulado de tasas de financiamiento. A 0,05% cada 8 horas con 10x, pagas 1,5% de tu margen diariamente — 45% mensual."
+      ],
+      benchmarks: [
+        "Firmas profesionales usan 2–5x para operaciones direccionales. Traders retail sobre 20x tienen tasa de liquidación superior al 80% en 30 días. Para BTC (3,5% rango diario), mínimo 7% de colchón = máximo ~14x.",
+        "Benchmarks de financiamiento: mercado neutral 0,01%/8h, alcista 0,03–0,10%, extremo 0,1–0,3%. A 10x, 0,05% de financiamiento cuesta 1,5%/día de margen."
+      ],
+      execution: [
+        "Flujo estándar: 1) Determinar tamaño (1–3% del portafolio). 2) Ingresar margen. 3) Ajustar apalancamiento hasta que liquidación quede bajo soporte fuerte. 4) Calcular costo de financiamiento. 5) Colocar stop-loss al 50% de distancia a liquidación.",
+        "Procedimiento de emergencia: si la posición se acerca a liquidación, añade margen solo si la tesis original sigue intacta. Nunca promedies a la baja en una posición apalancada que se ha movido en tu contra."
+      ],
+      hygiene: [
+        "Revisa tu exposición apalancada diariamente. Si la exposición total supera 3x tu capital, estás sobreexpuesto. Reduce hasta que el apalancamiento total esté bajo 2x.",
+        "Rastrea el rendimiento apalancado separadamente. Si el ratio Sharpe de operaciones apalancadas está bajo 0,5 en 90 días, el apalancamiento destruye tus retornos."
+      ],
+      validation: [
+        "Verifica manualmente: para 10x long a $73.700, liquidación = entrada × (1 − 1/apalancamiento) = $73.700 × 0,90 = $66.330. Si difiere, puede incluir margen de mantenimiento.",
+        "Valida P&L: 5% de aumento con 10x long = 50% de ganancia sobre margen. Si depositaste $1.000 y el precio sube 5%, la ganancia debe ser $500."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora mostra sua posição amplificada, margem necessária e preço de liquidação. Com 10x de alavancagem sobre $1.000 de margem, você controla uma posição de $10.000 — um movimento de 1% gera 10% de retorno (ou perda). Se o preço de liquidação mostra $900 para um long, um movimento adverso de 10% elimina seu depósito.",
+        "Foque no preço de liquidação — é o número mais crítico. Compare com níveis recentes de suporte/resistência e a volatilidade diária média. Se o range diário médio do BTC é 3,5% e sua distância de liquidação é apenas 5%, você está a um dia volátil da liquidação."
+      ],
+      scenarios: [
+        "BTC long conservador: você deposita $5.000 de margem com 3x, criando posição de $15.000 a $73.700/BTC. Liquidação a ~$49.133 (queda de 33%). Com drawdown típico de BTC em bull markets de 20–30%, 3x oferece colchão razoável.",
+        "Trade altcoin de alto risco: 20x sobre $500 de margem para posição SOL de $10.000 a $180. Liquidação a ~$171 — apenas 5% abaixo. SOL se move regularmente 5–8% diariamente."
+      ],
+      checklist: [
+        "Antes: 1) Calcule o preço de liquidação e compare com a mínima de 30 dias. 2) Determine sua perda máxima aceitável e coloque stop-loss bem acima da liquidação. 3) Verifique o requisito de margem de manutenção e taxa de financiamento.",
+        "Após abrir: coloque stop-loss imediatamente. Monitore taxas de financiamento a cada 8 horas; se pagar mais de 0,1% por período, o custo corrói sua margem."
+      ],
+      mistakes: [
+        "O erro mais perigoso é usar a alavancagem máxima disponível. A 100x, um movimento adverso de 1% liquida você. Limite a alavancagem a 3–5x para swing trades e 10x máximo para scalps.",
+        "Outro erro crítico é ignorar o custo acumulado de taxas de financiamento. A 0,05% a cada 8 horas com 10x, você paga 1,5% da margem diariamente — 45% mensal."
+      ],
+      benchmarks: [
+        "Firmas profissionais usam 2–5x para trades direcionais. Traders retail acima de 20x têm taxa de liquidação superior a 80% em 30 dias. Para BTC (3,5% range diário), mínimo 7% de colchão = máximo ~14x.",
+        "Benchmarks de financiamento: mercado neutro 0,01%/8h, bullish 0,03–0,10%, extremo 0,1–0,3%. A 10x, 0,05% de financiamento custa 1,5%/dia de margem."
+      ],
+      execution: [
+        "Fluxo padrão: 1) Determinar tamanho (1–3% do portfólio). 2) Inserir margem. 3) Ajustar alavancagem até liquidação ficar abaixo de suporte forte. 4) Calcular custo de financiamento. 5) Colocar stop-loss a 50% da distância de liquidação.",
+        "Procedimento de emergência: se a posição se aproxima da liquidação, adicione margem apenas se a tese original permanece intacta. Nunca faça média para baixo em posição alavancada contra você."
+      ],
+      hygiene: [
+        "Revise sua exposição alavancada diariamente. Se a exposição total exceder 3x seu capital, você está superexposto. Reduza até alavancagem total ficar abaixo de 2x.",
+        "Rastreie performance alavancada separadamente. Se o Sharpe ratio de trades alavancados estiver abaixo de 0,5 em 90 dias, alavancagem está destruindo seus retornos."
+      ],
+      validation: [
+        "Verifique manualmente: para 10x long a $73.700, liquidação = entrada × (1 − 1/alavancagem) = $73.700 × 0,90 = $66.330. Se diferir, pode incluir margem de manutenção.",
+        "Valide P&L: 5% de aumento com 10x long = 50% de lucro sobre margem. Se depositou $1.000 e preço sobe 5%, lucro deve ser $500."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Hesaplayıcı, büyütülmüş pozisyon boyutunuzu, gereken teminatı ve likidasyon fiyatını gösterir. $1.000 teminat üzerinde 10x kaldıraçla $10.000 pozisyon kontrol edersiniz — %1 fiyat hareketi teminatınız üzerinde %10 getiri (veya kayıp) oluşturur.",
+        "Likidasyon fiyatına odaklanın — risk yönetimi için en kritik sayıdır. Son destek/direnç seviyeleri ve varlığın ortalama günlük oynaklığıyla karşılaştırın. BTC'nin 30 günlük ortalama günlük aralığı %3,5 ve likidasyon mesafeniz sadece %5 ise, ortalamanın üzerinde volatil bir gün likidasyona yeter."
+      ],
+      scenarios: [
+        "Muhafazakâr BTC long: $5.000 teminatla 3x kaldıraç, $73.700/BTC'de $15.000 pozisyon. Likidasyon ~$49.133'te (%33 düşüş). Boğa piyasasında BTC'nin tipik max drawdown'u %20–30 olduğundan 3x makul tampon sağlar.",
+        "Yüksek riskli altcoin işlemi: $500 teminat üzerinde 20x, $180'de $10.000 SOL pozisyonu. Likidasyon ~$171 — girişin sadece %5 altında. SOL günlük düzenli %5–8 hareket eder."
+      ],
+      checklist: [
+        "Önce: 1) Likidasyon fiyatını hesaplayın ve 30 günlük diple karşılaştırın. 2) Maksimum kabul edilebilir kaybınızı belirleyin ve likidasyonun oldukça üstünde stop-loss koyun. 3) Marj bakım gereksinimi ve fonlama oranını doğrulayın.",
+        "Açtıktan sonra: hemen stop-loss emri girin. Fonlama oranlarını her 8 saatte izleyin; dönem başına %0,1'den fazla ödüyorsanız maliyet teminatınızı eritir."
+      ],
+      mistakes: [
+        "En tehlikeli hata, sunulduğu için maksimum kaldıracı kullanmaktır. 100x'de %1 ters hareket sizi tamamen likide eder. Kaldıracı swing trade için 3–5x, scalp için maksimum 10x ile sınırlayın.",
+        "Diğer kritik hata, fonlama oranlarının kümülatif maliyetini görmezden gelmektir. 10x ile 8 saatte %0,05'te günlük teminatınızın %1,5'ini — aylık %45 ödersiniz."
+      ],
+      benchmarks: [
+        "Profesyonel firmalar yönlü işlemler için 2–5x kullanır. 20x üzeri perakende yatırımcıların %80'den fazlası 30 günde likide olur. BTC için (%3,5 ortalama günlük aralık) minimum %7 tampon = maksimum ~14x.",
+        "Fonlama benchmarkları: nötr piyasa %0,01/8s, boğa %0,03–0,10, aşırı boğa %0,1–0,3. 10x'de %0,05 fonlama, günlük teminatınızın %1,5'ine mal olur."
+      ],
+      execution: [
+        "Standart iş akışı: 1) Pozisyon boyutu belirle (portföyün %1–3'ü). 2) Teminat gir. 3) Likidasyon güçlü desteğin altına düşene kadar kaldıracı ayarla. 4) Fonlama maliyetini hesapla. 5) Stop-loss'u likidasyon mesafesinin %50'sine koy.",
+        "Acil durum: pozisyon likidasyona yaklaşırsa, orijinal tez sağlamsa teminat ekleyin. Size karşı hareket eden kaldıraçlı pozisyonda asla ortalama düşürmeyin."
+      ],
+      hygiene: [
+        "Kaldıraçlı maruziyetinizi günlük gözden geçirin. Toplam maruziyetiniz sermayenizin 3 katını aşarsa aşırı maruz kalıyorsunuzdur. Toplam kaldıraç 2x'in altına inene kadar azaltın.",
+        "Kaldıraçlı işlem performansını ayrı takip edin. Kaldıraçlı pozisyonların Sharpe oranı 90 günde 0,5'in altındaysa, kaldıraç getirilerinizi yok ediyor."
+      ],
+      validation: [
+        "Manuel doğrulama: $73.700 girişte 10x long için likidasyon = giriş × (1 − 1/kaldıraç) = $73.700 × 0,90 = $66.330. Farklıysa bakım marjı hesaba katılıyor olabilir.",
+        "P&L doğrulayın: 10x long ile %5 artış = teminat üzerinde %50 kâr. $1.000 yatırdıysanız ve fiyat %5 yükselirse kârınız $500 olmalıdır."
+      ],
+    },
+    hi: {
+      interpret: [
+        "कैलकुलेटर आपकी बढ़ी हुई पोजीशन साइज़, आवश्यक मार्जिन और लिक्विडेशन प्राइस दिखाता है। $1,000 मार्जिन पर 10x लीवरेज के साथ, आप $10,000 पोजीशन कंट्रोल करते हैं — 1% प्राइस मूवमेंट आपके मार्जिन पर 10% रिटर्न (या नुकसान) उत्पन्न करता है।",
+        "लिक्विडेशन प्राइस पर सबसे अधिक ध्यान दें — यह रिस्क मैनेजमेंट के लिए सबसे महत्वपूर्ण संख्या है। हाल के सपोर्ट/रेजिस्टेंस लेवल और एसेट की औसत दैनिक वोलैटिलिटी से तुलना करें।"
+      ],
+      scenarios: [
+        "कंजर्वेटिव BTC लॉन्ग: $5,000 मार्जिन 3x लीवरेज, $73,700/BTC पर $15,000 पोजीशन। लिक्विडेशन ~$49,133 (33% गिरावट)। बुल मार्केट में BTC का मैक्स ड्रॉडाउन आमतौर पर 20–30% है, 3x उचित बफर देता है।",
+        "हाई-रिस्क ऑल्टकॉइन ट्रेड: $500 मार्जिन पर 20x, $180 पर $10,000 SOL पोजीशन। लिक्विडेशन ~$171 — एंट्री से केवल 5% नीचे। SOL दैनिक 5–8% मूव करता है।"
+      ],
+      checklist: [
+        "पहले: 1) लिक्विडेशन प्राइस कैलकुलेट करें और 30-दिन के लो से तुलना करें। 2) अपना अधिकतम स्वीकार्य नुकसान निर्धारित करें और लिक्विडेशन से काफी ऊपर स्टॉप-लॉस रखें। 3) मार्जिन मेंटेनेंस रिक्वायरमेंट और फंडिंग रेट सत्यापित करें।",
+        "खोलने के बाद: तुरंत स्टॉप-लॉस ऑर्डर सेट करें। हर 8 घंटे फंडिंग रेट मॉनिटर करें; यदि प्रति अवधि 0.1% से अधिक भुगतान कर रहे हैं, तो लागत आपका मार्जिन खा रही है।"
+      ],
+      mistakes: [
+        "सबसे खतरनाक गलती अधिकतम उपलब्ध लीवरेज उपयोग करना है। 100x पर, 1% प्रतिकूल मूवमेंट आपको पूरी तरह लिक्विडेट करता है। लीवरेज स्विंग ट्रेड के लिए 3–5x और स्कैल्प के लिए अधिकतम 10x तक सीमित रखें।",
+        "एक और गंभीर गलती फंडिंग रेट की संचयी लागत अनदेखा करना है। 10x पर 8 घंटे में 0.05% पर, आप दैनिक अपने मार्जिन का 1.5% भुगतान करते हैं — मासिक 45%।"
+      ],
+      benchmarks: [
+        "पेशेवर फर्में डायरेक्शनल ट्रेड के लिए 2–5x उपयोग करती हैं। 20x से ऊपर रिटेल ट्रेडर्स की 30 दिनों में 80% से अधिक लिक्विडेशन दर है। BTC के लिए (3.5% औसत दैनिक रेंज) न्यूनतम 7% बफर = अधिकतम ~14x।",
+        "फंडिंग बेंचमार्क: न्यूट्रल मार्केट 0.01%/8h, बुलिश 0.03–0.10%, एक्सट्रीम 0.1–0.3%। 10x पर 0.05% फंडिंग दैनिक मार्जिन का 1.5% खर्च करती है।"
+      ],
+      execution: [
+        "मानक वर्कफ़्लो: 1) पोजीशन साइज़ तय करें (पोर्टफोलियो का 1–3%)। 2) मार्जिन दर्ज करें। 3) लिक्विडेशन मजबूत सपोर्ट से नीचे आने तक लीवरेज समायोजित करें। 4) फंडिंग लागत गणना करें। 5) लिक्विडेशन दूरी के 50% पर स्टॉप-लॉस रखें।",
+        "आपातकालीन प्रक्रिया: यदि पोजीशन लिक्विडेशन के करीब है, तो मूल थीसिस बरकरार हो तभी मार्जिन जोड़ें। आपके खिलाफ गई लीवरेज्ड पोजीशन में कभी एवरेज डाउन न करें।"
+      ],
+      hygiene: [
+        "अपने लीवरेज्ड एक्सपोज़र की दैनिक समीक्षा करें। यदि कुल एक्सपोज़र आपकी पूंजी का 3x से अधिक है, तो आप अति-एक्सपोज़्ड हैं। कुल लीवरेज 2x से नीचे आने तक कम करें।",
+        "लीवरेज्ड ट्रेड प्रदर्शन अलग से ट्रैक करें। यदि 90 दिनों में लीवरेज्ड पोजीशन का शार्प रेश्यो 0.5 से कम है, तो लीवरेज आपके रिटर्न नष्ट कर रहा है।"
+      ],
+      validation: [
+        "मैन्युअल सत्यापन: $73,700 एंट्री पर 10x लॉन्ग के लिए लिक्विडेशन = एंट्री × (1 − 1/लीवरेज) = $73,700 × 0.90 = $66,330। अंतर हो तो मेंटेनेंस मार्जिन शामिल हो सकता है।",
+        "P&L सत्यापित करें: 10x लॉन्ग के साथ 5% वृद्धि = मार्जिन पर 50% लाभ। यदि $1,000 जमा किया और कीमत 5% बढ़ी, तो लाभ $500 होना चाहिए।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор показывает увеличенный размер позиции, необходимую маржу и цену ликвидации. При 10x на маржу $1 000 вы контролируете позицию $10 000 — движение цены на 1% создаёт 10% доходности (или убытка) от маржи.",
+        "Сфокусируйтесь на цене ликвидации — это самая критическая цифра. Сравните её с недавними уровнями поддержки/сопротивления и средней дневной волатильностью актива. Если средний дневной диапазон BTC 3,5%, а расстояние до ликвидации всего 5%, вас может ликвидировать за один волатильный день."
+      ],
+      scenarios: [
+        "Консервативный лонг BTC: маржа $5 000 с 3x, позиция $15 000 при $73 700/BTC. Ликвидация при ~$49 133 (падение 33%). Максимальная просадка BTC на бычьем рынке обычно 20–30%, 3x даёт разумный буфер.",
+        "Высокорисковая сделка с альткоином: 20x на $500 маржи, позиция SOL $10 000 при $180. Ликвидация при ~$171 — всего 5% ниже входа. SOL регулярно двигается на 5–8% в день."
+      ],
+      checklist: [
+        "Перед использованием: 1) Рассчитайте цену ликвидации и сравните с 30-дневным минимумом. 2) Определите максимально допустимый убыток и установите стоп-лосс выше ликвидации. 3) Проверьте требование к поддерживающей марже и ставку финансирования.",
+        "После открытия: немедленно установите стоп-лосс. Мониторьте ставки финансирования каждые 8 часов; если платите более 0,1% за период, расходы съедают маржу."
+      ],
+      mistakes: [
+        "Самая опасная ошибка — использовать максимальное доступное плечо. При 100x движение в 1% ликвидирует полностью. Ограничивайте плечо до 3–5x для свинг-трейдов и 10x максимум для скальпинга.",
+        "Другая критическая ошибка — игнорировать накопленную стоимость ставок финансирования. При 10x и 0,05% за 8 часов вы платите 1,5% маржи ежедневно — 45% в месяц."
+      ],
+      benchmarks: [
+        "Профессиональные фирмы используют 2–5x для направленных сделок. У розничных трейдеров с плечом выше 20x ликвидация в 80%+ случаев за 30 дней. Для BTC (3,5% средний дневной диапазон) минимум 7% буфера = максимум ~14x.",
+        "Бенчмарки финансирования: нейтральный рынок 0,01%/8ч, бычий 0,03–0,10%, экстремально бычий 0,1–0,3%. При 10x ставка 0,05% обходится в 1,5% маржи в день."
+      ],
+      execution: [
+        "Стандартный процесс: 1) Определить размер позиции (1–3% портфеля). 2) Ввести маржу. 3) Подбирать плечо, пока ликвидация не окажется ниже сильной поддержки. 4) Рассчитать стоимость финансирования. 5) Установить стоп-лосс на 50% расстояния до ликвидации.",
+        "Аварийная процедура: если позиция приближается к ликвидации, добавляйте маржу только при сохранении исходного тезиса. Никогда не усредняйте убыточную позицию с плечом."
+      ],
+      hygiene: [
+        "Ежедневно проверяйте экспозицию с плечом. Если общая экспозиция превышает 3x капитала, вы перегружены. Снижайте, пока общее плечо не опустится ниже 2x.",
+        "Отслеживайте результаты с плечом отдельно. Если коэффициент Шарпа позиций с плечом ниже 0,5 за 90 дней, плечо разрушает доходность."
+      ],
+      validation: [
+        "Ручная проверка: для 10x лонга при входе $73 700 ликвидация = вход × (1 − 1/плечо) = $73 700 × 0,90 = $66 330. Если калькулятор показывает другое — возможно, учтена поддерживающая маржа.",
+        "Проверьте P&L: рост на 5% при 10x лонге = 50% прибыли от маржи. Если внесли $1 000 и цена выросла на 5%, прибыль должна быть $500."
+      ],
+    },
+  },
+
+  'loan-calculator': {
+    en: {
+      interpret: [
+        "The crypto loan calculator output shows your required collateral, loan-to-value (LTV) ratio, liquidation threshold, and total interest cost. If you borrow $10,000 at 50% LTV using BTC as collateral, you must deposit $20,000 worth of BTC (0.271 BTC at $73,700). The liquidation threshold — typically 75–85% LTV — is the price level at which the protocol sells your collateral to repay the loan. At 80% LTV liquidation, your BTC collateral is liquidated if BTC drops to approximately $47,630.",
+        "Evaluate the total cost of borrowing by combining the interest rate with the opportunity cost of locked collateral. A 5% annual interest rate on $10,000 costs $500/year in interest, but if the $20,000 BTC collateral appreciates 30%, you also forgo $6,000 in potential <a href=\"/profit-calculator/\">unrealized gains</a> versus holding that BTC unlocked. Conversely, if you need liquidity without triggering a taxable event, borrowing against crypto avoids capital gains tax — potentially saving 15–30% of the amount you would otherwise sell."
+      ],
+      scenarios: [
+        "Tax-efficient liquidity: you hold 1 BTC ($73,700) and need $25,000 for a home down payment. Selling triggers ~$7,500 in capital gains tax (30% bracket). Instead, you borrow $25,000 at 50% LTV (depositing $50,000 of BTC = 0.678 BTC), pay 6% interest ($1,500/year), and retain full BTC exposure. If BTC rises 20% during the loan term, you save $7,500 in tax minus $1,500 interest = $6,000 net benefit.",
+        "DeFi yield farming leverage: you deposit $30,000 ETH as collateral, borrow $15,000 USDC at 4% interest, and deploy the USDC in a yield farm paying 12% APY. Net yield is 12% − 4% = 8% on borrowed capital = $1,200/year profit. However, if ETH drops 25%, your collateral approaches liquidation — run this scenario through our <a href=\"/liquidation-calculator/\">liquidation calculator</a> to find your exact liquidation price and set alerts accordingly."
+      ],
+      checklist: [
+        "Before borrowing: 1) Calculate the liquidation price and ensure it is at least 40% below the current price for volatile collateral (BTC, ETH) or 25% for stablecoins. 2) Compare interest rates across at least 3 platforms (Aave, Compound, Maker, CeFi lenders). 3) Verify whether the interest rate is fixed or variable — variable rates can spike 2–5x during high-demand periods.",
+        "After borrowing: set a price alert at 110% of your liquidation threshold LTV to give yourself time to add collateral or repay. Monitor collateral value weekly — a 20% collateral decline raises your LTV from 50% to 62.5%, reducing your safety buffer from 30% to 17.5%. Prepare additional collateral or a repayment plan in advance rather than scrambling during a market crash."
+      ],
+      mistakes: [
+        "The most dangerous mistake is over-borrowing relative to collateral volatility. Borrowing at 70% LTV with BTC collateral means liquidation at just a 12.5% price drop (at 80% liquidation threshold). During the May 2021 crash, BTC dropped 53% in two weeks — any loan above 35% LTV would have been liquidated. Conservative borrowers maintain LTV below 40% for volatile collateral and below 60% for stablecoin pairs.",
+        "Another common error is ignoring variable interest rate risk. Aave's USDC borrow rate has ranged from 1% to 25% within single quarters depending on utilization. A loan that costs 3% today could cost 15% next month if demand surges. Always model your worst-case interest scenario and ensure you can service the loan at 3x the current rate. Use our <a href=\"/compound-interest-calculator/\">compound interest calculator</a> to project total interest costs at elevated rates."
+      ],
+      benchmarks: [
+        "DeFi lending rate benchmarks (March 2026): USDC/USDT borrow rate 3–8% variable on Aave/Compound, 5–7% on Maker (DAI). CeFi rates: 6–12% at Nexo, BlockFi successors. Fixed-rate protocols: 5–9% for 30–90 day terms. If you are paying above 10% for a stablecoin loan, compare alternatives before proceeding.",
+        "Safe LTV benchmarks by collateral type: BTC — max 50% LTV (liquidation buffer of 30% at 80% threshold), ETH — max 45% LTV (higher volatility), altcoins — max 30% LTV (extreme volatility risk), stablecoins — max 75% LTV (minimal price risk). These conservative levels have historically survived 99% of daily price movements without triggering liquidation."
+      ],
+      execution: [
+        "Standard borrowing workflow: 1) Determine the USD amount needed. 2) Choose collateral asset and check its current price. 3) Enter values into this calculator to find required collateral at your target LTV. 4) Add a 20% collateral buffer above the minimum. 5) Compare interest rates on 3+ platforms. 6) Deposit collateral and borrow. 7) Set liquidation alerts at 110% of threshold. 8) Schedule interest payments or ensure auto-deduction is enabled.",
+        "Repayment optimization: if your loan is in stablecoins and you earn yield on the borrowed funds, reinvest a portion of yield toward principal repayment each month. A $10,000 loan at 5% with $100/month extra principal payments is fully repaid in 7.6 years versus 20 years on interest-only. Front-loading repayment reduces your total interest cost by 60–70%."
+      ],
+      hygiene: [
+        "Check your LTV ratio at least twice per week during normal markets and daily during drawdowns exceeding 10%. Most DeFi dashboards show real-time LTV — bookmark your protocol's dashboard and review it as part of your morning routine. A 5-minute daily check prevents the catastrophic surprise of waking up to a liquidated position.",
+        "Review and compare interest rates monthly. DeFi rates change continuously based on pool utilization. If your current rate has increased by more than 2 percentage points since you borrowed, investigate refinancing — repay the existing loan and re-borrow on a cheaper platform. The one-time gas cost of refinancing ($5–20) is trivial compared to annual savings on a $10,000+ loan."
+      ],
+      validation: [
+        "Verify the liquidation price manually: if you borrow at 50% LTV with 80% liquidation threshold, liquidation occurs when collateral value drops to loan_amount / liquidation_LTV = $10,000 / 0.80 = $12,500. At a starting collateral of $20,000, that is a 37.5% price decline. If the calculator shows a different liquidation distance, check whether the protocol uses a different liquidation threshold.",
+        "Cross-check total interest cost: a $10,000 loan at 6% APR for 1 year = $600 in simple interest. With monthly compounding, total interest is $617. If the calculator output exceeds these benchmarks significantly, verify whether it is including origination fees, platform fees, or compounding at a different frequency than expected."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora muestra el colateral requerido, ratio préstamo-valor (LTV), umbral de liquidación y costo total de interés. Si pides $10.000 al 50% LTV con BTC como colateral, debes depositar $20.000 en BTC. A liquidación 80% LTV, tu BTC se liquida si cae a ~$47.630.",
+        "Evalúa el costo total combinando la tasa de interés con el costo de oportunidad del colateral bloqueado. Un 5% anual sobre $10.000 cuesta $500/año, pero si el BTC de $20.000 aprecia 30%, pierdes $6.000 en ganancias. Pero pedir prestado evita impuestos sobre ganancias de capital — potencialmente ahorrando 15–30%."
+      ],
+      scenarios: [
+        "Liquidez eficiente fiscalmente: tienes 1 BTC y necesitas $25.000. Vender genera ~$7.500 en impuestos. En su lugar, pides prestado al 50% LTV, pagas 6% interés ($1.500/año) y mantienes exposición a BTC.",
+        "Farming con apalancamiento DeFi: depositas $30.000 ETH como colateral, pides $15.000 USDC al 4% y despliegas en farm al 12% APY. Rendimiento neto: 8% = $1.200/año. Pero si ETH cae 25%, tu colateral se acerca a liquidación."
+      ],
+      checklist: [
+        "Antes: 1) Calcula el precio de liquidación y asegúrate de que esté al menos 40% por debajo del precio actual para colateral volátil. 2) Compara tasas en al menos 3 plataformas. 3) Verifica si la tasa es fija o variable.",
+        "Después: establece alerta al 110% del umbral LTV. Monitorea el colateral semanalmente — una caída del 20% eleva tu LTV del 50% al 62,5%."
+      ],
+      mistakes: [
+        "El error más peligroso es sobre-endeudarse. Pedir al 70% LTV con BTC significa liquidación con solo 12,5% de caída. Mantén LTV bajo 40% para colateral volátil.",
+        "Otro error es ignorar tasas variables. Las tasas de Aave han variado del 1% al 25% en un solo trimestre. Modela tu peor escenario al 3x de la tasa actual."
+      ],
+      benchmarks: [
+        "Tasas DeFi 2026: USDC/USDT 3–8% variable en Aave/Compound, 5–7% en Maker. CeFi: 6–12%. Tasa fija: 5–9% a 30–90 días.",
+        "LTV seguro por colateral: BTC max 50%, ETH max 45%, altcoins max 30%, stablecoins max 75%. Estos niveles han sobrevivido al 99% de movimientos diarios."
+      ],
+      execution: [
+        "Flujo estándar: 1) Determinar monto. 2) Elegir colateral. 3) Calcular colateral requerido al LTV objetivo. 4) Añadir 20% de colchón. 5) Comparar tasas en 3+ plataformas. 6) Depositar y pedir prestado. 7) Configurar alertas.",
+        "Optimización de repago: reinvierte parte del rendimiento en principal cada mes. $10.000 al 5% con $100/mes extra se repaga en 7,6 años vs 20 años solo con intereses."
+      ],
+      hygiene: [
+        "Revisa tu LTV al menos dos veces por semana en mercados normales y diariamente durante caídas superiores al 10%. Marca tu dashboard del protocolo como favorito.",
+        "Compara tasas mensualmente. Si tu tasa ha subido más de 2 puntos porcentuales, investiga refinanciamiento en una plataforma más barata."
+      ],
+      validation: [
+        "Verifica manualmente: si pides al 50% LTV con umbral 80%, liquidación cuando colateral baje a $10.000/0,80 = $12.500. Desde $20.000, es una caída del 37,5%.",
+        "Verifica interés total: $10.000 al 6% APR 1 año = $600 simple, $617 con capitalización mensual."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora mostra o colateral necessário, ratio empréstimo-valor (LTV), limiar de liquidação e custo total de juros. Se emprestar $10.000 a 50% LTV com BTC como colateral, deve depositar $20.000 em BTC. Com liquidação a 80% LTV, seu BTC é liquidado se cair para ~$47.630.",
+        "Avalie o custo total combinando a taxa de juros com o custo de oportunidade do colateral bloqueado. Um 5% anual sobre $10.000 custa $500/ano, mas se o BTC de $20.000 valorizar 30%, você perde $6.000 em ganhos. Porém, emprestar evita imposto sobre ganhos de capital."
+      ],
+      scenarios: [
+        "Liquidez eficiente fiscalmente: você tem 1 BTC e precisa de $25.000. Vender gera ~$7.500 em impostos. Em vez disso, emprestou a 50% LTV, paga 6% juros ($1.500/ano) e mantém exposição ao BTC.",
+        "Farming alavancado DeFi: deposita $30.000 ETH como colateral, empresta $15.000 USDC a 4% e aplica em farm a 12% APY. Rendimento líquido: 8% = $1.200/ano. Mas se ETH cair 25%, colateral se aproxima da liquidação."
+      ],
+      checklist: [
+        "Antes: 1) Calcule o preço de liquidação e certifique-se de que está pelo menos 40% abaixo do preço atual para colateral volátil. 2) Compare taxas em pelo menos 3 plataformas. 3) Verifique se a taxa é fixa ou variável.",
+        "Após: defina alerta a 110% do limiar LTV. Monitore o colateral semanalmente — uma queda de 20% eleva seu LTV de 50% para 62,5%."
+      ],
+      mistakes: [
+        "O erro mais perigoso é sobre-endividar-se. Emprestar a 70% LTV com BTC significa liquidação com apenas 12,5% de queda. Mantenha LTV abaixo de 40% para colateral volátil.",
+        "Outro erro é ignorar taxas variáveis. As taxas do Aave variaram de 1% a 25% num único trimestre. Modele seu pior cenário a 3x da taxa atual."
+      ],
+      benchmarks: [
+        "Taxas DeFi 2026: USDC/USDT 3–8% variável em Aave/Compound, 5–7% em Maker. CeFi: 6–12%. Taxa fixa: 5–9% para termos de 30–90 dias.",
+        "LTV seguro por colateral: BTC máx 50%, ETH máx 45%, altcoins máx 30%, stablecoins máx 75%. Esses níveis sobreviveram a 99% dos movimentos diários."
+      ],
+      execution: [
+        "Fluxo padrão: 1) Determinar valor. 2) Escolher colateral. 3) Calcular colateral necessário no LTV alvo. 4) Adicionar 20% de margem. 5) Comparar taxas em 3+ plataformas. 6) Depositar e emprestar. 7) Configurar alertas.",
+        "Otimização de pagamento: reinvista parte do rendimento no principal mensalmente. $10.000 a 5% com $100/mês extra é quitado em 7,6 anos vs 20 anos só com juros."
+      ],
+      hygiene: [
+        "Verifique seu LTV pelo menos duas vezes por semana em mercados normais e diariamente durante quedas acima de 10%. Marque o dashboard do protocolo como favorito.",
+        "Compare taxas mensalmente. Se sua taxa subiu mais de 2 pontos percentuais, investigue refinanciamento numa plataforma mais barata."
+      ],
+      validation: [
+        "Verifique manualmente: se emprestou a 50% LTV com limiar 80%, liquidação quando colateral cair para $10.000/0,80 = $12.500. De $20.000, é queda de 37,5%.",
+        "Verifique juros totais: $10.000 a 6% APR 1 ano = $600 simples, $617 com capitalização mensal."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Hesaplayıcı gereken teminatı, kredi-değer oranını (LTV), likidasyon eşiğini ve toplam faiz maliyetini gösterir. %50 LTV'de BTC teminatıyla $10.000 borç alırsanız, $20.000 BTC yatırmalısınız. %80 LTV likidasyonda, BTC ~$47.630'a düşerse teminatınız likide edilir.",
+        "Toplam maliyeti faiz oranı ile kilitli teminatın fırsat maliyetini birleştirerek değerlendirin. $10.000'de %5 yıllık faiz $500/yıl maliyettir, ancak $20.000 BTC %30 değer kazanırsa $6.000 potansiyel kazancı kaçırırsınız."
+      ],
+      scenarios: [
+        "Vergi etkin likidite: 1 BTC'niz var ve $25.000'a ihtiyacınız var. Satmak ~$7.500 vergi doğurur. Bunun yerine %50 LTV'de borç alın, %6 faiz ödeyin ($1.500/yıl) ve BTC maruziyetinizi koruyun.",
+        "DeFi yield farming kaldıracı: $30.000 ETH teminat, $15.000 USDC borç %4 faizle, %12 APY ödeyen farm'a yatırım. Net getiri: %8 = $1.200/yıl. Ancak ETH %25 düşerse likidasyon yaklaşır."
+      ],
+      checklist: [
+        "Önce: 1) Likidasyon fiyatını hesaplayın ve mevcut fiyattan en az %40 aşağıda olduğundan emin olun. 2) En az 3 platformda oranları karşılaştırın. 3) Oranın sabit mi değişken mi olduğunu doğrulayın.",
+        "Sonra: LTV eşiğinin %110'unda uyarı ayarlayın. Teminat değerini haftalık izleyin — %20 düşüş LTV'nizi %50'den %62,5'e yükseltir."
+      ],
+      mistakes: [
+        "En tehlikeli hata aşırı borçlanmaktır. BTC teminatıyla %70 LTV'de borçlanmak, sadece %12,5 fiyat düşüşünde likidasyon demektir. Volatil teminat için LTV'yi %40 altında tutun.",
+        "Diğer hata değişken faiz riskini görmezden gelmektir. Aave'nin USDC borç oranı tek bir çeyrekte %1'den %25'e çıkmıştır. En kötü senaryonuzu mevcut oranın 3 katında modelleyin."
+      ],
+      benchmarks: [
+        "2026 DeFi oranları: USDC/USDT Aave/Compound'da %3–8 değişken, Maker'da %5–7. CeFi: %6–12. Sabit oran: 30–90 günlük vadelerde %5–9.",
+        "Teminat türüne göre güvenli LTV: BTC max %50, ETH max %45, altcoinler max %30, stablecoinler max %75."
+      ],
+      execution: [
+        "Standart iş akışı: 1) Gereken tutarı belirle. 2) Teminat varlığını seç. 3) Hedef LTV'de gereken teminatı hesapla. 4) Minimumun %20 üstünde tampon ekle. 5) 3+ platformda oranları karşılaştır. 6) Yatır ve borçlan. 7) Uyarıları ayarla.",
+        "Geri ödeme optimizasyonu: getirinin bir kısmını her ay anaparaya yönlendirin. $10.000 %5'te aylık $100 ekstra anaparayla 7,6 yılda kapanır vs 20 yıl sadece faizle."
+      ],
+      hygiene: [
+        "LTV oranınızı normal piyasalarda haftada en az iki kez, %10 üzeri düşüşlerde günlük kontrol edin. Protokol panelinizi yer imine ekleyin.",
+        "Oranları aylık karşılaştırın. Mevcut oranınız 2 yüzde puanından fazla arttıysa, daha ucuz bir platformda refinansman araştırın."
+      ],
+      validation: [
+        "Manuel doğrulama: %50 LTV'de %80 eşikle borç aldıysanız, likidasyon teminat değeri $10.000/0,80 = $12.500'a düştüğünde gerçekleşir. $20.000 başlangıçtan %37,5 düşüş.",
+        "Toplam faizi doğrulayın: $10.000 %6 APR 1 yıl = $600 basit, aylık bileşikle $617."
+      ],
+    },
+    hi: {
+      interpret: [
+        "कैलकुलेटर आवश्यक कोलैटरल, लोन-टू-वैल्यू (LTV) अनुपात, लिक्विडेशन थ्रेशोल्ड और कुल ब्याज लागत दिखाता है। BTC कोलैटरल के साथ 50% LTV पर $10,000 उधार लेने के लिए $20,000 BTC जमा करना होगा। 80% LTV लिक्विडेशन पर, BTC ~$47,630 तक गिरने पर कोलैटरल लिक्विडेट हो जाता है।",
+        "ब्याज दर को लॉक्ड कोलैटरल की अवसर लागत के साथ मिलाकर कुल लागत का मूल्यांकन करें। $10,000 पर 5% वार्षिक ब्याज $500/वर्ष खर्च है, लेकिन यदि $20,000 BTC 30% बढ़ता है, तो आप $6,000 संभावित लाभ खो देते हैं।"
+      ],
+      scenarios: [
+        "कर-कुशल तरलता: आपके पास 1 BTC है और $25,000 चाहिए। बेचने पर ~$7,500 कैपिटल गेन टैक्स लगता है। इसके बजाय 50% LTV पर उधार लें, 6% ब्याज ($1,500/वर्ष) दें और BTC एक्सपोज़र बनाए रखें।",
+        "DeFi यील्ड फार्मिंग लीवरेज: $30,000 ETH कोलैटरल, 4% पर $15,000 USDC उधार, 12% APY फार्म में लगाएं। शुद्ध यील्ड: 8% = $1,200/वर्ष। लेकिन ETH 25% गिरे तो लिक्विडेशन करीब आता है।"
+      ],
+      checklist: [
+        "पहले: 1) लिक्विडेशन प्राइस कैलकुलेट करें और वोलैटाइल कोलैटरल के लिए मौजूदा कीमत से कम से कम 40% नीचे सुनिश्चित करें। 2) कम से कम 3 प्लेटफॉर्म पर दरें तुलना करें। 3) दर फिक्स्ड या वेरिएबल है सत्यापित करें।",
+        "बाद में: LTV थ्रेशोल्ड के 110% पर अलर्ट सेट करें। साप्ताहिक कोलैटरल मूल्य मॉनिटर करें — 20% गिरावट LTV को 50% से 62.5% तक बढ़ाती है।"
+      ],
+      mistakes: [
+        "सबसे खतरनाक गलती अधिक उधार लेना है। BTC कोलैटरल के साथ 70% LTV पर उधार लेने का मतलब केवल 12.5% गिरावट पर लिक्विडेशन है। वोलैटाइल कोलैटरल के लिए LTV 40% से नीचे रखें।",
+        "एक और गलती वेरिएबल ब्याज दर जोखिम अनदेखा करना है। Aave की USDC उधार दर एक तिमाही में 1% से 25% तक बदली है। वर्तमान दर के 3x पर सबसे खराब परिदृश्य मॉडल करें।"
+      ],
+      benchmarks: [
+        "2026 DeFi दरें: USDC/USDT Aave/Compound पर 3–8% वेरिएबल, Maker पर 5–7%। CeFi: 6–12%। फिक्स्ड रेट: 30–90 दिन अवधि के लिए 5–9%।",
+        "कोलैटरल प्रकार अनुसार सुरक्षित LTV: BTC अधिकतम 50%, ETH अधिकतम 45%, ऑल्टकॉइन अधिकतम 30%, स्टेबलकॉइन अधिकतम 75%।"
+      ],
+      execution: [
+        "मानक वर्कफ़्लो: 1) आवश्यक राशि निर्धारित करें। 2) कोलैटरल एसेट चुनें। 3) लक्ष्य LTV पर आवश्यक कोलैटरल गणना करें। 4) न्यूनतम से 20% ऊपर बफर जोड़ें। 5) 3+ प्लेटफॉर्म पर दरें तुलना करें। 6) जमा करें और उधार लें।",
+        "भुगतान अनुकूलन: यील्ड का हिस्सा हर महीने मूलधन में पुनर्निवेश करें। $10,000 5% पर $100/माह एक्स्ट्रा प्रिंसिपल के साथ 7.6 वर्ष में बंद होता है बनाम केवल ब्याज पर 20 वर्ष।"
+      ],
+      hygiene: [
+        "सामान्य बाजारों में सप्ताह में कम से कम दो बार और 10% से अधिक गिरावट में दैनिक LTV जांचें। अपने प्रोटोकॉल डैशबोर्ड को बुकमार्क करें।",
+        "मासिक दरों की तुलना करें। यदि मौजूदा दर 2 प्रतिशत अंक से अधिक बढ़ी है, तो सस्ते प्लेटफॉर्म पर रीफाइनेंसिंग की जांच करें।"
+      ],
+      validation: [
+        "मैन्युअल सत्यापन: 50% LTV पर 80% थ्रेशोल्ड के साथ, लिक्विडेशन जब कोलैटरल $10,000/0.80 = $12,500 तक गिरे। $20,000 से 37.5% गिरावट।",
+        "कुल ब्याज जांचें: $10,000 पर 6% APR 1 वर्ष = $600 साधारण, मासिक कंपाउंडिंग से $617।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор показывает необходимый залог, коэффициент залога (LTV), порог ликвидации и общую стоимость процентов. При займе $10 000 с LTV 50% под залог BTC нужно внести BTC на $20 000. При ликвидации на 80% LTV залог ликвидируется при падении BTC до ~$47 630.",
+        "Оцените общую стоимость, совместив процентную ставку с альтернативной стоимостью заблокированного залога. 5% годовых на $10 000 стоят $500/год, но если залог BTC на $20 000 вырастет на 30%, вы упускаете $6 000 потенциальной прибыли."
+      ],
+      scenarios: [
+        "Налогово-эффективная ликвидность: у вас 1 BTC и нужно $25 000. Продажа создаёт ~$7 500 налога. Вместо этого займите по LTV 50%, платите 6% ($1 500/год) и сохраняйте экспозицию к BTC.",
+        "DeFi-фарминг с плечом: вносите $30 000 ETH как залог, занимаете $15 000 USDC под 4%, размещаете в ферме под 12% APY. Чистая доходность: 8% = $1 200/год. Но при падении ETH на 25% залог приближается к ликвидации."
+      ],
+      checklist: [
+        "Перед займом: 1) Рассчитайте цену ликвидации — она должна быть минимум на 40% ниже текущей цены для волатильного залога. 2) Сравните ставки на 3+ платформах. 3) Проверьте, фиксированная ставка или плавающая.",
+        "После займа: установите оповещение на 110% порога LTV. Мониторьте залог еженедельно — падение на 20% повышает LTV с 50% до 62,5%."
+      ],
+      mistakes: [
+        "Самая опасная ошибка — избыточный займ. При LTV 70% с залогом BTC ликвидация наступает при падении всего на 12,5%. Держите LTV ниже 40% для волатильного залога.",
+        "Другая ошибка — игнорировать риск плавающей ставки. Ставка Aave по USDC менялась от 1% до 25% за квартал. Моделируйте худший сценарий при 3x текущей ставки."
+      ],
+      benchmarks: [
+        "Ставки DeFi 2026: USDC/USDT 3–8% на Aave/Compound, 5–7% на Maker. CeFi: 6–12%. Фиксированная: 5–9% на 30–90 дней.",
+        "Безопасный LTV по типу залога: BTC макс 50%, ETH макс 45%, альткоины макс 30%, стейблкоины макс 75%."
+      ],
+      execution: [
+        "Стандартный процесс: 1) Определить сумму. 2) Выбрать залог. 3) Рассчитать залог по целевому LTV. 4) Добавить 20% буфер. 5) Сравнить ставки на 3+ платформах. 6) Внести и занять. 7) Настроить оповещения.",
+        "Оптимизация выплат: реинвестируйте часть доходности в погашение основного долга ежемесячно. $10 000 под 5% с доплатой $100/мес закрывается за 7,6 лет против 20 лет на одних процентах."
+      ],
+      hygiene: [
+        "Проверяйте LTV минимум дважды в неделю в обычных условиях и ежедневно при просадках свыше 10%. Добавьте дашборд протокола в закладки.",
+        "Сравнивайте ставки ежемесячно. Если текущая ставка выросла более чем на 2 п.п., исследуйте рефинансирование на более дешёвой платформе."
+      ],
+      validation: [
+        "Ручная проверка: при LTV 50% и пороге 80% ликвидация наступает при падении залога до $10 000 / 0,80 = $12 500. От начальных $20 000 это падение на 37,5%.",
+        "Проверьте общие проценты: $10 000 под 6% годовых за 1 год = $600 простых, $617 с ежемесячной капитализацией."
+      ],
+    },
+  },
+
+  'portfolio-calculator': {
+    en: {
+      interpret: [
+        "The portfolio calculator output shows your asset allocation percentages, total portfolio value, individual position values, and concentration risk metrics. If you hold 60% BTC, 25% ETH, and 15% SOL, the calculator quantifies that a 20% BTC drawdown reduces your total portfolio by 12%, while the same SOL drawdown costs only 3%. Understanding these weighted impacts is essential for sizing positions according to your risk tolerance.",
+        "Pay special attention to correlation risk in the output. Crypto assets are highly correlated during market crashes — BTC, ETH, and SOL may all drop 25–40% simultaneously. A portfolio that looks diversified across 5 crypto assets actually has 0.80+ correlation during downturns, meaning effective diversification is much lower than it appears. Cross-reference with our <a href=\"/profit-calculator/\">profit calculator</a> to model portfolio-wide gains and losses under different scenarios."
+      ],
+      scenarios: [
+        "Conservative allocation: you have $50,000 to invest in crypto. The calculator models 50% BTC ($25,000), 30% ETH ($15,000), 10% stablecoins ($5,000), 10% blue-chip altcoins ($5,000). In a 30% market crash, the crypto portion drops roughly $13,500 (27% weighted loss), but the stablecoin allocation cushions the blow. Use our <a href=\"/dca-calculator/\">DCA calculator</a> to plan systematic entry into each allocation bucket over 3–6 months rather than lump-sum investing.",
+        "Rebalancing trigger scenario: your original allocation was 50/30/20 (BTC/ETH/alts), but after a BTC rally, it shifted to 65/22/13. The calculator shows your BTC concentration exceeds your target by 15 percentage points, increasing single-asset risk. Rebalancing back to target by selling $7,500 of BTC and buying ETH/alts locks in gains and restores your risk profile. Model the tax implications of rebalancing using our <a href=\"/tax-calculator/\">tax calculator</a>."
+      ],
+      checklist: [
+        "Before allocation: 1) Define your risk tolerance — can you stomach a 50% portfolio drawdown without panic selling? If not, increase stablecoin allocation. 2) Set target percentages for each asset class. 3) Include a cash/stablecoin reserve of at least 10% for buying dips and covering gas fees. 4) Verify current prices are up-to-date — a stale price changes allocation percentages significantly.",
+        "After setting allocations: document your target allocation and rebalancing rules (e.g., rebalance when any position drifts more than 5 percentage points from target). Schedule monthly portfolio reviews to check drift. Record each rebalancing transaction for tax reporting — every rebalance is a taxable event in most jurisdictions."
+      ],
+      mistakes: [
+        "The most common mistake is over-concentrating in a single asset because of conviction bias. Holding 80%+ in one token maximizes upside but also maximizes drawdown risk. Even BTC — the most established crypto — has experienced 50–80% drawdowns in every cycle. Professional portfolio managers rarely exceed 25% in a single position. Use this calculator to quantify the drawdown impact before concentrating above 40%.",
+        "Another frequent error is treating diversification across 10 different altcoins as true diversification. Most altcoins have 0.85+ correlation with BTC during crashes, meaning holding 10 altcoins provides almost no more protection than holding one. True diversification requires assets with low or negative correlation — stablecoins, short positions, or non-crypto assets. The calculator's correlation metric reveals this clearly."
+      ],
+      benchmarks: [
+        "Common portfolio models by risk level: Conservative (40% BTC, 25% ETH, 25% stablecoins, 10% alts) — max historical drawdown ~35%. Balanced (50% BTC, 30% ETH, 20% alts) — max drawdown ~50%. Aggressive (30% BTC, 30% ETH, 40% small-cap alts) — max drawdown ~70%. Ultra-aggressive (100% altcoins) — max drawdown ~90%.",
+        "Rebalancing frequency benchmarks: monthly rebalancing has historically outperformed quarterly by 2–4% annually in crypto due to high volatility creating frequent drift. However, each rebalance incurs gas costs ($5–20 on L1) and tax implications. For portfolios under $10,000, quarterly rebalancing balances costs against performance. Above $50,000, monthly rebalancing is generally worth the overhead."
+      ],
+      execution: [
+        "Portfolio construction workflow: 1) Determine total investment amount. 2) Choose 3–7 assets based on research (2–3 large caps, 1–2 mid caps, 1 stablecoin minimum). 3) Assign target percentages using this calculator. 4) Calculate dollar amounts per asset. 5) Execute purchases via <a href=\"/dca-calculator/\">DCA strategy</a> over 4–8 weeks. 6) Set calendar reminders for monthly rebalancing reviews. 7) Document allocation targets and rebalancing rules.",
+        "Rebalancing execution: when drift exceeds 5 percentage points on any position, sell the overweight assets and buy the underweight ones. Prioritize tax-loss harvesting — if an underperforming position has unrealized losses, sell it first to offset gains from the overweight sale. Execute all rebalancing trades within the same day to maintain consistent pricing."
+      ],
+      hygiene: [
+        "Update portfolio valuations at least weekly. Crypto prices can shift allocations significantly within days — a 15% ETH rally on a 30% ETH allocation increases that position to 34.5% of portfolio, potentially triggering a rebalancing event. Use a portfolio tracker app that auto-updates prices rather than manual spreadsheets.",
+        "Review your allocation strategy quarterly against your financial goals and risk tolerance. Life changes (job loss, major purchase, retirement approaching) should trigger allocation adjustments. If you cannot check your portfolio daily during volatile markets without anxiety, your allocation is too aggressive — increase the stablecoin allocation by 10 percentage points."
+      ],
+      validation: [
+        "Verify allocation percentages with mental math: if you have $10,000 total and want 50% BTC, that is $5,000. At $73,700/BTC, that is 0.0679 BTC. If the calculator shows a different BTC quantity, check whether fees or a price discrepancy is causing the difference. The allocation percentages must sum to exactly 100% — any deviation indicates an input error.",
+        "Stress-test your allocation by modeling a 50% crash across all positions. If your worst-case portfolio value makes you uncomfortable, reduce risk by shifting 10–20% from volatile assets to stablecoins. A $50,000 aggressive portfolio dropping to $25,000 is a real possibility — if that number causes panic, you are over-allocated to risk."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora muestra tus porcentajes de asignación, valor total del portafolio, valores individuales y métricas de riesgo de concentración. Si tienes 60% BTC, 25% ETH y 15% SOL, una caída del 20% en BTC reduce tu portafolio total un 12%, mientras la misma caída en SOL cuesta solo 3%.",
+        "Presta atención al riesgo de correlación. Los criptoactivos están altamente correlacionados durante caídas — BTC, ETH y SOL pueden caer 25–40% simultáneamente. Un portafolio en 5 criptos tiene correlación de 0,80+ durante bajadas. Usa nuestra <a href=\"/es/calculadora-beneficio-cripto/\">calculadora de beneficios</a> para modelar escenarios."
+      ],
+      scenarios: [
+        "Asignación conservadora: $50.000 — 50% BTC, 30% ETH, 10% stablecoins, 10% altcoins. En caída del 30%, la parte cripto baja ~$13.500 (27% ponderado), pero las stablecoins amortiguan. Planifica con nuestra <a href=\"/es/calculadora-dca/\">calculadora DCA</a>.",
+        "Escenario de rebalanceo: tu asignación original 50/30/20 cambió a 65/22/13 tras rally de BTC. La concentración BTC excede el objetivo en 15 puntos. Rebalancear vendiendo $7.500 de BTC asegura ganancias y restaura tu perfil de riesgo."
+      ],
+      checklist: [
+        "Antes: 1) Define tu tolerancia al riesgo. 2) Establece porcentajes objetivo por activo. 3) Incluye reserva de stablecoins del 10% mínimo. 4) Verifica que los precios estén actualizados.",
+        "Después: documenta tu asignación objetivo y reglas de rebalanceo. Programa revisiones mensuales. Registra cada transacción de rebalanceo para impuestos."
+      ],
+      mistakes: [
+        "El error más común es sobre-concentrar en un solo activo. Tener 80%+ en un token maximiza el riesgo de drawdown. Incluso BTC ha experimentado drawdowns de 50–80%. Limita posiciones individuales al 25% máximo.",
+        "Otro error es creer que 10 altcoins diferentes son verdadera diversificación. La mayoría tiene correlación 0,85+ con BTC en caídas. La diversificación real requiere activos con correlación baja o negativa."
+      ],
+      benchmarks: [
+        "Modelos por riesgo: Conservador (40% BTC, 25% ETH, 25% stables, 10% alts) — drawdown máx ~35%. Balanceado (50% BTC, 30% ETH, 20% alts) — ~50%. Agresivo (30/30/40) — ~70%.",
+        "Frecuencia de rebalanceo: mensual supera a trimestral por 2–4% anual en cripto. Para portafolios bajo $10.000, trimestral equilibra costos vs rendimiento."
+      ],
+      execution: [
+        "Flujo de construcción: 1) Determinar monto total. 2) Elegir 3–7 activos. 3) Asignar porcentajes. 4) Calcular montos por activo. 5) Ejecutar compras vía DCA en 4–8 semanas. 6) Configurar recordatorios mensuales.",
+        "Ejecución de rebalanceo: cuando la desviación exceda 5 puntos, vende sobreponderas y compra infraponderas. Prioriza cosecha de pérdidas fiscales."
+      ],
+      hygiene: [
+        "Actualiza valoraciones al menos semanalmente. Un rally del 15% en ETH con 30% de asignación eleva esa posición al 34,5%, posiblemente activando rebalanceo.",
+        "Revisa tu estrategia trimestralmente contra tus metas financieras. Si no puedes revisar sin ansiedad, tu asignación es demasiado agresiva."
+      ],
+      validation: [
+        "Verifica con cálculo mental: $10.000 total, 50% BTC = $5.000. A $73.700/BTC = 0,0679 BTC. Los porcentajes deben sumar exactamente 100%.",
+        "Prueba de estrés: modela una caída del 50%. Si el valor del peor caso te incomoda, cambia 10–20% de activos volátiles a stablecoins."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora mostra seus percentuais de alocação, valor total do portfólio, valores individuais e métricas de risco de concentração. Se você tem 60% BTC, 25% ETH e 15% SOL, uma queda de 20% no BTC reduz seu portfólio total em 12%, enquanto a mesma queda no SOL custa apenas 3%.",
+        "Preste atenção ao risco de correlação. Criptoativos são altamente correlacionados durante quedas — BTC, ETH e SOL podem cair 25–40% simultaneamente. Um portfólio em 5 criptos tem correlação de 0,80+ em baixas."
+      ],
+      scenarios: [
+        "Alocação conservadora: $50.000 — 50% BTC, 30% ETH, 10% stablecoins, 10% altcoins. Em queda de 30%, a parte cripto cai ~$13.500 (27% ponderado). Planeje com nossa <a href=\"/pt/calculadora-alocacao-carteira/\">calculadora DCA</a>.",
+        "Cenário de rebalanceamento: alocação original 50/30/20 mudou para 65/22/13 após rally BTC. Rebalancear vendendo $7.500 de BTC trava ganhos e restaura perfil de risco."
+      ],
+      checklist: [
+        "Antes: 1) Defina tolerância ao risco. 2) Estabeleça percentuais-alvo por ativo. 3) Inclua reserva de stablecoins de pelo menos 10%. 4) Verifique preços atualizados.",
+        "Após: documente alocação-alvo e regras de rebalanceamento. Agende revisões mensais. Registre cada transação de rebalanceamento para impostos."
+      ],
+      mistakes: [
+        "O erro mais comum é sobre-concentrar em um único ativo. Ter 80%+ em um token maximiza risco de drawdown. Limite posições individuais a 25% máximo.",
+        "Outro erro é crer que 10 altcoins diferentes são diversificação real. A maioria tem correlação 0,85+ com BTC em quedas."
+      ],
+      benchmarks: [
+        "Modelos por risco: Conservador (40% BTC, 25% ETH, 25% stables, 10% alts) — drawdown máx ~35%. Balanceado (50/30/20) — ~50%. Agressivo (30/30/40) — ~70%.",
+        "Rebalanceamento mensal supera trimestral por 2–4% anual. Para portfólios abaixo de $10.000, trimestral equilibra custos vs performance."
+      ],
+      execution: [
+        "Fluxo de construção: 1) Determinar valor total. 2) Escolher 3–7 ativos. 3) Atribuir percentuais. 4) Calcular valores por ativo. 5) Executar compras via DCA em 4–8 semanas. 6) Configurar lembretes mensais.",
+        "Execução de rebalanceamento: quando desvio exceder 5 pontos, venda sobreponderados e compre subponderados. Priorize colheita de perdas fiscais."
+      ],
+      hygiene: [
+        "Atualize avaliações pelo menos semanalmente. Um rally de 15% no ETH com 30% de alocação eleva a posição para 34,5%.",
+        "Revise estratégia trimestralmente contra metas financeiras. Se não consegue verificar sem ansiedade, sua alocação é muito agressiva."
+      ],
+      validation: [
+        "Verifique com cálculo mental: $10.000 total, 50% BTC = $5.000. A $73.700/BTC = 0,0679 BTC. Percentuais devem somar exatamente 100%.",
+        "Teste de estresse: modele queda de 50%. Se o valor do pior caso causa desconforto, mova 10–20% de voláteis para stablecoins."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Hesaplayıcı varlık dağılım yüzdelerinizi, toplam portföy değerini, bireysel pozisyon değerlerini ve yoğunlaşma riski metriklerini gösterir. %60 BTC, %25 ETH ve %15 SOL tutuyorsanız, %20 BTC düşüşü toplam portföyünüzü %12 azaltır, aynı SOL düşüşü ise yalnızca %3 maliyettir.",
+        "Korelasyon riskine özellikle dikkat edin. Kripto varlıklar çöküşlerde yüksek korelasyona sahiptir — BTC, ETH ve SOL eşzamanlı %25–40 düşebilir. 5 kripto varlıkta çeşitlendirilmiş görünen portföyün düşüşlerde korelasyonu 0,80+ olur."
+      ],
+      scenarios: [
+        "Muhafazakâr dağılım: $50.000 — %50 BTC, %30 ETH, %10 stablecoin, %10 altcoin. %30 çöküşte kripto kısmı ~$13.500 düşer (ağırlıklı %27). Stablecoin darbeyı yumuşatır.",
+        "Yeniden dengeleme senaryosu: orijinal %50/30/20 dağılımınız BTC rallisi sonrası %65/22/13'e kaydı. BTC'den $7.500 satıp ETH/alt alarak kârı kilitleyin ve risk profilinizi geri yükleyin."
+      ],
+      checklist: [
+        "Önce: 1) Risk toleransınızı tanımlayın. 2) Her varlık sınıfı için hedef yüzdeler belirleyin. 3) En az %10 stablecoin rezervi dahil edin. 4) Fiyatların güncel olduğunu doğrulayın.",
+        "Sonra: hedef dağılımınızı ve yeniden dengeleme kurallarınızı belgeleyin. Aylık incelemeler planlayın. Her yeniden dengeleme işlemini vergi için kaydedin."
+      ],
+      mistakes: [
+        "En yaygın hata tek varlığa aşırı yoğunlaşmadır. Bir tokende %80+ tutmak drawdown riskini maksimize eder. BTC bile her döngüde %50–80 düşüş yaşamıştır. Tek pozisyonu max %25 ile sınırlayın.",
+        "Diğer hata 10 farklı altcoini gerçek çeşitlendirme sanmaktır. Çoğunun BTC ile çöküşlerde korelasyonu 0,85+'dır."
+      ],
+      benchmarks: [
+        "Riske göre modeller: Muhafazakâr (%40 BTC, %25 ETH, %25 stabil, %10 alt) — max düşüş ~%35. Dengeli (%50/30/20) — ~%50. Agresif (%30/30/40) — ~%70.",
+        "Aylık yeniden dengeleme, kripto'da yıllık %2–4 üstün performans gösterir. $10.000 altı portföylerde üç aylık maliyet-performans dengesi kurar."
+      ],
+      execution: [
+        "Portföy oluşturma: 1) Toplam tutarı belirle. 2) 3–7 varlık seç. 3) Yüzdeleri ata. 4) Varlık başına tutarları hesapla. 5) 4–8 haftada DCA ile al. 6) Aylık hatırlatıcılar ayarla.",
+        "Yeniden dengeleme: sapma 5 puanı aştığında fazla ağırlıklıları sat, eksik ağırlıklıları al. Vergi kaybı hasadını önceliklendir."
+      ],
+      hygiene: [
+        "Değerlemeleri en az haftalık güncelleyin. %30 ETH dağılımında %15 ETH rallisi pozisyonu %34,5'e çıkarır.",
+        "Stratejinizi üç aylık olarak finansal hedeflerinize karşı gözden geçirin. Kaygı olmadan kontrol edemiyorsanız, dağılımınız çok agresif."
+      ],
+      validation: [
+        "Zihinsel hesaplamayla doğrulayın: $10.000 toplam, %50 BTC = $5.000. $73.700/BTC'de 0,0679 BTC. Yüzdeler tam %100 toplamalıdır.",
+        "Stres testi: %50 çöküş modelleyin. En kötü durum değeri rahatsız ediyorsa, volatil varlıklardan stablecoinlere %10–20 kaydırın."
+      ],
+    },
+    hi: {
+      interpret: [
+        "कैलकुलेटर आपके एसेट एलोकेशन प्रतिशत, कुल पोर्टफोलियो मूल्य, व्यक्तिगत पोजीशन मूल्य और एकाग्रता जोखिम मेट्रिक्स दिखाता है। यदि आपके पास 60% BTC, 25% ETH और 15% SOL है, तो 20% BTC ड्रॉडाउन आपके कुल पोर्टफोलियो को 12% कम करता है, जबकि समान SOL ड्रॉडाउन केवल 3% खर्च होता है।",
+        "कोरिलेशन रिस्क पर विशेष ध्यान दें। क्रिप्टो एसेट क्रैश के दौरान उच्च सहसंबद्ध होते हैं — BTC, ETH और SOL एक साथ 25–40% गिर सकते हैं। 5 क्रिप्टो में विविधीकृत दिखने वाले पोर्टफोलियो का डाउनटर्न में कोरिलेशन 0.80+ होता है।"
+      ],
+      scenarios: [
+        "कंजर्वेटिव एलोकेशन: $50,000 — 50% BTC, 30% ETH, 10% स्टेबलकॉइन, 10% ऑल्टकॉइन। 30% क्रैश में क्रिप्टो हिस्सा ~$13,500 गिरता है (भारित 27%)। स्टेबलकॉइन एलोकेशन झटके को कम करता है।",
+        "रीबैलेंसिंग: मूल 50/30/20 एलोकेशन BTC रैली के बाद 65/22/13 हो गया। $7,500 BTC बेचकर ETH/ऑल्ट खरीदने से लाभ लॉक होता है और रिस्क प्रोफाइल बहाल होती है।"
+      ],
+      checklist: [
+        "पहले: 1) अपनी रिस्क टॉलरेंस परिभाषित करें। 2) प्रत्येक एसेट क्लास के लिए लक्ष्य प्रतिशत सेट करें। 3) न्यूनतम 10% स्टेबलकॉइन रिजर्व शामिल करें। 4) कीमतें अपडेट हैं सत्यापित करें।",
+        "बाद में: अपने लक्ष्य एलोकेशन और रीबैलेंसिंग नियम दस्तावेज करें। मासिक समीक्षा शेड्यूल करें। टैक्स के लिए हर रीबैलेंसिंग ट्रांजैक्शन रिकॉर्ड करें।"
+      ],
+      mistakes: [
+        "सबसे आम गलती एक एसेट में अत्यधिक एकाग्रता है। एक टोकन में 80%+ रखना ड्रॉडाउन रिस्क अधिकतम करता है। BTC ने भी हर साइकल में 50–80% ड्रॉडाउन अनुभव किया है। एकल पोजीशन अधिकतम 25% रखें।",
+        "एक और गलती 10 अलग-अलग ऑल्टकॉइन को सच्चा विविधीकरण मानना है। अधिकांश का BTC के साथ क्रैश में 0.85+ कोरिलेशन होता है।"
+      ],
+      benchmarks: [
+        "जोखिम अनुसार मॉडल: कंजर्वेटिव (40% BTC, 25% ETH, 25% स्टेबल, 10% ऑल्ट) — मैक्स ड्रॉडाउन ~35%। बैलेंस्ड (50/30/20) — ~50%। एग्रेसिव (30/30/40) — ~70%।",
+        "मासिक रीबैलेंसिंग क्रिप्टो में तिमाही से 2–4% वार्षिक बेहतर प्रदर्शन करती है। $10,000 से कम पोर्टफोलियो के लिए तिमाही लागत-प्रदर्शन संतुलित करता है।"
+      ],
+      execution: [
+        "पोर्टफोलियो निर्माण: 1) कुल निवेश राशि तय करें। 2) 3–7 एसेट चुनें। 3) प्रतिशत असाइन करें। 4) प्रति एसेट डॉलर राशि कैलकुलेट करें। 5) 4–8 सप्ताह में DCA से खरीदें। 6) मासिक रिमाइंडर सेट करें।",
+        "रीबैलेंसिंग निष्पादन: 5 पॉइंट से अधिक विचलन पर ओवरवेट बेचें और अंडरवेट खरीदें। टैक्स-लॉस हार्वेस्टिंग प्राथमिकता दें।"
+      ],
+      hygiene: [
+        "कम से कम साप्ताहिक वैल्यूएशन अपडेट करें। 30% ETH एलोकेशन के साथ 15% ETH रैली उस पोजीशन को 34.5% तक बढ़ाता है।",
+        "अपनी एलोकेशन रणनीति तिमाही अपने वित्तीय लक्ष्यों के विरुद्ध समीक्षा करें। यदि बिना चिंता के जांच नहीं कर सकते, तो एलोकेशन बहुत आक्रामक है।"
+      ],
+      validation: [
+        "मानसिक गणित से सत्यापित करें: $10,000 कुल, 50% BTC = $5,000। $73,700/BTC पर = 0.0679 BTC। प्रतिशत ठीक 100% होने चाहिए।",
+        "स्ट्रेस टेस्ट: 50% क्रैश मॉडल करें। यदि सबसे खराब स्थिति का मूल्य असहज करता है, तो वोलैटाइल से स्टेबलकॉइन में 10–20% शिफ्ट करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор показывает процентное распределение активов, общую стоимость портфеля, стоимость отдельных позиций и метрики риска концентрации. При 60% BTC, 25% ETH и 15% SOL падение BTC на 20% снижает портфель на 12%, а такое же падение SOL — лишь на 3%.",
+        "Обратите внимание на корреляционный риск. Криптоактивы высококоррелированы при обвалах — BTC, ETH и SOL могут упасть на 25–40% одновременно. Портфель из 5 крипто имеет корреляцию 0,80+ при падениях."
+      ],
+      scenarios: [
+        "Консервативное распределение: $50 000 — 50% BTC, 30% ETH, 10% стейблкоины, 10% альткоины. При обвале 30% крипто-часть падает на ~$13 500 (взвешенные 27%). Стейблкоины смягчают удар.",
+        "Ребалансировка: исходное распределение 50/30/20 сместилось к 65/22/13 после ралли BTC. Продажа $7 500 BTC и покупка ETH/альтов фиксирует прибыль и восстанавливает риск-профиль."
+      ],
+      checklist: [
+        "Перед распределением: 1) Определите толерантность к риску. 2) Установите целевые проценты по каждому активу. 3) Включите резерв стейблкоинов минимум 10%. 4) Проверьте актуальность цен.",
+        "После: задокументируйте целевое распределение и правила ребалансировки. Запланируйте ежемесячные обзоры. Фиксируйте каждую ребалансировочную сделку для налогов."
+      ],
+      mistakes: [
+        "Самая частая ошибка — чрезмерная концентрация в одном активе. 80%+ в одном токене максимизирует риск просадки. Даже BTC испытывал просадки 50–80% в каждом цикле. Ограничивайте одну позицию 25%.",
+        "Другая ошибка — считать 10 разных альткоинов настоящей диверсификацией. У большинства корреляция с BTC при обвалах 0,85+."
+      ],
+      benchmarks: [
+        "Модели по риску: Консервативный (40% BTC, 25% ETH, 25% стейблы, 10% альты) — макс просадка ~35%. Сбалансированный (50/30/20) — ~50%. Агрессивный (30/30/40) — ~70%.",
+        "Ежемесячная ребалансировка исторически превосходит квартальную на 2–4% годовых в крипто. Для портфелей до $10 000 квартальная балансирует затраты и результат."
+      ],
+      execution: [
+        "Процесс построения: 1) Определить общую сумму. 2) Выбрать 3–7 активов. 3) Назначить проценты. 4) Рассчитать суммы по активам. 5) Покупать через DCA за 4–8 недель. 6) Установить ежемесячные напоминания.",
+        "Ребалансировка: при отклонении более 5 п.п. продавайте перевесы и покупайте недовесы. Приоритизируйте сбор налоговых убытков."
+      ],
+      hygiene: [
+        "Обновляйте оценки минимум еженедельно. Ралли ETH на 15% при доле 30% поднимает позицию до 34,5%.",
+        "Пересматривайте стратегию ежеквартально относительно финансовых целей. Если не можете проверять без тревоги — распределение слишком агрессивное."
+      ],
+      validation: [
+        "Проверьте устно: $10 000, 50% BTC = $5 000. При $73 700/BTC = 0,0679 BTC. Проценты должны складываться ровно в 100%.",
+        "Стресс-тест: смоделируйте падение 50%. Если худший сценарий вызывает дискомфорт, переведите 10–20% из волатильных активов в стейблкоины."
+      ],
+    },
+  },
+
+  'staking-rewards-calculator': {
+    en: {
+      interpret: [
+        "The staking rewards output shows your projected annual yield in both token quantity and USD value, factoring in the validator commission, network inflation rate, and compounding frequency. If you stake 32 ETH at 3.8% APY with a 10% validator commission, your net yield is 3.42% — approximately 1.094 ETH ($80,627 at $73,700/BTC equivalent, or $2,549 at $2,330/ETH) per year. Always verify whether the displayed rate is gross or net of commission.",
+        "Distinguish between nominal yield (token quantity) and real yield (purchasing power after inflation). If a proof-of-stake network inflates its supply at 5% annually and pays 7% staking rewards, your real yield is only 2% — the remaining 5% merely offsets dilution. Use the calculator output alongside our <a href=\"/apy-apr-calculator/\">APY/APR calculator</a> to understand the true return after accounting for token inflation and price volatility."
+      ],
+      scenarios: [
+        "Solo ETH staking: you stake 32 ETH ($74,560) directly. At 3.8% APY net, you earn 1.216 ETH/year ($2,833). Compared to a liquid staking token (stETH) at 3.5% effective rate, solo staking earns 0.3% more but requires running a validator node 24/7 with 99.5%+ uptime. Calculate whether the extra $222/year justifies the hardware and maintenance costs via our <a href=\"/mining-calculator/\">node cost calculator</a>.",
+        "Stablecoin staking via liquid staking protocols: you stake $50,000 USDC in a lending protocol that pays 5.5% APY. Annual reward is $2,750, paid in USDC (no token price risk). Compare this against staking ETH at 3.8% APY where the token could appreciate 50% (turning $50K into $75K + $1,900 staking rewards = $76,900) or depreciate 30% ($35K + $1,330 = $36,330). The stablecoin route sacrifices upside for predictability."
+      ],
+      checklist: [
+        "Before staking: 1) Confirm the lock-up period — ETH withdrawals take 1–5 days, some networks lock for 21–28 days. 2) Verify the validator's commission rate and historical uptime (below 95% uptime risks slashing penalties). 3) Check whether rewards auto-compound or require manual claiming. 4) Understand slashing risks — staking 32 ETH with a poorly configured validator could result in losing 0.5–1 ETH to slashing penalties.",
+        "After staking: monitor your validator's performance weekly. If uptime drops below 98%, consider re-delegating to a more reliable validator. Track reward payments — if expected rewards do not arrive on schedule, investigate whether the validator has been penalized. Calculate your actual APY monthly and compare to the advertised rate; discrepancies over 0.5% warrant investigation."
+      ],
+      mistakes: [
+        "The most common mistake is chasing the highest advertised APY without evaluating the underlying risks. A validator offering 12% when the network average is 5% may be running an unsustainable promotional rate, taking excessive risk with derivative strategies, or operating a scheme that collapses when new deposits slow. Stick within 1–2% of the network average rate for reliable returns — use our <a href=\"/staking-calculator/\">staking calculator</a> to model realistic yields.",
+        "Another frequent error is ignoring the opportunity cost of the lock-up period. If you stake SOL for 21% APY but the unstaking period is 2 epochs (~4 days), you cannot sell during a crash. A 25% price drop during a 4-day unstake wipes out 6+ years of staking rewards. Always model the worst-case scenario where price crashes during your lock-up period, and only stake an amount you can afford to hold through a drawdown."
+      ],
+      benchmarks: [
+        "Staking yield benchmarks by network (March 2026): ETH 3.5–4.2% APY (liquid staking 3.2–3.8%), SOL 6.5–7.5%, ATOM 15–19%, DOT 14–18%, ADA 3–4%, AVAX 8–10%. Rates above network averages by more than 2 percentage points carry elevated risk. If a validator advertises 10% on ETH when the network rate is 3.8%, the extra yield comes from MEV extraction, leverage, or unsustainable subsidies.",
+        "Validator quality benchmarks: top-tier validators maintain 99.5%+ uptime, charge 5–10% commission, and have been operating for 12+ months with no slashing events. Mid-tier: 98–99.5% uptime, 10–15% commission. Avoid validators below 95% uptime or above 20% commission. The difference between a 5% and 15% commission on 4% APY is 0.4 percentage points annually — $200/year on a $50,000 stake."
+      ],
+      execution: [
+        "Standard staking workflow: 1) Research and select a network with a sustainable staking yield. 2) Choose a validator based on uptime, commission, and track record. 3) Enter your stake amount and validator parameters into this calculator. 4) Review projected annual rewards. 5) Execute the staking transaction. 6) Set a calendar reminder to check validator performance weekly and reward accumulation monthly.",
+        "Liquid staking alternative: if you need liquidity, stake through a liquid staking protocol (Lido, Rocket Pool, Jito) that gives you a receipt token (stETH, rETH, jitoSOL) tradeable anytime. The trade-off is 0.3–0.5% lower APY versus native staking, plus smart contract risk. Calculate whether the liquidity premium justifies the yield reduction for your specific situation."
+      ],
+      hygiene: [
+        "Review staking rates monthly — network yields fluctuate with validator count and network activity. ETH staking APY has ranged from 3.5% to 5.5% over the past year depending on on-chain activity levels. Update your calculator inputs monthly to maintain accurate projections. If the rate drops below your minimum acceptable return, consider unstaking and redeploying to a higher-yielding opportunity.",
+        "Track your staking rewards in a spreadsheet or portfolio tracker with dates, amounts, and USD values at the time of receipt. This is essential for tax reporting — in most jurisdictions, staking rewards are taxable income at the time received, valued at market price on that date. Accurate records prevent both overpaying and underpaying taxes on accumulated rewards."
+      ],
+      validation: [
+        "Verify calculator output with simple math: 32 ETH at 3.8% APY should yield 32 × 0.038 = 1.216 ETH/year, or approximately 0.1013 ETH/month. If the calculator shows significantly different numbers, check whether it is applying a validator commission (which reduces effective rate) or auto-compounding (which increases it slightly). A 10% commission reduces 3.8% to 3.42%, changing annual yield from 1.216 to 1.094 ETH.",
+        "Cross-validate your actual staking rewards against the projection every quarter. If actual rewards trail projected by more than 10%, investigate: validator downtime penalties, network-wide rate compression (more stakers joining reduces per-staker yield), or missed reward claims eating into your effective rate. Adjust the calculator inputs to match your real-world experience for accurate future projections."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora muestra tu rendimiento anual proyectado en cantidad de tokens y valor USD, incluyendo comisión del validador, tasa de inflación de red y frecuencia de capitalización. Al hacer staking de 32 ETH al 3,8% APY con 10% de comisión, tu rendimiento neto es 3,42% — ~1,094 ETH/año.",
+        "Distingue entre rendimiento nominal (cantidad de tokens) y real (poder adquisitivo tras inflación). Si la red inflaciona 5% anual y paga 7% en staking, tu rendimiento real es solo 2%. Usa nuestra <a href=\"/es/calculadora-recompensas-staking/\">calculadora APY/APR</a> para entender el retorno real."
+      ],
+      scenarios: [
+        "Solo ETH staking: haces staking de 32 ETH ($74.560). Al 3,8% APY neto, ganas 1,216 ETH/año ($2.833). Comparado con staking líquido (stETH) al 3,5%, el solo staking rinde 0,3% más pero requiere nodo 24/7.",
+        "Staking de stablecoin: haces staking de $50.000 USDC al 5,5% APY. Recompensa anual: $2.750 en USDC (sin riesgo de precio del token). Compara contra staking ETH donde el token podría apreciar 50% o depreciar 30%."
+      ],
+      checklist: [
+        "Antes: 1) Confirma el período de bloqueo. 2) Verifica la comisión del validador y uptime histórico (bajo 95% arriesga penalidades). 3) Comprueba si las recompensas se auto-capitalizan. 4) Entiende los riesgos de slashing.",
+        "Después: monitorea el rendimiento del validador semanalmente. Si el uptime baja del 98%, considera re-delegar. Calcula tu APY real mensualmente y compara con la tasa anunciada."
+      ],
+      mistakes: [
+        "El error más común es perseguir el APY más alto sin evaluar riesgos. Un validador ofreciendo 12% cuando el promedio de red es 5% puede ser insostenible. Mantente dentro de 1–2% del promedio de red.",
+        "Otro error es ignorar el costo de oportunidad del bloqueo. Si haces staking de SOL al 21% APY pero el desbloqueo toma 4 días, no puedes vender durante un crash."
+      ],
+      benchmarks: [
+        "Rendimientos por red (2026): ETH 3,5–4,2% APY, SOL 6,5–7,5%, ATOM 15–19%, DOT 14–18%, ADA 3–4%, AVAX 8–10%. Tasas superiores al promedio por más de 2 puntos conllevan riesgo elevado.",
+        "Benchmarks de validador: primer nivel 99,5%+ uptime, 5–10% comisión, 12+ meses operando. La diferencia entre 5% y 15% de comisión en 4% APY es 0,4 puntos — $200/año en $50.000."
+      ],
+      execution: [
+        "Flujo estándar: 1) Investigar red con rendimiento sostenible. 2) Elegir validador por uptime y comisión. 3) Ingresar datos en calculadora. 4) Revisar recompensas proyectadas. 5) Ejecutar transacción. 6) Configurar recordatorio semanal.",
+        "Alternativa de staking líquido: si necesitas liquidez, usa protocolos como Lido o Rocket Pool. El costo es 0,3–0,5% menos APY más riesgo de smart contract."
+      ],
+      hygiene: [
+        "Revisa tasas mensualmente — los rendimientos fluctúan con la cantidad de validadores y actividad. ETH APY ha variado entre 3,5% y 5,5% en el último año. Actualiza tus inputs mensualmente.",
+        "Rastrea recompensas con fechas, montos y valores USD para declaración de impuestos — las recompensas de staking son ingreso gravable en la mayoría de jurisdicciones."
+      ],
+      validation: [
+        "Verifica con cálculo simple: 32 ETH al 3,8% APY = 32 × 0,038 = 1,216 ETH/año. Con 10% de comisión: 3,42% → 1,094 ETH/año.",
+        "Valida trimestralmente recompensas reales vs proyectadas. Si difieren más del 10%, investiga: penalidades del validador, compresión de tasas o recompensas no reclamadas."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora mostra seu rendimento anual projetado em quantidade de tokens e valor USD, incluindo comissão do validador, taxa de inflação da rede e frequência de capitalização. Ao fazer staking de 32 ETH a 3,8% APY com 10% de comissão, seu rendimento líquido é 3,42% — ~1,094 ETH/ano.",
+        "Distinga entre rendimento nominal (quantidade de tokens) e real (poder de compra após inflação). Se a rede inflaciona 5% anual e paga 7% em staking, seu rendimento real é apenas 2%."
+      ],
+      scenarios: [
+        "Solo ETH staking: você faz staking de 32 ETH ($74.560). A 3,8% APY líquido, ganha 1,216 ETH/ano ($2.833). Comparado com staking líquido (stETH) a 3,5%, solo staking rende 0,3% a mais mas requer nó 24/7.",
+        "Staking de stablecoin: você aplica $50.000 USDC a 5,5% APY. Recompensa anual: $2.750 em USDC (sem risco de preço). Compare contra staking ETH onde o token pode valorizar 50% ou depreciar 30%."
+      ],
+      checklist: [
+        "Antes: 1) Confirme o período de bloqueio. 2) Verifique comissão do validador e uptime histórico (abaixo de 95% arrisca penalidades). 3) Confira se recompensas auto-capitalizam. 4) Entenda riscos de slashing.",
+        "Após: monitore performance do validador semanalmente. Se uptime cair abaixo de 98%, considere re-delegar. Calcule APY real mensalmente."
+      ],
+      mistakes: [
+        "O erro mais comum é perseguir o maior APY sem avaliar riscos. Um validador oferecendo 12% quando a média da rede é 5% pode ser insustentável. Mantenha-se dentro de 1–2% da média.",
+        "Outro erro é ignorar o custo de oportunidade do bloqueio. Se faz staking de SOL a 21% APY mas o desbloqueio leva 4 dias, não pode vender durante crash."
+      ],
+      benchmarks: [
+        "Rendimentos por rede (2026): ETH 3,5–4,2% APY, SOL 6,5–7,5%, ATOM 15–19%, DOT 14–18%, ADA 3–4%, AVAX 8–10%. Taxas acima da média por mais de 2 pontos carregam risco elevado.",
+        "Benchmarks de validador: primeiro nível 99,5%+ uptime, 5–10% comissão, 12+ meses operando. Diferença entre 5% e 15% comissão em 4% APY é 0,4 pontos — $200/ano em $50.000."
+      ],
+      execution: [
+        "Fluxo padrão: 1) Pesquisar rede com rendimento sustentável. 2) Escolher validador por uptime e comissão. 3) Inserir dados na calculadora. 4) Revisar recompensas projetadas. 5) Executar transação. 6) Configurar lembrete semanal.",
+        "Alternativa líquida: se precisa de liquidez, use protocolos como Lido ou Rocket Pool. Custo: 0,3–0,5% menos APY mais risco de smart contract."
+      ],
+      hygiene: [
+        "Revise taxas mensalmente — rendimentos flutuam com número de validadores e atividade. ETH APY variou entre 3,5% e 5,5% no último ano.",
+        "Rastreie recompensas com datas, valores e USD para declaração fiscal — recompensas de staking são renda tributável na maioria das jurisdições."
+      ],
+      validation: [
+        "Verifique com cálculo simples: 32 ETH a 3,8% APY = 32 × 0,038 = 1,216 ETH/ano. Com 10% comissão: 3,42% → 1,094 ETH/ano.",
+        "Valide trimestralmente recompensas reais vs projetadas. Se diferirem mais de 10%, investigue: penalidades do validador, compressão de taxas ou recompensas não reivindicadas."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Hesaplayıcı yıllık tahmini getirinizi token miktarı ve USD değeri olarak gösterir; validatör komisyonu, ağ enflasyon oranı ve bileşik sıklığı dahildir. 32 ETH'yi %3,8 APY'de %10 komisyonla stake ederseniz net getiriniz %3,42 — yılda ~1,094 ETH'dir.",
+        "Nominal getiri (token miktarı) ile reel getiri (enflasyon sonrası satın alma gücü) arasında ayrım yapın. Ağ arzını yılda %5 şişirip %7 staking ödülü veriyorsa, reel getiriniz yalnızca %2'dir."
+      ],
+      scenarios: [
+        "Solo ETH staking: 32 ETH ($74.560) stake ediyorsunuz. Net %3,8 APY'de yılda 1,216 ETH ($2.833) kazanırsınız. Likit staking (stETH) %3,5 efektif oranıyla karşılaştırıldığında solo staking %0,3 daha fazla kazandırır ama 7/24 validatör gerektirir.",
+        "Stablecoin staking: $50.000 USDC'yi %5,5 APY'de stake ediyorsunuz. Yıllık ödül: $2.750 USDC (token fiyat riski yok). ETH staking ile karşılaştırın: token %50 değer kazanabilir veya %30 kaybedebilir."
+      ],
+      checklist: [
+        "Önce: 1) Kilitleme süresini onaylayın. 2) Validatör komisyonunu ve geçmiş uptime'ını doğrulayın (%95 altında slashing riski). 3) Ödüllerin otomatik bileşik olup olmadığını kontrol edin. 4) Slashing risklerini anlayın.",
+        "Sonra: validatör performansını haftalık izleyin. Uptime %98'in altına düşerse yeniden delege etmeyi düşünün. Gerçek APY'nizi aylık hesaplayın."
+      ],
+      mistakes: [
+        "En yaygın hata, riskleri değerlendirmeden en yüksek APY'yi kovalamaktır. Ağ ortalaması %5 iken %12 sunan bir validatör sürdürülemez olabilir. Ağ ortalamasının 1–2 puanı içinde kalın.",
+        "Diğer hata, kilitleme süresinin fırsat maliyetini görmezden gelmektir. %21 APY ile SOL stake ediyorsanız ama çözme 4 gün sürüyorsa, çöküşte satamazsınız."
+      ],
+      benchmarks: [
+        "Ağa göre getiriler (2026): ETH %3,5–4,2 APY, SOL %6,5–7,5, ATOM %15–19, DOT %14–18, ADA %3–4, AVAX %8–10. Ortalamadan 2 puandan fazla yüksek oranlar artan risk taşır.",
+        "Validatör kalitesi: birinci sınıf %99,5+ uptime, %5–10 komisyon, 12+ ay deneyim. %5 ile %15 komisyon arasındaki fark %4 APY'de yılda 0,4 puan — $50.000'da $200."
+      ],
+      execution: [
+        "Standart iş akışı: 1) Sürdürülebilir getirili ağ araştır. 2) Uptime ve komisyona göre validatör seç. 3) Hesaplayıcıya verileri gir. 4) Tahmini ödülleri incele. 5) Staking işlemini yap. 6) Haftalık hatırlatıcı ayarla.",
+        "Likit staking alternatifi: likiditeye ihtiyacınız varsa Lido, Rocket Pool gibi protokoller kullanın. Maliyet: %0,3–0,5 daha az APY artı akıllı sözleşme riski."
+      ],
+      hygiene: [
+        "Oranları aylık gözden geçirin — getiriler validatör sayısı ve ağ aktivitesiyle dalgalanır. ETH APY geçen yıl %3,5 ile %5,5 arasında değişti. Girdilerinizi aylık güncelleyin.",
+        "Ödülleri tarih, miktar ve USD değeriyle kaydedin — çoğu yargı bölgesinde staking ödülleri vergiye tabi gelirdir."
+      ],
+      validation: [
+        "Basit hesaplamayla doğrulayın: 32 ETH %3,8 APY'de = 32 × 0,038 = 1,216 ETH/yıl. %10 komisyonla: %3,42 → 1,094 ETH/yıl.",
+        "Gerçek ödülleri üç ayda bir tahminlerle karşılaştırın. %10'dan fazla farklıysa araştırın: validatör cezaları, oran sıkışması veya talep edilmemiş ödüller."
+      ],
+    },
+    hi: {
+      interpret: [
+        "कैलकुलेटर आपकी अनुमानित वार्षिक यील्ड टोकन मात्रा और USD मूल्य दोनों में दिखाता है, वैलिडेटर कमीशन, नेटवर्क मुद्रास्फीति दर और कंपाउंडिंग फ्रीक्वेंसी शामिल करके। 32 ETH 3.8% APY पर 10% कमीशन के साथ स्टेक करने पर, नेट यील्ड 3.42% है — लगभग 1.094 ETH/वर्ष।",
+        "नॉमिनल यील्ड (टोकन मात्रा) और रीयल यील्ड (मुद्रास्फीति के बाद क्रय शक्ति) में अंतर करें। यदि नेटवर्क सप्लाई 5% वार्षिक बढ़ाता है और 7% स्टेकिंग रिवॉर्ड देता है, तो रीयल यील्ड केवल 2% है।"
+      ],
+      scenarios: [
+        "सोलो ETH स्टेकिंग: 32 ETH ($74,560) स्टेक करते हैं। 3.8% APY नेट पर, वार्षिक 1.216 ETH ($2,833) कमाते हैं। लिक्विड स्टेकिंग (stETH) 3.5% पर तुलना में सोलो 0.3% अधिक देता है लेकिन 24/7 नोड चाहिए।",
+        "स्टेबलकॉइन स्टेकिंग: $50,000 USDC 5.5% APY पर। वार्षिक रिवॉर्ड: $2,750 USDC (कोई टोकन प्राइस रिस्क नहीं)। ETH स्टेकिंग से तुलना करें जहां टोकन 50% बढ़ या 30% गिर सकता है।"
+      ],
+      checklist: [
+        "पहले: 1) लॉक-अप अवधि की पुष्टि करें। 2) वैलिडेटर कमीशन और ऐतिहासिक अपटाइम सत्यापित करें (95% से कम स्लैशिंग का जोखिम)। 3) रिवॉर्ड ऑटो-कंपाउंड होते हैं या नहीं जांचें। 4) स्लैशिंग जोखिम समझें।",
+        "बाद में: वैलिडेटर प्रदर्शन साप्ताहिक मॉनिटर करें। अपटाइम 98% से नीचे गिरे तो री-डेलीगेट करें। वास्तविक APY मासिक कैलकुलेट करें।"
+      ],
+      mistakes: [
+        "सबसे आम गलती जोखिम मूल्यांकन किए बिना सबसे अधिक APY पीछा करना है। नेटवर्क औसत 5% होने पर 12% देने वाला वैलिडेटर अस्थिर हो सकता है। नेटवर्क औसत के 1–2% भीतर रहें।",
+        "एक और गलती लॉक-अप अवधि की अवसर लागत अनदेखा करना है। 21% APY पर SOL स्टेक करते हैं लेकिन अनस्टेक 4 दिन लगते हैं, तो क्रैश में बेच नहीं सकते।"
+      ],
+      benchmarks: [
+        "नेटवर्क अनुसार यील्ड (2026): ETH 3.5–4.2% APY, SOL 6.5–7.5%, ATOM 15–19%, DOT 14–18%, ADA 3–4%, AVAX 8–10%। औसत से 2 पॉइंट अधिक दरें उच्च जोखिम रखती हैं।",
+        "वैलिडेटर गुणवत्ता: प्रथम श्रेणी 99.5%+ अपटाइम, 5–10% कमीशन, 12+ माह अनुभव। 4% APY पर 5% और 15% कमीशन का अंतर 0.4 पॉइंट — $50,000 पर $200/वर्ष।"
+      ],
+      execution: [
+        "मानक वर्कफ़्लो: 1) टिकाऊ यील्ड वाले नेटवर्क का शोध करें। 2) अपटाइम और कमीशन के आधार पर वैलिडेटर चुनें। 3) कैलकुलेटर में डेटा दर्ज करें। 4) अनुमानित रिवॉर्ड की समीक्षा करें। 5) स्टेकिंग ट्रांजैक्शन निष्पादित करें।",
+        "लिक्विड स्टेकिंग विकल्प: तरलता चाहिए तो Lido या Rocket Pool जैसे प्रोटोकॉल उपयोग करें। लागत: 0.3–0.5% कम APY और स्मार्ट कॉन्ट्रैक्ट रिस्क।"
+      ],
+      hygiene: [
+        "दरें मासिक समीक्षा करें — वैलिडेटर संख्या और नेटवर्क गतिविधि के साथ यील्ड बदलती है। ETH APY पिछले वर्ष 3.5% से 5.5% तक बदली है। इनपुट मासिक अपडेट करें।",
+        "रिवॉर्ड को तारीख, राशि और USD मूल्य के साथ ट्रैक करें — अधिकांश क्षेत्राधिकारों में स्टेकिंग रिवॉर्ड कर योग्य आय है।"
+      ],
+      validation: [
+        "सरल गणित से सत्यापित करें: 32 ETH 3.8% APY पर = 32 × 0.038 = 1.216 ETH/वर्ष। 10% कमीशन के साथ: 3.42% → 1.094 ETH/वर्ष।",
+        "वास्तविक रिवॉर्ड तिमाही अनुमानों से मिलाएं। 10% से अधिक अंतर हो तो जांचें: वैलिडेटर जुर्माना, दर संपीड़न या अनक्लेम्ड रिवॉर्ड।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор показывает прогнозируемую годовую доходность в токенах и USD с учётом комиссии валидатора, инфляции сети и частоты капитализации. При стейкинге 32 ETH под 3,8% APY с комиссией 10% чистая доходность — 3,42%, ~1,094 ETH/год.",
+        "Различайте номинальную доходность (количество токенов) и реальную (покупательная способность после инфляции). Если сеть увеличивает эмиссию на 5% в год и платит 7% стейкинг-наград, реальная доходность — лишь 2%."
+      ],
+      scenarios: [
+        "Соло-стейкинг ETH: вы стейкаете 32 ETH ($74 560). При чистых 3,8% APY зарабатываете 1,216 ETH/год ($2 833). По сравнению с ликвидным стейкингом (stETH) на 3,5%, соло даёт на 0,3% больше, но требует узел 24/7.",
+        "Стейкинг стейблкоинов: вы размещаете $50 000 USDC под 5,5% APY. Годовая награда: $2 750 в USDC (без ценового риска). Сравните со стейкингом ETH, где токен может вырасти на 50% или упасть на 30%."
+      ],
+      checklist: [
+        "Перед стейкингом: 1) Подтвердите период блокировки. 2) Проверьте комиссию валидатора и исторический аптайм (ниже 95% — риск слэшинга). 3) Уточните, автокапитализируются ли награды. 4) Поймите риски слэшинга.",
+        "После: мониторьте валидатор еженедельно. При аптайме ниже 98% рассмотрите ределегирование. Рассчитывайте фактический APY ежемесячно."
+      ],
+      mistakes: [
+        "Самая частая ошибка — гнаться за максимальным APY без оценки рисков. Валидатор с 12% при среднем по сети 5% может быть неустойчивым. Держитесь в пределах 1–2% от среднего.",
+        "Другая ошибка — игнорировать альтернативную стоимость блокировки. При стейкинге SOL под 21% APY с периодом анстейка 4 дня вы не сможете продать при обвале."
+      ],
+      benchmarks: [
+        "Доходность по сетям (2026): ETH 3,5–4,2% APY, SOL 6,5–7,5%, ATOM 15–19%, DOT 14–18%, ADA 3–4%, AVAX 8–10%. Ставки выше средней на 2+ п.п. несут повышенный риск.",
+        "Качество валидатора: первый класс 99,5%+ аптайм, 5–10% комиссия, 12+ месяцев работы. Разница между 5% и 15% комиссии при 4% APY — 0,4 п.п./год, $200 на $50 000."
+      ],
+      execution: [
+        "Стандартный процесс: 1) Исследовать сеть с устойчивой доходностью. 2) Выбрать валидатор по аптайму и комиссии. 3) Ввести данные в калькулятор. 4) Просмотреть прогнозируемые награды. 5) Выполнить транзакцию стейкинга.",
+        "Ликвидный стейкинг: если нужна ликвидность, используйте Lido или Rocket Pool. Стоимость: на 0,3–0,5% ниже APY плюс риск смарт-контракта."
+      ],
+      hygiene: [
+        "Пересматривайте ставки ежемесячно — доходность колеблется с числом валидаторов и активностью сети. APY ETH менялся от 3,5% до 5,5% за последний год. Обновляйте вводные ежемесячно.",
+        "Ведите учёт наград с датами, суммами и стоимостью в USD — в большинстве юрисдикций стейкинг-награды облагаются налогом как доход."
+      ],
+      validation: [
+        "Проверьте вручную: 32 ETH при 3,8% APY = 32 × 0,038 = 1,216 ETH/год. С комиссией 10%: 3,42% → 1,094 ETH/год.",
+        "Сверяйте фактические награды с прогнозом ежеквартально. Если разница более 10%, исследуйте: штрафы валидатора, сжатие ставок или невостребованные награды."
+      ],
+    },
+  },
 };
