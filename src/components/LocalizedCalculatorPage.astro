@@ -221,6 +221,14 @@ function buildHeadings(lt: string, lang: Lang) {
 
 const h = buildHeadings(localizedTitle, lang);
 
+// Generate URL-safe id anchors for deep linking (AI citation + accessibility)
+function slugify(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9\u0400-\u04ff\u0900-\u097f]+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
+}
+const hId = Object.fromEntries(
+  Object.entries(h).map(([key, val]) => [key, slugify(val)])
+) as Record<keyof typeof h, string>;
+
 const activeSections = getActiveSections(slug);
 const has = (s: string) => activeSections.includes(s as Parameters<typeof activeSections.includes>[0]);
 
@@ -230,7 +238,22 @@ const has = (s: string) => activeSections.includes(s as Parameters<typeof active
 const genericTxt = seoBodyText[lang] || seoBodyText.en;
 const calcOverride = calculatorSeoContent[slug as string]?.[lang] ?? null;
 const calcExtOverride = calculatorSeoExt[slug as string]?.[lang] ?? null;
-const txt = { ...genericTxt, ...(calcOverride ?? {}), ...(calcExtOverride ?? {}) };
+const rawTxt = { ...genericTxt, ...(calcOverride ?? {}), ...(calcExtOverride ?? {}) };
+
+// Localize internal links for non-EN pages: /profit-calculator/ → /es/calculadora-beneficio-cripto/
+function localizeLinks(paragraphs: string[], pageLang: Lang): string[] {
+  if (pageLang === 'en') return paragraphs;
+  return paragraphs.map(p =>
+    p.replace(/href="(\/[a-z0-9-]+\/?)"/g, (_match, enPath) => {
+      const localized = getLocalizedPath(enPath.replace(/\/$/, ''), pageLang);
+      return `href="${localized}"`;
+    })
+  );
+}
+
+const txt = Object.fromEntries(
+  Object.entries(rawTxt).map(([key, val]) => [key, Array.isArray(val) ? localizeLinks(val, lang) : val])
+) as typeof rawTxt;
 
 const siteUrl = "https://cryptocalk.com";
 const pageUrl = `${siteUrl}${pagePath}`;
@@ -253,7 +276,7 @@ const webAppSchema = {
   inLanguage: lang,
   url: pageUrl,
   datePublished: "2025-11-01",
-  dateModified: "2026-03-09",
+  dateModified: new Date().toISOString().split('T')[0],
   author: {
     "@type": "Person",
     name: "Konstantin Iakovlev",
@@ -346,27 +369,27 @@ const faqSchema = {
     <section class="seo-content">
       <div class="section-container prose">
         {has('how') && <>
-          <h2>{h.how}</h2>
+          <h2 id={hId.how}>{h.how}</h2>
           {txt.how.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
         </>}
 
         {has('inputs') && <>
-          <h2>{h.inputs}</h2>
+          <h2 id={hId.inputs}>{h.inputs}</h2>
           {txt.inputs.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
         </>}
 
         {has('interpret') && <>
-          <h2>{h.interpret}</h2>
+          <h2 id={hId.interpret}>{h.interpret}</h2>
           {txt.interpret.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
         </>}
 
         {has('scenarios') && <>
-          <h2>{h.scenarios}</h2>
+          <h2 id={hId.scenarios}>{h.scenarios}</h2>
           {txt.scenarios.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
         </>}
 
         {has('checklist') && <>
-          <h2>{h.checklist}</h2>
+          <h2 id={hId.checklist}>{h.checklist}</h2>
           <ol class="checklist-list">
             {txt.checklist.map((p) => (
               <li>{p.replace(/{title}/g, localizedTitle)}</li>
@@ -375,7 +398,7 @@ const faqSchema = {
         </>}
 
         {has('mistakes') && <>
-          <h2>{h.mistakes}</h2>
+          <h2 id={hId.mistakes}>{h.mistakes}</h2>
           <ul class="mistakes-list">
             {txt.mistakes.map((p) => (
               <li>{p.replace(/{title}/g, localizedTitle)}</li>
@@ -384,27 +407,27 @@ const faqSchema = {
         </>}
 
         {has('benchmarks') && <>
-          <h2>{h.benchmarks}</h2>
+          <h2 id={hId.benchmarks}>{h.benchmarks}</h2>
           {txt.benchmarks.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
         </>}
 
         {has('execution') && <>
-          <h2>{h.execution}</h2>
+          <h2 id={hId.execution}>{h.execution}</h2>
           {txt.execution.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
         </>}
 
         {has('hygiene') && <>
-          <h2>{h.hygiene}</h2>
+          <h2 id={hId.hygiene}>{h.hygiene}</h2>
           {txt.hygiene.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
         </>}
 
         {has('validation') && <>
-          <h2>{h.validation}</h2>
+          <h2 id={hId.validation}>{h.validation}</h2>
           {txt.validation.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
         </>}
 
         {has('faq') && <>
-          <h2>{h.faq}</h2>
+          <h2 id={hId.faq}>{h.faq}</h2>
           {faqItems.map((item) => (
             <details>
               <summary>{item.q}</summary>
@@ -415,7 +438,7 @@ const faqSchema = {
 
         {has('related') && (relatedLinks.length > 0 || categoryHubPath) && (
           <>
-            <h2>{h.related}</h2>
+            <h2 id={hId.related}>{h.related}</h2>
             {relatedLinks.length > 0 && (
               <ul class="related-calculators-list">
                 {relatedLinks.map((link) => (

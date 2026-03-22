@@ -96,11 +96,26 @@ export default defineConfig({
       // Exclude legacy localized calculator URLs (e.g. /es/profit-calculator)
       // and EN alias pages that canonical to a spec URL (e.g. /staking-rewards-calculator → /staking-calculator).
       filter: (pageUrl) => !isLegacyLocalizedSpecUrl(pageUrl) && !isAliasUrl(pageUrl),
-      serialize: (item) => ({ ...item, lastmod: new Date().toISOString().split('T')[0] }),
+      // Removed identical-date lastmod — Google ignores uniform lastmod across all URLs.
+      // TODO: implement per-page git-based dates when @astrojs/sitemap supports async serialize.
     }),
   ],
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            // Isolate the large ui-strings translation dictionary into its own chunk.
+            // EN pages never use the dictionary data (getUiString returns the key directly),
+            // but Vite tree-shakes the function, not the data. By isolating it, the chunk
+            // is still loaded but browsers can cache it independently and it no longer
+            // inflates the ErrorBoundary shared chunk.
+            if (id.includes('ui-strings')) return 'ui-translations';
+          },
+        },
+      },
+    },
   },
   site: 'https://cryptocalk.com',
   i18n: {

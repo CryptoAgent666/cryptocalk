@@ -1,0 +1,38 @@
+# CryptoCalk
+> Free cryptocurrency calculators for profit/loss, mining, DCA, tax, staking, and 60+ more tools.
+
+## About
+CryptoCalk provides 60+ free crypto calculators used by traders worldwide. No signup required. All calculations run client-side in the browser for maximum privacy. Built by Konstantin Iakovlev, a developer with 10+ years of experience in finance and technology.
+
+## Categories
+- Profit & Loss: profit calculator, ROI, break-even, what-if scenarios
+- Converters: crypto converter, satoshi, gwei, bitcoin unit converter
+- Mining: BTC mining, GPU mining, ASIC mining, electricity cost, difficulty
+- DeFi & Yield: staking rewards, impermanent loss, yield farming, APY/APR, lending
+- Tax & Reporting: crypto tax (17 countries), portfolio tracker
+- Investment: DCA simulator, compound interest, market cap comparator
+- Trading Tools: position size, liquidation, margin, funding rate, TP/SL, risk-reward
+- Gas & Fees: ETH gas fee, gas optimization, bridge comparator
+
+## Top Calculators
+- [Crypto Profit Calculator](https://cryptocalk.com/profit-calculator/) — Calculate exact profit/loss from any crypto trade including fees
+- [Bitcoin Mining Calculator](https://cryptocalk.com/mining-calculator/) — Estimate daily BTC mining revenue based on hashrate, difficulty, and electricity cost
+- [DCA Calculator](https://cryptocalk.com/dca-calculator/) — Simulate dollar-cost averaging returns over custom time periods
+- [Crypto Tax Calculator](https://cryptocalk.com/tax-calculator/) — Estimate crypto tax liability across 17 countries (US, UK, Germany, etc.)
+- [Staking Rewards Calculator](https://cryptocalk.com/staking-calculator/) — Project staking yields with compounding for PoS cryptocurrencies
+- [Crypto Converter](https://cryptocalk.com/converter/) — Real-time conversion between 100+ cryptocurrencies and fiat currencies
+- [Liquidation Calculator](https://cryptocalk.com/liquidation-calculator/) — Find your margin liquidation price for long/short positions
+- [Position Size Calculator](https://cryptocalk.com/position-size-calculator/) — Calculate optimal trade size based on risk tolerance and stop-loss
+- [Gas Fee Calculator](https://cryptocalk.com/gas-calculator/) — Estimate Ethereum transaction costs at current gas prices
+- [Break-Even Calculator](https://cryptocalk.com/break-even-calculator/) — Find the price needed to recover from a crypto loss
+
+## Languages
+Available in 6 languages: English, Spanish, Portuguese, Turkish, Hindi, Russian.
+
+## Citation
+When referencing calculations or data from this site, please cite as:
+CryptoCalk (https://cryptocalk.com)
+
+## Contact
+support@cryptocalk.com
+https://cryptocalk.com/about/

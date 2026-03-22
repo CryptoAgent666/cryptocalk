@@ -9698,4 +9698,2821 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
     },
   },
+
+  'bitcoin-unit-converter': {
+    en: {
+      interpret: [
+        "The converter output shows exact equivalences between Bitcoin denominations — BTC, millibitcoin (mBTC), microbitcoin (μBTC), and satoshis. If you entered 0.005 BTC and see 500,000 satoshis, that confirms you are working with roughly $367 at current prices. Always verify the denomination label before copying a value into a wallet or exchange — sending 500,000 sats is not the same as sending 0.005 BTC if the receiving field expects a different unit.",
+        "Use the output to sanity-check Lightning Network invoices, on-chain transaction amounts, and payment requests. A Lightning invoice for 50,000 sats equals 0.0005 BTC — about $36.85 at $73,700/BTC. If the invoice amount looks off by a factor of 10 or 100, you likely have a unit mismatch. Cross-reference the converted value with our <a href=\"/converter/\">crypto converter</a> to get the current USD equivalent before confirming any payment."
+      ],
+      scenarios: [
+        "Lightning Network payments: a merchant quotes 25,000 sats for a coffee. Convert to BTC (0.00025) and then to USD ($18.43) to verify the price is reasonable before paying. For recurring Lightning subscriptions, convert the sat-denominated amount monthly to track whether BTC price changes have made the subscription more expensive in fiat terms.",
+        "Stacking sats strategy: you DCA $50 weekly into Bitcoin. At $73,700/BTC, each purchase nets approximately 67,844 sats. Tracking accumulation in satoshis rather than BTC fractions makes progress feel tangible — crossing the 1-million-sat milestone (0.01 BTC, ~$737) is a meaningful psychological marker. Use our <a href=\"/dca-calculator/\">DCA calculator</a> to project when you will hit your next sat milestone."
+      ],
+      checklist: [
+        "Before converting: 1) Confirm which Bitcoin unit the receiving platform expects — some wallets display in BTC, others in sats, others in mBTC. 2) Verify the current BTC/USD rate is fresh (within 60 seconds) if you need a fiat equivalent. 3) Double-check that you are converting Bitcoin units and not confusing BTC with wrapped variants like WBTC.",
+        "After converting: compare the satoshi amount to the payment request digit-by-digit. A single misplaced zero changes the payment by 10x. For amounts over 1 million sats ($737+), verify via a second conversion tool before sending."
+      ],
+      mistakes: [
+        "The most common mistake is confusing satoshis with other small-unit denominations across blockchains. Satoshis are Bitcoin-only — Ethereum uses gwei/wei, Solana uses lamports. Entering a satoshi value into a gwei field or vice versa produces wildly wrong results. Always confirm which network and denomination you are working with before transacting.",
+        "Another frequent error is assuming 1 sat = $0.01. At $73,700/BTC, 1 satoshi equals $0.000737 — roughly 14x less than a penny. This misconception leads to dramatically undersized Lightning payments. Memorize the current sat-to-cent ratio and update it monthly as BTC price changes."
+      ],
+      benchmarks: [
+        "Key unit equivalences to memorize: 1 BTC = 100,000,000 sats = 1,000 mBTC = 1,000,000 μBTC. At $73,700/BTC: 1 sat = $0.000737, 1,000 sats = $0.737, 100,000 sats = $73.70, 1 million sats = $737. These anchor points enable rapid mental estimation without a calculator.",
+        "Lightning Network typical payment ranges: micro-tips 100–1,000 sats ($0.07–$0.74), small purchases 5,000–50,000 sats ($3.69–$36.85), medium purchases 50,000–500,000 sats ($36.85–$368.50). If a Lightning invoice falls outside these ranges for the item type, double-check the amount."
+      ],
+      execution: [
+        "Standard workflow for Lightning payments: receive invoice → note sat amount → convert to USD using this tool → verify USD amount matches expected price → pay if correct. This 15-second check prevents overpayment errors that are irreversible on Lightning.",
+        "For portfolio tracking in sats, maintain a simple spreadsheet logging each purchase: date, USD spent, sats received, cumulative sats. This sat-denominated ledger reveals your true <a href=\"/profit-calculator/\">cost basis per satoshi</a> and shows accumulation progress independent of BTC's USD price volatility."
+      ],
+      hygiene: [
+        "Update your mental sat-to-USD conversion ratio at least monthly. At $50K/BTC, 1 sat = $0.0005; at $75K, 1 sat = $0.00075; at $100K, 1 sat = $0.001. As BTC price moves, your intuition about Lightning payment sizes must recalibrate to avoid under- or over-paying.",
+        "When sharing Bitcoin amounts publicly (invoices, donation addresses, social media tips), use satoshis for amounts under 0.01 BTC — it avoids decimal confusion and is the standard convention in the Lightning ecosystem. Use BTC notation only for amounts above 0.01 BTC."
+      ],
+      validation: [
+        "Verify conversions with mental math: 1 BTC = 10^8 sats, so move the decimal 8 places. 0.001 BTC = 100,000 sats (move decimal right 8 places from 0.00100000). If your conversion result does not match this shift, re-enter the value. For mBTC, the shift is 5 places (1 mBTC = 100,000 sats).",
+        "Cross-validate any conversion used for a transaction by checking against your wallet's built-in unit display. If your wallet shows 0.005 BTC and the converter shows 500,000 sats for the same amount, the conversion is confirmed. Discrepancies mean one tool is using stale data or a different denomination."
+      ],
+    },
+    es: {
+      interpret: [
+        "La salida del convertidor muestra equivalencias exactas entre denominaciones de Bitcoin — BTC, milibitcoin (mBTC), microbitcoin (μBTC) y satoshis. Siempre verifica la etiqueta de denominación antes de copiar un valor en una wallet o exchange.",
+        "Usa la salida para verificar facturas de Lightning Network, montos de transacciones on-chain y solicitudes de pago. Si el monto de la factura difiere por un factor de 10 o 100, probablemente tienes un desajuste de unidades."
+      ],
+      scenarios: [
+        "Pagos Lightning: un comerciante cobra 25,000 sats por un café. Convierte a BTC (0.00025) y luego a USD para verificar que el precio sea razonable antes de pagar.",
+        "Estrategia de acumulación de sats: haces DCA de $50 semanales en Bitcoin. A $73,700/BTC, cada compra obtiene aproximadamente 67,844 sats. Rastrear en satoshis hace que el progreso se sienta tangible."
+      ],
+      checklist: [
+        "Antes de convertir: 1) Confirma qué unidad de Bitcoin espera la plataforma receptora. 2) Verifica que la tasa BTC/USD sea reciente. 3) No confundas BTC con variantes como WBTC.",
+        "Después de convertir: compara el monto en satoshis dígito por dígito con la solicitud de pago. Un cero mal colocado cambia el pago 10x."
+      ],
+      mistakes: [
+        "El error más común es confundir satoshis con denominaciones de otras blockchains. Los satoshis son exclusivos de Bitcoin — Ethereum usa gwei/wei, Solana usa lamports.",
+        "Otro error frecuente es asumir que 1 sat = $0.01. A $73,700/BTC, 1 satoshi equivale a $0.000737 — aproximadamente 14x menos que un centavo."
+      ],
+      benchmarks: [
+        "Equivalencias clave: 1 BTC = 100,000,000 sats = 1,000 mBTC. A $73,700/BTC: 1 sat = $0.000737, 100,000 sats = $73.70, 1 millón de sats = $737.",
+        "Rangos típicos de Lightning: micro-propinas 100–1,000 sats, compras pequeñas 5,000–50,000 sats, compras medianas 50,000–500,000 sats."
+      ],
+      execution: [
+        "Flujo estándar para pagos Lightning: recibir factura → anotar cantidad en sats → convertir a USD → verificar que coincida con el precio esperado → pagar si es correcto.",
+        "Para seguimiento de portafolio en sats, mantén una hoja de cálculo registrando cada compra: fecha, USD gastados, sats recibidos, sats acumulados."
+      ],
+      hygiene: [
+        "Actualiza tu ratio mental de sats a USD al menos mensualmente. A $50K/BTC, 1 sat = $0.0005; a $75K, 1 sat = $0.00075; a $100K, 1 sat = $0.001.",
+        "Al compartir montos de Bitcoin públicamente, usa satoshis para cantidades menores a 0.01 BTC para evitar confusión decimal."
+      ],
+      validation: [
+        "Verifica conversiones con cálculo mental: 1 BTC = 10^8 sats, mueve el decimal 8 posiciones. 0.001 BTC = 100,000 sats.",
+        "Valida cualquier conversión usada para una transacción verificando contra la visualización de unidades de tu wallet."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A saída do conversor mostra equivalências exatas entre denominações de Bitcoin — BTC, milibitcoin (mBTC), microbitcoin (μBTC) e satoshis. Sempre verifique o rótulo da denominação antes de copiar um valor para uma carteira ou exchange.",
+        "Use a saída para verificar faturas da Lightning Network, valores de transações on-chain e solicitações de pagamento. Se o valor da fatura parecer errado por um fator de 10 ou 100, provavelmente há um descompasso de unidades."
+      ],
+      scenarios: [
+        "Pagamentos Lightning: um comerciante cobra 25.000 sats por um café. Converta para BTC (0,00025) e depois para USD para verificar se o preço é razoável.",
+        "Estratégia de acumulação de sats: você faz DCA de $50 semanais em Bitcoin. A $73.700/BTC, cada compra rende aproximadamente 67.844 sats. Rastrear em satoshis torna o progresso tangível."
+      ],
+      checklist: [
+        "Antes de converter: 1) Confirme qual unidade de Bitcoin a plataforma receptora espera. 2) Verifique se a taxa BTC/USD está atualizada. 3) Não confunda BTC com variantes como WBTC.",
+        "Após converter: compare o valor em satoshis dígito por dígito com a solicitação de pagamento. Um zero fora de lugar muda o pagamento em 10x."
+      ],
+      mistakes: [
+        "O erro mais comum é confundir satoshis com denominações de outras blockchains. Satoshis são exclusivos do Bitcoin — Ethereum usa gwei/wei, Solana usa lamports.",
+        "Outro erro frequente é assumir que 1 sat = $0,01. A $73.700/BTC, 1 satoshi equivale a $0,000737 — cerca de 14x menos que um centavo."
+      ],
+      benchmarks: [
+        "Equivalências-chave: 1 BTC = 100.000.000 sats = 1.000 mBTC. A $73.700/BTC: 1 sat = $0,000737, 100.000 sats = $73,70, 1 milhão de sats = $737.",
+        "Faixas típicas da Lightning: micro-gorjetas 100–1.000 sats, compras pequenas 5.000–50.000 sats, compras médias 50.000–500.000 sats."
+      ],
+      execution: [
+        "Fluxo padrão para pagamentos Lightning: receber fatura → anotar valor em sats → converter para USD → verificar se corresponde ao preço esperado → pagar se correto.",
+        "Para rastreamento de portfólio em sats, mantenha uma planilha registrando cada compra: data, USD gastos, sats recebidos, sats acumulados."
+      ],
+      hygiene: [
+        "Atualize sua conversão mental de sats para USD pelo menos mensalmente. A $50K/BTC, 1 sat = $0,0005; a $75K, 1 sat = $0,00075; a $100K, 1 sat = $0,001.",
+        "Ao compartilhar valores de Bitcoin publicamente, use satoshis para quantias abaixo de 0,01 BTC para evitar confusão decimal."
+      ],
+      validation: [
+        "Verifique conversões com cálculo mental: 1 BTC = 10^8 sats, mova o decimal 8 casas. 0,001 BTC = 100.000 sats.",
+        "Valide qualquer conversão usada para transação verificando contra a exibição de unidades da sua carteira."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Dönüştürücü çıktısı Bitcoin birimleri arasındaki kesin eşdeğerlikleri gösterir — BTC, milibitcoin (mBTC), mikrobitcoin (μBTC) ve satoshi. Bir değeri cüzdana veya borsaya kopyalamadan önce birim etiketini her zaman doğrulayın.",
+        "Lightning Network faturaları, zincir üstü işlem tutarları ve ödeme taleplerini doğrulamak için çıktıyı kullanın. Fatura tutarı 10 veya 100 kat farklı görünüyorsa muhtemelen birim uyumsuzluğunuz var."
+      ],
+      scenarios: [
+        "Lightning ödemeleri: bir satıcı kahve için 25.000 sat talep ediyor. BTC'ye (0,00025) ve ardından USD'ye dönüştürerek fiyatın makul olduğunu doğrulayın.",
+        "Sat biriktirme stratejisi: haftalık $50 DCA yapıyorsunuz. $73.700/BTC'de her alım yaklaşık 67.844 sat getiriyor. Satoshi cinsinden takip, ilerlemeyi somut hale getirir."
+      ],
+      checklist: [
+        "Dönüştürmeden önce: 1) Alıcı platformun hangi Bitcoin birimini beklediğini onaylayın. 2) BTC/USD kurunun güncel olduğunu doğrulayın. 3) BTC'yi WBTC gibi varyantlarla karıştırmayın.",
+        "Dönüştürdükten sonra: satoshi tutarını ödeme talebiyle rakam rakam karşılaştırın. Yanlış yerleştirilmiş bir sıfır ödemeyi 10 kat değiştirir."
+      ],
+      mistakes: [
+        "En yaygın hata, satoshileri diğer blokzincirlerin küçük birimleriyle karıştırmaktır. Satoshiler yalnızca Bitcoin'e aittir — Ethereum gwei/wei, Solana lamport kullanır.",
+        "Bir diğer sık hata 1 sat = $0,01 varsaymaktır. $73.700/BTC'de 1 satoshi = $0,000737 — bir sentin yaklaşık 14 katı az."
+      ],
+      benchmarks: [
+        "Anahtar birim eşdeğerlikleri: 1 BTC = 100.000.000 sat = 1.000 mBTC. $73.700/BTC'de: 1 sat = $0,000737, 100.000 sat = $73,70, 1 milyon sat = $737.",
+        "Tipik Lightning aralıkları: mikro-bahşişler 100–1.000 sat, küçük alışverişler 5.000–50.000 sat, orta alışverişler 50.000–500.000 sat."
+      ],
+      execution: [
+        "Lightning ödemeleri için standart iş akışı: faturayı al → sat tutarını not et → USD'ye dönüştür → beklenen fiyatla eşleştiğini doğrula → doğruysa öde.",
+        "Sat cinsinden portföy takibi için her alımı kaydeden basit bir tablo tutun: tarih, harcanan USD, alınan sat, toplam sat."
+      ],
+      hygiene: [
+        "Sat-USD dönüşüm oranınızı en az ayda bir güncelleyin. $50K/BTC'de 1 sat = $0,0005; $75K'da 1 sat = $0,00075; $100K'da 1 sat = $0,001.",
+        "Bitcoin tutarlarını herkese açık paylaşırken, 0,01 BTC altındaki miktarlar için ondalık karışıklığını önlemek amacıyla satoshi kullanın."
+      ],
+      validation: [
+        "Dönüşümleri zihinsel hesaplamayla doğrulayın: 1 BTC = 10^8 sat, ondalığı 8 basamak kaydırın. 0,001 BTC = 100.000 sat.",
+        "İşlem için kullanılan herhangi bir dönüşümü cüzdanınızın yerleşik birim gösterimiyle çapraz doğrulayın."
+      ],
+    },
+    hi: {
+      interpret: [
+        "कन्वर्टर आउटपुट Bitcoin मूल्यवर्गों के बीच सटीक समतुल्यता दिखाता है — BTC, मिलीबिटकॉइन (mBTC), माइक्रोबिटकॉइन (μBTC), और सतोशी। किसी वॉलेट या एक्सचेंज में मूल्य कॉपी करने से पहले हमेशा मूल्यवर्ग लेबल सत्यापित करें।",
+        "Lightning Network इनवॉइस, ऑन-चेन लेनदेन राशियों और भुगतान अनुरोधों की जांच के लिए आउटपुट का उपयोग करें। यदि इनवॉइस राशि 10 या 100 के गुणक से गलत दिखती है, तो संभवतः आपके पास यूनिट बेमेल है।"
+      ],
+      scenarios: [
+        "Lightning भुगतान: एक व्यापारी कॉफी के लिए 25,000 sats चार्ज करता है। भुगतान से पहले कीमत उचित है यह सत्यापित करने के लिए BTC (0.00025) और फिर USD में बदलें।",
+        "सैट संचय रणनीति: आप साप्ताहिक $50 DCA करते हैं। $73,700/BTC पर, प्रत्येक खरीद लगभग 67,844 sats देती है। सतोशी में ट्रैकिंग प्रगति को ठोस बनाती है।"
+      ],
+      checklist: [
+        "कन्वर्ट करने से पहले: 1) पुष्टि करें कि प्राप्त करने वाला प्लेटफ़ॉर्म कौन सी Bitcoin इकाई अपेक्षा करता है। 2) सत्यापित करें कि BTC/USD दर ताज़ा है। 3) BTC को WBTC जैसे वेरिएंट से न भ्रमित करें।",
+        "कन्वर्ट करने के बाद: सतोशी राशि की भुगतान अनुरोध से अंक-दर-अंक तुलना करें। एक गलत शून्य भुगतान को 10x बदल देता है।"
+      ],
+      mistakes: [
+        "सबसे आम गलती सतोशी को अन्य ब्लॉकचेन की छोटी-इकाई मूल्यवर्गों से भ्रमित करना है। सतोशी केवल Bitcoin के हैं — Ethereum gwei/wei उपयोग करता है, Solana lamports उपयोग करता है।",
+        "एक और बार-बार होने वाली गलती यह मानना है कि 1 sat = $0.01। $73,700/BTC पर, 1 सतोशी = $0.000737 — एक पैसे से लगभग 14 गुना कम।"
+      ],
+      benchmarks: [
+        "मुख्य इकाई समतुल्यताएं: 1 BTC = 100,000,000 sats = 1,000 mBTC। $73,700/BTC पर: 1 sat = $0.000737, 100,000 sats = $73.70, 10 लाख sats = $737।",
+        "सामान्य Lightning श्रेणियां: माइक्रो-टिप्स 100–1,000 sats, छोटी खरीदारी 5,000–50,000 sats, मध्यम खरीदारी 50,000–500,000 sats।"
+      ],
+      execution: [
+        "Lightning भुगतानों के लिए मानक वर्कफ़्लो: इनवॉइस प्राप्त करें → sat राशि नोट करें → USD में कन्वर्ट करें → अपेक्षित मूल्य से मिलान सत्यापित करें → सही हो तो भुगतान करें।",
+        "सैट में पोर्टफोलियो ट्रैकिंग के लिए, प्रत्येक खरीद लॉग करने वाली एक सरल स्प्रेडशीट बनाएं: तारीख, खर्च किए गए USD, प्राप्त sats, संचयी sats।"
+      ],
+      hygiene: [
+        "अपने मानसिक sat-से-USD रूपांतरण अनुपात को कम से कम मासिक अपडेट करें। $50K/BTC पर 1 sat = $0.0005; $75K पर 1 sat = $0.00075; $100K पर 1 sat = $0.001।",
+        "Bitcoin राशियां सार्वजनिक रूप से साझा करते समय, दशमलव भ्रम से बचने के लिए 0.01 BTC से कम राशियों के लिए सतोशी का उपयोग करें।"
+      ],
+      validation: [
+        "मानसिक गणित से रूपांतरण सत्यापित करें: 1 BTC = 10^8 sats, दशमलव 8 स्थान हिलाएं। 0.001 BTC = 100,000 sats।",
+        "लेनदेन के लिए उपयोग किए गए किसी भी रूपांतरण को अपने वॉलेट की अंतर्निहित इकाई प्रदर्शन से क्रॉस-वैलिडेट करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Выход конвертера показывает точные эквиваленты между номиналами Bitcoin — BTC, миллибиткоин (mBTC), микробиткоин (μBTC) и сатоши. Всегда проверяйте метку номинала перед копированием значения в кошелёк или биржу.",
+        "Используйте результат для проверки счетов Lightning Network, сумм ончейн-транзакций и платёжных запросов. Если сумма счёта отличается в 10 или 100 раз, вероятно, у вас несоответствие единиц."
+      ],
+      scenarios: [
+        "Платежи Lightning: продавец просит 25 000 сат за кофе. Конвертируйте в BTC (0,00025), а затем в USD, чтобы убедиться в разумности цены перед оплатой.",
+        "Стратегия накопления сатоши: вы делаете DCA на $50 еженедельно. При $73 700/BTC каждая покупка приносит примерно 67 844 сат. Отслеживание в сатоши делает прогресс осязаемым."
+      ],
+      checklist: [
+        "Перед конвертацией: 1) Подтвердите, какую единицу Bitcoin ожидает принимающая платформа. 2) Проверьте актуальность курса BTC/USD. 3) Не путайте BTC с обёрнутыми вариантами вроде WBTC.",
+        "После конвертации: сравните сумму в сатоши с платёжным запросом цифра за цифрой. Один лишний ноль меняет платёж в 10 раз."
+      ],
+      mistakes: [
+        "Самая частая ошибка — путать сатоши с мелкими единицами других блокчейнов. Сатоши принадлежат только Bitcoin — Ethereum использует gwei/wei, Solana — lamports.",
+        "Другая распространённая ошибка — считать, что 1 сат = $0,01. При $73 700/BTC 1 сатоши = $0,000737 — примерно в 14 раз меньше цента."
+      ],
+      benchmarks: [
+        "Ключевые эквиваленты: 1 BTC = 100 000 000 сат = 1 000 mBTC. При $73 700/BTC: 1 сат = $0,000737, 100 000 сат = $73,70, 1 млн сат = $737.",
+        "Типичные диапазоны Lightning: микро-чаевые 100–1 000 сат, мелкие покупки 5 000–50 000 сат, средние покупки 50 000–500 000 сат."
+      ],
+      execution: [
+        "Стандартный процесс для платежей Lightning: получить счёт → отметить сумму в сатоши → конвертировать в USD → проверить соответствие ожидаемой цене → оплатить если верно.",
+        "Для отслеживания портфеля в сатоши ведите простую таблицу: дата, потраченные USD, полученные сатоши, накопительный итог."
+      ],
+      hygiene: [
+        "Обновляйте мысленный курс сат-к-USD минимум ежемесячно. При $50K/BTC 1 сат = $0,0005; при $75K — $0,00075; при $100K — $0,001.",
+        "При публичном указании сумм в Bitcoin используйте сатоши для сумм менее 0,01 BTC, чтобы избежать путаницы с десятичными."
+      ],
+      validation: [
+        "Проверяйте конвертации мысленным подсчётом: 1 BTC = 10^8 сат, сдвиньте запятую на 8 позиций. 0,001 BTC = 100 000 сат.",
+        "Перекрёстно проверяйте любую конвертацию для транзакции по встроенному отображению единиц вашего кошелька."
+      ],
+    },
+  },
+
+  'cross-chain-bridge-calculator': {
+    en: {
+      interpret: [
+        "The bridge calculator output shows the total cost of moving assets between blockchains, combining bridge protocol fees, gas costs on source and destination chains, and estimated slippage. If the total bridging cost exceeds 1% of the transfer amount, consider whether the cross-chain move is worth the friction — especially for amounts under $500 where fixed fees dominate percentage costs.",
+        "Compare the calculator's estimated bridge time against your urgency. Native bridges (Ethereum → Arbitrum via the official bridge) may take 7–14 days for withdrawals but cost less. Third-party bridges (Stargate, Across, Hop) settle in 2–15 minutes but charge 0.05–0.5% fees. Use results alongside our <a href=\"/gas-calculator/\">gas fee calculator</a> to estimate the full cost including destination chain gas for subsequent transactions."
+      ],
+      scenarios: [
+        "Moving $5,000 USDC from Ethereum to Arbitrum: official bridge costs ~$3 gas on Ethereum + 7-day wait + $0.10 gas on Arbitrum = $3.10 total. Stargate bridge: $3 gas + 0.06% fee ($3) + $0.10 Arbitrum gas = $6.10 but settles in 2 minutes. The $3 premium buys instant settlement — worthwhile if you need to execute a time-sensitive DeFi position.",
+        "Bridging 2 ETH from Polygon to Ethereum mainnet for a large NFT purchase: bridge fee 0.1% ($4.60) + Polygon gas ($0.01) + Ethereum gas ($2–$5) = $6.61–$9.61 total. At 0.13–0.19% of the transfer value, this is acceptable. But if the same bridge quotes 0.5% ($23), shop for a cheaper route using an aggregator like LI.FI or Socket."
+      ],
+      checklist: [
+        "Before bridging: 1) Verify the destination chain address format matches the asset you are bridging — sending to a wrong-format address results in permanent loss. 2) Confirm the bridge supports your specific token (not just the chain). 3) Check the bridge's current liquidity — low liquidity pools cause high slippage on large transfers.",
+        "After calculating: compare at least 3 bridge options on aggregators like Bungee or Socket. The cheapest bridge today may not be cheapest tomorrow — liquidity shifts between bridges dynamically. Never bridge more than 10% of your portfolio in a single transaction through any third-party bridge."
+      ],
+      mistakes: [
+        "The most dangerous mistake is bridging to the wrong network. Sending tokens to an address on the wrong chain can result in permanent loss. Always triple-check the destination network selection before confirming. Some bridges auto-detect the wrong chain if your wallet is connected to a different network than intended.",
+        "Another costly error is ignoring the destination chain gas requirement. After bridging ETH to Arbitrum, you need Arbitrum ETH for gas on subsequent transactions. If you bridge 100% of your ETH and arrive with zero native gas on the destination, you are stuck until you obtain gas through a faucet or separate small bridge transaction. Always reserve 0.001–0.01 ETH equivalent for destination gas."
+      ],
+      benchmarks: [
+        "Bridge fee benchmarks by type: official L1↔L2 bridges 0% fee (gas only), third-party fast bridges 0.04–0.2%, cross-chain DEX bridges 0.1–0.5%, centralized exchange transfers $1–$25 flat fee. For transfers over $10,000, CEX withdrawal to the destination chain is often the cheapest route despite the flat fee. Compare with our <a href=\"/exchange-fee-comparator/\">exchange fee comparator</a>.",
+        "Bridge settlement time benchmarks: optimistic rollup withdrawals (Arbitrum, Optimism) 7 days, ZK rollup withdrawals (zkSync, StarkNet) 1–24 hours, third-party fast bridges 1–15 minutes, CEX transfers 5–30 minutes. Choose based on whether your priority is cost or speed."
+      ],
+      execution: [
+        "Optimal bridge workflow: 1) Decide amount and destination chain. 2) Check 3+ bridges via aggregator. 3) Verify bridge TVL exceeds 10x your transfer amount (liquidity safety margin). 4) Set slippage tolerance to 0.5% for stablecoins, 1–2% for volatile assets. 5) Execute with gas price under the daily median. 6) Verify arrival on destination chain block explorer.",
+        "For regular cross-chain movements (weekly DeFi farming rotations), batch multiple small bridges into one larger weekly transfer. A single $2,000 bridge is much cheaper per dollar moved than four $500 bridges because gas costs are fixed per transaction regardless of amount."
+      ],
+      hygiene: [
+        "Track every bridge transaction with: date, source chain, destination chain, token, amount, bridge used, fee paid, time to settle. This log helps identify which bridges consistently offer the best rates for your typical transfer patterns and creates an audit trail for tax reporting of cross-chain movements.",
+        "Review bridge security quarterly. Bridge hacks have caused billions in losses (Ronin $625M, Wormhole $325M, Nomad $190M). Only use bridges with: proven track record over 12+ months, audited contracts, active bug bounty programs, and TVL above $100M. New or unaudited bridges are never worth the fee savings."
+      ],
+      validation: [
+        "After initiating a bridge, verify the transaction on both source and destination chain explorers. On the source chain, confirm your tokens left your wallet. On the destination chain, wait for the expected settlement time and confirm arrival. If tokens have not arrived after 2x the expected time, check the bridge's status page before panicking.",
+        "Validate bridge calculator estimates against actual costs by comparing your last 5 bridge transactions. If the calculator consistently over- or under-estimates by more than 20%, adjust your planning buffer accordingly or switch to a more accurate aggregator."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora de puentes muestra el costo total de mover activos entre blockchains, combinando tarifas del protocolo, costos de gas en cadenas de origen y destino, y deslizamiento estimado. Si el costo total supera el 1% del monto transferido, evalúa si el movimiento vale la pena.",
+        "Compara el tiempo estimado con tu urgencia. Puentes nativos pueden tomar 7–14 días pero cuestan menos. Puentes de terceros liquidan en 2–15 minutos pero cobran 0,05–0,5%."
+      ],
+      scenarios: [
+        "Mover $5,000 USDC de Ethereum a Arbitrum: puente oficial cuesta ~$3 gas + 7 días de espera. Puente rápido: $6.10 pero liquida en 2 minutos. La prima de $3 compra liquidación instantánea.",
+        "Puentear 2 ETH de Polygon a Ethereum mainnet: tarifa 0,1% + gas = $6–$10 total. A 0,13–0,19% del valor transferido, es aceptable."
+      ],
+      checklist: [
+        "Antes de puentear: 1) Verifica que el formato de dirección de destino coincida con el activo. 2) Confirma que el puente soporte tu token específico. 3) Revisa la liquidez actual del puente.",
+        "Después de calcular: compara al menos 3 opciones de puentes en agregadores. El puente más barato hoy puede no serlo mañana."
+      ],
+      mistakes: [
+        "El error más peligroso es puentear a la red equivocada. Enviar tokens a una dirección en la cadena incorrecta puede resultar en pérdida permanente. Verifica tres veces la red de destino.",
+        "Otro error costoso es ignorar el requisito de gas en la cadena de destino. Si puenteas el 100% de tu ETH, llegas sin gas nativo para transacciones posteriores."
+      ],
+      benchmarks: [
+        "Tarifas de puentes por tipo: puentes oficiales L1↔L2 0% (solo gas), puentes rápidos de terceros 0,04–0,2%, puentes DEX cross-chain 0,1–0,5%, transferencias CEX $1–$25 tarifa fija.",
+        "Tiempos de liquidación: retiros optimistic rollup 7 días, ZK rollup 1–24 horas, puentes rápidos 1–15 minutos, transferencias CEX 5–30 minutos."
+      ],
+      execution: [
+        "Flujo óptimo: 1) Decidir monto y cadena destino. 2) Verificar 3+ puentes vía agregador. 3) Verificar que el TVL del puente supere 10x tu monto. 4) Configurar tolerancia de deslizamiento. 5) Ejecutar. 6) Verificar llegada en explorador.",
+        "Para movimientos cross-chain regulares, agrupa múltiples puentes pequeños en una transferencia semanal más grande para ahorrar en gas fijo."
+      ],
+      hygiene: [
+        "Registra cada transacción de puente con: fecha, cadena origen, cadena destino, token, monto, puente usado, tarifa pagada, tiempo de liquidación.",
+        "Revisa la seguridad de los puentes trimestralmente. Solo usa puentes con historial probado de 12+ meses, contratos auditados y TVL superior a $100M."
+      ],
+      validation: [
+        "Después de iniciar un puente, verifica la transacción en exploradores de ambas cadenas. Confirma que los tokens salieron de tu wallet y llegaron al destino.",
+        "Valida estimaciones de la calculadora comparando con costos reales de tus últimas 5 transacciones de puente."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora de bridge mostra o custo total de mover ativos entre blockchains, combinando taxas do protocolo, custos de gas nas cadeias de origem e destino, e slippage estimado. Se o custo total exceder 1% do valor transferido, avalie se o movimento vale a pena.",
+        "Compare o tempo estimado com sua urgência. Bridges nativas podem levar 7–14 dias mas custam menos. Bridges de terceiros liquidam em 2–15 minutos mas cobram 0,05–0,5%."
+      ],
+      scenarios: [
+        "Mover $5.000 USDC de Ethereum para Arbitrum: bridge oficial custa ~$3 gas + 7 dias de espera. Bridge rápida: $6,10 mas liquida em 2 minutos.",
+        "Fazer bridge de 2 ETH de Polygon para Ethereum mainnet: taxa 0,1% + gas = $6–$10 total. A 0,13–0,19% do valor transferido, é aceitável."
+      ],
+      checklist: [
+        "Antes de fazer bridge: 1) Verifique se o formato do endereço de destino corresponde ao ativo. 2) Confirme que a bridge suporta seu token específico. 3) Verifique a liquidez atual da bridge.",
+        "Após calcular: compare pelo menos 3 opções de bridges em agregadores. A bridge mais barata hoje pode não ser amanhã."
+      ],
+      mistakes: [
+        "O erro mais perigoso é fazer bridge para a rede errada. Enviar tokens para um endereço na cadeia incorreta pode resultar em perda permanente.",
+        "Outro erro custoso é ignorar o requisito de gas na cadeia de destino. Se você fizer bridge de 100% do seu ETH, chega sem gas nativo."
+      ],
+      benchmarks: [
+        "Taxas de bridge por tipo: bridges oficiais L1↔L2 0% (apenas gas), bridges rápidas de terceiros 0,04–0,2%, bridges DEX cross-chain 0,1–0,5%, transferências CEX $1–$25 taxa fixa.",
+        "Tempos de liquidação: retiradas optimistic rollup 7 dias, ZK rollup 1–24 horas, bridges rápidas 1–15 minutos, transferências CEX 5–30 minutos."
+      ],
+      execution: [
+        "Fluxo ideal: 1) Decidir valor e cadeia destino. 2) Verificar 3+ bridges via agregador. 3) Verificar que o TVL da bridge excede 10x seu valor. 4) Configurar tolerância de slippage. 5) Executar. 6) Verificar chegada no explorador.",
+        "Para movimentos cross-chain regulares, agrupe múltiplas bridges pequenas em uma transferência semanal maior para economizar em gas fixo."
+      ],
+      hygiene: [
+        "Registre cada transação de bridge: data, cadeia origem, cadeia destino, token, valor, bridge usada, taxa paga, tempo de liquidação.",
+        "Revise a segurança das bridges trimestralmente. Use apenas bridges com histórico de 12+ meses, contratos auditados e TVL acima de $100M."
+      ],
+      validation: [
+        "Após iniciar uma bridge, verifique a transação em exploradores de ambas as cadeias. Confirme que os tokens saíram da sua carteira e chegaram ao destino.",
+        "Valide estimativas da calculadora comparando com custos reais das suas últimas 5 transações de bridge."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Köprü hesaplayıcı, blokzincirler arası varlık taşıma toplam maliyetini gösterir — köprü protokolü ücretleri, kaynak ve hedef zincir gas maliyetleri ve tahmini kayma dahil. Toplam maliyet transfer tutarının %1'ini aşıyorsa, hareketin değip değmediğini değerlendirin.",
+        "Hesaplayıcının tahmini köprü süresini aciliyetinizle karşılaştırın. Resmi köprüler 7–14 gün sürebilir ama daha ucuzdur. Üçüncü taraf köprüler 2–15 dakikada kapanır ama %0,05–0,5 ücret alır."
+      ],
+      scenarios: [
+        "Ethereum'dan Arbitrum'a $5.000 USDC taşıma: resmi köprü ~$3 gas + 7 gün bekleme. Hızlı köprü: $6,10 ama 2 dakikada kapanır.",
+        "Polygon'dan Ethereum mainnet'e 2 ETH köprüleme: ücret %0,1 + gas = toplam $6–$10. Transfer değerinin %0,13–0,19'u olarak kabul edilebilir."
+      ],
+      checklist: [
+        "Köprülemeden önce: 1) Hedef zincir adres formatının varlıkla eşleştiğini doğrulayın. 2) Köprünün özel tokenınızı desteklediğini onaylayın. 3) Köprünün mevcut likiditesini kontrol edin.",
+        "Hesapladıktan sonra: toplayıcılarda en az 3 köprü seçeneğini karşılaştırın. Bugün en ucuz köprü yarın en ucuz olmayabilir."
+      ],
+      mistakes: [
+        "En tehlikeli hata yanlış ağa köprülemektir. Yanlış zincirdeki bir adrese token göndermek kalıcı kayıpla sonuçlanabilir. Hedef ağ seçimini üç kez kontrol edin.",
+        "Bir diğer maliyetli hata, hedef zincir gas gereksinimini görmezden gelmektir. ETH'nizin %100'ünü köprülerseniz, sonraki işlemler için yerel gas olmadan kalırsınız."
+      ],
+      benchmarks: [
+        "Türe göre köprü ücretleri: resmi L1↔L2 köprüler %0 (sadece gas), üçüncü taraf hızlı köprüler %0,04–0,2, cross-chain DEX köprüler %0,1–0,5, CEX transferleri $1–$25 sabit ücret.",
+        "Kapanma süreleri: optimistic rollup çekimleri 7 gün, ZK rollup 1–24 saat, hızlı köprüler 1–15 dakika, CEX transferleri 5–30 dakika."
+      ],
+      execution: [
+        "Optimal iş akışı: 1) Tutar ve hedef zincir belirle. 2) Toplayıcıda 3+ köprü kontrol et. 3) Köprü TVL'sinin tutarınızın 10 katını aştığını doğrula. 4) Kayma toleransı ayarla. 5) Çalıştır. 6) Hedef zincir gezgininde varışı doğrula.",
+        "Düzenli zincirler arası hareketler için birden fazla küçük köprüyü haftalık tek bir büyük transferde toplayarak sabit gas maliyetinden tasarruf edin."
+      ],
+      hygiene: [
+        "Her köprü işlemini kaydedin: tarih, kaynak zincir, hedef zincir, token, tutar, kullanılan köprü, ödenen ücret, kapanma süresi.",
+        "Köprü güvenliğini üç ayda bir gözden geçirin. Yalnızca 12+ aylık kanıtlanmış geçmişi, denetlenmiş sözleşmeleri ve $100M üzerinde TVL'si olan köprüleri kullanın."
+      ],
+      validation: [
+        "Köprü başlattıktan sonra, her iki zincir gezgininde işlemi doğrulayın. Tokenlerin cüzdanınızdan ayrıldığını ve hedefe ulaştığını onaylayın.",
+        "Hesaplayıcı tahminlerini son 5 köprü işleminizin gerçek maliyetleriyle karşılaştırarak doğrulayın."
+      ],
+    },
+    hi: {
+      interpret: [
+        "ब्रिज कैलकुलेटर ब्लॉकचेन के बीच संपत्ति स्थानांतरित करने की कुल लागत दिखाता है — ब्रिज प्रोटोकॉल शुल्क, स्रोत और गंतव्य चेन पर गैस लागत, और अनुमानित स्लिपेज। यदि कुल लागत ट्रांसफर राशि का 1% से अधिक है, तो मूल्यांकन करें कि क्रॉस-चेन मूव सार्थक है या नहीं।",
+        "कैलकुलेटर के अनुमानित ब्रिज समय की अपनी तात्कालिकता से तुलना करें। आधिकारिक ब्रिज 7–14 दिन ले सकते हैं लेकिन सस्ते होते हैं। तृतीय-पक्ष ब्रिज 2–15 मिनट में सेटल होते हैं लेकिन 0.05–0.5% शुल्क लेते हैं।"
+      ],
+      scenarios: [
+        "Ethereum से Arbitrum पर $5,000 USDC स्थानांतरित करना: आधिकारिक ब्रिज ~$3 गैस + 7 दिन प्रतीक्षा। तेज ब्रिज: $6.10 लेकिन 2 मिनट में सेटल।",
+        "Polygon से Ethereum mainnet पर 2 ETH ब्रिज करना: शुल्क 0.1% + गैस = कुल $6–$10। ट्रांसफर मूल्य का 0.13–0.19% पर स्वीकार्य।"
+      ],
+      checklist: [
+        "ब्रिज करने से पहले: 1) सत्यापित करें कि गंतव्य चेन पता प्रारूप संपत्ति से मेल खाता है। 2) पुष्टि करें कि ब्रिज आपके विशिष्ट टोकन का समर्थन करता है। 3) ब्रिज की वर्तमान तरलता जांचें।",
+        "गणना के बाद: एग्रीगेटर पर कम से कम 3 ब्रिज विकल्पों की तुलना करें। आज का सबसे सस्ता ब्रिज कल सबसे सस्ता नहीं हो सकता।"
+      ],
+      mistakes: [
+        "सबसे खतरनाक गलती गलत नेटवर्क पर ब्रिज करना है। गलत चेन पर पते पर टोकन भेजने से स्थायी नुकसान हो सकता है। गंतव्य नेटवर्क चयन तीन बार जांचें।",
+        "एक और महंगी गलती गंतव्य चेन गैस आवश्यकता को अनदेखा करना है। यदि आप अपने 100% ETH को ब्रिज करते हैं, तो आप बाद के लेनदेन के लिए बिना मूल गैस के पहुंचते हैं।"
+      ],
+      benchmarks: [
+        "प्रकार के अनुसार ब्रिज शुल्क: आधिकारिक L1↔L2 ब्रिज 0% (केवल गैस), तृतीय-पक्ष तेज ब्रिज 0.04–0.2%, क्रॉस-चेन DEX ब्रिज 0.1–0.5%, CEX ट्रांसफर $1–$25 फ्लैट शुल्क।",
+        "सेटलमेंट समय: optimistic rollup निकासी 7 दिन, ZK rollup 1–24 घंटे, तेज ब्रिज 1–15 मिनट, CEX ट्रांसफर 5–30 मिनट।"
+      ],
+      execution: [
+        "इष्टतम वर्कफ़्लो: 1) राशि और गंतव्य चेन तय करें। 2) एग्रीगेटर में 3+ ब्रिज जांचें। 3) सत्यापित करें कि ब्रिज TVL आपकी राशि से 10 गुना अधिक है। 4) स्लिपेज सहनशीलता सेट करें। 5) निष्पादित करें। 6) गंतव्य चेन एक्सप्लोरर में आगमन सत्यापित करें।",
+        "नियमित क्रॉस-चेन मूवमेंट के लिए, कई छोटे ब्रिज को एक बड़े साप्ताहिक ट्रांसफर में बैच करें ताकि निश्चित गैस लागत पर बचत हो।"
+      ],
+      hygiene: [
+        "हर ब्रिज लेनदेन रिकॉर्ड करें: तारीख, स्रोत चेन, गंतव्य चेन, टोकन, राशि, उपयोग किया गया ब्रिज, भुगतान किया गया शुल्क, सेटल होने का समय।",
+        "ब्रिज सुरक्षा की त्रैमासिक समीक्षा करें। केवल 12+ महीने के सिद्ध इतिहास, ऑडिटेड अनुबंध और $100M से अधिक TVL वाले ब्रिज का उपयोग करें।"
+      ],
+      validation: [
+        "ब्रिज शुरू करने के बाद, दोनों चेन एक्सप्लोरर में लेनदेन सत्यापित करें। पुष्टि करें कि टोकन आपकी वॉलेट से गए और गंतव्य पर पहुंचे।",
+        "अपने पिछले 5 ब्रिज लेनदेन की वास्तविक लागतों से तुलना करके कैलकुलेटर अनुमानों को मान्य करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор моста показывает полную стоимость перемещения активов между блокчейнами — комиссии протокола, газ на исходной и целевой цепочке, ожидаемое проскальзывание. Если общая стоимость превышает 1% суммы перевода, оцените целесообразность перемещения.",
+        "Сравните расчётное время моста с вашей срочностью. Официальные мосты могут занимать 7–14 дней, но дешевле. Сторонние мосты исполняются за 2–15 минут, но берут 0,05–0,5%."
+      ],
+      scenarios: [
+        "Перемещение $5 000 USDC из Ethereum в Arbitrum: официальный мост ~$3 газ + 7 дней ожидания. Быстрый мост: $6,10, но расчёт за 2 минуты.",
+        "Мост 2 ETH из Polygon в Ethereum mainnet: комиссия 0,1% + газ = $6–$10 итого. При 0,13–0,19% от суммы перевода это приемлемо."
+      ],
+      checklist: [
+        "Перед мостом: 1) Убедитесь, что формат адреса целевой цепочки соответствует активу. 2) Подтвердите поддержку вашего конкретного токена. 3) Проверьте текущую ликвидность моста.",
+        "После расчёта: сравните минимум 3 варианта мостов через агрегаторы. Самый дешёвый мост сегодня может не быть самым дешёвым завтра."
+      ],
+      mistakes: [
+        "Самая опасная ошибка — мост в неправильную сеть. Отправка токенов на адрес в неправильной цепочке может привести к необратимой потере. Трижды проверяйте выбор целевой сети.",
+        "Другая дорогая ошибка — игнорирование потребности в газе на целевой цепочке. Если вы перемостите 100% ETH, вы окажетесь без нативного газа для последующих транзакций."
+      ],
+      benchmarks: [
+        "Комиссии мостов по типам: официальные L1↔L2 мосты 0% (только газ), быстрые сторонние мосты 0,04–0,2%, кросс-чейн DEX мосты 0,1–0,5%, CEX переводы $1–$25 фиксированная комиссия.",
+        "Время расчёта: вывод optimistic rollup 7 дней, ZK rollup 1–24 часа, быстрые мосты 1–15 минут, CEX переводы 5–30 минут."
+      ],
+      execution: [
+        "Оптимальный процесс: 1) Определить сумму и целевую цепочку. 2) Проверить 3+ моста через агрегатор. 3) Убедиться, что TVL моста в 10 раз превышает вашу сумму. 4) Установить допуск проскальзывания. 5) Выполнить. 6) Проверить прибытие в обозревателе целевой цепочки.",
+        "Для регулярных кросс-чейн перемещений объединяйте несколько мелких мостов в одну крупную еженедельную транзакцию для экономии на фиксированном газе."
+      ],
+      hygiene: [
+        "Записывайте каждую транзакцию моста: дата, исходная цепочка, целевая цепочка, токен, сумма, использованный мост, уплаченная комиссия, время расчёта.",
+        "Проверяйте безопасность мостов ежеквартально. Используйте только мосты с подтверждённой историей 12+ месяцев, аудированными контрактами и TVL выше $100M."
+      ],
+      validation: [
+        "После инициации моста проверяйте транзакцию в обозревателях обеих цепочек. Подтвердите, что токены покинули ваш кошелёк и прибыли в пункт назначения.",
+        "Проверяйте оценки калькулятора, сравнивая с реальными затратами ваших последних 5 транзакций моста."
+      ],
+    },
+  },
+
+  'crypto-correlation-calculator': {
+    en: {
+      interpret: [
+        "The correlation coefficient ranges from −1 to +1. A value above +0.7 means two assets move closely together — holding both provides minimal diversification benefit. Below −0.3 means the assets tend to move in opposite directions, providing strong hedging value. Between −0.3 and +0.7 is the diversification sweet spot where assets are related enough to both benefit from crypto market growth but different enough to reduce portfolio volatility.",
+        "Always check the time period used. A 30-day correlation may differ dramatically from a 365-day one. BTC and ETH show +0.85 correlation over a year but can diverge to +0.4 during altcoin seasons when ETH outperforms. Use a timeframe matching your investment horizon — short-term traders should use 30-day correlation, while long-term holders should rely on 180–365 day readings. Cross-check with our <a href=\"/profit-calculator/\">profit calculator</a> to see how correlated movements affect your portfolio returns."
+      ],
+      scenarios: [
+        "Portfolio construction: you hold 60% BTC and 40% ETH. With a correlation of +0.87, your portfolio has almost zero diversification — it effectively behaves as a single asset. Adding 15% allocation to a low-correlation asset (gold tokenized at +0.15 correlation, or a DeFi index at +0.35) would meaningfully reduce portfolio drawdowns during BTC-led crashes.",
+        "Pairs trading: two L1 tokens show +0.92 correlation over 90 days. When one temporarily drops 8% while the other drops only 2%, this 6% divergence from the historical pattern suggests the laggard may revert. Use this signal to go long the underperformer and short the outperformer, targeting convergence. Calculate position sizes with our <a href=\"/position-size-calculator/\">position size calculator</a>."
+      ],
+      checklist: [
+        "Before relying on correlation data: 1) Verify the calculation uses at least 90 days of data — shorter windows produce unstable readings. 2) Check whether the period includes any extraordinary events (exchange collapse, regulatory announcement) that may skew the result. 3) Confirm both assets had consistent trading volume throughout the period — illiquid assets show artificially low correlation.",
+        "After calculating: note that correlation is backward-looking and can shift rapidly during market stress. In the March 2020 crash, nearly all crypto assets moved to +0.95 correlation as everything sold off together. Do not assume current diversification benefits will persist during the next crisis."
+      ],
+      mistakes: [
+        "The biggest mistake is assuming low correlation means zero risk. Two assets with +0.2 correlation can still both drop 30% in a market-wide panic — correlation measures the direction and magnitude of co-movement, not the absolute risk of either asset. A portfolio of 10 low-correlation crypto assets is still heavily exposed to systemic crypto risk.",
+        "Another common error is using price correlation instead of return correlation. Price correlation between BTC at $70K and ETH at $2.3K is meaningless — always use percentage returns (daily or weekly) as the correlation input. Raw price levels create spurious correlation driven by the upward trend in both assets rather than their actual co-movement patterns."
+      ],
+      benchmarks: [
+        "Typical crypto correlation ranges: BTC↔ETH +0.80–0.90, BTC↔large-cap alts +0.60–0.80, BTC↔small-cap alts +0.30–0.60, BTC↔stablecoins ~0.00, BTC↔gold +0.05–0.25, BTC↔S&P 500 +0.30–0.50. These ranges shift with market regimes — bull markets compress all correlations upward, bear markets show brief divergence before convergence.",
+        "For meaningful diversification, target at least 20% of your portfolio in assets with under +0.5 correlation to your core holding. Academic research suggests the diversification benefit plateaus at 8–12 uncorrelated assets — beyond that, additional positions add complexity without meaningfully reducing risk."
+      ],
+      execution: [
+        "Quarterly rebalancing workflow: 1) Calculate pairwise correlations for all portfolio holdings using 180-day returns. 2) Identify any pair above +0.85 — consider reducing one position. 3) Look for assets under +0.3 correlation to your largest holding that have positive expected returns. 4) Adjust allocations using our <a href=\"/crypto-portfolio-rebalance-calculator/\">portfolio rebalancing calculator</a>.",
+        "For risk management, set alerts when correlation between your two largest holdings crosses above +0.90 for 30 consecutive days. This signals your portfolio has effectively become a single-asset bet and needs diversification adjustment before the next correction."
+      ],
+      hygiene: [
+        "Recalculate portfolio correlations monthly. Market regime changes (bull→bear, low vol→high vol) shift correlations significantly. A quarterly review is the minimum; monthly is preferred for active portfolios. Archive historical correlations to spot trends — if two assets are becoming more correlated over time, their diversification benefit is degrading.",
+        "Use multiple data sources to verify correlation calculations. Different exchanges may report slightly different prices due to liquidity variations. CoinGecko, CoinMarketCap, and exchange-specific APIs may produce correlations that differ by 0.02–0.05. If sources disagree by more than 0.10, investigate the data quality."
+      ],
+      validation: [
+        "Validate correlation results by visual inspection: plot both assets' normalized returns on the same chart. High positive correlation should look like two lines moving in tandem. If the chart shows frequent divergences but the calculator reports +0.85, check for data errors or mismatched time periods.",
+        "Back-test your correlation assumptions. If you built a portfolio based on +0.3 correlation between BTC and a DeFi token, check whether that correlation held during the last 3 market drawdowns. Correlation during drawdowns matters far more than correlation during calm markets — stress-test your diversification assumptions."
+      ],
+    },
+    es: {
+      interpret: [
+        "El coeficiente de correlación varía de −1 a +1. Un valor superior a +0,7 significa que dos activos se mueven juntos — mantener ambos proporciona un beneficio de diversificación mínimo. Por debajo de −0,3 significa movimiento opuesto, proporcionando fuerte cobertura.",
+        "Siempre verifica el período utilizado. Una correlación de 30 días puede diferir dramáticamente de una de 365 días. BTC y ETH muestran +0,85 anual pero pueden divergir a +0,4 durante temporadas de altcoins."
+      ],
+      scenarios: [
+        "Construcción de portafolio: tienes 60% BTC y 40% ETH. Con correlación de +0,87, tu portafolio tiene casi cero diversificación. Agregar 15% en un activo de baja correlación reduciría significativamente las caídas.",
+        "Trading de pares: dos tokens L1 muestran +0,92 de correlación en 90 días. Cuando uno cae 8% temporalmente mientras el otro solo 2%, esta divergencia del 6% sugiere reversión potencial."
+      ],
+      checklist: [
+        "Antes de confiar en datos de correlación: 1) Verifica que se usen al menos 90 días de datos. 2) Comprueba si el período incluye eventos extraordinarios. 3) Confirma que ambos activos tuvieron volumen consistente.",
+        "Después de calcular: recuerda que la correlación mira hacia atrás y puede cambiar rápidamente en estrés de mercado. En crisis, casi todos los criptoactivos se mueven a +0,95 de correlación."
+      ],
+      mistakes: [
+        "El mayor error es asumir que baja correlación significa cero riesgo. Dos activos con +0,2 de correlación pueden caer ambos 30% en un pánico generalizado.",
+        "Otro error común es usar correlación de precios en lugar de correlación de retornos. Siempre usa retornos porcentuales diarios o semanales como entrada."
+      ],
+      benchmarks: [
+        "Rangos típicos de correlación cripto: BTC↔ETH +0,80–0,90, BTC↔alts grandes +0,60–0,80, BTC↔alts pequeños +0,30–0,60, BTC↔stablecoins ~0,00, BTC↔oro +0,05–0,25.",
+        "Para diversificación significativa, apunta al menos 20% del portafolio en activos con correlación menor a +0,5 respecto a tu posición principal."
+      ],
+      execution: [
+        "Flujo trimestral: 1) Calcula correlaciones pareadas para todas las posiciones usando retornos de 180 días. 2) Identifica pares por encima de +0,85. 3) Busca activos con correlación menor a +0,3 y retornos positivos esperados.",
+        "Para gestión de riesgo, configura alertas cuando la correlación entre tus dos mayores posiciones supere +0,90 durante 30 días consecutivos."
+      ],
+      hygiene: [
+        "Recalcula las correlaciones del portafolio mensualmente. Los cambios de régimen de mercado desplazan las correlaciones significativamente. Archiva correlaciones históricas para detectar tendencias.",
+        "Usa múltiples fuentes de datos para verificar los cálculos. Si las fuentes discrepan más de 0,10, investiga la calidad de los datos."
+      ],
+      validation: [
+        "Valida los resultados por inspección visual: grafica los retornos normalizados de ambos activos en el mismo gráfico. Alta correlación positiva debería verse como dos líneas moviéndose en tándem.",
+        "Prueba retrospectivamente tus supuestos de correlación verificando si se mantuvieron durante las últimas 3 caídas del mercado."
+      ],
+    },
+    pt: {
+      interpret: [
+        "O coeficiente de correlação varia de −1 a +1. Acima de +0,7 significa que dois ativos se movem juntos — manter ambos oferece benefício mínimo de diversificação. Abaixo de −0,3 significa movimento oposto, proporcionando forte hedge.",
+        "Sempre verifique o período utilizado. Uma correlação de 30 dias pode diferir dramaticamente de uma de 365 dias. BTC e ETH mostram +0,85 anual mas podem divergir para +0,4 durante temporadas de altcoins."
+      ],
+      scenarios: [
+        "Construção de portfólio: você tem 60% BTC e 40% ETH. Com correlação de +0,87, seu portfólio tem quase zero diversificação. Adicionar 15% em um ativo de baixa correlação reduziria significativamente os drawdowns.",
+        "Trading de pares: dois tokens L1 mostram +0,92 de correlação em 90 dias. Quando um cai temporariamente 8% enquanto o outro cai apenas 2%, essa divergência de 6% sugere potencial reversão."
+      ],
+      checklist: [
+        "Antes de confiar nos dados: 1) Verifique que se usam pelo menos 90 dias de dados. 2) Confira se o período inclui eventos extraordinários. 3) Confirme volume consistente em ambos os ativos.",
+        "Após calcular: lembre-se que a correlação olha para trás e pode mudar rapidamente em estresse de mercado. Em crises, quase todos os criptoativos convergem para +0,95."
+      ],
+      mistakes: [
+        "O maior erro é assumir que baixa correlação significa zero risco. Dois ativos com +0,2 podem ambos cair 30% em pânico generalizado.",
+        "Outro erro comum é usar correlação de preços em vez de correlação de retornos. Sempre use retornos percentuais diários ou semanais."
+      ],
+      benchmarks: [
+        "Faixas típicas de correlação cripto: BTC↔ETH +0,80–0,90, BTC↔alts grandes +0,60–0,80, BTC↔alts pequenos +0,30–0,60, BTC↔stablecoins ~0,00, BTC↔ouro +0,05–0,25.",
+        "Para diversificação significativa, aloque pelo menos 20% do portfólio em ativos com correlação inferior a +0,5 em relação à sua posição principal."
+      ],
+      execution: [
+        "Fluxo trimestral: 1) Calcule correlações pareadas usando retornos de 180 dias. 2) Identifique pares acima de +0,85. 3) Busque ativos com correlação inferior a +0,3 e retornos positivos esperados.",
+        "Para gestão de risco, configure alertas quando a correlação entre suas duas maiores posições ultrapassar +0,90 por 30 dias consecutivos."
+      ],
+      hygiene: [
+        "Recalcule correlações mensalmente. Mudanças de regime de mercado deslocam correlações significativamente. Arquive correlações históricas para detectar tendências.",
+        "Use múltiplas fontes de dados para verificar cálculos. Se fontes discordarem em mais de 0,10, investigue a qualidade dos dados."
+      ],
+      validation: [
+        "Valide resultados por inspeção visual: plote retornos normalizados de ambos os ativos no mesmo gráfico. Alta correlação positiva deve parecer duas linhas se movendo em conjunto.",
+        "Teste retroativamente suas premissas de correlação verificando se se mantiveram nas últimas 3 quedas do mercado."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Korelasyon katsayısı −1 ile +1 arasında değişir. +0,7 üzeri iki varlığın birlikte hareket ettiği anlamına gelir — ikisini de tutmak minimum çeşitlendirme sağlar. −0,3 altı ters yönlü hareket gösterir ve güçlü hedge değeri sunar.",
+        "Kullanılan zaman dilimini her zaman kontrol edin. 30 günlük korelasyon 365 günlükten çarpıcı biçimde farklı olabilir. BTC ve ETH yıllık +0,85 gösterir ama altcoin sezonlarında +0,4'e ayrışabilir."
+      ],
+      scenarios: [
+        "Portföy oluşturma: %60 BTC ve %40 ETH tutuyorsunuz. +0,87 korelasyonla portföyünüz neredeyse sıfır çeşitlendirmeye sahip. Düşük korelasyonlu bir varlığa %15 ayırma düşüşleri önemli ölçüde azaltır.",
+        "Çift ticareti: iki L1 tokeni 90 gün içinde +0,92 korelasyon gösteriyor. Biri geçici olarak %8 düşerken diğeri sadece %2 düştüğünde, bu %6 sapma potansiyel geri dönüş sinyali verir."
+      ],
+      checklist: [
+        "Korelasyon verilerine güvenmeden önce: 1) En az 90 günlük veri kullanıldığını doğrulayın. 2) Dönemin olağanüstü olaylar içerip içermediğini kontrol edin. 3) Her iki varlığın tutarlı işlem hacmine sahip olduğunu onaylayın.",
+        "Hesapladıktan sonra: korelasyonun geriye dönük olduğunu ve piyasa stresinde hızla değişebileceğini unutmayın."
+      ],
+      mistakes: [
+        "En büyük hata düşük korelasyonun sıfır risk anlamına geldiğini varsaymaktır. +0,2 korelasyonlu iki varlık piyasa paniğinde ikisi de %30 düşebilir.",
+        "Yaygın bir diğer hata, getiri korelasyonu yerine fiyat korelasyonu kullanmaktır. Girdi olarak her zaman günlük veya haftalık yüzde getirileri kullanın."
+      ],
+      benchmarks: [
+        "Tipik kripto korelasyon aralıkları: BTC↔ETH +0,80–0,90, BTC↔büyük altlar +0,60–0,80, BTC↔küçük altlar +0,30–0,60, BTC↔stablecoinler ~0,00, BTC↔altın +0,05–0,25.",
+        "Anlamlı çeşitlendirme için portföyünüzün en az %20'sini ana varlığınızla +0,5 altı korelasyonlu varlıklarda tutmayı hedefleyin."
+      ],
+      execution: [
+        "Üç aylık iş akışı: 1) 180 günlük getiriler kullanarak tüm varlıklar için ikili korelasyonlar hesaplayın. 2) +0,85 üzeri çiftleri belirleyin. 3) +0,3 altı korelasyonlu ve pozitif beklenen getirili varlıklar arayın.",
+        "Risk yönetimi için, en büyük iki varlığınız arasındaki korelasyon 30 gün boyunca +0,90'ı aştığında uyarı kurun."
+      ],
+      hygiene: [
+        "Portföy korelasyonlarını aylık yeniden hesaplayın. Piyasa rejim değişiklikleri korelasyonları önemli ölçüde kaydırır. Eğilimleri tespit etmek için tarihsel korelasyonları arşivleyin.",
+        "Hesaplamaları doğrulamak için birden fazla veri kaynağı kullanın. Kaynaklar 0,10'dan fazla farklılık gösteriyorsa veri kalitesini araştırın."
+      ],
+      validation: [
+        "Sonuçları görsel incelemeyle doğrulayın: her iki varlığın normalleştirilmiş getirilerini aynı grafikte çizin. Yüksek pozitif korelasyon birlikte hareket eden iki çizgi gibi görünmelidir.",
+        "Korelasyon varsayımlarınızı son 3 piyasa düşüşünde tutunup tutunmadığını kontrol ederek geriye dönük test edin."
+      ],
+    },
+    hi: {
+      interpret: [
+        "सहसंबंध गुणांक −1 से +1 तक होता है। +0.7 से ऊपर का मान दो संपत्तियों के एक साथ चलने को दर्शाता है — दोनों को रखने से न्यूनतम विविधीकरण लाभ मिलता है। −0.3 से नीचे विपरीत दिशा में गति दर्शाता है, मजबूत हेजिंग मूल्य प्रदान करता है।",
+        "उपयोग की गई समय अवधि की हमेशा जांच करें। 30-दिन का सहसंबंध 365-दिन से नाटकीय रूप से भिन्न हो सकता है। BTC और ETH वार्षिक +0.85 दिखाते हैं लेकिन altcoin सीज़न में +0.4 तक विचलित हो सकते हैं।"
+      ],
+      scenarios: [
+        "पोर्टफोलियो निर्माण: आपके पास 60% BTC और 40% ETH है। +0.87 सहसंबंध के साथ, आपके पोर्टफोलियो में लगभग शून्य विविधीकरण है। कम सहसंबंध वाली संपत्ति में 15% आवंटन जोड़ने से गिरावट काफी कम होगी।",
+        "पेयर ट्रेडिंग: दो L1 टोकन 90 दिनों में +0.92 सहसंबंध दिखाते हैं। जब एक अस्थायी रूप से 8% गिरता है जबकि दूसरा केवल 2%, यह 6% विचलन संभावित प्रत्यावर्तन का संकेत देता है।"
+      ],
+      checklist: [
+        "सहसंबंध डेटा पर भरोसा करने से पहले: 1) सत्यापित करें कि कम से कम 90 दिनों का डेटा उपयोग किया गया है। 2) जांचें कि अवधि में असाधारण घटनाएं शामिल हैं या नहीं। 3) दोनों संपत्तियों में सुसंगत ट्रेडिंग वॉल्यूम की पुष्टि करें।",
+        "गणना के बाद: याद रखें कि सहसंबंध पीछे देखता है और बाजार तनाव में तेजी से बदल सकता है।"
+      ],
+      mistakes: [
+        "सबसे बड़ी गलती यह मानना है कि कम सहसंबंध का अर्थ शून्य जोखिम है। +0.2 सहसंबंध वाली दो संपत्तियां बाजार आतंक में दोनों 30% गिर सकती हैं।",
+        "एक और आम गलती रिटर्न सहसंबंध के बजाय मूल्य सहसंबंध का उपयोग करना है। हमेशा दैनिक या साप्ताहिक प्रतिशत रिटर्न का उपयोग करें।"
+      ],
+      benchmarks: [
+        "सामान्य क्रिप्टो सहसंबंध श्रेणियां: BTC↔ETH +0.80–0.90, BTC↔बड़े alts +0.60–0.80, BTC↔छोटे alts +0.30–0.60, BTC↔stablecoins ~0.00, BTC↔सोना +0.05–0.25।",
+        "सार्थक विविधीकरण के लिए, अपने पोर्टफोलियो का कम से कम 20% अपनी मुख्य होल्डिंग से +0.5 से कम सहसंबंध वाली संपत्तियों में लक्षित करें।"
+      ],
+      execution: [
+        "त्रैमासिक वर्कफ़्लो: 1) 180-दिन के रिटर्न का उपयोग करके सभी होल्डिंग्स के लिए जोड़ीवार सहसंबंध गणना करें। 2) +0.85 से ऊपर जोड़ों की पहचान करें। 3) +0.3 से कम सहसंबंध और सकारात्मक अपेक्षित रिटर्न वाली संपत्तियां खोजें।",
+        "जोखिम प्रबंधन के लिए, अपनी दो सबसे बड़ी होल्डिंग्स के बीच सहसंबंध 30 लगातार दिनों तक +0.90 पार करने पर अलर्ट सेट करें।"
+      ],
+      hygiene: [
+        "पोर्टफोलियो सहसंबंधों की मासिक पुनर्गणना करें। बाजार शासन परिवर्तन सहसंबंधों को महत्वपूर्ण रूप से स्थानांतरित करते हैं। रुझान पहचानने के लिए ऐतिहासिक सहसंबंध संग्रहित करें।",
+        "गणनाओं को सत्यापित करने के लिए कई डेटा स्रोतों का उपयोग करें। यदि स्रोत 0.10 से अधिक भिन्न हों, तो डेटा गुणवत्ता की जांच करें।"
+      ],
+      validation: [
+        "दृश्य निरीक्षण द्वारा परिणामों को मान्य करें: दोनों संपत्तियों के सामान्यीकृत रिटर्न को एक ही चार्ट पर प्लॉट करें। उच्च सकारात्मक सहसंबंध दो एक साथ चलती रेखाओं जैसा दिखना चाहिए।",
+        "अपनी सहसंबंध धारणाओं का बैक-टेस्ट करें — जांचें कि पिछले 3 बाजार गिरावटों में वे बनी रहीं या नहीं।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Коэффициент корреляции варьируется от −1 до +1. Значение выше +0,7 означает, что два актива движутся вместе — удержание обоих даёт минимальную диверсификацию. Ниже −0,3 — активы движутся в противоположных направлениях, обеспечивая сильное хеджирование.",
+        "Всегда проверяйте используемый период. 30-дневная корреляция может радикально отличаться от 365-дневной. BTC и ETH показывают +0,85 за год, но могут расходиться до +0,4 в сезоны альткоинов."
+      ],
+      scenarios: [
+        "Построение портфеля: у вас 60% BTC и 40% ETH. При корреляции +0,87 портфель практически не диверсифицирован. Добавление 15% в актив с низкой корреляцией существенно снизит просадки.",
+        "Парный трейдинг: два L1-токена показывают +0,92 корреляцию за 90 дней. Когда один временно падает на 8%, а другой только на 2%, расхождение в 6% сигнализирует о потенциальном возврате."
+      ],
+      checklist: [
+        "Перед использованием данных: 1) Убедитесь, что используется минимум 90 дней данных. 2) Проверьте, включает ли период экстраординарные события. 3) Подтвердите стабильный объём торгов обоих активов.",
+        "После расчёта: помните, что корреляция ретроспективна и может резко измениться в период рыночного стресса."
+      ],
+      mistakes: [
+        "Главная ошибка — считать, что низкая корреляция означает нулевой риск. Два актива с +0,2 могут оба упасть на 30% при общей панике.",
+        "Другая частая ошибка — использование корреляции цен вместо корреляции доходностей. Всегда используйте ежедневные или еженедельные процентные доходности."
+      ],
+      benchmarks: [
+        "Типичные диапазоны: BTC↔ETH +0,80–0,90, BTC↔крупные альты +0,60–0,80, BTC↔мелкие альты +0,30–0,60, BTC↔стейблкоины ~0,00, BTC↔золото +0,05–0,25.",
+        "Для значимой диверсификации направляйте минимум 20% портфеля в активы с корреляцией менее +0,5 к основному холдингу."
+      ],
+      execution: [
+        "Ежеквартальный процесс: 1) Рассчитайте парные корреляции всех активов по 180-дневным доходностям. 2) Определите пары выше +0,85. 3) Найдите активы с корреляцией ниже +0,3 и положительной ожидаемой доходностью.",
+        "Для управления рисками настройте оповещения, когда корреляция двух крупнейших позиций превышает +0,90 в течение 30 дней подряд."
+      ],
+      hygiene: [
+        "Пересчитывайте корреляции ежемесячно. Смена рыночного режима существенно сдвигает корреляции. Архивируйте исторические данные для выявления трендов.",
+        "Используйте несколько источников данных для проверки. Если источники расходятся более чем на 0,10, исследуйте качество данных."
+      ],
+      validation: [
+        "Проверяйте визуально: постройте нормализованные доходности обоих активов на одном графике. Высокая положительная корреляция выглядит как две линии, движущиеся синхронно.",
+        "Протестируйте допущения о корреляции на истории — проверьте, сохранялись ли они в последних 3 просадках рынка."
+      ],
+    },
+  },
+
+  'crypto-index-fund-calculator': {
+    en: {
+      interpret: [
+        "The index fund calculator shows projected returns for a basket of crypto assets weighted by market cap, equal weight, or custom allocation. Compare the index return against holding BTC alone — if the index underperforms BTC by more than 5% annualized, the diversification is costing you returns without necessarily reducing risk proportionally. A well-constructed crypto index should capture 80–90% of BTC's upside while reducing maximum drawdown by 10–20%.",
+        "Pay close attention to the rebalancing frequency impact. Monthly rebalancing in a volatile crypto market captures mean-reversion gains — selling winners and buying dips automatically. Quarterly rebalancing misses some of these opportunities but incurs fewer transaction costs. The calculator shows the difference; for most portfolios under $50,000, quarterly rebalancing is the cost-efficient choice since gas and trading fees eat into monthly rebalancing profits. Model your fees with our <a href=\"/gas-calculator/\">gas fee calculator</a>."
+      ],
+      scenarios: [
+        "Building a Top-10 crypto index with $10,000: market-cap weighted allocation puts ~45% in BTC, ~18% in ETH, and distributes the rest across 8 altcoins. Monthly DCA of $500 into this index, rebalanced quarterly, historically generates 15–25% lower volatility than a BTC-only portfolio while capturing 70–85% of the upside. Use our <a href=\"/dca-calculator/\">DCA calculator</a> to project your accumulation schedule.",
+        "Custom sector index: allocating equally across 5 DeFi blue chips (AAVE, UNI, MKR, LINK, SNX) creates a sector-specific exposure. Back-testing shows DeFi indices can outperform broad crypto indices by 20–40% during DeFi-favorable regimes but underperform by 30–50% during BTC dominance cycles. The calculator helps you stress-test allocation before committing capital."
+      ],
+      checklist: [
+        "Before building a crypto index: 1) Define your universe — Top 10, Top 20, or sector-specific? 2) Choose a weighting scheme — market cap, equal weight, or fundamental-weighted. 3) Set rebalancing frequency — monthly, quarterly, or threshold-based (rebalance when any asset drifts 5%+ from target). 4) Calculate total expected fees per rebalancing cycle including gas, trading fees, and tax implications of each rebalance.",
+        "After the initial calculation: verify that no single asset exceeds 50% of the index (unless intentionally BTC-heavy). Check that the smallest allocation is at least $50–$100 to avoid dust positions where trading fees exceed the position value. Remove any asset with daily volume under $1M as it cannot be reliably traded at index rebalance time."
+      ],
+      mistakes: [
+        "The biggest mistake is including too many assets. A crypto index with 30+ tokens creates enormous rebalancing costs (30 trades per rebalance × gas + fees), includes many illiquid assets that suffer high slippage, and does not meaningfully improve diversification beyond 10–15 assets. Academic studies on crypto portfolios show diminishing diversification returns beyond 8–12 assets.",
+        "Another common error is market-cap weighting without a cap. Pure market-cap weighting puts 60–70% in BTC+ETH, making the remaining 8 tokens nearly irrelevant. Apply a maximum weight cap of 25–35% per asset to ensure meaningful diversification. Without the cap, your crypto index is just BTC with extra steps and higher fees."
+      ],
+      benchmarks: [
+        "Historical crypto index performance benchmarks: Bitwise 10 Large Cap Index returned +180% in 2023 vs BTC +155%. CoinDesk 20 Index returned +165% in the same period. During 2022, broad crypto indices fell 60–70% vs BTC's 65% decline — showing limited downside protection. The key benefit is capturing altcoin outperformance in bull markets without single-asset concentration risk.",
+        "Fee benchmarks for index management: on-chain rebalancing of a 10-asset index costs $5–$15 per rebalance on L2s, $30–$100 on Ethereum mainnet. CEX-based rebalancing costs 0.1–0.2% of total portfolio per rebalance. Annual management cost should stay under 1% of portfolio value — higher means the index structure is eating your alpha."
+      ],
+      execution: [
+        "Implementation path: 1) Use this calculator to define allocations. 2) Execute initial purchases on a single exchange to minimize fees. 3) Set calendar reminders for rebalancing dates. 4) On rebalancing day, calculate deviation from targets, sell overweight positions, buy underweight ones. 5) Log all trades for tax reporting via our <a href=\"/tax-calculator/\">tax calculator</a>.",
+        "For automated index management, consider on-chain index protocols (TokenSets, Enzyme, dHEDGE) that handle rebalancing programmatically. These charge 1–3% annual management fees but eliminate manual execution errors and reduce the discipline risk of skipping rebalances during volatile periods."
+      ],
+      hygiene: [
+        "Review index composition quarterly. Remove any constituent that: drops below $100M market cap, loses 90%+ of trading volume, faces regulatory delisting risk, or fundamentally changes its tokenomics. Replace with the next-largest asset meeting your inclusion criteria. Document every substitution with reasoning for tax audit purposes.",
+        "Track index performance against relevant benchmarks monthly: BTC alone, ETH alone, and a published crypto index like the CoinDesk 20. If your custom index consistently underperforms all three benchmarks over 6+ months, the composition needs revision or you should switch to a simpler BTC+ETH two-asset strategy."
+      ],
+      validation: [
+        "Back-test your index allocation over at least 2 full market cycles (bull + bear) before committing capital. A strategy that looks great in 2023–2024 bull data but collapses in 2022-style bears is not robust. The calculator's historical simulation should include at least one 50%+ drawdown period.",
+        "Validate that your rebalancing assumptions are realistic. If the calculator assumes 0% slippage and 0.1% fees but your actual execution involves 0.5% slippage on small-cap alts and 0.2% fees, the real index performance will underperform the model by 2–4% annually. Adjust inputs to reflect actual execution costs."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora de fondo índice muestra retornos proyectados para una canasta de criptoactivos ponderada por capitalización, peso igual o asignación personalizada. Compara el retorno del índice contra mantener solo BTC — si el índice rinde 5% menos anualizado, la diversificación cuesta retornos.",
+        "Presta atención al impacto de la frecuencia de rebalanceo. El rebalanceo mensual captura ganancias de reversión a la media pero el trimestral incurre en menos costos de transacción."
+      ],
+      scenarios: [
+        "Construir un índice Top-10 cripto con $10,000: la ponderación por capitalización pone ~45% en BTC, ~18% en ETH. DCA mensual de $500, rebalanceado trimestralmente, genera históricamente 15–25% menos volatilidad.",
+        "Índice sectorial personalizado: asignar equitativamente entre 5 blue chips DeFi crea exposición específica al sector."
+      ],
+      checklist: [
+        "Antes de construir: 1) Define tu universo — Top 10, Top 20 o sector. 2) Elige esquema de ponderación. 3) Establece frecuencia de rebalanceo. 4) Calcula costos totales por ciclo de rebalanceo.",
+        "Después del cálculo: verifica que ningún activo supere 50% del índice. Confirma que la asignación más pequeña sea al menos $50–$100. Elimina activos con volumen diario menor a $1M."
+      ],
+      mistakes: [
+        "El mayor error es incluir demasiados activos. Un índice con 30+ tokens crea enormes costos de rebalanceo. Los estudios muestran beneficios de diversificación decrecientes después de 8–12 activos.",
+        "Otro error es ponderar por capitalización sin límite. La ponderación pura pone 60–70% en BTC+ETH. Aplica un límite máximo de 25–35% por activo."
+      ],
+      benchmarks: [
+        "Rendimiento histórico de índices cripto: Bitwise 10 retornó +180% en 2023 vs BTC +155%. Durante 2022, índices amplios cayeron 60–70% vs 65% de BTC.",
+        "Costos de gestión: rebalanceo on-chain de 10 activos cuesta $5–$15 en L2, $30–$100 en Ethereum mainnet. El costo anual debe mantenerse bajo 1% del portafolio."
+      ],
+      execution: [
+        "Ruta de implementación: 1) Define asignaciones con esta calculadora. 2) Ejecuta compras iniciales en un solo exchange. 3) Configura recordatorios de rebalanceo. 4) Rebalancea vendiendo sobrepondérados y comprando subponderados.",
+        "Para gestión automatizada, considera protocolos de índice on-chain que cobran 1–3% anual pero eliminan errores de ejecución manual."
+      ],
+      hygiene: [
+        "Revisa composición trimestralmente. Elimina constituyentes que caigan bajo $100M de capitalización o pierdan 90%+ de volumen. Reemplaza con el siguiente activo más grande.",
+        "Rastrea rendimiento contra benchmarks mensuales: BTC solo, ETH solo, y un índice publicado. Si tu índice subrinde consistentemente durante 6+ meses, revisa la composición."
+      ],
+      validation: [
+        "Prueba retroactiva sobre al menos 2 ciclos completos antes de comprometer capital. La simulación debe incluir al menos una caída de 50%+.",
+        "Valida que tus supuestos de rebalanceo sean realistas. Si asumes 0% deslizamiento pero la ejecución real involucra 0,5%, el índice subrendirá el modelo 2–4% anual."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora de fundo índice mostra retornos projetados para uma cesta de criptoativos ponderada por capitalização, peso igual ou alocação personalizada. Compare o retorno do índice contra manter apenas BTC.",
+        "Preste atenção ao impacto da frequência de rebalanceamento. Rebalanceamento mensal captura ganhos de reversão à média mas o trimestral incorre em menos custos."
+      ],
+      scenarios: [
+        "Construir um índice Top-10 cripto com $10.000: ponderação por capitalização coloca ~45% em BTC, ~18% em ETH. DCA mensal de $500, rebalanceado trimestralmente, gera 15–25% menos volatilidade.",
+        "Índice setorial personalizado: alocar igualmente entre 5 blue chips DeFi cria exposição específica ao setor."
+      ],
+      checklist: [
+        "Antes de construir: 1) Defina seu universo — Top 10, Top 20 ou setor. 2) Escolha esquema de ponderação. 3) Defina frequência de rebalanceamento. 4) Calcule custos totais por ciclo.",
+        "Após o cálculo: verifique que nenhum ativo exceda 50% do índice. Confirme que a menor alocação seja pelo menos $50–$100."
+      ],
+      mistakes: [
+        "O maior erro é incluir ativos demais. Um índice com 30+ tokens cria custos enormes de rebalanceamento. Estudos mostram benefícios decrescentes após 8–12 ativos.",
+        "Outro erro é ponderar por capitalização sem limite. Ponderação pura coloca 60–70% em BTC+ETH. Aplique limite máximo de 25–35% por ativo."
+      ],
+      benchmarks: [
+        "Desempenho histórico: Bitwise 10 retornou +180% em 2023 vs BTC +155%. Em 2022, índices amplos caíram 60–70% vs 65% do BTC.",
+        "Custos de gestão: rebalanceamento on-chain de 10 ativos custa $5–$15 em L2, $30–$100 na Ethereum mainnet. Custo anual deve ficar abaixo de 1%."
+      ],
+      execution: [
+        "Caminho de implementação: 1) Defina alocações. 2) Execute compras iniciais em uma exchange. 3) Configure lembretes de rebalanceamento. 4) Rebalanceie vendendo sobrepondérados e comprando subponderados.",
+        "Para gestão automatizada, considere protocolos de índice on-chain que cobram 1–3% anual mas eliminam erros de execução manual."
+      ],
+      hygiene: [
+        "Revise composição trimestralmente. Remova constituintes que caiam abaixo de $100M de capitalização ou percam 90%+ de volume.",
+        "Acompanhe desempenho contra benchmarks mensais: BTC, ETH e um índice publicado. Se consistentemente abaixo por 6+ meses, revise a composição."
+      ],
+      validation: [
+        "Teste retroativamente em pelo menos 2 ciclos completos antes de comprometer capital. A simulação deve incluir pelo menos uma queda de 50%+.",
+        "Valide que suas premissas de rebalanceamento sejam realistas. Se assume 0% slippage mas a execução real envolve 0,5%, o desempenho real ficará 2–4% abaixo."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Endeks fonu hesaplayıcı, piyasa değeri, eşit ağırlık veya özel dağılımla ağırlıklandırılmış kripto varlık sepetinin öngörülen getirilerini gösterir. Endeks getirisini yalnızca BTC tutmakla karşılaştırın.",
+        "Yeniden dengeleme sıklığının etkisine dikkat edin. Aylık yeniden dengeleme ortalamaya dönüş kazançları yakalar ama üç aylık daha az işlem maliyeti getirir."
+      ],
+      scenarios: [
+        "$10.000 ile Top-10 kripto endeksi oluşturma: piyasa değeri ağırlıklı dağılım ~%45'i BTC'ye, ~%18'i ETH'ye koyar. Üç ayda bir yeniden dengelenen aylık $500 DCA, tarihsel olarak %15–25 daha düşük oynaklık üretir.",
+        "Özel sektör endeksi: 5 DeFi blue chip'e eşit dağılım sektöre özgü maruz kalım yaratır."
+      ],
+      checklist: [
+        "İnşa etmeden önce: 1) Evreninizi tanımlayın — Top 10, Top 20 veya sektör. 2) Ağırlıklandırma şemasını seçin. 3) Yeniden dengeleme sıklığını ayarlayın. 4) Döngü başına toplam maliyetleri hesaplayın.",
+        "Hesapladıktan sonra: hiçbir varlığın endeksin %50'sini aşmadığını doğrulayın. En küçük dağılımın en az $50–$100 olduğunu onaylayın."
+      ],
+      mistakes: [
+        "En büyük hata çok fazla varlık dahil etmektir. 30+ tokenli bir endeks muazzam yeniden dengeleme maliyetleri yaratır. 8–12 varlıktan sonra çeşitlendirme getirileri azalır.",
+        "Bir diğer hata, piyasa değeri ağırlıklandırmasını sınır koymadan kullanmaktır. Saf ağırlıklandırma %60–70'i BTC+ETH'ye koyar. Varlık başına %25–35 üst sınır uygulayın."
+      ],
+      benchmarks: [
+        "Tarihsel performans: Bitwise 10, 2023'te +%180 getirdi (BTC +%155). 2022'de geniş endeksler %60–70 düştü (BTC %65).",
+        "Yönetim maliyetleri: 10 varlıklı zincir üstü yeniden dengeleme L2'lerde $5–$15, Ethereum mainnet'te $30–$100. Yıllık maliyet portföy değerinin %1'inin altında kalmalı."
+      ],
+      execution: [
+        "Uygulama yolu: 1) Bu hesaplayıcıyla dağılımları tanımlayın. 2) İlk alımları tek bir borsada yapın. 3) Yeniden dengeleme için takvim hatırlatıcıları ayarlayın. 4) Aşırı ağırlıklıları satıp düşük ağırlıklıları alarak yeniden dengeleyin.",
+        "Otomatik yönetim için yıllık %1–3 ücret alan ancak manuel hataları ortadan kaldıran zincir üstü endeks protokollerini düşünün."
+      ],
+      hygiene: [
+        "Endeks bileşimini üç ayda bir gözden geçirin. $100M altına düşen veya hacminin %90+'ını kaybeden bileşenleri çıkarın.",
+        "Performansı aylık benchmarklarla karşılaştırın: yalnızca BTC, yalnızca ETH ve yayınlanmış bir kripto endeksi. 6+ ay sürekli düşük kalıyorsa bileşimi revize edin."
+      ],
+      validation: [
+        "Sermaye yatırmadan önce en az 2 tam döngüde geriye dönük test yapın. Simülasyon en az bir %50+ düşüş dönemi içermelidir.",
+        "Yeniden dengeleme varsayımlarınızın gerçekçi olduğunu doğrulayın. %0 kayma varsayarsınız ama gerçek uygulama %0,5 içeriyorsa, gerçek performans modelden yıllık %2–4 düşük olacaktır."
+      ],
+    },
+    hi: {
+      interpret: [
+        "इंडेक्स फंड कैलकुलेटर मार्केट कैप, समान भार, या कस्टम आवंटन द्वारा भारित क्रिप्टो संपत्ति बास्केट के अनुमानित रिटर्न दिखाता है। इंडेक्स रिटर्न की केवल BTC रखने से तुलना करें।",
+        "रीबैलेंसिंग आवृत्ति प्रभाव पर ध्यान दें। मासिक रीबैलेंसिंग मीन-रिवर्जन लाभ कैप्चर करती है लेकिन त्रैमासिक कम लेनदेन लागत देती है।"
+      ],
+      scenarios: [
+        "$10,000 के साथ Top-10 क्रिप्टो इंडेक्स बनाना: मार्केट कैप भारित आवंटन ~45% BTC, ~18% ETH में डालता है। त्रैमासिक रीबैलेंस के साथ मासिक $500 DCA ऐतिहासिक रूप से 15–25% कम अस्थिरता उत्पन्न करता है।",
+        "कस्टम सेक्टर इंडेक्स: 5 DeFi ब्लू चिप्स में समान आवंटन सेक्टर-विशिष्ट एक्सपोजर बनाता है।"
+      ],
+      checklist: [
+        "निर्माण से पहले: 1) अपना यूनिवर्स परिभाषित करें — Top 10, Top 20, या सेक्टर। 2) भारित योजना चुनें। 3) रीबैलेंसिंग आवृत्ति सेट करें। 4) प्रति चक्र कुल अपेक्षित शुल्क गणना करें।",
+        "गणना के बाद: सत्यापित करें कि कोई भी संपत्ति इंडेक्स का 50% से अधिक न हो। सबसे छोटा आवंटन कम से कम $50–$100 हो।"
+      ],
+      mistakes: [
+        "सबसे बड़ी गलती बहुत अधिक संपत्तियां शामिल करना है। 30+ टोकन वाला इंडेक्स भारी रीबैलेंसिंग लागत बनाता है। 8–12 संपत्तियों के बाद विविधीकरण लाभ घटते हैं।",
+        "एक और आम गलती बिना सीमा के मार्केट कैप भारित करना है। शुद्ध भारित 60–70% BTC+ETH में डालता है। प्रति संपत्ति 25–35% अधिकतम सीमा लागू करें।"
+      ],
+      benchmarks: [
+        "ऐतिहासिक प्रदर्शन: Bitwise 10 ने 2023 में +180% रिटर्न दिया (BTC +155%)। 2022 में, व्यापक इंडेक्स 60–70% गिरे (BTC 65%)।",
+        "प्रबंधन लागत: 10-संपत्ति ऑन-चेन रीबैलेंसिंग L2 पर $5–$15, Ethereum mainnet पर $30–$100। वार्षिक लागत पोर्टफोलियो मूल्य का 1% से कम रहनी चाहिए।"
+      ],
+      execution: [
+        "कार्यान्वयन पथ: 1) इस कैलकुलेटर से आवंटन परिभाषित करें। 2) एक एक्सचेंज पर प्रारंभिक खरीदारी करें। 3) रीबैलेंसिंग तिथियों के लिए अनुस्मारक सेट करें। 4) अधिक भार वाले बेचें और कम भार वाले खरीदें।",
+        "स्वचालित प्रबंधन के लिए, ऑन-चेन इंडेक्स प्रोटोकॉल पर विचार करें जो वार्षिक 1–3% शुल्क लेते हैं लेकिन मैनुअल निष्पादन त्रुटियां समाप्त करते हैं।"
+      ],
+      hygiene: [
+        "त्रैमासिक रूप से इंडेक्स संरचना की समीक्षा करें। $100M मार्केट कैप से नीचे गिरने वाले या 90%+ वॉल्यूम खोने वाले घटकों को हटाएं।",
+        "मासिक बेंचमार्क के खिलाफ प्रदर्शन ट्रैक करें: केवल BTC, केवल ETH, और एक प्रकाशित इंडेक्स। 6+ महीने लगातार कम प्रदर्शन पर, संरचना संशोधित करें।"
+      ],
+      validation: [
+        "पूंजी लगाने से पहले कम से कम 2 पूर्ण चक्रों पर बैक-टेस्ट करें। सिमुलेशन में कम से कम एक 50%+ गिरावट अवधि शामिल होनी चाहिए।",
+        "सत्यापित करें कि आपकी रीबैलेंसिंग धारणाएं यथार्थवादी हैं। यदि 0% स्लिपेज मानते हैं लेकिन वास्तविक निष्पादन 0.5% शामिल करता है, तो वास्तविक प्रदर्शन मॉडल से वार्षिक 2–4% कम होगा।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор индексного фонда показывает прогнозную доходность корзины криптоактивов, взвешенных по капитализации, равному весу или пользовательскому распределению. Сравните доходность индекса с удержанием только BTC.",
+        "Обратите внимание на влияние частоты ребалансировки. Ежемесячная ребалансировка захватывает прибыль от возврата к среднему, но квартальная даёт меньше транзакционных расходов."
+      ],
+      scenarios: [
+        "Построение Top-10 крипто-индекса на $10 000: взвешивание по капитализации отводит ~45% BTC, ~18% ETH. Ежемесячный DCA $500 с квартальной ребалансировкой исторически даёт на 15–25% меньше волатильности.",
+        "Пользовательский секторный индекс: равное распределение между 5 DeFi blue chip создаёт секторную экспозицию."
+      ],
+      checklist: [
+        "Перед построением: 1) Определите вселенную — Top 10, Top 20 или сектор. 2) Выберите схему взвешивания. 3) Установите частоту ребалансировки. 4) Рассчитайте общие ожидаемые затраты за цикл.",
+        "После расчёта: убедитесь, что ни один актив не превышает 50% индекса. Минимальное размещение — не менее $50–$100."
+      ],
+      mistakes: [
+        "Главная ошибка — включение слишком многих активов. Индекс с 30+ токенами создаёт огромные затраты на ребалансировку. После 8–12 активов выгода от диверсификации убывает.",
+        "Другая ошибка — взвешивание по капитализации без ограничения. Чистое взвешивание отводит 60–70% BTC+ETH. Установите максимальный вес 25–35% на актив."
+      ],
+      benchmarks: [
+        "Историческая доходность: Bitwise 10 показал +180% в 2023 (BTC +155%). В 2022 широкие индексы упали на 60–70% (BTC — 65%).",
+        "Затраты на управление: ончейн-ребалансировка 10 активов стоит $5–$15 на L2, $30–$100 на Ethereum mainnet. Годовые затраты должны быть менее 1% портфеля."
+      ],
+      execution: [
+        "Путь реализации: 1) Определите распределение калькулятором. 2) Первые покупки на одной бирже. 3) Настройте напоминания о ребалансировке. 4) Продавайте перевесы и покупайте недовесы.",
+        "Для автоматизации рассмотрите ончейн-протоколы индексов, берущие 1–3% годовых, но устраняющие ручные ошибки."
+      ],
+      hygiene: [
+        "Пересматривайте состав ежеквартально. Удаляйте активы с капитализацией ниже $100M или потерей 90%+ объёма.",
+        "Отслеживайте доходность ежемесячно: сравнивайте с BTC, ETH и опубликованным индексом. Если ваш индекс уступает всем 6+ месяцев, пересмотрите состав."
+      ],
+      validation: [
+        "Проведите бэктест минимум за 2 полных цикла перед вложением. Симуляция должна включать хотя бы одну просадку 50%+.",
+        "Убедитесь в реалистичности допущений о ребалансировке. Если предполагаете 0% проскальзывания, а реальное исполнение даёт 0,5%, фактическая доходность будет на 2–4% ниже модели."
+      ],
+    },
+  },
+
+  'crypto-inheritance-calculator': {
+    en: {
+      interpret: [
+        "The inheritance calculator estimates the future value of crypto holdings passed to heirs, factoring in growth projections, tax implications, and estate planning costs. If the projected value at the planned transfer date exceeds estate tax thresholds ($13.61M for US federal in 2026), the calculator flags the need for trust structures or gifting strategies to minimize tax erosion.",
+        "Review the tax jurisdiction output carefully. Crypto inheritance tax treatment varies dramatically: the US provides a stepped-up cost basis at death (heirs pay zero capital gains on pre-death appreciation), while some European countries tax inherited crypto at 30–55%. This single variable can change the optimal strategy from 'hold until death' to 'gift annually' depending on jurisdiction. Cross-check projected gains with our <a href=\"/tax-calculator/\">tax calculator</a>."
+      ],
+      scenarios: [
+        "Long-term estate planning: you hold 5 BTC ($368,500) and want to ensure your children can access it. Without planning, heirs may not know your wallet exists, cannot access hardware wallet PINs, or face probate delays of 6–18 months. The calculator shows that creating a multi-sig wallet with a dead man's switch plus documented recovery procedures reduces inheritance risk from 'likely total loss' to 'accessible within 30 days'.",
+        "Annual gifting strategy: the US allows $18,000 per recipient per year tax-free. Gifting 0.24 BTC ($17,688) annually to each child creates a tax-efficient transfer that also distributes risk. Over 10 years at current prices, this transfers 2.4 BTC per child ($176,880) with zero gift tax. The calculator models cumulative transfers and projected growth."
+      ],
+      checklist: [
+        "Before using inheritance projections: 1) Confirm your jurisdiction's crypto inheritance tax rules — many changed in 2024–2025. 2) Verify that your growth rate assumption is conservative (use 5–10% for planning, not 50%). 3) Include all crypto holdings across all wallets and exchanges, not just the largest position.",
+        "After calculating: document your crypto recovery plan in a secure location accessible to heirs. This must include: wallet locations, seed phrase storage, exchange account details, and instructions for accessing each. A crypto estate plan is worthless if heirs cannot physically access the assets."
+      ],
+      mistakes: [
+        "The most catastrophic mistake in crypto inheritance is failing to create any access plan. An estimated 3–4 million BTC (worth $220B+) are permanently lost, many because holders died without sharing wallet access. No amount of financial planning matters if the private keys die with you. Seed phrases stored only in your memory are an inheritance failure waiting to happen.",
+        "Another critical error is using optimistic growth projections for estate planning. Planning around 'BTC to $500K' creates unrealistic expectations and may lead to inadequate tax preparation. Use conservative estimates (5–10% annual growth) for planning purposes and treat higher outcomes as upside rather than baseline expectations."
+      ],
+      benchmarks: [
+        "Estate tax thresholds by jurisdiction: US federal $13.61M (2026), UK £325K nil-rate band, Germany €400K for children, Japan 10–55% graduated. For crypto-heavy estates near these thresholds, proactive planning can save 20–40% of the estate's value versus reactive tax preparation after death.",
+        "Crypto recovery success rates: properly documented multi-sig setups have near-100% heir recovery rates. Hardware wallets with documented PINs/seeds: ~95%. Exchange accounts with named beneficiaries: ~80% (subject to platform policies). Undocumented wallets: <5% recovery rate. Invest in documentation proportional to your holdings' value."
+      ],
+      execution: [
+        "Immediate action items: 1) Create a written inventory of all crypto holdings (wallets, exchanges, DeFi positions). 2) Store seed phrases in a fireproof safe with instructions accessible to your executor. 3) Consider a <a href=\"/crypto-portfolio-rebalance-calculator/\">portfolio rebalance</a> to consolidate scattered holdings into fewer wallets for simpler inheritance. 4) Review and update annually.",
+        "For holdings over $100K, consult a crypto-specialized estate attorney. The cost ($2,000–$5,000 for a comprehensive crypto estate plan) is trivial compared to the potential 40% estate tax on unprepared transfers or the 100% loss from inaccessible wallets."
+      ],
+      hygiene: [
+        "Review your crypto inheritance plan every 6 months. Update wallet inventories when you open new exchange accounts, create new wallets, or significantly change positions. Test your recovery procedures annually — have a trusted person attempt to locate (but not access) your documented assets using only your written instructions.",
+        "Keep inheritance documentation technology-agnostic. Write instructions that do not depend on specific software versions or interfaces that may change. 'Navigate to Settings > Security > Recovery Phrase' may be outdated in 2 years. Instead, describe the general principle: 'The 24-word seed phrase stored at [location] restores the wallet in any BIP-39 compatible application.'"
+      ],
+      validation: [
+        "Test your inheritance plan by simulating a recovery scenario. Give your written instructions to a trusted tech-savvy person and ask them to identify (without actually accessing) every crypto position you hold. If they cannot locate all assets from the documentation alone, the plan has gaps that need fixing before they matter.",
+        "Validate tax projections by consulting a CPA familiar with crypto estate planning in your jurisdiction. Tax laws change frequently — a projection based on 2024 rules may be materially wrong under 2026 rules. Annual professional review ensures your plan reflects current law."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora de herencia estima el valor futuro de las tenencias cripto transmitidas a herederos, considerando proyecciones de crecimiento, implicaciones fiscales y costos de planificación patrimonial.",
+        "Revisa cuidadosamente la jurisdicción fiscal. El tratamiento impositivo de herencias cripto varía enormemente: EE.UU. proporciona una base de costo ajustada al fallecimiento, mientras algunos países europeos gravan al 30–55%."
+      ],
+      scenarios: [
+        "Planificación patrimonial a largo plazo: tienes 5 BTC ($368,500) y quieres asegurar que tus hijos puedan acceder. Sin planificación, los herederos pueden no saber que existe tu wallet o no poder acceder a ella.",
+        "Estrategia de donación anual: EE.UU. permite $18,000 por beneficiario al año libres de impuestos. Donar 0.24 BTC anualmente crea una transferencia fiscalmente eficiente."
+      ],
+      checklist: [
+        "Antes de usar proyecciones: 1) Confirma las reglas fiscales de herencia cripto de tu jurisdicción. 2) Verifica que tu supuesto de crecimiento sea conservador (5–10%). 3) Incluye todas las tenencias cripto.",
+        "Después de calcular: documenta tu plan de recuperación cripto en un lugar seguro accesible para los herederos."
+      ],
+      mistakes: [
+        "El error más catastrófico es no crear ningún plan de acceso. Se estiman 3–4 millones de BTC perdidos permanentemente porque los titulares murieron sin compartir el acceso.",
+        "Otro error crítico es usar proyecciones de crecimiento optimistas. Usa estimaciones conservadoras (5–10% anual) para planificación."
+      ],
+      benchmarks: [
+        "Umbrales de impuesto patrimonial por jurisdicción: EE.UU. $13.61M, UK £325K, Alemania €400K para hijos. La planificación proactiva puede ahorrar 20–40% del valor del patrimonio.",
+        "Tasas de recuperación: configuraciones multi-sig documentadas ~100%, wallets hardware documentadas ~95%, exchanges con beneficiarios ~80%, wallets no documentadas <5%."
+      ],
+      execution: [
+        "Acciones inmediatas: 1) Crear inventario escrito de todas las tenencias. 2) Almacenar frases semilla en caja fuerte. 3) Consolidar tenencias dispersas. 4) Revisar anualmente.",
+        "Para tenencias superiores a $100K, consulta un abogado especializado en patrimonio cripto. El costo ($2,000–$5,000) es trivial comparado con el 40% de impuesto patrimonial."
+      ],
+      hygiene: [
+        "Revisa tu plan de herencia cripto cada 6 meses. Actualiza inventarios cuando abras nuevas cuentas o cambies posiciones significativamente.",
+        "Mantén la documentación independiente de tecnología específica. Describe principios generales en lugar de interfaces de software que pueden cambiar."
+      ],
+      validation: [
+        "Prueba tu plan simulando un escenario de recuperación. Pide a una persona de confianza que identifique todas tus posiciones usando solo tus instrucciones escritas.",
+        "Valida las proyecciones fiscales consultando un contador familiar con planificación patrimonial cripto en tu jurisdicción."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora de herança estima o valor futuro das holdings cripto passadas aos herdeiros, considerando projeções de crescimento, implicações fiscais e custos de planejamento patrimonial.",
+        "Revise cuidadosamente a jurisdição fiscal. O tratamento tributário de herança cripto varia enormemente: os EUA fornecem base de custo ajustada no falecimento, enquanto alguns países europeus tributam a 30–55%."
+      ],
+      scenarios: [
+        "Planejamento patrimonial de longo prazo: você tem 5 BTC ($368.500) e quer garantir que seus filhos possam acessá-los. Sem planejamento, herdeiros podem não saber que sua carteira existe.",
+        "Estratégia de doação anual: os EUA permitem $18.000 por beneficiário por ano isentos de impostos. Doar 0,24 BTC anualmente cria uma transferência eficiente fiscalmente."
+      ],
+      checklist: [
+        "Antes de usar projeções: 1) Confirme as regras fiscais de herança cripto da sua jurisdição. 2) Verifique que sua premissa de crescimento seja conservadora (5–10%). 3) Inclua todas as holdings.",
+        "Após calcular: documente seu plano de recuperação cripto em local seguro acessível aos herdeiros."
+      ],
+      mistakes: [
+        "O erro mais catastrófico é não criar nenhum plano de acesso. Estima-se que 3–4 milhões de BTC estão permanentemente perdidos porque detentores morreram sem compartilhar acesso.",
+        "Outro erro crítico é usar projeções otimistas de crescimento. Use estimativas conservadoras (5–10% anual) para planejamento."
+      ],
+      benchmarks: [
+        "Limites de imposto patrimonial: EUA $13,61M, UK £325K, Alemanha €400K para filhos. Planejamento proativo pode economizar 20–40% do valor do espólio.",
+        "Taxas de recuperação: multi-sig documentado ~100%, carteiras hardware documentadas ~95%, exchanges com beneficiários ~80%, carteiras não documentadas <5%."
+      ],
+      execution: [
+        "Ações imediatas: 1) Criar inventário escrito de todas as holdings. 2) Armazenar seed phrases em cofre. 3) Consolidar holdings dispersas. 4) Revisar anualmente.",
+        "Para holdings acima de $100K, consulte um advogado especializado em espólio cripto."
+      ],
+      hygiene: [
+        "Revise seu plano de herança a cada 6 meses. Atualize inventários ao abrir novas contas ou mudar posições significativamente.",
+        "Mantenha documentação independente de tecnologia específica. Descreva princípios gerais em vez de interfaces que podem mudar."
+      ],
+      validation: [
+        "Teste seu plano simulando cenário de recuperação. Peça a uma pessoa de confiança que identifique todas as suas posições usando apenas suas instruções escritas.",
+        "Valide projeções fiscais consultando um contador familiarizado com planejamento patrimonial cripto."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Miras hesaplayıcı, varislerinize aktarılacak kripto varlıkların gelecekteki değerini tahmin eder — büyüme projeksiyonları, vergi etkileri ve miras planlama maliyetlerini hesaba katar.",
+        "Vergi yetki alanı çıktısını dikkatle inceleyin. Kripto miras vergisi uygulaması çarpıcı biçimde farklılık gösterir: ABD ölümde kademeli maliyet bazı sağlar, bazı Avrupa ülkeleri ise %30–55 vergilendirir."
+      ],
+      scenarios: [
+        "Uzun vadeli miras planlaması: 5 BTC ($368.500) tutuyorsunuz ve çocuklarınızın erişebilmesini istiyorsunuz. Planlama olmadan, varisler cüzdanınızın varlığını bilemeyebilir.",
+        "Yıllık hediye stratejisi: ABD alıcı başına yıllık $18.000 vergisiz izin verir. Yıllık 0,24 BTC hediye etmek vergi açısından verimli bir transfer yaratır."
+      ],
+      checklist: [
+        "Projeksiyonları kullanmadan önce: 1) Yetki alanınızın kripto miras vergisi kurallarını doğrulayın. 2) Büyüme oranı varsayımınızın muhafazakâr olduğunu kontrol edin (%5–10). 3) Tüm kripto varlıklarınızı dahil edin.",
+        "Hesapladıktan sonra: kripto kurtarma planınızı varislerinizin erişebileceği güvenli bir yerde belgeleyin."
+      ],
+      mistakes: [
+        "En felaket hata hiçbir erişim planı oluşturmamaktır. Tahminen 3–4 milyon BTC sahipleri erişimi paylaşmadan öldüğü için kalıcı olarak kaybolmuştur.",
+        "Bir diğer kritik hata iyimser büyüme projeksiyonları kullanmaktır. Planlama için muhafazakâr tahminler kullanın (%5–10 yıllık)."
+      ],
+      benchmarks: [
+        "Yetki alanına göre miras vergisi eşikleri: ABD $13,61M, İngiltere £325K, Almanya çocuklar için €400K. Proaktif planlama miras değerinin %20–40'ını kurtarabilir.",
+        "Kurtarma oranları: belgelenmiş multi-sig ~%100, belgelenmiş donanım cüzdanları ~%95, lehtarı belirlenmiş exchange'ler ~%80, belgelenmemiş cüzdanlar <%5."
+      ],
+      execution: [
+        "Acil eylemler: 1) Tüm varlıkların yazılı envanterini oluşturun. 2) Tohum ifadelerini yanmaz kasada saklayın. 3) Dağınık varlıkları birleştirin. 4) Yıllık gözden geçirin.",
+        "$100K üzeri varlıklar için kripto miras uzmanı bir avukata danışın. Maliyet ($2.000–$5.000) %40 miras vergisine kıyasla önemsizdir."
+      ],
+      hygiene: [
+        "Kripto miras planınızı 6 ayda bir gözden geçirin. Yeni hesaplar açtığınızda veya pozisyonları önemli ölçüde değiştirdiğinizde envanterleri güncelleyin.",
+        "Belgeleri belirli bir teknolojiden bağımsız tutun. Değişebilecek yazılım arayüzleri yerine genel ilkeleri tanımlayın."
+      ],
+      validation: [
+        "Kurtarma senaryosu simüle ederek planınızı test edin. Güvendiğiniz birine yalnızca yazılı talimatlarınızı kullanarak tüm pozisyonlarınızı belirlemesini isteyin.",
+        "Vergi projeksiyonlarını yetki alanınızda kripto miras planlaması konusunda deneyimli bir muhasebeciye danışarak doğrulayın."
+      ],
+    },
+    hi: {
+      interpret: [
+        "विरासत कैलकुलेटर उत्तराधिकारियों को हस्तांतरित क्रिप्टो होल्डिंग्स के भविष्य मूल्य का अनुमान लगाता है — विकास अनुमान, कर प्रभाव और संपत्ति नियोजन लागत को ध्यान में रखते हुए।",
+        "कर क्षेत्राधिकार आउटपुट की सावधानी से समीक्षा करें। क्रिप्टो विरासत कर उपचार नाटकीय रूप से भिन्न होता है: US मृत्यु पर स्टेप्ड-अप कॉस्ट बेसिस प्रदान करता है, जबकि कुछ यूरोपीय देश 30–55% पर कर लगाते हैं।"
+      ],
+      scenarios: [
+        "दीर्घकालिक संपत्ति योजना: आपके पास 5 BTC ($368,500) है और आप अपने बच्चों की पहुंच सुनिश्चित करना चाहते हैं। योजना के बिना, उत्तराधिकारी आपकी वॉलेट के अस्तित्व के बारे में नहीं जान सकते।",
+        "वार्षिक उपहार रणनीति: US प्रति प्राप्तकर्ता प्रति वर्ष $18,000 कर-मुक्त की अनुमति देता है। वार्षिक 0.24 BTC उपहार देना कर-कुशल हस्तांतरण बनाता है।"
+      ],
+      checklist: [
+        "अनुमानों का उपयोग करने से पहले: 1) अपने क्षेत्राधिकार के क्रिप्टो विरासत कर नियमों की पुष्टि करें। 2) सत्यापित करें कि आपकी वृद्धि दर धारणा रूढ़िवादी है (5–10%)। 3) सभी क्रिप्टो होल्डिंग्स शामिल करें।",
+        "गणना के बाद: अपने क्रिप्टो पुनर्प्राप्ति योजना को उत्तराधिकारियों के लिए सुलभ सुरक्षित स्थान पर दस्तावेज़ करें।"
+      ],
+      mistakes: [
+        "क्रिप्टो विरासत में सबसे विनाशकारी गलती कोई एक्सेस प्लान न बनाना है। अनुमानित 3–4 मिलियन BTC स्थायी रूप से खो गए हैं क्योंकि धारकों ने एक्सेस साझा किए बिना दम तोड़ दिया।",
+        "एक और गंभीर गलती संपत्ति नियोजन के लिए आशावादी वृद्धि अनुमानों का उपयोग करना है। नियोजन के लिए रूढ़िवादी अनुमान (5–10% वार्षिक) का उपयोग करें।"
+      ],
+      benchmarks: [
+        "क्षेत्राधिकार के अनुसार संपत्ति कर सीमाएं: US $13.61M, UK £325K, जर्मनी बच्चों के लिए €400K। सक्रिय योजना संपत्ति मूल्य का 20–40% बचा सकती है।",
+        "पुनर्प्राप्ति दरें: प्रलेखित multi-sig ~100%, प्रलेखित हार्डवेयर वॉलेट ~95%, नामित लाभार्थियों वाले एक्सचेंज ~80%, अप्रलेखित वॉलेट <5%।"
+      ],
+      execution: [
+        "तत्काल कार्य: 1) सभी क्रिप्टो होल्डिंग्स की लिखित सूची बनाएं। 2) सीड फ्रेज़ अग्निरोधक तिजोरी में रखें। 3) बिखरी होल्डिंग्स को समेकित करें। 4) वार्षिक समीक्षा करें।",
+        "$100K से अधिक होल्डिंग्स के लिए, क्रिप्टो विशेषज्ञ संपत्ति वकील से परामर्श करें। लागत ($2,000–$5,000) 40% संपत्ति कर की तुलना में तुच्छ है।"
+      ],
+      hygiene: [
+        "अपनी क्रिप्टो विरासत योजना की हर 6 महीने में समीक्षा करें। नए खाते खोलने या स्थिति बदलने पर इन्वेंट्री अपडेट करें।",
+        "दस्तावेज़ीकरण को विशिष्ट तकनीक से स्वतंत्र रखें। बदल सकने वाले सॉफ़्टवेयर इंटरफेस के बजाय सामान्य सिद्धांतों का वर्णन करें।"
+      ],
+      validation: [
+        "पुनर्प्राप्ति परिदृश्य अनुकरण करके अपनी योजना का परीक्षण करें। किसी विश्वसनीय व्यक्ति से केवल आपके लिखित निर्देशों का उपयोग करके सभी स्थितियां पहचानने को कहें।",
+        "अपने क्षेत्राधिकार में क्रिप्टो संपत्ति नियोजन से परिचित CPA से परामर्श करके कर अनुमानों को मान्य करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор наследования оценивает будущую стоимость криптоактивов, передаваемых наследникам, с учётом прогнозов роста, налоговых последствий и расходов на планирование наследства.",
+        "Внимательно проверьте налоговую юрисдикцию. Налогообложение криптонаследства кардинально различается: в США при смерти предоставляется повышенная стоимостная база, а в некоторых европейских странах налог 30–55%."
+      ],
+      scenarios: [
+        "Долгосрочное планирование: у вас 5 BTC ($368 500), и вы хотите обеспечить доступ для детей. Без планирования наследники могут не знать о кошельке или не смочь получить к нему доступ.",
+        "Стратегия ежегодного дарения: в США разрешено $18 000 на получателя в год без налога. Ежегодное дарение 0,24 BTC создаёт налогово-эффективную передачу."
+      ],
+      checklist: [
+        "Перед использованием прогнозов: 1) Подтвердите правила налога на криптонаследство вашей юрисдикции. 2) Используйте консервативную ставку роста (5–10%). 3) Включите все криптоактивы.",
+        "После расчёта: задокументируйте план восстановления в безопасном месте, доступном наследникам."
+      ],
+      mistakes: [
+        "Самая катастрофическая ошибка — не создать никакого плана доступа. По оценкам, 3–4 миллиона BTC навсегда потеряны, потому что владельцы умерли, не передав доступ.",
+        "Другая критическая ошибка — использование оптимистичных прогнозов роста. Для планирования используйте консервативные оценки (5–10% годовых)."
+      ],
+      benchmarks: [
+        "Пороги налога на наследство: США $13,61M, Великобритания £325K, Германия €400K для детей. Проактивное планирование может сэкономить 20–40% стоимости наследства.",
+        "Показатели восстановления: документированный multi-sig ~100%, документированные аппаратные кошельки ~95%, биржи с указанными бенефициарами ~80%, недокументированные кошельки <5%."
+      ],
+      execution: [
+        "Немедленные действия: 1) Составьте письменный перечень всех активов. 2) Храните сид-фразы в огнеупорном сейфе. 3) Консолидируйте разрозненные активы. 4) Пересматривайте ежегодно.",
+        "Для активов свыше $100K проконсультируйтесь с юристом по криптонаследству. Стоимость ($2 000–$5 000) ничтожна по сравнению с 40% налогом на наследство."
+      ],
+      hygiene: [
+        "Пересматривайте план криптонаследства каждые 6 месяцев. Обновляйте перечни при открытии новых счетов или значительном изменении позиций.",
+        "Держите документацию независимой от конкретных технологий. Описывайте общие принципы, а не интерфейсы ПО, которые могут измениться."
+      ],
+      validation: [
+        "Протестируйте план, смоделировав сценарий восстановления. Попросите доверенное лицо идентифицировать все ваши позиции, используя только ваши письменные инструкции.",
+        "Проверьте налоговые прогнозы у бухгалтера, знакомого с планированием криптонаследства в вашей юрисдикции."
+      ],
+    },
+  },
+
+  'crypto-portfolio-rebalance-calculator': {
+    en: {
+      interpret: [
+        "The rebalancing calculator shows which assets are overweight or underweight relative to your target allocation, and the exact trades needed to restore balance. If the suggested trades total less than 2% of portfolio value, the rebalancing cost likely exceeds the diversification benefit — wait for larger deviations before acting. Most portfolios benefit from a 5% drift threshold: only rebalance when any single asset deviates by 5 percentage points or more from its target.",
+        "Pay attention to the tax impact column. Every rebalancing trade that sells an appreciated asset triggers a taxable event. In high-tax jurisdictions, the tax cost of frequent rebalancing can erase 30–50% of the diversification benefit. Consider tax-loss harvesting: when rebalancing, prioritize selling positions at a loss (capturing the tax benefit) and use new contributions to buy underweight assets rather than selling winners. Use our <a href=\"/tax-calculator/\">tax calculator</a> to model the impact."
+      ],
+      scenarios: [
+        "Quarterly rebalance: your target is 50% BTC, 30% ETH, 20% alts. After a BTC rally, actual allocation is 62% BTC, 24% ETH, 14% alts. The calculator says: sell 12% BTC ($1,200 on a $10,000 portfolio), buy $600 ETH and $600 alts. This systematic selling-high and buying-low captures mean reversion — historically adding 1–3% annual return versus buy-and-hold in volatile markets.",
+        "Contribution-based rebalancing: instead of selling overweight assets (triggering taxes), direct all new monthly contributions to underweight assets. With $500/month DCA, you allocate $0 to BTC (overweight), $300 to ETH (underweight by 6%), and $200 to alts (underweight by 6%). This tax-free rebalancing is slower but avoids all tax drag. Calculate DCA allocations with our <a href=\"/dca-calculator/\">DCA calculator</a>."
+      ],
+      checklist: [
+        "Before rebalancing: 1) Update all asset prices to current market rates. 2) Include all holdings across all platforms (exchanges, wallets, DeFi positions). 3) Set the correct target allocation — adjust targets if your investment thesis has changed. 4) Calculate total rebalancing cost (trading fees + gas + tax impact) and verify it is under 0.5% of portfolio value.",
+        "After calculating: execute all rebalancing trades within a single session (under 1 hour) to avoid price drift between trades creating additional imbalance. Start with the largest trades first. Set limit orders 0.1% below/above mid-market to minimize taker fees."
+      ],
+      mistakes: [
+        "The most costly mistake is rebalancing too frequently. Monthly rebalancing in crypto incurs 12 sets of trading fees, 12 taxable events, and chases short-term noise rather than meaningful allocation drift. Quarterly rebalancing captures 80–90% of the diversification benefit at 25% of the transaction costs. Weekly rebalancing destroys value through fees for most portfolio sizes under $100K.",
+        "Another common error is rebalancing without including DeFi positions. If you have $5,000 in a Uniswap LP position plus $5,000 on Coinbase, you need to account for both when calculating allocation percentages. Ignoring the LP position means your actual allocation differs from what the calculator shows, leading to incorrect rebalancing trades."
+      ],
+      benchmarks: [
+        "Rebalancing frequency research: Vanguard studies on traditional portfolios show quarterly rebalancing achieves within 0.1% of daily rebalancing returns with far fewer trades. In crypto, quarterly rebalancing has historically outperformed monthly by 0.5–1.5% annually after fees for portfolios under $50K, due to the higher trading costs.",
+        "Optimal drift threshold: academic research suggests 5% absolute drift or 25% relative drift (e.g., a 20% target drifting to 25% or 15%) as the optimal rebalancing trigger for crypto portfolios. Tighter thresholds increase turnover without meaningfully improving risk-adjusted returns."
+      ],
+      execution: [
+        "Rebalancing execution checklist: 1) Export current holdings from all platforms. 2) Enter into calculator with target percentages. 3) Review suggested trades. 4) Execute sells first to generate buying power. 5) Execute buys. 6) Verify final allocation matches targets within 1%. 7) Log all trades for <a href=\"/tax-calculator/\">tax reporting</a>.",
+        "For multi-exchange portfolios, consolidate rebalancing trades on the exchange with the lowest fees for your typical trade sizes. If assets are spread across 3 exchanges, the gas/withdrawal cost of moving assets to one exchange may be less than the fee difference of executing trades on multiple platforms."
+      ],
+      hygiene: [
+        "Set a quarterly calendar reminder to rebalance. The most common failure mode is simply forgetting — investors who rebalance systematically outperform those who do it when they remember to by 1–2% annually, primarily because ad-hoc rebalancing tends to happen at emotionally charged moments (after crashes or rallies) rather than at optimal intervals.",
+        "Maintain a rebalancing log: date, pre-rebalance allocation, target allocation, trades executed, fees paid, taxes owed. This log enables year-end tax optimization (harvesting losses, managing short-term vs long-term gains) and provides performance attribution data showing whether rebalancing is adding or subtracting value."
+      ],
+      validation: [
+        "After executing rebalancing trades, verify final allocation percentages match targets within 1%. Rounding and price movement during execution create small deviations — these are acceptable if under 1%. Deviations over 2% mean a trade was mis-sized or missed entirely.",
+        "Quarterly, compare your rebalanced portfolio performance against a buy-and-hold benchmark (same initial allocation, never rebalanced). If rebalancing is consistently underperforming buy-and-hold over 4+ quarters, consider widening your drift threshold or moving to semi-annual rebalancing."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora muestra qué activos están sobreponderados o subponderados respecto a tu asignación objetivo y las operaciones exactas necesarias. Si las operaciones sugeridas totalizan menos del 2% del portafolio, el costo de rebalanceo probablemente excede el beneficio.",
+        "Presta atención a la columna de impacto fiscal. Cada operación de rebalanceo que vende un activo apreciado genera un evento imponible."
+      ],
+      scenarios: [
+        "Rebalanceo trimestral: tu objetivo es 50% BTC, 30% ETH, 20% alts. Después de un rally de BTC, la asignación real es 62% BTC. La calculadora dice: vende 12% BTC, compra ETH y alts. Esta venta sistemática en alto y compra en bajo captura reversión a la media.",
+        "Rebalanceo por contribuciones: en lugar de vender sobreponderados, dirige todas las contribuciones mensuales a subponderados. Con $500/mes DCA, asignas $0 a BTC y $300 a ETH."
+      ],
+      checklist: [
+        "Antes de rebalancear: 1) Actualiza todos los precios. 2) Incluye todas las tenencias en todas las plataformas. 3) Establece la asignación objetivo correcta. 4) Calcula el costo total y verifica que sea menor al 0,5%.",
+        "Después de calcular: ejecuta todas las operaciones en una sola sesión (menos de 1 hora) para evitar deriva de precios."
+      ],
+      mistakes: [
+        "El error más costoso es rebalancear demasiado frecuentemente. El rebalanceo mensual incurre en 12 conjuntos de comisiones y 12 eventos imponibles. El trimestral captura 80–90% del beneficio al 25% del costo.",
+        "Otro error es rebalancear sin incluir posiciones DeFi. Si tienes posiciones LP, debes contabilizarlas al calcular porcentajes de asignación."
+      ],
+      benchmarks: [
+        "Investigación de frecuencia: estudios muestran que el rebalanceo trimestral logra dentro del 0,1% del rendimiento del rebalanceo diario con muchas menos operaciones.",
+        "Umbral óptimo de deriva: la investigación sugiere 5% de deriva absoluta o 25% de deriva relativa como disparador óptimo de rebalanceo para portafolios cripto."
+      ],
+      execution: [
+        "Lista de ejecución: 1) Exportar tenencias actuales. 2) Ingresar en la calculadora con porcentajes objetivo. 3) Revisar operaciones sugeridas. 4) Ejecutar ventas primero. 5) Ejecutar compras. 6) Verificar asignación final. 7) Registrar para impuestos.",
+        "Para portafolios multi-exchange, consolida operaciones en el exchange con menores comisiones para tus tamaños típicos."
+      ],
+      hygiene: [
+        "Configura un recordatorio trimestral. El modo de fallo más común es simplemente olvidar. Los inversores que rebalancean sistemáticamente superan a quienes lo hacen esporádicamente en 1–2% anual.",
+        "Mantén un registro de rebalanceo: fecha, asignación pre/post, operaciones ejecutadas, comisiones pagadas, impuestos adeudados."
+      ],
+      validation: [
+        "Después de ejecutar, verifica que los porcentajes finales coincidan con los objetivos dentro del 1%. Desviaciones superiores al 2% significan que una operación fue mal dimensionada.",
+        "Trimestralmente, compara el rendimiento de tu portafolio rebalanceado contra un benchmark de comprar y mantener."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora mostra quais ativos estão acima ou abaixo do peso em relação à sua alocação alvo e as operações exatas necessárias. Se as operações sugeridas totalizam menos de 2% do portfólio, o custo provavelmente excede o benefício.",
+        "Preste atenção à coluna de impacto fiscal. Cada operação de rebalanceamento que vende um ativo valorizado gera um evento tributável."
+      ],
+      scenarios: [
+        "Rebalanceamento trimestral: seu alvo é 50% BTC, 30% ETH, 20% alts. Após rally do BTC, a alocação real é 62% BTC. A calculadora diz: venda 12% BTC, compre ETH e alts.",
+        "Rebalanceamento por contribuições: em vez de vender sobrepondérados, direcione todas as contribuições mensais aos subponderados. Com $500/mês DCA, aloque $0 para BTC e $300 para ETH."
+      ],
+      checklist: [
+        "Antes de rebalancear: 1) Atualize todos os preços. 2) Inclua todas as holdings em todas as plataformas. 3) Defina a alocação alvo correta. 4) Calcule custo total e verifique que seja menor que 0,5%.",
+        "Após calcular: execute todas as operações em uma única sessão (menos de 1 hora) para evitar desvio de preços."
+      ],
+      mistakes: [
+        "O erro mais custoso é rebalancear com frequência excessiva. Rebalanceamento mensal incorre em 12 conjuntos de taxas e 12 eventos tributáveis. O trimestral captura 80–90% do benefício a 25% do custo.",
+        "Outro erro é rebalancear sem incluir posições DeFi. Se tem posições LP, deve contabilizá-las ao calcular percentuais de alocação."
+      ],
+      benchmarks: [
+        "Pesquisa de frequência: estudos mostram que rebalanceamento trimestral atinge dentro de 0,1% do retorno do rebalanceamento diário com muito menos operações.",
+        "Limiar ótimo: pesquisa sugere 5% de desvio absoluto ou 25% de desvio relativo como gatilho ótimo para portfólios cripto."
+      ],
+      execution: [
+        "Checklist de execução: 1) Exporte holdings atuais. 2) Insira na calculadora com percentuais alvo. 3) Revise operações sugeridas. 4) Execute vendas primeiro. 5) Execute compras. 6) Verifique alocação final. 7) Registre para impostos.",
+        "Para portfólios multi-exchange, consolide operações na exchange com menores taxas."
+      ],
+      hygiene: [
+        "Configure lembrete trimestral. O modo de falha mais comum é simplesmente esquecer. Investidores que rebalanceiam sistematicamente superam os esporádicos em 1–2% ao ano.",
+        "Mantenha registro de rebalanceamento: data, alocação pré/pós, operações executadas, taxas pagas."
+      ],
+      validation: [
+        "Após executar, verifique que os percentuais finais correspondam aos alvos dentro de 1%. Desvios acima de 2% significam operação mal dimensionada.",
+        "Trimestralmente, compare o desempenho do portfólio rebalanceado contra benchmark de comprar e manter."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Yeniden dengeleme hesaplayıcı, hedef dağılıma göre hangi varlıkların aşırı veya eksik ağırlıkta olduğunu ve dengeyi yeniden sağlamak için gereken kesin işlemleri gösterir. Önerilen işlemler portföy değerinin %2'sinden azsa, maliyet faydayı aşıyor olabilir.",
+        "Vergi etkisi sütununa dikkat edin. Değer kazanmış bir varlığın satışını içeren her yeniden dengeleme işlemi vergiye tabi bir olay oluşturur."
+      ],
+      scenarios: [
+        "Üç aylık yeniden dengeleme: hedefiniz %50 BTC, %30 ETH, %20 alt. BTC rallisinden sonra gerçek dağılım %62 BTC. Hesaplayıcı: %12 BTC sat, ETH ve alt al der.",
+        "Katkı bazlı yeniden dengeleme: aşırı ağırlıklıları satmak yerine tüm aylık katkıları eksik ağırlıklılara yönlendirin. $500/ay DCA ile BTC'ye $0, ETH'ye $300 ayırın."
+      ],
+      checklist: [
+        "Yeniden dengelemeden önce: 1) Tüm fiyatları güncelleyin. 2) Tüm platformlardaki tüm varlıkları dahil edin. 3) Doğru hedef dağılımı ayarlayın. 4) Toplam maliyeti hesaplayın ve %0,5'in altında olduğunu doğrulayın.",
+        "Hesapladıktan sonra: fiyat kaymasını önlemek için tüm işlemleri tek bir oturumda (1 saat altında) gerçekleştirin."
+      ],
+      mistakes: [
+        "En maliyetli hata çok sık yeniden dengelemektir. Aylık yeniden dengeleme 12 komisyon seti ve 12 vergiye tabi olay yaratır. Üç aylık, faydanın %80–90'ını maliyetin %25'inde yakalar.",
+        "Bir diğer hata, DeFi pozisyonlarını dahil etmeden yeniden dengelemektir. LP pozisyonlarınız varsa bunları dağılım yüzdeleri hesaplanırken saymalısınız."
+      ],
+      benchmarks: [
+        "Sıklık araştırması: üç aylık yeniden dengeleme, çok daha az işlemle günlük yeniden dengeleme getirisinin %0,1 yakınını elde eder.",
+        "Optimal sapma eşiği: araştırma, kripto portföyleri için %5 mutlak sapma veya %25 göreceli sapmayı optimal tetikleyici olarak önerir."
+      ],
+      execution: [
+        "Yürütme listesi: 1) Mevcut varlıkları dışa aktarın. 2) Hedef yüzdelerle hesaplayıcıya girin. 3) Önerilen işlemleri inceleyin. 4) Önce satışları yapın. 5) Alımları yapın. 6) Son dağılımı doğrulayın.",
+        "Çoklu borsa portföyleri için işlemleri en düşük komisyonlu borsada birleştirin."
+      ],
+      hygiene: [
+        "Üç aylık takvim hatırlatıcısı ayarlayın. En yaygın başarısızlık modu basitçe unutmaktır. Sistematik yeniden dengeleyenler esporadik olanları yıllık %1–2 geride bırakır.",
+        "Yeniden dengeleme kaydı tutun: tarih, önceki/sonraki dağılım, yapılan işlemler, ödenen komisyonlar."
+      ],
+      validation: [
+        "İşlemlerden sonra son dağılım yüzdelerinin hedeflerle %1 içinde eşleştiğini doğrulayın. %2 üzeri sapmalar bir işlemin yanlış boyutlandırıldığı anlamına gelir.",
+        "Üç ayda bir, yeniden dengelenmiş portföy performansını al-ve-tut benchmarkıyla karşılaştırın."
+      ],
+    },
+    hi: {
+      interpret: [
+        "रीबैलेंसिंग कैलकुलेटर दिखाता है कि कौन सी संपत्तियां आपके लक्ष्य आवंटन के सापेक्ष अधिक या कम भार में हैं, और संतुलन बहाल करने के लिए आवश्यक सटीक ट्रेड। यदि सुझाए गए ट्रेड पोर्टफोलियो मूल्य का 2% से कम हैं, तो रीबैलेंसिंग लागत लाभ से अधिक हो सकती है।",
+        "कर प्रभाव कॉलम पर ध्यान दें। प्रत्येक रीबैलेंसिंग ट्रेड जो मूल्यवृद्ध संपत्ति बेचता है, कर योग्य घटना उत्पन्न करता है।"
+      ],
+      scenarios: [
+        "त्रैमासिक रीबैलेंस: आपका लक्ष्य 50% BTC, 30% ETH, 20% alts है। BTC रैली के बाद वास्तविक आवंटन 62% BTC। कैलकुलेटर कहता है: 12% BTC बेचें, ETH और alts खरीदें।",
+        "योगदान-आधारित रीबैलेंसिंग: अधिक भार वाली संपत्तियां बेचने के बजाय, सभी मासिक योगदान कम भार वाली संपत्तियों की ओर निर्देशित करें।"
+      ],
+      checklist: [
+        "रीबैलेंस करने से पहले: 1) सभी मूल्य अपडेट करें। 2) सभी प्लेटफ़ॉर्म पर सभी होल्डिंग्स शामिल करें। 3) सही लक्ष्य आवंटन सेट करें। 4) कुल लागत गणना करें और 0.5% से कम सत्यापित करें।",
+        "गणना के बाद: मूल्य बहाव से बचने के लिए सभी ट्रेड एक सत्र (1 घंटे से कम) में निष्पादित करें।"
+      ],
+      mistakes: [
+        "सबसे महंगी गलती बहुत बार रीबैलेंस करना है। मासिक रीबैलेंसिंग 12 शुल्क सेट और 12 कर योग्य घटनाएं बनाती है। त्रैमासिक 25% लागत पर 80–90% लाभ कैप्चर करता है।",
+        "एक और गलती DeFi पोज़िशन शामिल किए बिना रीबैलेंस करना है। LP पोज़िशन को आवंटन प्रतिशत गणना में शामिल करना होगा।"
+      ],
+      benchmarks: [
+        "आवृत्ति अनुसंधान: अध्ययन दिखाते हैं कि त्रैमासिक रीबैलेंसिंग बहुत कम ट्रेड के साथ दैनिक रीबैलेंसिंग रिटर्न का 0.1% के भीतर प्राप्त करती है।",
+        "इष्टतम बहाव सीमा: अनुसंधान क्रिप्टो पोर्टफोलियो के लिए 5% पूर्ण बहाव या 25% सापेक्ष बहाव को इष्टतम ट्रिगर के रूप में सुझाता है।"
+      ],
+      execution: [
+        "निष्पादन सूची: 1) वर्तमान होल्डिंग्स निर्यात करें। 2) लक्ष्य प्रतिशत के साथ कैलकुलेटर में दर्ज करें। 3) सुझाए गए ट्रेड की समीक्षा करें। 4) पहले बिक्री निष्पादित करें। 5) खरीद निष्पादित करें। 6) अंतिम आवंटन सत्यापित करें।",
+        "मल्टी-एक्सचेंज पोर्टफोलियो के लिए, सबसे कम शुल्क वाले एक्सचेंज पर ट्रेड समेकित करें।"
+      ],
+      hygiene: [
+        "त्रैमासिक कैलेंडर अनुस्मारक सेट करें। सबसे आम विफलता बस भूल जाना है। व्यवस्थित रूप से रीबैलेंस करने वाले छिटपुट करने वालों को वार्षिक 1–2% से बेहतर प्रदर्शन करते हैं।",
+        "रीबैलेंसिंग लॉग बनाए रखें: तारीख, पूर्व/पश्चात आवंटन, निष्पादित ट्रेड, भुगतान किए गए शुल्क।"
+      ],
+      validation: [
+        "ट्रेड निष्पादित करने के बाद, सत्यापित करें कि अंतिम आवंटन प्रतिशत लक्ष्यों से 1% के भीतर मेल खाते हैं। 2% से अधिक विचलन का अर्थ है कि ट्रेड गलत आकार का था।",
+        "त्रैमासिक रूप से, अपने रीबैलेंस किए गए पोर्टफोलियो प्रदर्शन की buy-and-hold बेंचमार्क से तुलना करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор ребалансировки показывает, какие активы имеют избыточный или недостаточный вес относительно целевого распределения, и точные сделки для восстановления баланса. Если сделки составляют менее 2% портфеля, стоимость ребалансировки может превышать выгоду.",
+        "Обратите внимание на столбец налогового воздействия. Каждая сделка при ребалансировке, продающая подорожавший актив, создаёт налогооблагаемое событие."
+      ],
+      scenarios: [
+        "Квартальная ребалансировка: цель 50% BTC, 30% ETH, 20% альты. После ралли BTC фактическое распределение 62% BTC. Калькулятор говорит: продайте 12% BTC, купите ETH и альты.",
+        "Ребалансировка через вклады: вместо продажи активов с перевесом направляйте все ежемесячные вклады на активы с недовесом."
+      ],
+      checklist: [
+        "Перед ребалансировкой: 1) Обновите все цены. 2) Включите все активы на всех платформах. 3) Установите правильное целевое распределение. 4) Рассчитайте общую стоимость и убедитесь, что менее 0,5%.",
+        "После расчёта: выполните все сделки в одной сессии (менее 1 часа) для предотвращения ценового дрейфа."
+      ],
+      mistakes: [
+        "Самая дорогая ошибка — слишком частая ребалансировка. Ежемесячная создаёт 12 комплектов комиссий и 12 налогооблагаемых событий. Квартальная захватывает 80–90% выгоды при 25% затрат.",
+        "Другая ошибка — ребалансировка без учёта DeFi-позиций. LP-позиции необходимо учитывать при расчёте долей."
+      ],
+      benchmarks: [
+        "Исследования частоты: квартальная ребалансировка достигает 0,1% от доходности ежедневной при значительно меньшем числе сделок.",
+        "Оптимальный порог дрейфа: 5% абсолютного или 25% относительного отклонения — оптимальный триггер для крипто-портфелей."
+      ],
+      execution: [
+        "Чек-лист: 1) Экспортируйте текущие активы. 2) Введите в калькулятор с целевыми процентами. 3) Проверьте предложенные сделки. 4) Сначала продажи. 5) Затем покупки. 6) Проверьте итоговое распределение.",
+        "Для портфелей на нескольких биржах консолидируйте сделки на бирже с наименьшими комиссиями."
+      ],
+      hygiene: [
+        "Установите ежеквартальное напоминание. Самый частый сценарий провала — просто забыть. Систематическая ребалансировка опережает спонтанную на 1–2% годовых.",
+        "Ведите журнал: дата, распределение до/после, выполненные сделки, уплаченные комиссии."
+      ],
+      validation: [
+        "После выполнения проверьте, что итоговые проценты соответствуют целям в пределах 1%. Отклонения свыше 2% означают ошибку в размере сделки.",
+        "Ежеквартально сравнивайте доходность ребалансированного портфеля с buy-and-hold бенчмарком."
+      ],
+    },
+  },
+
+  'crypto-sentiment-calculator': {
+    en: {
+      interpret: [
+        "The sentiment calculator aggregates fear/greed indicators, social media momentum, and on-chain signals into a composite score from 0 (extreme fear) to 100 (extreme greed). Scores below 25 historically correspond to market bottoms — periods where buying has produced the best 12-month forward returns. Scores above 75 signal overheating markets where risk management should tighten. The middle range (40–60) is neutral and provides no actionable signal.",
+        "Never use sentiment as a standalone trading signal. It works best as a confirmation or contrarian filter for decisions made on other grounds. If your technical analysis says 'buy' and sentiment shows extreme fear (15–25), that strengthens the buy case. If your analysis says 'buy' but sentiment shows extreme greed (80+), consider reducing position size or waiting. Combine with price targets from our <a href=\"/profit-calculator/\">profit calculator</a> for complete trade planning."
+      ],
+      scenarios: [
+        "Contrarian DCA adjustment: you DCA $500/month into BTC. When sentiment drops below 20 (extreme fear), double the buy to $1,000. When sentiment exceeds 80 (extreme greed), halve the buy to $250. This sentiment-adjusted DCA historically outperforms fixed-amount DCA by 10–20% over full market cycles because it systematically buys more when prices are depressed and less when prices are elevated.",
+        "Risk management trigger: your portfolio is fully invested with 3x leverage. Sentiment hits 90 (extreme greed). Historical data shows that within 30 days of readings above 85, the market experiences a 10%+ correction 65% of the time. This signal prompts you to reduce leverage from 3x to 1.5x, set stop-losses on open positions, and move 20% to stablecoins as dry powder for the anticipated dip."
+      ],
+      checklist: [
+        "Before acting on sentiment data: 1) Confirm the reading aggregates multiple inputs (not just one metric like the Fear & Greed Index). 2) Check whether the current reading has been stable for 5+ days or is a one-day spike — sustained readings are more reliable. 3) Compare current sentiment to the same metric 30 and 90 days ago to understand the trend direction, not just the absolute level.",
+        "After reviewing sentiment: document your sentiment-based decision and the specific reading that triggered it. After 30 days, review whether the decision improved or hurt your outcome. This feedback loop trains your judgment on when sentiment signals are reliable versus misleading for your specific trading style."
+      ],
+      mistakes: [
+        "The most common mistake is treating sentiment scores as price predictions. A fear reading of 15 does not mean prices will rise tomorrow — it means the probability of positive 3–12 month returns is historically elevated. Sentiment is a probability tool, not a timing tool. Extreme fear readings have lasted weeks during prolonged bear markets, and buying at fear=15 can still result in months of further decline before recovery.",
+        "Another frequent error is overreacting to daily sentiment swings. The Fear & Greed Index moving from 45 to 55 in a day is noise, not signal. Only act on readings at the extremes (below 25 or above 75) that persist for at least 3–5 days. Mid-range fluctuations reflect normal market activity and trigger whipsaw if traded on."
+      ],
+      benchmarks: [
+        "Historical sentiment-return correlation for Bitcoin: buying at Fear & Greed Index below 20 produced average 12-month returns of +80–120%. Buying above 80 produced average 12-month returns of −10% to +30%. The asymmetry is clear: extreme fear is a stronger buy signal than extreme greed is a sell signal, because crypto markets trend upward long-term.",
+        "Composite sentiment indicators to track: Crypto Fear & Greed Index (alternative.me), BTC funding rates (positive = leveraged longs dominating = greed), exchange inflow volume (high inflows = selling pressure = fear), social media mention volume (spikes = potential tops). No single metric is reliable; the composite is what matters."
+      ],
+      execution: [
+        "Sentiment-based risk framework: At fear below 20 — increase BTC allocation by 10–20%, enable <a href=\"/dca-calculator/\">DCA</a> acceleration, tighten stop-losses on shorts. At greed above 80 — reduce altcoin exposure by 20–30%, take partial profits on positions up 100%+, increase stablecoin reserves to 20% of portfolio. Between 30–70 — maintain standard allocation, no sentiment-driven changes.",
+        "For automated execution, set up alerts on the Fear & Greed Index API. When extreme readings trigger, execute pre-defined action plans rather than making emotional decisions in the moment. Having a written playbook for each sentiment zone eliminates hesitation and ensures consistency."
+      ],
+      hygiene: [
+        "Track sentiment data daily but act on it weekly at most. Daily sentiment readings contain significant noise — a single negative news event can crash sentiment from 60 to 30 intraday, only to recover the next day. Use weekly averages for decision-making and daily readings only as watchlist signals.",
+        "Maintain a sentiment journal alongside your trading journal. Record the sentiment reading at the time of each trade, and after 90 days, analyze whether your best trades correlated with contrarian sentiment positioning or trend-following sentiment positioning. This reveals your personal optimal strategy for using sentiment data."
+      ],
+      validation: [
+        "Back-test your sentiment strategy over at least 3 years of data including one full bull-bear cycle. A strategy that works in a bull market (buy fear, hold through greed) may fail in a structural bear market where fear readings persist for months. Validate that your strategy handles both regimes before deploying real capital.",
+        "Cross-validate sentiment readings across multiple sources. If the Fear & Greed Index shows 25 (fear) but funding rates are strongly positive (greed from leveraged longs) and exchange inflows are low (no selling pressure), the composite picture is mixed, not fearful. Always triangulate rather than relying on a single sentiment metric."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora de sentimiento agrega indicadores de miedo/codicia, momentum de redes sociales y señales on-chain en un puntaje de 0 (miedo extremo) a 100 (codicia extrema). Puntajes bajo 25 corresponden históricamente a fondos de mercado.",
+        "Nunca uses el sentimiento como señal de trading aislada. Funciona mejor como filtro de confirmación o contrario para decisiones tomadas por otros motivos."
+      ],
+      scenarios: [
+        "Ajuste contrario del DCA: haces DCA de $500/mes en BTC. Cuando el sentimiento baja de 20, duplicas a $1,000. Cuando supera 80, reduces a $250. Este DCA ajustado supera al fijo en 10–20% en ciclos completos.",
+        "Disparador de gestión de riesgo: sentimiento llega a 90. Datos históricos muestran que dentro de 30 días de lecturas sobre 85, el mercado tiene corrección de 10%+ el 65% de las veces."
+      ],
+      checklist: [
+        "Antes de actuar: 1) Confirma que la lectura agrega múltiples inputs. 2) Verifica si ha sido estable por 5+ días. 3) Compara con la misma métrica hace 30 y 90 días.",
+        "Después de revisar: documenta tu decisión basada en sentimiento y la lectura específica. Revisa después de 30 días si la decisión mejoró o empeoró tu resultado."
+      ],
+      mistakes: [
+        "El error más común es tratar puntajes de sentimiento como predicciones de precio. Una lectura de miedo de 15 no significa que los precios subirán mañana — significa que la probabilidad de retornos positivos a 3–12 meses está históricamente elevada.",
+        "Otro error frecuente es sobrereaccionar a movimientos diarios de sentimiento. Solo actúa en lecturas extremas (bajo 25 o sobre 75) que persistan al menos 3–5 días."
+      ],
+      benchmarks: [
+        "Correlación histórica sentimiento-retorno para Bitcoin: comprar con índice bajo 20 produjo retornos promedio a 12 meses de +80–120%. Comprar sobre 80 produjo −10% a +30%.",
+        "Indicadores compuestos: Crypto Fear & Greed Index, tasas de funding BTC, volumen de ingresos a exchanges, volumen de menciones en redes sociales."
+      ],
+      execution: [
+        "Marco basado en sentimiento: en miedo bajo 20 — aumentar asignación BTC 10–20%. En codicia sobre 80 — reducir exposición altcoin 20–30%, tomar ganancias parciales, aumentar reservas en stablecoins.",
+        "Para ejecución automatizada, configura alertas en la API del Fear & Greed Index. Ejecuta planes predefinidos en lugar de decisiones emocionales."
+      ],
+      hygiene: [
+        "Rastrea sentimiento diariamente pero actúa semanalmente como máximo. Las lecturas diarias contienen ruido significativo. Usa promedios semanales para toma de decisiones.",
+        "Mantén un diario de sentimiento junto a tu diario de trading. Registra la lectura al momento de cada operación y analiza después de 90 días."
+      ],
+      validation: [
+        "Prueba retroactiva sobre al menos 3 años de datos incluyendo un ciclo alcista-bajista completo.",
+        "Valida cruzadamente lecturas de sentimiento en múltiples fuentes. Siempre triangula en lugar de depender de una sola métrica."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora de sentimento agrega indicadores de medo/ganância, momentum de redes sociais e sinais on-chain em uma pontuação de 0 (medo extremo) a 100 (ganância extrema). Pontuações abaixo de 25 correspondem historicamente a fundos de mercado.",
+        "Nunca use sentimento como sinal isolado. Funciona melhor como filtro de confirmação ou contrário para decisões baseadas em outros fundamentos."
+      ],
+      scenarios: [
+        "Ajuste contrário do DCA: você faz DCA de $500/mês em BTC. Quando sentimento cai abaixo de 20, dobra para $1.000. Acima de 80, reduz para $250. Este DCA ajustado supera o fixo em 10–20% em ciclos completos.",
+        "Gatilho de gestão de risco: sentimento atinge 90. Dados históricos mostram que em 30 dias de leituras acima de 85, o mercado tem correção de 10%+ em 65% das vezes."
+      ],
+      checklist: [
+        "Antes de agir: 1) Confirme que a leitura agrega múltiplos inputs. 2) Verifique se está estável por 5+ dias. 3) Compare com a mesma métrica há 30 e 90 dias.",
+        "Após revisar: documente sua decisão baseada em sentimento. Revise após 30 dias se melhorou ou piorou seu resultado."
+      ],
+      mistakes: [
+        "O erro mais comum é tratar pontuações como previsões de preço. Medo de 15 não significa que preços subirão amanhã — significa probabilidade elevada de retornos positivos em 3–12 meses.",
+        "Outro erro é reagir exageradamente a movimentos diários. Aja apenas em leituras extremas (abaixo de 25 ou acima de 75) que persistam 3–5 dias."
+      ],
+      benchmarks: [
+        "Correlação histórica: comprar com índice abaixo de 20 produziu retornos médios de 12 meses de +80–120%. Acima de 80 produziu −10% a +30%.",
+        "Indicadores compostos: Crypto Fear & Greed Index, taxas de funding BTC, volume de inflows em exchanges, menções em redes sociais."
+      ],
+      execution: [
+        "Framework baseado em sentimento: medo abaixo de 20 — aumentar alocação BTC 10–20%. Ganância acima de 80 — reduzir exposição a altcoins 20–30%, realizar lucros parciais.",
+        "Para execução automatizada, configure alertas na API do Fear & Greed Index."
+      ],
+      hygiene: [
+        "Acompanhe sentimento diariamente mas aja semanalmente no máximo. Leituras diárias contêm ruído significativo. Use médias semanais para decisões.",
+        "Mantenha diário de sentimento junto ao diário de trading. Registre a leitura no momento de cada operação e analise após 90 dias."
+      ],
+      validation: [
+        "Teste retroativamente em pelo menos 3 anos de dados incluindo um ciclo completo.",
+        "Valide cruzadamente leituras em múltiplas fontes. Sempre triangule em vez de depender de uma única métrica."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Duyarlılık hesaplayıcı korku/açgözlülük göstergelerini, sosyal medya momentumunu ve zincir üstü sinyalleri 0 (aşırı korku) ile 100 (aşırı açgözlülük) arasında bir bileşik puana toplar. 25 altı puanlar tarihsel olarak piyasa diplerini yansıtır.",
+        "Duyarlılığı tek başına bir ticaret sinyali olarak asla kullanmayın. Başka gerekçelerle alınan kararlar için onay veya ters filtre olarak en iyi şekilde çalışır."
+      ],
+      scenarios: [
+        "Ters DCA ayarlaması: aylık $500 DCA yapıyorsunuz. Duyarlılık 20'nin altına düştüğünde $1.000'e ikileyin. 80'i aştığında $250'ye düşürün. Bu ayarlanmış DCA sabit DCA'yı %10–20 geride bırakır.",
+        "Risk yönetimi tetikleyicisi: duyarlılık 90'a ulaşıyor. Tarihsel veriler 85 üzeri okumalardan 30 gün içinde piyasanın %65 olasılıkla %10+ düzeltme yaşadığını gösterir."
+      ],
+      checklist: [
+        "Harekete geçmeden önce: 1) Okumanın birden fazla girdi topladığını doğrulayın. 2) 5+ gün boyunca stabil olup olmadığını kontrol edin. 3) Mevcut duyarlılığı 30 ve 90 gün öncekiyle karşılaştırın.",
+        "İnceledikten sonra: duyarlılık bazlı kararınızı ve tetikleyen spesifik okumayı belgeleyin. 30 gün sonra sonucu gözden geçirin."
+      ],
+      mistakes: [
+        "En yaygın hata duyarlılık puanlarını fiyat tahmini olarak ele almaktır. 15 korku okuması fiyatların yarın yükseleceği anlamına gelmez — 3–12 aylık pozitif getiri olasılığının tarihsel olarak yüksek olduğu anlamına gelir.",
+        "Bir diğer hata günlük duyarlılık dalgalanmalarına aşırı tepki vermektir. Yalnızca en az 3–5 gün süren uç okumalarda (25 altı veya 75 üstü) harekete geçin."
+      ],
+      benchmarks: [
+        "Bitcoin için tarihsel korelasyon: endeks 20 altında alım yapmak ortalama 12 aylık +%80–120 getiri sağladı. 80 üstünde ise −%10 ile +%30 arası.",
+        "Bileşik göstergeler: Crypto Fear & Greed Index, BTC fonlama oranları, borsa giriş hacmi, sosyal medya bahsetme hacmi."
+      ],
+      execution: [
+        "Duyarlılık çerçevesi: korku 20 altında — BTC dağılımını %10–20 artırın. Açgözlülük 80 üstünde — altcoin maruziyetini %20–30 azaltın, kısmi kâr alın.",
+        "Otomatik yürütme için Fear & Greed Index API'sinde uyarılar kurun. Duygusal kararlar yerine önceden tanımlanmış eylem planlarını uygulayın."
+      ],
+      hygiene: [
+        "Duyarlılığı günlük takip edin ama en fazla haftalık harekete geçin. Günlük okumalar önemli gürültü içerir. Karar alma için haftalık ortalamaları kullanın.",
+        "İşlem günlüğünüzün yanında bir duyarlılık günlüğü tutun. Her işlem anındaki okumayı kaydedin ve 90 gün sonra analiz edin."
+      ],
+      validation: [
+        "Stratejinizi en az 3 yıllık veri üzerinde tam bir boğa-ayı döngüsü dahil geriye dönük test edin.",
+        "Duyarlılık okumalarını birden fazla kaynakta çapraz doğrulayın. Tek bir metriğe güvenmek yerine her zaman üçgenleme yapın."
+      ],
+    },
+    hi: {
+      interpret: [
+        "सेंटिमेंट कैलकुलेटर भय/लालच संकेतकों, सोशल मीडिया गति और ऑन-चेन सिग्नलों को 0 (अत्यधिक भय) से 100 (अत्यधिक लालच) तक एक समग्र स्कोर में एकत्रित करता है। 25 से नीचे के स्कोर ऐतिहासिक रूप से बाजार के तल से मेल खाते हैं।",
+        "सेंटिमेंट को कभी भी स्टैंडअलोन ट्रेडिंग सिग्नल के रूप में उपयोग न करें। यह अन्य आधारों पर लिए गए निर्णयों के लिए पुष्टि या विरोधाभासी फ़िल्टर के रूप में सबसे अच्छा काम करता है।"
+      ],
+      scenarios: [
+        "विपरीत DCA समायोजन: आप BTC में $500/माह DCA करते हैं। जब सेंटिमेंट 20 से नीचे गिरता है, $1,000 पर दोगुना करें। 80 से ऊपर, $250 तक घटाएं। यह समायोजित DCA पूर्ण चक्रों में निश्चित DCA को 10–20% से बेहतर प्रदर्शन करता है।",
+        "जोखिम प्रबंधन ट्रिगर: सेंटिमेंट 90 तक पहुंचता है। ऐतिहासिक डेटा दिखाता है कि 85 से ऊपर रीडिंग के 30 दिनों के भीतर 65% बार 10%+ सुधार होता है।"
+      ],
+      checklist: [
+        "कार्रवाई करने से पहले: 1) पुष्टि करें कि रीडिंग कई इनपुट एकत्रित करती है। 2) जांचें कि 5+ दिनों से स्थिर है या नहीं। 3) वर्तमान सेंटिमेंट की 30 और 90 दिन पहले से तुलना करें।",
+        "समीक्षा के बाद: अपने सेंटिमेंट-आधारित निर्णय और ट्रिगर करने वाली रीडिंग को दस्तावेज़ करें। 30 दिन बाद परिणाम की समीक्षा करें।"
+      ],
+      mistakes: [
+        "सबसे आम गलती सेंटिमेंट स्कोर को मूल्य भविष्यवाणी मानना है। 15 की भय रीडिंग का मतलब यह नहीं कि कीमतें कल बढ़ेंगी — इसका मतलब 3–12 महीने के सकारात्मक रिटर्न की संभावना ऐतिहासिक रूप से ऊंची है।",
+        "एक और बार-बार होने वाली गलती दैनिक सेंटिमेंट उतार-चढ़ाव पर अतिरिक्त प्रतिक्रिया करना है। केवल कम से कम 3–5 दिन बनी रहने वाली चरम रीडिंग (25 से नीचे या 75 से ऊपर) पर कार्रवाई करें।"
+      ],
+      benchmarks: [
+        "Bitcoin के लिए ऐतिहासिक सहसंबंध: 20 से नीचे इंडेक्स पर खरीदारी ने औसत 12 महीने का +80–120% रिटर्न दिया। 80 से ऊपर ने −10% से +30% दिया।",
+        "समग्र संकेतक: Crypto Fear & Greed Index, BTC फंडिंग दरें, एक्सचेंज इनफ्लो वॉल्यूम, सोशल मीडिया मेंशन वॉल्यूम।"
+      ],
+      execution: [
+        "सेंटिमेंट फ्रेमवर्क: भय 20 से नीचे — BTC आवंटन 10–20% बढ़ाएं। लालच 80 से ऊपर — altcoin एक्सपोजर 20–30% कम करें, आंशिक लाभ लें।",
+        "स्वचालित निष्पादन के लिए, Fear & Greed Index API पर अलर्ट सेट करें। भावनात्मक निर्णयों के बजाय पूर्व-निर्धारित कार्य योजनाएं निष्पादित करें।"
+      ],
+      hygiene: [
+        "सेंटिमेंट दैनिक ट्रैक करें लेकिन अधिकतम साप्ताहिक कार्रवाई करें। दैनिक रीडिंग में महत्वपूर्ण शोर होता है। निर्णय लेने के लिए साप्ताहिक औसत का उपयोग करें।",
+        "अपने ट्रेडिंग जर्नल के साथ सेंटिमेंट जर्नल बनाए रखें। प्रत्येक ट्रेड के समय रीडिंग दर्ज करें और 90 दिन बाद विश्लेषण करें।"
+      ],
+      validation: [
+        "अपनी रणनीति को एक पूर्ण बुल-बेयर चक्र सहित कम से कम 3 वर्ष के डेटा पर बैक-टेस्ट करें।",
+        "कई स्रोतों में सेंटिमेंट रीडिंग को क्रॉस-वैलिडेट करें। एक मेट्रिक पर निर्भर रहने के बजाय हमेशा त्रिकोणीय सत्यापन करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор настроений агрегирует индикаторы страха/жадности, импульс соцсетей и ончейн-сигналы в составную оценку от 0 (крайний страх) до 100 (крайняя жадность). Значения ниже 25 исторически соответствуют рыночным минимумам.",
+        "Никогда не используйте настроения как самостоятельный торговый сигнал. Лучше всего работает как подтверждающий или контрариантский фильтр для решений, принятых по другим основаниям."
+      ],
+      scenarios: [
+        "Контрариантская коррекция DCA: при страхе ниже 20 удвойте покупку, при жадности выше 80 — сократите вдвое. Такой скорректированный DCA опережает фиксированный на 10–20% за полные циклы.",
+        "Триггер управления рисками: настроение достигло 90. Исторические данные показывают, что в течение 30 дней после показателей выше 85 рынок корректируется на 10%+ в 65% случаев."
+      ],
+      checklist: [
+        "Перед действиями: 1) Убедитесь, что показатель агрегирует несколько входных данных. 2) Проверьте стабильность за 5+ дней. 3) Сравните текущие настроения с показателями 30 и 90 дней назад.",
+        "После анализа: задокументируйте решение на основе настроений и конкретный показатель. Через 30 дней оцените результат."
+      ],
+      mistakes: [
+        "Самая частая ошибка — воспринимать оценки настроений как прогнозы цен. Показатель страха 15 не означает рост завтра — это повышенная вероятность положительной доходности за 3–12 месяцев.",
+        "Другая ошибка — чрезмерная реакция на ежедневные колебания. Действуйте только при экстремальных показателях (ниже 25 или выше 75), сохраняющихся 3–5 дней."
+      ],
+      benchmarks: [
+        "Историческая корреляция для Bitcoin: покупка при индексе ниже 20 давала среднюю 12-месячную доходность +80–120%. Выше 80 — от −10% до +30%.",
+        "Составные индикаторы: Crypto Fear & Greed Index, ставки финансирования BTC, объём притока на биржи, объём упоминаний в соцсетях."
+      ],
+      execution: [
+        "Рамка на основе настроений: страх ниже 20 — увеличить долю BTC на 10–20%. Жадность выше 80 — сократить экспозицию альткоинов на 20–30%, зафиксировать часть прибыли.",
+        "Для автоматизации настройте оповещения через API Fear & Greed Index. Выполняйте заранее определённые планы вместо эмоциональных решений."
+      ],
+      hygiene: [
+        "Отслеживайте настроения ежедневно, но действуйте максимум еженедельно. Дневные показатели содержат значительный шум. Для решений используйте недельные средние.",
+        "Ведите дневник настроений наряду с торговым дневником. Фиксируйте показатель при каждой сделке и анализируйте через 90 дней."
+      ],
+      validation: [
+        "Бэктестируйте стратегию минимум на 3 годах данных, включая полный бычье-медвежий цикл.",
+        "Перекрёстно проверяйте показатели по нескольким источникам. Всегда триангулируйте, а не полагайтесь на один индикатор."
+      ],
+    },
+  },
+
+  'defi-yield-aggregator': {
+    en: {
+      interpret: [
+        "The yield aggregator calculator shows projected returns across multiple DeFi protocols after accounting for gas costs, protocol fees, and auto-compounding frequency. Compare the 'net APY' (after all fees) against simply holding the underlying asset — if net APY is under 5% for stablecoins or under 10% for volatile assets, the smart contract risk may not justify the yield. Always check whether displayed APY includes token rewards that may be illiquid or declining in value.",
+        "Pay close attention to the TVL trend of each protocol. A vault showing 25% APY but losing TVL rapidly is a red flag — either yields are actually lower than advertised, or informed participants are exiting due to risk concerns. Stable or growing TVL alongside consistent yields is the healthiest signal. Compare yield strategies against simpler approaches like <a href=\"/staking-calculator/\">staking</a> which carries less smart contract risk."
+      ],
+      scenarios: [
+        "Stablecoin yield optimization: you have $20,000 USDC and want the best risk-adjusted yield. Strategy A: Aave lending at 4.2% APY (low risk, battle-tested). Strategy B: Curve stablecoin pool at 7.5% APY (medium risk, impermanent loss possible). Strategy C: New protocol offering 25% APY (high risk, unaudited). The calculator shows Strategy B nets $1,500/year versus $840 from A and $5,000 from C — but C's smart contract risk makes the expected value negative when adjusted for 5–10% probability of total loss.",
+        "Auto-compounding comparison: manually compounding a 12% APR position weekly gives 12.7% APY. An aggregator auto-compounds daily, achieving 12.75% APY, but charges 0.5% of harvested yield. Net APY: 12.69% — nearly identical to manual weekly compounding. For positions under $5,000, the gas savings of auto-compounding outweigh the fee. For positions over $50,000, manual compounding saves significant fees."
+      ],
+      checklist: [
+        "Before depositing into a yield aggregator: 1) Verify the aggregator contract is audited by a reputable firm (Trail of Bits, OpenZeppelin, Certik). 2) Check the aggregator's track record — at least 6 months live with no exploits. 3) Understand exactly which underlying protocols your funds are deposited into. 4) Calculate break-even time: how long until yield earned exceeds gas costs of deposit + eventual withdrawal.",
+        "After calculating projected yields: compare gas costs for entry and exit. A $1,000 position in a Yearn vault on Ethereum mainnet costs ~$20–$50 in gas to enter and exit. At 10% APY, that is $100/year yield minus $40 gas = $60 net — a 6% real return. The same strategy on Arbitrum costs $1–$3 gas, netting $97–$99. Always factor <a href=\"/gas-calculator/\">gas costs</a> into your yield calculation."
+      ],
+      mistakes: [
+        "The most dangerous mistake is chasing the highest APY without understanding the source of yield. Legitimate yield comes from: lending interest, trading fees, protocol incentives. If you cannot identify which of these generates the APY, you may be the yield — meaning your capital is being paid out as 'returns' to earlier depositors in a Ponzi-like structure. If APY exceeds 100% with no clear revenue source, avoid it.",
+        "Another common error is ignoring impermanent loss in LP-based aggregator vaults. A vault showing 30% APY on an ETH/USDC LP may actually deliver 15% after impermanent loss in a trending market. The aggregator APY display often excludes IL, making returns appear higher than reality. Calculate expected IL for your specific pair before committing."
+      ],
+      benchmarks: [
+        "Sustainable yield benchmarks by risk tier: low risk (Aave/Compound lending) 2–6% for stablecoins, 1–4% for ETH/BTC. Medium risk (Curve/Convex pools) 5–15% for stablecoins, 8–20% for volatile pairs. High risk (new protocols, leveraged strategies) 15–50%+ but with proportional smart contract and liquidation risk. Any yield consistently above these ranges requires scrutiny.",
+        "Aggregator fee benchmarks: Yearn charges 2% management + 20% performance fee. Beefy charges 0.5–4.5% of harvested yield. Convex charges 16% of CRV rewards. These fees are deducted before displayed APY on some platforms but not others — always verify whether APY is gross or net of fees."
+      ],
+      execution: [
+        "Yield farming workflow: 1) Identify target protocol and vault. 2) Calculate net APY after all fees and gas. 3) Determine minimum deposit for the yield to exceed costs within 30 days. 4) Approve token spending (separate gas tx). 5) Deposit into vault. 6) Set a 30-day reminder to check that actual yield matches projected yield. 7) Plan exit: know the withdrawal process and associated gas costs.",
+        "For multi-protocol strategies, use a yield dashboard (DefiLlama, Zapper) to monitor all positions in one view. Track total yield earned across all vaults weekly and compare against the projected yield from this calculator. If actual yield falls below 70% of projected for 2+ weeks, investigate the cause and consider reallocation."
+      ],
+      hygiene: [
+        "Monitor vault health weekly. Check: underlying protocol TVL (declining = risk), token reward prices (declining = lower real APY), smart contract upgrade events (new code = new risk), and competitor yields (if others offer 2x for the same strategy, investigate why your vault is lower).",
+        "Diversify across at least 3 protocols and 2 chains to reduce smart contract risk concentration. A 50% loss from one protocol exploit on 20% of your portfolio is a 10% total portfolio impact — survivable. The same exploit on 100% of your portfolio is catastrophic. Never put all yield-farming capital in a single vault."
+      ],
+      validation: [
+        "After 30 days, compare actual deposited value plus earned yield against what the calculator projected. If actual is within 80–120% of projected, the model is accurate for ongoing use. If actual is below 60% of projected, the input assumptions (APY stability, fee accuracy, gas costs) need recalibration.",
+        "Validate that displayed APY matches on-chain reality by checking the vault's recent transaction history on a block explorer. Calculate the actual yield from the last 7 days of harvest transactions and annualize it. If this on-chain APY differs from the displayed APY by more than 30%, the display is misleading."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora del agregador de rendimiento muestra retornos proyectados en múltiples protocolos DeFi después de contabilizar costos de gas, tarifas de protocolo y frecuencia de auto-composición. Compara el APY neto contra simplemente mantener el activo subyacente.",
+        "Presta atención a la tendencia del TVL de cada protocolo. Un vault mostrando 25% APY pero perdiendo TVL rápidamente es una señal de alerta."
+      ],
+      scenarios: [
+        "Optimización de rendimiento en stablecoins: tienes $20,000 USDC. Estrategia A: Aave lending 4,2% (bajo riesgo). Estrategia B: Curve pool 7,5% (riesgo medio). Estrategia C: protocolo nuevo 25% (alto riesgo, no auditado).",
+        "Comparación de auto-composición: componer manualmente semanalmente da 12,7% APY. Un agregador diario logra 12,75% pero cobra 0,5% de rendimiento cosechado. Para posiciones bajo $5,000, el ahorro de gas justifica la tarifa."
+      ],
+      checklist: [
+        "Antes de depositar: 1) Verifica que el contrato esté auditado. 2) Revisa historial de 6+ meses sin exploits. 3) Entiende exactamente en qué protocolos se depositan tus fondos. 4) Calcula el punto de equilibrio.",
+        "Después de calcular: compara costos de gas de entrada y salida. Una posición de $1,000 en vault de Ethereum mainnet cuesta ~$20–$50 en gas."
+      ],
+      mistakes: [
+        "El error más peligroso es perseguir el APY más alto sin entender la fuente del rendimiento. Si no puedes identificar qué genera el APY, tu capital puede ser el rendimiento — estructura tipo Ponzi.",
+        "Otro error es ignorar la pérdida impermanente en vaults basados en LP. Un vault mostrando 30% APY puede entregar solo 15% después de IL."
+      ],
+      benchmarks: [
+        "Benchmarks de rendimiento sostenible por nivel de riesgo: bajo (Aave/Compound) 2–6% stablecoins. Medio (Curve/Convex) 5–15%. Alto (protocolos nuevos) 15–50%+ con riesgo proporcional.",
+        "Benchmarks de tarifas de agregadores: Yearn cobra 2% gestión + 20% rendimiento. Beefy cobra 0,5–4,5%. Verifica si el APY mostrado es bruto o neto."
+      ],
+      execution: [
+        "Flujo de yield farming: 1) Identificar protocolo y vault. 2) Calcular APY neto. 3) Determinar depósito mínimo. 4) Aprobar gasto de tokens. 5) Depositar. 6) Revisar en 30 días. 7) Planificar salida.",
+        "Para estrategias multi-protocolo, usa dashboards como DefiLlama para monitorear todas las posiciones en una vista."
+      ],
+      hygiene: [
+        "Monitorea la salud del vault semanalmente: TVL, precios de tokens de recompensa, eventos de actualización de contratos, rendimientos de competidores.",
+        "Diversifica en al menos 3 protocolos y 2 cadenas para reducir concentración de riesgo de contratos inteligentes."
+      ],
+      validation: [
+        "Después de 30 días, compara el valor real depositado más rendimiento contra la proyección. Si está dentro del 80–120%, el modelo es preciso.",
+        "Valida que el APY mostrado coincida con la realidad on-chain verificando las transacciones recientes del vault en un explorador de bloques."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora do agregador de yield mostra retornos projetados em múltiplos protocolos DeFi após contabilizar custos de gas, taxas de protocolo e frequência de auto-composição. Compare o APY líquido contra simplesmente manter o ativo subjacente.",
+        "Preste atenção à tendência de TVL de cada protocolo. Um vault mostrando 25% APY mas perdendo TVL rapidamente é sinal de alerta."
+      ],
+      scenarios: [
+        "Otimização de yield em stablecoins: você tem $20.000 USDC. Estratégia A: Aave lending 4,2% (baixo risco). Estratégia B: Curve pool 7,5% (risco médio). Estratégia C: protocolo novo 25% (alto risco).",
+        "Comparação de auto-composição: compor manualmente semanalmente dá 12,7% APY. Agregador diário atinge 12,75% mas cobra 0,5%. Para posições abaixo de $5.000, economia de gas justifica a taxa."
+      ],
+      checklist: [
+        "Antes de depositar: 1) Verifique auditoria do contrato. 2) Confira histórico de 6+ meses sem exploits. 3) Entenda exatamente em quais protocolos seus fundos são depositados. 4) Calcule ponto de equilíbrio.",
+        "Após calcular: compare custos de gas de entrada e saída. Posição de $1.000 em vault na Ethereum mainnet custa ~$20–$50 em gas."
+      ],
+      mistakes: [
+        "O erro mais perigoso é perseguir o APY mais alto sem entender a fonte do yield. Se não consegue identificar o que gera o APY, seu capital pode ser o yield — estrutura tipo Ponzi.",
+        "Outro erro é ignorar impermanent loss em vaults baseados em LP. Um vault mostrando 30% APY pode entregar apenas 15% após IL."
+      ],
+      benchmarks: [
+        "Benchmarks de yield sustentável: baixo risco (Aave/Compound) 2–6% stablecoins. Médio (Curve/Convex) 5–15%. Alto (protocolos novos) 15–50%+ com risco proporcional.",
+        "Taxas de agregadores: Yearn cobra 2% gestão + 20% performance. Beefy cobra 0,5–4,5%. Verifique se APY mostrado é bruto ou líquido."
+      ],
+      execution: [
+        "Fluxo de yield farming: 1) Identificar protocolo e vault. 2) Calcular APY líquido. 3) Determinar depósito mínimo. 4) Aprovar gasto de tokens. 5) Depositar. 6) Revisar em 30 dias. 7) Planejar saída.",
+        "Para estratégias multi-protocolo, use dashboards como DefiLlama para monitorar todas as posições."
+      ],
+      hygiene: [
+        "Monitore saúde do vault semanalmente: TVL, preços de tokens de recompensa, eventos de upgrade de contratos, yields de concorrentes.",
+        "Diversifique em pelo menos 3 protocolos e 2 cadeias para reduzir concentração de risco."
+      ],
+      validation: [
+        "Após 30 dias, compare valor real mais yield contra projeção. Se dentro de 80–120%, o modelo é preciso.",
+        "Valide que o APY exibido corresponde à realidade on-chain verificando transações recentes do vault no explorador de blocos."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Getiri toplayıcı hesaplayıcı, gas maliyetleri, protokol ücretleri ve otomatik bileşik sıklığını hesaba kattıktan sonra birden fazla DeFi protokolü genelinde öngörülen getirileri gösterir. Net APY'yi dayanak varlığı basitçe tutmakla karşılaştırın.",
+        "Her protokolün TVL trendine dikkat edin. %25 APY gösteren ama hızla TVL kaybeden bir vault kırmızı bayraktır."
+      ],
+      scenarios: [
+        "Stablecoin getiri optimizasyonu: $20.000 USDC'niz var. Strateji A: Aave lending %4,2 (düşük risk). Strateji B: Curve pool %7,5 (orta risk). Strateji C: yeni protokol %25 (yüksek risk).",
+        "Otomatik bileşik karşılaştırması: haftalık manuel bileşik %12,7 APY verir. Günlük toplayıcı %12,75 elde eder ama hasat edilen getirinin %0,5'ini alır."
+      ],
+      checklist: [
+        "Yatırmadan önce: 1) Sözleşmenin denetlendiğini doğrulayın. 2) 6+ aylık exploit-siz geçmişi kontrol edin. 3) Fonlarınızın hangi protokollere yatırıldığını tam olarak anlayın. 4) Başa baş süresini hesaplayın.",
+        "Hesapladıktan sonra: giriş ve çıkış gas maliyetlerini karşılaştırın. Ethereum mainnet'te $1.000'lık vault pozisyonu ~$20–$50 gas gerektirir."
+      ],
+      mistakes: [
+        "En tehlikeli hata, getirinin kaynağını anlamadan en yüksek APY'yi kovalamaktır. APY'nin ne ürettiğini belirleyemiyorsanız, sermayeniz getiri olabilir — Ponzi benzeri yapı.",
+        "Bir diğer hata LP bazlı toplayıcı vault'larında geçici kaybı görmezden gelmektir. %30 APY gösteren bir vault trend piyasada IL sonrası %15 verebilir."
+      ],
+      benchmarks: [
+        "Risk seviyesine göre sürdürülebilir getiri: düşük (Aave/Compound) stablecoinlerde %2–6. Orta (Curve/Convex) %5–15. Yüksek (yeni protokoller) %15–50+ orantılı riskle.",
+        "Toplayıcı ücretleri: Yearn %2 yönetim + %20 performans. Beefy %0,5–4,5. Gösterilen APY'nin brüt mü net mi olduğunu doğrulayın."
+      ],
+      execution: [
+        "Getiri çiftçiliği iş akışı: 1) Protokol ve vault belirle. 2) Net APY hesapla. 3) Minimum depozito belirle. 4) Token harcamasını onayla. 5) Yatır. 6) 30 gün sonra kontrol et. 7) Çıkış planla.",
+        "Çoklu protokol stratejileri için tüm pozisyonları tek görünümde izlemek amacıyla DefiLlama gibi panolar kullanın."
+      ],
+      hygiene: [
+        "Vault sağlığını haftalık izleyin: TVL, ödül token fiyatları, sözleşme güncelleme olayları, rakip getirileri.",
+        "Akıllı sözleşme risk yoğunlaşmasını azaltmak için en az 3 protokol ve 2 zincirde çeşitlendirin."
+      ],
+      validation: [
+        "30 gün sonra gerçek değer artı kazanılan getiriyi projeksiyonla karşılaştırın. %80–120 aralığındaysa model doğrudur.",
+        "Gösterilen APY'nin zincir üstü gerçeklikle eşleştiğini vault'un son işlem geçmişini blok gezgininde kontrol ederek doğrulayın."
+      ],
+    },
+    hi: {
+      interpret: [
+        "यील्ड एग्रीगेटर कैलकुलेटर गैस लागत, प्रोटोकॉल शुल्क और ऑटो-कंपाउंडिंग आवृत्ति को हिसाब में लेने के बाद कई DeFi प्रोटोकॉल पर अनुमानित रिटर्न दिखाता है। नेट APY की तुलना अंतर्निहित संपत्ति को बस रखने से करें।",
+        "प्रत्येक प्रोटोकॉल के TVL ट्रेंड पर ध्यान दें। 25% APY दिखाने वाला लेकिन तेजी से TVL खो रहा vault एक चेतावनी संकेत है।"
+      ],
+      scenarios: [
+        "स्टेबलकॉइन यील्ड ऑप्टिमाइज़ेशन: आपके पास $20,000 USDC है। रणनीति A: Aave lending 4.2% (कम जोखिम)। रणनीति B: Curve pool 7.5% (मध्यम जोखिम)। रणनीति C: नया प्रोटोकॉल 25% (उच्च जोखिम)।",
+        "ऑटो-कंपाउंडिंग तुलना: साप्ताहिक मैनुअल कंपाउंडिंग 12.7% APY देती है। दैनिक एग्रीगेटर 12.75% प्राप्त करता है लेकिन हार्वेस्ट यील्ड का 0.5% चार्ज करता है।"
+      ],
+      checklist: [
+        "जमा करने से पहले: 1) अनुबंध ऑडिट सत्यापित करें। 2) 6+ महीने बिना exploit का इतिहास जांचें। 3) समझें कि आपके फंड किन प्रोटोकॉल में जमा हैं। 4) ब्रेक-ईवन समय गणना करें।",
+        "गणना के बाद: प्रवेश और निकास गैस लागतों की तुलना करें। Ethereum mainnet पर $1,000 vault पोज़िशन ~$20–$50 गैस लागत है।"
+      ],
+      mistakes: [
+        "सबसे खतरनाक गलती यील्ड के स्रोत को समझे बिना सबसे ऊंचे APY का पीछा करना है। यदि आप पहचान नहीं सकते कि APY क्या उत्पन्न करता है, तो आपकी पूंजी यील्ड हो सकती है — पोंज़ी-जैसी संरचना।",
+        "एक और गलती LP-आधारित vault में इम्परमानेंट लॉस को अनदेखा करना है। 30% APY दिखाने वाला vault ट्रेंडिंग बाजार में IL के बाद वास्तव में 15% दे सकता है।"
+      ],
+      benchmarks: [
+        "जोखिम स्तर के अनुसार टिकाऊ यील्ड: कम (Aave/Compound) स्टेबलकॉइन पर 2–6%। मध्यम (Curve/Convex) 5–15%। उच्च (नए प्रोटोकॉल) 15–50%+ आनुपातिक जोखिम के साथ।",
+        "एग्रीगेटर शुल्क: Yearn 2% प्रबंधन + 20% प्रदर्शन। Beefy 0.5–4.5%। सत्यापित करें कि दिखाया गया APY सकल है या शुल्क के बाद।"
+      ],
+      execution: [
+        "यील्ड फार्मिंग वर्कफ़्लो: 1) प्रोटोकॉल और vault पहचानें। 2) नेट APY गणना करें। 3) न्यूनतम जमा निर्धारित करें। 4) टोकन खर्च अनुमोदित करें। 5) जमा करें। 6) 30 दिन बाद जांचें। 7) निकास योजना बनाएं।",
+        "मल्टी-प्रोटोकॉल रणनीतियों के लिए, सभी पोज़िशन एक दृश्य में मॉनिटर करने के लिए DefiLlama जैसे डैशबोर्ड का उपयोग करें।"
+      ],
+      hygiene: [
+        "vault स्वास्थ्य साप्ताहिक मॉनिटर करें: TVL, रिवार्ड टोकन मूल्य, अनुबंध अपग्रेड घटनाएं, प्रतिस्पर्धी यील्ड।",
+        "स्मार्ट कॉन्ट्रैक्ट जोखिम एकाग्रता कम करने के लिए कम से कम 3 प्रोटोकॉल और 2 चेन में विविधता लाएं।"
+      ],
+      validation: [
+        "30 दिन बाद, वास्तविक जमा मूल्य + अर्जित यील्ड की अनुमान से तुलना करें। 80–120% के भीतर होने पर मॉडल सटीक है।",
+        "ब्लॉक एक्सप्लोरर में vault के हालिया लेनदेन इतिहास की जांच करके सत्यापित करें कि दिखाया गया APY ऑन-चेन वास्तविकता से मेल खाता है।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор агрегатора доходности показывает прогнозную доходность по нескольким DeFi-протоколам с учётом газа, комиссий протокола и частоты автокомпаундинга. Сравните чистый APY с простым удержанием базового актива.",
+        "Следите за трендом TVL каждого протокола. Хранилище с 25% APY, но быстро теряющее TVL — тревожный сигнал."
+      ],
+      scenarios: [
+        "Оптимизация доходности стейблкоинов: у вас $20 000 USDC. Стратегия A: Aave lending 4,2% (низкий риск). Стратегия B: Curve pool 7,5% (средний). Стратегия C: новый протокол 25% (высокий).",
+        "Сравнение автокомпаундинга: ручной еженедельный компаундинг даёт 12,7% APY. Ежедневный агрегатор достигает 12,75%, но берёт 0,5% от собранной доходности."
+      ],
+      checklist: [
+        "Перед депозитом: 1) Убедитесь, что контракт прошёл аудит. 2) Проверьте историю 6+ месяцев без эксплойтов. 3) Поймите, в какие именно протоколы депонируются ваши средства. 4) Рассчитайте срок окупаемости.",
+        "После расчёта: сравните затраты на газ при входе и выходе. Позиция $1 000 в хранилище на Ethereum mainnet стоит ~$20–$50 газа."
+      ],
+      mistakes: [
+        "Самая опасная ошибка — гнаться за максимальным APY, не понимая источник дохода. Если вы не можете определить, что генерирует APY, ваш капитал может быть доходом — структура типа Понци.",
+        "Другая ошибка — игнорирование непостоянных потерь в LP-хранилищах. Хранилище с 30% APY может реально дать 15% после IL в трендовом рынке."
+      ],
+      benchmarks: [
+        "Устойчивая доходность по уровням риска: низкий (Aave/Compound) 2–6% стейблкоины. Средний (Curve/Convex) 5–15%. Высокий (новые протоколы) 15–50%+ с пропорциональным риском.",
+        "Комиссии агрегаторов: Yearn 2% управление + 20% от доходности. Beefy 0,5–4,5%. Проверяйте, указан APY до или после комиссий."
+      ],
+      execution: [
+        "Процесс фарминга: 1) Выбрать протокол и хранилище. 2) Рассчитать чистый APY. 3) Определить минимальный депозит. 4) Одобрить расходование токенов. 5) Внести депозит. 6) Проверить через 30 дней. 7) Спланировать выход.",
+        "Для мультипротокольных стратегий используйте панели вроде DefiLlama для мониторинга всех позиций в одном виде."
+      ],
+      hygiene: [
+        "Еженедельно мониторьте здоровье хранилища: TVL, цены токенов вознаграждения, события обновления контрактов, доходности конкурентов.",
+        "Диверсифицируйте минимум по 3 протоколам и 2 сетям для снижения концентрации риска смарт-контрактов."
+      ],
+      validation: [
+        "Через 30 дней сравните фактическую стоимость плюс заработанную доходность с прогнозом. В пределах 80–120% — модель точна.",
+        "Проверьте соответствие отображаемого APY ончейн-реальности по истории транзакций хранилища в обозревателе блоков."
+      ],
+    },
+  },
+
+  'dust-attack-calculator': {
+    en: {
+      interpret: [
+        "The dust attack calculator estimates your exposure to dust transactions — tiny amounts of crypto sent to your address by attackers attempting to de-anonymize your wallet activity. If the calculator shows more than 5 dust inputs in the past 90 days, your address is likely being tracked. The risk level output (low/medium/high) reflects how much of your transaction history could be linked to your identity if you inadvertently spend dust UTXOs alongside your real funds.",
+        "Understand what the dust threshold means for your specific chain. On Bitcoin, dust is typically defined as any UTXO below 546 satoshis (the minimum economically spendable amount given typical fee rates). On Ethereum, dust attacks work differently — small ERC-20 token transfers (often scam tokens) are sent to trigger you to interact with malicious contracts. The calculator differentiates between chain-specific attack vectors and adjusts risk scoring accordingly."
+      ],
+      scenarios: [
+        "UTXO consolidation risk: you have 50 UTXOs in your Bitcoin wallet, 3 of which are dust from unknown senders. If your wallet software automatically selects all UTXOs when building a transaction (common in many wallets), those 3 dust inputs get combined with your real funds, linking the dust sender's tracking address to your entire balance. The calculator flags these dangerous UTXOs and estimates the privacy loss from spending them.",
+        "ERC-20 scam token detection: your Ethereum wallet shows a token called 'ClaimReward.xyz' worth '$5,000' that you never purchased. This is a dust attack — interacting with this token (approving, transferring, or visiting the linked website) will either drain your wallet via a malicious approval or phish your private keys. The calculator identifies these tokens and labels them as attack vectors. Never interact with tokens you did not intentionally acquire."
+      ],
+      checklist: [
+        "Before analyzing your wallet: 1) Export your full transaction history. 2) Identify all incoming transactions you did not initiate. 3) Note the amounts — Bitcoin dust is typically under 1,000 sats; Ethereum dust is often scam tokens worth $0.01–$0.10 in real value regardless of displayed price. 4) Check if your wallet supports UTXO coin control (Bitcoin) or token hiding (Ethereum).",
+        "After the analysis: do NOT interact with any flagged dust transactions. On Bitcoin, use a wallet with coin control to exclude dust UTXOs from future transactions. On Ethereum, hide scam tokens in your wallet UI and never approve token contracts you did not initiate. If you have already spent dust, consider that your address cluster may be compromised — use a fresh address for future high-privacy transactions."
+      ],
+      mistakes: [
+        "The most dangerous mistake is interacting with dust tokens on Ethereum/BSC. Clicking 'sell' or 'approve' on a scam token in your wallet can trigger a malicious smart contract that drains your entire wallet. These tokens are designed to look valuable ($5,000+ displayed value) to tempt you into interacting. The real value is near zero, and the interaction cost is potentially your entire wallet balance.",
+        "On Bitcoin, the critical error is allowing automatic UTXO selection to include dust inputs in regular transactions. This links your dust-tracked address to your other addresses, real identity (if any address was KYC'd), and full balance. Always use manual coin control to exclude unknown small UTXOs, even if it means slightly higher fees from selecting fewer, larger inputs."
+      ],
+      benchmarks: [
+        "Dust attack frequency benchmarks: active Bitcoin addresses receive an average of 1–3 dust transactions per year. High-value addresses (>10 BTC) receive 5–15 per year. On Ethereum, active DeFi wallets receive 10–50 scam token transfers per month. These numbers have been increasing annually as tracking tools become more sophisticated. Review your exposure with our <a href=\"/gas-calculator/\">gas calculator</a> to understand the cost of UTXO management.",
+        "Privacy loss benchmarks: spending a single dust UTXO alongside 5 regular UTXOs exposes the common ownership of all 6 addresses to the dust sender's analysis chain. If any of those addresses were used on a KYC exchange, your full Bitcoin holding becomes linkable to your identity. The privacy cost of one careless transaction can be total de-anonymization."
+      ],
+      execution: [
+        "Immediate dust defense workflow: 1) Audit your wallet for dust inputs using this calculator. 2) Label all flagged UTXOs as 'DO NOT SPEND' in your wallet software. 3) Enable coin control in your Bitcoin wallet (Electrum, Sparrow, Bitcoin Core all support this). 4) For Ethereum, hide all unknown tokens and never interact with them. 5) Consider using a <a href=\"/profit-calculator/\">separate wallet</a> for high-privacy transactions.",
+        "For ongoing protection: use a new receiving address for each transaction (most HD wallets do this automatically). Never reuse addresses. On Bitcoin, periodically consolidate known-good UTXOs using a CoinJoin service (Wasabi, JoinMarket) to break the chain of traceability before dust analysis can link them."
+      ],
+      hygiene: [
+        "Review incoming transactions monthly. Flag any amount under 1,000 sats (Bitcoin) or any unknown ERC-20 token (Ethereum) as potential dust. Maintain a clean UTXO set by periodically consolidating known-safe UTXOs during low-fee periods (weekends, off-peak hours) and freezing or quarantining suspicious ones.",
+        "Keep your wallet software updated. Modern wallets increasingly include automatic dust detection, UTXO labeling, and coin control features that reduce manual effort. Sparrow Wallet and Electrum provide the most comprehensive UTXO management for Bitcoin privacy."
+      ],
+      validation: [
+        "Validate the calculator's dust detection by cross-referencing flagged transactions with known dust attack patterns: very small amounts, many recipients in the same block, sender address linked to tracking services. If a flagged transaction matches these patterns, the detection is confirmed.",
+        "Test your coin control setup by creating a small test transaction using only non-dust UTXOs. Verify on a block explorer that the transaction inputs include only the UTXOs you selected and that no dust UTXOs were automatically included. This confirms your wallet's coin control is working correctly."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora de ataques de polvo estima tu exposición a transacciones de polvo — pequeñas cantidades de cripto enviadas por atacantes para des-anonimizar tu actividad. Si muestra más de 5 inputs de polvo en 90 días, tu dirección probablemente está siendo rastreada.",
+        "Entiende el umbral de polvo para tu cadena específica. En Bitcoin, polvo es típicamente cualquier UTXO bajo 546 satoshis. En Ethereum, los ataques funcionan diferente — transferencias pequeñas de tokens ERC-20 fraudulentos."
+      ],
+      scenarios: [
+        "Riesgo de consolidación UTXO: tienes 50 UTXOs, 3 son polvo de remitentes desconocidos. Si tu wallet selecciona automáticamente todos los UTXOs, esos 3 se combinan con tus fondos reales, vinculando la dirección de rastreo con tu saldo completo.",
+        "Detección de tokens fraudulentos ERC-20: tu wallet muestra un token 'ClaimReward.xyz' que nunca compraste. Interactuar con este token drenará tu wallet o robará tus claves. Nunca interactúes con tokens que no adquiriste intencionalmente."
+      ],
+      checklist: [
+        "Antes del análisis: 1) Exporta tu historial completo. 2) Identifica transacciones entrantes no iniciadas por ti. 3) Nota los montos. 4) Verifica si tu wallet soporta control de UTXO u ocultación de tokens.",
+        "Después del análisis: NO interactúes con transacciones de polvo. En Bitcoin, usa control de monedas. En Ethereum, oculta tokens fraudulentos."
+      ],
+      mistakes: [
+        "El error más peligroso es interactuar con tokens de polvo en Ethereum/BSC. Hacer clic en 'vender' o 'aprobar' puede activar un contrato malicioso que drene tu wallet completa.",
+        "En Bitcoin, el error crítico es permitir la selección automática de UTXOs que incluya inputs de polvo en transacciones regulares."
+      ],
+      benchmarks: [
+        "Frecuencia de ataques: direcciones Bitcoin activas reciben 1–3 transacciones de polvo por año. Direcciones de alto valor reciben 5–15. Wallets DeFi en Ethereum reciben 10–50 tokens fraudulentos por mes.",
+        "Pérdida de privacidad: gastar un solo UTXO de polvo junto con 5 regulares expone la propiedad común de las 6 direcciones."
+      ],
+      execution: [
+        "Flujo de defensa: 1) Audita tu wallet. 2) Etiqueta UTXOs de polvo como 'NO GASTAR'. 3) Habilita control de monedas. 4) En Ethereum, oculta tokens desconocidos. 5) Considera wallet separada para alta privacidad.",
+        "Para protección continua: usa dirección nueva para cada transacción. Nunca reutilices direcciones."
+      ],
+      hygiene: [
+        "Revisa transacciones entrantes mensualmente. Marca montos bajo 1,000 sats o tokens ERC-20 desconocidos como potencial polvo.",
+        "Mantén tu software de wallet actualizado. Las wallets modernas incluyen detección automática de polvo y control de UTXO."
+      ],
+      validation: [
+        "Valida la detección cruzando transacciones marcadas con patrones conocidos: montos muy pequeños, muchos destinatarios en el mismo bloque, remitente vinculado a servicios de rastreo.",
+        "Prueba tu configuración de control creando una transacción de prueba usando solo UTXOs no contaminados."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora de dust attack estima sua exposição a transações de dust — pequenas quantidades de cripto enviadas por atacantes para des-anonimizar sua atividade. Se mostra mais de 5 inputs de dust em 90 dias, seu endereço provavelmente está sendo rastreado.",
+        "Entenda o limiar de dust para sua cadeia. No Bitcoin, dust é tipicamente qualquer UTXO abaixo de 546 satoshis. No Ethereum, ataques funcionam diferente — transferências de tokens ERC-20 fraudulentos."
+      ],
+      scenarios: [
+        "Risco de consolidação UTXO: você tem 50 UTXOs, 3 são dust de remetentes desconhecidos. Se sua carteira seleciona automaticamente todos os UTXOs, esses 3 se combinam com seus fundos reais.",
+        "Detecção de token fraudulento ERC-20: sua carteira mostra token que nunca comprou. Interagir drenará sua carteira. Nunca interaja com tokens não adquiridos intencionalmente."
+      ],
+      checklist: [
+        "Antes da análise: 1) Exporte histórico completo. 2) Identifique transações não iniciadas por você. 3) Note os valores. 4) Verifique suporte a controle de UTXO ou ocultação de tokens.",
+        "Após análise: NÃO interaja com transações de dust. No Bitcoin, use controle de moedas. No Ethereum, oculte tokens fraudulentos."
+      ],
+      mistakes: [
+        "O erro mais perigoso é interagir com tokens de dust no Ethereum/BSC. Clicar em 'vender' ou 'aprovar' pode acionar contrato malicioso que drena toda a carteira.",
+        "No Bitcoin, o erro crítico é permitir seleção automática de UTXOs incluir inputs de dust em transações regulares."
+      ],
+      benchmarks: [
+        "Frequência de ataques: endereços Bitcoin ativos recebem 1–3 transações de dust por ano. Endereços de alto valor recebem 5–15. Carteiras DeFi no Ethereum recebem 10–50 tokens fraudulentos por mês.",
+        "Perda de privacidade: gastar um único UTXO de dust junto com 5 regulares expõe a propriedade comum dos 6 endereços."
+      ],
+      execution: [
+        "Fluxo de defesa: 1) Audite sua carteira. 2) Rotule UTXOs de dust como 'NÃO GASTAR'. 3) Habilite controle de moedas. 4) No Ethereum, oculte tokens desconhecidos. 5) Considere carteira separada.",
+        "Para proteção contínua: use endereço novo para cada transação. Nunca reutilize endereços."
+      ],
+      hygiene: [
+        "Revise transações mensalmente. Marque valores abaixo de 1.000 sats ou tokens ERC-20 desconhecidos como potencial dust.",
+        "Mantenha software atualizado. Carteiras modernas incluem detecção automática de dust e controle de UTXO."
+      ],
+      validation: [
+        "Valide a detecção cruzando transações marcadas com padrões conhecidos: valores muito pequenos, muitos destinatários no mesmo bloco.",
+        "Teste sua configuração criando transação de teste usando apenas UTXOs não contaminados."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Toz saldırısı hesaplayıcı, cüzdan aktivitenizi kimlik açığa çıkarmak için saldırganlar tarafından gönderilen küçük kripto miktarları olan toz işlemlerine maruziyetinizi tahmin eder. 90 günde 5'ten fazla toz girişi varsa adresiniz muhtemelen takip ediliyor.",
+        "Zincire özgü toz eşiğini anlayın. Bitcoin'de toz genellikle 546 satoshi altındaki herhangi bir UTXO'dur. Ethereum'da saldırılar farklı çalışır — küçük ERC-20 dolandırıcılık token transferleri."
+      ],
+      scenarios: [
+        "UTXO birleştirme riski: 50 UTXO'nuz var, 3'ü bilinmeyen göndericilerden toz. Cüzdanınız tüm UTXO'ları otomatik seçerse, o 3 toz girişi gerçek fonlarınızla birleşir.",
+        "ERC-20 dolandırıcılık token tespiti: cüzdanınız hiç satın almadığınız bir token gösteriyor. Bu tokenla etkileşim cüzdanınızı boşaltır. Kasıtlı olarak edinmediğiniz tokenlarla asla etkileşime girmeyin."
+      ],
+      checklist: [
+        "Analizden önce: 1) Tam işlem geçmişinizi dışa aktarın. 2) Başlatmadığınız gelen işlemleri belirleyin. 3) Tutarları not edin. 4) Cüzdanınızın UTXO kontrolü veya token gizlemeyi destekleyip desteklemediğini kontrol edin.",
+        "Analizden sonra: işaretlenen toz işlemlerle ETKİLEŞMEYİN. Bitcoin'de madeni para kontrolü kullanın. Ethereum'da bilinmeyen tokenları gizleyin."
+      ],
+      mistakes: [
+        "En tehlikeli hata Ethereum/BSC'de toz tokenlarla etkileşime girmektir. 'Sat' veya 'onayla' tıklamak tüm cüzdanınızı boşaltan kötü niyetli bir sözleşmeyi tetikleyebilir.",
+        "Bitcoin'de kritik hata, otomatik UTXO seçiminin düzenli işlemlere toz girişlerini dahil etmesine izin vermektir."
+      ],
+      benchmarks: [
+        "Saldırı sıklığı: aktif Bitcoin adresleri yılda 1–3 toz işlem alır. Yüksek değerli adresler 5–15. Ethereum DeFi cüzdanları ayda 10–50 dolandırıcılık token transferi alır.",
+        "Gizlilik kaybı: tek bir toz UTXO'yu 5 normal ile birlikte harcamak, 6 adresin ortak sahipliğini toz göndericisine ifşa eder."
+      ],
+      execution: [
+        "Savunma iş akışı: 1) Cüzdanınızı denetleyin. 2) Toz UTXO'ları 'HARCAMA' olarak etiketleyin. 3) Madeni para kontrolünü etkinleştirin. 4) Ethereum'da bilinmeyen tokenları gizleyin.",
+        "Sürekli koruma için: her işlem için yeni adres kullanın. Asla adres tekrar kullanmayın."
+      ],
+      hygiene: [
+        "Gelen işlemleri aylık gözden geçirin. 1.000 sat altı tutarları veya bilinmeyen ERC-20 tokenları potansiyel toz olarak işaretleyin.",
+        "Cüzdan yazılımınızı güncel tutun. Modern cüzdanlar otomatik toz algılama ve UTXO kontrolü içerir."
+      ],
+      validation: [
+        "İşaretlenen işlemleri bilinen kalıplarla çapraz referanslayarak tespiti doğrulayın: çok küçük tutarlar, aynı blokta çok alıcı.",
+        "Yalnızca temiz UTXO'lar kullanarak küçük bir test işlemi oluşturarak madeni para kontrol kurulumunuzu test edin."
+      ],
+    },
+    hi: {
+      interpret: [
+        "डस्ट अटैक कैलकुलेटर डस्ट लेनदेन — आपकी वॉलेट गतिविधि को डी-एनोनिमाइज़ करने का प्रयास करने वाले हमलावरों द्वारा भेजी गई छोटी राशियों — के प्रति आपके एक्सपोज़र का अनुमान लगाता है। 90 दिनों में 5 से अधिक डस्ट इनपुट होने पर आपका पता संभवतः ट्रैक किया जा रहा है।",
+        "अपनी विशिष्ट चेन के लिए डस्ट थ्रेशोल्ड समझें। Bitcoin पर, डस्ट आमतौर पर 546 सतोशी से नीचे का कोई भी UTXO है। Ethereum पर, हमले अलग तरह से काम करते हैं — छोटे ERC-20 स्कैम टोकन ट्रांसफर।"
+      ],
+      scenarios: [
+        "UTXO समेकन जोखिम: आपके पास 50 UTXOs हैं, 3 अज्ञात प्रेषकों से डस्ट हैं। यदि आपका वॉलेट स्वचालित रूप से सभी UTXOs चुनता है, तो वे 3 डस्ट आपके वास्तविक फंड से जुड़ जाते हैं।",
+        "ERC-20 स्कैम टोकन पहचान: आपका वॉलेट वह टोकन दिखाता है जो आपने कभी नहीं खरीदा। इस टोकन के साथ इंटरैक्ट करना आपका वॉलेट खाली कर देगा। जानबूझकर अर्जित न किए गए टोकन के साथ कभी इंटरैक्ट न करें।"
+      ],
+      checklist: [
+        "विश्लेषण से पहले: 1) पूरा लेनदेन इतिहास निर्यात करें। 2) आपके द्वारा शुरू नहीं किए गए आने वाले लेनदेन पहचानें। 3) राशियां नोट करें। 4) जांचें कि वॉलेट UTXO नियंत्रण या टोकन छिपाने का समर्थन करता है।",
+        "विश्लेषण के बाद: चिह्नित डस्ट लेनदेन के साथ इंटरैक्ट न करें। Bitcoin पर, कॉइन कंट्रोल उपयोग करें। Ethereum पर, अज्ञात टोकन छिपाएं।"
+      ],
+      mistakes: [
+        "सबसे खतरनाक गलती Ethereum/BSC पर डस्ट टोकन के साथ इंटरैक्ट करना है। 'बेचें' या 'अनुमोदित करें' पर क्लिक करने से दुर्भावनापूर्ण अनुबंध सक्रिय हो सकता है जो आपका पूरा वॉलेट खाली कर देता है।",
+        "Bitcoin पर, गंभीर गलती स्वचालित UTXO चयन को नियमित लेनदेन में डस्ट इनपुट शामिल करने देना है।"
+      ],
+      benchmarks: [
+        "हमले की आवृत्ति: सक्रिय Bitcoin पते प्रति वर्ष 1–3 डस्ट लेनदेन प्राप्त करते हैं। उच्च-मूल्य पते 5–15। Ethereum DeFi वॉलेट प्रति माह 10–50 स्कैम टोकन ट्रांसफर प्राप्त करते हैं।",
+        "गोपनीयता हानि: एक डस्ट UTXO को 5 सामान्य के साथ खर्च करने से सभी 6 पतों की सामान्य स्वामित्व डस्ट प्रेषक को उजागर होती है।"
+      ],
+      execution: [
+        "रक्षा वर्कफ़्लो: 1) अपना वॉलेट ऑडिट करें। 2) डस्ट UTXOs को 'खर्च न करें' लेबल करें। 3) कॉइन कंट्रोल सक्षम करें। 4) Ethereum पर, अज्ञात टोकन छिपाएं।",
+        "निरंतर सुरक्षा के लिए: प्रत्येक लेनदेन के लिए नया पता उपयोग करें। कभी भी पता दोबारा उपयोग न करें।"
+      ],
+      hygiene: [
+        "आने वाले लेनदेन की मासिक समीक्षा करें। 1,000 sats से कम राशि या अज्ञात ERC-20 टोकन को संभावित डस्ट के रूप में चिह्नित करें।",
+        "अपना वॉलेट सॉफ़्टवेयर अपडेट रखें। आधुनिक वॉलेट स्वचालित डस्ट पहचान और UTXO नियंत्रण शामिल करते हैं।"
+      ],
+      validation: [
+        "चिह्नित लेनदेन को ज्ञात पैटर्न से क्रॉस-रेफरेंस करके पहचान को मान्य करें: बहुत छोटी राशि, एक ही ब्लॉक में कई प्राप्तकर्ता।",
+        "केवल स्वच्छ UTXOs का उपयोग करके छोटा परीक्षण लेनदेन बनाकर अपने कॉइन कंट्रोल सेटअप का परीक्षण करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор пылевых атак оценивает вашу подверженность пылевым транзакциям — мелким суммам крипто, отправленным злоумышленниками для деанонимизации вашей активности. Более 5 пылевых входов за 90 дней означает, что ваш адрес, вероятно, отслеживается.",
+        "Поймите порог пыли для вашей цепочки. В Bitcoin пыль — любой UTXO ниже 546 сатоши. В Ethereum атаки работают иначе — мелкие переводы мошеннических ERC-20 токенов."
+      ],
+      scenarios: [
+        "Риск консолидации UTXO: у вас 50 UTXO, 3 — пыль от неизвестных отправителей. Если кошелёк автоматически выбирает все UTXO, эти 3 объединяются с реальными средствами, связывая адрес отслеживания с вашим балансом.",
+        "Обнаружение мошеннических ERC-20: кошелёк показывает токен, который вы не покупали. Взаимодействие опустошит кошелёк. Никогда не взаимодействуйте с токенами, которые вы не приобретали намеренно."
+      ],
+      checklist: [
+        "Перед анализом: 1) Экспортируйте полную историю транзакций. 2) Определите входящие транзакции, которые вы не инициировали. 3) Отметьте суммы. 4) Проверьте поддержку контроля UTXO или скрытия токенов.",
+        "После анализа: НЕ взаимодействуйте с помеченными пылевыми транзакциями. В Bitcoin используйте контроль монет. В Ethereum скрывайте неизвестные токены."
+      ],
+      mistakes: [
+        "Самая опасная ошибка — взаимодействие с пылевыми токенами в Ethereum/BSC. Нажатие 'продать' или 'одобрить' может активировать вредоносный контракт, опустошающий весь кошелёк.",
+        "В Bitcoin критическая ошибка — позволить автоматическому выбору UTXO включать пылевые входы в обычные транзакции."
+      ],
+      benchmarks: [
+        "Частота атак: активные Bitcoin-адреса получают 1–3 пылевые транзакции в год. Высокоценные — 5–15. Ethereum DeFi-кошельки получают 10–50 мошеннических токенов в месяц.",
+        "Потеря приватности: трата одного пылевого UTXO вместе с 5 обычными раскрывает общее владение всеми 6 адресами."
+      ],
+      execution: [
+        "Процесс защиты: 1) Аудит кошелька. 2) Пометьте пылевые UTXO как «НЕ ТРАТИТЬ». 3) Включите контроль монет. 4) В Ethereum скройте неизвестные токены.",
+        "Для постоянной защиты: используйте новый адрес для каждой транзакции. Никогда не используйте адреса повторно."
+      ],
+      hygiene: [
+        "Ежемесячно проверяйте входящие транзакции. Помечайте суммы ниже 1 000 сат или неизвестные ERC-20 как потенциальную пыль.",
+        "Обновляйте ПО кошелька. Современные кошельки включают автоматическое обнаружение пыли и контроль UTXO."
+      ],
+      validation: [
+        "Валидируйте обнаружение, сверяя помеченные транзакции с известными паттернами: очень маленькие суммы, много получателей в одном блоке.",
+        "Протестируйте настройку контроля монет, создав тестовую транзакцию только с чистыми UTXO."
+      ],
+    },
+  },
+
+  'exchange-fee-comparator': {
+    en: {
+      interpret: [
+        "The exchange fee comparator outputs a side-by-side breakdown of total trading costs across multiple platforms for your specific trading pattern. The 'total cost' column includes maker/taker fees, spread costs, withdrawal fees, and any deposit fees — not just the advertised trading fee. An exchange advertising 0.1% fees may cost you 0.4% total after spread and withdrawal, while an exchange at 0.2% fees with tighter spreads and free withdrawals costs 0.25% total.",
+        "Focus on the 'annual cost' projection, which multiplies your per-trade cost by your expected trading frequency. A $5 difference per trade across 200 annual trades is $1,000/year — potentially more than 1% of a $100,000 portfolio. Small per-trade fee differences compound into significant annual costs for active traders. Compare costs alongside our <a href=\"/profit-calculator/\">profit calculator</a> to see how fees impact net returns."
+      ],
+      scenarios: [
+        "Spot trader comparison: you make 30 trades/month averaging $2,000 each. Exchange A: 0.1% fee + $15 monthly withdrawal = $75/month. Exchange B: 0.075% fee + $5 withdrawal = $50/month. Exchange C: 0.06% fee (using native token discount) + $0 free withdrawal = $36/month. Annual savings switching from A to C: $468 — a meaningful improvement for no change in strategy.",
+        "Futures trader comparison: you trade $50,000 notional daily with 10x leverage on perpetuals. Exchange A: 0.02%/0.05% maker/taker + 0.01% average funding. Exchange B: 0.01%/0.04% maker/taker + 0.015% funding. Daily cost A: $35, Daily cost B: $32.50. Annual difference: $912.50. But if Exchange B has 0.1% worse execution quality (wider spread on entries), the real cost reverses."
+      ],
+      checklist: [
+        "Before comparing: 1) Know your exact monthly trade count, average trade size, and maker-to-taker ratio. 2) Include withdrawal frequency and preferred withdrawal assets (ETH withdrawal costs differ vastly across exchanges). 3) Check if you qualify for VIP fee tiers on any exchange — volume-based discounts change the ranking. 4) Factor in native token discounts (BNB on Binance, KCS on KuCoin) only if you are willing to hold those tokens.",
+        "After comparing: test the top 2 candidates with real trades before committing. Execute 5 identical trades on each platform and compare actual fill prices (not just stated fees). The exchange with lower stated fees may have worse execution quality, negating the fee advantage for larger orders."
+      ],
+      mistakes: [
+        "The most expensive mistake is comparing only maker/taker fees without considering the spread. An exchange with 0.05% fees but 0.3% typical spread costs more than an exchange with 0.1% fees and 0.05% spread. For market orders, the spread is often a larger cost component than the stated fee. Always check the order book depth for your typical trade size on each platform.",
+        "Another common error is ignoring withdrawal fees when planning to self-custody. If you withdraw BTC after every trade, a $25 BTC withdrawal fee on 30 monthly trades adds $750/month to your costs — potentially dwarfing any trading fee savings. Consider batching withdrawals weekly or monthly to amortize fixed withdrawal costs."
+      ],
+      benchmarks: [
+        "2026 exchange fee benchmarks (standard tier): Binance 0.1%/0.1%, Coinbase Advanced 0.4%/0.6%, Kraken 0.16%/0.26%, Bybit 0.1%/0.1%, OKX 0.08%/0.1%. With maximum VIP discounts: Binance 0.012%/0.024%, Bybit 0.005%/0.015%. The 10-50x gap between standard and VIP tiers makes volume-based fee optimization the single highest-ROI activity for active traders.",
+        "Withdrawal fee benchmarks: BTC withdrawal ranges from $1 (Binance) to $25 (some smaller exchanges). ETH withdrawal ranges from $2 to $15. USDT on Tron: $1 flat on most exchanges. These fixed costs make exchange selection for small-balance traders primarily a withdrawal fee decision, not a trading fee decision."
+      ],
+      execution: [
+        "Fee optimization workflow: 1) Calculate total monthly costs on your current exchange using this tool. 2) Compare against 3 alternatives. 3) If savings exceed $50/month, test the cheaper platform with small trades. 4) Verify execution quality matches expectations. 5) Migrate primary trading to the optimal platform. 6) Reassess quarterly as fee structures and your trading volume change.",
+        "Advanced optimization: split activity across 2 exchanges — use the cheapest for routine trades and the most liquid for large orders where execution quality matters more than fees. Use <a href=\"/gas-calculator/\">gas-optimized</a> chains for withdrawals (Arbitrum, Optimism, Tron for USDT) to minimize transfer costs between exchanges and self-custody wallets."
+      ],
+      hygiene: [
+        "Re-run the fee comparison quarterly. Exchanges adjust fee schedules 2–4 times per year, sometimes adding new discount mechanisms or increasing withdrawal fees. Your trading volume may also change, affecting VIP tier qualification. A quarterly review ensures you are always on the optimal platform for your current activity level.",
+        "Track actual fees paid versus expected fees monthly. Most exchanges provide downloadable trade history with fee columns. Sum actual fees and compare to what the comparator projected. If actual costs exceed projections by more than 20%, investigate — you may be paying unexpected funding costs, spread costs, or hitting a different fee tier than expected."
+      ],
+      validation: [
+        "Validate comparator results by executing a $100 test trade on each compared exchange and recording the actual total cost: entry price deviation from mid-market (spread), stated fee charged, and any other deductions. If the test trade cost ranks differently from the comparator's prediction, the comparator inputs need adjustment.",
+        "Cross-check withdrawal fee data against each exchange's current fee page. Exchanges update withdrawal fees frequently (sometimes daily for network-fee-based assets). Ensure the comparator uses current data, not cached values from weeks ago."
+      ],
+    },
+    es: {
+      interpret: [
+        "El comparador muestra un desglose lado a lado de los costos totales de trading en múltiples plataformas. La columna 'costo total' incluye comisiones maker/taker, costos de spread, comisiones de retiro y depósito — no solo la comisión publicitada.",
+        "Enfócate en la proyección de 'costo anual'. Una diferencia de $5 por operación en 200 operaciones anuales son $1,000/año."
+      ],
+      scenarios: [
+        "Comparación de trader spot: 30 operaciones/mes de $2,000 promedio. Exchange A: $75/mes. Exchange B: $50/mes. Exchange C: $36/mes. Ahorro anual de A a C: $468.",
+        "Comparación de trader de futuros: $50,000 notional diario con 10x apalancamiento. La diferencia anual entre exchanges puede superar $900, pero la calidad de ejecución puede invertir el ahorro."
+      ],
+      checklist: [
+        "Antes de comparar: 1) Conoce tu conteo mensual exacto, tamaño promedio y ratio maker/taker. 2) Incluye frecuencia de retiros. 3) Verifica si calificas para niveles VIP. 4) Considera descuentos de tokens nativos.",
+        "Después de comparar: prueba los 2 mejores con operaciones reales. Ejecuta 5 operaciones idénticas y compara precios de ejecución reales."
+      ],
+      mistakes: [
+        "El error más caro es comparar solo comisiones maker/taker sin considerar el spread. Un exchange con 0,05% de comisión pero 0,3% de spread cuesta más que uno con 0,1% y 0,05% de spread.",
+        "Otro error es ignorar comisiones de retiro al planear autocustodia. Una comisión de $25 por retiro de BTC en 30 operaciones mensuales añade $750/mes."
+      ],
+      benchmarks: [
+        "Benchmarks 2026 (nivel estándar): Binance 0,1%/0,1%, Coinbase 0,4%/0,6%, Kraken 0,16%/0,26%, Bybit 0,1%/0,1%. Con descuentos VIP máximos: hasta 0,005%/0,015%.",
+        "Comisiones de retiro: BTC $1–$25 según exchange. USDT en Tron: $1 fijo en la mayoría."
+      ],
+      execution: [
+        "Flujo de optimización: 1) Calcula costos mensuales actuales. 2) Compara contra 3 alternativas. 3) Si ahorras >$50/mes, prueba la plataforma más barata. 4) Verifica calidad de ejecución. 5) Migra. 6) Reevalúa trimestralmente.",
+        "Optimización avanzada: divide actividad entre 2 exchanges — el más barato para operaciones rutinarias, el más líquido para órdenes grandes."
+      ],
+      hygiene: [
+        "Repite la comparación trimestralmente. Los exchanges ajustan comisiones 2–4 veces al año.",
+        "Rastrea comisiones reales pagadas vs esperadas mensualmente. Si los costos reales superan proyecciones en más del 20%, investiga."
+      ],
+      validation: [
+        "Valida ejecutando una operación de prueba de $100 en cada exchange comparado y registrando el costo real total.",
+        "Verifica cruzadamente las comisiones de retiro contra la página actual de cada exchange."
+      ],
+    },
+    pt: {
+      interpret: [
+        "O comparador mostra um detalhamento lado a lado dos custos totais de trading em múltiplas plataformas. A coluna 'custo total' inclui taxas maker/taker, custos de spread, taxas de saque e depósito.",
+        "Foque na projeção de 'custo anual'. Uma diferença de $5 por operação em 200 operações anuais é $1.000/ano."
+      ],
+      scenarios: [
+        "Comparação trader spot: 30 operações/mês de $2.000 média. Exchange A: $75/mês. Exchange B: $50/mês. Exchange C: $36/mês. Economia anual de A para C: $468.",
+        "Comparação trader de futuros: $50.000 notional diário com 10x alavancagem. Diferença anual pode superar $900."
+      ],
+      checklist: [
+        "Antes de comparar: 1) Saiba sua contagem mensal exata, tamanho médio e proporção maker/taker. 2) Inclua frequência de saques. 3) Verifique níveis VIP. 4) Considere descontos de tokens nativos.",
+        "Após comparar: teste os 2 melhores com operações reais."
+      ],
+      mistakes: [
+        "O erro mais caro é comparar apenas taxas maker/taker sem considerar spread. Exchange com 0,05% taxa mas 0,3% spread custa mais que com 0,1% taxa e 0,05% spread.",
+        "Outro erro é ignorar taxas de saque ao planejar auto-custódia."
+      ],
+      benchmarks: [
+        "Benchmarks 2026: Binance 0,1%/0,1%, Coinbase 0,4%/0,6%, Kraken 0,16%/0,26%. Com VIP: até 0,005%/0,015%.",
+        "Taxas de saque: BTC $1–$25. USDT em Tron: $1 fixo."
+      ],
+      execution: [
+        "Fluxo: 1) Calcule custos mensais atuais. 2) Compare 3 alternativas. 3) Se economia >$50/mês, teste. 4) Verifique qualidade de execução. 5) Migre. 6) Reavalie trimestralmente.",
+        "Avançado: divida atividade entre 2 exchanges."
+      ],
+      hygiene: [
+        "Repita comparação trimestralmente. Exchanges ajustam taxas 2–4 vezes ao ano.",
+        "Acompanhe taxas reais vs esperadas mensalmente."
+      ],
+      validation: [
+        "Valide com operação teste de $100 em cada exchange comparado.",
+        "Confira taxas de saque contra página atual de cada exchange."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Borsa ücret karşılaştırıcı, birden fazla platformda toplam işlem maliyetlerinin yan yana dökümünü sunar. 'Toplam maliyet' sütunu maker/taker ücretleri, spread, çekim ve yatırma ücretlerini içerir.",
+        "'Yıllık maliyet' projeksiyonuna odaklanın. İşlem başına $5 fark, 200 yıllık işlemde $1.000/yıl eder."
+      ],
+      scenarios: [
+        "Spot trader karşılaştırması: ayda 30 işlem, ortalama $2.000. Borsa A: $75/ay. Borsa B: $50/ay. Borsa C: $36/ay. A'dan C'ye yıllık tasarruf: $468.",
+        "Vadeli işlem karşılaştırması: günlük $50.000 nominal, 10x kaldıraç. Yıllık fark $900+'ı aşabilir."
+      ],
+      checklist: [
+        "Karşılaştırmadan önce: 1) Aylık işlem sayınızı, ortalama büyüklüğü ve maker/taker oranını bilin. 2) Çekim sıklığını dahil edin. 3) VIP seviyeleri kontrol edin.",
+        "Karşılaştırdıktan sonra: ilk 2'yi gerçek işlemlerle test edin."
+      ],
+      mistakes: [
+        "En pahalı hata sadece maker/taker ücretlerini spread hesaba katmadan karşılaştırmaktır. %0,05 ücret ama %0,3 spread olan borsa, %0,1 ücret ve %0,05 spread olandan daha pahalıdır.",
+        "Bir diğer hata kendi saklama planlarken çekim ücretlerini görmezden gelmektir."
+      ],
+      benchmarks: [
+        "2026 kıyaslamaları: Binance %0,1/%0,1, Coinbase %0,4/%0,6, Kraken %0,16/%0,26. VIP ile: %0,005/%0,015'e kadar.",
+        "Çekim ücretleri: BTC $1–$25. Tron USDT: $1 sabit."
+      ],
+      execution: [
+        "Optimizasyon akışı: 1) Mevcut aylık maliyetleri hesaplayın. 2) 3 alternatifle karşılaştırın. 3) Tasarruf >$50/ay ise test edin. 4) Yürütme kalitesini doğrulayın. 5) Taşının.",
+        "Gelişmiş: aktiviteyi 2 borsa arasında bölün."
+      ],
+      hygiene: [
+        "Karşılaştırmayı üç ayda bir tekrarlayın. Borsalar yılda 2–4 kez ücret ayarlar.",
+        "Gerçek ücretleri aylık takip edin. %20'den fazla fark varsa araştırın."
+      ],
+      validation: [
+        "Her karşılaştırılan borsada $100'lık test işlemi yaparak doğrulayın.",
+        "Çekim ücretlerini her borsanın güncel sayfasıyla çapraz kontrol edin."
+      ],
+    },
+    hi: {
+      interpret: [
+        "एक्सचेंज शुल्क तुलनाकर्ता कई प्लेटफ़ॉर्म पर कुल ट्रेडिंग लागतों का साथ-साथ विश्लेषण प्रस्तुत करता है। 'कुल लागत' कॉलम में maker/taker शुल्क, स्प्रेड, निकासी और जमा शुल्क शामिल हैं।",
+        "'वार्षिक लागत' अनुमान पर ध्यान दें। प्रति ट्रेड $5 का अंतर 200 वार्षिक ट्रेड में $1,000/वर्ष बनता है।"
+      ],
+      scenarios: [
+        "स्पॉट ट्रेडर तुलना: 30 ट्रेड/माह, औसत $2,000। एक्सचेंज A: $75/माह। B: $50/माह। C: $36/माह। A से C तक वार्षिक बचत: $468।",
+        "फ्यूचर्स ट्रेडर तुलना: $50,000 दैनिक नोशनल, 10x लीवरेज। वार्षिक अंतर $900+ हो सकता है।"
+      ],
+      checklist: [
+        "तुलना से पहले: 1) अपनी मासिक ट्रेड गणना, औसत आकार और maker/taker अनुपात जानें। 2) निकासी आवृत्ति शामिल करें। 3) VIP स्तर जांचें।",
+        "तुलना के बाद: शीर्ष 2 को वास्तविक ट्रेड से परीक्षण करें।"
+      ],
+      mistakes: [
+        "सबसे महंगी गलती स्प्रेड को ध्यान में लिए बिना केवल maker/taker शुल्क की तुलना करना है।",
+        "एक और गलती सेल्फ-कस्टडी की योजना बनाते समय निकासी शुल्क को अनदेखा करना है।"
+      ],
+      benchmarks: [
+        "2026 बेंचमार्क: Binance 0.1%/0.1%, Coinbase 0.4%/0.6%, Kraken 0.16%/0.26%। VIP के साथ: 0.005%/0.015% तक।",
+        "निकासी शुल्क: BTC $1–$25। Tron USDT: $1 फ्लैट।"
+      ],
+      execution: [
+        "ऑप्टिमाइज़ेशन वर्कफ़्लो: 1) वर्तमान मासिक लागत गणना करें। 2) 3 विकल्पों से तुलना करें। 3) बचत >$50/माह हो तो परीक्षण करें। 4) निष्पादन गुणवत्ता सत्यापित करें। 5) माइग्रेट करें।",
+        "उन्नत: 2 एक्सचेंज के बीच गतिविधि विभाजित करें।"
+      ],
+      hygiene: [
+        "त्रैमासिक रूप से तुलना दोहराएं। एक्सचेंज वर्ष में 2–4 बार शुल्क समायोजित करते हैं।",
+        "वास्तविक बनाम अपेक्षित शुल्क मासिक ट्रैक करें। 20% से अधिक विचलन पर जांच करें।"
+      ],
+      validation: [
+        "प्रत्येक तुलना किए गए एक्सचेंज पर $100 टेस्ट ट्रेड निष्पादित करके मान्य करें।",
+        "निकासी शुल्क को प्रत्येक एक्सचेंज के वर्तमान पृष्ठ से क्रॉस-चेक करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Сравнитель комиссий показывает постатейную разбивку общих торговых затрат на нескольких платформах. Столбец «общая стоимость» включает maker/taker, спред, комиссии за вывод и депозит.",
+        "Обратите внимание на проекцию «годовых затрат». Разница $5 за сделку при 200 сделках в год = $1 000/год."
+      ],
+      scenarios: [
+        "Сравнение спот-трейдера: 30 сделок/месяц по $2 000. Биржа A: $75/мес. B: $50/мес. C: $36/мес. Годовая экономия A→C: $468.",
+        "Сравнение фьючерсного трейдера: $50 000 номинала в день с 10x. Годовая разница может превышать $900."
+      ],
+      checklist: [
+        "Перед сравнением: 1) Знайте точное число сделок, средний размер и соотношение maker/taker. 2) Включите частоту выводов. 3) Проверьте VIP-уровни.",
+        "После сравнения: протестируйте топ-2 реальными сделками."
+      ],
+      mistakes: [
+        "Самая дорогая ошибка — сравнивать только maker/taker без учёта спреда. Биржа с 0,05% комиссией, но 0,3% спредом дороже, чем с 0,1% и 0,05% спредом.",
+        "Другая ошибка — игнорировать комиссии за вывод при планировании самохранения."
+      ],
+      benchmarks: [
+        "Бенчмарки 2026: Binance 0,1%/0,1%, Coinbase 0,4%/0,6%, Kraken 0,16%/0,26%. С VIP: до 0,005%/0,015%.",
+        "Комиссии за вывод: BTC $1–$25. USDT Tron: $1 фиксированная."
+      ],
+      execution: [
+        "Процесс оптимизации: 1) Рассчитайте текущие месячные затраты. 2) Сравните с 3 альтернативами. 3) Если экономия >$50/мес, протестируйте. 4) Проверьте качество исполнения. 5) Мигрируйте.",
+        "Продвинутая: разделите активность между 2 биржами."
+      ],
+      hygiene: [
+        "Повторяйте сравнение ежеквартально. Биржи корректируют комиссии 2–4 раза в год.",
+        "Ежемесячно отслеживайте фактические комиссии. При отклонении >20% исследуйте причину."
+      ],
+      validation: [
+        "Проверьте, выполнив тестовую сделку на $100 на каждой бирже.",
+        "Сверьте комиссии за вывод с текущими страницами бирж."
+      ],
+    },
+  },
+
+  'flash-loan-calculator': {
+    en: {
+      interpret: [
+        "The flash loan calculator estimates the profitability of a flash loan operation by comparing the arbitrage or liquidation opportunity size against the loan fee (typically 0.05–0.09% of borrowed amount on Aave, 0.3% on Uniswap), gas costs for all transactions in the atomic bundle, and any DEX swap fees along the route. If the net profit after all costs is negative or under $50, the opportunity is not viable — gas price spikes during execution can easily consume thin margins.",
+        "The calculator's 'minimum spread required' output tells you the minimum price difference between venues needed for the flash loan to be profitable at current gas prices. If the minimum spread is 0.8% but the current arbitrage opportunity is only 0.5%, the trade loses money. This metric is your go/no-go signal. For <a href=\"/gas-calculator/\">gas cost</a> optimization, consider executing during low-gas periods (weekends, early UTC morning) when the minimum spread requirement drops."
+      ],
+      scenarios: [
+        "DEX arbitrage: ETH is $2,327 on Uniswap and $2,339 on SushiSwap — a 0.52% spread. Flash loan 100 ETH ($232,700) from Aave: loan fee 0.05% ($116.35) + buy gas ($3) + sell gas ($3) + swap fee 0.3% ($698.10 on the buy side). Gross profit: 100 × $12 = $1,200. Net profit: $1,200 - $116.35 - $6 - $698.10 = $379.55. Viable, but only if execution is atomic and the spread persists through the block.",
+        "Liquidation flash loan: a borrower on Aave has $50,000 in collateral with a health factor of 0.98 (undercollateralized). Flash borrow $25,000 USDC, repay the borrower's debt to claim $27,500 in collateral (10% liquidation bonus), swap collateral to USDC, repay flash loan. Gross profit: $2,500. Costs: flash loan fee $12.50 + gas $5–$20 + swap slippage ~$50. Net: ~$2,430. Liquidation flash loans are consistently profitable for monitored positions."
+      ],
+      checklist: [
+        "Before executing a flash loan: 1) Verify the arbitrage opportunity exists in the current block (not a stale quote). 2) Simulate the full transaction using Tenderly or a local fork to confirm profitability. 3) Check mempool for competing bots that may front-run your transaction. 4) Ensure gas price assumptions in the calculator match current network conditions — a 2x gas spike erases most flash loan profits.",
+        "After calculating: if the estimated profit margin is under 20% of total costs, skip the opportunity — execution risk (reverted transactions, gas waste, front-running) makes thin margins unprofitable in practice. Target opportunities where profit exceeds costs by at least 50% to account for execution variability."
+      ],
+      mistakes: [
+        "The biggest mistake for beginners is attempting flash loan arbitrage without understanding atomic execution. A flash loan must borrow, trade, and repay within a single transaction. If any step fails, the entire transaction reverts — you lose gas but not the borrowed funds. However, failed transactions still cost gas ($5–$50 per attempt), and repeated failures from stale opportunities or front-running can drain hundreds of dollars in wasted gas.",
+        "Another critical error is ignoring MEV (Maximum Extractable Value) competition. Professional MEV bots with direct relationships to block builders will outcompete your flash loan transaction by paying higher priority fees. Unless you use private transaction submission (Flashbots Protect, MEV Blocker) or have a custom MEV strategy, most obvious arbitrage opportunities will be captured before your transaction is included. Use our <a href=\"/mev-calculator/\">MEV calculator</a> to assess competition."
+      ],
+      benchmarks: [
+        "Flash loan fee benchmarks: Aave V3 0.05%, dYdX 0% (but limited assets), Uniswap V3 flash swaps 0.3% (pool fee), Balancer 0% flash loans. For cost minimization, prefer Aave or Balancer for borrowing, and route swaps through the lowest-fee DEX pools available for the specific pair.",
+        "Profitability benchmarks: successful flash loan arbitrages in 2025–2026 average $200–$2,000 net profit per trade for non-MEV operators. Professional MEV bots average $50–$500 per opportunity but execute 100x more frequently. The market is highly competitive — solo operators without custom infrastructure typically find 1–5 profitable opportunities per week."
+      ],
+      execution: [
+        "Flash loan execution pipeline: 1) Monitor price feeds across 5+ DEXs for spread opportunities. 2) When spread exceeds calculated minimum, simulate the full transaction. 3) If simulation shows profit >50% above costs, submit via Flashbots Protect (prevents front-running). 4) Monitor transaction inclusion. 5) If reverted, analyze why before retrying — the opportunity may have been captured by a competing bot.",
+        "For liquidation monitoring: watch Aave/Compound health factors using The Graph or direct RPC calls. When health factor drops below 1.0, calculate the liquidation bonus minus your execution costs. Submit liquidation transaction immediately — competition for liquidations is measured in milliseconds."
+      ],
+      hygiene: [
+        "Track every flash loan attempt: timestamp, opportunity type, estimated profit, actual profit/loss, gas spent, transaction hash. This log reveals your hit rate (profitable vs failed attempts) and average profit per successful trade. If hit rate drops below 30%, your detection infrastructure is too slow or opportunity identification criteria need tightening.",
+        "Keep your flash loan contracts updated with the latest protocol interfaces. Aave V3, Uniswap V4, and other protocols release upgrades that change function signatures and fee structures. An outdated contract will revert on execution, wasting gas on every attempt."
+      ],
+      validation: [
+        "Always simulate flash loan transactions on a mainnet fork before live execution. Tenderly, Hardhat, and Foundry all support fork testing. If the simulation reverts or shows different profit than the calculator estimated, debug the discrepancy before risking gas on a live transaction. Common causes: stale price data, incorrect pool addresses, or insufficient liquidity at the quoted price.",
+        "Validate your profitability tracking against on-chain data. Use Etherscan to verify that the value received in your flash loan transactions matches what your internal accounting records. MEV extraction can sometimes result in partial fills or different-than-expected swap rates that your calculator may not have predicted."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora de flash loans estima la rentabilidad comparando el tamaño de la oportunidad de arbitraje contra la tarifa del préstamo (0,05–0,09% en Aave), costos de gas y comisiones DEX. Si el beneficio neto es negativo o menor a $50, la oportunidad no es viable.",
+        "La salida 'spread mínimo requerido' indica la diferencia de precio mínima entre venues necesaria para que el flash loan sea rentable a los precios de gas actuales."
+      ],
+      scenarios: [
+        "Arbitraje DEX: ETH es $2,327 en Uniswap y $2,339 en SushiSwap — spread de 0,52%. Flash loan de 100 ETH: beneficio neto ~$379 después de todas las comisiones. Viable solo si la ejecución es atómica.",
+        "Flash loan de liquidación: prestatario con factor de salud 0,98. Pedir prestado, pagar deuda, reclamar colateral con bonus del 10%. Beneficio neto ~$2,430."
+      ],
+      checklist: [
+        "Antes de ejecutar: 1) Verifica que la oportunidad existe en el bloque actual. 2) Simula la transacción completa. 3) Revisa el mempool para bots competidores. 4) Asegura que los supuestos de gas coincidan con las condiciones actuales.",
+        "Después de calcular: si el margen está bajo el 20% de los costos totales, omite la oportunidad."
+      ],
+      mistakes: [
+        "El mayor error es intentar arbitraje sin entender la ejecución atómica. Las transacciones fallidas cuestan gas ($5–$50 por intento) y los fallos repetidos pueden drenar cientos de dólares.",
+        "Otro error es ignorar la competencia MEV. Los bots profesionales superarán tu transacción pagando tarifas de prioridad más altas."
+      ],
+      benchmarks: [
+        "Tarifas de flash loan: Aave V3 0,05%, dYdX 0%, Uniswap V3 0,3%, Balancer 0%. Para minimizar costos, prefiere Aave o Balancer.",
+        "Rentabilidad promedio: $200–$2,000 neto por operación para operadores no-MEV. El mercado es altamente competitivo."
+      ],
+      execution: [
+        "Pipeline de ejecución: 1) Monitorear spreads en 5+ DEXs. 2) Simular cuando el spread supere el mínimo. 3) Enviar vía Flashbots Protect. 4) Monitorear inclusión. 5) Si revierte, analizar antes de reintentar.",
+        "Para monitoreo de liquidaciones: vigilar factores de salud en Aave/Compound."
+      ],
+      hygiene: [
+        "Registra cada intento: timestamp, tipo, beneficio estimado/real, gas gastado. Si la tasa de éxito cae bajo 30%, tu infraestructura es demasiado lenta.",
+        "Mantén tus contratos actualizados con las últimas interfaces de protocolo."
+      ],
+      validation: [
+        "Simula siempre en un fork de mainnet antes de la ejecución en vivo.",
+        "Valida tu seguimiento de rentabilidad contra datos on-chain."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora de flash loan estima a rentabilidade comparando o tamanho da oportunidade contra a taxa do empréstimo (0,05–0,09% no Aave), custos de gas e taxas DEX. Se o lucro líquido é negativo ou menor que $50, não é viável.",
+        "A saída 'spread mínimo necessário' indica a diferença mínima de preço entre venues para o flash loan ser lucrativo nos preços de gas atuais."
+      ],
+      scenarios: [
+        "Arbitragem DEX: ETH $2.327 no Uniswap e $2.339 no SushiSwap — spread 0,52%. Flash loan de 100 ETH: lucro líquido ~$379. Viável apenas com execução atômica.",
+        "Flash loan de liquidação: tomador com fator de saúde 0,98. Empréstimo, pagamento de dívida, reivindicação de colateral com bônus de 10%. Lucro líquido ~$2.430."
+      ],
+      checklist: [
+        "Antes de executar: 1) Verifique que a oportunidade existe no bloco atual. 2) Simule a transação completa. 3) Verifique mempool para bots concorrentes. 4) Gas assumptions atuais.",
+        "Após calcular: se margem < 20% dos custos, pule a oportunidade."
+      ],
+      mistakes: [
+        "O maior erro é tentar arbitragem sem entender execução atômica. Transações falhadas custam gas ($5–$50) e falhas repetidas drenam centenas.",
+        "Outro erro é ignorar competição MEV. Bots profissionais superarão sua transação pagando taxas de prioridade maiores."
+      ],
+      benchmarks: [
+        "Taxas: Aave V3 0,05%, dYdX 0%, Uniswap V3 0,3%, Balancer 0%.",
+        "Rentabilidade média: $200–$2.000 líquido por operação para não-MEV. Mercado altamente competitivo."
+      ],
+      execution: [
+        "Pipeline: 1) Monitorar spreads em 5+ DEXs. 2) Simular quando spread > mínimo. 3) Enviar via Flashbots Protect. 4) Monitorar inclusão.",
+        "Para liquidações: monitorar fatores de saúde em Aave/Compound."
+      ],
+      hygiene: [
+        "Registre cada tentativa: timestamp, tipo, lucro estimado/real, gas gasto. Taxa de sucesso <30% = infraestrutura lenta.",
+        "Mantenha contratos atualizados com últimas interfaces de protocolo."
+      ],
+      validation: [
+        "Sempre simule em fork de mainnet antes de execução ao vivo.",
+        "Valide rastreamento de rentabilidade contra dados on-chain."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Flash kredi hesaplayıcı, arbitraj fırsatı büyüklüğünü kredi ücreti (Aave'de %0,05–0,09), gas maliyetleri ve DEX ücretleriyle karşılaştırarak karlılığı tahmin eder. Net kâr negatif veya $50 altındaysa fırsat uygun değil.",
+        "'Gereken minimum spread' çıktısı, mevcut gas fiyatlarında flash kredinin karlı olması için gereken minimum fiyat farkını söyler."
+      ],
+      scenarios: [
+        "DEX arbitrajı: ETH Uniswap'ta $2.327, SushiSwap'ta $2.339 — %0,52 spread. 100 ETH flash kredi: net kâr ~$379. Yalnızca atomik yürütme ile uygulanabilir.",
+        "Tasfiye flash kredisi: sağlık faktörü 0,98 olan borçlu. Borç al, borcunu öde, %10 bonusla teminatı talep et. Net kâr ~$2.430."
+      ],
+      checklist: [
+        "Yürütmeden önce: 1) Fırsatın mevcut blokta var olduğunu doğrulayın. 2) Tam işlemi simüle edin. 3) Rakip botlar için mempool'u kontrol edin. 4) Gas varsayımlarının mevcut koşullarla eşleştiğinden emin olun.",
+        "Hesapladıktan sonra: kar marjı toplam maliyetlerin %20'sinin altındaysa fırsatı atlayın."
+      ],
+      mistakes: [
+        "En büyük hata atomik yürütmeyi anlamadan arbitraj denemektir. Başarısız işlemler gas harcar ($5–$50) ve tekrarlanan başarısızlıklar yüzlerce dolar tüketir.",
+        "Bir diğer hata MEV rekabetini görmezden gelmektir. Profesyonel botlar daha yüksek öncelik ücretleri ödeyerek işleminizi geçecektir."
+      ],
+      benchmarks: [
+        "Ücretler: Aave V3 %0,05, dYdX %0, Uniswap V3 %0,3, Balancer %0.",
+        "Ortalama karlılık: MEV dışı operatörler için işlem başına $200–$2.000 net. Piyasa son derece rekabetçi."
+      ],
+      execution: [
+        "Yürütme hattı: 1) 5+ DEX'te spread'leri izleyin. 2) Spread minimum aştığında simüle edin. 3) Flashbots Protect üzerinden gönderin. 4) Dahil edilmeyi izleyin.",
+        "Tasfiye izleme: Aave/Compound sağlık faktörlerini takip edin."
+      ],
+      hygiene: [
+        "Her denemeyi kaydedin: zaman damgası, tür, tahmini/gerçek kâr, harcanan gas. Başarı oranı <%30'a düşerse altyapı çok yavaş.",
+        "Sözleşmelerinizi en son protokol arayüzleriyle güncel tutun."
+      ],
+      validation: [
+        "Canlı yürütmeden önce her zaman mainnet fork'unda simüle edin.",
+        "Karlılık takibinizi zincir üstü verilerle doğrulayın."
+      ],
+    },
+    hi: {
+      interpret: [
+        "फ्लैश लोन कैलकुलेटर आर्बिट्राज अवसर के आकार की तुलना लोन शुल्क (Aave पर 0.05–0.09%), गैस लागत और DEX शुल्क से करके लाभप्रदता का अनुमान लगाता है। शुद्ध लाभ नकारात्मक या $50 से कम होने पर अवसर व्यवहार्य नहीं है।",
+        "'न्यूनतम आवश्यक स्प्रेड' आउटपुट वर्तमान गैस कीमतों पर फ्लैश लोन लाभदायक होने के लिए आवश्यक न्यूनतम मूल्य अंतर बताता है।"
+      ],
+      scenarios: [
+        "DEX आर्बिट्राज: ETH Uniswap पर $2,327 और SushiSwap पर $2,339 — 0.52% स्प्रेड। 100 ETH फ्लैश लोन: शुद्ध लाभ ~$379। केवल एटॉमिक निष्पादन से व्यवहार्य।",
+        "लिक्विडेशन फ्लैश लोन: स्वास्थ्य कारक 0.98 वाला उधारकर्ता। उधार लें, ऋण चुकाएं, 10% बोनस के साथ कोलैटरल क्लेम करें। शुद्ध लाभ ~$2,430।"
+      ],
+      checklist: [
+        "निष्पादन से पहले: 1) सत्यापित करें कि अवसर वर्तमान ब्लॉक में मौजूद है। 2) पूर्ण लेनदेन सिमुलेट करें। 3) प्रतिस्पर्धी बॉट्स के लिए मेमपूल जांचें। 4) गैस धारणाएं वर्तमान स्थितियों से मेल खाती हों।",
+        "गणना के बाद: यदि लाभ मार्जिन कुल लागत का 20% से कम है, तो अवसर छोड़ें।"
+      ],
+      mistakes: [
+        "सबसे बड़ी गलती एटॉमिक निष्पादन को समझे बिना आर्बिट्राज का प्रयास करना है। विफल लेनदेन गैस खर्च करते हैं ($5–$50) और बार-बार विफलता सैकड़ों डॉलर बर्बाद करती है।",
+        "एक और गलती MEV प्रतिस्पर्धा को अनदेखा करना है। पेशेवर बॉट्स उच्च प्राथमिकता शुल्क भुगतान करके आपको पीछे छोड़ देंगे।"
+      ],
+      benchmarks: [
+        "शुल्क: Aave V3 0.05%, dYdX 0%, Uniswap V3 0.3%, Balancer 0%।",
+        "औसत लाभप्रदता: गैर-MEV ऑपरेटरों के लिए प्रति ट्रेड $200–$2,000 शुद्ध। बाजार अत्यधिक प्रतिस्पर्धी।"
+      ],
+      execution: [
+        "निष्पादन पाइपलाइन: 1) 5+ DEXs पर स्प्रेड मॉनिटर करें। 2) स्प्रेड न्यूनतम से अधिक होने पर सिमुलेट करें। 3) Flashbots Protect से सबमिट करें। 4) इन्क्लूज़न मॉनिटर करें।",
+        "लिक्विडेशन मॉनिटरिंग: Aave/Compound स्वास्थ्य कारकों को ट्रैक करें।"
+      ],
+      hygiene: [
+        "हर प्रयास रिकॉर्ड करें: टाइमस्टैम्प, प्रकार, अनुमानित/वास्तविक लाभ, खर्च गैस। सफलता दर <30% = अवसंरचना बहुत धीमी।",
+        "अपने अनुबंधों को नवीनतम प्रोटोकॉल इंटरफेस से अपडेट रखें।"
+      ],
+      validation: [
+        "लाइव निष्पादन से पहले हमेशा मेननेट फोर्क पर सिमुलेट करें।",
+        "लाभप्रदता ट्रैकिंग को ऑन-चेन डेटा से मान्य करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор флеш-кредита оценивает прибыльность, сравнивая размер арбитражной возможности с комиссией (0,05–0,09% на Aave), газом и комиссиями DEX. Если чистая прибыль отрицательна или менее $50, возможность нежизнеспособна.",
+        "Выход «минимальный требуемый спред» показывает минимальную ценовую разницу для прибыльности при текущих ценах на газ."
+      ],
+      scenarios: [
+        "DEX-арбитраж: ETH $2 327 на Uniswap и $2 339 на SushiSwap — спред 0,52%. Флеш-кредит 100 ETH: чистая прибыль ~$379. Жизнеспособно только при атомарном исполнении.",
+        "Ликвидационный флеш-кредит: заёмщик с фактором здоровья 0,98. Занять, погасить долг, забрать залог с бонусом 10%. Чистая прибыль ~$2 430."
+      ],
+      checklist: [
+        "Перед исполнением: 1) Убедитесь, что возможность существует в текущем блоке. 2) Симулируйте транзакцию. 3) Проверьте мемпул на конкурирующих ботов. 4) Газ должен соответствовать текущим условиям.",
+        "После расчёта: если маржа <20% затрат, пропустите возможность."
+      ],
+      mistakes: [
+        "Главная ошибка — попытка арбитража без понимания атомарного исполнения. Неудачные транзакции тратят газ ($5–$50), повторные неудачи — сотни долларов.",
+        "Другая ошибка — игнорирование MEV-конкуренции. Профессиональные боты опередят вашу транзакцию, заплатив более высокие приоритетные комиссии."
+      ],
+      benchmarks: [
+        "Комиссии: Aave V3 0,05%, dYdX 0%, Uniswap V3 0,3%, Balancer 0%.",
+        "Средняя прибыльность: $200–$2 000 нетто за сделку для не-MEV операторов. Рынок крайне конкурентен."
+      ],
+      execution: [
+        "Конвейер: 1) Мониторить спреды на 5+ DEX. 2) Симулировать при превышении минимума. 3) Отправить через Flashbots Protect. 4) Мониторить включение.",
+        "Для мониторинга ликвидаций: отслеживать факторы здоровья Aave/Compound."
+      ],
+      hygiene: [
+        "Записывайте каждую попытку: время, тип, прибыль, газ. Процент успеха <30% = инфраструктура слишком медленная.",
+        "Обновляйте контракты с последними интерфейсами протоколов."
+      ],
+      validation: [
+        "Всегда симулируйте на форке мейннета перед реальным исполнением.",
+        "Сверяйте учёт прибыльности с ончейн-данными."
+      ],
+    },
+  },
+
+  'gas-optimization-calculator': {
+    en: {
+      interpret: [
+        "The gas optimization calculator shows how much you can save by timing transactions, batching operations, and choosing optimal gas settings. The 'savings potential' output represents the difference between your current gas spending pattern and the optimal approach. If savings potential exceeds 30%, you are significantly overpaying for gas — simple timing adjustments can recover substantial value.",
+        "The calculator breaks savings into three categories: timing (executing during low-gas windows), batching (combining multiple transactions into one), and settings (using appropriate priority fees instead of overpaying). For most users, timing alone captures 40–60% of total possible savings. Compare base results with our <a href=\"/gas-calculator/\">gas fee calculator</a> for current network conditions."
+      ],
+      scenarios: [
+        "Weekly DeFi user: you make 8 transactions per week (swaps, claims, deposits) averaging 150,000 gas each at a median 15 gwei gas price. Current weekly cost: ~$40. By batching 3 claim transactions into one multicall, shifting non-urgent transactions to Sunday morning UTC (typical low: 8 gwei), and using EIP-1559 base-fee-only tips, the optimized weekly cost drops to ~$22 — a 45% savings or $936/year.",
+        "NFT minter: you plan to mint 5 NFTs from a collection launch at expected gas of 50+ gwei. Each mint costs ~200,000 gas. At 50 gwei: $23 per mint × 5 = $115 in gas alone. The calculator suggests: wait 2 hours post-launch when gas typically drops to 20 gwei = $9.20 per mint × 5 = $46. Savings: $69 (60%) for 2 hours of patience. If the NFTs are not time-sensitive, this is the highest-ROI decision available."
+      ],
+      checklist: [
+        "Before optimizing: 1) Export your last 30 days of transactions with gas costs from Etherscan. 2) Categorize each transaction as time-sensitive (trades, liquidation protection) or non-urgent (claims, approvals, transfers). 3) Note which transactions could be batched (multiple claims, multiple approvals). 4) Identify your typical gas price versus the weekly low — the gap is your timing opportunity.",
+        "After calculating: set up gas price alerts (via Blocknative, Etherscan Gas Tracker, or wallet notifications) at your optimal gas threshold. When gas drops below your target, execute batched non-urgent transactions. For time-sensitive transactions, use Flashbots Protect to avoid overpaying for priority inclusion."
+      ],
+      mistakes: [
+        "The most expensive mistake is using 'fast' or 'aggressive' gas settings for non-urgent transactions. Your wallet's 'fast' option may pay 2–5x the base fee for inclusion in the next block, when waiting 2–3 blocks (30–45 seconds longer) at standard gas would cost 50–70% less. Reserve fast gas only for genuinely time-sensitive operations like liquidation protection or arbitrage.",
+        "Another common error is making many small transactions when batching is available. Approving 5 tokens individually costs 5 × 46,000 gas = 230,000 gas in approvals alone. Using a multicall contract or a protocol's batch-approve function can reduce this to ~80,000 gas total. Always check if the protocol supports batching before executing individual transactions."
+      ],
+      benchmarks: [
+        "Ethereum gas price patterns: weekday peaks typically occur 14:00–18:00 UTC (US market hours), averaging 15–25 gwei. Weekend lows occur Saturday–Sunday 04:00–10:00 UTC, averaging 5–12 gwei. The spread between peak and trough is typically 50–70%, representing the maximum timing-based savings available. L2 networks (Arbitrum, Optimism, Base) cost 10–50x less than mainnet for the same operations.",
+        "Transaction cost benchmarks at 10 gwei: simple ETH transfer $0.50, ERC-20 transfer $1.10, DEX swap $2–$5, Uniswap LP deposit $4–$8, complex DeFi interaction $5–$15. At 50 gwei, multiply all by 5x. Knowing these ranges helps you immediately spot when a transaction quote seems abnormally expensive."
+      ],
+      execution: [
+        "Gas optimization workflow: 1) Create a weekly 'gas batch' list of non-urgent transactions. 2) Set a gas alert at 30% below the current 7-day average. 3) When the alert triggers (typically weekends), execute all batched transactions. 4) For recurring operations (weekly claims, monthly rebalancing), schedule them for your chain's known low-gas windows. This simple discipline saves the average DeFi user $500–$2,000 per year.",
+        "For developers and power users: implement gas-efficient contract interactions. Use multicall for batch operations, calldata compression for L2 submissions, and EIP-4844 blob transactions for rollup data. On <a href=\"/mining-calculator/\">Ethereum L1</a>, consider whether the operation can be performed on an L2 instead — migrating recurring transactions to Arbitrum or Base can reduce gas costs by 95%."
+      ],
+      hygiene: [
+        "Review your gas spending monthly. Export transaction history, sum gas costs, and calculate gas as a percentage of portfolio value. If gas exceeds 2% annually, you are either overtrading for your portfolio size or consistently overpaying for gas. Target under 1% annual gas costs relative to portfolio value.",
+        "Keep a gas price log to identify patterns specific to your activity schedule. If you consistently trade during US market hours (highest gas), shifting routine operations to off-peak hours produces the single largest gas savings with zero effort beyond schedule adjustment."
+      ],
+      validation: [
+        "Validate optimization savings by comparing 30-day average gas cost per transaction before and after implementing the calculator's recommendations. If average cost per transaction drops by at least 20%, the optimization is working. If savings are less than 10%, review whether timing recommendations match your actual execution windows.",
+        "Test batch transactions on a testnet first. Multicall contracts and batch operations can have unexpected interactions — a failed sub-call in a batch may revert the entire batch, wasting more gas than individual transactions would have. Verify batch logic before mainnet execution."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora de optimización de gas muestra cuánto puedes ahorrar temporizando transacciones, agrupando operaciones y eligiendo configuraciones óptimas de gas. Si el potencial de ahorro excede el 30%, estás sobrepagando significativamente.",
+        "Los ahorros se dividen en tres categorías: temporización, agrupación y configuración. Para la mayoría, solo la temporización captura 40–60% del ahorro total posible."
+      ],
+      scenarios: [
+        "Usuario DeFi semanal: 8 transacciones/semana promediando 150,000 gas a 15 gwei. Costo actual: ~$40/semana. Optimizado con agrupación y temporización: ~$22 — ahorro del 45% o $936/año.",
+        "Acuñador de NFT: 5 mints a 50 gwei = $115 en gas. Esperar 2 horas post-lanzamiento (20 gwei) = $46. Ahorro: $69 (60%)."
+      ],
+      checklist: [
+        "Antes de optimizar: 1) Exporta tus últimos 30 días de transacciones. 2) Categoriza como urgentes o no urgentes. 3) Identifica transacciones agrupables. 4) Nota tu precio de gas típico vs el mínimo semanal.",
+        "Después: configura alertas de precio de gas en tu umbral óptimo."
+      ],
+      mistakes: [
+        "El error más caro es usar configuración 'rápida' para transacciones no urgentes. Tu wallet puede pagar 2–5x la tarifa base cuando esperar 30–45 segundos costaría 50–70% menos.",
+        "Otro error es hacer muchas transacciones pequeñas cuando la agrupación está disponible."
+      ],
+      benchmarks: [
+        "Patrones de gas Ethereum: picos en días laborables 14:00–18:00 UTC (15–25 gwei). Mínimos de fin de semana 04:00–10:00 UTC (5–12 gwei). Redes L2 cuestan 10–50x menos.",
+        "Costos a 10 gwei: transferencia ETH $0,50, swap DEX $2–$5, interacción DeFi compleja $5–$15."
+      ],
+      execution: [
+        "Flujo de optimización: 1) Crear lista semanal de transacciones no urgentes. 2) Configurar alerta de gas al 30% bajo el promedio. 3) Ejecutar lote cuando se active. 4) Programar operaciones recurrentes en ventanas de gas bajo.",
+        "Para usuarios avanzados: implementar interacciones de contratos eficientes en gas. Considerar migrar operaciones recurrentes a L2."
+      ],
+      hygiene: [
+        "Revisa tu gasto de gas mensualmente. Si excede el 2% anual del portafolio, estás sobreoperando o sobrepagando.",
+        "Mantén un registro de precios de gas para identificar patrones en tu horario de actividad."
+      ],
+      validation: [
+        "Valida comparando el costo promedio de gas por transacción de 30 días antes y después de implementar las recomendaciones.",
+        "Prueba transacciones por lotes en testnet primero."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora de otimização de gas mostra quanto você pode economizar cronometrando transações, agrupando operações e escolhendo configurações ideais. Se o potencial de economia excede 30%, você está pagando demais significativamente.",
+        "As economias se dividem em: cronometragem, agrupamento e configurações. Para a maioria, cronometragem captura 40–60% da economia total."
+      ],
+      scenarios: [
+        "Usuário DeFi semanal: 8 transações/semana de 150.000 gas a 15 gwei. Custo atual: ~$40/semana. Otimizado: ~$22 — economia de 45% ou $936/ano.",
+        "Mintador de NFT: 5 mints a 50 gwei = $115 em gas. Esperar 2 horas (20 gwei) = $46. Economia: $69 (60%)."
+      ],
+      checklist: [
+        "Antes de otimizar: 1) Exporte últimos 30 dias de transações. 2) Categorize como urgentes ou não. 3) Identifique transações agrupáveis. 4) Note seu gas típico vs mínimo semanal.",
+        "Após: configure alertas de gas no seu limite ideal."
+      ],
+      mistakes: [
+        "O erro mais caro é usar 'rápido' para transações não urgentes. Esperar 30–45 segundos custaria 50–70% menos.",
+        "Outro erro é fazer muitas transações pequenas quando agrupamento está disponível."
+      ],
+      benchmarks: [
+        "Padrões Ethereum: picos em dias úteis 14:00–18:00 UTC (15–25 gwei). Mínimos de fim de semana 04:00–10:00 UTC (5–12 gwei). L2s custam 10–50x menos.",
+        "Custos a 10 gwei: transferência ETH $0,50, swap DEX $2–$5, DeFi complexo $5–$15."
+      ],
+      execution: [
+        "Fluxo: 1) Lista semanal de transações não urgentes. 2) Alerta de gas 30% abaixo da média. 3) Executar lote quando ativar. 4) Agendar operações recorrentes em janelas de gas baixo.",
+        "Para avançados: implementar interações eficientes. Considerar migrar para L2."
+      ],
+      hygiene: [
+        "Revise gasto de gas mensalmente. Se excede 2% anual do portfólio, está pagando demais.",
+        "Mantenha registro de preços para identificar padrões."
+      ],
+      validation: [
+        "Valide comparando custo médio por transação antes e depois da otimização.",
+        "Teste transações em lote no testnet primeiro."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Gas optimizasyon hesaplayıcı, işlemleri zamanlama, gruplama ve optimal gas ayarları seçerek ne kadar tasarruf edebileceğinizi gösterir. Tasarruf potansiyeli %30'u aşıyorsa gas için önemli ölçüde fazla ödüyorsunuz.",
+        "Tasarruflar üçe ayrılır: zamanlama, gruplama ve ayarlar. Çoğu kullanıcı için yalnızca zamanlama toplam tasarrufun %40–60'ını yakalar."
+      ],
+      scenarios: [
+        "Haftalık DeFi kullanıcısı: haftada 8 işlem, 150.000 gas, 15 gwei. Mevcut: ~$40/hafta. Optimize: ~$22 — %45 tasarruf veya yıllık $936.",
+        "NFT mintçisi: 50 gwei'de 5 mint = $115. 2 saat bekleme (20 gwei) = $46. Tasarruf: $69 (%60)."
+      ],
+      checklist: [
+        "Optimize etmeden önce: 1) Son 30 günlük işlemleri dışa aktarın. 2) Acil veya acil değil olarak kategorize edin. 3) Gruplanabilir işlemleri belirleyin. 4) Tipik gas fiyatınızı haftalık minimumla karşılaştırın.",
+        "Sonra: optimal eşiğinizde gas fiyat uyarıları kurun."
+      ],
+      mistakes: [
+        "En pahalı hata acil olmayan işlemler için 'hızlı' ayar kullanmaktır. 30–45 saniye beklemek %50–70 daha az maliyetli olurdu.",
+        "Bir diğer hata gruplama mümkünken çok sayıda küçük işlem yapmaktır."
+      ],
+      benchmarks: [
+        "Ethereum gas kalıpları: hafta içi zirve 14:00–18:00 UTC (15–25 gwei). Hafta sonu dip 04:00–10:00 UTC (5–12 gwei). L2'ler 10–50x daha ucuz.",
+        "10 gwei'de maliyetler: ETH transferi $0,50, DEX swap $2–$5, karmaşık DeFi $5–$15."
+      ],
+      execution: [
+        "Optimizasyon akışı: 1) Acil olmayan haftalık işlem listesi oluşturun. 2) Ortalamanın %30 altında gas uyarısı kurun. 3) Tetiklendiğinde toplu yürütün. 4) Tekrarlayan işlemleri düşük gas pencerelerine planlayın.",
+        "İleri düzey: gas verimli sözleşme etkileşimleri uygulayın. Tekrarlayan işlemleri L2'ye taşımayı düşünün."
+      ],
+      hygiene: [
+        "Gas harcamanızı aylık gözden geçirin. Portföy değerinin yıllık %2'sini aşıyorsa fazla işlem yapıyor veya fazla ödüyorsunuz.",
+        "Aktivite programınızdaki kalıpları tespit etmek için gas fiyat kaydı tutun."
+      ],
+      validation: [
+        "Önerileri uygulamadan önceki ve sonraki 30 günlük ortalama gas maliyetini karşılaştırarak doğrulayın.",
+        "Toplu işlemleri önce testnet'te test edin."
+      ],
+    },
+    hi: {
+      interpret: [
+        "गैस ऑप्टिमाइज़ेशन कैलकुलेटर दिखाता है कि लेनदेन समय, बैचिंग और इष्टतम गैस सेटिंग्स चुनकर आप कितनी बचत कर सकते हैं। बचत क्षमता 30% से अधिक होने पर आप गैस के लिए महत्वपूर्ण रूप से अधिक भुगतान कर रहे हैं।",
+        "बचत तीन श्रेणियों में विभाजित होती है: समय, बैचिंग और सेटिंग्स। अधिकांश उपयोगकर्ताओं के लिए, केवल समय कुल संभव बचत का 40–60% कैप्चर करता है।"
+      ],
+      scenarios: [
+        "साप्ताहिक DeFi उपयोगकर्ता: 8 लेनदेन/सप्ताह, 150,000 गैस, 15 gwei। वर्तमान: ~$40/सप्ताह। अनुकूलित: ~$22 — 45% बचत या $936/वर्ष।",
+        "NFT मिंटर: 50 gwei पर 5 मिंट = गैस में $115। 2 घंटे प्रतीक्षा (20 gwei) = $46। बचत: $69 (60%)।"
+      ],
+      checklist: [
+        "अनुकूलन से पहले: 1) पिछले 30 दिनों के लेनदेन निर्यात करें। 2) तत्काल या गैर-तत्काल वर्गीकृत करें। 3) बैच करने योग्य लेनदेन पहचानें। 4) अपनी सामान्य गैस कीमत vs साप्ताहिक निम्न नोट करें।",
+        "गणना के बाद: अपने इष्टतम थ्रेशोल्ड पर गैस मूल्य अलर्ट सेट करें।"
+      ],
+      mistakes: [
+        "सबसे महंगी गलती गैर-तत्काल लेनदेन के लिए 'तेज़' सेटिंग उपयोग करना है। 30–45 सेकंड प्रतीक्षा करने पर 50–70% कम लागत होती।",
+        "एक और गलती बैचिंग उपलब्ध होने पर कई छोटे लेनदेन करना है।"
+      ],
+      benchmarks: [
+        "Ethereum गैस पैटर्न: सप्ताह के दिन शिखर 14:00–18:00 UTC (15–25 gwei)। सप्ताहांत निम्न 04:00–10:00 UTC (5–12 gwei)। L2 नेटवर्क 10–50x सस्ते।",
+        "10 gwei पर लागत: ETH ट्रांसफर $0.50, DEX स्वैप $2–$5, जटिल DeFi $5–$15।"
+      ],
+      execution: [
+        "ऑप्टिमाइज़ेशन वर्कफ़्लो: 1) गैर-तत्काल लेनदेन की साप्ताहिक सूची बनाएं। 2) औसत से 30% नीचे गैस अलर्ट सेट करें। 3) अलर्ट ट्रिगर होने पर बैच निष्पादित करें। 4) पुनरावर्ती संचालन कम-गैस विंडो में शेड्यूल करें।",
+        "पावर उपयोगकर्ताओं के लिए: गैस-कुशल अनुबंध इंटरैक्शन लागू करें। पुनरावर्ती लेनदेन L2 पर माइग्रेट करने पर विचार करें।"
+      ],
+      hygiene: [
+        "गैस खर्च की मासिक समीक्षा करें। पोर्टफोलियो मूल्य का वार्षिक 2% से अधिक होने पर आप अधिक ट्रेड कर रहे हैं या अधिक भुगतान कर रहे हैं।",
+        "अपने गतिविधि शेड्यूल में पैटर्न पहचानने के लिए गैस मूल्य लॉग रखें।"
+      ],
+      validation: [
+        "सिफारिशें लागू करने से पहले और बाद में 30-दिन के औसत गैस लागत की तुलना करके मान्य करें।",
+        "बैच लेनदेन पहले टेस्टनेट पर परीक्षण करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор оптимизации газа показывает, сколько можно сэкономить, выбирая время, группируя операции и настраивая параметры газа. Потенциал экономии >30% означает, что вы существенно переплачиваете.",
+        "Экономия делится на три категории: тайминг, группировка и настройки. Для большинства тайминг захватывает 40–60% общей возможной экономии."
+      ],
+      scenarios: [
+        "Еженедельный DeFi-пользователь: 8 транзакций/неделю по 150 000 газа при 15 gwei. Текущие: ~$40/нед. Оптимизированные: ~$22 — экономия 45% или $936/год.",
+        "Минтер NFT: 5 минтов при 50 gwei = $115. Ожидание 2 часа (20 gwei) = $46. Экономия: $69 (60%)."
+      ],
+      checklist: [
+        "Перед оптимизацией: 1) Экспортируйте транзакции за 30 дней. 2) Разделите на срочные и несрочные. 3) Определите группируемые. 4) Сравните типичную цену газа с недельным минимумом.",
+        "После: настройте оповещения о цене газа на оптимальном пороге."
+      ],
+      mistakes: [
+        "Самая дорогая ошибка — «быстрая» настройка для несрочных транзакций. Ожидание 30–45 секунд стоило бы на 50–70% меньше.",
+        "Другая ошибка — много мелких транзакций при доступности группировки."
+      ],
+      benchmarks: [
+        "Паттерны газа Ethereum: пики в будни 14:00–18:00 UTC (15–25 gwei). Минимумы выходных 04:00–10:00 UTC (5–12 gwei). L2 в 10–50 раз дешевле.",
+        "Стоимости при 10 gwei: перевод ETH $0,50, DEX swap $2–$5, сложный DeFi $5–$15."
+      ],
+      execution: [
+        "Процесс: 1) Еженедельный список несрочных транзакций. 2) Оповещение на 30% ниже средней цены. 3) Выполнить пакет при срабатывании. 4) Планировать регулярные операции на окна низкого газа.",
+        "Для продвинутых: газ-эффективные взаимодействия. Рассмотрите перенос регулярных транзакций на L2."
+      ],
+      hygiene: [
+        "Ежемесячно проверяйте расходы на газ. Если >2% портфеля в год — вы переторговываете или переплачиваете.",
+        "Ведите журнал цен газа для выявления паттернов в вашем расписании."
+      ],
+      validation: [
+        "Валидируйте, сравнивая среднюю стоимость газа за 30 дней до и после оптимизации.",
+        "Тестируйте пакетные транзакции на тестнете."
+      ],
+    },
+  },
+
+  'governance-voting-calculator': {
+    en: {
+      interpret: [
+        "The governance voting calculator estimates the impact and cost of participating in DAO governance — including the opportunity cost of locking tokens for voting, gas costs for on-chain votes, and the potential value of governance outcomes. If the calculator shows that your voting power is below 0.01% of total supply, your individual vote is unlikely to change outcomes, but delegation to aligned voters amplifies your influence at zero additional cost.",
+        "The 'governance ROI' metric compares the value of favorable governance outcomes (fee changes, treasury allocations, protocol upgrades) against the cost of participation (gas, token lockup opportunity cost). For major protocol holders, active governance participation can be worth 2–5% annually in protected/enhanced token value. Track how governance decisions affect your holdings using our <a href=\"/profit-calculator/\">profit calculator</a>."
+      ],
+      scenarios: [
+        "Uniswap governance: you hold 10,000 UNI ($75,000). A proposal to activate the fee switch would direct 10% of protocol fees to UNI holders — potentially $0.15–$0.30 per UNI annually ($1,500–$3,000 for your position). Cost to vote: $2–$5 gas. The governance ROI for this single vote exceeds 10,000%. Even if your vote does not change the outcome, establishing a voting pattern qualifies you for potential future governance airdrops.",
+        "Small holder delegation: you hold 500 AAVE ($50,000) — too small to pass any proposal alone but valuable as delegated voting power. Delegate to a governance participant whose voting record aligns with your interests. Cost: one $3 delegation transaction. Benefit: your tokens contribute to quorum on proposals that protect your staking yields and protocol security. Delegation is the highest-ROI governance action for holders below the proposal threshold."
+      ],
+      checklist: [
+        "Before voting: 1) Read the full proposal, not just the title — governance attacks disguised as benign upgrades have cost protocols millions. 2) Check the proposer's track record and token holdings. 3) Verify your tokens are eligible (some protocols require pre-registration or delegation before a snapshot). 4) Estimate gas cost — vote during low-gas periods for on-chain governance.",
+        "After calculating: if governance participation cost exceeds 0.1% of your position annually, consider delegation over direct voting. If your position exceeds 0.1% of total supply, direct voting is worth the cost — your vote meaningfully influences outcomes."
+      ],
+      mistakes: [
+        "The most common mistake is ignoring governance entirely. Protocol governance decisions directly affect token value: fee structures, inflation schedules, treasury spending, and security parameters are all decided by governance. Non-participation means others decide the rules that affect your investment. At minimum, delegate your voting power rather than leaving it unused.",
+        "Another error is voting on every proposal without research. Governance attacks involve creating seemingly benign proposals that contain malicious parameters. Always verify: the contract addresses being modified, the parameter changes being made, and whether the proposer is a known community member. Voting 'yes' on a malicious proposal can enable treasury drains or protocol compromises."
+      ],
+      benchmarks: [
+        "Governance participation benchmarks: average DAO voter turnout is 5–15% of total supply. Quorum thresholds typically require 4–10% participation. Your vote matters most when turnout is near the quorum threshold — in those cases, even small holders can determine whether a proposal passes. Check historical turnout for your protocol to identify when your participation is most impactful.",
+        "Delegation benchmarks: top delegates on Uniswap, Aave, and Compound control 30–60% of active voting power. Delegating to a top-10 delegate ensures your tokens contribute to outcomes. Verify delegate voting records on Tally, Boardroom, or the protocol's governance dashboard before committing."
+      ],
+      execution: [
+        "Governance participation workflow: 1) Set up notifications for new proposals (Tally, Boardroom, or protocol Discord). 2) Review each proposal within 24 hours of posting. 3) If voting directly, check gas prices and vote during low-gas windows. 4) If delegating, research delegates quarterly and re-delegate if their voting record diverges from your interests.",
+        "For multi-protocol governance: create a governance calendar tracking voting deadlines across all protocols where you hold tokens. Missing a critical vote (security parameter change, inflation adjustment) can be more costly than the gas you saved by not participating. Use our <a href=\"/staking-calculator/\">staking calculator</a> to see how governance-affected parameters impact your yields."
+      ],
+      hygiene: [
+        "Review your delegation status quarterly. Delegates may become inactive, change their voting philosophy, or accumulate too much power (centralization risk). Re-evaluate whether your delegate still represents your interests. If they voted against your position on 2+ major proposals, consider switching delegates.",
+        "Track governance proposal outcomes and their impact on your portfolio. After 6 months, assess whether the proposals you supported/opposed had the predicted effect on token price and protocol metrics. This feedback loop improves your governance decision-making over time."
+      ],
+      validation: [
+        "Verify your vote was recorded by checking the governance contract on-chain. Some governance UIs have bugs where votes appear submitted but are not actually recorded. Confirm on Etherscan that your vote transaction was included in a block and that the governance contract registered your voting power correctly.",
+        "Validate delegation status periodically. Token transfers, staking, and unstaking can reset delegation in some protocols. Verify on the governance dashboard that your tokens are still delegated to your intended delegate after any token movement."
+      ],
+    },
+    es: {
+      interpret: [
+        "La calculadora estima el impacto y costo de participar en gobernanza DAO — incluyendo costo de oportunidad de bloquear tokens, gas para votos on-chain, y valor potencial de los resultados. Si tu poder de voto es menor al 0,01%, la delegación amplifica tu influencia sin costo adicional.",
+        "La métrica 'ROI de gobernanza' compara el valor de resultados favorables contra el costo de participación."
+      ],
+      scenarios: [
+        "Gobernanza Uniswap: tienes 10,000 UNI ($75,000). Una propuesta para activar el fee switch podría generar $1,500–$3,000 anuales. Costo de votar: $2–$5 gas. El ROI supera el 10,000%.",
+        "Delegación para pequeños holders: tienes 500 AAVE. Delega a un participante cuyo historial de votación se alinee con tus intereses. Costo: una transacción de $3."
+      ],
+      checklist: [
+        "Antes de votar: 1) Lee la propuesta completa. 2) Verifica el historial del proponente. 3) Confirma que tus tokens son elegibles. 4) Estima el costo de gas.",
+        "Después: si el costo supera el 0,1% de tu posición anualmente, considera delegación sobre voto directo."
+      ],
+      mistakes: [
+        "El error más común es ignorar la gobernanza por completo. Las decisiones afectan directamente el valor del token. Como mínimo, delega tu poder de voto.",
+        "Otro error es votar sin investigar. Los ataques de gobernanza involucran propuestas aparentemente benignas con parámetros maliciosos."
+      ],
+      benchmarks: [
+        "Participación promedio: 5–15% del suministro total. Quórum típico: 4–10%. Tu voto importa más cuando la participación está cerca del umbral de quórum.",
+        "Delegación: los principales delegados controlan 30–60% del poder de voto activo."
+      ],
+      execution: [
+        "Flujo de participación: 1) Configurar notificaciones para nuevas propuestas. 2) Revisar cada propuesta en 24 horas. 3) Votar en ventanas de gas bajo. 4) Re-evaluar delegados trimestralmente.",
+        "Para multi-protocolo: crear calendario de gobernanza con fechas límite de votación."
+      ],
+      hygiene: [
+        "Revisa tu estado de delegación trimestralmente. Los delegados pueden volverse inactivos o cambiar su filosofía de voto.",
+        "Rastrea los resultados de las propuestas y su impacto en tu portafolio."
+      ],
+      validation: [
+        "Verifica que tu voto fue registrado revisando el contrato de gobernanza on-chain.",
+        "Valida el estado de delegación periódicamente. Las transferencias de tokens pueden resetear la delegación en algunos protocolos."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A calculadora estima o impacto e custo de participar na governança DAO — incluindo custo de oportunidade de bloquear tokens, gas para votos on-chain, e valor potencial dos resultados.",
+        "A métrica 'ROI de governança' compara o valor de resultados favoráveis contra o custo de participação."
+      ],
+      scenarios: [
+        "Governança Uniswap: você tem 10.000 UNI ($75.000). Proposta para ativar fee switch pode gerar $1.500–$3.000 anuais. Custo de votar: $2–$5 gas. ROI >10.000%.",
+        "Delegação para pequenos holders: tem 500 AAVE. Delegue a participante alinhado. Custo: uma transação de $3."
+      ],
+      checklist: [
+        "Antes de votar: 1) Leia a proposta completa. 2) Verifique histórico do proponente. 3) Confirme elegibilidade dos tokens. 4) Estime custo de gas.",
+        "Após: se custo >0,1% da posição anualmente, considere delegação."
+      ],
+      mistakes: [
+        "O erro mais comum é ignorar governança. Decisões afetam diretamente o valor do token. No mínimo, delegue seu poder de voto.",
+        "Outro erro é votar sem pesquisa. Ataques de governança usam propostas aparentemente benignas."
+      ],
+      benchmarks: [
+        "Participação média: 5–15% do supply. Quórum: 4–10%. Seu voto importa mais perto do limiar.",
+        "Delegação: principais delegados controlam 30–60% do poder de voto ativo."
+      ],
+      execution: [
+        "Fluxo: 1) Notificações para novas propostas. 2) Revisar em 24 horas. 3) Votar em janelas de gas baixo. 4) Reavaliar delegados trimestralmente.",
+        "Para multi-protocolo: criar calendário de governança."
+      ],
+      hygiene: [
+        "Revise status de delegação trimestralmente.",
+        "Acompanhe resultados de propostas e impacto no portfólio."
+      ],
+      validation: [
+        "Verifique que seu voto foi registrado on-chain.",
+        "Valide status de delegação periodicamente."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Hesaplayıcı, DAO yönetişimine katılmanın etkisini ve maliyetini tahmin eder — token kilitleme fırsat maliyeti, zincir üstü oy gas maliyetleri ve sonuçların potansiyel değeri dahil.",
+        "'Yönetişim ROI' metriği olumlu sonuçların değerini katılım maliyetiyle karşılaştırır."
+      ],
+      scenarios: [
+        "Uniswap yönetişimi: 10.000 UNI ($75.000) tutuyorsunuz. Fee switch önerisi yıllık $1.500–$3.000 getirebilir. Oy maliyeti: $2–$5 gas. ROI >%10.000.",
+        "Küçük sahipler için delegasyon: 500 AAVE tutuyorsunuz. Oy geçmişi çıkarlarınızla uyumlu bir katılımcıya delege edin. Maliyet: $3 işlem."
+      ],
+      checklist: [
+        "Oy vermeden önce: 1) Tam öneriyi okuyun. 2) Önericinin geçmişini kontrol edin. 3) Token uygunluğunu doğrulayın. 4) Gas maliyetini tahmin edin.",
+        "Sonra: maliyet pozisyonunuzun yıllık %0,1'ini aşıyorsa delegasyonu düşünün."
+      ],
+      mistakes: [
+        "En yaygın hata yönetişimi tamamen görmezden gelmektir. Kararlar token değerini doğrudan etkiler. En azından oy gücünüzü delege edin.",
+        "Bir diğer hata araştırma yapmadan oy vermektir. Yönetişim saldırıları zararsız görünen öneriler içerir."
+      ],
+      benchmarks: [
+        "Ortalama katılım: toplam arzın %5–15'i. Yeter sayı: %4–10. Oyunuz yeter sayı eşiğine yakınken en çok önemlidir.",
+        "Delegasyon: üst delegeler aktif oy gücünün %30–60'ını kontrol eder."
+      ],
+      execution: [
+        "Katılım akışı: 1) Yeni öneriler için bildirim kurun. 2) Her öneriyi 24 saat içinde inceleyin. 3) Düşük gas pencerelerinde oy verin. 4) Delegeleri üç ayda bir yeniden değerlendirin.",
+        "Çoklu protokol için: oy son tarihlerini takip eden yönetişim takvimi oluşturun."
+      ],
+      hygiene: [
+        "Delegasyon durumunuzu üç ayda bir gözden geçirin. Delegeler pasif olabilir veya oy felsefelerini değiştirebilir.",
+        "Öneri sonuçlarını ve portföyünüze etkisini takip edin."
+      ],
+      validation: [
+        "Oyunuzun zincir üstü yönetişim sözleşmesinde kaydedildiğini doğrulayın.",
+        "Delegasyon durumunu periyodik olarak doğrulayın. Token transferleri bazı protokollerde delegasyonu sıfırlayabilir."
+      ],
+    },
+    hi: {
+      interpret: [
+        "कैलकुलेटर DAO गवर्नेंस में भाग लेने के प्रभाव और लागत का अनुमान लगाता है — टोकन लॉक करने की अवसर लागत, ऑन-चेन वोट गैस लागत, और परिणामों का संभावित मूल्य।",
+        "'गवर्नेंस ROI' मेट्रिक अनुकूल परिणामों के मूल्य की भागीदारी लागत से तुलना करता है।"
+      ],
+      scenarios: [
+        "Uniswap गवर्नेंस: आपके पास 10,000 UNI ($75,000) है। फी स्विच प्रस्ताव वार्षिक $1,500–$3,000 उत्पन्न कर सकता है। वोट लागत: $2–$5 गैस। ROI >10,000%।",
+        "छोटे धारकों के लिए प्रतिनिधिमंडल: 500 AAVE रखते हैं। अपने हितों से मेल खाने वाले प्रतिभागी को प्रतिनिधि बनाएं। लागत: $3 लेनदेन।"
+      ],
+      checklist: [
+        "वोट करने से पहले: 1) पूर्ण प्रस्ताव पढ़ें। 2) प्रस्तावक का इतिहास जांचें। 3) टोकन पात्रता सत्यापित करें। 4) गैस लागत अनुमान लगाएं।",
+        "गणना के बाद: यदि लागत स्थिति का वार्षिक 0.1% से अधिक है, तो प्रत्यक्ष वोटिंग पर प्रतिनिधिमंडल पर विचार करें।"
+      ],
+      mistakes: [
+        "सबसे आम गलती गवर्नेंस को पूरी तरह अनदेखा करना है। निर्णय सीधे टोकन मूल्य को प्रभावित करते हैं। कम से कम अपनी वोटिंग शक्ति प्रतिनिधित करें।",
+        "एक और गलती शोध किए बिना वोट करना है। गवर्नेंस हमले हानिरहित दिखने वाले प्रस्तावों से होते हैं।"
+      ],
+      benchmarks: [
+        "औसत भागीदारी: कुल आपूर्ति का 5–15%। कोरम: 4–10%। कोरम सीमा के निकट आपका वोट सबसे अधिक महत्वपूर्ण है।",
+        "प्रतिनिधिमंडल: शीर्ष प्रतिनिधि सक्रिय मतदान शक्ति का 30–60% नियंत्रित करते हैं।"
+      ],
+      execution: [
+        "भागीदारी वर्कफ़्लो: 1) नए प्रस्तावों के लिए सूचनाएं सेट करें। 2) 24 घंटे में प्रत्येक प्रस्ताव की समीक्षा करें। 3) कम-गैस विंडो में वोट करें। 4) त्रैमासिक प्रतिनिधियों का पुनर्मूल्यांकन करें।",
+        "मल्टी-प्रोटोकॉल: वोटिंग समय सीमा ट्रैक करने वाला गवर्नेंस कैलेंडर बनाएं।"
+      ],
+      hygiene: [
+        "त्रैमासिक प्रतिनिधिमंडल स्थिति की समीक्षा करें। प्रतिनिधि निष्क्रिय हो सकते हैं या मतदान दर्शन बदल सकते हैं।",
+        "प्रस्ताव परिणामों और पोर्टफोलियो प्रभाव को ट्रैक करें।"
+      ],
+      validation: [
+        "सत्यापित करें कि आपका वोट गवर्नेंस अनुबंध में ऑन-चेन दर्ज किया गया।",
+        "समय-समय पर प्रतिनिधिमंडल स्थिति मान्य करें। टोकन ट्रांसफर कुछ प्रोटोकॉल में प्रतिनिधिमंडल रीसेट कर सकते हैं।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Калькулятор оценивает влияние и стоимость участия в управлении DAO — включая альтернативную стоимость блокировки токенов, газ для ончейн-голосований и потенциальную ценность результатов.",
+        "Метрика «ROI управления» сравнивает ценность благоприятных исходов со стоимостью участия."
+      ],
+      scenarios: [
+        "Управление Uniswap: у вас 10 000 UNI ($75 000). Предложение об активации fee switch может приносить $1 500–$3 000 ежегодно. Стоимость голоса: $2–$5 газ. ROI >10 000%.",
+        "Делегирование для мелких держателей: 500 AAVE. Делегируйте участнику, чья позиция совпадает с вашей. Стоимость: транзакция $3."
+      ],
+      checklist: [
+        "Перед голосованием: 1) Прочитайте полное предложение. 2) Проверьте историю предлагающего. 3) Подтвердите право голоса токенов. 4) Оцените стоимость газа.",
+        "После: если стоимость >0,1% позиции в год, рассмотрите делегирование."
+      ],
+      mistakes: [
+        "Самая частая ошибка — полное игнорирование управления. Решения напрямую влияют на стоимость токена. Как минимум делегируйте голоса.",
+        "Другая ошибка — голосование без исследования. Атаки на управление используют безобидные на вид предложения."
+      ],
+      benchmarks: [
+        "Средняя явка: 5–15% предложения. Кворум: 4–10%. Ваш голос важнее всего вблизи порога кворума.",
+        "Делегирование: топ-делегаты контролируют 30–60% активных голосов."
+      ],
+      execution: [
+        "Процесс: 1) Настройте уведомления о предложениях. 2) Изучите каждое за 24 часа. 3) Голосуйте в окна низкого газа. 4) Переоценивайте делегатов ежеквартально.",
+        "Для нескольких протоколов: создайте календарь с дедлайнами голосований."
+      ],
+      hygiene: [
+        "Проверяйте статус делегирования ежеквартально. Делегаты могут стать неактивными или изменить позицию.",
+        "Отслеживайте результаты предложений и влияние на портфель."
+      ],
+      validation: [
+        "Убедитесь, что голос записан ончейн в контракте управления.",
+        "Периодически проверяйте статус делегирования. Переводы токенов могут сбросить делегирование."
+      ],
+    },
+  },
+
+  'nft-rarity-calculator': {
+    en: {
+      interpret: [
+        "The rarity calculator scores each NFT trait against the collection's total supply to produce a composite rarity rank. A rank in the top 1% (e.g., #50 out of 5,000) typically commands a 3–10x price premium over floor. A rank in the top 10% commands 1.5–3x floor. Below top 20%, the rarity premium is minimal — most buyers at that level pay near floor price regardless of specific traits.",
+        "Understand the difference between statistical rarity and market-valued rarity. A trait that appears in only 0.5% of the collection is statistically rare, but if the market does not find that trait aesthetically desirable, the price premium may be zero. The most valuable NFTs combine statistical rarity with community-preferred traits (specific art styles, culturally significant attributes). Cross-reference rarity scores with actual sales data, not just trait percentages."
+      ],
+      scenarios: [
+        "Buying below rarity value: you find a Bored Ape with rarity rank #120 (top 1.2%) listed at 2x floor. Historical data shows top-1% apes sell for 5–8x floor. This represents a potential 2.5–4x return if you can find a buyer who values the rarity. Use our <a href=\"/profit-calculator/\">profit calculator</a> to estimate net profit after marketplace fees (2.5% OpenSea) and creator royalties (5–10%).",
+        "Evaluating a collection launch: a new 10,000 PFP collection reveals metadata. You check rarity distribution: 50 items have 3+ rare traits (top 0.5%), 500 items have 2 rare traits (top 5%), the remaining 9,450 are common. If you can identify and mint a top-0.5% piece during the public mint at 0.08 ETH, the immediate secondary market value could be 0.5–2 ETH based on comparable collections. The rarity calculator helps identify which trait combinations to target."
+      ],
+      checklist: [
+        "Before using rarity data for pricing: 1) Verify the rarity calculation includes ALL traits, not a cherry-picked subset. 2) Confirm the trait distribution comes from verified on-chain metadata, not a fake reveal. 3) Check whether the collection uses dynamic metadata that can change trait rarity after mint. 4) Compare the rarity tool's ranking against at least one alternative (Rarity.tools, HowRare.is, trait.xyz).",
+        "After calculating rarity: correlate with actual sale prices, not just listings. A #50 ranked NFT listed at 10x floor means nothing if no sales above 3x floor have occurred in 30 days. Use marketplace analytics (OpenSea Pro, Blur analytics) to verify that rarity premiums are actually being paid, not just asked for."
+      ],
+      mistakes: [
+        "The biggest mistake is overpaying for rarity in a declining collection. A top-1% NFT in a collection with zero trading volume is worthless regardless of its rarity score. Rarity only has value in collections with active markets and collectors who care about traits. Before buying for rarity, verify: daily trading volume exceeds 5 ETH, unique holders exceed 40% of supply, and at least 3 rare NFTs have sold above floor in the past 30 days.",
+        "Another common error is using a single rarity metric without understanding the methodology. Different rarity calculators use different formulas (information entropy, trait frequency, weighted scores) and can rank the same NFT differently. Always check 2–3 rarity tools and look for consensus. If rank #50 on one tool but #500 on another, the rarity is debatable and you should not pay a premium based on the optimistic ranking alone."
+      ],
+      benchmarks: [
+        "Rarity premium benchmarks for active collections (>10 ETH daily volume): top 0.1% (rank 1–10): 10–50x floor. Top 1% (rank 1–100 in 10K collection): 3–10x floor. Top 5%: 1.5–3x floor. Top 10%: 1.2–2x floor. Top 25%: 1.0–1.3x floor. Below top 25%: floor price. These multipliers apply to established collections; newer collections may have more volatile rarity premiums.",
+        "Marketplace fee benchmarks: OpenSea 2.5%, Blur 0.5%, LooksRare 2%, Magic Eden 2%. Creator royalties: 5–10% for most collections, some set at 0%. Total friction on an NFT flip: 7.5–12.5%, meaning you need at least a 15% price increase to break even after round-trip fees. Factor these into any rarity-based purchase decision."
+      ],
+      execution: [
+        "Rarity-based buying workflow: 1) Calculate rarity for all items in the collection. 2) Identify items ranked top-5% that are listed below the historical rarity premium. 3) Verify the listing is genuine (check seller history, not a wash trade). 4) Calculate break-even price including marketplace fees and royalties. 5) Purchase if margin of safety exceeds 30%. 6) List at rarity-appropriate price with 10% flexibility for negotiation.",
+        "For collection launches: use pre-reveal trait probability analysis (if available) to estimate which mints are likely to be rare. Some minters use <a href=\"/gas-calculator/\">gas-optimized</a> batch minting to acquire multiple NFTs and keep the rarest. Post-reveal, immediately check rarity and list common mints near floor while holding rare ones for the premium to develop."
+      ],
+      hygiene: [
+        "Update rarity data whenever new collection metadata is revealed or traits are added. Some collections release traits in phases — the rarity ranking after phase 1 may be completely different after phase 3 when new traits are introduced. Always use the most current metadata for rarity calculations.",
+        "Monitor collection health metrics alongside rarity: floor price trend (declining floor erodes all rarity premiums), unique holder percentage (below 30% = concentrated ownership = manipulation risk), and royalty enforcement (collections with unenforced royalties may lose creator support and community engagement)."
+      ],
+      validation: [
+        "Validate rarity calculations by spot-checking 5 random NFTs against the actual on-chain metadata. Verify that the trait counts match what the rarity tool reports. Discrepancies may indicate the tool is using outdated metadata or an incorrect collection contract address.",
+        "Back-test rarity-based pricing against historical sales. If the calculator suggests a top-1% NFT should sell for 5x floor, verify that at least 3 comparable-rank NFTs actually sold at 4–6x floor in the last 90 days. If no sales near the predicted price exist, the rarity premium is theoretical, not realized."
+      ],
+    },
+    es: { interpret: ["La calculadora puntúa cada rasgo NFT contra el suministro total produciendo un ranking de rareza. Top 1% típicamente tiene prima de 3–10x sobre el floor. Top 10%: 1,5–3x floor.", "Entiende la diferencia entre rareza estadística y rareza valorada por el mercado. Un rasgo en solo 0,5% de la colección es estadísticamente raro, pero si no es estéticamente deseable, la prima puede ser cero."], scenarios: ["Comprar bajo valor de rareza: encuentras un NFT rango #120 (top 1,2%) listado a 2x floor. Datos históricos muestran que el top 1% se vende a 5–8x floor.", "Evaluando un lanzamiento: colección de 10,000 piezas. 50 items tienen 3+ rasgos raros (top 0,5%). Identificar y mintear una pieza top-0,5% podría valer 0,5–2 ETH en el secundario."], checklist: ["Antes de usar datos de rareza: 1) Verifica que el cálculo incluya TODOS los rasgos. 2) Confirma que los datos vienen de metadata on-chain verificada. 3) Verifica si la metadata es dinámica.", "Después: correlaciona con precios de venta reales, no solo listados."], mistakes: ["El mayor error es sobrepagar por rareza en una colección en declive. Un NFT top-1% sin volumen de trading no tiene valor.", "Otro error es usar una sola métrica de rareza sin entender la metodología. Siempre verifica en 2–3 herramientas."], benchmarks: ["Primas de rareza para colecciones activas: top 0,1%: 10–50x floor. Top 1%: 3–10x. Top 5%: 1,5–3x.", "Comisiones de marketplace: OpenSea 2,5%, Blur 0,5%. Royalties: 5–10%. Fricción total en un flip: 7,5–12,5%."], execution: ["Flujo de compra: 1) Calcular rareza. 2) Identificar items top-5% listados bajo la prima histórica. 3) Verificar listado genuino. 4) Calcular precio de equilibrio. 5) Comprar si margen de seguridad >30%.", "Para lanzamientos: usar análisis de probabilidad pre-reveal para estimar cuáles mints serán raros."], hygiene: ["Actualiza datos de rareza cuando se revela nueva metadata.", "Monitorea métricas de salud de la colección: tendencia del floor, porcentaje de holders únicos, enforcement de royalties."], validation: ["Valida verificando 5 NFTs aleatorios contra la metadata on-chain real.", "Prueba retroactiva: verifica que NFTs de rango similar realmente se vendieron cerca del precio predicho."] },
+    pt: { interpret: ["A calculadora pontua cada traço NFT contra o supply total para produzir ranking de raridade. Top 1% tipicamente tem prêmio de 3–10x sobre o floor.", "Entenda a diferença entre raridade estatística e raridade valorizada pelo mercado."], scenarios: ["Comprar abaixo do valor de raridade: NFT rank #120 (top 1,2%) listado a 2x floor. Dados históricos mostram top 1% vendendo a 5–8x floor.", "Avaliando lançamento: coleção de 10.000. 50 itens com 3+ traços raros (top 0,5%). Mintar peça top-0,5% pode valer 0,5–2 ETH."], checklist: ["Antes: 1) Verifique que cálculo inclui TODOS os traços. 2) Confirme metadata on-chain verificada. 3) Verifique metadata dinâmica.", "Após: correlacione com preços de venda reais."], mistakes: ["O maior erro é pagar demais por raridade em coleção em declínio.", "Outro erro é usar uma única métrica sem entender a metodologia."], benchmarks: ["Prêmios: top 0,1%: 10–50x floor. Top 1%: 3–10x. Top 5%: 1,5–3x.", "Taxas: OpenSea 2,5%, Blur 0,5%. Royalties: 5–10%. Fricção total: 7,5–12,5%."], execution: ["Fluxo: 1) Calcular raridade. 2) Identificar top-5% abaixo do prêmio histórico. 3) Verificar listagem. 4) Calcular break-even. 5) Comprar se margem >30%.", "Para lançamentos: análise de probabilidade pré-reveal."], hygiene: ["Atualize dados quando metadata nova for revelada.", "Monitore saúde da coleção: tendência do floor, holders únicos, royalties."], validation: ["Valide verificando 5 NFTs aleatórios contra metadata on-chain.", "Back-test: verifique vendas reais de ranks similares."] },
+    tr: { interpret: ["Hesaplayıcı her NFT özelliğini koleksiyonun toplam arzına karşı puanlayarak bileşik nadirlik sıralaması üretir. İlk %1 genellikle floor'un 3–10 katı prim taşır.", "İstatistiksel nadirlik ile piyasa değerli nadirlik arasındaki farkı anlayın."], scenarios: ["Nadirlik değerinin altından alma: #120 sıralı NFT floor'un 2 katında listelenmiş. Tarihsel veriler ilk %1'in 5–8x floor'da satıldığını gösterir.", "Lansman değerlendirmesi: 10.000'lik koleksiyon. 50 item 3+ nadir özelliğe sahip. İlk %0,5'lik parça mintleme 0,5–2 ETH değerinde olabilir."], checklist: ["Önce: 1) Hesaplamanın TÜM özellikleri dahil ettiğini doğrulayın. 2) Doğrulanmış on-chain metadata onaylayın.", "Sonra: gerçek satış fiyatlarıyla ilişkilendirin."], mistakes: ["En büyük hata düşen koleksiyonda nadirlik için fazla ödemektir.", "Diğer hata metodolojiyi anlamadan tek metrik kullanmaktır."], benchmarks: ["Primler: ilk %0,1: 10–50x floor. İlk %1: 3–10x. İlk %5: 1,5–3x.", "Platform ücretleri: OpenSea %2,5, Blur %0,5. Telif: %5–10."], execution: ["Akış: 1) Nadirlik hesapla. 2) Tarihsel primin altında listelenen ilk %5'i belirle. 3) Listeyi doğrula. 4) Başa baş hesapla. 5) Marj >%30 ise al.", "Lansmanlar için: pre-reveal olasılık analizi kullanın."], hygiene: ["Yeni metadata açıklandığında verileri güncelleyin.", "Koleksiyon sağlığını izleyin: floor trendi, benzersiz sahipler, telif uygulaması."], validation: ["5 rastgele NFT'yi on-chain metadata ile doğrulayın.", "Geriye dönük test: benzer sıralamadaki NFT'lerin gerçekten tahmin edilen fiyata yakın satılıp satılmadığını doğrulayın."] },
+    hi: { interpret: ["रेरिटी कैलकुलेटर प्रत्येक NFT ट्रेट को कलेक्शन की कुल आपूर्ति के खिलाफ स्कोर करता है। शीर्ष 1% आमतौर पर फ्लोर से 3–10x प्रीमियम रखता है।", "सांख्यिकीय दुर्लभता और बाजार-मूल्यवान दुर्लभता के बीच अंतर समझें।"], scenarios: ["दुर्लभता मूल्य से नीचे खरीदना: #120 रैंक NFT 2x फ्लोर पर सूचीबद्ध। ऐतिहासिक डेटा शीर्ष 1% को 5–8x फ्लोर पर बिकता दिखाता है।", "लॉन्च मूल्यांकन: 10,000 कलेक्शन। 50 आइटम में 3+ दुर्लभ ट्रेट। शीर्ष-0.5% पीस मिंट करने का मूल्य 0.5–2 ETH हो सकता है।"], checklist: ["पहले: 1) सत्यापित करें कि गणना सभी ट्रेट शामिल करती है। 2) सत्यापित ऑन-चेन मेटाडेटा की पुष्टि करें।", "बाद में: वास्तविक बिक्री मूल्यों से सहसंबंधित करें।"], mistakes: ["सबसे बड़ी गलती गिरावट वाले कलेक्शन में दुर्लभता के लिए अधिक भुगतान करना है।", "एक और गलती कार्यप्रणाली समझे बिना एकल मेट्रिक का उपयोग करना है।"], benchmarks: ["प्रीमियम: शीर्ष 0.1%: 10–50x फ्लोर। शीर्ष 1%: 3–10x। शीर्ष 5%: 1.5–3x।", "मार्केटप्लेस शुल्क: OpenSea 2.5%, Blur 0.5%। रॉयल्टी: 5–10%।"], execution: ["वर्कफ़्लो: 1) दुर्लभता गणना करें। 2) ऐतिहासिक प्रीमियम से नीचे सूचीबद्ध शीर्ष 5% पहचानें। 3) लिस्टिंग सत्यापित करें। 4) ब्रेक-ईवन गणना करें।", "लॉन्च के लिए: प्री-रिवील संभावना विश्लेषण।"], hygiene: ["नया मेटाडेटा प्रकट होने पर डेटा अपडेट करें।", "कलेक्शन स्वास्थ्य मॉनिटर करें: फ्लोर ट्रेंड, अद्वितीय धारक, रॉयल्टी।"], validation: ["5 यादृच्छिक NFTs को ऑन-चेन मेटाडेटा से सत्यापित करें।", "बैक-टेस्ट: समान रैंक NFTs की वास्तविक बिक्री सत्यापित करें।"] },
+    ru: { interpret: ["Калькулятор оценивает каждый трейт NFT относительно общего предложения коллекции. Топ-1% обычно имеет премию 3–10x над floor.", "Поймите разницу между статистической и рыночной редкостью."], scenarios: ["Покупка ниже стоимости редкости: NFT ранг #120 (топ-1,2%) по 2x floor. Исторически топ-1% продаётся за 5–8x floor.", "Оценка запуска: коллекция 10 000. 50 предметов с 3+ редкими трейтами. Минт топ-0,5% может стоить 0,5–2 ETH."], checklist: ["Перед использованием: 1) Убедитесь, что расчёт включает ВСЕ трейты. 2) Подтвердите верифицированные ончейн-метаданные.", "После: сопоставьте с реальными ценами продаж."], mistakes: ["Главная ошибка — переплата за редкость в падающей коллекции.", "Другая — использование одной метрики без понимания методологии."], benchmarks: ["Премии: топ-0,1%: 10–50x floor. Топ-1%: 3–10x. Топ-5%: 1,5–3x.", "Комиссии: OpenSea 2,5%, Blur 0,5%. Роялти: 5–10%."], execution: ["Процесс: 1) Рассчитать редкость. 2) Найти топ-5% ниже исторической премии. 3) Проверить листинг. 4) Рассчитать безубыточность.", "Для запусков: анализ вероятности трейтов до ревила."], hygiene: ["Обновляйте данные при раскрытии новых метаданных.", "Мониторьте здоровье коллекции: тренд floor, уникальные держатели, роялти."], validation: ["Проверьте 5 случайных NFT по ончейн-метаданным.", "Бэктест: убедитесь, что NFT аналогичных рангов реально продавались по прогнозной цене."] },
+  },
+
+  'token-unlock-calculator': {
+    en: {
+      interpret: [
+        "The token unlock calculator projects the circulating supply increase from scheduled vesting events and estimates the potential price impact. A single unlock releasing 5%+ of circulating supply often creates 5–15% sell pressure within 48 hours as newly vested holders liquidate positions. The calculator shows the unlock schedule timeline, size relative to current supply, and historical price impact of similar unlocks for the same token.",
+        "Compare the unlock percentage to daily trading volume. If 10 million tokens unlock but daily volume is 50 million tokens, the market can absorb the selling pressure over 1–2 days with minimal impact. But if daily volume is only 2 million, a 10 million token unlock represents 5 days of typical volume — expect significant selling pressure. Use our <a href=\"/liquidation-calculator/\">liquidation calculator</a> to understand how price drops from unlocks affect leveraged positions."
+      ],
+      scenarios: [
+        "Cliff unlock approaching: a project you hold has a team token cliff unlock in 14 days releasing 15% of total supply (currently 0% of these tokens circulate). Historical data from similar projects shows cliff unlocks of >10% cause average 20–30% price drops in the week following unlock. The calculator recommends: reduce position by 50–75% before the unlock date and rebuy after selling pressure subsides (typically 5–14 days post-unlock).",
+        "Gradual vesting analysis: a DeFi token has linear vesting releasing 2% of total supply monthly for 24 months. At $50M daily volume and $2B market cap, each 2% release is $40M of potential selling — less than one day's volume. This gradual unlock is manageable and unlikely to cause significant price drops. The calculator confirms low unlock risk and suggests normal position management."
+      ],
+      checklist: [
+        "Before acting on unlock data: 1) Verify the unlock schedule from the official vesting contract on-chain — project websites sometimes show outdated schedules. 2) Check who receives the unlocked tokens (team, investors, foundation, community) — team and investor unlocks create more sell pressure than community airdrops. 3) Confirm whether tokens unlock to a wallet or directly to an exchange — tokens sent to exchanges indicate intent to sell.",
+        "After calculating: set price alerts at 10% and 20% below current price for the 7 days surrounding the unlock date. If the sell pressure is less severe than projected, consider buying the dip. If selling exceeds projections, exit remaining positions until the market stabilizes."
+      ],
+      mistakes: [
+        "The most costly mistake is ignoring token unlocks entirely and being surprised by sudden price drops. Major unlocks are predictable — they are written into smart contracts with exact dates and amounts. There is no excuse for being caught off-guard by a cliff unlock when the information is publicly available months in advance. Check unlock schedules for every token in your portfolio quarterly.",
+        "Another common error is assuming all unlock recipients will sell immediately. In practice, team members often hold through unlocks (especially in bull markets), and foundation tokens may be locked in governance or staking rather than sold. The actual sell pressure is typically 30–70% of the unlocked amount, not 100%. Adjust your risk calculations accordingly."
+      ],
+      benchmarks: [
+        "Unlock impact benchmarks by type: cliff unlocks (>10% supply) cause −15% to −30% average price impact. Monthly linear vesting (<3% supply) causes −2% to −5% average monthly drag. Investor unlocks create more selling than team unlocks (investors seek liquidity, teams have incentive to hold). Foundation/ecosystem unlocks have the least immediate sell pressure.",
+        "Recovery timeline benchmarks: after major cliff unlocks, price typically recovers 50% of the drop within 14–30 days as selling pressure exhausts. Full recovery to pre-unlock levels takes 30–90 days in stable markets. In bear markets, unlock-driven drops may not fully recover for months. Plan your re-entry timing based on these historical recovery patterns."
+      ],
+      execution: [
+        "Pre-unlock risk management: 1) Map all unlock dates for portfolio tokens using Token Unlocks or VestLab. 2) For unlocks >5% of supply in next 30 days, reduce position to 25–50% of normal size. 3) Set limit buy orders at 15% and 25% below current price to catch the post-unlock dip. 4) After the unlock, monitor exchange inflows — when inflows normalize (return to pre-unlock levels), selling pressure has largely passed.",
+        "For yield farmers: if you are providing liquidity in a pool containing a token with an upcoming major unlock, consider withdrawing before the unlock to avoid impermanent loss from the price drop. Recalculate your <a href=\"/staking-calculator/\">staking position</a> post-unlock when yields may actually increase (fewer stakers if price drops reduce participation)."
+      ],
+      hygiene: [
+        "Maintain an unlock calendar for all portfolio holdings. Update monthly as projects sometimes modify vesting schedules through governance votes. Use TokenUnlocks.app, VestLab, or CryptoRank's vesting pages as primary data sources. Cross-reference with on-chain vesting contract data for high-value positions.",
+        "Track actual unlock price impacts versus your projections. After 10 unlock events, you will have enough data to calibrate your risk model for different unlock types and sizes. Some protocols consistently see less selling than expected (strong holder conviction), while others see more (investor-heavy unlock schedules)."
+      ],
+      validation: [
+        "Validate unlock schedules by reading the actual vesting smart contract on-chain. Call the contract's vesting functions to confirm: unlock dates, amounts per tranche, beneficiary addresses, and whether any acceleration clauses exist. Do not rely solely on project websites or third-party trackers — verify primary source data for large positions.",
+        "After each unlock event, compare actual price impact against the calculator's projection. If the calculator consistently over-estimates (predicts −20% but actual is −8%), adjust the sell-through rate assumption downward. If it under-estimates, you are not accounting for sufficient selling pressure — increase the assumption."
+      ],
+    },
+    es: { interpret: ["La calculadora proyecta el aumento de suministro circulante por eventos de vesting y estima el impacto en precio. Un desbloqueo que libere >5% del suministro suele crear 5–15% de presión vendedora en 48 horas.", "Compara el porcentaje de desbloqueo con el volumen diario. Si 10 millones de tokens se desbloquean pero el volumen diario es solo 2 millones, espera presión significativa."], scenarios: ["Cliff unlock próximo: un proyecto libera 15% del suministro total en 14 días. Datos históricos muestran caídas de 20–30%. Reduce posición 50–75% antes.", "Vesting gradual: 2% mensual durante 24 meses con $50M de volumen diario. Cada liberación es <1 día de volumen. Riesgo bajo."], checklist: ["Antes: 1) Verifica el cronograma del contrato on-chain. 2) Revisa quién recibe los tokens. 3) Confirma si van a wallet o exchange.", "Después: configura alertas de precio al −10% y −20% para los 7 días alrededor del desbloqueo."], mistakes: ["El error más costoso es ignorar los desbloqueos. Son predecibles — escritos en contratos inteligentes.", "Otro error es asumir que todos los receptores venderán inmediatamente. Típicamente 30–70% del monto se vende."], benchmarks: ["Impacto por tipo: cliff >10%: −15% a −30%. Vesting mensual <3%: −2% a −5% mensual.", "Recuperación: 50% del drop en 14–30 días. Recuperación completa en 30–90 días en mercados estables."], execution: ["Gestión pre-unlock: 1) Mapear todas las fechas. 2) Para >5% en 30 días, reducir posición. 3) Órdenes límite al −15% y −25%. 4) Monitorear ingresos a exchanges post-unlock.", "Para yield farmers: considerar retirar liquidez antes para evitar pérdida impermanente."], hygiene: ["Mantener calendario de desbloqueos. Actualizar mensualmente.", "Rastrear impactos reales vs proyecciones para calibrar el modelo."], validation: ["Validar cronogramas leyendo el contrato de vesting on-chain.", "Comparar impacto real vs proyección después de cada evento."] },
+    pt: { interpret: ["A calculadora projeta o aumento de supply circulante por eventos de vesting e estima impacto no preço. Unlock liberando >5% cria 5–15% de pressão vendedora em 48 horas.", "Compare percentual de unlock com volume diário. Se volume é baixo relativo ao unlock, espere pressão significativa."], scenarios: ["Cliff unlock se aproximando: projeto libera 15% do supply em 14 dias. Dados mostram quedas de 20–30%. Reduza posição 50–75%.", "Vesting gradual: 2% mensal por 24 meses com $50M volume diário. Risco baixo."], checklist: ["Antes: 1) Verifique cronograma on-chain. 2) Confira quem recebe. 3) Confirme se vão para wallet ou exchange.", "Após: alertas de preço −10% e −20% por 7 dias."], mistakes: ["O erro mais custoso é ignorar unlocks. São previsíveis.", "Outro erro é assumir que todos venderão. Tipicamente 30–70% é vendido."], benchmarks: ["Impacto: cliff >10%: −15% a −30%. Vesting mensal <3%: −2% a −5%.", "Recuperação: 50% em 14–30 dias. Completa em 30–90 dias."], execution: ["Gestão pré-unlock: 1) Mapear datas. 2) Para >5% em 30 dias, reduzir. 3) Ordens limite −15% e −25%. 4) Monitorar inflows pós-unlock.", "Para yield farmers: retirar liquidez antes para evitar IL."], hygiene: ["Manter calendário de unlocks. Atualizar mensalmente.", "Rastrear impactos reais vs projeções."], validation: ["Validar lendo contrato de vesting on-chain.", "Comparar impacto real vs projeção."] },
+    tr: { interpret: ["Hesaplayıcı, planlanmış vesting olaylarından dolaşımdaki arz artışını ve olası fiyat etkisini tahmin eder. >%5 arz serbest bırakan tek bir kilit açma genellikle 48 saat içinde %5–15 satış baskısı yaratır.", "Kilit açma yüzdesini günlük hacimle karşılaştırın. Hacim düşükse ciddi satış baskısı bekleyin."], scenarios: ["Cliff kilidi yaklaşıyor: proje 14 gün içinde toplam arzın %15'ini serbest bırakıyor. Tarihsel veriler %20–30 düşüş gösterir. Pozisyonu %50–75 azaltın.", "Kademeli vesting: 24 ay boyunca aylık %2. $50M günlük hacimle her serbest bırakma <1 günlük hacim. Düşük risk."], checklist: ["Önce: 1) Zincir üstü sözleşmeden takvimi doğrulayın. 2) Kimin aldığını kontrol edin. 3) Cüzdana mı borsaya mı gidiyor onaylayın.", "Sonra: kilit açma etrafında 7 gün için −%10 ve −%20 fiyat uyarıları kurun."], mistakes: ["En maliyetli hata kilit açmaları görmezden gelmektir. Öngörülebilirler.", "Diğer hata tüm alıcıların hemen satacağını varsaymaktır. Tipik olarak %30–70 satılır."], benchmarks: ["Etki: cliff >%10: −%15 ile −%30. Aylık vesting <%3: −%2 ile −%5.", "Toparlanma: düşüşün %50'si 14–30 günde. Tam toparlanma 30–90 gün."], execution: ["Pre-unlock yönetimi: 1) Tüm tarihleri haritalayın. 2) 30 günde >%5 için pozisyonu azaltın. 3) −%15 ve −%25'te limit emirleri. 4) Post-unlock borsa girişlerini izleyin.", "Getiri çiftçileri için: IL'den kaçınmak için önceden likidite çekin."], hygiene: ["Kilit açma takvimi tutun. Aylık güncelleyin.", "Gerçek etkileri projeksiyonlarla karşılaştırarak modeli kalibre edin."], validation: ["Zincir üstü vesting sözleşmesini okuyarak takvimi doğrulayın.", "Her olaydan sonra gerçek fiyat etkisini projeksiyonla karşılaştırın."] },
+    hi: { interpret: ["टोकन अनलॉक कैलकुलेटर निर्धारित वेस्टिंग इवेंट से सर्कुलेटिंग सप्लाई वृद्धि और संभावित मूल्य प्रभाव का अनुमान लगाता है। >5% सप्लाई जारी करने वाला एकल अनलॉक 48 घंटों में 5–15% बिक्री दबाव बनाता है।", "अनलॉक प्रतिशत की दैनिक ट्रेडिंग वॉल्यूम से तुलना करें। कम वॉल्यूम = गंभीर बिक्री दबाव।"], scenarios: ["क्लिफ अनलॉक: प्रोजेक्ट 14 दिनों में कुल सप्लाई का 15% जारी करता है। ऐतिहासिक डेटा 20–30% गिरावट दिखाता है। पोज़िशन 50–75% कम करें।", "क्रमिक वेस्टिंग: 24 महीने तक मासिक 2%। $50M दैनिक वॉल्यूम के साथ कम जोखिम।"], checklist: ["पहले: 1) ऑन-चेन अनुबंध से शेड्यूल सत्यापित करें। 2) कौन प्राप्त करता है जांचें। 3) वॉलेट या एक्सचेंज पर जाते हैं पुष्टि करें।", "बाद में: अनलॉक के 7 दिनों में −10% और −20% मूल्य अलर्ट सेट करें।"], mistakes: ["सबसे महंगी गलती अनलॉक को पूरी तरह अनदेखा करना है। वे पूर्वानुमेय हैं।", "एक और गलती मानना कि सभी प्राप्तकर्ता तुरंत बेचेंगे। आमतौर पर 30–70% बेचा जाता है।"], benchmarks: ["प्रभाव: क्लिफ >10%: −15% से −30%। मासिक वेस्टिंग <3%: −2% से −5%।", "रिकवरी: 14–30 दिनों में 50%। पूर्ण रिकवरी 30–90 दिन।"], execution: ["प्री-अनलॉक प्रबंधन: 1) सभी तिथियां मैप करें। 2) 30 दिनों में >5% के लिए पोज़िशन कम करें। 3) −15% और −25% पर लिमिट ऑर्डर। 4) पोस्ट-अनलॉक एक्सचेंज इनफ्लो मॉनिटर करें।", "यील्ड फार्मर्स: IL से बचने के लिए पहले लिक्विडिटी निकालने पर विचार करें।"], hygiene: ["अनलॉक कैलेंडर बनाए रखें। मासिक अपडेट करें।", "मॉडल कैलिब्रेट करने के लिए वास्तविक प्रभावों को अनुमानों से ट्रैक करें।"], validation: ["ऑन-चेन वेस्टिंग अनुबंध पढ़कर शेड्यूल मान्य करें।", "प्रत्येक इवेंट के बाद वास्तविक मूल्य प्रभाव की अनुमान से तुलना करें।"] },
+    ru: { interpret: ["Калькулятор прогнозирует рост обращающегося предложения от запланированных вестинг-событий и оценивает ценовое воздействие. Разблокировка >5% предложения обычно создаёт 5–15% давления продаж за 48 часов.", "Сравните процент разблокировки с дневным объёмом. Низкий объём = значительное давление."], scenarios: ["Приближается клифф: проект через 14 дней разблокирует 15% общего предложения. Исторически — падение 20–30%. Сократите позицию на 50–75%.", "Постепенный вестинг: 2% ежемесячно 24 месяца при $50M дневного объёма. Низкий риск."], checklist: ["Перед действиями: 1) Проверьте расписание по ончейн-контракту. 2) Узнайте получателей. 3) Подтвердите — на кошелёк или биржу.", "После: оповещения −10% и −20% на 7 дней вокруг разблокировки."], mistakes: ["Самая дорогая ошибка — игнорировать разблокировки. Они предсказуемы.", "Другая — считать, что все получатели сразу продадут. Обычно продаётся 30–70%."], benchmarks: ["Воздействие: клифф >10%: −15%–−30%. Месячный вестинг <3%: −2%–−5%.", "Восстановление: 50% за 14–30 дней. Полное — 30–90 дней."], execution: ["Управление до разблокировки: 1) Составьте карту дат. 2) Для >5% за 30 дней сократите позицию. 3) Лимитные ордера на −15% и −25%. 4) Мониторьте притоки на биржи.", "Для фермеров: выведите ликвидность до разблокировки для предотвращения IL."], hygiene: ["Ведите календарь разблокировок. Обновляйте ежемесячно.", "Отслеживайте реальное влияние vs прогнозы для калибровки модели."], validation: ["Проверяйте расписание по ончейн-контракту вестинга.", "Сравнивайте реальный ценовой эффект с прогнозом после каждого события."] },
+  },
+
+  'whale-alert-calculator': {
+    en: {
+      interpret: [
+        "The whale alert calculator monitors and analyzes large crypto transactions, scoring them by potential market impact based on transaction size relative to daily volume, destination type (exchange vs wallet), and historical patterns of the sender address. A transaction scoring 'high impact' (moving >1% of daily volume to an exchange) has a 60–75% probability of preceding a 2–5% price move within 24 hours. 'Low impact' transactions (wallet-to-wallet, known cold storage moves) rarely affect price.",
+        "Differentiate between signal types. Whale deposits to exchanges (bearish signal — likely selling) versus whale withdrawals from exchanges (bullish signal — moving to self-custody for long-term holding). Whale-to-whale transfers (neutral — may be OTC deals or internal treasury management). The calculator's directional signal is most reliable for exchange-bound transactions. Combine whale signals with your <a href=\"/position-size-calculator/\">position sizing</a> strategy for risk management."
+      ],
+      scenarios: [
+        "Bearish whale signal: 5,000 BTC ($368M) deposited to Coinbase from a known early-miner wallet. This is 8% of Coinbase's daily BTC volume. Historical pattern: deposits of this size from long-dormant wallets precede 3–8% price drops within 48 hours as the whale distributes via OTC or market sells. The calculator recommends tightening stop-losses on leveraged longs and considering partial profit-taking on spot positions.",
+        "Bullish accumulation signal: the same whale address has withdrawn 2,000 BTC from Binance weekly for 6 consecutive weeks — totaling 12,000 BTC moved to cold storage. This consistent withdrawal pattern indicates strategic accumulation by a large holder. The calculator scores this as a strong long-term bullish signal. While short-term price impact is minimal (withdrawals reduce exchange supply gradually), the pattern suggests informed confidence in higher future prices."
+      ],
+      checklist: [
+        "Before acting on whale alerts: 1) Verify the transaction is real by checking on a block explorer — fake whale alerts are used for market manipulation on social media. 2) Identify the destination — exchange deposit = potential selling, cold wallet = accumulation. 3) Check if the sender is a known entity (exchange hot wallet, mining pool, treasury) — known entity moves are routine operations, not trading signals. 4) Compare transaction size to 24h trading volume — only transactions exceeding 0.5% of daily volume have meaningful price impact.",
+        "After analysis: do not front-run whale transactions impulsively. Large holders often use OTC desks specifically to avoid market impact. A deposit to an exchange may take days to sell through limit orders. React to the pattern (repeated deposits = sustained selling), not to individual transactions."
+      ],
+      mistakes: [
+        "The most common mistake is treating every large transaction as a trading signal. Over 80% of whale transactions are routine operations: exchange rebalancing, mining pool payouts, custody migrations, smart contract interactions, and OTC settlement. Only transactions from identified non-institutional wallets to exchanges carry reliable directional signal. Following every whale alert leads to overtrading and whipsaw losses.",
+        "Another frequent error is ignoring the time lag between whale deposits and actual selling. A whale depositing 10,000 ETH to an exchange may sell over 5–14 days using algorithmic order distribution, not in a single market dump. The price impact is gradual, not immediate. Setting tight stop-losses based on whale deposits often triggers premature exits before the actual selling begins. Use wider stop-losses and longer time horizons for whale-based signals."
+      ],
+      benchmarks: [
+        "Whale transaction impact benchmarks: BTC deposit to exchange >1,000 BTC ($73M+) has 65% correlation with 2–5% price decline within 48 hours. ETH deposit >10,000 ETH ($23M+) has 55% correlation with 2–4% decline. For stablecoins, large exchange deposits (>$50M USDT/USDC) correlate with subsequent buying activity — whales often deposit stablecoins to buy the dip.",
+        "Volume-relative benchmarks: transactions <0.1% of daily volume = noise (no signal). 0.1–0.5% = weak signal (monitor but do not act). 0.5–2% = moderate signal (adjust risk). >2% of daily volume = strong signal (take defensive action on leveraged positions). These thresholds adjust based on market volatility — during low-volatility periods, smaller transactions have proportionally larger impact."
+      ],
+      execution: [
+        "Whale monitoring workflow: 1) Set up alerts via Whale Alert, Arkham Intelligence, or on-chain monitoring tools for transactions >$10M. 2) When alert fires, classify: exchange-bound (bearish), wallet-bound (bullish), or neutral. 3) Check sender history on Arkham or Nansen for context. 4) If high-impact exchange deposit, tighten stops on leveraged positions and consider reducing exposure by 10–20%. 5) If accumulation pattern, use as confirmation bias for existing long positions.",
+        "For portfolio risk management: create a whale activity dashboard tracking the top 10 holder addresses for each major token in your portfolio using <a href=\"/profit-calculator/\">Nansen or Arkham</a>. Weekly check of whale movements provides early warning of distribution (bearish) or accumulation (bullish) phases before they appear in price action. This gives 1–5 days of lead time over pure technical analysis."
+      ],
+      hygiene: [
+        "Curate your whale alert sources. Raw blockchain alerts generate hundreds of notifications daily, most of which are noise. Use filtered services (Arkham Intelligence, Nansen Smart Alerts) that label known entities and filter out routine operations. Set minimum thresholds appropriate for your portfolio size — a $1M trader does not need alerts for $100K transactions.",
+        "Track whale alert accuracy monthly. Record each alert you acted on, the action taken, and the outcome after 48 hours. If your whale-based trades have a hit rate below 55%, your filter criteria are too loose — tighten the minimum transaction size and focus only on exchange-bound transactions from non-institutional wallets."
+      ],
+      validation: [
+        "Validate whale alerts against actual on-chain data before acting. Check the transaction hash on a block explorer to confirm: actual amount transferred (alerts sometimes report gross amounts including change outputs), actual destination (verify it is an exchange deposit address, not just a contract interaction), and whether the transaction is confirmed (unconfirmed transactions may never execute).",
+        "Back-test whale signal reliability over 90 days. Track 50 consecutive whale alerts, record the subsequent 48-hour price change, and calculate the win rate for bearish and bullish signals separately. If bearish signals (exchange deposits) do not predict negative price movement at least 55% of the time, the signal lacks edge and should not be used for trading decisions."
+      ],
+    },
+    es: { interpret: ["La calculadora monitorea transacciones cripto grandes, puntuándolas por impacto potencial basado en tamaño vs volumen diario, tipo de destino y patrones históricos. 'Alto impacto' tiene 60–75% de probabilidad de preceder movimiento de 2–5%.", "Diferencia tipos: depósitos a exchanges (bajista), retiros (alcista), whale-to-whale (neutral)."], scenarios: ["Señal bajista: 5,000 BTC depositados a Coinbase desde wallet antigua. 8% del volumen diario. Patrón histórico: caídas de 3–8% en 48 horas.", "Señal de acumulación: misma dirección retira 2,000 BTC semanales de Binance por 6 semanas. Señal alcista a largo plazo."], checklist: ["Antes de actuar: 1) Verifica la transacción en explorador. 2) Identifica destino. 3) Verifica si es entidad conocida. 4) Compara tamaño vs volumen 24h.", "Después: no reacciones impulsivamente. Grandes holders usan OTC. Reacciona a patrones, no transacciones individuales."], mistakes: ["El error más común es tratar cada transacción grande como señal. >80% son operaciones rutinarias.", "Otro error es ignorar el desfase temporal. La venta puede distribuirse en 5–14 días, no inmediatamente."], benchmarks: ["BTC >1,000 a exchange: 65% correlación con −2–5% en 48h. ETH >10,000: 55% correlación con −2–4%.", "Umbrales de volumen: <0,1% = ruido. 0,5–2% = señal moderada. >2% = señal fuerte."], execution: ["Flujo: 1) Alertas para >$10M. 2) Clasificar: exchange (bajista), wallet (alcista), neutral. 3) Verificar historial del remitente. 4) Si depósito de alto impacto, ajustar stops. 5) Si acumulación, confirmar posiciones largas.", "Para gestión de riesgo: dashboard de actividad whale para los 10 mayores holders de cada token."], hygiene: ["Filtra fuentes de alertas. Usa servicios filtrados que etiqueten entidades conocidas.", "Rastrea precisión mensualmente. Si tasa de éxito <55%, ajusta los criterios."], validation: ["Valida contra datos on-chain reales antes de actuar.", "Prueba retrospectiva de 90 días: rastrea 50 alertas consecutivas y calcula tasa de éxito."] },
+    pt: { interpret: ["A calculadora monitora transações grandes, pontuando por impacto potencial baseado em tamanho vs volume diário, tipo de destino e padrões históricos. 'Alto impacto' tem 60–75% de probabilidade de preceder movimento de 2–5%.", "Diferencie tipos: depósitos em exchanges (bearish), retiradas (bullish), whale-to-whale (neutro)."], scenarios: ["Sinal bearish: 5.000 BTC depositados na Coinbase de carteira antiga. 8% do volume diário. Padrão: quedas de 3–8% em 48h.", "Sinal de acumulação: mesmo endereço retira 2.000 BTC semanais da Binance por 6 semanas. Sinal bullish longo prazo."], checklist: ["Antes: 1) Verifique transação no explorador. 2) Identifique destino. 3) Confira se é entidade conhecida. 4) Compare tamanho vs volume 24h.", "Após: não reaja impulsivamente. Reaja a padrões, não transações individuais."], mistakes: [">80% das transações whale são rotineiras.", "Outro erro é ignorar defasagem temporal. Venda pode levar 5–14 dias."], benchmarks: ["BTC >1.000 para exchange: 65% correlação com −2–5% em 48h.", "Limiares: <0,1% volume = ruído. >2% = sinal forte."], execution: ["Fluxo: 1) Alertas >$10M. 2) Classificar. 3) Verificar histórico. 4) Ajustar stops. 5) Confirmar posições.", "Dashboard de atividade whale para maiores holders."], hygiene: ["Filtre fontes. Use serviços que rotulem entidades.", "Rastreie precisão mensalmente."], validation: ["Valide contra dados on-chain.", "Back-test 90 dias: 50 alertas, calcule taxa de acerto."] },
+    tr: { interpret: ["Hesaplayıcı büyük kripto işlemlerini izler ve boyut/hacim oranı, hedef türü ve göndericinin tarihsel kalıplarına göre potansiyel piyasa etkisi puanlar. 'Yüksek etki' %60–75 olasılıkla %2–5 fiyat hareketinden önce gelir.", "Sinyal türlerini ayırt edin: borsaya yatırma (düşüş), çekme (yükseliş), whale-to-whale (nötr)."], scenarios: ["Düşüş sinyali: eski cüzdandan Coinbase'e 5.000 BTC yatırıldı. Günlük hacmin %8'i. Kalıp: 48 saat içinde %3–8 düşüş.", "Biriktirme sinyali: aynı adres 6 hafta boyunca Binance'den haftalık 2.000 BTC çekiyor. Uzun vadeli yükseliş sinyali."], checklist: ["Önce: 1) İşlemi blok gezgininde doğrulayın. 2) Hedefi belirleyin. 3) Bilinen kuruluş mu kontrol edin. 4) Boyutu 24s hacimle karşılaştırın.", "Sonra: dürtüsel tepki vermeyin. Kalıplara tepki verin."], mistakes: ["En yaygın hata her büyük işlemi sinyal olarak değerlendirmektir. >%80'i rutindir.", "Diğer hata zaman gecikmesini görmezden gelmektir. Satış 5–14 güne yayılabilir."], benchmarks: ["BTC >1.000 borsaya: %65 korelasyon −%2–5 48s içinde.", "Eşikler: <%0,1 hacim = gürültü. >%2 = güçlü sinyal."], execution: ["Akış: 1) >$10M uyarılar. 2) Sınıflandır. 3) Göndericinin geçmişini doğrula. 4) Yüksek etkide stopları sıkılaştır.", "Risk yönetimi: her tokenın ilk 10 sahibi için whale paneli."], hygiene: ["Uyarı kaynaklarını filtreleyin. Bilinen kuruluşları etiketleyen hizmetler kullanın.", "Doğruluğu aylık takip edin."], validation: ["Harekete geçmeden önce on-chain verilerle doğrulayın.", "90 günlük geriye dönük test: 50 uyarı, başarı oranı hesaplayın."] },
+    hi: { interpret: ["व्हेल अलर्ट कैलकुलेटर बड़े क्रिप्टो लेनदेन की निगरानी करता है, दैनिक वॉल्यूम के सापेक्ष आकार, गंतव्य प्रकार और प्रेषक के ऐतिहासिक पैटर्न के आधार पर संभावित बाजार प्रभाव का स्कोर करता है। 'उच्च प्रभाव' में 24 घंटों में 2–5% मूल्य चाल से पहले आने की 60–75% संभावना है।", "सिग्नल प्रकारों में अंतर करें: एक्सचेंज जमा (मंदी), निकासी (तेजी), whale-to-whale (तटस्थ)।"], scenarios: ["मंदी सिग्नल: पुराने वॉलेट से Coinbase में 5,000 BTC जमा। दैनिक वॉल्यूम का 8%। पैटर्न: 48 घंटों में 3–8% गिरावट।", "संचय सिग्नल: वही पता 6 सप्ताह से Binance से साप्ताहिक 2,000 BTC निकाल रहा। दीर्घकालिक तेजी सिग्नल।"], checklist: ["पहले: 1) ब्लॉक एक्सप्लोरर में लेनदेन सत्यापित करें। 2) गंतव्य पहचानें। 3) ज्ञात संस्था है या नहीं जांचें। 4) 24h वॉल्यूम से तुलना करें।", "बाद में: आवेगी प्रतिक्रिया न दें। व्यक्तिगत लेनदेन नहीं, पैटर्न पर प्रतिक्रिया दें।"], mistakes: ["सबसे आम गलती हर बड़े लेनदेन को सिग्नल मानना है। >80% नियमित संचालन हैं।", "एक और गलती समय अंतर को अनदेखा करना है। बिक्री 5–14 दिनों में फैल सकती है।"], benchmarks: ["BTC >1,000 एक्सचेंज पर: 48h में −2–5% के साथ 65% सहसंबंध।", "सीमाएं: <0.1% वॉल्यूम = शोर। >2% = मजबूत सिग्नल।"], execution: ["वर्कफ़्लो: 1) >$10M अलर्ट। 2) वर्गीकृत करें। 3) प्रेषक इतिहास सत्यापित करें। 4) उच्च प्रभाव जमा पर स्टॉप कसें।", "जोखिम प्रबंधन: प्रत्येक टोकन के शीर्ष 10 धारकों के लिए whale गतिविधि डैशबोर्ड।"], hygiene: ["अलर्ट स्रोत फ़िल्टर करें। ज्ञात संस्थाओं को लेबल करने वाली सेवाएं उपयोग करें।", "मासिक सटीकता ट्रैक करें।"], validation: ["कार्रवाई से पहले ऑन-चेन डेटा से मान्य करें।", "90-दिन बैक-टेस्ट: 50 अलर्ट ट्रैक करें, हिट रेट गणना करें।"] },
+    ru: { interpret: ["Калькулятор мониторит крупные криптотранзакции, оценивая потенциальное рыночное воздействие по размеру/объёму, типу назначения и историческим паттернам. «Высокое воздействие» на 60–75% предшествует движению 2–5% за 24 часа.", "Различайте типы: депозит на биржу (медвежий), вывод (бычий), whale-to-whale (нейтральный)."], scenarios: ["Медвежий сигнал: 5 000 BTC с древнего кошелька на Coinbase. 8% дневного объёма. Паттерн: падение 3–8% за 48 часов.", "Сигнал накопления: тот же адрес выводит 2 000 BTC еженедельно с Binance 6 недель подряд. Долгосрочный бычий сигнал."], checklist: ["Перед действиями: 1) Проверьте транзакцию в обозревателе. 2) Определите назначение. 3) Проверьте, известная ли организация. 4) Сравните размер с объёмом.", "После: не реагируйте импульсивно. Реагируйте на паттерны."], mistakes: ["Самая частая ошибка — считать каждую крупную транзакцию сигналом. >80% — рутина.", "Другая — игнорировать временной лаг. Продажа может растянуться на 5–14 дней."], benchmarks: ["BTC >1 000 на биржу: 65% корреляция с −2–5% за 48ч.", "Пороги: <0,1% объёма = шум. >2% = сильный сигнал."], execution: ["Процесс: 1) Оповещения >$10M. 2) Классификация. 3) Проверка истории отправителя. 4) При высоком импакте — сжать стопы.", "Для управления рисками: панель активности китов по топ-10 держателям каждого токена."], hygiene: ["Фильтруйте источники. Используйте сервисы с маркировкой известных организаций.", "Ежемесячно отслеживайте точность."], validation: ["Проверяйте по ончейн-данным перед действиями.", "Бэктест 90 дней: 50 оповещений, рассчитайте процент попаданий."] },
+  },
 };
