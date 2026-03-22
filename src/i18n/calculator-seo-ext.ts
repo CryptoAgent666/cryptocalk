@@ -46,11 +46,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     es: {
       interpret: [
       "La salida principal del convertidor es la tasa de mercado medio — compárala con la cotización real de tu exchange antes de operar. Una diferencia superior al 0,5% indica datos obsoletos o spread alto; actualiza la página.",
-      "Usa el valor convertido como verificación previa, no como precio de ejecución. Para órdenes grandes, multiplica la salida por tu porcentaje de deslizamiento esperado para estimar el costo real de ejecución."
+      "Usa el valor convertido como verificación previa, no como precio de ejecución. Para órdenes grandes, multiplica la salida por tu porcentaje de deslizamiento esperado para estimar el costo real de ejecución. Pasa el resultado por nuestra <a href=\"/es/calculadora-beneficio-cripto/\">calculadora de beneficios</a> para ver cómo las comisiones y spreads afectan tu ganancia neta."
       ],
       scenarios: [
       "Dimensionamiento pre-operación: convierte tu presupuesto fiat planificado antes de introducir la orden en el exchange. Pagos de facturas: usa el convertidor para fijar el equivalente fiat en la fecha de la factura.",
-      "Valoración de cartera: ejecuta cada tenencia a través del convertidor a una base fiat común. Declaración de impuestos: convierte el valor de cripto recibido en una fecha específica a fiat para establecer la base de costo."
+      "Valoración de cartera: ejecuta cada tenencia a través del convertidor a una base fiat común. Declaración de impuestos: convierte el valor de cripto recibido en una fecha específica a fiat para establecer la base de costo requerida para las <a href=\"/es/calculadora-impuestos-cripto/\">declaraciones de impuestos cripto</a>."
       ],
       checklist: [
       "Antes de usar el valor convertido: 1) Confirma que el precio se obtuvo en los últimos 60 segundos. 2) Verifica que ambos campos muestren el activo correcto. 3) Comprueba que el decimal sea correcto.",
@@ -66,7 +66,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
       "Flujo de trabajo pre-operación estándar: abre el convertidor → introduce el presupuesto fiat → anota la cantidad de monedas → cambia al exchange → introduce esa cantidad como tamaño de orden → compara cotización con tasa del convertidor.",
-      "Para conversiones recurrentes, registra cada tasa convertida con marca de tiempo para documentar la base de costo fiscal."
+      "Para conversiones recurrentes (compras <a href=\"/es/calculadora-dca/\">DCA mensuales</a>, pagos de facturas), registra cada tasa convertida con marca de tiempo para documentar la base de costo fiscal."
       ],
       hygiene: [
       "Los precios de CoinGecko se actualizan cada 30–60 segundos. Recarga el convertidor entre cada uso durante sesiones de alta volatilidad.",
@@ -80,11 +80,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     pt: {
       interpret: [
       "A saída principal do conversor é a taxa de mercado médio — compare-a com a cotação real da sua exchange. Uma diferença acima de 0,5% sinaliza dados obsoletos ou spread alto.",
-      "Use o valor convertido como verificação prévia, não como preço de execução. Para ordens grandes, multiplique a saída pela porcentagem de slippage esperada."
+      "Use o valor convertido como verificação prévia, não como preço de execução. Para ordens grandes, multiplique a saída pela porcentagem de slippage esperada. Passe o resultado pela nossa <a href=\"/pt/calculadora-lucro-cripto/\">calculadora de lucros</a> para ver como taxas e spreads afetam seu ganho líquido."
       ],
       scenarios: [
       "Dimensionamento pré-negociação: converta seu orçamento fiat antes de inserir a ordem na exchange. Pagamentos de faturas: use o conversor para fixar o equivalente fiat na data da fatura.",
-      "Avaliação de portfólio: execute cada holding pelo conversor para uma base fiat comum. Declaração de impostos: converta o valor de cripto recebido para fiat para estabelecer a base de custo."
+      "Avaliação de portfólio: execute cada holding pelo conversor para uma base fiat comum. Declaração de impostos: converta o valor de cripto recebido para fiat para estabelecer a base de custo exigida nas <a href=\"/pt/calculadora-impostos-cripto/\">declarações fiscais de cripto</a>."
       ],
       checklist: [
       "Antes de usar o valor convertido: 1) Confirme que o preço foi obtido nos últimos 60 segundos. 2) Verifique se ambos os campos mostram o ativo correto. 3) Verifique o decimal.",
@@ -100,7 +100,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
       "Fluxo de trabalho padrão: abra o conversor → insira o orçamento fiat → anote a quantidade de moedas → mude para a exchange → insira essa quantidade como tamanho da ordem.",
-      "Para conversões recorrentes, registre cada taxa com um timestamp para documentação fiscal."
+      "Para conversões recorrentes (<a href=\"/pt/calculadora-dca/\">compras DCA</a> mensais, pagamentos de faturas), registre cada taxa com um timestamp para documentação fiscal."
       ],
       hygiene: [
       "Os preços do CoinGecko são atualizados a cada 30–60 segundos. Recarregue o conversor entre cada uso durante alta volatilidade.",
@@ -114,11 +114,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     tr: {
       interpret: [
       "Dönüştürücünün birincil çıktısı orta piyasa oranıdır — işlem yapmadan önce bunu exchange'inizin gerçek teklifleriyle karşılaştırın. 0,5%'ten fazla fark eski verilere işaret eder.",
-      "Dönüştürülen değeri yürütme fiyatı olarak değil ön kontrol olarak kullanın. Büyük emirler için çıktıyı beklenen kayma yüzdenizle çarpın."
+      "Dönüştürülen değeri yürütme fiyatı olarak değil ön kontrol olarak kullanın. Büyük emirler için çıktıyı beklenen kayma yüzdenizle çarpın. Sonucu <a href=\"/tr/kripto-kar-hesaplayici/\">kâr hesaplayıcımızdan</a> geçirerek komisyon ve spread'lerin net kazancınızı nasıl etkilediğini görün."
       ],
       scenarios: [
       "İşlem öncesi boyutlandırma: planlanan fiat bütçenizi exchange emir formuna girmeden önce coin miktarına dönüştürün. Fatura ödemeleri: kripto ile fatura keserken fatura tarihindeki fiat karşılığını kilitleyin.",
-      "Portföy değerleme: toplam güncel portföy değerini görmek için her varlığı ortak bir fiat tabanına dönüştürün."
+      "Portföy değerleme: toplam güncel portföy değerini görmek için her varlığı ortak bir fiat tabanına dönüştürün. Vergi beyannamesi: belirli bir tarihte alınan kripto değerini <a href=\"/tr/kripto-vergi-hesaplayici/\">kripto vergi hesaplayıcısı</a> için gereken maliyet tabanını belirlemek üzere fiat'a çevirin."
       ],
       checklist: [
       "Dönüştürülen değeri kullanmadan önce: 1) Fiyatın son 60 saniyede alındığını onaylayın. 2) Her iki para birimi alanının doğru varlığı gösterdiğini doğrulayın. 3) Ondalığın doğru olduğunu kontrol edin.",
@@ -134,7 +134,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
       "Standart iş akışı: dönüştürücüyü açın → fiat bütçeyi girin → coin miktarını not edin → exchange'e geçin → o miktarı emir büyüklüğü olarak girin.",
-      "Tekrarlayan dönüşümler için her oranı zaman damgasıyla kaydedin."
+      "Tekrarlayan dönüşümler (aylık <a href=\"/tr/dca-hesaplayici/\">DCA alımları</a>, fatura ödemeleri) için her oranı zaman damgasıyla kaydedin."
       ],
       hygiene: [
       "CoinGecko fiyatları her 30–60 saniyede bir yenilenir. Yüksek oynaklık dönemlerinde her kullanım arasında yenileyin.",
@@ -148,11 +148,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     hi: {
       interpret: [
       "कन्वर्टर का प्राथमिक आउटपुट मिड-मार्केट रेट है — ट्रेडिंग से पहले इसे अपने एक्सचेंज की वास्तविक कोट से तुलना करें। 0.5% से अधिक अंतर पुराने डेटा को दर्शाता है।",
-      "कन्वर्टेड वैल्यू को एक्जीक्यूशन प्राइस नहीं बल्कि प्री-चेक के रूप में उपयोग करें।"
+      "कन्वर्टेड वैल्यू को एक्जीक्यूशन प्राइस नहीं बल्कि प्री-चेक के रूप में उपयोग करें। फीस और स्प्रेड आपके नेट गेन को कैसे प्रभावित करते हैं यह देखने के लिए परिणाम को हमारे <a href=\"/hi/crypto-profit-calculator/\">प्रॉफिट कैलकुलेटर</a> से जांचें।"
       ],
       scenarios: [
       "प्री-ट्रेड साइजिंग: ऑर्डर फॉर्म में दर्ज करने से पहले फिएट बजट को कॉइन क्वांटिटी में कन्वर्ट करें। इनवॉइस पेमेंट: क्रिप्टो में बिलिंग करते समय फिएट इक्विवेलेंट लॉक करें।",
-      "पोर्टफोलियो वैल्यूएशन: कुल मूल्य देखने के लिए प्रत्येक होल्डिंग को साझा फिएट बेस पर कन्वर्ट करें।"
+      "पोर्टफोलियो वैल्यूएशन: कुल मूल्य देखने के लिए प्रत्येक होल्डिंग को साझा फिएट बेस पर कन्वर्ट करें। टैक्स रिपोर्टिंग: <a href=\"/hi/crypto-tax-calculator/\">क्रिप्टो टैक्स कैलकुलेटर</a> के लिए कॉस्ट बेसिस स्थापित करने हेतु प्राप्त क्रिप्टो को फिएट में कन्वर्ट करें।"
       ],
       checklist: [
       "कन्वर्टेड वैल्यू उपयोग करने से पहले: 1) पुष्टि करें कि प्राइस 60 सेकंड के भीतर फेच हुई थी। 2) दोनों करेंसी फील्ड सही एसेट दिखा रहे हैं। 3) दशमलव सही है।",
@@ -168,7 +168,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
       "स्टैंडर्ड वर्कफ्लो: कन्वर्टर खोलें → फिएट बजट दर्ज करें → कॉइन क्वांटिटी नोट करें → एक्सचेंज पर जाएं → वह क्वांटिटी ऑर्डर साइज के रूप में दर्ज करें।",
-      "आवर्ती कन्वर्जन के लिए प्रत्येक रेट को टाइमस्टैम्प के साथ रिकॉर्ड करें।"
+      "आवर्ती कन्वर्जन (मासिक <a href=\"/hi/dca-calculator/\">DCA खरीद</a>, बार-बार इनवॉइस भुगतान) के लिए प्रत्येक रेट को टाइमस्टैम्प के साथ रिकॉर्ड करें।"
       ],
       hygiene: [
       "हाई-वोलेटिलिटी के दौरान प्रत्येक उपयोग के बीच कन्वर्टर रीलोड करें।",
@@ -182,11 +182,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     ru: {
       interpret: [
       "Основной выход конвертера — среднерыночный курс. Сравните его с реальной котировкой биржи перед торговлей. Разница свыше 0,5% сигнализирует об устаревших данных или широком спреде — обновите страницу.",
-      "Используйте конвертированное значение как ориентир, а не как цену исполнения. Для крупных ордеров умножьте результат на ожидаемый процент проскальзывания для оценки реальной стоимости исполнения."
+      "Используйте конвертированное значение как ориентир, а не как цену исполнения. Для крупных ордеров умножьте результат на ожидаемый процент проскальзывания для оценки реальной стоимости исполнения. Пропустите результат через наш <a href=\"/ru/калькулятор-прибыли-криптовалют/\">калькулятор прибыли</a>, чтобы увидеть влияние комиссий и спредов на чистую прибыль."
       ],
       scenarios: [
       "Предторговый расчёт размера: переведите запланированный фиатный бюджет в количество монет до ввода ордера — это устранит ошибки десятичных знаков. Оплата счетов: зафиксируйте фиатный эквивалент на дату счёта для бухгалтерии.",
-      "Оценка портфеля: переведите каждую позицию в общую фиатную базу для просмотра совокупной стоимости без входа на каждую биржу. Налоговая отчётность: переводите стоимость полученных криптоактивов в фиат для определения базовой стоимости."
+      "Оценка портфеля: переведите каждую позицию в общую фиатную базу для просмотра совокупной стоимости без входа на каждую биржу. Налоговая отчётность: переводите стоимость полученных криптоактивов в фиат для определения базовой стоимости, необходимой для <a href=\"/ru/калькулятор-налогов-криптовалют/\">расчёта налогов на криптовалюту</a>."
       ],
       checklist: [
       "Перед использованием результата: 1) убедитесь, что цена загружена не более 60 секунд назад; 2) проверьте, что оба поля отображают нужные активы; 3) проверьте правильность десятичной точки.",
@@ -202,7 +202,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
       "Стандартный процесс: открыть конвертер → ввести фиатный бюджет → записать количество монет → перейти на биржу → ввести это количество как размер ордера → сравнить котировку с курсом конвертера.",
-      "Для регулярных конвертаций фиксируйте каждый курс с временной меткой для документации базовой стоимости и налоговой отчётности."
+      "Для регулярных конвертаций (ежемесячные <a href=\"/ru/калькулятор-dca/\">DCA-покупки</a>, оплата счетов) фиксируйте каждый курс с временной меткой для документации базовой стоимости и налоговой отчётности."
       ],
       hygiene: [
       "Цены CoinGecko обновляются каждые 30–60 секунд. Перезагружайте конвертер в периоды высокой волатильности. Добавьте его в закладки на телефоне.",
@@ -257,7 +257,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Seguimiento de P&L realizado: después de cerrar cada operación, introduce los precios de ejecución exactos y comisiones del historial de tu exchange para registrar tu beneficio o pérdida real por posición. Esto crea un registro acumulativo que puedes filtrar por activo o rango de fechas para revisar el rendimiento.",
-      "Punto de equilibrio previo a la operación: introduce el precio de compra previsto, cantidad y comisiones totales para encontrar el precio mínimo de venta necesario para alcanzar el punto de equilibrio. Úsalo antes de entrar en una posición para establecer un objetivo de salida mínimo realista."
+      "Punto de equilibrio previo a la operación: introduce el precio de compra previsto, cantidad y comisiones totales para encontrar el precio mínimo de venta necesario para alcanzar el punto de equilibrio. Usa nuestra <a href=\"/es/calculadora-punto-equilibrio/\">calculadora de punto de equilibrio</a> antes de entrar en una posición para establecer un objetivo de salida mínimo realista."
       ],
       checklist: [
       "Antes de calcular: 1) Usa precios de ejecución reales de tu exchange, no el precio mostrado al momento de entrada. 2) Incluye TODAS las comisiones: comisión maker/taker en compra y venta, y cualquier tarifa de red o retiro. 3) Para entradas multi-tramo, calcula primero el coste base promedio.",
@@ -269,11 +269,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       benchmarks: [
       "Para traders activos, una tasa de victorias saludable es del 50–60% con una relación promedio ganancia/pérdida de 1.5:1 o mejor. Si tu ganancia promedio por operación ganadora es menor que tu pérdida promedio, revisa tu estrategia de salida.",
-      "Compara tus retornos netos porcentuales con una posición de compra y mantenimiento de BTC durante el mismo período. Si el trading activo produce retornos netos más bajos, los costes de transacción o el mal timing están erosionando tu ventaja."
+      "Compara tus retornos netos porcentuales con una posición de compra y mantenimiento de BTC durante el mismo período — una estrategia <a href=\"/es/calculadora-dca/\">DCA</a> puede ser más eficaz. Si el trading activo produce retornos netos más bajos, los costes de transacción o el mal timing están erosionando tu ventaja."
       ],
       execution: [
       "Flujo de trabajo recomendado: exporta el CSV del historial de operaciones de tu exchange → para cada operación cerrada, introduce precio de compra, precio de venta, cantidad y tasas de comisión → registra el P&L neto en una hoja de cálculo → agrega semanal o mensualmente.",
-      "Para propósitos fiscales: ejecuta este calculador para cada operación del año fiscal. Agrupa resultados por activo. Separa ganancias a corto plazo (menos de 1 año) y largo plazo. Compensa ganancias con pérdidas antes de aplicar la tasa de ganancias de capital de tu jurisdicción."
+      "Para propósitos fiscales: ejecuta este calculador para cada operación del año fiscal. Agrupa resultados por activo. Separa ganancias a corto plazo (menos de 1 año) y largo plazo. Usa nuestra <a href=\"/es/calculadora-impuestos-cripto/\">calculadora de impuestos cripto</a> para compensar ganancias con pérdidas antes de aplicar la tasa de ganancias de capital de tu jurisdicción."
       ],
       hygiene: [
       "Mantén las tasas de comisión actualizadas — los exchanges cambian periódicamente los niveles de comisión. Si tu volumen de trading de 30 días cruza un umbral de nivel, tu tasa efectiva baja. Vuelve a introducir las operaciones con la nueva tasa si comparas rendimiento mensual.",
@@ -291,7 +291,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Rastreamento de P&L realizado: após fechar cada negociação, insira os preços de execução exatos e taxas do histórico da sua exchange para registrar seu lucro ou perda real por posição. Isso cria um registro acumulativo filtrável por ativo ou intervalo de datas.",
-      "Ponto de equilíbrio pré-negociação: insira o preço de compra pretendido, quantidade e taxas totais para encontrar o preço mínimo de venda necessário para atingir o equilíbrio. Use isso antes de entrar em uma posição para definir um alvo de saída mínimo realista."
+      "Ponto de equilíbrio pré-negociação: insira o preço de compra pretendido, quantidade e taxas totais para encontrar o preço mínimo de venda. Use nossa <a href=\"/pt/calculadora-staking/\">calculadora de staking</a> para comparar retornos passivos com trading ativo antes de definir um alvo de saída mínimo realista."
       ],
       checklist: [
       "Antes de calcular: 1) Use preços de execução reais da sua exchange. 2) Inclua TODAS as taxas: taxa maker/taker na compra e venda, e quaisquer taxas de rede ou saque. 3) Para entradas de múltiplos lotes, calcule primeiro o custo médio.",
@@ -303,11 +303,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       benchmarks: [
       "Para traders ativos, uma taxa de vitória saudável é de 50–60% com uma relação média ganho/perda de 1.5:1 ou melhor. Se seu lucro médio por negociação vencedora for menor que sua perda média, revise sua estratégia de saída.",
-      "Compare seus retornos percentuais líquidos com uma posição de compra e manutenção de BTC durante o mesmo período. Se o trading ativo produz retornos líquidos mais baixos, os custos de transação ou mau timing estão erodindo sua vantagem."
+      "Compare seus retornos percentuais líquidos com uma posição de compra e manutenção de BTC durante o mesmo período — uma estratégia <a href=\"/pt/calculadora-dca/\">DCA</a> pode ser mais eficaz. Se o trading ativo produz retornos líquidos mais baixos, os custos de transação ou mau timing estão erodindo sua vantagem."
       ],
       execution: [
       "Fluxo de trabalho recomendado: exporte o CSV do histórico de negociações da sua exchange → para cada negociação fechada, insira preço de compra, preço de venda, quantidade e taxas → registre o P&L líquido em uma planilha → agregue semanalmente ou mensalmente.",
-      "Para fins fiscais: execute esta calculadora para cada negociação do ano fiscal. Agrupe resultados por ativo. Separe ganhos de curto prazo (menos de 1 ano) e longo prazo. Compense ganhos com perdas antes de aplicar a alíquota de ganhos de capital da sua jurisdição."
+      "Para fins fiscais: execute esta calculadora para cada negociação do ano fiscal. Agrupe resultados por ativo. Separe ganhos de curto prazo (menos de 1 ano) e longo prazo. Use nossa <a href=\"/pt/calculadora-impostos-cripto/\">calculadora de impostos cripto</a> para compensar ganhos com perdas antes de aplicar a alíquota de ganhos de capital da sua jurisdição."
       ],
       hygiene: [
       "Mantenha as taxas atualizadas — as exchanges periodicamente alteram as faixas de comissão. Se seu volume de 30 dias cruzar um limite de faixa, sua taxa efetiva cai. Reinsira negociações com a nova taxa se comparar desempenho mensal.",
@@ -325,7 +325,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Gerçekleşmiş P&L takibi: her işlemi kapattıktan sonra, pozisyon başına gerçek kâr veya zararınızı kaydetmek için borsa geçmişinizden tam gerçekleşme fiyatlarını ve komisyonları girin.",
-      "İşlem öncesi başabaş noktası: planlanan alım fiyatınızı, miktarını ve toplam komisyonları girerek başabaş için gereken minimum satış fiyatını bulun. Bir pozisyona girmeden önce gerçekçi bir minimum çıkış hedefi belirlemek için bunu kullanın."
+      "İşlem öncesi başabaş noktası: planlanan alım fiyatınızı, miktarını ve toplam komisyonları girerek başabaş için gereken minimum satış fiyatını bulun. Bir pozisyona girmeden önce gerçekçi bir minimum çıkış hedefi belirlemek için <a href=\"/tr/kripto-donusturucu/\">kripto dönüştürücümüzle</a> güncel fiyatları doğrulayın."
       ],
       checklist: [
       "Hesaplamadan önce: 1) Borsa geçmişinizden gerçek gerçekleşme fiyatlarını kullanın. 2) TÜM komisyonları dahil edin: alım ve satımda maker/taker ücreti, ağ/çekim ücretleri. 3) Çoklu giriş için önce ortalama maliyet tabanını hesaplayın.",
@@ -337,11 +337,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       benchmarks: [
       "Aktif yatırımcılar için sağlıklı bir kazanma oranı, 1.5:1 veya daha iyi ortalama kazanma/kaybetme oranıyla %50–60'tır. Kazanan işlem başına ortalama kârınız ortalama kayıptan küçükse, çıkış stratejinizi gözden geçirin.",
-      "Net yüzde getirilerinizi aynı dönemde BTC buy-and-hold pozisyonuyla karşılaştırın. Aktif trading daha düşük net getiri üretiyorsa, işlem maliyetleri avantajınızı aşındırıyordur."
+      "Net yüzde getirilerinizi aynı dönemde BTC buy-and-hold pozisyonuyla karşılaştırın — bir <a href=\"/tr/dca-hesaplayici/\">DCA stratejisi</a> daha etkili olabilir. Aktif trading daha düşük net getiri üretiyorsa, işlem maliyetleri avantajınızı aşındırıyordur."
       ],
       execution: [
       "Önerilen iş akışı: borsanızdan işlem geçmişi CSV'sini dışa aktarın → her kapalı işlem için alım fiyatı, satış fiyatı, miktar ve komisyon oranlarını girin → net P&L'yi bir tabloya kaydedin → haftalık veya aylık toplayın.",
-      "Vergi amaçları için: vergi yılındaki her işlem için bu hesaplayıcıyı çalıştırın. Sonuçları varlığa göre gruplandırın. Kısa vadeli (1 yıldan az) ve uzun vadeli kazançları ayırın."
+      "Vergi amaçları için: vergi yılındaki her işlem için bu hesaplayıcıyı çalıştırın. Sonuçları varlığa göre gruplandırın. Kısa vadeli (1 yıldan az) ve uzun vadeli kazançları ayırın. Kazançları kayıplarla netleştirmek için <a href=\"/tr/kripto-vergi-hesaplayici/\">kripto vergi hesaplayıcımızı</a> kullanın."
       ],
       hygiene: [
       "Komisyon oranlarını güncel tutun — borsalar periyodik olarak komisyon katmanlarını değiştirir. 30 günlük işlem hacminiz bir katman eşiğini aşarsa efektif oranınız düşer.",
@@ -359,7 +359,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "वास्तविक P&L ट्रैकिंग: प्रत्येक ट्रेड बंद करने के बाद, प्रति पोजीशन आपके वास्तविक लाभ या हानि को रिकॉर्ड करने के लिए एक्सचेंज हिस्ट्री से सटीक भरण मूल्य और शुल्क दर्ज करें।",
-      "पूर्व-ट्रेड ब्रेकईवन: ब्रेकईवन के लिए न्यूनतम बिक्री मूल्य खोजने के लिए अपना इरादा खरीद मूल्य, मात्रा और कुल शुल्क दर्ज करें। एक पोजीशन में प्रवेश करने से पहले वास्तविक न्यूनतम निकास लक्ष्य निर्धारित करने के लिए इसका उपयोग करें।"
+      "पूर्व-ट्रेड ब्रेकईवन: ब्रेकईवन के लिए न्यूनतम बिक्री मूल्य खोजने के लिए अपना इरादा खरीद मूल्य, मात्रा और कुल शुल्क दर्ज करें। वर्तमान कीमतों की जांच के लिए हमारे <a href=\"/hi/crypto-converter/\">क्रिप्टो कन्वर्टर</a> का उपयोग करें और पोजीशन में प्रवेश से पहले वास्तविक न्यूनतम निकास लक्ष्य निर्धारित करें।"
       ],
       checklist: [
       "गणना से पहले: 1) एक्सचेंज से वास्तविक भरण मूल्यों का उपयोग करें। 2) सभी शुल्क शामिल करें: खरीद और बिक्री पर मेकर/टेकर शुल्क, नेटवर्क/निकासी शुल्क। 3) बहु-लेग प्रविष्टियों के लिए पहले औसत लागत आधार की गणना करें।",
@@ -371,11 +371,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       benchmarks: [
       "सक्रिय ट्रेडर्स के लिए, 1.5:1 या बेहतर के औसत जीत-हानि अनुपात के साथ स्वस्थ जीत दर 50–60% है। यदि आपका प्रति जीतने वाले ट्रेड का औसत लाभ आपकी औसत हानि से कम है, तो अपनी निकास रणनीति की समीक्षा करें।",
-      "अपने नेट प्रतिशत रिटर्न की तुलना उसी अवधि के दौरान BTC buy-and-hold पोजीशन से करें। यदि सक्रिय ट्रेडिंग कम नेट रिटर्न देती है, तो लेनदेन लागत आपका फायदा खा रही है।"
+      "अपने नेट प्रतिशत रिटर्न की तुलना उसी अवधि के दौरान BTC buy-and-hold पोजीशन से करें — <a href=\"/hi/dca-calculator/\">DCA रणनीति</a> अधिक प्रभावी हो सकती है। यदि सक्रिय ट्रेडिंग कम नेट रिटर्न देती है, तो लेनदेन लागत आपका फायदा खा रही है।"
       ],
       execution: [
       "अनुशंसित वर्कफ़्लो: एक्सचेंज से ट्रेड हिस्ट्री CSV निर्यात करें → प्रत्येक बंद ट्रेड के लिए खरीद मूल्य, बिक्री मूल्य, मात्रा और शुल्क दर दर्ज करें → नेट P&L को स्प्रेडशीट में रिकॉर्ड करें → साप्ताहिक या मासिक रूप से एकत्र करें।",
-      "कर उद्देश्यों के लिए: कर वर्ष में प्रत्येक ट्रेड के लिए यह कैलकुलेटर चलाएं। संपत्ति के अनुसार परिणाम समूहित करें। अल्पकालिक (1 वर्ष से कम) और दीर्घकालिक लाभ अलग करें।"
+      "कर उद्देश्यों के लिए: कर वर्ष में प्रत्येक ट्रेड के लिए यह कैलकुलेटर चलाएं। संपत्ति के अनुसार परिणाम समूहित करें। अल्पकालिक (1 वर्ष से कम) और दीर्घकालिक लाभ अलग करें। अपने न्यायक्षेत्र की कर दर लागू करने से पहले लाभ और हानि को नेट करने के लिए हमारे <a href=\"/hi/crypto-tax-calculator/\">क्रिप्टो टैक्स कैलकुलेटर</a> का उपयोग करें।"
       ],
       hygiene: [
       "शुल्क दरों को अद्यतन रखें — एक्सचेंज समय-समय पर शुल्क स्तर बदलते हैं। यदि आपका 30-दिन का ट्रेडिंग वॉल्यूम एक स्तर सीमा पार करता है, तो आपकी प्रभावी दर कम हो जाती है।",
@@ -393,7 +393,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Учёт реализованного P&L: после закрытия каждой сделки вводите точные цены исполнения и комиссии из истории биржи для записи фактической прибыли или убытка по каждой позиции. Это создаёт накопительный учёт, фильтруемый по активу или диапазону дат.",
-      "Точка безубыточности перед сделкой: введите планируемую цену покупки, количество и общие комиссии, чтобы найти минимальную цену продажи для выхода в ноль. Используйте это перед входом в позицию для установки реалистичной минимальной цели выхода."
+      "Точка безубыточности перед сделкой: введите планируемую цену покупки, количество и общие комиссии, чтобы найти минимальную цену продажи для выхода в ноль. Проверяйте актуальные курсы через наш <a href=\"/ru/конвертер-криптовалют/\">конвертер криптовалют</a> перед входом в позицию для установки реалистичной минимальной цели выхода."
       ],
       checklist: [
       "Перед расчётом: 1) Используйте фактические цены исполнения с биржи. 2) Включайте ВСЕ комиссии: мейкер/тейкер при покупке и продаже, сетевые и комиссии за вывод. 3) Для многоногих входов сначала рассчитайте среднюю себестоимость.",
@@ -405,11 +405,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       benchmarks: [
       "Для активных трейдеров здоровый коэффициент побед составляет 50–60% при среднем соотношении выигрыш/проигрыш 1.5:1 или лучше. Если ваша средняя прибыль на выигрышную сделку меньше средних потерь, пересмотрите стратегию выхода.",
-      "Сравните свои чистые процентные доходы с позицией «купить и держать» BTC за тот же период. Если активная торговля даёт более низкие чистые доходы, транзакционные издержки или плохой тайминг съедают ваше преимущество."
+      "Сравните свои чистые процентные доходы с позицией «купить и держать» BTC за тот же период — стратегия <a href=\"/ru/калькулятор-dca/\">DCA</a> может оказаться эффективнее. Если активная торговля даёт более низкие чистые доходы, транзакционные издержки или плохой тайминг съедают ваше преимущество."
       ],
       execution: [
       "Рекомендуемый рабочий процесс: экспортируйте CSV истории сделок с биржи → для каждой закрытой сделки введите цену покупки, цену продажи, количество и ставки комиссий → записывайте чистый P&L в таблицу → агрегируйте еженедельно или ежемесячно.",
-      "Для налоговых целей: запускайте этот калькулятор для каждой сделки в налоговом году. Группируйте результаты по активу. Разделяйте краткосрочный (менее 1 года) и долгосрочный доход. Компенсируйте прибыль убытками перед применением ставки налога на прирост капитала."
+      "Для налоговых целей: запускайте этот калькулятор для каждой сделки в налоговом году. Группируйте результаты по активу. Разделяйте краткосрочный (менее 1 года) и долгосрочный доход. Используйте наш <a href=\"/ru/калькулятор-налогов-криптовалют/\">калькулятор налогов</a> для компенсации прибыли убытками перед применением ставки налога на прирост капитала."
       ],
       hygiene: [
       "Держите ставки комиссий актуальными — биржи периодически меняют уровни комиссий. Если ваш 30-дневный объём торгов пересекает пороговое значение уровня, ваша эффективная ставка снижается.",
@@ -463,7 +463,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Evaluación previa a la compra: antes de comprar hardware de minería, introduce el hashrate y consumo de energía del minero, tu tarifa eléctrica y el precio actual de la moneda. Compara el período de recuperación entre varias monedas para identificar la opción más rentable.",
-      "Análisis de precio umbral: ejecuta el calculador en reversa — fija tus costes y encuentra el precio mínimo de la moneda necesario para cubrir gastos solo de electricidad. Este es tu \"precio de cierre\" — si la moneda cae por debajo, minar a pérdidas destruye más valor que simplemente comprar y mantener."
+      "Análisis de precio umbral: ejecuta el calculador en reversa — fija tus costes y encuentra el precio mínimo de la moneda necesario para cubrir gastos solo de electricidad. Este es tu \"precio de cierre\" — si la moneda cae por debajo, minar a pérdidas destruye más valor que simplemente comprar y mantener. Compara con una estrategia <a href=\"/es/calculadora-dca/\">DCA</a> para determinar si acumular directamente es más eficiente."
       ],
       checklist: [
       "Antes de ejecutar el cálculo: 1) Confirma tu tarifa eléctrica en kWh desde tu factura. 2) Usa el hashrate real de tu minero desde el software de monitoreo, no la ficha técnica. 3) Factoriza las comisiones del pool (típicamente 1–2%) que reducen los ingresos brutos.",
@@ -478,12 +478,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Compara tu coste por moneda minada (costes diarios totales / monedas minadas por día) con el precio spot actual y el coste promedio de minería de la red. Si estás por encima del promedio de la red, tu operación tiene eficiencia por debajo del promedio."
       ],
       execution: [
-      "Proceso paso a paso: 1) Obtén el consumo exacto de tu minero con un medidor de energía. 2) Saca tu tarifa eléctrica actual de tu última factura. 3) Encuentra la dificultad de red actual y la recompensa de bloque en un explorador de bloques. 4) Ingresa todos los valores. 5) Compara el beneficio diario con la alternativa de comprar la moneda.",
+      "Proceso paso a paso: 1) Obtén el consumo exacto de tu minero con un medidor de energía. 2) Saca tu tarifa eléctrica actual de tu última factura. 3) Encuentra la dificultad de red actual y la recompensa de bloque en un explorador de bloques. 4) Ingresa todos los valores. 5) Compara el beneficio diario con la alternativa de comprar la moneda usando nuestra <a href=\"/es/calculadora-beneficio-cripto/\">calculadora de beneficios</a>.",
       "Automatiza el seguimiento: actualiza el calculador semanalmente con datos frescos de dificultad y precio. Traza el beneficio diario en el tiempo para identificar cuándo la operación cruza hacia la no rentabilidad."
       ],
       hygiene: [
       "Recalcula después de cada ajuste de dificultad de red (cada ≈2 semanas para Bitcoin). Un aumento de dificultad del 10% reduce tu producción diaria de monedas en ≈10%. Mantenerse al día previene falsa confianza en cifras de rentabilidad desactualizadas.",
-      "Mantén registros de tus facturas eléctricas reales y la producción de monedas de tu panel de pool. Compara los datos mensuales reales con las estimaciones del calculador — las discrepancias consistentes revelan un error en tus suposiciones de entrada."
+      "Mantén registros de tus facturas eléctricas reales y la producción de monedas de tu panel de pool. Compara los datos mensuales reales con las estimaciones del calculador. Cuando vendas lo minado, registra los ingresos en nuestra <a href=\"/es/calculadora-impuestos-cripto/\">calculadora de impuestos</a> para calcular la obligación fiscal."
       ],
       validation: [
       "Verifica la producción diaria estimada de monedas con las shares e ingresos reportados de tu pool de minería para el mismo período. Si los ingresos de tu pool están un 10%+ por debajo de la estimación del calculador, verifica shares rechazadas, comisiones del pool u bloques huérfanos.",
@@ -497,7 +497,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Avaliação pré-compra: antes de comprar hardware de mineração, insira o hashrate e o consumo de energia do minerador, sua tarifa de eletricidade e o preço atual da moeda. Compare o período de payback entre várias moedas para identificar a opção mais lucrativa.",
-      "Análise de preço limite: execute a calculadora ao contrário — fixe seus custos e encontre o preço mínimo da moeda necessário para cobrir apenas os custos de eletricidade. Este é seu \"preço de encerramento\"."
+      "Análise de preço limite: execute a calculadora ao contrário — fixe seus custos e encontre o preço mínimo da moeda necessário para cobrir apenas os custos de eletricidade. Este é seu \"preço de encerramento\". Compare com uma estratégia <a href=\"/pt/calculadora-dca/\">DCA</a> para determinar se acumular diretamente é mais eficiente."
       ],
       checklist: [
       "Antes de calcular: 1) Confirme sua tarifa de eletricidade em kWh a partir de sua conta. 2) Use o hashrate real do seu minerador a partir de software de monitoramento. 3) Inclua as taxas do pool (tipicamente 1–2%) que reduzem a receita bruta.",
@@ -512,12 +512,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Compare seu custo por moeda minerada (custos diários totais / moedas mineradas por dia) com o preço spot atual e o custo médio de mineração da rede."
       ],
       execution: [
-      "Processo passo a passo: 1) Obtenha o consumo exato do seu minerador com um medidor de energia. 2) Retire sua tarifa de eletricidade atual de sua última conta. 3) Encontre a dificuldade atual da rede e a recompensa de bloco em um explorador de blocos. 4) Insira todos os valores.",
+      "Processo passo a passo: 1) Obtenha o consumo exato do seu minerador com um medidor de energia. 2) Retire sua tarifa de eletricidade atual de sua última conta. 3) Encontre a dificuldade atual da rede e a recompensa de bloco em um explorador de blocos. 4) Insira todos os valores. 5) Compare o lucro diário com a alternativa de comprar a moeda usando nossa <a href=\"/pt/calculadora-lucro-cripto/\">calculadora de lucros</a>.",
       "Automatize o rastreamento: atualize a calculadora semanalmente com dados frescos de dificuldade e preço. Trace o lucro diário ao longo do tempo para identificar quando a operação cruza para a não lucratividade."
       ],
       hygiene: [
       "Recalcule após cada ajuste de dificuldade da rede (a cada ≈2 semanas para Bitcoin). Um aumento de 10% na dificuldade reduz sua produção diária de moedas em ≈10%.",
-      "Mantenha registros de suas contas de eletricidade reais e produção de moedas do painel do pool. Compare os dados mensais reais com as estimativas da calculadora."
+      "Mantenha registros de suas contas de eletricidade reais e produção de moedas do painel do pool. Quando vender suas moedas mineradas, registre a receita em nossa <a href=\"/pt/calculadora-impostos-cripto/\">calculadora de impostos</a> para calcular a obrigação fiscal."
       ],
       validation: [
       "Verifique a produção diária estimada de moedas com as shares e ganhos reportados do seu pool de mineração para o mesmo período.",
@@ -531,7 +531,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Satın alma öncesi değerlendirme: madenci donanımı satın almadan önce madencinin hashrate ve güç tüketimini, elektrik tarifinizi ve mevcut coin fiyatını girin. En karlı seçeneği belirlemek için birden fazla coin arasında geri ödeme süresini karşılaştırın.",
-      "Eşik fiyat analizi: hesaplayıcıyı ters çalıştırın — maliyetlerinizi sabitleyin ve yalnızca elektriği karşılamak için gereken minimum coin fiyatını bulun. Bu \"kapatma fiyatınızdır\"."
+      "Eşik fiyat analizi: hesaplayıcıyı ters çalıştırın — maliyetlerinizi sabitleyin ve yalnızca elektriği karşılamak için gereken minimum coin fiyatını bulun. Bu \"kapatma fiyatınızdır\". Doğrudan bir <a href=\"/tr/dca-hesaplayici/\">DCA stratejisiyle</a> karşılaştırarak biriktirmenin daha verimli olup olmadığını belirleyin."
       ],
       checklist: [
       "Hesaplamadan önce: 1) kWh cinsinden elektrik tarifinizi faturanızdan onaylayın. 2) Madencinin gerçek dünya hashrate'ini teknik özellikler sayfasından değil, izleme yazılımından kullanın. 3) Brüt geliri azaltan havuz ücretlerini (genellikle %1–2) hesaba katın.",
@@ -546,12 +546,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Çıkarılan coin başına maliyetinizi (toplam günlük maliyetler / günlük çıkarılan coin) mevcut spot fiyat ve ağın ortalama madencilik maliyetiyle karşılaştırın."
       ],
       execution: [
-      "Adım adım süreç: 1) Bir güç ölçer ile madenciğinizin tam güç tüketimini alın. 2) Son faturanızdan mevcut elektrik tarifinizi çekin. 3) Bir blok gezgininden mevcut ağ zorluğunu ve blok ödülünü bulun. 4) Tüm değerleri girin.",
+      "Adım adım süreç: 1) Bir güç ölçer ile madenciğinizin tam güç tüketimini alın. 2) Son faturanızdan mevcut elektrik tarifinizi çekin. 3) Bir blok gezgininden mevcut ağ zorluğunu ve blok ödülünü bulun. 4) Tüm değerleri girin. 5) Günlük kârı, aynı bütçeyle coin satın alma alternatifiyle <a href=\"/tr/kripto-kar-hesaplayici/\">kâr hesaplayıcımız</a> kullanarak karşılaştırın.",
       "Takibi otomatikleştirin: hesaplayıcıyı haftalık olarak yeni zorluk ve fiyat verileriyle güncelleyin. Operasyonun kârsızlığa ne zaman geçtiğini belirlemek için günlük kârı zamanla çizin."
       ],
       hygiene: [
       "Her ağ zorluk ayarlamasından sonra (Bitcoin için her ≈2 haftada bir) yeniden hesaplayın. %10'luk bir zorluk artışı günlük coin çıktınızı ≈%10 azaltır.",
-      "Gerçek elektrik faturalarınızın ve havuz panonuzdan coin çıktısının kayıtlarını tutun. Aylık gerçek verileri hesaplayıcı tahminleriyle karşılaştırın."
+      "Gerçek elektrik faturalarınızın ve havuz panonuzdan coin çıktısının kayıtlarını tutun. Çıkarılan coin'leri sattığınızda, vergi yükümlülüğünüzü hesaplamak için geliri <a href=\"/tr/kripto-vergi-hesaplayici/\">kripto vergi hesaplayıcımıza</a> girin."
       ],
       validation: [
       "Aynı dönem için tahmini günlük coin çıktısını madencilik havuzunuzun bildirilen shares ve kazançlarıyla çapraz kontrol edin.",
@@ -565,7 +565,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "खरीद-पूर्व मूल्यांकन: माइनिंग हार्डवेयर खरीदने से पहले, माइनर का हैशरेट और पावर ड्रॉ, आपकी बिजली दर और वर्तमान कॉइन मूल्य दर्ज करें। सबसे लाभदायक विकल्प की पहचान करने के लिए कई कॉइनों में पेबैक अवधि की तुलना करें।",
-      "थ्रेशोल्ड मूल्य विश्लेषण: कैलकुलेटर को उलटा चलाएं — अपनी लागतें ठीक करें और केवल बिजली के लिए ब्रेकईवन के लिए आवश्यक न्यूनतम कॉइन मूल्य खोजें। यह आपका \"शटडाउन मूल्य\" है।"
+      "थ्रेशोल्ड मूल्य विश्लेषण: कैलकुलेटर को उलटा चलाएं — अपनी लागतें ठीक करें और केवल बिजली के लिए ब्रेकईवन के लिए आवश्यक न्यूनतम कॉइन मूल्य खोजें। यह आपका \"शटडाउन मूल्य\" है। <a href=\"/hi/dca-calculator/\">DCA रणनीति</a> से तुलना करें यह निर्धारित करने के लिए कि सीधे खरीदना अधिक कुशल है या नहीं।"
       ],
       checklist: [
       "गणना चलाने से पहले: 1) kWh में अपनी बिजली दर अपने बिल से पुष्टि करें। 2) स्पेक शीट से नहीं, मॉनिटरिंग सॉफ़्टवेयर से अपने माइनर का वास्तविक हैशरेट उपयोग करें। 3) पूल शुल्क (आमतौर पर 1–2%) शामिल करें जो सकल राजस्व कम करता है।",
@@ -580,12 +580,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "आपकी प्रति कॉइन खनन लागत (कुल दैनिक लागत / प्रति दिन खनन किए गए कॉइन) की तुलना वर्तमान स्पॉट मूल्य और नेटवर्क की औसत खनन लागत से करें।"
       ],
       execution: [
-      "चरण-दर-चरण प्रक्रिया: 1) किल-ए-वाट मीटर से अपने माइनर का सटीक पावर ड्रॉ प्राप्त करें। 2) अपनी नवीनतम बिल से वर्तमान बिजली दर निकालें। 3) ब्लॉक एक्सप्लोरर से वर्तमान नेटवर्क कठिनाई और ब्लॉक रिवार्ड खोजें।",
+      "चरण-दर-चरण प्रक्रिया: 1) किल-ए-वाट मीटर से अपने माइनर का सटीक पावर ड्रॉ प्राप्त करें। 2) अपनी नवीनतम बिल से वर्तमान बिजली दर निकालें। 3) ब्लॉक एक्सप्लोरर से वर्तमान नेटवर्क कठिनाई और ब्लॉक रिवार्ड खोजें। 4) दैनिक लाभ की तुलना समान बजट के साथ कॉइन खरीदने के विकल्प से करने के लिए हमारे <a href=\"/hi/crypto-profit-calculator/\">प्रॉफिट कैलकुलेटर</a> का उपयोग करें।",
       "ट्रैकिंग स्वचालित करें: ताजा कठिनाई और मूल्य डेटा के साथ साप्ताहिक रूप से कैलकुलेटर अपडेट करें।"
       ],
       hygiene: [
       "प्रत्येक नेटवर्क कठिनाई समायोजन (Bitcoin के लिए हर ≈2 सप्ताह) के बाद पुनः गणना करें। 10% कठिनाई वृद्धि आपके दैनिक कॉइन आउटपुट को ≈10% कम करती है।",
-      "अपने वास्तविक बिजली बिलों और पूल डैशबोर्ड से कॉइन आउटपुट के रिकॉर्ड रखें। मासिक वास्तविक की तुलना कैलकुलेटर अनुमानों से करें।"
+      "अपने वास्तविक बिजली बिलों और पूल डैशबोर्ड से कॉइन आउटपुट के रिकॉर्ड रखें। जब आप माइन किए गए कॉइन बेचें, तो कर देनदारी निर्धारित करने के लिए आय को हमारे <a href=\"/hi/crypto-tax-calculator/\">क्रिप्टो टैक्स कैलकुलेटर</a> में दर्ज करें।"
       ],
       validation: [
       "उसी अवधि के लिए अपने माइनिंग पूल की रिपोर्ट की गई शेयर और आय के साथ अनुमानित दैनिक कॉइन आउटपुट को क्रॉस-चेक करें।",
@@ -599,7 +599,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Оценка перед покупкой: перед приобретением майнингового оборудования введите хешрейт и потребление энергии майнера, ваш тариф на электроэнергию и текущую цену монеты. Сравните сроки окупаемости по нескольким монетам, чтобы определить наиболее прибыльный вариант.",
-      "Анализ порогового цены: запустите калькулятор в обратном порядке — зафиксируйте затраты и найдите минимальную цену монеты, необходимую для безубыточности только по электроэнергии. Это ваша \"цена отключения\"."
+      "Анализ порогового цены: запустите калькулятор в обратном порядке — зафиксируйте затраты и найдите минимальную цену монеты, необходимую для безубыточности только по электроэнергии. Это ваша \"цена отключения\". Сравните со стратегией <a href=\"/ru/калькулятор-dca/\">DCA</a>, чтобы определить, эффективнее ли покупать монеты напрямую."
       ],
       checklist: [
       "Перед расчётом: 1) Уточните тариф на электроэнергию в кВт·ч по своему счёту. 2) Используйте реальный хешрейт майнера из программы мониторинга. 3) Учтите комиссию пула (обычно 1–2%), которая уменьшает валовой доход.",
@@ -614,12 +614,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Сравните свою стоимость за добытую монету (общие суточные затраты / монет добыто в сутки) с текущей спотовой ценой и средними затратами на майнинг в сети."
       ],
       execution: [
-      "Пошаговый процесс: 1) Получите точное потребление энергии майнера с ваттметром. 2) Узнайте текущий тариф из последнего счёта. 3) Найдите текущую сложность сети и вознаграждение за блок в блокчейн-обозревателе. 4) Введите все значения.",
+      "Пошаговый процесс: 1) Получите точное потребление энергии майнера с ваттметром. 2) Узнайте текущий тариф из последнего счёта. 3) Найдите текущую сложность сети и вознаграждение за блок в блокчейн-обозревателе. 4) Введите все значения. 5) Сравните суточную прибыль с альтернативой покупки монеты через наш <a href=\"/ru/калькулятор-прибыли-криптовалют/\">калькулятор прибыли</a>.",
       "Автоматизируйте отслеживание: обновляйте калькулятор еженедельно со свежими данными о сложности и цене. Стройте график суточной прибыли во времени, чтобы заранее выявлять момент перехода в убыточность."
       ],
       hygiene: [
       "Пересчитывайте после каждой корректировки сложности сети (раз в ≈2 недели для Bitcoin). Рост сложности на 10% снижает суточный объём добычи монет на ≈10%.",
-      "Ведите записи фактических счетов за электроэнергию и объёма добычи монет из дашборда пула. Сравнивайте фактические ежемесячные показатели с расчётными."
+      "Ведите записи фактических счетов за электроэнергию и объёма добычи монет из дашборда пула. При продаже добытых монет вводите доход в наш <a href=\"/ru/калькулятор-налогов-криптовалют/\">калькулятор налогов</a> для определения налоговых обязательств."
       ],
       validation: [
       "Проверяйте расчётный суточный объём добычи монет, сверяя его с данными пула о шерах и доходе за тот же период.",
@@ -671,7 +671,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Plan de acumulación a largo plazo: configura un calendario de DCA mensual con una cantidad fija en dólares. Usa el calculador para proyectar cuántas monedas acumularías durante 1, 2 y 5 años a los precios actuales.",
-      "Evaluación de compras en mercado bajista: durante una caída del mercado, introduce todas tus fechas y montos históricos de compra para ver tu coste promedio exacto. Compara con el precio actual para saber precisamente cuánta recuperación necesitas para alcanzar el punto de equilibrio."
+      "Evaluación de compras en mercado bajista: durante una caída del mercado, introduce todas tus fechas y montos históricos de compra para ver tu coste promedio exacto. Compara con el precio actual para saber precisamente cuánta recuperación necesitas — verifica la cifra exacta con nuestra <a href=\"/es/calculadora-punto-equilibrio/\">calculadora de punto de equilibrio</a>."
       ],
       checklist: [
       "Antes de modelar un plan DCA: 1) Decide un intervalo fijo y un monto que puedas sostener genuinamente. 2) Incluye la comisión de compra en cada operación. 3) Elige un período de proyección realista de al menos 2 años para capturar un ciclo de mercado completo.",
@@ -687,11 +687,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
       "Flujo de configuración: 1) Elige exchange y método de pago — la transferencia bancaria es más barata (0.1–0.5%) vs. tarjeta (1.5–3.5%). 2) Habilita la compra recurrente o programa un recordatorio en el calendario. 3) Registra cada compra: fecha, monto, precio, monedas adquiridas.",
-      "Cadencia de revisión: recalcula tu resumen DCA trimestralmente. Si el valor de la cartera supera 2× tu inversión total, considera pausar nuevas compras DCA y esperar una retracción."
+      "Cadencia de revisión: recalcula tu resumen DCA trimestralmente. Si el valor de la cartera supera 2× tu inversión total — verifica con nuestra <a href=\"/es/calculadora-beneficio-cripto/\">calculadora de beneficios</a> — considera pausar nuevas compras DCA y esperar una retracción."
       ],
       hygiene: [
       "Actualiza el calculador con cada nueva compra para mantener el coste promedio preciso. Incluso una entrada omitida puede desplazar significativamente tu promedio si esa compra fue a un precio extremo.",
-      "Revisa tu monto de DCA anualmente en relación con tus ingresos y objetivos financieros. El monto debería representar dinero que puedes genuinamente dejar inaccesible durante al menos 3–5 años."
+      "Revisa tu monto de DCA anualmente en relación con tus ingresos y objetivos financieros. El monto debería representar dinero que puedes genuinamente dejar inaccesible durante al menos 3–5 años. Al vender, ejecuta los números a través de nuestra <a href=\"/es/calculadora-impuestos-cripto/\">calculadora de impuestos</a> para entender el impacto fiscal."
       ],
       validation: [
       "Verifica tu coste promedio calculado manualmente: suma (base de coste de cada compra incluidas comisiones) y divide por el total de monedas acumuladas. Compara con la salida del calculador — deben coincidir dentro del 0.1%.",
@@ -705,7 +705,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Plano de acumulação de longo prazo: configure um cronograma de DCA mensal com um valor fixo em dólares. Use a calculadora para projetar quantas moedas acumularia ao longo de 1, 2 e 5 anos aos preços atuais.",
-      "Avaliação de compras em mercado baixista: durante uma queda do mercado, insira todas as suas datas e valores históricos de compra para ver seu custo médio exato."
+      "Avaliação de compras em mercado baixista: durante uma queda do mercado, insira todas as suas datas e valores históricos de compra para ver seu custo médio exato. Compare com o preço atual para saber quanto de recuperação é necessário — use nosso <a href=\"/pt/conversor-cripto/\">conversor cripto</a> para verificar as cotações atuais."
       ],
       checklist: [
       "Antes de modelar um plano DCA: 1) Decida um intervalo fixo e um valor que possa genuinamente manter. 2) Inclua a taxa de compra em cada transação. 3) Escolha um período de projeção realista de pelo menos 2 anos.",
@@ -721,11 +721,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
       "Fluxo de configuração: 1) Escolha exchange e método de pagamento — transferência bancária é mais barata (0.1–0.5%) vs. cartão (1.5–3.5%). 2) Ative compra recorrente ou agende um lembrete no calendário. 3) Registre cada compra: data, valor, preço, moedas adquiridas.",
-      "Cadência de revisão: recalcule seu resumo DCA trimestralmente. Se o valor da carteira ultrapassar 2× seu total investido, considere pausar novas compras."
+      "Cadência de revisão: recalcule seu resumo DCA trimestralmente. Se o valor da carteira ultrapassar 2× seu total investido — verifique com nossa <a href=\"/pt/calculadora-lucro-cripto/\">calculadora de lucros</a> — considere pausar novas compras."
       ],
       hygiene: [
       "Atualize a calculadora a cada nova compra para manter o custo médio preciso. Mesmo uma entrada omitida pode deslocar significativamente sua média.",
-      "Revise seu valor de DCA anualmente em relação à sua renda e objetivos financeiros."
+      "Revise seu valor de DCA anualmente em relação à sua renda e objetivos financeiros. Ao vender, passe os números pela nossa <a href=\"/pt/calculadora-impostos-cripto/\">calculadora de impostos</a> para entender o impacto tributário."
       ],
       validation: [
       "Verifique seu custo médio calculado manualmente: some (base de custo de cada compra incluindo taxas) e divida pelo total de moedas acumuladas.",
@@ -739,7 +739,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Uzun vadeli birikim planı: aylık sabit bir miktar içeren bir DCA takvimi kurun. Hesaplayıcıyı mevcut fiyatlarda 1, 2 ve 5 yıl içinde ne kadar coin biriktireceğinizi tahmin etmek için kullanın.",
-      "Ayı piyasası alım değerlendirmesi: piyasa düşüşü sırasında, tüm geçmiş alım tarihlerinizi ve tutarlarınızı girerek tam ortalama maliyetinizi görün."
+      "Ayı piyasası alım değerlendirmesi: piyasa düşüşü sırasında, tüm geçmiş alım tarihlerinizi ve tutarlarınızı girerek tam ortalama maliyetinizi görün. Güncel fiyatları <a href=\"/tr/kripto-donusturucu/\">kripto dönüştürücümüzle</a> kontrol ederek başabaş noktasına ne kadar yakın olduğunuzu belirleyin."
       ],
       checklist: [
       "Bir DCA planı modellemeden önce: 1) Gerçekten sürdürebileceğiniz sabit bir aralık ve miktar belirleyin. 2) Her satın almada alım ücretini dahil edin. 3) Tam bir piyasa döngüsünü yakalamak için en az 2 yıllık gerçekçi bir projeksiyon süresi seçin.",
@@ -755,11 +755,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
       "Kurulum iş akışı: 1) Borsa ve ödeme yöntemini seçin — banka havalesi en ucuz (%0.1–0.5 ücret) ve karta karşı (%1.5–3.5). 2) Tekrarlayan alımı etkinleştirin veya takvim hatırlatıcısı ayarlayın. 3) Her alımı kaydedin: tarih, tutar, fiyat, edinilen coin.",
-      "İnceleme kadansı: DCA özetinizi çeyreklik olarak yeniden hesaplayın."
+      "İnceleme kadansı: DCA özetinizi çeyreklik olarak yeniden hesaplayın. Portföy değeri toplam yatırımınızın 2 katını aşarsa — <a href=\"/tr/kripto-kar-hesaplayici/\">kâr hesaplayıcımızla</a> doğrulayın — yeni DCA'yı duraklatmayı düşünün."
       ],
       hygiene: [
       "Ortalama maliyeti doğru tutmak için her yeni satın alımla hesaplayıcıyı güncelleyin.",
-      "DCA tutarınızı geliriniz ve finansal hedeflerinize göre yıllık olarak gözden geçirin."
+      "DCA tutarınızı geliriniz ve finansal hedeflerinize göre yıllık olarak gözden geçirin. Sattığınızda, sermaye kazancı etkisini anlamak için rakamları <a href=\"/tr/kripto-vergi-hesaplayici/\">kripto vergi hesaplayıcımızdan</a> geçirin."
       ],
       validation: [
       "Hesaplanan ortalama maliyetinizi manuel olarak doğrulayın: (ücretler dahil her alımın maliyet tabanı) toplamını toplam biriken coin'e bölün.",
@@ -773,7 +773,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "दीर्घकालिक संचय योजना: निश्चित डॉलर राशि के साथ मासिक DCA शेड्यूल सेट करें। वर्तमान कीमतों पर 1, 2 और 5 वर्षों में आप कितने कॉइन जमा करेंगे इसका अनुमान लगाने के लिए कैलकुलेटर का उपयोग करें।",
-      "बेयर मार्केट खरीद मूल्यांकन: बाजार गिरावट के दौरान, अपनी सटीक औसत लागत देखने के लिए अपनी सभी ऐतिहासिक खरीद तारीखें और राशियां दर्ज करें।"
+      "बेयर मार्केट खरीद मूल्यांकन: बाजार गिरावट के दौरान, अपनी सटीक औसत लागत देखने के लिए अपनी सभी ऐतिहासिक खरीद तारीखें और राशियां दर्ज करें। वर्तमान कीमतों की जांच के लिए हमारे <a href=\"/hi/crypto-converter/\">क्रिप्टो कन्वर्टर</a> का उपयोग करें।"
       ],
       checklist: [
       "DCA योजना मॉडल करने से पहले: 1) एक निश्चित अंतराल और राशि तय करें जो आप वास्तव में बनाए रख सकते हैं। 2) प्रत्येक खरीद में खरीद शुल्क शामिल करें। 3) एक पूर्ण बाजार चक्र को पकड़ने के लिए कम से कम 2 वर्षों की यथार्थवादी प्रक्षेपण अवधि चुनें।",
@@ -789,11 +789,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
       "सेटअप वर्कफ़्लो: 1) एक्सचेंज और भुगतान विधि चुनें — बैंक ट्रांसफर सबसे सस्ता (0.1–0.5% शुल्क) बनाम कार्ड (1.5–3.5%)। 2) आवर्ती खरीद सक्षम करें या कैलेंडर रिमाइंडर शेड्यूल करें। 3) प्रत्येक खरीद लॉग करें: तारीख, राशि, मूल्य, अर्जित कॉइन।",
-      "समीक्षा आवृत्ति: तिमाही में अपने DCA सारांश की पुनर्गणना करें।"
+      "समीक्षा आवृत्ति: तिमाही में अपने DCA सारांश की पुनर्गणना करें। यदि पोर्टफोलियो मूल्य आपके कुल निवेश से 2 गुना से अधिक हो जाए — हमारे <a href=\"/hi/crypto-profit-calculator/\">प्रॉफिट कैलकुलेटर</a> से सत्यापित करें — तो नई DCA खरीद रोकने पर विचार करें।"
       ],
       hygiene: [
       "औसत लागत सटीक रखने के लिए प्रत्येक नई खरीद के साथ कैलकुलेटर अपडेट करें।",
-      "अपनी आय और वित्तीय लक्ष्यों के सापेक्ष वार्षिक रूप से अपनी DCA राशि की समीक्षा करें।"
+      "अपनी आय और वित्तीय लक्ष्यों के सापेक्ष वार्षिक रूप से अपनी DCA राशि की समीक्षा करें। जब आप बेचें, तो पूंजी-लाभ प्रभाव को समझने के लिए नंबरों को हमारे <a href=\"/hi/crypto-tax-calculator/\">क्रिप्टो टैक्स कैलकुलेटर</a> से जांचें।"
       ],
       validation: [
       "अपनी परिकलित औसत लागत को मैन्युअल रूप से सत्यापित करें: (शुल्क सहित प्रत्येक खरीद का लागत आधार) का योग करें और कुल संचित कॉइन से विभाजित करें।",
@@ -807,7 +807,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
       "Долгосрочный план накопления: настройте ежемесячный DCA-график с фиксированной суммой в долларах. Используйте калькулятор для прогнозирования количества монет, накопленных за 1, 2 и 5 лет по текущим ценам.",
-      "Оценка покупок на медвежьем рынке: во время коррекции рынка введите все исторические даты и суммы покупок, чтобы увидеть точную среднюю стоимость. Сравните с текущей ценой, чтобы знать, какого восстановления нужно достичь для безубыточности."
+      "Оценка покупок на медвежьем рынке: во время коррекции рынка введите все исторические даты и суммы покупок, чтобы увидеть точную среднюю стоимость. Сравните с текущей ценой через наш <a href=\"/ru/конвертер-криптовалют/\">конвертер криптовалют</a>, чтобы знать, какого восстановления нужно достичь для безубыточности."
       ],
       checklist: [
       "Перед моделированием DCA-плана: 1) Определите фиксированный интервал и сумму, которую вы действительно можете поддерживать. 2) Включите комиссию за покупку в каждую сделку. 3) Выберите реалистичный период прогнозирования не менее 2 лет.",
@@ -823,11 +823,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
       "Рабочий процесс настройки: 1) Выберите биржу и способ оплаты — банковский перевод дешевле (0.1–0.5%) vs. карта (1.5–3.5%). 2) Включите повторяющуюся покупку или поставьте напоминание в календаре. 3) Записывайте каждую покупку: дата, сумма, цена, приобретённые монеты.",
-      "Цикл проверки: пересчитывайте сводку DCA ежеквартально. Если стоимость портфеля превышает 2× от общих вложений, рассмотрите паузу в новых покупках и ожидание коррекции."
+      "Цикл проверки: пересчитывайте сводку DCA ежеквартально. Если стоимость портфеля превышает 2× от общих вложений — проверьте через наш <a href=\"/ru/калькулятор-прибыли-криптовалют/\">калькулятор прибыли</a> — рассмотрите паузу в новых покупках и ожидание коррекции."
       ],
       hygiene: [
       "Обновляйте калькулятор при каждой новой покупке, чтобы поддерживать точность средней стоимости. Даже одна пропущенная запись может значительно сдвинуть среднее, если покупка была по экстремальной цене.",
-      "Пересматривайте размер DCA-взноса ежегодно с учётом дохода и финансовых целей. Это должны быть средства, которые вы реально можете не трогать минимум 3–5 лет."
+      "Пересматривайте размер DCA-взноса ежегодно с учётом дохода и финансовых целей. Это должны быть средства, которые вы реально можете не трогать минимум 3–5 лет. При продаже пропустите расчёты через наш <a href=\"/ru/калькулятор-налогов-криптовалют/\">калькулятор налогов</a>, чтобы понять влияние на прирост капитала."
       ],
       validation: [
       "Проверьте расчётную среднюю стоимость вручную: сложите базовую стоимость каждой покупки (включая комиссии) и разделите на общее количество накопленных монет. Сравните с выводом калькулятора — расхождение не должно превышать 0.1%.",
@@ -876,7 +876,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "El monto del impuesto efectivo se aplica solo a la ganancia realizada, no a los ingresos totales de venta. Si entraste a $5,000 y saliste a $8,000, la ganancia imponible es $3,000 — no $8,000."
       ],
       scenarios: [
-      "Planificación de cosecha de pérdidas: cerca del fin de año, introduce posiciones con pérdidas no realizadas para ver cuánto ahorro fiscal puede generarse vendiendo y recomprando. Compara el ahorro fiscal con los costes de trading de ida y vuelta.",
+      "Planificación de cosecha de pérdidas: cerca del fin de año, introduce posiciones con pérdidas no realizadas para ver cuánto ahorro fiscal puede generarse vendiendo y recomprando. Usa nuestra <a href=\"/es/calculadora-beneficio-cripto/\">calculadora de beneficios</a> para comparar el ahorro fiscal con los costes de trading de ida y vuelta.",
       "Estrategia de disposición: si tienes la misma moneda comprada a múltiples precios, usa el calculador para comparar la disposición FIFO versus lote específico. Seleccionar primero los lotes de mayor coste maximiza la base de coste, minimizando la ganancia imponible."
       ],
       checklist: [
@@ -897,7 +897,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       hygiene: [
       "Mantén registros de cada operación: fecha, monto, base de coste, ingresos, comisiones, período de tenencia. Muchas jurisdicciones requieren registros de 5–7 años.",
-      "Actualiza los registros de base de coste después de cada recompensa de staking, airdrop o hard fork — estos eventos crean ingresos imponibles al valor justo de mercado en la fecha de recepción."
+      "Actualiza los registros de base de coste después de cada recompensa de <a href=\"/es/calculadora-staking/\">staking</a>, airdrop o hard fork — estos eventos crean ingresos imponibles al valor justo de mercado en la fecha de recepción. Usa nuestro <a href=\"/es/convertidor-cripto/\">convertidor cripto</a> para buscar el valor equivalente en fiat en la fecha exacta de recepción."
       ],
       validation: [
       "Verifica con software dedicado de impuestos cripto. Si la ganancia total difiere de tu cálculo manual en más del 2%, investiga la discrepancia.",
@@ -910,7 +910,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "O valor efetivo do imposto é aplicado apenas ao ganho realizado, não à receita total da venda. Se você entrou a $5.000 e saiu a $8.000, o ganho tributável é $3.000 — não $8.000."
       ],
       scenarios: [
-      "Planejamento de coleta de perdas: perto do fim do ano, insira posições com perdas não realizadas para ver quanto em economia fiscal pode ser gerado vendendo e recomprando.",
+      "Planejamento de coleta de perdas: perto do fim do ano, insira posições com perdas não realizadas para ver quanto em economia fiscal pode ser gerado vendendo e recomprando. Use nossa <a href=\"/pt/calculadora-lucro-cripto/\">calculadora de lucros</a> para comparar a economia fiscal com os custos de negociação de ida e volta.",
       "Estratégia de disposição: se você possui a mesma moeda comprada a vários preços, use a calculadora para comparar a disposição FIFO versus lote específico."
       ],
       checklist: [
@@ -931,7 +931,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       hygiene: [
       "Mantenha registros de cada negociação: data, valor, base de custo, receita, taxas, período de manutenção. Muitas jurisdições exigem registros de 5–7 anos.",
-      "Atualize os registros de base de custo após cada recompensa de staking, airdrop ou hard fork."
+      "Atualize os registros de base de custo após cada recompensa de <a href=\"/pt/calculadora-staking/\">staking</a>, airdrop ou hard fork — esses eventos criam renda tributável ao valor justo de mercado na data de recebimento. Use nosso <a href=\"/pt/conversor-cripto/\">conversor cripto</a> para consultar o valor equivalente em fiat na data exata."
       ],
       validation: [
       "Verifique com software dedicado de impostos cripto. Se o ganho total diferir do seu cálculo manual em mais de 2%, investigue a discrepância.",
@@ -944,7 +944,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Efektif vergi tutarı yalnızca gerçekleşmiş kazanca uygulanır, toplam satış gelirine değil. 5.000 dolar girip 8.000 dolardan çıktıysanız, vergiye tabi kazanç 3.000 dolardır."
       ],
       scenarios: [
-      "Hasat planlaması: yıl sonuna yakın, gerçekleşmemiş zararları olan pozisyonları girerek satış ve yeniden satın almayla (vergi zararı hasadı) ne kadar vergi tasarrufu sağlanabileceğini görün.",
+      "Hasat planlaması: yıl sonuna yakın, gerçekleşmemiş zararları olan pozisyonları girerek satış ve yeniden satın almayla (vergi zararı hasadı) ne kadar vergi tasarrufu sağlanabileceğini görün. Vergi tasarrufunu işlem maliyetleriyle karşılaştırmak için <a href=\"/tr/kripto-kar-hesaplayici/\">kâr hesaplayıcımızı</a> kullanın.",
       "Tasarruf stratejisi: aynı coin'i birden fazla fiyattan aldıysanız, FIFO ve spesifik lot tasarrufunu karşılaştırmak için hesaplayıcıyı kullanın."
       ],
       checklist: [
@@ -965,7 +965,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       hygiene: [
       "Her işlemin kayıtlarını tutun: tarih, tutar, maliyet tabanı, gelir, ücretler, elde tutma süresi.",
-      "Her staking ödülü, airdrop veya hard fork'tan sonra maliyet tabanı kayıtlarını güncelleyin."
+      "Her <a href=\"/tr/staking-hesaplayici/\">staking</a> ödülü, airdrop veya hard fork'tan sonra maliyet tabanı kayıtlarını güncelleyin. Alım tarihindeki fiat karşılığını bulmak için <a href=\"/tr/kripto-donusturucu/\">kripto dönüştürücümüzü</a> kullanın."
       ],
       validation: [
       "Özel kripto vergi yazılımıyla çapraz kontrol yapın. Toplam kazanç manuel hesaplamamızdan %2'den fazla farklıysa, tutarsızlığı araştırın.",
@@ -978,7 +978,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "प्रभावी कर राशि केवल वास्तविक लाभ पर लागू होती है, कुल बिक्री आय पर नहीं। यदि आपने $5,000 पर प्रवेश किया और $8,000 पर बाहर निकले, तो कर योग्य लाभ $3,000 है — $8,000 नहीं।"
       ],
       scenarios: [
-      "हार्वेस्ट योजना: वर्ष के अंत में, अवास्तविक हानि वाली पोजीशन दर्ज करें यह देखने के लिए कि बेचने और पुनर्खरीद (टैक्स-लॉस हार्वेस्टिंग) से कितनी कर बचत हो सकती है।",
+      "हार्वेस्ट योजना: वर्ष के अंत में, अवास्तविक हानि वाली पोजीशन दर्ज करें यह देखने के लिए कि बेचने और पुनर्खरीद (टैक्स-लॉस हार्वेस्टिंग) से कितनी कर बचत हो सकती है। कर बचत की तुलना ट्रेडिंग लागतों से करने के लिए हमारे <a href=\"/hi/crypto-profit-calculator/\">प्रॉफिट कैलकुलेटर</a> का उपयोग करें।",
       "डिस्पोजल रणनीति: यदि आपके पास कई कीमतों पर खरीदे गए एक ही कॉइन हैं, तो FIFO बनाम विशिष्ट-लॉट डिस्पोजल की तुलना करने के लिए कैलकुलेटर का उपयोग करें।"
       ],
       checklist: [
@@ -999,7 +999,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       hygiene: [
       "प्रत्येक ट्रेड के रिकॉर्ड रखें: तारीख, राशि, लागत आधार, आय, शुल्क, होल्डिंग अवधि। कई न्यायक्षेत्रों में 5–7 वर्ष के रिकॉर्ड की आवश्यकता होती है।",
-      "प्रत्येक स्टेकिंग रिवार्ड, एयरड्रॉप या हार्ड फोर्क के बाद लागत आधार रिकॉर्ड अपडेट करें।"
+      "प्रत्येक <a href=\"/hi/staking-calculator/\">स्टेकिंग</a> रिवार्ड, एयरड्रॉप या हार्ड फोर्क के बाद लागत आधार रिकॉर्ड अपडेट करें। प्राप्ति की सटीक तिथि पर फिएट-समतुल्य मूल्य खोजने के लिए हमारे <a href=\"/hi/crypto-converter/\">क्रिप्टो कन्वर्टर</a> का उपयोग करें।"
       ],
       validation: [
       "समर्पित क्रिप्टो टैक्स सॉफ़्टवेयर के साथ क्रॉस-चेक करें। यदि कुल लाभ आपकी मैन्युअल गणना से 2% से अधिक भिन्न है, तो विसंगति की जांच करें।",
@@ -1012,7 +1012,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Эффективная сумма налога применяется только к реализованной прибыли, а не к полной выручке от продажи. Если вы вошли по $5 000 и вышли по $8 000, налогооблагаемая прибыль равна $3 000 — не $8 000."
       ],
       scenarios: [
-      "Планирование убытков для снижения налогов: ближе к концу года вводите позиции с нереализованными убытками, чтобы рассчитать экономию на налогах от продажи и обратного выкупа (tax-loss harvesting). Сравните экономию с транзакционными издержками туда-обратно.",
+      "Планирование убытков для снижения налогов: ближе к концу года вводите позиции с нереализованными убытками, чтобы рассчитать экономию на налогах от продажи и обратного выкупа (tax-loss harvesting). Используйте наш <a href=\"/ru/калькулятор-прибыли-криптовалют/\">калькулятор прибыли</a> для сравнения налоговой экономии с транзакционными издержками туда-обратно.",
       "Стратегия реализации: если вы держите одну монету, купленную по нескольким ценам, используйте калькулятор для сравнения FIFO и метода конкретных лотов. Выбор лотов с наибольшей себестоимостью максимизирует базу и минимизирует налогооблагаемую прибыль."
       ],
       checklist: [
@@ -1033,7 +1033,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       hygiene: [
       "Ведите записи каждой сделки: дата, сумма, себестоимость, выручка, комиссии, период владения. Многие юрисдикции требуют хранить записи 5–7 лет. Делайте облачные резервные копии всех выписок с бирж.",
-      "Обновляйте записи себестоимости после каждого вознаграждения от стейкинга, аирдропа или хард-форка — эти события создают налогооблагаемый доход по справедливой рыночной стоимости на дату получения."
+      "Обновляйте записи себестоимости после каждого вознаграждения от <a href=\"/ru/калькулятор-стейкинга/\">стейкинга</a>, аирдропа или хард-форка — эти события создают налогооблагаемый доход по справедливой рыночной стоимости на дату получения. Используйте наш <a href=\"/ru/конвертер-криптовалют/\">конвертер криптовалют</a> для определения фиатного эквивалента на точную дату."
       ],
       validation: [
       "Сверьтесь с специализированным криптовалютным налоговым ПО (Koinly, CoinTracker, TokenTax). Если общая прибыль расходится с вашим расчётом более чем на 2%, выясните расхождение — это часто выявляет пропущенную сделку или неверную себестоимость.",

@@ -63,6 +63,9 @@ import '../styles/calculator-page.css';
     <!-- SEO Content -->
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> US crypto tax rates range from 0-20% for long-term gains (held 1+ year) and 10-37% for short-term gains. Germany and Portugal offer 0% tax on crypto held over 12 months. Enter your trade details below to estimate your tax in seconds.
+        </div>
         <h2>How to Use the Tax Calculator</h2>
         <p>Our crypto tax calculator helps you estimate your capital gains tax in seconds. Follow these simple steps to calculate your tax obligation:</p>
         <ol>
@@ -116,7 +119,7 @@ import '../styles/calculator-page.css';
           <li><strong>FIFO (First In, First Out)</strong> — assumes you're selling your oldest coins first. Usually results in higher gains in a rising market.</li>
           <li><strong>LIFO (Last In, First Out)</strong> — assumes you're selling your newest coins first. Can reduce taxable gains if recent purchases were at higher prices.</li>
         </ul>
-        <p>Note: Not all countries allow all methods. The IRS (US) permits specific identification. Check with a tax professional for your jurisdiction.</p>
+        <p>Note: Not all countries allow all methods. The IRS (US) permits specific identification per <a href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-on-virtual-currency-transactions" target="_blank" rel="noopener noreferrer">IRS Virtual Currency FAQ</a>. Check with a tax professional for your jurisdiction.</p>
 
         <h2>Taxable vs Non-Taxable Crypto Events</h2>
         <p>Understanding which cryptocurrency activities trigger taxes is crucial for compliance. Not every crypto transaction creates a taxable event. Here's a comprehensive breakdown:</p>
@@ -138,9 +141,9 @@ import '../styles/calculator-page.css';
         </ul>
 
         <h2>Tax-Loss Harvesting Strategies</h2>
-        <p>Tax-loss harvesting is a powerful strategy where you deliberately sell cryptocurrency at a loss to offset capital gains from other investments, reducing your overall tax liability. This approach is particularly valuable in volatile crypto markets where portfolio values can fluctuate significantly. When you realize a capital loss, it can offset capital gains dollar-for-dollar, and in many jurisdictions like the United States, excess losses can offset up to $3,000 of ordinary income per year, with remaining losses carried forward indefinitely.</p>
-        <p>One key advantage cryptocurrency has over traditional securities is the absence of wash sale rules in most countries. In the US, the wash sale rule prevents you from claiming a tax loss if you repurchase the same or substantially identical security within 30 days. However, this rule currently does not apply to cryptocurrency, meaning you can sell Bitcoin at a loss and immediately repurchase it, maintaining your market position while harvesting the tax benefit. This regulatory gap may change in the future as cryptocurrency taxation evolves, so it's important to stay informed about current rules.</p>
-        <p>Timing is crucial for effective tax-loss harvesting. Many investors review their portfolios near year-end to identify positions with unrealized losses. By selling these assets before December 31st, you can claim the loss on the current year's tax return. However, don't let tax considerations override sound investment strategy — only harvest losses on assets you're comfortable selling or immediately repurchasing. The tax benefit should complement, not dictate, your investment decisions.</p>
+        <p>Tax-loss harvesting means deliberately selling cryptocurrency at a loss to offset gains from other investments. In the US, capital losses offset gains dollar-for-dollar. Excess losses can offset up to $3,000 of ordinary income per year, with remaining losses carried forward indefinitely (per <a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer">IRS Topic 409</a>).</p>
+        <p>One key advantage: the wash sale rule currently does not apply to cryptocurrency in the US. You can sell at a loss and immediately repurchase, maintaining your position while harvesting the tax benefit. This may change as crypto tax regulation evolves.</p>
+        <p>Timing matters. Review your portfolio near year-end to identify unrealized losses. Selling before December 31st lets you claim the loss on the current tax return. That said, don't let tax strategy override sound investment decisions.</p>
 
         <h2>How to Reduce Your Crypto Tax Bill</h2>
         <p>Minimizing your cryptocurrency tax burden legally requires strategic planning and awareness of available options. Here are proven strategies to reduce what you owe:</p>
@@ -152,6 +155,10 @@ import '../styles/calculator-page.css';
           <li><strong>Track your cost basis meticulously</strong> — Accurate record-keeping ensures you're not overpaying taxes. Include all fees paid when buying and selling, as these reduce your taxable gain. Use cryptocurrency tax software or detailed spreadsheets to maintain transaction history across all exchanges and wallets.</li>
           <li><strong>Consult a crypto-specialized tax professional</strong> — Cryptocurrency tax law is complex and varies significantly by jurisdiction. A CPA or tax advisor with crypto expertise can identify deductions, credits, and strategies specific to your situation, potentially saving far more than their fee costs.</li>
         </ul>
+
+        <div class="tax-disclaimer-box">
+          <p><strong>Important:</strong> This calculator provides estimates for educational purposes only. It is not tax, legal, or financial advice. Tax laws vary by jurisdiction and change frequently. Consult a qualified tax professional for advice specific to your situation.</p>
+        </div>
 
         <h2>Capital Gains Formula</h2>
         <p>Understanding how capital gains are calculated is essential for accurate tax estimation. The basic formulas used across most jurisdictions are:</p>
@@ -250,6 +257,30 @@ import '../styles/calculator-page.css';
     background: var(--color-bg);
   }
   .seo-content strong { color: var(--color-text); }
+  .tax-disclaimer-box {
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 24px 0;
+    max-width: 720px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+  .tax-disclaimer-box strong { color: var(--color-accent-red); }
+  .quick-answer {
+    background: rgba(8, 145, 178, 0.05);
+    border: 1px solid rgba(8, 145, 178, 0.15);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 0 0 24px;
+    max-width: 720px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+  .quick-answer strong { color: var(--color-text); }
 </style>
 
 <style is:global>

@@ -595,7 +595,26 @@ function createHub(config: CategoryConfig, lang: Lang, t: Translations): Categor
   const intro = buildIntro(description, tools.map((tool) => tool.name), lang);
   const metaTitle = `${title} Calculators | CryptoCalk`;
   const metaDescription = buildMetaDescription(description, count, lang);
-  const faq = buildFaq(title, tools[0]?.name ?? 'a core calculator', lang);
+  let faq = buildFaq(title, tools[0]?.name ?? 'a core calculator', lang);
+
+  // Extra FAQ for trading-tools (EN only — localized versions use the generic 3)
+  if (config.slug === 'trading-tools' && lang === 'en') {
+    faq = [
+      ...faq,
+      {
+        question: 'How do I calculate position size for crypto futures?',
+        answer: 'Divide your maximum acceptable loss (e.g., 1-2% of account equity) by the distance between your entry price and stop-loss. This gives you the number of units to trade. Use the Position Size Calculator to automate this with your exact risk parameters.',
+      },
+      {
+        question: 'What is an acceptable Sharpe ratio for crypto trading?',
+        answer: 'A Sharpe ratio above 1.0 is considered acceptable, above 2.0 is very good, and above 3.0 is excellent. In volatile crypto markets, a consistent Sharpe of 1.5+ across 6-12 months of trading indicates a strong risk-adjusted strategy. Calculate yours with the Sharpe Ratio Calculator.',
+      },
+      {
+        question: 'How do Kelly Criterion and position sizing work together?',
+        answer: 'Kelly Criterion calculates the mathematically optimal bet size based on your win rate and reward-to-risk ratio. Most traders use fractional Kelly (25-50%) to reduce volatility. Pair it with the Position Size Calculator: use Kelly to determine your risk percentage, then position sizing to convert that into a specific trade size.',
+      },
+    ];
+  }
 
   return {
     slug: config.slug,

@@ -219,7 +219,27 @@ function buildHeadings(lt: string, lang: Lang) {
   return maps[lang] ?? maps.en;
 }
 
-const h = buildHeadings(localizedTitle, lang);
+const baseH = buildHeadings(localizedTitle, lang);
+
+// Per-calculator heading overrides to reduce template uniformity across pages.
+// Only override a few keys per calculator — the rest keep their defaults.
+const HEADING_OVERRIDES: Record<string, Partial<Record<string, Record<string, string>>>> = {
+  en: {
+    'profit-calculator':    { interpret: 'Understanding your profit breakdown', hygiene: 'Keeping your trade records accurate', validation: 'Pre-trade checklist' },
+    'mining-calculator':    { interpret: 'Reading your mining estimates', benchmarks: 'Hardware efficiency benchmarks', hygiene: 'Maintaining accurate mining inputs', validation: 'Before investing in mining hardware' },
+    'tax-calculator':       { interpret: 'Understanding your tax estimate', scenarios: 'Tax planning scenarios', hygiene: 'Record-keeping for tax compliance', validation: 'Review before filing' },
+    'dca-calculator':       { interpret: 'Evaluating your DCA performance', benchmarks: 'DCA performance benchmarks', hygiene: 'Tracking your recurring purchases', validation: 'Before committing to a DCA plan' },
+    'staking-calculator':   { interpret: 'Understanding staking returns', hygiene: 'Monitoring your staking position', validation: 'Before locking your tokens' },
+    'liquidation-calculator': { interpret: 'Reading your liquidation risk', benchmarks: 'Safe leverage benchmarks', validation: 'Before opening a leveraged position' },
+    'converter':            { interpret: 'Using conversion results effectively', hygiene: 'Working with accurate price data', validation: 'Verifying conversion accuracy' },
+    'gas-calculator':       { interpret: 'Understanding gas cost estimates', benchmarks: 'Gas price benchmarks by network', validation: 'Before submitting a transaction' },
+    'position-size-calculator': { interpret: 'Applying your position size', benchmarks: 'Position sizing benchmarks', validation: 'Final check before entering a trade' },
+    'break-even-calculator': { interpret: 'Finding your true break-even price', hygiene: 'Including all hidden costs', validation: 'Before setting your stop-loss' },
+  },
+};
+
+const overrides = HEADING_OVERRIDES[lang]?.[slug as string] ?? {};
+const h = { ...baseH, ...overrides };
 
 // Generate URL-safe id anchors for deep linking (AI citation + accessibility)
 function slugify(text: string): string {

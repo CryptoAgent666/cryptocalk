@@ -63,6 +63,9 @@ import '../styles/calculator-page.css';
     <!-- SEO Content -->
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> At current difficulty (~145T) and $0.05/kWh, an Antminer S21 (200 TH/s) earns roughly $3-5/day net profit. At $0.12/kWh, the same miner operates at a loss. Enter your hardware specs below to see your personalized estimate with live BTC price data.
+        </div>
         <h2>How to Use the Mining Calculator</h2>
         <ol>
           <li><strong>Select your ASIC miner</strong> from the dropdown (e.g., Antminer S21, Whatsminer M60S), or choose "Custom" to enter your own hashrate and power consumption.</li>
@@ -74,9 +77,9 @@ import '../styles/calculator-page.css';
         </ol>
 
         <h2>How Bitcoin Mining Profitability Works</h2>
-        <p>Bitcoin mining profitability depends on several key factors: your hardware's hashrate, electricity costs, pool fees, and the current network conditions (difficulty, block reward, BTC price). Our calculator uses real-time data to give you accurate estimates.</p>
-        <p>Miners compete to solve complex mathematical puzzles, and the first to find a valid solution earns the block reward plus transaction fees. The probability of solving a block is proportional to your hashrate relative to the total network hashrate. With current network difficulty exceeding 100 trillion, solo mining with a single ASIC has virtually no chance of finding a block — which is why mining pools exist.</p>
-        <p>Profitability is measured as net profit after electricity costs. A miner consuming 3,500W at $0.12/kWh costs $10.08 per day to run. If that miner earns $12 per day in BTC, the net profit is $1.92/day. However, if electricity costs rise to $0.20/kWh, daily costs jump to $16.80, resulting in a loss of $4.80/day. Location matters tremendously.</p>
+        <p>Bitcoin mining profitability depends on four key factors: hashrate, electricity cost, pool fees, and network conditions (difficulty, block reward, BTC price). Our calculator uses live data from <a href="https://blockchain.info/q/getdifficulty" target="_blank" rel="noopener noreferrer">blockchain.info</a> and CoinGecko for accurate estimates.</p>
+        <p>Miners compete to solve cryptographic puzzles. The first to find a valid solution earns the block reward (currently 3.125 BTC) plus transaction fees. Your chance of solving a block is proportional to your share of the total network hashrate. With difficulty exceeding 100 trillion, solo mining is impractical — mining pools exist to provide steady income.</p>
+        <p>Profitability = revenue minus electricity. A 3,500W miner at $0.12/kWh costs $10.08/day. If it earns $12/day in BTC, net profit is $1.92/day. At $0.20/kWh, costs jump to $16.80 — a $4.80/day loss. Location matters tremendously.</p>
 
         <h2>Key Factors Affecting Mining Profitability</h2>
         <ul class="seo-list">
