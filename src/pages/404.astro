@@ -31,21 +31,21 @@ const description = 'The page you are looking for does not exist.';
         </a>
 
         <p class="notfound-chip">Error 404</p>
-        <h1>This Page Went Missing</h1>
-        <p class="notfound-copy">
+        <h1 data-i18n="heading">This Page Went Missing</h1>
+        <p class="notfound-copy" data-i18n="copy">
           The calculator or page you opened may have moved to a new URL. Jump back to the homepage
           or open one of the popular tools below.
         </p>
 
         <div class="notfound-actions">
-          <a href="/" class="notfound-btn notfound-btn--primary">
+          <a href="/" class="notfound-btn notfound-btn--primary" data-i18n-link="home">
             <Home size={16} />
-            Back to Homepage
+            <span data-i18n="backHome">Back to Homepage</span>
             <ArrowRight size={16} />
           </a>
-          <a href="/#categories" class="notfound-btn notfound-btn--ghost">
+          <a href="/#categories" class="notfound-btn notfound-btn--ghost" data-i18n-link="browse">
             <Search size={16} />
-            Browse Calculators
+            <span data-i18n="browse">Browse Calculators</span>
           </a>
         </div>
 
@@ -53,27 +53,27 @@ const description = 'The page you are looking for does not exist.';
 
         <ul class="notfound-links" role="list">
           <li>
-            <a href="/profit-calculator/">
+            <a href="/profit-calculator/" data-i18n-link="profit">
               <TrendingUp size={15} />
-              Profit Calculator
+              <span data-i18n="profit">Profit Calculator</span>
             </a>
           </li>
           <li>
-            <a href="/mining-calculator/">
+            <a href="/mining-calculator/" data-i18n-link="mining">
               <Pickaxe size={15} />
-              Mining Calculator
+              <span data-i18n="mining">Mining Calculator</span>
             </a>
           </li>
           <li>
-            <a href="/dca-calculator/">
+            <a href="/dca-calculator/" data-i18n-link="dca">
               <PiggyBank size={15} />
-              DCA Calculator
+              <span data-i18n="dca">DCA Calculator</span>
             </a>
           </li>
           <li>
-            <a href="/tax-calculator/">
+            <a href="/tax-calculator/" data-i18n-link="tax">
               <Receipt size={15} />
-              Tax Calculator
+              <span data-i18n="tax">Tax Calculator</span>
             </a>
           </li>
         </ul>
@@ -82,6 +82,83 @@ const description = 'The page you are looking for does not exist.';
   </main>
   <SiteFooter lang="en" />
 </Layout>
+
+<script>
+  const i18n: Record<string, Record<string, string>> = {
+    es: {
+      heading: 'Esta Página No Existe',
+      copy: 'La calculadora o página que buscas pudo haberse movido a una nueva URL. Vuelve al inicio o abre una de las herramientas populares.',
+      backHome: 'Volver al Inicio',
+      browse: 'Explorar Calculadoras',
+      profit: 'Calculadora de Ganancias',
+      mining: 'Calculadora de Minería',
+      dca: 'Calculadora DCA',
+      tax: 'Calculadora de Impuestos',
+    },
+    pt: {
+      heading: 'Esta Página Não Existe',
+      copy: 'A calculadora ou página que você abriu pode ter sido movida. Volte à página inicial ou abra uma das ferramentas populares.',
+      backHome: 'Voltar ao Início',
+      browse: 'Explorar Calculadoras',
+      profit: 'Calculadora de Lucro',
+      mining: 'Calculadora de Mineração',
+      dca: 'Calculadora DCA',
+      tax: 'Calculadora de Impostos',
+    },
+    tr: {
+      heading: 'Bu Sayfa Bulunamadı',
+      copy: 'Açmak istediğiniz hesap makinesi veya sayfa taşınmış olabilir. Ana sayfaya dönün veya popüler araçlardan birini açın.',
+      backHome: 'Ana Sayfaya Dön',
+      browse: 'Hesap Makinelerini Keşfet',
+      profit: 'Kâr Hesaplayıcı',
+      mining: 'Madencilik Hesaplayıcı',
+      dca: 'DCA Hesaplayıcı',
+      tax: 'Vergi Hesaplayıcı',
+    },
+    hi: {
+      heading: 'यह पेज नहीं मिला',
+      copy: 'आपने जो कैलकुलेटर या पेज खोला वह एक नए URL पर स्थानांतरित हो गया होगा। होमपेज पर वापस जाएं या नीचे लोकप्रिय टूल में से एक खोलें।',
+      backHome: 'होमपेज पर वापस',
+      browse: 'कैलकुलेटर देखें',
+      profit: 'प्रॉफिट कैलकुलेटर',
+      mining: 'माइनिंग कैलकुलेटर',
+      dca: 'DCA कैलकुलेटर',
+      tax: 'टैक्स कैलकुलेटर',
+    },
+    ru: {
+      heading: 'Страница не найдена',
+      copy: 'Калькулятор или страница могли переместиться на новый URL. Вернитесь на главную или откройте один из популярных инструментов.',
+      backHome: 'На главную',
+      browse: 'Все калькуляторы',
+      profit: 'Калькулятор прибыли',
+      mining: 'Калькулятор майнинга',
+      dca: 'DCA калькулятор',
+      tax: 'Налоговый калькулятор',
+    },
+  };
+
+  const langPrefixes = ['es', 'pt', 'tr', 'hi', 'ru'];
+  const path = window.location.pathname;
+  const match = path.match(/^\/(es|pt|tr|hi|ru)\//);
+  const lang = match ? match[1] : null;
+
+  if (lang && i18n[lang]) {
+    const t = i18n[lang];
+    document.querySelectorAll<HTMLElement>('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n!;
+      if (t[key]) el.textContent = t[key];
+    });
+    // Update links to include language prefix
+    document.querySelectorAll<HTMLAnchorElement>('[data-i18n-link]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href && href.startsWith('/') && !href.startsWith(`/${lang}/`)) {
+        a.setAttribute('href', `/${lang}${href}`);
+      }
+    });
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+  }
+</script>
 
 <style>
   .notfound-page {

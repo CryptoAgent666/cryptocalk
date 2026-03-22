@@ -255,7 +255,7 @@ function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
         }
 
         // Margin ratio (how close to liquidation)
-        const marginRatio = (maintenanceMargin / initialMargin) * 100;
+        const marginRatio = initialMargin > 0 ? (maintenanceMargin / initialMargin) * 100 : 0;
 
         // Risk level
         let riskLevel: Results['riskLevel'];
@@ -292,15 +292,17 @@ function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
         clearCoin();
     };
 
-    const formatUSD = (n: number) =>
-        new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
+    const formatUSD = (n: number) => {
+        if (!Number.isFinite(n)) return '—';
+        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
         }).format(n);
+    };
 
-    const formatPercent = (n: number) => `${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => Number.isFinite(n) ? `${n.toFixed(2)}%` : '—';
 
     const lev = parseFloat(leverage) || 1;
     const highLev = lev > 20;

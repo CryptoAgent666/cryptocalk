@@ -2,6 +2,76 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-22] (update 35) — UI/UX audit: performance, anti-patterns, accessibility
+
+### Fixed — Performance (/optimize)
+- **`transition: all` → specific properties**: 9 instances replaced with targeted `border-color`, `color`, `background-color`, `transform` transitions
+- **`filter: blur(4px)` removed from `resultSnap` keyframe**: Eliminated expensive GPU compositing per frame
+- **`will-change` added**: `transform, opacity` on `.result-hero-value`, `width` on `.liq-gauge-fill`
+- **`backdrop-filter` reduced on mobile**: `blur(12px)` → `blur(8px)` for mobile viewports
+
+### Fixed — Accessibility (/harden)
+- **Touch target**: `.portfolio-asset-remove` now has `min-height: 44px; min-width: 44px` (was ~24px)
+
+### Fixed — Theming (/normalize)
+- **Hardcoded feature icon colors → CSS classes**: 4 inline `style` attributes in `index.astro` replaced with `.feature-icon--green/cyan/amber/pink` classes using CSS variables
+- **Gauge gradient**: Replaced 2 hardcoded hex colors (`#f59e0b`, `#f97316`) with `var(--color-accent-amber)`, `var(--color-accent-orange)`
+- **Duplicate `.legend-box` CSS removed**: First definition (hardcoded `#10b981`, `#ef4444`) deleted; second (CSS variables) kept
+
+### Fixed — Anti-Patterns (/distill, /typeset)
+- **Hero metrics bar removed**: "60+ / 6 / 0 / <1s" vanity stats replaced with trust statement "Free, open tools — no signup, no ads, no data collection."
+- **Gradient text removed**: `.text-gradient` class deleted; "Crypto" heading now uses solid `.hero-accent` color
+- **Fonts replaced**: Inter → DM Sans (body), Space Grotesk → Plus Jakarta Sans (display). Both distinctive, less AI-associated
+
+### Fixed — Responsive (/adapt)
+- **Small fonts 0.7rem → 0.75rem**: 6 instances (12px minimum) for labels, suffixes, asset headers
+
+### Fixed — Polish
+- **Gap spacing normalized**: `gap: 10px` → `gap: 12px` (11 instances, aligns with 4px grid)
+- **`!important` removed**: ~25 instances in mobile media query section (background agent)
+
+### Verified
+- Build: 935 pages, 0 errors
+- Zero console errors in preview
+- New fonts load correctly (DM Sans, Plus Jakarta Sans)
+
+## [2026-03-22] (update 34) — Deep audit: math bugs, a11y, SEO, title dedup
+
+### Fixed
+- **Division by zero in LiquidationCalculator**: `marginRatio` now guards `initialMargin > 0` (line 258)
+- **Division by zero in BreakEvenCalculator**: `loss >= 100` returns Infinity with "∞ (unrecoverable)" display instead of NaN (lines 42, 62, 248, 271, 320)
+- **Division by zero in ImpermanentLossCalculator**: Guarded `(1 + relativeRatio)` denominator (line 130)
+- **NaN/Infinity in LiquidationCalculator**: `formatUSD()` and `formatPercent()` now return "—" for non-finite values
+- **Brand duplication in 39 EN page titles**: Removed `| CryptoCalk` and `— CryptoCalk` from all 39 `.astro` files in `src/pages/`. Brand is handled by Layout.astro only.
+- **5 short meta descriptions expanded**: information-ratio, risk-of-ruin, sharpe, slippage, sortino — all now 120+ chars in EN
+
+### Added
+- **`prefers-reduced-motion`**: Global CSS media query disables all animations and transitions for users with motion sensitivity (WCAG 2.1 Level A)
+- **`aria-pressed`**: Added to Quick Scenario pill buttons and Long/Short toggle in ProfitCalculator.tsx for screen reader state announcement
+
+### Verified
+- Build: 935 pages, 0 errors (6.42s)
+- Zero console errors in preview
+
+## [2026-03-22] (update 33) — Content quality audit fixes
+
+### Fixed
+- **Timestamp example error**: Fixed `1711929600` conversion from "12:00 UTC" to correct "00:00 UTC" in `calculator-seo-ext.ts`
+- **Cookie banner misleading AdSense text**: Removed "serve personalised ads via Google AdSense" from all 6 language variants in `CookieBanner.astro` — site has no ads. Text now says "improve your experience"
+- **Halving #4 priceAfter18m**: Changed projected $126,000 to actual ~$84,000 (Oct 2025 is now historical) in `HalvingCalculator.tsx`
+- **Gas cost wording**: Changed "typical in 2025–2026" to "low-congestion periods" for 3 Gwei gas benchmark in `calculator-seo-ext.ts`
+- **Network hashrate**: Updated from 800 EH/s to 850 EH/s in `HalvingCalculator.tsx` constant + disclaimer, and all 5 language translations in `ui-strings.ts`
+
+### Added
+- **404 page i18n**: Client-side language detection from URL prefix (`/es/`, `/pt/`, etc.) swaps heading, copy, button labels, and link hrefs into es/pt/tr/hi/ru. Previously showed English on all localized 404s
+- **Share Calculation button i18n**: Translated button label + "Copied to clipboard!" toast into all 6 languages via `ShareCalculator.astro` data attributes
+- **Quick Scenario label i18n**: "BTC Long +20%", "ETH Short", "SOL Qty Trade" now pass through `getUiString()` with translations in all 5 non-EN languages in `ui-strings.ts`
+- **Sitemap lastmod**: Added `serialize` option to `@astrojs/sitemap` in `astro.config.mjs` — all URLs now include `<lastmod>` date
+
+### Verified
+- Build: 935 pages, 0 errors
+- TypeScript: clean compilation
+
 ## [2026-03-21] (update 32) — 16 missing seo-content entries for new calculators
 
 ### Added

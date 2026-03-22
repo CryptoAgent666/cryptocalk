@@ -3744,7 +3744,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Not checking gas price before a complex DeFi interaction with a fixed deadline. Limit orders, options expiries, and <a href=\"/liquidation-calculator/\">liquidation thresholds</a> have deadlines. Submitting with low gas during a congestion event means your time-sensitive transaction arrives too late."
       ],
       benchmarks: [
-      "Ethereum gas benchmarks: simple ETH transfer = 21,000 gas; ERC-20 transfer = 45,000–65,000 gas; Uniswap swap = 120,000–200,000 gas; complex DeFi interaction = 300,000–500,000+ gas. At 3 Gwei gas price (typical in 2025–2026), a simple transfer costs ≈$0.14 and a complex DeFi tx costs ≈$2–3.50. At 15 Gwei (peak congestion), multiply by 5×.",
+      "Ethereum gas benchmarks: simple ETH transfer = 21,000 gas; ERC-20 transfer = 45,000–65,000 gas; Uniswap swap = 120,000–200,000 gas; complex DeFi interaction = 300,000–500,000+ gas. At 3 Gwei gas price (low-congestion periods), a simple transfer costs ≈$0.14 and a complex DeFi tx costs ≈$2–3.50. At 15 Gwei (peak congestion), multiply by 5×.",
       "L2 gas cost benchmarks: Arbitrum and Optimism transactions typically cost $0.10–0.50 for simple transfers and $0.50–2.00 for DeFi operations, making them 10–50× cheaper than Ethereum mainnet at normal gas prices. The break-even point where mainnet is economical is when you are doing 1–2 large, complex transactions per quarter."
       ],
       execution: [
@@ -7099,7 +7099,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Blockchain-specific timestamp considerations include that different chains use different precision levels: Ethereum uses seconds, while some chains use milliseconds. Smart contract developers must handle timestamp comparisons carefully — block timestamps can vary by up to 15 seconds from wall-clock time on Ethereum, which affects time-dependent contract logic like auction deadlines, vesting cliff dates, and governance proposal expiration."
       ],
       scenarios: [
-        "A DeFi protocol's governance proposal shows 'voting ends at timestamp 1711929600.' Converting reveals this is April 1, 2024 at 12:00 UTC — giving the user a clear deadline in human-readable format. Without conversion, raw timestamps are meaningless to most users and can cause missed governance participation windows.",
+        "A DeFi protocol's governance proposal shows 'voting ends at timestamp 1711929600.' Converting reveals this is April 1, 2024 at 00:00 UTC — giving the user a clear deadline in human-readable format. Without conversion, raw timestamps are meaningless to most users and can cause missed governance participation windows.",
         "An on-chain analyst investigating a suspicious transaction sees it occurred at timestamp 1709251200. Converting shows March 1, 2024 at 00:00 UTC — exactly at a month boundary, suggesting it may be related to a scheduled vesting unlock or automated monthly token release. Timestamp patterns help identify programmatic versus manual transaction behavior."
       ],
       checklist: [

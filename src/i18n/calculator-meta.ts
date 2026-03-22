@@ -224,7 +224,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'information-ratio-calculator': {
       title: 'Information Ratio Calculator',
-      description: 'Compare active portfolio performance versus a benchmark using active return and tracking error.'
+      description: 'Compare active portfolio performance versus a benchmark using active return and tracking error. Identify whether your strategy justifies its fees.'
     },
     'kelly-calculator': {
       title: 'Kelly Criterion Calculator',
@@ -244,19 +244,19 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'risk-of-ruin-calculator': {
       title: 'Risk of Ruin Calculator',
-      description: 'Estimate probability of account ruin from win rate, reward/risk profile, and fixed risk per trade.'
+      description: 'Estimate probability of account ruin from win rate, reward/risk profile, and fixed risk per trade. Essential for position sizing and bankroll management.'
     },
     'sharpe-calculator': {
       title: 'Sharpe Ratio Calculator',
-      description: 'Evaluate risk-adjusted portfolio performance using expected return, volatility, and risk-free rate.'
+      description: 'Evaluate risk-adjusted portfolio performance using expected return, volatility, and risk-free rate. Compare your Sharpe ratio to market benchmarks.'
     },
     'slippage-calculator': {
       title: 'DEX Slippage Calculator',
-      description: 'Estimate swap slippage, minimum received amount, and total execution cost for DEX trades.'
+      description: 'Estimate swap slippage, minimum received amount, and total execution cost for DEX trades. Optimize your Uniswap and SushiSwap transactions.'
     },
     'sortino-calculator': {
       title: 'Sortino Ratio Calculator',
-      description: 'Measure risk-adjusted portfolio performance with downside-volatility focus using the Sortino ratio.'
+      description: 'Measure risk-adjusted portfolio performance with downside-volatility focus using the Sortino ratio. Better than Sharpe for asymmetric crypto returns.'
     },
     'staking-rewards-calculator': {
       title: 'Staking Rewards Calculator',

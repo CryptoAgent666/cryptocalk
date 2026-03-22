@@ -9,12 +9,31 @@ export interface Props {
 
 const { lang } = Astro.props;
 const t = getTranslations(lang);
+
+const shareLabel: Record<string, string> = {
+  en: 'Share Calculation',
+  es: 'Compartir Cálculo',
+  pt: 'Compartilhar Cálculo',
+  tr: 'Hesaplamayı Paylaş',
+  hi: 'गणना साझा करें',
+  ru: 'Поделиться расчётом',
+};
+const copiedLabel: Record<string, string> = {
+  en: 'Copied to clipboard!',
+  es: '¡Copiado al portapapeles!',
+  pt: 'Copiado para a área de transferência!',
+  tr: 'Panoya kopyalandı!',
+  hi: 'क्लिपबोर्ड पर कॉपी किया गया!',
+  ru: 'Скопировано в буфер обмена!',
+};
+const label = shareLabel[lang] || shareLabel.en;
+const copied = copiedLabel[lang] || copiedLabel.en;
 ---
 
 <div class="share-calc-wrapper">
-  <button id="share-calc-btn" class="share-calc-btn" title="Copy link with current inputs">
+  <button id="share-calc-btn" class="share-calc-btn" title={label} data-copied={copied}>
     <Share2 size={16} />
-    <span class="share-text">Share Calculation</span>
+    <span class="share-text">{label}</span>
   </button>
 </div>
 
@@ -123,7 +142,7 @@ const t = getTranslations(lang);
         const textSpan = btn.querySelector('.share-text');
         if (textSpan) {
           const original = textSpan.textContent;
-          textSpan.textContent = 'Copied to clipboard!';
+          textSpan.textContent = btn.dataset.copied || 'Copied to clipboard!';
           btn.classList.add('success');
           
           setTimeout(() => {
