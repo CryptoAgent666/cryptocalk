@@ -112,6 +112,41 @@
   margin: 0 auto;
 }
 
+.calc-byline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.byline-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.byline-link:hover {
+  color: var(--color-primary);
+}
+
+.byline-name {
+  font-weight: 600;
+}
+
+.byline-sep {
+  opacity: 0.4;
+}
+
+.byline-date {
+  color: var(--color-text-muted);
+}
+
 /* SEO Content */
 .seo-content {
   padding: 48px 0;

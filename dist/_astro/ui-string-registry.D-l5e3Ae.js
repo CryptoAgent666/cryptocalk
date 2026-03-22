@@ -1,0 +1,1 @@
+const n={};let e=!1;function r(){if(!e&&(e=!0,typeof window<"u"&&window.__uiStringRegistry))for(const[t,i]of Object.entries(window.__uiStringRegistry))n[t]=i}function o(t,i){return!t||t==="en"?i:(r(),n[t]?.[i]||i)}export{o as g};

@@ -2,6 +2,41 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-22] (update 44) — Full SEO audit implementation (4 changes)
+
+### Added
+- **Quick Answer boxes on all 69 EN calculators**: Added `quickAnswer` field to `CalcOverride` type in `calculator-seo-content.ts`. Each of 69 calculators now has a 1-2 sentence extractable summary with concrete formulas/examples (e.g., "Crypto profit = (Sell − Buy) × Qty − Fees..."). Quick Answer renders above the first SEO section via `LocalizedCalculatorPage.astro`. Non-EN pages fall back to EN quick answer. CSS already existed in `calculator-page.css`.
+- **Visible author bylines on all calculator pages**: Added `.calc-byline` div with "By Konstantin Iakovlev" linked to `/about/`, plus "Updated {buildDate}" — localized for all 6 languages (By/Por/Yazan/लेखक/Автор). Added `author` Person schema to `webPageSchema` in `LocalizedCalculatorPage.astro`. CSS in `calculator-page.css`.
+
+### Changed
+- **ui-strings split by language**: Broke monolithic 424KB `ui-strings.ts` into per-language modules (`ui-strings/es.ts`, `pt.ts`, `tr.ts`, `hi.ts`, `ru.ts`) + tiny `ui-string-registry.ts`. EN pages now load zero translation data. Localized pages get only their language inlined via `define:vars`. Net savings ~100KB gzipped per localized page.
+- **6 missing calculator-seo-ext entries**: compound-interest, gas-fee, leverage, loan, portfolio, staking-rewards — 8 sections × 6 languages × 2 paragraphs = 576 new paragraphs. Eliminates 36 thin/template pages.
+
+### Build
+- 935 pages, 0 errors
+
+## [2026-03-22] (update 43) — SEO extended content for 6 missing calculators
+
+### Added
+- **6 new calculator-seo-ext.ts entries**: compound-interest-calculator, gas-fee-calculator, leverage-calculator, loan-calculator, portfolio-calculator, staking-rewards-calculator. Each entry has 8 unique sections (interpret, scenarios, checklist, mistakes, benchmarks, execution, hygiene, validation) × 6 languages (en, es, pt, tr, hi, ru) = 576 new paragraphs total.
+- **EN entries include 2-3 internal cross-links each**: Links to related calculators (profit, DCA, staking, liquidation, APY/APR, break-even, tax, position-size, mining, bridge, slippage, compound-interest, funding-rate). No self-links.
+- **Localized entries use correct localized slugs** for internal links (e.g., `/es/calculadora-beneficio-cripto/`, `/pt/calculadora-recompensas-staking/`).
+- Content covers concrete numbers (BTC $73,700, ETH $2,330, gas benchmarks 3 Gwei, DeFi rates 3-8% APY), actionable guidance, risk framing, and validation procedures.
+- Build verified: 935 pages, 0 errors.
+
+## [2026-03-22] (update 42) — Split monolithic ui-strings.ts into per-language modules
+
+### Changed
+- **ui-strings.ts split**: Broke the 5,151-line monolithic `ui-strings.ts` (424KB) into modular architecture:
+  - `src/i18n/ui-string-registry.ts` — lightweight registry + `getUiString` function (230 bytes client-side)
+  - `src/i18n/ui-strings/es.ts`, `pt.ts`, `tr.ts`, `hi.ts`, `ru.ts` — per-language dictionaries (~1,000 lines each)
+  - `src/i18n/ui-strings-all.ts` — SSR-only barrel import for build-time rendering
+  - `src/i18n/ui-strings.ts` — backward-compatible re-export shim (unchanged import path for 64 calculator components)
+- **Client bundle reduction**: Eliminated the 424KB (120KB gzipped) shared `ui-translations` JS chunk. EN pages now load zero translation data. Localized pages get their language strings inlined in HTML via `define:vars` (~73KB uncompressed, ~15-20KB gzipped).
+- **manualChunks updated**: Replaced single `ui-translations` chunk rule with per-language chunk rules + `ui-string-registry` in `astro.config.mjs`.
+- **LocalizedCalculatorPage.astro**: Added SSR import of `ui-strings-all.ts`, per-language dict imports for serialization, and inline `<script>` that registers strings in `window.__uiStringRegistry` before React hydration.
+- Build verified: 935 pages, 0 errors.
+
 ## [2026-03-22] (update 41) — Content quality & E-E-A-T audit fixes
 
 ### Fixed

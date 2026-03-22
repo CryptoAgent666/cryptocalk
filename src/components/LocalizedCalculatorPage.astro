@@ -20,6 +20,8 @@ import SiteFooter from "./SiteFooter.astro";
 import fs from "node:fs";
 import path from "node:path";
 import postcss from "postcss";
+// Register all UI string dictionaries for SSR rendering
+import "../i18n/ui-strings-all";
 
 interface FaqItem {
   q: string;
@@ -36,6 +38,15 @@ export interface Props {
 }
 
 const { lang, slug, title, description, faq = [], pathOverride } = Astro.props;
+
+// Prepare serialized UI strings for client-side hydration (inline script)
+import esDict from "../i18n/ui-strings/es";
+import ptDict from "../i18n/ui-strings/pt";
+import trDict from "../i18n/ui-strings/tr";
+import hiDict from "../i18n/ui-strings/hi";
+import ruDict from "../i18n/ui-strings/ru";
+const _langDicts: Record<string, Record<string, string>> = { es: esDict, pt: ptDict, tr: trDict, hi: hiDict, ru: ruDict };
+const _clientLangJson = lang !== 'en' ? JSON.stringify(_langDicts[lang] ?? {}) : '';
 
 const t = getTranslations(lang);
 const prefix = lang === "en" ? "" : `/${lang}`;
@@ -275,6 +286,10 @@ const txt = Object.fromEntries(
   Object.entries(rawTxt).map(([key, val]) => [key, Array.isArray(val) ? localizeLinks(val, lang) : val])
 ) as typeof rawTxt;
 
+// Quick Answer
+const calcContent = calculatorSeoContent[slug as string];
+const quickAnswer = calcContent?.[lang]?.quickAnswer || calcContent?.['en']?.quickAnswer || '';
+
 const siteUrl = "https://cryptocalk.com";
 const pageUrl = `${siteUrl}${pagePath}`;
 const homeUrl = `${siteUrl}${homePath}`;
@@ -322,6 +337,12 @@ const webPageSchema = {
   speakable: {
     "@type": "SpeakableSpecification",
     cssSelector: [".calc-header h1", ".calc-header p"],
+  },
+  author: {
+    "@type": "Person",
+    "@id": `${siteUrl}/about/#founder`,
+    name: "Konstantin Iakovlev",
+    url: `${siteUrl}/about/`,
   },
 };
 
@@ -394,11 +415,32 @@ const faqSchema = {
       </div>
     </nav>
 
+    {lang !== 'en' && (
+      <script is:inline define:vars={{ _clientLangJson, lang }}>
+        // Register UI translation strings before React hydration.
+        // This runs synchronously (non-module), so the registry is populated
+        // before any module <script type="module"> hydration code executes.
+        (function() {
+          var d = JSON.parse(_clientLangJson);
+          var r = window.__uiStringRegistry;
+          if (!r) { r = {}; window.__uiStringRegistry = r; }
+          r[lang] = d;
+        })();
+      </script>
+    )}
     <section class="calculator-section">
       <div class="section-container">
         <div class="calc-header">
           <h1>{localizedTitle}</h1>
           <p>{localizedDescription}</p>
+          <div class="calc-byline">
+            <a href={`${prefix}/about`} class="byline-link">
+              <span class="byline-by">{lang === 'es' ? 'Por' : lang === 'pt' ? 'Por' : lang === 'tr' ? 'Yazan' : lang === 'hi' ? 'लेखक' : lang === 'ru' ? 'Автор' : 'By'}</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">·</span>
+            <span class="byline-date">{lang === 'es' ? 'Actualizado' : lang === 'pt' ? 'Atualizado' : lang === 'tr' ? 'Güncellendi' : lang === 'hi' ? 'अपडेट' : lang === 'ru' ? 'Обновлено' : 'Updated'} {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope" data-slug={slug}>
           <slot name="calculator" />
@@ -409,6 +451,12 @@ const faqSchema = {
 
     <section class="seo-content">
       <div class="section-container prose">
+        {quickAnswer && (
+          <div class="quick-answer">
+            <strong>{lang === 'es' ? 'Respuesta rápida:' : lang === 'pt' ? 'Resposta rápida:' : lang === 'tr' ? 'Hızlı cevap:' : lang === 'hi' ? 'त्वरित उत्तर:' : lang === 'ru' ? 'Быстрый ответ:' : 'Quick answer:'}</strong>{' '}
+            <Fragment set:html={quickAnswer} />
+          </div>
+        )}
         {has('how') && <>
           <h2 id={hId.how}>{h.how}</h2>
           {txt.how.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
