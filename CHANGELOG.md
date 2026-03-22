@@ -2,6 +2,41 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-22] (update 41) — Content quality & E-E-A-T audit fixes
+
+### Fixed
+- **Privacy policy**: Removed false AdSense/DoubleClick claims from Section 4 (site has no ads). Updated heading from "Cookies, Analytics and Advertising" to "Cookies and Analytics". Added Google Analytics opt-out link.
+- **Privacy policy GDPR/CCPA**: Added explicit GDPR (EEA) and CCPA/CPRA (California) language to Section 8 (Your Rights). Added `dateModified` to WebPage schema. Updated lastUpdated to 22/03/2026.
+- **H1→H3 heading skip**: Fixed `<h3>Worked Example</h3>` → `<h2>` on profit-calculator page.
+- **Tax readability**: Shortened tax-loss harvesting section from 3 long paragraphs to 3 concise paragraphs. Reduced average sentence length.
+- **Mining readability**: Shortened "How Mining Profitability Works" section. Replaced verbose sentences with shorter, clearer ones.
+
+### Added
+- **Tax disclaimer**: Added prominent "not tax/financial advice" disclaimer box on tax-calculator page before Capital Gains Formula section.
+- **Quick Answer boxes**: Added to profit, mining, tax, and DCA calculator pages. Concise, AI-extractable summary at top of SEO content. Styled with `.quick-answer` class in calculator-page.css.
+- **Source citations**: Added IRS links (Virtual Currency FAQ, Topic 409) on tax page. Added Vanguard study citation on DCA page (lump-sum vs DCA research). Added blockchain.info API link on mining page.
+- **Homepage prose**: Added "What Is CryptoCalk?" section (~200 words) with quantified claims (69 calculators, 6 languages, 935 pages, client-side computation) and 7 contextual internal links.
+- **Homepage FAQ**: Added 5-question FAQ section with FAQPage schema (free to use, privacy, accuracy, supported cryptos, creator). Both visible `<details>` and JSON-LD in sync.
+- **Creator credibility card**: Added compact "Built by Konstantin Iakovlev — 10+ years in finance & crypto" card on homepage with link to About page.
+- **Trading-tools hub FAQ**: Expanded from 3 to 6 questions (EN only). Added questions about position sizing for futures, Sharpe ratio benchmarks, and Kelly Criterion + position sizing workflow.
+- **75 localized internal links**: Added contextual anchor links to 5 top calculators (converter, profit, mining, DCA, tax) across 5 non-EN languages (es, pt, tr, hi, ru). 3 links per calculator per language.
+- **Section heading variation**: Added per-calculator heading overrides for 10 EN calculators (profit, mining, tax, DCA, staking, liquidation, converter, gas, position-size, break-even). Varies 2-3 section headings per calculator to reduce template uniformity signal across ~935 pages.
+
+### Build
+- 935 pages, 0 errors
+
+## [2026-03-22] (update 40) — Localized internal links in calculator-seo-ext.ts
+
+### Added
+- **75 contextual internal links** across 5 top calculators (converter, profit, mining, DCA, tax) in 5 non-EN languages (es, pt, tr, hi, ru) — 3 links per calculator per language
+- Links use correct localized slugs for each language (e.g., `/es/calculadora-beneficio-cripto/`, `/ru/калькулятор-прибыли-криптовалют/`)
+- Links target related calculators: profit, tax, DCA, converter, staking, break-even
+- Anchor text in each link is written in the appropriate language
+- Links inserted naturally into existing paragraphs without changing meaning
+
+### Build
+- TypeScript: 0 new errors (file type-checks clean)
+
 ## [2026-03-22] (update 39) — Schema audit fixes (score 82→~90)
 
 ### Added
