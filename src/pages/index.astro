@@ -145,7 +145,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
           <span>60+ Free Calculators • No Signup Required</span>
         </div>
         <h1>
-          60+ Free <span class="text-gradient">Crypto</span><br />
+          60+ Free <span class="hero-accent">Crypto</span><br />
           Calculators
         </h1>
         <p class="hero-subtitle">
@@ -161,28 +161,8 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
           </a>
         </div>
 
-        <!-- Stats -->
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-value">60+</span>
-            <span class="stat-label">Calculators</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-value">6</span>
-            <span class="stat-label">Languages</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-value">0</span>
-            <span class="stat-label">Ads</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-value">&lt;1s</span>
-            <span class="stat-label">Load Time</span>
-          </div>
-        </div>
+        <!-- Trusted by users worldwide -->
+        <p class="hero-trust">Free, open tools — no signup, no ads, no data collection.</p>
       </div>
     </section>
 
@@ -275,22 +255,22 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
         <h2 class="section-title">Why CryptoCalk?</h2>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981;">⚡</div>
+            <div class="feature-icon feature-icon--green" aria-hidden="true">⚡</div>
             <h3>Blazing Fast</h3>
             <p>Static HTML + minimal JS. Pages load in under 1 second, even on 3G.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true" style="background-color: rgba(8, 145, 178, 0.1); color: #0891b2;">🔒</div>
+            <div class="feature-icon feature-icon--cyan" aria-hidden="true">🔒</div>
             <h3>Privacy First</h3>
             <p>All calculations run in your browser. No data leaves your device. No tracking.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true" style="background-color: rgba(245, 158, 11, 0.1); color: #f59e0b;">🌍</div>
+            <div class="feature-icon feature-icon--amber" aria-hidden="true">🌍</div>
             <h3>Multilingual</h3>
             <p>Available in 6 languages: English, Spanish, Portuguese, Turkish, Hindi, and Russian.</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true" style="background-color: rgba(236, 72, 153, 0.1); color: #ec4899;">📱</div>
+            <div class="feature-icon feature-icon--pink" aria-hidden="true">📱</div>
             <h3>Mobile Ready</h3>
             <p>Responsive design with touch-optimized controls. Use anywhere, anytime.</p>
           </div>
@@ -658,38 +638,15 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
     background-color: var(--color-bg-card-hover);
   }
 
-  .hero-stats {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-
-  .stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .stat-value {
-    font-family: var(--font-mono);
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-    color: var(--color-primary);
-  }
-
-  .stat-label {
-    font-size: 0.8rem;
+  .hero-trust {
+    font-size: 0.9rem;
     color: var(--color-text-muted);
+    margin-top: 8px;
     font-weight: 500;
   }
 
-  .stat-divider {
-    width: 1px;
-    height: 32px;
-    background-color: var(--color-border);
+  .hero-accent {
+    color: var(--color-primary);
   }
 
   /* ===== Popular Section ===== */
@@ -977,6 +934,10 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
     margin: 0 auto 16px;
     font-size: 1.5rem;
   }
+  .feature-icon--green { background-color: rgba(4, 120, 87, 0.1); color: var(--color-accent-green); }
+  .feature-icon--cyan { background-color: var(--color-primary-light); color: var(--color-primary); }
+  .feature-icon--amber { background-color: rgba(180, 83, 9, 0.1); color: var(--color-accent-amber); }
+  .feature-icon--pink { background-color: rgba(190, 24, 93, 0.1); color: var(--color-accent-pink); }
 
   .feature-card h3 {
     font-size: 1rem;
@@ -1088,12 +1049,6 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
     }
     .hero h1 {
       font-size: 2rem;
-    }
-    .hero-stats {
-      gap: 20px;
-    }
-    .stat-divider {
-      display: none;
     }
     .bento-grid {
       grid-template-columns: 1fr;

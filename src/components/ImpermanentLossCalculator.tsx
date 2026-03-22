@@ -127,7 +127,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
     // IL formula: IL = 2 * sqrt(r) / (1 + r) - 1, where r = price ratio
     const sqrtR = Math.sqrt(relativeRatio);
-    const ilPercent = (2 * sqrtR / (1 + relativeRatio) - 1) * 100;
+    const ilPercent = (1 + relativeRatio) > 0 ? (2 * sqrtR / (1 + relativeRatio) - 1) * 100 : -100;
     const ilAbsolute = (ilPercent / 100) * investment;
 
     // HODL value: half in token A, half in token B

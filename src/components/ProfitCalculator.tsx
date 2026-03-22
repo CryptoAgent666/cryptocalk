@@ -290,8 +290,9 @@ function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                     key={scenario.label}
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
+                                    aria-pressed={isScenarioActive(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -343,6 +344,7 @@ function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                             <button
                                 className={`toggle-btn ${!isShort ? 'active' : ''}`}
                                 onClick={() => setIsShort(false)}
+                                aria-pressed={!isShort}
                             >
                                 <TrendingUp size={14} />
                                 {getUiString(lang, 'Long')}
@@ -350,6 +352,7 @@ function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                             <button
                                 className={`toggle-btn toggle-short ${isShort ? 'active' : ''}`}
                                 onClick={() => setIsShort(true)}
+                                aria-pressed={isShort}
                             >
                                 <TrendingDown size={14} />
                                 {getUiString(lang, 'Short')}
