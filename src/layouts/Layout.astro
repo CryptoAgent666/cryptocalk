@@ -73,6 +73,23 @@ const calcSlug = basePath.replace(/^\//, '').replace(/\/$/, '');
 const categorySlug = CALCULATOR_CATEGORY[calcSlug] ?? null;
 const categoryName = categorySlug ? CATEGORY_NAMES[categorySlug] : null;
 
+const webPageSchema = pageType === 'calculator' ? {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${canonicalUrl}#webpage`,
+  url: canonicalUrl,
+  name: calcName,
+  description: description,
+  inLanguage: lang,
+  isPartOf: { '@type': 'WebSite', '@id': 'https://cryptocalk.com/#website' },
+  datePublished: '2025-11-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['.calc-header h1', '.calc-header p'],
+  },
+} : null;
+
 const breadcrumbSchema = pageType === 'calculator' ? {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -196,7 +213,8 @@ const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es-419', pt: 
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`https://cryptocalk.com${ogImagePath}`} />
 
-    <!-- Schema.org: BreadcrumbList for EN calculator pages -->
+    <!-- Schema.org: WebPage + BreadcrumbList for EN calculator pages -->
+    {webPageSchema && <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />}
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 
     <script>

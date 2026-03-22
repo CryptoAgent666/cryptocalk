@@ -1,0 +1,161 @@
+{
+  "_comment": "Ready-to-use JSON-LD templates for CryptoCalk schema improvements. Generated 2026-03-22.",
+
+  "calculator-webpage": {
+    "_comment": "Add to EN calculator pages (Layout.astro) and localized pages (LocalizedCalculatorPage.astro). Replace {{PLACEHOLDERS}} with actual values.",
+    "template": {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "{{PAGE_URL}}#webpage",
+      "url": "{{PAGE_URL}}",
+      "name": "{{PAGE_TITLE}}",
+      "description": "{{PAGE_DESCRIPTION}}",
+      "inLanguage": "{{LANG}}",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://cryptocalk.com/#website"
+      },
+      "about": {
+        "@type": "WebApplication",
+        "@id": "{{PAGE_URL}}#app"
+      },
+      "datePublished": "2025-11-01",
+      "dateModified": "{{BUILD_DATE}}",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".calc-header h1", ".calc-header p"]
+      }
+    },
+    "astro_implementation_layout": "// Add to Layout.astro frontmatter (for EN calculator pages):\nconst webPageSchema = pageType === 'calculator' ? {\n  '@context': 'https://schema.org',\n  '@type': 'WebPage',\n  '@id': `${canonicalUrl}#webpage`,\n  url: canonicalUrl,\n  name: calcName,\n  description: description,\n  inLanguage: lang,\n  isPartOf: { '@type': 'WebSite', '@id': 'https://cryptocalk.com/#website' },\n  datePublished: '2025-11-01',\n  dateModified: new Date().toISOString().split('T')[0],\n  speakable: {\n    '@type': 'SpeakableSpecification',\n    cssSelector: ['.calc-header h1', '.calc-header p']\n  }\n} : null;\n\n// Add to <head>:\n{webPageSchema && <script type=\"application/ld+json\" set:html={JSON.stringify(webPageSchema)} />}",
+    "astro_implementation_localized": "// Add to LocalizedCalculatorPage.astro (after existing webAppSchema):\nconst webPageSchema = {\n  '@context': 'https://schema.org',\n  '@type': 'WebPage',\n  '@id': `${pageUrl}#webpage`,\n  url: pageUrl,\n  name: localizedTitle,\n  description: localizedDescription,\n  inLanguage: lang,\n  isPartOf: { '@type': 'WebSite', '@id': 'https://cryptocalk.com/#website' },\n  datePublished: '2025-11-01',\n  dateModified: new Date().toISOString().split('T')[0],\n  speakable: {\n    '@type': 'SpeakableSpecification',\n    cssSelector: ['.calc-header h1', '.calc-header p']\n  }\n};\n\n// Add alongside existing schema script tags:\n<script type=\"application/ld+json\" set:html={JSON.stringify(webPageSchema)} />"
+  },
+
+  "organization-with-id": {
+    "_comment": "Updated Organization schema with @id for cross-page referencing. Replace the existing Organization block on the homepage.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://cryptocalk.com/#organization",
+      "name": "CryptoCalk",
+      "url": "https://cryptocalk.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptocalk.com/logo-200x200.png",
+        "width": 200,
+        "height": 200
+      },
+      "email": "support@cryptocalk.com",
+      "sameAs": [
+        "https://x.com/yakovlevka3",
+        "https://github.com/CryptoAgent666/cryptocalk",
+        "https://www.linkedin.com/in/konstantin-iakovlev/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@cryptocalk.com",
+        "contactType": "customer support",
+        "availableLanguage": ["en", "es", "pt", "tr", "hi", "ru"]
+      },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://cryptocalk.com/about/#founder",
+        "name": "Konstantin Iakovlev"
+      }
+    },
+    "_note_logo": "Create a 200x200 PNG version of the logo at /public/logo-200x200.png. If SVG must stay, keep it but add the PNG as a fallback. Google prefers raster."
+  },
+
+  "website-with-id": {
+    "_comment": "Updated WebSite schema with @id. Replace existing WebSite block on homepage.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://cryptocalk.com/#website",
+      "name": "CryptoCalk",
+      "url": "https://cryptocalk.com/",
+      "description": "Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 60+ more tools.",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://cryptocalk.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://cryptocalk.com/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  },
+
+  "site-navigation": {
+    "_comment": "Optional: Add to homepage to describe the main category navigation. Place alongside existing homepage schemas.",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": "Calculator Categories",
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Profit & Loss Calculators",
+          "url": "https://cryptocalk.com/calculators/profit-loss/"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Converter Tools",
+          "url": "https://cryptocalk.com/calculators/converters/"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Mining Calculators",
+          "url": "https://cryptocalk.com/calculators/mining/"
+        },
+        {
+          "@type": "WebPage",
+          "name": "DeFi & Yield Calculators",
+          "url": "https://cryptocalk.com/calculators/defi-yield/"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Tax & Reporting Tools",
+          "url": "https://cryptocalk.com/calculators/tax-reporting/"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Investment Calculators",
+          "url": "https://cryptocalk.com/calculators/investment/"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Trading Tools",
+          "url": "https://cryptocalk.com/calculators/trading-tools/"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Gas & Fee Calculators",
+          "url": "https://cryptocalk.com/calculators/gas-fees/"
+        }
+      ]
+    }
+  },
+
+  "category-hub-fix": {
+    "_comment": "Add dateModified to CollectionPage on category hubs. Wire LAST_UPDATED into the schema.",
+    "code_change": "// In src/pages/calculators/[category].astro, add dateModified to CollectionPage schema:\n{\n  '@context': 'https://schema.org',\n  '@type': 'CollectionPage',\n  name: `${category.title} Calculators`,\n  description: category.metaDescription,\n  url: categoryPageUrl,\n  inLanguage: DEFAULT_LANG,\n  dateModified: LAST_UPDATED,  // <-- ADD THIS LINE\n  isPartOf: {\n    '@type': 'WebSite',\n    name: 'CryptoCalk',\n    url: `${SITE_URL}/`,\n  },\n}"
+  },
+
+  "en-calculator-datemodified-fix": {
+    "_comment": "EN calculator pages have hardcoded dateModified. Two approaches to fix:",
+    "approach_a_inline_build_date": "// For EN .astro pages with inline JSON-LD, replace hardcoded dates with:\n// In the frontmatter section:\nconst BUILD_DATE = new Date().toISOString().split('T')[0];\n// Then in the JSON-LD block, use the variable.\n// NOTE: Since EN pages use raw <script type='application/ld+json'> blocks,\n// you would need to convert them to set:html={JSON.stringify(schema)} pattern.",
+    "approach_b_layout_level": "// Better: Move WebApplication schema generation into Layout.astro (like BreadcrumbList),\n// so EN pages automatically get dynamic dateModified without manual inline JSON-LD."
+  },
+
+  "operating-system-fix": {
+    "_comment": "Standardize operatingSystem across all WebApplication schemas.",
+    "file": "src/components/LocalizedCalculatorPage.astro",
+    "line": 275,
+    "change": "operatingSystem: 'Web' --> operatingSystem: 'All'"
+  }
+}

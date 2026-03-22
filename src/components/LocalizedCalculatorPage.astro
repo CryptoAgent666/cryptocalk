@@ -265,22 +265,43 @@ const categoryName = categorySlug ? (CATEGORY_NAMES[categorySlug]?.[lang] ?? CAT
 const categoryHubPath = categorySlug ? getLocalizedPath(`/calculators/${categorySlug}`, lang) : null;
 const categoryHubUrl = categoryHubPath ? `${siteUrl}${categoryHubPath}` : null;
 
+const buildDate = new Date().toISOString().split('T')[0];
+
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
+  "@id": `${pageUrl}#app`,
   name: localizedTitle,
   description: localizedDescription,
   applicationCategory: "FinanceApplication",
-  operatingSystem: "Web",
+  operatingSystem: "All",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   inLanguage: lang,
   url: pageUrl,
   datePublished: "2025-11-01",
-  dateModified: new Date().toISOString().split('T')[0],
+  dateModified: buildDate,
   author: {
     "@type": "Person",
+    "@id": `${siteUrl}/about/#founder`,
     name: "Konstantin Iakovlev",
     url: `${siteUrl}/about/`,
+  },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: localizedTitle,
+  description: localizedDescription,
+  inLanguage: lang,
+  isPartOf: { "@type": "WebSite", "@id": `${siteUrl}/#website` },
+  datePublished: "2025-11-01",
+  dateModified: buildDate,
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".calc-header h1", ".calc-header p"],
   },
 };
 
@@ -459,6 +480,8 @@ const faqSchema = {
 
   <SiteFooter lang={lang} />
 
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}
+  />
   <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)}
   ></script>
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}

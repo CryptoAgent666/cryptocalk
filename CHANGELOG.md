@@ -2,6 +2,24 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-22] (update 39) — Schema audit fixes (score 82→~90)
+
+### Added
+- `public/logo-200x200.png` — PNG raster logo (200×200) for Google Knowledge Panel (replaces SVG)
+- **WebPage schema** with `speakable` on all ~935 calculator pages (EN via Layout.astro, localized via LocalizedCalculatorPage.astro)
+- **@id cross-references** across Organization, WebSite, WebApplication, WebPage entities
+
+### Fixed
+- Organization `logo` → PNG raster (Google requires PNG/JPG, not SVG)
+- Organization `founder` → linked Person with `@id` to About page
+- WebSite `publisher` → linked Organization via `@id`
+- Homepage WebApplication: added `datePublished`/`dateModified` (was missing)
+- EN calculator `dateModified` → "2026-03-22" across 35 .astro pages (was hardcoded "2026-03-09")
+- `operatingSystem` → "All" on localized pages (was "Web", inconsistent with EN)
+
+### Build
+- 935 pages, 0 errors
+
 ## [2026-03-22] (update 38) — Full SEO Audit implementation (score 75.6→~85)
 
 ### Added
