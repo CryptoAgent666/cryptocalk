@@ -1,1 +1,20 @@
 ErrorDocument 404 /404.html
+
+# ── Security Headers ──────────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header unset X-Powered-By
+
+  # ── Caching: immutable for hashed Astro assets ────────────────
+  <FilesMatch "\.[a-zA-Z0-9]{8}\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # ── Caching: HTML pages (SSG — safe to edge-cache) ───────────
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=3600, s-maxage=86400, stale-while-revalidate=3600"
+  </FilesMatch>
+</IfModule>

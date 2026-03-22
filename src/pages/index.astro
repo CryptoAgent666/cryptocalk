@@ -79,9 +79,18 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'CryptoCalk',
   url: siteUrl,
-  logo: `${siteUrl}/og-image.png`,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteUrl}/favicon.svg`,
+    width: 200,
+    height: 200,
+  },
   email: 'support@cryptocalk.com',
-  areaServed: { '@type': 'AdministrativeArea', name: 'Worldwide' },
+  sameAs: [
+    'https://x.com/yakovlevka3',
+    'https://github.com/CryptoAgent666/cryptocalk',
+    'https://www.linkedin.com/in/konstantin-iakovlev/',
+  ],
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'support@cryptocalk.com',
@@ -103,7 +112,24 @@ const itemListSchema = {
   })),
 };
 
-const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema];
+const softwareAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'CryptoCalk',
+  url: homepageUrl,
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'All',
+  description: 'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 60+ more tools.',
+  inLanguage: 'en',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  author: {
+    '@type': 'Person',
+    name: 'Konstantin Iakovlev',
+    url: `${siteUrl}/about/`,
+  },
+};
+
+const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, softwareAppSchema];
 ---
 
 <Layout

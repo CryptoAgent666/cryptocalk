@@ -118,7 +118,8 @@
       "Bash(xargs -I {} basename {} .astro)",
       "Bash(pkill -f \"astro dev\")",
       "Bash(xargs -r kill)",
-      "Bash(git push origin main)"
+      "Bash(git push origin main)",
+      "WebFetch(domain:cryptocalk.com)"
     ]
   }
 }

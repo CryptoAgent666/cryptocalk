@@ -86,6 +86,8 @@ const breadcrumbSchema = pageType === 'calculator' ? {
 // Per-calculator OG image: use /og/{slug}.png for top-10 calculators, else default
 const OG_IMAGE_SLUGS = new Set(['profit-calculator','dca-calculator','mining-calculator','tax-calculator','staking-calculator','converter','liquidation-calculator','position-size-calculator','impermanent-loss-calculator','gas-calculator']);
 const ogImagePath = OG_IMAGE_SLUGS.has(calcSlug) ? `/og/${calcSlug}.png` : '/og-image.png';
+
+const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es-419', pt: 'pt-BR', tr: 'tr-TR', hi: 'hi-IN', ru: 'ru-RU' };
 ---
 
 <!doctype html>
@@ -163,11 +165,11 @@ const ogImagePath = OG_IMAGE_SLUGS.has(calcSlug) ? `/og/${calcSlug}.png` : '/og-
     <title>{title}</title>
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- hreflang tags -->
+    <!-- hreflang tags (language-region codes for better regional SERP targeting) -->
     {SUPPORTED_LANGS.map((l) => (
       <link
         rel="alternate"
-        hreflang={l}
+        hreflang={hreflangRegionMap[l] ?? l}
         href={`https://cryptocalk.com${getLocalizedPath(basePath, l)}`}
       />
     ))}

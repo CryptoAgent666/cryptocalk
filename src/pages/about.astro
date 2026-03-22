@@ -4,6 +4,15 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { Mail, Briefcase, Code, Award, Twitter, Linkedin, Instagram, Globe } from 'lucide-react';
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cryptocalk.com/' },
+    { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://cryptocalk.com/about/' },
+  ],
+};
+
 const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
@@ -52,9 +61,9 @@ const webPageSchema = {
     <div class="about-content">
       <section class="mission-section">
         <h2>Our Mission</h2>
-        <p>Cryptocurrency is a fast-moving space. Traders, investors, and researchers need reliable numbers before they act -- whether that means sizing a position, projecting <a href="/staking-calculator/" class="project-link">staking yields</a>, or estimating <a href="/tax-calculator/" class="project-link">tax exposure</a> across multiple jurisdictions. Yet most of the calculators available online are slow, outdated, riddled with ads, or locked behind signup walls. That gap is why CryptoCalk exists.</p>
+        <p>Cryptocurrency is a fast-moving space. Traders, investors, and researchers need reliable numbers before they act — whether that means sizing a position, projecting <a href="/staking-calculator/" class="project-link">staking yields</a>, or estimating <a href="/tax-calculator/" class="project-link">tax exposure</a> across multiple jurisdictions. Yet most of the calculators available online are slow, outdated, riddled with ads, or locked behind signup walls. That gap is why CryptoCalk exists.</p>
         <p>Our goal is simple: provide the crypto community with <strong>lightning-fast, accurate, and privacy-focused</strong> financial tools that anyone can use, anywhere in the world, without creating an account or surrendering personal data. Every calculator on this site loads in under a second, runs entirely in your browser, and produces results you can trust enough to trade on.</p>
-        <p>From <a href="/dca-calculator/" class="project-link">DCA projections</a> and impermanent loss estimates to <a href="/liquidation-calculator/" class="project-link">margin liquidation prices</a> and <a href="/mining-calculator/" class="project-link">mining profitability</a>, CryptoCalk now offers <strong>more than 60 specialized calculators</strong> -- each one built by someone who actually uses them. The formulas are transparent, the interface is clean, and the code is optimized for speed on every device. That is the standard we hold ourselves to, and it is the reason traders in over 50 countries keep coming back.</p>
+        <p>From <a href="/dca-calculator/" class="project-link">DCA projections</a> and impermanent loss estimates to <a href="/liquidation-calculator/" class="project-link">margin liquidation prices</a> and <a href="/mining-calculator/" class="project-link">mining profitability</a>, CryptoCalk now offers <strong>more than 60 specialized calculators</strong> — each one built by someone who actually uses them. The formulas are transparent, the interface is clean, and the code is optimized for speed on every device. That is the standard we hold ourselves to, and it is the reason traders in over 50 countries keep coming back.</p>
       </section>
 
       <div class="divider"></div>
@@ -77,18 +86,18 @@ const webPageSchema = {
             <h3>Konstantin Iakovlev</h3>
             <span class="author-role">Founder & Lead Developer</span>
 
-            <p>I am Konstantin, a developer with over a decade of professional experience at the intersection of finance and technology. I have been building financial web products since the early 2010s -- first in traditional lending and banking comparison, then in cryptocurrency starting in 2017. CryptoCalk is the product of everything I have learned about what people actually need when they sit down to make a financial decision.</p>
+            <p>I am Konstantin, a developer with over a decade of professional experience at the intersection of finance and technology. I have been building financial web products since the early 2010s — first in traditional lending and banking comparison, then in cryptocurrency starting in 2017. CryptoCalk is the product of everything I have learned about what people actually need when they sit down to make a financial decision.</p>
 
             <p>Before CryptoCalk, I created <a href="https://zanimaem.kz" target="_blank" rel="noopener noreferrer" class="project-link">zanimaem.kz</a>, which grew into Kazakhstan's leading financial comparison platform, helping hundreds of thousands of users compare loans, deposits, and credit cards across dozens of banks. I also built <a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="project-link">calk.kz</a>, a general-purpose calculator platform serving a broad range of financial, mathematical, and everyday computation needs. Both projects taught me that the best financial tools share two qualities: they are fast, and they earn trust through transparency.</p>
 
-            <p>On the technical side, CryptoCalk is built with Astro, React, and TypeScript -- a modern stack chosen specifically for performance. Every page is statically generated, every calculation runs client-side, and every layout is designed mobile-first. I handle the architecture, the formula implementation, the SEO strategy, and the performance optimization myself, which means I can move quickly and maintain a high standard across all 60+ calculators.</p>
+            <p>On the technical side, CryptoCalk is built with Astro, React, and TypeScript — a modern stack chosen specifically for performance. Every page is statically generated, every calculation runs client-side, and every layout is designed mobile-first. I handle the architecture, the formula implementation, the SEO strategy, and the performance optimization myself, which means I can move quickly and maintain a high standard across all 60+ calculators.</p>
 
             <ul class="author-highlights">
               <li>
                 <div class="highlight-icon"><Briefcase size={18} /></div>
                 <div>
                   <strong>Finance & Crypto Background</strong>
-                  <span>10+ years working with financial instruments -- yields, margins, liquidation mechanics, tokenomics, and tax structures. Active in cryptocurrency markets since 2017.</span>
+                  <span>10+ years working with financial instruments — yields, margins, liquidation mechanics, tokenomics, and tax structures. Active in cryptocurrency markets since 2017.</span>
                 </div>
               </li>
               <li>
@@ -122,7 +131,7 @@ const webPageSchema = {
       <section class="mission-section">
         <h2>How We Build Our Calculators</h2>
         <p>Every calculator on CryptoCalk goes through a rigorous development process. It starts with research: we study the underlying financial formula, cross-reference it against industry-standard sources (exchange documentation, academic papers, established financial references), and identify the edge cases that most online tools get wrong. Only after the math is verified do we begin writing code.</p>
-        <p>Where a calculator needs live data -- such as current coin prices for our <a href="/profit-calculator/" class="project-link">profit calculator</a> or real-time exchange rates for the <a href="/converter/" class="project-link">crypto converter</a> -- we integrate a <strong>multi-provider fallback chain</strong> that pulls from several independent market data APIs. If one provider is down or rate-limited, the calculator seamlessly switches to the next. This means you always get a result, and it is always based on fresh data.</p>
+        <p>Where a calculator needs live data — such as current coin prices for our <a href="/profit-calculator/" class="project-link">profit calculator</a> or real-time exchange rates for the <a href="/converter/" class="project-link">crypto converter</a> — we integrate a <strong>multi-provider fallback chain</strong> that pulls from several independent market data APIs. If one provider is down or rate-limited, the calculator seamlessly switches to the next. This means you always get a result, and it is always based on fresh data.</p>
         <p>Every calculator is tested across browsers (Chrome, Firefox, Safari, Edge) and devices (phones, tablets, desktops). We design mobile-first because the majority of our users are on their phones, often making quick calculations between trades. The interface is intentionally minimal: inputs at the top, results immediately below, and a clear explanation of the formula underneath.</p>
         <p>After launch, each calculator is monitored and updated regularly. Market conditions change, new DeFi protocols emerge, and tax rules evolve. We audit our formulas and data sources on an ongoing basis to make sure CryptoCalk stays accurate and relevant.</p>
       </section>
@@ -131,9 +140,9 @@ const webPageSchema = {
 
       <section class="mission-section">
         <h2>Why Trust CryptoCalk</h2>
-        <p><strong>Transparent calculations.</strong> Every formula is visible. We do not hide the math behind a black box -- you can see exactly how your result is computed, verify it yourself, and understand what each input does. If you spot an error, we want to hear about it.</p>
+        <p><strong>Transparent calculations.</strong> Every formula is visible. We do not hide the math behind a black box — you can see exactly how your result is computed, verify it yourself, and understand what each input does. If you spot an error, we want to hear about it.</p>
         <p><strong>No ads, no data harvesting, no signup walls.</strong> CryptoCalk is free to use and does not require an account. We do not sell your data, we do not track your calculations, and we do not interrupt you with pop-ups. The site is supported by the same team that runs our other financial platforms.</p>
-        <p><strong>Privacy-first architecture.</strong> All calculations run entirely in your browser. Nothing is sent to our servers. Your numbers stay on your device -- we never see them, store them, or share them. This is a deliberate architectural choice, not an afterthought.</p>
+        <p><strong>Privacy-first architecture.</strong> All calculations run entirely in your browser. Nothing is sent to our servers. Your numbers stay on your device — we never see them, store them, or share them. This is a deliberate architectural choice, not an afterthought.</p>
         <p><strong>Regularly updated.</strong> Crypto does not stand still, and neither do we. When a new DeFi mechanism becomes popular, when tax reporting requirements change, or when an exchange updates its fee structure, we update our tools to match.</p>
         <p><strong>Used worldwide.</strong> Traders, investors, students, and financial researchers in over 50 countries use CryptoCalk daily. The site is available in English, Spanish, Portuguese, Turkish, Hindi, and Russian, with more languages on the way.</p>
       </section>
@@ -141,6 +150,7 @@ const webPageSchema = {
   </div>
   <SiteFooter lang="en" />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </Layout>
 
 <style>

@@ -2,6 +2,48 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-22] (update 38) — Full SEO Audit implementation (score 75.6→~85)
+
+### Added
+- `public/llms.txt` — llms.txt file for AI search discoverability (GEO)
+- `public/robots.txt` — explicit AI crawler rules: allow GPTBot/ClaudeBot/PerplexityBot, block CCBot/Google-Extended/Bytespider
+- `public/.htaccess` — security headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy), immutable cache for hashed assets, HTML edge caching for Cloudflare
+- `public/7397f0c5ed569a8e602961eac8858f4b.txt` — IndexNow API key
+- `index.astro` — SoftwareApplication schema on homepage, Organization sameAs (X, GitHub, LinkedIn)
+- `about.astro` — BreadcrumbList schema (Home > About Us)
+- `calculator-faq.ts` — 25 new calculator FAQ entries × 5 languages = 750 Q&A pairs (476→1,526 lines)
+- `calculator-seo-ext.ts` — 16 unique seo-ext entries × 6 languages = ~2,817 lines of unique content (9,701→12,518 lines). Eliminates duplicate-content issue on: bitcoin-unit-converter, cross-chain-bridge, correlation, index-fund, inheritance, portfolio-rebalance, sentiment, defi-yield-aggregator, dust-attack, exchange-fee-comparator, flash-loan, gas-optimization, governance-voting, nft-rarity, token-unlock, whale-alert
+
+### Fixed
+- **Security headers not served** — `_headers` file was ignored by Plesk; now using `.htaccess` rules
+- **Organization logo** — changed from OG card (1200×630) to ImageObject with favicon.svg (200×200)
+- **Organization areaServed** — removed invalid AdministrativeArea "Worldwide"
+- **dateModified hardcoded** — LocalizedCalculatorPage now uses dynamic build date instead of "2026-03-09"
+- **Sitemap lastmod** — removed identical-date lastmod (was misleading; Google ignores uniform dates)
+- **Internal links in localized pages** — seo-body-text links now localized via getLocalizedPath() (was sending ES/PT/TR/HI/RU users to EN pages)
+- **ASIC miner table date** — "2024-2025" → "2025-2026" in mining-calculator.astro
+- **x-powered-by: PleskLin** — suppressed via .htaccess Header unset
+
+### Changed
+- **Hreflang** — updated to language-region codes: es→es-419, pt→pt-BR, tr→tr-TR, hi→hi-IN, ru→ru-RU
+- **H2 heading anchors** — all 12 SEO section headings on ~800 localized pages now have slugified `id` attributes for deep linking / AI citation
+- **Vite manualChunks** — isolated ui-translations into separate chunk to reduce ErrorBoundary mega-bundle (412KB → split)
+- **Hashed asset cache** — max-age from 4 hours to 1 year (immutable) for content-hashed JS/CSS
+- **HTML edge caching** — added s-maxage=86400 for Cloudflare CDN edge caching
+
+### Reports
+- `FULL-AUDIT-REPORT.md` — comprehensive 7-category SEO audit (score: 75.6/100)
+- `ACTION-PLAN.md` — 28 prioritized recommendations
+
+## [2026-03-22] (update 37) — 16 new seo-ext entries (all 6 languages)
+
+### Added
+- **16 calculator-seo-ext.ts entries**: bitcoin-unit-converter, cross-chain-bridge-calculator, crypto-correlation-calculator, crypto-index-fund-calculator, crypto-inheritance-calculator, crypto-portfolio-rebalance-calculator, crypto-sentiment-calculator, defi-yield-aggregator, dust-attack-calculator, exchange-fee-comparator, flash-loan-calculator, gas-optimization-calculator, governance-voting-calculator, nft-rarity-calculator, token-unlock-calculator, whale-alert-calculator
+- Each entry has 8 unique sections (interpret, scenarios, checklist, mistakes, benchmarks, execution, hygiene, validation) × 6 languages (en, es, pt, tr, hi, ru)
+- EN entries include 2–3 contextual internal links per calculator to related tools (profit, DCA, gas, tax, staking, position-size, etc.)
+- All content uses specific numbers, benchmarks, and actionable advice — no generic filler
+- File grew from 9,701 lines to 12,518 lines (62 → 78 calculator entries)
+
 ## [2026-03-22] (update 36) — Non-EN content quality audit
 
 ### Fixed
