@@ -272,7 +272,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -372,7 +372,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 step="any"
                                 min="0"
                                 onFocus={(e) => e.target.select()} />
-                            <span className="input-unit">Watts</span>
+                            <span className="input-unit">{getUiString(lang, 'Watts')}</span>
                         </div>
                     </div>
 
@@ -535,7 +535,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     <tbody>
                                         {results.map((r) => (
                                             <tr key={r.period}>
-                                                <td className="period-cell">{r.period}</td>
+                                                <td className="period-cell">{getUiString(lang, r.period)}</td>
                                                 <td className="btc-cell">{r.revenueBtc.toFixed(8)}</td>
                                                 <td>{formatUSD(r.revenueUsd)}</td>
                                                 <td className="cost-cell">-{formatUSD(r.electricityCost)}</td>
@@ -552,7 +552,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 {results.map((r) => (
                                     <article key={`${r.period}-mobile`} className="mining-period-card">
                                         <div className="mining-period-head">
-                                            <span className="mining-period-name">{r.period}</span>
+                                            <span className="mining-period-name">{getUiString(lang, r.period)}</span>
                                             <span className={`mining-period-profit ${r.netProfit >= 0 ? 'profit' : 'loss'}`}>
                                                 {r.netProfit >= 0 ? '+' : ''}{formatUSD(r.netProfit)}
                                             </span>

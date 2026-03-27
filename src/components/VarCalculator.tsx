@@ -102,7 +102,7 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {VAR_SCENARIOS.map((scenario) => (
                 <button
@@ -110,21 +110,21 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                   onClick={() => applyScenario(scenario)}
                 >
-                  {scenario.label}
+                  {getUiString(lang, scenario.label)}
                 </button>
               ))}
             </div>
           </div>
 
           <div className="input-group">
-            <label>Portfolio Value (USD)</label>
+            <label>{getUiString(lang, 'Portfolio Value (USD)')}</label>
             <div className="input-with-prefix">
               <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="var-portfolio" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>Daily Volatility (%)</label>
+            <label>{getUiString(lang, 'Daily Volatility (%)')}</label>
             <div className="pills-row">
               {VOLATILITY_PRESETS.map((preset) => (
                 <button
@@ -142,7 +142,7 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Time Horizon (days)</label>
+            <label>{getUiString(lang, 'Time Horizon (days)')}</label>
             <div className="pills-row">
               {HORIZON_PRESETS.map((preset) => (
                 <button
@@ -158,7 +158,7 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Confidence Level</label>
+            <label>{getUiString(lang, 'Confidence Level')}</label>
             <div className="toggle-group" role="tablist" aria-label="Confidence level">
               {(['90', '95', '99'] as const).map((level) => (
                 <button
@@ -173,9 +173,9 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
           </div>
 
-          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> Reset</button>
+          <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            Auto-calculates as you type. 95% confidence is the common baseline for portfolio risk checks.
+            {getUiString(lang, 'Auto-calculates as you type.')} {getUiString(lang, '95% confidence is the common baseline for portfolio risk checks.')}
           </span>
         </div>
 

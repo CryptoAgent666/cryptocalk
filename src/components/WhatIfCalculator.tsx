@@ -416,7 +416,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="scenario-chips">
                             {QUICK_SCENARIOS.map((s, i) => (
                                 <button key={i} className="scenario-chip" onClick={() => handleQuickScenario(s)}>
-                                    {s.label}
+                                    {getUiString(lang, s.label)}
                                 </button>
                             ))}
                         </div>

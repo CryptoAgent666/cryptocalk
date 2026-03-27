@@ -136,7 +136,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -166,7 +166,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                             <select value={txType} onChange={(e) => setTxType(e.target.value)} id="gas-tx-type" className="input-select">
                                 {TX_TYPES.map((t) => (
                                     <option key={t.id} value={t.id}>
-                                        {t.label} {t.gas > 0 ? `(${t.gas.toLocaleString()} gas)` : ''}
+                                        {getUiString(lang, t.label)} {t.gas > 0 ? `(${t.gas.toLocaleString()} gas)` : ''}
                                     </option>
                                 ))}
                             </select>
@@ -209,7 +209,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                             {SPEED_MULTIPLIERS.map((s) => (
                                 <button key={s.id} className={`pill-btn ${speed === s.id ? 'active' : ''}`}
                                     onClick={() => setSpeed(s.id)}>
-                                    {s.label}
+                                    {getUiString(lang, s.label)}
                                 </button>
                             ))}
                         </div>
@@ -217,7 +217,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Native Price */}
                     <div className="input-group">
-                        <label htmlFor="gas-eth-price"><DollarSign size={14} /> {currentNetwork.symbol} Price (USD)</label>
+                        <label htmlFor="gas-eth-price"><DollarSign size={14} /> {currentNetwork.symbol} {getUiString(lang, 'Price (USD)')}</label>
                         <div className="input-with-prefix">
                             <input type="number" inputMode="decimal" value={ethPrice} onChange={(e) => setEthPrice(e.target.value)}
                                 placeholder="" id="gas-eth-price" step="any" min="0" onFocus={(e) => e.target.select()} />
@@ -260,7 +260,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                         <>
                             {/* Hero */}
                             <div className="result-hero" style={{ borderColor: currentNetwork.color }}>
-                                <span className="result-hero-label">{getUiString(lang, 'Gas Cost')} — {currentTx.label}</span>
+                                <span className="result-hero-label">{getUiString(lang, 'Gas Cost')} — {getUiString(lang, currentTx.label)}</span>
                                 <span className="result-hero-value" style={{ color: currentNetwork.color }}>
                                     <Fuel size={28} />
                                     {formatUSD(gasCostUSD)}
@@ -279,7 +279,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                                             background: speed === s.id ? `${currentNetwork.color}10` : undefined,
                                             borderColor: speed === s.id ? currentNetwork.color : undefined,
                                         }}>
-                                            <div className="speed-card-label">{s.label}</div>
+                                            <div className="speed-card-label">{getUiString(lang, s.label)}</div>
                                             <div className="speed-card-value" style={{ color: speed === s.id ? currentNetwork.color : undefined }}>
                                                 {formatUSD(c)}
                                             </div>
@@ -341,7 +341,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                                                     borderBottom: '1px solid var(--color-border)',
                                                     background: row.label === currentTx.label ? `${currentNetwork.color}08` : 'transparent',
                                                 }}>
-                                                    <td style={{ padding: '8px', fontWeight: row.label === currentTx.label ? 600 : 400 }}>{row.label}</td>
+                                                    <td style={{ padding: '8px', fontWeight: row.label === currentTx.label ? 600 : 400 }}>{getUiString(lang, row.label)}</td>
                                                     <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-secondary)' }}>{row.gas.toLocaleString()}</td>
                                                     <td style={{ padding: '8px', textAlign: 'right', fontWeight: 600, color: row.cost > 10 ? 'var(--color-accent-red)' : row.cost > 1 ? 'var(--color-text)' : 'var(--color-accent-green)' }}>
                                                         {formatUSD(row.cost)}

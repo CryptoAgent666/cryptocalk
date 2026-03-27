@@ -166,7 +166,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -215,7 +215,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                             {COMPOUND_FREQUENCIES.map((f) => (
                                 <button key={f.id} className={`pill-btn ${compoundFreq === f.id ? 'active' : ''}`}
                                     onClick={() => setCompoundFreq(f.id)}>
-                                    {f.label}
+                                    {getUiString(lang, f.label)}
                                 </button>
                             ))}
                         </div>
@@ -345,7 +345,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Compounding')}</span>
-                                    <span className="result-value">{freq.label} ({n}x/{getUiString(lang, 'year')})</span>
+                                    <span className="result-value">{getUiString(lang, freq.label)} ({n}x/{getUiString(lang, 'year')})</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Period')}</span>

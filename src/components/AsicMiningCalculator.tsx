@@ -144,12 +144,11 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
     useEffect(() => {
         let isMounted = true;
         setLiveDataStatus('loading');
-        fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://whattomine.com/asic.json"))
+        fetch("https://corsproxy.io/?" + encodeURIComponent("https://whattomine.com/asic.json"))
             .then(res => res.json())
-            .then(data => {
+            .then(parsed => {
                 if (!isMounted) return;
                 try {
-                    const parsed = JSON.parse(data.contents);
                     const coins = parsed.coins;
                     const btcPrice = coins['Bitcoin']?.exchange_rate || NETWORK_DATA['BTC'].price;
 
@@ -339,7 +338,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>

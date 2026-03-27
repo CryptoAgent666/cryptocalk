@@ -96,7 +96,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {TREYNOR_SCENARIOS.map((scenario) => (
                 <button
@@ -104,14 +104,14 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                   onClick={() => applyScenario(scenario)}
                 >
-                  {scenario.label}
+                  {getUiString(lang, scenario.label)}
                 </button>
               ))}
             </div>
           </div>
 
           <div className="input-group">
-            <label>Portfolio Value (USD)</label>
+            <label>{getUiString(lang, 'Portfolio Value (USD)')}</label>
             <div className="pills-row">
               {PORTFOLIO_VALUE_PRESETS.map((preset) => (
                 <button
@@ -136,7 +136,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Expected Annual Return (%)</label>
+            <label>{getUiString(lang, 'Expected Annual Return (%)')}</label>
             <div className="pills-row">
               {EXPECTED_RETURN_PRESETS.map((preset) => (
                 <button
@@ -160,7 +160,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Risk-Free Rate (%)</label>
+            <label>{getUiString(lang, 'Risk-Free Rate (%)')}</label>
             <div className="pills-row">
               {RISK_FREE_PRESETS.map((preset) => (
                 <button
@@ -184,7 +184,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Portfolio Beta</label>
+            <label>{getUiString(lang, 'Portfolio Beta')}</label>
             <div className="pills-row">
               {BETA_PRESETS.map((preset) => (
                 <button
@@ -207,7 +207,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Projection Horizon (years)</label>
+            <label>{getUiString(lang, 'Projection Horizon (years)')}</label>
             <div className="pills-row">
               {HORIZON_YEAR_PRESETS.map((preset) => (
                 <button
@@ -223,10 +223,10 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <button className="reset-btn" onClick={reset}>
-            <RotateCcw size={14} /> Reset
+            <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
           </button>
           <span className="input-hint">
-            Auto-calculates as you type. Compare strategies at the same beta and horizon.
+            {getUiString(lang, 'Auto-calculates as you type.')} {getUiString(lang, 'Compare strategies at the same beta and horizon.')}
           </span>
         </div>
 

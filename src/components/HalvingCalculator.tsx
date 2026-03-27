@@ -88,12 +88,14 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
     const [powerConsumption, setPowerConsumption] = useState('3000');
     const [btcPrice, setBtcPrice] = useState('');
 
+    const [networkError, setNetworkError] = useState(false);
+
     // Fetch BTC price on mount
     useEffect(() => {
         fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`)
             .then(r => r.json())
             .then(d => { if (d.bitcoin?.usd) setBtcPrice(String(d.bitcoin.usd)); })
-            .catch(() => { });
+            .catch(() => { setNetworkError(true); });
     }, []);
 
     /* ---- Countdown calculations ---- */
@@ -295,6 +297,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                             <DollarSign size={14} />
                             {getUiString(lang, 'Current BTC Price')}
                             {btcPrice && <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>}
+                            {networkError && !btcPrice && <span className="label-hint" style={{ color: 'var(--color-accent-red, #ef4444)' }}>{getUiString(lang, 'Price fetch failed — enter manually')}</span>}
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -329,7 +332,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>

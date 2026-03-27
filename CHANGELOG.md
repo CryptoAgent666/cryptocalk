@@ -2,6 +2,43 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 60) — Fix API proxies and HalvingCalculator silent failure
+
+### Fixed
+- **AsicMiningCalculator.tsx**: Replaced dead `api.allorigins.win` CORS proxy with `corsproxy.io`. Removed `JSON.parse(data.contents)` wrapper since corsproxy.io returns the response directly.
+- **GpuMiningCalculator.tsx**: Same allorigins-to-corsproxy migration for both `asic.json` and `coins.json` WhatToMine endpoints. Removed double-parse of `contents` wrapper.
+- **HalvingCalculator.tsx**: Added `networkError` state so users see a red "Price fetch failed — enter manually" hint next to the BTC Price input when CoinGecko fetch fails (was silently swallowed with `.catch(() => {})`).
+
+### Added
+- **1 new UI string key x 5 languages** (`Price fetch failed — enter manually`) in es.ts, pt.ts, tr.ts, hi.ts, ru.ts.
+- Build: 935 pages, 0 errors
+
+## [2026-03-27] (update 59) — i18n: SatoshiConverter, HashrateConverter, GweiConverter, ExchangeFeeComparator labels
+
+### Fixed
+- **SatoshiConverter.tsx**: Wrapped 11 hardcoded English labels with `getUiString()`: `Input Mode`, `Satoshi` (button), `Amount (sats)` / `Amount (BTC)` / `Amount (USD)`, `Quick Amounts`, `Fiat Currency`, `BTC Price` (label), `Fetching...`, `Unavailable`, `Refresh`, `Updated`, `Reset`.
+- **HashrateConverter.tsx**: Wrapped 8 hardcoded English labels with `getUiString()`: `Hash Rate Value`, `Enter hash rate...` (placeholder), `Unit`, `Quick Fill — Typical Devices`, 4 device quick-fill buttons (`CPU (RandomX) — 10 KH/s`, `RTX 4090 (KawPow) — 60 MH/s`, `GPU on Ethash — 100 MH/s`, `Antminer S21 Hyd — 335 TH/s`), `Reset`.
+- **GweiConverter.tsx**: Wrapped 7 hardcoded English labels with `getUiString()`: `Amount`, `Unit`, `Quick Gwei Values`, `ETH Price (USD)`, `fetching...`, `Reset`, plus gas operation labels in the table via `getUiString(lang, op.label)`.
+- **ExchangeFeeComparator.tsx**: Wrapped 4 hardcoded toggle button labels with `getUiString()`: `Spot`, `Futures`, `Maker`, `Taker`.
+
+### Added
+- **22 new UI string keys x 5 languages** (110 translations) in es.ts, pt.ts, tr.ts, hi.ts, ru.ts: `Input Mode`, `Satoshi`, `Amount (sats)`, `Amount (BTC)`, `Amount (USD)`, `Quick Amounts`, `Fiat Currency`, `Fetching...`, `Unavailable`, `Hash Rate Value`, `Enter hash rate...`, `Unit`, `Quick Fill — Typical Devices`, 4 device labels, `Quick Gwei Values`, `ETH Price (USD)`, `fetching...`, `DEX Swap`.
+- Build: 935 pages, 0 errors
+
+## [2026-03-27] (update 58) — i18n: GasFee TX labels, Mining unit, Airdrop tax notes
+
+### Fixed
+- **GasFeeCalculator.tsx**: Wrapped 10 TX_TYPES labels (`ETH Transfer`, `ERC-20 Transfer`, `ERC-20 Approve`, `DEX Swap (simple)`, `DEX Swap (multi-hop)`, `NFT Transfer`, `Bridge Transfer`, `Stake/Unstake`, `Contract Deploy`, `Custom Gas`) with `getUiString()` in both `<option>` dropdown and comparison table rows. Wrapped `Price (USD)` label for native token price input. Result hero also shows localized TX type name.
+- **MiningCalculator.tsx**: Wrapped `Watts` unit text and period labels (`Daily`, `Weekly`, `Monthly`, `Yearly`) in results table and mobile cards with `getUiString()`.
+- **AirdropCalculator.tsx**: Wrapped `taxConfig.note` with `getUiString()` so 5 TAX_COUNTRIES note strings are localizable.
+- **FundingRateCalculator.tsx**: Confirmed interval labels (`3x / 8h`, `1x / 24h`) and period labels (`1 Day`, `1 Week`, etc.) were already wrapped in prior batch. No changes needed.
+
+### Added
+- **17 new UI string keys x 5 languages** (85 translations) in es.ts, pt.ts, tr.ts, hi.ts, ru.ts: 10 TX type labels, `Price (USD)`, `Watts`, and 5 tax jurisdiction notes.
+
+### Build
+- 935 pages, 0 errors
+
 ## [2026-03-27] (update 55) — i18n fixes: schema labels, guide toggle, 37 helper translations
 
 ### Fixed

@@ -99,25 +99,25 @@ function TimestampConverter({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label><ArrowRightLeft size={14} /> Input Mode</label>
+            <label><ArrowRightLeft size={14} /> {getUiString(lang, 'Input Mode')}</label>
             <div className="toggle-group">
               <button
                 className={`toggle-btn ${mode === 'timestamp' ? 'active' : ''}`}
                 onClick={() => setMode('timestamp')}
               >
-                Unix Timestamp
+                {getUiString(lang, 'Unix Timestamp')}
               </button>
               <button
                 className={`toggle-btn ${mode === 'datetime' ? 'active' : ''}`}
                 onClick={() => setMode('datetime')}
               >
-                Date Time
+                {getUiString(lang, 'Date Time')}
               </button>
             </div>
           </div>
 
           <div className="input-group">
-            <label><Clock size={14} /> Unix Timestamp</label>
+            <label><Clock size={14} /> {getUiString(lang, 'Unix Timestamp')}</label>
             <input
               type="text"
               inputMode="numeric"
@@ -130,7 +130,7 @@ function TimestampConverter({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label><Calendar size={14} /> Date Time</label>
+            <label><Calendar size={14} /> {getUiString(lang, 'Date Time')}</label>
             <input
               type="datetime-local"
               value={datetimeInput}
@@ -141,18 +141,18 @@ function TimestampConverter({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Display Zone</label>
+            <label>{getUiString(lang, 'Display Zone')}</label>
             <div className="toggle-group">
-              <button className={`toggle-btn ${zone === 'local' ? 'active' : ''}`} onClick={() => setZone('local')}>Local</button>
-              <button className={`toggle-btn ${zone === 'utc' ? 'active' : ''}`} onClick={() => setZone('utc')}>UTC</button>
+              <button className={`toggle-btn ${zone === 'local' ? 'active' : ''}`} onClick={() => setZone('local')}>{getUiString(lang, 'Local')}</button>
+              <button className={`toggle-btn ${zone === 'utc' ? 'active' : ''}`} onClick={() => setZone('utc')}>{getUiString(lang, 'UTC')}</button>
             </div>
           </div>
 
           <button className="reset-btn" onClick={swapMode}>
-            <ArrowRightLeft size={14} /> Swap Mode
+            <ArrowRightLeft size={14} /> {getUiString(lang, 'Swap Mode')}
           </button>
           <button className="reset-btn" onClick={reset}>
-            <RotateCcw size={14} /> Reset
+            <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
           </button>
         </div>
 

@@ -132,16 +132,14 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
         setLiveDataStatus('loading');
 
         Promise.all([
-            fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://whattomine.com/asic.json")).then(r => r.json()),
-            fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://whattomine.com/coins.json")).then(r => r.json())
+            fetch("https://corsproxy.io/?" + encodeURIComponent("https://whattomine.com/asic.json")).then(r => r.json()),
+            fetch("https://corsproxy.io/?" + encodeURIComponent("https://whattomine.com/coins.json")).then(r => r.json())
         ])
-            .then(([asicData, coinsData]) => {
+            .then(([asicParsed, coinsParsed]) => {
                 if (!isMounted) return;
                 try {
-                    const asicParsed = JSON.parse(asicData.contents);
                     const btcPrice = asicParsed.coins['Bitcoin']?.exchange_rate || 65000;
 
-                    const coinsParsed = JSON.parse(coinsData.contents);
                     const wtCoins = coinsParsed.coins;
 
                     const updatedData = { ...COINS };
@@ -328,7 +326,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>

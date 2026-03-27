@@ -120,13 +120,13 @@ function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }) {
                                 className={`toggle-btn ${tradeType === 'spot' ? 'active' : ''}`}
                                 onClick={() => setTradeType('spot')}
                             >
-                                Spot
+                                {getUiString(lang, 'Spot')}
                             </button>
                             <button
                                 className={`toggle-btn ${tradeType === 'futures' ? 'active' : ''}`}
                                 onClick={() => setTradeType('futures')}
                             >
-                                Futures
+                                {getUiString(lang, 'Futures')}
                             </button>
                         </div>
                     </div>
@@ -139,13 +139,13 @@ function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }) {
                                 className={`toggle-btn ${orderType === 'maker' ? 'active' : ''}`}
                                 onClick={() => setOrderType('maker')}
                             >
-                                Maker
+                                {getUiString(lang, 'Maker')}
                             </button>
                             <button
                                 className={`toggle-btn ${orderType === 'taker' ? 'active' : ''}`}
                                 onClick={() => setOrderType('taker')}
                             >
-                                Taker
+                                {getUiString(lang, 'Taker')}
                             </button>
                         </div>
                     </div>

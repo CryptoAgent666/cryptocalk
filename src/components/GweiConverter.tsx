@@ -170,7 +170,7 @@ function GweiConverter({ lang = 'en' }: { lang?: string }) {
                 <div className="calc-input-panel">
                     {/* Amount */}
                     <div className="input-group">
-                        <label><ArrowRightLeft size={14} /> Amount</label>
+                        <label><ArrowRightLeft size={14} /> {getUiString(lang, 'Amount')}</label>
                         <input
                             type="text"
                             inputMode="decimal"
@@ -188,7 +188,7 @@ function GweiConverter({ lang = 'en' }: { lang?: string }) {
 
                     {/* Unit Selection */}
                     <div className="input-group">
-                        <label><Zap size={14} /> Unit</label>
+                        <label><Zap size={14} /> {getUiString(lang, 'Unit')}</label>
                         <div className="pills-row" style={{ flexWrap: 'wrap' }}>
                             {UNITS.map((u) => (
                                 <button
@@ -204,7 +204,7 @@ function GweiConverter({ lang = 'en' }: { lang?: string }) {
 
                     {/* Quick Gwei Buttons */}
                     <div className="input-group">
-                        <label><Fuel size={14} /> Quick Gwei Values</label>
+                        <label><Fuel size={14} /> {getUiString(lang, 'Quick Gwei Values')}</label>
                         <div className="pills-row">
                             {QUICK_GWEI.map((g) => (
                                 <button
@@ -221,8 +221,8 @@ function GweiConverter({ lang = 'en' }: { lang?: string }) {
                     {/* ETH Price */}
                     <div className="input-group">
                         <label>
-                            <DollarSign size={14} /> ETH Price (USD)
-                            {fetchingPrice && <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginLeft: '8px' }}>fetching...</span>}
+                            <DollarSign size={14} /> {getUiString(lang, 'ETH Price (USD)')}
+                            {fetchingPrice && <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginLeft: '8px' }}>{getUiString(lang, 'fetching...')}</span>}
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -238,7 +238,7 @@ function GweiConverter({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                 </div>
 
@@ -316,7 +316,7 @@ function GweiConverter({ lang = 'en' }: { lang?: string }) {
                                         <tbody>
                                             {GAS_OPERATIONS.map((op) => (
                                                 <tr key={op.label} style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                    <td style={{ padding: '8px', fontWeight: 500 }}>{op.label}</td>
+                                                    <td style={{ padding: '8px', fontWeight: 500 }}>{getUiString(lang, op.label)}</td>
                                                     <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-secondary)' }}>
                                                         {op.gas.toLocaleString()}
                                                     </td>
