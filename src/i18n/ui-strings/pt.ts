@@ -1025,6 +1025,14 @@ const dict: Record<string, string> = {
   'Yes': 'Sim',
   'No': 'Não',
   'Auto-calculates as you type. Start with receipt and current price presets for a quick tax scenario.': 'Calcula automaticamente. Comece com presets de recibo e preço atual para um cenário fiscal rápido.',
+  'COUNTRY': 'PAÍS',
+  'INCOME BRACKET': 'FAIXA DE RENDA',
+  'HOLDING PERIOD': 'PERÍODO DE DETENÇÃO',
+  'BUY PRICE (per coin)': 'PREÇO DE COMPRA (por moeda)',
+  'SELL PRICE (per coin)': 'PREÇO DE VENDA (por moeda)',
+  'QUANTITY': 'QUANTIDADE',
+  'ACCOUNTING METHOD': 'MÉTODO CONTÁBIL',
+  'Auto-calculates as you type. Use price and quantity presets for a quick tax estimate.': 'Calcula automaticamente. Use os presets de preço e quantidade para uma estimativa fiscal rápida.',
 };
 
 _registerLang('pt', dict);

@@ -1025,6 +1025,14 @@ const dict: Record<string, string> = {
   'Yes': 'हाँ',
   'No': 'नहीं',
   'Auto-calculates as you type. Start with receipt and current price presets for a quick tax scenario.': 'टाइप करते समय ऑटो-गणना। त्वरित कर परिदृश्य के लिए रसीद और वर्तमान मूल्य प्रीसेट से शुरू करें।',
+  'COUNTRY': 'देश',
+  'INCOME BRACKET': 'आय वर्ग',
+  'HOLDING PERIOD': 'धारण अवधि',
+  'BUY PRICE (per coin)': 'खरीद मूल्य (प्रति सिक्का)',
+  'SELL PRICE (per coin)': 'बिक्री मूल्य (प्रति सिक्का)',
+  'QUANTITY': 'मात्रा',
+  'ACCOUNTING METHOD': 'लेखा पद्धति',
+  'Auto-calculates as you type. Use price and quantity presets for a quick tax estimate.': 'टाइप करते समय ऑटो-गणना। त्वरित कर अनुमान के लिए मूल्य और मात्रा प्रीसेट का उपयोग करें।',
 };
 
 _registerLang('hi', dict);

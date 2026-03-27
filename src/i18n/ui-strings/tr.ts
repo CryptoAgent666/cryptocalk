@@ -1026,6 +1026,14 @@ const dict: Record<string, string> = {
   'Yes': 'Evet',
   'No': 'Hayır',
   'Auto-calculates as you type. Start with receipt and current price presets for a quick tax scenario.': 'Yazarken otomatik hesaplar. Hızlı vergi senaryosu için makbuz ve güncel fiyat ön ayarlarıyla başlayın.',
+  'COUNTRY': 'ÜLKE',
+  'INCOME BRACKET': 'GELİR DİLİMİ',
+  'HOLDING PERIOD': 'ELDE TUTMA SÜRESİ',
+  'BUY PRICE (per coin)': 'ALIŞ FİYATI (birim başına)',
+  'SELL PRICE (per coin)': 'SATIŞ FİYATI (birim başına)',
+  'QUANTITY': 'MİKTAR',
+  'ACCOUNTING METHOD': 'MUHASEBE YÖNTEMİ',
+  'Auto-calculates as you type. Use price and quantity presets for a quick tax estimate.': 'Yazarken otomatik hesaplar. Hızlı vergi tahmini için fiyat ve miktar ön ayarlarını kullanın.',
 };
 
 _registerLang('tr', dict);
