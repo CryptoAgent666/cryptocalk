@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 51) — i18n: NftProfit, Uniswap, CryptoSalary label localization
+
+### Fixed
+- **NftProfitCalculator.tsx**: Wrapped 12 hardcoded English labels with `getUiString()`: Buy Price, Sell Price, Marketplace, Marketplace Fee (%), Creator Royalty (%), Gas Cost: Buy/Sell, ETH Price, Reset, Quick Scenarios, scenario labels (Starter Flip, Low Fee, High Gas), Auto-filled, Auto-fetched, input hint
+- **UniswapCalculator.tsx**: Wrapped 10 hardcoded English labels with `getUiString()`: Deposit Amount (USD), Pool TVL (USD), Pool Daily Volume (USD), Fee Tier, Price Move (%), Farming Period (days), Quick Scenarios, scenario labels (Stable Pair, Blue-Chip LP, High-Vol LP), Reset, input hint
+- **CryptoSalaryCalculator.tsx**: Wrapped scenario labels (DCA BTC, ETH Heavy, USDT Payroll) and frequency labels (Weekly, Bi-weekly, Monthly) with `getUiString()`
+
+### Added
+- **23 new UI string keys x 5 langs** in es.ts, pt.ts, tr.ts, hi.ts, ru.ts: Sell Price, ETH Price, Auto-fetched, Starter Flip, Low Fee, High Gas, NFT hint text, Deposit Amount (USD), Pool TVL (USD), Pool Daily Volume (USD), Fee Tier, Farming Period (days), Stable Pair, Blue-Chip LP, High-Vol LP, Uniswap hint text, DCA BTC, ETH Heavy, USDT Payroll, Calculator Mode, Annual Salary, Pay Frequency, Refresh Prices
+
 ## [2026-03-27] (update 50) — Localized quickAnswer for 39 remaining calculators
 
 ### Added

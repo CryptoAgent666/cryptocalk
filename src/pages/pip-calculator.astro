@@ -7,6 +7,8 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Pip / Tick Value Calculator</h1>
           <p>Calculate the exact dollar value of each price movement for your position size. Essential for precise stop-loss, take-profit, and risk planning.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">·</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <PipCalculator lang={'en'} client:load />
@@ -58,6 +68,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Pip Value = Position Size (in coins) &times; Tick Size. For a standard BTC/USD position of 1 BTC at $73,700, one pip ($1) = $1. A 100-pip move means $100 profit or loss. Use this calculator to convert price ticks into exact dollar risk per trade.
+        </div>
         <h2>How to Use the Pip / Tick Value Calculator</h2>
         <p>Our free pip value calculator helps crypto traders understand exactly how much money they gain or lose for every price tick. This is critical for setting accurate take-profit and stop-loss levels, and for managing risk across different position sizes.</p>
         <ol>
