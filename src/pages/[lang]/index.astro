@@ -429,7 +429,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, home
 
     <section class="search-feedback">
       <div class="section-container">
-        <p id="search-status" class="search-status" aria-live="polite" hidden>
+        <p id="search-status" class="search-status" aria-live="polite" hidden data-suffix={t.resultsFoundSuffix}>
         </p>
         <div id="search-empty" class="search-empty" hidden>
           <h3>{t.noResultsTitle}</h3>
@@ -601,7 +601,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, home
       if (!input) return;
 
       const items = Array.from(document.querySelectorAll("[data-search-item]"));
-      const resultsFoundSuffix = "{t.resultsFoundSuffix}";
+      const resultsFoundSuffix = status?.getAttribute("data-suffix") || "results found";
       const normalize = (value) =>
         String(value || "")
           .toLowerCase()

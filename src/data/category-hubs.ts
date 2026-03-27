@@ -353,18 +353,18 @@ const CATEGORY_UI_COPY: Record<Lang, CategoryHubUiCopy> = {
     lastUpdated: 'Son güncelleme',
   },
   hi: {
-    heroBadge: 'चुना हुआ कैलकुलेटर कलेक्शन',
+    heroBadge: 'चुना हुआ कैलकुलेटर संग्रह',
     backToHome: 'होम पर वापस जाएं',
-    backToCategories: 'सभी कैटेगरी',
-    toolsTitle: 'इस कैटेगरी के टूल्स',
-    toolsSubtitle: 'साफ assumptions के साथ शुरू करने के लिए कोई भी कैलकुलेटर चुनें।',
+    backToCategories: 'सभी श्रेणियाँ',
+    toolsTitle: 'इस श्रेणी के उपकरण',
+    toolsSubtitle: 'स्पष्ट मान्यताओं के साथ शुरू करने के लिए कोई भी कैलकुलेटर चुनें।',
     openCalculator: 'कैलकुलेटर खोलें',
-    faqTitle: 'कैटेगरी FAQ',
-    faqSubtitle: 'पहला scenario चलाने से पहले जल्दी जवाब।',
-    relatedTitle: 'संबंधित कैटेगरी देखें',
-    relatedSubtitle: 'हब छोड़े बिना पास के workflows खोलें।',
+    faqTitle: 'श्रेणी FAQ',
+    faqSubtitle: 'पहला परिदृश्य चलाने से पहले त्वरित उत्तर।',
+    relatedTitle: 'संबंधित श्रेणियाँ देखें',
+    relatedSubtitle: 'इस हब को छोड़े बिना निकटवर्ती कार्यप्रवाह खोलें।',
     calculatorCountSuffix: 'कैलकुलेटर',
-    viewCategory: 'कैटेगरी खोलें',
+    viewCategory: 'श्रेणी खोलें',
     lastUpdated: 'आखिरी अपडेट',
   },
   ru: {
@@ -658,9 +658,9 @@ function buildMetaDescription(description: string, count: number, lang: Lang): s
     case 'pt':
       return `${description}. Explore ${count} ferramentas com formulas transparentes e uso gratuito.`;
     case 'tr':
-      return `${description}. Seffaf formulere sahip ${count} araci ucretsiz kullanin.`;
+      return `${description}. Şeffaf formüllere sahip ${count} aracı ücretsiz kullanın.`;
     case 'hi':
-      return `${description}. ${count} tools ko transparent formulas ke saath free use karein.`;
+      return `${description}. पारदर्शी सूत्रों के साथ ${count} उपकरण निःशुल्क उपयोग करें।`;
     case 'ru':
       return `${description}. Изучите ${count} инструментов с прозрачными формулами и бесплатным доступом.`;
     case 'en':
@@ -674,61 +674,61 @@ function buildFaq(title: string, firstTool: string, lang: Lang): CategoryFaq[] {
     case 'es':
       return [
         {
-          question: `Que puedo calcular en la categoria ${title}?`,
-          answer: `Esta categoria agrupa calculadoras practicas de ${title.toLowerCase()}. Te permite comparar varias herramientas sin saltar entre muchas paginas.`,
+          question: `¿Qué puedo calcular en la categoría ${title}?`,
+          answer: `Esta categoría agrupa calculadoras prácticas de ${title.toLowerCase()}. Te permite comparar varias herramientas sin saltar entre muchas páginas.`,
         },
         {
-          question: 'Con que calculadora deberia empezar?',
+          question: '¿Con qué calculadora debería empezar?',
           answer: `Empieza con ${firstTool}. Luego prueba una herramienta cercana para validar tus supuestos.`,
         },
         {
-          question: 'Estas herramientas son gratis y privadas?',
-          answer: 'Si. Las calculadoras de CryptoCalk son gratuitas, funcionan en tu navegador y no requieren registro.',
+          question: '¿Estas herramientas son gratis y privadas?',
+          answer: 'Sí. Las calculadoras de CryptoCalk son gratuitas, funcionan en tu navegador y no requieren registro.',
         },
       ];
     case 'pt':
       return [
         {
           question: `O que posso calcular na categoria ${title}?`,
-          answer: `Esta categoria agrupa calculadoras praticas de ${title.toLowerCase()}. Assim voce compara varias ferramentas sem pular entre paginas.`,
+          answer: `Esta categoria agrupa calculadoras práticas de ${title.toLowerCase()}. Assim você compara várias ferramentas sem pular entre páginas.`,
         },
         {
-          question: 'Com qual calculadora devo comecar?',
-          answer: `Comece com ${firstTool} e depois valide os mesmos dados em uma ferramenta proxima.`,
+          question: 'Com qual calculadora devo começar?',
+          answer: `Comece com ${firstTool} e depois valide os mesmos dados em uma ferramenta próxima.`,
         },
         {
-          question: 'As ferramentas sao gratuitas e privadas?',
-          answer: 'Sim. As calculadoras da CryptoCalk sao gratuitas, rodam no navegador e nao exigem cadastro.',
+          question: 'As ferramentas são gratuitas e privadas?',
+          answer: 'Sim. As calculadoras da CryptoCalk são gratuitas, rodam no navegador e não exigem cadastro.',
         },
       ];
     case 'tr':
       return [
         {
           question: `${title} kategorisinde neleri hesaplayabilirim?`,
-          answer: `Bu kategori ${title.toLowerCase()} odakli pratik hesaplayicilari bir araya getirir. Farkli araclari hizlica yan yana karsilastirabilirsiniz.`,
+          answer: `Bu kategori ${title.toLowerCase()} odaklı pratik hesaplayıcıları bir araya getirir. Farklı araçları hızlıca yan yana karşılaştırabilirsiniz.`,
         },
         {
-          question: 'Hangi hesaplayici ile baslamaliyim?',
-          answer: `${firstTool} ile baslayin. Sonra varsayimlari test etmek icin ayni kategoriden bir araci daha calistirin.`,
+          question: 'Hangi hesaplayıcı ile başlamalıyım?',
+          answer: `${firstTool} ile başlayın. Sonra varsayımları test etmek için aynı kategoriden bir aracı daha çalıştırın.`,
         },
         {
-          question: 'Bu araclar ucretsiz ve ozel mi?',
-          answer: 'Evet. CryptoCalk araclari ucretsizdir, tarayicida calisir ve hesap acmanizi istemez.',
+          question: 'Bu araçlar ücretsiz ve özel mi?',
+          answer: 'Evet. CryptoCalk araçları ücretsizdir, tarayıcıda çalışır ve hesap açmanızı istemez.',
         },
       ];
     case 'hi':
       return [
         {
-          question: `${title} category me kya calculate kar sakta hoon?`,
-          answer: `Ye category ${title.toLowerCase()} se jude practical calculators ko ek jagah rakhti hai, taki aap tools ko asani se compare kar saken.`,
+          question: `${title} श्रेणी में क्या गणना कर सकता हूँ?`,
+          answer: `यह श्रेणी ${title.toLowerCase()} से जुड़े व्यावहारिक कैलकुलेटर को एक जगह रखती है, ताकि आप उपकरणों की तुलना आसानी से कर सकें।`,
         },
         {
-          question: 'Mujhe sabse pehle kaunsa calculator use karna chahiye?',
-          answer: `${firstTool} se start karein. Fir same category ke ek aur tool se assumptions verify karein.`,
+          question: 'मुझे सबसे पहले कौन सा कैलकुलेटर उपयोग करना चाहिए?',
+          answer: `${firstTool} से शुरुआत करें। फिर इसी श्रेणी के किसी अन्य उपकरण से मान्यताएँ सत्यापित करें।`,
         },
         {
-          question: 'Kya ye tools free aur private hain?',
-          answer: 'Haan. CryptoCalk calculators free hain, browser me chalte hain, aur signup nahi mangte.',
+          question: 'क्या ये उपकरण निःशुल्क और निजी हैं?',
+          answer: 'हाँ। CryptoCalk कैलकुलेटर निःशुल्क हैं, ब्राउज़र में चलते हैं, और साइन अप की आवश्यकता नहीं है।',
         },
       ];
     case 'ru':
