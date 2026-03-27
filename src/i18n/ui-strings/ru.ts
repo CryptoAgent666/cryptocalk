@@ -1446,6 +1446,247 @@ const dict: Record<string, string> = {
   'Failed to fetch price. You can enter it manually.': 'Не удалось получить цену. Введите вручную.',
   // Vesting Calculator
   'Auto-calculates as you type. Use presets for a quick base schedule, then fine-tune cliff and duration with custom months.': 'Автоматический расчёт при вводе. Используйте пресеты как основу, затем настройте cliff и длительность.',
+
+  // === Missing keys bulk fill (update 65) ===
+  // GpuMiningCalculator
+  'Electricity Cost ($/kWh)': 'Стоимость электроэнергии ($/кВт·ч)',
+  'GPU Hardware Cost (Optional)': 'Стоимость GPU (необязательно)',
+  'GPU Model': 'Модель GPU',
+  'Hashrate (MH/s)': 'Хешрейт (MH/s)',
+  'Mining Coin': 'Монета для майнинга',
+  'Number of GPUs': 'Количество GPU',
+  'Pool Fee (%)': 'Комиссия пула (%)',
+  'Power per GPU (W)': 'Мощность на GPU (Вт)',
+  'Using fallback data. Live feed unavailable.': 'Используются резервные данные. Прямой поток недоступен.',
+  // RiskRewardCalculator
+  'Break-even at': 'Безубыточность при',
+  'Direction auto-detects from Entry and Stop-Loss.': 'Направление определяется автоматически по входу и стоп-лоссу.',
+  'Expected P&L at different win rates with this R:R ratio': 'Ожидаемый P&L при разных винрейтах с этим R:R',
+  'Values in USD based on your position size.': 'Значения в USD на основе вашей позиции.',
+  'Values shown as price units. Enter a position size for USD values.': 'Значения в единицах цены. Введите размер позиции для USD.',
+  'and': 'и',
+  'position': 'позиция',
+  'win rate.': 'винрейт.',
+  // LoanCalculator
+  'Annual Interest Rate (APR %)': 'Годовая процентная ставка (APR %)',
+  'Collateral Value (USD)': 'Стоимость залога (USD)',
+  'Liquidation LTV %': 'LTV ликвидации %',
+  'Loan Term (months)': 'Срок займа (месяцев)',
+  'Loan-to-Value (LTV %)': 'Соотношение займа к залогу (LTV %)',
+  'Margin Call LTV %': 'LTV маржин-колла %',
+  'Platform': 'Платформа',
+  '⚠️ Margin Call': '⚠️ Маржин-колл',
+  '🚨 Liquidation': '🚨 Ликвидация',
+  // ImpermanentLossCalculator
+  'Based on constant product AMM (Uniswap V2 style). Concentrated liquidity pools (V3) have different IL characteristics.': 'На основе AMM с постоянным произведением (стиль Uniswap V2). Пулы концентрированной ликвидности (V3) имеют другие характеристики IL.',
+  'Enter your liquidity and expected price changes to see how impermanent loss compares to fee earnings in an AMM pool.': 'Введите вашу ликвидность и ожидаемые изменения цены, чтобы увидеть, как непостоянные потери сравниваются с доходом от комиссий.',
+  'Holding Period (days)': 'Период удержания (дней)',
+  'Pool Fee APR': 'APR комиссии пула',
+  'Token A (optional)': 'Токен A (необязательно)',
+  'Token B (optional)': 'Токен B (необязательно)',
+  'Total Liquidity Provided': 'Общая предоставленная ликвидность',
+  'Auto-calculates as you type. Test multiple price-ratio scenarios to see when fee APR can or cannot offset impermanent loss.': 'Авторасчёт при вводе. Тестируйте различные сценарии соотношения цен.',
+  // CryptoSalaryCalculator
+  '% to Convert to Crypto': '% конвертации в крипто',
+  'Crypto': 'Крипто',
+  'Crypto Amount per Month': 'Сумма крипто в месяц',
+  'Exchange/service fee': 'Комиссия биржи/сервиса',
+  'Failed to fetch exchange rates. Using default USD rates.': 'Не удалось получить курсы. Используются курсы USD по умолчанию.',
+  'Failed to fetch prices': 'Не удалось получить цены',
+  'Fetching prices...': 'Получение цен...',
+  'Target Cryptocurrency': 'Целевая криптовалюта',
+  // YieldFarmingCalculator
+  'Deposit Amount': 'Сумма депозита',
+  'Expected Impermanent Loss': 'Ожидаемые непостоянные потери',
+  'Farming Period': 'Период фарминга',
+  'Gas Cost: Entry/Exit/Per Harvest': 'Газ: вход/выход/за сбор',
+  'Harvest Frequency': 'Частота сбора',
+  'harvesting more often costs more in gas but compounds yield faster. Find the sweet spot for your deposit size.': 'частый сбор стоит больше газа, но быстрее наращивает доход.',
+  // MarketCapCalculator
+  'Calculation Mode': 'Режим расчёта',
+  'Compare with top coins': 'Сравнить с топ-монетами',
+  'Select Cryptocurrency': 'Выберите криптовалюту',
+  'Target Market Cap': 'Целевая капитализация',
+  'Target Price': 'Целевая цена',
+  'What market cap?': 'Какая капитализация?',
+  'What price?': 'Какая цена?',
+  // PositionSizeCalculator
+  'Account Balance': 'Баланс аккаунта',
+  'Exchange Fee (per side)': 'Комиссия биржи (за сторону)',
+  'Please enter valid account balance and risk percentage.': 'Введите корректный баланс и процент риска.',
+  'Risk Per Trade': 'Риск на сделку',
+  'Stop-loss must be below entry for long, above for short.': 'Стоп-лосс должен быть ниже входа для лонга, выше для шорта.',
+  'Take-Profit Price (optional)': 'Цена тейк-профита (необязательно)',
+  // GamefiCalculator
+  'Active Days per Month': 'Активных дней в месяц',
+  'Daily In-Game Expenses (USD)': 'Ежедневные расходы в игре (USD)',
+  'Daily Token Rewards': 'Дневные награды токенами',
+  'Estimated Resale Value (USD)': 'Оценочная стоимость перепродажи (USD)',
+  'Initial Setup Cost (USD)': 'Начальные затраты (USD)',
+  'Marketplace / Claim Fee (%)': 'Комиссия маркетплейса / клейма (%)',
+  // PortfolioCalculator
+  'Asset name': 'Название актива',
+  'Assets': 'Активы',
+  'Portfolio Presets': 'Пресеты портфеля',
+  'Target allocation': 'Целевая доля',
+  'Total Investment': 'Общие инвестиции',
+  'should be 100%': 'должно быть 100%',
+  // RebalancingCalculator
+  'Additional Investment': 'Дополнительные инвестиции',
+  'Buy + Sell': 'Покупка + Продажа',
+  'Buy Only': 'Только покупка',
+  'Current $': 'Текущая $',
+  'Portfolio Assets': 'Активы портфеля',
+  'Rebalance Mode': 'Режим ребалансировки',
+  // TpSlCalculator
+  'Auto-updates from entry, stop-loss, and R:R ratio. Or set custom levels.': 'Автообновление из входа, стоп-лосса и R:R. Или задайте вручную.',
+  'Risk:Reward Ratio': 'Соотношение Риск:Награда',
+  'Single TP': 'Один TP',
+  'TPs': 'TP',
+  'Take-Profit Levels': 'Уровни тейк-профита',
+  'of position': 'от позиции',
+  // ApyAprCalculator
+  'APR (Annual Percentage Rate)': 'APR (годовая процентная ставка)',
+  'APY (Annual Percentage Yield)': 'APY (годовая доходность)',
+  'Compounding Frequency': 'Частота начисления',
+  'Conversion Mode': 'Режим конвертации',
+  'Principal Amount': 'Основная сумма',
+  // GasFeeCalculator
+  'Custom Gas Limit': 'Свой лимит газа',
+  'Gas Price (Gwei)': 'Цена газа (Gwei)',
+  'Number of Transactions': 'Количество транзакций',
+  'Transaction Speed': 'Скорость транзакции',
+  'Transaction Type': 'Тип транзакции',
+  // HodlVsTradeCalculator
+  'Avg Loss per Trade (%)': 'Ср. убыток на сделку (%)',
+  'Avg Profit per Trade (%)': 'Ср. прибыль на сделку (%)',
+  'Trading Fee per Trade (%)': 'Комиссия на сделку (%)',
+  'Trading Period (months)': 'Период торговли (месяцев)',
+  // LendingCalculator
+  'Compounding Model': 'Модель начисления',
+  'Platform Performance Fee (%)': 'Комиссия платформы (%)',
+  'Quoted APY (%)': 'Заявленный APY (%)',
+  'Simple': 'Простой',
+  'Term (months)': 'Срок (месяцев)',
+  // NodeCalculator
+  'Monthly Infrastructure Cost (USD)': 'Ежемесячные затраты на инфраструктуру (USD)',
+  'Network APR (%)': 'APR сети (%)',
+  'Node Uptime (%)': 'Время работы ноды (%)',
+  'Staked Tokens': 'Застейканные токены',
+  'Validator Commission (%)': 'Комиссия валидатора (%)',
+  // AsicMiningCalculator
+  'ASIC Model': 'Модель ASIC',
+  'ASIC Purchase Price': 'Цена покупки ASIC',
+  'Failed to fetch live network data. Using fallback metrics.': 'Не удалось получить данные сети. Используются резервные значения.',
+  'For ROI calculation': 'Для расчёта окупаемости',
+  // BreakEvenCalculator
+  'Loss Percentage': 'Процент убытка',
+  'Position Direction': 'Направление позиции',
+  // CompoundInterestCalculator
+  'Annual Interest Rate (APY)': 'Годовая процентная ставка (APY)',
+  'Monthly Contribution': 'Ежемесячный взнос',
+  '📈 Interest': '📈 Проценты',
+  '💰 Deposits': '💰 Вклады',
+  // DrawdownCalculator
+  'Assumed Monthly Return for Recovery (%)': 'Предполагаемая месячная доходность для восстановления (%)',
+  'Current Portfolio Value (USD)': 'Текущая стоимость портфеля (USD)',
+  'Portfolio Peak Value (USD)': 'Пиковая стоимость портфеля (USD)',
+  'of peak': 'от пика',
+  // FundingRateCalculator
+  'Funding Interval': 'Интервал фандинга',
+  'Funding Rate (per interval)': 'Ставка фандинга (за интервал)',
+  'Your Position': 'Ваша позиция',
+  // IcoRoiCalculator
+  'ATH Price': 'Цена ATH',
+  'ICO / IDO Price': 'Цена ICO / IDO',
+  'Token Amount': 'Количество токенов',
+  'Token Symbol': 'Символ токена',
+  // InflationHedgeCalculator
+  'Comparison Assets': 'Активы для сравнения',
+  'Savings Amount': 'Сумма сбережений',
+  'Time Period': 'Временной период',
+  // MarginCalculator
+  'Maintenance Margin Rate': 'Ставка поддерживающей маржи',
+  'Position Size (total value)': 'Размер позиции (общая стоимость)',
+  'Wallet Balance (optional)': 'Баланс кошелька (необязательно)',
+  // PipCalculator
+  'Coins': 'Монеты',
+  'Quick Pairs': 'Быстрые пары',
+  'Tick / Pip Size': 'Размер тика / пипса',
+  // CalmarCalculator
+  'Expected Annual Return': 'Ожидаемая годовая доходность',
+  'Maximum Drawdown': 'Максимальная просадка',
+  'Projection Horizon': 'Горизонт прогноза',
+  // HalvingCalculator
+  'Current BTC Price': 'Текущая цена BTC',
+  'Your Hashrate': 'Ваш хешрейт',
+  'per kWh': 'за кВт·ч',
+  // InformationRatioCalculator
+  'Benchmark Return (%)': 'Доходность бенчмарка (%)',
+  'Portfolio Return (%)': 'Доходность портфеля (%)',
+  'Tracking Error (%)': 'Ошибка отслеживания (%)',
+  // KellyCalculator
+  'Account Capital (USD)': 'Капитал аккаунта (USD)',
+  'Average Loss (%)': 'Средний убыток (%)',
+  'Average Win (%)': 'Средний выигрыш (%)',
+  // LiquidationCalculator
+  'Position Size (Total Value)': 'Размер позиции (общая стоимость)',
+  'Wallet Balance': 'Баланс кошелька',
+  // TradeExpectancyCalculator
+  'Account Size (USD)': 'Размер аккаунта (USD)',
+  'Average Loss (R)': 'Средний убыток (R)',
+  'Average Win (R)': 'Средний выигрыш (R)',
+  // CryptoUnitConverter
+  'From Unit': 'Из единицы',
+  'To Unit': 'В единицу',
+  // DifficultyEstimatorCalculator
+  'Your Network Share (fraction)': 'Ваша доля в сети (дробь)',
+  // ElectricityCostCalculator
+  'Enter revenue for profitability': 'Введите доход для расчёта прибыльности',
+  'Optional, for profitability analysis': 'Необязательно, для анализа прибыльности',
+  // LeverageCalculator
+  'Without Leverage (1x)': 'Без плеча (1x)',
+  '— liquidation at': '— ликвидация при',
+  // MarketCapComparator
+  'market cap': 'капитализация',
+  // MevProtectionCalculator
+  'DEX': 'DEX',
+  'Swap Amount': 'Сумма обмена',
+  // ReverseRoiCalculator
+  'Current Investment Amount': 'Текущая сумма инвестиций',
+  'Current Token Price': 'Текущая цена токена',
+  // RiskOfRuinCalculator
+  'Max Tolerable Drawdown (%)': 'Макс. допустимая просадка (%)',
+  'Reward-to-Risk Ratio': 'Соотношение награды к риску',
+  // SharpeCalculator
+  'Analysis Horizon (years)': 'Горизонт анализа (лет)',
+  'Annual Volatility (%)': 'Годовая волатильность (%)',
+  // SlippageCalculator
+  'DEX Fee (%)': 'Комиссия DEX (%)',
+  'Trade Size (USD)': 'Объём сделки (USD)',
+  // Single keys
+  '30-Day Volume Tier': '30-дневный объём',
+  'Failed to fetch live BTC price. Using fallback.': 'Не удалось получить цену BTC. Используется резерв.',
+  'Electricity, internet, maintenance': 'Электричество, интернет, обслуживание',
+  'Downside Deviation (%)': 'Отклонение вниз (%)',
+  'Staking Amount (USD)': 'Сумма стейкинга (USD)',
+  'Compare strategies at the same beta and horizon.': 'Сравнивайте стратегии при одинаковой бете и горизонте.',
+  '95% confidence is the common baseline for portfolio risk checks.': '95% доверие — стандартная база для проверки рисков портфеля.',
+  'Calculate': 'Рассчитать',
+  // Shared keys
+  'Price Change (%)': 'Изменение цены (%)',
+  'Win Rate (%)': 'Винрейт (%)',
+  'Add Asset': 'Добавить актив',
+  'Cryptocurrency': 'Криптовалюта',
+  'Investment Period (years)': 'Период инвестиций (лет)',
+  'Token Price (USD)': 'Цена токена (USD)',
+  'Slippage Tolerance (%)': 'Допуск проскальзывания (%)',
+  'Risk per Trade (%)': 'Риск на сделку (%)',
+  'Trades per Month': 'Сделок в месяц',
+  'Route': 'Маршрут',
+  'Token': 'Токен',
+  'From': 'Из',
+  'To': 'В',
 };
 
 _registerLang('ru', dict);

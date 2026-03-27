@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 65) — i18n: 195 missing RU translation keys bulk fill
+
+### Added
+- **195 Russian translation keys** added to `src/i18n/ui-strings/ru.ts` in a single `// === Missing keys bulk fill (update 65) ===` block
+- Covers 30+ calculator components: GpuMining, RiskReward, Loan, ImpermanentLoss, CryptoSalary, YieldFarming, MarketCap, PositionSize, GameFi, Portfolio, Rebalancing, TpSl, ApyApr, GasFee, HodlVsTrade, Lending, Node, AsicMining, BreakEven, CompoundInterest, Drawdown, FundingRate, IcoRoi, InflationHedge, Margin, Pip, Calmar, Halving, InformationRatio, Kelly, Liquidation, TradeExpectancy, CryptoUnit, DifficultyEstimator, ElectricityCost, Leverage, MarketCapComparator, MevProtection, ReverseRoi, RiskOfRuin, Sharpe, Slippage + shared keys
+- No duplicate keys introduced (verified against existing 1392 entries)
+- Build: 935 pages, 0 errors
+
 ## [2026-03-27] (update 63) — i18n: add missing translations for ROI, Airdrop, Vesting calculators
 
 ### Fixed
