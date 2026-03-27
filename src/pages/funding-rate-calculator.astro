@@ -7,6 +7,8 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Funding Rate Calculator</h1>
           <p>Calculate the total cost (or income) of holding perpetual futures positions over time based on the current funding rate.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <FundingRateCalculator lang={'en'} client:load />
@@ -58,6 +68,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Funding payment = Position Size &times; Funding Rate. With a $10,000 long and 0.01% rate (every 8 hours), you pay $1 per interval &mdash; that's $3/day or ~$1,095/year.
+        </div>
         <h2>How to Use the Funding Rate Calculator</h2>
         <ol>
           <li><strong>Enter your position size</strong> — The total value of your perpetual futures position in USD. For example, if you hold 1 BTC at $50,000, enter 50,000.</li>
