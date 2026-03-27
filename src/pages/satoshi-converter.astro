@@ -7,6 +7,8 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Satoshi Converter</h1>
           <p>Convert between Bitcoin, Satoshis, and fiat currencies instantly. Live prices from CoinGecko with quick reference tables for common amounts.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">·</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <SatoshiConverter lang={'en'} client:load />
@@ -58,6 +68,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> 1 BTC = 100,000,000 satoshis. Enter any amount in satoshis, BTC, or USD to see instant conversions with a live reference table. At $73,700 per BTC, 1 satoshi &asymp; $0.000737.
+        </div>
         <h2>How to Use the Satoshi Converter</h2>
         <p>Our free Satoshi converter makes it easy to translate between Bitcoin's smallest unit and fiat currencies like USD and EUR. Whether you want to know how many satoshis your dollars can buy or what your sats are worth in Bitcoin, this tool gives you instant answers using live market data from CoinGecko.</p>
         <ol>

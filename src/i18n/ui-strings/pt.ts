@@ -1133,6 +1133,7 @@ const dict: Record<string, string> = {
   'Auto-calculates as you type. Set power, uptime, and tariff first for realistic costs.': 'Calcula automaticamente. Configure potência, uptime e tarifa primeiro para custos realistas.',
   'Auto-calculates as you type. Keep target allocation near 100% and avoid over-concentration in one asset.': 'Calcula automaticamente. Mantenha a alocação alvo perto de 100% e evite concentração excessiva em um ativo.',
   'Auto-calculates as you type. Keep LTV conservative and monitor margin-call/liquidation thresholds before borrowing.': 'Calcula automaticamente. Mantenha o LTV conservador e monitore os limites de margin-call/liquidação antes de tomar emprestado.',
+  'Crypto to Fiat': 'Cripto para Fiat',
 };
 
 _registerLang('pt', dict);
