@@ -1467,6 +1467,247 @@ const dict: Record<string, string> = {
   'Failed to fetch price. You can enter it manually.': 'Error al obtener el precio. Puedes ingresarlo manualmente.',
   // Vesting Calculator
   'Auto-calculates as you type. Use presets for a quick base schedule, then fine-tune cliff and duration with custom months.': 'Se calcula automáticamente. Usa presets como base, luego ajusta cliff y duración con meses personalizados.',
+  // === Missing keys bulk fill (update 65) ===
+  // GPU Mining Calculator
+  'Electricity Cost ($/kWh)': 'Costo de electricidad ($/kWh)',
+  'GPU Hardware Cost (Optional)': 'Costo de GPU (opcional)',
+  'GPU Model': 'Modelo GPU',
+  'Hashrate (MH/s)': 'Hashrate (MH/s)',
+  'Mining Coin': 'Moneda para minar',
+  'Number of GPUs': 'Número de GPUs',
+  'Pool Fee (%)': 'Comisión del pool (%)',
+  'Power per GPU (W)': 'Potencia por GPU (W)',
+  'Using fallback data. Live feed unavailable.': 'Usando datos de respaldo. Feed en vivo no disponible.',
+  // Risk-Reward / Position Size Calculator
+  'Break-even at': 'Punto de equilibrio en',
+  'Direction auto-detects from Entry and Stop-Loss.': 'La dirección se detecta automáticamente desde la entrada y el stop-loss.',
+  'Expected P&L at different win rates with this R:R ratio': 'P&L esperado a diferentes tasas de ganancia con este ratio R:R',
+  'Values in USD based on your position size.': 'Valores en USD basados en el tamaño de tu posición.',
+  'Values shown as price units. Enter a position size for USD values.': 'Valores en unidades de precio. Ingresa un tamaño de posición para valores en USD.',
+  'and': 'y',
+  'position': 'posición',
+  'win rate.': 'tasa de ganancia.',
+  // Crypto Loan Calculator
+  'Annual Interest Rate (APR %)': 'Tasa de interés anual (APR %)',
+  'Collateral Value (USD)': 'Valor del colateral (USD)',
+  'Liquidation LTV %': 'LTV de liquidación %',
+  'Loan Term (months)': 'Plazo del préstamo (meses)',
+  'Loan-to-Value (LTV %)': 'Relación préstamo-valor (LTV %)',
+  'Margin Call LTV %': 'LTV de margin call %',
+  'Platform': 'Plataforma',
+  '🚨 Liquidation': '🚨 Liquidación',
+  // Impermanent Loss Calculator
+  'Holding Period (days)': 'Período de retención (días)',
+  'Pool Fee APR': 'APR de comisión del pool',
+  'Token A (optional)': 'Token A (opcional)',
+  'Token B (optional)': 'Token B (opcional)',
+  'Total Liquidity Provided': 'Liquidez total proporcionada',
+  'Auto-calculates as you type. Test multiple price-ratio scenarios to see when fee APR can or cannot offset impermanent loss.': 'Cálculo automático. Prueba múltiples escenarios de ratio de precio.',
+  // Salary Calculator
+  '% to Convert to Crypto': '% a convertir en cripto',
+  'Crypto': 'Cripto',
+  'Crypto Amount per Month': 'Cantidad de cripto por mes',
+  'Exchange/service fee': 'Comisión de exchange/servicio',
+  'Failed to fetch exchange rates. Using default USD rates.': 'Error al obtener tasas de cambio. Usando tasas USD por defecto.',
+  'Failed to fetch prices': 'Error al obtener precios',
+  'Fetching prices...': 'Obteniendo precios...',
+  'Target Cryptocurrency': 'Criptomoneda objetivo',
+  // Uniswap / Yield Farming Calculator
+  'Deposit Amount': 'Monto del depósito',
+  'Expected Impermanent Loss': 'Pérdida impermanente esperada',
+  'Farming Period': 'Período de farming',
+  'Gas Cost: Entry/Exit/Per Harvest': 'Gas: entrada/salida/por cosecha',
+  'Harvest Frequency': 'Frecuencia de cosecha',
+  'harvesting more often costs more in gas but compounds yield faster. Find the sweet spot for your deposit size.': 'cosechar más seguido cuesta más gas pero compone rendimiento más rápido.',
+  // What-If / Market Cap Calculator
+  'Calculation Mode': 'Modo de cálculo',
+  'Compare with top coins': 'Comparar con top monedas',
+  'Select Cryptocurrency': 'Seleccionar criptomoneda',
+  'Target Market Cap': 'Capitalización objetivo',
+  'Target Price': 'Precio objetivo',
+  'What market cap?': '¿Qué capitalización?',
+  'What price?': '¿Qué precio?',
+  // Position Size Calculator
+  'Account Balance': 'Balance de cuenta',
+  'Exchange Fee (per side)': 'Comisión de exchange (por lado)',
+  'Please enter valid account balance and risk percentage.': 'Ingresa un balance y porcentaje de riesgo válidos.',
+  'Risk Per Trade': 'Riesgo por operación',
+  'Stop-loss must be below entry for long, above for short.': 'El stop-loss debe estar debajo de la entrada para long, arriba para short.',
+  'Take-Profit Price (optional)': 'Precio take-profit (opcional)',
+  // GameFi Calculator
+  'Active Days per Month': 'Días activos por mes',
+  'Daily In-Game Expenses (USD)': 'Gastos diarios en el juego (USD)',
+  'Daily Token Rewards': 'Recompensas diarias en tokens',
+  'Estimated Resale Value (USD)': 'Valor estimado de reventa (USD)',
+  'Initial Setup Cost (USD)': 'Costo inicial de instalación (USD)',
+  'Marketplace / Claim Fee (%)': 'Comisión de marketplace / reclamo (%)',
+  // Portfolio Calculator
+  'Asset name': 'Nombre del activo',
+  'Assets': 'Activos',
+  'Portfolio Presets': 'Presets de portafolio',
+  'Target allocation': 'Asignación objetivo',
+  'Total Investment': 'Inversión total',
+  'should be 100%': 'debe ser 100%',
+  // Portfolio Rebalance Calculator
+  'Additional Investment': 'Inversión adicional',
+  'Buy + Sell': 'Compra + Venta',
+  'Buy Only': 'Solo compra',
+  'Current $': 'Actual $',
+  'Portfolio Assets': 'Activos del portafolio',
+  'Rebalance Mode': 'Modo de rebalanceo',
+  // TP/SL Calculator
+  'Auto-updates from entry, stop-loss, and R:R ratio. Or set custom levels.': 'Auto-actualiza desde entrada, stop-loss y ratio R:R. O establece niveles personalizados.',
+  'Risk:Reward Ratio': 'Ratio Riesgo:Recompensa',
+  'Single TP': 'TP único',
+  'TPs': 'TPs',
+  'Take-Profit Levels': 'Niveles de take-profit',
+  'of position': 'de la posición',
+  // Compound Interest Calculator
+  'APR (Annual Percentage Rate)': 'APR (tasa porcentual anual)',
+  'APY (Annual Percentage Yield)': 'APY (rendimiento porcentual anual)',
+  'Compounding Frequency': 'Frecuencia de capitalización',
+  'Conversion Mode': 'Modo de conversión',
+  'Principal Amount': 'Monto principal',
+  // Gas Fee Calculator
+  'Custom Gas Limit': 'Límite de gas personalizado',
+  'Gas Price (Gwei)': 'Precio del gas (Gwei)',
+  'Number of Transactions': 'Número de transacciones',
+  'Transaction Speed': 'Velocidad de transacción',
+  'Transaction Type': 'Tipo de transacción',
+  // Trade Expectancy Calculator
+  'Avg Loss per Trade (%)': 'Pérdida promedio por operación (%)',
+  'Avg Profit per Trade (%)': 'Ganancia promedio por operación (%)',
+  'Trading Fee per Trade (%)': 'Comisión por operación (%)',
+  'Trading Period (months)': 'Período de trading (meses)',
+  // DeFi Yield Calculator
+  'Compounding Model': 'Modelo de capitalización',
+  'Platform Performance Fee (%)': 'Comisión de rendimiento (%)',
+  'Quoted APY (%)': 'APY cotizado (%)',
+  'Simple': 'Simple',
+  'Term (months)': 'Plazo (meses)',
+  // Node Calculator
+  'Monthly Infrastructure Cost (USD)': 'Costo mensual de infraestructura (USD)',
+  'Network APR (%)': 'APR de la red (%)',
+  'Node Uptime (%)': 'Tiempo activo del nodo (%)',
+  'Staked Tokens': 'Tokens en staking',
+  'Validator Commission (%)': 'Comisión del validador (%)',
+  // ASIC Mining Calculator
+  'ASIC Model': 'Modelo ASIC',
+  'ASIC Purchase Price': 'Precio de compra del ASIC',
+  'Failed to fetch live network data. Using fallback metrics.': 'Error al obtener datos de red. Usando métricas de respaldo.',
+  'For ROI calculation': 'Para cálculo de ROI',
+  // Break-Even Calculator
+  'Loss Percentage': 'Porcentaje de pérdida',
+  // Liquidation Calculator
+  'Position Direction': 'Dirección de la posición',
+  // Compound Interest (savings mode)
+  'Annual Interest Rate (APY)': 'Tasa de interés anual (APY)',
+  'Monthly Contribution': 'Contribución mensual',
+  '📈 Interest': '📈 Intereses',
+  '💰 Deposits': '💰 Depósitos',
+  // Drawdown Calculator
+  'Assumed Monthly Return for Recovery (%)': 'Retorno mensual asumido para recuperación (%)',
+  'Current Portfolio Value (USD)': 'Valor actual del portafolio (USD)',
+  'Portfolio Peak Value (USD)': 'Valor pico del portafolio (USD)',
+  'of peak': 'del pico',
+  // Funding Rate Calculator
+  'Funding Interval': 'Intervalo de funding',
+  'Funding Rate (per interval)': 'Tasa de funding (por intervalo)',
+  'Your Position': 'Tu posición',
+  // What-If Calculator
+  'ATH Price': 'Precio ATH',
+  'ICO / IDO Price': 'Precio ICO / IDO',
+  'Token Amount': 'Cantidad de tokens',
+  'Token Symbol': 'Símbolo del token',
+  // Inflation Hedge Calculator
+  'Comparison Assets': 'Activos de comparación',
+  'Savings Amount': 'Monto de ahorro',
+  'Time Period': 'Período de tiempo',
+  // Liquidation (extended)
+  'Maintenance Margin Rate': 'Tasa de margen de mantenimiento',
+  'Position Size (total value)': 'Tamaño de posición (valor total)',
+  'Wallet Balance (optional)': 'Balance de wallet (opcional)',
+  // Converter Calculator
+  'Coins': 'Monedas',
+  'Quick Pairs': 'Pares rápidos',
+  'Tick / Pip Size': 'Tamaño de tick / pip',
+  // Calmar / Risk Calculators
+  'Expected Annual Return': 'Retorno anual esperado',
+  'Maximum Drawdown': 'Drawdown máximo',
+  'Projection Horizon': 'Horizonte de proyección',
+  // Mining Calculator
+  'Current BTC Price': 'Precio actual de BTC',
+  'Your Hashrate': 'Tu hashrate',
+  'per kWh': 'por kWh',
+  // Information Ratio Calculator
+  'Benchmark Return (%)': 'Retorno del benchmark (%)',
+  'Portfolio Return (%)': 'Retorno del portafolio (%)',
+  'Tracking Error (%)': 'Error de seguimiento (%)',
+  // Kelly Criterion Calculator
+  'Account Capital (USD)': 'Capital de cuenta (USD)',
+  'Average Loss (%)': 'Pérdida promedio (%)',
+  'Average Win (%)': 'Ganancia promedio (%)',
+  // Leverage Calculator
+  'Position Size (Total Value)': 'Tamaño de posición (valor total)',
+  'Wallet Balance': 'Balance de wallet',
+  // Risk of Ruin Calculator
+  'Account Size (USD)': 'Tamaño de cuenta (USD)',
+  'Average Loss (R)': 'Pérdida promedio (R)',
+  'Average Win (R)': 'Ganancia promedio (R)',
+  // Bitcoin Unit Converter
+  'From Unit': 'Unidad origen',
+  'To Unit': 'Unidad destino',
+  // Electricity Cost / Mining shared
+  'Your Network Share (fraction)': 'Tu participación en la red (fracción)',
+  'Enter revenue for profitability': 'Ingresa ingresos para rentabilidad',
+  'Optional, for profitability analysis': 'Opcional, para análisis de rentabilidad',
+  // Leverage shared
+  'Without Leverage (1x)': 'Sin apalancamiento (1x)',
+  // Market Cap shared
+  'market cap': 'capitalización',
+  // DEX / Slippage Calculator
+  'DEX': 'DEX',
+  'Swap Amount': 'Monto del swap',
+  // Token Unlock Calculator
+  'Current Investment Amount': 'Monto de inversión actual',
+  'Current Token Price': 'Precio actual del token',
+  // VaR Calculator
+  'Max Tolerable Drawdown (%)': 'Drawdown máximo tolerable (%)',
+  'Reward-to-Risk Ratio': 'Ratio recompensa-riesgo',
+  'Analysis Horizon (years)': 'Horizonte de análisis (años)',
+  'Annual Volatility (%)': 'Volatilidad anual (%)',
+  // Slippage Calculator
+  'DEX Fee (%)': 'Comisión DEX (%)',
+  'Trade Size (USD)': 'Tamaño de operación (USD)',
+  // Exchange Fee Calculator
+  '30-Day Volume Tier': 'Nivel de volumen 30 días',
+  // Mining fallback
+  'Failed to fetch live BTC price. Using fallback.': 'Error al obtener precio BTC. Usando respaldo.',
+  // Node Calculator (costs)
+  'Electricity, internet, maintenance': 'Electricidad, internet, mantenimiento',
+  // Sortino Calculator
+  'Downside Deviation (%)': 'Desviación a la baja (%)',
+  // Staking Calculator
+  'Staking Amount (USD)': 'Monto de staking (USD)',
+  // Treynor Calculator
+  'Compare strategies at the same beta and horizon.': 'Compara estrategias con la misma beta y horizonte.',
+  // VaR hint
+  '95% confidence is the common baseline for portfolio risk checks.': '95% de confianza es la base común para verificaciones de riesgo.',
+  // Shared UI
+  'Calculate': 'Calcular',
+  'Price Change (%)': 'Cambio de precio (%)',
+  'Win Rate (%)': 'Tasa de ganancia (%)',
+  'Add Asset': 'Agregar activo',
+  'Cryptocurrency': 'Criptomoneda',
+  'Investment Period (years)': 'Período de inversión (años)',
+  'Token Price (USD)': 'Precio del token (USD)',
+  'Slippage Tolerance (%)': 'Tolerancia al slippage (%)',
+  'Risk per Trade (%)': 'Riesgo por operación (%)',
+  'Trades per Month': 'Operaciones por mes',
+  'Route': 'Ruta',
+  'Token': 'Token',
+  'From': 'Desde',
+  'To': 'Hacia',
 };
 
 _registerLang('es', dict);
