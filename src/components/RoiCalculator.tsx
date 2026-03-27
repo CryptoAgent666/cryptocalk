@@ -438,7 +438,7 @@ function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                                 const beats = results.annualizedRoi > comp.annualReturn;
                                                 return (
                                                     <tr key={comp.name} style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                        <td style={{ padding: '8px', fontWeight: 500 }}>{comp.name}</td>
+                                                        <td style={{ padding: '8px', fontWeight: 500 }}>{getUiString(lang, comp.name)}</td>
                                                         <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-secondary)' }}>
                                                             {comp.annualReturn}%
                                                         </td>

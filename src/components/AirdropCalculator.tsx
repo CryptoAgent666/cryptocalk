@@ -454,7 +454,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                     onClick={() => setTaxCountry(key)}
                                     title={c.note}
                                 >
-                                    {c.label}
+                                    {getUiString(lang, c.label)}
                                 </button>
                             ))}
                         </div>
