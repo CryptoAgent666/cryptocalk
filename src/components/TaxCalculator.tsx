@@ -444,7 +444,7 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                 id="tax-country"
                             >
                                 {Object.entries(COUNTRIES).map(([key, c]) => (
-                                    <option key={key} value={key}>{c.name}</option>
+                                    <option key={key} value={key}>{getUiString(lang, c.name)}</option>
                                 ))}
                             </select>
                             <ChevronDown size={14} className="select-icon" />
@@ -485,13 +485,13 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                 className={`holding-pill ${holdingPeriod === 'short' ? 'active' : ''}`}
                                 onClick={() => setHoldingPeriod('short')}
                             >
-                                {config.shortTermLabel}
+                                {getUiString(lang, config.shortTermLabel)}
                             </button>
                             <button
                                 className={`holding-pill ${holdingPeriod === 'long' ? 'active' : ''}`}
                                 onClick={() => setHoldingPeriod('long')}
                             >
-                                {config.longTermLabel}
+                                {getUiString(lang, config.longTermLabel)}
                             </button>
                         </div>
                     </div>
@@ -601,7 +601,7 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <p className="method-desc">
-                            {METHODS.find(m => m.id === method)?.description}
+                            {getUiString(lang, METHODS.find(m => m.id === method)?.description ?? '')}
                         </p>
                     </div>
 
@@ -651,7 +651,7 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="tax-breakdown">
                                 <div className="breakdown-row">
                                     <span className="breakdown-label">{getUiString(lang, 'Country')}</span>
-                                    <span className="breakdown-value">{config.name}</span>
+                                    <span className="breakdown-value">{getUiString(lang, config.name)}</span>
                                 </div>
                                 <div className="breakdown-row">
                                     <span className="breakdown-label">{getUiString(lang, 'Income Bracket')}</span>
@@ -659,7 +659,7 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="breakdown-row">
                                     <span className="breakdown-label">{getUiString(lang, 'Holding Period')}</span>
-                                    <span className="breakdown-value">{result.holdingPeriodLabel}</span>
+                                    <span className="breakdown-value">{getUiString(lang, result.holdingPeriodLabel)}</span>
                                 </div>
                                 <div className="breakdown-row">
                                     <span className="breakdown-label">{getUiString(lang, 'Method')}</span>

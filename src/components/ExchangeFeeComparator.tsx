@@ -160,7 +160,7 @@ function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${volumeTier === tier.id ? 'active' : ''}`}
                                     onClick={() => setVolumeTier(tier.id)}
                                 >
-                                    {tier.label}
+                                    {getUiString(lang, tier.label)}
                                 </button>
                             ))}
                         </div>
@@ -241,7 +241,7 @@ function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Volume Tier')}</span>
-                                    <span className="result-value">{VOLUME_TIERS.find(t => t.id === volumeTier)?.label} ({tierMultiplier}x)</span>
+                                    <span className="result-value">{getUiString(lang, VOLUME_TIERS.find(t => t.id === volumeTier)?.label || '')} ({tierMultiplier}x)</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Trade Amount')}</span>

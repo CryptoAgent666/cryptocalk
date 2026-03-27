@@ -153,7 +153,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                                         background: network === n.id ? `${n.color}15` : undefined,
                                         color: network === n.id ? n.color : undefined,
                                     }}>
-                                    {n.label}
+                                    {getUiString(lang, n.label)}
                                 </button>
                             ))}
                         </div>
@@ -266,7 +266,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatUSD(gasCostUSD)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-text-secondary)' }}>
-                                    {formatETH(gasCostETH)} {getUiString(lang, 'on')} {currentNetwork.label}
+                                    {formatETH(gasCostETH)} {getUiString(lang, 'on')} {getUiString(lang, currentNetwork.label)}
                                 </span>
                             </div>
 
@@ -292,7 +292,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="result-breakdown">
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Network')}</span>
-                                    <span className="result-value" style={{ color: currentNetwork.color, fontWeight: 600 }}>{currentNetwork.label}</span>
+                                    <span className="result-value" style={{ color: currentNetwork.color, fontWeight: 600 }}>{getUiString(lang, currentNetwork.label)}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Gas Limit')}</span>
@@ -324,7 +324,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* All Tx Types Comparison */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    {getUiString(lang, 'Fee Comparison')} — {currentNetwork.label} {getUiString(lang, 'at')} {effectiveGwei.toFixed(1)} Gwei
+                                    {getUiString(lang, 'Fee Comparison')} — {getUiString(lang, currentNetwork.label)} {getUiString(lang, 'at')} {effectiveGwei.toFixed(1)} Gwei
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>

@@ -465,7 +465,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                                 }}>
                                     <Clock size={16} style={{ flexShrink: 0, color: '#0891b2' }} />
                                     <span>
-                                        <strong>{getUiString(lang, 'Optimal harvest')}: {optimalHarvest.label}</strong> {getUiString(lang, '— harvesting more often costs more in gas than the compounding benefit.')}
+                                        <strong>{getUiString(lang, 'Optimal harvest')}: {getUiString(lang, optimalHarvest.label)}</strong> {getUiString(lang, '— harvesting more often costs more in gas than the compounding benefit.')}
                                     </span>
                                 </div>
                             )}
