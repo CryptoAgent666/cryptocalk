@@ -132,7 +132,7 @@ function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                 <div className="calc-input-panel">
                     {/* Input Mode */}
                     <div className="input-group">
-                        <label><Zap size={14} /> Input Mode</label>
+                        <label><Zap size={14} /> {getUiString(lang, 'Input Mode')}</label>
                         <div className="pills-row">
                             {(['satoshi', 'btc', 'usd'] as InputMode[]).map((mode) => (
                                 <button
@@ -140,7 +140,7 @@ function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${inputMode === mode ? 'active' : ''}`}
                                     onClick={() => { setInputMode(mode); setAmount(''); }}
                                 >
-                                    {mode === 'satoshi' ? 'Satoshi' : mode === 'btc' ? 'BTC' : 'USD'}
+                                    {mode === 'satoshi' ? getUiString(lang, 'Satoshi') : mode === 'btc' ? 'BTC' : 'USD'}
                                 </button>
                             ))}
                         </div>
@@ -150,7 +150,7 @@ function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            {inputMode === 'satoshi' ? 'Amount (sats)' : inputMode === 'btc' ? 'Amount (BTC)' : 'Amount (USD)'}
+                            {inputMode === 'satoshi' ? getUiString(lang, 'Amount (sats)') : inputMode === 'btc' ? getUiString(lang, 'Amount (BTC)') : getUiString(lang, 'Amount (USD)')}
                         </label>
                         <div className="input-with-prefix">
                             <input
@@ -167,7 +167,7 @@ function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
 
                     {/* Quick Amount Buttons */}
                     <div className="input-group">
-                        <label>Quick Amounts</label>
+                        <label>{getUiString(lang, 'Quick Amounts')}</label>
                         <div className="pills-row" style={{ flexWrap: 'wrap' }}>
                             {quickAmounts.map((val) => (
                                 <button
@@ -188,7 +188,7 @@ function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
 
                     {/* Fiat Currency */}
                     <div className="input-group">
-                        <label>Fiat Currency</label>
+                        <label>{getUiString(lang, 'Fiat Currency')}</label>
                         <div className="toggle-group">
                             {(['usd', 'eur'] as FiatCurrency[]).map((f) => (
                                 <button
@@ -204,17 +204,17 @@ function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
 
                     {/* BTC Price Display */}
                     <div className="input-group">
-                        <label><RefreshCw size={14} /> BTC Price</label>
+                        <label><RefreshCw size={14} /> {getUiString(lang, 'BTC Price')}</label>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                             <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--color-text)' }}>
                                 {loading ? (
                                     <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-text-muted)' }}>
-                                        <Loader2 size={14} className="spin-icon" /> Fetching...
+                                        <Loader2 size={14} className="spin-icon" /> {getUiString(lang, 'Fetching...')}
                                     </span>
                                 ) : currentPrice ? (
                                     `${FIAT_SYMBOLS[fiat]}${new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US').format(currentPrice)}`
                                 ) : (
-                                    'Unavailable'
+                                    getUiString(lang, 'Unavailable')
                                 )}
                             </span>
                             <button
@@ -226,18 +226,18 @@ function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                                 }}
                                 aria-label="Refresh price"
                             >
-                                <RefreshCw size={12} /> Refresh
+                                <RefreshCw size={12} /> {getUiString(lang, 'Refresh')}
                             </button>
                         </div>
                         {lastUpdated && (
                             <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
-                                Updated {lastUpdated.toLocaleTimeString()}
+                                {getUiString(lang, 'Updated')} {lastUpdated.toLocaleTimeString()}
                             </span>
                         )}
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                 </div>
 

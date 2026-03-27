@@ -122,12 +122,12 @@ function HashrateConverter({ lang = 'en' }: { lang?: string }) {
                 <div className="calc-input-panel">
                     {/* Value Input */}
                     <div className="input-group">
-                        <label><Zap size={14} /> Hash Rate Value</label>
+                        <label><Zap size={14} /> {getUiString(lang, 'Hash Rate Value')}</label>
                         <input
                             type="number" inputMode="decimal"
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
-                            placeholder="Enter hash rate..."
+                            placeholder={getUiString(lang, 'Enter hash rate...')}
                             id="hashrate-value"
                             step="any"
                             min="0"
@@ -136,7 +136,7 @@ function HashrateConverter({ lang = 'en' }: { lang?: string }) {
 
                     {/* Unit Selection */}
                     <div className="input-group">
-                        <label><ArrowRightLeft size={14} /> Unit</label>
+                        <label><ArrowRightLeft size={14} /> {getUiString(lang, 'Unit')}</label>
                         <div className="pills-row">
                             {UNITS.map((unit) => (
                                 <button
@@ -152,41 +152,41 @@ function HashrateConverter({ lang = 'en' }: { lang?: string }) {
 
                     {/* Quick Fill from Typical Devices */}
                     <div className="input-group">
-                        <label><Cpu size={14} /> Quick Fill — Typical Devices</label>
+                        <label><Cpu size={14} /> {getUiString(lang, 'Quick Fill — Typical Devices')}</label>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                             <button
                                 className="pill-btn"
                                 style={{ textAlign: 'left', padding: '8px 12px', fontSize: '0.8rem' }}
                                 onClick={() => handleQuickFill('10', 'kh')}
                             >
-                                CPU (RandomX) — 10 KH/s
+                                {getUiString(lang, 'CPU (RandomX) — 10 KH/s')}
                             </button>
                             <button
                                 className="pill-btn"
                                 style={{ textAlign: 'left', padding: '8px 12px', fontSize: '0.8rem' }}
                                 onClick={() => handleQuickFill('60', 'mh')}
                             >
-                                RTX 4090 (KawPow) — 60 MH/s
+                                {getUiString(lang, 'RTX 4090 (KawPow) — 60 MH/s')}
                             </button>
                             <button
                                 className="pill-btn"
                                 style={{ textAlign: 'left', padding: '8px 12px', fontSize: '0.8rem' }}
                                 onClick={() => handleQuickFill('100', 'mh')}
                             >
-                                GPU on Ethash — 100 MH/s
+                                {getUiString(lang, 'GPU on Ethash — 100 MH/s')}
                             </button>
                             <button
                                 className="pill-btn"
                                 style={{ textAlign: 'left', padding: '8px 12px', fontSize: '0.8rem' }}
                                 onClick={() => handleQuickFill('335', 'th')}
                             >
-                                Antminer S21 Hyd — 335 TH/s
+                                {getUiString(lang, 'Antminer S21 Hyd — 335 TH/s')}
                             </button>
                         </div>
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                 </div>
 

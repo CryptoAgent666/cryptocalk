@@ -152,7 +152,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -165,7 +165,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             {PLATFORMS.map((p) => (
                                 <button key={p.id} className={`pill-btn ${platform === p.id ? 'active' : ''}`}
                                     onClick={() => handlePlatform(p.id)}>
-                                    {p.label} {p.apr > 0 ? `${p.apr}%` : ''}
+                                    {getUiString(lang, p.label)} {p.apr > 0 ? `${p.apr}%` : ''}
                                 </button>
                             ))}
                         </div>

@@ -282,7 +282,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* ===== Left: Input Panel ===== */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {VESTING_SCENARIOS.map((scenario) => (
                                 <button
@@ -290,7 +290,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -300,7 +300,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Coins size={14} />
-                            Total Token Allocation
+                            {getUiString(lang, 'Total Token Allocation')}
                         </label>
                         <div className="pills-row">
                             {TOTAL_TOKEN_PRESETS.map((value) => (
@@ -332,7 +332,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Token Price
+                            {getUiString(lang, 'Token Price')}
                         </label>
                         <div className="pills-row">
                             {TOKEN_PRICE_PRESETS.map((value) => (
@@ -362,8 +362,8 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Unlock size={14} />
-                            TGE Unlock %
-                            <span className="label-hint">Token Generation Event</span>
+                            {getUiString(lang, 'TGE Unlock %')}
+                            <span className="label-hint">{getUiString(lang, 'Token Generation Event')}</span>
                         </label>
                         <div className="pills-row">
                             {TGE_PRESETS.map((p) => (
@@ -394,7 +394,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Clock size={14} />
-                            Cliff Period (months)
+                            {getUiString(lang, 'Cliff Period (months)')}
                         </label>
                         <div className="pills-row">
                             {CLIFF_PRESETS.map((m) => (
@@ -417,7 +417,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 step="1"
                                 min="0"
                              onFocus={(e) => e.target.select()} />
-                            <span className="input-unit">months</span>
+                            <span className="input-unit">{getUiString(lang, 'months')}</span>
                         </div>
                     </div>
 
@@ -425,7 +425,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Calendar size={14} />
-                            Vesting Duration (months after cliff)
+                            {getUiString(lang, 'Vesting Duration (months after cliff)')}
                         </label>
                         <div className="pills-row">
                             {VESTING_PRESETS.map((m) => (
@@ -448,7 +448,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 step="1"
                                 min="1"
                              onFocus={(e) => e.target.select()} />
-                            <span className="input-unit">months</span>
+                            <span className="input-unit">{getUiString(lang, 'months')}</span>
                         </div>
                     </div>
 
@@ -456,35 +456,35 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Percent size={14} />
-                            Unlock Frequency
+                            {getUiString(lang, 'Unlock Frequency')}
                         </label>
                         <div className="toggle-group">
                             <button
                                 className={`toggle-btn ${unlockFrequency === 'monthly' ? 'active' : ''}`}
                                 onClick={() => setUnlockFrequency('monthly')}
                             >
-                                Monthly
+                                {getUiString(lang, 'Monthly')}
                             </button>
                             <button
                                 className={`toggle-btn ${unlockFrequency === 'quarterly' ? 'active' : ''}`}
                                 onClick={() => setUnlockFrequency('quarterly')}
                             >
-                                Quarterly
+                                {getUiString(lang, 'Quarterly')}
                             </button>
                             <button
                                 className={`toggle-btn ${unlockFrequency === 'linear' ? 'active' : ''}`}
                                 onClick={() => setUnlockFrequency('linear')}
                             >
-                                Linear (daily)
+                                {getUiString(lang, 'Linear (daily)')}
                             </button>
                         </div>
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Use presets for a quick base schedule, then fine-tune cliff and duration with custom months.
+                        {getUiString(lang, 'Auto-calculates as you type. Use presets for a quick base schedule, then fine-tune cliff and duration with custom months.')}
                     </span>
                 </div>
 

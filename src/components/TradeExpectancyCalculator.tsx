@@ -116,7 +116,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                   onClick={() => applyScenario(scenario)}
                 >
-                  {scenario.label}
+                  {getUiString(lang, scenario.label)}
                 </button>
               ))}
             </div>

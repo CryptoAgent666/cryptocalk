@@ -248,7 +248,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -459,7 +459,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <p style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
-                            {taxConfig.note}
+                            {getUiString(lang, taxConfig.note)}
                         </p>
                     </div>
 

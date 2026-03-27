@@ -242,7 +242,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -378,7 +378,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${intervalsPerDay === iv.value ? 'active' : ''}`}
                                     onClick={() => setIntervalsPerDay(iv.value)}
                                 >
-                                    {iv.label}
+                                    {getUiString(lang, iv.label)}
                                 </button>
                             ))}
                         </div>
@@ -397,7 +397,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${holdingDays === p.days ? 'active' : ''}`}
                                     onClick={() => setHoldingDays(p.days)}
                                 >
-                                    {p.label}
+                                    {getUiString(lang, p.label)}
                                 </button>
                             ))}
                         </div>

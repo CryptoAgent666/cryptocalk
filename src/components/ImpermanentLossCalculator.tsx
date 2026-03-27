@@ -192,7 +192,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -333,10 +333,10 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Test multiple price-ratio scenarios to see when fee APR can or cannot offset impermanent loss.
+                        {getUiString(lang, 'Auto-calculates as you type. Test multiple price-ratio scenarios to see when fee APR can or cannot offset impermanent loss.')}
                     </span>
                 </div>
 
@@ -409,31 +409,31 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-divider" />
 
                                 <div className="result-row">
-                                    <span className="result-label">{tokenALabel} Price Change</span>
+                                    <span className="result-label">{tokenALabel} {getUiString(lang, 'Price Change')}</span>
                                     <span className={`result-value ${changeA >= 0 ? 'profit' : 'fee'}`}>{formatPercent(changeA)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{tokenBLabel} Price Change</span>
+                                    <span className="result-label">{tokenBLabel} {getUiString(lang, 'Price Change')}</span>
                                     <span className={`result-value ${changeB >= 0 ? 'profit' : 'fee'}`}>{formatPercent(changeB)}</span>
                                 </div>
                                 <div className="result-divider" />
 
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Impermanent Loss</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Impermanent Loss')}</strong></span>
                                     <span className="result-value fee"><strong>{ilPercent.toFixed(2)}% ({formatUSD(Math.abs(ilAbsolute))})</strong></span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">LP Value (before fees)</span>
+                                    <span className="result-label">{getUiString(lang, 'LP Value (before fees)')}</span>
                                     <span className="result-value">{formatUSD(lpValueBeforeFees)}</span>
                                 </div>
                                 <div className="result-divider" />
 
                                 <div className="result-row">
-                                    <span className="result-label">Fee Earnings ({days} days)</span>
+                                    <span className="result-label">{getUiString(lang, 'Fee Earnings')} ({days} {getUiString(lang, 'days')})</span>
                                     <span className="result-value profit">+{formatUSD(feeEarnings)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label"><strong>LP Value (with fees)</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'LP Value (with fees)')}</strong></span>
                                     <span className={`result-value ${lpValueWithFees >= investment ? 'profit' : 'fee'}`}>
                                         <strong>{formatUSD(lpValueWithFees)}</strong>
                                     </span>
@@ -441,7 +441,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-divider" />
 
                                 <div className="result-row">
-                                    <span className="result-label"><strong>Net vs HODL</strong></span>
+                                    <span className="result-label"><strong>{getUiString(lang, 'Net vs HODL')}</strong></span>
                                     <span className={`result-value ${netVsHodl >= 0 ? 'profit' : 'fee'}`}>
                                         <strong>{netVsHodl >= 0 ? '+' : ''}{formatUSD(netVsHodl)} ({formatPercent(netVsHodlPercent)})</strong>
                                     </span>
@@ -457,7 +457,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* IL Reference Table */}
                             <div style={{ marginTop: '20px' }}>
                                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
-                                    IL at Different Price Changes (Token A vs B)
+                                    {getUiString(lang, 'IL at Different Price Changes (Token A vs B)')}
                                 </h4>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
@@ -492,14 +492,14 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                Based on constant product AMM (Uniswap V2 style). Concentrated liquidity pools (V3) have different IL characteristics.
+                                {getUiString(lang, 'Based on constant product AMM (Uniswap V2 style). Concentrated liquidity pools (V3) have different IL characteristics.')}
                             </p>
                         </>
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Droplets size={40} /></div>
-                            <h3>Calculate Impermanent Loss</h3>
-                            <p>Enter your liquidity and expected price changes to see how impermanent loss compares to fee earnings in an AMM pool.</p>
+                            <h3>{getUiString(lang, 'Calculate Impermanent Loss')}</h3>
+                            <p>{getUiString(lang, 'Enter your liquidity and expected price changes to see how impermanent loss compares to fee earnings in an AMM pool.')}</p>
                         </div>
                     )}
                 </div>

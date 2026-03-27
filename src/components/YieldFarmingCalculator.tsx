@@ -217,7 +217,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -339,7 +339,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                                 <button key={f.id}
                                     className={`pill-btn ${harvestFreq === f.id ? 'active' : ''}`}
                                     onClick={() => setHarvestFreq(f.id)}>
-                                    {f.label}
+                                    {getUiString(lang, f.label)}
                                 </button>
                             ))}
                         </div>
@@ -373,7 +373,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                                 <button key={p.days}
                                     className={`pill-btn ${farmingDays === String(p.days) ? 'active' : ''}`}
                                     onClick={() => setFarmingDays(String(p.days))}>
-                                    {p.label}
+                                    {getUiString(lang, p.label)}
                                 </button>
                             ))}
                         </div>

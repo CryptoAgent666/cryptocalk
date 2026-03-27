@@ -207,7 +207,7 @@ function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -286,7 +286,7 @@ function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${selectedPreset === p.label ? 'active' : ''}`}
                                     onClick={() => handlePreset(p.label, p.days)}
                                 >
-                                    {p.label}
+                                    {getUiString(lang, p.label)}
                                 </button>
                             ))}
                         </div>

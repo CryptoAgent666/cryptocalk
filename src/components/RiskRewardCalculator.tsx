@@ -226,7 +226,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Left: Input Panel */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {RISK_REWARD_SCENARIOS.map((scenario) => (
                                 <button
@@ -234,7 +234,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -275,7 +275,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <ShieldAlert size={14} />
-                            Stop-Loss Price
+                            {getUiString(lang, 'Stop-Loss Price')}
                         </label>
                         <div className="pills-row">
                             {STOP_LOSS_PERCENT_PRESETS.map((pct) => (
@@ -315,7 +315,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <Target size={14} />
-                            Take-Profit Price
+                            {getUiString(lang, 'Take-Profit Price')}
                         </label>
                         <div className="pills-row">
                             {TP_RR_PRESETS.map((rr) => (
@@ -346,8 +346,8 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label>
                             <DollarSign size={14} />
-                            Position Size
-                            <span className="label-hint">Optional</span>
+                            {getUiString(lang, 'Position Size')}
+                            <span className="label-hint">{getUiString(lang, 'Optional')}</span>
                         </label>
                         <div className="pills-row">
                             {POSITION_SIZE_PILLS.map((preset) => (
@@ -373,17 +373,17 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                             />
                         </div>
                         <span className="input-hint">
-                            Direction auto-detects from Entry and Stop-Loss.
+                            {getUiString(lang, 'Direction auto-detects from Entry and Stop-Loss.')}
                         </span>
                     </div>
 
                     {/* Reset Button */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Add position size to get USD risk/profit.
+                        {getUiString(lang, 'Auto-calculates as you type. Add position size to get USD risk/profit.')}
                     </span>
                 </div>
 
@@ -420,8 +420,8 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="rr-bar-reward" style={{ flex: Math.min(results.rrRatio, 10) }} />
                             </div>
                             <div className="rr-labels">
-                                <span className="rr-label-risk">Risk ({formatPercent(results.riskPercent)})</span>
-                                <span className="rr-label-reward">Reward ({results.rrRatio.toFixed(1)}x)</span>
+                                <span className="rr-label-risk">{getUiString(lang, 'Risk')} ({formatPercent(results.riskPercent)})</span>
+                                <span className="rr-label-reward">{getUiString(lang, 'Reward')} ({results.rrRatio.toFixed(1)}x)</span>
                             </div>
 
                             {/* Required Win Rate */}
@@ -492,10 +492,10 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Simulation Table: 100 Trades */}
                             <div className="result-breakdown">
                                 <div className="result-row" style={{ marginBottom: '4px' }}>
-                                    <span className="result-label"><strong><BarChart3 size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />Simulation: {TRADE_COUNT} Trades</strong></span>
+                                    <span className="result-label"><strong><BarChart3 size={14} style={{ verticalAlign: 'middle', marginRight: '4px' }} />{getUiString(lang, 'Simulation')}: {TRADE_COUNT} {getUiString(lang, 'Trades')}</strong></span>
                                 </div>
                                 <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: '0 0 12px' }}>
-                                    Expected P&L at different win rates with this R:R ratio{hasSize ? ` and ${formatUSD(parseFloat(positionSize))} position` : ''}
+                                    {getUiString(lang, 'Expected P&L at different win rates with this R:R ratio')}{hasSize ? ` ${getUiString(lang, 'and')} ${formatUSD(parseFloat(positionSize))} ${getUiString(lang, 'position')}` : ''}
                                 </p>
                                 <div className="result-divider" />
 
@@ -525,7 +525,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                                 })}
                                 <div className="result-divider" />
                                 <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
-                                    Break-even at {formatPercent(results.requiredWinRate)} win rate. Values {hasSize ? 'in USD based on your position size.' : 'shown as price units. Enter a position size for USD values.'}
+                                    {getUiString(lang, 'Break-even at')} {formatPercent(results.requiredWinRate)} {getUiString(lang, 'win rate.')} {hasSize ? getUiString(lang, 'Values in USD based on your position size.') : getUiString(lang, 'Values shown as price units. Enter a position size for USD values.')}
                                 </p>
                             </div>
 

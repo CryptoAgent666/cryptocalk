@@ -361,7 +361,7 @@ function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -457,7 +457,7 @@ function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${selectedInvestmentPill === p.label ? 'active' : ''}`}
                                     onClick={() => handleInvestmentPill(p.label, p.value)}
                                 >
-                                    {p.label}
+                                    {getUiString(lang, p.label)}
                                 </button>
                             ))}
                         </div>
@@ -487,7 +487,7 @@ function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${selectedProfitPill === p.label ? 'active' : ''}`}
                                     onClick={() => handleProfitPill(p.label, p.value)}
                                 >
-                                    {p.label}
+                                    {getUiString(lang, p.label)}
                                 </button>
                             ))}
                         </div>
