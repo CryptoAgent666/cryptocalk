@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 47) — Localized Quick Answers, author bylines, UI string gaps
+
+### Added
+- **100 localized quickAnswer strings**: Added `quickAnswer` field in 5 non-EN languages (es, pt, tr, hi, ru) for top 20 calculators in `calculator-seo-content.ts`. Previously all ~866 non-EN pages showed English Quick Answer text. Calculators: profit, mining, DCA, tax, staking, ROI, converter, liquidation, position-size, break-even, gas-fee, impermanent-loss, compound-interest, margin, leverage, halving, risk-reward, tp-sl, staking-rewards, sharpe.
+- **Author byline on 4 custom EN pages**: Added `<div class="calc-byline">` to profit-calculator.astro, mining-calculator.astro, dca-calculator.astro, tax-calculator.astro. These pages were created before the shared template got the byline feature.
+- **7 missing UI string keys per language**: Added `ASIC Miner`, `Power Consumption`, `Electricity Cost`, `Hardware Cost (optional)`, `Quick Select`, `Or search any coin`, `Auto-Compound` to all 5 non-EN ui-strings files.
+
+### Fixed
+- **MiningCalculator.tsx hardcoded Reset**: Wrapped in `getUiString(lang, 'Reset')` so it translates on localized pages
+- Total quickAnswer entries in file: 185 (69 EN + 100 non-EN + type definition)
+
+### Build
+- Type-check passes with 0 new errors
+
 ## [2026-03-27] (update 46) — Deep Russian translation quality audit & fixes
 
 ### Fixed

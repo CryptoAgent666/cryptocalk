@@ -7,6 +7,8 @@ import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -51,6 +53,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Bitcoin Mining Calculator</h1>
           <p>Estimate your mining profitability with real-time BTC prices. Select an ASIC miner or enter custom specs.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">·</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
 
         <div class="calc-scope">

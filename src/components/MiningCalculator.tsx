@@ -472,7 +472,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Reset */}
                     <button className="reset-btn" onClick={reset}>
                         <RotateCcw size={14} />
-                        Reset
+                        {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
                         {getUiString(lang, 'Auto-calculates as you type. Use hashrate, power, and cost presets for faster setup.')}

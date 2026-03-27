@@ -119,7 +119,8 @@
       "Bash(pkill -f \"astro dev\")",
       "Bash(xargs -r kill)",
       "Bash(git push origin main)",
-      "WebFetch(domain:cryptocalk.com)"
+      "WebFetch(domain:cryptocalk.com)",
+      "Bash(wc -l /Users/konstantin/.gemini/antigravity/scratch/CRYPTOCALK/src/i18n/ui-strings/*.ts)"
     ]
   }
 }

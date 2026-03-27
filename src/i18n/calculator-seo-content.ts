@@ -18,6 +18,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Introduce cualquier cantidad de criptomoneda para convertir entre monedas y divisas fiat al instante con precios en tiempo real de CoinGecko. Por ejemplo, 1 BTC ≈ $73.700 USD (marzo 2026).',
       how: [
       `El Conversor Cripto traduce cualquier cantidad de criptomoneda a otra moneda digital o fiat usando precios de mercado en tiempo real. Selecciona tu activo de origen, escribe un importe, elige la moneda objetivo y el resultado se actualiza al instante. Úsalo antes de colocar una orden para confirmar exactamente cuánto equivale tu posición objetivo, eliminando errores aritméticos manuales.`,
       `Para comparar valores en varias monedas a la vez, abre el conversor junto con el formulario de orden de tu exchange. Introduce el equivalente en fiat que quieres gastar y copia el resultado directamente en tu ticket de trading. El conversor soporta más de 500 criptomonedas y todas las principales monedas fiat, siendo útil para conversiones spot, cálculos de facturas y contabilidad de cartera.`
@@ -28,6 +29,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Insira qualquer quantidade de criptomoeda para converter entre moedas e moedas fiat instantaneamente com preços em tempo real do CoinGecko. Por exemplo, 1 BTC ≈ $73.700 USD (março 2026).',
       how: [
       `O Conversor Cripto traduz qualquer valor de criptomoeda para outra moeda digital ou fiat usando preços de mercado em tempo real. Selecione seu ativo de origem, insira um valor, escolha a moeda de destino e o resultado é atualizado instantaneamente. Use-o antes de fazer um pedido para confirmar exatamente quanto equivale sua posição desejada.`,
       `Para comparar valores em várias moedas ao mesmo tempo, abra o conversor junto ao formulário de ordem da sua exchange. Insira o equivalente em fiat que deseja gastar e copie o resultado diretamente para o ticket de negociação. O conversor suporta mais de 500 criptomoedas e todas as principais moedas fiat.`
@@ -38,6 +40,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Herhangi bir kripto para miktarını girerek CoinGecko gerçek zamanlı fiyatlarıyla coinler ve fiat para birimleri arasında anında dönüştürün. Örneğin, 1 BTC ≈ $73.700 USD (Mart 2026).',
       how: [
       `Kripto Dönüştürücü, gerçek zamanlı piyasa fiyatlarını kullanarak herhangi bir kripto para miktarını başka bir kripto veya fiat para birimine çevirir. Kaynak varlığınızı seçin, bir miktar girin, hedef para birimini belirleyin ve sonuç anında güncellenir. Bir emir vermeden önce, hedef pozisyonunuzun tam karşılığını doğrulamak için kullanın.`,
       `Aynı anda birden fazla para biriminde değer karşılaştırmak için dönüştürücüyü exchange emir formuyla birlikte açın. Harcamak istediğiniz fiat karşılığını girin ve sonucu doğrudan işlem biletinize kopyalayın. Dönüştürücü 500'den fazla kripto para ve tüm başlıca fiat para birimlerini destekler.`
@@ -48,6 +51,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'CoinGecko के रियल-टाइम प्राइस का उपयोग करके किसी भी क्रिप्टोकरेंसी राशि को कॉइन और फिएट करेंसी के बीच तुरंत कन्वर्ट करें। उदाहरण: 1 BTC ≈ $73,700 USD (मार्च 2026)।',
       how: [
       `क्रिप्टो कन्वर्टर रियल-टाइम मार्केट प्राइस का उपयोग करके किसी भी क्रिप्टोकरेंसी को दूसरी कॉइन या फिएट करेंसी में बदलता है। अपना सोर्स एसेट चुनें, राशि टाइप करें, टार्गेट करेंसी चुनें और रिजल्ट तुरंत अपडेट हो जाता है। ऑर्डर देने से पहले इसका उपयोग करें।`,
       `एक साथ कई करेंसी में वैल्यू कम्पेयर करने के लिए, कन्वर्टर को अपने एक्सचेंज ऑर्डर फॉर्म के साथ खोलें। जो फिएट अमाउंट खर्च करना चाहते हैं वह दर्ज करें और रिजल्ट को सीधे ट्रेड टिकट में कॉपी करें। कन्वर्टर 500+ क्रिप्टोकरेंसी और सभी प्रमुख फिएट करेंसी सपोर्ट करता है।`
@@ -58,6 +62,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Введите любое количество криптовалюты для мгновенной конвертации между монетами и фиатными валютами по ценам CoinGecko в реальном времени. Например, 1 BTC ≈ $73 700 USD (март 2026).',
       how: [
       `Крипто-конвертер переводит любую сумму криптовалюты в другую монету или фиатную валюту по актуальным рыночным ценам в реальном времени. Выберите исходный актив, введите сумму, укажите целевую валюту — результат обновляется мгновенно. Используйте перед размещением ордера, чтобы точно знать, сколько одного актива эквивалентно нужной позиции в другом.`,
       `Для одновременного сравнения стоимости в нескольких валютах откройте конвертер рядом с формой ордера на бирже. Введите фиатный эквивалент суммы, которую хотите потратить, и скопируйте результат прямо в тикет сделки. Конвертер поддерживает 500+ криптовалют и все основные фиатные валюты.`
@@ -81,6 +86,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Ganancia cripto = (Precio de Venta − Precio de Compra) × Cantidad − Comisiones. Comprar 0,5 BTC a $60.000 y vender a $72.000 con 0,1% de comisiones genera $5.934 de beneficio neto (19,76% ROI).',
       how: [
       `La Calculadora de Ganancias Cripto calcula tu beneficio o pérdida exacta de cualquier operación considerando el precio de entrada, precio de salida, tamaño de posición y comisiones. Comienza seleccionando modo Largo o Corto, luego busca tu moneda para autocompletar el precio de mercado actual o escribe un precio personalizado.`,
       `Introduce los precios de entrada y salida, especifica tu inversión o cantidad, añade los porcentajes de comisión y la calculadora devuelve al instante el beneficio bruto, beneficio neto, ROI y precio de costo efectivo. Ejecuta dos escenarios seguidos — primero con tu precio objetivo y luego con tu nivel de stop-loss — para comparar el potencial alcista frente al riesgo bajista.`
@@ -91,6 +97,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Lucro cripto = (Preço de Venda − Preço de Compra) × Quantidade − Taxas. Comprar 0,5 BTC a $60.000 e vender a $72.000 com 0,1% de taxas gera $5.934 de lucro líquido (19,76% ROI).',
       how: [
       `A Calculadora de Lucro Cripto calcula seu lucro ou prejuízo exato de qualquer negociação considerando preço de entrada, saída, tamanho da posição e taxas. Comece selecionando modo Compra ou Venda, depois pesquise sua moeda para preencher automaticamente o preço atual ou digite um preço personalizado.`,
       `Insira os preços de entrada e saída, especifique seu investimento ou quantidade, adicione as porcentagens de taxa e a calculadora retorna instantaneamente lucro bruto, lucro líquido, ROI e base de custo efetiva. Execute dois cenários — primeiro com seu preço alvo e depois com seu stop-loss — para comparar potencial de alta com risco de queda.`
@@ -101,6 +108,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Kripto kârı = (Satış Fiyatı − Alış Fiyatı) × Miktar − Ücretler. 0,5 BTC\'yi $60.000\'den alıp $72.000\'den %0,1 ücretle satmak $5.934 net kâr sağlar (%19,76 ROI).',
       how: [
       `Kripto Kâr Hesaplayıcısı, giriş fiyatı, çıkış fiyatı, pozisyon büyüklüğü ve işlem ücretlerini dikkate alarak herhangi bir işlemden elde edeceğiniz kâr veya zararı hesaplar. Long veya Short modunu seçin, ardından güncel piyasa fiyatını otomatik doldurmak için coin'inizi arayın veya özel bir fiyat girin.`,
       `Giriş ve çıkış fiyatlarını, yatırım tutarını veya miktarı girin, exchange ücret yüzdelerinizi ekleyin; hesaplayıcı brüt kâr, net kâr, ROI ve efektif maliyet bazını anında gösterir. Hedef çıkış fiyatınızla ve stop-loss seviyenizle iki senaryo çalıştırın.`
@@ -111,6 +119,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'क्रिप्टो प्रॉफिट = (बिक्री मूल्य − खरीद मूल्य) × मात्रा − फीस। 0.5 BTC को $60,000 पर खरीदकर $72,000 पर 0.1% फीस के साथ बेचने पर $5,934 नेट प्रॉफिट मिलता है (19.76% ROI)।',
       how: [
       `क्रिप्टो प्रॉफिट कैलकुलेटर एंट्री प्राइस, एग्जिट प्राइस, पोजीशन साइज और ट्रेडिंग फीस को ध्यान में रखते हुए किसी भी ट्रेड का सटीक प्रॉफिट या लॉस कैलकुलेट करता है। Long या Short मोड चुनें, फिर अपनी कॉइन सर्च करें।`,
       `एंट्री और एग्जिट प्राइस दर्ज करें, इनवेस्टमेंट या क्वांटिटी बताएं, एक्सचेंज फीस परसेंटेज जोड़ें — कैलकुलेटर तुरंत ग्रॉस प्रॉफिट, नेट प्रॉफिट, ROI और इफेक्टिव कॉस्ट बेसिस दिखाएगा।`
@@ -121,6 +130,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Прибыль = (Цена продажи − Цена покупки) × Количество − Комиссии. Покупка 0,5 BTC по $60 000 и продажа по $72 000 при комиссии 0,1% приносит $5 934 чистой прибыли (ROI 19,76%).',
       how: [
       `Калькулятор прибыли криптовалют вычисляет точный доход или убыток по любой сделке с учётом цены входа, цены выхода, размера позиции и торговых комиссий. Выберите режим Лонг или Шорт, затем найдите монету для автоподстановки текущей рыночной цены или введите произвольную цену вручную.`,
       `Введите цены входа и выхода, укажите инвестицию или количество токенов, добавьте проценты комиссий — калькулятор мгновенно покажет валовую прибыль, чистую прибыль, ROI и эффективную себестоимость. Запустите два сценария: с целевой ценой выхода и с уровнем стоп-лосса, чтобы сравнить потенциал роста с риском падения.`
@@ -144,6 +154,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Introduce tu hash rate, consumo eléctrico y coste de electricidad para estimar los ingresos diarios de minería de Bitcoin. A 140 TH/s y $0,06/kWh, un ASIC moderno genera aproximadamente $8–12/día antes de ajustes de dificultad.',
       how: [
       `La Calculadora de Minería muestra si tu configuración de hardware es rentable comparando los ingresos diarios estimados con tus costos de electricidad y operativos. Introduce tu hashrate, consumo de energía en vatios, tarifa eléctrica por kWh y porcentaje de comisión del pool para obtener proyecciones de ganancias o pérdidas.`,
       `Úsala para evaluar compras de hardware antes de adquirirlas: introduce las especificaciones del ASIC o GPU que estás considerando y tu tarifa eléctrica local para ver el período de recuperación de la inversión. Ejecuta escenarios con el precio actual de Bitcoin y uno 30% más bajo para probar la rentabilidad en mercados bajistas.`
@@ -154,6 +165,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Insira seu hash rate, consumo de energia e custo de eletricidade para estimar a receita diária de mineração de Bitcoin. A 140 TH/s e $0,06/kWh, um ASIC moderno gera cerca de $8–12/dia antes dos ajustes de dificuldade.',
       how: [
       `A Calculadora de Mineração mostra se sua configuração de hardware é lucrativa comparando a receita diária estimada com seus custos de eletricidade e operacionais. Insira seu hashrate, consumo de energia em watts, tarifa de eletricidade por kWh e porcentagem de taxa do pool.`,
       `Use-a para avaliar compras de hardware: insira as especificações do ASIC ou GPU que está considerando e sua tarifa elétrica local para ver o período de retorno do investimento. Execute cenários com o preço atual do Bitcoin e um 30% mais baixo para testar a lucratividade em quedas de mercado.`
@@ -164,6 +176,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Hash rate, güç tüketimi ve elektrik maliyetinizi girerek günlük Bitcoin madencilik gelirini tahmin edin. 140 TH/s ve $0,06/kWh ile modern bir ASIC, zorluk ayarlamalarından önce günde yaklaşık $8–12 kazanır.',
       how: [
       `Madencilik Hesaplayıcısı, tahmini günlük geliri elektrik ve operasyonel maliyetlerinizle karşılaştırarak donanım kurulumunuzun kârlı olup olmadığını gösterir. Hashrate'inizi, watt cinsinden güç tüketiminizi, kWh başına elektrik tarifinizi ve havuz ücreti yüzdesini girin.`,
       `Donanım satın almadan önce değerlendirmek için kullanın: düşündüğünüz ASIC veya GPU'nun özelliklerini ve yerel elektrik tarifinizi girerek geri ödeme süresini görün. Mevcut Bitcoin fiyatıyla ve %30 daha düşük fiyatla iki senaryo çalıştırın.`
@@ -174,6 +187,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'अपना हैश रेट, बिजली खपत और बिजली लागत दर्ज करके दैनिक Bitcoin माइनिंग राजस्व का अनुमान लगाएं। 140 TH/s और $0.06/kWh पर एक आधुनिक ASIC डिफिकल्टी एडजस्टमेंट से पहले लगभग $8–12/दिन कमाता है।',
       how: [
       `माइनिंग कैलकुलेटर अनुमानित दैनिक राजस्व की तुलना आपकी बिजली और परिचालन लागत से करके दिखाता है कि आपका हार्डवेयर सेटअप लाभदायक है या नहीं। अपना हैशरेट, वाट में पावर कंजम्प्शन, प्रति kWh बिजली दर और पूल फीस प्रतिशत दर्ज करें।`,
       `हार्डवेयर खरीदने से पहले मूल्यांकन के लिए उपयोग करें: जिस ASIC या GPU पर विचार कर रहे हैं उसकी स्पेसिफिकेशन और अपनी स्थानीय बिजली दर दर्ज करें। वर्तमान Bitcoin मूल्य और 30% कम मूल्य के साथ दो परिदृश्य चलाएं।`
@@ -184,6 +198,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Введите хешрейт, энергопотребление и стоимость электричества для оценки суточного дохода от майнинга Bitcoin. При 140 TH/s и $0,06/кВтч современный ASIC приносит примерно $8–12/день до корректировки сложности.',
       how: [
       `Калькулятор майнинга показывает, прибыльна ли ваша конфигурация оборудования, сравнивая расчётный суточный доход с затратами на электроэнергию и операционными расходами. Введите хешрейт, потребляемую мощность в ваттах, тариф на электричество и процент комиссии пула.`,
       `Используйте для оценки покупки оборудования: введите характеристики рассматриваемого ASIC или GPU и ваш тариф на электроэнергию, чтобы увидеть срок окупаемости. Запустите сценарии при текущей цене Bitcoin и при цене на 30% ниже для стресс-теста прибыльности в медвежьем рынке.`
@@ -207,6 +222,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'El promediado del costo en dólares distribuye tu inversión cripto en intervalos regulares. Un estudio de Vanguard demostró que el DCA reduce el riesgo a la baja hasta un 30% frente a la inversión en suma global durante mercados volátiles.',
       how: [
       `La Calculadora DCA realiza un backtest de una estrategia de promediado del costo en dólares contra datos históricos de precios reales, mostrando exactamente cómo habría funcionado un plan de compras recurrentes durante tu período elegido. Selecciona una criptomoneda, establece una fecha de inicio, elige una frecuencia de compra y introduce tu importe de compra recurrente.`,
       `Usa los botones predefinidos para monedas populares y horizontes temporales para explorar rápidamente diferentes escenarios. Compara un DCA mensual en Bitcoin durante 3 años contra uno semanal para entender cómo afecta la frecuencia al precio promedio de entrada.`
@@ -217,6 +233,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'O custo médio em dólar distribui seu investimento cripto em intervalos regulares. Um estudo da Vanguard mostrou que o DCA reduz o risco de queda em até 30% comparado ao investimento de soma única em mercados voláteis.',
       how: [
       `A Calculadora DCA faz um backtest de uma estratégia de custo médio em dólar contra dados históricos de preços reais, mostrando exatamente como um plano de compras recorrentes teria se saído durante o período escolhido. Selecione uma criptomoeda, defina uma data de início, escolha uma frequência de compra e insira seu valor de compra recorrente.`,
       `Use os botões predefinidos para moedas populares e horizontes de tempo para explorar rapidamente diferentes cenários. Compare um DCA mensal em Bitcoin ao longo de 3 anos com um semanal para entender como a frequência afeta o preço médio de entrada.`
@@ -227,6 +244,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Dolar maliyet ortalaması, kripto yatırımınızı düzenli aralıklara yayar. Vanguard araştırması, DCA\'nın volatil piyasalarda toplu yatırıma göre düşüş riskini %30\'a kadar azalttığını göstermiştir.',
       how: [
       `DCA Hesaplayıcısı, gerçek tarihsel fiyat verilerine karşı bir dolar maliyet ortalaması stratejisinin geriye dönük testini yaparak, seçtiğiniz dönem boyunca tekrarlayan bir satın alma planının nasıl performans gösterdiğini gösterir. Bir kripto para seçin, başlangıç tarihi belirleyin, satın alma sıklığı seçin ve tekrarlayan satın alma tutarınızı girin.`,
       `Farklı senaryoları hızla keşfetmek için popüler coinler ve zaman dilimleri için hazır ayar düğmelerini kullanın. 3 yıl boyunca Bitcoin'e yapılan aylık DCA'yı haftalık DCA ile karşılaştırarak sıklığın ortalama giriş fiyatını nasıl etkilediğini anlayın.`
@@ -237,6 +255,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'डॉलर-कॉस्ट एवरेजिंग आपके क्रिप्टो निवेश को नियमित अंतराल पर फैलाती है। Vanguard के अध्ययन से पता चला कि DCA अस्थिर बाजारों में एकमुश्त निवेश की तुलना में डाउनसाइड रिस्क को 30% तक कम करता है।',
       how: [
       `DCA कैलकुलेटर वास्तविक ऐतिहासिक मूल्य डेटा के खिलाफ डॉलर-कॉस्ट एवरेजिंग रणनीति का बैकटेस्ट करता है, दिखाता है कि आपके चुने गए अवधि में एक आवर्ती खरीद योजना कैसे प्रदर्शन करती। एक क्रिप्टोकरेंसी चुनें, स्टार्ट डेट सेट करें, खरीद फ्रीक्वेंसी चुनें और आवर्ती खरीद राशि दर्ज करें।`,
       `अलग-अलग परिदृश्यों को जल्दी एक्सप्लोर करने के लिए लोकप्रिय कॉइन और टाइम होराइजन के लिए प्रीसेट बटन का उपयोग करें। 3 साल में Bitcoin में मासिक DCA की तुलना साप्ताहिक DCA से करें।`
@@ -247,6 +266,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Усреднение долларовой стоимости распределяет криптоинвестиции равными частями через регулярные промежутки. Исследование Vanguard показало, что DCA снижает риск просадки до 30% по сравнению с разовым вложением на волатильных рынках.',
       how: [
       `Калькулятор DCA тестирует стратегию усреднения долларовой стоимости на реальных исторических данных, показывая, как план регулярных покупок работал бы за выбранный период. Выберите криптовалюту, установите дату начала, частоту покупок и сумму каждой покупки.`,
       `Используйте предустановленные кнопки для популярных монет и временных горизонтов для быстрого сравнения сценариев. Сравните ежемесячный DCA в Bitcoin за 3 года с еженедельным, чтобы понять, как частота влияет на среднюю цену входа.`
@@ -270,6 +290,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Impuestos cripto en EE.UU.: ganancias a corto plazo (menos de 1 año) gravadas al 10–37%, a largo plazo al 0–20%. Usa esta calculadora para estimar tu obligación fiscal, incluyendo base de costo y período de tenencia.',
       how: [
       `La Calculadora de Impuestos Cripto estima tus ganancias o pérdidas de capital de operaciones con criptomonedas aplicando la metodología de costo base FIFO (primero en entrar, primero en salir). Introduce cada operación con su fecha, activo, precio de compra, precio de venta y cantidad.`,
       `Úsala para prepararte para la temporada fiscal ejecutando tu historial de transacciones y viendo qué operaciones generaron la mayor obligación fiscal. Exporta el resumen de resultados para cotejarlo con el informe fiscal de tu exchange.`
@@ -280,6 +301,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Impostos cripto nos EUA: ganhos de curto prazo (menos de 1 ano) tributados a 10–37%, de longo prazo a 0–20%. Use esta calculadora para estimar sua obrigação fiscal, incluindo base de custo e período de detenção.',
       how: [
       `A Calculadora de Impostos Cripto estima seus ganhos ou perdas de capital em negociações de criptomoedas aplicando a metodologia de base de custo FIFO. Insira cada negociação com sua data, ativo, preço de compra, preço de venda e quantidade.`,
       `Use-a para se preparar para a temporada fiscal executando seu histórico de transações e vendo quais negociações geraram maior obrigação fiscal. Exporte o resumo dos resultados para comparar com o relatório fiscal da sua exchange.`
@@ -290,6 +312,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'ABD kripto vergisi: kısa vadeli kazançlar (1 yıldan az elde tutma) %10–37, uzun vadeli kazançlar %0–20 oranında vergilendirilir. Maliyet tabanı ve elde tutma süresini dahil ederek vergi yükümlülüğünüzü hesaplayın.',
       how: [
       `Kripto Vergi Hesaplayıcısı, FIFO (ilk giren, ilk çıkar) maliyet tabanı metodolojisini uygulayarak kripto para işlemlerindeki sermaye kazancı veya kayıplarınızı tahmin eder. Her işlemi tarih, varlık, alış fiyatı, satış fiyatı ve miktarıyla girin.`,
       `Vergi dönemine hazırlanmak için işlem geçmişinizi çalıştırın ve hangi işlemlerin en büyük vergi yükümlülüğünü oluşturduğunu görün. Sonuç özetini exchange'inizin vergi raporu ile karşılaştırmak için dışa aktarın.`
@@ -300,6 +323,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'US क्रिप्टो टैक्स: शॉर्ट-टर्म गेन (1 वर्ष से कम होल्डिंग) पर 10–37% टैक्स, लॉन्ग-टर्म गेन पर 0–20%। कॉस्ट बेसिस और होल्डिंग पीरियड सहित अपनी टैक्स देनदारी का अनुमान लगाने के लिए इस कैलकुलेटर का उपयोग करें।',
       how: [
       `क्रिप्टो टैक्स कैलकुलेटर FIFO (फर्स्ट-इन, फर्स्ट-आउट) कॉस्ट बेसिस मेथडोलॉजी लागू करके क्रिप्टोकरेंसी ट्रेड्स से आपके कैपिटल गेन या लॉस का अनुमान लगाता है। प्रत्येक ट्रेड को उसकी तारीख, एसेट, खरीद मूल्य, बिक्री मूल्य और मात्रा के साथ दर्ज करें।`,
       `टैक्स सीजन की तैयारी के लिए अपना ट्रांजेक्शन हिस्ट्री चलाएं और देखें कि किन ट्रेड्स ने सबसे बड़ी टैक्स देनदारी उत्पन्न की। रिजल्ट सारांश को अपने एक्सचेंज की टैक्स रिपोर्ट के साथ क्रॉस-रेफरेंस करने के लिए एक्सपोर्ट करें।`
@@ -310,6 +334,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Налог на крипто в США: краткосрочная прибыль (до 1 года) облагается по ставке 10–37%, долгосрочная — 0–20%. Рассчитайте налоговое обязательство с учётом себестоимости и срока владения.',
       how: [
       `Калькулятор налогов на криптовалюту рассчитывает прирост или убыток капитала от криптосделок по методу FIFO (первым пришёл — первым продан). Введите каждую сделку с датой, активом, ценой покупки, ценой продажи и количеством.`,
       `Используйте для подготовки к налоговому сезону: проведите историю транзакций и увидите, какие сделки создали наибольшую налоговую нагрузку. Экспортируйте сводку результатов для сверки с налоговым отчётом биржи.`
@@ -396,6 +421,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Tamaño de posición = (Saldo × % Riesgo) / (Entrada − Stop Loss). Arriesgando el 2% de una cuenta de $10.000 con una distancia de stop de $500 resulta en una posición de $400 — esto te mantiene en el juego a largo plazo.',
       how: [
       `La Calculadora de Tamaño de Posición te dice exactamente cuántas monedas o dólares desplegar por operación según cuánto de tu cuenta estás dispuesto a arriesgar. Introduce tu saldo de cuenta, tu porcentaje de riesgo por operación, tu precio de entrada y tu precio de stop-loss.`,
       `Úsala antes de cada operación para mantener una disciplina de riesgo consistente. Para operaciones con stops ajustados cerca de la entrada, el tamaño de posición será mayor; para operaciones con stops amplios, será menor.`
@@ -406,6 +432,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Tamanho da posição = (Saldo × % Risco) / (Entrada − Stop Loss). Arriscando 2% de uma conta de $10.000 com distância de stop de $500, a posição é de $400 — isso mantém você no jogo a longo prazo.',
       how: [
       `A Calculadora de Tamanho de Posição diz exatamente quantas moedas ou dólares implantar por negociação com base em quanto de sua conta você está disposto a arriscar. Insira seu saldo de conta, porcentagem de risco por negociação, preço de entrada e stop-loss.`,
       `Use-a antes de cada negociação para manter disciplina de risco consistente. Para negociações com stops próximos à entrada, o tamanho da posição será maior; para negociações com stops amplos, será menor.`
@@ -416,6 +443,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Pozisyon boyutu = (Hesap Bakiyesi × Risk %) / (Giriş − Stop Loss). $10.000\'lık bir hesabın %2\'sini $500 stop mesafesiyle riske atmak $400 pozisyon anlamına gelir — bu sizi uzun vadede oyunda tutar.',
       how: [
       `Pozisyon Boyutu Hesaplayıcısı, hesabınızın ne kadarını riske atmak istediğinize göre işlem başına tam olarak kaç coin veya dolar konuşlandıracağınızı söyler. Hesap bakiyenizi, işlem başına risk yüzdenizi, giriş fiyatınızı ve stop-loss fiyatınızı girin.`,
       `Tutarlı risk disiplinini korumak için her işlemden önce kullanın. Girişe yakın sıkı stopu olan işlemler için pozisyon boyutu daha büyük olacak; geniş stoplu işlemler için daha küçük olacaktır.`
@@ -426,6 +454,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'पोजीशन साइज = (अकाउंट बैलेंस × रिस्क %) / (एंट्री − स्टॉप लॉस)। $10,000 अकाउंट का 2% $500 स्टॉप दूरी के साथ रिस्क करने का मतलब है $400 की पोजीशन — यह आपको लंबे समय तक गेम में रखता है।',
       how: [
       `पोजीशन साइज कैलकुलेटर आपको बताता है कि आप अपने अकाउंट का कितना हिस्सा रिस्क करने को तैयार हैं, उसके आधार पर प्रति ट्रेड कितने कॉइन या डॉलर लगाने हैं। अपना अकाउंट बैलेंस, प्रति ट्रेड रिस्क प्रतिशत, एंट्री प्राइस और स्टॉप-लॉस प्राइस दर्ज करें।`,
       `हर ट्रेड से पहले सुसंगत रिस्क डिसिप्लिन बनाए रखने के लिए इसका उपयोग करें। एंट्री के करीब टाइट स्टॉप वाले ट्रेड के लिए पोजीशन साइज बड़ा होगा; वाइड स्टॉप वाले ट्रेड के लिए छोटा।`
@@ -436,6 +465,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Размер позиции = (Баланс × % риска) / (Вход − Стоп-лосс). Рискуя 2% от счёта $10 000 при стопе в $500, размер позиции составит $400 — это сохраняет вас в игре надолго.',
       how: [
       `Калькулятор размера позиции показывает, сколько монет или долларов выставлять на сделку, исходя из того, какой процент счёта вы готовы рискнуть. Введите баланс счёта, процент риска на сделку, цену входа и уровень стоп-лосса.`,
       `Используйте перед каждой сделкой для поддержания дисциплины риска. Для сделок с тесным стопом размер позиции будет больше; с широким — меньше. Это гарантирует одинаковую долларовую потерю при любом стопе.`
@@ -459,6 +489,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Precio de liquidación = Precio de Entrada × (1 − 1/Apalancamiento) para largos, o Precio de Entrada × (1 + 1/Apalancamiento) para cortos. Con 10x en un long de BTC a $50.000, la liquidación ocurre a ~$45.000.',
       how: [
       `La Calculadora de Liquidación te indica el precio exacto al que tu posición apalancada será cerrada forzosamente por el exchange. Introduce tu precio de entrada, multiplicador de apalancamiento y si eres largo o corto.`,
       `Úsala antes de abrir cualquier posición apalancada para establecer stop-losses apropiados por encima del nivel de liquidación. Si el precio de liquidación está incómodamente cerca del precio de mercado actual, reduce tu apalancamiento o aumenta tu margen.`
@@ -469,6 +500,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Preço de liquidação = Preço de Entrada × (1 − 1/Alavancagem) para compras, ou Preço de Entrada × (1 + 1/Alavancagem) para vendas. Com 10x em um long de BTC a $50.000, a liquidação ocorre a ~$45.000.',
       how: [
       `A Calculadora de Liquidação informa o preço exato no qual sua posição alavancada será fechada forçosamente pela exchange. Insira seu preço de entrada, multiplicador de alavancagem e se você está comprado ou vendido.`,
       `Use-a antes de abrir qualquer posição alavancada para definir stop-losses apropriados acima do nível de liquidação. Se o preço de liquidação estiver perigosamente próximo ao preço de mercado atual, reduza sua alavancagem ou aumente sua margem.`
@@ -479,6 +511,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Likidasyon fiyatı = Giriş Fiyatı × (1 − 1/Kaldıraç) long için, Giriş Fiyatı × (1 + 1/Kaldıraç) short için. $50.000 BTC long pozisyonda 10x kaldıraçla likidasyon ~$45.000\'da gerçekleşir.',
       how: [
       `Likidasyon Hesaplayıcısı, kaldıraçlı pozisyonunuzun exchange tarafından zorla kapatılacağı tam fiyatı söyler. Giriş fiyatınızı, kaldıraç çarpanını ve long mu short mu olduğunuzu girin.`,
       `Herhangi bir kaldıraçlı pozisyon açmadan önce likidasyon seviyesinin üzerinde uygun stop-loss'lar belirlemek için kullanın. Likidasyon fiyatı mevcut piyasa fiyatına çok yakınsa kaldıracınızı azaltın veya teminatınızı artırın.`
@@ -489,6 +522,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'लिक्विडेशन प्राइस = एंट्री प्राइस × (1 − 1/लीवरेज) लॉन्ग के लिए, या एंट्री प्राइस × (1 + 1/लीवरेज) शॉर्ट के लिए। $50,000 BTC लॉन्ग पर 10x लीवरेज के साथ लिक्विडेशन ~$45,000 पर होता है।',
       how: [
       `लिक्विडेशन कैलकुलेटर आपको वह सटीक मूल्य बताता है जिस पर एक्सचेंज आपकी लीवरेज्ड पोजीशन को जबरदस्ती बंद कर देगा। अपना एंट्री प्राइस, लीवरेज मल्टीप्लायर और Long या Short दर्ज करें।`,
       `किसी भी लीवरेज्ड पोजीशन खोलने से पहले लिक्विडेशन लेवल के ऊपर उचित स्टॉप-लॉस सेट करने के लिए इसका उपयोग करें।`
@@ -499,6 +533,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Цена ликвидации = Цена входа × (1 − 1/Плечо) для лонга или Цена входа × (1 + 1/Плечо) для шорта. При 10x плече на лонг BTC по $50 000 ликвидация наступает при ~$45 000.',
       how: [
       `Калькулятор ликвидации показывает точную цену, при которой биржа принудительно закроет вашу позицию с плечом. Введите цену входа, кратность плеча и направление позиции (лонг или шорт).`,
       `Используйте перед открытием любой позиции с плечом для установки стоп-лоссов выше уровня ликвидации. Если цена ликвидации слишком близка к текущей рыночной цене — снизьте плечо или увеличьте маржу.`
@@ -585,6 +620,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Estima tus recompensas de staking según APY, duración y comisiones de validador. ETH rinde ~3,2% APY; SOL ~7%; ATOM ~13%. El auto-compounding puede incrementar los rendimientos efectivos un 5–15%.',
       how: [
       `La Calculadora de Recompensas de Staking muestra cuántos ingresos pasivos generará tu criptomoneda en staking con el tiempo basándose en el APY anual actual. Introduce tu cantidad en staking, el APY ofrecido por tu validador o pool y tu duración prevista de staking.`,
       `Úsala para comparar diferentes opciones de staking: introduce la misma cantidad con diferentes tasas APY de varios validadores o plataformas para encontrar la opción más rentable.`
@@ -595,6 +631,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Estime suas recompensas de staking com base no APY, duração e taxas de validador. ETH rende ~3,2% APY; SOL ~7%; ATOM ~13%. O auto-compounding pode aumentar os retornos efetivos em 5–15%.',
       how: [
       `A Calculadora de Recompensas de Staking mostra quanto renda passiva sua criptomoeda em staking irá gerar ao longo do tempo com base no APY anual atual. Insira seu valor em staking, o APY oferecido pelo seu validador ou pool e a duração pretendida de staking.`,
       `Use-a para comparar diferentes opções de staking: insira o mesmo valor com diferentes taxas APY de vários validadores ou plataformas para encontrar a opção mais rentável.`
@@ -605,6 +642,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'APY, süre ve doğrulayıcı ücretlerine göre staking ödüllerinizi tahmin edin. ETH staking ~%3,2 APY; SOL ~%7; ATOM ~%13 verir. Otomatik bileşik, efektif getirileri %5–15 artırabilir.',
       how: [
       `Staking Ödülleri Hesaplayıcısı, stake edilmiş kripto paranızın mevcut yıllık yüzde getirisi (APY) bazında zaman içinde ne kadar pasif gelir üreteceğini gösterir.`,
       `Farklı staking seçeneklerini karşılaştırmak için kullanın: aynı tutarı çeşitli doğrulayıcılar veya platformlardan farklı APY oranlarıyla girin.`
@@ -615,6 +653,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'APY, अवधि और वैलिडेटर फीस के आधार पर अपने स्टेकिंग रिवॉर्ड का अनुमान लगाएं। ETH स्टेकिंग ~3.2% APY देता है; SOL ~7%; ATOM ~13%। ऑटो-कंपाउंडिंग प्रभावी रिटर्न को 5–15% तक बढ़ा सकती है।',
       how: [
       `स्टेकिंग रिवॉर्ड्स कैलकुलेटर दिखाता है कि वर्तमान वार्षिक प्रतिशत उपज (APY) के आधार पर आपकी स्टेक की गई क्रिप्टोकरेंसी समय के साथ कितनी पैसिव इनकम जनरेट करेगी।`,
       `विभिन्न स्टेकिंग विकल्पों की तुलना करने के लिए इसका उपयोग करें: सबसे फायदेमंद विकल्प खोजने के लिए विभिन्न वैलिडेटर या प्लेटफॉर्म से अलग-अलग APY दरों के साथ समान राशि दर्ज करें।`
@@ -625,6 +664,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Рассчитайте награды за стейкинг по APY, сроку и комиссии валидатора. ETH даёт ~3,2% APY; SOL ~7%; ATOM ~13%. Автокомпаундинг может повысить эффективную доходность на 5–15%.',
       how: [
       `Калькулятор вознаграждений за стейкинг показывает, сколько пассивного дохода принесут ваши застейканные токены на основе текущей годовой доходности (APY). Введите сумму стейкинга, APY вашего валидатора или пула и планируемый срок.`,
       `Используйте для сравнения различных вариантов стейкинга: введите одинаковую сумму с разными APY от различных валидаторов, чтобы найти наиболее выгодный вариант.`
@@ -647,11 +687,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `Staking duration sets the projection horizon in days, months, or years. The optional price field converts token rewards into USD value — useful for seeing whether staking rewards outpace potential price depreciation. Validator commission percentage (typically 5-10%) is deducted from the gross reward rate to calculate your net APY. The unstaking period field reminds you of the lock-up delay when exiting.`
       ],
     },
-    es: { how: [`La Calculadora de Recompensas de Staking proyecta tus ganancias al bloquear criptomonedas en una red proof-of-stake. Introduce la cantidad a stakear, la tasa anual (APY), la frecuencia de capitalización y la duración para ver las recompensas proyectadas en tokens y su equivalente en USD.`, `Úsala para comparar oportunidades de staking entre redes — Ethereum rinde 3-4% APY, Solana 6-8%, cadenas del ecosistema Cosmos 15-20%. El calculador también muestra el impacto de las comisiones de validador.`], inputs: [`La cantidad a stakear es el número de tokens que planeas bloquear. La tasa anual (APY) debe reflejar la tasa actual de la red menos la comisión del validador. La frecuencia de capitalización modela con qué frecuencia reclamas y re-stakeas.`, `La duración establece el horizonte de proyección. El campo de precio opcional convierte recompensas en tokens a valor USD. La comisión del validador (típicamente 5-10%) se deduce de la tasa bruta para calcular tu APY neto.`] },
-    pt: { how: [`A Calculadora de Recompensas de Staking projeta seus ganhos ao bloquear criptomoeda em uma rede proof-of-stake. Insira a quantidade a stakear, a taxa anual (APY), a frequência de capitalização e a duração para ver recompensas projetadas em tokens e equivalente em USD.`, `Use-a para comparar oportunidades de staking entre redes — Ethereum rende 3-4% APY, Solana 6-8%, cadeias do ecossistema Cosmos 15-20%. A calculadora também mostra o impacto das comissões de validador.`], inputs: [`A quantidade stakeada é o número de tokens que planeja bloquear. A taxa anual (APY) deve refletir a taxa atual da rede menos a comissão do validador. A frequência de capitalização modela com que frequência você reivindica e restakeia.`, `A duração define o horizonte de projeção. O campo de preço opcional converte recompensas em tokens para valor USD. A comissão do validador (tipicamente 5-10%) é deduzida da taxa bruta para calcular seu APY líquido.`] },
-    tr: { how: [`Staking Ödül Hesaplayıcı, proof-of-stake ağında kripto para kilitlemenizden elde edeceğiniz kazançları projekte eder. Stake miktarını, yıllık ödül oranını (APY), bileşik frekansı ve süreyi girerek token ve USD cinsinden tahmini ödülleri görün.`, `Farklı ağlardaki staking fırsatlarını karşılaştırın — Ethereum %3-4 APY, Solana %6-8, Cosmos ekosistemi zincirleri %15-20. Hesaplayıcı ayrıca doğrulayıcı komisyon ücretlerinin etkisini gösterir.`], inputs: [`Stake miktarı, kilitlemeyi planladığınız token sayısıdır. Yıllık ödül oranı (APY) ağın mevcut oranından doğrulayıcı komisyonu düşülmüş halini yansıtmalıdır. Bileşik frekansı, ödülleri ne sıklıkla talep edip yeniden stake ettiğinizi modeller.`, `Süre, projeksiyon ufkunu gün, ay veya yıl olarak belirler. Opsiyonel fiyat alanı token ödüllerini USD değerine dönüştürür. Doğrulayıcı komisyonu (%5-10) brüt oranından düşülerek net APY hesaplanır.`] },
-    hi: { how: [`स्टेकिंग रिवॉर्ड्स कैलकुलेटर प्रूफ-ऑफ-स्टेक नेटवर्क में क्रिप्टोकरेंसी लॉक करने से आपकी कमाई का अनुमान लगाता है। स्टेक राशि, वार्षिक रिवॉर्ड रेट (APY), कंपाउंडिंग फ्रीक्वेंसी और अवधि दर्ज करके टोकन और USD में अनुमानित रिवॉर्ड देखें।`, `विभिन्न नेटवर्क में स्टेकिंग अवसरों की तुलना करें — Ethereum लगभग 3-4% APY, Solana 6-8%, Cosmos इकोसिस्टम चेन 15-20% देती हैं। कैलकुलेटर वैलिडेटर कमीशन फीस का प्रभाव भी दिखाता है।`], inputs: [`स्टेक राशि वह टोकन संख्या है जिसे आप लॉक करने की योजना बनाते हैं। वार्षिक रिवॉर्ड रेट (APY) नेटवर्क की वर्तमान दर से वैलिडेटर कमीशन घटाकर दर्शानी चाहिए। कंपाउंडिंग फ्रीक्वेंसी मॉडल करती है कि आप कितनी बार क्लेम और री-स्टेक करते हैं।`, `अवधि प्रोजेक्शन हॉरिज़न सेट करती है। वैकल्पिक प्राइस फील्ड टोकन रिवॉर्ड को USD वैल्यू में कन्वर्ट करता है। वैलिडेटर कमीशन (आमतौर पर 5-10%) ग्रॉस रेट से काटा जाता है।`] },
-    ru: { how: [`Калькулятор наград за стейкинг прогнозирует ваши заработки от блокировки криптовалюты в сети proof-of-stake. Введите сумму стейка, годовую ставку вознаграждения (APY), частоту капитализации и срок для просмотра прогнозируемых наград в токенах и их USD-эквиваленте.`, `Сравнивайте возможности стейкинга в разных сетях — Ethereum приносит 3-4% APY, Solana 6-8%, цепочки экосистемы Cosmos 15-20%. Калькулятор также показывает влияние комиссии валидатора.`], inputs: [`Сумма стейка — количество токенов для блокировки. Годовая ставка (APY) должна отражать текущую ставку сети за вычетом комиссии валидатора. Частота капитализации моделирует, как часто вы забираете и перестейкиваете награды.`, `Срок задаёт горизонт прогноза. Опциональное поле цены конвертирует токенные награды в USD. Комиссия валидатора (обычно 5-10%) вычитается из валовой ставки для расчёта чистого APY.`] },
+    es: { quickAnswer: 'Recompensa neta de staking = (Cantidad × APY × Duración/365) − Comisión del Validador. Stakear 32 ETH al 3,2% APY con 10% de comisión de validador genera ~0,94 ETH/año neto.', how: [`La Calculadora de Recompensas de Staking proyecta tus ganancias al bloquear criptomonedas en una red proof-of-stake. Introduce la cantidad a stakear, la tasa anual (APY), la frecuencia de capitalización y la duración para ver las recompensas proyectadas en tokens y su equivalente en USD.`, `Úsala para comparar oportunidades de staking entre redes — Ethereum rinde 3-4% APY, Solana 6-8%, cadenas del ecosistema Cosmos 15-20%. El calculador también muestra el impacto de las comisiones de validador.`], inputs: [`La cantidad a stakear es el número de tokens que planeas bloquear. La tasa anual (APY) debe reflejar la tasa actual de la red menos la comisión del validador. La frecuencia de capitalización modela con qué frecuencia reclamas y re-stakeas.`, `La duración establece el horizonte de proyección. El campo de precio opcional convierte recompensas en tokens a valor USD. La comisión del validador (típicamente 5-10%) se deduce de la tasa bruta para calcular tu APY neto.`] },
+    pt: { quickAnswer: 'Recompensa líquida de staking = (Quantidade × APY × Duração/365) − Taxa do Validador. Stakear 32 ETH a 3,2% APY com 10% de taxa de validador gera ~0,94 ETH/ano líquido.', how: [`A Calculadora de Recompensas de Staking projeta seus ganhos ao bloquear criptomoeda em uma rede proof-of-stake. Insira a quantidade a stakear, a taxa anual (APY), a frequência de capitalização e a duração para ver recompensas projetadas em tokens e equivalente em USD.`, `Use-a para comparar oportunidades de staking entre redes — Ethereum rende 3-4% APY, Solana 6-8%, cadeias do ecossistema Cosmos 15-20%. A calculadora também mostra o impacto das comissões de validador.`], inputs: [`A quantidade stakeada é o número de tokens que planeja bloquear. A taxa anual (APY) deve refletir a taxa atual da rede menos a comissão do validador. A frequência de capitalização modela com que frequência você reivindica e restakeia.`, `A duração define o horizonte de projeção. O campo de preço opcional converte recompensas em tokens para valor USD. A comissão do validador (tipicamente 5-10%) é deduzida da taxa bruta para calcular seu APY líquido.`] },
+    tr: { quickAnswer: 'Net staking ödülü = (Stake Miktarı × APY × Süre/365) − Doğrulayıcı Ücreti. 32 ETH\'yi %3,2 APY ile %10 doğrulayıcı ücreti ile stake etmek yılda net ~0,94 ETH kazandırır.', how: [`Staking Ödül Hesaplayıcı, proof-of-stake ağında kripto para kilitlemenizden elde edeceğiniz kazançları projekte eder. Stake miktarını, yıllık ödül oranını (APY), bileşik frekansı ve süreyi girerek token ve USD cinsinden tahmini ödülleri görün.`, `Farklı ağlardaki staking fırsatlarını karşılaştırın — Ethereum %3-4 APY, Solana %6-8, Cosmos ekosistemi zincirleri %15-20. Hesaplayıcı ayrıca doğrulayıcı komisyon ücretlerinin etkisini gösterir.`], inputs: [`Stake miktarı, kilitlemeyi planladığınız token sayısıdır. Yıllık ödül oranı (APY) ağın mevcut oranından doğrulayıcı komisyonu düşülmüş halini yansıtmalıdır. Bileşik frekansı, ödülleri ne sıklıkla talep edip yeniden stake ettiğinizi modeller.`, `Süre, projeksiyon ufkunu gün, ay veya yıl olarak belirler. Opsiyonel fiyat alanı token ödüllerini USD değerine dönüştürür. Doğrulayıcı komisyonu (%5-10) brüt oranından düşülerek net APY hesaplanır.`] },
+    hi: { quickAnswer: 'नेट स्टेकिंग रिवॉर्ड = (स्टेक राशि × APY × अवधि/365) − वैलिडेटर फीस। 32 ETH को 3.2% APY पर 10% वैलिडेटर फीस के साथ स्टेक करने पर प्रति वर्ष ~0.94 ETH नेट मिलता है।', how: [`स्टेकिंग रिवॉर्ड्स कैलकुलेटर प्रूफ-ऑफ-स्टेक नेटवर्क में क्रिप्टोकरेंसी लॉक करने से आपकी कमाई का अनुमान लगाता है। स्टेक राशि, वार्षिक रिवॉर्ड रेट (APY), कंपाउंडिंग फ्रीक्वेंसी और अवधि दर्ज करके टोकन और USD में अनुमानित रिवॉर्ड देखें।`, `विभिन्न नेटवर्क में स्टेकिंग अवसरों की तुलना करें — Ethereum लगभग 3-4% APY, Solana 6-8%, Cosmos इकोसिस्टम चेन 15-20% देती हैं। कैलकुलेटर वैलिडेटर कमीशन फीस का प्रभाव भी दिखाता है।`], inputs: [`स्टेक राशि वह टोकन संख्या है जिसे आप लॉक करने की योजना बनाते हैं। वार्षिक रिवॉर्ड रेट (APY) नेटवर्क की वर्तमान दर से वैलिडेटर कमीशन घटाकर दर्शानी चाहिए। कंपाउंडिंग फ्रीक्वेंसी मॉडल करती है कि आप कितनी बार क्लेम और री-स्टेक करते हैं।`, `अवधि प्रोजेक्शन हॉरिज़न सेट करती है। वैकल्पिक प्राइस फील्ड टोकन रिवॉर्ड को USD वैल्यू में कन्वर्ट करता है। वैलिडेटर कमीशन (आमतौर पर 5-10%) ग्रॉस रेट से काटा जाता है।`] },
+    ru: { quickAnswer: 'Чистая награда за стейкинг = (Сумма стейка × APY × Срок/365) − Комиссия валидатора. Стейкинг 32 ETH при 3,2% APY с 10% комиссией валидатора приносит ~0,94 ETH/год чистыми.', how: [`Калькулятор наград за стейкинг прогнозирует ваши заработки от блокировки криптовалюты в сети proof-of-stake. Введите сумму стейка, годовую ставку вознаграждения (APY), частоту капитализации и срок для просмотра прогнозируемых наград в токенах и их USD-эквиваленте.`, `Сравнивайте возможности стейкинга в разных сетях — Ethereum приносит 3-4% APY, Solana 6-8%, цепочки экосистемы Cosmos 15-20%. Калькулятор также показывает влияние комиссии валидатора.`], inputs: [`Сумма стейка — количество токенов для блокировки. Годовая ставка (APY) должна отражать текущую ставку сети за вычетом комиссии валидатора. Частота капитализации моделирует, как часто вы забираете и перестейкиваете награды.`, `Срок задаёт горизонт прогноза. Опциональное поле цены конвертирует токенные награды в USD. Комиссия валидатора (обычно 5-10%) вычитается из валовой ставки для расчёта чистого APY.`] },
   },
   'break-even-calculator': {
     en: {
@@ -666,6 +706,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Precio de equilibrio = Precio de Compra × (1 + % Comisión Total). Al comprar BTC a $73.000 con 0,2% de comisiones totales, necesitas que el precio llegue a $73.146 solo para empatar.',
       how: [
       `La Calculadora de Punto de Equilibrio encuentra el precio exacto al que una operación se vuelve rentable después de todos los costos. Introduce tu precio de entrada y tu porcentaje total de comisión, y la calculadora devuelve el precio mínimo de salida necesario para alcanzar el punto de equilibrio.`,
       `Úsala para establecer objetivos de beneficio mínimos realistas. Muchos traders olvidan que las comisiones del exchange del 0.1% en cada sentido significan que necesitas un movimiento de precio del 0.2% solo para cubrir costos.`
@@ -676,6 +717,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Preço de equilíbrio = Preço de Compra × (1 + % Taxa Total). Ao comprar BTC a $73.000 com 0,2% de taxas totais, o preço precisa chegar a $73.146 apenas para empatar.',
       how: [
       `A Calculadora de Ponto de Equilíbrio encontra o preço exato em que uma negociação se torna lucrativa após todos os custos. Insira seu preço de entrada e sua porcentagem total de taxa, e a calculadora retorna o preço mínimo de saída necessário para atingir o ponto de equilíbrio.`,
       `Use-a para definir alvos mínimos de lucro realistas. Muitos traders esquecem que taxas de exchange de 0,1% em cada direção significam que você precisa de um movimento de preço de 0,2% apenas para cobrir custos.`
@@ -686,6 +728,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Başa baş fiyatı = Alış Fiyatı × (1 + Toplam Ücret %). BTC\'yi $73.000\'den %0,2 toplam ücretle aldıktan sonra, sadece başa baş olmak için fiyatın $73.146\'ya ulaşması gerekir.',
       how: [
       `Başa Baş Hesaplayıcısı, tüm maliyetlerden sonra bir işlemin kârlı hale geldiği tam fiyatı bulur. Giriş fiyatınızı ve toplam ücret yüzdenizi girin.`,
       `Gerçekçi minimum kâr hedefleri belirlemek için kullanın. Birçok trader, her yönde %0.1 exchange ücreti sadece maliyetleri karşılamak için %0.2'lik bir fiyat hareketine ihtiyaç duyduğunuzu unutur.`
@@ -696,6 +739,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'ब्रेक-ईवन प्राइस = खरीद मूल्य × (1 + कुल फीस %)। BTC को $73,000 पर 0.2% कुल फीस के साथ खरीदने के बाद, सिर्फ ब्रेक-ईवन के लिए प्राइस को $73,146 तक पहुंचना होगा।',
       how: [
       `ब्रेक-ईवन कैलकुलेटर वह सटीक मूल्य खोजता है जिस पर सभी लागतों के बाद एक ट्रेड लाभदायक बन जाती है। अपना एंट्री प्राइस और कुल फीस प्रतिशत दर्ज करें।`,
       `यथार्थवादी न्यूनतम प्रॉफिट टार्गेट सेट करने के लिए इसका उपयोग करें। कई ट्रेडर भूल जाते हैं कि प्रत्येक दिशा में 0.1% एक्सचेंज फीस का मतलब है केवल लागत को कवर करने के लिए 0.2% मूल्य चाल की जरूरत है।`
@@ -706,6 +750,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Цена безубыточности = Цена покупки × (1 + % общей комиссии). Купив BTC по $73 000 при комиссии 0,2%, для выхода в ноль цена должна достичь $73 146.',
       how: [
       `Калькулятор безубыточности находит точную цену, при которой сделка становится прибыльной после всех затрат. Введите цену входа и общий процент комиссии (вход + выход).`,
       `Используйте для установки реалистичных минимальных целей прибыли. Многие трейдеры забывают, что комиссии биржи 0,1% в каждую сторону означают необходимость движения цены на 0,2% только для покрытия издержек.`
@@ -729,6 +774,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'La pérdida impermanente ocurre al proveer liquidez en AMMs. Si un token se duplica mientras el otro permanece estable, pierdes ~5,7% comparado con solo holdear. La pérdida crece con la divergencia de precios.',
       how: [
       `La Calculadora de Pérdida Impermanente cuantifica la diferencia de valor entre mantener tokens en un pool de liquidez versus simplemente mantenerlos en una cartera. Introduce tu ratio de depósito inicial y el cambio de precio del activo volátil.`,
       `Úsala antes de proporcionar liquidez para entender tu peor escenario. Si ETH triplica su precio, podrías esperar ganancias sustanciales, pero la pérdida impermanente reduce tus ganancias versus simplemente mantener ETH.`
@@ -739,6 +785,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'A perda impermanente ocorre ao fornecer liquidez em AMMs. Se um token dobra enquanto o outro fica estável, você perde ~5,7% comparado a simplesmente manter. A perda cresce com a divergência de preços.',
       how: [
       `A Calculadora de Perda Impermanente quantifica a diferença de valor entre manter tokens em um pool de liquidez versus simplesmente mantê-los em uma carteira. Insira sua proporção de depósito inicial e a mudança de preço do ativo volátil.`,
       `Use-a antes de fornecer liquidez para entender seu pior cenário. Se o ETH triplicar de preço, você pode esperar ganhos substanciais, mas a perda impermanente reduz seus ganhos versus simplesmente manter ETH.`
@@ -749,6 +796,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Geçici kayıp, AMM\'lere likidite sağlarken oluşur. Bir token ikiye katlanırken diğeri sabit kalırsa, sadece tutmaya kıyasla ~%5,7 kaybedersiniz. Kayıp, fiyat farklılaşmasıyla büyür.',
       how: [
       `Kalıcı Olmayan Kayıp Hesaplayıcısı, tokenları bir likidite havuzunda tutmak ile onları bir cüzdanda tutmak arasındaki değer farkını hesaplar.`,
       `Likidite sağlamadan önce en kötü senaryonuzu anlamak için kullanın.`
@@ -759,6 +807,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'इम्परमानेंट लॉस AMM में लिक्विडिटी प्रदान करते समय होता है। यदि एक टोकन दोगुना हो जाए जबकि दूसरा स्थिर रहे, तो आप सिर्फ होल्ड करने की तुलना में ~5.7% खो देते हैं। नुकसान मूल्य विचलन के साथ बढ़ता है।',
       how: [
       `इम्परमानेंट लॉस कैलकुलेटर लिक्विडिटी पूल में टोकन रखने और केवल वॉलेट में रखने के बीच मूल्य अंतर की मात्रा निर्धारित करता है।`,
       `लिक्विडिटी प्रदान करने से पहले अपने सबसे खराब परिदृश्य को समझने के लिए इसका उपयोग करें।`
@@ -769,6 +818,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Непостоянные потери возникают при предоставлении ликвидности в AMM. Если один токен удваивается, а другой остаётся на месте, вы теряете ~5,7% по сравнению с простым удержанием. Потери растут с расхождением цен.',
       how: [
       `Калькулятор непостоянных потерь рассчитывает разницу в стоимости между удержанием токенов в пуле ликвидности и простым хранением их в кошельке. Введите начальное соотношение депозита и изменение цены волатильного актива.`,
       `Используйте перед добавлением ликвидности для понимания наихудшего сценария. Рост цены ETH в 2 раза при пуле 50/50 вызывает примерно 5,7% непостоянных потерь.`
@@ -918,6 +968,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'ROI = ((Valor Actual − Inversión Inicial) / Inversión Inicial) × 100%. ¿Compraste $5.000 en ETH y ahora vale $8.500? Eso es un ROI del 70%.',
       how: [
       `La Calculadora ROI mide el retorno de cualquier inversión en criptomonedas como ganancia o pérdida porcentual relativa al importe inicial invertido.`,
       `Úsala para evaluar rápidamente el rendimiento de diferentes activos en tu cartera. Activa o desactiva entre ROI total y ROI anualizado para comparar inversiones de diferentes duraciones en igualdad de condiciones.`
@@ -928,6 +979,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'ROI = ((Valor Atual − Investimento Inicial) / Investimento Inicial) × 100%. Comprou $5.000 em ETH e agora vale $8.500? Isso é um ROI de 70%.',
       how: [
       `A Calculadora ROI mede o retorno de qualquer investimento em criptomoedas como ganho ou perda percentual em relação ao valor inicialmente investido.`,
       `Use-a para comparar rapidamente o desempenho de diferentes ativos em seu portfólio. Alterne entre ROI total e ROI anualizado para comparar investimentos de durações diferentes.`
@@ -938,6 +990,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'ROI = ((Mevcut Değer − Başlangıç Yatırımı) / Başlangıç Yatırımı) × %100. $5.000\'lık ETH aldınız ve şimdi $8.500 değerinde mi? Bu %70 ROI demektir.',
       how: [
       `ROI Hesaplayıcısı, herhangi bir kripto para yatırımının getirisini yatırılan başlangıç tutarına göre yüzde kazanç veya kayıp olarak ölçer.`,
       `Portföyünüzdeki farklı varlıkların performansını hızla karşılaştırmak için kullanın.`
@@ -948,6 +1001,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'ROI = ((वर्तमान मूल्य − प्रारंभिक निवेश) / प्रारंभिक निवेश) × 100%। $5,000 का ETH खरीदा जो अब $8,500 का है? यह 70% ROI है।',
       how: [
       `ROI कैलकुलेटर किसी भी क्रिप्टोकरेंसी निवेश के रिटर्न को प्रारंभिक निवेश राशि के सापेक्ष प्रतिशत लाभ या हानि के रूप में मापता है।`,
       `अपने पोर्टफोलियो में विभिन्न एसेट के प्रदर्शन की तुलना करने के लिए इसका उपयोग करें।`
@@ -958,6 +1012,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'ROI = ((Текущая стоимость − Начальная инвестиция) / Начальная инвестиция) × 100%. Купили ETH на $5 000, а сейчас он стоит $8 500? Это 70% ROI.',
       how: [
       `Калькулятор ROI измеряет доходность любой инвестиции в криптовалюту как процентный доход или убыток относительно начальной вложенной суммы.`,
       `Используйте для быстрого сравнения доходности разных активов в портфеле. Переключайтесь между общим ROI и аннуализированным ROI для сравнения инвестиций с разными сроками на равных условиях.`
@@ -1043,11 +1098,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `Investment duration sets the time horizon in months or years. Optional monthly contribution models a DCA approach where you add funds regularly on top of compounding returns. For volatile crypto assets, note that the calculator assumes a constant rate — real DeFi yields fluctuate, so use a conservative average rather than peak rates for realistic projections.`
       ],
     },
-    es: { how: [`La Calculadora de Interés Compuesto proyecta cómo crece una inversión cripto cuando los intereses ganados se reinvierten en el capital. Introduce el depósito inicial, la tasa anual (APY), la frecuencia de capitalización y la duración para ver la trayectoria de crecimiento detallada.`, `Úsala para comparar oportunidades de rendimiento DeFi probando diferentes frecuencias de capitalización. La capitalización diaria al 8% APY produce significativamente más que la anual a la misma tasa en horizontes plurianuales.`], inputs: [`El depósito inicial es el monto que planeas invertir. La tasa anual (APY) debe reflejar el rendimiento ofrecido por tu plataforma. La frecuencia determina con qué periodicidad los intereses se suman al capital.`, `La duración establece el horizonte temporal. La aportación mensual opcional modela un enfoque DCA. Para activos cripto volátiles, usa promedios conservadores ya que los rendimientos DeFi reales fluctúan.`] },
-    pt: { how: [`A Calculadora de Juros Compostos projeta como um investimento cripto cresce quando os juros ganhos são reinvestidos no principal. Insira o depósito inicial, a taxa anual (APY), a frequência de capitalização e a duração para ver a trajetória de crescimento detalhada.`, `Use-a para comparar oportunidades de rendimento DeFi testando diferentes frequências. A capitalização diária a 8% APY produz significativamente mais que a anual à mesma taxa em horizontes plurianuais.`], inputs: [`O depósito inicial é o valor que planeja investir. A taxa anual (APY) deve refletir o rendimento oferecido pela plataforma. A frequência determina com que periodicidade os juros são adicionados ao principal.`, `A duração define o horizonte temporal. A contribuição mensal opcional modela uma abordagem DCA. Para ativos cripto voláteis, use médias conservadoras pois rendimentos DeFi reais flutuam.`] },
-    tr: { how: [`Bileşik Faiz Hesaplayıcı, kazanılan faizin ana paraya geri yatırıldığında bir kripto yatırımın nasıl büyüdüğünü projekte eder. Başlangıç tutarını, yıllık oranı (APY), bileşik frekansı ve süreyi girerek detaylı büyüme eğrisi görün.`, `Farklı bileşik frekanslarını test ederek DeFi getiri fırsatlarını karşılaştırın. %8 APY'de günlük bileşik, çok yıllık dönemlerde aynı oranda yıllıktan çok daha fazla üretir.`], inputs: [`Başlangıç tutarı yatırmayı planladığınız miktardır. Yıllık oran (APY) platformun sunduğu getiriyi yansıtmalıdır. Frekans, faizin ana paraya ne sıklıkla eklendiğini belirler.`, `Süre zaman ufkunu belirler. Opsiyonel aylık katkı DCA yaklaşımını modeller. Kripto varlıklar için gerçekçi projeksiyonlar adına pik oranlar yerine muhafazakâr ortalamalar kullanın.`] },
-    hi: { how: [`कंपाउंड इंटरेस्ट कैलकुलेटर प्रोजेक्ट करता है कि कमाया गया ब्याज वापस प्रिंसिपल में निवेश करने पर क्रिप्टो निवेश कैसे बढ़ता है। प्रारंभिक जमा, वार्षिक दर (APY), कंपाउंडिंग फ्रीक्वेंसी और अवधि दर्ज करें।`, `विभिन्न कंपाउंडिंग फ्रीक्वेंसी का परीक्षण करके DeFi यील्ड अवसरों की तुलना करें। 8% APY पर दैनिक कंपाउंडिंग, बहु-वर्षीय अवधि में समान दर पर वार्षिक से काफी अधिक देती है।`], inputs: [`प्रारंभिक जमा वह राशि है जो आप निवेश करने की योजना बनाते हैं। वार्षिक दर (APY) आपके प्लेटफॉर्म द्वारा प्रदत्त यील्ड को दर्शानी चाहिए। फ्रीक्वेंसी निर्धारित करती है कि ब्याज कितनी बार प्रिंसिपल में जोड़ा जाता है।`, `अवधि टाइम हॉरिज़न सेट करती है। वैकल्पिक मासिक योगदान DCA दृष्टिकोण मॉडल करता है। अस्थिर क्रिप्टो एसेट्स के लिए, यथार्थवादी अनुमान हेतु पीक रेट की बजाय रूढ़िवादी औसत उपयोग करें।`] },
-    ru: { how: [`Калькулятор сложных процентов прогнозирует, как растёт криптоинвестиция, когда заработанные проценты реинвестируются в основную сумму. Введите начальный депозит, годовую ставку (APY), частоту капитализации и срок для детальной траектории роста.`, `Сравнивайте возможности DeFi-доходности, тестируя разные частоты капитализации. Ежедневная капитализация при 8% APY приносит значительно больше, чем годовая при той же ставке на многолетних горизонтах.`], inputs: [`Начальный депозит — сумма, которую вы планируете инвестировать. Годовая ставка (APY) должна отражать доходность платформы. Частота определяет, как часто проценты добавляются к основной сумме.`, `Срок задаёт временной горизонт. Опциональный ежемесячный взнос моделирует подход DCA. Для волатильных криптоактивов используйте консервативные средние значения, а не пиковые ставки для реалистичных прогнозов.`] },
+    es: { quickAnswer: 'El interés compuesto hace crecer tu cripto exponencialmente: $1.000 al 12% APY con capitalización diaria se convierte en $1.127 después de un año — $7 más que con interés simple. Cuanto mayor el período, mayor el efecto.', how: [`La Calculadora de Interés Compuesto proyecta cómo crece una inversión cripto cuando los intereses ganados se reinvierten en el capital. Introduce el depósito inicial, la tasa anual (APY), la frecuencia de capitalización y la duración para ver la trayectoria de crecimiento detallada.`, `Úsala para comparar oportunidades de rendimiento DeFi probando diferentes frecuencias de capitalización. La capitalización diaria al 8% APY produce significativamente más que la anual a la misma tasa en horizontes plurianuales.`], inputs: [`El depósito inicial es el monto que planeas invertir. La tasa anual (APY) debe reflejar el rendimiento ofrecido por tu plataforma. La frecuencia determina con qué periodicidad los intereses se suman al capital.`, `La duración establece el horizonte temporal. La aportación mensual opcional modela un enfoque DCA. Para activos cripto volátiles, usa promedios conservadores ya que los rendimientos DeFi reales fluctúan.`] },
+    pt: { quickAnswer: 'Juros compostos fazem seu cripto crescer exponencialmente: $1.000 a 12% APY com capitalização diária vira $1.127 após um ano — $7 a mais que juros simples. Quanto maior o período, maior o efeito.', how: [`A Calculadora de Juros Compostos projeta como um investimento cripto cresce quando os juros ganhos são reinvestidos no principal. Insira o depósito inicial, a taxa anual (APY), a frequência de capitalização e a duração para ver a trajetória de crescimento detalhada.`, `Use-a para comparar oportunidades de rendimento DeFi testando diferentes frequências. A capitalização diária a 8% APY produz significativamente mais que a anual à mesma taxa em horizontes plurianuais.`], inputs: [`O depósito inicial é o valor que planeja investir. A taxa anual (APY) deve refletir o rendimento oferecido pela plataforma. A frequência determina com que periodicidade os juros são adicionados ao principal.`, `A duração define o horizonte temporal. A contribuição mensal opcional modela uma abordagem DCA. Para ativos cripto voláteis, use médias conservadoras pois rendimentos DeFi reais flutuam.`] },
+    tr: { quickAnswer: 'Bileşik faiz kriptonuzu üstel olarak büyütür: %12 APY\'de günlük bileşik ile $1.000, bir yıl sonra $1.127 olur — basit faize göre $7 fazla. Süre uzadıkça etki büyür.', how: [`Bileşik Faiz Hesaplayıcı, kazanılan faizin ana paraya geri yatırıldığında bir kripto yatırımın nasıl büyüdüğünü projekte eder. Başlangıç tutarını, yıllık oranı (APY), bileşik frekansı ve süreyi girerek detaylı büyüme eğrisi görün.`, `Farklı bileşik frekanslarını test ederek DeFi getiri fırsatlarını karşılaştırın. %8 APY'de günlük bileşik, çok yıllık dönemlerde aynı oranda yıllıktan çok daha fazla üretir.`], inputs: [`Başlangıç tutarı yatırmayı planladığınız miktardır. Yıllık oran (APY) platformun sunduğu getiriyi yansıtmalıdır. Frekans, faizin ana paraya ne sıklıkla eklendiğini belirler.`, `Süre zaman ufkunu belirler. Opsiyonel aylık katkı DCA yaklaşımını modeller. Kripto varlıklar için gerçekçi projeksiyonlar adına pik oranlar yerine muhafazakâr ortalamalar kullanın.`] },
+    hi: { quickAnswer: 'कंपाउंड इंटरेस्ट आपकी क्रिप्टो को तेजी से बढ़ाता है: $1,000 को 12% APY पर दैनिक कंपाउंडिंग के साथ एक वर्ष बाद $1,127 मिलता है — सिंपल इंटरेस्ट से $7 अधिक। जितना लंबा समय, उतना बड़ा प्रभाव।', how: [`कंपाउंड इंटरेस्ट कैलकुलेटर प्रोजेक्ट करता है कि कमाया गया ब्याज वापस प्रिंसिपल में निवेश करने पर क्रिप्टो निवेश कैसे बढ़ता है। प्रारंभिक जमा, वार्षिक दर (APY), कंपाउंडिंग फ्रीक्वेंसी और अवधि दर्ज करें।`, `विभिन्न कंपाउंडिंग फ्रीक्वेंसी का परीक्षण करके DeFi यील्ड अवसरों की तुलना करें। 8% APY पर दैनिक कंपाउंडिंग, बहु-वर्षीय अवधि में समान दर पर वार्षिक से काफी अधिक देती है।`], inputs: [`प्रारंभिक जमा वह राशि है जो आप निवेश करने की योजना बनाते हैं। वार्षिक दर (APY) आपके प्लेटफॉर्म द्वारा प्रदत्त यील्ड को दर्शानी चाहिए। फ्रीक्वेंसी निर्धारित करती है कि ब्याज कितनी बार प्रिंसिपल में जोड़ा जाता है।`, `अवधि टाइम हॉरिज़न सेट करती है। वैकल्पिक मासिक योगदान DCA दृष्टिकोण मॉडल करता है। अस्थिर क्रिप्टो एसेट्स के लिए, यथार्थवादी अनुमान हेतु पीक रेट की बजाय रूढ़िवादी औसत उपयोग करें।`] },
+    ru: { quickAnswer: 'Сложные проценты наращивают крипто экспоненциально: $1 000 под 12% APY с ежедневной капитализацией превращаются в $1 127 через год — на $7 больше, чем при простом проценте. Чем дольше срок, тем сильнее эффект.', how: [`Калькулятор сложных процентов прогнозирует, как растёт криптоинвестиция, когда заработанные проценты реинвестируются в основную сумму. Введите начальный депозит, годовую ставку (APY), частоту капитализации и срок для детальной траектории роста.`, `Сравнивайте возможности DeFi-доходности, тестируя разные частоты капитализации. Ежедневная капитализация при 8% APY приносит значительно больше, чем годовая при той же ставке на многолетних горизонтах.`], inputs: [`Начальный депозит — сумма, которую вы планируете инвестировать. Годовая ставка (APY) должна отражать доходность платформы. Частота определяет, как часто проценты добавляются к основной сумме.`, `Срок задаёт временной горизонт. Опциональный ежемесячный взнос моделирует подход DCA. Для волатильных криптоактивов используйте консервативные средние значения, а не пиковые ставки для реалистичных прогнозов.`] },
   },
   'satoshi-converter': {
     en: {
@@ -1251,6 +1306,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'El halving de Bitcoin reduce la recompensa por bloque cada 210.000 bloques (~4 años). Tras el halving de abril 2024, la recompensa cayó de 6,25 a 3,125 BTC. El próximo halving se espera alrededor de marzo 2028.',
       how: [
       `La Calculadora de Halving de Bitcoin cuenta regresivamente el tiempo y bloques exactos restantes hasta el próximo evento de halving de Bitcoin, cuando la recompensa de bloque pagada a los mineros se reduce a la mitad.`,
       `Úsala para rastrear el ciclo de halvings para cronometrar decisiones de inversión. La tasa de inflación de Bitcoin se reduce a la mitad en cada halving.`
@@ -1261,6 +1317,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'O halving do Bitcoin corta a recompensa por bloco a cada 210.000 blocos (~4 anos). Após o halving de abril de 2024, a recompensa caiu de 6,25 para 3,125 BTC. O próximo halving é esperado por volta de março de 2028.',
       how: [
       `A Calculadora de Halving do Bitcoin conta regressivamente o tempo e blocos exatos restantes até o próximo evento de halving do Bitcoin, quando a recompensa de bloco paga aos mineradores é reduzida pela metade.`,
       `Use-a para acompanhar o ciclo de halvings para cronometrar decisões de investimento.`
@@ -1271,6 +1328,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Bitcoin halving, her 210.000 blokta (~4 yıl) blok ödülünü yarıya indirir. Nisan 2024 halvinginden sonra ödül 6,25\'ten 3,125 BTC\'ye düştü. Bir sonraki halving Mart 2028 civarında bekleniyor.',
       how: [
       `Bitcoin Halving Hesaplayıcısı, madencilere ödenen blok ödülünün yarıya indirildiği bir sonraki Bitcoin halving etkinliğine kadar kalan tam süreyi ve blokları geri sayar.`,
       `Yatırım kararlarını zamanlamak için halving döngüsünü takip etmek üzere kullanın.`
@@ -1281,6 +1339,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'Bitcoin हाल्विंग हर 210,000 ब्लॉक (~4 साल) पर ब्लॉक रिवॉर्ड को आधा करता है। अप्रैल 2024 हाल्विंग के बाद रिवॉर्ड 6.25 से 3.125 BTC हो गई। अगला हाल्विंग मार्च 2028 के आसपास अपेक्षित है।',
       how: [
       `Bitcoin हाल्विंग कैलकुलेटर अगले Bitcoin हाल्विंग इवेंट तक बचे सटीक समय और ब्लॉक की काउंटडाउन करता है, जब माइनर्स को भुगतान की गई ब्लॉक रिवॉर्ड आधी हो जाती है।`,
       `निवेश निर्णयों के समय के लिए हाल्विंग साइकिल ट्रैक करने के लिए इसका उपयोग करें।`
@@ -1291,6 +1350,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Халвинг Bitcoin уменьшает награду за блок вдвое каждые 210 000 блоков (~4 года). После халвинга апреля 2024 награда снизилась с 6,25 до 3,125 BTC. Следующий халвинг ожидается около марта 2028.',
       how: [
       `Калькулятор халвинга Bitcoin ведёт обратный отсчёт точного времени и блоков до следующего события халвинга, когда награда майнерам за блок уменьшается вдвое.`,
       `Используйте для отслеживания цикла халвингов при принятии инвестиционных решений. Уровень инфляции Bitcoin снижается вдвое на каждом халвинге.`
@@ -1566,6 +1626,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Ratio riesgo-recompensa = (Precio Objetivo − Entrada) / (Entrada − Stop Loss). Un trade de BTC con entrada a $70.000, stop en $68.000 y objetivo en $76.000 tiene un R:R de 3:1 — la mayoría de profesionales apuntan a mínimo 2:1.',
       how: [
       `La Calculadora de Riesgo/Recompensa mide la relación entre tu ganancia potencial y pérdida potencial para cualquier configuración de operación.`,
       `Úsala para filtrar configuraciones de baja calidad antes de que consuman capital. La mayoría de los traders profesionales requieren al menos una relación riesgo/recompensa de 1:2.`
@@ -1576,6 +1637,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Relação risco-recompensa = (Preço Alvo − Entrada) / (Entrada − Stop Loss). Um trade de BTC com entrada a $70.000, stop em $68.000 e alvo em $76.000 tem R:R de 3:1 — a maioria dos profissionais visa no mínimo 2:1.',
       how: [
       `A Calculadora de Risco/Recompensa mede a relação entre seu lucro potencial e perda potencial para qualquer configuração de negociação.`,
       `Use-a para filtrar configurações de baixa qualidade antes que consumam capital.`
@@ -1586,6 +1648,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Risk-ödül oranı = (Hedef Fiyat − Giriş) / (Giriş − Stop Loss). BTC\'ye $70.000\'den giriş, $68.000 stop ve $76.000 hedefle açılan işlemin R:R oranı 3:1\'dir — profesyonellerin çoğu minimum 2:1 hedefler.',
       how: [
       `Risk/Ödül Hesaplayıcısı, herhangi bir işlem kurulumu için potansiyel kârınız ile potansiyel kaybınız arasındaki oranı ölçer.`,
       `Sermaye tüketmeden önce düşük kaliteli kurulumları filtrelemek için kullanın.`
@@ -1596,6 +1659,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'रिस्क-रिवॉर्ड अनुपात = (टार्गेट प्राइस − एंट्री) / (एंट्री − स्टॉप लॉस)। BTC में $70,000 एंट्री, $68,000 स्टॉप और $76,000 टार्गेट वाले ट्रेड का R:R 3:1 है — ज्यादातर प्रो ट्रेडर्स न्यूनतम 2:1 का लक्ष्य रखते हैं।',
       how: [
       `रिस्क/रिवॉर्ड कैलकुलेटर किसी भी ट्रेड सेटअप के लिए आपके संभावित प्रॉफिट और संभावित लॉस के बीच अनुपात को मापता है।`,
       `पूंजी खर्च करने से पहले कम-गुणवत्ता वाले सेटअप को फ़िल्टर करने के लिए इसका उपयोग करें।`
@@ -1606,6 +1670,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Соотношение риск/прибыль = (Целевая цена − Вход) / (Вход − Стоп-лосс). Сделка по BTC с входом $70 000, стопом $68 000 и целью $76 000 имеет R:R 3:1 — большинство профессионалов ориентируются минимум на 2:1.',
       how: [
       `Калькулятор риска/прибыли измеряет соотношение потенциальной прибыли к потенциальному убытку для любой торговой идеи.`,
       `Используйте для отсева низкокачественных сетапов до того, как они израсходуют капитал. Большинство профессиональных трейдеров требуют минимального соотношения 1:2.`
@@ -1629,6 +1694,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Margen requerido = Tamaño de Posición / Apalancamiento. Abrir una posición de $50.000 en BTC con 10x requiere $5.000 de margen. Tu ratio de margen (equity/posición) determina qué tan cerca estás de la liquidación.',
       how: [
       `La Calculadora de Margen calcula el margen inicial requerido, el margen de mantenimiento y el apalancamiento disponible para cualquier posición cripto apalancada.`,
       `Úsala para planificar posiciones que usen una porción definida del margen de tu cuenta.`
@@ -1639,6 +1705,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Margem necessária = Tamanho da Posição / Alavancagem. Abrir uma posição de $50.000 em BTC com 10x requer $5.000 de margem. Sua proporção de margem (patrimônio/posição) determina quão perto você está da liquidação.',
       how: [
       `A Calculadora de Margem calcula a margem inicial necessária, a margem de manutenção e a alavancagem disponível para qualquer posição cripto alavancada.`,
       `Use-a para planejar posições que usem uma porção definida da margem da sua conta.`
@@ -1649,6 +1716,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Gerekli marj = Pozisyon Büyüklüğü / Kaldıraç. 10x kaldıraçla $50.000\'lık BTC pozisyonu açmak $5.000 marj gerektirir. Marj oranınız (öz sermaye/pozisyon) likidasyona ne kadar yakın olduğunuzu belirler.',
       how: [
       `Marj Hesaplayıcısı, herhangi bir kaldıraçlı kripto pozisyonu için gerekli başlangıç marjını, bakım marjını ve mevcut kaldıracı hesaplar.`,
       `Hesabınızın marjının belirli bir kısmını kullanan pozisyonları planlamak için kullanın.`
@@ -1659,6 +1727,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'आवश्यक मार्जिन = पोजीशन साइज / लीवरेज। 10x लीवरेज पर $50,000 BTC पोजीशन खोलने के लिए $5,000 मार्जिन चाहिए। आपका मार्जिन अनुपात (इक्विटी/पोजीशन) बताता है कि आप लिक्विडेशन से कितने करीब हैं।',
       how: [
       `मार्जिन कैलकुलेटर किसी भी लीवरेज्ड क्रिप्टो पोजीशन के लिए आवश्यक प्रारंभिक मार्जिन, मेंटेनेंस मार्जिन और उपलब्ध लीवरेज की गणना करता है।`,
       `अपने अकाउंट मार्जिन के एक परिभाषित हिस्से का उपयोग करने वाली पोजीशन की योजना बनाने के लिए इसका उपयोग करें।`
@@ -1669,6 +1738,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Требуемая маржа = Размер позиции / Плечо. Открытие позиции BTC на $50 000 с плечом 10x требует $5 000 маржи. Маржинальное соотношение (капитал/позиция) показывает, насколько вы близки к ликвидации.',
       how: [
       `Калькулятор маржи рассчитывает требуемую начальную маржу, поддерживающую маржу и доступное плечо для любой позиции с кредитным плечом.`,
       `Используйте для планирования позиций, которые задействуют определённую долю маржи счёта — без избыточного использования.`
@@ -1818,6 +1888,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
+      quickAnswer: 'Establece niveles de take-profit y stop-loss según tu tolerancia al riesgo. Para un long de BTC a $73.000 con R:R de 2:1, un stop-loss de $71.000 implica que tu take-profit debe estar en $77.000.',
       how: [
       `La Calculadora de Take Profit / Stop Loss te ayuda a establecer niveles de salida precisos para tus operaciones, mostrando los precios objetivo exactos basados en tus movimientos porcentuales deseados desde la entrada.`,
       `Úsala para precalcular niveles de salida antes de entrar en una posición, luego coloca las órdenes inmediatamente después de abrir la operación.`
@@ -1828,6 +1899,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
+      quickAnswer: 'Defina níveis de take-profit e stop-loss com base na sua tolerância ao risco. Para um long de BTC a $73.000 com R:R de 2:1, um stop-loss de $71.000 significa que seu take-profit deve estar em $77.000.',
       how: [
       `A Calculadora de Take Profit / Stop Loss ajuda você a definir níveis precisos de saída para suas negociações.`,
       `Use-a para pré-calcular níveis de saída antes de entrar em uma posição, depois coloque as ordens imediatamente após abrir a negociação.`
@@ -1838,6 +1910,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
+      quickAnswer: 'Risk toleransınıza göre take-profit ve stop-loss seviyelerini belirleyin. $73.000\'dan BTC long pozisyonda 2:1 R:R ile $71.000 stop-loss, take-profit\'in $77.000\'da olması gerektiği anlamına gelir.',
       how: [
       `Take Profit / Stop Loss Hesaplayıcısı, girişinizden istenen yüzde hareketlerine göre hem yukarı yönlü kar al hem de aşağı yönlü zarar durdur için tam fiyat hedeflerini göstererek işlemleriniz için kesin çıkış seviyeleri belirlemenize yardımcı olur.`,
       `Pozisyona girmeden önce çıkış seviyelerini önceden hesaplamak için kullanın, ardından işlemi açtıktan hemen sonra emirleri verin.`
@@ -1848,6 +1921,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
+      quickAnswer: 'अपनी रिस्क टॉलरेंस के आधार पर टेक-प्रॉफिट और स्टॉप-लॉस लेवल सेट करें। $73,000 पर BTC लॉन्ग में 2:1 R:R के साथ, $71,000 स्टॉप-लॉस का मतलब है आपका टेक-प्रॉफिट $77,000 पर होना चाहिए।',
       how: [
       `टेक प्रॉफिट / स्टॉप लॉस कैलकुलेटर आपको अपने ट्रेड के लिए सटीक एग्जिट लेवल सेट करने में मदद करता है।`,
       `पोजीशन में प्रवेश करने से पहले एग्जिट लेवल की पूर्व-गणना करने के लिए इसका उपयोग करें, फिर ट्रेड खोलने के तुरंत बाद ऑर्डर दें।`
@@ -1858,6 +1932,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
+      quickAnswer: 'Установите уровни тейк-профита и стоп-лосса на основе допустимого риска. Для лонга BTC по $73 000 с R:R 2:1 стоп-лосс $71 000 означает, что тейк-профит должен быть на $77 000.',
       how: [
       `Калькулятор тейк-профита и стоп-лосса помогает установить точные уровни выхода из сделки, показывая целевые цены для тейк-профита и стоп-лосса в процентах от цены входа.`,
       `Используйте для предварительного расчёта уровней выхода перед открытием позиции, а затем сразу выставляйте ордера после открытия сделки.`
@@ -2195,11 +2270,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `The liquidation price field shows where the exchange will forcibly close your position to prevent losses exceeding your collateral. Maintenance margin rate varies by exchange and position size — typically 0.4–1% on major platforms. The calculator also outputs break-even price including the trading fee on entry and exit, since fees consume margin that would otherwise cushion against liquidation.`
       ],
     },
-    es: { how: [`La Calculadora de Apalancamiento muestra el beneficio, la pérdida y el precio de liquidación amplificados para una operación cripto apalancada. Introduce tu colateral, multiplicador de apalancamiento (2x-125x), precio de entrada y precio objetivo para ver el resultado magnificado.`, `Úsala antes de abrir cualquier posición apalancada en exchanges como Binance, Bybit o dYdX. Un long 10x que se mueve un 5% en contra pierde el 50% de tu colateral, y un 10% activa la liquidación.`], inputs: [`El colateral es el margen que depositas — tu pérdida máxima posible. El multiplicador determina cuánto mayor es tu posición efectiva. El precio de entrada es donde abres la operación. La dirección (largo o corto) determina qué movimiento es rentable.`, `El precio de liquidación muestra dónde el exchange cerrará forzosamente tu posición. La tasa de margen de mantenimiento varía por exchange — típicamente 0,4-1% en plataformas principales. El calculador también muestra el punto de equilibrio incluyendo comisiones.`] },
-    pt: { how: [`A Calculadora de Alavancagem mostra o lucro, a perda e o preço de liquidação amplificados para uma operação cripto alavancada. Insira seu colateral, multiplicador de alavancagem (2x-125x), preço de entrada e preço alvo para ver o resultado magnificado.`, `Use-a antes de abrir qualquer posição alavancada em exchanges como Binance, Bybit ou dYdX. Um long 10x que se move 5% contra você perde 50% do colateral, e 10% aciona liquidação.`], inputs: [`O colateral é a margem que você deposita — sua perda máxima possível. O multiplicador determina quão maior é sua posição efetiva. O preço de entrada é onde você abre a operação. A direção (compra ou venda) determina qual movimento é lucrativo.`, `O preço de liquidação mostra onde a exchange fechará forçosamente sua posição. A taxa de margem de manutenção varia por exchange — tipicamente 0,4-1% em plataformas principais. A calculadora também mostra o ponto de equilíbrio incluindo taxas.`] },
-    tr: { how: [`Kaldıraç Hesaplayıcı, kaldıraçlı bir kripto işlemi için büyütülmüş kâr, zarar ve likidasyon fiyatını gösterir. Teminatınızı, kaldıraç çarpanını (2x-125x), giriş fiyatını ve hedef fiyatı girerek büyütülmüş sonucu görün.`, `Binance, Bybit veya dYdX gibi borsalarda kaldıraçlı pozisyon açmadan önce kullanın. %5 aleyhe hareket eden 10x long, teminatınızın %50'sini kaybeder; %10 hareket likidasyonu tetikler.`], inputs: [`Teminat, pozisyon açmak için yatırdığınız marjdır — mümkün olan maksimum kaybınız. Kaldıraç çarpanı, efektif pozisyonunuzun teminata göre ne kadar büyük olduğunu belirler.`, `Likidasyon fiyatı alanı, borsanın pozisyonunuzu zorla kapatacağı seviyeyi gösterir. Bakım marjı oranı borsaya göre değişir — genellikle %0,4-1. Hesaplayıcı giriş-çıkış ücretleri dahil başabaş fiyatını da gösterir.`] },
-    hi: { how: [`लीवरेज कैलकुलेटर लीवरेज्ड क्रिप्टो ट्रेड के लिए बढ़े हुए प्रॉफिट, लॉस और लिक्विडेशन प्राइस दिखाता है। अपना कोलैटरल, लीवरेज मल्टीप्लायर (2x-125x), एंट्री प्राइस और टार्गेट प्राइस दर्ज करें।`, `Binance, Bybit या dYdX जैसे एक्सचेंज पर कोई भी लीवरेज्ड पोजीशन खोलने से पहले उपयोग करें। 10x लॉन्ग जो 5% विपरीत चलता है, आपके कोलैटरल का 50% खो देता है।`], inputs: [`कोलैटरल वह मार्जिन है जो आप पोजीशन खोलने के लिए जमा करते हैं — आपका अधिकतम संभव नुकसान। लीवरेज मल्टीप्लायर निर्धारित करता है कि आपकी इफेक्टिव पोजीशन कितनी बड़ी है।`, `लिक्विडेशन प्राइस फील्ड दिखाता है कि एक्सचेंज कहां आपकी पोजीशन जबरन बंद करेगा। मेंटेनेंस मार्जिन रेट एक्सचेंज के अनुसार भिन्न होता है — आमतौर पर प्रमुख प्लेटफॉर्म पर 0.4-1%।`] },
-    ru: { how: [`Калькулятор кредитного плеча показывает увеличенную прибыль, убыток и цену ликвидации для маржинальной криптосделки. Введите залог, мультипликатор (2x–125x), цену входа и целевую цену для просмотра усиленного результата.`, `Используйте перед открытием любой позиции с плечом на Binance, Bybit или dYdX. Лонг 10x при движении на 5% против вас теряет 50% залога, а 10% запускает ликвидацию.`], inputs: [`Залог — маржа, которую вы вносите для открытия позиции — ваш максимально возможный убыток. Мультипликатор определяет, насколько больше ваша эффективная позиция по сравнению с залогом.`, `Поле цены ликвидации показывает, где биржа принудительно закроет позицию. Ставка поддерживающей маржи варьируется — обычно 0,4–1% на крупных площадках. Калькулятор также показывает точку безубыточности с учётом комиссий.`] },
+    es: { quickAnswer: 'P&amp;L apalancado = Cambio de Precio % × Apalancamiento × Tamaño de Posición. Un aumento del 5% con apalancamiento 10x genera un 50% de retorno sobre el colateral — pero una caída del 10% activa la liquidación.', how: [`La Calculadora de Apalancamiento muestra el beneficio, la pérdida y el precio de liquidación amplificados para una operación cripto apalancada. Introduce tu colateral, multiplicador de apalancamiento (2x-125x), precio de entrada y precio objetivo para ver el resultado magnificado.`, `Úsala antes de abrir cualquier posición apalancada en exchanges como Binance, Bybit o dYdX. Un long 10x que se mueve un 5% en contra pierde el 50% de tu colateral, y un 10% activa la liquidación.`], inputs: [`El colateral es el margen que depositas — tu pérdida máxima posible. El multiplicador determina cuánto mayor es tu posición efectiva. El precio de entrada es donde abres la operación. La dirección (largo o corto) determina qué movimiento es rentable.`, `El precio de liquidación muestra dónde el exchange cerrará forzosamente tu posición. La tasa de margen de mantenimiento varía por exchange — típicamente 0,4-1% en plataformas principales. El calculador también muestra el punto de equilibrio incluyendo comisiones.`] },
+    pt: { quickAnswer: 'P&amp;L alavancado = Variação de Preço % × Alavancagem × Tamanho da Posição. Uma alta de 5% com alavancagem 10x gera 50% de retorno sobre o colateral — mas uma queda de 10% aciona a liquidação.', how: [`A Calculadora de Alavancagem mostra o lucro, a perda e o preço de liquidação amplificados para uma operação cripto alavancada. Insira seu colateral, multiplicador de alavancagem (2x-125x), preço de entrada e preço alvo para ver o resultado magnificado.`, `Use-a antes de abrir qualquer posição alavancada em exchanges como Binance, Bybit ou dYdX. Um long 10x que se move 5% contra você perde 50% do colateral, e 10% aciona liquidação.`], inputs: [`O colateral é a margem que você deposita — sua perda máxima possível. O multiplicador determina quão maior é sua posição efetiva. O preço de entrada é onde você abre a operação. A direção (compra ou venda) determina qual movimento é lucrativo.`, `O preço de liquidação mostra onde a exchange fechará forçosamente sua posição. A taxa de margem de manutenção varia por exchange — tipicamente 0,4-1% em plataformas principais. A calculadora também mostra o ponto de equilíbrio incluindo taxas.`] },
+    tr: { quickAnswer: 'Kaldıraçlı K/Z = Fiyat Değişimi % × Kaldıraç × Pozisyon Büyüklüğü. 10x kaldıraçla %5 fiyat artışı teminat üzerinden %50 getiri sağlar — ancak %10 düşüş likidasyonu tetikler.', how: [`Kaldıraç Hesaplayıcı, kaldıraçlı bir kripto işlemi için büyütülmüş kâr, zarar ve likidasyon fiyatını gösterir. Teminatınızı, kaldıraç çarpanını (2x-125x), giriş fiyatını ve hedef fiyatı girerek büyütülmüş sonucu görün.`, `Binance, Bybit veya dYdX gibi borsalarda kaldıraçlı pozisyon açmadan önce kullanın. %5 aleyhe hareket eden 10x long, teminatınızın %50'sini kaybeder; %10 hareket likidasyonu tetikler.`], inputs: [`Teminat, pozisyon açmak için yatırdığınız marjdır — mümkün olan maksimum kaybınız. Kaldıraç çarpanı, efektif pozisyonunuzun teminata göre ne kadar büyük olduğunu belirler.`, `Likidasyon fiyatı alanı, borsanın pozisyonunuzu zorla kapatacağı seviyeyi gösterir. Bakım marjı oranı borsaya göre değişir — genellikle %0,4-1. Hesaplayıcı giriş-çıkış ücretleri dahil başabaş fiyatını da gösterir.`] },
+    hi: { quickAnswer: 'लीवरेज्ड P&amp;L = प्राइस चेंज % × लीवरेज × पोजीशन साइज। 10x लीवरेज के साथ 5% प्राइस राइज कोलैटरल पर 50% रिटर्न देता है — लेकिन 10% गिरावट लिक्विडेशन ट्रिगर करती है।', how: [`लीवरेज कैलकुलेटर लीवरेज्ड क्रिप्टो ट्रेड के लिए बढ़े हुए प्रॉफिट, लॉस और लिक्विडेशन प्राइस दिखाता है। अपना कोलैटरल, लीवरेज मल्टीप्लायर (2x-125x), एंट्री प्राइस और टार्गेट प्राइस दर्ज करें।`, `Binance, Bybit या dYdX जैसे एक्सचेंज पर कोई भी लीवरेज्ड पोजीशन खोलने से पहले उपयोग करें। 10x लॉन्ग जो 5% विपरीत चलता है, आपके कोलैटरल का 50% खो देता है।`], inputs: [`कोलैटरल वह मार्जिन है जो आप पोजीशन खोलने के लिए जमा करते हैं — आपका अधिकतम संभव नुकसान। लीवरेज मल्टीप्लायर निर्धारित करता है कि आपकी इफेक्टिव पोजीशन कितनी बड़ी है।`, `लिक्विडेशन प्राइस फील्ड दिखाता है कि एक्सचेंज कहां आपकी पोजीशन जबरन बंद करेगा। मेंटेनेंस मार्जिन रेट एक्सचेंज के अनुसार भिन्न होता है — आमतौर पर प्रमुख प्लेटफॉर्म पर 0.4-1%।`] },
+    ru: { quickAnswer: 'P&amp;L с плечом = Изменение цены % × Плечо × Размер позиции. Рост цены на 5% при плече 10x даёт 50% доход на залог — но падение на 10% запускает ликвидацию.', how: [`Калькулятор кредитного плеча показывает увеличенную прибыль, убыток и цену ликвидации для маржинальной криптосделки. Введите залог, мультипликатор (2x–125x), цену входа и целевую цену для просмотра усиленного результата.`, `Используйте перед открытием любой позиции с плечом на Binance, Bybit или dYdX. Лонг 10x при движении на 5% против вас теряет 50% залога, а 10% запускает ликвидацию.`], inputs: [`Залог — маржа, которую вы вносите для открытия позиции — ваш максимально возможный убыток. Мультипликатор определяет, насколько больше ваша эффективная позиция по сравнению с залогом.`, `Поле цены ликвидации показывает, где биржа принудительно закроет позицию. Ставка поддерживающей маржи варьируется — обычно 0,4–1% на крупных площадках. Калькулятор также показывает точку безубыточности с учётом комиссий.`] },
   },
   'yield-farming-calculator': {
     en: {
@@ -3320,11 +3395,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `The ETH price field converts the gas cost from ETH into USD for easier comparison. For EIP-1559 transactions, the calculator uses the base fee plus priority tip model. During network congestion, actual gas prices may exceed the oracle reading — add a 10-20% buffer to estimates for time-sensitive transactions to avoid stuck pending transactions.`
       ],
     },
-    es: { how: [`La Calculadora de Comisiones de Gas estima el costo de transacción en Ethereum y otras blockchains compatibles con EVM. Introduce el precio del gas en Gwei, el límite de gas y el precio del token nativo en USD para ver la comisión total en moneda nativa y en dólares.`, `Úsala para programar transacciones en horarios de menor costo — los precios del gas fluctúan durante el día, cayendo un 60-80% en horas valle. Compara costos entre Ethereum, Polygon, Arbitrum y BSC para encontrar la ruta más barata.`], inputs: [`El precio del gas en Gwei es el costo por unidad de computación. El límite de gas es el máximo de unidades que tu transacción puede consumir: 21.000 para una transferencia simple, 65.000 para ERC-20, 150.000-300.000 para swaps en DEX.`, `El campo de precio ETH convierte el costo de gas de ETH a USD. Para transacciones EIP-1559, se usa el modelo de tarifa base más propina de prioridad. Añade un 10-20% de margen en transacciones urgentes.`] },
-    pt: { how: [`A Calculadora de Taxas de Gas estima o custo de transação no Ethereum e outras blockchains compatíveis com EVM. Insira o preço do gas em Gwei, o limite de gas e o preço do token nativo em USD para ver a taxa total em moeda nativa e em dólares.`, `Use-a para programar transações em horários de menor custo — os preços do gas flutuam ao longo do dia, caindo 60-80% nos horários de menor demanda. Compare custos entre Ethereum, Polygon, Arbitrum e BSC.`], inputs: [`O preço do gas em Gwei é o custo por unidade de computação. O limite de gas é o máximo de unidades que sua transação pode consumir: 21.000 para transferência simples, 65.000 para ERC-20, 150.000-300.000 para swaps em DEX.`, `O campo de preço ETH converte o custo de gas de ETH para USD. Para transações EIP-1559, utiliza o modelo de taxa base mais gorjeta de prioridade. Adicione 10-20% de margem em transações urgentes.`] },
-    tr: { how: [`Gas Ücreti Hesaplayıcı, Ethereum ve diğer EVM uyumlu blokzincirlerde işlem maliyetini tahmin eder. Gwei cinsinden gas fiyatını, gas limitini ve yerel tokenin USD fiyatını girerek toplam ücreti hem yerel para hem dolar cinsinden görün.`, `İşlemleri daha düşük ücret dönemlerinde zamanlamak için kullanın — gas fiyatları gün içinde dalgalanır ve yoğun olmayan saatlerde %60-80 düşer. Ethereum, Polygon, Arbitrum ve BSC arasında maliyetleri karşılaştırın.`], inputs: [`Gwei cinsinden gas fiyatı, ağdaki hesaplama birimi başına maliyettir. Gas limiti, işleminizin tüketebileceği maksimum birimdir: basit transfer 21.000, ERC-20 transfer 65.000, DEX swap 150.000-300.000.`, `ETH fiyat alanı gas maliyetini ETH'den USD'ye dönüştürür. EIP-1559 işlemleri için baz ücret artı öncelik bahşişi modeli kullanılır. Acil işlemlerde %10-20 tampon ekleyin.`] },
-    hi: { how: [`गैस फी कैलकुलेटर Ethereum और अन्य EVM-संगत ब्लॉकचेन पर ट्रांजैक्शन कॉस्ट का अनुमान लगाता है। Gwei में गैस प्राइस, गैस लिमिट और नेटिव टोकन का USD प्राइस दर्ज करके नेटिव करेंसी और डॉलर दोनों में कुल फीस देखें।`, `कम फीस के लिए ट्रांजैक्शन टाइमिंग तय करने हेतु उपयोग करें — गैस प्राइस दिन भर बदलते हैं और ऑफ-पीक घंटों में 60-80% गिर सकते हैं। Ethereum, Polygon, Arbitrum और BSC में कॉस्ट की तुलना करें।`], inputs: [`Gwei में गैस प्राइस नेटवर्क पर कंप्यूटेशन की प्रति-यूनिट लागत है। गैस लिमिट आपके ट्रांजैक्शन द्वारा उपभोग किए जाने वाले अधिकतम यूनिट है: सिंपल ट्रांसफर 21,000, ERC-20 ट्रांसफर 65,000, DEX स्वैप 150,000-300,000।`, `ETH प्राइस फील्ड गैस कॉस्ट को ETH से USD में कन्वर्ट करता है। EIP-1559 ट्रांजैक्शन के लिए बेस फीस प्लस प्रायोरिटी टिप मॉडल उपयोग होता है। अर्जेंट ट्रांजैक्शन में 10-20% बफर जोड़ें।`] },
-    ru: { how: [`Калькулятор комиссий Gas оценивает стоимость транзакции в Ethereum и других EVM-совместимых блокчейнах. Введите цену газа в Gwei, лимит газа и цену нативного токена в USD, чтобы увидеть общую комиссию в нативной валюте и долларах.`, `Используйте для выбора времени транзакций с минимальными комиссиями — цены на газ колеблются в течение дня, снижаясь на 60-80% в непиковые часы. Сравнивайте стоимость между Ethereum, Polygon, Arbitrum и BSC.`], inputs: [`Цена газа в Gwei — стоимость единицы вычислений в сети. Лимит газа — максимум единиц, которые может потребить транзакция: 21 000 для простого перевода, 65 000 для ERC-20, 150 000–300 000 для свопов на DEX.`, `Поле цены ETH конвертирует стоимость газа из ETH в USD. Для транзакций EIP-1559 используется модель базовой комиссии плюс приоритетные чаевые. Для срочных транзакций добавляйте 10-20% запаса к оценкам.`] },
+    es: { quickAnswer: 'Comisión gas = Precio Gas (Gwei) × Límite Gas × Precio ETH. Una transferencia ETH estándar (21.000 gas) a 1 Gwei cuesta alrededor de $0,05. Swaps DeFi complejos pueden costar $2–15 según la congestión.', how: [`La Calculadora de Comisiones de Gas estima el costo de transacción en Ethereum y otras blockchains compatibles con EVM. Introduce el precio del gas en Gwei, el límite de gas y el precio del token nativo en USD para ver la comisión total en moneda nativa y en dólares.`, `Úsala para programar transacciones en horarios de menor costo — los precios del gas fluctúan durante el día, cayendo un 60-80% en horas valle. Compara costos entre Ethereum, Polygon, Arbitrum y BSC para encontrar la ruta más barata.`], inputs: [`El precio del gas en Gwei es el costo por unidad de computación. El límite de gas es el máximo de unidades que tu transacción puede consumir: 21.000 para una transferencia simple, 65.000 para ERC-20, 150.000-300.000 para swaps en DEX.`, `El campo de precio ETH convierte el costo de gas de ETH a USD. Para transacciones EIP-1559, se usa el modelo de tarifa base más propina de prioridad. Añade un 10-20% de margen en transacciones urgentes.`] },
+    pt: { quickAnswer: 'Taxa gas = Preço Gas (Gwei) × Limite Gas × Preço ETH. Uma transferência ETH padrão (21.000 gas) a 1 Gwei custa cerca de $0,05. Swaps DeFi complexos podem custar $2–15 dependendo da congestão.', how: [`A Calculadora de Taxas de Gas estima o custo de transação no Ethereum e outras blockchains compatíveis com EVM. Insira o preço do gas em Gwei, o limite de gas e o preço do token nativo em USD para ver a taxa total em moeda nativa e em dólares.`, `Use-a para programar transações em horários de menor custo — os preços do gas flutuam ao longo do dia, caindo 60-80% nos horários de menor demanda. Compare custos entre Ethereum, Polygon, Arbitrum e BSC.`], inputs: [`O preço do gas em Gwei é o custo por unidade de computação. O limite de gas é o máximo de unidades que sua transação pode consumir: 21.000 para transferência simples, 65.000 para ERC-20, 150.000-300.000 para swaps em DEX.`, `O campo de preço ETH converte o custo de gas de ETH para USD. Para transações EIP-1559, utiliza o modelo de taxa base mais gorjeta de prioridade. Adicione 10-20% de margem em transações urgentes.`] },
+    tr: { quickAnswer: 'Gas ücreti = Gas Fiyatı (Gwei) × Gas Limiti × ETH Fiyatı. Standart bir ETH transferi (21.000 gas) 1 Gwei\'de yaklaşık $0,05\'tir. Karmaşık DeFi swapları yoğunluğa göre $2–15 arasında olabilir.', how: [`Gas Ücreti Hesaplayıcı, Ethereum ve diğer EVM uyumlu blokzincirlerde işlem maliyetini tahmin eder. Gwei cinsinden gas fiyatını, gas limitini ve yerel tokenin USD fiyatını girerek toplam ücreti hem yerel para hem dolar cinsinden görün.`, `İşlemleri daha düşük ücret dönemlerinde zamanlamak için kullanın — gas fiyatları gün içinde dalgalanır ve yoğun olmayan saatlerde %60-80 düşer. Ethereum, Polygon, Arbitrum ve BSC arasında maliyetleri karşılaştırın.`], inputs: [`Gwei cinsinden gas fiyatı, ağdaki hesaplama birimi başına maliyettir. Gas limiti, işleminizin tüketebileceği maksimum birimdir: basit transfer 21.000, ERC-20 transfer 65.000, DEX swap 150.000-300.000.`, `ETH fiyat alanı gas maliyetini ETH'den USD'ye dönüştürür. EIP-1559 işlemleri için baz ücret artı öncelik bahşişi modeli kullanılır. Acil işlemlerde %10-20 tampon ekleyin.`] },
+    hi: { quickAnswer: 'गैस फीस = गैस प्राइस (Gwei) × गैस लिमिट × ETH प्राइस। एक स्टैंडर्ड ETH ट्रांसफर (21,000 gas) 1 Gwei पर लगभग $0.05 खर्च होता है। जटिल DeFi स्वैप कंजेशन के अनुसार $2–15 तक हो सकते हैं।', how: [`गैस फी कैलकुलेटर Ethereum और अन्य EVM-संगत ब्लॉकचेन पर ट्रांजैक्शन कॉस्ट का अनुमान लगाता है। Gwei में गैस प्राइस, गैस लिमिट और नेटिव टोकन का USD प्राइस दर्ज करके नेटिव करेंसी और डॉलर दोनों में कुल फीस देखें।`, `कम फीस के लिए ट्रांजैक्शन टाइमिंग तय करने हेतु उपयोग करें — गैस प्राइस दिन भर बदलते हैं और ऑफ-पीक घंटों में 60-80% गिर सकते हैं। Ethereum, Polygon, Arbitrum और BSC में कॉस्ट की तुलना करें।`], inputs: [`Gwei में गैस प्राइस नेटवर्क पर कंप्यूटेशन की प्रति-यूनिट लागत है। गैस लिमिट आपके ट्रांजैक्शन द्वारा उपभोग किए जाने वाले अधिकतम यूनिट है: सिंपल ट्रांसफर 21,000, ERC-20 ट्रांसफर 65,000, DEX स्वैप 150,000-300,000।`, `ETH प्राइस फील्ड गैस कॉस्ट को ETH से USD में कन्वर्ट करता है। EIP-1559 ट्रांजैक्शन के लिए बेस फीस प्लस प्रायोरिटी टिप मॉडल उपयोग होता है। अर्जेंट ट्रांजैक्शन में 10-20% बफर जोड़ें।`] },
+    ru: { quickAnswer: 'Комиссия gas = Цена газа (Gwei) × Лимит газа × Цена ETH. Стандартный перевод ETH (21 000 gas) при 1 Gwei стоит около $0,05. Сложные DeFi-свопы могут стоить $2–15 в зависимости от загрузки сети.', how: [`Калькулятор комиссий Gas оценивает стоимость транзакции в Ethereum и других EVM-совместимых блокчейнах. Введите цену газа в Gwei, лимит газа и цену нативного токена в USD, чтобы увидеть общую комиссию в нативной валюте и долларах.`, `Используйте для выбора времени транзакций с минимальными комиссиями — цены на газ колеблются в течение дня, снижаясь на 60-80% в непиковые часы. Сравнивайте стоимость между Ethereum, Polygon, Arbitrum и BSC.`], inputs: [`Цена газа в Gwei — стоимость единицы вычислений в сети. Лимит газа — максимум единиц, которые может потребить транзакция: 21 000 для простого перевода, 65 000 для ERC-20, 150 000–300 000 для свопов на DEX.`, `Поле цены ETH конвертирует стоимость газа из ETH в USD. Для транзакций EIP-1559 используется модель базовой комиссии плюс приоритетные чаевые. Для срочных транзакций добавляйте 10-20% запаса к оценкам.`] },
   },
   'sharpe-calculator': {
     en: {
@@ -3338,11 +3413,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `For crypto-specific analysis, consider using a stablecoin lending rate (3-8% APY) as the risk-free proxy rather than traditional Treasury rates. The observation window matters: a 30-day Sharpe during a bull run will differ dramatically from a 12-month figure that spans a full cycle. Longer windows produce more reliable estimates.`
       ],
     },
-    es: { how: [`La calculadora del Ratio de Sharpe mide cuánto rendimiento excedente obtienes por unidad de volatilidad. Ingresa los retornos, la tasa libre de riesgo y el período. Un Sharpe superior a 1.0 es sólido en cripto; superior a 2.0 es excelente.`, `Úsala para comparar estrategias de forma equitativa. Un retorno del 200% con drawdowns extremos puede tener menor Sharpe que un 40% estable. Combina con Sortino para una visión más completa.`], inputs: [`El retorno del portafolio es la ganancia total en el período medido. La tasa libre de riesgo debe coincidir con el mismo período. Usa la desviación estándar de los retornos.`, `Para cripto, usa tasas de préstamo de stablecoins (3-8% APY) como proxy libre de riesgo. Ventanas más largas producen estimaciones más fiables.`] },
-    pt: { how: [`A calculadora do Índice de Sharpe mede quanto retorno excedente você ganha por unidade de volatilidade. Insira retornos, taxa livre de risco e período. Sharpe acima de 1.0 é sólido em cripto.`, `Use para comparar estratégias de forma justa. Um retorno de 200% com drawdowns extremos pode ter Sharpe menor que 40% estável. Combine com Sortino para visão completa.`], inputs: [`O retorno do portfólio é o ganho percentual total no período. A taxa livre de risco deve corresponder ao mesmo período.`, `Para cripto, use taxas de empréstimo de stablecoins como proxy livre de risco. Janelas mais longas produzem estimativas mais confiáveis.`] },
-    tr: { how: [`Sharpe Oranı Hesaplayıcı, volatilite birimi başına ne kadar fazla getiri elde ettiğinizi ölçer. Getirileri, risksiz oranı ve dönemi girin. Kripto'da 1.0 üstü sağlam, 2.0 üstü mükemmeldir.`, `Stratejileri eşit koşullarda karşılaştırmak için kullanın. Sortino ile birleştirin.`], inputs: [`Portföy getirisi, ölçüm dönemindeki toplam yüzde kazançtır. Risksiz oran aynı döneme uymalıdır.`, `Kripto için risksiz vekil olarak stablecoin borç verme oranlarını kullanın.`] },
-    hi: { how: [`शार्प रेशियो कैलकुलेटर मापता है कि आप प्रति अस्थिरता इकाई कितना अतिरिक्त रिटर्न कमाते हैं। रिटर्न, जोखिम-मुक्त दर और अवधि दर्ज करें। क्रिप्टो में 1.0 से ऊपर ठोस है।`, `रणनीतियों की समान आधार पर तुलना करने के लिए उपयोग करें। पूर्ण चित्र के लिए सोर्टिनो के साथ जोड़ें।`], inputs: [`पोर्टफोलियो रिटर्न मापी गई अवधि में कुल प्रतिशत लाभ है। जोखिम-मुक्त दर उसी अवधि से मेल खानी चाहिए।`, `क्रिप्टो के लिए जोखिम-मुक्त प्रॉक्सी के रूप में स्टेबलकॉइन लेंडिंग दरों का उपयोग करें।`] },
-    ru: { how: [`Калькулятор коэффициента Шарпа измеряет, сколько избыточной доходности вы получаете на единицу волатильности. Введите доходность, безрисковую ставку и период. В крипто Шарп выше 1.0 — хорошо, выше 2.0 — отлично.`, `Используйте для сравнения стратегий на равных условиях. Сочетайте с Сортино для полной картины.`], inputs: [`Доходность портфеля — это общий процентный прирост за период. Безрисковая ставка должна соответствовать тому же периоду.`, `Для крипто используйте ставки кредитования стейблкоинов как безрисковый ориентир.`] },
+    es: { quickAnswer: 'Ratio de Sharpe = (Rendimiento − Tasa Libre de Riesgo) / Desviación Estándar. Un Sharpe superior a 1,0 es bueno, superior a 2,0 muy bueno y superior a 3,0 excelente. Compara tu portafolio contra benchmarks.', how: [`La calculadora del Ratio de Sharpe mide cuánto rendimiento excedente obtienes por unidad de volatilidad. Ingresa los retornos, la tasa libre de riesgo y el período. Un Sharpe superior a 1.0 es sólido en cripto; superior a 2.0 es excelente.`, `Úsala para comparar estrategias de forma equitativa. Un retorno del 200% con drawdowns extremos puede tener menor Sharpe que un 40% estable. Combina con Sortino para una visión más completa.`], inputs: [`El retorno del portafolio es la ganancia total en el período medido. La tasa libre de riesgo debe coincidir con el mismo período. Usa la desviación estándar de los retornos.`, `Para cripto, usa tasas de préstamo de stablecoins (3-8% APY) como proxy libre de riesgo. Ventanas más largas producen estimaciones más fiables.`] },
+    pt: { quickAnswer: 'Indice de Sharpe = (Retorno − Taxa Livre de Risco) / Desvio Padrão. Sharpe acima de 1,0 é bom, acima de 2,0 muito bom e acima de 3,0 excelente. Compare seu portfólio com benchmarks.', how: [`A calculadora do Índice de Sharpe mede quanto retorno excedente você ganha por unidade de volatilidade. Insira retornos, taxa livre de risco e período. Sharpe acima de 1.0 é sólido em cripto.`, `Use para comparar estratégias de forma justa. Um retorno de 200% com drawdowns extremos pode ter Sharpe menor que 40% estável. Combine com Sortino para visão completa.`], inputs: [`O retorno do portfólio é o ganho percentual total no período. A taxa livre de risco deve corresponder ao mesmo período.`, `Para cripto, use taxas de empréstimo de stablecoins como proxy livre de risco. Janelas mais longas produzem estimativas mais confiáveis.`] },
+    tr: { quickAnswer: 'Sharpe Oranı = (Getiri − Risksiz Oran) / Standart Sapma. 1,0 üzeri iyi, 2,0 üzeri çok iyi, 3,0 üzeri mükemmeldir. Portföyünüzü benchmark\'larla karşılaştırın.', how: [`Sharpe Oranı Hesaplayıcı, volatilite birimi başına ne kadar fazla getiri elde ettiğinizi ölçer. Getirileri, risksiz oranı ve dönemi girin. Kripto'da 1.0 üstü sağlam, 2.0 üstü mükemmeldir.`, `Stratejileri eşit koşullarda karşılaştırmak için kullanın. Sortino ile birleştirin.`], inputs: [`Portföy getirisi, ölçüm dönemindeki toplam yüzde kazançtır. Risksiz oran aynı döneme uymalıdır.`, `Kripto için risksiz vekil olarak stablecoin borç verme oranlarını kullanın.`] },
+    hi: { quickAnswer: 'शार्प रेशियो = (रिटर्न − जोखिम-मुक्त दर) / मानक विचलन। 1.0 से ऊपर अच्छा, 2.0 से ऊपर बहुत अच्छा, और 3.0 से ऊपर उत्कृष्ट है। अपने पोर्टफोलियो की बेंचमार्क से तुलना करें।', how: [`शार्प रेशियो कैलकुलेटर मापता है कि आप प्रति अस्थिरता इकाई कितना अतिरिक्त रिटर्न कमाते हैं। रिटर्न, जोखिम-मुक्त दर और अवधि दर्ज करें। क्रिप्टो में 1.0 से ऊपर ठोस है।`, `रणनीतियों की समान आधार पर तुलना करने के लिए उपयोग करें। पूर्ण चित्र के लिए सोर्टिनो के साथ जोड़ें।`], inputs: [`पोर्टफोलियो रिटर्न मापी गई अवधि में कुल प्रतिशत लाभ है। जोखिम-मुक्त दर उसी अवधि से मेल खानी चाहिए।`, `क्रिप्टो के लिए जोखिम-मुक्त प्रॉक्सी के रूप में स्टेबलकॉइन लेंडिंग दरों का उपयोग करें।`] },
+    ru: { quickAnswer: 'Коэффициент Шарпа = (Доходность − Безрисковая ставка) / Стандартное отклонение. Шарп выше 1,0 — хорошо, выше 2,0 — очень хорошо, выше 3,0 — отлично. Сравнивайте портфель с бенчмарками.', how: [`Калькулятор коэффициента Шарпа измеряет, сколько избыточной доходности вы получаете на единицу волатильности. Введите доходность, безрисковую ставку и период. В крипто Шарп выше 1.0 — хорошо, выше 2.0 — отлично.`, `Используйте для сравнения стратегий на равных условиях. Сочетайте с Сортино для полной картины.`], inputs: [`Доходность портфеля — это общий процентный прирост за период. Безрисковая ставка должна соответствовать тому же периоду.`, `Для крипто используйте ставки кредитования стейблкоинов как безрисковый ориентир.`] },
   },
   'sortino-calculator': {
     en: {

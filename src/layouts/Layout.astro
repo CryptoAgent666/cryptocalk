@@ -149,6 +149,10 @@ const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es-419', pt: 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f172a" />
+
     <!-- Google tag (gtag.js) -->
     <!-- Consent defaults (set before GA loads — AdSense CMP compliance) -->
     <script is:inline>
@@ -221,6 +225,15 @@ const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es-419', pt: 
       import { installCoinGeckoFetchInterceptor } from '../utils/coingecko-fetch-client';
 
       installCoinGeckoFetchInterceptor();
+    </script>
+
+    <!-- Service Worker registration -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').catch(function() {});
+        });
+      }
     </script>
   </head>
   <body>
