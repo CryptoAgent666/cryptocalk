@@ -3622,11 +3622,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Gas fee = Gas Price × Gas Limit × Token Price. For Ethereum, a basic transfer costs ~21,000 gas units. At 1 Gwei and $2,327/ETH, that\'s about $0.05 per transaction.',
       how: [
-        `The Gas Fee Calculator estimates the transaction cost on Ethereum and other EVM-compatible blockchains before you submit a transaction. Enter the current gas price in Gwei, the gas limit for your transaction type, and the native token's USD price to see the total fee in both the native currency and dollars. The calculator pre-fills live Ethereum gas prices from the Etherscan oracle and current ETH/USD from CoinGecko.`,
+        `The Gas Fee Calculator estimates the transaction cost on Ethereum and other EVM-compatible blockchains before you submit a transaction. Enter the current gas price in Gwei, the gas limit for your transaction type, and the native token's USD price to see the total fee in both the native currency and dollars. The calculator includes standard gas benchmarks for common transaction types and lets you enter the current gas price manually for accurate estimates.`,
         `Use it to time transactions for lower fees — gas prices fluctuate throughout the day, often dropping 60-80% during off-peak hours. The calculator supports common transaction types (simple transfer, ERC-20 transfer, Uniswap swap, NFT mint) with pre-set gas limits, or enter a custom gas limit for contract interactions. Compare costs across networks like Ethereum, Polygon, Arbitrum, and BSC to find the cheapest execution path.`
       ],
       inputs: [
-        `Gas price in Gwei is the per-unit cost of computation on the network — live data auto-fills for Ethereum. Gas limit is the maximum units of gas your transaction can consume: 21,000 for a simple ETH transfer, 65,000 for an ERC-20 transfer, and 150,000–300,000 for DEX swaps. The network selector switches between supported chains with their respective gas mechanics.`,
+        `Gas price in Gwei is the per-unit cost of computation on the network — enter the current rate from any gas tracker. Gas limit is the maximum units of gas your transaction can consume: 21,000 for a simple ETH transfer, 65,000 for an ERC-20 transfer, and 150,000–300,000 for DEX swaps. The network selector switches between supported chains with their respective gas mechanics.`,
         `The ETH price field converts the gas cost from ETH into USD for easier comparison. For EIP-1559 transactions, the calculator uses the base fee plus priority tip model. During network congestion, actual gas prices may exceed the oracle reading — add a 10-20% buffer to estimates for time-sensitive transactions to avoid stuck pending transactions.`
       ],
     },
@@ -4657,7 +4657,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `Weekend mornings (UTC) consistently offer the lowest gas prices because US and European trading activity drops. The calculator shows you that a Uniswap swap costing $12 at 50 gwei during peak hours would cost just $5 at 20 gwei on a Sunday morning. For batch transactions or non-urgent operations, timing your execution can save hundreds of dollars per month.`
       ],
       inputs: [
-        `Transaction type presets set the gas limit automatically: simple ETH transfer (21,000 gas), ERC-20 transfer (65,000), Uniswap V3 swap (150,000-300,000), NFT mint (100,000-200,000). For custom transactions, enter the gas limit manually. The current gas price is fetched live from Etherscan but can be overridden for simulation.`,
+        `Transaction type presets set the gas limit automatically: simple ETH transfer (21,000 gas), ERC-20 transfer (65,000), Uniswap V3 swap (150,000-300,000), NFT mint (100,000-200,000). For custom transactions, enter the gas limit manually. Enter the current gas price manually or use the default benchmark; you can adjust it anytime for simulation.`,
         `The output shows: current cost in USD, average cost by hour-of-day and day-of-week (heatmap), recommended execution windows, and savings potential. The L2 comparison section shows the same transaction cost on Arbitrum, Optimism, Base, and Polygon — often 50-100x cheaper than mainnet, making L2s the obvious choice for routine operations.`
       ],
     },

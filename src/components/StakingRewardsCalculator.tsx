@@ -315,7 +315,7 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
                             <label htmlFor="stk-price"><Coins size={14} /> {getUiString(lang, 'Token Price')}</label>
                             <div className="input-with-prefix">
                                 <input type="number" inputMode="decimal" value={tokenPrice} onChange={(e) => setTokenPrice(e.target.value)}
-                                    placeholder="Auto" id="stk-price" step="any" min="0" onFocus={(e) => e.target.select()} />
+                                    placeholder={getUiString(lang, 'Auto')} id="stk-price" step="any" min="0" onFocus={(e) => e.target.select()} />
                             </div>
                         </div>
                     )}

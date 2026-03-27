@@ -247,7 +247,7 @@ function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                                     type="text"
                                     value={searchFrom}
                                     onChange={(e) => handleSearchFrom(e.target.value)}
-                                    placeholder="Search cryptocurrency..."
+                                    placeholder={getUiString(lang, 'Search cryptocurrency...')}
                                     autoFocus
                                 />
                             </div>

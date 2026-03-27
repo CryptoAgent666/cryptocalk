@@ -461,7 +461,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 type="number" inputMode="decimal"
                                 value={hardwareCost}
                                 onChange={(e) => setHardwareCost(e.target.value)}
-                                placeholder="For break-even calculation"
+                                placeholder={getUiString(lang, 'For break-even calculation')}
                                 id="hardware-cost-input"
                                 step="any"
                                 min="0"

@@ -1322,6 +1322,15 @@ const dict: Record<string, string> = {
   'Optional': 'Необязательно',
   'Simulation': 'Симуляция',
   'Trades': 'Сделок',
+  // === Placeholder labels (update 61) ===
+  'For break-even calculation': 'Для расчёта окупаемости',
+  'Auto': 'Авто',
+  'Search cryptocurrency...': 'Поиск криптовалюты...',
+  'e.g. Ethereum': 'напр. Ethereum',
+  'e.g. USDC': 'напр. USDC',
+  'Safe': 'Безопасно',
+  'High Risk': 'Высокий риск',
+  'Moderate': 'Умеренно',
 };
 
 _registerLang('ru', dict);
