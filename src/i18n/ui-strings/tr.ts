@@ -1135,6 +1135,10 @@ const dict: Record<string, string> = {
   'Auto-calculates as you type. Keep target allocation near 100% and avoid over-concentration in one asset.': 'Yazarken otomatik hesaplar. Hedef tahsisi %100\'e yakın tutun ve tek varlıkta aşırı yoğunlaşmadan kaçının.',
   'Auto-calculates as you type. Keep LTV conservative and monitor margin-call/liquidation thresholds before borrowing.': 'Yazarken otomatik hesaplar. LTV\'yi muhafazakâr tutun ve borçlanmadan önce margin-call/likidasyon eşiklerini izleyin.',
   'Crypto to Fiat': 'Kripto → Fiat',
+  // LeverageCalculator presets
+  'Long 10x': 'Long 10x',
+  'Short 10x': 'Short 10x',
+  'High Risk 25x': 'Yüksek Risk 25x',
 };
 
 _registerLang('tr', dict);

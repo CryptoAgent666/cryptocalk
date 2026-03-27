@@ -237,7 +237,7 @@ const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es-419', pt: 
     </script>
   </head>
   <body>
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <a href="#main-content" class="skip-to-content">{({es:'Ir al contenido principal',pt:'Ir para o conteúdo principal',tr:'Ana içeriğe geç',hi:'मुख्य सामग्री पर जाएं',ru:'Перейти к основному содержанию'})[lang as string] || 'Skip to main content'}</a>
     <slot />
     <CookieBanner lang={lang} />
     <script is:inline>
