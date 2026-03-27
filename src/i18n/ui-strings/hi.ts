@@ -1134,6 +1134,10 @@ const dict: Record<string, string> = {
   'Auto-calculates as you type. Keep target allocation near 100% and avoid over-concentration in one asset.': 'टाइप करते समय ऑटो-गणना। लक्ष्य आवंटन 100% के करीब रखें और एक ही परिसंपत्ति में अधिक केंद्रीकरण से बचें।',
   'Auto-calculates as you type. Keep LTV conservative and monitor margin-call/liquidation thresholds before borrowing.': 'टाइप करते समय ऑटो-गणना। LTV रूढ़िवादी रखें और उधार लेने से पहले मार्जिन-कॉल/लिक्विडेशन सीमाओं की निगरानी करें।',
   'Crypto to Fiat': 'क्रिप्टो से फिएट',
+  // LeverageCalculator presets
+  'Long 10x': 'लॉन्ग 10x',
+  'Short 10x': 'शॉर्ट 10x',
+  'High Risk 25x': 'उच्च जोखिम 25x',
 };
 
 _registerLang('hi', dict);
