@@ -393,7 +393,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                                     background: row.label === freq.label ? 'rgba(99,102,241,0.06)' : 'transparent',
                                                 }}>
                                                     <td style={{ padding: '8px', fontWeight: row.label === freq.label ? 600 : 500 }}>
-                                                        {row.label} {row.label === freq.label && `(${getUiString(lang, 'selected')})`}
+                                                        {getUiString(lang, row.label)} {row.label === freq.label && `(${getUiString(lang, 'selected')})`}
                                                     </td>
                                                     <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text)' }}>
                                                         {formatPercent(row.apr * 100)}

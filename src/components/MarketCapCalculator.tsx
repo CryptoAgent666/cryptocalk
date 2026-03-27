@@ -239,10 +239,10 @@ function MarketCapCalculator({ lang = 'en' }: { lang?: string }) {
     }, []);
 
     const getRealism = (targetCap: number): { realism: 'green' | 'yellow' | 'red'; label: string } => {
-        if (btcMarketCap <= 0) return { realism: 'yellow', label: 'Unable to determine' };
-        if (targetCap <= btcMarketCap) return { realism: 'green', label: 'Achievable — within current BTC market cap' };
-        if (targetCap <= btcMarketCap * 2) return { realism: 'yellow', label: 'Ambitious — exceeds BTC market cap' };
-        return { realism: 'red', label: 'Extremely unlikely — exceeds 2x BTC market cap' };
+        if (btcMarketCap <= 0) return { realism: 'yellow', label: getUiString(lang, 'Unable to determine') };
+        if (targetCap <= btcMarketCap) return { realism: 'green', label: getUiString(lang, 'Achievable — within current BTC market cap') };
+        if (targetCap <= btcMarketCap * 2) return { realism: 'yellow', label: getUiString(lang, 'Ambitious — exceeds BTC market cap') };
+        return { realism: 'red', label: getUiString(lang, 'Extremely unlikely — exceeds 2x BTC market cap') };
     };
 
     const calculate = useCallback(() => {

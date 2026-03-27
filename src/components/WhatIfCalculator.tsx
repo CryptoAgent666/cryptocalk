@@ -179,7 +179,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                 priceHistory,
             });
         } catch (e: unknown) {
-            setError(e instanceof Error ? e.message : 'Something went wrong.');
+            setError(e instanceof Error ? e.message : getUiString(lang, 'Something went wrong.'));
         } finally {
             setLoading(false);
         }

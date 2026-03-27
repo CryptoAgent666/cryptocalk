@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 58) — TaxCalculator & GasFeeCalculator i18n
+
+### Fixed
+- **TaxCalculator.tsx**: Wrapped 5 hardcoded render points with `getUiString()`: country names in dropdown, shortTermLabel/longTermLabel in holding period buttons, country name in results breakdown, holdingPeriodLabel in results, and FIFO/LIFO method descriptions.
+- **GasFeeCalculator.tsx**: Wrapped network labels (Ethereum, Polygon, Arbitrum, Optimism, BNB Chain, Avalanche, Base) with `getUiString()` at all 4 render points: network buttons, hero subtitle, breakdown row, and fee comparison heading.
+
+### Added
+- **55 new keys x 5 langs** in es.ts, pt.ts, tr.ts, hi.ts, ru.ts: 17 country names, 18 unique holding period labels, 2 FIFO/LIFO method descriptions, 17 country tax notes, 7 network labels (kept as-is since they are brand names).
+- Build: 935 pages, 0 errors
+
 ## [2026-03-27] (update 61) — Fix false live-API claims in SEO content
 
 ### Fixed
