@@ -2,6 +2,22 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 62) — i18n: wrap hardcoded strings in 4 calculator components
+
+### Fixed
+- **HashrateConverter.tsx**: Wrapped `row.device` in TYPICAL_HASHRATES reference table with `getUiString()` (6 device names rendered in table rows)
+- **RoiCalculator.tsx**: Wrapped `comp.name` in TRADITIONAL_ASSETS comparison table with `getUiString()` (5 asset names: S&P 500, Gold, Real Estate, US Bonds, Savings Account)
+- **InflationHedgeCalculator.tsx**: Wrapped `asset.label` in toggle buttons, table rows, chart legend, and best performer highlight with `getUiString()`. Wrapped `c.name` / `country.name` in country buttons and info card. Fixed hardcoded `'year'`/`'years'` in period buttons to use `getUiString()`.
+- **AirdropCalculator.tsx**: Wrapped `c.label` in TAX_COUNTRIES pill buttons with `getUiString()` (USA, UK, Germany, Australia, Canada)
+
+### New keys needing translations (5 langs)
+- **HashrateConverter**: `CPU (RandomX / Monero)`, `RTX 4090 (KawPow)`, `GPU on Ethash`, `Antminer S21 Hyd (SHA-256)`, `Bitcoin ASIC (SHA-256)`, `Bitcoin Network Total`
+- **RoiCalculator**: `S&P 500`, `Gold`, `Real Estate`, `US Bonds`, `Savings Account`
+- **InflationHedgeCalculator**: `USDC + Yield`, `Gold`, `S&P 500`, `Turkey`, `Argentina`, `Nigeria`, `USA`, `Russia`, `India`, `Brazil`, `UK`
+- **AirdropCalculator**: `USA`, `UK`, `Germany`, `Australia`, `Canada`
+- Note: BTC/ETH stay untranslated (brand names). Country names and asset names like "Real Estate" and "Savings Account" need translations.
+- Build: 935 pages, 0 errors
+
 ## [2026-03-27] (update 58) — TaxCalculator & GasFeeCalculator i18n
 
 ### Fixed

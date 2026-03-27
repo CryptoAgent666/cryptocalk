@@ -252,7 +252,7 @@ function HashrateConverter({ lang = 'en' }: { lang?: string }) {
                                         <tbody>
                                             {TYPICAL_HASHRATES.map((row) => (
                                                 <tr key={row.device} style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                    <td style={{ padding: '8px', color: 'var(--color-text-secondary)' }}>{row.device}</td>
+                                                    <td style={{ padding: '8px', color: 'var(--color-text-secondary)' }}>{getUiString(lang, row.device)}</td>
                                                     <td style={{
                                                         padding: '8px',
                                                         textAlign: 'right',

@@ -299,7 +299,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                 borderRadius: '50%',
                                 background: line.color,
                             }} />
-                            {line.label}
+                            {getUiString(lang, line.label)}
                         </div>
                     ))}
                 </div>
@@ -340,7 +340,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${selectedCountry === c.id ? 'active' : ''}`}
                                     onClick={() => setSelectedCountry(c.id)}
                                 >
-                                    {c.name}
+                                    {getUiString(lang, c.name)}
                                 </button>
                             ))}
                         </div>
@@ -389,7 +389,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${years === p ? 'active' : ''}`}
                                     onClick={() => setYears(p)}
                                 >
-                                    {p} {p === 1 ? 'year' : 'years'}
+                                    {p} {p === 1 ? getUiString(lang, 'year') : getUiString(lang, 'years')}
                                 </button>
                             ))}
                         </div>
@@ -409,7 +409,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${activeAssets.includes(asset.id) ? 'active' : ''}`}
                                     onClick={() => toggleAsset(asset.id)}
                                 >
-                                    {asset.label}
+                                    {getUiString(lang, asset.label)}
                                 </button>
                             ))}
                         </div>
@@ -506,7 +506,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                                 <td style={{ padding: '10px 8px', fontWeight: 600 }}>
                                                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                                         <div style={{ width: 8, height: 8, borderRadius: '50%', background: asset.color }} />
-                                                        {asset.label}
+                                                        {getUiString(lang, asset.label)}
                                                         {bestAsset && bestAsset.id === asset.id && (
                                                             <Trophy size={12} style={{ color: 'var(--color-accent-green)' }} />
                                                         )}
@@ -553,7 +553,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                     <Trophy size={18} style={{ color: 'var(--color-accent-green)' }} />
                                     <div>
                                         <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-accent-green)' }}>
-                                            {getUiString(lang, 'Best Performer')}: {bestAsset.label}
+                                            {getUiString(lang, 'Best Performer')}: {getUiString(lang, bestAsset.label)}
                                         </div>
                                         <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>
                                             {formatUSD(bestAsset.value)} ({formatPercent(bestAsset.realReturn)} {getUiString(lang, 'return')}) {getUiString(lang, 'over')} {years} {years === 1 ? getUiString(lang, 'year') : getUiString(lang, 'years')}
@@ -578,7 +578,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-divider" />
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Country')}</span>
-                                    <span className="result-value">{country.name}</span>
+                                    <span className="result-value">{getUiString(lang, country.name)}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Currency')}</span>
