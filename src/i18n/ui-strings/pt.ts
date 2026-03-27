@@ -1079,6 +1079,22 @@ const dict: Record<string, string> = {
   'Annual Salary': 'Salário Anual',
   'Pay Frequency': 'Frequência de Pagamento',
   'Refresh Prices': 'Atualizar Preços',
+  // ElectricityCostCalculator
+  'Number of Devices': 'Número de Dispositivos',
+  'Power per Device (W)': 'Potência por Dispositivo (W)',
+  'Electricity Rate ($/kWh)': 'Tarifa de Eletricidade ($/kWh)',
+  'Uptime (hours/day)': 'Tempo Ativo (horas/dia)',
+  'Monthly Mining Revenue ($)': 'Receita Mensal de Mineração ($)',
+  'Home Miner': 'Minerador Doméstico',
+  'Small Farm': 'Pequena Fazenda',
+  'Low-Cost Host': 'Hospedagem de Baixo Custo',
+  // DifficultyEstimatorCalculator
+  'Current Difficulty (T)': 'Dificuldade Atual (T)',
+  'Expected Difficulty Change (%)': 'Mudança de Dificuldade Esperada (%)',
+  'Current Daily Revenue (USD)': 'Receita Diária Atual (USD)',
+  // MiningRoiCalculator ($-suffix variants)
+  'Equipment Cost ($)': 'Custo do Equipamento ($)',
+  'Monthly Expenses ($)': 'Despesas Mensais ($)',
 };
 
 _registerLang('pt', dict);

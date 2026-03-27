@@ -1080,6 +1080,22 @@ const dict: Record<string, string> = {
   'Annual Salary': 'Yıllık Maaş',
   'Pay Frequency': 'Ödeme Sıklığı',
   'Refresh Prices': 'Fiyatları Güncelle',
+  // ElectricityCostCalculator
+  'Number of Devices': 'Cihaz Sayısı',
+  'Power per Device (W)': 'Cihaz Başına Güç (W)',
+  'Electricity Rate ($/kWh)': 'Elektrik Tarihi ($/kWh)',
+  'Uptime (hours/day)': 'Çalışma Süresi (saat/gün)',
+  'Monthly Mining Revenue ($)': 'Aylık Madencilik Geliri ($)',
+  'Home Miner': 'Ev Madencisi',
+  'Small Farm': 'Küçük Çiftlik',
+  'Low-Cost Host': 'Düşük Maliyetli Barındırma',
+  // DifficultyEstimatorCalculator
+  'Current Difficulty (T)': 'Mevcut Zorluk (T)',
+  'Expected Difficulty Change (%)': 'Beklenen Zorluk Değişimi (%)',
+  'Current Daily Revenue (USD)': 'Mevcut Günlük Gelir (USD)',
+  // MiningRoiCalculator ($-suffix variants)
+  'Equipment Cost ($)': 'Ekipman Maliyeti ($)',
+  'Monthly Expenses ($)': 'Aylık Giderler ($)',
 };
 
 _registerLang('tr', dict);

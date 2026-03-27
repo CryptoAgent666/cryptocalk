@@ -1079,6 +1079,22 @@ const dict: Record<string, string> = {
   'Annual Salary': 'Годовая зарплата',
   'Pay Frequency': 'Частота выплат',
   'Refresh Prices': 'Обновить цены',
+  // ElectricityCostCalculator
+  'Number of Devices': 'Количество устройств',
+  'Power per Device (W)': 'Мощность на устройство (Вт)',
+  'Electricity Rate ($/kWh)': 'Тариф на электроэнергию ($/кВт·ч)',
+  'Uptime (hours/day)': 'Время работы (часов/день)',
+  'Monthly Mining Revenue ($)': 'Ежемесячный доход от майнинга ($)',
+  'Home Miner': 'Домашний майнер',
+  'Small Farm': 'Малая ферма',
+  'Low-Cost Host': 'Бюджетный хостинг',
+  // DifficultyEstimatorCalculator
+  'Current Difficulty (T)': 'Текущая сложность (T)',
+  'Expected Difficulty Change (%)': 'Ожидаемое изменение сложности (%)',
+  'Current Daily Revenue (USD)': 'Текущий дневной доход (USD)',
+  // MiningRoiCalculator ($-suffix variants)
+  'Equipment Cost ($)': 'Стоимость оборудования ($)',
+  'Monthly Expenses ($)': 'Ежемесячные расходы ($)',
 };
 
 _registerLang('ru', dict);
