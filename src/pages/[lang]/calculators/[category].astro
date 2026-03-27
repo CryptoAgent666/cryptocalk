@@ -16,6 +16,15 @@ import Layout from '../../../layouts/Layout.astro';
 const SITE_URL = 'https://cryptocalk.com';
 const LAST_UPDATED = '2026-02-21';
 
+const CALCULATORS_LABEL: Record<string, string> = {
+  en: 'Calculators',
+  es: 'Calculadoras',
+  pt: 'Calculadoras',
+  tr: 'Hesaplayıcılar',
+  hi: 'कैलकुलेटर',
+  ru: 'Калькуляторы',
+};
+
 export function getStaticPaths() {
   return NON_DEFAULT_LANGS.flatMap((lang) =>
     getCategorySlugs().map((category) => ({
@@ -49,7 +58,7 @@ const schemas = [
   {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `${category.title} Calculators`,
+    name: `${category.title} ${CALCULATORS_LABEL[lang] ?? CALCULATORS_LABEL.en}`,
     description: category.metaDescription,
     url: categoryPageUrl,
     inLanguage: lang,
@@ -62,7 +71,7 @@ const schemas = [
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: `${category.title} calculators`,
+    name: `${category.title} ${(CALCULATORS_LABEL[lang] ?? CALCULATORS_LABEL.en).toLowerCase()}`,
     numberOfItems: category.tools.length,
     itemListOrder: 'https://schema.org/ItemListOrderAscending',
     itemListElement: category.tools.map((tool, index) => ({
