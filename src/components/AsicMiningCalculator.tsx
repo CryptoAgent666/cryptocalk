@@ -144,8 +144,19 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
     useEffect(() => {
         let isMounted = true;
         setLiveDataStatus('loading');
-        fetch("https://corsproxy.io/?" + encodeURIComponent("https://whattomine.com/asic.json"))
-            .then(res => res.json())
+        const wtUrl = "https://whattomine.com/asic.json";
+        const tryFetch = async () => {
+            // Primary: codetabs CORS proxy
+            try {
+                const res = await fetch("https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(wtUrl));
+                if (res.ok) return await res.json();
+            } catch { /* fall through */ }
+            // Fallback: corsproxy.io
+            const res2 = await fetch("https://corsproxy.io/?" + encodeURIComponent(wtUrl));
+            if (!res2.ok) throw new Error('All proxies failed');
+            return await res2.json();
+        };
+        tryFetch()
             .then(parsed => {
                 if (!isMounted) return;
                 try {

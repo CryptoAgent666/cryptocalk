@@ -131,9 +131,20 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
         let isMounted = true;
         setLiveDataStatus('loading');
 
+        const proxyFetch = async (url: string) => {
+            // Primary: codetabs CORS proxy
+            try {
+                const res = await fetch("https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(url));
+                if (res.ok) return await res.json();
+            } catch { /* fall through */ }
+            // Fallback: corsproxy.io
+            const res2 = await fetch("https://corsproxy.io/?" + encodeURIComponent(url));
+            if (!res2.ok) throw new Error('All proxies failed');
+            return await res2.json();
+        };
         Promise.all([
-            fetch("https://corsproxy.io/?" + encodeURIComponent("https://whattomine.com/asic.json")).then(r => r.json()),
-            fetch("https://corsproxy.io/?" + encodeURIComponent("https://whattomine.com/coins.json")).then(r => r.json())
+            proxyFetch("https://whattomine.com/asic.json"),
+            proxyFetch("https://whattomine.com/coins.json")
         ])
             .then(([asicParsed, coinsParsed]) => {
                 if (!isMounted) return;

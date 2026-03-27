@@ -1,9 +1,10 @@
 /**
  * Crypto Price Service with Fallback Chain
- * CoinGecko → CryptoCompare → CoinCap
+ * CoinGecko → CryptoCompare
  *
  * CoinGecko free API limits historical data to 365 days.
- * CryptoCompare and CoinCap provide full historical data going back 10+ years.
+ * CryptoCompare provides full historical data going back 10+ years.
+ * CoinCap (api.coincap.io) removed — domain is down as of 2026-03.
  */
 
 const COINGECKO_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
@@ -27,23 +28,6 @@ const GECKO_TO_CC_SYMBOL: Record<string, string> = {
     'the-graph': 'GRT', aave: 'AAVE',
     'maker': 'MKR', 'pepe': 'PEPE', kaspa: 'KAS',
 };
-
-// CoinGecko ID → CoinCap slug (mostly the same, with exceptions)
-const GECKO_TO_COINCAP: Record<string, string> = {
-    binancecoin: 'binance-coin',
-    'avalanche-2': 'avalanche',
-    'matic-network': 'polygon',
-    'shiba-inu': 'shiba-inu',
-    'wrapped-bitcoin': 'wrapped-bitcoin',
-    'bitcoin-cash': 'bitcoin-cash',
-    'near-protocol': 'near-protocol',
-    'internet-computer': 'internet-computer',
-    'the-graph': 'the-graph',
-};
-
-function getCoinCapId(geckoId: string): string {
-    return GECKO_TO_COINCAP[geckoId] || geckoId;
-}
 
 function getCCSymbol(geckoId: string): string | null {
     return GECKO_TO_CC_SYMBOL[geckoId] || null;
@@ -103,33 +87,17 @@ async function getHistoricalPriceCryptoCompare(geckoId: string, dateStr: string)
     return price;
 }
 
-async function getHistoricalPriceCoinCap(geckoId: string, dateStr: string): Promise<number> {
-    const capId = getCoinCapId(geckoId);
-    const startMs = new Date(dateStr).getTime();
-    const endMs = startMs + 24 * 60 * 60 * 1000; // +1 day
-    const url = `https://api.coincap.io/v2/assets/${capId}/history?interval=d1&start=${startMs}&end=${endMs}`;
-    const res = await fetchWithTimeout(url);
-    if (!res.ok) throw new Error(`CoinCap history ${res.status}`);
-    const data = await res.json();
-    if (!data.data || data.data.length === 0) throw new Error('No CoinCap data');
-    const price = parseFloat(data.data[0].priceUsd);
-    if (!price || isNaN(price)) throw new Error('CoinCap price invalid');
-    return price;
-}
-
 /** Get the historical price with automatic fallback */
 export async function getHistoricalPrice(geckoId: string, dateStr: string): Promise<number> {
     const isOld = isDateOlderThan365Days(dateStr);
     const providers = isOld
         ? [ // For old dates, skip CoinGecko (will fail anyway)
             { name: 'CryptoCompare', fn: () => getHistoricalPriceCryptoCompare(geckoId, dateStr) },
-            { name: 'CoinCap', fn: () => getHistoricalPriceCoinCap(geckoId, dateStr) },
             { name: 'CoinGecko', fn: () => getHistoricalPriceCoinGecko(geckoId, dateStr) },
         ]
         : [ // For recent dates, prefer CoinGecko
             { name: 'CoinGecko', fn: () => getHistoricalPriceCoinGecko(geckoId, dateStr) },
             { name: 'CryptoCompare', fn: () => getHistoricalPriceCryptoCompare(geckoId, dateStr) },
-            { name: 'CoinCap', fn: () => getHistoricalPriceCoinCap(geckoId, dateStr) },
         ];
 
     let lastError: Error | null = null;
@@ -170,23 +138,11 @@ async function getCurrentPriceCryptoCompare(geckoId: string): Promise<number> {
     return data.USD;
 }
 
-async function getCurrentPriceCoinCap(geckoId: string): Promise<number> {
-    const capId = getCoinCapId(geckoId);
-    const url = `https://api.coincap.io/v2/assets/${capId}`;
-    const res = await fetchWithTimeout(url);
-    if (!res.ok) throw new Error(`CoinCap current ${res.status}`);
-    const data = await res.json();
-    const price = parseFloat(data.data?.priceUsd);
-    if (!price || isNaN(price)) throw new Error('CoinCap current price invalid');
-    return price;
-}
-
 /** Get the current price with automatic fallback */
 export async function getCurrentPrice(geckoId: string): Promise<number> {
     const providers = [
         { name: 'CoinGecko', fn: () => getCurrentPriceCoinGecko(geckoId) },
         { name: 'CryptoCompare', fn: () => getCurrentPriceCryptoCompare(geckoId) },
-        { name: 'CoinCap', fn: () => getCurrentPriceCoinCap(geckoId) },
     ];
 
     let lastError: Error | null = null;
@@ -231,31 +187,17 @@ async function getPriceChartCryptoCompare(geckoId: string, fromTs: number, toTs:
         .map((e: { close: number; time: number }) => [e.time * 1000, e.close] as [number, number]);
 }
 
-async function getPriceChartCoinCap(geckoId: string, fromTs: number, toTs: number): Promise<[number, number][]> {
-    const capId = getCoinCapId(geckoId);
-    const fromMs = fromTs * 1000;
-    const toMs = toTs * 1000;
-    const url = `https://api.coincap.io/v2/assets/${capId}/history?interval=d1&start=${fromMs}&end=${toMs}`;
-    const res = await fetchWithTimeout(url);
-    if (!res.ok) throw new Error(`CoinCap chart ${res.status}`);
-    const data = await res.json();
-    if (!data.data || data.data.length === 0) throw new Error('No CoinCap chart data');
-    return data.data.map((e: { time: number; priceUsd: string }) => [e.time, parseFloat(e.priceUsd)] as [number, number]);
-}
-
 /** Get price chart data with automatic fallback */
 export async function getPriceChart(geckoId: string, fromTs: number, toTs: number): Promise<[number, number][]> {
     const isOld = (Date.now() / 1000 - fromTs) > 365 * 24 * 60 * 60;
     const providers = isOld
         ? [
             { name: 'CryptoCompare', fn: () => getPriceChartCryptoCompare(geckoId, fromTs, toTs) },
-            { name: 'CoinCap', fn: () => getPriceChartCoinCap(geckoId, fromTs, toTs) },
             { name: 'CoinGecko', fn: () => getPriceChartCoinGecko(geckoId, fromTs, toTs) },
         ]
         : [
             { name: 'CoinGecko', fn: () => getPriceChartCoinGecko(geckoId, fromTs, toTs) },
             { name: 'CryptoCompare', fn: () => getPriceChartCryptoCompare(geckoId, fromTs, toTs) },
-            { name: 'CoinCap', fn: () => getPriceChartCoinCap(geckoId, fromTs, toTs) },
         ];
 
     let lastError: Error | null = null;
