@@ -7212,11 +7212,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Cross-validate halving impact models against actual supply data from blockchain explorers. Confirm that your model's issuance rate matches the actual block reward and production rate — discrepancies indicate modeling errors that will compound in price projection calculations."
       ],
     },
-    es: { interpret: ["Los cálculos de halving de Bitcoin modelan el impacto de los eventos programados de reducción de suministro que ocurren aproximadamente cada cuatro años (cada 210.000 bloques). Cada halving reduce la recompensa por bloque a la mitad — de 6,25 BTC a 3,125 BTC en el halving de 2024 — reduciendo la tasa de creación de nuevos Bitcoin. La calculadora ayuda a evaluar las dinámicas de oferta y demanda: con la emisión diaria cayendo de ~900 BTC a ~450 BTC, aproximadamente $27 millones menos de presión de venta diaria a $60.000/BTC entra al mercado desde los mineros.", "El análisis histórico de halvings muestra un patrón de apreciación del precio en los 12-18 meses posteriores a cada evento de halving, aunque la magnitud ha disminuido con cada ciclo. El halving de 2012 precedió un aumento de 100x en precio, el de 2016 aproximadamente 30x, y el de 2020 aproximadamente 8x. Este patrón de rendimientos decrecientes sugiere que el halving de 2024 puede producir rendimientos más modestos que los ciclos anteriores — una consideración crítica para inversores que usan datos históricos de halving para proyectar rendimientos futuros."], scenarios: ["Antes del halving de 2024, los mineros ganaban 6,25 BTC por bloque (aproximadamente 900 BTC/día). A $60.000/BTC, esto equivale a $54 millones en recompensas mineras diarias entrando al mercado como potencial presión de venta. Post-halving, la emisión diaria baja a 450 BTC ($27 millones). Esta reducción diaria de $27 millones en presión de venta es el shock de oferta fundamental que los alcistas del halving citan como el principal catalizador de precio.", "Un inversor modela la economía minera post-halving: los mineros con costos de electricidad superiores a $0,08/kWh — consulta nuestra <a href=\"/mining-calculator/\">calculadora de rentabilidad minera</a> — se vuelven no rentables cuando las recompensas por bloque se reducen a la mitad, forzándolos a cerrar o vender reservas de Bitcoin. Este período de capitulación minera típicamente dura 2-4 meses post-halving y puede crear presión de venta temporal antes de que el shock de reducción de suministro surta efecto."], checklist: ["Antes de basar decisiones de inversión en ciclos de halving, calcula el impacto porcentual decreciente de cada halving en la inflación total del suministro. El halving de 2024 reduce la inflación anual del 1,7% al 0,85% — significativo pero menos dramático que los halvings anteriores que recortaban tasas de inflación mucho más altas.", "Modela escenarios tanto alcistas como bajistas post-halving: la apreciación histórica del precio no está garantizada, y cada halving sucesivo puede producir rendimientos decrecientes a medida que el mercado madura y el shock de oferta se anticipa más."], mistakes: ["Asumir que los ciclos de halving pasados se repetirán exactamente. Cada ciclo de Bitcoin opera en un entorno macroeconómico diferente con diferente composición de participantes, panorama regulatorio y madurez de mercado. Usar multiplicadores históricos exactos para predicciones de precio es ajuste de curvas, no análisis.", "Ignorar la economía minera en el análisis de halving. Cuando las recompensas por bloque se reducen a la mitad, los mineros con altos costos operativos se vuelven no rentables y pueden liquidar reservas existentes de BTC para financiar operaciones. Esta presión de venta puede deprimir temporalmente los precios en los meses inmediatamente posteriores al halving."], benchmarks: ["Benchmarks de rendimiento post-halving: los rendimientos a 12 meses después del halving de 2012 fueron aproximadamente 8.000%, después del de 2016 aproximadamente 280%, y después del de 2020 aproximadamente 560%. La tendencia de múltiplo de pico de ciclo decreciente sugiere que los rendimientos máximos post-halving de 2024 podrían ser 100-300% — aún significativos pero requiriendo expectativas moderadas.", "Benchmarks de capitulación minera: el hashrate típicamente disminuye 5-15% en los 2-3 meses posteriores a un halving cuando los mineros no rentables se apagan. La recuperación del hashrate a niveles pre-halving históricamente toma 4-8 meses. Este cronograma de recuperación proporciona una estimación aproximada de cuándo la presión de venta minera se normaliza post-halving."], execution: ["Considera una estrategia <a href=\"/dca-calculator/\">DCA consciente del halving</a>: aumenta tu cantidad regular de compra de Bitcoin en un 50% comenzando 6 meses antes de la fecha esperada del halving, mantén la tasa aumentada durante 12 meses post-halving, luego reevalúa según las condiciones del mercado. Este enfoque aumenta la acumulación durante la ventana históricamente favorable pre/post-halving.", "Planifica tu inversión de halving alrededor de la fase de capitulación minera. Monitorea el hashrate de la red en los meses posteriores al halving — cuando el hashrate comienza a recuperarse (típicamente 2-4 meses post-halving), esto señala que los mineros más débiles han salido y la presión de venta está disminuyendo."], hygiene: ["Rastrea el progreso del conteo de bloques hacia el próximo halving usando un explorador de bloques. La fecha exacta del halving cambia según la velocidad real de producción de bloques. Mantener conciencia del cronograma preciso evita ser sorprendido por un evento de halving antes de lo esperado.", "Documenta tu tesis de inversión pre-halving y expectativas de rendimiento. Usa nuestra <a href=\"/what-if/\">calculadora what-if</a> para comparar los rendimientos reales post-halving contra tus proyecciones a intervalos de 6 y 12 meses. Este enfoque estructurado previene el sesgo de retrospectiva y construye una base de conocimiento personal."], validation: ["Verifica las proyecciones de fecha del halving comparando múltiples calculadoras y ajustando por la variabilidad reciente del tiempo de bloque. El bloque exacto del halving es fijo (cada 210.000 bloques), pero la fecha depende de los tiempos de bloque promedio reales, que fluctúan con los cambios de hashrate.", "Valida cruzadamente los modelos de impacto del halving contra datos reales de suministro de exploradores de blockchain. Confirma que la tasa de emisión de tu modelo coincide con la recompensa real por bloque y la tasa de producción — las discrepancias indican errores de modelado que se acumularán en los cálculos de proyección de precios."] },
-    pt: { interpret: ["Os cálculos de halving do Bitcoin modelam o impacto dos eventos programados de redução de oferta que ocorrem aproximadamente a cada quatro anos (a cada 210.000 blocos). Cada halving corta a recompensa por bloco pela metade — de 6,25 BTC para 3,125 BTC no halving de 2024 — reduzindo a taxa de criação de novos Bitcoin. A calculadora ajuda a avaliar as dinâmicas de oferta e demanda: com a emissão diária caindo de ~900 BTC para ~450 BTC, aproximadamente $27 milhões a menos de pressão de venda diária a $60.000/BTC entra no mercado dos mineradores.", "A análise histórica de halvings mostra um padrão de valorização do preço nos 12-18 meses seguintes a cada evento de halving, embora a magnitude tenha diminuído a cada ciclo. O halving de 2012 precedeu um aumento de 100x, o de 2016 aproximadamente 30x, e o de 2020 aproximadamente 8x. Este padrão de retornos decrescentes sugere que o halving de 2024 pode produzir retornos mais modestos que ciclos anteriores — uma consideração crítica para investidores usando dados históricos para projetar retornos futuros."], scenarios: ["Antes do halving de 2024, mineradores ganhavam 6,25 BTC por bloco (aproximadamente 900 BTC/dia). A $60.000/BTC, isso equivale a $54 milhões em recompensas de mineração diárias entrando no mercado como potencial pressão de venda. Pós-halving, a emissão diária cai para 450 BTC ($27 milhões). Essa redução diária de $27 milhões na pressão de venda é o choque de oferta fundamental citado pelos otimistas do halving.", "Um investidor modela a economia de mineração pós-halving: mineradores com custos de eletricidade acima de $0,08/kWh tornam-se não lucrativos quando as recompensas por bloco são cortadas pela metade, forçando-os a desligar ou vender reservas de Bitcoin. Este período de capitulação de mineradores tipicamente dura 2-4 meses pós-halving e pode criar pressão de venda temporária antes que o choque de redução de oferta faça efeito."], checklist: ["Antes de basear decisões de investimento em ciclos de halving, calcule o impacto percentual decrescente de cada halving na inflação total da oferta. O halving de 2024 reduz a inflação anual de 1,7% para 0,85% — significativo mas menos dramático que halvings anteriores que cortavam taxas de inflação muito mais altas.", "Modele cenários otimistas e pessimistas pós-halving: a valorização histórica não é garantida, e cada halving sucessivo pode produzir retornos decrescentes à medida que o mercado amadurece e o choque de oferta se torna mais antecipado."], mistakes: ["Assumir que ciclos de halving passados se repetirão exatamente. Cada ciclo do Bitcoin opera em um ambiente macroeconômico diferente com composição de participantes, cenário regulatório e maturidade de mercado diferentes. Usar multiplicadores históricos exatos para previsões de preço é ajuste de curva, não análise.", "Ignorar a economia de mineração na análise de halving. Quando as recompensas por bloco são cortadas pela metade, mineradores com altos custos operacionais tornam-se não lucrativos e podem liquidar reservas existentes de BTC para financiar operações. Essa pressão de venda pode deprimir temporariamente os preços nos meses imediatamente após o halving."], benchmarks: ["Benchmarks de retorno pós-halving: retornos de 12 meses após o halving de 2012 foram aproximadamente 8.000%, após 2016 aproximadamente 280%, e após 2020 aproximadamente 560%. A tendência de múltiplo de pico de ciclo decrescente sugere retornos máximos pós-halving de 2024 de 100-300% — ainda significativos mas requerendo expectativas moderadas.", "Benchmarks de capitulação de mineradores: o hashrate tipicamente declina 5-15% nos 2-3 meses seguintes a um halving quando mineradores não lucrativos desligam. A recuperação do hashrate para níveis pré-halving historicamente leva 4-8 meses."], execution: ["Considere uma estratégia <a href=\"/dca-calculator/\">DCA consciente do halving</a>: aumente sua compra regular de Bitcoin em 50% começando 6 meses antes da data esperada do halving, mantenha a taxa aumentada por 12 meses pós-halving, depois reavalie conforme as condições de mercado.", "Planeje seu investimento de halving em torno da fase de capitulação de mineradores. Monitore o hashrate da rede nos meses seguintes ao halving — quando o hashrate começar a se recuperar (tipicamente 2-4 meses pós-halving), isso sinaliza que os mineradores mais fracos saíram e a pressão de venda está diminuindo."], hygiene: ["Acompanhe o progresso da contagem de blocos em direção ao próximo halving usando um explorador de blocos. A data exata do halving muda com base na velocidade real de produção de blocos. Manter consciência do cronograma preciso evita ser pego de surpresa por um halving antes do esperado.", "Documente sua tese de investimento pré-halving e expectativas de retorno. Use nossa <a href=\"/what-if/\">calculadora what-if</a> para comparar retornos reais pós-halving contra suas projeções em intervalos de 6 e 12 meses."], validation: ["Verifique projeções de data do halving comparando múltiplas calculadoras e ajustando pela variabilidade recente do tempo de bloco. O bloco exato do halving é fixo (a cada 210.000 blocos), mas a data depende dos tempos médios reais de bloco, que flutuam com mudanças de hashrate.", "Valide cruzadamente modelos de impacto do halving contra dados reais de oferta de exploradores de blockchain. Confirme que a taxa de emissão do seu modelo corresponde à recompensa real por bloco e taxa de produção."] },
-    tr: { interpret: ["Bitcoin halving hesaplamaları, yaklaşık her dört yılda bir (her 210.000 blokta) gerçekleşen programlanmış arz azaltma olaylarının etkisini modeller. Her halving blok ödülünü yarıya indirir — 2024 halving'inde 6,25 BTC'den 3,125 BTC'ye — yeni Bitcoin oluşturma hızını azaltır. Hesaplayıcı arz-talep dinamiklerini değerlendirmeye yardımcı olur: günlük emisyon ~900 BTC'den ~450 BTC'ye düşerken, $60.000/BTC'de madencilerden yaklaşık günlük $27 milyon daha az satış baskısı piyasaya girer.", "Tarihsel halving analizi, her halving olayını takip eden 12-18 ayda fiyat artışı paterni gösterir, ancak büyüklük her döngüde azalmıştır. 2012 halving'i 100x fiyat artışını, 2016 yaklaşık 30x'i, 2020 ise yaklaşık 8x'i önceler. Bu azalan getiri paterni, 2024 halving'inin önceki döngülerden daha mütevazı getiriler üretebileceğini düşündürür."], scenarios: ["2024 halving'i öncesinde madenciler blok başına 6,25 BTC (günde yaklaşık 900 BTC) kazanıyordu. $60.000/BTC'de bu, potansiyel satış baskısı olarak piyasaya giren günlük $54 milyon madencilik ödülüne eşittir. Halving sonrası günlük emisyon 450 BTC'ye ($27 milyon) düşer. Bu günlük $27 milyon satış baskısı azalması, halving boğalarının birincil fiyat katalizörü olarak belirttiği temel arz şokudur.", "Bir yatırımcı halving sonrası madencilik ekonomisini modeller: elektrik maliyetleri $0,08/kWh'ın üzerinde olan madenciler blok ödülleri yarıya düştüğünde kârsız hale gelir, kapanmaya veya Bitcoin rezervlerini satmaya zorlanır. Bu madenci kapitülasyonu dönemi tipik olarak halving sonrası 2-4 ay sürer."], checklist: ["Yatırım kararlarını halving döngülerine dayandırmadan önce, her halving'in toplam arz enflasyonu üzerindeki azalan yüzde etkisini hesaplayın. 2024 halving'i yıllık enflasyonu %1,7'den %0,85'e düşürür — anlamlı ama çok daha yüksek enflasyon oranlarını kesen erken halving'lerden daha az dramatik.", "Hem boğa hem ayı halving sonrası senaryolarını modelleyin: tarihsel fiyat artışı garanti değildir ve her ardışık halving, piyasa olgunlaştıkça ve arz şoku daha fazla öngörüldükçe azalan getiriler üretebilir."], mistakes: ["Geçmiş halving döngülerinin tam olarak tekrarlayacağını varsaymak. Her Bitcoin döngüsü farklı makroekonomik ortamda, farklı katılımcı bileşimi, düzenleyici ortam ve piyasa olgunluğuyla çalışır. Fiyat tahminleri için tam tarihsel çarpanlar kullanmak, analiz değil eğri uydurmasıdır.", "Halving analizinde madenci ekonomisini göz ardı etmek. Blok ödülleri yarıya düştüğünde, yüksek işletme maliyetli madenciler kârsız hale gelir ve operasyonları finanse etmek için mevcut BTC rezervlerini satabilir. Bu satış baskısı halving'i hemen takip eden aylarda fiyatları geçici olarak baskılayabilir."], benchmarks: ["Halving sonrası getiri kıyaslamaları: 2012 halving'i sonrası 12 aylık getiriler yaklaşık %8.000, 2016 sonrası yaklaşık %280, 2020 sonrası yaklaşık %560. Azalan döngü tepe çarpanı eğilimi, 2024 halving sonrası tepe getirilerinin %100-300 olabileceğini düşündürür.", "Madenci kapitülasyonu kıyaslamaları: kârsız madenciler kapandıkça halving'i takip eden 2-3 ayda hashrate tipik olarak %5-15 düşer. Hashrate'in halving öncesi seviyelere dönmesi tarihsel olarak 4-8 ay sürer."], execution: ["Halving'e duyarlı bir <a href=\"/dca-calculator/\">DCA stratejisi</a> düşünün: beklenen halving tarihinden 6 ay önce düzenli Bitcoin alım miktarınızı %50 artırın, halving sonrası 12 ay boyunca artırılmış oranı koruyun, ardından piyasa koşullarına göre yeniden değerlendirin.", "Halving yatırımınızı madenci kapitülasyonu aşaması etrafında planlayın. Halving'i takip eden aylarda ağ hashrate'ini izleyin — hashrate toparlanmaya başladığında (tipik olarak halving sonrası 2-4 ay), bu en zayıf madencilerin çıktığını ve satış baskısının azaldığını işaret eder."], hygiene: ["Bir blok gezgini kullanarak sonraki halving'e doğru blok sayısı ilerlemesini takip edin. Kesin halving tarihi gerçek blok üretim hızına göre kayar. Kesin zaman çizelgesinin farkında olmak beklenenden erken bir halving olayına hazırlıksız yakalanmayı önler.", "Halving öncesi yatırım tezinizi ve getiri beklentilerinizi belgeleyin. Gerçek halving sonrası getirileri 6 ve 12 aylık aralıklarla projeksiyonlarınızla karşılaştırmak için <a href=\"/what-if/\">what-if hesaplayıcımızı</a> kullanın."], validation: ["Birden fazla hesaplayıcıyı karşılaştırarak ve son blok zamanı değişkenliğine göre ayarlayarak halving tarih projeksiyonlarını doğrulayın. Kesin halving bloğu sabittir (her 210.000 blok), ancak tarih gerçek ortalama blok sürelerine bağlıdır.", "Halving etki modellerini blockchain gezginlerinden elde edilen gerçek arz verileriyle çapraz doğrulayın. Modelinizin emisyon oranının gerçek blok ödülü ve üretim hızıyla eşleştiğini doğrulayın."] },
-    hi: { interpret: ["Bitcoin halving गणनाएं लगभग हर चार वर्षों (प्रत्येक 210,000 ब्लॉक) में होने वाले प्रोग्राम किए गए आपूर्ति कटौती इवेंट के प्रभाव को मॉडल करती हैं। प्रत्येक halving ब्लॉक रिवॉर्ड को आधा करता है — 2024 halving में 6.25 BTC से 3.125 BTC तक — नए Bitcoin निर्माण की दर को कम करता है। कैलकुलेटर आपूर्ति-मांग गतिशीलता का आकलन करने में मदद करता है: दैनिक जारी करना ~900 BTC से ~450 BTC तक गिरने के साथ, $60,000/BTC पर माइनर्स से लगभग $27 मिलियन कम दैनिक बिक्री दबाव बाजार में प्रवेश करता है।", "ऐतिहासिक halving विश्लेषण प्रत्येक halving इवेंट के बाद 12-18 महीनों में मूल्य वृद्धि का पैटर्न दिखाता है, हालांकि प्रत्येक चक्र के साथ परिमाण घटा है। 2012 halving ने 100x मूल्य वृद्धि से पहले किया, 2016 ने लगभग 30x, और 2020 ने लगभग 8x। यह घटते रिटर्न पैटर्न सुझाव देता है कि 2024 halving पिछले चक्रों से अधिक मामूली रिटर्न दे सकता है।"], scenarios: ["2024 halving से पहले, माइनर्स प्रति ब्लॉक 6.25 BTC (लगभग 900 BTC/दिन) कमा रहे थे। $60,000/BTC पर, यह संभावित बिक्री दबाव के रूप में बाजार में प्रवेश करने वाले दैनिक $54 मिलियन माइनिंग रिवॉर्ड के बराबर है। Halving के बाद, दैनिक जारी करना 450 BTC ($27 मिलियन) तक गिर जाता है।", "एक निवेशक halving के बाद की माइनिंग अर्थव्यवस्था को मॉडल करता है: $0.08/kWh से अधिक बिजली लागत वाले माइनर्स जब ब्लॉक रिवॉर्ड आधा हो जाता है तो लाभहीन हो जाते हैं, उन्हें बंद होने या Bitcoin भंडार बेचने के लिए मजबूर करता है। यह माइनर कैपिट्यूलेशन अवधि आम तौर पर halving के बाद 2-4 महीने तक रहती है।"], checklist: ["Halving चक्रों पर निवेश निर्णय आधारित करने से पहले, कुल आपूर्ति मुद्रास्फीति पर प्रत्येक halving के घटते प्रतिशत प्रभाव की गणना करें। 2024 halving वार्षिक मुद्रास्फीति को 1.7% से 0.85% तक कम करता है — सार्थक लेकिन उन प्रारंभिक halvings से कम नाटकीय जिन्होंने बहुत अधिक मुद्रास्फीति दरों में कटौती की।", "तेजी और मंदी दोनों के halving के बाद के परिदृश्यों को मॉडल करें: ऐतिहासिक मूल्य वृद्धि की गारंटी नहीं है, और जैसे-जैसे बाजार परिपक्व होता है, प्रत्येक क्रमिक halving घटते रिटर्न उत्पन्न कर सकता है।"], mistakes: ["यह मानना कि पिछले halving चक्र बिल्कुल वैसे ही दोहराएंगे। प्रत्येक Bitcoin चक्र अलग व्यापक आर्थिक वातावरण में भिन्न प्रतिभागी संरचना, नियामक परिदृश्य और बाजार परिपक्वता के साथ संचालित होता है। मूल्य भविष्यवाणियों के लिए सटीक ऐतिहासिक गुणकों का उपयोग करना कर्व-फिटिंग है, विश्लेषण नहीं।", "Halving विश्लेषण में माइनर अर्थशास्त्र की अनदेखी करना। जब ब्लॉक रिवॉर्ड आधा होता है, तो उच्च परिचालन लागत वाले माइनर्स लाभहीन हो जाते हैं और संचालन के वित्तपोषण के लिए मौजूदा BTC भंडार बेच सकते हैं।"], benchmarks: ["Halving के बाद रिटर्न बेंचमार्क: 2012 halving के बाद 12 महीने के रिटर्न लगभग 8,000%, 2016 के बाद लगभग 280%, और 2020 के बाद लगभग 560% थे। घटता शिखर-चक्र गुणक रुझान सुझाव देता है कि 2024 halving के बाद शिखर रिटर्न 100-300% हो सकते हैं।", "माइनर कैपिट्यूलेशन बेंचमार्क: लाभहीन माइनर्स बंद होने पर halving के बाद 2-3 महीनों में हैशरेट आम तौर पर 5-15% गिरता है। Halving पूर्व स्तरों तक हैशरेट की रिकवरी ऐतिहासिक रूप से 4-8 महीने लेती है।"], execution: ["Halving-जागरूक <a href=\"/dca-calculator/\">DCA रणनीति</a> पर विचार करें: अपेक्षित halving तिथि से 6 महीने पहले शुरू करके अपनी नियमित Bitcoin खरीद राशि को 50% बढ़ाएं, halving के बाद 12 महीने तक बढ़ी हुई दर बनाए रखें, फिर बाजार स्थितियों के आधार पर पुनर्मूल्यांकन करें।", "माइनर कैपिट्यूलेशन चरण के इर्द-गिर्द अपने halving निवेश की योजना बनाएं। Halving के बाद के महीनों में नेटवर्क हैशरेट की निगरानी करें — जब हैशरेट ठीक होना शुरू हो (आम तौर पर halving के 2-4 महीने बाद), यह संकेत देता है कि कमजोर माइनर्स बाहर हो गए हैं।"], hygiene: ["ब्लॉक एक्सप्लोरर का उपयोग करके अगले halving की ओर ब्लॉक काउंट प्रगति को ट्रैक करें। सटीक halving तिथि वास्तविक ब्लॉक उत्पादन गति के आधार पर बदलती है।", "अपनी halving पूर्व निवेश थीसिस और रिटर्न अपेक्षाओं का दस्तावेजीकरण करें। 6 और 12 महीने के अंतराल पर वास्तविक halving के बाद के रिटर्न की तुलना अपनी प्रक्षेपणों से करने के लिए हमारे <a href=\"/what-if/\">what-if कैलकुलेटर</a> का उपयोग करें।"], validation: ["कई कैलकुलेटर की तुलना करके और हाल के ब्लॉक समय परिवर्तनशीलता के लिए समायोजित करके halving तिथि प्रक्षेपणों की पुष्टि करें। सटीक halving ब्लॉक निश्चित है (प्रत्येक 210,000 ब्लॉक), लेकिन तिथि वास्तविक औसत ब्लॉक समय पर निर्भर करती है।", "ब्लॉकचेन एक्सप्लोरर से वास्तविक आपूर्ति डेटा के विरुद्ध halving प्रभाव मॉडल को क्रॉस-वैलिडेट करें। पुष्टि करें कि आपके मॉडल की जारी करने की दर वास्तविक ब्लॉक रिवॉर्ड और उत्पादन दर से मेल खाती है।"] },
-    ru: { interpret: ["Расчёты халвинга Bitcoin моделируют влияние запрограммированных событий сокращения эмиссии, происходящих примерно каждые четыре года (каждые 210 000 блоков). Каждый халвинг уменьшает вознаграждение за блок вдвое — с 6,25 BTC до 3,125 BTC в халвинге 2024 — снижая скорость создания новых Bitcoin. Калькулятор помогает оценить динамику спроса и предложения: при падении дневной эмиссии с ~900 BTC до ~450 BTC, на рынок поступает примерно на $27 млн меньше ежедневного давления продаж от майнеров при $60 000/BTC.", "Исторический анализ халвингов показывает паттерн роста цены в 12-18 месяцев после каждого события, хотя амплитуда снижалась с каждым циклом. Халвинг 2012 предшествовал росту в 100x, 2016 — примерно 30x, 2020 — примерно 8x. Этот паттерн убывающей доходности предполагает, что халвинг 2024 может принести более скромные результаты, чем предыдущие циклы."], scenarios: ["До халвинга 2024 майнеры получали 6,25 BTC за блок (примерно 900 BTC/день). При $60 000/BTC это составляло $54 млн дневных наград от майнинга. После халвинга дневная эмиссия падает до 450 BTC ($27 млн). Это сокращение давления продаж на $27 млн в день — фундаментальный шок предложения.", "Инвестор моделирует экономику майнинга после халвинга: майнеры с затратами на электричество выше $0,08/кВтч становятся убыточными, вынуждая их отключаться или продавать резервы Bitcoin. Этот период капитуляции майнеров обычно длится 2-4 месяца после халвинга."], checklist: ["Прежде чем основывать инвестиционные решения на циклах халвинга, рассчитайте уменьшающееся процентное влияние каждого халвинга на общую инфляцию предложения. Халвинг 2024 снижает годовую инфляцию с 1,7% до 0,85% — значимо, но менее драматично, чем ранние халвинги.", "Моделируйте как бычьи, так и медвежьи сценарии после халвинга: исторический рост цены не гарантирован, и каждый последующий халвинг может приносить убывающую доходность по мере созревания рынка."], mistakes: ["Предполагать, что прошлые циклы халвинга повторятся в точности. Каждый цикл Bitcoin работает в другой макроэкономической среде с другим составом участников, регуляторным ландшафтом и зрелостью рынка.", "Игнорирование экономики майнеров при анализе халвинга. Когда вознаграждение за блок уменьшается вдвое, майнеры с высокими операционными затратами становятся убыточными и могут сбрасывать существующие резервы BTC для финансирования операций."], benchmarks: ["Бенчмарки доходности после халвинга: 12-месячная доходность после халвинга 2012 составила примерно 8 000%, после 2016 — примерно 280%, после 2020 — примерно 560%. Тренд убывающего пикового множителя цикла предполагает пиковую доходность после халвинга 2024 в 100-300%.", "Бенчмарки капитуляции майнеров: хешрейт обычно снижается на 5-15% в 2-3 месяца после халвинга. Восстановление хешрейта до уровней до халвинга исторически занимает 4-8 месяцев."], execution: ["Рассмотрите стратегию <a href=\"/dca-calculator/\">DCA с учётом халвинга</a>: увеличьте регулярную сумму покупки Bitcoin на 50% за 6 месяцев до ожидаемой даты халвинга, поддерживайте увеличенную ставку в течение 12 месяцев после халвинга, затем пересмотрите.", "Планируйте инвестиции в халвинг с учётом фазы капитуляции майнеров. Отслеживайте хешрейт сети в месяцы после халвинга — когда хешрейт начинает восстанавливаться, это сигнализирует об уходе слабых майнеров."], hygiene: ["Отслеживайте прогресс счёта блоков к следующему халвингу с помощью обозревателя блоков. Точная дата халвинга сдвигается в зависимости от фактической скорости производства блоков.", "Задокументируйте свой инвестиционный тезис и ожидания доходности до халвинга. Используйте наш <a href=\"/what-if/\">what-if калькулятор</a> для сравнения фактической доходности после халвинга с вашими прогнозами через 6 и 12 месяцев."], validation: ["Проверяйте прогнозы даты халвинга, сравнивая несколько калькуляторов и корректируя с учётом недавней изменчивости времени блока. Точный блок халвинга фиксирован (каждые 210 000 блоков), но дата зависит от фактического среднего времени блока.", "Перекрёстно проверяйте модели влияния халвинга с фактическими данными о предложении из обозревателей блокчейна."] },
+    es: { interpret: ["Los cálculos de halving de Bitcoin modelan el impacto de los eventos programados de reducción de suministro que ocurren aproximadamente cada cuatro años (cada 210.000 bloques). Cada halving reduce la recompensa por bloque a la mitad — de 6,25 BTC a 3,125 BTC en el halving de 2024 — reduciendo la tasa de creación de nuevos Bitcoin. La calculadora ayuda a evaluar las dinámicas de oferta y demanda: con la emisión diaria cayendo de ~900 BTC a ~450 BTC, aproximadamente $27 millones menos de presión de venta diaria a $60.000/BTC entra al mercado desde los mineros.", "El análisis histórico de halvings muestra un patrón de apreciación del precio en los 12-18 meses posteriores a cada evento de halving, aunque la magnitud ha disminuido con cada ciclo. El halving de 2012 precedió un aumento de 100x en precio, el de 2016 aproximadamente 30x, y el de 2020 aproximadamente 8x. Este patrón de rendimientos decrecientes sugiere que el halving de 2024 puede producir rendimientos más modestos que los ciclos anteriores — una consideración crítica para inversores que usan datos históricos de halving para proyectar rendimientos futuros."], scenarios: ["Antes del halving de 2024, los mineros ganaban 6,25 BTC por bloque (aproximadamente 900 BTC/día). A $60.000/BTC, esto equivale a $54 millones en recompensas mineras diarias entrando al mercado como potencial presión de venta. Post-halving, la emisión diaria baja a 450 BTC ($27 millones). Esta reducción diaria de $27 millones en presión de venta es el shock de oferta fundamental que los alcistas del halving citan como el principal catalizador de precio.", "Un inversor modela la economía minera post-halving: los mineros con costos de electricidad superiores a $0,08/kWh — consulta nuestra <a href=\"/es/calculadora-mineria-bitcoin/\">calculadora de rentabilidad minera</a> — se vuelven no rentables cuando las recompensas por bloque se reducen a la mitad, forzándolos a cerrar o vender reservas de Bitcoin. Este período de capitulación minera típicamente dura 2-4 meses post-halving y puede crear presión de venta temporal antes de que el shock de reducción de suministro surta efecto."], checklist: ["Antes de basar decisiones de inversión en ciclos de halving, calcula el impacto porcentual decreciente de cada halving en la inflación total del suministro. El halving de 2024 reduce la inflación anual del 1,7% al 0,85% — significativo pero menos dramático que los halvings anteriores que recortaban tasas de inflación mucho más altas.", "Modela escenarios tanto alcistas como bajistas post-halving: la apreciación histórica del precio no está garantizada, y cada halving sucesivo puede producir rendimientos decrecientes a medida que el mercado madura y el shock de oferta se anticipa más."], mistakes: ["Asumir que los ciclos de halving pasados se repetirán exactamente. Cada ciclo de Bitcoin opera en un entorno macroeconómico diferente con diferente composición de participantes, panorama regulatorio y madurez de mercado. Usar multiplicadores históricos exactos para predicciones de precio es ajuste de curvas, no análisis.", "Ignorar la economía minera en el análisis de halving. Cuando las recompensas por bloque se reducen a la mitad, los mineros con altos costos operativos se vuelven no rentables y pueden liquidar reservas existentes de BTC para financiar operaciones. Esta presión de venta puede deprimir temporalmente los precios en los meses inmediatamente posteriores al halving."], benchmarks: ["Benchmarks de rendimiento post-halving: los rendimientos a 12 meses después del halving de 2012 fueron aproximadamente 8.000%, después del de 2016 aproximadamente 280%, y después del de 2020 aproximadamente 560%. La tendencia de múltiplo de pico de ciclo decreciente sugiere que los rendimientos máximos post-halving de 2024 podrían ser 100-300% — aún significativos pero requiriendo expectativas moderadas.", "Benchmarks de capitulación minera: el hashrate típicamente disminuye 5-15% en los 2-3 meses posteriores a un halving cuando los mineros no rentables se apagan. La recuperación del hashrate a niveles pre-halving históricamente toma 4-8 meses. Este cronograma de recuperación proporciona una estimación aproximada de cuándo la presión de venta minera se normaliza post-halving."], execution: ["Considera una estrategia <a href=\"/es/calculadora-dca/\">DCA consciente del halving</a>: aumenta tu cantidad regular de compra de Bitcoin en un 50% comenzando 6 meses antes de la fecha esperada del halving, mantén la tasa aumentada durante 12 meses post-halving, luego reevalúa según las condiciones del mercado. Este enfoque aumenta la acumulación durante la ventana históricamente favorable pre/post-halving.", "Planifica tu inversión de halving alrededor de la fase de capitulación minera. Monitorea el hashrate de la red en los meses posteriores al halving — cuando el hashrate comienza a recuperarse (típicamente 2-4 meses post-halving), esto señala que los mineros más débiles han salido y la presión de venta está disminuyendo."], hygiene: ["Rastrea el progreso del conteo de bloques hacia el próximo halving usando un explorador de bloques. La fecha exacta del halving cambia según la velocidad real de producción de bloques. Mantener conciencia del cronograma preciso evita ser sorprendido por un evento de halving antes de lo esperado.", "Documenta tu tesis de inversión pre-halving y expectativas de rendimiento. Usa nuestra <a href=\"/es/calculadora-y-si/\">calculadora what-if</a> para comparar los rendimientos reales post-halving contra tus proyecciones a intervalos de 6 y 12 meses. Este enfoque estructurado previene el sesgo de retrospectiva y construye una base de conocimiento personal."], validation: ["Verifica las proyecciones de fecha del halving comparando múltiples calculadoras y ajustando por la variabilidad reciente del tiempo de bloque. El bloque exacto del halving es fijo (cada 210.000 bloques), pero la fecha depende de los tiempos de bloque promedio reales, que fluctúan con los cambios de hashrate.", "Valida cruzadamente los modelos de impacto del halving contra datos reales de suministro de exploradores de blockchain. Confirma que la tasa de emisión de tu modelo coincide con la recompensa real por bloque y la tasa de producción — las discrepancias indican errores de modelado que se acumularán en los cálculos de proyección de precios."] },
+    pt: { interpret: ["Os cálculos de halving do Bitcoin modelam o impacto dos eventos programados de redução de oferta que ocorrem aproximadamente a cada quatro anos (a cada 210.000 blocos). Cada halving corta a recompensa por bloco pela metade — de 6,25 BTC para 3,125 BTC no halving de 2024 — reduzindo a taxa de criação de novos Bitcoin. A calculadora ajuda a avaliar as dinâmicas de oferta e demanda: com a emissão diária caindo de ~900 BTC para ~450 BTC, aproximadamente $27 milhões a menos de pressão de venda diária a $60.000/BTC entra no mercado dos mineradores.", "A análise histórica de halvings mostra um padrão de valorização do preço nos 12-18 meses seguintes a cada evento de halving, embora a magnitude tenha diminuído a cada ciclo. O halving de 2012 precedeu um aumento de 100x, o de 2016 aproximadamente 30x, e o de 2020 aproximadamente 8x. Este padrão de retornos decrescentes sugere que o halving de 2024 pode produzir retornos mais modestos que ciclos anteriores — uma consideração crítica para investidores usando dados históricos para projetar retornos futuros."], scenarios: ["Antes do halving de 2024, mineradores ganhavam 6,25 BTC por bloco (aproximadamente 900 BTC/dia). A $60.000/BTC, isso equivale a $54 milhões em recompensas de mineração diárias entrando no mercado como potencial pressão de venda. Pós-halving, a emissão diária cai para 450 BTC ($27 milhões). Essa redução diária de $27 milhões na pressão de venda é o choque de oferta fundamental citado pelos otimistas do halving.", "Um investidor modela a economia de mineração pós-halving: mineradores com custos de eletricidade acima de $0,08/kWh tornam-se não lucrativos quando as recompensas por bloco são cortadas pela metade, forçando-os a desligar ou vender reservas de Bitcoin. Este período de capitulação de mineradores tipicamente dura 2-4 meses pós-halving e pode criar pressão de venda temporária antes que o choque de redução de oferta faça efeito."], checklist: ["Antes de basear decisões de investimento em ciclos de halving, calcule o impacto percentual decrescente de cada halving na inflação total da oferta. O halving de 2024 reduz a inflação anual de 1,7% para 0,85% — significativo mas menos dramático que halvings anteriores que cortavam taxas de inflação muito mais altas.", "Modele cenários otimistas e pessimistas pós-halving: a valorização histórica não é garantida, e cada halving sucessivo pode produzir retornos decrescentes à medida que o mercado amadurece e o choque de oferta se torna mais antecipado."], mistakes: ["Assumir que ciclos de halving passados se repetirão exatamente. Cada ciclo do Bitcoin opera em um ambiente macroeconômico diferente com composição de participantes, cenário regulatório e maturidade de mercado diferentes. Usar multiplicadores históricos exatos para previsões de preço é ajuste de curva, não análise.", "Ignorar a economia de mineração na análise de halving. Quando as recompensas por bloco são cortadas pela metade, mineradores com altos custos operacionais tornam-se não lucrativos e podem liquidar reservas existentes de BTC para financiar operações. Essa pressão de venda pode deprimir temporariamente os preços nos meses imediatamente após o halving."], benchmarks: ["Benchmarks de retorno pós-halving: retornos de 12 meses após o halving de 2012 foram aproximadamente 8.000%, após 2016 aproximadamente 280%, e após 2020 aproximadamente 560%. A tendência de múltiplo de pico de ciclo decrescente sugere retornos máximos pós-halving de 2024 de 100-300% — ainda significativos mas requerendo expectativas moderadas.", "Benchmarks de capitulação de mineradores: o hashrate tipicamente declina 5-15% nos 2-3 meses seguintes a um halving quando mineradores não lucrativos desligam. A recuperação do hashrate para níveis pré-halving historicamente leva 4-8 meses."], execution: ["Considere uma estratégia <a href=\"/pt/calculadora-dca/\">DCA consciente do halving</a>: aumente sua compra regular de Bitcoin em 50% começando 6 meses antes da data esperada do halving, mantenha a taxa aumentada por 12 meses pós-halving, depois reavalie conforme as condições de mercado.", "Planeje seu investimento de halving em torno da fase de capitulação de mineradores. Monitore o hashrate da rede nos meses seguintes ao halving — quando o hashrate começar a se recuperar (tipicamente 2-4 meses pós-halving), isso sinaliza que os mineradores mais fracos saíram e a pressão de venda está diminuindo."], hygiene: ["Acompanhe o progresso da contagem de blocos em direção ao próximo halving usando um explorador de blocos. A data exata do halving muda com base na velocidade real de produção de blocos. Manter consciência do cronograma preciso evita ser pego de surpresa por um halving antes do esperado.", "Documente sua tese de investimento pré-halving e expectativas de retorno. Use nossa <a href=\"/pt/calculadora-e-se/\">calculadora what-if</a> para comparar retornos reais pós-halving contra suas projeções em intervalos de 6 e 12 meses."], validation: ["Verifique projeções de data do halving comparando múltiplas calculadoras e ajustando pela variabilidade recente do tempo de bloco. O bloco exato do halving é fixo (a cada 210.000 blocos), mas a data depende dos tempos médios reais de bloco, que flutuam com mudanças de hashrate.", "Valide cruzadamente modelos de impacto do halving contra dados reais de oferta de exploradores de blockchain. Confirme que a taxa de emissão do seu modelo corresponde à recompensa real por bloco e taxa de produção."] },
+    tr: { interpret: ["Bitcoin halving hesaplamaları, yaklaşık her dört yılda bir (her 210.000 blokta) gerçekleşen programlanmış arz azaltma olaylarının etkisini modeller. Her halving blok ödülünü yarıya indirir — 2024 halving'inde 6,25 BTC'den 3,125 BTC'ye — yeni Bitcoin oluşturma hızını azaltır. Hesaplayıcı arz-talep dinamiklerini değerlendirmeye yardımcı olur: günlük emisyon ~900 BTC'den ~450 BTC'ye düşerken, $60.000/BTC'de madencilerden yaklaşık günlük $27 milyon daha az satış baskısı piyasaya girer.", "Tarihsel halving analizi, her halving olayını takip eden 12-18 ayda fiyat artışı paterni gösterir, ancak büyüklük her döngüde azalmıştır. 2012 halving'i 100x fiyat artışını, 2016 yaklaşık 30x'i, 2020 ise yaklaşık 8x'i önceler. Bu azalan getiri paterni, 2024 halving'inin önceki döngülerden daha mütevazı getiriler üretebileceğini düşündürür."], scenarios: ["2024 halving'i öncesinde madenciler blok başına 6,25 BTC (günde yaklaşık 900 BTC) kazanıyordu. $60.000/BTC'de bu, potansiyel satış baskısı olarak piyasaya giren günlük $54 milyon madencilik ödülüne eşittir. Halving sonrası günlük emisyon 450 BTC'ye ($27 milyon) düşer. Bu günlük $27 milyon satış baskısı azalması, halving boğalarının birincil fiyat katalizörü olarak belirttiği temel arz şokudur.", "Bir yatırımcı halving sonrası madencilik ekonomisini modeller: elektrik maliyetleri $0,08/kWh'ın üzerinde olan madenciler blok ödülleri yarıya düştüğünde kârsız hale gelir, kapanmaya veya Bitcoin rezervlerini satmaya zorlanır. Bu madenci kapitülasyonu dönemi tipik olarak halving sonrası 2-4 ay sürer."], checklist: ["Yatırım kararlarını halving döngülerine dayandırmadan önce, her halving'in toplam arz enflasyonu üzerindeki azalan yüzde etkisini hesaplayın. 2024 halving'i yıllık enflasyonu %1,7'den %0,85'e düşürür — anlamlı ama çok daha yüksek enflasyon oranlarını kesen erken halving'lerden daha az dramatik.", "Hem boğa hem ayı halving sonrası senaryolarını modelleyin: tarihsel fiyat artışı garanti değildir ve her ardışık halving, piyasa olgunlaştıkça ve arz şoku daha fazla öngörüldükçe azalan getiriler üretebilir."], mistakes: ["Geçmiş halving döngülerinin tam olarak tekrarlayacağını varsaymak. Her Bitcoin döngüsü farklı makroekonomik ortamda, farklı katılımcı bileşimi, düzenleyici ortam ve piyasa olgunluğuyla çalışır. Fiyat tahminleri için tam tarihsel çarpanlar kullanmak, analiz değil eğri uydurmasıdır.", "Halving analizinde madenci ekonomisini göz ardı etmek. Blok ödülleri yarıya düştüğünde, yüksek işletme maliyetli madenciler kârsız hale gelir ve operasyonları finanse etmek için mevcut BTC rezervlerini satabilir. Bu satış baskısı halving'i hemen takip eden aylarda fiyatları geçici olarak baskılayabilir."], benchmarks: ["Halving sonrası getiri kıyaslamaları: 2012 halving'i sonrası 12 aylık getiriler yaklaşık %8.000, 2016 sonrası yaklaşık %280, 2020 sonrası yaklaşık %560. Azalan döngü tepe çarpanı eğilimi, 2024 halving sonrası tepe getirilerinin %100-300 olabileceğini düşündürür.", "Madenci kapitülasyonu kıyaslamaları: kârsız madenciler kapandıkça halving'i takip eden 2-3 ayda hashrate tipik olarak %5-15 düşer. Hashrate'in halving öncesi seviyelere dönmesi tarihsel olarak 4-8 ay sürer."], execution: ["Halving'e duyarlı bir <a href=\"/tr/dca-hesaplayici/\">DCA stratejisi</a> düşünün: beklenen halving tarihinden 6 ay önce düzenli Bitcoin alım miktarınızı %50 artırın, halving sonrası 12 ay boyunca artırılmış oranı koruyun, ardından piyasa koşullarına göre yeniden değerlendirin.", "Halving yatırımınızı madenci kapitülasyonu aşaması etrafında planlayın. Halving'i takip eden aylarda ağ hashrate'ini izleyin — hashrate toparlanmaya başladığında (tipik olarak halving sonrası 2-4 ay), bu en zayıf madencilerin çıktığını ve satış baskısının azaldığını işaret eder."], hygiene: ["Bir blok gezgini kullanarak sonraki halving'e doğru blok sayısı ilerlemesini takip edin. Kesin halving tarihi gerçek blok üretim hızına göre kayar. Kesin zaman çizelgesinin farkında olmak beklenenden erken bir halving olayına hazırlıksız yakalanmayı önler.", "Halving öncesi yatırım tezinizi ve getiri beklentilerinizi belgeleyin. Gerçek halving sonrası getirileri 6 ve 12 aylık aralıklarla projeksiyonlarınızla karşılaştırmak için <a href=\"/tr/ya-oyle-olsaydi/\">what-if hesaplayıcımızı</a> kullanın."], validation: ["Birden fazla hesaplayıcıyı karşılaştırarak ve son blok zamanı değişkenliğine göre ayarlayarak halving tarih projeksiyonlarını doğrulayın. Kesin halving bloğu sabittir (her 210.000 blok), ancak tarih gerçek ortalama blok sürelerine bağlıdır.", "Halving etki modellerini blockchain gezginlerinden elde edilen gerçek arz verileriyle çapraz doğrulayın. Modelinizin emisyon oranının gerçek blok ödülü ve üretim hızıyla eşleştiğini doğrulayın."] },
+    hi: { interpret: ["Bitcoin halving गणनाएं लगभग हर चार वर्षों (प्रत्येक 210,000 ब्लॉक) में होने वाले प्रोग्राम किए गए आपूर्ति कटौती इवेंट के प्रभाव को मॉडल करती हैं। प्रत्येक halving ब्लॉक रिवॉर्ड को आधा करता है — 2024 halving में 6.25 BTC से 3.125 BTC तक — नए Bitcoin निर्माण की दर को कम करता है। कैलकुलेटर आपूर्ति-मांग गतिशीलता का आकलन करने में मदद करता है: दैनिक जारी करना ~900 BTC से ~450 BTC तक गिरने के साथ, $60,000/BTC पर माइनर्स से लगभग $27 मिलियन कम दैनिक बिक्री दबाव बाजार में प्रवेश करता है।", "ऐतिहासिक halving विश्लेषण प्रत्येक halving इवेंट के बाद 12-18 महीनों में मूल्य वृद्धि का पैटर्न दिखाता है, हालांकि प्रत्येक चक्र के साथ परिमाण घटा है। 2012 halving ने 100x मूल्य वृद्धि से पहले किया, 2016 ने लगभग 30x, और 2020 ने लगभग 8x। यह घटते रिटर्न पैटर्न सुझाव देता है कि 2024 halving पिछले चक्रों से अधिक मामूली रिटर्न दे सकता है।"], scenarios: ["2024 halving से पहले, माइनर्स प्रति ब्लॉक 6.25 BTC (लगभग 900 BTC/दिन) कमा रहे थे। $60,000/BTC पर, यह संभावित बिक्री दबाव के रूप में बाजार में प्रवेश करने वाले दैनिक $54 मिलियन माइनिंग रिवॉर्ड के बराबर है। Halving के बाद, दैनिक जारी करना 450 BTC ($27 मिलियन) तक गिर जाता है।", "एक निवेशक halving के बाद की माइनिंग अर्थव्यवस्था को मॉडल करता है: $0.08/kWh से अधिक बिजली लागत वाले माइनर्स जब ब्लॉक रिवॉर्ड आधा हो जाता है तो लाभहीन हो जाते हैं, उन्हें बंद होने या Bitcoin भंडार बेचने के लिए मजबूर करता है। यह माइनर कैपिट्यूलेशन अवधि आम तौर पर halving के बाद 2-4 महीने तक रहती है।"], checklist: ["Halving चक्रों पर निवेश निर्णय आधारित करने से पहले, कुल आपूर्ति मुद्रास्फीति पर प्रत्येक halving के घटते प्रतिशत प्रभाव की गणना करें। 2024 halving वार्षिक मुद्रास्फीति को 1.7% से 0.85% तक कम करता है — सार्थक लेकिन उन प्रारंभिक halvings से कम नाटकीय जिन्होंने बहुत अधिक मुद्रास्फीति दरों में कटौती की।", "तेजी और मंदी दोनों के halving के बाद के परिदृश्यों को मॉडल करें: ऐतिहासिक मूल्य वृद्धि की गारंटी नहीं है, और जैसे-जैसे बाजार परिपक्व होता है, प्रत्येक क्रमिक halving घटते रिटर्न उत्पन्न कर सकता है।"], mistakes: ["यह मानना कि पिछले halving चक्र बिल्कुल वैसे ही दोहराएंगे। प्रत्येक Bitcoin चक्र अलग व्यापक आर्थिक वातावरण में भिन्न प्रतिभागी संरचना, नियामक परिदृश्य और बाजार परिपक्वता के साथ संचालित होता है। मूल्य भविष्यवाणियों के लिए सटीक ऐतिहासिक गुणकों का उपयोग करना कर्व-फिटिंग है, विश्लेषण नहीं।", "Halving विश्लेषण में माइनर अर्थशास्त्र की अनदेखी करना। जब ब्लॉक रिवॉर्ड आधा होता है, तो उच्च परिचालन लागत वाले माइनर्स लाभहीन हो जाते हैं और संचालन के वित्तपोषण के लिए मौजूदा BTC भंडार बेच सकते हैं।"], benchmarks: ["Halving के बाद रिटर्न बेंचमार्क: 2012 halving के बाद 12 महीने के रिटर्न लगभग 8,000%, 2016 के बाद लगभग 280%, और 2020 के बाद लगभग 560% थे। घटता शिखर-चक्र गुणक रुझान सुझाव देता है कि 2024 halving के बाद शिखर रिटर्न 100-300% हो सकते हैं।", "माइनर कैपिट्यूलेशन बेंचमार्क: लाभहीन माइनर्स बंद होने पर halving के बाद 2-3 महीनों में हैशरेट आम तौर पर 5-15% गिरता है। Halving पूर्व स्तरों तक हैशरेट की रिकवरी ऐतिहासिक रूप से 4-8 महीने लेती है।"], execution: ["Halving-जागरूक <a href=\"/hi/dca-calculator-hindi/\">DCA रणनीति</a> पर विचार करें: अपेक्षित halving तिथि से 6 महीने पहले शुरू करके अपनी नियमित Bitcoin खरीद राशि को 50% बढ़ाएं, halving के बाद 12 महीने तक बढ़ी हुई दर बनाए रखें, फिर बाजार स्थितियों के आधार पर पुनर्मूल्यांकन करें।", "माइनर कैपिट्यूलेशन चरण के इर्द-गिर्द अपने halving निवेश की योजना बनाएं। Halving के बाद के महीनों में नेटवर्क हैशरेट की निगरानी करें — जब हैशरेट ठीक होना शुरू हो (आम तौर पर halving के 2-4 महीने बाद), यह संकेत देता है कि कमजोर माइनर्स बाहर हो गए हैं।"], hygiene: ["ब्लॉक एक्सप्लोरर का उपयोग करके अगले halving की ओर ब्लॉक काउंट प्रगति को ट्रैक करें। सटीक halving तिथि वास्तविक ब्लॉक उत्पादन गति के आधार पर बदलती है।", "अपनी halving पूर्व निवेश थीसिस और रिटर्न अपेक्षाओं का दस्तावेजीकरण करें। 6 और 12 महीने के अंतराल पर वास्तविक halving के बाद के रिटर्न की तुलना अपनी प्रक्षेपणों से करने के लिए हमारे <a href=\"/hi/agar-aisa-hota/\">what-if कैलकुलेटर</a> का उपयोग करें।"], validation: ["कई कैलकुलेटर की तुलना करके और हाल के ब्लॉक समय परिवर्तनशीलता के लिए समायोजित करके halving तिथि प्रक्षेपणों की पुष्टि करें। सटीक halving ब्लॉक निश्चित है (प्रत्येक 210,000 ब्लॉक), लेकिन तिथि वास्तविक औसत ब्लॉक समय पर निर्भर करती है।", "ब्लॉकचेन एक्सप्लोरर से वास्तविक आपूर्ति डेटा के विरुद्ध halving प्रभाव मॉडल को क्रॉस-वैलिडेट करें। पुष्टि करें कि आपके मॉडल की जारी करने की दर वास्तविक ब्लॉक रिवॉर्ड और उत्पादन दर से मेल खाती है।"] },
+    ru: { interpret: ["Расчёты халвинга Bitcoin моделируют влияние запрограммированных событий сокращения эмиссии, происходящих примерно каждые четыре года (каждые 210 000 блоков). Каждый халвинг уменьшает вознаграждение за блок вдвое — с 6,25 BTC до 3,125 BTC в халвинге 2024 — снижая скорость создания новых Bitcoin. Калькулятор помогает оценить динамику спроса и предложения: при падении дневной эмиссии с ~900 BTC до ~450 BTC, на рынок поступает примерно на $27 млн меньше ежедневного давления продаж от майнеров при $60 000/BTC.", "Исторический анализ халвингов показывает паттерн роста цены в 12-18 месяцев после каждого события, хотя амплитуда снижалась с каждым циклом. Халвинг 2012 предшествовал росту в 100x, 2016 — примерно 30x, 2020 — примерно 8x. Этот паттерн убывающей доходности предполагает, что халвинг 2024 может принести более скромные результаты, чем предыдущие циклы."], scenarios: ["До халвинга 2024 майнеры получали 6,25 BTC за блок (примерно 900 BTC/день). При $60 000/BTC это составляло $54 млн дневных наград от майнинга. После халвинга дневная эмиссия падает до 450 BTC ($27 млн). Это сокращение давления продаж на $27 млн в день — фундаментальный шок предложения.", "Инвестор моделирует экономику майнинга после халвинга: майнеры с затратами на электричество выше $0,08/кВтч становятся убыточными, вынуждая их отключаться или продавать резервы Bitcoin. Этот период капитуляции майнеров обычно длится 2-4 месяца после халвинга."], checklist: ["Прежде чем основывать инвестиционные решения на циклах халвинга, рассчитайте уменьшающееся процентное влияние каждого халвинга на общую инфляцию предложения. Халвинг 2024 снижает годовую инфляцию с 1,7% до 0,85% — значимо, но менее драматично, чем ранние халвинги.", "Моделируйте как бычьи, так и медвежьи сценарии после халвинга: исторический рост цены не гарантирован, и каждый последующий халвинг может приносить убывающую доходность по мере созревания рынка."], mistakes: ["Предполагать, что прошлые циклы халвинга повторятся в точности. Каждый цикл Bitcoin работает в другой макроэкономической среде с другим составом участников, регуляторным ландшафтом и зрелостью рынка.", "Игнорирование экономики майнеров при анализе халвинга. Когда вознаграждение за блок уменьшается вдвое, майнеры с высокими операционными затратами становятся убыточными и могут сбрасывать существующие резервы BTC для финансирования операций."], benchmarks: ["Бенчмарки доходности после халвинга: 12-месячная доходность после халвинга 2012 составила примерно 8 000%, после 2016 — примерно 280%, после 2020 — примерно 560%. Тренд убывающего пикового множителя цикла предполагает пиковую доходность после халвинга 2024 в 100-300%.", "Бенчмарки капитуляции майнеров: хешрейт обычно снижается на 5-15% в 2-3 месяца после халвинга. Восстановление хешрейта до уровней до халвинга исторически занимает 4-8 месяцев."], execution: ["Рассмотрите стратегию <a href=\"/ru/kalkulyator-dca/\">DCA с учётом халвинга</a>: увеличьте регулярную сумму покупки Bitcoin на 50% за 6 месяцев до ожидаемой даты халвинга, поддерживайте увеличенную ставку в течение 12 месяцев после халвинга, затем пересмотрите.", "Планируйте инвестиции в халвинг с учётом фазы капитуляции майнеров. Отслеживайте хешрейт сети в месяцы после халвинга — когда хешрейт начинает восстанавливаться, это сигнализирует об уходе слабых майнеров."], hygiene: ["Отслеживайте прогресс счёта блоков к следующему халвингу с помощью обозревателя блоков. Точная дата халвинга сдвигается в зависимости от фактической скорости производства блоков.", "Задокументируйте свой инвестиционный тезис и ожидания доходности до халвинга. Используйте наш <a href=\"/ru/chto-esli/\">what-if калькулятор</a> для сравнения фактической доходности после халвинга с вашими прогнозами через 6 и 12 месяцев."], validation: ["Проверяйте прогнозы даты халвинга, сравнивая несколько калькуляторов и корректируя с учётом недавней изменчивости времени блока. Точный блок халвинга фиксирован (каждые 210 000 блоков), но дата зависит от фактического среднего времени блока.", "Перекрёстно проверяйте модели влияния халвинга с фактическими данными о предложении из обозревателей блокчейна."] },
   },
   'mev-calculator': {
     en: {
@@ -7461,12 +7461,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     es: {
       interpret: [
-        "El riesgo de ruina cuantifica la probabilidad de que tu cuenta alcance un drawdown terminal — normalmente 50% o 100% de pérdida — dados tu tasa de acierto actual, ratio medio de ganancia/pérdida y porcentaje arriesgado por operación. Un resultado superior al 5% es señal de alarma: significa que hay probabilidad estadística real de destruir la cuenta incluso con esperanza positiva. Compara tu resultado con la <a href=\"/kelly-calculator/\">calculadora de criterio de Kelly</a> para ver si tu dimensionamiento se alinea con la asignación óptima teórica.",
-        "El resultado es más útil como herramienta de comparación relativa. Si tu ruina al 2% de riesgo es 0,8% pero salta al 14% al 5%, eso cuantifica exactamente cuán peligroso es el mayor tamaño. Ejecuta la calculadora con tus estadísticas reales de las últimas 100 operaciones para la lectura más precisa. Combínalo con la <a href=\"/drawdown-calculator/\">calculadora de drawdown</a> para ver la profundidad máxima probable y tiempo de recuperación."
+        "El riesgo de ruina cuantifica la probabilidad de que tu cuenta alcance un drawdown terminal — normalmente 50% o 100% de pérdida — dados tu tasa de acierto actual, ratio medio de ganancia/pérdida y porcentaje arriesgado por operación. Un resultado superior al 5% es señal de alarma: significa que hay probabilidad estadística real de destruir la cuenta incluso con esperanza positiva. Compara tu resultado con la <a href=\"/es/calculadora-criterio-kelly/\">calculadora de criterio de Kelly</a> para ver si tu dimensionamiento se alinea con la asignación óptima teórica.",
+        "El resultado es más útil como herramienta de comparación relativa. Si tu ruina al 2% de riesgo es 0,8% pero salta al 14% al 5%, eso cuantifica exactamente cuán peligroso es el mayor tamaño. Ejecuta la calculadora con tus estadísticas reales de las últimas 100 operaciones para la lectura más precisa. Combínalo con la <a href=\"/es/calculadora-drawdown/\">calculadora de drawdown</a> para ver la profundidad máxima probable y tiempo de recuperación."
       ],
       scenarios: [
         "Un swing trader con 52% de acierto y ratio 1,8:1 introduce 2% de riesgo. La probabilidad de ruina es 0,3% — territorio seguro. Prueba 4% y la ruina sube a 9,7%, confirmando que debe mantenerse en 2%. Un scalper con 68% de acierto pero solo 0,9:1 R:R encuentra que su ruina al 1% de riesgo es 2,1%.",
-        "Un trader de futuros cripto backtestea 200 operaciones: 45% acierto, 2,5:1 R:R promedio. Al 1,5% de riesgo la ruina es 0,1%. Considera aumentar al 3% y la calculadora muestra 4,2%. Usa la <a href=\"/position-size-calculator/\">calculadora de tamaño de posición</a> para calibrar un 2,2% intermedio que mantiene la ruina bajo 1%."
+        "Un trader de futuros cripto backtestea 200 operaciones: 45% acierto, 2,5:1 R:R promedio. Al 1,5% de riesgo la ruina es 0,1%. Considera aumentar al 3% y la calculadora muestra 4,2%. Usa la <a href=\"/es/calculadora-tamano-posicion/\">calculadora de tamaño de posición</a> para calibrar un 2,2% intermedio que mantiene la ruina bajo 1%."
       ],
       checklist: [
         "Antes de calcular: 1) Calcula tu tasa de acierto real de al menos 50 operaciones. 2) Divide la ganancia media entre la pérdida media para obtener el ratio R:R. 3) Define qué constituye ruina — un drawdown del 50% es umbral común porque recuperarse requiere un 100% de ganancia.",
@@ -7495,12 +7495,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     pt: {
       interpret: [
-        "O risco de ruína quantifica a probabilidade de sua conta atingir um drawdown terminal — normalmente 50% ou 100% de perda — dados sua taxa de acerto, ratio médio ganho/perda e percentual arriscado por trade. Resultado acima de 5% é sinal vermelho: probabilidade real de destruição da conta. Compare com a <a href=\"/kelly-calculator/\">calculadora de critério de Kelly</a> para verificar alinhamento.",
-        "O resultado é mais útil como comparação relativa. Se ruína a 2% de risco é 0,8% mas pula para 14% a 5%, quantifica exatamente o perigo do tamanho maior. Execute com estatísticas reais das últimas 100 operações. Combine com a <a href=\"/drawdown-calculator/\">calculadora de drawdown</a> para ver profundidade máxima e tempo de recuperação."
+        "O risco de ruína quantifica a probabilidade de sua conta atingir um drawdown terminal — normalmente 50% ou 100% de perda — dados sua taxa de acerto, ratio médio ganho/perda e percentual arriscado por trade. Resultado acima de 5% é sinal vermelho: probabilidade real de destruição da conta. Compare com a <a href=\"/pt/calculadora-criterio-kelly/\">calculadora de critério de Kelly</a> para verificar alinhamento.",
+        "O resultado é mais útil como comparação relativa. Se ruína a 2% de risco é 0,8% mas pula para 14% a 5%, quantifica exatamente o perigo do tamanho maior. Execute com estatísticas reais das últimas 100 operações. Combine com a <a href=\"/pt/calculadora-drawdown/\">calculadora de drawdown</a> para ver profundidade máxima e tempo de recuperação."
       ],
       scenarios: [
         "Swing trader com 52% de acerto e 1,8:1 R:R insere 2% de risco. Ruína: 0,3% — seguro. Testa 4% e ruína sobe para 9,7%. Um scalper com 68% de acerto mas 0,9:1 R:R encontra ruína de 2,1% com 1% de risco.",
-        "Trader de futuros cripto backtesta 200 trades: 45% acerto, 2,5:1 R:R. A 1,5% de risco a ruína é 0,1%. Considera 3% — calculadora mostra 4,2%. Usa a <a href=\"/position-size-calculator/\">calculadora de tamanho de posição</a> para 2,2% intermediário mantendo ruína abaixo de 1%."
+        "Trader de futuros cripto backtesta 200 trades: 45% acerto, 2,5:1 R:R. A 1,5% de risco a ruína é 0,1%. Considera 3% — calculadora mostra 4,2%. Usa a <a href=\"/pt/calculadora-tamanho-posicao/\">calculadora de tamanho de posição</a> para 2,2% intermediário mantendo ruína abaixo de 1%."
       ],
       checklist: [
         "Antes de calcular: 1) Calcule taxa de acerto real de no mínimo 50 trades. 2) Divida ganho médio pela perda média para o ratio R:R. 3) Defina ruína — drawdown de 50% é comum pois recuperar exige 100% de ganho.",
@@ -7529,12 +7529,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     tr: {
       interpret: [
-        "Batma riski, mevcut kazanma oranınız, ortalama kazanç/kayıp oranınız ve işlem başına risk yüzdeniz göz önünde bulundurularak hesabınızın terminal bir düşüş yaşama olasılığını ölçer. %5'in üzerindeki sonuç kırmızı bayraktır: pozitif beklentiye rağmen hesabınızın yok olma olasılığı vardır. Sonucunuzu <a href=\"/kelly-calculator/\">Kelly kriteri hesaplayıcısı</a> ile karşılaştırın.",
-        "Çıktı göreli karşılaştırma aracı olarak en kullanışlıdır. %2 riskte batma 0,8% ama %5'te 14%'e sıçrıyorsa, büyük bahis boyutunun ne kadar tehlikeli olduğunu ölçüyorsunuz. Son 100 işleminizin gerçek istatistikleriyle çalıştırın. <a href=\"/drawdown-calculator/\">Drawdown hesaplayıcısı</a> ile birleştirin."
+        "Batma riski, mevcut kazanma oranınız, ortalama kazanç/kayıp oranınız ve işlem başına risk yüzdeniz göz önünde bulundurularak hesabınızın terminal bir düşüş yaşama olasılığını ölçer. %5'in üzerindeki sonuç kırmızı bayraktır: pozitif beklentiye rağmen hesabınızın yok olma olasılığı vardır. Sonucunuzu <a href=\"/tr/kelly-kriteri-hesaplayici/\">Kelly kriteri hesaplayıcısı</a> ile karşılaştırın.",
+        "Çıktı göreli karşılaştırma aracı olarak en kullanışlıdır. %2 riskte batma 0,8% ama %5'te 14%'e sıçrıyorsa, büyük bahis boyutunun ne kadar tehlikeli olduğunu ölçüyorsunuz. Son 100 işleminizin gerçek istatistikleriyle çalıştırın. <a href=\"/tr/drawdown-toparlanma-hesaplayici/\">Drawdown hesaplayıcısı</a> ile birleştirin."
       ],
       scenarios: [
         "Swing trader: %52 kazanma, 1,8:1 R:R, %2 risk. Batma: %0,3 — güvenli. %4'te batma %9,7'ye çıkıyor. Scalper: %68 kazanma, 0,9:1 R:R, %1 risk — batma %2,1.",
-        "Vadeli kripto trader'ı 200 işlem backtesti: %45 kazanma, 2,5:1 R:R. %1,5 riskte batma %0,1. %3'ü düşünüyor — hesaplayıcı %4,2 gösteriyor. <a href=\"/position-size-calculator/\">Pozisyon boyutu hesaplayıcısı</a> ile batmayı %1 altında tutan %2,2'lik ara seviye belirliyor."
+        "Vadeli kripto trader'ı 200 işlem backtesti: %45 kazanma, 2,5:1 R:R. %1,5 riskte batma %0,1. %3'ü düşünüyor — hesaplayıcı %4,2 gösteriyor. <a href=\"/tr/pozisyon-boyutu-hesaplayici/\">Pozisyon boyutu hesaplayıcısı</a> ile batmayı %1 altında tutan %2,2'lik ara seviye belirliyor."
       ],
       checklist: [
         "Hesaplamadan önce: 1) En az 50 işlemden gerçek kazanma oranı hesaplayın. 2) Ortalama kazancı ortalama kayba bölün. 3) 'Batma' tanımını belirleyin — %50 düşüş yaygındır çünkü toparlanma %100 kazanç gerektirir.",
@@ -7563,12 +7563,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     hi: {
       interpret: [
-        "रिस्क ऑफ रुइन आपके ट्रेडिंग अकाउंट के टर्मिनल ड्रॉडाउन — आमतौर पर 50% या 100% नुकसान — तक पहुंचने की संभावना की गणना करता है। 5% से ऊपर का परिणाम खतरे की घंटी है: पॉजिटिव एक्सपेक्टेंसी होने के बावजूद अकाउंट खत्म होने का सांख्यिकीय जोखिम है। अपना परिणाम <a href=\"/kelly-calculator/\">Kelly क्राइटेरियन कैलकुलेटर</a> से तुलना करें।",
-        "आउटपुट सापेक्ष तुलना उपकरण के रूप में सबसे उपयोगी है। यदि 2% रिस्क पर रुइन 0.8% है लेकिन 5% पर 14% हो जाता है, तो बड़े बेट साइज का खतरा स्पष्ट है। अपने वास्तविक अंतिम 100 ट्रेडों के आंकड़ों से चलाएं। <a href=\"/drawdown-calculator/\">ड्रॉडाउन कैलकुलेटर</a> से अधिकतम गहराई और रिकवरी समय देखें।"
+        "रिस्क ऑफ रुइन आपके ट्रेडिंग अकाउंट के टर्मिनल ड्रॉडाउन — आमतौर पर 50% या 100% नुकसान — तक पहुंचने की संभावना की गणना करता है। 5% से ऊपर का परिणाम खतरे की घंटी है: पॉजिटिव एक्सपेक्टेंसी होने के बावजूद अकाउंट खत्म होने का सांख्यिकीय जोखिम है। अपना परिणाम <a href=\"/hi/kelly-calculator-hindi/\">Kelly क्राइटेरियन कैलकुलेटर</a> से तुलना करें।",
+        "आउटपुट सापेक्ष तुलना उपकरण के रूप में सबसे उपयोगी है। यदि 2% रिस्क पर रुइन 0.8% है लेकिन 5% पर 14% हो जाता है, तो बड़े बेट साइज का खतरा स्पष्ट है। अपने वास्तविक अंतिम 100 ट्रेडों के आंकड़ों से चलाएं। <a href=\"/hi/drawdown-calculator-hindi/\">ड्रॉडाउन कैलकुलेटर</a> से अधिकतम गहराई और रिकवरी समय देखें।"
       ],
       scenarios: [
         "52% विन रेट और 1.8:1 R:R वाला स्विंग ट्रेडर 2% रिस्क डालता है। रुइन: 0.3% — सुरक्षित। 4% पर रुइन 9.7% हो जाता है। 68% विन रेट लेकिन 0.9:1 R:R वाले स्कैल्पर का 1% रिस्क पर रुइन 2.1% है।",
-        "क्रिप्टो फ्यूचर्स ट्रेडर 200 ट्रेड बैकटेस्ट: 45% विन, 2.5:1 R:R। 1.5% रिस्क पर रुइन 0.1%। 3% विचार करता है — कैलकुलेटर 4.2% दिखाता है। <a href=\"/position-size-calculator/\">पोजीशन साइज कैलकुलेटर</a> से 2.2% का मध्यम स्तर चुनता है।"
+        "क्रिप्टो फ्यूचर्स ट्रेडर 200 ट्रेड बैकटेस्ट: 45% विन, 2.5:1 R:R। 1.5% रिस्क पर रुइन 0.1%। 3% विचार करता है — कैलकुलेटर 4.2% दिखाता है। <a href=\"/hi/position-size-calculator-hindi/\">पोजीशन साइज कैलकुलेटर</a> से 2.2% का मध्यम स्तर चुनता है।"
       ],
       checklist: [
         "गणना से पहले: 1) कम से कम 50 ट्रेडों से वास्तविक विन रेट निकालें। 2) औसत जीत को औसत हार से भाग दें। 3) 'रुइन' की परिभाषा तय करें — 50% ड्रॉडाउन सामान्य है क्योंकि रिकवरी में 100% लाभ चाहिए।",
@@ -7597,12 +7597,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     ru: {
       interpret: [
-        "Риск разорения показывает вероятность достижения терминальной просадки — обычно 50% или 100% потери — при текущем проценте побед, среднем соотношении прибыли/убытка и проценте риска на сделку. Результат выше 5% — тревожный сигнал: даже при положительном матожидании есть реальный шанс потерять депозит. Сравните с <a href=\"/kelly-calculator/\">калькулятором критерия Келли</a>.",
-        "Результат наиболее полезен как инструмент относительного сравнения. Если разорение при 2% риска = 0,8%, а при 5% прыгает до 14%, это точно показывает опасность. Используйте реальную статистику последних 100 сделок. Сочетайте с <a href=\"/drawdown-calculator/\">калькулятором просадки</a> для оценки глубины и времени восстановления."
+        "Риск разорения показывает вероятность достижения терминальной просадки — обычно 50% или 100% потери — при текущем проценте побед, среднем соотношении прибыли/убытка и проценте риска на сделку. Результат выше 5% — тревожный сигнал: даже при положительном матожидании есть реальный шанс потерять депозит. Сравните с <a href=\"/ru/kalkulyator-kriteriya-kelli/\">калькулятором критерия Келли</a>.",
+        "Результат наиболее полезен как инструмент относительного сравнения. Если разорение при 2% риска = 0,8%, а при 5% прыгает до 14%, это точно показывает опасность. Используйте реальную статистику последних 100 сделок. Сочетайте с <a href=\"/ru/kalkulyator-prosadki/\">калькулятором просадки</a> для оценки глубины и времени восстановления."
       ],
       scenarios: [
         "Свинг-трейдер: 52% побед, 1,8:1 R:R, 2% риска. Разорение 0,3% — безопасно. При 4% разорение 9,7%. Скальпер: 68% побед, 0,9:1 R:R, 1% риска — разорение 2,1%.",
-        "Крипто-фьючерсный трейдер бэктестит 200 сделок: 45% побед, 2,5:1 R:R. При 1,5% риска разорение 0,1%. Рассматривает 3% — калькулятор показывает 4,2%. Выбирает 2,2% через <a href=\"/position-size-calculator/\">калькулятор размера позиции</a>, удерживая разорение ниже 1%."
+        "Крипто-фьючерсный трейдер бэктестит 200 сделок: 45% побед, 2,5:1 R:R. При 1,5% риска разорение 0,1%. Рассматривает 3% — калькулятор показывает 4,2%. Выбирает 2,2% через <a href=\"/ru/kalkulyator-razmera-pozicii/\">калькулятор размера позиции</a>, удерживая разорение ниже 1%."
       ],
       checklist: [
         "Перед расчётом: 1) Вычислите реальный процент побед минимум из 50 сделок. 2) Разделите средний выигрыш на средний проигрыш для R:R. 3) Определите порог разорения — 50% просадка типична, так как восстановление требует 100% прибыли.",
@@ -7667,12 +7667,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     es: {
       interpret: [
-        "La calculadora de deslizamiento estima la diferencia entre el precio de ejecución esperado y el precio real según el tamaño de la orden, la profundidad de liquidez y la volatilidad. Un deslizamiento del 0,3% en una orden de $10.000 significa ~$30 adicionales. Para órdenes que superan el 1% del volumen 24h, el deslizamiento puede saltar al 1–5%. Cruza con la <a href=\"/gas-calculator/\">calculadora de gas</a> para ver el costo total.",
-        "Interpreta el resultado como estimación en condiciones actuales. Si el deslizamiento supera 0,5% para pares principales o 2% para altcoins mid-cap, la orden puede ser demasiado grande. Considera dividir en órdenes menores o usar TWAP. El <a href=\"/exchange-fees/\">comparador de comisiones</a> ayuda a encontrar venues con mayor liquidez para tu par."
+        "La calculadora de deslizamiento estima la diferencia entre el precio de ejecución esperado y el precio real según el tamaño de la orden, la profundidad de liquidez y la volatilidad. Un deslizamiento del 0,3% en una orden de $10.000 significa ~$30 adicionales. Para órdenes que superan el 1% del volumen 24h, el deslizamiento puede saltar al 1–5%. Cruza con la <a href=\"/es/calculadora-gas-cripto/\">calculadora de gas</a> para ver el costo total.",
+        "Interpreta el resultado como estimación en condiciones actuales. Si el deslizamiento supera 0,5% para pares principales o 2% para altcoins mid-cap, la orden puede ser demasiado grande. Considera dividir en órdenes menores o usar TWAP. El <a href=\"/es/comparador-comisiones-exchanges/\">comparador de comisiones</a> ayuda a encontrar venues con mayor liquidez para tu par."
       ],
       scenarios: [
         "Un trader quiere comprar $50.000 de SOL en un DEX con $2M de liquidez. Deslizamiento estimado: 1,25% ($625). Divide en cinco órdenes de $10.000 cada 30 minutos, reduciendo a 0,25% por orden. Costo total: ~$125 — reducción del 80%. Otro trader vendiendo $5.000 de micro-cap con $200K de liquidez ve 2,5% — cambia a un CEX.",
-        "Un farmer DeFi intercambia $20.000 USDC a ETH. La calculadora muestra 0,08% en Uniswap V3 ($16). Compara con CEX: spread 0,05% ($10) + comisión 0,1% ($20). El DEX es más barato. Procede a la <a href=\"/impermanent-loss-calculator/\">calculadora de pérdida impermanente</a> para evaluar el costo total del pool."
+        "Un farmer DeFi intercambia $20.000 USDC a ETH. La calculadora muestra 0,08% en Uniswap V3 ($16). Compara con CEX: spread 0,05% ($10) + comisión 0,1% ($20). El DEX es más barato. Procede a la <a href=\"/es/calculadora-perdida-impermanente/\">calculadora de pérdida impermanente</a> para evaluar el costo total del pool."
       ],
       checklist: [
         "Antes de calcular: 1) Conoce el tamaño exacto de tu orden. 2) Verifica la profundidad de liquidez actual — en DEXs el TVL del pool; en CEXs la profundidad del libro dentro del 2% del precio medio. 3) Nota la volatilidad actual — el deslizamiento aumenta significativamente en períodos de alta volatilidad.",
@@ -7687,7 +7687,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "El horario importa: deslizamiento mínimo en horario estadounidense (14:00–21:00 UTC), máximo en horario asiático exclusivo (00:00–07:00 UTC). Fines de semana puede ser 2–3x mayor que días laborables."
       ],
       execution: [
-        "Flujo óptimo: calcula deslizamiento → si supera 0,5%, divide en partes no mayores al 0,2% del volumen diario → ejecuta cada 5–10 minutos → usa órdenes límite 0,05% bajo el ask (compra) o sobre el bid (venta). Para DEX usa la <a href=\"/gas-calculator/\">calculadora de gas</a> para optimizar timing.",
+        "Flujo óptimo: calcula deslizamiento → si supera 0,5%, divide en partes no mayores al 0,2% del volumen diario → ejecuta cada 5–10 minutos → usa órdenes límite 0,05% bajo el ask (compra) o sobre el bid (venta). Para DEX usa la <a href=\"/es/calculadora-gas-cripto/\">calculadora de gas</a> para optimizar timing.",
         "Para órdenes sobre $50.000: usa TWAP dividiendo en 10+ partes iguales en 1–4 horas. Monitorea el deslizamiento acumulado — si excede el estimado inicial en más del 50%, pausa y reevalúa."
       ],
       hygiene: [
@@ -7701,12 +7701,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     pt: {
       interpret: [
-        "A calculadora de slippage estima a diferença entre o preço esperado e o real com base no tamanho da ordem, profundidade de liquidez e volatilidade. Slippage de 0,3% em ordem de $10.000 = ~$30 extra. Ordens acima de 1% do volume 24h podem ter slippage de 1–5%. Combine com a <a href=\"/gas-calculator/\">calculadora de gas</a> para custo total.",
-        "Interprete como estimativa nas condições atuais. Se slippage excede 0,5% para pares principais ou 2% para mid-caps, divida em ordens menores ou use TWAP. O <a href=\"/exchange-fees/\">comparador de taxas</a> ajuda encontrar venues com maior liquidez para seu par."
+        "A calculadora de slippage estima a diferença entre o preço esperado e o real com base no tamanho da ordem, profundidade de liquidez e volatilidade. Slippage de 0,3% em ordem de $10.000 = ~$30 extra. Ordens acima de 1% do volume 24h podem ter slippage de 1–5%. Combine com a <a href=\"/pt/calculadora-gas-cripto/\">calculadora de gas</a> para custo total.",
+        "Interprete como estimativa nas condições atuais. Se slippage excede 0,5% para pares principais ou 2% para mid-caps, divida em ordens menores ou use TWAP. O <a href=\"/pt/comparador-taxas-exchanges/\">comparador de taxas</a> ajuda encontrar venues com maior liquidez para seu par."
       ],
       scenarios: [
         "Trader quer comprar $50.000 de SOL em DEX com $2M de liquidez. Slippage: 1,25% ($625). Divide em cinco ordens de $10.000, reduzindo para 0,25% cada. Custo total: ~$125 — redução de 80%. Outro vendendo $5.000 de micro-cap com $200K de liquidez vê 2,5% — muda para CEX.",
-        "Farmer DeFi troca $20.000 USDC por ETH. Calculadora mostra 0,08% no Uniswap V3 ($16). CEX: spread 0,05% ($10) + taxa 0,1% ($20). DEX é mais barato. Segue para <a href=\"/impermanent-loss-calculator/\">calculadora de perda impermanente</a> para avaliar custo total."
+        "Farmer DeFi troca $20.000 USDC por ETH. Calculadora mostra 0,08% no Uniswap V3 ($16). CEX: spread 0,05% ($10) + taxa 0,1% ($20). DEX é mais barato. Segue para <a href=\"/pt/calculadora-perda-impermanente/\">calculadora de perda impermanente</a> para avaliar custo total."
       ],
       checklist: [
         "Antes: 1) Saiba o tamanho exato da ordem. 2) Verifique profundidade de liquidez — em DEXs o TVL do pool; em CEXs o book dentro de 2% do mid-price. 3) Note volatilidade atual — slippage aumenta muito em alta volatilidade.",
@@ -7721,7 +7721,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Horário importa: slippage mínimo em horário dos EUA (14:00–21:00 UTC), máximo em horário asiático (00:00–07:00 UTC). Fins de semana 2–3x maior."
       ],
       execution: [
-        "Fluxo: calcule slippage → se acima de 0,5%, divida em partes de até 0,2% do volume diário → execute a cada 5–10 minutos → use ordens limite. Para DEX use a <a href=\"/gas-calculator/\">calculadora de gas</a> para timing.",
+        "Fluxo: calcule slippage → se acima de 0,5%, divida em partes de até 0,2% do volume diário → execute a cada 5–10 minutos → use ordens limite. Para DEX use a <a href=\"/pt/calculadora-gas-cripto/\">calculadora de gas</a> para timing.",
         "Acima de $50.000: use TWAP em 10+ partes ao longo de 1–4 horas. Monitore slippage acumulado — se excede 50% do estimado, pause e reavalie."
       ],
       hygiene: [
@@ -7735,12 +7735,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     tr: {
       interpret: [
-        "Kayma hesaplayıcı, emir boyutu, likidite derinliği ve volatiliteye göre beklenen yürütme fiyatı ile gerçek dolum fiyatı arasındaki farkı tahmin eder. $10.000'lık emirde %0,3 kayma ~$30 ekstra maliyet demektir. 24 saatlik hacmin %1'ini aşan emirlerde kayma %1–5'e çıkabilir. Toplam maliyet için <a href=\"/gas-calculator/\">gas ücreti hesaplayıcısı</a> ile birleştirin.",
-        "Çıktıyı mevcut koşullardaki tahmin olarak yorumlayın. Büyük çiftlerde %0,5'i veya mid-cap'lerde %2'yi aşıyorsa, emri bölün veya TWAP kullanın. <a href=\"/exchange-fees/\">Borsa ücret karşılaştırıcısı</a> çiftiniz için en derin likiditeye sahip mekanları bulmanıza yardımcı olur."
+        "Kayma hesaplayıcı, emir boyutu, likidite derinliği ve volatiliteye göre beklenen yürütme fiyatı ile gerçek dolum fiyatı arasındaki farkı tahmin eder. $10.000'lık emirde %0,3 kayma ~$30 ekstra maliyet demektir. 24 saatlik hacmin %1'ini aşan emirlerde kayma %1–5'e çıkabilir. Toplam maliyet için <a href=\"/tr/gas-ucreti-hesaplayici/\">gas ücreti hesaplayıcısı</a> ile birleştirin.",
+        "Çıktıyı mevcut koşullardaki tahmin olarak yorumlayın. Büyük çiftlerde %0,5'i veya mid-cap'lerde %2'yi aşıyorsa, emri bölün veya TWAP kullanın. <a href=\"/tr/borsa-ucret-karsilastirici/\">Borsa ücret karşılaştırıcısı</a> çiftiniz için en derin likiditeye sahip mekanları bulmanıza yardımcı olur."
       ],
       scenarios: [
         "$2M likiditeye sahip DEX'te $50.000 SOL alımı. Kayma: %1,25 ($625). Beş $10.000'lık emre bölme: %0,25 kayma. Toplam: ~$125 — %80 azalma. $200K likiditeyle $5.000 micro-cap satışında %2,5 — CEX'e geçiş.",
-        "DeFi farmer $20.000 USDC'yi ETH'ye çeviriyor. Uniswap V3'te %0,08 ($16). CEX: spread %0,05 ($10) + işlem ücreti %0,1 ($20). DEX daha ucuz. <a href=\"/impermanent-loss-calculator/\">Geçici kayıp hesaplayıcısı</a> ile toplam maliyeti değerlendiriyor."
+        "DeFi farmer $20.000 USDC'yi ETH'ye çeviriyor. Uniswap V3'te %0,08 ($16). CEX: spread %0,05 ($10) + işlem ücreti %0,1 ($20). DEX daha ucuz. <a href=\"/tr/gecici-kayip-hesaplayici/\">Geçici kayıp hesaplayıcısı</a> ile toplam maliyeti değerlendiriyor."
       ],
       checklist: [
         "Hesaplamadan önce: 1) Tam emir boyutunu bilin. 2) Likidite derinliğini kontrol edin — DEX'lerde havuz TVL'si; CEX'lerde mid-price'ın %2'si içindeki emir defteri. 3) Mevcut volatiliteyi not edin.",
@@ -7755,7 +7755,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Saat dilimi önemli: ABD saatleri (14:00–21:00 UTC) en düşük kayma, Asya saatleri (00:00–07:00 UTC) en yüksek. Hafta sonları 2–3x daha fazla."
       ],
       execution: [
-        "İş akışı: kayma hesapla → %0,5'i aşıyorsa günlük hacmin %0,2'sinden büyük olmayan parçalara böl → 5–10 dakika arayla yürüt → limit emirler kullan. DEX'te <a href=\"/gas-calculator/\">gas hesaplayıcısı</a> ile timing optimize et.",
+        "İş akışı: kayma hesapla → %0,5'i aşıyorsa günlük hacmin %0,2'sinden büyük olmayan parçalara böl → 5–10 dakika arayla yürüt → limit emirler kullan. DEX'te <a href=\"/tr/gas-ucreti-hesaplayici/\">gas hesaplayıcısı</a> ile timing optimize et.",
         "$50.000 üstü: 1–4 saat boyunca 10+ eşit parçaya TWAP uygula. Birikimli kaymayı izle — tahmini %50'den fazla aşarsa dur ve yeniden değerlendir."
       ],
       hygiene: [
@@ -7769,12 +7769,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     hi: {
       interpret: [
-        "स्लिपेज कैलकुलेटर ऑर्डर साइज, लिक्विडिटी डेप्थ और वोलैटिलिटी के आधार पर अपेक्षित और वास्तविक एग्जीक्यूशन प्राइस का अंतर अनुमानित करता है। $10,000 ऑर्डर पर 0.3% स्लिपेज = ~$30 अतिरिक्त। 24h वॉल्यूम के 1% से ऊपर ऑर्डर पर स्लिपेज 1–5% हो सकता है। कुल लागत के लिए <a href=\"/gas-calculator/\">गैस फी कैलकुलेटर</a> से जोड़ें।",
-        "आउटपुट को मौजूदा परिस्थितियों का अनुमान मानें। प्रमुख जोड़ियों पर 0.5% या मिड-कैप पर 2% से अधिक हो तो ऑर्डर बहुत बड़ा है। छोटे ऑर्डर में बांटें या TWAP रणनीति अपनाएं। <a href=\"/exchange-fees/\">एक्सचेंज फी तुलनाकर्ता</a> से सबसे गहरी लिक्विडिटी वाला वेन्यू खोजें।"
+        "स्लिपेज कैलकुलेटर ऑर्डर साइज, लिक्विडिटी डेप्थ और वोलैटिलिटी के आधार पर अपेक्षित और वास्तविक एग्जीक्यूशन प्राइस का अंतर अनुमानित करता है। $10,000 ऑर्डर पर 0.3% स्लिपेज = ~$30 अतिरिक्त। 24h वॉल्यूम के 1% से ऊपर ऑर्डर पर स्लिपेज 1–5% हो सकता है। कुल लागत के लिए <a href=\"/hi/gas-fee-calculator-hindi/\">गैस फी कैलकुलेटर</a> से जोड़ें।",
+        "आउटपुट को मौजूदा परिस्थितियों का अनुमान मानें। प्रमुख जोड़ियों पर 0.5% या मिड-कैप पर 2% से अधिक हो तो ऑर्डर बहुत बड़ा है। छोटे ऑर्डर में बांटें या TWAP रणनीति अपनाएं। <a href=\"/hi/exchange-fee-comparator-hindi/\">एक्सचेंज फी तुलनाकर्ता</a> से सबसे गहरी लिक्विडिटी वाला वेन्यू खोजें।"
       ],
       scenarios: [
         "$2M लिक्विडिटी वाले DEX पर $50,000 SOL खरीद। स्लिपेज: 1.25% ($625)। पांच $10,000 ऑर्डर में बांटने पर: 0.25% प्रति ऑर्डर। कुल: ~$125 — 80% कमी। $200K लिक्विडिटी में $5,000 माइक्रो-कैप बिक्री: 2.5% — CEX पर शिफ्ट।",
-        "DeFi farmer $20,000 USDC को ETH में स्वैप करता है। Uniswap V3 पर 0.08% ($16)। CEX: स्प्रेड 0.05% ($10) + फी 0.1% ($20)। DEX सस्ता। <a href=\"/impermanent-loss-calculator/\">इम्परमानेंट लॉस कैलकुलेटर</a> से पूल का कुल खर्च मूल्यांकन।"
+        "DeFi farmer $20,000 USDC को ETH में स्वैप करता है। Uniswap V3 पर 0.08% ($16)। CEX: स्प्रेड 0.05% ($10) + फी 0.1% ($20)। DEX सस्ता। <a href=\"/hi/impermanent-loss-calculator-hindi/\">इम्परमानेंट लॉस कैलकुलेटर</a> से पूल का कुल खर्च मूल्यांकन।"
       ],
       checklist: [
         "गणना से पहले: 1) सटीक ऑर्डर साइज जानें। 2) लिक्विडिटी डेप्थ जांचें — DEX पर पूल TVL; CEX पर मिड-प्राइस के 2% में ऑर्डर बुक। 3) मौजूदा वोलैटिलिटी नोट करें।",
@@ -7789,7 +7789,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "समय मायने रखता है: US मार्केट (14:00–21:00 UTC) में न्यूनतम, एशिया-ओनली (00:00–07:00 UTC) में अधिकतम। वीकेंड 2–3x अधिक।"
       ],
       execution: [
-        "कार्यप्रवाह: स्लिपेज गणना → 0.5% से ऊपर हो तो दैनिक वॉल्यूम के 0.2% से बड़ी नहीं टुकड़ों में बांटें → 5–10 मिनट अंतराल पर → लिमिट ऑर्डर उपयोग करें। DEX के लिए <a href=\"/gas-calculator/\">गैस कैलकुलेटर</a> से समय अनुकूलन।",
+        "कार्यप्रवाह: स्लिपेज गणना → 0.5% से ऊपर हो तो दैनिक वॉल्यूम के 0.2% से बड़ी नहीं टुकड़ों में बांटें → 5–10 मिनट अंतराल पर → लिमिट ऑर्डर उपयोग करें। DEX के लिए <a href=\"/hi/gas-fee-calculator-hindi/\">गैस कैलकुलेटर</a> से समय अनुकूलन।",
         "$50,000 से ऊपर: TWAP — 1–4 घंटे में 10+ बराबर भागों में बांटें। संचयी स्लिपेज मॉनिटर करें — 50% से अधिक हो तो रुकें और पुनर्मूल्यांकन करें।"
       ],
       hygiene: [
@@ -7803,12 +7803,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     ru: {
       interpret: [
-        "Калькулятор проскальзывания оценивает разницу между ожидаемой и фактической ценой исполнения на основе размера ордера, глубины ликвидности и волатильности. Проскальзывание 0,3% на ордере $10 000 = ~$30 дополнительных затрат. Ордера свыше 1% от 24-часового объёма могут дать 1–5%. Сочетайте с <a href=\"/gas-calculator/\">калькулятором газа</a> для полной стоимости.",
-        "Интерпретируйте результат как оценку при текущих условиях. Если проскальзывание превышает 0,5% для основных пар или 2% для альткоинов — ордер слишком большой. Разделите или используйте TWAP. <a href=\"/exchange-fees/\">Сравнитель комиссий бирж</a> поможет найти площадку с максимальной ликвидностью."
+        "Калькулятор проскальзывания оценивает разницу между ожидаемой и фактической ценой исполнения на основе размера ордера, глубины ликвидности и волатильности. Проскальзывание 0,3% на ордере $10 000 = ~$30 дополнительных затрат. Ордера свыше 1% от 24-часового объёма могут дать 1–5%. Сочетайте с <a href=\"/ru/kalkulyator-gas-komissii/\">калькулятором газа</a> для полной стоимости.",
+        "Интерпретируйте результат как оценку при текущих условиях. Если проскальзывание превышает 0,5% для основных пар или 2% для альткоинов — ордер слишком большой. Разделите или используйте TWAP. <a href=\"/ru/sravnenie-komissiy-birzh/\">Сравнитель комиссий бирж</a> поможет найти площадку с максимальной ликвидностью."
       ],
       scenarios: [
         "Покупка $50 000 SOL на DEX с $2M ликвидности. Проскальзывание: 1,25% ($625). Разделение на 5 ордеров по $10 000: 0,25% каждый. Итого: ~$125 — снижение на 80%. Продажа $5 000 микрокапа с $200K ликвидности: 2,5% — переход на CEX.",
-        "DeFi-фермер меняет $20 000 USDC на ETH. На Uniswap V3: 0,08% ($16). CEX: спред 0,05% ($10) + комиссия 0,1% ($20). DEX дешевле. Далее — <a href=\"/impermanent-loss-calculator/\">калькулятор непостоянных потерь</a> для оценки полной стоимости пула."
+        "DeFi-фермер меняет $20 000 USDC на ETH. На Uniswap V3: 0,08% ($16). CEX: спред 0,05% ($10) + комиссия 0,1% ($20). DEX дешевле. Далее — <a href=\"/ru/kalkulyator-nepostoyannogo-ubytka/\">калькулятор непостоянных потерь</a> для оценки полной стоимости пула."
       ],
       checklist: [
         "До расчёта: 1) Точный размер ордера. 2) Глубина ликвидности — на DEX TVL пула; на CEX стакан в пределах 2% от mid-price. 3) Текущая волатильность — проскальзывание резко растёт при высокой волатильности.",
@@ -7823,7 +7823,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Время суток важно: минимум в часы США (14:00–21:00 UTC), максимум в азиатские (00:00–07:00 UTC). Выходные: в 2–3 раза больше."
       ],
       execution: [
-        "Алгоритм: рассчитайте → если выше 0,5%, разделите на части не более 0,2% дневного объёма → исполняйте с интервалом 5–10 минут → лимитные ордера. Для DEX — <a href=\"/gas-calculator/\">калькулятор газа</a> для оптимизации времени.",
+        "Алгоритм: рассчитайте → если выше 0,5%, разделите на части не более 0,2% дневного объёма → исполняйте с интервалом 5–10 минут → лимитные ордера. Для DEX — <a href=\"/ru/kalkulyator-gas-komissii/\">калькулятор газа</a> для оптимизации времени.",
         "Свыше $50 000: TWAP — 10+ равных частей за 1–4 часа. Следите за накопленным проскальзыванием — если превышает оценку более чем на 50%, пауза и переоценка."
       ],
       hygiene: [
@@ -7873,12 +7873,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     es: {
       interpret: [
-        "La esperanza de trading indica el monto promedio que esperas ganar o perder por operación en una muestra grande. Una esperanza positiva de $25 significa que a lo largo de cientos de operaciones, deberías promediar $25 de ganancia. Si la esperanza es negativa, ningún dimensionamiento o gestión de riesgo hará rentable tu estrategia. Úsalo con la <a href=\"/risk-reward-calculator/\">calculadora de riesgo-beneficio</a> para evaluar si cada setup cumple tu umbral.",
-        "La fórmula: Esperanza = (% Acierto x Ganancia Media) - (% Error x Pérdida Media). Un trader con 45% acierto y 2,5:1 R:R tiene esperanza de (0,45 x 2,5) - (0,55 x 1) = 0,575R por operación. Incluso una baja tasa de acierto produce buena esperanza si el R:R compensa. Usa la <a href=\"/kelly-calculator/\">calculadora de Kelly</a> para el tamaño óptimo de posición."
+        "La esperanza de trading indica el monto promedio que esperas ganar o perder por operación en una muestra grande. Una esperanza positiva de $25 significa que a lo largo de cientos de operaciones, deberías promediar $25 de ganancia. Si la esperanza es negativa, ningún dimensionamiento o gestión de riesgo hará rentable tu estrategia. Úsalo con la <a href=\"/es/calculadora-riesgo-beneficio/\">calculadora de riesgo-beneficio</a> para evaluar si cada setup cumple tu umbral.",
+        "La fórmula: Esperanza = (% Acierto x Ganancia Media) - (% Error x Pérdida Media). Un trader con 45% acierto y 2,5:1 R:R tiene esperanza de (0,45 x 2,5) - (0,55 x 1) = 0,575R por operación. Incluso una baja tasa de acierto produce buena esperanza si el R:R compensa. Usa la <a href=\"/es/calculadora-criterio-kelly/\">calculadora de Kelly</a> para el tamaño óptimo de posición."
       ],
       scenarios: [
         "Un day trader cripto revisa 150 operaciones: 58% acierto, ganancia media $420, pérdida media $280. Esperanza = $243,60 - $117,60 = $126 por trade. A 5 trades/día = $630 antes de comisiones. Con $15 de comisiones por trade, la esperanza neta cae a $51 ($255/día). Las comisiones consumen el 60% — cambiar de exchange podría casi duplicar el ingreso.",
-        "Swing trader con 35% acierto pero setups 4:1 R:R. Riesgo medio $200: ganancia media $800, pérdida media $200. Esperanza = $280 - $130 = $150 por trade. A pesar de perder la mayoría, la estrategia es rentable. Usa la <a href=\"/position-size-calculator/\">calculadora de tamaño de posición</a> para 1,5% de riesgo por trade."
+        "Swing trader con 35% acierto pero setups 4:1 R:R. Riesgo medio $200: ganancia media $800, pérdida media $200. Esperanza = $280 - $130 = $150 por trade. A pesar de perder la mayoría, la estrategia es rentable. Usa la <a href=\"/es/calculadora-tamano-posicion/\">calculadora de tamaño de posición</a> para 1,5% de riesgo por trade."
       ],
       checklist: [
         "Antes de calcular: 1) Reúne datos de al menos 50 operaciones completadas. 2) Separa ganancias de pérdidas y calcula el promedio simple de cada grupo. 3) Incluye todos los costos: comisiones, funding, retiros y deslizamiento. Las cifras netas muestran la rentabilidad real.",
@@ -7893,7 +7893,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Advertencia: esperanza bajo 0,1R es marginal — costos y errores pueden erosionarla a cero. Sobre 2R es poco realista y usualmente indica muestra pequeña o sobreajuste. Si el backtest muestra 2R+, valida con datos fuera de muestra."
       ],
       execution: [
-        "Flujo práctico: exporta últimos 100 trades → clasifica en ganancia/pérdida → calcula promedios → resta comisiones → ingresa en la calculadora → registra con fecha. Repite mensualmente. Si la esperanza baja 3 meses consecutivos, pausa el trading. Compara con tu <a href=\"/risk-reward-calculator/\">calculadora de riesgo-beneficio</a>.",
+        "Flujo práctico: exporta últimos 100 trades → clasifica en ganancia/pérdida → calcula promedios → resta comisiones → ingresa en la calculadora → registra con fecha. Repite mensualmente. Si la esperanza baja 3 meses consecutivos, pausa el trading. Compara con tu <a href=\"/es/calculadora-riesgo-beneficio/\">calculadora de riesgo-beneficio</a>.",
         "Para desarrollo de estrategia: calcula esperanza por tipo de setup (breakout, pullback, etc.). Puedes descubrir que breakouts tienen 0,8R pero reversión a la media -0,2R. Eliminando setups negativos mejoras significativamente."
       ],
       hygiene: [
@@ -7907,12 +7907,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     pt: {
       interpret: [
-        "A expectativa de trade indica o valor médio que você espera ganhar ou perder por operação em amostra grande. Expectativa positiva de $25 = média de $25 de lucro por trade ao longo de centenas. Se negativa, nenhum dimensionamento tornará a estratégia lucrativa. Use com a <a href=\"/risk-reward-calculator/\">calculadora de risco-retorno</a> para avaliar setups.",
-        "Fórmula: Expectativa = (Taxa de Acerto x Ganho Médio) - (Taxa de Erro x Perda Média). Trader com 45% acerto e 2,5:1 R:R: (0,45 x 2,5) - (0,55 x 1) = 0,575R por trade. Mesmo baixo acerto gera boa expectativa se R:R compensar. Use a <a href=\"/kelly-calculator/\">calculadora de Kelly</a> para dimensionamento ótimo."
+        "A expectativa de trade indica o valor médio que você espera ganhar ou perder por operação em amostra grande. Expectativa positiva de $25 = média de $25 de lucro por trade ao longo de centenas. Se negativa, nenhum dimensionamento tornará a estratégia lucrativa. Use com a <a href=\"/pt/calculadora-risco-retorno/\">calculadora de risco-retorno</a> para avaliar setups.",
+        "Fórmula: Expectativa = (Taxa de Acerto x Ganho Médio) - (Taxa de Erro x Perda Média). Trader com 45% acerto e 2,5:1 R:R: (0,45 x 2,5) - (0,55 x 1) = 0,575R por trade. Mesmo baixo acerto gera boa expectativa se R:R compensar. Use a <a href=\"/pt/calculadora-criterio-kelly/\">calculadora de Kelly</a> para dimensionamento ótimo."
       ],
       scenarios: [
         "Day trader cripto revisa 150 trades: 58% acerto, ganho médio $420, perda média $280. Expectativa = $243,60 - $117,60 = $126 por trade. A 5 trades/dia = $630 bruto. Com $15 de taxas: net $51/trade ($255/dia). Taxas consomem 60% — trocar exchange quase dobraria o resultado.",
-        "Swing trader com 35% acerto, setups 4:1 R:R. Risco médio $200: ganho médio $800, perda $200. Expectativa = $280 - $130 = $150/trade. Apesar de perder a maioria, é lucrativo. Usa a <a href=\"/position-size-calculator/\">calculadora de tamanho de posição</a> com 1,5% de risco."
+        "Swing trader com 35% acerto, setups 4:1 R:R. Risco médio $200: ganho médio $800, perda $200. Expectativa = $280 - $130 = $150/trade. Apesar de perder a maioria, é lucrativo. Usa a <a href=\"/pt/calculadora-tamanho-posicao/\">calculadora de tamanho de posição</a> com 1,5% de risco."
       ],
       checklist: [
         "Antes: 1) Mínimo 50 trades completos. 2) Separe ganhos e perdas, calcule média de cada. 3) Inclua todos os custos: taxas, funding, saques, slippage. Valores líquidos mostram a realidade.",
@@ -7927,7 +7927,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Alerta: abaixo de 0,1R é marginal — custos podem zerar. Acima de 2R é irrealista e geralmente indica amostra pequena ou overfitting. Backtest 2R+ — valide com dados fora da amostra."
       ],
       execution: [
-        "Fluxo: exporte últimos 100 trades → classifique ganho/perda → calcule médias → desconte taxas → insira na calculadora → registre com data. Repita mensalmente. 3 meses consecutivos em queda — pause. Compare com <a href=\"/risk-reward-calculator/\">calculadora de risco-retorno</a>.",
+        "Fluxo: exporte últimos 100 trades → classifique ganho/perda → calcule médias → desconte taxas → insira na calculadora → registre com data. Repita mensalmente. 3 meses consecutivos em queda — pause. Compare com <a href=\"/pt/calculadora-risco-retorno/\">calculadora de risco-retorno</a>.",
         "Desenvolvimento: calcule expectativa por tipo de setup. Breakouts 0,8R mas reversão à média -0,2R — elimine setups negativos para melhorar significativamente."
       ],
       hygiene: [
@@ -7941,12 +7941,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     tr: {
       interpret: [
-        "İşlem beklentisi, büyük bir örneklem üzerinde işlem başına kazanmayı veya kaybetmeyi beklediğiniz ortalama tutarı gösterir. $25 pozitif beklenti = yüzlerce işlemde ortalama $25 kâr. Negatifse, hiçbir pozisyon boyutlandırma stratejinizi uzun vadede kârlı yapmaz. <a href=\"/risk-reward-calculator/\">Risk-ödül hesaplayıcısı</a> ile her setup'ın eşiğinizi karşılayıp karşılamadığını değerlendirin.",
-        "Formül: Beklenti = (Kazanma Oranı x Ort. Kazanç) - (Kayıp Oranı x Ort. Kayıp). %45 kazanma ve 2,5:1 R:R: (0,45 x 2,5) - (0,55 x 1) = 0,575R. Düşük kazanma oranı bile R:R telafi ederse güçlü beklenti üretir. <a href=\"/kelly-calculator/\">Kelly kriteri hesaplayıcısı</a> ile optimal pozisyon boyutu belirleyin."
+        "İşlem beklentisi, büyük bir örneklem üzerinde işlem başına kazanmayı veya kaybetmeyi beklediğiniz ortalama tutarı gösterir. $25 pozitif beklenti = yüzlerce işlemde ortalama $25 kâr. Negatifse, hiçbir pozisyon boyutlandırma stratejinizi uzun vadede kârlı yapmaz. <a href=\"/tr/risk-odul-hesaplayici/\">Risk-ödül hesaplayıcısı</a> ile her setup'ın eşiğinizi karşılayıp karşılamadığını değerlendirin.",
+        "Formül: Beklenti = (Kazanma Oranı x Ort. Kazanç) - (Kayıp Oranı x Ort. Kayıp). %45 kazanma ve 2,5:1 R:R: (0,45 x 2,5) - (0,55 x 1) = 0,575R. Düşük kazanma oranı bile R:R telafi ederse güçlü beklenti üretir. <a href=\"/tr/kelly-kriteri-hesaplayici/\">Kelly kriteri hesaplayıcısı</a> ile optimal pozisyon boyutu belirleyin."
       ],
       scenarios: [
         "Kripto day trader 150 işlemi inceler: %58 kazanma, ort. kazanç $420, ort. kayıp $280. Beklenti = $243,60 - $117,60 = $126/işlem. Günde 5 işlem = $630 brüt. $15 komisyon/işlem ile net $51 ($255/gün). Komisyonlar %60'ını yiyor — exchange değiştirmek geliri neredeyse ikiye katlayabilir.",
-        "Swing trader %35 kazanma ama 4:1 R:R setup'lar. $200 risk: kazanç $800, kayıp $200. Beklenti = $280 - $130 = $150/işlem. Çoğu işlemi kaybetmesine rağmen kârlı. <a href=\"/position-size-calculator/\">Pozisyon boyutu hesaplayıcısı</a> ile %1,5 risk."
+        "Swing trader %35 kazanma ama 4:1 R:R setup'lar. $200 risk: kazanç $800, kayıp $200. Beklenti = $280 - $130 = $150/işlem. Çoğu işlemi kaybetmesine rağmen kârlı. <a href=\"/tr/pozisyon-boyutu-hesaplayici/\">Pozisyon boyutu hesaplayıcısı</a> ile %1,5 risk."
       ],
       checklist: [
         "Hesaplamadan önce: 1) En az 50 tamamlanmış işlem verisi toplayın. 2) Kazançları kayıplardan ayırın, her grubun basit ortalamasını hesaplayın. 3) Tüm maliyetleri dahil edin: komisyon, funding, çekim, kayma.",
@@ -7961,7 +7961,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Uyarı: 0,1R altı marjinal — maliyetler sıfırlayabilir. 2R üstü sürdürülemez, genellikle küçük örneklem veya aşırı uyum. Backtest 2R+ gösteriyorsa örneklem dışı verilerle doğrulayın."
       ],
       execution: [
-        "İş akışı: son 100 işlemi dışa aktarın → kazanç/kayıp sınıflandırın → ortalama hesaplayın → komisyonları çıkarın → hesaplayıcıya girin → tarihle kaydedin. Aylık tekrarlayın. 3 ay üst üste düşüşte trading'i durdurun. <a href=\"/risk-reward-calculator/\">Risk-ödül hesaplayıcısı</a> ile karşılaştırın.",
+        "İş akışı: son 100 işlemi dışa aktarın → kazanç/kayıp sınıflandırın → ortalama hesaplayın → komisyonları çıkarın → hesaplayıcıya girin → tarihle kaydedin. Aylık tekrarlayın. 3 ay üst üste düşüşte trading'i durdurun. <a href=\"/tr/risk-odul-hesaplayici/\">Risk-ödül hesaplayıcısı</a> ile karşılaştırın.",
         "Strateji geliştirme: her setup türü için ayrı beklenti hesaplayın (kırılım, geri çekilme vb.). Kırılımlar 0,8R ama ortalamaya dönüş -0,2R bulabilirsiniz — negatif setup'ları elimine edin."
       ],
       hygiene: [
@@ -7975,12 +7975,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     hi: {
       interpret: [
-        "ट्रेड एक्सपेक्टेंसी बड़े सैंपल में प्रति ट्रेड औसत लाभ या हानि बताती है। $25 पॉजिटिव एक्सपेक्टेंसी = सैकड़ों ट्रेडों में औसत $25 लाभ। नेगेटिव हो तो कोई पोजीशन साइजिंग रणनीति को लाभदायक नहीं बनाएगी। <a href=\"/risk-reward-calculator/\">रिस्क रिवॉर्ड कैलकुलेटर</a> से प्रत्येक सेटअप मूल्यांकन करें।",
-        "फॉर्मूला: एक्सपेक्टेंसी = (विन रेट x औसत जीत) - (लॉस रेट x औसत हार)। 45% विन और 2.5:1 R:R: (0.45 x 2.5) - (0.55 x 1) = 0.575R प्रति ट्रेड। कम विन रेट भी अच्छी एक्सपेक्टेंसी दे सकता है यदि R:R क्षतिपूर्ति करे। <a href=\"/kelly-calculator/\">Kelly कैलकुलेटर</a> से इष्टतम पोजीशन साइज जानें।"
+        "ट्रेड एक्सपेक्टेंसी बड़े सैंपल में प्रति ट्रेड औसत लाभ या हानि बताती है। $25 पॉजिटिव एक्सपेक्टेंसी = सैकड़ों ट्रेडों में औसत $25 लाभ। नेगेटिव हो तो कोई पोजीशन साइजिंग रणनीति को लाभदायक नहीं बनाएगी। <a href=\"/hi/risk-reward-calculator-hindi/\">रिस्क रिवॉर्ड कैलकुलेटर</a> से प्रत्येक सेटअप मूल्यांकन करें।",
+        "फॉर्मूला: एक्सपेक्टेंसी = (विन रेट x औसत जीत) - (लॉस रेट x औसत हार)। 45% विन और 2.5:1 R:R: (0.45 x 2.5) - (0.55 x 1) = 0.575R प्रति ट्रेड। कम विन रेट भी अच्छी एक्सपेक्टेंसी दे सकता है यदि R:R क्षतिपूर्ति करे। <a href=\"/hi/kelly-calculator-hindi/\">Kelly कैलकुलेटर</a> से इष्टतम पोजीशन साइज जानें।"
       ],
       scenarios: [
         "क्रिप्टो डे ट्रेडर 150 ट्रेड रिव्यू: 58% विन, औसत जीत $420, औसत हार $280। एक्सपेक्टेंसी = $243.60 - $117.60 = $126/ट्रेड। 5 ट्रेड/दिन = $630 ग्रॉस। $15 फी/ट्रेड के बाद नेट $51 ($255/दिन)। फीस 60% खाती हैं — एक्सचेंज बदलने से आय लगभग दोगुनी हो सकती है।",
-        "स्विंग ट्रेडर 35% विन लेकिन 4:1 R:R। $200 रिस्क: जीत $800, हार $200। एक्सपेक्टेंसी = $280 - $130 = $150/ट्रेड। अधिकांश ट्रेड हारने के बावजूद लाभदायक। <a href=\"/position-size-calculator/\">पोजीशन साइज कैलकुलेटर</a> से 1.5% रिस्क।"
+        "स्विंग ट्रेडर 35% विन लेकिन 4:1 R:R। $200 रिस्क: जीत $800, हार $200। एक्सपेक्टेंसी = $280 - $130 = $150/ट्रेड। अधिकांश ट्रेड हारने के बावजूद लाभदायक। <a href=\"/hi/position-size-calculator-hindi/\">पोजीशन साइज कैलकुलेटर</a> से 1.5% रिस्क।"
       ],
       checklist: [
         "गणना से पहले: 1) कम से कम 50 पूर्ण ट्रेडों का डेटा। 2) जीत और हार अलग करें, प्रत्येक का सरल औसत। 3) सभी लागत शामिल करें: ट्रेडिंग फी, फंडिंग, विड्रॉल, स्लिपेज।",
@@ -7995,7 +7995,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "चेतावनी: 0.1R से कम मार्जिनल — लागत शून्य कर सकती है। 2R से ऊपर अवास्तविक, आमतौर पर छोटा सैंपल या ओवरफिटिंग। बैकटेस्ट 2R+ दिखाए तो आउट-ऑफ-सैंपल डेटा से जांचें।"
       ],
       execution: [
-        "कार्यप्रवाह: अंतिम 100 ट्रेड एक्सपोर्ट → जीत/हार वर्गीकरण → औसत → फी घटाएं → कैलकुलेटर में दर्ज → तारीख सहित रिकॉर्ड। मासिक दोहराएं। 3 महीने लगातार गिरावट — ट्रेडिंग रोकें। <a href=\"/risk-reward-calculator/\">रिस्क रिवॉर्ड</a> से तुलना करें।",
+        "कार्यप्रवाह: अंतिम 100 ट्रेड एक्सपोर्ट → जीत/हार वर्गीकरण → औसत → फी घटाएं → कैलकुलेटर में दर्ज → तारीख सहित रिकॉर्ड। मासिक दोहराएं। 3 महीने लगातार गिरावट — ट्रेडिंग रोकें। <a href=\"/hi/risk-reward-calculator-hindi/\">रिस्क रिवॉर्ड</a> से तुलना करें।",
         "रणनीति विकास: प्रत्येक सेटअप प्रकार की अलग एक्सपेक्टेंसी (ब्रेकआउट, पुलबैक)। ब्रेकआउट 0.8R लेकिन मीन रिवर्जन -0.2R — नेगेटिव सेटअप हटाने से सुधार।"
       ],
       hygiene: [
@@ -8009,12 +8009,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     ru: {
       interpret: [
-        "Ожидание сделки показывает среднюю сумму прибыли или убытка на сделку при большой выборке. Положительное ожидание $25 = в среднем $25 прибыли на сделку. Если отрицательное, никакой сайзинг не сделает стратегию прибыльной. Используйте с <a href=\"/risk-reward-calculator/\">калькулятором риск/доход</a> для оценки сетапов.",
-        "Формула: Ожидание = (% побед x Ср. выигрыш) - (% потерь x Ср. проигрыш). Трейдер с 45% побед и 2,5:1 R:R: (0,45 x 2,5) - (0,55 x 1) = 0,575R на сделку. Даже низкий % побед даёт хорошее ожидание при высоком R:R. <a href=\"/kelly-calculator/\">Калькулятор Келли</a> определит оптимальный размер позиции."
+        "Ожидание сделки показывает среднюю сумму прибыли или убытка на сделку при большой выборке. Положительное ожидание $25 = в среднем $25 прибыли на сделку. Если отрицательное, никакой сайзинг не сделает стратегию прибыльной. Используйте с <a href=\"/ru/kalkulyator-risk-dohodnost/\">калькулятором риск/доход</a> для оценки сетапов.",
+        "Формула: Ожидание = (% побед x Ср. выигрыш) - (% потерь x Ср. проигрыш). Трейдер с 45% побед и 2,5:1 R:R: (0,45 x 2,5) - (0,55 x 1) = 0,575R на сделку. Даже низкий % побед даёт хорошее ожидание при высоком R:R. <a href=\"/ru/kalkulyator-kriteriya-kelli/\">Калькулятор Келли</a> определит оптимальный размер позиции."
       ],
       scenarios: [
         "Крипто-дейтрейдер анализирует 150 сделок: 58% побед, средний выигрыш $420, средний проигрыш $280. Ожидание = $243,60 - $117,60 = $126/сделку. 5 сделок/день = $630 брутто. При $15 комиссии: нетто $51 ($255/день). Комиссии съедают 60% — смена биржи может почти удвоить доход.",
-        "Свинг-трейдер: 35% побед, 4:1 R:R. Риск $200: выигрыш $800, проигрыш $200. Ожидание = $280 - $130 = $150/сделку. Несмотря на большинство убыточных сделок, стратегия прибыльна. Через <a href=\"/position-size-calculator/\">калькулятор размера позиции</a> устанавливает 1,5% риска."
+        "Свинг-трейдер: 35% побед, 4:1 R:R. Риск $200: выигрыш $800, проигрыш $200. Ожидание = $280 - $130 = $150/сделку. Несмотря на большинство убыточных сделок, стратегия прибыльна. Через <a href=\"/ru/kalkulyator-razmera-pozicii/\">калькулятор размера позиции</a> устанавливает 1,5% риска."
       ],
       checklist: [
         "До расчёта: 1) Данные минимум 50 завершённых сделок. 2) Разделите выигрыши и проигрыши, посчитайте средние каждой группы. 3) Включите все расходы: комиссии, фандинг, вывод, проскальзывание.",
@@ -8029,7 +8029,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Внимание: ниже 0,1R — маржинально, расходы могут обнулить. Выше 2R — нереалистично, обычно малая выборка или подгонка. Бэктест показывает 2R+ — проверьте на данных вне выборки."
       ],
       execution: [
-        "Алгоритм: экспортируйте последние 100 сделок → классифицируйте → средние → вычтите комиссии → введите в калькулятор → запишите с датой. Ежемесячно. 3 месяца снижения подряд — пауза. Сравните с <a href=\"/risk-reward-calculator/\">калькулятором риск/доход</a>.",
+        "Алгоритм: экспортируйте последние 100 сделок → классифицируйте → средние → вычтите комиссии → введите в калькулятор → запишите с датой. Ежемесячно. 3 месяца снижения подряд — пауза. Сравните с <a href=\"/ru/kalkulyator-risk-dohodnost/\">калькулятором риск/доход</a>.",
         "Разработка стратегий: рассчитайте ожидание для каждого типа сетапа отдельно. Пробои 0,8R, а возврат к среднему -0,2R — исключите убыточные сетапы для значительного улучшения."
       ],
       hygiene: [
@@ -8081,7 +8081,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     es: {
       interpret: [
         "El ratio de Sharpe mide el rendimiento ajustado al riesgo dividiendo el exceso de retorno (retorno del portafolio menos la tasa libre de riesgo) entre la desviación estándar del portafolio. Un Sharpe superior a 1,0 se considera bueno, superior a 2,0 es excelente y superior a 3,0 es excepcional. En mercados cripto, donde la volatilidad anualizada frecuentemente supera el 60–80%, incluso portafolios bien gestionados pueden mostrar Sharpe entre 0,5 y 1,5.",
-        "Un Sharpe negativo significa que tu portafolio rindió menos que la tasa libre de riesgo. Usa el <a href=\"/sortino-calculator/\">calculador Sortino</a> junto al Sharpe para distinguir entre volatilidad bajista dañina y volatilidad alcista benigna. Complementa con el <a href=\"/drawdown-calculator/\">calculador de drawdown</a> para entender las pérdidas pico-a-valle."
+        "Un Sharpe negativo significa que tu portafolio rindió menos que la tasa libre de riesgo. Usa el <a href=\"/es/calculadora-ratio-sortino/\">calculador Sortino</a> junto al Sharpe para distinguir entre volatilidad bajista dañina y volatilidad alcista benigna. Complementa con el <a href=\"/es/calculadora-drawdown/\">calculador de drawdown</a> para entender las pérdidas pico-a-valle."
       ],
       scenarios: [
         "Comparación de portafolios: un trader tiene dos portafolios — 70% BTC/30% ETH (retorno anualizado 45%, volatilidad 55%) y otro con 50% BTC/30% ETH/20% altcoins (retorno 62%, volatilidad 85%). El primero tiene Sharpe de 0,69 y el segundo 0,66, revelando que las altcoins añadieron retorno pero empeoraron ligeramente la eficiencia de riesgo.",
@@ -8093,7 +8093,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "El error más peligroso es comparar ratios Sharpe calculados en periodos diferentes. Un Sharpe de 3 meses en un mercado alcista puede superar 3,0, mientras la misma estrategia en 2 años podría mostrar 0,8. Otro error frecuente es ignorar el factor de anualización.",
-        "Usar el Sharpe como única métrica de decisión es un error crítico. Un portafolio con Sharpe de 1,5 pero drawdown máximo del 70% puede ser inaceptable. El Sharpe asume distribución normal, pero los retornos cripto exhiben colas pesadas — complementa con el <a href=\"/calmar-calculator/\">ratio Calmar</a>."
+        "Usar el Sharpe como única métrica de decisión es un error crítico. Un portafolio con Sharpe de 1,5 pero drawdown máximo del 70% puede ser inaceptable. El Sharpe asume distribución normal, pero los retornos cripto exhiben colas pesadas — complementa con el <a href=\"/es/calculadora-ratio-calmar/\">ratio Calmar</a>."
       ],
       benchmarks: [
         "En finanzas tradicionales, un Sharpe de 0,5 es promedio, 1,0 es bueno y 2,0+ es territorio de hedge funds. BTC buy-and-hold desde 2020 entrega un Sharpe anualizado de 0,7–1,1. Portafolios diversificados (BTC/ETH/SOL) típicamente 0,5–1,3.",
@@ -8115,7 +8115,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     pt: {
       interpret: [
         "O Sharpe ratio mede o retorno ajustado ao risco dividindo o excesso de retorno (retorno do portfólio menos a taxa livre de risco) pelo desvio padrão. Um Sharpe acima de 1,0 é bom, acima de 2,0 é excelente e acima de 3,0 é excepcional. Em mercados cripto, com volatilidade anualizada de 60–80%, portfólios bem geridos mostram Sharpe entre 0,5 e 1,5.",
-        "Um Sharpe negativo significa que o portfólio rendeu menos que a taxa livre de risco. Use o <a href=\"/sortino-calculator/\">calculador Sortino</a> junto ao Sharpe para distinguir volatilidade de queda prejudicial da volatilidade de alta benigna. Complemente com o <a href=\"/drawdown-calculator/\">calculador de drawdown</a> para entender perdas pico-a-vale."
+        "Um Sharpe negativo significa que o portfólio rendeu menos que a taxa livre de risco. Use o <a href=\"/pt/calculadora-ratio-sortino/\">calculador Sortino</a> junto ao Sharpe para distinguir volatilidade de queda prejudicial da volatilidade de alta benigna. Complemente com o <a href=\"/pt/calculadora-drawdown/\">calculador de drawdown</a> para entender perdas pico-a-vale."
       ],
       scenarios: [
         "Comparação de portfólios: 70% BTC/30% ETH (retorno 45%, volatilidade 55%, Sharpe 0,69) versus 50% BTC/30% ETH/20% altcoins (retorno 62%, volatilidade 85%, Sharpe 0,66). Altcoins adicionaram retorno mas pioraram ligeiramente a eficiência de risco.",
@@ -8127,7 +8127,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "Comparar ratios de períodos diferentes: 3 meses em alta pode dar Sharpe 3,0+, mesma estratégia em 2 anos mostra 0,8. Sempre compare períodos idênticos. Outro erro: ignorar a anualização.",
-        "Usar Sharpe como única métrica: portfólio com Sharpe 1,5 mas drawdown de 70% pode ser inaceitável. Sharpe assume normalidade, mas cripto tem caudas pesadas. Complemente com o <a href=\"/calmar-calculator/\">ratio Calmar</a>."
+        "Usar Sharpe como única métrica: portfólio com Sharpe 1,5 mas drawdown de 70% pode ser inaceitável. Sharpe assume normalidade, mas cripto tem caudas pesadas. Complemente com o <a href=\"/pt/calculadora-ratio-calmar/\">ratio Calmar</a>."
       ],
       benchmarks: [
         "Sharpe de 0,5 é médio, 1,0 é bom, 2,0+ é nível hedge fund. BTC hold desde 2020: Sharpe 0,7–1,1. Portfólios diversificados cripto: 0,5–1,3. Market-making algorítmico: 2,0–4,0.",
@@ -8149,7 +8149,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     tr: {
       interpret: [
         "Sharpe oranı, fazla getiriyi (portföy getirisi eksi risksiz oran) portföy standart sapmasına bölerek riske göre düzeltilmiş getiriyi ölçer. 1,0 üzeri iyi, 2,0 üzeri mükemmel, 3,0 üzeri istisnaidir. Kripto piyasalarında yıllık volatilite %60–80'i aştığından, iyi yönetilen portföyler bile 0,5–1,5 arası Sharpe gösterebilir.",
-        "Negatif Sharpe, portföyünüzün risksiz orandan düşük performans gösterdiği anlamına gelir. Zararlı düşüş ve faydalı yükseliş volatilitesini ayırt etmek için <a href=\"/sortino-calculator/\">Sortino hesaplayıcısını</a> birlikte kullanın. <a href=\"/drawdown-calculator/\">Drawdown hesaplayıcısı</a> ile tepe-dip kayıplarını anlayın."
+        "Negatif Sharpe, portföyünüzün risksiz orandan düşük performans gösterdiği anlamına gelir. Zararlı düşüş ve faydalı yükseliş volatilitesini ayırt etmek için <a href=\"/tr/sortino-orani-hesaplayici/\">Sortino hesaplayıcısını</a> birlikte kullanın. <a href=\"/tr/drawdown-toparlanma-hesaplayici/\">Drawdown hesaplayıcısı</a> ile tepe-dip kayıplarını anlayın."
       ],
       scenarios: [
         "Portföy karşılaştırması: %70 BTC/%30 ETH (yıllık getiri %45, volatilite %55, Sharpe 0,69) ile %50 BTC/%30 ETH/%20 altcoin (getiri %62, volatilite %85, Sharpe 0,66). Altcoinler getiri ekledi ama risk verimliliğini hafifçe kötüleştirdi.",
@@ -8161,7 +8161,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "Farklı dönemlerde hesaplanan Sharpe'ları karşılaştırmak en tehlikeli hatadır. Boğa piyasasında 3 aylık Sharpe 3,0'ı aşabilir, aynı strateji 2 yılda 0,8 gösterebilir. Yıllıklaştırma faktörünü ihmal etmek de yaygın hatadır.",
-        "Sharpe'ı tek karar metriği olarak kullanmak kritik hatadır. Sharpe 1,5 ama maksimum drawdown %70 olan portföy kabul edilemez olabilir. Sharpe normal dağılım varsayar, kripto getirileri ağır kuyrukludur — <a href=\"/calmar-calculator/\">Calmar oranıyla</a> tamamlayın."
+        "Sharpe'ı tek karar metriği olarak kullanmak kritik hatadır. Sharpe 1,5 ama maksimum drawdown %70 olan portföy kabul edilemez olabilir. Sharpe normal dağılım varsayar, kripto getirileri ağır kuyrukludur — <a href=\"/tr/calmar-orani-hesaplayici/\">Calmar oranıyla</a> tamamlayın."
       ],
       benchmarks: [
         "Geleneksel finansta Sharpe 0,5 ortalama, 1,0 iyi, 2,0+ hedge fon seviyesidir. BTC buy-and-hold 2020'den beri ~0,7–1,1 Sharpe sağlamıştır. Çeşitlendirilmiş kripto portföyleri 0,5–1,3 arasındadır.",
@@ -8183,7 +8183,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     hi: {
       interpret: [
         "शार्प अनुपात जोखिम-समायोजित रिटर्न मापता है — पोर्टफोलियो रिटर्न से जोखिम-मुक्त दर घटाकर पोर्टफोलियो स्टैंडर्ड डेविएशन से विभाजित करता है। 1.0 से ऊपर अच्छा, 2.0 से ऊपर उत्कृष्ट और 3.0 से ऊपर असाधारण माना जाता है। क्रिप्टो बाजारों में जहां वार्षिक अस्थिरता 60–80% से अधिक होती है, अच्छी तरह से प्रबंधित पोर्टफोलियो भी 0.5–1.5 के बीच शार्प दिखा सकते हैं।",
-        "नकारात्मक शार्प का मतलब है कि आपके पोर्टफोलियो ने जोखिम-मुक्त दर से कम रिटर्न दिया। हानिकारक गिरावट अस्थिरता और लाभकारी तेजी अस्थिरता में अंतर करने के लिए <a href=\"/sortino-calculator/\">सॉर्टिनो कैलकुलेटर</a> का उपयोग करें। <a href=\"/drawdown-calculator/\">ड्रॉडाउन कैलकुलेटर</a> से शिखर-से-गर्त हानि समझें।"
+        "नकारात्मक शार्प का मतलब है कि आपके पोर्टफोलियो ने जोखिम-मुक्त दर से कम रिटर्न दिया। हानिकारक गिरावट अस्थिरता और लाभकारी तेजी अस्थिरता में अंतर करने के लिए <a href=\"/hi/sortino-calculator-hindi/\">सॉर्टिनो कैलकुलेटर</a> का उपयोग करें। <a href=\"/hi/drawdown-calculator-hindi/\">ड्रॉडाउन कैलकुलेटर</a> से शिखर-से-गर्त हानि समझें।"
       ],
       scenarios: [
         "पोर्टफोलियो तुलना: 70% BTC/30% ETH (वार्षिक रिटर्न 45%, अस्थिरता 55%, शार्प 0.69) बनाम 50% BTC/30% ETH/20% ऑल्टकॉइन (रिटर्न 62%, अस्थिरता 85%, शार्प 0.66)। ऑल्टकॉइन ने रिटर्न जोड़ा लेकिन जोखिम दक्षता थोड़ी खराब हुई।",
@@ -8195,7 +8195,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "अलग-अलग समय अवधियों के शार्प की तुलना सबसे खतरनाक गलती है। बुल रन में 3 माह का शार्प 3.0+ हो सकता है, वही रणनीति 2 वर्षों में 0.8। वार्षिकीकरण कारक अनदेखा करना भी आम है।",
-        "शार्प को एकमात्र मापदंड बनाना गंभीर त्रुटि। शार्प 1.5 लेकिन 70% ड्रॉडाउन अस्वीकार्य हो सकता है। शार्प सामान्य वितरण मानता है, क्रिप्टो में भारी पूंछ होती है — <a href=\"/calmar-calculator/\">कैल्मर अनुपात</a> से पूरक करें।"
+        "शार्प को एकमात्र मापदंड बनाना गंभीर त्रुटि। शार्प 1.5 लेकिन 70% ड्रॉडाउन अस्वीकार्य हो सकता है। शार्प सामान्य वितरण मानता है, क्रिप्टो में भारी पूंछ होती है — <a href=\"/hi/calmar-ratio-calculator-hindi/\">कैल्मर अनुपात</a> से पूरक करें।"
       ],
       benchmarks: [
         "पारंपरिक वित्त में शार्प 0.5 औसत, 1.0 अच्छा, 2.0+ हेज फंड स्तर। 2020 से BTC होल्ड ~0.7–1.1 शार्प। विविध क्रिप्टो पोर्टफोलियो 0.5–1.3। एल्गोरिथमिक मार्केट-मेकिंग 2.0–4.0।",
@@ -8217,7 +8217,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     ru: {
       interpret: [
         "Коэффициент Шарпа измеряет доходность с поправкой на риск, деля избыточную доходность (доходность портфеля минус безрисковая ставка) на стандартное отклонение. Шарп выше 1,0 — хорошо, выше 2,0 — отлично, выше 3,0 — исключительно. На крипторынках с волатильностью 60–80% даже хорошие портфели показывают 0,5–1,5.",
-        "Отрицательный Шарп — портфель показал доходность ниже безрисковой ставки. Используйте <a href=\"/sortino-calculator/\">калькулятор Сортино</a> для различения вредной нисходящей и полезной восходящей волатильности. Дополните <a href=\"/drawdown-calculator/\">калькулятором просадки</a> для понимания потерь от пика до дна."
+        "Отрицательный Шарп — портфель показал доходность ниже безрисковой ставки. Используйте <a href=\"/ru/kalkulyator-koefficienta-sortino/\">калькулятор Сортино</a> для различения вредной нисходящей и полезной восходящей волатильности. Дополните <a href=\"/ru/kalkulyator-prosadki/\">калькулятором просадки</a> для понимания потерь от пика до дна."
       ],
       scenarios: [
         "Сравнение портфелей: 70% BTC/30% ETH (годовая доходность 45%, волатильность 55%, Шарп 0,69) против 50% BTC/30% ETH/20% альткоины (доходность 62%, волатильность 85%, Шарп 0,66). Альткоины добавили доходность, но ухудшили эффективность риска.",
@@ -8229,7 +8229,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "Сравнение Шарпов за разные периоды — самая опасная ошибка. 3-месячный на бычьем рынке может превысить 3,0, та же стратегия за 2 года — 0,8. Игнорирование аннуализации — тоже частая ошибка.",
-        "Шарп как единственный критерий — грубая ошибка. Шарп 1,5 при просадке 70% может быть неприемлем. Шарп предполагает нормальное распределение, крипто имеет тяжёлые хвосты — дополняйте <a href=\"/calmar-calculator/\">коэффициентом Кальмара</a>."
+        "Шарп как единственный критерий — грубая ошибка. Шарп 1,5 при просадке 70% может быть неприемлем. Шарп предполагает нормальное распределение, крипто имеет тяжёлые хвосты — дополняйте <a href=\"/ru/kalkulyator-koefficienta-kalmara/\">коэффициентом Кальмара</a>."
       ],
       benchmarks: [
         "Шарп 0,5 — средний, 1,0 — хороший, 2,0+ — уровень хедж-фондов. BTC холд с 2020: ~0,7–1,1. Диверсифицированные криптопортфели: 0,5–1,3. Алгоритмический маркет-мейкинг: 2,0–4,0.",
@@ -8288,7 +8288,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     es: {
       interpret: [
         "El ratio Sortino mejora al Sharpe penalizando solo la volatilidad bajista — la desviación estándar de retornos negativos. En cripto, donde movimientos explosivos al alza inflan la volatilidad total, esta distinción es crucial. Un Sortino superior a 1,5 es bueno, superior a 2,5 es excelente y superior a 4,0 es excepcional.",
-        "Compara tu Sortino con tu <a href=\"/sharpe-calculator/\">ratio Sharpe</a>: cuando el Sortino es significativamente mayor (1,5x+), tu portafolio captura eficientemente las subidas controlando las caídas. Sortino por debajo de 1,0 con Sharpe cerca de 1,0 es señal de advertencia: riesgo bajista desproporcionado."
+        "Compara tu Sortino con tu <a href=\"/es/calculadora-ratio-sharpe/\">ratio Sharpe</a>: cuando el Sortino es significativamente mayor (1,5x+), tu portafolio captura eficientemente las subidas controlando las caídas. Sortino por debajo de 1,0 con Sharpe cerca de 1,0 es señal de advertencia: riesgo bajista desproporcionado."
       ],
       scenarios: [
         "Análisis de portafolio: 60% BTC/40% SOL en 12 meses — retorno 72%, volatilidad total 68% (Sharpe 0,99), desviación bajista 38% (Sortino 1,76). Ratio Sortino/Sharpe de 1,78x confirma que la volatilidad fue mayoritariamente alcista.",
@@ -8296,7 +8296,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Antes: 1) Al menos 12 meses de retornos. 2) Define MAR: 0% o tasa libre (~4,8%). 3) Desviación bajista solo con retornos bajo MAR. 4) Datos que incluyan al menos un periodo significativo de caída.",
-        "Después: compara Sortino con Sharpe. Sortino/Sharpe superior a 1,5x indica retornos favorablemente sesgados. Cruza con <a href=\"/drawdown-calculator/\">drawdown máximo</a> para confirmar."
+        "Después: compara Sortino con Sharpe. Sortino/Sharpe superior a 1,5x indica retornos favorablemente sesgados. Cruza con <a href=\"/es/calculadora-drawdown/\">drawdown máximo</a> para confirmar."
       ],
       mistakes: [
         "Usar desviación estándar total en el denominador produce Sharpe, no Sortino. MAR demasiado alto (20% con retorno 25%) produce Sortino artificialmente bajo.",
@@ -8322,7 +8322,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     pt: {
       interpret: [
         "O Sortino ratio melhora o Sharpe penalizando apenas a volatilidade de queda — o desvio padrão dos retornos negativos. Em cripto, onde movimentos explosivos de alta inflam a volatilidade total, essa distinção é crucial. Sortino acima de 1,5 é bom, acima de 2,5 é excelente, acima de 4,0 é excepcional.",
-        "Compare seu Sortino com o <a href=\"/sharpe-calculator/\">Sharpe ratio</a>: quando o Sortino é significativamente maior (1,5x+), o portfólio captura alta eficientemente controlando quedas. Sortino abaixo de 1,0 com Sharpe perto de 1,0 = risco de queda desproporcional."
+        "Compare seu Sortino com o <a href=\"/pt/calculadora-ratio-sharpe/\">Sharpe ratio</a>: quando o Sortino é significativamente maior (1,5x+), o portfólio captura alta eficientemente controlando quedas. Sortino abaixo de 1,0 com Sharpe perto de 1,0 = risco de queda desproporcional."
       ],
       scenarios: [
         "Análise: 60% BTC/40% SOL em 12 meses — retorno 72%, volatilidade total 68% (Sharpe 0,99), desvio de queda 38% (Sortino 1,76). Ratio 1,78x confirma volatilidade predominantemente de alta.",
@@ -8330,7 +8330,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Antes: 1) Mínimo 12 meses. 2) MAR: 0% ou taxa livre (~4,8%). 3) Desvio de queda apenas com retornos abaixo do MAR. 4) Incluir período significativo de queda.",
-        "Depois: compare Sortino com Sharpe. Sortino/Sharpe 1,5x+ = retornos positivamente enviesados. Cruze com <a href=\"/drawdown-calculator/\">drawdown máximo</a>."
+        "Depois: compare Sortino com Sharpe. Sortino/Sharpe 1,5x+ = retornos positivamente enviesados. Cruze com <a href=\"/pt/calculadora-drawdown/\">drawdown máximo</a>."
       ],
       mistakes: [
         "Desvio padrão total no denominador = Sharpe, não Sortino. MAR muito alto (20% com retorno 25%) = Sortino artificialmente baixo.",
@@ -8356,7 +8356,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     tr: {
       interpret: [
         "Sortino oranı, toplam volatilite yerine yalnızca düşüş volatilitesini cezalandırarak Sharpe'ı geliştirir. Kripto'da patlayıcı yükseliş kTotal volatiliteyi şişirir ama yatırımcıların istediği risk türüdür. 1,5+ iyi, 2,5+ mükemmel, 4,0+ istisnaidir.",
-        "Sortino'yu <a href=\"/sharpe-calculator/\">Sharpe oranınızla</a> karşılaştırın: Sortino belirgin şekilde yüksekse (1,5x+), portföyünüz düşüşleri kontrol ederken yükselişi verimli yakalıyor. Sortino 1,0 altı ve Sharpe ~1,0 ise uyarı: orantısız düşüş riski."
+        "Sortino'yu <a href=\"/tr/sharpe-orani-hesaplayici/\">Sharpe oranınızla</a> karşılaştırın: Sortino belirgin şekilde yüksekse (1,5x+), portföyünüz düşüşleri kontrol ederken yükselişi verimli yakalıyor. Sortino 1,0 altı ve Sharpe ~1,0 ise uyarı: orantısız düşüş riski."
       ],
       scenarios: [
         "Portföy analizi: %60 BTC/%40 SOL, 12 ay — getiri %72, toplam volatilite %68 (Sharpe 0,99), düşüş sapması %38 (Sortino 1,76). 1,78x oranı volatilitenin çoğunun yükselişten geldiğini doğrular.",
@@ -8364,7 +8364,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Hesaplamadan önce: 1) 12+ ay periyodik getiri. 2) MAR: %0 veya risksiz (~%4,8). 3) Sadece MAR altı getirilerle düşüş sapması. 4) En az bir önemli düşüş dönemini içersin.",
-        "Sonra: Sortino'yu Sharpe ile karşılaştırın. Sortino/Sharpe 1,5x+ olumlu çarpıklık. <a href=\"/drawdown-calculator/\">Maksimum drawdown</a> ile doğrulayın."
+        "Sonra: Sortino'yu Sharpe ile karşılaştırın. Sortino/Sharpe 1,5x+ olumlu çarpıklık. <a href=\"/tr/drawdown-toparlanma-hesaplayici/\">Maksimum drawdown</a> ile doğrulayın."
       ],
       mistakes: [
         "Paydada düşüş sapması yerine toplam standart sapma = Sharpe, Sortino değil. MAR çok yüksek (%20, getiri %25) = yapay düşük Sortino.",
@@ -8390,7 +8390,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     hi: {
       interpret: [
         "सॉर्टिनो अनुपात केवल गिरावट अस्थिरता को दंडित करके शार्प में सुधार करता है। क्रिप्टो में विस्फोटक तेजी कुल अस्थिरता बढ़ाती है लेकिन यह वांछित जोखिम है। 1.5+ अच्छा, 2.5+ उत्कृष्ट, 4.0+ असाधारण।",
-        "<a href=\"/sharpe-calculator/\">शार्प अनुपात</a> से तुलना करें: सॉर्टिनो काफी अधिक (1.5x+) = गिरावट नियंत्रित करते हुए तेजी पकड़ रहे हैं। सॉर्टिनो 1.0 से नीचे + शार्प ~1.0 = चेतावनी: अनुपातहीन गिरावट जोखिम।"
+        "<a href=\"/hi/sharpe-calculator-hindi/\">शार्प अनुपात</a> से तुलना करें: सॉर्टिनो काफी अधिक (1.5x+) = गिरावट नियंत्रित करते हुए तेजी पकड़ रहे हैं। सॉर्टिनो 1.0 से नीचे + शार्प ~1.0 = चेतावनी: अनुपातहीन गिरावट जोखिम।"
       ],
       scenarios: [
         "पोर्टफोलियो: 60% BTC/40% SOL, 12 माह — रिटर्न 72%, कुल अस्थिरता 68% (शार्प 0.99), गिरावट विचलन 38% (सॉर्टिनो 1.76)। 1.78x अनुपात = अधिकांश अस्थिरता तेजी से।",
@@ -8398,7 +8398,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "पहले: 1) 12+ महीने डेटा। 2) MAR: 0% या जोखिम-मुक्त (~4.8%)। 3) केवल MAR से नीचे के रिटर्न से गिरावट विचलन। 4) कम से कम एक महत्वपूर्ण गिरावट अवधि।",
-        "बाद: सॉर्टिनो को शार्प से तुलना करें। सॉर्टिनो/शार्प 1.5x+ = अनुकूल विषमता। <a href=\"/drawdown-calculator/\">अधिकतम ड्रॉडाउन</a> से क्रॉस-चेक।"
+        "बाद: सॉर्टिनो को शार्प से तुलना करें। सॉर्टिनो/शार्प 1.5x+ = अनुकूल विषमता। <a href=\"/hi/drawdown-calculator-hindi/\">अधिकतम ड्रॉडाउन</a> से क्रॉस-चेक।"
       ],
       mistakes: [
         "कुल मानक विचलन = शार्प, सॉर्टिनो नहीं। MAR बहुत अधिक (20%, रिटर्न 25%) = कृत्रिम रूप से कम सॉर्टिनो।",
@@ -8424,7 +8424,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     ru: {
       interpret: [
         "Коэффициент Сортино штрафует только нисходящую волатильность, а не общую. В крипто взрывной рост раздувает общую волатильность, но это желаемый риск. Сортино выше 1,5 — хорошо, выше 2,5 — отлично, выше 4,0 — исключительно.",
-        "Сравните с <a href=\"/sharpe-calculator/\">коэффициентом Шарпа</a>: Сортино значительно выше (1,5x+) = портфель эффективно захватывает рост, контролируя просадки. Сортино ниже 1,0 при Шарпе ~1,0 = тревожный сигнал: непропорциональный риск снижения."
+        "Сравните с <a href=\"/ru/kalkulyator-koefficienta-sharpa/\">коэффициентом Шарпа</a>: Сортино значительно выше (1,5x+) = портфель эффективно захватывает рост, контролируя просадки. Сортино ниже 1,0 при Шарпе ~1,0 = тревожный сигнал: непропорциональный риск снижения."
       ],
       scenarios: [
         "Анализ: 60% BTC/40% SOL, 12 месяцев — доходность 72%, волатильность 68% (Шарп 0,99), нисходящее отклонение 38% (Сортино 1,76). 1,78x = большая часть волатильности — рост.",
@@ -8432,7 +8432,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Перед расчётом: 1) 12+ месяцев. 2) MAR: 0% или безрисковая (~4,8%). 3) Нисходящее отклонение только по доходностям ниже MAR. 4) Хотя бы один значимый период снижения.",
-        "После: сравните с Шарпом. Сортино/Шарп 1,5x+ = положительный перекос. Перекрёстно с <a href=\"/drawdown-calculator/\">максимальной просадкой</a>."
+        "После: сравните с Шарпом. Сортино/Шарп 1,5x+ = положительный перекос. Перекрёстно с <a href=\"/ru/kalkulyator-prosadki/\">максимальной просадкой</a>."
       ],
       mistakes: [
         "Общее стандартное отклонение в знаменателе = Шарп, не Сортино. Слишком высокий MAR (20%, доходность 25%) = искусственно низкий Сортино.",
@@ -8495,7 +8495,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     es: {
       interpret: [
         "El ratio Calmar divide el retorno anualizado por el drawdown máximo, midiendo cuánto retorno obtuviste por unidad de peor dolor. Superior a 1,0 es bueno, superior a 2,0 excelente, superior a 3,0 excepcional. En cripto con drawdowns de 50–80%, lograr Calmar 1,0+ requiere gestión de riesgo disciplinada.",
-        "A diferencia del <a href=\"/sharpe-calculator/\">Sharpe</a> que promedia volatilidad, el Calmar se enfoca en el peor evento — drawdown máximo. Sharpe 1,5 pero Calmar 0,3 = frágil. Usa el <a href=\"/drawdown-calculator/\">calculador de drawdown</a> para contextualizar si el retorno justificó el dolor."
+        "A diferencia del <a href=\"/es/calculadora-ratio-sharpe/\">Sharpe</a> que promedia volatilidad, el Calmar se enfoca en el peor evento — drawdown máximo. Sharpe 1,5 pero Calmar 0,3 = frágil. Usa el <a href=\"/es/calculadora-drawdown/\">calculador de drawdown</a> para contextualizar si el retorno justificó el dolor."
       ],
       scenarios: [
         "Presupuesto de riesgo: 85% retorno con 45% drawdown (Calmar 1,89) vs. 120% con 72% drawdown (Calmar 1,67). La primera estrategia usa el riesgo más eficientemente.",
@@ -8503,11 +8503,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Antes: 1) 2–3 años con mercados alcistas y bajistas. 2) CAGR. 3) Drawdown máximo verdadero. 4) Mismo periodo.",
-        "Después: compara con benchmark. BTC Calmar 0,5 vs. tuyo 1,2 = gestión de riesgo aporta valor. Inferior a BTC = revisar <a href=\"/position-size-calculator/\">tamaño de posición</a>."
+        "Después: compara con benchmark. BTC Calmar 0,5 vs. tuyo 1,2 = gestión de riesgo aporta valor. Inferior a BTC = revisar <a href=\"/es/calculadora-tamano-posicion/\">tamaño de posición</a>."
       ],
       mistakes: [
         "Calcular sin drawdowns significativos: 6 meses alcistas = Calmar 5,0+. Necesita 2+ años. Retorno aritmético en vez de CAGR sobreestima.",
-        "Confundir máximo con promedio. Calmar es retrospectivo: 2,0 no garantiza el futuro. Complementa con <a href=\"/var-calculator/\">Valor en Riesgo</a>."
+        "Confundir máximo con promedio. Calmar es retrospectivo: 2,0 no garantiza el futuro. Complementa con <a href=\"/es/calculadora-valor-en-riesgo/\">Valor en Riesgo</a>."
       ],
       benchmarks: [
         "BTC hold ciclo: 0,3–0,8. Diversificados: 0,5–1,5. Activos con stops: 1,5–3,0. Trend-following: 1,0–2,5. 3,0+ en 3+ años = raro.",
@@ -8515,7 +8515,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
         "Flujo: 1) Mínimo 2 años. 2) CAGR. 3) Drawdown máximo. 4) CAGR / |drawdown|. Ejemplo: 60% / 40% = 1,5.",
-        "Trimestral con ventana de 3 años. Calmar descendente con retornos estables = nuevos récords de drawdown. Ajustar <a href=\"/tp-sl-calculator/\">TP/SL</a>."
+        "Trimestral con ventana de 3 años. Calmar descendente con retornos estables = nuevos récords de drawdown. Ajustar <a href=\"/es/calculadora-tp-sl/\">TP/SL</a>."
       ],
       hygiene: [
         "Trimestral. Registrar periodo, CAGR, drawdown con fechas, Calmar. Comparar con BTC/ETH.",
@@ -8529,7 +8529,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     pt: {
       interpret: [
         "O Calmar ratio divide retorno anualizado por drawdown máximo. Acima de 1,0 é bom, 2,0 excelente, 3,0 excepcional. Em cripto com drawdowns de 50–80%, Calmar 1,0+ exige gestão de risco disciplinada.",
-        "Diferente do <a href=\"/sharpe-calculator/\">Sharpe</a>, o Calmar foca no pior evento único. Sharpe 1,5 mas Calmar 0,3 = frágil. <a href=\"/drawdown-calculator/\">Calculador de drawdown</a> para contextualizar."
+        "Diferente do <a href=\"/pt/calculadora-ratio-sharpe/\">Sharpe</a>, o Calmar foca no pior evento único. Sharpe 1,5 mas Calmar 0,3 = frágil. <a href=\"/pt/calculadora-drawdown/\">Calculador de drawdown</a> para contextualizar."
       ],
       scenarios: [
         "85% retorno com 45% drawdown (Calmar 1,89) vs. 120% com 72% (Calmar 1,67). Primeira usa risco mais eficientemente.",
@@ -8537,11 +8537,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Antes: 1) 2–3 anos bull+bear. 2) CAGR. 3) Drawdown máximo verdadeiro. 4) Mesmo período.",
-        "Depois: compare com benchmark. BTC 0,5 vs. seu 1,2 = gestão agrega. Inferior = reavaliar <a href=\"/position-size-calculator/\">posição</a>."
+        "Depois: compare com benchmark. BTC 0,5 vs. seu 1,2 = gestão agrega. Inferior = reavaliar <a href=\"/pt/calculadora-tamanho-posicao/\">posição</a>."
       ],
       mistakes: [
         "Período sem drawdowns: 6 meses em alta = 5,0+. Precisa 2+ anos. Aritmético vs. CAGR.",
-        "Máximo vs. médio. Retrospectivo: 2,0 não garante futuro. Complemente com <a href=\"/var-calculator/\">VaR</a>."
+        "Máximo vs. médio. Retrospectivo: 2,0 não garante futuro. Complemente com <a href=\"/pt/calculadora-valor-em-risco/\">VaR</a>."
       ],
       benchmarks: [
         "BTC hold ciclo: 0,3–0,8. Diversificados: 0,5–1,5. Ativos: 1,5–3,0. Trend: 1,0–2,5. 3,0+ em 3+ anos = raro.",
@@ -8549,7 +8549,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
         "Fluxo: 1) 2+ anos. 2) CAGR. 3) Drawdown máximo. 4) CAGR / |drawdown|. Ex: 60% / 40% = 1,5.",
-        "Trimestral com janela 3 anos. Calmar em queda = novos recordes. Ajustar <a href=\"/tp-sl-calculator/\">TP/SL</a>."
+        "Trimestral com janela 3 anos. Calmar em queda = novos recordes. Ajustar <a href=\"/pt/calculadora-tp-sl/\">TP/SL</a>."
       ],
       hygiene: [
         "Trimestral. Registre período, CAGR, drawdown, Calmar. Compare com BTC/ETH.",
@@ -8563,7 +8563,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     tr: {
       interpret: [
         "Calmar oranı yıllık getiriyi maksimum drawdown'a böler. 1,0+ iyi, 2,0+ mükemmel, 3,0+ istisnai. Kripto'da %50–80 drawdown yaygınken tam döngüde 1,0+ tutmak disiplin gerektirir.",
-        "<a href=\"/sharpe-calculator/\">Sharpe'dan</a> farklı olarak en kötü tek olaya odaklanır. Sharpe 1,5 ama Calmar 0,3 = kırılgan. <a href=\"/drawdown-calculator/\">Drawdown hesaplayıcısıyla</a> bağlamlandırın."
+        "<a href=\"/tr/sharpe-orani-hesaplayici/\">Sharpe'dan</a> farklı olarak en kötü tek olaya odaklanır. Sharpe 1,5 ama Calmar 0,3 = kırılgan. <a href=\"/tr/drawdown-toparlanma-hesaplayici/\">Drawdown hesaplayıcısıyla</a> bağlamlandırın."
       ],
       scenarios: [
         "%85 getiri, %45 drawdown (Calmar 1,89) vs. %120 getiri, %72 drawdown (Calmar 1,67). Birincisi riski daha verimli kullandı.",
@@ -8575,7 +8575,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "Büyük drawdown'sız dönemde hesaplamak: 6 ay boğada 5,0+. 2+ yıl gerekir. CAGR yerine aritmetik = abartılmış.",
-        "Maksimum vs. ortalama. Geriye dönük: 2,0 geleceği garanti etmez. <a href=\"/var-calculator/\">VaR</a> ile tamamlayın."
+        "Maksimum vs. ortalama. Geriye dönük: 2,0 geleceği garanti etmez. <a href=\"/tr/riske-maruz-deger-hesaplayici/\">VaR</a> ile tamamlayın."
       ],
       benchmarks: [
         "BTC hold döngü: 0,3–0,8. Çeşitli: 0,5–1,5. Aktif: 1,5–3,0. Trend: 1,0–2,5. 3+ yılda 3,0+ nadir.",
@@ -8583,7 +8583,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
         "İş akışı: 1) 2+ yıl. 2) CAGR. 3) Maks drawdown. 4) CAGR / |drawdown|. Örnek: %60 / %40 = 1,5.",
-        "3 yıllık pencereyle üç ayda bir. Düşen Calmar = yeni drawdown rekorları. <a href=\"/tp-sl-calculator/\">TP/SL</a> sıkılaştırın."
+        "3 yıllık pencereyle üç ayda bir. Düşen Calmar = yeni drawdown rekorları. <a href=\"/tr/tp-sl-hesaplayici/\">TP/SL</a> sıkılaştırın."
       ],
       hygiene: [
         "Üç ayda bir. Dönem, CAGR, drawdown tarihleri, Calmar kaydedin. BTC/ETH ile karşılaştırın.",
@@ -8597,7 +8597,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     hi: {
       interpret: [
         "कैल्मर अनुपात वार्षिक रिटर्न को अधिकतम ड्रॉडाउन से विभाजित करता है। 1.0+ अच्छा, 2.0+ उत्कृष्ट, 3.0+ असाधारण। क्रिप्टो में 50–80% ड्रॉडाउन सामान्य, पूरे चक्र में 1.0+ बनाए रखना अनुशासन चाहिए।",
-        "<a href=\"/sharpe-calculator/\">शार्प</a> से भिन्न, कैल्मर एकल सबसे खराब घटना पर केंद्रित। शार्प 1.5 लेकिन कैल्मर 0.3 = नाजुक। <a href=\"/drawdown-calculator/\">ड्रॉडाउन कैलकुलेटर</a> से संदर्भ दें।"
+        "<a href=\"/hi/sharpe-calculator-hindi/\">शार्प</a> से भिन्न, कैल्मर एकल सबसे खराब घटना पर केंद्रित। शार्प 1.5 लेकिन कैल्मर 0.3 = नाजुक। <a href=\"/hi/drawdown-calculator-hindi/\">ड्रॉडाउन कैलकुलेटर</a> से संदर्भ दें।"
       ],
       scenarios: [
         "85% रिटर्न, 45% ड्रॉडाउन (कैल्मर 1.89) बनाम 120%, 72% (कैल्मर 1.67)। पहली रणनीति जोखिम अधिक कुशलता से उपयोग करती है।",
@@ -8605,11 +8605,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "पहले: 1) 2–3 वर्ष बुल+बेयर। 2) CAGR। 3) वास्तविक अधिकतम ड्रॉडाउन। 4) एक ही अवधि।",
-        "बाद: BTC कैल्मर 0.5 बनाम आपका 1.2 = जोखिम प्रबंधन मूल्य जोड़ रहा। कम = <a href=\"/position-size-calculator/\">पोजीशन साइज़</a> पुनर्मूल्यांकन।"
+        "बाद: BTC कैल्मर 0.5 बनाम आपका 1.2 = जोखिम प्रबंधन मूल्य जोड़ रहा। कम = <a href=\"/hi/position-size-calculator-hindi/\">पोजीशन साइज़</a> पुनर्मूल्यांकन।"
       ],
       mistakes: [
         "बड़े ड्रॉडाउन के बिना अवधि: 6 माह बुल = 5.0+। 2+ वर्ष चाहिए। अंकगणितीय बनाम CAGR।",
-        "अधिकतम बनाम औसत। कैल्मर पीछे देखता है: 2.0 भविष्य की गारंटी नहीं। <a href=\"/var-calculator/\">VaR</a> से पूरक करें।"
+        "अधिकतम बनाम औसत। कैल्मर पीछे देखता है: 2.0 भविष्य की गारंटी नहीं। <a href=\"/hi/var-calculator-hindi/\">VaR</a> से पूरक करें।"
       ],
       benchmarks: [
         "BTC होल्ड चक्र: 0.3–0.8। विविध: 0.5–1.5। सक्रिय: 1.5–3.0। ट्रेंड: 1.0–2.5। 3+ वर्षों में 3.0+ दुर्लभ।",
@@ -8617,7 +8617,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
         "कार्यप्रवाह: 1) 2+ वर्ष। 2) CAGR। 3) अधिकतम ड्रॉडाउन। 4) CAGR / |ड्रॉडाउन|। उदाहरण: 60% / 40% = 1.5।",
-        "3 वर्ष विंडो से तिमाही। स्थिर रिटर्न + गिरता कैल्मर = नए ड्रॉडाउन। <a href=\"/tp-sl-calculator/\">TP/SL</a> कसें।"
+        "3 वर्ष विंडो से तिमाही। स्थिर रिटर्न + गिरता कैल्मर = नए ड्रॉडाउन। <a href=\"/hi/tp-sl-calculator-hindi/\">TP/SL</a> कसें।"
       ],
       hygiene: [
         "तिमाही। अवधि, CAGR, ड्रॉडाउन तिथियां, कैल्मर लॉग करें। BTC/ETH से तुलना।",
@@ -8631,7 +8631,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     ru: {
       interpret: [
         "Коэффициент Кальмара делит годовую доходность на максимальную просадку. Выше 1,0 — хорошо, 2,0 — отлично, 3,0 — исключительно. В крипто с просадками 50–80% удержание 1,0+ за цикл требует дисциплины.",
-        "В отличие от <a href=\"/sharpe-calculator/\">Шарпа</a>, фокусируется на худшем событии. Шарп 1,5, но Кальмар 0,3 = хрупкость. <a href=\"/drawdown-calculator/\">Калькулятор просадки</a> для контекста."
+        "В отличие от <a href=\"/ru/kalkulyator-koefficienta-sharpa/\">Шарпа</a>, фокусируется на худшем событии. Шарп 1,5, но Кальмар 0,3 = хрупкость. <a href=\"/ru/kalkulyator-prosadki/\">Калькулятор просадки</a> для контекста."
       ],
       scenarios: [
         "85% доходность, 45% просадка (Кальмар 1,89) vs. 120%, 72% (Кальмар 1,67). Первая стратегия эффективнее использует бюджет риска.",
@@ -8639,11 +8639,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Перед расчётом: 1) 2–3 года бычий+медвежий. 2) CAGR. 3) Истинная максимальная просадка. 4) Одинаковый период.",
-        "После: BTC Кальмар 0,5 vs. ваш 1,2 = ценность. Ниже BTC = пересмотрите <a href=\"/position-size-calculator/\">размер позиций</a>."
+        "После: BTC Кальмар 0,5 vs. ваш 1,2 = ценность. Ниже BTC = пересмотрите <a href=\"/ru/kalkulyator-razmera-pozicii/\">размер позиций</a>."
       ],
       mistakes: [
         "Расчёт без крупных просадок: 6 месяцев бычьего = 5,0+. Нужно 2+ года. Арифметическое vs. CAGR.",
-        "Максимальная vs. средняя. Ретроспективен: 2,0 не гарантирует будущее. Дополняйте <a href=\"/var-calculator/\">VaR</a>."
+        "Максимальная vs. средняя. Ретроспективен: 2,0 не гарантирует будущее. Дополняйте <a href=\"/ru/kalkulyator-stoimosti-pod-riskom/\">VaR</a>."
       ],
       benchmarks: [
         "BTC холд цикл: 0,3–0,8. Диверсифицированные: 0,5–1,5. Активные: 1,5–3,0. Тренд: 1,0–2,5. 3,0+ за 3+ года — редкость.",
@@ -8651,7 +8651,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       execution: [
         "Порядок: 1) 2+ года. 2) CAGR. 3) Максимальная просадка. 4) CAGR / |просадка|. Пример: 60% / 40% = 1,5.",
-        "Ежеквартально с 3-летним окном. Падающий Кальмар при стабильной доходности = новые рекорды просадок. <a href=\"/tp-sl-calculator/\">TP/SL</a> ужесточить."
+        "Ежеквартально с 3-летним окном. Падающий Кальмар при стабильной доходности = новые рекорды просадок. <a href=\"/ru/kalkulyator-tp-sl/\">TP/SL</a> ужесточить."
       ],
       hygiene: [
         "Ежеквартально. Период, CAGR, даты просадки, Кальмар. Сравните с BTC/ETH.",
@@ -8701,8 +8701,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     es: {
       interpret: [
-        "El ratio Treynor mide rendimiento ajustado al riesgo relativo al riesgo sistemático, usando beta en lugar de volatilidad total. Divide el exceso de retorno por el beta al mercado cripto. 0,10+ sólido, 0,20+ fuerte, 0,30+ excepcional. A diferencia del <a href=\"/sharpe-calculator/\">Sharpe</a>, solo penaliza riesgo correlacionado con el mercado.",
-        "Beta 0,8 a BTC con exceso 24% = Treynor 0,30. Treynor alto + Sharpe bajo = riesgo idiosincrático. Sharpe alto + Treynor bajo = buena diversificación pero exposición sistémica. Usa ambos con el <a href=\"/risk-reward-calculator/\">calculador riesgo-retorno</a>."
+        "El ratio Treynor mide rendimiento ajustado al riesgo relativo al riesgo sistemático, usando beta en lugar de volatilidad total. Divide el exceso de retorno por el beta al mercado cripto. 0,10+ sólido, 0,20+ fuerte, 0,30+ excepcional. A diferencia del <a href=\"/es/calculadora-ratio-sharpe/\">Sharpe</a>, solo penaliza riesgo correlacionado con el mercado.",
+        "Beta 0,8 a BTC con exceso 24% = Treynor 0,30. Treynor alto + Sharpe bajo = riesgo idiosincrático. Sharpe alto + Treynor bajo = buena diversificación pero exposición sistémica. Usa ambos con el <a href=\"/es/calculadora-riesgo-beneficio/\">calculador riesgo-retorno</a>."
       ],
       scenarios: [
         "Evaluación de gestores: ambos 60% anual. A: beta 1,3 (Treynor 0,42). B: beta 0,7 (Treynor 0,79). B ganó lo mismo con menos exposición — alfa genuino.",
@@ -8710,11 +8710,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Antes: 1) Benchmark: BTC o índice cripto. 2) Beta con 12+ meses semanales. 3) Tasa libre ~4,8%. 4) Exceso = retorno anualizado - tasa libre. Divide por beta.",
-        "Después: compara con exceso del benchmark. BTC exceso 35% (Treynor 0,35) vs. tuyo 0,25 = por debajo. Superior = alfa. Cruza con <a href=\"/sortino-calculator/\">Sortino</a>."
+        "Después: compara con exceso del benchmark. BTC exceso 35% (Treynor 0,35) vs. tuyo 0,25 = por debajo. Superior = alfa. Cruza con <a href=\"/es/calculadora-ratio-sortino/\">Sortino</a>."
       ],
       mistakes: [
         "Desviación estándar total en vez de beta = Sharpe, no Treynor. Beta contra S&P 500 para cripto = engañosamente bajo.",
-        "Beta inestable en cripto. Usa betas móviles de 3 meses. Para portafolios concentrados, Sharpe o <a href=\"/calmar-calculator/\">Calmar</a> son mejores."
+        "Beta inestable en cripto. Usa betas móviles de 3 meses. Para portafolios concentrados, Sharpe o <a href=\"/es/calculadora-ratio-calmar/\">Calmar</a> son mejores."
       ],
       benchmarks: [
         "BTC 2025: ~50% retorno, 5% libre, Treynor ~0,45. Diversificados: 0,15–0,40. Gestores activos: 0,30–0,60. 0,50+ en 2+ años = raro.",
@@ -8735,8 +8735,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     pt: {
       interpret: [
-        "O Treynor ratio mede retorno ajustado ao risco sistemático usando beta. Divide excesso de retorno pela beta ao mercado cripto. 0,10+ sólido, 0,20+ forte, 0,30+ excepcional. Diferente do <a href=\"/sharpe-calculator/\">Sharpe</a>, penaliza apenas risco de mercado.",
-        "Beta 0,8 ao BTC com excesso 24% = Treynor 0,30. Treynor alto + Sharpe baixo = risco idiossincrático. Sharpe alto + Treynor baixo = diversificado mas exposto. Use ambos com o <a href=\"/risk-reward-calculator/\">calculador risco-retorno</a>."
+        "O Treynor ratio mede retorno ajustado ao risco sistemático usando beta. Divide excesso de retorno pela beta ao mercado cripto. 0,10+ sólido, 0,20+ forte, 0,30+ excepcional. Diferente do <a href=\"/pt/calculadora-ratio-sharpe/\">Sharpe</a>, penaliza apenas risco de mercado.",
+        "Beta 0,8 ao BTC com excesso 24% = Treynor 0,30. Treynor alto + Sharpe baixo = risco idiossincrático. Sharpe alto + Treynor baixo = diversificado mas exposto. Use ambos com o <a href=\"/pt/calculadora-risco-retorno/\">calculador risco-retorno</a>."
       ],
       scenarios: [
         "Gestores: ambos 60% anual. A: beta 1,3 (Treynor 0,42). B: beta 0,7 (Treynor 0,79). B = alfa genuíno.",
@@ -8744,11 +8744,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Antes: 1) Benchmark BTC ou índice. 2) Beta 12+ meses semanais. 3) Taxa livre ~4,8%. 4) Excesso / beta.",
-        "Depois: compare com benchmark. BTC excesso 35% (Treynor 0,35) vs. 0,25 = abaixo. Acima = alfa. Cruze com <a href=\"/sortino-calculator/\">Sortino</a>."
+        "Depois: compare com benchmark. BTC excesso 35% (Treynor 0,35) vs. 0,25 = abaixo. Acima = alfa. Cruze com <a href=\"/pt/calculadora-ratio-sortino/\">Sortino</a>."
       ],
       mistakes: [
         "Desvio padrão total = Sharpe, não Treynor. Beta contra S&P 500 = enganosamente baixo.",
-        "Beta instável em cripto. Betas móveis 3 meses. Concentrados: Sharpe ou <a href=\"/calmar-calculator/\">Calmar</a>."
+        "Beta instável em cripto. Betas móveis 3 meses. Concentrados: Sharpe ou <a href=\"/pt/calculadora-ratio-calmar/\">Calmar</a>."
       ],
       benchmarks: [
         "BTC 2025: ~50%, livre 5%, Treynor ~0,45. Diversificados: 0,15–0,40. Ativos: 0,30–0,60. 0,50+ em 2+ anos = raro.",
@@ -8769,8 +8769,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     tr: {
       interpret: [
-        "Treynor oranı toplam volatilite yerine beta kullanarak sistematik riske göre getiriyi ölçer. Fazla getiriyi kripto piyasa betasına böler. 0,10+ sağlam, 0,20+ güçlü, 0,30+ istisnai. <a href=\"/sharpe-calculator/\">Sharpe'dan</a> farklı olarak sadece piyasa korelasyonlu riski cezalandırır.",
-        "BTC'ye beta 0,8, fazla getiri %24 = Treynor 0,30. Yüksek Treynor + düşük Sharpe = telafi edilmeyen risk. Yüksek Sharpe + düşük Treynor = çeşitlendirilmiş ama sistematik maruz. <a href=\"/risk-reward-calculator/\">Risk-ödül hesaplayıcısıyla</a> birlikte kullanın."
+        "Treynor oranı toplam volatilite yerine beta kullanarak sistematik riske göre getiriyi ölçer. Fazla getiriyi kripto piyasa betasına böler. 0,10+ sağlam, 0,20+ güçlü, 0,30+ istisnai. <a href=\"/tr/sharpe-orani-hesaplayici/\">Sharpe'dan</a> farklı olarak sadece piyasa korelasyonlu riski cezalandırır.",
+        "BTC'ye beta 0,8, fazla getiri %24 = Treynor 0,30. Yüksek Treynor + düşük Sharpe = telafi edilmeyen risk. Yüksek Sharpe + düşük Treynor = çeşitlendirilmiş ama sistematik maruz. <a href=\"/tr/risk-odul-hesaplayici/\">Risk-ödül hesaplayıcısıyla</a> birlikte kullanın."
       ],
       scenarios: [
         "Yönetici değerlendirmesi: ikisi de %60. A: beta 1,3 (Treynor 0,42). B: beta 0,7 (Treynor 0,79). B = gerçek alfa.",
@@ -8778,11 +8778,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Hesaplamadan önce: 1) Benchmark: BTC veya endeks. 2) 12+ ay haftalık beta. 3) Risksiz ~%4,8. 4) Fazla / beta.",
-        "Sonra: benchmark ile karşılaştırın. BTC fazla %35 (Treynor 0,35) vs. 0,25 = altında. Üzerinde = alfa. <a href=\"/sortino-calculator/\">Sortino</a> ile doğrulayın."
+        "Sonra: benchmark ile karşılaştırın. BTC fazla %35 (Treynor 0,35) vs. 0,25 = altında. Üzerinde = alfa. <a href=\"/tr/sortino-orani-hesaplayici/\">Sortino</a> ile doğrulayın."
       ],
       mistakes: [
         "Toplam standart sapma = Sharpe, Treynor değil. S&P 500 benchmark'ı = yanıltıcı düşük beta.",
-        "Beta kararsız — haftalar içinde 0,5'ten 1,5'e. 3 aylık hareketli beta. Yoğun portföyler için Sharpe veya <a href=\"/calmar-calculator/\">Calmar</a>."
+        "Beta kararsız — haftalar içinde 0,5'ten 1,5'e. 3 aylık hareketli beta. Yoğun portföyler için Sharpe veya <a href=\"/tr/calmar-orani-hesaplayici/\">Calmar</a>."
       ],
       benchmarks: [
         "BTC 2025: ~%50, risksiz %5, Treynor ~0,45. Çeşitli: 0,15–0,40. Aktif: 0,30–0,60. 2+ yılda 0,50+ nadir.",
@@ -8803,8 +8803,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     hi: {
       interpret: [
-        "ट्रेनर अनुपात कुल अस्थिरता के बजाय बीटा से व्यवस्थित जोखिम-समायोजित रिटर्न मापता है। अधिक रिटर्न को बाजार बीटा से विभाजित करता है। 0.10+ ठोस, 0.20+ मजबूत, 0.30+ असाधारण। <a href=\"/sharpe-calculator/\">शार्प</a> से भिन्न, केवल बाजार-सहसंबद्ध जोखिम दंडित करता है।",
-        "BTC बीटा 0.8, अधिक रिटर्न 24% = ट्रेनर 0.30। उच्च ट्रेनर + कम शार्प = विशिष्ट जोखिम। उच्च शार्प + कम ट्रेनर = विविध लेकिन बाजार-उजागर। <a href=\"/risk-reward-calculator/\">जोखिम-पुरस्कार कैलकुलेटर</a> से दोनों उपयोग करें।"
+        "ट्रेनर अनुपात कुल अस्थिरता के बजाय बीटा से व्यवस्थित जोखिम-समायोजित रिटर्न मापता है। अधिक रिटर्न को बाजार बीटा से विभाजित करता है। 0.10+ ठोस, 0.20+ मजबूत, 0.30+ असाधारण। <a href=\"/hi/sharpe-calculator-hindi/\">शार्प</a> से भिन्न, केवल बाजार-सहसंबद्ध जोखिम दंडित करता है।",
+        "BTC बीटा 0.8, अधिक रिटर्न 24% = ट्रेनर 0.30। उच्च ट्रेनर + कम शार्प = विशिष्ट जोखिम। उच्च शार्प + कम ट्रेनर = विविध लेकिन बाजार-उजागर। <a href=\"/hi/risk-reward-calculator-hindi/\">जोखिम-पुरस्कार कैलकुलेटर</a> से दोनों उपयोग करें।"
       ],
       scenarios: [
         "प्रबंधक: दोनों 60%। A: बीटा 1.3 (ट्रेनर 0.42)। B: बीटा 0.7 (ट्रेनर 0.79)। B = वास्तविक अल्फा।",
@@ -8812,11 +8812,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "पहले: 1) बेंचमार्क: BTC या इंडेक्स। 2) 12+ माह साप्ताहिक बीटा। 3) जोखिम-मुक्त ~4.8%। 4) अधिक / बीटा।",
-        "बाद: बेंचमार्क अधिक रिटर्न से तुलना। BTC अधिक 35% (ट्रेनर 0.35) बनाम 0.25 = नीचे। ऊपर = अल्फा। <a href=\"/sortino-calculator/\">सॉर्टिनो</a> से क्रॉस-चेक।"
+        "बाद: बेंचमार्क अधिक रिटर्न से तुलना। BTC अधिक 35% (ट्रेनर 0.35) बनाम 0.25 = नीचे। ऊपर = अल्फा। <a href=\"/hi/sortino-calculator-hindi/\">सॉर्टिनो</a> से क्रॉस-चेक।"
       ],
       mistakes: [
         "कुल मानक विचलन = शार्प, ट्रेनर नहीं। S&P 500 बेंचमार्क = भ्रामक कम बीटा।",
-        "बीटा अस्थिर — सप्ताहों में 0.5 से 1.5। 3 माह रोलिंग बीटा। केंद्रित पोर्टफोलियो: शार्प या <a href=\"/calmar-calculator/\">कैल्मर</a>।"
+        "बीटा अस्थिर — सप्ताहों में 0.5 से 1.5। 3 माह रोलिंग बीटा। केंद्रित पोर्टफोलियो: शार्प या <a href=\"/hi/calmar-ratio-calculator-hindi/\">कैल्मर</a>।"
       ],
       benchmarks: [
         "BTC 2025: ~50%, जोखिम-मुक्त 5%, ट्रेनर ~0.45। विविध: 0.15–0.40। सक्रिय: 0.30–0.60। 2+ वर्षों में 0.50+ दुर्लभ।",
@@ -8837,8 +8837,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     ru: {
       interpret: [
-        "Коэффициент Трейнора измеряет доходность с поправкой на систематический риск, используя бету. Делит избыточную доходность на бету к крипторынку. 0,10+ — неплохо, 0,20+ — сильно, 0,30+ — исключительно. В отличие от <a href=\"/sharpe-calculator/\">Шарпа</a>, штрафует только рыночный риск.",
-        "Бета 0,8 к BTC, избыточная доходность 24% = Трейнор 0,30. Высокий Трейнор + низкий Шарп = некомпенсированный идиосинкратический риск. Высокий Шарп + низкий Трейнор = диверсификация, но рыночная экспозиция. <a href=\"/risk-reward-calculator/\">Калькулятор риск-доходность</a> для полной картины."
+        "Коэффициент Трейнора измеряет доходность с поправкой на систематический риск, используя бету. Делит избыточную доходность на бету к крипторынку. 0,10+ — неплохо, 0,20+ — сильно, 0,30+ — исключительно. В отличие от <a href=\"/ru/kalkulyator-koefficienta-sharpa/\">Шарпа</a>, штрафует только рыночный риск.",
+        "Бета 0,8 к BTC, избыточная доходность 24% = Трейнор 0,30. Высокий Трейнор + низкий Шарп = некомпенсированный идиосинкратический риск. Высокий Шарп + низкий Трейнор = диверсификация, но рыночная экспозиция. <a href=\"/ru/kalkulyator-risk-dohodnost/\">Калькулятор риск-доходность</a> для полной картины."
       ],
       scenarios: [
         "Управляющие: оба 60%. A: бета 1,3 (Трейнор 0,42). B: бета 0,7 (Трейнор 0,79). B = настоящая альфа.",
@@ -8846,11 +8846,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
         "Перед расчётом: 1) Бенчмарк: BTC или индекс. 2) Бета по 12+ месяцам. 3) Безрисковая ~4,8%. 4) Избыток / бета.",
-        "После: сравните с бенчмарком. BTC избыток 35% (Трейнор 0,35) vs. 0,25 = ниже. Выше = альфа. <a href=\"/sortino-calculator/\">Сортино</a> для проверки."
+        "После: сравните с бенчмарком. BTC избыток 35% (Трейнор 0,35) vs. 0,25 = ниже. Выше = альфа. <a href=\"/ru/kalkulyator-koefficienta-sortino/\">Сортино</a> для проверки."
       ],
       mistakes: [
         "Общее отклонение = Шарп, не Трейнор. Бета к S&P 500 для крипто = обманчиво низкая.",
-        "Бета нестабильна — за недели с 0,5 до 1,5. Скользящая 3-месячная. Концентрированные портфели: Шарп или <a href=\"/calmar-calculator/\">Кальмар</a>."
+        "Бета нестабильна — за недели с 0,5 до 1,5. Скользящая 3-месячная. Концентрированные портфели: Шарп или <a href=\"/ru/kalkulyator-koefficienta-kalmara/\">Кальмар</a>."
       ],
       benchmarks: [
         "BTC 2025: ~50%, безрисковая 5%, Трейнор ~0,45. Диверсифицированные: 0,15–0,40. Активные: 0,30–0,60. 0,50+ за 2+ года — редкость.",
@@ -8909,7 +8909,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     es: {
       interpret: [
         "El Ratio de Información (IR) mide el exceso de retorno de tu cartera sobre un benchmark dividido por el error de seguimiento — esencialmente, cuán consistentemente superas al mercado. Un IR de 0,5 significa que ganas media unidad de retorno excedente por cada unidad de desviación del benchmark. En cripto, la mayoría de gestores apuntan a un IR superior a 0,4 contra un índice ponderado por BTC.",
-        "Un IR negativo señala infrarendimiento crónico: habrías estado mejor manteniendo el índice pasivamente. Un IR entre 0,0 y 0,2 es débil. Gestores fuertes mantienen IRs de 0,5–1,0 en ventanas de 12 meses. Si tu IR fluctúa enormemente, usa al menos 30 puntos de datos. Cruza con una <a href=\"/drawdown-calculator/\">calculadora de drawdown</a> para verificar si los períodos de IR alto coinciden con bajo drawdown."
+        "Un IR negativo señala infrarendimiento crónico: habrías estado mejor manteniendo el índice pasivamente. Un IR entre 0,0 y 0,2 es débil. Gestores fuertes mantienen IRs de 0,5–1,0 en ventanas de 12 meses. Si tu IR fluctúa enormemente, usa al menos 30 puntos de datos. Cruza con una <a href=\"/es/calculadora-drawdown/\">calculadora de drawdown</a> para verificar si los períodos de IR alto coinciden con bajo drawdown."
       ],
       scenarios: [
         "Revisión de cartera: un farmer de DeFi se compara contra staking de ETH (~3,5% APY). Su cartera rindió 18% en 12 meses con 12% de error de seguimiento, IR = 1,21 — excelente. Confirma que la complejidad extra del yield farming activo genera alfa genuino.",
@@ -8943,7 +8943,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     pt: {
       interpret: [
         "O Information Ratio (IR) mede o excesso de retorno do portfólio sobre um benchmark dividido pelo tracking error — quão consistentemente você supera o mercado. Um IR de 0,5 significa meio retorno extra por unidade de desvio. Gestores cripto visam IR acima de 0,4 contra índice ponderado por BTC.",
-        "IR negativo sinaliza subperformance crônica. IR entre 0,0 e 0,2 é fraco. Gestores fortes mantêm IRs de 0,5–1,0 em janelas de 12 meses. Se o IR flutua muito, use no mínimo 30 observações. Cruze com a <a href=\"/drawdown-calculator/\">calculadora de drawdown</a>."
+        "IR negativo sinaliza subperformance crônica. IR entre 0,0 e 0,2 é fraco. Gestores fortes mantêm IRs de 0,5–1,0 em janelas de 12 meses. Se o IR flutua muito, use no mínimo 30 observações. Cruze com a <a href=\"/pt/calculadora-drawdown/\">calculadora de drawdown</a>."
       ],
       scenarios: [
         "Revisão de portfólio: um farmer DeFi usa staking ETH (~3,5% APY) como benchmark. Portfólio rendeu 18% em 12 meses com 12% tracking error, IR = 1,21 — excelente. Confirma alfa genuíno.",
@@ -8977,7 +8977,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     tr: {
       interpret: [
         "Bilgi Oranı (IR), portföyünüzün benchmark üzerindeki fazla getirisini takip hatasına bölerek ölçer — ne kadar tutarlı geçtiğinizi gösterir. 0,5 IR, her birim sapma için yarım birim fazla getiri demektir. Kripto yöneticileri BTC ağırlıklı endekse karşı 0,4 üzeri hedefler.",
-        "Negatif IR kronik düşük performans sinyalidir. 0,0–0,2 zayıf. Güçlü yöneticiler 12 aylık pencerelerde 0,5–1,0 sürdürür. Çok dalgalanıyorsa en az 30 veri noktası kullanın. <a href=\"/drawdown-calculator/\">Düşüş hesaplayıcısı</a> ile yüksek IR dönemlerini kontrol edin."
+        "Negatif IR kronik düşük performans sinyalidir. 0,0–0,2 zayıf. Güçlü yöneticiler 12 aylık pencerelerde 0,5–1,0 sürdürür. Çok dalgalanıyorsa en az 30 veri noktası kullanın. <a href=\"/tr/drawdown-toparlanma-hesaplayici/\">Düşüş hesaplayıcısı</a> ile yüksek IR dönemlerini kontrol edin."
       ],
       scenarios: [
         "Portföy incelemesi: DeFi farmer'ı ETH staking'e (~%3,5 APY) karşı kıyaslıyor. 12 ayda %18 getiri, %12 takip hatası, IR = 1,21 — mükemmel. Aktif yield farming gerçek alfa üretiyor.",
@@ -9011,7 +9011,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     hi: {
       interpret: [
         "इन्फॉर्मेशन रेशियो (IR) आपके पोर्टफोलियो की बेंचमार्क से अधिक रिटर्न को ट्रैकिंग एरर से विभाजित करता है — आप कितनी लगातार पछाड़ते हैं। 0.5 IR = विचलन की प्रत्येक इकाई के लिए आधी इकाई अतिरिक्त। अधिकांश क्रिप्टो प्रबंधक BTC सूचकांक के मुकाबले 0.4+ IR लक्ष्य करते हैं।",
-        "नकारात्मक IR लगातार कम प्रदर्शन दर्शाता है। 0.0–0.2 कमज़ोर। मज़बूत प्रबंधक 12 महीने में 0.5–1.0 बनाए रखते हैं। बहुत उतार-चढ़ाव हो तो 30+ डेटा पॉइंट उपयोग करें। <a href=\"/drawdown-calculator/\">ड्रॉडाउन कैलकुलेटर</a> से जाँचें कि उच्च-IR कम ड्रॉडाउन के साथ मेल खाता है।"
+        "नकारात्मक IR लगातार कम प्रदर्शन दर्शाता है। 0.0–0.2 कमज़ोर। मज़बूत प्रबंधक 12 महीने में 0.5–1.0 बनाए रखते हैं। बहुत उतार-चढ़ाव हो तो 30+ डेटा पॉइंट उपयोग करें। <a href=\"/hi/drawdown-calculator-hindi/\">ड्रॉडाउन कैलकुलेटर</a> से जाँचें कि उच्च-IR कम ड्रॉडाउन के साथ मेल खाता है।"
       ],
       scenarios: [
         "DeFi फार्मर ETH स्टेकिंग (~3.5% APY) के मुकाबले मापता है। 12 महीनों में 18% रिटर्न, 12% ट्रैकिंग एरर, IR = 1.21 — उत्कृष्ट। सक्रिय yield farming असली अल्फा उत्पन्न करती है।",
@@ -9045,7 +9045,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     ru: {
       interpret: [
         "Коэффициент информации (IR) измеряет избыточную доходность портфеля над бенчмарком, делённую на ошибку отслеживания — насколько стабильно вы опережаете. IR 0,5 = полединицы избыточной доходности на единицу отклонения. Крипто-управляющие целят IR выше 0,4 к BTC-индексу.",
-        "Отрицательный IR — хроническое отставание. IR 0,0–0,2 — слабый. Сильные управляющие поддерживают 0,5–1,0 за 12 месяцев. При сильных колебаниях используйте 30+ точек. Сопоставьте с <a href=\"/drawdown-calculator/\">калькулятором просадки</a> для проверки корреляции высокого IR и низкой просадки."
+        "Отрицательный IR — хроническое отставание. IR 0,0–0,2 — слабый. Сильные управляющие поддерживают 0,5–1,0 за 12 месяцев. При сильных колебаниях используйте 30+ точек. Сопоставьте с <a href=\"/ru/kalkulyator-prosadki/\">калькулятором просадки</a> для проверки корреляции высокого IR и низкой просадки."
       ],
       scenarios: [
         "DeFi-фермер сравнивает себя со стейкингом ETH (~3,5% APY). 18% за 12 месяцев при ошибке 12%, IR = 1,21 — отлично. Активный yield farming приносит альфу.",
@@ -9116,7 +9116,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     es: {
       interpret: [
         "El Criterio de Kelly calcula la fracción óptima de capital a arriesgar dado tu tasa de acierto y ratio riesgo/recompensa. Fracción de 0,15 = arriesgar 15%. En cripto, la mayoría usan Kelly fraccionario (25–50% del completo) para evitar drawdowns catastróficos.",
-        "Si Kelly es cero o negativo, la operación tiene valor esperado negativo — no la tomes. Fracción superior a 0,25 sugiere alto edge. Combina con <a href=\"/position-size-calculator/\">calculadora de tamaño de posición</a> para convertir en monto real."
+        "Si Kelly es cero o negativo, la operación tiene valor esperado negativo — no la tomes. Fracción superior a 0,25 sugiere alto edge. Combina con <a href=\"/es/calculadora-tamano-posicion/\">calculadora de tamaño de posición</a> para convertir en monto real."
       ],
       scenarios: [
         "Swing: 55% acierto, ganancia media $1.200, pérdida $800 (1,5:1). Kelly = 0,25. Medio Kelly (12,5%) más seguro. En $50.000 = $6.250 riesgo máximo por operación.",
@@ -9150,7 +9150,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     pt: {
       interpret: [
         "O Critério de Kelly calcula a fração ótima do capital a arriscar. Fração de 0,15 = arriscar 15%. Em cripto, maioria usa Kelly fracionário (25–50% do completo) para evitar drawdowns catastróficos.",
-        "Se Kelly = zero ou negativo, operação tem valor esperado negativo. Fração acima de 0,25 sugere alto edge. Combine com <a href=\"/position-size-calculator/\">calculadora de tamanho de posição</a>."
+        "Se Kelly = zero ou negativo, operação tem valor esperado negativo. Fração acima de 0,25 sugere alto edge. Combine com <a href=\"/pt/calculadora-tamanho-posicao/\">calculadora de tamanho de posição</a>."
       ],
       scenarios: [
         "Swing: 55% acerto, ganho $1.200, perda $800 (1,5:1). Kelly = 0,25. Meio Kelly (12,5%) mais seguro. $50.000 = máximo $6.250 risco.",
@@ -9184,7 +9184,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     tr: {
       interpret: [
         "Kelly Kriteri, kazanma oranı ve ödül/risk oranı verildiğinde optimal sermaye fraksiyonunu hesaplar. 0,15 = %15 riske at. Kriptoda çoğu fraksiyonel Kelly (%25–50) kullanır.",
-        "Kelly sıfır veya negatifse beklenen değer negatif — yapmayın. 0,25 üzeri yüksek avantaj. <a href=\"/position-size-calculator/\">Pozisyon boyutu hesaplayıcısı</a> ile gerçek tutara dönüştürün."
+        "Kelly sıfır veya negatifse beklenen değer negatif — yapmayın. 0,25 üzeri yüksek avantaj. <a href=\"/tr/pozisyon-boyutu-hesaplayici/\">Pozisyon boyutu hesaplayıcısı</a> ile gerçek tutara dönüştürün."
       ],
       scenarios: [
         "Swing: %55 kazanma, ortalama kazanç $1.200, kayıp $800 (1,5:1). Kelly = 0,25. Yarım Kelly (%12,5) daha güvenli. $50.000'da = $6.250 risk.",
@@ -9218,7 +9218,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     hi: {
       interpret: [
         "केली क्राइटेरियन जीत दर और इनाम/जोखिम अनुपात से इष्टतम पूंजी अंश गणना करता है। 0.15 = 15% जोखिम। क्रिप्टो में अधिकांश फ्रैक्शनल केली (पूर्ण का 25–50%) उपयोग करते हैं।",
-        "केली शून्य या नकारात्मक हो तो नकारात्मक अपेक्षित मूल्य — न लें। 0.25+ = उच्च एज। <a href=\"/position-size-calculator/\">पोजीशन साइज़ कैलकुलेटर</a> से वास्तविक राशि में बदलें।"
+        "केली शून्य या नकारात्मक हो तो नकारात्मक अपेक्षित मूल्य — न लें। 0.25+ = उच्च एज। <a href=\"/hi/position-size-calculator-hindi/\">पोजीशन साइज़ कैलकुलेटर</a> से वास्तविक राशि में बदलें।"
       ],
       scenarios: [
         "स्विंग: 55% जीत, $1,200 औसत जीत, $800 हानि (1.5:1)। केली = 0.25। आधा (12.5%) सुरक्षित। $50,000 पर = $6,250 अधिकतम।",
@@ -9252,7 +9252,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     ru: {
       interpret: [
         "Критерий Келли вычисляет оптимальную долю капитала для ставки по проценту побед и соотношению выплат. 0,15 = рисковать 15%. В крипте большинство используют дробный Келли (25–50% от полного).",
-        "Келли ноль или отрицательный = отрицательное ожидание, не берите. Доля выше 0,25 = сильное преимущество. Сочетайте с <a href=\"/position-size-calculator/\">калькулятором размера позиции</a>."
+        "Келли ноль или отрицательный = отрицательное ожидание, не берите. Доля выше 0,25 = сильное преимущество. Сочетайте с <a href=\"/ru/kalkulyator-razmera-pozicii/\">калькулятором размера позиции</a>."
       ],
       scenarios: [
         "Свинг: 55% побед, средний выигрыш $1 200, проигрыш $800 (1,5:1). Келли = 0,25. Половина (12,5%) безопаснее. $50 000 = $6 250 максимум.",
@@ -9323,7 +9323,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     es: {
       interpret: [
         "El VaR estima la pérdida máxima esperada en un horizonte a un nivel de confianza. VaR diario de $5.000 al 95% = solo 5% de probabilidad de perder más. Para $100.000 cripto, VaR del 5% es típico en volatilidad moderada; en estrés puede alcanzar 10–15%.",
-        "VaR no indica el peor escenario — indica el límite del 95% del tiempo. El 5% restante puede ser mucho peor. Complementa siempre con CVaR. Usa la <a href=\"/risk-reward-calculator/\">calculadora riesgo-recompensa</a> para evaluar si el retorno justifica el riesgo."
+        "VaR no indica el peor escenario — indica el límite del 95% del tiempo. El 5% restante puede ser mucho peor. Complementa siempre con CVaR. Usa la <a href=\"/es/calculadora-riesgo-beneficio/\">calculadora riesgo-recompensa</a> para evaluar si el retorno justifica el riesgo."
       ],
       scenarios: [
         "Evaluación: $80.000 BTC y $20.000 ETH. Volatilidad 3,2% y 4,1%, correlación 0,75. VaR paramétrico 95% = ~$4.800/día. Si tolerancia es $3.000, cartera sobredimensionada.",
@@ -9357,7 +9357,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     pt: {
       interpret: [
         "VaR estima a perda máxima num horizonte com nível de confiança. VaR diário de $5.000 a 95% = 5% de chance de perder mais. Para $100.000 cripto, VaR 5% é típico; em estresse 10–15%.",
-        "VaR não mostra o pior cenário — mostra o limite de 95% do tempo. Os 5% restantes podem ser muito piores. Complemente com CVaR. Use <a href=\"/risk-reward-calculator/\">calculadora risco-retorno</a>."
+        "VaR não mostra o pior cenário — mostra o limite de 95% do tempo. Os 5% restantes podem ser muito piores. Complemente com CVaR. Use <a href=\"/pt/calculadora-risco-retorno/\">calculadora risco-retorno</a>."
       ],
       scenarios: [
         "Avaliação: $80.000 BTC e $20.000 ETH. Volatilidade 3,2% e 4,1%, correlação 0,75. VaR 95% = ~$4.800/dia. Tolerância $3.000 = portfólio grande.",
@@ -9391,7 +9391,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     tr: {
       interpret: [
         "VaR, belirli güven düzeyinde zaman ufkunda beklenen maksimum kaybı tahmin eder. %95'te $5.000 günlük VaR = %5 olasılık. $100.000 kripto için %5 orta volatilitede tipik; stres %10–15.",
-        "VaR en kötüyü göstermez — zamanın %95'inde sınırı gösterir. %5 çok daha kötü olabilir. CVaR ile tamamlayın. <a href=\"/risk-reward-calculator/\">Risk-ödül hesaplayıcısı</a> ile değerlendirin."
+        "VaR en kötüyü göstermez — zamanın %95'inde sınırı gösterir. %5 çok daha kötü olabilir. CVaR ile tamamlayın. <a href=\"/tr/risk-odul-hesaplayici/\">Risk-ödül hesaplayıcısı</a> ile değerlendirin."
       ],
       scenarios: [
         "Portföy: $80.000 BTC, $20.000 ETH. Volatilite %3,2 ve %4,1, korelasyon 0,75. VaR %95 = ~$4.800/gün. Tolerans $3.000 ise portföy büyük.",
@@ -9425,7 +9425,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     hi: {
       interpret: [
         "VaR निर्दिष्ट विश्वास पर समय क्षितिज में अधिकतम अपेक्षित हानि अनुमान लगाता है। 95% पर $5,000 दैनिक VaR = 5% संभावना। $100,000 क्रिप्टो के लिए 5% मध्यम अस्थिरता में सामान्य; तनाव में 10–15%।",
-        "VaR सबसे खराब नहीं बताता — 95% समय की सीमा। शेष 5% बहुत बदतर हो सकता है। CVaR से पूरक करें। <a href=\"/risk-reward-calculator/\">जोखिम-इनाम कैलकुलेटर</a> से मूल्यांकन करें।"
+        "VaR सबसे खराब नहीं बताता — 95% समय की सीमा। शेष 5% बहुत बदतर हो सकता है। CVaR से पूरक करें। <a href=\"/hi/risk-reward-calculator-hindi/\">जोखिम-इनाम कैलकुलेटर</a> से मूल्यांकन करें।"
       ],
       scenarios: [
         "पोर्टफोलियो: $80,000 BTC, $20,000 ETH। अस्थिरता 3.2% और 4.1%, सहसंबंध 0.75। VaR 95% = ~$4,800/दिन। सहनशीलता $3,000 = पोर्टफोलियो बड़ा।",
@@ -9459,7 +9459,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     ru: {
       interpret: [
         "VaR оценивает максимальный убыток за горизонт при заданном доверии. Дневной VaR $5 000 при 95% = 5% вероятность потерять больше. Для $100 000 крипто 5% типичен при умеренной волатильности; при стрессе 10–15%.",
-        "VaR не показывает наихудшее — границу 95% времени. Оставшиеся 5% могут быть гораздо хуже. Дополняйте CVaR. <a href=\"/risk-reward-calculator/\">Калькулятор риска-доходности</a> оценит оправданность."
+        "VaR не показывает наихудшее — границу 95% времени. Оставшиеся 5% могут быть гораздо хуже. Дополняйте CVaR. <a href=\"/ru/kalkulyator-risk-dohodnost/\">Калькулятор риска-доходности</a> оценит оправданность."
       ],
       scenarios: [
         "Оценка: $80 000 BTC, $20 000 ETH. Волатильность 3,2% и 4,1%, корреляция 0,75. VaR 95% = ~$4 800/день. Толерантность $3 000 = портфель велик.",
@@ -9529,8 +9529,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     es: {
       interpret: [
-        "El drawdown máximo mide la mayor caída pico-valle antes de nuevo máximo. 40% = cayó 40% desde el pico. En cripto, 50–80% altcoins y 30–50% BTC son normales en bear. Compara con <a href=\"/var-calculator/\">VaR</a> para entender acumulación de riesgo diario.",
-        "Factor de recuperación: 50% drawdown necesita 100% ganancia, 75% necesita 300%. Esta asimetría hace crítica la gestión. Rastrea máximo y actual. Si actual supera histórico, territorio desconocido. <a href=\"/risk-reward-calculator/\">Riesgo-recompensa</a> para evaluar compensación."
+        "El drawdown máximo mide la mayor caída pico-valle antes de nuevo máximo. 40% = cayó 40% desde el pico. En cripto, 50–80% altcoins y 30–50% BTC son normales en bear. Compara con <a href=\"/es/calculadora-valor-en-riesgo/\">VaR</a> para entender acumulación de riesgo diario.",
+        "Factor de recuperación: 50% drawdown necesita 100% ganancia, 75% necesita 300%. Esta asimetría hace crítica la gestión. Rastrea máximo y actual. Si actual supera histórico, territorio desconocido. <a href=\"/es/calculadora-riesgo-beneficio/\">Riesgo-recompensa</a> para evaluar compensación."
       ],
       scenarios: [
         "Evaluación: cuenta $120.000, cayó a $78.000 (35%), recuperó a $115.000, cayó a $69.000 (42,5%). Tolerancia 25% = superada por 17,5 puntos. Posiciones menores o stops más ajustados.",
@@ -9563,8 +9563,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     pt: {
       interpret: [
-        "Drawdown máximo mede a maior queda pico-vale antes de nova máxima. 40% = caiu 40% do pico. Em cripto, 50–80% altcoins e 30–50% BTC são normais em bear. Compare com <a href=\"/var-calculator/\">VaR</a> para acumulação de risco diário.",
-        "Fator de recuperação: 50% drawdown precisa 100% ganho, 75% precisa 300%. Assimetria torna gestão crítica. Acompanhe máximo e atual. <a href=\"/risk-reward-calculator/\">Risco-retorno</a> para avaliar."
+        "Drawdown máximo mede a maior queda pico-vale antes de nova máxima. 40% = caiu 40% do pico. Em cripto, 50–80% altcoins e 30–50% BTC são normais em bear. Compare com <a href=\"/pt/calculadora-valor-em-risco/\">VaR</a> para acumulação de risco diário.",
+        "Fator de recuperação: 50% drawdown precisa 100% ganho, 75% precisa 300%. Assimetria torna gestão crítica. Acompanhe máximo e atual. <a href=\"/pt/calculadora-risco-retorno/\">Risco-retorno</a> para avaliar."
       ],
       scenarios: [
         "Avaliação: conta $120.000, caiu $78.000 (35%), recuperou $115.000, caiu $69.000 (42,5%). Tolerância 25% = excedida por 17,5 pontos.",
@@ -9597,8 +9597,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     tr: {
       interpret: [
-        "Maksimum düşüş, yeni zirve öncesi en büyük tepe-dip düşüşü ölçer. %40 = zirveden %40 düştü. Kriptoda altcoin %50–80, BTC %30–50 ayı piyasasında normal. <a href=\"/var-calculator/\">VaR hesaplayıcısı</a> ile günlük risk birikimini anlayın.",
-        "Toparlanma faktörü: %50 düşüş = %100 kazanç, %75 = %300 gerekir. Asimetri yönetimi zorunlu kılar. Hem maksimum hem mevcut takip edin. <a href=\"/risk-reward-calculator/\">Risk-ödül hesaplayıcısı</a> ile değerlendirin."
+        "Maksimum düşüş, yeni zirve öncesi en büyük tepe-dip düşüşü ölçer. %40 = zirveden %40 düştü. Kriptoda altcoin %50–80, BTC %30–50 ayı piyasasında normal. <a href=\"/tr/riske-maruz-deger-hesaplayici/\">VaR hesaplayıcısı</a> ile günlük risk birikimini anlayın.",
+        "Toparlanma faktörü: %50 düşüş = %100 kazanç, %75 = %300 gerekir. Asimetri yönetimi zorunlu kılar. Hem maksimum hem mevcut takip edin. <a href=\"/tr/risk-odul-hesaplayici/\">Risk-ödül hesaplayıcısı</a> ile değerlendirin."
       ],
       scenarios: [
         "Değerlendirme: hesap $120.000, $78.000'a düştü (%35), $115.000'a toplandı, $69.000'a düştü (%42,5). Tolerans %25 = 17,5 puan aşıldı.",
@@ -9631,8 +9631,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     hi: {
       interpret: [
-        "अधिकतम ड्रॉडाउन नई ऊँचाई से पहले सबसे बड़ी शिखर-तल गिरावट मापता है। 40% = शिखर से 40% गिरा। क्रिप्टो में ऑल्टकॉइन 50–80%, BTC 30–50% बियर में सामान्य। <a href=\"/var-calculator/\">VaR कैलकुलेटर</a> से दैनिक जोखिम संचय समझें।",
-        "रिकवरी: 50% ड्रॉडाउन = 100% लाभ, 75% = 300%। विषमता प्रबंधन आवश्यक बनाती है। अधिकतम और वर्तमान दोनों ट्रैक करें। <a href=\"/risk-reward-calculator/\">जोखिम-इनाम कैलकुलेटर</a> से मूल्यांकन।"
+        "अधिकतम ड्रॉडाउन नई ऊँचाई से पहले सबसे बड़ी शिखर-तल गिरावट मापता है। 40% = शिखर से 40% गिरा। क्रिप्टो में ऑल्टकॉइन 50–80%, BTC 30–50% बियर में सामान्य। <a href=\"/hi/var-calculator-hindi/\">VaR कैलकुलेटर</a> से दैनिक जोखिम संचय समझें।",
+        "रिकवरी: 50% ड्रॉडाउन = 100% लाभ, 75% = 300%। विषमता प्रबंधन आवश्यक बनाती है। अधिकतम और वर्तमान दोनों ट्रैक करें। <a href=\"/hi/risk-reward-calculator-hindi/\">जोखिम-इनाम कैलकुलेटर</a> से मूल्यांकन।"
       ],
       scenarios: [
         "मूल्यांकन: खाता $120,000, $78,000 (35%) गिरा, $115,000 सुधरा, $69,000 (42.5%)। सहनशीलता 25% = 17.5 अंक अधिक।",
@@ -9665,8 +9665,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     ru: {
       interpret: [
-        "Максимальная просадка — наибольшее падение от пика до дна перед новым максимумом. 40% = упал на 40% от пика. В крипте альткоины 50–80%, BTC 30–50% в медвежьих нормальны. <a href=\"/var-calculator/\">VaR</a> покажет накопление дневного риска.",
-        "Восстановление: 50% просадка = 100% рост, 75% = 300%. Асимметрия делает управление критичным. Отслеживайте максимальную и текущую. <a href=\"/risk-reward-calculator/\">Калькулятор риска-доходности</a> для оценки."
+        "Максимальная просадка — наибольшее падение от пика до дна перед новым максимумом. 40% = упал на 40% от пика. В крипте альткоины 50–80%, BTC 30–50% в медвежьих нормальны. <a href=\"/ru/kalkulyator-stoimosti-pod-riskom/\">VaR</a> покажет накопление дневного риска.",
+        "Восстановление: 50% просадка = 100% рост, 75% = 300%. Асимметрия делает управление критичным. Отслеживайте максимальную и текущую. <a href=\"/ru/kalkulyator-risk-dohodnost/\">Калькулятор риска-доходности</a> для оценки."
       ],
       scenarios: [
         "Оценка: счёт $120 000, упал до $78 000 (35%), восстановился до $115 000, упал до $69 000 (42,5%). Толерантность 25% = превышена на 17,5 п.п.",
