@@ -243,8 +243,18 @@ const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es-419', pt: 
     <script is:inline>
       (() => {
         const MOBILE_QUERY = '(max-width: 768px)';
-        const TOGGLE_SHOW = 'Read full guide';
-        const TOGGLE_HIDE = 'Hide full guide';
+        const _guideLabels = {
+          en: ['Read full guide', 'Hide full guide'],
+          es: ['Leer guía completa', 'Ocultar guía'],
+          pt: ['Ler guia completo', 'Ocultar guia'],
+          tr: ['Tam kılavuzu oku', 'Kılavuzu gizle'],
+          hi: ['पूरी गाइड पढ़ें', 'गाइड छुपाएं'],
+          ru: ['Читать полное руководство', 'Скрыть руководство'],
+        };
+        const _lang = document.documentElement.lang || 'en';
+        const _pair = _guideLabels[_lang] || _guideLabels.en;
+        const TOGGLE_SHOW = _pair[0];
+        const TOGGLE_HIDE = _pair[1];
 
         const isMobile = () => window.matchMedia(MOBILE_QUERY).matches;
 

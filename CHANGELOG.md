@@ -2,6 +2,36 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 55) — i18n fixes: schema labels, guide toggle, 37 helper translations
+
+### Fixed
+- **Category hub schema "Calculators" localized**: `[lang]/calculators/[category].astro` CollectionPage and ItemList schema `name` fields now use per-language label (es/pt: Calculadoras, tr: Hesaplayıcılar, hi: कैलकुलेटर, ru: Калькуляторы) instead of hardcoded English
+- **"Read full guide" / "Hide full guide" toggle localized**: `Layout.astro` inline script now reads `document.documentElement.lang` and picks translated toggle labels for all 6 languages
+
+### Added
+- **37 missing helper-text translations**: Added 36 unique `Auto-calculates as you type...` keys + 1 `network share` key to all 5 non-EN ui-strings files (es, pt, tr, hi, ru). Covers SlippageCalculator, NodeCalculator, TradeExpectancyCalculator, ReverseRoiCalculator, HalvingCalculator, RebalancingCalculator, AsicMiningCalculator, KellyCalculator, SharpeCalculator, MarketCapCalculator, PipCalculator, HodlVsTradeCalculator, GamefiCalculator, MiningCalculator, GpuMiningCalculator, DifficultyEstimatorCalculator, SortinoCalculator, IcoRoiCalculator, CryptoSalaryCalculator, MiningRoiCalculator, MarginCalculator, DrawdownCalculator, LendingCalculator, RiskOfRuinCalculator, GasFeeCalculator, CompoundInterestCalculator, CalmarCalculator, InflationHedgeCalculator, InformationRatioCalculator, FundingRateCalculator, LeverageCalculator, ApyAprCalculator, MevProtectionCalculator, ElectricityCostCalculator, PortfolioCalculator, LoanCalculator
+
+### Build
+- 935 pages, 0 errors
+
+## [2026-03-27] (update 54) — Localized homepage content blocks, hero count fix
+
+### Added
+- **"What Is CryptoCalk?" prose section** on all 5 localized homepages (es, pt, tr, hi, ru): ~200 words per language with internal links to key calculators (profit, mining, DCA, tax, staking, methodology)
+- **FAQ section (5 questions)** on all 5 localized homepages with translated Q&A and `FAQPage` JSON-LD schema
+- **Creator credibility card** on all 5 localized homepages with localized "Built by" label, name, meta, and link
+- **ItemList schema** (12 popular calculators) added to localized homepage JSON-LD
+- **Organization schema** enriched on localized homepages: added logo, email, sameAs, founder, @id (matching EN)
+- **WebSite schema** enriched: added @id, publisher, EntryPoint target format (matching EN)
+
+### Fixed
+- **EN homepage hero**: "60+" updated to "69" in badge, h1, title, description, schema descriptions
+- **Localized homepage hero stat**: "50+" updated to "69"; replaced stats bar with trust statement (matching EN)
+- **Localized homepage schema**: Removed invalid `areaServed: { "@type": "Country", name: "Global" }`
+
+### Build
+- 935 pages, 0 errors
+
 ## [2026-03-27] (update 53) — Category hub i18n, ElectricityCost presets, multi-sig localization
 
 ### Fixed
