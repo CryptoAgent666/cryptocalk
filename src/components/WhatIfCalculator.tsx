@@ -281,13 +281,13 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="whatif-grid">
                 {/* Left: Inputs */}
                 <div className="whatif-input-panel">
-                    <p className="whatif-prompt">If I had invested...</p>
+                    <p className="whatif-prompt">{getUiString(lang, 'If I had invested...')}</p>
 
                     {/* Amount */}
                     <div className="input-group">
                         <label className="input-label">
                             <DollarSign size={14} />
-                            INVESTMENT AMOUNT
+                            {getUiString(lang, 'INVESTMENT AMOUNT')}
                         </label>
                         <div className="pills-row">
                             {AMOUNT_PILLS.map((preset) => (
@@ -321,7 +321,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group" ref={dropdownRef}>
                         <label className="input-label">
                             <Search size={14} />
-                            IN CRYPTOCURRENCY
+                            {getUiString(lang, 'IN CRYPTOCURRENCY')}
                         </label>
                         <div className="coin-selected">
                             <span className="coin-selected-name">{coinName} ({coinSymbol})</span>
@@ -332,7 +332,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                                 value={searchQuery}
                                 onChange={(e) => searchCoins(e.target.value)}
                                 onFocus={() => suggestions.length > 0 && setShowDropdown(true)}
-                                placeholder="Search another coin..."
+                                placeholder={getUiString(lang, 'Search another coin...')}
                                 id="whatif-coin-search"
                             />
                             {searchQuery && (
@@ -358,7 +358,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="input-group">
                         <label className="input-label">
                             <Calendar size={14} />
-                            ON DATE
+                            {getUiString(lang, 'ON DATE')}
                         </label>
                         <div className="pills-row">
                             {DATE_PRESET_YEARS.map((years) => {
@@ -371,7 +371,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                                         className={`pill-btn ${date === presetValue ? 'active' : ''}`}
                                         onClick={() => setDateYearsAgo(years)}
                                     >
-                                        {years}Y ago
+                                        {years}{getUiString(lang, 'Y ago')}
                                     </button>
                                 );
                             })}
@@ -399,11 +399,11 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
 
                         <button className="reset-btn" onClick={reset}>
                             <RotateCcw size={14} />
-                            Reset
+                            {getUiString(lang, 'Reset')}
                         </button>
                     </div>
                     <span className="input-hint">
-                        Use amount and date presets for quick setup, or pick a scenario and tap Calculate What If.
+                        {getUiString(lang, 'Use amount and date presets for quick setup, or pick a scenario and tap Calculate What If.')}
                     </span>
 
                     {error && <p className="calc-error">{error}</p>}
@@ -411,7 +411,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Quick Scenarios */}
                     <div className="quick-scenarios">
                         <label className="input-label">
-                            ⚡ QUICK SCENARIOS
+                            ⚡ {getUiString(lang, 'Quick Scenarios').toUpperCase()}
                         </label>
                         <div className="scenario-chips">
                             {QUICK_SCENARIOS.map((s, i) => (

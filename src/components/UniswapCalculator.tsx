@@ -96,7 +96,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label>Quick Scenarios</label>
+            <label>{getUiString(lang, 'Quick Scenarios')}</label>
             <div className="pills-row">
               {UNISWAP_SCENARIOS.map((scenario) => (
                 <button
@@ -104,14 +104,14 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                   onClick={() => applyScenario(scenario)}
                 >
-                  {scenario.label}
+                  {getUiString(lang, scenario.label)}
                 </button>
               ))}
             </div>
           </div>
 
           <div className="input-group">
-            <label>Deposit Amount (USD)</label>
+            <label>{getUiString(lang, 'Deposit Amount (USD)')}</label>
             <div className="pills-row">
               {DEPOSIT_PRESETS.map((preset) => (
                 <button
@@ -129,7 +129,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Pool TVL (USD)</label>
+            <label>{getUiString(lang, 'Pool TVL (USD)')}</label>
             <div className="pills-row">
               {POOL_TVL_PRESETS.map((preset) => (
                 <button
@@ -147,7 +147,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Pool Daily Volume (USD)</label>
+            <label>{getUiString(lang, 'Pool Daily Volume (USD)')}</label>
             <div className="pills-row">
               {DAILY_VOLUME_PRESETS.map((preset) => (
                 <button
@@ -165,7 +165,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Fee Tier</label>
+            <label>{getUiString(lang, 'Fee Tier')}</label>
             <div className="pills-row">
               {['0.01', '0.05', '0.3', '1'].map((tier) => (
                 <button key={tier} className={`pill-btn ${feeTier === tier ? 'active' : ''}`} onClick={() => setFeeTier(tier)}>
@@ -176,7 +176,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Price Move (%)</label>
+            <label>{getUiString(lang, 'Price Move')} (%)</label>
             <div className="pills-row">
               {PRICE_MOVE_PRESETS.map((preset) => (
                 <button
@@ -195,7 +195,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>Farming Period (days)</label>
+            <label>{getUiString(lang, 'Farming Period (days)')}</label>
             <div className="pills-row">
               {FARMING_DAY_PRESETS.map((preset) => (
                 <button
@@ -211,10 +211,10 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <button className="reset-btn" onClick={reset}>
-            <RotateCcw size={14} /> Reset
+            <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
           </button>
           <span className="input-hint">
-            Auto-calculates as you type. Start with pool TVL and volume presets to quickly estimate realistic LP outcomes.
+            {getUiString(lang, 'Auto-calculates as you type. Start with pool TVL and volume presets to quickly estimate realistic LP outcomes.')}
           </span>
         </div>
 

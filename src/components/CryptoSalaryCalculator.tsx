@@ -257,7 +257,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -414,7 +414,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                                             className={`pill-btn ${payFrequency === f ? 'active' : ''}`}
                                             onClick={() => setPayFrequency(f)}
                                         >
-                                            {FREQUENCY_LABELS[f]}
+                                            {getUiString(lang, FREQUENCY_LABELS[f])}
                                         </button>
                                     ))}
                                 </div>
@@ -522,7 +522,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                                 {/* Hero */}
                                 <div className="result-hero" style={{ borderColor: 'var(--color-accent-green)' }}>
                                     <span className="result-hero-label">
-                                        {CRYPTO_LABELS[targetCrypto].symbol} {getUiString(lang, 'per')} {FREQUENCY_LABELS[payFrequency].toLowerCase()} {getUiString(lang, 'pay period')}
+                                        {CRYPTO_LABELS[targetCrypto].symbol} {getUiString(lang, 'per')} {getUiString(lang, FREQUENCY_LABELS[payFrequency]).toLowerCase()} {getUiString(lang, 'pay period')}
                                     </span>
                                     <span className="result-hero-value" style={{ color: 'var(--color-accent-green)' }}>
                                         <Coins size={28} />

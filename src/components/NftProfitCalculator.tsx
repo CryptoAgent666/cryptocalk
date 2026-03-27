@@ -170,7 +170,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Inputs */}
                 <div className="calc-input-panel">
                     <div className="input-group">
-                        <label>Quick Scenarios</label>
+                        <label>{getUiString(lang, 'Quick Scenarios')}</label>
                         <div className="pills-row">
                             {NFT_SCENARIOS.map((scenario) => (
                                 <button
@@ -178,7 +178,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isScenarioActive(scenario) ? 'active' : ''}`}
                                     onClick={() => applyScenario(scenario)}
                                 >
-                                    {scenario.label}
+                                    {getUiString(lang, scenario.label)}
                                 </button>
                             ))}
                         </div>
@@ -186,7 +186,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Buy Price */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Buy Price</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Buy Price')}</label>
                         <div className="pills-row">
                             {BUY_PRICE_PILLS.map((value) => (
                                 <button
@@ -214,7 +214,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Sell Price */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> Sell Price</label>
+                        <label><DollarSign size={14} /> {getUiString(lang, 'Sell Price')}</label>
                         <div className="pills-row">
                             {SELL_PRICE_PILLS.map((value) => (
                                 <button
@@ -242,7 +242,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Marketplace */}
                     <div className="input-group">
-                        <label><Image size={14} /> Marketplace</label>
+                        <label><Image size={14} /> {getUiString(lang, 'Marketplace')}</label>
                         <div className="pills-row">
                             {MARKETPLACES.map((mp) => (
                                 <button
@@ -259,9 +259,9 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Marketplace Fee */}
                     <div className="input-group">
                         <label>
-                            <Percent size={14} /> Marketplace Fee (%)
+                            <Percent size={14} /> {getUiString(lang, 'Marketplace Fee')} (%)
                             {marketplace !== 'custom' && (
-                                <span className="label-hint">Auto-filled</span>
+                                <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
                             )}
                         </label>
                         <div className="pills-row">
@@ -294,7 +294,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Creator Royalty */}
                     <div className="input-group">
-                        <label><Percent size={14} /> Creator Royalty (%)</label>
+                        <label><Percent size={14} /> {getUiString(lang, 'Creator Royalty')} (%)</label>
                         <div className="pills-row">
                             {ROYALTY_PILLS.map((value) => (
                                 <button
@@ -323,7 +323,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Gas Cost: Buy */}
                     <div className="input-group">
-                        <label><Fuel size={14} /> Gas Cost: Buy ($)</label>
+                        <label><Fuel size={14} /> {getUiString(lang, 'Gas Cost')}: {getUiString(lang, 'Buy')} ($)</label>
                         <div className="pills-row">
                             {GAS_COST_PILLS.map((value) => (
                                 <button
@@ -351,7 +351,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Gas Cost: Sell */}
                     <div className="input-group">
-                        <label><Fuel size={14} /> Gas Cost: Sell ($)</label>
+                        <label><Fuel size={14} /> {getUiString(lang, 'Gas Cost')}: {getUiString(lang, 'Sell')} ($)</label>
                         <div className="pills-row">
                             {GAS_COST_PILLS.map((value) => (
                                 <button
@@ -380,8 +380,8 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* ETH Price */}
                     <div className="input-group">
                         <label>
-                            <DollarSign size={14} /> ETH Price ($)
-                            <span className="label-hint">Auto-fetched</span>
+                            <DollarSign size={14} /> {getUiString(lang, 'ETH Price')} ($)
+                            <span className="label-hint">{getUiString(lang, 'Auto-fetched')}</span>
                         </label>
                         <div className="pills-row">
                             {ETH_PRICE_PILLS.map((value) => (
@@ -409,10 +409,10 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Compare low-fee and high-fee presets before listing.
+                        {getUiString(lang, 'Auto-calculates as you type. Compare low-fee and high-fee presets before listing.')}
                     </span>
                 </div>
 
