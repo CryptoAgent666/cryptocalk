@@ -1430,6 +1430,24 @@ const dict: Record<string, string> = {
   'Bitcoin Network Total': 'Bitcoin Ağı Toplam',
   'year': 'yıl',
   'years': 'yıl',
+  // ROI Calculator
+  'Current Value / Exit Value': 'Mevcut Değer / Çıkış Değeri',
+  'Total Fees Paid (optional)': 'Toplam Ödenen Komisyon (isteğe bağlı)',
+  'Use investment presets and value multipliers for quick ROI scenarios.': 'Hızlı ROI senaryoları için yatırım öntanımlılarını ve değer çarpanlarını kullanın.',
+  // Airdrop Calculator
+  'Airdrop Token': 'Airdrop Tokeni',
+  'Search or enter manually': 'Arayın veya manuel girin',
+  'Price at Receipt ($)': 'Alındığında Fiyat ($)',
+  'When you received the airdrop': 'Airdrop\'u aldığınız zaman',
+  'Current Token Price ($)': 'Güncel Token Fiyatı ($)',
+  'Auto-filled if coin selected': 'Coin seçildiğinde otomatik doldurulur',
+  'Sold?': 'Satıldı mı?',
+  'Sell Price ($)': 'Satış Fiyatı ($)',
+  'Tax Jurisdiction': 'Vergi Yetki Alanı',
+  'Fetching price...': 'Fiyat alınıyor...',
+  'Failed to fetch price. You can enter it manually.': 'Fiyat alınamadı. Manuel olarak girebilirsiniz.',
+  // Vesting Calculator
+  'Auto-calculates as you type. Use presets for a quick base schedule, then fine-tune cliff and duration with custom months.': 'Yazarken otomatik hesaplar. Öntanımlıları temel olarak kullanın, ardından cliff ve süreyi özel aylarla ayarlayın.',
 };
 
 _registerLang('tr', dict);

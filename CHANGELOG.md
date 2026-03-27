@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 63) — i18n: add missing translations for ROI, Airdrop, Vesting calculators
+
+### Fixed
+- **17 missing translation keys added to all 5 ui-strings files** (es, pt, tr, hi, ru):
+  - **RoiCalculator** (3 keys): `Current Value / Exit Value`, `Total Fees Paid (optional)`, `Use investment presets and value multipliers for quick ROI scenarios.`
+  - **AirdropCalculator** (11 keys): `Airdrop Token`, `Search or enter manually`, `Price at Receipt ($)`, `When you received the airdrop`, `Current Token Price ($)`, `Auto-filled if coin selected`, `Sold?`, `Sell Price ($)`, `Tax Jurisdiction`, `Fetching price...`, `Failed to fetch price. You can enter it manually.`
+  - **VestingCalculator** (1 key): `Auto-calculates as you type. Use presets for a quick base schedule, then fine-tune cliff and duration with custom months.`
+- All 3 calculator .tsx files already had `getUiString()` wrapping — the issue was missing dictionary entries causing English fallback on localized pages
+- Build: 935 pages, 0 errors
+
 ## [2026-03-27] (update 62) — i18n: wrap hardcoded strings in 4 calculator components
 
 ### Fixed

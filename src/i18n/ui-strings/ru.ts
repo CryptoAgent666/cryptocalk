@@ -1428,6 +1428,24 @@ const dict: Record<string, string> = {
   'Bitcoin Network Total': 'Вся сеть Bitcoin',
   'year': 'год',
   'years': 'лет',
+  // ROI Calculator
+  'Current Value / Exit Value': 'Текущая стоимость / Стоимость выхода',
+  'Total Fees Paid (optional)': 'Всего уплачено комиссий (необязательно)',
+  'Use investment presets and value multipliers for quick ROI scenarios.': 'Используйте пресеты инвестиций и множители стоимости для быстрых сценариев ROI.',
+  // Airdrop Calculator
+  'Airdrop Token': 'Токен аирдропа',
+  'Search or enter manually': 'Поиск или ввод вручную',
+  'Price at Receipt ($)': 'Цена при получении ($)',
+  'When you received the airdrop': 'Когда вы получили аирдроп',
+  'Current Token Price ($)': 'Текущая цена токена ($)',
+  'Auto-filled if coin selected': 'Заполняется автоматически при выборе монеты',
+  'Sold?': 'Продано?',
+  'Sell Price ($)': 'Цена продажи ($)',
+  'Tax Jurisdiction': 'Налоговая юрисдикция',
+  'Fetching price...': 'Получение цены...',
+  'Failed to fetch price. You can enter it manually.': 'Не удалось получить цену. Введите вручную.',
+  // Vesting Calculator
+  'Auto-calculates as you type. Use presets for a quick base schedule, then fine-tune cliff and duration with custom months.': 'Автоматический расчёт при вводе. Используйте пресеты как основу, затем настройте cliff и длительность.',
 };
 
 _registerLang('ru', dict);
