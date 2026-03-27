@@ -100,7 +100,7 @@ const schemas = [
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Home',
+        name: ({es:'Inicio',pt:'Início',tr:'Ana Sayfa',hi:'होम',ru:'Главная'})[lang as string] || 'Home',
         item: `${SITE_URL}${homeHref}`,
       },
       {
