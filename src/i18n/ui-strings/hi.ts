@@ -1079,6 +1079,22 @@ const dict: Record<string, string> = {
   'Annual Salary': 'वार्षिक वेतन',
   'Pay Frequency': 'भुगतान आवृत्ति',
   'Refresh Prices': 'कीमतें रिफ्रेश करें',
+  // ElectricityCostCalculator
+  'Number of Devices': 'उपकरणों की संख्या',
+  'Power per Device (W)': 'प्रति उपकरण शक्ति (W)',
+  'Electricity Rate ($/kWh)': 'बिजली दर ($/kWh)',
+  'Uptime (hours/day)': 'अपटाइम (घंटे/दिन)',
+  'Monthly Mining Revenue ($)': 'मासिक माइनिंग राजस्व ($)',
+  'Home Miner': 'होम माइनर',
+  'Small Farm': 'छोटा फार्म',
+  'Low-Cost Host': 'कम लागत होस्ट',
+  // DifficultyEstimatorCalculator
+  'Current Difficulty (T)': 'वर्तमान कठिनाई (T)',
+  'Expected Difficulty Change (%)': 'अपेक्षित कठिनाई परिवर्तन (%)',
+  'Current Daily Revenue (USD)': 'वर्तमान दैनिक राजस्व (USD)',
+  // MiningRoiCalculator ($-suffix variants)
+  'Equipment Cost ($)': 'उपकरण लागत ($)',
+  'Monthly Expenses ($)': 'मासिक व्यय ($)',
 };
 
 _registerLang('hi', dict);

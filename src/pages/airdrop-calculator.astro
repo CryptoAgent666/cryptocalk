@@ -7,6 +7,8 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Airdrop Value Calculator</h1>
           <p>Calculate the current value of your crypto airdrops, estimate tax liability across different jurisdictions, and track your profit or loss since receipt. Compare with notable historical airdrops.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <AirdropCalculator lang={'en'} client:load />
@@ -58,6 +68,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Airdrop value = Token Allocation &times; Current Price &minus; Gas Fees. For example, a 500-token airdrop at $2.40 per token with $15 gas = $1,185 net value. Use this calculator to estimate your airdrop's real worth after claiming costs.
+        </div>
         <h2>How to Use the Airdrop Calculator</h2>
         <ol>
           <li><strong>Search for the airdropped token</strong> — Use the coin search to find and select the token you received. This auto-fills the current market price from CoinGecko.</li>
