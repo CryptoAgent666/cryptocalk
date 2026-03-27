@@ -1429,6 +1429,24 @@ const dict: Record<string, string> = {
   'Bitcoin Network Total': 'Rede Bitcoin total',
   'year': 'ano',
   'years': 'anos',
+  // ROI Calculator
+  'Current Value / Exit Value': 'Valor Atual / Valor de Saída',
+  'Total Fees Paid (optional)': 'Total de Taxas Pagas (opcional)',
+  'Use investment presets and value multipliers for quick ROI scenarios.': 'Use presets de investimento e multiplicadores de valor para cenários rápidos de ROI.',
+  // Airdrop Calculator
+  'Airdrop Token': 'Token do Airdrop',
+  'Search or enter manually': 'Pesquisar ou digitar manualmente',
+  'Price at Receipt ($)': 'Preço ao Receber ($)',
+  'When you received the airdrop': 'Quando você recebeu o airdrop',
+  'Current Token Price ($)': 'Preço Atual do Token ($)',
+  'Auto-filled if coin selected': 'Preenchido automaticamente se moeda selecionada',
+  'Sold?': 'Vendido?',
+  'Sell Price ($)': 'Preço de Venda ($)',
+  'Tax Jurisdiction': 'Jurisdição Fiscal',
+  'Fetching price...': 'Buscando preço...',
+  'Failed to fetch price. You can enter it manually.': 'Erro ao buscar preço. Você pode digitá-lo manualmente.',
+  // Vesting Calculator
+  'Auto-calculates as you type. Use presets for a quick base schedule, then fine-tune cliff and duration with custom months.': 'Calcula automaticamente. Use presets como base, depois ajuste cliff e duração com meses personalizados.',
 };
 
 _registerLang('pt', dict);
