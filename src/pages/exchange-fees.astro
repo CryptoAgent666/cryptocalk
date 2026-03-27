@@ -7,6 +7,8 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Exchange Fee Comparator</h1>
           <p>Compare trading fees across major crypto exchanges. Find the cheapest platform for spot and futures trading with detailed maker/taker fee breakdowns and volume tier analysis.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <ExchangeFeeComparator lang={'en'} client:load />
@@ -58,6 +68,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Compare trading fees across major exchanges for your trade size. A 0.1% fee difference on a $100,000 trade saves $100. Binance charges 0.1% base; Coinbase 0.4&ndash;0.6% for instant trades.
+        </div>
         <h2>How to Use the Fee Comparator</h2>
         <ol>
           <li><strong>Enter your typical trade size</strong> — Input the dollar value of a typical trade you would execute. Fee impact varies with trade size, so using a realistic figure gives the most useful comparison.</li>

@@ -7,6 +7,8 @@ import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -51,6 +53,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto "What If" Calculator</h1>
           <p>Travel back in time. See what your investment would be worth today if you had bought crypto in the past.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
 
         <div class="calc-scope">
@@ -63,6 +73,9 @@ import '../styles/calculator-page.css';
     <!-- SEO Content -->
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Model hypothetical crypto scenarios: &ldquo;What if I had bought $1,000 of BTC in 2020?&rdquo; Enter any asset, amount, and historical date to see what your portfolio would be worth today.
+        </div>
         <h2>How to Use the What If Calculator</h2>
         <ol>
           <li><strong>Select your cryptocurrency</strong> — Search for any coin by name or symbol (Bitcoin, Ethereum, Solana, etc.)</li>

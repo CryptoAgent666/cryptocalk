@@ -7,6 +7,8 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Inflation Hedge Calculator</h1>
           <p>Compare your savings against inflation across 8 countries. See how BTC, ETH, stablecoins, gold, and the S&P 500 perform as inflation hedges.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <InflationHedgeCalculator lang={'en'} client:load />
@@ -58,6 +68,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Compare crypto vs fiat purchasing power over time. $10,000 in USD from 2014 is worth ~$6,200 in real terms due to inflation &mdash; the same amount in BTC would be worth dramatically more.
+        </div>
         <h2>How to Use the Inflation Hedge Calculator</h2>
         <p>Our free inflation hedge calculator lets you visualise how inflation erodes your savings over time and compare the performance of different asset classes as hedges. Whether you hold cash in Turkish lira, Nigerian naira, or US dollars, this tool shows you the real purchasing power of your money after inflation — and how crypto, gold, and equities stack up as alternatives.</p>
         <ol>

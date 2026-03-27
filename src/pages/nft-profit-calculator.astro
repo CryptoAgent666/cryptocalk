@@ -7,6 +7,8 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>NFT Profit Calculator</h1>
           <p>Calculate your real NFT trading profit after marketplace fees, creator royalties, and gas costs. See the break-even sell price and effective fee rate.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <NftProfitCalculator lang={'en'} client:load />
@@ -58,6 +68,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> NFT profit = Sale Price &minus; (Buy Price + Gas + Marketplace Fee). Selling an NFT for 2 ETH that cost 1.2 ETH with 2.5% marketplace fee nets 0.75 ETH profit after fees.
+        </div>
         <h2>How to Use the NFT Profit Calculator</h2>
         <p>Our free NFT profit calculator shows you the true profit or loss from buying and selling NFTs after every fee is deducted. Most NFT traders focus on the buy and sell prices but forget that marketplace commissions, creator royalties, and gas costs can take a significant bite out of their returns. This tool makes the math transparent.</p>
         <ol>

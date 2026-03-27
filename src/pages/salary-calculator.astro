@@ -7,6 +7,8 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Salary Calculator</h1>
           <p>Convert between fiat and crypto salaries. Calculate how much BTC, ETH, or USDT you'd accumulate by converting a portion of your paycheck, with conversion fees and pay frequency options.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <CryptoSalaryCalculator lang={'en'} client:load />
@@ -58,6 +68,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Convert crypto salary to local currency and estimate tax withholding. A $100,000/year salary paid in BTC at $73,700 means receiving ~0.0259 BTC biweekly before taxes.
+        </div>
         <h2>How to Use the Crypto Salary Calculator</h2>
         <p>The crypto salary calculator offers two modes: fiat-to-crypto conversion and crypto accumulation projection. Whether you want a quick snapshot of what your salary looks like in Bitcoin or a detailed projection of how much crypto you could stack over months or years, this tool covers both scenarios. Follow these steps to get started:</p>
         <ol>

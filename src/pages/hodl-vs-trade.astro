@@ -7,6 +7,8 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>HODL vs Trade Calculator</h1>
           <p>Compare buy-and-hold against active trading strategies. Simulate trades with custom win rates, risk:reward ratios, and fee structures to determine which approach fits your situation.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <HodlVsTradeCalculator lang={'en'} client:load />
@@ -58,6 +68,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Compare HODL vs active trading returns for any crypto asset over any time period. Factor in trading fees, tax implications, and time spent &mdash; many studies show 70&ndash;80% of active traders underperform buy-and-hold.
+        </div>
         <h2>How to Use the HODL vs Trade Calculator</h2>
         <ol>
           <li><strong>Set your starting capital</strong> — Enter the amount you plan to invest. This will be the base amount for both the HODL and active trading simulations.</li>

@@ -2,6 +2,30 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 50) — Localized quickAnswer for 39 remaining calculators
+
+### Added
+- **195 localized quickAnswer strings**: Added es, pt, tr, hi, ru translations for all 39 calculators that had EN quickAnswer but were missing non-EN versions. Calculators: loan, pip, portfolio, mining-roi, electricity-cost, difficulty, hashrate-converter, timestamp-converter, unit-converter, uniswap, bridge-comparator, mev, gamefi, sortino, calmar, treynor, information-ratio, kelly, var, drawdown, risk-of-ruin, slippage, trade-expectancy, bitcoin-unit-converter, cross-chain-bridge, crypto-correlation, crypto-index-fund, crypto-inheritance, crypto-portfolio-rebalance, crypto-sentiment, defi-yield-aggregator, dust-attack, exchange-fee-comparator, flash-loan, gas-optimization, governance-voting, nft-rarity, token-unlock, whale-alert. Total quickAnswer entries now: 504 (84 EN × 6 languages). Build verified: 935 pages, 0 errors.
+
+## [2026-03-27] (update 49) — i18n fixes: Calmar labels, HODL presets, 2 custom FAQs
+
+### Fixed
+- **Calmar Calculator scenario labels i18n**: Wrapped `scenario.label` with `getUiString()` in CalmarCalculator.tsx so "Defensive", "Balanced", "Growth", "High Risk" buttons display translated text on localized pages
+- **Calmar Calculator rating labels i18n**: Added `Weak` and `Excellent` translations to all 5 ui-strings files (were missing, causing English fallback on RU/ES/PT/TR/HI pages)
+- **HODL vs Trade preset labels i18n**: Wrapped `scenario.label` with `getUiString()` in HodlVsTradeCalculator.tsx so "Bull HODL", "Active Edge", "Choppy Tape" buttons display translated text
+
+### Added
+- **8 new UI string keys × 5 langs**: `Defensive`, `Balanced`, `Weak`, `Excellent`, `Bull HODL`, `Active Edge`, `Choppy Tape` added to es.ts, pt.ts, tr.ts, hi.ts, ru.ts
+- **Custom FAQ for lending-calculator**: 6 EN questions + full translations for es, pt, tr, hi, ru (36 Q&A pairs total). Topics: safe LTV ratio, CeFi vs DeFi, liquidation mechanics, stablecoin yields, rate determination, tax treatment
+- **Custom FAQ for compound-calculator**: 6 EN questions + full translations for es, pt, tr, hi, ru (36 Q&A pairs total). Topics: optimal compounding frequency, APY vs APR, daily vs monthly, compound interest risks, Rule of 72, gas fee impact
+
+## [2026-03-27] (update 48) — Author bylines & Quick Answer boxes on 7 custom EN pages
+
+### Added
+- **Author byline on 7 custom EN pages**: Added `<div class="calc-byline">` with "By Konstantin Iakovlev · Updated {buildDate}" to funding-rate-calculator.astro, hodl-vs-trade.astro, inflation-hedge.astro, what-if.astro, exchange-fees.astro, nft-profit-calculator.astro, salary-calculator.astro
+- **Quick Answer boxes on 7 custom EN pages**: Added `<div class="quick-answer">` with calculator-specific summaries (sourced from calculator-seo-content.ts) above the first SEO H2 on all 7 pages
+- **buildDate constant**: Added `const buildDate = new Date().toISOString().split('T')[0];` to frontmatter of all 7 pages
+
 ## [2026-03-27] (update 47) — Localized Quick Answers, author bylines, UI string gaps
 
 ### Added
