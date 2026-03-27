@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 61) — Fix false live-API claims in SEO content
+
+### Fixed
+- **gas-fee-calculator.astro**: Removed false claim "uses live Etherscan data" (GasFeeCalculator has no Etherscan fetch). Replaced with "uses standard gas benchmarks".
+- **mining-calculator.astro**: Removed false claim "live data from blockchain.info" (MiningCalculator only fetches BTC price from CoinGecko, not difficulty). Replaced with "live BTC price data from CoinGecko and up-to-date difficulty benchmarks".
+- **calculator-seo-content.ts (gas-fee EN)**: Removed "pre-fills live Ethereum gas prices from the Etherscan oracle" and "live data auto-fills for Ethereum". Replaced with accurate manual-entry descriptions.
+- **calculator-seo-content.ts (gas-optimization EN)**: Removed "fetched live from Etherscan". Replaced with manual benchmark description.
+- **calculator-faq.ts (gas-fee, 5 langs)**: Fixed 10 false FAQ answers across es/pt/tr/hi/ru claiming Etherscan API integration. Replaced with accurate descriptions stating the calculator uses standard benchmarks with manual gas price input.
+- **index.astro (EN homepage)**: Removed "blockchain.info" from 3 locations (schema FAQ, visible FAQ, about prose). CoinGecko is the only live API source.
+- **[lang]/index.astro (5 localized homepages)**: Removed "blockchain.info" from 10 locations (whatIsProse + FAQ answer in es/pt/tr/hi/ru). Replaced with accurate "CoinGecko for prices; benchmarks for other data" wording.
+- Build: 935 pages, 0 errors
+
 ## [2026-03-27] (update 60) — Fix API proxies and HalvingCalculator silent failure
 
 ### Fixed

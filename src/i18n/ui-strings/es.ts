@@ -1343,6 +1343,15 @@ const dict: Record<string, string> = {
   'Optional': 'Opcional',
   'Simulation': 'Simulación',
   'Trades': 'Operaciones',
+  // === Placeholder labels (update 61) ===
+  'For break-even calculation': 'Para cálculo de punto de equilibrio',
+  'Auto': 'Auto',
+  'Search cryptocurrency...': 'Buscar criptomoneda...',
+  'e.g. Ethereum': 'ej. Ethereum',
+  'e.g. USDC': 'ej. USDC',
+  'Safe': 'Seguro',
+  'High Risk': 'Alto riesgo',
+  'Moderate': 'Moderado',
 };
 
 _registerLang('es', dict);

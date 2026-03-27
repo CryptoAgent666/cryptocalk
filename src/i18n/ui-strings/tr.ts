@@ -1324,6 +1324,15 @@ const dict: Record<string, string> = {
   'Optional': 'İsteğe Bağlı',
   'Simulation': 'Simülasyon',
   'Trades': 'İşlem',
+  // === Placeholder labels (update 61) ===
+  'For break-even calculation': 'Başabaş hesaplaması için',
+  'Auto': 'Otomatik',
+  'Search cryptocurrency...': 'Kripto para ara...',
+  'e.g. Ethereum': 'ör. Ethereum',
+  'e.g. USDC': 'ör. USDC',
+  'Safe': 'Güvenli',
+  'High Risk': 'Yüksek Risk',
+  'Moderate': 'Orta',
 };
 
 _registerLang('tr', dict);

@@ -203,7 +203,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                         <label><Search size={14} /> {getUiString(lang, 'Token A (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={tokenASearch} onChange={(e) => handleSearchA(e.target.value)}
-                                placeholder="e.g. Ethereum" id="il-token-a" />
+                                placeholder={getUiString(lang, 'e.g. Ethereum')} id="il-token-a" />
                             {selectedTokenA && (
                                 <button className="coin-clear" onClick={() => { setSelectedTokenA(null); setTokenASearch(''); }} aria-label="Clear"><X size={14} /></button>
                             )}
@@ -226,7 +226,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                         <label><Search size={14} /> {getUiString(lang, 'Token B (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={tokenBSearch} onChange={(e) => handleSearchB(e.target.value)}
-                                placeholder="e.g. USDC" id="il-token-b" />
+                                placeholder={getUiString(lang, 'e.g. USDC')} id="il-token-b" />
                             {selectedTokenB && (
                                 <button className="coin-clear" onClick={() => { setSelectedTokenB(null); setTokenBSearch(''); }} aria-label="Clear"><X size={14} /></button>
                             )}
