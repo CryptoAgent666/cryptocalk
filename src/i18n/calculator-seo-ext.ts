@@ -10581,7 +10581,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       benchmarks: [
         "Umbrales de impuesto patrimonial por jurisdicción: EE.UU. $13.61M, UK £325K, Alemania €400K para hijos. La planificación proactiva puede ahorrar 20–40% del valor del patrimonio.",
-        "Tasas de recuperación: configuraciones multi-sig documentadas ~100%, wallets hardware documentadas ~95%, exchanges con beneficiarios ~80%, wallets no documentadas <5%."
+        "Tasas de recuperación: configuraciones multifirma documentadas ~100%, wallets hardware documentadas ~95%, exchanges con beneficiarios ~80%, wallets no documentadas <5%."
       ],
       execution: [
         "Acciones inmediatas: 1) Crear inventario escrito de todas las tenencias. 2) Almacenar frases semilla en caja fuerte. 3) Consolidar tenencias dispersas. 4) Revisar anualmente.",
@@ -10615,7 +10615,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       benchmarks: [
         "Limites de imposto patrimonial: EUA $13,61M, UK £325K, Alemanha €400K para filhos. Planejamento proativo pode economizar 20–40% do valor do espólio.",
-        "Taxas de recuperação: multi-sig documentado ~100%, carteiras hardware documentadas ~95%, exchanges com beneficiários ~80%, carteiras não documentadas <5%."
+        "Taxas de recuperação: multi-assinatura documentado ~100%, carteiras hardware documentadas ~95%, exchanges com beneficiários ~80%, carteiras não documentadas <5%."
       ],
       execution: [
         "Ações imediatas: 1) Criar inventário escrito de todas as holdings. 2) Armazenar seed phrases em cofre. 3) Consolidar holdings dispersas. 4) Revisar anualmente.",
@@ -10649,7 +10649,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       benchmarks: [
         "Yetki alanına göre miras vergisi eşikleri: ABD $13,61M, İngiltere £325K, Almanya çocuklar için €400K. Proaktif planlama miras değerinin %20–40'ını kurtarabilir.",
-        "Kurtarma oranları: belgelenmiş multi-sig ~%100, belgelenmiş donanım cüzdanları ~%95, lehtarı belirlenmiş exchange'ler ~%80, belgelenmemiş cüzdanlar <%5."
+        "Kurtarma oranları: belgelenmiş çoklu imza ~%100, belgelenmiş donanım cüzdanları ~%95, lehtarı belirlenmiş exchange'ler ~%80, belgelenmemiş cüzdanlar <%5."
       ],
       execution: [
         "Acil eylemler: 1) Tüm varlıkların yazılı envanterini oluşturun. 2) Tohum ifadelerini yanmaz kasada saklayın. 3) Dağınık varlıkları birleştirin. 4) Yıllık gözden geçirin.",
@@ -10683,7 +10683,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       benchmarks: [
         "क्षेत्राधिकार के अनुसार संपत्ति कर सीमाएं: US $13.61M, UK £325K, जर्मनी बच्चों के लिए €400K। सक्रिय योजना संपत्ति मूल्य का 20–40% बचा सकती है।",
-        "पुनर्प्राप्ति दरें: प्रलेखित multi-sig ~100%, प्रलेखित हार्डवेयर वॉलेट ~95%, नामित लाभार्थियों वाले एक्सचेंज ~80%, अप्रलेखित वॉलेट <5%।"
+        "पुनर्प्राप्ति दरें: प्रलेखित मल्टी-सिग ~100%, प्रलेखित हार्डवेयर वॉलेट ~95%, नामित लाभार्थियों वाले एक्सचेंज ~80%, अप्रलेखित वॉलेट <5%।"
       ],
       execution: [
         "तत्काल कार्य: 1) सभी क्रिप्टो होल्डिंग्स की लिखित सूची बनाएं। 2) सीड फ्रेज़ अग्निरोधक तिजोरी में रखें। 3) बिखरी होल्डिंग्स को समेकित करें। 4) वार्षिक समीक्षा करें।",
@@ -10717,7 +10717,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       benchmarks: [
         "Пороги налога на наследство: США $13,61M, Великобритания £325K, Германия €400K для детей. Проактивное планирование может сэкономить 20–40% стоимости наследства.",
-        "Показатели восстановления: документированный multi-sig ~100%, документированные аппаратные кошельки ~95%, биржи с указанными бенефициарами ~80%, недокументированные кошельки <5%."
+        "Показатели восстановления: документированный мультиподпись ~100%, документированные аппаратные кошельки ~95%, биржи с указанными бенефициарами ~80%, недокументированные кошельки <5%."
       ],
       execution: [
         "Немедленные действия: 1) Составьте письменный перечень всех активов. 2) Храните сид-фразы в огнеупорном сейфе. 3) Консолидируйте разрозненные активы. 4) Пересматривайте ежегодно.",

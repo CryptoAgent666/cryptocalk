@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 53) — Category hub i18n, ElectricityCost presets, multi-sig localization
+
+### Fixed
+- **177 category hub grid titles**: Added `TOOL_NAME_OVERRIDES` for es (44), pt (44), tr (44), hi (44) in `category-hubs.ts`. ES trading-tools hub had 11/20 titles in English — now all localized. Added missing RU `mev-calculator` override.
+- **ElectricityCostCalculator preset labels**: Wrapped `scenario.label` in `getUiString()` — "Home Miner", "Small Farm", "Low-Cost Host" now translate on localized pages.
+- **"multi-sig" localized in seo-ext**: Replaced in 5 non-EN crypto-inheritance-calculator blocks (es→multifirma, pt→multi-assinatura, tr→çoklu imza, hi→मल्टी-सिग, ru→мультиподпись).
+
+### Build
+- 935 pages, 0 errors
+
 ## [2026-03-27] (update 51) — i18n: NftProfit, Uniswap, CryptoSalary label localization
 
 ### Fixed
