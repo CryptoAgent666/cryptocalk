@@ -2,6 +2,22 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 45) — Translation quality audit & fixes (6 changes)
+
+### Fixed
+- **seo-body-text.ts PT garbled text**: Rewrote 7 of 10 Portuguese SEO body sections (scenarios, checklist, mistakes, benchmarks, execution, hygiene, validation) that contained incoherent word salad. Replaced with proper Portuguese translations matching EN source text structure and meaning.
+- **seo-body-text.ts HI foreign character leaks**: Replaced Korean character `외부` (U+C678 U+BD80) with Hindi `बाहरी` on line 220, and Bengali `বাঁচা` with Hindi `बचा` on line 224.
+- **ui-strings/ru.ts empty translation**: Fixed `'a': ''` → `'a': 'а'` (was rendering blank text).
+- **ui-strings/ru.ts duplicate key**: Removed duplicate `'This is a constant-product estimate...'` entry at line 881 (shorter truncated version); kept the full translation at line 44.
+- **ui-strings/es.ts HTML entities**: Converted 7 `&rarr;` HTML entities to Unicode `→` (were rendering literally in React). Removed duplicate `'Join F2Pool Mining Pool'` key. Added missing `'Total Return': 'Retorno Total'` key.
+- **calculator-seo-ext.ts 170 non-localized links**: Fixed internal `<a href>` links across 12 calculator entries × 5 non-EN languages that pointed to English URL paths (e.g., `/mining-calculator/`) instead of localized paths (e.g., `/es/calculadora-mineria-bitcoin/`). Affected calculators: halving, risk-of-ruin, slippage, trade-expectancy, sharpe, sortino, calmar, treynor, information-ratio, kelly, var, drawdown.
+
+### Added
+- **4 missing ui-string translations**: Propagated keys for MarginCalculator, CryptoSalaryCalculator, GasFeeCalculator, PortfolioCalculator disclaimers to pt.ts, tr.ts, ru.ts, hi.ts (were ES-only, other langs fell back to English).
+
+### Build
+- 935 pages, 0 errors
+
 ## [2026-03-22] (update 44) — Full SEO audit implementation (4 changes)
 
 ### Added
