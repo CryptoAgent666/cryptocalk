@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 46) — Deep Russian translation quality audit & fixes
+
+### Fixed
+- **14 Cyrillic-slug 404 links** in calculator-seo-ext.ts: 5 RU calculator entries used Cyrillic URL slugs (e.g., `/ru/калькулятор-прибыли-криптовалют/`) that don't exist — replaced with correct Latin transliterated slugs (`/ru/kalkulyator-pribyli-kripto/`)
+- **8 untranslated UPPERCASE TaxCalculator labels**: Added COUNTRY, INCOME BRACKET, HOLDING PERIOD, BUY/SELL PRICE, QUANTITY, ACCOUNTING METHOD + auto-calc hint to all 5 language files (es, pt, tr, hi, ru). Tax calculator form was showing English labels on all non-EN pages.
+- **6 severely truncated RU ui-strings**: Restored full translations for trade-expectancy, LP model, staking, Uniswap, position-size, and market-cap disclaimers that had been reduced to generic stubs
+- **11 short RU meta descriptions**: Expanded risk/analytics calculator descriptions from <100 chars to 130+ chars, added "Бесплатный" prefix for consistency with other 57 RU descriptions
+- **Gender agreement error**: `меньший проскальзывание` → `меньшее проскальзывание` (neuter) in calculator-seo-content.ts
+- **5 inaccurate RU translations**: "Рост цены" → "Изменение цены", "Ценность в USD" → "Стоимость в USD", "Время в пути" → "Ожидаемое время", "Здоровый" → "В норме", "Ваша месячная стоимость" → "Ваши ежемесячные расходы"
+- **Anglicisms replaced**: "Лайв оценка" → "Оценка в реальном времени", "Крипто-аллокация" → "Распределение криптоактивов", "аллокейшн" → "распределение" (2x in seo-content), "круче" → "значительно эффективнее", "банковским холдом" → "удержанием позиции (buy-and-hold)", "индикатор" → "бенчмарк"
+- **Redundant parentheticals removed**: "Газ (Gas)" → "Газ"
+
+### Build
+- 935 pages, 0 errors
+
 ## [2026-03-27] (update 45) — Translation quality audit & fixes (6 changes)
 
 ### Fixed
