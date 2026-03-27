@@ -272,7 +272,7 @@ function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                 {/* Direction Marker */}
                 <div className="swap-row">
                     <div className="swap-line" />
-                    <span className="swap-label">Crypto to Fiat</span>
+                    <span className="swap-label">{getUiString(lang, 'Crypto to Fiat')}</span>
                     <div className="swap-line" />
                 </div>
 

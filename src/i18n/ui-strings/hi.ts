@@ -1133,6 +1133,7 @@ const dict: Record<string, string> = {
   'Auto-calculates as you type. Set power, uptime, and tariff first for realistic costs.': 'टाइप करते समय ऑटो-गणना। यथार्थवादी लागत के लिए पहले पावर, अपटाइम और टैरिफ सेट करें।',
   'Auto-calculates as you type. Keep target allocation near 100% and avoid over-concentration in one asset.': 'टाइप करते समय ऑटो-गणना। लक्ष्य आवंटन 100% के करीब रखें और एक ही परिसंपत्ति में अधिक केंद्रीकरण से बचें।',
   'Auto-calculates as you type. Keep LTV conservative and monitor margin-call/liquidation thresholds before borrowing.': 'टाइप करते समय ऑटो-गणना। LTV रूढ़िवादी रखें और उधार लेने से पहले मार्जिन-कॉल/लिक्विडेशन सीमाओं की निगरानी करें।',
+  'Crypto to Fiat': 'क्रिप्टो से फिएट',
 };
 
 _registerLang('hi', dict);
