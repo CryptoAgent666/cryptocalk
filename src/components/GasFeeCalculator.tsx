@@ -1,5 +1,5 @@
 import { getUiString } from '../i18n/ui-strings';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
     DollarSign,
     Info,
@@ -55,6 +55,31 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
     const [ethPrice, setEthPrice] = useState('2327');
     const [speed, setSpeed] = useState('standard');
     const [txCount, setTxCount] = useState('1');
+    const [liveGas, setLiveGas] = useState(false);
+
+    // Fetch live ETH gas price + ETH/USD on mount (Ethereum only)
+    useEffect(() => {
+        let mounted = true;
+        (async () => {
+            try {
+                const [gasRes, priceRes] = await Promise.all([
+                    fetch('https://api.etherscan.io/v2/api?chainid=1&module=gastracker&action=gasoracle').then(r => r.ok ? r.json() : null).catch(() => null),
+                    fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd').then(r => r.ok ? r.json() : null).catch(() => null),
+                ]);
+                if (!mounted) return;
+                if (gasRes?.result?.SafeGasPrice) {
+                    setGasPrice(String(gasRes.result.SafeGasPrice));
+                }
+                if (priceRes?.ethereum?.usd) {
+                    setEthPrice(String(priceRes.ethereum.usd));
+                }
+                if (gasRes?.result?.SafeGasPrice || priceRes?.ethereum?.usd) {
+                    setLiveGas(true);
+                }
+            } catch { /* fallback to hardcoded defaults */ }
+        })();
+        return () => { mounted = false; };
+    }, []);
 
     const currentNetwork = NETWORKS.find(n => n.id === network)!;
     const currentTx = TX_TYPES.find(t => t.id === txType)!;
@@ -258,6 +283,15 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="calc-results-panel">
                     {hasInputs ? (
                         <>
+                            {/* Live badge */}
+                            {liveGas && network === 'ethereum' && (
+                                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '8px' }}>
+                                    <span style={{ color: 'var(--color-accent-green)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(52, 211, 153, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
+                                        <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-accent-green)' }}></span>
+                                        LIVE
+                                    </span>
+                                </div>
+                            )}
                             {/* Hero */}
                             <div className="result-hero" style={{ borderColor: currentNetwork.color }}>
                                 <span className="result-hero-label">{getUiString(lang, 'Gas Cost')} — {getUiString(lang, currentTx.label)}</span>

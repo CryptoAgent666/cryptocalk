@@ -106,22 +106,31 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
         const fetchNetwork = async () => {
             setLoadingNetwork(true);
             try {
-                // Fetch BTC price
-                const priceRes = await fetch(
-                    `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`
-                );
-                if (!priceRes.ok) throw new Error('Failed to fetch BTC price');
-                const priceData = await priceRes.json();
-                const btcPrice = priceData.bitcoin?.usd || 73700;
+                // Fetch BTC price + difficulty in parallel
+                const [priceRes, diffRes] = await Promise.all([
+                    fetch(
+                        `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`
+                    ).then(r => r.ok ? r.json() : null).catch(() => null),
+                    fetch('https://blockchain.info/q/getdifficulty')
+                        .then(r => r.ok ? r.text() : null).catch(() => null),
+                ]);
 
-                // Use reasonable defaults for difficulty (auto-fetch from a mining API can be added later)
-                // Current Bitcoin difficulty as of 2026-03: ~145T
+                const btcPrice = priceRes?.bitcoin?.usd || 73700;
+                const liveDifficulty = diffRes ? parseFloat(diffRes) : NaN;
+                const difficulty = (!isNaN(liveDifficulty) && liveDifficulty > 0)
+                    ? liveDifficulty
+                    : 145_000_000_000_000;
+
                 // Block reward after 2024 halving: 3.125 BTC
                 setNetwork({
-                    difficulty: 145_000_000_000_000, // ~145T
+                    difficulty,
                     btcPrice,
                     blockReward: 3.125,
                 });
+
+                if (!priceRes?.bitcoin?.usd && (isNaN(liveDifficulty) || liveDifficulty <= 0)) {
+                    setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($73,700).'));
+                }
             } catch {
                 setNetwork({
                     difficulty: 145_000_000_000_000,

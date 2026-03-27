@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-27] (update 66) — fix: broken API endpoints (CORS proxy, CoinCap, live data)
+
+### Fixed
+- **CORS proxy fallback** in `AsicMiningCalculator.tsx` and `GpuMiningCalculator.tsx`: corsproxy.io blocked by Cloudflare for WhatToMine requests. Added `api.codetabs.com/v1/proxy` as primary CORS proxy with corsproxy.io as fallback. Hardcoded data still used if both fail.
+- **CoinCap removed** from `cryptoPriceService.ts`: api.coincap.io domain is completely down. Removed all CoinCap functions, mapping tables, and fallback chain entries. Price service now uses CoinGecko → CryptoCompare 2-tier fallback.
+
+### Added
+- **Live ETH gas price** in `GasFeeCalculator.tsx`: Fetches Etherscan V2 gas oracle (`SafeGasPrice`) and CoinGecko ETH/USD on mount for Ethereum network. Shows "LIVE" badge when data is fetched. Falls back to hardcoded defaults (1 Gwei, $2327) on failure.
+- **Live BTC difficulty** in `MiningCalculator.tsx`: Fetches `blockchain.info/q/getdifficulty` in parallel with BTC price on mount. Parses the plain-number response and uses it instead of hardcoded 145T. Falls back to 145T on failure.
+- Build: 935 pages, 0 errors
+
 ## [2026-03-27] (update 65) — i18n: 195 missing RU translation keys bulk fill
 
 ### Added
