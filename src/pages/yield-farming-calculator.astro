@@ -7,11 +7,13 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
   title="Yield Farming Calculator — DeFi Profitability Tool"
-  description="Free yield farming calculator. Calculate net profits from DeFi farming including gas costs, impermanent loss, and harvest frequency optimization. Find your true APY."
+  description="Free yield farming calculator. Calculate net DeFi farming profits including gas costs, impermanent loss, and harvest frequency. Find your true APY."
   lang="en"
   pageType="calculator"
 >
@@ -48,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Yield Farming Calculator</h1>
           <p>Calculate real yield farming returns after gas fees, impermanent loss, and harvest costs. Find the optimal harvest frequency for your deposit size.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <YieldFarmingCalculator lang={'en'} client:load />
@@ -58,6 +68,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Yield farming return = (Principal &times; APY &times; Duration/365) &minus; Gas Costs. Farming $10,000 at 50% APY for 30 days yields ~$411 &mdash; subtract ~$50 in gas for a net return of $361.
+        </div>
         <h2>How to Use the Yield Farming Calculator</h2>
         <p>Our free yield farming calculator helps DeFi participants estimate their real returns after accounting for every cost that eats into farming profits. Whether you are providing liquidity on Uniswap, farming rewards on Aave, or chasing high-APY pools on newer protocols, this tool gives you a clear picture of your net profitability.</p>
         <ol>
