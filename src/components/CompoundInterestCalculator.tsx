@@ -190,7 +190,7 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <div className="input-group">
-                        <label><Percent size={14} /> {getUiString(lang, 'Annual Interest Rate (APY)')}</label>
+                        <label><Percent size={14} /> {getUiString(lang, 'Annual Interest Rate (APR)')}</label>
                         <div className="pills-row">
                             {APY_PRESETS.map((a) => (
                                 <button key={a} className={`pill-btn ${annualRate === String(a) ? 'active' : ''}`}
