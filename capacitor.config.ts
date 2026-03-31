@@ -8,20 +8,24 @@ const config: CapacitorConfig = {
     url: 'https://cryptocalk.com',
     cleartext: false,
     androidScheme: 'https',
-    // Falls back to local files when offline
-    errorPath: 'index.html',
+    allowNavigation: ['cryptocalk.com', '*.cryptocalk.com', '*.google.com', '*.googlesyndication.com', '*.doubleclick.net', '*.googleadservices.com'],
   },
   plugins: {
     SplashScreen: {
-      launchShowDuration: 2000,
+      launchShowDuration: 0,
       launchAutoHide: true,
+      launchFadeOutDuration: 300,
       backgroundColor: '#0f172a',
       showSpinner: false,
     },
     StatusBar: {
       style: 'DARK',
       backgroundColor: '#0f172a',
+      overlaysWebView: false,
     },
+  },
+  android: {
+    backgroundColor: '#0f172a',
   },
 };
 
