@@ -384,10 +384,10 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <button className="reset-btn" onClick={reset}>
-                        <RotateCcw size={14} /> Reset
+                        <RotateCcw size={14} /> {getUiString(lang, 'Reset')}
                     </button>
                     <span className="input-hint">
-                        Auto-calculates as you type. Always validate gas and IL assumptions first, then compare harvest frequencies.
+                        {getUiString(lang, 'Auto-calculates as you type. Always validate gas and IL assumptions first, then compare harvest frequencies.')}
                     </span>
                 </div>
 

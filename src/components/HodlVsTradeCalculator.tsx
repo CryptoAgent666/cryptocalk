@@ -118,22 +118,24 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
             const wins = Math.round(trades * wr / 100);
             const losses = trades - wins;
 
-            // Process winning trades
-            for (let w = 0; w < wins; w++) {
-                const feeAmount = balance * (fee / 100);
-                totalFeesPaid += feeAmount;
-                balance = balance * (1 + profit / 100) - feeAmount;
-                if (balance <= 0) { balance = 0; break; }
-            }
-
-            // Process losing trades
-            if (balance > 0) {
-                for (let l = 0; l < losses; l++) {
+            // Interleave wins and losses for realistic simulation
+            let wi = 0, li = 0;
+            for (let t = 0; t < trades; t++) {
+                // Distribute wins/losses evenly across the month
+                const isWin = wi < wins && (li >= losses || (t % Math.max(1, Math.floor(trades / wins))) === 0);
+                if (isWin) {
+                    const tradeSize = balance * (profit / 100 + loss / 100) / (profit / 100 + loss / 100 || 1);
+                    const feeAmount = balance * (fee / 100);
+                    totalFeesPaid += feeAmount;
+                    balance = balance * (1 + profit / 100) - feeAmount;
+                    wi++;
+                } else {
                     const feeAmount = balance * (fee / 100);
                     totalFeesPaid += feeAmount;
                     balance = balance * (1 - loss / 100) - feeAmount;
-                    if (balance <= 0) { balance = 0; break; }
+                    li++;
                 }
+                if (balance <= 0) { balance = 0; break; }
             }
 
             totalTrades += trades;

@@ -43,7 +43,7 @@ const PIP_STEPS = [1, 10, 50, 100, 500, 1000];
 const PIP_SCENARIOS = [
     {
         label: 'BTC Swing Long',
-        currentPrice: '65000',
+        currentPrice: '83000',
         positionSize: '10000',
         sizeMode: 'usd' as const,
         tickSize: '10',
@@ -51,7 +51,7 @@ const PIP_SCENARIOS = [
     },
     {
         label: 'ETH Day Trade',
-        currentPrice: '3500',
+        currentPrice: '2327',
         positionSize: '5000',
         sizeMode: 'usd' as const,
         tickSize: '1',
@@ -59,7 +59,7 @@ const PIP_SCENARIOS = [
     },
     {
         label: 'XRP Short',
-        currentPrice: '0.6',
+        currentPrice: '2.20',
         positionSize: '20000',
         sizeMode: 'usd' as const,
         tickSize: '0.01',

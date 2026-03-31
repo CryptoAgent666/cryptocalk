@@ -30,19 +30,19 @@ interface AssetConfig {
 }
 
 const COUNTRIES: CountryData[] = [
-    { id: 'turkey', name: 'Turkey', flag: 'TR', currency: 'TRY', inflationRate: 0.50, adoptionRate: 25.6 },
-    { id: 'argentina', name: 'Argentina', flag: 'AR', currency: 'ARS', inflationRate: 1.00, adoptionRate: 18.9 },
+    { id: 'turkey', name: 'Turkey', flag: 'TR', currency: 'TRY', inflationRate: 0.38, adoptionRate: 25.6 },
+    { id: 'argentina', name: 'Argentina', flag: 'AR', currency: 'ARS', inflationRate: 0.30, adoptionRate: 18.9 },
     { id: 'nigeria', name: 'Nigeria', flag: 'NG', currency: 'NGN', inflationRate: 0.30, adoptionRate: 32.0 },
     { id: 'usa', name: 'USA', flag: 'US', currency: 'USD', inflationRate: 0.03, adoptionRate: 15.5 },
-    { id: 'russia', name: 'Russia', flag: 'RU', currency: 'RUB', inflationRate: 0.09, adoptionRate: 10.0 },
+    { id: 'russia', name: 'Russia', flag: 'RU', currency: 'RUB', inflationRate: 0.08, adoptionRate: 10.0 },
     { id: 'india', name: 'India', flag: 'IN', currency: 'INR', inflationRate: 0.05, adoptionRate: 7.4 },
     { id: 'brazil', name: 'Brazil', flag: 'BR', currency: 'BRL', inflationRate: 0.045, adoptionRate: 17.5 },
     { id: 'uk', name: 'UK', flag: 'GB', currency: 'GBP', inflationRate: 0.04, adoptionRate: 12.0 },
 ];
 
 const ASSETS: AssetConfig[] = [
-    { id: 'btc', label: 'BTC', annualReturn: 0.50, color: '#f59e0b' },
-    { id: 'eth', label: 'ETH', annualReturn: 0.40, color: '#0891b2' },
+    { id: 'btc', label: 'BTC', annualReturn: 0.20, color: '#f59e0b' },
+    { id: 'eth', label: 'ETH', annualReturn: 0.15, color: '#0891b2' },
     { id: 'usdc_yield', label: 'USDC + Yield', annualReturn: 0.08, color: '#3b82f6' },
     { id: 'gold', label: 'Gold', annualReturn: 0.08, color: '#eab308' },
     { id: 'sp500', label: 'S&P 500', annualReturn: 0.10, color: '#10b981' },

@@ -110,7 +110,8 @@ function RoiCalculator({ lang = 'en' }: { lang?: string }) {
 
         const netProfit = current - invest - fees;
         const totalRoi = ((current - invest - fees) / invest) * 100;
-        const annualizedRoi = (Math.pow(1 + totalRoi / 100, 365 / days) - 1) * 100;
+        const base = 1 + totalRoi / 100;
+        const annualizedRoi = base > 0 ? (Math.pow(base, 365 / days) - 1) * 100 : -100;
 
         // Compare with traditional assets over the same holding period
         const comparisons = TRADITIONAL_ASSETS.map((asset) => {
