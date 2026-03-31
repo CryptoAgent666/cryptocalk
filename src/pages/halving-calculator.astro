@@ -7,11 +7,12 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
   title="Bitcoin Halving Countdown & Impact Calculator"
-  description="Live Bitcoin halving countdown timer with mining impact calculator. See how the next BTC halving affects your mining revenue. Historical halving data and price analysis."
+  description="Live Bitcoin halving countdown with mining impact calculator. See how the next BTC halving affects revenue. Historical data and price analysis."
   lang="en"
   pageType="calculator"
 >
@@ -48,6 +49,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Bitcoin Halving Countdown & Impact Calculator</h1>
           <p>Track the next Bitcoin halving with a live countdown, calculate the impact on your mining profitability, and explore historical halving price patterns.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <HalvingCalculator lang={'en'} client:load />
@@ -58,6 +67,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Bitcoin halving cuts the block reward every 210,000 blocks (~4 years). After the April 2024 halving, the reward dropped from 6.25 to 3.125 BTC. The next halving is expected around March 2028.
+        </div>
         <h2>What Is Bitcoin Halving?</h2>
         <p>Bitcoin halving is a programmed event that cuts the block reward paid to miners in half approximately every four years, or precisely every 210,000 blocks. This mechanism is hardcoded into Bitcoin's protocol and serves as the cornerstone of its deflationary monetary policy. By reducing the rate at which new BTC enters circulation, halvings ensure that Bitcoin's total supply asymptotically approaches its hard cap of 21 million coins.</p>
         <p>When Satoshi Nakamoto launched Bitcoin in January 2009, miners received 50 BTC for every block they successfully mined. The first halving in November 2012 reduced this to 25 BTC. The second halving in July 2016 brought it down to 12.5 BTC. The third halving in May 2020 cut it to 6.25 BTC. The most recent halving in April 2024 reduced the reward to 3.125 BTC per block. Each halving event effectively doubles Bitcoin's stock-to-flow ratio, making it progressively scarcer.</p>

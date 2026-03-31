@@ -228,7 +228,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'kelly-calculator': {
       title: 'Kelly Criterion Calculator',
-      description: 'Find optimal position sizing from win rate and payoff ratio using Kelly, half-Kelly, and quarter-Kelly models.'
+      description: 'Free Kelly Criterion calculator for crypto trading. Find optimal position sizing from win rate and payoff ratio using Kelly, half-Kelly, and quarter-Kelly models.'
     },
     'leverage-calculator': {
       title: 'Leverage Calculator',
@@ -260,11 +260,11 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'staking-rewards-calculator': {
       title: 'Staking Rewards Calculator',
-      description: 'Free staking rewards calculator. Estimate daily, weekly, and monthly earnings for Ethereum, Solana, Polkadot, Cosmos and other PoS coins.'
+      description: 'Free staking rewards calculator. Estimate daily, weekly, and monthly earnings for Ethereum, Solana, Polkadot, Cosmos and other PoS coins with commissions.'
     },
     'trade-expectancy-calculator': {
       title: 'Trade Expectancy Calculator',
-      description: 'Estimate strategy edge per trade and project monthly outcomes using win rate, R-multiples, and risk per trade.'
+      description: 'Free trade expectancy calculator. Estimate strategy edge per trade and project monthly outcomes using win rate, R-multiples, and risk per trade.'
     },
     'treynor-calculator': {
       title: 'Treynor Ratio Calculator',
