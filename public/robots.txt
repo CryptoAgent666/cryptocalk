@@ -2,6 +2,16 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
+# Google Ad crawlers — must have full access for AdSense
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
 # AI Search Crawlers — explicitly allowed
 User-agent: GPTBot
 Allow: /
