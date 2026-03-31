@@ -104,7 +104,7 @@ const breadcrumbSchema = pageType === 'calculator' ? {
 const OG_IMAGE_SLUGS = new Set(['profit-calculator','dca-calculator','mining-calculator','tax-calculator','staking-calculator','converter','liquidation-calculator','position-size-calculator','impermanent-loss-calculator','gas-calculator']);
 const ogImagePath = OG_IMAGE_SLUGS.has(calcSlug) ? `/og/${calcSlug}.png` : '/og-image.png';
 
-const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es-419', pt: 'pt-BR', tr: 'tr-TR', hi: 'hi-IN', ru: 'ru-RU' };
+const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es', pt: 'pt', tr: 'tr', hi: 'hi', ru: 'ru' };
 ---
 
 <!doctype html>
