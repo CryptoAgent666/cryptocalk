@@ -2,6 +2,31 @@
 
 All notable changes to this project are documented here.
 
+## [2026-03-31] (update 73) — fix: stale default values in 8 calculator components
+
+### Changed
+- **DifficultyEstimatorCalculator.tsx**: Default difficulty 85T → 113T, pills [70,85,100,120] → [85,100,113,130], scenario presets updated
+- **ElectricityCostCalculator.tsx**: USA avg rate 0.13 → 0.17, Germany rate 0.35 → 0.30
+- **InflationHedgeCalculator.tsx**: BTC annualReturn 0.50 → 0.20, ETH 0.40 → 0.15, Argentina inflation 1.00 → 0.30, Turkey 0.50 → 0.38, Russia 0.09 → 0.08
+- **ReverseRoiCalculator.tsx**: Bitcoin cap 1.9T → 1.7T, Solana 80B → 65B, XRP 70B → 130B, reordered XRP above Solana
+- **GweiConverter.tsx**: ETH fallback price 3000 → 2327
+- **HashrateConverter.tsx**: Bitcoin network hashrate ~600 EH/s → ~850 EH/s
+- **PipCalculator.tsx**: BTC scenario price 65000 → 83000, ETH 3500 → 2327, XRP 0.6 → 2.20
+- **MarketCapComparator.tsx**: MATIC symbol → POL (Polygon rebrand)
+
+## [2026-03-31] (update 72) — fix: i18n hardcoded strings + staking fee calculation
+
+### Fixed
+- **YieldFarmingCalculator.tsx**: Wrapped hardcoded "Reset" button label and "Auto-calculates as you type..." hint with `getUiString()` for proper localization
+- **StakingRewardsCalculator.tsx**: Fixed "Fees Paid to Validator" calculation for compound mode. Previously used `grossRewards * feeRate` which is only correct for simple interest; now computes fees as `grossRewards - rewardsEarned` (difference between full-APY and effective-APY rewards), giving accurate fee display for both compound and simple modes
+
+## [2026-03-31] (update 68) — fix: meta descriptions and title/H1 mismatches
+
+### Fixed
+- **22 meta descriptions trimmed to under 160 characters**: tax-calculator, mining-calculator, satoshi-converter, apy-apr-calculator, hodl-vs-trade, roi-calculator, inflation-hedge, vesting-calculator, airdrop-calculator, exchange-fees, converter, liquidation-calculator, reverse-roi, risk-reward-calculator, nft-profit-calculator, position-size-calculator, dca-calculator, market-cap-comparator, salary-calculator, yield-farming-calculator, pip-calculator, tp-sl-calculator. Removed filler words and redundant phrases while keeping core message and "Free" prefix.
+- **9 title/H1 mismatches fixed**: Added "Crypto" keyword to break-even, compound-interest, gas-fee, leverage, pip, portfolio, position-size calculator titles. Changed risk-reward to "Risk-Reward Ratio Calculator". Changed vesting to "Token Vesting Schedule Calculator".
+- **what-if.astro title**: Removed `| CryptoCalk` suffix (brand appended by Layout.astro already)
+
 ## [2026-03-27] (update 66) — fix: broken API endpoints (CORS proxy, CoinCap, live data)
 
 ### Fixed
