@@ -3,14 +3,14 @@ import { useMemo, useState } from 'react';
 import { Activity, BarChart3, DollarSign, Info, Percent, RotateCcw } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 
-const DIFFICULTY_PILLS = ['70', '85', '100', '120'];
+const DIFFICULTY_PILLS = ['85', '100', '113', '130'];
 const CHANGE_PILLS = ['-10', '-5', '5', '8', '15'];
 const REVENUE_PILLS = ['50', '120', '250', '500'];
 const SHARE_PILLS = ['0.001', '0.0025', '0.005', '0.01'];
 const DIFFICULTY_SCENARIOS = [
-  { label: 'Base Case', currentDifficulty: '85', expectedChange: '8', dailyRevenue: '120', hashrateShare: '0.0025' },
-  { label: 'Difficulty Drop', currentDifficulty: '85', expectedChange: '-5', dailyRevenue: '120', hashrateShare: '0.0025' },
-  { label: 'Hashrate Surge', currentDifficulty: '100', expectedChange: '15', dailyRevenue: '250', hashrateShare: '0.005' },
+  { label: 'Base Case', currentDifficulty: '113', expectedChange: '8', dailyRevenue: '120', hashrateShare: '0.0025' },
+  { label: 'Difficulty Drop', currentDifficulty: '113', expectedChange: '-5', dailyRevenue: '120', hashrateShare: '0.0025' },
+  { label: 'Hashrate Surge', currentDifficulty: '113', expectedChange: '15', dailyRevenue: '250', hashrateShare: '0.005' },
 ] as const;
 
 // formatUSD is defined inside the component to access `lang` prop
@@ -25,7 +25,7 @@ function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
     }).format(value);
   };
 
-  const [currentDifficulty, setCurrentDifficulty] = useState('85');
+  const [currentDifficulty, setCurrentDifficulty] = useState('113');
   const [expectedChange, setExpectedChange] = useState('8');
   const [dailyRevenue, setDailyRevenue] = useState('120');
   const [hashrateShare, setHashrateShare] = useState('0.0025');
@@ -67,7 +67,7 @@ function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
   }, [currentDifficulty, expectedChange, dailyRevenue, hashrateShare]);
 
   const reset = () => {
-    setCurrentDifficulty('85');
+    setCurrentDifficulty('113');
     setExpectedChange('8');
     setDailyRevenue('120');
     setHashrateShare('0.0025');

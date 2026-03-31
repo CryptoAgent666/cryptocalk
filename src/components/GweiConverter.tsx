@@ -97,7 +97,7 @@ function formatDisplay(val: string, maxDecimals: number = 18): string {
 function GweiConverter({ lang = 'en' }: { lang?: string }) {
     const [amount, setAmount] = useState('1');
     const [selectedUnit, setSelectedUnit] = useState('gwei');
-    const [ethPrice, setEthPrice] = useState('3000');
+    const [ethPrice, setEthPrice] = useState('2327');
     const [fetchingPrice, setFetchingPrice] = useState(false);
 
     const currentUnit = UNITS.find(u => u.id === selectedUnit)!;

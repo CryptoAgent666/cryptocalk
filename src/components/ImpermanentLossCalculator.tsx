@@ -128,15 +128,12 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
     // IL formula: IL = 2 * sqrt(r) / (1 + r) - 1, where r = price ratio
     const sqrtR = Math.sqrt(relativeRatio);
     const ilPercent = (1 + relativeRatio) > 0 ? (2 * sqrtR / (1 + relativeRatio) - 1) * 100 : -100;
-    const ilAbsolute = (ilPercent / 100) * investment;
-
     // HODL value: half in token A, half in token B
     const hodlValue = investment * (priceRatioA * 0.5 + priceRatioB * 0.5);
 
-    // LP value = hodlValue * (1 + IL)
-    // Actually: LP value = investment * 2 * sqrt(priceRatioA * priceRatioB) / (1 + relativeRatio) ... simplified:
-    // LP_value = investment * sqrt(priceRatioA) * sqrt(priceRatioB) * 2 / (sqrt(priceRatioA/priceRatioB) + sqrt(priceRatioB/priceRatioA))
-    // Simpler: LP_value = hodlValue + ilAbsolute
+    // LP value = hodlValue * (2 * sqrt(r) / (1 + r))
+    // IL is relative to HODL value, not initial investment
+    const ilAbsolute = (ilPercent / 100) * hodlValue;
     const lpValueBeforeFees = hodlValue + ilAbsolute;
 
     // Fee earnings (prorated for holding period)

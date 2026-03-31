@@ -183,12 +183,11 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
     const monthlyReward = dailyReward * 30.44;
     const yearlyReward = amount * effectiveApy;
 
-    // Fee cost: fee is applied to the gross rewards (before fee deduction)
-    // Gross rewards = what you'd earn at full APY, then fee takes a cut
+    // Fee cost: difference between gross rewards (full APY) and net rewards (effective APY after fee)
     const grossRewards = autoCompound
         ? amount * Math.pow(1 + apy / 365, days) - amount
         : amount * apy * years;
-    const totalFees = grossRewards * fee;
+    const totalFees = grossRewards - rewardsEarned;
 
     // Monthly breakdown (first 12 months or full period)
     const monthlyBreakdown: { month: number; balance: number; rewards: number; cumRewards: number }[] = [];

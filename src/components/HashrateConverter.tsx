@@ -25,7 +25,7 @@ const TYPICAL_HASHRATES = [
     { device: 'GPU on Ethash', hashrate: '30 - 120 MH/s', unitId: 'mh' },
     { device: 'Antminer S21 Hyd (SHA-256)', hashrate: '335 TH/s', unitId: 'th' },
     { device: 'Bitcoin ASIC (SHA-256)', hashrate: '100 - 400 TH/s', unitId: 'th' },
-    { device: 'Bitcoin Network Total', hashrate: '~600 EH/s', unitId: 'eh' },
+    { device: 'Bitcoin Network Total', hashrate: '~850 EH/s', unitId: 'eh' },
 ];
 
 interface ConversionResult {

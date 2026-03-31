@@ -93,11 +93,11 @@ const MILESTONE_MULTIPLIERS = [
 ];
 
 const TOP_COINS_REFERENCE = [
-    { name: 'Bitcoin', cap: 1_900_000_000_000 },
+    { name: 'Bitcoin', cap: 1_700_000_000_000 },
     { name: 'Ethereum', cap: 400_000_000_000 },
+    { name: 'XRP', cap: 130_000_000_000 },
     { name: 'BNB', cap: 90_000_000_000 },
-    { name: 'Solana', cap: 80_000_000_000 },
-    { name: 'XRP', cap: 70_000_000_000 },
+    { name: 'Solana', cap: 65_000_000_000 },
 ];
 
 function getProbability(multiplier: number): { label: string; color: string } {

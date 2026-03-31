@@ -49,7 +49,7 @@ const TOP_COINS = [
     { id: 'dogecoin', name: 'Dogecoin', symbol: 'DOGE' },
     { id: 'polkadot', name: 'Polkadot', symbol: 'DOT' },
     { id: 'avalanche-2', name: 'Avalanche', symbol: 'AVAX' },
-    { id: 'matic-network', name: 'Polygon', symbol: 'MATIC' },
+    { id: 'matic-network', name: 'Polygon', symbol: 'POL' },
 ];
 
 const QUICK_SCENARIOS = [

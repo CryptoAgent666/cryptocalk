@@ -28,6 +28,7 @@ interface CoinData {
     blockReward: number;
     networkHashrate: number; // MH/s
     algo: string;
+    blockTime: number; // seconds
 }
 
 interface PeriodResult {
@@ -57,11 +58,11 @@ const GPU_PRESETS: GpuPreset[] = [
 ];
 
 const COINS: Record<string, CoinData> = {
-    ETC: { symbol: 'ETC', name: 'Ethereum Classic', price: 25, blockReward: 2.56, networkHashrate: 200000, algo: 'Ethash' },
-    RVN: { symbol: 'RVN', name: 'Ravencoin', price: 0.025, blockReward: 2500, networkHashrate: 5000000, algo: 'KawPow' },
-    ERGO: { symbol: 'ERGO', name: 'Ergo', price: 1.50, blockReward: 27, networkHashrate: 15000, algo: 'Autolykos2' },
-    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.15, blockReward: 200, networkHashrate: 300000000, algo: 'kHeavyHash' },
-    FLUX: { symbol: 'FLUX', name: 'Flux', price: 0.80, blockReward: 37.5, networkHashrate: 2500000, algo: 'ZelHash' },
+    ETC: { symbol: 'ETC', name: 'Ethereum Classic', price: 18, blockReward: 2.56, networkHashrate: 200000, algo: 'Ethash', blockTime: 13 },
+    RVN: { symbol: 'RVN', name: 'Ravencoin', price: 0.018, blockReward: 2500, networkHashrate: 5000000, algo: 'KawPow', blockTime: 60 },
+    ERGO: { symbol: 'ERGO', name: 'Ergo', price: 0.70, blockReward: 27, networkHashrate: 15000, algo: 'Autolykos2', blockTime: 120 },
+    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.09, blockReward: 200, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 1 },
+    FLUX: { symbol: 'FLUX', name: 'Flux', price: 0.45, blockReward: 37.5, networkHashrate: 2500000, algo: 'ZelHash', blockTime: 120 },
 };
 
 // Map whattomine generic names to our symbols
@@ -219,8 +220,8 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
     const calcDailyProfit = useCallback(
         (coin: CoinData, hr: number, gpus: number, elCost: number, pFee: number): number => {
             const totalHashrate = hr * gpus;
-            // daily_revenue = (totalHashrate / networkHashrate) * blockReward * (86400 / 60) * price
-            const dailyNetworkReward = coin.blockReward * (86400 / 60);
+            // daily_revenue = (totalHashrate / networkHashrate) * blockReward * (86400 / blockTime) * price
+            const dailyNetworkReward = coin.blockReward * (86400 / coin.blockTime);
             const dailyRevenue = (totalHashrate / coin.networkHashrate) * dailyNetworkReward * coin.price;
             const dailyElectricity = ((parseFloat(String(power)) * gpus) / 1000) * 24 * elCost;
             const dailyPoolFee = dailyRevenue * (pFee / 100);

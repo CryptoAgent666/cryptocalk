@@ -63,12 +63,12 @@ const ELECTRICITY_SCENARIOS = [
 ] as const;
 
 const COUNTRY_RATES: CountryRate[] = [
-    { name: 'USA avg', rate: 0.13 },
+    { name: 'USA avg', rate: 0.17 },
     { name: 'China (Sichuan)', rate: 0.04 },
     { name: 'Russia', rate: 0.06 },
     { name: 'Canada (Quebec)', rate: 0.05 },
     { name: 'Iceland', rate: 0.05 },
-    { name: 'Germany', rate: 0.35 },
+    { name: 'Germany', rate: 0.30 },
     { name: 'Kazakhstan', rate: 0.04 },
     { name: 'Paraguay', rate: 0.03 },
 ];
