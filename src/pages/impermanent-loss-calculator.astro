@@ -7,10 +7,11 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
-  title="Impermanent Loss Calculator"
+  title="Impermanent Loss Calculator — Free DeFi LP Tool"
   description="Free impermanent loss calculator for DeFi. Calculate IL for AMM liquidity pools, compare LP returns vs HODLing, and see if fee earnings overcome impermanent loss."
   lang="en"
   pageType="calculator"
@@ -48,6 +49,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Impermanent Loss Calculator</h1>
           <p>Calculate impermanent loss when providing liquidity to AMM pools. See if pool fee earnings overcome IL and compare LP returns vs simply holding your tokens.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <ImpermanentLossCalculator lang={'en'} client:load />
@@ -58,6 +67,9 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer">
+          <strong>Quick answer:</strong> Impermanent loss occurs when providing liquidity to AMMs. If one token doubles while the other stays flat, you lose ~5.7% compared to just holding. The loss grows with price divergence.
+        </div>
         <h2>How to Use the Impermanent Loss Calculator</h2>
         <ol>
           <li>Enter the <strong>initial price</strong> of your first token when you deposited into the liquidity pool.</li>
