@@ -124,7 +124,6 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
                 // Distribute wins/losses evenly across the month
                 const isWin = wi < wins && (li >= losses || (t % Math.max(1, Math.floor(trades / wins))) === 0);
                 if (isWin) {
-                    const tradeSize = balance * (profit / 100 + loss / 100) / (profit / 100 + loss / 100 || 1);
                     const feeAmount = balance * (fee / 100);
                     totalFeesPaid += feeAmount;
                     balance = balance * (1 + profit / 100) - feeAmount;

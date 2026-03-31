@@ -248,7 +248,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
         const totalHashrate = hr * gpus;
 
         // daily_revenue = (totalHashrate / networkHashrate) * daily_network_reward * price
-        const dailyNetworkReward = coin.blockReward * (86400 / 60);
+        const dailyNetworkReward = coin.blockReward * (86400 / coin.blockTime);
         const dailyRevenue = (totalHashrate / coin.networkHashrate) * dailyNetworkReward * coin.price;
         const dailyElectricity = ((pw || 0) * gpus / 1000) * 24 * (elCost || 0);
         const dailyPoolFee = dailyRevenue * ((pFee || 0) / 100);
