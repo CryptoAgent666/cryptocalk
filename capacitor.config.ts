@@ -5,10 +5,9 @@ const config: CapacitorConfig = {
   appName: 'CryptoCalk',
   webDir: 'dist',
   server: {
-    url: 'https://cryptocalk.com',
-    cleartext: false,
+    // Load from local dist/ files (no remote URL — required for Google Play compliance)
     androidScheme: 'https',
-    allowNavigation: ['cryptocalk.com', '*.cryptocalk.com', '*.google.com', '*.googlesyndication.com', '*.doubleclick.net', '*.googleadservices.com'],
+    allowNavigation: ['cryptocalk.com', '*.cryptocalk.com', '*.coingecko.com', '*.google.com', '*.googlesyndication.com', '*.doubleclick.net', '*.googleadservices.com'],
   },
   plugins: {
     SplashScreen: {
