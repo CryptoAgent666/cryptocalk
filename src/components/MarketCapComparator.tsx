@@ -286,7 +286,7 @@ function MarketCapComparator({ lang = 'en' }: { lang?: string }) {
     const shareOnX = () => {
         if (!targetData || !refData || !hypotheticalPrice || !growthMultiplier) return;
         const text = `If ${targetData.symbol.toUpperCase()} had ${refData.symbol.toUpperCase()}'s market cap, its price would be ${formatPrice(hypotheticalPrice)} — that's a ${growthMultiplier.toFixed(1)}x growth!\n\nCheck yours at CryptoCalk.com`;
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+        try { window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_system'); } catch { window.location.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`; }
     };
 
     const isFetching = fetchingTarget || fetchingRef;

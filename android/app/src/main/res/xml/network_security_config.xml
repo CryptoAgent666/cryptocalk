@@ -17,5 +17,9 @@
         <domain includeSubdomains="true">googletagmanager.com</domain>
         <domain includeSubdomains="true">google-analytics.com</domain>
         <domain includeSubdomains="true">corsproxy.io</domain>
+        <domain includeSubdomains="true">blockchain.info</domain>
+        <domain includeSubdomains="true">etherscan.io</domain>
+        <domain includeSubdomains="true">codetabs.com</domain>
+        <domain includeSubdomains="true">whattomine.com</domain>
     </domain-config>
 </network-security-config>

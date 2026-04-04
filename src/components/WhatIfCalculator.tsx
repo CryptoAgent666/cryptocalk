@@ -204,7 +204,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
     const shareOnX = () => {
         if (!result) return;
         const text = `If I had invested $${result.investedAmount.toLocaleString()} in ${result.coinName} on ${new Date(result.datePurchased).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}, it would be worth $${result.currentValue.toLocaleString('en-US', { maximumFractionDigits: 0 })} today! 🚀 (${result.roi >= 0 ? '+' : ''}${result.roi.toFixed(0)}% ROI)\n\nCheck yours at CryptoCalk.com`;
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+        try { window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_system'); } catch { window.location.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`; }
     };
 
     const formatPrice = (n: number) => {
