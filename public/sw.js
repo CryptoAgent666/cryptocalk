@@ -1,5 +1,4 @@
-const CACHE_NAME = 'cryptocalk-v2';
-const REMOTE_ORIGIN = 'https://cryptocalk.com';
+const CACHE_NAME = 'cryptocalk-v3';
 
 // Critical pages to pre-cache on install (local assets)
 const PRECACHE_URLS = [
@@ -26,22 +25,19 @@ self.addEventListener('activate', (event) => {
     )
   );
   self.clients.claim();
-
-  // After activation, try background update from live site
-  event.waitUntil(backgroundUpdate());
 });
 
 // Fetch strategy:
+// - External requests (API, fonts, etc.): pass through, no caching in SW
 // - _astro/* (hashed assets): Cache-first (immutable, content hashes in filenames)
-// - HTML pages: Cache-first (local bundle), then background refresh from remote
-// - CoinGecko API: Network-only (live prices, no caching in SW)
-// - Everything else: Cache-first with network fallback
+// - HTML pages: Cache-first for instant load, no network fallback needed (local files)
+// - Other same-origin assets: Cache-first
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Let API requests pass through (CoinGecko, corsproxy, etc.)
-  if (url.hostname !== self.location.hostname) return;
+  // Let all external requests pass through unchanged (CoinGecko, Google, fonts)
+  if (url.origin !== self.location.origin) return;
 
   // Hashed Astro assets — cache-first (immutable)
   if (url.pathname.startsWith('/_astro/')) {
@@ -60,20 +56,23 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // HTML pages — cache-first (fast offline), background refresh
+  // HTML pages — cache-first (local bundle is always available)
   if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       caches.match(request).then((cached) => {
-        // Start background refresh from remote
-        const fetchPromise = fetchAndCache(request);
-        // Return cached immediately if available, otherwise wait for network
-        return cached || fetchPromise;
+        return cached || fetch(request).then((response) => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          }
+          return response;
+        }).catch(() => caches.match('/'));
       })
     );
     return;
   }
 
-  // Other assets (CSS, JS, images) — cache-first with network fallback
+  // Other same-origin assets — cache-first with fetch fallback
   event.respondWith(
     caches.match(request).then((cached) => {
       if (cached) return cached;
@@ -83,77 +82,7 @@ self.addEventListener('fetch', (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
         }
         return response;
-      }).catch(() => {
-        // For navigation failures, fall back to cached homepage
-        if (request.mode === 'navigate') {
-          return caches.match('/');
-        }
-        return new Response('', { status: 408 });
-      });
+      }).catch(() => new Response('', { status: 408 }));
     })
   );
-});
-
-// Fetch and update cache in background
-function fetchAndCache(request) {
-  return fetch(request).then((response) => {
-    if (response.ok) {
-      const clone = response.clone();
-      caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-    }
-    return response;
-  }).catch(() => null);
-}
-
-// Background update: fetch key pages from live site and update local cache
-// This runs periodically when the app comes online
-async function backgroundUpdate() {
-  try {
-    // Check if we're online
-    const testResponse = await fetch(REMOTE_ORIGIN + '/manifest.json', { cache: 'no-store' });
-    if (!testResponse.ok) return;
-
-    const cache = await caches.open(CACHE_NAME);
-
-    // Update the homepage and key calculator pages in background
-    const pagesToUpdate = [
-      '/',
-      '/profit-calculator/',
-      '/mining-calculator/',
-      '/dca-calculator/',
-      '/tax-calculator/',
-      '/staking-calculator/',
-      '/converter/',
-    ];
-
-    // Fetch from remote and cache locally (non-blocking)
-    await Promise.allSettled(
-      pagesToUpdate.map(async (path) => {
-        try {
-          const response = await fetch(REMOTE_ORIGIN + path, { cache: 'no-store' });
-          if (response.ok) {
-            // Cache with the local path as key (so local requests hit it)
-            await cache.put(new Request(path), response);
-          }
-        } catch {
-          // Silently skip pages that fail
-        }
-      })
-    );
-
-    // Notify clients that content was updated
-    const clients = await self.clients.matchAll();
-    clients.forEach((client) => {
-      client.postMessage({ type: 'CONTENT_UPDATED' });
-    });
-  } catch {
-    // Offline or network error — skip background update
-  }
-}
-
-// Listen for manual update trigger from the app
-self.addEventListener('message', (event) => {
-  if (event.data === 'CHECK_UPDATE') {
-    backgroundUpdate();
-  }
 });
