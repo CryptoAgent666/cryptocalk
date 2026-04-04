@@ -227,26 +227,11 @@ const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es', pt: 'pt'
       installCoinGeckoFetchInterceptor();
     </script>
 
-    <!-- Service Worker: offline-first with background updates -->
+    <!-- Service Worker: offline caching -->
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js').then(function(reg) {
-            // Check for updates every time app comes to foreground
-            document.addEventListener('visibilitychange', function() {
-              if (document.visibilityState === 'visible' && reg.active) {
-                reg.active.postMessage('CHECK_UPDATE');
-              }
-            });
-            // Also check on initial load
-            if (reg.active) reg.active.postMessage('CHECK_UPDATE');
-          }).catch(function() {});
-        });
-        // Listen for update notifications from SW
-        navigator.serviceWorker.addEventListener('message', function(e) {
-          if (e.data && e.data.type === 'CONTENT_UPDATED') {
-            console.log('[CryptoCalk] Content updated in background');
-          }
+          navigator.serviceWorker.register('/sw.js').catch(function() {});
         });
       }
     </script>

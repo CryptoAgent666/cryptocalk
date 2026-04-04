@@ -138,7 +138,11 @@ const copied = copiedLabel[lang] || copiedLabel.en;
       window.history.replaceState({}, '', newUrl); // update URL silently
       
       // Copy to clipboard
-      navigator.clipboard.writeText(window.location.origin + newUrl).then(() => {
+      // Always share the public website URL, even when running inside Capacitor app
+      const shareOrigin = window.location.origin.includes('capacitor') || window.location.origin.includes('localhost')
+        ? 'https://cryptocalk.com'
+        : window.location.origin;
+      navigator.clipboard.writeText(shareOrigin + newUrl).then(() => {
         const textSpan = btn.querySelector('.share-text');
         if (textSpan) {
           const original = textSpan.textContent;
