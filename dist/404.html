@@ -117,4 +117,18 @@ The calculator or page you opened may have moved to a new URL. Jump back to the 
 
         document.addEventListener('astro:after-swap', init);
       })();
+    </script> <!-- Open external links in system browser (Capacitor app support) --> <script>
+      document.addEventListener('click', function(e) {
+        var a = e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href');
+        if (!href || href.startsWith('/') || href.startsWith('#') || href.startsWith('javascript')) return;
+        try {
+          var url = new URL(href, window.location.origin);
+          if (url.hostname === window.location.hostname) return;
+          // External link — open in system browser instead of WebView
+          e.preventDefault();
+          window.open(href, '_blank');
+        } catch(err) {}
+      }, true);
     </script> </body> </html>  <script type="module">const n={es:{heading:"Esta Página No Existe",copy:"La calculadora o página que buscas pudo haberse movido a una nueva URL. Vuelve al inicio o abre una de las herramientas populares.",backHome:"Volver al Inicio",browse:"Explorar Calculadoras",profit:"Calculadora de Ganancias",mining:"Calculadora de Minería",dca:"Calculadora DCA",tax:"Calculadora de Impuestos"},pt:{heading:"Esta Página Não Existe",copy:"A calculadora ou página que você abriu pode ter sido movida. Volte à página inicial ou abra uma das ferramentas populares.",backHome:"Voltar ao Início",browse:"Explorar Calculadoras",profit:"Calculadora de Lucro",mining:"Calculadora de Mineração",dca:"Calculadora DCA",tax:"Calculadora de Impostos"},tr:{heading:"Bu Sayfa Bulunamadı",copy:"Açmak istediğiniz hesap makinesi veya sayfa taşınmış olabilir. Ana sayfaya dönün veya popüler araçlardan birini açın.",backHome:"Ana Sayfaya Dön",browse:"Hesap Makinelerini Keşfet",profit:"Kâr Hesaplayıcı",mining:"Madencilik Hesaplayıcı",dca:"DCA Hesaplayıcı",tax:"Vergi Hesaplayıcı"},hi:{heading:"यह पेज नहीं मिला",copy:"आपने जो कैलकुलेटर या पेज खोला वह एक नए URL पर स्थानांतरित हो गया होगा। होमपेज पर वापस जाएं या नीचे लोकप्रिय टूल में से एक खोलें।",backHome:"होमपेज पर वापस",browse:"कैलकुलेटर देखें",profit:"प्रॉफिट कैलकुलेटर",mining:"माइनिंग कैलकुलेटर",dca:"DCA कैलकुलेटर",tax:"टैक्स कैलकुलेटर"},ru:{heading:"Страница не найдена",copy:"Калькулятор или страница могли переместиться на новый URL. Вернитесь на главную или откройте один из популярных инструментов.",backHome:"На главную",browse:"Все калькуляторы",profit:"Калькулятор прибыли",mining:"Калькулятор майнинга",dca:"DCA калькулятор",tax:"Налоговый калькулятор"}},r=window.location.pathname,t=r.match(/^\/(es|pt|tr|hi|ru)\//),e=t?t[1]:null;if(e&&n[e]){const i=n[e];document.querySelectorAll("[data-i18n]").forEach(o=>{const a=o.dataset.i18n;i[a]&&(o.textContent=i[a])}),document.querySelectorAll("[data-i18n-link]").forEach(o=>{const a=o.getAttribute("href");a&&a.startsWith("/")&&!a.startsWith(`/${e}/`)&&o.setAttribute("href",`/${e}${a}`)}),document.documentElement.lang=e}</script> 

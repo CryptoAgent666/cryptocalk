@@ -489,4 +489,18 @@ const lang = "es";
 
         document.addEventListener('astro:after-swap', init);
       })();
+    </script> <!-- Open external links in system browser (Capacitor app support) --> <script>
+      document.addEventListener('click', function(e) {
+        var a = e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href');
+        if (!href || href.startsWith('/') || href.startsWith('#') || href.startsWith('javascript')) return;
+        try {
+          var url = new URL(href, window.location.origin);
+          if (url.hostname === window.location.hostname) return;
+          // External link — open in system browser instead of WebView
+          e.preventDefault();
+          window.open(href, '_blank');
+        } catch(err) {}
+      }, true);
     </script> </body> </html>  

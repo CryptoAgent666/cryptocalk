@@ -1,7 +1,9 @@
 package com.cryptocalk.calculator;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -10,8 +12,10 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -70,9 +74,26 @@ public class MainActivity extends BridgeActivity {
             settings.setJavaScriptCanOpenWindowsAutomatically(true);
             settings.setLoadWithOverviewMode(true);
             settings.setUseWideViewPort(true);
-            settings.setUserAgentString(settings.getUserAgentString() + " CryptoCalkApp/1.1");
+            settings.setUserAgentString(settings.getUserAgentString() + " CryptoCalkApp/1.3");
 
             android.webkit.CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true);
+
+            // Open external links in system browser, keep internal navigation in WebView
+            webView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    String host = request.getUrl().getHost();
+                    if (host == null) return false;
+                    // Keep local navigation and allowed API/CDN domains inside WebView
+                    if (host.equals("localhost") || host.endsWith("cryptocalk.com")) {
+                        return false; // Load inside WebView
+                    }
+                    // Open everything else in system browser
+                    Intent intent = new Intent(Intent.ACTION_VIEW, request.getUrl());
+                    startActivity(intent);
+                    return true; // Prevent WebView from loading it
+                }
+            });
 
             // Hide loading overlay when page finishes loading
             webView.setWebChromeClient(new WebChromeClient() {
