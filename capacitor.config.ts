@@ -7,7 +7,8 @@ const config: CapacitorConfig = {
   server: {
     // Load from local dist/ files (no remote URL — required for Google Play compliance)
     androidScheme: 'https',
-    allowNavigation: ['cryptocalk.com', '*.cryptocalk.com', '*.coingecko.com', '*.google.com', '*.googleapis.com', '*.gstatic.com', '*.googlesyndication.com', '*.doubleclick.net', '*.googleadservices.com', '*.googletagmanager.com', '*.corsproxy.io', '*.blockchain.info', '*.etherscan.io', '*.codetabs.com', '*.whattomine.com'],
+    // Only domains that should load AS PAGES inside WebView (not API fetch domains)
+    allowNavigation: ['cryptocalk.com', '*.cryptocalk.com'],
   },
   plugins: {
     SplashScreen: {

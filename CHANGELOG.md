@@ -2,6 +2,104 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-04] (update 78) — fix: external links open in system browser, remove 'no ads' claims
+
+### Fixed
+- **MainActivity.java**: Added `WebViewClient` that intercepts external URLs and opens them via `Intent.ACTION_VIEW` (system browser). Only `localhost` and `cryptocalk.com` stay in WebView. Prevents users getting trapped on external sites.
+- **Layout.astro**: Added global JS click interceptor as fallback for external links.
+- **"No ads" claims removed** from EN homepage (hero + "What Is" prose) and all 5 localized homepages (ES/PT/TR/HI/RU FAQ + prose). Conflicts with AdSense setup.
+
+### Added
+- blockchain.info, etherscan.io, codetabs.com, whattomine.com to `allowNavigation` and `network_security_config.xml`
+
+## [2026-04-04] (update 77) — fix: missing API domains, window.open for Capacitor
+
+### Fixed
+- **capacitor.config.ts**: Added `*.blockchain.info`, `*.etherscan.io`, `*.codetabs.com`, `*.whattomine.com` to `allowNavigation`
+- **network_security_config.xml**: Added 4 API domains for Mining/GasFee/ASIC/GPU calculators
+- **MarketCapComparator + WhatIfCalculator**: `window.open('_blank')` → `'_system'` with try/catch fallback
+
+## [2026-04-04] (update 76) — fix: broken UI for Capacitor local loading v1.3
+
+### Fixed
+- **ShareCalculator.astro**: Detect `capacitor://` or `localhost` origin, always share `cryptocalk.com` URLs instead of internal scheme
+- **Service Worker v3**: Removed remote background fetch from cryptocalk.com (caused CORS errors in Capacitor). Simplified to pure cache-first.
+- **Layout.astro**: Removed SW background update triggers (visibilitychange)
+- **network_security_config.xml**: Added googleapis.com, gstatic.com, googletagmanager.com, google-analytics.com, corsproxy.io
+- Version bumped to 1.3 (versionCode 4)
+
+## [2026-04-04] (update 75) — refactor: trim About page bloat, fix stale data
+
+### Changed
+- **About page**: Mission 3→2 paragraphs, author bio 3→2, removed "How We Build" section entirely, "Why Trust" 5 paragraphs → 4 compact bullets
+- Removed "SEO & Content Strategy" highlight, removed "no ads" claim
+- Updated "60+" → "69" calculators, dateModified → 2026-04-04
+
+## [2026-04-04] (update 74) — feat: switch to local loading + offline-first SW
+
+### Changed
+- **Capacitor**: Removed `server.url` — app now loads from local `dist/` files instead of remote cryptocalk.com
+- **Service Worker v2**: Offline-first strategy with background updates from live site
+- Version bumped to 1.2 (versionCode 3)
+
+## [2026-04-04] (update 73) — fix: GpuMining blockTime in calculate(), dead code cleanup
+
+### Fixed
+- **GpuMiningCalculator.tsx**: Fixed second hardcoded `86400/60` in `calculate()` (main results). ETC was 4.6x too low, KAS 60x too low.
+- **HodlVsTradeCalculator.tsx**: Removed dead `tradeSize` variable
+- **CompoundInterestCalculator.tsx**: Fixed label "APY" → "APR" (code compounds nominal rate)
+
+## [2026-04-04] (update 72) — fix: 17 issues across 13 calculators
+
+### Fixed (Critical)
+- **ImpermanentLossCalculator**: IL now computed as % of HODL value (not initial investment)
+- **GpuMiningCalculator**: Added per-coin `blockTime` (ETC 13s, RVN 60s, ERGO 120s, KAS 1s, FLUX 120s). Was hardcoded 60s.
+
+### Fixed (High)
+- **HodlVsTradeCalculator**: Interleave wins/losses instead of all-wins-then-losses
+- **RoiCalculator**: Guard against NaN when ROI < -100%
+
+### Changed (Stale data)
+- DifficultyEstimator 85T→113T, ElectricityCost USA $0.13→$0.17, InflationHedge BTC 50%→20%, ReverseRoi XRP $70B→$130B, GweiConverter ETH $3000→$2327, HashrateConverter 600→850 EH/s, PipCalculator prices updated, GpuMining coin prices updated, MATIC→POL
+
+### Fixed (Minor)
+- **StakingRewardsCalculator**: Fee display uses grossRewards−netRewards
+- **YieldFarmingCalculator**: 2 hardcoded EN strings wrapped with getUiString()
+
+## [2026-04-04] (update 71) — feat: AdSense compliance
+
+### Added
+- **Privacy policy**: New Section 5 "Advertising" with Google AdSense disclosure, DART cookie, opt-out links
+- **ads.txt**: Created with placeholder publisher ID
+- **robots.txt**: Added Mediapartners-Google, AdsBot-Google, AdsBot-Google-Mobile
+
+### Changed
+- **CookieBanner**: Updated text in 6 languages to mention "personalised advertising"
+- Privacy policy renumbered sections 5-10 → 6-11
+
+## [2026-04-04] (update 70) — fix: trim 22 meta descriptions, 10 title/H1 mismatches
+
+### Fixed
+- 22 meta descriptions trimmed from 162-189 chars to under 160 chars
+- 9 title tags aligned with H1 (added "Crypto" prefix)
+- what-if: removed stale "| CryptoCalk" brand suffix
+- yield-farming-calculator: added author byline + quick-answer box
+
+## [2026-04-04] (update 69) — fix: byline + quick-answer on 2 pages, meta descriptions
+
+### Added
+- **halving-calculator**: Author byline, quick-answer box, trimmed meta desc
+- **impermanent-loss-calculator**: Byline, quick-answer, expanded title to 49ch
+
+### Fixed
+- funding-rate: title aligned with H1 ("Crypto Funding Rate Calculator"), meta desc trimmed
+- kelly, trade-expectancy, staking-rewards: meta descriptions expanded from <120ch
+
+## [2026-04-04] (update 68) — fix: hreflang codes aligned with html lang
+
+### Fixed
+- Replaced regional hreflang codes (es-419, pt-BR, tr-TR, hi-IN, ru-RU) with simple language codes (es, pt, tr, hi, ru) to match `<html lang>`. Fixes 588 "Hreflang annotation invalid" + 99 "Hreflang and HTML lang mismatch" errors from Semrush.
+
 ## [2026-03-31] (update 73) — fix: stale default values in 8 calculator components
 
 ### Changed

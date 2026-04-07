@@ -12,10 +12,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -63,37 +60,10 @@ public class MainActivity extends BridgeActivity {
         // Create loading overlay with logo
         createLoadingOverlay();
 
-        // Configure WebView
+        // Configure WebView — only safe additions, never override Capacitor's WebViewClient
         WebView webView = getBridge().getWebView();
         if (webView != null) {
-            WebSettings settings = webView.getSettings();
-            settings.setJavaScriptEnabled(true);
-            settings.setDomStorageEnabled(true);
-            settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-            settings.setSupportMultipleWindows(false);
-            settings.setJavaScriptCanOpenWindowsAutomatically(true);
-            settings.setLoadWithOverviewMode(true);
-            settings.setUseWideViewPort(true);
-            settings.setUserAgentString(settings.getUserAgentString() + " CryptoCalkApp/1.3");
-
             android.webkit.CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true);
-
-            // Open external links in system browser, keep internal navigation in WebView
-            webView.setWebViewClient(new WebViewClient() {
-                @Override
-                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                    String host = request.getUrl().getHost();
-                    if (host == null) return false;
-                    // Keep local navigation and allowed API/CDN domains inside WebView
-                    if (host.equals("localhost") || host.endsWith("cryptocalk.com")) {
-                        return false; // Load inside WebView
-                    }
-                    // Open everything else in system browser
-                    Intent intent = new Intent(Intent.ACTION_VIEW, request.getUrl());
-                    startActivity(intent);
-                    return true; // Prevent WebView from loading it
-                }
-            });
 
             // Hide loading overlay when page finishes loading
             webView.setWebChromeClient(new WebChromeClient() {
