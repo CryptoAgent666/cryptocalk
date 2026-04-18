@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import PaybackPeriodCalculator from '../../components/PaybackPeriodCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="payback-period-calculator"
+  title="Crypto Payback Period Calculator"
+  description="Find how long until your crypto investment pays for itself based on expected returns with milestone tracking."
+>
+  <PaybackPeriodCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import GridTradingCalculator from '../../components/GridTradingCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="grid-trading-calculator"
+  title="Grid Trading Calculator"
+  description="Plan grid trading bot strategy — calculate profit per grid, optimal grid count, and estimated annual return."
+>
+  <GridTradingCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

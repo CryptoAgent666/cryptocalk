@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import ArbitrageCalculator from '../../components/ArbitrageCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="arbitrage-calculator"
+  title="Crypto Arbitrage Calculator"
+  description="Calculate cross-exchange arbitrage profit after fees, withdrawal costs, and spread differences."
+>
+  <ArbitrageCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

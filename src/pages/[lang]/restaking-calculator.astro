@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import RestakingCalculator from '../../components/RestakingCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="restaking-calculator"
+  title="Restaking Calculator"
+  description="Estimate combined yield from native staking plus restaking protocols like EigenLayer with multiple AVS rewards."
+>
+  <RestakingCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

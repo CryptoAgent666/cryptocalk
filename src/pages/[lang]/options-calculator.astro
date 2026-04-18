@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import OptionsCalculator from '../../components/OptionsCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="options-calculator"
+  title="Crypto Options Calculator"
+  description="Calculate option P&L, break-even price, and payoff table for crypto calls and puts with implied volatility."
+>
+  <OptionsCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

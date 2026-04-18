@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import PerpetualFuturesCalculator from '../../components/PerpetualFuturesCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="perpetual-futures-calculator"
+  title="Perpetual Futures Calculator"
+  description="Calculate perp futures P&L with leverage, funding rate costs, and liquidation price over your holding period."
+>
+  <PerpetualFuturesCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

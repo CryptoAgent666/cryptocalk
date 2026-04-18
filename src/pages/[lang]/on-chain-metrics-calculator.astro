@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import OnChainMetricsCalculator from '../../components/OnChainMetricsCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="on-chain-metrics-calculator"
+  title="On-Chain Metrics Calculator"
+  description="Analyze Bitcoin valuation with MVRV, NVT ratio, and SOPR — on-chain signals for overbought or undervalued zones."
+>
+  <OnChainMetricsCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

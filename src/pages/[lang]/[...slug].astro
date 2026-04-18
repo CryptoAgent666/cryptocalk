@@ -64,6 +64,24 @@ import SortinoCalculator from '../../components/SortinoCalculator.tsx';
 import TradeExpectancyCalculator from '../../components/TradeExpectancyCalculator.tsx';
 import TreynorCalculator from '../../components/TreynorCalculator.tsx';
 import VarCalculator from '../../components/VarCalculator.tsx';
+import ArbitrageCalculator from '../../components/ArbitrageCalculator.tsx';
+import StockToFlowCalculator from '../../components/StockToFlowCalculator.tsx';
+import OptionsCalculator from '../../components/OptionsCalculator.tsx';
+import TaxLossHarvestingCalculator from '../../components/TaxLossHarvestingCalculator.tsx';
+import RestakingCalculator from '../../components/RestakingCalculator.tsx';
+import LiquidStakingCalculator from '../../components/LiquidStakingCalculator.tsx';
+import PerpetualFuturesCalculator from '../../components/PerpetualFuturesCalculator.tsx';
+import PaybackPeriodCalculator from '../../components/PaybackPeriodCalculator.tsx';
+import DvaCalculator from '../../components/DvaCalculator.tsx';
+import BitcoinEnergyCalculator from '../../components/BitcoinEnergyCalculator.tsx';
+import OnChainMetricsCalculator from '../../components/OnChainMetricsCalculator.tsx';
+import GridTradingCalculator from '../../components/GridTradingCalculator.tsx';
+import InheritanceTaxCalculator from '../../components/InheritanceTaxCalculator.tsx';
+import ValidatorCalculator from '../../components/ValidatorCalculator.tsx';
+import TokenValuationCalculator from '../../components/TokenValuationCalculator.tsx';
+import IfIHadBoughtCalculator from '../../components/IfIHadBoughtCalculator.tsx';
+import MillionaireCalculator from '../../components/MillionaireCalculator.tsx';
+import PizzaDayCalculator from '../../components/PizzaDayCalculator.tsx';
 import {
   NON_DEFAULT_LANGS,
   SPEC_CALCULATOR_SLUGS,
@@ -162,6 +180,24 @@ const ALIAS_DEFINITIONS: Record<SpecCalculatorSlug, AliasDefinition> = {
   'nft-rarity-calculator': { title: 'NFT Rarity Calculator' },
   'token-unlock-calculator': { title: 'Token Unlock Calculator' },
   'whale-alert-calculator': { title: 'Whale Alert Calculator' },
+  'arbitrage-calculator': { title: 'Crypto Arbitrage Calculator' },
+  'stock-to-flow-calculator': { title: 'Stock-to-Flow Calculator' },
+  'options-calculator': { title: 'Crypto Options Calculator' },
+  'tax-loss-harvesting-calculator': { title: 'Tax Loss Harvesting Calculator' },
+  'restaking-calculator': { title: 'Restaking Calculator' },
+  'liquid-staking-calculator': { title: 'Liquid Staking Calculator' },
+  'perpetual-futures-calculator': { title: 'Perpetual Futures Calculator' },
+  'payback-period-calculator': { title: 'Payback Period Calculator' },
+  'dva-calculator': { title: 'Dollar Value Averaging Calculator' },
+  'bitcoin-energy-calculator': { title: 'Bitcoin Energy Calculator' },
+  'on-chain-metrics-calculator': { title: 'On-Chain Metrics Calculator' },
+  'grid-trading-calculator': { title: 'Grid Trading Calculator' },
+  'inheritance-tax-calculator': { title: 'Inheritance Tax Calculator' },
+  'validator-calculator': { title: 'Validator Economics Calculator' },
+  'token-valuation-calculator': { title: 'Token Valuation Calculator' },
+  'if-i-had-bought': { title: 'If I Had Bought Calculator' },
+  'millionaire-calculator': { title: 'Crypto Millionaire Calculator' },
+  'pizza-day-calculator': { title: 'Pizza Day Calculator' },
 };
 
 interface StaticPathProps {
@@ -274,4 +310,22 @@ const description = `Free ${routeDef.title}. Calculate crypto outcomes instantly
   {canonicalRouteSlug === 'trade-expectancy-calculator' && <TradeExpectancyCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'treynor-calculator' && <TreynorCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'var-calculator' && <VarCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'arbitrage-calculator' && <ArbitrageCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'stock-to-flow-calculator' && <StockToFlowCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'options-calculator' && <OptionsCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'tax-loss-harvesting-calculator' && <TaxLossHarvestingCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'restaking-calculator' && <RestakingCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'liquid-staking-calculator' && <LiquidStakingCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'perpetual-futures-calculator' && <PerpetualFuturesCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'payback-period-calculator' && <PaybackPeriodCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'dva-calculator' && <DvaCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'bitcoin-energy-calculator' && <BitcoinEnergyCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'on-chain-metrics-calculator' && <OnChainMetricsCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'grid-trading-calculator' && <GridTradingCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'inheritance-tax-calculator' && <InheritanceTaxCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'validator-calculator' && <ValidatorCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'token-valuation-calculator' && <TokenValuationCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'if-i-had-bought' && <IfIHadBoughtCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'millionaire-calculator' && <MillionaireCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'pizza-day-calculator' && <PizzaDayCalculator slot="calculator" lang={lang} client:load />}
 </LocalizedCalculatorPage>

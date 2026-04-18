@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import InheritanceTaxCalculator from '../../components/InheritanceTaxCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="inheritance-tax-calculator"
+  title="Crypto Inheritance Tax Calculator"
+  description="Estimate inheritance tax on crypto assets across 8 countries with exemptions by relationship type."
+>
+  <InheritanceTaxCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

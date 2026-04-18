@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import StockToFlowCalculator from '../../components/StockToFlowCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="stock-to-flow-calculator"
+  title="Bitcoin Stock-to-Flow Calculator"
+  description="Evaluate Bitcoin's scarcity using the S2F model — compare actual price to model prediction and see halving impact."
+>
+  <StockToFlowCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

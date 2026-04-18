@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import TokenValuationCalculator from '../../components/TokenValuationCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="token-valuation-calculator"
+  title="Token Valuation Calculator"
+  description="Analyze token FDV, market cap, dilution risk, and compare against established projects for fair value."
+>
+  <TokenValuationCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

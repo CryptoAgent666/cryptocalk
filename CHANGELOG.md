@@ -2,6 +2,23 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-18] (update 79) — feat: 18 new calculators, data refresh, total now 87 tools across 1,133 pages
+
+### Added
+- **18 new React calculator components**: ArbitrageCalculator, StockToFlowCalculator, OptionsCalculator, TaxLossHarvestingCalculator, RestakingCalculator, LiquidStakingCalculator, PerpetualFuturesCalculator, PaybackPeriodCalculator, DvaCalculator, BitcoinEnergyCalculator, OnChainMetricsCalculator, GridTradingCalculator, InheritanceTaxCalculator, ValidatorCalculator, TokenValuationCalculator, IfIHadBoughtCalculator, MillionaireCalculator, PizzaDayCalculator
+- **36 Astro pages**: 18 EN standalone pages + 18 localized `[lang]` pages (×5 langs each)
+- **Catch-all route updated**: `[lang]/[...slug].astro` — 18 new imports, ALIAS_DEFINITIONS entries, and conditional rendering blocks for localized slug routes
+- **Registration**: 18 slugs in SPEC_CALCULATOR_SLUGS, 90 localized slugs (5 langs × 18), 18 category mappings, 108 calculator-meta entries (18 × 6 langs)
+- **Category hubs**: 18 tools added to 6 categories (profit-loss, mining, defi-yield, tax-reporting, investment, trading-tools) + 90 TOOL_NAME_OVERRIDES
+- **Homepage**: 3 new viral calculators (If I Had Bought, Pizza Day, Millionaire) added to popularCalculators with "New" tag
+- **SEO content**: calculator-seo-content.ts entries for 18 calcs × 6 langs (how, inputs, quickAnswer)
+- **UI strings**: ~300 new translation keys across 5 language files (es, pt, tr, hi, ru)
+
+### Changed
+- **Calculator count**: 69 → 87 across all references (homepage EN/localized, about page, schemas)
+- **Page count**: 935 → 1,133 across all homepage references (6 langs)
+- **Data refresh (April 18, 2026)**: BTC $77,300, ETH $2,419, BTC difficulty 136T, hashrate 856 EH/s, LTC $56, DASH $37, ZEC $337, ETC $8.75, SOL $89, inflation rates updated
+
 ## [2026-04-04] (update 78) — fix: external links open in system browser, remove 'no ads' claims
 
 ### Fixed

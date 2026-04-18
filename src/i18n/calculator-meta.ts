@@ -338,6 +338,78 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       title: 'Whale Alert Calculator',
       description: 'Free Whale Alert Calculator. Estimate market impact of large transfers, calculate slippage from whale-sized orders, and set custom alert thresholds.'
     },
+    'arbitrage-calculator': {
+      title: 'Crypto Arbitrage Calculator',
+      description: 'Free Crypto Arbitrage Calculator. Calculate arbitrage profit between exchanges after trading fees and withdrawal costs.'
+    },
+    'stock-to-flow-calculator': {
+      title: 'Bitcoin Stock-to-Flow Calculator',
+      description: 'Free Bitcoin Stock-to-Flow Calculator. Evaluate Bitcoin scarcity with the S2F model and compare the real price with the model prediction.'
+    },
+    'options-calculator': {
+      title: 'Crypto Options Calculator',
+      description: 'Free Crypto Options Calculator. Calculate options P&L, break-even price, and payoff table for crypto calls and puts.'
+    },
+    'tax-loss-harvesting-calculator': {
+      title: 'Tax Loss Harvesting Calculator',
+      description: 'Free Tax Loss Harvesting Calculator. Identify harvestable crypto losses to offset capital gains and estimate tax savings.'
+    },
+    'restaking-calculator': {
+      title: 'Restaking Calculator',
+      description: 'Free Restaking Calculator. Estimate combined yield from native staking plus restaking protocols like EigenLayer.'
+    },
+    'liquid-staking-calculator': {
+      title: 'Liquid Staking Calculator',
+      description: 'Free Liquid Staking Calculator. Compare liquid staking protocols — Lido, Rocket Pool, Coinbase, Frax — by yield and fees.'
+    },
+    'perpetual-futures-calculator': {
+      title: 'Perpetual Futures Calculator',
+      description: 'Free Perpetual Futures Calculator. Calculate perp futures P&L with leverage, funding rate costs, and liquidation price.'
+    },
+    'payback-period-calculator': {
+      title: 'Payback Period Calculator',
+      description: 'Free Payback Period Calculator. Calculate how long it will take for your crypto investment to pay for itself based on expected returns.'
+    },
+    'dva-calculator': {
+      title: 'DVA Calculator',
+      description: 'Free DVA Calculator. Compare Dollar Value Averaging vs DCA — DVA adjusts investment amounts based on portfolio performance.'
+    },
+    'bitcoin-energy-calculator': {
+      title: 'Bitcoin Energy Calculator',
+      description: 'Free Bitcoin Energy Calculator. Estimate energy consumption, carbon footprint, and environmental cost of Bitcoin mining.'
+    },
+    'on-chain-metrics-calculator': {
+      title: 'On-Chain Metrics Calculator',
+      description: 'Free On-Chain Metrics Calculator. Analyze Bitcoin valuation with MVRV, NVT, and SOPR — on-chain signals of overbought or undervalued zones.'
+    },
+    'grid-trading-calculator': {
+      title: 'Grid Trading Calculator',
+      description: 'Free Grid Trading Calculator. Plan your grid trading bot strategy — calculate profit per grid and estimated annual return.'
+    },
+    'inheritance-tax-calculator': {
+      title: 'Crypto Inheritance Tax Calculator',
+      description: 'Free Crypto Inheritance Tax Calculator. Estimate inheritance tax on crypto assets in 8 countries with relationship-type exemptions.'
+    },
+    'validator-calculator': {
+      title: 'Validator Economics Calculator',
+      description: 'Free Validator Economics Calculator. Calculate PoS validator profitability — rewards, operating costs, ROI for Ethereum, Solana, and more.'
+    },
+    'token-valuation-calculator': {
+      title: 'Token Valuation Calculator',
+      description: 'Free Token Valuation Calculator. Analyze token FDV, market cap, dilution risk, and compare with established projects.'
+    },
+    'if-i-had-bought': {
+      title: 'If I Had Bought Calculator',
+      description: 'Free If I Had Bought Calculator. Discover how much your investment would be worth today if you had bought Bitcoin, Ethereum, or other crypto at historical prices.'
+    },
+    'millionaire-calculator': {
+      title: 'Crypto Millionaire Calculator',
+      description: 'Free Crypto Millionaire Calculator. Plan your path to $1M — calculate how much and how long you need to invest to reach your goal.'
+    },
+    'pizza-day-calculator': {
+      title: 'Bitcoin Pizza Day Calculator',
+      description: 'Free Bitcoin Pizza Day Calculator. Calculate the current value of the famous 10,000 BTC pizza purchase and explore the opportunity cost.'
+    },
   },
   'es': {
     'converter': {
@@ -675,6 +747,78 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     'whale-alert-calculator': {
       title: 'Calculadora de Alerta de Ballenas',
       description: 'Calculadora de Alerta de Ballenas gratuita. Estima el impacto de grandes transferencias, calcula slippage de órdenes masivas y configura umbrales de alerta.'
+    },
+    'arbitrage-calculator': {
+      title: 'Calculadora de Arbitraje Cripto',
+      description: 'Calcula el beneficio de arbitraje entre exchanges después de comisiones y costes de retiro.'
+    },
+    'stock-to-flow-calculator': {
+      title: 'Calculadora Stock-to-Flow Bitcoin',
+      description: 'Evalúa la escasez de Bitcoin con el modelo S2F y compara el precio real con la predicción del modelo.'
+    },
+    'options-calculator': {
+      title: 'Calculadora de Opciones Cripto',
+      description: 'Calcula P&L de opciones, precio de equilibrio y tabla de pagos para calls y puts cripto.'
+    },
+    'tax-loss-harvesting-calculator': {
+      title: 'Calculadora de Cosecha de Pérdidas Fiscales',
+      description: 'Identifica pérdidas fiscales cosechables en cripto para compensar ganancias de capital.'
+    },
+    'restaking-calculator': {
+      title: 'Calculadora de Restaking',
+      description: 'Estima el rendimiento combinado de staking nativo más protocolos de restaking como EigenLayer.'
+    },
+    'liquid-staking-calculator': {
+      title: 'Calculadora de Staking Líquido',
+      description: 'Compara protocolos de staking líquido — Lido, Rocket Pool, Coinbase, Frax — por rendimiento y comisiones.'
+    },
+    'perpetual-futures-calculator': {
+      title: 'Calculadora de Futuros Perpetuos',
+      description: 'Calcula P&L de futuros perpetuos con apalancamiento, costes de funding y precio de liquidación.'
+    },
+    'payback-period-calculator': {
+      title: 'Calculadora de Período de Recuperación',
+      description: 'Calcula cuánto tiempo tardará tu inversión en cripto en recuperarse según los rendimientos esperados.'
+    },
+    'dva-calculator': {
+      title: 'Calculadora DVA',
+      description: 'Compara Dollar Value Averaging vs DCA — DVA ajusta las cantidades de inversión según el rendimiento del portafolio.'
+    },
+    'bitcoin-energy-calculator': {
+      title: 'Calculadora de Energía Bitcoin',
+      description: 'Estima el consumo energético, huella de carbono y coste ambiental de la minería de Bitcoin.'
+    },
+    'on-chain-metrics-calculator': {
+      title: 'Calculadora de Métricas On-Chain',
+      description: 'Analiza la valoración de Bitcoin con MVRV, NVT y SOPR — señales on-chain de zonas de sobrecompra o infravaloración.'
+    },
+    'grid-trading-calculator': {
+      title: 'Calculadora de Grid Trading',
+      description: 'Planifica tu estrategia de bot de grid trading — calcula beneficio por grid y rendimiento anual estimado.'
+    },
+    'inheritance-tax-calculator': {
+      title: 'Calculadora de Impuesto de Herencia Cripto',
+      description: 'Estima el impuesto de herencia sobre activos cripto en 8 países con exenciones por tipo de relación.'
+    },
+    'validator-calculator': {
+      title: 'Calculadora de Economía del Validador',
+      description: 'Calcula la rentabilidad del validador PoS — recompensas, costes operativos, ROI para Ethereum, Solana y más.'
+    },
+    'token-valuation-calculator': {
+      title: 'Calculadora de Valoración de Token',
+      description: 'Analiza FDV del token, capitalización de mercado, riesgo de dilución y compara con proyectos establecidos.'
+    },
+    'if-i-had-bought': {
+      title: 'Calculadora Si Hubiera Comprado',
+      description: 'Descubre cuánto valdría tu inversión hoy si hubieras comprado Bitcoin, Ethereum u otras cripto a precios históricos.'
+    },
+    'millionaire-calculator': {
+      title: 'Calculadora Millonario Cripto',
+      description: 'Planifica tu camino a $1M — calcula cuánto y cuánto tiempo necesitas invertir para alcanzar tu meta.'
+    },
+    'pizza-day-calculator': {
+      title: 'Calculadora del Día de la Pizza Bitcoin',
+      description: 'Calcula el valor actual de la famosa compra de 10,000 BTC por pizza y explora el coste de oportunidad.'
     },
   },
   'pt': {
@@ -1014,6 +1158,78 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       title: 'Calculadora de Alerta de Baleias',
       description: 'Calculadora de Alerta de Baleias gratuita. Estime o impacto de grandes transferências, calcule slippage de ordens massivas e configure limites de alerta.'
     },
+    'arbitrage-calculator': {
+      title: 'Calculadora de Arbitragem Cripto',
+      description: 'Calcule o lucro de arbitragem entre exchanges após taxas e custos de saque.'
+    },
+    'stock-to-flow-calculator': {
+      title: 'Calculadora Stock-to-Flow Bitcoin',
+      description: 'Avalie a escassez do Bitcoin com o modelo S2F e compare o preço real com a previsão do modelo.'
+    },
+    'options-calculator': {
+      title: 'Calculadora de Opções Cripto',
+      description: 'Calcule P&L de opções, preço de equilíbrio e tabela de payoff para calls e puts cripto.'
+    },
+    'tax-loss-harvesting-calculator': {
+      title: 'Calculadora de Colheita de Prejuízos Fiscais',
+      description: 'Identifique prejuízos fiscais colhíveis em cripto para compensar ganhos de capital.'
+    },
+    'restaking-calculator': {
+      title: 'Calculadora de Restaking',
+      description: 'Estime o rendimento combinado de staking nativo mais protocolos de restaking como EigenLayer.'
+    },
+    'liquid-staking-calculator': {
+      title: 'Calculadora de Staking Líquido',
+      description: 'Compare protocolos de staking líquido — Lido, Rocket Pool, Coinbase, Frax — por rendimento e taxas.'
+    },
+    'perpetual-futures-calculator': {
+      title: 'Calculadora de Futuros Perpétuos',
+      description: 'Calcule P&L de futuros perpétuos com alavancagem, custos de funding e preço de liquidação.'
+    },
+    'payback-period-calculator': {
+      title: 'Calculadora de Período de Retorno',
+      description: 'Calcule quanto tempo levará para seu investimento em cripto se pagar com base nos retornos esperados.'
+    },
+    'dva-calculator': {
+      title: 'Calculadora DVA',
+      description: 'Compare Dollar Value Averaging vs DCA — DVA ajusta valores de investimento com base no desempenho do portfólio.'
+    },
+    'bitcoin-energy-calculator': {
+      title: 'Calculadora de Energia Bitcoin',
+      description: 'Estime o consumo de energia, pegada de carbono e custo ambiental da mineração de Bitcoin.'
+    },
+    'on-chain-metrics-calculator': {
+      title: 'Calculadora de Métricas On-Chain',
+      description: 'Analise a avaliação do Bitcoin com MVRV, NVT e SOPR — sinais on-chain de zonas de sobrecompra ou subvalorização.'
+    },
+    'grid-trading-calculator': {
+      title: 'Calculadora de Grid Trading',
+      description: 'Planeje sua estratégia de bot grid trading — calcule lucro por grid e retorno anual estimado.'
+    },
+    'inheritance-tax-calculator': {
+      title: 'Calculadora de Imposto sobre Herança Cripto',
+      description: 'Estime o imposto sobre herança em ativos cripto em 8 países com isenções por tipo de relação.'
+    },
+    'validator-calculator': {
+      title: 'Calculadora de Economia do Validador',
+      description: 'Calcule a rentabilidade do validador PoS — recompensas, custos operacionais, ROI para Ethereum, Solana e mais.'
+    },
+    'token-valuation-calculator': {
+      title: 'Calculadora de Avaliação de Token',
+      description: 'Analise FDV do token, capitalização de mercado, risco de diluição e compare com projetos estabelecidos.'
+    },
+    'if-i-had-bought': {
+      title: 'Calculadora Se Eu Tivesse Comprado',
+      description: 'Descubra quanto seu investimento valeria hoje se tivesse comprado Bitcoin, Ethereum ou outras cripto a preços históricos.'
+    },
+    'millionaire-calculator': {
+      title: 'Calculadora Milionário Cripto',
+      description: 'Planeje seu caminho para $1M — calcule quanto e por quanto tempo investir para alcançar sua meta.'
+    },
+    'pizza-day-calculator': {
+      title: 'Calculadora do Dia da Pizza Bitcoin',
+      description: 'Calcule o valor atual da famosa compra de 10.000 BTC por pizza e explore o custo de oportunidade.'
+    },
   },
   'tr': {
     'converter': {
@@ -1351,6 +1567,78 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     'whale-alert-calculator': {
       title: 'Balina Uyarı Hesaplayıcı',
       description: 'Ücretsiz Balina Uyarı Hesaplayıcı. Büyük transferlerin piyasa etkisini tahmin edin, balina slippage hesaplayın ve uyarı eşikleri belirleyin.'
+    },
+    'arbitrage-calculator': {
+      title: 'Kripto Arbitraj Hesaplayıcı',
+      description: 'Borsalar arası arbitraj kârını komisyonlar ve çekim ücretleri sonrasında hesaplayın.'
+    },
+    'stock-to-flow-calculator': {
+      title: 'Bitcoin Stock-to-Flow Hesaplayıcı',
+      description: 'S2F modeli ile Bitcoin kıtlığını değerlendirin ve gerçek fiyatı model tahminiyle karşılaştırın.'
+    },
+    'options-calculator': {
+      title: 'Kripto Opsiyon Hesaplayıcı',
+      description: 'Kripto call ve put opsiyonları için K/Z, başabaş fiyatı ve ödeme tablosu hesaplayın.'
+    },
+    'tax-loss-harvesting-calculator': {
+      title: 'Vergi Zarar Hasatlama Hesaplayıcı',
+      description: 'Sermaye kazançlarını dengelemek için hasat edilebilir kripto zararlarını belirleyin.'
+    },
+    'restaking-calculator': {
+      title: 'Restaking Hesaplayıcı',
+      description: 'EigenLayer gibi restaking protokolleriyle birleşik getiriyi hesaplayın.'
+    },
+    'liquid-staking-calculator': {
+      title: 'Likit Staking Hesaplayıcı',
+      description: 'Lido, Rocket Pool, Coinbase, Frax protokollerini getiri ve ücretlere göre karşılaştırın.'
+    },
+    'perpetual-futures-calculator': {
+      title: 'Sürekli Vadeli İşlem Hesaplayıcı',
+      description: 'Kaldıraç, fonlama maliyetleri ve likidasyon fiyatıyla vadeli işlem K/Z hesaplayın.'
+    },
+    'payback-period-calculator': {
+      title: 'Geri Ödeme Süresi Hesaplayıcı',
+      description: 'Beklenen getirilere göre kripto yatırımınızın kendini ne kadar sürede amorti edeceğini hesaplayın.'
+    },
+    'dva-calculator': {
+      title: 'DVA Hesaplayıcı',
+      description: 'Dollar Value Averaging ile DCA karşılaştırması — DVA portföy performansına göre yatırım miktarını ayarlar.'
+    },
+    'bitcoin-energy-calculator': {
+      title: 'Bitcoin Enerji Hesaplayıcı',
+      description: 'Bitcoin madenciliğinin enerji tüketimini, karbon ayak izini ve çevresel maliyetini hesaplayın.'
+    },
+    'on-chain-metrics-calculator': {
+      title: 'On-Chain Metrik Hesaplayıcı',
+      description: 'MVRV, NVT ve SOPR ile Bitcoin değerlemesini analiz edin — aşırı alım veya düşük değerleme bölgeleri.'
+    },
+    'grid-trading-calculator': {
+      title: 'Grid Trading Hesaplayıcı',
+      description: 'Grid trading bot stratejinizi planlayın — grid başına kâr ve tahmini yıllık getiriyi hesaplayın.'
+    },
+    'inheritance-tax-calculator': {
+      title: 'Kripto Miras Vergisi Hesaplayıcı',
+      description: '8 ülkede ilişki türüne göre muafiyetlerle kripto varlıklar üzerindeki miras vergisini hesaplayın.'
+    },
+    'validator-calculator': {
+      title: 'Validatör Ekonomisi Hesaplayıcı',
+      description: 'PoS validatör kârlılığını hesaplayın — ödüller, işletme maliyetleri, ROI — Ethereum, Solana ve daha fazlası.'
+    },
+    'token-valuation-calculator': {
+      title: 'Token Değerleme Hesaplayıcı',
+      description: 'Token FDV, piyasa değeri, dilüsyon riski analizi ve yerleşik projelerle karşılaştırma.'
+    },
+    'if-i-had-bought': {
+      title: 'Eğer Alsaydım Hesaplayıcı',
+      description: 'Bitcoin, Ethereum veya diğer kriptoları tarihi fiyatlardan alsaydınız bugün ne kadar değerli olacağını öğrenin.'
+    },
+    'millionaire-calculator': {
+      title: 'Kripto Milyoner Hesaplayıcı',
+      description: 'Hedefinize ulaşmak için ne kadar süre ve ne kadar yatırım yapmanız gerektiğini hesaplayın.'
+    },
+    'pizza-day-calculator': {
+      title: 'Bitcoin Pizza Günü Hesaplayıcı',
+      description: 'Ünlü 10.000 BTC pizza alışverişinin güncel değerini hesaplayın ve fırsat maliyetini keşfedin.'
     },
   },
   'hi': {
@@ -1690,6 +1978,78 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       title: 'व्हेल अलर्ट कैलकुलेटर',
       description: 'मुफ्त व्हेल अलर्ट कैलकुलेटर। बड़े ट्रांसफर के बाज़ार प्रभाव का अनुमान लगाएं, व्हेल ऑर्डर से स्लिपेज की गणना करें और कस्टम अलर्ट थ्रेशोल्ड सेट करें।'
     },
+    'arbitrage-calculator': {
+      title: 'क्रिप्टो आर्बिट्राज कैलकुलेटर',
+      description: 'एक्सचेंजों के बीच फीस और निकासी लागत के बाद आर्बिट्राज लाभ की गणना करें।'
+    },
+    'stock-to-flow-calculator': {
+      title: 'बिटकॉइन स्टॉक-टू-फ्लो कैलकुलेटर',
+      description: 'S2F मॉडल से बिटकॉइन की कमी का मूल्यांकन करें और वास्तविक कीमत की मॉडल भविष्यवाणी से तुलना करें।'
+    },
+    'options-calculator': {
+      title: 'क्रिप्टो ऑप्शन कैलकुलेटर',
+      description: 'क्रिप्टो कॉल और पुट के लिए ऑप्शन P&L, ब्रेक-ईवन प्राइस और पेऑफ टेबल की गणना करें।'
+    },
+    'tax-loss-harvesting-calculator': {
+      title: 'टैक्स लॉस हार्वेस्टिंग कैलकुलेटर',
+      description: 'कैपिटल गेन्स ऑफसेट करने के लिए हार्वेस्ट योग्य क्रिप्टो हानियों की पहचान करें।'
+    },
+    'restaking-calculator': {
+      title: 'रीस्टेकिंग कैलकुलेटर',
+      description: 'EigenLayer जैसे रीस्टेकिंग प्रोटोकॉल से संयुक्त यील्ड का अनुमान लगाएं।'
+    },
+    'liquid-staking-calculator': {
+      title: 'लिक्विड स्टेकिंग कैलकुलेटर',
+      description: 'Lido, Rocket Pool, Coinbase, Frax प्रोटोकॉल की यील्ड और फीस की तुलना करें।'
+    },
+    'perpetual-futures-calculator': {
+      title: 'परपेचुअल फ्यूचर्स कैलकुलेटर',
+      description: 'लीवरेज, फंडिंग रेट लागत और लिक्विडेशन प्राइस के साथ परप फ्यूचर्स P&L गणना करें।'
+    },
+    'payback-period-calculator': {
+      title: 'पेबैक पीरियड कैलकुलेटर',
+      description: 'अपेक्षित रिटर्न के आधार पर आपके क्रिप्टो निवेश को वापस आने में कितना समय लगेगा।'
+    },
+    'dva-calculator': {
+      title: 'DVA कैलकुलेटर',
+      description: 'Dollar Value Averaging vs DCA की तुलना करें — DVA पोर्टफोलियो प्रदर्शन के आधार पर निवेश राशि समायोजित करता है।'
+    },
+    'bitcoin-energy-calculator': {
+      title: 'बिटकॉइन एनर्जी कैलकुलेटर',
+      description: 'बिटकॉइन माइनिंग की ऊर्जा खपत, कार्बन फुटप्रिंट और पर्यावरणीय लागत का अनुमान लगाएं।'
+    },
+    'on-chain-metrics-calculator': {
+      title: 'ऑन-चेन मेट्रिक्स कैलकुलेटर',
+      description: 'MVRV, NVT और SOPR से बिटकॉइन वैल्यूएशन का विश्लेषण करें — ओवरबॉट या अंडरवैल्यूड ज़ोन।'
+    },
+    'grid-trading-calculator': {
+      title: 'ग्रिड ट्रेडिंग कैलकुलेटर',
+      description: 'ग्रिड ट्रेडिंग बॉट रणनीति की योजना बनाएं — प्रति ग्रिड लाभ और अनुमानित वार्षिक रिटर्न गणना करें।'
+    },
+    'inheritance-tax-calculator': {
+      title: 'क्रिप्टो विरासत कर कैलकुलेटर',
+      description: '8 देशों में संबंध प्रकार के अनुसार छूट के साथ क्रिप्टो संपत्ति पर विरासत कर का अनुमान लगाएं।'
+    },
+    'validator-calculator': {
+      title: 'वैलिडेटर इकोनॉमिक्स कैलकुलेटर',
+      description: 'PoS वैलिडेटर लाभप्रदता की गणना करें — रिवॉर्ड, ऑपरेटिंग कॉस्ट, ROI — Ethereum, Solana और अधिक।'
+    },
+    'token-valuation-calculator': {
+      title: 'टोकन वैल्यूएशन कैलकुलेटर',
+      description: 'टोकन FDV, मार्केट कैप, डाइल्यूशन रिस्क का विश्लेषण करें और स्थापित प्रोजेक्ट से तुलना करें।'
+    },
+    'if-i-had-bought': {
+      title: 'अगर मैंने खरीदा होता कैलकुलेटर',
+      description: 'जानें कि अगर आपने ऐतिहासिक कीमतों पर Bitcoin, Ethereum या अन्य क्रिप्टो खरीदा होता तो आज कितना मूल्य होता।'
+    },
+    'millionaire-calculator': {
+      title: 'क्रिप्टो करोड़पति कैलकुलेटर',
+      description: 'अपने धन लक्ष्य तक पहुंचने के लिए कितना और कितने समय तक निवेश करना है, इसकी गणना करें।'
+    },
+    'pizza-day-calculator': {
+      title: 'बिटकॉइन पिज्जा डे कैलकुलेटर',
+      description: 'प्रसिद्ध 10,000 BTC पिज्जा खरीद का वर्तमान मूल्य गणना करें और अवसर लागत का पता लगाएं।'
+    },
   },
   'ru': {
     'converter': {
@@ -2027,6 +2387,78 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     'whale-alert-calculator': {
       title: 'Калькулятор китовых операций',
       description: 'Бесплатный калькулятор китовых операций. Оцените влияние крупных переводов, рассчитайте проскальзывание и настройте пороги оповещений.'
+    },
+    'arbitrage-calculator': {
+      title: 'Калькулятор арбитража криптовалют',
+      description: 'Рассчитайте прибыль от арбитража между биржами с учётом комиссий и стоимости вывода.'
+    },
+    'stock-to-flow-calculator': {
+      title: 'Калькулятор Stock-to-Flow Bitcoin',
+      description: 'Оцените дефицитность биткоина по модели S2F и сравните реальную цену с прогнозом модели.'
+    },
+    'options-calculator': {
+      title: 'Калькулятор крипто-опционов',
+      description: 'Рассчитайте P&L опционов, цену безубыточности и таблицу выплат для крипто-колов и путов.'
+    },
+    'tax-loss-harvesting-calculator': {
+      title: 'Калькулятор сбора налоговых убытков',
+      description: 'Определите убытки от криптовалют для компенсации прироста капитала и оценки налоговой экономии.'
+    },
+    'restaking-calculator': {
+      title: 'Калькулятор рестейкинга',
+      description: 'Оцените совокупную доходность от нативного стейкинга и рестейкинга через EigenLayer.'
+    },
+    'liquid-staking-calculator': {
+      title: 'Калькулятор ликвидного стейкинга',
+      description: 'Сравните протоколы ликвидного стейкинга — Lido, Rocket Pool, Coinbase, Frax — по доходности и комиссиям.'
+    },
+    'perpetual-futures-calculator': {
+      title: 'Калькулятор бессрочных фьючерсов',
+      description: 'Рассчитайте P&L бессрочных фьючерсов с плечом, стоимостью фандинга и ценой ликвидации.'
+    },
+    'payback-period-calculator': {
+      title: 'Калькулятор срока окупаемости',
+      description: 'Рассчитайте, через сколько времени криптоинвестиция окупится при ожидаемой доходности.'
+    },
+    'dva-calculator': {
+      title: 'Калькулятор DVA',
+      description: 'Сравните Dollar Value Averaging с DCA — DVA корректирует суммы инвестиций на основе динамики портфеля.'
+    },
+    'bitcoin-energy-calculator': {
+      title: 'Калькулятор энергии Bitcoin',
+      description: 'Оцените энергопотребление, углеродный след и экологическую стоимость майнинга биткоина.'
+    },
+    'on-chain-metrics-calculator': {
+      title: 'Калькулятор ончейн-метрик',
+      description: 'Анализируйте оценку биткоина по MVRV, NVT и SOPR — ончейн-сигналы перекупленности или недооценки.'
+    },
+    'grid-trading-calculator': {
+      title: 'Калькулятор грид-трейдинга',
+      description: 'Спланируйте стратегию грид-бота — рассчитайте прибыль на сетку и ожидаемую годовую доходность.'
+    },
+    'inheritance-tax-calculator': {
+      title: 'Калькулятор налога на наследство криптовалют',
+      description: 'Оцените налог на наследство криптоактивов в 8 странах с учётом льгот по степени родства.'
+    },
+    'validator-calculator': {
+      title: 'Калькулятор экономики валидатора',
+      description: 'Рассчитайте прибыльность PoS-валидатора — вознаграждения, операционные расходы, ROI для Ethereum, Solana и др.'
+    },
+    'token-valuation-calculator': {
+      title: 'Калькулятор оценки токена',
+      description: 'Анализируйте FDV токена, рыночную капитализацию, риск размытия и сравнивайте с проектами-аналогами.'
+    },
+    'if-i-had-bought': {
+      title: 'Калькулятор «Если бы я купил»',
+      description: 'Узнайте, сколько бы стоили ваши инвестиции сегодня, если бы вы купили Bitcoin, Ethereum или другие криптовалюты.'
+    },
+    'millionaire-calculator': {
+      title: 'Калькулятор крипто-миллионера',
+      description: 'Спланируйте путь к $1M — рассчитайте, сколько и как долго инвестировать для достижения цели.'
+    },
+    'pizza-day-calculator': {
+      title: 'Калькулятор Дня пиццы Bitcoin',
+      description: 'Рассчитайте текущую стоимость знаменитой покупки пиццы за 10 000 BTC и альтернативные издержки.'
     },
   },
 };

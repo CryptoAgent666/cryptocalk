@@ -97,6 +97,25 @@ export const CALCULATOR_CATEGORY: Record<string, CategorySlug> = {
   'nft-rarity-calculator': 'profit-loss',
   'token-unlock-calculator': 'tax-reporting',
   'whale-alert-calculator': 'trading-tools',
+  // New calculators (April 2026)
+  'arbitrage-calculator': 'trading-tools',
+  'stock-to-flow-calculator': 'investment',
+  'options-calculator': 'trading-tools',
+  'tax-loss-harvesting-calculator': 'tax-reporting',
+  'restaking-calculator': 'defi-yield',
+  'liquid-staking-calculator': 'defi-yield',
+  'perpetual-futures-calculator': 'trading-tools',
+  'payback-period-calculator': 'investment',
+  'dva-calculator': 'investment',
+  'bitcoin-energy-calculator': 'mining',
+  'on-chain-metrics-calculator': 'trading-tools',
+  'grid-trading-calculator': 'trading-tools',
+  'inheritance-tax-calculator': 'tax-reporting',
+  'validator-calculator': 'defi-yield',
+  'token-valuation-calculator': 'investment',
+  'if-i-had-bought': 'profit-loss',
+  'millionaire-calculator': 'investment',
+  'pizza-day-calculator': 'profit-loss',
 };
 
 /** Human-readable category names per language. */

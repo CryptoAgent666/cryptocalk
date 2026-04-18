@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.tsx';
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import OptionsCalculator from '../components/OptionsCalculator.tsx';
+import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
+import SiteFooter from '../components/SiteFooter.astro';
+import ShareCalculator from '../components/ShareCalculator.astro';
+import '../styles/calculator-page.css';
+
+const buildDate = new Date().toISOString().split('T')[0];
+---
+
+<Layout
+  title="Crypto Options Calculator"
+  description="Calculate option P&L, break-even price, and payoff table for crypto calls and puts with implied volatility."
+  lang="en"
+  pageType="calculator"
+>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <Calculator size={24} />
+        <span class="logo-text">Crypto<b>Calk</b></span>
+      </a>
+      <nav class="header-actions" aria-label="Main navigation">
+        <a href="/" class="header-link">
+          <ArrowLeft size={14} />
+          All Calculators
+        </a>
+        <LanguageSwitcher client:idle currentLang="en" currentPath="/options-calculator" />
+        <ThemeToggle client:idle />
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="section-container">
+        <a href="/">Home</a>
+        <ChevronRight size={12} />
+        <a href="/calculators/trading-tools/">Trading Tools</a>
+        <ChevronRight size={12} />
+        <a href="/options-calculator/" aria-current="page">Options Calculator</a>
+      </div>
+    </nav>
+
+    <section class="calculator-section">
+      <div class="section-container">
+        <div class="calc-header">
+          <h1>Crypto Options Calculator</h1>
+          <p>Calculate option P&L, break-even price, and payoff table for crypto calls and puts with implied volatility.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">·</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
+        </div>
+
+        <div class="calc-scope">
+          <OptionsCalculator lang={'en'} client:load />
+          <ShareCalculator lang="en" />
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>

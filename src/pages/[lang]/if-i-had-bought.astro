@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import IfIHadBoughtCalculator from '../../components/IfIHadBoughtCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="if-i-had-bought"
+  title="If I Had Bought Calculator"
+  description="See what your investment would be worth today if you had bought Bitcoin, Ethereum, or other crypto at historic prices."
+>
+  <IfIHadBoughtCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>
