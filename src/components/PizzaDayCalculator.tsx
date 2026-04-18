@@ -44,15 +44,17 @@ function PizzaDayCalculator({ lang = 'en' }: { lang?: string }) {
       .catch(() => { setNetworkError(true); setBtcPrice(String(BTC_FALLBACK_PRICE)); });
   }, []);
 
+  const loc = lang === 'en' ? 'en-US' : lang;
+
   const formatUSD = (n: number) => {
     if (!isFinite(n)) return '\u2014';
     if (n >= 1e12) return '$' + (n / 1e12).toFixed(2) + 'T';
     if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
     if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(n);
+    return new Intl.NumberFormat(loc, { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(n);
   };
 
-  const formatBig = (n: number) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(n);
+  const formatBig = (n: number) => new Intl.NumberFormat(loc, { maximumFractionDigits: 0 }).format(n);
 
   const results = useMemo(() => {
     const nPizzas = parseFloat(pizzas) || 0;

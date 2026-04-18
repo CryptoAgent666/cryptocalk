@@ -63,7 +63,7 @@ function PerpetualFuturesCalculator({ lang = 'en' }: { lang?: string }) {
       ? e * (1 - 1 / lev + (mf + tf) / 100)
       : e * (1 + 1 / lev - (mf + tf) / 100);
 
-    const effectiveLev = margin > 0 ? notional / (margin + netPnl > 0 ? margin + netPnl : margin) : 0;
+    const effectiveLev = margin > 0 ? notional / ((margin + netPnl) > 0 ? (margin + netPnl) : margin) : 0;
 
     const days = Math.ceil(h / 24);
     const fundingByDay = Array.from({ length: days }, (_, i) => {

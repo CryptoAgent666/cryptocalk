@@ -1,0 +1,558 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+
+interface UpdateEntry {
+  date: string;
+  dateLabel: string;
+  title: string;
+  body: string;
+  items?: string[];
+  cta?: { text: string; href: string };
+  footer?: string;
+}
+
+interface UpdatesContent {
+  pageTitle: string;
+  metaDescription: string;
+  heading: string;
+  subtitle: string;
+  updates: UpdateEntry[];
+}
+
+const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
+  es: {
+    pageTitle: 'Novedades | CryptoCalk',
+    metaDescription: 'Descubre las novedades de CryptoCalk — nuevas calculadoras, funciones y mejoras en nuestra suite gratuita de herramientas crypto.',
+    heading: 'Novedades',
+    subtitle: 'Últimas actualizaciones, nuevas calculadoras y mejoras en CryptoCalk.',
+    updates: [
+      {
+        date: '2026-04-18',
+        dateLabel: '18 de abril de 2026',
+        title: '18 Nuevas Calculadoras — Ahora 87 Herramientas',
+        body: 'Hemos añadido 18 nuevas calculadoras, alcanzando un total de <strong>87 herramientas gratuitas</strong> en <strong>más de 1.100 páginas</strong> y 6 idiomas.',
+        items: [
+          '<a href="/es/calculadora-arbitraje-cripto/">Calculadora de Arbitraje Cripto</a> — diferencias de precios entre exchanges',
+          '<a href="/es/calculadora-stock-to-flow/">Calculadora Stock-to-Flow</a> — modelo de valoración por escasez de Bitcoin',
+          '<a href="/es/calculadora-opciones-cripto/">Calculadora de Opciones Cripto</a> — valoración Black-Scholes',
+          '<a href="/es/calculadora-tax-loss-harvesting/">Calculadora Tax-Loss Harvesting</a> — optimiza tu estrategia fiscal',
+          '<a href="/es/calculadora-restaking/">Calculadora de Restaking</a> — rendimientos de EigenLayer',
+          '<a href="/es/calculadora-liquid-staking/">Calculadora de Liquid Staking</a> — compara Lido, Rocket Pool, Coinbase',
+          '<a href="/es/calculadora-futuros-perpetuos/">Calculadora de Futuros Perpetuos</a> — P&L completo con costos de funding',
+          '<a href="/es/calculadora-periodo-retorno-mineria/">Calculadora Período de Retorno</a> — fecha de break-even',
+          '<a href="/es/calculadora-dva/">Calculadora Dollar Value Averaging</a> — estrategia DCA por valor objetivo',
+          '<a href="/es/calculadora-energia-bitcoin/">Calculadora de Energía Bitcoin</a> — consumo energético de minería',
+          '<a href="/es/calculadora-metricas-on-chain/">Calculadora de Métricas On-Chain</a> — NVT, MVRV y más',
+          '<a href="/es/calculadora-grid-trading/">Calculadora de Grid Trading</a> — simula ganancias de grid trading',
+          '<a href="/es/calculadora-impuesto-herencia-cripto/">Calculadora de Impuesto de Herencia Cripto</a>',
+          '<a href="/es/calculadora-validador/">Calculadora de Nodo Validador</a> — economía completa del validador',
+          '<a href="/es/calculadora-valoracion-token/">Calculadora de Valoración de Token</a> — DCF y análisis comparativo',
+          '<a href="/es/si-hubiera-comprado/">Si Hubiera Comprado…</a> — cuánto valdría tu inversión',
+          '<a href="/es/calculadora-millonario-cripto/">Calculadora Millonario Cripto</a> — cuánto crypto para llegar a $1M',
+          '<a href="/es/calculadora-pizza-day/">Calculadora del Pizza Day</a> — las 10.000 BTC en valor actual',
+        ],
+        footer: 'Todas las calculadoras están disponibles en español, inglés, portugués, turco, hindi y ruso.',
+      },
+      {
+        date: '2026-04-04',
+        dateLabel: '4 de abril de 2026',
+        title: 'App para Android en Google Play',
+        body: 'CryptoCalk ya está disponible como app gratuita para Android. Accede a las 87 calculadoras con soporte offline.',
+        cta: { text: 'Descargar en Google Play →', href: 'https://play.google.com/store/apps/details?id=com.cryptocalk.calculator' },
+      },
+      {
+        date: '2026-04-04',
+        dateLabel: '4 de abril de 2026',
+        title: 'Datos de Mercado en Tiempo Real',
+        body: 'Varias calculadoras ahora obtienen datos en tiempo real automáticamente:',
+        items: [
+          '<strong>Calculadora de Gas</strong> — precios de gas de Ethereum en vivo',
+          '<strong>Calculadora de Minería</strong> — dificultad de Bitcoin en vivo',
+          '<strong>Múltiples calculadoras</strong> — precios de BTC y ETH en vivo de CoinGecko',
+        ],
+      },
+      {
+        date: '2026-03-27',
+        dateLabel: '27 de marzo de 2026',
+        title: 'Localización Completa — 6 Idiomas, 1.100+ Páginas',
+        body: 'Cada calculadora, botón, texto de resultado, FAQ y contenido SEO está completamente traducido a 6 idiomas: inglés, español, portugués, turco, hindi y ruso.',
+      },
+      {
+        date: '2026-03-22',
+        dateLabel: '22 de marzo de 2026',
+        title: 'Mejoras en la Experiencia Móvil',
+        body: 'Hemos optimizado todas las calculadoras para dispositivos móviles con mejores controles táctiles, tablas desplazables y mayor legibilidad.',
+      },
+      {
+        date: '2026-03-18',
+        dateLabel: '18 de marzo de 2026',
+        title: 'Lanzamiento — 69 Calculadoras Crypto Gratuitas',
+        body: 'CryptoCalk se lanzó con 69 calculadoras gratuitas de criptomonedas que cubren ganancias, minería, DeFi, staking, trading, impuestos y más. Todas las calculadoras funcionan completamente en tu navegador — sin enviar datos a ningún servidor.',
+      },
+    ],
+  },
+
+  pt: {
+    pageTitle: 'Novidades | CryptoCalk',
+    metaDescription: 'Veja as novidades do CryptoCalk — novas calculadoras, recursos e melhorias na nossa suíte gratuita de ferramentas crypto.',
+    heading: 'Novidades',
+    subtitle: 'Últimas atualizações, novas calculadoras e melhorias no CryptoCalk.',
+    updates: [
+      {
+        date: '2026-04-18',
+        dateLabel: '18 de abril de 2026',
+        title: '18 Novas Calculadoras — Agora 87 Ferramentas',
+        body: 'Adicionamos 18 novas calculadoras, totalizando <strong>87 ferramentas gratuitas</strong> em <strong>mais de 1.100 páginas</strong> e 6 idiomas.',
+        items: [
+          '<a href="/pt/calculadora-arbitragem-cripto/">Calculadora de Arbitragem Cripto</a> — diferenças de preço entre exchanges',
+          '<a href="/pt/calculadora-stock-to-flow/">Calculadora Stock-to-Flow</a> — modelo de escassez do Bitcoin',
+          '<a href="/pt/calculadora-opcoes-cripto/">Calculadora de Opções Cripto</a> — precificação Black-Scholes',
+          '<a href="/pt/calculadora-tax-loss-harvesting/">Calculadora Tax-Loss Harvesting</a> — otimize sua estratégia fiscal',
+          '<a href="/pt/calculadora-restaking/">Calculadora de Restaking</a> — rendimentos EigenLayer',
+          '<a href="/pt/calculadora-liquid-staking/">Calculadora de Liquid Staking</a> — compare Lido, Rocket Pool, Coinbase',
+          '<a href="/pt/calculadora-futuros-perpetuos/">Calculadora de Futuros Perpétuos</a> — P&L completo com custos de funding',
+          '<a href="/pt/calculadora-periodo-retorno-mineracao/">Calculadora Período de Retorno</a> — data de break-even',
+          '<a href="/pt/calculadora-dva/">Calculadora Dollar Value Averaging</a> — estratégia DCA por valor alvo',
+          '<a href="/pt/calculadora-energia-bitcoin/">Calculadora de Energia Bitcoin</a> — consumo energético da mineração',
+          '<a href="/pt/calculadora-metricas-on-chain/">Calculadora de Métricas On-Chain</a> — NVT, MVRV e mais',
+          '<a href="/pt/calculadora-grid-trading/">Calculadora de Grid Trading</a> — simule lucros de grid trading',
+          '<a href="/pt/calculadora-imposto-heranca-cripto/">Calculadora de Imposto de Herança Cripto</a>',
+          '<a href="/pt/calculadora-validador/">Calculadora de Nó Validador</a> — economia completa do validador',
+          '<a href="/pt/calculadora-avaliacao-token/">Calculadora de Avaliação de Token</a> — DCF e análise comparativa',
+          '<a href="/pt/se-eu-tivesse-comprado/">Se Eu Tivesse Comprado…</a> — quanto valeria seu investimento',
+          '<a href="/pt/calculadora-milionario-cripto/">Calculadora Milionário Cripto</a> — quanto crypto para chegar a $1M',
+          '<a href="/pt/calculadora-pizza-day/">Calculadora do Pizza Day</a> — as 10.000 BTC em valor atual',
+        ],
+        footer: 'Todas as calculadoras estão disponíveis em português, inglês, espanhol, turco, hindi e russo.',
+      },
+      {
+        date: '2026-04-04',
+        dateLabel: '4 de abril de 2026',
+        title: 'App para Android no Google Play',
+        body: 'O CryptoCalk agora está disponível como app gratuito para Android. Acesse todas as 87 calculadoras com suporte offline.',
+        cta: { text: 'Baixar no Google Play →', href: 'https://play.google.com/store/apps/details?id=com.cryptocalk.calculator' },
+      },
+      {
+        date: '2026-04-04',
+        dateLabel: '4 de abril de 2026',
+        title: 'Dados de Mercado em Tempo Real',
+        body: 'Várias calculadoras agora buscam dados em tempo real automaticamente:',
+        items: [
+          '<strong>Calculadora de Gás</strong> — preços de gas do Ethereum em tempo real',
+          '<strong>Calculadora de Mineração</strong> — dificuldade do Bitcoin em tempo real',
+          '<strong>Múltiplas calculadoras</strong> — preços de BTC e ETH em tempo real via CoinGecko',
+        ],
+      },
+      {
+        date: '2026-03-27',
+        dateLabel: '27 de março de 2026',
+        title: 'Localização Completa — 6 Idiomas, 1.100+ Páginas',
+        body: 'Cada calculadora, botão, texto de resultado, FAQ e conteúdo SEO está completamente traduzido em 6 idiomas: inglês, espanhol, português, turco, hindi e russo.',
+      },
+      {
+        date: '2026-03-22',
+        dateLabel: '22 de março de 2026',
+        title: 'Melhorias na Experiência Mobile',
+        body: 'Otimizamos todas as calculadoras para dispositivos móveis com melhores controles touch, tabelas roláveis e maior legibilidade.',
+      },
+      {
+        date: '2026-03-18',
+        dateLabel: '18 de março de 2026',
+        title: 'Lançamento — 69 Calculadoras Crypto Gratuitas',
+        body: 'O CryptoCalk foi lançado com 69 calculadoras gratuitas de criptomoedas cobrindo lucros, mineração, DeFi, staking, trading, impostos e mais. Todas rodam inteiramente no seu navegador — nenhum dado é enviado a servidores.',
+      },
+    ],
+  },
+
+  tr: {
+    pageTitle: 'Yenilikler | CryptoCalk',
+    metaDescription: 'CryptoCalk\'taki yenilikleri keşfedin — yeni hesap makineleri, özellikler ve ücretsiz kripto araç setindeki iyileştirmeler.',
+    heading: 'Yenilikler',
+    subtitle: 'En son güncellemeler, yeni hesap makineleri ve CryptoCalk iyileştirmeleri.',
+    updates: [
+      {
+        date: '2026-04-18',
+        dateLabel: '18 Nisan 2026',
+        title: '18 Yeni Hesap Makinesi — Toplamda 87 Araç',
+        body: '18 yeni hesap makinesi ekledik, toplamı 6 dilde <strong>1.100\'den fazla sayfa</strong> ve <strong>87 ücretsiz araç</strong>a ulaştırdık.',
+        items: [
+          '<a href="/tr/kripto-arbitraj-hesaplayici/">Kripto Arbitraj Hesaplayıcı</a> — borsalar arası fiyat farkları',
+          '<a href="/tr/stock-to-flow-hesaplayici/">Stock-to-Flow Hesaplayıcı</a> — Bitcoin kıtlık değerleme modeli',
+          '<a href="/tr/kripto-opsiyon-hesaplayici/">Kripto Opsiyon Hesaplayıcı</a> — Black-Scholes fiyatlandırması',
+          '<a href="/tr/vergi-kaybi-hasadi-hesaplayici/">Vergi Kaybı Hasadı Hesaplayıcı</a> — vergi stratejinizi optimize edin',
+          '<a href="/tr/restaking-hesaplayici/">Restaking Hesaplayıcı</a> — EigenLayer getirileri',
+          '<a href="/tr/liquid-staking-hesaplayici/">Liquid Staking Hesaplayıcı</a> — Lido, Rocket Pool, Coinbase karşılaştırması',
+          '<a href="/tr/surekli-vadeli-islem-hesaplayici/">Sürekli Vadeli İşlem Hesaplayıcı</a> — funding maliyetleriyle tam P&L',
+          '<a href="/tr/madencilik-geri-odeme-hesaplayici/">Geri Ödeme Süresi Hesaplayıcı</a> — başa baş tarihi',
+          '<a href="/tr/dva-hesaplayici/">Dolar Değer Ortalaması Hesaplayıcı</a> — hedef değerli DCA stratejisi',
+          '<a href="/tr/bitcoin-enerji-hesaplayici/">Bitcoin Enerji Hesaplayıcı</a> — madencilik enerji tüketimi',
+          '<a href="/tr/on-chain-metrik-hesaplayici/">On-Chain Metrik Hesaplayıcı</a> — NVT, MVRV ve daha fazlası',
+          '<a href="/tr/grid-trading-hesaplayici/">Grid Trading Hesaplayıcı</a> — grid trading kârlarını simüle edin',
+          '<a href="/tr/kripto-veraset-vergisi-hesaplayici/">Kripto Veraset Vergisi Hesaplayıcı</a>',
+          '<a href="/tr/validator-hesaplayici/">Validatör Düğüm Hesaplayıcı</a> — tam validatör ekonomisi',
+          '<a href="/tr/token-degerleme-hesaplayici/">Token Değerleme Hesaplayıcı</a> — DCF ve karşılaştırmalı analiz',
+          '<a href="/tr/satin-almis-olsaydim/">Satın Almış Olsaydım…</a> — geçmişteki yatırımınız ne kadar ederdi',
+          '<a href="/tr/kripto-milyoner-hesaplayici/">Kripto Milyoner Hesaplayıcı</a> — $1M için ne kadar kripto gerekli',
+          '<a href="/tr/pizza-gunu-hesaplayici/">Pizza Günü Hesaplayıcı</a> — 10.000 BTC\'nin bugünkü değeri',
+        ],
+        footer: 'Tüm hesap makineleri Türkçe, İngilizce, İspanyolca, Portekizce, Hintçe ve Rusça olarak mevcuttur.',
+      },
+      {
+        date: '2026-04-04',
+        dateLabel: '4 Nisan 2026',
+        title: 'Android Uygulaması Google Play\'de',
+        body: 'CryptoCalk artık ücretsiz bir Android uygulaması olarak mevcut. Çevrimdışı destekle 87 hesap makinesine anında erişin.',
+        cta: { text: 'Google Play\'den İndir →', href: 'https://play.google.com/store/apps/details?id=com.cryptocalk.calculator' },
+      },
+      {
+        date: '2026-04-04',
+        dateLabel: '4 Nisan 2026',
+        title: 'Canlı Piyasa Verileri Entegrasyonu',
+        body: 'Birçok hesap makinesi artık otomatik olarak gerçek zamanlı veri alıyor:',
+        items: [
+          '<strong>Gas Ücreti Hesaplayıcı</strong> — canlı Ethereum gas fiyatları',
+          '<strong>Madencilik Hesaplayıcı</strong> — canlı Bitcoin zorluk derecesi',
+          '<strong>Birçok hesap makinesi</strong> — CoinGecko\'dan canlı BTC ve ETH fiyatları',
+        ],
+      },
+      {
+        date: '2026-03-27',
+        dateLabel: '27 Mart 2026',
+        title: 'Tam Yerelleştirme — 6 Dil, 1.100+ Sayfa',
+        body: 'Her hesap makinesi, düğme, sonuç metni, SSS ve SEO içeriği 6 dile tam olarak çevrildi: İngilizce, İspanyolca, Portekizce, Türkçe, Hintçe ve Rusça.',
+      },
+      {
+        date: '2026-03-22',
+        dateLabel: '22 Mart 2026',
+        title: 'Mobil Deneyim İyileştirmeleri',
+        body: 'Tüm hesap makinelerini mobil cihazlar için optimize ettik — daha iyi dokunmatik hedefler, kaydırılabilir tablolar ve artırılmış okunabilirlik.',
+      },
+      {
+        date: '2026-03-18',
+        dateLabel: '18 Mart 2026',
+        title: 'Lansman — 69 Ücretsiz Kripto Hesap Makinesi',
+        body: 'CryptoCalk, kâr ve zarar, madencilik, DeFi, staking, trading araçları, vergi tahmini ve daha fazlasını kapsayan 69 ücretsiz kripto hesap makinesiyle başlatıldı. Tüm hesaplamalar tamamen tarayıcınızda çalışır.',
+      },
+    ],
+  },
+
+  hi: {
+    pageTitle: 'अपडेट्स | CryptoCalk',
+    metaDescription: 'CryptoCalk पर नया क्या है देखें — नए कैलकुलेटर, फीचर्स और हमारे मुफ्त क्रिप्टो कैलकुलेटर सूट में सुधार।',
+    heading: 'नया क्या है',
+    subtitle: 'नवीनतम अपडेट, नए कैलकुलेटर और CryptoCalk में सुधार।',
+    updates: [
+      {
+        date: '2026-04-18',
+        dateLabel: '18 अप्रैल 2026',
+        title: '18 नए कैलकुलेटर — अब कुल 87 टूल्स',
+        body: 'हमने 18 नए कैलकुलेटर जोड़े हैं, कुल <strong>87 मुफ्त टूल्स</strong> 6 भाषाओं में <strong>1,100 से अधिक पेजों</strong> पर उपलब्ध हैं।',
+        items: [
+          '<a href="/hi/क्रिप्टो-आर्बिट्राज-कैलकुलेटर/">क्रिप्टो आर्बिट्राज कैलकुलेटर</a> — एक्सचेंजों में मूल्य अंतर',
+          '<a href="/hi/स्टॉक-टू-फ्लो-कैलकुलेटर/">स्टॉक-टू-फ्लो कैलकुलेटर</a> — बिटकॉइन स्कार्सिटी मॉडल',
+          '<a href="/hi/क्रिप्टो-ऑप्शंस-कैलकुलेटर/">क्रिप्टो ऑप्शंस कैलकुलेटर</a> — ब्लैक-शोल्स प्राइसिंग',
+          '<a href="/hi/टैक्स-लॉस-हार्वेस्टिंग-कैलकुलेटर/">टैक्स-लॉस हार्वेस्टिंग कैलकुलेटर</a>',
+          '<a href="/hi/रीस्टेकिंग-कैलकुलेटर/">रीस्टेकिंग कैलकुलेटर</a> — EigenLayer रिटर्न',
+          '<a href="/hi/लिक्विड-स्टेकिंग-कैलकुलेटर/">लिक्विड स्टेकिंग कैलकुलेटर</a> — Lido, Rocket Pool, Coinbase तुलना',
+          '<a href="/hi/परपेचुअल-फ्यूचर्स-कैलकुलेटर/">परपेचुअल फ्यूचर्स कैलकुलेटर</a> — फंडिंग लागत के साथ पूर्ण P&L',
+          '<a href="/hi/माइनिंग-पेबैक-कैलकुलेटर/">पेबैक पीरियड कैलकुलेटर</a> — ब्रेक-ईवन तारीख',
+          '<a href="/hi/डीवीए-कैलकुलेटर/">डॉलर वैल्यू एवरेजिंग कैलकुलेटर</a>',
+          '<a href="/hi/बिटकॉइन-ऊर्जा-कैलकुलेटर/">बिटकॉइन ऊर्जा कैलकुलेटर</a> — माइनिंग बिजली खपत',
+          '<a href="/hi/ऑन-चेन-मेट्रिक्स-कैलकुलेटर/">ऑन-चेन मेट्रिक्स कैलकुलेटर</a> — NVT, MVRV और अधिक',
+          '<a href="/hi/ग्रिड-ट्रेडिंग-कैलकुलेटर/">ग्रिड ट्रेडिंग कैलकुलेटर</a>',
+          '<a href="/hi/क्रिप्टो-विरासत-कर-कैलकुलेटर/">क्रिप्टो विरासत कर कैलकुलेटर</a>',
+          '<a href="/hi/वैलिडेटर-कैलकुलेटर/">वैलिडेटर नोड कैलकुलेटर</a>',
+          '<a href="/hi/टोकन-वैल्यूएशन-कैलकुलेटर/">टोकन वैल्यूएशन कैलकुलेटर</a>',
+          '<a href="/hi/अगर-मैंने-खरीदा-होता/">अगर मैंने खरीदा होता…</a> — आपका निवेश कितना होता',
+          '<a href="/hi/क्रिप्टो-करोड़पति-कैलकुलेटर/">क्रिप्टो करोड़पति कैलकुलेटर</a>',
+          '<a href="/hi/पिज़्ज़ा-डे-कैलकुलेटर/">पिज़्ज़ा डे कैलकुलेटर</a> — 10,000 BTC का आज का मूल्य',
+        ],
+        footer: 'सभी कैलकुलेटर हिन्दी, अंग्रेज़ी, स्पेनिश, पुर्तगाली, तुर्की और रूसी में उपलब्ध हैं।',
+      },
+      {
+        date: '2026-04-04',
+        dateLabel: '4 अप्रैल 2026',
+        title: 'Android ऐप Google Play पर उपलब्ध',
+        body: 'CryptoCalk अब Android पर मुफ्त ऐप के रूप में उपलब्ध है। ऑफ़लाइन सपोर्ट के साथ सभी 87 कैलकुलेटर तक पहुँचें।',
+        cta: { text: 'Google Play से डाउनलोड करें →', href: 'https://play.google.com/store/apps/details?id=com.cryptocalk.calculator' },
+      },
+      {
+        date: '2026-04-04',
+        dateLabel: '4 अप्रैल 2026',
+        title: 'लाइव मार्केट डेटा इंटीग्रेशन',
+        body: 'कई कैलकुलेटर अब स्वचालित रूप से रियल-टाइम डेटा लाते हैं:',
+        items: [
+          '<strong>गैस शुल्क कैलकुलेटर</strong> — लाइव Ethereum गैस प्राइस',
+          '<strong>माइनिंग कैलकुलेटर</strong> — लाइव Bitcoin डिफिकल्टी',
+          '<strong>कई कैलकुलेटर</strong> — CoinGecko से लाइव BTC और ETH प्राइस',
+        ],
+      },
+      {
+        date: '2026-03-27',
+        dateLabel: '27 मार्च 2026',
+        title: 'पूर्ण लोकलाइज़ेशन — 6 भाषाएँ, 1,100+ पेज',
+        body: 'हर कैलकुलेटर, बटन, रिज़ल्ट टेक्स्ट, FAQ और SEO कंटेंट 6 भाषाओं में पूरी तरह अनुवादित है: अंग्रेज़ी, स्पेनिश, पुर्तगाली, तुर्की, हिन्दी और रूसी।',
+      },
+      {
+        date: '2026-03-22',
+        dateLabel: '22 मार्च 2026',
+        title: 'मोबाइल अनुभव में सुधार',
+        body: 'सभी कैलकुलेटर मोबाइल डिवाइस के लिए ऑप्टिमाइज़ किए गए हैं — बेहतर टच टारगेट, स्क्रॉल करने योग्य टेबल और बढ़ी हुई पठनीयता।',
+      },
+      {
+        date: '2026-03-18',
+        dateLabel: '18 मार्च 2026',
+        title: 'लॉन्च — 69 मुफ्त क्रिप्टो कैलकुलेटर',
+        body: 'CryptoCalk 69 मुफ्त क्रिप्टोकरेंसी कैलकुलेटर के साथ लॉन्च हुआ, जिसमें प्रॉफिट, माइनिंग, DeFi, स्टेकिंग, ट्रेडिंग, टैक्स और बहुत कुछ शामिल है। सभी गणनाएँ पूरी तरह आपके ब्राउज़र में चलती हैं।',
+      },
+    ],
+  },
+
+  ru: {
+    pageTitle: 'Обновления | CryptoCalk',
+    metaDescription: 'Узнайте, что нового на CryptoCalk — новые калькуляторы, функции и улучшения нашего бесплатного набора крипто-инструментов.',
+    heading: 'Что нового',
+    subtitle: 'Последние обновления, новые калькуляторы и улучшения CryptoCalk.',
+    updates: [
+      {
+        date: '2026-04-18',
+        dateLabel: '18 апреля 2026',
+        title: '18 Новых Калькуляторов — Теперь 87 Инструментов',
+        body: 'Мы добавили 18 новых калькуляторов, доведя общее количество до <strong>87 бесплатных инструментов</strong> на <strong>более 1 100 страницах</strong> на 6 языках.',
+        items: [
+          '<a href="/ru/калькулятор-арбитража-криптовалют/">Калькулятор Арбитража</a> — разница цен между биржами',
+          '<a href="/ru/калькулятор-stock-to-flow/">Калькулятор Stock-to-Flow</a> — модель оценки дефицита Bitcoin',
+          '<a href="/ru/калькулятор-опционов-криптовалют/">Калькулятор Опционов</a> — ценообразование по Блэку-Шоулзу',
+          '<a href="/ru/калькулятор-tax-loss-harvesting/">Калькулятор Tax-Loss Harvesting</a> — оптимизация налоговой стратегии',
+          '<a href="/ru/калькулятор-рестейкинга/">Калькулятор Рестейкинга</a> — доходность EigenLayer',
+          '<a href="/ru/калькулятор-ликвидного-стейкинга/">Калькулятор Ликвидного Стейкинга</a> — сравнение Lido, Rocket Pool, Coinbase',
+          '<a href="/ru/калькулятор-бессрочных-фьючерсов/">Калькулятор Бессрочных Фьючерсов</a> — полный P&L с учётом фандинга',
+          '<a href="/ru/калькулятор-окупаемости-майнинга/">Калькулятор Окупаемости</a> — дата безубыточности',
+          '<a href="/ru/калькулятор-dva/">Калькулятор Dollar Value Averaging</a> — стратегия DCA по целевой стоимости',
+          '<a href="/ru/калькулятор-энергии-биткоина/">Калькулятор Энергии Биткоина</a> — энергопотребление майнинга',
+          '<a href="/ru/калькулятор-ончейн-метрик/">Калькулятор Ончейн-Метрик</a> — NVT, MVRV и другие',
+          '<a href="/ru/калькулятор-грид-трейдинга/">Калькулятор Грид-Трейдинга</a> — симуляция прибыли от сеточной торговли',
+          '<a href="/ru/калькулятор-налога-на-наследство-криптовалют/">Калькулятор Налога на Наследство</a>',
+          '<a href="/ru/калькулятор-валидатора/">Калькулятор Валидатора</a> — полная экономика валидатора',
+          '<a href="/ru/калькулятор-оценки-токенов/">Калькулятор Оценки Токенов</a> — DCF и сравнительный анализ',
+          '<a href="/ru/если-бы-я-купил/">Если бы я купил…</a> — сколько стоила бы ваша инвестиция',
+          '<a href="/ru/калькулятор-крипто-миллионера/">Калькулятор Крипто-Миллионера</a> — сколько крипто нужно для $1M',
+          '<a href="/ru/калькулятор-дня-пиццы/">Калькулятор Дня Пиццы</a> — 10 000 BTC в сегодняшних ценах',
+        ],
+        footer: 'Все калькуляторы доступны на русском, английском, испанском, португальском, турецком и хинди.',
+      },
+      {
+        date: '2026-04-04',
+        dateLabel: '4 апреля 2026',
+        title: 'Приложение для Android в Google Play',
+        body: 'CryptoCalk теперь доступен как бесплатное Android-приложение. Получите доступ ко всем 87 калькуляторам с офлайн-поддержкой.',
+        cta: { text: 'Скачать в Google Play →', href: 'https://play.google.com/store/apps/details?id=com.cryptocalk.calculator' },
+      },
+      {
+        date: '2026-04-04',
+        dateLabel: '4 апреля 2026',
+        title: 'Интеграция Данных Рынка в Реальном Времени',
+        body: 'Несколько калькуляторов теперь автоматически получают данные в реальном времени:',
+        items: [
+          '<strong>Калькулятор Газа</strong> — цены на газ Ethereum в реальном времени',
+          '<strong>Калькулятор Майнинга</strong> — сложность Bitcoin в реальном времени',
+          '<strong>Несколько калькуляторов</strong> — цены BTC и ETH в реальном времени через CoinGecko',
+        ],
+      },
+      {
+        date: '2026-03-27',
+        dateLabel: '27 марта 2026',
+        title: 'Полная Локализация — 6 Языков, 1 100+ Страниц',
+        body: 'Каждый калькулятор, кнопка, текст результата, FAQ и SEO-контент полностью переведён на 6 языков: английский, испанский, португальский, турецкий, хинди и русский.',
+      },
+      {
+        date: '2026-03-22',
+        dateLabel: '22 марта 2026',
+        title: 'Улучшения Мобильной Версии',
+        body: 'Все калькуляторы оптимизированы для мобильных устройств — улучшенные сенсорные элементы, прокручиваемые таблицы и повышенная читаемость.',
+      },
+      {
+        date: '2026-03-18',
+        dateLabel: '18 марта 2026',
+        title: 'Запуск — 69 Бесплатных Крипто-Калькуляторов',
+        body: 'CryptoCalk запущен с 69 бесплатными калькуляторами криптовалют, охватывающими прибыль, майнинг, DeFi, стейкинг, трейдинг, налоги и многое другое. Все вычисления выполняются полностью в вашем браузере — данные не отправляются на серверы.',
+      },
+    ],
+  },
+};
+
+const c = content[lang];
+---
+
+<Layout
+  title={c.pageTitle}
+  description={c.metaDescription}
+  lang={lang}
+>
+  <SiteHeader lang={lang} currentPath={`/${lang}/updates`} />
+  <div class="updates-container">
+    <header class="updates-header">
+      <h1>{c.heading}</h1>
+      <p>{c.subtitle}</p>
+    </header>
+
+    <div class="updates-content">
+      {c.updates.map((update, i) => (
+        <>
+          {i > 0 && <div class="divider" />}
+          <article class="update-entry">
+            <div class="update-date">
+              <time datetime={update.date}>{update.dateLabel}</time>
+            </div>
+            <h2>{update.title}</h2>
+            <p set:html={update.body} />
+            {update.items && (
+              <ul>
+                {update.items.map((item) => (
+                  <li set:html={item} />
+                ))}
+              </ul>
+            )}
+            {update.cta && (
+              <p><a href={update.cta.href} target="_blank" rel="noopener noreferrer" class="cta-link">{update.cta.text}</a></p>
+            )}
+            {update.footer && <p>{update.footer}</p>}
+          </article>
+        </>
+      ))}
+    </div>
+  </div>
+  <SiteFooter lang={lang} />
+</Layout>
+
+<style>
+  .updates-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+
+  .updates-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .updates-header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  .updates-header p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .updates-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .update-date {
+    margin-bottom: 12px;
+  }
+
+  .update-date time {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .update-entry h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--color-text);
+  }
+
+  .update-entry p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .update-entry strong {
+    color: var(--color-text);
+  }
+
+  .update-entry ul {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .update-entry ul li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .update-entry ul li::before {
+    content: '•';
+    position: absolute;
+    left: 4px;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .update-entry :global(a) {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .update-entry :global(a:hover) {
+    text-decoration: underline;
+  }
+
+  .cta-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .cta-link:hover {
+    text-decoration: underline;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--color-border);
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .updates-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>

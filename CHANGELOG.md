@@ -2,6 +2,35 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-18] (update 82) — i18n: ~290 missing translations for 18 new calculators
+
+### Added
+- **~290 missing getUiString() keys translated** across all 5 ui-strings files (es.ts, pt.ts, tr.ts, hi.ts, ru.ts) for the 18 new calculator components added in update 79
+- **Categories covered**: energy sources (Coal, Nuclear, Hydro, Solar, Wind, Grid Mix), on-chain metric labels (Fair Value, Overbought, Sell Signal, Buy Signal, etc.), grid types (Arithmetic, Geometric), filing status (Single, Married), relationship labels (Spouse, Child, Other), country names (8 countries), inheritance tax notes (8 country-specific legal explanations), date presets (Bitcoin Launch 2009, BTC $1 2011, ETH ICO 2015, COVID Crash, etc.), scenario labels (54 across 18 calculators), input labels, result labels, disclaimers, and helper text
+- **Duplicate keys cleaned**: Removed 131 (es), 102 (pt), 106 (tr), 103 (hi), 96 (ru) duplicate keys that existed from partial earlier additions
+- All translations are natural-language, locale-appropriate; brand names (BTC, ETH, Binance, CoinGecko, etc.) kept as-is
+- Build: TypeScript compilation clean, 0 TS1117 errors
+
+## [2026-04-18] (update 81) — fix: 3 bugs, 5 key mismatches, dead code from QA audit
+
+### Fixed
+- **PerpetualFuturesCalculator.tsx**: Operator precedence bug in `effectiveLev` — `margin + netPnl > 0` was parsed as `margin + (netPnl > 0)` adding a boolean. Added parentheses: `(margin + netPnl) > 0`
+- **IfIHadBoughtCalculator.tsx**: Broken i18n string concatenation (`'Your $' + amount + ' would be worth'`) — replaced with `'Your investment of' + amount + 'would be worth'` using separate translatable keys
+- **Hardcoded `'en-US'` locale**: Fixed in IfIHadBoughtCalculator, MillionaireCalculator, PizzaDayCalculator — now uses `lang === 'en' ? 'en-US' : lang` for number formatting
+- **5 key mismatches**: Added correct key variants to all 5 ui-strings files: `'Profit per Grid'`, `'Starting Asset Price ($)'`, `'Funding Rate (% per 8h)'`, `'MC / FDV Ratio'`, `'DeFi Composability APY (%)'`
+- **ValidatorCalculator.tsx**: Removed dead `breakEvenMonths` variable (line 114, unused — result used `breakEven` from line 116)
+- **New i18n keys**: `'Your investment of'`, `'would be worth'` added to all 5 ui-strings files
+- Build: 1,139 pages, 0 errors
+
+## [2026-04-18] (update 80) — feat: Updates page in 6 languages, footer link
+
+### Added
+- **Updates page (EN)**: `src/pages/updates.astro` — user-facing changelog with 7 update entries covering new calculators, Android app, live market data, localization, mobile improvements, and launch
+- **Updates page (localized)**: `src/pages/[lang]/updates.astro` — fully translated for es, pt, tr, hi, ru with localized dates, calculator links, and descriptions
+- **Footer link**: Added "Updates" link to Trust & Legal column in `SiteFooter.astro`
+- **Translation key**: `footerUpdates` added to all 6 languages in `translations.ts` (Updates, Novedades, Novidades, Yenilikler, अपडेट्स, Обновления)
+- Build: 1,139 pages (+6), 0 errors
+
 ## [2026-04-18] (update 79) — feat: 18 new calculators, data refresh, total now 87 tools across 1,133 pages
 
 ### Added
