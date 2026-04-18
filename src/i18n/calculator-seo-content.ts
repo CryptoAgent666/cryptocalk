@@ -5018,4 +5018,1228 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
   },
+  'arbitrage-calculator': {
+    en: {
+      quickAnswer: 'Enter the same asset\'s price on two exchanges to calculate the arbitrage spread, net profit after fees, and ROI. A $200 BTC price gap between Binance and Coinbase with 0.1% fees on a $10,000 position yields ~$180 net profit.',
+      how: [
+        `The Arbitrage Calculator identifies profit opportunities from price discrepancies of the same cryptocurrency across different exchanges. Enter the buy price on one exchange and the sell price on another, along with trading fees and transfer costs, to see the net profit and percentage return. The tool accounts for maker/taker fees on both legs plus network withdrawal fees.`,
+        `Real arbitrage windows typically last seconds to minutes. Use this calculator to determine your minimum profitable spread — the price gap needed to cover all fees and still make money. Compare multiple exchange pairs to find the most consistent opportunities, and factor in transfer times: a 30-minute BTC confirmation window means the price gap must be wide enough to survive volatility during the transfer.`
+      ],
+      inputs: [
+        `The two required prices are the buy price (lower exchange) and sell price (higher exchange). Fee fields accept separate percentages for each exchange's trading fee plus a flat withdrawal/network fee in USD. Position size determines the dollar amount you plan to move.`,
+        `Optional fields include transfer time (in minutes) for risk assessment and slippage tolerance. The calculator outputs net profit, ROI percentage, break-even spread, and an annualized return estimate based on how many round-trips you could complete per day.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Introduce el precio del mismo activo en dos exchanges para calcular el spread de arbitraje, beneficio neto después de comisiones y ROI. Una diferencia de $200 en BTC entre Binance y Coinbase con 0,1% de comisiones sobre $10.000 genera ~$180 de beneficio neto.',
+      how: [
+        `La Calculadora de Arbitraje identifica oportunidades de beneficio por discrepancias de precio de la misma criptomoneda en diferentes exchanges. Introduce el precio de compra en un exchange y el precio de venta en otro, junto con las comisiones de trading y costos de transferencia, para ver el beneficio neto y el porcentaje de retorno.`,
+        `Las ventanas de arbitraje real duran de segundos a minutos. Usa esta calculadora para determinar tu spread mínimo rentable — la diferencia de precio necesaria para cubrir todas las comisiones. Considera los tiempos de transferencia: una confirmación de 30 minutos de BTC implica que la brecha debe ser suficiente para sobrevivir la volatilidad durante la transferencia.`
+      ],
+      inputs: [
+        `Los dos precios requeridos son el precio de compra (exchange más bajo) y el precio de venta (exchange más alto). Los campos de comisión aceptan porcentajes separados para cada exchange más una comisión fija de retiro en USD. El tamaño de posición determina el importe a mover.`,
+        `Los campos opcionales incluyen tiempo de transferencia (en minutos) para evaluación de riesgo y tolerancia al deslizamiento. La calculadora muestra beneficio neto, porcentaje de ROI, spread de equilibrio y retorno anualizado estimado.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Insira o preço do mesmo ativo em duas exchanges para calcular o spread de arbitragem, lucro líquido após taxas e ROI. Uma diferença de $200 no BTC entre Binance e Coinbase com 0,1% de taxas sobre $10.000 gera ~$180 de lucro líquido.',
+      how: [
+        `A Calculadora de Arbitragem identifica oportunidades de lucro a partir de discrepâncias de preço da mesma criptomoeda em exchanges diferentes. Insira o preço de compra em uma exchange e o preço de venda em outra, junto com taxas de negociação e custos de transferência, para ver o lucro líquido e retorno percentual.`,
+        `Janelas reais de arbitragem duram de segundos a minutos. Use esta calculadora para determinar o spread mínimo lucrativo — a diferença de preço necessária para cobrir todas as taxas. Considere o tempo de transferência: uma confirmação de 30 minutos de BTC exige que a diferença seja ampla o suficiente para sobreviver à volatilidade durante a transferência.`
+      ],
+      inputs: [
+        `Os dois preços obrigatórios são o preço de compra (exchange mais barata) e o preço de venda (exchange mais cara). Os campos de taxa aceitam porcentagens separadas para cada exchange mais uma taxa fixa de saque em USD. O tamanho da posição determina o valor a ser movimentado.`,
+        `Campos opcionais incluem tempo de transferência (em minutos) para avaliação de risco e tolerância ao slippage. A calculadora mostra lucro líquido, percentual de ROI, spread de equilíbrio e retorno anualizado estimado.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Aynı varlığın iki exchange\'deki fiyatını girerek arbitraj spreadini, ücretler sonrası net kârı ve ROI\'yi hesaplayın. Binance ve Coinbase arasında $200 BTC fiyat farkı, %0,1 ücretle $10.000 pozisyonda ~$180 net kâr sağlar.',
+      how: [
+        `Arbitraj Hesaplayıcısı, aynı kripto paranın farklı borsalardaki fiyat farklılıklarından kâr fırsatlarını belirler. Bir borsadaki alış fiyatını ve diğerindeki satış fiyatını, işlem ücretleri ve transfer maliyetleriyle birlikte girerek net kârı ve getiri yüzdesini görün.`,
+        `Gerçek arbitraj pencereleri genellikle saniyelerden dakikalara kadar sürer. Minimum kârlı spreadinizi — tüm ücretleri karşılayıp yine de para kazanmak için gereken fiyat farkını — belirlemek için kullanın. Transfer sürelerini göz önünde bulundurun: 30 dakikalık BTC onay süresi, fiyat farkının transfer sırasındaki oynaklığa dayanacak kadar geniş olması gerektiği anlamına gelir.`
+      ],
+      inputs: [
+        `İki gerekli fiyat, alış fiyatı (düşük borsadaki) ve satış fiyatı (yüksek borsadaki). Ücret alanları her borsa için ayrı yüzdeler ve USD cinsinden sabit çekim ücreti kabul eder. Pozisyon büyüklüğü taşınacak dolar tutarını belirler.`,
+        `İsteğe bağlı alanlar risk değerlendirmesi için transfer süresi (dakika) ve kayma toleransını içerir. Hesaplayıcı net kâr, ROI yüzdesi, başabaş spreadi ve günlük turla hesaplanan yıllık getiri tahmini gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'दो एक्सचेंज पर एक ही एसेट का प्राइस दर्ज करके आर्बिट्राज स्प्रेड, फीस के बाद नेट प्रॉफिट और ROI कैलकुलेट करें। Binance और Coinbase के बीच $200 BTC प्राइस गैप में 0.1% फीस पर $10,000 पोजीशन से ~$180 नेट प्रॉफिट मिलता है।',
+      how: [
+        `आर्बिट्राज कैलकुलेटर विभिन्न एक्सचेंज पर एक ही क्रिप्टोकरेंसी की प्राइस भिन्नता से प्रॉफिट के अवसर पहचानता है। एक एक्सचेंज पर बाय प्राइस और दूसरे पर सेल प्राइस, ट्रेडिंग फीस और ट्रांसफर कॉस्ट के साथ दर्ज करें।`,
+        `असली आर्बिट्राज विंडो सेकंड से मिनट तक चलती हैं। इस कैलकुलेटर का उपयोग अपना मिनिमम प्रॉफिटेबल स्प्रेड निर्धारित करने के लिए करें। ट्रांसफर टाइम का ध्यान रखें: 30 मिनट BTC कन्फर्मेशन में प्राइस गैप ट्रांसफर के दौरान वोलैटिलिटी सहने के लिए पर्याप्त होना चाहिए।`
+      ],
+      inputs: [
+        `दो ज़रूरी प्राइस हैं बाय प्राइस (सस्ता एक्सचेंज) और सेल प्राइस (महंगा एक्सचेंज)। फीस फील्ड हर एक्सचेंज के लिए अलग परसेंटेज और USD में विड्रॉल फीस स्वीकार करता है। पोजीशन साइज़ मूव करने की रकम तय करता है।`,
+        `ऑप्शनल फील्ड में रिस्क असेसमेंट के लिए ट्रांसफर टाइम (मिनट में) और स्लिपेज टॉलरेंस शामिल हैं। कैलकुलेटर नेट प्रॉफिट, ROI परसेंटेज, ब्रेक-ईवन स्प्रेड और एन्युअलाइज्ड रिटर्न एस्टिमेट दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Введите цену одного и того же актива на двух биржах для расчёта арбитражного спреда, чистой прибыли после комиссий и ROI. Разница в $200 по BTC между Binance и Coinbase при комиссиях 0,1% на позицию $10 000 даёт ~$180 чистой прибыли.',
+      how: [
+        `Арбитражный калькулятор выявляет возможности заработка на разнице цен одной криптовалюты на разных биржах. Введите цену покупки на одной бирже и цену продажи на другой вместе с комиссиями и стоимостью перевода, чтобы увидеть чистую прибыль и процент доходности.`,
+        `Реальные арбитражные окна длятся от секунд до минут. Используйте калькулятор для определения минимально прибыльного спреда — ценового разрыва, покрывающего все комиссии. Учитывайте время перевода: 30-минутное подтверждение BTC означает, что разрыв должен быть достаточным, чтобы пережить волатильность за время трансфера.`
+      ],
+      inputs: [
+        `Два обязательных поля — цена покупки (на бирже с низкой ценой) и цена продажи (на бирже с высокой ценой). Поля комиссий принимают отдельные проценты для каждой биржи плюс фиксированную комиссию за вывод в USD. Размер позиции определяет сумму, которую вы переводите.`,
+        `Дополнительные поля: время перевода (в минутах) для оценки рисков и допустимое проскальзывание. Калькулятор выдаёт чистую прибыль, процент ROI, безубыточный спред и оценку годовой доходности при многократных операциях в день.`
+      ],
+    },
+  },
+  'stock-to-flow-calculator': {
+    en: {
+      quickAnswer: 'The Stock-to-Flow model divides existing supply (stock) by annual production (flow) to quantify scarcity. Bitcoin\'s S2F ratio after the 2024 halving is ~120, comparable to gold (~62), projecting higher value as new issuance falls.',
+      how: [
+        `The Stock-to-Flow Calculator applies PlanB's scarcity model to Bitcoin and other hard-cap assets. Enter the total circulating supply and the annual new issuance rate — the calculator computes the S2F ratio, compares it to gold and silver benchmarks, and plots the model's price prediction against the actual market price.`,
+        `S2F quantifies how many years of current production it would take to double the existing supply. Higher ratios mean greater scarcity. After each Bitcoin halving, the flow is cut in half while stock continues to grow, mechanically doubling the ratio. The model has historically tracked BTC's macro price trajectory, though short-term deviations are common and expected.`
+      ],
+      inputs: [
+        `Circulating supply is the total number of tokens currently in existence — for Bitcoin this is approximately 19.85 million as of April 2026. Annual production (flow) is the number of new coins mined per year: at 3.125 BTC per block and ~144 blocks/day, flow is approximately 164,250 BTC/year post-halving.`,
+        `The calculator auto-fills Bitcoin's parameters but allows custom overrides for modeling other scarce assets (e.g., Litecoin, gold). The output includes the raw S2F ratio, the model price derived from the regression formula, the current market price, and the deviation percentage showing whether the asset trades above or below the model prediction.`
+      ],
+    },
+    es: {
+      quickAnswer: 'El modelo Stock-to-Flow divide la oferta existente (stock) entre la producción anual (flujo) para cuantificar la escasez. La ratio S2F de Bitcoin tras el halving de 2024 es ~120, comparable al oro (~62), proyectando mayor valor a medida que cae la emisión.',
+      how: [
+        `La Calculadora Stock-to-Flow aplica el modelo de escasez de PlanB a Bitcoin y otros activos con suministro limitado. Introduce la oferta circulante total y la tasa anual de emisión — la calculadora calcula la ratio S2F, la compara con las referencias de oro y plata, y traza la predicción del modelo frente al precio de mercado real.`,
+        `S2F cuantifica cuántos años de producción actual se necesitarían para duplicar la oferta existente. Ratios más altas significan mayor escasez. Tras cada halving de Bitcoin, el flujo se reduce a la mitad mientras el stock sigue creciendo, duplicando mecánicamente la ratio. El modelo ha seguido históricamente la trayectoria macro del precio de BTC.`
+      ],
+      inputs: [
+        `La oferta circulante es el número total de tokens existentes — para Bitcoin son aproximadamente 19,85 millones a abril de 2026. La producción anual (flujo) es la cantidad de nuevas monedas minadas por año: a 3,125 BTC por bloque y ~144 bloques/día, el flujo es ~164.250 BTC/año tras el halving.`,
+        `La calculadora autocompleta los parámetros de Bitcoin pero permite ajustes personalizados para modelar otros activos escasos (Litecoin, oro). La salida incluye la ratio S2F bruta, el precio del modelo derivado de la regresión, el precio de mercado actual y el porcentaje de desviación.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'O modelo Stock-to-Flow divide a oferta existente (estoque) pela produção anual (fluxo) para quantificar a escassez. A proporção S2F do Bitcoin após o halving de 2024 é ~120, comparável ao ouro (~62), projetando maior valor conforme a emissão diminui.',
+      how: [
+        `A Calculadora Stock-to-Flow aplica o modelo de escassez do PlanB ao Bitcoin e outros ativos com limite fixo. Insira a oferta circulante total e a taxa de emissão anual — a calculadora calcula a proporção S2F, compara com as referências de ouro e prata, e traça a previsão do modelo contra o preço real de mercado.`,
+        `O S2F quantifica quantos anos de produção atual seriam necessários para dobrar a oferta existente. Proporções maiores indicam maior escassez. Após cada halving do Bitcoin, o fluxo cai pela metade enquanto o estoque continua crescendo, dobrando a proporção mecanicamente.`
+      ],
+      inputs: [
+        `A oferta circulante é o número total de tokens existentes — para Bitcoin são aproximadamente 19,85 milhões em abril de 2026. A produção anual (fluxo) é a quantidade de novas moedas mineradas por ano: 3,125 BTC por bloco e ~144 blocos/dia resulta em ~164.250 BTC/ano pós-halving.`,
+        `A calculadora preenche automaticamente os parâmetros do Bitcoin, mas permite ajustes para modelar outros ativos escassos (Litecoin, ouro). A saída inclui a proporção S2F bruta, o preço do modelo derivado da regressão, o preço atual e a porcentagem de desvio.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Stock-to-Flow modeli mevcut arzı (stok) yıllık üretime (akış) bölerek kıtlığı ölçer. Bitcoin\'in 2024 halving sonrası S2F oranı ~120 olup altınla (~62) karşılaştırılabilir düzeydedir ve yeni ihraç azaldıkça daha yüksek değer öngörür.',
+      how: [
+        `Stock-to-Flow Hesaplayıcısı, PlanB'nin kıtlık modelini Bitcoin ve diğer sabit arzlı varlıklara uygular. Toplam dolaşımdaki arzı ve yıllık yeni ihraç oranını girin — hesaplayıcı S2F oranını hesaplar, altın ve gümüş referanslarıyla karşılaştırır ve modelin fiyat tahminini gerçek piyasa fiyatına karşı grafikler.`,
+        `S2F, mevcut arzı ikiye katlamak için kaç yıllık üretim gerektiğini ölçer. Daha yüksek oranlar daha büyük kıtlık anlamına gelir. Her Bitcoin halving'inden sonra akış yarıya inerken stok büyümeye devam eder ve oran mekanik olarak ikiye katlanır.`
+      ],
+      inputs: [
+        `Dolaşımdaki arz, mevcut toplam token sayısıdır — Bitcoin için Nisan 2026 itibarıyla yaklaşık 19,85 milyon. Yıllık üretim (akış), yılda yeni çıkarılan coin sayısıdır: blok başına 3,125 BTC ve günde ~144 blokla halving sonrası akış ~164.250 BTC/yıl.`,
+        `Hesaplayıcı Bitcoin parametrelerini otomatik doldurur ancak diğer kıt varlıkları modellemek için özel ayarlara izin verir. Çıktı ham S2F oranı, regresyon formülünden türetilen model fiyatı, mevcut piyasa fiyatı ve sapma yüzdesini içerir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'Stock-to-Flow मॉडल मौजूदा सप्लाई (स्टॉक) को वार्षिक उत्पादन (फ्लो) से विभाजित करके स्कार्सिटी मापता है। 2024 हॉल्विंग के बाद Bitcoin का S2F रेशियो ~120 है, जो गोल्ड (~62) से तुलनीय है और घटती इश्यूअंस के साथ उच्च वैल्यू प्रोजेक्ट करता है।',
+      how: [
+        `Stock-to-Flow कैलकुलेटर PlanB के स्कार्सिटी मॉडल को Bitcoin और अन्य फिक्स्ड-कैप एसेट पर लागू करता है। टोटल सर्कुलेटिंग सप्लाई और एनुअल न्यू इश्यूअंस रेट दर्ज करें — कैलकुलेटर S2F रेशियो कैलकुलेट करता है, गोल्ड और सिल्वर बेंचमार्क से तुलना करता है और मॉडल की प्राइस प्रिडिक्शन को मार्केट प्राइस के सामने प्लॉट करता है।`,
+        `S2F मापता है कि मौजूदा सप्लाई को दोगुना करने में वर्तमान उत्पादन के कितने साल लगेंगे। ऊंची रेशियो का मतलब अधिक स्कार्सिटी है। हर Bitcoin हॉल्विंग के बाद फ्लो आधा हो जाता है जबकि स्टॉक बढ़ता रहता है, मैकेनिकली रेशियो दोगुनी हो जाती है।`
+      ],
+      inputs: [
+        `सर्कुलेटिंग सप्लाई वर्तमान में मौजूद कुल टोकन संख्या है — Bitcoin के लिए अप्रैल 2026 तक लगभग 19.85 मिलियन। एनुअल प्रोडक्शन (फ्लो) प्रति वर्ष माइन की गई नई कॉइन्स है: 3.125 BTC प्रति ब्लॉक और ~144 ब्लॉक/दिन पर हॉल्विंग बाद ~164,250 BTC/वर्ष।`,
+        `कैलकुलेटर Bitcoin के पैरामीटर ऑटो-फिल करता है लेकिन अन्य स्कार्स एसेट (Litecoin, गोल्ड) मॉडलिंग के लिए कस्टम ओवरराइड की अनुमति देता है। आउटपुट में रॉ S2F रेशियो, रिग्रेशन फॉर्मूला से डिराइव्ड मॉडल प्राइस, करंट मार्केट प्राइस और डेविएशन परसेंटेज शामिल है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Модель Stock-to-Flow делит существующее предложение (запас) на годовое производство (поток) для оценки дефицитности. После халвинга 2024 коэффициент S2F биткоина составляет ~120, сопоставимо с золотом (~62), прогнозируя рост стоимости при снижении эмиссии.',
+      how: [
+        `Калькулятор Stock-to-Flow применяет модель дефицитности PlanB к биткоину и другим активам с фиксированным предложением. Введите общее количество в обращении и годовую ставку эмиссии — калькулятор вычислит коэффициент S2F, сравнит его с эталонами золота и серебра и построит прогноз модели на графике рядом с реальной рыночной ценой.`,
+        `S2F показывает, сколько лет текущего производства потребуется для удвоения существующего предложения. Чем выше коэффициент, тем больше дефицитность. После каждого халвинга поток сокращается вдвое, а запас продолжает расти, механически удваивая коэффициент.`
+      ],
+      inputs: [
+        `Циркулирующее предложение — общее число существующих токенов: для биткоина это примерно 19,85 млн по состоянию на апрель 2026 года. Годовое производство (поток) — количество новых монет в год: при 3,125 BTC за блок и ~144 блоках в сутки поток после халвинга составляет ~164 250 BTC/год.`,
+        `Калькулятор автоматически заполняет параметры биткоина, но допускает настройку для моделирования других дефицитных активов (Litecoin, золото). Результат включает коэффициент S2F, модельную цену по регрессии, текущую рыночную цену и процент отклонения.`
+      ],
+    },
+  },
+  'options-calculator': {
+    en: {
+      quickAnswer: 'Price crypto options using the Black-Scholes model. Enter strike price, spot price, time to expiry, volatility, and risk-free rate to get theoretical call/put premiums, Greeks (delta, gamma, theta, vega), and break-even levels.',
+      how: [
+        `The Options Calculator prices cryptocurrency call and put options using the Black-Scholes-Merton framework adapted for crypto markets. Enter the current spot price, strike price, days to expiration, implied volatility, and risk-free rate — the calculator returns theoretical premiums, all five Greeks, and break-even prices for both directions.`,
+        `Use it to evaluate whether a Deribit or OKX option is overpriced or underpriced relative to the model. Compare the model's implied volatility to the market-quoted IV to spot mispricing. Run scenarios with different expiry dates and strike prices to construct spreads (bull call, bear put, straddle) and see the combined P&L profile before committing capital.`
+      ],
+      inputs: [
+        `Spot price is the current market price of the underlying asset (e.g., BTC at $77,000). Strike price is the level at which the option can be exercised. Days to expiration accepts any value from 1 to 365+. Implied volatility should be entered as a percentage — BTC's 30-day IV typically ranges from 40% to 90%.`,
+        `The risk-free rate defaults to the current US Treasury yield (~4.3%) but can be adjusted. The output shows call premium, put premium, and all five Greeks: delta (directional exposure), gamma (delta's rate of change), theta (daily time decay), vega (sensitivity to IV changes), and rho (interest rate sensitivity).`
+      ],
+    },
+    es: {
+      quickAnswer: 'Calcula el precio de opciones cripto con el modelo Black-Scholes. Introduce precio de ejercicio, precio spot, tiempo hasta el vencimiento, volatilidad y tasa libre de riesgo para obtener primas teóricas call/put, Griegas y niveles de equilibrio.',
+      how: [
+        `La Calculadora de Opciones valora opciones call y put de criptomonedas usando el marco Black-Scholes-Merton adaptado a mercados cripto. Introduce el precio spot actual, el precio de ejercicio, los días hasta el vencimiento, la volatilidad implícita y la tasa libre de riesgo — devuelve las primas teóricas, las cinco Griegas y los precios de equilibrio.`,
+        `Úsala para evaluar si una opción en Deribit u OKX está sobrevalorada o infravalorada respecto al modelo. Compara la volatilidad implícita del modelo con la cotizada para detectar discrepancias. Ejecuta escenarios con distintas fechas y strikes para construir spreads y ver el perfil de P&L combinado.`
+      ],
+      inputs: [
+        `El precio spot es el precio de mercado actual del activo subyacente (BTC a $77.000). El precio de ejercicio es el nivel al que se puede ejercer la opción. Los días hasta el vencimiento aceptan valores de 1 a 365+. La volatilidad implícita se introduce como porcentaje — la IV de 30 días de BTC varía típicamente entre 40% y 90%.`,
+        `La tasa libre de riesgo se establece por defecto en el rendimiento del Tesoro de EE.UU. (~4,3%) pero puede ajustarse. La salida muestra prima del call, prima del put y las cinco Griegas: delta, gamma, theta, vega y rho.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Precifique opções cripto usando o modelo Black-Scholes. Insira preço de exercício, preço spot, tempo até o vencimento, volatilidade e taxa livre de risco para obter prêmios teóricos call/put, Gregas e níveis de equilíbrio.',
+      how: [
+        `A Calculadora de Opções precifica opções call e put de criptomoedas usando o modelo Black-Scholes-Merton adaptado para mercados cripto. Insira o preço spot atual, preço de exercício, dias até o vencimento, volatilidade implícita e taxa livre de risco — a calculadora retorna prêmios teóricos, as cinco Gregas e preços de equilíbrio.`,
+        `Use-a para avaliar se uma opção na Deribit ou OKX está sobrevalorizada ou subvalorizada em relação ao modelo. Compare a volatilidade implícita do modelo com a cotada no mercado. Execute cenários com diferentes datas e strikes para construir spreads e ver o perfil de P&L combinado.`
+      ],
+      inputs: [
+        `O preço spot é o preço atual de mercado do ativo subjacente (BTC a $77.000). O preço de exercício é o nível em que a opção pode ser exercida. Dias até o vencimento aceita valores de 1 a 365+. A volatilidade implícita deve ser inserida como porcentagem — a IV de 30 dias do BTC varia tipicamente entre 40% e 90%.`,
+        `A taxa livre de risco é definida como o rendimento do Tesouro dos EUA (~4,3%), mas pode ser ajustada. A saída mostra prêmio do call, prêmio do put e as cinco Gregas: delta, gamma, theta, vega e rho.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Black-Scholes modeli ile kripto opsiyonlarını fiyatlayın. Kullanım fiyatı, spot fiyat, vadeye kalan süre, oynaklık ve risksiz oran girerek teorik call/put primleri, Yunancalar ve başabaş seviyeleri elde edin.',
+      how: [
+        `Opsiyon Hesaplayıcısı, kripto piyasalarına uyarlanmış Black-Scholes-Merton çerçevesi kullanarak call ve put opsiyonlarını fiyatlar. Mevcut spot fiyatı, kullanım fiyatını, vadeye kalan gün sayısını, zımni oynaklığı ve risksiz oranı girin — teorik primler, beş Yunanca ve başabaş fiyatları hesaplanır.`,
+        `Deribit veya OKX'teki bir opsiyonun modele göre pahalı mı ucuz mu olduğunu değerlendirmek için kullanın. Modelin zımni oynaklığını piyasa kotasyonuyla karşılaştırarak yanlış fiyatlandırmayı tespit edin. Farklı vadeler ve kullanım fiyatlarıyla senaryolar çalıştırarak spreadler oluşturun.`
+      ],
+      inputs: [
+        `Spot fiyat, dayanak varlığın mevcut piyasa fiyatıdır (ör. BTC $77.000). Kullanım fiyatı, opsiyonun uygulanabileceği seviyedir. Vadeye kalan gün 1 ile 365+ arasında değer kabul eder. Zımni oynaklık yüzde olarak girilir — BTC'nin 30 günlük IV'si genellikle %40 ile %90 arasındadır.`,
+        `Risksiz oran varsayılan olarak ABD Hazine getirisi (~%4,3) kullanılır ancak değiştirilebilir. Çıktı: call primi, put primi ve beş Yunanca: delta, gamma, theta, vega ve rho gösterilir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'Black-Scholes मॉडल का उपयोग करके क्रिप्टो ऑप्शन की कीमत निकालें। स्ट्राइक प्राइस, स्पॉट प्राइस, एक्सपायरी तक समय, वोलैटिलिटी और रिस्क-फ्री रेट दर्ज करें और थ्योरेटिकल call/put प्रीमियम, ग्रीक्स और ब्रेक-ईवन लेवल पाएं।',
+      how: [
+        `ऑप्शन कैलकुलेटर क्रिप्टो मार्केट के लिए अनुकूलित Black-Scholes-Merton फ्रेमवर्क का उपयोग करके क्रिप्टोकरेंसी call और put ऑप्शन की कीमत निकालता है। करंट स्पॉट प्राइस, स्ट्राइक प्राइस, एक्सपायरी तक दिन, इम्प्लाइड वोलैटिलिटी और रिस्क-फ्री रेट दर्ज करें।`,
+        `Deribit या OKX पर कोई ऑप्शन मॉडल की तुलना में ओवरप्राइस्ड है या अंडरप्राइस्ड, यह मूल्यांकन करने के लिए उपयोग करें। मॉडल की इम्प्लाइड वोलैटिलिटी की मार्केट IV से तुलना करके गलत प्राइसिंग पहचानें। अलग-अलग एक्सपायरी और स्ट्राइक से स्प्रेड बनाएं।`
+      ],
+      inputs: [
+        `स्पॉट प्राइस अंडरलाइंग एसेट का करंट मार्केट प्राइस है (जैसे BTC $77,000)। स्ट्राइक प्राइस वह लेवल है जिस पर ऑप्शन एक्सरसाइज किया जा सकता है। एक्सपायरी तक दिन 1 से 365+ कोई भी वैल्यू स्वीकार करता है। इम्प्लाइड वोलैटिलिटी परसेंटेज में दर्ज करें — BTC की 30-दिन IV 40% से 90% के बीच होती है।`,
+        `रिस्क-फ्री रेट US ट्रेजरी यील्ड (~4.3%) पर डिफॉल्ट है लेकिन बदला जा सकता है। आउटपुट call प्रीमियम, put प्रीमियम और पांच ग्रीक्स दिखाता है: delta, gamma, theta, vega और rho।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Оцените криптоопционы по модели Блэка-Шоулза. Введите цену страйка, спот-цену, срок до экспирации, волатильность и безрисковую ставку для получения теоретических премий call/put, греков и уровней безубыточности.',
+      how: [
+        `Опционный калькулятор рассчитывает стоимость криптовалютных call- и put-опционов по модели Блэка-Шоулза-Мертона, адаптированной для крипторынков. Введите текущую спот-цену, цену страйка, дни до экспирации, подразумеваемую волатильность и безрисковую ставку — калькулятор вернёт теоретические премии, все пять греков и цены безубыточности.`,
+        `Используйте для оценки, завышена ли цена опциона на Deribit или OKX относительно модели. Сравните подразумеваемую волатильность модели с рыночной для выявления неправильной оценки. Стройте спреды (бычий колл, медвежий пут, стрэддл) с разными экспирациями и страйками.`
+      ],
+      inputs: [
+        `Спот-цена — текущая рыночная цена базового актива (напр., BTC по $77 000). Цена страйка — уровень исполнения опциона. Дни до экспирации — от 1 до 365+. Подразумеваемая волатильность вводится в процентах — 30-дневная IV биткоина обычно в диапазоне 40–90%.`,
+        `Безрисковая ставка по умолчанию равна доходности казначейских облигаций США (~4,3%), но может быть изменена. Результат: премии call и put, а также пять греков: дельта, гамма, тета, вега и ро.`
+      ],
+    },
+  },
+  'tax-loss-harvesting-calculator': {
+    en: {
+      quickAnswer: 'Estimate tax savings by strategically selling crypto at a loss to offset gains. If you have $15,000 in realized gains and harvest $8,000 in losses, you reduce taxable income by $8,000 — saving $1,760–$2,960 depending on your tax bracket.',
+      how: [
+        `The Tax-Loss Harvesting Calculator quantifies how much you can save on taxes by selling underperforming crypto positions at a loss to offset realized gains. Enter your total capital gains, unrealized losses across your portfolio, and your tax bracket — the tool calculates the net taxable gain, estimated tax saved, and the excess loss you can carry forward to future years.`,
+        `In the US, you can deduct crypto losses against capital gains dollar-for-dollar, plus up to $3,000 against ordinary income annually. The calculator models both scenarios: offsetting short-term gains (taxed at up to 37%) and long-term gains (taxed at 15–20%). Unlike stocks, crypto is not subject to the wash-sale rule in most jurisdictions as of 2026, so you can repurchase the same token immediately after harvesting.`
+      ],
+      inputs: [
+        `Enter your realized capital gains for the tax year (both short-term and long-term if you want separate calculations). Then list your unrealized losses — positions currently underwater that you could sell to generate deductible losses. Your marginal tax bracket determines the actual dollar savings.`,
+        `Optional fields include state tax rate (for combined federal + state savings), carry-forward losses from prior years, and the $3,000 ordinary income deduction cap. The output shows total tax saved, effective tax rate reduction, and a year-over-year carry-forward schedule if losses exceed gains.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Estima el ahorro fiscal vendiendo cripto en pérdida para compensar ganancias. Con $15.000 en ganancias y $8.000 en pérdidas cosechadas, reduces la renta gravable en $8.000 — ahorrando $1.760–$2.960 según tu tramo impositivo.',
+      how: [
+        `La Calculadora de Cosecha de Pérdidas Fiscales cuantifica cuánto puedes ahorrar en impuestos vendiendo posiciones cripto en pérdida para compensar ganancias realizadas. Introduce tus ganancias de capital totales, pérdidas no realizadas en tu cartera y tu tramo impositivo — la herramienta calcula la ganancia neta gravable, el impuesto estimado ahorrado y el exceso de pérdida trasladable a años futuros.`,
+        `En EE.UU., puedes deducir pérdidas cripto contra ganancias de capital dólar por dólar, más hasta $3.000 contra ingresos ordinarios anualmente. La calculadora modela ambos escenarios: compensar ganancias a corto plazo (gravadas hasta el 37%) y a largo plazo (15–20%). A diferencia de las acciones, las cripto no están sujetas a la regla de "wash-sale" en la mayoría de jurisdicciones.`
+      ],
+      inputs: [
+        `Introduce tus ganancias de capital realizadas del año fiscal (corto y largo plazo). Luego lista tus pérdidas no realizadas — posiciones en negativo que podrías vender. Tu tramo impositivo marginal determina el ahorro real en dólares.`,
+        `Los campos opcionales incluyen tasa impositiva estatal, pérdidas arrastradas de años anteriores y el límite de deducción de $3.000 contra ingresos ordinarios. La salida muestra el impuesto total ahorrado, reducción de tasa efectiva y un calendario de arrastre año a año.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Estime a economia fiscal vendendo cripto em prejuízo para compensar ganhos. Com $15.000 em ganhos e $8.000 em perdas colhidas, você reduz a renda tributável em $8.000 — economizando $1.760–$2.960 dependendo da faixa de imposto.',
+      how: [
+        `A Calculadora de Colheita de Prejuízos Fiscais quantifica quanto você pode economizar em impostos vendendo posições cripto em prejuízo para compensar ganhos realizados. Insira seus ganhos de capital totais, perdas não realizadas no portfólio e sua faixa de imposto — a ferramenta calcula o ganho líquido tributável, o imposto estimado economizado e a perda excedente para compensação futura.`,
+        `Nos EUA, você pode deduzir perdas cripto contra ganhos de capital dólar por dólar, mais até $3.000 contra renda ordinária anualmente. A calculadora modela ambos os cenários: compensar ganhos de curto prazo (tributados em até 37%) e de longo prazo (15–20%). Diferente de ações, cripto não está sujeito à regra wash-sale na maioria das jurisdições.`
+      ],
+      inputs: [
+        `Insira seus ganhos de capital realizados do ano fiscal (curto e longo prazo). Depois liste suas perdas não realizadas — posições em prejuízo que você poderia vender. Sua faixa de imposto marginal determina a economia real em dólares.`,
+        `Campos opcionais incluem alíquota de imposto estadual, perdas acumuladas de anos anteriores e o limite de dedução de $3.000 contra renda ordinária. A saída mostra imposto total economizado, redução da alíquota efetiva e cronograma de compensação futuro.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Kazançları dengelemek için zararına kripto satarak vergi tasarrufunu hesaplayın. $15.000 kazancınız ve $8.000 hasat edilen kaybınız varsa vergilendirilebilir geliri $8.000 azaltırsınız — vergi diliminize göre $1.760–$2.960 tasarruf sağlarsınız.',
+      how: [
+        `Vergi Kaybı Hasat Hesaplayıcısı, düşük performanslı kripto pozisyonlarını zararına satarak gerçekleşmiş kazançları dengelemekle ne kadar vergi tasarrufu sağlayabileceğinizi ölçer. Toplam sermaye kazançlarınızı, portföyünüzdeki gerçekleşmemiş kayıplarınızı ve vergi diliminizi girin — net vergilendirilebilir kazancı, tahmini vergi tasarrufunu ve gelecek yıllara taşınabilecek fazla kaybı hesaplar.`,
+        `ABD'de kripto kayıplarını sermaye kazançlarına birebir, artı yıllık $3.000'a kadar olağan gelire karşı düşebilirsiniz. Hesaplayıcı her iki senaryoyu modeller: kısa vadeli kazançları (%37'ye kadar vergilenen) ve uzun vadeli kazançları (%15–20) dengeleme. Hisse senetlerinin aksine kripto çoğu yargı alanında wash-sale kuralına tabi değildir.`
+      ],
+      inputs: [
+        `Vergi yılı için gerçekleşmiş sermaye kazançlarınızı girin (kısa ve uzun vadeli). Ardından gerçekleşmemiş kayıplarınızı listeleyin — düşüşe geçmiş satılabilecek pozisyonlar. Marjinal vergi diliminiz gerçek dolar tasarrufunu belirler.`,
+        `İsteğe bağlı alanlar eyalet vergi oranı, önceki yıllardan devreden kayıplar ve $3.000 olağan gelir kesintisi limitini içerir. Çıktı toplam vergi tasarrufu, efektif vergi oranı düşüşü ve yıllık devir takvimini gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'गेन्स ऑफसेट करने के लिए रणनीतिक रूप से लॉस पर क्रिप्टो बेचकर टैक्स बचत का अनुमान लगाएं। $15,000 रियलाइज्ड गेन्स और $8,000 हार्वेस्ट किए लॉस पर टैक्सेबल इनकम $8,000 कम होती है — टैक्स ब्रैकेट के अनुसार $1,760–$2,960 की बचत।',
+      how: [
+        `टैक्स-लॉस हार्वेस्टिंग कैलकुलेटर अंडरपरफॉर्मिंग क्रिप्टो पोजीशन को लॉस पर बेचकर रियलाइज्ड गेन्स ऑफसेट करने से होने वाली टैक्स बचत बताता है। अपने टोटल कैपिटल गेन्स, पोर्टफोलियो में अनरियलाइज्ड लॉसेज और टैक्स ब्रैकेट दर्ज करें — टूल नेट टैक्सेबल गेन, एस्टिमेटेड टैक्स सेव्ड और कैरी-फॉरवर्ड लॉस कैलकुलेट करता है।`,
+        `US में आप क्रिप्टो लॉसेज को कैपिटल गेन्स के खिलाफ डॉलर-फॉर-डॉलर और ऑर्डिनरी इनकम के खिलाफ सालाना $3,000 तक डिडक्ट कर सकते हैं। कैलकुलेटर दोनों सीनारियो मॉडल करता है: शॉर्ट-टर्म गेन्स (37% तक) और लॉन्ग-टर्म गेन्स (15–20%)। स्टॉक्स के विपरीत, अधिकांश न्यायक्षेत्रों में क्रिप्टो पर वॉश-सेल रूल लागू नहीं होता।`
+      ],
+      inputs: [
+        `टैक्स ईयर के लिए रियलाइज्ड कैपिटल गेन्स दर्ज करें (शॉर्ट-टर्म और लॉन्ग-टर्म)। फिर अनरियलाइज्ड लॉसेज लिस्ट करें — वे पोजीशन जो अभी लॉस में हैं और बेची जा सकती हैं। आपका मार्जिनल टैक्स ब्रैकेट वास्तविक डॉलर सेविंग निर्धारित करता है।`,
+        `ऑप्शनल फील्ड में स्टेट टैक्स रेट, पिछले सालों से कैरी-फॉरवर्ड लॉसेज और $3,000 ऑर्डिनरी इनकम डिडक्शन कैप शामिल हैं। आउटपुट टोटल टैक्स सेव्ड, इफेक्टिव टैक्स रेट रिडक्शन और ईयर-ओवर-ईयर कैरी-फॉरवर्ड शेड्यूल दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Оцените налоговую экономию за счёт стратегической продажи криптовалюты в убыток для зачёта прибыли. При $15 000 прибыли и $8 000 зафиксированных убытков налогооблагаемый доход снижается на $8 000 — экономия $1 760–$2 960 в зависимости от ставки.',
+      how: [
+        `Калькулятор сбора налоговых убытков показывает, сколько можно сэкономить на налогах, продавая убыточные криптопозиции для зачёта реализованной прибыли. Введите общий прирост капитала, нереализованные убытки по портфелю и налоговую ставку — инструмент рассчитает чистый налогооблагаемый доход, экономию на налогах и перенос убытков на будущие годы.`,
+        `В США криптоубытки можно вычитать из прироста капитала доллар за доллар, плюс до $3 000 из обычного дохода ежегодно. Калькулятор моделирует оба сценария: зачёт краткосрочной прибыли (до 37%) и долгосрочной (15–20%). В отличие от акций, криптовалюта в большинстве юрисдикций не подпадает под правило wash-sale.`
+      ],
+      inputs: [
+        `Введите реализованный прирост капитала за налоговый год (краткосрочный и долгосрочный). Затем перечислите нереализованные убытки — позиции в минусе, которые можно продать. Ваша маржинальная налоговая ставка определяет фактическую экономию в долларах.`,
+        `Дополнительные поля: ставка налога штата, убытки, перенесённые из предыдущих лет, и лимит вычета $3 000 из обычного дохода. Результат: общая экономия на налогах, снижение эффективной ставки и график переноса убытков по годам.`
+      ],
+    },
+  },
+  'restaking-calculator': {
+    en: {
+      quickAnswer: 'Estimate additional yield from restaking ETH through EigenLayer or similar protocols. Restaking 32 ETH earning 3.5% base staking plus 2–6% restaking rewards can compound to 6–10% total APY, with added slashing risk.',
+      how: [
+        `The Restaking Calculator models the additional yield earned by re-deploying staked ETH to secure other protocols via restaking layers like EigenLayer. Enter your staked ETH amount and the base staking APY, then add the restaking protocol's reward rate — the tool computes total combined yield, compounded returns over your chosen time horizon, and a risk-adjusted comparison against plain staking.`,
+        `Restaking amplifies rewards but introduces compounding slashing risk: your ETH secures both Ethereum's consensus layer and one or more Actively Validated Services (AVS). The calculator displays the worst-case loss scenario alongside the projected gains, helping you decide whether the extra 2–6% yield justifies the added smart contract and operator risk.`
+      ],
+      inputs: [
+        `The ETH amount field accepts any quantity, though validator economics assume 32 ETH minimums for native staking. Base staking APY (currently ~3.5% on Ethereum) reflects the consensus layer reward. The restaking reward rate varies by AVS and operator — check your restaking dashboard for the current figure.`,
+        `Time horizon (in months or years) controls the compounding projection. The slashing risk toggle models a configurable percentage loss if a slashing event occurs. The output shows total yield in ETH and USD, effective APY, and a side-by-side comparison of restaking vs. plain staking vs. liquid staking alternatives.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Estima el rendimiento adicional del restaking de ETH a través de EigenLayer o protocolos similares. Restakear 32 ETH con 3,5% de staking base más 2–6% de recompensas de restaking puede generar un APY total de 6–10%, con riesgo de slashing adicional.',
+      how: [
+        `La Calculadora de Restaking modela el rendimiento adicional obtenido al redistribuir ETH stakeado para asegurar otros protocolos a través de capas como EigenLayer. Introduce tu cantidad de ETH stakeado y el APY de staking base, luego añade la tasa de recompensa del protocolo de restaking — la herramienta calcula el rendimiento total combinado y la comparación ajustada por riesgo.`,
+        `El restaking amplifica las recompensas pero introduce riesgo de slashing compuesto: tu ETH asegura tanto la capa de consenso de Ethereum como uno o más Servicios Activamente Validados (AVS). La calculadora muestra el peor escenario de pérdida junto con las ganancias proyectadas.`
+      ],
+      inputs: [
+        `El campo de cantidad de ETH acepta cualquier valor, aunque las 32 ETH mínimas del validador aplican para staking nativo. El APY de staking base (~3,5% actualmente) refleja la recompensa de la capa de consenso. La tasa de restaking varía por AVS y operador.`,
+        `El horizonte temporal (en meses o años) controla la proyección compuesta. El interruptor de riesgo de slashing modela un porcentaje configurable de pérdida. La salida muestra rendimiento total en ETH y USD, APY efectivo y comparación lado a lado de restaking vs. staking tradicional.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Estime o rendimento adicional do restaking de ETH via EigenLayer ou protocolos similares. Restaking de 32 ETH com 3,5% de staking base mais 2–6% de recompensas pode render 6–10% APY total, com risco adicional de slashing.',
+      how: [
+        `A Calculadora de Restaking modela o rendimento adicional obtido ao reimplantar ETH em stake para proteger outros protocolos via camadas como EigenLayer. Insira sua quantidade de ETH em stake e o APY base, depois adicione a taxa de recompensa do protocolo de restaking — a ferramenta calcula o rendimento combinado total e comparação ajustada ao risco.`,
+        `O restaking amplifica as recompensas, mas introduz risco composto de slashing: seu ETH protege tanto a camada de consenso do Ethereum quanto um ou mais Serviços Ativamente Validados (AVS). A calculadora exibe o cenário de perda máxima ao lado dos ganhos projetados.`
+      ],
+      inputs: [
+        `O campo de quantidade de ETH aceita qualquer valor, embora a economia de validador assuma mínimo de 32 ETH para staking nativo. O APY base (~3,5% atualmente) reflete a recompensa da camada de consenso. A taxa de restaking varia por AVS e operador.`,
+        `O horizonte temporal (em meses ou anos) controla a projeção composta. O toggle de risco de slashing modela uma porcentagem configurável de perda. A saída mostra rendimento total em ETH e USD, APY efetivo e comparação lado a lado entre restaking, staking simples e liquid staking.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'EigenLayer veya benzeri protokoller aracılığıyla ETH restaking\'den elde edilecek ek getiriyi tahmin edin. 32 ETH\'yi %3,5 temel staking artı %2–6 restaking ödülleriyle restake etmek, ek slashing riskiyle birlikte toplam %6–10 APY\'ye ulaşabilir.',
+      how: [
+        `Restaking Hesaplayıcısı, stake edilmiş ETH'yi EigenLayer gibi katmanlar aracılığıyla diğer protokolleri güvence altına almak için yeniden dağıtarak kazanılan ek getiriyi modeller. Stake edilmiş ETH miktarınızı ve temel staking APY'sini girin, ardından restaking protokolünün ödül oranını ekleyin — toplam birleşik getiri ve riske göre ayarlanmış karşılaştırma hesaplanır.`,
+        `Restaking ödülleri artırır ancak bileşik slashing riski getirir: ETH'niz hem Ethereum konsensüs katmanını hem de Aktif Olarak Doğrulanmış Hizmetleri (AVS) güvence altına alır. Hesaplayıcı en kötü senaryo kayıplarını öngörülen kazançlarla birlikte gösterir.`
+      ],
+      inputs: [
+        `ETH miktarı alanı herhangi bir değer kabul eder, ancak doğrulayıcı ekonomisi yerel staking için 32 ETH minimum varsayar. Temel staking APY'si (şu anda ~%3,5) konsensüs katmanı ödülünü yansıtır. Restaking ödül oranı AVS ve operatöre göre değişir.`,
+        `Zaman ufku (ay veya yıl) bileşik projeksiyonu kontrol eder. Slashing riski düğmesi yapılandırılabilir bir kayıp yüzdesini modeller. Çıktı ETH ve USD cinsinden toplam getiri, efektif APY ve restaking vs. sade staking vs. likit staking karşılaştırması gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'EigenLayer या समान प्रोटोकॉल के माध्यम से ETH रीस्टेकिंग से अतिरिक्त यील्ड का अनुमान लगाएं। 32 ETH को 3.5% बेस स्टेकिंग और 2–6% रीस्टेकिंग रिवॉर्ड के साथ रीस्टेक करने पर कुल 6–10% APY मिल सकता है, अतिरिक्त स्लैशिंग रिस्क के साथ।',
+      how: [
+        `रीस्टेकिंग कैलकुलेटर EigenLayer जैसी लेयर्स के माध्यम से स्टेक किए गए ETH को अन्य प्रोटोकॉल सुरक्षित करने के लिए री-डिप्लॉय करके अर्जित अतिरिक्त यील्ड मॉडल करता है। अपनी स्टेक्ड ETH मात्रा और बेस स्टेकिंग APY दर्ज करें, फिर रीस्टेकिंग प्रोटोकॉल का रिवॉर्ड रेट जोड़ें।`,
+        `रीस्टेकिंग रिवॉर्ड बढ़ाता है लेकिन कंपाउंडिंग स्लैशिंग रिस्क जोड़ता है: आपका ETH Ethereum की कंसेंसस लेयर और एक या अधिक Actively Validated Services (AVS) दोनों को सुरक्षित करता है। कैलकुलेटर वर्स्ट-केस लॉस सीनारियो प्रोजेक्टेड गेन्स के साथ दिखाता है।`
+      ],
+      inputs: [
+        `ETH अमाउंट फील्ड कोई भी मात्रा स्वीकार करता है, हालांकि वैलिडेटर इकोनॉमिक्स नेटिव स्टेकिंग के लिए 32 ETH मिनिमम मानता है। बेस स्टेकिंग APY (वर्तमान में ~3.5%) कंसेंसस लेयर रिवॉर्ड दर्शाता है। रीस्टेकिंग रिवॉर्ड रेट AVS और ऑपरेटर के अनुसार बदलता है।`,
+        `टाइम हॉराइजन (महीनों या वर्षों में) कंपाउंडिंग प्रोजेक्शन कंट्रोल करता है। स्लैशिंग रिस्क टॉगल कॉन्फिगरेबल लॉस परसेंटेज मॉडल करता है। आउटपुट ETH और USD में टोटल यील्ड, इफेक्टिव APY और रीस्टेकिंग vs. प्लेन स्टेकिंग तुलना दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Оцените дополнительную доходность от рестейкинга ETH через EigenLayer или аналогичные протоколы. Рестейкинг 32 ETH с базовой ставкой 3,5% плюс 2–6% вознаграждения за рестейкинг может дать 6–10% APY с повышенным риском слешинга.',
+      how: [
+        `Калькулятор рестейкинга моделирует дополнительную доходность от повторного размещения застейканных ETH для обеспечения безопасности других протоколов через рестейкинг-слои вроде EigenLayer. Введите количество ETH в стейкинге и базовую APY, затем добавьте ставку вознаграждения протокола рестейкинга — инструмент рассчитает совокупную доходность и сравнение с поправкой на риск.`,
+        `Рестейкинг увеличивает вознаграждение, но вводит составной риск слешинга: ваши ETH обеспечивают и консенсусный слой Ethereum, и один или несколько активно валидируемых сервисов (AVS). Калькулятор показывает сценарий максимальных потерь наряду с прогнозируемой прибылью.`
+      ],
+      inputs: [
+        `Поле суммы ETH принимает любое количество, хотя экономика валидатора подразумевает минимум 32 ETH для нативного стейкинга. Базовая APY (~3,5% на Ethereum) отражает вознаграждение консенсусного слоя. Ставка рестейкинга зависит от AVS и оператора.`,
+        `Горизонт времени (в месяцах или годах) управляет прогнозом сложных процентов. Переключатель риска слешинга моделирует настраиваемый процент потерь. Результат: общая доходность в ETH и USD, эффективная APY и сравнение рестейкинга с обычным стейкингом и ликвидным стейкингом.`
+      ],
+    },
+  },
+  'liquid-staking-calculator': {
+    en: {
+      quickAnswer: 'Compare liquid staking yields across Lido (stETH), Rocket Pool (rETH), and Coinbase (cbETH). Staking 10 ETH via Lido at 3.4% APY earns ~0.34 ETH/year while keeping your capital liquid through the LST derivative token.',
+      how: [
+        `The Liquid Staking Calculator compares yields and fee structures across major liquid staking protocols. Enter your ETH amount and select a protocol — the tool shows the net APY after protocol fees, your projected annual rewards in ETH, the current LST exchange rate, and the effective cost of using liquid staking versus running your own validator.`,
+        `Liquid staking tokens (LSTs) like stETH represent your staked position while remaining transferable and usable in DeFi. The calculator helps you evaluate the opportunity cost: you earn staking rewards while simultaneously providing liquidity on Curve/Uniswap or depositing into lending protocols like Aave, effectively stacking yield on top of yield.`
+      ],
+      inputs: [
+        `The ETH amount is the quantity you want to stake. Protocol selection (Lido, Rocket Pool, Coinbase, etc.) determines the fee rate and current APY. Each protocol takes a different cut: Lido charges 10% of rewards, Rocket Pool takes 5–20% depending on node operator terms.`,
+        `Optional DeFi yield inputs let you model combined strategies — e.g., staking via Lido (3.4% APY) then depositing stETH into Aave (additional ~1–2% supply APY). The output shows gross rewards, protocol fees, net rewards, and total combined APY across your stacked strategy.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Compara rendimientos de liquid staking entre Lido (stETH), Rocket Pool (rETH) y Coinbase (cbETH). Stakear 10 ETH vía Lido al 3,4% APY genera ~0,34 ETH/año manteniendo tu capital líquido a través del token derivado LST.',
+      how: [
+        `La Calculadora de Liquid Staking compara rendimientos y estructuras de comisiones entre los principales protocolos. Introduce tu cantidad de ETH y selecciona un protocolo — la herramienta muestra el APY neto tras comisiones, tus recompensas anuales proyectadas, la tasa de cambio actual del LST y el costo efectivo frente a operar tu propio validador.`,
+        `Los tokens de liquid staking (LSTs) como stETH representan tu posición stakeada y pueden usarse en DeFi. La calculadora evalúa el costo de oportunidad: ganas recompensas de staking mientras proporcionas liquidez en Curve/Uniswap o depositas en protocolos de préstamo como Aave.`
+      ],
+      inputs: [
+        `La cantidad de ETH es lo que deseas stakear. La selección de protocolo (Lido, Rocket Pool, Coinbase) determina la tasa de comisión y el APY actual. Lido cobra el 10% de las recompensas, Rocket Pool el 5–20% según el operador del nodo.`,
+        `Los campos opcionales de rendimiento DeFi permiten modelar estrategias combinadas — staking vía Lido (3,4% APY) y depositar stETH en Aave (1–2% APY adicional). La salida muestra recompensas brutas, comisiones, recompensas netas y APY total combinado.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Compare rendimentos de liquid staking entre Lido (stETH), Rocket Pool (rETH) e Coinbase (cbETH). Fazer staking de 10 ETH via Lido a 3,4% APY gera ~0,34 ETH/ano mantendo seu capital líquido através do token derivado LST.',
+      how: [
+        `A Calculadora de Liquid Staking compara rendimentos e estruturas de taxas entre os principais protocolos. Insira sua quantidade de ETH e selecione um protocolo — a ferramenta mostra o APY líquido após taxas, recompensas anuais projetadas, a taxa de câmbio atual do LST e o custo efetivo versus operar seu próprio validador.`,
+        `Tokens de liquid staking (LSTs) como stETH representam sua posição em stake enquanto permanecem transferíveis e utilizáveis em DeFi. A calculadora avalia o custo de oportunidade: você ganha recompensas de staking enquanto fornece liquidez no Curve/Uniswap ou deposita em protocolos de empréstimo como Aave.`
+      ],
+      inputs: [
+        `A quantidade de ETH é o que você deseja fazer staking. A seleção do protocolo (Lido, Rocket Pool, Coinbase) determina a taxa de comissão e APY atual. Lido cobra 10% das recompensas, Rocket Pool cobra 5–20% dependendo do operador.`,
+        `Campos opcionais de rendimento DeFi permitem modelar estratégias combinadas — staking via Lido (3,4% APY) e depositar stETH no Aave (1–2% APY adicional). A saída mostra recompensas brutas, taxas, recompensas líquidas e APY total combinado.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Lido (stETH), Rocket Pool (rETH) ve Coinbase (cbETH) arasında likit staking getirilerini karşılaştırın. 10 ETH\'yi Lido üzerinden %3,4 APY ile stake etmek, LST türev token ile sermayenizi likit tutarken yılda ~0,34 ETH kazandırır.',
+      how: [
+        `Likit Staking Hesaplayıcısı, büyük likit staking protokolleri arasında getirileri ve ücret yapılarını karşılaştırır. ETH miktarınızı girin ve bir protokol seçin — araç, ücretler sonrası net APY'yi, yıllık öngörülen ödülleri, mevcut LST döviz kurunu ve kendi doğrulayıcınızı çalıştırmaya kıyasla etkin maliyeti gösterir.`,
+        `stETH gibi likit staking tokenleri (LST'ler), stake pozisyonunuzu temsil ederken DeFi'de transfer edilebilir ve kullanılabilir kalır. Hesaplayıcı fırsat maliyetini değerlendirmenize yardımcı olur: staking ödülleri kazanırken aynı anda Curve/Uniswap'ta likidite sağlayabilir veya Aave gibi borç verme protokollerine yatırabilirsiniz.`
+      ],
+      inputs: [
+        `ETH miktarı stake etmek istediğiniz tutardır. Protokol seçimi (Lido, Rocket Pool, Coinbase) ücret oranını ve mevcut APY'yi belirler. Lido ödüllerin %10'unu, Rocket Pool operatöre bağlı olarak %5–20'sini alır.`,
+        `İsteğe bağlı DeFi getiri alanları birleşik stratejileri modellemenize olanak tanır — ör. Lido'da staking (%3,4 APY) sonra stETH'yi Aave'ye yatırma (ek ~%1–2 APY). Çıktı brüt ödüller, protokol ücretleri, net ödüller ve toplam birleşik APY gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'Lido (stETH), Rocket Pool (rETH) और Coinbase (cbETH) में लिक्विड स्टेकिंग यील्ड की तुलना करें। Lido के माध्यम से 10 ETH को 3.4% APY पर स्टेक करने से LST डेरिवेटिव टोकन के ज़रिए कैपिटल लिक्विड रखते हुए ~0.34 ETH/वर्ष मिलता है।',
+      how: [
+        `लिक्विड स्टेकिंग कैलकुलेटर प्रमुख लिक्विड स्टेकिंग प्रोटोकॉल में यील्ड और फीस स्ट्रक्चर की तुलना करता है। अपनी ETH मात्रा दर्ज करें और प्रोटोकॉल चुनें — टूल फीस के बाद नेट APY, प्रोजेक्टेड एनुअल रिवॉर्ड, करंट LST एक्सचेंज रेट और अपना वैलिडेटर चलाने बनाम लिक्विड स्टेकिंग की इफेक्टिव कॉस्ट दिखाता है।`,
+        `stETH जैसे लिक्विड स्टेकिंग टोकन (LSTs) आपकी स्टेक्ड पोजीशन को रिप्रेजेंट करते हैं और DeFi में ट्रांसफरेबल रहते हैं। कैलकुलेटर ऑपर्च्युनिटी कॉस्ट मूल्यांकन में मदद करता है: आप स्टेकिंग रिवॉर्ड कमाते हुए Curve/Uniswap पर लिक्विडिटी प्रोवाइड कर सकते हैं या Aave में डिपॉजिट कर सकते हैं।`
+      ],
+      inputs: [
+        `ETH अमाउंट वह मात्रा है जिसे आप स्टेक करना चाहते हैं। प्रोटोकॉल सिलेक्शन (Lido, Rocket Pool, Coinbase) फीस रेट और करंट APY निर्धारित करता है। Lido रिवॉर्ड का 10% चार्ज करता है, Rocket Pool नोड ऑपरेटर शर्तों पर 5–20% लेता है।`,
+        `ऑप्शनल DeFi यील्ड इनपुट कंबाइंड स्ट्रैटेजी मॉडल करने देते हैं — जैसे Lido से स्टेकिंग (3.4% APY) फिर stETH को Aave में डिपॉजिट (अतिरिक्त ~1–2% APY)। आउटपुट ग्रॉस रिवॉर्ड, प्रोटोकॉल फीस, नेट रिवॉर्ड और टोटल कंबाइंड APY दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Сравните доходность ликвидного стейкинга между Lido (stETH), Rocket Pool (rETH) и Coinbase (cbETH). Стейкинг 10 ETH через Lido под 3,4% APY приносит ~0,34 ETH/год, сохраняя ликвидность капитала через токен-деривативы LST.',
+      how: [
+        `Калькулятор ликвидного стейкинга сравнивает доходность и структуру комиссий между основными протоколами. Введите количество ETH и выберите протокол — инструмент покажет чистую APY после комиссий, прогнозируемые годовые вознаграждения, текущий курс обмена LST и эффективную стоимость по сравнению с собственным валидатором.`,
+        `Токены ликвидного стейкинга (LST), такие как stETH, представляют вашу стейкинг-позицию, оставаясь передаваемыми и пригодными для DeFi. Калькулятор помогает оценить альтернативную стоимость: вы получаете вознаграждения за стейкинг и одновременно предоставляете ликвидность на Curve/Uniswap или размещаете в протоколах кредитования вроде Aave.`
+      ],
+      inputs: [
+        `Количество ETH — сумма для стейкинга. Выбор протокола (Lido, Rocket Pool, Coinbase) определяет комиссию и текущую APY. Lido берёт 10% от вознаграждений, Rocket Pool — 5–20% в зависимости от оператора ноды.`,
+        `Дополнительные поля DeFi-доходности позволяют моделировать комбинированные стратегии — стейкинг через Lido (3,4% APY) с последующим депозитом stETH в Aave (ещё ~1–2% APY). Результат: валовые вознаграждения, комиссии протокола, чистые вознаграждения и общая совокупная APY.`
+      ],
+    },
+  },
+  'perpetual-futures-calculator': {
+    en: {
+      quickAnswer: 'Calculate P&L, liquidation price, and funding costs for perpetual futures positions. A 10x long BTC at $77,000 with $5,000 margin has a liquidation at ~$69,930 and pays/receives funding every 8 hours based on the current rate.',
+      how: [
+        `The Perpetual Futures Calculator models the complete economics of a perp position including entry, leverage, liquidation price, and cumulative funding rate costs. Enter your margin, leverage multiple, and entry price — the tool computes your notional exposure, liquidation price, and projects the total funding cost over your expected holding period.`,
+        `Perps have no expiry date but charge a funding rate every 8 hours that can significantly erode profits on longer holds. The calculator shows how many funding periods you can afford before your margin is consumed, and compares the total cost of holding a perp position vs. opening a quarterly futures contract or simply spot buying with leverage on margin.`
+      ],
+      inputs: [
+        `Margin is the collateral you deposit (in USD or USDT). Leverage ranges from 1x to 125x depending on the exchange and asset. Entry price is where you open the position. Direction (long/short) determines how funding flows affect your balance — longs pay shorts when funding is positive, and vice versa.`,
+        `The funding rate field accepts a percentage per 8-hour period (typically 0.01% in neutral markets, but can spike to 0.1%+ during volatile moves). Holding period in days lets the calculator project cumulative funding costs. The output shows P&L at a target exit price, liquidation price, total funding paid/received, and effective break-even price including all costs.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Calcula P&L, precio de liquidación y costos de funding para posiciones de futuros perpetuos. Un long 10x BTC a $77.000 con $5.000 de margen tiene liquidación en ~$69.930 y paga/recibe funding cada 8 horas según la tasa vigente.',
+      how: [
+        `La Calculadora de Futuros Perpetuos modela la economía completa de una posición perp incluyendo entrada, apalancamiento, precio de liquidación y costos acumulados de funding rate. Introduce tu margen, múltiplo de apalancamiento y precio de entrada — la herramienta calcula tu exposición nocional, precio de liquidación y proyecta el costo de funding.`,
+        `Los perps no tienen fecha de vencimiento pero cobran un funding rate cada 8 horas que puede erosionar significativamente las ganancias en posiciones largas. La calculadora muestra cuántos períodos de funding puedes sostener antes de consumir tu margen.`
+      ],
+      inputs: [
+        `El margen es el colateral que depositas (en USD o USDT). El apalancamiento va de 1x a 125x. El precio de entrada es donde abres la posición. La dirección (largo/corto) determina cómo el funding afecta tu saldo — los largos pagan a los cortos cuando el funding es positivo.`,
+        `El campo de funding rate acepta un porcentaje por período de 8 horas (típicamente 0,01% en mercados neutrales, puede subir a 0,1%+). El período de retención en días proyecta los costos acumulados de funding. La salida muestra P&L, precio de liquidación, funding total y precio de equilibrio efectivo.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Calcule P&L, preço de liquidação e custos de funding para posições de futuros perpétuos. Um long 10x BTC a $77.000 com $5.000 de margem tem liquidação em ~$69.930 e paga/recebe funding a cada 8 horas conforme a taxa vigente.',
+      how: [
+        `A Calculadora de Futuros Perpétuos modela a economia completa de uma posição perp incluindo entrada, alavancagem, preço de liquidação e custos acumulados de funding rate. Insira sua margem, múltiplo de alavancagem e preço de entrada — a ferramenta calcula exposição nocional, preço de liquidação e projeta o custo total de funding.`,
+        `Perps não têm data de vencimento, mas cobram uma taxa de funding a cada 8 horas que pode corroer significativamente os lucros em posições mais longas. A calculadora mostra quantos períodos de funding você pode suportar antes de consumir sua margem.`
+      ],
+      inputs: [
+        `Margem é o colateral que você deposita (em USD ou USDT). Alavancagem varia de 1x a 125x. Preço de entrada é onde você abre a posição. Direção (long/short) determina como o funding afeta seu saldo — longs pagam shorts quando funding é positivo.`,
+        `O campo de funding rate aceita porcentagem por período de 8 horas (tipicamente 0,01% em mercados neutros, pode subir a 0,1%+). Período de manutenção em dias projeta custos acumulados. A saída mostra P&L, preço de liquidação, funding total e preço de equilíbrio efetivo.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Süresiz vadeli işlem pozisyonları için P&L, likidasyon fiyatı ve fonlama maliyetlerini hesaplayın. $5.000 marjinle $77.000\'den 10x long BTC pozisyonunun likidasyonu ~$69.930 ve mevcut orana göre her 8 saatte fonlama ödenir/alınır.',
+      how: [
+        `Süresiz Vadeli İşlem Hesaplayıcısı, giriş, kaldıraç, likidasyon fiyatı ve kümülatif fonlama oranı maliyetleri dahil bir perp pozisyonunun tam ekonomisini modeller. Marjininizi, kaldıraç çarpanınızı ve giriş fiyatını girin — araç nominal riskinizi, likidasyon fiyatını ve beklenen tutma süresi boyunca toplam fonlama maliyetini hesaplar.`,
+        `Perp'lerin vade tarihi yoktur ancak 8 saatte bir fonlama oranı alır ve bu uzun pozisyonlarda kârı önemli ölçüde aşındırabilir. Hesaplayıcı marjiniz tükenmeden kaç fonlama dönemi kaldırabildiğinizi gösterir.`
+      ],
+      inputs: [
+        `Marjin yatırdığınız teminattır (USD veya USDT cinsinden). Kaldıraç 1x ile 125x arasında değişir. Giriş fiyatı pozisyonun açıldığı yerdir. Yön (long/short) fonlamanın bakiyenizi nasıl etkilediğini belirler — fonlama pozitifken long'lar short'lara öder.`,
+        `Fonlama oranı alanı 8 saatlik dönem başına yüzde kabul eder (nötr piyasalarda genellikle %0,01, oynak hareketlerde %0,1+'a çıkabilir). Gün cinsinden tutma süresi kümülatif fonlama maliyetini projekte eder. Çıktı: hedef çıkışta P&L, likidasyon fiyatı, toplam fonlama ve tüm maliyetler dahil efektif başabaş fiyatı.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'परपेचुअल फ्यूचर्स पोजीशन के लिए P&L, लिक्विडेशन प्राइस और फंडिंग कॉस्ट कैलकुलेट करें। $77,000 पर 10x लॉन्ग BTC $5,000 मार्जिन के साथ ~$69,930 पर लिक्विडेट होता है और करंट रेट पर हर 8 घंटे फंडिंग पे/रिसीव करता है।',
+      how: [
+        `परपेचुअल फ्यूचर्स कैलकुलेटर एक perp पोजीशन की पूरी इकोनॉमिक्स मॉडल करता है जिसमें एंट्री, लेवरेज, लिक्विडेशन प्राइस और क्यूमुलेटिव फंडिंग रेट कॉस्ट शामिल हैं। अपना मार्जिन, लेवरेज मल्टीपल और एंट्री प्राइस दर्ज करें — टूल नोशनल एक्सपोजर, लिक्विडेशन प्राइस और एक्स्पेक्टेड होल्डिंग पीरियड में टोटल फंडिंग कॉस्ट प्रोजेक्ट करता है।`,
+        `Perps की कोई एक्सपायरी डेट नहीं होती लेकिन हर 8 घंटे फंडिंग रेट चार्ज करते हैं जो लंबी होल्डिंग में प्रॉफिट काफी कम कर सकता है। कैलकुलेटर दिखाता है कि मार्जिन खत्म होने से पहले कितने फंडिंग पीरियड सह सकते हैं।`
+      ],
+      inputs: [
+        `मार्जिन वह कोलैटरल है जो आप डिपॉजिट करते हैं (USD या USDT में)। लेवरेज 1x से 125x तक होता है। एंट्री प्राइस वह है जहां आप पोजीशन खोलते हैं। डायरेक्शन (लॉन्ग/शॉर्ट) निर्धारित करता है कि फंडिंग कैसे प्रभावित करती है — पॉजिटिव फंडिंग में लॉन्ग शॉर्ट को पे करता है।`,
+        `फंडिंग रेट फील्ड 8-घंटे पीरियड प्रति परसेंटेज स्वीकार करता है (न्यूट्रल मार्केट में 0.01%, वोलेटाइल मूव में 0.1%+ तक)। दिनों में होल्डिंग पीरियड क्यूमुलेटिव फंडिंग कॉस्ट प्रोजेक्ट करता है। आउटपुट P&L, लिक्विडेशन प्राइस, टोटल फंडिंग और सभी कॉस्ट सहित इफेक्टिव ब्रेक-ईवन प्राइस दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Рассчитайте P&L, цену ликвидации и затраты на фандинг для бессрочных фьючерсных позиций. Лонг 10x BTC по $77 000 с маржой $5 000 ликвидируется при ~$69 930 и платит/получает фандинг каждые 8 часов по текущей ставке.',
+      how: [
+        `Калькулятор бессрочных фьючерсов моделирует полную экономику перп-позиции: вход, плечо, цену ликвидации и кумулятивные затраты на ставку фандинга. Введите маржу, мультипликатор плеча и цену входа — инструмент рассчитает номинальную экспозицию, цену ликвидации и спрогнозирует суммарные затраты на фандинг за период удержания.`,
+        `Бессрочные фьючерсы не имеют даты экспирации, но каждые 8 часов взимают ставку фандинга, которая может существенно съесть прибыль при длительном удержании. Калькулятор показывает, сколько периодов фандинга вы можете позволить до исчерпания маржи.`
+      ],
+      inputs: [
+        `Маржа — залог, который вы вносите (в USD или USDT). Плечо от 1x до 125x. Цена входа — уровень открытия позиции. Направление (лонг/шорт) определяет, как фандинг влияет на баланс: при положительной ставке лонги платят шортам, и наоборот.`,
+        `Поле ставки фандинга принимает процент за 8-часовой период (обычно 0,01% в нейтральных рынках, может достигать 0,1%+ при волатильности). Период удержания в днях проецирует кумулятивные затраты. Результат: P&L при целевом выходе, цена ликвидации, суммарный фандинг и эффективная цена безубыточности с учётом всех затрат.`
+      ],
+    },
+  },
+  'payback-period-calculator': {
+    en: {
+      quickAnswer: 'Calculate how long it takes to recoup your crypto investment from staking, mining, or DeFi yields. A $10,000 investment earning 8% APY reaches payback in 12.5 years without compounding, or ~9 years with daily compounding.',
+      how: [
+        `The Payback Period Calculator determines how many months or years your crypto investment needs to generate enough returns to recover the initial capital. Enter your upfront investment, the expected annual yield, and choose between simple or compound interest — the tool shows the exact break-even date and projects your balance growth over time.`,
+        `Use it to compare hardware purchases (mining rigs, validator nodes) against DeFi yield strategies. A $5,000 ASIC miner earning $12/day has a 417-day payback, while the same capital in a 10% staking pool takes 10 years — but without hardware depreciation risk. The calculator helps you choose the optimal capital deployment by normalizing different return profiles into a single payback metric.`
+      ],
+      inputs: [
+        `Initial investment is the total capital deployed in USD. Annual yield/revenue can be entered as a percentage (for staking/DeFi) or as a flat dollar amount per day/month (for mining). The compounding toggle switches between simple interest and daily/monthly/annual compound interest calculations.`,
+        `Optional fields include operating costs (electricity for miners, gas fees for DeFi), expected yield decay rate (as mining difficulty increases or DeFi yields compress), and a discount rate for time-value-of-money analysis. The output shows payback period in months, total return at payback, and an ROI timeline chart.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Calcula cuánto tiempo tarda en recuperarse tu inversión cripto por staking, minería o rendimientos DeFi. Una inversión de $10.000 al 8% APY alcanza el reembolso en 12,5 años sin composición, o ~9 años con composición diaria.',
+      how: [
+        `La Calculadora de Período de Recuperación determina cuántos meses o años necesita tu inversión para generar suficientes retornos y recuperar el capital inicial. Introduce tu inversión, el rendimiento anual esperado y elige interés simple o compuesto — la herramienta muestra la fecha exacta de equilibrio y proyecta el crecimiento del saldo.`,
+        `Úsala para comparar compras de hardware (rigs de minería, nodos validadores) contra estrategias de rendimiento DeFi. Un minero ASIC de $5.000 que genera $12/día se recupera en 417 días, mientras el mismo capital en staking al 10% tarda 10 años pero sin riesgo de depreciación del hardware.`
+      ],
+      inputs: [
+        `La inversión inicial es el capital total desplegado en USD. El rendimiento anual puede ingresarse como porcentaje (para staking/DeFi) o importe fijo por día/mes (para minería). El interruptor de composición alterna entre interés simple y compuesto.`,
+        `Los campos opcionales incluyen costos operativos (electricidad, gas fees), tasa de decaimiento del rendimiento y tasa de descuento para análisis de valor temporal. La salida muestra período de recuperación en meses, retorno total al equilibrio y gráfico de ROI.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Calcule quanto tempo leva para recuperar seu investimento cripto com staking, mineração ou rendimentos DeFi. Um investimento de $10.000 a 8% APY atinge o retorno em 12,5 anos sem composição, ou ~9 anos com composição diária.',
+      how: [
+        `A Calculadora de Período de Retorno determina quantos meses ou anos seu investimento cripto precisa gerar retornos suficientes para recuperar o capital inicial. Insira seu investimento, o rendimento anual esperado e escolha entre juros simples ou compostos — a ferramenta mostra a data exata de equilíbrio e projeta o crescimento do saldo.`,
+        `Use para comparar compras de hardware (rigs de mineração, nós validadores) contra estratégias DeFi. Um minerador ASIC de $5.000 gerando $12/dia se paga em 417 dias, enquanto o mesmo capital em staking a 10% leva 10 anos — mas sem risco de depreciação de hardware.`
+      ],
+      inputs: [
+        `Investimento inicial é o capital total em USD. Rendimento anual pode ser inserido como porcentagem (staking/DeFi) ou valor fixo por dia/mês (mineração). O toggle de composição alterna entre juros simples e compostos.`,
+        `Campos opcionais incluem custos operacionais (eletricidade, gas fees), taxa de decaimento do rendimento e taxa de desconto. A saída mostra período de retorno em meses, retorno total no equilíbrio e gráfico de ROI.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Staking, madencilik veya DeFi getirileriyle kripto yatırımınızı geri kazanmanın ne kadar süreceğini hesaplayın. %8 APY ile $10.000 yatırım bileşiksiz 12,5 yılda, günlük bileşikle ~9 yılda geri döner.',
+      how: [
+        `Geri Ödeme Süresi Hesaplayıcısı, kripto yatırımınızın başlangıç sermayesini geri kazanmak için yeterli getiri üretmesi gereken ay veya yıl sayısını belirler. Peşin yatırımınızı, beklenen yıllık getiriyi girin ve basit veya bileşik faiz arasında seçim yapın — araç kesin başabaş tarihini ve bakiye büyümesini gösterir.`,
+        `Donanım alımlarını (madencilik rigleri, doğrulayıcı düğümleri) DeFi getiri stratejileriyle karşılaştırmak için kullanın. Günde $12 kazanan $5.000'lık ASIC madenci 417 günde geri dönerken, %10 staking havuzundaki aynı sermaye 10 yıl alır — ancak donanım değer kaybı riski yoktur.`
+      ],
+      inputs: [
+        `Başlangıç yatırımı USD cinsinden toplam dağıtılan sermayedir. Yıllık getiri yüzde (staking/DeFi) veya gün/ay başına sabit tutar (madencilik) olarak girilebilir. Bileşik faiz düğmesi basit ve bileşik faiz hesaplamaları arasında geçiş yapar.`,
+        `İsteğe bağlı alanlar işletme maliyetleri, beklenen getiri düşüş oranı ve paranın zaman değeri analizi için iskonto oranı içerir. Çıktı ay cinsinden geri ödeme süresi, başabaştaki toplam getiri ve ROI zaman çizelgesi gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'स्टेकिंग, माइनिंग या DeFi यील्ड से क्रिप्टो निवेश वापस पाने में कितना समय लगता है, कैलकुलेट करें। 8% APY पर $10,000 निवेश बिना कंपाउंडिंग 12.5 साल में और डेली कंपाउंडिंग के साथ ~9 साल में पेबैक होता है।',
+      how: [
+        `पेबैक पीरियड कैलकुलेटर निर्धारित करता है कि आपके क्रिप्टो निवेश को शुरुआती कैपिटल रिकवर करने के लिए पर्याप्त रिटर्न जेनरेट करने में कितने महीने या साल चाहिए। अपना निवेश, एक्स्पेक्टेड एनुअल यील्ड दर्ज करें और सिंपल या कंपाउंड इंटरेस्ट चुनें।`,
+        `हार्डवेयर खरीद (माइनिंग रिग, वैलिडेटर नोड) की DeFi यील्ड स्ट्रैटेजी से तुलना करने के लिए उपयोग करें। $12/दिन कमाने वाला $5,000 ASIC माइनर 417 दिनों में पेबैक करता है, जबकि 10% स्टेकिंग पूल में वही कैपिटल 10 साल लेता है — लेकिन हार्डवेयर डेप्रिसिएशन रिस्क के बिना।`
+      ],
+      inputs: [
+        `इनिशियल इन्वेस्टमेंट USD में डिप्लॉय किया गया कुल कैपिटल है। एनुअल यील्ड/रेवेन्यू परसेंटेज (स्टेकिंग/DeFi) या फ्लैट डॉलर अमाउंट प्रति दिन/महीना (माइनिंग) के रूप में दर्ज किया जा सकता है। कंपाउंडिंग टॉगल सिंपल और कंपाउंड इंटरेस्ट के बीच स्विच करता है।`,
+        `ऑप्शनल फील्ड में ऑपरेटिंग कॉस्ट, एक्स्पेक्टेड यील्ड डिके रेट और टाइम-वैल्यू-ऑफ-मनी एनालिसिस के लिए डिस्काउंट रेट शामिल हैं। आउटपुट महीनों में पेबैक पीरियड, पेबैक पर टोटल रिटर्न और ROI टाइमलाइन चार्ट दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Рассчитайте, сколько времени потребуется для возврата криптоинвестиций от стейкинга, майнинга или DeFi-доходности. Инвестиция $10 000 под 8% APY окупается за 12,5 лет без капитализации или ~9 лет с ежедневной капитализацией.',
+      how: [
+        `Калькулятор срока окупаемости определяет, сколько месяцев или лет нужно вашей криптоинвестиции для генерации достаточного дохода, чтобы вернуть начальный капитал. Введите сумму вложения, ожидаемую годовую доходность и выберите простые или сложные проценты — инструмент покажет точную дату безубыточности и спрогнозирует рост баланса.`,
+        `Используйте для сравнения покупки оборудования (майнинг-риги, ноды валидаторов) с DeFi-стратегиями. ASIC за $5 000, приносящий $12/день, окупается за 417 дней, тогда как тот же капитал в стейкинг-пуле под 10% — за 10 лет, но без риска амортизации оборудования.`
+      ],
+      inputs: [
+        `Начальная инвестиция — общий размещённый капитал в USD. Годовая доходность вводится в процентах (стейкинг/DeFi) или фиксированной суммой в день/месяц (майнинг). Переключатель капитализации переключает между простыми и сложными процентами.`,
+        `Дополнительные поля: операционные расходы (электричество для майнеров, газ для DeFi), ожидаемый темп снижения доходности и ставка дисконтирования. Результат: срок окупаемости в месяцах, общий доход на момент безубыточности и график ROI.`
+      ],
+    },
+  },
+  'dva-calculator': {
+    en: {
+      quickAnswer: 'Dollar Value Averaging (DVA) adjusts purchase amounts based on portfolio performance — buying more when prices drop and less when prices rise. DVA targeting $500/month growth on a $10,000 BTC portfolio adjusts each investment to hit the target value path.',
+      how: [
+        `The Dollar Value Averaging Calculator implements a value-based DCA strategy where you invest variable amounts to keep your portfolio on a predetermined growth path. Unlike standard DCA which invests the same amount each period, DVA calculates how much you need to invest (or sell) each period to reach a target portfolio value that grows by a fixed amount monthly.`,
+        `Enter your target monthly growth amount and starting portfolio value — the calculator shows the required investment for the current period based on actual portfolio performance. When prices drop, you invest more to reach the target; when prices surge, you invest less or even take profits. Historically, DVA has outperformed standard DCA by 1–3% annually due to its contrarian buy-low-sell-high mechanism.`
+      ],
+      inputs: [
+        `Starting portfolio value is your current holdings in USD. Target growth per period (monthly or biweekly) is the fixed dollar amount by which you want your portfolio to grow each interval — e.g., $500/month means your target is $10,500 after month 1, $11,000 after month 2, etc.`,
+        `Current asset price is used to calculate the exact number of tokens to buy or sell. The output shows the required investment this period, cumulative invested amount, current portfolio value vs. target value, and a comparison chart showing DVA performance against standard fixed-amount DCA over the same timeframe.`
+      ],
+    },
+    es: {
+      quickAnswer: 'El Promedio de Valor en Dólares (DVA) ajusta los montos de compra según el rendimiento del portafolio — comprando más cuando bajan los precios y menos cuando suben. DVA con objetivo de $500/mes en un portafolio BTC de $10.000 ajusta cada inversión para seguir la trayectoria objetivo.',
+      how: [
+        `La Calculadora de Promedio de Valor en Dólares implementa una estrategia basada en valor donde inviertes montos variables para mantener tu portafolio en una trayectoria de crecimiento predeterminada. A diferencia del DCA estándar que invierte la misma cantidad, DVA calcula cuánto necesitas invertir (o vender) cada período.`,
+        `Introduce tu cantidad objetivo de crecimiento mensual y el valor inicial del portafolio — la calculadora muestra la inversión requerida basada en el rendimiento real. Cuando los precios bajan, inviertes más; cuando suben, inviertes menos o tomas ganancias. Históricamente, DVA ha superado al DCA estándar en 1–3% anual.`
+      ],
+      inputs: [
+        `El valor inicial del portafolio son tus tenencias actuales en USD. El crecimiento objetivo por período es el monto fijo de crecimiento deseado — $500/mes significa que tu objetivo es $10.500 tras el mes 1, $11.000 tras el mes 2, etc.`,
+        `El precio actual del activo se usa para calcular los tokens a comprar o vender. La salida muestra la inversión requerida, monto acumulado invertido, valor actual vs. objetivo y un gráfico comparando DVA con DCA estándar.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'O Dollar Value Averaging (DVA) ajusta valores de compra com base no desempenho do portfólio — comprando mais quando preços caem e menos quando sobem. DVA com meta de $500/mês em portfólio BTC de $10.000 ajusta cada investimento para seguir a trajetória alvo.',
+      how: [
+        `A Calculadora de Dollar Value Averaging implementa uma estratégia baseada em valor onde você investe valores variáveis para manter seu portfólio em uma trajetória de crescimento predeterminada. Diferente do DCA padrão que investe o mesmo valor, o DVA calcula quanto você precisa investir (ou vender) em cada período.`,
+        `Insira o valor alvo de crescimento mensal e o valor inicial do portfólio — a calculadora mostra o investimento necessário baseado no desempenho real. Quando preços caem, você investe mais; quando sobem, investe menos ou realiza lucros. Historicamente, DVA supera DCA padrão em 1–3% ao ano.`
+      ],
+      inputs: [
+        `O valor inicial do portfólio são suas participações atuais em USD. O crescimento alvo por período é o valor fixo de crescimento desejado — $500/mês significa meta de $10.500 após o mês 1, $11.000 após o mês 2, etc.`,
+        `O preço atual do ativo é usado para calcular os tokens a comprar ou vender. A saída mostra investimento necessário, valor acumulado investido, valor atual vs. meta e gráfico comparando DVA com DCA padrão.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Dollar Value Averaging (DVA), portföy performansına göre alım miktarlarını ayarlar — fiyatlar düştüğünde daha fazla, yükseldiğinde daha az alır. $10.000 BTC portföyünde aylık $500 büyüme hedefli DVA, her yatırımı hedef değer yoluna ulaşacak şekilde ayarlar.',
+      how: [
+        `Dolar Değer Ortalaması Hesaplayıcısı, portföyünüzü önceden belirlenmiş bir büyüme yolunda tutmak için değişken miktarlar yatırdığınız değer tabanlı bir DCA stratejisi uygular. Her dönem aynı miktarı yatıran standart DCA'nın aksine, DVA hedef portföy değerine ulaşmak için ne kadar yatırmanız (veya satmanız) gerektiğini hesaplar.`,
+        `Aylık hedef büyüme miktarınızı ve başlangıç portföy değerini girin — hesaplayıcı gerçek performansa göre gerekli yatırımı gösterir. Fiyatlar düştüğünde daha fazla yatırırsınız; yükseldiğinde daha az veya kâr realize edersiniz. Tarihsel olarak DVA, standart DCA'yı yılda %1–3 geride bırakmıştır.`
+      ],
+      inputs: [
+        `Başlangıç portföy değeri, mevcut USD varlıklarınızdır. Dönem başına hedef büyüme, her aralıkta portföyünüzün büyümesini istediğiniz sabit dolar tutarıdır — ör. $500/ay hedef ay 1 sonunda $10.500, ay 2 sonunda $11.000'dir.`,
+        `Mevcut varlık fiyatı, alınacak veya satılacak token sayısını hesaplamak için kullanılır. Çıktı bu dönem gerekli yatırımı, kümülatif yatırılan tutarı, mevcut vs. hedef değeri ve DVA ile standart DCA karşılaştırma grafiğini gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'Dollar Value Averaging (DVA) पोर्टफोलियो परफॉर्मेंस के आधार पर खरीद राशि एडजस्ट करता है — प्राइस गिरने पर ज्यादा और बढ़ने पर कम खरीदता है। $10,000 BTC पोर्टफोलियो पर $500/महीना ग्रोथ टार्गेट वाला DVA हर इन्वेस्टमेंट को टार्गेट वैल्यू पाथ के अनुसार एडजस्ट करता है।',
+      how: [
+        `Dollar Value Averaging कैलकुलेटर एक वैल्यू-बेस्ड DCA स्ट्रैटेजी लागू करता है जहां आप अपने पोर्टफोलियो को पूर्व-निर्धारित ग्रोथ पाथ पर रखने के लिए वेरिएबल अमाउंट इन्वेस्ट करते हैं। स्टैंडर्ड DCA जो हर पीरियड समान अमाउंट इन्वेस्ट करता है उसके विपरीत, DVA कैलकुलेट करता है कि टार्गेट वैल्यू तक पहुंचने के लिए कितना इन्वेस्ट (या सेल) करना है।`,
+        `मंथली ग्रोथ टार्गेट और स्टार्टिंग पोर्टफोलियो वैल्यू दर्ज करें — कैलकुलेटर एक्चुअल परफॉर्मेंस के आधार पर करंट पीरियड के लिए रिक्वायर्ड इन्वेस्टमेंट दिखाता है। प्राइस गिरने पर ज्यादा इन्वेस्ट करें; बढ़ने पर कम या प्रॉफिट बुक करें। DVA ने ऐतिहासिक रूप से DCA को सालाना 1–3% आउटपरफॉर्म किया है।`
+      ],
+      inputs: [
+        `स्टार्टिंग पोर्टफोलियो वैल्यू USD में आपकी करंट होल्डिंग्स है। प्रति पीरियड टार्गेट ग्रोथ वह फिक्स्ड डॉलर अमाउंट है जितना आप पोर्टफोलियो ग्रो करना चाहते हैं — $500/महीना मतलब मंथ 1 के बाद टार्गेट $10,500, मंथ 2 के बाद $11,000 है।`,
+        `करंट एसेट प्राइस खरीदने या बेचने वाले टोकन कैलकुलेट करने के लिए उपयोग होता है। आउटपुट इस पीरियड का रिक्वायर्ड इन्वेस्टमेंट, क्यूमुलेटिव इन्वेस्टेड अमाउंट, करंट vs. टार्गेट वैल्यू और DVA बनाम स्टैंडर्ड DCA कम्पेरिजन चार्ट दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Dollar Value Averaging (DVA) корректирует суммы покупок в зависимости от доходности портфеля — покупая больше при падении цен и меньше при росте. DVA с целью роста $500/месяц на портфеле BTC $10 000 подстраивает каждую инвестицию под целевую траекторию стоимости.',
+      how: [
+        `Калькулятор Dollar Value Averaging реализует стратегию на основе целевой стоимости, при которой вы инвестируете переменные суммы, удерживая портфель на заданной траектории роста. В отличие от стандартного DCA с фиксированной суммой, DVA рассчитывает, сколько нужно вложить (или продать) в каждом периоде для достижения целевой стоимости.`,
+        `Введите целевой ежемесячный прирост и начальную стоимость портфеля — калькулятор покажет необходимую инвестицию на основе фактической доходности. При падении цен вы вкладываете больше, при росте — меньше или фиксируете прибыль. Исторически DVA опережал стандартный DCA на 1–3% в год.`
+      ],
+      inputs: [
+        `Начальная стоимость портфеля — текущие активы в USD. Целевой рост за период — фиксированная сумма, на которую портфель должен расти каждый интервал: $500/месяц означает цель $10 500 после 1-го месяца, $11 000 после 2-го и т.д.`,
+        `Текущая цена актива используется для расчёта количества токенов к покупке или продаже. Результат: необходимая инвестиция за период, накопленная вложенная сумма, текущая стоимость vs. целевая и сравнительный график DVA vs. стандартный DCA.`
+      ],
+    },
+  },
+  'bitcoin-energy-calculator': {
+    en: {
+      quickAnswer: 'Estimate Bitcoin\'s energy consumption per transaction, per block, and network-wide. At ~850 EH/s and ~150 J/TH efficiency, the Bitcoin network consumes approximately 130–180 TWh/year — comparable to a mid-sized country like Argentina.',
+      how: [
+        `The Bitcoin Energy Calculator models the network's total electricity consumption based on hashrate, hardware efficiency, and power costs. Enter the current network hashrate and the average ASIC efficiency in joules per terahash — the tool computes total network power draw, energy per transaction, energy per block, and annual consumption in terawatt-hours.`,
+        `Use it to contextualize Bitcoin's environmental footprint by comparing against national energy consumption, VISA transaction costs, or gold mining energy use. The calculator also models the impact of renewable energy adoption: adjust the renewable mix percentage to see how carbon emissions change even as total energy consumption remains constant.`
+      ],
+      inputs: [
+        `Network hashrate in EH/s (exahashes per second) — currently approximately 850 EH/s as of April 2026. Average hardware efficiency in joules per terahash reflects the fleet mix: latest-gen ASICs (Antminer S21 Pro) achieve ~15 J/TH, while older units run at 30–60 J/TH. A fleet average of ~25 J/TH is realistic.`,
+        `Optional inputs include average electricity cost ($/kWh), which doesn't affect energy consumption but helps estimate the network's total electricity spend. Renewable energy percentage (currently estimated at ~55% of mining) adjusts the carbon emissions calculation. Daily transactions (~350,000–500,000) divide total energy into a per-transaction figure.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Estima el consumo energético de Bitcoin por transacción, por bloque y a nivel de red. A ~850 EH/s y ~150 J/TH de eficiencia, la red Bitcoin consume aproximadamente 130–180 TWh/año — comparable a un país mediano como Argentina.',
+      how: [
+        `La Calculadora de Energía Bitcoin modela el consumo total de electricidad de la red basándose en el hashrate, la eficiencia del hardware y los costos de energía. Introduce el hashrate actual y la eficiencia ASIC promedio en julios por terahash — la herramienta calcula el consumo total, la energía por transacción, por bloque y el consumo anual en TWh.`,
+        `Úsala para contextualizar la huella ambiental de Bitcoin comparándola con el consumo nacional de energía, los costos de transacción de VISA o la minería de oro. Ajusta el porcentaje de energía renovable para ver cómo cambian las emisiones de carbono.`
+      ],
+      inputs: [
+        `El hashrate de la red en EH/s — actualmente ~850 EH/s a abril 2026. La eficiencia promedio del hardware en julios por terahash refleja la mezcla de equipos: ASICs de última generación logran ~15 J/TH, mientras los más antiguos funcionan a 30–60 J/TH. Un promedio de flota de ~25 J/TH es realista.`,
+        `Los campos opcionales incluyen costo promedio de electricidad ($/kWh) para estimar el gasto total de la red. El porcentaje de energía renovable (~55% actualmente) ajusta el cálculo de emisiones de carbono. Las transacciones diarias (~350.000–500.000) dividen la energía total por transacción.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Estime o consumo de energia do Bitcoin por transação, por bloco e em toda a rede. A ~850 EH/s e ~150 J/TH de eficiência, a rede Bitcoin consome aproximadamente 130–180 TWh/ano — comparável a um país de médio porte como a Argentina.',
+      how: [
+        `A Calculadora de Energia Bitcoin modela o consumo total de eletricidade da rede com base no hashrate, eficiência do hardware e custos de energia. Insira o hashrate atual e a eficiência média do ASIC em joules por terahash — a ferramenta calcula o consumo total, energia por transação, por bloco e consumo anual em TWh.`,
+        `Use para contextualizar a pegada ambiental do Bitcoin comparando com consumo nacional, custos de transação da VISA ou mineração de ouro. Ajuste a porcentagem de energia renovável para ver como as emissões de carbono mudam.`
+      ],
+      inputs: [
+        `Hashrate da rede em EH/s — atualmente ~850 EH/s em abril 2026. Eficiência média do hardware em joules por terahash reflete o mix de equipamentos: ASICs de última geração atingem ~15 J/TH, enquanto unidades mais antigas operam a 30–60 J/TH. Uma média de frota de ~25 J/TH é realista.`,
+        `Entradas opcionais incluem custo médio de eletricidade ($/kWh) para estimar o gasto total da rede. Porcentagem de energia renovável (~55% atualmente) ajusta o cálculo de emissões de carbono. Transações diárias (~350.000–500.000) dividem a energia total por transação.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Bitcoin\'in işlem başına, blok başına ve ağ genelinde enerji tüketimini tahmin edin. ~850 EH/s ve ~150 J/TH verimlilikle Bitcoin ağı yılda yaklaşık 130–180 TWh tüketir — Arjantin gibi orta büyüklükte bir ülkeye eşdeğer.',
+      how: [
+        `Bitcoin Enerji Hesaplayıcısı, hashrate, donanım verimliliği ve enerji maliyetlerine dayalı olarak ağın toplam elektrik tüketimini modeller. Mevcut ağ hashrate'ini ve terahash başına ortalama ASIC verimliliğini girin — araç toplam ağ güç çekişini, işlem başına enerjiyi ve yıllık tüketimi TWh cinsinden hesaplar.`,
+        `Bitcoin'in çevresel ayak izini ulusal enerji tüketimi, VISA işlem maliyetleri veya altın madenciliği enerji kullanımıyla karşılaştırarak bağlamlandırmak için kullanın. Yenilenebilir enerji yüzdesini ayarlayarak karbon emisyonlarının nasıl değiştiğini görün.`
+      ],
+      inputs: [
+        `Ağ hashrate'i EH/s cinsinden — Nisan 2026 itibarıyla yaklaşık 850 EH/s. Terahash başına ortalama donanım verimliliği filo karışımını yansıtır: son nesil ASIC'ler ~15 J/TH, eski birimler 30–60 J/TH. ~25 J/TH filo ortalaması gerçekçidir.`,
+        `İsteğe bağlı girdiler ortalama elektrik maliyeti ($/kWh) ve yenilenebilir enerji yüzdesini (şu anda tahmini ~%55) içerir. Günlük işlemler (~350.000–500.000) toplam enerjiyi işlem başına rakama böler.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'प्रति ट्रांजैक्शन, प्रति ब्लॉक और नेटवर्क-वाइड Bitcoin की एनर्जी कंजम्प्शन का अनुमान लगाएं। ~850 EH/s और ~150 J/TH एफिशिएंसी पर Bitcoin नेटवर्क लगभग 130–180 TWh/वर्ष कंज्यूम करता है — अर्जेंटीना जैसे मध्यम आकार के देश के बराबर।',
+      how: [
+        `Bitcoin एनर्जी कैलकुलेटर हैशरेट, हार्डवेयर एफिशिएंसी और पावर कॉस्ट के आधार पर नेटवर्क का कुल बिजली कंजम्प्शन मॉडल करता है। करंट नेटवर्क हैशरेट और जूल प्रति टेराहैश में एवरेज ASIC एफिशिएंसी दर्ज करें — टूल टोटल नेटवर्क पावर ड्रॉ, प्रति ट्रांजैक्शन एनर्जी और एनुअल कंजम्प्शन TWh में कैलकुलेट करता है।`,
+        `Bitcoin के एनवायरनमेंटल फुटप्रिंट को नेशनल एनर्जी कंजम्प्शन, VISA ट्रांजैक्शन कॉस्ट या गोल्ड माइनिंग से तुलना करके संदर्भ में रखें। रिन्यूएबल एनर्जी मिक्स परसेंटेज एडजस्ट करके कार्बन एमिशन में बदलाव देखें।`
+      ],
+      inputs: [
+        `नेटवर्क हैशरेट EH/s में — अप्रैल 2026 तक लगभग 850 EH/s। जूल प्रति टेराहैश में एवरेज हार्डवेयर एफिशिएंसी फ्लीट मिक्स दर्शाती है: लेटेस्ट-जेन ASICs ~15 J/TH, पुरानी यूनिट्स 30–60 J/TH। ~25 J/TH फ्लीट एवरेज यथार्थवादी है।`,
+        `ऑप्शनल इनपुट में एवरेज इलेक्ट्रिसिटी कॉस्ट ($/kWh) और रिन्यूएबल एनर्जी परसेंटेज (वर्तमान अनुमान ~55%) शामिल हैं। डेली ट्रांजैक्शन (~350,000–500,000) टोटल एनर्जी को प्रति-ट्रांजैक्शन फिगर में बांटते हैं।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Оцените энергопотребление Bitcoin на транзакцию, на блок и по всей сети. При ~850 EH/s и ~150 Дж/ТХ сеть Bitcoin потребляет примерно 130–180 ТВт·ч/год — сопоставимо со страной размером с Аргентину.',
+      how: [
+        `Калькулятор энергопотребления Bitcoin моделирует общее потребление электричества сетью на основе хешрейта, энергоэффективности оборудования и стоимости электроэнергии. Введите текущий хешрейт и среднюю эффективность ASIC в джоулях на терахеш — инструмент рассчитает общую мощность сети, энергию на транзакцию, на блок и годовое потребление в ТВт·ч.`,
+        `Используйте для контекстуализации экологического следа Bitcoin, сравнивая с энергопотреблением стран, затратами на транзакции VISA или добычей золота. Регулируйте долю возобновляемой энергии, чтобы увидеть, как меняются выбросы углерода.`
+      ],
+      inputs: [
+        `Хешрейт сети в EH/s — в апреле 2026 года примерно 850 EH/s. Средняя эффективность оборудования в джоулях на терахеш отражает состав парка: новейшие ASIC достигают ~15 Дж/ТХ, старые — 30–60 Дж/ТХ. Средний показатель ~25 Дж/ТХ реалистичен.`,
+        `Необязательные поля: средняя стоимость электроэнергии ($/кВт·ч) и доля возобновляемой энергии (сейчас ~55% майнинга) для расчёта углеродных выбросов. Дневные транзакции (~350 000–500 000) делят общую энергию на показатель для одной транзакции.`
+      ],
+    },
+  },
+  'on-chain-metrics-calculator': {
+    en: {
+      quickAnswer: 'Analyze on-chain health indicators: NVT ratio, MVRV Z-score, SOPR, and realized cap vs. market cap. An NVT ratio below 25 suggests the network is undervalued relative to its transaction throughput — a historically bullish signal for BTC.',
+      how: [
+        `The On-Chain Metrics Calculator computes key blockchain valuation and activity indicators from raw inputs. Enter market cap, realized cap, transaction volume, and active addresses — the tool calculates NVT (Network Value to Transactions) ratio, MVRV (Market Value to Realized Value) Z-score, and the SOPR (Spent Output Profit Ratio) to assess whether the network is overvalued or undervalued.`,
+        `These metrics provide a fundamental analysis layer that complements technical chart analysis. An MVRV Z-score above 7 has historically preceded major tops, while values below 0.1 have marked generational bottoms. Use the calculator to check multiple metrics simultaneously and build a conviction score for macro timing decisions.`
+      ],
+      inputs: [
+        `Market capitalization is the current total value of all circulating tokens (price times supply). Realized capitalization values each coin at the price it last moved on-chain, capturing the aggregate cost basis. Transaction volume is the 24-hour total value transferred on-chain in USD.`,
+        `Active addresses (unique addresses sending or receiving in 24 hours) measure network usage. The SOPR input requires the ratio of spent output value to creation value — above 1 means holders are selling at profit, below 1 at loss. The output dashboard shows each metric with a historical percentile ranking and a bull/bear/neutral signal.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Analiza indicadores de salud on-chain: ratio NVT, Z-score MVRV, SOPR y capitalización realizada vs. de mercado. Un ratio NVT por debajo de 25 sugiere que la red está infravalorada respecto a su volumen de transacciones — una señal históricamente alcista para BTC.',
+      how: [
+        `La Calculadora de Métricas On-Chain computa indicadores clave de valoración y actividad blockchain a partir de datos brutos. Introduce la capitalización de mercado, capitalización realizada, volumen de transacciones y direcciones activas — la herramienta calcula el ratio NVT, Z-score MVRV y SOPR para evaluar si la red está sobre o infravalorada.`,
+        `Estas métricas proporcionan una capa de análisis fundamental que complementa el análisis técnico. Un Z-score MVRV superior a 7 ha precedido históricamente techos importantes, mientras que valores por debajo de 0,1 han marcado suelos generacionales.`
+      ],
+      inputs: [
+        `La capitalización de mercado es el valor total actual de todos los tokens circulantes. La capitalización realizada valora cada moneda al precio de su último movimiento on-chain. El volumen de transacciones es el valor total de 24 horas transferido on-chain en USD.`,
+        `Las direcciones activas miden el uso de la red. El input SOPR requiere la ratio entre el valor de salida gastado y el valor de creación. La salida muestra cada métrica con ranking percentil histórico y señal alcista/bajista/neutral.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Analise indicadores de saúde on-chain: razão NVT, Z-score MVRV, SOPR e capitalização realizada vs. de mercado. Uma razão NVT abaixo de 25 sugere que a rede está subvalorizada em relação ao volume de transações — um sinal historicamente altista para BTC.',
+      how: [
+        `A Calculadora de Métricas On-Chain computa indicadores-chave de avaliação e atividade blockchain a partir de dados brutos. Insira capitalização de mercado, capitalização realizada, volume de transações e endereços ativos — a ferramenta calcula a razão NVT, Z-score MVRV e SOPR para avaliar se a rede está super ou subvalorizada.`,
+        `Essas métricas fornecem uma camada de análise fundamental que complementa a análise técnica de gráficos. Um Z-score MVRV acima de 7 historicamente precedeu topos importantes, enquanto valores abaixo de 0,1 marcaram fundos geracionais.`
+      ],
+      inputs: [
+        `Capitalização de mercado é o valor total atual de todos os tokens em circulação. Capitalização realizada avalia cada moeda pelo preço do último movimento on-chain. Volume de transações é o valor total de 24 horas transferido on-chain em USD.`,
+        `Endereços ativos medem o uso da rede. A entrada SOPR requer a razão entre valor de saída gasta e valor de criação. A saída mostra cada métrica com ranking percentil histórico e sinal de alta/baixa/neutro.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Zincir üstü sağlık göstergelerini analiz edin: NVT oranı, MVRV Z-skoru, SOPR ve gerçekleşmiş piyasa değeri ile piyasa değeri karşılaştırması. 25\'in altındaki NVT oranı, ağın işlem hacmine göre düşük değerlendirildiğini gösterir — BTC için tarihsel olarak yükseliş sinyali.',
+      how: [
+        `Zincir Üstü Metrik Hesaplayıcısı, ham girdilerden temel blockchain değerleme ve aktivite göstergelerini hesaplar. Piyasa değeri, gerçekleşmiş piyasa değeri, işlem hacmi ve aktif adresleri girin — araç NVT oranı, MVRV Z-skoru ve SOPR hesaplayarak ağın aşırı mı yoksa düşük mü değerlendirildiğini değerlendirir.`,
+        `Bu metrikler teknik grafik analizini tamamlayan temel analiz katmanı sağlar. 7'nin üzerindeki MVRV Z-skoru tarihsel olarak büyük tepeleri, 0,1'in altındaki değerler ise jenerasyonel dipleri işaret etmiştir.`
+      ],
+      inputs: [
+        `Piyasa değeri, dolaşımdaki tüm tokenlerin toplam mevcut değeridir. Gerçekleşmiş piyasa değeri, her coin'i zincir üzerinde son hareket ettiği fiyatla değerlendirir. İşlem hacmi 24 saatlik zincir üstü USD transfer toplamıdır.`,
+        `Aktif adresler ağ kullanımını ölçer. SOPR girişi harcanan çıktı değerinin oluşturma değerine oranını gerektirir. Çıktı her metriği tarihsel yüzdelik sıralamasıyla ve yükseliş/düşüş/nötr sinyaliyle gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'ऑन-चेन हेल्थ इंडिकेटर्स एनालाइज करें: NVT रेशियो, MVRV Z-स्कोर, SOPR, और रियलाइज्ड कैप vs. मार्केट कैप। 25 से नीचे NVT रेशियो बताता है कि नेटवर्क ट्रांजैक्शन थ्रूपुट के मुकाबले अंडरवैल्यूड है — BTC के लिए ऐतिहासिक रूप से बुलिश सिग्नल।',
+      how: [
+        `ऑन-चेन मेट्रिक्स कैलकुलेटर रॉ इनपुट से प्रमुख ब्लॉकचेन वैल्युएशन और एक्टिविटी इंडिकेटर कैलकुलेट करता है। मार्केट कैप, रियलाइज्ड कैप, ट्रांजैक्शन वॉल्यूम और एक्टिव एड्रेसेज दर्ज करें — टूल NVT रेशियो, MVRV Z-स्कोर और SOPR कैलकुलेट करता है।`,
+        `ये मेट्रिक्स टेक्निकल चार्ट एनालिसिस को पूरा करने वाली फंडामेंटल एनालिसिस लेयर प्रदान करती हैं। 7 से ऊपर MVRV Z-स्कोर ऐतिहासिक रूप से मेजर टॉप्स से पहले आया है, जबकि 0.1 से नीचे वैल्यू ने जेनरेशनल बॉटम्स मार्क किए हैं।`
+      ],
+      inputs: [
+        `मार्केट कैपिटलाइजेशन सभी सर्कुलेटिंग टोकन की करंट टोटल वैल्यू है। रियलाइज्ड कैपिटलाइजेशन हर कॉइन को ऑन-चेन लास्ट मूव के प्राइस पर वैल्यू करता है। ट्रांजैक्शन वॉल्यूम 24-घंटे का टोटल ऑन-चेन USD ट्रांसफर है।`,
+        `एक्टिव एड्रेसेज नेटवर्क यूसेज मापते हैं। SOPR इनपुट स्पेंट आउटपुट वैल्यू और क्रिएशन वैल्यू के रेशियो की जरूरत है। आउटपुट डैशबोर्ड हर मेट्रिक को हिस्टोरिकल परसेंटाइल रैंकिंग और बुल/बेयर/न्यूट्रल सिग्नल के साथ दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Анализируйте ончейн-индикаторы: NVT, MVRV Z-Score, SOPR и реализованную капитализацию vs. рыночную. NVT ниже 25 указывает на недооценку сети относительно объёма транзакций — исторически бычий сигнал для BTC.',
+      how: [
+        `Калькулятор ончейн-метрик вычисляет ключевые показатели оценки и активности блокчейна из исходных данных. Введите рыночную капитализацию, реализованную капитализацию, объём транзакций и активные адреса — инструмент рассчитает NVT, MVRV Z-Score и SOPR для оценки, переоценена или недооценена сеть.`,
+        `Эти метрики дополняют технический анализ графиков фундаментальным слоем. MVRV Z-Score выше 7 исторически предшествовал крупным вершинам, а значения ниже 0,1 отмечали дно поколения. Проверяйте несколько метрик одновременно для формирования убеждённости в макрорешениях.`
+      ],
+      inputs: [
+        `Рыночная капитализация — текущая стоимость всех токенов в обращении. Реализованная капитализация оценивает каждую монету по цене последнего ончейн-перемещения. Объём транзакций — суммарная стоимость переводов за 24 часа в USD.`,
+        `Активные адреса измеряют использование сети. SOPR — отношение стоимости потраченных выходов к стоимости их создания: выше 1 — продажа в прибыль, ниже 1 — в убыток. Дашборд показывает каждую метрику с историческим перцентилем и сигналом бык/медведь/нейтрал.`
+      ],
+    },
+  },
+  'grid-trading-calculator': {
+    en: {
+      quickAnswer: 'Configure grid trading bot parameters: price range, grid count, and investment amount. A 20-grid bot on BTC between $70,000–$85,000 with $10,000 capital places orders every $750 apart, earning ~0.5–2% per grid fill in a ranging market.',
+      how: [
+        `The Grid Trading Calculator helps you configure an automated grid bot by computing order spacing, capital per grid level, and projected returns in a range-bound market. Enter the upper and lower price bounds, number of grid levels, and total capital — the tool shows each order's price, size, and the profit per grid when a buy-then-sell cycle completes.`,
+        `Grid trading profits from sideways volatility by placing staggered buy and sell orders across a price range. Each completed grid cycle captures the price difference as profit. The calculator models arithmetic (equal spacing) and geometric (percentage spacing) grids, and projects annualized returns based on historical volatility and fill frequency estimates.`
+      ],
+      inputs: [
+        `Upper price and lower price define the trading range — set these around the expected support and resistance levels. Grid count determines how many orders are placed (more grids = smaller profit per fill but higher fill frequency). Total investment is split equally across all grid levels.`,
+        `Grid type (arithmetic vs. geometric) affects spacing: arithmetic places equal dollar gaps, geometric places equal percentage gaps (better for volatile assets). The output shows each grid level's buy/sell prices, order sizes, profit per completed grid cycle, estimated fills per day based on historical volatility, and projected monthly/annual returns.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Configura los parámetros de un bot de grid trading: rango de precios, cantidad de grids e inversión. Un bot de 20 grids en BTC entre $70.000–$85.000 con $10.000 coloca órdenes cada $750, generando ~0,5–2% por ejecución en mercado lateral.',
+      how: [
+        `La Calculadora de Grid Trading ayuda a configurar un bot automatizado calculando el espaciado de órdenes, capital por nivel y rendimientos proyectados en mercados laterales. Introduce los límites superior e inferior de precio, el número de niveles y el capital total — la herramienta muestra cada orden, su tamaño y el beneficio por ciclo completado.`,
+        `El grid trading genera beneficios de la volatilidad lateral colocando órdenes escalonadas de compra y venta. Cada ciclo completado captura la diferencia de precio como ganancia. La calculadora modela grids aritméticos y geométricos, y proyecta retornos anualizados basados en volatilidad histórica.`
+      ],
+      inputs: [
+        `El precio superior e inferior definen el rango — configúralos en los niveles de soporte y resistencia esperados. La cantidad de grids determina cuántas órdenes se colocan (más grids = menor beneficio por ejecución pero mayor frecuencia). La inversión total se reparte entre todos los niveles.`,
+        `El tipo de grid (aritmético vs. geométrico) afecta el espaciado. La salida muestra precios de compra/venta por nivel, tamaños de orden, beneficio por ciclo, ejecuciones estimadas por día y retornos mensuales/anuales proyectados.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Configure parâmetros de grid trading: faixa de preço, número de grids e valor investido. Um bot de 20 grids no BTC entre $70.000–$85.000 com $10.000 coloca ordens a cada $750, gerando ~0,5–2% por execução em mercado lateral.',
+      how: [
+        `A Calculadora de Grid Trading ajuda a configurar um bot automatizado calculando o espaçamento de ordens, capital por nível e retornos projetados em mercado lateral. Insira os limites superior e inferior de preço, número de níveis de grid e capital total — a ferramenta mostra cada ordem, seu tamanho e o lucro por ciclo completado.`,
+        `Grid trading lucra com volatilidade lateral colocando ordens escalonadas de compra e venda. Cada ciclo completado captura a diferença de preço como lucro. A calculadora modela grids aritméticos e geométricos, e projeta retornos anualizados baseados em volatilidade histórica.`
+      ],
+      inputs: [
+        `Preço superior e inferior definem a faixa de negociação — defina nos níveis de suporte e resistência esperados. O número de grids determina quantas ordens são colocadas. O investimento total é dividido igualmente entre todos os níveis.`,
+        `Tipo de grid (aritmético vs. geométrico) afeta o espaçamento. A saída mostra preços de compra/venda por nível, tamanhos de ordem, lucro por ciclo, execuções estimadas por dia e retornos mensais/anuais projetados.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Grid trading bot parametrelerini yapılandırın: fiyat aralığı, grid sayısı ve yatırım tutarı. $70.000–$85.000 arasında 20 gridli BTC botu $10.000 sermayeyle her $750\'de emir yerleştirerek yatay piyasada grid başına ~%0,5–2 kazanır.',
+      how: [
+        `Grid Trading Hesaplayıcısı, emir aralığını, grid seviyesi başına sermayeyi ve yatay piyasada öngörülen getirileri hesaplayarak otomatik grid bot yapılandırmanıza yardımcı olur. Üst ve alt fiyat sınırlarını, grid sayısını ve toplam sermayeyi girin — araç her emrin fiyatını, büyüklüğünü ve alım-satım döngüsü tamamlandığında grid başına kârı gösterir.`,
+        `Grid trading, bir fiyat aralığında kademeli alım-satım emirleri yerleştirerek yatay oynaklıktan kâr eder. Her tamamlanan grid döngüsü fiyat farkını kâr olarak yakalar. Hesaplayıcı aritmetik ve geometrik gridleri modeller ve tarihsel oynaklığa dayalı yıllık getiri projeksiyonu yapar.`
+      ],
+      inputs: [
+        `Üst ve alt fiyat işlem aralığını tanımlar — beklenen destek ve direnç seviyelerine göre ayarlayın. Grid sayısı kaç emir yerleştirileceğini belirler. Toplam yatırım tüm grid seviyeleri arasında eşit bölünür.`,
+        `Grid türü (aritmetik vs. geometrik) aralığı etkiler. Çıktı seviye başına alış/satış fiyatları, emir büyüklükleri, döngü başına kâr, günlük tahmini gerçekleşmeler ve aylık/yıllık öngörülen getiriler gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'ग्रिड ट्रेडिंग बॉट पैरामीटर कॉन्फिगर करें: प्राइस रेंज, ग्रिड काउंट और इन्वेस्टमेंट अमाउंट। $70,000–$85,000 के बीच 20-ग्रिड BTC बॉट $10,000 कैपिटल के साथ हर $750 पर ऑर्डर लगाता है और रेंजिंग मार्केट में प्रति ग्रिड ~0.5–2% कमाता है।',
+      how: [
+        `ग्रिड ट्रेडिंग कैलकुलेटर ऑर्डर स्पेसिंग, प्रति ग्रिड लेवल कैपिटल और रेंज-बाउंड मार्केट में प्रोजेक्टेड रिटर्न कैलकुलेट करके ऑटोमेटेड ग्रिड बॉट कॉन्फिगर करने में मदद करता है। अपर और लोअर प्राइस बाउंड, ग्रिड लेवल की संख्या और टोटल कैपिटल दर्ज करें।`,
+        `ग्रिड ट्रेडिंग प्राइस रेंज में स्टैगर्ड बाय-सेल ऑर्डर लगाकर साइडवेज वोलैटिलिटी से प्रॉफिट करती है। हर कम्प्लीटेड ग्रिड साइकल प्राइस डिफरेंस को प्रॉफिट के रूप में कैप्चर करता है। कैलकुलेटर अरिथमेटिक और जियोमेट्रिक ग्रिड मॉडल करता है।`
+      ],
+      inputs: [
+        `अपर और लोअर प्राइस ट्रेडिंग रेंज डिफाइन करते हैं — इन्हें एक्स्पेक्टेड सपोर्ट-रेजिस्टेंस लेवल पर सेट करें। ग्रिड काउंट निर्धारित करता है कितने ऑर्डर लगाए जाएं। टोटल इन्वेस्टमेंट सभी ग्रिड लेवल में समान रूप से विभाजित होता है।`,
+        `ग्रिड टाइप (अरिथमेटिक vs. जियोमेट्रिक) स्पेसिंग प्रभावित करता है। आउटपुट प्रति लेवल बाय/सेल प्राइस, ऑर्डर साइज, प्रति कम्प्लीटेड ग्रिड साइकल प्रॉफिट, हिस्टोरिकल वोलैटिलिटी बेस्ड डेली एस्टिमेटेड फिल्स और मंथली/एनुअल प्रोजेक्टेड रिटर्न दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Настройте параметры грид-бота: ценовой диапазон, количество уровней и сумму инвестиции. 20-уровневый бот на BTC от $70 000 до $85 000 с капиталом $10 000 размещает ордера каждые $750, зарабатывая ~0,5–2% за каждое срабатывание в боковом рынке.',
+      how: [
+        `Калькулятор грид-трейдинга помогает настроить автоматического бота, рассчитывая интервал ордеров, капитал на каждый уровень и прогнозируемую доходность в боковом рынке. Введите верхнюю и нижнюю границы цены, количество уровней и общий капитал — инструмент покажет цену, объём каждого ордера и прибыль за завершённый цикл.`,
+        `Грид-трейдинг извлекает прибыль из бокового движения, размещая ступенчатые ордера на покупку и продажу. Каждый завершённый цикл фиксирует ценовую разницу как прибыль. Калькулятор моделирует арифметические и геометрические сетки и проецирует годовую доходность на основе исторической волатильности.`
+      ],
+      inputs: [
+        `Верхняя и нижняя цена определяют торговый диапазон — задайте их на уровнях ожидаемых поддержки и сопротивления. Количество уровней определяет число ордеров. Общий капитал делится поровну между всеми уровнями.`,
+        `Тип сетки (арифметический vs. геометрический) влияет на расстояние между ордерами. Результат: цены покупки/продажи на каждом уровне, объёмы ордеров, прибыль за цикл, оценка срабатываний в день и проекция месячной/годовой доходности.`
+      ],
+    },
+  },
+  'inheritance-tax-calculator': {
+    en: {
+      quickAnswer: 'Estimate inheritance and estate tax liability on cryptocurrency holdings. In the US, estates above $13.61M (2024 exemption) face a 40% federal estate tax — a $20M crypto estate could owe ~$2.56M in federal taxes alone.',
+      how: [
+        `The Inheritance Tax Calculator estimates the tax impact of passing cryptocurrency assets to heirs. Enter the total estate value (including crypto), the applicable jurisdiction, and the number of beneficiaries — the tool calculates the estate tax liability at federal and state levels, and shows the step-up in cost basis that eliminates capital gains on inherited assets.`,
+        `Cryptocurrency inherits a "stepped-up" cost basis equal to the fair market value at the date of death. This means unrealized gains accumulated over years are wiped out for tax purposes. The calculator quantifies this tax benefit: if you bought BTC at $5,000 and it's worth $77,000 at death, your heirs' cost basis resets to $77,000 — eliminating $72,000 of taxable gains per coin.`
+      ],
+      inputs: [
+        `Total estate value includes all assets (crypto, real estate, investments, cash). Crypto holdings can be entered separately to see their proportion and specific tax impact. The jurisdiction selector covers US federal, US state-level estate taxes, and UK inheritance tax (40% above £325,000).`,
+        `The exemption threshold field auto-fills based on jurisdiction (US: $13.61M federal, UK: £325,000) but can be overridden. Number of beneficiaries affects gift-splitting strategies. The output shows total tax due, effective tax rate, stepped-up basis savings, and recommended estate planning strategies (trusts, annual gifting, charitable donations).`
+      ],
+    },
+    es: {
+      quickAnswer: 'Estima el impuesto de sucesiones sobre tenencias de criptomonedas. En EE.UU., patrimonios superiores a $13,61M (exención 2024) enfrentan un 40% de impuesto federal — un patrimonio cripto de $20M podría deber ~$2,56M solo en impuestos federales.',
+      how: [
+        `La Calculadora de Impuesto de Herencia estima el impacto fiscal de transferir activos cripto a herederos. Introduce el valor total del patrimonio, la jurisdicción aplicable y el número de beneficiarios — la herramienta calcula la obligación tributaria a nivel federal y estatal, y muestra el ajuste de base de costo que elimina las ganancias de capital en activos heredados.`,
+        `Las criptomonedas heredan una base de costo "ajustada" igual al valor justo de mercado en la fecha del fallecimiento, eliminando las ganancias no realizadas acumuladas. La calculadora cuantifica este beneficio fiscal: si compraste BTC a $5.000 y vale $77.000 al fallecer, la base de costo de tus herederos se ajusta a $77.000.`
+      ],
+      inputs: [
+        `El valor total del patrimonio incluye todos los activos. Las tenencias cripto pueden ingresarse por separado para ver su proporción e impacto fiscal específico. El selector de jurisdicción cubre impuesto federal de EE.UU., impuestos estatales y el impuesto de herencia del Reino Unido (40% por encima de £325.000).`,
+        `El umbral de exención se autocompleta según la jurisdicción pero puede modificarse. El número de beneficiarios afecta las estrategias de división de donaciones. La salida muestra impuesto total, tasa efectiva, ahorro por ajuste de base y estrategias recomendadas de planificación patrimonial.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Estime o imposto sobre herança em criptomoedas. Nos EUA, espólios acima de $13,61M (isenção 2024) enfrentam 40% de imposto federal — um espólio cripto de $20M pode dever ~$2,56M só em impostos federais.',
+      how: [
+        `A Calculadora de Imposto sobre Herança estima o impacto fiscal da transferência de ativos cripto para herdeiros. Insira o valor total do espólio, a jurisdição aplicável e o número de beneficiários — a ferramenta calcula a obrigação tributária nos níveis federal e estadual, e mostra o ajuste de base de custo que elimina ganhos de capital em ativos herdados.`,
+        `Criptomoedas herdam uma base de custo "ajustada" igual ao valor justo de mercado na data do óbito, eliminando ganhos não realizados acumulados. A calculadora quantifica esse benefício: se você comprou BTC a $5.000 e vale $77.000 no óbito, a base de custo dos herdeiros é reajustada para $77.000.`
+      ],
+      inputs: [
+        `O valor total do espólio inclui todos os ativos. As criptomoedas podem ser inseridas separadamente para ver sua proporção. O seletor de jurisdição cobre imposto federal dos EUA, estaduais e imposto sobre herança do Reino Unido (40% acima de £325.000).`,
+        `O limite de isenção é preenchido automaticamente pela jurisdição, mas pode ser alterado. O número de beneficiários afeta estratégias de doação. A saída mostra imposto total, alíquota efetiva, economia do ajuste de base e estratégias recomendadas de planejamento sucessório.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Kripto varlıkları üzerindeki veraset ve intikal vergisi yükümlülüğünü tahmin edin. ABD\'de $13,61M (2024 muafiyeti) üzerindeki mülkler %40 federal veraset vergisine tabidir — $20M kripto mülk sadece federal vergide ~$2,56M borçlanabilir.',
+      how: [
+        `Veraset Vergisi Hesaplayıcısı, kripto varlıkların mirasçılara aktarılmasının vergi etkisini tahmin eder. Toplam mülk değerini, geçerli yargı alanını ve yararlanıcı sayısını girin — araç federal ve eyalet düzeyinde vergi yükümlülüğünü ve miras alınan varlıklarda sermaye kazançlarını ortadan kaldıran maliyet bazı düzeltmesini hesaplar.`,
+        `Kripto, ölüm tarihindeki adil piyasa değerine eşit "düzeltilmiş" maliyet bazı devralır, yıllar içinde biriken gerçekleşmemiş kazançları vergi açısından siler. Hesaplayıcı bu vergi avantajını ölçer: BTC'yi $5.000'den aldıysanız ve ölümde $77.000 değerindeyse, mirasçılarınızın maliyet bazı $77.000'e sıfırlanır.`
+      ],
+      inputs: [
+        `Toplam mülk değeri tüm varlıkları içerir. Kripto varlıklar ayrı girilebilir. Yargı alanı seçici ABD federal, ABD eyalet ve Birleşik Krallık veraset vergisini (£325.000 üzeri %40) kapsar.`,
+        `Muafiyet eşiği yargı alanına göre otomatik doldurulur ancak değiştirilebilir. Yararlanıcı sayısı hediye bölme stratejilerini etkiler. Çıktı toplam vergi, efektif vergi oranı, düzeltilmiş baz tasarrufu ve önerilen mülk planlama stratejilerini gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'क्रिप्टोकरेंसी होल्डिंग्स पर इनहेरिटेंस और एस्टेट टैक्स लायबिलिटी का अनुमान लगाएं। US में $13.61M (2024 एग्जेम्प्शन) से ऊपर के एस्टेट पर 40% फेडरल एस्टेट टैक्स लगता है — $20M क्रिप्टो एस्टेट पर सिर्फ फेडरल टैक्स में ~$2.56M देना पड़ सकता है।',
+      how: [
+        `इनहेरिटेंस टैक्स कैलकुलेटर क्रिप्टोकरेंसी एसेट्स को उत्तराधिकारियों को ट्रांसफर करने के टैक्स इम्पैक्ट का अनुमान लगाता है। टोटल एस्टेट वैल्यू, लागू जूरिसडिक्शन और बेनिफिशियरीज की संख्या दर्ज करें — टूल फेडरल और स्टेट लेवल पर एस्टेट टैक्स लायबिलिटी कैलकुलेट करता है और स्टेप-अप इन कॉस्ट बेसिस दिखाता है।`,
+        `क्रिप्टोकरेंसी को डेथ की तारीख पर फेयर मार्केट वैल्यू के बराबर "स्टेप्ड-अप" कॉस्ट बेसिस मिलता है। इसका मतलब सालों में जमा अनरियलाइज्ड गेन्स टैक्स उद्देश्यों से समाप्त हो जाते हैं। कैलकुलेटर इस टैक्स बेनिफिट को क्वांटिफाई करता है।`
+      ],
+      inputs: [
+        `टोटल एस्टेट वैल्यू सभी एसेट्स शामिल करती है। क्रिप्टो होल्डिंग्स अलग से दर्ज की जा सकती हैं। जूरिसडिक्शन सिलेक्टर US फेडरल, US स्टेट-लेवल और UK इनहेरिटेंस टैक्स (£325,000 से ऊपर 40%) कवर करता है।`,
+        `एग्जेम्प्शन थ्रेशोल्ड जूरिसडिक्शन के आधार पर ऑटो-फिल होता है लेकिन ओवरराइड किया जा सकता है। बेनिफिशियरीज की संख्या गिफ्ट-स्प्लिटिंग स्ट्रैटेजी प्रभावित करती है। आउटपुट टोटल टैक्स, इफेक्टिव टैक्स रेट, स्टेप्ड-अप बेसिस सेविंग्स और एस्टेट प्लानिंग स्ट्रैटेजी दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Оцените налог на наследство криптовалютных активов. В США имущество свыше $13,61 млн (освобождение 2024) облагается 40% федеральным налогом — криптоимущество на $20 млн может задолжать ~$2,56 млн только федеральных налогов.',
+      how: [
+        `Калькулятор налога на наследство оценивает налоговые последствия передачи криптоактивов наследникам. Введите общую стоимость имущества, юрисдикцию и число бенефициаров — инструмент рассчитает налоговое обязательство на федеральном и региональном уровне и покажет повышение базы стоимости, устраняющее налог на прирост капитала.`,
+        `Криптовалюта наследует "повышенную" базу стоимости, равную справедливой рыночной цене на дату смерти. Нереализованная прибыль за годы обнуляется для налоговых целей. Калькулятор количественно оценивает эту выгоду: если BTC куплен за $5 000, а на момент смерти стоит $77 000, база наследников сбрасывается до $77 000.`
+      ],
+      inputs: [
+        `Общая стоимость имущества включает все активы. Криптоактивы можно ввести отдельно для оценки их доли. Выбор юрисдикции: федеральный налог США, налоги штатов, налог на наследство Великобритании (40% свыше £325 000).`,
+        `Порог освобождения заполняется автоматически, но может быть изменён. Число бенефициаров влияет на стратегии дарения. Результат: общий налог, эффективная ставка, экономия от повышения базы и рекомендуемые стратегии планирования наследства (трасты, ежегодное дарение, благотворительность).`
+      ],
+    },
+  },
+  'validator-calculator': {
+    en: {
+      quickAnswer: 'Estimate validator node rewards, costs, and ROI for Ethereum and other PoS networks. Running a solo Ethereum validator with 32 ETH earns ~3.5% APY ($6,700/year at $6,000/ETH) minus ~$50–100/month in server costs.',
+      how: [
+        `The Validator Calculator models the economics of running a proof-of-stake validator node. Enter the network (Ethereum, Solana, Cosmos, etc.), your staked amount, and infrastructure costs — the tool computes gross annual rewards, net profit after hosting expenses, effective APY, and the estimated time to recoup your hardware or VPS investment.`,
+        `For Ethereum, the calculator factors in consensus layer rewards (attestation, proposals) and execution layer tips (MEV). It also models the impact of validator count on rewards: as more validators join the network, individual returns decline. Compare running a solo validator versus delegating to a staking pool to see when the infrastructure overhead is justified.`
+      ],
+      inputs: [
+        `Network selection determines the reward formula and minimum stake requirement (Ethereum: 32 ETH, Solana: no minimum but practical threshold exists). Staked amount is the token quantity locked in the validator. Monthly hosting cost covers cloud VPS or dedicated server expenses ($50–200/month typical).`,
+        `Optional fields include expected uptime percentage (affects reward penalties for missed attestations), MEV-boost toggle for Ethereum (adds ~0.5–1% extra APY), and electricity cost for bare-metal setups. The output shows gross rewards, hosting costs, net profit, effective APY, and ROI timeline for your hardware investment.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Estima recompensas, costos y ROI de un nodo validador para Ethereum y otras redes PoS. Ejecutar un validador Ethereum con 32 ETH genera ~3,5% APY ($6.700/año a $6.000/ETH) menos ~$50–100/mes en costos de servidor.',
+      how: [
+        `La Calculadora de Validador modela la economía de ejecutar un nodo validador proof-of-stake. Introduce la red (Ethereum, Solana, Cosmos), tu cantidad stakeada y los costos de infraestructura — la herramienta calcula las recompensas anuales brutas, el beneficio neto, el APY efectivo y el tiempo estimado para recuperar la inversión en hardware.`,
+        `Para Ethereum, la calculadora incluye recompensas de la capa de consenso (attestation, propuestas) y propinas de la capa de ejecución (MEV). También modela el impacto del número de validadores: a más validadores, menores retornos individuales. Compara ejecutar un validador propio versus delegar a un pool.`
+      ],
+      inputs: [
+        `La selección de red determina la fórmula de recompensa y el stake mínimo (Ethereum: 32 ETH). La cantidad stakeada son los tokens bloqueados. El costo mensual de hosting cubre el servidor ($50–200/mes típico).`,
+        `Los campos opcionales incluyen porcentaje de uptime esperado, interruptor de MEV-boost para Ethereum (añade ~0,5–1% APY extra) y costo de electricidad para servidores dedicados. La salida muestra recompensas brutas, costos de hosting, beneficio neto, APY efectivo y línea temporal de ROI.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Estime recompensas, custos e ROI de nó validador para Ethereum e outras redes PoS. Executar um validador Ethereum com 32 ETH gera ~3,5% APY ($6.700/ano a $6.000/ETH) menos ~$50–100/mês em custos de servidor.',
+      how: [
+        `A Calculadora de Validador modela a economia de executar um nó validador proof-of-stake. Insira a rede (Ethereum, Solana, Cosmos), sua quantidade em stake e custos de infraestrutura — a ferramenta calcula recompensas anuais brutas, lucro líquido, APY efetivo e tempo estimado para recuperar o investimento.`,
+        `Para Ethereum, inclui recompensas da camada de consenso (attestation, propostas) e gorjetas da camada de execução (MEV). Modela o impacto do número de validadores nos retornos. Compare executar validador solo versus delegar a um pool.`
+      ],
+      inputs: [
+        `Seleção de rede determina a fórmula de recompensa e stake mínimo (Ethereum: 32 ETH). Quantidade em stake são tokens bloqueados no validador. Custo mensal de hospedagem cobre servidor VPS ou dedicado ($50–200/mês).`,
+        `Campos opcionais incluem percentual de uptime esperado, toggle MEV-boost para Ethereum (~0,5–1% APY extra) e custo de eletricidade. A saída mostra recompensas brutas, custos de hospedagem, lucro líquido, APY efetivo e timeline de ROI.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Ethereum ve diğer PoS ağları için doğrulayıcı düğüm ödüllerini, maliyetlerini ve ROI\'sini tahmin edin. 32 ETH ile solo Ethereum doğrulayıcısı çalıştırmak ~%3,5 APY ($6.000/ETH\'de $6.700/yıl) kazandırır, eksi ~$50–100/ay sunucu maliyeti.',
+      how: [
+        `Doğrulayıcı Hesaplayıcısı, bir proof-of-stake doğrulayıcı düğümü çalıştırmanın ekonomisini modeller. Ağı (Ethereum, Solana, Cosmos), stake miktarınızı ve altyapı maliyetlerini girin — araç brüt yıllık ödülleri, barındırma giderleri sonrası net kârı, efektif APY'yi ve yatırımınızı geri kazanma süresini hesaplar.`,
+        `Ethereum için konsensüs katmanı ödülleri (attestation, teklif) ve yürütme katmanı bahşişleri (MEV) dahildir. Doğrulayıcı sayısının ödüller üzerindeki etkisini de modeller. Solo doğrulayıcı çalıştırmayı staking havuzuna delege etmeyle karşılaştırın.`
+      ],
+      inputs: [
+        `Ağ seçimi ödül formülünü ve minimum stake gereksinimini belirler (Ethereum: 32 ETH). Stake miktarı doğrulayıcıya kilitlenen token miktarıdır. Aylık barındırma maliyeti bulut VPS veya özel sunucu giderlerini kapsar ($50–200/ay).`,
+        `İsteğe bağlı alanlar beklenen çalışma süresi yüzdesi, Ethereum için MEV-boost düğmesi (~%0,5–1 ek APY) ve fiziksel sunucular için elektrik maliyetini içerir. Çıktı brüt ödüller, barındırma maliyetleri, net kâr, efektif APY ve ROI zaman çizelgesi gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'Ethereum और अन्य PoS नेटवर्क के लिए वैलिडेटर नोड रिवॉर्ड, कॉस्ट और ROI का अनुमान लगाएं। 32 ETH के साथ सोलो Ethereum वैलिडेटर चलाना ~3.5% APY ($6,000/ETH पर $6,700/वर्ष) कमाता है, ~$50–100/महीना सर्वर कॉस्ट घटाकर।',
+      how: [
+        `वैलिडेटर कैलकुलेटर proof-of-stake वैलिडेटर नोड चलाने की इकोनॉमिक्स मॉडल करता है। नेटवर्क (Ethereum, Solana, Cosmos), स्टेक्ड अमाउंट और इंफ्रास्ट्रक्चर कॉस्ट दर्ज करें — टूल ग्रॉस एनुअल रिवॉर्ड, होस्टिंग खर्चों के बाद नेट प्रॉफिट, इफेक्टिव APY और हार्डवेयर इन्वेस्टमेंट रिकवरी का एस्टिमेटेड टाइम कैलकुलेट करता है।`,
+        `Ethereum के लिए, कैलकुलेटर कंसेंसस लेयर रिवॉर्ड (attestation, प्रपोजल) और एक्ज़ीक्यूशन लेयर टिप्स (MEV) शामिल करता है। वैलिडेटर काउंट के रिवॉर्ड पर प्रभाव को भी मॉडल करता है। सोलो वैलिडेटर vs. स्टेकिंग पूल को डेलीगेट करने की तुलना करें।`
+      ],
+      inputs: [
+        `नेटवर्क सिलेक्शन रिवॉर्ड फॉर्मूला और मिनिमम स्टेक रिक्वायरमेंट निर्धारित करता है (Ethereum: 32 ETH)। स्टेक्ड अमाउंट वैलिडेटर में लॉक किए गए टोकन हैं। मंथली होस्टिंग कॉस्ट क्लाउड VPS या डेडिकेटेड सर्वर ($50–200/महीना) कवर करती है।`,
+        `ऑप्शनल फील्ड में एक्स्पेक्टेड अपटाइम परसेंटेज, Ethereum के लिए MEV-boost टॉगल (~0.5–1% एक्स्ट्रा APY) और बेयर-मेटल सेटअप के लिए इलेक्ट्रिसिटी कॉस्ट शामिल हैं। आउटपुट ग्रॉस रिवॉर्ड, होस्टिंग कॉस्ट, नेट प्रॉफिट, इफेक्टिव APY और ROI टाइमलाइन दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Оцените вознаграждение, затраты и ROI ноды валидатора для Ethereum и других PoS-сетей. Соло-валидатор Ethereum с 32 ETH приносит ~3,5% APY ($6 700/год при $6 000/ETH) минус ~$50–100/мес. на серверные расходы.',
+      how: [
+        `Калькулятор валидатора моделирует экономику запуска PoS-ноды. Введите сеть (Ethereum, Solana, Cosmos), сумму стейка и расходы на инфраструктуру — инструмент рассчитает валовое годовое вознаграждение, чистую прибыль после хостинга, эффективную APY и время окупаемости оборудования.`,
+        `Для Ethereum учитываются вознаграждения уровня консенсуса (аттестации, предложения блоков) и чаевые уровня исполнения (MEV). Моделируется влияние числа валидаторов на доходность. Сравните соло-валидатор с делегированием в стейкинг-пул.`
+      ],
+      inputs: [
+        `Выбор сети определяет формулу вознаграждения и минимальный стейк (Ethereum: 32 ETH). Сумма стейка — количество заблокированных токенов. Ежемесячный хостинг покрывает VPS или выделенный сервер ($50–200/мес.).`,
+        `Дополнительные поля: ожидаемый аптайм, переключатель MEV-boost для Ethereum (~0,5–1% дополнительной APY) и стоимость электричества для железных серверов. Результат: валовое вознаграждение, расходы на хостинг, чистая прибыль, эффективная APY и сроки окупаемости.`
+      ],
+    },
+  },
+  'token-valuation-calculator': {
+    en: {
+      quickAnswer: 'Estimate fair token value using fully diluted valuation (FDV), circulating market cap, and comparable protocol analysis. A DeFi token with $50M TVL and $500M FDV trades at 10x TVL — compare against sector median (5–15x) to assess if it is overvalued.',
+      how: [
+        `The Token Valuation Calculator applies multiple frameworks to estimate a token's fair value: fully diluted valuation (FDV) analysis, TVL-to-market-cap ratios for DeFi tokens, P/E ratios for revenue-generating protocols, and comparable protocol multiples. Enter the token's metrics and the calculator shows how it stacks up against sector benchmarks.`,
+        `Use it to evaluate new token launches and existing positions. A token trading at 50x revenue while the sector median is 20x may be overvalued unless growth justifies the premium. The calculator also models the impact of token unlocks: if 60% of supply is still locked, today's market cap at full dilution could be 2.5x the current circulating value.`
+      ],
+      inputs: [
+        `Circulating supply and total/max supply determine the FDV ratio. Market cap (or current price) establishes the baseline. For DeFi tokens, enter Total Value Locked (TVL) for TVL-to-cap ratio. For revenue-generating protocols, enter annualized protocol revenue for P/E calculation.`,
+        `Sector selection (DeFi, L1/L2, GameFi, Infrastructure) loads appropriate benchmark multiples. The unlock schedule field accepts the percentage of supply still locked and the vesting timeline. The output shows FDV, circulatingCap/FDV ratio, sector-relative valuation score, and a fair price range based on comparable analysis.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Estima el valor justo del token usando valoración totalmente diluida (FDV), capitalización circulante y análisis de protocolos comparables. Un token DeFi con $50M TVL y $500M FDV cotiza a 10x TVL — compara con la mediana del sector (5–15x) para evaluar si está sobrevalorado.',
+      how: [
+        `La Calculadora de Valoración de Tokens aplica múltiples marcos para estimar el valor justo: análisis de valoración totalmente diluida (FDV), ratios TVL-a-capitalización para tokens DeFi, ratios P/E para protocolos con ingresos y múltiplos comparables. Introduce las métricas del token y la calculadora muestra cómo se compara con los benchmarks del sector.`,
+        `Úsala para evaluar lanzamientos de tokens y posiciones existentes. Un token cotizando a 50x ingresos con la mediana del sector en 20x podría estar sobrevalorado. La calculadora modela el impacto de desbloqueos: si el 60% del suministro está bloqueado, la capitalización a dilución total sería 2,5x el valor circulante actual.`
+      ],
+      inputs: [
+        `La oferta circulante y total determinan la ratio FDV. La capitalización de mercado establece la línea base. Para tokens DeFi, introduce el TVL. Para protocolos con ingresos, introduce los ingresos anualizados para el cálculo P/E.`,
+        `La selección de sector (DeFi, L1/L2, GameFi, Infraestructura) carga múltiplos de benchmark apropiados. El campo de calendario de desbloqueo acepta el porcentaje bloqueado y la línea temporal. La salida muestra FDV, ratio circulante/FDV, puntuación de valoración relativa al sector y un rango de precio justo.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Estime o valor justo do token usando avaliação totalmente diluída (FDV), capitalização circulante e análise de protocolos comparáveis. Um token DeFi com $50M TVL e $500M FDV negocia a 10x TVL — compare com a mediana do setor (5–15x) para avaliar se está sobrevalorizado.',
+      how: [
+        `A Calculadora de Avaliação de Token aplica múltiplos frameworks para estimar o valor justo: análise FDV, razões TVL/cap para tokens DeFi, P/L para protocolos geradores de receita e múltiplos comparáveis. Insira as métricas do token e a calculadora mostra como ele se compara com benchmarks do setor.`,
+        `Use para avaliar lançamentos de tokens e posições existentes. Um token negociando a 50x receita com mediana do setor em 20x pode estar sobrevalorizado. A calculadora modela o impacto de desbloqueios: se 60% da oferta está bloqueada, o cap a plena diluição pode ser 2,5x o valor circulante atual.`
+      ],
+      inputs: [
+        `Oferta circulante e total determinam a razão FDV. Capitalização de mercado estabelece a base. Para tokens DeFi, insira o TVL. Para protocolos com receita, insira a receita anualizada para cálculo P/L.`,
+        `Seleção de setor (DeFi, L1/L2, GameFi, Infraestrutura) carrega múltiplos de benchmark apropriados. O campo de cronograma de desbloqueio aceita a porcentagem bloqueada e o prazo. A saída mostra FDV, razão circulante/FDV, pontuação de avaliação setorial e faixa de preço justo.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Tam seyreltilmiş değerleme (FDV), dolaşımdaki piyasa değeri ve karşılaştırılabilir protokol analizi kullanarak adil token değerini tahmin edin. $50M TVL ve $500M FDV\'li bir DeFi tokeni 10x TVL\'den işlem görür — aşırı değerlenip değerlenmediğini görmek için sektör medyanıyla (5–15x) karşılaştırın.',
+      how: [
+        `Token Değerleme Hesaplayıcısı, adil değeri tahmin etmek için birden fazla çerçeve uygular: tam seyreltilmiş değerleme (FDV), DeFi tokenları için TVL-piyasa değeri oranları, gelir üreten protokoller için F/K oranları ve karşılaştırılabilir protokol katları. Token metriklerini girin, hesaplayıcı sektör karşılaştırmaları gösterir.`,
+        `Yeni token lansmanlarını ve mevcut pozisyonları değerlendirmek için kullanın. Sektör medyanı 20x iken 50x gelirle işlem gören bir token aşırı değerlenmiş olabilir. Hesaplayıcı token kilit açma etkisini de modeller: arzın %60'ı hâlâ kilitliyse bugünkü piyasa değeri tam seyreltmede 2,5x olabilir.`
+      ],
+      inputs: [
+        `Dolaşımdaki ve toplam arz FDV oranını belirler. Piyasa değeri temel referansı oluşturur. DeFi tokenları için TVL girin. Gelir üreten protokoller için F/K hesaplaması amacıyla yıllık geliri girin.`,
+        `Sektör seçimi (DeFi, L1/L2, GameFi, Altyapı) uygun benchmark katlarını yükler. Kilit açma takvimi alanı kilitli yüzdeyi ve vesting süresini kabul eder. Çıktı FDV, dolaşım/FDV oranı, sektöre göre değerleme skoru ve karşılaştırmalı analize dayalı adil fiyat aralığı gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'फुली डाइल्यूटेड वैल्युएशन (FDV), सर्कुलेटिंग मार्केट कैप और कम्पेरेबल प्रोटोकॉल एनालिसिस से फेयर टोकन वैल्यू एस्टिमेट करें। $50M TVL और $500M FDV वाला DeFi टोकन 10x TVL पर ट्रेड करता है — ओवरवैल्यूड है या नहीं जांचने के लिए सेक्टर मीडियन (5–15x) से तुलना करें।',
+      how: [
+        `टोकन वैल्युएशन कैलकुलेटर फेयर वैल्यू एस्टिमेट करने के लिए मल्टीपल फ्रेमवर्क लागू करता है: FDV एनालिसिस, DeFi टोकन के लिए TVL-to-मार्केट-कैप रेशियो, रेवेन्यू-जेनरेटिंग प्रोटोकॉल के लिए P/E रेशियो और कम्पेरेबल प्रोटोकॉल मल्टीपल्स। टोकन की मेट्रिक्स दर्ज करें।`,
+        `नए टोकन लॉन्च और मौजूदा पोजीशन मूल्यांकन के लिए उपयोग करें। सेक्टर मीडियन 20x होने पर 50x रेवेन्यू पर ट्रेड करने वाला टोकन ओवरवैल्यूड हो सकता है। कैलकुलेटर टोकन अनलॉक का प्रभाव भी मॉडल करता है।`
+      ],
+      inputs: [
+        `सर्कुलेटिंग सप्लाई और टोटल/मैक्स सप्लाई FDV रेशियो निर्धारित करते हैं। मार्केट कैप बेसलाइन स्थापित करता है। DeFi टोकन के लिए TVL दर्ज करें। रेवेन्यू-जेनरेटिंग प्रोटोकॉल के लिए एन्युअलाइज्ड रेवेन्यू दर्ज करें।`,
+        `सेक्टर सिलेक्शन (DeFi, L1/L2, GameFi, इंफ्रास्ट्रक्चर) उपयुक्त बेंचमार्क मल्टीपल्स लोड करता है। अनलॉक शेड्यूल फील्ड लॉक्ड परसेंटेज और वेस्टिंग टाइमलाइन स्वीकार करता है। आउटपुट FDV, सर्कुलेटिंग/FDV रेशियो, सेक्टर-रिलेटिव वैल्युएशन स्कोर और फेयर प्राइस रेंज दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Оцените справедливую стоимость токена по полностью разводнённой оценке (FDV), рыночной капитализации и анализу сопоставимых протоколов. DeFi-токен с $50M TVL и $500M FDV торгуется по 10x TVL — сравните с медианой сектора (5–15x) для оценки переоценённости.',
+      how: [
+        `Калькулятор оценки токена применяет несколько подходов: FDV-анализ, соотношение TVL/капитализация для DeFi, P/E для протоколов с выручкой и мультипликаторы сопоставимых проектов. Введите метрики токена — калькулятор покажет, как он соотносится с бенчмарками сектора.`,
+        `Используйте для оценки новых запусков и существующих позиций. Токен с мультипликатором 50x при медиане 20x может быть переоценён. Калькулятор моделирует влияние разблокировок: если 60% предложения заблокировано, капитализация при полном разводнении будет в 2,5 раза выше текущей.`
+      ],
+      inputs: [
+        `Циркулирующее и общее/максимальное предложение определяют FDV. Рыночная капитализация задаёт базу. Для DeFi введите TVL, для протоколов с доходом — годовую выручку для P/E.`,
+        `Выбор сектора (DeFi, L1/L2, GameFi, инфраструктура) подгружает соответствующие бенчмарки. Поле графика разблокировки принимает процент заблокированного предложения и сроки вестинга. Результат: FDV, соотношение циркулирующей/FDV, оценка относительно сектора и диапазон справедливой цены.`
+      ],
+    },
+  },
+  'if-i-had-bought': {
+    en: {
+      quickAnswer: 'See what your investment would be worth today if you had bought a cryptocurrency at a past date. $1,000 invested in Bitcoin on January 1, 2020 ($7,200) would be worth ~$10,700 today — a 970% return in 6 years.',
+      how: [
+        `The "If I Had Bought" Calculator shows the hypothetical value of a past cryptocurrency investment using real historical price data. Select a coin, enter the amount you would have invested, and pick the date — the tool fetches the historical price, calculates how many tokens you would have purchased, and multiplies by today's price to show your unrealized gain or loss.`,
+        `Use it to analyze missed opportunities or validate your past decisions. It's also a powerful educational tool: seeing that $100 in ETH in January 2017 would be worth $40,000+ today illustrates crypto's asymmetric return potential. The calculator includes a percentage return, annualized CAGR, and a comparison against simply holding the S&P 500 over the same period.`
+      ],
+      inputs: [
+        `The investment amount in USD (or your local fiat) is what you hypothetically would have spent. The cryptocurrency selector supports all major coins with historical data on CoinGecko. The purchase date can go as far back as the token's listing date — Bitcoin supports dates from 2010 onward.`,
+        `The output shows: historical price on the selected date, number of tokens acquired, current token price, current portfolio value, total profit/loss in USD, percentage return, compound annual growth rate (CAGR), and a benchmark comparison against holding a stock index fund. A price chart overlays your entry point on the historical graph.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Descubre cuánto valdría hoy tu inversión si hubieras comprado una criptomoneda en una fecha pasada. $1.000 invertidos en Bitcoin el 1 de enero de 2020 ($7.200) valdrían ~$10.700 hoy — un retorno del 970% en 6 años.',
+      how: [
+        `La Calculadora "Si Hubiera Comprado" muestra el valor hipotético de una inversión pasada en criptomonedas usando datos históricos reales. Selecciona una moneda, introduce el monto que habrías invertido y elige la fecha — la herramienta obtiene el precio histórico, calcula cuántos tokens habrías comprado y muestra tu ganancia o pérdida no realizada.`,
+        `Úsala para analizar oportunidades perdidas o validar decisiones pasadas. También es una herramienta educativa: ver que $100 en ETH en enero de 2017 valdría $40.000+ hoy ilustra el potencial asimétrico del cripto. Incluye retorno porcentual, CAGR anualizado y comparación con el S&P 500.`
+      ],
+      inputs: [
+        `El monto de inversión en USD es lo que hipotéticamente habrías gastado. El selector de criptomonedas soporta todas las monedas con datos históricos en CoinGecko. La fecha de compra puede retroceder hasta la fecha de listado del token.`,
+        `La salida muestra: precio histórico en la fecha seleccionada, tokens adquiridos, precio actual, valor actual del portafolio, ganancia/pérdida total, retorno porcentual, CAGR y comparación con índice bursátil.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Veja quanto seu investimento valeria hoje se tivesse comprado uma criptomoeda em uma data passada. $1.000 investidos em Bitcoin em 1 de janeiro de 2020 ($7.200) valeriam ~$10.700 hoje — retorno de 970% em 6 anos.',
+      how: [
+        `A Calculadora "E Se Eu Tivesse Comprado" mostra o valor hipotético de um investimento passado em criptomoedas usando dados históricos reais. Selecione uma moeda, insira o valor que teria investido e escolha a data — a ferramenta busca o preço histórico, calcula quantos tokens teria comprado e mostra o ganho ou perda não realizado.`,
+        `Use para analisar oportunidades perdidas ou validar decisões passadas. É uma ferramenta educacional poderosa: ver que $100 em ETH em janeiro de 2017 valeria $40.000+ hoje ilustra o potencial assimétrico do cripto. Inclui retorno percentual, CAGR e comparação com o S&P 500.`
+      ],
+      inputs: [
+        `O valor do investimento em USD é o que hipoteticamente teria gasto. O seletor de criptomoedas suporta todas as moedas com dados históricos no CoinGecko. A data de compra pode retroceder até a listagem do token.`,
+        `A saída mostra: preço histórico na data, tokens adquiridos, preço atual, valor atual do portfólio, lucro/prejuízo total, retorno percentual, CAGR e comparação com índice de ações.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Geçmişte bir kripto para satın almış olsaydınız yatırımınızın bugün ne kadar değerli olacağını görün. 1 Ocak 2020\'de Bitcoin\'e yatırılan $1.000 ($7.200) bugün ~$10.700 eder — 6 yılda %970 getiri.',
+      how: [
+        `"Alsaydım Ne Olurdu" Hesaplayıcısı, gerçek tarihsel fiyat verileri kullanarak geçmişteki varsayımsal bir kripto yatırımının değerini gösterir. Bir coin seçin, yatırım yapacağınız tutarı girin ve tarihi seçin — araç tarihsel fiyatı getirir, kaç token alacağınızı hesaplar ve bugünkü fiyatla çarparak gerçekleşmemiş kazanç veya kaybınızı gösterir.`,
+        `Kaçırılan fırsatları analiz etmek veya geçmiş kararlarınızı değerlendirmek için kullanın. Aynı zamanda güçlü bir eğitim aracıdır: Ocak 2017'de ETH'ye $100 yatırmanın bugün $40.000+ edeceğini görmek kripto'nun asimetrik getiri potansiyelini gösterir. Yüzde getiri, CAGR ve S&P 500 karşılaştırması içerir.`
+      ],
+      inputs: [
+        `USD cinsinden yatırım tutarı varsayımsal olarak harcayacağınız miktardır. Kripto seçici CoinGecko'da tarihsel verisi olan tüm büyük coinleri destekler. Satın alma tarihi tokenin listeleme tarihine kadar geri gidebilir.`,
+        `Çıktı: seçilen tarihteki tarihsel fiyat, alınan token sayısı, güncel fiyat, portföy değeri, toplam kâr/zarar, yüzde getiri, CAGR ve hisse senedi endeksi karşılaştırması gösterilir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'देखें कि अगर आपने किसी पिछली तारीख पर क्रिप्टोकरेंसी खरीदी होती तो आज आपका निवेश कितना होता। 1 जनवरी 2020 को Bitcoin में $1,000 ($7,200) इन्वेस्ट किए होते तो आज ~$10,700 होते — 6 साल में 970% रिटर्न।',
+      how: [
+        `"अगर मैंने खरीदा होता" कैलकुलेटर रियल हिस्टोरिकल प्राइस डेटा का उपयोग करके पास्ट क्रिप्टो इन्वेस्टमेंट की हाइपोथेटिकल वैल्यू दिखाता है। कॉइन सेलेक्ट करें, इन्वेस्ट की जाने वाली राशि दर्ज करें और डेट चुनें — टूल हिस्टोरिकल प्राइस फेच करता है, कैलकुलेट करता है कितने टोकन खरीदे होते, और आज की कीमत से अनरियलाइज्ड गेन/लॉस दिखाता है।`,
+        `मिस्ड ऑपर्च्युनिटीज एनालाइज करने या पास्ट डिसीजन वैलिडेट करने के लिए उपयोग करें। यह एक शक्तिशाली एजुकेशनल टूल भी है: जनवरी 2017 में ETH में $100 आज $40,000+ होते, यह देखना क्रिप्टो की एसिमेट्रिक रिटर्न पोटेंशियल दर्शाता है। परसेंटेज रिटर्न, CAGR और S&P 500 तुलना शामिल है।`
+      ],
+      inputs: [
+        `USD में इन्वेस्टमेंट अमाउंट वह है जो आपने हाइपोथेटिकली खर्च किया होता। क्रिप्टोकरेंसी सिलेक्टर CoinGecko पर हिस्टोरिकल डेटा वाली सभी मेजर कॉइन सपोर्ट करता है। परचेज डेट टोकन की लिस्टिंग डेट तक जा सकती है।`,
+        `आउटपुट दिखाता है: सिलेक्टेड डेट पर हिस्टोरिकल प्राइस, एक्वायर्ड टोकन, करंट प्राइस, करंट पोर्टफोलियो वैल्यू, टोटल प्रॉफिट/लॉस, परसेंटेज रिटर्न, CAGR और स्टॉक इंडेक्स फंड से तुलना।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Узнайте, сколько бы стоила ваша инвестиция сегодня, если бы вы купили криптовалюту в прошлом. $1 000, вложенные в Bitcoin 1 января 2020 ($7 200), сейчас стоили бы ~$10 700 — доходность 970% за 6 лет.',
+      how: [
+        `Калькулятор «Если бы я купил» показывает гипотетическую стоимость прошлой криптоинвестиции на основе реальных исторических цен. Выберите монету, введите сумму вложения и дату — инструмент получит историческую цену, рассчитает количество купленных токенов и покажет нереализованную прибыль или убыток по текущей цене.`,
+        `Анализируйте упущенные возможности или проверяйте прошлые решения. Это мощный образовательный инструмент: $100 в ETH в январе 2017 года сейчас стоили бы $40 000+, что наглядно демонстрирует асимметричный потенциал криптовалют. Включает процент доходности, CAGR и сравнение с S&P 500.`
+      ],
+      inputs: [
+        `Сумма инвестиции в USD — гипотетические расходы. Выбор криптовалюты поддерживает все основные монеты с историческими данными на CoinGecko. Дата покупки может начинаться с момента листинга токена — для Bitcoin доступны данные с 2010 года.`,
+        `Результат: историческая цена на выбранную дату, количество приобретённых токенов, текущая цена, стоимость портфеля, прибыль/убыток, процент доходности, среднегодовой темп роста (CAGR) и сравнение с индексным фондом.`
+      ],
+    },
+  },
+  'millionaire-calculator': {
+    en: {
+      quickAnswer: 'Calculate how much crypto you need — or how long you must hold — to reach $1,000,000. At current prices, you need ~12.9 BTC ($77,500 each) or ~515 ETH ($1,940 each) to be a crypto millionaire today.',
+      how: [
+        `The Millionaire Calculator works backward from a $1,000,000 target to determine how much you need to invest, at what price point you achieve millionaire status, or how long your current holdings need to grow. Choose your approach: enter a token and quantity to see the required price, enter a dollar budget to see how many tokens you need, or enter current holdings with an expected annual return to see the timeline.`,
+        `The calculator also models the impact of regular contributions — monthly DCA into your position accelerates the timeline dramatically. A $500/month BTC investment at 30% annual growth (crypto's historical average) projects millionaire status in approximately 10–12 years. Compare different scenarios: all-in BTC vs. diversified portfolio vs. high-risk altcoin bets.`
+      ],
+      inputs: [
+        `Target wealth defaults to $1,000,000 but can be adjusted to any goal ($100K, $5M, $10M). Token selection and current price are auto-filled from CoinGecko. Current holdings (if any) represent your starting position. Expected annual return can range from conservative (10%) to aggressive (50%+).`,
+        `Monthly contribution is the DCA amount you plan to add regularly. The inflation-adjusted toggle shows your target in today's purchasing power. The output shows: tokens needed at current price, price needed for current holdings to reach the target, years to millionaire at the specified growth rate, and a growth chart with milestone markers at $100K, $250K, $500K, and $1M.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Calcula cuánto cripto necesitas — o cuánto tiempo debes mantener — para alcanzar $1.000.000. A precios actuales, necesitas ~12,9 BTC ($77.500 cada uno) o ~515 ETH ($1.940 cada uno) para ser millonario cripto hoy.',
+      how: [
+        `La Calculadora del Millonario trabaja desde un objetivo de $1.000.000 para determinar cuánto necesitas invertir, a qué precio alcanzas el estatus de millonario, o cuánto tiempo deben crecer tus tenencias. Elige tu enfoque: introduce un token y cantidad para ver el precio requerido, o introduce un presupuesto para ver cuántos tokens necesitas.`,
+        `La calculadora modela el impacto de aportes regulares — DCA mensual acelera dramáticamente la línea temporal. Una inversión de $500/mes en BTC con 30% de crecimiento anual proyecta ser millonario en aproximadamente 10–12 años. Compara escenarios: todo en BTC vs. portafolio diversificado vs. altcoins de alto riesgo.`
+      ],
+      inputs: [
+        `El objetivo de riqueza se establece por defecto en $1.000.000 pero puede ajustarse. La selección de token y precio actual se autocompletán. Las tenencias actuales representan tu posición inicial. El retorno anual esperado puede variar de conservador (10%) a agresivo (50%+).`,
+        `La contribución mensual es el monto DCA que planeas añadir. El interruptor ajustado por inflación muestra tu objetivo en poder adquisitivo actual. La salida muestra tokens necesarios, precio requerido, años para ser millonario y un gráfico de crecimiento con hitos en $100K, $250K, $500K y $1M.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Calcule quanto cripto você precisa — ou por quanto tempo deve manter — para chegar a $1.000.000. A preços atuais, você precisa de ~12,9 BTC ($77.500 cada) ou ~515 ETH ($1.940 cada) para ser um milionário cripto hoje.',
+      how: [
+        `A Calculadora do Milionário trabalha de trás para frente a partir de uma meta de $1.000.000 para determinar quanto investir, a que preço você atinge o status de milionário, ou quanto tempo suas participações precisam crescer. Escolha sua abordagem: insira token e quantidade para ver o preço necessário, ou insira um orçamento para ver quantos tokens precisa.`,
+        `A calculadora modela o impacto de contribuições regulares — DCA mensal acelera drasticamente o prazo. Um investimento de $500/mês em BTC com 30% de crescimento anual projeta status de milionário em ~10–12 anos. Compare cenários: tudo em BTC vs. portfólio diversificado vs. altcoins de alto risco.`
+      ],
+      inputs: [
+        `A meta de riqueza é $1.000.000 por padrão, mas pode ser ajustada. Seleção de token e preço atual são preenchidos automaticamente. Participações atuais representam sua posição inicial. Retorno anual esperado varia de conservador (10%) a agressivo (50%+).`,
+        `Contribuição mensal é o valor DCA planejado. O toggle ajustado pela inflação mostra a meta em poder de compra atual. A saída mostra tokens necessários, preço necessário, anos até milionário e gráfico de crescimento com marcos em $100K, $250K, $500K e $1M.`
+      ],
+    },
+    tr: {
+      quickAnswer: '$1.000.000\'a ulaşmak için ne kadar kripto gerektiğini — veya ne kadar süre tutmanız gerektiğini — hesaplayın. Mevcut fiyatlarla kripto milyoner olmak için ~12,9 BTC ($77.500) veya ~515 ETH ($1.940) gerekir.',
+      how: [
+        `Milyoner Hesaplayıcısı, $1.000.000 hedefinden geriye doğru çalışarak ne kadar yatırım yapmanız gerektiğini, hangi fiyatta milyoner olacağınızı veya mevcut varlıklarınızın ne kadar süre büyümesi gerektiğini belirler. Token ve miktar girerek gereken fiyatı görün veya bütçe girerek kaç token gerektiğini öğrenin.`,
+        `Hesaplayıcı düzenli katkıların etkisini modeller — aylık DCA süreyi dramatik şekilde kısaltır. %30 yıllık büyümeyle aylık $500 BTC yatırımı yaklaşık 10–12 yılda milyoner statüsü öngörür. Farklı senaryoları karşılaştırın: tamamen BTC vs. çeşitlendirilmiş portföy vs. yüksek riskli altcoinler.`
+      ],
+      inputs: [
+        `Hedef servet varsayılan olarak $1.000.000'dır ancak ayarlanabilir. Token seçimi ve güncel fiyat otomatik doldurulur. Mevcut varlıklar başlangıç pozisyonunuzu temsil eder. Beklenen yıllık getiri muhafazakâr (%10) ile agresif (%50+) arasında değişebilir.`,
+        `Aylık katkı düzenli olarak eklemeyi planladığınız DCA tutarıdır. Enflasyona göre düzeltilmiş düğme hedefi bugünkü satın alma gücüyle gösterir. Çıktı gerekli token sayısı, gereken fiyat, milyoner olma süresi ve $100K, $250K, $500K, $1M kilometre taşlı büyüme grafiği gösterir.`
+      ],
+    },
+    hi: {
+      quickAnswer: '$1,000,000 तक पहुंचने के लिए कितना क्रिप्टो चाहिए — या कितने समय तक होल्ड करना है — कैलकुलेट करें। करंट प्राइस पर आज क्रिप्टो मिलियनेयर बनने के लिए ~12.9 BTC ($77,500 प्रत्येक) या ~515 ETH ($1,940 प्रत्येक) चाहिए।',
+      how: [
+        `मिलियनेयर कैलकुलेटर $1,000,000 टार्गेट से बैकवर्ड वर्क करता है ताकि पता चले कितना इन्वेस्ट करना है, किस प्राइस पॉइंट पर मिलियनेयर स्टेटस मिलता है, या करंट होल्डिंग्स को कितने समय ग्रो करना है। अपना अप्रोच चुनें: टोकन और क्वांटिटी दर्ज करें या डॉलर बजट दर्ज करें।`,
+        `कैलकुलेटर रेगुलर कंट्रीब्यूशन का इम्पैक्ट भी मॉडल करता है — मंथली DCA टाइमलाइन नाटकीय रूप से तेज करता है। 30% एनुअल ग्रोथ पर $500/महीना BTC इन्वेस्टमेंट लगभग 10–12 साल में मिलियनेयर स्टेटस प्रोजेक्ट करता है।`
+      ],
+      inputs: [
+        `टार्गेट वेल्थ डिफॉल्ट $1,000,000 है लेकिन किसी भी गोल ($100K, $5M) में बदला जा सकता है। टोकन सिलेक्शन और करंट प्राइस CoinGecko से ऑटो-फिल होते हैं। करंट होल्डिंग्स स्टार्टिंग पोजीशन हैं। एक्स्पेक्टेड एनुअल रिटर्न कंजर्वेटिव (10%) से एग्रेसिव (50%+) तक हो सकता है।`,
+        `मंथली कंट्रीब्यूशन रेगुलरली ऐड करने वाला DCA अमाउंट है। इन्फ्लेशन-एडजस्टेड टॉगल आज की परचेजिंग पावर में टार्गेट दिखाता है। आउटपुट करंट प्राइस पर जरूरी टोकन, करंट होल्डिंग्स के लिए जरूरी प्राइस, स्पेसिफाइड ग्रोथ रेट पर मिलियनेयर तक साल और $100K, $250K, $500K, $1M माइलस्टोन वाला ग्रोथ चार्ट दिखाता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Рассчитайте, сколько криптовалюты нужно — или как долго держать — чтобы достичь $1 000 000. По текущим ценам для статуса криптомиллионера нужно ~12,9 BTC ($77 500) или ~515 ETH ($1 940).',
+      how: [
+        `Калькулятор миллионера работает от цели $1 000 000, определяя, сколько вложить, при какой цене вы становитесь миллионером или сколько времени должны расти текущие активы. Введите токен и количество для расчёта нужной цены, или бюджет для расчёта количества токенов.`,
+        `Калькулятор моделирует эффект регулярных взносов — ежемесячный DCA кардинально ускоряет достижение цели. $500/месяц в BTC при 30% годового роста прогнозирует статус миллионера примерно через 10–12 лет. Сравнивайте сценарии: всё в BTC vs. диверсифицированный портфель vs. рискованные альткоины.`
+      ],
+      inputs: [
+        `Целевая сумма по умолчанию $1 000 000, но настраивается ($100K, $5M, $10M). Выбор токена и текущая цена заполняются автоматически. Текущие активы — стартовая позиция. Ожидаемая годовая доходность: от консервативной (10%) до агрессивной (50%+).`,
+        `Ежемесячный взнос — сумма DCA. Переключатель инфляционной коррекции показывает цель в текущей покупательной способности. Результат: необходимое количество токенов, нужная цена для текущих активов, лет до миллиона и график роста с отметками $100K, $250K, $500K и $1M.`
+      ],
+    },
+  },
+  'pizza-day-calculator': {
+    en: {
+      quickAnswer: 'On May 22, 2010, Laszlo Hanyecz paid 10,000 BTC for two pizzas (~$41 at the time). Those same bitcoins at today\'s price of ~$77,000 would be worth $770,000,000 — making each pizza slice worth roughly $48 million.',
+      how: [
+        `The Pizza Day Calculator computes the present-day value of the famous 10,000 BTC pizza purchase from May 22, 2010 — the first known real-world Bitcoin transaction. Enter today's BTC price (auto-filled from CoinGecko) and the calculator shows the total value of those 10,000 BTC today, the price per pizza, per slice, and per bite. It contextualizes the astronomical opportunity cost in relatable comparisons.`,
+        `Beyond the novelty, this calculator serves as an interactive lesson in Bitcoin's exponential growth. You can enter any historical BTC price to see how the pizza purchase value has changed over time. Toggle the CAGR view to see the annualized return rate from $0.0041/BTC (the pizza price) to today — demonstrating why early adoption and long-term holding are central to the Bitcoin thesis.`
+      ],
+      inputs: [
+        `Current BTC price is auto-filled from live market data but can be overridden for scenario modeling (e.g., what if BTC hits $100K, $250K, $1M?). The original purchase details are hardcoded: 10,000 BTC for 2 large pizzas valued at ~$41 on May 22, 2010, establishing a price of $0.0041 per BTC.`,
+        `The output shows: total value of 10,000 BTC today, value per pizza, value per slice (8 slices per pizza), percentage gain since purchase, CAGR over the period, and fun comparisons — how many Lamborghinis, houses, or private islands the pizza money could buy. A timeline chart shows key price milestones from $0.0041 to present.`
+      ],
+    },
+    es: {
+      quickAnswer: 'El 22 de mayo de 2010, Laszlo Hanyecz pagó 10.000 BTC por dos pizzas (~$41 en ese momento). Esos mismos bitcoins a $77.000 de hoy valdrían $770.000.000 — haciendo que cada porción valga aproximadamente $48 millones.',
+      how: [
+        `La Calculadora del Día de la Pizza calcula el valor actual de la famosa compra de 10.000 BTC por dos pizzas del 22 de mayo de 2010 — la primera transacción conocida de Bitcoin en el mundo real. Introduce el precio actual de BTC y la calculadora muestra el valor total, el precio por pizza, por porción y por bocado. Contextualiza el astronómico costo de oportunidad con comparaciones comprensibles.`,
+        `Más allá de la curiosidad, esta calculadora sirve como lección interactiva sobre el crecimiento exponencial de Bitcoin. Ingresa cualquier precio histórico para ver cómo ha cambiado el valor de la compra. Activa la vista CAGR para ver la tasa de retorno anualizada desde $0,0041/BTC hasta hoy.`
+      ],
+      inputs: [
+        `El precio actual de BTC se autocompleta pero puede modificarse para modelar escenarios (¿qué pasa si BTC llega a $100K, $250K, $1M?). Los detalles originales están fijos: 10.000 BTC por 2 pizzas valoradas en ~$41 el 22 de mayo de 2010, estableciendo un precio de $0,0041 por BTC.`,
+        `La salida muestra: valor total de 10.000 BTC hoy, valor por pizza, valor por porción (8 por pizza), ganancia porcentual, CAGR y comparaciones divertidas — cuántos Lamborghinis, casas o islas privadas podría comprar el dinero de las pizzas.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Em 22 de maio de 2010, Laszlo Hanyecz pagou 10.000 BTC por duas pizzas (~$41 na época). Esses mesmos bitcoins ao preço de hoje de ~$77.000 valeriam $770.000.000 — tornando cada fatia equivalente a ~$48 milhões.',
+      how: [
+        `A Calculadora do Dia da Pizza calcula o valor atual da famosa compra de 10.000 BTC por duas pizzas em 22 de maio de 2010 — a primeira transação conhecida do Bitcoin no mundo real. Insira o preço atual do BTC e a calculadora mostra o valor total, preço por pizza, por fatia e por mordida. Contextualiza o custo de oportunidade astronômico com comparações compreensíveis.`,
+        `Além da curiosidade, funciona como uma lição interativa sobre o crescimento exponencial do Bitcoin. Insira qualquer preço histórico para ver como o valor mudou. Ative a visualização CAGR para ver a taxa de retorno anualizada desde $0,0041/BTC até hoje.`
+      ],
+      inputs: [
+        `O preço atual do BTC é preenchido automaticamente, mas pode ser alterado para cenários (e se BTC chegar a $100K, $250K, $1M?). Os detalhes originais são fixos: 10.000 BTC por 2 pizzas a ~$41 em 22 de maio de 2010, preço de $0,0041 por BTC.`,
+        `A saída mostra: valor total dos 10.000 BTC hoje, valor por pizza, por fatia (8 por pizza), ganho percentual, CAGR e comparações divertidas — quantos Lamborghinis, casas ou ilhas privadas o dinheiro das pizzas compraria.`
+      ],
+    },
+    tr: {
+      quickAnswer: '22 Mayıs 2010\'da Laszlo Hanyecz iki pizza için 10.000 BTC ödedi (o zamanki ~$41). Aynı bitcoinler bugünkü ~$77.000 fiyatıyla $770.000.000 eder — her pizza dilimini yaklaşık $48 milyon yapar.',
+      how: [
+        `Pizza Günü Hesaplayıcısı, 22 Mayıs 2010'daki ünlü 10.000 BTC pizza satın alımının — Bitcoin'in bilinen ilk gerçek dünya işleminin — bugünkü değerini hesaplar. BTC fiyatını girin, hesaplayıcı 10.000 BTC'nin bugünkü değerini, pizza başına, dilim başına ve lokma başına fiyatı gösterir. Astronomik fırsat maliyetini anlaşılır karşılaştırmalarla bağlamlandırır.`,
+        `Yenilikçi olmanın ötesinde, Bitcoin'in üstel büyümesi hakkında interaktif bir ders niteliğindedir. Herhangi bir tarihsel BTC fiyatını girerek pizza alımının değerinin nasıl değiştiğini görün. CAGR görünümü $0,0041/BTC'den bugüne yıllık getiri oranını gösterir.`
+      ],
+      inputs: [
+        `Güncel BTC fiyatı canlı veriden otomatik doldurulur ancak senaryo modellemesi için değiştirilebilir (BTC $100K, $250K, $1M olursa ne olur?). Orijinal satın alma detayları sabittir: 22 Mayıs 2010'da ~$41 değerinde 2 büyük pizza için 10.000 BTC, BTC başına $0,0041.`,
+        `Çıktı: 10.000 BTC'nin bugünkü toplam değeri, pizza başına değer, dilim başına değer (pizza başına 8 dilim), yüzde kazanç, CAGR ve eğlenceli karşılaştırmalar — pizza parası kaç Lamborghini, ev veya özel ada satın alabilir.`
+      ],
+    },
+    hi: {
+      quickAnswer: '22 मई 2010 को Laszlo Hanyecz ने दो पिज्जा के लिए 10,000 BTC दिए (~उस समय $41)। वही बिटकॉइन आज ~$77,000 की कीमत पर $770,000,000 होते — हर पिज्जा स्लाइस लगभग $48 मिलियन।',
+      how: [
+        `पिज्जा डे कैलकुलेटर 22 मई 2010 की मशहूर 10,000 BTC पिज्जा खरीद — Bitcoin का पहला ज्ञात रियल-वर्ल्ड ट्रांजैक्शन — का प्रेजेंट-डे वैल्यू कैलकुलेट करता है। आज का BTC प्राइस दर्ज करें और कैलकुलेटर 10,000 BTC की आज की टोटल वैल्यू, प्रति पिज्जा, प्रति स्लाइस और प्रति बाइट प्राइस दिखाता है।`,
+        `नॉवेल्टी से परे, यह कैलकुलेटर Bitcoin की एक्सपोनेंशियल ग्रोथ का इंटरैक्टिव लेसन है। कोई भी हिस्टोरिकल BTC प्राइस दर्ज करके देखें पिज्जा परचेज वैल्यू कैसे बदली है। CAGR व्यू टॉगल करें ताकि $0.0041/BTC से आज तक एन्युअलाइज्ड रिटर्न रेट दिखे।`
+      ],
+      inputs: [
+        `करंट BTC प्राइस लाइव मार्केट डेटा से ऑटो-फिल होता है लेकिन सीनारियो मॉडलिंग के लिए ओवरराइड किया जा सकता है (BTC $100K, $250K, $1M हो तो?)। ओरिजनल परचेज डिटेल्स फिक्स्ड हैं: 22 मई 2010 को ~$41 वैल्यू की 2 बड़ी पिज्जा के लिए 10,000 BTC, $0.0041 प्रति BTC।`,
+        `आउटपुट दिखाता है: 10,000 BTC की आज की टोटल वैल्यू, प्रति पिज्जा वैल्यू, प्रति स्लाइस (8 स्लाइस/पिज्जा), परसेंटेज गेन, CAGR और फन कम्पेरिजन — पिज्जा मनी से कितनी Lamborghini, घर या प्राइवेट आइलैंड खरीद सकते थे।`
+      ],
+    },
+    ru: {
+      quickAnswer: '22 мая 2010 года Ласло Ханеч заплатил 10 000 BTC за две пиццы (~$41 на тот момент). Те же биткоины по сегодняшней цене ~$77 000 стоили бы $770 000 000 — каждый кусок пиццы обошёлся примерно в $48 миллионов.',
+      how: [
+        `Калькулятор Дня пиццы вычисляет текущую стоимость знаменитой покупки двух пицц за 10 000 BTC 22 мая 2010 года — первой известной реальной транзакции биткоина. Введите текущую цену BTC — калькулятор покажет стоимость тех 10 000 BTC сегодня, цену за пиццу, за кусок и за укус, с наглядными сравнениями.`,
+        `Помимо занимательности, калькулятор — интерактивный урок экспоненциального роста биткоина. Введите любую историческую цену BTC, чтобы увидеть, как менялась стоимость покупки. Режим CAGR покажет среднегодовую доходность от $0,0041/BTC до сегодняшнего дня.`
+      ],
+      inputs: [
+        `Текущая цена BTC заполняется автоматически, но может быть изменена для моделирования (что если BTC достигнет $100K, $250K, $1M?). Параметры оригинальной покупки зафиксированы: 10 000 BTC за 2 большие пиццы стоимостью ~$41 22 мая 2010 года, цена $0,0041 за BTC.`,
+        `Результат: общая стоимость 10 000 BTC сегодня, стоимость за пиццу, за кусок (8 кусков), процент прироста, CAGR и забавные сравнения — сколько Lamborghini, домов или частных островов можно купить на деньги от пиццы. Временная шкала показывает ключевые ценовые вехи от $0,0041 до сегодня.`
+      ],
+    },
+  },
 };

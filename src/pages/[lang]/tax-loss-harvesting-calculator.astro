@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import TaxLossHarvestingCalculator from '../../components/TaxLossHarvestingCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="tax-loss-harvesting-calculator"
+  title="Tax Loss Harvesting Calculator"
+  description="Identify harvestable crypto losses to offset capital gains and estimate tax savings across your portfolio."
+>
+  <TaxLossHarvestingCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

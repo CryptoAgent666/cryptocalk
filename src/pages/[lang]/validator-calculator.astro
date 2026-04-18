@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import ValidatorCalculator from '../../components/ValidatorCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="validator-calculator"
+  title="Validator Economics Calculator"
+  description="Calculate PoS validator profitability — rewards, operating costs, ROI, and break-even for Ethereum, Solana, and more."
+>
+  <ValidatorCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

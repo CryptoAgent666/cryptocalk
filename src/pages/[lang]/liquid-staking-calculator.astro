@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import LiquidStakingCalculator from '../../components/LiquidStakingCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="liquid-staking-calculator"
+  title="Liquid Staking Calculator"
+  description="Compare liquid staking protocols — Lido, Rocket Pool, Coinbase, Frax — for yield, fees, and DeFi composability."
+>
+  <LiquidStakingCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

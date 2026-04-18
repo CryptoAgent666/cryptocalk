@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import BitcoinEnergyCalculator from '../../components/BitcoinEnergyCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="bitcoin-energy-calculator"
+  title="Bitcoin Energy Calculator"
+  description="Estimate energy consumption, carbon footprint, and environmental cost of Bitcoin mining by energy source."
+>
+  <BitcoinEnergyCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

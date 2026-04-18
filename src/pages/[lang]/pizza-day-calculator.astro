@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import PizzaDayCalculator from '../../components/PizzaDayCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="pizza-day-calculator"
+  title="Bitcoin Pizza Day Calculator"
+  description="Calculate the current value of the famous 10,000 BTC pizza purchase and explore the opportunity cost in real time."
+>
+  <PizzaDayCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>

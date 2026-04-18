@@ -1,0 +1,22 @@
+---
+import LocalizedCalculatorPage from '../../components/LocalizedCalculatorPage.astro';
+import MillionaireCalculator from '../../components/MillionaireCalculator.tsx';
+import type { Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return ['es', 'pt', 'tr', 'hi', 'ru'].map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<LocalizedCalculatorPage
+  lang={lang}
+  slug="millionaire-calculator"
+  title="Crypto Millionaire Calculator"
+  description="Plan your path to $1M — calculate how long and how much you need to invest in crypto to reach your wealth goal."
+>
+  <MillionaireCalculator slot="calculator" lang={lang} client:load />
+</LocalizedCalculatorPage>
