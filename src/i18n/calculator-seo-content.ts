@@ -7,7 +7,7 @@ type CalcContent = Partial<Record<Lang, CalcOverride>>;
 export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   'converter': {
     en: {
-      quickAnswer: 'Enter any cryptocurrency amount to instantly convert between coins and fiat currencies using real-time CoinGecko prices. For example, 1 BTC ≈ $73,700 USD (March 2026).',
+      quickAnswer: 'Enter any cryptocurrency amount to instantly convert between coins and fiat currencies using real-time CoinGecko prices. For example, 1 BTC ≈ $77,300 USD (April 2026).',
       how: [
       `The Crypto Converter translates any cryptocurrency amount into another coin or fiat currency using real-time market prices. Select your source asset, type an amount, choose your target currency, and the result updates instantly. Use it before placing an order to confirm exactly how much of one asset equals your intended position in another — eliminating manual arithmetic and rounding errors.`,
       `For comparing value across multiple currencies at once, open the converter alongside your exchange order form. Enter the fiat equivalent you want to spend, copy the resulting coin amount directly into your trade ticket. The converter supports 500+ cryptocurrencies and all major fiat currencies, making it equally useful for spot conversions, invoice calculations, and portfolio bookkeeping.`
@@ -51,7 +51,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'CoinGecko के रियल-टाइम प्राइस का उपयोग करके किसी भी क्रिप्टोकरेंसी राशि को कॉइन और फिएट करेंसी के बीच तुरंत कन्वर्ट करें। उदाहरण: 1 BTC ≈ $73,700 USD (मार्च 2026)।',
+      quickAnswer: 'CoinGecko के रियल-टाइम प्राइस का उपयोग करके किसी भी क्रिप्टोकरेंसी राशि को कॉइन और फिएट करेंसी के बीच तुरंत कन्वर्ट करें। उदाहरण: 1 BTC ≈ $77,300 USD (अप्रैल 2026)।',
       how: [
       `क्रिप्टो कन्वर्टर रियल-टाइम मार्केट प्राइस का उपयोग करके किसी भी क्रिप्टोकरेंसी को दूसरी कॉइन या फिएट करेंसी में बदलता है। अपना सोर्स एसेट चुनें, राशि टाइप करें, टार्गेट करेंसी चुनें और रिजल्ट तुरंत अपडेट हो जाता है। ऑर्डर देने से पहले इसका उपयोग करें।`,
       `एक साथ कई करेंसी में वैल्यू कम्पेयर करने के लिए, कन्वर्टर को अपने एक्सचेंज ऑर्डर फॉर्म के साथ खोलें। जो फिएट अमाउंट खर्च करना चाहते हैं वह दर्ज करें और रिजल्ट को सीधे ट्रेड टिकट में कॉपी करें। कन्वर्टर 500+ क्रिप्टोकरेंसी और सभी प्रमुख फिएट करेंसी सपोर्ट करता है।`
@@ -1131,7 +1131,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'satoshi-converter': {
     en: {
-      quickAnswer: 'Convert between Bitcoin and satoshis instantly. 1 BTC = 100,000,000 satoshis. At $73,700/BTC, one satoshi equals $0.000737 — useful for pricing micro-transactions and Lightning Network payments.',
+      quickAnswer: 'Convert between Bitcoin and satoshis instantly. 1 BTC = 100,000,000 satoshis. At $77,300/BTC, one satoshi equals $0.000737 — useful for pricing micro-transactions and Lightning Network payments.',
       how: [
       `The Satoshi Converter translates Bitcoin amounts between satoshis, bits, mBTC, and BTC, and converts any denomination into its current USD or fiat equivalent. Type an amount in any field and all other fields update simultaneously — making it fast to see that 1 satoshi equals 0.00000001 BTC, or that 100,000 satoshis equal 0.001 BTC.`,
       `Use it when reading Bitcoin transaction amounts quoted in satoshis (common in Lightning Network and on-chain inscriptions), or when setting fee rates quoted in sat/vByte. The calculator also converts to and from USD, EUR, and other fiat currencies using the live BTC price so you always know the real-world cost.`
@@ -1175,7 +1175,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'Bitcoin और satoshis के बीच तुरंत कन्वर्ट करें। 1 BTC = 100,000,000 satoshis। $73,700/BTC पर, एक satoshi = $0.000737 — माइक्रो-ट्रांजेक्शन और Lightning Network पेमेंट के लिए उपयोगी।',
+      quickAnswer: 'Bitcoin और satoshis के बीच तुरंत कन्वर्ट करें। 1 BTC = 100,000,000 satoshis। $77,300/BTC पर, एक satoshi = $0.000737 — माइक्रो-ट्रांजेक्शन और Lightning Network पेमेंट के लिए उपयोगी।',
       how: [
       `सतोशी कन्वर्टर Bitcoin राशियों को satoshis, bits, mBTC और BTC के बीच ट्रांसलेट करता है, और किसी भी डिनॉमिनेशन को उसके वर्तमान USD या फिएट इक्विवेलेंट में कन्वर्ट करता है।`,
       `Lightning Network और ऑन-चेन इंस्क्रिप्शन में satoshis में उद्धृत Bitcoin ट्रांजेक्शन राशियों को पढ़ते समय इसका उपयोग करें।`
@@ -1199,7 +1199,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'gwei-converter': {
     en: {
-      quickAnswer: 'Convert between ETH, Gwei, and Wei instantly. 1 ETH = 1,000,000,000 Gwei = 10^18 Wei. At 1 Gwei gas price and $2,327/ETH, a standard 21,000-gas transfer costs about $0.05.',
+      quickAnswer: 'Convert between ETH, Gwei, and Wei instantly. 1 ETH = 1,000,000,000 Gwei = 10^18 Wei. At 1 Gwei gas price and $2,419/ETH, a standard 21,000-gas transfer costs about $0.05.',
       how: [
       `The Gwei Converter translates Ethereum gas price units between wei, gwei, and ETH, and converts any denomination to its current USD cost for a typical transaction. Understanding gwei is essential for Ethereum users — when you set a gas price of 20 gwei, you're specifying 20 × 10⁻⁹ ETH per unit of gas consumed.`,
       `Use it when MetaMask or your wallet shows a gas price in gwei and you want to understand the actual dollar cost. For EIP-1559 transactions, enter the base fee plus your priority fee (tip) to see the total effective gas price. The calculator also shows the total transaction cost for standard ETH transfers (21,000 gas) and ERC-20 token transfers (≈65,000 gas).`
@@ -1243,7 +1243,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'ETH, Gwei और Wei के बीच तुरंत कन्वर्ट करें। 1 ETH = 1,000,000,000 Gwei = 10^18 Wei। 1 Gwei गैस प्राइस और $2,327/ETH पर, स्टैंडर्ड 21,000-गैस ट्रांसफर की लागत लगभग $0.05 है।',
+      quickAnswer: 'ETH, Gwei और Wei के बीच तुरंत कन्वर्ट करें। 1 ETH = 1,000,000,000 Gwei = 10^18 Wei। 1 Gwei गैस प्राइस और $2,419/ETH पर, स्टैंडर्ड 21,000-गैस ट्रांसफर की लागत लगभग $0.05 है।',
       how: [
       `Gwei कन्वर्टर Ethereum गैस प्राइस यूनिट को wei, gwei और ETH के बीच ट्रांसलेट करता है, और किसी भी डिनॉमिनेशन को एक विशिष्ट ट्रांजेक्शन के लिए उसकी वर्तमान USD लागत में कन्वर्ट करता है।`,
       `इसका उपयोग तब करें जब MetaMask या आपका वॉलेट gwei में गैस प्राइस दिखाए और आप वास्तविक डॉलर लागत समझना चाहें।`
@@ -2441,7 +2441,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'salary-calculator': {
     en: {
-      quickAnswer: 'Convert crypto salary to local currency and estimate tax withholding. A $100,000/year salary paid in BTC at $73,700 means receiving ~0.0259 BTC biweekly before taxes.',
+      quickAnswer: 'Convert crypto salary to local currency and estimate tax withholding. A $100,000/year salary paid in BTC at $77,300 means receiving ~0.0498 BTC biweekly before taxes.',
       how: [
       `The Crypto Salary Calculator converts a traditional fiat salary into its cryptocurrency equivalent, or shows how much fiat a given crypto salary is worth. Enter your fiat salary (annual or monthly), select a cryptocurrency, and see the equivalent in crypto at today's price — useful for employees or contractors paid in cryptocurrency or businesses offering crypto salary packages.`,
       `Use it to understand your real purchasing power when offered a salary in BTC, ETH, or stablecoins. For volatile assets like BTC or ETH, also calculate the value at 20% below current price to understand your downside risk. For stablecoin salaries (USDC, USDT), the conversion is near 1:1 with USD, providing predictable income.`
@@ -2485,7 +2485,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'क्रिप्टो सैलरी को स्थानीय मुद्रा में कन्वर्ट करें और टैक्स विदहोल्डिंग का अनुमान लगाएं। $73,700/BTC पर $100,000/वर्ष सैलरी का मतलब है टैक्स से पहले हर दो सप्ताह में ~0.0259 BTC प्राप्त करना।',
+      quickAnswer: 'क्रिप्टो सैलरी को स्थानीय मुद्रा में कन्वर्ट करें और टैक्स विदहोल्डिंग का अनुमान लगाएं। $77,300/BTC पर $100,000/वर्ष सैलरी का मतलब है टैक्स से पहले हर दो सप्ताह में ~0.0498 BTC प्राप्त करना।',
       how: [
       `क्रिप्टो सैलरी कैलकुलेटर एक पारंपरिक फिएट सैलरी को उसके क्रिप्टोकरेंसी इक्विवेलेंट में कन्वर्ट करता है, या दिखाता है कि दिए गए क्रिप्टो सैलरी की कितनी फिएट वैल्यू है।`,
       `BTC, ETH, या स्टेबलकॉइन में सैलरी ऑफर किए जाने पर अपनी वास्तविक क्रय शक्ति समझने के लिए इसका उपयोग करें।`
@@ -2645,7 +2645,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'reverse-roi': {
     en: {
-      quickAnswer: 'Find the maximum buy price to achieve your target ROI. If you want 100% return and the current price is $73,700, you need to buy at $36,850 or lower — works backwards from your desired outcome.',
+      quickAnswer: 'Find the maximum buy price to achieve your target ROI. If you want 100% return and the current price is $77,300, you need to buy at $36,850 or lower — works backwards from your desired outcome.',
       how: [
       `The Reverse ROI Calculator solves for the buy price required to achieve a target return. Instead of asking 'what is my ROI if I buy at X?', it asks 'what price must I buy at to achieve Y% ROI?' — working backwards from a desired outcome. Enter your target ROI percentage and the current price, and the calculator returns the maximum entry price.`,
       `Use it when averaging down into a falling position to find the required average cost basis needed to return to profitability. If you bought ETH at $3,500 and it's now at $2,200, entering your target breakeven ROI lets you see exactly what average price you need to achieve by buying more — validating whether doubling down makes mathematical sense.`
@@ -2689,7 +2689,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'अपने टार्गेट ROI के लिए अधिकतम खरीद मूल्य खोजें। अगर आप 100% रिटर्न चाहते हैं और वर्तमान मूल्य $73,700 है, तो आपको $36,850 या उससे कम पर खरीदना होगा — आपके वांछित परिणाम से पीछे की ओर काम करता है।',
+      quickAnswer: 'अपने टार्गेट ROI के लिए अधिकतम खरीद मूल्य खोजें। अगर आप 100% रिटर्न चाहते हैं और वर्तमान मूल्य $77,300 है, तो आपको $36,850 या उससे कम पर खरीदना होगा — आपके वांछित परिणाम से पीछे की ओर काम करता है।',
       how: [
       `रिवर्स ROI कैलकुलेटर लक्ष्य रिटर्न प्राप्त करने के लिए आवश्यक खरीद मूल्य हल करता है। 'X पर खरीदने पर मेरा ROI क्या है?' पूछने के बजाय, यह पूछता है 'Y% ROI प्राप्त करने के लिए मुझे किस कीमत पर खरीदना होगा?'`,
       `गिरती हुई पोजीशन में औसत करते समय लाभप्रदता पर वापस आने के लिए आवश्यक औसत कॉस्ट बेसिस खोजने के लिए इसका उपयोग करें।`
@@ -3109,7 +3109,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'hashrate-converter': {
     en: {
-      quickAnswer: 'Convert mining speed units between H/s, KH/s, MH/s, GH/s, TH/s, PH/s, and EH/s. Each tier is exactly 1,000× the previous. The Bitcoin network runs at ~850 EH/s as of March 2026.',
+      quickAnswer: 'Convert mining speed units between H/s, KH/s, MH/s, GH/s, TH/s, PH/s, and EH/s. Each tier is exactly 1,000× the previous. The Bitcoin network runs at ~856 EH/s as of April 2026.',
       how: [
       `The Hashrate Converter translates mining speed units between H/s, KH/s, MH/s, GH/s, TH/s, PH/s, and EH/s — eliminating confusion when comparing hardware that reports in different units. Enter a value in any unit and all other units update instantly, making it easy to convert a GPU rig's MH/s into the TH/s used by ASIC miners or network-level statistics.`,
       `Use it when reading pool statistics, block explorer data, or mining calculator inputs that use different units than your hardware reports. Bitcoin network hashrate is reported in EH/s (exahashes per second), while individual miners work in TH/s — knowing the conversion is essential for understanding your share of the network.`
@@ -3120,7 +3120,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Convierte unidades de velocidad de minería entre H/s, KH/s, MH/s, GH/s, TH/s, PH/s y EH/s. Cada nivel es exactamente 1.000× el anterior. La red Bitcoin opera a ~850 EH/s a marzo de 2026.',
+      quickAnswer: 'Convierte unidades de velocidad de minería entre H/s, KH/s, MH/s, GH/s, TH/s, PH/s y EH/s. Cada nivel es exactamente 1.000× el anterior. La red Bitcoin opera a ~856 EH/s a marzo de 2026.',
 
       how: [
       `El Convertidor de Hashrate traduce unidades de velocidad de minería entre H/s, KH/s, MH/s, GH/s, TH/s, PH/s y EH/s.`,
@@ -3132,7 +3132,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Converta unidades de velocidade de mineração entre H/s, KH/s, MH/s, GH/s, TH/s, PH/s e EH/s. Cada nível é exatamente 1.000× o anterior. A rede Bitcoin opera a ~850 EH/s em março de 2026.',
+      quickAnswer: 'Converta unidades de velocidade de mineração entre H/s, KH/s, MH/s, GH/s, TH/s, PH/s e EH/s. Cada nível é exatamente 1.000× o anterior. A rede Bitcoin opera a ~856 EH/s em março de 2026.',
 
       how: [
       `O Conversor de Hashrate traduz unidades de velocidade de mineração entre H/s, KH/s, MH/s, GH/s, TH/s, PH/s e EH/s.`,
@@ -3144,7 +3144,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Madencilik hızı birimlerini H/s, KH/s, MH/s, GH/s, TH/s, PH/s ve EH/s arasında dönüştürün. Her seviye öncekinin tam 1.000 katıdır. Bitcoin ağı Mart 2026 itibarıyla ~850 EH/s ile çalışmaktadır.',
+      quickAnswer: 'Madencilik hızı birimlerini H/s, KH/s, MH/s, GH/s, TH/s, PH/s ve EH/s arasında dönüştürün. Her seviye öncekinin tam 1.000 katıdır. Bitcoin ağı Mart 2026 itibarıyla ~856 EH/s ile çalışmaktadır.',
 
       how: [
       `Hashrate Dönüştürücüsü, madencilik hızı birimlerini H/s, KH/s, MH/s, GH/s, TH/s, PH/s ve EH/s arasında dönüştürür.`,
@@ -3156,7 +3156,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'H/s, KH/s, MH/s, GH/s, TH/s, PH/s और EH/s के बीच माइनिंग स्पीड यूनिट कन्वर्ट करें। प्रत्येक स्तर पिछले का ठीक 1,000× है। बिटकॉइन नेटवर्क मार्च 2026 तक ~850 EH/s पर चलता है।',
+      quickAnswer: 'H/s, KH/s, MH/s, GH/s, TH/s, PH/s और EH/s के बीच माइनिंग स्पीड यूनिट कन्वर्ट करें। प्रत्येक स्तर पिछले का ठीक 1,000× है। बिटकॉइन नेटवर्क अप्रैल 2026 तक ~856 EH/s पर चलता है।',
 
       how: [
       `हैशरेट कन्वर्टर H/s, KH/s, MH/s, GH/s, TH/s, PH/s और EH/s के बीच माइनिंग स्पीड यूनिट को ट्रांसलेट करता है।`,
@@ -3168,7 +3168,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Конвертируйте единицы скорости майнинга: H/s, KH/s, MH/s, GH/s, TH/s, PH/s и EH/s. Каждый уровень ровно в 1 000× больше предыдущего. Сеть биткоина работает на ~850 EH/s по состоянию на март 2026.',
+      quickAnswer: 'Конвертируйте единицы скорости майнинга: H/s, KH/s, MH/s, GH/s, TH/s, PH/s и EH/s. Каждый уровень ровно в 1 000× больше предыдущего. Сеть биткоина работает на ~856 EH/s по состоянию на март 2026.',
 
       how: [
       `Конвертер хешрейта переводит единицы скорости майнинга между H/s, KH/s, MH/s, GH/s, TH/s, PH/s и EH/s.`,
@@ -3620,7 +3620,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'gas-fee-calculator': {
     en: {
-      quickAnswer: 'Gas fee = Gas Price × Gas Limit × Token Price. For Ethereum, a basic transfer costs ~21,000 gas units. At 1 Gwei and $2,327/ETH, that\'s about $0.05 per transaction.',
+      quickAnswer: 'Gas fee = Gas Price × Gas Limit × Token Price. For Ethereum, a basic transfer costs ~21,000 gas units. At 1 Gwei and $2,419/ETH, that\'s about $0.05 per transaction.',
       how: [
         `The Gas Fee Calculator estimates the transaction cost on Ethereum and other EVM-compatible blockchains before you submit a transaction. Enter the current gas price in Gwei, the gas limit for your transaction type, and the native token's USD price to see the total fee in both the native currency and dollars. The calculator includes standard gas benchmarks for common transaction types and lets you enter the current gas price manually for accurate estimates.`,
         `Use it to time transactions for lower fees — gas prices fluctuate throughout the day, often dropping 60-80% during off-peak hours. The calculator supports common transaction types (simple transfer, ERC-20 transfer, Uniswap swap, NFT mint) with pre-set gas limits, or enter a custom gas limit for contract interactions. Compare costs across networks like Ethereum, Polygon, Arbitrum, and BSC to find the cheapest execution path.`

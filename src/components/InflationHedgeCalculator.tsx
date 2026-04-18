@@ -30,14 +30,14 @@ interface AssetConfig {
 }
 
 const COUNTRIES: CountryData[] = [
-    { id: 'turkey', name: 'Turkey', flag: 'TR', currency: 'TRY', inflationRate: 0.38, adoptionRate: 25.6 },
-    { id: 'argentina', name: 'Argentina', flag: 'AR', currency: 'ARS', inflationRate: 0.30, adoptionRate: 18.9 },
-    { id: 'nigeria', name: 'Nigeria', flag: 'NG', currency: 'NGN', inflationRate: 0.30, adoptionRate: 32.0 },
-    { id: 'usa', name: 'USA', flag: 'US', currency: 'USD', inflationRate: 0.03, adoptionRate: 15.5 },
-    { id: 'russia', name: 'Russia', flag: 'RU', currency: 'RUB', inflationRate: 0.08, adoptionRate: 10.0 },
-    { id: 'india', name: 'India', flag: 'IN', currency: 'INR', inflationRate: 0.05, adoptionRate: 7.4 },
-    { id: 'brazil', name: 'Brazil', flag: 'BR', currency: 'BRL', inflationRate: 0.045, adoptionRate: 17.5 },
-    { id: 'uk', name: 'UK', flag: 'GB', currency: 'GBP', inflationRate: 0.04, adoptionRate: 12.0 },
+    { id: 'turkey', name: 'Turkey', flag: 'TR', currency: 'TRY', inflationRate: 0.30, adoptionRate: 25.6 },
+    { id: 'argentina', name: 'Argentina', flag: 'AR', currency: 'ARS', inflationRate: 0.55, adoptionRate: 18.9 },
+    { id: 'nigeria', name: 'Nigeria', flag: 'NG', currency: 'NGN', inflationRate: 0.24, adoptionRate: 32.0 },
+    { id: 'usa', name: 'USA', flag: 'US', currency: 'USD', inflationRate: 0.025, adoptionRate: 15.5 },
+    { id: 'russia', name: 'Russia', flag: 'RU', currency: 'RUB', inflationRate: 0.10, adoptionRate: 10.0 },
+    { id: 'india', name: 'India', flag: 'IN', currency: 'INR', inflationRate: 0.04, adoptionRate: 7.4 },
+    { id: 'brazil', name: 'Brazil', flag: 'BR', currency: 'BRL', inflationRate: 0.05, adoptionRate: 17.5 },
+    { id: 'uk', name: 'UK', flag: 'GB', currency: 'GBP', inflationRate: 0.03, adoptionRate: 12.0 },
 ];
 
 const ASSETS: AssetConfig[] = [

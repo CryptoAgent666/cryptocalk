@@ -58,11 +58,11 @@ const GPU_PRESETS: GpuPreset[] = [
 ];
 
 const COINS: Record<string, CoinData> = {
-    ETC: { symbol: 'ETC', name: 'Ethereum Classic', price: 18, blockReward: 2.56, networkHashrate: 200000, algo: 'Ethash', blockTime: 13 },
-    RVN: { symbol: 'RVN', name: 'Ravencoin', price: 0.018, blockReward: 2500, networkHashrate: 5000000, algo: 'KawPow', blockTime: 60 },
-    ERGO: { symbol: 'ERGO', name: 'Ergo', price: 0.70, blockReward: 27, networkHashrate: 15000, algo: 'Autolykos2', blockTime: 120 },
-    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.09, blockReward: 200, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 1 },
-    FLUX: { symbol: 'FLUX', name: 'Flux', price: 0.45, blockReward: 37.5, networkHashrate: 2500000, algo: 'ZelHash', blockTime: 120 },
+    ETC: { symbol: 'ETC', name: 'Ethereum Classic', price: 8.75, blockReward: 2.56, networkHashrate: 200000, algo: 'Ethash', blockTime: 13 },
+    RVN: { symbol: 'RVN', name: 'Ravencoin', price: 0.006, blockReward: 2500, networkHashrate: 5000000, algo: 'KawPow', blockTime: 60 },
+    ERGO: { symbol: 'ERGO', name: 'Ergo', price: 0.33, blockReward: 27, networkHashrate: 15000, algo: 'Autolykos2', blockTime: 120 },
+    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.036, blockReward: 200, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 1 },
+    FLUX: { symbol: 'FLUX', name: 'Flux', price: 0.023, blockReward: 37.5, networkHashrate: 2500000, algo: 'ZelHash', blockTime: 120 },
 };
 
 // Map whattomine generic names to our symbols

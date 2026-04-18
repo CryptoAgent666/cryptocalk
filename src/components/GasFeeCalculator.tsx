@@ -24,15 +24,15 @@ const TX_TYPES = [
     { id: 'custom', label: 'Custom Gas', gas: 0 },
 ];
 
-// Gas & price fallbacks updated 2026-03-18. Fetch live data when available.
+// Gas & price fallbacks updated 2026-04-18. Fetch live data when available.
 const NETWORKS = [
-    { id: 'ethereum', label: 'Ethereum', symbol: 'ETH', baseGwei: 1, defaultPrice: 2327, color: '#627EEA' },
-    { id: 'polygon', label: 'Polygon', symbol: 'MATIC', baseGwei: 30, defaultPrice: 0.5, color: '#8247E5' },
-    { id: 'arbitrum', label: 'Arbitrum', symbol: 'ETH', baseGwei: 0.1, defaultPrice: 2327, color: '#28A0F0' },
-    { id: 'optimism', label: 'Optimism', symbol: 'ETH', baseGwei: 0.01, defaultPrice: 2327, color: '#FF0420' },
-    { id: 'bsc', label: 'BNB Chain', symbol: 'BNB', baseGwei: 3, defaultPrice: 580, color: '#F3BA2F' },
-    { id: 'avalanche', label: 'Avalanche', symbol: 'AVAX', baseGwei: 25, defaultPrice: 30, color: '#E84142' },
-    { id: 'base', label: 'Base', symbol: 'ETH', baseGwei: 0.01, defaultPrice: 2327, color: '#0052FF' },
+    { id: 'ethereum', label: 'Ethereum', symbol: 'ETH', baseGwei: 1, defaultPrice: 2419, color: '#627EEA' },
+    { id: 'polygon', label: 'Polygon', symbol: 'POL', baseGwei: 30, defaultPrice: 0.09, color: '#8247E5' },
+    { id: 'arbitrum', label: 'Arbitrum', symbol: 'ETH', baseGwei: 0.1, defaultPrice: 2419, color: '#28A0F0' },
+    { id: 'optimism', label: 'Optimism', symbol: 'ETH', baseGwei: 0.01, defaultPrice: 2419, color: '#FF0420' },
+    { id: 'bsc', label: 'BNB Chain', symbol: 'BNB', baseGwei: 3, defaultPrice: 643, color: '#F3BA2F' },
+    { id: 'avalanche', label: 'Avalanche', symbol: 'AVAX', baseGwei: 25, defaultPrice: 9.70, color: '#E84142' },
+    { id: 'base', label: 'Base', symbol: 'ETH', baseGwei: 0.01, defaultPrice: 2419, color: '#0052FF' },
 ];
 
 const SPEED_MULTIPLIERS = [
@@ -52,7 +52,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
     const [txType, setTxType] = useState('transfer');
     const [customGas, setCustomGas] = useState('21000');
     const [gasPrice, setGasPrice] = useState('1');
-    const [ethPrice, setEthPrice] = useState('2327');
+    const [ethPrice, setEthPrice] = useState('2419');
     const [speed, setSpeed] = useState('standard');
     const [txCount, setTxCount] = useState('1');
     const [liveGas, setLiveGas] = useState(false);
@@ -130,7 +130,7 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
     const reset = () => {
         setNetwork('ethereum'); setTxType('transfer'); setCustomGas('21000');
-        setGasPrice('1'); setEthPrice('2327'); setSpeed('standard'); setTxCount('1');
+        setGasPrice('1'); setEthPrice('2419'); setSpeed('standard'); setTxCount('1');
     };
 
     const formatUSD = (n: number) => {

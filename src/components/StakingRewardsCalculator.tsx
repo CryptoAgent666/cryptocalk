@@ -22,7 +22,7 @@ interface CoinSuggestion {
     thumb?: string;
 }
 
-// APY & price defaults updated 2026-03-18.
+// APY & price defaults updated 2026-04-18.
 const POPULAR_STAKES = [
     { name: 'Ethereum', symbol: 'ETH', apy: 3.2, id: 'ethereum' },
     { name: 'Solana', symbol: 'SOL', apy: 7.0, id: 'solana' },
@@ -38,7 +38,7 @@ const STAKING_SCENARIOS = [
     {
         label: 'ETH Conservative',
         stakingAmount: '1000',
-        tokenPrice: '2327',
+        tokenPrice: '2419',
         stakingApy: '3.2',
         validatorFee: '5',
         stakingDays: '365',
@@ -47,7 +47,7 @@ const STAKING_SCENARIOS = [
     {
         label: 'SOL Growth',
         stakingAmount: '2500',
-        tokenPrice: '95',
+        tokenPrice: '89',
         stakingApy: '7',
         validatorFee: '5',
         stakingDays: '365',

@@ -65,8 +65,8 @@ const BLOCKS_PER_DAY = 144;
 const REFERENCE_BLOCK = 840_000;
 const REFERENCE_DATE = Date.UTC(2024, 3, 20); // Apr 20 2024
 
-// Simplified network hashrate for revenue estimation (updated 2026-03-18)
-const NETWORK_HASHRATE_THS = 850_000_000; // 850 EH/s in TH/s (updated 2026-03-22)
+// Simplified network hashrate for revenue estimation (updated 2026-04-18)
+const NETWORK_HASHRATE_THS = 856_000_000; // 856 EH/s in TH/s (updated 2026-04-18)
 const HASHRATE_PRESETS = ['50', '100', '200', '500', '1000'];
 const ELECTRICITY_COST_PRESETS = ['0.04', '0.06', '0.08', '0.10', '0.15'];
 const POWER_PRESETS = ['1800', '2500', '3000', '4500', '6000'];
@@ -525,7 +525,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Disclaimer */}
                     <p className="calc-disclaimer">
                         <Info size={12} />
-                        {getUiString(lang, 'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~850 EH/s network hashrate. Not financial advice.')}
+                        {getUiString(lang, 'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~856 EH/s network hashrate. Not financial advice.')}
                     </p>
                 </div>
             </div>
