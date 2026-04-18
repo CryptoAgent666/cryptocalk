@@ -111,7 +111,6 @@ function ValidatorCalculator({ lang = 'en' }: { lang?: string }) {
     const netProfit = netRewardsUSD - operatingCosts;
     const stakeValueUSD = stake * price;
     const roi = stakeValueUSD > 0 ? (netProfit / stakeValueUSD) * 100 : 0;
-    const breakEvenMonths = netProfit > 0 ? (operatingCosts / (netProfit / 12 + operatingCosts / 12)) : Infinity;
     const monthlyNetProfit = netProfit / 12;
     const breakEven = monthlyNetProfit > 0 ? operatingCosts / monthlyNetProfit : Infinity;
 

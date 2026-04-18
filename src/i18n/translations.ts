@@ -121,6 +121,7 @@ interface Translations {
     footerAboutUs: string;
     footerContactUs: string;
     footerTerms: string;
+    footerUpdates: string;
     footerDisclaimer: string;
 }
 
@@ -233,6 +234,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'About Us',
         footerContactUs: 'Contact Us',
         footerTerms: 'Terms of Service',
+        footerUpdates: 'Updates',
         footerDisclaimer: '© 2026 CryptoCalk. All rights reserved. For informational purposes only — not financial advice.',
     },
 
@@ -344,6 +346,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'Sobre Nosotros',
         footerContactUs: 'Contáctenos',
         footerTerms: 'Términos de Servicio',
+        footerUpdates: 'Novedades',
         footerDisclaimer: '© 2026 CryptoCalk. Todos los derechos reservados. Solo con fines informativos — no es asesoramiento financiero.',
     },
 
@@ -455,6 +458,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'Sobre Nós',
         footerContactUs: 'Fale Conosco',
         footerTerms: 'Termos de Serviço',
+        footerUpdates: 'Novidades',
         footerDisclaimer: '© 2026 CryptoCalk. Todos os direitos reservados. Apenas para fins informativos — não constitui aconselhamento financeiro.',
     },
 
@@ -566,6 +570,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'Hakkımızda',
         footerContactUs: 'Bize Ulaşın',
         footerTerms: 'Kullanım Koşulları',
+        footerUpdates: 'Yenilikler',
         footerDisclaimer: '© 2026 CryptoCalk. Tüm hakları saklıdır. Yalnızca bilgi amaçlıdır — finansal tavsiye değildir.',
     },
 
@@ -677,6 +682,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'हमारे बारे में',
         footerContactUs: 'संपर्क करें',
         footerTerms: 'सेवा की शर्तें',
+        footerUpdates: 'अपडेट्स',
         footerDisclaimer: '© 2026 CryptoCalk. सर्वाधिकार सुरक्षित। केवल सूचनात्मक उद्देश्यों के लिए — वित्तीय सलाह नहीं।',
     },
 
@@ -788,6 +794,7 @@ const translations: Record<Lang, Translations> = {
         footerAboutUs: 'О Нас',
         footerContactUs: 'Связаться с Нами',
         footerTerms: 'Условия Использования',
+        footerUpdates: 'Обновления',
         footerDisclaimer: '© 2026 CryptoCalk. Все права защищены. Только для информационных целей — не является финансовой рекомендацией.',
     },
 };

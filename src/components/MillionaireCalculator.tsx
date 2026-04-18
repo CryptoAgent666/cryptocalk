@@ -37,11 +37,13 @@ function MillionaireCalculator({ lang = 'en' }: { lang?: string }) {
   const [annualReturn, setAnnualReturn] = useState('20');
   const [allocation, setAllocation] = useState('100');
 
+  const loc = lang === 'en' ? 'en-US' : lang;
+
   const formatUSD = (n: number) => {
     if (!isFinite(n)) return '\u2014';
     if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
     if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n);
+    return new Intl.NumberFormat(loc, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n);
   };
 
   const results = useMemo(() => {

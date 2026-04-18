@@ -69,11 +69,13 @@ function IfIHadBoughtCalculator({ lang = 'en' }: { lang?: string }) {
   const [amount, setAmount] = useState('1000');
   const [dateKey, setDateKey] = useState('covid');
 
+  const loc = lang === 'en' ? 'en-US' : lang;
+
   const formatUSD = (n: number) => {
     if (!isFinite(n)) return '\u2014';
     if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
     if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(n);
+    return new Intl.NumberFormat(loc, { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(n);
   };
 
   const formatPercent = (n: number) => {
@@ -83,7 +85,7 @@ function IfIHadBoughtCalculator({ lang = 'en' }: { lang?: string }) {
 
   const formatCoins = (n: number) => {
     if (!isFinite(n)) return '\u2014';
-    if (n >= 1) return n.toLocaleString('en-US', { maximumFractionDigits: 4 });
+    if (n >= 1) return n.toLocaleString(loc, { maximumFractionDigits: 4 });
     return n.toFixed(8);
   };
 
@@ -187,7 +189,7 @@ function IfIHadBoughtCalculator({ lang = 'en' }: { lang?: string }) {
           {results ? (
             <>
               <div className="result-hero" style={{ borderColor: results.totalReturn >= 0 ? 'var(--color-accent-green, #10b981)' : 'var(--color-accent-red, #ef4444)' }}>
-                <span className="result-hero-label">{getUiString(lang, 'Your $') + Number(amount).toLocaleString() + getUiString(lang, ' would be worth')}</span>
+                <span className="result-hero-label">{getUiString(lang, 'Your investment of') + ' $' + Number(amount).toLocaleString(loc) + ' ' + getUiString(lang, 'would be worth')}</span>
                 <span className="result-hero-value" style={{ color: results.totalReturn >= 0 ? 'var(--color-accent-green, #10b981)' : 'var(--color-accent-red, #ef4444)' }}>
                   {formatUSD(results.currentValue)}
                 </span>

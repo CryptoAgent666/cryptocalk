@@ -1,0 +1,314 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cryptocalk.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Updates', item: 'https://cryptocalk.com/updates/' },
+  ],
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Updates | CryptoCalk',
+  description: 'See what\'s new on CryptoCalk — new calculators, features, and improvements to our free crypto calculator suite.',
+  url: 'https://cryptocalk.com/updates/',
+  inLanguage: 'en',
+  dateModified: '2026-04-18',
+};
+---
+
+<Layout
+  title="Updates — What's New on CryptoCalk"
+  description="See what's new on CryptoCalk — new calculators, features, and improvements to our free crypto calculator suite of 87 tools in 6 languages."
+  lang="en"
+>
+  <SiteHeader lang="en" currentPath="/updates" />
+  <div class="updates-container">
+    <header class="updates-header">
+      <h1>What's New</h1>
+      <p>Latest updates, new calculators, and improvements to CryptoCalk.</p>
+    </header>
+
+    <div class="updates-content">
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-04-18">April 18, 2026</time>
+        </div>
+        <h2>18 New Calculators — Now 87 Tools Total</h2>
+        <p>We've added 18 brand-new calculators, bringing the total to <strong>87 free tools</strong> across <strong>1,100+ pages</strong> in 6 languages. New additions include:</p>
+        <ul>
+          <li><a href="/arbitrage-calculator/">Crypto Arbitrage Calculator</a> — find price differences across exchanges</li>
+          <li><a href="/stock-to-flow-calculator/">Stock-to-Flow Calculator</a> — model Bitcoin's scarcity valuation</li>
+          <li><a href="/options-calculator/">Crypto Options Calculator</a> — price calls and puts with Black-Scholes</li>
+          <li><a href="/tax-loss-harvesting-calculator/">Tax-Loss Harvesting Calculator</a> — optimize your tax strategy</li>
+          <li><a href="/restaking-calculator/">Restaking Calculator</a> — estimate EigenLayer restaking yields</li>
+          <li><a href="/liquid-staking-calculator/">Liquid Staking Calculator</a> — compare Lido, Rocket Pool, Coinbase</li>
+          <li><a href="/perpetual-futures-calculator/">Perpetual Futures Calculator</a> — full P&L with funding costs</li>
+          <li><a href="/payback-period-calculator/">Mining Payback Period Calculator</a> — find your break-even date</li>
+          <li><a href="/dva-calculator/">Dollar Value Averaging Calculator</a> — target-value DCA strategy</li>
+          <li><a href="/bitcoin-energy-calculator/">Bitcoin Energy Calculator</a> — estimate mining power consumption</li>
+          <li><a href="/on-chain-metrics-calculator/">On-Chain Metrics Calculator</a> — NVT, MVRV, and more</li>
+          <li><a href="/grid-trading-calculator/">Grid Trading Bot Calculator</a> — simulate grid trading profits</li>
+          <li><a href="/inheritance-tax-calculator/">Crypto Inheritance Tax Calculator</a> — estate planning for digital assets</li>
+          <li><a href="/validator-calculator/">Validator Node Calculator</a> — full validator economics</li>
+          <li><a href="/token-valuation-calculator/">Token Valuation Calculator</a> — DCF and comparable analysis</li>
+          <li><a href="/if-i-had-bought/">If I Had Bought… Calculator</a> — see what your past investment would be worth</li>
+          <li><a href="/millionaire-calculator/">Crypto Millionaire Calculator</a> — how much crypto to reach $1M</li>
+          <li><a href="/pizza-day-calculator/">Pizza Day Calculator</a> — the legendary 10,000 BTC pizza in today's value</li>
+        </ul>
+        <p>All calculators are available in English, Spanish, Portuguese, Turkish, Hindi, and Russian.</p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-04-04">April 4, 2026</time>
+        </div>
+        <h2>Android App Available on Google Play</h2>
+        <p>CryptoCalk is now available as a free Android app. Get instant access to all 87 calculators with offline support — no internet required after the first load.</p>
+        <p><a href="https://play.google.com/store/apps/details?id=com.cryptocalk.calculator" target="_blank" rel="noopener noreferrer" class="cta-link">Download on Google Play →</a></p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-04-04">April 4, 2026</time>
+        </div>
+        <h2>Live Market Data Integration</h2>
+        <p>Several calculators now fetch real-time data automatically:</p>
+        <ul>
+          <li><strong>Gas Fee Calculator</strong> — live Ethereum gas prices from Etherscan</li>
+          <li><strong>Mining Calculator</strong> — live Bitcoin difficulty from blockchain.info</li>
+          <li><strong>Multiple calculators</strong> — live BTC and ETH prices from CoinGecko</li>
+        </ul>
+        <p>All live data is optional — calculators work perfectly with manual input if API requests fail.</p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-03-27">March 27, 2026</time>
+        </div>
+        <h2>Full Localization — 6 Languages, 1,100+ Pages</h2>
+        <p>Every calculator, button label, result text, FAQ, and SEO content is now fully translated into:</p>
+        <ul class="lang-list">
+          <li>🇬🇧 English</li>
+          <li>🇪🇸 Spanish (Español)</li>
+          <li>🇧🇷 Portuguese (Português)</li>
+          <li>🇹🇷 Turkish (Türkçe)</li>
+          <li>🇮🇳 Hindi (हिन्दी)</li>
+          <li>🇷🇺 Russian (Русский)</li>
+        </ul>
+        <p>All pages use localized URLs (e.g., <code>/es/calculadora-beneficio-cripto/</code>) for optimal search engine visibility.</p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-03-22">March 22, 2026</time>
+        </div>
+        <h2>Mobile Experience Improvements</h2>
+        <p>We've optimized every calculator for mobile devices:</p>
+        <ul>
+          <li>Fixed horizontal overflow on all calculator pages</li>
+          <li>Larger touch targets (44px) on all interactive elements</li>
+          <li>Scrollable tables on small screens</li>
+          <li>Improved text readability across all screen sizes</li>
+        </ul>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-03-21">March 21, 2026</time>
+        </div>
+        <h2>16 New Calculators Added</h2>
+        <p>Added 16 specialized calculators for advanced crypto use cases:</p>
+        <ul>
+          <li>Bitcoin Unit Converter, Cross-Chain Bridge Calculator, Crypto Correlation Calculator</li>
+          <li>Index Fund Calculator, Inheritance Planner, Portfolio Rebalancer</li>
+          <li>Sentiment Analyzer, DeFi Yield Aggregator, Dust Attack Calculator</li>
+          <li>Exchange Fee Comparator, Flash Loan Calculator, Gas Optimization Calculator</li>
+          <li>Governance Voting Calculator, NFT Rarity Calculator, Token Unlock Calculator, Whale Alert</li>
+        </ul>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-03-18">March 18, 2026</time>
+        </div>
+        <h2>Launch — 69 Free Crypto Calculators</h2>
+        <p>CryptoCalk launched with 69 free cryptocurrency calculators covering profit & loss, mining, DeFi, staking, trading tools, tax estimation, and more. All calculators run entirely in your browser — no data is sent to any server.</p>
+      </article>
+
+    </div>
+  </div>
+  <SiteFooter lang="en" />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>
+
+<style>
+  .updates-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+
+  .updates-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .updates-header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  .updates-header p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .updates-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .update-entry {
+    padding: 0;
+  }
+
+  .update-date {
+    margin-bottom: 12px;
+  }
+
+  .update-date time {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .update-entry h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--color-text);
+  }
+
+  .update-entry p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .update-entry strong {
+    color: var(--color-text);
+  }
+
+  .update-entry ul {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .update-entry ul li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .update-entry ul li::before {
+    content: '•';
+    position: absolute;
+    left: 4px;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .update-entry ul li a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .update-entry ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .lang-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px !important;
+  }
+
+  .lang-list li::before {
+    display: none !important;
+  }
+
+  .lang-list li {
+    padding-left: 0 !important;
+    font-size: 0.95rem !important;
+  }
+
+  .cta-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .cta-link:hover {
+    text-decoration: underline;
+  }
+
+  code {
+    background: var(--color-bg-tertiary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--color-border);
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .updates-header h1 {
+      font-size: 2rem;
+    }
+
+    .lang-list {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+</style>
