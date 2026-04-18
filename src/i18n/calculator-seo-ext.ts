@@ -5188,7 +5188,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Not accounting for efficiency losses in the power supply unit (PSU). Mining hardware PSUs are typically 90–93% efficient — so a miner rated at 3,000W from the miner specification actually draws 3,000/0.92 ≈ 3,261W at the wall. Using the device specification overstates efficiency and understates electricity cost."
       ],
       benchmarks: [
-      "Electricity cost benchmarks by region (2026): US residential average: $0.12/kWh. US industrial: $0.07/kWh. China industrial (Sichuan wet season): $0.02–0.04/kWh. Nordic hydro power: $0.03–0.06/kWh. US Sun Belt (natural gas generation): $0.05–0.07/kWh. Mining profitability is heavily geographically dependent.",
+      "Electricity cost benchmarks by region (2026): US residential average: $0.12/kWh. US industrial: $0.08/kWh. China industrial (Sichuan wet season): $0.02–0.04/kWh. Nordic hydro power: $0.03–0.06/kWh. US Sun Belt (natural gas generation): $0.05–0.07/kWh. Mining profitability is heavily geographically dependent.",
       "At $0.05/kWh (favorable rate), a 3,500W ASIC costs $0.175/hour = $4.20/day = $126/month in electricity. At $0.10/kWh, the same machine costs $252/month. A $126 difference can be the entire profit margin for many machines, underscoring why electricity cost is the primary determinant of mining viability."
       ],
       execution: [
@@ -5222,7 +5222,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "No tener en cuenta las pérdidas de eficiencia en la unidad de fuente de alimentación (PSU)."
       ],
       benchmarks: [
-      "Benchmarks de coste de electricidad por región (2026): EE.UU. residencial promedio: $0.12/kWh. EE.UU. industrial: $0.07/kWh. Energía hidroeléctrica nórdica: $0.03–0.06/kWh.",
+      "Benchmarks de coste de electricidad por región (2026): EE.UU. residencial promedio: $0.12/kWh. EE.UU. industrial: $0.08/kWh. Energía hidroeléctrica nórdica: $0.03–0.06/kWh.",
       "A $0.05/kWh (tarifa favorable), un ASIC de 3,500W cuesta $126/mes en electricidad."
       ],
       execution: [
@@ -5256,7 +5256,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Não contabilizar as perdas de eficiência na unidade de fonte de alimentação (PSU)."
       ],
       benchmarks: [
-      "Benchmarks de custo de eletricidade por região (2026): média residencial dos EUA: $0.12/kWh. Industrial nos EUA: $0.07/kWh. Energia hidrelétrica nórdica: $0.03–0.06/kWh.",
+      "Benchmarks de custo de eletricidade por região (2026): média residencial dos EUA: $0.12/kWh. Industrial nos EUA: $0.08/kWh. Energia hidrelétrica nórdica: $0.03–0.06/kWh.",
       "A $0.05/kWh (tarifa favorável), um ASIC de 3.500W custa $126/mês em eletricidade."
       ],
       execution: [
@@ -5324,7 +5324,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "पावर सप्लाई यूनिट (PSU) में दक्षता हानि के लिए खाता न करना।"
       ],
       benchmarks: [
-      "क्षेत्र के अनुसार बिजली लागत बेंचमार्क (2026): US आवासीय औसत: $0.12/kWh। US औद्योगिक: $0.07/kWh। नॉर्डिक हाइड्रो पावर: $0.03–0.06/kWh।",
+      "क्षेत्र के अनुसार बिजली लागत बेंचमार्क (2026): US आवासीय औसत: $0.12/kWh। US औद्योगिक: $0.08/kWh। नॉर्डिक हाइड्रो पावर: $0.03–0.06/kWh।",
       "$0.05/kWh (अनुकूल दर) पर, 3,500W ASIC बिजली में $126/माह खर्च करता है।"
       ],
       execution: [
@@ -5358,7 +5358,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Игнорирование потерь эффективности блока питания (PSU). Майнинговые PSU имеют КПД 90–93%, что означает более высокое фактическое потребление от розетки."
       ],
       benchmarks: [
-      "Ориентиры стоимости электроэнергии по регионам (2026): средний жилой тариф в США: $0.12/кВт·ч. Промышленный в США: $0.07/кВт·ч. Скандинавская гидроэлектростанция: $0.03–0.06/кВт·ч.",
+      "Ориентиры стоимости электроэнергии по регионам (2026): средний жилой тариф в США: $0.12/кВт·ч. Промышленный в США: $0.08/кВт·ч. Скандинавская гидроэлектростанция: $0.03–0.06/кВт·ч.",
       "При $0.05/кВт·ч (благоприятный тариф) ASIC мощностью 3 500 Вт обходится в $126/мес. на электроэнергию."
       ],
       execution: [
@@ -5585,7 +5585,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     en: {
       interpret: [
       "The hashrate converter translates between different hashing power units: H/s (hashes per second), KH/s (kilohashes), MH/s (megahashes), GH/s (gigahashes), TH/s (terahashes), PH/s (petahashes), and EH/s (exahashes). Each step is a 1000× increase. Bitcoin network hashrate is currently measured in EH/s (exahashes), while individual GPU miners might operate at MH/s, and ASICs at TH/s. Misreading the unit prefix by one step is a 1000× error that completely invalidates profitability calculations.",
-      "The \"network share\" output shows what percentage of the total network hashrate your hardware represents, which directly determines your expected block reward share. A single S21 ASIC at 200 TH/s against an 800 EH/s Bitcoin network has a share of 200 TH/s / 800,000,000 TH/s = 0.000000025%, meaning you statistically earn one block reward every 38 years solo mining — demonstrating why pool mining is essential for predictable income."
+      "The \"network share\" output shows what percentage of the total network hashrate your hardware represents, which directly determines your expected block reward share. A single S21 ASIC at 200 TH/s against an 856 EH/s Bitcoin network has a share of 200 TH/s / 800,000,000 TH/s = 0.000000025%, meaning you statistically earn one block reward every 38 years solo mining — demonstrating why pool mining is essential for predictable income."
       ],
       scenarios: [
       "Pool comparison: mining pools report contributed hashrate in different units. Use this converter to normalize all pool contributors to the same unit (TH/s) before comparing your contribution across pools and verifying the pool's reported hashrate matches your hardware's expected output.",
@@ -5600,7 +5600,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Using the wrong algorithm's hashrate unit for the mining calculator. Bitcoin uses SHA-256 (TH/s), Ethereum Classic uses Ethash (MH/s), Monero uses RandomX (KH/s or MH/s), Kaspa uses kHeavyHash (GH/s). The profitability calculator for each coin expects hashrate in that coin's algorithm's conventional unit."
       ],
       benchmarks: [
-      "Reference hashrate units by coin/algorithm (2026): Bitcoin (SHA-256): network ≈800 EH/s; top ASIC ≈200 TH/s; GPU: negligible. Ethereum Classic (ETHhash): top GPU ≈60 MH/s; no viable ASIC. Kaspa (kHeavyHash): network ≈800 PH/s; top ASIC ≈100 TH/s. Monero (RandomX): network ≈3 GH/s; consumer CPU ≈1–12 KH/s.",
+      "Reference hashrate units by coin/algorithm (2026): Bitcoin (SHA-256): network ≈856 EH/s; top ASIC ≈200 TH/s; GPU: negligible. Ethereum Classic (ETHhash): top GPU ≈60 MH/s; no viable ASIC. Kaspa (kHeavyHash): network ≈800 PH/s; top ASIC ≈100 TH/s. Monero (RandomX): network ≈3 GH/s; consumer CPU ≈1–12 KH/s.",
       "For context: 1 EH/s = 1,000 PH/s = 1,000,000 TH/s = 1,000,000,000 GH/s = 10^18 H/s. Bitcoin's entire historical blockchain has been secured by progressively more hashrate over 15 years, from kilohashe in 2009 to exahashes today — a 10^15× (quadrillion-fold) increase in network security."
       ],
       execution: [
@@ -5634,7 +5634,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Usar la unidad de hashrate del algoritmo incorrecto para el calculador de minería."
       ],
       benchmarks: [
-      "Unidades de hashrate de referencia por moneda/algoritmo (2026): Bitcoin (SHA-256): red ≈800 EH/s; ASIC superior ≈200 TH/s. Ethereum Classic (ETHhash): GPU superior ≈60 MH/s. Kaspa (kHeavyHash): ASIC superior ≈100 TH/s.",
+      "Unidades de hashrate de referencia por moneda/algoritmo (2026): Bitcoin (SHA-256): red ≈856 EH/s; ASIC superior ≈200 TH/s. Ethereum Classic (ETHhash): GPU superior ≈60 MH/s. Kaspa (kHeavyHash): ASIC superior ≈100 TH/s.",
       "Para contexto: 1 EH/s = 1.000 PH/s = 1.000.000 TH/s = 10^18 H/s."
       ],
       execution: [
@@ -5668,7 +5668,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Usar a unidade de hashrate do algoritmo incorreto para a calculadora de mineração."
       ],
       benchmarks: [
-      "Unidades de hashrate de referência por moeda/algoritmo (2026): Bitcoin (SHA-256): rede ≈800 EH/s; ASIC superior ≈200 TH/s.",
+      "Unidades de hashrate de referência por moeda/algoritmo (2026): Bitcoin (SHA-256): rede ≈856 EH/s; ASIC superior ≈200 TH/s.",
       "Para contexto: 1 EH/s = 1.000 PH/s = 1.000.000 TH/s = 10^18 H/s."
       ],
       execution: [
@@ -5702,7 +5702,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Madencilik hesaplayıcısı için yanlış algoritmanın hashrate birimini kullanmak."
       ],
       benchmarks: [
-      "Coin/algoritmaya göre referans hashrate birimleri (2026): Bitcoin (SHA-256): ağ ≈800 EH/s; üst ASIC ≈200 TH/s.",
+      "Coin/algoritmaya göre referans hashrate birimleri (2026): Bitcoin (SHA-256): ağ ≈856 EH/s; üst ASIC ≈200 TH/s.",
       "Bağlam için: 1 EH/s = 1.000 PH/s = 1.000.000 TH/s = 10^18 H/s."
       ],
       execution: [
@@ -5736,7 +5736,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "माइनिंग कैलकुलेटर के लिए गलत एल्गोरिदम की हैशरेट इकाई का उपयोग करना।"
       ],
       benchmarks: [
-      "कॉइन/एल्गोरिदम के अनुसार संदर्भ हैशरेट इकाइयां (2026): Bitcoin (SHA-256): नेटवर्क ≈800 EH/s; शीर्ष ASIC ≈200 TH/s।",
+      "कॉइन/एल्गोरिदम के अनुसार संदर्भ हैशरेट इकाइयां (2026): Bitcoin (SHA-256): नेटवर्क ≈856 EH/s; शीर्ष ASIC ≈200 TH/s।",
       "संदर्भ के लिए: 1 EH/s = 1,000 PH/s = 1,000,000 TH/s = 10^18 H/s।"
       ],
       execution: [
@@ -5770,7 +5770,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Использование единиц хешрейта неправильного алгоритма. Bitcoin (SHA-256): TH/s; Ethereum Classic (ETHash): MH/s; Monero (RandomX): KH/s или MH/s."
       ],
       benchmarks: [
-      "Референсные единицы хешрейта по монетам/алгоритмам (2026): Bitcoin: сеть ≈800 EH/s, топ ASIC ≈200 TH/s. Ethereum Classic: топ GPU ≈60 MH/s. Kaspa: топ ASIC ≈100 TH/s. Monero: сеть ≈3 GH/s.",
+      "Референсные единицы хешрейта по монетам/алгоритмам (2026): Bitcoin: сеть ≈856 EH/s, топ ASIC ≈200 TH/s. Ethereum Classic: топ GPU ≈60 MH/s. Kaspa: топ ASIC ≈100 TH/s. Monero: сеть ≈3 GH/s.",
       "Для контекста: 1 EH/s = 1 000 PH/s = 1 000 000 TH/s = 10^18 H/s."
       ],
       execution: [
@@ -6824,7 +6824,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
   'unit-converter': {
     en: {
       interpret: ["Cryptocurrency unit conversions reveal the underlying scale of blockchain systems and help contextualize value transfers across drastically different denominations. When you see 0.00001 BTC, converting to satoshis (1,000 sats) makes the quantity immediately tangible. When evaluating Ethereum gas costs in gwei, converting to USD at current ETH price transforms abstract technical metrics into economic reality. The ability to fluidly convert between denominations is essential for comparing value across networks: 1 MATIC at $0.80 vs. 1 SOL at $150 vs. 1 ETH at $2,300 require common units to enable meaningful comparison of transaction cost efficiency.", "Denomination differences create persistent confusion for new crypto participants. Bitcoin's 8-decimal precision (1 BTC = 100,000,000 satoshis) enables microtransactions at the satoshi level while maintaining the psychological significance of whole-BTC milestones. Ethereum's 18-decimal precision (1 ETH = 10^18 wei) serves different technical purposes — gas calculations require granular unit precision to properly price computational resources. Understanding why each network chose its denomination structure provides insight into the network's design philosophy and intended use cases."],
-      scenarios: ["A developer is estimating the gas cost of a smart contract function. The function costs 50,000 gas units. Current gas price: 3 gwei. Calculation: 50,000 × 3 gwei = 150,000 gwei = 0.00015 ETH. At $2,300/ETH, this = $0.35 per call. For a DeFi protocol expecting 1,000 calls per day, this is $350 daily gas cost — a critical business viability metric that unit conversion makes immediately apparent.", "An investor is comparing the unit economics of two payment networks: Network A charges 0.001 BTC per transaction (1,000 sats). Network B charges 0.0001 ETH per transaction (100,000 gwei). At BTC = $73,000 and ETH = $2,300: Network A = $0.073 per tx. Network B = $0.23 per tx. Without unit conversion to common dollar terms, these fee structures appear incomparable — the conversion reveals Network A is 3x cheaper per transaction at current prices."],
+      scenarios: ["A developer is estimating the gas cost of a smart contract function. The function costs 50,000 gas units. Current gas price: 3 gwei. Calculation: 50,000 × 3 gwei = 150,000 gwei = 0.00015 ETH. At $2,300/ETH, this = $0.35 per call. For a DeFi protocol expecting 1,000 calls per day, this is $350 daily gas cost — a critical business viability metric that unit conversion makes immediately apparent.", "An investor is comparing the unit economics of two payment networks: Network A charges 0.001 BTC per transaction (1,000 sats). Network B charges 0.0001 ETH per transaction (100,000 gwei). At BTC = $73,000 and ETH = $2,300: Network A = $0.083 per tx. Network B = $0.23 per tx. Without unit conversion to common dollar terms, these fee structures appear incomparable — the conversion reveals Network A is 3x cheaper per transaction at current prices."],
       checklist: ["When presenting converted values, always include: (1) the source value and unit, (2) the conversion rate used (with timestamp), (3) the converted value and target unit. This three-component format ensures the conversion is reproducible and verifiable, preventing confusion when rates change or when values are referenced later without context.", "For cross-chain comparisons, standardize on USD as the common unit with explicit conversion rates. When comparing fee structures across Ethereum, Solana, and Polygon, convert all fees to USD at current rates to enable apples-to-apples comparison. Include the underlying native token price as context for how conversion rates may change as token prices fluctuate."],
       mistakes: ["Conflating different token units when comparing 'amounts.' Saying '1 ETH worth of tokens' means dramatically different things depending on whether you're discussing WETH, ETH2, stETH, or rETH — all of which may have slightly different values. Similarly, '1 BTC' on different chains (WBTC on Ethereum, BTC on Bitcoin, renBTC on various chains) may have fractional price discrepancies due to minting/redemption dynamics. Always specify the exact token contract when precision matters.", "Using stale conversion rates for financial calculations. In a market that moves 5%–10% daily, a rate from even 4 hours ago can be meaningfully inaccurate. For tax calculations, always use the market price at the exact transaction timestamp. For investment decisions, use real-time rates from reliable oracles. Never use memory or approximation for conversion rates in any financial context."],
       benchmarks: ["Common unit conversion reference points worth memorizing: 1 BTC = 100,000,000 satoshis; 1 ETH = 10^9 gwei = 10^18 wei; 1 SOL = 10^9 lamports; 1 DOT = 10^10 plancks. These base relationships enable rapid mental estimates without calculator dependency — useful for quick sanity checks during time-sensitive trading decisions.", "Practical fee benchmarks by transaction type: simple token transfer on ETH mainnet ≈ 21,000 gas; ERC-20 approval ≈ 45,000 gas; DEX swap ≈ 100,000–200,000 gas; complex DeFi interaction ≈ 300,000–500,000 gas. Multiplying these by current gwei prices gives immediate cost estimates for any contemplated on-chain action."],
@@ -9703,11 +9703,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     en: {
       interpret: [
         "The converter output shows exact equivalences between Bitcoin denominations — BTC, millibitcoin (mBTC), microbitcoin (μBTC), and satoshis. If you entered 0.005 BTC and see 500,000 satoshis, that confirms you are working with roughly $367 at current prices. Always verify the denomination label before copying a value into a wallet or exchange — sending 500,000 sats is not the same as sending 0.005 BTC if the receiving field expects a different unit.",
-        "Use the output to sanity-check Lightning Network invoices, on-chain transaction amounts, and payment requests. A Lightning invoice for 50,000 sats equals 0.0005 BTC — about $36.85 at $73,700/BTC. If the invoice amount looks off by a factor of 10 or 100, you likely have a unit mismatch. Cross-reference the converted value with our <a href=\"/converter/\">crypto converter</a> to get the current USD equivalent before confirming any payment."
+        "Use the output to sanity-check Lightning Network invoices, on-chain transaction amounts, and payment requests. A Lightning invoice for 50,000 sats equals 0.0005 BTC — about $38.65 at $77,300/BTC. If the invoice amount looks off by a factor of 10 or 100, you likely have a unit mismatch. Cross-reference the converted value with our <a href=\"/converter/\">crypto converter</a> to get the current USD equivalent before confirming any payment."
       ],
       scenarios: [
-        "Lightning Network payments: a merchant quotes 25,000 sats for a coffee. Convert to BTC (0.00025) and then to USD ($18.43) to verify the price is reasonable before paying. For recurring Lightning subscriptions, convert the sat-denominated amount monthly to track whether BTC price changes have made the subscription more expensive in fiat terms.",
-        "Stacking sats strategy: you DCA $50 weekly into Bitcoin. At $73,700/BTC, each purchase nets approximately 67,844 sats. Tracking accumulation in satoshis rather than BTC fractions makes progress feel tangible — crossing the 1-million-sat milestone (0.01 BTC, ~$737) is a meaningful psychological marker. Use our <a href=\"/dca-calculator/\">DCA calculator</a> to project when you will hit your next sat milestone."
+        "Lightning Network payments: a merchant quotes 25,000 sats for a coffee. Convert to BTC (0.00025) and then to USD ($19.33) to verify the price is reasonable before paying. For recurring Lightning subscriptions, convert the sat-denominated amount monthly to track whether BTC price changes have made the subscription more expensive in fiat terms.",
+        "Stacking sats strategy: you DCA $50 weekly into Bitcoin. At $77,300/BTC, each purchase nets approximately 64,683 sats. Tracking accumulation in satoshis rather than BTC fractions makes progress feel tangible — crossing the 1-million-sat milestone (0.01 BTC, ~$773) is a meaningful psychological marker. Use our <a href=\"/dca-calculator/\">DCA calculator</a> to project when you will hit your next sat milestone."
       ],
       checklist: [
         "Before converting: 1) Confirm which Bitcoin unit the receiving platform expects — some wallets display in BTC, others in sats, others in mBTC. 2) Verify the current BTC/USD rate is fresh (within 60 seconds) if you need a fiat equivalent. 3) Double-check that you are converting Bitcoin units and not confusing BTC with wrapped variants like WBTC.",
@@ -9715,11 +9715,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "The most common mistake is confusing satoshis with other small-unit denominations across blockchains. Satoshis are Bitcoin-only — Ethereum uses gwei/wei, Solana uses lamports. Entering a satoshi value into a gwei field or vice versa produces wildly wrong results. Always confirm which network and denomination you are working with before transacting.",
-        "Another frequent error is assuming 1 sat = $0.01. At $73,700/BTC, 1 satoshi equals $0.000737 — roughly 14x less than a penny. This misconception leads to dramatically undersized Lightning payments. Memorize the current sat-to-cent ratio and update it monthly as BTC price changes."
+        "Another frequent error is assuming 1 sat = $0.01. At $77,300/BTC, 1 satoshi equals $0.000773 — roughly 14x less than a penny. This misconception leads to dramatically undersized Lightning payments. Memorize the current sat-to-cent ratio and update it monthly as BTC price changes."
       ],
       benchmarks: [
-        "Key unit equivalences to memorize: 1 BTC = 100,000,000 sats = 1,000 mBTC = 1,000,000 μBTC. At $73,700/BTC: 1 sat = $0.000737, 1,000 sats = $0.737, 100,000 sats = $73.70, 1 million sats = $737. These anchor points enable rapid mental estimation without a calculator.",
-        "Lightning Network typical payment ranges: micro-tips 100–1,000 sats ($0.07–$0.74), small purchases 5,000–50,000 sats ($3.69–$36.85), medium purchases 50,000–500,000 sats ($36.85–$368.50). If a Lightning invoice falls outside these ranges for the item type, double-check the amount."
+        "Key unit equivalences to memorize: 1 BTC = 100,000,000 sats = 1,000 mBTC = 1,000,000 μBTC. At $77,300/BTC: 1 sat = $0.000773, 1,000 sats = $0.773, 100,000 sats = $77.30, 1 million sats = $773. These anchor points enable rapid mental estimation without a calculator.",
+        "Lightning Network typical payment ranges: micro-tips 100–1,000 sats ($0.08–$0.77), small purchases 5,000–50,000 sats ($3.87–$38.65), medium purchases 50,000–500,000 sats ($38.65–$386.50). If a Lightning invoice falls outside these ranges for the item type, double-check the amount."
       ],
       execution: [
         "Standard workflow for Lightning payments: receive invoice → note sat amount → convert to USD using this tool → verify USD amount matches expected price → pay if correct. This 15-second check prevents overpayment errors that are irreversible on Lightning.",
@@ -9741,7 +9741,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Pagos Lightning: un comerciante cobra 25,000 sats por un café. Convierte a BTC (0.00025) y luego a USD para verificar que el precio sea razonable antes de pagar.",
-        "Estrategia de acumulación de sats: haces DCA de $50 semanales en Bitcoin. A $73,700/BTC, cada compra obtiene aproximadamente 67,844 sats. Rastrear en satoshis hace que el progreso se sienta tangible."
+        "Estrategia de acumulación de sats: haces DCA de $50 semanales en Bitcoin. A $77,300/BTC, cada compra obtiene aproximadamente 64,683 sats. Rastrear en satoshis hace que el progreso se sienta tangible."
       ],
       checklist: [
         "Antes de convertir: 1) Confirma qué unidad de Bitcoin espera la plataforma receptora. 2) Verifica que la tasa BTC/USD sea reciente. 3) No confundas BTC con variantes como WBTC.",
@@ -9749,10 +9749,10 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "El error más común es confundir satoshis con denominaciones de otras blockchains. Los satoshis son exclusivos de Bitcoin — Ethereum usa gwei/wei, Solana usa lamports.",
-        "Otro error frecuente es asumir que 1 sat = $0.01. A $73,700/BTC, 1 satoshi equivale a $0.000737 — aproximadamente 14x menos que un centavo."
+        "Otro error frecuente es asumir que 1 sat = $0.01. A $77,300/BTC, 1 satoshi equivale a $0.000773 — aproximadamente 14x menos que un centavo."
       ],
       benchmarks: [
-        "Equivalencias clave: 1 BTC = 100,000,000 sats = 1,000 mBTC. A $73,700/BTC: 1 sat = $0.000737, 100,000 sats = $73.70, 1 millón de sats = $737.",
+        "Equivalencias clave: 1 BTC = 100,000,000 sats = 1,000 mBTC. A $77,300/BTC: 1 sat = $0.000773, 100,000 sats = $77.30, 1 millón de sats = $773.",
         "Rangos típicos de Lightning: micro-propinas 100–1,000 sats, compras pequeñas 5,000–50,000 sats, compras medianas 50,000–500,000 sats."
       ],
       execution: [
@@ -9775,7 +9775,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Pagamentos Lightning: um comerciante cobra 25.000 sats por um café. Converta para BTC (0,00025) e depois para USD para verificar se o preço é razoável.",
-        "Estratégia de acumulação de sats: você faz DCA de $50 semanais em Bitcoin. A $73.700/BTC, cada compra rende aproximadamente 67.844 sats. Rastrear em satoshis torna o progresso tangível."
+        "Estratégia de acumulação de sats: você faz DCA de $50 semanais em Bitcoin. A $77.300/BTC, cada compra rende aproximadamente 67.844 sats. Rastrear em satoshis torna o progresso tangível."
       ],
       checklist: [
         "Antes de converter: 1) Confirme qual unidade de Bitcoin a plataforma receptora espera. 2) Verifique se a taxa BTC/USD está atualizada. 3) Não confunda BTC com variantes como WBTC.",
@@ -9783,10 +9783,10 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "O erro mais comum é confundir satoshis com denominações de outras blockchains. Satoshis são exclusivos do Bitcoin — Ethereum usa gwei/wei, Solana usa lamports.",
-        "Outro erro frequente é assumir que 1 sat = $0,01. A $73.700/BTC, 1 satoshi equivale a $0,000737 — cerca de 14x menos que um centavo."
+        "Outro erro frequente é assumir que 1 sat = $0,01. A $77.300/BTC, 1 satoshi equivale a $0,000737 — cerca de 14x menos que um centavo."
       ],
       benchmarks: [
-        "Equivalências-chave: 1 BTC = 100.000.000 sats = 1.000 mBTC. A $73.700/BTC: 1 sat = $0,000737, 100.000 sats = $73,70, 1 milhão de sats = $737.",
+        "Equivalências-chave: 1 BTC = 100.000.000 sats = 1.000 mBTC. A $77.300/BTC: 1 sat = $0,000737, 100.000 sats = $73,70, 1 milhão de sats = $773.",
         "Faixas típicas da Lightning: micro-gorjetas 100–1.000 sats, compras pequenas 5.000–50.000 sats, compras médias 50.000–500.000 sats."
       ],
       execution: [
@@ -9809,7 +9809,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Lightning ödemeleri: bir satıcı kahve için 25.000 sat talep ediyor. BTC'ye (0,00025) ve ardından USD'ye dönüştürerek fiyatın makul olduğunu doğrulayın.",
-        "Sat biriktirme stratejisi: haftalık $50 DCA yapıyorsunuz. $73.700/BTC'de her alım yaklaşık 67.844 sat getiriyor. Satoshi cinsinden takip, ilerlemeyi somut hale getirir."
+        "Sat biriktirme stratejisi: haftalık $50 DCA yapıyorsunuz. $77.300/BTC'de her alım yaklaşık 67.844 sat getiriyor. Satoshi cinsinden takip, ilerlemeyi somut hale getirir."
       ],
       checklist: [
         "Dönüştürmeden önce: 1) Alıcı platformun hangi Bitcoin birimini beklediğini onaylayın. 2) BTC/USD kurunun güncel olduğunu doğrulayın. 3) BTC'yi WBTC gibi varyantlarla karıştırmayın.",
@@ -9817,10 +9817,10 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "En yaygın hata, satoshileri diğer blokzincirlerin küçük birimleriyle karıştırmaktır. Satoshiler yalnızca Bitcoin'e aittir — Ethereum gwei/wei, Solana lamport kullanır.",
-        "Bir diğer sık hata 1 sat = $0,01 varsaymaktır. $73.700/BTC'de 1 satoshi = $0,000737 — bir sentin yaklaşık 14 katı az."
+        "Bir diğer sık hata 1 sat = $0,01 varsaymaktır. $77.300/BTC'de 1 satoshi = $0,000737 — bir sentin yaklaşık 14 katı az."
       ],
       benchmarks: [
-        "Anahtar birim eşdeğerlikleri: 1 BTC = 100.000.000 sat = 1.000 mBTC. $73.700/BTC'de: 1 sat = $0,000737, 100.000 sat = $73,70, 1 milyon sat = $737.",
+        "Anahtar birim eşdeğerlikleri: 1 BTC = 100.000.000 sat = 1.000 mBTC. $77.300/BTC'de: 1 sat = $0,000737, 100.000 sat = $73,70, 1 milyon sat = $773.",
         "Tipik Lightning aralıkları: mikro-bahşişler 100–1.000 sat, küçük alışverişler 5.000–50.000 sat, orta alışverişler 50.000–500.000 sat."
       ],
       execution: [
@@ -9843,7 +9843,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Lightning भुगतान: एक व्यापारी कॉफी के लिए 25,000 sats चार्ज करता है। भुगतान से पहले कीमत उचित है यह सत्यापित करने के लिए BTC (0.00025) और फिर USD में बदलें।",
-        "सैट संचय रणनीति: आप साप्ताहिक $50 DCA करते हैं। $73,700/BTC पर, प्रत्येक खरीद लगभग 67,844 sats देती है। सतोशी में ट्रैकिंग प्रगति को ठोस बनाती है।"
+        "सैट संचय रणनीति: आप साप्ताहिक $50 DCA करते हैं। $77,300/BTC पर, प्रत्येक खरीद लगभग 64,683 sats देती है। सतोशी में ट्रैकिंग प्रगति को ठोस बनाती है।"
       ],
       checklist: [
         "कन्वर्ट करने से पहले: 1) पुष्टि करें कि प्राप्त करने वाला प्लेटफ़ॉर्म कौन सी Bitcoin इकाई अपेक्षा करता है। 2) सत्यापित करें कि BTC/USD दर ताज़ा है। 3) BTC को WBTC जैसे वेरिएंट से न भ्रमित करें।",
@@ -9851,10 +9851,10 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "सबसे आम गलती सतोशी को अन्य ब्लॉकचेन की छोटी-इकाई मूल्यवर्गों से भ्रमित करना है। सतोशी केवल Bitcoin के हैं — Ethereum gwei/wei उपयोग करता है, Solana lamports उपयोग करता है।",
-        "एक और बार-बार होने वाली गलती यह मानना है कि 1 sat = $0.01। $73,700/BTC पर, 1 सतोशी = $0.000737 — एक पैसे से लगभग 14 गुना कम।"
+        "एक और बार-बार होने वाली गलती यह मानना है कि 1 sat = $0.01। $77,300/BTC पर, 1 सतोशी = $0.000773 — एक पैसे से लगभग 14 गुना कम।"
       ],
       benchmarks: [
-        "मुख्य इकाई समतुल्यताएं: 1 BTC = 100,000,000 sats = 1,000 mBTC। $73,700/BTC पर: 1 sat = $0.000737, 100,000 sats = $73.70, 10 लाख sats = $737।",
+        "मुख्य इकाई समतुल्यताएं: 1 BTC = 100,000,000 sats = 1,000 mBTC। $77,300/BTC पर: 1 sat = $0.000773, 100,000 sats = $77.30, 10 लाख sats = $773।",
         "सामान्य Lightning श्रेणियां: माइक्रो-टिप्स 100–1,000 sats, छोटी खरीदारी 5,000–50,000 sats, मध्यम खरीदारी 50,000–500,000 sats।"
       ],
       execution: [
@@ -9888,7 +9888,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Другая распространённая ошибка — считать, что 1 сат = $0,01. При $73 700/BTC 1 сатоши = $0,000737 — примерно в 14 раз меньше цента."
       ],
       benchmarks: [
-        "Ключевые эквиваленты: 1 BTC = 100 000 000 сат = 1 000 mBTC. При $73 700/BTC: 1 сат = $0,000737, 100 000 сат = $73,70, 1 млн сат = $737.",
+        "Ключевые эквиваленты: 1 BTC = 100 000 000 сат = 1 000 mBTC. При $73 700/BTC: 1 сат = $0,000737, 100 000 сат = $73,70, 1 млн сат = $773.",
         "Типичные диапазоны Lightning: микро-чаевые 100–1 000 сат, мелкие покупки 5 000–50 000 сат, средние покупки 50 000–500 000 сат."
       ],
       execution: [
@@ -10602,7 +10602,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Revise cuidadosamente a jurisdição fiscal. O tratamento tributário de herança cripto varia enormemente: os EUA fornecem base de custo ajustada no falecimento, enquanto alguns países europeus tributam a 30–55%."
       ],
       scenarios: [
-        "Planejamento patrimonial de longo prazo: você tem 5 BTC ($368.500) e quer garantir que seus filhos possam acessá-los. Sem planejamento, herdeiros podem não saber que sua carteira existe.",
+        "Planejamento patrimonial de longo prazo: você tem 5 BTC ($386.500) e quer garantir que seus filhos possam acessá-los. Sem planejamento, herdeiros podem não saber que sua carteira existe.",
         "Estratégia de doação anual: os EUA permitem $18.000 por beneficiário por ano isentos de impostos. Doar 0,24 BTC anualmente cria uma transferência eficiente fiscalmente."
       ],
       checklist: [
@@ -10636,7 +10636,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Vergi yetki alanı çıktısını dikkatle inceleyin. Kripto miras vergisi uygulaması çarpıcı biçimde farklılık gösterir: ABD ölümde kademeli maliyet bazı sağlar, bazı Avrupa ülkeleri ise %30–55 vergilendirir."
       ],
       scenarios: [
-        "Uzun vadeli miras planlaması: 5 BTC ($368.500) tutuyorsunuz ve çocuklarınızın erişebilmesini istiyorsunuz. Planlama olmadan, varisler cüzdanınızın varlığını bilemeyebilir.",
+        "Uzun vadeli miras planlaması: 5 BTC ($386.500) tutuyorsunuz ve çocuklarınızın erişebilmesini istiyorsunuz. Planlama olmadan, varisler cüzdanınızın varlığını bilemeyebilir.",
         "Yıllık hediye stratejisi: ABD alıcı başına yıllık $18.000 vergisiz izin verir. Yıllık 0,24 BTC hediye etmek vergi açısından verimli bir transfer yaratır."
       ],
       checklist: [
@@ -11776,7 +11776,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "The calculator's 'minimum spread required' output tells you the minimum price difference between venues needed for the flash loan to be profitable at current gas prices. If the minimum spread is 0.8% but the current arbitrage opportunity is only 0.5%, the trade loses money. This metric is your go/no-go signal. For <a href=\"/gas-calculator/\">gas cost</a> optimization, consider executing during low-gas periods (weekends, early UTC morning) when the minimum spread requirement drops."
       ],
       scenarios: [
-        "DEX arbitrage: ETH is $2,327 on Uniswap and $2,339 on SushiSwap — a 0.52% spread. Flash loan 100 ETH ($232,700) from Aave: loan fee 0.05% ($116.35) + buy gas ($3) + sell gas ($3) + swap fee 0.3% ($698.10 on the buy side). Gross profit: 100 × $12 = $1,200. Net profit: $1,200 - $116.35 - $6 - $698.10 = $379.55. Viable, but only if execution is atomic and the spread persists through the block.",
+        "DEX arbitrage: ETH is $2,419 on Uniswap and $2,339 on SushiSwap — a 0.52% spread. Flash loan 100 ETH ($232,700) from Aave: loan fee 0.05% ($116.35) + buy gas ($3) + sell gas ($3) + swap fee 0.3% ($698.10 on the buy side). Gross profit: 100 × $12 = $1,200. Net profit: $1,200 - $116.35 - $6 - $698.10 = $379.55. Viable, but only if execution is atomic and the spread persists through the block.",
         "Liquidation flash loan: a borrower on Aave has $50,000 in collateral with a health factor of 0.98 (undercollateralized). Flash borrow $25,000 USDC, repay the borrower's debt to claim $27,500 in collateral (10% liquidation bonus), swap collateral to USDC, repay flash loan. Gross profit: $2,500. Costs: flash loan fee $12.50 + gas $5–$20 + swap slippage ~$50. Net: ~$2,430. Liquidation flash loans are consistently profitable for monitored positions."
       ],
       checklist: [
@@ -11810,7 +11810,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "La salida 'spread mínimo requerido' indica la diferencia de precio mínima entre venues necesaria para que el flash loan sea rentable a los precios de gas actuales."
       ],
       scenarios: [
-        "Arbitraje DEX: ETH es $2,327 en Uniswap y $2,339 en SushiSwap — spread de 0,52%. Flash loan de 100 ETH: beneficio neto ~$379 después de todas las comisiones. Viable solo si la ejecución es atómica.",
+        "Arbitraje DEX: ETH es $2,419 en Uniswap y $2,339 en SushiSwap — spread de 0,52%. Flash loan de 100 ETH: beneficio neto ~$379 después de todas las comisiones. Viable solo si la ejecución es atómica.",
         "Flash loan de liquidación: prestatario con factor de salud 0,98. Pedir prestado, pagar deuda, reclamar colateral con bonus del 10%. Beneficio neto ~$2,430."
       ],
       checklist: [
@@ -11912,7 +11912,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "'न्यूनतम आवश्यक स्प्रेड' आउटपुट वर्तमान गैस कीमतों पर फ्लैश लोन लाभदायक होने के लिए आवश्यक न्यूनतम मूल्य अंतर बताता है।"
       ],
       scenarios: [
-        "DEX आर्बिट्राज: ETH Uniswap पर $2,327 और SushiSwap पर $2,339 — 0.52% स्प्रेड। 100 ETH फ्लैश लोन: शुद्ध लाभ ~$379। केवल एटॉमिक निष्पादन से व्यवहार्य।",
+        "DEX आर्बिट्राज: ETH Uniswap पर $2,419 और SushiSwap पर $2,339 — 0.52% स्प्रेड। 100 ETH फ्लैश लोन: शुद्ध लाभ ~$379। केवल एटॉमिक निष्पादन से व्यवहार्य।",
         "लिक्विडेशन फ्लैश लोन: स्वास्थ्य कारक 0.98 वाला उधारकर्ता। उधार लें, ऋण चुकाएं, 10% बोनस के साथ कोलैटरल क्लेम करें। शुद्ध लाभ ~$2,430।"
       ],
       checklist: [
@@ -12937,7 +12937,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Focus on the liquidation price output above all else — it is the single most critical number for risk management. Compare the liquidation price to recent support/resistance levels and the asset's average daily volatility. If BTC's 30-day average daily range is 3.5% and your liquidation distance is only 5%, you are one above-average volatile day away from liquidation. Use our <a href=\"/liquidation-calculator/\">liquidation calculator</a> for more detailed liquidation scenarios across different exchanges."
       ],
       scenarios: [
-        "Conservative BTC long: you deposit $5,000 margin with 3x leverage, creating a $15,000 position at $73,700/BTC (0.2035 BTC). Liquidation occurs at approximately $49,133 — a 33% drop. Given BTC's max drawdown in bull markets is typically 20–30%, 3x leverage provides reasonable buffer. Your potential gain on a 20% BTC rally is $3,000 (60% on margin) versus $1,000 (20%) without leverage.",
+        "Conservative BTC long: you deposit $5,000 margin with 3x leverage, creating a $15,000 position at $77,300/BTC (0.1941 BTC). Liquidation occurs at approximately $51,533 — a 33% drop. Given BTC's max drawdown in bull markets is typically 20–30%, 3x leverage provides reasonable buffer. Your potential gain on a 20% BTC rally is $3,000 (60% on margin) versus $1,000 (20%) without leverage.",
         "High-risk altcoin trade: you use 20x leverage on $500 margin for a $10,000 SOL position at $180. Liquidation price is approximately $171 — just 5% below entry. SOL regularly moves 5–8% daily, meaning liquidation within hours is likely during volatile sessions. This scenario demonstrates why leverage above 10x on altcoins is essentially gambling. Run this through our <a href=\"/position-size-calculator/\">position size calculator</a> to find the appropriate leverage for your risk tolerance."
       ],
       checklist: [
@@ -12961,7 +12961,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Track your leveraged trade performance separately from spot trades. Calculate the Sharpe ratio and win rate for leveraged positions independently. If your leveraged trade Sharpe ratio is below 0.5 over 90 days, leverage is destroying rather than enhancing your returns — reduce to spot-only trading until you identify and fix the strategy issue."
       ],
       validation: [
-        "Verify the liquidation price manually: for a 10x long at $73,700 entry, liquidation occurs when unrealized loss equals margin. At 10x, a 10% move = 100% loss, so liquidation price = entry × (1 − 1/leverage) = $73,700 × 0.90 = $66,330. If the calculator shows a different number, it may be accounting for maintenance margin (typically 0.5–1%) — check your exchange's specific liquidation formula.",
+        "Verify the liquidation price manually: for a 10x long at $77,300 entry, liquidation occurs when unrealized loss equals margin. At 10x, a 10% move = 100% loss, so liquidation price = entry × (1 − 1/leverage) = $77,300 × 0.90 = $69,570. If the calculator shows a different number, it may be accounting for maintenance margin (typically 0.5–1%) — check your exchange's specific liquidation formula.",
         "Cross-validate leveraged P&L: a 5% price increase on a 10x long should show 50% profit on margin. If you deposited $1,000 margin at 10x and price rises 5%, your profit should be $500. If the calculator shows a significantly different number, check whether it is deducting trading fees (0.02–0.06% per trade) and funding costs from the P&L."
       ],
     },
@@ -12971,7 +12971,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Enfócate en el precio de liquidación — es el número más crítico. Compáralo con niveles recientes de soporte/resistencia y la volatilidad diaria promedio. Si el rango diario promedio de BTC es 3,5% y tu distancia de liquidación es solo 5%, estás a un día volátil de la liquidación. Usa nuestra <a href=\"/es/calculadora-apalancamiento/\">calculadora de liquidación</a> para escenarios más detallados."
       ],
       scenarios: [
-        "BTC long conservador: depositas $5.000 de margen con 3x, creando posición de $15.000 a $73.700/BTC. Liquidación a ~$49.133 (caída del 33%). Con drawdown típico de BTC en mercados alcistas de 20–30%, 3x ofrece colchón razonable.",
+        "BTC long conservador: depositas $5.000 de margen con 3x, creando posición de $15.000 a $77.300/BTC. Liquidación a ~$49.133 (caída del 33%). Con drawdown típico de BTC en mercados alcistas de 20–30%, 3x ofrece colchón razonable.",
         "Operación altcoin de alto riesgo: 20x sobre $500 de margen para posición SOL de $10.000 a $180. Liquidación a ~$171 — solo 5% debajo. SOL se mueve regularmente 5–8% diario, haciendo probable la liquidación en horas."
       ],
       checklist: [
@@ -12995,7 +12995,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Rastrea el rendimiento apalancado separadamente. Si el ratio Sharpe de operaciones apalancadas está bajo 0,5 en 90 días, el apalancamiento destruye tus retornos."
       ],
       validation: [
-        "Verifica manualmente: para 10x long a $73.700, liquidación = entrada × (1 − 1/apalancamiento) = $73.700 × 0,90 = $66.330. Si difiere, puede incluir margen de mantenimiento.",
+        "Verifica manualmente: para 10x long a $77.300, liquidación = entrada × (1 − 1/apalancamiento) = $77.300 × 0,90 = $66.330. Si difiere, puede incluir margen de mantenimiento.",
         "Valida P&L: 5% de aumento con 10x long = 50% de ganancia sobre margen. Si depositaste $1.000 y el precio sube 5%, la ganancia debe ser $500."
       ],
     },
@@ -13005,7 +13005,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Foque no preço de liquidação — é o número mais crítico. Compare com níveis recentes de suporte/resistência e a volatilidade diária média. Se o range diário médio do BTC é 3,5% e sua distância de liquidação é apenas 5%, você está a um dia volátil da liquidação."
       ],
       scenarios: [
-        "BTC long conservador: você deposita $5.000 de margem com 3x, criando posição de $15.000 a $73.700/BTC. Liquidação a ~$49.133 (queda de 33%). Com drawdown típico de BTC em bull markets de 20–30%, 3x oferece colchão razoável.",
+        "BTC long conservador: você deposita $5.000 de margem com 3x, criando posição de $15.000 a $77.300/BTC. Liquidação a ~$49.133 (queda de 33%). Com drawdown típico de BTC em bull markets de 20–30%, 3x oferece colchão razoável.",
         "Trade altcoin de alto risco: 20x sobre $500 de margem para posição SOL de $10.000 a $180. Liquidação a ~$171 — apenas 5% abaixo. SOL se move regularmente 5–8% diariamente."
       ],
       checklist: [
@@ -13029,7 +13029,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Rastreie performance alavancada separadamente. Se o Sharpe ratio de trades alavancados estiver abaixo de 0,5 em 90 dias, alavancagem está destruindo seus retornos."
       ],
       validation: [
-        "Verifique manualmente: para 10x long a $73.700, liquidação = entrada × (1 − 1/alavancagem) = $73.700 × 0,90 = $66.330. Se diferir, pode incluir margem de manutenção.",
+        "Verifique manualmente: para 10x long a $77.300, liquidação = entrada × (1 − 1/alavancagem) = $77.300 × 0,90 = $66.330. Se diferir, pode incluir margem de manutenção.",
         "Valide P&L: 5% de aumento com 10x long = 50% de lucro sobre margem. Se depositou $1.000 e preço sobe 5%, lucro deve ser $500."
       ],
     },
@@ -13039,7 +13039,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Likidasyon fiyatına odaklanın — risk yönetimi için en kritik sayıdır. Son destek/direnç seviyeleri ve varlığın ortalama günlük oynaklığıyla karşılaştırın. BTC'nin 30 günlük ortalama günlük aralığı %3,5 ve likidasyon mesafeniz sadece %5 ise, ortalamanın üzerinde volatil bir gün likidasyona yeter."
       ],
       scenarios: [
-        "Muhafazakâr BTC long: $5.000 teminatla 3x kaldıraç, $73.700/BTC'de $15.000 pozisyon. Likidasyon ~$49.133'te (%33 düşüş). Boğa piyasasında BTC'nin tipik max drawdown'u %20–30 olduğundan 3x makul tampon sağlar.",
+        "Muhafazakâr BTC long: $5.000 teminatla 3x kaldıraç, $77.300/BTC'de $15.000 pozisyon. Likidasyon ~$49.133'te (%33 düşüş). Boğa piyasasında BTC'nin tipik max drawdown'u %20–30 olduğundan 3x makul tampon sağlar.",
         "Yüksek riskli altcoin işlemi: $500 teminat üzerinde 20x, $180'de $10.000 SOL pozisyonu. Likidasyon ~$171 — girişin sadece %5 altında. SOL günlük düzenli %5–8 hareket eder."
       ],
       checklist: [
@@ -13063,7 +13063,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Kaldıraçlı işlem performansını ayrı takip edin. Kaldıraçlı pozisyonların Sharpe oranı 90 günde 0,5'in altındaysa, kaldıraç getirilerinizi yok ediyor."
       ],
       validation: [
-        "Manuel doğrulama: $73.700 girişte 10x long için likidasyon = giriş × (1 − 1/kaldıraç) = $73.700 × 0,90 = $66.330. Farklıysa bakım marjı hesaba katılıyor olabilir.",
+        "Manuel doğrulama: $77.300 girişte 10x long için likidasyon = giriş × (1 − 1/kaldıraç) = $77.300 × 0,90 = $66.330. Farklıysa bakım marjı hesaba katılıyor olabilir.",
         "P&L doğrulayın: 10x long ile %5 artış = teminat üzerinde %50 kâr. $1.000 yatırdıysanız ve fiyat %5 yükselirse kârınız $500 olmalıdır."
       ],
     },
@@ -13073,7 +13073,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "लिक्विडेशन प्राइस पर सबसे अधिक ध्यान दें — यह रिस्क मैनेजमेंट के लिए सबसे महत्वपूर्ण संख्या है। हाल के सपोर्ट/रेजिस्टेंस लेवल और एसेट की औसत दैनिक वोलैटिलिटी से तुलना करें।"
       ],
       scenarios: [
-        "कंजर्वेटिव BTC लॉन्ग: $5,000 मार्जिन 3x लीवरेज, $73,700/BTC पर $15,000 पोजीशन। लिक्विडेशन ~$49,133 (33% गिरावट)। बुल मार्केट में BTC का मैक्स ड्रॉडाउन आमतौर पर 20–30% है, 3x उचित बफर देता है।",
+        "कंजर्वेटिव BTC लॉन्ग: $5,000 मार्जिन 3x लीवरेज, $77,300/BTC पर $15,000 पोजीशन। लिक्विडेशन ~$51,533 (33% गिरावट)। बुल मार्केट में BTC का मैक्स ड्रॉडाउन आमतौर पर 20–30% है, 3x उचित बफर देता है।",
         "हाई-रिस्क ऑल्टकॉइन ट्रेड: $500 मार्जिन पर 20x, $180 पर $10,000 SOL पोजीशन। लिक्विडेशन ~$171 — एंट्री से केवल 5% नीचे। SOL दैनिक 5–8% मूव करता है।"
       ],
       checklist: [
@@ -13097,7 +13097,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "लीवरेज्ड ट्रेड प्रदर्शन अलग से ट्रैक करें। यदि 90 दिनों में लीवरेज्ड पोजीशन का शार्प रेश्यो 0.5 से कम है, तो लीवरेज आपके रिटर्न नष्ट कर रहा है।"
       ],
       validation: [
-        "मैन्युअल सत्यापन: $73,700 एंट्री पर 10x लॉन्ग के लिए लिक्विडेशन = एंट्री × (1 − 1/लीवरेज) = $73,700 × 0.90 = $66,330। अंतर हो तो मेंटेनेंस मार्जिन शामिल हो सकता है।",
+        "मैन्युअल सत्यापन: $77,300 एंट्री पर 10x लॉन्ग के लिए लिक्विडेशन = एंट्री × (1 − 1/लीवरेज) = $77,300 × 0.90 = $69,570। अंतर हो तो मेंटेनेंस मार्जिन शामिल हो सकता है।",
         "P&L सत्यापित करें: 10x लॉन्ग के साथ 5% वृद्धि = मार्जिन पर 50% लाभ। यदि $1,000 जमा किया और कीमत 5% बढ़ी, तो लाभ $500 होना चाहिए।"
       ],
     },
@@ -13140,11 +13140,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
   'loan-calculator': {
     en: {
       interpret: [
-        "The crypto loan calculator output shows your required collateral, loan-to-value (LTV) ratio, liquidation threshold, and total interest cost. If you borrow $10,000 at 50% LTV using BTC as collateral, you must deposit $20,000 worth of BTC (0.271 BTC at $73,700). The liquidation threshold — typically 75–85% LTV — is the price level at which the protocol sells your collateral to repay the loan. At 80% LTV liquidation, your BTC collateral is liquidated if BTC drops to approximately $47,630.",
+        "The crypto loan calculator output shows your required collateral, loan-to-value (LTV) ratio, liquidation threshold, and total interest cost. If you borrow $10,000 at 50% LTV using BTC as collateral, you must deposit $20,000 worth of BTC (0.271 BTC at $77,300). The liquidation threshold — typically 75–85% LTV — is the price level at which the protocol sells your collateral to repay the loan. At 80% LTV liquidation, your BTC collateral is liquidated if BTC drops to approximately $47,630.",
         "Evaluate the total cost of borrowing by combining the interest rate with the opportunity cost of locked collateral. A 5% annual interest rate on $10,000 costs $500/year in interest, but if the $20,000 BTC collateral appreciates 30%, you also forgo $6,000 in potential <a href=\"/profit-calculator/\">unrealized gains</a> versus holding that BTC unlocked. Conversely, if you need liquidity without triggering a taxable event, borrowing against crypto avoids capital gains tax — potentially saving 15–30% of the amount you would otherwise sell."
       ],
       scenarios: [
-        "Tax-efficient liquidity: you hold 1 BTC ($73,700) and need $25,000 for a home down payment. Selling triggers ~$7,500 in capital gains tax (30% bracket). Instead, you borrow $25,000 at 50% LTV (depositing $50,000 of BTC = 0.678 BTC), pay 6% interest ($1,500/year), and retain full BTC exposure. If BTC rises 20% during the loan term, you save $7,500 in tax minus $1,500 interest = $6,000 net benefit.",
+        "Tax-efficient liquidity: you hold 1 BTC ($77,300) and need $25,000 for a home down payment. Selling triggers ~$7,500 in capital gains tax (30% bracket). Instead, you borrow $25,000 at 50% LTV (depositing $50,000 of BTC = 0.647 BTC), pay 6% interest ($1,500/year), and retain full BTC exposure. If BTC rises 20% during the loan term, you save $7,500 in tax minus $1,500 interest = $6,000 net benefit.",
         "DeFi yield farming leverage: you deposit $30,000 ETH as collateral, borrow $15,000 USDC at 4% interest, and deploy the USDC in a yield farm paying 12% APY. Net yield is 12% − 4% = 8% on borrowed capital = $1,200/year profit. However, if ETH drops 25%, your collateral approaches liquidation — run this scenario through our <a href=\"/liquidation-calculator/\">liquidation calculator</a> to find your exact liquidation price and set alerts accordingly."
       ],
       checklist: [
@@ -13375,7 +13375,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Review your allocation strategy quarterly against your financial goals and risk tolerance. Life changes (job loss, major purchase, retirement approaching) should trigger allocation adjustments. If you cannot check your portfolio daily during volatile markets without anxiety, your allocation is too aggressive — increase the stablecoin allocation by 10 percentage points."
       ],
       validation: [
-        "Verify allocation percentages with mental math: if you have $10,000 total and want 50% BTC, that is $5,000. At $73,700/BTC, that is 0.0679 BTC. If the calculator shows a different BTC quantity, check whether fees or a price discrepancy is causing the difference. The allocation percentages must sum to exactly 100% — any deviation indicates an input error.",
+        "Verify allocation percentages with mental math: if you have $10,000 total and want 50% BTC, that is $5,000. At $77,300/BTC, that is 0.0647 BTC. If the calculator shows a different BTC quantity, check whether fees or a price discrepancy is causing the difference. The allocation percentages must sum to exactly 100% — any deviation indicates an input error.",
         "Stress-test your allocation by modeling a 50% crash across all positions. If your worst-case portfolio value makes you uncomfortable, reduce risk by shifting 10–20% from volatile assets to stablecoins. A $50,000 aggressive portfolio dropping to $25,000 is a real possibility — if that number causes panic, you are over-allocated to risk."
       ],
     },
@@ -13409,7 +13409,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Revisa tu estrategia trimestralmente contra tus metas financieras. Si no puedes revisar sin ansiedad, tu asignación es demasiado agresiva."
       ],
       validation: [
-        "Verifica con cálculo mental: $10.000 total, 50% BTC = $5.000. A $73.700/BTC = 0,0679 BTC. Los porcentajes deben sumar exactamente 100%.",
+        "Verifica con cálculo mental: $10.000 total, 50% BTC = $5.000. A $77.300/BTC = 0,0679 BTC. Los porcentajes deben sumar exactamente 100%.",
         "Prueba de estrés: modela una caída del 50%. Si el valor del peor caso te incomoda, cambia 10–20% de activos volátiles a stablecoins."
       ],
     },
@@ -13443,7 +13443,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Revise estratégia trimestralmente contra metas financeiras. Se não consegue verificar sem ansiedade, sua alocação é muito agressiva."
       ],
       validation: [
-        "Verifique com cálculo mental: $10.000 total, 50% BTC = $5.000. A $73.700/BTC = 0,0679 BTC. Percentuais devem somar exatamente 100%.",
+        "Verifique com cálculo mental: $10.000 total, 50% BTC = $5.000. A $77.300/BTC = 0,0679 BTC. Percentuais devem somar exatamente 100%.",
         "Teste de estresse: modele queda de 50%. Se o valor do pior caso causa desconforto, mova 10–20% de voláteis para stablecoins."
       ],
     },
@@ -13477,7 +13477,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Stratejinizi üç aylık olarak finansal hedeflerinize karşı gözden geçirin. Kaygı olmadan kontrol edemiyorsanız, dağılımınız çok agresif."
       ],
       validation: [
-        "Zihinsel hesaplamayla doğrulayın: $10.000 toplam, %50 BTC = $5.000. $73.700/BTC'de 0,0679 BTC. Yüzdeler tam %100 toplamalıdır.",
+        "Zihinsel hesaplamayla doğrulayın: $10.000 toplam, %50 BTC = $5.000. $77.300/BTC'de 0,0679 BTC. Yüzdeler tam %100 toplamalıdır.",
         "Stres testi: %50 çöküş modelleyin. En kötü durum değeri rahatsız ediyorsa, volatil varlıklardan stablecoinlere %10–20 kaydırın."
       ],
     },
@@ -13511,7 +13511,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "अपनी एलोकेशन रणनीति तिमाही अपने वित्तीय लक्ष्यों के विरुद्ध समीक्षा करें। यदि बिना चिंता के जांच नहीं कर सकते, तो एलोकेशन बहुत आक्रामक है।"
       ],
       validation: [
-        "मानसिक गणित से सत्यापित करें: $10,000 कुल, 50% BTC = $5,000। $73,700/BTC पर = 0.0679 BTC। प्रतिशत ठीक 100% होने चाहिए।",
+        "मानसिक गणित से सत्यापित करें: $10,000 कुल, 50% BTC = $5,000। $77,300/BTC पर = 0.0647 BTC। प्रतिशत ठीक 100% होने चाहिए।",
         "स्ट्रेस टेस्ट: 50% क्रैश मॉडल करें। यदि सबसे खराब स्थिति का मूल्य असहज करता है, तो वोलैटाइल से स्टेबलकॉइन में 10–20% शिफ्ट करें।"
       ],
     },
@@ -13554,7 +13554,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
   'staking-rewards-calculator': {
     en: {
       interpret: [
-        "The staking rewards output shows your projected annual yield in both token quantity and USD value, factoring in the validator commission, network inflation rate, and compounding frequency. If you stake 32 ETH at 3.8% APY with a 10% validator commission, your net yield is 3.42% — approximately 1.094 ETH ($80,627 at $73,700/BTC equivalent, or $2,549 at $2,330/ETH) per year. Always verify whether the displayed rate is gross or net of commission.",
+        "The staking rewards output shows your projected annual yield in both token quantity and USD value, factoring in the validator commission, network inflation rate, and compounding frequency. If you stake 32 ETH at 3.8% APY with a 10% validator commission, your net yield is 3.42% — approximately 1.094 ETH ($84,437 at $77,300/BTC equivalent, or $2,646 at $2,419/ETH) per year. Always verify whether the displayed rate is gross or net of commission.",
         "Distinguish between nominal yield (token quantity) and real yield (purchasing power after inflation). If a proof-of-stake network inflates its supply at 5% annually and pays 7% staking rewards, your real yield is only 2% — the remaining 5% merely offsets dilution. Use the calculator output alongside our <a href=\"/apy-apr-calculator/\">APY/APR calculator</a> to understand the true return after accounting for token inflation and price volatility."
       ],
       scenarios: [

@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 
-// Marketplace fees updated 2026-03-18.
+// Marketplace fees updated 2026-04-18.
 const MARKETPLACES = [
     { id: 'opensea', label: 'OpenSea', fee: 1.0 },
     { id: 'blur', label: 'Blur', fee: 0.5 },
@@ -33,7 +33,7 @@ const SELL_PRICE_PILLS = ['0.5', '1', '2', '4'];
 const MARKETPLACE_FEE_PILLS = ['0.5', '1', '2', '2.5', '5'];
 const ROYALTY_PILLS = ['0', '2.5', '5', '7.5', '10'];
 const GAS_COST_PILLS = ['5', '10', '20', '40'];
-const ETH_PRICE_PILLS = ['1800', '2327', '2800', '3500'];
+const ETH_PRICE_PILLS = ['1800', '2419', '2800', '3500'];
 const NFT_SCENARIOS = [
     {
         label: 'Starter Flip',
@@ -44,7 +44,7 @@ const NFT_SCENARIOS = [
         royalty: '5',
         gasBuy: '2',
         gasSell: '2',
-        ethPrice: '2327',
+        ethPrice: '2419',
     },
     {
         label: 'Low Fee',
@@ -55,7 +55,7 @@ const NFT_SCENARIOS = [
         royalty: '2.5',
         gasBuy: '1',
         gasSell: '1',
-        ethPrice: '2327',
+        ethPrice: '2419',
     },
     {
         label: 'High Gas',
@@ -66,7 +66,7 @@ const NFT_SCENARIOS = [
         royalty: '5',
         gasBuy: '10',
         gasSell: '10',
-        ethPrice: '2327',
+        ethPrice: '2419',
     },
 ] as const;
 
@@ -78,7 +78,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
     const [royalty, setRoyalty] = useState('5');
     const [gasBuy, setGasBuy] = useState('2');
     const [gasSell, setGasSell] = useState('2');
-    const [ethPrice, setEthPrice] = useState('2327');
+    const [ethPrice, setEthPrice] = useState('2419');
 
     // Auto-fetch ETH price on mount
     useEffect(() => {
@@ -148,7 +148,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
     const reset = () => {
         setBuyPrice(''); setSellPrice(''); setMarketplace('opensea');
         setMarketplaceFee('1'); setRoyalty('5'); setGasBuy('2');
-        setGasSell('2'); setEthPrice('2327');
+        setGasSell('2'); setEthPrice('2419');
     };
 
     const formatETH = (n: number) => {

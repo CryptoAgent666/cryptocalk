@@ -51,7 +51,7 @@ const PIP_SCENARIOS = [
     },
     {
         label: 'ETH Day Trade',
-        currentPrice: '2327',
+        currentPrice: '2419',
         positionSize: '5000',
         sizeMode: 'usd' as const,
         tickSize: '1',

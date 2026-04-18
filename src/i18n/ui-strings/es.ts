@@ -484,7 +484,7 @@ const dict: Record<string, string> = {
   '+12 Months': '+12 Meses',
   '+18 Months': '+18 Meses',
   'Start Mining with F2Pool →': 'Empezar a Minar con F2Pool →',
-  'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~850 EH/s network hashrate. Not financial advice.': 'Las estimaciones asumen ~10 min/bloque. La fecha real puede variar. Ingresos simplificados basados en hashrate de red ~850 EH/s. No es asesoramiento financiero.',
+  'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~856 EH/s network hashrate. Not financial advice.': 'Las estimaciones asumen ~10 min/bloque. La fecha real puede variar. Ingresos simplificados basados en hashrate de red ~856 EH/s. No es asesoramiento financiero.',
   'Typical Hash Rates by Device': 'Tasas de Hash Típicas por Dispositivo',
   'Device / Algorithm': 'Dispositivo / Algoritmo',
   'Typical Hash Rate': 'Tasa de Hash Típica',

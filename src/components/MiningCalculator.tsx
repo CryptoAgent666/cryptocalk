@@ -20,7 +20,7 @@ interface AsicPreset {
     price: number; // USD
 }
 
-// Difficulty & price fallbacks updated 2026-03-18. Fetch live data when available.
+// Difficulty & price fallbacks updated 2026-04-18. Fetch live data when available.
 const ASIC_PRESETS: AsicPreset[] = [
     { name: 'Custom', hashrate: 0, power: 0, price: 0 },
     { name: 'Antminer S21 Hyd', hashrate: 335, power: 5360, price: 5200 },
@@ -115,11 +115,11 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                         .then(r => r.ok ? r.text() : null).catch(() => null),
                 ]);
 
-                const btcPrice = priceRes?.bitcoin?.usd || 73700;
+                const btcPrice = priceRes?.bitcoin?.usd || 77300;
                 const liveDifficulty = diffRes ? parseFloat(diffRes) : NaN;
                 const difficulty = (!isNaN(liveDifficulty) && liveDifficulty > 0)
                     ? liveDifficulty
-                    : 145_000_000_000_000;
+                    : 136_000_000_000_000;
 
                 // Block reward after 2024 halving: 3.125 BTC
                 setNetwork({
@@ -129,15 +129,15 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                 });
 
                 if (!priceRes?.bitcoin?.usd && (isNaN(liveDifficulty) || liveDifficulty <= 0)) {
-                    setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($73,700).'));
+                    setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($77,300).'));
                 }
             } catch {
                 setNetwork({
-                    difficulty: 145_000_000_000_000,
-                    btcPrice: 73700,
+                    difficulty: 136_000_000_000_000,
+                    btcPrice: 77300,
                     blockReward: 3.125,
                 });
-                setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($73,700).'));
+                setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($77,300).'));
             }
             setLoadingNetwork(false);
         };
