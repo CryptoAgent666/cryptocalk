@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +49,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Risk-Reward Ratio Calculator</h1>
           <p>Evaluate any trade setup by calculating the risk-reward ratio, minimum win rate for profitability, and simulated P&L across 100 trades at different win rates.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <RiskRewardCalculator lang={'en'} client:load />
@@ -58,6 +67,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Risk-reward ratio = (Target Price &minus; Entry) / (Entry &minus; Stop Loss). A trade entering BTC at $70,000 with a $68,000 stop and $76,000 target has a 3:1 R:R &mdash; most pros aim for 2:1 minimum.</div>
         <h2>How to Use the Risk-Reward Ratio Calculator</h2>
         <p>Our free risk-reward calculator helps crypto traders evaluate trade setups before entering a position. By comparing the distance to your stop-loss against the distance to your take-profit, the calculator determines whether a trade is worth taking based on the potential reward relative to the risk involved.</p>
         <ol>

@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +49,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Margin Calculator</h1>
           <p>Calculate required margin, margin level, free margin, and the exact price that triggers a margin call for your leveraged position.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <MarginCalculator lang={'en'} client:load />
@@ -58,6 +67,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Required margin = Position Size / Leverage. Opening a $50,000 BTC position at 10x leverage requires $5,000 margin. Your margin ratio (equity/position) determines how close you are to liquidation.</div>
         <h2>How to Use the Margin Calculator</h2>
         <ol>
           <li>Enter your <strong>position size</strong> — the total value of your leveraged trade in dollars or your preferred currency.</li>

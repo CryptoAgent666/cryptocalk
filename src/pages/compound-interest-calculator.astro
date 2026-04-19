@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -49,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Compound Interest Calculator</h1>
           <p>See the power of compounding on your crypto staking, yield farming, or savings. Compare daily vs monthly compounding and track year-by-year growth.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <CompoundInterestCalculator lang={'en'} client:load />
@@ -59,6 +68,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Compound interest grows your crypto exponentially: $1,000 at 12% APY compounded daily becomes $1,127 after one year &mdash; $7 more than simple interest. The longer the period, the bigger the effect.</div>
         <h2>How to Use the Compound Interest Calculator</h2>
         <p>Our crypto compound interest calculator helps you visualize how your investments can grow over time with the power of compounding. Follow these simple steps to get started:</p>
         <ol>

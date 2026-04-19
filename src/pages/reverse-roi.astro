@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +49,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Reverse ROI Calculator</h1>
           <p>Enter your investment and target profit to discover the exact token price required. Get probability assessments and milestone projections for your crypto goals.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <ReverseRoiCalculator lang={'en'} client:load />
@@ -58,6 +67,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Find the maximum buy price to achieve your target ROI. If you want 100% return and the current price is $77,300, you need to buy at $36,850 or lower &mdash; works backwards from your desired outcome.</div>
 
         <h2>How to Use the Reverse ROI Calculator</h2>
         <p>This calculator works backwards from your desired outcome. Instead of asking "what will my investment be worth?" you ask "what price does the token need to reach for me to hit my goal?" Follow these steps to find your target price:</p>

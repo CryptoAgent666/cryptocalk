@@ -1,71 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ThemeToggle from '../components/ThemeToggle.tsx';
-import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
 import PizzaDayCalculator from '../components/PizzaDayCalculator.tsx';
-import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
-import SiteFooter from '../components/SiteFooter.astro';
-import ShareCalculator from '../components/ShareCalculator.astro';
-import '../styles/calculator-page.css';
-
-const buildDate = new Date().toISOString().split('T')[0];
 ---
 
-<Layout
+<LocalizedCalculatorPage
+  lang="en"
+  slug="pizza-day-calculator"
   title="Bitcoin Pizza Day Calculator"
   description="Calculate the current value of the famous 10,000 BTC pizza purchase and explore the opportunity cost in real time."
-  lang="en"
-  pageType="calculator"
 >
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="/" class="logo">
-        <Calculator size={24} />
-        <span class="logo-text">Crypto<b>Calk</b></span>
-      </a>
-      <nav class="header-actions" aria-label="Main navigation">
-        <a href="/" class="header-link">
-          <ArrowLeft size={14} />
-          All Calculators
-        </a>
-        <LanguageSwitcher client:idle currentLang="en" currentPath="/pizza-day-calculator" />
-        <ThemeToggle client:idle />
-      </nav>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <div class="section-container">
-        <a href="/">Home</a>
-        <ChevronRight size={12} />
-        <a href="/calculators/profit-loss/">Profit & Loss</a>
-        <ChevronRight size={12} />
-        <a href="/pizza-day-calculator/" aria-current="page">Pizza Day Calculator</a>
-      </div>
-    </nav>
-
-    <section class="calculator-section">
-      <div class="section-container">
-        <div class="calc-header">
-          <h1>Bitcoin Pizza Day Calculator</h1>
-          <p>Calculate the current value of the famous 10,000 BTC pizza purchase and explore the opportunity cost in real time.</p>
-          <div class="calc-byline">
-            <a href="/about/" class="byline-link">
-              <span class="byline-by">By</span>
-              <span class="byline-name">Konstantin Iakovlev</span>
-            </a>
-            <span class="byline-sep">·</span>
-            <span class="byline-date">Updated {buildDate}</span>
-          </div>
-        </div>
-
-        <div class="calc-scope">
-          <PizzaDayCalculator lang={'en'} client:load />
-          <ShareCalculator lang="en" />
-        </div>
-      </div>
-    </section>
-  </main>
-  <SiteFooter />
-</Layout>
+  <PizzaDayCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

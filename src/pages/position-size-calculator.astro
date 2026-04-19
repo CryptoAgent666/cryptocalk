@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -51,6 +52,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Position Size Calculator</h1>
           <p>Calculate your optimal position size based on risk management rules. Never risk more than you can afford to lose.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
 
         <div class="calc-scope">
@@ -63,6 +72,7 @@ import '../styles/calculator-page.css';
     <!-- SEO Content -->
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Position size = (Account Balance &times; Risk %) / (Entry &minus; Stop Loss). Risking 2% of a $10,000 account with a $500 stop distance means a $400 position &mdash; this keeps you in the game long-term.</div>
         <h2>How to Use the Position Size Calculator</h2>
         <p>Our free position size calculator helps you determine the optimal trade size for any cryptocurrency trade. Proper position sizing is the cornerstone of risk management — it ensures that no single trade can blow up your account. Whether you're trading Bitcoin, Ethereum, or any altcoin on spot or futures markets, this tool calculates the exact position size that aligns with your risk tolerance and trading strategy.</p>
 

@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -49,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Staking Rewards Calculator</h1>
           <p>Estimate staking earnings for PoS tokens. Quick-select popular coins like ETH, SOL, DOT or search any coin. Factor in validator commissions and auto-compounding.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <StakingRewardsCalculator lang={'en'} client:load />
@@ -59,6 +68,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Net staking reward = (Staked Amount &times; APY &times; Duration/365) &minus; Validator Fee. Staking 32 ETH at 3.2% APY with a 10% validator fee earns ~0.94 ETH/year net.</div>
         <h2>How to Use the Crypto Staking Rewards Calculator</h2>
         <ol>
           <li><strong>Select a coin</strong> — Pick from quick buttons (ETH, SOL, DOT, ATOM, ADA) or search 500+ PoS cryptocurrencies.</li>

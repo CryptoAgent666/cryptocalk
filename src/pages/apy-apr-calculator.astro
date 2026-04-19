@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +49,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>APY vs APR Calculator</h1>
           <p>Convert between APR and APY instantly. Compare how different compounding frequencies affect your real yield on DeFi protocols, staking rewards, and crypto savings accounts.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <ApyAprCalculator lang={'en'} client:load />
@@ -58,6 +67,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> APY = (1 + APR/n)^n &minus; 1, where n = compounding periods. A 12% APR compounded daily equals 12.75% APY &mdash; the more frequent the compounding, the higher your effective yield.</div>
         <h2>How to Use the APY vs APR Calculator</h2>
         <p>Our free APR to APY converter helps crypto investors and DeFi users understand the true yield they earn after compounding. Whether you are comparing lending protocols, staking options, or savings accounts, this tool shows the real numbers behind advertised rates.</p>
         <ol>

@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -49,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Gas Fee Calculator</h1>
           <p>Estimate gas costs across EVM networks. Select a chain, pick a transaction type, and see fees at different speed tiers. Compare costs across all transaction types.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <GasFeeCalculator lang={'en'} client:load />
@@ -59,6 +68,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Gas fee = Gas Price &times; Gas Limit &times; Token Price. For Ethereum, a basic transfer costs ~21,000 gas units. At 1 Gwei and $2,419/ETH, that's about $0.05 per transaction.</div>
         <h2>How to Use the Gas Fee Calculator</h2>
         <ol>
           <li><strong>Select a Network</strong> — Choose from Ethereum, Arbitrum, Optimism, Base, Polygon, BNB Chain, or Solana to see network-specific gas estimates.</li>

@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +49,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Market Cap Comparator</h1>
           <p>Compare any cryptocurrency's market cap against top coins. See what the price would be if one token had another's market cap, and calculate the growth multiplier needed.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <MarketCapComparator lang={'en'} client:load />
@@ -58,6 +67,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Answer &ldquo;if Coin A had Coin B's market cap, what would its price be?&rdquo; Implied price = Coin B market cap / Coin A circulating supply. Useful for setting realistic price targets for altcoins.</div>
         <h2>How to Use the Market Cap Comparator</h2>
         <ol>
           <li><strong>Select your base token</strong> — Choose the cryptocurrency you want to analyze. This is the token whose hypothetical price you want to calculate.</li>
