@@ -137,6 +137,7 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'Restaking Calculator', href: '/restaking-calculator/' },
       { name: 'Liquid Staking Calculator', href: '/liquid-staking-calculator/' },
       { name: 'Validator Economics', href: '/validator-calculator/' },
+      { name: 'DeFi Insurance Calculator', href: '/defi-insurance-calculator/' },
     ],
   },
   {
@@ -175,6 +176,9 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'DVA Calculator', href: '/dva-calculator/' },
       { name: 'Token Valuation', href: '/token-valuation-calculator/' },
       { name: 'Millionaire Calculator', href: '/millionaire-calculator/' },
+      { name: 'Retirement / FIRE Calculator', href: '/retirement-calculator/' },
+      { name: 'Rainbow Chart Calculator', href: '/rainbow-chart-calculator/' },
+      { name: 'Token Burn Calculator', href: '/token-burn-calculator/' },
     ],
   },
   {
@@ -210,6 +214,7 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'Perpetual Futures', href: '/perpetual-futures-calculator/' },
       { name: 'On-Chain Metrics', href: '/on-chain-metrics-calculator/' },
       { name: 'Grid Trading Calculator', href: '/grid-trading-calculator/' },
+      { name: 'Futures Basis Calculator', href: '/futures-basis-calculator/' },
     ],
   },
   {
@@ -225,6 +230,7 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'Bridge Comparator', href: '/bridge-comparator' },
       { name: 'Gwei Converter', href: '/gwei-converter' },
       { name: 'DEX Slippage Calculator', href: '/slippage-calculator' },
+      { name: 'ETF Fee Calculator', href: '/etf-fee-calculator/' },
     ],
   },
 ];
@@ -472,6 +478,12 @@ const TOOL_NAME_OVERRIDES: Partial<Record<Lang, Record<string, string>>> = {
     'perpetual-futures-calculator': 'Futuros Perpetuos',
     'on-chain-metrics-calculator': 'Métricas On-Chain',
     'grid-trading-calculator': 'Grid Trading',
+    'retirement-calculator': 'Jubilación Cripto / FIRE',
+    'rainbow-chart-calculator': 'Gráfico Arcoíris Bitcoin',
+    'etf-fee-calculator': 'Comisiones ETF Bitcoin',
+    'token-burn-calculator': 'Quema de Tokens',
+    'futures-basis-calculator': 'Base de Futuros',
+    'defi-insurance-calculator': 'Seguro DeFi',
   },
   pt: {
     'roi-calculator': 'Calculadora de ROI',
@@ -536,6 +548,12 @@ const TOOL_NAME_OVERRIDES: Partial<Record<Lang, Record<string, string>>> = {
     'perpetual-futures-calculator': 'Futuros Perpétuos',
     'on-chain-metrics-calculator': 'Métricas On-Chain',
     'grid-trading-calculator': 'Grid Trading',
+    'retirement-calculator': 'Aposentadoria Cripto / FIRE',
+    'rainbow-chart-calculator': 'Gráfico Arco-Íris Bitcoin',
+    'etf-fee-calculator': 'Taxas ETF Bitcoin',
+    'token-burn-calculator': 'Queima de Tokens',
+    'futures-basis-calculator': 'Base de Futuros',
+    'defi-insurance-calculator': 'Seguro DeFi',
   },
   tr: {
     'roi-calculator': 'ROI Hesaplayıcı',
@@ -600,6 +618,12 @@ const TOOL_NAME_OVERRIDES: Partial<Record<Lang, Record<string, string>>> = {
     'perpetual-futures-calculator': 'Sürekli Vadeli İşlem',
     'on-chain-metrics-calculator': 'On-Chain Metrikler',
     'grid-trading-calculator': 'Grid Trading',
+    'retirement-calculator': 'Kripto Emeklilik / FIRE',
+    'rainbow-chart-calculator': 'Bitcoin Gökkuşağı Grafiği',
+    'etf-fee-calculator': 'Bitcoin ETF Ücret',
+    'token-burn-calculator': 'Token Yakma',
+    'futures-basis-calculator': 'Vadeli İşlem Baz',
+    'defi-insurance-calculator': 'DeFi Sigorta',
   },
   hi: {
     'roi-calculator': 'ROI कैलकुलेटर',
@@ -664,6 +688,12 @@ const TOOL_NAME_OVERRIDES: Partial<Record<Lang, Record<string, string>>> = {
     'perpetual-futures-calculator': 'परपेचुअल फ्यूचर्स',
     'on-chain-metrics-calculator': 'ऑन-चेन मेट्रिक्स',
     'grid-trading-calculator': 'ग्रिड ट्रेडिंग',
+    'retirement-calculator': 'क्रिप्टो रिटायरमेंट / FIRE',
+    'rainbow-chart-calculator': 'बिटकॉइन रेनबो चार्ट',
+    'etf-fee-calculator': 'बिटकॉइन ETF शुल्क',
+    'token-burn-calculator': 'टोकन बर्न',
+    'futures-basis-calculator': 'फ्यूचर्स बेसिस',
+    'defi-insurance-calculator': 'DeFi बीमा',
   },
   ru: {
     'roi-calculator': 'Калькулятор ROI',
@@ -727,6 +757,12 @@ const TOOL_NAME_OVERRIDES: Partial<Record<Lang, Record<string, string>>> = {
     'perpetual-futures-calculator': 'Бессрочные фьючерсы',
     'on-chain-metrics-calculator': 'Ончейн-метрики',
     'grid-trading-calculator': 'Грид-трейдинг',
+    'retirement-calculator': 'Пенсия / FIRE',
+    'rainbow-chart-calculator': 'Радужная диаграмма Bitcoin',
+    'etf-fee-calculator': 'Комиссии Bitcoin ETF',
+    'token-burn-calculator': 'Сжигание токенов',
+    'futures-basis-calculator': 'Базис фьючерсов',
+    'defi-insurance-calculator': 'Страхование DeFi',
   },
 };
 

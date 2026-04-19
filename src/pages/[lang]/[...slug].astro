@@ -82,6 +82,12 @@ import TokenValuationCalculator from '../../components/TokenValuationCalculator.
 import IfIHadBoughtCalculator from '../../components/IfIHadBoughtCalculator.tsx';
 import MillionaireCalculator from '../../components/MillionaireCalculator.tsx';
 import PizzaDayCalculator from '../../components/PizzaDayCalculator.tsx';
+import RetirementCalculator from '../../components/RetirementCalculator.tsx';
+import RainbowChartCalculator from '../../components/RainbowChartCalculator.tsx';
+import EtfFeeCalculator from '../../components/EtfFeeCalculator.tsx';
+import TokenBurnCalculator from '../../components/TokenBurnCalculator.tsx';
+import FuturesBasisCalculator from '../../components/FuturesBasisCalculator.tsx';
+import DefiInsuranceCalculator from '../../components/DefiInsuranceCalculator.tsx';
 import {
   NON_DEFAULT_LANGS,
   SPEC_CALCULATOR_SLUGS,
@@ -198,6 +204,12 @@ const ALIAS_DEFINITIONS: Record<SpecCalculatorSlug, AliasDefinition> = {
   'if-i-had-bought': { title: 'If I Had Bought Calculator' },
   'millionaire-calculator': { title: 'Crypto Millionaire Calculator' },
   'pizza-day-calculator': { title: 'Pizza Day Calculator' },
+  'retirement-calculator': { title: 'Crypto Retirement / FIRE Calculator' },
+  'rainbow-chart-calculator': { title: 'Bitcoin Rainbow Chart Calculator' },
+  'etf-fee-calculator': { title: 'Bitcoin ETF Fee Calculator' },
+  'token-burn-calculator': { title: 'Token Burn Rate Calculator' },
+  'futures-basis-calculator': { title: 'Futures Basis Calculator' },
+  'defi-insurance-calculator': { title: 'DeFi Insurance Calculator' },
 };
 
 interface StaticPathProps {
@@ -328,4 +340,10 @@ const description = `Free ${routeDef.title}. Calculate crypto outcomes instantly
   {canonicalRouteSlug === 'if-i-had-bought' && <IfIHadBoughtCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'millionaire-calculator' && <MillionaireCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'pizza-day-calculator' && <PizzaDayCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'retirement-calculator' && <RetirementCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'rainbow-chart-calculator' && <RainbowChartCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'etf-fee-calculator' && <EtfFeeCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'token-burn-calculator' && <TokenBurnCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'futures-basis-calculator' && <FuturesBasisCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'defi-insurance-calculator' && <DefiInsuranceCalculator slot="calculator" lang={lang} client:load />}
 </LocalizedCalculatorPage>
