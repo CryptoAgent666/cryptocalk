@@ -116,6 +116,13 @@ export const CALCULATOR_CATEGORY: Record<string, CategorySlug> = {
   'if-i-had-bought': 'profit-loss',
   'millionaire-calculator': 'investment',
   'pizza-day-calculator': 'profit-loss',
+  // New calculators (April 2026 — batch 2)
+  'retirement-calculator': 'investment',
+  'rainbow-chart-calculator': 'investment',
+  'etf-fee-calculator': 'gas-fees',
+  'token-burn-calculator': 'investment',
+  'futures-basis-calculator': 'trading-tools',
+  'defi-insurance-calculator': 'defi-yield',
 };
 
 /** Human-readable category names per language. */

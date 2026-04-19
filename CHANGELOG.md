@@ -2,6 +2,28 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-19] (update 83) — feat: 6 new specialized calculators (87→93 total)
+
+### Added
+- **RetirementCalculator.tsx**: Crypto Retirement / FIRE calculator — current age, retirement age, portfolio, monthly contribution, expected return, withdrawal, inflation. 3 scenarios (Conservative/Moderate/Aggressive). Results: portfolio at retirement, years to FIRE, monthly passive income, years portfolio lasts, surplus/deficit
+- **RainbowChartCalculator.tsx**: Bitcoin Rainbow Chart — logarithmic regression model (a=5.84, b=-17.01) with 9 color-coded price bands from "Fire Sale" to "Maximum Bubble". Shows current band, model price, deviation %, and BTC purchasable
+- **EtfFeeCalculator.tsx**: Bitcoin ETF Fee Comparison — IBIT (0.25%), FBTC (0.25%), GBTC (1.50%), ARKB (0.21%), BITB (0.20%), Direct BTC (0%). Year-by-year fee drag table and savings summary
+- **TokenBurnCalculator.tsx**: Token Burn Rate — total/circulating supply, monthly burn rate, token price. Projects supply at 1/3/5yr, months to burn 10%/25%, deflationary pressure score
+- **FuturesBasisCalculator.tsx**: Futures Basis — spot vs futures spread, annualized basis, cash-and-carry yield, net profit, break-even days. Contango/backwardation detection
+- **DefiInsuranceCalculator.tsx**: DeFi Insurance — premium cost, break-even hack size, insured vs uninsured loss comparison, yield impact, insurance recommendation based on expected value
+- **6 EN standalone pages** (src/pages/retirement-calculator.astro, etc.) with breadcrumbs, byline, and ShareCalculator
+- **6 localized page routes** registered in [lang]/[...slug].astro (imports, ALIAS_DEFINITIONS, rendering blocks)
+- **30 localized slugs** added to src/i18n/utils.ts (6 calcs × 5 langs)
+- **36 calculator-meta entries** added (6 calcs × 6 langs) with localized titles/descriptions
+- **6 category-map entries**: retirement→investment, rainbow-chart→investment, etf-fee→gas-fees, token-burn→investment, futures-basis→trading-tools, defi-insurance→defi-yield
+- **6 category-hub tool entries** + **30 TOOL_NAME_OVERRIDES** (6 calcs × 5 langs)
+- **Updates page**: New "6 More Calculators" entry in EN + all 5 localized versions
+
+### Changed
+- **Calculator count**: 87 → 93 across all pages (index, about, updates, localized index/updates)
+- **Page count**: 1,139 → 1,175 pages
+- Build: 1,175 pages, 0 errors
+
 ## [2026-04-18] (update 82) — i18n: ~290 missing translations for 18 new calculators
 
 ### Added

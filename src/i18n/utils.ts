@@ -117,6 +117,12 @@ export const SPEC_CALCULATOR_SLUGS = [
     'if-i-had-bought',
     'millionaire-calculator',
     'pizza-day-calculator',
+    'retirement-calculator',
+    'rainbow-chart-calculator',
+    'etf-fee-calculator',
+    'token-burn-calculator',
+    'futures-basis-calculator',
+    'defi-insurance-calculator',
 ] as const;
 
 export type SpecCalculatorSlug = (typeof SPEC_CALCULATOR_SLUGS)[number];
@@ -225,6 +231,12 @@ const LOCALIZED_SPEC_SLUGS: Record<Exclude<Lang, 'en'>, Record<SpecCalculatorSlu
         'if-i-had-bought': 'si-hubiera-comprado',
         'millionaire-calculator': 'calculadora-millonario-cripto',
         'pizza-day-calculator': 'calculadora-dia-pizza-bitcoin',
+        'retirement-calculator': 'calculadora-jubilacion-cripto',
+        'rainbow-chart-calculator': 'calculadora-grafico-arcoiris-bitcoin',
+        'etf-fee-calculator': 'calculadora-comisiones-etf',
+        'token-burn-calculator': 'calculadora-quema-tokens',
+        'futures-basis-calculator': 'calculadora-base-futuros',
+        'defi-insurance-calculator': 'calculadora-seguro-defi',
     },
     pt: {
         'converter': 'conversor-cripto',
@@ -329,6 +341,12 @@ const LOCALIZED_SPEC_SLUGS: Record<Exclude<Lang, 'en'>, Record<SpecCalculatorSlu
         'if-i-had-bought': 'se-eu-tivesse-comprado',
         'millionaire-calculator': 'calculadora-milionario-cripto',
         'pizza-day-calculator': 'calculadora-dia-pizza-bitcoin',
+        'retirement-calculator': 'calculadora-aposentadoria-cripto',
+        'rainbow-chart-calculator': 'calculadora-grafico-arco-iris-bitcoin',
+        'etf-fee-calculator': 'calculadora-taxas-etf',
+        'token-burn-calculator': 'calculadora-queima-tokens',
+        'futures-basis-calculator': 'calculadora-base-futuros',
+        'defi-insurance-calculator': 'calculadora-seguro-defi',
     },
     tr: {
         'converter': 'kripto-donusturucu',
@@ -433,6 +451,12 @@ const LOCALIZED_SPEC_SLUGS: Record<Exclude<Lang, 'en'>, Record<SpecCalculatorSlu
         'if-i-had-bought': 'eger-alsa-idim',
         'millionaire-calculator': 'kripto-milyoner-hesaplayici',
         'pizza-day-calculator': 'bitcoin-pizza-gunu-hesaplayici',
+        'retirement-calculator': 'kripto-emeklilik-hesaplayici',
+        'rainbow-chart-calculator': 'bitcoin-gokkusagi-grafigi-hesaplayici',
+        'etf-fee-calculator': 'etf-ucret-hesaplayici',
+        'token-burn-calculator': 'token-yakma-hesaplayici',
+        'futures-basis-calculator': 'vadeli-islem-baz-hesaplayici',
+        'defi-insurance-calculator': 'defi-sigorta-hesaplayici',
     },
     hi: {
         'converter': 'kripto-converter-hindi',
@@ -537,6 +561,12 @@ const LOCALIZED_SPEC_SLUGS: Record<Exclude<Lang, 'en'>, Record<SpecCalculatorSlu
         'if-i-had-bought': 'agar-maine-kharida-hota',
         'millionaire-calculator': 'millionaire-calculator-hindi',
         'pizza-day-calculator': 'pizza-day-calculator-hindi',
+        'retirement-calculator': 'retirement-calculator-hindi',
+        'rainbow-chart-calculator': 'rainbow-chart-calculator-hindi',
+        'etf-fee-calculator': 'etf-fee-calculator-hindi',
+        'token-burn-calculator': 'token-burn-calculator-hindi',
+        'futures-basis-calculator': 'futures-basis-calculator-hindi',
+        'defi-insurance-calculator': 'defi-insurance-calculator-hindi',
     },
     ru: {
         'converter': 'kripto-konverter',
@@ -641,6 +671,12 @@ const LOCALIZED_SPEC_SLUGS: Record<Exclude<Lang, 'en'>, Record<SpecCalculatorSlu
         'if-i-had-bought': 'esli-by-ya-kupil',
         'millionaire-calculator': 'kalkulyator-kripto-millionera',
         'pizza-day-calculator': 'kalkulyator-dnya-piccy-bitkoin',
+        'retirement-calculator': 'kalkulyator-pensii-kripto',
+        'rainbow-chart-calculator': 'kalkulyator-raduzhnoy-diagrammy-bitkoin',
+        'etf-fee-calculator': 'kalkulyator-komissiy-etf',
+        'token-burn-calculator': 'kalkulyator-szhiganiya-tokenov',
+        'futures-basis-calculator': 'kalkulyator-bazisa-fyuchersov',
+        'defi-insurance-calculator': 'kalkulyator-strahovaniya-defi',
     },
 };
 

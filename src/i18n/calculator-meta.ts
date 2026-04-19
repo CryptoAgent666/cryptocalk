@@ -410,6 +410,30 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       title: 'Bitcoin Pizza Day Calculator',
       description: 'Free Bitcoin Pizza Day Calculator. Calculate the current value of the famous 10,000 BTC pizza purchase and explore the opportunity cost.'
     },
+    'retirement-calculator': {
+      title: 'Crypto Retirement / FIRE Calculator',
+      description: 'Free Crypto Retirement Calculator. Calculate how much crypto you need to retire early — FIRE number, portfolio growth, and years to financial independence.'
+    },
+    'rainbow-chart-calculator': {
+      title: 'Bitcoin Rainbow Chart Calculator',
+      description: 'Free Bitcoin Rainbow Chart Calculator. See where BTC sits on the logarithmic regression model with 9 price bands from Fire Sale to Maximum Bubble.'
+    },
+    'etf-fee-calculator': {
+      title: 'Bitcoin ETF Fee Calculator',
+      description: 'Free Bitcoin ETF Fee Calculator. Compare expense ratios of IBIT, FBTC, GBTC, ARKB, BITB and direct BTC over 1–30 years.'
+    },
+    'token-burn-calculator': {
+      title: 'Token Burn Rate Calculator',
+      description: 'Free Token Burn Calculator. Analyze deflationary token economics — burn rate, supply reduction timeline, and market cap impact over 1–5 years.'
+    },
+    'futures-basis-calculator': {
+      title: 'Futures Basis Calculator',
+      description: 'Free Futures Basis Calculator. Calculate spot-vs-futures spread, annualized basis, cash-and-carry yield, and arbitrage profit after fees.'
+    },
+    'defi-insurance-calculator': {
+      title: 'DeFi Insurance Calculator',
+      description: 'Free DeFi Insurance Calculator. Estimate whether DeFi insurance is worth the premium — break-even hack size, insured vs uninsured scenarios, yield impact.'
+    },
   },
   'es': {
     'converter': {
@@ -819,6 +843,30 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     'pizza-day-calculator': {
       title: 'Calculadora del Día de la Pizza Bitcoin',
       description: 'Calcula el valor actual de la famosa compra de 10,000 BTC por pizza y explora el coste de oportunidad.'
+    },
+    'retirement-calculator': {
+      title: 'Calculadora de Jubilación Cripto / FIRE',
+      description: 'Calcula cuántas cripto necesitas para jubilarte. Número FIRE, crecimiento del portafolio y años hasta la independencia financiera.'
+    },
+    'rainbow-chart-calculator': {
+      title: 'Calculadora del Gráfico Arcoíris de Bitcoin',
+      description: 'Descubre en qué zona se encuentra Bitcoin en el gráfico arcoíris logarítmico con 9 bandas de precio.'
+    },
+    'etf-fee-calculator': {
+      title: 'Calculadora de Comisiones ETF Bitcoin',
+      description: 'Compara las comisiones de IBIT, FBTC, GBTC, ARKB, BITB y BTC directo. Visualiza cómo las comisiones afectan a lo largo de 1–30 años.'
+    },
+    'token-burn-calculator': {
+      title: 'Calculadora de Quema de Tokens',
+      description: 'Analiza la economía deflacionaria de tokens — tasa de quema, reducción de suministro y el impacto en la capitalización de mercado.'
+    },
+    'futures-basis-calculator': {
+      title: 'Calculadora de Base de Futuros',
+      description: 'Calcula el spread spot-futuros, base anualizada, rendimiento cash-and-carry y beneficio de arbitraje tras comisiones.'
+    },
+    'defi-insurance-calculator': {
+      title: 'Calculadora de Seguro DeFi',
+      description: 'Estima si el seguro DeFi vale la prima. Compara escenarios asegurados vs no asegurados, tamaño de hackeo de equilibrio e impacto en rendimiento.'
     },
   },
   'pt': {
@@ -1230,6 +1278,30 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       title: 'Calculadora do Dia da Pizza Bitcoin',
       description: 'Calcule o valor atual da famosa compra de 10.000 BTC por pizza e explore o custo de oportunidade.'
     },
+    'retirement-calculator': {
+      title: 'Calculadora de Aposentadoria Cripto / FIRE',
+      description: 'Calcule quanto em cripto você precisa para se aposentar cedo. Número FIRE, crescimento do portfólio e anos até a independência financeira.'
+    },
+    'rainbow-chart-calculator': {
+      title: 'Calculadora do Gráfico Arco-Íris do Bitcoin',
+      description: 'Veja em qual zona o Bitcoin está no gráfico arco-íris logarítmico com 9 faixas de preço.'
+    },
+    'etf-fee-calculator': {
+      title: 'Calculadora de Taxas de ETF Bitcoin',
+      description: 'Compare as taxas de IBIT, FBTC, GBTC, ARKB, BITB e BTC direto. Veja como as taxas se acumulam ao longo de 1–30 anos.'
+    },
+    'token-burn-calculator': {
+      title: 'Calculadora de Queima de Tokens',
+      description: 'Analise a economia deflacionária de tokens — taxa de queima, redução de oferta e impacto na capitalização de mercado.'
+    },
+    'futures-basis-calculator': {
+      title: 'Calculadora de Base de Futuros',
+      description: 'Calcule o spread spot-futuros, base anualizada, rendimento cash-and-carry e lucro de arbitragem após taxas.'
+    },
+    'defi-insurance-calculator': {
+      title: 'Calculadora de Seguro DeFi',
+      description: 'Avalie se o seguro DeFi vale o prêmio. Compare cenários segurados vs não segurados, tamanho de hack de equilíbrio e impacto no rendimento.'
+    },
   },
   'tr': {
     'converter': {
@@ -1639,6 +1711,30 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     'pizza-day-calculator': {
       title: 'Bitcoin Pizza Günü Hesaplayıcı',
       description: 'Ünlü 10.000 BTC pizza alışverişinin güncel değerini hesaplayın ve fırsat maliyetini keşfedin.'
+    },
+    'retirement-calculator': {
+      title: 'Kripto Emeklilik / FIRE Hesaplayıcı',
+      description: 'Erken emeklilik için ne kadar kripto gerektiğini hesaplayın. FIRE numarası, portföy büyümesi ve finansal bağımsızlığa kadar yıllar.'
+    },
+    'rainbow-chart-calculator': {
+      title: 'Bitcoin Gökkuşağı Grafiği Hesaplayıcı',
+      description: "Bitcoin'in 9 fiyat bandıyla logaritmik gökkuşağı grafiğinde nerede olduğunu görün."
+    },
+    'etf-fee-calculator': {
+      title: 'Bitcoin ETF Ücret Hesaplayıcı',
+      description: "IBIT, FBTC, GBTC, ARKB, BITB ve doğrudan BTC'nin ücretlerini karşılaştırın. Ücretlerin 1–30 yıl boyunca etkisini görün."
+    },
+    'token-burn-calculator': {
+      title: 'Token Yakma Oranı Hesaplayıcı',
+      description: 'Deflasyonist token ekonomisini analiz edin — yakma oranı, arz azaltma zaman çizelgesi ve piyasa değerine etkisi.'
+    },
+    'futures-basis-calculator': {
+      title: 'Vadeli İşlem Baz Hesaplayıcı',
+      description: 'Spot-vadeli işlem spreadini, yıllık bazı, cash-and-carry getirisini ve komisyon sonrası arbitraj kârını hesaplayın.'
+    },
+    'defi-insurance-calculator': {
+      title: 'DeFi Sigorta Hesaplayıcı',
+      description: 'DeFi sigortasının prim maliyetine değip değmediğini tahmin edin. Sigortalı ve sigortasız senaryoları, denge hack boyutunu karşılaştırın.'
     },
   },
   'hi': {
@@ -2050,6 +2146,30 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       title: 'बिटकॉइन पिज्जा डे कैलकुलेटर',
       description: 'प्रसिद्ध 10,000 BTC पिज्जा खरीद का वर्तमान मूल्य गणना करें और अवसर लागत का पता लगाएं।'
     },
+    'retirement-calculator': {
+      title: 'क्रिप्टो रिटायरमेंट / FIRE कैलकुलेटर',
+      description: 'जल्दी रिटायर होने के लिए कितनी क्रिप्टो चाहिए, गणना करें। FIRE नंबर, पोर्टफोलियो वृद्धि और वित्तीय स्वतंत्रता तक के वर्ष।'
+    },
+    'rainbow-chart-calculator': {
+      title: 'बिटकॉइन रेनबो चार्ट कैलकुलेटर',
+      description: '9 मूल्य बैंड वाले लॉगरिदमिक रेनबो चार्ट पर बिटकॉइन कहाँ है, देखें।'
+    },
+    'etf-fee-calculator': {
+      title: 'बिटकॉइन ETF शुल्क कैलकुलेटर',
+      description: 'IBIT, FBTC, GBTC, ARKB, BITB और सीधे BTC के शुल्क की तुलना करें। 1–30 वर्षों में शुल्क का प्रभाव देखें।'
+    },
+    'token-burn-calculator': {
+      title: 'टोकन बर्न रेट कैलकुलेटर',
+      description: 'डिफ्लेशनरी टोकन अर्थशास्त्र का विश्लेषण करें — बर्न रेट, सप्लाई कमी समयरेखा और मार्केट कैप पर प्रभाव।'
+    },
+    'futures-basis-calculator': {
+      title: 'फ्यूचर्स बेसिस कैलकुलेटर',
+      description: 'स्पॉट-फ्यूचर्स स्प्रेड, वार्षिक बेसिस, कैश-एंड-कैरी यील्ड और फीस के बाद आर्बिट्राज लाभ की गणना करें।'
+    },
+    'defi-insurance-calculator': {
+      title: 'DeFi बीमा कैलकुलेटर',
+      description: 'DeFi बीमा प्रीमियम के लायक है या नहीं, अनुमान लगाएं। बीमित बनाम अबीमित परिदृश्य, ब्रेक-ईवन हैक आकार की तुलना करें।'
+    },
   },
   'ru': {
     'converter': {
@@ -2459,6 +2579,30 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     'pizza-day-calculator': {
       title: 'Калькулятор Дня пиццы Bitcoin',
       description: 'Рассчитайте текущую стоимость знаменитой покупки пиццы за 10 000 BTC и альтернативные издержки.'
+    },
+    'retirement-calculator': {
+      title: 'Калькулятор пенсии / FIRE для криптовалют',
+      description: 'Рассчитайте, сколько криптовалюты нужно для ранней пенсии. Число FIRE, рост портфеля и годы до финансовой независимости.'
+    },
+    'rainbow-chart-calculator': {
+      title: 'Калькулятор радужной диаграммы Bitcoin',
+      description: 'Определите, в какой зоне находится Bitcoin на логарифмической радужной диаграмме с 9 ценовыми полосами.'
+    },
+    'etf-fee-calculator': {
+      title: 'Калькулятор комиссий Bitcoin ETF',
+      description: 'Сравните расходы IBIT, FBTC, GBTC, ARKB, BITB и прямой покупки BTC. Узнайте, как комиссии влияют за 1–30 лет.'
+    },
+    'token-burn-calculator': {
+      title: 'Калькулятор сжигания токенов',
+      description: 'Анализируйте дефляционную экономику — скорость сжигания, сокращение предложения и влияние на капитализацию за 1–5 лет.'
+    },
+    'futures-basis-calculator': {
+      title: 'Калькулятор базиса фьючерсов',
+      description: 'Рассчитайте спред спот-фьючерс, годовую доходность carry-trade и прибыль cash-and-carry после комиссий.'
+    },
+    'defi-insurance-calculator': {
+      title: 'Калькулятор страхования DeFi',
+      description: 'Оцените, стоит ли страхование DeFi своей премии. Сравните застрахованные и незастрахованные сценарии и влияние на доходность.'
     },
   },
 };
