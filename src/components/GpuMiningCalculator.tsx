@@ -169,7 +169,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
                             }
                             updatedData[symbol] = {
                                 ...updatedData[symbol],
-                                blockReward: coinInfo.block_reward24 || coinInfo.block_reward,
+                                blockReward: coinInfo.block_reward24 || coinInfo.block_reward || 0,
                                 price: coinInfo.exchange_rate * btcPrice,
                                 networkHashrate: networkHr
                             };

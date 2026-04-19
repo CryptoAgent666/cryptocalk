@@ -171,8 +171,8 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                             const coinInfo = info as { difficulty24?: number; difficulty?: number; block_reward24?: number; block_reward?: number; exchange_rate: number };
                             updatedData[symbol] = {
                                 ...updatedData[symbol],
-                                difficulty: coinInfo.difficulty24 || coinInfo.difficulty,
-                                blockReward: coinInfo.block_reward24 || coinInfo.block_reward,
+                                difficulty: coinInfo.difficulty24 || coinInfo.difficulty || 0,
+                                blockReward: coinInfo.block_reward24 || coinInfo.block_reward || 0,
                                 price: symbol === 'BTC' ? coinInfo.exchange_rate : (coinInfo.exchange_rate * btcPrice),
                             };
                         }
