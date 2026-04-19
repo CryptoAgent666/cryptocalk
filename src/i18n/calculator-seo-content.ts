@@ -6242,4 +6242,412 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
   },
+  'retirement-calculator': {
+    en: {
+      quickAnswer: 'Your FIRE number = Annual Withdrawal / Safe Withdrawal Rate. To retire on $48,000/year at a 4% withdrawal rate, you need $1.2M. This calculator projects when your crypto portfolio reaches that target based on monthly contributions and expected returns.',
+      how: [
+        `The Crypto Retirement/FIRE Calculator estimates how long it will take your crypto portfolio to reach financial independence. Enter your current age, target retirement age, existing portfolio value, monthly contribution, expected annual return, safe withdrawal rate, and estimated inflation. The tool runs a year-by-year projection showing portfolio growth, real (inflation-adjusted) value, and whether you hit your FIRE number before your target date.`,
+        `Use it to stress-test different scenarios: a conservative 8% annual return vs. a bullish 20%, or increasing monthly contributions over time. The calculator highlights the impact of compounding — starting 5 years earlier can reduce your required monthly savings by 30–40%. Compare a 4% vs. 3.5% withdrawal rate to see how much extra cushion you need for a 40+ year retirement.`
+      ],
+      inputs: [
+        `Current Age and Target Retirement Age define the accumulation window. Current Portfolio Value is the total crypto and investment balance you start with. Monthly Contribution is the amount you add each month — consistent DCA into your portfolio. Expected Annual Return models your average growth rate (8–15% for diversified crypto, higher for aggressive allocations).`,
+        `Safe Withdrawal Rate (typically 3.5–4%) determines your FIRE number: Annual Expenses / SWR. Inflation Rate (default 3%) erodes purchasing power over time — the tool shows both nominal and real values. Output includes: FIRE target number, projected age at FIRE, year-by-year balance chart, and a shortfall warning if your current plan falls short.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Tu número FIRE = Retiro Anual / Tasa de Retiro Seguro. Para jubilarte con $48.000/año a una tasa del 4%, necesitas $1,2M. Esta calculadora proyecta cuándo tu portafolio cripto alcanza ese objetivo según contribuciones mensuales y rendimientos esperados.',
+      how: [
+        `La Calculadora de Jubilación Cripto/FIRE estima cuánto tardará tu portafolio en alcanzar la independencia financiera. Introduce tu edad actual, edad objetivo de jubilación, valor del portafolio, aportación mensual, rendimiento anual esperado, tasa de retiro seguro e inflación estimada. La herramienta genera una proyección año a año mostrando el crecimiento del portafolio, el valor real ajustado por inflación y si alcanzas tu número FIRE antes de la fecha objetivo.`,
+        `Úsala para probar diferentes escenarios: un rendimiento conservador del 8% anual vs. un alcista del 20%, o aumentar las aportaciones con el tiempo. La calculadora destaca el impacto del interés compuesto — empezar 5 años antes puede reducir tu ahorro mensual necesario un 30–40%. Compara una tasa de retiro del 4% vs. 3,5% para ver cuánto colchón adicional necesitas para una jubilación de más de 40 años.`
+      ],
+      inputs: [
+        `Edad Actual y Edad Objetivo de Jubilación definen la ventana de acumulación. Valor Actual del Portafolio es el balance total de criptoactivos e inversiones con el que partes. Aportación Mensual es lo que agregas cada mes mediante DCA. Rendimiento Anual Esperado modela tu tasa de crecimiento promedio (8–15% para cripto diversificado).`,
+        `La Tasa de Retiro Seguro (normalmente 3,5–4%) determina tu número FIRE: Gastos Anuales / TRS. La Tasa de Inflación (por defecto 3%) erosiona el poder adquisitivo — la herramienta muestra valores nominales y reales. El resultado incluye: número FIRE objetivo, edad proyectada al alcanzar FIRE, gráfico año a año del balance y alerta si tu plan actual queda corto.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Seu número FIRE = Retirada Anual / Taxa de Retirada Segura. Para se aposentar com $48.000/ano a uma taxa de 4%, você precisa de $1,2M. Esta calculadora projeta quando seu portfólio cripto atinge essa meta com base em aportes mensais e retornos esperados.',
+      how: [
+        `A Calculadora de Aposentadoria Cripto/FIRE estima quanto tempo levará para seu portfólio alcançar a independência financeira. Insira sua idade atual, idade-alvo de aposentadoria, valor do portfólio, aporte mensal, retorno anual esperado, taxa de retirada segura e inflação estimada. A ferramenta gera uma projeção ano a ano mostrando o crescimento do portfólio, valor real ajustado pela inflação e se você atinge seu número FIRE antes da data-alvo.`,
+        `Use para testar diferentes cenários: um retorno conservador de 8% ao ano vs. otimista de 20%, ou aumentar os aportes ao longo do tempo. A calculadora destaca o impacto dos juros compostos — começar 5 anos antes pode reduzir sua economia mensal necessária em 30–40%. Compare taxa de retirada de 4% vs. 3,5% para ver quanto colchão extra você precisa para uma aposentadoria de 40+ anos.`
+      ],
+      inputs: [
+        `Idade Atual e Idade-Alvo de Aposentadoria definem a janela de acumulação. Valor Atual do Portfólio é o saldo total de cripto e investimentos com que você começa. Aporte Mensal é o valor adicionado todo mês via DCA. Retorno Anual Esperado modela sua taxa média de crescimento (8–15% para cripto diversificado).`,
+        `A Taxa de Retirada Segura (geralmente 3,5–4%) determina seu número FIRE: Despesas Anuais / TRS. A Taxa de Inflação (padrão 3%) corrói o poder de compra — a ferramenta mostra valores nominais e reais. A saída inclui: número FIRE alvo, idade projetada ao atingir FIRE, gráfico anual de saldo e alerta caso seu plano atual fique aquém.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'FIRE sayınız = Yıllık Çekim / Güvenli Çekim Oranı. Yılda $48.000 ile emekli olmak için %4 çekim oranında $1,2M gerekir. Bu hesaplayıcı, aylık katkılarınız ve beklenen getirilerinizle kripto portföyünüzün bu hedefe ne zaman ulaşacağını projekte eder.',
+      how: [
+        `Kripto Emeklilik/FIRE Hesaplayıcısı, kripto portföyünüzün finansal bağımsızlığa ulaşmasının ne kadar süreceğini tahmin eder. Mevcut yaşınızı, hedef emeklilik yaşınızı, portföy değerinizi, aylık katkınızı, beklenen yıllık getiriyi, güvenli çekim oranını ve tahmini enflasyonu girin. Araç, yıl bazında portföy büyümesini, reel (enflasyona göre düzeltilmiş) değeri ve hedef tarihinizden önce FIRE sayınıza ulaşıp ulaşmadığınızı gösterir.`,
+        `Farklı senaryoları test etmek için kullanın: muhafazakâr %8 yıllık getiri vs. boğa %20, veya aylık katkıları kademeli artırma. Hesaplayıcı bileşik getirinin etkisini vurgular — 5 yıl erken başlamak gerekli aylık tasarrufunuzu %30–40 azaltabilir. %4 vs. %3,5 çekim oranını karşılaştırarak 40+ yıllık emeklilik için ne kadar ek tampon gerektiğini görün.`
+      ],
+      inputs: [
+        `Mevcut Yaş ve Hedef Emeklilik Yaşı birikim penceresini tanımlar. Mevcut Portföy Değeri başlangıçtaki toplam kripto ve yatırım bakiyenizdir. Aylık Katkı her ay eklediğiniz DCA tutarıdır. Beklenen Yıllık Getiri ortalama büyüme oranınızı modeller (çeşitlendirilmiş kripto için %8–15).`,
+        `Güvenli Çekim Oranı (tipik %3,5–4) FIRE sayınızı belirler: Yıllık Giderler / GÇO. Enflasyon Oranı (varsayılan %3) satın alma gücünü aşındırır — araç hem nominal hem reel değerleri gösterir. Çıktı: FIRE hedef sayısı, FIRE'a ulaşma yaşı, yıllık bakiye grafiği ve mevcut planınız yetersizse uyarı içerir.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'आपका FIRE नंबर = वार्षिक निकासी / सुरक्षित निकासी दर। $48,000/साल पर 4% निकासी दर से रिटायर होने के लिए $1.2M चाहिए। यह कैलकुलेटर मंथली कॉन्ट्रिब्यूशन और अपेक्षित रिटर्न के आधार पर प्रोजेक्ट करता है कि आपका क्रिप्टो पोर्टफोलियो उस लक्ष्य तक कब पहुंचेगा।',
+      how: [
+        `क्रिप्टो रिटायरमेंट/FIRE कैलकुलेटर अनुमान लगाता है कि आपके क्रिप्टो पोर्टफोलियो को फाइनेंशियल इंडिपेंडेंस तक पहुंचने में कितना समय लगेगा। अपनी वर्तमान आयु, लक्ष्य रिटायरमेंट आयु, मौजूदा पोर्टफोलियो वैल्यू, मंथली कॉन्ट्रिब्यूशन, अपेक्षित वार्षिक रिटर्न, सुरक्षित निकासी दर और अनुमानित इन्फ्लेशन दर्ज करें। टूल साल-दर-साल प्रोजेक्शन चलाता है जो पोर्टफोलियो ग्रोथ, रियल (इन्फ्लेशन-एडजस्टेड) वैल्यू और FIRE नंबर तक पहुंचने की स्थिति दिखाता है।`,
+        `अलग-अलग सीनारियो टेस्ट करने के लिए इस्तेमाल करें: कंजर्वेटिव 8% वार्षिक रिटर्न vs. बुलिश 20%, या समय के साथ मंथली कॉन्ट्रिब्यूशन बढ़ाना। कैलकुलेटर कंपाउंडिंग का प्रभाव दिखाता है — 5 साल पहले शुरू करने से मंथली सेविंग 30–40% कम हो सकती है। 4% vs. 3.5% निकासी दर की तुलना करें ताकि 40+ साल की रिटायरमेंट के लिए अतिरिक्त कुशन का पता चले।`
+      ],
+      inputs: [
+        `वर्तमान आयु और लक्ष्य रिटायरमेंट आयु एक्युमुलेशन विंडो तय करते हैं। करंट पोर्टफोलियो वैल्यू आपके टोटल क्रिप्टो और इन्वेस्टमेंट बैलेंस की शुरुआती राशि है। मंथली कॉन्ट्रिब्यूशन हर महीने DCA से जोड़ी जाने वाली राशि है। अपेक्षित वार्षिक रिटर्न आपकी औसत ग्रोथ रेट मॉडल करता है (डायवर्सिफाइड क्रिप्टो के लिए 8–15%)।`,
+        `सुरक्षित निकासी दर (आमतौर पर 3.5–4%) आपका FIRE नंबर तय करती है: वार्षिक खर्च / SWR। इन्फ्लेशन रेट (डिफॉल्ट 3%) समय के साथ परचेजिंग पावर घटाती है — टूल नॉमिनल और रियल दोनों वैल्यू दिखाता है। आउटपुट में शामिल: FIRE टार्गेट नंबर, FIRE पर प्रोजेक्टेड आयु, साल-दर-साल बैलेंस चार्ट, और प्लान कम पड़ने पर शॉर्टफॉल वॉर्निंग।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Ваше число FIRE = Ежегодное снятие / Безопасная ставка изъятия. Чтобы уйти на пенсию с $48 000/год при ставке изъятия 4%, нужно $1,2 млн. Калькулятор показывает, когда ваш крипто-портфель достигнет этой цели при заданных ежемесячных взносах и ожидаемой доходности.',
+      how: [
+        `Крипто-калькулятор пенсии/FIRE оценивает, сколько времени понадобится вашему крипто-портфелю для достижения финансовой независимости. Введите текущий возраст, целевой пенсионный возраст, стоимость портфеля, ежемесячный взнос, ожидаемую годовую доходность, безопасную ставку изъятия и прогнозируемую инфляцию. Инструмент строит прогноз по годам, показывая рост портфеля, реальную (скорректированную на инфляцию) стоимость и достижение числа FIRE к целевой дате.`,
+        `Используйте для стресс-тестирования сценариев: консервативная доходность 8% годовых vs. бычья 20%, или постепенное увеличение взносов. Калькулятор наглядно показывает силу сложных процентов — начав на 5 лет раньше, можно снизить необходимые ежемесячные сбережения на 30–40%. Сравните ставку изъятия 4% и 3,5%, чтобы определить размер запаса для пенсии 40+ лет.`
+      ],
+      inputs: [
+        `Текущий возраст и целевой пенсионный возраст задают окно накопления. Текущая стоимость портфеля — общий баланс криптоактивов и инвестиций на старте. Ежемесячный взнос — сумма, добавляемая каждый месяц по стратегии DCA. Ожидаемая годовая доходность — средний темп роста (8–15% для диверсифицированного крипто-портфеля).`,
+        `Безопасная ставка изъятия (обычно 3,5–4%) определяет число FIRE: Ежегодные расходы / ставка изъятия. Инфляция (по умолчанию 3%) снижает покупательную способность — инструмент показывает номинальные и реальные значения. Результат: целевое число FIRE, прогнозируемый возраст достижения FIRE, график баланса по годам и предупреждение, если текущий план недостаточен.`
+      ],
+    },
+  },
+  'rainbow-chart-calculator': {
+    en: {
+      quickAnswer: 'The Bitcoin Rainbow Chart uses logarithmic regression (ln(price) = a × ln(days) + b) to divide price action into 9 bands from \'Fire Sale\' to \'Maximum Bubble.\' At $84,000, BTC sits in the \'Accumulate\' zone — historically a favorable buying range.',
+      how: [
+        `The Bitcoin Rainbow Chart Calculator overlays logarithmic regression bands on Bitcoin's price history to visualize long-term valuation zones. The model fits a curve to BTC's entire price history since 2010, then divides the area above and below the regression line into 9 color-coded bands — from deep blue ("Fire Sale") through green ("Accumulate") and yellow ("HODL") to red ("Maximum Bubble"). Enter today's BTC price to see which band the current price falls into.`,
+        `The rainbow is a sentiment and valuation heuristic, not a prediction model. Historically, buying in the blue-green bands and selling in the orange-red bands has been profitable over multi-year horizons. Use the investment amount field to model how a purchase at today's band would perform if BTC moves to a higher band over time. The chart updates dynamically as you adjust the price.`
+      ],
+      inputs: [
+        `Current BTC Price is auto-filled from live market data but can be overridden for scenario modeling (what if BTC drops to $60K or rallies to $120K?). The calculator instantly maps any price to its corresponding rainbow band and shows the percentage distance from the regression midline.`,
+        `Investment Amount lets you model a hypothetical purchase. The tool shows the potential return if the price moves from the current band to higher bands (e.g., from "Accumulate" to "Is This a Bubble?"). Output includes: current band label, band boundaries, distance from regression center, and historical accuracy of the band as a buy/sell signal.`
+      ],
+    },
+    es: {
+      quickAnswer: 'El Gráfico Arcoíris de Bitcoin usa regresión logarítmica (ln(precio) = a × ln(días) + b) para dividir la acción del precio en 9 bandas desde \'Liquidación\' hasta \'Burbuja Máxima.\' A $84.000, BTC se ubica en la zona \'Acumular\' — históricamente un rango favorable de compra.',
+      how: [
+        `La Calculadora del Gráfico Arcoíris de Bitcoin superpone bandas de regresión logarítmica sobre el historial de precios de Bitcoin para visualizar zonas de valoración a largo plazo. El modelo ajusta una curva al historial completo de precios desde 2010 y divide el área en 9 bandas de colores — desde azul profundo ("Liquidación") pasando por verde ("Acumular") y amarillo ("HODL") hasta rojo ("Burbuja Máxima"). Introduce el precio actual de BTC para ver en qué banda se encuentra.`,
+        `El arcoíris es una herramienta heurística de sentimiento y valoración, no un modelo predictivo. Históricamente, comprar en bandas azul-verde y vender en naranja-rojo ha sido rentable en horizontes de varios años. Usa el campo de monto de inversión para modelar cómo funcionaría una compra si BTC se moviera a una banda superior con el tiempo.`
+      ],
+      inputs: [
+        `El Precio Actual de BTC se completa automáticamente desde datos de mercado en vivo, pero puede cambiarse para modelar escenarios (¿y si BTC cae a $60K o sube a $120K?). La calculadora mapea instantáneamente cualquier precio a su banda arcoíris correspondiente y muestra la distancia porcentual desde la línea media de regresión.`,
+        `El Monto de Inversión permite modelar una compra hipotética. La herramienta muestra el retorno potencial si el precio se mueve de la banda actual a bandas superiores (ej., de "Acumular" a "¿Es esto una burbuja?"). El resultado incluye: etiqueta de banda actual, límites de banda, distancia del centro de regresión y precisión histórica como señal de compra/venta.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'O Gráfico Arco-Íris do Bitcoin usa regressão logarítmica (ln(preço) = a × ln(dias) + b) para dividir a ação do preço em 9 faixas de \'Queima Total\' a \'Bolha Máxima.\' A $84.000, o BTC está na zona \'Acumular\' — historicamente uma faixa favorável de compra.',
+      how: [
+        `A Calculadora do Gráfico Arco-Íris do Bitcoin sobrepõe faixas de regressão logarítmica no histórico de preços do Bitcoin para visualizar zonas de valoração de longo prazo. O modelo ajusta uma curva ao histórico completo de preços desde 2010 e divide a área em 9 faixas coloridas — de azul profundo ("Queima Total") passando por verde ("Acumular") e amarelo ("HODL") até vermelho ("Bolha Máxima"). Insira o preço atual do BTC para ver em qual faixa o preço se encontra.`,
+        `O arco-íris é uma heurística de sentimento e valoração, não um modelo preditivo. Historicamente, comprar nas faixas azul-verde e vender nas laranja-vermelho foi lucrativo em horizontes de vários anos. Use o campo de valor de investimento para modelar como uma compra se comportaria se o BTC subisse para uma faixa superior ao longo do tempo.`
+      ],
+      inputs: [
+        `O Preço Atual do BTC é preenchido automaticamente com dados de mercado ao vivo, mas pode ser alterado para modelar cenários (e se BTC cair para $60K ou subir para $120K?). A calculadora mapeia instantaneamente qualquer preço para sua faixa arco-íris correspondente e mostra a distância percentual da linha média de regressão.`,
+        `O Valor do Investimento permite modelar uma compra hipotética. A ferramenta mostra o retorno potencial se o preço se mover da faixa atual para faixas superiores (ex.: de "Acumular" para "É uma bolha?"). A saída inclui: rótulo da faixa atual, limites de faixa, distância do centro de regressão e precisão histórica como sinal de compra/venda.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Bitcoin Gökkuşağı Grafiği, fiyat hareketini 9 banda ayırmak için logaritmik regresyon (ln(fiyat) = a × ln(gün) + b) kullanır: \'İndirimli Satış\'tan \'Maksimum Balon\'a. $84.000\'da BTC \'Biriktir\' bölgesinde — tarihsel olarak olumlu bir alım aralığı.',
+      how: [
+        `Bitcoin Gökkuşağı Grafiği Hesaplayıcısı, uzun vadeli değerleme bölgelerini görselleştirmek için Bitcoin fiyat geçmişi üzerine logaritmik regresyon bantları yerleştirir. Model, 2010'dan bu yana tüm fiyat geçmişine bir eğri uydurur ve alanı 9 renkli banda böler — koyu maviden ("İndirimli Satış") yeşile ("Biriktir") ve sarıdan ("HODL") kırmızıya ("Maksimum Balon"). BTC'nin güncel fiyatını girerek hangi bantta olduğunu görün.`,
+        `Gökkuşağı bir duyarlılık ve değerleme sezgisel aracıdır, tahmin modeli değildir. Tarihsel olarak mavi-yeşil bantlarda alıp turuncu-kırmızı bantlarda satmak çok yıllık ufuklarda kârlı olmuştur. Yatırım tutarı alanını kullanarak BTC daha yüksek bir banda geçerse bugünkü alımın nasıl performans göstereceğini modelleyin.`
+      ],
+      inputs: [
+        `Güncel BTC Fiyatı canlı piyasa verisinden otomatik doldurulur ancak senaryo modellemesi için değiştirilebilir (BTC $60K'ya düşerse veya $120K'ya çıkarsa?). Hesaplayıcı herhangi bir fiyatı anında ilgili gökkuşağı bandına eşler ve regresyon orta çizgisinden yüzde mesafeyi gösterir.`,
+        `Yatırım Tutarı varsayımsal bir alımı modellemenize olanak tanır. Araç, fiyatın mevcut banttan daha yüksek bantlara hareket etmesi durumundaki potansiyel getiriyi gösterir (örn. "Biriktir"den "Bu Bir Balon mu?"ya). Çıktı: mevcut bant etiketi, bant sınırları, regresyon merkezinden mesafe ve alım/satım sinyali olarak tarihsel doğruluk.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'Bitcoin Rainbow Chart लॉगरिदमिक रिग्रेशन (ln(price) = a × ln(days) + b) का उपयोग करके प्राइस एक्शन को 9 बैंड में बांटता है — \'Fire Sale\' से \'Maximum Bubble\' तक। $84,000 पर BTC \'Accumulate\' ज़ोन में है — ऐतिहासिक रूप से एक अनुकूल खरीद सीमा।',
+      how: [
+        `Bitcoin Rainbow Chart कैलकुलेटर लंबी अवधि के वैल्यूएशन ज़ोन को विज़ुअलाइज़ करने के लिए Bitcoin के प्राइस हिस्ट्री पर लॉगरिदमिक रिग्रेशन बैंड ओवरले करता है। मॉडल 2010 से पूरे प्राइस हिस्ट्री पर कर्व फिट करता है और एरिया को 9 कलर-कोडेड बैंड में बांटता है — गहरे नीले ("Fire Sale") से हरे ("Accumulate") और पीले ("HODL") से लाल ("Maximum Bubble") तक। आज का BTC प्राइस दर्ज करें और देखें कि करंट प्राइस किस बैंड में आता है।`,
+        `रेनबो एक सेंटिमेंट और वैल्यूएशन ह्यूरिस्टिक है, प्रेडिक्शन मॉडल नहीं। ऐतिहासिक रूप से, ब्लू-ग्रीन बैंड में खरीदना और ऑरेंज-रेड बैंड में बेचना मल्टी-ईयर होराइज़न पर प्रॉफिटेबल रहा है। इन्वेस्टमेंट अमाउंट फील्ड का उपयोग करके मॉडल करें कि BTC उच्च बैंड में जाने पर आज की खरीद कैसा परफॉर्म करेगी।`
+      ],
+      inputs: [
+        `करंट BTC प्राइस लाइव मार्केट डेटा से ऑटो-फिल होता है लेकिन सीनारियो मॉडलिंग के लिए ओवरराइड किया जा सकता है (BTC $60K पर गिरे या $120K तक रैली हो तो?)। कैलकुलेटर तुरंत किसी भी प्राइस को उसके रेनबो बैंड से मैप करता है और रिग्रेशन मिडलाइन से परसेंटेज डिस्टेंस दिखाता है।`,
+        `इन्वेस्टमेंट अमाउंट से हाइपोथेटिकल परचेज मॉडल कर सकते हैं। टूल दिखाता है कि प्राइस करंट बैंड से ऊंचे बैंड में जाने पर पोटेंशियल रिटर्न क्या होगा (जैसे "Accumulate" से "Is This a Bubble?")। आउटपुट में शामिल: करंट बैंड लेबल, बैंड बाउंड्री, रिग्रेशन सेंटर से डिस्टेंस और बाय/सेल सिग्नल के रूप में हिस्टोरिकल एक्यूरेसी।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Радужная диаграмма биткоина использует логарифмическую регрессию (ln(цена) = a × ln(дней) + b) для разделения ценового движения на 9 полос — от «Распродажа» до «Максимальный пузырь». При $84 000 BTC находится в зоне «Накопление» — исторически благоприятный диапазон для покупки.',
+      how: [
+        `Калькулятор радужной диаграммы биткоина накладывает полосы логарифмической регрессии на историю цен Bitcoin для визуализации долгосрочных зон оценки. Модель строит кривую по всей ценовой истории с 2010 года и делит область на 9 цветовых полос — от тёмно-синего («Распродажа») через зелёный («Накопление») и жёлтый («HODL») до красного («Максимальный пузырь»). Введите текущую цену BTC, чтобы увидеть, в какой полосе сейчас находится цена.`,
+        `Радуга — это эвристика оценки настроений и стоимости, а не прогнозная модель. Исторически покупка в сине-зелёных полосах и продажа в оранжево-красных приносила прибыль на многолетних горизонтах. Используйте поле суммы инвестиций, чтобы смоделировать, как покупка в текущей полосе поведёт себя при переходе BTC в более высокую полосу.`
+      ],
+      inputs: [
+        `Текущая цена BTC заполняется автоматически из рыночных данных, но может быть изменена для моделирования сценариев (что если BTC упадёт до $60K или вырастет до $120K?). Калькулятор мгновенно определяет радужную полосу для любой цены и показывает процентное расстояние от средней линии регрессии.`,
+        `Сумма инвестиций позволяет моделировать гипотетическую покупку. Инструмент показывает потенциальную доходность при переходе цены из текущей полосы в более высокие (например, из «Накопление» в «Это пузырь?»). Результат: текущая полоса, границы полос, расстояние от центра регрессии и историческая точность как сигнала покупки/продажи.`
+      ],
+    },
+  },
+  'etf-fee-calculator': {
+    en: {
+      quickAnswer: 'Bitcoin ETF fees compound over time: $10,000 in IBIT (0.25% fee) costs $25/year, while GBTC (1.50%) costs $150/year. Over 10 years, the fee difference can exceed $1,500 — this calculator shows the exact drag for each fund.',
+      how: [
+        `The Bitcoin ETF Fee Calculator compares the long-term cost of holding different spot Bitcoin ETFs by modeling how expense ratios compound over time. Enter your investment amount, select one or more ETFs (IBIT, FBTC, ARKB, GBTC, BITB, etc.), choose a holding period, and the tool calculates total fees paid, net asset value after fees, and the performance gap between the cheapest and most expensive options.`,
+        `Fee drag is deceptively large on long horizons: a 1.25% annual fee difference on $100,000 compounds to over $15,000 in lost returns over 10 years (assuming 10% annual growth). Use this calculator to pick the most cost-efficient ETF for your time horizon, or to decide whether direct BTC ownership (with self-custody costs) is cheaper than ETF convenience.`
+      ],
+      inputs: [
+        `Investment Amount is the dollar value you plan to allocate to a Bitcoin ETF. Holding Period sets the projection window in years (1–30). ETF Selection lets you compare 2–6 funds side by side — each pre-loaded with its current expense ratio (IBIT 0.25%, FBTC 0.25%, ARKB 0.21%, GBTC 1.50%, BITB 0.20%, HODL 0.25%).`,
+        `Optional fields include expected annual BTC return (default 10%) for modeling total return after fees, and a custom expense ratio field for new or lesser-known ETFs. Output shows: annual fee per fund, cumulative fees over the holding period, net portfolio value, and a ranked comparison chart highlighting the cheapest option for your chosen time horizon.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Las comisiones de ETF de Bitcoin se acumulan con el tiempo: $10.000 en IBIT (0,25% de comisión) cuestan $25/año, mientras que GBTC (1,50%) cuesta $150/año. En 10 años, la diferencia puede superar $1.500 — esta calculadora muestra el arrastre exacto de cada fondo.',
+      how: [
+        `La Calculadora de Comisiones de ETF de Bitcoin compara el costo a largo plazo de mantener diferentes ETF de Bitcoin spot modelando cómo las ratios de gastos se componen con el tiempo. Introduce tu monto de inversión, selecciona uno o más ETF (IBIT, FBTC, ARKB, GBTC, BITB), elige un período de tenencia y la herramienta calcula las comisiones totales pagadas, el valor neto después de comisiones y la brecha de rendimiento entre las opciones más baratas y más caras.`,
+        `El arrastre por comisiones es engañosamente grande en horizontes largos: una diferencia de 1,25% anual sobre $100.000 se compone a más de $15.000 en retornos perdidos en 10 años (asumiendo 10% de crecimiento anual). Usa esta calculadora para elegir el ETF más eficiente para tu horizonte temporal, o para decidir si la posesión directa de BTC resulta más barata que la conveniencia del ETF.`
+      ],
+      inputs: [
+        `El Monto de Inversión es el valor en dólares que planeas asignar a un ETF de Bitcoin. El Período de Tenencia establece la ventana de proyección en años (1–30). La Selección de ETF permite comparar 2–6 fondos lado a lado — cada uno precargado con su ratio de gastos actual (IBIT 0,25%, FBTC 0,25%, ARKB 0,21%, GBTC 1,50%, BITB 0,20%).`,
+        `Los campos opcionales incluyen el rendimiento anual esperado de BTC (10% por defecto) para modelar el retorno total después de comisiones, y un campo de ratio personalizado para ETF nuevos. El resultado muestra: comisión anual por fondo, comisiones acumuladas durante el período, valor neto del portafolio y un gráfico comparativo clasificado que destaca la opción más económica.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'As taxas de ETF de Bitcoin se acumulam ao longo do tempo: $10.000 no IBIT (taxa de 0,25%) custam $25/ano, enquanto GBTC (1,50%) custa $150/ano. Em 10 anos, a diferença pode ultrapassar $1.500 — esta calculadora mostra o arrasto exato de cada fundo.',
+      how: [
+        `A Calculadora de Taxas de ETF de Bitcoin compara o custo de longo prazo de manter diferentes ETFs de Bitcoin spot, modelando como as taxas de administração se compõem ao longo do tempo. Insira o valor do investimento, selecione um ou mais ETFs (IBIT, FBTC, ARKB, GBTC, BITB), escolha o período de manutenção e a ferramenta calcula as taxas totais pagas, o valor líquido após taxas e a diferença de desempenho entre as opções mais baratas e mais caras.`,
+        `O arrasto por taxas é surpreendentemente grande em horizontes longos: uma diferença de 1,25% ao ano sobre $100.000 se compõe em mais de $15.000 em retornos perdidos em 10 anos (assumindo 10% de crescimento anual). Use esta calculadora para escolher o ETF mais eficiente para seu horizonte temporal ou para decidir se a posse direta de BTC sai mais barata que a conveniência do ETF.`
+      ],
+      inputs: [
+        `O Valor do Investimento é quanto você planeja alocar em um ETF de Bitcoin. O Período de Manutenção define a janela de projeção em anos (1–30). A Seleção de ETF permite comparar 2–6 fundos lado a lado — cada um pré-carregado com sua taxa atual (IBIT 0,25%, FBTC 0,25%, ARKB 0,21%, GBTC 1,50%, BITB 0,20%).`,
+        `Campos opcionais incluem retorno anual esperado do BTC (padrão 10%) para modelar o retorno total após taxas e um campo de taxa personalizada para ETFs novos. A saída mostra: taxa anual por fundo, taxas acumuladas no período, valor líquido do portfólio e um gráfico comparativo classificado destacando a opção mais econômica.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Bitcoin ETF ücretleri zamanla bileşik büyür: IBIT\'te (%0,25 ücret) $10.000 yılda $25\'a mal olurken, GBTC (%1,50) yılda $150\'a mal olur. 10 yılda fark $1.500\'ü aşabilir — bu hesaplayıcı her fon için tam sürükleme maliyetini gösterir.',
+      how: [
+        `Bitcoin ETF Ücret Hesaplayıcısı, gider oranlarının zamanla nasıl bileşik büyüdüğünü modelleyerek farklı spot Bitcoin ETF\'lerini tutmanın uzun vadeli maliyetini karşılaştırır. Yatırım tutarınızı girin, bir veya daha fazla ETF seçin (IBIT, FBTC, ARKB, GBTC, BITB), tutma süresi belirleyin — araç ödenen toplam ücreti, ücret sonrası net varlık değerini ve en ucuz ile en pahalı seçenek arasındaki performans farkını hesaplar.`,
+        `Ücret sürüklemesi uzun vadede yanıltıcı derecede büyüktür: $100.000 üzerinde yıllık %1,25 fark, 10 yılda $15.000'den fazla kayıp getiriye bileşiklenir (%10 yıllık büyüme varsayımıyla). Bu hesaplayıcıyı zaman ufkunuz için en verimli ETF'yi seçmek veya doğrudan BTC sahipliğinin ETF kolaylığından daha ucuz olup olmadığına karar vermek için kullanın.`
+      ],
+      inputs: [
+        `Yatırım Tutarı bir Bitcoin ETF'ye ayırmayı planladığınız dolar değeridir. Tutma Süresi yıl olarak projeksiyon penceresini belirler (1–30). ETF Seçimi 2–6 fonu yan yana karşılaştırmanıza olanak tanır — her biri güncel gider oranıyla önceden yüklenmiştir (IBIT %0,25, FBTC %0,25, ARKB %0,21, GBTC %1,50, BITB %0,20).`,
+        `İsteğe bağlı alanlar: ücret sonrası toplam getiriyi modellemek için beklenen yıllık BTC getirisi (varsayılan %10) ve yeni ETF'ler için özel gider oranı. Çıktı: fon başına yıllık ücret, dönem boyunca kümülatif ücretler, net portföy değeri ve seçtiğiniz zaman ufku için en ucuz seçeneği vurgulayan sıralanmış karşılaştırma grafiği.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'Bitcoin ETF फीस समय के साथ कंपाउंड होती है: IBIT (0.25% फीस) में $10,000 की लागत $25/साल है, जबकि GBTC (1.50%) की लागत $150/साल। 10 साल में फीस का अंतर $1,500 से अधिक हो सकता है — यह कैलकुलेटर हर फंड का सटीक ड्रैग दिखाता है।',
+      how: [
+        `Bitcoin ETF फीस कैलकुलेटर एक्सपेंस रेशियो समय के साथ कैसे कंपाउंड होते हैं, यह मॉडल करके विभिन्न स्पॉट Bitcoin ETF होल्ड करने की लंबी अवधि की लागत तुलना करता है। अपना इन्वेस्टमेंट अमाउंट दर्ज करें, एक या अधिक ETF चुनें (IBIT, FBTC, ARKB, GBTC, BITB), होल्डिंग पीरियड चुनें — टूल टोटल फीस, फीस के बाद नेट वैल्यू और सबसे सस्ते व सबसे महंगे विकल्पों के बीच परफॉर्मेंस गैप कैलकुलेट करता है।`,
+        `फीस ड्रैग लंबी अवधि में भ्रामक रूप से बड़ा होता है: $100,000 पर 1.25% वार्षिक फीस अंतर 10 साल में $15,000 से अधिक लॉस्ट रिटर्न में बदल जाता है (10% वार्षिक ग्रोथ मानते हुए)। इस कैलकुलेटर से अपने टाइम होराइज़न के लिए सबसे किफायती ETF चुनें, या तय करें कि डायरेक्ट BTC ओनरशिप ETF से सस्ती है या नहीं।`
+      ],
+      inputs: [
+        `इन्वेस्टमेंट अमाउंट वह डॉलर वैल्यू है जो आप Bitcoin ETF में अलॉकेट करना चाहते हैं। होल्डिंग पीरियड प्रोजेक्शन विंडो सालों में सेट करता है (1–30)। ETF सेलेक्शन 2–6 फंड्स को साइड बाय साइड कम्पेयर करने देता है — हर एक अपने करंट एक्सपेंस रेशियो (IBIT 0.25%, FBTC 0.25%, ARKB 0.21%, GBTC 1.50%, BITB 0.20%) के साथ प्री-लोडेड।`,
+        `ऑप्शनल फील्ड में अपेक्षित वार्षिक BTC रिटर्न (डिफॉल्ट 10%) शामिल है जो फीस के बाद टोटल रिटर्न मॉडल करता है, और नए ETF के लिए कस्टम एक्सपेंस रेशियो फील्ड। आउटपुट दिखाता है: प्रति फंड वार्षिक फीस, होल्डिंग पीरियड में कुल फीस, नेट पोर्टफोलियो वैल्यू और चुने गए टाइम होराइज़न के लिए सबसे सस्ता विकल्प हाइलाइट करता रैंक्ड कम्पेरिजन चार्ट।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Комиссии Bitcoin ETF растут со временем: $10 000 в IBIT (0,25%) стоят $25/год, тогда как GBTC (1,50%) — $150/год. За 10 лет разница может превысить $1 500 — этот калькулятор показывает точное влияние комиссий каждого фонда.',
+      how: [
+        `Калькулятор комиссий Bitcoin ETF сравнивает долгосрочную стоимость владения различными спотовыми Bitcoin ETF, моделируя, как расходные коэффициенты накапливаются со временем. Введите сумму инвестиций, выберите один или несколько ETF (IBIT, FBTC, ARKB, GBTC, BITB), укажите срок удержания — инструмент рассчитает общие уплаченные комиссии, чистую стоимость активов после комиссий и разницу доходности между самыми дешёвыми и дорогими вариантами.`,
+        `Влияние комиссий обманчиво велико на длинных горизонтах: разница в 1,25% годовых от $100 000 за 10 лет превращается в более $15 000 потерянной доходности (при росте 10% в год). Используйте калькулятор для выбора наиболее экономичного ETF под ваш горизонт или для решения, дешевле ли прямое владение BTC по сравнению с удобством ETF.`
+      ],
+      inputs: [
+        `Сумма инвестиций — сколько вы планируете вложить в Bitcoin ETF. Срок удержания задаёт окно прогноза в годах (1–30). Выбор ETF позволяет сравнить 2–6 фондов — каждый с предзагруженным коэффициентом расходов (IBIT 0,25%, FBTC 0,25%, ARKB 0,21%, GBTC 1,50%, BITB 0,20%).`,
+        `Дополнительные поля: ожидаемая годовая доходность BTC (по умолчанию 10%) для моделирования общей доходности после комиссий и поле пользовательского коэффициента расходов для новых ETF. Результат: годовая комиссия по фонду, кумулятивные комиссии за период, чистая стоимость портфеля и ранжированный сравнительный график с самым выгодным вариантом.`
+      ],
+    },
+  },
+  'token-burn-calculator': {
+    en: {
+      quickAnswer: 'Token burn reduces circulating supply, creating scarcity. If a token burns 2% of supply annually from 1B tokens, after 5 years supply drops to ~904M. This calculator shows projected supply, implied price impact, and deflation pressure score.',
+      how: [
+        `The Token Burn Rate Calculator models the long-term impact of deflationary token mechanics on supply and price. Enter the total supply, circulating supply, annual burn rate, and current token price — the tool projects how supply decreases over time and estimates the theoretical price appreciation assuming constant market cap. It also calculates a deflation pressure score that rates the aggressiveness of the burn mechanism.`,
+        `Use it to evaluate whether a project's burn schedule is meaningful or purely cosmetic. A 0.5% annual burn barely moves the needle over 5 years, while a 5% burn halves supply in ~14 years. The calculator differentiates between total supply burns (reducing max cap) and circulating supply burns (removing tokens from active markets), which have different price dynamics.`
+      ],
+      inputs: [
+        `Total Supply is the maximum number of tokens that exist (including locked, vesting, and treasury). Circulating Supply is the number actively tradable on the market. Burn Rate is the annualized percentage of tokens destroyed — sourced from the project's tokenomics or smart contract data. Current Price is the token's market price, used to model implied valuation changes.`,
+        `Projection Period (1–20 years) sets the forecast window. Output includes: projected supply curve, year-by-year burn amounts, implied price at constant market cap, cumulative tokens burned, deflation pressure score (0–100), and comparison against other deflationary tokens like BNB and ETH post-merge burn rates.`
+      ],
+    },
+    es: {
+      quickAnswer: 'La quema de tokens reduce la oferta circulante creando escasez. Si un token quema el 2% anual de un suministro de 1.000M, tras 5 años la oferta cae a ~904M. Esta calculadora muestra el suministro proyectado, impacto en precio implícito y puntuación de presión deflacionaria.',
+      how: [
+        `La Calculadora de Tasa de Quema modela el impacto a largo plazo de mecánicas deflacionarias de tokens sobre el suministro y el precio. Introduce el suministro total, suministro circulante, tasa de quema anual y precio actual del token — la herramienta proyecta cómo disminuye el suministro y estima la apreciación teórica del precio asumiendo capitalización constante. También calcula una puntuación de presión deflacionaria que evalúa la agresividad del mecanismo de quema.`,
+        `Úsala para evaluar si el calendario de quema de un proyecto es significativo o puramente estético. Una quema del 0,5% anual apenas mueve la aguja en 5 años, mientras que un 5% reduce el suministro a la mitad en ~14 años. La calculadora diferencia entre quema del suministro total (reducción del tope máximo) y quema del suministro circulante (eliminación de tokens activos), que tienen dinámicas de precio diferentes.`
+      ],
+      inputs: [
+        `El Suministro Total es el número máximo de tokens existentes (incluyendo bloqueados, en vesting y tesorería). El Suministro Circulante son los tokens negociables activamente en el mercado. La Tasa de Quema es el porcentaje anualizado de tokens destruidos — tomado de la tokenomics del proyecto. El Precio Actual se usa para modelar cambios de valoración implícita.`,
+        `El Período de Proyección (1–20 años) establece la ventana de pronóstico. El resultado incluye: curva de suministro proyectado, cantidades de quema año a año, precio implícito a capitalización constante, tokens quemados acumulados, puntuación de presión deflacionaria (0–100) y comparación con otros tokens deflacionarios como BNB y ETH post-merge.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'A queima de tokens reduz a oferta circulante criando escassez. Se um token queima 2% do supply anualmente a partir de 1B, após 5 anos o supply cai para ~904M. Esta calculadora mostra o supply projetado, impacto implícito no preço e pontuação de pressão deflacionária.',
+      how: [
+        `A Calculadora de Taxa de Queima modela o impacto de longo prazo de mecânicas deflacionárias de tokens sobre oferta e preço. Insira o supply total, supply circulante, taxa de queima anual e preço atual — a ferramenta projeta como o supply diminui ao longo do tempo e estima a valorização teórica do preço assumindo capitalização de mercado constante. Também calcula uma pontuação de pressão deflacionária que avalia a agressividade do mecanismo de queima.`,
+        `Use para avaliar se o cronograma de queima de um projeto é significativo ou puramente cosmético. Uma queima de 0,5% ao ano mal faz diferença em 5 anos, enquanto 5% reduz o supply pela metade em ~14 anos. A calculadora diferencia entre queima do supply total (reduzindo o cap máximo) e queima do supply circulante (removendo tokens ativos do mercado), que têm dinâmicas de preço diferentes.`
+      ],
+      inputs: [
+        `Supply Total é o número máximo de tokens existentes (incluindo bloqueados, em vesting e tesouraria). Supply Circulante são os tokens ativamente negociáveis no mercado. Taxa de Queima é a porcentagem anualizada de tokens destruídos — obtida da tokenomics do projeto. Preço Atual é o preço de mercado do token, usado para modelar mudanças de valoração implícita.`,
+        `O Período de Projeção (1–20 anos) define a janela de previsão. A saída inclui: curva de supply projetado, quantidades de queima ano a ano, preço implícito com market cap constante, tokens queimados acumulados, pontuação de pressão deflacionária (0–100) e comparação com outros tokens deflacionários como BNB e ETH pós-merge.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Token yakımı dolaşımdaki arzı azaltarak kıtlık yaratır. Bir token 1 milyar arzdan yıllık %2 yakarsa, 5 yıl sonra arz ~904M\'a düşer. Bu hesaplayıcı öngörülen arzı, fiyat üzerindeki örtülü etkiyi ve deflasyon baskısı puanını gösterir.',
+      how: [
+        `Token Yakım Oranı Hesaplayıcısı, deflasyonist token mekaniklerinin arz ve fiyat üzerindeki uzun vadeli etkisini modeller. Toplam arzı, dolaşımdaki arzı, yıllık yakım oranını ve mevcut token fiyatını girin — araç arzın zamanla nasıl azaldığını projekte eder ve sabit piyasa değeri varsayımıyla teorik fiyat artışını tahmin eder. Ayrıca yakım mekanizmasının agresifliğini değerlendiren bir deflasyon baskısı puanı hesaplar.`,
+        `Bir projenin yakım takviminin anlamlı mı yoksa kozmetik mi olduğunu değerlendirmek için kullanın. Yıllık %0,5 yakım 5 yılda zar zor fark yaratırken, %5 yakım ~14 yılda arzı yarıya indirir. Hesaplayıcı toplam arz yakımı (maksimum tavanı azaltma) ile dolaşımdaki arz yakımı (aktif piyasadan token çıkarma) arasında ayrım yapar — farklı fiyat dinamiklerine sahiptirler.`
+      ],
+      inputs: [
+        `Toplam Arz, var olan maksimum token sayısıdır (kilitli, hak edişli ve hazine dahil). Dolaşımdaki Arz, piyasada aktif olarak işlem gören miktardır. Yakım Oranı, yok edilen tokenlerin yıllıklandırılmış yüzdesidir. Mevcut Fiyat, örtülü değerleme değişikliklerini modellemek için kullanılan piyasa fiyatıdır.`,
+        `Projeksiyon Süresi (1–20 yıl) tahmin penceresini belirler. Çıktı: öngörülen arz eğrisi, yıl bazında yakım miktarları, sabit piyasa değerinde örtülü fiyat, kümülatif yakılan tokenler, deflasyon baskısı puanı (0–100) ve BNB ile ETH post-merge yakım oranlarıyla karşılaştırma.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'टोकन बर्न सर्कुलेटिंग सप्लाई घटाकर स्कार्सिटी बनाता है। अगर कोई टोकन 1B सप्लाई से सालाना 2% बर्न करता है, तो 5 साल बाद सप्लाई ~904M हो जाती है। यह कैलकुलेटर प्रोजेक्टेड सप्लाई, इम्प्लाइड प्राइस इम्पैक्ट और डिफ्लेशन प्रेशर स्कोर दिखाता है।',
+      how: [
+        `टोकन बर्न रेट कैलकुलेटर डिफ्लेशनरी टोकन मैकेनिक्स का सप्लाई और प्राइस पर लॉन्ग-टर्म इम्पैक्ट मॉडल करता है। टोटल सप्लाई, सर्कुलेटिंग सप्लाई, एनुअल बर्न रेट और करंट टोकन प्राइस दर्ज करें — टूल प्रोजेक्ट करता है कि सप्लाई समय के साथ कैसे घटती है और कॉन्स्टेंट मार्केट कैप मानते हुए थ्योरेटिकल प्राइस एप्रिसिएशन एस्टिमेट करता है। यह बर्न मैकेनिज्म की एग्रेसिवनेस का डिफ्लेशन प्रेशर स्कोर भी कैलकुलेट करता है।`,
+        `इसे यह मूल्यांकन करने के लिए इस्तेमाल करें कि किसी प्रोजेक्ट का बर्न शेड्यूल सार्थक है या सिर्फ कॉस्मेटिक। 0.5% सालाना बर्न 5 साल में मुश्किल से फर्क डालता है, जबकि 5% बर्न ~14 साल में सप्लाई आधी कर देता है। कैलकुलेटर टोटल सप्लाई बर्न (मैक्स कैप कम करना) और सर्कुलेटिंग सप्लाई बर्न (एक्टिव मार्केट से टोकन हटाना) के बीच अंतर करता है।`
+      ],
+      inputs: [
+        `टोटल सप्लाई मौजूद टोकन की अधिकतम संख्या है (लॉक्ड, वेस्टिंग और ट्रेजरी सहित)। सर्कुलेटिंग सप्लाई मार्केट पर एक्टिवली ट्रेडेबल संख्या है। बर्न रेट नष्ट किए गए टोकन का एन्युअलाइज्ड परसेंटेज है। करंट प्राइस इम्प्लाइड वैल्यूएशन चेंज मॉडल करने के लिए मार्केट प्राइस है।`,
+        `प्रोजेक्शन पीरियड (1–20 साल) फोरकास्ट विंडो सेट करता है। आउटपुट में शामिल: प्रोजेक्टेड सप्लाई कर्व, साल-दर-साल बर्न अमाउंट, कॉन्स्टेंट मार्केट कैप पर इम्प्लाइड प्राइस, क्युमुलेटिव बर्न किए गए टोकन, डिफ्लेशन प्रेशर स्कोर (0–100), और BNB व ETH पोस्ट-मर्ज बर्न रेट के साथ तुलना।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Сжигание токенов сокращает обращающееся предложение, создавая дефицит. Если токен сжигает 2% от 1 млрд ежегодно, через 5 лет предложение падает до ~904 млн. Калькулятор показывает прогнозируемое предложение, подразумеваемое влияние на цену и оценку дефляционного давления.',
+      how: [
+        `Калькулятор скорости сжигания токенов моделирует долгосрочное влияние дефляционной механики токенов на предложение и цену. Введите общее предложение, обращающееся предложение, годовую ставку сжигания и текущую цену — инструмент прогнозирует уменьшение предложения и оценивает теоретический рост цены при неизменной рыночной капитализации. Также рассчитывает оценку дефляционного давления, характеризующую агрессивность механизма сжигания.`,
+        `Используйте для оценки, является ли график сжигания проекта значимым или чисто декоративным. Сжигание 0,5% в год едва заметно за 5 лет, тогда как 5% сокращает предложение вдвое примерно за 14 лет. Калькулятор различает сжигание общего предложения (уменьшение максимального потолка) и сжигание обращающегося предложения (удаление токенов с активного рынка) — у них разная ценовая динамика.`
+      ],
+      inputs: [
+        `Общее предложение — максимальное число существующих токенов (включая заблокированные, вестинговые и казначейские). Обращающееся предложение — количество, активно торгуемое на рынке. Ставка сжигания — годовой процент уничтожаемых токенов. Текущая цена — рыночная цена токена для моделирования подразумеваемых изменений оценки.`,
+        `Период прогноза (1–20 лет) задаёт окно моделирования. Результат: кривая прогнозируемого предложения, годовые объёмы сжигания, подразумеваемая цена при постоянной капитализации, кумулятивно сожжённые токены, оценка дефляционного давления (0–100) и сравнение со ставками сжигания BNB и ETH после слияния.`
+      ],
+    },
+  },
+  'futures-basis-calculator': {
+    en: {
+      quickAnswer: 'Futures basis = (Futures Price − Spot Price) / Spot Price. A BTC spot at $84,000 and quarterly future at $85,680 gives a 2% basis or ~8% annualized. Positive basis (contango) signals bullish sentiment; negative (backwardation) signals bearish.',
+      how: [
+        `The Futures Basis Calculator computes the spread between a cryptocurrency's spot price and its futures contract price, then annualizes the result to give you a standardized comparison across different expiry dates. Enter the spot price, futures price, and days to expiry — the tool instantly shows the raw basis percentage, the annualized basis (APR), and whether the market is in contango (futures above spot) or backwardation (futures below spot).`,
+        `Traders use the basis to identify cash-and-carry arbitrage opportunities: if the annualized basis exceeds your cost of capital plus trading fees, you can buy spot, sell the future, and lock in a risk-free return at expiry. The calculator also helps compare basis across exchanges and contract maturities to find the most attractive spread. A shrinking basis typically signals declining bullish conviction.`
+      ],
+      inputs: [
+        `Spot Price is the current market price of the cryptocurrency on the spot exchange. Futures Price is the quoted price of the futures contract (quarterly, monthly, or perpetual with funding). Days to Expiry is the time remaining until the futures contract settles — required for annualizing the basis. For perpetual contracts, use the 8-hour funding rate instead.`,
+        `Trading Fees (optional) are deducted from the gross basis to show your net arbitrage return. Enter maker/taker fees for both the spot and futures legs. Output includes: raw basis (%), annualized basis (APR), contango/backwardation label, net basis after fees, and a breakeven fee threshold showing the maximum fee where the trade remains profitable.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Base de futuros = (Precio Futuro − Precio Spot) / Precio Spot. BTC spot a $84.000 y futuro trimestral a $85.680 da una base del 2% o ~8% anualizado. Base positiva (contango) señala sentimiento alcista; negativa (backwardation) señala bajista.',
+      how: [
+        `La Calculadora de Base de Futuros calcula el spread entre el precio spot de una criptomoneda y el precio de su contrato de futuros, luego anualiza el resultado para una comparación estandarizada entre distintas fechas de vencimiento. Introduce el precio spot, el precio del futuro y los días hasta el vencimiento — la herramienta muestra la base bruta en porcentaje, la base anualizada (APR) y si el mercado está en contango (futuros por encima del spot) o backwardation (futuros por debajo).`,
+        `Los traders usan la base para identificar oportunidades de arbitraje cash-and-carry: si la base anualizada supera tu costo de capital más comisiones, puedes comprar spot, vender el futuro y asegurar un retorno libre de riesgo al vencimiento. La calculadora también compara la base entre exchanges y vencimientos para encontrar el spread más atractivo. Una base en contracción suele indicar convicción alcista decreciente.`
+      ],
+      inputs: [
+        `El Precio Spot es el precio de mercado actual de la criptomoneda en el exchange spot. El Precio del Futuro es el precio cotizado del contrato de futuros (trimestral, mensual o perpetuo con funding). Días al Vencimiento es el tiempo restante hasta la liquidación — necesario para anualizar la base. Para perpetuos, usa la tasa de funding de 8 horas.`,
+        `Las Comisiones de Trading (opcionales) se deducen de la base bruta para mostrar tu retorno neto de arbitraje. Introduce comisiones maker/taker para ambas patas (spot y futuros). El resultado incluye: base bruta (%), base anualizada (APR), etiqueta contango/backwardation, base neta tras comisiones y umbral de comisión de equilibrio donde el trade sigue siendo rentable.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Base de futuros = (Preço Futuro − Preço Spot) / Preço Spot. BTC spot a $84.000 e futuro trimestral a $85.680 dá uma base de 2% ou ~8% anualizado. Base positiva (contango) sinaliza sentimento otimista; negativa (backwardation) sinaliza pessimista.',
+      how: [
+        `A Calculadora de Base de Futuros calcula o spread entre o preço spot de uma criptomoeda e o preço do seu contrato futuro, depois anualiza o resultado para comparação padronizada entre diferentes datas de vencimento. Insira o preço spot, preço do futuro e dias até o vencimento — a ferramenta mostra instantaneamente a base bruta percentual, a base anualizada (APR) e se o mercado está em contango (futuros acima do spot) ou backwardation (futuros abaixo).`,
+        `Traders usam a base para identificar oportunidades de arbitragem cash-and-carry: se a base anualizada supera seu custo de capital mais taxas, você pode comprar spot, vender o futuro e garantir um retorno livre de risco no vencimento. A calculadora também compara a base entre exchanges e vencimentos para encontrar o spread mais atrativo. Uma base em contração geralmente sinaliza convicção otimista em declínio.`
+      ],
+      inputs: [
+        `O Preço Spot é o preço de mercado atual da criptomoeda na exchange spot. O Preço do Futuro é o preço cotado do contrato futuro (trimestral, mensal ou perpétuo com funding). Dias para Vencimento é o tempo restante até a liquidação — necessário para anualizar a base. Para perpétuos, use a taxa de funding de 8 horas.`,
+        `As Taxas de Trading (opcionais) são deduzidas da base bruta para mostrar seu retorno líquido de arbitragem. Insira taxas maker/taker para ambas as pontas (spot e futuros). A saída inclui: base bruta (%), base anualizada (APR), rótulo contango/backwardation, base líquida após taxas e limiar de taxa de equilíbrio onde a operação permanece lucrativa.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'Vadeli işlem bazı = (Vadeli Fiyat − Spot Fiyat) / Spot Fiyat. BTC spot $84.000 ve çeyreklik vadeli $85.680 ise %2 baz veya yıllıklandırılmış ~%8 verir. Pozitif baz (contango) yükseliş sinyali; negatif (backwardation) düşüş sinyali verir.',
+      how: [
+        `Vadeli İşlem Baz Hesaplayıcısı, bir kripto paranın spot fiyatı ile vadeli kontrat fiyatı arasındaki spreadi hesaplar ve farklı vade tarihleri arasında standart karşılaştırma için sonucu yıllıklandırır. Spot fiyatı, vadeli fiyatı ve vadeye kalan günleri girin — araç ham baz yüzdesini, yıllıklandırılmış bazı (APR) ve piyasanın contango (vadeli > spot) mu yoksa backwardation (vadeli < spot) durumunda mı olduğunu gösterir.`,
+        `Traderlar bazı cash-and-carry arbitraj fırsatlarını belirlemek için kullanır: yıllıklandırılmış baz sermaye maliyetiniz artı ücretleri aşarsa, spot alıp vadeli satarak vade sonunda risksiz getiri kilitleyebilirsiniz. Hesaplayıcı ayrıca en çekici spreadi bulmak için borsalar ve kontrat vadeleri arasında baz karşılaştırması yapar. Daralan baz tipik olarak azalan yükseliş inancını işaret eder.`
+      ],
+      inputs: [
+        `Spot Fiyat, kripto paranın spot borsadaki mevcut piyasa fiyatıdır. Vadeli Fiyat, vadeli kontratın (çeyreklik, aylık veya fonlamalı süresiz) kote fiyatıdır. Vadeye Kalan Gün, kontratın kapanmasına kalan süredir — bazı yıllıklandırmak için gereklidir. Süresiz kontratlar için 8 saatlik fonlama oranını kullanın.`,
+        `İşlem Ücretleri (isteğe bağlı), net arbitraj getirinizi göstermek için brüt bazdan düşülür. Hem spot hem vadeli bacaklar için maker/taker ücretlerini girin. Çıktı: ham baz (%), yıllıklandırılmış baz (APR), contango/backwardation etiketi, ücret sonrası net baz ve işlemin kârlı kaldığı maksimum ücreti gösteren başa baş ücret eşiği.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'फ्यूचर्स बेसिस = (फ्यूचर्स प्राइस − स्पॉट प्राइस) / स्पॉट प्राइस। BTC स्पॉट $84,000 और क्वार्टरली फ्यूचर $85,680 पर 2% बेसिस या ~8% एन्युअलाइज्ड देता है। पॉजिटिव बेसिस (contango) बुलिश सेंटिमेंट; निगेटिव (backwardation) बेयरिश सिग्नल।',
+      how: [
+        `फ्यूचर्स बेसिस कैलकुलेटर किसी क्रिप्टोकरेंसी के स्पॉट प्राइस और उसके फ्यूचर्स कॉन्ट्रैक्ट प्राइस के बीच स्प्रेड कैलकुलेट करता है, फिर विभिन्न एक्सपायरी डेट्स में स्टैंडर्डाइज्ड तुलना के लिए रिजल्ट को एन्युअलाइज करता है। स्पॉट प्राइस, फ्यूचर्स प्राइस और एक्सपायरी तक के दिन दर्ज करें — टूल तुरंत रॉ बेसिस परसेंटेज, एन्युअलाइज्ड बेसिस (APR) और मार्केट contango (फ्यूचर्स > स्पॉट) या backwardation (फ्यूचर्स < स्पॉट) में है, यह दिखाता है।`,
+        `ट्रेडर्स बेसिस का उपयोग cash-and-carry आर्बिट्रेज अवसर पहचानने में करते हैं: अगर एन्युअलाइज्ड बेसिस आपके कैपिटल कॉस्ट और ट्रेडिंग फीस से अधिक है, तो स्पॉट खरीदकर फ्यूचर बेचकर एक्सपायरी पर रिस्क-फ्री रिटर्न लॉक कर सकते हैं। कैलकुलेटर एक्सचेंजेज और कॉन्ट्रैक्ट मैच्योरिटीज़ में बेसिस कम्पेयर करने में भी मदद करता है। सिकुड़ता बेसिस आमतौर पर घटती बुलिश कन्विक्शन का संकेत है।`
+      ],
+      inputs: [
+        `स्पॉट प्राइस स्पॉट एक्सचेंज पर क्रिप्टोकरेंसी का करंट मार्केट प्राइस है। फ्यूचर्स प्राइस फ्यूचर्स कॉन्ट्रैक्ट (क्वार्टरली, मंथली या फंडिंग वाला परपेचुअल) का कोटेड प्राइस है। एक्सपायरी तक दिन कॉन्ट्रैक्ट सेटलमेंट तक बचा समय है — बेसिस एन्युअलाइज करने के लिए जरूरी। परपेचुअल कॉन्ट्रैक्ट के लिए 8-घंटे की फंडिंग रेट इस्तेमाल करें।`,
+        `ट्रेडिंग फीस (ऑप्शनल) ग्रॉस बेसिस से घटाई जाती है ताकि नेट आर्बिट्रेज रिटर्न दिखे। स्पॉट और फ्यूचर्स दोनों लेग्स के लिए maker/taker फीस दर्ज करें। आउटपुट में शामिल: रॉ बेसिस (%), एन्युअलाइज्ड बेसिस (APR), contango/backwardation लेबल, फीस के बाद नेट बेसिस, और ब्रेकईवन फीस थ्रेशोल्ड जो दिखाता है कि ट्रेड कितनी फीस तक प्रॉफिटेबल रहता है।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Базис фьючерса = (Цена фьючерса − Спот-цена) / Спот-цена. BTC спот $84 000 и квартальный фьючерс $85 680 дают базис 2% или ~8% в годовом выражении. Положительный базис (контанго) — бычий сигнал; отрицательный (бэквордация) — медвежий.',
+      how: [
+        `Калькулятор базиса фьючерсов вычисляет спред между спотовой ценой криптовалюты и ценой фьючерсного контракта, а затем аннуализирует результат для стандартного сравнения разных сроков экспирации. Введите спотовую цену, цену фьючерса и количество дней до экспирации — инструмент мгновенно покажет сырой базис в процентах, аннуализированный базис (APR) и состояние рынка: контанго (фьючерс выше спота) или бэквордация (фьючерс ниже спота).`,
+        `Трейдеры используют базис для поиска арбитражных возможностей cash-and-carry: если аннуализированный базис превышает стоимость капитала плюс комиссии, можно купить спот, продать фьючерс и зафиксировать безрисковую доходность к экспирации. Калькулятор также помогает сравнивать базис между биржами и сроками контрактов для поиска лучшего спреда. Сужающийся базис обычно говорит об ослаблении бычьих настроений.`
+      ],
+      inputs: [
+        `Спотовая цена — текущая рыночная цена криптовалюты на спотовой бирже. Цена фьючерса — котируемая цена фьючерсного контракта (квартального, месячного или бессрочного с фандингом). Дней до экспирации — время до исполнения контракта, необходимое для аннуализации базиса. Для бессрочных контрактов используйте 8-часовую ставку фандинга.`,
+        `Торговые комиссии (опционально) вычитаются из валового базиса для отображения чистой арбитражной доходности. Укажите комиссии maker/taker для обоих плеч (спот и фьючерс). Результат: сырой базис (%), аннуализированный базис (APR), метка контанго/бэквордации, чистый базис после комиссий и пороговая комиссия безубыточности — максимальная комиссия, при которой сделка остаётся прибыльной.`
+      ],
+    },
+  },
+  'defi-insurance-calculator': {
+    en: {
+      quickAnswer: 'DeFi insurance break-even: if your annual premium is 2.5% on a $50,000 position ($1,250/year), insurance pays off if there\'s a >2.5% chance of a total loss. With DeFi hack rates averaging 3–5% annually, coverage often makes economic sense.',
+      how: [
+        `The DeFi Insurance Calculator helps you decide whether buying smart contract cover is worth the premium by comparing your expected loss without insurance to the cost of the policy. Enter your position size, the annual premium rate offered by providers like Nexus Mutual or InsurAce, the coverage ratio (what percentage of your position is protected), and the protocol's risk tier — the tool calculates your break-even hack probability, expected value of insurance, and net cost/benefit over different time horizons.`,
+        `Use it when deploying capital to new or unaudited DeFi protocols where smart contract risk is elevated. The calculator factors in partial coverage scenarios (many policies cover 80–90%, not 100%), deductibles, and claim success rates based on historical data. Compare premiums across providers to find the most cost-efficient coverage for your risk profile.`
+      ],
+      inputs: [
+        `Position Size is the total dollar value of your DeFi deposit at risk. Annual Premium Rate is the yearly cost of coverage as a percentage (typically 2–10% depending on protocol risk). Coverage Ratio is the fraction of your position the policy actually protects (often 80–100%). Protocol Risk Tier categorizes the protocol by audit status, TVL, and age — higher risk tiers justify higher premiums.`,
+        `Optional fields include claim success rate (historical probability that a valid claim gets paid — ~85% for major providers), holding period (how long you plan to stay in the protocol), and alternative yield (the opportunity cost of premium capital). Output shows: annual premium cost, break-even hack probability, expected value analysis, net insurance benefit at various loss probabilities, and a recommendation based on your risk tier.`
+      ],
+    },
+    es: {
+      quickAnswer: 'Equilibrio del seguro DeFi: si tu prima anual es 2,5% sobre una posición de $50.000 ($1.250/año), el seguro se justifica si hay >2,5% de probabilidad de pérdida total. Con tasas de hackeo DeFi promediando 3–5% anual, la cobertura frecuentemente tiene sentido económico.',
+      how: [
+        `La Calculadora de Seguro DeFi te ayuda a decidir si comprar cobertura de smart contract vale la prima, comparando tu pérdida esperada sin seguro con el costo de la póliza. Introduce el tamaño de tu posición, la tasa de prima anual ofrecida por proveedores como Nexus Mutual o InsurAce, el ratio de cobertura (qué porcentaje está protegido) y el nivel de riesgo del protocolo — la herramienta calcula tu probabilidad de hackeo de equilibrio, el valor esperado del seguro y el costo/beneficio neto en diferentes horizontes.`,
+        `Úsala al desplegar capital en protocolos DeFi nuevos o sin auditar donde el riesgo de smart contract es elevado. La calculadora incluye escenarios de cobertura parcial (muchas pólizas cubren 80–90%), deducibles y tasas de éxito de reclamaciones basadas en datos históricos. Compara primas entre proveedores para encontrar la cobertura más eficiente para tu perfil de riesgo.`
+      ],
+      inputs: [
+        `El Tamaño de Posición es el valor total en dólares de tu depósito DeFi en riesgo. La Tasa de Prima Anual es el costo anual de cobertura como porcentaje (típicamente 2–10% según el riesgo del protocolo). El Ratio de Cobertura es la fracción que la póliza protege (generalmente 80–100%). El Nivel de Riesgo del Protocolo categoriza por estado de auditoría, TVL y antigüedad.`,
+        `Los campos opcionales incluyen tasa de éxito de reclamaciones (probabilidad histórica de pago — ~85% para proveedores principales), período de tenencia (cuánto planeas permanecer) y rendimiento alternativo (costo de oportunidad del capital). El resultado muestra: costo anual de prima, probabilidad de hackeo de equilibrio, análisis de valor esperado, beneficio neto del seguro a distintas probabilidades de pérdida y recomendación según tu nivel de riesgo.`
+      ],
+    },
+    pt: {
+      quickAnswer: 'Equilíbrio do seguro DeFi: se seu prêmio anual é 2,5% sobre uma posição de $50.000 ($1.250/ano), o seguro compensa se houver >2,5% de chance de perda total. Com taxas de hack DeFi de 3–5% ao ano em média, a cobertura frequentemente faz sentido econômico.',
+      how: [
+        `A Calculadora de Seguro DeFi ajuda a decidir se vale a pena comprar cobertura de smart contract, comparando sua perda esperada sem seguro com o custo da apólice. Insira o tamanho da posição, a taxa de prêmio anual oferecida por provedores como Nexus Mutual ou InsurAce, a proporção de cobertura (qual porcentagem está protegida) e o nível de risco do protocolo — a ferramenta calcula sua probabilidade de hack de equilíbrio, valor esperado do seguro e custo/benefício líquido em diferentes horizontes.`,
+        `Use ao alocar capital em protocolos DeFi novos ou sem auditoria, onde o risco de smart contract é elevado. A calculadora inclui cenários de cobertura parcial (muitas apólices cobrem 80–90%), franquias e taxas de sucesso de sinistros com base em dados históricos. Compare prêmios entre provedores para encontrar a cobertura mais eficiente para seu perfil de risco.`
+      ],
+      inputs: [
+        `Tamanho da Posição é o valor total em dólares do seu depósito DeFi em risco. Taxa de Prêmio Anual é o custo anual da cobertura em porcentagem (geralmente 2–10% conforme risco do protocolo). Proporção de Cobertura é a fração que a apólice realmente protege (frequentemente 80–100%). Nível de Risco do Protocolo categoriza por status de auditoria, TVL e idade.`,
+        `Campos opcionais incluem taxa de sucesso de sinistros (probabilidade histórica de pagamento — ~85% para provedores principais), período de permanência e rendimento alternativo (custo de oportunidade do capital). A saída mostra: custo anual do prêmio, probabilidade de hack de equilíbrio, análise de valor esperado, benefício líquido do seguro em várias probabilidades de perda e recomendação baseada no nível de risco.`
+      ],
+    },
+    tr: {
+      quickAnswer: 'DeFi sigortası başa baş noktası: yıllık priminiz $50.000\'lık pozisyonda %2,5 ise ($1.250/yıl), toplam kayıp olasılığı >%2,5 ise sigorta kendini amorti eder. DeFi hack oranları yıllık ortalama %3–5 olduğundan, teminat genellikle ekonomik olarak mantıklıdır.',
+      how: [
+        `DeFi Sigorta Hesaplayıcısı, sigortasız beklenen kaybınızı poliçe maliyetiyle karşılaştırarak akıllı sözleşme teminatı satın almanın prime değip değmeyeceğine karar vermenize yardımcı olur. Pozisyon büyüklüğünüzü, Nexus Mutual veya InsurAce gibi sağlayıcıların sunduğu yıllık prim oranını, teminat oranını (pozisyonunuzun yüzde kaçı korunuyor) ve protokolün risk seviyesini girin — araç başa baş hack olasılığınızı, sigortanın beklenen değerini ve farklı zaman ufuklarında net maliyet/faydayı hesaplar.`,
+        `Yeni veya denetlenmemiş DeFi protokollerine sermaye yerleştirirken kullanın. Hesaplayıcı kısmi teminat senaryolarını (birçok poliçe %80–90 kapsar), muafiyetleri ve tarihsel verilere dayalı talep başarı oranlarını da hesaba katar. Risk profilinize en uygun maliyetli teminatı bulmak için sağlayıcılar arasında primleri karşılaştırın.`
+      ],
+      inputs: [
+        `Pozisyon Büyüklüğü, risk altındaki DeFi mevduatınızın toplam dolar değeridir. Yıllık Prim Oranı, teminatın yüzde olarak yıllık maliyetidir (protokol riskine göre tipik %2–10). Teminat Oranı, poliçenin pozisyonunuzun ne kadarını koruduğudur (genellikle %80–100). Protokol Risk Seviyesi, denetim durumu, TVL ve yaşa göre protokolü kategorize eder.`,
+        `İsteğe bağlı alanlar: talep başarı oranı (geçerli bir talebin ödenme olasılığı — büyük sağlayıcılar için ~%85), tutma süresi ve alternatif getiri (prim sermayesinin fırsat maliyeti). Çıktı: yıllık prim maliyeti, başa baş hack olasılığı, beklenen değer analizi, çeşitli kayıp olasılıklarında net sigorta faydası ve risk seviyenize göre öneri.`
+      ],
+    },
+    hi: {
+      quickAnswer: 'DeFi इंश्योरेंस ब्रेक-ईवन: अगर $50,000 पोजिशन पर आपका सालाना प्रीमियम 2.5% ($1,250/साल) है, तो टोटल लॉस की >2.5% संभावना होने पर इंश्योरेंस फायदेमंद है। DeFi हैक रेट सालाना औसतन 3–5% के साथ, कवरेज अक्सर आर्थिक रूप से सही निर्णय है।',
+      how: [
+        `DeFi इंश्योरेंस कैलकुलेटर यह तय करने में मदद करता है कि स्मार्ट कॉन्ट्रैक्ट कवर खरीदना प्रीमियम के लायक है या नहीं — बिना इंश्योरेंस के आपकी अपेक्षित हानि की तुलना पॉलिसी की लागत से करके। अपना पोजिशन साइज, Nexus Mutual या InsurAce जैसे प्रोवाइडर्स का एनुअल प्रीमियम रेट, कवरेज रेशियो (पोजिशन का कितना हिस्सा प्रोटेक्टेड है) और प्रोटोकॉल का रिस्क टियर दर्ज करें — टूल ब्रेक-ईवन हैक प्रोबेबिलिटी, इंश्योरेंस का एक्सपेक्टेड वैल्यू और विभिन्न टाइम होराइज़न पर नेट कॉस्ट/बेनिफिट कैलकुलेट करता है।`,
+        `नए या बिना ऑडिट वाले DeFi प्रोटोकॉल में कैपिटल डिप्लॉय करते समय इसका उपयोग करें जहां स्मार्ट कॉन्ट्रैक्ट रिस्क ज्यादा है। कैलकुलेटर पार्शियल कवरेज सीनारियो (कई पॉलिसी 80–90% कवर करती हैं), डिडक्टिबल और हिस्टोरिकल डेटा पर आधारित क्लेम सक्सेस रेट भी शामिल करता है। अपने रिस्क प्रोफाइल के लिए सबसे किफायती कवरेज खोजने हेतु प्रोवाइडर्स में प्रीमियम कम्पेयर करें।`
+      ],
+      inputs: [
+        `पोजिशन साइज आपकी DeFi डिपॉजिट का रिस्क पर कुल डॉलर वैल्यू है। एनुअल प्रीमियम रेट कवरेज की सालाना लागत परसेंटेज में है (प्रोटोकॉल रिस्क के अनुसार आमतौर पर 2–10%)। कवरेज रेशियो पॉलिसी द्वारा वास्तव में प्रोटेक्ट किया गया हिस्सा है (अक्सर 80–100%)। प्रोटोकॉल रिस्क टियर ऑडिट स्टेटस, TVL और आयु के आधार पर प्रोटोकॉल को वर्गीकृत करता है।`,
+        `ऑप्शनल फील्ड में क्लेम सक्सेस रेट (वैलिड क्लेम पेमेंट की हिस्टोरिकल प्रोबेबिलिटी — प्रमुख प्रोवाइडर्स के लिए ~85%), होल्डिंग पीरियड और अल्टरनेटिव यील्ड (प्रीमियम कैपिटल का ऑपर्च्युनिटी कॉस्ट) शामिल हैं। आउटपुट दिखाता है: एनुअल प्रीमियम कॉस्ट, ब्रेक-ईवन हैक प्रोबेबिलिटी, एक्सपेक्टेड वैल्यू एनालिसिस, विभिन्न लॉस प्रोबेबिलिटी पर नेट इंश्योरेंस बेनिफिट और आपके रिस्क टियर पर आधारित रिकमेंडेशन।`
+      ],
+    },
+    ru: {
+      quickAnswer: 'Точка безубыточности DeFi-страхования: если годовая премия составляет 2,5% от позиции $50 000 ($1 250/год), страхование окупается при вероятности полной потери >2,5%. При средней частоте DeFi-взломов 3–5% в год покрытие часто экономически оправдано.',
+      how: [
+        `Калькулятор DeFi-страхования помогает решить, стоит ли покупать покрытие смарт-контрактов, сравнивая ожидаемые потери без страховки со стоимостью полиса. Введите размер позиции, годовую ставку премии от провайдеров (Nexus Mutual, InsurAce), коэффициент покрытия (какой процент позиции защищён) и уровень риска протокола — инструмент рассчитает безубыточную вероятность взлома, ожидаемую ценность страхования и чистую выгоду/затраты на разных горизонтах.`,
+        `Используйте при размещении капитала в новых или непроверенных DeFi-протоколах с повышенным риском смарт-контрактов. Калькулятор учитывает сценарии частичного покрытия (многие полисы покрывают 80–90%), франшизы и коэффициенты успешности выплат по историческим данным. Сравнивайте премии разных провайдеров для поиска оптимального покрытия под ваш профиль риска.`
+      ],
+      inputs: [
+        `Размер позиции — общая стоимость вашего DeFi-депозита под риском в долларах. Годовая ставка премии — стоимость покрытия в процентах (обычно 2–10% в зависимости от риска протокола). Коэффициент покрытия — доля позиции, которую полис фактически защищает (часто 80–100%). Уровень риска протокола — категоризация по статусу аудита, TVL и возрасту.`,
+        `Дополнительные поля: коэффициент успешности выплат (историческая вероятность оплаты обоснованного требования — ~85% у крупных провайдеров), срок удержания и альтернативная доходность (упущенная выгода от капитала премии). Результат: годовая стоимость премии, безубыточная вероятность взлома, анализ ожидаемой ценности, чистая выгода страхования при различных вероятностях потерь и рекомендация на основе уровня риска.`
+      ],
+    },
+  },
 };

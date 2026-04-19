@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +49,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Break-Even Calculator</h1>
           <p>Two modes: calculate the gain needed to recover from a loss, or find the exact exit price that covers your trading fees.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <BreakEvenCalculator lang={'en'} client:load />
@@ -58,6 +67,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Break-even price = Buy Price &times; (1 + Total Fee %). After buying BTC at $73,000 with 0.2% total fees, you need the price to reach $73,146 just to break even.</div>
         <h2>How to Use the Crypto Break-Even Calculator</h2>
         <p>Our free break-even calculator helps crypto traders understand two critical concepts: how much gain is needed to recover from a portfolio loss, and the exact exit price required to cover all trading fees. Both modes are essential for realistic trading expectations and proper risk management.</p>
         <ol>

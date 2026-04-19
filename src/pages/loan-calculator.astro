@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -49,6 +50,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Loan Calculator</h1>
           <p>Estimate costs of crypto-backed loans. Compare platforms, see margin call thresholds, and plan your loan-to-value ratio for safe borrowing.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <LoanCalculator lang={'en'} client:load />
@@ -59,6 +68,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Crypto loan amount = Collateral Value &times; LTV%. Depositing $10,000 in BTC at 50% LTV gets you a $5,000 loan. Watch your margin call level &mdash; a 30% BTC drop could trigger liquidation.</div>
         <h2>How to Use the Crypto Loan Calculator</h2>
         <p>Our free crypto loan calculator helps you plan crypto-backed loans by estimating interest costs, margin call thresholds, and liquidation prices. Whether you are borrowing against Bitcoin, Ethereum, or other collateral assets, this tool shows you the full cost and risk picture before you commit.</p>
         <ol>

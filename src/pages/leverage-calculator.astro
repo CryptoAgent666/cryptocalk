@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +49,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Crypto Leverage Calculator</h1>
           <p>See exactly how leverage amplifies your gains and losses. Compare leveraged vs spot PnL side-by-side with a full scenario table.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <LeverageCalculator lang={'en'} client:load />
@@ -58,6 +67,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Leveraged P&amp;L = Price Change % &times; Leverage &times; Position Size. A 5% price rise with 10x leverage yields 50% return on collateral &mdash; but a 10% drop triggers liquidation.</div>
         <h2>How to Use the Leverage Calculator</h2>
         <ol>
           <li>Enter your <strong>position size</strong> — the total value of the crypto position you want to control (e.g., $10,000 worth of Bitcoin).</li>

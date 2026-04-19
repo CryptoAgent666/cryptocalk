@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-19] (update 86) — feat: page architecture unification + ~2,280 new translations
+
+### Added
+- **~2,280 new translation lines** across 5 language files (es +416, pt +464, tr +469, hi +472, ru +458) for 21 calculator components: RetirementCalculator, RainbowChartCalculator, EtfFeeCalculator, TokenBurnCalculator, FuturesBasisCalculator, DefiInsuranceCalculator, BitcoinUnitConverter, CrossChainBridgeCalculator, CryptoCorrelationCalculator, CryptoIndexFundCalculator, CryptoInheritanceCalculator, CryptoPortfolioRebalanceCalculator, CryptoSentimentCalculator, DefiYieldAggregatorCalculator, DustAttackCalculator, FlashLoanCalculator, GasOptimizationCalculator, GovernanceVotingCalculator, NftRarityCalculator, TokenUnlockCalculator, WhaleAlertCalculator
+- **6 new calculator-seo-content entries** (retirement, rainbow-chart, etf-fee, token-burn, futures-basis, defi-insurance) with quickAnswer, how, inputs in all 6 languages (408 lines)
+- **Byline + Quick Answer** added to 17 standalone EN pages (apy-apr, break-even, compound-interest, gas-fee, leverage, liquidation, loan, margin, market-cap-comparator, portfolio, position-size, reverse-roi, risk-reward, roi, staking-rewards, tp-sl, vesting)
+
+### Changed
+- **24 EN calculator pages converted** from standalone Layout pattern (~72 lines) to LocalizedCalculatorPage wrapper (~13 lines): arbitrage, bitcoin-energy, defi-insurance, dva, etf-fee, futures-basis, grid-trading, if-i-had-bought, inheritance-tax, liquid-staking, millionaire, on-chain-metrics, options, payback-period, perpetual-futures, pizza-day, rainbow-chart, restaking, retirement, stock-to-flow, tax-loss-harvesting, token-burn, token-valuation, validator. These pages now auto-generate FAQ, SEO sections, byline, quick-answer, and hreflang.
+
+### Fixed
+- **Turkish SEO text**: 3 instances of "çarpıcı biçimde" replaced with natural alternatives in calculator-seo-ext.ts
+- **Hindi ui-strings**: removed "(Long)" and "(Short)" English duplication from 'Long' and 'Short' keys in hi.ts
+- Build: 1,175 pages, 0 errors
+
 ## [2026-04-19] (update 85) — fix: QA bug fixes (exchange-fee-comparator, related-calculators, type narrowing)
 
 ### Fixed

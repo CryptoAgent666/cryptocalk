@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+const buildDate = new Date().toISOString().split('T')[0];
 ---
 
 <Layout
@@ -48,6 +49,14 @@ import '../styles/calculator-page.css';
         <div class="calc-header">
           <h1>Token Vesting Schedule Calculator</h1>
           <p>Visualize token unlock schedules with cliff periods, TGE unlocks, and vesting timelines. Calculate cumulative unlocks, sell pressure, and plan your strategy around token releases.</p>
+          <div class="calc-byline">
+            <a href="/about/" class="byline-link">
+              <span class="byline-by">By</span>
+              <span class="byline-name">Konstantin Iakovlev</span>
+            </a>
+            <span class="byline-sep">&middot;</span>
+            <span class="byline-date">Updated {buildDate}</span>
+          </div>
         </div>
         <div class="calc-scope">
         <VestingCalculator lang={'en'} client:load />
@@ -58,6 +67,7 @@ import '../styles/calculator-page.css';
 
     <section class="seo-content">
       <div class="section-container">
+        <div class="quick-answer"><strong>Quick answer:</strong> Calculate token vesting schedules and unlock values. A 4-year vest with 1-year cliff and monthly unlocks releases 0% for 12 months, then ~2.78% monthly for the remaining 36 months.</div>
         <h2>How to Use the Vesting Calculator</h2>
         <ol>
           <li><strong>Enter total token allocation</strong> — The number of tokens you received or the total allocation you're analyzing (e.g., from a presale, team allocation, or advisor grant).</li>
