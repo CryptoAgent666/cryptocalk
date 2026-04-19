@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import CryptoCorrelationCalculator from '../components/CryptoCorrelationCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="crypto-correlation-calculator"
   title="Crypto Correlation Calculator"
   description="Free Crypto Correlation Calculator. Measure price correlation between any two cryptocurrencies and build a diversified portfolio with lower overall risk."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <CryptoCorrelationCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

@@ -2,6 +2,30 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-19] (update 84) — fix: 15 shell calculator pages now have working React components
+
+### Fixed
+- **15 calculator pages were empty shells** — they had ALIAS_DEFINITIONS entries and localized slugs but NO React calculator widget rendered. Now all have full interactive components:
+  - BitcoinUnitConverter (BTC/mBTC/μBTC/satoshi conversion + USD)
+  - CrossChainBridgeCalculator (bridge fees, gas, transfer time for 8 chains)
+  - CryptoCorrelationCalculator (Pearson correlation between two assets)
+  - CryptoIndexFundCalculator (market-cap-weighted index, Top 5/10/20)
+  - CryptoInheritanceCalculator (estate tax, per-beneficiary, custody recommendations)
+  - CryptoPortfolioRebalanceCalculator (up to 5 assets, buy/sell actions)
+  - CryptoSentimentCalculator (composite score from Fear&Greed/RSI/Funding/Social)
+  - DefiYieldAggregatorCalculator (multi-protocol yield comparison)
+  - DustAttackCalculator (UTXO consolidation cost analysis)
+  - FlashLoanCalculator (arbitrage profit after protocol fees + gas)
+  - GasOptimizationCalculator (individual vs batched tx cost comparison)
+  - GovernanceVotingCalculator (voting power, quorum, proposal threshold)
+  - NftRarityCalculator (trait-based rarity scoring)
+  - TokenUnlockCalculator (unlock impact on price + dilution)
+  - WhaleAlertCalculator (large transaction market impact)
+- **15 EN standalone pages updated** to import and slot their calculator component
+- **15 rendering blocks added** to [lang]/[...slug].astro for localized pages
+- All components follow project conventions: getUiString, withErrorBoundary, locale-aware formatting, 3 scenarios, reset button
+- Build: 1,175 pages, 0 errors
+
 ## [2026-04-19] (update 83) — feat: 6 new specialized calculators (87→93 total)
 
 ### Added

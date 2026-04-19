@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import TokenUnlockCalculator from '../components/TokenUnlockCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="token-unlock-calculator"
   title="Token Unlock Calculator"
   description="Free Token Unlock Calculator. Track upcoming token unlock events, estimate sell pressure impact, and visualize vesting schedules for any project."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <TokenUnlockCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

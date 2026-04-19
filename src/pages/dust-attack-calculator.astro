@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import DustAttackCalculator from '../components/DustAttackCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="dust-attack-calculator"
   title="Dust Attack Calculator"
   description="Free Dust Attack Calculator. Detect tiny unsolicited transactions in your wallet, estimate consolidation costs, and learn how to protect your privacy on-chain."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <DustAttackCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

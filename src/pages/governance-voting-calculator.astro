@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import GovernanceVotingCalculator from '../components/GovernanceVotingCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="governance-voting-calculator"
   title="Governance Voting Calculator"
   description="Free Governance Voting Calculator. Estimate voting power, quorum requirements, and delegation impact for DAO proposals across major governance tokens."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <GovernanceVotingCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

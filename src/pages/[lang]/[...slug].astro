@@ -88,6 +88,21 @@ import EtfFeeCalculator from '../../components/EtfFeeCalculator.tsx';
 import TokenBurnCalculator from '../../components/TokenBurnCalculator.tsx';
 import FuturesBasisCalculator from '../../components/FuturesBasisCalculator.tsx';
 import DefiInsuranceCalculator from '../../components/DefiInsuranceCalculator.tsx';
+import BitcoinUnitConverter from '../../components/BitcoinUnitConverter.tsx';
+import CrossChainBridgeCalculator from '../../components/CrossChainBridgeCalculator.tsx';
+import CryptoCorrelationCalculator from '../../components/CryptoCorrelationCalculator.tsx';
+import CryptoIndexFundCalculator from '../../components/CryptoIndexFundCalculator.tsx';
+import CryptoInheritanceCalculator from '../../components/CryptoInheritanceCalculator.tsx';
+import CryptoPortfolioRebalanceCalculator from '../../components/CryptoPortfolioRebalanceCalculator.tsx';
+import CryptoSentimentCalculator from '../../components/CryptoSentimentCalculator.tsx';
+import DefiYieldAggregatorCalculator from '../../components/DefiYieldAggregatorCalculator.tsx';
+import DustAttackCalculator from '../../components/DustAttackCalculator.tsx';
+import FlashLoanCalculator from '../../components/FlashLoanCalculator.tsx';
+import GasOptimizationCalculator from '../../components/GasOptimizationCalculator.tsx';
+import GovernanceVotingCalculator from '../../components/GovernanceVotingCalculator.tsx';
+import NftRarityCalculator from '../../components/NftRarityCalculator.tsx';
+import TokenUnlockCalculator from '../../components/TokenUnlockCalculator.tsx';
+import WhaleAlertCalculator from '../../components/WhaleAlertCalculator.tsx';
 import {
   NON_DEFAULT_LANGS,
   SPEC_CALCULATOR_SLUGS,
@@ -346,4 +361,19 @@ const description = `Free ${routeDef.title}. Calculate crypto outcomes instantly
   {canonicalRouteSlug === 'token-burn-calculator' && <TokenBurnCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'futures-basis-calculator' && <FuturesBasisCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'defi-insurance-calculator' && <DefiInsuranceCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'bitcoin-unit-converter' && <BitcoinUnitConverter slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'cross-chain-bridge-calculator' && <CrossChainBridgeCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'crypto-correlation-calculator' && <CryptoCorrelationCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'crypto-index-fund-calculator' && <CryptoIndexFundCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'crypto-inheritance-calculator' && <CryptoInheritanceCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'crypto-portfolio-rebalance-calculator' && <CryptoPortfolioRebalanceCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'crypto-sentiment-calculator' && <CryptoSentimentCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'defi-yield-aggregator' && <DefiYieldAggregatorCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'dust-attack-calculator' && <DustAttackCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'flash-loan-calculator' && <FlashLoanCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'gas-optimization-calculator' && <GasOptimizationCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'governance-voting-calculator' && <GovernanceVotingCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'nft-rarity-calculator' && <NftRarityCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'token-unlock-calculator' && <TokenUnlockCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'whale-alert-calculator' && <WhaleAlertCalculator slot="calculator" lang={lang} client:load />}
 </LocalizedCalculatorPage>

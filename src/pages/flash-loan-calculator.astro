@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import FlashLoanCalculator from '../components/FlashLoanCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="flash-loan-calculator"
   title="Flash Loan Calculator"
   description="Free Flash Loan Calculator. Estimate flash loan profitability including protocol fees, gas costs, and arbitrage spread for Aave, dYdX, and Uniswap."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <FlashLoanCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

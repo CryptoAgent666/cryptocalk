@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import CryptoPortfolioRebalanceCalculator from '../components/CryptoPortfolioRebalanceCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="crypto-portfolio-rebalance-calculator"
   title="Crypto Portfolio Rebalance Calculator"
   description="Free Crypto Portfolio Rebalance Calculator. Enter current holdings and target weights to see exact buy/sell amounts needed to rebalance your portfolio."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <CryptoPortfolioRebalanceCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

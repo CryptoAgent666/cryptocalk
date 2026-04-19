@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import CryptoInheritanceCalculator from '../components/CryptoInheritanceCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="crypto-inheritance-calculator"
   title="Crypto Inheritance Calculator"
   description="Free Crypto Inheritance Calculator. Plan digital asset succession with multi-sig setup costs, estate tax estimates, and heir distribution modeling."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <CryptoInheritanceCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

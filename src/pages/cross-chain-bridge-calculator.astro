@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import CrossChainBridgeCalculator from '../components/CrossChainBridgeCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="cross-chain-bridge-calculator"
   title="Cross-Chain Bridge Calculator"
   description="Free Cross-Chain Bridge Calculator. Estimate bridge fees, transfer time, and slippage for moving tokens between Ethereum, Arbitrum, Solana, and 20+ chains."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <CrossChainBridgeCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>
