@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import CryptoSentimentCalculator from '../components/CryptoSentimentCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="crypto-sentiment-calculator"
   title="Crypto Sentiment Calculator"
   description="Free Crypto Sentiment Calculator. Aggregate Fear & Greed index, social volume, and funding rates into a single composite sentiment score for any coin."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <CryptoSentimentCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

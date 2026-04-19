@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import DefiYieldAggregatorCalculator from '../components/DefiYieldAggregatorCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="defi-yield-aggregator"
   title="DeFi Yield Aggregator"
   description="Free DeFi Yield Aggregator. Compare real-time APY across Aave, Compound, Lido, and 50+ protocols. Filter by chain, asset, and TVL to find the best yield."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <DefiYieldAggregatorCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

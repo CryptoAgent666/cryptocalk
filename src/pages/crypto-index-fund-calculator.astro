@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import CryptoIndexFundCalculator from '../components/CryptoIndexFundCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="crypto-index-fund-calculator"
   title="Crypto Index Fund Calculator"
   description="Free Crypto Index Fund Calculator. Build a custom crypto index by market cap or equal weight, track allocations, and compare performance vs BTC."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <CryptoIndexFundCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

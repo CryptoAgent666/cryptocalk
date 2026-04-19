@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import BitcoinUnitConverter from '../components/BitcoinUnitConverter.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="bitcoin-unit-converter"
   title="Bitcoin Unit Converter"
   description="Free Bitcoin Unit Converter. Convert between BTC, mBTC, bits, and satoshis instantly. Includes live USD value and a quick-reference denomination table."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <BitcoinUnitConverter slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

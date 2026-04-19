@@ -1,5 +1,6 @@
 ---
 import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import NftRarityCalculator from '../components/NftRarityCalculator.tsx';
 ---
 
 <LocalizedCalculatorPage
@@ -7,8 +8,6 @@ import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro
   slug="nft-rarity-calculator"
   title="NFT Rarity Calculator"
   description="Free NFT Rarity Calculator. Score trait rarity for any NFT collection using statistical rarity, average trait, and information-content methods."
-/>
-
-<style>
-  .calc-wrapper { width: 100%; }
-</style>
+>
+  <NftRarityCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>
