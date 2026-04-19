@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-19] (update 85) — fix: QA bug fixes (exchange-fee-comparator, related-calculators, type narrowing)
+
+### Fixed
+- **CRITICAL: `exchange-fee-comparator` rendering block missing** — 5 localized pages (es/pt/tr/hi/ru) were rendering empty calculator areas. Added rendering block in `[lang]/[...slug].astro` so `ExchangeFeeComparator` component loads for both `exchange-fees` and `exchange-fee-comparator` slugs.
+- **24 missing entries in `related-calculators.ts`** — TypeScript `Record<SpecCalculatorSlug, ...>` type required entries for all 93 slugs. Added related calculator mappings for: arbitrage, stock-to-flow, options, tax-loss-harvesting, restaking, liquid-staking, perpetual-futures, payback-period, dva, bitcoin-energy, on-chain-metrics, grid-trading, inheritance-tax, validator, token-valuation, if-i-had-bought, millionaire, pizza-day, retirement, rainbow-chart, etf-fee, token-burn, futures-basis, defi-insurance.
+- **`number | undefined` type error** in `AsicMiningCalculator.tsx` (lines 174-175) and `GpuMiningCalculator.tsx` (line 172) — added `|| 0` fallback for optional `difficulty24`/`difficulty`/`block_reward24`/`block_reward` fields.
+- Build: 1,175 pages, 0 errors
+
 ## [2026-04-19] (update 84) — fix: 15 shell calculator pages now have working React components
 
 ### Fixed
