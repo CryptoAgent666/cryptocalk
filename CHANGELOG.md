@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-20] (update 93) — fix: rewrite all Turkish SEO body text for clarity
+
+### Fixed
+- **Rewrote all 20 paragraphs** (10 sections × 2) in `seo-body-text.ts` Turkish block
+- Old text was overly ornate/literary ("batış fermanı", "paha biçilmez simya", "efsanevi beton kale") — harmed readability
+- New text is clear, practical, professional Turkish matching Hindi/EN style
+- Affects ~25 TR calculator pages using generic SEO fallback text
+- Build: 1,175 pages, 0 errors
+
 ## [2026-04-20] (update 92) — fix: missing 'Annual Interest Rate (APR)' translation key
 
 ### Fixed
