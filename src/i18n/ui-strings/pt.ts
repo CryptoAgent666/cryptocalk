@@ -1438,6 +1438,7 @@ const dict: Record<string, string> = {
   'Add Asset': 'Adicionar ativo',
   'Additional Investment': 'Investimento adicional',
   'Analysis Horizon (years)': 'Horizonte de análise (anos)',
+  'Annual Interest Rate (APR)': 'Taxa de juros anual (APR)',
   'Annual Interest Rate (APR %)': 'Taxa de juros anual (APR %)',
   'Annual Interest Rate (APY)': 'Taxa de juros anual (APY)',
   'Annual Volatility (%)': 'Volatilidade anual (%)',

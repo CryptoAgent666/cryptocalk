@@ -1438,6 +1438,7 @@ const dict: Record<string, string> = {
   'Add Asset': 'Varlık ekle',
   'Additional Investment': 'Ek yatırım',
   'Analysis Horizon (years)': 'Analiz ufku (yıl)',
+  'Annual Interest Rate (APR)': 'Yıllık faiz oranı (APR)',
   'Annual Interest Rate (APR %)': 'Yıllık faiz oranı (APR %)',
   'Annual Interest Rate (APY)': 'Yıllık faiz oranı (APY)',
   'Annual Volatility (%)': 'Yıllık volatilite (%)',
@@ -2614,6 +2615,7 @@ const dict: Record<string, string> = {
   'Uniswap, Curve': 'Uniswap, Curve',
   'New Protocols': 'Yeni protokoller',
   'BTC Heavy': 'BTC ağırlıklı',
+  'Medium Risk': 'Orta risk',
 };
 
 _registerLang('tr', dict);
