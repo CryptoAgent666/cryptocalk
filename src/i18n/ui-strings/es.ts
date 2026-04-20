@@ -1461,6 +1461,7 @@ const dict: Record<string, string> = {
   'position': 'posición',
   'win rate.': 'tasa de ganancia.',
   // Crypto Loan Calculator
+  'Annual Interest Rate (APR)': 'Tasa de interés anual (APR)',
   'Annual Interest Rate (APR %)': 'Tasa de interés anual (APR %)',
   'Collateral Value (USD)': 'Valor del colateral (USD)',
   'Liquidation LTV %': 'LTV de liquidación %',

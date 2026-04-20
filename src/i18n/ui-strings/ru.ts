@@ -1443,6 +1443,7 @@ const dict: Record<string, string> = {
   'position': 'позиция',
   'win rate.': 'винрейт.',
   // LoanCalculator
+  'Annual Interest Rate (APR)': 'Годовая процентная ставка (APR)',
   'Annual Interest Rate (APR %)': 'Годовая процентная ставка (APR %)',
   'Collateral Value (USD)': 'Стоимость залога (USD)',
   'Liquidation LTV %': 'LTV ликвидации %',
