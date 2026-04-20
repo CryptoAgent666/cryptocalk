@@ -2,6 +2,38 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-19] (update 90) — fix: EN homepage footer missing 2 links
+
+### Fixed
+- **EN homepage inline footer** was missing "Methodology" and "Updates" links in Trust & Legal section (had 5 links vs 7 in SiteFooter.astro used by all other 1,174 pages)
+- Added `<a href="/methodology/">How We Build Calculators</a>` and `<a href="/updates/">Updates</a>` to match shared footer
+- All 1,175 pages now have identical 19-link footer structure
+- Build: 1,175 pages, 0 errors
+
+## [2026-04-19] (update 89) — i18n: ~422 missing Turkish translations for 21 calculator components
+
+### Added
+- **422 new TR translation keys** in `src/i18n/ui-strings/tr.ts` covering all getUiString() keys, scenario labels, and rainbow band names for: RetirementCalculator, RainbowChartCalculator, EtfFeeCalculator, TokenBurnCalculator, FuturesBasisCalculator, DefiInsuranceCalculator, BitcoinUnitConverter, CrossChainBridgeCalculator, CryptoCorrelationCalculator, CryptoIndexFundCalculator, CryptoInheritanceCalculator, CryptoPortfolioRebalanceCalculator, CryptoSentimentCalculator, DefiYieldAggregatorCalculator, DustAttackCalculator, FlashLoanCalculator, GasOptimizationCalculator, GovernanceVotingCalculator, NftRarityCalculator, TokenUnlockCalculator, WhaleAlertCalculator
+- All translations in natural Turkish with correct diacritics (ı, ü, ö, ç, ğ, ş, İ); includes input labels, result labels, scenario presets, hint/helper text, disclaimers, long description strings, rainbow band names, custody recommendations, sentiment signals
+- Zero duplicates; all 2,472 keys validated unique
+- Build: TS clean (0 new errors), total file: 2,621 lines
+
+## [2026-04-19] (update 88) — i18n: ~414 missing Russian translations for 21 calculator components
+
+### Added
+- **~414 new RU translation keys** in `src/i18n/ui-strings/ru.ts` covering all getUiString() keys, scenario labels, and rainbow band names for: RetirementCalculator, RainbowChartCalculator, EtfFeeCalculator, TokenBurnCalculator, FuturesBasisCalculator, DefiInsuranceCalculator, BitcoinUnitConverter, CrossChainBridgeCalculator, CryptoCorrelationCalculator, CryptoIndexFundCalculator, CryptoInheritanceCalculator, CryptoPortfolioRebalanceCalculator, CryptoSentimentCalculator, DefiYieldAggregatorCalculator, DustAttackCalculator, FlashLoanCalculator, GasOptimizationCalculator, GovernanceVotingCalculator, NftRarityCalculator, TokenUnlockCalculator, WhaleAlertCalculator
+- All translations in natural Russian; includes input labels, result labels, scenario presets, hint/helper text, disclaimers, long description strings, rainbow band names, and custody recommendations
+- Zero duplicates; all 2,457 keys validated unique
+- Build: TS clean (0 new errors), total file: 2,650 lines
+
+## [2026-04-19] (update 87) — i18n: 420 missing Portuguese translations for 22 calculator components
+
+### Added
+- **420 new PT translation keys** in `src/i18n/ui-strings/pt.ts` covering all getUiString() keys, scenario labels, and rainbow band names for: RetirementCalculator, RainbowChartCalculator, EtfFeeCalculator, TokenBurnCalculator, FuturesBasisCalculator, DefiInsuranceCalculator, BitcoinUnitConverter, CrossChainBridgeCalculator, CryptoCorrelationCalculator, CryptoIndexFundCalculator, CryptoInheritanceCalculator, CryptoPortfolioRebalanceCalculator, CryptoSentimentCalculator, DefiYieldAggregatorCalculator, DustAttackCalculator, FlashLoanCalculator, GasOptimizationCalculator, GovernanceVotingCalculator, NftRarityCalculator, TokenUnlockCalculator, WhaleAlertCalculator, PizzaDayCalculator
+- All translations in natural Brazilian Portuguese; includes input labels, result labels, scenario presets, hint/helper text, disclaimers, and long description strings
+- Zero duplicates; all 2,469 keys validated unique
+- Build: TS clean (0 new errors)
+
 ## [2026-04-19] (update 86) — feat: page architecture unification + ~2,280 new translations
 
 ### Added
