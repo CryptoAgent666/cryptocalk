@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-20] (update 91) — fix: 2 missing FundingRateCalculator translations (ES, RU)
+
+### Fixed
+- **ES and RU** were missing 2 `getUiString()` keys for FundingRateCalculator: validation hint and empty-state description
+- Added Spanish and Russian translations for both keys; all 5 non-EN languages now complete
+- Build: 1,175 pages, 0 errors
+
 ## [2026-04-19] (update 90) — fix: EN homepage footer missing 2 links
 
 ### Fixed
