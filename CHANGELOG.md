@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here.
 
+## [2026-04-20] (update 92) — fix: missing 'Annual Interest Rate (APR)' translation key
+
+### Fixed
+- **CompoundInterestCalculator** used `getUiString(lang, 'Annual Interest Rate (APR)')` but all 5 ui-strings files only had `'Annual Interest Rate (APR %)'` (with `%`). Key mismatch caused English fallback on ES/PT/TR/HI/RU pages
+- Added exact-match key to all 5 language files
+- Build: 1,175 pages, 0 errors
+
 ## [2026-04-20] (update 91) — fix: 2 missing FundingRateCalculator translations (ES, RU)
 
 ### Fixed
