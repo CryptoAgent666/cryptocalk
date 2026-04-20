@@ -1850,6 +1850,8 @@ const dict: Record<string, string> = {
   'Coins Purchased': 'Monedas compradas',
   'Failed to fetch price. Please enter manually.': 'Error al obtener el precio. Ingrésalo manualmente.',
   'Failed to search. Check your connection and try again.': 'Error en la búsqueda. Verifica tu conexión e intenta de nuevo.',
+  'Enter a valid position size and funding rate.': 'Ingresa un tamaño de posición y tasa de financiamiento válidos.',
+  'Enter your position size and funding rate to see how much you\'ll pay or receive for holding perpetual futures.': 'Ingresa el tamaño de tu posición y la tasa de financiamiento para ver cuánto pagarás o recibirás por mantener futuros perpetuos.',
   // MillionaireCalculator
   'Time to Reach Goal': 'Tiempo para alcanzar la meta',
   'Current Portfolio': 'Portafolio actual',

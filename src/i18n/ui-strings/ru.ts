@@ -1829,6 +1829,8 @@ const dict: Record<string, string> = {
   'Coins Purchased': 'Купленные монеты',
   'Failed to fetch price. Please enter manually.': 'Не удалось получить цену. Введите вручную.',
   'Failed to search. Check your connection and try again.': 'Поиск не удался. Проверьте подключение и попробуйте снова.',
+  'Enter a valid position size and funding rate.': 'Введите корректный размер позиции и ставку финансирования.',
+  'Enter your position size and funding rate to see how much you\'ll pay or receive for holding perpetual futures.': 'Введите размер позиции и ставку финансирования, чтобы узнать, сколько вы заплатите или получите за удержание бессрочных фьючерсов.',
   // MillionaireCalculator
   'Time to Reach Goal': 'Время достижения цели',
   'Current Portfolio': 'Текущий портфель',
