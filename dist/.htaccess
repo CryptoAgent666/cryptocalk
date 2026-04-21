@@ -1,5 +1,11 @@
 ErrorDocument 404 /404.html
 
+# ── Sitemap aliases (Google/Bing default lookup paths → real sitemap) ──
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^sitemap\.xml$ /sitemap-index.xml [L,R=301]
+</IfModule>
+
 # ── Security Headers ──────────────────────────────────────────────
 <IfModule mod_headers.c>
   Header set X-Frame-Options "SAMEORIGIN"
