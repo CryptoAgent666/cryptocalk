@@ -25,6 +25,19 @@ All notable changes to this project are documented here.
 - Added Spanish and Russian translations for both keys; all 5 non-EN languages now complete
 - Build: 1,175 pages, 0 errors
 
+## [2026-04-20] (update 94) — fix: SEO health — remove 155 noindex pages from sitemap
+
+### Fixed
+- **Root cause**: `SPEC_CALCULATOR_SLUGS` in `astro.config.mjs` was out of sync with `src/i18n/utils.ts` (50 vs 93 slugs). Localized EN-slug aliases (e.g. `/es/calmar-calculator/`) leaked into sitemap with noindex+canonical-to-localized-URL — Ahrefs flagged 155 "noindex page in sitemap" + 155 "non-canonical page in sitemap" errors
+- **astro.config.mjs**: synced SPEC_CALCULATOR_SLUGS with utils.ts (added 43 missing slugs)
+- **public/.htaccess**: added `/sitemap.xml → /sitemap-index.xml` 301 redirect (Google/Bing default lookup path)
+
+### Impact
+- Sitemap: 893 → 738 URLs (155 problem aliases removed)
+- Noindex pages in sitemap: 155 → 0
+- `/sitemap.xml`: 404 → 301 to `/sitemap-index.xml`
+- Should also resolve cascade hreflang issues since aliases removed
+
 ## [2026-04-19] (update 90) — fix: EN homepage footer missing 2 links
 
 ### Fixed
