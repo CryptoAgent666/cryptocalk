@@ -25,6 +25,19 @@ All notable changes to this project are documented here.
 - Added Spanish and Russian translations for both keys; all 5 non-EN languages now complete
 - Build: 1,175 pages, 0 errors
 
+## [2026-04-20] (update 95) — fix: SEO health round 2 — byline link, /calculators/ redirect, meta lengths
+
+### Fixed
+- **Page has links to redirect (611 → ~5)**: byline link in `LocalizedCalculatorPage.astro` was `${prefix}/about` without trailing slash, causing 970+ 301 redirects across ~750 pages. Changed to `${prefix}/about/`
+- **/[lang]/calculators/ 403** (6 pages): added .htaccess rewrites: `/calculators/` and `/[lang]/calculators/` → `/[lang]/#categories`
+- **Meta description >160 chars (18 → 0)**: shortened 7 RU risk/analytics calculator descriptions (drawdown, information-ratio, calmar, treynor, risk-of-ruin, kelly, slippage) + 4 EN (staking-rewards, impermanent-loss, kelly, if-i-had-bought)
+- **Meta description <70 chars (11 → 1)**: expanded localized methodology / editorial-policy / privacy meta descriptions across es/pt/tr/hi/ru in `[lang]/[policy].astro`
+
+### Result
+- 1171/1175 pages with ideal meta description length (70-160 chars) — was 1143/1175
+- Internal redirect links: 970+ → 0
+- Build: 1,175 pages, 0 errors
+
 ## [2026-04-20] (update 94) — fix: SEO health — remove 155 noindex pages from sitemap
 
 ### Fixed
