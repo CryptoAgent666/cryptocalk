@@ -228,7 +228,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'kelly-calculator': {
       title: 'Kelly Criterion Calculator',
-      description: 'Free Kelly Criterion calculator for crypto trading. Find optimal position sizing from win rate and payoff ratio using Kelly, half-Kelly, and quarter-Kelly models.'
+      description: 'Free Kelly Criterion calculator for crypto trading. Find optimal position sizing from win rate and payoff ratio with Kelly, half- and quarter-Kelly.'
     },
     'leverage-calculator': {
       title: 'Leverage Calculator',
@@ -260,7 +260,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'staking-rewards-calculator': {
       title: 'Staking Rewards Calculator',
-      description: 'Free staking rewards calculator. Estimate daily, weekly, and monthly earnings for Ethereum, Solana, Polkadot, Cosmos and other PoS coins with commissions.'
+      description: 'Free staking rewards calculator. Estimate daily, weekly, and monthly earnings for ETH, SOL, DOT, ATOM and other PoS coins with commissions.'
     },
     'trade-expectancy-calculator': {
       title: 'Trade Expectancy Calculator',
@@ -400,7 +400,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'if-i-had-bought': {
       title: 'If I Had Bought Calculator',
-      description: 'Free If I Had Bought Calculator. Discover how much your investment would be worth today if you had bought Bitcoin, Ethereum, or other crypto at historical prices.'
+      description: 'Free If I Had Bought Calculator. See how much your investment would be worth today if you had bought BTC, ETH, or other crypto at historical prices.'
     },
     'millionaire-calculator': {
       title: 'Crypto Millionaire Calculator',
@@ -2378,7 +2378,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'calmar-calculator': {
       title: 'Калькулятор коэффициента Кальмара',
-      description: 'Бесплатный калькулятор коэффициента Кальмара. Рассчитайте соотношение годовой доходности к максимальной просадке и сравните эффективность стратегий с поправкой на риск.'
+      description: 'Калькулятор коэффициента Кальмара: соотношение годовой доходности к максимальной просадке для сравнения стратегий с поправкой на риск.'
     },
     'compound-interest-calculator': {
       title: 'Калькулятор сложного процента для крипто',
@@ -2386,7 +2386,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'drawdown-calculator': {
       title: 'Калькулятор восстановления после просадки',
-      description: 'Бесплатный калькулятор просадки. Измерьте глубину просадки портфеля, необходимый для восстановления прирост и расчётное время восстановления на основе месячной доходности.'
+      description: 'Калькулятор просадки портфеля: глубина drawdown, прирост для восстановления и расчётное время восстановления на основе месячной доходности.'
     },
     'gas-fee-calculator': {
       title: 'Калькулятор комиссии газа',
@@ -2394,11 +2394,11 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'information-ratio-calculator': {
       title: 'Калькулятор информационного коэффициента',
-      description: 'Бесплатный калькулятор информационного коэффициента. Сравните активную доходность портфеля с бенчмарком, используя активный доход и ошибку отслеживания (tracking error).'
+      description: 'Калькулятор информационного коэффициента: сравните активную доходность портфеля с бенчмарком через активный доход и tracking error.'
     },
     'kelly-calculator': {
       title: 'Калькулятор критерия Келли',
-      description: 'Бесплатный калькулятор критерия Келли. Найдите оптимальный размер позиции по винрейту и коэффициенту выплат с моделями полного Келли, полу-Келли и четверть-Келли.'
+      description: 'Калькулятор критерия Келли: оптимальный размер позиции по винрейту и payoff ratio с моделями full, half и quarter Kelly.'
     },
     'leverage-calculator': {
       title: 'Калькулятор кредитного плеча',
@@ -2414,7 +2414,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'risk-of-ruin-calculator': {
       title: 'Калькулятор риска разорения',
-      description: 'Бесплатный калькулятор риска разорения. Оцените вероятность потери торгового счёта на основе винрейта, соотношения риск/доходность и фиксированного риска на сделку.'
+      description: 'Калькулятор риска разорения: вероятность потери счёта по винрейту, соотношению риск/доходность и фиксированному риску на сделку.'
     },
     'sharpe-calculator': {
       title: 'Калькулятор коэффициента Шарпа',
@@ -2422,7 +2422,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'slippage-calculator': {
       title: 'Калькулятор проскальзывания DEX',
-      description: 'Бесплатный калькулятор проскальзывания DEX. Оцените слиппидж свопа, минимально получаемую сумму и полную стоимость исполнения для сделок на Uniswap и других DEX.'
+      description: 'Калькулятор проскальзывания DEX: оцените слиппидж свопа, минимальную получаемую сумму и полную стоимость исполнения на Uniswap.'
     },
     'sortino-calculator': {
       title: 'Калькулятор коэффициента Сортино',
@@ -2438,7 +2438,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'treynor-calculator': {
       title: 'Калькулятор коэффициента Трейнора',
-      description: 'Бесплатный калькулятор коэффициента Трейнора. Измерьте доходность на единицу рыночного риска (бета) и оцените эффективность стратегии относительно безрисковой ставки.'
+      description: 'Калькулятор коэффициента Трейнора: доходность на единицу рыночного риска (бета) и эффективность стратегии относительно безрисковой ставки.'
     },
     'var-calculator': {
       title: 'Калькулятор стоимости под риском (VaR)',
