@@ -6,8 +6,9 @@ ErrorDocument 404 /404.html
   RewriteRule ^sitemap\.xml$ /sitemap-index.xml [L,R=301]
 
   # /calculators/ → /#categories (no index.html, would otherwise 403)
-  RewriteRule ^calculators/?$ /#categories [L,R=301]
-  RewriteRule ^([a-z]{2})/calculators/?$ /$1/#categories [L,R=301]
+  # NE flag prevents URL-encoding the # fragment marker
+  RewriteRule ^calculators/?$ /#categories [L,R=301,NE]
+  RewriteRule ^([a-z]{2})/calculators/?$ /$1/#categories [L,R=301,NE]
 </IfModule>
 
 # ── Security Headers ──────────────────────────────────────────────
