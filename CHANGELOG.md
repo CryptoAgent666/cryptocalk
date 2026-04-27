@@ -25,6 +25,13 @@ All notable changes to this project are documented here.
 - Added Spanish and Russian translations for both keys; all 5 non-EN languages now complete
 - Build: 1,175 pages, 0 errors
 
+## [2026-04-20] (update 96) — fix: NE flag for /calculators/ redirect to preserve # fragment
+
+### Fixed
+- Apache was URL-encoding `#` to `%23` in update 95's redirect, sending `/calculators/` → `/%23categories` (404)
+- Added `NE` (No Escape) flag to RewriteRule so redirect properly resolves to `/#categories`
+- Verified live: `301 → https://cryptocalk.com/#categories` (200)
+
 ## [2026-04-20] (update 95) — fix: SEO health round 2 — byline link, /calculators/ redirect, meta lengths
 
 ### Fixed
