@@ -140,7 +140,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
         setError('');
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd,eur,gbp,brl,try,inr,rub&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`
+                `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd,eur,gbp,brl,try,inr,rub&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || ''}`
             );
             if (!res.ok) throw new Error(getUiString(lang, 'Failed to fetch prices'));
             const data = await res.json();

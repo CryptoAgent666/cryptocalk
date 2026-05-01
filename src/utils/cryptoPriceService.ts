@@ -7,8 +7,8 @@
  * CoinCap (api.coincap.io) removed — domain is down as of 2026-03.
  */
 
-const COINGECKO_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
-const CRYPTOCOMPARE_KEY = import.meta.env.PUBLIC_CRYPTOCOMPARE_API_KEY || 'REMOVED_CRYPTOCOMPARE_KEY';
+const COINGECKO_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || '';
+const CRYPTOCOMPARE_KEY = import.meta.env.PUBLIC_CRYPTOCOMPARE_API_KEY || '';
 
 // ═══════════════════════════════════════════════
 // ID Mapping: CoinGecko ID → CryptoCompare symbol

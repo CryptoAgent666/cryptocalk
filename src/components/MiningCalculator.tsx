@@ -109,7 +109,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                 // Fetch BTC price + difficulty in parallel
                 const [priceRes, diffRes] = await Promise.all([
                     fetch(
-                        `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`
+                        `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || ''}`
                     ).then(r => r.ok ? r.json() : null).catch(() => null),
                     fetch('https://blockchain.info/q/getdifficulty')
                         .then(r => r.ok ? r.text() : null).catch(() => null),

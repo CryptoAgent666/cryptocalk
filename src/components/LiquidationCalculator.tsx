@@ -99,7 +99,7 @@ function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
-    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || '';
 
     const currentExchange = EXCHANGES.find((e) => e.id === exchange)!;
 

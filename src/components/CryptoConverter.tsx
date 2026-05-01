@@ -69,7 +69,7 @@ function CryptoConverter({ lang = 'en' }: { lang?: string }) {
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const fromRef = useRef<HTMLDivElement>(null);
     const toRef = useRef<HTMLDivElement>(null);
-    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || '';
 
     // Close dropdowns on outside click
     useEffect(() => {

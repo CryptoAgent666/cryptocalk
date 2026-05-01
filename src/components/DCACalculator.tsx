@@ -106,7 +106,7 @@ function DCACalculator({ lang = 'en' }: { lang?: string }) {
             return;
         }
         try {
-            const apiKey = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
+            const apiKey = import.meta.env.PUBLIC_COINGECKO_API_KEY || '';
             const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${apiKey}`);
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
