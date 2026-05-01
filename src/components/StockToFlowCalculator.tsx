@@ -42,7 +42,7 @@ function StockToFlowCalculator({ lang = 'en' }: { lang?: string }) {
     const [priceError, setPriceError] = useState('');
     const fetchedRef = useRef(false);
 
-    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || '';
 
     // Auto-fetch BTC price on mount
     useEffect(() => {

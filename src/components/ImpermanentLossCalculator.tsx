@@ -73,7 +73,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
         setLoading(true);
         setSearchError('');
         try {
-            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`);
+            const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || ''}`);
             if (!res.ok) throw new Error('Search failed');
             const data = await res.json();
             setter((data.coins || []).slice(0, 6).map((c: { id: string; name: string; symbol: string; thumb: string }) => ({

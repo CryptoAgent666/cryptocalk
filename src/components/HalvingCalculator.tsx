@@ -92,7 +92,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
 
     // Fetch BTC price on mount
     useEffect(() => {
-        fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`)
+        fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || ''}`)
             .then(r => r.json())
             .then(d => { if (d.bitcoin?.usd) setBtcPrice(String(d.bitcoin.usd)); })
             .catch(() => { setNetworkError(true); });

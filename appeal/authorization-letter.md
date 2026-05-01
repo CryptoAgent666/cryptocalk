@@ -26,8 +26,8 @@ I, **Konstantin Iakovlev**, hereby declare and confirm the following:
 ## Evidence of Website Ownership
 
 - **Domain registrant:** Konstantin Iakovlev (verifiable via WHOIS for cryptocalk.com)
-- **Hosting:** Plesk panel at cloud-7.hoster.kz (server 89.35.125.22), account holder: Занимаем.KZ
-- **GitHub repository:** github.com/CryptoAgent666/cryptocalk (private, sole contributor)
+- **Hosting:** Plesk panel at cloud-7.hoster.kz, account holder: Занимаем.KZ
+- **GitHub repository:** github.com/CryptoAgent666/cryptocalk (sole contributor)
 - **Google Search Console:** cryptocalk.com verified under the same Google account as this Play Console
 - **Google Analytics:** Property G-BVPMVV27NH configured for cryptocalk.com under the same account
 

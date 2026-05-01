@@ -115,7 +115,7 @@ function MarketCapCalculator({ lang = 'en' }: { lang?: string }) {
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
-    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || '';
 
     // Fetch top coin market caps on mount
     useEffect(() => {

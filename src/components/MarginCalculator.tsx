@@ -86,7 +86,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
     const searchTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const suggestionsRef = useRef<HTMLDivElement>(null);
-    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || '';
 
     // Coin search
     const searchCoins = useCallback(async (query: string) => {

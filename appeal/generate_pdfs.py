@@ -111,7 +111,7 @@ def build_authorization_letter():
     evidence_data = [
         ["Evidence", "Details"],
         ["Domain registrant", "Konstantin Iakovlev (verifiable via WHOIS for cryptocalk.com)"],
-        ["Hosting", "Plesk panel at cloud-7.hoster.kz (89.35.125.22), account: Zainimaem.KZ"],
+        ["Hosting", "Plesk panel at cloud-7.hoster.kz, account: Zainimaem.KZ"],
         ["Source code", "github.com/CryptoAgent666/cryptocalk — sole contributor"],
         ["Google Search Console", "cryptocalk.com verified under the same Google account as Play Console"],
         ["Google Analytics", "Property G-BVPMVV27NH for cryptocalk.com, same account"],

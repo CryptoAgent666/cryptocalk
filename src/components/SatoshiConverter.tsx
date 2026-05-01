@@ -37,7 +37,7 @@ function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
         setLoading(true);
         try {
             const res = await fetch(
-                `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY'}`
+                `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || ''}`
             );
             if (!res.ok) throw new Error('Failed to fetch price');
             const data = await res.json();

@@ -66,7 +66,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
     const [searchError, setSearchError] = useState('');
     const dropdownRef = useRef<HTMLDivElement>(null);
     const searchTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
-    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || 'REMOVED_COINGECKO_KEY';
+    const CG_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || '';
 
     // Input state
     const [tokenAmount, setTokenAmount] = useState('');
