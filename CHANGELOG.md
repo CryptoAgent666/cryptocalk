@@ -25,6 +25,26 @@ All notable changes to this project are documented here.
 - Added Spanish and Russian translations for both keys; all 5 non-EN languages now complete
 - Build: 1,175 pages, 0 errors
 
+## [2026-05-01] (update 97) — security: remove leaked keystore + API keys from public repo
+
+### Critical security audit findings & fixes
+- **Android keystore (`cryptocalk-release-key.jks`)** was committed to PUBLIC repo since 2026-03-27 + password `REMOVED_KEYSTORE_PASSWORD` hardcoded in `android/app/build.gradle`. Removed from git tracking, moved password to gitignored `keystore.properties`. Build falls back to debug signing if file missing.
+- **CoinGecko Demo API key** (`REMOVED_COINGECKO_KEY`) hardcoded as fallback in 27 source files. Replaced all with empty-string fallback; real key now loaded from `.env`.
+- **CryptoCompare API key** hardcoded in `cryptoPriceService.ts`. Same env-var migration.
+- **Server IP** `89.35.125.22` removed from `appeal/authorization-letter.md` and `appeal/generate_pdfs.py` (info disclosure).
+- **False "private repo" claim** in authorization-letter corrected (repo is public).
+- Uncommented `*.jks` / `*.keystore` rules in `android/.gitignore`.
+- Added `android/keystore.properties.example` template.
+
+### REMAINING ACTION REQUIRED (manual)
+- Rotate Android keystore via Google Play Console (key still in git history)
+- Rotate CoinGecko Demo API key in their dashboard
+- Rotate CryptoCompare API key
+- Optionally: clean git history with BFG/`git filter-repo` (destructive)
+
+### Build verification
+- 1,175 pages built successfully, 0 errors
+
 ## [2026-04-20] (update 96) — fix: NE flag for /calculators/ redirect to preserve # fragment
 
 ### Fixed
