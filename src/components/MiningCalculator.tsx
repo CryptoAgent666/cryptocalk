@@ -133,7 +133,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                 }
             } catch {
                 setNetwork({
-                    difficulty: 136_000_000_000_000,
+                    difficulty: 145_000_000_000_000, // updated 2026-05-03
                     btcPrice: 77300,
                     blockReward: 3.125,
                 });

@@ -63,11 +63,12 @@ const ASIC_PRESETS: AsicPreset[] = [
     { name: 'Antminer Z15', hashrate: 420, power: 1510, algo: 'Equihash', coin: 'ZEC', price: 3200 },
 ];
 
+// Network data fallbacks updated 2026-05-03 (used when whattomine API unavailable).
 const NETWORK_DATA: Record<string, NetworkData> = {
-    BTC: { difficulty: 136000000000000, blockReward: 3.125, price: 77300, blockTime: 600 },
-    LTC: { difficulty: 25000000, blockReward: 6.25, price: 56, blockTime: 150 },
-    DASH: { difficulty: 200000000, blockReward: 2.31, price: 37, blockTime: 150 },
-    ZEC: { difficulty: 80000000, blockReward: 2.5, price: 337, blockTime: 75 },
+    BTC: { difficulty: 145000000000000, blockReward: 3.125, price: 77300, blockTime: 600 },
+    LTC: { difficulty: 30000000, blockReward: 6.25, price: 56, blockTime: 150 },
+    DASH: { difficulty: 220000000, blockReward: 2.31, price: 37, blockTime: 150 },
+    ZEC: { difficulty: 90000000, blockReward: 2.5, price: 337, blockTime: 75 },
 };
 
 // Map whattomine generic names to our symbols

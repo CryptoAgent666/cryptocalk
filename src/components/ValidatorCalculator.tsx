@@ -13,12 +13,13 @@ interface NetworkConfig {
   slashRisk: string;
 }
 
+// Yields updated 2026-05-03 (post-cycle staking yields normalized).
 const NETWORKS: Record<string, NetworkConfig> = {
-  ethereum: { name: 'Ethereum', ticker: 'ETH', defaultApy: 3.5, defaultPrice: 2400, minStake: 32, defaultHardware: 50, slashRisk: 'Medium' },
-  solana: { name: 'Solana', ticker: 'SOL', defaultApy: 7.0, defaultPrice: 140, minStake: 1, defaultHardware: 300, slashRisk: 'Low' },
-  polkadot: { name: 'Polkadot', ticker: 'DOT', defaultApy: 14.0, defaultPrice: 5, minStake: 250, defaultHardware: 30, slashRisk: 'Medium' },
-  cosmos: { name: 'Cosmos', ticker: 'ATOM', defaultApy: 18.0, defaultPrice: 7, minStake: 1, defaultHardware: 20, slashRisk: 'Low' },
-  avalanche: { name: 'Avalanche', ticker: 'AVAX', defaultApy: 8.0, defaultPrice: 28, minStake: 2000, defaultHardware: 100, slashRisk: 'Low' },
+  ethereum: { name: 'Ethereum', ticker: 'ETH', defaultApy: 2.8, defaultPrice: 2400, minStake: 32, defaultHardware: 50, slashRisk: 'Medium' },
+  solana: { name: 'Solana', ticker: 'SOL', defaultApy: 6.8, defaultPrice: 140, minStake: 1, defaultHardware: 300, slashRisk: 'Low' },
+  polkadot: { name: 'Polkadot', ticker: 'DOT', defaultApy: 13.0, defaultPrice: 5, minStake: 250, defaultHardware: 30, slashRisk: 'Medium' },
+  cosmos: { name: 'Cosmos', ticker: 'ATOM', defaultApy: 17.0, defaultPrice: 7, minStake: 1, defaultHardware: 20, slashRisk: 'Low' },
+  avalanche: { name: 'Avalanche', ticker: 'AVAX', defaultApy: 6.5, defaultPrice: 28, minStake: 2000, defaultHardware: 100, slashRisk: 'Low' },
 };
 
 const SCENARIOS = [
@@ -27,7 +28,7 @@ const SCENARIOS = [
     network: 'ethereum',
     stakeAmount: '32',
     tokenPrice: '2400',
-    apy: '3.5',
+    apy: '2.8',
     hardwareCost: '50',
     commission: '0',
     uptime: '99.5',
@@ -68,7 +69,7 @@ function ValidatorCalculator({ lang = 'en' }: { lang?: string }) {
   const [network, setNetwork] = useState('ethereum');
   const [stakeAmount, setStakeAmount] = useState('32');
   const [tokenPrice, setTokenPrice] = useState('2400');
-  const [apy, setApy] = useState('3.5');
+  const [apy, setApy] = useState('2.8');
   const [hardwareCost, setHardwareCost] = useState('50');
   const [commission, setCommission] = useState('0');
   const [uptime, setUptime] = useState('99.5');
@@ -126,7 +127,7 @@ function ValidatorCalculator({ lang = 'en' }: { lang?: string }) {
 
   const reset = () => {
     setNetwork('ethereum'); setStakeAmount('32'); setTokenPrice('2400');
-    setApy('3.5'); setHardwareCost('50'); setCommission('0'); setUptime('99.5');
+    setApy('2.8'); setHardwareCost('50'); setCommission('0'); setUptime('99.5');
   };
 
   return (

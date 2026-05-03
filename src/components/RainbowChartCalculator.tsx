@@ -16,7 +16,8 @@ import { withErrorBoundary } from './ErrorBoundary';
 // Genesis block: January 3, 2009
 const GENESIS_DATE = new Date(2009, 0, 3);
 
-// Logarithmic regression coefficients: log10(price) = a * ln(daysSinceGenesis) + b
+// Logarithmic regression coefficients: log10(price) = a * log10(daysSinceGenesis) + b
+// Calibrated against historical halvings (Trolololo-style Bitcoin Rainbow Chart).
 const COEFF_A = 5.84;
 const COEFF_B = -17.01;
 
@@ -51,7 +52,9 @@ function daysSinceGenesis(): number {
 
 function modelPrice(days: number): number {
   if (days <= 0) return 0;
-  const log10Price = COEFF_A * Math.log(days) + COEFF_B;
+  // Use log10 (not natural log) — formula calibrated for log10/log10 regression.
+  // Bug fix 2026-05-03: was using Math.log() (ln) which yielded nonsensical 10^34 prices.
+  const log10Price = COEFF_A * Math.log10(days) + COEFF_B;
   return Math.pow(10, log10Price);
 }
 

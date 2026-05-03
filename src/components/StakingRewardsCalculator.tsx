@@ -22,14 +22,14 @@ interface CoinSuggestion {
     thumb?: string;
 }
 
-// APY & price defaults updated 2026-04-18.
+// APY & price defaults updated 2026-05-03 (post-cycle staking yields normalized).
 const POPULAR_STAKES = [
-    { name: 'Ethereum', symbol: 'ETH', apy: 3.2, id: 'ethereum' },
-    { name: 'Solana', symbol: 'SOL', apy: 7.0, id: 'solana' },
-    { name: 'Cardano', symbol: 'ADA', apy: 3.2, id: 'cardano' },
-    { name: 'Polkadot', symbol: 'DOT', apy: 11.0, id: 'polkadot' },
+    { name: 'Ethereum', symbol: 'ETH', apy: 2.8, id: 'ethereum' },
+    { name: 'Solana', symbol: 'SOL', apy: 6.8, id: 'solana' },
+    { name: 'Cardano', symbol: 'ADA', apy: 3.0, id: 'cardano' },
+    { name: 'Polkadot', symbol: 'DOT', apy: 10.5, id: 'polkadot' },
     { name: 'Cosmos', symbol: 'ATOM', apy: 13.0, id: 'cosmos' },
-    { name: 'Avalanche', symbol: 'AVAX', apy: 8.5, id: 'avalanche-2' },
+    { name: 'Avalanche', symbol: 'AVAX', apy: 6.5, id: 'avalanche-2' },
 ];
 
 const PERIOD_PRESETS = [30, 90, 180, 365, 730, 1095];

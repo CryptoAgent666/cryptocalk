@@ -1,9 +1,23 @@
-const CACHE_NAME = 'cryptocalk-v4';
+const CACHE_NAME = 'cryptocalk-v3';
 
+// Critical pages to pre-cache on install (local assets)
+const PRECACHE_URLS = [
+  '/',
+  '/favicon.svg',
+  '/icon-192.png',
+  '/icon-512.png',
+  '/manifest.json',
+];
+
+// Install: pre-cache critical assets
 self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_URLS))
+  );
   self.skipWaiting();
 });
 
+// Activate: clean old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -13,50 +27,19 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
+// Fetch strategy:
+// - External requests (API, fonts, etc.): pass through, no caching in SW
+// - _astro/* (hashed assets): Cache-first (immutable, content hashes in filenames)
+// - HTML pages: Cache-first for instant load, no network fallback needed (local files)
+// - Other same-origin assets: Cache-first
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Only handle same-origin requests
+  // Let all external requests pass through unchanged (CoinGecko, Google, fonts)
   if (url.origin !== self.location.origin) return;
 
-  // Navigation requests (page loads) — rewrite directory paths to index.html
-  // This fixes Capacitor local file serving which can't resolve /path/ → /path/index.html
-  if (request.mode === 'navigate') {
-    let path = url.pathname;
-
-    // /profit-calculator/ → /profit-calculator/index.html
-    if (path.endsWith('/')) {
-      path = path + 'index.html';
-    }
-    // /profit-calculator → /profit-calculator/index.html
-    else if (!path.includes('.')) {
-      path = path + '/index.html';
-    }
-
-    const rewrittenUrl = new URL(path, url.origin);
-    const rewrittenRequest = new Request(rewrittenUrl.href, {
-      headers: request.headers,
-      mode: request.mode,
-      credentials: request.credentials,
-      redirect: request.redirect,
-    });
-
-    event.respondWith(
-      fetch(rewrittenRequest)
-        .then((response) => {
-          if (response.ok) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          }
-          return response;
-        })
-        .catch(() => caches.match(request).then((cached) => cached || caches.match('/index.html')))
-    );
-    return;
-  }
-
-  // Hashed assets (_astro/*) — cache-first (immutable)
+  // Hashed Astro assets — cache-first (immutable)
   if (url.pathname.startsWith('/_astro/')) {
     event.respondWith(
       caches.match(request).then((cached) => {
@@ -73,7 +56,23 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Other same-origin assets — cache-first
+  // HTML pages — cache-first (local bundle is always available)
+  if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
+    event.respondWith(
+      caches.match(request).then((cached) => {
+        return cached || fetch(request).then((response) => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          }
+          return response;
+        }).catch(() => caches.match('/'));
+      })
+    );
+    return;
+  }
+
+  // Other same-origin assets — cache-first with fetch fallback
   event.respondWith(
     caches.match(request).then((cached) => {
       if (cached) return cached;
