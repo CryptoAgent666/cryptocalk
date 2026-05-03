@@ -2,6 +2,35 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-04] (update 98) — fix: calculator accuracy audit (May 2026)
+
+### CRITICAL formula bug fixed
+- **RainbowChartCalculator**: model used `Math.log()` (natural log) with coefficients calibrated for `Math.log10()`. Result: produced 10^34 prices instead of realistic ~$155K. Fixed to `Math.log10()`. Validated:
+  - Halving #4 (Apr 2024): model $74K vs actual ~$66K ✓
+  - Halving #3 (May 2020): model $13K vs actual ~$8.5K ✓
+
+### Stale defaults (post-halving normalization)
+- **DifficultyEstimator**: BTC difficulty pills 85/100/113/130 → 100/120/145/170, scenarios use 145T
+- **AsicMiningCalculator**: BTC difficulty fallback 136T → 145T (LTC, DASH, ZEC also bumped)
+- **MiningCalculator**: difficulty fallback 136T → 145T
+- **StakingRewardsCalculator** APYs: ETH 3.2→2.8, SOL 7.0→6.8, ADA 3.2→3.0, DOT 11→10.5, AVAX 8.5→6.5
+- **ValidatorCalculator** ETH APY: 3.5 → 2.8 (default, scenarios, network table)
+- **LiquidStakingCalculator** APYs: Lido 3.5→2.9, Rocket Pool 3.3→2.8, Coinbase 3.0→2.5, Frax 4.0→3.2
+
+### Tax bracket updates (2026 tax year)
+- **US**: 2026 inflation-adjusted brackets ($48,475 / $103,350 / $197,300 / $250,525 / $626,350)
+- **Germany**: personal exemption €11,604 → €12,084 (2026); short-term exemption note updated to €1,000
+- **Australia**: Stage 3 tax cuts (effective 2024-07-01) — 19%→16% low bracket, threshold raised to A$135K/A$190K
+
+### Verified correct (no changes needed across all 93 calculators)
+- All math formulas: Sharpe, Sortino, Calmar, Kelly, Impermanent Loss, Liquidation, Compound Interest, Halving countdown, Position Size, etc.
+- Halving #4 reference date (Apr 20, 2024) and next halving block (1,050,000)
+- ETF Fee expense ratios, ASIC miner specs, Pizza Day historical data, Inflation hedge country rates
+- Bridge fees, Exchange fees, Funding rates, Gas prices
+
+### Build
+- 1,175 pages, 0 errors
+
 ## [2026-04-20] (update 93) — fix: rewrite all Turkish SEO body text for clarity
 
 ### Fixed
