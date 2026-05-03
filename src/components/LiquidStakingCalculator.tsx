@@ -6,11 +6,12 @@ import { withErrorBoundary } from './ErrorBoundary';
 const PROTOCOLS = ['Lido', 'Rocket Pool', 'Coinbase', 'Frax'] as const;
 type Protocol = (typeof PROTOCOLS)[number];
 
+// APYs updated 2026-05-03 (post-cycle ETH staking yields normalized).
 const PROTOCOL_DEFAULTS: Record<Protocol, { apy: number; fee: number; premium: number }> = {
-  Lido: { apy: 3.5, fee: 10, premium: -0.05 },
-  'Rocket Pool': { apy: 3.3, fee: 14, premium: 0.1 },
-  Coinbase: { apy: 3.0, fee: 25, premium: -0.2 },
-  Frax: { apy: 4.0, fee: 10, premium: 0.15 },
+  Lido: { apy: 2.9, fee: 10, premium: -0.05 },
+  'Rocket Pool': { apy: 2.8, fee: 14, premium: 0.1 },
+  Coinbase: { apy: 2.5, fee: 25, premium: -0.2 },
+  Frax: { apy: 3.2, fee: 10, premium: 0.15 },
 };
 
 const SCENARIOS = [
