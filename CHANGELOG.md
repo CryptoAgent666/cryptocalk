@@ -2,6 +2,53 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-04] (update 100) — feat: 10 new calculators + 5 mini-improvements + 195 translations × 5 langs
+
+### MAJOR RELEASE — 11 new calculators (10 from roadmap + 1 spinoff)
+
+**Tier 1 (high SEO):**
+- **MayerMultipleCalculator** — BTC price ÷ 200d MA, zone classification (under/normal/elevated/overheated)
+- **GeometricMeanReturnCalculator** — true compound return vs arithmetic, volatility drag
+- **MstrMnavCalculator** — Bitcoin treasury company premium (MSTR, MetaPlanet, Semler)
+- **LightningNetworkFeeCalculator** — base + ppm × hops, vs on-chain Bitcoin savings
+- **PumpfunBondingCurveCalculator** — Solana memecoin bonding curve, $69K Raydium graduation
+
+**Tier 2 (options + derivatives):**
+- **CoveredCallCalculator** — premium yield, annualized return, payoff diagram
+- **IronCondorCalculator** — 4-leg multi-leg options, breakevens, capital requirement
+- **PerpetualFundingArbitrageCalculator** — long spot + short perp delta-neutral funding harvest
+- **ProfitFactorCalculator** — gross profit / gross loss with rating (spinoff from TradeExpectancy)
+
+**Tier 3 (advanced DeFi):**
+- **ConcentratedLiquidityCalculator** — Uniswap V3 sqrt-price math, capital efficiency
+- **LoopingYieldCalculator** — recursive borrow → re-deposit, leverage = 1/(1−LTV)
+
+### 5 mini-improvements to existing calculators
+1. **EtfFeeCalculator** — added 5 ETH ETFs (ETHA, FETH, ETH, ETHE, ETHV) + extra BTC ETFs (BTCO)
+2. **TaxCalculator** — HIFO cost basis option (Highest In, First Out)
+3. **TaxLossHarvestingCalculator** — wash sale detector (date inputs + 30-day check, loss disallowed warning)
+4. **ValidatorCalculator** — annual slashing probability + expected slash loss in USD
+5. **ProfitFactorCalculator** standalone page (was previously buried in TradeExpectancy)
+
+### Localization
+- **195 new getUiString keys** × 5 languages = 975 translations
+- 5 parallel Opus agents (es/pt/tr/hi/ru) — each ~50K tokens, ~3min runtime
+- Quality: natural style, proper Turkish diacritics, no Hinglish, professional Russian
+- Special handling: "wash sale" → glossed appropriately per language
+- Calculator-meta titles + descriptions × 6 languages = 66 new entries
+- 5 localized slugs per calc × 11 calcs = 55 new slug mappings
+
+### Infrastructure changes
+- `utils.ts`: SPEC_CALCULATOR_SLUGS 97 → 108
+- `astro.config.mjs`: synced sitemap filter
+- `[lang]/[...slug].astro`: 11 new imports + ALIAS_DEFINITIONS + JSX conditions
+- `calculator-category-map.ts`: 11 new mappings (Trading, Investment, DeFi, Gas, P&L)
+
+### Build verification
+- 1,175 → **1,241 pages** (+66 = 11 calcs × 6 langs)
+- 0 TypeScript errors, 0 build errors
+- Sitemap: 738 → 804 URLs
+
 ## [2026-05-04] (update 98) — fix: calculator accuracy audit (May 2026)
 
 ### CRITICAL formula bug fixed
