@@ -68,7 +68,7 @@ function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
   }, [currentDifficulty, expectedChange, dailyRevenue, hashrateShare]);
 
   const reset = () => {
-    setCurrentDifficulty('113');
+    setCurrentDifficulty('145');
     setExpectedChange('8');
     setDailyRevenue('120');
     setHashrateShare('0.0025');
