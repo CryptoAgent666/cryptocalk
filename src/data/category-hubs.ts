@@ -138,6 +138,8 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'Liquid Staking Calculator', href: '/liquid-staking-calculator/' },
       { name: 'Validator Economics', href: '/validator-calculator/' },
       { name: 'DeFi Insurance Calculator', href: '/defi-insurance-calculator/' },
+      { name: 'Concentrated Liquidity (Uniswap V3)', href: '/concentrated-liquidity-calculator/' },
+      { name: 'Looping / Recursive Lending', href: '/looping-yield-calculator/' },
     ],
   },
   {
@@ -179,6 +181,10 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'Retirement / FIRE Calculator', href: '/retirement-calculator/' },
       { name: 'Rainbow Chart Calculator', href: '/rainbow-chart-calculator/' },
       { name: 'Token Burn Calculator', href: '/token-burn-calculator/' },
+      { name: 'Mayer Multiple Calculator', href: '/mayer-multiple-calculator/' },
+      { name: 'Geometric Mean Return', href: '/geometric-mean-return-calculator/' },
+      { name: 'MicroStrategy mNAV Premium', href: '/mstr-mnav-calculator/' },
+      { name: 'Pump.fun Bonding Curve', href: '/pumpfun-bonding-curve-calculator/' },
     ],
   },
   {
@@ -215,6 +221,10 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'On-Chain Metrics', href: '/on-chain-metrics-calculator/' },
       { name: 'Grid Trading Calculator', href: '/grid-trading-calculator/' },
       { name: 'Futures Basis Calculator', href: '/futures-basis-calculator/' },
+      { name: 'Profit Factor Calculator', href: '/profit-factor-calculator/' },
+      { name: 'Covered Call Calculator', href: '/covered-call-calculator/' },
+      { name: 'Iron Condor Calculator', href: '/iron-condor-calculator/' },
+      { name: 'Perpetual Funding Arbitrage', href: '/perpetual-funding-arbitrage-calculator/' },
     ],
   },
   {
@@ -231,6 +241,7 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'Gwei Converter', href: '/gwei-converter' },
       { name: 'DEX Slippage Calculator', href: '/slippage-calculator' },
       { name: 'ETF Fee Calculator', href: '/etf-fee-calculator/' },
+      { name: 'Lightning Network Fee Calculator', href: '/lightning-network-fee-calculator/' },
     ],
   },
 ];
