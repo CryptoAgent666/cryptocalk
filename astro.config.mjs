@@ -117,6 +117,17 @@ const SPEC_CALCULATOR_SLUGS = new Set([
   'token-burn-calculator',
   'futures-basis-calculator',
   'defi-insurance-calculator',
+  'mayer-multiple-calculator',
+  'geometric-mean-return-calculator',
+  'mstr-mnav-calculator',
+  'lightning-network-fee-calculator',
+  'pumpfun-bonding-curve-calculator',
+  'profit-factor-calculator',
+  'covered-call-calculator',
+  'iron-condor-calculator',
+  'perpetual-funding-arbitrage-calculator',
+  'concentrated-liquidity-calculator',
+  'looping-yield-calculator',
 ]);
 
 // EN alias pages that have a canonical spec URL (kept for rich SEO content but not indexed separately)

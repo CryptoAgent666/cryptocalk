@@ -434,6 +434,50 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       title: 'DeFi Insurance Calculator',
       description: 'Free DeFi Insurance Calculator. Estimate whether DeFi insurance is worth the premium — break-even hack size, insured vs uninsured scenarios, yield impact.'
     },
+    'mayer-multiple-calculator': {
+      title: 'Mayer Multiple Calculator',
+      description: 'Free Mayer Multiple Calculator. Compute BTC current price ÷ 200-day moving average. Above 2.4 = historical sell zone; below 1.0 = undervalued buy zone.'
+    },
+    'geometric-mean-return-calculator': {
+      title: 'Geometric Mean Return Calculator',
+      description: 'Free Geometric Mean Return Calculator. Compute true compound return vs arithmetic mean. Reveals volatility drag for crypto and other volatile assets.'
+    },
+    'mstr-mnav-calculator': {
+      title: 'MicroStrategy mNAV Premium Calculator',
+      description: 'Free MicroStrategy mNAV calculator. Compute Bitcoin treasury company premium — MSTR, MetaPlanet, Semler — vs pure BTC NAV. Detect overvaluation.'
+    },
+    'lightning-network-fee-calculator': {
+      title: 'Lightning Network Fee Calculator',
+      description: 'Free Lightning Network fee calculator. Compute routing fees with base + ppm rate per hop. Compare to on-chain Bitcoin fees and find break-even payment size.'
+    },
+    'pumpfun-bonding-curve-calculator': {
+      title: 'Pump.fun Bonding Curve Calculator',
+      description: 'Free Pump.fun bonding curve calculator. Calculate tokens received per SOL invested, slippage, and distance to $69K graduation to Raydium DEX.'
+    },
+    'profit-factor-calculator': {
+      title: 'Profit Factor Calculator',
+      description: 'Free Profit Factor calculator for trading systems. Compute gross profit / gross loss ratio. Above 1.5 = solid edge; above 2.0 = excellent system.'
+    },
+    'covered-call-calculator': {
+      title: 'Covered Call Calculator',
+      description: 'Free Covered Call options calculator. Calculate premium yield, annualized return, breakeven, and assignment risk for selling calls on BTC, ETH holdings.'
+    },
+    'iron-condor-calculator': {
+      title: 'Iron Condor Calculator',
+      description: 'Free Iron Condor multi-leg options calculator. Compute net premium, max profit, max loss, breakevens and full payoff diagram for 4-leg strategy.'
+    },
+    'perpetual-funding-arbitrage-calculator': {
+      title: 'Perpetual Funding Arbitrage Calculator',
+      description: 'Free perpetual funding rate arbitrage calculator. Long spot + short perp = delta-neutral funding harvest. Compute APR, fees, breakeven funding rate.'
+    },
+    'concentrated-liquidity-calculator': {
+      title: 'Concentrated Liquidity (Uniswap V3) Calculator',
+      description: 'Free Uniswap V3 concentrated liquidity calculator. Compute capital efficiency, fee income, IL at range edges. Compare tight vs wide range strategies.'
+    },
+    'looping-yield-calculator': {
+      title: 'Looping / Recursive Lending Calculator',
+      description: 'Free DeFi looping calculator. Recursive borrow → re-deposit for amplified yield. Compute effective leverage, net APR, and liquidation distance.'
+    },
   },
   'es': {
     'converter': {
@@ -867,6 +911,50 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     'defi-insurance-calculator': {
       title: 'Calculadora de Seguro DeFi',
       description: 'Estima si el seguro DeFi vale la prima. Compara escenarios asegurados vs no asegurados, tamaño de hackeo de equilibrio e impacto en rendimiento.'
+    },
+    'mayer-multiple-calculator': {
+      title: 'Calculadora del Múltiplo de Mayer',
+      description: 'Calculadora del Múltiplo de Mayer: precio actual de BTC ÷ media móvil de 200 días. Por encima de 2,4 = zona de venta histórica; por debajo de 1,0 = zona de compra.'
+    },
+    'geometric-mean-return-calculator': {
+      title: 'Calculadora de Media Geométrica de Retornos',
+      description: 'Calcula el retorno compuesto verdadero vs media aritmética. Revela el "drag de volatilidad" en activos volátiles como las criptomonedas.'
+    },
+    'mstr-mnav-calculator': {
+      title: 'Calculadora de Prima mNAV de MicroStrategy',
+      description: 'Calcula la prima de empresas con tesorería en Bitcoin (MSTR, MetaPlanet, Semler) sobre el NAV puro de BTC. Detecta sobrevaloración.'
+    },
+    'lightning-network-fee-calculator': {
+      title: 'Calculadora de Comisiones Lightning Network',
+      description: 'Calcula comisiones de enrutamiento Lightning Network: base + ppm por salto. Compara con comisiones on-chain de Bitcoin.'
+    },
+    'pumpfun-bonding-curve-calculator': {
+      title: 'Calculadora de Curva Bonding de Pump.fun',
+      description: 'Calculadora de curva bonding de Pump.fun: tokens recibidos por SOL invertido, slippage y distancia hasta los $69K para graduarse a Raydium.'
+    },
+    'profit-factor-calculator': {
+      title: 'Calculadora de Factor de Beneficio',
+      description: 'Calculadora de Profit Factor para sistemas de trading. Calcula la ratio beneficio bruto / pérdida bruta. Por encima de 1,5 = ventaja sólida.'
+    },
+    'covered-call-calculator': {
+      title: 'Calculadora de Call Cubierta',
+      description: 'Calculadora de Call Cubierta para opciones cripto. Calcula rendimiento de prima, retorno anualizado, breakeven y riesgo de asignación.'
+    },
+    'iron-condor-calculator': {
+      title: 'Calculadora Iron Condor',
+      description: 'Calculadora Iron Condor de 4 patas. Calcula prima neta, beneficio máx, pérdida máx, breakevens y diagrama de payoff completo.'
+    },
+    'perpetual-funding-arbitrage-calculator': {
+      title: 'Calculadora de Arbitraje de Funding Perpetuo',
+      description: 'Calculadora de arbitraje de funding rate: long spot + short perp = delta-neutral. Calcula APR, comisiones y tasa de funding de equilibrio.'
+    },
+    'concentrated-liquidity-calculator': {
+      title: 'Calculadora de Liquidez Concentrada (Uniswap V3)',
+      description: 'Calculadora de liquidez concentrada Uniswap V3: eficiencia de capital, ingresos por comisiones, IL en bordes del rango.'
+    },
+    'looping-yield-calculator': {
+      title: 'Calculadora de Looping / Préstamo Recursivo',
+      description: 'Calculadora de looping DeFi: borrow → re-deposit recursivo para amplificar rendimiento. Calcula apalancamiento efectivo, APR neto y distancia a liquidación.'
     },
   },
   'pt': {
@@ -1302,6 +1390,50 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       title: 'Calculadora de Seguro DeFi',
       description: 'Avalie se o seguro DeFi vale o prêmio. Compare cenários segurados vs não segurados, tamanho de hack de equilíbrio e impacto no rendimento.'
     },
+    'mayer-multiple-calculator': {
+      title: 'Calculadora do Múltiplo de Mayer',
+      description: 'Calculadora do Múltiplo de Mayer: preço atual do BTC ÷ média móvel de 200 dias. Acima de 2,4 = zona de venda histórica; abaixo de 1,0 = zona de compra.'
+    },
+    'geometric-mean-return-calculator': {
+      title: 'Calculadora de Média Geométrica de Retornos',
+      description: 'Calcule o retorno composto verdadeiro vs média aritmética. Revela o "drag de volatilidade" em ativos voláteis como criptomoedas.'
+    },
+    'mstr-mnav-calculator': {
+      title: 'Calculadora de Prêmio mNAV da MicroStrategy',
+      description: 'Calcule o prêmio de empresas com tesouraria em Bitcoin (MSTR, MetaPlanet, Semler) sobre o NAV puro de BTC.'
+    },
+    'lightning-network-fee-calculator': {
+      title: 'Calculadora de Taxas Lightning Network',
+      description: 'Calcule taxas de roteamento Lightning Network: base + ppm por salto. Compare com taxas on-chain do Bitcoin.'
+    },
+    'pumpfun-bonding-curve-calculator': {
+      title: 'Calculadora de Curva Bonding do Pump.fun',
+      description: 'Calculadora da curva bonding do Pump.fun: tokens recebidos por SOL investido, slippage e distância para os $69K para graduar para Raydium.'
+    },
+    'profit-factor-calculator': {
+      title: 'Calculadora de Fator de Lucro',
+      description: 'Calculadora de Profit Factor para sistemas de trading. Calcule a razão lucro bruto / perda bruta. Acima de 1,5 = vantagem sólida.'
+    },
+    'covered-call-calculator': {
+      title: 'Calculadora de Call Coberta',
+      description: 'Calculadora de Call Coberta para opções cripto. Calcule rendimento de prêmio, retorno anualizado, breakeven e risco de atribuição.'
+    },
+    'iron-condor-calculator': {
+      title: 'Calculadora Iron Condor',
+      description: 'Calculadora Iron Condor de 4 pernas. Calcule prêmio líquido, lucro máx, perda máx, breakevens e diagrama de payoff completo.'
+    },
+    'perpetual-funding-arbitrage-calculator': {
+      title: 'Calculadora de Arbitragem de Funding Perpétuo',
+      description: 'Calculadora de arbitragem de funding rate: long spot + short perp = delta-neutral. Calcule APR, taxas e funding rate de equilíbrio.'
+    },
+    'concentrated-liquidity-calculator': {
+      title: 'Calculadora de Liquidez Concentrada (Uniswap V3)',
+      description: 'Calculadora de liquidez concentrada Uniswap V3: eficiência de capital, receita de taxas, IL nas bordas do range.'
+    },
+    'looping-yield-calculator': {
+      title: 'Calculadora de Looping / Empréstimo Recursivo',
+      description: 'Calculadora de looping DeFi: borrow → re-deposit recursivo para amplificar rendimento. Calcule alavancagem efetiva, APR líquido e distância para liquidação.'
+    },
   },
   'tr': {
     'converter': {
@@ -1735,6 +1867,50 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     'defi-insurance-calculator': {
       title: 'DeFi Sigorta Hesaplayıcı',
       description: 'DeFi sigortasının prim maliyetine değip değmediğini tahmin edin. Sigortalı ve sigortasız senaryoları, denge hack boyutunu karşılaştırın.'
+    },
+    'mayer-multiple-calculator': {
+      title: 'Mayer Çarpanı Hesaplayıcı',
+      description: 'Mayer Çarpanı: BTC güncel fiyatı ÷ 200 günlük hareketli ortalama. 2,4 üzeri = tarihsel satış bölgesi; 1,0 altı = düşük değerli alım bölgesi.'
+    },
+    'geometric-mean-return-calculator': {
+      title: 'Geometrik Ortalama Getiri Hesaplayıcı',
+      description: 'Aritmetik ortalamaya karşı gerçek bileşik getiriyi hesaplar. Volatil varlıklarda "volatilite sürtünmesini" ortaya koyar.'
+    },
+    'mstr-mnav-calculator': {
+      title: 'MicroStrategy mNAV Primi Hesaplayıcı',
+      description: 'Bitcoin hazine şirketlerinin (MSTR, MetaPlanet, Semler) saf BTC NAV üzerindeki primini hesaplar. Aşırı değerlemeyi tespit eder.'
+    },
+    'lightning-network-fee-calculator': {
+      title: 'Lightning Network Ücret Hesaplayıcı',
+      description: 'Lightning Network yönlendirme ücretlerini hesaplar: hop başına temel + ppm. Bitcoin on-chain ücretleriyle karşılaştırma.'
+    },
+    'pumpfun-bonding-curve-calculator': {
+      title: 'Pump.fun Bonding Eğrisi Hesaplayıcı',
+      description: 'Pump.fun bonding eğrisi: yatırılan SOL başına alınan token, slippage ve Raydium\'a geçiş için $69K\'ya kalan mesafe.'
+    },
+    'profit-factor-calculator': {
+      title: 'Kâr Faktörü Hesaplayıcı',
+      description: 'Trading sistemleri için Profit Factor hesaplayıcı. Brüt kâr / brüt zarar oranı. 1,5 üzeri = sağlam avantaj.'
+    },
+    'covered-call-calculator': {
+      title: 'Kapalı Call Hesaplayıcı',
+      description: 'Kripto opsiyonları için Kapalı Call hesaplayıcı. Prim getirisi, yıllık getiri, başabaş ve atama riskini hesaplar.'
+    },
+    'iron-condor-calculator': {
+      title: 'Iron Condor Hesaplayıcı',
+      description: '4 bacaklı Iron Condor opsiyon stratejisi hesaplayıcı. Net prim, maks kâr, maks zarar, başabaş noktaları ve tam payoff diyagramı.'
+    },
+    'perpetual-funding-arbitrage-calculator': {
+      title: 'Perpetual Funding Arbitraj Hesaplayıcı',
+      description: 'Funding rate arbitrajı: long spot + short perp = delta-nötr. APR, ücretler ve başabaş funding rate hesaplar.'
+    },
+    'concentrated-liquidity-calculator': {
+      title: 'Yoğun Likidite (Uniswap V3) Hesaplayıcı',
+      description: 'Uniswap V3 yoğun likidite hesaplayıcı: sermaye verimliliği, ücret geliri, range kenarlarında IL.'
+    },
+    'looping-yield-calculator': {
+      title: 'Looping / Yinelemeli Borç Verme Hesaplayıcı',
+      description: 'DeFi looping hesaplayıcı: yinelemeli borrow → re-deposit ile getiri amplifikasyonu. Etkin kaldıraç, net APR ve likidasyon mesafesi.'
     },
   },
   'hi': {
@@ -2170,6 +2346,50 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       title: 'DeFi बीमा कैलकुलेटर',
       description: 'DeFi बीमा प्रीमियम के लायक है या नहीं, अनुमान लगाएं। बीमित बनाम अबीमित परिदृश्य, ब्रेक-ईवन हैक आकार की तुलना करें।'
     },
+    'mayer-multiple-calculator': {
+      title: 'Mayer मल्टीपल कैलकुलेटर',
+      description: 'Mayer मल्टीपल: BTC वर्तमान कीमत ÷ 200-दिन का मूविंग एवरेज। 2.4 से ऊपर = ऐतिहासिक सेल जोन; 1.0 से नीचे = अंडरवैल्यूड बाय जोन।'
+    },
+    'geometric-mean-return-calculator': {
+      title: 'जियोमेट्रिक मीन रिटर्न कैलकुलेटर',
+      description: 'अंकगणितीय औसत बनाम सच्चा कंपाउंड रिटर्न गणना करता है। क्रिप्टो जैसे वोलाटाइल एसेट्स में "वोलाटिलिटी ड्रैग" प्रकट करता है।'
+    },
+    'mstr-mnav-calculator': {
+      title: 'MicroStrategy mNAV प्रीमियम कैलकुलेटर',
+      description: 'Bitcoin ट्रेज़री कंपनियों (MSTR, MetaPlanet, Semler) के शुद्ध BTC NAV पर प्रीमियम की गणना। ओवरवैल्यूएशन का पता लगाएं।'
+    },
+    'lightning-network-fee-calculator': {
+      title: 'Lightning Network फीस कैलकुलेटर',
+      description: 'Lightning Network रूटिंग फीस की गणना: प्रति हॉप बेस + ppm। Bitcoin ऑन-चेन फीस से तुलना।'
+    },
+    'pumpfun-bonding-curve-calculator': {
+      title: 'Pump.fun बॉन्डिंग कर्व कैलकुलेटर',
+      description: 'Pump.fun बॉन्डिंग कर्व: निवेशित SOL प्रति प्राप्त टोकन, स्लिपेज और Raydium पर ग्रेजुएट होने तक $69K की दूरी।'
+    },
+    'profit-factor-calculator': {
+      title: 'प्रॉफिट फैक्टर कैलकुलेटर',
+      description: 'ट्रेडिंग सिस्टम के लिए Profit Factor कैलकुलेटर। ग्रॉस प्रॉफिट / ग्रॉस लॉस अनुपात। 1.5 से ऊपर = ठोस एज।'
+    },
+    'covered-call-calculator': {
+      title: 'कवर्ड कॉल कैलकुलेटर',
+      description: 'क्रिप्टो ऑप्शंस के लिए Covered Call कैलकुलेटर। प्रीमियम यील्ड, वार्षिक रिटर्न, ब्रेकईवन और असाइनमेंट रिस्क की गणना।'
+    },
+    'iron-condor-calculator': {
+      title: 'Iron Condor कैलकुलेटर',
+      description: '4-लेग्ड Iron Condor मल्टी-लेग ऑप्शन कैलकुलेटर। नेट प्रीमियम, मैक्स प्रॉफिट, मैक्स लॉस, ब्रेकईवन और पूरा पेऑफ डायग्राम।'
+    },
+    'perpetual-funding-arbitrage-calculator': {
+      title: 'पर्पेचुअल फंडिंग आर्बिट्राज कैलकुलेटर',
+      description: 'फंडिंग रेट आर्बिट्राज: long spot + short perp = delta-न्यूट्रल। APR, फीस और ब्रेकईवन फंडिंग रेट की गणना।'
+    },
+    'concentrated-liquidity-calculator': {
+      title: 'कॉन्सेंट्रेटेड लिक्विडिटी (Uniswap V3) कैलकुलेटर',
+      description: 'Uniswap V3 कॉन्सेंट्रेटेड लिक्विडिटी कैलकुलेटर: कैपिटल एफिशिएंसी, फीस इनकम, रेंज एज पर IL।'
+    },
+    'looping-yield-calculator': {
+      title: 'लूपिंग / रिकर्सिव लेंडिंग कैलकुलेटर',
+      description: 'DeFi लूपिंग कैलकुलेटर: रिकर्सिव borrow → re-deposit एम्प्लीफाइड यील्ड के लिए। प्रभावी लीवरेज, नेट APR और लिक्विडेशन दूरी।'
+    },
   },
   'ru': {
     'converter': {
@@ -2603,6 +2823,50 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     'defi-insurance-calculator': {
       title: 'Калькулятор страхования DeFi',
       description: 'Оцените, стоит ли страхование DeFi своей премии. Сравните застрахованные и незастрахованные сценарии и влияние на доходность.'
+    },
+    'mayer-multiple-calculator': {
+      title: 'Калькулятор коэффициента Майера',
+      description: 'Коэффициент Майера: цена BTC ÷ 200-дневная скользящая средняя. Выше 2,4 = историческая зона продажи; ниже 1,0 = недооценённая зона покупки.'
+    },
+    'geometric-mean-return-calculator': {
+      title: 'Калькулятор геометрической средней доходности',
+      description: 'Истинная сложная доходность vs арифметическая средняя. Раскрывает «волатильное проседание» для криптовалют и других волатильных активов.'
+    },
+    'mstr-mnav-calculator': {
+      title: 'Калькулятор премии mNAV MicroStrategy',
+      description: 'Калькулятор премии Bitcoin-treasury компаний (MSTR, MetaPlanet, Semler) над чистым BTC NAV. Выявляйте переоценку.'
+    },
+    'lightning-network-fee-calculator': {
+      title: 'Калькулятор комиссий Lightning Network',
+      description: 'Расчёт комиссий маршрутизации Lightning: base + ppm на хоп. Сравнение с on-chain Bitcoin комиссиями.'
+    },
+    'pumpfun-bonding-curve-calculator': {
+      title: 'Калькулятор бондинг-кривой Pump.fun',
+      description: 'Бондинг-кривая Pump.fun: токенов на инвестированный SOL, проскальзывание и расстояние до $69K для перехода на Raydium.'
+    },
+    'profit-factor-calculator': {
+      title: 'Калькулятор фактора прибыли',
+      description: 'Калькулятор Profit Factor для торговых систем. Отношение валовая прибыль / валовый убыток. Выше 1,5 = надёжное преимущество.'
+    },
+    'covered-call-calculator': {
+      title: 'Калькулятор покрытого колла',
+      description: 'Калькулятор покрытого колла для крипто-опционов. Доходность от премии, годовая доходность, безубыточность и риск исполнения.'
+    },
+    'iron-condor-calculator': {
+      title: 'Калькулятор Iron Condor',
+      description: 'Калькулятор многоногой опционной стратегии Iron Condor (4 ноги). Чистая премия, макс прибыль/убыток, точки безубыточности и payoff.'
+    },
+    'perpetual-funding-arbitrage-calculator': {
+      title: 'Калькулятор арбитража фандинга бессрочных фьючерсов',
+      description: 'Арбитраж фандинга: long спот + short перп = дельта-нейтральный сбор фандинга. APR, комиссии и точка безубыточности.'
+    },
+    'concentrated-liquidity-calculator': {
+      title: 'Калькулятор концентрированной ликвидности (Uniswap V3)',
+      description: 'Калькулятор Uniswap V3 концентрированной ликвидности: эффективность капитала, доход с комиссий, IL на границах диапазона.'
+    },
+    'looping-yield-calculator': {
+      title: 'Калькулятор Looping / рекурсивного кредитования',
+      description: 'DeFi looping: рекурсивное borrow → re-deposit для усиления доходности. Эффективное плечо, чистый APR и расстояние до ликвидации.'
     },
   },
 };

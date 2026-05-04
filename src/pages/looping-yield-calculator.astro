@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import LoopingYieldCalculator from '../components/LoopingYieldCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="looping-yield-calculator"
+  title="Looping / Recursive Lending Calculator"
+  description="DeFi looping calculator: recursive borrow → re-deposit for amplified yield. Compute effective leverage, net APR, gas costs, and liquidation distance."
+>
+  <LoopingYieldCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

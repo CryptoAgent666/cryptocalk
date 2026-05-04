@@ -123,6 +123,18 @@ export const CALCULATOR_CATEGORY: Record<string, CategorySlug> = {
   'token-burn-calculator': 'investment',
   'futures-basis-calculator': 'trading-tools',
   'defi-insurance-calculator': 'defi-yield',
+  // New calculators (May 2026)
+  'mayer-multiple-calculator': 'investment',
+  'geometric-mean-return-calculator': 'investment',
+  'mstr-mnav-calculator': 'investment',
+  'lightning-network-fee-calculator': 'gas-fees',
+  'pumpfun-bonding-curve-calculator': 'profit-loss',
+  'profit-factor-calculator': 'trading-tools',
+  'covered-call-calculator': 'trading-tools',
+  'iron-condor-calculator': 'trading-tools',
+  'perpetual-funding-arbitrage-calculator': 'trading-tools',
+  'concentrated-liquidity-calculator': 'defi-yield',
+  'looping-yield-calculator': 'defi-yield',
 };
 
 /** Human-readable category names per language. */

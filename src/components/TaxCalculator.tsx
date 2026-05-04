@@ -249,6 +249,7 @@ const COUNTRIES: Record<string, CountryConfig> = {
 const METHODS = [
     { id: 'fifo', label: 'FIFO', description: 'First In, First Out — sell your oldest coins first' },
     { id: 'lifo', label: 'LIFO', description: 'Last In, First Out — sell your newest coins first' },
+    { id: 'hifo', label: 'HIFO', description: 'Highest In, First Out — sell coins with the highest cost basis first (best for tax minimization)' },
 ];
 
 const BUY_PRICE_PILLS = ['10000', '30000', '60000', '100000'];

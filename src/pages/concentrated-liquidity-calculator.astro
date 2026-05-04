@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import ConcentratedLiquidityCalculator from '../components/ConcentratedLiquidityCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="concentrated-liquidity-calculator"
+  title="Concentrated Liquidity (Uniswap V3) Calculator"
+  description="Uniswap V3 concentrated liquidity calculator. Compute capital efficiency, fee income, and impermanent loss at range edges. Compare tight vs wide range LP strategies."
+>
+  <ConcentratedLiquidityCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>
