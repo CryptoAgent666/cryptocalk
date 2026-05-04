@@ -19,12 +19,50 @@ interface Results {
     intrinsicValue: number;
     timeValue: number;
     pnlAtExpiry: number;
+    fairValue: number;        // Black-Scholes theoretical price (uses IV + days to expiry)
+    delta: number;            // ∂price/∂spot
+    impliedMispricing: number; // (premium - fairValue) / fairValue × 100
 }
 
 interface PayoffRow {
     label: string;
     spotPrice: number;
     pnl: number;
+}
+
+// Standard normal CDF (Abramowitz & Stegun 7.1.26 approximation, error < 7.5e-8).
+function normalCDF(x: number): number {
+    const a1 = 0.254829592;
+    const a2 = -0.284496736;
+    const a3 = 1.421413741;
+    const a4 = -1.453152027;
+    const a5 = 1.061405429;
+    const p = 0.3275911;
+    const sign = x < 0 ? -1 : 1;
+    const ax = Math.abs(x) / Math.sqrt(2);
+    const t = 1.0 / (1.0 + p * ax);
+    const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-ax * ax);
+    return 0.5 * (1.0 + sign * y);
+}
+
+// Black-Scholes pricing with risk-free rate r=0 (close enough for short-dated crypto options).
+// Returns { price, delta }.
+function blackScholes(spot: number, strike: number, daysToExpiry: number, ivPct: number, isCall: boolean): { price: number; delta: number } {
+    if (spot <= 0 || strike <= 0 || daysToExpiry <= 0 || ivPct <= 0) {
+        return { price: 0, delta: 0 };
+    }
+    const T = daysToExpiry / 365;
+    const sigma = ivPct / 100;
+    const sqrtT = Math.sqrt(T);
+    const d1 = (Math.log(spot / strike) + (0.5 * sigma * sigma) * T) / (sigma * sqrtT);
+    const d2 = d1 - sigma * sqrtT;
+    if (isCall) {
+        const price = spot * normalCDF(d1) - strike * normalCDF(d2);
+        return { price, delta: normalCDF(d1) };
+    } else {
+        const price = strike * normalCDF(-d2) - spot * normalCDF(-d1);
+        return { price, delta: normalCDF(d1) - 1 };
+    }
 }
 
 const SCENARIOS = [
@@ -89,6 +127,8 @@ function OptionsCalculator({ lang = 'en' }: { lang?: string }) {
         const strike = parseFloat(strikePrice) || 0;
         const prem = parseFloat(premium) || 0;
         const qty = parseFloat(contracts) || 0;
+        const days = parseFloat(daysToExpiry) || 0;
+        const ivPct = parseFloat(iv) || 0;
 
         if (spot <= 0 || strike <= 0 || prem <= 0 || qty <= 0) { setResults(null); setPayoffTable([]); return; }
 
@@ -113,8 +153,15 @@ function OptionsCalculator({ lang = 'en' }: { lang?: string }) {
         const maxLoss = totalPremium;
         const maxProfit = optionType === 'put' ? (strike - prem) * qty : Infinity;
 
+        // Black-Scholes fair value (uses IV and days to expiry)
+        const bs = blackScholes(spot, strike, days, ivPct, optionType === 'call');
+        const fairValue = bs.price;
+        const delta = bs.delta;
+        const impliedMispricing = fairValue > 0 ? ((prem - fairValue) / fairValue) * 100 : 0;
+
         setResults({
             breakEven, maxProfit, maxLoss, intrinsicValue, timeValue, pnlAtExpiry,
+            fairValue, delta, impliedMispricing,
         });
 
         // Payoff table at different spot prices
@@ -131,7 +178,7 @@ function OptionsCalculator({ lang = 'en' }: { lang?: string }) {
             };
         });
         setPayoffTable(rows);
-    }, [spotPrice, strikePrice, premium, contracts, optionType]);
+    }, [spotPrice, strikePrice, premium, contracts, optionType, daysToExpiry, iv]);
 
     useEffect(() => { calculate(); }, [calculate]);
 
