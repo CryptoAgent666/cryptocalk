@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import ProfitFactorCalculator from '../components/ProfitFactorCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="profit-factor-calculator"
+  title="Profit Factor Calculator"
+  description="Compute trading system Profit Factor (gross profit / gross loss). Above 1.5 = solid edge, above 2.0 = excellent system. Includes expectancy and rating."
+>
+  <ProfitFactorCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

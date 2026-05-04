@@ -17,9 +17,23 @@ interface Position {
     buyPrice: string;
     currentPrice: string;
     quantity: string;
+    sellDate?: string;        // ISO date YYYY-MM-DD (optional)
+    rebuyDate?: string;       // ISO date YYYY-MM-DD (optional, for wash sale check)
 }
 
-const emptyPosition = (): Position => ({ coin: '', buyPrice: '', currentPrice: '', quantity: '' });
+const emptyPosition = (): Position => ({ coin: '', buyPrice: '', currentPrice: '', quantity: '', sellDate: '', rebuyDate: '' });
+
+// Wash sale rule: repurchasing the same / substantially identical asset within ±30 days disallows the loss.
+// Note: as of 2026, US crypto is NOT subject to wash sale (it's classified as property, not security).
+// However, IRS may apply it; many jurisdictions (UK, AU) DO have similar rules ("bed and breakfasting").
+function detectWashSale(sellDate?: string, rebuyDate?: string): { triggered: boolean; daysGap: number | null } {
+    if (!sellDate || !rebuyDate) return { triggered: false, daysGap: null };
+    const s = new Date(sellDate);
+    const r = new Date(rebuyDate);
+    if (isNaN(s.getTime()) || isNaN(r.getTime())) return { triggered: false, daysGap: null };
+    const daysGap = Math.abs((r.getTime() - s.getTime()) / (1000 * 60 * 60 * 24));
+    return { triggered: daysGap <= 30, daysGap };
+}
 
 const SCENARIOS = [
     {
@@ -94,8 +108,10 @@ function TaxLossHarvestingCalculator({ lang = 'en' }: { lang?: string }) {
         const costBasis = buy * qty;
         const currentValue = current * qty;
         const unrealizedGainLoss = currentValue - costBasis;
-        const harvestable = unrealizedGainLoss < 0 ? Math.abs(unrealizedGainLoss) : 0;
-        return { coin: p.coin || '?', costBasis, currentValue, unrealizedGainLoss, harvestable };
+        const washSale = detectWashSale(p.sellDate, p.rebuyDate);
+        // If wash sale triggered, the loss is DISALLOWED (added to new cost basis instead)
+        const harvestable = unrealizedGainLoss < 0 && !washSale.triggered ? Math.abs(unrealizedGainLoss) : 0;
+        return { coin: p.coin || '?', costBasis, currentValue, unrealizedGainLoss, harvestable, washSale };
     });
 
     const totalHarvestable = positionResults.reduce((sum, r) => sum + r.harvestable, 0);
@@ -209,6 +225,32 @@ function TaxLossHarvestingCalculator({ lang = 'en' }: { lang?: string }) {
                                         step="any" min="0" onFocus={(e) => e.target.select()} />
                                 </div>
                             </div>
+                            {/* Wash sale check (optional dates) */}
+                            <details style={{ marginTop: '8px', fontSize: '0.85rem' }}>
+                                <summary style={{ cursor: 'pointer', color: 'var(--color-text-muted)' }}>
+                                    {getUiString(lang, 'Wash sale check (optional)')}
+                                </summary>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginTop: '8px' }}>
+                                    <div>
+                                        <label style={{ fontSize: '0.75rem' }}>{getUiString(lang, 'Sell date')}</label>
+                                        <input type="date" value={pos.sellDate || ''}
+                                            onChange={(e) => updatePosition(idx, 'sellDate', e.target.value)} />
+                                    </div>
+                                    <div>
+                                        <label style={{ fontSize: '0.75rem' }}>{getUiString(lang, 'Re-buy date')}</label>
+                                        <input type="date" value={pos.rebuyDate || ''}
+                                            onChange={(e) => updatePosition(idx, 'rebuyDate', e.target.value)} />
+                                    </div>
+                                </div>
+                                {positionResults[idx]?.washSale.triggered && (
+                                    <div style={{ marginTop: '8px', padding: '8px', background: 'rgba(239, 68, 68, 0.1)',
+                                        border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '6px', fontSize: '0.8rem' }}>
+                                        <AlertTriangle size={14} style={{ verticalAlign: '-2px', marginRight: '4px' }} />
+                                        <strong>{getUiString(lang, 'Wash sale triggered')}</strong> ({positionResults[idx].washSale.daysGap?.toFixed(0)} {getUiString(lang, 'days gap')}).
+                                        {' '}{getUiString(lang, 'Loss disallowed — added to new position cost basis. Wait >30 days to rebuy.')}
+                                    </div>
+                                )}
+                            </details>
                         </div>
                     ))}
 

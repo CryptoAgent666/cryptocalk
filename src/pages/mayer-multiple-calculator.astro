@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import MayerMultipleCalculator from '../components/MayerMultipleCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="mayer-multiple-calculator"
+  title="Mayer Multiple Calculator"
+  description="Calculate Bitcoin Mayer Multiple (price ÷ 200-day MA). Identify undervalued and overheated zones for entry/exit timing."
+>
+  <MayerMultipleCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

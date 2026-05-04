@@ -21,13 +21,24 @@ interface EtfEntry {
   expenseRatio: number; // as decimal, e.g. 0.0025
 }
 
+// Bitcoin ETFs (launched Jan 2024) and Ethereum ETFs (launched July 2024).
 const ETF_DATA: EtfEntry[] = [
-  { ticker: 'IBIT', name: 'BlackRock', expenseRatio: 0.0025 },
-  { ticker: 'FBTC', name: 'Fidelity', expenseRatio: 0.0025 },
-  { ticker: 'GBTC', name: 'Grayscale', expenseRatio: 0.0150 },
-  { ticker: 'ARKB', name: 'ARK/21Shares', expenseRatio: 0.0021 },
-  { ticker: 'BITB', name: 'Bitwise', expenseRatio: 0.0020 },
-  { ticker: 'BTC', name: 'Direct BTC (Self-Custody)', expenseRatio: 0 },
+  // BTC ETFs
+  { ticker: 'IBIT', name: 'BlackRock iShares Bitcoin (BTC)', expenseRatio: 0.0025 },
+  { ticker: 'FBTC', name: 'Fidelity Wise Origin Bitcoin (BTC)', expenseRatio: 0.0025 },
+  { ticker: 'GBTC', name: 'Grayscale Bitcoin Trust (BTC)', expenseRatio: 0.0150 },
+  { ticker: 'ARKB', name: 'ARK 21Shares Bitcoin (BTC)', expenseRatio: 0.0021 },
+  { ticker: 'BITB', name: 'Bitwise Bitcoin (BTC)', expenseRatio: 0.0020 },
+  { ticker: 'BTCO', name: 'Invesco Galaxy Bitcoin (BTC)', expenseRatio: 0.0025 },
+  // ETH ETFs (added 2026-05-04)
+  { ticker: 'ETHA', name: 'BlackRock iShares Ethereum (ETH)', expenseRatio: 0.0025 },
+  { ticker: 'FETH', name: 'Fidelity Ethereum (ETH)', expenseRatio: 0.0025 },
+  { ticker: 'ETH', name: 'Grayscale Ethereum Mini (ETH)', expenseRatio: 0.0015 },
+  { ticker: 'ETHE', name: 'Grayscale Ethereum (ETH)', expenseRatio: 0.0250 },
+  { ticker: 'ETHV', name: 'VanEck Ethereum (ETH)', expenseRatio: 0.0020 },
+  // Self-custody alternatives
+  { ticker: 'BTC-DIRECT', name: 'Direct BTC (Self-Custody, no fee)', expenseRatio: 0 },
+  { ticker: 'ETH-DIRECT', name: 'Direct ETH (Self-Custody, no fee)', expenseRatio: 0 },
 ];
 
 const PERIOD_PILLS = ['1', '5', '10', '20', '30'];

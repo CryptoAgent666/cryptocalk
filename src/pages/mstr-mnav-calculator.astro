@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import MstrMnavCalculator from '../components/MstrMnavCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="mstr-mnav-calculator"
+  title="MicroStrategy mNAV Premium Calculator"
+  description="Calculate Bitcoin treasury company premium: market cap ÷ (BTC holdings × BTC price). Detect overvaluation in MSTR, MetaPlanet, Semler Scientific and others."
+>
+  <MstrMnavCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

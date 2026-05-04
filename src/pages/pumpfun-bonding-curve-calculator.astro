@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import PumpfunBondingCurveCalculator from '../components/PumpfunBondingCurveCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="pumpfun-bonding-curve-calculator"
+  title="Pump.fun Bonding Curve Calculator"
+  description="Calculate Pump.fun memecoin tokens received per SOL invested, slippage, and distance to $69K market cap graduation to Raydium DEX."
+>
+  <PumpfunBondingCurveCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

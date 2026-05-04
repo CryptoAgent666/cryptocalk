@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import IronCondorCalculator from '../components/IronCondorCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="iron-condor-calculator"
+  title="Iron Condor Calculator"
+  description="Iron Condor 4-leg options strategy calculator. Calculate net premium, max profit, max loss, both breakevens and full payoff diagram for crypto options."
+>
+  <IronCondorCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

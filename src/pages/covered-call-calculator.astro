@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import CoveredCallCalculator from '../components/CoveredCallCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="covered-call-calculator"
+  title="Covered Call Calculator"
+  description="Calculate covered call premium yield, annualized return, breakeven, and assignment risk for selling calls on BTC, ETH or other crypto holdings."
+>
+  <CoveredCallCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

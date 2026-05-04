@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import LightningNetworkFeeCalculator from '../components/LightningNetworkFeeCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="lightning-network-fee-calculator"
+  title="Lightning Network Fee Calculator"
+  description="Calculate Bitcoin Lightning Network routing fees: base + ppm rate per hop. Compare with on-chain fees and find break-even payment size."
+>
+  <LightningNetworkFeeCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

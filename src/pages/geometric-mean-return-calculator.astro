@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import GeometricMeanReturnCalculator from '../components/GeometricMeanReturnCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="geometric-mean-return-calculator"
+  title="Geometric Mean Return Calculator"
+  description="Compute true compound return using geometric mean. Compare to arithmetic mean to reveal volatility drag in crypto and other volatile portfolios."
+>
+  <GeometricMeanReturnCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

@@ -118,12 +118,32 @@ function ValidatorCalculator({ lang = 'en' }: { lang?: string }) {
     const delegateApy = annualRate * (1 - 0.10) * 100;
     const delegateRewardsUSD = stake * (delegateApy / 100) * price;
 
+    // Slashing probability over 1 year (rough estimates, May 2026 data):
+    // ETH solo: ~0.04%/yr correlated penalty + 0.0001/yr solo (mostly client diversity issues)
+    // Major operators (Lido, Coinbase): ~0.005%/yr (institutional infra)
+    // Cosmos / Polkadot: ~0.5-2%/yr (more aggressive slashing rules)
+    const slashRiskRates: Record<string, number> = {
+      ethereum: 0.0004,
+      solana: 0.0001,
+      polkadot: 0.015,
+      cosmos: 0.020,
+      avalanche: 0.0001,
+    };
+    const annualSlashRate = slashRiskRates[network] ?? 0.001;
+    // Probability over 1 year = base_rate (assuming Bernoulli)
+    const slashingProbabilityPct = annualSlashRate * 100;
+    // Expected slash amount: typical ETH initial slash = 1 ETH + correlation penalty up to 50% of stake
+    const typicalSlashFractionOfStake = network === 'ethereum' ? 0.0312 : network === 'cosmos' || network === 'polkadot' ? 0.05 : 0.005;
+    const expectedSlashLossTokens = stake * annualSlashRate * typicalSlashFractionOfStake;
+    const expectedSlashLossUSD = expectedSlashLossTokens * price;
+
     return {
       grossRewardsTokens, netRewardsTokens, grossRewardsUSD, netRewardsUSD,
       operatingCosts, netProfit, roi, breakEvenMonths: breakEven,
       stakeValueUSD, delegateApy, delegateRewardsUSD,
+      slashingProbabilityPct, expectedSlashLossTokens, expectedSlashLossUSD,
     };
-  }, [stakeAmount, tokenPrice, apy, hardwareCost, commission, uptime]);
+  }, [stakeAmount, tokenPrice, apy, hardwareCost, commission, uptime, network]);
 
   const reset = () => {
     setNetwork('ethereum'); setStakeAmount('32'); setTokenPrice('2400');
@@ -208,6 +228,8 @@ function ValidatorCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Stake Value')}</span><span className="result-value">{fmtUSD(result.stakeValueUSD)}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Break-Even')}</span><span className="result-value">{Number.isFinite(result.breakEvenMonths) ? `${fmtNum(result.breakEvenMonths, 1)} ${getUiString(lang, 'months')}` : '—'}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Slashing Risk')}</span><span className="result-value">{getUiString(lang, NETWORKS[network].slashRisk)}</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Slashing Probability (1 yr)')}</span><span className="result-value fee">{result.slashingProbabilityPct.toFixed(3)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected slash loss (1 yr)')}</span><span className="result-value fee">{result.expectedSlashLossTokens.toFixed(6)} {NETWORKS[network].ticker} ({fmtUSD(result.expectedSlashLossUSD)})</span></div>
               </div>
 
               <div className="result-breakdown" style={{ marginTop: '1rem' }}>

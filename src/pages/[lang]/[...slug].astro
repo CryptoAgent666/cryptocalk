@@ -103,6 +103,17 @@ import GovernanceVotingCalculator from '../../components/GovernanceVotingCalcula
 import NftRarityCalculator from '../../components/NftRarityCalculator.tsx';
 import TokenUnlockCalculator from '../../components/TokenUnlockCalculator.tsx';
 import WhaleAlertCalculator from '../../components/WhaleAlertCalculator.tsx';
+import MayerMultipleCalculator from '../../components/MayerMultipleCalculator.tsx';
+import GeometricMeanReturnCalculator from '../../components/GeometricMeanReturnCalculator.tsx';
+import MstrMnavCalculator from '../../components/MstrMnavCalculator.tsx';
+import LightningNetworkFeeCalculator from '../../components/LightningNetworkFeeCalculator.tsx';
+import PumpfunBondingCurveCalculator from '../../components/PumpfunBondingCurveCalculator.tsx';
+import ProfitFactorCalculator from '../../components/ProfitFactorCalculator.tsx';
+import CoveredCallCalculator from '../../components/CoveredCallCalculator.tsx';
+import IronCondorCalculator from '../../components/IronCondorCalculator.tsx';
+import PerpetualFundingArbitrageCalculator from '../../components/PerpetualFundingArbitrageCalculator.tsx';
+import ConcentratedLiquidityCalculator from '../../components/ConcentratedLiquidityCalculator.tsx';
+import LoopingYieldCalculator from '../../components/LoopingYieldCalculator.tsx';
 import {
   NON_DEFAULT_LANGS,
   SPEC_CALCULATOR_SLUGS,
@@ -225,6 +236,17 @@ const ALIAS_DEFINITIONS: Record<SpecCalculatorSlug, AliasDefinition> = {
   'token-burn-calculator': { title: 'Token Burn Rate Calculator' },
   'futures-basis-calculator': { title: 'Futures Basis Calculator' },
   'defi-insurance-calculator': { title: 'DeFi Insurance Calculator' },
+  'mayer-multiple-calculator': { title: 'Mayer Multiple Calculator' },
+  'geometric-mean-return-calculator': { title: 'Geometric Mean Return Calculator' },
+  'mstr-mnav-calculator': { title: 'MicroStrategy mNAV Premium Calculator' },
+  'lightning-network-fee-calculator': { title: 'Lightning Network Fee Calculator' },
+  'pumpfun-bonding-curve-calculator': { title: 'Pump.fun Bonding Curve Calculator' },
+  'profit-factor-calculator': { title: 'Profit Factor Calculator' },
+  'covered-call-calculator': { title: 'Covered Call Calculator' },
+  'iron-condor-calculator': { title: 'Iron Condor Calculator' },
+  'perpetual-funding-arbitrage-calculator': { title: 'Perpetual Funding Arbitrage Calculator' },
+  'concentrated-liquidity-calculator': { title: 'Concentrated Liquidity (Uniswap V3) Calculator' },
+  'looping-yield-calculator': { title: 'Looping / Recursive Lending Calculator' },
 };
 
 interface StaticPathProps {
@@ -377,4 +399,15 @@ const description = `Free ${routeDef.title}. Calculate crypto outcomes instantly
   {canonicalRouteSlug === 'nft-rarity-calculator' && <NftRarityCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'token-unlock-calculator' && <TokenUnlockCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'whale-alert-calculator' && <WhaleAlertCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'mayer-multiple-calculator' && <MayerMultipleCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'geometric-mean-return-calculator' && <GeometricMeanReturnCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'mstr-mnav-calculator' && <MstrMnavCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'lightning-network-fee-calculator' && <LightningNetworkFeeCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'pumpfun-bonding-curve-calculator' && <PumpfunBondingCurveCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'profit-factor-calculator' && <ProfitFactorCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'covered-call-calculator' && <CoveredCallCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'iron-condor-calculator' && <IronCondorCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'perpetual-funding-arbitrage-calculator' && <PerpetualFundingArbitrageCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'concentrated-liquidity-calculator' && <ConcentratedLiquidityCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'looping-yield-calculator' && <LoopingYieldCalculator slot="calculator" lang={lang} client:load />}
 </LocalizedCalculatorPage>

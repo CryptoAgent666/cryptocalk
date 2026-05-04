@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import PerpetualFundingArbitrageCalculator from '../components/PerpetualFundingArbitrageCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="perpetual-funding-arbitrage-calculator"
+  title="Perpetual Funding Arbitrage Calculator"
+  description="Long spot + short perp = delta-neutral funding harvest. Compute APR, fees, breakeven funding rate for crypto cash-and-carry arbitrage strategy."
+>
+  <PerpetualFundingArbitrageCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>
