@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-04] (update 101) — fix: localize 36 missed dynamic labels in 5 langs
+
+### Issue caught in round-2 visual audit
+- 36 dynamic strings (assigned to `result.rating`, `result.direction`, `result.zoneLabel`) were rendering in English on localized pages
+- Most visible: "Collecting funding · Excellent yield" on `/pt/calculadora-arbitragem-funding-perpetuo/` and similar in RU/ES/TR/HI
+- Root cause: initial static-key extraction missed strings that aren't direct `getUiString()` arguments
+
+### Fixed
+- Added 36 keys × 5 languages = 180 new translation entries to es/pt/tr/hi/ru
+- Categories: yield ratings (Excellent/Good/Modest/Marginal/Unprofitable), funding direction (Collecting/Paying), Mayer zones (Buy/Fair/Historical sell), mNAV zones (Discount/Near/Premium/Extreme), Pump.fun ratings (Early/Mid/Late entry, High slippage), Looping ratings (Strong/Modest amplification, Negative carry), LN fee ratings (Negligible/Low/Reasonable/High), Geometric mean drag (Minimal/Low/Moderate/High), Options moneyness (ATM/ITM/OTM)
+- Build: 1,241 pages, 0 errors
+
 ## [2026-05-04] (update 100) — feat: 10 new calculators + 5 mini-improvements + 195 translations × 5 langs
 
 ### MAJOR RELEASE — 11 new calculators (10 from roadmap + 1 spinoff)
