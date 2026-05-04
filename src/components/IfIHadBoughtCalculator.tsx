@@ -23,8 +23,9 @@ interface DatePreset {
   prices: Record<CoinId, number | null>;
 }
 
+// Prices updated 2026-05-03 (used as fallback when API fails — should reflect current market).
 const CURRENT_PRICES: Record<CoinId, number> = {
-  BTC: 77300, ETH: 2419, SOL: 89, BNB: 643, ADA: 0.26, DOT: 1.33, DOGE: 0.15,
+  BTC: 77300, ETH: 2419, SOL: 145, BNB: 643, ADA: 0.55, DOT: 4.20, DOGE: 0.15,
 };
 
 const DATE_PRESETS: DatePreset[] = [
@@ -42,10 +43,11 @@ const DATE_PRESETS: DatePreset[] = [
     prices: { BTC: 69000, ETH: 4800, SOL: 260, BNB: 650, ADA: 3.10, DOT: 55, DOGE: 0.73 } },
   { key: 'ftx', label: 'FTX Crash (Nov 2022)', year: 2022,
     prices: { BTC: 16000, ETH: 1100, SOL: 10, BNB: 250, ADA: 0.30, DOT: 5, DOGE: 0.08 } },
-  { key: '1y-ago', label: '1 Year Ago', year: 2025,
-    prices: { BTC: 65000, ETH: 3200, SOL: 135, BNB: 590, ADA: 0.45, DOT: 7, DOGE: 0.16 } },
-  { key: '6m-ago', label: '6 Months Ago', year: 2025,
-    prices: { BTC: 62000, ETH: 2600, SOL: 140, BNB: 570, ADA: 0.35, DOT: 4, DOGE: 0.12 } },
+  // Updated 2026-05-03 — labelled relative to current date.
+  { key: '1y-ago', label: '1 Year Ago (May 2025)', year: 2025,
+    prices: { BTC: 95000, ETH: 2700, SOL: 175, BNB: 615, ADA: 0.78, DOT: 5.50, DOGE: 0.22 } },
+  { key: '6m-ago', label: '6 Months Ago (Nov 2025)', year: 2025,
+    prices: { BTC: 92000, ETH: 3100, SOL: 200, BNB: 670, ADA: 0.82, DOT: 5.20, DOGE: 0.32 } },
 ];
 
 const COINS: CoinId[] = ['BTC', 'ETH', 'SOL', 'BNB', 'ADA', 'DOT', 'DOGE'];
