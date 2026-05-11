@@ -123,7 +123,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Account Size (USD)')}</label>
+            <label htmlFor="exp-account-size">{getUiString(lang, 'Account Size (USD)')}</label>
             <div className="pills-row">
               {ACCOUNT_SIZE_PRESETS.map((preset) => (
                 <button
@@ -141,7 +141,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Win Rate (%)')}</label>
+            <label htmlFor="exp-win-rate">{getUiString(lang, 'Win Rate (%)')}</label>
             <div className="pills-row">
               {WIN_RATE_PRESETS.map((preset) => (
                 <button
@@ -159,7 +159,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Average Win (R)')}</label>
+            <label htmlFor="exp-avg-win">{getUiString(lang, 'Average Win (R)')}</label>
             <div className="pills-row">
               {AVG_WIN_R_PRESETS.map((preset) => (
                 <button
@@ -175,7 +175,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Average Loss (R)')}</label>
+            <label htmlFor="exp-avg-loss">{getUiString(lang, 'Average Loss (R)')}</label>
             <div className="pills-row">
               {AVG_LOSS_R_PRESETS.map((preset) => (
                 <button
@@ -191,7 +191,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Risk per Trade (%)')}</label>
+            <label htmlFor="exp-risk-trade">{getUiString(lang, 'Risk per Trade (%)')}</label>
             <div className="pills-row">
               {RISK_PER_TRADE_PRESETS.map((preset) => (
                 <button
@@ -209,7 +209,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Trades per Month')}</label>
+            <label htmlFor="exp-trades-month">{getUiString(lang, 'Trades per Month')}</label>
             <div className="pills-row">
               {TRADES_PER_MONTH_PRESETS.map((preset) => (
                 <button

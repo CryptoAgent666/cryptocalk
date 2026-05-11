@@ -94,7 +94,7 @@ function PaybackPeriodCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Initial Investment ($)')}</label>
+            <label htmlFor="pp-inv">{getUiString(lang, 'Initial Investment ($)')}</label>
             <div className="pills-row">
               {[1000, 5000, 10000, 50000].map((p) => (
                 <button key={p} className={`pill-btn ${investment === String(p) ? 'active' : ''}`} onClick={() => setInvestment(String(p))}>${p >= 1000 ? `${p / 1000}k` : p}</button>
@@ -104,7 +104,7 @@ function PaybackPeriodCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Expected Monthly Return (%)')}</label>
+            <label htmlFor="pp-return">{getUiString(lang, 'Expected Monthly Return (%)')}</label>
             <div className="pills-row">
               {[3, 5, 10, 15, 20].map((p) => (
                 <button key={p} className={`pill-btn ${monthlyReturn === String(p) ? 'active' : ''}`} onClick={() => setMonthlyReturn(String(p))}>{p}%</button>
@@ -123,7 +123,7 @@ function PaybackPeriodCalculator({ lang = 'en' }: { lang?: string }) {
 
           {type === 'dca' && (
             <div className="input-group">
-              <label>{getUiString(lang, 'Monthly DCA Amount ($)')}</label>
+              <label htmlFor="pp-dca">{getUiString(lang, 'Monthly DCA Amount ($)')}</label>
               <div className="pills-row">
                 {[100, 250, 500, 1000].map((p) => (
                   <button key={p} className={`pill-btn ${dcaAmount === String(p) ? 'active' : ''}`} onClick={() => setDcaAmount(String(p))}>${p}</button>

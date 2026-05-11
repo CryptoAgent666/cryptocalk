@@ -105,7 +105,7 @@ function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Portfolio Value (USD)')}</label>
+            <label htmlFor="ir-value">{getUiString(lang, 'Portfolio Value (USD)')}</label>
             <div className="pills-row">
               {PORTFOLIO_VALUE_PRESETS.map((preset) => (
                 <button
@@ -130,7 +130,7 @@ function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Portfolio Return (%)')}</label>
+            <label htmlFor="ir-portfolio-return">{getUiString(lang, 'Portfolio Return (%)')}</label>
             <div className="pills-row">
               {PORTFOLIO_RETURN_PRESETS.map((preset) => (
                 <button
@@ -148,7 +148,7 @@ function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Benchmark Return (%)')}</label>
+            <label htmlFor="ir-benchmark-return">{getUiString(lang, 'Benchmark Return (%)')}</label>
             <div className="pills-row">
               {BENCHMARK_RETURN_PRESETS.map((preset) => (
                 <button
@@ -166,7 +166,7 @@ function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Tracking Error (%)')}</label>
+            <label htmlFor="ir-tracking-error">{getUiString(lang, 'Tracking Error (%)')}</label>
             <div className="pills-row">
               {TRACKING_ERROR_PRESETS.map((preset) => (
                 <button
@@ -184,7 +184,7 @@ function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Projection Horizon (years)')}</label>
+            <label htmlFor="ir-years">{getUiString(lang, 'Projection Horizon (years)')}</label>
             <div className="pills-row">
               {HORIZON_YEAR_PRESETS.map((preset) => (
                 <button

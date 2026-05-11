@@ -298,7 +298,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Total Token Allocation */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="vest-total">
                             <Coins size={14} />
                             {getUiString(lang, 'Total Token Allocation')}
                         </label>
@@ -330,7 +330,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Token Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="vest-price">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Token Price')}
                         </label>
@@ -360,7 +360,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* TGE Unlock % */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="vest-tge">
                             <Unlock size={14} />
                             {getUiString(lang, 'TGE Unlock %')}
                             <span className="label-hint">{getUiString(lang, 'Token Generation Event')}</span>
@@ -392,7 +392,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Cliff Period */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="vest-cliff">
                             <Clock size={14} />
                             {getUiString(lang, 'Cliff Period (months)')}
                         </label>
@@ -423,7 +423,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Vesting Duration */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="vest-duration">
                             <Calendar size={14} />
                             {getUiString(lang, 'Vesting Duration (months after cliff)')}
                         </label>

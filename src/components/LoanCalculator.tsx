@@ -173,7 +173,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Collateral Value */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Collateral Value (USD)')}</label>
+                        <label htmlFor="loan-collateral"><DollarSign size={14} /> {getUiString(lang, 'Collateral Value (USD)')}</label>
                         <div className="pills-row">
                             {COLLATERAL_PRESETS.map((preset) => (
                                 <button
@@ -193,7 +193,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* LTV */}
                     <div className="input-group">
-                        <label><Shield size={14} /> {getUiString(lang, 'Loan-to-Value (LTV %)')}</label>
+                        <label htmlFor="loan-ltv"><Shield size={14} /> {getUiString(lang, 'Loan-to-Value (LTV %)')}</label>
                         <div className="pills-row">
                             {LTV_PRESETS.map((v) => (
                                 <button key={v} className={`pill-btn ${ltv === String(v) ? 'active' : ''}`}
@@ -208,7 +208,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* APR */}
                     <div className="input-group">
-                        <label>{getUiString(lang, 'Annual Interest Rate (APR %)')}</label>
+                        <label htmlFor="loan-apr">{getUiString(lang, 'Annual Interest Rate (APR %)')}</label>
                         <div className="pills-row">
                             {APR_PRESETS.map((preset) => (
                                 <button
@@ -242,7 +242,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Margin Call / Liquidation LTV */}
                     <div className="calc-two-col-grid">
                         <div className="input-group">
-                            <label style={{ fontSize: '0.75rem' }}><AlertTriangle size={12} /> {getUiString(lang, 'Margin Call LTV %')}</label>
+                            <label htmlFor="loan-mc" style={{ fontSize: '0.75rem' }}><AlertTriangle size={12} /> {getUiString(lang, 'Margin Call LTV %')}</label>
                             <div className="pills-row">
                                 {MARGIN_CALL_PRESETS.map((preset) => (
                                     <button
@@ -258,7 +258,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                 placeholder="" id="loan-mc" step="1" min="1" max="100" onFocus={(e) => e.target.select()} />
                         </div>
                         <div className="input-group">
-                            <label style={{ fontSize: '0.75rem' }}><TrendingDown size={12} /> {getUiString(lang, 'Liquidation LTV %')}</label>
+                            <label htmlFor="loan-liq" style={{ fontSize: '0.75rem' }}><TrendingDown size={12} /> {getUiString(lang, 'Liquidation LTV %')}</label>
                             <div className="pills-row">
                                 {LIQUIDATION_PRESETS.map((preset) => (
                                     <button

@@ -242,7 +242,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Entry Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="rr-entry-price">
                             <Crosshair size={14} />
                             {getUiString(lang, 'Entry Price')}
                         </label>
@@ -273,7 +273,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Stop-Loss Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="rr-stop-loss">
                             <ShieldAlert size={14} />
                             {getUiString(lang, 'Stop-Loss Price')}
                         </label>
@@ -313,7 +313,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Take-Profit Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="rr-take-profit">
                             <Target size={14} />
                             {getUiString(lang, 'Take-Profit Price')}
                         </label>
@@ -344,7 +344,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Position Size (Optional) */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="rr-position-size">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Position Size')}
                             <span className="label-hint">{getUiString(lang, 'Optional')}</span>

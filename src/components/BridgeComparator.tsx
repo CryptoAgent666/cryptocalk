@@ -76,7 +76,7 @@ function BridgeComparator({ lang = 'en' }: { lang?: string }) {
       <div className="calc-grid">
         <div className="calc-input-panel">
           <div className="input-group">
-            <label><ArrowRightLeft size={14} /> {getUiString(lang, 'Route')}</label>
+            <label htmlFor="bridge-from"><ArrowRightLeft size={14} /> {getUiString(lang, 'Route')}</label>
             <div className="toggle-group" style={{ marginBottom: '8px' }}>
               <button className="toggle-btn active" type="button">{getUiString(lang, 'From')}</button>
               <button className="toggle-btn" type="button">{getUiString(lang, 'To')}</button>
@@ -109,7 +109,7 @@ function BridgeComparator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Amount')}</label>
+            <label htmlFor="bridge-amount">{getUiString(lang, 'Amount')}</label>
             <div className="input-with-prefix">
               <input
                 type="number" inputMode="decimal"

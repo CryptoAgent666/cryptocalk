@@ -97,7 +97,7 @@ function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Portfolio Value')} (USD)</label>
+            <label htmlFor="calmar-value">{getUiString(lang, 'Portfolio Value')} (USD)</label>
             <div className="pills-row">
               {PORTFOLIO_VALUE_PRESETS.map((preset) => (
                 <button
@@ -115,7 +115,7 @@ function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Expected Annual Return')} (%)</label>
+            <label htmlFor="calmar-return">{getUiString(lang, 'Expected Annual Return')} (%)</label>
             <div className="pills-row">
               {ANNUAL_RETURN_PRESETS.map((preset) => (
                 <button
@@ -133,7 +133,7 @@ function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Maximum Drawdown')} (%)</label>
+            <label htmlFor="calmar-dd">{getUiString(lang, 'Maximum Drawdown')} (%)</label>
             <div className="pills-row">
               {MAX_DRAWDOWN_PRESETS.map((preset) => (
                 <button
@@ -151,7 +151,7 @@ function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Projection Horizon')} ({getUiString(lang, 'years')})</label>
+            <label htmlFor="calmar-years">{getUiString(lang, 'Projection Horizon')} ({getUiString(lang, 'years')})</label>
             <div className="pills-row">
               {HORIZON_PRESETS.map((preset) => (
                 <button

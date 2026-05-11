@@ -91,14 +91,14 @@ function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Portfolio Peak Value (USD)')}</label>
+            <label htmlFor="drawdown-peak">{getUiString(lang, 'Portfolio Peak Value (USD)')}</label>
             <div className="input-with-prefix">
               <input type="number" inputMode="decimal" value={peakValue} onChange={(e) => setPeakValue(e.target.value)} min="0" step="any" id="drawdown-peak" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Current Portfolio Value (USD)')}</label>
+            <label htmlFor="drawdown-current">{getUiString(lang, 'Current Portfolio Value (USD)')}</label>
             <div className="input-with-prefix">
               <input type="number" inputMode="decimal" value={currentValue} onChange={(e) => setCurrentValue(e.target.value)} min="0" step="any" id="drawdown-current" onFocus={(e) => e.target.select()} />
             </div>
@@ -123,7 +123,7 @@ function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Assumed Monthly Return for Recovery (%)')}</label>
+            <label htmlFor="drawdown-monthly-return">{getUiString(lang, 'Assumed Monthly Return for Recovery (%)')}</label>
             <div className="pills-row">
               {MONTHLY_RETURN_PRESETS.map((preset) => (
                 <button

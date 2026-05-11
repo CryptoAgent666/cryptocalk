@@ -137,7 +137,7 @@ function DvaCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Total Budget ($)')}</label>
+            <label htmlFor="dva-budget">{getUiString(lang, 'Total Budget ($)')}</label>
             <div className="pills-row">
               {[3000, 6000, 12000, 24000].map((p) => (
                 <button key={p} className={`pill-btn ${budget === String(p) ? 'active' : ''}`} onClick={() => setBudget(String(p))}>${p >= 1000 ? `${p / 1000}k` : p}</button>
@@ -147,7 +147,7 @@ function DvaCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Investment Period (months)')}</label>
+            <label htmlFor="dva-period">{getUiString(lang, 'Investment Period (months)')}</label>
             <div className="pills-row">
               {[6, 12, 18, 24].map((p) => (
                 <button key={p} className={`pill-btn ${period === String(p) ? 'active' : ''}`} onClick={() => setPeriod(String(p))}>{p}mo</button>
@@ -165,7 +165,7 @@ function DvaCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Base Monthly Investment ($)')}</label>
+            <label htmlFor="dva-base">{getUiString(lang, 'Base Monthly Investment ($)')}</label>
             <input type="number" inputMode="decimal" value={baseMo} onChange={(e) => setBaseMo(e.target.value)} min="0" step="any" id="dva-base" onFocus={(e) => e.target.select()} />
           </div>
 
@@ -179,7 +179,7 @@ function DvaCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Starting Asset Price ($)')}</label>
+            <label htmlFor="dva-price">{getUiString(lang, 'Starting Asset Price ($)')}</label>
             <input type="number" inputMode="decimal" value={startPrice} onChange={(e) => setStartPrice(e.target.value)} min="0" step="any" id="dva-price" onFocus={(e) => e.target.select()} />
           </div>
 

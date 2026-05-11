@@ -291,7 +291,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                         <>
                             {/* Annual Salary */}
                             <div className="input-group">
-                                <label>
+                                <label htmlFor="salary-input">
                                     <DollarSign size={14} />
                                     {getUiString(lang, 'Annual Salary')}
                                 </label>
@@ -321,7 +321,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Percent to Convert */}
                             <div className="input-group">
-                                <label>
+                                <label htmlFor="convert-pct-input">
                                     <Percent size={14} />
                                     {getUiString(lang, '% to Convert to Crypto')}
                                 </label>
@@ -371,7 +371,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Conversion Fee */}
                             <div className="input-group">
-                                <label>
+                                <label htmlFor="fee-input">
                                     <Percent size={14} />
                                     {getUiString(lang, 'Conversion Fee')}
                                     <span className="label-hint">{getUiString(lang, 'Exchange/service fee')}</span>
@@ -424,7 +424,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                         <>
                             {/* Crypto Amount per Month */}
                             <div className="input-group">
-                                <label>
+                                <label htmlFor="crypto-amount-input">
                                     <Coins size={14} />
                                     {getUiString(lang, 'Crypto Amount per Month')}
                                 </label>

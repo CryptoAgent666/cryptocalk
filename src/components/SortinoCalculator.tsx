@@ -123,14 +123,14 @@ function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Portfolio Value (USD)')}</label>
+            <label htmlFor="sortino-value">{getUiString(lang, 'Portfolio Value (USD)')}</label>
             <div className="input-with-prefix">
               <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="sortino-value" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Expected Annual Return (%)')}</label>
+            <label htmlFor="sortino-return">{getUiString(lang, 'Expected Annual Return (%)')}</label>
             <div className="pills-row">
               {EXPECTED_RETURN_PRESETS.map((preset) => (
                 <button
@@ -148,7 +148,7 @@ function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Risk-Free Rate (%)')}</label>
+            <label htmlFor="sortino-rf">{getUiString(lang, 'Risk-Free Rate (%)')}</label>
             <div className="pills-row">
               {RISK_FREE_PRESETS.map((preset) => (
                 <button
@@ -166,7 +166,7 @@ function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Downside Deviation (%)')}</label>
+            <label htmlFor="sortino-dd">{getUiString(lang, 'Downside Deviation (%)')}</label>
             <div className="pills-row">
               {DOWNSIDE_DEV_PRESETS.map((preset) => (
                 <button
@@ -184,7 +184,7 @@ function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Projection Horizon (years)')}</label>
+            <label htmlFor="sortino-years">{getUiString(lang, 'Projection Horizon (years)')}</label>
             <div className="pills-row">
               {HORIZON_YEAR_PRESETS.map((preset) => (
                 <button

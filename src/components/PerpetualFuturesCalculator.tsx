@@ -106,17 +106,17 @@ function PerpetualFuturesCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Entry Price ($)')}</label>
+            <label htmlFor="pf-entry">{getUiString(lang, 'Entry Price ($)')}</label>
             <input type="number" inputMode="decimal" value={entry} onChange={(e) => setEntry(e.target.value)} min="0" step="any" id="pf-entry" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Exit Price ($)')}</label>
+            <label htmlFor="pf-exit">{getUiString(lang, 'Exit Price ($)')}</label>
             <input type="number" inputMode="decimal" value={exit} onChange={(e) => setExit(e.target.value)} min="0" step="any" id="pf-exit" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Position Size ($)')}</label>
+            <label htmlFor="pf-size">{getUiString(lang, 'Position Size ($)')}</label>
             <div className="pills-row">
               {[1000, 5000, 10000, 50000].map((p) => (
                 <button key={p} className={`pill-btn ${size === String(p) ? 'active' : ''}`} onClick={() => setSize(String(p))}>${p >= 1000 ? `${p / 1000}k` : p}</button>
@@ -126,7 +126,7 @@ function PerpetualFuturesCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Leverage (x)')}</label>
+            <label htmlFor="pf-lev">{getUiString(lang, 'Leverage (x)')}</label>
             <div className="pills-row">
               {[2, 5, 10, 20, 50].map((l) => (
                 <button key={l} className={`pill-btn ${leverage === String(l) ? 'active' : ''}`} onClick={() => setLeverage(String(l))}>{l}x</button>
@@ -136,12 +136,12 @@ function PerpetualFuturesCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Funding Rate (% per 8h)')}</label>
+            <label htmlFor="pf-funding">{getUiString(lang, 'Funding Rate (% per 8h)')}</label>
             <input type="number" inputMode="decimal" value={funding} onChange={(e) => setFunding(e.target.value)} step="any" id="pf-funding" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Holding Period (hours)')}</label>
+            <label htmlFor="pf-hours">{getUiString(lang, 'Holding Period (hours)')}</label>
             <div className="pills-row">
               {[8, 24, 72, 168].map((h) => (
                 <button key={h} className={`pill-btn ${hours === String(h) ? 'active' : ''}`} onClick={() => setHours(String(h))}>{h}h</button>
@@ -151,12 +151,12 @@ function PerpetualFuturesCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Maker Fee (%)')}</label>
+            <label htmlFor="pf-maker">{getUiString(lang, 'Maker Fee (%)')}</label>
             <input type="number" inputMode="decimal" value={makerFee} onChange={(e) => setMakerFee(e.target.value)} min="0" step="any" id="pf-maker" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Taker Fee (%)')}</label>
+            <label htmlFor="pf-taker">{getUiString(lang, 'Taker Fee (%)')}</label>
             <input type="number" inputMode="decimal" value={takerFee} onChange={(e) => setTakerFee(e.target.value)} min="0" step="any" id="pf-taker" onFocus={(e) => e.target.select()} />
           </div>
 

@@ -250,7 +250,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label>
+                        <label htmlFor="funding-coin-search">
                             <Search size={14} />
                             {getUiString(lang, 'Cryptocurrency (optional)')}
                         </label>
@@ -305,7 +305,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Position Size */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="funding-position-size">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Position Size')}
                         </label>
@@ -335,7 +335,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Funding Rate */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="funding-rate-input">
                             <Percent size={14} />
                             {getUiString(lang, 'Funding Rate (per interval)')}
                         </label>

@@ -933,7 +933,22 @@ function createHub(config: CategoryConfig, lang: Lang, t: Translations): Categor
   const count = tools.length;
   const href = getLocalizedPath(`/calculators/${config.slug}`, lang);
   const intro = buildIntro(description, tools.map((tool) => tool.name), lang);
-  const metaTitle = `${title} Calculators | CryptoCalk`;
+  // Localized "Calculators" word + em-dash separator (consistent with calc pages)
+  const CALC_WORD: Record<Lang, string> = {
+    en: 'Calculators',
+    es: 'Calculadoras',
+    pt: 'Calculadoras',
+    tr: 'Hesaplayıcıları',
+    hi: 'कैलकुलेटर',
+    ru: 'Калькуляторы',
+  };
+  // Grammar-natural ordering per language
+  const metaTitle =
+    lang === 'es' || lang === 'pt'
+      ? `${CALC_WORD[lang]} de ${title} — CryptoCalk`
+      : lang === 'ru'
+        ? `${CALC_WORD[lang]}: ${title} — CryptoCalk`
+        : `${title} ${CALC_WORD[lang] ?? CALC_WORD.en} — CryptoCalk`;
   const metaDescription = buildMetaDescription(description, count, lang);
   let faq = buildFaq(title, tools[0]?.name ?? 'a core calculator', lang);
 

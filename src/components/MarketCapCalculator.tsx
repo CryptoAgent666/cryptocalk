@@ -429,7 +429,7 @@ function MarketCapCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label>
+                        <label htmlFor="mcap-coin-search">
                             <Search size={14} />
                             {getUiString(lang, 'Select Cryptocurrency')}
                         </label>
@@ -517,7 +517,7 @@ function MarketCapCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Target Input */}
                     {mode === 'price' ? (
                         <div className="input-group">
-                            <label>
+                            <label htmlFor="mcap-target-marketcap">
                                 <Target size={14} />
                                 {getUiString(lang, 'Target Market Cap')}
                             </label>
@@ -546,7 +546,7 @@ function MarketCapCalculator({ lang = 'en' }: { lang?: string }) {
                         </div>
                     ) : (
                         <div className="input-group">
-                            <label>
+                            <label htmlFor="mcap-target-price">
                                 <DollarSign size={14} />
                                 {getUiString(lang, 'Target Price')}
                             </label>
@@ -596,7 +596,7 @@ function MarketCapCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Circulating Supply */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="mcap-supply">
                             <BarChart3 size={14} />
                             {getUiString(lang, 'Circulating Supply')}
                             {coinData && (

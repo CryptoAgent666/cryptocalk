@@ -117,14 +117,14 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Portfolio Value (USD)')}</label>
+            <label htmlFor="var-portfolio">{getUiString(lang, 'Portfolio Value (USD)')}</label>
             <div className="input-with-prefix">
               <input type="number" inputMode="decimal" value={portfolioValue} onChange={(e) => setPortfolioValue(e.target.value)} min="0" step="any" id="var-portfolio" onFocus={(e) => e.target.select()} />
             </div>
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Daily Volatility (%)')}</label>
+            <label htmlFor="var-daily-vol">{getUiString(lang, 'Daily Volatility (%)')}</label>
             <div className="pills-row">
               {VOLATILITY_PRESETS.map((preset) => (
                 <button
@@ -142,7 +142,7 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Time Horizon (days)')}</label>
+            <label htmlFor="var-horizon">{getUiString(lang, 'Time Horizon (days)')}</label>
             <div className="pills-row">
               {HORIZON_PRESETS.map((preset) => (
                 <button

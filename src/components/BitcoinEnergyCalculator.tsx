@@ -95,7 +95,7 @@ function BitcoinEnergyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Hashrate (TH/s)')}</label>
+            <label htmlFor="be-hash">{getUiString(lang, 'Hashrate (TH/s)')}</label>
             <div className="pills-row">
               {[140, 500, 5000, 14000].map((p) => (
                 <button key={p} className={`pill-btn ${hashrate === String(p) ? 'active' : ''}`} onClick={() => setHashrate(String(p))}>{p >= 1000 ? `${p / 1000}k` : p}</button>
@@ -105,7 +105,7 @@ function BitcoinEnergyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Power Consumption (W)')}</label>
+            <label htmlFor="be-power">{getUiString(lang, 'Power Consumption (W)')}</label>
             <input type="number" inputMode="decimal" value={power} onChange={(e) => setPower(e.target.value)} min="0" step="any" id="be-power" onFocus={(e) => e.target.select()} />
           </div>
 
@@ -121,7 +121,7 @@ function BitcoinEnergyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Hours of Operation per Day')}</label>
+            <label htmlFor="be-hours">{getUiString(lang, 'Hours of Operation per Day')}</label>
             <div className="pills-row">
               {[8, 12, 18, 24].map((h) => (
                 <button key={h} className={`pill-btn ${hoursPerDay === String(h) ? 'active' : ''}`} onClick={() => setHoursPerDay(String(h))}>{h}h</button>
@@ -131,7 +131,7 @@ function BitcoinEnergyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Electricity Cost ($/kWh)')}</label>
+            <label htmlFor="be-elec">{getUiString(lang, 'Electricity Cost ($/kWh)')}</label>
             <div className="pills-row">
               {[0.05, 0.08, 0.10, 0.15].map((p) => (
                 <button key={p} className={`pill-btn ${elecCost === String(p) ? 'active' : ''}`} onClick={() => setElecCost(String(p))}>${p}</button>
@@ -141,7 +141,7 @@ function BitcoinEnergyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Carbon Offset Price ($/ton)')}</label>
+            <label htmlFor="be-offset">{getUiString(lang, 'Carbon Offset Price ($/ton)')}</label>
             <input type="number" inputMode="decimal" value={offsetPrice} onChange={(e) => setOffsetPrice(e.target.value)} min="0" step="any" id="be-offset" onFocus={(e) => e.target.select()} />
           </div>
 

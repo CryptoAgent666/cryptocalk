@@ -269,7 +269,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
+                        <label htmlFor="margin-coin-search"><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
                                 placeholder={getUiString(lang, 'Search coin...')} id="margin-coin-search" />
@@ -306,7 +306,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Entry Price */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Entry Price')}</label>
+                        <label htmlFor="margin-entry"><DollarSign size={14} /> {getUiString(lang, 'Entry Price')}</label>
                         <div className="pills-row">
                             {ENTRY_PRICE_PILLS.map((preset) => (
                                 <button
@@ -326,7 +326,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Position Size */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Position Size (total value)')}</label>
+                        <label htmlFor="margin-size"><DollarSign size={14} /> {getUiString(lang, 'Position Size (total value)')}</label>
                         <div className="pills-row">
                             {POSITION_SIZE_PILLS.map((preset) => (
                                 <button
@@ -346,7 +346,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Leverage */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="margin-leverage">
                             <Scale size={14} /> {getUiString(lang, 'Leverage')}
                             {highLev && <span style={{ color: '#f97316', fontSize: '0.75rem', marginLeft: '6px' }}>⚠ {getUiString(lang, 'High risk')}</span>}
                         </label>
@@ -366,7 +366,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Wallet Balance */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Wallet Balance (optional)')}</label>
+                        <label htmlFor="margin-wallet"><DollarSign size={14} /> {getUiString(lang, 'Wallet Balance (optional)')}</label>
                         <div className="pills-row">
                             <button
                                 className={`pill-btn ${walletBalance === '' ? 'active' : ''}`}
@@ -395,7 +395,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Maintenance Margin Rate */}
                     <div className="input-group">
-                        <label><Percent size={14} /> {getUiString(lang, 'Maintenance Margin Rate')}</label>
+                        <label htmlFor="margin-mmr"><Percent size={14} /> {getUiString(lang, 'Maintenance Margin Rate')}</label>
                         <div className="pills-row">
                             {[0.4, 0.5, 1.0].map((r) => (
                                 <button key={r} className={`pill-btn ${maintenanceRate === String(r) ? 'active' : ''}`}

@@ -202,7 +202,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="calc-input-panel">
                     {/* Hashrate */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="halving-hashrate">
                             <Cpu size={14} />
                             {getUiString(lang, 'Your Hashrate')}
                         </label>
@@ -232,7 +232,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Electricity Cost */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="halving-electricity">
                             <Zap size={14} />
                             {getUiString(lang, 'Electricity Cost')}
                         </label>
@@ -263,7 +263,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Power Consumption */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="halving-power">
                             <Zap size={14} />
                             {getUiString(lang, 'Power Consumption')}
                         </label>
@@ -293,7 +293,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* BTC Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="halving-btc-price">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Current BTC Price')}
                             {btcPrice && <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>}

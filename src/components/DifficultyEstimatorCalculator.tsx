@@ -93,7 +93,7 @@ function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
           </div>
           <div className="input-group">
-            <label>
+            <label htmlFor="difficulty-current">
               <Activity size={14} />
               {getUiString(lang, 'Current Difficulty (T)')}
             </label>
@@ -113,7 +113,7 @@ function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
           </div>
           <div className="input-group">
-            <label>
+            <label htmlFor="difficulty-change">
               <Percent size={14} />
               {getUiString(lang, 'Expected Difficulty Change (%)')}
             </label>
@@ -133,7 +133,7 @@ function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
           </div>
           <div className="input-group">
-            <label>
+            <label htmlFor="difficulty-revenue">
               <DollarSign size={14} />
               {getUiString(lang, 'Current Daily Revenue (USD)')}
             </label>
@@ -153,7 +153,7 @@ function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
             </div>
           </div>
           <div className="input-group">
-            <label>
+            <label htmlFor="difficulty-share">
               <Percent size={14} />
               {getUiString(lang, 'Your Network Share (fraction)')}
             </label>

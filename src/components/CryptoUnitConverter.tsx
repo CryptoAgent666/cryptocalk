@@ -105,7 +105,7 @@ function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Amount')}</label>
+            <label htmlFor="unit-converter-amount">{getUiString(lang, 'Amount')}</label>
             <input
               type="number" inputMode="decimal"
               value={amount}
@@ -129,7 +129,7 @@ function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label><ArrowRightLeft size={14} /> {getUiString(lang, 'From Unit')}</label>
+            <label htmlFor="unit-from"><ArrowRightLeft size={14} /> {getUiString(lang, 'From Unit')}</label>
             <div className="select-wrap">
               <select className="input-select" value={fromUnit} onChange={(e) => setFromUnit(e.target.value)} id="unit-from">
                 {units.map((unit) => (
@@ -140,7 +140,7 @@ function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'To Unit')}</label>
+            <label htmlFor="unit-to">{getUiString(lang, 'To Unit')}</label>
             <div className="select-wrap">
               <select className="input-select" value={toUnit} onChange={(e) => setToUnit(e.target.value)} id="unit-to">
                 {units.map((unit) => (

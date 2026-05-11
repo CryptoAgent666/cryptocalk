@@ -196,7 +196,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
+                        <label htmlFor="leverage-coin-search"><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
                                 placeholder={getUiString(lang, 'Search coin...')} id="leverage-coin-search" />
@@ -232,7 +232,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Entry Price */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Entry Price')}</label>
+                        <label htmlFor="lev-entry"><DollarSign size={14} /> {getUiString(lang, 'Entry Price')}</label>
                         <div className="pills-row">
                             {ENTRY_PRICE_PILLS.map((preset) => (
                                 <button
@@ -252,7 +252,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Position Size */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Position Size')}</label>
+                        <label htmlFor="lev-size"><DollarSign size={14} /> {getUiString(lang, 'Position Size')}</label>
                         <div className="pills-row">
                             {POSITION_SIZE_PILLS.map((preset) => (
                                 <button
@@ -272,7 +272,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Leverage */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="lev-leverage">
                             <Scale size={14} /> {getUiString(lang, 'Leverage')}
                             {highLev && <span style={{ color: '#f97316', fontSize: '0.75rem', marginLeft: '6px' }}>⚠ {getUiString(lang, 'High risk')}</span>}
                         </label>
@@ -292,7 +292,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Price Change */}
                     <div className="input-group">
-                        <label><ArrowUpDown size={14} /> {getUiString(lang, 'Price Change (%)')}</label>
+                        <label htmlFor="lev-change"><ArrowUpDown size={14} /> {getUiString(lang, 'Price Change (%)')}</label>
                         <div className="pills-row">
                             {PRICE_CHANGE_PRESETS.map((p) => (
                                 <button key={p} className={`pill-btn ${priceChange === String(p) ? 'active' : ''} ${p < 0 ? 'pill-danger' : ''}`}

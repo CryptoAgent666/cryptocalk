@@ -152,7 +152,7 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <div className="input-group">
-                        <label><PiggyBank size={14} /> {getUiString(lang, 'Initial Investment')}</label>
+                        <label htmlFor="ci-initial"><PiggyBank size={14} /> {getUiString(lang, 'Initial Investment')}</label>
                         <div className="pills-row">
                             {INITIAL_PRESETS.map((preset) => (
                                 <button
@@ -171,7 +171,7 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Monthly Contribution')}</label>
+                        <label htmlFor="ci-monthly"><DollarSign size={14} /> {getUiString(lang, 'Monthly Contribution')}</label>
                         <div className="pills-row">
                             {MONTHLY_PRESETS.map((preset) => (
                                 <button
@@ -190,7 +190,7 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <div className="input-group">
-                        <label><Percent size={14} /> {getUiString(lang, 'Annual Interest Rate (APR)')}</label>
+                        <label htmlFor="ci-rate"><Percent size={14} /> {getUiString(lang, 'Annual Interest Rate (APR)')}</label>
                         <div className="pills-row">
                             {APY_PRESETS.map((a) => (
                                 <button key={a} className={`pill-btn ${annualRate === String(a) ? 'active' : ''}`}
@@ -206,7 +206,7 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <div className="input-group">
-                        <label><Calendar size={14} /> {getUiString(lang, 'Investment Period (years)')}</label>
+                        <label htmlFor="ci-years"><Calendar size={14} /> {getUiString(lang, 'Investment Period (years)')}</label>
                         <div className="pills-row">
                             {YEAR_PRESETS.map((y) => (
                                 <button key={y} className={`pill-btn ${years === String(y) ? 'active' : ''}`}

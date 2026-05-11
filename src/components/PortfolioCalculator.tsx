@@ -196,7 +196,7 @@ function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Total Investment */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Total Investment')}</label>
+                        <label htmlFor="pf-total"><DollarSign size={14} /> {getUiString(lang, 'Total Investment')}</label>
                         <div className="pills-row">
                             {TOTAL_INVESTMENT_PRESETS.map((preset) => (
                                 <button

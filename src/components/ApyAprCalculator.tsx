@@ -193,7 +193,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Rate Input */}
                     <div className="input-group">
-                        <label><Percent size={14} /> {mode === 'apr-to-apy' ? getUiString(lang, 'APR (Annual Percentage Rate)') : getUiString(lang, 'APY (Annual Percentage Yield)')}</label>
+                        <label htmlFor="apy-rate"><Percent size={14} /> {mode === 'apr-to-apy' ? getUiString(lang, 'APR (Annual Percentage Rate)') : getUiString(lang, 'APY (Annual Percentage Yield)')}</label>
                         <div className="pills-row">
                             {RATE_PRESETS.map((r) => (
                                 <button key={r} className={`pill-btn ${rateInput === String(r) ? 'active' : ''}`}
@@ -223,7 +223,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Principal */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Principal Amount')}</label>
+                        <label htmlFor="apy-principal"><DollarSign size={14} /> {getUiString(lang, 'Principal Amount')}</label>
                         <div className="pills-row">
                             {PRINCIPAL_PRESETS.map((preset) => (
                                 <button
@@ -243,7 +243,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Period */}
                     <div className="input-group">
-                        <label><Calendar size={14} /> {getUiString(lang, 'Investment Period (years)')}</label>
+                        <label htmlFor="apy-years"><Calendar size={14} /> {getUiString(lang, 'Investment Period (years)')}</label>
                         <div className="pills-row">
                             {YEAR_PRESETS.map((y) => (
                                 <button key={y} className={`pill-btn ${years === String(y) ? 'active' : ''}`}

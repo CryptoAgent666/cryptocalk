@@ -369,7 +369,7 @@ function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label>
+                        <label htmlFor="reverse-roi-coin-search">
                             <Search size={14} />
                             {getUiString(lang, 'Cryptocurrency (optional)')}
                         </label>
@@ -413,7 +413,7 @@ function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Current Token Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="reverse-roi-price">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Current Token Price')}
                             {selectedCoin && (
@@ -446,7 +446,7 @@ function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Investment Amount */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="reverse-roi-investment">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Current Investment Amount')}
                         </label>
@@ -476,7 +476,7 @@ function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Target Profit */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="reverse-roi-target">
                             <Target size={14} />
                             {getUiString(lang, 'Target Profit')}
                         </label>

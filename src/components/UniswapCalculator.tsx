@@ -111,7 +111,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Deposit Amount (USD)')}</label>
+            <label htmlFor="uni-deposit">{getUiString(lang, 'Deposit Amount (USD)')}</label>
             <div className="pills-row">
               {DEPOSIT_PRESETS.map((preset) => (
                 <button
@@ -129,7 +129,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Pool TVL (USD)')}</label>
+            <label htmlFor="uni-tvl">{getUiString(lang, 'Pool TVL (USD)')}</label>
             <div className="pills-row">
               {POOL_TVL_PRESETS.map((preset) => (
                 <button
@@ -147,7 +147,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Pool Daily Volume (USD)')}</label>
+            <label htmlFor="uni-volume">{getUiString(lang, 'Pool Daily Volume (USD)')}</label>
             <div className="pills-row">
               {DAILY_VOLUME_PRESETS.map((preset) => (
                 <button
@@ -176,7 +176,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Price Move')} (%)</label>
+            <label htmlFor="uni-price-move">{getUiString(lang, 'Price Move')} (%)</label>
             <div className="pills-row">
               {PRICE_MOVE_PRESETS.map((preset) => (
                 <button
@@ -195,7 +195,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Farming Period (days)')}</label>
+            <label htmlFor="uni-days">{getUiString(lang, 'Farming Period (days)')}</label>
             <div className="pills-row">
               {FARMING_DAY_PRESETS.map((preset) => (
                 <button

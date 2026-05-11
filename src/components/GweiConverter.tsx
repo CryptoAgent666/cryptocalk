@@ -170,7 +170,7 @@ function GweiConverter({ lang = 'en' }: { lang?: string }) {
                 <div className="calc-input-panel">
                     {/* Amount */}
                     <div className="input-group">
-                        <label><ArrowRightLeft size={14} /> {getUiString(lang, 'Amount')}</label>
+                        <label htmlFor="gwei-amount"><ArrowRightLeft size={14} /> {getUiString(lang, 'Amount')}</label>
                         <input
                             type="text"
                             inputMode="decimal"
@@ -220,7 +220,7 @@ function GweiConverter({ lang = 'en' }: { lang?: string }) {
 
                     {/* ETH Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="gwei-eth-price">
                             <DollarSign size={14} /> {getUiString(lang, 'ETH Price (USD)')}
                             {fetchingPrice && <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginLeft: '8px' }}>{getUiString(lang, 'fetching...')}</span>}
                         </label>

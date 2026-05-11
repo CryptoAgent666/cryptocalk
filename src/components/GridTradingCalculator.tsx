@@ -142,7 +142,7 @@ function GridTradingCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Number of Grids')}</label>
+            <label htmlFor="grid-count">{getUiString(lang, 'Number of Grids')}</label>
             <div className="pills-row">
               {GRID_COUNT_PRESETS.map((p) => (
                 <button key={p} className={`pill-btn ${gridCount === String(p) ? 'active' : ''}`} onClick={() => setGridCount(String(p))}>
