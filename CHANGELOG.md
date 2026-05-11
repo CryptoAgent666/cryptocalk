@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 110) — fix: untranslated scenario chips on 11 new calcs
+
+### Bug
+- Mobile audit on 15 random pages caught: 40 scenario chip labels for Update 100's 11 new calcs (Mayer Multiple, Geometric Mean Return, MSTR mNAV, Lightning Network Fee, Pump.fun Bonding Curve, Profit Factor, Covered Call, Iron Condor, Perpetual Funding Arbitrage, Concentrated Liquidity, Looping Yield) rendered in English on all 5 localized variants (es/pt/tr/hi/ru).
+- Cause: `label:` strings in scenario arrays were passed through `getUiString(lang, s.label)` but had no entries in any `ui-strings/{lang}.ts` file. Fallback to English meant chips like "Bear Bottom", "Accumulation", "Bull Cycle", "Mania Top" stayed in English on `/ru/...`, `/es/...`, etc.
+
+### Fix
+- Added 40 scenario labels × 5 langs = **200 new translations** to `ui-strings/{es,pt,tr,hi,ru}.ts`
+- Examples (RU): "Bear Bottom" → "Медвежье дно", "Mania Top" → "Пик мании", "Tight Wings" → "Узкие крылья"
+- Examples (ES): "Bear Bottom" → "Suelo bajista", "Whale Entry" → "Entrada de ballena"
+- Verified rendered output: `pill-btn">Медвежье дно` on `/ru/kalkulyator-koefficienta-mayera/`, `pill-btn">Suelo bajista` on `/es/calculadora-multiplo-mayer/`
+
+### Build
+- 1,241 pages, 7.07s, TS clean
+
 ## [2026-05-11] (update 109) — added: content uniqueness boost for 11 new calcs
 
 ### Goal
