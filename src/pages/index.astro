@@ -33,9 +33,24 @@ const popularCalculators = [
   { name: 'Portfolio VaR Calculator', href: '/var-calculator/', tag: 'Trending', tagType: 'trending' },
   { name: 'Break-Even Calculator', href: '/break-even-calculator/', tag: 'Trending', tagType: 'trending' },
   { name: 'What If Calculator', href: '/what-if/', tag: 'Trending', tagType: 'trending' },
-  { name: 'If I Had Bought…', href: '/if-i-had-bought/', tag: 'New', tagType: 'new' },
-  { name: 'Pizza Day Calculator', href: '/pizza-day-calculator/', tag: 'New', tagType: 'new' },
-  { name: 'Crypto Millionaire Calculator', href: '/millionaire-calculator/', tag: 'New', tagType: 'new' },
+  { name: 'Mayer Multiple Calculator', href: '/mayer-multiple-calculator/', tag: 'New', tagType: 'new' },
+  { name: 'Iron Condor Options', href: '/iron-condor-calculator/', tag: 'New', tagType: 'new' },
+  { name: 'Concentrated Liquidity (Uni V3)', href: '/concentrated-liquidity-calculator/', tag: 'New', tagType: 'new' },
+];
+
+// All 11 new calculators (May 2026) — used in dedicated Schema.org ItemList for indexing boost.
+const newCalculators2026 = [
+  { name: 'Mayer Multiple Calculator', href: '/mayer-multiple-calculator/' },
+  { name: 'Geometric Mean Return Calculator', href: '/geometric-mean-return-calculator/' },
+  { name: 'MicroStrategy mNAV Premium Calculator', href: '/mstr-mnav-calculator/' },
+  { name: 'Lightning Network Fee Calculator', href: '/lightning-network-fee-calculator/' },
+  { name: 'Pump.fun Bonding Curve Calculator', href: '/pumpfun-bonding-curve-calculator/' },
+  { name: 'Profit Factor Calculator', href: '/profit-factor-calculator/' },
+  { name: 'Covered Call Calculator', href: '/covered-call-calculator/' },
+  { name: 'Iron Condor Calculator', href: '/iron-condor-calculator/' },
+  { name: 'Perpetual Funding Arbitrage Calculator', href: '/perpetual-funding-arbitrage-calculator/' },
+  { name: 'Concentrated Liquidity (Uniswap V3) Calculator', href: '/concentrated-liquidity-calculator/' },
+  { name: 'Looping / Recursive Lending Calculator', href: '/looping-yield-calculator/' },
 ];
 
 const footerCoreLinks = [
@@ -123,6 +138,21 @@ const itemListSchema = {
   })),
 };
 
+// Dedicated ItemList for new May 2026 calculators (boosts discovery/indexation signal).
+const newCalculatorsItemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'New CryptoCalk Calculators (May 2026)',
+  description: '11 new calculators added May 2026: options strategies, DeFi looping, Lightning fees, Bitcoin treasury premium, Pump.fun bonding curve and more.',
+  numberOfItems: newCalculators2026.length,
+  itemListElement: newCalculators2026.map((calc, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: calc.name,
+    url: `${siteUrl}${calc.href}`,
+  })),
+};
+
 const buildDate = new Date().toISOString().split('T')[0];
 
 const softwareAppSchema = {
@@ -193,7 +223,7 @@ const homepageFaqSchema = {
   ],
 };
 
-const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, softwareAppSchema, homepageFaqSchema];
+const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newCalculatorsItemListSchema, softwareAppSchema, homepageFaqSchema];
 ---
 
 <Layout
