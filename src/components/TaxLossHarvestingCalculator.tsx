@@ -203,26 +203,29 @@ function TaxLossHarvestingCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="input-group compact">
                                 <label>{getUiString(lang, 'Coin')}</label>
                                 <input type="text" value={pos.coin} onChange={(e) => updatePosition(idx, 'coin', e.target.value)}
-                                    placeholder="BTC, ETH..." />
+                                    placeholder="BTC, ETH..." aria-label={getUiString(lang, 'Coin')} />
                             </div>
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '8px', marginTop: '8px' }}>
                                 <div className="input-group compact">
                                     <label>{getUiString(lang, 'Buy Price')}</label>
                                     <input type="number" inputMode="decimal" value={pos.buyPrice}
                                         onChange={(e) => updatePosition(idx, 'buyPrice', e.target.value)}
-                                        step="any" min="0" onFocus={(e) => e.target.select()} />
+                                        step="any" min="0" onFocus={(e) => e.target.select()}
+                                        aria-label={getUiString(lang, 'Buy Price')} />
                                 </div>
                                 <div className="input-group compact">
                                     <label>{getUiString(lang, 'Current Price')}</label>
                                     <input type="number" inputMode="decimal" value={pos.currentPrice}
                                         onChange={(e) => updatePosition(idx, 'currentPrice', e.target.value)}
-                                        step="any" min="0" onFocus={(e) => e.target.select()} />
+                                        step="any" min="0" onFocus={(e) => e.target.select()}
+                                        aria-label={getUiString(lang, 'Current Price')} />
                                 </div>
                                 <div className="input-group compact">
                                     <label>{getUiString(lang, 'Quantity')}</label>
                                     <input type="number" inputMode="decimal" value={pos.quantity}
                                         onChange={(e) => updatePosition(idx, 'quantity', e.target.value)}
-                                        step="any" min="0" onFocus={(e) => e.target.select()} />
+                                        step="any" min="0" onFocus={(e) => e.target.select()}
+                                        aria-label={getUiString(lang, 'Quantity')} />
                                 </div>
                             </div>
                             {/* Wash sale check (optional dates) */}
@@ -234,12 +237,14 @@ function TaxLossHarvestingCalculator({ lang = 'en' }: { lang?: string }) {
                                     <div>
                                         <label style={{ fontSize: '0.75rem' }}>{getUiString(lang, 'Sell date')}</label>
                                         <input type="date" value={pos.sellDate || ''}
-                                            onChange={(e) => updatePosition(idx, 'sellDate', e.target.value)} />
+                                            onChange={(e) => updatePosition(idx, 'sellDate', e.target.value)}
+                                            aria-label={getUiString(lang, 'Sell date')} />
                                     </div>
                                     <div>
                                         <label style={{ fontSize: '0.75rem' }}>{getUiString(lang, 'Re-buy date')}</label>
                                         <input type="date" value={pos.rebuyDate || ''}
-                                            onChange={(e) => updatePosition(idx, 'rebuyDate', e.target.value)} />
+                                            onChange={(e) => updatePosition(idx, 'rebuyDate', e.target.value)}
+                                            aria-label={getUiString(lang, 'Re-buy date')} />
                                     </div>
                                 </div>
                                 {positionResults[idx]?.washSale.triggered && (

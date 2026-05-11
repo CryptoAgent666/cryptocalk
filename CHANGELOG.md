@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 114) — fix: TaxLossHarvesting dynamic-row labels
+
+### Detection
+Round 7 UX audit (30 random pages, 30/30 pass after fix). Caught remaining unlabeled inputs in TaxLossHarvestingCalculator.
+
+### Fix
+- `TaxLossHarvestingCalculator.tsx`: 6 inputs across the dynamic position row (Coin, Buy Price, Current Price, Quantity, Sell date, Re-buy date) had visible `<label>` text but no programmatic association (rows are dynamic, can't use unique ids)
+- Added `aria-label={getUiString(lang, '...')}` to all 6 inputs for screen-reader access
+- Pattern: same fix as DefiYieldAggregator from update 113
+
+### Build
+- 1,241 pages, TS clean. 30/30 audited pages pass.
+
 ## [2026-05-11] (update 113) — fix: heading hierarchy h1→h3 + dynamic-row label
 
 ### Detection
