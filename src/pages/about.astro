@@ -52,7 +52,7 @@ const webPageSchema = {
   lang="en"
 >
   <SiteHeader lang="en" currentPath="/about" />
-  <div class="about-container">
+  <main id="main-content" class="about-container">
     <header class="about-header">
       <h1>About CryptoCalk</h1>
       <p>Building the fastest, most reliable financial tools for the crypto community.</p>
@@ -128,7 +128,7 @@ const webPageSchema = {
         </ul>
       </section>
     </div>
-  </div>
+  </main>
   <SiteFooter lang="en" />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

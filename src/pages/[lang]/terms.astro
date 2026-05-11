@@ -126,7 +126,7 @@ const webPageSchema = {
   lang={lang}
 >
   <SiteHeader lang={lang} currentPath={`/${lang}/terms`} />
-  <div class="legal-container">
+  <main id="main-content" class="legal-container">
     <header class="legal-header">
       <h1>{c.heading}</h1>
       <p>{c.lastUpdated}</p>
@@ -149,7 +149,7 @@ const webPageSchema = {
         </Fragment>
       ))}
     </div>
-  </div>
+  </main>
   <SiteFooter lang={lang} />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>

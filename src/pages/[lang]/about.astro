@@ -168,7 +168,7 @@ const webPageSchema = {
   lang={lang}
 >
   <SiteHeader lang={lang} currentPath={`/${lang}/about`} />
-  <div class="about-container">
+  <main id="main-content" class="about-container">
     <header class="about-header">
       <h1>{c.heading}</h1>
       <p>{c.subtitle}</p>
@@ -239,7 +239,7 @@ const webPageSchema = {
         </div>
       </section>
     </div>
-  </div>
+  </main>
 
   <SiteFooter lang={lang} />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />

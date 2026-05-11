@@ -2,6 +2,25 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 115) — fix: <main> landmark + portfolio labels
+
+### Detection
+Round 8 UX audit (30 random pages) caught 2 real issues affecting 9 files.
+
+### Fix 1 — Missing `<main>` landmark on utility pages (8 files)
+- `about.astro`, `contact.astro`, `terms.astro`, `updates.astro` (EN + [lang] variants) used `<div class="X-container">` instead of `<main>` — no main landmark for screen reader navigation
+- Converted outer wrapper `<div class="X-container">` → `<main id="main-content" class="X-container">` and matching closing `</div>` → `</main>` in 8 files
+- Affects 4 page types × 5 langs = 24 deployed pages (EN + 4 localized for each)
+
+### Fix 2 — PortfolioCalculator dynamic-row labels (4 inputs + 1 button)
+- `/ru/kalkulyator-raspredeleniya-portfelya/` had 12 unlabeled inputs (3 inputs × ~4 asset rows by default)
+- Added `aria-label` to all 3 input types in row template (Asset name, Amount, Target %) + Trash button
+- Added "Remove asset" translation to 5 langs (es/pt/tr/hi/ru)
+
+### Build
+- 1,241 pages, TS clean
+- All 30 audited pages pass after fixes (was 28/30)
+
 ## [2026-05-11] (update 114) — fix: TaxLossHarvesting dynamic-row labels
 
 ### Detection

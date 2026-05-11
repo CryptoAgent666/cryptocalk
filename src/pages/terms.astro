@@ -21,7 +21,7 @@ const webPageSchema = {
   lang="en"
 >
   <SiteHeader lang="en" currentPath="/terms" />
-  <div class="legal-container">
+  <main id="main-content" class="legal-container">
     <header class="legal-header">
       <h1>Terms of Service</h1>
       <p>Last updated: February 24, 2026</p>
@@ -62,7 +62,7 @@ const webPageSchema = {
       <h2>9. Contact Us</h2>
       <p>If you have any questions about these Terms, please contact us at <a href="mailto:support@cryptocalk.com">support@cryptocalk.com</a> or via our <a href="/contact/">Contact page</a>.</p>
     </div>
-  </div>
+  </main>
   <SiteFooter lang="en" />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>

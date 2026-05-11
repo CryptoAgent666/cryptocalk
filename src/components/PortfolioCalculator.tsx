@@ -224,22 +224,25 @@ function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
                                     <input type="text" value={asset.name}
                                         onChange={(e) => updateAsset(asset.id, 'name', e.target.value)}
                                         placeholder={getUiString(lang, 'Asset name')}
+                                        aria-label={getUiString(lang, 'Asset name')}
                                         className="portfolio-asset-name" />
                                     <div className="portfolio-asset-amount">
                                         <span className="portfolio-asset-prefix">$</span>
                                         <input type="number" inputMode="decimal" value={asset.amount || ''}
                                             onChange={(e) => updateAsset(asset.id, 'amount', parseFloat(e.target.value) || 0)}
                                             placeholder=""
+                                            aria-label={getUiString(lang, 'Amount') + ' ($)'}
                                             className="portfolio-asset-input" onFocus={(e) => e.target.select()} />
                                     </div>
                                     <div className="portfolio-asset-target">
                                         <input type="number" inputMode="decimal" value={asset.targetPct || ''}
                                             onChange={(e) => updateAsset(asset.id, 'targetPct', parseFloat(e.target.value) || 0)}
                                             placeholder="%"
+                                            aria-label={getUiString(lang, 'Target %')}
                                             className="portfolio-asset-input portfolio-asset-input-target" onFocus={(e) => e.target.select()} />
                                         <span className="portfolio-asset-suffix">%</span>
                                     </div>
-                                    <button onClick={() => removeAsset(asset.id)} className="portfolio-asset-remove">
+                                    <button onClick={() => removeAsset(asset.id)} className="portfolio-asset-remove" aria-label={getUiString(lang, 'Remove asset')}>
                                         <Trash2 size={14} />
                                     </button>
                                 </div>

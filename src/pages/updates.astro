@@ -29,7 +29,7 @@ const webPageSchema = {
   lang="en"
 >
   <SiteHeader lang="en" currentPath="/updates" />
-  <div class="updates-container">
+  <main id="main-content" class="updates-container">
     <header class="updates-header">
       <h1>What's New</h1>
       <p>Latest updates, new calculators, and improvements to CryptoCalk.</p>
@@ -157,7 +157,7 @@ const webPageSchema = {
       </article>
 
     </div>
-  </div>
+  </main>
   <SiteFooter lang="en" />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

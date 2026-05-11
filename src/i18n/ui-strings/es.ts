@@ -2924,6 +2924,7 @@ const dict: Record<string, string> = {
   'Whale Entry': 'Entrada de ballena',
   'Wide Wings': 'Alas amplias',
   'Wide ±50%': 'Amplio ±50%',
+  'Remove asset': 'Eliminar activo',
 };
 
 _registerLang('es', dict);

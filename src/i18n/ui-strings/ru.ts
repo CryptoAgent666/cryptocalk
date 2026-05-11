@@ -2949,6 +2949,7 @@ const dict: Record<string, string> = {
   'Whale Entry': 'Заход кита',
   'Wide Wings': 'Широкие крылья',
   'Wide ±50%': 'Широкий ±50%',
+  'Remove asset': 'Удалить актив',
 };
 
 _registerLang('ru', dict);
