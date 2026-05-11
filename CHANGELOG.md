@@ -2,6 +2,24 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 111) — fix: title separators + speed-card font
+
+### Bug 1: Inconsistent page-title separator
+- 25 page titles across `about`, `terms`, `contact`, `updates`, `privacy`, `editorial`, `methodology` + 404 used ` | CryptoCalk` while all calc pages use ` — CryptoCalk`
+- Replaced all 25 with em-dash for brand-suffix consistency
+- Files: `src/pages/{404,terms,about,contact,updates}.astro`, `src/pages/[lang]/{[policy],about,terms,updates,contact}.astro`
+
+### Bug 2: Sub-readable font on gas calculator
+- `.speed-card-label` (gas tier labels "🐢 Slow", "⚡ Standard", etc.) was 0.68rem (10.88px) — below 12px minimum readable
+- Bumped to 0.75rem (12px)
+- File: `src/styles/global.css`
+
+### Detection
+- 2nd mobile audit on 15 random pages (375×812). 13/15 pass clean. Both issues fixed inline.
+
+### Build
+- 1,241 pages, 7.37s, TS clean
+
 ## [2026-05-11] (update 110) — fix: untranslated scenario chips on 11 new calcs
 
 ### Bug
