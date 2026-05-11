@@ -2,6 +2,33 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 103) — feat: SEO indexation boost for 11 new calculators
+
+### Issue identified via GSC API analysis
+- 10/11 calcs from update 100 in "Discovered, currently not indexed" status
+- Only `geometric-mean-return-calculator` indexed
+- Bing: only 4-7 pages crawled per day (very low)
+- 35 clicks / 5,550 impressions / pos 24.2 over 28 days (good growth: +600% clicks vs prior 28d)
+
+### API actions executed
+- **IndexNow** (Bing+Yandex): 66 URLs submitted (11 new calcs × 6 langs), HTTP 202
+- **Bing URL Submission API**: 91 URLs (11 new + 80 top GSC pages by impressions), HTTP 200
+- **GSC**: sitemap-0.xml + sitemap-index.xml resubmitted via Search Console API
+- Bing daily quota remaining: 9/100, monthly: 2009/2100
+
+### Code changes
+- `src/pages/index.astro`:
+  - Added `newCalculatorsItemListSchema` (Schema.org `ItemList` with all 11 May 2026 calcs)
+  - Replaced 3 of 15 popularCalculators visible cards with new (Mayer Multiple, Iron Condor, Concentrated Liquidity)
+- `src/data/related-calculators.ts`:
+  - Updated 7 high-traffic calcs to cross-link to new ones (slippage, tp-sl, gas, margin, nft-profit, difficulty, rebalancing)
+  - Added 11 new RELATED_CALCULATORS entries (each new calc gets 4 related)
+- Each new calc now has 2-5 inbound internal links
+
+### Build verification
+- 1,241 pages, 0 errors
+- Cross-links verified live (slippage→concentrated-liquidity, iron-condor→options, etc.)
+
 ## [2026-05-04] (update 101) — fix: localize 36 missed dynamic labels in 5 langs
 
 ### Issue caught in round-2 visual audit
