@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { CALCULATOR_META } from '../i18n/calculator-meta';
+import { SPEC_CALCULATOR_SLUGS } from '../i18n/utils';
+import { Calculator, ArrowRight, ArrowLeft, ArrowLeftRight } from 'lucide-react';
+
+const buildDate = new Date().toISOString().split('T')[0];
+
+// Common comparison pairs people search for
+const COMPARISONS = [
+  { a: 'dca-calculator', b: 'profit-calculator', label: 'DCA vs Lump Sum' },
+  { a: 'hodl-vs-trade', b: 'profit-calculator', label: 'HODL vs Active Trading' },
+  { a: 'staking-calculator', b: 'yield-farming-calculator', label: 'Staking vs Yield Farming' },
+  { a: 'asic-mining-calculator', b: 'gpu-mining-calculator', label: 'ASIC vs GPU Mining' },
+  { a: 'leverage-calculator', b: 'liquidation-calculator', label: 'Leverage vs Liquidation Risk' },
+  { a: 'apy-apr-calculator', b: 'compound-interest-calculator', label: 'APY vs Compound Interest' },
+  { a: 'gas-calculator', b: 'gas-fee-calculator', label: 'Gas Cost Calculators' },
+  { a: 'tax-calculator', b: 'tax-loss-harvesting-calculator', label: 'Tax Calc vs Tax-Loss Harvesting' },
+  { a: 'sharpe-calculator', b: 'sortino-calculator', label: 'Sharpe Ratio vs Sortino Ratio' },
+  { a: 'mining-calculator', b: 'mining-roi-calculator', label: 'Mining Profit vs Mining ROI' },
+  { a: 'rebalancing-calculator', b: 'portfolio-calculator', label: 'Rebalancing vs Portfolio Builder' },
+  { a: 'kelly-calculator', b: 'risk-of-ruin-calculator', label: 'Kelly Criterion vs Risk of Ruin' },
+];
+
+const allCalcs = SPEC_CALCULATOR_SLUGS.map((s) => ({
+  slug: s,
+  title: CALCULATOR_META['en']?.[s]?.title ?? s,
+})).sort((a, b) => a.title.localeCompare(b.title));
+
+const title = 'Compare Crypto Calculators — Side-by-Side Tools — CryptoCalk';
+const description = 'Compare 108 free crypto calculators side-by-side: DCA vs Lump Sum, HODL vs Trading, ASIC vs GPU Mining, Sharpe vs Sortino, and more. Pick the right tool for any crypto decision.';
+---
+
+<Layout title={title} description={description} lang="en">
+  <main id="main-content" class="compare-page">
+    <section class="compare-hero">
+      <nav class="hero-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/" class="crumb-link">CryptoCalk</a>
+        <span>›</span>
+        <span>Compare Calculators</span>
+      </nav>
+      <h1>Compare Crypto Calculators</h1>
+      <p class="hero-intro">Pick the right tool for any crypto decision. Browse popular calculator comparisons below or build your own pairing from all 108 calculators.</p>
+    </section>
+
+    <section class="compare-popular">
+      <h2>Popular Comparisons</h2>
+      <p class="section-sub">The 12 calculator pairings people search for most.</p>
+      <ul class="compare-pair-grid">
+        {COMPARISONS.map((c) => (
+          <li class="compare-pair-card">
+            <p class="pair-label">{c.label}</p>
+            <div class="pair-links">
+              <a href={`/${c.a}/`} class="pair-link">
+                <Calculator size={14} />
+                <span>{CALCULATOR_META['en']?.[c.a]?.title?.replace(/ — .*$/, '') ?? c.a}</span>
+              </a>
+              <ArrowLeftRight size={16} class="pair-arrow" />
+              <a href={`/${c.b}/`} class="pair-link">
+                <Calculator size={14} />
+                <span>{CALCULATOR_META['en']?.[c.b]?.title?.replace(/ — .*$/, '') ?? c.b}</span>
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="compare-all">
+      <h2>All Calculators (A–Z)</h2>
+      <p class="section-sub">Open any two in separate tabs to compare side-by-side. 108 free tools across 6 languages.</p>
+      <ul class="all-calcs-list">
+        {allCalcs.map((c) => (
+          <li><a href={`/${c.slug}/`}>{c.title}</a></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="compare-faq">
+      <h2>How to compare crypto calculators</h2>
+      <details class="faq-item" open>
+        <summary>Why compare two calculators?</summary>
+        <p>Most crypto decisions involve trade-offs: passive vs active strategies, different hardware setups, alternative tax treatments. Running the same scenario through two calculators reveals which assumption set fits your situation better and exposes hidden costs that one tool alone might miss.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I compare results across calculators automatically?</summary>
+        <p>Not yet — each calculator stores state locally for privacy. Open both calculators in separate browser tabs, run the same scenario in each, then compare the outputs manually. For frequent comparisons, bookmark the popular pairings above.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Which calculators should I always pair?</summary>
+        <p>Pair <a href="/leverage-calculator/">leverage</a> with <a href="/liquidation-calculator/">liquidation</a> before any leveraged trade. Pair <a href="/profit-calculator/">profit</a> with <a href="/tax-calculator/">tax</a> to see your net take-home. Pair <a href="/mining-calculator/">mining</a> with <a href="/electricity-cost-calculator/">electricity cost</a> to validate true profitability.</p>
+      </details>
+    </section>
+  </main>
+  <SiteFooter lang="en" />
+</Layout>
+
+<style>
+  .compare-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 20px 72px;
+    display: grid;
+    gap: 48px;
+  }
+  .compare-hero {
+    display: grid;
+    gap: 12px;
+  }
+  .hero-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+  .crumb-link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+  }
+  .crumb-link:hover {
+    color: var(--color-primary);
+  }
+  .compare-hero h1 {
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0;
+  }
+  .hero-intro {
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    max-width: 70ch;
+    margin: 0;
+  }
+
+  .compare-popular h2,
+  .compare-all h2,
+  .compare-faq h2 {
+    margin: 0 0 6px;
+    font-size: 1.5rem;
+  }
+  .section-sub {
+    color: var(--color-text-muted);
+    margin: 0 0 20px;
+    font-size: 0.95rem;
+  }
+
+  .compare-pair-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+  .compare-pair-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md, 10px);
+    padding: 14px;
+  }
+  .pair-label {
+    font-weight: 600;
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+  }
+  .pair-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .pair-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm, 6px);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.15s ease;
+  }
+  .pair-link:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  .pair-arrow {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .all-calcs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 6px;
+  }
+  .all-calcs-list li a {
+    display: block;
+    padding: 8px 12px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.88rem;
+    border-radius: var(--radius-sm, 6px);
+    transition: all 0.15s ease;
+  }
+  .all-calcs-list li a:hover {
+    color: var(--color-primary);
+    background: var(--color-bg-card);
+  }
+
+  .faq-item {
+    margin-bottom: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md, 10px);
+    padding: 14px;
+    background: var(--color-bg-card);
+  }
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .faq-item p {
+    margin: 10px 0 0;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 600px) {
+    .pair-links { flex-direction: column; align-items: stretch; }
+    .pair-link { justify-content: center; }
+    .pair-arrow { transform: rotate(90deg); align-self: center; }
+  }
+</style>

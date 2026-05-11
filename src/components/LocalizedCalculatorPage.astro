@@ -131,6 +131,32 @@ const relatedLinks = relatedSlugs.map((rSlug) => {
   return { title, href };
 });
 
+// Popular tools: globally most-used calculators (excluding current page).
+// Helps distribute authority and gives users an obvious next step.
+const POPULAR_SLUGS = [
+  'profit-calculator', 'mining-calculator', 'dca-calculator', 'tax-calculator',
+  'staking-calculator', 'gas-calculator', 'converter', 'position-size-calculator',
+];
+const popularLinks = POPULAR_SLUGS
+  .filter((s) => s !== slug && !relatedSlugs.includes(s as SpecCalculatorSlug))
+  .map((s) => {
+    const meta = CALCULATOR_META[lang]?.[s];
+    const title = meta?.title ?? CALCULATOR_META['en']?.[s]?.title ?? s;
+    const href = getLocalizedPath(`/${s}`, lang);
+    return { title, href };
+  })
+  .slice(0, 6);
+
+const POPULAR_LABEL: Record<string, string> = {
+  en: 'Popular calculators',
+  es: 'Calculadoras populares',
+  pt: 'Calculadoras populares',
+  tr: 'Popüler hesaplayıcılar',
+  hi: 'लोकप्रिय कैलकुलेटर',
+  ru: 'Популярные калькуляторы',
+};
+const popularLabel = POPULAR_LABEL[lang] ?? POPULAR_LABEL.en;
+
 const faqTemplate = faq.length
   ? faq
   : CALCULATOR_FAQ[slug]?.[lang] ?? defaultFaqByLang[lang] ?? defaultFaqByLang.en;
@@ -391,6 +417,45 @@ const faqSchema = {
     },
   })),
 };
+
+// HowTo schema — boosts rich-result eligibility on "how to use X" queries
+// Uses the existing How / Inputs / Interpret / Validation section copy
+const howToStepFromText = (name: string, text: string | undefined) => {
+  if (!text) return null;
+  return {
+    "@type": "HowToStep",
+    name,
+    text: text.replace(/<[^>]+>/g, "").slice(0, 400),
+  };
+};
+const howToSteps = [
+  howToStepFromText(
+    h.inputs,
+    txt.inputs?.[0]?.replace(/\{title\}/g, localizedTitle),
+  ),
+  howToStepFromText(
+    h.how,
+    txt.how?.[0]?.replace(/\{title\}/g, localizedTitle),
+  ),
+  howToStepFromText(
+    h.interpret,
+    txt.interpret?.[0]?.replace(/\{title\}/g, localizedTitle),
+  ),
+  howToStepFromText(
+    h.validation,
+    txt.validation?.[0]?.replace(/\{title\}/g, localizedTitle),
+  ),
+].filter(Boolean);
+
+const howToSchema = howToSteps.length >= 3 ? {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: `How to use ${localizedTitle}`,
+  description: localizedDescription,
+  totalTime: "PT2M",
+  step: howToSteps,
+  inLanguage: lang,
+} : null;
 ---
 
 <Layout
@@ -561,6 +626,17 @@ const faqSchema = {
             )}
           </>
         )}
+
+        {popularLinks.length > 0 && (
+          <>
+            <h2 class="popular-calcs-title">{popularLabel}</h2>
+            <ul class="popular-calcs-list">
+              {popularLinks.map((link) => (
+                <li><a href={link.href}>{link.title}</a></li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
     </section>
   </main>
@@ -575,6 +651,7 @@ const faqSchema = {
   ></script>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}
   ></script>
+  {howToSchema && <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />}
   {calculatorScopedCss && <style is:global set:html={calculatorScopedCss} />}
 </Layout>
 
@@ -642,6 +719,34 @@ const faqSchema = {
     color: var(--color-primary);
     border-color: var(--color-primary);
     background: var(--color-bg-card-hover, var(--color-bg-card));
+  }
+
+  /* Popular calculators (global cross-page widget) */
+  .popular-calcs-title {
+    margin-top: 36px;
+  }
+  .popular-calcs-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .popular-calcs-list li a {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+  }
+  .popular-calcs-list li a:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
   }
 
   .checklist-list {
