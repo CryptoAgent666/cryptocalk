@@ -22,7 +22,7 @@ const webPageSchema = {
   lang="en"
 >
   <SiteHeader lang="en" currentPath="/contact" />
-  <div class="page-container">
+  <main id="main-content" class="page-container">
     <header class="page-header">
       <h1>Contact Us</h1>
       <p>We're here to help and listen to your feedback.</p>
@@ -95,7 +95,7 @@ const webPageSchema = {
         </div>
       </div>
     </div>
-  </div>
+  </main>
   <SiteFooter lang="en" />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 </Layout>

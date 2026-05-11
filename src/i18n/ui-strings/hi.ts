@@ -2919,6 +2919,7 @@ const dict: Record<string, string> = {
   'Whale Entry': 'व्हेल एंट्री',
   'Wide Wings': 'चौड़े पंख',
   'Wide ±50%': 'चौड़ा ±50%',
+  'Remove asset': 'एसेट हटाएँ',
 };
 
 _registerLang('hi', dict);

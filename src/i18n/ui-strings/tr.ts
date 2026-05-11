@@ -2918,6 +2918,7 @@ const dict: Record<string, string> = {
   'Whale Entry': 'Balina Girişi',
   'Wide Wings': 'Geniş Kanatlar',
   'Wide ±50%': 'Geniş ±%50',
+  'Remove asset': 'Varlığı kaldır',
 };
 
 _registerLang('tr', dict);

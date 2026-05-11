@@ -476,7 +476,7 @@ const c = content[lang];
   lang={lang}
 >
   <SiteHeader lang={lang} currentPath={`/${lang}/updates`} />
-  <div class="updates-container">
+  <main id="main-content" class="updates-container">
     <header class="updates-header">
       <h1>{c.heading}</h1>
       <p>{c.subtitle}</p>
@@ -507,7 +507,7 @@ const c = content[lang];
         </>
       ))}
     </div>
-  </div>
+  </main>
   <SiteFooter lang={lang} />
 </Layout>
 
