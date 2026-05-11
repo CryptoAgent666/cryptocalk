@@ -75,12 +75,12 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Yield Farming Calculator. Calculate net DeFi farming profits including gas costs, impermanent loss, and harvest frequency to find your true APY.'
     },
     'gas-calculator': {
-      title: 'Crypto Gas Calculator',
-      description: 'Free Crypto Gas Calculator. Estimate gas costs across major EVM networks for swaps, transfers, and DeFi actions before confirming transactions.'
+      title: 'Gas Fee Calculator — ETH, BSC, Polygon, Arbitrum',
+      description: 'Free gas fee calculator for Ethereum, BSC, Polygon, Arbitrum, Base, and Optimism. Estimate swap, transfer, NFT mint, and DeFi costs in Gwei and USD before confirming.'
     },
     'uniswap-calculator': {
-      title: 'Uniswap Fee Calculator',
-      description: 'Free Uniswap Fee Calculator. Estimate LP fee income, impermanent loss impact, break-even time, and net outcome for selected pool assumptions.'
+      title: 'Uniswap V3 Fee Calculator — LP Returns & IL',
+      description: 'Free Uniswap V3 fee calculator. Estimate LP fee income, impermanent loss, break-even time, and net returns for concentrated liquidity ranges on any V3 pool pair.'
     },
     'bridge-comparator': {
       title: 'Bridge Cost Comparator',
@@ -107,16 +107,16 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Mining Electricity Cost Calculator. Calculate power consumption and operating cost by device count, power usage, uptime, and local energy price.'
     },
     'difficulty-calculator': {
-      title: 'Mining Difficulty Estimator',
-      description: 'Free Mining Difficulty Estimator. Estimate how the next difficulty adjustment may impact your projected mining revenue and profitability.'
+      title: 'Bitcoin Difficulty Estimator — Next Adjustment',
+      description: 'Free Bitcoin mining difficulty estimator. Predict the next difficulty adjustment from current block intervals and see how it impacts mining revenue and breakeven hashrate.'
     },
     'hashrate-converter': {
       title: 'Hashrate Converter',
       description: 'Free Hashrate Converter. Convert mining hashrate units from H/s up to EH/s and compare typical ranges for ASIC and GPU hardware.'
     },
     'market-cap-calculator': {
-      title: 'Market Cap Calculator',
-      description: 'Free Market Cap Calculator. Calculate token price from market cap and supply, or market cap from token price, with live crypto reference data.'
+      title: 'Crypto Market Cap Calculator — Price from Supply',
+      description: 'Free crypto market cap calculator. Find token price from market cap and circulating supply, or calculate market cap from current price. Live data for BTC, ETH, SOL, and any altcoin.'
     },
     'market-cap-comparator': {
       title: 'Market Cap Comparator',

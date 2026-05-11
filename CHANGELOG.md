@@ -2,6 +2,55 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 118) — added: GSC/Bing-driven CTR optimization
+
+### Connected to GSC + Bing Webmaster
+- GSC service account: `datahub-gsc-reader@gen-lang-client-0972883247.iam.gserviceaccount.com`
+- Bing API key: `7882a51cf9404b5d99e2096ac5c9dd78`
+- Pulled 90-day query+page data, identified top opportunity pages
+
+### Key findings (GSC last 90d on cryptocalk.com)
+- 35 clicks / 5,550 impressions / **0.63% CTR** / pos 24.22 (last 28d)
+- 200 queries with impressions, only 2 generating clicks
+- **10.5% of impressions are SEO-scraper spam** (`"poorcomparisons" "compress"` etc.) — wasted noise
+- Mobile CTR 2.52% vs Desktop 0.33% (mobile UX work paying off)
+- Sitemap: 804 URLs submitted, 0 errors
+
+### Top 5 underperforming pages (>200 imp, <1% CTR over 90d):
+| Page | Impressions | CTR | Position | Top query |
+|---|---|---|---|---|
+| /break-even-calculator/ | 765 | 0.00% | 7.0 | "break even price incl. fees" |
+| /market-cap-calculator/ | 465 | 0.00% | 22.4 | (hidden) |
+| /impermanent-loss-calculator/ | 346 | 0.00% | 15.3 | (hidden) |
+| /nft-profit-calculator/ | 275 | 0.73% | 18.1 | "nft profit" (177 imp, pos 24) |
+| /difficulty-calculator/ | 221 | 0.45% | 13.1 | "bitcoin difficulty estimator" (27 imp, pos 16) |
+| /uniswap-calculator/ | 156 | 0.64% | 28.9 | "uniswap fees" (77 imp, pos 50) |
+| /gas-calculator/ | 183 | 1.09% | 12.7 | "bsc gas fee calculator" (17 imp, pos 66) |
+
+### Task (a) — IndexNow + Bing URL submission
+- IndexNow batch submit: **71 URLs** (11 new calcs × 6 langs + 5 underperforming priority pages) — HTTP 200
+- Bing Webmaster URL submission: 9 priority URLs (daily quota) — HTTP 200
+
+### Task (b) — Rewrote title+description for 7 underperforming pages
+Targeting actual top queries each page ranks for:
+- **/break-even-calculator/** → "Crypto Break-Even Calculator — Including Trading Fees" (55 chars)
+- **/nft-profit-calculator/** → "NFT Profit Calculator — OpenSea, Blur, Magic Eden Fees" (56 chars)
+- **/uniswap-calculator/** → "Uniswap V3 Fee Calculator — LP Returns & IL" (43 + " — CryptoCalk")
+- **/gas-calculator/** → "Gas Fee Calculator — ETH, BSC, Polygon, Arbitrum" (47 + " — CryptoCalk")
+- **/difficulty-calculator/** → "Bitcoin Difficulty Estimator — Next Adjustment" (45 + " — CryptoCalk")
+- **/impermanent-loss-calculator/** → "Impermanent Loss Calculator — Uniswap, Curve, Balancer" (56 chars)
+- **/market-cap-calculator/** → "Crypto Market Cap Calculator — Price from Supply" (50 + " — CryptoCalk")
+
+All descriptions rewritten to: (1) include the actual ranked keywords, (2) specify supported networks/marketplaces, (3) stay between 150-180 chars.
+
+### Task (c) — Deep CTR analysis output
+- Identified `"poorcomparisons" "compress"` as 129-impression spam query (10.5% of all impressions)
+- Mapped queries→pages for 7 underperformers to inform title/desc rewrites
+- Detected /nft-profit-calculator/ ranks at pos 24 for "nft profit" (broad, 177 imp/0 clicks) — title now targets this directly
+
+### Build
+- 1,241 pages, TS clean
+
 ## [2026-05-11] (update 117) — fix: DCA panel grid overflow on RU
 
 ### Detection
