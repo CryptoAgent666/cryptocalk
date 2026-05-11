@@ -2,6 +2,32 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 117) — fix: DCA panel grid overflow on RU
+
+### Detection
+Round 10 UX audit (30 pages). 29/30 OK on static + visual. One overflow:
+- `/ru/kalkulyator-dca/`: `H-OVER:405` (page docW 405 > viewport 375)
+- `.dca-input-panel` and `.dca-results-panel` rendering at 389px wide
+
+### Root cause
+CSS Grid items have `min-width: auto` by default. When the panel's content min-content exceeds available track width (caused by longer Russian word/phrase that doesn't wrap), the grid track expands beyond the container, creating page-level horizontal overflow.
+
+EN page panel rendered at 330px (fits viewport); RU at 389px because translated text had a wider min-content.
+
+### Fix
+Added `min-width: 0` to `.dca-input-panel` and `.dca-results-panel` in both:
+- `src/styles/global.css` (base rules)
+- `src/pages/dca-calculator.astro` (per-page overrides with padding)
+
+This is the standard fix for grid/flex item overflow — `min-width: 0` overrides the default `min-width: auto` and allows the track to shrink to container width.
+
+### Verification
+- `/ru/kalkulyator-dca/` panel now 328px (was 389), docW 360 (was 405)
+- 30/30 audited pages pass
+
+### Build
+- 1,241 pages, TS clean
+
 ## [2026-05-11] (update 116) — fix: social-icon touch targets + portfolio preset i18n
 
 ### Detection
