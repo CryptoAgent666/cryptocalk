@@ -2925,6 +2925,7 @@ const dict: Record<string, string> = {
   'Wide Wings': 'Alas amplias',
   'Wide ±50%': 'Amplio ±50%',
   'Remove asset': 'Eliminar activo',
+  'Conservative': 'Conservador',
 };
 
 _registerLang('es', dict);
