@@ -19,8 +19,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free DCA Calculator for Bitcoin, Ethereum, and 500+ cryptos. Simulate dollar-cost averaging with historical data and compare DCA vs lump sum.'
     },
     'tax-calculator': {
-      title: 'Crypto Tax Calculator',
-      description: 'Free Crypto Tax Calculator for 17 countries. Estimate capital gains tax, compare short vs long-term rates for the US, UK, Germany, Japan, and more.'
+      title: 'Crypto Tax Calculator 2026 — US, UK, EU Capital Gains',
+      description: 'Free 2026 crypto tax calculator for 17 countries. Estimate capital gains tax on Bitcoin, Ethereum, and altcoin trades. Compare short-term vs long-term rates for US, UK, Germany, Japan, and more.'
     },
     'what-if': {
       title: 'What If Calculator',
@@ -67,8 +67,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Impermanent Loss Calculator for DeFi. Calculate IL for AMM liquidity pools, compare LP returns vs HODLing, and see if fee earnings overcome IL.'
     },
     'apy-apr-calculator': {
-      title: 'APY vs APR Calculator',
-      description: 'Free APY vs APR Calculator. Convert between APR and APY, compare compounding frequencies, and calculate real earnings on DeFi yields and staking rewards.'
+      title: 'APR to APY Calculator — Convert with Compounding',
+      description: 'Free APR to APY converter and reverse APY to APR calculator. Compare daily, monthly, quarterly, and continuous compounding to find real DeFi yields and staking rewards.'
     },
     'yield-farming-calculator': {
       title: 'Yield Farming Calculator',
@@ -95,8 +95,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free GPU Mining Calculator. Estimate GPU mining profitability with live assumptions for hashrate, power draw, electricity rates, and pool fees.'
     },
     'asic-mining-calculator': {
-      title: 'ASIC Mining Calculator',
-      description: 'Free ASIC Mining Calculator. Calculate ASIC mining profitability, electricity cost, and break-even period across leading mining hardware models.'
+      title: 'ASIC Miner Calculator — Profitability & Value',
+      description: 'Free ASIC miner profitability calculator for Antminer S21, Whatsminer M66, and all top models. Calculate daily profit, electricity cost, ROI, ASIC value, and break-even time.'
     },
     'mining-roi-calculator': {
       title: 'Mining ROI Calculator',
@@ -135,8 +135,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free HODL vs Trade Simulator. Compare buy-and-hold with active trading strategies. Simulate trades with custom win rates, profit targets, and fees.'
     },
     'rebalancing-calculator': {
-      title: 'Portfolio Rebalancing Calculator',
-      description: 'Free Portfolio Rebalancing Calculator. Calculate buy/sell actions to rebalance your crypto portfolio toward target allocations with optional buy-only mode.'
+      title: 'Crypto Portfolio Rebalancing Calculator — Lazy & Target',
+      description: 'Free crypto portfolio rebalancing tool. Calculate exact buy/sell amounts to hit target allocations or use buy-only mode for lazy rebalancing. Works with BTC, ETH, and any altcoin.'
     },
     'compound-calculator': {
       title: 'Compound Interest Calculator (Crypto)',
@@ -151,8 +151,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Airdrop Value Calculator. Calculate the value of received crypto airdrops, estimate tax liability, and track profit or loss after fees.'
     },
     'satoshi-converter': {
-      title: 'Satoshi Converter',
-      description: 'Free Satoshi Converter. Convert between Bitcoin, Satoshis, and USD/EUR instantly. See sats per dollar, quick reference tables, and live BTC price.'
+      title: 'Satoshi to USD Converter — Live BTC Sats Calculator',
+      description: 'Free Satoshi to USD/EUR/BTC converter with live Bitcoin price. Convert 100, 1000, 50000, 100000 sats instantly. See sats per dollar and quick reference tables.'
     },
     'gwei-converter': {
       title: 'Gwei Converter',
@@ -231,8 +231,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Kelly Criterion calculator for crypto trading. Find optimal position sizing from win rate and payoff ratio with Kelly, half- and quarter-Kelly.'
     },
     'leverage-calculator': {
-      title: 'Leverage Calculator',
-      description: 'Free leverage calculator for crypto. See how leverage amplifies gains and losses with side-by-side comparison, liquidation distance, and PnL table.'
+      title: 'Crypto Leverage Calculator — Position Size & Liquidation',
+      description: 'Free crypto leverage trading calculator. See how 5x, 10x, 25x, 50x leverage amplifies gains and losses, find your liquidation distance, and compare PnL side-by-side.'
     },
     'loan-calculator': {
       title: 'Crypto Loan Repayment Calculator',
