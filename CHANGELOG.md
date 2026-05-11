@@ -2,6 +2,35 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 119) — added: buried-page title rewrites + internal linking
+
+### Context
+GSC console check (update 118) found 15 pages at pos >50 with 20+ impressions each — "buried" but receiving visibility. Pulled top queries per page, rewrote titles/descs to match actual search intent, and strengthened internal linking.
+
+### Task (a) — Buried-page title+description rewrites (7 pages)
+Each title now targets the actual top query (from GSC 90-day data):
+
+| Page | Old title | New title | Top query (impr, pos) |
+|---|---|---|---|
+| /tax-calculator/ | "Crypto Tax Calculator" | **"Crypto Tax Calculator 2026 — US, UK, EU Capital Gains"** | "crypto tax calculator" (21 imp, pos 80) |
+| /rebalancing-calculator/ | "Portfolio Rebalancing Calculator" | **"Crypto Portfolio Rebalancing Calculator — Lazy & Target"** | "crypto portfolio rebalancing tool" (55 imp, pos 75) |
+| /asic-mining-calculator/ | "ASIC Mining Calculator" | **"ASIC Miner Calculator — Profitability & Value"** | "asic calculator" (12 imp), "asic miner value" (7 imp) |
+| /apy-apr-calculator/ | "APY vs APR Calculator" | **"APR to APY Calculator — Convert with Compounding"** | "apr vs apy calculator" (8 imp), "apr to apy" (6 imp) |
+| /satoshi-converter/ | "Satoshi Converter — BTC, USD..." | **"Satoshi to USD Converter — Live BTC Sats Calculator"** | long-tail "X satoshi to USD" queries |
+| /leverage-calculator/ | "Crypto Leverage Calculator" | **"Crypto Leverage Calculator — Position Size & Liquidation"** | "crypto leverage calculator" (8 imp), "leverage calculator crypto" (8 imp) |
+
+All descriptions rewritten to include the head keywords + supporting modifiers.
+
+### Task (c) — Internal linking from homepage + generic body
+- `src/pages/index.astro` prose section: added 5 inline links to buried pages (asic-mining-calculator, rebalancing-calculator, leverage-calculator, satoshi-converter, apy-apr-calculator)
+- `src/i18n/seo-body-text.ts` (EN, used as fallback on many calc pages): added links to leverage-calculator (execution), asic-mining-calculator (execution), apy-apr-calculator (hygiene), satoshi-converter (validation), rebalancing-calculator (interpret)
+
+### IndexNow resubmit
+7 URLs (homepage + 6 buried pages with new titles) — HTTP 200 ✅
+
+### Build
+- 1,241 pages, TS clean
+
 ## [2026-05-11] (update 118) — added: GSC/Bing-driven CTR optimization
 
 ### Connected to GSC + Bing Webmaster
