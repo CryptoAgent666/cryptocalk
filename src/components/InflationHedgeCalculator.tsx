@@ -165,14 +165,14 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
 
         return (
             <div style={{ marginTop: '20px', marginBottom: '16px' }}>
-                <h4 style={{
+                <h2 style={{
                     fontSize: '0.9rem',
                     fontWeight: 600,
                     marginBottom: '10px',
                     color: 'var(--color-text)',
                 }}>
                     {getUiString(lang, 'Value Over Time')}
-                </h4>
+                </h2>
                 <svg
                     viewBox={`0 0 ${width} ${height}`}
                     style={{
@@ -632,7 +632,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Shield size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Inflation Hedge Calculator')}</h3>
+                            <h2>{getUiString(lang, 'Inflation Hedge Calculator')}</h2>
                             <p>{getUiString(lang, 'Select a country, enter your savings amount, and choose a time period to see how crypto and other assets compare against fiat inflation.')}</p>
                         </div>
                     )}

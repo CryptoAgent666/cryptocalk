@@ -186,7 +186,7 @@ function CryptoUnitConverter({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-              <h3>{getUiString(lang, 'Enter a valid amount')}</h3>
+              <h2>{getUiString(lang, 'Enter a valid amount')}</h2>
               <p>{getUiString(lang, 'Pick a crypto asset and units to convert values instantly.')}</p>
             </div>
           )}

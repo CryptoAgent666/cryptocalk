@@ -274,7 +274,7 @@ function RetirementCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><Target size={40} /></div>
-              <h3>{getUiString(lang, 'Plan Your Crypto Retirement')}</h3>
+              <h2>{getUiString(lang, 'Plan Your Crypto Retirement')}</h2>
               <p>{getUiString(lang, 'Enter your age, portfolio, and goals to see when you can achieve financial independence with crypto.')}</p>
             </div>
           )}

@@ -251,7 +251,7 @@ function ArbitrageCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Arbitrage Profit')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Arbitrage Profit')}</h2>
                             <p>{getUiString(lang, 'Enter buy and sell prices on two exchanges to see if the spread covers fees.')}</p>
                         </div>
                     )}

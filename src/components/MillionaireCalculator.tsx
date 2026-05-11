@@ -269,9 +269,9 @@ function MillionaireCalculator({ lang = 'en' }: { lang?: string }) {
 
               {/* Milestone Table */}
               <div style={{ marginTop: '16px' }}>
-                <h4 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
+                <h2 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
                   {getUiString(lang, 'Milestone Timeline')}
-                </h4>
+                </h2>
                 <div style={{ overflowX: 'auto' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                     <thead>
@@ -307,7 +307,7 @@ function MillionaireCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><Trophy size={40} /></div>
-              <h3>{getUiString(lang, 'Plan Your Path to Wealth')}</h3>
+              <h2>{getUiString(lang, 'Plan Your Path to Wealth')}</h2>
               <p>{getUiString(lang, 'Enter your target wealth, current portfolio, and monthly investment to see how long it takes to reach your goal.')}</p>
             </div>
           )}

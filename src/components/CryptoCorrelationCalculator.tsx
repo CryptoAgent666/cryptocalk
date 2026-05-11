@@ -212,7 +212,7 @@ function CryptoCorrelationCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><BarChart3 size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Asset Correlation')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Asset Correlation')}</h2>
                             <p>{getUiString(lang, 'Enter monthly returns for two assets to compute their Pearson correlation coefficient.')}</p>
                         </div>
                     )}

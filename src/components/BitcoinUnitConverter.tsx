@@ -190,7 +190,7 @@ function BitcoinUnitConverter({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-                            <h3>{getUiString(lang, 'Convert Bitcoin Units')}</h3>
+                            <h2>{getUiString(lang, 'Convert Bitcoin Units')}</h2>
                             <p>{getUiString(lang, 'Enter an amount and select units to convert between BTC, mBTC, bits, and satoshis.')}</p>
                         </div>
                     )}

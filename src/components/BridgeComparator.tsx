@@ -87,7 +87,7 @@ function BridgeComparator({ lang = 'en' }: { lang?: string }) {
               </select>
             </div>
             <div className="select-wrap">
-              <select className="input-select" value={toChain} onChange={(e) => setToChain(e.target.value)} id="bridge-to">
+              <select className="input-select" value={toChain} onChange={(e) => setToChain(e.target.value)} id="bridge-to" aria-label={getUiString(lang, 'To')}>
                 {CHAINS.map((chain) => <option key={`to-${chain}`} value={chain}>{chain}</option>)}
               </select>
             </div>
@@ -175,7 +175,7 @@ function BridgeComparator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-              <h3>{getUiString(lang, 'Select two different networks')}</h3>
+              <h2>{getUiString(lang, 'Select two different networks')}</h2>
               <p>{getUiString(lang, 'Choose source and destination chains to compare bridge routes.')}</p>
             </div>
           )}

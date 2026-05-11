@@ -390,9 +390,9 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Part 2 — Mining Impact Results */}
                     {hasInputs ? (
                         <>
-                            <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '12px', color: 'var(--color-text)' }}>
+                            <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '12px', color: 'var(--color-text)' }}>
                                 {getUiString(lang, 'Mining Impact Analysis')}
-                            </h4>
+                            </h2>
 
                             <div className="result-breakdown">
                                 <div className="result-row">
@@ -469,16 +469,16 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Cpu size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Enter Mining Details')}</h3>
+                            <h2>{getUiString(lang, 'Enter Mining Details')}</h2>
                             <p>{getUiString(lang, 'Fill in your hashrate, electricity cost, and power consumption to see the halving impact on your mining profitability.')}</p>
                         </div>
                     )}
 
                     {/* Part 3 — Historical Halving Impact Table */}
                     <div style={{ marginTop: '24px' }}>
-                        <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                        <h3 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                             {getUiString(lang, 'Historical Halving Price Impact')}
-                        </h4>
+                        </h3>
                         <div style={{ overflowX: 'auto' }}>
                             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.78rem' }}>
                                 <thead>

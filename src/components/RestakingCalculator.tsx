@@ -343,7 +343,7 @@ function RestakingCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Layers size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Restaking Yield')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Restaking Yield')}</h2>
                             <p>{getUiString(lang, 'Enter your ETH staking details to compare native staking vs restaking with AVS rewards.')}</p>
                         </div>
                     )}

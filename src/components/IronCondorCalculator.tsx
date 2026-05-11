@@ -277,9 +277,9 @@ function IronCondorCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
               </div>
 
-              <h4 style={{ fontSize: '0.85rem', fontWeight: 600, marginTop: '12px', marginBottom: '6px' }}>
+              <h2 style={{ fontSize: '0.85rem', fontWeight: 600, marginTop: '12px', marginBottom: '6px' }}>
                 {getUiString(lang, 'Payoff at expiry')}
-              </h4>
+              </h2>
               <table style={{ width: '100%', fontSize: '0.8rem', borderCollapse: 'collapse' }}>
                 <thead>
                   <tr style={{ borderBottom: '1px solid var(--color-border)' }}>
@@ -308,7 +308,7 @@ function IronCondorCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter valid Iron Condor inputs')}</h3>
+              <h2>{getUiString(lang, 'Enter valid Iron Condor inputs')}</h2>
               <p>{getUiString(lang, 'Strikes must satisfy: Long Put < Short Put < Spot < Short Call < Long Call.')}</p>
             </div>
           )}

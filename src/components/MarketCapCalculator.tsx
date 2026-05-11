@@ -738,7 +738,7 @@ function MarketCapCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <BarChart3 size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Market Cap Calculator')}</h3>
+                            <h2>{getUiString(lang, 'Market Cap Calculator')}</h2>
                             <p>{getUiString(lang, 'Search for a cryptocurrency, set a target market cap or price, and see what the implied value would be. Compare with top coins like BTC, ETH, and more.')}</p>
                         </div>
                     )}

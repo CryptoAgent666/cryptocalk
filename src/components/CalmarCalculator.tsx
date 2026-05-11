@@ -191,7 +191,7 @@ function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Calmar compares annual return to max drawdown. It is most useful for evaluating trend-following and high-volatility strategies.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid inputs')}</h3><p>{getUiString(lang, 'Provide annual return and max drawdown to compute Calmar ratio.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid inputs')}</h2><p>{getUiString(lang, 'Provide annual return and max drawdown to compute Calmar ratio.')}</p></div>
           )}
         </div>
       </div>

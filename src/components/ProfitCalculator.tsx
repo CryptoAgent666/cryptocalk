@@ -633,7 +633,7 @@ function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <ArrowUpDown size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Enter Your Trade Details')}</h3>
+                            <h2>{getUiString(lang, 'Enter Your Trade Details')}</h2>
                             <p>{getUiString(lang, 'Fill in the buy price, sell price, and amount to see your profit or loss.')}</p>
                         </div>
                     )}

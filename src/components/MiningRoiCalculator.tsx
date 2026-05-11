@@ -483,7 +483,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Three-Scenario Comparison Table */}
                             <div style={{ marginTop: '16px' }}>
-                                <h4 style={{
+                                <h2 style={{
                                     fontSize: '0.85rem',
                                     fontWeight: 600,
                                     marginBottom: '10px',
@@ -494,7 +494,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 }}>
                                     <BarChart3 size={14} />
                                     {getUiString(lang, 'Scenario Comparison')}
-                                </h4>
+                                </h2>
                                 <div style={{
                                     overflowX: 'auto',
                                     borderRadius: '10px',
@@ -574,7 +574,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* SVG Chart */}
                             {chartData && (
                                 <div style={{ marginTop: '16px' }}>
-                                    <h4 style={{
+                                    <h3 style={{
                                         fontSize: '0.85rem',
                                         fontWeight: 600,
                                         marginBottom: '10px',
@@ -585,7 +585,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                     }}>
                                         <Calendar size={14} />
                                         {getUiString(lang, 'Cumulative P&L (36 Months)')}
-                                    </h4>
+                                    </h3>
                                     <div style={{
                                         borderRadius: '10px',
                                         border: '1px solid var(--color-border)',
@@ -757,7 +757,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Monthly Breakdown Table (first 12 months, realistic) */}
                             {realisticFirst12.length > 0 && (
                                 <div style={{ marginTop: '16px' }}>
-                                    <h4 style={{
+                                    <h3 style={{
                                         fontSize: '0.85rem',
                                         fontWeight: 600,
                                         marginBottom: '10px',
@@ -768,7 +768,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                     }}>
                                         <Calendar size={14} />
                                         {getUiString(lang, 'Monthly Breakdown (Realistic, First 12 Months)')}
-                                    </h4>
+                                    </h3>
                                     <div style={{
                                         overflowX: 'auto',
                                         borderRadius: '10px',
@@ -835,7 +835,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Pickaxe size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Mining ROI Calculator')}</h3>
+                            <h2>{getUiString(lang, 'Mining ROI Calculator')}</h2>
                             <p>{getUiString(lang, 'Enter your equipment cost, expected monthly revenue, and expenses to see break-even projections across optimistic, realistic, and pessimistic scenarios.')}</p>
                         </div>
                     )}

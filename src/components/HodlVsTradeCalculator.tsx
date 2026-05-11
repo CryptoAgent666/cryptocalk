@@ -775,7 +775,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Trophy size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'HODL vs Active Trading')}</h3>
+                            <h2>{getUiString(lang, 'HODL vs Active Trading')}</h2>
                             <p>{getUiString(lang, 'Enter your starting capital, HODL price change, and trading parameters to compare which strategy would come out ahead.')}</p>
                         </div>
                     )}

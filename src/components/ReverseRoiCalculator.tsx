@@ -644,10 +644,10 @@ function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Milestone Table */}
                             <div style={{ marginTop: '4px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)', display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <TrendingUp size={16} />
                                     {getUiString(lang, 'Investment Milestones')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -697,7 +697,7 @@ function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Target size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Reverse ROI Calculator')}</h3>
+                            <h2>{getUiString(lang, 'Reverse ROI Calculator')}</h2>
                             <p>{getUiString(lang, 'Enter your investment amount, target profit, and current token price to see the required price growth to reach your goal.')}</p>
                         </div>
                     )}

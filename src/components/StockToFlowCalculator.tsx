@@ -198,9 +198,9 @@ function StockToFlowCalculator({ lang = 'en' }: { lang?: string }) {
                                     </>
                                 )}
                                 <div className="result-divider" />
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, margin: '8px 0 4px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, margin: '8px 0 4px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'Next Halving Impact')}
-                                </h4>
+                                </h2>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Post-Halving Flow')}</span>
                                     <span className="result-value">{formatNumber(halvingFlow)} BTC/{getUiString(lang, 'year')}</span>
@@ -229,7 +229,7 @@ function StockToFlowCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Layers size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Stock-to-Flow')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Stock-to-Flow')}</h2>
                             <p>{getUiString(lang, 'Enter BTC supply and flow to see the S2F ratio, model price, and halving projections.')}</p>
                         </div>
                     )}

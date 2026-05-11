@@ -251,9 +251,9 @@ function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Ranking Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'Fee Comparison')} — {tradeType === 'spot' ? getUiString(lang, 'Spot') : getUiString(lang, 'Futures')} {orderType === 'maker' ? getUiString(lang, 'Maker') : getUiString(lang, 'Taker')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -323,7 +323,7 @@ function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><BarChart3 size={40} /></div>
-                            <h3>{getUiString(lang, 'Compare Exchange Fees')}</h3>
+                            <h2>{getUiString(lang, 'Compare Exchange Fees')}</h2>
                             <p>{getUiString(lang, 'Enter your trade details to compare fees across 10 major exchanges. Find the cheapest place to trade.')}</p>
                         </div>
                     )}

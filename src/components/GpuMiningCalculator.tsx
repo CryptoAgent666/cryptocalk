@@ -570,7 +570,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Right: Results */}
                 <div className="calc-results-panel">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                        <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{getUiString(lang, 'Estimated Profitability')}</h3>
+                        <h2 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{getUiString(lang, 'Estimated Profitability')}</h2>
                         {liveDataStatus === 'live' && (
                             <span style={{ color: 'var(--color-accent-green)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(52, 211, 153, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
                                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-accent-green)' }}></span>
@@ -634,9 +634,9 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Coin Ranking */}
                             {coinRanking.length > 0 && (
                                 <div style={{ marginTop: '20px' }}>
-                                    <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                    <h3 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                         {getUiString(lang, 'Coin Profitability Ranking')}
-                                    </h4>
+                                    </h3>
                                     <div className="result-breakdown">
                                         {coinRanking.map((cr, i) => (
                                             <div key={cr.symbol}>
@@ -691,10 +691,10 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     borderRadius: '10px',
                                     fontSize: '0.8rem',
                                 }}>
-                                    <h4 style={{ fontSize: '0.8rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
+                                    <h3 style={{ fontSize: '0.8rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
                                         <Monitor size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} />
                                         {getUiString(lang, 'GPU Specs')}
-                                    </h4>
+                                    </h3>
                                     <div className="result-breakdown" style={{ border: 'none', padding: 0 }}>
                                         <div className="result-row">
                                             <span className="result-label">{getUiString(lang, 'Model')}</span>
@@ -727,7 +727,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Cpu size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Configure Your GPU Mining Rig')}</h3>
+                            <h2>{getUiString(lang, 'Configure Your GPU Mining Rig')}</h2>
                             <p>{getUiString(lang, 'Select a GPU model and mining coin to see profitability estimates across multiple time periods and coins.')}</p>
                         </div>
                     )}

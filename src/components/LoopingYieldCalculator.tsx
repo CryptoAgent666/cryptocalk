@@ -287,7 +287,7 @@ function LoopingYieldCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter valid inputs')}</h3>
+              <h2>{getUiString(lang, 'Enter valid inputs')}</h2>
               <p>{getUiString(lang, 'Liquidation LTV must be greater than target LTV; LTV must be between 0 and 95%.')}</p>
             </div>
           )}

@@ -232,9 +232,9 @@ function IfIHadBoughtCalculator({ lang = 'en' }: { lang?: string }) {
 
               {/* Fun comparisons */}
               <div className="result-breakdown" style={{ marginTop: '16px' }}>
-                <h4 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text-muted)' }}>
+                <h2 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text-muted)' }}>
                   {getUiString(lang, 'Fun Comparisons')}
-                </h4>
+                </h2>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Tesla Shares Equivalent')}</span>
                   <span className="result-value">{results.teslaShares.toLocaleString()} {getUiString(lang, 'shares')}</span>
@@ -253,7 +253,7 @@ function IfIHadBoughtCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'See What Could Have Been')}</h3>
+              <h2>{getUiString(lang, 'See What Could Have Been')}</h2>
               <p>{getUiString(lang, 'Pick a cryptocurrency, enter an amount, and select a historical date to discover what your investment would be worth today.')}</p>
             </div>
           )}

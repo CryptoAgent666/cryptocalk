@@ -294,6 +294,7 @@ function DefiYieldAggregatorCalculator({ lang = 'en' }: { lang?: string }) {
                                         value={p.name}
                                         onChange={(e) => updateProtocol(p.id, 'name', e.target.value)}
                                         placeholder={getUiString(lang, 'Protocol Name')}
+                                        aria-label={getUiString(lang, 'Protocol Name')}
                                         style={{ flex: 1 }}
                                     />
                                     {protocols.length > 1 && (
@@ -315,6 +316,7 @@ function DefiYieldAggregatorCalculator({ lang = 'en' }: { lang?: string }) {
                                             value={p.apy}
                                             onChange={(e) => updateProtocol(p.id, 'apy', e.target.value)}
                                             placeholder={getUiString(lang, 'APY %')}
+                                            aria-label={getUiString(lang, 'APY %')}
                                             step="0.1"
                                             min="0"
                                             onFocus={(e) => e.target.select()}
@@ -323,6 +325,7 @@ function DefiYieldAggregatorCalculator({ lang = 'en' }: { lang?: string }) {
                                     <select
                                         value={p.riskLevel}
                                         onChange={(e) => updateProtocol(p.id, 'riskLevel', e.target.value)}
+                                        aria-label={getUiString(lang, 'Risk Level')}
                                         style={{ flex: 1 }}
                                     >
                                         <option value="Low">{getUiString(lang, 'Low Risk')}</option>
@@ -337,6 +340,7 @@ function DefiYieldAggregatorCalculator({ lang = 'en' }: { lang?: string }) {
                                         value={p.tvl}
                                         onChange={(e) => updateProtocol(p.id, 'tvl', e.target.value)}
                                         placeholder={getUiString(lang, 'TVL ($)')}
+                                        aria-label={getUiString(lang, 'TVL ($)')}
                                         step="any"
                                         min="0"
                                         onFocus={(e) => e.target.select()}
@@ -424,7 +428,7 @@ function DefiYieldAggregatorCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Layers size={40} /></div>
-                            <h3>{getUiString(lang, 'Compare DeFi Yields')}</h3>
+                            <h2>{getUiString(lang, 'Compare DeFi Yields')}</h2>
                             <p>{getUiString(lang, 'Enter your investment amount and add protocols to compare yields and risk-adjusted returns.')}</p>
                         </div>
                     )}

@@ -217,7 +217,7 @@ function DvaCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter DVA parameters')}</h3>
+              <h2>{getUiString(lang, 'Enter DVA parameters')}</h2>
               <p>{getUiString(lang, 'Set budget, period, and volatility to compare Dollar Value Averaging vs DCA.')}</p>
             </div>
           )}

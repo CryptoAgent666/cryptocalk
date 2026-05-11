@@ -551,7 +551,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                 {/* Right: Results */}
                 <div className="calc-results-panel">
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-                        <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{getUiString(lang, 'Estimated Profitability')}</h3>
+                        <h2 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{getUiString(lang, 'Estimated Profitability')}</h2>
                         {liveDataStatus === 'live' && (
                             <span style={{ color: 'var(--color-accent-green)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(52, 211, 153, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
                                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-accent-green)' }}></span>
@@ -616,7 +616,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     borderRadius: '10px',
                                     fontSize: '0.85rem',
                                 }}>
-                                    <h4 style={{
+                                    <h3 style={{
                                         fontSize: '0.85rem',
                                         fontWeight: 600,
                                         marginBottom: '10px',
@@ -627,7 +627,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     }}>
                                         <Calendar size={14} />
                                         {getUiString(lang, 'Return on Investment')}
-                                    </h4>
+                                    </h3>
                                     <div className="result-breakdown" style={{ border: 'none', padding: 0 }}>
                                         <div className="result-row">
                                             <span className="result-label">{getUiString(lang, 'Purchase Price')}</span>
@@ -659,7 +659,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* ASIC Comparison Table */}
                             {comparison.length > 0 && (
                                 <div style={{ marginTop: '16px' }}>
-                                    <h4 style={{
+                                    <h3 style={{
                                         fontSize: '0.85rem',
                                         fontWeight: 600,
                                         marginBottom: '10px',
@@ -670,7 +670,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     }}>
                                         <Cpu size={14} />
                                         {getUiString(lang, 'ASIC Comparison')} ({getUiString(lang, 'at')} ${electricityCost}/kWh)
-                                    </h4>
+                                    </h3>
                                     <div style={{
                                         overflowX: 'auto',
                                         borderRadius: '10px',
@@ -737,7 +737,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     borderRadius: '10px',
                                     fontSize: '0.8rem',
                                 }}>
-                                    <h4 style={{
+                                    <h3 style={{
                                         fontSize: '0.8rem',
                                         fontWeight: 600,
                                         marginBottom: '8px',
@@ -745,7 +745,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     }}>
                                         <Server size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} />
                                         {getUiString(lang, 'ASIC Specs')}
-                                    </h4>
+                                    </h3>
                                     <div className="result-breakdown" style={{ border: 'none', padding: 0 }}>
                                         <div className="result-row">
                                             <span className="result-label">{getUiString(lang, 'Model')}</span>
@@ -790,7 +790,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Server size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Configure Your ASIC Miner')}</h3>
+                            <h2>{getUiString(lang, 'Configure Your ASIC Miner')}</h2>
                             <p>{getUiString(lang, 'Select an ASIC model or enter your hashrate and power consumption to see profitability estimates, ROI projections, and device comparisons.')}</p>
                         </div>
                     )}

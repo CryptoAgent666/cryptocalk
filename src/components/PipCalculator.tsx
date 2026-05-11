@@ -584,7 +584,7 @@ function PipCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Ruler size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Calculate Pip / Tick Value')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Pip / Tick Value')}</h2>
                             <p>{getUiString(lang, 'Select a trading pair, enter your position size and tick size to see the dollar value of each price movement.')}</p>
                         </div>
                     )}

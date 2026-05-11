@@ -224,10 +224,10 @@ function RainbowChartCalculator({ lang = 'en' }: { lang?: string }) {
 
               {/* Band Boundaries Table */}
               <div style={{ marginTop: '16px' }}>
-                <h4 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
+                <h2 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
                   <TrendingUp size={14} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
                   {getUiString(lang, 'Rainbow Bands')}
-                </h4>
+                </h2>
                 <div style={{ overflowX: 'auto' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                     <thead>
@@ -279,7 +279,7 @@ function RainbowChartCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><Rainbow size={40} /></div>
-              <h3>{getUiString(lang, 'Bitcoin Rainbow Chart')}</h3>
+              <h2>{getUiString(lang, 'Bitcoin Rainbow Chart')}</h2>
               <p>{getUiString(lang, 'Enter the current BTC price to see which rainbow band it falls in and how it compares to the logarithmic regression model.')}</p>
             </div>
           )}

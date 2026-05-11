@@ -163,7 +163,7 @@ function LiquidStakingCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'DeFi Composability Value')}</span><span className="result-value profit">+{fmt(result.defiValue)} ETH</span></div>
               </div>
 
-              <h4 style={{ margin: '1rem 0 0.5rem', fontWeight: 600 }}>{getUiString(lang, 'Protocol Comparison')}</h4>
+              <h2 style={{ margin: '1rem 0 0.5rem', fontWeight: 600 }}>{getUiString(lang, 'Protocol Comparison')}</h2>
               <div className="result-breakdown">
                 {result.comparison.map((row) => (
                   <div key={row.protocol} className="result-row" style={{ flexWrap: 'wrap', gap: '0.25rem' }}>
@@ -178,7 +178,7 @@ function LiquidStakingCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter staking parameters')}</h3>
+              <h2>{getUiString(lang, 'Enter staking parameters')}</h2>
               <p>{getUiString(lang, 'Set ETH amount and duration to compare liquid staking protocols.')}</p>
             </div>
           )}

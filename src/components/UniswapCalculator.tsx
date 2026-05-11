@@ -266,7 +266,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-              <h3>{getUiString(lang, 'Enter valid values')}</h3>
+              <h2>{getUiString(lang, 'Enter valid values')}</h2>
               <p>{getUiString(lang, 'Add deposit, TVL, and volume assumptions to estimate Uniswap LP performance.')}</p>
             </div>
           )}

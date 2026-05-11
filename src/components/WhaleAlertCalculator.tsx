@@ -329,7 +329,7 @@ function WhaleAlertCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Fish size={40} /></div>
-                            <h3>{getUiString(lang, 'Analyze Whale Transaction')}</h3>
+                            <h2>{getUiString(lang, 'Analyze Whale Transaction')}</h2>
                             <p>{getUiString(lang, 'Enter transaction details to estimate the market impact of large cryptocurrency trades.')}</p>
                         </div>
                     )}

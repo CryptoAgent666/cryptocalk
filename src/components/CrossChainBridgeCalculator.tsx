@@ -235,7 +235,7 @@ function CrossChainBridgeCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-                            <h3>{getUiString(lang, 'Estimate Bridge Costs')}</h3>
+                            <h2>{getUiString(lang, 'Estimate Bridge Costs')}</h2>
                             <p>{getUiString(lang, 'Enter transfer details to estimate cross-chain bridge fees and transfer time.')}</p>
                         </div>
                     )}

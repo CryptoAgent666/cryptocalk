@@ -223,7 +223,7 @@ function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Sharpe uses average return and volatility assumptions. Use it for comparative ranking, not guaranteed performance forecasting.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid portfolio inputs')}</h3><p>{getUiString(lang, 'Set return, volatility, and risk-free rate to estimate Sharpe-adjusted performance.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid portfolio inputs')}</h2><p>{getUiString(lang, 'Set return, volatility, and risk-free rate to estimate Sharpe-adjusted performance.')}</p></div>
           )}
         </div>
       </div>

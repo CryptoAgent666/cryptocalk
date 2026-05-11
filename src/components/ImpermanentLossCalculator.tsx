@@ -453,9 +453,9 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* IL Reference Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'IL at Different Price Changes (Token A vs B)')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -495,7 +495,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Droplets size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Impermanent Loss')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Impermanent Loss')}</h2>
                             <p>{getUiString(lang, 'Enter your liquidity and expected price changes to see how impermanent loss compares to fee earnings in an AMM pool.')}</p>
                         </div>
                     )}

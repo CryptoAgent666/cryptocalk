@@ -192,9 +192,9 @@ function PizzaDayCalculator({ lang = 'en' }: { lang?: string }) {
 
               {/* Pizza Economics */}
               <div className="result-breakdown">
-                <h4 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
+                <h2 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
                   {getUiString(lang, 'Pizza Economics')}
-                </h4>
+                </h2>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Original Pizza Cost')}</span>
                   <span className="result-value">{formatBig(parseFloat(btcAmount) || 0)} BTC (~{formatUSD(results.totalPizzaCostUsd)})</span>
@@ -217,9 +217,9 @@ function PizzaDayCalculator({ lang = 'en' }: { lang?: string }) {
 
               {/* The Big Numbers */}
               <div className="result-breakdown">
-                <h4 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
+                <h3 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
                   {getUiString(lang, 'Most Expensive Pizza in History')}
-                </h4>
+                </h3>
                 <div className="result-row">
                   <span className="result-label"><strong>{getUiString(lang, 'Current Value of BTC')}</strong></span>
                   <span className="result-value profit"><strong>{formatUSD(results.currentBtcValue)}</strong></span>
@@ -251,7 +251,7 @@ function PizzaDayCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><Pizza size={40} /></div>
-              <h3>{getUiString(lang, 'Bitcoin Pizza Day')}</h3>
+              <h2>{getUiString(lang, 'Bitcoin Pizza Day')}</h2>
               <p>{getUiString(lang, 'Explore the most expensive pizza purchase in history. On May 22, 2010, someone paid 10,000 BTC for two pizzas.')}</p>
             </div>
           )}

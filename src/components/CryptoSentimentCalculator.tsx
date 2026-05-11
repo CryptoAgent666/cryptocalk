@@ -329,7 +329,7 @@ function CryptoSentimentCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Activity size={40} /></div>
-                            <h3>{getUiString(lang, 'Analyze Market Sentiment')}</h3>
+                            <h2>{getUiString(lang, 'Analyze Market Sentiment')}</h2>
                             <p>{getUiString(lang, 'Enter sentiment indicators to generate a composite score and trading signal.')}</p>
                         </div>
                     )}

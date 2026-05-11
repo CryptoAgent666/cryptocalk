@@ -619,7 +619,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Target size={40} /></div>
-                            <h3>{getUiString(lang, 'Plan Your Trade')}</h3>
+                            <h2>{getUiString(lang, 'Plan Your Trade')}</h2>
                             <p>{getUiString(lang, 'Enter entry price, stop-loss, and R:R ratio to calculate optimal take-profit levels with a visual price scale.')}</p>
                         </div>
                     )}

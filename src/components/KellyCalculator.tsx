@@ -201,7 +201,7 @@ function KellyCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Kelly assumes stable edge and independent outcomes. For volatile markets, fractional Kelly is typically safer than full Kelly.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid strategy stats')}</h3><p>{getUiString(lang, 'Set win rate and average win/loss to estimate Kelly-based sizing.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid strategy stats')}</h2><p>{getUiString(lang, 'Set win rate and average win/loss to estimate Kelly-based sizing.')}</p></div>
           )}
         </div>
       </div>

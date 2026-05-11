@@ -506,9 +506,9 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Reference Table: Gas Impact at Different Deposit Sizes */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'Gas Cost Impact at Different Deposit Sizes')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -562,7 +562,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Sprout size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Yield Farming Profitability')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Yield Farming Profitability')}</h2>
                             <p>{getUiString(lang, 'Enter your deposit amount and pool rate to see net yield after gas costs, impermanent loss, and harvest optimization.')}</p>
                         </div>
                     )}

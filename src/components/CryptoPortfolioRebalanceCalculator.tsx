@@ -317,7 +317,7 @@ function CryptoPortfolioRebalanceCalculator({ lang = 'en' }: { lang?: string }) 
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><PieChart size={40} /></div>
-                            <h3>{getUiString(lang, 'Plan Portfolio Rebalancing')}</h3>
+                            <h2>{getUiString(lang, 'Plan Portfolio Rebalancing')}</h2>
                             <p>{getUiString(lang, 'Enter asset values and target allocations to see what trades are needed to rebalance your portfolio.')}</p>
                         </div>
                     )}

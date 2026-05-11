@@ -249,7 +249,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Real validator rewards depend on inflation, commission policy, missed blocks, and slashing events. Keep a safety margin in planning.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid node assumptions')}</h3><p>{getUiString(lang, 'Set stake, APR, uptime, and costs to estimate validator profitability.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid node assumptions')}</h2><p>{getUiString(lang, 'Set stake, APR, uptime, and costs to estimate validator profitability.')}</p></div>
           )}
         </div>
       </div>

@@ -431,7 +431,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Profitability Analysis (if revenue provided) */}
                             {profitability && (
                                 <div style={{ marginTop: '16px' }}>
-                                    <h4 style={{
+                                    <h2 style={{
                                         fontSize: '0.85rem',
                                         fontWeight: 600,
                                         marginBottom: '10px',
@@ -442,7 +442,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
                                     }}>
                                         <TrendingUp size={14} />
                                         {getUiString(lang, 'Revenue vs Cost Analysis')}
-                                    </h4>
+                                    </h2>
                                     <div className="result-breakdown">
                                         <div className="result-row">
                                             <span className="result-label">{getUiString(lang, 'Monthly Revenue')}</span>
@@ -494,7 +494,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Country Comparison Table */}
                             <div style={{ marginTop: '16px' }}>
-                                <h4 style={{
+                                <h3 style={{
                                     fontSize: '0.85rem',
                                     fontWeight: 600,
                                     marginBottom: '10px',
@@ -505,7 +505,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
                                 }}>
                                     <Globe size={14} />
                                     {getUiString(lang, 'Electricity Cost Comparison')}
-                                </h4>
+                                </h3>
                                 <div style={{
                                     overflowX: 'auto',
                                     borderRadius: '10px',
@@ -570,7 +570,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
                                 borderRadius: '10px',
                                 fontSize: '0.8rem',
                             }}>
-                                <h4 style={{
+                                <h3 style={{
                                     fontSize: '0.8rem',
                                     fontWeight: 600,
                                     marginBottom: '8px',
@@ -578,7 +578,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
                                 }}>
                                     <Gauge size={14} style={{ verticalAlign: 'middle', marginRight: '6px' }} />
                                     {getUiString(lang, 'Power Specifications')}
-                                </h4>
+                                </h3>
                                 <div className="result-breakdown" style={{ border: 'none', padding: 0 }}>
                                     <div className="result-row">
                                         <span className="result-label">{getUiString(lang, 'Total Wattage')}</span>
@@ -612,7 +612,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Zap size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Mining Electricity Cost Calculator')}</h3>
+                            <h2>{getUiString(lang, 'Mining Electricity Cost Calculator')}</h2>
                             <p>{getUiString(lang, 'Enter your mining farm details to calculate electricity costs, compare rates across countries, and analyze profitability.')}</p>
                         </div>
                     )}

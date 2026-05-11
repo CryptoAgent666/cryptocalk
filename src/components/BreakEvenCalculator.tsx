@@ -296,9 +296,9 @@ function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Reference Table */}
                             <div style={{ marginTop: '16px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'Loss vs Recovery Reference')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -371,7 +371,7 @@ function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Target size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Break-Even')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Break-Even')}</h2>
                             <p>{getUiString(lang, 'Use')} <strong>{getUiString(lang, 'Loss Recovery')}</strong> {getUiString(lang, 'to see how much gain you need to recover from a loss, or')} <strong>{getUiString(lang, 'Trade Break-Even')}</strong> {getUiString(lang, 'to find the exit price that covers your fees.')}</p>
                         </div>
                     )}

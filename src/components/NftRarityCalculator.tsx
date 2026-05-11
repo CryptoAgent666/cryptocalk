@@ -337,7 +337,7 @@ function NftRarityCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Gem size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate NFT Rarity')}</h3>
+                            <h2>{getUiString(lang, 'Calculate NFT Rarity')}</h2>
                             <p>{getUiString(lang, 'Enter collection size and trait data to calculate rarity score and rank estimate.')}</p>
                         </div>
                     )}

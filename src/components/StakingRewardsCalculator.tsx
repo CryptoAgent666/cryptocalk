@@ -467,9 +467,9 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Monthly Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'Monthly Earnings Breakdown')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto', maxHeight: '300px', overflowY: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -502,7 +502,7 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Coins size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Staking Rewards')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Staking Rewards')}</h2>
                             <p>{getUiString(lang, 'Select a coin or enter staking details to see daily, weekly, monthly, and yearly rewards with compound growth.')}</p>
                         </div>
                     )}

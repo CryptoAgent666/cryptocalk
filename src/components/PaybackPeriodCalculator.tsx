@@ -176,7 +176,7 @@ function PaybackPeriodCalculator({ lang = 'en' }: { lang?: string }) {
 
               {result.milestones.length > 0 && (
                 <>
-                  <h4 style={{ margin: '1rem 0 0.5rem', fontWeight: 600 }}>{getUiString(lang, 'Growth Milestones')}</h4>
+                  <h2 style={{ margin: '1rem 0 0.5rem', fontWeight: 600 }}>{getUiString(lang, 'Growth Milestones')}</h2>
                   <div className="result-breakdown">
                     {result.milestones.map((m) => (
                       <div key={m.month} className="result-row">
@@ -193,7 +193,7 @@ function PaybackPeriodCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter investment parameters')}</h3>
+              <h2>{getUiString(lang, 'Enter investment parameters')}</h2>
               <p>{getUiString(lang, 'Set initial investment and expected return to calculate payback period.')}</p>
             </div>
           )}

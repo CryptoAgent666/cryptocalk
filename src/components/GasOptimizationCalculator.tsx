@@ -315,7 +315,7 @@ function GasOptimizationCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Fuel size={40} /></div>
-                            <h3>{getUiString(lang, 'Optimize Gas Costs')}</h3>
+                            <h2>{getUiString(lang, 'Optimize Gas Costs')}</h2>
                             <p>{getUiString(lang, 'Enter transaction details to compare individual vs. batched gas costs and find optimal strategies.')}</p>
                         </div>
                     )}

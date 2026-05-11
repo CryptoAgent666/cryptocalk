@@ -175,7 +175,7 @@ function BitcoinEnergyCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><Zap size={40} /></div>
-              <h3>{getUiString(lang, 'Enter mining parameters')}</h3>
+              <h2>{getUiString(lang, 'Enter mining parameters')}</h2>
               <p>{getUiString(lang, 'Set hashrate, power consumption, and energy source to calculate carbon footprint.')}</p>
             </div>
           )}

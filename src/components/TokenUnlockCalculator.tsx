@@ -355,7 +355,7 @@ function TokenUnlockCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Unlock size={40} /></div>
-                            <h3>{getUiString(lang, 'Analyze Token Unlock Impact')}</h3>
+                            <h2>{getUiString(lang, 'Analyze Token Unlock Impact')}</h2>
                             <p>{getUiString(lang, 'Enter token supply and unlock details to project the price impact of upcoming vesting events.')}</p>
                         </div>
                     )}

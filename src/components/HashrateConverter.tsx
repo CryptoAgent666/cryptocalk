@@ -238,9 +238,9 @@ function HashrateConverter({ lang = 'en' }: { lang?: string }) {
 
                             {/* Quick Reference Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'Typical Hash Rates by Device')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -300,7 +300,7 @@ function HashrateConverter({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <ArrowRightLeft size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Convert Hash Rate Units')}</h3>
+                            <h2>{getUiString(lang, 'Convert Hash Rate Units')}</h2>
                             <p>{getUiString(lang, 'Enter a hash rate value and select a unit to instantly convert between H/s, KH/s, MH/s, GH/s, TH/s, PH/s, and EH/s.')}</p>
                         </div>
                     )}

@@ -208,7 +208,7 @@ function OnChainMetricsCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter On-Chain Data')}</h3>
+              <h2>{getUiString(lang, 'Enter On-Chain Data')}</h2>
               <p>{getUiString(lang, 'Provide market cap, realized cap, and transaction data to compute MVRV, NVT, and SOPR metrics.')}</p>
             </div>
           )}
