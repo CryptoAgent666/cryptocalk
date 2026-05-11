@@ -164,11 +164,43 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      // Exclude legacy localized calculator URLs (e.g. /es/profit-calculator)
-      // and EN alias pages that canonical to a spec URL (e.g. /staking-rewards-calculator → /staking-calculator).
       filter: (pageUrl) => !isLegacyLocalizedSpecUrl(pageUrl) && !isAliasUrl(pageUrl),
-      // Removed identical-date lastmod — Google ignores uniform lastmod across all URLs.
-      // TODO: implement per-page git-based dates when @astrojs/sitemap supports async serialize.
+      // Per-page priority + changefreq for crawl-budget hints.
+      // Homepage = 1.0, top calc pages = 0.8, localized calc = 0.7, info = 0.5, others = 0.5.
+      serialize(item) {
+        const url = item.url;
+        const path = url.replace(/^https?:\/\/[^/]+/, '');
+        // Homepage (EN or localized)
+        if (path === '/' || /^\/[a-z]{2}\/$/.test(path)) {
+          item.priority = 1.0;
+          item.changefreq = 'daily';
+        }
+        // Category hubs
+        else if (path.includes('/calculators/')) {
+          item.priority = 0.8;
+          item.changefreq = 'weekly';
+        }
+        // Top-tier EN calc pages (high-traffic, no /lang/ prefix)
+        else if (/^\/[a-z][a-z0-9-]+-calculator\/$/.test(path) || /^\/(converter|hodl-vs-trade|what-if|inflation-hedge|exchange-fees|if-i-had-bought|reverse-roi|rainbow-chart-calculator|pizza-day-calculator|millionaire-calculator)\/$/.test(path)) {
+          item.priority = 0.8;
+          item.changefreq = 'weekly';
+        }
+        // Localized calculator pages
+        else if (/^\/[a-z]{2}\//.test(path)) {
+          item.priority = 0.7;
+          item.changefreq = 'weekly';
+        }
+        // Info/legal pages
+        else if (/(about|contact|privacy|terms|methodology|editorial-policy|updates)/.test(path)) {
+          item.priority = 0.4;
+          item.changefreq = 'monthly';
+        } else {
+          item.priority = 0.6;
+          item.changefreq = 'weekly';
+        }
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
     }),
   ],
   vite: {

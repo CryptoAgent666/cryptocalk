@@ -2,6 +2,56 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-12] (update 120) — multi-feature SEO/UX expansion
+
+Comprehensive batch of improvements identified in GSC console analysis.
+
+### Title/desc rewrites for 4 more buried pages (continuing update 119 pattern)
+- `/funding-rate-calculator/` → "Funding Rate Calculator — Perpetual Futures Cost"
+- `/yield-farming-calculator/` → "Yield Farming Calculator — Farm Profit & True APY"
+- `/hodl-vs-trade/` → "HODL vs Trade Calculator — Buy-and-Hold vs Active"
+- `/gamefi-calculator/` → "GameFi ROI Calculator — Play-to-Earn Profitability"
+
+### Sitemap: per-URL priority + changefreq + lastmod
+- `astro.config.mjs` sitemap `serialize()` adds:
+  - Priority 1.0 for homepage, 0.8 for top calcs + category hubs, 0.7 for localized calcs, 0.4 for legal pages
+  - changefreq: daily/weekly/monthly per page type
+  - lastmod: per-URL build timestamp
+- Replaces previous uniform "no lastmod" which Google ignored
+- Affects crawl-budget allocation and freshness signals
+
+### HowTo schema injected on all `LocalizedCalculatorPage.astro` pages (46 calcs)
+- New JSON-LD HowTo with 3-4 steps from existing How/Inputs/Interpret/Validation content
+- Rich-result eligible — appears with numbered step cards in SERPs
+- Strips HTML tags, capped at 400 chars per step
+
+### Author E-E-A-T expansion (Person schema)
+- `src/pages/about.astro` mainEntity Person enhanced:
+  - Expanded `description` with 10+ year experience, owned sites, tech stack
+  - Added `alternateName`, `nationality`, `knowsLanguage` (6 langs)
+  - Added `owns` array (3 websites)
+  - Expanded `knowsAbout` from 6 to 16 topics (Bitcoin, DeFi, Astro, React, TypeScript, etc.)
+  - Updated dateModified
+
+### Popular Calculators widget (cross-page authority distribution)
+- 6-link widget at the bottom of every `LocalizedCalculatorPage.astro` calc page
+- Globally most-used: profit, mining, DCA, tax, staking, gas, converter, position-size
+- Filters out current calc and already-related ones to avoid duplication
+- Localized label in 6 languages
+
+### NEW PAGE: `/compare/`
+- Standalone comparison hub page (1,242nd page on site)
+- 12 popular calculator pairings with side-by-side links (DCA vs Lump Sum, HODL vs Trade, ASIC vs GPU Mining, Sharpe vs Sortino, etc.)
+- Full A-Z directory of all 108 calculators
+- 3 FAQ items
+- Targets long-tail "X vs Y" search queries
+
+### IndexNow re-submit
+- 7 URLs (homepage + 4 newly-optimized calcs + new /compare/ + /about/) → Bing/Yandex/Seznam/Naver
+
+### Build
+- **1,242 pages, TS clean** (was 1,241 — new /compare/ page)
+
 ## [2026-05-11] (update 119) — added: buried-page title rewrites + internal linking
 
 ### Context

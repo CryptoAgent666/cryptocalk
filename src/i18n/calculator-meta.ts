@@ -35,8 +35,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Liquidation Price Calculator for crypto futures. Supports Binance, Bybit, OKX in Isolated and Cross margin. Know your liquidation price.'
     },
     'funding-rate-calculator': {
-      title: 'Funding Rate Calculator',
-      description: 'Free Funding Rate Calculator for perpetual futures. Calculate the daily, weekly, monthly, and annual cost of holding a leveraged position.'
+      title: 'Funding Rate Calculator — Perpetual Futures Cost',
+      description: 'Free funding rate calculator for crypto perpetual futures (Binance, Bybit, OKX). Calculate the overnight, daily, weekly, monthly, and annual cost of holding a leveraged BTC, ETH, or altcoin position.'
     },
     'tp-sl-calculator': {
       title: 'TP / SL Calculator',
@@ -71,8 +71,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free APR to APY converter and reverse APY to APR calculator. Compare daily, monthly, quarterly, and continuous compounding to find real DeFi yields and staking rewards.'
     },
     'yield-farming-calculator': {
-      title: 'Yield Farming Calculator',
-      description: 'Free Yield Farming Calculator. Calculate net DeFi farming profits including gas costs, impermanent loss, and harvest frequency to find your true APY.'
+      title: 'Yield Farming Calculator — Farm Profit & True APY',
+      description: 'Free DeFi yield farming and farm profit calculator. Compute net APY after gas costs, impermanent loss, and harvest frequency for Uniswap, Curve, Aave, and Yearn pools.'
     },
     'gas-calculator': {
       title: 'Gas Fee Calculator — ETH, BSC, Polygon, Arbitrum',
@@ -131,8 +131,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Reverse ROI Calculator. Enter your investment and target profit to find the exact token price needed. See growth multiplier and milestone table.'
     },
     'hodl-vs-trade': {
-      title: 'HODL vs Trade Calculator',
-      description: 'Free HODL vs Trade Simulator. Compare buy-and-hold with active trading strategies. Simulate trades with custom win rates, profit targets, and fees.'
+      title: 'HODL vs Trade Calculator — Buy-and-Hold vs Active',
+      description: 'Free HODL vs trading simulator for Bitcoin and crypto. Compare buy-and-hold with active trading strategies. Simulate scenarios with custom win rates, profit targets, fees, and tax impact.'
     },
     'rebalancing-calculator': {
       title: 'Crypto Portfolio Rebalancing Calculator — Lazy & Target',
@@ -191,8 +191,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free MEV Protection Calculator. Estimate sandwich and frontrun risk and potential savings from MEV protection routes based on swap size and slippage.'
     },
     'gamefi-calculator': {
-      title: 'GameFi ROI Calculator',
-      description: 'Free GameFi ROI Calculator. Estimate payback period and annual ROI for play-to-earn strategies based on setup cost, token rewards, and running expenses.'
+      title: 'GameFi ROI Calculator — Play-to-Earn Profitability',
+      description: 'Free GameFi and play-to-earn (P2E) ROI calculator. Estimate payback period and annual return for crypto game strategies based on setup cost, token rewards, energy drops, and running expenses.'
     },
     'node-calculator': {
       title: 'Validator Node Calculator',
