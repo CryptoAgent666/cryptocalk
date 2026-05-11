@@ -13757,4 +13757,2270 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
     },
   },
+  'mayer-multiple-calculator': {
+    en: {
+      interpret: [
+        "The Mayer Multiple is the ratio of Bitcoin's current price to its 200-day simple moving average. A reading above 2.4 has historically marked overbought conditions — this level was breached only in 18% of trading days since 2010, and reaching it has preceded most major corrections. A reading below 1.0 indicates BTC trades below its long-term trend, which has historically marked accumulation zones; this state appeared in roughly 22% of days.",
+        "Treat the Mayer Multiple as a confirmation tool, not a primary signal. Combine it with on-chain metrics like <a href=\"/on-chain-metrics-calculator/\">MVRV ratio</a> or the <a href=\"/rainbow-chart-calculator/\">Rainbow Chart</a> for a multi-factor view. Cycle tops in 2017 and 2021 reached Mayer Multiple values of 3.8 and 3.5 respectively; cycle bottoms in 2018 and 2022 dropped below 0.65."
+      ],
+      scenarios: [
+        "Cycle phase identification: at Mayer 0.8 with BTC at $40K and 200d MA at $50K, the indicator suggests a bear-market accumulation zone. Combine with weekly RSI <30 and capitulation volume to confirm. Historical pattern: 6-18 months of accumulation typically precedes the next bull cycle.",
+        "Profit-taking framework: if your portfolio exceeds your target allocation when Mayer crosses 2.0, consider trimming 10-20%. At Mayer 2.4+, scale out aggressively (30-50%). This rules-based approach removes emotion from rebalancing during euphoric phases when most retail loses discipline."
+      ],
+      checklist: [
+        "Before acting on a Mayer signal: 1) Confirm 200d MA with multiple sources (TradingView, Glassnode, CoinGecko all calculate slightly differently). 2) Check the trend direction — Mayer rising past 2.4 in a bull cycle differs from Mayer 2.4 fading from 3.0. 3) Cross-reference funding rates; extreme positive funding amplifies overheated signals.",
+        "Position sizing: never enter a 'mayer signal' trade without a stop loss. Even at Mayer 0.6, BTC has dropped further (March 2020 hit 0.55, late 2018 touched 0.6). Limit single-signal exposure to 5-10% of risk capital and add via <a href=\"/dca-calculator/\">DCA</a> over 4-12 weeks rather than lump-sum."
+      ],
+      mistakes: [
+        "Treating Mayer Multiple as a precise top/bottom indicator. The indicator gives zones, not turning points. Selling everything at Mayer 2.4 in 2017 would have missed the run to 3.8 four months later. Use it for partial position adjustments, not all-in/all-out decisions.",
+        "Ignoring market structure context. Mayer Multiple performed best in cycles dominated by spot demand (2013-2021). Post-ETF era markets driven by institutional flows may behave differently — the 2024-2026 cycle showed muted Mayer extremes despite all-time highs, suggesting supply absorption changed the indicator's signal strength."
+      ],
+      benchmarks: [
+        "Historical Mayer Multiple benchmark zones: <0.8 (deep value, 12% of days), 0.8-1.2 (accumulation, 28%), 1.2-1.8 (normal, 35%), 1.8-2.4 (caution, 17%), >2.4 (historical sell zone, 8%). Use these as base rates when interpreting current readings.",
+        "200-day MA growth rate: in steady bull markets, the 200d MA rises 1-3% per month. If the MA accelerates above 5%/month, the curve is catching up and Mayer will mechanically compress toward 1.0 even if price holds — adjust expectations of mean reversion."
+      ],
+      execution: [
+        "Build a monthly Mayer review ritual: first Sunday of each month, log current BTC price, 200d MA, Mayer value, and zone. Track the trajectory — slope matters as much as absolute level. A Mayer descending from 2.5 to 1.8 over two months is bearish even though both readings are 'elevated'.",
+        "For trade triggers: pre-define your action thresholds in writing before the moment arrives (e.g., 'sell 20% if Mayer crosses 2.4 from below'). Emotional decisions during extreme readings — when the indicator is most useful — are when most traders abandon their plan. The <a href=\"/risk-reward-calculator/\">risk/reward calculator</a> helps quantify the trade structure."
+      ],
+      hygiene: [
+        "Refresh your 200d MA value monthly — it slowly moves and can lag your interpretation by 5-10% in fast markets. Use the same data source consistently to avoid spurious signal changes from minor methodology differences (Bitstamp vs Coinbase price feeds typically differ by 0.1-0.3%).",
+        "Document each Mayer-driven decision with rationale and outcome. Over 2-3 years you build a personal performance dataset showing whether your Mayer-based timing actually improved returns vs simple HODL. This evidence-based feedback loop is more valuable than any single indicator reading."
+      ],
+      validation: [
+        "Manual sanity check: BTC at $77K with 200d MA at $70K → Mayer = 77/70 = 1.10. If your calculator shows a different value, verify you're using the same MA source. Discrepancies above 5% indicate either stale data or wrong MA period (50d, 100d, and 200d differ significantly).",
+        "Backtest validation: review Mayer values at major cycle inflection points (Dec 2017 ~3.8, Dec 2018 ~0.65, Apr 2021 ~3.5, Nov 2022 ~0.6, Mar 2024 ~1.9). If your data source consistently matches these benchmarks, it's reliable for forward-looking signals."
+      ],
+    },
+    es: {
+      interpret: [
+        "El Mayer Multiple es la razón entre el precio actual de Bitcoin y su media móvil simple de 200 días. Una lectura por encima de 2.4 ha marcado históricamente condiciones de sobrecompra: ese nivel se superó solo en el 18% de los días de negociación desde 2010, y alcanzarlo ha precedido a la mayoría de las correcciones importantes. Una lectura por debajo de 1.0 indica que BTC cotiza por debajo de su tendencia de largo plazo, lo que ha marcado históricamente zonas de acumulación; este estado apareció en aproximadamente el 22% de los días.",
+        "Trata al Mayer Multiple como una herramienta de confirmación, no como una señal primaria. Combínalo con métricas on-chain como el <a href=\"/on-chain-metrics-calculator/\">ratio MVRV</a> o el <a href=\"/rainbow-chart-calculator/\">Rainbow Chart</a> para una visión multifactorial. Los techos de ciclo en 2017 y 2021 alcanzaron valores Mayer Multiple de 3.8 y 3.5 respectivamente; los suelos de ciclo en 2018 y 2022 cayeron por debajo de 0.65."
+      ],
+      scenarios: [
+        "Identificación de fase de ciclo: con Mayer en 0.8, BTC en $40K y MA de 200d en $50K, el indicador sugiere una zona de acumulación de mercado bajista. Combínalo con RSI semanal <30 y volumen de capitulación para confirmar. Patrón histórico: típicamente 6-18 meses de acumulación preceden al próximo ciclo alcista.",
+        "Marco de toma de ganancias: si tu portafolio excede tu asignación objetivo cuando Mayer cruza 2.0, considera recortar 10-20%. En Mayer 2.4+, escala salidas de forma agresiva (30-50%). Este enfoque basado en reglas elimina la emoción del rebalanceo durante fases eufóricas cuando la mayoría del retail pierde disciplina."
+      ],
+      checklist: [
+        "Antes de actuar sobre una señal Mayer: 1) Confirma la MA de 200d con múltiples fuentes (TradingView, Glassnode, CoinGecko calculan de forma ligeramente diferente). 2) Revisa la dirección de la tendencia: un Mayer subiendo por encima de 2.4 en un ciclo alcista difiere de un Mayer 2.4 desvaneciéndose desde 3.0. 3) Cruza referencias con tasas de financiamiento; un funding positivo extremo amplifica las señales de sobrecalentamiento.",
+        "Dimensionamiento de posición: nunca entres en una operación de 'señal mayer' sin stop loss. Incluso con Mayer en 0.6, BTC ha caído más (marzo 2020 tocó 0.55, finales de 2018 alcanzó 0.6). Limita la exposición de señal única al 5-10% del capital de riesgo y añade vía <a href=\"/dca-calculator/\">DCA</a> durante 4-12 semanas en lugar de comprar todo de golpe."
+      ],
+      mistakes: [
+        "Tratar al Mayer Multiple como un indicador preciso de techo/suelo. El indicador proporciona zonas, no puntos de giro. Vender todo en Mayer 2.4 en 2017 habría perdido la subida a 3.8 cuatro meses después. Úsalo para ajustes parciales de posición, no para decisiones de todo o nada.",
+        "Ignorar el contexto de estructura de mercado. El Mayer Multiple funcionó mejor en ciclos dominados por demanda spot (2013-2021). Los mercados post-ETF impulsados por flujos institucionales pueden comportarse diferente: el ciclo 2024-2026 mostró extremos Mayer atenuados a pesar de máximos históricos, sugiriendo que la absorción de oferta cambió la fuerza de señal del indicador."
+      ],
+      benchmarks: [
+        "Zonas de referencia histórica del Mayer Multiple: <0.8 (valor profundo, 12% de días), 0.8-1.2 (acumulación, 28%), 1.2-1.8 (normal, 35%), 1.8-2.4 (precaución, 17%), >2.4 (zona histórica de venta, 8%). Usa estas como tasas base al interpretar lecturas actuales.",
+        "Tasa de crecimiento de la MA de 200 días: en mercados alcistas estables, la MA de 200d sube 1-3% por mes. Si la MA acelera por encima de 5%/mes, la curva está alcanzando el precio y Mayer se comprimirá mecánicamente hacia 1.0 incluso si el precio se mantiene: ajusta tus expectativas de reversión a la media."
+      ],
+      execution: [
+        "Construye un ritual mensual de revisión Mayer: el primer domingo de cada mes, registra el precio actual de BTC, la MA de 200d, el valor Mayer y la zona. Sigue la trayectoria: la pendiente importa tanto como el nivel absoluto. Un Mayer descendiendo de 2.5 a 1.8 en dos meses es bajista aunque ambas lecturas sean 'elevadas'.",
+        "Para gatillos de operación: define por escrito tus umbrales de acción antes de que llegue el momento (ej.: 'vender 20% si Mayer cruza 2.4 desde abajo'). Las decisiones emocionales durante lecturas extremas, cuando el indicador es más útil, son cuando la mayoría de traders abandona su plan. La <a href=\"/risk-reward-calculator/\">calculadora de riesgo/recompensa</a> ayuda a cuantificar la estructura del trade."
+      ],
+      hygiene: [
+        "Actualiza tu valor de MA de 200d mensualmente: se mueve lentamente y puede retrasar tu interpretación en un 5-10% en mercados rápidos. Usa la misma fuente de datos de forma consistente para evitar cambios de señal espurios por diferencias menores de metodología (los feeds de precio de Bitstamp vs Coinbase suelen diferir en 0.1-0.3%).",
+        "Documenta cada decisión impulsada por Mayer con justificación y resultado. Durante 2-3 años construyes un conjunto de datos de desempeño personal que muestra si tu timing basado en Mayer realmente mejoró los retornos frente a un HODL simple. Este bucle de retroalimentación basado en evidencia es más valioso que cualquier lectura aislada de indicador."
+      ],
+      validation: [
+        "Verificación manual de cordura: BTC en $77K con MA de 200d en $70K → Mayer = 77/70 = 1.10. Si tu calculadora muestra un valor diferente, verifica que estés usando la misma fuente de MA. Discrepancias superiores al 5% indican datos obsoletos o período de MA equivocado (50d, 100d y 200d difieren significativamente).",
+        "Validación de backtest: revisa los valores Mayer en los puntos de inflexión principales del ciclo (dic 2017 ~3.8, dic 2018 ~0.65, abr 2021 ~3.5, nov 2022 ~0.6, mar 2024 ~1.9). Si tu fuente de datos coincide consistentemente con estas referencias, es confiable para señales prospectivas."
+      ],
+    },
+    pt: {
+      interpret: [
+        "O Mayer Multiple é a razão entre o preço atual do Bitcoin e sua média móvel simples de 200 dias. Uma leitura acima de 2,4 historicamente marcou condições de sobrecompra — esse nível foi rompido em apenas 18% dos dias de negociação desde 2010, e alcançá-lo precedeu a maioria das grandes correções. Uma leitura abaixo de 1,0 indica que o BTC negocia abaixo de sua tendência de longo prazo, o que historicamente marcou zonas de acumulação; esse estado apareceu em cerca de 22% dos dias.",
+        "Trate o Mayer Multiple como uma ferramenta de confirmação, não como sinal primário. Combine-o com métricas on-chain como a <a href=\"/on-chain-metrics-calculator/\">razão MVRV</a> ou o <a href=\"/rainbow-chart-calculator/\">Gráfico Arco-Íris</a> para uma visão multifatorial. Os topos de ciclo em 2017 e 2021 atingiram valores de Mayer Multiple de 3,8 e 3,5 respectivamente; os fundos de ciclo em 2018 e 2022 caíram abaixo de 0,65."
+      ],
+      scenarios: [
+        "Identificação de fase do ciclo: com Mayer em 0,8, BTC a $40K e MA de 200d em $50K, o indicador sugere uma zona de acumulação de mercado de baixa. Combine com RSI semanal <30 e volume de capitulação para confirmar. Padrão histórico: 6-18 meses de acumulação tipicamente precedem o próximo ciclo de alta.",
+        "Estrutura de realização de lucros: se sua carteira excede a alocação alvo quando o Mayer cruza 2,0, considere reduzir 10-20%. Em Mayer 2,4+, saia agressivamente (30-50%). Essa abordagem baseada em regras remove a emoção do rebalanceamento durante fases eufóricas, quando a maioria do varejo perde a disciplina."
+      ],
+      checklist: [
+        "Antes de agir em um sinal Mayer: 1) Confirme a MA de 200d com múltiplas fontes (TradingView, Glassnode, CoinGecko calculam de formas levemente diferentes). 2) Verifique a direção da tendência — Mayer subindo além de 2,4 em um ciclo de alta difere de Mayer 2,4 caindo de 3,0. 3) Cruze com taxas de funding; funding positivo extremo amplifica sinais de sobreaquecimento.",
+        "Dimensionamento de posição: nunca entre em um trade de 'sinal Mayer' sem stop loss. Mesmo em Mayer 0,6, o BTC já caiu mais (março de 2020 atingiu 0,55, final de 2018 tocou 0,6). Limite a exposição por sinal a 5-10% do capital de risco e adicione via <a href=\"/dca-calculator/\">DCA</a> ao longo de 4-12 semanas em vez de aporte único."
+      ],
+      mistakes: [
+        "Tratar o Mayer Multiple como indicador preciso de topo/fundo. O indicador fornece zonas, não pontos de virada. Vender tudo em Mayer 2,4 em 2017 teria perdido a corrida até 3,8 quatro meses depois. Use-o para ajustes parciais de posição, não para decisões tudo ou nada.",
+        "Ignorar o contexto da estrutura de mercado. O Mayer Multiple teve melhor desempenho em ciclos dominados por demanda spot (2013-2021). Mercados na era pós-ETF, impulsionados por fluxos institucionais, podem se comportar de forma diferente — o ciclo 2024-2026 mostrou extremos de Mayer atenuados apesar de máximas históricas, sugerindo que a absorção de oferta alterou a força do sinal do indicador."
+      ],
+      benchmarks: [
+        "Zonas de referência históricas do Mayer Multiple: <0,8 (valor profundo, 12% dos dias), 0,8-1,2 (acumulação, 28%), 1,2-1,8 (normal, 35%), 1,8-2,4 (cautela, 17%), >2,4 (zona histórica de venda, 8%). Use essas como taxas-base ao interpretar leituras atuais.",
+        "Taxa de crescimento da MA de 200d: em mercados de alta estáveis, a MA de 200d sobe 1-3% ao mês. Se a MA acelera acima de 5%/mês, a curva está alcançando e o Mayer comprimirá mecanicamente em direção a 1,0 mesmo que o preço se mantenha — ajuste as expectativas de reversão à média."
+      ],
+      execution: [
+        "Construa um ritual mensal de revisão Mayer: no primeiro domingo de cada mês, registre o preço atual do BTC, MA de 200d, valor Mayer e zona. Acompanhe a trajetória — a inclinação importa tanto quanto o nível absoluto. Um Mayer descendo de 2,5 para 1,8 ao longo de dois meses é baixista, mesmo que ambas as leituras sejam 'elevadas'.",
+        "Para gatilhos de trade: predefina por escrito seus limiares de ação antes do momento chegar (ex.: 'vender 20% se Mayer cruzar 2,4 vindo de baixo'). Decisões emocionais durante leituras extremas — quando o indicador é mais útil — são quando a maioria dos traders abandona seu plano. A <a href=\"/risk-reward-calculator/\">calculadora de risco/retorno</a> ajuda a quantificar a estrutura do trade."
+      ],
+      hygiene: [
+        "Atualize seu valor de MA de 200d mensalmente — ela se move lentamente e pode atrasar sua interpretação em 5-10% em mercados rápidos. Use a mesma fonte de dados consistentemente para evitar mudanças espúrias de sinal por pequenas diferenças metodológicas (feeds de preço Bitstamp vs Coinbase tipicamente diferem em 0,1-0,3%).",
+        "Documente cada decisão baseada em Mayer com a justificativa e o resultado. Ao longo de 2-3 anos, você constrói um conjunto de dados pessoal de performance mostrando se seu timing baseado em Mayer realmente melhorou os retornos vs HODL simples. Esse ciclo de feedback baseado em evidências é mais valioso do que qualquer leitura única de indicador."
+      ],
+      validation: [
+        "Verificação manual: BTC a $77K com MA de 200d a $70K → Mayer = 77/70 = 1,10. Se sua calculadora mostra um valor diferente, verifique se está usando a mesma fonte de MA. Discrepâncias acima de 5% indicam dados desatualizados ou período de MA errado (50d, 100d e 200d diferem significativamente).",
+        "Validação por backtest: revise os valores Mayer em pontos importantes de inflexão de ciclo (dez 2017 ~3,8, dez 2018 ~0,65, abr 2021 ~3,5, nov 2022 ~0,6, mar 2024 ~1,9). Se sua fonte de dados corresponde consistentemente a esses marcos, é confiável para sinais prospectivos."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Mayer Multiple, Bitcoin'in mevcut fiyatının 200 günlük basit hareketli ortalamasına oranıdır. 2,4'ün üzerindeki bir okuma tarihsel olarak aşırı alım koşullarını işaret etmiştir — bu seviye 2010'dan bu yana işlem günlerinin yalnızca %18'inde aşılmış ve bu seviyeye ulaşılması büyük düzeltmelerin çoğundan önce gelmiştir. 1,0'ın altındaki bir okuma ise BTC'nin uzun vadeli trendinin altında işlem gördüğünü gösterir; bu durum tarihsel olarak birikim bölgelerini işaret etmiş ve günlerin yaklaşık %22'sinde görülmüştür.",
+        "Mayer Multiple'ı birincil sinyal değil, doğrulama aracı olarak ele alın. Çok faktörlü bir görünüm için <a href=\"/on-chain-metrics-calculator/\">MVRV oranı</a> veya <a href=\"/rainbow-chart-calculator/\">Gökkuşağı Grafiği</a> gibi on-chain metriklerle birlikte kullanın. 2017 ve 2021'deki döngü zirveleri sırasıyla 3,8 ve 3,5 Mayer Multiple değerlerine ulaştı; 2018 ve 2022'deki döngü dipleri ise 0,65'in altına düştü."
+      ],
+      scenarios: [
+        "Döngü fazı tespiti: BTC 40.000 dolar ve 200 günlük MA 50.000 dolar iken Mayer 0,8 değerinde, gösterge ayı piyasası birikim bölgesini işaret eder. Doğrulamak için haftalık RSI <30 ve teslimiyet hacmiyle birleştirin. Tarihsel örüntü: bir sonraki boğa döngüsünden önce tipik olarak 6-18 aylık birikim dönemi gelir.",
+        "Kâr realizasyonu çerçevesi: Mayer 2,0'ı geçtiğinde portföyünüz hedef tahsisinizi aşıyorsa %10-20 azaltmayı düşünün. Mayer 2,4+ seviyesinde ise agresif şekilde (%30-50) kademeli çıkış yapın. Bu kural tabanlı yaklaşım, perakende yatırımcıların çoğunun disiplinini kaybettiği öforik fazlarda yeniden dengelemede duyguyu ortadan kaldırır."
+      ],
+      checklist: [
+        "Bir Mayer sinyaline göre hareket etmeden önce: 1) 200 günlük MA'yı birden fazla kaynakla doğrulayın (TradingView, Glassnode, CoinGecko hepsi biraz farklı hesaplar). 2) Trend yönünü kontrol edin — boğa döngüsünde 2,4'ü aşan yükselen Mayer ile 3,0'dan 2,4'e gerileyen Mayer farklıdır. 3) Fonlama oranlarını karşılaştırın; aşırı pozitif fonlama aşırı ısınmış sinyalleri güçlendirir.",
+        "Pozisyon boyutlandırma: 'Mayer sinyali' işlemine asla stop loss olmadan girmeyin. Mayer 0,6'da bile BTC daha da düşmüştür (Mart 2020'de 0,55'e, 2018 sonunda 0,6'ya değdi). Tek sinyal maruziyetini risk sermayesinin %5-10'u ile sınırlayın ve toplu yerine 4-12 hafta boyunca <a href=\"/dca-calculator/\">DCA</a> üzerinden ekleyin."
+      ],
+      mistakes: [
+        "Mayer Multiple'ı kesin bir tepe/dip göstergesi olarak ele almak. Gösterge bölgeler verir, dönüş noktaları değil. 2017'de Mayer 2,4'te her şeyi satmak, dört ay sonraki 3,8'e olan koşuyu kaçırırdı. Tamamen al/tamamen sat kararları için değil, kısmi pozisyon ayarlamaları için kullanın.",
+        "Piyasa yapısı bağlamını görmezden gelmek. Mayer Multiple, spot talebin baskın olduğu döngülerde (2013-2021) en iyi performansı gösterdi. ETF sonrası dönemde kurumsal akışların yönlendirdiği piyasalar farklı davranabilir — 2024-2026 döngüsü tüm zamanların en yüksek seviyelerine rağmen sönük Mayer ekstremleri gösterdi, bu da arz emiliminin göstergenin sinyal gücünü değiştirdiğini düşündürüyor."
+      ],
+      benchmarks: [
+        "Tarihsel Mayer Multiple kıyaslama bölgeleri: <0,8 (derin değer, günlerin %12'si), 0,8-1,2 (birikim, %28), 1,2-1,8 (normal, %35), 1,8-2,4 (dikkat, %17), >2,4 (tarihsel satış bölgesi, %8). Mevcut okumaları yorumlarken bunları temel oranlar olarak kullanın.",
+        "200 günlük MA büyüme oranı: istikrarlı boğa piyasalarında 200 günlük MA aylık %1-3 yükselir. MA aylık %5'in üzerinde hızlanırsa, eğri yakalıyordur ve fiyat sabit kalsa bile Mayer mekanik olarak 1,0'a doğru sıkışacaktır — ortalamaya dönüş beklentilerini buna göre ayarlayın."
+      ],
+      execution: [
+        "Aylık Mayer inceleme ritüeli oluşturun: her ayın ilk Pazar günü mevcut BTC fiyatını, 200 günlük MA'yı, Mayer değerini ve bölgesini kaydedin. Gidişatı takip edin — eğim, mutlak seviye kadar önemlidir. İki ay boyunca 2,5'tan 1,8'e gerileyen bir Mayer, her iki okuma da 'yüksek' olsa bile düşüş yönlüdür.",
+        "İşlem tetikleyicileri için: aksiyon eşiklerinizi an gelmeden önce yazılı olarak önceden tanımlayın (örn., 'Mayer aşağıdan 2,4'ü geçerse %20 sat'). Aşırı okumalar sırasında — göstergenin en yararlı olduğu zamanda — duygusal kararlar, çoğu yatırımcının planını terk ettiği andır. <a href=\"/risk-reward-calculator/\">Risk/ödül hesaplayıcı</a> işlem yapısını niceliksel olarak değerlendirmeye yardımcı olur."
+      ],
+      hygiene: [
+        "200 günlük MA değerinizi aylık olarak yenileyin — yavaş hareket eder ve hızlı piyasalarda yorumunuzu %5-10 geciktirebilir. Küçük metodoloji farklılıklarından kaynaklanan sahte sinyal değişikliklerini önlemek için aynı veri kaynağını tutarlı şekilde kullanın (Bitstamp ve Coinbase fiyat akışları tipik olarak %0,1-0,3 farklılık gösterir).",
+        "Mayer odaklı her kararı gerekçesi ve sonucuyla belgeleyin. 2-3 yıl içinde, Mayer tabanlı zamanlamanızın getirilerinizi basit HODL'a kıyasla gerçekten iyileştirip iyileştirmediğini gösteren kişisel bir performans veri seti oluşturursunuz. Bu kanıt temelli geri bildirim döngüsü, herhangi bir tek gösterge okumasından daha değerlidir."
+      ],
+      validation: [
+        "Manuel mantık kontrolü: BTC 77.000 dolar, 200 günlük MA 70.000 dolar → Mayer = 77/70 = 1,10. Hesaplayıcınız farklı bir değer gösteriyorsa, aynı MA kaynağını kullandığınızı doğrulayın. %5'in üzerindeki tutarsızlıklar ya bayat veri ya da yanlış MA periyodu (50, 100 ve 200 günlük önemli ölçüde farklıdır) gösterir.",
+        "Geriye dönük test doğrulaması: önemli döngü dönüm noktalarındaki Mayer değerlerini inceleyin (Aralık 2017 ~3,8, Aralık 2018 ~0,65, Nisan 2021 ~3,5, Kasım 2022 ~0,6, Mart 2024 ~1,9). Veri kaynağınız bu kıyaslamalarla tutarlı şekilde eşleşiyorsa, ileriye dönük sinyaller için güvenilirdir."
+      ],
+    },
+    hi: {
+      interpret: [
+        "Mayer Multiple, Bitcoin की वर्तमान कीमत और उसके 200-दिवसीय सिंपल मूविंग एवरेज का अनुपात है। 2.4 से ऊपर का स्तर ऐतिहासिक रूप से ओवरबॉट स्थितियों को दर्शाता है — 2010 के बाद से केवल 18% ट्रेडिंग दिनों में यह स्तर पार हुआ है, और इस स्तर तक पहुँचने के बाद अधिकांश बड़ी गिरावटें आई हैं। 1.0 से नीचे का स्तर यह संकेत देता है कि BTC अपने दीर्घकालिक ट्रेंड से नीचे ट्रेड कर रहा है, जो ऐतिहासिक रूप से संचय (accumulation) क्षेत्र रहा है; यह स्थिति लगभग 22% दिनों में देखी गई है।",
+        "Mayer Multiple को प्राथमिक सिग्नल नहीं बल्कि पुष्टि के उपकरण के रूप में मानें। बहु-कारक दृष्टिकोण के लिए इसे <a href=\"/on-chain-metrics-calculator/\">MVRV अनुपात</a> या <a href=\"/rainbow-chart-calculator/\">Rainbow Chart</a> जैसे on-chain मेट्रिक्स के साथ संयोजित करें। 2017 और 2021 के साइकिल टॉप क्रमशः 3.8 और 3.5 के Mayer Multiple मानों पर पहुँचे; 2018 और 2022 के साइकिल बॉटम 0.65 से नीचे गिरे।"
+      ],
+      scenarios: [
+        "साइकिल चरण की पहचान: Mayer 0.8 पर BTC $40K और 200d MA $50K होने पर, यह संकेतक बेयर-मार्केट संचय क्षेत्र का सुझाव देता है। पुष्टि के लिए साप्ताहिक RSI <30 और कैपिचुलेशन वॉल्यूम के साथ संयोजित करें। ऐतिहासिक पैटर्न: अगले बुल साइकिल से पहले आमतौर पर 6-18 महीने का संचय होता है।",
+        "लाभ निकालने का ढाँचा: यदि Mayer 2.0 पार करते समय आपका पोर्टफोलियो आपके लक्ष्य आवंटन से अधिक हो जाता है, तो 10-20% कम करने पर विचार करें। Mayer 2.4+ पर, आक्रामक रूप से निकालें (30-50%)। यह नियम-आधारित दृष्टिकोण उत्साही चरणों के दौरान रीबैलेंसिंग से भावना को हटाता है जब अधिकांश रिटेल अनुशासन खो देते हैं।"
+      ],
+      checklist: [
+        "Mayer सिग्नल पर कार्य करने से पहले: 1) कई स्रोतों से 200d MA की पुष्टि करें (TradingView, Glassnode, CoinGecko सभी थोड़ा अलग गणना करते हैं)। 2) ट्रेंड दिशा जाँचें — बुल साइकिल में Mayer 2.4 को पार करना, 3.0 से 2.4 तक गिरने से अलग है। 3) फंडिंग रेट्स को क्रॉस-रेफरेंस करें; अत्यधिक धनात्मक फंडिंग ओवरहीटेड सिग्नल को बढ़ाती है।",
+        "पोजीशन साइज़िंग: स्टॉप लॉस के बिना कभी भी 'Mayer सिग्नल' ट्रेड में प्रवेश न करें। Mayer 0.6 पर भी BTC और गिरा है (मार्च 2020 में 0.55, 2018 के अंत में 0.6)। एकल-सिग्नल एक्सपोज़र को जोखिम पूँजी के 5-10% तक सीमित रखें और एकमुश्त के बजाय 4-12 सप्ताह में <a href=\"/dca-calculator/\">DCA</a> के माध्यम से जोड़ें।"
+      ],
+      mistakes: [
+        "Mayer Multiple को सटीक टॉप/बॉटम संकेतक मानना। यह संकेतक टर्निंग पॉइंट्स नहीं, बल्कि ज़ोन देता है। 2017 में Mayer 2.4 पर सब कुछ बेचने से चार महीने बाद 3.8 तक की दौड़ छूट जाती। इसे आंशिक पोजीशन समायोजन के लिए उपयोग करें, all-in/all-out निर्णयों के लिए नहीं।",
+        "बाज़ार संरचना संदर्भ की अनदेखी करना। Mayer Multiple ने स्पॉट डिमांड द्वारा संचालित साइकिलों (2013-2021) में सर्वश्रेष्ठ प्रदर्शन किया। संस्थागत प्रवाह से संचालित पोस्ट-ETF युग के बाज़ार अलग व्यवहार कर सकते हैं — 2024-2026 साइकिल ने ऑल-टाइम हाई के बावजूद नरम Mayer एक्सट्रीम दिखाए, यह सुझाव देता है कि सप्लाई अवशोषण ने संकेतक की सिग्नल शक्ति बदल दी।"
+      ],
+      benchmarks: [
+        "ऐतिहासिक Mayer Multiple बेंचमार्क ज़ोन: <0.8 (गहरा मूल्य, 12% दिन), 0.8-1.2 (संचय, 28%), 1.2-1.8 (सामान्य, 35%), 1.8-2.4 (सावधानी, 17%), >2.4 (ऐतिहासिक बिक्री ज़ोन, 8%)। वर्तमान रीडिंग की व्याख्या करते समय इन्हें आधार दरों के रूप में उपयोग करें।",
+        "200-दिवसीय MA वृद्धि दर: स्थिर बुल मार्केट में, 200d MA प्रति माह 1-3% बढ़ता है। यदि MA 5%/माह से ऊपर तेज़ी से बढ़ता है, तो वक्र पकड़ रहा है और Mayer यांत्रिक रूप से 1.0 की ओर संकुचित होगा, भले ही कीमत स्थिर रहे — मीन रिवर्जन की अपेक्षाओं को समायोजित करें।"
+      ],
+      execution: [
+        "मासिक Mayer समीक्षा अनुष्ठान बनाएँ: हर महीने का पहला रविवार, वर्तमान BTC कीमत, 200d MA, Mayer मान और ज़ोन लॉग करें। प्रक्षेपवक्र ट्रैक करें — ढाल पूर्ण स्तर जितना ही मायने रखती है। दो महीनों में 2.5 से 1.8 तक उतरता Mayer बेयरिश है, भले ही दोनों रीडिंग 'ऊँची' हों।",
+        "ट्रेड ट्रिगर्स के लिए: क्षण आने से पहले अपने एक्शन थ्रेशोल्ड्स को लिखित रूप में पूर्व-परिभाषित करें (जैसे, 'यदि Mayer नीचे से 2.4 पार करे तो 20% बेचें')। चरम रीडिंग के दौरान भावनात्मक निर्णय — जब संकेतक सबसे उपयोगी होता है — तब अधिकांश व्यापारी अपनी योजना त्याग देते हैं। <a href=\"/risk-reward-calculator/\">रिस्क/रिवॉर्ड कैलकुलेटर</a> ट्रेड संरचना को मात्रात्मक करने में मदद करता है।"
+      ],
+      hygiene: [
+        "अपने 200d MA मान को मासिक रिफ्रेश करें — यह धीरे-धीरे चलता है और तेज़ बाज़ारों में आपकी व्याख्या को 5-10% तक पीछे छोड़ सकता है। मामूली पद्धति अंतरों से नकली सिग्नल परिवर्तनों से बचने के लिए लगातार एक ही डेटा स्रोत का उपयोग करें (Bitstamp बनाम Coinbase कीमत फीड्स आमतौर पर 0.1-0.3% तक भिन्न होते हैं)।",
+        "तर्क और परिणाम के साथ प्रत्येक Mayer-संचालित निर्णय का दस्तावेज़ीकरण करें। 2-3 वर्षों में आप एक व्यक्तिगत प्रदर्शन डेटासेट बनाते हैं जो दिखाता है कि क्या आपकी Mayer-आधारित टाइमिंग ने वास्तव में साधारण HODL की तुलना में रिटर्न में सुधार किया। यह साक्ष्य-आधारित फीडबैक लूप किसी भी एकल संकेतक रीडिंग से अधिक मूल्यवान है।"
+      ],
+      validation: [
+        "मैनुअल सेनिटी चेक: BTC $77K पर 200d MA $70K → Mayer = 77/70 = 1.10। यदि आपका कैलकुलेटर अलग मान दिखाता है, तो सत्यापित करें कि आप समान MA स्रोत का उपयोग कर रहे हैं। 5% से अधिक विसंगतियाँ या तो पुराने डेटा या गलत MA अवधि (50d, 100d, और 200d काफी भिन्न होते हैं) का संकेत देती हैं।",
+        "बैकटेस्ट सत्यापन: प्रमुख साइकिल इन्फ्लेक्शन पॉइंट्स पर Mayer मानों की समीक्षा करें (दिसंबर 2017 ~3.8, दिसंबर 2018 ~0.65, अप्रैल 2021 ~3.5, नवंबर 2022 ~0.6, मार्च 2024 ~1.9)। यदि आपका डेटा स्रोत लगातार इन बेंचमार्कों से मेल खाता है, तो यह आगे-दिखने वाले सिग्नलों के लिए विश्वसनीय है।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Мультипликатор Майера — это отношение текущей цены биткоина к его 200-дневной простой скользящей средней. Значение выше 2,4 исторически отмечало зоны перекупленности — этот уровень пробивался лишь в 18% торговых дней с 2010 года, и его достижение предшествовало большинству крупных коррекций. Значение ниже 1,0 указывает на то, что BTC торгуется ниже долгосрочного тренда, что исторически совпадало с зонами накопления; такое состояние наблюдалось примерно в 22% дней.",
+        "Воспринимайте мультипликатор Майера как инструмент подтверждения, а не как основной сигнал. Сочетайте его с он-чейн метриками, такими как <a href=\"/on-chain-metrics-calculator/\">коэффициент MVRV</a> или <a href=\"/rainbow-chart-calculator/\">Rainbow Chart</a>, для многофакторной оценки. Вершины циклов 2017 и 2021 годов достигли значений мультипликатора Майера 3,8 и 3,5 соответственно; дна циклов 2018 и 2022 годов опускались ниже 0,65."
+      ],
+      scenarios: [
+        "Идентификация фазы цикла: при значении Mayer 0,8, когда BTC стоит $40K, а 200-дневная средняя — $50K, индикатор указывает на зону накопления медвежьего рынка. Сочетайте с недельным RSI <30 и капитуляционными объёмами для подтверждения. Историческая закономерность: 6–18 месяцев накопления обычно предшествуют следующему бычьему циклу.",
+        "Рамки фиксации прибыли: если ваш портфель превышает целевое распределение в момент пересечения Mayer уровня 2,0, рассмотрите сокращение на 10–20%. При Mayer 2,4+ выходите агрессивнее (30–50%). Такой подход на основе правил убирает эмоции из ребалансировки в эйфорические фазы, когда большинство розничных инвесторов теряют дисциплину."
+      ],
+      checklist: [
+        "Прежде чем действовать на сигнале Майера: 1) Сверьте значение 200-дневной средней с несколькими источниками (TradingView, Glassnode, CoinGecko считают немного по-разному). 2) Проверьте направление тренда — рост Mayer выше 2,4 в бычьем цикле отличается от Mayer 2,4, угасающего с 3,0. 3) Сопоставьте со ставками финансирования; экстремально положительное финансирование усиливает сигналы перегрева.",
+        "Размер позиции: никогда не входите в сделку по «сигналу Майера» без стоп-лосса. Даже на Mayer 0,6 BTC падал глубже (март 2020 — 0,55, конец 2018 — 0,6). Ограничивайте экспозицию по одному сигналу 5–10% рискового капитала и добавляйтесь через <a href=\"/dca-calculator/\">DCA</a> на горизонте 4–12 недель, а не разовой покупкой."
+      ],
+      mistakes: [
+        "Восприятие мультипликатора Майера как точного индикатора вершин/доньев. Индикатор показывает зоны, а не точки разворота. Продажа всего на Mayer 2,4 в 2017 году привела бы к потере роста до 3,8 четырьмя месяцами позже. Используйте его для частичных корректировок позиции, а не для решений «всё или ничего».",
+        "Игнорирование контекста рыночной структуры. Мультипликатор Майера лучше всего работал в циклах, где доминировал спотовый спрос (2013–2021). Рынки эпохи после запуска ETF, движимые институциональными потоками, могут вести себя иначе — цикл 2024–2026 показал приглушённые экстремумы Mayer несмотря на исторические максимумы, что указывает на изменение силы сигнала из-за поглощения предложения."
+      ],
+      benchmarks: [
+        "Исторические зоны мультипликатора Майера: <0,8 (глубокая стоимость, 12% дней), 0,8–1,2 (накопление, 28%), 1,2–1,8 (норма, 35%), 1,8–2,4 (осторожность, 17%), >2,4 (историческая зона продаж, 8%). Используйте эти значения как базовые при интерпретации текущих показаний.",
+        "Темп роста 200-дневной средней: на устойчивых бычьих рынках 200-дневная средняя растёт на 1–3% в месяц. Если средняя ускоряется выше 5%/месяц, кривая догоняет цену, и Mayer механически сжимается к 1,0 даже при удержании цены — скорректируйте ожидания возврата к среднему."
+      ],
+      execution: [
+        "Создайте ритуал ежемесячного обзора Mayer: в первое воскресенье каждого месяца фиксируйте текущую цену BTC, 200-дневную среднюю, значение Mayer и зону. Отслеживайте траекторию — наклон важен не меньше абсолютного уровня. Снижение Mayer с 2,5 до 1,8 за два месяца — медвежий сигнал, даже если оба значения «повышенные».",
+        "Для торговых триггеров: заранее задайте письменно пороги действий (например, «продать 20%, если Mayer пересечёт 2,4 снизу вверх»). Эмоциональные решения при экстремальных значениях — когда индикатор наиболее полезен — это момент, когда большинство трейдеров отказываются от плана. <a href=\"/risk-reward-calculator/\">Калькулятор риск/прибыль</a> помогает количественно оценить структуру сделки."
+      ],
+      hygiene: [
+        "Обновляйте значение 200-дневной средней ежемесячно — она движется медленно и может отставать от вашей интерпретации на 5–10% на быстром рынке. Используйте один и тот же источник данных, чтобы избежать ложных изменений сигнала из-за мелких методологических различий (котировки Bitstamp и Coinbase обычно расходятся на 0,1–0,3%).",
+        "Документируйте каждое решение, принятое на основе Mayer, с обоснованием и результатом. За 2–3 года у вас сформируется личная база данных, показывающая, действительно ли тайминг по Mayer улучшил доходность по сравнению с простым HODL. Такая обратная связь на основе доказательств ценнее, чем любое одиночное показание индикатора."
+      ],
+      validation: [
+        "Ручная проверка: BTC по $77K, 200-дневная средняя $70K → Mayer = 77/70 = 1,10. Если ваш калькулятор показывает иное значение, проверьте, что используете тот же источник средней. Расхождения свыше 5% указывают на устаревшие данные или неверный период средней (50d, 100d и 200d существенно различаются).",
+        "Бэктест-валидация: проверьте значения Mayer в ключевых точках циклов (дек. 2017 ~3,8, дек. 2018 ~0,65, апр. 2021 ~3,5, ноя. 2022 ~0,6, мар. 2024 ~1,9). Если ваш источник стабильно совпадает с этими ориентирами, ему можно доверять для прогнозных сигналов."
+      ],
+    },
+  },
+  'geometric-mean-return-calculator': {
+    en: {
+      interpret: [
+        "Geometric mean is the true compound return — what your money actually earned. Arithmetic mean overstates performance for volatile assets because it doesn't account for the math of recovering losses (a 50% loss requires a 100% gain to break even). The gap between arithmetic and geometric mean is called volatility drag, and it grows with return variance.",
+        "For a portfolio with returns +50%, -30%, +50%, -30%: arithmetic mean = +10%, but geometric mean = 2.5% — and you'd actually have only $1,103 from $1,000 after four periods, not $1,469 the arithmetic mean implies. Always compare strategies and assets using geometric (compound) returns, especially when comparing low-volatility vs high-volatility options."
+      ],
+      scenarios: [
+        "Strategy comparison: Strategy A returns +20%, +20%, +20% (arithmetic and geometric both 20%, $1,728 final). Strategy B returns +60%, -20%, +30% (arithmetic 23.3%, geometric 18.2%, final $1,651). B looks better arithmetically but A wins geometrically. Always pick higher geometric for compounding portfolios.",
+        "Crypto vs index fund comparison: Bitcoin 2021-2024 had wild swings — arithmetic +35%/yr but geometric only ~12%/yr due to drawdowns. S&P 500 same period: arithmetic ~12%/yr, geometric ~10%/yr. Bitcoin's geometric advantage is real but smaller than headline returns suggest. Use this for honest <a href=\"/portfolio-calculator/\">portfolio allocation</a>."
+      ],
+      checklist: [
+        "Before computing: 1) Use period returns in same time unit (all monthly or all yearly, not mixed). 2) Express returns as decimals or percentages consistently. 3) Include EVERY period — selectively dropping bad months produces survivorship bias. 4) Verify final compound value matches: $1000 × ∏(1+r_i) should equal your reported ending balance.",
+        "For benchmarking: pull at least 5 years of data to dampen single-event distortion. Crypto markets specifically need 3+ full cycles (≈12 years for BTC) to estimate true geometric mean — anything shorter is heavily skewed by your starting point in the cycle."
+      ],
+      mistakes: [
+        "Reporting only arithmetic mean returns in marketing materials or personal goals. The hedge fund industry routinely uses geometric (CAGR) for long-term claims, but retail crypto influencers often quote arithmetic averages that look 2-3x better than reality. Always ask: 'What was the actual ending balance?' to verify.",
+        "Forgetting that geometric mean assumes full reinvestment with no withdrawals or contributions. If you DCA'd in or took profits, your actual return uses time-weighted return (TWR) or money-weighted return (MWR), not simple geometric mean. Use a <a href=\"/dca-calculator/\">DCA calculator</a> for contribution scenarios."
+      ],
+      benchmarks: [
+        "Long-term geometric returns: S&P 500 ≈ 10%/yr (1928-2024), Bitcoin ≈ 80%/yr since 2010 (declining as it matures, recent 5-year ≈ 35%/yr), Gold ≈ 5%/yr, US Treasuries ≈ 5%/yr. Volatility drag is roughly variance/2: a 60% volatility asset (like BTC) loses ~18%/yr to drag vs a 15% vol asset (S&P).",
+        "Sample size matters: 12 monthly periods gives geometric mean with ±5-10% uncertainty for stocks, ±20-40% for crypto. To trust your geometric mean as a predictor, need at least 30-60 periods. Smaller samples are descriptive of past, not predictive of future."
+      ],
+      execution: [
+        "Calculation workflow: list each period's return → add 1 to each (e.g., 10% → 1.10) → multiply all factors → take nth root where n = number of periods → subtract 1 → multiply by 100 for percentage. Or use the calculator's input table to automate.",
+        "For monthly investment tracking: on the last day of each month, log the portfolio value, divide by previous month-end value, subtract 1 = monthly return. After 12 months, compute geometric mean and annualize: (1+monthly_geo)^12 - 1 = annual return. This standardizes comparisons across asset classes."
+      ],
+      hygiene: [
+        "Maintain a clean returns log with: date, period type (D/W/M/Q/Y), return percentage, source data, and any contributions/withdrawals (which require TWR adjustment). Excel/Google Sheets templates work fine; don't rely on memory or partial screenshots.",
+        "Recompute geometric mean monthly to catch errors early. A single typo turning 10% into 100% will catastrophically distort your compound return. Always cross-check ending balance from compound formula vs broker statement — they should match within rounding."
+      ],
+      validation: [
+        "Quick validation: if your arithmetic mean is X% and geometric mean is Y%, the gap (X-Y) approximates the volatility drag, which equals variance/2. For a sample where arithmetic is 12% and geometric is 8%, drag = 4%, implying ~28% annualized volatility. Sanity-check this against the actual standard deviation of your returns.",
+        "Final check: starting value × (1 + geometric_mean)^periods should equal ending value. $10,000 × (1.08)^5 = $14,693 — if your spreadsheet shows $14,693 ± $5, you're correct. Larger discrepancies indicate error in either input data or formula."
+      ],
+    },
+    es: {
+      interpret: [
+        "La media geométrica es el verdadero retorno compuesto: lo que tu dinero realmente ganó. La media aritmética sobrestima el desempeño para activos volátiles porque no contempla la matemática de recuperar pérdidas (una pérdida del 50% requiere una ganancia del 100% para volver al punto de equilibrio). La brecha entre media aritmética y geométrica se llama drag de volatilidad, y crece con la varianza de los retornos.",
+        "Para un portafolio con retornos +50%, -30%, +50%, -30%: media aritmética = +10%, pero media geométrica = 2.5%, y en realidad tendrías solo $1,103 partiendo de $1,000 después de cuatro períodos, no los $1,469 que implica la media aritmética. Compara siempre estrategias y activos usando retornos geométricos (compuestos), especialmente al contrastar opciones de baja volatilidad vs alta volatilidad."
+      ],
+      scenarios: [
+        "Comparación de estrategias: Estrategia A retorna +20%, +20%, +20% (aritmética y geométrica ambas 20%, $1,728 final). Estrategia B retorna +60%, -20%, +30% (aritmética 23.3%, geométrica 18.2%, final $1,651). B se ve mejor aritméticamente pero A gana geométricamente. Elige siempre la mayor geométrica para portafolios que componen.",
+        "Comparación cripto vs fondo indexado: Bitcoin 2021-2024 tuvo oscilaciones salvajes: aritmética +35%/año pero geométrica solo ~12%/año debido a los drawdowns. S&P 500 mismo período: aritmética ~12%/año, geométrica ~10%/año. La ventaja geométrica de Bitcoin es real pero menor de lo que sugieren los retornos titulares. Usa esto para una <a href=\"/portfolio-calculator/\">asignación de portafolio</a> honesta."
+      ],
+      checklist: [
+        "Antes de calcular: 1) Usa retornos del mismo período (todos mensuales o todos anuales, no mezclados). 2) Expresa retornos como decimales o porcentajes de forma consistente. 3) Incluye TODOS los períodos: descartar selectivamente meses malos produce sesgo de supervivencia. 4) Verifica que el valor final compuesto coincida: $1000 × ∏(1+r_i) debe igualar tu balance final reportado.",
+        "Para benchmarking: extrae al menos 5 años de datos para amortiguar la distorsión por evento único. Los mercados cripto específicamente necesitan 3+ ciclos completos (≈12 años para BTC) para estimar la verdadera media geométrica: cualquier período más corto está fuertemente sesgado por tu punto de inicio en el ciclo."
+      ],
+      mistakes: [
+        "Reportar solo retornos de media aritmética en materiales de marketing u objetivos personales. La industria de hedge funds usa rutinariamente geométrica (CAGR) para reclamos de largo plazo, pero los influencers cripto retail a menudo citan promedios aritméticos que parecen 2-3x mejores que la realidad. Pregunta siempre: '¿Cuál fue el balance final real?' para verificar.",
+        "Olvidar que la media geométrica asume reinversión total sin retiros ni aportes. Si hiciste DCA o tomaste ganancias, tu retorno real usa retorno ponderado por tiempo (TWR) o retorno ponderado por dinero (MWR), no media geométrica simple. Usa una <a href=\"/dca-calculator/\">calculadora DCA</a> para escenarios con aportes."
+      ],
+      benchmarks: [
+        "Retornos geométricos de largo plazo: S&P 500 ≈ 10%/año (1928-2024), Bitcoin ≈ 80%/año desde 2010 (disminuyendo al madurar, los últimos 5 años ≈ 35%/año), Oro ≈ 5%/año, Bonos del Tesoro de EE.UU. ≈ 5%/año. El drag de volatilidad es aproximadamente varianza/2: un activo con 60% de volatilidad (como BTC) pierde ~18%/año por drag vs un activo con 15% de vol (S&P).",
+        "El tamaño de muestra importa: 12 períodos mensuales dan una media geométrica con ±5-10% de incertidumbre para acciones, ±20-40% para cripto. Para confiar en tu media geométrica como predictor, se necesitan al menos 30-60 períodos. Muestras más pequeñas son descriptivas del pasado, no predictivas del futuro."
+      ],
+      execution: [
+        "Flujo de cálculo: lista el retorno de cada período → suma 1 a cada uno (ej., 10% → 1.10) → multiplica todos los factores → calcula la raíz n-ésima donde n = número de períodos → resta 1 → multiplica por 100 para obtener el porcentaje. O usa la tabla de entrada de la calculadora para automatizar.",
+        "Para seguimiento de inversión mensual: el último día de cada mes, registra el valor del portafolio, divídelo entre el valor de cierre del mes anterior, resta 1 = retorno mensual. Después de 12 meses, calcula la media geométrica y anualízala: (1+geo_mensual)^12 - 1 = retorno anual. Esto estandariza las comparaciones entre clases de activos."
+      ],
+      hygiene: [
+        "Mantén un registro limpio de retornos con: fecha, tipo de período (D/S/M/T/A), porcentaje de retorno, datos fuente y cualquier aporte/retiro (que requieren ajuste TWR). Las plantillas de Excel/Google Sheets funcionan bien; no dependas de la memoria ni de capturas parciales.",
+        "Recalcula la media geométrica mensualmente para detectar errores temprano. Un solo error tipográfico convirtiendo 10% en 100% distorsionará catastróficamente tu retorno compuesto. Cruza siempre el balance final de la fórmula compuesta vs el extracto del broker: deben coincidir dentro del redondeo."
+      ],
+      validation: [
+        "Validación rápida: si tu media aritmética es X% y la geométrica es Y%, la brecha (X-Y) aproxima el drag de volatilidad, que equivale a varianza/2. Para una muestra donde la aritmética es 12% y la geométrica 8%, drag = 4%, lo que implica ~28% de volatilidad anualizada. Verifica esto contra la desviación estándar real de tus retornos.",
+        "Verificación final: valor inicial × (1 + media_geométrica)^períodos debería igualar el valor final. $10,000 × (1.08)^5 = $14,693: si tu hoja de cálculo muestra $14,693 ± $5, estás en lo correcto. Discrepancias mayores indican error en los datos de entrada o en la fórmula."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A média geométrica é o verdadeiro retorno composto — o que seu dinheiro realmente rendeu. A média aritmética superestima o desempenho de ativos voláteis porque não considera a matemática de recuperar perdas (uma perda de 50% exige um ganho de 100% para empatar). A diferença entre média aritmética e geométrica é chamada de arrasto de volatilidade, e cresce com a variância dos retornos.",
+        "Para uma carteira com retornos +50%, -30%, +50%, -30%: média aritmética = +10%, mas média geométrica = 2,5% — e você realmente teria apenas $1.103 a partir de $1.000 após quatro períodos, não os $1.469 que a média aritmética sugere. Sempre compare estratégias e ativos usando retornos geométricos (compostos), especialmente ao comparar opções de baixa vs alta volatilidade."
+      ],
+      scenarios: [
+        "Comparação de estratégias: Estratégia A retorna +20%, +20%, +20% (aritmética e geométrica ambas 20%, $1.728 final). Estratégia B retorna +60%, -20%, +30% (aritmética 23,3%, geométrica 18,2%, final $1.651). B parece melhor aritmeticamente, mas A vence geometricamente. Sempre escolha maior geométrica para carteiras com capitalização composta.",
+        "Comparação cripto vs fundo de índice: Bitcoin 2021-2024 teve oscilações selvagens — aritmética +35%/ano, mas geométrica apenas ~12%/ano devido a drawdowns. S&P 500 no mesmo período: aritmética ~12%/ano, geométrica ~10%/ano. A vantagem geométrica do Bitcoin é real, mas menor do que os retornos de manchete sugerem. Use isso para uma <a href=\"/portfolio-calculator/\">alocação de carteira</a> honesta."
+      ],
+      checklist: [
+        "Antes de calcular: 1) Use retornos de período na mesma unidade de tempo (todos mensais ou todos anuais, não misturados). 2) Expresse retornos como decimais ou porcentagens consistentemente. 3) Inclua TODOS os períodos — descartar meses ruins seletivamente produz viés de sobrevivência. 4) Verifique se o valor composto final corresponde: $1000 × ∏(1+r_i) deve igualar seu saldo final relatado.",
+        "Para benchmarking: puxe pelo menos 5 anos de dados para atenuar a distorção de eventos isolados. Mercados cripto especificamente precisam de 3+ ciclos completos (≈12 anos para BTC) para estimar a verdadeira média geométrica — qualquer período menor é fortemente enviesado pelo seu ponto de partida no ciclo."
+      ],
+      mistakes: [
+        "Relatar apenas retornos de média aritmética em materiais de marketing ou metas pessoais. A indústria de hedge funds rotineiramente usa geométrica (CAGR) para alegações de longo prazo, mas influenciadores cripto de varejo frequentemente citam médias aritméticas que parecem 2-3x melhores que a realidade. Sempre pergunte: 'Qual foi o saldo final real?' para verificar.",
+        "Esquecer que a média geométrica assume reinvestimento total sem retiradas ou aportes. Se você fez DCA ou realizou lucros, seu retorno real usa retorno ponderado pelo tempo (TWR) ou retorno ponderado pelo dinheiro (MWR), não simples média geométrica. Use uma <a href=\"/dca-calculator/\">calculadora DCA</a> para cenários com aportes."
+      ],
+      benchmarks: [
+        "Retornos geométricos de longo prazo: S&P 500 ≈ 10%/ano (1928-2024), Bitcoin ≈ 80%/ano desde 2010 (declinando à medida que amadurece, recente 5 anos ≈ 35%/ano), Ouro ≈ 5%/ano, Treasuries dos EUA ≈ 5%/ano. O arrasto de volatilidade é aproximadamente variância/2: um ativo com 60% de volatilidade (como BTC) perde ~18%/ano para o arrasto vs um ativo com 15% de vol (S&P).",
+        "O tamanho da amostra importa: 12 períodos mensais dão média geométrica com ±5-10% de incerteza para ações, ±20-40% para cripto. Para confiar em sua média geométrica como preditor, você precisa de pelo menos 30-60 períodos. Amostras menores são descritivas do passado, não preditivas do futuro."
+      ],
+      execution: [
+        "Fluxo de cálculo: liste o retorno de cada período → adicione 1 a cada (ex.: 10% → 1,10) → multiplique todos os fatores → tire a raiz n-ésima, onde n = número de períodos → subtraia 1 → multiplique por 100 para porcentagem. Ou use a tabela de entrada da calculadora para automatizar.",
+        "Para acompanhamento mensal de investimentos: no último dia de cada mês, registre o valor da carteira, divida pelo valor de fim do mês anterior, subtraia 1 = retorno mensal. Após 12 meses, calcule a média geométrica e anualize: (1+geo_mensal)^12 - 1 = retorno anual. Isso padroniza comparações entre classes de ativos."
+      ],
+      hygiene: [
+        "Mantenha um log limpo de retornos com: data, tipo de período (D/S/M/T/A), porcentagem de retorno, dados de origem e quaisquer aportes/retiradas (que exigem ajuste TWR). Modelos no Excel/Google Sheets funcionam bem; não dependa da memória ou de capturas de tela parciais.",
+        "Recalcule a média geométrica mensalmente para detectar erros cedo. Um único erro de digitação transformando 10% em 100% distorcerá catastroficamente seu retorno composto. Sempre cruze o saldo final da fórmula composta com o extrato da corretora — devem coincidir dentro do arredondamento."
+      ],
+      validation: [
+        "Validação rápida: se sua média aritmética é X% e a geométrica é Y%, a diferença (X-Y) aproxima o arrasto de volatilidade, que equivale a variância/2. Para uma amostra onde a aritmética é 12% e a geométrica é 8%, arrasto = 4%, implicando ~28% de volatilidade anualizada. Verifique isso contra o desvio padrão real de seus retornos.",
+        "Verificação final: valor inicial × (1 + média_geométrica)^períodos deve igualar o valor final. $10.000 × (1,08)^5 = $14.693 — se sua planilha mostra $14.693 ± $5, está correto. Discrepâncias maiores indicam erro nos dados de entrada ou na fórmula."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Geometrik ortalama, gerçek bileşik getiridir — paranızın aslında kazandığı miktar. Aritmetik ortalama, kayıpları telafi etmenin matematiğini hesaba katmadığı için volatil varlıklarda performansı abartır (%50'lik bir kayıp, başa baş gelmek için %100'lük bir kazanç gerektirir). Aritmetik ve geometrik ortalama arasındaki fark volatilite sürtünmesi olarak adlandırılır ve getiri varyansıyla birlikte büyür.",
+        "Getirileri +%50, -%30, +%50, -%30 olan bir portföy için: aritmetik ortalama = +%10, ancak geometrik ortalama = %2,5 — ve dört dönem sonra 1.000 dolardan aslında yalnızca 1.103 dolarınız olur, aritmetik ortalamanın ima ettiği 1.469 dolar değil. Stratejileri ve varlıkları her zaman geometrik (bileşik) getirileri kullanarak karşılaştırın, özellikle düşük volatiliteli ve yüksek volatiliteli seçenekleri karşılaştırırken."
+      ],
+      scenarios: [
+        "Strateji karşılaştırması: Strateji A +%20, +%20, +%20 getiri sağlar (hem aritmetik hem de geometrik %20, son 1.728 dolar). Strateji B +%60, -%20, +%30 getiri sağlar (aritmetik %23,3, geometrik %18,2, son 1.651 dolar). B aritmetik olarak daha iyi görünür ama A geometrik olarak kazanır. Bileşik portföyler için her zaman daha yüksek geometrik olanı seçin.",
+        "Kripto ve endeks fonu karşılaştırması: Bitcoin 2021-2024 vahşi salınımlara sahipti — aritmetik +%35/yıl ama düşüşler nedeniyle geometrik yalnızca ~%12/yıl. Aynı dönemde S&P 500: aritmetik ~%12/yıl, geometrik ~%10/yıl. Bitcoin'in geometrik avantajı gerçek ama manşet getirilerin önerdiğinden daha küçük. Bunu dürüst bir <a href=\"/portfolio-calculator/\">portföy tahsisi</a> için kullanın."
+      ],
+      checklist: [
+        "Hesaplamadan önce: 1) Aynı zaman biriminde dönem getirilerini kullanın (hepsi aylık veya hepsi yıllık, karışık değil). 2) Getirileri tutarlı olarak ondalık veya yüzde olarak ifade edin. 3) HER dönemi dahil edin — kötü ayları seçici olarak çıkarmak hayatta kalma yanlılığı üretir. 4) Nihai bileşik değerin eşleştiğini doğrulayın: 1000 dolar × ∏(1+r_i) bildirdiğiniz bitiş bakiyesine eşit olmalıdır.",
+        "Karşılaştırma için: tek olay bozulmasını yumuşatmak için en az 5 yıllık veri çekin. Kripto piyasaları özellikle gerçek geometrik ortalamayı tahmin etmek için 3+ tam döngüye (BTC için ≈12 yıl) ihtiyaç duyar — daha kısa olan herhangi bir şey döngüdeki başlangıç noktanıza göre büyük ölçüde çarpıktır."
+      ],
+      mistakes: [
+        "Pazarlama materyallerinde veya kişisel hedeflerde yalnızca aritmetik ortalama getirileri raporlamak. Hedge fon endüstrisi rutin olarak uzun vadeli iddialar için geometrik (CAGR) kullanır, ancak perakende kripto fenomenleri genellikle gerçekten 2-3 kat daha iyi görünen aritmetik ortalamaları alıntılar. Her zaman sorun: 'Gerçek bitiş bakiyesi neydi?' diye doğrulayın.",
+        "Geometrik ortalamanın çekim veya katkı olmadan tam yeniden yatırım varsaydığını unutmak. DCA yaptıysanız veya kâr aldıysanız, gerçek getiriniz basit geometrik ortalama değil, zaman ağırlıklı getiri (TWR) veya para ağırlıklı getiri (MWR) kullanır. Katkı senaryoları için bir <a href=\"/dca-calculator/\">DCA hesaplayıcı</a> kullanın."
+      ],
+      benchmarks: [
+        "Uzun vadeli geometrik getiriler: S&P 500 ≈ %10/yıl (1928-2024), Bitcoin 2010'dan bu yana ≈ %80/yıl (olgunlaştıkça düşüyor, son 5 yıl ≈ %35/yıl), Altın ≈ %5/yıl, ABD Hazine tahvilleri ≈ %5/yıl. Volatilite sürtünmesi kabaca varyans/2'dir: %60 volatiliteli bir varlık (BTC gibi) sürtünmeye ~%18/yıl kaybeder, %15 vol varlığa (S&P) kıyasla.",
+        "Örnek boyutu önemlidir: 12 aylık dönem hisse senetleri için ±%5-10, kripto için ±%20-40 belirsizlikle geometrik ortalama verir. Geometrik ortalamanıza tahmin edici olarak güvenmek için en az 30-60 döneme ihtiyaç vardır. Daha küçük örnekler geçmişi tanımlayıcıdır, gelecek için öngörücü değildir."
+      ],
+      execution: [
+        "Hesaplama iş akışı: her dönemin getirisini listeleyin → her birine 1 ekleyin (örn., %10 → 1,10) → tüm faktörleri çarpın → n = dönem sayısı olduğu yerde n. dereceden kök alın → 1 çıkarın → yüzde için 100 ile çarpın. Veya otomatikleştirmek için hesaplayıcının giriş tablosunu kullanın.",
+        "Aylık yatırım takibi için: her ayın son günü, portföy değerini kaydedin, önceki ay sonu değerine bölün, 1 çıkarın = aylık getiri. 12 ay sonra, geometrik ortalamayı hesaplayın ve yıllıklandırın: (1+aylık_geo)^12 - 1 = yıllık getiri. Bu, varlık sınıfları arasında karşılaştırmaları standartlaştırır."
+      ],
+      hygiene: [
+        "Şunları içeren temiz bir getiri günlüğü tutun: tarih, dönem tipi (G/H/A/Ç/Y), getiri yüzdesi, kaynak veri ve herhangi bir katkı/çekim (TWR ayarı gerektirir). Excel/Google E-Tablolar şablonları iyi çalışır; hafıza veya kısmi ekran görüntülerine güvenmeyin.",
+        "Hataları erken yakalamak için geometrik ortalamayı aylık olarak yeniden hesaplayın. %10'u %100'e çeviren tek bir yazım hatası bileşik getirinizi felaket düzeyinde bozar. Bileşik formülünden bitiş bakiyesini broker beyanına göre her zaman çapraz kontrol edin — yuvarlama içinde eşleşmelidirler."
+      ],
+      validation: [
+        "Hızlı doğrulama: aritmetik ortalamanız X% ve geometrik ortalama Y% ise, fark (X-Y) volatilite sürtünmesine yaklaşır ve bu varyans/2'ye eşittir. Aritmetik %12 ve geometrik %8 olan bir örnek için, sürtünme = %4, yıllıklandırılmış ~%28 volatilite ima eder. Bunu getirilerinizin gerçek standart sapmasıyla karşı kontrol edin.",
+        "Son kontrol: başlangıç değeri × (1 + geometrik_ortalama)^dönem bitiş değerine eşit olmalıdır. 10.000 dolar × (1,08)^5 = 14.693 dolar — e-tablonuz 14.693 dolar ± 5 dolar gösteriyorsa doğrudur. Daha büyük tutarsızlıklar giriş verisinde veya formülde hata gösterir."
+      ],
+    },
+    hi: {
+      interpret: [
+        "ज्यामितीय माध्य (geometric mean) वास्तविक चक्रवृद्धि रिटर्न है — आपके पैसे ने वास्तव में जो कमाया। समांतर माध्य (arithmetic mean) अस्थिर एसेट्स के लिए प्रदर्शन को बढ़ा-चढ़ाकर बताता है क्योंकि यह नुकसान की वसूली के गणित को ध्यान में नहीं रखता (50% नुकसान को बराबर करने के लिए 100% लाभ की आवश्यकता होती है)। समांतर और ज्यामितीय माध्य के बीच के अंतर को volatility drag कहा जाता है, और यह रिटर्न विचरण के साथ बढ़ता है।",
+        "+50%, -30%, +50%, -30% रिटर्न वाले पोर्टफोलियो के लिए: समांतर माध्य = +10%, लेकिन ज्यामितीय माध्य = 2.5% — और चार अवधियों के बाद आपके पास $1,000 से वास्तव में केवल $1,103 होगा, न कि $1,469 जो समांतर माध्य सुझाता है। हमेशा रणनीतियों और एसेट्स की तुलना ज्यामितीय (चक्रवृद्धि) रिटर्न का उपयोग करके करें, विशेष रूप से कम-अस्थिरता बनाम उच्च-अस्थिरता विकल्पों की तुलना करते समय।"
+      ],
+      scenarios: [
+        "रणनीति तुलना: रणनीति A रिटर्न देती है +20%, +20%, +20% (समांतर और ज्यामितीय दोनों 20%, अंतिम $1,728)। रणनीति B रिटर्न देती है +60%, -20%, +30% (समांतर 23.3%, ज्यामितीय 18.2%, अंतिम $1,651)। B समांतर रूप से बेहतर दिखती है लेकिन ज्यामितीय रूप से A जीतती है। चक्रवृद्धि पोर्टफोलियो के लिए हमेशा उच्च ज्यामितीय चुनें।",
+        "Crypto बनाम इंडेक्स फंड तुलना: Bitcoin 2021-2024 में जंगली उतार-चढ़ाव थे — समांतर +35%/वर्ष लेकिन ड्रॉडाउन के कारण ज्यामितीय केवल ~12%/वर्ष। S&P 500 समान अवधि: समांतर ~12%/वर्ष, ज्यामितीय ~10%/वर्ष। Bitcoin का ज्यामितीय लाभ वास्तविक है लेकिन हेडलाइन रिटर्न जो सुझाते हैं उससे छोटा है। ईमानदार <a href=\"/portfolio-calculator/\">पोर्टफोलियो आवंटन</a> के लिए इसका उपयोग करें।"
+      ],
+      checklist: [
+        "गणना से पहले: 1) समान समय इकाई में अवधि रिटर्न का उपयोग करें (सभी मासिक या सभी वार्षिक, मिश्रित नहीं)। 2) रिटर्न को लगातार दशमलव या प्रतिशत के रूप में व्यक्त करें। 3) हर अवधि शामिल करें — चुनिंदा रूप से खराब महीनों को छोड़ना सर्वाइवरशिप बायस उत्पन्न करता है। 4) सत्यापित करें कि अंतिम चक्रवृद्धि मान मेल खाता है: $1000 × ∏(1+r_i) आपके रिपोर्ट किए गए अंतिम बैलेंस के बराबर होना चाहिए।",
+        "बेंचमार्किंग के लिए: एकल-घटना विरूपण को कम करने के लिए कम से कम 5 वर्षों का डेटा खींचें। Crypto बाज़ारों को विशेष रूप से सच्चे ज्यामितीय माध्य का अनुमान लगाने के लिए 3+ पूर्ण साइकिल (BTC के लिए ≈12 वर्ष) की आवश्यकता होती है — कुछ भी छोटा साइकिल में आपके आरंभिक बिंदु से भारी रूप से तिरछा होता है।"
+      ],
+      mistakes: [
+        "मार्केटिंग सामग्री या व्यक्तिगत लक्ष्यों में केवल समांतर माध्य रिटर्न रिपोर्ट करना। हेज फंड उद्योग नियमित रूप से दीर्घकालिक दावों के लिए ज्यामितीय (CAGR) का उपयोग करता है, लेकिन रिटेल crypto इन्फ्लुएंसर्स अक्सर समांतर औसत उद्धृत करते हैं जो वास्तविकता से 2-3 गुना बेहतर दिखते हैं। हमेशा पूछें: 'वास्तविक अंतिम बैलेंस क्या था?' सत्यापित करने के लिए।",
+        "यह भूल जाना कि ज्यामितीय माध्य बिना निकासी या योगदान के पूर्ण पुनर्निवेश मानता है। यदि आपने DCA किया या लाभ निकाला, तो आपका वास्तविक रिटर्न time-weighted return (TWR) या money-weighted return (MWR) का उपयोग करता है, साधारण ज्यामितीय माध्य नहीं। योगदान परिदृश्यों के लिए <a href=\"/dca-calculator/\">DCA कैलकुलेटर</a> का उपयोग करें।"
+      ],
+      benchmarks: [
+        "दीर्घकालिक ज्यामितीय रिटर्न: S&P 500 ≈ 10%/वर्ष (1928-2024), Bitcoin ≈ 80%/वर्ष 2010 के बाद से (परिपक्व होते हुए घट रहा है, हाल का 5-वर्षीय ≈ 35%/वर्ष), Gold ≈ 5%/वर्ष, US Treasuries ≈ 5%/वर्ष। Volatility drag लगभग variance/2 है: 60% अस्थिरता एसेट (जैसे BTC) drag के लिए ~18%/वर्ष खोता है बनाम 15% vol एसेट (S&P)।",
+        "नमूना आकार महत्वपूर्ण है: 12 मासिक अवधियाँ स्टॉक्स के लिए ±5-10% अनिश्चितता, crypto के लिए ±20-40% के साथ ज्यामितीय माध्य देती हैं। अपने ज्यामितीय माध्य को भविष्यवक्ता के रूप में विश्वास करने के लिए कम से कम 30-60 अवधियों की आवश्यकता होती है। छोटे नमूने अतीत के वर्णनात्मक हैं, भविष्य के पूर्वानुमानात्मक नहीं।"
+      ],
+      execution: [
+        "गणना कार्यप्रवाह: प्रत्येक अवधि का रिटर्न सूचीबद्ध करें → प्रत्येक में 1 जोड़ें (जैसे, 10% → 1.10) → सभी कारकों को गुणा करें → nवाँ मूल लें जहाँ n = अवधियों की संख्या → 1 घटाएँ → प्रतिशत के लिए 100 से गुणा करें। या स्वचालित करने के लिए कैलकुलेटर की इनपुट टेबल का उपयोग करें।",
+        "मासिक निवेश ट्रैकिंग के लिए: हर महीने के अंतिम दिन, पोर्टफोलियो मान लॉग करें, पिछले माह-अंत मान से विभाजित करें, 1 घटाएँ = मासिक रिटर्न। 12 महीनों के बाद, ज्यामितीय माध्य की गणना करें और वार्षिक करें: (1+monthly_geo)^12 - 1 = वार्षिक रिटर्न। यह एसेट क्लासेस में तुलनाओं को मानकीकृत करता है।"
+      ],
+      hygiene: [
+        "एक स्वच्छ रिटर्न लॉग बनाए रखें जिसमें: तारीख, अवधि प्रकार (D/W/M/Q/Y), रिटर्न प्रतिशत, स्रोत डेटा, और कोई भी योगदान/निकासी (जिसके लिए TWR समायोजन की आवश्यकता होती है) हो। Excel/Google Sheets टेम्पलेट ठीक काम करते हैं; स्मृति या आंशिक स्क्रीनशॉट पर भरोसा न करें।",
+        "त्रुटियों को जल्दी पकड़ने के लिए ज्यामितीय माध्य की मासिक पुनर्गणना करें। एक एकल टाइपो जो 10% को 100% में बदल देती है आपके चक्रवृद्धि रिटर्न को विनाशकारी रूप से विकृत कर देगी। हमेशा चक्रवृद्धि सूत्र से अंतिम बैलेंस को ब्रोकर स्टेटमेंट से क्रॉस-चेक करें — उन्हें राउंडिंग के भीतर मेल खाना चाहिए।"
+      ],
+      validation: [
+        "त्वरित सत्यापन: यदि आपका समांतर माध्य X% है और ज्यामितीय माध्य Y% है, तो अंतर (X-Y) volatility drag के समीप होता है, जो variance/2 के बराबर है। एक नमूने के लिए जहाँ समांतर 12% और ज्यामितीय 8% है, drag = 4%, ~28% वार्षिक अस्थिरता का अर्थ है। अपने रिटर्न के वास्तविक मानक विचलन के विरुद्ध इसकी सेनिटी-जाँच करें।",
+        "अंतिम जाँच: प्रारंभिक मान × (1 + geometric_mean)^periods अंतिम मान के बराबर होना चाहिए। $10,000 × (1.08)^5 = $14,693 — यदि आपकी स्प्रेडशीट $14,693 ± $5 दिखाती है, तो आप सही हैं। बड़ी विसंगतियाँ या तो इनपुट डेटा या सूत्र में त्रुटि का संकेत देती हैं।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Среднее геометрическое — это истинная сложная доходность, то есть то, что ваши деньги реально заработали. Среднее арифметическое завышает результаты волатильных активов, потому что не учитывает математику восстановления убытков (потеря 50% требует роста на 100% для возврата к исходной точке). Разрыв между арифметическим и геометрическим средним называется «тормозом волатильности» и растёт с дисперсией доходностей.",
+        "Для портфеля с доходностями +50%, −30%, +50%, −30%: арифметическое среднее = +10%, но геометрическое = 2,5% — и из $1 000 через четыре периода у вас окажется лишь $1 103, а не $1 469, как подразумевает арифметическое среднее. Всегда сравнивайте стратегии и активы по геометрической (сложной) доходности, особенно при сопоставлении вариантов с низкой и высокой волатильностью."
+      ],
+      scenarios: [
+        "Сравнение стратегий: стратегия A даёт +20%, +20%, +20% (арифметическое и геометрическое равны 20%, итог $1 728). Стратегия B даёт +60%, −20%, +30% (арифметическое 23,3%, геометрическое 18,2%, итог $1 651). Арифметически B выглядит лучше, но геометрически выигрывает A. Для портфелей с компаундированием всегда выбирайте более высокое геометрическое среднее.",
+        "Сравнение крипты и индексного фонда: биткоин в 2021–2024 годах сильно колебался — арифметическая доходность +35%/год, но геометрическая лишь ~12%/год из-за просадок. S&P 500 за тот же период: арифметическая ~12%/год, геометрическая ~10%/год. Геометрическое преимущество биткоина реально, но меньше, чем подсказывают заголовки. Используйте это для честного <a href=\"/portfolio-calculator/\">распределения портфеля</a>."
+      ],
+      checklist: [
+        "Перед расчётом: 1) Используйте доходности за одинаковые временные единицы (все месячные или все годовые, не смешивая). 2) Единообразно выражайте доходности в долях или процентах. 3) Включайте КАЖДЫЙ период — выборочный отказ от плохих месяцев создаёт смещение выживаемости. 4) Сверьте итог: $1 000 × ∏(1+r_i) должно равняться вашему заявленному конечному балансу.",
+        "Для бенчмаркинга: возьмите не менее 5 лет данных, чтобы сгладить влияние единичных событий. Криптовалютные рынки требуют 3+ полных циклов (≈12 лет для BTC) для оценки истинного геометрического среднего — более короткие периоды сильно зависят от точки входа в цикл."
+      ],
+      mistakes: [
+        "Указание только арифметического среднего в маркетинговых материалах или личных целях. Хедж-фонды повсеместно используют геометрическую доходность (CAGR) для долгосрочных заявлений, но розничные крипто-инфлюенсеры часто показывают арифметические средние, которые выглядят в 2–3 раза лучше реальности. Всегда спрашивайте: «Каков был фактический конечный баланс?» для проверки.",
+        "Забывание о том, что геометрическое среднее предполагает полное реинвестирование без вводов и выводов. Если вы пополняли через DCA или фиксировали прибыль, ваша реальная доходность считается по доходности, взвешенной по времени (TWR) или по деньгам (MWR), а не по простому геометрическому среднему. Для сценариев с пополнениями используйте <a href=\"/dca-calculator/\">калькулятор DCA</a>."
+      ],
+      benchmarks: [
+        "Долгосрочные геометрические доходности: S&P 500 ≈ 10%/год (1928–2024), биткоин ≈ 80%/год с 2010 года (снижается по мере зрелости, последние 5 лет ≈ 35%/год), золото ≈ 5%/год, US Treasuries ≈ 5%/год. Тормоз волатильности примерно равен дисперсии/2: актив с волатильностью 60% (как BTC) теряет ~18%/год на тормозе против ~15% волатильности S&P.",
+        "Размер выборки важен: 12 месячных периодов дают геометрическое среднее с неопределённостью ±5–10% для акций и ±20–40% для крипты. Чтобы доверять геометрическому среднему как прогнозу, нужно как минимум 30–60 периодов. Меньшие выборки описывают прошлое, но не предсказывают будущее."
+      ],
+      execution: [
+        "Алгоритм расчёта: перечислите доходности по периодам → прибавьте 1 к каждой (например, 10% → 1,10) → перемножьте все факторы → извлеките корень степени n, где n — число периодов → вычтите 1 → умножьте на 100 для процента. Либо используйте таблицу ввода калькулятора для автоматизации.",
+        "Для ежемесячного отслеживания инвестиций: в последний день каждого месяца фиксируйте стоимость портфеля, делите на стоимость на конец предыдущего месяца, вычитайте 1 — получите месячную доходность. Через 12 месяцев вычислите геометрическое среднее и приведите к годовому: (1+месячное_гео)^12 − 1 = годовая доходность. Это унифицирует сравнения между классами активов."
+      ],
+      hygiene: [
+        "Ведите чистый журнал доходностей со столбцами: дата, тип периода (Д/Н/М/К/Г), доходность в процентах, источник данных и любые пополнения/выводы (которые требуют корректировки TWR). Шаблонов Excel/Google Sheets вполне достаточно; не полагайтесь на память или частичные скриншоты.",
+        "Пересчитывайте геометрическое среднее ежемесячно, чтобы ловить ошибки рано. Одна опечатка, превратившая 10% в 100%, катастрофически исказит сложную доходность. Всегда сверяйте конечный баланс по формуле сложной доходности с выпиской брокера — они должны совпадать в пределах округления."
+      ],
+      validation: [
+        "Быстрая проверка: если арифметическое среднее равно X%, а геометрическое — Y%, разрыв (X−Y) приблизительно равен тормозу волатильности, который составляет дисперсия/2. Для выборки, где арифметическое 12%, а геометрическое 8%, тормоз = 4%, что соответствует годовой волатильности ~28%. Сверьте это с фактическим стандартным отклонением ваших доходностей.",
+        "Финальная проверка: начальная стоимость × (1 + геом_среднее)^число_периодов должна равняться конечной стоимости. $10 000 × (1,08)^5 = $14 693 — если ваша таблица показывает $14 693 ± $5, всё верно. Большие расхождения указывают на ошибку во входных данных или формуле."
+      ],
+    },
+  },
+  'mstr-mnav-calculator': {
+    en: {
+      interpret: [
+        "mNAV (multiple of NAV) measures how much premium or discount a Bitcoin treasury company trades vs its raw BTC holdings. Formula: market_cap / (BTC × BTC_price). A reading of 2.0 means the company trades at 2× the value of its underlying Bitcoin — the market is pricing in growth in BTC-per-share, operational value, or speculative premium.",
+        "Historically MSTR has traded at mNAV ranging from 0.7 (deep discount, 2022 bear) to 2.5+ (peak euphoria, late 2024). Sustainable premium typically reflects: (a) ability to issue debt/equity to accumulate more BTC (accretive issuance), (b) operating business cash flow, (c) tax-efficient structure. Premium above 2.0 implies significant future BTC accumulation must materialize to justify."
+      ],
+      scenarios: [
+        "Accretive issuance test: MSTR at mNAV 2.0 issues $1B equity, buys $1B BTC. New BTC per share rises by 50% of dilution (since 2× premium means each new share converts to 2× its NAV in BTC). Premium-driven flywheel works only while mNAV > 1.0; if mNAV drops below 1, issuance becomes dilutive.",
+        "Comparison framework: MSTR mNAV 1.8, MetaPlanet 3.0, Semler Scientific 1.4 — MetaPlanet's premium is highest, suggesting either: (a) Japanese retail bid disconnected from fundamentals, (b) faster expected accumulation rate, or (c) overvaluation. Compare with <a href=\"/etf-fee-calculator/\">spot BTC ETFs</a> at mNAV 1.0 (no premium) for the no-premium baseline."
+      ],
+      checklist: [
+        "Before mNAV-based trades: 1) Verify BTC holdings count is current (companies disclose monthly/quarterly). 2) Use most recent BTC price, not stale quote. 3) Subtract debt for enterprise NAV calculation if treasury has significant leverage. 4) Account for share class dilution if convertible bonds outstanding.",
+        "Sanity-check the implied BTC price in stock: at MSTR shares ~$350, BTC-per-share ~0.0016, implied BTC-equivalent in stock = $350/0.0016 = $218K. If this exceeds spot BTC price by >50%, you're paying significant premium for treasury management."
+      ],
+      mistakes: [
+        "Using simple mNAV without adjusting for net debt. MSTR has $8B+ in convertible debt. Pure equity-to-BTC ratio gives one number; enterprise-value-to-BTC (which subtracts debt) gives another, often 30-50% lower premium. Both are useful but answer different questions.",
+        "Treating high mNAV as automatic buy or sell signal. Premium can compress (mean revert) OR expand if BTC price rises faster than market cap (mNAV decreases without share price falling). Always combine with directional view on BTC and broader equity beta."
+      ],
+      benchmarks: [
+        "MSTR mNAV historical ranges: Q4 2022 bear: 0.7-0.9 (discount era), Q1-Q3 2024 base: 1.5-1.8, Q4 2024 mania: 2.5-3.2 (peak), Q1 2026: 1.8-2.2. Mean reversion plays best when mNAV exceeds 2.5 with declining BTC inflows, or below 1.0 with accelerating BTC accumulation.",
+        "Other BTC treasuries 2026 baseline: MicroStrategy 1.8-2.2, MetaPlanet 2.0-3.0, Semler Scientific 1.2-1.5, smaller treasuries (KULR, MARA non-mining segment) 1.0-1.4. Anomalies above these ranges may signal local euphoria or below them may signal undervaluation worth investigating."
+      ],
+      execution: [
+        "Position sizing for mNAV trade: never go all-in on a premium compression bet. A 30% mNAV decline can take 6-18 months. Allocate 5-15% of risk capital to a short-mNAV / long-BTC pairs trade, with 6-month time horizon and stop loss if mNAV expands further by 50%.",
+        "For long-only: when adding to MSTR position, prefer entries at mNAV <1.5 (avoiding premium peaks). For exits, scale out as mNAV crosses 2.0, 2.5, 3.0. This anchored approach prevents buying tops or selling bottoms based on recency bias."
+      ],
+      hygiene: [
+        "Update BTC holdings monthly using SEC 8-K filings (MSTR discloses each material BTC purchase within 4 days). MetaPlanet uses Japan TSE quarterly reports — incorporate one-month lag in your model.",
+        "Track convertible bond conversion thresholds. MSTR has multiple converts at strike $400-700; conversions effectively dilute shareholders without cash. A 'fully diluted' share count gives more accurate mNAV than basic share count, especially when stock is well above conversion strikes."
+      ],
+      validation: [
+        "Quick check: 440K BTC × $77K = $33.9B BTC NAV. MSTR market cap $95B → mNAV = 95/33.9 = 2.80. If your tool shows materially different, verify BTC count (check most recent 8-K) and BTC price source.",
+        "Premium decomposition: total premium ($95B - $33.9B = $61B) divided into: (a) operating business value (~$2-5B based on Cap IQ), (b) tax-deferred structure value (~$5-10B for unrealized gains protection), (c) future accumulation expectation (rest). Sanity-check the residual against credible BTC purchase pace."
+      ],
+    },
+    es: {
+      interpret: [
+        "mNAV (múltiplo sobre NAV) mide cuánta prima o descuento cotiza una empresa con tesorería de Bitcoin frente a sus tenencias brutas de BTC. Fórmula: capitalización_mercado / (BTC × precio_BTC). Una lectura de 2.0 significa que la empresa cotiza a 2× el valor de su Bitcoin subyacente: el mercado está incorporando crecimiento en BTC por acción, valor operativo o prima especulativa.",
+        "Históricamente MSTR ha cotizado con un mNAV que va desde 0.7 (descuento profundo, oso 2022) hasta 2.5+ (pico de euforia, finales de 2024). Una prima sostenible típicamente refleja: (a) capacidad de emitir deuda/equity para acumular más BTC (emisión accretiva), (b) flujo de caja del negocio operativo, (c) estructura fiscalmente eficiente. Una prima superior a 2.0 implica que debe materializarse una acumulación futura significativa de BTC para justificarla."
+      ],
+      scenarios: [
+        "Prueba de emisión accretiva: MSTR con mNAV 2.0 emite $1B en equity, compra $1B en BTC. El nuevo BTC por acción sube en un 50% de la dilución (ya que una prima de 2× significa que cada nueva acción se convierte en 2× su NAV en BTC). El flywheel impulsado por prima funciona solo mientras mNAV > 1.0; si mNAV cae por debajo de 1, la emisión se vuelve dilutiva.",
+        "Marco comparativo: MSTR mNAV 1.8, MetaPlanet 3.0, Semler Scientific 1.4: la prima de MetaPlanet es la más alta, sugiriendo: (a) demanda retail japonesa desconectada de fundamentales, (b) tasa de acumulación esperada más rápida, o (c) sobrevaloración. Compara con <a href=\"/etf-fee-calculator/\">ETFs spot de BTC</a> con mNAV 1.0 (sin prima) como línea base sin prima."
+      ],
+      checklist: [
+        "Antes de operaciones basadas en mNAV: 1) Verifica que el conteo de tenencias de BTC sea actual (las empresas reportan mensual/trimestralmente). 2) Usa el precio más reciente de BTC, no una cotización obsoleta. 3) Resta la deuda para el cálculo de NAV de empresa si la tesorería tiene apalancamiento significativo. 4) Considera la dilución por clases de acciones si hay bonos convertibles pendientes.",
+        "Verifica el precio implícito de BTC en la acción: con acciones MSTR ~$350, BTC por acción ~0.0016, equivalente BTC implícito en la acción = $350/0.0016 = $218K. Si esto excede el precio spot de BTC en >50%, estás pagando una prima significativa por la gestión de tesorería."
+      ],
+      mistakes: [
+        "Usar mNAV simple sin ajustar por deuda neta. MSTR tiene $8B+ en deuda convertible. La razón pura equity-a-BTC da un número; la razón valor-empresa-a-BTC (que resta deuda) da otro, a menudo con una prima 30-50% menor. Ambos son útiles pero responden a preguntas diferentes.",
+        "Tratar un mNAV alto como señal automática de compra o venta. La prima puede comprimirse (reversión a la media) O expandirse si el precio de BTC sube más rápido que la capitalización (mNAV disminuye sin que el precio de la acción caiga). Combínalo siempre con visión direccional sobre BTC y beta más amplia de equity."
+      ],
+      benchmarks: [
+        "Rangos históricos del mNAV de MSTR: Q4 2022 oso: 0.7-0.9 (era de descuento), Q1-Q3 2024 base: 1.5-1.8, Q4 2024 manía: 2.5-3.2 (pico), Q1 2026: 1.8-2.2. Los plays de reversión a la media funcionan mejor cuando mNAV excede 2.5 con flujos de BTC decrecientes, o por debajo de 1.0 con acumulación de BTC acelerándose.",
+        "Otras tesorerías de BTC línea base 2026: MicroStrategy 1.8-2.2, MetaPlanet 2.0-3.0, Semler Scientific 1.2-1.5, tesorerías más pequeñas (KULR, segmento no-minero de MARA) 1.0-1.4. Anomalías por encima de estos rangos pueden señalar euforia local o por debajo pueden señalar infravaloración a investigar."
+      ],
+      execution: [
+        "Dimensionamiento de posición para trade de mNAV: nunca apuestes todo a una compresión de prima. Una caída de mNAV del 30% puede tomar 6-18 meses. Asigna 5-15% del capital de riesgo a un pair trade corto-mNAV / largo-BTC, con horizonte de 6 meses y stop loss si mNAV se expande más allá de un 50% adicional.",
+        "Para solo-largo: al añadir a posición de MSTR, prefiere entradas con mNAV <1.5 (evitando picos de prima). Para salidas, escala salidas a medida que mNAV cruza 2.0, 2.5, 3.0. Este enfoque anclado evita comprar techos o vender suelos basados en sesgo de recencia."
+      ],
+      hygiene: [
+        "Actualiza las tenencias de BTC mensualmente usando los documentos 8-K de la SEC (MSTR reporta cada compra material de BTC dentro de los 4 días). MetaPlanet usa reportes trimestrales de la TSE de Japón: incorpora un mes de retraso en tu modelo.",
+        "Sigue los umbrales de conversión de bonos convertibles. MSTR tiene múltiples convertibles con strike $400-700; las conversiones diluyen efectivamente a los accionistas sin efectivo. Un conteo de acciones 'totalmente diluidas' da un mNAV más preciso que el conteo básico, especialmente cuando la acción está bastante por encima de los strikes de conversión."
+      ],
+      validation: [
+        "Verificación rápida: 440K BTC × $77K = $33.9B NAV en BTC. Capitalización MSTR $95B → mNAV = 95/33.9 = 2.80. Si tu herramienta muestra algo materialmente diferente, verifica el conteo de BTC (revisa el 8-K más reciente) y la fuente del precio de BTC.",
+        "Descomposición de prima: prima total ($95B - $33.9B = $61B) dividida en: (a) valor del negocio operativo (~$2-5B según Cap IQ), (b) valor de estructura fiscalmente diferida (~$5-10B por protección de ganancias no realizadas), (c) expectativa de acumulación futura (el resto). Verifica el residual contra un ritmo creíble de compra de BTC."
+      ],
+    },
+    pt: {
+      interpret: [
+        "mNAV (múltiplo do NAV) mede o quanto de prêmio ou desconto uma empresa de tesouraria de Bitcoin negocia em relação a seus ativos brutos em BTC. Fórmula: cap_mercado / (BTC × preço_BTC). Uma leitura de 2,0 significa que a empresa negocia a 2× o valor de seu Bitcoin subjacente — o mercado está precificando crescimento em BTC por ação, valor operacional ou prêmio especulativo.",
+        "Historicamente, a MSTR negociou com mNAV variando de 0,7 (desconto profundo, mercado de baixa 2022) a 2,5+ (auge da euforia, final de 2024). O prêmio sustentável tipicamente reflete: (a) capacidade de emitir dívida/ações para acumular mais BTC (emissão acretiva), (b) fluxo de caixa do negócio operacional, (c) estrutura fiscalmente eficiente. Prêmio acima de 2,0 implica que acumulação futura significativa de BTC deve se materializar para justificar."
+      ],
+      scenarios: [
+        "Teste de emissão acretiva: MSTR com mNAV 2,0 emite $1B em ações, compra $1B em BTC. Novo BTC por ação sobe em 50% da diluição (já que prêmio 2× significa que cada nova ação converte em 2× seu NAV em BTC). O flywheel impulsionado por prêmio só funciona enquanto mNAV > 1,0; se mNAV cair abaixo de 1, a emissão se torna diluitiva.",
+        "Estrutura comparativa: MSTR mNAV 1,8, MetaPlanet 3,0, Semler Scientific 1,4 — o prêmio da MetaPlanet é o maior, sugerindo: (a) demanda do varejo japonês desconectada dos fundamentos, (b) taxa de acumulação esperada mais rápida, ou (c) sobrevalorização. Compare com <a href=\"/etf-fee-calculator/\">ETFs spot de BTC</a> a mNAV 1,0 (sem prêmio) para a linha de base sem prêmio."
+      ],
+      checklist: [
+        "Antes de trades baseados em mNAV: 1) Verifique se a contagem de BTC detido é atual (empresas divulgam mensalmente/trimestralmente). 2) Use o preço mais recente do BTC, não cotação desatualizada. 3) Subtraia a dívida para o cálculo de NAV da empresa se a tesouraria tem alavancagem significativa. 4) Considere diluição por classe de ações se houver títulos conversíveis em circulação.",
+        "Verifique o preço implícito de BTC na ação: com ações MSTR a ~$350, BTC por ação ~0,0016, BTC-equivalente implícito na ação = $350/0,0016 = $218K. Se isso excede o preço spot do BTC em >50%, você está pagando um prêmio significativo pela gestão de tesouraria."
+      ],
+      mistakes: [
+        "Usar mNAV simples sem ajustar para dívida líquida. A MSTR tem $8B+ em dívida conversível. Pura razão capital/BTC dá um número; valor-da-empresa/BTC (que subtrai dívida) dá outro, frequentemente com prêmio 30-50% menor. Ambos são úteis, mas respondem a perguntas diferentes.",
+        "Tratar mNAV alto como sinal automático de compra ou venda. O prêmio pode comprimir (reverter à média) OU expandir se o preço do BTC sobe mais rápido que a cap de mercado (mNAV diminui sem que o preço da ação caia). Sempre combine com visão direcional sobre BTC e beta de ações em geral."
+      ],
+      benchmarks: [
+        "Faixas históricas de mNAV da MSTR: bear Q4 2022: 0,7-0,9 (era de desconto), base Q1-Q3 2024: 1,5-1,8, mania Q4 2024: 2,5-3,2 (pico), Q1 2026: 1,8-2,2. A reversão à média funciona melhor quando o mNAV excede 2,5 com fluxos de BTC em declínio, ou abaixo de 1,0 com acumulação de BTC acelerando.",
+        "Outras tesourarias de BTC linha-base 2026: MicroStrategy 1,8-2,2, MetaPlanet 2,0-3,0, Semler Scientific 1,2-1,5, tesourarias menores (KULR, segmento não-mineração da MARA) 1,0-1,4. Anomalias acima dessas faixas podem sinalizar euforia local; abaixo delas podem sinalizar subvalorização digna de investigação."
+      ],
+      execution: [
+        "Dimensionamento de posição para trade de mNAV: nunca aposte tudo em uma compressão de prêmio. Um declínio de 30% no mNAV pode levar 6-18 meses. Aloque 5-15% do capital de risco para um pairs trade short-mNAV / long-BTC, com horizonte de 6 meses e stop loss se o mNAV expandir mais 50%.",
+        "Para somente comprado: ao adicionar à posição em MSTR, prefira entradas com mNAV <1,5 (evitando picos de prêmio). Para saídas, reduza à medida que o mNAV cruza 2,0, 2,5, 3,0. Essa abordagem ancorada evita comprar topos ou vender fundos com base em viés de recência."
+      ],
+      hygiene: [
+        "Atualize as participações em BTC mensalmente usando arquivamentos 8-K na SEC (a MSTR divulga cada compra material de BTC em até 4 dias). A MetaPlanet usa relatórios trimestrais da TSE do Japão — incorpore atraso de um mês em seu modelo.",
+        "Acompanhe os limiares de conversão de títulos conversíveis. A MSTR tem múltiplos conversíveis com strikes $400-700; conversões efetivamente diluem acionistas sem caixa. Uma contagem de ações 'totalmente diluída' fornece mNAV mais preciso do que a contagem básica de ações, especialmente quando a ação está bem acima dos strikes de conversão."
+      ],
+      validation: [
+        "Verificação rápida: 440K BTC × $77K = $33,9B de NAV em BTC. Cap de mercado MSTR $95B → mNAV = 95/33,9 = 2,80. Se sua ferramenta mostra algo materialmente diferente, verifique a contagem de BTC (consulte o 8-K mais recente) e a fonte do preço do BTC.",
+        "Decomposição do prêmio: prêmio total ($95B - $33,9B = $61B) dividido em: (a) valor do negócio operacional (~$2-5B com base em Cap IQ), (b) valor da estrutura de impostos diferidos (~$5-10B para proteção de ganhos não realizados), (c) expectativa de acumulação futura (o restante). Verifique o resíduo contra um ritmo crível de compra de BTC."
+      ],
+    },
+    tr: {
+      interpret: [
+        "mNAV (NAV'ın katı), bir Bitcoin hazine şirketinin ham BTC varlıklarına kıyasla ne kadar prim veya iskonto ile işlem gördüğünü ölçer. Formül: piyasa_değeri / (BTC × BTC_fiyatı). 2,0'lık bir okuma, şirketin altta yatan Bitcoin'inin değerinin 2 katı ile işlem gördüğü anlamına gelir — piyasa, hisse başına BTC büyümesini, operasyonel değeri veya spekülatif primi fiyatlandırıyor.",
+        "Tarihsel olarak MSTR, 0,7'den (derin iskonto, 2022 ayısı) 2,5+'a (zirve öforisi, 2024 sonu) kadar değişen mNAV ile işlem gördü. Sürdürülebilir prim tipik olarak şunları yansıtır: (a) daha fazla BTC biriktirmek için borç/öz sermaye ihraç etme yeteneği (artırıcı ihraç), (b) işletme nakit akışı, (c) vergi açısından verimli yapı. 2,0'ın üzerindeki prim, gerekçelendirmek için önemli gelecek BTC birikiminin gerçekleşmesi gerektiğini ima eder."
+      ],
+      scenarios: [
+        "Artırıcı ihraç testi: mNAV 2,0'da MSTR, 1 milyar dolar öz sermaye ihraç eder, 1 milyar dolar BTC alır. Hisse başına yeni BTC, sulandırmanın %50'si oranında artar (çünkü 2× prim, her yeni hissenin BTC'de NAV'ının 2 katına dönüştüğü anlamına gelir). Prim odaklı çarpan etkisi yalnızca mNAV > 1,0 iken çalışır; mNAV 1'in altına düşerse ihraç sulandırıcı hale gelir.",
+        "Karşılaştırma çerçevesi: MSTR mNAV 1,8, MetaPlanet 3,0, Semler Scientific 1,4 — MetaPlanet'in primi en yüksek, bu da şunlardan birini önerir: (a) temellerden kopuk Japon perakende talebi, (b) daha hızlı beklenen birikim oranı veya (c) aşırı değerleme. Primsiz temel için mNAV 1,0'daki <a href=\"/etf-fee-calculator/\">spot BTC ETF'leri</a> ile karşılaştırın (prim yok)."
+      ],
+      checklist: [
+        "mNAV tabanlı işlemlerden önce: 1) BTC varlık sayısının güncel olduğunu doğrulayın (şirketler aylık/üç aylık açıklar). 2) Bayat fiyat değil, en son BTC fiyatını kullanın. 3) Hazinenin önemli kaldıracı varsa kurumsal NAV hesaplaması için borcu çıkarın. 4) Dönüştürülebilir tahviller varsa hisse sınıfı sulandırmasını hesaba katın.",
+        "Hisse senedindeki ima edilen BTC fiyatını mantık kontrolünden geçirin: MSTR hisseleri ~350 dolar, hisse başına BTC ~0,0016, hisse senedindeki ima edilen BTC eşdeğeri = 350 / 0,0016 = 218.000 dolar. Bu, spot BTC fiyatını >%50 aşıyorsa, hazine yönetimi için önemli prim ödüyorsunuz demektir."
+      ],
+      mistakes: [
+        "Net borç için ayarlama yapmadan basit mNAV kullanmak. MSTR'ın 8 milyar dolardan fazla dönüştürülebilir borcu var. Saf öz sermaye/BTC oranı bir sayı verir; kurumsal değer/BTC (borcu çıkarır) genellikle %30-50 daha düşük primle başka bir sayı verir. Her ikisi de yararlıdır ancak farklı sorulara cevap verir.",
+        "Yüksek mNAV'ı otomatik alış veya satış sinyali olarak ele almak. Prim sıkışabilir (ortalamaya döner) VEYA BTC fiyatı piyasa değerinden daha hızlı yükselirse genişleyebilir (mNAV hisse fiyatı düşmeden azalır). Her zaman BTC üzerine yönlü görüş ve daha geniş hisse senedi beta ile birleştirin."
+      ],
+      benchmarks: [
+        "MSTR mNAV tarihsel aralıkları: Q4 2022 ayı: 0,7-0,9 (iskonto dönemi), Q1-Q3 2024 taban: 1,5-1,8, Q4 2024 çılgınlığı: 2,5-3,2 (zirve), Q1 2026: 1,8-2,2. mNAV 2,5'i aştığında BTC girişleri azalıyorsa veya 1,0'ın altında BTC birikimi hızlanıyorsa ortalamaya dönüş en iyi oynanır.",
+        "Diğer BTC hazineleri 2026 temeli: MicroStrategy 1,8-2,2, MetaPlanet 2,0-3,0, Semler Scientific 1,2-1,5, daha küçük hazineler (KULR, MARA madencilik dışı segment) 1,0-1,4. Bu aralıkların üzerindeki anomaliler yerel öforiyi veya altındakiler araştırmaya değer eksik değerlemeyi işaret edebilir."
+      ],
+      execution: [
+        "mNAV işlemi için pozisyon boyutlandırma: bir prim sıkıştırma bahsine asla tamamen girmeyin. %30'luk bir mNAV düşüşü 6-18 ay sürebilir. Risk sermayesinin %5-15'ini kısa mNAV / uzun BTC çift işlemine tahsis edin, 6 aylık zaman ufku ve mNAV %50 daha genişlerse stop loss ile.",
+        "Yalnızca uzun için: MSTR pozisyonuna eklerken, mNAV <1,5'te girişleri tercih edin (prim zirvelerinden kaçınarak). Çıkışlar için, mNAV 2,0, 2,5, 3,0'ı geçtikçe kademeli olarak çıkın. Bu çapalanmış yaklaşım, yakın zaman yanlılığına dayalı olarak tepe almaktan veya dipleri satmaktan kaçınır."
+      ],
+      hygiene: [
+        "BTC varlıklarını SEC 8-K dosyalamalarını kullanarak aylık güncelleyin (MSTR her önemli BTC alımını 4 gün içinde açıklar). MetaPlanet, Japonya TSE üç aylık raporlarını kullanır — modelinize bir aylık gecikme dahil edin.",
+        "Dönüştürülebilir tahvil dönüşüm eşiklerini takip edin. MSTR'ın 400-700 dolar kullanım fiyatlarında birden fazla dönüştürülebilir tahvili var; dönüşümler hissedarları nakit olmadan etkin şekilde sulandırır. 'Tamamen sulandırılmış' hisse sayısı, özellikle hisse senedi dönüşüm kullanım fiyatlarının çok üzerinde olduğunda, temel hisse sayısından daha doğru mNAV verir."
+      ],
+      validation: [
+        "Hızlı kontrol: 440 bin BTC × 77.000 dolar = 33,9 milyar dolar BTC NAV. MSTR piyasa değeri 95 milyar dolar → mNAV = 95/33,9 = 2,80. Aracınız önemli ölçüde farklı gösteriyorsa, BTC sayısını (en son 8-K'yı kontrol edin) ve BTC fiyat kaynağını doğrulayın.",
+        "Prim ayrıştırması: toplam prim (95 milyar dolar - 33,9 milyar dolar = 61 milyar dolar) şunlara bölünür: (a) işletme değeri (~2-5 milyar dolar, Cap IQ'ya dayalı), (b) vergi ertelenmiş yapı değeri (~5-10 milyar dolar, gerçekleşmemiş kazanç koruması için), (c) gelecek birikim beklentisi (geri kalan). Kalanı güvenilir BTC alım hızına karşı mantık kontrolünden geçirin."
+      ],
+    },
+    hi: {
+      interpret: [
+        "mNAV (NAV का गुणक) मापता है कि Bitcoin treasury कंपनी अपनी कच्ची BTC होल्डिंग्स की तुलना में कितना प्रीमियम या डिस्काउंट पर ट्रेड कर रही है। सूत्र: market_cap / (BTC × BTC_price)। 2.0 की रीडिंग का मतलब है कि कंपनी अपने अंतर्निहित Bitcoin के मूल्य के 2× पर ट्रेड कर रही है — बाज़ार BTC-प्रति-शेयर में वृद्धि, परिचालन मूल्य, या सट्टा प्रीमियम को कीमत में दर्शा रहा है।",
+        "ऐतिहासिक रूप से MSTR ने mNAV 0.7 (गहरा डिस्काउंट, 2022 बेयर) से 2.5+ (चरम उत्साह, 2024 के अंत) तक ट्रेड किया है। टिकाऊ प्रीमियम आमतौर पर प्रतिबिंबित करता है: (a) अधिक BTC संचय के लिए ऋण/इक्विटी जारी करने की क्षमता (accretive issuance), (b) परिचालन व्यवसाय नकदी प्रवाह, (c) कर-कुशल संरचना। 2.0 से ऊपर का प्रीमियम यह संकेत देता है कि औचित्य के लिए महत्वपूर्ण भविष्य का BTC संचय होना चाहिए।"
+      ],
+      scenarios: [
+        "Accretive issuance परीक्षण: MSTR mNAV 2.0 पर $1B इक्विटी जारी करता है, $1B BTC खरीदता है। नया BTC प्रति शेयर तनुकरण के 50% तक बढ़ता है (चूँकि 2× प्रीमियम का मतलब है प्रत्येक नया शेयर NAV में BTC के 2× में परिवर्तित होता है)। प्रीमियम-संचालित फ्लाईव्हील केवल तभी काम करता है जब mNAV > 1.0; यदि mNAV 1 से नीचे गिर जाता है, तो issuance तनुकारी हो जाता है।",
+        "तुलना ढाँचा: MSTR mNAV 1.8, MetaPlanet 3.0, Semler Scientific 1.4 — MetaPlanet का प्रीमियम सबसे अधिक है, सुझाव देता है: (a) जापानी रिटेल बोली मूलभूत बातों से अलग हो गई, (b) तेज़ अपेक्षित संचय दर, या (c) ओवरवैल्यूएशन। बिना-प्रीमियम आधाररेखा के लिए <a href=\"/etf-fee-calculator/\">स्पॉट BTC ETFs</a> की mNAV 1.0 (कोई प्रीमियम नहीं) से तुलना करें।"
+      ],
+      checklist: [
+        "mNAV-आधारित ट्रेड से पहले: 1) सत्यापित करें कि BTC होल्डिंग्स संख्या वर्तमान है (कंपनियाँ मासिक/त्रैमासिक प्रकट करती हैं)। 2) सबसे हाल की BTC कीमत का उपयोग करें, पुराना कोट नहीं। 3) यदि treasury में महत्वपूर्ण लीवरेज है तो enterprise NAV गणना के लिए ऋण घटाएँ। 4) यदि कन्वर्टिबल बॉन्ड बकाया हैं तो शेयर क्लास तनुकरण का हिसाब रखें।",
+        "स्टॉक में अंतर्निहित BTC कीमत की सेनिटी-जाँच करें: MSTR शेयर ~$350 पर, BTC-प्रति-शेयर ~0.0016, स्टॉक में अंतर्निहित BTC-समकक्ष = $350/0.0016 = $218K। यदि यह स्पॉट BTC कीमत को >50% से अधिक करता है, तो आप treasury प्रबंधन के लिए महत्वपूर्ण प्रीमियम का भुगतान कर रहे हैं।"
+      ],
+      mistakes: [
+        "नेट डेट के लिए समायोजित किए बिना साधारण mNAV का उपयोग करना। MSTR के पास $8B+ कन्वर्टिबल ऋण है। शुद्ध इक्विटी-से-BTC अनुपात एक संख्या देता है; enterprise-value-to-BTC (जो ऋण घटाता है) दूसरी देता है, अक्सर 30-50% कम प्रीमियम। दोनों उपयोगी हैं लेकिन अलग-अलग प्रश्नों का उत्तर देते हैं।",
+        "उच्च mNAV को स्वचालित खरीद या बिक्री सिग्नल मानना। प्रीमियम संकुचित (मीन रिवर्ट) हो सकता है या विस्तारित हो सकता है यदि BTC कीमत market cap से तेज़ी से बढ़ती है (शेयर कीमत गिरे बिना mNAV घटता है)। हमेशा BTC और व्यापक इक्विटी बीटा पर दिशात्मक दृष्टिकोण के साथ संयोजित करें।"
+      ],
+      benchmarks: [
+        "MSTR mNAV ऐतिहासिक श्रेणियाँ: Q4 2022 बेयर: 0.7-0.9 (डिस्काउंट युग), Q1-Q3 2024 आधार: 1.5-1.8, Q4 2024 उन्माद: 2.5-3.2 (चरम), Q1 2026: 1.8-2.2। Mean reversion सर्वश्रेष्ठ खेलता है जब mNAV घटते BTC प्रवाह के साथ 2.5 से अधिक हो, या तेज़ी से बढ़ते BTC संचय के साथ 1.0 से नीचे हो।",
+        "अन्य BTC treasuries 2026 आधाररेखा: MicroStrategy 1.8-2.2, MetaPlanet 2.0-3.0, Semler Scientific 1.2-1.5, छोटे treasuries (KULR, MARA non-mining सेगमेंट) 1.0-1.4। इन श्रेणियों से ऊपर की विसंगतियाँ स्थानीय उत्साह का संकेत दे सकती हैं या उनसे नीचे जाँच करने योग्य अंडरवैल्यूएशन का संकेत दे सकती हैं।"
+      ],
+      execution: [
+        "mNAV ट्रेड के लिए पोजीशन साइज़िंग: प्रीमियम संकुचन बेट पर कभी all-in न जाएँ। 30% mNAV गिरावट 6-18 महीने ले सकती है। शॉर्ट-mNAV / लॉन्ग-BTC जोड़े ट्रेड के लिए जोखिम पूँजी का 5-15% आवंटित करें, 6-महीने का समय क्षितिज और स्टॉप लॉस यदि mNAV 50% अधिक विस्तारित होता है।",
+        "लॉन्ग-ओनली के लिए: MSTR पोजीशन में जोड़ते समय, mNAV <1.5 पर प्रवेश को प्राथमिकता दें (प्रीमियम चोटियों से बचें)। निकास के लिए, mNAV के 2.0, 2.5, 3.0 पार करते ही बाहर निकलें। यह एंकर दृष्टिकोण रिसेंसी बायस के आधार पर टॉप खरीदने या बॉटम बेचने से रोकता है।"
+      ],
+      hygiene: [
+        "SEC 8-K फाइलिंग का उपयोग करके मासिक रूप से BTC होल्डिंग्स अपडेट करें (MSTR प्रत्येक भौतिक BTC खरीद को 4 दिनों के भीतर प्रकट करता है)। MetaPlanet जापान TSE त्रैमासिक रिपोर्ट का उपयोग करता है — अपने मॉडल में एक-महीने का लैग शामिल करें।",
+        "कन्वर्टिबल बॉन्ड रूपांतरण थ्रेशोल्ड को ट्रैक करें। MSTR के पास स्ट्राइक $400-700 पर कई कन्वर्ट्स हैं; रूपांतरण नकद के बिना शेयरधारकों को प्रभावी रूप से तनुकरण करते हैं। 'पूरी तरह से तनुकृत' शेयर गणना मूल शेयर गणना की तुलना में अधिक सटीक mNAV देती है, विशेष रूप से जब स्टॉक रूपांतरण स्ट्राइक से अच्छी तरह ऊपर हो।"
+      ],
+      validation: [
+        "त्वरित जाँच: 440K BTC × $77K = $33.9B BTC NAV। MSTR market cap $95B → mNAV = 95/33.9 = 2.80। यदि आपका उपकरण काफी अलग दिखाता है, तो BTC संख्या (सबसे हाल का 8-K जाँचें) और BTC कीमत स्रोत सत्यापित करें।",
+        "प्रीमियम विघटन: कुल प्रीमियम ($95B - $33.9B = $61B) में विभाजित: (a) परिचालन व्यवसाय मूल्य (Cap IQ के आधार पर ~$2-5B), (b) कर-स्थगित संरचना मूल्य (अप्राप्त लाभ सुरक्षा के लिए ~$5-10B), (c) भविष्य संचय अपेक्षा (शेष)। विश्वसनीय BTC खरीद गति के विरुद्ध अवशिष्ट की सेनिटी-जाँच करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "mNAV (множитель NAV) измеряет, с какой премией или дисконтом торгуется биткоин-казначейская компания относительно своих биткоин-резервов. Формула: рыночная_капитализация / (BTC × цена_BTC). Значение 2,0 означает, что компания торгуется по двойной стоимости лежащего в её основе биткоина — рынок закладывает рост BTC на акцию, операционную ценность или спекулятивную премию.",
+        "Исторически MSTR торговался по mNAV в диапазоне от 0,7 (глубокий дисконт, медвежий рынок 2022) до 2,5+ (пик эйфории, конец 2024). Устойчивая премия обычно отражает: (а) способность выпускать долг/акции для накопления большего количества BTC (аккреционный выпуск), (б) денежный поток операционного бизнеса, (в) налогово-эффективную структуру. Премия выше 2,0 подразумевает, что значительные будущие накопления BTC должны материализоваться для её оправдания."
+      ],
+      scenarios: [
+        "Тест аккреционного выпуска: MSTR при mNAV 2,0 выпускает акций на $1 млрд, покупает BTC на $1 млрд. BTC на акцию растёт на 50% от размытия (поскольку 2-кратная премия означает, что каждая новая акция конвертируется в 2× NAV в BTC). Маховик премии работает только при mNAV > 1,0; если mNAV опускается ниже 1, выпуск становится размывающим.",
+        "Сравнительная схема: MSTR mNAV 1,8, MetaPlanet 3,0, Semler Scientific 1,4 — премия MetaPlanet выше всех, что подсказывает: (а) японский розничный спрос оторвался от фундаментала, (б) более быстрый ожидаемый темп накопления, либо (в) переоценка. Сравните со <a href=\"/etf-fee-calculator/\">спот-ETF на BTC</a> при mNAV 1,0 (без премии) как с базовым ориентиром без премии."
+      ],
+      checklist: [
+        "Перед сделками на основе mNAV: 1) Проверьте, что количество BTC актуально (компании раскрывают данные ежемесячно/ежеквартально). 2) Используйте свежую цену BTC, а не устаревшую котировку. 3) Вычтите долг для расчёта enterprise NAV, если у казначейства значительное плечо. 4) Учтите размытие по классам акций, если есть конвертируемые облигации в обращении.",
+        "Сверка с подразумеваемой ценой BTC в акции: при цене акций MSTR ~$350 и BTC на акцию ~0,0016, подразумеваемый BTC-эквивалент в акции = $350/0,0016 = $218K. Если это превышает спотовую цену BTC более чем на 50%, вы платите существенную премию за управление казначейством."
+      ],
+      mistakes: [
+        "Использование простого mNAV без корректировки на чистый долг. У MSTR более $8 млрд в конвертируемом долге. Чистое соотношение «капитал к BTC» даёт одно число; соотношение «стоимость предприятия к BTC» (вычитающее долг) даёт другое, часто на 30–50% меньшую премию. Оба полезны, но отвечают на разные вопросы.",
+        "Трактовка высокого mNAV как автоматического сигнала на покупку или продажу. Премия может сжиматься (возврат к среднему) ИЛИ расширяться, если цена BTC растёт быстрее рыночной капитализации (mNAV снижается без падения цены акций). Всегда сочетайте с направленным взглядом на BTC и общей бетой по акциям."
+      ],
+      benchmarks: [
+        "Исторические диапазоны mNAV MSTR: медвежий 4 кв. 2022: 0,7–0,9 (эра дисконта), база 1–3 кв. 2024: 1,5–1,8, мания 4 кв. 2024: 2,5–3,2 (пик), 1 кв. 2026: 1,8–2,2. Возврат к среднему лучше всего отыгрывается, когда mNAV превышает 2,5 при затухающих притоках BTC или ниже 1,0 при ускоряющемся накоплении.",
+        "Другие BTC-казначейства в 2026 году, базовые значения: MicroStrategy 1,8–2,2, MetaPlanet 2,0–3,0, Semler Scientific 1,2–1,5, более мелкие казначейства (KULR, не-майнинговый сегмент MARA) 1,0–1,4. Аномалии выше этих диапазонов могут сигнализировать локальную эйфорию, ниже — недооценку, заслуживающую изучения."
+      ],
+      execution: [
+        "Размер позиции для сделки по mNAV: никогда не входите ва-банк в ставку на сжатие премии. Падение mNAV на 30% может занять 6–18 месяцев. Выделяйте 5–15% рискового капитала на парную сделку «шорт mNAV / лонг BTC» с горизонтом 6 месяцев и стоп-лоссом, если mNAV дополнительно расширится ещё на 50%.",
+        "Для лонг-онли: при добавлении к позиции MSTR предпочитайте входы при mNAV <1,5 (избегая пиков премии). Для выходов сокращайтесь при пересечении mNAV уровней 2,0, 2,5, 3,0. Такой якорный подход предотвращает покупку вершин и продажу доньев по эффекту свежести."
+      ],
+      hygiene: [
+        "Обновляйте данные о владениях BTC ежемесячно через формы SEC 8-K (MSTR раскрывает каждую существенную покупку BTC в течение 4 дней). MetaPlanet использует квартальные отчёты TSE Японии — учитывайте лаг в один месяц в своей модели.",
+        "Отслеживайте пороги конвертации конвертируемых облигаций. У MSTR несколько выпусков со страйками $400–700; конвертации фактически размывают акционеров без денежного потока. «Полностью разводнённое» число акций даёт более точный mNAV, чем базовое количество акций, особенно когда акции значительно выше страйков конвертации."
+      ],
+      validation: [
+        "Быстрая проверка: 440K BTC × $77K = $33,9 млрд BTC NAV. Рыночная капитализация MSTR $95 млрд → mNAV = 95/33,9 = 2,80. Если ваш инструмент показывает существенно иное, проверьте число BTC (смотрите свежий 8-K) и источник цены BTC.",
+        "Разложение премии: общая премия ($95 млрд − $33,9 млрд = $61 млрд) делится на: (а) стоимость операционного бизнеса (~$2–5 млрд по Cap IQ), (б) ценность налогово-отсроченной структуры (~$5–10 млрд за защиту нереализованных прибылей), (в) ожидание будущего накопления (остаток). Сверьте остаток с правдоподобным темпом покупок BTC."
+      ],
+    },
+  },
+  'lightning-network-fee-calculator': {
+    en: {
+      interpret: [
+        "Lightning Network fees follow a base + proportional formula per hop: total = base_fee_msat + (amount_sat × ppm / 1,000,000), where ppm = parts per million of the routing fee rate. A typical 3-hop payment of 100K sats with 1000 msat base + 100 ppm per hop costs about 33 sats — roughly $0.025 at $77K BTC, vs $20+ on-chain.",
+        "Routing economics matter: nodes set their own ppm rates based on liquidity and capital risk. Cheaper paths (sub-100 ppm) usually exist via hub nodes (Strike, ACINQ, Lightning Labs). Higher fees (500-2000 ppm) appear on small or rebalancing-needed channels. The wallet's pathfinder optimizes for cost — manual routing rarely beats automated paths in modern wallets."
+      ],
+      scenarios: [
+        "Microtransaction use case: $5 (~6.5K sats at $77K BTC) tip via Lightning costs ~2-5 sats ($0.0015-0.004), feasible. Same payment on-chain costs $5-25 in fees alone — Lightning enables economic models impossible with base layer Bitcoin.",
+        "Strike/Wallet of Satoshi cross-payment scenario: typical 3-4 hops, 1 sat base + 200 ppm avg → 100K sat payment costs ~80 sats. Compared to on-chain at 30 sat/vB × 140 vB = 4,200 sats fee. Lightning is 50× cheaper for $77 payment, 1000× cheaper at $5 payments."
+      ],
+      checklist: [
+        "Before sending Lightning payment: 1) Verify destination supports Lightning (look for invoice starting with 'lnbc'). 2) Confirm channel/wallet has sufficient outgoing capacity. 3) For amounts >$100, test with a $1 sub-payment first to verify path works. 4) Check current routing fees in your wallet's settings.",
+        "For receiving large amounts: ensure incoming capacity exists (channels with remote balance). Most custodial wallets handle this transparently; self-custody wallets may need to open new channels or use submarine swaps if no inbound capacity."
+      ],
+      mistakes: [
+        "Using Lightning for amounts above your channel capacity. If you have 500K sats outbound capacity and try to send 600K sats, the payment will fail (no error tells you the cause clearly). Solutions: route via multi-part payments (MPP, supported by modern wallets) or open a larger channel.",
+        "Comparing Lightning fees to on-chain dollar fees without accounting for hidden costs. Custodial wallets (Wallet of Satoshi, Strike) charge spread (0.5-2%) on conversions in addition to Lightning fees — so your $100 payment may cost $0.05 in pure LN fees but $1-2 in total custodial spread."
+      ],
+      benchmarks: [
+        "Typical Lightning fee benchmarks (May 2026): 100K sats payment = 5-50 sats fee (0.005-0.05%), 1M sats = 30-300 sats (0.003-0.03%), $1 payment = 1-5 sats (negligible). Compared to on-chain at 5-30 sat/vB: $1-10 per transaction regardless of amount.",
+        "Routing success rates: 95-99% for amounts under 500K sats, 80-90% for 1M-10M sats, drops sharply above 10M sats due to fragmented liquidity. For large payments, prefer on-chain or use a service that batches Lightning channels (Submarine Swap services like Lightning Loop)."
+      ],
+      execution: [
+        "Workflow for sending: open Lightning wallet → paste invoice → review fee estimate → confirm. Modern wallets (Phoenix, Mutiny, Wallet of Satoshi) abstract the routing complexity — you just see total cost. For self-hosted (LND, CLN), verify pathfinder selected reasonable route in logs.",
+        "For receivers: generate Lightning invoice with explicit amount when possible (avoids 'amount-less' invoices that some wallets struggle with). Set invoice expiry (default 1 hour) to avoid stale invoices being paid by mistake. Use unique invoice per payment to track receipts."
+      ],
+      hygiene: [
+        "Monitor channel liquidity weekly: if outbound balance drops below 30% of channel size, plan rebalancing or opening new channels. Imbalanced channels reduce routing reliability and can trap funds (force-close fees can wipe out small channel balances).",
+        "Update wallet software regularly — Lightning protocol still evolves with new features (BOLT12 offers, async payments, splicing). Being on outdated wallet versions can mean failed routes through nodes that adopted newer protocol features."
+      ],
+      validation: [
+        "Quick fee math: payment 100K sats, 3 hops, 1 msat base + 100 ppm. Per hop: 1/1000 + (100K × 100/1M) = 0.001 + 10 = 10.001 sats. Total 3 hops × 10 = 30 sats fee. If your wallet shows materially different (>2× variance), it's selecting a non-optimal path — try a different time or check channel state.",
+        "Post-payment validation: invoice marked 'paid' in receiver's wallet within 5 seconds (Lightning is near-instant). If status remains pending after 30+ seconds, payment may be stuck in routing — modern wallets auto-cancel after 60-120 seconds and refund."
+      ],
+    },
+    es: {
+      interpret: [
+        "Las tarifas de Lightning Network siguen una fórmula base + proporcional por salto: total = base_fee_msat + (cantidad_sat × ppm / 1,000,000), donde ppm = partes por millón de la tasa de tarifa de enrutamiento. Un pago típico de 3 saltos de 100K sats con 1000 msat base + 100 ppm por salto cuesta unos 33 sats: aproximadamente $0.025 con BTC a $77K, frente a $20+ on-chain.",
+        "La economía del enrutamiento importa: los nodos establecen sus propias tasas ppm en función de la liquidez y el riesgo de capital. Suelen existir rutas más baratas (sub-100 ppm) a través de nodos hub (Strike, ACINQ, Lightning Labs). Tarifas más altas (500-2000 ppm) aparecen en canales pequeños o que necesitan rebalanceo. El pathfinder del wallet optimiza por costo: el enrutamiento manual rara vez supera las rutas automatizadas en wallets modernos."
+      ],
+      scenarios: [
+        "Caso de uso de microtransacciones: una propina de $5 (~6.5K sats con BTC a $77K) vía Lightning cuesta ~2-5 sats ($0.0015-0.004), viable. El mismo pago on-chain cuesta $5-25 solo en tarifas: Lightning habilita modelos económicos imposibles con la capa base de Bitcoin.",
+        "Escenario de pago cruzado Strike/Wallet of Satoshi: típicamente 3-4 saltos, 1 sat base + 200 ppm promedio → pago de 100K sats cuesta ~80 sats. Comparado con on-chain a 30 sat/vB × 140 vB = 4,200 sats de tarifa. Lightning es 50× más barato para un pago de $77, 1000× más barato en pagos de $5."
+      ],
+      checklist: [
+        "Antes de enviar un pago Lightning: 1) Verifica que el destino soporte Lightning (busca facturas que comiencen con 'lnbc'). 2) Confirma que el canal/wallet tiene capacidad saliente suficiente. 3) Para montos >$100, prueba con un sub-pago de $1 primero para verificar que la ruta funciona. 4) Revisa las tarifas de enrutamiento actuales en la configuración de tu wallet.",
+        "Para recibir montos grandes: asegúrate de que exista capacidad entrante (canales con balance remoto). La mayoría de wallets custodiales manejan esto de forma transparente; los wallets de autocustodia pueden necesitar abrir nuevos canales o usar submarine swaps si no hay capacidad de entrada."
+      ],
+      mistakes: [
+        "Usar Lightning para montos superiores a la capacidad de tu canal. Si tienes 500K sats de capacidad saliente e intentas enviar 600K sats, el pago fallará (ningún error te indica claramente la causa). Soluciones: enrutar vía pagos multi-parte (MPP, soportado por wallets modernos) o abrir un canal más grande.",
+        "Comparar tarifas Lightning con tarifas on-chain en dólares sin considerar costos ocultos. Los wallets custodiales (Wallet of Satoshi, Strike) cobran spread (0.5-2%) en conversiones además de las tarifas Lightning: así que tu pago de $100 puede costar $0.05 en tarifas LN puras pero $1-2 en spread custodial total."
+      ],
+      benchmarks: [
+        "Referencias típicas de tarifa Lightning (mayo 2026): pago de 100K sats = 5-50 sats de tarifa (0.005-0.05%), 1M sats = 30-300 sats (0.003-0.03%), pago de $1 = 1-5 sats (insignificante). Comparado con on-chain a 5-30 sat/vB: $1-10 por transacción independientemente del monto.",
+        "Tasas de éxito de enrutamiento: 95-99% para montos bajo 500K sats, 80-90% para 1M-10M sats, cae bruscamente por encima de 10M sats debido a liquidez fragmentada. Para pagos grandes, prefiere on-chain o usa un servicio que agrupe canales Lightning (servicios de Submarine Swap como Lightning Loop)."
+      ],
+      execution: [
+        "Flujo para enviar: abre wallet Lightning → pega factura → revisa estimación de tarifa → confirma. Los wallets modernos (Phoenix, Mutiny, Wallet of Satoshi) abstraen la complejidad del enrutamiento: solo ves el costo total. Para self-hosted (LND, CLN), verifica en los logs que el pathfinder seleccionó una ruta razonable.",
+        "Para receptores: genera una factura Lightning con monto explícito cuando sea posible (evita facturas 'sin monto' con las que algunos wallets tienen dificultades). Establece expiración de factura (por defecto 1 hora) para evitar que facturas obsoletas se paguen por error. Usa una factura única por pago para rastrear los recibos."
+      ],
+      hygiene: [
+        "Monitorea la liquidez de canales semanalmente: si el balance saliente cae por debajo del 30% del tamaño del canal, planifica rebalanceos o apertura de nuevos canales. Los canales desbalanceados reducen la fiabilidad del enrutamiento y pueden atrapar fondos (las tarifas de cierre forzado pueden borrar balances pequeños de canal).",
+        "Actualiza regularmente el software del wallet: el protocolo Lightning aún evoluciona con nuevas características (ofertas BOLT12, pagos asíncronos, splicing). Estar en versiones desactualizadas del wallet puede significar rutas fallidas a través de nodos que adoptaron características de protocolo más nuevas."
+      ],
+      validation: [
+        "Matemática rápida de tarifa: pago de 100K sats, 3 saltos, 1 msat base + 100 ppm. Por salto: 1/1000 + (100K × 100/1M) = 0.001 + 10 = 10.001 sats. Total 3 saltos × 10 = 30 sats de tarifa. Si tu wallet muestra algo materialmente diferente (>2× de varianza), está seleccionando una ruta no óptima: prueba en otro momento o revisa el estado del canal.",
+        "Validación post-pago: la factura marcada como 'pagada' en el wallet del receptor en 5 segundos (Lightning es casi instantáneo). Si el estado permanece pendiente después de 30+ segundos, el pago puede estar atascado en enrutamiento: los wallets modernos cancelan automáticamente después de 60-120 segundos y reembolsan."
+      ],
+    },
+    pt: {
+      interpret: [
+        "As taxas da Lightning Network seguem uma fórmula base + proporcional por salto: total = base_fee_msat + (valor_sat × ppm / 1.000.000), onde ppm = partes por milhão da taxa de roteamento. Um pagamento típico de 3 saltos de 100K sats com 1000 msat base + 100 ppm por salto custa cerca de 33 sats — aproximadamente $0,025 com BTC a $77K, vs $20+ on-chain.",
+        "A economia de roteamento importa: nós definem suas próprias taxas ppm com base em liquidez e risco de capital. Caminhos mais baratos (sub-100 ppm) geralmente existem via nós hub (Strike, ACINQ, Lightning Labs). Taxas mais altas (500-2000 ppm) aparecem em canais pequenos ou que precisam de rebalanceamento. O pathfinder da carteira otimiza para custo — roteamento manual raramente supera caminhos automatizados em carteiras modernas."
+      ],
+      scenarios: [
+        "Caso de uso de microtransação: gorjeta de $5 (~6,5K sats com BTC a $77K) via Lightning custa ~2-5 sats ($0,0015-0,004), viável. O mesmo pagamento on-chain custa $5-25 apenas em taxas — a Lightning viabiliza modelos econômicos impossíveis com o Bitcoin de camada base.",
+        "Cenário Strike/Wallet of Satoshi com pagamento cruzado: tipicamente 3-4 saltos, 1 sat base + 200 ppm em média → pagamento de 100K sats custa ~80 sats. Comparado a on-chain a 30 sat/vB × 140 vB = 4.200 sats de taxa. A Lightning é 50× mais barata para pagamento de $77, 1000× mais barata em pagamentos de $5."
+      ],
+      checklist: [
+        "Antes de enviar pagamento Lightning: 1) Verifique se o destino suporta Lightning (procure invoice começando com 'lnbc'). 2) Confirme que o canal/carteira tem capacidade de saída suficiente. 3) Para valores >$100, teste com um sub-pagamento de $1 primeiro para verificar se o caminho funciona. 4) Verifique as taxas de roteamento atuais nas configurações da sua carteira.",
+        "Para receber valores grandes: assegure que existe capacidade de entrada (canais com saldo remoto). A maioria das carteiras custodiais lida com isso de forma transparente; carteiras self-custody podem precisar abrir novos canais ou usar submarine swaps se não houver capacidade de entrada."
+      ],
+      mistakes: [
+        "Usar Lightning para valores acima da capacidade do seu canal. Se você tem 500K sats de capacidade de saída e tenta enviar 600K sats, o pagamento falhará (nenhum erro indica claramente a causa). Soluções: rotear via pagamentos multipartes (MPP, suportados por carteiras modernas) ou abrir um canal maior.",
+        "Comparar taxas Lightning a taxas on-chain em dólar sem considerar custos ocultos. Carteiras custodiais (Wallet of Satoshi, Strike) cobram spread (0,5-2%) nas conversões além das taxas Lightning — então seu pagamento de $100 pode custar $0,05 em taxas LN puras, mas $1-2 no spread custodial total."
+      ],
+      benchmarks: [
+        "Benchmarks típicos de taxa Lightning (maio 2026): pagamento de 100K sats = 5-50 sats de taxa (0,005-0,05%), 1M sats = 30-300 sats (0,003-0,03%), pagamento de $1 = 1-5 sats (desprezível). Comparado a on-chain a 5-30 sat/vB: $1-10 por transação independentemente do valor.",
+        "Taxas de sucesso de roteamento: 95-99% para valores abaixo de 500K sats, 80-90% para 1M-10M sats, caem acentuadamente acima de 10M sats devido à liquidez fragmentada. Para pagamentos grandes, prefira on-chain ou use um serviço que agrupa canais Lightning (serviços de Submarine Swap como Lightning Loop)."
+      ],
+      execution: [
+        "Fluxo para enviar: abra a carteira Lightning → cole o invoice → revise a estimativa de taxa → confirme. Carteiras modernas (Phoenix, Mutiny, Wallet of Satoshi) abstraem a complexidade do roteamento — você só vê o custo total. Para auto-hospedadas (LND, CLN), verifique nos logs se o pathfinder selecionou uma rota razoável.",
+        "Para destinatários: gere invoice Lightning com valor explícito quando possível (evita invoices 'sem valor' com os quais algumas carteiras têm dificuldade). Defina expiração do invoice (padrão 1 hora) para evitar que invoices obsoletos sejam pagos por engano. Use invoice único por pagamento para rastrear recebimentos."
+      ],
+      hygiene: [
+        "Monitore a liquidez dos canais semanalmente: se o saldo de saída cair abaixo de 30% do tamanho do canal, planeje rebalanceamento ou abertura de novos canais. Canais desbalanceados reduzem a confiabilidade de roteamento e podem prender fundos (taxas de force-close podem zerar saldos pequenos).",
+        "Atualize o software da carteira regularmente — o protocolo Lightning ainda evolui com novos recursos (ofertas BOLT12, pagamentos assíncronos, splicing). Estar em versões desatualizadas pode significar rotas falhadas através de nós que adotaram recursos mais novos do protocolo."
+      ],
+      validation: [
+        "Matemática rápida de taxa: pagamento 100K sats, 3 saltos, 1 msat base + 100 ppm. Por salto: 1/1000 + (100K × 100/1M) = 0,001 + 10 = 10,001 sats. Total 3 saltos × 10 = 30 sats de taxa. Se sua carteira mostra valor materialmente diferente (>2× de variação), está selecionando um caminho não-ótimo — tente outro horário ou verifique o estado dos canais.",
+        "Validação pós-pagamento: invoice marcado como 'pago' na carteira do destinatário em até 5 segundos (Lightning é quase instantâneo). Se o status permanecer pendente após 30+ segundos, o pagamento pode estar preso em roteamento — carteiras modernas cancelam automaticamente após 60-120 segundos e devolvem."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Lightning Network ücretleri her atlama için temel + orantılı formülü izler: toplam = base_fee_msat + (amount_sat × ppm / 1.000.000), burada ppm = yönlendirme ücret oranının milyonda parçalarıdır. 1000 msat baz + atlama başına 100 ppm ile 100 bin satlık tipik 3 atlamalı bir ödeme yaklaşık 33 sat tutar — 77.000 dolar BTC'de kabaca 0,025 dolar, zincir üzerinde 20+ dolara karşı.",
+        "Yönlendirme ekonomisi önemlidir: düğümler likidite ve sermaye riskine dayalı olarak kendi ppm oranlarını belirler. Daha ucuz yollar (sub-100 ppm) genellikle hub düğümleri (Strike, ACINQ, Lightning Labs) üzerinden mevcuttur. Daha yüksek ücretler (500-2000 ppm) küçük veya yeniden dengeleme gerektiren kanallarda görünür. Cüzdanın yol bulucusu maliyet için optimize eder — manuel yönlendirme modern cüzdanlardaki otomatik yolları nadiren geçer."
+      ],
+      scenarios: [
+        "Mikro işlem kullanım durumu: Lightning üzerinden 5 dolar (77.000 dolar BTC'de ~6.500 sat) bahşiş ~2-5 sat (0,0015-0,004 dolar) tutar, uygulanabilir. Zincir üzerinde aynı ödeme tek başına ücretlerde 5-25 dolar tutar — Lightning, temel katman Bitcoin ile imkânsız ekonomik modelleri mümkün kılar.",
+        "Strike/Wallet of Satoshi çapraz ödeme senaryosu: tipik 3-4 atlama, ortalama 1 sat baz + 200 ppm → 100 bin satlık ödeme ~80 sat tutar. Zincir üzerinde 30 sat/vB × 140 vB = 4.200 sat ücretle karşılaştırıldığında. Lightning, 77 dolarlık ödeme için 50 kat daha ucuz, 5 dolarlık ödemelerde 1000 kat daha ucuzdur."
+      ],
+      checklist: [
+        "Lightning ödemesi göndermeden önce: 1) Hedefin Lightning'i desteklediğini doğrulayın ('lnbc' ile başlayan faturayı arayın). 2) Kanal/cüzdanın yeterli giden kapasiteye sahip olduğunu onaylayın. 3) >100 dolarlık miktarlar için, yolun çalıştığını doğrulamak için önce 1 dolarlık bir alt ödemeyle test edin. 4) Cüzdan ayarlarınızdaki mevcut yönlendirme ücretlerini kontrol edin.",
+        "Büyük miktarlar almak için: gelen kapasitenin var olduğundan emin olun (uzak bakiyeli kanallar). Çoğu emanet cüzdanı bunu şeffaf şekilde halleder; öz emanet cüzdanları, gelen kapasite yoksa yeni kanallar açmak veya denizaltı takasları kullanmak zorunda kalabilir."
+      ],
+      mistakes: [
+        "Kanal kapasitenizin üzerindeki miktarlar için Lightning kullanmak. 500 bin sat giden kapasiteniz varsa ve 600 bin sat göndermeye çalışırsanız, ödeme başarısız olur (size nedeni açıkça söyleyen bir hata yoktur). Çözümler: çok parçalı ödemeler (MPP, modern cüzdanlar tarafından desteklenir) üzerinden yönlendirin veya daha büyük bir kanal açın.",
+        "Gizli maliyetleri hesaba katmadan Lightning ücretlerini zincir üzeri dolar ücretleriyle karşılaştırmak. Emanet cüzdanları (Wallet of Satoshi, Strike) Lightning ücretlerine ek olarak dönüşümlerde spread (%0,5-2) alır — yani 100 dolarlık ödemeniz saf LN ücretlerinde 0,05 dolara mal olabilir ancak toplam emanet spread'inde 1-2 dolara mal olur."
+      ],
+      benchmarks: [
+        "Tipik Lightning ücret kıyaslamaları (Mayıs 2026): 100 bin sat ödeme = 5-50 sat ücret (%0,005-0,05), 1 milyon sat = 30-300 sat (%0,003-0,03), 1 dolar ödeme = 1-5 sat (önemsiz). Zincir üzerinde 5-30 sat/vB ile karşılaştırıldığında: miktardan bağımsız işlem başına 1-10 dolar.",
+        "Yönlendirme başarı oranları: 500 bin sat altındaki miktarlar için %95-99, 1M-10M sat için %80-90, parçalanmış likidite nedeniyle 10M sat üzerinde keskin düşüş. Büyük ödemeler için zincir üzerini tercih edin veya Lightning kanallarını yığınlayan bir hizmet kullanın (Lightning Loop gibi Denizaltı Takas hizmetleri)."
+      ],
+      execution: [
+        "Gönderme iş akışı: Lightning cüzdanı açın → faturayı yapıştırın → ücret tahminini inceleyin → onaylayın. Modern cüzdanlar (Phoenix, Mutiny, Wallet of Satoshi) yönlendirme karmaşıklığını soyutlar — sadece toplam maliyeti görürsünüz. Kendinden barındırılan (LND, CLN) için, yol bulucunun günlüklerde makul bir rota seçtiğini doğrulayın.",
+        "Alıcılar için: mümkün olduğunda açık tutarlı Lightning faturası oluşturun (bazı cüzdanların zorlandığı 'tutarsız' faturalardan kaçınır). Bayat faturaların yanlışlıkla ödenmesini önlemek için fatura geçerlilik süresi (varsayılan 1 saat) belirleyin. Makbuzları izlemek için ödeme başına benzersiz fatura kullanın."
+      ],
+      hygiene: [
+        "Kanal likiditesini haftalık izleyin: giden bakiye kanal boyutunun %30'unun altına düşerse, yeniden dengeleme veya yeni kanallar açmayı planlayın. Dengesiz kanallar yönlendirme güvenilirliğini azaltır ve fonları sıkıştırabilir (zorla kapatma ücretleri küçük kanal bakiyelerini silebilir).",
+        "Cüzdan yazılımını düzenli güncelleyin — Lightning protokolü hâlâ yeni özelliklerle gelişmektedir (BOLT12 teklifleri, asenkron ödemeler, splicing). Eski cüzdan sürümlerinde olmak, yeni protokol özelliklerini benimsemiş düğümler üzerinden başarısız rotalar anlamına gelebilir."
+      ],
+      validation: [
+        "Hızlı ücret matematiği: ödeme 100 bin sat, 3 atlama, 1 msat baz + 100 ppm. Atlama başına: 1/1000 + (100K × 100/1M) = 0,001 + 10 = 10,001 sat. Toplam 3 atlama × 10 = 30 sat ücret. Cüzdanınız önemli ölçüde farklı (>2× varyans) gösteriyorsa, optimal olmayan bir yol seçiyordur — farklı bir zaman deneyin veya kanal durumunu kontrol edin.",
+        "Ödeme sonrası doğrulama: fatura 5 saniye içinde alıcının cüzdanında 'ödendi' olarak işaretlenir (Lightning neredeyse anlıktır). Durum 30+ saniye sonra hâlâ beklemede ise, ödeme yönlendirmede takılmış olabilir — modern cüzdanlar 60-120 saniye sonra otomatik olarak iptal eder ve iade eder."
+      ],
+    },
+    hi: {
+      interpret: [
+        "Lightning Network शुल्क प्रति हॉप base + proportional सूत्र का पालन करते हैं: total = base_fee_msat + (amount_sat × ppm / 1,000,000), जहाँ ppm = रूटिंग शुल्क दर के parts per million। 1000 msat base + 100 ppm प्रति हॉप के साथ 100K sats का एक विशिष्ट 3-हॉप भुगतान लगभग 33 sats खर्च करता है — BTC $77K पर लगभग $0.025, on-chain पर $20+ की तुलना में।",
+        "रूटिंग अर्थशास्त्र मायने रखता है: नोड्स अपनी तरलता और पूँजी जोखिम के आधार पर अपनी ppm दरें निर्धारित करते हैं। सस्ते पथ (sub-100 ppm) आमतौर पर हब नोड्स (Strike, ACINQ, Lightning Labs) के माध्यम से मौजूद होते हैं। उच्च शुल्क (500-2000 ppm) छोटे या रीबैलेंसिंग-आवश्यक चैनलों पर दिखाई देते हैं। वॉलेट का पथखोजक लागत के लिए अनुकूलित करता है — आधुनिक वॉलेट में मैनुअल रूटिंग शायद ही कभी स्वचालित पथों को मात देती है।"
+      ],
+      scenarios: [
+        "Microtransaction उपयोग मामला: Lightning के माध्यम से $5 (BTC $77K पर ~6.5K sats) टिप ~2-5 sats ($0.0015-0.004) खर्च करता है, संभव। On-chain पर समान भुगतान केवल शुल्क में $5-25 खर्च करता है — Lightning ऐसे आर्थिक मॉडल सक्षम करता है जो बेस लेयर Bitcoin के साथ असंभव हैं।",
+        "Strike/Wallet of Satoshi क्रॉस-भुगतान परिदृश्य: विशिष्ट 3-4 हॉप्स, 1 sat base + 200 ppm औसत → 100K sat भुगतान ~80 sats खर्च करता है। 30 sat/vB × 140 vB = 4,200 sats शुल्क पर on-chain की तुलना में। Lightning $77 भुगतान के लिए 50× सस्ता है, $5 भुगतान पर 1000× सस्ता है।"
+      ],
+      checklist: [
+        "Lightning भुगतान भेजने से पहले: 1) सत्यापित करें कि गंतव्य Lightning का समर्थन करता है ('lnbc' से शुरू होने वाले इनवॉइस की तलाश करें)। 2) पुष्टि करें कि चैनल/वॉलेट में पर्याप्त outgoing क्षमता है। 3) $100 से अधिक की राशि के लिए, पहले $1 उप-भुगतान के साथ परीक्षण करें ताकि पथ काम करे यह सत्यापित किया जा सके। 4) अपने वॉलेट की सेटिंग में वर्तमान रूटिंग शुल्क जाँचें।",
+        "बड़ी राशियाँ प्राप्त करने के लिए: सुनिश्चित करें कि आने वाली क्षमता मौजूद है (दूरस्थ बैलेंस वाले चैनल)। अधिकांश कस्टोडियल वॉलेट इसे पारदर्शी रूप से संभालते हैं; स्व-कस्टडी वॉलेट को नए चैनल खोलने या यदि कोई आने वाली क्षमता नहीं है तो submarine swaps का उपयोग करने की आवश्यकता हो सकती है।"
+      ],
+      mistakes: [
+        "अपनी चैनल क्षमता से अधिक राशियों के लिए Lightning का उपयोग करना। यदि आपके पास 500K sats outbound क्षमता है और आप 600K sats भेजने की कोशिश करते हैं, तो भुगतान विफल हो जाएगा (कोई त्रुटि आपको कारण स्पष्ट रूप से नहीं बताती)। समाधान: multi-part भुगतान (MPP, आधुनिक वॉलेट द्वारा समर्थित) के माध्यम से रूट करें या एक बड़ा चैनल खोलें।",
+        "छिपी हुई लागतों का हिसाब किए बिना Lightning शुल्क की on-chain डॉलर शुल्क से तुलना करना। कस्टोडियल वॉलेट (Wallet of Satoshi, Strike) Lightning शुल्क के अलावा रूपांतरण पर स्प्रेड (0.5-2%) चार्ज करते हैं — इसलिए आपके $100 भुगतान में शुद्ध LN शुल्क में $0.05 लग सकते हैं लेकिन कुल कस्टोडियल स्प्रेड में $1-2।"
+      ],
+      benchmarks: [
+        "विशिष्ट Lightning शुल्क बेंचमार्क (मई 2026): 100K sats भुगतान = 5-50 sats शुल्क (0.005-0.05%), 1M sats = 30-300 sats (0.003-0.03%), $1 भुगतान = 1-5 sats (नगण्य)। On-chain की तुलना में 5-30 sat/vB पर: राशि की परवाह किए बिना प्रति लेनदेन $1-10।",
+        "रूटिंग सफलता दर: 500K sats से कम राशियों के लिए 95-99%, 1M-10M sats के लिए 80-90%, 10M sats से ऊपर खंडित तरलता के कारण तेज़ी से गिरती है। बड़े भुगतानों के लिए, on-chain को प्राथमिकता दें या ऐसी सेवा का उपयोग करें जो Lightning चैनलों को बैच करती है (Submarine Swap सेवाएँ जैसे Lightning Loop)।"
+      ],
+      execution: [
+        "भेजने के लिए कार्यप्रवाह: Lightning वॉलेट खोलें → इनवॉइस पेस्ट करें → शुल्क अनुमान की समीक्षा करें → पुष्टि करें। आधुनिक वॉलेट (Phoenix, Mutiny, Wallet of Satoshi) रूटिंग जटिलता को सार करते हैं — आप केवल कुल लागत देखते हैं। स्व-होस्टेड (LND, CLN) के लिए, लॉग में पथखोजक द्वारा चयनित उचित मार्ग को सत्यापित करें।",
+        "प्राप्तकर्ताओं के लिए: जब संभव हो तो स्पष्ट राशि के साथ Lightning इनवॉइस जनरेट करें ('राशि-रहित' इनवॉइस से बचता है जिनके साथ कुछ वॉलेट संघर्ष करते हैं)। पुराने इनवॉइस को गलती से भुगतान किए जाने से बचने के लिए इनवॉइस समाप्ति (डिफ़ॉल्ट 1 घंटा) सेट करें। रसीदों को ट्रैक करने के लिए प्रति भुगतान अद्वितीय इनवॉइस का उपयोग करें।"
+      ],
+      hygiene: [
+        "साप्ताहिक चैनल तरलता की निगरानी करें: यदि outbound बैलेंस चैनल आकार के 30% से नीचे गिरता है, तो रीबैलेंसिंग या नए चैनल खोलने की योजना बनाएँ। असंतुलित चैनल रूटिंग विश्वसनीयता को कम करते हैं और फंड को फँसा सकते हैं (force-close शुल्क छोटे चैनल बैलेंस को मिटा सकते हैं)।",
+        "वॉलेट सॉफ़्टवेयर नियमित रूप से अपडेट करें — Lightning प्रोटोकॉल अभी भी नई सुविधाओं (BOLT12 ऑफ़र, async भुगतान, splicing) के साथ विकसित हो रहा है। पुराने वॉलेट संस्करणों पर होने का मतलब उन नोड्स के माध्यम से विफल मार्ग हो सकता है जिन्होंने नई प्रोटोकॉल सुविधाओं को अपनाया है।"
+      ],
+      validation: [
+        "त्वरित शुल्क गणित: भुगतान 100K sats, 3 हॉप्स, 1 msat base + 100 ppm। प्रति हॉप: 1/1000 + (100K × 100/1M) = 0.001 + 10 = 10.001 sats। कुल 3 हॉप्स × 10 = 30 sats शुल्क। यदि आपका वॉलेट काफी अलग दिखाता है (>2× विचलन), तो यह एक गैर-इष्टतम पथ का चयन कर रहा है — एक अलग समय आज़माएँ या चैनल स्थिति जाँचें।",
+        "भुगतान के बाद का सत्यापन: 5 सेकंड के भीतर प्राप्तकर्ता के वॉलेट में 'भुगतान किया गया' के रूप में चिह्नित इनवॉइस (Lightning लगभग-तत्काल है)। यदि स्थिति 30+ सेकंड के बाद भी लंबित रहती है, तो भुगतान रूटिंग में फँस सकता है — आधुनिक वॉलेट 60-120 सेकंड के बाद स्वचालित रूप से रद्द कर देते हैं और रिफंड करते हैं।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Комиссии Lightning Network считаются по формуле «база + пропорциональная часть» на каждый хоп: total = base_fee_msat + (amount_sat × ppm / 1 000 000), где ppm — миллионные доли ставки маршрутизации. Типичный платёж на 100K сатоши через 3 хопа с базой 1 000 msat и 100 ppm на хоп стоит около 33 сатоши — примерно $0,025 при BTC $77K, против $20+ on-chain.",
+        "Экономика маршрутизации имеет значение: узлы устанавливают свои ppm-ставки, исходя из ликвидности и риска капитала. Более дешёвые пути (менее 100 ppm) обычно проходят через хаб-узлы (Strike, ACINQ, Lightning Labs). Более высокие комиссии (500–2000 ppm) появляются на мелких или нуждающихся в ребалансе каналах. Pathfinder кошелька оптимизирует стоимость — ручная маршрутизация редко превосходит автоматические пути современных кошельков."
+      ],
+      scenarios: [
+        "Микротранзакции: чаевые в $5 (~6,5K сатоши при BTC $77K) через Lightning стоят ~2–5 сатоши ($0,0015–0,004), это осуществимо. Тот же платёж on-chain стоит только в комиссии $5–25 — Lightning делает возможными экономические модели, недоступные на базовом слое биткоина.",
+        "Сценарий перевода между Strike и Wallet of Satoshi: обычно 3–4 хопа, база 1 сатоши + 200 ppm в среднем → платёж 100K сатоши стоит ~80 сатоши. По сравнению с on-chain при 30 sat/vB × 140 vB = 4 200 сатоши комиссии. Lightning в 50 раз дешевле для платежа в $77 и в 1000 раз дешевле при платежах в $5."
+      ],
+      checklist: [
+        "Перед отправкой платежа Lightning: 1) Проверьте, что получатель поддерживает Lightning (счёт начинается с «lnbc»). 2) Убедитесь, что у канала/кошелька достаточно исходящей ёмкости. 3) Для сумм >$100 сначала отправьте тестовый микроплатёж в $1, чтобы проверить маршрут. 4) Сверьтесь с текущими комиссиями маршрутизации в настройках кошелька.",
+        "Для получения крупных сумм: убедитесь в наличии входящей ёмкости (каналы с удалённым балансом). Большинство кастодиальных кошельков обрабатывают это прозрачно; селф-кастодиальные могут потребовать открытия новых каналов или подводных свопов при отсутствии входящей ёмкости."
+      ],
+      mistakes: [
+        "Использование Lightning для сумм, превышающих ёмкость канала. Если у вас 500K сатоши исходящей ёмкости и вы пытаетесь отправить 600K, платёж не пройдёт (внятной ошибки о причине не будет). Решения: маршрутизация через многокомпонентные платежи (MPP, поддерживается современными кошельками) или открытие более крупного канала.",
+        "Сравнение комиссий Lightning с on-chain комиссиями в долларах без учёта скрытых издержек. Кастодиальные кошельки (Wallet of Satoshi, Strike) берут спред (0,5–2%) на конвертациях вдобавок к Lightning-комиссиям — так что ваш платёж $100 может стоить $0,05 в чистых LN-комиссиях, но $1–2 в общем кастодиальном спреде."
+      ],
+      benchmarks: [
+        "Типичные ориентиры комиссий Lightning (май 2026): платёж 100K сатоши = 5–50 сатоши комиссии (0,005–0,05%), 1M сатоши = 30–300 сатоши (0,003–0,03%), платёж в $1 = 1–5 сатоши (пренебрежимо мало). По сравнению с on-chain при 5–30 sat/vB: $1–10 за транзакцию независимо от суммы.",
+        "Показатели успешности маршрутизации: 95–99% для сумм до 500K сатоши, 80–90% для 1M–10M сатоши, резко падает выше 10M сатоши из-за фрагментированной ликвидности. Для крупных платежей предпочитайте on-chain или используйте сервисы, объединяющие Lightning-каналы (сервисы подводных свопов, такие как Lightning Loop)."
+      ],
+      execution: [
+        "Рабочий процесс отправки: откройте Lightning-кошелёк → вставьте счёт → проверьте оценку комиссии → подтвердите. Современные кошельки (Phoenix, Mutiny, Wallet of Satoshi) абстрагируют сложность маршрутизации — вы видите только итоговую стоимость. Для самостоятельно размещённых (LND, CLN) проверьте в логах, что pathfinder выбрал разумный маршрут.",
+        "Для получателей: по возможности генерируйте счёт Lightning с явной суммой (это позволяет избежать «безсуммовых» счетов, с которыми некоторые кошельки работают плохо). Задавайте срок действия счёта (по умолчанию 1 час), чтобы избежать ошибочной оплаты устаревших счетов. Используйте уникальный счёт для каждого платежа для отслеживания поступлений."
+      ],
+      hygiene: [
+        "Еженедельно отслеживайте ликвидность каналов: если исходящий баланс падает ниже 30% от размера канала, планируйте ребаланс или открытие новых каналов. Несбалансированные каналы снижают надёжность маршрутизации и могут блокировать средства (комиссии принудительного закрытия способны съесть мелкие балансы каналов).",
+        "Регулярно обновляйте ПО кошелька — протокол Lightning продолжает развиваться (BOLT12 offers, асинхронные платежи, splicing). Использование устаревших версий может означать сбои маршрутов через узлы, перешедшие на новые возможности протокола."
+      ],
+      validation: [
+        "Быстрая математика: платёж 100K сатоши, 3 хопа, 1 msat база + 100 ppm. На хоп: 1/1000 + (100K × 100/1M) = 0,001 + 10 = 10,001 сатоши. Итого 3 хопа × 10 = 30 сатоши комиссии. Если кошелёк показывает существенно больше (>2× отклонение), он выбирает неоптимальный путь — попробуйте другое время или проверьте состояние канала.",
+        "Пост-валидация платежа: счёт помечается «оплачен» в кошельке получателя в течение 5 секунд (Lightning почти мгновенен). Если статус остаётся в ожидании более 30 секунд, платёж может застрять в маршрутизации — современные кошельки автоматически отменяют его через 60–120 секунд и возвращают средства."
+      ],
+    },
+  },
+  'pumpfun-bonding-curve-calculator': {
+    en: {
+      interpret: [
+        "Pump.fun's bonding curve is a deterministic price function: each SOL added increases token price quadratically until $69K market cap is reached, at which point the token 'graduates' to Raydium with locked liquidity. Early entries get exponentially more tokens per SOL — at $5K market cap, 1 SOL might buy 1.4M tokens; at $50K, the same 1 SOL buys only 80K tokens.",
+        "The constant product formula uses virtual reserves of 30 SOL and 1.073B tokens. Effective price after a buy = SOL_in / tokens_received. Slippage equals the difference between spot price and effective price — for small buys (<0.1 SOL), <2% slippage; for whale buys (>5 SOL into curve <50% complete), 30%+ slippage is common."
+      ],
+      scenarios: [
+        "Early sniper play: token launches, 1 SOL at $0 curve = ~36M tokens received at avg cost $0.000004. If token graduates and 10x's post-Raydium, position value = $360. Risk: ~99% of tokens fail to graduate; 1% capture 80% of memecoin gains.",
+        "Mid-curve entry: token at $30K mcap (43% to graduation), 0.5 SOL buy yields ~700K tokens at $0.00004 effective. Slippage 8%. If reaches graduation ($69K mcap), token price = $0.000069 → position value = $48. Safer odds (~10% of tokens at $30K mcap reach graduation) but smaller multiplier."
+      ],
+      checklist: [
+        "Before buying any pump.fun token: 1) Verify creator hasn't pre-bought >5% supply (rugpull risk). 2) Check holder distribution on solscan.io — if top 10 wallets hold >30%, dump risk is high. 3) Look at chart pattern — steady linear up = organic, vertical spike = bot-driven pump. 4) Set maximum loss tolerance (most lose 100%).",
+        "Position sizing rule: never invest more than 0.5-2% of crypto portfolio in any single pump.fun token. Diversify across 10-30 picks instead of concentrated bets. Most are losers; you need the rare 50x to compensate."
+      ],
+      mistakes: [
+        "Buying 'pumping' tokens that already added 80%+ of curve. Late entrants pay highest slippage and have no upside before graduation. Run from any token where the chart shows vertical 30-second spike with you not having seen it 60 seconds earlier — that's the bot exit zone.",
+        "Holding past graduation hoping for moonshot. Statistically, 80% of graduated tokens lose >50% within first week post-Raydium. Take initial cost back at first 2-3x and let only profits ride. Use a <a href=\"/profit-calculator/\">profit calculator</a> to verify break-even point."
+      ],
+      benchmarks: [
+        "Pump.fun benchmark stats (May 2026): ~3% of tokens graduate to Raydium, ~0.3% reach $1M+ mcap post-grad, ~0.05% reach $10M+ mcap. Win rate is brutal — but tail outcomes (10x-1000x) make small position sizes mathematically interesting if risk-managed.",
+        "Bonding curve milestones: 5 SOL accumulated = $4K mcap, 20 SOL = $16K mcap, 50 SOL = $40K mcap, 85 SOL = graduation at $69K. Each 5 SOL milestone roughly halves the tokens-per-SOL ratio for new buys."
+      ],
+      execution: [
+        "Speed-execution workflow: monitor pump.fun feed for <10 SOL accumulated launches, verify creator on social, buy 0.1-0.5 SOL within 2 minutes of detection. Set sell at 3x and 10x milestones; let only 'free shares' (cost basis recovered) ride further.",
+        "For systematic approach: build a watchlist filter (e.g., 'creator with prior graduates', 'no honeypot detector flags', 'organic chart pattern'). This raises win rate from baseline 1% to ~5-8% but requires monitoring 50-200 launches per week."
+      ],
+      hygiene: [
+        "Use dedicated 'memecoin' wallet separate from main holdings. Approve tokens only via Phantom/Backpack pop-up UI (avoids signing malicious transactions). After dumping a token, revoke its approval to prevent later drain.",
+        "Track every pump.fun trade in spreadsheet: date, mint address, SOL in, tokens received, exit SOL, profit. Most discover after 6 months that they net-lose 90% of inflows — this data forces honest reckoning vs survivorship-biased memory of winners."
+      ],
+      validation: [
+        "Quick math validation: 1 SOL at curve_state = 20 SOL → tokens = (30 × 1.073B / 20) - (30 × 1.073B / 21) ≈ 51M tokens. Effective price = 1/51M = $0.0000196 SOL ≈ $0.003 at SOL $155. If calculator differs, verify curve_state input is current.",
+        "Post-trade validation: actual tokens received vs calculator estimate should match within 1% (Solana confirmation lag may shift price slightly). Discrepancies >5% indicate front-running by bots — adjust your buy size or trade time."
+      ],
+    },
+    es: {
+      interpret: [
+        "La curva de bonding de Pump.fun es una función de precio determinista: cada SOL añadido aumenta cuadráticamente el precio del token hasta alcanzar una capitalización de $69K, momento en que el token 'se gradúa' a Raydium con liquidez bloqueada. Las entradas tempranas obtienen exponencialmente más tokens por SOL: con $5K de capitalización, 1 SOL podría comprar 1.4M tokens; con $50K, el mismo 1 SOL compra solo 80K tokens.",
+        "La fórmula de producto constante usa reservas virtuales de 30 SOL y 1.073B tokens. Precio efectivo tras una compra = SOL_in / tokens_recibidos. El slippage equivale a la diferencia entre precio spot y precio efectivo: para compras pequeñas (<0.1 SOL), <2% de slippage; para compras de ballena (>5 SOL en curva <50% completa), 30%+ de slippage es común."
+      ],
+      scenarios: [
+        "Jugada de sniper temprano: token se lanza, 1 SOL en curva = $0 = ~36M tokens recibidos a costo promedio $0.000004. Si el token se gradúa y hace 10x post-Raydium, el valor de la posición = $360. Riesgo: ~99% de los tokens no se gradúan; 1% captura el 80% de las ganancias en memecoins.",
+        "Entrada a mitad de curva: token con $30K de capitalización (43% hacia graduación), compra de 0.5 SOL rinde ~700K tokens a $0.00004 efectivo. Slippage 8%. Si alcanza la graduación ($69K mcap), precio del token = $0.000069 → valor de posición = $48. Probabilidades más seguras (~10% de los tokens con $30K mcap alcanzan graduación) pero multiplicador menor."
+      ],
+      checklist: [
+        "Antes de comprar cualquier token de pump.fun: 1) Verifica que el creador no haya pre-comprado >5% del suministro (riesgo de rugpull). 2) Revisa la distribución de holders en solscan.io: si los 10 primeros wallets tienen >30%, el riesgo de dump es alto. 3) Mira el patrón del gráfico: subida lineal constante = orgánico, pico vertical = pump impulsado por bots. 4) Establece tolerancia máxima a pérdida (la mayoría pierde 100%).",
+        "Regla de dimensionamiento de posición: nunca inviertas más del 0.5-2% de tu portafolio cripto en un solo token de pump.fun. Diversifica entre 10-30 picks en lugar de apuestas concentradas. La mayoría son perdedores; necesitas el raro 50x para compensar."
+      ],
+      mistakes: [
+        "Comprar tokens 'pumpeando' que ya añadieron 80%+ de la curva. Los entrantes tardíos pagan el slippage más alto y no tienen upside antes de la graduación. Huye de cualquier token donde el gráfico muestre un pico vertical de 30 segundos sin que lo hayas visto 60 segundos antes: esa es la zona de salida de los bots.",
+        "Mantener pasada la graduación esperando un moonshot. Estadísticamente, el 80% de los tokens graduados pierden >50% en la primera semana post-Raydium. Recupera el costo inicial en el primer 2-3x y deja correr solo las ganancias. Usa una <a href=\"/profit-calculator/\">calculadora de ganancias</a> para verificar el punto de equilibrio."
+      ],
+      benchmarks: [
+        "Estadísticas de referencia de Pump.fun (mayo 2026): ~3% de los tokens se gradúan a Raydium, ~0.3% alcanzan $1M+ de capitalización post-graduación, ~0.05% alcanzan $10M+ de capitalización. La tasa de aciertos es brutal, pero los resultados de cola (10x-1000x) hacen que tamaños de posición pequeños sean matemáticamente interesantes si se gestiona el riesgo.",
+        "Hitos de la curva de bonding: 5 SOL acumulados = $4K mcap, 20 SOL = $16K mcap, 50 SOL = $40K mcap, 85 SOL = graduación con $69K. Cada hito de 5 SOL aproximadamente reduce a la mitad la razón tokens-por-SOL para nuevas compras."
+      ],
+      execution: [
+        "Flujo de ejecución rápida: monitorea el feed de pump.fun para lanzamientos con <10 SOL acumulados, verifica al creador en redes sociales, compra 0.1-0.5 SOL dentro de 2 minutos de la detección. Coloca ventas en hitos de 3x y 10x; deja correr solo 'acciones gratis' (con costo base recuperado).",
+        "Para un enfoque sistemático: construye un filtro de watchlist (ej.: 'creador con graduaciones previas', 'sin banderas de detector de honeypot', 'patrón de gráfico orgánico'). Esto eleva la tasa de aciertos desde el 1% base a ~5-8% pero requiere monitorear 50-200 lanzamientos por semana."
+      ],
+      hygiene: [
+        "Usa un wallet 'memecoin' dedicado, separado de las tenencias principales. Aprueba tokens solo vía la UI emergente de Phantom/Backpack (evita firmar transacciones maliciosas). Después de vender un token, revoca su aprobación para prevenir un drenaje posterior.",
+        "Rastrea cada trade en pump.fun en una hoja de cálculo: fecha, dirección de mint, SOL entrante, tokens recibidos, SOL de salida, ganancia. La mayoría descubre después de 6 meses que pierde netamente el 90% de los ingresos: estos datos fuerzan un ajuste de cuentas honesto frente a la memoria sesgada por supervivencia de ganadores."
+      ],
+      validation: [
+        "Validación matemática rápida: 1 SOL con curve_state = 20 SOL → tokens = (30 × 1.073B / 20) - (30 × 1.073B / 21) ≈ 51M tokens. Precio efectivo = 1/51M = $0.0000196 SOL ≈ $0.003 con SOL a $155. Si la calculadora difiere, verifica que la entrada curve_state esté actualizada.",
+        "Validación post-trade: los tokens reales recibidos vs la estimación de la calculadora deberían coincidir dentro del 1% (el lag de confirmación de Solana puede mover ligeramente el precio). Discrepancias >5% indican front-running por bots: ajusta el tamaño de compra o el momento del trade."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A curva de bonding do Pump.fun é uma função de preço determinística: cada SOL adicionado aumenta o preço do token quadraticamente até que $69K de cap de mercado seja atingido, momento em que o token 'gradua' para a Raydium com liquidez bloqueada. Entradas iniciais recebem exponencialmente mais tokens por SOL — em $5K de cap, 1 SOL pode comprar 1,4M de tokens; em $50K, o mesmo 1 SOL compra apenas 80K tokens.",
+        "A fórmula de produto constante usa reservas virtuais de 30 SOL e 1,073B de tokens. Preço efetivo após uma compra = SOL_in / tokens_recebidos. Slippage equivale à diferença entre preço spot e preço efetivo — para compras pequenas (<0,1 SOL), slippage <2%; para compras de baleia (>5 SOL em curva <50% completa), slippage de 30%+ é comum."
+      ],
+      scenarios: [
+        "Jogada de sniper inicial: token lança, 1 SOL na curva $0 = ~36M tokens recebidos a custo médio $0,000004. Se o token gradua e faz 10x pós-Raydium, valor da posição = $360. Risco: ~99% dos tokens falham em graduar; 1% captura 80% dos ganhos de memecoin.",
+        "Entrada no meio da curva: token a $30K mcap (43% até graduação), compra de 0,5 SOL rende ~700K tokens a $0,00004 efetivo. Slippage 8%. Se atinge graduação ($69K mcap), preço do token = $0,000069 → valor da posição = $48. Probabilidades mais seguras (~10% dos tokens em $30K mcap atingem graduação), mas multiplicador menor."
+      ],
+      checklist: [
+        "Antes de comprar qualquer token do pump.fun: 1) Verifique se o criador não pré-comprou >5% do supply (risco de rugpull). 2) Confira a distribuição de holders no solscan.io — se as top 10 carteiras detêm >30%, risco de dump é alto. 3) Observe o padrão do gráfico — alta linear constante = orgânico, pico vertical = pump impulsionado por bots. 4) Defina tolerância máxima de perda (a maioria perde 100%).",
+        "Regra de dimensionamento: nunca invista mais de 0,5-2% da carteira cripto em um único token pump.fun. Diversifique entre 10-30 escolhas em vez de apostas concentradas. A maioria são perdedores; você precisa do raro 50x para compensar."
+      ],
+      mistakes: [
+        "Comprar tokens 'pumpando' que já adicionaram 80%+ da curva. Entrantes tardios pagam o maior slippage e não têm upside antes da graduação. Fuja de qualquer token onde o gráfico mostra pico vertical de 30 segundos que você não viu 60 segundos antes — essa é a zona de saída dos bots.",
+        "Segurar após a graduação esperando moonshot. Estatisticamente, 80% dos tokens graduados perdem >50% na primeira semana pós-Raydium. Recupere o custo inicial nos primeiros 2-3x e deixe apenas o lucro correr. Use uma <a href=\"/profit-calculator/\">calculadora de lucro</a> para verificar o ponto de equilíbrio."
+      ],
+      benchmarks: [
+        "Estatísticas de referência do Pump.fun (maio 2026): ~3% dos tokens graduam para Raydium, ~0,3% atingem $1M+ de mcap pós-grad, ~0,05% atingem $10M+ de mcap. A taxa de acerto é brutal — mas resultados de cauda (10x-1000x) tornam tamanhos pequenos de posição matematicamente interessantes se houver gestão de risco.",
+        "Marcos da curva de bonding: 5 SOL acumulados = $4K mcap, 20 SOL = $16K mcap, 50 SOL = $40K mcap, 85 SOL = graduação a $69K. Cada marco de 5 SOL aproximadamente reduz à metade a razão tokens-por-SOL para novas compras."
+      ],
+      execution: [
+        "Fluxo de execução rápida: monitore o feed do pump.fun para lançamentos com <10 SOL acumulados, verifique o criador nas redes sociais, compre 0,1-0,5 SOL em até 2 minutos da detecção. Defina venda nos marcos 3x e 10x; deixe apenas 'ações grátis' (custo base recuperado) correr além.",
+        "Para abordagem sistemática: construa um filtro de watchlist (ex.: 'criador com graduados anteriores', 'sem flags de detector de honeypot', 'padrão de gráfico orgânico'). Isso eleva a taxa de acerto da linha base de 1% para ~5-8%, mas exige monitorar 50-200 lançamentos por semana."
+      ],
+      hygiene: [
+        "Use carteira 'memecoin' dedicada, separada das principais participações. Aprove tokens apenas via interface pop-up do Phantom/Backpack (evita assinar transações maliciosas). Após dumpar um token, revogue sua aprovação para evitar drenagem posterior.",
+        "Acompanhe cada trade no pump.fun em planilha: data, endereço do mint, SOL investido, tokens recebidos, SOL de saída, lucro. A maioria descobre após 6 meses que líquido perde 90% dos aportes — esses dados forçam uma reconciliação honesta vs memória enviesada pela sobrevivência dos vencedores."
+      ],
+      validation: [
+        "Validação matemática rápida: 1 SOL com curve_state = 20 SOL → tokens = (30 × 1,073B / 20) - (30 × 1,073B / 21) ≈ 51M tokens. Preço efetivo = 1/51M = $0,0000196 SOL ≈ $0,003 com SOL a $155. Se a calculadora difere, verifique se o input curve_state está atualizado.",
+        "Validação pós-trade: tokens realmente recebidos vs estimativa da calculadora devem coincidir em até 1% (atraso de confirmação na Solana pode mover o preço levemente). Discrepâncias >5% indicam front-running por bots — ajuste o tamanho da compra ou o horário do trade."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Pump.fun'ın bonding eğrisi deterministik bir fiyat fonksiyonudur: eklenen her SOL, 69.000 dolar piyasa değerine ulaşılana kadar token fiyatını ikinci dereceden artırır, bu noktada token kilitlenmiş likidite ile Raydium'a 'mezun olur'. Erken girişler, SOL başına katlanarak daha fazla token alır — 5.000 dolar piyasa değerinde 1 SOL 1,4 milyon token alabilirken; 50.000 dolarda aynı 1 SOL yalnızca 80.000 token alır.",
+        "Sabit çarpım formülü 30 SOL ve 1,073 milyar tokenin sanal rezervlerini kullanır. Bir alımdan sonra etkin fiyat = giren_SOL / alınan_token. Slipaj, spot fiyat ile etkin fiyat arasındaki farka eşittir — küçük alımlar için (<0,1 SOL), <%2 slipaj; balina alımları için (eğri <%50 tamamlanmışken >5 SOL), %30+ slipaj yaygındır."
+      ],
+      scenarios: [
+        "Erken sniper oynaması: token piyasaya çıkar, eğri 0 dolarda 1 SOL = ortalama 0,000004 dolar maliyetle alınan ~36M token. Token mezun olursa ve Raydium sonrası 10x yaparsa, pozisyon değeri = 360 dolar. Risk: tokenların ~%99'u mezun olmayı başaramaz; %1'i memecoin kazançlarının %80'ini yakalar.",
+        "Eğri ortası giriş: token 30.000 dolar piyasa değerinde (mezuniyetin %43'üne), 0,5 SOL alımı 0,00004 dolar etkin maliyetle ~700.000 token getirir. Slipaj %8. Mezuniyete ulaşırsa (69.000 dolar piyasa değeri), token fiyatı = 0,000069 dolar → pozisyon değeri = 48 dolar. Daha güvenli olasılıklar (30.000 dolar piyasa değerindeki tokenların ~%10'u mezuniyete ulaşır) ama daha küçük çarpan."
+      ],
+      checklist: [
+        "Herhangi bir pump.fun tokenını almadan önce: 1) Yaratıcının arzın >%5'ini ön-satın almadığını doğrulayın (rugpull riski). 2) solscan.io'da sahip dağılımını kontrol edin — en üst 10 cüzdan >%30 tutuyorsa, dump riski yüksektir. 3) Grafik desenine bakın — istikrarlı doğrusal yukarı = organik, dikey sıçrama = bot odaklı pompa. 4) Maksimum kayıp toleransını belirleyin (çoğu %100 kaybeder).",
+        "Pozisyon boyutlandırma kuralı: kripto portföyünün %0,5-2'sinden fazlasını tek bir pump.fun tokenine asla yatırmayın. Yoğunlaşmış bahisler yerine 10-30 seçim arasında çeşitlendirin. Çoğu kaybedendir; telafi etmek için nadir 50x'e ihtiyacınız var."
+      ],
+      mistakes: [
+        "Eğrinin zaten %80+'sini eklemiş 'pompalanan' tokenları almak. Geç girenler en yüksek slipajı öder ve mezuniyetten önce yukarı yönlü potansiyele sahip değildir. 60 saniye önce görmediğiniz dikey 30 saniyelik sıçrama gösteren herhangi bir tokendan kaçın — bu bot çıkış bölgesidir.",
+        "Aya gideceği umuduyla mezuniyet sonrası tutmak. İstatistiksel olarak, mezun olmuş tokenların %80'i Raydium sonrası ilk hafta içinde >%50 kaybeder. İlk 2-3x'te ilk maliyeti geri alın ve yalnızca kârın koşmasına izin verin. Başa baş noktasını doğrulamak için bir <a href=\"/profit-calculator/\">kâr hesaplayıcı</a> kullanın."
+      ],
+      benchmarks: [
+        "Pump.fun kıyaslama istatistikleri (Mayıs 2026): tokenların ~%3'ü Raydium'a mezun olur, ~%0,3'ü mezuniyet sonrası 1M+ dolar piyasa değerine ulaşır, ~%0,05'i 10M+ dolar piyasa değerine ulaşır. Kazanma oranı acımasız — ancak kuyruk sonuçları (10x-1000x), risk yönetilirse küçük pozisyon boyutlarını matematiksel olarak ilginç kılar.",
+        "Bonding eğrisi kilometre taşları: 5 SOL birikti = 4.000 dolar piyasa değeri, 20 SOL = 16.000 dolar piyasa değeri, 50 SOL = 40.000 dolar piyasa değeri, 85 SOL = 69.000 dolarda mezuniyet. Her 5 SOL kilometre taşı, yeni alımlar için SOL başına token oranını kabaca yarıya indirir."
+      ],
+      execution: [
+        "Hızlı yürütme iş akışı: <10 SOL birikmiş lansmanlar için pump.fun beslemesini izleyin, yaratıcıyı sosyal medyada doğrulayın, tespit edildikten 2 dakika içinde 0,1-0,5 SOL alın. 3x ve 10x kilometre taşlarında satışı ayarlayın; yalnızca 'bedava payların' (maliyet temeli geri kazanılmış) daha fazla koşmasına izin verin.",
+        "Sistematik yaklaşım için: bir izleme listesi filtresi oluşturun (örn., 'önceki mezunları olan yaratıcı', 'honeypot dedektör işareti yok', 'organik grafik deseni'). Bu, kazanma oranını taban %1'den ~%5-8'e yükseltir, ancak haftada 50-200 lansmanı izlemeyi gerektirir."
+      ],
+      hygiene: [
+        "Ana varlıklardan ayrı, özel 'memecoin' cüzdanı kullanın. Tokenları yalnızca Phantom/Backpack açılır UI üzerinden onaylayın (kötü amaçlı işlemleri imzalamaktan kaçınır). Bir tokenı attıktan sonra, daha sonra boşaltılmasını önlemek için onayını iptal edin.",
+        "Her pump.fun işlemini e-tabloda izleyin: tarih, mint adresi, giren SOL, alınan token, çıkış SOL, kâr. Çoğu 6 ay sonra girişlerin %90'ını net kaybettiğini keşfeder — bu veriler, kazananların hayatta kalma yanlılığı hatırasına karşı dürüst hesaplaşmayı zorlar."
+      ],
+      validation: [
+        "Hızlı matematik doğrulaması: curve_state = 20 SOL'de 1 SOL → tokens = (30 × 1,073B / 20) - (30 × 1,073B / 21) ≈ 51M token. Etkin fiyat = 1/51M = 0,0000196 SOL ≈ SOL 155 dolarda 0,003 dolar. Hesaplayıcı farklıysa, curve_state girişinin güncel olduğunu doğrulayın.",
+        "İşlem sonrası doğrulama: alınan gerçek tokenlar, hesaplayıcı tahminiyle %1 içinde eşleşmelidir (Solana onay gecikmesi fiyatı biraz kaydırabilir). >%5 tutarsızlıklar botların ön çalıştırmasını gösterir — alım boyutunuzu veya işlem zamanınızı ayarlayın."
+      ],
+    },
+    hi: {
+      interpret: [
+        "Pump.fun का bonding curve एक नियतात्मक मूल्य फ़ंक्शन है: जोड़ा गया प्रत्येक SOL टोकन की कीमत को द्विघातीय रूप से बढ़ाता है जब तक कि $69K market cap नहीं पहुँच जाता, उस बिंदु पर टोकन लॉक्ड लिक्विडिटी के साथ Raydium पर 'graduate' हो जाता है। प्रारंभिक प्रविष्टियाँ प्रति SOL तेज़ी से अधिक टोकन प्राप्त करती हैं — $5K market cap पर, 1 SOL 1.4M टोकन खरीद सकता है; $50K पर, वही 1 SOL केवल 80K टोकन खरीदता है।",
+        "Constant product सूत्र 30 SOL और 1.073B टोकन के वर्चुअल रिज़र्व का उपयोग करता है। खरीद के बाद प्रभावी मूल्य = SOL_in / tokens_received। Slippage spot price और प्रभावी कीमत के बीच के अंतर के बराबर है — छोटी खरीद (<0.1 SOL) के लिए, <2% slippage; whale खरीद (curve <50% पूर्ण में >5 SOL) के लिए, 30%+ slippage सामान्य है।"
+      ],
+      scenarios: [
+        "Early sniper प्ले: टोकन लॉन्च, 1 SOL $0 curve पर = ~36M टोकन प्राप्त औसत लागत $0.000004 पर। यदि टोकन graduate करता है और पोस्ट-Raydium 10x करता है, तो पोजीशन मान = $360। जोखिम: ~99% टोकन graduate करने में विफल होते हैं; 1% memecoin लाभ का 80% कैप्चर करते हैं।",
+        "Mid-curve प्रवेश: $30K mcap पर टोकन (graduation का 43%), 0.5 SOL खरीद ~700K टोकन $0.00004 प्रभावी पर देती है। Slippage 8%। यदि graduation ($69K mcap) तक पहुँचता है, टोकन कीमत = $0.000069 → पोजीशन मान = $48। सुरक्षित संभावनाएँ ($30K mcap पर ~10% टोकन graduation तक पहुँचते हैं) लेकिन छोटा गुणक।"
+      ],
+      checklist: [
+        "किसी भी pump.fun टोकन को खरीदने से पहले: 1) सत्यापित करें कि निर्माता ने >5% सप्लाई पूर्व-खरीदी नहीं है (rugpull जोखिम)। 2) solscan.io पर होल्डर वितरण जाँचें — यदि शीर्ष 10 वॉलेट >30% रखते हैं, तो dump जोखिम उच्च है। 3) चार्ट पैटर्न देखें — स्थिर रैखिक ऊपर = जैविक, ऊर्ध्वाधर स्पाइक = बॉट-संचालित pump। 4) अधिकतम हानि सहनशीलता सेट करें (अधिकांश 100% खोते हैं)।",
+        "पोजीशन साइज़िंग नियम: किसी एकल pump.fun टोकन में crypto पोर्टफोलियो के 0.5-2% से अधिक निवेश न करें। केंद्रित दांव के बजाय 10-30 पिक्स में विविधता लाएँ। अधिकांश हारने वाले हैं; आपको दुर्लभ 50x को क्षतिपूर्ति करने की आवश्यकता है।"
+      ],
+      mistakes: [
+        "'पंपिंग' टोकन खरीदना जो पहले से ही 80%+ curve जोड़ चुके हैं। देर से प्रवेश करने वाले उच्चतम slippage का भुगतान करते हैं और graduation से पहले कोई upside नहीं है। किसी भी टोकन से भागें जहाँ चार्ट 30-सेकंड ऊर्ध्वाधर स्पाइक दिखाता है जिसे आपने 60 सेकंड पहले नहीं देखा था — वह बॉट निकास क्षेत्र है।",
+        "Moonshot की उम्मीद में graduation के बाद भी होल्ड करना। सांख्यिकीय रूप से, 80% graduated टोकन पहले सप्ताह पोस्ट-Raydium के भीतर >50% खो देते हैं। पहले 2-3x पर प्रारंभिक लागत वापस लें और केवल लाभ को चलने दें। ब्रेक-ईवन बिंदु सत्यापित करने के लिए <a href=\"/profit-calculator/\">profit calculator</a> का उपयोग करें।"
+      ],
+      benchmarks: [
+        "Pump.fun बेंचमार्क आँकड़े (मई 2026): ~3% टोकन Raydium पर graduate करते हैं, ~0.3% पोस्ट-grad $1M+ mcap तक पहुँचते हैं, ~0.05% $10M+ mcap तक पहुँचते हैं। जीत दर क्रूर है — लेकिन tail परिणाम (10x-1000x) छोटे पोजीशन साइज़ को गणितीय रूप से दिलचस्प बनाते हैं यदि जोखिम-प्रबंधित किया जाए।",
+        "Bonding curve मील के पत्थर: 5 SOL संचित = $4K mcap, 20 SOL = $16K mcap, 50 SOL = $40K mcap, 85 SOL = $69K पर graduation। प्रत्येक 5 SOL मील का पत्थर नई खरीद के लिए tokens-per-SOL अनुपात को लगभग आधा कर देता है।"
+      ],
+      execution: [
+        "गति-निष्पादन कार्यप्रवाह: <10 SOL संचित लॉन्च के लिए pump.fun feed की निगरानी करें, सोशल पर निर्माता सत्यापित करें, पहचान के 2 मिनट के भीतर 0.1-0.5 SOL खरीदें। 3x और 10x मील के पत्थर पर बिक्री सेट करें; केवल 'मुक्त शेयर' (लागत आधार पुनर्प्राप्त) को आगे चलने दें।",
+        "व्यवस्थित दृष्टिकोण के लिए: एक watchlist फ़िल्टर बनाएँ (जैसे, 'पूर्व graduates वाले निर्माता', 'कोई honeypot डिटेक्टर फ्लैग नहीं', 'जैविक चार्ट पैटर्न')। यह जीत दर को आधार 1% से ~5-8% तक बढ़ाता है लेकिन प्रति सप्ताह 50-200 लॉन्च की निगरानी की आवश्यकता होती है।"
+      ],
+      hygiene: [
+        "मुख्य होल्डिंग्स से अलग समर्पित 'memecoin' वॉलेट का उपयोग करें। केवल Phantom/Backpack पॉप-अप UI के माध्यम से टोकन को स्वीकृति दें (दुर्भावनापूर्ण लेनदेन पर हस्ताक्षर करने से बचता है)। एक टोकन डंप करने के बाद, बाद के drain को रोकने के लिए इसकी स्वीकृति रद्द करें।",
+        "स्प्रेडशीट में हर pump.fun ट्रेड को ट्रैक करें: तारीख, mint पता, SOL in, टोकन प्राप्त, निकास SOL, लाभ। अधिकांश 6 महीनों के बाद खोजते हैं कि वे प्रवाह का 90% शुद्ध-खोते हैं — यह डेटा विजेताओं की सर्वाइवरशिप-बायस्ड स्मृति बनाम ईमानदार लेखा-जोखा को मजबूर करता है।"
+      ],
+      validation: [
+        "त्वरित गणित सत्यापन: 1 SOL curve_state = 20 SOL पर → tokens = (30 × 1.073B / 20) - (30 × 1.073B / 21) ≈ 51M टोकन। प्रभावी कीमत = 1/51M = $0.0000196 SOL ≈ $0.003 SOL $155 पर। यदि कैलकुलेटर भिन्न होता है, तो सत्यापित करें कि curve_state इनपुट वर्तमान है।",
+        "ट्रेड के बाद का सत्यापन: वास्तविक टोकन प्राप्त बनाम कैलकुलेटर अनुमान 1% के भीतर मेल खाना चाहिए (Solana पुष्टि लैग कीमत को थोड़ा बदल सकता है)। >5% विसंगतियाँ बॉट्स द्वारा फ्रंट-रनिंग का संकेत देती हैं — अपने खरीद आकार या ट्रेड समय को समायोजित करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Бондинг-кривая Pump.fun — это детерминированная функция цены: каждый добавленный SOL квадратично повышает цену токена, пока рыночная капитализация не достигнет $69K, после чего токен «выпускается» на Raydium с заблокированной ликвидностью. Ранние входы получают экспоненциально больше токенов за SOL — при капитализации $5K 1 SOL может купить 1,4M токенов; при $50K тот же 1 SOL покупает только 80K токенов.",
+        "Формула постоянного произведения использует виртуальные резервы 30 SOL и 1,073B токенов. Эффективная цена после покупки = SOL_in / полученные_токены. Проскальзывание равно разнице между спот-ценой и эффективной ценой — для малых покупок (<0,1 SOL) проскальзывание <2%; для китовых покупок (>5 SOL в кривую <50% заполнения) обычны 30%+ проскальзывания."
+      ],
+      scenarios: [
+        "Снайперская игра на ранней стадии: токен запускается, 1 SOL при нулевой кривой = ~36M токенов получено по средней цене $0,000004. Если токен выпустится и сделает 10× после Raydium, стоимость позиции = $360. Риск: ~99% токенов не доходят до выпуска; 1% забирают 80% прибыли мемкоинов.",
+        "Вход в середине кривой: токен при капитализации $30K (43% до выпуска), покупка 0,5 SOL даёт ~700K токенов по эффективной цене $0,00004. Проскальзывание 8%. Если достигнет выпуска ($69K капитализации), цена токена = $0,000069 → стоимость позиции = $48. Более безопасные шансы (~10% токенов при $30K капитализации доходят до выпуска), но меньший мультипликатор."
+      ],
+      checklist: [
+        "Перед покупкой любого токена pump.fun: 1) Проверьте, что создатель не предзакупил >5% предложения (риск рагпулла). 2) Посмотрите распределение держателей на solscan.io — если топ-10 кошельков держат >30%, риск сброса высок. 3) Изучите паттерн графика — плавный линейный рост = органика, вертикальный спайк = накачка ботами. 4) Установите максимальную приемлемую потерю (большинство теряет 100%).",
+        "Правило размера позиции: никогда не вкладывайте более 0,5–2% криптопортфеля в один токен pump.fun. Диверсифицируйтесь между 10–30 выборами вместо концентрированных ставок. Большинство — лузеры; нужен редкий 50× для компенсации."
+      ],
+      mistakes: [
+        "Покупка «накачивающихся» токенов, у которых уже добавлено 80%+ кривой. Поздние участники платят максимальное проскальзывание и не имеют апсайда до выпуска. Бегите от любого токена, где график показывает вертикальный 30-секундный спайк, которого вы не видели 60 секунд назад — это зона выхода ботов.",
+        "Удержание после выпуска в надежде на иксы. Статистически 80% выпущенных токенов теряют >50% в первую неделю после Raydium. Заберите первоначальную стоимость при первых 2–3×, а дальше «катайте» только прибыль. Используйте <a href=\"/profit-calculator/\">калькулятор прибыли</a> для проверки точки безубыточности."
+      ],
+      benchmarks: [
+        "Базовая статистика Pump.fun (май 2026): ~3% токенов выпускаются на Raydium, ~0,3% достигают капитализации $1M+ после выпуска, ~0,05% достигают $10M+. Доля побед жестокая — но «хвостовые» исходы (10×–1000×) делают малые размеры позиций математически интересными при правильном управлении риском.",
+        "Ключевые точки бондинг-кривой: 5 SOL накоплено = $4K капитализация, 20 SOL = $16K, 50 SOL = $40K, 85 SOL = выпуск при $69K. Каждые 5 SOL примерно вдвое сокращают соотношение «токены за SOL» для новых покупок."
+      ],
+      execution: [
+        "Алгоритм быстрого исполнения: отслеживайте ленту pump.fun на запуски с <10 SOL накоплено, проверяйте создателя в соцсетях, покупайте 0,1–0,5 SOL в течение 2 минут после обнаружения. Ставьте продажу на отметках 3× и 10×; «катайте» дальше только «бесплатные акции» (когда первоначальная стоимость возвращена).",
+        "Для системного подхода: создайте фильтр-вотчлист (например, «создатель с прошлыми выпусками», «нет флагов детектора ханипотов», «органический паттерн графика»). Это поднимает долю побед с базовой 1% до ~5–8%, но требует мониторинга 50–200 запусков в неделю."
+      ],
+      hygiene: [
+        "Используйте отдельный «мемкоин-кошелёк» отдельно от основных холдингов. Одобряйте токены только через UI всплывающих окон Phantom/Backpack (избегайте подписи зловредных транзакций). После сброса токена отзывайте его approval, чтобы предотвратить позднейшее списание.",
+        "Записывайте каждую сделку pump.fun в таблицу: дата, mint-адрес, SOL входа, полученные токены, SOL выхода, прибыль. Через 6 месяцев большинство обнаруживает, что чисто теряет 90% входящих средств — эти данные заставляют честно взглянуть на ситуацию против смещённой выживаемостью памяти о победителях."
+      ],
+      validation: [
+        "Быстрая проверка математики: 1 SOL при curve_state = 20 SOL → токены = (30 × 1,073B / 20) − (30 × 1,073B / 21) ≈ 51M токенов. Эффективная цена = 1/51M = $0,0000196 SOL ≈ $0,003 при SOL $155. Если калькулятор показывает иное, проверьте актуальность ввода curve_state.",
+        "Пост-сделочная валидация: фактически полученные токены и оценка калькулятора должны совпадать в пределах 1% (задержка подтверждения Solana может слегка сместить цену). Расхождения >5% указывают на фронт-раннинг ботами — скорректируйте размер покупки или время сделки."
+      ],
+    },
+  },
+  'profit-factor-calculator': {
+    en: {
+      interpret: [
+        "Profit Factor = gross profit / gross loss. A PF of 1.0 means the system is break-even before commissions; 1.5 is solid edge for retail strategies; 2.0+ indicates excellent edge often associated with professional discretionary traders. PF below 1.0 means the strategy loses money over time even if individual trades win.",
+        "PF doesn't tell you about consistency or maximum drawdown. A system can have PF 2.0 from one giant winner amid many losses (high tail risk) or from steady wins (consistent). Always combine PF with <a href=\"/sharpe-calculator/\">Sharpe ratio</a>, max drawdown, and trade count. PF on <30 trade samples is statistically noisy — wait for 100+ trades for stable readings."
+      ],
+      scenarios: [
+        "Trend-following system: 35% win rate, avg win 3R, avg loss 1R. Gross profit per 100 trades = 35 × 3 = 105R. Gross loss = 65 × 1 = 65R. PF = 105/65 = 1.62. Good system despite low win rate because winners are 3× larger.",
+        "Mean-reversion scalp: 70% win rate, avg win 0.5R, avg loss 0.8R. Gross profit = 70 × 0.5 = 35R. Gross loss = 30 × 0.8 = 24R. PF = 35/24 = 1.46. Acceptable but vulnerable to 'gap' losses if a single 5R loss happens (PF drops to 1.21)."
+      ],
+      checklist: [
+        "Before relying on a PF result: 1) Sample size ≥100 trades (50+ minimum). 2) Include all trades — selectively dropping bad ones inflates PF. 3) Subtract commissions and slippage (real trading PF often 0.2-0.4 lower than backtest). 4) Verify wins/losses match account statement.",
+        "For walk-forward validation: split your trade history into chunks (first 50, middle 50, last 50) and compute PF on each. Stable systems show PF within 0.3 across chunks. PF that varies wildly (e.g., 2.5 → 0.8 → 1.6) suggests overfit or regime-dependent edge."
+      ],
+      mistakes: [
+        "Cherry-picking time periods. A trader showing 'PF 3.5 last quarter' may be hiding a PF 0.7 prior quarter. Always demand annualized PF or rolling 6-12 month PF. The longer the sample, the more honest the metric.",
+        "Conflating PF with profitability. PF 1.5 with 10 trades/year = small profit. PF 1.2 with 500 trades/year = much larger absolute profit. Multiply PF excess (PF - 1) by trade count and average risk to estimate annual return potential."
+      ],
+      benchmarks: [
+        "PF benchmark zones for retail systems: <1.0 losing, 1.0-1.2 marginal (often disappears after costs), 1.2-1.5 marginal-to-OK, 1.5-2.0 good, 2.0-3.0 excellent (rare in retail), >3.0 suspicious — verify sample size and look for survivorship bias or curve-fit.",
+        "By strategy type expectations: trend-following 1.3-1.8, mean-reversion 1.4-1.7, market-making 1.1-1.4 (high volume compensates), arbitrage 1.5-2.5, ML/AI systems 1.4-1.8 typically. PF above category norms warrants investigation — too good to be true usually is."
+      ],
+      execution: [
+        "Monthly PF tracking: at month-end, list all closed trades, sum positives = gross profit, sum negatives (absolute value) = gross loss. PF = gross_profit / gross_loss. Plot 12-month rolling PF — degradation toward 1.0 signals strategy decay or market regime change.",
+        "For position sizing: PF informs Kelly fraction. Kelly% ≈ (PF × win_rate - (1 - win_rate)) / PF. For PF 1.5 and 50% win rate: Kelly = (0.75 - 0.5)/1.5 = 16.7%. Use 25-50% of full Kelly (so 4-8%) for real position sizing — full Kelly is too aggressive for live trading."
+      ],
+      hygiene: [
+        "Maintain trade log with columns: date, instrument, entry, exit, P&L (R-multiples), reason for entry/exit, and post-trade notes. After 100+ trades, compute PF separately by setup type to identify which subset of strategies actually drives your edge.",
+        "Recompute PF quarterly. If quarterly PF drops below 1.0 for 2+ consecutive quarters, halt the strategy and investigate. Markets change; what worked in trending 2024 may fail in choppy 2026. Statistical significance favors faster intervention than retail traders typically take."
+      ],
+      validation: [
+        "Sanity check: PF × avg loss / avg win should equal win_rate / (1 - win_rate). If you have 60% win rate, avg win 1.5R, avg loss 1R, PF = (60 × 1.5) / (40 × 1) = 90/40 = 2.25. The relationship: 2.25 × 1/1.5 = 1.5 = 0.6/0.4. ✓",
+        "Cross-verify with broker/exchange P&L statement. Sum of all positive P&Ls in statement should equal gross profit; sum of negatives = gross loss; ratio = PF. Discrepancy >5% indicates trades missed in your log or commissions/fees not properly accounted."
+      ],
+    },
+    es: {
+      interpret: [
+        "Profit Factor = ganancia bruta / pérdida bruta. Un PF de 1.0 significa que el sistema está en equilibrio antes de comisiones; 1.5 es un edge sólido para estrategias retail; 2.0+ indica edge excelente, a menudo asociado a traders discrecionales profesionales. Un PF por debajo de 1.0 significa que la estrategia pierde dinero a lo largo del tiempo aunque trades individuales ganen.",
+        "El PF no te dice nada sobre consistencia o drawdown máximo. Un sistema puede tener PF 2.0 a partir de un ganador gigante entre muchas pérdidas (alto riesgo de cola) o de ganancias estables (consistente). Combina siempre el PF con el <a href=\"/sharpe-calculator/\">ratio Sharpe</a>, drawdown máximo y conteo de trades. PF en muestras de <30 trades es estadísticamente ruidoso: espera 100+ trades para lecturas estables."
+      ],
+      scenarios: [
+        "Sistema de trend-following: 35% de aciertos, ganancia promedio 3R, pérdida promedio 1R. Ganancia bruta por 100 trades = 35 × 3 = 105R. Pérdida bruta = 65 × 1 = 65R. PF = 105/65 = 1.62. Buen sistema a pesar de baja tasa de aciertos porque los ganadores son 3× más grandes.",
+        "Scalp de reversión a la media: 70% de aciertos, ganancia promedio 0.5R, pérdida promedio 0.8R. Ganancia bruta = 70 × 0.5 = 35R. Pérdida bruta = 30 × 0.8 = 24R. PF = 35/24 = 1.46. Aceptable pero vulnerable a pérdidas tipo 'gap' si ocurre una sola pérdida de 5R (PF cae a 1.21)."
+      ],
+      checklist: [
+        "Antes de confiar en un resultado de PF: 1) Tamaño de muestra ≥100 trades (50+ mínimo). 2) Incluye todos los trades: descartar selectivamente los malos infla el PF. 3) Resta comisiones y slippage (el PF de trading real suele ser 0.2-0.4 menor que el del backtest). 4) Verifica que ganancias/pérdidas coincidan con el extracto de la cuenta.",
+        "Para validación walk-forward: divide tu historial de trades en bloques (primeros 50, medios 50, últimos 50) y calcula el PF en cada uno. Los sistemas estables muestran PF dentro de 0.3 entre bloques. Un PF que varía drásticamente (ej., 2.5 → 0.8 → 1.6) sugiere sobreajuste o edge dependiente del régimen."
+      ],
+      mistakes: [
+        "Seleccionar períodos de tiempo favorables (cherry-picking). Un trader mostrando 'PF 3.5 último trimestre' puede estar ocultando un PF 0.7 del trimestre anterior. Exige siempre el PF anualizado o el PF rodante de 6-12 meses. Cuanto más larga la muestra, más honesta la métrica.",
+        "Confundir PF con rentabilidad. PF 1.5 con 10 trades/año = pequeña ganancia. PF 1.2 con 500 trades/año = ganancia absoluta mucho mayor. Multiplica el exceso de PF (PF - 1) por el conteo de trades y el riesgo promedio para estimar el potencial de retorno anual."
+      ],
+      benchmarks: [
+        "Zonas de referencia de PF para sistemas retail: <1.0 perdedor, 1.0-1.2 marginal (a menudo desaparece después de costos), 1.2-1.5 marginal-a-OK, 1.5-2.0 bueno, 2.0-3.0 excelente (raro en retail), >3.0 sospechoso: verifica el tamaño de muestra y busca sesgo de supervivencia o sobreajuste a la curva.",
+        "Expectativas por tipo de estrategia: trend-following 1.3-1.8, reversión a la media 1.4-1.7, market-making 1.1-1.4 (el alto volumen compensa), arbitraje 1.5-2.5, sistemas ML/AI típicamente 1.4-1.8. Un PF por encima de las normas de la categoría amerita investigación: 'demasiado bueno para ser cierto' usualmente lo es."
+      ],
+      execution: [
+        "Seguimiento mensual del PF: a fin de mes, lista todos los trades cerrados, suma positivos = ganancia bruta, suma negativos (valor absoluto) = pérdida bruta. PF = ganancia_bruta / pérdida_bruta. Grafica el PF rodante de 12 meses: la degradación hacia 1.0 señala decaimiento de estrategia o cambio de régimen de mercado.",
+        "Para dimensionamiento de posición: el PF informa la fracción de Kelly. Kelly% ≈ (PF × tasa_aciertos - (1 - tasa_aciertos)) / PF. Para PF 1.5 y 50% de aciertos: Kelly = (0.75 - 0.5)/1.5 = 16.7%. Usa 25-50% del Kelly completo (así 4-8%) para dimensionamiento real de posición: el Kelly completo es demasiado agresivo para trading en vivo."
+      ],
+      hygiene: [
+        "Mantén un registro de trades con columnas: fecha, instrumento, entrada, salida, P&L (R-múltiplos), razón de entrada/salida y notas post-trade. Después de 100+ trades, calcula el PF por separado por tipo de setup para identificar qué subconjunto de estrategias realmente impulsa tu edge.",
+        "Recalcula el PF trimestralmente. Si el PF trimestral cae por debajo de 1.0 durante 2+ trimestres consecutivos, detén la estrategia e investiga. Los mercados cambian; lo que funcionó en el 2024 con tendencia puede fallar en el 2026 lateral. La significancia estadística favorece una intervención más rápida de la que los traders retail suelen tomar."
+      ],
+      validation: [
+        "Verificación de cordura: PF × pérdida_promedio / ganancia_promedio debería igualar tasa_aciertos / (1 - tasa_aciertos). Si tienes 60% de aciertos, ganancia promedio 1.5R, pérdida promedio 1R, PF = (60 × 1.5) / (40 × 1) = 90/40 = 2.25. La relación: 2.25 × 1/1.5 = 1.5 = 0.6/0.4. OK",
+        "Verifica con el extracto P&L del broker/exchange. La suma de todos los P&L positivos del extracto debería igualar la ganancia bruta; la suma de negativos = pérdida bruta; ratio = PF. Una discrepancia >5% indica trades omitidos en tu registro o comisiones/tarifas no contabilizadas correctamente."
+      ],
+    },
+    pt: {
+      interpret: [
+        "Profit Factor = lucro bruto / perda bruta. Um PF de 1,0 significa que o sistema está empatado antes das comissões; 1,5 é uma margem sólida para estratégias de varejo; 2,0+ indica excelente edge frequentemente associado a traders discricionários profissionais. PF abaixo de 1,0 significa que a estratégia perde dinheiro ao longo do tempo, mesmo que trades individuais ganhem.",
+        "PF não diz nada sobre consistência ou drawdown máximo. Um sistema pode ter PF 2,0 a partir de um único grande vencedor em meio a muitas perdas (alto risco de cauda) ou a partir de ganhos constantes (consistente). Sempre combine PF com <a href=\"/sharpe-calculator/\">índice de Sharpe</a>, drawdown máximo e contagem de trades. PF em amostras <30 trades é estatisticamente ruidoso — aguarde 100+ trades para leituras estáveis."
+      ],
+      scenarios: [
+        "Sistema seguidor de tendência: 35% de taxa de acerto, ganho médio 3R, perda média 1R. Lucro bruto por 100 trades = 35 × 3 = 105R. Perda bruta = 65 × 1 = 65R. PF = 105/65 = 1,62. Bom sistema apesar da baixa taxa de acerto, porque os vencedores são 3× maiores.",
+        "Scalp de reversão à média: 70% de taxa de acerto, ganho médio 0,5R, perda média 0,8R. Lucro bruto = 70 × 0,5 = 35R. Perda bruta = 30 × 0,8 = 24R. PF = 35/24 = 1,46. Aceitável, mas vulnerável a perdas 'em gap' se ocorrer uma única perda de 5R (PF cai para 1,21)."
+      ],
+      checklist: [
+        "Antes de confiar em um resultado PF: 1) Tamanho da amostra ≥100 trades (50+ mínimo). 2) Inclua todos os trades — descartar os ruins seletivamente infla o PF. 3) Subtraia comissões e slippage (PF real em trading frequentemente 0,2-0,4 menor que o backtest). 4) Verifique se ganhos/perdas correspondem ao extrato da conta.",
+        "Para validação walk-forward: divida seu histórico de trades em pedaços (primeiros 50, meio 50, últimos 50) e calcule o PF em cada. Sistemas estáveis mostram PF dentro de 0,3 entre pedaços. PF que varia muito (ex.: 2,5 → 0,8 → 1,6) sugere overfit ou edge dependente de regime."
+      ],
+      mistakes: [
+        "Selecionar períodos a dedo. Um trader mostrando 'PF 3,5 no último trimestre' pode estar escondendo um PF 0,7 no trimestre anterior. Sempre exija PF anualizado ou PF móvel de 6-12 meses. Quanto maior a amostra, mais honesta a métrica.",
+        "Confundir PF com lucratividade. PF 1,5 com 10 trades/ano = pequeno lucro. PF 1,2 com 500 trades/ano = lucro absoluto muito maior. Multiplique o excesso de PF (PF - 1) pela contagem de trades e pelo risco médio para estimar o potencial de retorno anual."
+      ],
+      benchmarks: [
+        "Zonas de referência de PF para sistemas de varejo: <1,0 perdedor, 1,0-1,2 marginal (frequentemente desaparece após custos), 1,2-1,5 marginal-a-OK, 1,5-2,0 bom, 2,0-3,0 excelente (raro no varejo), >3,0 suspeito — verifique tamanho da amostra e procure por viés de sobrevivência ou curve-fit.",
+        "Expectativas por tipo de estratégia: seguidor de tendência 1,3-1,8, reversão à média 1,4-1,7, market-making 1,1-1,4 (alto volume compensa), arbitragem 1,5-2,5, sistemas ML/IA 1,4-1,8 tipicamente. PF acima das normas da categoria justifica investigação — bom demais para ser verdade geralmente é."
+      ],
+      execution: [
+        "Acompanhamento mensal de PF: no fim do mês, liste todos os trades fechados, some positivos = lucro bruto, some negativos (valor absoluto) = perda bruta. PF = lucro_bruto / perda_bruta. Plote PF móvel de 12 meses — degradação em direção a 1,0 sinaliza decaimento da estratégia ou mudança de regime de mercado.",
+        "Para dimensionamento de posição: PF informa a fração de Kelly. Kelly% ≈ (PF × taxa_acerto - (1 - taxa_acerto)) / PF. Para PF 1,5 e 50% de taxa de acerto: Kelly = (0,75 - 0,5)/1,5 = 16,7%. Use 25-50% do Kelly completo (então 4-8%) para dimensionamento real — Kelly completo é agressivo demais para trading ao vivo."
+      ],
+      hygiene: [
+        "Mantenha log de trades com colunas: data, instrumento, entrada, saída, P&L (R-múltiplos), motivo de entrada/saída e notas pós-trade. Após 100+ trades, calcule o PF separadamente por tipo de setup para identificar qual subconjunto de estratégias realmente impulsiona seu edge.",
+        "Recalcule o PF trimestralmente. Se o PF trimestral cair abaixo de 1,0 por 2+ trimestres consecutivos, pare a estratégia e investigue. Os mercados mudam; o que funcionou no mercado em tendência de 2024 pode falhar no mercado lateral de 2026. Significância estatística favorece intervenção mais rápida do que traders de varejo tipicamente fazem."
+      ],
+      validation: [
+        "Verificação de sanidade: PF × perda_média / ganho_médio deve igualar taxa_acerto / (1 - taxa_acerto). Se você tem 60% de taxa de acerto, ganho médio 1,5R, perda média 1R, PF = (60 × 1,5) / (40 × 1) = 90/40 = 2,25. A relação: 2,25 × 1/1,5 = 1,5 = 0,6/0,4. OK",
+        "Cruze com extrato de P&L da corretora/exchange. A soma de todos os P&Ls positivos no extrato deve igualar o lucro bruto; soma dos negativos = perda bruta; razão = PF. Discrepância >5% indica trades faltando em seu log ou comissões/taxas não devidamente contabilizadas."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Profit Factor = brüt kâr / brüt zarar. 1,0'lık bir PF, sistemin komisyonlardan önce başa baş olduğu anlamına gelir; 1,5 perakende stratejiler için sağlam bir avantajdır; 2,0+ genellikle profesyonel takdire bağlı yatırımcılarla ilişkilendirilen mükemmel avantajı gösterir. 1,0'ın altındaki PF, bireysel işlemler kazansa bile stratejinin zamanla para kaybettiği anlamına gelir.",
+        "PF size tutarlılık veya maksimum drawdown hakkında bilgi vermez. Bir sistem birçok kayıp arasında bir dev kazançtan (yüksek kuyruk riski) veya istikrarlı kazançlardan (tutarlı) PF 2,0'a sahip olabilir. PF'yi her zaman <a href=\"/sharpe-calculator/\">Sharpe oranı</a>, maks drawdown ve işlem sayısı ile birleştirin. <30 işlem örneklerindeki PF istatistiksel olarak gürültülüdür — istikrarlı okumalar için 100+ işlem bekleyin."
+      ],
+      scenarios: [
+        "Trend takip sistemi: %35 kazanma oranı, ortalama kazanç 3R, ortalama kayıp 1R. 100 işlem başına brüt kâr = 35 × 3 = 105R. Brüt kayıp = 65 × 1 = 65R. PF = 105/65 = 1,62. Kazananlar 3× daha büyük olduğu için düşük kazanma oranına rağmen iyi sistem.",
+        "Ortalamaya dönüş scalp: %70 kazanma oranı, ortalama kazanç 0,5R, ortalama kayıp 0,8R. Brüt kâr = 70 × 0,5 = 35R. Brüt kayıp = 30 × 0,8 = 24R. PF = 35/24 = 1,46. Kabul edilebilir ama tek bir 5R kayıp olursa 'boşluk' kayıplarına karşı savunmasızdır (PF 1,21'e düşer)."
+      ],
+      checklist: [
+        "PF sonucuna güvenmeden önce: 1) Örnek boyutu ≥100 işlem (minimum 50+). 2) Tüm işlemleri dahil edin — kötü olanları seçici olarak çıkarmak PF'yi şişirir. 3) Komisyonları ve slipajı çıkarın (gerçek işlem PF'si genellikle geriye dönük testten 0,2-0,4 daha düşüktür). 4) Kazançların/kayıpların hesap beyanıyla eşleştiğini doğrulayın.",
+        "İleriye dönük yürüme doğrulaması için: işlem geçmişinizi parçalara bölün (ilk 50, orta 50, son 50) ve her birinde PF'yi hesaplayın. Kararlı sistemler parçalar arasında 0,3 içinde PF gösterir. Çılgınca değişen PF (örn., 2,5 → 0,8 → 1,6) aşırı uydurma veya rejime bağlı avantaj önerir."
+      ],
+      mistakes: [
+        "Zaman dilimlerini seçici olarak ele almak. 'Geçen çeyrek PF 3,5' gösteren bir yatırımcı önceki çeyrek PF 0,7'yi gizliyor olabilir. Her zaman yıllıklandırılmış PF veya 6-12 aylık hareketli PF talep edin. Örnek ne kadar uzunsa, metrik o kadar dürüsttür.",
+        "PF'yi kârlılıkla karıştırmak. Yılda 10 işlem ile PF 1,5 = küçük kâr. Yılda 500 işlem ile PF 1,2 = çok daha büyük mutlak kâr. Yıllık getiri potansiyelini tahmin etmek için PF fazlasını (PF - 1) işlem sayısı ve ortalama riskle çarpın."
+      ],
+      benchmarks: [
+        "Perakende sistemler için PF kıyaslama bölgeleri: <1,0 kaybeden, 1,0-1,2 marjinal (maliyetlerden sonra genellikle kaybolur), 1,2-1,5 marjinal-tamam, 1,5-2,0 iyi, 2,0-3,0 mükemmel (perakendede nadir), >3,0 şüpheli — örnek boyutunu doğrulayın ve hayatta kalma yanlılığını veya eğri uydurmayı arayın.",
+        "Strateji türüne göre beklentiler: trend takibi 1,3-1,8, ortalamaya dönüş 1,4-1,7, piyasa yapımı 1,1-1,4 (yüksek hacim telafi eder), arbitraj 1,5-2,5, ML/AI sistemleri tipik olarak 1,4-1,8. Kategori normlarının üzerindeki PF araştırma gerektirir — doğru olamayacak kadar iyi olmak genellikle öyledir."
+      ],
+      execution: [
+        "Aylık PF izleme: ay sonunda, tüm kapanan işlemleri listeleyin, pozitifleri toplayın = brüt kâr, negatifleri (mutlak değer) toplayın = brüt zarar. PF = brüt_kâr / brüt_zarar. 12 aylık hareketli PF'yi grafiğe dökün — 1,0'a doğru bozulma strateji çürümesini veya piyasa rejimi değişikliğini işaret eder.",
+        "Pozisyon boyutlandırma için: PF, Kelly oranını bilgilendirir. Kelly% ≈ (PF × kazanma_oranı - (1 - kazanma_oranı)) / PF. PF 1,5 ve %50 kazanma oranı için: Kelly = (0,75 - 0,5)/1,5 = %16,7. Gerçek pozisyon boyutlandırması için tam Kelly'nin %25-50'sini (yani %4-8) kullanın — tam Kelly canlı işlem için çok agresiftir."
+      ],
+      hygiene: [
+        "Şu sütunlarla işlem günlüğü tutun: tarih, enstrüman, giriş, çıkış, P&L (R-katları), giriş/çıkış nedeni ve işlem sonrası notlar. 100+ işlemden sonra, avantajınızı gerçekten hangi strateji alt kümesinin sürüklediğini belirlemek için kurulum türüne göre PF'yi ayrı hesaplayın.",
+        "PF'yi üç ayda bir yeniden hesaplayın. Üç aylık PF, 2+ ardışık çeyrek için 1,0'ın altına düşerse, stratejiyi durdurun ve araştırın. Piyasalar değişir; trendli 2024'te işe yarayan, dalgalı 2026'da başarısız olabilir. İstatistiksel anlamlılık, perakende yatırımcıların tipik olarak aldığından daha hızlı müdahaleyi destekler."
+      ],
+      validation: [
+        "Mantık kontrolü: PF × ortalama kayıp / ortalama kazanç, kazanma_oranı / (1 - kazanma_oranı)'na eşit olmalıdır. %60 kazanma oranı, ortalama kazanç 1,5R, ortalama kayıp 1R varsa, PF = (60 × 1,5) / (40 × 1) = 90/40 = 2,25. İlişki: 2,25 × 1/1,5 = 1,5 = 0,6/0,4. ✓",
+        "Broker/borsa P&L beyanıyla çapraz doğrulama. Beyandaki tüm pozitif P&L'lerin toplamı brüt kâra eşit olmalıdır; negatiflerin toplamı = brüt zarar; oran = PF. >%5 tutarsızlık günlüğünüzde atlanan işlemleri veya doğru hesaplanmamış komisyonları/ücretleri gösterir."
+      ],
+    },
+    hi: {
+      interpret: [
+        "Profit Factor = सकल लाभ / सकल हानि। PF 1.0 का मतलब है कि कमीशन से पहले सिस्टम ब्रेक-ईवन है; 1.5 रिटेल रणनीतियों के लिए ठोस edge है; 2.0+ उत्कृष्ट edge को इंगित करता है जो अक्सर पेशेवर discretionary व्यापारियों के साथ जुड़ा होता है। 1.0 से नीचे PF का मतलब है कि व्यक्तिगत ट्रेड जीतने पर भी रणनीति समय के साथ पैसा खोती है।",
+        "PF आपको consistency या अधिकतम drawdown के बारे में नहीं बताता। एक सिस्टम में कई हानियों के बीच एक विशाल विजेता (high tail risk) से PF 2.0 हो सकता है या स्थिर जीत (consistent) से। हमेशा PF को <a href=\"/sharpe-calculator/\">Sharpe ratio</a>, max drawdown, और ट्रेड गणना के साथ संयोजित करें। <30 ट्रेड नमूनों पर PF सांख्यिकीय रूप से शोर है — स्थिर रीडिंग के लिए 100+ ट्रेड की प्रतीक्षा करें।"
+      ],
+      scenarios: [
+        "ट्रेंड-फॉलोइंग सिस्टम: 35% जीत दर, औसत जीत 3R, औसत हानि 1R। प्रति 100 ट्रेड सकल लाभ = 35 × 3 = 105R। सकल हानि = 65 × 1 = 65R। PF = 105/65 = 1.62। कम जीत दर के बावजूद अच्छा सिस्टम क्योंकि विजेता 3× बड़े हैं।",
+        "Mean-reversion scalp: 70% जीत दर, औसत जीत 0.5R, औसत हानि 0.8R। सकल लाभ = 70 × 0.5 = 35R। सकल हानि = 30 × 0.8 = 24R। PF = 35/24 = 1.46। स्वीकार्य लेकिन 'gap' हानियों के प्रति संवेदनशील यदि एकल 5R हानि होती है (PF 1.21 तक गिरता है)।"
+      ],
+      checklist: [
+        "PF परिणाम पर निर्भर रहने से पहले: 1) नमूना आकार ≥100 ट्रेड (50+ न्यूनतम)। 2) सभी ट्रेड शामिल करें — चुनिंदा रूप से खराब को छोड़ना PF को बढ़ाता है। 3) कमीशन और slippage घटाएँ (वास्तविक ट्रेडिंग PF अक्सर बैकटेस्ट से 0.2-0.4 कम)। 4) सत्यापित करें कि जीत/हानि खाता विवरण से मेल खाती हैं।",
+        "Walk-forward सत्यापन के लिए: अपने ट्रेड इतिहास को टुकड़ों में विभाजित करें (पहले 50, मध्य 50, अंतिम 50) और प्रत्येक पर PF की गणना करें। स्थिर सिस्टम टुकड़ों में 0.3 के भीतर PF दिखाते हैं। PF जो बेतहाशा बदलता है (जैसे, 2.5 → 0.8 → 1.6) overfit या regime-निर्भर edge का सुझाव देता है।"
+      ],
+      mistakes: [
+        "Cherry-picking समय अवधि। 'पिछली तिमाही PF 3.5' दिखाने वाला व्यापारी पूर्व तिमाही PF 0.7 छिपा सकता है। हमेशा वार्षिक PF या rolling 6-12 महीने PF की माँग करें। नमूना जितना लंबा होगा, मेट्रिक उतना ही ईमानदार होगा।",
+        "PF को लाभप्रदता के साथ मिलाना। PF 1.5 के साथ 10 ट्रेड/वर्ष = छोटा लाभ। PF 1.2 के साथ 500 ट्रेड/वर्ष = बहुत बड़ा निरपेक्ष लाभ। वार्षिक रिटर्न क्षमता का अनुमान लगाने के लिए PF अधिशेष (PF - 1) को ट्रेड गणना और औसत जोखिम से गुणा करें।"
+      ],
+      benchmarks: [
+        "रिटेल सिस्टम के लिए PF बेंचमार्क ज़ोन: <1.0 हारना, 1.0-1.2 सीमांत (अक्सर लागत के बाद गायब हो जाता है), 1.2-1.5 सीमांत-से-ठीक, 1.5-2.0 अच्छा, 2.0-3.0 उत्कृष्ट (रिटेल में दुर्लभ), >3.0 संदिग्ध — नमूना आकार सत्यापित करें और सर्वाइवरशिप बायस या curve-fit देखें।",
+        "रणनीति प्रकार के अनुसार अपेक्षाएँ: ट्रेंड-फॉलोइंग 1.3-1.8, mean-reversion 1.4-1.7, market-making 1.1-1.4 (उच्च मात्रा क्षतिपूर्ति करती है), arbitrage 1.5-2.5, ML/AI सिस्टम आमतौर पर 1.4-1.8। श्रेणी मानदंडों से ऊपर PF जाँच की माँग करता है — सच होने के लिए बहुत अच्छा आमतौर पर होता है।"
+      ],
+      execution: [
+        "मासिक PF ट्रैकिंग: माह के अंत में, सभी बंद ट्रेड सूचीबद्ध करें, धनात्मक का योग = सकल लाभ, ऋणात्मक का योग (निरपेक्ष मान) = सकल हानि। PF = सकल_लाभ / सकल_हानि। 12-महीने rolling PF प्लॉट करें — 1.0 की ओर गिरावट रणनीति क्षय या बाज़ार regime परिवर्तन का संकेत देती है।",
+        "पोजीशन साइज़िंग के लिए: PF Kelly fraction को सूचित करता है। Kelly% ≈ (PF × win_rate - (1 - win_rate)) / PF। PF 1.5 और 50% जीत दर के लिए: Kelly = (0.75 - 0.5)/1.5 = 16.7%। वास्तविक पोजीशन साइज़िंग के लिए पूर्ण Kelly का 25-50% (तो 4-8%) उपयोग करें — पूर्ण Kelly लाइव ट्रेडिंग के लिए बहुत आक्रामक है।"
+      ],
+      hygiene: [
+        "कॉलम के साथ ट्रेड लॉग बनाए रखें: तारीख, उपकरण, प्रवेश, निकास, P&L (R-गुणक), प्रवेश/निकास का कारण, और ट्रेड के बाद के नोट्स। 100+ ट्रेडों के बाद, सेटअप प्रकार से अलग-अलग PF की गणना करें ताकि यह पहचाना जा सके कि रणनीतियों का कौन सा सबसेट वास्तव में आपके edge को संचालित करता है।",
+        "तिमाही PF की पुनर्गणना करें। यदि तिमाही PF 2+ लगातार तिमाहियों के लिए 1.0 से नीचे गिरता है, तो रणनीति रोकें और जाँच करें। बाज़ार बदलते हैं; जो 2024 ट्रेंडिंग में काम करता था वह 2026 choppy में विफल हो सकता है। सांख्यिकीय महत्व रिटेल व्यापारियों द्वारा आमतौर पर लिए गए हस्तक्षेप से तेज़ी का पक्ष लेता है।"
+      ],
+      validation: [
+        "सेनिटी जाँच: PF × औसत हानि / औसत जीत बराबर होनी चाहिए win_rate / (1 - win_rate) के। यदि आपकी 60% जीत दर है, औसत जीत 1.5R, औसत हानि 1R, PF = (60 × 1.5) / (40 × 1) = 90/40 = 2.25। संबंध: 2.25 × 1/1.5 = 1.5 = 0.6/0.4। ✓",
+        "ब्रोकर/एक्सचेंज P&L विवरण के साथ क्रॉस-सत्यापित करें। विवरण में सभी धनात्मक P&Ls का योग सकल लाभ के बराबर होना चाहिए; ऋणात्मक का योग = सकल हानि; अनुपात = PF। >5% विसंगति आपके लॉग में छूटे हुए ट्रेड या कमीशन/शुल्क का ठीक से हिसाब नहीं किए जाने का संकेत देती है।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Profit Factor = валовая прибыль / валовой убыток. PF равный 1,0 означает, что система выходит в ноль до комиссий; 1,5 — это солидное преимущество для розничных стратегий; 2,0+ указывает на отличное преимущество, обычно ассоциируемое с профессиональными дискреционными трейдерами. PF ниже 1,0 означает, что стратегия в долгосрочной перспективе теряет деньги, даже если отдельные сделки прибыльны.",
+        "PF ничего не говорит о стабильности или максимальной просадке. Система может иметь PF 2,0 за счёт одного гигантского победителя среди множества убытков (высокий хвостовой риск) либо благодаря стабильным выигрышам (последовательность). Всегда сочетайте PF с <a href=\"/sharpe-calculator/\">коэффициентом Шарпа</a>, максимальной просадкой и числом сделок. PF на выборке <30 сделок статистически шумный — ждите 100+ сделок для стабильных значений."
+      ],
+      scenarios: [
+        "Трендовая система: доля прибыльных сделок 35%, средняя прибыль 3R, средний убыток 1R. Валовая прибыль на 100 сделок = 35 × 3 = 105R. Валовой убыток = 65 × 1 = 65R. PF = 105/65 = 1,62. Хорошая система, несмотря на низкую долю побед, потому что победители в 3 раза крупнее.",
+        "Скальпинг возврата к среднему: доля побед 70%, средняя прибыль 0,5R, средний убыток 0,8R. Валовая прибыль = 70 × 0,5 = 35R. Валовой убыток = 30 × 0,8 = 24R. PF = 35/24 = 1,46. Приемлемо, но уязвимо к «гэп»-убыткам: один убыток в 5R обрушит PF до 1,21."
+      ],
+      checklist: [
+        "Перед опорой на значение PF: 1) Размер выборки ≥100 сделок (минимум 50+). 2) Включите все сделки — выборочное удаление плохих завышает PF. 3) Вычтите комиссии и проскальзывание (реальный PF часто на 0,2–0,4 ниже, чем в бэктесте). 4) Сверьте победы/убытки с выпиской счёта.",
+        "Для walk-forward валидации: разбейте историю сделок на блоки (первые 50, средние 50, последние 50) и рассчитайте PF по каждому. Устойчивые системы показывают PF в пределах 0,3 между блоками. Сильно колеблющийся PF (например, 2,5 → 0,8 → 1,6) подсказывает переобучение или зависимость преимущества от режима."
+      ],
+      mistakes: [
+        "Подбор удобных периодов. Трейдер, показывающий «PF 3,5 в прошлом квартале», может скрывать PF 0,7 в предыдущем. Всегда требуйте годового PF или скользящего 6–12 месячного. Чем длиннее выборка, тем честнее метрика.",
+        "Смешение PF и доходности. PF 1,5 при 10 сделках/год = небольшая прибыль. PF 1,2 при 500 сделках/год = гораздо большая абсолютная прибыль. Умножьте превышение PF (PF − 1) на число сделок и средний риск, чтобы оценить потенциал годовой доходности."
+      ],
+      benchmarks: [
+        "Ориентировочные зоны PF для розничных систем: <1,0 убыточная, 1,0–1,2 маржинальная (часто исчезает после издержек), 1,2–1,5 маржинально-приемлемая, 1,5–2,0 хорошая, 2,0–3,0 отличная (редко в рознице), >3,0 подозрительно — проверьте размер выборки и поищите смещение выживаемости или переподгонку.",
+        "Ожидания по типу стратегии: трендовая 1,3–1,8, возврат к среднему 1,4–1,7, маркет-мейкинг 1,1–1,4 (компенсируется объёмом), арбитраж 1,5–2,5, ML/AI-системы обычно 1,4–1,8. PF выше норм категории заслуживает проверки — «слишком хорошо, чтобы быть правдой» обычно так и есть."
+      ],
+      execution: [
+        "Ежемесячное отслеживание PF: в конце месяца перечислите все закрытые сделки, сумма положительных = валовая прибыль, сумма отрицательных (по модулю) = валовой убыток. PF = валовая_прибыль / валовой_убыток. Постройте 12-месячный скользящий PF — снижение к 1,0 сигнализирует о деградации стратегии или смене режима рынка.",
+        "Для размера позиции: PF определяет долю Келли. Kelly% ≈ (PF × доля_побед − (1 − доля_побед)) / PF. Для PF 1,5 и 50% побед: Kelly = (0,75 − 0,5)/1,5 = 16,7%. Используйте 25–50% полного Келли (то есть 4–8%) для реальных размеров позиций — полный Келли слишком агрессивен для живой торговли."
+      ],
+      hygiene: [
+        "Ведите журнал сделок со столбцами: дата, инструмент, вход, выход, P&L (в R-кратных), причина входа/выхода и заметки после сделки. Через 100+ сделок рассчитайте PF отдельно по типу сетапа, чтобы понять, какое подмножество стратегий действительно даёт преимущество.",
+        "Пересчитывайте PF поквартально. Если квартальный PF падает ниже 1,0 на 2+ подряд кварталов, остановите стратегию и проведите расследование. Рынки меняются; то, что работало в трендовом 2024-м, может провалиться в боковом 2026-м. Статистическая значимость требует более быстрого вмешательства, чем обычно принимают розничные трейдеры."
+      ],
+      validation: [
+        "Проверка здравого смысла: PF × средний_убыток / средняя_прибыль должно равняться доля_побед / (1 − доля_побед). Если у вас 60% побед, средняя прибыль 1,5R, средний убыток 1R, PF = (60 × 1,5) / (40 × 1) = 90/40 = 2,25. Соотношение: 2,25 × 1/1,5 = 1,5 = 0,6/0,4. ✓",
+        "Сверка с выпиской брокера/биржи P&L. Сумма всех положительных P&L в выписке должна равняться валовой прибыли; сумма отрицательных = валовому убытку; отношение = PF. Расхождение >5% указывает на пропущенные сделки в журнале или некорректный учёт комиссий и сборов."
+      ],
+    },
+  },
+  'covered-call-calculator': {
+    en: {
+      interpret: [
+        "Covered call yield is the premium received divided by your cost basis, annualized. A 30-day call at 5% OTM yielding $1,500 on a $60,000 BTC position represents 2.5% monthly yield, or 30% annualized — assuming the call expires worthless and you can repeat. The trade-off: capped upside above strike + time commitment.",
+        "Effective sale price if assigned = strike + premium received. For BTC at $77K with 81K strike and $1,500 premium: if BTC closes >$81K at expiry, you sell at effective price $82.5K (strike + premium), realizing 6.25% gain plus the premium bonus. Compare this 'wheel exit' return to your alternative HODL strategy."
+      ],
+      scenarios: [
+        "Conservative income: BTC at $77K, sell 1-month call at $90K strike (17% OTM) for $700 premium. Yield: 0.91% monthly = ~11% annualized. Assignment risk low (~10-15% probability based on IV). Best for HODLers wanting modest yield without significant call-away risk.",
+        "Aggressive premium: BTC at $77K, sell 1-month call at $80K strike (4% OTM) for $2,500 premium. Yield: 3.25% monthly = 39% annualized. Assignment risk high (~45-55%). Use when IV is elevated (post-news, pre-event) and you're willing to lose upside above $80K."
+      ],
+      checklist: [
+        "Before selling a covered call: 1) Confirm you actually OWN the underlying (not borrowed) — naked calls have unlimited risk. 2) Check upcoming events (FOMC, ETF announcements, halving) within expiry window. 3) Verify your tax situation — assignment triggers gains/losses. 4) Set rules for managing if call goes ITM (close, roll up/out, accept assignment).",
+        "Strike selection rules: never sell a strike below your cost basis (creates a guaranteed loss if assigned). Aim for strikes that, if assigned, deliver acceptable IRR on the holding (typically 15%+ annualized including premium)."
+      ],
+      mistakes: [
+        "Selling strikes too close to spot during rally phases. BTC pumping 5%/week + 4% OTM call = high probability of assignment, capping you out of bigger move. In strong uptrends, sell 15-25% OTM and accept lower premium for upside protection.",
+        "Not closing or rolling when call goes ITM with significant time premium remaining. If your $80K call now has $4K intrinsic + $1K time premium, closing for $5K (vs $2,500 sold for) is $2.5K loss — but you keep upside above $80K. Often better than waiting for assignment."
+      ],
+      benchmarks: [
+        "Typical covered call yields by strike distance (BTC, 30-day, normal vol): ATM 4-7%/month (=50-100%/yr), 5% OTM 2-3.5%/month (24-50%/yr), 10% OTM 1-2%/month (12-26%/yr), 20% OTM 0.5-0.8%/month (6-10%/yr). Higher IV (≥80%) doubles these; low IV (≤40%) halves them.",
+        "Assignment probability rough rules: ATM ~50%, 5% OTM ~30-40%, 10% OTM ~15-25%, 20% OTM ~5-10%. Higher IV widens the distribution → more probability of being ITM by expiry."
+      ],
+      execution: [
+        "Weekly wheel routine: every Monday, check BTC price, IV, and calendar. Sell new monthly covered call if previous expired or roll if ITM. Use limit orders at midpoint of bid-ask, not market orders. Most options markets have wide spreads; market orders often pay 5-15% extra slippage.",
+        "Roll workflow: when current call goes ITM with 14+ days left, evaluate (a) closing at current price (lock in gain on remaining time decay if profitable, accept loss otherwise), (b) rolling to higher strike same month (collect more premium, reduce assignment risk), (c) rolling to next month same strike (collect fresh time premium)."
+      ],
+      hygiene: [
+        "Track each call: open date, expiry, strike, premium, fees, close date, close price (or assignment), P&L. After 12+ trades, calculate true realized yield vs theoretical. Realized often 20-30% lower than theoretical due to assignment losses on big up moves.",
+        "Tax management: covered call premiums are typically short-term taxable events. Assignments may convert long-term holdings to short-term gains. Consult tax advisor or use <a href=\"/tax-calculator/\">tax calculator</a> for impact assessment in your jurisdiction."
+      ],
+      validation: [
+        "Sanity check: a $1,500 premium on a $60K cost basis position over 30 days = $1,500/$60,000 × 12 = 30% annualized yield (if repeated). If your calculator shows materially different, verify cost_basis input vs current spot.",
+        "Post-expiry validation: if call expired OTM, you keep premium (no assignment, position unchanged). If ITM, your shares/coins are sold at strike price → check effective sale price = strike + premium and ROI = (effective_sale - cost_basis) / cost_basis. Document both outcomes for tax records."
+      ],
+    },
+    es: {
+      interpret: [
+        "El rendimiento de una covered call es la prima recibida dividida por tu costo base, anualizada. Una call a 30 días con 5% OTM que rinde $1,500 sobre una posición BTC de $60,000 representa 2.5% de rendimiento mensual, o 30% anualizado, asumiendo que la call expira sin valor y puedes repetir. El trade-off: upside limitado por encima del strike + compromiso de tiempo.",
+        "Precio efectivo de venta si hay asignación = strike + prima recibida. Para BTC a $77K con strike 81K y prima $1,500: si BTC cierra >$81K al vencimiento, vendes a precio efectivo $82.5K (strike + prima), realizando 6.25% de ganancia más el bono de prima. Compara este retorno de 'salida en wheel' con tu estrategia HODL alternativa."
+      ],
+      scenarios: [
+        "Ingreso conservador: BTC a $77K, vende call a 1 mes con strike $90K (17% OTM) por $700 de prima. Rendimiento: 0.91% mensual = ~11% anualizado. Riesgo de asignación bajo (~10-15% de probabilidad según IV). Mejor para HODLers que quieren rendimiento modesto sin riesgo significativo de call-away.",
+        "Prima agresiva: BTC a $77K, vende call a 1 mes con strike $80K (4% OTM) por $2,500 de prima. Rendimiento: 3.25% mensual = 39% anualizado. Riesgo de asignación alto (~45-55%). Úsala cuando la IV esté elevada (post-noticia, pre-evento) y estés dispuesto a perder upside por encima de $80K."
+      ],
+      checklist: [
+        "Antes de vender una covered call: 1) Confirma que realmente POSEES el subyacente (no prestado): las calls desnudas tienen riesgo ilimitado. 2) Revisa eventos próximos (FOMC, anuncios de ETF, halving) dentro de la ventana de vencimiento. 3) Verifica tu situación fiscal: la asignación genera ganancias/pérdidas. 4) Establece reglas para gestionar si la call va ITM (cerrar, hacer roll up/out, aceptar asignación).",
+        "Reglas de selección de strike: nunca vendas un strike por debajo de tu costo base (crea una pérdida garantizada si hay asignación). Apunta a strikes que, si hay asignación, entreguen un TIR aceptable sobre la tenencia (típicamente 15%+ anualizado incluyendo prima)."
+      ],
+      mistakes: [
+        "Vender strikes demasiado cerca del spot durante fases de rally. BTC pumpeando 5%/semana + call 4% OTM = alta probabilidad de asignación, dejándote fuera de un movimiento mayor. En tendencias alcistas fuertes, vende 15-25% OTM y acepta menor prima a cambio de protección de upside.",
+        "No cerrar o hacer roll cuando la call va ITM con prima de tiempo significativa restante. Si tu call de $80K ahora tiene $4K intrínseco + $1K de prima de tiempo, cerrar por $5K (vs los $2,500 vendidos) es una pérdida de $2.5K, pero mantienes el upside por encima de $80K. A menudo mejor que esperar la asignación."
+      ],
+      benchmarks: [
+        "Rendimientos típicos de covered call por distancia al strike (BTC, 30 días, vol normal): ATM 4-7%/mes (=50-100%/año), 5% OTM 2-3.5%/mes (24-50%/año), 10% OTM 1-2%/mes (12-26%/año), 20% OTM 0.5-0.8%/mes (6-10%/año). Una IV más alta (≥80%) duplica estos valores; IV baja (≤40%) los reduce a la mitad.",
+        "Reglas aproximadas de probabilidad de asignación: ATM ~50%, 5% OTM ~30-40%, 10% OTM ~15-25%, 20% OTM ~5-10%. Una IV más alta amplía la distribución → más probabilidad de estar ITM al vencimiento."
+      ],
+      execution: [
+        "Rutina semanal de wheel: cada lunes, revisa precio de BTC, IV y calendario. Vende una nueva covered call mensual si la anterior expiró o haz roll si está ITM. Usa órdenes limit en el punto medio del bid-ask, no órdenes de mercado. La mayoría de mercados de opciones tienen spreads amplios; las órdenes de mercado a menudo pagan 5-15% extra de slippage.",
+        "Flujo de roll: cuando la call actual va ITM con 14+ días restantes, evalúa (a) cerrar al precio actual (asegurar ganancia en decaimiento de tiempo restante si es rentable, aceptar pérdida en caso contrario), (b) hacer roll a strike más alto en el mismo mes (cobrar más prima, reducir riesgo de asignación), (c) hacer roll al siguiente mes con el mismo strike (cobrar nueva prima de tiempo)."
+      ],
+      hygiene: [
+        "Rastrea cada call: fecha de apertura, vencimiento, strike, prima, tarifas, fecha de cierre, precio de cierre (o asignación), P&L. Después de 12+ trades, calcula el rendimiento real realizado vs el teórico. El realizado suele ser 20-30% menor que el teórico debido a pérdidas por asignación en movimientos al alza grandes.",
+        "Gestión fiscal: las primas de covered call son típicamente eventos imponibles de corto plazo. Las asignaciones pueden convertir tenencias de largo plazo en ganancias de corto plazo. Consulta un asesor fiscal o usa la <a href=\"/tax-calculator/\">calculadora de impuestos</a> para evaluar el impacto en tu jurisdicción."
+      ],
+      validation: [
+        "Verificación de cordura: una prima de $1,500 sobre una posición con costo base de $60K durante 30 días = $1,500/$60,000 × 12 = 30% de rendimiento anualizado (si se repite). Si tu calculadora muestra algo materialmente diferente, verifica la entrada de cost_basis vs spot actual.",
+        "Validación post-vencimiento: si la call expiró OTM, te quedas con la prima (sin asignación, posición sin cambios). Si está ITM, tus acciones/monedas se venden al precio strike → revisa precio efectivo de venta = strike + prima y ROI = (venta_efectiva - costo_base) / costo_base. Documenta ambos resultados para registros fiscales."
+      ],
+    },
+    pt: {
+      interpret: [
+        "O rendimento da covered call é o prêmio recebido dividido pelo seu custo base, anualizado. Uma call de 30 dias 5% OTM rendendo $1.500 sobre uma posição em BTC de $60.000 representa 2,5% de rendimento mensal, ou 30% anualizado — assumindo que a call expira sem valor e você pode repetir. O trade-off: upside limitado acima do strike + comprometimento de tempo.",
+        "Preço efetivo de venda se exercida = strike + prêmio recebido. Para BTC a $77K com strike 81K e prêmio $1.500: se o BTC fechar >$81K no vencimento, você vende ao preço efetivo $82,5K (strike + prêmio), realizando ganho de 6,25% mais o bônus do prêmio. Compare esse retorno de 'saída em wheel' com sua estratégia alternativa de HODL."
+      ],
+      scenarios: [
+        "Renda conservadora: BTC a $77K, vende call de 1 mês com strike $90K (17% OTM) por prêmio $700. Rendimento: 0,91% mensal = ~11% anualizado. Risco de exercício baixo (~10-15% de probabilidade com base na IV). Melhor para HODLers que querem rendimento modesto sem risco significativo de chamada.",
+        "Prêmio agressivo: BTC a $77K, vende call de 1 mês com strike $80K (4% OTM) por prêmio $2.500. Rendimento: 3,25% mensal = 39% anualizado. Risco de exercício alto (~45-55%). Use quando a IV está elevada (pós-notícia, pré-evento) e você está disposto a perder upside acima de $80K."
+      ],
+      checklist: [
+        "Antes de vender uma covered call: 1) Confirme que você realmente POSSUI o subjacente (não emprestado) — calls a descoberto têm risco ilimitado. 2) Confira eventos próximos (FOMC, anúncios de ETF, halving) dentro da janela do vencimento. 3) Verifique sua situação fiscal — exercício dispara ganhos/perdas. 4) Defina regras para gerenciar se a call ficar ITM (fechar, rolar para cima/para frente, aceitar exercício).",
+        "Regras de seleção de strike: nunca venda um strike abaixo do seu custo base (cria uma perda garantida se exercida). Mire em strikes que, se exercidos, entreguem TIR aceitável sobre a posição (tipicamente 15%+ anualizado incluindo prêmio)."
+      ],
+      mistakes: [
+        "Vender strikes muito próximos ao spot durante fases de rally. BTC subindo 5%/semana + call 4% OTM = alta probabilidade de exercício, te capando de movimento maior. Em tendências de alta fortes, venda 15-25% OTM e aceite prêmio menor pela proteção do upside.",
+        "Não fechar ou rolar quando a call fica ITM com prêmio de tempo significativo restante. Se sua call de $80K agora tem $4K intrínseco + $1K de prêmio de tempo, fechar por $5K (vs $2.500 vendido) é uma perda de $2,5K — mas você mantém o upside acima de $80K. Frequentemente melhor do que esperar o exercício."
+      ],
+      benchmarks: [
+        "Rendimentos típicos de covered call por distância de strike (BTC, 30 dias, vol normal): ATM 4-7%/mês (=50-100%/ano), 5% OTM 2-3,5%/mês (24-50%/ano), 10% OTM 1-2%/mês (12-26%/ano), 20% OTM 0,5-0,8%/mês (6-10%/ano). IV mais alta (≥80%) dobra esses; IV baixa (≤40%) os reduz à metade.",
+        "Regras aproximadas de probabilidade de exercício: ATM ~50%, 5% OTM ~30-40%, 10% OTM ~15-25%, 20% OTM ~5-10%. IV mais alta alarga a distribuição → maior probabilidade de estar ITM no vencimento."
+      ],
+      execution: [
+        "Rotina semanal de wheel: toda segunda, verifique preço do BTC, IV e calendário. Venda nova covered call mensal se a anterior expirou ou role se ITM. Use ordens limit no ponto médio do bid-ask, não ordens market. A maioria dos mercados de opções tem spreads amplos; ordens market frequentemente pagam 5-15% de slippage extra.",
+        "Fluxo de rolagem: quando a call atual fica ITM com 14+ dias restantes, avalie (a) fechar no preço atual (travar ganho no decaimento de tempo restante se lucrativo, aceitar perda caso contrário), (b) rolar para strike mais alto no mesmo mês (coletar mais prêmio, reduzir risco de exercício), (c) rolar para próximo mês mesmo strike (coletar prêmio de tempo fresco)."
+      ],
+      hygiene: [
+        "Acompanhe cada call: data de abertura, vencimento, strike, prêmio, taxas, data de fechamento, preço de fechamento (ou exercício), P&L. Após 12+ trades, calcule rendimento realizado real vs teórico. O realizado frequentemente é 20-30% menor que o teórico devido a perdas de exercício em grandes altas.",
+        "Gestão fiscal: prêmios de covered call são tipicamente eventos tributáveis de curto prazo. Exercícios podem converter posições de longo prazo em ganhos de curto prazo. Consulte assessor tributário ou use <a href=\"/tax-calculator/\">calculadora de impostos</a> para avaliar impacto na sua jurisdição."
+      ],
+      validation: [
+        "Verificação de sanidade: um prêmio de $1.500 em uma posição com custo base de $60K em 30 dias = $1.500/$60.000 × 12 = 30% anualizado (se repetido). Se sua calculadora mostra valor materialmente diferente, verifique o input de custo_base vs spot atual.",
+        "Validação pós-vencimento: se a call expirou OTM, você fica com o prêmio (sem exercício, posição inalterada). Se ITM, suas ações/coins são vendidas pelo strike → verifique preço efetivo de venda = strike + prêmio e ROI = (venda_efetiva - custo_base) / custo_base. Documente ambos os resultados para registros fiscais."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Covered call (örtülü alım) getirisi, alınan primin maliyet temelinize bölünmesi ve yıllıklandırılmasıdır. 60.000 dolarlık bir BTC pozisyonunda 1.500 dolar getiren %5 OTM 30 günlük bir call, %2,5 aylık getiri veya %30 yıllık getiri temsil eder — call'un değersiz sona ermesi ve tekrarlayabilmeniz koşuluyla. Ödün: kullanım fiyatı üzerinde sınırlı yukarı yön + zaman taahhüdü.",
+        "Atanırsa etkin satış fiyatı = kullanım fiyatı + alınan prim. 81.000 dolar kullanım fiyatı ve 1.500 dolar prim ile 77.000 dolardaki BTC için: BTC vade sonunda >81.000 dolar kapanırsa, etkin fiyat 82.500 dolardan (kullanım + prim) satarsınız, prim bonusu artı %6,25 kazanç gerçekleştirirsiniz. Bu 'çark çıkış' getirisini alternatif HODL stratejinizle karşılaştırın."
+      ],
+      scenarios: [
+        "Tutucu gelir: 77.000 dolarda BTC, 700 dolar prim için 90.000 dolar kullanım fiyatında 1 aylık call satın (%17 OTM). Getiri: %0,91 aylık = ~%11 yıllık. Atama riski düşük (IV'e göre ~%10-15 olasılık). Önemli call-away riski olmadan mütevazı getiri isteyen HODL'cüler için en uygunu.",
+        "Agresif prim: 77.000 dolarda BTC, 2.500 dolar prim için 80.000 dolar kullanım fiyatında 1 aylık call satın (%4 OTM). Getiri: %3,25 aylık = %39 yıllık. Atama riski yüksek (~%45-55). IV yüksek olduğunda (haber sonrası, etkinlik öncesi) ve 80.000 dolar üzerinde yukarı yön kaybetmeye razı olduğunuzda kullanın."
+      ],
+      checklist: [
+        "Covered call satmadan önce: 1) Dayanağa gerçekten SAHİP olduğunuzu (ödünç değil) onaylayın — çıplak call'ların sınırsız riski vardır. 2) Vade penceresi içinde yaklaşan etkinlikleri (FOMC, ETF duyuruları, halving) kontrol edin. 3) Vergi durumunuzu doğrulayın — atama kazanç/kayıp tetikler. 4) Call ITM olursa yönetim kurallarını belirleyin (kapat, yukarı/dışarı yuvarlat, atamayı kabul et).",
+        "Kullanım fiyatı seçim kuralları: maliyet temelinizin altında bir kullanım fiyatını asla satmayın (atanırsa garantili kayıp yaratır). Atanırsa, holding'de kabul edilebilir IRR sağlayan kullanım fiyatlarını hedefleyin (tipik olarak prim dahil %15+ yıllıklandırılmış)."
+      ],
+      mistakes: [
+        "Yükseliş fazlarında spot'a çok yakın kullanım fiyatları satmak. Haftada %5 pompalayan BTC + %4 OTM call = atama olasılığı yüksek, sizi daha büyük hareketten dışlar. Güçlü yükseliş trendlerinde, %15-25 OTM satın ve yukarı yön koruması için daha düşük primi kabul edin.",
+        "Önemli zaman primi kalmışken call ITM olduğunda kapatmamak veya yuvarlatmamak. 80.000 dolar call'unuzda şimdi 4.000 dolar içsel + 1.000 dolar zaman primi varsa, 5.000 dolara kapatmak (2.500 dolara satılana karşı) 2.500 dolar kayıptır — ancak 80.000 dolar üzerinde yukarı yönü korursunuz. Genellikle atamayı beklemekten daha iyidir."
+      ],
+      benchmarks: [
+        "Kullanım fiyatı mesafesine göre tipik covered call getirileri (BTC, 30 gün, normal vol): ATM aylık %4-7 (=yıllık %50-100), %5 OTM aylık %2-3,5 (yıllık %24-50), %10 OTM aylık %1-2 (yıllık %12-26), %20 OTM aylık %0,5-0,8 (yıllık %6-10). Daha yüksek IV (≥%80) bunları ikiye katlar; düşük IV (≤%40) yarıya indirir.",
+        "Atama olasılığı kaba kurallar: ATM ~%50, %5 OTM ~%30-40, %10 OTM ~%15-25, %20 OTM ~%5-10. Daha yüksek IV dağılımı genişletir → vade sonunda ITM olma olasılığı daha fazla."
+      ],
+      execution: [
+        "Haftalık çark rutini: her Pazartesi, BTC fiyatını, IV'yi ve takvimi kontrol edin. Önceki sona erdiyse yeni aylık covered call satın veya ITM ise yuvarlatın. Piyasa emirleri değil, alış-satış orta noktasında limit emirler kullanın. Çoğu opsiyon piyasasının geniş spread'leri vardır; piyasa emirleri genellikle %5-15 ekstra slipaj öder.",
+        "Yuvarlama iş akışı: mevcut call 14+ gün kalanken ITM olduğunda, şunları değerlendirin: (a) mevcut fiyatta kapatmak (kârlı ise kalan zaman çürümesinde kazanç kilitle, aksi takdirde kaybı kabul et), (b) aynı ay daha yüksek kullanım fiyatına yuvarlatmak (daha fazla prim topla, atama riskini azalt), (c) aynı kullanım fiyatında bir sonraki aya yuvarlatmak (yeni zaman primi topla)."
+      ],
+      hygiene: [
+        "Her call'u takip edin: açılış tarihi, vade, kullanım fiyatı, prim, ücretler, kapanış tarihi, kapanış fiyatı (veya atama), P&L. 12+ işlemden sonra, teorik vs gerçek gerçekleşen getiriyi hesaplayın. Gerçekleşen, büyük yukarı hareketlerdeki atama kayıpları nedeniyle teorikten %20-30 daha düşük olur.",
+        "Vergi yönetimi: covered call primleri tipik olarak kısa vadeli vergiye tabi olaylardır. Atamalar uzun vadeli holdingleri kısa vadeli kazançlara dönüştürebilir. Yetki alanınızdaki etki değerlendirmesi için vergi danışmanına başvurun veya <a href=\"/tax-calculator/\">vergi hesaplayıcı</a> kullanın."
+      ],
+      validation: [
+        "Mantık kontrolü: 30 gün boyunca 60.000 dolar maliyet temeli pozisyonunda 1.500 dolarlık prim = 1.500 dolar/60.000 dolar × 12 = %30 yıllıklandırılmış getiri (tekrarlanırsa). Hesaplayıcınız önemli ölçüde farklı gösteriyorsa, cost_basis girişini mevcut spot'a göre doğrulayın.",
+        "Vade sonrası doğrulama: call OTM sona erdiyse, primi tutarsınız (atama yok, pozisyon değişmedi). ITM ise, hisseleriniz/coin'leriniz kullanım fiyatından satılır → etkin satış fiyatı = kullanım fiyatı + prim ve ROI = (etkin_satış - maliyet_temeli) / maliyet_temeli'ni kontrol edin. Her iki sonucu da vergi kayıtları için belgeleyin."
+      ],
+    },
+    hi: {
+      interpret: [
+        "Covered call yield प्राप्त प्रीमियम को आपके लागत आधार से विभाजित किया गया है, वार्षिक। $60,000 BTC पोजीशन पर $1,500 yield देने वाला 5% OTM पर 30-दिवसीय call 2.5% मासिक yield या 30% वार्षिक का प्रतिनिधित्व करता है — मानते हुए कि call worthless समाप्त होती है और आप दोहरा सकते हैं। ट्रेड-ऑफ: strike से ऊपर capped upside + समय प्रतिबद्धता।",
+        "यदि assigned तो प्रभावी बिक्री मूल्य = strike + प्राप्त प्रीमियम। BTC $77K पर 81K strike और $1,500 प्रीमियम के साथ: यदि BTC समाप्ति पर >$81K बंद होता है, तो आप प्रभावी मूल्य $82.5K (strike + प्रीमियम) पर बेचते हैं, 6.25% लाभ प्लस प्रीमियम बोनस का एहसास करते हैं। इस 'wheel exit' रिटर्न की तुलना अपनी वैकल्पिक HODL रणनीति से करें।"
+      ],
+      scenarios: [
+        "रूढ़िवादी आय: BTC $77K पर, $700 प्रीमियम के लिए $90K strike (17% OTM) पर 1-महीने का call बेचें। Yield: 0.91% मासिक = ~11% वार्षिक। Assignment जोखिम कम (IV के आधार पर ~10-15% संभावना)। महत्वपूर्ण call-away जोखिम के बिना मामूली yield चाहने वाले HODLers के लिए सर्वश्रेष्ठ।",
+        "आक्रामक प्रीमियम: BTC $77K पर, $2,500 प्रीमियम के लिए $80K strike (4% OTM) पर 1-महीने का call बेचें। Yield: 3.25% मासिक = 39% वार्षिक। Assignment जोखिम उच्च (~45-55%)। जब IV ऊँचा हो (post-news, pre-event) और आप $80K से ऊपर upside खोने के लिए तैयार हों तब उपयोग करें।"
+      ],
+      checklist: [
+        "Covered call बेचने से पहले: 1) पुष्टि करें कि आप वास्तव में अंतर्निहित के मालिक हैं (उधार लिया नहीं) — naked calls में असीमित जोखिम होता है। 2) समाप्ति विंडो के भीतर आने वाली घटनाओं (FOMC, ETF घोषणाएँ, halving) की जाँच करें। 3) अपनी कर स्थिति सत्यापित करें — assignment लाभ/हानि को ट्रिगर करता है। 4) यदि call ITM जाती है तो प्रबंधन के नियम सेट करें (बंद करें, roll up/out, assignment स्वीकार करें)।",
+        "Strike चयन नियम: कभी भी अपने लागत आधार से नीचे strike न बेचें (यदि assigned तो गारंटीकृत हानि बनाता है)। ऐसे strikes का लक्ष्य रखें जो, यदि assigned हो, तो होल्डिंग पर स्वीकार्य IRR प्रदान करें (आमतौर पर 15%+ वार्षिक प्रीमियम सहित)।"
+      ],
+      mistakes: [
+        "रैली चरणों के दौरान spot के बहुत करीब strikes बेचना। BTC pumping 5%/सप्ताह + 4% OTM call = assignment की उच्च संभावना, आपको बड़े मूव से बाहर capping कर देती है। मज़बूत uptrends में, 15-25% OTM बेचें और upside सुरक्षा के लिए कम प्रीमियम स्वीकार करें।",
+        "जब call महत्वपूर्ण समय प्रीमियम शेष के साथ ITM जाती है तो बंद या roll नहीं करना। यदि आपके $80K call में अब $4K intrinsic + $1K समय प्रीमियम है, तो $5K के लिए बंद करना (जिसके लिए $2,500 बेचा गया) $2.5K हानि है — लेकिन आप $80K से ऊपर upside रखते हैं। अक्सर assignment की प्रतीक्षा करने से बेहतर।"
+      ],
+      benchmarks: [
+        "Strike दूरी के अनुसार विशिष्ट covered call yields (BTC, 30-दिन, सामान्य vol): ATM 4-7%/महीना (=50-100%/वर्ष), 5% OTM 2-3.5%/महीना (24-50%/वर्ष), 10% OTM 1-2%/महीना (12-26%/वर्ष), 20% OTM 0.5-0.8%/महीना (6-10%/वर्ष)। उच्च IV (≥80%) इन्हें दोगुना करता है; कम IV (≤40%) इन्हें आधा करता है।",
+        "Assignment संभावना मोटे नियम: ATM ~50%, 5% OTM ~30-40%, 10% OTM ~15-25%, 20% OTM ~5-10%। उच्च IV वितरण को चौड़ा करता है → समाप्ति तक ITM होने की अधिक संभावना।"
+      ],
+      execution: [
+        "साप्ताहिक wheel दिनचर्या: हर सोमवार, BTC कीमत, IV, और कैलेंडर जाँचें। यदि पिछला समाप्त हो गया तो नया मासिक covered call बेचें या यदि ITM है तो roll करें। bid-ask के midpoint पर limit ऑर्डर का उपयोग करें, market ऑर्डर नहीं। अधिकांश options बाज़ारों में चौड़े spread होते हैं; market ऑर्डर अक्सर 5-15% अतिरिक्त slippage का भुगतान करते हैं।",
+        "Roll कार्यप्रवाह: जब वर्तमान call 14+ दिन शेष के साथ ITM जाती है, मूल्यांकन करें (a) वर्तमान कीमत पर बंद करना (यदि लाभदायक हो तो शेष समय क्षय पर लाभ लॉक करें, अन्यथा हानि स्वीकार करें), (b) समान महीने में उच्च strike पर roll करना (अधिक प्रीमियम एकत्र करें, assignment जोखिम कम करें), (c) समान strike पर अगले महीने roll करना (नया समय प्रीमियम एकत्र करें)।"
+      ],
+      hygiene: [
+        "प्रत्येक call को ट्रैक करें: खुली तारीख, समाप्ति, strike, प्रीमियम, शुल्क, बंद तारीख, बंद कीमत (या assignment), P&L। 12+ ट्रेडों के बाद, सैद्धांतिक बनाम वास्तविक एहसास yield की गणना करें। बड़े ऊपरी मूव पर assignment हानियों के कारण एहसास अक्सर सैद्धांतिक से 20-30% कम होता है।",
+        "कर प्रबंधन: covered call प्रीमियम आमतौर पर अल्पकालिक कर योग्य घटनाएँ हैं। Assignments लंबी-अवधि की होल्डिंग्स को अल्पकालिक लाभ में परिवर्तित कर सकती हैं। अपने अधिकार क्षेत्र में प्रभाव मूल्यांकन के लिए कर सलाहकार से परामर्श करें या <a href=\"/tax-calculator/\">कर कैलकुलेटर</a> का उपयोग करें।"
+      ],
+      validation: [
+        "सेनिटी जाँच: 30 दिनों में $60K लागत आधार पोजीशन पर $1,500 प्रीमियम = $1,500/$60,000 × 12 = 30% वार्षिक yield (यदि दोहराया जाए)। यदि आपका कैलकुलेटर काफी अलग दिखाता है, तो cost_basis इनपुट बनाम वर्तमान spot सत्यापित करें।",
+        "Post-expiry सत्यापन: यदि call OTM समाप्त हुई, तो आप प्रीमियम रखते हैं (कोई assignment नहीं, पोजीशन अपरिवर्तित)। यदि ITM, तो आपके शेयर/सिक्के strike मूल्य पर बेचे जाते हैं → प्रभावी बिक्री मूल्य = strike + प्रीमियम और ROI = (प्रभावी_बिक्री - लागत_आधार) / लागत_आधार जाँचें। कर रिकॉर्ड के लिए दोनों परिणामों का दस्तावेज़ीकरण करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Доходность покрытого колла — это полученная премия, делённая на вашу стоимость приобретения, в годовом выражении. 30-дневный колл со страйком 5% OTM, дающий $1 500 на позиции BTC в $60 000, представляет 2,5% месячной доходности или 30% годовых — при условии, что колл истечёт без исполнения и сделку можно повторить. Компромисс: ограничение апсайда выше страйка плюс затраты времени.",
+        "Эффективная цена продажи при исполнении = страйк + полученная премия. Для BTC при $77K со страйком $81K и премией $1 500: если BTC закрывается >$81K к экспирации, вы продаёте по эффективной цене $82,5K (страйк + премия), фиксируя прибыль 6,25% плюс бонус премии. Сравните эту доходность «выхода через wheel» со своей альтернативной стратегией HODL."
+      ],
+      scenarios: [
+        "Консервативный доход: BTC при $77K, продайте 1-месячный колл со страйком $90K (17% OTM) за премию $700. Доходность: 0,91% в месяц = ~11% годовых. Риск исполнения низкий (~10–15% вероятности по IV). Подходит HODL-ерам, желающим скромный доход без существенного риска отзыва.",
+        "Агрессивная премия: BTC при $77K, продайте 1-месячный колл со страйком $80K (4% OTM) за премию $2 500. Доходность: 3,25% в месяц = 39% годовых. Риск исполнения высокий (~45–55%). Применяйте, когда IV повышена (после новостей, перед событиями) и вы готовы потерять апсайд выше $80K."
+      ],
+      checklist: [
+        "Перед продажей покрытого колла: 1) Подтвердите, что вы действительно ВЛАДЕЕТЕ базовым активом (а не заимствуете) — голые коллы несут неограниченный риск. 2) Проверьте предстоящие события (FOMC, объявления по ETF, халвинг) в окне экспирации. 3) Уточните свою налоговую ситуацию — исполнение запускает прибыль/убытки. 4) Задайте правила управления при уходе колла в ITM (закрыть, ролл вверх/дальше, согласиться на исполнение).",
+        "Правила выбора страйка: никогда не продавайте страйк ниже вашей стоимости приобретения (это гарантированный убыток при исполнении). Цельтесь в страйки, которые при исполнении дают приемлемую IRR на холдинге (обычно 15%+ годовых с учётом премии)."
+      ],
+      mistakes: [
+        "Продажа страйков слишком близко к споту в фазах роста. BTC растёт на 5%/неделю + 4% OTM колл = высокая вероятность исполнения, отсекающая вас от большего движения. На сильных аптрендах продавайте 15–25% OTM и принимайте меньшую премию ради защиты апсайда.",
+        "Отсутствие закрытия или ролла, когда колл уходит ITM при значительной оставшейся временной премии. Если ваш колл $80K теперь имеет $4K внутренней стоимости + $1K временной премии, закрытие за $5K (против проданных $2 500) даёт убыток $2,5K — но сохраняет апсайд выше $80K. Часто лучше, чем ждать исполнения."
+      ],
+      benchmarks: [
+        "Типичная доходность покрытых коллов по расстоянию до страйка (BTC, 30 дней, нормальная волатильность): ATM 4–7%/месяц (=50–100%/год), 5% OTM 2–3,5%/месяц (24–50%/год), 10% OTM 1–2%/месяц (12–26%/год), 20% OTM 0,5–0,8%/месяц (6–10%/год). Высокая IV (≥80%) удваивает эти значения; низкая IV (≤40%) уменьшает вдвое.",
+        "Ориентировочные правила вероятности исполнения: ATM ~50%, 5% OTM ~30–40%, 10% OTM ~15–25%, 20% OTM ~5–10%. Более высокая IV расширяет распределение → больше вероятность оказаться ITM к экспирации."
+      ],
+      execution: [
+        "Еженедельная рутина wheel: каждый понедельник проверяйте цену BTC, IV и календарь. Продайте новый месячный покрытый колл, если предыдущий истёк, или сделайте ролл, если он ITM. Используйте лимитные ордера по середине бид-аск, а не рыночные. У большинства опционных рынков широкие спреды; рыночные ордера часто платят 5–15% лишнего проскальзывания.",
+        "Рабочий процесс ролла: когда текущий колл ушёл ITM при оставшихся 14+ днях, оцените (а) закрытие по текущей цене (зафиксируйте прибыль на оставшемся временном распаде, если выгодно, иначе примите убыток), (б) ролл на более высокий страйк того же месяца (соберите больше премии, снизьте риск исполнения), (в) ролл на следующий месяц с тем же страйком (соберите свежую временную премию)."
+      ],
+      hygiene: [
+        "Фиксируйте каждый колл: дата открытия, экспирация, страйк, премия, сборы, дата закрытия, цена закрытия (или исполнение), P&L. После 12+ сделок рассчитайте фактическую реализованную доходность против теоретической. Реализованная часто на 20–30% ниже теоретической из-за убытков от исполнения на больших движениях вверх.",
+        "Налоговое управление: премии покрытых коллов обычно создают краткосрочные налогооблагаемые события. Исполнения могут превратить долгосрочные холдинги в краткосрочные прибыли. Проконсультируйтесь с налоговым советником или используйте <a href=\"/tax-calculator/\">налоговый калькулятор</a> для оценки влияния в вашей юрисдикции."
+      ],
+      validation: [
+        "Проверка здравого смысла: премия $1 500 на позиции стоимостью $60K за 30 дней = $1 500/$60 000 × 12 = 30% годовых (при повторении). Если калькулятор показывает существенно иное, проверьте ввод cost_basis относительно текущего спота.",
+        "Пост-экспирационная валидация: если колл истёк OTM, премия остаётся у вас (нет исполнения, позиция не изменилась). Если ITM, ваши монеты/акции продаются по цене страйка → проверьте эффективную цену продажи = страйк + премия и ROI = (эффективная_цена − стоимость_базы) / стоимость_базы. Документируйте оба исхода для налоговых записей."
+      ],
+    },
+  },
+  'iron-condor-calculator': {
+    en: {
+      interpret: [
+        "Iron Condor profits when the underlying stays between the short call and short put strikes at expiry. Max profit = net premium received. Max loss = wing width − net premium. The strategy expresses a 'sideways with declining IV' view, profiting from time decay (theta) and IV crush.",
+        "Critical metrics: profit zone width (between breakevens), risk:reward ratio (max loss / max profit), and capital required (usually equals max loss for credit Iron Condors). Higher premium = wider strikes near spot = more risk but more profit zone. Tight strikes (close to spot) = highest premium but smallest profit zone."
+      ],
+      scenarios: [
+        "BTC trading $77K, IV 60%, 30 days to expiry. Sell 70K put / buy 65K put + sell 85K call / buy 90K call. Premium: put short $1,500 - put long $700 + call short $1,400 - call long $600 = $1,600 net credit. Max profit $1,600, max loss = 5K wing - 1.6K = $3,400. Risk:Reward 2.13:1. Profit zone: $68.4K-$86.6K (24% width).",
+        "High-IV crush play: post-FOMC, IV at 90% spikes vs realized vol of 50%. Sell same condor at higher premium $2,500. Max profit larger, but probability of being in zone slightly lower if realized vol exceeds 50%. Best when you have view that IV will revert to mean while price stays directional-flat."
+      ],
+      checklist: [
+        "Before opening: 1) Verify all 4 legs filled simultaneously (use combo order, not 4 separate). 2) Net credit received matches expectation. 3) Underlying within profit zone at entry (not already near a breakeven). 4) No earnings/major events in expiry window. 5) Plan exit triggers (profit %, stop loss, time-based).",
+        "Strike selection: use 1 standard deviation move based on IV (= price × IV × sqrt(days/365)). Sell short strikes outside 1 SD (~16% probability of touch each side). Wing width usually 5-10% of spot — narrower wings reduce capital but ITM at expiry hurts more."
+      ],
+      mistakes: [
+        "Holding to expiry hoping for max profit. Theta accelerates last 2 weeks but tail risk also accelerates. Better to close at 50% of max profit (e.g., $800 of $1,600 max) typically achieved in 14-21 days, freeing capital for next trade.",
+        "Not adjusting when underlying breaches a short strike. If BTC moves to $85K (your short call), the trade is ITM on call side. Options: (a) close entire condor for loss/breakeven, (b) roll up the put side to collect more credit (defensive), (c) accept potential assignment if comfortable."
+      ],
+      benchmarks: [
+        "Typical Iron Condor metrics for BTC 30-day: net premium 15-30% of max loss, max loss 70-85% of wing width, breakeven width 25-40% of spot. Win rate (profit at expiry) ~70-75% if managed at 50% target, drops to 60-65% if held to expiry.",
+        "Annualized return with weekly Iron Condors: 25-50% on capital allocated, before assignment-driven losses. Real-world returns 15-30% accounting for losers. Higher returns possible with leverage but unsustainable risk."
+      ],
+      execution: [
+        "Weekly opening routine: each Monday, evaluate IV vs realized vol. If IV/RV ratio > 1.3, condor is favorable. Open with limit order at midpoint of net credit. Set good-til-cancel orders to close at 50% profit and 200% loss.",
+        "Adjustment criteria: if delta of either short strike exceeds 0.30 (probability ITM > 30%), consider adjustment. Roll the threatened side up/out for additional credit, or close losing side and let the other expire worthless. Avoid doubling down on a directional bet."
+      ],
+      hygiene: [
+        "Maintain options trade log: open date, all 4 legs (strike, premium), net credit, max profit/loss, days to expiry, close date, close price, P&L. After 30+ condors, you'll see your realized win rate and adjust strike selection accordingly.",
+        "Avoid weekly options on illiquid underlyings (some altcoin options have 5-15% bid-ask spread that erodes edge). Stick to BTC and ETH options on Deribit, OKX, Binance — sufficient liquidity for typical retail size."
+      ],
+      validation: [
+        "Sanity check: short put strike 70K, long put 65K → put wing = 5K. Short call 85K, long call 90K → call wing = 5K. Net premium received $1,600. Max loss = max(5000) - 1600 = $3,400. Max profit = $1,600. R:R = 3400/1600 = 2.13:1. Breakevens: 70000 - 1600 = $68.4K (low), 85000 + 1600 = $86.6K (high). All match calculator output.",
+        "Post-expiry: if BTC closed in profit zone, you keep full premium. If outside one short strike: loss = (closing_price - short_strike) - net_premium (approximately, before considering long wing protection). Verify P&L matches statement."
+      ],
+    },
+    es: {
+      interpret: [
+        "El Iron Condor genera ganancias cuando el subyacente se mantiene entre los strikes de la call corta y la put corta al vencimiento. Ganancia máxima = prima neta recibida. Pérdida máxima = ancho del ala − prima neta. La estrategia expresa una visión de 'lateral con IV decreciente', beneficiándose del decaimiento temporal (theta) y del IV crush.",
+        "Métricas críticas: ancho de la zona de ganancia (entre breakevens), razón riesgo:recompensa (pérdida máxima / ganancia máxima) y capital requerido (usualmente igual a la pérdida máxima para Iron Condors de crédito). Mayor prima = strikes más anchos cerca del spot = más riesgo pero más zona de ganancia. Strikes ajustados (cerca del spot) = mayor prima pero menor zona de ganancia."
+      ],
+      scenarios: [
+        "BTC cotizando $77K, IV 60%, 30 días al vencimiento. Vende put 70K / compra put 65K + vende call 85K / compra call 90K. Prima: put corta $1,500 - put larga $700 + call corta $1,400 - call larga $600 = $1,600 crédito neto. Ganancia máxima $1,600, pérdida máxima = 5K de ala - 1.6K = $3,400. Riesgo:Recompensa 2.13:1. Zona de ganancia: $68.4K-$86.6K (24% de ancho).",
+        "Jugada de IV crush alto: post-FOMC, IV a 90% se dispara vs vol realizada de 50%. Vende el mismo condor a prima más alta $2,500. Ganancia máxima mayor, pero probabilidad de estar en zona ligeramente menor si la vol realizada excede 50%. Mejor cuando tienes la visión de que la IV revertirá a la media mientras el precio se mantiene direccionalmente plano."
+      ],
+      checklist: [
+        "Antes de abrir: 1) Verifica que las 4 patas se ejecutaron simultáneamente (usa orden combo, no 4 separadas). 2) Crédito neto recibido coincide con la expectativa. 3) El subyacente está dentro de la zona de ganancia en la entrada (no ya cerca de un breakeven). 4) Sin earnings/eventos mayores dentro de la ventana de vencimiento. 5) Planifica gatillos de salida (% de ganancia, stop loss, basado en tiempo).",
+        "Selección de strikes: usa un movimiento de 1 desviación estándar basado en la IV (= precio × IV × sqrt(días/365)). Vende strikes cortos fuera de 1 DE (~16% de probabilidad de tocar a cada lado). El ancho de ala usualmente 5-10% del spot: alas más estrechas reducen capital pero ITM al vencimiento duele más."
+      ],
+      mistakes: [
+        "Mantener hasta el vencimiento esperando la ganancia máxima. Theta acelera en las últimas 2 semanas pero el riesgo de cola también acelera. Es mejor cerrar al 50% de la ganancia máxima (ej., $800 de los $1,600 máx) típicamente alcanzado en 14-21 días, liberando capital para el siguiente trade.",
+        "No ajustar cuando el subyacente cruza un strike corto. Si BTC se mueve a $85K (tu call corta), el trade está ITM en el lado de la call. Opciones: (a) cerrar todo el condor por pérdida/equilibrio, (b) hacer roll al alza el lado put para cobrar más crédito (defensivo), (c) aceptar potencial asignación si estás cómodo."
+      ],
+      benchmarks: [
+        "Métricas típicas de Iron Condor para BTC a 30 días: prima neta 15-30% de la pérdida máxima, pérdida máxima 70-85% del ancho de ala, ancho de breakeven 25-40% del spot. Tasa de aciertos (ganancia al vencimiento) ~70-75% si se gestiona a objetivo del 50%, cae a 60-65% si se mantiene hasta el vencimiento.",
+        "Retorno anualizado con Iron Condors semanales: 25-50% sobre el capital asignado, antes de pérdidas por asignación. Retornos en el mundo real 15-30% considerando perdedores. Retornos mayores posibles con apalancamiento pero con riesgo insostenible."
+      ],
+      execution: [
+        "Rutina semanal de apertura: cada lunes, evalúa IV vs vol realizada. Si la razón IV/RV > 1.3, el condor es favorable. Abre con orden limit en el punto medio del crédito neto. Coloca órdenes good-til-cancel para cerrar al 50% de ganancia y al 200% de pérdida.",
+        "Criterios de ajuste: si la delta de cualquiera de los strikes cortos excede 0.30 (probabilidad ITM > 30%), considera un ajuste. Haz roll del lado amenazado al alza/largo plazo por crédito adicional, o cierra el lado perdedor y deja que el otro expire sin valor. Evita doblar la apuesta direccional."
+      ],
+      hygiene: [
+        "Mantén un registro de trades de opciones: fecha de apertura, las 4 patas (strike, prima), crédito neto, ganancia/pérdida máxima, días al vencimiento, fecha de cierre, precio de cierre, P&L. Después de 30+ condors, verás tu tasa de aciertos realizada y ajustarás la selección de strikes en consecuencia.",
+        "Evita opciones semanales en subyacentes ilíquidos (algunas opciones de altcoins tienen 5-15% de spread bid-ask que erosiona el edge). Apégate a opciones de BTC y ETH en Deribit, OKX, Binance: liquidez suficiente para tamaños retail típicos."
+      ],
+      validation: [
+        "Verificación de cordura: strike put corta 70K, put larga 65K → ala put = 5K. Call corta 85K, call larga 90K → ala call = 5K. Prima neta recibida $1,600. Pérdida máx = max(5000) - 1600 = $3,400. Ganancia máx = $1,600. R:R = 3400/1600 = 2.13:1. Breakevens: 70000 - 1600 = $68.4K (bajo), 85000 + 1600 = $86.6K (alto). Todo coincide con la salida de la calculadora.",
+        "Post-vencimiento: si BTC cerró en la zona de ganancia, te quedas con toda la prima. Si está fuera de un strike corto: pérdida = (precio_cierre - strike_corto) - prima_neta (aproximadamente, antes de considerar la protección del ala larga). Verifica que el P&L coincida con el extracto."
+      ],
+    },
+    pt: {
+      interpret: [
+        "O Iron Condor lucra quando o subjacente permanece entre os strikes da call vendida e da put vendida no vencimento. Lucro máximo = prêmio líquido recebido. Perda máxima = largura da asa − prêmio líquido. A estratégia expressa uma visão de 'lateralização com IV em queda', lucrando com o decaimento do tempo (theta) e o crush da IV.",
+        "Métricas críticas: largura da zona de lucro (entre os breakevens), razão risco:retorno (perda máx / lucro máx) e capital exigido (geralmente igual à perda máx em Iron Condors a crédito). Prêmio mais alto = strikes mais largos próximos ao spot = mais risco, mas mais zona de lucro. Strikes apertados (próximos ao spot) = maior prêmio, mas menor zona de lucro."
+      ],
+      scenarios: [
+        "BTC negociando $77K, IV 60%, 30 dias até vencimento. Vende put 70K / compra put 65K + vende call 85K / compra call 90K. Prêmio: put vendida $1.500 - put comprada $700 + call vendida $1.400 - call comprada $600 = $1.600 de crédito líquido. Lucro máx $1.600, perda máx = asa 5K - 1,6K = $3.400. Risco:Retorno 2,13:1. Zona de lucro: $68,4K-$86,6K (largura de 24%).",
+        "Jogada de crush de IV alta: pós-FOMC, IV em 90% disparada vs vol realizada de 50%. Vende o mesmo condor com prêmio maior $2.500. Lucro máx maior, mas probabilidade de estar na zona ligeiramente menor se a vol realizada exceder 50%. Melhor quando você tem visão de que a IV reverterá à média enquanto o preço fica direcionalmente lateral."
+      ],
+      checklist: [
+        "Antes de abrir: 1) Verifique se todas as 4 pernas foram preenchidas simultaneamente (use ordem combo, não 4 separadas). 2) Crédito líquido recebido corresponde à expectativa. 3) Subjacente dentro da zona de lucro na entrada (não já próximo a um breakeven). 4) Sem earnings/grandes eventos na janela de vencimento. 5) Plano de gatilhos de saída (% de lucro, stop loss, baseado em tempo).",
+        "Seleção de strike: use movimento de 1 desvio padrão baseado em IV (= preço × IV × sqrt(dias/365)). Venda strikes curtos fora de 1 SD (~16% de probabilidade de toque em cada lado). Largura da asa geralmente 5-10% do spot — asas mais estreitas reduzem capital, mas ITM no vencimento dói mais."
+      ],
+      mistakes: [
+        "Segurar até o vencimento esperando lucro máximo. Theta acelera nas últimas 2 semanas, mas o risco de cauda também acelera. Melhor fechar em 50% do lucro máximo (ex.: $800 do $1.600 máx) tipicamente alcançado em 14-21 dias, liberando capital para o próximo trade.",
+        "Não ajustar quando o subjacente rompe um strike curto. Se BTC vai para $85K (sua call vendida), o trade está ITM no lado da call. Opções: (a) fechar o condor inteiro por perda/empate, (b) rolar o lado da put para cima para coletar mais crédito (defensivo), (c) aceitar potencial exercício se confortável."
+      ],
+      benchmarks: [
+        "Métricas típicas de Iron Condor para BTC 30 dias: prêmio líquido 15-30% da perda máx, perda máx 70-85% da largura da asa, largura de breakeven 25-40% do spot. Taxa de acerto (lucro no vencimento) ~70-75% se gerenciado em alvo de 50%, cai para 60-65% se mantido até o vencimento.",
+        "Retorno anualizado com Iron Condors semanais: 25-50% sobre o capital alocado, antes de perdas por exercício. Retornos no mundo real 15-30% considerando os perdedores. Retornos mais altos possíveis com alavancagem, mas risco insustentável."
+      ],
+      execution: [
+        "Rotina semanal de abertura: toda segunda, avalie IV vs vol realizada. Se razão IV/RV > 1,3, o condor é favorável. Abra com ordem limit no ponto médio do crédito líquido. Defina ordens válidas até cancelamento para fechar em 50% de lucro e 200% de perda.",
+        "Critérios de ajuste: se o delta de qualquer strike curto excede 0,30 (probabilidade ITM > 30%), considere ajuste. Role o lado ameaçado para cima/para frente por crédito adicional, ou feche o lado perdedor e deixe o outro expirar sem valor. Evite dobrar em uma aposta direcional."
+      ],
+      hygiene: [
+        "Mantenha log de trades de opções: data de abertura, todas as 4 pernas (strike, prêmio), crédito líquido, lucro/perda máx, dias até vencimento, data de fechamento, preço de fechamento, P&L. Após 30+ condors, você verá sua taxa de acerto realizada e ajustará a seleção de strikes adequadamente.",
+        "Evite opções semanais em subjacentes ilíquidos (algumas opções de altcoins têm spread bid-ask de 5-15% que erode o edge). Atenha-se a opções de BTC e ETH na Deribit, OKX, Binance — liquidez suficiente para tamanho típico de varejo."
+      ],
+      validation: [
+        "Verificação de sanidade: strike put curta 70K, put longa 65K → asa da put = 5K. Call curta 85K, call longa 90K → asa da call = 5K. Prêmio líquido recebido $1.600. Perda máx = max(5000) - 1600 = $3.400. Lucro máx = $1.600. R:R = 3400/1600 = 2,13:1. Breakevens: 70000 - 1600 = $68,4K (baixo), 85000 + 1600 = $86,6K (alto). Tudo bate com a saída da calculadora.",
+        "Pós-vencimento: se BTC fechou na zona de lucro, você fica com o prêmio total. Se fora de um strike curto: perda = (preço_fechamento - strike_curto) - prêmio_líquido (aproximadamente, antes de considerar a proteção da asa longa). Verifique se P&L corresponde ao extrato."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Iron Condor, dayanak vade sonunda kısa call ve kısa put kullanım fiyatları arasında kaldığında kâr eder. Maks kâr = alınan net prim. Maks zarar = kanat genişliği − net prim. Strateji 'yan yan düşen IV ile' görüşü ifade eder, zaman çürümesinden (theta) ve IV çökmesinden kâr eder.",
+        "Kritik metrikler: kâr bölgesi genişliği (başa baş noktaları arasında), risk:ödül oranı (maks zarar / maks kâr) ve gereken sermaye (kredi Iron Condor'lar için genellikle maks zarara eşittir). Daha yüksek prim = spot'a yakın daha geniş kullanım fiyatları = daha fazla risk ama daha fazla kâr bölgesi. Sıkı kullanım fiyatları (spot'a yakın) = en yüksek prim ama en küçük kâr bölgesi."
+      ],
+      scenarios: [
+        "BTC 77.000 dolarda işlem görüyor, IV %60, vadeye 30 gün. 70K put sat / 65K put al + 85K call sat / 90K call al. Prim: kısa put 1.500 dolar - uzun put 700 dolar + kısa call 1.400 dolar - uzun call 600 dolar = 1.600 dolar net kredi. Maks kâr 1.600 dolar, maks zarar = 5K kanat - 1,6K = 3.400 dolar. Risk:Ödül 2,13:1. Kâr bölgesi: 68,4K-86,6K dolar (%24 genişlik).",
+        "Yüksek IV çökme oynaması: FOMC sonrası, gerçekleşen %50 vol'a karşı IV %90'a sıçrar. Aynı condor'u daha yüksek primde 2.500 dolara satın. Maks kâr daha büyük, ancak gerçekleşen vol %50'yi aşarsa bölgede olma olasılığı biraz daha düşük. IV'nin ortalamaya dönerken fiyatın yönsüz-düz kalacağı görüşünüz olduğunda en iyisidir."
+      ],
+      checklist: [
+        "Açmadan önce: 1) Tüm 4 bacağın eşzamanlı doldurulduğunu doğrulayın (kombo emir kullanın, 4 ayrı değil). 2) Alınan net kredi beklentiyle eşleşir. 3) Girişte dayanak kâr bölgesinde (zaten bir başa baş noktasına yakın değil). 4) Vade penceresinde kazanç/önemli etkinlikler yok. 5) Çıkış tetikleyicilerini planlayın (kâr %, stop loss, zaman tabanlı).",
+        "Kullanım fiyatı seçimi: IV'ye dayalı 1 standart sapma hareketi kullanın (= fiyat × IV × sqrt(gün/365)). Kısa kullanım fiyatlarını 1 SD dışında satın (her tarafta ~%16 dokunma olasılığı). Kanat genişliği genellikle spot'un %5-10'u — daha dar kanatlar sermayeyi azaltır ama vadede ITM daha çok zarar verir."
+      ],
+      mistakes: [
+        "Maks kâr için vade sonuna kadar tutmak. Theta son 2 haftada hızlanır ama kuyruk riski de hızlanır. Tipik olarak 14-21 günde ulaşılan maks kârın %50'sinde (örn., 1.600 dolar maks'ın 800 doları) kapatmak daha iyidir, bir sonraki işlem için sermaye serbest bırakır.",
+        "Dayanak kısa bir kullanım fiyatını ihlal ettiğinde ayarlama yapmamak. BTC 85.000 dolara (kısa call'unuz) hareket ederse, işlem call tarafında ITM'dir. Seçenekler: (a) tüm condor'u zarar/başa baş için kapat, (b) daha fazla kredi toplamak için put tarafını yukarı yuvarla (savunmacı), (c) rahatsanız potansiyel atamayı kabul et."
+      ],
+      benchmarks: [
+        "BTC 30 gün için tipik Iron Condor metrikleri: maks zararın net primi %15-30, kanat genişliğinin maks zararı %70-85, spot'un başa baş genişliği %25-40. %50 hedefte yönetilirse kazanma oranı (vadede kâr) ~%70-75, vadeye tutulursa %60-65'e düşer.",
+        "Haftalık Iron Condor'larla yıllıklandırılmış getiri: tahsis edilen sermaye üzerinde %25-50, atama odaklı kayıplar öncesi. Gerçek dünya getirileri kaybedenleri hesaba katarak %15-30. Kaldıraçla daha yüksek getiriler mümkün ama sürdürülemez risk."
+      ],
+      execution: [
+        "Haftalık açılış rutini: her Pazartesi, IV'yi gerçekleşen vol'a göre değerlendirin. IV/RV oranı > 1,3 ise, condor avantajlıdır. Net kredi orta noktasında limit emirle açın. %50 kârda ve %200 zararda kapatmak için iptal edilene kadar geçerli emirler ayarlayın.",
+        "Ayarlama kriterleri: her iki kısa kullanım fiyatının deltası 0,30'u (ITM olasılığı > %30) aşarsa, ayarlamayı düşünün. Ek kredi için tehdit altındaki tarafı yukarı/dışarı yuvarlayın veya kaybeden tarafı kapatıp diğerinin değersiz sona ermesine izin verin. Yönlü bir bahse iki katına çıkmaktan kaçının."
+      ],
+      hygiene: [
+        "Opsiyon işlem günlüğü tutun: açılış tarihi, tüm 4 bacak (kullanım fiyatı, prim), net kredi, maks kâr/zarar, vadeye gün, kapanış tarihi, kapanış fiyatı, P&L. 30+ condor'dan sonra, gerçekleşen kazanma oranınızı göreceksiniz ve kullanım fiyatı seçimini buna göre ayarlayacaksınız.",
+        "İlikit dayanaklarda haftalık opsiyonlardan kaçının (bazı altcoin opsiyonlarının avantajı aşındıran %5-15 alış-satış spread'i vardır). Deribit, OKX, Binance'da BTC ve ETH opsiyonlarına sadık kalın — tipik perakende boyut için yeterli likidite."
+      ],
+      validation: [
+        "Mantık kontrolü: kısa put kullanım fiyatı 70K, uzun put 65K → put kanadı = 5K. Kısa call 85K, uzun call 90K → call kanadı = 5K. Alınan net prim 1.600 dolar. Maks zarar = maks(5000) - 1600 = 3.400 dolar. Maks kâr = 1.600 dolar. R:Ö = 3400/1600 = 2,13:1. Başa baş noktaları: 70000 - 1600 = 68,4K dolar (düşük), 85000 + 1600 = 86,6K dolar (yüksek). Tümü hesaplayıcı çıktısıyla eşleşir.",
+        "Vade sonrası: BTC kâr bölgesinde kapandıysa, tam primi tutarsınız. Bir kısa kullanım fiyatı dışında: zarar = (kapanış_fiyatı - kısa_kullanım_fiyatı) - net_prim (yaklaşık, uzun kanat koruması düşünülmeden önce). P&L'nin beyanla eşleştiğini doğrulayın."
+      ],
+    },
+    hi: {
+      interpret: [
+        "Iron Condor तब लाभ कमाता है जब अंतर्निहित समाप्ति पर short call और short put strikes के बीच रहता है। Max profit = प्राप्त शुद्ध प्रीमियम। Max loss = wing width − शुद्ध प्रीमियम। रणनीति 'sideways with declining IV' दृष्टिकोण व्यक्त करती है, समय क्षय (theta) और IV crush से लाभ कमाती है।",
+        "महत्वपूर्ण मेट्रिक्स: profit zone width (breakevens के बीच), risk:reward अनुपात (max loss / max profit), और आवश्यक पूँजी (आमतौर पर credit Iron Condors के लिए max loss के बराबर)। उच्च प्रीमियम = spot के पास व्यापक strikes = अधिक जोखिम लेकिन अधिक profit zone। तंग strikes (spot के पास) = उच्चतम प्रीमियम लेकिन सबसे छोटा profit zone।"
+      ],
+      scenarios: [
+        "BTC ट्रेडिंग $77K, IV 60%, समाप्ति में 30 दिन। 70K put बेचें / 65K put खरीदें + 85K call बेचें / 90K call खरीदें। प्रीमियम: put short $1,500 - put long $700 + call short $1,400 - call long $600 = $1,600 शुद्ध credit। Max profit $1,600, max loss = 5K wing - 1.6K = $3,400। Risk:Reward 2.13:1। Profit zone: $68.4K-$86.6K (24% width)।",
+        "High-IV crush प्ले: post-FOMC, realized vol 50% बनाम IV 90% पर spike। समान condor उच्च प्रीमियम $2,500 पर बेचें। Max profit बड़ा, लेकिन यदि realized vol 50% से अधिक हो तो zone में होने की संभावना थोड़ी कम। सर्वश्रेष्ठ जब आपका दृष्टिकोण हो कि IV mean पर revert होगा जबकि कीमत directional-flat रहेगी।"
+      ],
+      checklist: [
+        "खोलने से पहले: 1) सत्यापित करें कि सभी 4 legs एक साथ भरे गए (combo ऑर्डर का उपयोग करें, 4 अलग नहीं)। 2) प्राप्त शुद्ध credit अपेक्षा से मेल खाता है। 3) प्रवेश पर profit zone के भीतर अंतर्निहित (पहले से ही breakeven के पास नहीं)। 4) समाप्ति विंडो में कोई earnings/प्रमुख घटनाएँ नहीं। 5) निकास ट्रिगर्स (profit %, stop loss, time-based) की योजना बनाएँ।",
+        "Strike चयन: IV के आधार पर 1 मानक विचलन मूव का उपयोग करें (= price × IV × sqrt(days/365))। 1 SD के बाहर short strikes बेचें (~16% प्रत्येक तरफ touch की संभावना)। Wing width आमतौर पर spot का 5-10% — संकीर्ण wings पूँजी कम करते हैं लेकिन समाप्ति पर ITM अधिक चोट करता है।"
+      ],
+      mistakes: [
+        "Max profit की उम्मीद में समाप्ति तक होल्ड करना। Theta पिछले 2 सप्ताह में तेज़ होता है लेकिन tail जोखिम भी तेज़ होता है। आमतौर पर 14-21 दिनों में प्राप्त max profit के 50% पर बंद करना बेहतर (जैसे, $1,600 max का $800), अगले ट्रेड के लिए पूँजी मुक्त करना।",
+        "जब अंतर्निहित short strike का उल्लंघन करता है तो समायोजन नहीं करना। यदि BTC $85K (आपका short call) पर जाता है, तो ट्रेड call तरफ ITM है। विकल्प: (a) हानि/breakeven के लिए पूरे condor को बंद करें, (b) अधिक credit एकत्र करने के लिए put तरफ को roll up करें (रक्षात्मक), (c) यदि सहज हो तो संभावित assignment स्वीकार करें।"
+      ],
+      benchmarks: [
+        "BTC 30-दिन के लिए विशिष्ट Iron Condor मेट्रिक्स: शुद्ध प्रीमियम max loss का 15-30%, max loss wing width का 70-85%, breakeven width spot का 25-40%। 50% लक्ष्य पर प्रबंधित होने पर जीत दर (समाप्ति पर लाभ) ~70-75%, यदि समाप्ति तक होल्ड किया जाए तो 60-65% तक गिरती है।",
+        "साप्ताहिक Iron Condors के साथ वार्षिक रिटर्न: assignment-संचालित हानियों से पहले आवंटित पूँजी पर 25-50%। हारने वालों का हिसाब लगाते हुए वास्तविक दुनिया के रिटर्न 15-30%। लीवरेज के साथ उच्च रिटर्न संभव लेकिन असमर्थनीय जोखिम।"
+      ],
+      execution: [
+        "साप्ताहिक उद्घाटन दिनचर्या: हर सोमवार, IV बनाम realized vol का मूल्यांकन करें। यदि IV/RV अनुपात > 1.3, condor अनुकूल है। शुद्ध credit के midpoint पर limit ऑर्डर के साथ खोलें। 50% लाभ और 200% हानि पर बंद करने के लिए good-til-cancel ऑर्डर सेट करें।",
+        "समायोजन मानदंड: यदि किसी भी short strike का delta 0.30 से अधिक है (ITM की संभावना > 30%), तो समायोजन पर विचार करें। अतिरिक्त credit के लिए धमकी वाले तरफ को up/out roll करें, या हारने वाले तरफ को बंद करें और दूसरे को worthless समाप्त होने दें। directional bet पर doubling down से बचें।"
+      ],
+      hygiene: [
+        "Options ट्रेड लॉग बनाए रखें: खुली तारीख, सभी 4 legs (strike, प्रीमियम), शुद्ध credit, max profit/loss, समाप्ति के दिन, बंद तारीख, बंद कीमत, P&L। 30+ condors के बाद, आप अपनी एहसास जीत दर देखेंगे और तदनुसार strike चयन समायोजित करेंगे।",
+        "illiquid underlyings पर साप्ताहिक options से बचें (कुछ altcoin options में 5-15% bid-ask spread होता है जो edge को नष्ट करता है)। Deribit, OKX, Binance पर BTC और ETH options पर टिके रहें — विशिष्ट रिटेल आकार के लिए पर्याप्त तरलता।"
+      ],
+      validation: [
+        "सेनिटी जाँच: short put strike 70K, long put 65K → put wing = 5K। Short call 85K, long call 90K → call wing = 5K। प्राप्त शुद्ध प्रीमियम $1,600। Max loss = max(5000) - 1600 = $3,400। Max profit = $1,600। R:R = 3400/1600 = 2.13:1। Breakevens: 70000 - 1600 = $68.4K (निम्न), 85000 + 1600 = $86.6K (उच्च)। सभी कैलकुलेटर आउटपुट से मेल खाते हैं।",
+        "Post-expiry: यदि BTC profit zone में बंद हुआ, तो आप पूरा प्रीमियम रखते हैं। यदि एक short strike के बाहर: हानि = (closing_price - short_strike) - शुद्ध_प्रीमियम (लगभग, long wing सुरक्षा पर विचार करने से पहले)। सत्यापित करें कि P&L विवरण से मेल खाता है।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Iron Condor приносит прибыль, когда базовый актив остаётся между страйками короткого колла и короткого пута к экспирации. Максимальная прибыль = чистая полученная премия. Максимальный убыток = ширина крыла − чистая премия. Стратегия выражает взгляд «боковик с падением IV», зарабатывая на временном распаде (тета) и сжатии IV.",
+        "Ключевые метрики: ширина зоны прибыли (между точками безубыточности), соотношение риск:доходность (макс. убыток / макс. прибыль) и требуемый капитал (обычно равен максимальному убытку для кредитных Iron Condor). Большая премия = более широкие страйки вблизи спота = больше риска, но шире зона прибыли. Узкие страйки (близко к споту) = максимальная премия, но самая узкая зона прибыли."
+      ],
+      scenarios: [
+        "BTC торгуется по $77K, IV 60%, 30 дней до экспирации. Продайте пут 70K / купите пут 65K + продайте колл 85K / купите колл 90K. Премия: короткий пут $1 500 − длинный пут $700 + короткий колл $1 400 − длинный колл $600 = $1 600 чистого кредита. Макс. прибыль $1 600, макс. убыток = 5K крыло − 1,6K = $3 400. Риск:доходность 2,13:1. Зона прибыли: $68,4K–$86,6K (24% ширины).",
+        "Игра на сжатии высокой IV: после FOMC IV 90% относительно реализованной волатильности 50%. Продайте тот же кондор по более высокой премии $2 500. Макс. прибыль больше, но вероятность остаться в зоне чуть ниже, если реализованная волатильность превысит 50%. Лучше всего, когда у вас есть взгляд, что IV вернётся к среднему, пока цена остаётся «направленно плоской»."
+      ],
+      checklist: [
+        "Перед открытием: 1) Убедитесь, что все 4 ноги исполнены одновременно (используйте составной ордер, а не 4 отдельных). 2) Чистый полученный кредит соответствует ожиданию. 3) Базовый актив внутри зоны прибыли на входе (не у точки безубыточности). 4) В окне экспирации нет отчётов/крупных событий. 5) Запланируйте триггеры выхода (% прибыли, стоп-лосс, по времени).",
+        "Выбор страйков: используйте движение на 1 стандартное отклонение по IV (= цена × IV × sqrt(дни/365)). Продавайте короткие страйки за пределами 1 SD (~16% вероятности касания с каждой стороны). Ширина крыла обычно 5–10% от спота — узкие крылья снижают капитал, но при ITM-экспирации убыток болезненнее."
+      ],
+      mistakes: [
+        "Удержание до экспирации в надежде на максимальную прибыль. Тета ускоряется в последние 2 недели, но и хвостовой риск ускоряется. Лучше закрывать на 50% максимальной прибыли (например, $800 из $1 600 максимума), обычно достигаемых за 14–21 день, освобождая капитал для следующей сделки.",
+        "Отсутствие корректировки при пробое коротким страйком. Если BTC уходит к $85K (вашему короткому коллу), сделка ITM на стороне колла. Варианты: (а) закрыть весь кондор с убытком/безубытком, (б) сделать ролл пут-стороны вверх для сбора дополнительного кредита (защитно), (в) принять возможное исполнение, если комфортно."
+      ],
+      benchmarks: [
+        "Типичные метрики Iron Condor для BTC на 30 дней: чистая премия 15–30% от макс. убытка, макс. убыток 70–85% от ширины крыла, ширина безубыточности 25–40% от спота. Доля побед (прибыль на экспирации) ~70–75% при управлении на 50% таргете, падает до 60–65% при удержании до экспирации.",
+        "Годовая доходность при еженедельных Iron Condor: 25–50% на выделенный капитал до учёта убытков из-за исполнения. Реальные доходности 15–30% с учётом убыточных сделок. Более высокая доходность возможна с плечом, но риск становится неустойчивым."
+      ],
+      execution: [
+        "Еженедельная рутина открытия: каждый понедельник оценивайте IV против реализованной волатильности. Если IV/RV > 1,3, кондор благоприятен. Открывайтесь лимитным ордером по середине чистого кредита. Ставьте good-til-cancel ордера на закрытие при 50% прибыли и 200% убытка.",
+        "Критерии корректировки: если дельта любого из коротких страйков превысила 0,30 (вероятность ITM > 30%), задумайтесь о корректировке. Сделайте ролл угрожающей стороны вверх/дальше за дополнительный кредит или закройте проигрывающую сторону и дайте другой истечь без стоимости. Избегайте удвоения направленной ставки."
+      ],
+      hygiene: [
+        "Ведите журнал опционных сделок: дата открытия, все 4 ноги (страйк, премия), чистый кредит, макс. прибыль/убыток, дни до экспирации, дата закрытия, цена закрытия, P&L. После 30+ кондоров вы увидите свою реализованную долю побед и сможете соответствующим образом скорректировать выбор страйков.",
+        "Избегайте недельных опционов на неликвидных активах (у некоторых альткоин-опционов спред бид-аск 5–15% съедает преимущество). Придерживайтесь опционов на BTC и ETH на Deribit, OKX, Binance — там достаточная ликвидность для типичных розничных размеров."
+      ],
+      validation: [
+        "Проверка здравого смысла: короткий пут 70K, длинный пут 65K → пут-крыло = 5K. Короткий колл 85K, длинный колл 90K → колл-крыло = 5K. Чистая полученная премия $1 600. Макс. убыток = max(5 000) − 1 600 = $3 400. Макс. прибыль = $1 600. Р:Д = 3400/1600 = 2,13:1. Точки безубыточности: 70 000 − 1 600 = $68,4K (низ), 85 000 + 1 600 = $86,6K (верх). Всё совпадает с выводом калькулятора.",
+        "Пост-экспирация: если BTC закрылся в зоне прибыли, премия остаётся у вас полностью. Если за коротким страйком: убыток = (цена_закрытия − короткий_страйк) − чистая_премия (приблизительно, до учёта защиты длинного крыла). Сверьте P&L с выпиской."
+      ],
+    },
+  },
+  'perpetual-funding-arbitrage-calculator': {
+    en: {
+      interpret: [
+        "Perpetual funding arbitrage exploits the funding rate paid by perp longs to shorts (when rate is positive) or vice versa. Strategy: hold equal-size long spot + short perp = delta-neutral. Profit = funding rate × position × intervals - trading fees. At 0.05% per 8-hour interval (3 daily), that's 0.15%/day × 365 = 54.75% APR before fees.",
+        "Real-world annualized returns range 8-50% depending on market conditions (bull funding 0.05-0.2%, bear/neutral -0.05% to 0.02%). After 4 trading legs (open spot + open perp + close perp + close spot at typical 0.04% each = 0.16% total), break-even funding rate is ~0.013% per interval. Higher funding = more profit; negative funding flips strategy direction."
+      ],
+      scenarios: [
+        "Bull market positive funding: BTC at $77K, funding 0.04% per 8-hour period (3/day). Position $10K each side. Daily funding income = $10K × 0.04% × 3 = $12. Annualized $4,380 = 43.8% APR. Trading fees over 30 days = $10K × 0.04% × 4 = $16. Net 30-day profit = $360 - $16 = $344. APR ≈ 41.3% net.",
+        "Negative funding regime: in bear markets when shorts dominate, funding goes negative. Reverse strategy: short spot (via lending) + long perp = collect funding paid by shorts. Less common in crypto due to spot-borrowing costs (often 5-15% APR), making the math tighter."
+      ],
+      checklist: [
+        "Before opening basis trade: 1) Verify spot exchange and perp exchange supports same asset with sufficient liquidity. 2) Check funding rate history — single positive reading isn't enough; want 7-day average positive. 3) Calculate margin requirements; over-leverage risks liquidation. 4) Confirm withdrawal/deposit speeds for rebalancing if needed.",
+        "Liquidation risk: maintain perp position with at least 3-5x maintenance margin buffer. A $10K short perp at 10x leverage with $1K margin liquidates if price rises 10%. Use isolated margin and add buffer to survive 30%+ adverse spikes."
+      ],
+      mistakes: [
+        "Underestimating funding rate volatility. Funding can flip negative quickly (post-news event, FOMC, ETF flows). A trade opened at +0.05% funding may pay -0.03% within days. Monitor daily and exit if funding turns persistently negative.",
+        "Forgetting capital efficiency. Holding $10K spot + $10K perp margin = $20K capital tied up. ROI on capital = profit / total capital, not just one side. The 43% APR figure above is on the perp leg; on full $20K it's 21.5% APR."
+      ],
+      benchmarks: [
+        "Funding rate annual ranges (BTC perpetuals): bear 2022 average -0.005%/day (-1.8% APR), neutral 2023 +0.01%/day (3.6%), bull 2024 +0.04%/day (14.4%), peak Q4 2024 +0.10%/day (36%), post-ETF launch sustained >0.05%/day (18%+ APR). Sharp spikes to 0.3%+ during euphoria phases.",
+        "Best regime for basis trade: persistent positive funding above 0.03% per 8-hour interval, low volatility (reduces liquidation risk), and tight bid-ask on both spot and perp. Coinbase + Binance/OKX/Bybit perp pairs typically offer best liquidity."
+      ],
+      execution: [
+        "Standard workflow: 1) Fund spot exchange with USD/USDT, fund perp exchange with USDT margin. 2) Buy spot BTC with full position size. 3) Open short perp with same notional (matching delta). 4) Monitor funding rate daily; close if turns negative for 3+ consecutive periods. 5) Rebalance if perp PnL drifts (position size mismatch).",
+        "For execution speed: place spot and perp orders within 30 seconds of each other to minimize directional exposure. If BTC moves 1% between legs, you have unwanted directional position until rebalanced. Limit orders at mid prevent slippage but risk non-execution."
+      ],
+      hygiene: [
+        "Daily PnL tracking: log funding received, funding paid (if applicable), trading fees, mark-to-market on each leg. Over 30 days, verify net P&L matches expected (funding income - fees). Discrepancy reveals hidden costs (cross-exchange withdrawal fees, conversion spreads).",
+        "Tax records: each funding payment is taxable income (treated as interest in most jurisdictions). Each leg open/close generates capital gains/losses. Maintain trade log with timestamps for accurate <a href=\"/tax-calculator/\">tax calculation</a>."
+      ],
+      validation: [
+        "Sanity check: position $10K, funding 0.05%/8hr × 3 = 0.15%/day × 30 days = 4.5% gross. Trading fees 0.04% × 4 = 0.16%. Net 30-day = 4.34% on each side. APR if repeated = 4.34% × 12 = 52%. If calculator shows differently, verify intervals_per_day input (default 3 for 8hr funding; some exchanges use 1-hour intervals = 24/day).",
+        "Position verification: spot balance × spot price ≈ perp position notional. Discrepancy >5% indicates unbalanced delta — risk of unintended directional exposure. Rebalance immediately to avoid unintended P&L from price moves."
+      ],
+    },
+    es: {
+      interpret: [
+        "El arbitraje de funding de perpetuos explota la tasa de funding pagada por los longs de perp a los shorts (cuando la tasa es positiva) o viceversa. Estrategia: mantener tamaño igual long spot + short perp = delta-neutral. Ganancia = tasa de funding × posición × intervalos - tarifas de trading. Con 0.05% por intervalo de 8 horas (3 al día), eso es 0.15%/día × 365 = 54.75% TIR antes de tarifas.",
+        "Los retornos anualizados en el mundo real van del 8-50% dependiendo de las condiciones de mercado (funding alcista 0.05-0.2%, bajista/neutral -0.05% a 0.02%). Después de 4 patas de trading (abrir spot + abrir perp + cerrar perp + cerrar spot al 0.04% típico cada una = 0.16% total), la tasa de funding de equilibrio es ~0.013% por intervalo. Mayor funding = más ganancia; funding negativo invierte la dirección de la estrategia."
+      ],
+      scenarios: [
+        "Funding positivo en mercado alcista: BTC a $77K, funding 0.04% por período de 8 horas (3/día). Posición $10K en cada lado. Ingreso de funding diario = $10K × 0.04% × 3 = $12. Anualizado $4,380 = 43.8% TIR. Tarifas de trading en 30 días = $10K × 0.04% × 4 = $16. Ganancia neta a 30 días = $360 - $16 = $344. TIR ≈ 41.3% neta.",
+        "Régimen de funding negativo: en mercados bajistas cuando dominan los shorts, el funding se vuelve negativo. Estrategia inversa: corto spot (vía préstamo) + largo perp = cobra funding pagado por shorts. Menos común en cripto debido a costos de préstamo spot (a menudo 5-15% TIR), haciendo la matemática más ajustada."
+      ],
+      checklist: [
+        "Antes de abrir un basis trade: 1) Verifica que el exchange spot y el exchange de perp soporten el mismo activo con liquidez suficiente. 2) Revisa el historial de tasas de funding: una lectura positiva única no es suficiente; quieres un promedio de 7 días positivo. 3) Calcula los requisitos de margen; el sobreapalancamiento arriesga liquidación. 4) Confirma las velocidades de retiro/depósito para rebalancear si es necesario.",
+        "Riesgo de liquidación: mantén la posición de perp con al menos 3-5x de buffer sobre el margen de mantenimiento. Un short perp de $10K con apalancamiento 10x y $1K de margen liquida si el precio sube 10%. Usa margen aislado y agrega buffer para sobrevivir picos adversos de 30%+."
+      ],
+      mistakes: [
+        "Subestimar la volatilidad de la tasa de funding. El funding puede invertirse a negativo rápidamente (post-evento de noticia, FOMC, flujos ETF). Un trade abierto con funding +0.05% puede estar pagando -0.03% en días. Monitorea diariamente y sal si el funding gira persistentemente negativo.",
+        "Olvidar la eficiencia de capital. Mantener $10K spot + $10K de margen perp = $20K de capital inmovilizado. ROI sobre capital = ganancia / capital total, no solo un lado. La cifra del 43% TIR anterior es sobre la pata perp; sobre los $20K totales es 21.5% TIR."
+      ],
+      benchmarks: [
+        "Rangos anuales de tasa de funding (perpetuos BTC): bajista 2022 promedio -0.005%/día (-1.8% TIR), neutral 2023 +0.01%/día (3.6%), alcista 2024 +0.04%/día (14.4%), pico Q4 2024 +0.10%/día (36%), post-lanzamiento ETF sostenido >0.05%/día (18%+ TIR). Picos agudos hasta 0.3%+ durante fases de euforia.",
+        "Mejor régimen para basis trade: funding positivo persistente por encima de 0.03% por intervalo de 8 horas, baja volatilidad (reduce riesgo de liquidación) y bid-ask ajustado en spot y perp. Los pares Coinbase + Binance/OKX/Bybit perp típicamente ofrecen la mejor liquidez."
+      ],
+      execution: [
+        "Flujo estándar: 1) Fondea el exchange spot con USD/USDT, fondea el exchange perp con margen USDT. 2) Compra BTC spot con tamaño completo de posición. 3) Abre short perp con el mismo notional (delta coincidente). 4) Monitorea la tasa de funding diariamente; cierra si gira negativa por 3+ períodos consecutivos. 5) Rebalancea si el PnL del perp deriva (desajuste de tamaño de posición).",
+        "Para velocidad de ejecución: coloca órdenes spot y perp dentro de 30 segundos una de otra para minimizar exposición direccional. Si BTC se mueve 1% entre patas, tienes posición direccional no deseada hasta rebalancear. Las órdenes limit en el medio previenen slippage pero arriesgan no-ejecución."
+      ],
+      hygiene: [
+        "Seguimiento diario de PnL: registra el funding recibido, funding pagado (si aplica), tarifas de trading, mark-to-market en cada pata. En 30 días, verifica que el P&L neto coincida con lo esperado (ingreso de funding - tarifas). Una discrepancia revela costos ocultos (tarifas de retiro entre exchanges, spreads de conversión).",
+        "Registros fiscales: cada pago de funding es ingreso imponible (tratado como interés en la mayoría de jurisdicciones). Cada apertura/cierre de pata genera ganancias/pérdidas de capital. Mantén un registro de trades con marcas de tiempo para un <a href=\"/tax-calculator/\">cálculo de impuestos</a> preciso."
+      ],
+      validation: [
+        "Verificación de cordura: posición $10K, funding 0.05%/8hr × 3 = 0.15%/día × 30 días = 4.5% bruto. Tarifas de trading 0.04% × 4 = 0.16%. Neto 30 días = 4.34% sobre cada lado. TIR si se repite = 4.34% × 12 = 52%. Si la calculadora muestra algo diferente, verifica la entrada intervals_per_day (por defecto 3 para funding de 8hr; algunos exchanges usan intervalos de 1 hora = 24/día).",
+        "Verificación de posición: balance spot × precio spot ≈ notional de posición perp. Discrepancia >5% indica delta desbalanceado: riesgo de exposición direccional no intencional. Rebalancea inmediatamente para evitar P&L no intencional por movimientos de precio."
+      ],
+    },
+    pt: {
+      interpret: [
+        "A arbitragem de funding de perpétuos explora a taxa de funding paga pelos longs em perp aos shorts (quando a taxa é positiva) ou vice-versa. Estratégia: manter spot comprado + perp vendido de mesmo tamanho = delta-neutro. Lucro = taxa de funding × posição × intervalos - taxas de trading. A 0,05% por intervalo de 8 horas (3 diários), isso é 0,15%/dia × 365 = 54,75% APR antes das taxas.",
+        "Retornos anualizados no mundo real variam 8-50% dependendo das condições de mercado (funding de alta 0,05-0,2%, baixa/neutro -0,05% a 0,02%). Após 4 pernas de trading (abrir spot + abrir perp + fechar perp + fechar spot a 0,04% típicos cada = 0,16% total), a taxa de funding de equilíbrio é ~0,013% por intervalo. Funding mais alto = mais lucro; funding negativo inverte a direção da estratégia."
+      ],
+      scenarios: [
+        "Funding positivo em mercado de alta: BTC a $77K, funding 0,04% por período de 8 horas (3/dia). Posição $10K de cada lado. Renda diária de funding = $10K × 0,04% × 3 = $12. Anualizado $4.380 = 43,8% APR. Taxas de trading em 30 dias = $10K × 0,04% × 4 = $16. Lucro líquido de 30 dias = $360 - $16 = $344. APR ≈ 41,3% líquido.",
+        "Regime de funding negativo: em mercados de baixa quando shorts dominam, o funding fica negativo. Estratégia reversa: vender spot (via empréstimo) + comprar perp = coletar funding pago pelos shorts. Menos comum em cripto devido a custos de empréstimo de spot (frequentemente 5-15% APR), apertando a matemática."
+      ],
+      checklist: [
+        "Antes de abrir basis trade: 1) Verifique se a exchange spot e a exchange de perp suportam o mesmo ativo com liquidez suficiente. 2) Confira o histórico da taxa de funding — uma única leitura positiva não basta; queremos média de 7 dias positiva. 3) Calcule requisitos de margem; sobre-alavancagem arrisca liquidação. 4) Confirme velocidades de saque/depósito para rebalanceamento se necessário.",
+        "Risco de liquidação: mantenha posição em perp com pelo menos 3-5x de buffer de margem de manutenção. Um short perp de $10K com alavancagem 10x e margem $1K liquida se o preço subir 10%. Use margem isolada e adicione buffer para sobreviver a picos adversos de 30%+."
+      ],
+      mistakes: [
+        "Subestimar a volatilidade da taxa de funding. O funding pode virar negativo rapidamente (pós-evento de notícia, FOMC, fluxos de ETF). Um trade aberto a +0,05% de funding pode pagar -0,03% em dias. Monitore diariamente e saia se o funding ficar persistentemente negativo.",
+        "Esquecer a eficiência de capital. Manter $10K em spot + $10K em margem de perp = $20K de capital amarrado. ROI sobre capital = lucro / capital total, não apenas um lado. A figura de 43% APR acima é sobre a perna do perp; sobre os $20K completos é 21,5% APR."
+      ],
+      benchmarks: [
+        "Faixas anuais da taxa de funding (perpétuos BTC): média bear 2022 -0,005%/dia (-1,8% APR), neutro 2023 +0,01%/dia (3,6%), alta 2024 +0,04%/dia (14,4%), pico Q4 2024 +0,10%/dia (36%), pós-lançamento ETF sustentado >0,05%/dia (18%+ APR). Picos acentuados a 0,3%+ durante fases de euforia.",
+        "Melhor regime para basis trade: funding positivo persistente acima de 0,03% por intervalo de 8 horas, baixa volatilidade (reduz risco de liquidação) e bid-ask apertado tanto em spot quanto em perp. Pares Coinbase + Binance/OKX/Bybit perp tipicamente oferecem melhor liquidez."
+      ],
+      execution: [
+        "Fluxo padrão: 1) Aporte na exchange spot com USD/USDT, aporte na exchange de perp com margem USDT. 2) Compre BTC spot com o tamanho total da posição. 3) Abra short perp com o mesmo nocional (delta correspondente). 4) Monitore a taxa de funding diariamente; feche se virar negativa por 3+ períodos consecutivos. 5) Rebalanceie se o PnL do perp desviar (descasamento de tamanho de posição).",
+        "Para velocidade de execução: coloque ordens de spot e perp em 30 segundos uma da outra para minimizar exposição direcional. Se o BTC se move 1% entre as pernas, você tem posição direcional indesejada até rebalancear. Ordens limit no meio previnem slippage, mas arriscam não-execução."
+      ],
+      hygiene: [
+        "Acompanhamento diário de PnL: registre funding recebido, funding pago (se aplicável), taxas de trading, mark-to-market em cada perna. Em 30 dias, verifique se P&L líquido corresponde ao esperado (renda de funding - taxas). Discrepância revela custos ocultos (taxas de saque entre exchanges, spreads de conversão).",
+        "Registros fiscais: cada pagamento de funding é renda tributável (tratada como juros na maioria das jurisdições). Cada abertura/fechamento de perna gera ganhos/perdas de capital. Mantenha log de trades com timestamps para <a href=\"/tax-calculator/\">cálculo de impostos</a> preciso."
+      ],
+      validation: [
+        "Verificação de sanidade: posição $10K, funding 0,05%/8h × 3 = 0,15%/dia × 30 dias = 4,5% bruto. Taxas de trading 0,04% × 4 = 0,16%. Líquido 30 dias = 4,34% em cada lado. APR se repetido = 4,34% × 12 = 52%. Se a calculadora mostra diferente, verifique o input intervals_per_day (padrão 3 para funding de 8h; algumas exchanges usam intervalos de 1 hora = 24/dia).",
+        "Verificação de posição: saldo spot × preço spot ≈ nocional da posição em perp. Discrepância >5% indica delta desbalanceado — risco de exposição direcional não intencional. Rebalanceie imediatamente para evitar P&L não intencional de movimentos de preço."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Perpetual fonlama arbitrajı, perp long'ların short'lara ödediği fonlama oranını (oran pozitif olduğunda) veya tam tersini sömürür. Strateji: eşit boyutta uzun spot + kısa perp tut = delta-nötr. Kâr = fonlama oranı × pozisyon × aralıklar - işlem ücretleri. 8 saatlik aralık başına %0,05'te (günde 3), bu günde %0,15 × 365 = ücretler öncesi %54,75 APR'dir.",
+        "Gerçek dünya yıllıklandırılmış getirileri piyasa koşullarına bağlı olarak %8-50 arasında değişir (boğa fonlaması %0,05-0,2, ayı/nötr -%0,05 ila %0,02). 4 işlem bacağından sonra (spot aç + perp aç + perp kapat + spot kapat, tipik %0,04 her biri = toplam %0,16), başa baş fonlama oranı aralık başına ~%0,013'tür. Daha yüksek fonlama = daha fazla kâr; negatif fonlama strateji yönünü çevirir."
+      ],
+      scenarios: [
+        "Boğa piyasası pozitif fonlama: 77.000 dolarda BTC, 8 saatlik dönem başına %0,04 fonlama (3/gün). Her tarafta 10.000 dolarlık pozisyon. Günlük fonlama geliri = 10.000 dolar × %0,04 × 3 = 12 dolar. Yıllıklandırılmış 4.380 dolar = %43,8 APR. 30 gün boyunca işlem ücretleri = 10.000 dolar × %0,04 × 4 = 16 dolar. Net 30 günlük kâr = 360 dolar - 16 dolar = 344 dolar. Net APR ≈ %41,3.",
+        "Negatif fonlama rejimi: ayı piyasalarında short'lar baskın olduğunda, fonlama negatif olur. Ters strateji: kısa spot (ödünç verme yoluyla) + uzun perp = short'lar tarafından ödenen fonlamayı topla. Spot borçlanma maliyetleri (genellikle %5-15 APR) nedeniyle kriptoda daha az yaygındır, matematiği daha sıkı hale getirir."
+      ],
+      checklist: [
+        "Baz işlemi açmadan önce: 1) Spot borsa ve perp borsanın aynı varlığı yeterli likiditeyle desteklediğini doğrulayın. 2) Fonlama oranı geçmişini kontrol edin — tek bir pozitif okuma yeterli değil; 7 günlük ortalama pozitif isteyin. 3) Marj gereksinimlerini hesaplayın; aşırı kaldıraç likidasyon riskleri yaratır. 4) Gerekirse yeniden dengeleme için çekim/yatırma hızlarını onaylayın.",
+        "Likidasyon riski: perp pozisyonunu en az 3-5x sürdürme marjı tamponuyla koruyun. 10x kaldıraçta 1.000 dolar marjlı 10.000 dolar kısa perp, fiyat %10 yükselirse likide olur. İzole marj kullanın ve %30+ ters sıçramalardan kurtulmak için tampon ekleyin."
+      ],
+      mistakes: [
+        "Fonlama oranı volatilitesini hafife almak. Fonlama hızla negatife dönebilir (haber etkinliği sonrası, FOMC, ETF akışları). +%0,05 fonlamada açılan bir işlem birkaç gün içinde -%0,03 ödeyebilir. Günlük izleyin ve fonlama kalıcı olarak negatife dönerse çıkın.",
+        "Sermaye verimliliğini unutmak. 10.000 dolar spot + 10.000 dolar perp marjı tutmak = 20.000 dolar sermaye bağlı. Sermaye üzerinde ROI = kâr / toplam sermaye, sadece bir taraf değil. Yukarıdaki %43 APR rakamı perp bacağındadır; tam 20.000 dolarda %21,5 APR'dir."
+      ],
+      benchmarks: [
+        "Fonlama oranı yıllık aralıkları (BTC sürekli): 2022 ayı ortalaması -%0,005/gün (-%1,8 APR), 2023 nötr +%0,01/gün (%3,6), 2024 boğa +%0,04/gün (%14,4), Q4 2024 zirve +%0,10/gün (%36), ETF lansmanı sonrası sürdürülen >%0,05/gün (%18+ APR). Öfori fazlarında %0,3+'a keskin sıçramalar.",
+        "Baz işlemi için en iyi rejim: 8 saatlik aralık başına %0,03'ün üzerinde sürekli pozitif fonlama, düşük volatilite (likidasyon riskini azaltır) ve hem spot hem de perpte sıkı alış-satış. Coinbase + Binance/OKX/Bybit perp çiftleri tipik olarak en iyi likiditeyi sunar."
+      ],
+      execution: [
+        "Standart iş akışı: 1) Spot borsayı USD/USDT ile fonlayın, perp borsayı USDT marjıyla fonlayın. 2) Tam pozisyon boyutuyla spot BTC satın alın. 3) Aynı nominalle (delta eşleştirme) kısa perp açın. 4) Fonlama oranını günlük izleyin; 3+ ardışık dönem için negatife dönerse kapatın. 5) Perp PnL kayarsa yeniden dengeleyin (pozisyon boyutu uyumsuzluğu).",
+        "Yürütme hızı için: yönlü maruziyeti en aza indirmek için spot ve perp emirlerini birbirinden 30 saniye içinde yerleştirin. BTC bacaklar arasında %1 hareket ederse, yeniden dengeleninceye kadar istenmeyen yönlü pozisyonunuz olur. Ortada limit emirler slipajı önler ancak yürütülmeme riski taşır."
+      ],
+      hygiene: [
+        "Günlük PnL takibi: alınan fonlama, ödenen fonlamayı (varsa), işlem ücretlerini, her bacakta piyasaya göre işaretlemeyi günlüğe kaydedin. 30 gün boyunca, net P&L'nin beklenenle (fonlama geliri - ücretler) eşleştiğini doğrulayın. Tutarsızlık gizli maliyetleri ortaya çıkarır (borsalar arası çekim ücretleri, dönüşüm spread'leri).",
+        "Vergi kayıtları: her fonlama ödemesi vergiye tabi gelirdir (çoğu yargı bölgesinde faiz olarak değerlendirilir). Her bacak açma/kapama sermaye kazançları/kayıpları üretir. Doğru <a href=\"/tax-calculator/\">vergi hesaplaması</a> için zaman damgalı işlem günlüğü tutun."
+      ],
+      validation: [
+        "Mantık kontrolü: pozisyon 10.000 dolar, fonlama %0,05/8sa × 3 = %0,15/gün × 30 gün = %4,5 brüt. İşlem ücretleri %0,04 × 4 = %0,16. Her tarafta net 30 gün = %4,34. Tekrarlanırsa APR = %4,34 × 12 = %52. Hesaplayıcı farklı gösteriyorsa, intervals_per_day girişini doğrulayın (8 saat fonlama için varsayılan 3; bazı borsalar 1 saatlik aralıklar kullanır = 24/gün).",
+        "Pozisyon doğrulaması: spot bakiye × spot fiyat ≈ perp pozisyon nominal değeri. >%5 tutarsızlık dengesiz delta gösterir — istenmeyen yönlü maruziyet riski. Fiyat hareketlerinden istenmeyen P&L'den kaçınmak için hemen yeniden dengeleyin."
+      ],
+    },
+    hi: {
+      interpret: [
+        "Perpetual funding arbitrage perp longs द्वारा shorts को भुगतान की गई funding दर का शोषण करता है (जब दर धनात्मक हो) या इसके विपरीत। रणनीति: समान-आकार long spot + short perp = delta-neutral धारण करें। लाभ = funding दर × पोजीशन × अंतराल - ट्रेडिंग शुल्क। प्रति 8-घंटे अंतराल पर 0.05% (दैनिक 3) पर, यह 0.15%/दिन × 365 = शुल्क से पहले 54.75% APR है।",
+        "वास्तविक दुनिया के वार्षिक रिटर्न बाज़ार स्थितियों के आधार पर 8-50% तक होते हैं (bull funding 0.05-0.2%, bear/neutral -0.05% से 0.02%)। 4 ट्रेडिंग legs के बाद (open spot + open perp + close perp + close spot विशिष्ट 0.04% प्रत्येक = 0.16% कुल), ब्रेक-ईवन funding दर ~0.013% प्रति अंतराल है। उच्च funding = अधिक लाभ; नकारात्मक funding रणनीति दिशा को पलट देता है।"
+      ],
+      scenarios: [
+        "Bull market धनात्मक funding: BTC $77K पर, funding 0.04% प्रति 8-घंटे की अवधि (3/दिन)। पोजीशन प्रत्येक तरफ $10K। दैनिक funding आय = $10K × 0.04% × 3 = $12। वार्षिक $4,380 = 43.8% APR। 30 दिनों में ट्रेडिंग शुल्क = $10K × 0.04% × 4 = $16। शुद्ध 30-दिन लाभ = $360 - $16 = $344। APR ≈ 41.3% शुद्ध।",
+        "नकारात्मक funding regime: bear बाज़ारों में जब shorts हावी होते हैं, funding नकारात्मक हो जाती है। उल्टी रणनीति: short spot (lending के माध्यम से) + long perp = shorts द्वारा भुगतान की गई funding एकत्र करें। spot-borrowing लागत (अक्सर 5-15% APR) के कारण crypto में कम सामान्य, गणित को सख्त बनाता है।"
+      ],
+      checklist: [
+        "Basis ट्रेड खोलने से पहले: 1) सत्यापित करें कि spot एक्सचेंज और perp एक्सचेंज पर्याप्त तरलता के साथ समान एसेट का समर्थन करते हैं। 2) Funding दर इतिहास जाँचें — एकल धनात्मक रीडिंग पर्याप्त नहीं है; 7-दिवसीय औसत धनात्मक चाहिए। 3) मार्जिन आवश्यकताओं की गणना करें; over-leverage liquidation जोखिम। 4) यदि आवश्यक हो तो rebalancing के लिए निकासी/जमा गति की पुष्टि करें।",
+        "Liquidation जोखिम: कम से कम 3-5x maintenance margin buffer के साथ perp पोजीशन बनाए रखें। 10x लीवरेज पर $1K मार्जिन के साथ $10K short perp यदि कीमत 10% बढ़ती है तो liquidate हो जाता है। 30%+ प्रतिकूल spikes को सहन करने के लिए isolated margin का उपयोग करें और buffer जोड़ें।"
+      ],
+      mistakes: [
+        "Funding दर अस्थिरता को कम आँकना। Funding जल्दी नकारात्मक हो सकती है (post-news event, FOMC, ETF flows)। +0.05% funding पर खोला गया ट्रेड दिनों के भीतर -0.03% भुगतान कर सकता है। दैनिक निगरानी करें और यदि funding लगातार नकारात्मक हो जाती है तो बाहर निकलें।",
+        "पूँजी दक्षता को भूल जाना। $10K spot + $10K perp margin होल्ड करना = $20K पूँजी बंधी हुई। पूँजी पर ROI = लाभ / कुल पूँजी, केवल एक तरफ नहीं। ऊपर 43% APR का आँकड़ा perp leg पर है; पूर्ण $20K पर यह 21.5% APR है।"
+      ],
+      benchmarks: [
+        "Funding दर वार्षिक श्रेणियाँ (BTC perpetuals): bear 2022 औसत -0.005%/दिन (-1.8% APR), neutral 2023 +0.01%/दिन (3.6%), bull 2024 +0.04%/दिन (14.4%), peak Q4 2024 +0.10%/दिन (36%), post-ETF launch निरंतर >0.05%/दिन (18%+ APR)। उत्साह चरणों के दौरान 0.3%+ तक तेज़ spikes।",
+        "Basis ट्रेड के लिए सर्वश्रेष्ठ regime: प्रति 8-घंटे अंतराल पर 0.03% से ऊपर निरंतर धनात्मक funding, कम अस्थिरता (liquidation जोखिम कम करता है), और spot और perp दोनों पर तंग bid-ask। Coinbase + Binance/OKX/Bybit perp जोड़े आमतौर पर सर्वोत्तम तरलता प्रदान करते हैं।"
+      ],
+      execution: [
+        "मानक कार्यप्रवाह: 1) spot एक्सचेंज को USD/USDT से फंड करें, perp एक्सचेंज को USDT मार्जिन से फंड करें। 2) पूर्ण पोजीशन आकार के साथ spot BTC खरीदें। 3) समान notional के साथ short perp खोलें (delta मिलान)। 4) दैनिक funding दर की निगरानी करें; यदि 3+ लगातार अवधियों के लिए नकारात्मक हो जाती है तो बंद करें। 5) यदि perp PnL drift करता है तो rebalance करें (पोजीशन आकार बेमेल)।",
+        "निष्पादन गति के लिए: दिशात्मक एक्सपोज़र को कम करने के लिए spot और perp ऑर्डर एक-दूसरे के 30 सेकंड के भीतर रखें। यदि legs के बीच BTC 1% चलता है, तो rebalance होने तक आपके पास अवांछित दिशात्मक पोजीशन है। mid पर limit ऑर्डर slippage को रोकते हैं लेकिन गैर-निष्पादन का जोखिम होता है।"
+      ],
+      hygiene: [
+        "दैनिक PnL ट्रैकिंग: प्राप्त funding, भुगतान की गई funding (यदि लागू हो), ट्रेडिंग शुल्क, प्रत्येक leg पर mark-to-market लॉग करें। 30 दिनों में, सत्यापित करें कि शुद्ध P&L अपेक्षित (funding आय - शुल्क) से मेल खाता है। विसंगति छिपी हुई लागतों (cross-exchange निकासी शुल्क, रूपांतरण spreads) को प्रकट करती है।",
+        "कर रिकॉर्ड: प्रत्येक funding भुगतान कर योग्य आय है (अधिकांश अधिकार क्षेत्रों में ब्याज के रूप में माना जाता है)। प्रत्येक leg open/close पूँजीगत लाभ/हानि उत्पन्न करता है। सटीक <a href=\"/tax-calculator/\">कर गणना</a> के लिए timestamps के साथ ट्रेड लॉग बनाए रखें।"
+      ],
+      validation: [
+        "सेनिटी जाँच: पोजीशन $10K, funding 0.05%/8hr × 3 = 0.15%/दिन × 30 दिन = 4.5% सकल। ट्रेडिंग शुल्क 0.04% × 4 = 0.16%। शुद्ध 30-दिन = प्रत्येक तरफ 4.34%। यदि दोहराया जाए तो APR = 4.34% × 12 = 52%। यदि कैलकुलेटर अलग दिखाता है, तो intervals_per_day इनपुट सत्यापित करें (8hr funding के लिए डिफ़ॉल्ट 3; कुछ एक्सचेंज 1-घंटे अंतराल = 24/दिन का उपयोग करते हैं)।",
+        "पोजीशन सत्यापन: spot balance × spot price ≈ perp position notional। >5% विसंगति असंतुलित delta का संकेत देती है — अनपेक्षित दिशात्मक एक्सपोज़र का जोखिम। कीमत चालों से अनपेक्षित P&L से बचने के लिए तुरंत rebalance करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Арбитраж ставки финансирования на бессрочных контрактах использует ставку финансирования, которую лонги выплачивают шортам (когда ставка положительная) или наоборот. Стратегия: держите одинаковый по размеру лонг на споте + шорт на перпе = дельта-нейтрально. Прибыль = ставка_финансирования × позиция × интервалы − торговые комиссии. При 0,05% за 8-часовой интервал (3 в день) это 0,15%/день × 365 = 54,75% APR до комиссий.",
+        "Реальные годовые доходности колеблются в диапазоне 8–50% в зависимости от рыночных условий (бычье финансирование 0,05–0,2%, медвежье/нейтральное от −0,05% до 0,02%). После 4 торговых ног (открытие спота + открытие перпа + закрытие перпа + закрытие спота по типичной 0,04% каждая = 0,16% суммарно) безубыточная ставка финансирования составляет ~0,013% за интервал. Выше финансирование — больше прибыль; отрицательное финансирование переворачивает направление стратегии."
+      ],
+      scenarios: [
+        "Бычий рынок с положительным финансированием: BTC при $77K, финансирование 0,04% за 8-часовой период (3/день). Позиция $10K с каждой стороны. Дневной доход от финансирования = $10K × 0,04% × 3 = $12. В годовом выражении $4 380 = 43,8% APR. Торговые комиссии за 30 дней = $10K × 0,04% × 4 = $16. Чистая 30-дневная прибыль = $360 − $16 = $344. APR ≈ 41,3% чистыми.",
+        "Режим отрицательного финансирования: на медвежьих рынках, когда доминируют шорты, финансирование уходит в минус. Обратная стратегия: шорт спот (через займ) + лонг перп = собирайте финансирование, выплачиваемое шортами. Реже встречается в крипте из-за стоимости займа спота (часто 5–15% APR), что усложняет математику."
+      ],
+      checklist: [
+        "Перед открытием базис-трейда: 1) Проверьте, что спот-биржа и перп-биржа поддерживают тот же актив с достаточной ликвидностью. 2) Сверьте историю ставки финансирования — одного положительного значения недостаточно; нужно положительное 7-дневное среднее. 3) Рассчитайте маржинальные требования; чрезмерное плечо рискует ликвидацией. 4) Подтвердите скорости ввода/вывода для ребалансировки при необходимости.",
+        "Риск ликвидации: держите позицию перпа с буфером поддержания маржи минимум 3–5×. Шорт перп на $10K с плечом 10× и маржой $1K ликвидируется при росте цены на 10%. Используйте изолированную маржу и добавьте буфер, чтобы пережить неблагоприятные скачки на 30%+."
+      ],
+      mistakes: [
+        "Недооценка волатильности ставки финансирования. Финансирование может быстро уйти в отрицательную зону (после новостей, FOMC, потоков ETF). Сделка, открытая при +0,05% финансирования, может за дни начать платить −0,03%. Мониторьте ежедневно и выходите, если финансирование становится устойчиво отрицательным.",
+        "Забывание о капитальной эффективности. Удержание $10K на споте + $10K маржи на перпе = $20K капитала связано. ROI на капитал = прибыль / весь капитал, а не только одна сторона. Указанная выше цифра 43% APR — на ногу перпа; на всех $20K это 21,5% APR."
+      ],
+      benchmarks: [
+        "Годовые диапазоны ставки финансирования (BTC perpetuals): медвежий 2022 в среднем −0,005%/день (−1,8% APR), нейтральный 2023 +0,01%/день (3,6%), бычий 2024 +0,04%/день (14,4%), пик 4 кв. 2024 +0,10%/день (36%), после запуска ETF устойчиво >0,05%/день (18%+ APR). Резкие всплески до 0,3%+ в фазах эйфории.",
+        "Лучший режим для базис-трейда: устойчиво положительное финансирование выше 0,03% за 8-часовой интервал, низкая волатильность (снижает риск ликвидации) и узкий бид-аск как на споте, так и на перпе. Пары Coinbase + Binance/OKX/Bybit perp обычно дают лучшую ликвидность."
+      ],
+      execution: [
+        "Стандартный рабочий процесс: 1) Пополните спот-биржу USD/USDT, перп-биржу — USDT маржей. 2) Купите спот-BTC на полный размер позиции. 3) Откройте шорт перпа на тот же номинал (совпадающая дельта). 4) Мониторьте ставку финансирования ежедневно; закрывайте, если уйдёт в минус на 3+ периодов подряд. 5) Ребалансируйте, если P&L перпа разъезжается (несоответствие размеров позиций).",
+        "Для скорости исполнения: размещайте спот- и перп-ордера в течение 30 секунд друг от друга, чтобы минимизировать направленную экспозицию. Если BTC движется на 1% между ногами, у вас остаётся нежелательная направленная позиция до ребаланса. Лимитные ордера по середине предотвращают проскальзывание, но рискуют неисполнением."
+      ],
+      hygiene: [
+        "Ежедневное отслеживание P&L: фиксируйте полученное финансирование, выплаченное финансирование (если применимо), торговые комиссии, mark-to-market по каждой ноге. За 30 дней сверьте чистый P&L с ожидаемым (доход от финансирования − комиссии). Расхождение раскрывает скрытые издержки (комиссии межбиржевых выводов, спреды конверсии).",
+        "Налоговые записи: каждая выплата финансирования — налогооблагаемый доход (в большинстве юрисдикций трактуется как процент). Каждое открытие/закрытие ноги создаёт прибыль/убыток с капитала. Ведите журнал сделок с тайм-стампами для точного <a href=\"/tax-calculator/\">налогового расчёта</a>."
+      ],
+      validation: [
+        "Проверка здравого смысла: позиция $10K, финансирование 0,05%/8ч × 3 = 0,15%/день × 30 дней = 4,5% валовых. Торговые комиссии 0,04% × 4 = 0,16%. Чистые 30 дней = 4,34% на каждой стороне. APR при повторении = 4,34% × 12 = 52%. Если калькулятор показывает иное, проверьте ввод intervals_per_day (по умолчанию 3 для 8-часового финансирования; некоторые биржи используют 1-часовые интервалы = 24/день).",
+        "Сверка позиций: баланс спота × цена спота ≈ номинальный размер позиции перпа. Расхождение >5% указывает на несбалансированную дельту — риск непреднамеренной направленной экспозиции. Немедленно ребалансируйте, чтобы избежать непреднамеренного P&L от движений цены."
+      ],
+    },
+  },
+  'concentrated-liquidity-calculator': {
+    en: {
+      interpret: [
+        "Concentrated liquidity (Uniswap V3 model) deposits liquidity into a price range instead of all prices (V2 style). Capital efficiency multiplies fees earned by 5-50x compared to V2 — but only when price stays in range. If price exits range, you earn 0 fees and hold 100% of one asset (impermanent loss is realized).",
+        "Capital efficiency formula: efficiency = sqrt(P_upper) / (sqrt(P_upper) - sqrt(P_lower)). Tight range (±5%) gives ~20x efficiency; medium (±20%) ~5x; wide (±50%) ~2x. Daily fee income = position_share × pool_volume × fee_tier — multiplied by efficiency factor when in range."
+      ],
+      scenarios: [
+        "ETH/USDC tight range: $10K deposit, ETH at $2,400, range $2,280-$2,520 (±5%). Capital efficiency ~20x. Pool TVL $50M, daily volume $500M, fee 0.05%. Daily fees: position_share × $500M × 0.05% = $7.50/day in-range = $2,737/year if always in range. Realistic 50-70% in-range time: $1,368-$1,916/year (14-19% APY).",
+        "Stable pair (USDC/USDT): $10K deposit, range 0.999-1.001 (ultra tight). Efficiency 1000x+. Pool TVL $100M, daily volume $50M, fee 0.01%. Position share inflated by efficiency: ~$5/day fees = $1,825/year (18% APY). Lower IL than volatile pairs but still possible with depeg events."
+      ],
+      checklist: [
+        "Before opening LP position: 1) Compare pool's 7-day APY history (TVL × volume × fee, divided by your position size). 2) Check IL backtest for proposed range across 30 days. 3) Verify gas costs (range adjustments cost $20-200 each on Ethereum L1; cheaper on L2). 4) Set rebalancing rules (when to widen range or close).",
+        "Position size rule: ranges become irrelevant if you have <$1K position on Ethereum L1 (gas eats fees). Minimum profitable: $5K-$10K on L1, $500-$1K on Arbitrum/Base/Polygon."
+      ],
+      mistakes: [
+        "Setting range too tight without monitoring. ETH ±2% range earns max fees but exits range within hours of normal volatility. You then hold 100% of one asset and IL is locked. Wider range (±15-25%) trades fee yield for stability.",
+        "Ignoring impermanent loss math. If ETH rises 50% from $2,400 to $3,600, your liquidity position has 50% less ETH (sold to pool buyers) and gained USDC. Compared to HODL, IL is ~5.7%. Fees earned must exceed IL to be profitable. Use <a href=\"/impermanent-loss-calculator/\">IL calculator</a> for range-specific analysis."
+      ],
+      benchmarks: [
+        "Typical V3 LP returns 2024-2026: ETH/USDC 0.05% pool 12-25% APY, ETH/BTC 0.05% 8-15%, stable pairs 5-12%, exotic pairs 30-100% (high risk). IL typically eats 30-50% of gross fee income; net APY = gross APY × (1 - IL_factor).",
+        "Volume/TVL ratio (capital efficiency proxy): healthy V3 pools have daily volume / TVL ratio of 0.3-2.0. Pools below 0.1 are dead (low fee income). Pools above 5.0 may have toxic flow (arbitrage extraction, low IL adjustment time)."
+      ],
+      execution: [
+        "Position opening workflow: 1) Pick pool (ETH/USDC most popular). 2) Set range based on volatility expectations (use historical 30-day price range as baseline). 3) Calculate token amounts needed (asymmetric — depends on current price within range). 4) Approve tokens, mint position NFT. 5) Monitor daily, rebalance weekly or on range exit.",
+        "Active management: use tools like Krystal, DefiLlama Pools, or custom dashboards to track in-range %, fees earned, current IL. If in-range time drops below 50% for 3+ days, widen range. If pool volume dries up, withdraw and rotate."
+      ],
+      hygiene: [
+        "Track each LP position: open date, range, deposit amounts, fees earned, IL realized at close. After 5+ positions, you'll see which range strategy actually works for your capital and risk tolerance.",
+        "Gas budget tracking: range adjustments on L1 cost $20-200 each. If you adjust 4x/month at $50 each = $200/month. Position must earn >$2,400/year just to cover gas — meaning $10K minimum position to be cost-effective on L1, or migrate to L2."
+      ],
+      validation: [
+        "Sanity check: $10K deposit, ±20% range (2,280-2,880 around $2,400 ETH). Efficiency ≈ 5x. Pool $50M TVL, $500M daily volume, 0.05% fee → daily fees on ALL liquidity = $250K. Your position share = $10K × 5 / $50M = 0.1%. Daily fees = $250 × 0.1% × 5 = $1.25 in-range. Annualized at 70% in-range = $320 = 3.2% APY (modest pool, high competition).",
+        "Post-period validation: actual fees collected (visible in position UI) should match your share × pool fees in same period × in-range %. If actual is 30%+ lower than expected, your position spent significant time out of range — review range width and rebalance more aggressively."
+      ],
+    },
+    es: {
+      interpret: [
+        "La liquidez concentrada (modelo Uniswap V3) deposita liquidez en un rango de precio en lugar de todos los precios (estilo V2). La eficiencia de capital multiplica las tarifas ganadas por 5-50x comparado con V2, pero solo cuando el precio se mantiene en rango. Si el precio sale del rango, ganas 0 tarifas y mantienes el 100% de un activo (la pérdida impermanente se realiza).",
+        "Fórmula de eficiencia de capital: eficiencia = sqrt(P_superior) / (sqrt(P_superior) - sqrt(P_inferior)). Rango ajustado (±5%) da ~20x de eficiencia; medio (±20%) ~5x; amplio (±50%) ~2x. Ingreso diario de tarifas = participación_posición × volumen_pool × tier_tarifa, multiplicado por el factor de eficiencia cuando está en rango."
+      ],
+      scenarios: [
+        "Rango ajustado ETH/USDC: $10K de depósito, ETH a $2,400, rango $2,280-$2,520 (±5%). Eficiencia de capital ~20x. Pool TVL $50M, volumen diario $500M, tarifa 0.05%. Tarifas diarias: participación_posición × $500M × 0.05% = $7.50/día en rango = $2,737/año si siempre en rango. Realista 50-70% de tiempo en rango: $1,368-$1,916/año (14-19% APY).",
+        "Par estable (USDC/USDT): $10K de depósito, rango 0.999-1.001 (ultra ajustado). Eficiencia 1000x+. Pool TVL $100M, volumen diario $50M, tarifa 0.01%. Participación de posición inflada por eficiencia: ~$5/día en tarifas = $1,825/año (18% APY). Menor IL que pares volátiles pero aún posible con eventos de despeg."
+      ],
+      checklist: [
+        "Antes de abrir posición LP: 1) Compara el historial de APY de 7 días del pool (TVL × volumen × tarifa, dividido por el tamaño de tu posición). 2) Revisa el backtest de IL para el rango propuesto en 30 días. 3) Verifica costos de gas (ajustes de rango cuestan $20-200 cada uno en Ethereum L1; más baratos en L2). 4) Establece reglas de rebalanceo (cuándo ampliar el rango o cerrar).",
+        "Regla de tamaño de posición: los rangos se vuelven irrelevantes si tienes <$1K de posición en Ethereum L1 (el gas se come las tarifas). Mínimo rentable: $5K-$10K en L1, $500-$1K en Arbitrum/Base/Polygon."
+      ],
+      mistakes: [
+        "Establecer un rango demasiado ajustado sin monitorear. ETH en rango ±2% gana máximas tarifas pero sale del rango en horas con volatilidad normal. Luego mantienes el 100% de un activo y la IL queda fijada. Un rango más amplio (±15-25%) cambia rendimiento de tarifa por estabilidad.",
+        "Ignorar la matemática de la pérdida impermanente. Si ETH sube 50% de $2,400 a $3,600, tu posición de liquidez tiene 50% menos ETH (vendido a compradores del pool) y ganó USDC. Comparado con HODL, la IL es ~5.7%. Las tarifas ganadas deben exceder la IL para ser rentable. Usa la <a href=\"/impermanent-loss-calculator/\">calculadora de IL</a> para análisis específico de rango."
+      ],
+      benchmarks: [
+        "Retornos típicos LP V3 2024-2026: pool ETH/USDC 0.05% 12-25% APY, ETH/BTC 0.05% 8-15%, pares estables 5-12%, pares exóticos 30-100% (alto riesgo). La IL típicamente consume 30-50% del ingreso bruto de tarifas; APY neto = APY bruto × (1 - factor_IL).",
+        "Razón volumen/TVL (proxy de eficiencia de capital): pools V3 saludables tienen razón volumen diario / TVL de 0.3-2.0. Pools por debajo de 0.1 están muertos (bajo ingreso de tarifas). Pools por encima de 5.0 pueden tener flujo tóxico (extracción de arbitraje, bajo tiempo de ajuste por IL)."
+      ],
+      execution: [
+        "Flujo de apertura de posición: 1) Elige pool (ETH/USDC el más popular). 2) Establece rango basado en expectativas de volatilidad (usa el rango de precio histórico de 30 días como base). 3) Calcula las cantidades de tokens necesarias (asimétrico: depende del precio actual dentro del rango). 4) Aprueba tokens, mintea NFT de posición. 5) Monitorea diariamente, rebalancea semanalmente o al salir del rango.",
+        "Gestión activa: usa herramientas como Krystal, DefiLlama Pools o dashboards personalizados para rastrear % en rango, tarifas ganadas, IL actual. Si el tiempo en rango cae por debajo del 50% durante 3+ días, amplía el rango. Si el volumen del pool se seca, retira y rota."
+      ],
+      hygiene: [
+        "Rastrea cada posición LP: fecha de apertura, rango, cantidades de depósito, tarifas ganadas, IL realizada al cierre. Después de 5+ posiciones, verás qué estrategia de rango realmente funciona para tu capital y tolerancia al riesgo.",
+        "Seguimiento del presupuesto de gas: los ajustes de rango en L1 cuestan $20-200 cada uno. Si ajustas 4x/mes a $50 cada uno = $200/mes. La posición debe ganar >$2,400/año solo para cubrir gas: lo que implica $10K mínimo de posición para ser costo-efectivo en L1, o migrar a L2."
+      ],
+      validation: [
+        "Verificación de cordura: $10K de depósito, rango ±20% (2,280-2,880 alrededor de ETH $2,400). Eficiencia ≈ 5x. Pool $50M TVL, $500M de volumen diario, 0.05% de tarifa → tarifas diarias sobre TODA la liquidez = $250K. Tu participación de posición = $10K × 5 / $50M = 0.1%. Tarifas diarias = $250 × 0.1% × 5 = $1.25 en rango. Anualizado al 70% en rango = $320 = 3.2% APY (pool modesto, alta competencia).",
+        "Validación post-período: las tarifas reales cobradas (visibles en la UI de la posición) deberían coincidir con tu participación × tarifas del pool en el mismo período × % en rango. Si la realidad es 30%+ menor que lo esperado, tu posición pasó tiempo significativo fuera de rango: revisa el ancho del rango y rebalancea más agresivamente."
+      ],
+    },
+    pt: {
+      interpret: [
+        "Liquidez concentrada (modelo Uniswap V3) deposita liquidez em uma faixa de preço em vez de todos os preços (estilo V2). A eficiência de capital multiplica taxas ganhas por 5-50x comparado ao V2 — mas apenas quando o preço permanece na faixa. Se o preço sair da faixa, você ganha 0 taxas e mantém 100% de um ativo (perda impermanente é realizada).",
+        "Fórmula de eficiência de capital: eficiência = sqrt(P_superior) / (sqrt(P_superior) - sqrt(P_inferior)). Faixa apertada (±5%) dá ~20x de eficiência; média (±20%) ~5x; ampla (±50%) ~2x. Renda diária de taxas = participação_posição × volume_pool × tier_de_taxa — multiplicada pelo fator de eficiência quando na faixa."
+      ],
+      scenarios: [
+        "Faixa apertada ETH/USDC: depósito $10K, ETH a $2.400, faixa $2.280-$2.520 (±5%). Eficiência de capital ~20x. TVL do pool $50M, volume diário $500M, taxa 0,05%. Taxas diárias: participação_posição × $500M × 0,05% = $7,50/dia na faixa = $2.737/ano se sempre na faixa. Tempo realista na faixa 50-70%: $1.368-$1.916/ano (14-19% APY).",
+        "Par estável (USDC/USDT): depósito $10K, faixa 0,999-1,001 (ultra apertada). Eficiência 1000x+. TVL do pool $100M, volume diário $50M, taxa 0,01%. Participação inflada pela eficiência: ~$5/dia em taxas = $1.825/ano (18% APY). Menor IL que pares voláteis, mas ainda possível com eventos de depeg."
+      ],
+      checklist: [
+        "Antes de abrir posição de LP: 1) Compare o histórico de APY de 7 dias do pool (TVL × volume × taxa, dividido pelo tamanho da sua posição). 2) Confira o backtest de IL para a faixa proposta ao longo de 30 dias. 3) Verifique custos de gas (ajustes de faixa custam $20-200 cada na Ethereum L1; mais baratos em L2). 4) Defina regras de rebalanceamento (quando alargar a faixa ou fechar).",
+        "Regra de tamanho de posição: faixas se tornam irrelevantes se você tem posição <$1K na Ethereum L1 (gas come as taxas). Mínimo lucrativo: $5K-$10K em L1, $500-$1K em Arbitrum/Base/Polygon."
+      ],
+      mistakes: [
+        "Definir faixa muito apertada sem monitoramento. Faixa ETH ±2% ganha taxas máximas, mas sai da faixa em horas de volatilidade normal. Você então mantém 100% de um ativo e a IL fica travada. Faixa mais ampla (±15-25%) troca rendimento de taxa por estabilidade.",
+        "Ignorar a matemática da perda impermanente. Se ETH sobe 50% de $2.400 para $3.600, sua posição de liquidez tem 50% menos ETH (vendido aos compradores do pool) e ganhou USDC. Comparado a HODL, IL é ~5,7%. Taxas ganhas devem exceder a IL para ser lucrativo. Use a <a href=\"/impermanent-loss-calculator/\">calculadora de IL</a> para análise específica de faixa."
+      ],
+      benchmarks: [
+        "Retornos típicos de LP V3 2024-2026: pool ETH/USDC 0,05% 12-25% APY, ETH/BTC 0,05% 8-15%, pares estáveis 5-12%, pares exóticos 30-100% (alto risco). IL tipicamente consome 30-50% da renda bruta de taxas; APY líquido = APY bruto × (1 - fator_IL).",
+        "Razão Volume/TVL (proxy de eficiência de capital): pools V3 saudáveis têm razão volume diário / TVL de 0,3-2,0. Pools abaixo de 0,1 estão mortos (baixa renda de taxas). Pools acima de 5,0 podem ter fluxo tóxico (extração por arbitragem, baixo tempo de ajuste de IL)."
+      ],
+      execution: [
+        "Fluxo de abertura de posição: 1) Escolha o pool (ETH/USDC o mais popular). 2) Defina a faixa com base em expectativas de volatilidade (use a faixa de preço histórica de 30 dias como base). 3) Calcule os montantes de tokens necessários (assimétrico — depende do preço atual dentro da faixa). 4) Aprove tokens, faça mint do NFT da posição. 5) Monitore diariamente, rebalanceie semanalmente ou na saída da faixa.",
+        "Gestão ativa: use ferramentas como Krystal, DefiLlama Pools ou dashboards customizados para acompanhar % na faixa, taxas ganhas, IL atual. Se o tempo na faixa cair abaixo de 50% por 3+ dias, alargue a faixa. Se o volume do pool secar, retire e rotacione."
+      ],
+      hygiene: [
+        "Acompanhe cada posição de LP: data de abertura, faixa, montantes depositados, taxas ganhas, IL realizada no fechamento. Após 5+ posições, você verá qual estratégia de faixa realmente funciona para seu capital e tolerância a risco.",
+        "Acompanhamento do orçamento de gas: ajustes de faixa em L1 custam $20-200 cada. Se você ajusta 4x/mês a $50 cada = $200/mês. A posição precisa render >$2.400/ano só para cobrir gas — significando posição mínima de $10K para ser custo-eficiente em L1, ou migre para L2."
+      ],
+      validation: [
+        "Verificação de sanidade: depósito $10K, faixa ±20% (2.280-2.880 em torno de ETH a $2.400). Eficiência ≈ 5x. Pool $50M TVL, $500M de volume diário, taxa 0,05% → taxas diárias em TODA a liquidez = $250K. Sua participação = $10K × 5 / $50M = 0,1%. Taxas diárias = $250 × 0,1% × 5 = $1,25 na faixa. Anualizado em 70% na faixa = $320 = 3,2% APY (pool modesto, alta competição).",
+        "Validação pós-período: taxas reais coletadas (visíveis na UI da posição) devem corresponder à sua participação × taxas do pool no mesmo período × % na faixa. Se o real está 30%+ abaixo do esperado, sua posição passou tempo significativo fora da faixa — revise a largura da faixa e rebalanceie mais agressivamente."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Yoğunlaştırılmış likidite (Uniswap V3 modeli), tüm fiyatlar (V2 stili) yerine bir fiyat aralığına likidite yatırır. Sermaye verimliliği, V2'ye kıyasla kazanılan ücretleri 5-50 kat artırır — ancak yalnızca fiyat aralıkta kaldığında. Fiyat aralıktan çıkarsa, 0 ücret kazanırsınız ve bir varlığın %100'ünü tutarsınız (kalıcı kayıp gerçekleşmiştir).",
+        "Sermaye verimliliği formülü: verimlilik = sqrt(P_üst) / (sqrt(P_üst) - sqrt(P_alt)). Sıkı aralık (±%5) ~20x verimlilik verir; orta (±%20) ~5x; geniş (±%50) ~2x. Günlük ücret geliri = pozisyon_payı × havuz_hacmi × ücret_kademesi — aralıktayken verimlilik faktörüyle çarpılır."
+      ],
+      scenarios: [
+        "ETH/USDC sıkı aralık: 10.000 dolar yatırım, ETH 2.400 dolarda, aralık 2.280-2.520 dolar (±%5). Sermaye verimliliği ~20x. Havuz TVL 50M dolar, günlük hacim 500M dolar, ücret %0,05. Günlük ücretler: pozisyon_payı × 500M dolar × %0,05 = aralıkta günlük 7,50 dolar = aralıkta her zaman ise yılda 2.737 dolar. Gerçekçi %50-70 aralıkta zaman: yılda 1.368-1.916 dolar (%14-19 APY).",
+        "Stabil çift (USDC/USDT): 10.000 dolar yatırım, aralık 0,999-1,001 (ultra sıkı). Verimlilik 1000x+. Havuz TVL 100M dolar, günlük hacim 50M dolar, ücret %0,01. Verimlilikle şişirilen pozisyon payı: ~günlük 5 dolar ücret = yılda 1.825 dolar (%18 APY). Volatil çiftlerden daha düşük IL ama depeg olaylarıyla hâlâ mümkün."
+      ],
+      checklist: [
+        "LP pozisyonu açmadan önce: 1) Havuzun 7 günlük APY geçmişini karşılaştırın (TVL × hacim × ücret, pozisyon boyutunuza bölünür). 2) Önerilen aralık için 30 gün boyunca IL geriye dönük testini kontrol edin. 3) Gaz maliyetlerini doğrulayın (aralık ayarlamaları Ethereum L1'de her biri 20-200 dolar tutar; L2'lerde daha ucuz). 4) Yeniden dengeleme kuralları belirleyin (aralığı genişletme veya kapatma zamanı).",
+        "Pozisyon boyutu kuralı: Ethereum L1'de <1.000 dolarlık pozisyonunuz varsa aralıklar önemsiz hale gelir (gaz ücretleri yer). Minimum kârlı: L1'de 5.000-10.000 dolar, Arbitrum/Base/Polygon'da 500-1.000 dolar."
+      ],
+      mistakes: [
+        "Aralığı izlemeden çok sıkı ayarlamak. ETH ±%2 aralığı maks ücret kazanır ancak normal volatilitenin saatleri içinde aralıktan çıkar. Daha sonra bir varlığın %100'ünü tutarsınız ve IL kilitlenir. Daha geniş aralık (±%15-25) istikrar için ücret getirisini değiştirir.",
+        "Kalıcı kayıp matematiğini görmezden gelmek. ETH 2.400 dolardan 3.600 dolara %50 yükselirse, likidite pozisyonunuzun %50 daha az ETH'si (havuz alıcılarına satılmış) ve kazanılan USDC'si vardır. HODL'a kıyasla, IL ~%5,7'dir. Kazanılan ücretler kârlı olmak için IL'yi aşmalıdır. Aralığa özgü analiz için <a href=\"/impermanent-loss-calculator/\">IL hesaplayıcı</a> kullanın."
+      ],
+      benchmarks: [
+        "Tipik V3 LP getirileri 2024-2026: ETH/USDC %0,05 havuzu %12-25 APY, ETH/BTC %0,05 %8-15, stabil çiftler %5-12, egzotik çiftler %30-100 (yüksek risk). IL tipik olarak brüt ücret gelirinin %30-50'sini yer; net APY = brüt APY × (1 - IL_faktörü).",
+        "Hacim/TVL oranı (sermaye verimliliği proxy'si): sağlıklı V3 havuzlarının günlük hacim/TVL oranı 0,3-2,0'dır. 0,1'in altındaki havuzlar ölüdür (düşük ücret geliri). 5,0'ın üzerindeki havuzların toksik akışı olabilir (arbitraj çıkarımı, düşük IL ayar zamanı)."
+      ],
+      execution: [
+        "Pozisyon açma iş akışı: 1) Havuz seçin (ETH/USDC en popüler). 2) Volatilite beklentilerine dayalı aralık ayarlayın (temel olarak tarihsel 30 günlük fiyat aralığını kullanın). 3) Gerekli token miktarlarını hesaplayın (asimetrik — aralıktaki mevcut fiyata bağlıdır). 4) Tokenları onaylayın, pozisyon NFT'sini basın. 5) Günlük izleyin, haftalık veya aralık çıkışında yeniden dengeleyin.",
+        "Aktif yönetim: aralıkta %, kazanılan ücretler, mevcut IL'yi takip etmek için Krystal, DefiLlama Pools veya özel panolar gibi araçlar kullanın. Aralıkta zaman 3+ gün boyunca %50'nin altına düşerse, aralığı genişletin. Havuz hacmi kurursa, çekin ve döndürün."
+      ],
+      hygiene: [
+        "Her LP pozisyonunu takip edin: açılış tarihi, aralık, yatırım miktarları, kazanılan ücretler, kapanışta gerçekleşen IL. 5+ pozisyondan sonra, sermayeniz ve risk toleransınız için hangi aralık stratejisinin gerçekten işe yaradığını göreceksiniz.",
+        "Gaz bütçesi takibi: L1'de aralık ayarlamaları her biri 20-200 dolar tutar. Ayda 4x ayarlama yaparsanız her biri 50 dolardan = ayda 200 dolar. Pozisyon yalnızca gazı karşılamak için yılda >2.400 dolar kazanmalıdır — yani L1'de maliyet etkin olmak için minimum 10.000 dolar pozisyon veya L2'ye geçin."
+      ],
+      validation: [
+        "Mantık kontrolü: 10.000 dolar yatırım, ±%20 aralık (2.400 dolar ETH etrafında 2.280-2.880). Verimlilik ≈ 5x. Havuz 50M dolar TVL, 500M dolar günlük hacim, %0,05 ücret → TÜM likiditedeki günlük ücretler = 250.000 dolar. Pozisyon payınız = 10.000 dolar × 5 / 50M dolar = %0,1. Günlük ücretler = 250 dolar × %0,1 × 5 = aralıkta 1,25 dolar. %70 aralıkta yıllıklandırılmış = 320 dolar = %3,2 APY (mütevazı havuz, yüksek rekabet).",
+        "Dönem sonrası doğrulama: toplanan gerçek ücretler (pozisyon arayüzünde görünür), payınız × aynı dönemdeki havuz ücretleri × aralıkta % ile eşleşmelidir. Gerçek beklenenden %30+ daha düşükse, pozisyonunuz aralık dışında önemli zaman geçirmiştir — aralık genişliğini gözden geçirin ve daha agresif yeniden dengeleyin."
+      ],
+    },
+    hi: {
+      interpret: [
+        "Concentrated liquidity (Uniswap V3 मॉडल) सभी कीमतों के बजाय एक कीमत श्रेणी में तरलता जमा करता है (V2 शैली)। पूँजी दक्षता V2 की तुलना में कमाए गए शुल्क को 5-50x गुणा करती है — लेकिन केवल तब जब कीमत श्रेणी में रहती है। यदि कीमत श्रेणी से बाहर निकलती है, तो आप 0 शुल्क कमाते हैं और एक एसेट का 100% रखते हैं (impermanent loss साकार होता है)।",
+        "पूँजी दक्षता सूत्र: efficiency = sqrt(P_upper) / (sqrt(P_upper) - sqrt(P_lower))। तंग श्रेणी (±5%) ~20x दक्षता देती है; मध्यम (±20%) ~5x; चौड़ी (±50%) ~2x। दैनिक शुल्क आय = position_share × pool_volume × fee_tier — जब in-range हो तो दक्षता कारक से गुणा किया जाता है।"
+      ],
+      scenarios: [
+        "ETH/USDC तंग श्रेणी: $10K जमा, ETH $2,400 पर, श्रेणी $2,280-$2,520 (±5%)। पूँजी दक्षता ~20x। Pool TVL $50M, दैनिक मात्रा $500M, शुल्क 0.05%। दैनिक शुल्क: position_share × $500M × 0.05% = $7.50/दिन in-range = यदि हमेशा in-range हो तो $2,737/वर्ष। यथार्थवादी 50-70% in-range समय: $1,368-$1,916/वर्ष (14-19% APY)।",
+        "Stable जोड़ी (USDC/USDT): $10K जमा, श्रेणी 0.999-1.001 (अति तंग)। दक्षता 1000x+। Pool TVL $100M, दैनिक मात्रा $50M, शुल्क 0.01%। दक्षता द्वारा फुलाया गया पोजीशन शेयर: ~$5/दिन शुल्क = $1,825/वर्ष (18% APY)। अस्थिर जोड़ियों की तुलना में कम IL लेकिन depeg घटनाओं के साथ अभी भी संभव।"
+      ],
+      checklist: [
+        "LP पोजीशन खोलने से पहले: 1) pool के 7-दिवसीय APY इतिहास की तुलना करें (TVL × मात्रा × शुल्क, आपकी पोजीशन आकार से विभाजित)। 2) 30 दिनों में प्रस्तावित श्रेणी के लिए IL backtest जाँचें। 3) gas लागत सत्यापित करें (Ethereum L1 पर श्रेणी समायोजन की लागत $20-200 प्रत्येक; L2 पर सस्ता)। 4) rebalancing नियम सेट करें (श्रेणी को कब चौड़ा करें या बंद करें)।",
+        "पोजीशन आकार नियम: यदि आपके पास Ethereum L1 पर <$1K पोजीशन है तो श्रेणियाँ अप्रासंगिक हो जाती हैं (gas शुल्क खा जाता है)। न्यूनतम लाभदायक: L1 पर $5K-$10K, Arbitrum/Base/Polygon पर $500-$1K।"
+      ],
+      mistakes: [
+        "बिना निगरानी के श्रेणी को बहुत तंग सेट करना। ETH ±2% श्रेणी अधिकतम शुल्क कमाती है लेकिन सामान्य अस्थिरता के घंटों के भीतर श्रेणी से बाहर निकल जाती है। फिर आप एक एसेट का 100% रखते हैं और IL लॉक हो जाता है। व्यापक श्रेणी (±15-25%) स्थिरता के लिए शुल्क yield का व्यापार करती है।",
+        "Impermanent loss गणित की अनदेखी करना। यदि ETH $2,400 से $3,600 तक 50% बढ़ता है, तो आपकी तरलता पोजीशन में 50% कम ETH (pool खरीदारों को बेची गई) है और USDC प्राप्त किया है। HODL की तुलना में, IL ~5.7% है। कमाए गए शुल्क लाभदायक होने के लिए IL से अधिक होने चाहिए। श्रेणी-विशिष्ट विश्लेषण के लिए <a href=\"/impermanent-loss-calculator/\">IL calculator</a> का उपयोग करें।"
+      ],
+      benchmarks: [
+        "विशिष्ट V3 LP रिटर्न 2024-2026: ETH/USDC 0.05% pool 12-25% APY, ETH/BTC 0.05% 8-15%, stable जोड़े 5-12%, विदेशी जोड़े 30-100% (उच्च जोखिम)। IL आमतौर पर सकल शुल्क आय का 30-50% खा जाता है; शुद्ध APY = सकल APY × (1 - IL_factor)।",
+        "Volume/TVL अनुपात (पूँजी दक्षता proxy): स्वस्थ V3 pools में दैनिक मात्रा / TVL अनुपात 0.3-2.0 होता है। 0.1 से नीचे के Pools मर चुके हैं (कम शुल्क आय)। 5.0 से ऊपर के Pools में विषाक्त flow हो सकता है (arbitrage निष्कर्षण, कम IL समायोजन समय)।"
+      ],
+      execution: [
+        "पोजीशन खोलने का कार्यप्रवाह: 1) pool चुनें (ETH/USDC सबसे लोकप्रिय)। 2) अस्थिरता अपेक्षाओं के आधार पर श्रेणी सेट करें (आधाररेखा के रूप में ऐतिहासिक 30-दिवसीय कीमत श्रेणी का उपयोग करें)। 3) आवश्यक टोकन राशियों की गणना करें (असममित — श्रेणी के भीतर वर्तमान कीमत पर निर्भर करता है)। 4) टोकन को स्वीकृति दें, पोजीशन NFT mint करें। 5) दैनिक निगरानी करें, साप्ताहिक या श्रेणी से बाहर निकलने पर rebalance करें।",
+        "सक्रिय प्रबंधन: in-range %, कमाए गए शुल्क, वर्तमान IL को ट्रैक करने के लिए Krystal, DefiLlama Pools, या कस्टम डैशबोर्ड जैसे टूल का उपयोग करें। यदि in-range समय 3+ दिनों के लिए 50% से नीचे गिरता है, तो श्रेणी चौड़ी करें। यदि pool मात्रा सूख जाती है, तो वापस लें और घुमाएँ।"
+      ],
+      hygiene: [
+        "प्रत्येक LP पोजीशन को ट्रैक करें: खुली तारीख, श्रेणी, जमा राशियाँ, कमाए गए शुल्क, बंद होने पर IL साकार। 5+ पोजीशन के बाद, आप देखेंगे कि कौन सी श्रेणी रणनीति वास्तव में आपकी पूँजी और जोखिम सहिष्णुता के लिए काम करती है।",
+        "Gas बजट ट्रैकिंग: L1 पर श्रेणी समायोजन की लागत $20-200 प्रत्येक। यदि आप 4x/महीना $50 प्रत्येक पर समायोजित करते हैं = $200/महीना। पोजीशन को gas को कवर करने के लिए केवल >$2,400/वर्ष कमाना चाहिए — जिसका अर्थ है L1 पर लागत-प्रभावी होने के लिए $10K न्यूनतम पोजीशन, या L2 पर माइग्रेट करना।"
+      ],
+      validation: [
+        "सेनिटी जाँच: $10K जमा, ±20% श्रेणी ($2,400 ETH के आसपास 2,280-2,880)। दक्षता ≈ 5x। Pool $50M TVL, $500M दैनिक मात्रा, 0.05% शुल्क → सभी तरलता पर दैनिक शुल्क = $250K। आपकी पोजीशन शेयर = $10K × 5 / $50M = 0.1%। दैनिक शुल्क = $250 × 0.1% × 5 = $1.25 in-range। 70% in-range पर वार्षिक = $320 = 3.2% APY (मामूली pool, उच्च प्रतिस्पर्धा)।",
+        "अवधि-पश्चात सत्यापन: एकत्र किए गए वास्तविक शुल्क (पोजीशन UI में दिखाई देते हैं) आपके शेयर × समान अवधि में pool शुल्क × in-range % से मेल खाने चाहिए। यदि वास्तविक अपेक्षित से 30%+ कम है, तो आपकी पोजीशन ने श्रेणी से बाहर महत्वपूर्ण समय बिताया — श्रेणी चौड़ाई की समीक्षा करें और अधिक आक्रामक रूप से rebalance करें।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Концентрированная ликвидность (модель Uniswap V3) размещает ликвидность в ценовом диапазоне, а не на всех ценах (как в V2). Капитальная эффективность умножает заработанные комиссии в 5–50 раз по сравнению с V2 — но только пока цена остаётся в диапазоне. Если цена выходит из диапазона, вы зарабатываете 0 комиссий и держите 100% одного актива (непостоянные потери реализуются).",
+        "Формула капитальной эффективности: efficiency = sqrt(P_upper) / (sqrt(P_upper) − sqrt(P_lower)). Узкий диапазон (±5%) даёт ~20× эффективности; средний (±20%) ~5×; широкий (±50%) ~2×. Дневной доход с комиссий = доля_позиции × объём_пула × тариф_комиссии — умноженный на коэффициент эффективности, пока цена в диапазоне."
+      ],
+      scenarios: [
+        "Узкий диапазон ETH/USDC: депозит $10K, ETH по $2 400, диапазон $2 280–$2 520 (±5%). Капитальная эффективность ~20×. TVL пула $50M, дневной объём $500M, комиссия 0,05%. Дневные комиссии: доля_позиции × $500M × 0,05% = $7,50/день в диапазоне = $2 737/год, если всегда в диапазоне. Реалистично 50–70% времени в диапазоне: $1 368–$1 916/год (14–19% APY).",
+        "Стабильная пара (USDC/USDT): депозит $10K, диапазон 0,999–1,001 (сверхузкий). Эффективность 1000×+. TVL пула $100M, дневной объём $50M, комиссия 0,01%. Доля позиции, усиленная эффективностью: ~$5/день комиссий = $1 825/год (18% APY). Меньше IL, чем у волатильных пар, но он всё же возможен при событиях депега."
+      ],
+      checklist: [
+        "Перед открытием LP-позиции: 1) Сверьте 7-дневную историю APY пула (TVL × объём × комиссия, делённое на размер вашей позиции). 2) Проверьте бэктест IL для предлагаемого диапазона за 30 дней. 3) Учтите газ (корректировки диапазона стоят $20–200 каждая на Ethereum L1; дешевле на L2). 4) Установите правила ребалансировки (когда расширить диапазон или закрыть позицию).",
+        "Правило размера позиции: диапазоны теряют смысл, если у вас <$1K позиция на Ethereum L1 (газ съест комиссии). Минимально прибыльно: $5K–$10K на L1, $500–$1K на Arbitrum/Base/Polygon."
+      ],
+      mistakes: [
+        "Слишком узкий диапазон без мониторинга. Диапазон ±2% для ETH собирает максимум комиссий, но выходит из диапазона за часы нормальной волатильности. Затем вы держите 100% одного актива и IL зафиксирован. Более широкий диапазон (±15–25%) обменивает доходность комиссий на стабильность.",
+        "Игнорирование математики непостоянных потерь. Если ETH вырастает на 50% с $2 400 до $3 600, в вашей позиции ликвидности на 50% меньше ETH (продано покупателям пула) и больше USDC. По сравнению с HODL IL составляет ~5,7%. Заработанные комиссии должны превышать IL для прибыльности. Используйте <a href=\"/impermanent-loss-calculator/\">калькулятор IL</a> для анализа конкретного диапазона."
+      ],
+      benchmarks: [
+        "Типичная доходность V3 LP в 2024–2026: пул ETH/USDC 0,05% — 12–25% APY, ETH/BTC 0,05% — 8–15%, стабильные пары — 5–12%, экзотические пары — 30–100% (высокий риск). IL обычно съедает 30–50% валового дохода от комиссий; чистый APY = валовой APY × (1 − фактор_IL).",
+        "Отношение объёма к TVL (прокси капитальной эффективности): у здоровых пулов V3 дневной объём/TVL составляет 0,3–2,0. Пулы ниже 0,1 мертвы (низкий доход от комиссий). Пулы выше 5,0 могут иметь токсичный поток (арбитражная экстракция, мало времени на корректировку IL)."
+      ],
+      execution: [
+        "Алгоритм открытия позиции: 1) Выберите пул (ETH/USDC самый популярный). 2) Задайте диапазон по ожиданиям волатильности (используйте 30-дневный исторический ценовой диапазон как базу). 3) Рассчитайте необходимые суммы токенов (асимметрично — зависит от текущей цены в диапазоне). 4) Одобрите токены, выпустите позицию-NFT. 5) Мониторьте ежедневно, ребалансируйте еженедельно или при выходе из диапазона.",
+        "Активное управление: используйте инструменты вроде Krystal, DefiLlama Pools или собственные дашборды для отслеживания % времени в диапазоне, заработанных комиссий, текущего IL. Если время в диапазоне падает ниже 50% в течение 3+ дней, расширьте диапазон. Если объём пула иссякает, выводите средства и переключайтесь."
+      ],
+      hygiene: [
+        "Отслеживайте каждую LP-позицию: дата открытия, диапазон, суммы депозита, заработанные комиссии, реализованный IL при закрытии. После 5+ позиций вы увидите, какая стратегия диапазона реально работает для вашего капитала и риск-толерантности.",
+        "Учёт бюджета газа: корректировки диапазона на L1 стоят $20–200 каждая. Если корректируете 4 раза в месяц по $50 = $200/месяц. Позиция должна зарабатывать >$2 400/год только для покрытия газа — то есть минимум $10K на L1 для рентабельности, или миграция на L2."
+      ],
+      validation: [
+        "Проверка здравого смысла: депозит $10K, диапазон ±20% (2 280–2 880 вокруг ETH $2 400). Эффективность ≈ 5×. Пул $50M TVL, $500M дневного объёма, комиссия 0,05% → дневные комиссии на всю ликвидность = $250K. Ваша доля = $10K × 5 / $50M = 0,1%. Дневные комиссии = $250 × 0,1% × 5 = $1,25 в диапазоне. В годовом выражении при 70% в диапазоне = $320 = 3,2% APY (скромный пул, высокая конкуренция).",
+        "Пост-периодная валидация: фактически собранные комиссии (видны в UI позиции) должны соответствовать вашей доле × комиссии пула за тот же период × % времени в диапазоне. Если факт на 30%+ ниже ожидания, ваша позиция значительное время была вне диапазона — пересмотрите ширину диапазона и ребалансируйте агрессивнее."
+      ],
+    },
+  },
+  'looping-yield-calculator': {
+    en: {
+      interpret: [
+        "Looping (recursive lending) amplifies yield by depositing → borrowing → re-depositing in a loop. Each iteration adds leverage. Theoretical max leverage = 1/(1−LTV). At 80% LTV: 1/(1-0.8) = 5x max. At 60% LTV: 2.5x. At 40%: 1.67x. Higher LTV = higher leverage but smaller liquidation buffer.",
+        "Net APR = supply_APY × leverage − borrow_APR × (leverage − 1). At supply 8%, borrow 5%, leverage 4x: net = 32% - 15% = 17% APR. Higher than simple supply (8%) but with significant liquidation risk if collateral drops 25%+ (depending on loan-to-value drift)."
+      ],
+      scenarios: [
+        "Conservative ETH-stETH loop: deposit $10K stETH (4% APY), borrow ETH (3% APR) at 70% LTV, swap to stETH, redeposit. After 2 loops effective leverage ~2.4x. Net APR ≈ 4% × 2.4 - 3% × 1.4 = 9.6% - 4.2% = 5.4%. Modest amplification of stETH yield with manageable de-peg risk.",
+        "Aggressive ETH-USDC loop: deposit $10K ETH (3% supply), borrow USDC (8% borrow) at 75% LTV, swap to ETH, redeposit. 4 loops = 3.5x leverage. Net APR = 3% × 3.5 - 8% × 2.5 = 10.5% - 20% = -9.5% (negative carry!). Loop only profitable when borrow_APR < supply_APY, which is rare for non-correlated assets."
+      ],
+      checklist: [
+        "Before looping: 1) Verify supply APY > borrow APR by comfortable margin (5%+ minimum). 2) Check liquidation LTV vs target LTV — target should be 10-20% below liquidation. 3) Calculate cost of liquidation event (penalty 5-10% of position) vs amplified yield. 4) Test with small $1K loop first to validate the workflow.",
+        "Asset correlation matters most. ETH-stETH loop has tight correlation (rare de-peg events) — safe up to 3x leverage. ETH-USDC loop requires ETH price stability — dangerous above 2x because ETH moves can liquidate before earning enough yield."
+      ],
+      mistakes: [
+        "Looping uncorrelated assets aggressively. Borrowing ETH against BTC collateral at 4x leverage means a 20% BTC drawdown coincident with ETH rise = liquidation. The 'amplified yield' becomes amplified loss in adverse markets.",
+        "Ignoring borrow rate volatility. Aave/Compound rates spike during high utilization (sometimes 30%+ APR briefly). A loop profitable at 5% borrow becomes ruinous at 25% borrow. Set alerts for rate changes and have a deleveraging plan ready."
+      ],
+      benchmarks: [
+        "Typical looping setups (May 2026): stETH-ETH loop 2-3x → 5-8% net APR (low risk), ETH-USDC loop 2x → -5% to +5% APR (rate-dependent), BTC-USDC loop 2x → -3% to +7% APR. Higher leverage requires constant monitoring or automation (DeFi automation tools like DeFi Saver).",
+        "Liquidation distance benchmarks: 4x leverage = liquidation if collateral drops ~22%, 3x = ~30%, 2x = ~45%. ETH 30-day historical max drawdown often 15-25% — 4x leverage on ETH-USDC is statistically borderline."
+      ],
+      execution: [
+        "Recursive workflow: 1) Deposit collateral on Aave/Compound. 2) Borrow at target LTV (e.g., 75% of collateral value). 3) Swap borrowed to more collateral (or same if matching pair). 4) Re-deposit. 5) Repeat 3-5 times for desired leverage. Use protocols with 'one-click leverage' (Instadapp, DeFi Saver) to compress to single transaction.",
+        "Risk management: set health factor alerts (warn at 1.5, deleverage at 1.3, force-exit at 1.1). Maintain 10-20% emergency liquidity in stable wallet to add collateral or repay if liquidation imminent. Never use full LTV cap as target."
+      ],
+      hygiene: [
+        "Daily monitoring required for any leveraged position. Health factor changes with both price and accrued interest. Even at 2x leverage, ignoring for a week during volatility can result in liquidation.",
+        "Tax considerations: each loop iteration may trigger taxable events (swap to different asset). In jurisdictions where wrapped tokens are non-equivalent (US treats stETH ≠ ETH), looping creates tax friction even before yield realization."
+      ],
+      validation: [
+        "Sanity check: deposit $10K, LTV 60%, 3 loops. Each loop adds 60% of previous step. Total collateral = 10000 × (1 + 0.6 + 0.36 + 0.216) = $21,760. Total borrow = 10000 × (0.6 + 0.36 + 0.216) = $11,760. Effective leverage = 21,760 / 10,000 = 2.18x. Health factor = 21760 × 0.85 / 11760 = 1.57 (healthy).",
+        "Post-loop validation: actual leverage = total_collateral_value / equity. Net APR = (collateral × supply_APY - borrow × borrow_APR) / equity. Cross-check with protocol UI which shows effective rate. Discrepancy >5% indicates miscalculation of fees or compounding."
+      ],
+    },
+    es: {
+      interpret: [
+        "El looping (préstamo recursivo) amplifica el rendimiento depositando → pidiendo prestado → re-depositando en un bucle. Cada iteración añade apalancamiento. Apalancamiento máximo teórico = 1/(1−LTV). Con LTV 80%: 1/(1-0.8) = 5x máximo. Con LTV 60%: 2.5x. Con 40%: 1.67x. Mayor LTV = mayor apalancamiento pero menor buffer de liquidación.",
+        "TIR neta = supply_APY × apalancamiento − borrow_APR × (apalancamiento − 1). Con supply 8%, borrow 5%, apalancamiento 4x: neto = 32% - 15% = 17% TIR. Mayor que el supply simple (8%) pero con riesgo significativo de liquidación si el colateral cae 25%+ (dependiendo de la deriva de loan-to-value)."
+      ],
+      scenarios: [
+        "Loop conservador ETH-stETH: deposita $10K stETH (4% APY), pide prestado ETH (3% APR) al 70% LTV, swap a stETH, redeposita. Después de 2 loops apalancamiento efectivo ~2.4x. TIR neta ≈ 4% × 2.4 - 3% × 1.4 = 9.6% - 4.2% = 5.4%. Amplificación modesta del rendimiento de stETH con riesgo manejable de despeg.",
+        "Loop agresivo ETH-USDC: deposita $10K ETH (3% supply), pide prestado USDC (8% borrow) al 75% LTV, swap a ETH, redeposita. 4 loops = 3.5x de apalancamiento. TIR neta = 3% × 3.5 - 8% × 2.5 = 10.5% - 20% = -9.5% (¡carry negativo!). El loop solo es rentable cuando borrow_APR < supply_APY, lo que es raro para activos no correlacionados."
+      ],
+      checklist: [
+        "Antes de hacer loop: 1) Verifica que el supply APY > borrow APR por un margen cómodo (5%+ mínimo). 2) Revisa el LTV de liquidación vs el LTV objetivo: el objetivo debe estar 10-20% por debajo de la liquidación. 3) Calcula el costo de un evento de liquidación (penalidad 5-10% de la posición) vs el rendimiento amplificado. 4) Prueba con un loop pequeño de $1K primero para validar el flujo.",
+        "La correlación entre activos importa más. Un loop ETH-stETH tiene correlación estrecha (eventos de despeg raros): seguro hasta 3x de apalancamiento. Un loop ETH-USDC requiere estabilidad del precio de ETH: peligroso por encima de 2x porque los movimientos de ETH pueden liquidar antes de ganar suficiente rendimiento."
+      ],
+      mistakes: [
+        "Hacer loop de activos no correlacionados de forma agresiva. Pedir prestado ETH contra colateral BTC con 4x de apalancamiento significa que un drawdown del 20% de BTC coincidente con una subida de ETH = liquidación. El 'rendimiento amplificado' se convierte en pérdida amplificada en mercados adversos.",
+        "Ignorar la volatilidad de la tasa de préstamo. Las tasas de Aave/Compound se disparan durante alta utilización (a veces 30%+ APR brevemente). Un loop rentable al 5% de borrow se vuelve ruinoso al 25% de borrow. Configura alertas para cambios de tasa y ten un plan de desapalancamiento listo."
+      ],
+      benchmarks: [
+        "Configuraciones típicas de looping (mayo 2026): loop stETH-ETH 2-3x → 5-8% TIR neta (bajo riesgo), loop ETH-USDC 2x → -5% a +5% TIR (dependiente de la tasa), loop BTC-USDC 2x → -3% a +7% TIR. Mayor apalancamiento requiere monitoreo constante o automatización (herramientas de automatización DeFi como DeFi Saver).",
+        "Referencias de distancia a liquidación: 4x de apalancamiento = liquidación si el colateral cae ~22%, 3x = ~30%, 2x = ~45%. El drawdown máximo histórico de 30 días de ETH a menudo es 15-25%: 4x de apalancamiento en ETH-USDC es estadísticamente al borde."
+      ],
+      execution: [
+        "Flujo recursivo: 1) Deposita colateral en Aave/Compound. 2) Pide prestado al LTV objetivo (ej., 75% del valor del colateral). 3) Swap del prestado a más colateral (o al mismo si es par coincidente). 4) Re-deposita. 5) Repite 3-5 veces para el apalancamiento deseado. Usa protocolos con 'apalancamiento de un clic' (Instadapp, DeFi Saver) para comprimir a una sola transacción.",
+        "Gestión de riesgo: configura alertas de factor de salud (alerta en 1.5, desapalanca en 1.3, salida forzada en 1.1). Mantén 10-20% de liquidez de emergencia en wallet estable para añadir colateral o pagar si la liquidación es inminente. Nunca uses el LTV máximo como objetivo."
+      ],
+      hygiene: [
+        "Monitoreo diario requerido para cualquier posición apalancada. El factor de salud cambia tanto con el precio como con el interés acumulado. Incluso con 2x de apalancamiento, ignorar durante una semana con volatilidad puede resultar en liquidación.",
+        "Consideraciones fiscales: cada iteración de loop puede generar eventos imponibles (swap a otro activo). En jurisdicciones donde los tokens wrappeados no son equivalentes (EE.UU. trata stETH ≠ ETH), el looping crea fricción fiscal incluso antes de realizar el rendimiento."
+      ],
+      validation: [
+        "Verificación de cordura: deposita $10K, LTV 60%, 3 loops. Cada loop añade 60% del paso anterior. Colateral total = 10000 × (1 + 0.6 + 0.36 + 0.216) = $21,760. Préstamo total = 10000 × (0.6 + 0.36 + 0.216) = $11,760. Apalancamiento efectivo = 21,760 / 10,000 = 2.18x. Factor de salud = 21760 × 0.85 / 11760 = 1.57 (saludable).",
+        "Validación post-loop: apalancamiento real = valor_total_colateral / equity. TIR neta = (colateral × supply_APY - préstamo × borrow_APR) / equity. Verifica con la UI del protocolo, que muestra la tasa efectiva. Discrepancia >5% indica un cálculo erróneo de tarifas o de capitalización."
+      ],
+    },
+    pt: {
+      interpret: [
+        "Looping (empréstimo recursivo) amplifica rendimento depositando → emprestando → re-depositando em loop. Cada iteração adiciona alavancagem. Alavancagem máxima teórica = 1/(1−LTV). Em LTV 80%: 1/(1-0,8) = 5x máx. Em LTV 60%: 2,5x. Em 40%: 1,67x. LTV maior = alavancagem maior, mas buffer de liquidação menor.",
+        "APR líquido = APY_supply × alavancagem − APR_borrow × (alavancagem − 1). Com supply 8%, borrow 5%, alavancagem 4x: líquido = 32% - 15% = 17% APR. Maior que supply simples (8%), mas com risco significativo de liquidação se o colateral cair 25%+ (dependendo do drift de loan-to-value)."
+      ],
+      scenarios: [
+        "Loop conservador ETH-stETH: deposite $10K em stETH (4% APY), tome emprestado ETH (3% APR) a 70% LTV, troque por stETH, redeposite. Após 2 loops, alavancagem efetiva ~2,4x. APR líquido ≈ 4% × 2,4 - 3% × 1,4 = 9,6% - 4,2% = 5,4%. Amplificação modesta do rendimento do stETH com risco gerenciável de de-peg.",
+        "Loop agressivo ETH-USDC: deposite $10K em ETH (3% supply), tome USDC emprestado (8% borrow) a 75% LTV, troque por ETH, redeposite. 4 loops = alavancagem 3,5x. APR líquido = 3% × 3,5 - 8% × 2,5 = 10,5% - 20% = -9,5% (carry negativo!). Loop só é lucrativo quando APR_borrow < APY_supply, o que é raro para ativos não correlacionados."
+      ],
+      checklist: [
+        "Antes de fazer loop: 1) Verifique se APY de supply > APR de borrow por margem confortável (5%+ mínimo). 2) Confira LTV de liquidação vs LTV alvo — alvo deve estar 10-20% abaixo da liquidação. 3) Calcule custo de evento de liquidação (penalidade 5-10% da posição) vs rendimento amplificado. 4) Teste com loop pequeno de $1K primeiro para validar o fluxo.",
+        "Correlação de ativos importa mais. Loop ETH-stETH tem correlação apertada (eventos raros de de-peg) — seguro até 3x de alavancagem. Loop ETH-USDC exige estabilidade do preço do ETH — perigoso acima de 2x porque movimentos de ETH podem liquidar antes de ganhar rendimento suficiente."
+      ],
+      mistakes: [
+        "Fazer loop de ativos não correlacionados agressivamente. Emprestar ETH contra colateral BTC com 4x de alavancagem significa que um drawdown de 20% no BTC coincidente com alta do ETH = liquidação. O 'rendimento amplificado' se torna perda amplificada em mercados adversos.",
+        "Ignorar volatilidade da taxa de borrow. Taxas na Aave/Compound disparam durante alta utilização (às vezes 30%+ APR brevemente). Um loop lucrativo a 5% de borrow se torna ruinoso a 25% de borrow. Defina alertas para mudanças de taxa e tenha um plano de desalavancagem pronto."
+      ],
+      benchmarks: [
+        "Setups típicos de looping (maio 2026): loop stETH-ETH 2-3x → 5-8% APR líquido (baixo risco), loop ETH-USDC 2x → -5% a +5% APR (dependente de taxa), loop BTC-USDC 2x → -3% a +7% APR. Alavancagem mais alta exige monitoramento constante ou automação (ferramentas de automação DeFi como DeFi Saver).",
+        "Benchmarks de distância de liquidação: 4x de alavancagem = liquidação se colateral cair ~22%, 3x = ~30%, 2x = ~45%. Drawdown máximo histórico de 30 dias do ETH frequentemente 15-25% — 4x em ETH-USDC é estatisticamente limítrofe."
+      ],
+      execution: [
+        "Fluxo recursivo: 1) Deposite colateral na Aave/Compound. 2) Tome emprestado no LTV alvo (ex.: 75% do valor do colateral). 3) Troque o emprestado por mais colateral (ou mesmo se for par correspondente). 4) Re-deposite. 5) Repita 3-5 vezes para alavancagem desejada. Use protocolos com 'alavancagem de um clique' (Instadapp, DeFi Saver) para comprimir em transação única.",
+        "Gestão de risco: defina alertas de fator de saúde (alerte em 1,5, desalavanque em 1,3, force-exit em 1,1). Mantenha 10-20% de liquidez de emergência em carteira estável para adicionar colateral ou pagar se liquidação iminente. Nunca use o teto de LTV como alvo."
+      ],
+      hygiene: [
+        "Monitoramento diário necessário para qualquer posição alavancada. O fator de saúde muda com preço e juros acumulados. Mesmo em 2x de alavancagem, ignorar por uma semana durante volatilidade pode resultar em liquidação.",
+        "Considerações fiscais: cada iteração de loop pode disparar eventos tributáveis (troca para ativo diferente). Em jurisdições onde tokens wrapped não são equivalentes (EUA tratam stETH ≠ ETH), looping cria atrito fiscal antes mesmo da realização de rendimento."
+      ],
+      validation: [
+        "Verificação de sanidade: depósito $10K, LTV 60%, 3 loops. Cada loop adiciona 60% do passo anterior. Colateral total = 10000 × (1 + 0,6 + 0,36 + 0,216) = $21.760. Empréstimo total = 10000 × (0,6 + 0,36 + 0,216) = $11.760. Alavancagem efetiva = 21.760 / 10.000 = 2,18x. Fator de saúde = 21760 × 0,85 / 11760 = 1,57 (saudável).",
+        "Validação pós-loop: alavancagem real = valor_total_colateral / patrimônio. APR líquido = (colateral × APY_supply - empréstimo × APR_borrow) / patrimônio. Cruze com a UI do protocolo, que mostra a taxa efetiva. Discrepância >5% indica cálculo errado de taxas ou capitalização."
+      ],
+    },
+    tr: {
+      interpret: [
+        "Looping (yinelemeli ödünç verme), yatır → ödünç al → yeniden yatır döngüsünde yatırarak getiriyi artırır. Her yineleme kaldıraç ekler. Teorik maks kaldıraç = 1/(1−LTV). %80 LTV'de: 1/(1-0,8) = 5x maks. %60 LTV'de: 2,5x. %40'ta: 1,67x. Daha yüksek LTV = daha yüksek kaldıraç ancak daha küçük likidasyon tamponu.",
+        "Net APR = arz_APY × kaldıraç − borçlanma_APR × (kaldıraç − 1). %8 arz, %5 borçlanma, 4x kaldıraçta: net = %32 - %15 = %17 APR. Basit arzdan (%8) daha yüksek ancak teminat %25+ düşerse (kredi-değer kaymasına bağlı olarak) önemli likidasyon riski ile."
+      ],
+      scenarios: [
+        "Tutucu ETH-stETH döngüsü: 10.000 dolar stETH yatır (%4 APY), %70 LTV'de ETH ödünç al (%3 APR), stETH'e takas et, yeniden yatır. 2 döngüden sonra etkin kaldıraç ~2,4x. Net APR ≈ %4 × 2,4 - %3 × 1,4 = %9,6 - %4,2 = %5,4. Yönetilebilir de-peg riski ile stETH getirisinin mütevazı amplifikasyonu.",
+        "Agresif ETH-USDC döngüsü: 10.000 dolar ETH yatır (%3 arz), %75 LTV'de USDC ödünç al (%8 borçlanma), ETH'e takas et, yeniden yatır. 4 döngü = 3,5x kaldıraç. Net APR = %3 × 3,5 - %8 × 2,5 = %10,5 - %20 = -%9,5 (negatif taşıma!). Döngü yalnızca borçlanma_APR < arz_APY olduğunda kârlıdır, bu da ilişkisiz varlıklar için nadirdir."
+      ],
+      checklist: [
+        "Looping yapmadan önce: 1) Arz APY > borçlanma APR'nin rahat bir marjla (minimum %5+) olduğunu doğrulayın. 2) Likidasyon LTV'sini hedef LTV'ye göre kontrol edin — hedef, likidasyonun %10-20 altında olmalıdır. 3) Likidasyon olayının maliyetini (pozisyonun %5-10 cezası) artırılmış getiriye karşı hesaplayın. 4) İş akışını doğrulamak için önce küçük 1.000 dolarlık döngüyle test edin.",
+        "Varlık korelasyonu en önemlidir. ETH-stETH döngüsü sıkı korelasyona sahiptir (nadir de-peg olayları) — 3x kaldıraca kadar güvenlidir. ETH-USDC döngüsü ETH fiyat istikrarı gerektirir — 2x üzerinde tehlikelidir çünkü ETH hareketleri yeterli getiri kazanmadan önce likide edebilir."
+      ],
+      mistakes: [
+        "İlişkisiz varlıkları agresif şekilde looping yapmak. 4x kaldıraçta BTC teminatına karşı ETH ödünç almak, ETH yükselişiyle aynı zamanda %20 BTC düşüşü = likidasyon anlamına gelir. 'Artırılmış getiri' ters piyasalarda artırılmış kayıp haline gelir.",
+        "Borçlanma oranı volatilitesini görmezden gelmek. Aave/Compound oranları yüksek kullanım sırasında sıçrar (bazen kısa süreliğine %30+ APR). %5 borçlanmada kârlı bir döngü %25 borçlanmada yıkıcı hale gelir. Oran değişiklikleri için uyarılar ayarlayın ve hazır bir kaldıraç azaltma planınız olsun."
+      ],
+      benchmarks: [
+        "Tipik looping kurulumları (Mayıs 2026): stETH-ETH döngüsü 2-3x → %5-8 net APR (düşük risk), ETH-USDC döngüsü 2x → -%5 ila +%5 APR (orana bağlı), BTC-USDC döngüsü 2x → -%3 ila +%7 APR. Daha yüksek kaldıraç sürekli izleme veya otomasyon (DeFi Saver gibi DeFi otomasyon araçları) gerektirir.",
+        "Likidasyon mesafesi kıyaslamaları: 4x kaldıraç = teminat ~%22 düşerse likidasyon, 3x = ~%30, 2x = ~%45. ETH 30 günlük tarihsel maks drawdown genellikle %15-25'tir — ETH-USDC üzerinde 4x kaldıraç istatistiksel olarak sınırdadır."
+      ],
+      execution: [
+        "Yinelemeli iş akışı: 1) Aave/Compound'a teminat yatırın. 2) Hedef LTV'de ödünç alın (örn., teminat değerinin %75'i). 3) Ödünç alınanı daha fazla teminata (veya eşleşen çiftse aynısına) takas edin. 4) Yeniden yatırın. 5) İstenen kaldıraç için 3-5 kez tekrarlayın. Tek işleme sıkıştırmak için 'tek tıkla kaldıraç' (Instadapp, DeFi Saver) içeren protokoller kullanın.",
+        "Risk yönetimi: sağlık faktörü uyarıları ayarlayın (1,5'te uyar, 1,3'te kaldıraç azalt, 1,1'de zorla çık). Likidasyon yakınsa teminat eklemek veya geri ödemek için stabil cüzdanda %10-20 acil durum likiditesi koruyun. Asla tam LTV tavanını hedef olarak kullanmayın."
+      ],
+      hygiene: [
+        "Herhangi bir kaldıraçlı pozisyon için günlük izleme gereklidir. Sağlık faktörü hem fiyat hem de tahakkuk eden faizle değişir. 2x kaldıraçta bile, volatilite sırasında bir hafta görmezden gelmek likidasyonla sonuçlanabilir.",
+        "Vergi değerlendirmeleri: her döngü yinelemesi vergiye tabi olaylar tetikleyebilir (farklı varlığa takas). Sarılmış tokenların eşdeğer olmadığı yargı bölgelerinde (ABD stETH'i ≠ ETH olarak değerlendirir), looping getiri gerçekleşmesinden önce bile vergi sürtünmesi yaratır."
+      ],
+      validation: [
+        "Mantık kontrolü: 10.000 dolar yatır, LTV %60, 3 döngü. Her döngü öncekinin %60'ını ekler. Toplam teminat = 10000 × (1 + 0,6 + 0,36 + 0,216) = 21.760 dolar. Toplam borçlanma = 10000 × (0,6 + 0,36 + 0,216) = 11.760 dolar. Etkin kaldıraç = 21.760 / 10.000 = 2,18x. Sağlık faktörü = 21760 × 0,85 / 11760 = 1,57 (sağlıklı).",
+        "Döngü sonrası doğrulama: gerçek kaldıraç = toplam_teminat_değeri / özsermaye. Net APR = (teminat × arz_APY - borçlanma × borçlanma_APR) / özsermaye. Etkin oranı gösteren protokol UI ile çapraz kontrol edin. >%5 tutarsızlık ücretlerin veya bileşikleştirmenin yanlış hesaplandığını gösterir."
+      ],
+    },
+    hi: {
+      interpret: [
+        "Looping (recursive lending) एक loop में जमा करके → उधार लेकर → फिर से जमा करके yield को बढ़ाता है। प्रत्येक iteration लीवरेज जोड़ता है। सैद्धांतिक अधिकतम लीवरेज = 1/(1−LTV)। 80% LTV पर: 1/(1-0.8) = 5x max। 60% LTV पर: 2.5x। 40% पर: 1.67x। उच्च LTV = उच्च लीवरेज लेकिन छोटा liquidation buffer।",
+        "शुद्ध APR = supply_APY × leverage − borrow_APR × (leverage − 1)। supply 8%, borrow 5%, leverage 4x पर: शुद्ध = 32% - 15% = 17% APR। साधारण supply (8%) से अधिक लेकिन यदि collateral 25%+ गिरता है तो महत्वपूर्ण liquidation जोखिम के साथ (loan-to-value drift पर निर्भर करता है)।"
+      ],
+      scenarios: [
+        "रूढ़िवादी ETH-stETH loop: $10K stETH (4% APY) जमा करें, 70% LTV पर ETH (3% APR) उधार लें, stETH में swap करें, फिर से जमा करें। 2 loops के बाद प्रभावी लीवरेज ~2.4x। शुद्ध APR ≈ 4% × 2.4 - 3% × 1.4 = 9.6% - 4.2% = 5.4%। प्रबंधनीय de-peg जोखिम के साथ stETH yield का मामूली प्रवर्धन।",
+        "आक्रामक ETH-USDC loop: $10K ETH (3% supply) जमा करें, 75% LTV पर USDC (8% borrow) उधार लें, ETH में swap करें, फिर से जमा करें। 4 loops = 3.5x लीवरेज। शुद्ध APR = 3% × 3.5 - 8% × 2.5 = 10.5% - 20% = -9.5% (नकारात्मक carry!)। Loop केवल तभी लाभदायक होता है जब borrow_APR < supply_APY, जो गैर-सहसंबद्ध एसेट्स के लिए दुर्लभ है।"
+      ],
+      checklist: [
+        "Looping से पहले: 1) सत्यापित करें कि supply APY > borrow APR आरामदायक मार्जिन (5%+ न्यूनतम) से। 2) liquidation LTV बनाम लक्ष्य LTV जाँचें — लक्ष्य liquidation से 10-20% नीचे होना चाहिए। 3) liquidation घटना की लागत (पोजीशन का 5-10% जुर्माना) बनाम प्रवर्धित yield की गणना करें। 4) कार्यप्रवाह को मान्य करने के लिए पहले छोटे $1K loop के साथ परीक्षण करें।",
+        "एसेट सहसंबंध सबसे अधिक मायने रखता है। ETH-stETH loop में तंग सहसंबंध है (दुर्लभ de-peg घटनाएँ) — 3x लीवरेज तक सुरक्षित। ETH-USDC loop को ETH कीमत स्थिरता की आवश्यकता है — 2x से ऊपर खतरनाक क्योंकि ETH चालें पर्याप्त yield कमाने से पहले liquidate कर सकती हैं।"
+      ],
+      mistakes: [
+        "असहसंबद्ध एसेट्स को आक्रामक रूप से loop करना। 4x लीवरेज पर BTC collateral के विरुद्ध ETH उधार लेने का मतलब ETH उदय के साथ संयोग वाला 20% BTC drawdown = liquidation। 'प्रवर्धित yield' प्रतिकूल बाज़ारों में प्रवर्धित नुकसान बन जाता है।",
+        "Borrow दर अस्थिरता की अनदेखी करना। Aave/Compound दरें उच्च उपयोग के दौरान spike करती हैं (कभी-कभी 30%+ APR संक्षेप में)। 5% borrow पर लाभदायक loop 25% borrow पर विनाशकारी हो जाता है। दर परिवर्तनों के लिए alerts सेट करें और एक deleveraging योजना तैयार रखें।"
+      ],
+      benchmarks: [
+        "विशिष्ट looping सेटअप (मई 2026): stETH-ETH loop 2-3x → 5-8% शुद्ध APR (कम जोखिम), ETH-USDC loop 2x → -5% से +5% APR (दर-निर्भर), BTC-USDC loop 2x → -3% से +7% APR। उच्च लीवरेज को निरंतर निगरानी या स्वचालन की आवश्यकता होती है (DeFi Saver जैसे DeFi स्वचालन उपकरण)।",
+        "Liquidation दूरी बेंचमार्क: 4x लीवरेज = यदि collateral ~22% गिरता है तो liquidation, 3x = ~30%, 2x = ~45%। ETH 30-दिवसीय ऐतिहासिक अधिकतम drawdown अक्सर 15-25% — ETH-USDC पर 4x लीवरेज सांख्यिकीय रूप से सीमारेखा है।"
+      ],
+      execution: [
+        "Recursive कार्यप्रवाह: 1) Aave/Compound पर collateral जमा करें। 2) लक्ष्य LTV पर उधार लें (जैसे, collateral मान का 75%)। 3) उधार लिए गए को अधिक collateral में swap करें (या यदि जोड़ी मेल खाती है तो वही)। 4) फिर से जमा करें। 5) वांछित लीवरेज के लिए 3-5 बार दोहराएँ। एकल लेनदेन में संपीड़ित करने के लिए 'one-click leverage' (Instadapp, DeFi Saver) वाले प्रोटोकॉल का उपयोग करें।",
+        "जोखिम प्रबंधन: health factor alerts सेट करें (1.5 पर चेतावनी, 1.3 पर deleverage, 1.1 पर force-exit)। collateral जोड़ने या यदि liquidation आसन्न हो तो चुकाने के लिए stable wallet में 10-20% आपातकालीन तरलता बनाए रखें। लक्ष्य के रूप में पूर्ण LTV cap का कभी उपयोग न करें।"
+      ],
+      hygiene: [
+        "किसी भी leveraged पोजीशन के लिए दैनिक निगरानी आवश्यक है। Health factor कीमत और अर्जित ब्याज दोनों के साथ बदलता है। 2x लीवरेज पर भी, अस्थिरता के दौरान एक सप्ताह की उपेक्षा करना liquidation का कारण बन सकता है।",
+        "कर विचार: प्रत्येक loop iteration कर योग्य घटनाओं को ट्रिगर कर सकता है (विभिन्न एसेट में swap)। अधिकार क्षेत्रों में जहाँ wrapped tokens गैर-समकक्ष हैं (US stETH ≠ ETH मानता है), looping yield साकारीकरण से पहले भी कर घर्षण पैदा करता है।"
+      ],
+      validation: [
+        "सेनिटी जाँच: $10K जमा करें, LTV 60%, 3 loops। प्रत्येक loop पिछले चरण का 60% जोड़ता है। कुल collateral = 10000 × (1 + 0.6 + 0.36 + 0.216) = $21,760। कुल borrow = 10000 × (0.6 + 0.36 + 0.216) = $11,760। प्रभावी लीवरेज = 21,760 / 10,000 = 2.18x। Health factor = 21760 × 0.85 / 11760 = 1.57 (स्वस्थ)।",
+        "Post-loop सत्यापन: वास्तविक लीवरेज = total_collateral_value / equity। शुद्ध APR = (collateral × supply_APY - borrow × borrow_APR) / equity। प्रोटोकॉल UI के साथ क्रॉस-चेक करें जो प्रभावी दर दिखाता है। >5% विसंगति शुल्क या चक्रवृद्धि की गलत गणना का संकेत देती है।"
+      ],
+    },
+    ru: {
+      interpret: [
+        "Лупинг (рекурсивное кредитование) усиливает доходность через цикл: депозит → займ → реденозит. Каждая итерация добавляет плечо. Теоретическое максимальное плечо = 1/(1−LTV). При LTV 80%: 1/(1−0,8) = 5× максимум. При LTV 60%: 2,5×. При 40%: 1,67×. Выше LTV — больше плечо, но меньше буфер до ликвидации.",
+        "Чистый APR = supply_APY × leverage − borrow_APR × (leverage − 1). При supply 8%, borrow 5%, плече 4×: чистый = 32% − 15% = 17% APR. Выше, чем простой supply (8%), но со значительным риском ликвидации, если залог упадёт на 25%+ (в зависимости от дрейфа LTV)."
+      ],
+      scenarios: [
+        "Консервативный луп ETH-stETH: депозит $10K stETH (4% APY), займ ETH (3% APR) при LTV 70%, своп в stETH, реденозит. После 2 циклов эффективное плечо ~2,4×. Чистый APR ≈ 4% × 2,4 − 3% × 1,4 = 9,6% − 4,2% = 5,4%. Скромное усиление доходности stETH с управляемым риском депега.",
+        "Агрессивный луп ETH-USDC: депозит $10K ETH (3% supply), займ USDC (8% borrow) при LTV 75%, своп в ETH, реденозит. 4 цикла = плечо 3,5×. Чистый APR = 3% × 3,5 − 8% × 2,5 = 10,5% − 20% = −9,5% (отрицательный кэрри!). Луп прибылен только когда borrow_APR < supply_APY, что редко для некоррелированных активов."
+      ],
+      checklist: [
+        "Перед лупингом: 1) Проверьте, что supply APY > borrow APR с комфортным запасом (минимум 5%+). 2) Сравните LTV ликвидации с целевым — целевой должен быть на 10–20% ниже ликвидационного. 3) Рассчитайте стоимость события ликвидации (штраф 5–10% позиции) против усиленной доходности. 4) Сначала протестируйте малым лупом на $1K для проверки рабочего процесса.",
+        "Корреляция активов важнее всего. Луп ETH-stETH имеет высокую корреляцию (редкие события депега) — безопасен до плеча 3×. Луп ETH-USDC требует стабильности цены ETH — опасен выше 2×, потому что движения ETH могут ликвидировать до накопления достаточной доходности."
+      ],
+      mistakes: [
+        "Агрессивный лупинг некоррелированных активов. Заём ETH под залог BTC с плечом 4× означает, что просадка BTC на 20% одновременно с ростом ETH = ликвидация. «Усиленная доходность» становится усиленной потерей в неблагоприятных рынках.",
+        "Игнорирование волатильности ставки заимствования. Ставки Aave/Compound резко скачут при высокой утилизации (иногда 30%+ APR кратковременно). Луп, прибыльный при 5% borrow, становится разрушительным при 25% borrow. Настройте оповещения об изменениях ставки и держите готовый план деливериджа."
+      ],
+      benchmarks: [
+        "Типичные конфигурации лупинга (май 2026): луп stETH-ETH 2–3× → 5–8% чистого APR (низкий риск), луп ETH-USDC 2× → от −5% до +5% APR (зависит от ставок), луп BTC-USDC 2× → от −3% до +7% APR. Более высокое плечо требует постоянного мониторинга или автоматизации (инструменты автоматизации DeFi вроде DeFi Saver).",
+        "Ориентиры по дистанции до ликвидации: плечо 4× = ликвидация при падении залога ~22%, 3× = ~30%, 2× = ~45%. 30-дневная максимальная историческая просадка ETH часто 15–25% — плечо 4× в ETH-USDC статистически на грани."
+      ],
+      execution: [
+        "Рекурсивный рабочий процесс: 1) Внесите залог в Aave/Compound. 2) Возьмите займ при целевом LTV (например, 75% стоимости залога). 3) Свопните заёмное в больший залог (или в тот же актив при совпадении пары). 4) Реденозит. 5) Повторите 3–5 раз для желаемого плеча. Используйте протоколы с «лупингом в один клик» (Instadapp, DeFi Saver), чтобы сжать всё в одну транзакцию.",
+        "Управление риском: настройте оповещения health factor (предупреждение при 1,5, деливеридж при 1,3, принудительный выход при 1,1). Держите 10–20% экстренной ликвидности в стейбл-кошельке, чтобы добавить залог или погасить займ при приближении ликвидации. Никогда не используйте максимум LTV как цель."
+      ],
+      hygiene: [
+        "Ежедневный мониторинг обязателен для любой позиции с плечом. Health factor меняется и с ценой, и с начисленными процентами. Даже при плече 2× игнорирование в течение недели на волатильном рынке может привести к ликвидации.",
+        "Налоговые соображения: каждая итерация лупа может создать налогооблагаемое событие (своп в другой актив). В юрисдикциях, где обёрнутые токены не эквивалентны (США трактуют stETH ≠ ETH), лупинг создаёт налоговое трение ещё до реализации доходности."
+      ],
+      validation: [
+        "Проверка здравого смысла: депозит $10K, LTV 60%, 3 цикла. Каждый цикл добавляет 60% от предыдущего шага. Итого залог = 10 000 × (1 + 0,6 + 0,36 + 0,216) = $21 760. Итого займ = 10 000 × (0,6 + 0,36 + 0,216) = $11 760. Эффективное плечо = 21 760 / 10 000 = 2,18×. Health factor = 21 760 × 0,85 / 11 760 = 1,57 (здоровый).",
+        "Пост-луп валидация: фактическое плечо = общая_стоимость_залога / собственный_капитал. Чистый APR = (залог × supply_APY − займ × borrow_APR) / собственный_капитал. Сверьтесь с UI протокола, который показывает эффективную ставку. Расхождение >5% указывает на просчёт комиссий или компаундирования."
+      ],
+    },
+  },
 };
