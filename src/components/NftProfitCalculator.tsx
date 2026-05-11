@@ -186,7 +186,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Buy Price */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Buy Price')}</label>
+                        <label htmlFor="nft-buy-price"><DollarSign size={14} /> {getUiString(lang, 'Buy Price')}</label>
                         <div className="pills-row">
                             {BUY_PRICE_PILLS.map((value) => (
                                 <button
@@ -214,7 +214,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Sell Price */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Sell Price')}</label>
+                        <label htmlFor="nft-sell-price"><DollarSign size={14} /> {getUiString(lang, 'Sell Price')}</label>
                         <div className="pills-row">
                             {SELL_PRICE_PILLS.map((value) => (
                                 <button
@@ -258,7 +258,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Marketplace Fee */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="nft-mp-fee">
                             <Percent size={14} /> {getUiString(lang, 'Marketplace Fee')} (%)
                             {marketplace !== 'custom' && (
                                 <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
@@ -294,7 +294,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Creator Royalty */}
                     <div className="input-group">
-                        <label><Percent size={14} /> {getUiString(lang, 'Creator Royalty')} (%)</label>
+                        <label htmlFor="nft-royalty"><Percent size={14} /> {getUiString(lang, 'Creator Royalty')} (%)</label>
                         <div className="pills-row">
                             {ROYALTY_PILLS.map((value) => (
                                 <button
@@ -323,7 +323,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Gas Cost: Buy */}
                     <div className="input-group">
-                        <label><Fuel size={14} /> {getUiString(lang, 'Gas Cost')}: {getUiString(lang, 'Buy')} ($)</label>
+                        <label htmlFor="nft-gas-buy"><Fuel size={14} /> {getUiString(lang, 'Gas Cost')}: {getUiString(lang, 'Buy')} ($)</label>
                         <div className="pills-row">
                             {GAS_COST_PILLS.map((value) => (
                                 <button
@@ -351,7 +351,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Gas Cost: Sell */}
                     <div className="input-group">
-                        <label><Fuel size={14} /> {getUiString(lang, 'Gas Cost')}: {getUiString(lang, 'Sell')} ($)</label>
+                        <label htmlFor="nft-gas-sell"><Fuel size={14} /> {getUiString(lang, 'Gas Cost')}: {getUiString(lang, 'Sell')} ($)</label>
                         <div className="pills-row">
                             {GAS_COST_PILLS.map((value) => (
                                 <button
@@ -379,7 +379,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* ETH Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="nft-eth-price">
                             <DollarSign size={14} /> {getUiString(lang, 'ETH Price')} ($)
                             <span className="label-hint">{getUiString(lang, 'Auto-fetched')}</span>
                         </label>

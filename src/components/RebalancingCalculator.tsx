@@ -194,7 +194,7 @@ function RebalancingCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label><PieChart size={14} /> {getUiString(lang, 'Portfolio Assets')}</label>
+            <label htmlFor="rebalance-extra"><PieChart size={14} /> {getUiString(lang, 'Portfolio Assets')}</label>
             <div className="rebal-asset-head">
               <span>{getUiString(lang, 'Asset')}</span>
               <span>{getUiString(lang, 'Current $')}</span>

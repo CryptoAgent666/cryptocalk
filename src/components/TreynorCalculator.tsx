@@ -111,7 +111,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Portfolio Value (USD)')}</label>
+            <label htmlFor="treynor-value">{getUiString(lang, 'Portfolio Value (USD)')}</label>
             <div className="pills-row">
               {PORTFOLIO_VALUE_PRESETS.map((preset) => (
                 <button
@@ -136,7 +136,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Expected Annual Return (%)')}</label>
+            <label htmlFor="treynor-return">{getUiString(lang, 'Expected Annual Return (%)')}</label>
             <div className="pills-row">
               {EXPECTED_RETURN_PRESETS.map((preset) => (
                 <button
@@ -160,7 +160,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Risk-Free Rate (%)')}</label>
+            <label htmlFor="treynor-rf">{getUiString(lang, 'Risk-Free Rate (%)')}</label>
             <div className="pills-row">
               {RISK_FREE_PRESETS.map((preset) => (
                 <button
@@ -184,7 +184,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Portfolio Beta')}</label>
+            <label htmlFor="treynor-beta">{getUiString(lang, 'Portfolio Beta')}</label>
             <div className="pills-row">
               {BETA_PRESETS.map((preset) => (
                 <button
@@ -207,7 +207,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Projection Horizon (years)')}</label>
+            <label htmlFor="treynor-years">{getUiString(lang, 'Projection Horizon (years)')}</label>
             <div className="pills-row">
               {HORIZON_YEAR_PRESETS.map((preset) => (
                 <button

@@ -256,7 +256,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={dropdownRef}>
-                        <label>
+                        <label htmlFor="airdrop-coin-search">
                             <Search size={14} />
                             {getUiString(lang, 'Airdrop Token')}
                             <span className="label-hint">{getUiString(lang, 'Search or enter manually')}</span>
@@ -297,7 +297,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Token Amount */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="airdrop-amount">
                             <Coins size={14} />
                             {getUiString(lang, 'Tokens Received')}
                         </label>
@@ -327,7 +327,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Price at Receipt */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="airdrop-receipt-price">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Price at Receipt ($)')}
                             <span className="label-hint">{getUiString(lang, 'When you received the airdrop')}</span>
@@ -358,7 +358,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Current Token Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="airdrop-current-price">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Current Token Price ($)')}
                             <span className="label-hint">{getUiString(lang, 'Auto-filled if coin selected')}</span>
@@ -411,7 +411,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Sell Price (conditional) */}
                     {sold && (
                         <div className="input-group">
-                            <label>
+                            <label htmlFor="airdrop-sell-price">
                                 <DollarSign size={14} />
                                 {getUiString(lang, 'Sell Price ($)')}
                             </label>

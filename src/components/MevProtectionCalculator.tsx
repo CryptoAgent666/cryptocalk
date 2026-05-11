@@ -98,7 +98,7 @@ function MevProtectionCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Swap Amount')}</label>
+            <label htmlFor="mev-amount">{getUiString(lang, 'Swap Amount')}</label>
             <div className="pills-row">
               {SWAP_AMOUNT_PRESETS.map((preset) => (
                 <button
@@ -113,7 +113,7 @@ function MevProtectionCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="input-with-prefix"><input type="number" inputMode="decimal" value={swapAmount} onChange={(e) => setSwapAmount(e.target.value)} min="0" step="any" id="mev-amount" onFocus={(e) => e.target.select()} /></div>
           </div>
           <div className="input-group">
-            <label>{getUiString(lang, 'Slippage Tolerance (%)')}</label>
+            <label htmlFor="mev-slippage">{getUiString(lang, 'Slippage Tolerance (%)')}</label>
             <div className="pills-row">
               {SLIPPAGE_PRESETS.map((preset) => (
                 <button

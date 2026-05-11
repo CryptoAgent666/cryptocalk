@@ -56,11 +56,11 @@ const exploreLinks = [
         </div>
         <div class="footer-links">
             <div class="footer-col">
-                <h4>{t.footerCoreCalculators}</h4>
+                <h3>{t.footerCoreCalculators}</h3>
                 {coreLinks.map((link) => <a href={link.href}>{link.name}</a>)}
             </div>
             <div class="footer-col">
-                <h4>{t.footerExplore}</h4>
+                <h3>{t.footerExplore}</h3>
                 {
                     exploreLinks.map((link) => (
                         <a href={link.href}>{link.name}</a>
@@ -68,7 +68,7 @@ const exploreLinks = [
                 }
             </div>
             <div class="footer-col">
-                <h4>{t.footerTrustLegal}</h4>
+                <h3>{t.footerTrustLegal}</h3>
                 <a href={localPath('/about')}>{t.footerAboutUs}</a>
                 <a href={localPath('/contact')}>{t.footerContactUs}</a>
                 <a href={localPath('/privacy')}>{t.privacyPolicy}</a>
@@ -189,7 +189,7 @@ const exploreLinks = [
         min-width: 140px;
     }
 
-    .footer-col h4 {
+    .footer-col h3 {
         font-size: 0.75rem;
         font-weight: 700;
         text-transform: uppercase;

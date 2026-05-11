@@ -253,7 +253,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Starting Capital */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="hodl-capital">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Starting Capital')}
                         </label>
@@ -300,7 +300,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Price Change */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="hodl-price-change">
                             <Percent size={14} />
                             {getUiString(lang, 'Price Change (%)')}
                         </label>
@@ -346,7 +346,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Win Rate */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="hodl-win-rate">
                             <BarChart3 size={14} />
                             {getUiString(lang, 'Win Rate (%)')}
                         </label>
@@ -377,7 +377,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Average Profit per Trade */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="hodl-avg-profit">
                             <TrendingUp size={14} />
                             {getUiString(lang, 'Avg Profit per Trade (%)')}
                         </label>
@@ -407,7 +407,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Average Loss per Trade */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="hodl-avg-loss">
                             <TrendingDown size={14} />
                             {getUiString(lang, 'Avg Loss per Trade (%)')}
                         </label>
@@ -437,7 +437,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Number of Trades per Month */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="hodl-trades-month">
                             <Repeat size={14} />
                             {getUiString(lang, 'Trades per Month')}
                         </label>
@@ -467,7 +467,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Trading Period */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="hodl-period">
                             <Calendar size={14} />
                             {getUiString(lang, 'Trading Period (months)')}
                         </label>
@@ -497,7 +497,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Trading Fee per Trade */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="hodl-fee">
                             <Percent size={14} />
                             {getUiString(lang, 'Trading Fee per Trade (%)')}
                         </label>

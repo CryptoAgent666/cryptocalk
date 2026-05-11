@@ -229,7 +229,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Number of Devices */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="num-devices-input">
                             <Cpu size={14} />
                             {getUiString(lang, 'Number of Devices')}
                         </label>
@@ -259,7 +259,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Power per Device */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="power-per-device-input">
                             <Zap size={14} />
                             {getUiString(lang, 'Power per Device (W)')}
                         </label>
@@ -290,7 +290,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Electricity Rate */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="electricity-rate-input">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Electricity Rate ($/kWh)')}
                         </label>
@@ -320,7 +320,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Uptime */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="uptime-input">
                             <Clock size={14} />
                             {getUiString(lang, 'Uptime (hours/day)')}
                         </label>
@@ -352,7 +352,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Monthly Mining Revenue */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="monthly-revenue-input">
                             <TrendingUp size={14} />
                             {getUiString(lang, 'Monthly Mining Revenue ($)')}
                             <span className="label-hint">{getUiString(lang, 'Optional, for profitability analysis')}</span>

@@ -298,7 +298,7 @@ function MarketCapComparator({ lang = 'en' }: { lang?: string }) {
                 <div className="calc-input-panel">
                     {/* Target Coin (A) Search */}
                     <div className="input-group" ref={targetSuggestionsRef}>
-                        <label>
+                        <label htmlFor="mcc-target-search">
                             <Search size={14} />
                             {getUiString(lang, 'Target Token (A)')}
                         </label>
@@ -360,7 +360,7 @@ function MarketCapComparator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Reference Coin (B) Search */}
                     <div className="input-group" ref={refSuggestionsRef}>
-                        <label>
+                        <label htmlFor="mcc-ref-search">
                             <Search size={14} />
                             {getUiString(lang, 'Reference Token (B)')}
                         </label>

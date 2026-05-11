@@ -17,7 +17,7 @@ const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated, 
 
 <main id="main-content" class="category-main">
   <section class="category-hero">
-    <div class="hero-breadcrumbs" aria-label="Breadcrumb">
+    <nav class="hero-breadcrumbs" aria-label="Breadcrumb">
       <a href={homeHref} class="crumb-link">
         <Home size={14} />
         <span>{ui.backToHome}</span>
@@ -29,7 +29,7 @@ const { category, relatedCategories, ui, homeHref, categoriesHref, lastUpdated, 
       </a>
       <ChevronRight size={14} />
       <span>{category.title}</span>
-    </div>
+    </nav>
 
     <span class="hero-badge">{ui.heroBadge}</span>
     <h1>{category.title} {ui.calculatorCountSuffix.charAt(0).toUpperCase() + ui.calculatorCountSuffix.slice(1)}</h1>

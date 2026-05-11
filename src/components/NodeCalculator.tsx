@@ -114,7 +114,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Staked Tokens')}</label>
+            <label htmlFor="node-staked">{getUiString(lang, 'Staked Tokens')}</label>
             <div className="pills-row">
               {STAKED_TOKEN_PRESETS.map((preset) => (
                 <button
@@ -130,7 +130,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Token Price (USD)')}</label>
+            <label htmlFor="node-price">{getUiString(lang, 'Token Price (USD)')}</label>
             <div className="pills-row">
               {TOKEN_PRICE_PRESETS.map((preset) => (
                 <button
@@ -148,7 +148,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Network APR (%)')}</label>
+            <label htmlFor="node-apr">{getUiString(lang, 'Network APR (%)')}</label>
             <div className="pills-row">
               {APR_PRESETS.map((preset) => (
                 <button
@@ -166,7 +166,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Validator Commission (%)')}</label>
+            <label htmlFor="node-fee">{getUiString(lang, 'Validator Commission (%)')}</label>
             <div className="pills-row">
               {VALIDATOR_FEE_PRESETS.map((preset) => (
                 <button
@@ -184,7 +184,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Node Uptime (%)')}</label>
+            <label htmlFor="node-uptime">{getUiString(lang, 'Node Uptime (%)')}</label>
             <div className="pills-row">
               {UPTIME_PRESETS.map((preset) => (
                 <button
@@ -202,7 +202,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Monthly Infrastructure Cost (USD)')}</label>
+            <label htmlFor="node-infra">{getUiString(lang, 'Monthly Infrastructure Cost (USD)')}</label>
             <div className="pills-row">
               {INFRA_COST_PRESETS.map((preset) => (
                 <button

@@ -168,7 +168,7 @@ function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Trade Amount */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Trade Amount')}</label>
+                        <label htmlFor="exchange-fee-amount"><DollarSign size={14} /> {getUiString(lang, 'Trade Amount')}</label>
                         <div className="input-with-prefix">
                             <input
                                 type="number" inputMode="decimal"

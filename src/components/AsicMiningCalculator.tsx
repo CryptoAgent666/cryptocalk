@@ -358,7 +358,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* ASIC Model Dropdown */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="asic-model-select">
                             <Server size={14} />
                             {getUiString(lang, 'ASIC Model')}
                         </label>
@@ -381,7 +381,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Hashrate */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="asic-hashrate-input">
                             <Hash size={14} />
                             {getUiString(lang, 'Hashrate')} ({hashrateUnit})
                             <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
@@ -412,7 +412,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Power Consumption */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="asic-power-input">
                             <Zap size={14} />
                             {getUiString(lang, 'Power Consumption')} (W)
                             <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
@@ -443,7 +443,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Electricity Cost */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="asic-electricity-input">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Electricity Cost')} ($/kWh)
                         </label>
@@ -473,7 +473,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Pool Fee */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="asic-pool-fee-input">
                             <TrendingUp size={14} />
                             {getUiString(lang, 'Pool Fee')} (%)
                         </label>
@@ -504,7 +504,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* ASIC Purchase Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="asic-price-input">
                             <Calendar size={14} />
                             {getUiString(lang, 'ASIC Purchase Price')} ($)
                             <span className="label-hint">{getUiString(lang, 'For ROI calculation')}</span>

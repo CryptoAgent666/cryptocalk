@@ -144,7 +144,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Initial Setup Cost (USD)')}</label>
+            <label htmlFor="gamefi-initial">{getUiString(lang, 'Initial Setup Cost (USD)')}</label>
             <div className="pills-row">
               {INITIAL_COST_PILLS.map((value) => (
                 <button
@@ -162,7 +162,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Daily Token Rewards')}</label>
+            <label htmlFor="gamefi-rewards">{getUiString(lang, 'Daily Token Rewards')}</label>
             <div className="pills-row">
               {DAILY_REWARD_PILLS.map((value) => (
                 <button
@@ -178,7 +178,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Token Price (USD)')}</label>
+            <label htmlFor="gamefi-price">{getUiString(lang, 'Token Price (USD)')}</label>
             <div className="pills-row">
               {TOKEN_PRICE_PILLS.map((value) => (
                 <button
@@ -196,7 +196,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Marketplace / Claim Fee (%)')}</label>
+            <label htmlFor="gamefi-fee">{getUiString(lang, 'Marketplace / Claim Fee (%)')}</label>
             <div className="pills-row">
               {MARKETPLACE_FEE_PILLS.map((value) => (
                 <button
@@ -214,7 +214,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Daily In-Game Expenses (USD)')}</label>
+            <label htmlFor="gamefi-expenses">{getUiString(lang, 'Daily In-Game Expenses (USD)')}</label>
             <div className="pills-row">
               {DAILY_EXPENSE_PILLS.map((value) => (
                 <button
@@ -232,7 +232,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Active Days per Month')}</label>
+            <label htmlFor="gamefi-active-days">{getUiString(lang, 'Active Days per Month')}</label>
             <div className="pills-row">
               {ACTIVE_DAYS_PILLS.map((value) => (
                 <button
@@ -248,7 +248,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Estimated Resale Value (USD)')}</label>
+            <label htmlFor="gamefi-resale">{getUiString(lang, 'Estimated Resale Value (USD)')}</label>
             <div className="pills-row">
               {RESALE_VALUE_PILLS.map((value) => (
                 <button

@@ -225,7 +225,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Deposit Amount */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Deposit Amount')}</label>
+                        <label htmlFor="yf-deposit"><DollarSign size={14} /> {getUiString(lang, 'Deposit Amount')}</label>
                         <div className="pills-row">
                             {DEPOSIT_PRESETS.map((preset) => (
                                 <button
@@ -245,7 +245,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Pool APY/APR */}
                     <div className="input-group">
-                        <label><Percent size={14} /> {getUiString(lang, 'Pool')} {rateType}</label>
+                        <label htmlFor="yf-rate"><Percent size={14} /> {getUiString(lang, 'Pool')} {rateType}</label>
                         <div className="toggle-group">
                             <button className={`toggle-btn ${rateType === 'APY' ? 'active' : ''}`}
                                 onClick={() => setRateType('APY')}>
@@ -275,7 +275,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Gas Costs */}
                     <div className="input-group">
-                        <label><Fuel size={14} /> {getUiString(lang, 'Gas Cost: Entry')}</label>
+                        <label htmlFor="yf-gas-entry"><Fuel size={14} /> {getUiString(lang, 'Gas Cost: Entry')}</label>
                         <div className="pills-row">
                             {GAS_PRESETS.map((preset) => (
                                 <button
@@ -294,7 +294,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <div className="input-group">
-                        <label><Fuel size={14} /> {getUiString(lang, 'Gas Cost: Exit')}</label>
+                        <label htmlFor="yf-gas-exit"><Fuel size={14} /> {getUiString(lang, 'Gas Cost: Exit')}</label>
                         <div className="pills-row">
                             {GAS_PRESETS.map((preset) => (
                                 <button
@@ -313,7 +313,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                     </div>
 
                     <div className="input-group">
-                        <label><Fuel size={14} /> {getUiString(lang, 'Gas Cost: Per Harvest')}</label>
+                        <label htmlFor="yf-gas-harvest"><Fuel size={14} /> {getUiString(lang, 'Gas Cost: Per Harvest')}</label>
                         <div className="pills-row">
                             {GAS_PRESETS.map((preset) => (
                                 <button
@@ -347,7 +347,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Impermanent Loss */}
                     <div className="input-group">
-                        <label><Percent size={14} /> {getUiString(lang, 'Expected Impermanent Loss')}</label>
+                        <label htmlFor="yf-il"><Percent size={14} /> {getUiString(lang, 'Expected Impermanent Loss')}</label>
                         <div className="pills-row">
                             {IL_PRESETS.map((preset) => (
                                 <button
@@ -367,7 +367,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Farming Period */}
                     <div className="input-group">
-                        <label><Calendar size={14} /> {getUiString(lang, 'Farming Period')}</label>
+                        <label htmlFor="yf-days"><Calendar size={14} /> {getUiString(lang, 'Farming Period')}</label>
                         <div className="pills-row">
                             {PERIOD_PRESETS.map((p) => (
                                 <button key={p.days}

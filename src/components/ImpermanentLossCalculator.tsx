@@ -197,7 +197,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Token A Search */}
                     <div className="input-group" ref={sugRefA}>
-                        <label><Search size={14} /> {getUiString(lang, 'Token A (optional)')}</label>
+                        <label htmlFor="il-token-a"><Search size={14} /> {getUiString(lang, 'Token A (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={tokenASearch} onChange={(e) => handleSearchA(e.target.value)}
                                 placeholder={getUiString(lang, 'e.g. Ethereum')} id="il-token-a" />
@@ -220,7 +220,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Token B Search */}
                     <div className="input-group" ref={sugRefB}>
-                        <label><Search size={14} /> {getUiString(lang, 'Token B (optional)')}</label>
+                        <label htmlFor="il-token-b"><Search size={14} /> {getUiString(lang, 'Token B (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={tokenBSearch} onChange={(e) => handleSearchB(e.target.value)}
                                 placeholder={getUiString(lang, 'e.g. USDC')} id="il-token-b" />
@@ -243,7 +243,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Investment */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Total Liquidity Provided')}</label>
+                        <label htmlFor="il-investment"><DollarSign size={14} /> {getUiString(lang, 'Total Liquidity Provided')}</label>
                         <div className="pills-row">
                             {LIQUIDITY_PRESETS.map((preset) => (
                                 <button
@@ -263,7 +263,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Token A Price Change */}
                     <div className="input-group">
-                        <label><ArrowUpDown size={14} /> {tokenALabel} {getUiString(lang, 'Price Change (%)')}</label>
+                        <label htmlFor="il-change-a"><ArrowUpDown size={14} /> {tokenALabel} {getUiString(lang, 'Price Change (%)')}</label>
                         <div className="pills-row">
                             {PRICE_CHANGE_PRESETS.map((p) => (
                                 <button key={p} className={`pill-btn ${priceChangeA === String(p) ? 'active' : ''} ${p < 0 ? 'pill-danger' : ''}`}
@@ -280,7 +280,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Token B Price Change */}
                     <div className="input-group">
-                        <label><ArrowUpDown size={14} /> {tokenBLabel} {getUiString(lang, 'Price Change (%)')}</label>
+                        <label htmlFor="il-change-b"><ArrowUpDown size={14} /> {tokenBLabel} {getUiString(lang, 'Price Change (%)')}</label>
                         <div className="pills-row">
                             {PRICE_CHANGE_PRESETS.map((p) => (
                                 <button key={p} className={`pill-btn ${priceChangeB === String(p) ? 'active' : ''} ${p < 0 ? 'pill-danger' : ''}`}
@@ -297,7 +297,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Pool Fee APR */}
                     <div className="input-group">
-                        <label><Percent size={14} /> {getUiString(lang, 'Pool Fee APR')}</label>
+                        <label htmlFor="il-fee"><Percent size={14} /> {getUiString(lang, 'Pool Fee APR')}</label>
                         <div className="pills-row">
                             {POOL_FEE_PRESETS.map((f) => (
                                 <button key={f} className={`pill-btn ${poolFeeApr === String(f) ? 'active' : ''}`}
@@ -314,7 +314,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Holding Period */}
                     <div className="input-group">
-                        <label>{getUiString(lang, 'Holding Period (days)')}</label>
+                        <label htmlFor="il-days">{getUiString(lang, 'Holding Period (days)')}</label>
                         <div className="pills-row">
                             {HOLDING_DAY_PRESETS.map((d) => (
                                 <button key={d} className={`pill-btn ${holdingDays === String(d) ? 'active' : ''}`}

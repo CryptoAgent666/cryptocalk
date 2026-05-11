@@ -97,11 +97,11 @@ function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Token Symbol')}</label>
+            <label htmlFor="ico-token">{getUiString(lang, 'Token Symbol')}</label>
             <input type="text" value={tokenName} onChange={(e) => setTokenName(e.target.value.toUpperCase().slice(0, 12))} id="ico-token" />
           </div>
           <div className="input-group">
-            <label>{getUiString(lang, 'ICO / IDO Price')}</label>
+            <label htmlFor="ico-price">{getUiString(lang, 'ICO / IDO Price')}</label>
             <div className="pills-row">
               {ICO_PRICE_PILLS.map((value) => (
                 <button
@@ -116,7 +116,7 @@ function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={icoPrice} onChange={(e) => setIcoPrice(e.target.value)} min="0" step="any" id="ico-price" onFocus={(e) => e.target.select()} /></div>
           </div>
           <div className="input-group">
-            <label>{getUiString(lang, 'Current Price')}</label>
+            <label htmlFor="ico-current">{getUiString(lang, 'Current Price')}</label>
             <div className="pills-row">
               {CURRENT_PRICE_PILLS.map((value) => (
                 <button
@@ -131,7 +131,7 @@ function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={currentPrice} onChange={(e) => setCurrentPrice(e.target.value)} min="0" step="any" id="ico-current" onFocus={(e) => e.target.select()} /></div>
           </div>
           <div className="input-group">
-            <label>{getUiString(lang, 'ATH Price')}</label>
+            <label htmlFor="ico-ath">{getUiString(lang, 'ATH Price')}</label>
             <div className="pills-row">
               {ATH_PRICE_PILLS.map((value) => (
                 <button
@@ -146,7 +146,7 @@ function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="input-with-prefix" style={{ marginTop: '8px' }}><input type="number" inputMode="decimal" value={athPrice} onChange={(e) => setAthPrice(e.target.value)} min="0" step="any" id="ico-ath" onFocus={(e) => e.target.select()} /></div>
           </div>
           <div className="input-group">
-            <label>{getUiString(lang, 'Token Amount')}</label>
+            <label htmlFor="ico-amount">{getUiString(lang, 'Token Amount')}</label>
             <div className="pills-row">
               {TOKEN_AMOUNT_PILLS.map((value) => (
                 <button

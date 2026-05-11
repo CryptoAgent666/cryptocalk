@@ -327,7 +327,7 @@ function PipCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label>
+                        <label htmlFor="pip-coin-search">
                             <Search size={14} />
                             {getUiString(lang, 'Cryptocurrency')}
                         </label>
@@ -366,7 +366,7 @@ function PipCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Current Price */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="pip-current-price">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Current Price')}
                             {selectedCoin && (
@@ -409,7 +409,7 @@ function PipCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Position Size */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="pip-position-size">
                             <Hash size={14} />
                             {getUiString(lang, 'Position Size')}
                         </label>
@@ -444,7 +444,7 @@ function PipCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Tick / Pip Size */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="pip-tick-size">
                             <Ruler size={14} />
                             {getUiString(lang, 'Tick / Pip Size')}
                         </label>

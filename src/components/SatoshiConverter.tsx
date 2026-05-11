@@ -148,7 +148,7 @@ function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
 
                     {/* Amount */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="satoshi-amount">
                             <DollarSign size={14} />
                             {inputMode === 'satoshi' ? getUiString(lang, 'Amount (sats)') : inputMode === 'btc' ? getUiString(lang, 'Amount (BTC)') : getUiString(lang, 'Amount (USD)')}
                         </label>

@@ -117,7 +117,7 @@ function TimestampConverter({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label><Clock size={14} /> {getUiString(lang, 'Unix Timestamp')}</label>
+            <label htmlFor="timestamp-input"><Clock size={14} /> {getUiString(lang, 'Unix Timestamp')}</label>
             <input
               type="text"
               inputMode="numeric"
@@ -130,7 +130,7 @@ function TimestampConverter({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label><Calendar size={14} /> {getUiString(lang, 'Date Time')}</label>
+            <label htmlFor="datetime-input"><Calendar size={14} /> {getUiString(lang, 'Date Time')}</label>
             <input
               type="datetime-local"
               value={datetimeInput}

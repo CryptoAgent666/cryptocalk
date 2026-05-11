@@ -346,7 +346,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* GPU Model */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="gpu-select">
                             <Monitor size={14} />
                             {getUiString(lang, 'GPU Model')}
                         </label>
@@ -369,7 +369,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Number of GPUs */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="num-gpus-input">
                             <Cpu size={14} />
                             {getUiString(lang, 'Number of GPUs')}
                         </label>
@@ -399,7 +399,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Hashrate */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="hashrate-input">
                             <Hash size={14} />
                             {getUiString(lang, 'Hashrate (MH/s)')}
                             <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
@@ -422,7 +422,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Power Consumption */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="power-input">
                             <Zap size={14} />
                             {getUiString(lang, 'Power per GPU (W)')}
                             <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>
@@ -445,7 +445,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Electricity Cost */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="electricity-input">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Electricity Cost ($/kWh)')}
                         </label>
@@ -475,7 +475,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Pool Fee */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="pool-fee-input">
                             <TrendingUp size={14} />
                             {getUiString(lang, 'Pool Fee (%)')}
                         </label>
@@ -506,7 +506,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Mining Coin */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="coin-select">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Mining Coin')}
                         </label>
@@ -529,7 +529,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Hardware Cost (Optional) */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="hardware-cost-input">
                             <Calendar size={14} />
                             {getUiString(lang, 'GPU Hardware Cost (Optional)')}
                         </label>

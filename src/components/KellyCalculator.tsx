@@ -101,7 +101,7 @@ function KellyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Win Rate (%)')}</label>
+            <label htmlFor="kelly-win-rate">{getUiString(lang, 'Win Rate (%)')}</label>
             <div className="pills-row">
               {WIN_RATE_PRESETS.map((preset) => (
                 <button
@@ -119,7 +119,7 @@ function KellyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Average Win (%)')}</label>
+            <label htmlFor="kelly-avg-win">{getUiString(lang, 'Average Win (%)')}</label>
             <div className="pills-row">
               {AVG_WIN_PRESETS.map((preset) => (
                 <button
@@ -137,7 +137,7 @@ function KellyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Average Loss (%)')}</label>
+            <label htmlFor="kelly-avg-loss">{getUiString(lang, 'Average Loss (%)')}</label>
             <div className="pills-row">
               {AVG_LOSS_PRESETS.map((preset) => (
                 <button
@@ -155,7 +155,7 @@ function KellyCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Account Capital (USD)')}</label>
+            <label htmlFor="kelly-capital">{getUiString(lang, 'Account Capital (USD)')}</label>
             <div className="pills-row">
               {CAPITAL_PRESETS.map((preset) => (
                 <button

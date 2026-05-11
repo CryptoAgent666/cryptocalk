@@ -2,6 +2,45 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 112) — fix: comprehensive UX audit (30 pages × 25 checks)
+
+### Detection
+30-page mobile UX audit (375×812) with ~25 checks/page (layout/semantics/a11y/SEO). 4 categories of real issues identified:
+
+### Fix 1 — Category-hub page titles localized + em-dash separator
+- `src/data/category-hubs.ts:936`: hardcoded `${title} Calculators | CryptoCalk` broke localization
+- Example BEFORE: "Impostos Calculators | CryptoCalk" (PT mixed with EN word "Calculators")
+- Example AFTER: "Calculadoras de Impostos — CryptoCalk"
+- Implemented language-aware templates:
+  - ES/PT: `Calculadoras de {title} — CryptoCalk`
+  - RU: `Калькуляторы: {title} — CryptoCalk`
+  - TR/HI/EN: `{title} {LocalizedCalcWord} — CryptoCalk`
+- Affects all 8 category hubs × 5 langs = 40 pages
+
+### Fix 2 — Breadcrumb semantic: <div> → <nav>
+- `src/components/CategoryHubPage.astro`: hero breadcrumbs were `<div aria-label="Breadcrumb">` instead of `<nav>`
+- Changed to `<nav class="hero-breadcrumbs" aria-label="Breadcrumb">` for proper landmark semantics
+
+### Fix 3 — Heading-level skip (h2 → h4)
+- Footer column titles used `<h4>` after page sections used `<h2>`, creating a skipped heading level (a11y/SEO issue)
+- Fixed in:
+  - `src/components/SiteFooter.astro` (5 langs use this footer): 3× `<h4>` → `<h3>` + CSS selector update
+  - `src/pages/index.astro` (EN homepage has inline footer): 3× `<h4>` → `<h3>` + CSS selector update
+  - `src/pages/[lang]/index.astro` (CSS selector update only)
+
+### Fix 4 — Form label programmatic association (a11y)
+- 246 `<label>` elements lacked `htmlFor=` to programmatically associate with their `<input>`/`<select>`/`<textarea>`
+- Visual association existed but screen readers don't announce labels when input focused
+- Wrote pattern-matching script that pairs ONLY when a label is IMMEDIATELY followed by an input (no other label/input between them) — avoids false pairings (e.g., "Quick Scenarios" label for buttons never paired with input)
+- 246 labels updated across **60 calculator components**
+- Examples now have proper `for=...` association:
+  - KellyCalculator: kelly-win-rate, kelly-avg-win, kelly-avg-loss, kelly-capital
+  - SortinoCalculator: sortino-value, sortino-return, etc.
+  - 58 more components
+
+### Build
+- 1,241 pages, 9.13s, TS clean
+
 ## [2026-05-11] (update 111) — fix: title separators + speed-card font
 
 ### Bug 1: Inconsistent page-title separator

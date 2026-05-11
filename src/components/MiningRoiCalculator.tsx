@@ -308,7 +308,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Equipment Cost */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="equipment-cost-input">
                             <Pickaxe size={14} />
                             {getUiString(lang, 'Equipment Cost ($)')}
                         </label>
@@ -338,7 +338,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Monthly Mining Revenue */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="monthly-revenue-input">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Monthly Mining Revenue ($)')}
                         </label>
@@ -368,7 +368,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Monthly Expenses */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="monthly-expenses-input">
                             <Zap size={14} />
                             {getUiString(lang, 'Monthly Expenses ($)')}
                             <span className="label-hint">{getUiString(lang, 'Electricity, internet, maintenance')}</span>

@@ -104,7 +104,7 @@ function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Pool TVL (USD)')}</label>
+            <label htmlFor="slippage-tvl">{getUiString(lang, 'Pool TVL (USD)')}</label>
             <div className="pills-row">
               {TVL_PRESETS.map((preset) => (
                 <button
@@ -122,7 +122,7 @@ function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Trade Size (USD)')}</label>
+            <label htmlFor="slippage-trade">{getUiString(lang, 'Trade Size (USD)')}</label>
             <div className="pills-row">
               {TRADE_PRESETS.map((preset) => (
                 <button
@@ -140,7 +140,7 @@ function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'DEX Fee (%)')}</label>
+            <label htmlFor="slippage-fee">{getUiString(lang, 'DEX Fee (%)')}</label>
             <div className="pills-row">
               {DEX_FEE_PRESETS.map((preset) => (
                 <button
@@ -158,7 +158,7 @@ function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Slippage Tolerance (%)')}</label>
+            <label htmlFor="slippage-tolerance">{getUiString(lang, 'Slippage Tolerance (%)')}</label>
             <div className="pills-row">
               {TOLERANCE_PRESETS.map((preset) => (
                 <button

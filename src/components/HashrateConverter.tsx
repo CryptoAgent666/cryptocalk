@@ -122,7 +122,7 @@ function HashrateConverter({ lang = 'en' }: { lang?: string }) {
                 <div className="calc-input-panel">
                     {/* Value Input */}
                     <div className="input-group">
-                        <label><Zap size={14} /> {getUiString(lang, 'Hash Rate Value')}</label>
+                        <label htmlFor="hashrate-value"><Zap size={14} /> {getUiString(lang, 'Hash Rate Value')}</label>
                         <input
                             type="number" inputMode="decimal"
                             value={inputValue}

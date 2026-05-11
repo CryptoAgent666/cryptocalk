@@ -119,7 +119,7 @@ function LendingCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Deposit Amount (USD)')}</label>
+            <label htmlFor="lending-principal">{getUiString(lang, 'Deposit Amount (USD)')}</label>
             <div className="pills-row">
               {DEPOSIT_PRESETS.map((preset) => (
                 <button
@@ -137,7 +137,7 @@ function LendingCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Quoted APY (%)')}</label>
+            <label htmlFor="lending-apy">{getUiString(lang, 'Quoted APY (%)')}</label>
             <div className="pills-row">
               {APY_PRESETS.map((preset) => (
                 <button
@@ -155,7 +155,7 @@ function LendingCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Term (months)')}</label>
+            <label htmlFor="lending-term">{getUiString(lang, 'Term (months)')}</label>
             <div className="pills-row">
               {TERM_PRESETS.map((preset) => (
                 <button
@@ -171,7 +171,7 @@ function LendingCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Platform Performance Fee (%)')}</label>
+            <label htmlFor="lending-fee">{getUiString(lang, 'Platform Performance Fee (%)')}</label>
             <div className="pills-row">
               {FEE_PRESETS.map((preset) => (
                 <button

@@ -285,7 +285,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Amount */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label htmlFor="whatif-amount" className="input-label">
                             <DollarSign size={14} />
                             {getUiString(lang, 'INVESTMENT AMOUNT')}
                         </label>
@@ -319,7 +319,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin */}
                     <div className="input-group" ref={dropdownRef}>
-                        <label className="input-label">
+                        <label htmlFor="whatif-coin-search" className="input-label">
                             <Search size={14} />
                             {getUiString(lang, 'IN CRYPTOCURRENCY')}
                         </label>
@@ -356,7 +356,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Date */}
                     <div className="input-group">
-                        <label className="input-label">
+                        <label htmlFor="whatif-date" className="input-label">
                             <Calendar size={14} />
                             {getUiString(lang, 'ON DATE')}
                         </label>

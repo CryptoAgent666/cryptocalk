@@ -116,7 +116,7 @@ function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Win Rate (%)')}</label>
+            <label htmlFor="ror-win-rate">{getUiString(lang, 'Win Rate (%)')}</label>
             <div className="pills-row">
               {WIN_RATE_PRESETS.map((preset) => (
                 <button
@@ -134,7 +134,7 @@ function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Reward-to-Risk Ratio')}</label>
+            <label htmlFor="ror-rr">{getUiString(lang, 'Reward-to-Risk Ratio')}</label>
             <div className="pills-row">
               {REWARD_RISK_PRESETS.map((preset) => (
                 <button
@@ -150,7 +150,7 @@ function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Risk per Trade (%)')}</label>
+            <label htmlFor="ror-risk-trade">{getUiString(lang, 'Risk per Trade (%)')}</label>
             <div className="pills-row">
               {RISK_PER_TRADE_PRESETS.map((preset) => (
                 <button
@@ -168,7 +168,7 @@ function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Max Tolerable Drawdown (%)')}</label>
+            <label htmlFor="ror-max-dd">{getUiString(lang, 'Max Tolerable Drawdown (%)')}</label>
             <div className="pills-row">
               {MAX_DRAWDOWN_PRESETS.map((preset) => (
                 <button

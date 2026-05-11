@@ -365,7 +365,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Coin Search */}
                     <div className="input-group" ref={suggestionsRef}>
-                        <label><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
+                        <label htmlFor="tpsl-coin-search"><Search size={14} /> {getUiString(lang, 'Cryptocurrency (optional)')}</label>
                         <div className="coin-search-wrapper">
                             <input type="text" value={coinSearch} onChange={(e) => handleCoinSearch(e.target.value)}
                                 placeholder={getUiString(lang, 'Search coin...')} id="tpsl-coin-search" />
@@ -401,7 +401,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Entry Price */}
                     <div className="input-group">
-                        <label><Crosshair size={14} /> {getUiString(lang, 'Entry Price')} {selectedCoin && <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>}</label>
+                        <label htmlFor="tpsl-entry"><Crosshair size={14} /> {getUiString(lang, 'Entry Price')} {selectedCoin && <span className="label-hint">{getUiString(lang, 'Auto-filled')}</span>}</label>
                         <div className="pills-row">
                             {ENTRY_PRICE_PILLS.map((preset) => (
                                 <button
@@ -421,7 +421,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Stop-Loss */}
                     <div className="input-group">
-                        <label><Target size={14} /> {getUiString(lang, 'Stop-Loss Price')}</label>
+                        <label htmlFor="tpsl-sl"><Target size={14} /> {getUiString(lang, 'Stop-Loss Price')}</label>
                         <div className="pills-row">
                             {STOP_LOSS_PERCENT_PRESETS.map((percent) => (
                                 <button
@@ -441,7 +441,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Position Size */}
                     <div className="input-group">
-                        <label><DollarSign size={14} /> {getUiString(lang, 'Position Size')}</label>
+                        <label htmlFor="tpsl-size"><DollarSign size={14} /> {getUiString(lang, 'Position Size')}</label>
                         <div className="pills-row">
                             {POSITION_SIZE_PILLS.map((preset) => (
                                 <button
@@ -461,7 +461,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* R:R Ratio */}
                     <div className="input-group">
-                        <label><Percent size={14} /> {getUiString(lang, 'Risk:Reward Ratio')}</label>
+                        <label htmlFor="tpsl-rr"><Percent size={14} /> {getUiString(lang, 'Risk:Reward Ratio')}</label>
                         <div className="pills-row">
                             {RR_PRESETS.map((r) => (
                                 <button key={r.value} className={`pill-btn ${rrRatio === String(r.value) ? 'active' : ''}`}

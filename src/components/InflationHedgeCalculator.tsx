@@ -348,7 +348,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
 
                     {/* Savings Amount */}
                     <div className="input-group">
-                        <label>
+                        <label htmlFor="inflation-amount">
                             <DollarSign size={14} />
                             {getUiString(lang, 'Savings Amount')}
                         </label>

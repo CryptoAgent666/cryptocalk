@@ -99,12 +99,12 @@ function LiquidStakingCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'ETH Amount')}</label>
+            <label htmlFor="ls-eth">{getUiString(lang, 'ETH Amount')}</label>
             <input type="number" inputMode="decimal" value={ethAmount} onChange={(e) => setEthAmount(e.target.value)} min="0" step="any" id="ls-eth" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Staking Duration (days)')}</label>
+            <label htmlFor="ls-duration">{getUiString(lang, 'Staking Duration (days)')}</label>
             <div className="pills-row">
               {[30, 90, 180, 365].map((d) => (
                 <button key={d} className={`pill-btn ${duration === String(d) ? 'active' : ''}`} onClick={() => setDuration(String(d))}>{d}d</button>
@@ -123,22 +123,22 @@ function LiquidStakingCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Native APY (%)')}</label>
+            <label htmlFor="ls-apy">{getUiString(lang, 'Native APY (%)')}</label>
             <input type="number" inputMode="decimal" value={nativeApy} onChange={(e) => setNativeApy(e.target.value)} min="0" step="any" id="ls-apy" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'Protocol Fee (%)')}</label>
+            <label htmlFor="ls-fee">{getUiString(lang, 'Protocol Fee (%)')}</label>
             <input type="number" inputMode="decimal" value={protocolFee} onChange={(e) => setProtocolFee(e.target.value)} min="0" step="any" id="ls-fee" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'LST Premium/Discount (%)')}</label>
+            <label htmlFor="ls-premium">{getUiString(lang, 'LST Premium/Discount (%)')}</label>
             <input type="number" inputMode="decimal" value={lstPremium} onChange={(e) => setLstPremium(e.target.value)} step="any" id="ls-premium" onFocus={(e) => e.target.select()} />
           </div>
 
           <div className="input-group">
-            <label>{getUiString(lang, 'DeFi Composability APY (%)')}</label>
+            <label htmlFor="ls-defi">{getUiString(lang, 'DeFi Composability APY (%)')}</label>
             <input type="number" inputMode="decimal" value={defiApy} onChange={(e) => setDefiApy(e.target.value)} min="0" step="any" id="ls-defi" onFocus={(e) => e.target.select()} />
           </div>
 

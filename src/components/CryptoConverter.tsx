@@ -207,7 +207,7 @@ function CryptoConverter({ lang = 'en' }: { lang?: string }) {
             <div className="converter-card">
                 {/* Amount Input */}
                 <div className="converter-row">
-                    <label className="converter-label">{getUiString(lang, 'Amount')}</label>
+                    <label htmlFor="convert-amount" className="converter-label">{getUiString(lang, 'Amount')}</label>
                     <div className="converter-amount-input">
                         <input
                             type="number" inputMode="decimal"
@@ -223,7 +223,7 @@ function CryptoConverter({ lang = 'en' }: { lang?: string }) {
 
                 {/* From Selector */}
                 <div className="converter-row" ref={fromRef}>
-                    <label className="converter-label">{getUiString(lang, 'From')}</label>
+                    <label htmlFor="to-selector" className="converter-label">{getUiString(lang, 'From')}</label>
                     <button
                         className="selector-btn"
                         onClick={() => {
