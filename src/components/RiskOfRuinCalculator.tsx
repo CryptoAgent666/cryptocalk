@@ -209,7 +209,7 @@ function RiskOfRuinCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Model uses simplified fixed-risk assumptions. Real trading outcomes vary due to slippage, regime changes, and non-independent outcomes.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid strategy stats')}</h3><p>{getUiString(lang, 'Set win rate, reward/risk, and risk per trade to estimate ruin probability.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid strategy stats')}</h2><p>{getUiString(lang, 'Set win rate, reward/risk, and risk per trade to estimate ruin probability.')}</p></div>
           )}
         </div>
       </div>

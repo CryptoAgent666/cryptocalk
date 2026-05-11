@@ -501,7 +501,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Info size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Error')}</h3>
+                            <h2>{getUiString(lang, 'Error')}</h2>
                             <p>{error}</p>
                             <button className="reset-btn" onClick={fetchPrices} style={{ marginTop: '12px' }}>
                                 <RotateCcw size={14} />
@@ -513,7 +513,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Loader2 size={40} className="spin-icon" />
                             </div>
-                            <h3>{getUiString(lang, 'Fetching Exchange Rates...')}</h3>
+                            <h2>{getUiString(lang, 'Fetching Exchange Rates...')}</h2>
                             <p>{getUiString(lang, 'Loading live prices from CoinGecko.')}</p>
                         </div>
                     ) : mode === 'fiat-to-crypto' ? (
@@ -581,14 +581,14 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
 
                                 {/* Accumulation Table */}
                                 <div style={{ marginTop: '20px' }}>
-                                    <h4 style={{
+                                    <h3 style={{
                                         fontSize: '0.9rem',
                                         fontWeight: 600,
                                         marginBottom: '10px',
                                         color: 'var(--color-text)',
                                     }}>
                                         {getUiString(lang, 'Accumulation Over Time')}
-                                    </h4>
+                                    </h3>
                                     <div style={{ overflowX: 'auto' }}>
                                         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                             <thead>
@@ -631,7 +631,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="results-empty-icon">
                                     <Briefcase size={40} />
                                 </div>
-                                <h3>{getUiString(lang, 'Crypto Salary Calculator')}</h3>
+                                <h2>{getUiString(lang, 'Crypto Salary Calculator')}</h2>
                                 <p>{getUiString(lang, 'Enter your annual salary, choose how much to convert to crypto, and see exactly how much you\'d receive per pay period.')}</p>
                             </div>
                         )
@@ -715,7 +715,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="results-empty-icon">
                                     <Briefcase size={40} />
                                 </div>
-                                <h3>{getUiString(lang, 'Crypto to Fiat Converter')}</h3>
+                                <h2>{getUiString(lang, 'Crypto to Fiat Converter')}</h2>
                                 <p>{getUiString(lang, 'Enter your monthly crypto salary to see the equivalent in multiple fiat currencies at current exchange rates.')}</p>
                             </div>
                         )

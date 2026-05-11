@@ -720,7 +720,7 @@ function PositionSizeCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Shield size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Calculate Your Position Size')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Your Position Size')}</h2>
                             <p>{getUiString(lang, 'Enter your account balance, risk %, entry price, and stop-loss to see the optimal position size.')}</p>
                             {validationHint && <p style={{ color: '#f97316', fontSize: '0.85rem', marginTop: '8px' }}>{validationHint}</p>}
                         </div>

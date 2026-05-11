@@ -299,7 +299,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Token price and in-game emissions can change quickly. Recheck scenarios after major token unlocks or economy updates.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid GameFi assumptions')}</h3><p>{getUiString(lang, 'Set cost, rewards, and token price to estimate payback and ROI.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid GameFi assumptions')}</h2><p>{getUiString(lang, 'Set cost, rewards, and token price to estimate payback and ROI.')}</p></div>
           )}
         </div>
       </div>

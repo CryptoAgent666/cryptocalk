@@ -484,7 +484,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="whatif-empty">
                             <Sparkles size={40} strokeWidth={1} />
-                            <h3>{getUiString(lang, 'Travel Back in Time')}</h3>
+                            <h2>{getUiString(lang, 'Travel Back in Time')}</h2>
                             <p>{getUiString(lang, 'See what your investment would be worth if you had bought crypto in the past. Try a quick scenario or enter your own!')}</p>
                             <div className="whatif-features">
                                 <span>🕰️ {getUiString(lang, 'Historical prices')}</span>

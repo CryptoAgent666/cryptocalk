@@ -732,7 +732,7 @@ function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Gauge size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Calculate Liquidation Price')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Liquidation Price')}</h2>
                             <p>{getUiString(lang, 'Enter your leverage, entry price, and position size to see when your position would be liquidated.')}</p>
                             {validationHint && <p style={{ color: '#f97316', fontSize: '0.85rem', marginTop: '8px' }}>{validationHint}</p>}
                         </div>

@@ -266,7 +266,7 @@ function CryptoInheritanceCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Shield size={40} /></div>
-                            <h3>{getUiString(lang, 'Plan Crypto Inheritance')}</h3>
+                            <h2>{getUiString(lang, 'Plan Crypto Inheritance')}</h2>
                             <p>{getUiString(lang, 'Enter your crypto estate details to estimate taxes, per-beneficiary amounts, and get custody recommendations.')}</p>
                         </div>
                     )}

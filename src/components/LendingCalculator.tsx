@@ -232,7 +232,7 @@ function LendingCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Rates, lock periods, and real payout schedules vary by protocol and platform. Use conservative assumptions for planning.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid lending inputs')}</h3><p>{getUiString(lang, 'Set deposit amount, APY, and duration to model your net lending return.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid lending inputs')}</h2><p>{getUiString(lang, 'Set deposit amount, APY, and duration to model your net lending return.')}</p></div>
           )}
         </div>
       </div>

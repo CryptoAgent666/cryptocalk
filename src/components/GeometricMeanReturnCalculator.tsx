@@ -173,7 +173,7 @@ function GeometricMeanReturnCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter at least 2 periods')}</h3>
+              <h2>{getUiString(lang, 'Enter at least 2 periods')}</h2>
               <p>{getUiString(lang, 'Add return values to compute geometric vs arithmetic mean.')}</p>
             </div>
           )}

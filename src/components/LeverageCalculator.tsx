@@ -435,9 +435,9 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Scenarios Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'PnL at Different Price Moves')} ({lev}× {getUiString(lang, 'leverage')})
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{
                                         width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem',
@@ -490,7 +490,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Scale size={40} /></div>
-                            <h3>{getUiString(lang, 'See Leverage in Action')}</h3>
+                            <h2>{getUiString(lang, 'See Leverage in Action')}</h2>
                             <p>{getUiString(lang, 'Enter position details and leverage to see a side-by-side comparison of leveraged vs unleveraged PnL with a scenario table.')}</p>
                         </div>
                     )}

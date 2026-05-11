@@ -532,7 +532,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Shield size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Required Margin')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Required Margin')}</h2>
                             <p>{getUiString(lang, 'Enter position details and leverage to see how much margin is required and when you\'ll face a margin call.')}</p>
                         </div>
                     )}

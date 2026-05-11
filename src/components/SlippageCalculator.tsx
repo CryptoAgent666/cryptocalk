@@ -205,7 +205,7 @@ function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'This is a constant-product estimate. Real execution can differ due to routing, MEV, oracle lag, and liquidity changes.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid trade assumptions')}</h3><p>{getUiString(lang, 'Set pool size, trade amount, and fee to estimate slippage and execution cost.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid trade assumptions')}</h2><p>{getUiString(lang, 'Set pool size, trade amount, and fee to estimate slippage and execution cost.')}</p></div>
           )}
         </div>
       </div>

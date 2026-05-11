@@ -386,7 +386,7 @@ function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><PieChart size={40} /></div>
-                            <h3>{getUiString(lang, 'Plan Your Portfolio')}</h3>
+                            <h2>{getUiString(lang, 'Plan Your Portfolio')}</h2>
                             <p>{getUiString(lang, 'Add assets with their current values and target allocations. See a visual breakdown and rebalancing suggestions.')}</p>
                         </div>
                     )}

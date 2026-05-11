@@ -200,7 +200,7 @@ function TimestampConverter({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><Clock size={40} /></div>
-              <h3>{getUiString(lang, 'Enter timestamp or date')}</h3>
+              <h2>{getUiString(lang, 'Enter timestamp or date')}</h2>
               <p>{getUiString(lang, 'Use Unix seconds/milliseconds or a date time value to convert instantly.')}</p>
             </div>
           )}

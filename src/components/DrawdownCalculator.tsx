@@ -173,7 +173,7 @@ function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Large drawdowns require disproportionately larger gains. Recovery timing assumes stable monthly returns and no extra withdrawals.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid portfolio values')}</h3><p>{getUiString(lang, 'Set peak and current value to estimate drawdown and required recovery gain.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid portfolio values')}</h2><p>{getUiString(lang, 'Set peak and current value to estimate drawdown and required recovery gain.')}</p></div>
           )}
         </div>
       </div>

@@ -2,6 +2,28 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 113) — fix: heading hierarchy h1→h3 + dynamic-row label
+
+### Detection
+Round 6 mobile UX audit (30 pages) caught lingering heading-level skips and 1 dynamic-row input labeling gap.
+
+### Fix 1: Calc-component heading levels normalized
+Round 5 (update 112) only promoted explicit `<h3>` (the "first" heading inside each calc component). Many components had EITHER `<h3>` sub-sections OR `<h4>` sub-sections nested under no h2 — creating h1 → h3/h4 skips.
+- **h4 → h3** in 42 calc components (56 elements): sub-section headings inside result panels
+- **First h3 → h2** in 38 components: promotes the first sub-section to top-level so calc result panels have an h2 landmark
+- **EtfFeeCalculator**: manually promoted `ETF Fee Comparison` from `<h3>` to `<h2>` (separate code path)
+- DOM order now consistently: h1 (page title) → h2 (calc result heading) → h3 (sub-sections) → h2 (template sections: How/Inputs/Interpret/...) → h3 (footer)
+
+### Fix 2: DefiYieldAggregator dynamic-row inputs
+20 unlabeled inputs from dynamic protocol-row UI (each row has name/APY/risk/TVL). Cannot use unique `id`s since rows are dynamic. Added `aria-label={placeholder}` to all 4 input types in the row template.
+
+### Fix 3: BridgeComparator second select
+`bridge-to` select shared its label with `bridge-from`. Added `aria-label={t('To')}` for explicit screen-reader association.
+
+### Build
+- 1,241 pages, 9.13s, TS clean
+- All 30 random pages now pass comprehensive audit (was 18/30 → 30/30)
+
 ## [2026-05-11] (update 112) — fix: comprehensive UX audit (30 pages × 25 checks)
 
 ### Detection

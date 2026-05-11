@@ -582,7 +582,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Gift size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Airdrop Value Calculator')}</h3>
+                            <h2>{getUiString(lang, 'Airdrop Value Calculator')}</h2>
                             <p>
                                 {getUiString(lang, 'Enter your airdrop details to calculate current value, profit/loss, and estimated tax liability across different jurisdictions.')}
                             </p>

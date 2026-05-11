@@ -335,7 +335,7 @@ function TokenBurnCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Flame size={40} /></div>
-                            <h3>{getUiString(lang, 'Analyze Token Burns')}</h3>
+                            <h2>{getUiString(lang, 'Analyze Token Burns')}</h2>
                             <p>{getUiString(lang, 'Enter supply and burn rate to see how deflationary mechanics affect token economics over time.')}</p>
                         </div>
                     )}

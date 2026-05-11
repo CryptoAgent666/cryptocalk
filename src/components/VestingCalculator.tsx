@@ -544,9 +544,9 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* SVG Chart */}
                             {chartSvg && (
                                 <div style={{ marginTop: '20px' }}>
-                                    <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                    <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                         {getUiString(lang, 'Unlock Schedule')}
-                                    </h4>
+                                    </h2>
                                     <svg
                                         viewBox={`0 0 ${chartSvg.W} ${chartSvg.H}`}
                                         style={{
@@ -643,9 +643,9 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Unlock Schedule Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h3 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'Full Unlock Schedule')}
-                                </h4>
+                                </h3>
                                 <div style={{ overflowX: 'auto', maxHeight: '350px', overflowY: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -734,7 +734,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Unlock size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Visualize Token Unlock Schedule')}</h3>
+                            <h2>{getUiString(lang, 'Visualize Token Unlock Schedule')}</h2>
                             <p>{getUiString(lang, 'Enter your token allocation and vesting parameters to see a detailed unlock timeline with chart and schedule table.')}</p>
                         </div>
                     )}

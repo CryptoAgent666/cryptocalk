@@ -686,7 +686,7 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                             {config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].shortTermRate !==
                                 config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].longTermRate && result.capitalGain > 0 && (
                                     <div className="tax-comparison">
-                                        <h4 className="comparison-title">{getUiString(lang, 'Short-Term vs Long-Term')}</h4>
+                                        <h2 className="comparison-title">{getUiString(lang, 'Short-Term vs Long-Term')}</h2>
                                         <div className="comparison-grid">
                                             <div className={`comparison-card ${!result.isLongTerm ? 'current' : ''}`}>
                                                 <span className="comparison-label">{getUiString(lang, 'Short-Term')}</span>
@@ -735,7 +735,7 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="tax-empty">
                             <Globe size={40} strokeWidth={1} />
-                            <h3>{getUiString(lang, 'Estimate Your Crypto Taxes')}</h3>
+                            <h2>{getUiString(lang, 'Estimate Your Crypto Taxes')}</h2>
                             <p>{getUiString(lang, 'Select your country, enter your trade details, and see your estimated capital gains tax instantly.')}</p>
                             <div className="tax-features">
                                 <span>🌍 {getUiString(lang, '17 countries')}</span>

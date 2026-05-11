@@ -407,10 +407,10 @@ function RoiCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Comparison Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)', display: 'flex', alignItems: 'center', gap: '6px' }}>
                                     <BarChart3 size={16} />
                                     {getUiString(lang, 'Comparison with Traditional Assets')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -468,7 +468,7 @@ function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <BarChart3 size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Calculate Your Crypto ROI')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Your Crypto ROI')}</h2>
                             <p>{getUiString(lang, 'Enter your initial investment, current value, and holding period to see your return on investment compared with traditional assets.')}</p>
                         </div>
                     )}

@@ -292,7 +292,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
               <div className="results-empty-icon">
                 <TrendingUp size={40} />
               </div>
-              <h3>{getUiString(lang, 'Enter valid trading stats')}</h3>
+              <h2>{getUiString(lang, 'Enter valid trading stats')}</h2>
               <p>{getUiString(lang, 'Set win rate, average win/loss in R, and monthly trade count to estimate expectancy.')}</p>
             </div>
           )}

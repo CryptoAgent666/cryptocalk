@@ -203,7 +203,7 @@ function GridTradingCalculator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <div className="result-breakdown" style={{ marginTop: '1rem' }}>
-                <h4 style={{ margin: '0 0 0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>{getUiString(lang, 'Grid Levels')}</h4>
+                <h2 style={{ margin: '0 0 0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>{getUiString(lang, 'Grid Levels')}</h2>
                 {result.levels.slice(0, 10).map((level, i) => (
                   <div className="result-row" key={i}>
                     <span className="result-label">#{i + 1}</span>
@@ -223,7 +223,7 @@ function GridTradingCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Configure Your Grid')}</h3>
+              <h2>{getUiString(lang, 'Configure Your Grid')}</h2>
               <p>{getUiString(lang, 'Set upper and lower prices, grid count, and investment to estimate grid trading profitability.')}</p>
             </div>
           )}

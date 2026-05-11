@@ -331,10 +331,10 @@ function OptionsCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Payoff Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     <BarChart3 size={14} style={{ marginRight: '6px', verticalAlign: '-2px' }} />
                                     {getUiString(lang, 'Payoff at Expiry')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -370,7 +370,7 @@ function OptionsCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><BarChart3 size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Options P&L')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Options P&L')}</h2>
                             <p>{getUiString(lang, 'Enter option details to see break-even, max profit/loss, and payoff at different price levels.')}</p>
                         </div>
                     )}

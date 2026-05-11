@@ -251,7 +251,7 @@ function CryptoIndexFundCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><PieChart size={40} /></div>
-                            <h3>{getUiString(lang, 'Build Crypto Index')}</h3>
+                            <h2>{getUiString(lang, 'Build Crypto Index')}</h2>
                             <p>{getUiString(lang, 'Enter an investment amount to see a market-cap-weighted allocation across top crypto assets.')}</p>
                         </div>
                     )}

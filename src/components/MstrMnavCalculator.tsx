@@ -217,7 +217,7 @@ function MstrMnavCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter valid inputs')}</h3>
+              <h2>{getUiString(lang, 'Enter valid inputs')}</h2>
               <p>{getUiString(lang, 'Provide market cap, BTC holdings, and BTC price.')}</p>
             </div>
           )}

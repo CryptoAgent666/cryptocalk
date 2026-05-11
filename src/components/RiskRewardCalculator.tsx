@@ -540,7 +540,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Target size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Evaluate Your Trade Setup')}</h3>
+                            <h2>{getUiString(lang, 'Evaluate Your Trade Setup')}</h2>
                             <p>{getUiString(lang, 'Enter your entry price, stop-loss, and take-profit to calculate the risk-reward ratio, required win rate, and simulated outcomes.')}</p>
                         </div>
                     )}

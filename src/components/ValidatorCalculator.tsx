@@ -233,7 +233,7 @@ function ValidatorCalculator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <div className="result-breakdown" style={{ marginTop: '1rem' }}>
-                <h4 style={{ margin: '0 0 0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>{getUiString(lang, 'Self-Stake vs Delegate')}</h4>
+                <h2 style={{ margin: '0 0 0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>{getUiString(lang, 'Self-Stake vs Delegate')}</h2>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Self-Stake Net Profit')}</span><span className="result-value profit">{fmtUSD(result.netProfit)}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Delegate Rewards (10% fee)')}</span><span className="result-value">{fmtUSD(result.delegateRewardsUSD)}</span></div>
               </div>
@@ -243,7 +243,7 @@ function ValidatorCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Configure Validator Setup')}</h3>
+              <h2>{getUiString(lang, 'Configure Validator Setup')}</h2>
               <p>{getUiString(lang, 'Select a network, enter stake amount and costs to estimate validator profitability.')}</p>
             </div>
           )}

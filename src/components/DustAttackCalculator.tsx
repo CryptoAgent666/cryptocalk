@@ -333,7 +333,7 @@ function DustAttackCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Shield size={40} /></div>
-                            <h3>{getUiString(lang, 'Analyze Dust UTXOs')}</h3>
+                            <h2>{getUiString(lang, 'Analyze Dust UTXOs')}</h2>
                             <p>{getUiString(lang, 'Enter your dust UTXO details to see if consolidating them is cost-effective at current fee rates.')}</p>
                         </div>
                     )}

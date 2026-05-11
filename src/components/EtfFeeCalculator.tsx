@@ -203,10 +203,10 @@ function EtfFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
               {/* Comparison Table */}
               <div style={{ marginTop: '16px' }}>
-                <h4 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
+                <h2 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
                   <BarChart3 size={14} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
                   {getUiString(lang, 'ETF Fee Comparison')}
-                </h4>
+                </h2>
                 <div style={{ overflowX: 'auto' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                     <thead>
@@ -247,9 +247,9 @@ function EtfFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
               {/* Fee Accumulation Bars */}
               <div style={{ marginTop: '16px' }}>
-                <h4 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
+                <h3 style={{ fontSize: '0.85rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text)' }}>
                   {getUiString(lang, 'Fee Accumulation')}
-                </h4>
+                </h3>
                 {results.etfResults.map((etf) => {
                   const barWidth = results.maxFee > 0 ? (etf.totalFees / results.maxFee) * 100 : 0;
                   return (
@@ -307,7 +307,7 @@ function EtfFeeCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><BarChart3 size={40} /></div>
-              <h3>{getUiString(lang, 'Compare Crypto ETF Fees')}</h3>
+              <h2>{getUiString(lang, 'Compare Crypto ETF Fees')}</h2>
               <p>{getUiString(lang, 'Enter your investment amount and holding period to see how different ETF expense ratios impact your returns over time.')}</p>
             </div>
           )}

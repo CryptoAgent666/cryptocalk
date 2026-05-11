@@ -265,7 +265,7 @@ function InheritanceTaxCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Estimate Inheritance Tax')}</h3>
+              <h2>{getUiString(lang, 'Estimate Inheritance Tax')}</h2>
               <p>{getUiString(lang, 'Enter portfolio value, select country and relationship to estimate crypto inheritance tax liability.')}</p>
             </div>
           )}

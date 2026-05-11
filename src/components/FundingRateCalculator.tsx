@@ -531,7 +531,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <Zap size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Calculate Funding Costs')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Funding Costs')}</h2>
                             <p>{getUiString(lang, 'Enter your position size and funding rate to see how much you\'ll pay or receive for holding perpetual futures.')}</p>
                         </div>
                     )}

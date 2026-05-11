@@ -224,7 +224,7 @@ function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Sortino focuses on downside volatility. It is useful for comparing strategies, but depends on stable return and risk assumptions.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid inputs')}</h3><p>{getUiString(lang, 'Provide return, risk-free rate, and downside deviation to compute Sortino ratio.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid inputs')}</h2><p>{getUiString(lang, 'Provide return, risk-free rate, and downside deviation to compute Sortino ratio.')}</p></div>
           )}
         </div>
       </div>

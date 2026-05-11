@@ -362,15 +362,15 @@ function CryptoConverter({ lang = 'en' }: { lang?: string }) {
             {/* Info Cards */}
             <div className="converter-info-grid">
                 <div className="info-card">
-                    <h3>{getUiString(lang, 'Real-Time Prices')}</h3>
+                    <h2>{getUiString(lang, 'Real-Time Prices')}</h2>
                     <p>{getUiString(lang, 'Rates powered by CoinGecko API, updated in real-time. Click Refresh for the latest price.')}</p>
                 </div>
                 <div className="info-card">
-                    <h3>{getUiString(lang, '500+ Cryptocurrencies')}</h3>
+                    <h2>{getUiString(lang, '500+ Cryptocurrencies')}</h2>
                     <p>{getUiString(lang, 'Search and convert any cryptocurrency — from Bitcoin to the latest altcoins and meme tokens.')}</p>
                 </div>
                 <div className="info-card">
-                    <h3>{getUiString(lang, '10+ Fiat Currencies')}</h3>
+                    <h2>{getUiString(lang, '10+ Fiat Currencies')}</h2>
                     <p>{getUiString(lang, 'Convert to USD, EUR, GBP, JPY, AUD, BRL, TRY, INR, RUB, and more local currencies.')}</p>
                 </div>
             </div>

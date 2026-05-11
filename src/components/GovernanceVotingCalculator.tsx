@@ -298,7 +298,7 @@ function GovernanceVotingCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Vote size={40} /></div>
-                            <h3>{getUiString(lang, 'Analyze Governance Power')}</h3>
+                            <h2>{getUiString(lang, 'Analyze Governance Power')}</h2>
                             <p>{getUiString(lang, 'Enter your token holdings and DAO parameters to evaluate your voting influence.')}</p>
                         </div>
                     )}

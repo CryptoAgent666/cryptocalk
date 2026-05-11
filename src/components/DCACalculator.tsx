@@ -691,7 +691,7 @@ function DCACalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* DCA vs Lump Sum */}
                             <div className="dca-comparison">
-                                <h4 className="comparison-title">{getUiString(lang, 'DCA vs Lump Sum')}</h4>
+                                <h2 className="comparison-title">{getUiString(lang, 'DCA vs Lump Sum')}</h2>
                                 <div className="comparison-grid">
                                     <div className={`comparison-card ${dcaBetter ? 'winner' : ''}`}>
                                         <span className="comparison-label">{getUiString(lang, 'DCA Strategy')}</span>
@@ -723,7 +723,7 @@ function DCACalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="dca-empty">
                             <TrendingUp size={40} strokeWidth={1} />
-                            <h3>{getUiString(lang, 'Simulate DCA Strategy')}</h3>
+                            <h2>{getUiString(lang, 'Simulate DCA Strategy')}</h2>
                             <p>{getUiString(lang, 'Select a cryptocurrency, choose your timeframe, and see how dollar-cost averaging would have performed.')}</p>
                         </div>
                     )}

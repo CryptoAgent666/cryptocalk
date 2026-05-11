@@ -169,7 +169,7 @@ function MevProtectionCalculator({ lang = 'en' }: { lang?: string }) {
               </div><p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Model is heuristic and conservative. Real MEV impact depends on pool depth, mempool activity, and execution path.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><Shield size={40} /></div><h3>{getUiString(lang, 'Enter swap settings')}</h3><p>{getUiString(lang, 'Set amount, slippage, and network to estimate MEV exposure.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><Shield size={40} /></div><h2>{getUiString(lang, 'Enter swap settings')}</h2><p>{getUiString(lang, 'Set amount, slippage, and network to estimate MEV exposure.')}</p></div>
           )}
         </div>
       </div>

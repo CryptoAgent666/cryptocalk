@@ -221,7 +221,7 @@ function TokenValuationCalculator({ lang = 'en' }: { lang?: string }) {
 
               {result.compPriceIfSameMC !== null && (
                 <div className="result-breakdown" style={{ marginTop: '1rem' }}>
-                  <h4 style={{ margin: '0 0 0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>{getUiString(lang, 'Comparable Analysis')}: {comp.name}</h4>
+                  <h2 style={{ margin: '0 0 0.5rem', fontSize: '0.875rem', fontWeight: 600 }}>{getUiString(lang, 'Comparable Analysis')}: {comp.name}</h2>
                   <div className="result-row"><span className="result-label">{comp.name} {getUiString(lang, 'Market Cap')}</span><span className="result-value">{fmtUSD(comp.marketCap)}</span></div>
                   <div className="result-row"><span className="result-label">{getUiString(lang, 'Your Price at')} {comp.name} MC</span><span className="result-value">{fmtPrice(result.compPriceIfSameMC)}</span></div>
                   {result.compGrowth !== null && (
@@ -235,7 +235,7 @@ function TokenValuationCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter Token Details')}</h3>
+              <h2>{getUiString(lang, 'Enter Token Details')}</h2>
               <p>{getUiString(lang, 'Provide supply, price, and target market cap to analyze token valuation and compare with existing projects.')}</p>
             </div>
           )}

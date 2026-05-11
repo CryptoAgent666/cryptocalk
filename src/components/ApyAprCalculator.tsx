@@ -372,9 +372,9 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Comparison Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'Compounding Frequency Comparison')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -417,9 +417,9 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Monthly Earnings Breakdown */}
                             {monthlyBreakdown.length > 0 && (
                                 <div style={{ marginTop: '20px' }}>
-                                    <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                    <h3 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                         {t >= 2 ? getUiString(lang, 'Yearly Growth') : getUiString(lang, 'Monthly Earnings Breakdown')}
-                                    </h4>
+                                    </h3>
                                     <div style={{ overflowX: 'auto', maxHeight: '300px', overflowY: 'auto' }}>
                                         {t >= 2 && yearlyGrowth.length > 0 ? (
                                             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
@@ -476,7 +476,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><ArrowRightLeft size={40} /></div>
-                            <h3>{getUiString(lang, 'Convert APR to APY')}</h3>
+                            <h2>{getUiString(lang, 'Convert APR to APY')}</h2>
                             <p>{getUiString(lang, 'Enter an interest rate, choose your compounding frequency, and see the real yield you earn after compounding. Compare across different frequencies instantly.')}</p>
                         </div>
                     )}

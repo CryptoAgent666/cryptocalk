@@ -297,7 +297,7 @@ function ConcentratedLiquidityCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter valid range')}</h3>
+              <h2>{getUiString(lang, 'Enter valid range')}</h2>
               <p>{getUiString(lang, 'Lower must be less than upper, both must be positive.')}</p>
             </div>
           )}

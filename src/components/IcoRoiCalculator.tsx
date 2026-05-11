@@ -187,7 +187,7 @@ function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Historical ROI does not imply future returns. Use with market cap and liquidity checks before entering positions.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><Rocket size={40} /></div><h3>{getUiString(lang, 'Enter valid ICO assumptions')}</h3><p>{getUiString(lang, 'Set ICO, current, ATH price and token amount to calculate ROI.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><Rocket size={40} /></div><h2>{getUiString(lang, 'Enter valid ICO assumptions')}</h2><p>{getUiString(lang, 'Set ICO, current, ATH price and token amount to calculate ROI.')}</p></div>
           )}
         </div>
       </div>

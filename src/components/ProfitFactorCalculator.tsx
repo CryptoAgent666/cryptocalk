@@ -184,7 +184,7 @@ function ProfitFactorCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><TrendingUp size={40} /></div>
-              <h3>{getUiString(lang, 'Enter valid inputs')}</h3>
+              <h2>{getUiString(lang, 'Enter valid inputs')}</h2>
               <p>{getUiString(lang, 'Set win rate, average win, and average loss to compute profit factor.')}</p>
             </div>
           )}

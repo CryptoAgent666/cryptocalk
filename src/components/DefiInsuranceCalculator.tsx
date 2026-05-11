@@ -450,7 +450,7 @@ function DefiInsuranceCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Shield size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate Insurance Cost')}</h3>
+                            <h2>{getUiString(lang, 'Calculate Insurance Cost')}</h2>
                             <p>{getUiString(lang, 'Enter your position size and coverage parameters to see the cost-benefit analysis of DeFi insurance.')}</p>
                         </div>
                     )}

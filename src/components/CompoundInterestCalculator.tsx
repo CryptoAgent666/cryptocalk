@@ -345,9 +345,9 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Year by Year Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'Year-by-Year Growth')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -386,7 +386,7 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><TrendingUp size={40} /></div>
-                            <h3>{getUiString(lang, 'Watch Your Money Grow')}</h3>
+                            <h2>{getUiString(lang, 'Watch Your Money Grow')}</h2>
                             <p>{getUiString(lang, 'Enter your initial investment, monthly contribution, and APY to see the power of compound interest over time.')}</p>
                         </div>
                     )}

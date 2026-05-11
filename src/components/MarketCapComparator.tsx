@@ -545,7 +545,7 @@ function MarketCapComparator({ lang = 'en' }: { lang?: string }) {
                             <div className="results-empty-icon">
                                 <BarChart3 size={40} />
                             </div>
-                            <h3>{getUiString(lang, 'Market Cap Comparator')}</h3>
+                            <h2>{getUiString(lang, 'Market Cap Comparator')}</h2>
                             <p>
                                 {getUiString(lang, 'Select two coins to compare:')} "{getUiString(lang, 'What if')} {targetCoin?.symbol.toUpperCase() || getUiString(lang, 'Coin A')} {getUiString(lang, 'had')} {refCoin?.symbol.toUpperCase() || getUiString(lang, 'Coin B')}{getUiString(lang, "'s market cap?'")}"
                                 {isFetching && (

@@ -360,7 +360,7 @@ function FuturesBasisCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><ArrowUpDown size={40} /></div>
-                            <h3>{getUiString(lang, 'Analyze Futures Basis')}</h3>
+                            <h2>{getUiString(lang, 'Analyze Futures Basis')}</h2>
                             <p>{getUiString(lang, 'Enter spot and futures prices to evaluate the basis spread and potential cash-and-carry yield.')}</p>
                         </div>
                     )}

@@ -306,7 +306,7 @@ function FlashLoanCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Zap size={40} /></div>
-                            <h3>{getUiString(lang, 'Estimate Flash Loan Profit')}</h3>
+                            <h2>{getUiString(lang, 'Estimate Flash Loan Profit')}</h2>
                             <p>{getUiString(lang, 'Enter loan parameters and arbitrage spread to calculate potential flash loan profitability.')}</p>
                         </div>
                     )}

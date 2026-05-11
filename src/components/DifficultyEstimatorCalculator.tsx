@@ -199,7 +199,7 @@ function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Difficulty and price dynamics are independent in reality. Treat this as directional scenario planning only.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><BarChart3 size={40} /></div><h3>{getUiString(lang, 'Enter valid mining assumptions')}</h3><p>{getUiString(lang, 'Provide difficulty and revenue inputs to model the next adjustment impact.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><BarChart3 size={40} /></div><h2>{getUiString(lang, 'Enter valid mining assumptions')}</h2><p>{getUiString(lang, 'Provide difficulty and revenue inputs to model the next adjustment impact.')}</p></div>
           )}
         </div>
       </div>

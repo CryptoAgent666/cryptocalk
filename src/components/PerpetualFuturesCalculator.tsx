@@ -184,7 +184,7 @@ function PerpetualFuturesCalculator({ lang = 'en' }: { lang?: string }) {
 
               {result.fundingByDay.length > 1 && (
                 <>
-                  <h4 style={{ margin: '1rem 0 0.5rem', fontWeight: 600 }}>{getUiString(lang, 'Funding Cost by Day')}</h4>
+                  <h2 style={{ margin: '1rem 0 0.5rem', fontWeight: 600 }}>{getUiString(lang, 'Funding Cost by Day')}</h2>
                   <div className="result-breakdown">
                     {result.fundingByDay.map((d) => (
                       <div key={d.day} className="result-row">
@@ -201,7 +201,7 @@ function PerpetualFuturesCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><ArrowUpDown size={40} /></div>
-              <h3>{getUiString(lang, 'Enter trade parameters')}</h3>
+              <h2>{getUiString(lang, 'Enter trade parameters')}</h2>
               <p>{getUiString(lang, 'Set entry, exit, leverage, and funding rate to calculate perpetual futures P&L.')}</p>
             </div>
           )}

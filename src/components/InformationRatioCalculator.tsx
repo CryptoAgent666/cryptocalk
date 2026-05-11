@@ -262,7 +262,7 @@ function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
               <div className="results-empty-icon">
                 <TrendingUp size={40} />
               </div>
-              <h3>{getUiString(lang, 'Enter valid inputs')}</h3>
+              <h2>{getUiString(lang, 'Enter valid inputs')}</h2>
               <p>{getUiString(lang, 'Provide portfolio return, benchmark return, and tracking error to compute information ratio.')}</p>
             </div>
           )}

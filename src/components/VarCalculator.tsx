@@ -199,7 +199,7 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Parametric VaR assumes normally distributed returns and stable volatility. Stress scenarios can exceed these estimates.')}</p>
             </>
           ) : (
-            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h3>{getUiString(lang, 'Enter valid risk inputs')}</h3><p>{getUiString(lang, 'Set portfolio size, volatility, and horizon to estimate VaR and CVaR.')}</p></div>
+            <div className="results-empty"><div className="results-empty-icon"><TrendingUp size={40} /></div><h2>{getUiString(lang, 'Enter valid risk inputs')}</h2><p>{getUiString(lang, 'Set portfolio size, volatility, and horizon to estimate VaR and CVaR.')}</p></div>
           )}
         </div>
       </div>

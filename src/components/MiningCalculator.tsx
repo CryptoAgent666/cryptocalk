@@ -614,7 +614,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="mining-empty">
                             <Cpu size={40} strokeWidth={1} />
-                            <h3>{getUiString(lang, 'Configure Your Mining Rig')}</h3>
+                            <h2>{getUiString(lang, 'Configure Your Mining Rig')}</h2>
                             <p>{getUiString(lang, 'Select an ASIC miner or enter your hashrate to see profitability estimates.')}</p>
                         </div>
                     )}

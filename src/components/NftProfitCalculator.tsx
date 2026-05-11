@@ -513,9 +513,9 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
 
                             {/* Fee Comparison Table */}
                             <div style={{ marginTop: '20px' }}>
-                                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '10px', color: 'var(--color-text)' }}>
                                     {getUiString(lang, 'Marketplace Fee Comparison')}
-                                </h4>
+                                </h2>
                                 <div style={{ overflowX: 'auto' }}>
                                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem' }}>
                                         <thead>
@@ -564,7 +564,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                     ) : (
                         <div className="results-empty">
                             <div className="results-empty-icon"><Image size={40} /></div>
-                            <h3>{getUiString(lang, 'Calculate NFT Profit')}</h3>
+                            <h2>{getUiString(lang, 'Calculate NFT Profit')}</h2>
                             <p>{getUiString(lang, 'Enter your buy and sell prices to see your real profit after marketplace fees, creator royalties, and gas costs.')}</p>
                         </div>
                     )}

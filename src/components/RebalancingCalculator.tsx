@@ -327,7 +327,7 @@ function RebalancingCalculator({ lang = 'en' }: { lang?: string }) {
           ) : (
             <div className="results-empty">
               <div className="results-empty-icon"><PieChart size={40} /></div>
-              <h3>{getUiString(lang, 'Add valid portfolio inputs')}</h3>
+              <h2>{getUiString(lang, 'Add valid portfolio inputs')}</h2>
               <p>{getUiString(lang, 'Use at least two assets with non-zero current value and target weights.')}</p>
             </div>
           )}
