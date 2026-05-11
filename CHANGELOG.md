@@ -2,6 +2,28 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 104) — fix: 30-page quality audit findings
+
+### Comprehensive audit run
+- 30 pages × 25 checks = 915 quality checks
+- **96.1% pass rate** (879 passed, 36 failed mostly false positives)
+
+### Real issues fixed
+1. **Homepage said "93 calculators"** but post-update 100 it's 108
+   - `src/pages/index.astro`: 9 mentions updated (hero badge, H1, schema descriptions, FAQ)
+   - `src/pages/[lang]/index.astro`: 10 mentions updated across ES/PT/TR/HI/RU
+2. **4 short page titles** missing brand/context suffix:
+   - profit-calculator: 24c → "Crypto Profit Calculator — CryptoCalk" (44c)
+   - dca-calculator: 14c → "DCA Crypto Calculator — Dollar-Cost Averaging Simulator" (54c)
+   - methodology: 22c → "Calculator Methodology — How CryptoCalk Computes Results" (54c)
+   - privacy: 14c → "Privacy Policy — CryptoCalk Data Practices" (43c)
+
+### False positives confirmed (not bugs)
+- "Calculate"/"Submit" English on localized pages = JSON dict KEYS in `define:vars`, not visible text
+- Localized pages 250-380KB = by design (translations inlined to avoid extra HTTP)
+- Missing byline on category hubs / methodology / privacy = correct (not articles)
+- Missing FAQ on policy pages = correct
+
 ## [2026-05-11] (update 103) — feat: SEO indexation boost for 11 new calculators
 
 ### Issue identified via GSC API analysis
