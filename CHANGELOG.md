@@ -2,6 +2,27 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-12] (update 121) — added: localized FAQ for 12 priority calcs
+
+### Coverage
+- 12 high-priority calculators × 6 languages × 6 Q&A = **432 new FAQ pairs**
+- Calcs: nft-profit, market-cap, asic-mining, difficulty, rebalancing, hodl-vs-trade, funding-rate, gamefi, gpu-mining, electricity-cost, satoshi-converter, portfolio
+- File: `calculator-faq.ts` 50 → **61 calc entries** (1 duplicate removed: funding-rate had existing entry, replaced with new EN-inclusive version)
+- Total file: 2,226 → **2,776 lines** (+550)
+
+### Production workflow
+- EN drafted by 1 agent (high-quality, calc-specific, includes benchmarks like "S21 Pro nets $2-4/day at $0.06/kWh", "100,000 sats = $73.70")
+- ES + PT translated by parallel agents (~3 min each, succeeded)
+- TR + HI + RU: agent watchdogs stalled at 600s — translations written directly inline by main agent
+- Each Q&A follows pattern: 1 definition, 1 how-it-works, 1 numeric benchmark, 1 common mistake, 1 platform comparison, 1 advanced edge case
+
+### Other fixes in this batch
+- `astro.config.mjs` sitemap: removed `EnumChangefreq` import (not exported by `@astrojs/sitemap` in this version), replaced with local typed const — fixes TS error
+- Removed duplicate `funding-rate-calculator` entry (the original had 5 langs but no EN; new version has all 6)
+
+### Build
+- 1,242 pages, TS clean
+
 ## [2026-05-12] (update 120) — multi-feature SEO/UX expansion
 
 Comprehensive batch of improvements identified in GSC console analysis.

@@ -4,6 +4,13 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
+/** @type {Record<string, 'daily'|'weekly'|'monthly'|'always'|'hourly'|'yearly'|'never'>} */
+const ChangeFreq = {
+  DAILY: 'daily',
+  WEEKLY: 'weekly',
+  MONTHLY: 'monthly',
+};
+
 const NON_DEFAULT_LANGS = new Set(['es', 'pt', 'tr', 'hi', 'ru']);
 // Mirror of SPEC_CALCULATOR_SLUGS in src/i18n/utils.ts (93 slugs).
 // Keep this list in sync — it's used to filter out localized EN-slug aliases (e.g. /es/profit-calculator)
@@ -173,30 +180,30 @@ export default defineConfig({
         // Homepage (EN or localized)
         if (path === '/' || /^\/[a-z]{2}\/$/.test(path)) {
           item.priority = 1.0;
-          item.changefreq = 'daily';
+          item.changefreq = ChangeFreq.DAILY;
         }
         // Category hubs
         else if (path.includes('/calculators/')) {
           item.priority = 0.8;
-          item.changefreq = 'weekly';
+          item.changefreq = ChangeFreq.WEEKLY;
         }
         // Top-tier EN calc pages (high-traffic, no /lang/ prefix)
         else if (/^\/[a-z][a-z0-9-]+-calculator\/$/.test(path) || /^\/(converter|hodl-vs-trade|what-if|inflation-hedge|exchange-fees|if-i-had-bought|reverse-roi|rainbow-chart-calculator|pizza-day-calculator|millionaire-calculator)\/$/.test(path)) {
           item.priority = 0.8;
-          item.changefreq = 'weekly';
+          item.changefreq = ChangeFreq.WEEKLY;
         }
         // Localized calculator pages
         else if (/^\/[a-z]{2}\//.test(path)) {
           item.priority = 0.7;
-          item.changefreq = 'weekly';
+          item.changefreq = ChangeFreq.WEEKLY;
         }
         // Info/legal pages
         else if (/(about|contact|privacy|terms|methodology|editorial-policy|updates)/.test(path)) {
           item.priority = 0.4;
-          item.changefreq = 'monthly';
+          item.changefreq = ChangeFreq.MONTHLY;
         } else {
           item.priority = 0.6;
-          item.changefreq = 'weekly';
+          item.changefreq = ChangeFreq.WEEKLY;
         }
         item.lastmod = new Date().toISOString();
         return item;
