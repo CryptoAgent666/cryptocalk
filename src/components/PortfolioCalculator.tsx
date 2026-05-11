@@ -188,7 +188,7 @@ function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${isPresetActive(p) ? 'active' : ''}`}
                                     onClick={() => applyPreset(p)}
                                 >
-                                    {p.name}
+                                    {getUiString(lang, p.name)}
                                 </button>
                             ))}
                         </div>

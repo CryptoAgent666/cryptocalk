@@ -2,6 +2,25 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 116) — fix: social-icon touch targets + portfolio preset i18n
+
+### Detection
+Round 9 detailed UX audit (30 pages × static checks + 30 × rendered iframe + 4 screenshot inspections).
+
+### Fix 1 — Social-link icons too small (a11y)
+- `/ru/about/` (and other localized about pages) had 3 social-media link icons (X/Twitter, LinkedIn, Instagram) rendering at 20×20px — well below WCAG 44×44px minimum touch target
+- Updated `.author-social-links a` CSS in both `about.astro` and `[lang]/about.astro`: added `min-width: 44px`, `min-height: 44px`, `display: inline-flex; align-items: center; justify-content: center`
+- Verified: now 44×44px each
+
+### Fix 2 — PortfolioCalculator preset buttons not localized
+- Screenshot of `/pt/portfolio-calculator/` revealed preset buttons showing "Conservative / Balanced / Aggressive" in English while the rest of the page was Portuguese
+- Root cause: `<button>{p.name}</button>` rendered raw `PRESET_PORTFOLIOS[].name` strings without `getUiString()` wrapping
+- Wrapped with `getUiString(lang, p.name)` so the labels translate via the existing ui-strings dictionary entries
+- Added missing "Conservative" → "Conservador" translation to es.ts (PT/TR/HI/RU already had all 3)
+
+### Build
+- 1,241 pages, TS clean. 30/30 audited pages pass.
+
 ## [2026-05-11] (update 115) — fix: <main> landmark + portfolio labels
 
 ### Detection
