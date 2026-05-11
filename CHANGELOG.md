@@ -2,6 +2,36 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-11] (update 109) — added: content uniqueness boost for 11 new calcs
+
+### Goal
+Reduce body-content similarity for Update 100's 11 new calculators (82% → <10%) and uniquify FAQ schema across template pages. Improvements identified in content uniqueness audit (HIGH/MED/LOW priority).
+
+### HIGH: calculator-seo-ext.ts — 11 new calcs × 6 languages (1,056 paragraphs)
+- Added unique body content for: mayer-multiple, geometric-mean-return, mstr-mnav, lightning-network-fee, pumpfun-bonding-curve, profit-factor, covered-call, iron-condor, perpetual-funding-arbitrage, concentrated-liquidity, looping-yield
+- 8 sections per calc (interpret, scenarios, checklist, mistakes, benchmarks, execution, hygiene, validation) × 2 paragraphs × 6 langs (en/es/pt/tr/hi/ru) = 1,056 unique paragraphs
+- File grew 13,760 → 16,026 lines (+2,266 lines)
+- EN content includes formulas, numbers, historical data points, contextual internal links
+- Translations done by 5 parallel agents (Sonnet)
+
+### MED: calculator-faq.ts — 12 calcs × 6 languages (432 Q&A pairs)
+- Added custom FAQ for: 11 new calcs (above) + mining-roi-calculator
+- 6 Q&A per calc × 6 langs (en/es/pt/tr/hi/ru) = 432 search-targeted Q&A pairs
+- File grew 1,762 → 2,226 lines (+464 lines, 38 → 50 calc entries)
+- Replaces generic faq-dictionary.ts fallback that was repeating 12× across these pages
+- EN FAQ now lives in CALCULATOR_FAQ (template reads `CALCULATOR_FAQ[slug]?.[lang]` first)
+
+### LOW: H2 heading variation — 20 calcs in LocalizedCalculatorPage.astro
+- Expanded `HEADING_OVERRIDES` from 10 → 30 EN calculators
+- Each new entry overrides 3-4 of the 8 section H2s with calc-specific phrasing
+- Example: "Reading Mayer Multiple values" instead of generic "How to interpret results correctly"
+- Reduces inter-page H2 uniformity (previously same H2 appeared 17-20× across pages)
+
+### Verification
+- TS clean (0 errors in our files; pre-existing dup-key warnings in ui-strings/ unrelated)
+- Build: 1,241 pages, 7.97s
+- Spot-check passed: EN Mayer page shows unique H2s and 6 unique FAQ items; ES Mayer page shows translated Spanish FAQ
+
 ## [2026-05-11] (update 104) — fix: 30-page quality audit findings
 
 ### Comprehensive audit run
