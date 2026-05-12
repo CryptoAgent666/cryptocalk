@@ -450,7 +450,7 @@ const howToSteps = [
 const howToSchema = howToSteps.length >= 3 ? {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  name: `How to use ${localizedTitle}`,
+  name: h.how,
   description: localizedDescription,
   totalTime: "PT2M",
   step: howToSteps,
