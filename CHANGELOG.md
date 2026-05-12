@@ -2,6 +2,38 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-12] (update 123) — Task 5: FAQ for 14 priority calcs (504 new pairs)
+
+### Coverage
+- 14 high-priority calculators × 6 languages × 6 Q&A = **504 new FAQ pairs**
+- Calcs: airdrop, salary, exchange-fees, crypto-loan, vesting, node, inflation-hedge, mev, staking-rewards, options, arbitrage, liquid-staking, perpetual-futures, restaking
+- File: `calculator-faq.ts` 61 → **75 calc entries** (out of 119 total — 63% custom coverage)
+- Total file: 2,776 → **3,476 lines** (+700)
+
+### Production
+- EN drafted by 1 agent (140 lines, 84 Q&A pairs)
+- All 5 translations completed by parallel agents in single Write calls (this time none stalled — explicit "single Write" instruction worked)
+  - ES: 126 lines (5min)
+  - PT: 126 lines (5min)
+  - HI: 126 lines (4min)
+  - RU: 126 lines (5min)
+  - TR: 126 lines (7min)
+
+### Sample Q&A topics (each calc gets 6)
+- Airdrop: how to qualify, average value, taxation, sybil farming
+- Salary: legality, tax treatment, BTC vs USDC for paychecks
+- Exchange fees: maker/taker math, VIP tiers, withdrawal fees
+- Crypto loan: LTV math, liquidation thresholds, Aave vs Compound vs CeFi
+- MEV: sandwich attack math, Flashbots vs MEV Blocker vs CowSwap
+- Liquid staking: stETH vs rETH vs cbETH, looping leverage risks
+- Restaking: EigenLayer vs Symbiotic vs Karak, slashing exposure
+
+### Other fix in this batch
+- `astro.config.mjs`: replaced ad-hoc ChangeFreq const with proper `ChangeFreqEnum` from `@astrojs/sitemap` — eliminates TS errors
+
+### Build
+- 1,242 pages, TS clean
+
 ## [2026-05-12] (update 122) — Tasks 2/3/4/6: HowTo, hreflang, headers
 
 ### Task 2 — HowTo schema on Layout-direct calc pages (~62 pages)

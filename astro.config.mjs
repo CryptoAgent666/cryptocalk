@@ -2,13 +2,12 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
-import sitemap from '@astrojs/sitemap';
+import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
 
-/** @type {Record<string, 'daily'|'weekly'|'monthly'|'always'|'hourly'|'yearly'|'never'>} */
 const ChangeFreq = {
-  DAILY: 'daily',
-  WEEKLY: 'weekly',
-  MONTHLY: 'monthly',
+  DAILY: ChangeFreqEnum.DAILY,
+  WEEKLY: ChangeFreqEnum.WEEKLY,
+  MONTHLY: ChangeFreqEnum.MONTHLY,
 };
 
 const NON_DEFAULT_LANGS = new Set(['es', 'pt', 'tr', 'hi', 'ru']);
