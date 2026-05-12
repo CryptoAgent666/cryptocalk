@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import MiningCoinSwitcherCalculator from '../components/MiningCoinSwitcherCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="mining-coin-switcher-calculator"
+  title="Multi-Coin Mining Switcher — Best Coin to Mine Now"
+  description="Free multi-coin mining profitability switcher. Find the most profitable coin to mine right now with your hardware (RTX 4090, RTX 3080, Antminer S21). Live difficulty + price across BTC, KAS, RVN, ERG, FLUX."
+>
+  <MiningCoinSwitcherCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

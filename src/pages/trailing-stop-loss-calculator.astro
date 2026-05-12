@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import TrailingStopLossCalculator from '../components/TrailingStopLossCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="trailing-stop-loss-calculator"
+  title="Trailing Stop Loss Calculator — Crypto Profit Lock"
+  description="Free crypto trailing stop loss calculator. Lock in profits as price rises while limiting downside. Compute trailing distance, breakeven, and profit at trigger for BTC, ETH, altcoins."
+>
+  <TrailingStopLossCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

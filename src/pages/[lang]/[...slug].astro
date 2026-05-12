@@ -114,6 +114,15 @@ import IronCondorCalculator from '../../components/IronCondorCalculator.tsx';
 import PerpetualFundingArbitrageCalculator from '../../components/PerpetualFundingArbitrageCalculator.tsx';
 import ConcentratedLiquidityCalculator from '../../components/ConcentratedLiquidityCalculator.tsx';
 import LoopingYieldCalculator from '../../components/LoopingYieldCalculator.tsx';
+import DepinEarningsCalculator from '../../components/DepinEarningsCalculator.tsx';
+import LpValueCalculator from '../../components/LpValueCalculator.tsx';
+import TrailingStopLossCalculator from '../../components/TrailingStopLossCalculator.tsx';
+import RwaYieldCalculator from '../../components/RwaYieldCalculator.tsx';
+import PolymarketOddsCalculator from '../../components/PolymarketOddsCalculator.tsx';
+import CryptoCardCashbackCalculator from '../../components/CryptoCardCashbackCalculator.tsx';
+import MiningCoinSwitcherCalculator from '../../components/MiningCoinSwitcherCalculator.tsx';
+import AiTokenSectorCalculator from '../../components/AiTokenSectorCalculator.tsx';
+import WalletNetWorthCalculator from '../../components/WalletNetWorthCalculator.tsx';
 import {
   NON_DEFAULT_LANGS,
   SPEC_CALCULATOR_SLUGS,
@@ -247,6 +256,15 @@ const ALIAS_DEFINITIONS: Record<SpecCalculatorSlug, AliasDefinition> = {
   'perpetual-funding-arbitrage-calculator': { title: 'Perpetual Funding Arbitrage Calculator' },
   'concentrated-liquidity-calculator': { title: 'Concentrated Liquidity (Uniswap V3) Calculator' },
   'looping-yield-calculator': { title: 'Looping / Recursive Lending Calculator' },
+  'depin-earnings-calculator': { title: 'DePIN Earnings Calculator' },
+  'lp-value-calculator': { title: 'LP Value Calculator' },
+  'trailing-stop-loss-calculator': { title: 'Trailing Stop Loss Calculator' },
+  'rwa-yield-calculator': { title: 'RWA Yield Calculator' },
+  'polymarket-odds-calculator': { title: 'Polymarket Odds Calculator' },
+  'crypto-card-cashback-calculator': { title: 'Crypto Card Cashback Calculator' },
+  'mining-coin-switcher-calculator': { title: 'Multi-Coin Mining Switcher' },
+  'ai-token-sector-calculator': { title: 'AI Token Sector Calculator' },
+  'wallet-net-worth-calculator': { title: 'Wallet Net Worth Calculator' },
 };
 
 interface StaticPathProps {
@@ -410,4 +428,13 @@ const description = `Free ${routeDef.title}. Calculate crypto outcomes instantly
   {canonicalRouteSlug === 'perpetual-funding-arbitrage-calculator' && <PerpetualFundingArbitrageCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'concentrated-liquidity-calculator' && <ConcentratedLiquidityCalculator slot="calculator" lang={lang} client:load />}
   {canonicalRouteSlug === 'looping-yield-calculator' && <LoopingYieldCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'depin-earnings-calculator' && <DepinEarningsCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'lp-value-calculator' && <LpValueCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'trailing-stop-loss-calculator' && <TrailingStopLossCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'rwa-yield-calculator' && <RwaYieldCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'polymarket-odds-calculator' && <PolymarketOddsCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'crypto-card-cashback-calculator' && <CryptoCardCashbackCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'mining-coin-switcher-calculator' && <MiningCoinSwitcherCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'ai-token-sector-calculator' && <AiTokenSectorCalculator slot="calculator" lang={lang} client:load />}
+  {canonicalRouteSlug === 'wallet-net-worth-calculator' && <WalletNetWorthCalculator slot="calculator" lang={lang} client:load />}
 </LocalizedCalculatorPage>

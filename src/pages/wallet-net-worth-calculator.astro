@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import WalletNetWorthCalculator from '../components/WalletNetWorthCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="wallet-net-worth-calculator"
+  title="Crypto Wallet Net Worth Calculator — Multi-Chain Tracker"
+  description="Free crypto wallet net worth tracker. Calculate total holdings value across Ethereum, Solana, BSC, Polygon. Multi-chain portfolio aggregation with live prices for any wallet address."
+>
+  <WalletNetWorthCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

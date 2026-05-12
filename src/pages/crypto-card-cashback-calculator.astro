@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import CryptoCardCashbackCalculator from '../components/CryptoCardCashbackCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="crypto-card-cashback-calculator"
+  title="Crypto Card Cashback Calculator — Gemini, Coinbase, Venmo"
+  description="Free crypto credit card cashback calculator. Compare Gemini (4% gas/EV), Coinbase One (4%), Venmo (3%/2%/1%), Bitcoin Rewards Visa. Find annual BTC/ETH earnings from your spending profile."
+>
+  <CryptoCardCashbackCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

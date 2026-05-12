@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import RwaYieldCalculator from '../components/RwaYieldCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="rwa-yield-calculator"
+  title="RWA Yield Calculator — Tokenized Treasuries & Private Credit"
+  description="Free Real-World Assets (RWA) yield calculator. Compare tokenized US Treasuries (Ondo, BlackRock BUIDL), private credit (Maple, Centrifuge), real estate. 4-12% APY ranges with risk modeling."
+>
+  <RwaYieldCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

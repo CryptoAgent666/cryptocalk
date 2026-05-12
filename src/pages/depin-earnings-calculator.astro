@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import DepinEarningsCalculator from '../components/DepinEarningsCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="depin-earnings-calculator"
+  title="DePIN Earnings Calculator — Helium, Hivemapper, NATIX"
+  description="Free DePIN passive income calculator for Helium, Hivemapper, NATIX, Geodnet, XNET. Estimate daily/monthly earnings, hardware payback, ROI on decentralized physical infrastructure."
+>
+  <DepinEarningsCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

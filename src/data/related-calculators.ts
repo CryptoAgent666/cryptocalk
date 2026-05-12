@@ -129,4 +129,14 @@ export const RELATED_CALCULATORS: Record<SpecCalculatorSlug, SpecCalculatorSlug[
   'perpetual-funding-arbitrage-calculator': ['funding-rate-calculator', 'futures-basis-calculator', 'perpetual-futures-calculator', 'arbitrage-calculator'],
   'concentrated-liquidity-calculator': ['impermanent-loss-calculator', 'uniswap-calculator', 'yield-farming-calculator', 'looping-yield-calculator'],
   'looping-yield-calculator': ['lending-calculator', 'crypto-loan-calculator', 'concentrated-liquidity-calculator', 'apy-apr-calculator'],
+  // New calculators (May 2026 — wave 2)
+  'depin-earnings-calculator': ['mining-roi-calculator', 'node-calculator', 'staking-calculator', 'mining-calculator'],
+  'lp-value-calculator': ['uniswap-calculator', 'impermanent-loss-calculator', 'concentrated-liquidity-calculator', 'yield-farming-calculator'],
+  'trailing-stop-loss-calculator': ['tp-sl-calculator', 'position-size-calculator', 'risk-reward-calculator', 'liquidation-calculator'],
+  'rwa-yield-calculator': ['staking-calculator', 'apy-apr-calculator', 'compound-calculator', 'lending-calculator'],
+  'polymarket-odds-calculator': ['arbitrage-calculator', 'kelly-calculator', 'risk-reward-calculator', 'futures-basis-calculator'],
+  'crypto-card-cashback-calculator': ['salary-calculator', 'dca-calculator', 'compound-calculator', 'staking-calculator'],
+  'mining-coin-switcher-calculator': ['mining-calculator', 'gpu-mining-calculator', 'asic-mining-calculator', 'mining-roi-calculator'],
+  'ai-token-sector-calculator': ['portfolio-calculator', 'market-cap-calculator', 'rebalancing-calculator', 'crypto-correlation-calculator'],
+  'wallet-net-worth-calculator': ['portfolio-calculator', 'market-cap-calculator', 'crypto-portfolio-rebalance-calculator', 'dca-calculator'],
 };
