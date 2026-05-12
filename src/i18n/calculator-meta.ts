@@ -499,8 +499,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Polymarket odds calculator. Convert market prices ($0.65) to implied probability (65%), calculate bet payout, hedge positions, and find arbitrage opportunities across prediction markets.'
     },
     'crypto-card-cashback-calculator': {
-      title: 'Crypto Card Cashback Calculator — Gemini, Bitbank, Venmo',
-      description: 'Free crypto credit card cashback calculator. Compare Gemini (4% gas/EV), Bitbank (0.5%), Venmo (3%/2%/1%), Coinbase rewards. Find annual BTC/ETH earnings from your spending profile.'
+      title: 'Crypto Card Cashback Calculator — Gemini, Coinbase, Venmo',
+      description: 'Free crypto credit card cashback calculator. Compare Gemini (4% gas/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase rewards. Find annual BTC/ETH earnings from your spending profile.'
     },
     'mining-coin-switcher-calculator': {
       title: 'Multi-Coin Mining Switcher — Best Coin to Mine Now',
@@ -1013,8 +1013,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Calculadora gratis de cuotas Polymarket. Convierte precios de mercado ($0.65) a probabilidad implícita (65%), calcula payout de apuestas, cobertura y arbitraje en mercados de predicción.'
     },
     'crypto-card-cashback-calculator': {
-      title: 'Calculadora de Cashback Tarjeta Cripto — Gemini, Bitbank, Venmo',
-      description: 'Calculadora gratis de cashback de tarjetas cripto. Compara Gemini (4% gas/EV), Bitbank (0.5%), Venmo (3%/2%/1%), Coinbase. Encuentra ganancias anuales en BTC/ETH según tu perfil de gasto.'
+      title: 'Calculadora de Cashback Tarjeta Cripto — Gemini, Coinbase, Venmo',
+      description: 'Calculadora gratis de cashback de tarjetas cripto. Compara Gemini (4% gas/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase. Encuentra ganancias anuales en BTC/ETH según tu perfil de gasto.'
     },
     'mining-coin-switcher-calculator': {
       title: 'Selector de Minería Multi-Moneda — Mejor Moneda para Minar',
@@ -1527,8 +1527,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Calculadora gratuita de odds Polymarket. Converta preços de mercado ($0.65) em probabilidade implícita (65%), calcule payout de apostas, hedge e arbitragem em mercados de previsão.'
     },
     'crypto-card-cashback-calculator': {
-      title: 'Calculadora de Cashback Cartão Cripto — Gemini, Bitbank, Venmo',
-      description: 'Calculadora gratuita de cashback de cartões cripto. Compare Gemini (4% gás/EV), Bitbank (0.5%), Venmo (3%/2%/1%), Coinbase. Descubra ganhos anuais em BTC/ETH conforme seu perfil de gasto.'
+      title: 'Calculadora de Cashback Cartão Cripto — Gemini, Coinbase, Venmo',
+      description: 'Calculadora gratuita de cashback de cartões cripto. Compare Gemini (4% gás/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase. Descubra ganhos anuais em BTC/ETH conforme seu perfil de gasto.'
     },
     'mining-coin-switcher-calculator': {
       title: 'Seletor de Mineração Multi-Moeda — Melhor Moeda Para Minerar',
@@ -2041,8 +2041,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Ücretsiz Polymarket oran hesaplayıcı. Pazar fiyatlarını ($0.65) örtülü olasılığa (%65) dönüştürün, bahis ödemesi, hedge pozisyonları ve tahmin pazarlarında arbitraj fırsatlarını hesaplayın.'
     },
     'crypto-card-cashback-calculator': {
-      title: 'Kripto Kart Cashback Hesaplayıcı — Gemini, Bitbank, Venmo',
-      description: 'Ücretsiz kripto kredi kartı cashback hesaplayıcı. Gemini (%4 gaz/EV), Bitbank (%0.5), Venmo (%3/%2/%1), Coinbase ödüllerini karşılaştırın. Harcama profilinizden yıllık BTC/ETH kazançlarını bulun.'
+      title: 'Kripto Kart Cashback Hesaplayıcı — Gemini, Coinbase, Venmo',
+      description: 'Ücretsiz kripto kredi kartı cashback hesaplayıcı. Gemini (%4 gaz/EV), Coinbase One (%4), Venmo (%3/%2/%1), Coinbase ödüllerini karşılaştırın. Harcama profilinizden yıllık BTC/ETH kazançlarını bulun.'
     },
     'mining-coin-switcher-calculator': {
       title: 'Çoklu-Coin Madencilik Seçici — En Kârlı Coin Hangisi',
@@ -2555,8 +2555,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'मुफ़्त Polymarket odds कैलकुलेटर। मार्केट प्राइस ($0.65) को निहित संभावना (65%) में बदलें, बेट पेआउट, हेज पोज़िशन और प्रिडिक्शन मार्केट्स में आर्बिट्राज अवसरों की गणना करें।'
     },
     'crypto-card-cashback-calculator': {
-      title: 'Crypto Card Cashback कैलकुलेटर — Gemini, Bitbank, Venmo',
-      description: 'मुफ़्त crypto credit card cashback कैलकुलेटर। Gemini (4% gas/EV), Bitbank (0.5%), Venmo (3%/2%/1%), Coinbase रिवॉर्ड्स की तुलना करें। अपने खर्च प्रोफ़ाइल से सालाना BTC/ETH कमाई पाएँ।'
+      title: 'Crypto Card Cashback कैलकुलेटर — Gemini, Coinbase, Venmo',
+      description: 'मुफ़्त crypto credit card cashback कैलकुलेटर। Gemini (4% gas/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase रिवॉर्ड्स की तुलना करें। अपने खर्च प्रोफ़ाइल से सालाना BTC/ETH कमाई पाएँ।'
     },
     'mining-coin-switcher-calculator': {
       title: 'मल्टी-कॉइन माइनिंग स्विचर — अभी सबसे लाभदायक कॉइन',
@@ -3069,8 +3069,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Бесплатный калькулятор коэффициентов Polymarket. Конвертируйте цену рынка ($0,65) в вероятность (65%), рассчитайте выплату ставки, хеджирование и арбитраж на прогнозных рынках.'
     },
     'crypto-card-cashback-calculator': {
-      title: 'Калькулятор кешбэка крипто-карт — Gemini, Bitbank, Venmo',
-      description: 'Бесплатный калькулятор кешбэка крипто-кредитных карт. Сравните Gemini (4% бензин/EV), Bitbank (0,5%), Venmo (3%/2%/1%), Coinbase. Узнайте годовой доход в BTC/ETH из вашего профиля трат.'
+      title: 'Калькулятор кешбэка крипто-карт — Gemini, Coinbase, Venmo',
+      description: 'Бесплатный калькулятор кешбэка крипто-кредитных карт. Сравните Gemini (4% бензин/EV), Coinbase One (4%), Venmo (3%/2%/1%), Bitcoin Rewards Visa. Узнайте годовой доход в BTC/ETH из вашего профиля трат.'
     },
     'mining-coin-switcher-calculator': {
       title: 'Мульти-коин майнинг свитчер — лучшая монета для майнинга',
