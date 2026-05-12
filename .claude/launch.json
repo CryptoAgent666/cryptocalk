@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["astro", "dev", "--port", "4321"],
       "port": 4321
+    },
+    {
+      "name": "cryptocalk-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "4322", "dist"],
+      "port": 4322
     }
   ]
 }

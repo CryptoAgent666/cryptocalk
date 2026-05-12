@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import AiTokenSectorCalculator from '../components/AiTokenSectorCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="ai-token-sector-calculator"
+  title="AI Crypto Token Sector Calculator — TAO, RENDER, FET"
+  description="Free AI crypto sector calculator. Track Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin portfolio. Sector market cap aggregation, scenario modeling, sector rotation analysis."
+>
+  <AiTokenSectorCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

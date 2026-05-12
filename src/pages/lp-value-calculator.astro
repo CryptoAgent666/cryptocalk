@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import LpValueCalculator from '../components/LpValueCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="lp-value-calculator"
+  title="LP Value Calculator — Uniswap, Curve, Balancer Pools"
+  description="Free LP position value tracker for Uniswap V2/V3, Curve, Balancer, Sushi pools. Calculate current LP token value, fees earned, and net P&L vs simple HODL."
+>
+  <LpValueCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

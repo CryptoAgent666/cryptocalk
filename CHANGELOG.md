@@ -2,6 +2,39 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-12] (update 126) — feat: 9 NEW calculators (DePIN, RWA, Polymarket, AI, etc.)
+
+### New calculators (9)
+1. **DePIN Earnings Calculator** — Helium, Hivemapper, NATIX, Geodnet, XNET passive income with hardware payback, electricity costs, ROI by network
+2. **LP Value Calculator** — Uniswap V2 / Curve / Balancer LP position tracker; constant-product math (k = x*y), back-calculates initial deposit, IL vs HODL P&L, fees-only APR
+3. **Trailing Stop Loss Calculator** — Long/short crypto trailing stops with high-watermark tracking, profit lock at trigger, profit-captured ratio, BTC/ETH-tuned distances
+4. **RWA Yield Calculator** — Tokenized Treasuries (Ondo USDY, BlackRock BUIDL), private credit (Maple, Centrifuge, Goldfinch), real estate (RealT) — net APY after fees, after-tax CAGR, Sharpe vs T-bills
+5. **Polymarket Odds Calculator** — Convert prices to implied probability, decimal/American/fractional odds, EV calc, Kelly bet sizing, hedge math for locked profit
+6. **Crypto Card Cashback Calculator** — Gemini (4% gas/EV), Coinbase One (4%), Venmo (3/2/1), Bitcoin Rewards Visa, Crypto.com Visa — net rewards, BTC accumulation with appreciation, 10y projections
+7. **Multi-Coin Mining Switcher** — RTX 4090, RTX 3090, RTX 3080, Antminer S21, KS5 hardware × 6 coins (BTC, KAS, RVN, ERG, FLUX, ALPH); ranks by daily net profit, switching advantage vs #2
+8. **AI Token Sector Calculator** — Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin (WLD), Akash (AKT), Ocean (OCEAN), AGIX portfolio with sector market cap, HHI concentration, subsector breakdown
+9. **Wallet Net Worth Calculator** — Multi-chain holdings tracker (Bitcoin, Ethereum, Solana, BSC, Polygon, Arbitrum); per-chain breakdown, stablecoin vs volatile split, top-3 concentration, HHI
+
+### Implementation scale
+- 9 React components (8.4k LOC total) with Quick Scenarios chips, Reset, formatUSD, withErrorBoundary
+- 9 .astro page routes (EN) + extended `[lang]/[...slug].astro` with 9 imports + 9 ALIAS_DEFINITIONS + 9 conditional renders
+- `SPEC_CALCULATOR_SLUGS` 108 → 117; `LOCALIZED_SPEC_SLUGS` +45 entries (9 calcs × 5 langs)
+- `calculator-meta.ts` +54 entries (9 × 6 langs of localized titles + descriptions)
+- `calculator-category-map.ts` + `related-calculators.ts` +9 entries each
+- 900 UI string translations merged into es/pt/tr/hi/ru.ts (180 keys × 5 langs)
+- 324 FAQ Q&A pairs (9 calcs × 6 questions × 6 langs) added to `calculator-faq.ts` (5,676 → 6,126 lines)
+
+### Process
+- Phase 1: slugs, meta, categories, related (Python regex inserts)
+- Phase 2: 9 React components with quality math + 4-6 quick scenarios each
+- Phase 3: page routes + dynamic [...slug].astro extension
+- Phase 4: 5 parallel translation agents (es/pt/tr/hi/ru) → 900 UI strings, deduped existing "Unprofitable"
+- Phase 5: 6 parallel FAQ agents (1 EN + 5 langs) → 54 Q&A blocks; fixed 129 unescaped TR apostrophes (`''` → `\'`)
+- Phase 6: Build verified 1,296 pages (was 1,242 = +54 = 9 calcs × 6 langs)
+
+### Build
+- 1,296 pages, 7.86s, TS clean (1 dedup fix on Unprofitable carry-over)
+
 ## [2026-05-12] (update 125) — 100% custom FAQ coverage
 
 ### Coverage milestone

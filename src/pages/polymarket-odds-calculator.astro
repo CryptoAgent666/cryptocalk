@@ -1,0 +1,13 @@
+---
+import LocalizedCalculatorPage from '../components/LocalizedCalculatorPage.astro';
+import PolymarketOddsCalculator from '../components/PolymarketOddsCalculator.tsx';
+---
+
+<LocalizedCalculatorPage
+  lang="en"
+  slug="polymarket-odds-calculator"
+  title="Polymarket Odds Calculator — Probability & Payout"
+  description="Free Polymarket odds calculator. Convert market prices ($0.65) to implied probability (65%), calculate bet payout, hedge positions, and find arbitrage opportunities across prediction markets."
+>
+  <PolymarketOddsCalculator slot="calculator" lang={'en'} client:load />
+</LocalizedCalculatorPage>

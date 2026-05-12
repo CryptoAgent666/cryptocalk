@@ -135,6 +135,16 @@ export const CALCULATOR_CATEGORY: Record<string, CategorySlug> = {
   'perpetual-funding-arbitrage-calculator': 'trading-tools',
   'concentrated-liquidity-calculator': 'defi-yield',
   'looping-yield-calculator': 'defi-yield',
+  // New calculators (May 2026 — wave 2)
+  'depin-earnings-calculator': 'mining',
+  'lp-value-calculator': 'defi-yield',
+  'trailing-stop-loss-calculator': 'trading-tools',
+  'rwa-yield-calculator': 'investment',
+  'polymarket-odds-calculator': 'trading-tools',
+  'crypto-card-cashback-calculator': 'investment',
+  'mining-coin-switcher-calculator': 'mining',
+  'ai-token-sector-calculator': 'investment',
+  'wallet-net-worth-calculator': 'investment',
 };
 
 /** Human-readable category names per language. */
