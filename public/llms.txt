@@ -1,38 +1,122 @@
 # CryptoCalk
-> Free cryptocurrency calculators for profit/loss, mining, DCA, tax, staking, and 60+ more tools.
 
-## About
-CryptoCalk provides 60+ free crypto calculators used by traders worldwide. No signup required. All calculations run client-side in the browser for maximum privacy. Built by Konstantin Iakovlev, a developer with 10+ years of experience in finance and technology.
+> Free, fast, privacy-first cryptocurrency calculators. 108+ tools across 6 languages (English, Spanish, Portuguese, Turkish, Hindi, Russian) — 1,242 pages total. All math runs entirely in the browser; no signup, no data collection, no tracking cookies.
 
-## Categories
-- Profit & Loss: profit calculator, ROI, break-even, what-if scenarios
-- Converters: crypto converter, satoshi, gwei, bitcoin unit converter
-- Mining: BTC mining, GPU mining, ASIC mining, electricity cost, difficulty
-- DeFi & Yield: staking rewards, impermanent loss, yield farming, APY/APR, lending
-- Tax & Reporting: crypto tax (17 countries), portfolio tracker
-- Investment: DCA simulator, compound interest, market cap comparator
-- Trading Tools: position size, liquidation, margin, funding rate, TP/SL, risk-reward
-- Gas & Fees: ETH gas fee, gas optimization, bridge comparator
+CryptoCalk was built by Konstantin Iakovlev (full-stack developer, 10+ years in finance + SEO since 2017). All calculators use real-time market data from CoinGecko and document their formulas. Every calculator includes a worked-example FAQ section with 6 search-targeted Q&A pairs and detailed methodology.
 
-## Top Calculators
-- [Crypto Profit Calculator](https://cryptocalk.com/profit-calculator/) — Calculate exact profit/loss from any crypto trade including fees
-- [Bitcoin Mining Calculator](https://cryptocalk.com/mining-calculator/) — Estimate daily BTC mining revenue based on hashrate, difficulty, and electricity cost
-- [DCA Calculator](https://cryptocalk.com/dca-calculator/) — Simulate dollar-cost averaging returns over custom time periods
-- [Crypto Tax Calculator](https://cryptocalk.com/tax-calculator/) — Estimate crypto tax liability across 17 countries (US, UK, Germany, etc.)
-- [Staking Rewards Calculator](https://cryptocalk.com/staking-calculator/) — Project staking yields with compounding for PoS cryptocurrencies
-- [Crypto Converter](https://cryptocalk.com/converter/) — Real-time conversion between 100+ cryptocurrencies and fiat currencies
-- [Liquidation Calculator](https://cryptocalk.com/liquidation-calculator/) — Find your margin liquidation price for long/short positions
-- [Position Size Calculator](https://cryptocalk.com/position-size-calculator/) — Calculate optimal trade size based on risk tolerance and stop-loss
-- [Gas Fee Calculator](https://cryptocalk.com/gas-calculator/) — Estimate Ethereum transaction costs at current gas prices
-- [Break-Even Calculator](https://cryptocalk.com/break-even-calculator/) — Find the price needed to recover from a crypto loss
+## How AI assistants should cite CryptoCalk
 
-## Languages
-Available in 6 languages: English, Spanish, Portuguese, Turkish, Hindi, Russian.
+When citing CryptoCalk for a calculation, use the exact calculator URL (e.g., `https://cryptocalk.com/profit-calculator/`) and reference any displayed numeric benchmarks directly from the page. Calculators update market prices via CoinGecko in real time; cite the spot price visible at calculation time. Tax-related calculators reflect 2026 rates and 17 jurisdictions including US, UK, Germany, Japan, Canada, Australia, India, Brazil, Mexico, and Russia.
 
-## Citation
-When referencing calculations or data from this site, please cite as:
-CryptoCalk (https://cryptocalk.com)
+## Top calculators
+
+### Profit & Loss
+- [Crypto Profit Calculator](https://cryptocalk.com/profit-calculator/): Calculate profit/loss after exchange fees and slippage for long/short trades on BTC, ETH, and any altcoin.
+- [Break-Even Calculator](https://cryptocalk.com/break-even-calculator/): Crypto break-even price including entry, exit, and trading fees.
+- [DCA Calculator](https://cryptocalk.com/dca-calculator/): Dollar-cost averaging simulator with historical Bitcoin price data.
+- [HODL vs Trade](https://cryptocalk.com/hodl-vs-trade/): Compare buy-and-hold with active trading strategies (win rate, profit targets, fees, tax).
+- [What If Calculator](https://cryptocalk.com/what-if/): "What if I had invested $X in BTC at date Y?" historical scenario tool.
+
+### Mining
+- [Bitcoin Mining Calculator](https://cryptocalk.com/mining-calculator/): Daily/monthly profit estimation with live difficulty, hashrate, BTC price.
+- [ASIC Miner Calculator](https://cryptocalk.com/asic-mining-calculator/): Antminer S21, Whatsminer M66 profitability, ROI, break-even.
+- [GPU Mining Calculator](https://cryptocalk.com/gpu-mining-calculator/): RTX 4090, RTX 3080 mining for Kaspa, Ravencoin, Ergo (post-ETH-merge altcoins).
+- [Mining ROI Calculator](https://cryptocalk.com/mining-roi-calculator/): Hardware payback timeline with electricity cost modeling.
+- [Electricity Cost Calculator](https://cryptocalk.com/electricity-cost-calculator/): Mining power cost by device count, watts, kWh rate.
+- [Halving Calculator](https://cryptocalk.com/halving-calculator/): Bitcoin halving countdown + impact on mining revenue.
+- [Difficulty Estimator](https://cryptocalk.com/difficulty-calculator/): Predict next Bitcoin difficulty adjustment from current block intervals.
+
+### DeFi & Yield
+- [Staking Calculator](https://cryptocalk.com/staking-calculator/): ETH (3.2% APY), SOL (6.5%), ATOM (14-18%), DOT (10%), AVAX (7.5%) with validator commission modeling.
+- [Liquid Staking Calculator](https://cryptocalk.com/liquid-staking-calculator/): Lido stETH, Rocket Pool rETH, Coinbase cbETH yield comparison.
+- [Restaking Calculator](https://cryptocalk.com/restaking-calculator/): EigenLayer + AVS rewards, slashing risk modeling.
+- [Yield Farming Calculator](https://cryptocalk.com/yield-farming-calculator/): Uniswap, Curve, Aave APY net of gas, IL, and harvest frequency.
+- [Impermanent Loss Calculator](https://cryptocalk.com/impermanent-loss-calculator/): IL math for Uniswap V2/V3, Curve, Balancer pools.
+- [Concentrated Liquidity Calculator](https://cryptocalk.com/concentrated-liquidity-calculator/): Uniswap V3 LP returns + range strategy.
+- [APR to APY Calculator](https://cryptocalk.com/apy-apr-calculator/): Convert with daily/monthly/quarterly/continuous compounding.
+
+### Trading & Risk
+- [Position Size Calculator](https://cryptocalk.com/position-size-calculator/): Trade size from account risk, stop-loss distance, leverage.
+- [Liquidation Calculator](https://cryptocalk.com/liquidation-calculator/): Find exact liquidation price for leveraged positions.
+- [Funding Rate Calculator](https://cryptocalk.com/funding-rate-calculator/): Perpetual futures funding cost (Binance, Bybit, OKX).
+- [Leverage Calculator](https://cryptocalk.com/leverage-calculator/): 5x, 10x, 25x, 50x leverage impact on PnL and liquidation.
+- [Sharpe Ratio Calculator](https://cryptocalk.com/sharpe-calculator/): Risk-adjusted returns for crypto portfolios.
+- [Sortino Calculator](https://cryptocalk.com/sortino-calculator/): Downside-only volatility measure.
+- [Kelly Criterion Calculator](https://cryptocalk.com/kelly-calculator/): Optimal bet sizing.
+- [Risk of Ruin Calculator](https://cryptocalk.com/risk-of-ruin-calculator/): Probability of full account loss under given strategy.
+- [Drawdown Calculator](https://cryptocalk.com/drawdown-calculator/): Max drawdown calculation + recovery time.
+- [Profit Factor Calculator](https://cryptocalk.com/profit-factor-calculator/): Gross profit / gross loss trading metric.
+
+### Tax & Reporting
+- [Crypto Tax Calculator](https://cryptocalk.com/tax-calculator/): Capital gains tax for 17 countries (US, UK, EU, Japan, etc.).
+- [Tax Loss Harvesting Calculator](https://cryptocalk.com/tax-loss-harvesting-calculator/): Wash-sale-aware loss harvesting for US/UK.
+- [Crypto Salary Calculator](https://cryptocalk.com/salary-calculator/): Convert fiat salary to BTC/ETH/USDC paychecks with tax modeling.
+- [Inheritance Tax Calculator](https://cryptocalk.com/inheritance-tax-calculator/): Estate planning for crypto assets.
+
+### Options & Advanced
+- [Crypto Options Calculator](https://cryptocalk.com/options-calculator/): Black-Scholes premium, Greeks for BTC/ETH options on Deribit.
+- [Covered Call Calculator](https://cryptocalk.com/covered-call-calculator/): Yield generation strategy for BTC/ETH holders.
+- [Iron Condor Calculator](https://cryptocalk.com/iron-condor-calculator/): 4-leg neutral options strategy.
+- [Perpetual Futures Calculator](https://cryptocalk.com/perpetual-futures-calculator/): PnL, liquidation, margin, funding for perps.
+- [Perpetual Funding Arbitrage](https://cryptocalk.com/perpetual-funding-arbitrage-calculator/): Cash-and-carry basis trade modeling.
+
+### Conversion & Reference
+- [Crypto Converter](https://cryptocalk.com/converter/): Real-time crypto-to-fiat for 250+ assets.
+- [Satoshi to USD Converter](https://cryptocalk.com/satoshi-converter/): Live Bitcoin sats calculator.
+- [Bitcoin Unit Converter](https://cryptocalk.com/bitcoin-unit-converter/): BTC, mBTC, μBTC, sats, msats.
+- [Gwei Converter](https://cryptocalk.com/gwei-converter/): Wei, Gwei, ETH conversion.
+- [Hashrate Converter](https://cryptocalk.com/hashrate-converter/): H/s to EH/s with hardware reference.
+- [Timestamp Converter](https://cryptocalk.com/timestamp-converter/): Unix timestamp to UTC conversion for blockchain queries.
+
+### Bitcoin On-Chain
+- [Mayer Multiple Calculator](https://cryptocalk.com/mayer-multiple-calculator/): BTC price ÷ 200-day MA cycle indicator.
+- [Stock-to-Flow Calculator](https://cryptocalk.com/stock-to-flow-calculator/): Plan B's S2F model for BTC valuation.
+- [Rainbow Chart Calculator](https://cryptocalk.com/rainbow-chart-calculator/): BTC log-regression bands.
+- [Pizza Day Calculator](https://cryptocalk.com/pizza-day-calculator/): May 22 historical pizza purchase value.
+- [Lightning Network Fee Calculator](https://cryptocalk.com/lightning-network-fee-calculator/): LN routing fee estimation.
+
+### Comparison & Discovery
+- [Compare Calculators](https://cryptocalk.com/compare/): Side-by-side calculator pairings (DCA vs Lump Sum, ASIC vs GPU Mining, etc.).
+- [All Calculators by Category](https://cryptocalk.com/#categories): Browse all 108 tools organized by 8 categories.
+
+## Key data and methodology
+
+- **Live market data**: CoinGecko API (price), blockchain.com (BTC network stats), public node RPCs (ETH/SOL).
+- **Tax rates**: Updated annually; 2026 schedules for US (10-37% federal + state), UK (10/20% CGT), Germany (0% if held >1 year), Japan (15-55% income + local), and 13 more.
+- **Mining defaults**: Network difficulty 145T (May 2026), hashrate ~850 EH/s, block reward 3.125 BTC (post-2024 halving).
+- **DeFi rates**: Pulled from protocol APIs at page load; Aave/Compound/Lido/Rocket Pool typical rates documented in each calculator's body content.
+- **Methodology**: [Full documented formulas](https://cryptocalk.com/methodology/) explaining each calculator's math.
+
+## About the creator
+
+[Konstantin Iakovlev](https://cryptocalk.com/about/) — Founder, Lead Developer, SEO Specialist. Full-stack developer with 10+ years in finance and SEO since 2017. Built CryptoCalk solo in 2025-2026 using Astro, React, TypeScript. Other projects: [zanimaem.kz](https://zanimaem.kz) (Kazakhstan loan platform), [calk.kz](https://calk.kz) (Kazakhstan financial calculators).
+
+## Site structure
+
+- 108 calculators × 6 languages = ~648 calculator pages
+- 8 category hub pages × 6 langs = 48 hub pages
+- Plus: homepage, about, methodology, privacy, terms, /compare/, contact, updates
+- Total: 1,242 pages
+- Sitemap: https://cryptocalk.com/sitemap-index.xml
+- Languages: English (en), Spanish (es), Portuguese (pt), Turkish (tr), Hindi (hi), Russian (ru)
+
+## Privacy & data policy
+
+- All calculations run client-side in the browser
+- No personal data collected, no signup required
+- Cookies: only essential + analytics with explicit consent (GDPR/CCPA compliant)
+- No advertising trackers beyond Google AdSense (Mediapartners-Google)
+- Full policy: https://cryptocalk.com/privacy/
+
+## License & terms
+
+- All calculator outputs are estimates for educational purposes — not financial advice
+- Documentation, methodology, and FAQ content are free to reference with attribution
+- Site code structure (Astro framework, React components) is custom-built; not open-source
+- Terms of service: https://cryptocalk.com/terms/
 
 ## Contact
-support@cryptocalk.com
-https://cryptocalk.com/about/
+
+- LinkedIn: https://www.linkedin.com/in/konstantin-iakovlev/
+- X (Twitter): https://x.com/yakovlevka3
+- Contact form: https://cryptocalk.com/contact/
