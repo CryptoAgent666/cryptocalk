@@ -2,6 +2,40 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-12] (update 125) — 100% custom FAQ coverage
+
+### Coverage milestone
+- **119/119 calculators** now have custom FAQ (was 75/119 = 63%)
+- 44 long-tail calcs added × 6 langs × 6 Q&A = **1,584 new FAQ pairs**
+- File: `calculator-faq.ts` 3,476 → 5,676 lines
+- Generic boilerplate FAQ fallback (`defaultFaqByLang`) is now effectively unused on calc pages
+
+### Production
+12 agents in 2 waves (split into 22-calc batches to avoid timeout):
+- Wave 1: 2 EN agents (44 calcs, 264 EN Q&A pairs, 220 lines each)
+- Wave 2: 10 translation agents (5 langs × 2 batches × 132 Q&A = 1,320 translated pairs)
+- TR batch A initially stalled, retried successfully
+- All output files: 198 lines each
+
+### Calcs covered (44 new)
+**Batch A** — converters, comparators, advanced DeFi:
+bridge-comparator, hashrate-converter, market-cap-comparator, reverse-roi, ico-roi-calculator, gwei-converter, timestamp-converter, unit-converter, loan-calculator, bitcoin-unit-converter, cross-chain-bridge-calculator, crypto-correlation-calculator, crypto-index-fund-calculator, crypto-inheritance-calculator, crypto-portfolio-rebalance-calculator, crypto-sentiment-calculator, defi-yield-aggregator, dust-attack-calculator, exchange-fee-comparator, flash-loan-calculator, gas-optimization-calculator, governance-voting-calculator
+
+**Batch B** — analytics, on-chain, advanced trading:
+nft-rarity-calculator, token-unlock-calculator, whale-alert-calculator, stock-to-flow-calculator, tax-loss-harvesting-calculator, payback-period-calculator, dva-calculator, bitcoin-energy-calculator, on-chain-metrics-calculator, grid-trading-calculator, inheritance-tax-calculator, validator-calculator, token-valuation-calculator, if-i-had-bought, millionaire-calculator, pizza-day-calculator, retirement-calculator, rainbow-chart-calculator, etf-fee-calculator, token-burn-calculator, futures-basis-calculator, defi-insurance-calculator
+
+### Topics covered per calc (6 Q&A pattern)
+- 1 definition / "what is X?"
+- 1 how-it-works / formula
+- 1 numeric benchmark (e.g., "Plan B's S2F predicts $200K BTC by 2028", "Bored Ape rarity score 218 = top 1%")
+- 1 common mistake / pitfall
+- 1 platform/asset comparison (Wormhole vs LayerZero vs Across, Yearn vs Convex vs Beefy, IBIT vs FBTC vs GBTC vs ARKB)
+- 1 advanced edge case (governance attacks, flash-loan exploit math, futures basis arbitrage)
+
+### Build
+- 1,242 pages, TS clean
+- Verified rendering: bridge-comparator, dust-attack-calculator, /es/calculadora-rareza-nft/ all show custom Q&As
+
 ## [2026-05-12] (update 124) — added: llms.txt + 54 broken links fixed
 
 ### Task 1 — `llms.txt` for AI search engines
