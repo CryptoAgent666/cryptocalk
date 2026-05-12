@@ -2,6 +2,29 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-12] (update 124) — added: llms.txt + 54 broken links fixed
+
+### Task 1 — `llms.txt` for AI search engines
+- New file: `public/llms.txt` (122 lines)
+- Standard markdown format for AI crawlers (ChatGPT, Claude, Perplexity, etc.)
+- Sections: How to cite, Top calculators by category (45+ links), Methodology, Creator bio, Site structure, Privacy/license
+- Each calc link includes 1-line description + key benchmarks
+- Helps AI search engines surface accurate citations with proper attribution
+
+### Task 4 — Fixed 54 broken localized URLs
+- All 54 broken links were in `src/pages/[lang]/updates.astro`
+- Hardcoded URLs used non-Latin (Cyrillic/Devanagari) slugs that don't exist; actual sitemap uses Latin transliteration
+- Examples fixed:
+  - `/ru/калькулятор-stock-to-flow/` → `/ru/kalkulyator-stock-to-flow/`
+  - `/hi/अगर-मैंने-खरीदा-होता/` → `/hi/if-i-had-bought/`
+  - `/tr/satin-almis-olsaydim/` → `/tr/ya-oyle-olsaydi/`
+  - `/es/calculadora-liquid-staking/` → `/es/calculadora-staking-liquido/`
+- Used a 2-pass approach: keyword-matching script (30 fixed) + manual map (24 fixed) = 54 total
+- Verified post-build: 0 broken internal links across 1,242 pages
+
+### Build
+- 1,242 pages, TS clean
+
 ## [2026-05-12] (update 123) — Task 5: FAQ for 14 priority calcs (504 new pairs)
 
 ### Coverage
