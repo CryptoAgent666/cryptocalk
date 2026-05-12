@@ -2,6 +2,36 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-12] (update 122) — Tasks 2/3/4/6: HowTo, hreflang, headers
+
+### Task 2 — HowTo schema on Layout-direct calc pages (~62 pages)
+Previously HowTo only on 46 LocalizedCalculatorPage calcs. Top-traffic Layout-direct pages (profit, mining, dca, tax, gas, etc.) lacked it.
+- Added generic 4-step HowTo to `Layout.astro` when `pageType === 'calculator'`
+- Steps: Enter inputs → Review live result → Interpret breakdown → Validate before acting
+- ~62 EN calc pages now eligible for rich snippets
+
+### Task 3 — WebSite SearchAction (already exists, verified)
+Confirmed homepage WebSite schema includes `potentialAction.SearchAction` with `urlTemplate` and `query-input`. Search box on homepage handles `?q=` param. ✅
+
+### Task 4 — Hreflang fix for alias slugs
+**Real bug found**: Localized pages routed via alias slugs (`/hi/gas-fee-calculator-hindi/`, `/hi/staking-rewards-calculator/`, `/hi/compound-interest-calculator-hindi/`) had `hreflang="en"` pointing to the **alias EN URL** (noindex), not the canonical.
+- Added `SLUG_ALIASES` map in `Layout.astro`: gas-fee→gas, staking-rewards→staking, compound-interest→compound, loan→crypto-loan
+- New `normalizeBasePathForHreflang()` rewrites the basePath used for hreflang generation
+- All hreflang tags now point to canonical EN URLs
+- Verified: `/hi/staking-rewards-calculator/` now hreflang en → `/staking-calculator/` (was `/staking-rewards-calculator/` alias)
+
+### Task 6 — _headers cache rules expanded
+Added cache directives for previously-uncached resources:
+- `/og/*` — 30 days (was: nothing, served fresh every request)
+- `/favicon.svg`, `/favicon.ico`, `/apple-touch-icon.png` — 30 days
+- `/manifest.json` — 1 day
+- `/*.html` — `max-age=1800, s-maxage=86400, must-revalidate` (browser 30 min, CDN 1 day, revalidate-on-stale)
+
+robots.txt was already optimal (Allow GPTBot/ClaudeBot/PerplexityBot/Mediapartners; Block CCBot/Google-Extended/Bytespider).
+
+### Build
+- 1,242 pages, TS clean
+
 ## [2026-05-12] (update 121) — added: localized FAQ for 12 priority calcs
 
 ### Coverage
