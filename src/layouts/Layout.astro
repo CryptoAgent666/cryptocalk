@@ -100,11 +100,62 @@ const breadcrumbSchema = pageType === 'calculator' ? {
   ],
 } : null;
 
+// HowTo schema — generic 4-step "use this calculator" instructions for rich-result eligibility on Layout-direct calc pages
+const howToSchema = pageType === 'calculator' ? {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: `How to use ${calcName}`,
+  description: description,
+  totalTime: 'PT1M',
+  step: [
+    {
+      '@type': 'HowToStep',
+      name: 'Enter your inputs',
+      text: `Enter your values into the ${calcName}'s input fields. Use the quick-scenario presets if you want to load typical assumptions instantly.`,
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Review the live result',
+      text: 'Results update in real time as you type — no submit button needed. Compare scenarios by changing any input and watching the result panel adjust.',
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Interpret the breakdown',
+      text: 'Use the result breakdown and benchmark zones to gauge whether your scenario sits in a healthy, marginal, or risky range. Cross-reference with the FAQ section below for context.',
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Validate before acting',
+      text: 'Before deploying capital, double-check assumptions (price, fees, leverage) against current market data and re-run the calculation with conservative inputs.',
+    },
+  ],
+  inLanguage: lang,
+} : null;
+
 // Per-calculator OG image: use /og/{slug}.png for top-10 calculators, else default
 const OG_IMAGE_SLUGS = new Set(['profit-calculator','dca-calculator','mining-calculator','tax-calculator','staking-calculator','converter','liquidation-calculator','position-size-calculator','impermanent-loss-calculator','gas-calculator']);
 const ogImagePath = OG_IMAGE_SLUGS.has(calcSlug) ? `/og/${calcSlug}.png` : '/og-image.png';
 
 const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es', pt: 'pt', tr: 'tr', hi: 'hi', ru: 'ru' };
+
+// Slug aliases — map alias slug → canonical slug.
+// Localized pages routed via alias slug should hreflang-point to the canonical EN URL,
+// not to the alias (which is noindex). Mirrors EN_ALIAS_SLUGS in astro.config.mjs.
+const SLUG_ALIASES: Record<string, string> = {
+  'gas-fee-calculator': 'gas-calculator',
+  'staking-rewards-calculator': 'staking-calculator',
+  'compound-interest-calculator': 'compound-calculator',
+  'loan-calculator': 'crypto-loan-calculator',
+};
+function normalizeBasePathForHreflang(p: string): string {
+  // p is like '/gas-fee-calculator' or '/staking-rewards-calculator'
+  const slug = p.replace(/^\/+|\/+$/g, '').split('/')[0];
+  if (slug && SLUG_ALIASES[slug]) {
+    return '/' + SLUG_ALIASES[slug];
+  }
+  return p;
+}
+const hreflangBasePath = normalizeBasePathForHreflang(basePath);
 ---
 
 <!doctype html>
@@ -196,13 +247,13 @@ const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es', pt: 'pt'
       <link
         rel="alternate"
         hreflang={hreflangRegionMap[l] ?? l}
-        href={`https://cryptocalk.com${getLocalizedPath(basePath, l)}`}
+        href={`https://cryptocalk.com${getLocalizedPath(hreflangBasePath, l)}`}
       />
     ))}
     <link
       rel="alternate"
       hreflang="x-default"
-      href={`https://cryptocalk.com${getLocalizedPath(basePath, DEFAULT_LANG)}`}
+      href={`https://cryptocalk.com${getLocalizedPath(hreflangBasePath, DEFAULT_LANG)}`}
     />
 
     <!-- OG Tags -->
@@ -225,6 +276,7 @@ const hreflangRegionMap: Record<string, string> = { en: 'en', es: 'es', pt: 'pt'
     <!-- Schema.org: WebPage + BreadcrumbList for EN calculator pages -->
     {webPageSchema && <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />}
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+    {howToSchema && <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />}
 
     <script>
       import { installCoinGeckoFetchInterceptor } from '../utils/coingecko-fetch-client';

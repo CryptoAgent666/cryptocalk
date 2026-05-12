@@ -13,8 +13,25 @@
 /images/*
   Cache-Control: public, max-age=604800
 
+/og/*
+  Cache-Control: public, max-age=2592000
+
+/favicon.svg
+  Cache-Control: public, max-age=2592000
+/favicon.ico
+  Cache-Control: public, max-age=2592000
+/apple-touch-icon.png
+  Cache-Control: public, max-age=2592000
+
+/manifest.json
+  Cache-Control: public, max-age=86400
+
 /robots.txt
   Cache-Control: public, max-age=3600
 
 /*.xml
   Cache-Control: public, max-age=3600
+
+# HTML pages: short cache for fast updates while still benefiting from CDN
+/*.html
+  Cache-Control: public, max-age=1800, s-maxage=86400, must-revalidate
