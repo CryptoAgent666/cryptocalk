@@ -172,6 +172,7 @@ const newCalculatorsItemListSchema = {
 };
 
 const buildDate = new Date().toISOString().split('T')[0];
+const buildDateTime = new Date().toISOString();
 
 const softwareAppSchema = {
   '@context': 'https://schema.org',
@@ -183,8 +184,8 @@ const softwareAppSchema = {
   operatingSystem: 'All',
   description: 'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 108 more tools.',
   inLanguage: 'en',
-  datePublished: '2025-11-01',
-  dateModified: buildDate,
+  datePublished: '2025-11-01T00:00:00+00:00',
+  dateModified: buildDateTime,
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   author: {
     '@type': 'Person',

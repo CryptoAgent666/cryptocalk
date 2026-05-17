@@ -82,8 +82,8 @@ const webPageSchema = pageType === 'calculator' ? {
   description: description,
   inLanguage: lang,
   isPartOf: { '@type': 'WebSite', '@id': 'https://cryptocalk.com/#website' },
-  datePublished: '2025-11-01',
-  dateModified: new Date().toISOString().split('T')[0],
+  datePublished: '2025-11-01T00:00:00+00:00',
+  dateModified: new Date().toISOString(),
   speakable: {
     '@type': 'SpeakableSpecification',
     cssSelector: ['.calc-header h1', '.calc-header p'],
