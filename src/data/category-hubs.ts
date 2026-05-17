@@ -115,6 +115,8 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'Hashrate Converter', href: '/hashrate-converter' },
       { name: 'Bitcoin Halving Calculator', href: '/halving-calculator' },
       { name: 'Bitcoin Energy Calculator', href: '/bitcoin-energy-calculator/' },
+      { name: 'DePIN Earnings Calculator', href: '/depin-earnings-calculator/' },
+      { name: 'Multi-Coin Mining Switcher', href: '/mining-coin-switcher-calculator/' },
     ],
   },
   {
@@ -140,6 +142,7 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'DeFi Insurance Calculator', href: '/defi-insurance-calculator/' },
       { name: 'Concentrated Liquidity (Uniswap V3)', href: '/concentrated-liquidity-calculator/' },
       { name: 'Looping / Recursive Lending', href: '/looping-yield-calculator/' },
+      { name: 'LP Value Calculator', href: '/lp-value-calculator/' },
     ],
   },
   {
@@ -185,6 +188,10 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'Geometric Mean Return', href: '/geometric-mean-return-calculator/' },
       { name: 'MicroStrategy mNAV Premium', href: '/mstr-mnav-calculator/' },
       { name: 'Pump.fun Bonding Curve', href: '/pumpfun-bonding-curve-calculator/' },
+      { name: 'RWA Yield Calculator', href: '/rwa-yield-calculator/' },
+      { name: 'Crypto Card Cashback Calculator', href: '/crypto-card-cashback-calculator/' },
+      { name: 'AI Token Sector Calculator', href: '/ai-token-sector-calculator/' },
+      { name: 'Wallet Net Worth Calculator', href: '/wallet-net-worth-calculator/' },
     ],
   },
   {
@@ -225,6 +232,8 @@ const CATEGORY_CONFIGS: CategoryConfig[] = [
       { name: 'Covered Call Calculator', href: '/covered-call-calculator/' },
       { name: 'Iron Condor Calculator', href: '/iron-condor-calculator/' },
       { name: 'Perpetual Funding Arbitrage', href: '/perpetual-funding-arbitrage-calculator/' },
+      { name: 'Trailing Stop Loss Calculator', href: '/trailing-stop-loss-calculator/' },
+      { name: 'Polymarket Odds Calculator', href: '/polymarket-odds-calculator/' },
     ],
   },
   {
