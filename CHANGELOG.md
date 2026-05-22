@@ -2,6 +2,32 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-18] (update 127) — CalkCheck audit fixes: /compare/ schema + .gov sources
+
+### CalkCheck audit (20 pages, 96+ criteria)
+- Pass rate: 1,677/2,180 = 76.9% (58 fails total; 5 categories already 100%)
+- 2 critical issues found and fixed:
+  1. **/compare/ had ZERO Schema.org JSON-LD** → added BreadcrumbList + CollectionPage + ItemList
+  2. **All 20 pages missing .gov E-E-A-T citations** → added category-based authoritative sources on all 1,242 localized calc pages
+
+### Authoritative sources block
+- New `CATEGORY_SOURCES` map in `LocalizedCalculatorPage.astro`
+- Rendered before FAQ section with localized heading (6 langs)
+- Category coverage: tax-reporting (IRS+HMRC), mining (IRS+EIA), defi-yield (IRS+SEC), trading-tools (CFTC+SEC), investment (SEC+Treasury+IRS), profit-loss (IRS Topic 409), gas-fees (Etherscan+FedReserve), converters (CoinGecko+Fed FX)
+- External links rel="noopener nofollow"
+
+### False positives identified
+- `0.105263` on trailing-stop-loss = intentional `.toFixed(6)` for BTC qty
+- `zapper.xyz` on wallet-net-worth = real DeFi tracker URL, not i18n key
+
+### Documented (not actionable)
+- CSP header missing — Plesk shared hosting limitation
+- 3 pages with >2s cold-cache time — variable, not consistent
+
+### Build
+- 1,296 pages, 7.99s, TS clean
+- Full audit report: AUDIT-2026-05-18.md
+
 ## [2026-05-12] (update 126) — feat: 9 NEW calculators (DePIN, RWA, Polymarket, AI, etc.)
 
 ### New calculators (9)
