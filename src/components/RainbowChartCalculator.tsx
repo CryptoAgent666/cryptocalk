@@ -1,5 +1,5 @@
 import { getUiString } from '../i18n/ui-strings';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import {
   DollarSign,
   TrendingUp,
@@ -65,6 +65,11 @@ function modelPrice(days: number): number {
 function RainbowChartCalculator({ lang = 'en' }: { lang?: string }) {
   const [btcPrice, setBtcPrice] = useState('77300');
   const [investment, setInvestment] = useState('10000');
+  // days-since-genesis depends on the current date → compute client-side only
+  // (post-mount) to avoid a React #418 hydration mismatch when the build day
+  // differs from the visit day. null until mounted.
+  const [days, setDays] = useState<number | null>(null);
+  useEffect(() => { setDays(daysSinceGenesis()); }, []);
 
   const loc = lang === 'en' ? 'en-US' : lang;
 
@@ -84,8 +89,8 @@ function RainbowChartCalculator({ lang = 'en' }: { lang?: string }) {
     const price = parseFloat(btcPrice) || 0;
     const invest = parseFloat(investment) || 0;
     if (price <= 0) return null;
+    if (days === null) return null; // not mounted yet — keeps SSR/first render identical
 
-    const days = daysSinceGenesis();
     const mPrice = modelPrice(days);
     if (mPrice <= 0) return null;
 
@@ -123,7 +128,7 @@ function RainbowChartCalculator({ lang = 'en' }: { lang?: string }) {
       btcAtModel,
       btcAtCurrent,
     };
-  }, [btcPrice, investment]);
+  }, [btcPrice, investment, days]);
 
   const applyScenario = (s: typeof SCENARIOS[number]) => {
     setBtcPrice(s.btcPrice);

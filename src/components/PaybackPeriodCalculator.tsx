@@ -1,5 +1,5 @@
 import { getUiString } from '../i18n/ui-strings';
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { Calendar, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 
@@ -19,6 +19,11 @@ function PaybackPeriodCalculator({ lang = 'en' }: { lang?: string }) {
   const [type, setType] = useState<'lump' | 'dca'>('lump');
   const [dcaAmount, setDcaAmount] = useState('500');
   const [multiplier, setMultiplier] = useState(2);
+  // "today" anchors the estimated payback date. Compute it client-side only
+  // (post-mount) so the build-day value doesn't differ from the visit-day value
+  // and trigger a React #418 hydration mismatch. null until mounted.
+  const [todayMs, setTodayMs] = useState<number | null>(null);
+  useEffect(() => { setTodayMs(Date.now()); }, []);
 
   const applyScenario = (s: (typeof SCENARIOS)[number]) => {
     setInvestment(s.investment); setMonthlyReturn(s.monthlyReturn);
@@ -65,13 +70,15 @@ function PaybackPeriodCalculator({ lang = 'en' }: { lang?: string }) {
       ? (Math.pow(multiplier, 1 / 12) - 1) * 100
       : 0;
 
-    const today = new Date();
-    const breakEvenDate = paybackMonth > 0
+    // breakEvenDate stays null until mounted (todayMs set client-side) so SSR
+    // and the first client render produce identical markup.
+    const today = todayMs !== null ? new Date(todayMs) : null;
+    const breakEvenDate = today && paybackMonth > 0
       ? new Date(today.getFullYear(), today.getMonth() + paybackMonth, today.getDate())
       : null;
 
     return { paybackMonth, years, months, totalInvested, valueAtPayback: value, neededFor1yr, breakEvenDate, milestones: milestones.slice(0, 20) };
-  }, [investment, monthlyReturn, type, dcaAmount, multiplier]);
+  }, [investment, monthlyReturn, type, dcaAmount, multiplier, todayMs]);
 
   const reset = () => {
     setInvestment('10000'); setMonthlyReturn('5');

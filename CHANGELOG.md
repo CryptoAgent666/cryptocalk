@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-29] (update 133) — Preventive #418 fixes: payback + rainbow-chart
+
+### Follow-up (closes the date-hydration class)
+- PaybackPeriodCalculator: `breakEvenDate` was computed from `new Date()` in a
+  useMemo over pre-filled default inputs → SSR baked a build-day date that drifts
+  on later visits → latent React #418. Fixed via client-only `todayMs` state
+  (null at SSR; payback-date row hidden until mounted).
+- RainbowChartCalculator: `daysSinceGenesis()` in useMemo had the same latent
+  drift. Fixed via client-only `days` state (results-empty at SSR until mounted).
+- Verified SSR HTML: payback date row absent, rainbow shows results-empty.
+- New chunks: PaybackPeriodCalculator.DtyA7TSg.js, RainbowChartCalculator.CXyPpB6a.js.
+- All known `Date.now()`/`new Date()` render-time hydration risks now resolved.
+
 ## [2026-05-29] (update 132) — Fix React #418 hydration on timestamp-converter
 
 ### Finding (browser audit)
