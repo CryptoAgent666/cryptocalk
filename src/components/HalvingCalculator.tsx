@@ -98,8 +98,20 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
             .catch(() => { setNetworkError(true); });
     }, []);
 
-    /* ---- Countdown calculations ---- */
-    const countdown = useMemo(() => {
+    /* ---- Countdown calculations ----
+       Computed on the CLIENT only (post-mount). Date.now() differs between SSR
+       build time and client load time, so computing during render caused a
+       React #418 hydration mismatch. We init to null (SSR + first client render
+       both show a placeholder, so markup matches) then fill in via useEffect. */
+    const [countdown, setCountdown] = useState<{
+        currentBlock: number;
+        blocksRemaining: number;
+        daysRemaining: number;
+        hoursRemaining: number;
+        estimatedDate: string;
+    } | null>(null);
+
+    useEffect(() => {
         const now = Date.now();
         const daysSinceRef = (now - REFERENCE_DATE) / (1000 * 60 * 60 * 24);
         const currentBlock = REFERENCE_BLOCK + Math.floor(daysSinceRef * BLOCKS_PER_DAY);
@@ -112,13 +124,13 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
             month: 'long', year: 'numeric',
         });
 
-        return {
+        setCountdown({
             currentBlock,
             blocksRemaining,
             daysRemaining: Math.floor(daysRemaining),
             hoursRemaining: Math.floor(hoursRemaining),
             estimatedDate: estimatedDateStr,
-        };
+        });
     }, []);
 
     /* ---- Mining impact calculations ---- */
@@ -358,10 +370,10 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                         </span>
                         <span className="result-hero-value" style={{ color: 'var(--color-accent-orange, #f59e0b)' }}>
                             <Clock size={28} />
-                            {countdown.daysRemaining} {getUiString(lang, 'Days')}, {countdown.hoursRemaining} {getUiString(lang, 'Hours')}
+                            {countdown ? `${countdown.daysRemaining} ${getUiString(lang, 'Days')}, ${countdown.hoursRemaining} ${getUiString(lang, 'Hours')}` : '…'}
                         </span>
                         <span className="result-hero-roi" style={{ color: 'var(--color-text-muted)' }}>
-                            {getUiString(lang, 'Est.')} {countdown.estimatedDate} &middot; {getUiString(lang, 'Block')} {formatNumber(NEXT_HALVING_BLOCK)}
+                            {getUiString(lang, 'Est.')} {countdown?.estimatedDate ?? '…'} &middot; {getUiString(lang, 'Block')} {formatNumber(NEXT_HALVING_BLOCK)}
                         </span>
                     </div>
 
@@ -369,11 +381,11 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     <div className="result-breakdown">
                         <div className="result-row">
                             <span className="result-label">{getUiString(lang, 'Current Block (est.)')}</span>
-                            <span className="result-value">{formatNumber(countdown.currentBlock)}</span>
+                            <span className="result-value">{countdown ? formatNumber(countdown.currentBlock) : '…'}</span>
                         </div>
                         <div className="result-row">
                             <span className="result-label">{getUiString(lang, 'Blocks Remaining')}</span>
-                            <span className="result-value">{formatNumber(countdown.blocksRemaining)}</span>
+                            <span className="result-value">{countdown ? formatNumber(countdown.blocksRemaining) : '…'}</span>
                         </div>
                         <div className="result-row">
                             <span className="result-label">{getUiString(lang, 'Current Block Reward')}</span>

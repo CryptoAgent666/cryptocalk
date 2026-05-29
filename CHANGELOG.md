@@ -2,6 +2,21 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-29] (update 131) — Fix React #418 hydration error on halving-calculator
+
+### Finding (browser audit)
+- Console showed `Uncaught Error: Minified React error #418` on every
+  halving-calculator load (all 6 langs). Cause: the countdown `useMemo([])`
+  computed `Date.now()`-based `currentBlock` during BOTH server build (SSR) and
+  client load → different values → text hydration mismatch → React tree error.
+- Content itself was correct (3.125→1.5625 BTC reward, block 1,050,000, ~688 days).
+
+### Fix
+- Moved countdown computation out of render into client-only `useEffect`, stored
+  in `useState` (init null). SSR + first client render now emit a `…` placeholder
+  (markup matches); the live value fills in post-mount. No more hydration error.
+- All 3 `countdown.*` accesses guarded against null.
+
 ## [2026-05-29] (update 130) — CRITICAL: real docroot is dist/, not httpdocs/
 
 ### Root-cause discovery (browser audit)
