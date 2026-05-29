@@ -2,6 +2,37 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-23] (update 128) — Browser audit fixes: mining math + rating i18n
+
+### Interactive browser audit (10 pages, chrome-devtools)
+Tested 8 new calcs (EN) + RU/ES localized via real browser interaction: presets,
+reactive recalc, dynamic add/remove rows, FAQ accordions, hedge math. Verified
+math on DePIN, Polymarket (Kelly/EV/hedge), Wallet, RWA, Trailing Stop, LP Value
+— all correct. Found 3 issues, all fixed:
+
+### Finding #1 (HIGH) — Mining Coin Switcher: all coins unprofitable + S21 $19k/day bug
+- `dailyPerHash` reward constants were ~10× too low → RTX 4090 showed every coin
+  at −$1.03 to −$1.08/day even at $0.05/kWh, making the "best coin to mine" tool
+  look broken.
+- Antminer S21 BTC path had hash value `200000000` × `9.5e-10` = 0.19 BTC/day =
+  **$19,000/day** (catastrophic). Fixed to realistic `$9/day` gross.
+- Recalibrated all 6 coin constants + 2 ASIC hash values. Now: RTX 4090 best = KAS
+  +$0.11/day (realistic 2026 break-even GPU mining), S21 +$0.51/day, KS5 +$16.56/day.
+
+### Finding #2 (LOW) — AI Token Sector: "Modest decline" at 0% change
+- Default 100% scenario (0% price move) showed "Modest decline" instead of neutral.
+- Added flat band: `totalPnlPct >= -0.01 && <= 0.01` → new "Flat / no change" rating.
+
+### Finding #3 (MEDIUM) — 160 missing rating translations (32 strings × 5 langs)
+- Rating strings ("Good ROI", "Positive EV", "Strong sector rally", "Beating HODL",
+  "Solid stack", "Whale tier", etc.) leaked English on ALL localized pages for the
+  9 new calcs — 31/35 were missing in es/pt/tr/hi/ru.
+- Added 160 translations (32 × 5) to ui-strings dicts. Turkish with proper
+  diacritics (Mükemmel, Güçlü, Kârsız, etc.), RU/HI native script.
+
+### Build
+- 1,296 pages, 8.16s, TS clean, 0 duplicate keys
+
 ## [2026-05-18] (update 127) — CalkCheck audit fixes: /compare/ schema + .gov sources
 
 ### CalkCheck audit (20 pages, 96+ criteria)

@@ -76,7 +76,8 @@ function AiTokenSectorCalculator({ lang = 'en' }: { lang?: string }) {
     let zone: 'profit' | 'neutral' | 'loss' = 'neutral';
     let rating = '';
     if (totalPnlPct > 50) { zone = 'profit'; rating = 'Strong sector rally'; }
-    else if (totalPnlPct > 0) { zone = 'profit'; rating = 'Positive return'; }
+    else if (totalPnlPct > 0.01) { zone = 'profit'; rating = 'Positive return'; }
+    else if (totalPnlPct >= -0.01) { zone = 'neutral'; rating = 'Flat / no change'; }
     else if (totalPnlPct > -20) { zone = 'neutral'; rating = 'Modest decline'; }
     else { zone = 'loss'; rating = 'Sector drawdown'; }
 

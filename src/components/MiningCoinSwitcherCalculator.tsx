@@ -3,22 +3,27 @@ import { useMemo, useState } from 'react';
 import { Cpu, Info, RotateCcw, Pickaxe } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 
+// Hash values + dailyPerHash constants are calibrated so a RTX 4090 at $0.10/kWh
+// lands near break-even on the best coin (realistic GPU mining economics in 2026),
+// and ASICs (S21/KS5) show clearly positive returns. ASIC hash values are scaled
+// to the same per-hash reward constant (NOT raw Th/s) so the linear model stays
+// realistic — see "illustrative network difficulty" disclaimer.
 const HARDWARE = [
   { id: 'rtx-4090', label: 'RTX 4090', power: '450', hashes: { kaspa: '1450', ravencoin: '70', ergo: '320', flux: '90', alephium: '12' } },
   { id: 'rtx-4080', label: 'RTX 4080', power: '320', hashes: { kaspa: '1100', ravencoin: '52', ergo: '240', flux: '70', alephium: '9' } },
   { id: 'rtx-3090', label: 'RTX 3090', power: '350', hashes: { kaspa: '900', ravencoin: '50', ergo: '200', flux: '60', alephium: '7' } },
   { id: 'rtx-3080', label: 'RTX 3080', power: '320', hashes: { kaspa: '650', ravencoin: '45', ergo: '180', flux: '50', alephium: '6' } },
-  { id: 'antminer-s21', label: 'Antminer S21 (BTC)', power: '3500', hashes: { bitcoin: '200000000' } },
-  { id: 'antminer-ks5', label: 'Antminer KS5 (KAS)', power: '3000', hashes: { kaspa: '21000000' } },
+  { id: 'antminer-s21', label: 'Antminer S21 (BTC)', power: '3500', hashes: { bitcoin: '200' } },
+  { id: 'antminer-ks5', label: 'Antminer KS5 (KAS)', power: '3000', hashes: { kaspa: '29000' } },
 ] as const;
 
 const COINS = [
-  { id: 'bitcoin', label: 'BTC', algo: 'SHA-256', price: '100000', dailyPerHash: 0.00000000095, hashUnit: 'h/s' },
-  { id: 'kaspa', label: 'KAS', algo: 'kHeavyHash', price: '0.18', dailyPerHash: 0.00018, hashUnit: 'kh/s' },
-  { id: 'ravencoin', label: 'RVN', algo: 'KAWPOW', price: '0.022', dailyPerHash: 0.0085, hashUnit: 'mh/s' },
-  { id: 'ergo', label: 'ERG', algo: 'Autolykos', price: '1.10', dailyPerHash: 0.000018, hashUnit: 'mh/s' },
-  { id: 'flux', label: 'FLUX', algo: 'ZelHash', price: '0.65', dailyPerHash: 0.00009, hashUnit: 'sol/s' },
-  { id: 'alephium', label: 'ALPH', algo: 'Blake3', price: '1.85', dailyPerHash: 0.00012, hashUnit: 'mh/s' },
+  { id: 'bitcoin', label: 'BTC', algo: 'SHA-256', price: '100000', dailyPerHash: 0.00000045, hashUnit: 'TH/s' },
+  { id: 'kaspa', label: 'KAS', algo: 'kHeavyHash', price: '0.18', dailyPerHash: 0.0045977, hashUnit: 'GH/s' },
+  { id: 'ravencoin', label: 'RVN', algo: 'KAWPOW', price: '0.022', dailyPerHash: 0.616883, hashUnit: 'MH/s' },
+  { id: 'ergo', label: 'ERG', algo: 'Autolykos', price: '1.10', dailyPerHash: 0.0029830, hashUnit: 'GH/s' },
+  { id: 'flux', label: 'FLUX', algo: 'ZelHash', price: '0.65', dailyPerHash: 0.0145299, hashUnit: 'sol/s' },
+  { id: 'alephium', label: 'ALPH', algo: 'Blake3', price: '1.85', dailyPerHash: 0.0495495, hashUnit: 'GH/s' },
 ] as const;
 
 function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {
