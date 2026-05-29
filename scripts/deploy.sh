@@ -42,12 +42,16 @@ cd ${FTP_remote_path}/httpdocs/
 mirror -R --ignore-time --no-perms dist/_astro/ _astro/
 
 # --- STEP 2: everything else (HTML, sitemaps, etc.) ---
-mirror -R --only-newer --no-perms --exclude '^_astro/' dist/ ./
+# Use --ignore-time, NOT --only-newer: the server clock runs ~3h behind local,
+# so --only-newer wrongly SKIPS freshly-built HTML (thinks server copy is newer).
+# That caused localized pages (es/pt/tr/hi/ru) to lag behind EN with stale chunk
+# refs + outdated math/i18n. --ignore-time compares size+content instead of mtime.
+mirror -R --ignore-time --no-perms --exclude '^_astro/' dist/ ./
 
 # --- STEP 3: mirror to root dist/ too (Plesk Git source-of-truth) ---
 cd ${FTP_remote_path}/
 mirror -R --ignore-time --no-perms dist/_astro/ dist/_astro/
-mirror -R --only-newer --no-perms --exclude '^_astro/' dist/ dist/
+mirror -R --ignore-time --no-perms --exclude '^_astro/' dist/ dist/
 bye
 EOF
 
