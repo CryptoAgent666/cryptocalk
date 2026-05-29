@@ -2,6 +2,38 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-29] (update 129) — Cloudflare 404 negative-cache fix + safe deploy script
+
+### Finding (HIGH, infra) — Cloudflare caching 404 for valid _astro chunks
+- Browser audit of gas-calculator showed `[astro-island] Error hydrating
+  /_astro/GasFeeCalculator…js` + a 404 on `/_astro/arrow-right.D1xx1m7I.js`.
+- Diagnosis: 5 hashed chunks (ThemeToggle, arrow-right, PortfolioCalculator,
+  PumpfunBondingCurve, MiningCoinSwitcher) return **200 on origin** but
+  Cloudflare serves a **cached 404** (`cf-cache-status: HIT`, `s-maxage=86400`).
+  Effect is per-PoP (confirmed SIN edge poisoned; other PoPs serve 200), so
+  hydration breaks only for users routed through affected edge nodes.
+- Root cause: ad-hoc `lftp mirror --only-newer dist/` uploaded HTML referencing
+  new chunk hashes BEFORE the chunks; browsers/CF fetched missing chunks → 404 →
+  cached. Compounded by server clock ~3h behind local, making `--only-newer`
+  skip new chunk files entirely (thought server copies were newer).
+
+### Fix — `scripts/deploy.sh` (safe deploy order)
+- STEP 1: upload `/_astro/` FIRST, full, `--ignore-time` (never skip hashed assets)
+- STEP 2: HTML/pages after (references always resolve)
+- STEP 3: mirror to root `dist/` (Plesk source) too
+- STEP 4: post-deploy CDN verification loop flags any 404 chunks
+- Replaces all future ad-hoc lftp commands.
+
+### Still needs manual action
+- The 5 already-cached 404s require a one-time **Cloudflare cache purge**
+  (Dashboard → cryptocalk.com → Caching → Purge `/_astro/*` or Purge Everything).
+  No CF API token available locally; wrangler OAuth lacks cache:purge scope.
+
+### Browser audit (this session) — all math verified correct
+- staking ($1,068.75 @ 6.65% eff APY), impermanent-loss (Stable Pair 0% IL),
+  compound ($14,796.91 / 34.52% ROI), gas-fee ($0.0508 ETH transfer) — all correct.
+- 6 new calcs from update 128 re-verified. No new content/math bugs found.
+
 ## [2026-05-23] (update 128) — Browser audit fixes: mining math + rating i18n
 
 ### Interactive browser audit (10 pages, chrome-devtools)
