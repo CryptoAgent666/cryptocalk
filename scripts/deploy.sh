@@ -37,21 +37,25 @@ set net:max-retries 3
 set mirror:parallel-transfer-count 10
 open -u ${FTP_user},${FTP_pass} ${FTP_host}
 
-# --- STEP 1: immutable hashed assets FIRST (full, ignore server mtime) ---
-cd ${FTP_remote_path}/httpdocs/
+# IMPORTANT: the REAL served docroot for cryptocalk.com is ~/cryptocalk.com/dist/
+# (verified 2026-05-29 by matching served ETag/size to the file on disk). The
+# ~/cryptocalk.com/httpdocs/ tree is a secondary copy that is NOT what nginx serves.
+# Deploy to BOTH (dist = live docroot, httpdocs = keep in sync for safety), assets first.
+
+# --- STEP 1: immutable hashed assets FIRST into the LIVE docroot (dist/) ---
+cd ${FTP_remote_path}/dist/
 mirror -R --ignore-time --no-perms dist/_astro/ _astro/
 
-# --- STEP 2: everything else (HTML, sitemaps, etc.) ---
-# Use --ignore-time, NOT --only-newer: the server clock runs ~3h behind local,
-# so --only-newer wrongly SKIPS freshly-built HTML (thinks server copy is newer).
-# That caused localized pages (es/pt/tr/hi/ru) to lag behind EN with stale chunk
-# refs + outdated math/i18n. --ignore-time compares size+content instead of mtime.
+# --- STEP 2: HTML/pages into LIVE docroot ---
+# --ignore-time (NOT --only-newer): server clock runs ~3h behind local, so
+# --only-newer wrongly SKIPS freshly-built HTML. That caused localized pages
+# (es/pt/tr/hi/ru) to serve stale chunk refs + outdated math/i18n.
 mirror -R --ignore-time --no-perms --exclude '^_astro/' dist/ ./
 
-# --- STEP 3: mirror to root dist/ too (Plesk Git source-of-truth) ---
-cd ${FTP_remote_path}/
-mirror -R --ignore-time --no-perms dist/_astro/ dist/_astro/
-mirror -R --ignore-time --no-perms --exclude '^_astro/' dist/ dist/
+# --- STEP 3: keep the secondary httpdocs/ copy in sync (assets first) ---
+cd ${FTP_remote_path}/httpdocs/
+mirror -R --ignore-time --no-perms dist/_astro/ _astro/
+mirror -R --ignore-time --no-perms --exclude '^_astro/' dist/ ./
 bye
 EOF
 

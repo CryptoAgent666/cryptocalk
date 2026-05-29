@@ -2,6 +2,29 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-29] (update 130) — CRITICAL: real docroot is dist/, not httpdocs/
+
+### Root-cause discovery (browser audit)
+- TR + ES mining-switcher pages served the OLD chunk (`B9lDJd3k`: pre-recalibration
+  math + untranslated "Unprofitable at this rate") while EN/RU/PT/HI served the new
+  `IMukHo5V`. RU/PT/HI were correct only by luck of earlier full mirrors.
+- Investigation: FTP `cat` of the server file showed CORRECT content, yet HTTP
+  (even origin-direct + cache-buster) served STALE. Matched served ETag/size
+  (72981 bytes EN) to the on-disk copy → **nginx serves from `~/cryptocalk.com/dist/`,
+  NOT `~/cryptocalk.com/httpdocs/`**.
+- Every prior deploy targeting `httpdocs/` only reached production when the same
+  mirror also happened to write `dist/`. Localized pages (es/tr) silently stayed a
+  week stale because `dist/` wasn't updated for them.
+
+### Fix
+- Re-deployed es/ + tr/ localized trees to the real docroot `cryptocalk.com/dist/`.
+- `scripts/deploy.sh` rewritten: **dist/ is now the primary target** (assets first,
+  then HTML, `--ignore-time`), httpdocs/ synced as secondary.
+- MEMORY.md updated with docroot fact to prevent recurrence.
+
+### Verification
+- ES via origin: now `IMukHo5V` ✓. TR deploy in progress.
+
 ## [2026-05-29] (update 129) — Cloudflare 404 negative-cache fix + safe deploy script
 
 ### Finding (HIGH, infra) — Cloudflare caching 404 for valid _astro chunks
