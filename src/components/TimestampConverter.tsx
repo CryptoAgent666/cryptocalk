@@ -1,5 +1,5 @@
 import { getUiString } from '../i18n/ui-strings';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ArrowRightLeft, Calendar, Clock, Info, RotateCcw } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 
@@ -44,11 +44,19 @@ function parseTimestamp(value: string): Date | null {
 }
 
 function TimestampConverter({ lang = 'en' }: { lang?: string }) {
-  const now = new Date();
+  // Inputs start EMPTY so SSR and the first client render produce identical markup
+  // (computing `new Date()` during render differs between build time and load time,
+  // which caused a React #418 hydration mismatch). We fill in "now" post-mount.
   const [mode, setMode] = useState<Mode>('timestamp');
   const [zone, setZone] = useState<DisplayZone>('local');
-  const [timestampInput, setTimestampInput] = useState(String(Math.floor(now.getTime() / 1000)));
-  const [datetimeInput, setDatetimeInput] = useState(toLocalInputValue(now));
+  const [timestampInput, setTimestampInput] = useState('');
+  const [datetimeInput, setDatetimeInput] = useState('');
+
+  useEffect(() => {
+    const now = new Date();
+    setTimestampInput(String(Math.floor(now.getTime() / 1000)));
+    setDatetimeInput(toLocalInputValue(now));
+  }, []);
 
   const sourceDate = useMemo(() => {
     if (mode === 'timestamp') return parseTimestamp(timestampInput);

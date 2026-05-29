@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-29] (update 132) — Fix React #418 hydration on timestamp-converter
+
+### Finding (browser audit)
+- Console showed `React error #418` on timestamp-converter (same class as the
+  halving fix). Inputs were initialized from `new Date()` during render, so SSR
+  build time != client load time → text hydration mismatch.
+- Latent same-pattern risk noted in PaybackPeriodCalculator + RainbowChartCalculator
+  (date in useMemo) — only fires when build-day != visit-day; flagged for follow-up.
+
+### Fix
+- TimestampConverter: inputs init empty; "now" populated in a client-only useEffect.
+  SSR + first client render now match. New chunk TimestampConverter.CeKWUZY0.js.
+
 ## [2026-05-29] (update 131) — Fix React #418 hydration error on halving-calculator
 
 ### Finding (browser audit)
