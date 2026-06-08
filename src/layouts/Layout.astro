@@ -1,6 +1,8 @@
 ---
 import { SUPPORTED_LANGS, DEFAULT_LANG, getLocalizedPath, getPathWithoutLang, type Lang } from '../i18n/utils';
 import CookieBanner from '../components/CookieBanner.astro';
+import prunePaths from '../data/prune-noindex.json';
+const PRUNE_NOINDEX = new Set((prunePaths.paths as string[]));
 
 export interface Props {
   title?: string;
@@ -10,6 +12,9 @@ export interface Props {
   canonical?: string;
   /** Pass 'calculator' on EN calculator pages to auto-generate WebApplication + BreadcrumbList schemas */
   pageType?: 'calculator';
+  /** Honest last-modified date (ISO). Bump ONLY on real content change — never the build date.
+   *  When omitted, falls back to the publish date (NOT the build date, to avoid fake freshness). */
+  dateModified?: string;
 }
 
 const {
@@ -19,6 +24,7 @@ const {
   noindex = false,
   canonical,
   pageType,
+  dateModified,
 } = Astro.props;
 
 const OG_LOCALE_MAP: Record<string, string> = {
@@ -49,7 +55,10 @@ function normalizePath(pathname: string): string {
 }
 
 const isCanonicalPath = normalizePath(Astro.url.pathname) === normalizePath(canonicalPath);
-const shouldNoindex = noindex || !isCanonicalPath;
+// Phase-1 prune: low/no-value scaled pages (machine-translated locale dead-weight, hi entirely).
+// noindex,follow so signals still flow to kept pages; also dropped from sitemap (astro.config.mjs).
+const isPruned = PRUNE_NOINDEX.has(normalizePath(Astro.url.pathname));
+const shouldNoindex = noindex || !isCanonicalPath || isPruned;
 
 
 // BreadcrumbList for EN calculator pages — 3-level: Home > Category > Calculator.
@@ -83,7 +92,7 @@ const webPageSchema = pageType === 'calculator' ? {
   inLanguage: lang,
   isPartOf: { '@type': 'WebSite', '@id': 'https://cryptocalk.com/#website' },
   datePublished: '2025-11-01T00:00:00+00:00',
-  dateModified: new Date().toISOString(),
+  dateModified: dateModified || '2025-11-01T00:00:00+00:00',
   speakable: {
     '@type': 'SpeakableSpecification',
     cssSelector: ['.calc-header h1', '.calc-header p'],
@@ -175,7 +184,7 @@ const hreflangBasePath = normalizeBasePathForHreflang(basePath);
       })();
     </script>
     <meta name="description" content={description} />
-    {shouldNoindex && <meta name="robots" content="noindex, nofollow" />}
+    {shouldNoindex && <meta name="robots" content={isPruned ? 'noindex, follow' : 'noindex, nofollow'} />}
 
     <!-- Preconnect to Google Fonts + CoinGecko API -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

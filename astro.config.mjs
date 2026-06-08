@@ -3,6 +3,18 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
+import fs from 'node:fs';
+
+// Phase-1 prune: pathnames to drop from the sitemap (also noindexed in Layout.astro). See DATA_HUB/_cryptocalk_prune_set.py.
+const PRUNE_NOINDEX = new Set(
+  JSON.parse(fs.readFileSync(new URL('./src/data/prune-noindex.json', import.meta.url), 'utf-8')).paths,
+);
+/** @param {string} pageUrl */
+function isPrunedUrl(pageUrl) {
+  let { pathname } = new URL(pageUrl);
+  if (pathname.length > 1 && pathname.endsWith('/')) pathname = pathname.slice(0, -1);
+  return PRUNE_NOINDEX.has(pathname);
+}
 
 const ChangeFreq = {
   DAILY: ChangeFreqEnum.DAILY,
@@ -170,7 +182,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (pageUrl) => !isLegacyLocalizedSpecUrl(pageUrl) && !isAliasUrl(pageUrl),
+      filter: (pageUrl) => !isLegacyLocalizedSpecUrl(pageUrl) && !isAliasUrl(pageUrl) && !isPrunedUrl(pageUrl),
       // Per-page priority + changefreq for crawl-budget hints.
       // Homepage = 1.0, top calc pages = 0.8, localized calc = 0.7, info = 0.5, others = 0.5.
       serialize(item) {
@@ -204,7 +216,8 @@ export default defineConfig({
           item.priority = 0.6;
           item.changefreq = ChangeFreq.WEEKLY;
         }
-        item.lastmod = new Date().toISOString();
+        // No build-time lastmod: stamping every URL with the build date is a fake-freshness signal.
+        // (Omitting lastmod is valid; honest per-page dates live in page schema dateModified.)
         return item;
       },
     }),

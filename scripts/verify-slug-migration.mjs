@@ -24,6 +24,18 @@ function normalizeUrl(raw) {
   return `${url.origin}${normalizePathname(url.pathname)}`;
 }
 
+// Phase-1 prune: pages intentionally removed from the sitemap (and noindexed). They are
+// expected to be absent from the sitemap, so the "missing canonical" check skips them.
+function loadPrunedPaths() {
+  try {
+    const file = path.join(ROOT, 'src', 'data', 'prune-noindex.json');
+    const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+    return new Set((data.paths || []).map((p) => normalizePathname(p)));
+  } catch {
+    return new Set();
+  }
+}
+
 function parseLocalizedMappings() {
   const lines = fs.readFileSync(UTILS_FILE, 'utf8').split('\n');
   const mappings = [];
@@ -123,6 +135,8 @@ function verify() {
 
   const sitemapUrls = collectSitemapUrls(sitemapFiles);
   const redirectRules = parseRedirectRules();
+  const prunedPaths = loadPrunedPaths();
+  let prunedSkipped = 0;
 
   for (const mapping of mappings) {
     const legacyPath = `/${mapping.lang}/${mapping.baseSlug}`;
@@ -132,7 +146,9 @@ function verify() {
     const legacyUrl = normalizeUrl(`${SITE_ORIGIN}${legacyPath}`);
     const canonicalUrl = normalizeUrl(`${SITE_ORIGIN}${canonicalPath}`);
 
-    if (!sitemapUrls.has(canonicalUrl)) {
+    if (prunedPaths.has(normalizePathname(canonicalPath))) {
+      prunedSkipped += 1; // intentionally removed from sitemap by Phase-1 prune
+    } else if (!sitemapUrls.has(canonicalUrl)) {
       failures.push(`Missing canonical URL in sitemap: ${canonicalPath}`);
     }
 
