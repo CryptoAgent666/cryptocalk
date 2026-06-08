@@ -5,7 +5,7 @@ import { CALCULATOR_META } from '../i18n/calculator-meta';
 import { SPEC_CALCULATOR_SLUGS } from '../i18n/utils';
 import { Calculator, ArrowRight, ArrowLeft, ArrowLeftRight } from 'lucide-react';
 
-const buildDate = new Date().toISOString().split('T')[0];
+const buildDate = '2026-05-22'; // honest last-content-change date from git history (not the build date)
 
 // Common comparison pairs people search for
 const COMPARISONS = [
@@ -50,7 +50,7 @@ const collectionSchema = {
   inLanguage: 'en',
   isPartOf: { '@type': 'WebSite', '@id': 'https://cryptocalk.com/#website' },
   datePublished: '2026-04-01T00:00:00+00:00',
-  dateModified: new Date().toISOString(),
+  dateModified: '2026-05-22T00:00:00+00:00',
   mainEntity: {
     '@type': 'ItemList',
     name: 'Popular Crypto Calculator Comparisons',

@@ -171,8 +171,8 @@ const newCalculatorsItemListSchema = {
   })),
 };
 
-const buildDate = new Date().toISOString().split('T')[0];
-const buildDateTime = new Date().toISOString();
+const buildDate = '2026-05-17'; // honest last-content-change date from git history (not the build date)
+const buildDateTime = '2026-05-17T00:00:00+00:00'; // honest last-change date (git); not build time
 
 const softwareAppSchema = {
   '@context': 'https://schema.org',

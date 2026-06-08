@@ -8,7 +8,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 
-const buildDate = new Date().toISOString().split('T')[0];
+const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
 
 <Layout
@@ -16,6 +16,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   description="Free Bitcoin mining profitability calculator. Enter hashrate, power, and electricity cost to estimate daily and monthly BTC revenue. ASIC presets included."
   lang="en"
   pageType="calculator"
+  dateModified={`${buildDate}T00:00:00+00:00`}
 >
   <!-- Header -->
   <header class="site-header">
@@ -657,7 +658,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   },
   "description": "Free Bitcoin mining profitability calculator. Enter your hashrate, power consumption, and electricity cost to estimate daily, monthly, and yearly BTC mining revenue.",
   "datePublished": "2025-11-01",
-  "dateModified": "2026-03-22",
+  "dateModified": "2026-03-31",
   "author": {
     "@type": "Person",
     "name": "Konstantin Iakovlev",

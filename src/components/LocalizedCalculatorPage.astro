@@ -7,6 +7,7 @@ import { getLocalizedCalculatorMeta, getLocalizedPath, type Lang, type SpecCalcu
 import { CALCULATOR_META } from "../i18n/calculator-meta";
 import { RELATED_CALCULATORS } from "../data/related-calculators";
 import { CALCULATOR_CATEGORY, CATEGORY_NAMES } from "../data/calculator-category-map";
+import { CALCULATOR_UPDATED } from "../data/calculator-updated";
 import { getActiveSections } from "../data/calculator-sections";
 import { defaultFaqByLang } from "../i18n/faq-dictionary";
 import { CALCULATOR_FAQ } from "../i18n/calculator-faq";
@@ -345,8 +346,10 @@ const categoryName = categorySlug ? (CATEGORY_NAMES[categorySlug]?.[lang] ?? CAT
 const categoryHubPath = categorySlug ? getLocalizedPath(`/calculators/${categorySlug}`, lang) : null;
 const categoryHubUrl = categoryHubPath ? `${siteUrl}${categoryHubPath}` : null;
 
-const buildDate = new Date().toISOString().split('T')[0];
-const buildDateTime = new Date().toISOString();
+// Honest last-change date per slug (git history) — NOT the build date (was new Date(), a fake-freshness signal).
+const lastReviewed = CALCULATOR_UPDATED[slug] ?? '2025-11-01';
+const buildDate = lastReviewed;
+const buildDateTime = `${lastReviewed}T00:00:00+00:00`;
 
 // Authoritative external sources per category (E-E-A-T signal for crypto/finance content)
 const CATEGORY_SOURCES: Record<string, { name: string; url: string; note: string }[]> = {

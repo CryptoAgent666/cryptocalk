@@ -8,7 +8,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 
-const buildDate = new Date().toISOString().split('T')[0];
+const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
 
 <Layout
@@ -16,6 +16,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   description="Free HODL vs active trading simulator. Compare buy-and-hold with active trading. Simulate trades with custom win rates, profit targets, and fees."
   lang="en"
   pageType="calculator"
+  dateModified={`${buildDate}T00:00:00+00:00`}
 >
   <header class="site-header">
     <div class="header-inner">
@@ -239,7 +240,7 @@ const buildDate = new Date().toISOString().split('T')[0];
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "datePublished": "2025-11-01",
-    "dateModified": "2026-03-22",
+    "dateModified": "2026-03-31",
     "author": {
       "@type": "Person",
       "name": "Konstantin Iakovlev",

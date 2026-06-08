@@ -8,7 +8,11 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 
-const buildDate = new Date().toISOString().split('T')[0];
+// Honest last-reviewed date. Bump ONLY when the page's content/data is actually revised —
+// NOT on every build. (Was `new Date()`, which faked "Updated today" on every deploy → a
+// core-update freshness-manipulation signal flagged in the 2026-06 anti-spam audit.)
+const lastReviewed = '2026-06-08';
+const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
 ---
 
 <Layout
@@ -16,6 +20,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   description="Free NFT profit calculator. Get real trading profit after marketplace fees (OpenSea 2.5%, Blur 0%, Magic Eden), creator royalties, and gas costs. Compare ETH and Solana NFT trades side-by-side."
   lang="en"
   pageType="calculator"
+  dateModified={lastReviewedISO}
 >
   <header class="site-header">
     <div class="header-inner">
@@ -56,7 +61,7 @@ const buildDate = new Date().toISOString().split('T')[0];
               <span class="byline-name">Konstantin Iakovlev</span>
             </a>
             <span class="byline-sep">&middot;</span>
-            <span class="byline-date">Updated {buildDate}</span>
+            <span class="byline-date">Updated {lastReviewed}</span>
           </div>
         </div>
         <div class="calc-scope">
@@ -209,7 +214,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "Free NFT profit calculator. Calculate true NFT trading profit after marketplace fees, creator royalties, and gas costs.",
   "datePublished": "2025-11-01",
-  "dateModified": "2026-03-22",
+  "dateModified": "2026-05-11",
   "author": {
     "@type": "Person",
     "name": "Konstantin Iakovlev",

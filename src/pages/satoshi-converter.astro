@@ -8,7 +8,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 
-const buildDate = new Date().toISOString().split('T')[0];
+const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
 
 <Layout
@@ -16,6 +16,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   description="Free Satoshi to USD/EUR/BTC converter with live Bitcoin price. Convert 100, 1000, 50000, 100000 sats instantly. See sats per dollar and quick reference tables."
   lang="en"
   pageType="calculator"
+  dateModified={`${buildDate}T00:00:00+00:00`}
 >
   <header class="site-header">
     <div class="header-inner">
@@ -221,7 +222,7 @@ const buildDate = new Date().toISOString().split('T')[0];
       "priceCurrency": "USD"
     },
     "datePublished": "2025-11-01",
-    "dateModified": "2026-03-22",
+    "dateModified": "2026-05-11",
     "author": {
       "@type": "Person",
       "name": "Konstantin Iakovlev",

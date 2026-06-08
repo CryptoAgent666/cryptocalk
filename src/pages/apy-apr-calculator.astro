@@ -7,7 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
-const buildDate = new Date().toISOString().split('T')[0];
+const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
 
 <Layout
@@ -15,6 +15,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   description="Free APR to APY converter and reverse APY to APR calculator. Compare daily, monthly, quarterly, and continuous compounding to find real DeFi yields and staking rewards."
   lang="en"
   pageType="calculator"
+  dateModified={`${buildDate}T00:00:00+00:00`}
 >
   <header class="site-header">
     <div class="header-inner">
@@ -251,7 +252,7 @@ const buildDate = new Date().toISOString().split('T')[0];
   },
   "description": "Free APY vs APR calculator for crypto investors. Convert between APR and APY, compare compounding frequencies, and calculate real earnings on DeFi yields and staking rewards.",
   "datePublished": "2025-11-01",
-  "dateModified": "2026-03-22",
+  "dateModified": "2026-05-11",
   "author": {
     "@type": "Person",
     "name": "Konstantin Iakovlev",
