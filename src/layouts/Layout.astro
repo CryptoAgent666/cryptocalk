@@ -252,7 +252,10 @@ const hreflangBasePath = normalizeBasePathForHreflang(basePath);
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- hreflang tags (language-region codes for better regional SERP targeting) -->
-    {SUPPORTED_LANGS.map((l) => (
+    <!-- Skip languages whose target is Phase-1-pruned (noindex) — avoids "hreflang to noindex" in GSC. -->
+    {SUPPORTED_LANGS
+      .filter((l) => !PRUNE_NOINDEX.has(normalizePath(getLocalizedPath(hreflangBasePath, l))))
+      .map((l) => (
       <link
         rel="alternate"
         hreflang={hreflangRegionMap[l] ?? l}

@@ -77,6 +77,23 @@ echo "▶ Deploying (assets first, then HTML)…"
 lftp -f "$LFTP_SCRIPT"
 echo "✅ Deploy complete."
 
+# --- Cloudflare cache purge: edge-cached HTML must refresh to reflect this deploy.
+# Needs a gitignored .cf-credentials with:  zone_id=<id>   api_token=<token with Zone:Cache Purge>
+# Without it this step is skipped (no-op), so the script stays usable as-is.
+CF_CREDS=".cf-credentials"
+if [ -f "$CF_CREDS" ]; then
+  eval "$(grep -E '^(zone_id|api_token)=' "$CF_CREDS" | sed 's/^/CF_/')"
+  if [ -n "${CF_zone_id:-}" ] && [ -n "${CF_api_token:-}" ]; then
+    echo "▶ Purging Cloudflare cache…"
+    CF_RESP="$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CF_zone_id}/purge_cache" \
+      -H "Authorization: Bearer ${CF_api_token}" -H "Content-Type: application/json" \
+      --data '{"purge_everything":true}')"
+    if echo "$CF_RESP" | grep -q '"success":true'; then echo "✅ Cloudflare cache purged."; else echo "⚠️ Cloudflare purge failed: $CF_RESP"; fi
+  fi
+else
+  echo "ℹ️ No .cf-credentials — skipping Cloudflare purge (add zone_id + api_token to enable edge-cache refresh)."
+fi
+
 # --- STEP 4: verify no _astro chunk 404s through the CDN ---
 echo "▶ Verifying _astro chunks через CDN…"
 miss=0
