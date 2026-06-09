@@ -12,6 +12,7 @@ import {
     Crosshair,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, fmtPctValue } from '../i18n/format';
 
 interface Results {
     rrRatio: number;
@@ -178,11 +179,16 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
         }
     };
 
+    // Shared locale so prices and P&L use the SAME number format (decimal/thousands
+    // separators). Previously formatPrice hardcoded 'en-US' while formatUSD was
+    // locale-aware, producing "$65,000.00" next to "$307,69" on tr/es/pt/ru pages.
+    const loc = (typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US';
+
     const formatUSD = (n: number) => {
         if (Math.abs(n) < 0.01 && n !== 0) {
             return '$' + n.toFixed(6);
         }
-        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
+        return new Intl.NumberFormat(loc, {
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2,
@@ -191,13 +197,13 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
     };
 
     const formatPrice = (n: number) => {
-        if (n >= 1) return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        if (n >= 0.01) return '$' + n.toFixed(4);
-        if (n >= 0.0001) return '$' + n.toFixed(6);
-        return '$' + n.toFixed(8);
+        if (n >= 1) return '$' + n.toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        if (n >= 0.01) return '$' + n.toLocaleString(loc, { minimumFractionDigits: 4, maximumFractionDigits: 4 });
+        if (n >= 0.0001) return '$' + n.toLocaleString(loc, { minimumFractionDigits: 6, maximumFractionDigits: 6 });
+        return '$' + n.toLocaleString(loc, { minimumFractionDigits: 8, maximumFractionDigits: 8 });
     };
 
-    const formatPercent = (n: number) => `${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     const getRRColor = (rr: number): string => {
         if (rr >= 2) return 'var(--color-accent-green)';
@@ -253,7 +259,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${entryPrice === preset ? 'active' : ''}`}
                                     onClick={() => setEntryPrice(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc)}
                                 </button>
                             ))}
                         </div>
@@ -284,7 +290,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                                     className="pill-btn"
                                     onClick={() => applyStopLossPercent(pct, true)}
                                 >
-                                    -{pct}%
+                                    -{fmtPctValue(pct, lang)}%
                                 </button>
                             ))}
                             {STOP_LOSS_PERCENT_PRESETS.map((pct) => (
@@ -293,7 +299,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                                     className="pill-btn"
                                     onClick={() => applyStopLossPercent(pct, false)}
                                 >
-                                    +{pct}%
+                                    +{fmtPctValue(pct, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -356,7 +362,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${positionSize === preset ? 'active' : ''}`}
                                     onClick={() => setPositionSize(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc)}
                                 </button>
                             ))}
                         </div>
@@ -512,7 +518,7 @@ function RiskRewardCalculator({ lang = 'en' }: { lang?: string }) {
                                     return (
                                         <div className="result-row" key={row.winRate}>
                                             <span className="result-label" style={{ flex: '0 0 60px', fontWeight: row.winRate === 50 ? 600 : 400 }}>
-                                                {row.winRate}%
+                                                {fmtPctValue(row.winRate, lang)}%
                                             </span>
                                             <span className="result-label" style={{ flex: '0 0 50px', textAlign: 'center', fontSize: '0.8rem' }}>
                                                 {row.wins}/{row.losses}

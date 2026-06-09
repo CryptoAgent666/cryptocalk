@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const Z_SCORE: Record<string, number> = {
   '90': 1.2816,
@@ -132,7 +133,7 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${dailyVolatility === String(preset) ? 'active' : ''}`}
                   onClick={() => setDailyVolatility(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -167,7 +168,7 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`toggle-btn ${confidence === level ? 'active' : ''}`}
                   onClick={() => setConfidence(level)}
                 >
-                  {level}%
+                  {fmtPctValue(level, lang)}%
                 </button>
               ))}
             </div>
@@ -183,17 +184,17 @@ function VarCalculator({ lang = 'en' }: { lang?: string }) {
           {result ? (
             <>
               <div className="result-hero loss">
-                <span className="result-hero-label">{getUiString(lang, 'Value at Risk')} ({confidence}%)</span>
+                <span className="result-hero-label">{getUiString(lang, 'Value at Risk')} ({fmtPctValue(confidence, lang)}%)</span>
                 <span className="result-hero-value"><AlertTriangle size={28} />{formatUSD(result.varAmount)}</span>
-                <span className="result-hero-roi loss">{result.varPct.toFixed(2)}% {getUiString(lang, 'portfolio downside threshold')}</span>
+                <span className="result-hero-roi loss">{result.varPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% {getUiString(lang, 'portfolio downside threshold')}</span>
               </div>
 
               <div className="result-breakdown">
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'VaR loss threshold')}</span><span className="result-value fee">-{formatUSD(result.varAmount)}</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'VaR as % of portfolio')}</span><span className="result-value fee">-{result.varPct.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'VaR as % of portfolio')}</span><span className="result-value fee">-{result.varPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span></div>
                 <div className="result-divider" />
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected Shortfall (CVaR)')}</span><span className="result-value fee">-{formatUSD(result.expectedShortfall)}</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'CVaR as % of portfolio')}</span><span className="result-value fee">-{result.expectedShortfallPct.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'CVaR as % of portfolio')}</span><span className="result-value fee">-{result.expectedShortfallPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span></div>
               </div>
 
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Parametric VaR assumes normally distributed returns and stable volatility. Stress scenarios can exceed these estimates.')}</p>

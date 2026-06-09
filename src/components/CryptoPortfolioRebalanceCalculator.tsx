@@ -11,6 +11,7 @@ import {
     Trash2,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 interface Asset {
     id: number;
@@ -124,7 +125,11 @@ function CryptoPortfolioRebalanceCalculator({ lang = 'en' }: { lang?: string }) 
             return { name: a.name, currentPct, targetPct, difference, action, tradeAmount };
         });
 
-        const totalTradeVolume = assetResults.reduce((s, a) => s + a.tradeAmount, 0) / 2;
+        // Gross trade volume = sum of every buy AND sell leg. Each leg is charged a
+        // trading fee, so the rebalancing cost must apply the fee rate to the full
+        // gross volume (previously this divided by 2, which under-counted fees ~2×
+        // because a self-funding rebalance executes both a sell and a buy).
+        const totalTradeVolume = assetResults.reduce((s, a) => s + a.tradeAmount, 0);
         const tradesNeeded = assetResults.filter((a) => a.action !== 'Hold').length;
         const rebalancingCost = totalTradeVolume * 0.001;
 
@@ -154,10 +159,7 @@ function CryptoPortfolioRebalanceCalculator({ lang = 'en' }: { lang?: string }) 
         }).format(n);
     };
 
-    const formatPercent = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(2)}%`;
-    };
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     const getActionColor = (action: string) => {
         switch (action) {

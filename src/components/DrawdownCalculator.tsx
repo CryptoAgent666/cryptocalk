@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const MONTHLY_RETURN_PRESETS = [2, 5, 10, 15];
 const DRAWDOWN_SCENARIOS = [
@@ -115,7 +116,7 @@ function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
                       }
                     }}
                   >
-                    {pct}% {getUiString(lang, 'of peak')}
+                    {fmtPctValue(pct, lang)}% {getUiString(lang, 'of peak')}
                   </button>
                 );
               })}
@@ -131,7 +132,7 @@ function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${monthlyReturn === String(preset) ? 'active' : ''}`}
                   onClick={() => setMonthlyReturn(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -151,7 +152,7 @@ function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
             <>
               <div className={`result-hero ${result.drawdownPct > 0 ? 'loss' : 'profit'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Current Drawdown')}</span>
-                <span className="result-hero-value"><AlertTriangle size={28} />{result.drawdownPct.toFixed(2)}%</span>
+                <span className="result-hero-value"><AlertTriangle size={28} />{result.drawdownPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 <span className={`result-hero-roi ${result.drawdownPct > 0 ? 'loss' : 'profit'}`}>
                   {result.drawdownPct > 0 ? `-${formatUSD(result.drawdownAmount)}` : getUiString(lang, 'No drawdown')}
                 </span>
@@ -159,7 +160,7 @@ function DrawdownCalculator({ lang = 'en' }: { lang?: string }) {
 
               <div className="result-breakdown">
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Drawdown amount')}</span><span className={`result-value ${result.drawdownAmount > 0 ? 'loss' : 'profit'}`}>{result.drawdownAmount > 0 ? '-' : ''}{formatUSD(result.drawdownAmount)}</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Required gain to recover')}</span><span className={`result-value ${result.requiredGainPct > 0 ? 'fee' : 'profit'}`}>{result.requiredGainPct.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Required gain to recover')}</span><span className={`result-value ${result.requiredGainPct > 0 ? 'fee' : 'profit'}`}>{result.requiredGainPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Recovery risk level')}</span><span className={`result-value ${result.severity === 'High' ? 'loss' : result.severity === 'Medium' ? 'fee' : 'profit'}`}>{getUiString(lang, result.severity)}</span></div>
                 <div className="result-divider" />
                 <div className="result-row">

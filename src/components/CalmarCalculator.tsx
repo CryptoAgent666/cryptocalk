@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Gauge, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPctValue } from '../i18n/format';
 
 const PORTFOLIO_VALUE_PRESETS = [10000, 30000, 50000, 100000];
 const ANNUAL_RETURN_PRESETS = [10, 20, 30, 40];
@@ -123,7 +124,7 @@ function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${annualReturn === String(preset) ? 'active' : ''}`}
                   onClick={() => setAnnualReturn(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -141,7 +142,7 @@ function CalmarCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${maxDrawdown === String(preset) ? 'active' : ''}`}
                   onClick={() => setMaxDrawdown(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>

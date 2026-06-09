@@ -14,6 +14,7 @@ import {
     Sparkles,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -203,7 +204,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
 
     const shareOnX = () => {
         if (!result) return;
-        const text = `If I had invested $${result.investedAmount.toLocaleString()} in ${result.coinName} on ${new Date(result.datePurchased).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}, it would be worth $${result.currentValue.toLocaleString('en-US', { maximumFractionDigits: 0 })} today! 🚀 (${result.roi >= 0 ? '+' : ''}${result.roi.toFixed(0)}% ROI)\n\nCheck yours at CryptoCalk.com`;
+        const text = `If I had invested $${result.investedAmount.toLocaleString()} in ${result.coinName} on ${new Date(result.datePurchased).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}, it would be worth $${result.currentValue.toLocaleString('en-US', { maximumFractionDigits: 0 })} today! 🚀 (${result.roi >= 0 ? '+' : ''}${result.roi.toLocaleString(loc(lang), { minimumFractionDigits: 0, maximumFractionDigits: 0 })}% ROI)\n\nCheck yours at CryptoCalk.com`;
         try { window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_system'); } catch { window.location.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`; }
     };
 
@@ -300,7 +301,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                                         setError('');
                                     }}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -433,7 +434,7 @@ function WhatIfCalculator({ lang = 'en' }: { lang?: string }) {
                                 <span className="whatif-hero-value">{formatBig(result.currentValue)}</span>
                                 <span className={`whatif-hero-roi ${result.roi >= 0 ? 'positive' : 'negative'}`}>
                                     {result.roi >= 0 ? <TrendingUp size={16} /> : null}
-                                    {result.roi >= 0 ? '+' : ''}{result.roi.toFixed(1)}% {getUiString(lang, 'ROI')}
+                                    {result.roi >= 0 ? '+' : ''}{result.roi.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}% {getUiString(lang, 'ROI')}
                                 </span>
                             </div>
 

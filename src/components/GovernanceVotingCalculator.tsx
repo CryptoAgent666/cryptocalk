@@ -11,6 +11,7 @@ import {
     XCircle,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 interface Results {
     votingPowerPct: number;
@@ -124,10 +125,7 @@ function GovernanceVotingCalculator({ lang = 'en' }: { lang?: string }) {
         }).format(n);
     };
 
-    const formatPercent = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return n < 0.001 && n > 0 ? '<0.001%' : `${n.toFixed(4)}%`;
-    };
+    const formatPercent = (n: number) => { if (!Number.isFinite(n)) return '\u2014'; return n < 0.001 && n > 0 ? '<0.001%' : fmtPercent(n, lang, { decimals: 4 }); };
 
     return (
         <div className="calc-wrapper">

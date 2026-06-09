@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const PORTFOLIO_RETURN_PRESETS = [10, 12, 16, 20];
 const BENCHMARK_RETURN_PRESETS = [6, 8, 10, 12];
@@ -138,7 +139,7 @@ function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${portfolioReturn === String(preset) ? 'active' : ''}`}
                   onClick={() => setPortfolioReturn(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -156,7 +157,7 @@ function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${benchmarkReturn === String(preset) ? 'active' : ''}`}
                   onClick={() => setBenchmarkReturn(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -174,7 +175,7 @@ function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${trackingError === String(preset) ? 'active' : ''}`}
                   onClick={() => setTrackingError(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -224,7 +225,7 @@ function InformationRatioCalculator({ lang = 'en' }: { lang?: string }) {
                   <span className="result-label">{getUiString(lang, 'Active return')}</span>
                   <span className={`result-value ${result.activeReturn >= 0 ? 'profit' : 'loss'}`}>
                     {result.activeReturn >= 0 ? '+' : ''}
-                    {result.activeReturn.toFixed(2)}%
+                    {result.activeReturn.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
                 <div className="result-row">

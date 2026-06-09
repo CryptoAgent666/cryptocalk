@@ -12,6 +12,7 @@ import {
     TrendingUp,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPctValue } from '../i18n/format';
 
 interface ConsumptionRow {
     period: string;
@@ -465,7 +466,7 @@ function ElectricityCostCalculator({ lang = 'en' }: { lang?: string }) {
                                                 color: getPctColor(profitability.electricityPctOfRevenue),
                                                 fontWeight: 600,
                                             }}>
-                                                {formatNumber(profitability.electricityPctOfRevenue, 1)}%
+                                                {fmtPctValue(formatNumber(profitability.electricityPctOfRevenue, 1), lang)}%
                                             </span>
                                         </div>
                                         <div className="result-divider" />

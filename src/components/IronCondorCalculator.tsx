@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { TrendingUp, Info, RotateCcw, BarChart3 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const IC_SCENARIOS = [
   { label: 'Tight Wings', spot: '77000', shortPut: '70000', longPut: '65000', shortCall: '85000', longCall: '90000',
@@ -251,7 +252,7 @@ function IronCondorCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Return on Capital')}</span>
-                  <span className="result-value profit">{result.returnOnCapital.toFixed(2)}%</span>
+                  <span className="result-value profit">{result.returnOnCapital.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
@@ -264,16 +265,16 @@ function IronCondorCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Profit Zone Width')}</span>
-                  <span className="result-value">{formatUSD(result.profitZoneWidth)} ({result.profitZoneWidthPct.toFixed(2)}%)</span>
+                  <span className="result-value">{formatUSD(result.profitZoneWidth)} ({result.profitZoneWidthPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Downside room from spot')}</span>
-                  <span className="result-value">−{result.downsideRoomPct.toFixed(2)}%</span>
+                  <span className="result-value">−{result.downsideRoomPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Upside room from spot')}</span>
-                  <span className="result-value">+{result.upsideRoomPct.toFixed(2)}%</span>
+                  <span className="result-value">+{result.upsideRoomPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
               </div>
 
@@ -291,7 +292,7 @@ function IronCondorCalculator({ lang = 'en' }: { lang?: string }) {
                 <tbody>
                   {result.payoffPoints.map((pt) => (
                     <tr key={pt.pct} style={{ borderBottom: '1px solid var(--color-border-soft)' }}>
-                      <td style={{ padding: '4px' }}>{pt.pct >= 0 ? '+' : ''}{pt.pct}%</td>
+                      <td style={{ padding: '4px' }}>{pt.pct >= 0 ? '+' : ''}{fmtPctValue(pt.pct, lang)}%</td>
                       <td style={{ textAlign: 'right', padding: '4px' }}>{formatUSD(pt.futureSpot)}</td>
                       <td style={{ textAlign: 'right', padding: '4px', color: pt.totalPnl >= 0 ? 'var(--color-accent-green)' : 'var(--color-accent-red)' }}>
                         {pt.totalPnl >= 0 ? '+' : ''}{formatUSD(pt.totalPnl)}

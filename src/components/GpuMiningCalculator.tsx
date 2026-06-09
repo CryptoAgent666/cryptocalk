@@ -13,6 +13,7 @@ import {
     Monitor,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPctValue } from '../i18n/format';
 
 interface GpuPreset {
     name: string;
@@ -486,7 +487,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${poolFee === String(fee) ? 'active' : ''}`}
                                     onClick={() => setPoolFee(String(fee))}
                                 >
-                                    {fee}%
+                                    {fmtPctValue(fee, lang)}%
                                 </button>
                             ))}
                         </div>

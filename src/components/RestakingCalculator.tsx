@@ -11,6 +11,7 @@ import {
     AlertTriangle,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const SCENARIOS = [
     {
@@ -178,7 +179,7 @@ function RestakingCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="pills-row">
                             {['2.5', '3.0', '3.2', '3.5', '4.0'].map((v) => (
                                 <button key={v} className={`pill-btn ${baseApy === v ? 'active' : ''}`}
-                                    onClick={() => setBaseApy(v)}>{v}%</button>
+                                    onClick={() => setBaseApy(v)}>{fmtPctValue(v, lang)}%</button>
                             ))}
                         </div>
                         <input type="number" inputMode="decimal" value={baseApy} onChange={(e) => setBaseApy(e.target.value)}
@@ -190,7 +191,7 @@ function RestakingCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="pills-row">
                             {['1', '2', '3', '4', '5'].map((v) => (
                                 <button key={v} className={`pill-btn ${restakingApy === v ? 'active' : ''}`}
-                                    onClick={() => setRestakingApy(v)}>{v}%</button>
+                                    onClick={() => setRestakingApy(v)}>{fmtPctValue(v, lang)}%</button>
                             ))}
                         </div>
                         <input type="number" inputMode="decimal" value={restakingApy} onChange={(e) => setRestakingApy(e.target.value)}
@@ -220,7 +221,7 @@ function RestakingCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="pills-row">
                             {['5', '10', '15', '20'].map((v) => (
                                 <button key={v} className={`pill-btn ${protocolFee === v ? 'active' : ''}`}
-                                    onClick={() => setProtocolFee(v)}>{v}%</button>
+                                    onClick={() => setProtocolFee(v)}>{fmtPctValue(v, lang)}%</button>
                             ))}
                         </div>
                         <input type="number" inputMode="decimal" value={protocolFee} onChange={(e) => setProtocolFee(e.target.value)}
@@ -253,10 +254,10 @@ function RestakingCalculator({ lang = 'en' }: { lang?: string }) {
                                 <span className="result-hero-label">{getUiString(lang, 'Total Combined APY')}</span>
                                 <span className="result-hero-value" style={{ color: 'var(--color-accent-green)' }}>
                                     <TrendingUp size={28} />
-                                    {(combinedApy * 100).toFixed(2)}%
+                                    {(combinedApy * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-text-muted)' }}>
-                                    {getUiString(lang, 'vs')} {(nativeApy * 100).toFixed(2)}% {getUiString(lang, 'native staking')}
+                                    {getUiString(lang, 'vs')} {(nativeApy * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% {getUiString(lang, 'native staking')}
                                 </span>
                             </div>
 
@@ -287,19 +288,19 @@ function RestakingCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="result-breakdown">
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Base Staking APY')}</span>
-                                    <span className="result-value">{(nativeApy * 100).toFixed(2)}%</span>
+                                    <span className="result-value">{(nativeApy * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Restaking Boost')}</span>
-                                    <span className="result-value profit">+{(restake * 100).toFixed(2)}%</span>
+                                    <span className="result-value profit">+{(restake * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'AVS Rewards')} ({avs} AVS)</span>
-                                    <span className="result-value profit">+{(totalAvsApy * 100).toFixed(2)}%</span>
+                                    <span className="result-value profit">+{(totalAvsApy * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Protocol Fee')}</span>
-                                    <span className="result-value fee">-{(fee * 100).toFixed(1)}% {getUiString(lang, 'on extra yield')}</span>
+                                    <span className="result-value fee">-{(fee * 100).toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}% {getUiString(lang, 'on extra yield')}</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">

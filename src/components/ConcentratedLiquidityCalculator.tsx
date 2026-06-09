@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { TrendingUp, Info, RotateCcw, Layers } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const FEE_TIERS = ['0.01', '0.05', '0.30', '1.00'] as const;
 
@@ -195,7 +196,7 @@ function ConcentratedLiquidityCalculator({ lang = 'en' }: { lang?: string }) {
                 <button key={p}
                   className={`pill-btn ${feeTier === p ? 'active' : ''}`}
                   onClick={() => setFeeTier(p)}>
-                  {p}%
+                  {fmtPctValue(p, lang)}%
                 </button>
               ))}
             </div>
@@ -254,11 +255,11 @@ function ConcentratedLiquidityCalculator({ lang = 'en' }: { lang?: string }) {
               <div className="result-breakdown">
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Range width')}</span>
-                  <span className="result-value">±{(result.rangeWidthPct / 2).toFixed(1)}%</span>
+                  <span className="result-value">±{(result.rangeWidthPct / 2).toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'In-range probability (rough)')}</span>
-                  <span className="result-value">{(result.inRangeProbability * 100).toFixed(1)}%</span>
+                  <span className="result-value">{(result.inRangeProbability * 100).toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
@@ -276,11 +277,11 @@ function ConcentratedLiquidityCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'IL at lower bound')}</span>
-                  <span className="result-value fee">{result.v3IlAtLower.toFixed(2)}%</span>
+                  <span className="result-value fee">{result.v3IlAtLower.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'IL at upper bound')}</span>
-                  <span className="result-value fee">{result.v3IlAtUpper.toFixed(2)}%</span>
+                  <span className="result-value fee">{result.v3IlAtUpper.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Net P&L estimate')}</span>

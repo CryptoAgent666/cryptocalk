@@ -8,6 +8,7 @@ import {
   Rainbow,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 /* ------------------------------------------------------------------ */
 /*  Constants                                                          */
@@ -80,10 +81,7 @@ function RainbowChartCalculator({ lang = 'en' }: { lang?: string }) {
     return new Intl.NumberFormat(loc, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n);
   };
 
-  const formatPercent = (n: number) => {
-    if (!isFinite(n)) return '\u2014';
-    return (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
-  };
+  const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 1, signed: true });
 
   const results = useMemo(() => {
     const price = parseFloat(btcPrice) || 0;

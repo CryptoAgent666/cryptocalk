@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ChevronDown, Info, RotateCcw, Shield, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 interface CountryRule {
   name: string;
@@ -238,13 +239,13 @@ function InheritanceTaxCalculator({ lang = 'en' }: { lang?: string }) {
               <div className={`result-hero ${result.estimatedTax === 0 ? 'profit' : 'loss'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Estimated Inheritance Tax')}</span>
                 <span className="result-hero-value"><Shield size={28} />{fmtUSD(result.estimatedTax)}</span>
-                <span className={`result-hero-roi ${result.effectiveRate === 0 ? 'profit' : 'loss'}`}>{result.effectiveRate.toFixed(1)}% {getUiString(lang, 'effective rate')}</span>
+                <span className={`result-hero-roi ${result.effectiveRate === 0 ? 'profit' : 'loss'}`}>{result.effectiveRate.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}% {getUiString(lang, 'effective rate')}</span>
               </div>
 
               <div className="result-breakdown">
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Taxable Estate')}</span><span className="result-value">{fmtUSD(result.taxableEstate)}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Exemption Applied')}</span><span className="result-value profit">{fmtUSD(result.exemption)}</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Tax Rate')}</span><span className="result-value">{result.taxRate}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Tax Rate')}</span><span className="result-value">{fmtPctValue(result.taxRate, lang)}%</span></div>
                 <div className="result-divider" />
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Net Inheritance')}</span><span className="result-value profit">{fmtUSD(result.netInheritance)}</span></div>
                 {config.stepUp && result.stepUpBenefit > 0 && (

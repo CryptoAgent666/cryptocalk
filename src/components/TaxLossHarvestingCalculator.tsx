@@ -11,6 +11,7 @@ import {
     Scissors,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPctValue } from '../i18n/format';
 
 interface Position {
     coin: string;
@@ -176,7 +177,7 @@ function TaxLossHarvestingCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="pills-row">
                             {['12', '22', '24', '32', '35', '37'].map((v) => (
                                 <button key={v} className={`pill-btn ${taxBracket === v ? 'active' : ''}`}
-                                    onClick={() => setTaxBracket(v)}>{v}%</button>
+                                    onClick={() => setTaxBracket(v)}>{fmtPctValue(v, lang)}%</button>
                             ))}
                         </div>
                         <input type="number" inputMode="decimal" value={taxBracket} onChange={(e) => setTaxBracket(e.target.value)}
@@ -339,7 +340,7 @@ function TaxLossHarvestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Tax Bracket')}</span>
-                                    <span className="result-value">{taxBracket}%</span>
+                                    <span className="result-value">{fmtPctValue(taxBracket, lang)}%</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">

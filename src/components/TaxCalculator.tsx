@@ -11,6 +11,7 @@ import {
     ChevronDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 interface TaxBracket {
     label: string;
@@ -510,7 +511,7 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${buyPrice === price ? 'active' : ''}`}
                                     onClick={() => setBuyPrice(price)}
                                 >
-                                    {Number(price).toLocaleString('en-US')}
+                                    {Number(price).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -540,7 +541,7 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${sellPrice === price ? 'active' : ''}`}
                                     onClick={() => setSellPrice(price)}
                                 >
-                                    {Number(price).toLocaleString('en-US')}
+                                    {Number(price).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -640,11 +641,11 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="tax-owed-row">
                                     <span className="tax-owed-label">{getUiString(lang, 'Applicable Rate')}</span>
-                                    <span className="tax-owed-value">{result.taxRate}%</span>
+                                    <span className="tax-owed-value">{fmtPctValue(result.taxRate, lang)}%</span>
                                 </div>
                                 <div className="tax-owed-row">
                                     <span className="tax-owed-label">{getUiString(lang, 'Effective Rate')}</span>
-                                    <span className="tax-owed-value">{result.effectiveRate.toFixed(1)}%</span>
+                                    <span className="tax-owed-value">{result.effectiveRate.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                                 </div>
                             </div>
 
@@ -691,7 +692,7 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                             <div className={`comparison-card ${!result.isLongTerm ? 'current' : ''}`}>
                                                 <span className="comparison-label">{getUiString(lang, 'Short-Term')}</span>
                                                 <span className="comparison-value">
-                                                    {config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].shortTermRate}%
+                                                    {fmtPctValue(config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].shortTermRate, lang)}%
                                                 </span>
                                                 <span className="comparison-tax">
                                                     {formatCurrency(result.capitalGain * config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].shortTermRate / 100)}
@@ -700,7 +701,7 @@ function TaxCalculator({ lang = 'en' }: { lang?: string }) {
                                             <div className={`comparison-card ${result.isLongTerm ? 'current' : ''}`}>
                                                 <span className="comparison-label">{getUiString(lang, 'Long-Term')}</span>
                                                 <span className="comparison-value">
-                                                    {config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].longTermRate}%
+                                                    {fmtPctValue(config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].longTermRate, lang)}%
                                                 </span>
                                                 <span className="comparison-tax">
                                                     {formatCurrency(result.capitalGain * config.brackets[Math.min(bracketIndex, config.brackets.length - 1)].longTermRate / 100)}

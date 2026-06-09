@@ -14,6 +14,7 @@ import {
     Scale,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -224,7 +225,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
-    const formatPercent = (n: number) => `${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     const lev = parseFloat(leverage) || 1;
     const highLev = lev > 20;
@@ -314,7 +315,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${entryPrice === preset ? 'active' : ''}`}
                                     onClick={() => setEntryPrice(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -334,7 +335,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${positionSize === preset ? 'active' : ''}`}
                                     onClick={() => setPositionSize(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -380,7 +381,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${walletBalance === preset ? 'active' : ''}`}
                                     onClick={() => setWalletBalance(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -400,7 +401,7 @@ function MarginCalculator({ lang = 'en' }: { lang?: string }) {
                             {[0.4, 0.5, 1.0].map((r) => (
                                 <button key={r} className={`pill-btn ${maintenanceRate === String(r) ? 'active' : ''}`}
                                     onClick={() => setMaintenanceRate(String(r))}>
-                                    {r}%
+                                    {fmtPctValue(r, lang)}%
                                 </button>
                             ))}
                         </div>

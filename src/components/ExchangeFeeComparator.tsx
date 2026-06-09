@@ -10,6 +10,7 @@ import {
     BarChart3,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 type TradeType = 'spot' | 'futures';
 type OrderType = 'maker' | 'taker';
@@ -105,7 +106,7 @@ function ExchangeFeeComparator({ lang = 'en' }: { lang?: string }) {
         }).format(n);
     };
 
-    const formatRate = (n: number) => `${n.toFixed(4)}%`;
+    const formatRate = (n: number) => `${n.toLocaleString(loc(lang), { minimumFractionDigits: 4, maximumFractionDigits: 4 })}%`;
 
     return (
         <div className="calc-wrapper">

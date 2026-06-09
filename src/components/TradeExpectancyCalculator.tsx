@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const WIN_RATE_PRESETS = [40, 45, 50, 55];
 const AVG_WIN_R_PRESETS = [1, 1.5, 2, 3];
@@ -149,7 +150,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${winRate === String(preset) ? 'active' : ''}`}
                   onClick={() => setWinRate(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -199,7 +200,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${riskPerTrade === String(preset) ? 'active' : ''}`}
                   onClick={() => setRiskPerTrade(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -274,7 +275,7 @@ function TradeExpectancyCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Break-even win rate')}</span>
-                  <span className="result-value">{result.breakEvenWinRate.toFixed(2)}%</span>
+                  <span className="result-value">{result.breakEvenWinRate.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Profit factor')}</span>

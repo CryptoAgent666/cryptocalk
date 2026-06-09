@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Activity, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPctValue, loc } from '../i18n/format';
 
 const PF_SCENARIOS = [
   { label: 'Losing System', winRate: '40', avgWin: '1.5', avgLoss: '1.0' },
@@ -51,7 +52,7 @@ function ProfitFactorCalculator({ lang = 'en' }: { lang?: string }) {
     setWinRate('55'); setAvgWin('1.8'); setAvgLoss('1.0'); setTotalTrades('100');
   };
 
-  const formatR = (v: number) => v.toFixed(2);
+  const formatR = (v: number) => v.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   return (
     <div className="calc-wrapper">
@@ -77,7 +78,7 @@ function ProfitFactorCalculator({ lang = 'en' }: { lang?: string }) {
                 <button key={p}
                   className={`pill-btn ${winRate === String(p) ? 'active' : ''}`}
                   onClick={() => setWinRate(String(p))}>
-                  {p}%
+                  {fmtPctValue(p, lang)}%
                 </button>
               ))}
             </div>
@@ -87,7 +88,7 @@ function ProfitFactorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label htmlFor="pf-avgwin">{getUiString(lang, 'Average Win')} (R or $)</label>
+            <label htmlFor="pf-avgwin">{getUiString(lang, 'Average Win')} ({getUiString(lang, 'R or $')})</label>
             <div className="pills-row">
               {[1, 1.5, 2, 3].map((p) => (
                 <button key={p}
@@ -103,7 +104,7 @@ function ProfitFactorCalculator({ lang = 'en' }: { lang?: string }) {
           </div>
 
           <div className="input-group">
-            <label htmlFor="pf-avgloss">{getUiString(lang, 'Average Loss')} (R or $)</label>
+            <label htmlFor="pf-avgloss">{getUiString(lang, 'Average Loss')} ({getUiString(lang, 'R or $')})</label>
             <div className="pills-row">
               {[0.5, 1, 1.5, 2].map((p) => (
                 <button key={p}
@@ -146,7 +147,7 @@ function ProfitFactorCalculator({ lang = 'en' }: { lang?: string }) {
               <div className={`result-hero ${result.zone === 'profit' ? 'profit' : result.zone === 'loss' ? 'loss' : ''}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Profit Factor')}</span>
                 <span className="result-hero-value"><Activity size={28} />
-                  {Number.isFinite(result.profitFactor) ? result.profitFactor.toFixed(2) : '∞'}
+                  {Number.isFinite(result.profitFactor) ? result.profitFactor.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '∞'}
                 </span>
                 <span className={`result-hero-roi ${result.zone === 'profit' ? 'profit' : result.zone === 'loss' ? 'loss' : ''}`}>
                   {getUiString(lang, result.rating)}

@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Info, RotateCcw, ServerCog, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const STAKED_TOKEN_PRESETS = [1000, 5000, 10000, 25000];
 const TOKEN_PRICE_PRESETS = [1, 2.2, 5, 10];
@@ -156,7 +157,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${apr === String(preset) ? 'active' : ''}`}
                   onClick={() => setApr(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -174,7 +175,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${validatorFee === String(preset) ? 'active' : ''}`}
                   onClick={() => setValidatorFee(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -192,7 +193,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${uptime === String(preset) ? 'active' : ''}`}
                   onClick={() => setUptime(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -232,7 +233,7 @@ function NodeCalculator({ lang = 'en' }: { lang?: string }) {
                 <span className="result-hero-label">{getUiString(lang, 'Net Monthly Node Income')}</span>
                 <span className="result-hero-value"><ServerCog size={28} />{formatUSD(result.netMonthlyUsd)}</span>
                 <span className={`result-hero-roi ${result.effectiveApr >= 0 ? 'profit' : 'loss'}`}>
-                  {getUiString(lang, 'Effective APR')} {result.effectiveApr >= 0 ? '+' : ''}{result.effectiveApr.toFixed(2)}%
+                  {getUiString(lang, 'Effective APR')} {result.effectiveApr >= 0 ? '+' : ''}{result.effectiveApr.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                 </span>
               </div>
 

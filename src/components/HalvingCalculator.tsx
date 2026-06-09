@@ -13,6 +13,7 @@ import {
     Timer,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 /* ------------------------------------------------------------------ */
 /*  Halving history (hardcoded, accurate)                             */
@@ -297,7 +298,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${powerConsumption === value ? 'active' : ''}`}
                                     onClick={() => setPowerConsumption(value)}
                                 >
-                                    {Number(value).toLocaleString('en-US')}W
+                                    {Number(value).toLocaleString(loc(lang))}W
                                 </button>
                             ))}
                         </div>
@@ -329,7 +330,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${btcPrice === value ? 'active' : ''}`}
                                     onClick={() => setBtcPrice(value)}
                                 >
-                                    ${Number(value).toLocaleString('en-US')}
+                                    ${Number(value).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>

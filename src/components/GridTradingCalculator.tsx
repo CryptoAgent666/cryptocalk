@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Grid3x3, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPctValue } from '../i18n/format';
 
 const GRID_COUNT_PRESETS = [10, 20, 50, 100];
 const SCENARIOS = [
@@ -188,7 +189,7 @@ function GridTradingCalculator({ lang = 'en' }: { lang?: string }) {
             <>
               <div className={`result-hero ${result.annualReturn > 0 ? 'profit' : ''}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Estimated Annual Return')}</span>
-                <span className="result-hero-value"><Grid3x3 size={28} />{fmtNum(result.annualReturn)}%</span>
+                <span className="result-hero-value"><Grid3x3 size={28} />{fmtPctValue(fmtNum(result.annualReturn), lang)}%</span>
                 <span className="result-hero-roi profit">{getUiString(lang, 'Max Profit')}: {fmtUSD(result.maxProfit)}</span>
               </div>
 

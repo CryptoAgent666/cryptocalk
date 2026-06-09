@@ -9,7 +9,6 @@ import {
     ChevronDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
-
 interface Allocation {
     asset: string;
     weightPct: number;
@@ -111,7 +110,7 @@ function CryptoIndexFundCalculator({ lang = 'en' }: { lang?: string }) {
         const btcPctInIndex = btcAllocationInIndex ? btcAllocationInIndex.weightPct : 0;
         const btcOnlyValue = inv;
         const diversificationDelta = btcPctInIndex < 100
-            ? `${(100 - btcPctInIndex).toFixed(1)}% ${getUiString(lang, 'allocated beyond BTC')}`
+            ? `${(100 - btcPctInIndex).toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}% ${getUiString(lang, 'allocated beyond BTC')}`
             : getUiString(lang, 'No diversification (BTC only)');
 
         setResults({ allocations, annualFee, totalInvested: inv, btcOnlyValue, diversificationDelta });
@@ -235,7 +234,7 @@ function CryptoIndexFundCalculator({ lang = 'en' }: { lang?: string }) {
                                         {results.allocations.map((a) => (
                                             <tr key={a.asset}>
                                                 <td>{a.asset}</td>
-                                                <td>{a.weightPct.toFixed(1)}%</td>
+                                                <td>{a.weightPct.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</td>
                                                 <td>{formatUSD(a.amount)}</td>
                                             </tr>
                                         ))}

@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Info, PieChart, Plus, RotateCcw, Trash2 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 interface AssetRow {
   id: string;
@@ -292,7 +293,7 @@ function RebalancingCalculator({ lang = 'en' }: { lang?: string }) {
                   {formatUSD(totals.projectedTotal)}
                 </span>
                 <span className="result-hero-roi">
-                  {getUiString(lang, 'Current')} {formatUSD(totals.currentTotal)} • {getUiString(lang, 'Targets total')} {totals.targetSum.toFixed(2)}%
+                  {getUiString(lang, 'Current')} {formatUSD(totals.currentTotal)} • {getUiString(lang, 'Targets total')} {totals.targetSum.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                 </span>
               </div>
 
@@ -301,7 +302,7 @@ function RebalancingCalculator({ lang = 'en' }: { lang?: string }) {
                   <div key={row.id} style={{ borderBottom: '1px solid var(--color-border)', paddingBottom: '10px', marginBottom: '10px' }}>
                     <div className="result-row">
                       <span className="result-label"><strong>{row.symbol}</strong></span>
-                      <span className="result-value">{row.afterPct.toFixed(2)}%</span>
+                      <span className="result-value">{row.afterPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                     </div>
                     <div className="result-row">
                       <span className="result-label">{getUiString(lang, 'Current / Target')}</span>

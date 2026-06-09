@@ -11,6 +11,7 @@ import {
     AlertTriangle,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 interface Asset {
     id: number;
@@ -261,7 +262,7 @@ function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
                             color: 'var(--color-text-secondary)',
                         }}>
                             <AlertTriangle size={14} style={{ color: '#f59e0b' }} />
-                            {getUiString(lang, 'Target allocation')}: {targetTotal.toFixed(1)}% ({getUiString(lang, 'should be 100%')})
+                            {getUiString(lang, 'Target allocation')}: {targetTotal.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}% ({getUiString(lang, 'should be 100%')})
                         </div>
                     )}
 
@@ -307,7 +308,7 @@ function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
                                     }}>
                                         <div style={{ width: 8, height: 8, borderRadius: '50%', background: a.color }} />
                                         <span style={{ fontWeight: 500 }}>{a.name || getUiString(lang, 'Unnamed')}</span>
-                                        <span style={{ color: 'var(--color-text-muted)' }}>{a.actualPct.toFixed(1)}%</span>
+                                        <span style={{ color: 'var(--color-text-muted)' }}>{a.actualPct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                                     </div>
                                 ))}
                             </div>
@@ -338,8 +339,8 @@ function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
                                                         </div>
                                                     </td>
                                                     <td style={{ padding: '8px', textAlign: 'right' }}>{formatUSD(a.amount)}</td>
-                                                    <td style={{ padding: '8px', textAlign: 'right' }}>{actualPct.toFixed(1)}%</td>
-                                                    <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-primary)' }}>{a.targetPct}%</td>
+                                                    <td style={{ padding: '8px', textAlign: 'right' }}>{actualPct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</td>
+                                                    <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-primary)' }}>{fmtPctValue(a.targetPct, lang)}%</td>
                                                     <td style={{
                                                         padding: '8px', textAlign: 'right', fontWeight: 600,
                                                         color: diff > 0 ? 'var(--color-accent-green)' : diff < 0 ? 'var(--color-accent-red)' : 'var(--color-text-muted)',
@@ -374,7 +375,7 @@ function PortfolioCalculator({ lang = 'en' }: { lang?: string }) {
                                                 <div style={{ fontSize: '1rem', fontWeight: 700, color: scoreColor }}>{score}</div>
                                             </div>
                                             <div style={{ textAlign: 'right' }}>
-                                                <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>{count} {getUiString(lang, 'assets, largest')} {maxPct.toFixed(0)}%</div>
+                                                <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>{count} {getUiString(lang, 'assets, largest')} {maxPct.toLocaleString(loc(lang), { minimumFractionDigits: 0, maximumFractionDigits: 0 })}%</div>
                                             </div>
                                         </div>
                                     );

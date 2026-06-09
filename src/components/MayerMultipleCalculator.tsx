@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Activity, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const PRICE_PRESETS = ['50000', '77000', '100000', '150000'];
 const MA_PRESETS = ['45000', '70000', '85000', '100000'];
@@ -131,7 +132,7 @@ function MayerMultipleCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Price vs 200d MA')}</span>
                   <span className={`result-value ${result.deviationPct >= 0 ? 'profit' : 'loss'}`}>
-                    {result.deviationPct >= 0 ? '+' : ''}{result.deviationPct.toFixed(2)}%
+                    {result.deviationPct >= 0 ? '+' : ''}{result.deviationPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
                 {result.priceAtThreshold && (

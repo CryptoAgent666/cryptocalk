@@ -11,6 +11,7 @@ import {
     Layers,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 const COMPOUND_FREQUENCIES = [
     { id: 'daily', label: 'Daily', n: 365 },
@@ -129,7 +130,7 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
-    const formatPercent = (n: number) => `${n >= 0 ? '+' : ''}${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2, signed: true });
 
     return (
         <div className="calc-wrapper">
@@ -195,7 +196,7 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
                             {APY_PRESETS.map((a) => (
                                 <button key={a} className={`pill-btn ${annualRate === String(a) ? 'active' : ''}`}
                                     onClick={() => setAnnualRate(String(a))}>
-                                    {a}%
+                                    {fmtPctValue(a, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -290,13 +291,13 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
                                         background: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         fontSize: '0.7rem', fontWeight: 600, color: '#fff', minWidth: '40px',
                                     }}>
-                                        {((totalDeposited / totalValue) * 100).toFixed(0)}%
+                                        {((totalDeposited / totalValue) * 100).toLocaleString(loc(lang), { minimumFractionDigits: 0, maximumFractionDigits: 0 })}%
                                     </div>
                                     <div style={{
                                         flex: 1, background: 'var(--color-accent-green)', display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         fontSize: '0.7rem', fontWeight: 600, color: '#fff', minWidth: '40px',
                                     }}>
-                                        {((totalInterest / totalValue) * 100).toFixed(0)}%
+                                        {((totalInterest / totalValue) * 100).toLocaleString(loc(lang), { minimumFractionDigits: 0, maximumFractionDigits: 0 })}%
                                     </div>
                                 </div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
@@ -326,7 +327,7 @@ function CompoundInterestCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Annual Rate')}</span>
-                                    <span className="result-value">{annualRate}%</span>
+                                    <span className="result-value">{fmtPctValue(annualRate, lang)}%</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">

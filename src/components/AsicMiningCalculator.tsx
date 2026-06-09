@@ -13,6 +13,7 @@ import {
     Server,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPctValue } from '../i18n/format';
 
 interface AsicPreset {
     name: string;
@@ -484,7 +485,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${poolFee === String(fee) ? 'active' : ''}`}
                                     onClick={() => setPoolFee(String(fee))}
                                 >
-                                    {fee}%
+                                    {fmtPctValue(fee, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -571,7 +572,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatUSD(Math.abs(results[0].netProfit))}
                                 </span>
                                 <span className={`result-hero-roi ${isProfit ? 'profit' : 'fee'}`}>
-                                    {isProfit ? getUiString(lang, 'Profitable') : getUiString(lang, 'Unprofitable')} {getUiString(lang, 'at')} ${electricityCost}/kWh
+                                    {isProfit ? getUiString(lang, 'Profitable') : getUiString(lang, 'Unprofitable')} {getUiString(lang, 'at')} ${electricityCost}/{getUiString(lang, 'kWh')}
                                 </span>
                             </div>
 
@@ -669,7 +670,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                         gap: '6px',
                                     }}>
                                         <Cpu size={14} />
-                                        {getUiString(lang, 'ASIC Comparison')} ({getUiString(lang, 'at')} ${electricityCost}/kWh)
+                                        {getUiString(lang, 'ASIC Comparison')} ({getUiString(lang, 'at')} ${electricityCost}/{getUiString(lang, 'kWh')})
                                     </h3>
                                     <div style={{
                                         overflowX: 'auto',

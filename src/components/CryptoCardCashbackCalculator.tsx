@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { CreditCard, Info, RotateCcw, Award } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const CARDS = [
   { id: 'gemini', label: 'Gemini Credit Card', annualFee: '0', baseRate: '1', categoryRates: { gas: 4, dining: 3, groceries: 2 }, minSpend: '0' },
@@ -177,7 +178,7 @@ function CryptoCardCashbackCalculator({ lang = 'en' }: { lang?: string }) {
                   {formatUSD(result.netRewards)}
                 </span>
                 <span className={`result-hero-roi ${result.zone}`}>
-                  {result.effectiveRate.toFixed(2)}% {getUiString(lang, 'effective')} · {getUiString(lang, result.rating)}
+                  {result.effectiveRate.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% {getUiString(lang, 'effective')} · {getUiString(lang, result.rating)}
                 </span>
               </div>
 

@@ -48,20 +48,23 @@ const SCENARIOS = [
     },
 ] as const;
 
+// "Signal" follows sentiment momentum: high composite (greed) = bullish trend = Buy.
 function getSignal(score: number): string {
-    if (score >= 80) return 'Strong Sell';
-    if (score >= 60) return 'Sell';
-    if (score >= 40) return 'Neutral';
-    if (score >= 20) return 'Buy';
-    return 'Strong Buy';
-}
-
-function getContrarianSignal(score: number): string {
     if (score >= 80) return 'Strong Buy';
     if (score >= 60) return 'Buy';
     if (score >= 40) return 'Neutral';
     if (score >= 20) return 'Sell';
     return 'Strong Sell';
+}
+
+// "Contrarian Signal" fades the crowd ("be fearful when others are greedy"):
+// high composite (greed) = overbought = Sell; extreme fear = Buy.
+function getContrarianSignal(score: number): string {
+    if (score >= 80) return 'Strong Sell';
+    if (score >= 60) return 'Sell';
+    if (score >= 40) return 'Neutral';
+    if (score >= 20) return 'Buy';
+    return 'Strong Buy';
 }
 
 function getSignalColor(signal: string): string {

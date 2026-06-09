@@ -10,6 +10,7 @@ import {
     Percent,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const BREAK_EVEN_SCENARIOS = [
     { label: '20% Drawdown', mode: 'loss', lossPct: '20', originalValue: '10000', currentValue: '8000' },
@@ -35,7 +36,7 @@ function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
-    const formatPct = (n: number) => `${n >= 0 ? '+' : ''}${n.toFixed(2)}%`;
+    const formatPct = (n: number) => `${n >= 0 ? '+' : ''}${n.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`;
 
     // Loss Recovery calculations
     const loss = parseFloat(lossPct) || 0;
@@ -149,7 +150,7 @@ function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
                                                 setLossPct(String(v));
                                                 if (origVal > 0) setCurrentValue(String(origVal * (1 - v / 100)));
                                             }}>
-                                            {v}%
+                                            {fmtPctValue(v, lang)}%
                                         </button>
                                     ))}
                                 </div>
@@ -245,10 +246,10 @@ function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
                                 <span className="result-hero-label">{getUiString(lang, 'Recovery Required')}</span>
                                 <span className="result-hero-value" style={{ color: 'var(--color-accent-green)' }}>
                                     <TrendingUp size={28} />
-                                    {Number.isFinite(recoveryPct) ? `+${recoveryPct.toFixed(2)}%` : '∞ (unrecoverable)'}
+                                    {Number.isFinite(recoveryPct) ? `+${recoveryPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%` : '∞ (unrecoverable)'}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-text-secondary)' }}>
-                                    {getUiString(lang, 'to recover from a')} {loss}% {getUiString(lang, 'loss')}
+                                    {getUiString(lang, 'to recover from a')} {fmtPctValue(loss, lang)}% {getUiString(lang, 'loss')}
                                 </span>
                             </div>
 
@@ -260,7 +261,7 @@ function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
                                     textAlign: 'center',
                                 }}>
                                     <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '4px' }}>{getUiString(lang, 'Loss')}</div>
-                                    <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-accent-red)' }}>-{loss}%</div>
+                                    <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-accent-red)' }}>-{fmtPctValue(loss, lang)}%</div>
                                 </div>
                                 <div style={{
                                     padding: '12px', borderRadius: '10px',
@@ -268,7 +269,7 @@ function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
                                     textAlign: 'center',
                                 }}>
                                     <div style={{ fontSize: '0.72rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '4px' }}>{getUiString(lang, 'Needed Gain')}</div>
-                                    <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-accent-green)' }}>{Number.isFinite(recoveryPct) ? `+${recoveryPct.toFixed(1)}%` : '∞'}</div>
+                                    <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--color-accent-green)' }}>{Number.isFinite(recoveryPct) ? `+${recoveryPct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%` : '∞'}</div>
                                 </div>
                             </div>
 
@@ -289,7 +290,7 @@ function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
                                     </div>
                                     <div className="result-row">
                                         <span className="result-label">{getUiString(lang, 'Gain Needed')}</span>
-                                        <span className="result-value" style={{ fontWeight: 600, color: 'var(--color-accent-green)' }}>+{recoveryNeeded.toFixed(2)}%</span>
+                                        <span className="result-value" style={{ fontWeight: 600, color: 'var(--color-accent-green)' }}>+{recoveryNeeded.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                                     </div>
                                 </div>
                             )}
@@ -314,10 +315,10 @@ function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
                                                     background: row.loss === Math.round(loss) ? 'var(--color-bg-card)' : 'transparent',
                                                 }}>
                                                     <td style={{ padding: '8px', color: 'var(--color-accent-red)', fontWeight: row.loss === Math.round(loss) ? 700 : 400 }}>
-                                                        -{row.loss}%
+                                                        -{fmtPctValue(row.loss, lang)}%
                                                     </td>
                                                     <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-accent-green)', fontWeight: row.loss === Math.round(loss) ? 700 : 400 }}>
-                                                        {Number.isFinite(row.recovery) ? `+${row.recovery.toFixed(1)}%` : '∞'}
+                                                        {Number.isFinite(row.recovery) ? `+${row.recovery.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%` : '∞'}
                                                     </td>
                                                 </tr>
                                             ))}
@@ -355,11 +356,11 @@ function BreakEvenCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">{getUiString(lang, 'Entry Fee')} ({eFee}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Entry Fee')} ({fmtPctValue(eFee, lang)}%)</span>
                                     <span className="result-value fee">{formatUSD(size * eFee / 100)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{getUiString(lang, 'Exit Fee')} ({xFee}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Exit Fee')} ({fmtPctValue(xFee, lang)}%)</span>
                                     <span className="result-value fee">{formatUSD(size * xFee / 100)}</span>
                                 </div>
                                 <div className="result-row">

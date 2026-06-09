@@ -10,6 +10,7 @@ import {
     TrendingDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const LTV_PRESETS = [25, 33, 50, 67, 75];
 const COLLATERAL_PRESETS = [5000, 10000, 25000, 50000];
@@ -198,7 +199,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             {LTV_PRESETS.map((v) => (
                                 <button key={v} className={`pill-btn ${ltv === String(v) ? 'active' : ''}`}
                                     onClick={() => setLtv(String(v))}>
-                                    {v}%
+                                    {fmtPctValue(v, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -216,7 +217,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${apr === String(preset) ? 'active' : ''}`}
                                     onClick={() => setApr(String(preset))}
                                 >
-                                    {preset}%
+                                    {fmtPctValue(preset, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -250,7 +251,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                         className={`pill-btn ${marginCallLtv === String(preset) ? 'active' : ''}`}
                                         onClick={() => setMarginCallLtv(String(preset))}
                                     >
-                                        {preset}%
+                                        {fmtPctValue(preset, lang)}%
                                     </button>
                                 ))}
                             </div>
@@ -266,7 +267,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                         className={`pill-btn ${liquidationLtv === String(preset) ? 'active' : ''}`}
                                         onClick={() => setLiquidationLtv(String(preset))}
                                     >
-                                        {preset}%
+                                        {fmtPctValue(preset, lang)}%
                                     </button>
                                 ))}
                             </div>
@@ -295,7 +296,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatUSD(loanAmount)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-text-secondary)' }}>
-                                    {getUiString(lang, 'at')} {ltvPct}% LTV {getUiString(lang, 'on')} {formatUSD(collateral)} {getUiString(lang, 'collateral')}
+                                    {getUiString(lang, 'at')} {fmtPctValue(ltvPct, lang)}% LTV {getUiString(lang, 'on')} {formatUSD(collateral)} {getUiString(lang, 'collateral')}
                                 </span>
                             </div>
 
@@ -303,7 +304,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                             <div style={{ margin: '16px 0' }}>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', marginBottom: '4px' }}>
                                     <span style={{ color: 'var(--color-text-muted)' }}>{getUiString(lang, 'LTV Ratio')}</span>
-                                    <span style={{ color: healthColor, fontWeight: 600 }}>{getUiString(lang, healthLabel)} — {ltvPct}%</span>
+                                    <span style={{ color: healthColor, fontWeight: 600 }}>{getUiString(lang, healthLabel)} — {fmtPctValue(ltvPct, lang)}%</span>
                                 </div>
                                 <div style={{ height: '8px', borderRadius: '4px', background: 'var(--color-border)', overflow: 'hidden' }}>
                                     <div style={{ height: '100%', width: `${Math.min(healthPct, 100)}%`, background: healthColor, borderRadius: '4px', transition: 'width 0.3s ease' }} />
@@ -325,7 +326,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'APR')}</span>
-                                    <span className="result-value">{aprPct}%</span>
+                                    <span className="result-value">{fmtPctValue(aprPct, lang)}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Loan Term')}</span>
@@ -359,7 +360,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                         {formatUSD(marginCallPrice)}
                                     </div>
                                     <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>
-                                        −{marginCallDrop.toFixed(1)}% {getUiString(lang, 'collateral drop')}
+                                        −{marginCallDrop.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}% {getUiString(lang, 'collateral drop')}
                                     </div>
                                 </div>
                                 <div style={{
@@ -373,7 +374,7 @@ function LoanCalculator({ lang = 'en' }: { lang?: string }) {
                                         {formatUSD(liquidationPrice)}
                                     </div>
                                     <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)' }}>
-                                        −{liquidationDrop.toFixed(1)}% {getUiString(lang, 'collateral drop')}
+                                        −{liquidationDrop.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}% {getUiString(lang, 'collateral drop')}
                                     </div>
                                 </div>
                             </div>

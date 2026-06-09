@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Zap, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const LN_SCENARIOS = [
   { label: 'Strike Direct (1 hop)', amountSat: '100000', baseFeeMsat: '1000', ppm: '100', hops: '1' },
@@ -187,7 +188,7 @@ function LightningNetworkFeeCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Fee % of payment')}</span>
                   <span className={`result-value ${result.feePctOfPayment > 1 ? 'fee' : ''}`}>
-                    {result.feePctOfPayment.toFixed(4)}%
+                    {result.feePctOfPayment.toLocaleString(loc(lang), { minimumFractionDigits: 4, maximumFractionDigits: 4 })}%
                   </span>
                 </div>
                 <div className="result-row">
@@ -202,7 +203,7 @@ function LightningNetworkFeeCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'LN savings vs on-chain')}</span>
                   <span className={`result-value ${result.savingsVsOnchainPct > 0 ? 'profit' : 'loss'}`}>
-                    {result.savingsVsOnchainPct > 0 ? '+' : ''}{result.savingsVsOnchainPct.toFixed(2)}%
+                    {result.savingsVsOnchainPct > 0 ? '+' : ''}{result.savingsVsOnchainPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
               </div>

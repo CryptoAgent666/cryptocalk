@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Cpu, Info, RotateCcw, Pickaxe } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 // Hash values + dailyPerHash constants are calibrated so a RTX 4090 at $0.10/kWh
 // lands near break-even on the best coin (realistic GPU mining economics in 2026),
@@ -183,7 +184,7 @@ function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Switching advantage vs #2')}</span>
                   <span className="result-value">
-                    {result.second ? `+${formatUSD(result.advantage)}/day (${result.advantagePct.toFixed(1)}%)` : '—'}
+                    {result.second ? `+${formatUSD(result.advantage)}/day (${result.advantagePct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%)` : '—'}
                   </span>
                 </div>
                 <div className="result-divider" />
@@ -216,7 +217,7 @@ function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Best coin: profit margin')}</span>
-                  <span className="result-value">{result.best.profitMargin.toFixed(1)}%</span>
+                  <span className="result-value">{result.best.profitMargin.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                 </div>
               </div>
 

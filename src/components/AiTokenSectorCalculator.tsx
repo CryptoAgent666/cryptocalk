@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Brain, Info, RotateCcw, Sparkles } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const AI_TOKENS = [
   { id: 'tao', label: 'Bittensor (TAO)', price: '350', mcap: '3000000000', subsector: 'compute' },
@@ -10,8 +11,11 @@ const AI_TOKENS = [
   { id: 'near', label: 'NEAR (AI L1)', price: '4.50', mcap: '5300000000', subsector: 'infra' },
   { id: 'wld', label: 'Worldcoin (WLD)', price: '2.40', mcap: '4800000000', subsector: 'identity' },
   { id: 'akt', label: 'Akash (AKT)', price: '3.20', mcap: '850000000', subsector: 'compute' },
-  { id: 'ocean', label: 'Ocean Protocol (OCEAN)', price: '0.55', mcap: '350000000', subsector: 'data' },
-  { id: 'agix', label: 'SingularityNET (AGIX)', price: '0.40', mcap: '500000000', subsector: 'agents' },
+  // Note: SingularityNET (AGIX) and Ocean Protocol (OCEAN) merged into the ASI Alliance
+  // (FET) in 2024, so they are replaced here with currently-traded AI tokens. Internal ids
+  // are kept stable to avoid touching preset/reset allocation maps.
+  { id: 'ocean', label: 'Grass (GRASS)', price: '1.50', mcap: '350000000', subsector: 'data' },
+  { id: 'agix', label: 'Virtuals Protocol (VIRTUAL)', price: '1.50', mcap: '1000000000', subsector: 'agents' },
 ] as const;
 
 const PRESETS = [
@@ -140,7 +144,7 @@ function AiTokenSectorCalculator({ lang = 'en' }: { lang?: string }) {
                 <button key={p}
                   className={`pill-btn ${scenarioPct === p ? 'active' : ''}`}
                   onClick={() => setScenarioPct(p)}>
-                  {p}%
+                  {fmtPctValue(p, lang)}%
                 </button>
               ))}
             </div>
@@ -164,7 +168,7 @@ function AiTokenSectorCalculator({ lang = 'en' }: { lang?: string }) {
                   {formatUSD(result.totalNewValue)}
                 </span>
                 <span className={`result-hero-roi ${result.zone}`}>
-                  {result.totalPnl >= 0 ? '+' : ''}{formatUSD(result.totalPnl)} ({result.totalPnlPct >= 0 ? '+' : ''}{result.totalPnlPct.toFixed(2)}%) · {getUiString(lang, result.rating)}
+                  {result.totalPnl >= 0 ? '+' : ''}{formatUSD(result.totalPnl)} ({result.totalPnlPct >= 0 ? '+' : ''}{result.totalPnlPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%) · {getUiString(lang, result.rating)}
                 </span>
               </div>
 
@@ -185,10 +189,10 @@ function AiTokenSectorCalculator({ lang = 'en' }: { lang?: string }) {
                 {result.positions.filter((p) => p.normalizedPct > 0).map((p) => (
                   <div key={p.id} className="result-row">
                     <span className="result-label">
-                      {p.label} ({p.normalizedPct.toFixed(1)}%)
+                      {p.label} ({p.normalizedPct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%)
                     </span>
                     <span className={`result-value ${p.pnl >= 0 ? 'profit' : 'loss'}`}>
-                      {p.pnl >= 0 ? '+' : ''}{formatUSD(p.pnl)} ({p.pnlPct >= 0 ? '+' : ''}{p.pnlPct.toFixed(0)}%)
+                      {p.pnl >= 0 ? '+' : ''}{formatUSD(p.pnl)} ({p.pnlPct >= 0 ? '+' : ''}{p.pnlPct.toLocaleString(loc(lang), { minimumFractionDigits: 0, maximumFractionDigits: 0 })}%)
                     </span>
                   </div>
                 ))}
@@ -200,7 +204,7 @@ function AiTokenSectorCalculator({ lang = 'en' }: { lang?: string }) {
                 {Object.entries(result.subsectors).map(([sub, pct]) => (
                   <div key={sub} className="result-row">
                     <span className="result-label">{getUiString(lang, sub.charAt(0).toUpperCase() + sub.slice(1))}</span>
-                    <span className="result-value">{pct.toFixed(1)}%</span>
+                    <span className="result-value">{pct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                   </div>
                 ))}
               </div>

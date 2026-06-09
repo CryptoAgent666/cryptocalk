@@ -14,6 +14,7 @@ import {
     ArrowUpDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -164,7 +165,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
-    const formatPercent = (n: number) => `${n >= 0 ? '+' : ''}${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2, signed: true });
 
     // Comparison scenarios
     const scenarios = [-50, -25, -10, -5, 5, 10, 25, 50].map(pct => {
@@ -240,7 +241,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${entryPrice === preset ? 'active' : ''}`}
                                     onClick={() => setEntryPrice(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -260,7 +261,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${positionSize === preset ? 'active' : ''}`}
                                     onClick={() => setPositionSize(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -297,7 +298,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                             {PRICE_CHANGE_PRESETS.map((p) => (
                                 <button key={p} className={`pill-btn ${priceChange === String(p) ? 'active' : ''} ${p < 0 ? 'pill-danger' : ''}`}
                                     onClick={() => setPriceChange(String(p))}>
-                                    {p > 0 ? '+' : ''}{p}%
+                                    {p > 0 ? '+' : ''}{fmtPctValue(p, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -325,7 +326,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                     border: '1px solid rgba(249,115,22,0.3)', borderRadius: '10px',
                                     fontSize: '0.85rem', color: '#f97316', display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '12px',
                                 }}>
-                                    <AlertTriangle size={16} /> {getUiString(lang, 'Liquidation at just')} {liqPercent.toFixed(1)}% {getUiString(lang, 'price move against you.')}
+                                    <AlertTriangle size={16} /> {getUiString(lang, 'Liquidation at just')} {liqPercent.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}% {getUiString(lang, 'price move against you.')}
                                 </div>
                             )}
 
@@ -392,7 +393,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                             }}>
                                 <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>{getUiString(lang, 'Leverage amplifies your PnL by')} </span>
                                 <strong style={{ color: 'var(--color-primary)', fontSize: '1rem' }}>{lev}×</strong>
-                                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}> {getUiString(lang, '— liquidation at')} <strong style={{ color: '#ef4444' }}>{liqPercent.toFixed(1)}%</strong> {getUiString(lang, 'move')}</span>
+                                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}> {getUiString(lang, '— liquidation at')} <strong style={{ color: '#ef4444' }}>{liqPercent.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</strong> {getUiString(lang, 'move')}</span>
                             </div>
 
                             {/* Breakdown */}
@@ -429,7 +430,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-divider" />
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Liquidation Distance')}</span>
-                                    <span className="result-value fee">{liqPercent.toFixed(2)}%</span>
+                                    <span className="result-value fee">{liqPercent.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                                 </div>
                             </div>
 
@@ -458,7 +459,7 @@ function LeverageCalculator({ lang = 'en' }: { lang?: string }) {
                                                     opacity: s.liquidated ? 0.6 : 1,
                                                 }}>
                                                     <td style={{ padding: '8px', fontWeight: s.pct === change ? 600 : 400 }}>
-                                                        {s.pct > 0 ? '+' : ''}{s.pct}%
+                                                        {s.pct > 0 ? '+' : ''}{fmtPctValue(s.pct, lang)}%
                                                     </td>
                                                     <td style={{
                                                         padding: '8px', textAlign: 'right', fontWeight: 500,

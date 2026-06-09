@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Info, Rocket, RotateCcw } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 
 const ICO_PRICE_PILLS = ['0.01', '0.05', '0.1', '0.5'];
@@ -154,7 +155,7 @@ function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${tokens === value ? 'active' : ''}`}
                   onClick={() => setTokens(value)}
                 >
-                  {Number(value).toLocaleString('en-US')}
+                  {Number(value).toLocaleString(loc(lang))}
                 </button>
               ))}
             </div>
@@ -171,7 +172,7 @@ function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
             <>
               <div className={`result-hero ${result.currentRoi >= 0 ? 'profit' : 'loss'}`}>
                 <span className="result-hero-label">{tokenName || 'TOKEN'} {getUiString(lang, 'Current ROI')}</span>
-                <span className="result-hero-value"><Rocket size={28} />{result.currentRoi.toFixed(2)}%</span>
+                <span className="result-hero-value"><Rocket size={28} />{result.currentRoi.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 <span className={`result-hero-roi ${result.currentRoi >= 0 ? 'profit' : 'loss'}`}>{result.xNow.toFixed(2)}x {getUiString(lang, 'from ICO price')}</span>
               </div>
 
@@ -180,7 +181,7 @@ function IcoRoiCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Current value')}</span><span className="result-value">{formatUSD(result.currentValue)}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'ATH value')}</span><span className="result-value">{formatUSD(result.athValue)}</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'ATH ROI')}</span><span className={`result-value ${result.athRoi >= 0 ? 'profit' : 'fee'}`}>{result.athRoi.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'ATH ROI')}</span><span className={`result-value ${result.athRoi >= 0 ? 'profit' : 'fee'}`}>{result.athRoi.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'ATH multiple')}</span><span className="result-value">{result.xAth.toFixed(2)}x</span></div>
               </div>
 

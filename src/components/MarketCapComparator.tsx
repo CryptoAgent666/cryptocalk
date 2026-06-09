@@ -14,6 +14,7 @@ import {
     Zap,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -280,7 +281,7 @@ function MarketCapComparator({ lang = 'en' }: { lang?: string }) {
         if (n >= 1_000_000_000) return (n / 1_000_000_000).toFixed(2) + 'B';
         if (n >= 1_000_000) return (n / 1_000_000).toFixed(2) + 'M';
         if (n >= 1_000) return (n / 1_000).toFixed(2) + 'K';
-        return n.toLocaleString('en-US');
+        return n.toLocaleString(loc(lang));
     };
 
     const shareOnX = () => {
@@ -478,7 +479,7 @@ function MarketCapComparator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Price Change')}</span>
                                     <span className="result-value profit">
-                                        +{((growthMultiplier - 1) * 100).toFixed(1)}%
+                                        +{((growthMultiplier - 1) * 100).toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                                     </span>
                                 </div>
                                 <div className="result-divider" />

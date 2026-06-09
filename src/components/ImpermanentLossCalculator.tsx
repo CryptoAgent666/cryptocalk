@@ -14,6 +14,7 @@ import {
     TrendingDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -170,7 +171,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
-    const formatPercent = (n: number) => `${n >= 0 ? '+' : ''}${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2, signed: true });
 
     const tokenALabel = selectedTokenA ? selectedTokenA.symbol.toUpperCase() : 'Token A';
     const tokenBLabel = selectedTokenB ? selectedTokenB.symbol.toUpperCase() : 'Token B';
@@ -268,7 +269,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                             {PRICE_CHANGE_PRESETS.map((p) => (
                                 <button key={p} className={`pill-btn ${priceChangeA === String(p) ? 'active' : ''} ${p < 0 ? 'pill-danger' : ''}`}
                                     onClick={() => setPriceChangeA(String(p))}>
-                                    {p > 0 ? '+' : ''}{p}%
+                                    {p > 0 ? '+' : ''}{fmtPctValue(p, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -285,7 +286,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                             {PRICE_CHANGE_PRESETS.map((p) => (
                                 <button key={p} className={`pill-btn ${priceChangeB === String(p) ? 'active' : ''} ${p < 0 ? 'pill-danger' : ''}`}
                                     onClick={() => setPriceChangeB(String(p))}>
-                                    {p > 0 ? '+' : ''}{p}%
+                                    {p > 0 ? '+' : ''}{fmtPctValue(p, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -302,7 +303,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                             {POOL_FEE_PRESETS.map((f) => (
                                 <button key={f} className={`pill-btn ${poolFeeApr === String(f) ? 'active' : ''}`}
                                     onClick={() => setPoolFeeApr(String(f))}>
-                                    {f}%
+                                    {fmtPctValue(f, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -346,7 +347,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                                 <span className="result-hero-label">{getUiString(lang, 'Impermanent Loss')}</span>
                                 <span className="result-hero-value" style={{ color: '#ef4444' }}>
                                     <Droplets size={28} />
-                                    {ilPercent.toFixed(2)}%
+                                    {ilPercent.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                                 </span>
                                 <span className="result-hero-roi" style={{ color: '#ef4444' }}>
                                     {formatUSD(Math.abs(ilAbsolute))} {getUiString(lang, 'lost vs HODLing')}
@@ -417,7 +418,7 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
 
                                 <div className="result-row">
                                     <span className="result-label"><strong>{getUiString(lang, 'Impermanent Loss')}</strong></span>
-                                    <span className="result-value fee"><strong>{ilPercent.toFixed(2)}% ({formatUSD(Math.abs(ilAbsolute))})</strong></span>
+                                    <span className="result-value fee"><strong>{ilPercent.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% ({formatUSD(Math.abs(ilAbsolute))})</strong></span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'LP Value (before fees)')}</span>
@@ -472,10 +473,10 @@ function ImpermanentLossCalculator({ lang = 'en' }: { lang?: string }) {
                                                     background: d.pct === changeA ? 'rgba(99,102,241,0.06)' : undefined,
                                                 }}>
                                                     <td style={{ padding: '8px', fontWeight: d.pct === changeA ? 600 : 400 }}>
-                                                        {d.pct > 0 ? '+' : ''}{d.pct}%
+                                                        {d.pct > 0 ? '+' : ''}{fmtPctValue(d.pct, lang)}%
                                                     </td>
                                                     <td style={{ padding: '8px', textAlign: 'right', color: '#ef4444', fontWeight: 500 }}>
-                                                        {d.il.toFixed(2)}%
+                                                        {d.il.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                                                     </td>
                                                     <td style={{ padding: '8px', textAlign: 'right', color: '#ef4444' }}>
                                                         {formatUSD(Math.abs(d.il / 100 * investment))}

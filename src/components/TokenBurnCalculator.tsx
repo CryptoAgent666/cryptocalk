@@ -8,6 +8,7 @@ import {
     DollarSign,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 interface Results {
     monthlyBurnPct: number;
@@ -145,10 +146,7 @@ function TokenBurnCalculator({ lang = 'en' }: { lang?: string }) {
         }).format(n);
     };
 
-    const formatPercent = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(2)}%`;
-    };
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     const formatMonths = (n: number) => {
         if (!Number.isFinite(n)) return '\u2014';

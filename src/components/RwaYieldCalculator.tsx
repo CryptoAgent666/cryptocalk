@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Building2, Info, RotateCcw, Landmark } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const RWA_PROTOCOLS = [
   { id: 'ondo-usdy', label: 'Ondo USDY', apy: '4.85', minDeposit: '500', mgmtFee: '0', riskScore: 'low', category: 'treasuries' },
@@ -176,18 +177,18 @@ function RwaYieldCalculator({ lang = 'en' }: { lang?: string }) {
                   {formatUSD(result.afterTaxValue)}
                 </span>
                 <span className={`result-hero-roi ${result.zone}`}>
-                  {result.afterTaxApy.toFixed(2)}% APY · {getUiString(lang, result.rating)}
+                  {result.afterTaxApy.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% APY · {getUiString(lang, result.rating)}
                 </span>
               </div>
 
               <div className="result-breakdown">
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Net APY (after fees)')}</span>
-                  <span className="result-value">{result.netApy.toFixed(2)}%</span>
+                  <span className="result-value">{result.netApy.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'CAGR (with compounding)')}</span>
-                  <span className="result-value">{result.cagr.toFixed(2)}%</span>
+                  <span className="result-value">{result.cagr.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
@@ -217,7 +218,7 @@ function RwaYieldCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Total gain (pre-tax)')}</span>
-                  <span className="result-value profit">+{formatUSD(result.totalGain)} ({result.totalGainPct.toFixed(2)}%)</span>
+                  <span className="result-value profit">+{formatUSD(result.totalGain)} ({result.totalGainPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Tax owed')}</span>
@@ -231,7 +232,7 @@ function RwaYieldCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Excess vs T-bills (4.5%)')}</span>
                   <span className={`result-value ${result.excessReturn > 0 ? 'profit' : 'loss'}`}>
-                    {result.excessReturn >= 0 ? '+' : ''}{result.excessReturn.toFixed(2)}%
+                    {result.excessReturn >= 0 ? '+' : ''}{result.excessReturn.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
                 <div className="result-row">

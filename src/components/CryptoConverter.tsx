@@ -8,6 +8,7 @@ import {
     RefreshCw,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 interface CoinData {
     id: string;
@@ -333,7 +334,7 @@ function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                                 {change24h !== null && (
                                     <span className={`result-change ${change24h >= 0 ? 'up' : 'down'}`}>
                                         {change24h >= 0 ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
-                                        {change24h >= 0 ? '+' : ''}{change24h.toFixed(2)}% ({getUiString(lang, '24h')})
+                                        {change24h >= 0 ? '+' : ''}{change24h.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% ({getUiString(lang, '24h')})
                                     </span>
                                 )}
                             </div>

@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { TrendingUp, Info, RotateCcw, Rocket } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 // Pump.fun bonding curve constants (constant product Bancor-like).
 // Initial virtual reserves (these don't change unless protocol updates).
@@ -202,7 +203,7 @@ function PumpfunBondingCurveCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Slippage')}</span>
                   <span className={`result-value ${result.slippagePct > 5 ? 'fee' : ''}`}>
-                    {result.slippagePct.toFixed(2)}%
+                    {result.slippagePct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
                 <div className="result-divider" />
@@ -236,7 +237,7 @@ function PumpfunBondingCurveCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'ROI at graduation')}</span>
                   <span className={`result-value ${result.roiAtGrad >= 0 ? 'profit' : 'loss'}`}>
-                    {result.roiAtGrad >= 0 ? '+' : ''}{result.roiAtGrad.toFixed(2)}%
+                    {result.roiAtGrad >= 0 ? '+' : ''}{result.roiAtGrad.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
               </div>

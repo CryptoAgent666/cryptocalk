@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Droplets, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const PROTOCOLS = ['Lido', 'Rocket Pool', 'Coinbase', 'Frax'] as const;
 type Protocol = (typeof PROTOCOLS)[number];
@@ -22,7 +23,7 @@ const SCENARIOS = [
 
 function LiquidStakingCalculator({ lang = 'en' }: { lang?: string }) {
   const fmt = (v: number, d = 4) => new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, { minimumFractionDigits: d, maximumFractionDigits: d }).format(v);
-  const fmtPct = (v: number) => `${v >= 0 ? '+' : ''}${v.toFixed(2)}%`;
+  const fmtPct = (v: number) => `${v >= 0 ? '+' : ''}${v.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`;
 
   const [ethAmount, setEthAmount] = useState('10');
   const [duration, setDuration] = useState('365');

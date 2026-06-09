@@ -15,6 +15,7 @@ import {
     Crosshair,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -313,7 +314,7 @@ function PositionSizeCalculator({ lang = 'en' }: { lang?: string }) {
         return n.toFixed(8);
     };
 
-    const formatPercent = (n: number) => `${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     const rr = getRiskReward();
     const lev = parseFloat(leverage) || 1;
@@ -413,7 +414,7 @@ function PositionSizeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${accountBalance === preset ? 'active' : ''}`}
                                     onClick={() => setAccountBalance(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -443,7 +444,7 @@ function PositionSizeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${riskPercent === String(r) ? 'active' : ''}`}
                                     onClick={() => setRiskPercent(String(r))}
                                 >
-                                    {r}%
+                                    {fmtPctValue(r, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -477,7 +478,7 @@ function PositionSizeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${entryPrice === preset ? 'active' : ''}`}
                                     onClick={() => setEntryPrice(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -573,7 +574,7 @@ function PositionSizeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${exchangeFee === preset ? 'active' : ''}`}
                                     onClick={() => setExchangeFee(preset)}
                                 >
-                                    {preset}%
+                                    {fmtPctValue(preset, lang)}%
                                 </button>
                             ))}
                         </div>

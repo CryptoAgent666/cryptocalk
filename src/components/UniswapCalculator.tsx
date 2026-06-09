@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ArrowRightLeft, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const DEPOSIT_PRESETS = [1000, 5000, 10000, 25000];
 const POOL_TVL_PRESETS = [500000, 1000000, 5000000, 10000000];
@@ -169,7 +170,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="pills-row">
               {['0.01', '0.05', '0.3', '1'].map((tier) => (
                 <button key={tier} className={`pill-btn ${feeTier === tier ? 'active' : ''}`} onClick={() => setFeeTier(tier)}>
-                  {tier}%
+                  {fmtPctValue(tier, lang)}%
                 </button>
               ))}
             </div>
@@ -185,7 +186,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
                   onClick={() => setPriceMovePct(String(preset))}
                 >
                   {preset > 0 ? '+' : ''}
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -235,7 +236,7 @@ function UniswapCalculator({ lang = 'en' }: { lang?: string }) {
               <div className="result-breakdown">
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'LP share of pool')}</span>
-                  <span className="result-value">{(result.share * 100).toFixed(4)}%</span>
+                  <span className="result-value">{(result.share * 100).toLocaleString(loc(lang), { minimumFractionDigits: 4, maximumFractionDigits: 4 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Daily fee income')}</span>

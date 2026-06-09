@@ -14,6 +14,7 @@ import {
     Layers,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -249,7 +250,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
-    const formatPercent = (n: number) => `${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     // Visual price scale
     const renderPriceScale = () => {
@@ -409,7 +410,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${entryPrice === preset ? 'active' : ''}`}
                                     onClick={() => setEntryPrice(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -429,7 +430,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                     className="pill-btn"
                                     onClick={() => applyStopLossPercent(percent)}
                                 >
-                                    {isShort ? '+' : '-'}{percent}%
+                                    {isShort ? '+' : '-'}{fmtPctValue(percent, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -449,7 +450,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${positionSize === preset ? 'active' : ''}`}
                                     onClick={() => setPositionSize(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -494,7 +495,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="input-group" key={i}>
                             <label>
                                 TP{tpLevelCount > 1 ? ` ${i + 1}` : ''} {getUiString(lang, 'Price')}
-                                {tpLevelCount > 1 && <span className="label-hint">{level.percent}% {getUiString(lang, 'of position')}</span>}
+                                {tpLevelCount > 1 && <span className="label-hint">{fmtPctValue(level.percent, lang)}% {getUiString(lang, 'of position')}</span>}
                             </label>
                             <div className="input-with-prefix">
                                 <input type="number" inputMode="decimal" value={level.price}
@@ -582,7 +583,7 @@ function TpSlCalculator({ lang = 'en' }: { lang?: string }) {
                                         <div className="result-row">
                                             <span className="result-label">
                                                 <strong>{getUiString(lang, 'Take-Profit')}{tpLevelCount > 1 ? ` ${i + 1}` : ''}</strong>
-                                                {tpLevelCount > 1 && <span style={{ fontWeight: 400, color: 'var(--color-text-muted)' }}> ({tp.percent}%)</span>}
+                                                {tpLevelCount > 1 && <span style={{ fontWeight: 400, color: 'var(--color-text-muted)' }}> ({fmtPctValue(tp.percent, lang)}%)</span>}
                                             </span>
                                             <span className="result-value profit"><strong>{formatUSD(tp.tp)}</strong></span>
                                         </div>

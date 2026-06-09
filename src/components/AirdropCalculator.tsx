@@ -14,6 +14,7 @@ import {
     Gift,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -308,7 +309,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${tokenAmount === amount ? 'active' : ''}`}
                                     onClick={() => setTokenAmount(amount)}
                                 >
-                                    {Number(amount).toLocaleString('en-US')}
+                                    {Number(amount).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -485,7 +486,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatUSD(results.currentValue)}
                                 </span>
                                 <span className={`result-hero-roi ${isProfit ? 'profit' : 'fee'}`}>
-                                    {isProfit ? '+' : '-'}{formatUSD(results.profitLoss)} ({isProfit ? '+' : ''}{results.profitPct.toFixed(1)}%)
+                                    {isProfit ? '+' : '-'}{formatUSD(results.profitLoss)} ({isProfit ? '+' : ''}{results.profitPct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%)
                                 </span>
                             </div>
 
@@ -494,7 +495,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Tokens Received')}</span>
                                     <span className="result-value">
-                                        {results.amount.toLocaleString('en-US')} {selectedCoin ? selectedCoin.symbol.toUpperCase() : 'tokens'}
+                                        {results.amount.toLocaleString(loc(lang))} {selectedCoin ? selectedCoin.symbol.toUpperCase() : 'tokens'}
                                     </span>
                                 </div>
                                 <div className="result-row">
@@ -508,7 +509,7 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{sold ? getUiString(lang, 'Realized P&L') : getUiString(lang, 'Unrealized P&L')}</span>
                                     <span className={`result-value ${isProfit ? 'profit' : 'fee'}`}>
-                                        {isProfit ? '+' : '-'}{formatUSD(results.profitLoss)} ({isProfit ? '+' : ''}{results.profitPct.toFixed(1)}%)
+                                        {isProfit ? '+' : '-'}{formatUSD(results.profitLoss)} ({isProfit ? '+' : ''}{results.profitPct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%)
                                     </span>
                                 </div>
 
@@ -516,12 +517,12 @@ function AirdropCalculator({ lang = 'en' }: { lang?: string }) {
 
                                 {/* Tax Section */}
                                 <div className="result-row">
-                                    <span className="result-label">{getUiString(lang, 'Income Tax on Airdrop')} ({taxConfig.incomeTaxRate}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Income Tax on Airdrop')} ({fmtPctValue(taxConfig.incomeTaxRate, lang)}%)</span>
                                     <span className="result-value fee">{formatUSD(results.incomeTax)}</span>
                                 </div>
                                 {sold && results.capitalGains > 0 && (
                                     <div className="result-row">
-                                        <span className="result-label">{getUiString(lang, 'Capital Gains Tax')} ({taxConfig.capitalGainsRate}%)</span>
+                                        <span className="result-label">{getUiString(lang, 'Capital Gains Tax')} ({fmtPctValue(taxConfig.capitalGainsRate, lang)}%)</span>
                                         <span className="result-value fee">{formatUSD(results.capitalGainsTax)}</span>
                                     </div>
                                 )}

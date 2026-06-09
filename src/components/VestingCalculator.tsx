@@ -12,6 +12,7 @@ import {
     TrendingDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 type UnlockFrequency = 'monthly' | 'quarterly' | 'linear';
 
@@ -372,7 +373,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${tgePct === String(p) ? 'active' : ''}`}
                                     onClick={() => setTgePct(String(p))}
                                 >
-                                    {p}%
+                                    {fmtPctValue(p, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -509,7 +510,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'TGE Unlock')}</span>
                                     <span className="result-value profit">
-                                        {formatTokens(tgeTokens)} ({tge}%) &mdash; {formatUSD(tgeTokens * price)}
+                                        {formatTokens(tgeTokens)} ({fmtPctValue(tge, lang)}%) &mdash; {formatUSD(tgeTokens * price)}
                                     </span>
                                 </div>
                                 <div className="result-row">
@@ -581,7 +582,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                                 fontSize="11"
                                                 fill="var(--color-text-muted)"
                                             >
-                                                {pct}%
+                                                {fmtPctValue(pct, lang)}%
                                             </text>
                                         ))}
 
@@ -689,7 +690,7 @@ function VestingCalculator({ lang = 'en' }: { lang?: string }) {
                                                             {formatTokens(row.cumulative)}
                                                         </td>
                                                         <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-primary)' }}>
-                                                            {row.cumulativePct.toFixed(1)}%
+                                                            {row.cumulativePct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                                                         </td>
                                                         <td style={{ padding: '8px', textAlign: 'right' }}>
                                                             {formatUSD(row.value)}

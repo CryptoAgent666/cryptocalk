@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { TrendingUp, Info, RotateCcw, Layers } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const CC_SCENARIOS = [
   { label: 'OTM 5% / 30d', spot: '77000', costBasis: '60000', strike: '81000', premium: '1500', daysToExpiry: '30', shares: '1' },
@@ -184,7 +185,7 @@ function CoveredCallCalculator({ lang = 'en' }: { lang?: string }) {
             <>
               <div className="result-hero profit">
                 <span className="result-hero-label">{getUiString(lang, 'Annualized Yield')}</span>
-                <span className="result-hero-value"><Layers size={28} />{result.annualizedYield.toFixed(2)}%</span>
+                <span className="result-hero-value"><Layers size={28} />{result.annualizedYield.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 <span className="result-hero-roi profit">
                   {getUiString(lang, result.moneyness)} · {getUiString(lang, result.assignmentRisk)} {getUiString(lang, 'assignment risk')}
                 </span>
@@ -197,11 +198,11 @@ function CoveredCallCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Premium yield (on cost)')}</span>
-                  <span className="result-value">{result.premiumYieldPct.toFixed(2)}%</span>
+                  <span className="result-value">{result.premiumYieldPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Premium yield (on spot)')}</span>
-                  <span className="result-value">{result.premiumYieldOnSpot.toFixed(2)}%</span>
+                  <span className="result-value">{result.premiumYieldOnSpot.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
@@ -214,7 +215,7 @@ function CoveredCallCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Effective sale ROI')}</span>
-                  <span className="result-value profit">{result.effectiveSaleROI.toFixed(2)}%</span>
+                  <span className="result-value profit">{result.effectiveSaleROI.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
@@ -223,7 +224,7 @@ function CoveredCallCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Downside protection from spot')}</span>
-                  <span className="result-value">{result.downsideProtectionPct.toFixed(2)}%</span>
+                  <span className="result-value">{result.downsideProtectionPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
               </div>
 
@@ -242,7 +243,7 @@ function CoveredCallCalculator({ lang = 'en' }: { lang?: string }) {
                   {result.payoffPoints.map((pt) => (
                     <tr key={pt.pct} style={{ borderBottom: '1px solid var(--color-border-soft)' }}>
                       <td style={{ padding: '4px' }}>
-                        {pt.pct >= 0 ? '+' : ''}{pt.pct}% {pt.calledAway ? '(called)' : ''}
+                        {pt.pct >= 0 ? '+' : ''}{fmtPctValue(pt.pct, lang)}% {pt.calledAway ? '(called)' : ''}
                       </td>
                       <td style={{ textAlign: 'right', padding: '4px' }}>{formatUSD(pt.totalValue)}</td>
                       <td style={{ textAlign: 'right', padding: '4px', color: pt.pnlVsCost >= 0 ? 'var(--color-accent-green)' : 'var(--color-accent-red)' }}>

@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Gamepad2, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 // formatUSD is defined inside the component to access `lang` prop
 
@@ -152,7 +153,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${initialCost === value ? 'active' : ''}`}
                   onClick={() => setInitialCost(value)}
                 >
-                  ${Number(value).toLocaleString('en-US')}
+                  ${Number(value).toLocaleString(loc(lang))}
                 </button>
               ))}
             </div>
@@ -204,7 +205,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${marketplaceFee === value ? 'active' : ''}`}
                   onClick={() => setMarketplaceFee(value)}
                 >
-                  {value}%
+                  {fmtPctValue(value, lang)}%
                 </button>
               ))}
             </div>
@@ -256,7 +257,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${assetResaleValue === value ? 'active' : ''}`}
                   onClick={() => setAssetResaleValue(value)}
                 >
-                  ${Number(value).toLocaleString('en-US')}
+                  ${Number(value).toLocaleString(loc(lang))}
                 </button>
               ))}
             </div>
@@ -278,7 +279,7 @@ function GamefiCalculator({ lang = 'en' }: { lang?: string }) {
                 <span className="result-hero-label">{getUiString(lang, 'Net Daily Earnings')}</span>
                 <span className="result-hero-value"><Gamepad2 size={28} />{formatUSD(result.netDaily)}</span>
                 <span className={`result-hero-roi ${result.annualRoi >= 0 ? 'profit' : 'loss'}`}>
-                  {getUiString(lang, 'Annual ROI')} {result.annualRoi >= 0 ? '+' : ''}{result.annualRoi.toFixed(2)}%
+                  {getUiString(lang, 'Annual ROI')} {result.annualRoi >= 0 ? '+' : ''}{result.annualRoi.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                 </span>
               </div>
 

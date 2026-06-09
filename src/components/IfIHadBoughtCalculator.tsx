@@ -9,6 +9,7 @@ import {
   Coins,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 /* ------------------------------------------------------------------ */
 /*  Hardcoded historical prices (approximate, no API needed)          */
@@ -80,10 +81,7 @@ function IfIHadBoughtCalculator({ lang = 'en' }: { lang?: string }) {
     return new Intl.NumberFormat(loc, { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(n);
   };
 
-  const formatPercent = (n: number) => {
-    if (!isFinite(n)) return '\u2014';
-    return (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
-  };
+  const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 1, signed: true });
 
   const formatCoins = (n: number) => {
     if (!isFinite(n)) return '\u2014';

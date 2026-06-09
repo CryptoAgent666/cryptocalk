@@ -10,7 +10,6 @@ import {
     ChevronDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
-
 interface Results {
     bridgeFeeUsd: number;
     gasFeeTotal: number;
@@ -211,7 +210,7 @@ function CrossChainBridgeCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Cost as % of Transfer')}</span>
-                                    <span className="result-value">{results.costPct.toFixed(3)}%</span>
+                                    <span className="result-value">{results.costPct.toLocaleString(loc, { minimumFractionDigits: 3, maximumFractionDigits: 3 })}%</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
@@ -223,7 +222,7 @@ function CrossChainBridgeCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Route')}</span>
-                                    <span className="result-value">{sourceChain} \u2192 {destChain}</span>
+                                    <span className="result-value">{sourceChain} {'\u2192'} {destChain}</span>
                                 </div>
                             </div>
 

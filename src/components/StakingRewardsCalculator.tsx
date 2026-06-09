@@ -14,6 +14,7 @@ import {
     Zap,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -254,7 +255,7 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
                                 <button key={s.id}
                                     className={`pill-btn ${selectedCoin?.id === s.id ? 'active' : ''}`}
                                     onClick={() => selectCoin({ id: s.id, name: s.name, symbol: s.symbol })}>
-                                    {s.symbol} ({s.apy}%)
+                                    {s.symbol} ({fmtPctValue(s.apy, lang)}%)
                                 </button>
                             ))}
                         </div>
@@ -297,7 +298,7 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${stakingAmount === value ? 'active' : ''}`}
                                     onClick={() => setStakingAmount(value)}
                                 >
-                                    ${Number(value).toLocaleString('en-US')}
+                                    ${Number(value).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -326,7 +327,7 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
                             {[3, 5, 7, 10, 15, 20].map((a) => (
                                 <button key={a} className={`pill-btn ${stakingApy === String(a) ? 'active' : ''}`}
                                     onClick={() => setStakingApy(String(a))}>
-                                    {a}%
+                                    {fmtPctValue(a, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -343,7 +344,7 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
                             {[0, 2, 5, 8, 10].map((f) => (
                                 <button key={f} className={`pill-btn ${validatorFee === String(f) ? 'active' : ''}`}
                                     onClick={() => setValidatorFee(String(f))}>
-                                    {f}%
+                                    {fmtPctValue(f, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -403,7 +404,7 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatUSD(finalValueCompound)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: 'var(--color-accent-green)' }}>
-                                    +{formatUSD(rewardsEarned)} {getUiString(lang, 'rewards')} ({effectiveROI.toFixed(2)}%)
+                                    +{formatUSD(rewardsEarned)} {getUiString(lang, 'rewards')} ({effectiveROI.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)
                                     {tokensEarned > 0 && ` ≈ ${formatTokens(tokensEarned)} ${sym}`}
                                 </span>
                             </div>
@@ -435,15 +436,15 @@ function StakingRewardsCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Staking APY')}</span>
-                                    <span className="result-value">{stakingApy}%</span>
+                                    <span className="result-value">{fmtPctValue(stakingApy, lang)}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Validator Commission')}</span>
-                                    <span className="result-value fee">{validatorFee}%</span>
+                                    <span className="result-value fee">{fmtPctValue(validatorFee, lang)}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Effective APY')}</span>
-                                    <span className="result-value profit">{(effectiveApy * 100).toFixed(2)}%</span>
+                                    <span className="result-value profit">{(effectiveApy * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">

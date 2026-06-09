@@ -10,6 +10,7 @@ import {
     TrendingDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 interface Results {
     grossSpread: number;
@@ -170,7 +171,7 @@ function ArbitrageCalculator({ lang = 'en' }: { lang?: string }) {
                             {AMOUNT_PILLS.map((v) => (
                                 <button key={v} className={`pill-btn ${tradeAmount === v ? 'active' : ''}`}
                                     onClick={() => setTradeAmount(v)}>
-                                    ${Number(v).toLocaleString('en-US')}
+                                    ${Number(v).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -198,14 +199,14 @@ function ArbitrageCalculator({ lang = 'en' }: { lang?: string }) {
                                     {formatUSD(Math.abs(results.netProfit))}
                                 </span>
                                 <span className={`result-hero-roi ${isProfit ? 'profit' : 'loss'}`}>
-                                    {results.netRoi >= 0 ? '+' : ''}{results.netRoi.toFixed(2)}% {getUiString(lang, 'ROI')}
+                                    {results.netRoi >= 0 ? '+' : ''}{results.netRoi.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% {getUiString(lang, 'ROI')}
                                 </span>
                             </div>
 
                             <div className="result-breakdown">
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Gross Spread')}</span>
-                                    <span className="result-value">{formatUSD(results.grossSpread)} ({results.grossSpreadPct.toFixed(3)}%)</span>
+                                    <span className="result-value">{formatUSD(results.grossSpread)} ({results.grossSpreadPct.toLocaleString(loc(lang), { minimumFractionDigits: 3, maximumFractionDigits: 3 })}%)</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
@@ -227,7 +228,7 @@ function ArbitrageCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-divider" />
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Break-Even Spread')}</span>
-                                    <span className="result-value">{results.breakEvenSpread.toFixed(3)}%</span>
+                                    <span className="result-value">{results.breakEvenSpread.toLocaleString(loc(lang), { minimumFractionDigits: 3, maximumFractionDigits: 3 })}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label"><strong>{getUiString(lang, 'Net Profit')}</strong></span>
@@ -238,7 +239,7 @@ function ArbitrageCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label"><strong>{getUiString(lang, 'Net ROI')}</strong></span>
                                     <span className={`result-value ${isProfit ? 'profit' : 'fee'}`}>
-                                        <strong>{results.netRoi >= 0 ? '+' : ''}{results.netRoi.toFixed(2)}%</strong>
+                                        <strong>{results.netRoi >= 0 ? '+' : ''}{results.netRoi.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</strong>
                                     </span>
                                 </div>
                             </div>

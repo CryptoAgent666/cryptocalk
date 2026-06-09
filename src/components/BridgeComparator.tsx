@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ArrowRightLeft, Info, RotateCcw, Shield } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 interface BridgeDef {
   name: string;
@@ -138,7 +139,7 @@ function BridgeComparator({ lang = 'en' }: { lang?: string }) {
                   {best.name}
                 </span>
                 <span className="result-hero-roi profit">
-                  {getUiString(lang, 'Total fee')} {formatUSD(best.totalFee)} ({best.feePercentEffective.toFixed(2)}%)
+                  {getUiString(lang, 'Total fee')} {formatUSD(best.totalFee)} ({best.feePercentEffective.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)
                 </span>
               </div>
 

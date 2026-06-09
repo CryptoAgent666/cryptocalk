@@ -10,6 +10,7 @@ import {
     Activity,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const BLOCKS_PER_DAY = 144;
 const CURRENT_REWARD = 3.125;
@@ -192,7 +193,7 @@ function StockToFlowCalculator({ lang = 'en' }: { lang?: string }) {
                                         <div className="result-row">
                                             <span className="result-label">{getUiString(lang, 'Deviation from Model')}</span>
                                             <span className={`result-value ${isOvervalued ? 'fee' : 'profit'}`}>
-                                                {deviation >= 0 ? '+' : ''}{deviation.toFixed(1)}% ({isOvervalued ? getUiString(lang, 'Overvalued') : getUiString(lang, 'Undervalued')})
+                                                {deviation >= 0 ? '+' : ''}{deviation.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}% ({isOvervalued ? getUiString(lang, 'Overvalued') : getUiString(lang, 'Undervalued')})
                                             </span>
                                         </div>
                                     </>
@@ -216,7 +217,7 @@ function StockToFlowCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Projected Uplift')}</span>
                                     <span className="result-value profit">
-                                        <TrendingUp size={14} /> +{halvingUplift.toFixed(1)}%
+                                        <TrendingUp size={14} /> +{halvingUplift.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                                     </span>
                                 </div>
                             </div>

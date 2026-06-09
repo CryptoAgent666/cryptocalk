@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Building2, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 interface CompanyPreset {
   name: string;
@@ -182,7 +183,7 @@ function MstrMnavCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Premium / Discount')}</span>
                   <span className={`result-value ${result.premiumPct >= 0 ? 'fee' : 'profit'}`}>
-                    {result.premiumPct >= 0 ? '+' : ''}{result.premiumPct.toFixed(2)}%
+                    {result.premiumPct >= 0 ? '+' : ''}{result.premiumPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
                 <div className="result-row">

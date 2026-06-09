@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Dice5, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 
 
@@ -109,7 +110,7 @@ function KellyCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${winRate === String(preset) ? 'active' : ''}`}
                   onClick={() => setWinRate(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -127,7 +128,7 @@ function KellyCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${avgWinPct === String(preset) ? 'active' : ''}`}
                   onClick={() => setAvgWinPct(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -145,7 +146,7 @@ function KellyCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${avgLossPct === String(preset) ? 'active' : ''}`}
                   onClick={() => setAvgLossPct(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -163,7 +164,7 @@ function KellyCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${capital === String(preset) ? 'active' : ''}`}
                   onClick={() => setCapital(String(preset))}
                 >
-                  ${preset.toLocaleString('en-US')}
+                  ${preset.toLocaleString(loc(lang))}
                 </button>
               ))}
             </div>
@@ -183,19 +184,19 @@ function KellyCalculator({ lang = 'en' }: { lang?: string }) {
             <>
               <div className={`result-hero ${result.halfKelly > 0 ? 'profit' : 'loss'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Suggested Position Size (Half Kelly)')}</span>
-                <span className="result-hero-value"><Dice5 size={28} />{(result.halfKelly * 100).toFixed(2)}%</span>
+                <span className="result-hero-value"><Dice5 size={28} />{(result.halfKelly * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 <span className={`result-hero-roi ${result.halfKelly > 0 ? 'profit' : 'loss'}`}>
                   {formatUSD(result.halfKellyUsd)} {getUiString(lang, 'per trade')}
                 </span>
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Full Kelly')}</span><span className={`result-value ${result.fullKelly > 0 ? 'profit' : 'loss'}`}>{(result.fullKelly * 100).toFixed(2)}% ({formatUSD(result.fullKellyUsd)})</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Half Kelly')}</span><span className={`result-value ${result.halfKelly > 0 ? 'profit' : 'loss'}`}>{(result.halfKelly * 100).toFixed(2)}% ({formatUSD(result.halfKellyUsd)})</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Quarter Kelly')}</span><span className={`result-value ${result.quarterKelly > 0 ? 'profit' : 'loss'}`}>{(result.quarterKelly * 100).toFixed(2)}% ({formatUSD(result.quarterKellyUsd)})</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Full Kelly')}</span><span className={`result-value ${result.fullKelly > 0 ? 'profit' : 'loss'}`}>{(result.fullKelly * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% ({formatUSD(result.fullKellyUsd)})</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Half Kelly')}</span><span className={`result-value ${result.halfKelly > 0 ? 'profit' : 'loss'}`}>{(result.halfKelly * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% ({formatUSD(result.halfKellyUsd)})</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Quarter Kelly')}</span><span className={`result-value ${result.quarterKelly > 0 ? 'profit' : 'loss'}`}>{(result.quarterKelly * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% ({formatUSD(result.quarterKellyUsd)})</span></div>
                 <div className="result-divider" />
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected edge per trade')}</span><span className={`result-value ${result.edgePerTradePct >= 0 ? 'profit' : 'loss'}`}>{result.edgePerTradePct >= 0 ? '+' : ''}{result.edgePerTradePct.toFixed(3)}%</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Chance of 5-loss streak')}</span><span className="result-value">{result.lossStreak5Prob.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected edge per trade')}</span><span className={`result-value ${result.edgePerTradePct >= 0 ? 'profit' : 'loss'}`}>{result.edgePerTradePct >= 0 ? '+' : ''}{result.edgePerTradePct.toLocaleString(loc(lang), { minimumFractionDigits: 3, maximumFractionDigits: 3 })}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Chance of 5-loss streak')}</span><span className="result-value">{result.lossStreak5Prob.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span></div>
               </div>
 
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Kelly assumes stable edge and independent outcomes. For volatile markets, fractional Kelly is typically safer than full Kelly.')}</p>

@@ -10,6 +10,7 @@ import {
     ArrowUpDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 interface Results {
     pctOfDailyVolume: number;
@@ -137,10 +138,7 @@ function WhaleAlertCalculator({ lang = 'en' }: { lang?: string }) {
         }).format(n);
     };
 
-    const formatPercent = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(4)}%`;
-    };
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 4 });
 
     const tierEmoji = (tier: string) => {
         switch (tier) {

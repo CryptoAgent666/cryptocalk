@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Vote, Info, RotateCcw, Percent } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const PM_PRESETS = [
   { label: 'Trump 2024 Final', priceYes: '0.65', betSize: '500', side: 'yes' as const },
@@ -164,7 +165,7 @@ function PolymarketOddsCalculator({ lang = 'en' }: { lang?: string }) {
                   {formatUSD(result.profitIfWin)}
                 </span>
                 <span className={`result-hero-roi ${result.zone}`}>
-                  {result.decimalOdds.toFixed(2)}× · EV {result.evPct >= 0 ? '+' : ''}{result.evPct.toFixed(2)}% · {getUiString(lang, result.rating)}
+                  {result.decimalOdds.toFixed(2)}× · EV {result.evPct >= 0 ? '+' : ''}{result.evPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% · {getUiString(lang, result.rating)}
                 </span>
               </div>
 
@@ -179,7 +180,7 @@ function PolymarketOddsCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Implied probability')}</span>
-                  <span className="result-value">{result.impliedProb.toFixed(2)}%</span>
+                  <span className="result-value">{result.impliedProb.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
@@ -221,13 +222,13 @@ function PolymarketOddsCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Your edge vs market')}</span>
                   <span className={`result-value ${result.edge >= 0 ? 'profit' : 'loss'}`}>
-                    {result.edge >= 0 ? '+' : ''}{result.edgePct.toFixed(2)}%
+                    {result.edge >= 0 ? '+' : ''}{result.edgePct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Kelly bet size (% bankroll)')}</span>
                   <span className={`result-value ${result.kellyFraction > 0 ? 'profit' : 'fee'}`}>
-                    {result.kellyFraction.toFixed(2)}%
+                    {result.kellyFraction.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
                 {hedgePrice.trim() !== '' && (

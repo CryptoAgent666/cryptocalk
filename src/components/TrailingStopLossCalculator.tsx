@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { TrendingDown, Info, RotateCcw, Target } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const TS_PRESETS = [
   { label: 'BTC Conservative', entry: '95000', current: '105000', trailingPct: '5', positionSize: '10000' },
@@ -130,7 +131,7 @@ function TrailingStopLossCalculator({ lang = 'en' }: { lang?: string }) {
                 <button key={p}
                   className={`pill-btn ${trailingPct === p ? 'active' : ''}`}
                   onClick={() => setTrailingPct(p)}>
-                  {p}%
+                  {fmtPctValue(p, lang)}%
                 </button>
               ))}
             </div>
@@ -169,7 +170,7 @@ function TrailingStopLossCalculator({ lang = 'en' }: { lang?: string }) {
                   {result.profitAtStop >= 0 ? '+' : ''}{formatUSD(result.profitAtStop)}
                 </span>
                 <span className={`result-hero-roi ${result.zone}`}>
-                  {result.profitAtStopPct >= 0 ? '+' : ''}{result.profitAtStopPct.toFixed(2)}% · {getUiString(lang, result.rating)}
+                  {result.profitAtStopPct >= 0 ? '+' : ''}{result.profitAtStopPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% · {getUiString(lang, result.rating)}
                 </span>
               </div>
 
@@ -185,7 +186,7 @@ function TrailingStopLossCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Distance to stop')}</span>
                   <span className="result-value">
-                    {formatUSD(Math.abs(result.distanceToStop))} ({Math.abs(result.distanceToStopPct).toFixed(2)}%)
+                    {formatUSD(Math.abs(result.distanceToStop))} ({Math.abs(result.distanceToStopPct).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)
                   </span>
                 </div>
                 <div className="result-divider" />
@@ -196,7 +197,7 @@ function TrailingStopLossCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Current unrealized P&L')}</span>
                   <span className={`result-value ${result.currentPnl >= 0 ? 'profit' : 'loss'}`}>
-                    {result.currentPnl >= 0 ? '+' : ''}{formatUSD(result.currentPnl)} ({result.currentPnlPct >= 0 ? '+' : ''}{result.currentPnlPct.toFixed(2)}%)
+                    {result.currentPnl >= 0 ? '+' : ''}{formatUSD(result.currentPnl)} ({result.currentPnlPct >= 0 ? '+' : ''}{result.currentPnlPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)
                   </span>
                 </div>
                 <div className="result-row">
@@ -208,7 +209,7 @@ function TrailingStopLossCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Profit captured ratio')}</span>
                   <span className="result-value">
-                    {result.trailingPctEffectiveness > 0 ? `${result.trailingPctEffectiveness.toFixed(1)}%` : '—'}
+                    {result.trailingPctEffectiveness > 0 ? `${result.trailingPctEffectiveness.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%` : '—'}
                   </span>
                 </div>
                 <div className="result-divider" />
@@ -221,7 +222,7 @@ function TrailingStopLossCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Profit giveback if stopped')}</span>
                   <span className="result-value fee">
-                    {result.profitGivebackPct.toFixed(2)}%
+                    {result.profitGivebackPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
               </div>

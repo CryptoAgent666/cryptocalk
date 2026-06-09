@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const PORTFOLIO_VALUE_PRESETS = [10000, 20000, 50000, 100000];
 const EXPECTED_RETURN_PRESETS = [8, 12, 18, 22, 30];
@@ -136,7 +137,7 @@ function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${expectedReturn === String(preset) ? 'active' : ''}`}
                   onClick={() => setExpectedReturn(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -154,7 +155,7 @@ function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${volatility === String(preset) ? 'active' : ''}`}
                   onClick={() => setVolatility(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -172,7 +173,7 @@ function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${riskFreeRate === String(preset) ? 'active' : ''}`}
                   onClick={() => setRiskFreeRate(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -213,7 +214,7 @@ function SharpeCalculator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected excess return')}</span><span className={`result-value ${result.excessReturn >= 0 ? 'profit' : 'loss'}`}>{result.excessReturn >= 0 ? '+' : ''}{result.excessReturn.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected excess return')}</span><span className={`result-value ${result.excessReturn >= 0 ? 'profit' : 'loss'}`}>{result.excessReturn >= 0 ? '+' : ''}{result.excessReturn.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Annual excess return (USD)')}</span><span className={`result-value ${result.annualExcessUsd >= 0 ? 'profit' : 'loss'}`}>{result.annualExcessUsd >= 0 ? '+' : ''}{formatUSD(result.annualExcessUsd)}</span></div>
                 <div className="result-divider" />
                 <div className="result-row"><span className="result-label">{getUiString(lang, '1σ downside scenario value')}</span><span className="result-value">{formatUSD(result.lowerBoundValue)}</span></div>

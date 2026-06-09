@@ -16,6 +16,7 @@ import {
     Building2,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -302,7 +303,7 @@ function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
         }).format(n);
     };
 
-    const formatPercent = (n: number) => Number.isFinite(n) ? `${n.toFixed(2)}%` : '—';
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     const lev = parseFloat(leverage) || 1;
     const highLev = lev > 20;
@@ -416,7 +417,7 @@ function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
                             ))}
                         </div>
                         <span className="input-hint" style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
-                            MMR: {(currentExchange.mmr * 100).toFixed(1)}%
+                            MMR: {(currentExchange.mmr * 100).toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                         </span>
                     </div>
 
@@ -510,7 +511,7 @@ function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${entryPrice === preset ? 'active' : ''}`}
                                     onClick={() => setEntryPrice(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -540,7 +541,7 @@ function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${positionSize === preset ? 'active' : ''}`}
                                     onClick={() => setPositionSize(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -571,7 +572,7 @@ function LiquidationCalculator({ lang = 'en' }: { lang?: string }) {
                                         className={`pill-btn ${walletBalance === preset ? 'active' : ''}`}
                                         onClick={() => setWalletBalance(preset)}
                                     >
-                                        ${Number(preset).toLocaleString('en-US')}
+                                        ${Number(preset).toLocaleString(loc(lang))}
                                     </button>
                                 ))}
                             </div>

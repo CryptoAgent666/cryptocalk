@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp, Plus, X } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const GEO_SCENARIOS = [
   { label: 'Steady Growth', returns: ['10', '12', '8', '11', '9'] },
@@ -125,7 +126,7 @@ function GeometricMeanReturnCalculator({ lang = 'en' }: { lang?: string }) {
               <div className={`result-hero ${result.geometric >= 0 ? 'profit' : 'loss'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Geometric Mean (per period)')}</span>
                 <span className="result-hero-value"><BarChart3 size={28} />
-                  {result.geometric >= 0 ? '+' : ''}{result.geometric.toFixed(3)}%
+                  {result.geometric >= 0 ? '+' : ''}{result.geometric.toLocaleString(loc(lang), { minimumFractionDigits: 3, maximumFractionDigits: 3 })}%
                 </span>
                 <span className={`result-hero-roi ${result.drag < 5 ? 'profit' : result.drag < 15 ? '' : 'loss'}`}>
                   {getUiString(lang, result.rating)}
@@ -135,23 +136,23 @@ function GeometricMeanReturnCalculator({ lang = 'en' }: { lang?: string }) {
               <div className="result-breakdown">
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Arithmetic Mean')}</span>
-                  <span className="result-value">{result.arithmetic.toFixed(3)}%</span>
+                  <span className="result-value">{result.arithmetic.toLocaleString(loc(lang), { minimumFractionDigits: 3, maximumFractionDigits: 3 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Volatility Drag')}</span>
                   <span className={`result-value ${result.drag > 5 ? 'fee' : ''}`}>
-                    {result.drag.toFixed(3)}%
+                    {result.drag.toLocaleString(loc(lang), { minimumFractionDigits: 3, maximumFractionDigits: 3 })}%
                   </span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Std Deviation')}</span>
-                  <span className="result-value">{result.stdDev.toFixed(2)}%</span>
+                  <span className="result-value">{result.stdDev.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Total Compound Return')}</span>
                   <span className={`result-value ${result.totalCompound >= 0 ? 'profit' : 'loss'}`}>
-                    {result.totalCompound >= 0 ? '+' : ''}{result.totalCompound.toFixed(2)}%
+                    {result.totalCompound >= 0 ? '+' : ''}{result.totalCompound.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
                 <div className="result-row">

@@ -14,6 +14,7 @@ import {
     X,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -306,7 +307,7 @@ function DCACalculator({ lang = 'en' }: { lang?: string }) {
             maximumFractionDigits: 2,
         }).format(n);
 
-    const formatPercent = (n: number) => (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2, signed: true });
 
     const isProfit = result ? result.profitLoss >= 0 : true;
     const dcaBetter = result ? result.roi > result.lumpSumRoi : false;

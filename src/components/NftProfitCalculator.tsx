@@ -12,6 +12,7 @@ import {
     Fuel,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 // Marketplace fees updated 2026-04-18.
 const MARKETPLACES = [
@@ -274,7 +275,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                         setMarketplaceFee(value);
                                     }}
                                 >
-                                    {value}%
+                                    {fmtPctValue(value, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -302,7 +303,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${royalty === value ? 'active' : ''}`}
                                     onClick={() => setRoyalty(value)}
                                 >
-                                    {value}%
+                                    {fmtPctValue(value, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -442,13 +443,13 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">{getUiString(lang, 'Marketplace Fee')} ({mpFeePct}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Marketplace Fee')} ({fmtPctValue(mpFeePct, lang)}%)</span>
                                     <span className="result-value fee">
                                         -{formatETH(marketplaceFeeEth)} / -{formatUSD(marketplaceFeeEth * ethPriceUsd)}
                                     </span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{getUiString(lang, 'Creator Royalty')} ({royaltyPct}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Creator Royalty')} ({fmtPctValue(royaltyPct, lang)}%)</span>
                                     <span className="result-value fee">
                                         -{formatETH(royaltyEth)} / -{formatUSD(royaltyEth * ethPriceUsd)}
                                     </span>
@@ -469,7 +470,7 @@ function NftProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Effective Fee Rate')}</span>
                                     <span className="result-value fee">
-                                        {grossProfit > 0 ? `${effectiveFeeRate.toFixed(2)}%` : 'N/A'}
+                                        {grossProfit > 0 ? `${effectiveFeeRate.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%` : 'N/A'}
                                     </span>
                                 </div>
                                 <div className="result-divider" />

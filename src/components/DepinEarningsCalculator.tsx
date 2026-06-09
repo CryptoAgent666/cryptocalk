@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Wifi, Info, RotateCcw, DollarSign } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const DEPIN_NETWORKS = [
   { id: 'helium', label: 'Helium IoT', dailyToken: '0.5', tokenSymbol: 'HNT', tokenPrice: '4.50', hardwareCost: '500', powerWatts: '5', electricityRate: '0.12' },
@@ -205,7 +206,7 @@ function DepinEarningsCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Profit margin')}</span>
-                  <span className="result-value">{result.profitMargin.toFixed(1)}%</span>
+                  <span className="result-value">{result.profitMargin.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
@@ -236,13 +237,13 @@ function DepinEarningsCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'ROI Year 1')}</span>
                   <span className={`result-value ${result.roiYear1 > 0 ? 'profit' : 'loss'}`}>
-                    {result.roiYear1 >= 0 ? '+' : ''}{result.roiYear1.toFixed(1)}%
+                    {result.roiYear1 >= 0 ? '+' : ''}{result.roiYear1.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                   </span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'ROI 5-year')}</span>
                   <span className={`result-value ${result.roi5Year > 0 ? 'profit' : 'loss'}`}>
-                    {result.roi5Year >= 0 ? '+' : ''}{result.roi5Year.toFixed(1)}%
+                    {result.roi5Year >= 0 ? '+' : ''}{result.roi5Year.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                   </span>
                 </div>
                 <div className="result-row">

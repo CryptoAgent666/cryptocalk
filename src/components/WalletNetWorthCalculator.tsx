@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Wallet, Info, RotateCcw, Coins } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 type Holding = { chain: string; token: string; qty: string; price: string };
 
@@ -184,12 +185,12 @@ function WalletNetWorthCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Largest holding')}</span>
                   <span className="result-value">
-                    {result.top1.token} ({result.top1.share.toFixed(1)}%) · {formatUSD(result.top1.value)}
+                    {result.top1.token} ({result.top1.share.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%) · {formatUSD(result.top1.value)}
                   </span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Top-3 concentration')}</span>
-                  <span className="result-value">{result.top3Pct.toFixed(1)}%</span>
+                  <span className="result-value">{result.top3Pct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Concentration (HHI)')}</span>
@@ -198,11 +199,11 @@ function WalletNetWorthCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Stablecoin value')}</span>
-                  <span className="result-value">{formatUSD(result.stableValue)} ({result.stablePct.toFixed(1)}%)</span>
+                  <span className="result-value">{formatUSD(result.stableValue)} ({result.stablePct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%)</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Volatile asset value')}</span>
-                  <span className="result-value">{formatUSD(result.volatileValue)} ({(100 - result.stablePct).toFixed(1)}%)</span>
+                  <span className="result-value">{formatUSD(result.volatileValue)} ({(100 - result.stablePct).toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%)</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
@@ -215,7 +216,7 @@ function WalletNetWorthCalculator({ lang = 'en' }: { lang?: string }) {
                       {idx + 1}. {p.token} ({p.chain})
                     </span>
                     <span className="result-value">
-                      {formatUSD(p.value)} ({p.share.toFixed(1)}%)
+                      {formatUSD(p.value)} ({p.share.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%)
                     </span>
                   </div>
                 ))}
@@ -227,7 +228,7 @@ function WalletNetWorthCalculator({ lang = 'en' }: { lang?: string }) {
                 {result.chainBreakdown.map((c) => (
                   <div key={c.chain} className="result-row">
                     <span className="result-label">{c.chain}</span>
-                    <span className="result-value">{formatUSD(c.value)} ({c.share.toFixed(1)}%)</span>
+                    <span className="result-value">{formatUSD(c.value)} ({c.share.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%)</span>
                   </div>
                 ))}
               </div>

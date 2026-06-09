@@ -2,6 +2,275 @@
 
 All notable changes to this project are documented here.
 
+## [2026-05-31] (update 148) — Audit #14 fixes: pip price/tick i18n, ROI holding-years localization
+
+Browser audit #14 (15 pages) — **math correct on all 15, zero functional bugs (7th clean math audit)**. Found i18n formatting leaks, fixed here.
+
+### Fixed
+- **Pip calculator price/tick/movement values leaked en-US format on comma-locales (`PipCalculator.tsx`):** the P&L column used the locale-aware `formatUSD` (e.g. pt "US$ 1,20"), but `formatPrice` hardcoded `toLocaleString('en-US')` and `formatTick` used `'$' + toFixed()` → "Preço Atual $83,000.00" / "1 pip ($1000.00)" rendered en-style next to the localized P&L. Replaced both with a shared locale-aware `formatCurrencyDyn` (Intl `style:'currency'`, decimals chosen by magnitude) → comma-locales now show "US$ 83.000,00" / "(US$ 1.000,00)".
+- **ROI holding period "years" not localized (`RoiCalculator.tsx`):** "365 days (1.0 years)" used `.toFixed(1)` (period) → switched to `.toLocaleString(loc(lang), …)` so tr/es/pt/ru show "1,0 yıl".
+
+### Notes
+- Build: 1296 pages, TS clean. New chunks: PipCalculator, RoiCalculator. mstr-mnav content current (MSTR/Metaplanet 3350/Semler SMLR treasury cos); governance-voting QA coherent (update-134) reconfirmed.
+- **DEPLOYED LIVE (2026-05-31).** The deploy bash-task was killed mid-HTML-upload, but lftp finished the critical uploads: `_astro` chunks are 100% live and all pip/roi pages (en/es/ru verified) reference the new chunks. Browser-verified on production: pt/pip "Preço Atual US$ 83.000,00" + movement "1 pip (US$ 10,00)"; tr/roi "365 gün (1,0 yıl)". (Residual en-style "$0.10"/"$1.00" on pip are static content/hint prose, not calculator values.)
+
+## [2026-05-31] (update 147) — Audit #13 fixes: cross-chain-bridge literal arrow bug, profit-factor i18n
+
+Browser audit #13 (15 pages) — **math correct on all 15**. Found 1 real visible bug + i18n gaps; verified prior fixes (update-134 pizza, update-138 on-chain, update-146 yield-helper, update-140 apy-apr) all live.
+
+### Fixed
+- **Cross-chain-bridge showed a literal `→` instead of `→` (`CrossChainBridgeCalculator.tsx`):** the Route result rendered `{sourceChain} → {destChain}` where the `→` sat in **raw JSX text**, which (unlike a JS string literal) does NOT interpret unicode escapes — so users saw "Ethereum → Arbitrum". Wrapped it in a JS-string expression `{'→'}` so it renders the real arrow. (The preset labels at L51/56/61 were always fine — those use the escape inside JS strings.)
+- **Profit-factor i18n (`ProfitFactorCalculator.tsx` + `ui-strings/*.ts`):** (1) input labels "Average Win/Loss (R or $)" had the "(R or $)" hint hardcoded in English on every locale → wrapped in `getUiString(lang, 'R or $')` and added translations (es "R o $", pt "R ou $", tr "R veya $", hi "R या $", ru "R или $"). (2) the Profit Factor value and R-multiples used `.toFixed(2)` (period decimal) → switched `formatR` + the headline to `.toLocaleString(loc(lang), …)` so comma-locales show "2,20"/"99,00R".
+
+### Notes
+- Build: 1296 pages, TS clean. Verified in dist: bridge chunk renders the real "→" (not the literal escape); profit-factor chunk uses `toLocaleString`.
+- **DEPLOYED LIVE (2026-05-31)** via `bash scripts/deploy.sh --no-build` (exit 0, all `_astro` chunks 200 via CDN). Browser-verified on production: cross-chain Route "Ethereum → Arbitrum" (real arrow, no literal escape); tr/profit-factor labels "ORTALAMA KAZANÇ (R VEYA $)" + Profit Factor "2,20" + "+99,00R" (comma decimal). Live chunks == built (bridge `DvIyJxjy`, profit-factor `CET3eVGg`).
+- **Incident + recovery (no user impact):** a throwaway helper script used `String.replace()` with a replacement string containing `$'` (from the `'R or $'` key) — `$'` is a special replace pattern (insert-after-match), which triple-duplicated each `ui-strings/*.ts` tail and broke the build ("unterminated string literal"). Since update-145/146 edits were not git-committed, recovered deterministically from the 3× duplication structure (`suffix = P1 + REST + P2 + REST + P3 + REST`, so `len(REST) = (len(suffix) − fixed)/3`), then re-added the key via a **function** replacement (no `$` interpretation). All 5 files verified intact (update-145/146 keys present, single key, clean EOF). **LESSON: never put literal `$` in a `String.replace` replacement string — use a function `() => text` or escape `$$`.**
+
+## [2026-05-31] (update 146) — Audit #12 fixes: tax-note i18n leaks, yield-farming missing keys, asic kWh, AGIX/OCEAN→ASI-era tokens
+
+Browser audit #12 (15 pages) — **math correct on all 15, zero functional bugs (6th clean math audit)**. Found and fixed real translation leaks + outdated content.
+
+### Fixed
+- **Tax-calculator country notes leaked English on ALL non-EN locales (`ui-strings/{es,pt,tr,hi,ru}.ts`):** 3 of 17 country notes (US, Germany, Australia) had their EN strings updated (2026 brackets / €1,000 exemption / Stage-3 cuts) without updating the `getUiString` translation keys → key no-match → English fallback on es/pt/tr/hi/ru. Re-keyed + translated all 3 notes × 5 langs (15 strings) to match the current component strings. Other 14 notes were fine.
+- **Yield-farming missing translations (`ui-strings/*.ts`):** "Gas Cost: Per Harvest" label was missing in **es + ru** (English leak); the helper hint "Auto-calculates…Always validate gas and IL assumptions first, then compare harvest frequencies." was missing in **all 5 langs**. Added the 7 missing strings.
+- **ASIC-mining unit not localized (`AsicMiningCalculator.tsx`):** result status "Profitable at $0.08/kWh" hardcoded Latin "kWh" → wrapped with `getUiString(lang,'kWh')` (→ "кВт·ч" on ru) on both the hero status and the comparison header.
+- **AI-token-sector outdated tokens (`AiTokenSectorCalculator.tsx` + content):** SingularityNET (AGIX) and Ocean Protocol (OCEAN) merged into the **ASI Alliance (FET)** in 2024, so listing them as separate selectable tokens was outdated. Replaced with currently-traded AI tokens — **Grass (GRASS)** for the data subsector and **Virtuals Protocol (VIRTUAL)** for the agents subsector (internal allocation ids kept stable so presets/reset stay intact). Updated the matching references in `calculator-seo-content.ts` (token list ×6 langs), `calculator-seo-ext.ts` (AGIX→VIRTUAL ×6) and `calculator-faq.ts` (OCEAN→GRASS).
+
+### Notes
+- Build: 1296 pages, TS clean. Verified in dist: hi/tax US note now Hindi ("ब्रैकेट 2026 कर वर्ष के लिए अपडेट किए गए"; remaining EN is only the client-translation-JSON key), es/yield-farming helper Spanish, ai-token-sector shows "Grass (GRASS)"/"Virtuals Protocol (VIRTUAL)" with 0 old-token mentions. New chunks: AsicMiningCalculator, AiTokenSectorCalculator, YieldFarmingCalculator.
+- **DEPLOYED LIVE (2026-05-31)** via `bash scripts/deploy.sh --no-build` (exit 0, all `_astro` chunks 200 via CDN). Verified on production: hi/tax US note in Hindi; ai-token-sector "Grass (GRASS)"/"Virtuals Protocol (VIRTUAL)" with 0 old-token mentions; ru/asic-mining "Прибыльный при $0.08/кВт·ч" (Cyrillic unit); es/yield-farming Spanish helper.
+
+## [2026-05-31] (update 145) — Audit #11 fixes: ru option-term mistranslations, hi Hinglish residuals, gas/difficulty formatters
+
+Browser audit #11 (15 pages) — **math correct on all 15, zero functional bugs (5th clean audit in a row)**. The update-144 Hinglish fix and update-142 looping-gas fix both verified live in context. Found and fixed translation/formatting issues:
+
+### Fixed
+- **ru covered-call mistranslations (`ui-strings/ru.ts`):** (1) **"риск ассигнации" → "риск назначения"** — "ассигнация" is an archaic word for *banknotes*, the wrong term for option *assignment*; fixed all 3 occurrences (`assignment risk` label + 2 strategy strings). (2) **"спот" declined as feminine → masculine** — "от споты"→"от спота", "Движение споты"→"Движение спота", "по движению споты"→"…спота", "Укажите споту"→"Укажите спот", "лонг споты"→"лонг спота" (спот is a masculine loanword; genitive=спота, accusative=спот). Left the correct prepositional "в споте" untouched.
+- **hi Hinglish residuals missed by update-144 (`calculator-seo-ext.ts`, token-valuation + perpetual-futures):** the update-144 mapping script excluded keys containing "/" (`P/E Implied Price`, `Implied P/E`) and single-multichar-word keys (`Net P&L`), and didn't catch short forms (`Comparable`, `Target`, `Entry`, `Exit`, `Quick Scenario`). Applied a curated grounded pass (16 reps token-valuation, 15 perpetual-futures): `P/E Implied Price`→"P/E निहित मूल्य", `Implied P/E`→"निहित P/E", `Comparable`/`Comparable Analysis`→"तुलनीय"/"तुलनात्मक विश्लेषण", `Price at Peer MC`→"समकक्ष MC पर मूल्य", `Target`→"लक्ष्य", `Quick Scenario`→"त्वरित परिदृश्य", `Net P&L`→"शुद्ध P&L", `Entry/Exit`→"प्रवेश/निकास", `Leverage`→"लिवरेज".
+- **Gas-fee small-dollar formatter not localized (`GasFeeCalculator.tsx`):** the `<$0.01` and `<$1` branches hardcoded `` `$${n.toFixed(6)}` `` (period decimal + `$` prefix), so gas costs read "$0.006015" next to a localized ETH price "2 029,98 $" on comma-locales. Replaced with a single locale-aware `Intl.NumberFormat(loc, {style:'currency', …})` that picks 6/4/2 fraction digits by magnitude → ru "0,006015 $", en "$0.006015".
+- **Difficulty value not localized (`DifficultyEstimatorCalculator.tsx`):** "Projected difficulty" used `.toFixed(2)` ("156.60 T") while the adjacent network-share already used `loc(lang)`. Switched to `.toLocaleString(loc(lang), …)` → "156,60 T" on comma-locales.
+
+### Not a bug (verified)
+- **es options "3200,00 US$" (no thousands separator):** this is CORRECT Spanish formatting — `Intl.NumberFormat('es')` uses CLDR `minimumGroupingDigits: 2`, so 4-digit numbers (1000–9999) are NOT grouped but 5-digit ones are ("70.700,00 US$"). Confirmed via node; left unchanged.
+
+### Notes
+- Build: 1296 pages, TS clean. Verified in dist: ru "от спота"/"риск назначения" (0 stale), hi "P/E निहित मूल्य"/"निहित P/E" (remaining English instances are only the client-translation-JSON *keys*, not visible content). New chunks: GasFeeCalculator, DifficultyEstimatorCalculator.
+- **DEPLOYED LIVE (2026-05-31)** via `bash scripts/deploy.sh --no-build` (exit 0, all `_astro` chunks 200 via CDN). Browser-verified on production: ru covered-call badge "OTM · Средний риск назначения"; ru/gas cost "0,004817 $" (comma + suffix); tr/difficulty "156,60 T"; hi token-valuation "P/E निहित मूल्य"/"समकक्ष MC पर मूल्य".
+
+## [2026-05-31] (update 144) — Audit #10 fixes: hi content Hinglish, es rebalance i18n + cost, kg unit
+
+Browser audits #7–#10 (40 pages) found **zero math/functional bugs** (4 clean audits in a row). Audit #10 surfaced content-quality / i18n issues, all fixed here.
+
+### Fixed
+- **Hindi SEO content "Hinglish" (374 replacements across 11 calculators):** the lower-body SEO content (`calculator-seo-ext.ts` + `calculator-seo-content.ts`) for the Hindi locale referenced UI labels in **English** (e.g. "Annual Net Profit", "Gross Rewards", "Break-Even", "Market Cap", "Liquidation Price") while the actual calculator UI shows those labels translated to Hindi — a referential mismatch. Replaced inline English UI-label phrases with their **exact** Hindi UI translations (grounded in `ui-strings/hi.ts`), via a deterministic 3-pass script (exact keys → suffix-stripped base forms → curated bases). Affected: grid-trading, token-valuation, validator, token-burn, defi-insurance, futures-basis, rainbow-chart, perpetual-futures, crypto-card-cashback, depin-earnings, mining-coin-switcher. Genuine loanwords (APY, ROI, ETH, slashing, TVL) and brand/proper nouns (Coinbase One, Rocket Pool, Black-Scholes, Nexus Mutual) intentionally kept English.
+- **es rebalancing preset labels:** `'Equal Weight 5'` / `'BTC Heavy 70/15/15'` / `'60/40 BTC-ETH'` were missing from `ui-strings/es.ts` only (present in pt/tr/hi/ru) → leaked English on `/es/calculadora-rebalanceo-portafolio-cripto/`. Added Spanish translations ("Peso igual 5", "BTC pesado 70/15/15").
+- **Portfolio rebalancing cost under-counted fees (`CryptoPortfolioRebalanceCalculator.tsx`):** `totalTradeVolume` divided the gross sum of all buy+sell legs by 2, so the rebalancing cost applied the 0.1% fee to only one side (~half the real fees). A self-funding rebalance executes BOTH a sell and a buy, each charged a fee. Removed the `/2` → volume is now the gross traded amount and cost = fee on every leg (e.g. $10k sell + $10k buy → $20k volume, $20 cost at 0.1%, consistent with the displayed "(0.1%)" label).
+- **Bitcoin energy "kg" unit not localized (`BitcoinEnergyCalculator.tsx`):** the CO2-factor unit "kg/kWh" hardcoded Latin "kg" while "kWh" was already localized (Cyrillic on ru) → mixed "kg/кВт·ч". Wrapped with `getUiString(lang, 'kg')`; added `'kg'` to all 5 dicts (ru "кг", hi "किग्रा", es/pt/tr "kg").
+
+### Notes
+- Build: 1296 pages, TS clean (only pre-existing ErrorBoundary.test.tsx vitest-globals errors, unrelated). Verified in built dist: es labels translated, hi validator content shows "वार्षिक शुद्ध लाभ", rebalance chunk `B=d*.001` (no `/2`), kg→кг/किग्रा inlined on energy pages.
+- **DEPLOYED LIVE (2026-05-31)** via `bash scripts/deploy.sh --no-build` (exit 0, all `_astro` chunks 200 via CDN). Browser-verified on production: es preset labels live; rebalance 50/50 → "Volumen total 20.000,00 US$" + "Costo 20,00 US$" (cost fix working, both legs charged); ru energy "0,041 кг/кВт·ч"; hi validator + token-burn body show Hindi UI labels. Live chunk refs == built (rebalance `4m17ksvk`, energy `DLLu8xOM`).
+- Cache caveat reconfirmed in audit #9: chrome-devtools session caches old chunks across deploys → use `?cb=` cache-bust or hard-reload to audit recently-fixed calcs (crypto-sentiment update-143 fix verified live this way).
+
+## [2026-05-30] (update 143) — Fix inverted "Contrarian Signal" in crypto-sentiment
+
+6th browser audit found a **logic bug** in `CryptoSentimentCalculator.tsx`: the "Contrarian Signal" was inverted. At extreme greed (composite ≥80) it showed **"Strong Buy"** — the opposite of the contrarian principle ("be fearful when others are greedy" → a contrarian SELLS at greed). A user following the "Contrarian Signal" at a sentiment top would buy into it.
+
+### Root cause
+`getSignal()` and `getContrarianSignal()` had their bodies swapped: the function feeding the "Signal" line implemented contrarian/fade logic (greed→Sell), while the one feeding "Contrarian Signal" implemented momentum/follow logic (greed→Buy).
+
+### Fix
+- `getSignal` now follows sentiment momentum (greed≥80 → Strong Buy, extreme fear → Strong Sell).
+- `getContrarianSignal` now correctly fades the crowd (greed≥80 → Strong Sell, extreme fear → Strong Buy).
+- Both labels now honest. No translation changes (labels unchanged, only logic swapped). Build 1,296 pages, TS clean.
+- Deployed via targeted `put` (network degraded this session — the update-141 forced-HTML deploy would have been very slow): new chunk `CryptoSentimentCalculator.BGxo5AwM.js` + the 6 sentiment pages (EN + es/pt/tr/ru + hi-hindi); verified live.
+
+### Audit #6 also
+- Math verified correct on impermanent-loss, ico-roi, market-cap-comparator, electricity-cost, gpu-mining, defi-yield-aggregator, es/trade-expectancy.
+- Minors: market-cap-comparator stray quote in the "What if…" prompt; crypto-sentiment neutral inputs yield composite 41 not 50 (funding/long-short normalizations off-center); es/trade-expectancy R-multiple "0.392 R" period on comma-locale (non-% residual).
+- ru/var + ru/converter not fully auditable — severe LOCAL network slowness (TTFB ~2s, transfer 40–295s erratic; NOT a site bug) blocked browser hydration; translation + chunk-freshness OK. Chunk-freshness OK everywhere checked (update-141 deploy fix holding).
+
+## [2026-05-30] (update 142) — Fix looping-yield gas double-count (per-loop input)
+
+Fixes the **[LOW-MED] looping-yield gas** finding logged in update 141's audit #5. `LoopingYieldCalculator.tsx` computed the gas line as `totalGas = gasPerOp * numLoops * 2` (comment: "each loop = 2 ops"), but the input field is labeled **"Gas Cost per Loop"** (`getUiString` key `Gas Cost per Loop`). A user entering their real per-loop gas was silently doubled — the default 3 loops × $25 showed **Total Gas Cost $150.00** instead of $75.00, also inflating "% of Deposit (gas)".
+
+### Fixed
+- Removed the `* 2` → `totalGas = gasPerOp * numLoops` (**option A**: keep the existing per-loop label; no `getUiString` key change, so all 6 languages are unaffected). Comment updated to "input is the full per-loop gas cost (borrow + deposit)".
+- Default scenario (3 loops × $25/loop) now reports **Total Gas Cost $75.00** (was $150.00). No effect on the NET APR figure — gas is shown as a separate one-time line, not annualized into APR.
+- Build 1,296 pages, TS clean. New chunk `LoopingYieldCalculator.CJAejUy9.js`. Deployed via `bash scripts/deploy.sh --no-build`.
+
+## [2026-05-30] (update 141) — CRITICAL deploy fix: HTML same-size chunk-ref skip
+
+The 5th browser audit found a **systemic deploy bug**: many pages were serving STALE JS chunks, so updates 137/139/140 (i18n) were only PARTIALLY live (e.g. ru/perp-funding-arb showed `54.75%` period though the component was correctly localized to `54,75%`).
+
+### Root cause
+`scripts/deploy.sh` STEP 2/3 uploaded HTML with `mirror -R --ignore-time`, which compares files by **SIZE**. An i18n/chunk update changes only the referenced `/_astro/<hash>.js` name (8→8 chars), so the HTML byte size is **identical** (verified: live==built==367694 bytes for ru/perp). lftp therefore SKIPPED those HTML files, leaving the server on old HTML → old chunk → old behavior. New chunks DID upload (STEP 1, new filenames) but the HTML pointing to them did not.
+
+### Fix
+- deploy.sh now stamps every local `dist/**/*.html` to a far-future mtime (`touch -t 209901010000`) before deploy, and the HTML mirrors use plain time-based compare (dropped `--ignore-time`). Future mtime is unambiguously newer than any remote copy → forces HTML re-upload, defeating both the size-skip and the ~3h server-clock skew. `_astro` stays `--ignore-time` (content-addressed, efficient).
+- One-time forced re-upload of all HTML executed: previously-stale pages now serve current chunks (verified OK=10/10 sample across EN+es/pt/tr/ru/hi). **ru/perp APR now `54,75%` comma live**; updates 137/139/140 are now fully live.
+- Trade-off: every deploy now re-uploads all HTML (slower); `_astro` (the bulk) stays efficient. Can be optimized to "changed-only" later if deploy time becomes an issue.
+
+### Audit #5 also found
+- **[LOW-MED] looping-yield gas**: `LoopingYieldCalculator.tsx:68 totalGas = gasPerOp * numLoops * 2` but the input is labeled "GAS COST PER LOOP" → treats per-loop as per-operation and doubles it (gas line 2× overstated; no NET APR impact since gas is one-time/excluded).
+- [LOW] pt bitcoin-mining shows BTC quantities (`0.00006207`)/difficulty with period on comma-locale (BTC-quantity formatter, separate from % work).
+- Math verified correct on all 10 pages (node, lightning-fee, sortino, calmar, grid-trading, profit-factor, looping-yield, tr/liquidation, ru/perp, pt/mining).
+
+## [2026-05-30] (update 140) — Localize raw `{expr}%` percentage interpolations (CSS-safe)
+
+Extends update 139 to the next sub-category found in the 4th audit: raw JSX `{expr}%` interpolations (benchmarks, preset chips, computed values rendered without `.toFixed`).
+
+### Added
+- `fmtPctValue(x, lang)` in `src/i18n/format.ts` — safe drop-in for raw `{expr}%`: finite numbers → locale separator preserving natural precision; strings/NaN/undefined → passthrough unchanged (display never breaks).
+
+### Changed (CSS-safe, deterministic)
+- Transformed `{EXPR}%` → `{fmtPctValue(EXPR, lang)}%` in **63 components, 142 sites**. Regex uses negative lookbehind `(?<!\$)` so it matches ONLY JSX `{}` interpolations, NEVER `${}` template literals — and ALL CSS-value percentages use `${}` in backticks (`width: \`${Math.min(pct,100)}%\``). Verified: TpSl visual-scale `${toPercent()}%` templates and all `width:%` bars untouched; zero `${fmtPctValue`.
+- Fixed the lone string-from-toFixed case (ApyAprCalculator `differencePercent`: was `(difference*100).toFixed(4)` string → now a number rendered via `fmtPercent(..., {decimals:4, signed:true})`), so the "Difference" row localizes (es `+0,7475%`).
+
+### Result / verified
+- ru/roi now **fully comma** (S&P/gold/real-estate benchmarks `10,5%`/`7,8%`/`8,6%` + ROI `+49,50%`, zero period). es/apy-apr Difference row `+0,7475%`. Build 1,296 / TS clean. EN unchanged. CSS layout intact (verified built SSR + hydrated preview).
+
+### Remaining (final small residual — left intentionally)
+- ~13 `${expr}%` **template** interpolations: a mix of display (ExchangeFee discount, NftProfit fee) AND CSS positioning that's hard to tell apart by script (e.g. TpSl price-scale marker `left: ${toPercent()}%`). Bulk-transforming would risk breaking the visual scales, so left for manual review. Plus static %-preset chip labels. The computed result percentages users actually read are localized.
+
+## [2026-05-30] (update 139) — Complete percentage localization across all inline components
+
+Finishes the i18n percentage work left partial in update 137. Update 137 only covered the 28 `formatPercent`-named components; this completes the remaining ~68 that format percentages inline (`.toFixed(N)%`) or via other helpers (`fmtPct`/`formatRate`).
+
+### Approach (deterministic, CSS-safe)
+- First verified there are **zero** CSS-value percentages using `.toFixed` (progress-bar widths use `Math.min(...)%` without toFixed), so swapping `.toFixed` followed by `%` is display-only and cannot break layout.
+- Script replaced `EXPR.toFixed(N)` → `EXPR.toLocaleString(loc(lang), { minimumFractionDigits: N, maximumFractionDigits: N })` ONLY where immediately followed by a percent context (`}%`, `+ '%'`). Expression untouched; a `}x` / non-% `.toFixed` is left alone via lookahead. Covers inline JSX percents AND named helpers (`fmtPct`, `formatRate`, etc.) uniformly.
+- **77 components, 172 percent sites localized.** Added `loc` import where needed; for 7 files with a pre-existing local `const loc` string (CrossChainBridge, CryptoIndexFund, CryptoInheritance, EtfFee, FlashLoan, Millionaire, NftRarity) used that local string instead of importing the helper (collision avoidance).
+
+### Verified
+- Build 1,296 pages, TS clean. Browser (local preview, hydrated, tr/crypto-loan): computed percentages now comma (`33,3%`, `39,8%`); progress-bar widths intact (`50%`/`100%`, zero comma-in-CSS); EN unchanged (`3.87%`). pt/liquid-staking APYs now `+1,88%`/`+2,61%`.
+- Remaining (separate category, NOT done): **raw `{expr}%` interpolations without `.toFixed`** — ~65 files / ~162 sites. This category is dominated by static %-preset chip labels (`{preset}%`, `{rate}%`, `{v}%`) and input echoes, but ALSO contains CSS-value percentages (`width: \`${Math.min(pct,100)}%\``) and a minority of computed result values (`{aprPct}%`, `{differencePercent}%`). It can't be bulk-transformed safely (would break the CSS widths), so it's left for a careful per-component pass. The toFixed/formatPercent computed result percentages — the ones the audit actually flagged (node `-2,27%`, liquid-staking, etc.) — ARE localized.
+
+## [2026-05-30] (update 138) — Fix on-chain-metrics NVT + Value-per-Transaction calc bugs
+
+3rd browser audit (10 pages, math correct on all but this one) found genuine calculation bugs in `OnChainMetricsCalculator.tsx`:
+- **NVT Ratio** computed `mc / (vol × 365)` → ~0.18, but the zone thresholds (`>65 Overvalued`, `<25 Undervalued`) are calibrated for the standard NVT scale `mc / vol` (~66). The spurious ×365 made NVT always ≪25 → always "Undervalued" (green) → biased the overall ON-CHAIN SIGNAL toward a false "Buy Signal". Fixed to `mc / vol`.
+- **NVT Signal (90d)** computed `mc / (vol × 90)` → same off-scale class. Fixed to `mc / vol` (single daily-volume figure is the only available proxy for the 90d MA; documented in a code comment).
+- **"Value per Transaction"** computed `mc / txCount` (= network value per tx, ~$4.1M, unrealistic and ignored the on-chain-volume input). Fixed to `vol / txCount` = average USD value moved per transaction (~$62,500).
+- Net effect on the default scenario: NVT now 66 → "Overvalued", overall signal correctly "Hold" instead of a false "Buy". Build 1,296 pages, TS clean.
+
+## [2026-05-30] (update 137) — i18n: shared locale formatter; localize preset chips + percentages
+
+**Context:** the 2nd browser audit flagged two pervasive cosmetic i18n issues — preset chips hardcoded `toLocaleString('en-US')` (23 components), and `formatPercent` defined per-component (28 copies of `n.toFixed(2)`) always producing a period decimal, so percentages read "12.50%" on comma-locale pages (es/pt/tr/hi/ru) while dollar amounts were already localized. Fixed as one shared-helper refactor.
+
+### Added
+- **`src/i18n/format.ts`** — shared `loc(lang)` (en→'en-US', else→lang code), `fmtNumber(n, lang, opts)`, and `fmtPercent(n, lang, {decimals, signed})`. `fmtPercent` keeps each call site's exact decimals + sign convention and the non-finite→"—" guard; '%' stays a suffix (site convention).
+
+### Changed (42 components migrated, deterministic script)
+- **Preset chips (23 components, 39 sites):** `Number(x).toLocaleString('en-US')` → `toLocaleString(loc(lang))`.
+- **formatPercent (28 components):** each local definition now delegates to `fmtPercent(n, lang, {decimals, signed})`, preserving its exact digits (1–4) and sign. Special cases kept: GovernanceVoting `<0.001%` clamp; FuturesBasis `formatPercentApy`.
+- FuturesBasisCalculator already had a local `const loc` string → used that local for its chip and dropped the `loc` import (avoids the only name collision).
+
+### Verified
+- Build 1,296 pages, TypeScript clean. Browser (local preview, hydrated) A/B on identical default inputs: **TR** → `+42,88%` + chips `$1.000` (comma decimal / period thousands); **EN** → `+42.88%` + chips `$1,000` (unchanged, no regression). Confirmed across es/tr in built SSR HTML too.
+
+### Known remaining — percentage coverage is PARTIAL (corrected after 3rd audit)
+- This change localized percentages ONLY in the 28 components that use a `const formatPercent` helper. Site-wide ~96 components display percentages: **28 done; ~4 use other named helpers (fmtPct/formatPct/pct); ~64 use raw inline `.toFixed(N)%` in JSX**. Those ~68 still render period-decimal percentages on comma-locale pages (confirmed live: liquid-staking `fmtPct`, node `-2.27%`, gas-fee gas costs, market-cap price `100.00`). They can't be bulk-migrated safely because `.toFixed` is overloaded for prices/quantities — completing this needs a careful per-component pass. **The CHIPS fix (39 sites) IS complete.**
+- A few price echoes use bare `.toLocaleString()` (e.g. one `$77,300` on tr leverage) — pre-existing price-layer nit. market-cap empty-state "???" still cosmetic (cross-language).
+
+## [2026-05-30] (update 136) — Eliminate generic-boilerplate body on 28+19 calculators (content debt)
+
+**Context:** the 2nd browser audit found 28 EN calculator pages serving identical generic "decision-envelope" trading boilerplate (irrelevant to their topic; duplicate-content / E-E-A-T / AI-content-detection risk), plus a further set lacking custom how/inputs top sections. Closed the whole debt via 47 grounded parallel content agents.
+
+### Added — calculator-seo-ext.ts (the 8 lower body sections: interpret/scenarios/checklist/mistakes/benchmarks/execution/hygiene/validation)
+- **28 new entries × 6 languages** (en/es/pt/tr/hi/ru), ~2,688 unique paragraphs: ai-token-sector, bitcoin-energy, crypto-card-cashback, defi-insurance, depin-earnings, dva, etf-fee, futures-basis, grid-trading, if-i-had-bought, inheritance-tax, liquid-staking, millionaire, mining-coin-switcher, on-chain-metrics, options, payback-period, perpetual-futures, polymarket-odds, rainbow-chart, restaking, rwa-yield, tax-loss-harvesting, token-burn, token-valuation, trailing-stop-loss, validator, wallet-net-worth.
+- Each agent READ the actual React component first (grounding) so content names the real input fields/output rows/formulas — no fabricated features (the failure mode found in the audit). 2–4 internal links per language, all link targets verified to exist.
+
+### Added — calculator-seo-content.ts (top sections: quickAnswer + how + inputs)
+- **19 new entries × 6 languages**: the 8 update-126 calcs that lacked seo-content entirely (depin-earnings, rwa-yield, polymarket-odds, trailing-stop-loss, crypto-card-cashback, mining-coin-switcher, wallet-net-worth, ai-token-sector) + 10 update-100/109 calcs that had seo-ext but no seo-content (covered-call, geometric-mean-return, iron-condor, lightning-network-fee, looping-yield, mayer-multiple, mstr-mnav, perpetual-funding-arbitrage, profit-factor, pumpfun-bonding-curve) + concentrated-liquidity (also added its missing Quick Answer).
+- Fixes the SEO/AI-citation gap (concentrated-liquidity + depin had no Quick Answer box).
+
+### Result
+- **Generic "decision envelope" interpret body: 28 EN pages → 0.** Generic "turn raw assumptions" how/inputs body: 10 EN pages → 0. Confirmed 0 on localized (es/pt/tr/hi/ru) pages too.
+- Build: 1,296 pages, TypeScript clean. Content verified live-in-build across en/es/pt/tr/hi/ru (spot-checked custom snippets present in built localized HTML).
+- Process: pilot → 3 batches of 9 (seo-ext) + 2 batches (seo-content) = 47 grounded agents; deterministic JSON→TS serialization (no escaping errors); idempotent integration (skip existing keys).
+
+### Deferred (flagged, NOT done — scattered cosmetic i18n, regression risk)
+- Preset chips hardcode `toLocaleString('en-US')` in **23 components**; `formatPercent` is defined per-component (**28 copies**, `n.toFixed(2)` → period decimal on comma-locales). These are 50+ scattered cosmetic edits better done as one focused shared-locale-helper refactor with testing — not bundled into this content deploy. market-cap empty-state "???" also left (cosmetic).
+
+## [2026-05-30] (update 135) — Fix deploy.sh STEP 3 httpdocs sync (550 doubled-path)
+
+### Fixed (scripts/deploy.sh)
+- **STEP 3 `cd` resolved to a doubled path** → `550 .../dist/cryptocalk.com/httpdocs:
+  No such file or directory` on every deploy, leaving the secondary `httpdocs/` copy
+  stale. Root cause: lftp's `cd` is relative to the *current* remote dir, and STEP 1
+  had already `cd`'d into `${FTP_remote_path}/dist/`; STEP 3's `cd ${FTP_remote_path}/httpdocs/`
+  therefore resolved to `${FTP_remote_path}/dist/${FTP_remote_path}/httpdocs`.
+- **Fix**: changed STEP 3 to the relative sibling path `cd ../httpdocs/` (from
+  `cryptocalk.com/dist/` → `cryptocalk.com/httpdocs/`). Verified via FTP listing that
+  `dist/` and `httpdocs/` are indeed siblings under `cryptocalk.com/`. STEP 1/2 (the
+  live `dist/` docroot) left untouched. Added an inline comment explaining the trap.
+
+### Verified
+- `bash scripts/deploy.sh --no-build`: **zero `550` / doubled-path errors** in the entire
+  log. Both trees now byte-identical — spot-checked `index.html` (87,860 B), an `_astro`
+  chunk (8,180 B) and `tr/zorluk-hesaplayici/index.html` (270,451 B) all match between
+  remote `dist/` and `httpdocs/`. `httpdocs/` is only a **secondary safety copy** — the
+  live nginx docroot is `cryptocalk.com/dist/` (per 2026-05-29 verification).
+
+### Known caveat (pre-existing, NOT from this change)
+- lftp emits ~855 spurious `No such file or directory` warnings for **existing** local
+  `dist/**` dirs (files still transfer correctly — confirmed on both remote trees). Under
+  `set -euo pipefail` this makes `lftp -f` exit non-zero, so deploy.sh **aborts before
+  printing "✅ Deploy complete." and before STEP 4 (CDN 404 verification)**; the script
+  exits 1 despite a successful upload. Same lftp/source for STEP 1/2, so this predates the
+  cd fix and is likely environment-specific. Hardening (e.g. gate success on STEP 4 instead
+  of lftp's exit code) is a separate follow-up.
+
+## [2026-05-29] (update 134) — Browser audit of 10 random pages: bug + content fixes
+
+### Source
+- Interactive chrome-devtools audit of 10 random live pages (pizza-day, dust-attack,
+  lp-value, retirement, stock-to-flow, governance-voting, arbitrage + pt/hodl-vs-trade,
+  hi/exchange-fees, tr/risk-reward). Math verified correct on all 10; localization
+  excellent on pt/hi/tr. Found content/feature bugs + a localization format bug.
+
+### Fixed (components)
+- **PizzaDayCalculator**: "Original Pizza Cost (~$X)" showed `pizzas × today's price`
+  (e.g. $30) mislabeled as the *original* cost — contradicting the page's own "~$41"
+  text. Now uses the historical implied price ($0.0041/BTC → ~$41 for 10,000 BTC) via
+  new `HISTORICAL_PRICE_PER_BTC` const; opportunity cost uses it too.
+- **DustAttackCalculator**: hardcoded `BTC_PRICE_DEFAULT = 97000` (stale, ~33% high vs
+  live ~$73k) → now fetches live BTC price from CoinGecko (useEffect), fallback 73000.
+  Disclaimer key changed to "Based on live BTC price…" (+ 5-lang translations).
+- **RiskRewardCalculator**: mixed number formats in one panel — price echoes used
+  hardcoded `en-US` ($65,000.00) while P&L used locale ($307,69) on tr/es/pt/ru.
+  Introduced shared `loc`; `formatPrice` + preset chips now locale-aware. Verified
+  in-browser: tr page now shows $65.000,00 / -$307,69 consistently.
+
+### Fixed (content accuracy — calculator-seo-content.ts, ×6 langs each)
+- **arbitrage** quickAnswer: "$200 gap → ~$180 net" overstated ~30×. Now "0.5% gap on
+  $10k (~$50 gross) nets ~$20 after fees" — matches the calculator's real output.
+- **governance-voting** quickAnswer: incoherent ("500 aligned votes" = 5% of holdings;
+  5% ≠ 4% default). Now describes voting power as share of supply + proposal threshold.
+- **dust-attack** how/inputs: described a non-existent wallet-scanner (address field,
+  risk score Low→Critical, ERC-20 detection, dates received). Rewritten to the real
+  numeric consolidation-cost estimator. Also fixed dust seo-ext interpret[0] ("5 dust
+  inputs in 90 days / risk-level output" claim) across all langs.
+- **retirement** how/inputs: claimed a "safe withdrawal rate" input + "year-by-year
+  balance chart" (neither exists; SWR fixed at 4%). Rewritten to actual inputs/outputs.
+- **stock-to-flow** how: claimed "compares to gold and silver benchmarks" + "plots…"
+  (no such output). Rewritten to ratio + power-law model price + % deviation + halving.
+
+### Added (systemic — replaces generic trading boilerplate)
+- 5 calcs had **no calculator-seo-ext.ts entry** and fell back to identical generic
+  trading boilerplate (leverage/liquidation/position-sizing) irrelevant to their topic
+  (duplicate-content / AI-content / E-E-A-T risk). Wrote unique, topic-specific 8-section
+  seo-ext entries × 6 langs for: **pizza-day, arbitrage, retirement, stock-to-flow,
+  lp-value** (~480 paragraphs). **lp-value** also got a new seo-content entry
+  (quickAnswer/how/inputs ×6). Generated via 5 parallel content agents, integrated +
+  validated. (governance-voting already had a good topical entry — left as-is.)
+
+### Build
+- 1,296 pages, TypeScript clean, build "Complete!" (~63s). dist/ verified: generic
+  "decision envelope" boilerplate gone from the 5 calcs; all false-claim phrases removed.
+
 ## [2026-05-29] (update 133) — Preventive #418 fixes: payback + rainbow-chart
 
 ### Follow-up (closes the date-hydration class)

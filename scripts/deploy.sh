@@ -47,17 +47,31 @@ cd ${FTP_remote_path}/dist/
 mirror -R --ignore-time --no-perms dist/_astro/ _astro/
 
 # --- STEP 2: HTML/pages into LIVE docroot ---
-# --ignore-time (NOT --only-newer): server clock runs ~3h behind local, so
-# --only-newer wrongly SKIPS freshly-built HTML. That caused localized pages
-# (es/pt/tr/hi/ru) to serve stale chunk refs + outdated math/i18n.
-mirror -R --ignore-time --no-perms --exclude '^_astro/' dist/ ./
+# IMPORTANT: HTML must use TIME compare, NOT --ignore-time. An i18n/chunk update
+# changes only the referenced /_astro/<hash>.js name (8→8 chars) so the HTML byte
+# SIZE is IDENTICAL — and --ignore-time compares by SIZE, so lftp SKIPPED these
+# pages, leaving them on stale chunks (verified 2026-05-30: live==built==same bytes).
+# Fix: the bash step below touches every local HTML to a far-future mtime, so plain
+# time-based mirror always sees them as "newer than remote" → forces re-upload,
+# sidestepping both the size-skip and the ~3h server-clock skew.
+mirror -R --no-perms --exclude '^_astro/' dist/ ./
 
 # --- STEP 3: keep the secondary httpdocs/ copy in sync (assets first) ---
-cd ${FTP_remote_path}/httpdocs/
+# NOTE: lftp 'cd' is relative to the CURRENT remote dir, and STEP 1 already cd'd
+# into ${FTP_remote_path}/dist/. So use the relative sibling path '../httpdocs/'
+# (dist/ and httpdocs/ are siblings under ${FTP_remote_path}/, verified 2026-05-30).
+# Using '${FTP_remote_path}/httpdocs/' here would wrongly resolve to
+# ${FTP_remote_path}/dist/${FTP_remote_path}/httpdocs → 550 No such directory.
+cd ../httpdocs/
 mirror -R --ignore-time --no-perms dist/_astro/ _astro/
-mirror -R --ignore-time --no-perms --exclude '^_astro/' dist/ ./
+mirror -R --no-perms --exclude '^_astro/' dist/ ./
 bye
 EOF
+
+# Force every local HTML to a far-future mtime so the time-based HTML mirror always
+# treats them as newer than any remote copy (defeats the same-size chunk-ref skip).
+echo "▶ Stamping HTML mtimes (force HTML re-upload)…"
+find dist -name '*.html' -exec touch -t 209901010000 {} + 2>/dev/null || true
 
 echo "▶ Deploying (assets first, then HTML)…"
 lftp -f "$LFTP_SCRIPT"

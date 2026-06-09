@@ -14,6 +14,7 @@ import {
     Repeat,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 interface Results {
     hodlFinalValue: number;
@@ -217,7 +218,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
             maximumFractionDigits: 2,
         }).format(n);
 
-    const formatPercent = (n: number) => `${n >= 0 ? '+' : ''}${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2, signed: true });
 
     const getWinnerColor = (winner: string) => {
         if (winner === 'hodl') return '#f59e0b';
@@ -311,7 +312,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${priceChange === preset ? 'active' : ''} ${Number(preset) < 0 ? 'pill-danger' : ''}`}
                                     onClick={() => setPriceChange(preset)}
                                 >
-                                    {Number(preset) > 0 ? '+' : ''}{preset}%
+                                    {Number(preset) > 0 ? '+' : ''}{fmtPctValue(preset, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -357,7 +358,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${winRate === w ? 'active' : ''}`}
                                     onClick={() => setWinRate(w)}
                                 >
-                                    {w}%
+                                    {fmtPctValue(w, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -388,7 +389,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${avgProfit === preset ? 'active' : ''}`}
                                     onClick={() => setAvgProfit(preset)}
                                 >
-                                    {preset}%
+                                    {fmtPctValue(preset, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -418,7 +419,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${avgLoss === preset ? 'active' : ''}`}
                                     onClick={() => setAvgLoss(preset)}
                                 >
-                                    {preset}%
+                                    {fmtPctValue(preset, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -508,7 +509,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${tradingFee === preset ? 'active' : ''}`}
                                     onClick={() => setTradingFee(preset)}
                                 >
-                                    {preset}%
+                                    {fmtPctValue(preset, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -559,7 +560,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
                                     style={{ color: getWinnerColor(results.winner) }}
                                 >
                                     {results.winner !== 'tie'
-                                        ? `${getUiString(lang, 'by')} ${formatUSD(results.differenceUSD)} (${results.differencePercent.toFixed(2)}% ${getUiString(lang, 'margin')})`
+                                        ? `${getUiString(lang, 'by')} ${formatUSD(results.differenceUSD)} (${results.differencePercent.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% ${getUiString(lang, 'margin')})`
                                         : getUiString(lang, 'Both strategies ended at the same value')}
                                 </span>
                             </div>
@@ -712,12 +713,12 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Win Rate')}</span>
-                                    <span className="result-value">{winRate}%</span>
+                                    <span className="result-value">{fmtPctValue(winRate, lang)}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Avg Profit / Loss per Trade')}</span>
                                     <span className="result-value">
-                                        <span className="profit">+{avgProfit}%</span> / <span className="fee">-{avgLoss}%</span>
+                                        <span className="profit">+{fmtPctValue(avgProfit, lang)}%</span> / <span className="fee">-{fmtPctValue(avgLoss, lang)}%</span>
                                     </span>
                                 </div>
                                 <div className="result-row">
@@ -759,7 +760,7 @@ function HodlVsTradeCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label"><strong>{getUiString(lang, 'Difference')}</strong></span>
                                     <span className="result-value" style={{ color: getWinnerColor(results.winner), fontWeight: 600 }}>
-                                        {formatUSD(results.differenceUSD)} ({results.differencePercent.toFixed(2)}%)
+                                        {formatUSD(results.differenceUSD)} ({results.differencePercent.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)
                                     </span>
                                 </div>
                             </div>

@@ -7,6 +7,7 @@ import {
     BarChart3,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 interface Results {
     correlation: number;
@@ -188,7 +189,7 @@ function CryptoCorrelationCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'R-Squared (R\u00B2)')}</span>
-                                    <span className="result-value">{(results.rSquared * 100).toFixed(2)}%</span>
+                                    <span className="result-value">{(results.rSquared * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">

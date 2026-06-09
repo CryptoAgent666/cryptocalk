@@ -18,6 +18,9 @@ const BTC_FALLBACK_PRICE = 77300;
 const ORIGINAL_BTC = 10000;
 const ORIGINAL_PIZZAS = 2;
 const ORIGINAL_DATE = 'May 22, 2010';
+// Implied 2010 price: the famous 10,000 BTC pizzas cost ~$41, i.e. ~$0.0041 per BTC.
+// "Original Pizza Cost" must reflect this historical figure, NOT today's pizza price.
+const HISTORICAL_PRICE_PER_BTC = 0.0041;
 
 const SCENARIOS = [
   { label: 'Original 2010 Deal', pizzas: '2', pizzaPrice: '15', btcAmount: '10000' },
@@ -63,18 +66,22 @@ function PizzaDayCalculator({ lang = 'en' }: { lang?: string }) {
     const price = parseFloat(btcPrice) || BTC_FALLBACK_PRICE;
     if (nPizzas <= 0 || btc <= 0) return null;
 
-    const totalPizzaCostUsd = nPizzas * pPrice;
+    const todayPizzaCostUsd = nPizzas * pPrice;
+    // Historical USD cost of those BTC in 2010 (~$41 for 10,000 BTC). This is the
+    // figure that belongs next to "Original Pizza Cost", not today's pizza price.
+    const originalCostUsd = btc * HISTORICAL_PRICE_PER_BTC;
     const currentBtcValue = btc * price;
     const costPerPizzaBtc = btc / nPizzas;
     const costPerPizzaUsd = pPrice;
     const satsPerPizza = costPerPizzaBtc * 1e8;
     const pizzasYouCouldBuy = (btc * price) / pPrice;
     const pricePerSatInPizza = pPrice / satsPerPizza;
-    const opportunityCost = currentBtcValue - totalPizzaCostUsd;
+    const opportunityCost = currentBtcValue - originalCostUsd;
 
     return {
       nPizzas,
-      totalPizzaCostUsd,
+      todayPizzaCostUsd,
+      originalCostUsd,
       currentBtcValue,
       costPerPizzaBtc,
       costPerPizzaUsd,
@@ -197,7 +204,7 @@ function PizzaDayCalculator({ lang = 'en' }: { lang?: string }) {
                 </h2>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Original Pizza Cost')}</span>
-                  <span className="result-value">{formatBig(parseFloat(btcAmount) || 0)} BTC (~{formatUSD(results.totalPizzaCostUsd)})</span>
+                  <span className="result-value">{formatBig(parseFloat(btcAmount) || 0)} BTC (~{formatUSD(results.originalCostUsd)})</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Cost Per Pizza (Then)')}</span>

@@ -11,6 +11,7 @@ import {
     Layers,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, fmtPctValue } from '../i18n/format';
 
 const COMPOUND_FREQUENCIES = [
     { id: 'daily', label: 'Daily', n: 365 },
@@ -75,7 +76,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
     }
 
     const difference = Math.abs(apy - apr);
-    const differencePercent = (difference * 100).toFixed(4);
+    const differencePercent = difference * 100;
 
     // Earnings with compounding (uses APR compounded n times)
     const totalWithCompounding = principalAmount * Math.pow(1 + apr / n, n * t);
@@ -150,7 +151,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
         style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
     }).format(n);
 
-    const formatPercent = (n: number) => `${n.toFixed(4)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 4 });
 
     return (
         <div className="calc-wrapper">
@@ -198,7 +199,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                             {RATE_PRESETS.map((r) => (
                                 <button key={r} className={`pill-btn ${rateInput === String(r) ? 'active' : ''}`}
                                     onClick={() => setRateInput(String(r))}>
-                                    {r}%
+                                    {fmtPctValue(r, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -311,7 +312,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                     border: '1px solid rgba(34,197,94,0.3)', borderRadius: '10px', textAlign: 'center',
                                 }}>
                                     <div style={{ fontSize: '0.7rem', color: 'var(--color-accent-green)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>{getUiString(lang, 'Difference')}</div>
-                                    <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-accent-green)' }}>+{differencePercent}%</div>
+                                    <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--color-accent-green)' }}>{fmtPercent(differencePercent, lang, { decimals: 4, signed: true })}</div>
                                 </div>
                             </div>
 
@@ -341,7 +342,7 @@ function ApyAprCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{mode === 'apr-to-apy' ? getUiString(lang, 'Input APR') : getUiString(lang, 'Input APY')}</span>
-                                    <span className="result-value">{rateInput}%</span>
+                                    <span className="result-value">{fmtPctValue(rateInput, lang)}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Compounding')}</span>

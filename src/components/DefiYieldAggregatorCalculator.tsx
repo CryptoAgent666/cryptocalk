@@ -14,6 +14,7 @@ import {
     Zap,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 interface Protocol {
     id: number;
@@ -217,10 +218,7 @@ function DefiYieldAggregatorCalculator({ lang = 'en' }: { lang?: string }) {
         return `$${n.toFixed(0)}`;
     };
 
-    const formatPercent = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(2)}%`;
-    };
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     const riskIcon = (level: string) => {
         switch (level) {

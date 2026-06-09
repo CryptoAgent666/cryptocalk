@@ -14,6 +14,7 @@ import {
     Zap,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -224,7 +225,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
             minimumFractionDigits: 2, maximumFractionDigits: 2,
         }).format(n);
 
-    const formatPercent = (n: number) => `${n.toFixed(4)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 4 });
 
     const selectedPeriod = HOLDING_PERIODS.find(p => p.days === holdingDays);
 
@@ -316,7 +317,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${positionSize === preset ? 'active' : ''}`}
                                     onClick={() => setPositionSize(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -346,7 +347,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${fundingRate === String(r) ? 'active' : ''}`}
                                     onClick={() => setFundingRate(String(r))}
                                 >
-                                    {r}%
+                                    {fmtPctValue(r, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -433,7 +434,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
                                 <span className="result-hero-roi" style={{
                                     color: results.direction === 'pay' ? '#f97316' : 'var(--color-accent-green)'
                                 }}>
-                                    {results.direction === 'pay' ? '−' : '+'}{totalAsPercent.toFixed(2)}% {getUiString(lang, 'over')} {selectedPeriod?.label || `${holdingDays} ${getUiString(lang, 'days')}`}
+                                    {results.direction === 'pay' ? '−' : '+'}{totalAsPercent.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% {getUiString(lang, 'over')} {selectedPeriod?.label || `${holdingDays} ${getUiString(lang, 'days')}`}
                                 </span>
                             </div>
 
@@ -441,7 +442,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
                             <div className="result-breakdown">
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Funding Rate')}</span>
-                                    <span className="result-value">{fundingRate}% {getUiString(lang, 'per interval')}</span>
+                                    <span className="result-value">{fmtPctValue(fundingRate, lang)}% {getUiString(lang, 'per interval')}</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Intervals / Day')}</span>
@@ -484,7 +485,7 @@ function FundingRateCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Annual (365d)')}</span>
                                     <span className={`result-value ${results.direction === 'receive' ? 'profit' : 'fee'}`}>
-                                        {results.direction === 'pay' ? '−' : '+'}{formatUSD(results.annualCost)} ({results.annualAsPercent.toFixed(2)}%)
+                                        {results.direction === 'pay' ? '−' : '+'}{formatUSD(results.annualCost)} ({results.annualAsPercent.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)
                                     </span>
                                 </div>
 

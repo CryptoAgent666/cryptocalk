@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ArrowRightLeft, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const TVL_PRESETS = [500000, 1000000, 2000000, 5000000];
 const TRADE_PRESETS = [1000, 5000, 10000, 25000];
@@ -148,7 +149,7 @@ function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${dexFee === String(preset) ? 'active' : ''}`}
                   onClick={() => setDexFee(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -166,7 +167,7 @@ function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${slippageTolerance === String(preset) ? 'active' : ''}`}
                   onClick={() => setSlippageTolerance(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -186,14 +187,14 @@ function SlippageCalculator({ lang = 'en' }: { lang?: string }) {
             <>
               <div className={`result-hero ${result.passTolerance ? 'profit' : 'loss'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Estimated Slippage')}</span>
-                <span className="result-hero-value"><ArrowRightLeft size={28} />{result.slippagePct.toFixed(3)}%</span>
+                <span className="result-hero-value"><ArrowRightLeft size={28} />{result.slippagePct.toLocaleString(loc(lang), { minimumFractionDigits: 3, maximumFractionDigits: 3 })}%</span>
                 <span className={`result-hero-roi ${result.passTolerance ? 'profit' : 'loss'}`}>
                   {result.passTolerance ? getUiString(lang, 'Within tolerance') : getUiString(lang, 'Above tolerance')}
                 </span>
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Trade share of pool')}</span><span className="result-value">{result.tradeSharePct.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Trade share of pool')}</span><span className="result-value">{result.tradeSharePct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected amount received')}</span><span className="result-value">{formatUSD(result.expectedOut)}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Minimum received (tolerance)')}</span><span className="result-value">{formatUSD(result.minReceived)}</span></div>
                 <div className="result-divider" />

@@ -10,6 +10,7 @@ import {
     TrendingDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 interface Results {
     postUnlockSupply: number;
@@ -165,10 +166,7 @@ function TokenUnlockCalculator({ lang = 'en' }: { lang?: string }) {
         return new Intl.NumberFormat(loc, { maximumFractionDigits: 0 }).format(n);
     };
 
-    const formatPercent = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(2)}%`;
-    };
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     return (
         <div className="calc-wrapper">

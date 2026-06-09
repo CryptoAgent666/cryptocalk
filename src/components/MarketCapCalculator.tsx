@@ -16,6 +16,7 @@ import {
     XCircle,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -396,7 +397,7 @@ function MarketCapCalculator({ lang = 'en' }: { lang?: string }) {
         if (n >= 1_000_000_000) return (n / 1_000_000_000).toFixed(2) + 'B';
         if (n >= 1_000_000) return (n / 1_000_000).toFixed(2) + 'M';
         if (n >= 1_000) return (n / 1_000).toFixed(2) + 'K';
-        return n.toLocaleString('en-US');
+        return n.toLocaleString(loc(lang));
     };
 
     const getRealismIcon = (realism: 'green' | 'yellow' | 'red') => {

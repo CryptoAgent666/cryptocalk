@@ -12,6 +12,7 @@ import {
     BarChart3,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 type Scenario = 'optimistic' | 'realistic' | 'pessimistic';
 
@@ -476,7 +477,7 @@ function MiningRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Simple ROI / Month')}</span>
                                     <span className={`result-value ${simpleRoiPerMonth >= 0 ? 'profit' : 'fee'}`}>
-                                        {simpleRoiPerMonth >= 0 ? '+' : ''}{simpleRoiPerMonth.toFixed(2)}%
+                                        {simpleRoiPerMonth >= 0 ? '+' : ''}{simpleRoiPerMonth.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                                     </span>
                                 </div>
                             </div>

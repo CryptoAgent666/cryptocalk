@@ -1,5 +1,5 @@
 import { getUiString } from '../i18n/ui-strings';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import {
     Shield,
     RotateCcw,
@@ -9,6 +9,7 @@ import {
     DollarSign,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 interface Results {
     totalDustSats: number;
@@ -22,7 +23,8 @@ interface Results {
     recommendation: string;
 }
 
-const BTC_PRICE_DEFAULT = 97000;
+// Fallback only — the live price is fetched from CoinGecko at mount.
+const BTC_PRICE_DEFAULT = 73000;
 
 const SCENARIOS = [
     {
@@ -57,6 +59,16 @@ function DustAttackCalculator({ lang = 'en' }: { lang?: string }) {
     const [feeRate, setFeeRate] = useState('10');
     const [inputSize, setInputSize] = useState('68');
     const [outputSize, setOutputSize] = useState('31');
+    const [btcPrice, setBtcPrice] = useState<number>(BTC_PRICE_DEFAULT);
+
+    // Auto-fetch live BTC price so USD figures match the rest of the site.
+    // Falls back silently to BTC_PRICE_DEFAULT if the request fails.
+    useEffect(() => {
+        fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&x_cg_demo_api_key=${import.meta.env.PUBLIC_COINGECKO_API_KEY || ''}`)
+            .then(r => r.json())
+            .then(d => { if (d.bitcoin?.usd) setBtcPrice(d.bitcoin.usd); })
+            .catch(() => {});
+    }, []);
 
     const loc = lang === 'en' ? 'en-US' : lang;
 
@@ -90,11 +102,11 @@ function DustAttackCalculator({ lang = 'en' }: { lang?: string }) {
         const consolidationFeeSats = txSizeVBytes * rate;
 
         const satsPerBTC = 100_000_000;
-        const totalDustUSD = (totalDustSats / satsPerBTC) * BTC_PRICE_DEFAULT;
-        const consolidationFeeUSD = (consolidationFeeSats / satsPerBTC) * BTC_PRICE_DEFAULT;
+        const totalDustUSD = (totalDustSats / satsPerBTC) * btcPrice;
+        const consolidationFeeUSD = (consolidationFeeSats / satsPerBTC) * btcPrice;
 
         const netValueSats = totalDustSats - consolidationFeeSats;
-        const netValueUSD = (netValueSats / satsPerBTC) * BTC_PRICE_DEFAULT;
+        const netValueUSD = (netValueSats / satsPerBTC) * btcPrice;
 
         const feePercent = totalDustSats > 0 ? (consolidationFeeSats / totalDustSats) * 100 : 0;
 
@@ -118,7 +130,7 @@ function DustAttackCalculator({ lang = 'en' }: { lang?: string }) {
             feePercent,
             recommendation,
         };
-    }, [numUtxos, avgDustSats, feeRate, inputSize, outputSize]);
+    }, [numUtxos, avgDustSats, feeRate, inputSize, outputSize, btcPrice]);
 
     const reset = () => {
         setNumUtxos('5');
@@ -145,10 +157,7 @@ function DustAttackCalculator({ lang = 'en' }: { lang?: string }) {
         }).format(n);
     };
 
-    const formatPercent = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(2)}%`;
-    };
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     const getRecommendationColor = (rec: string) => {
         switch (rec) {
@@ -327,7 +336,7 @@ function DustAttackCalculator({ lang = 'en' }: { lang?: string }) {
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                {getUiString(lang, 'Based on BTC price of ~$97,000. Actual fees depend on network congestion. Input size assumes P2WPKH (SegWit) transactions.')}
+                                {getUiString(lang, 'Based on live BTC price. Actual fees depend on network congestion. Input size assumes P2WPKH (SegWit) transactions.')}
                             </p>
                         </>
                     ) : (

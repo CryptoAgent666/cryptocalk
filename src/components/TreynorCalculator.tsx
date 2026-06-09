@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Info, RotateCcw, ShieldCheck, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const EXPECTED_RETURN_PRESETS = [12, 18, 24, 30];
 const RISK_FREE_PRESETS = [3, 4, 5];
@@ -144,7 +145,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${expectedReturn === String(preset) ? 'active' : ''}`}
                   onClick={() => setExpectedReturn(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -168,7 +169,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${riskFreeRate === String(preset) ? 'active' : ''}`}
                   onClick={() => setRiskFreeRate(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -247,7 +248,7 @@ function TreynorCalculator({ lang = 'en' }: { lang?: string }) {
                   <span className="result-label">{getUiString(lang, 'Excess return vs risk-free')}</span>
                   <span className={`result-value ${result.excessReturn >= 0 ? 'profit' : 'loss'}`}>
                     {result.excessReturn >= 0 ? '+' : ''}
-                    {result.excessReturn.toFixed(2)}%
+                    {result.excessReturn.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
                 <div className="result-row">

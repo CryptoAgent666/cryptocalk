@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const EXPECTED_RETURN_PRESETS = [12, 18, 24, 36];
 const RISK_FREE_PRESETS = [3, 4, 5];
@@ -138,7 +139,7 @@ function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${expectedReturn === String(preset) ? 'active' : ''}`}
                   onClick={() => setExpectedReturn(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -156,7 +157,7 @@ function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${riskFreeRate === String(preset) ? 'active' : ''}`}
                   onClick={() => setRiskFreeRate(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -174,7 +175,7 @@ function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${downsideDeviation === String(preset) ? 'active' : ''}`}
                   onClick={() => setDownsideDeviation(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -215,7 +216,7 @@ function SortinoCalculator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Excess return (annual)')}</span><span className={`result-value ${result.excess >= 0 ? 'profit' : 'loss'}`}>{result.excess >= 0 ? '+' : ''}{result.excess.toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Excess return (annual)')}</span><span className={`result-value ${result.excess >= 0 ? 'profit' : 'loss'}`}>{result.excess >= 0 ? '+' : ''}{result.excess.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Excess return (USD/year)')}</span><span className={`result-value ${result.annualExcessUsd >= 0 ? 'profit' : 'loss'}`}>{result.annualExcessUsd >= 0 ? '+' : ''}{formatUSD(result.annualExcessUsd)}</span></div>
                 <div className="result-divider" />
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Projected portfolio value')}</span><span className="result-value">{formatUSD(result.horizonExpectedValue)}</span></div>

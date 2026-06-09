@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useEffect, useMemo, useState } from 'react';
 import { ArrowRightLeft, Calendar, Clock, Info, RotateCcw } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 type Mode = 'timestamp' | 'datetime';
 type DisplayZone = 'local' | 'utc';
@@ -179,11 +180,11 @@ function TimestampConverter({ lang = 'en' }: { lang?: string }) {
               <div className="result-breakdown">
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Unix (seconds)')}</span>
-                  <span className="result-value">{computed.seconds.toLocaleString('en-US')}</span>
+                  <span className="result-value">{computed.seconds.toLocaleString(loc(lang))}</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Unix (milliseconds)')}</span>
-                  <span className="result-value">{computed.ms.toLocaleString('en-US')}</span>
+                  <span className="result-value">{computed.ms.toLocaleString(loc(lang))}</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'ISO 8601')}</span>
@@ -192,11 +193,11 @@ function TimestampConverter({ lang = 'en' }: { lang?: string }) {
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Estimated BTC Block')}</span>
-                  <span className="result-value">{computed.btcBlock.toLocaleString('en-US')}</span>
+                  <span className="result-value">{computed.btcBlock.toLocaleString(loc(lang))}</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Estimated ETH Block')}</span>
-                  <span className="result-value">{computed.ethBlock.toLocaleString('en-US')}</span>
+                  <span className="result-value">{computed.ethBlock.toLocaleString(loc(lang))}</span>
                 </div>
               </div>
 

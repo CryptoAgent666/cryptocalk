@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState, useEffect } from 'react';
 import { Calendar, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const MULTIPLIER_OPTIONS = [2, 3, 5, 10] as const;
 
@@ -114,7 +115,7 @@ function PaybackPeriodCalculator({ lang = 'en' }: { lang?: string }) {
             <label htmlFor="pp-return">{getUiString(lang, 'Expected Monthly Return (%)')}</label>
             <div className="pills-row">
               {[3, 5, 10, 15, 20].map((p) => (
-                <button key={p} className={`pill-btn ${monthlyReturn === String(p) ? 'active' : ''}`} onClick={() => setMonthlyReturn(String(p))}>{p}%</button>
+                <button key={p} className={`pill-btn ${monthlyReturn === String(p) ? 'active' : ''}`} onClick={() => setMonthlyReturn(String(p))}>{fmtPctValue(p, lang)}%</button>
               ))}
             </div>
             <input type="number" inputMode="decimal" value={monthlyReturn} onChange={(e) => setMonthlyReturn(e.target.value)} min="0" step="any" id="pp-return" onFocus={(e) => e.target.select()} />
@@ -173,7 +174,7 @@ function PaybackPeriodCalculator({ lang = 'en' }: { lang?: string }) {
                 {result.neededFor1yr > 0 && (
                   <>
                     <div className="result-divider" />
-                    <div className="result-row"><span className="result-label">{getUiString(lang, 'Monthly Return for 1yr Payback')}</span><span className="result-value">{result.neededFor1yr.toFixed(2)}%</span></div>
+                    <div className="result-row"><span className="result-label">{getUiString(lang, 'Monthly Return for 1yr Payback')}</span><span className="result-value">{result.neededFor1yr.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span></div>
                   </>
                 )}
                 {result.breakEvenDate && (

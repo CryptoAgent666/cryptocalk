@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Activity, BarChart3, DollarSign, Info, Percent, RotateCcw } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 // Difficulty pills (T) updated 2026-05-03: post-halving difficulty stabilized around 145T.
 const DIFFICULTY_PILLS = ['100', '120', '145', '170'];
@@ -124,7 +125,7 @@ function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${expectedChange === pill ? 'active' : ''}`}
                   onClick={() => setExpectedChange(pill)}
                 >
-                  {pill}%
+                  {fmtPctValue(pill, lang)}%
                 </button>
               ))}
             </div>
@@ -191,9 +192,9 @@ function DifficultyEstimatorCalculator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Projected difficulty')}</span><span className="result-value">{result.projectedDifficulty.toFixed(2)} T</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Projected difficulty')}</span><span className="result-value">{result.projectedDifficulty.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })} T</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Revenue delta (monthly)')}</span><span className={`result-value ${result.monthlyDelta >= 0 ? 'profit' : 'fee'}`}>{result.monthlyDelta >= 0 ? '+' : ''}{formatUSD(result.monthlyDelta)}</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Estimated network share')}</span><span className="result-value">{result.networkSharePct.toFixed(4)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Estimated network share')}</span><span className="result-value">{result.networkSharePct.toLocaleString(loc(lang), { minimumFractionDigits: 4, maximumFractionDigits: 4 })}%</span></div>
               </div>
 
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Difficulty and price dynamics are independent in reality. Treat this as directional scenario planning only.')}</p>

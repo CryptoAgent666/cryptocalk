@@ -10,7 +10,6 @@ import {
   TrendingUp,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
-
 /* ------------------------------------------------------------------ */
 /*  ETF Data                                                           */
 /* ------------------------------------------------------------------ */
@@ -230,13 +229,13 @@ function EtfFeeCalculator({ lang = 'en' }: { lang?: string }) {
                               {getUiString(lang, etf.name)}
                             </span>
                           </td>
-                          <td style={{ padding: '8px', textAlign: 'right' }}>{(etf.expenseRatio * 100).toFixed(2)}%</td>
+                          <td style={{ padding: '8px', textAlign: 'right' }}>{(etf.expenseRatio * 100).toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</td>
                           <td style={{ padding: '8px', textAlign: 'right', fontWeight: 600 }}>{formatUSD(etf.finalValue)}</td>
                           <td style={{ padding: '8px', textAlign: 'right', color: etf.totalFees > 0 ? 'var(--color-accent-red, #ef4444)' : 'var(--color-accent-green, #10b981)' }}>
                             {etf.totalFees > 0 ? '-' + formatUSD(etf.totalFees) : formatUSD(0)}
                           </td>
                           <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-accent-green, #10b981)' }}>
-                            +{etf.netReturnPct.toFixed(1)}%
+                            +{etf.netReturnPct.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                           </td>
                         </tr>
                       ))}
@@ -290,7 +289,7 @@ function EtfFeeCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'GBTC Fee Drag')}</span>
                   <span className="result-value" style={{ color: 'var(--color-accent-red, #ef4444)' }}>
-                    {(results.etfResults.find(e => e.ticker === 'GBTC')?.feeDragPct ?? 0).toFixed(1)}%
+                    {(results.etfResults.find(e => e.ticker === 'GBTC')?.feeDragPct ?? 0).toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                   </span>
                 </div>
                 <div className="result-row">

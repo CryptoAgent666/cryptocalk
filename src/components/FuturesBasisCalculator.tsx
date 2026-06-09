@@ -11,6 +11,7 @@ import {
     ArrowUpDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 interface Results {
     basisAbsolute: number;
@@ -135,15 +136,9 @@ function FuturesBasisCalculator({ lang = 'en' }: { lang?: string }) {
         }).format(n);
     };
 
-    const formatPercent = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(3)}%`;
-    };
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 3 });
 
-    const formatPercentApy = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(2)}%`;
-    };
+    const formatPercentApy = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     const isProfitable = results ? results.basisProfit > 0 : true;
 
@@ -225,7 +220,7 @@ function FuturesBasisCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${positionSize === v ? 'active' : ''}`}
                                     onClick={() => setPositionSize(v)}
                                 >
-                                    ${Number(v).toLocaleString('en-US')}
+                                    ${Number(v).toLocaleString(loc)}
                                 </button>
                             ))}
                         </div>

@@ -263,19 +263,19 @@ function PipCalculator({ lang = 'en' }: { lang?: string }) {
         return n.toFixed(8);
     };
 
-    const formatPrice = (n: number) => {
-        if (n >= 1) return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        if (n >= 0.01) return '$' + n.toFixed(4);
-        if (n >= 0.0001) return '$' + n.toFixed(6);
-        return '$' + n.toFixed(8);
+    // Locale-aware currency formatter for prices/ticks/movements so comma-locales
+    // (es/pt/tr/ru) match the P&L formatting instead of leaking en-US ("$83,000.00").
+    const usdLoc = (typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US';
+    const formatCurrencyDyn = (n: number) => {
+        const d = n >= 1 ? 2 : n >= 0.01 ? 4 : n >= 0.0001 ? 6 : 8;
+        return new Intl.NumberFormat(usdLoc, {
+            style: 'currency', currency: 'USD', minimumFractionDigits: d, maximumFractionDigits: d,
+        }).format(n);
     };
 
-    const formatTick = (n: number) => {
-        if (n >= 1) return '$' + n.toFixed(2);
-        if (n >= 0.01) return '$' + n.toFixed(4);
-        if (n >= 0.0001) return '$' + n.toFixed(6);
-        return '$' + n.toFixed(8);
-    };
+    const formatPrice = (n: number) => formatCurrencyDyn(n);
+
+    const formatTick = (n: number) => formatCurrencyDyn(n);
 
     const getTickPresets = (): number[] => {
         const pair = POPULAR_PAIRS.find((p) => p.id === selectedCoin?.id);

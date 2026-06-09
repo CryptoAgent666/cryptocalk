@@ -11,6 +11,7 @@ import {
     BarChart3,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 interface Results {
     totalRoi: number;
@@ -189,8 +190,7 @@ function RoiCalculator({ lang = 'en' }: { lang?: string }) {
             maximumFractionDigits: 2,
         }).format(n);
 
-    const formatPercent = (n: number) =>
-        `${n >= 0 ? '+' : ''}${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2, signed: true });
 
     const isProfit = results ? results.netProfit >= 0 : true;
 
@@ -227,7 +227,7 @@ function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${initialInvestment === preset ? 'active' : ''}`}
                                     onClick={() => setInitialInvestment(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -400,7 +400,7 @@ function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Holding Period')}</span>
                                     <span className="result-value">
-                                        {results.holdingDays} {getUiString(lang, 'days')} ({(results.holdingDays / 365).toFixed(1)} {getUiString(lang, 'years')})
+                                        {results.holdingDays} {getUiString(lang, 'days')} ({(results.holdingDays / 365).toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })} {getUiString(lang, 'years')})
                                     </span>
                                 </div>
                             </div>
@@ -441,10 +441,10 @@ function RoiCalculator({ lang = 'en' }: { lang?: string }) {
                                                     <tr key={comp.name} style={{ borderBottom: '1px solid var(--color-border)' }}>
                                                         <td style={{ padding: '8px', fontWeight: 500 }}>{getUiString(lang, comp.name)}</td>
                                                         <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-secondary)' }}>
-                                                            {comp.annualReturn}%
+                                                            {fmtPctValue(comp.annualReturn, lang)}%
                                                         </td>
                                                         <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text-secondary)' }}>
-                                                            +{comp.periodReturn.toFixed(2)}%
+                                                            +{comp.periodReturn.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                                                         </td>
                                                         <td style={{ padding: '8px', textAlign: 'right', color: 'var(--color-text)', fontWeight: 500 }}>
                                                             {formatUSD(comp.periodValue)}

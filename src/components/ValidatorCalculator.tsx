@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ChevronDown, Info, RotateCcw, Server, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 interface NetworkConfig {
   name: string;
@@ -217,7 +218,7 @@ function ValidatorCalculator({ lang = 'en' }: { lang?: string }) {
               <div className={`result-hero ${result.netProfit >= 0 ? 'profit' : 'loss'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Annual Net Profit')}</span>
                 <span className="result-hero-value"><Server size={28} />{fmtUSD(result.netProfit)}</span>
-                <span className={`result-hero-roi ${result.roi >= 0 ? 'profit' : 'loss'}`}>{result.roi >= 0 ? '+' : ''}{fmtNum(result.roi)}% ROI</span>
+                <span className={`result-hero-roi ${result.roi >= 0 ? 'profit' : 'loss'}`}>{result.roi >= 0 ? '+' : ''}{fmtPctValue(fmtNum(result.roi), lang)}% ROI</span>
               </div>
 
               <div className="result-breakdown">
@@ -228,7 +229,7 @@ function ValidatorCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Stake Value')}</span><span className="result-value">{fmtUSD(result.stakeValueUSD)}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Break-Even')}</span><span className="result-value">{Number.isFinite(result.breakEvenMonths) ? `${fmtNum(result.breakEvenMonths, 1)} ${getUiString(lang, 'months')}` : '—'}</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Slashing Risk')}</span><span className="result-value">{getUiString(lang, NETWORKS[network].slashRisk)}</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Slashing Probability (1 yr)')}</span><span className="result-value fee">{result.slashingProbabilityPct.toFixed(3)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Slashing Probability (1 yr)')}</span><span className="result-value fee">{result.slashingProbabilityPct.toLocaleString(loc(lang), { minimumFractionDigits: 3, maximumFractionDigits: 3 })}%</span></div>
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Expected slash loss (1 yr)')}</span><span className="result-value fee">{result.expectedSlashLossTokens.toFixed(6)} {NETWORKS[network].ticker} ({fmtUSD(result.expectedSlashLossUSD)})</span></div>
               </div>
 

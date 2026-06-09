@@ -155,7 +155,7 @@ function BitcoinEnergyCalculator({ lang = 'en' }: { lang?: string }) {
               <div className={`result-hero ${result.annualCo2Tons < 1 ? 'profit' : 'loss'}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Annual CO2 Emissions')}</span>
                 <span className="result-hero-value"><Leaf size={28} />{fmtNum(result.annualCo2Tons)} {getUiString(lang, 'tons')}</span>
-                <span className="result-hero-roi">{fmtNum(result.co2Factor, 3)} kg/{getUiString(lang, 'kWh')}</span>
+                <span className="result-hero-roi">{fmtNum(result.co2Factor, 3)} {getUiString(lang, 'kg')}/{getUiString(lang, 'kWh')}</span>
               </div>
 
               <div className="result-breakdown">

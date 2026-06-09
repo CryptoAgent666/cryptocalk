@@ -12,6 +12,7 @@ import {
     Trophy,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 interface CountryData {
     id: string;
@@ -125,7 +126,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
             maximumFractionDigits: 0,
         }).format(n);
 
-    const formatPercent = (n: number) => `${n >= 0 ? '+' : ''}${n.toFixed(1)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 1, signed: true });
 
     // SVG Chart
     const renderChart = () => {
@@ -445,7 +446,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                     style={{ color: '#ef4444' }}
                                 >
                                     <TrendingDown size={28} />
-                                    -{fiatLossPercent.toFixed(1)}%
+                                    -{fiatLossPercent.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                                 </span>
                                 <span
                                     className="result-hero-roi"
@@ -454,7 +455,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                         color: '#ef4444',
                                     }}
                                 >
-                                    {getUiString(lang, 'Your')} {formatUSD(amountNum)} {getUiString(lang, 'in')} {country.currency} {getUiString(lang, 'would lose')} {fiatLossPercent.toFixed(1)}% {getUiString(lang, 'in')} {years} {years === 1 ? getUiString(lang, 'year') : getUiString(lang, 'years')}
+                                    {getUiString(lang, 'Your')} {formatUSD(amountNum)} {getUiString(lang, 'in')} {country.currency} {getUiString(lang, 'would lose')} {fiatLossPercent.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}% {getUiString(lang, 'in')} {years} {years === 1 ? getUiString(lang, 'year') : getUiString(lang, 'years')}
                                 </span>
                             </div>
 
@@ -485,7 +486,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                                 {formatUSD(fiatValue)}
                                             </td>
                                             <td style={{ padding: '10px 8px', textAlign: 'right', fontWeight: 600, color: '#ef4444' }}>
-                                                -{fiatLossPercent.toFixed(1)}%
+                                                -{fiatLossPercent.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                                             </td>
                                             <td style={{ padding: '10px 8px', textAlign: 'right', color: 'var(--color-text-muted)' }}>
                                                 --
@@ -586,11 +587,11 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Current Inflation Rate')}</span>
-                                    <span className="result-value fee">{(country.inflationRate * 100).toFixed(1)}%</span>
+                                    <span className="result-value fee">{(country.inflationRate * 100).toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Crypto Adoption Rate')}</span>
-                                    <span className="result-value profit">{country.adoptionRate}%</span>
+                                    <span className="result-value profit">{fmtPctValue(country.adoptionRate, lang)}%</span>
                                 </div>
                             </div>
 

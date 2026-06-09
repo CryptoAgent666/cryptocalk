@@ -13,6 +13,7 @@ import {
     Clock,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPctValue } from '../i18n/format';
 
 type Mode = 'fiat-to-crypto' | 'crypto-to-fiat';
 type CryptoType = 'bitcoin' | 'ethereum' | 'tether';
@@ -344,7 +345,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                                             className={`pill-btn ${convertPct === p ? 'active' : ''}`}
                                             onClick={() => setConvertPct(p)}
                                         >
-                                            {p}%
+                                            {fmtPctValue(p, lang)}%
                                         </button>
                                     ))}
                                 </div>
@@ -383,7 +384,7 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                                             className={`pill-btn ${conversionFee === fee ? 'active' : ''}`}
                                             onClick={() => setConversionFee(fee)}
                                         >
-                                            {fee}%
+                                            {fmtPctValue(fee, lang)}%
                                         </button>
                                     ))}
                                 </div>
@@ -540,11 +541,11 @@ function CryptoSalaryCalculator({ lang = 'en' }: { lang?: string }) {
                                         <span className="result-value">{formatUSD(salaryPerPeriod)}</span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">{getUiString(lang, 'Crypto Allocation')} ({pctNum}%)</span>
+                                        <span className="result-label">{getUiString(lang, 'Crypto Allocation')} ({fmtPctValue(pctNum, lang)}%)</span>
                                         <span className="result-value">{formatUSD(cryptoAllocationPerPeriod)}</span>
                                     </div>
                                     <div className="result-row">
-                                        <span className="result-label">{getUiString(lang, 'Conversion Fee')} ({feeNum}%)</span>
+                                        <span className="result-label">{getUiString(lang, 'Conversion Fee')} ({fmtPctValue(feeNum, lang)}%)</span>
                                         <span className="result-value fee">-{formatUSD(feeAmountPerPeriod)}</span>
                                     </div>
                                     <div className="result-divider" />

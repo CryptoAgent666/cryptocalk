@@ -12,6 +12,7 @@ import {
     Clock,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const HARVEST_FREQUENCIES = [
     { id: 'daily', label: 'Daily', days: 1 },
@@ -263,7 +264,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${poolRate === String(preset) ? 'active' : ''}`}
                                     onClick={() => setPoolRate(String(preset))}
                                 >
-                                    {preset}%
+                                    {fmtPctValue(preset, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -355,7 +356,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${ilPercent === String(preset) ? 'active' : ''}`}
                                     onClick={() => setIlPercent(String(preset))}
                                 >
-                                    {preset}%
+                                    {fmtPctValue(preset, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -403,7 +404,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                                     {netYield >= 0 ? '+' : ''}{formatUSD(netYield)}
                                 </span>
                                 <span className="result-hero-roi" style={{ color: netYield >= 0 ? 'var(--color-accent-green)' : '#ef4444' }}>
-                                    {depositVal > 0 ? `${netYield >= 0 ? '+' : ''}${((netYield / depositVal) * 100).toFixed(2)}% ${getUiString(lang, 'net ROI')}` : ''}
+                                    {depositVal > 0 ? `${netYield >= 0 ? '+' : ''}${((netYield / depositVal) * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% ${getUiString(lang, 'net ROI')}` : ''}
                                 </span>
                             </div>
 
@@ -415,7 +416,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Pool')} {rateType}</span>
-                                    <span className="result-value">{poolRate}%</span>
+                                    <span className="result-value">{fmtPctValue(poolRate, lang)}%</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
@@ -441,7 +442,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">
-                                    <span className="result-label">{getUiString(lang, 'Impermanent Loss')} ({ilPct}%)</span>
+                                    <span className="result-label">{getUiString(lang, 'Impermanent Loss')} ({fmtPctValue(ilPct, lang)}%)</span>
                                     <span className="result-value fee">-{formatUSD(ilLoss)}</span>
                                 </div>
                                 <div className="result-divider" />
@@ -539,7 +540,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
                                                         padding: '8px', textAlign: 'right', fontWeight: 600,
                                                         color: row.gasPct > 50 ? '#ef4444' : row.gasPct > 20 ? '#f97316' : 'var(--color-accent-green)',
                                                     }}>
-                                                        {row.gasPct.toFixed(1)}%
+                                                        {row.gasPct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
                                                     </td>
                                                     <td style={{
                                                         padding: '8px', textAlign: 'right', fontWeight: 600,

@@ -12,6 +12,7 @@ import {
     Info,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 interface AsicPreset {
     name: string;
@@ -429,7 +430,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${poolFee === preset ? 'active' : ''}`}
                                     onClick={() => setPoolFee(preset)}
                                 >
-                                    {preset}%
+                                    {fmtPctValue(preset, lang)}%
                                 </button>
                             ))}
                         </div>
@@ -461,7 +462,7 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${hardwareCost === preset ? 'active' : ''}`}
                                     onClick={() => setHardwareCost(preset)}
                                 >
-                                    ${Number(preset).toLocaleString('en-US')}
+                                    ${Number(preset).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>

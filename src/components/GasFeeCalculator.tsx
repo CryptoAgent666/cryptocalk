@@ -134,10 +134,13 @@ function GasFeeCalculator({ lang = 'en' }: { lang?: string }) {
     };
 
     const formatUSD = (n: number) => {
-        if (n < 0.01 && n > 0) return `$${n.toFixed(6)}`;
-        if (n < 1) return `$${n.toFixed(4)}`;
-        return new Intl.NumberFormat((typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US', {
-            style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2,
+        const usdLoc = (typeof lang !== 'undefined' && lang) ? (lang === 'en' ? 'en-US' : lang) : 'en-US';
+        // Localize the decimal separator/currency placement for small gas costs too
+        // (previously the <$1 branches hardcoded a `$` prefix + period decimal, which
+        // looked wrong on comma-locales — e.g. "$0.006015" next to "2 029,98 $" on ru).
+        const digits = (n < 0.01 && n > 0) ? 6 : (n < 1 ? 4 : 2);
+        return new Intl.NumberFormat(usdLoc, {
+            style: 'currency', currency: 'USD', minimumFractionDigits: digits, maximumFractionDigits: digits,
         }).format(n);
     };
 

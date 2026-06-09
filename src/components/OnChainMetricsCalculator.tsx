@@ -77,8 +77,12 @@ function OnChainMetricsCalculator({ lang = 'en' }: { lang?: string }) {
     if (mc <= 0 || rc <= 0) return null;
 
     const mvrv = mc / rc;
-    const nvt = vol > 0 ? mc / (vol * 365) : 0;
-    const nvtSignal = vol > 0 ? mc / (vol * 90) : 0;
+    // NVT = network value / daily on-chain transaction volume (standard scale ~20-100).
+    // The zone thresholds below (>65 overvalued, <25 undervalued) are calibrated for this.
+    const nvt = vol > 0 ? mc / vol : 0;
+    // NVT Signal normally uses a 90-day MA of daily volume; without 90d history the
+    // single daily-volume figure is the best available proxy (same scale as NVT).
+    const nvtSignal = vol > 0 ? mc / vol : 0;
     const sopr = mvrv > 1 ? 1.02 : mvrv < 1 ? 0.97 : 1.0;
 
     let mvrvZone: 'green' | 'yellow' | 'red' = 'yellow';
@@ -110,7 +114,8 @@ function OnChainMetricsCalculator({ lang = 'en' }: { lang?: string }) {
       mvrv, nvt, nvtSignal, sopr,
       mvrvZone, mvrvLabel, nvtZone, nvtLabel,
       soprZone, soprLabel, overallSignal, overallLabel,
-      networkValue: tx > 0 ? mc / tx : 0,
+      // "Value per Transaction" = average USD value moved per on-chain tx (volume / count).
+      networkValue: tx > 0 ? vol / tx : 0,
     };
   }, [marketCap, realizedCap, onChainVolume, txCount]);
 

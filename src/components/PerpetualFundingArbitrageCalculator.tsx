@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { TrendingUp, Info, RotateCcw, ArrowLeftRight } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const FA_SCENARIOS = [
   { label: 'Bull Funding (0.05%)', positionSize: '10000', fundingRatePct: '0.05', intervalsPerDay: '3', tradingFeePct: '0.04', daysHeld: '30' },
@@ -145,7 +146,7 @@ function PerpetualFundingArbitrageCalculator({ lang = 'en' }: { lang?: string })
                 <button key={p}
                   className={`pill-btn ${fundingRatePct === p ? 'active' : ''}`}
                   onClick={() => setFundingRatePct(p)}>
-                  {p}%
+                  {fmtPctValue(p, lang)}%
                 </button>
               ))}
             </div>
@@ -177,7 +178,7 @@ function PerpetualFundingArbitrageCalculator({ lang = 'en' }: { lang?: string })
                 <button key={p}
                   className={`pill-btn ${tradingFeePct === p ? 'active' : ''}`}
                   onClick={() => setTradingFeePct(p)}>
-                  {p}%
+                  {fmtPctValue(p, lang)}%
                 </button>
               ))}
             </div>
@@ -214,7 +215,7 @@ function PerpetualFundingArbitrageCalculator({ lang = 'en' }: { lang?: string })
               <div className={`result-hero ${result.zone}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Annualized Net APR')}</span>
                 <span className="result-hero-value"><ArrowLeftRight size={28} />
-                  {result.annualizedNetApr >= 0 ? '+' : ''}{result.annualizedNetApr.toFixed(2)}%
+                  {result.annualizedNetApr >= 0 ? '+' : ''}{result.annualizedNetApr.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                 </span>
                 <span className={`result-hero-roi ${result.zone}`}>
                   {getUiString(lang, result.direction)} · {getUiString(lang, result.rating)}
@@ -260,17 +261,17 @@ function PerpetualFundingArbitrageCalculator({ lang = 'en' }: { lang?: string })
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Net P&L')}</span>
                   <span className={`result-value ${result.netProfit >= 0 ? 'profit' : 'loss'}`}>
-                    {result.netProfit >= 0 ? '+' : ''}{formatUSD(result.netProfit)} ({result.netProfitPct.toFixed(2)}%)
+                    {result.netProfit >= 0 ? '+' : ''}{formatUSD(result.netProfit)} ({result.netProfitPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)
                   </span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Annualized funding APR')}</span>
-                  <span className="result-value">{result.annualizedFundingApr.toFixed(2)}%</span>
+                  <span className="result-value">{result.annualizedFundingApr.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Break-even funding/interval')}</span>
-                  <span className="result-value">{result.breakevenFundingPctPerInterval.toFixed(4)}%</span>
+                  <span className="result-value">{result.breakevenFundingPctPerInterval.toLocaleString(loc(lang), { minimumFractionDigits: 4, maximumFractionDigits: 4 })}%</span>
                 </div>
               </div>
 

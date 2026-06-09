@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { AlertTriangle, Info, RotateCcw, Shield } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 type Network = 'Ethereum' | 'Arbitrum' | 'Base' | 'BSC';
 
@@ -106,7 +107,7 @@ function MevProtectionCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${swapAmount === String(preset) ? 'active' : ''}`}
                   onClick={() => setSwapAmount(String(preset))}
                 >
-                  ${preset.toLocaleString('en-US')}
+                  ${preset.toLocaleString(loc(lang))}
                 </button>
               ))}
             </div>
@@ -121,7 +122,7 @@ function MevProtectionCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${slippage === String(preset) ? 'active' : ''}`}
                   onClick={() => setSlippage(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>

@@ -10,7 +10,6 @@ import {
     ChevronDown,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
-
 interface Results {
     taxOwed: number;
     netEstate: number;
@@ -211,7 +210,7 @@ function CryptoInheritanceCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 <div className="result-row">
                                     <span className="result-label">{getUiString(lang, 'Effective Tax Rate')}</span>
-                                    <span className="result-value">{results.effectiveTaxRate.toFixed(1)}%</span>
+                                    <span className="result-value">{results.effectiveTaxRate.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                                 </div>
                                 <div className="result-divider" />
                                 <div className="result-row">

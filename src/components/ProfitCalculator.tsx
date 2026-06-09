@@ -13,6 +13,7 @@ import {
     X,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, loc, fmtPctValue } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -272,8 +273,7 @@ function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
             maximumFractionDigits: 2,
         }).format(n);
 
-    const formatPercent = (n: number) =>
-        `${n >= 0 ? '+' : ''}${n.toFixed(2)}%`;
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2, signed: true });
 
     const isProfit = results ? results.profitLoss >= 0 : true;
 
@@ -373,7 +373,7 @@ function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${buyPrice === price ? 'active' : ''}`}
                                     onClick={() => setBuyPrice(price)}
                                 >
-                                    ${Number(price).toLocaleString('en-US')}
+                                    ${Number(price).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -407,7 +407,7 @@ function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                     className={`pill-btn ${sellPrice === price ? 'active' : ''}`}
                                     onClick={() => setSellPrice(price)}
                                 >
-                                    ${Number(price).toLocaleString('en-US')}
+                                    ${Number(price).toLocaleString(loc(lang))}
                                 </button>
                             ))}
                         </div>
@@ -455,7 +455,7 @@ function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                     }
                                 >
                                     {inputMode === 'investment'
-                                        ? `$${Number(value).toLocaleString('en-US')}`
+                                        ? `$${Number(value).toLocaleString(loc(lang))}`
                                         : value}
                                 </button>
                             ))}
@@ -503,7 +503,7 @@ function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                                 className={`pill-btn ${entryFee === fee ? 'active' : ''}`}
                                                 onClick={() => setEntryFee(fee)}
                                             >
-                                                {fee}%
+                                                {fmtPctValue(fee, lang)}%
                                             </button>
                                         ))}
                                     </div>
@@ -527,7 +527,7 @@ function ProfitCalculator({ lang = 'en' }: { lang?: string }) {
                                                 className={`pill-btn ${exitFee === fee ? 'active' : ''}`}
                                                 onClick={() => setExitFee(fee)}
                                             >
-                                                {fee}%
+                                                {fmtPctValue(fee, lang)}%
                                             </button>
                                         ))}
                                     </div>

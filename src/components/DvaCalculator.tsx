@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BarChart3, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const SCENARIOS = [
   { label: 'Steady BTC', budget: '12000', period: '12', baseMo: '1000', volatility: 'low' as const, startPrice: '65000', targetPath: 'linear' as const },
@@ -30,7 +31,7 @@ function simulatePricePath(startPrice: number, months: number, vol: Volatility):
 
 function DvaCalculator({ lang = 'en' }: { lang?: string }) {
   const fmtUSD = (v: number) => new Intl.NumberFormat(lang === 'en' ? 'en-US' : lang, { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v);
-  const fmtPct = (v: number) => `${v >= 0 ? '+' : ''}${v.toFixed(2)}%`;
+  const fmtPct = (v: number) => `${v >= 0 ? '+' : ''}${v.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`;
 
   const [budget, setBudget] = useState('12000');
   const [period, setPeriod] = useState('12');

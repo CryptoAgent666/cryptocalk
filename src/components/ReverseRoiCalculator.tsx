@@ -12,6 +12,7 @@ import {
     Loader2,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 interface CoinSuggestion {
     id: string;
@@ -578,7 +579,7 @@ function ReverseRoiCalculator({ lang = 'en' }: { lang?: string }) {
                                 <div className="result-row">
                                     <span className="result-label"><strong>{getUiString(lang, 'Growth Needed')}</strong></span>
                                     <span className="result-value profit">
-                                        <strong>{results.growthMultiplier.toFixed(2)}x / +{results.growthPercent.toFixed(1)}%</strong>
+                                        <strong>{results.growthMultiplier.toFixed(2)}x / +{results.growthPercent.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</strong>
                                     </span>
                                 </div>
                                 <div className="result-row">

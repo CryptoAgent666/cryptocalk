@@ -9,6 +9,7 @@ import {
     ArrowRightLeft,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent } from '../i18n/format';
 
 interface Results {
     grossProfit: number;
@@ -125,14 +126,11 @@ function FlashLoanCalculator({ lang = 'en' }: { lang?: string }) {
         }).format(n);
     };
 
-    const formatPercent = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(4)}%`;
-    };
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 4 });
 
     const formatROI = (n: number) => {
         if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(1)}%`;
+        return `${n.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%`;
     };
 
     return (

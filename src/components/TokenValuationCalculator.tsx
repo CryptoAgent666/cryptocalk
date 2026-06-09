@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { ChevronDown, Coins, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPctValue } from '../i18n/format';
 
 interface ComparableProject {
   name: string;
@@ -202,11 +203,11 @@ function TokenValuationCalculator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <div className="result-breakdown">
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'MC / FDV Ratio')}</span><span className="result-value">{fmtNum(result.mcFdvRatio * 100)}%</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Dilution Risk')}</span><span className={`result-value ${result.dilutionRisk > 50 ? 'fee' : ''}`}>{fmtNum(result.dilutionRisk)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'MC / FDV Ratio')}</span><span className="result-value">{fmtPctValue(fmtNum(result.mcFdvRatio * 100), lang)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Dilution Risk')}</span><span className={`result-value ${result.dilutionRisk > 50 ? 'fee' : ''}`}>{fmtPctValue(fmtNum(result.dilutionRisk), lang)}%</span></div>
                 <div className="result-divider" />
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Price at Target MC')}</span><span className="result-value profit">{fmtPrice(result.priceAtTarget)}</span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Required Growth')}</span><span className={`result-value ${result.requiredGrowth >= 0 ? 'profit' : 'loss'}`}>{result.requiredGrowth >= 0 ? '+' : ''}{fmtNum(result.requiredGrowth)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Required Growth')}</span><span className={`result-value ${result.requiredGrowth >= 0 ? 'profit' : 'loss'}`}>{result.requiredGrowth >= 0 ? '+' : ''}{fmtPctValue(fmtNum(result.requiredGrowth), lang)}%</span></div>
 
                 {result.impliedPE !== null && (
                   <>
@@ -225,7 +226,7 @@ function TokenValuationCalculator({ lang = 'en' }: { lang?: string }) {
                   <div className="result-row"><span className="result-label">{comp.name} {getUiString(lang, 'Market Cap')}</span><span className="result-value">{fmtUSD(comp.marketCap)}</span></div>
                   <div className="result-row"><span className="result-label">{getUiString(lang, 'Your Price at')} {comp.name} MC</span><span className="result-value">{fmtPrice(result.compPriceIfSameMC)}</span></div>
                   {result.compGrowth !== null && (
-                    <div className="result-row"><span className="result-label">{getUiString(lang, 'Growth to Match')}</span><span className={`result-value ${result.compGrowth >= 0 ? 'profit' : 'loss'}`}>{result.compGrowth >= 0 ? '+' : ''}{fmtNum(result.compGrowth)}%</span></div>
+                    <div className="result-row"><span className="result-label">{getUiString(lang, 'Growth to Match')}</span><span className={`result-value ${result.compGrowth >= 0 ? 'profit' : 'loss'}`}>{result.compGrowth >= 0 ? '+' : ''}{fmtPctValue(fmtNum(result.compGrowth), lang)}%</span></div>
                   )}
                 </div>
               )}

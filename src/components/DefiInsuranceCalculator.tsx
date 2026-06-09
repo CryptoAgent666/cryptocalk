@@ -11,6 +11,7 @@ import {
     AlertTriangle,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPercent, fmtPctValue } from '../i18n/format';
 
 interface Results {
     premiumCost: number;
@@ -172,10 +173,7 @@ function DefiInsuranceCalculator({ lang = 'en' }: { lang?: string }) {
         }).format(n);
     };
 
-    const formatPercent = (n: number) => {
-        if (!Number.isFinite(n)) return '\u2014';
-        return `${n.toFixed(2)}%`;
-    };
+    const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });
 
     const getRiskColor = (tier: RiskTier) => {
         switch (tier) {
@@ -422,7 +420,7 @@ function DefiInsuranceCalculator({ lang = 'en' }: { lang?: string }) {
                                                 const insuredBetter = row.evInsured > row.evUninsured;
                                                 return (
                                                     <tr key={row.hackProb} style={{ borderBottom: '1px solid var(--color-border)' }}>
-                                                        <td style={{ padding: '8px 6px' }}>{row.hackProb}%</td>
+                                                        <td style={{ padding: '8px 6px' }}>{fmtPctValue(row.hackProb, lang)}%</td>
                                                         <td style={{ textAlign: 'right', padding: '8px 6px', color: insuredBetter ? 'var(--color-accent-green)' : 'var(--color-text-muted)' }}>
                                                             {formatUSD(row.evInsured)}
                                                         </td>

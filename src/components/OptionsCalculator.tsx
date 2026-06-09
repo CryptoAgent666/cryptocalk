@@ -11,6 +11,7 @@ import {
     BarChart3,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { fmtPctValue } from '../i18n/format';
 
 interface Results {
     breakEven: number;
@@ -274,7 +275,7 @@ function OptionsCalculator({ lang = 'en' }: { lang?: string }) {
                         <div className="pills-row">
                             {['30', '45', '55', '70', '100'].map((v) => (
                                 <button key={v} className={`pill-btn ${iv === v ? 'active' : ''}`}
-                                    onClick={() => setIv(v)}>{v}%</button>
+                                    onClick={() => setIv(v)}>{fmtPctValue(v, lang)}%</button>
                             ))}
                         </div>
                         <input type="number" inputMode="decimal" value={iv} onChange={(e) => setIv(e.target.value)}

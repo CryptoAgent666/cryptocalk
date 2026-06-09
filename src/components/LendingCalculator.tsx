@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { BadgeDollarSign, Info, RotateCcw, TrendingUp } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 type CompoundingMode = 'simple' | 'monthly' | 'daily';
 
@@ -145,7 +146,7 @@ function LendingCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${apy === String(preset) ? 'active' : ''}`}
                   onClick={() => setApy(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -179,7 +180,7 @@ function LendingCalculator({ lang = 'en' }: { lang?: string }) {
                   className={`pill-btn ${platformFee === String(preset) ? 'active' : ''}`}
                   onClick={() => setPlatformFee(String(preset))}
                 >
-                  {preset}%
+                  {fmtPctValue(preset, lang)}%
                 </button>
               ))}
             </div>
@@ -226,7 +227,7 @@ function LendingCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Performance fee')}</span><span className="result-value fee">-{formatUSD(result.feeCost)}</span></div>
                 <div className="result-divider" />
                 <div className="result-row"><span className="result-label"><strong>{getUiString(lang, 'Net final balance')}</strong></span><span className="result-value"><strong>{formatUSD(result.netFinal)}</strong></span></div>
-                <div className="result-row"><span className="result-label">{getUiString(lang, 'Annualized net APY')}</span><span className={`result-value ${result.annualizedReturn >= 0 ? 'profit' : 'loss'}`}>{(result.annualizedReturn * 100).toFixed(2)}%</span></div>
+                <div className="result-row"><span className="result-label">{getUiString(lang, 'Annualized net APY')}</span><span className={`result-value ${result.annualizedReturn >= 0 ? 'profit' : 'loss'}`}>{(result.annualizedReturn * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span></div>
               </div>
 
               <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'Rates, lock periods, and real payout schedules vary by protocol and platform. Use conservative assumptions for planning.')}</p>

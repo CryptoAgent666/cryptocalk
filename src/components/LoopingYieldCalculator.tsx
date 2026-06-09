@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { TrendingUp, Info, RotateCcw, Repeat } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc, fmtPctValue } from '../i18n/format';
 
 const LP_SCENARIOS = [
   { label: 'Conservative 2x', deposit: '10000', supplyApy: '5', borrowApr: '3', ltvTarget: '40', liquidationLtv: '85', loops: '1' },
@@ -64,7 +65,7 @@ function LoopingYieldCalculator({ lang = 'en' }: { lang?: string }) {
     const yieldMultiplier = supplyPct > 0 ? netApr / supplyPct : 0;
 
     // Gas costs
-    const totalGas = gasPerOp * numLoops * 2; // each loop = 2 ops (borrow + deposit)
+    const totalGas = gasPerOp * numLoops; // input is the full per-loop gas cost (borrow + deposit)
     const gasPctOfDeposit = (totalGas / dep) * 100;
 
     // Liquidation analysis
@@ -152,7 +153,7 @@ function LoopingYieldCalculator({ lang = 'en' }: { lang?: string }) {
                 <button key={p}
                   className={`pill-btn ${ltvTarget === p ? 'active' : ''}`}
                   onClick={() => setLtvTarget(p)}>
-                  {p}%
+                  {fmtPctValue(p, lang)}%
                 </button>
               ))}
             </div>
@@ -203,7 +204,7 @@ function LoopingYieldCalculator({ lang = 'en' }: { lang?: string }) {
               <div className={`result-hero ${result.zone}`}>
                 <span className="result-hero-label">{getUiString(lang, 'Net APR')}</span>
                 <span className="result-hero-value"><Repeat size={28} />
-                  {result.netApr >= 0 ? '+' : ''}{result.netApr.toFixed(2)}%
+                  {result.netApr >= 0 ? '+' : ''}{result.netApr.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                 </span>
                 <span className={`result-hero-roi ${result.zone}`}>
                   {result.effectiveLeverage.toFixed(2)}× · {getUiString(lang, result.rating)}
@@ -255,12 +256,12 @@ function LoopingYieldCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Total gas (one-time)')}</span>
-                  <span className="result-value fee">−{formatUSD(result.totalGas)} ({result.gasPctOfDeposit.toFixed(2)}%)</span>
+                  <span className="result-value fee">−{formatUSD(result.totalGas)} ({result.gasPctOfDeposit.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)</span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Current LTV')}</span>
-                  <span className="result-value">{(result.currentLtv * 100).toFixed(2)}%</span>
+                  <span className="result-value">{(result.currentLtv * 100).toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Health Factor')}</span>
@@ -270,7 +271,7 @@ function LoopingYieldCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Liquidation if collateral drops')}</span>
-                  <span className="result-value loss">−{result.liquidationDropPct.toFixed(2)}%</span>
+                  <span className="result-value loss">−{result.liquidationDropPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Liquidation risk')}</span>

@@ -9,7 +9,7 @@ import {
     Trash2,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
-
+import { fmtPctValue } from '../i18n/format';
 interface Trait {
     id: number;
     name: string;
@@ -183,7 +183,7 @@ function NftRarityCalculator({ lang = 'en' }: { lang?: string }) {
     const formatScientific = (n: number) => {
         if (!Number.isFinite(n) || n === 0) return '\u2014';
         if (n < 0.0001) return n.toExponential(4);
-        return `${(n * 100).toFixed(6)}%`;
+        return `${(n * 100).toLocaleString(loc, { minimumFractionDigits: 6, maximumFractionDigits: 6 })}%`;
     };
 
     const tierColor = (tier: string) => {
@@ -323,7 +323,7 @@ function NftRarityCalculator({ lang = 'en' }: { lang?: string }) {
                                 </div>
                                 {results.traitBreakdown.map((tb) => (
                                     <div className="result-row" key={tb.name} style={{ paddingLeft: '12px' }}>
-                                        <span className="result-label">{tb.name} ({formatNumber(tb.frequency)}%)</span>
+                                        <span className="result-label">{tb.name} ({fmtPctValue(formatNumber(tb.frequency), lang)}%)</span>
                                         <span className="result-value">+{formatNumber(tb.contribution)}</span>
                                     </div>
                                 ))}

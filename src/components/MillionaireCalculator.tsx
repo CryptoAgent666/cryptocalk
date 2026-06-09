@@ -10,7 +10,7 @@ import {
   Trophy,
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
-
+import { fmtPctValue } from '../i18n/format';
 /* ------------------------------------------------------------------ */
 /*  Presets & Constants                                                */
 /* ------------------------------------------------------------------ */
@@ -181,7 +181,7 @@ function MillionaireCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="pills-row">
               {RETURN_PILLS.map(v => (
                 <button key={v} className={`pill-btn ${annualReturn === v ? 'active' : ''}`} onClick={() => setAnnualReturn(v)}>
-                  {v}%
+                  {fmtPctValue(v, lang)}%
                 </button>
               ))}
             </div>
@@ -195,7 +195,7 @@ function MillionaireCalculator({ lang = 'en' }: { lang?: string }) {
             <div className="pills-row">
               {ALLOCATION_PILLS.map(v => (
                 <button key={v} className={`pill-btn ${allocation === v ? 'active' : ''}`} onClick={() => setAllocation(v)}>
-                  {v}%
+                  {fmtPctValue(v, lang)}%
                 </button>
               ))}
             </div>
@@ -263,7 +263,7 @@ function MillionaireCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Required Return (10 yr)')}</span>
-                  <span className="result-value">{results.requiredReturn10y.toFixed(1)}%</span>
+                  <span className="result-value">{results.requiredReturn10y.toLocaleString(loc, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%</span>
                 </div>
               </div>
 

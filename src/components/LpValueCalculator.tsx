@@ -2,6 +2,7 @@ import { getUiString } from '../i18n/ui-strings';
 import { useMemo, useState } from 'react';
 import { Droplets, Info, RotateCcw, Layers } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
+import { loc } from '../i18n/format';
 
 const LP_PRESETS = [
   { label: 'ETH/USDC V2', tokenAQty: '5', tokenAPrice: '3500', tokenBQty: '17500', tokenBPrice: '1', initialAPrice: '3000', initialBPrice: '1', feesEarned: '450', daysHeld: '90' },
@@ -186,7 +187,7 @@ function LpValueCalculator({ lang = 'en' }: { lang?: string }) {
                   {result.lpVsHodl >= 0 ? '+' : ''}{formatUSD(result.lpVsHodl)}
                 </span>
                 <span className={`result-hero-roi ${result.zone}`}>
-                  {result.lpVsHodlPct >= 0 ? '+' : ''}{result.lpVsHodlPct.toFixed(2)}% · {getUiString(lang, result.rating)}
+                  {result.lpVsHodlPct >= 0 ? '+' : ''}{result.lpVsHodlPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}% · {getUiString(lang, result.rating)}
                 </span>
               </div>
 
@@ -207,7 +208,7 @@ function LpValueCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Impermanent loss')}</span>
                   <span className={`result-value ${result.ilUsd >= 0 ? 'profit' : 'loss'}`}>
-                    {result.ilUsd >= 0 ? '+' : ''}{formatUSD(result.ilUsd)} ({result.ilPct >= 0 ? '+' : ''}{result.ilPct.toFixed(2)}%)
+                    {result.ilUsd >= 0 ? '+' : ''}{formatUSD(result.ilUsd)} ({result.ilPct >= 0 ? '+' : ''}{result.ilPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)
                   </span>
                 </div>
                 <div className="result-row">
@@ -218,25 +219,25 @@ function LpValueCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Total LP return')}</span>
                   <span className={`result-value ${result.totalReturn >= 0 ? 'profit' : 'loss'}`}>
-                    {result.totalReturn >= 0 ? '+' : ''}{formatUSD(result.totalReturn)} ({result.totalReturnPct >= 0 ? '+' : ''}{result.totalReturnPct.toFixed(2)}%)
+                    {result.totalReturn >= 0 ? '+' : ''}{formatUSD(result.totalReturn)} ({result.totalReturnPct >= 0 ? '+' : ''}{result.totalReturnPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)
                   </span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'HODL return')}</span>
                   <span className={`result-value ${result.hodlReturn >= 0 ? 'profit' : 'loss'}`}>
-                    {result.hodlReturn >= 0 ? '+' : ''}{formatUSD(result.hodlReturn)} ({result.hodlReturnPct >= 0 ? '+' : ''}{result.hodlReturnPct.toFixed(2)}%)
+                    {result.hodlReturn >= 0 ? '+' : ''}{formatUSD(result.hodlReturn)} ({result.hodlReturnPct >= 0 ? '+' : ''}{result.hodlReturnPct.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)
                   </span>
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Annualized total return')}</span>
                   <span className={`result-value ${result.annualizedReturn >= 0 ? 'profit' : 'loss'}`}>
-                    {result.annualizedReturn >= 0 ? '+' : ''}{result.annualizedReturn.toFixed(2)}%
+                    {result.annualizedReturn >= 0 ? '+' : ''}{result.annualizedReturn.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>
                 </div>
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Fees-only APR')}</span>
-                  <span className="result-value profit">+{result.feesApr.toFixed(2)}%</span>
+                  <span className="result-value profit">+{result.feesApr.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
                 </div>
               </div>
 
