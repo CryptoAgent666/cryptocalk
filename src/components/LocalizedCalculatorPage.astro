@@ -41,13 +41,7 @@ export interface Props {
 const { lang, slug, title, description, faq = [], pathOverride } = Astro.props;
 
 // Prepare serialized UI strings for client-side hydration (inline script)
-import esDict from "../i18n/ui-strings/es";
-import ptDict from "../i18n/ui-strings/pt";
-import trDict from "../i18n/ui-strings/tr";
-import hiDict from "../i18n/ui-strings/hi";
-import ruDict from "../i18n/ui-strings/ru";
-const _langDicts: Record<string, Record<string, string>> = { es: esDict, pt: ptDict, tr: trDict, hi: hiDict, ru: ruDict };
-const _clientLangJson = lang !== 'en' ? JSON.stringify(_langDicts[lang] ?? {}) : '';
+import { DICT_VERSIONS } from "../i18n/client-dict-manifest";
 
 const t = getTranslations(lang);
 const prefix = lang === "en" ? "" : `/${lang}`;
@@ -554,17 +548,9 @@ const howToSchema = howToSteps.length >= 3 ? {
     </nav>
 
     {lang !== 'en' && (
-      <script is:inline define:vars={{ _clientLangJson, lang }}>
-        // Register UI translation strings before React hydration.
-        // This runs synchronously (non-module), so the registry is populated
-        // before any module <script type="module"> hydration code executes.
-        (function() {
-          var d = JSON.parse(_clientLangJson);
-          var r = window.__uiStringRegistry;
-          if (!r) { r = {}; window.__uiStringRegistry = r; }
-          r[lang] = d;
-        })();
-      </script>
+      <!-- UI translations: external cacheable file (was a ~210KB per-page inline blob).
+           Classic blocking script populates window.__uiStringRegistry before module hydration. -->
+      <script is:inline src={`/i18n/${lang}.js?v=${DICT_VERSIONS[lang]}`}></script>
     )}
     <section class="calculator-section">
       <div class="section-container">
