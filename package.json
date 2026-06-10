@@ -14,7 +14,8 @@
     "astro": "astro",
     "cap:sync": "npx cap sync android",
     "cap:open": "npx cap open android",
-    "cap:build": "npm run build && npx cap sync android"
+    "cap:build": "npm run build && npx cap sync android",
+    "ota:publish": "bash scripts/ota-publish.sh"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",

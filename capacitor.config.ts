@@ -1,5 +1,11 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
+// Self-hosted OTA endpoint (PHP on our VPS) — same pattern as the rest of the Calk
+// network (CALK-AU/UK/GE, KZ-CALK). statsUrl/channelUrl emptied so the plugin never
+// contacts Capgo's cloud. Override for local testing:
+//   CRYPTO_OTA_URL=http://localhost:8788 npx cap sync android
+const OTA_BASE = process.env.CRYPTO_OTA_URL || 'https://ota.cryptocalk.com';
+
 const config: CapacitorConfig = {
   appId: 'com.cryptocalk.calculator',
   appName: 'CryptoCalk',
@@ -11,20 +17,19 @@ const config: CapacitorConfig = {
     allowNavigation: ['cryptocalk.com', '*.cryptocalk.com'],
   },
   plugins: {
+    // Capgo live updates — fully self-hosted on our own VPS (PHP endpoint), like CALK-AU.
+    // OTA updates the app's own web bundle (Play-compliant; NOT a remote webview).
+    // Requires the web layer to call notifyAppReady() (see CapgoUpdater.astro) or it rolls back.
     CapacitorUpdater: {
-      // OTA web-bundle updates (Play-compliant: updates JS/HTML/CSS, not a remote webview).
-      // autoUpdate checks Capgo on launch, downloads in background, applies on next launch.
-      // Requires the web layer to call notifyAppReady() (see CapgoUpdater.astro) or it rolls back.
       autoUpdate: true,
-      appReadyTimeout: 15000,
+      updateUrl: `${OTA_BASE}/updates.php`,
+      statsUrl: '',
+      channelUrl: '',
+      appReadyTimeout: 10000,
       responseTimeout: 20,
       autoDeletePrevious: true,
       autoDeleteFailed: true,
       resetWhenUpdate: true,
-      // Capgo Cloud by default. For self-hosting on the VPS, set:
-      //   updateUrl:  'https://cryptocalk.com/capgo/updates',
-      //   statsUrl:   'https://cryptocalk.com/capgo/stats',
-      //   channelUrl: 'https://cryptocalk.com/capgo/channel',
     },
     SplashScreen: {
       launchShowDuration: 0,
