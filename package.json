@@ -24,6 +24,7 @@
     "@capacitor/core": "^8.2.0",
     "@capacitor/splash-screen": "^8.0.1",
     "@capacitor/status-bar": "^8.0.1",
+    "@capgo/capacitor-updater": "^8.49.1",
     "@tailwindcss/vite": "^4.1.18",
     "@vitalets/google-translate-api": "^9.2.1",
     "astro": "^5.17.1",

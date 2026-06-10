@@ -1,6 +1,7 @@
 ---
 import { SUPPORTED_LANGS, DEFAULT_LANG, getLocalizedPath, getPathWithoutLang, type Lang } from '../i18n/utils';
 import CookieBanner from '../components/CookieBanner.astro';
+import CapgoUpdater from '../components/CapgoUpdater.astro';
 import prunePaths from '../data/prune-noindex.json';
 const PRUNE_NOINDEX = new Set((prunePaths.paths as string[]));
 
@@ -311,6 +312,7 @@ const hreflangBasePath = normalizeBasePathForHreflang(basePath);
     <a href="#main-content" class="skip-to-content">{({es:'Ir al contenido principal',pt:'Ir para o conteúdo principal',tr:'Ana içeriğe geç',hi:'मुख्य सामग्री पर जाएं',ru:'Перейти к основному содержанию'})[lang as string] || 'Skip to main content'}</a>
     <slot />
     <CookieBanner lang={lang} />
+    <CapgoUpdater />
     <script is:inline>
       (() => {
         const MOBILE_QUERY = '(max-width: 768px)';

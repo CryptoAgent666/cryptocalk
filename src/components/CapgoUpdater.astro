@@ -1,0 +1,18 @@
+---
+// Capgo OTA bootstrap. Confirms the freshly-loaded web bundle booted OK so the
+// autoUpdate plugin keeps it (instead of rolling back after appReadyTimeout).
+// Native-only: on the public website window.Capacitor is undefined → this is a no-op
+// and the @capgo chunk is never fetched.
+---
+<script>
+  (async () => {
+    const cap = (window as any).Capacitor;
+    if (!cap?.isNativePlatform?.()) return; // public web — do nothing
+    try {
+      const { CapacitorUpdater } = await import('@capgo/capacitor-updater');
+      await CapacitorUpdater.notifyAppReady();
+    } catch {
+      /* plugin unavailable (e.g. old base build) — safe to ignore */
+    }
+  })();
+</script>
