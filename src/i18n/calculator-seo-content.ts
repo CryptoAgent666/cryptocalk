@@ -7,14 +7,14 @@ type CalcContent = Partial<Record<Lang, CalcOverride>>;
 export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   'lp-value-calculator': {
     en: {
-      quickAnswer: `Enter your current token quantities, prices, and entry prices to see whether your Uniswap V2 LP position beat just holding. Example: a $10,000 ETH/USDC position earns $450 in fees over 90 days, impermanent loss is -$104, so total LP return is +$346 (+3.46%) — still beating HODL by +$242 once you account for the fees that offset the divergence loss.`,
+      quickAnswer: `Enter your current token quantities, prices, and entry prices to see whether your Uniswap V2 LP position beat just holding. Example: a $10,000 ETH/USDC position earns $450 in fees over 90 days, impermanent loss is -$104, so total LP return is +$346 (+3.46%), still beating HODL by +$242 once you account for the fees that offset the divergence loss.`,
       how: [
         `This LP Value Calculator measures whether providing liquidity to a Uniswap V2-style constant-product pool (x times y = k) actually paid off versus simply holding the two tokens. You enter the current quantity and price of each token, the price each token had when you deposited, the fees you have collected, and how many days the position has run. From the current quantities and the entry-to-now price ratio it back-calculates your original 50/50 deposit, then reconstructs what those starting coins would be worth today if you had never pooled them.`,
-        `The headline figure is net P&L versus HODL: total LP return (current value plus fees, minus your estimated deposit) compared to the pure-holding return. Because an AMM rebalances automatically — selling the rising asset and buying the falling one to keep k constant — your token mix today differs from what you deposited. The tool isolates that drift as impermanent loss, then shows whether trading fees covered it. Pair it with our <a href="/impermanent-loss-calculator/">impermanent loss calculator</a> to model divergence before you commit capital.`
+        `The headline figure is net P&L versus HODL: total LP return (current value plus fees, minus your estimated deposit) compared to the pure-holding return. Because an AMM rebalances automatically, selling the rising asset and buying the falling one to keep k constant, your token mix today differs from what you deposited. The tool isolates that drift as impermanent loss, then shows whether trading fees covered it. Pair it with our <a href="/impermanent-loss-calculator/">impermanent loss calculator</a> to model divergence before you commit capital.`
       ],
       inputs: [
-        `Token A and Token B quantity (current) plus their current USD prices define your live position value. The two initial price fields anchor where each token sat when you opened the LP — the calculator uses that entry ratio against k = current A qty multiplied by B qty to estimate your original coin amounts and starting deposit. Fees earned to date is the cumulative trading-fee income you have accrued (or claimed); days held drives the annualization of both total return and the fees-only APR.`,
-        `Everything assumes a Uniswap V2 full-range, 50/50 pool, not a V3 concentrated position — quantities are derived from the constant-product invariant, so they shift as price moves. If you supplied to a tight V3 range, the math differs and you should use our <a href="/concentrated-liquidity-calculator/">concentrated liquidity calculator</a> instead. Enter realistic current quantities pulled from your wallet or the pool dashboard; the deposit figure is an estimate reconstructed from state, not a stored cost basis.`
+        `Token A and Token B quantity (current) plus their current USD prices define your live position value. The two initial price fields anchor where each token sat when you opened the LP, the calculator uses that entry ratio against k = current A qty multiplied by B qty to estimate your original coin amounts and starting deposit. Fees earned to date is the cumulative trading-fee income you have accrued (or claimed); days held drives the annualization of both total return and the fees-only APR.`,
+        `Everything assumes a Uniswap V2 full-range, 50/50 pool, not a V3 concentrated position, quantities are derived from the constant-product invariant, so they shift as price moves. If you supplied to a tight V3 range, the math differs and you should use our <a href="/concentrated-liquidity-calculator/">concentrated liquidity calculator</a> instead. Enter realistic current quantities pulled from your wallet or the pool dashboard; the deposit figure is an estimate reconstructed from state, not a stored cost basis.`
       ],
     },
     es: {
@@ -75,14 +75,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'concentrated-liquidity-calculator': {
     en: {
-      quickAnswer: `Enter a deposit, current price, a price range, fee tier, pool volume and TVL to size a Uniswap V3 position. Example: a $10,000 ETH position in a ±20% range ($1,920–$2,880) at the 0.05% tier earns about 9.5× capital efficiency and ~$189/day in expected fees, with impermanent loss of roughly -5.9% at the lower bound and -3.9% at the upper — netting ~+$5,385 over 30 days.`,
+      quickAnswer: `Enter a deposit, current price, a price range, fee tier, pool volume and TVL to size a Uniswap V3 position. Example: a $10,000 ETH position in a ±20% range ($1,920–$2,880) at the 0.05% tier earns about 9.5× capital efficiency and ~$189/day in expected fees, with impermanent loss of roughly -5.9% at the lower bound and -3.9% at the upper, netting ~+$5,385 over 30 days.`,
       how: [
-        `This Concentrated Liquidity Calculator models a Uniswap V3-style position where you supply liquidity only inside a chosen price band [lower, upper] instead of across the whole 0-to-infinity curve like V2. You enter a USD deposit, the current price of token0, the lower and upper bounds, a fee tier (0.01%, 0.05%, 0.30% or 1.00%), the pool's daily swap volume and TVL, and a holding period in days. From the V3 square-root-price math it derives your position's liquidity L, then the capital efficiency multiplier — how much more fee-earning liquidity your dollars buy versus a full-range V2 deposit.`,
-        `The headline output is capital efficiency (for example ~9.5× on a ±20% range, ~20× on ±5%). It then estimates your share of in-range liquidity, multiplies pool volume by the fee tier to get daily fee income, discounts it by a rough in-range probability to get expected daily fees and total fees over the period, and computes impermanent loss at each bound — amplified versus V2 because at an edge you hold 100% of one asset. Pair it with our <a href="/impermanent-loss-calculator/">impermanent loss calculator</a> and <a href="/lp-value-calculator/">LP value calculator</a> to cross-check the divergence cost before committing.`
+        `This Concentrated Liquidity Calculator models a Uniswap V3-style position where you supply liquidity only inside a chosen price band [lower, upper] instead of across the whole 0-to-infinity curve like V2. You enter a USD deposit, the current price of token0, the lower and upper bounds, a fee tier (0.01%, 0.05%, 0.30% or 1.00%), the pool's daily swap volume and TVL, and a holding period in days. From the V3 square-root-price math it derives your position's liquidity L, then the capital efficiency multiplier, how much more fee-earning liquidity your dollars buy versus a full-range V2 deposit.`,
+        `The headline output is capital efficiency (for example ~9.5× on a ±20% range, ~20× on ±5%). It then estimates your share of in-range liquidity, multiplies pool volume by the fee tier to get daily fee income, discounts it by a rough in-range probability to get expected daily fees and total fees over the period, and computes impermanent loss at each bound, amplified versus V2 because at an edge you hold 100% of one asset. Pair it with our <a href="/impermanent-loss-calculator/">impermanent loss calculator</a> and <a href="/lp-value-calculator/">LP value calculator</a> to cross-check the divergence cost before committing.`
       ],
       inputs: [
-        `Deposit is your position size in USD; current price is token0's price (e.g. ETH in USD). The lower and upper bounds define the range — a narrower band raises capital efficiency and fee yield but exits range faster and concentrates impermanent loss. Fee tier is the pool's swap fee (0.05% suits ETH/USDC, 0.01% suits stable pairs, 1.00% suits exotics). Pool daily volume and TVL set how much fee flow your share captures; a tighter range shrinks the effective concentrated TVL and lifts your share.`,
-        `Holding period (days) annualizes nothing directly but scales total expected fees and net P&L. The tool assumes a balanced 50/50 deposit at the current price and uses simplified V3 liquidity math, so treat efficiency, in-range probability and fee figures as planning estimates, not guarantees — real fees depend on swap-volume distribution, MEV and competing LPs. If price leaves your range you earn zero fees and sit fully in one asset, which is when realized impermanent loss is largest.`
+        `Deposit is your position size in USD; current price is token0's price (e.g. ETH in USD). The lower and upper bounds define the range, a narrower band raises capital efficiency and fee yield but exits range faster and concentrates impermanent loss. Fee tier is the pool's swap fee (0.05% suits ETH/USDC, 0.01% suits stable pairs, 1.00% suits exotics). Pool daily volume and TVL set how much fee flow your share captures; a tighter range shrinks the effective concentrated TVL and lifts your share.`,
+        `Holding period (days) annualizes nothing directly but scales total expected fees and net P&L. The tool assumes a balanced 50/50 deposit at the current price and uses simplified V3 liquidity math, so treat efficiency, in-range probability and fee figures as planning estimates, not guarantees, real fees depend on swap-volume distribution, MEV and competing LPs. If price leaves your range you earn zero fees and sit fully in one asset, which is when realized impermanent loss is largest.`
       ],
     },
     es: {
@@ -145,11 +145,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Enter any cryptocurrency amount to instantly convert between coins and fiat currencies using real-time CoinGecko prices. For example, 1 BTC ≈ $77,300 USD (April 2026).',
       how: [
-      `The Crypto Converter translates any cryptocurrency amount into another coin or fiat currency using real-time market prices. Select your source asset, type an amount, choose your target currency, and the result updates instantly. Use it before placing an order to confirm exactly how much of one asset equals your intended position in another — eliminating manual arithmetic and rounding errors.`,
+      `The Crypto Converter translates any cryptocurrency amount into another coin or fiat currency using real-time market prices. Select your source asset, type an amount, choose your target currency, and the result updates instantly. Use it before placing an order to confirm exactly how much of one asset equals your intended position in another, eliminating manual arithmetic and rounding errors.`,
       `For comparing value across multiple currencies at once, open the converter alongside your exchange order form. Enter the fiat equivalent you want to spend, copy the resulting coin amount directly into your trade ticket. The converter supports 500+ cryptocurrencies and all major fiat currencies, making it equally useful for spot conversions, invoice calculations, and portfolio bookkeeping.`
       ],
       inputs: [
-      `The two required inputs are the source currency and the target currency. Both fields accept crypto tickers (BTC, ETH, SOL, USDT) and major fiat currencies (USD, EUR, GBP, JPY, CAD). The amount field supports any decimal value — from fractional satoshi amounts to large institutional positions. Prices are fetched live from CoinGecko and refresh automatically.`,
+      `The two required inputs are the source currency and the target currency. Both fields accept crypto tickers (BTC, ETH, SOL, USDT) and major fiat currencies (USD, EUR, GBP, JPY, CAD). The amount field supports any decimal value, from fractional satoshi amounts to large institutional positions. Prices are fetched live from CoinGecko and refresh automatically.`,
       `The converter displays mid-market rates, not bid/ask spread-adjusted exchange rates. Your actual execution will include a spread and possibly maker/taker fees. For a precise after-fee equivalent, apply your exchange fee to the converted output, or use the Profit Calculator which has a dedicated fee field. During high volatility, refresh before confirming any position size.`
       ],
     },
@@ -214,10 +214,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Crypto profit = (Sell Price − Buy Price) × Quantity − Fees. For example, buying 0.5 BTC at $60,000 and selling at $72,000 with 0.1% fees yields $5,934 net profit (19.76% ROI).',
       how: [
       `The Crypto Profit Calculator computes your exact profit or loss from any trade by factoring in entry price, exit price, position size, and trading fees. Start by selecting Long or Short mode, then search for your coin to auto-fill the current market price or type a custom price manually. Toggle between Investment ($) mode and Quantity mode depending on how you think about your position size.`,
-      `Enter your entry and exit prices, specify your investment or quantity, add your exchange fee percentages, and the calculator instantly returns gross profit, net profit after fees, ROI, and effective cost basis. Run two scenarios back-to-back — first with your target exit price and then with your stop-loss level — to compare the upside potential against the downside risk before committing to the trade.`
+      `Enter your entry and exit prices, specify your investment or quantity, add your exchange fee percentages, and the calculator instantly returns gross profit, net profit after fees, ROI, and effective cost basis. Run two scenarios back-to-back, first with your target exit price and then with your stop-loss level, to compare the upside potential against the downside risk before committing to the trade.`
       ],
       inputs: [
-      `Entry price and exit price are the core inputs; leaving exit price blank defaults to the current CoinGecko live price. The investment field accepts a dollar amount, while quantity mode accepts the number of tokens. The fee fields take percentage values matching your exchange's maker or taker rate — always include both entry and exit fees for an accurate net result.`,
+      `Entry price and exit price are the core inputs; leaving exit price blank defaults to the current CoinGecko live price. The investment field accepts a dollar amount, while quantity mode accepts the number of tokens. The fee fields take percentage values matching your exchange's maker or taker rate, always include both entry and exit fees for an accurate net result.`,
       `For short positions, enter the price you opened the short as 'entry' and your closing target as 'exit' — the direction is handled automatically. The effective price fields reveal your true cost basis and net exit price after all fees. If you're analyzing a closed trade, enter the exact executed prices rather than the order prices to get precise historical profit or loss figures.`
       ],
     },
@@ -281,11 +281,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Enter your hash rate, power consumption, and electricity cost to estimate daily Bitcoin mining revenue. At 140 TH/s and $0.06/kWh, a modern ASIC earns roughly $8–12/day before difficulty adjustments.',
       how: [
-      `The Mining Calculator shows whether your hardware setup is profitable by comparing estimated daily revenue against your electricity and operational costs. Enter your hashrate, power consumption in watts, electricity rate per kWh, and pool fee percentage — the calculator returns daily, weekly, and monthly profit or loss projections alongside a break-even timeline.`,
+      `The Mining Calculator shows whether your hardware setup is profitable by comparing estimated daily revenue against your electricity and operational costs. Enter your hashrate, power consumption in watts, electricity rate per kWh, and pool fee percentage, the calculator returns daily, weekly, and monthly profit or loss projections alongside a break-even timeline.`,
       `Use it to evaluate hardware purchases before buying: enter the specs of the ASIC or GPU you're considering and your local electricity rate to see the payback period. Run two scenarios with the current Bitcoin price and a conservative 30% lower price to stress-test profitability under market downturns. Revisit the calculator whenever difficulty adjusts or your power rate changes.`
       ],
       inputs: [
-      `Hashrate must match the unit your hardware reports — TH/s for ASIC miners, MH/s or GH/s for GPU rigs. Power consumption in watts comes from hardware specs; add 10–15% overhead for PSU inefficiency and cooling. Electricity rate is your billing rate in $/kWh — use your actual utility bill figure rather than a national average for accurate results.`,
+      `Hashrate must match the unit your hardware reports — TH/s for ASIC miners, MH/s or GH/s for GPU rigs. Power consumption in watts comes from hardware specs; add 10–15% overhead for PSU inefficiency and cooling. Electricity rate is your billing rate in $/kWh, use your actual utility bill figure rather than a national average for accurate results.`,
       `Pool fee typically ranges from 0% to 2% depending on your mining pool. Block reward and network difficulty are pre-filled from live data but can be adjusted manually to model future scenarios. For a multi-GPU rig, sum the combined wattage and total hashrate across all cards before entering the values.`
       ],
     },
@@ -354,7 +354,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
       inputs: [
       `The key inputs are the cryptocurrency (searched by name or ticker), start date (how far back to begin the simulation), purchase frequency, and recurring buy amount in USD. The calculator pulls historical OHLC price data to simulate actual purchase prices on each scheduled date rather than theoretical averages.`,
-      `Start date coverage depends on when the asset was listed — most major coins support up to 5 years of history. If you set a start date before a coin's listing, the simulation begins from the actual listing date. For stablecoins or very new assets, historical data may be limited; the calculator flags this and adjusts the range automatically.`
+      `Start date coverage depends on when the asset was listed, most major coins support up to 5 years of history. If you set a start date before a coin's listing, the simulation begins from the actual listing date. For stablecoins or very new assets, historical data may be limited; the calculator flags this and adjusts the range automatically.`
       ],
     },
     es: {
@@ -421,7 +421,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       `Use it to prepare for tax season by running through your transaction history and seeing which trades generated the largest tax liability. For wash-sale planning, run hypothetical sell scenarios to see the estimated tax impact before executing. Export the results summary to cross-reference with your exchange's tax report or share with your accountant.`
       ],
       inputs: [
-      `Each transaction requires an asset symbol, trade date, quantity, buy (cost basis) price, and sell price. The tax rate fields accept your local short-term and long-term capital gains rates — in the US, short-term gains are taxed as ordinary income and long-term gains use reduced rates for assets held over 12 months. The holding period is calculated automatically from the dates you enter.`,
+      `Each transaction requires an asset symbol, trade date, quantity, buy (cost basis) price, and sell price. The tax rate fields accept your local short-term and long-term capital gains rates, in the US, short-term gains are taxed as ordinary income and long-term gains use reduced rates for assets held over 12 months. The holding period is calculated automatically from the dates you enter.`,
       `For accurate results, include all fees paid during the purchase and sale as they reduce your taxable gain. The calculator uses FIFO by default, meaning the earliest-acquired coins are treated as sold first. If your jurisdiction allows LIFO or specific lot identification, adjust your entries accordingly. Always consult a qualified tax professional for jurisdiction-specific advice.`
       ],
     },
@@ -486,10 +486,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Model hypothetical crypto scenarios: "What if I had bought $1,000 of BTC in 2020?" Enter any asset, amount, and historical date to see what your portfolio would be worth today.',
       how: [
       `The What If Calculator answers the classic question: 'What would my investment be worth today if I had bought X at price Y?' Enter a cryptocurrency, a hypothetical purchase price (or a past date to auto-fill the historical price), and your investment amount to instantly see the current value, profit or loss, and ROI of that scenario.`,
-      `Use it to explore missed opportunities, evaluate past decision-making, or project forward using a custom future price. You can also reverse the calculation — enter a target value and see what initial investment would have been needed to reach it. The results are displayed alongside the percentage change and an annualized return for multi-year scenarios.`
+      `Use it to explore missed opportunities, evaluate past decision-making, or project forward using a custom future price. You can also reverse the calculation, enter a target value and see what initial investment would have been needed to reach it. The results are displayed alongside the percentage change and an annualized return for multi-year scenarios.`
       ],
       inputs: [
-      `Required inputs are the cryptocurrency, the entry price (either typed manually or pulled automatically from a selected past date), and the investment amount in USD. The current price is fetched live from CoinGecko and updates automatically. All three inputs update results in real time — no submit button needed.`,
+      `Required inputs are the cryptocurrency, the entry price (either typed manually or pulled automatically from a selected past date), and the investment amount in USD. The current price is fetched live from CoinGecko and updates automatically. All three inputs update results in real time, no submit button needed.`,
       `For forward projections, enter a custom 'current' price higher than your entry price to model a target scenario. For historical analysis, use the date picker to select a specific past date and the calculator fills the actual closing price for that day. Results include gross profit, net ROI, and the multiplier (e.g., 4.2× your money).`
       ],
     },
@@ -551,14 +551,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'position-size-calculator': {
     en: {
-      quickAnswer: 'Position size = (Account Balance × Risk %) / (Entry − Stop Loss). Risking 2% of a $10,000 account with a $500 stop distance means a $400 position — this keeps you in the game long-term.',
+      quickAnswer: 'Position size = (Account Balance × Risk %) / (Entry − Stop Loss). Risking 2% of a $10,000 account with a $500 stop distance means a $400 position, this keeps you in the game long-term.',
       how: [
-      `The Position Size Calculator tells you exactly how many coins or dollars to deploy per trade based on how much of your account you're willing to risk. Enter your account balance, your risk percentage per trade (typically 1–2%), your entry price, and your stop-loss price — the calculator returns the exact position size in both USD and coin quantity.`,
-      `Use it before every trade to maintain consistent risk discipline regardless of market conditions or conviction level. For trades with tight stops close to the entry, the position size will be larger; for trades with wide stops, it will be smaller — ensuring each trade risks the same dollar amount. This prevents one bad trade from significantly damaging your account.`
+      `The Position Size Calculator tells you exactly how many coins or dollars to deploy per trade based on how much of your account you're willing to risk. Enter your account balance, your risk percentage per trade (typically 1–2%), your entry price, and your stop-loss price, the calculator returns the exact position size in both USD and coin quantity.`,
+      `Use it before every trade to maintain consistent risk discipline regardless of market conditions or conviction level. For trades with tight stops close to the entry, the position size will be larger; for trades with wide stops, it will be smaller, ensuring each trade risks the same dollar amount. This prevents one bad trade from significantly damaging your account.`
       ],
       inputs: [
       `Account balance is your total trading capital in USD. Risk percentage is the maximum portion of your account you will lose if the trade hits the stop-loss — 1% per trade is a common conservative standard. Entry price is your planned buy price and stop-loss is the price at which you will exit if the trade goes wrong.`,
-      `The distance between entry and stop-loss is the key risk variable: a stop that is 5% below entry requires twice the position size compared to a stop 10% below to achieve the same dollar risk. If you're trading a coin worth less than $1, ensure the quantity field is showing a realistic coin count — very cheap assets can produce very large nominal quantities.`
+      `The distance between entry and stop-loss is the key risk variable: a stop that is 5% below entry requires twice the position size compared to a stop 10% below to achieve the same dollar risk. If you're trading a coin worth less than $1, ensure the quantity field is showing a realistic coin count, very cheap assets can produce very large nominal quantities.`
       ],
     },
     es: {
@@ -621,12 +621,12 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Liquidation price = Entry Price × (1 − 1/Leverage) for longs, or Entry Price × (1 + 1/Leverage) for shorts. At 10x leverage on a $50,000 BTC long, liquidation hits at ~$45,000.',
       how: [
-      `The Liquidation Calculator tells you the exact price at which your leveraged position will be forcibly closed by the exchange. Enter your entry price, leverage multiplier, and whether you're long or short — the calculator instantly returns the liquidation price along with the percentage move required to trigger liquidation from your entry.`,
+      `The Liquidation Calculator tells you the exact price at which your leveraged position will be forcibly closed by the exchange. Enter your entry price, leverage multiplier, and whether you're long or short, the calculator instantly returns the liquidation price along with the percentage move required to trigger liquidation from your entry.`,
       `Use it before opening any leveraged position to set appropriate stop-losses above the liquidation level. If the liquidation price is uncomfortably close to current market price, reduce your leverage or increase your margin. Run the calculator with different leverage levels (5×, 10×, 20×) to see how dramatically liquidation risk changes with each step up.`
       ],
       inputs: [
       `Entry price is the price at which you open the position. Leverage multiplier (e.g., 10× means 10:1 leverage) determines how amplified your exposure is. For cross-margin mode, the liquidation price is based on your total account balance; for isolated margin, only the margin allocated to this trade is at risk.`,
-      `Maintenance margin rate varies by exchange and asset — most perpetual futures markets use 0.5% to 1% maintenance margin. If you're unsure of your exchange's rate, check the contract specifications page. The calculator uses a standard rate by default, but entering your exchange's actual figure improves accuracy significantly.`
+      `Maintenance margin rate varies by exchange and asset, most perpetual futures markets use 0.5% to 1% maintenance margin. If you're unsure of your exchange's rate, check the contract specifications page. The calculator uses a standard rate by default, but entering your exchange's actual figure improves accuracy significantly.`
       ],
     },
     es: {
@@ -687,14 +687,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'funding-rate-calculator': {
     en: {
-      quickAnswer: 'Funding payment = Position Size × Funding Rate. With a $10,000 long and 0.01% rate (every 8 hours), you pay $1 per interval — that\'s $3/day or ~$1,095/year.',
+      quickAnswer: 'Funding payment = Position Size × Funding Rate. With a $10,000 long and 0.01% rate (every 8 hours), you pay $1 per interval, that\'s $3/day or ~$1,095/year.',
       how: [
-      `The Funding Rate Calculator computes the cost or income from holding a perpetual futures position over time. Funding payments are exchanged between longs and shorts every 8 hours on most exchanges — when the rate is positive, longs pay shorts; when negative, shorts pay longs. Enter your position size and the current funding rate to see your hourly, daily, weekly, and monthly funding impact.`,
+      `The Funding Rate Calculator computes the cost or income from holding a perpetual futures position over time. Funding payments are exchanged between longs and shorts every 8 hours on most exchanges, when the rate is positive, longs pay shorts; when negative, shorts pay longs. Enter your position size and the current funding rate to see your hourly, daily, weekly, and monthly funding impact.`,
       `Use it to evaluate whether carrying a long or short perpetual position is cost-effective for your time horizon. For trades held over weeks or months, accumulated funding can significantly erode profits even from a well-timed directional trade. Compare the expected funding cost against your profit target to ensure the trade has a positive net expected value.`
       ],
       inputs: [
-      `Position size in USD (or in coins with your current price to convert) and the funding rate percentage are the two main inputs. Funding rates are quoted as 8-hour rates on most exchanges (Binance, Bybit, OKX) — the calculator shows both the 8-hour rate and the annualized equivalent. A funding rate of 0.01% per 8 hours equals approximately 10.95% per year.`,
-      `Rates change every 8 hours based on market conditions, so the projected cost assumes a constant rate equal to the current rate. In trending markets, funding can spike significantly — check historical funding rate charts if you're planning a multi-week hold. Isolated margin positions have the same funding mechanics as cross-margin positions.`
+      `Position size in USD (or in coins with your current price to convert) and the funding rate percentage are the two main inputs. Funding rates are quoted as 8-hour rates on most exchanges (Binance, Bybit, OKX), the calculator shows both the 8-hour rate and the annualized equivalent. A funding rate of 0.01% per 8 hours equals approximately 10.95% per year.`,
+      `Rates change every 8 hours based on market conditions, so the projected cost assumes a constant rate equal to the current rate. In trending markets, funding can spike significantly, check historical funding rate charts if you're planning a multi-week hold. Isolated margin positions have the same funding mechanics as cross-margin positions.`
       ],
     },
     es: {
@@ -761,8 +761,8 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       `Use it to compare different staking options: enter the same amount with different APY rates from various validators or platforms to find the most rewarding option. Run scenarios with a higher APY that compounds daily versus a simpler annual reward structure to understand how compounding frequency affects your final return.`
       ],
       inputs: [
-      `Staking amount is the number of tokens you are staking. APY (Annual Percentage Yield) already accounts for compounding, while APR (Annual Percentage Rate) does not — if your platform quotes APR, use the APY/APR converter to get the compounded equivalent. Staking duration can be set in days, months, or years.`,
-      `Price at end of period is optional but helps you see USD value of rewards assuming price appreciation. If left blank, current price is used. For Ethereum staking, note that the APY varies dynamically based on total ETH staked on the network — validator-specific rates may differ from the network average.`
+      `Staking amount is the number of tokens you are staking. APY (Annual Percentage Yield) already accounts for compounding, while APR (Annual Percentage Rate) does not, if your platform quotes APR, use the APY/APR converter to get the compounded equivalent. Staking duration can be set in days, months, or years.`,
+      `Price at end of period is optional but helps you see USD value of rewards assuming price appreciation. If left blank, current price is used. For Ethereum staking, note that the APY varies dynamically based on total ETH staked on the network, validator-specific rates may differ from the network average.`
       ],
     },
     es: {
@@ -829,8 +829,8 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `Use it to compare staking opportunities across different networks — Ethereum yields roughly 3-4% APY, Solana 6-8%, and Cosmos ecosystem chains 15-20%. The calculator also shows the impact of validator commission fees, which reduce your effective yield. Run scenarios with different lock-up periods to find the optimal balance between earning higher rewards and maintaining liquidity access.`
       ],
       inputs: [
-        `Stake amount is the number of tokens you plan to lock. Annual reward rate (APY) should reflect the current network rate minus any validator commission — check your staking provider's dashboard for the exact figure. Compounding frequency models how often you claim and restake rewards: daily auto-compound produces the highest return, while manual monthly restaking is more common.`,
-        `Staking duration sets the projection horizon in days, months, or years. The optional price field converts token rewards into USD value — useful for seeing whether staking rewards outpace potential price depreciation. Validator commission percentage (typically 5-10%) is deducted from the gross reward rate to calculate your net APY. The unstaking period field reminds you of the lock-up delay when exiting.`
+        `Stake amount is the number of tokens you plan to lock. Annual reward rate (APY) should reflect the current network rate minus any validator commission, check your staking provider's dashboard for the exact figure. Compounding frequency models how often you claim and restake rewards: daily auto-compound produces the highest return, while manual monthly restaking is more common.`,
+        `Staking duration sets the projection horizon in days, months, or years. The optional price field converts token rewards into USD value, useful for seeing whether staking rewards outpace potential price depreciation. Validator commission percentage (typically 5-10%) is deducted from the gross reward rate to calculate your net APY. The unstaking period field reminds you of the lock-up delay when exiting.`
       ],
     },
     es: { quickAnswer: 'Recompensa neta de staking = (Cantidad × APY × Duración/365) − Comisión del Validador. Stakear 32 ETH al 3,2% APY con 10% de comisión de validador genera ~0,94 ETH/año neto.', how: [`La Calculadora de Recompensas de Staking proyecta tus ganancias al bloquear criptomonedas en una red proof-of-stake. Introduce la cantidad a stakear, la tasa anual (APY), la frecuencia de capitalización y la duración para ver las recompensas proyectadas en tokens y su equivalente en USD.`, `Úsala para comparar oportunidades de staking entre redes — Ethereum rinde 3-4% APY, Solana 6-8%, cadenas del ecosistema Cosmos 15-20%. El calculador también muestra el impacto de las comisiones de validador.`], inputs: [`La cantidad a stakear es el número de tokens que planeas bloquear. La tasa anual (APY) debe reflejar la tasa actual de la red menos la comisión del validador. La frecuencia de capitalización modela con qué frecuencia reclamas y re-stakeas.`, `La duración establece el horizonte de proyección. El campo de precio opcional convierte recompensas en tokens a valor USD. La comisión del validador (típicamente 5-10%) se deduce de la tasa bruta para calcular tu APY neto.`] },
@@ -843,12 +843,12 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Break-even price = Buy Price × (1 + Total Fee %). After buying BTC at $73,000 with 0.2% total fees, you need the price to reach $73,146 just to break even.',
       how: [
-      `The Break-Even Calculator finds the exact price at which a trade becomes profitable after all costs — entry price, exit fees, and any other friction. Enter your entry price and your total fee percentage (entry + exit combined), and the calculator returns the minimum exit price required to break even before making any profit.`,
+      `The Break-Even Calculator finds the exact price at which a trade becomes profitable after all costs, entry price, exit fees, and any other friction. Enter your entry price and your total fee percentage (entry + exit combined), and the calculator returns the minimum exit price required to break even before making any profit.`,
       `Use it to set realistic minimum profit targets. Many traders overlook that exchange fees of 0.1% each way mean you need a 0.2% price move just to cover costs. For leveraged positions, break-even is further affected by funding rates and interest. Run the calculator with your actual fee tier to understand your true profitability threshold.`
       ],
       inputs: [
       `Entry price is your purchase price or short open price. Fee percentage covers your combined round-trip cost: if you pay 0.1% to enter and 0.1% to exit, enter 0.2%. For limit orders using maker fees and market orders using taker fees, ensure you're using the right tier.`,
-      `For short positions, the break-even price is below the entry price — the calculator adjusts direction automatically. If you're using leverage, add your expected funding rate cost to the fee field for a more accurate break-even point on positions held overnight or longer.`
+      `For short positions, the break-even price is below the entry price, the calculator adjusts direction automatically. If you're using leverage, add your expected funding rate cost to the fee field for a more accurate break-even point on positions held overnight or longer.`
       ],
     },
     es: {
@@ -911,11 +911,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Impermanent loss occurs when providing liquidity to AMMs. If one token doubles while the other stays flat, you lose ~5.7% compared to just holding. The loss grows with price divergence.',
       how: [
-      `The Impermanent Loss Calculator quantifies the value difference between holding tokens in a liquidity pool versus simply holding them in a wallet. Enter your initial deposit ratio (e.g., 50% ETH / 50% USDC) and the price change of the volatile asset relative to the stable one — the calculator shows the exact dollar and percentage impermanent loss at any price point.`,
+      `The Impermanent Loss Calculator quantifies the value difference between holding tokens in a liquidity pool versus simply holding them in a wallet. Enter your initial deposit ratio (e.g., 50% ETH / 50% USDC) and the price change of the volatile asset relative to the stable one, the calculator shows the exact dollar and percentage impermanent loss at any price point.`,
       `Use it before providing liquidity to understand your worst-case scenario. If ETH triples in price, you might expect to profit substantially, but impermanent loss reduces your gains versus simply holding ETH. The calculator helps you determine if the trading fee income from the pool is likely to outweigh the impermanent loss risk over your planned holding period.`
       ],
       inputs: [
-      `The price change ratio is the key input: if ETH starts at $2,000 and you want to model it at $4,000, that's a 2× price change. For a 50/50 pool, a 2× price increase in one asset causes approximately 5.7% impermanent loss. The calculator shows impermanent loss across a range of price scenarios — from 0.1× (90% price drop) to 10× (900% price increase).`,
+      `The price change ratio is the key input: if ETH starts at $2,000 and you want to model it at $4,000, that's a 2× price change. For a 50/50 pool, a 2× price increase in one asset causes approximately 5.7% impermanent loss. The calculator shows impermanent loss across a range of price scenarios, from 0.1× (90% price drop) to 10× (900% price increase).`,
       `Initial pool value and token quantities are used to calculate the absolute dollar impact alongside the percentage. The fee APR field is optional: enter the annualized trading fee income from the pool (available on DEX analytics sites like Uniswap Info or DefiLlama) to see whether fee income compensates for the impermanent loss over your expected holding duration.`
       ],
     },
@@ -977,14 +977,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'apy-apr-calculator': {
     en: {
-      quickAnswer: 'APY = (1 + APR/n)^n − 1, where n = compounding periods. A 12% APR compounded daily equals 12.75% APY — the more frequent the compounding, the higher your effective yield.',
+      quickAnswer: 'APY = (1 + APR/n)^n − 1, where n = compounding periods. A 12% APR compounded daily equals 12.75% APY, the more frequent the compounding, the higher your effective yield.',
       how: [
-      `The APY/APR Calculator converts between Annual Percentage Yield (compounded) and Annual Percentage Rate (simple) across any compounding frequency. Platforms often quote either APR or APY without clearly distinguishing them — this calculator makes both figures transparent and comparable so you can make accurate comparisons between DeFi protocols, staking pools, and savings products.`,
-      `Enter an APY to find the equivalent APR, or enter an APR with your compounding frequency to find the APY. Use it when comparing a protocol that quotes 12% APY against one that quotes 12% APR — they're not equal. At monthly compounding, 12% APR equals approximately 12.68% APY; daily compounding pushes it to 12.75%.`
+      `The APY/APR Calculator converts between Annual Percentage Yield (compounded) and Annual Percentage Rate (simple) across any compounding frequency. Platforms often quote either APR or APY without clearly distinguishing them, this calculator makes both figures transparent and comparable so you can make accurate comparisons between DeFi protocols, staking pools, and savings products.`,
+      `Enter an APY to find the equivalent APR, or enter an APR with your compounding frequency to find the APY. Use it when comparing a protocol that quotes 12% APY against one that quotes 12% APR, they're not equal. At monthly compounding, 12% APR equals approximately 12.68% APY; daily compounding pushes it to 12.75%.`
       ],
       inputs: [
-      `Input either APR or APY — the calculator solves for the missing one. Compounding frequency can be set to daily (365×), weekly (52×), monthly (12×), quarterly (4×), or annually (1×). The formula is: APY = (1 + APR/n)^n - 1, where n is the number of compounding periods per year.`,
-      `For continuous compounding (used by some DeFi protocols), APY = e^APR - 1. A rate quoted as daily compound is the most aggressive compounding available — this matters most for high-APR protocols where the difference between daily and monthly compounding can be several percentage points. Always verify which convention your platform uses.`
+      `Input either APR or APY, the calculator solves for the missing one. Compounding frequency can be set to daily (365×), weekly (52×), monthly (12×), quarterly (4×), or annually (1×). The formula is: APY = (1 + APR/n)^n - 1, where n is the number of compounding periods per year.`,
+      `For continuous compounding (used by some DeFi protocols), APY = e^APR - 1. A rate quoted as daily compound is the most aggressive compounding available, this matters most for high-APR protocols where the difference between daily and monthly compounding can be several percentage points. Always verify which convention your platform uses.`
       ],
     },
     es: {
@@ -1045,13 +1045,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'market-cap-calculator': {
     en: {
-      quickAnswer: 'Market cap = Price × Circulating Supply. If a token trades at $5 with 100M supply, market cap is $500M. Fully diluted valuation (FDV) includes max supply — useful for spotting overvalued projects.',
+      quickAnswer: 'Market cap = Price × Circulating Supply. If a token trades at $5 with 100M supply, market cap is $500M. Fully diluted valuation (FDV) includes max supply, useful for spotting overvalued projects.',
       how: [
       `The Market Cap Calculator determines either the market capitalization from a price and supply, or the price that would result from a given market cap. Enter a cryptocurrency's current supply and price to calculate market cap, or enter a target market cap with the circulating supply to find the implied price per token.`,
       `Use the reverse calculation to answer 'what price would my coin be at if it had Bitcoin's market cap?' Enter Bitcoin's market cap and your coin's circulating supply to get a price target. This is the single most useful tool for identifying realistic price ceilings and floors based on market cap comparisons to established projects.`
       ],
       inputs: [
-      `Circulating supply is the number of tokens currently in public circulation — not the total supply or max supply. You can find this on CoinGecko or CoinMarketCap for any listed token. Price per token is the current trading price. Market cap = price × circulating supply; the calculator solves for any one variable given the other two.`,
+      `Circulating supply is the number of tokens currently in public circulation, not the total supply or max supply. You can find this on CoinGecko or CoinMarketCap for any listed token. Price per token is the current trading price. Market cap = price × circulating supply; the calculator solves for any one variable given the other two.`,
       `For tokens with significant locked or vested supply, use fully diluted valuation (FDV) for a more conservative comparison: FDV = price × max supply. Many early-stage tokens have 80–95% of supply still locked, making their FDV many times higher than their market cap. The calculator supports both market cap and FDV calculations.`
       ],
     },
@@ -1120,7 +1120,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
       inputs: [
       `Buy price is your average cost basis per token. Sell price (or current price) is the exit or valuation price. Investment amount can be entered in USD or as a quantity of tokens. If you made multiple purchases at different prices, average them first and enter the weighted average cost basis.`,
-      `For an annualized ROI calculation, the duration in days is required — the calculator converts total ROI to an annualized rate using the formula: Annualized ROI = (1 + Total ROI)^(365/days) - 1. A 50% total return in 90 days is equivalent to approximately 380% annualized, which provides a more useful benchmark for comparing different investments.`
+      `For an annualized ROI calculation, the duration in days is required, the calculator converts total ROI to an annualized rate using the formula: Annualized ROI = (1 + Total ROI)^(365/days) - 1. A 50% total return in 90 days is equivalent to approximately 380% annualized, which provides a more useful benchmark for comparing different investments.`
       ],
     },
     es: {
@@ -1187,8 +1187,8 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       `Use it to model staking, yield farming, or lending returns over multi-year periods. Compare daily compounding versus monthly to see the real-world impact of reinvestment frequency. For a DCA scenario, use the starting amount as your total planned investment and the expected average annual return rate to get a rough future value projection.`
       ],
       inputs: [
-      `Principal is your starting investment amount in USD or coin value. Annual rate is the expected percentage gain per year — use historical averages conservatively. Compounding frequency determines how often gains are reinvested: daily (365), weekly (52), monthly (12), or annually (1). Duration is specified in years or months.`,
-      `For cryptocurrency, rates are highly variable — the calculator assumes a constant rate which is a simplification. Use conservative estimates (e.g., 5–10% for major coins, 30–50% for DeFi staking) to avoid overoptimistic projections. Taxes on realized gains during each compounding period may reduce the effective return — factor in your local tax rate for a more accurate net projection.`
+      `Principal is your starting investment amount in USD or coin value. Annual rate is the expected percentage gain per year, use historical averages conservatively. Compounding frequency determines how often gains are reinvested: daily (365), weekly (52), monthly (12), or annually (1). Duration is specified in years or months.`,
+      `For cryptocurrency, rates are highly variable, the calculator assumes a constant rate which is a simplification. Use conservative estimates (e.g., 5–10% for major coins, 30–50% for DeFi staking) to avoid overoptimistic projections. Taxes on realized gains during each compounding period may reduce the effective return, factor in your local tax rate for a more accurate net projection.`
       ],
     },
     es: {
@@ -1252,11 +1252,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Compound interest grows your crypto exponentially: $1,000 at 12% APY compounded daily becomes $1,127 after one year — $7 more than simple interest. The longer the period, the bigger the effect.',
       how: [
         `The Compound Interest Calculator projects how a crypto investment grows when earned interest is reinvested back into the principal. Enter your initial deposit, the annual interest rate (APY), compounding frequency, and investment duration to see a detailed growth trajectory with totals for each period. The calculator breaks down how much of your final balance comes from your original deposit versus accumulated interest.`,
-        `Use it to compare DeFi yield opportunities by testing different compounding frequencies — daily compounding at 8% APY produces meaningfully more than annual compounding at the same rate over multi-year horizons. The calculator also reveals the power of time: doubling your investment period often more than doubles total interest earned due to the exponential nature of compounding.`
+        `Use it to compare DeFi yield opportunities by testing different compounding frequencies, daily compounding at 8% APY produces meaningfully more than annual compounding at the same rate over multi-year horizons. The calculator also reveals the power of time: doubling your investment period often more than doubles total interest earned due to the exponential nature of compounding.`
       ],
       inputs: [
-        `Initial deposit is the starting amount you plan to invest or stake. Annual interest rate (APY) should reflect the yield offered by your platform — staking rewards, lending rates, or liquidity pool returns. Compounding frequency determines how often earned interest is added back to the principal: daily, weekly, monthly, quarterly, or annually.`,
-        `Investment duration sets the time horizon in months or years. Optional monthly contribution models a DCA approach where you add funds regularly on top of compounding returns. For volatile crypto assets, note that the calculator assumes a constant rate — real DeFi yields fluctuate, so use a conservative average rather than peak rates for realistic projections.`
+        `Initial deposit is the starting amount you plan to invest or stake. Annual interest rate (APY) should reflect the yield offered by your platform, staking rewards, lending rates, or liquidity pool returns. Compounding frequency determines how often earned interest is added back to the principal: daily, weekly, monthly, quarterly, or annually.`,
+        `Investment duration sets the time horizon in months or years. Optional monthly contribution models a DCA approach where you add funds regularly on top of compounding returns. For volatile crypto assets, note that the calculator assumes a constant rate, real DeFi yields fluctuate, so use a conservative average rather than peak rates for realistic projections.`
       ],
     },
     es: { quickAnswer: 'El interés compuesto hace crecer tu cripto exponencialmente: $1.000 al 12% APY con capitalización diaria se convierte en $1.127 después de un año — $7 más que con interés simple. Cuanto mayor el período, mayor el efecto.', how: [`La Calculadora de Interés Compuesto proyecta cómo crece una inversión cripto cuando los intereses ganados se reinvierten en el capital. Introduce el depósito inicial, la tasa anual (APY), la frecuencia de capitalización y la duración para ver la trayectoria de crecimiento detallada.`, `Úsala para comparar oportunidades de rendimiento DeFi probando diferentes frecuencias de capitalización. La capitalización diaria al 8% APY produce significativamente más que la anual a la misma tasa en horizontes plurianuales.`], inputs: [`El depósito inicial es el monto que planeas invertir. La tasa anual (APY) debe reflejar el rendimiento ofrecido por tu plataforma. La frecuencia determina con qué periodicidad los intereses se suman al capital.`, `La duración establece el horizonte temporal. La aportación mensual opcional modela un enfoque DCA. Para activos cripto volátiles, usa promedios conservadores ya que los rendimientos DeFi reales fluctúan.`] },
@@ -1267,13 +1267,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'satoshi-converter': {
     en: {
-      quickAnswer: 'Convert between Bitcoin and satoshis instantly. 1 BTC = 100,000,000 satoshis. At $77,300/BTC, one satoshi equals $0.000737 — useful for pricing micro-transactions and Lightning Network payments.',
+      quickAnswer: 'Convert between Bitcoin and satoshis instantly. 1 BTC = 100,000,000 satoshis. At $77,300/BTC, one satoshi equals $0.000737, useful for pricing micro-transactions and Lightning Network payments.',
       how: [
-      `The Satoshi Converter translates Bitcoin amounts between satoshis, bits, mBTC, and BTC, and converts any denomination into its current USD or fiat equivalent. Type an amount in any field and all other fields update simultaneously — making it fast to see that 1 satoshi equals 0.00000001 BTC, or that 100,000 satoshis equal 0.001 BTC.`,
+      `The Satoshi Converter translates Bitcoin amounts between satoshis, bits, mBTC, and BTC, and converts any denomination into its current USD or fiat equivalent. Type an amount in any field and all other fields update simultaneously, making it fast to see that 1 satoshi equals 0.00000001 BTC, or that 100,000 satoshis equal 0.001 BTC.`,
       `Use it when reading Bitcoin transaction amounts quoted in satoshis (common in Lightning Network and on-chain inscriptions), or when setting fee rates quoted in sat/vByte. The calculator also converts to and from USD, EUR, and other fiat currencies using the live BTC price so you always know the real-world cost.`
       ],
       inputs: [
-      `Enter a value in any denomination — satoshi, bit (100 satoshis), mBTC (100,000 satoshis), or BTC — and the others fill automatically. You can also type a fiat amount and see the BTC/satoshi equivalent at the current market price.`,
+      `Enter a value in any denomination, satoshi, bit (100 satoshis), mBTC (100,000 satoshis), or BTC, and the others fill automatically. You can also type a fiat amount and see the BTC/satoshi equivalent at the current market price.`,
       `Satoshi values are always whole numbers since 1 satoshi is the smallest indivisible Bitcoin unit. For Lightning Network fee calculations, satoshis per millisatoshi (mSat) conversions are also supported — 1 satoshi = 1,000 millisatoshis. The BTC price updates from CoinGecko every 60 seconds.`
       ],
     },
@@ -1337,12 +1337,12 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Convert between ETH, Gwei, and Wei instantly. 1 ETH = 1,000,000,000 Gwei = 10^18 Wei. At 1 Gwei gas price and $2,419/ETH, a standard 21,000-gas transfer costs about $0.05.',
       how: [
-      `The Gwei Converter translates Ethereum gas price units between wei, gwei, and ETH, and converts any denomination to its current USD cost for a typical transaction. Understanding gwei is essential for Ethereum users — when you set a gas price of 20 gwei, you're specifying 20 × 10⁻⁹ ETH per unit of gas consumed.`,
+      `The Gwei Converter translates Ethereum gas price units between wei, gwei, and ETH, and converts any denomination to its current USD cost for a typical transaction. Understanding gwei is essential for Ethereum users, when you set a gas price of 20 gwei, you're specifying 20 × 10⁻⁹ ETH per unit of gas consumed.`,
       `Use it when MetaMask or your wallet shows a gas price in gwei and you want to understand the actual dollar cost. For EIP-1559 transactions, enter the base fee plus your priority fee (tip) to see the total effective gas price. The calculator also shows the total transaction cost for standard ETH transfers (21,000 gas) and ERC-20 token transfers (≈65,000 gas).`
       ],
       inputs: [
       `Enter a gas price in gwei to see the wei and ETH equivalents, plus the USD cost for a 21,000 gas transfer. Alternatively, enter an ETH amount and get the gwei conversion. The current ETH price is loaded automatically and used for all USD calculations.`,
-      `For a complete gas cost estimate, enter both the gas price (gwei) and the gas limit (units of computation) — total fee = gas price × gas limit. A standard ETH transfer uses exactly 21,000 gas. A Uniswap swap typically uses 100,000–200,000 gas depending on complexity.`
+      `For a complete gas cost estimate, enter both the gas price (gwei) and the gas limit (units of computation), total fee = gas price × gas limit. A standard ETH transfer uses exactly 21,000 gas. A Uniswap swap typically uses 100,000–200,000 gas depending on complexity.`
       ],
     },
     es: {
@@ -1405,11 +1405,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Ethereum gas fee = Gas Price (Gwei) × Gas Limit × ETH Price. A standard ETH transfer (21,000 gas) at 1 Gwei costs about $0.05. Complex DeFi swaps can cost $2–15 depending on congestion.',
       how: [
-      `The Gas Calculator estimates the total transaction fee in USD for Ethereum and EVM-compatible network transactions. Enter the current gas price in gwei, the gas limit for your transaction type, and the current ETH price to instantly see the total fee — allowing you to decide whether to proceed now or wait for network congestion to ease.`,
+      `The Gas Calculator estimates the total transaction fee in USD for Ethereum and EVM-compatible network transactions. Enter the current gas price in gwei, the gas limit for your transaction type, and the current ETH price to instantly see the total fee, allowing you to decide whether to proceed now or wait for network congestion to ease.`,
       `Use it to compare transaction costs across different networks: enter the same gas limit with the native token price for Polygon, BNB Chain, or Arbitrum to see how much cheaper layer-2 transactions are compared to Ethereum mainnet. For time-sensitive trades, use the 'fast' gas preset; for non-urgent transfers, 'standard' saves significant fees during peak hours.`
       ],
       inputs: [
-      `Gas price in gwei is the price you're willing to pay per unit of gas — this determines transaction priority. Current gas prices are shown in three tiers: slow (base fee only), standard (small tip), and fast (higher tip for quick inclusion). Gas limit is the maximum gas your transaction can consume: 21,000 for ETH transfers, 65,000 for ERC-20 transfers, 150,000–300,000 for DeFi interactions.`,
+      `Gas price in gwei is the price you're willing to pay per unit of gas, this determines transaction priority. Current gas prices are shown in three tiers: slow (base fee only), standard (small tip), and fast (higher tip for quick inclusion). Gas limit is the maximum gas your transaction can consume: 21,000 for ETH transfers, 65,000 for ERC-20 transfers, 150,000–300,000 for DeFi interactions.`,
       `ETH price is auto-filled from CoinGecko. The total fee = gas price × gas limit ÷ 10⁹ (converting gwei to ETH) × ETH price in USD. For EIP-1559 transactions, actual cost = (base fee + priority fee) × gas used, where gas used ≤ gas limit. Setting gas limit too low causes transaction failure; setting it too high wastes no ETH (unused gas is refunded).`
       ],
     },
@@ -1474,11 +1474,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Bitcoin halving cuts the block reward every 210,000 blocks (~4 years). After the April 2024 halving, the reward dropped from 6.25 to 3.125 BTC. The next halving is expected around March 2028.',
       how: [
       `The Bitcoin Halving Calculator counts down the exact time and blocks remaining until the next Bitcoin halving event, when the block reward paid to miners is cut in half. It displays the current block height, estimated next halving block, days remaining, estimated halving date, and the post-halving block reward.`,
-      `Use it to track the halvings cycle for timing investment decisions or understanding supply dynamics. Bitcoin's inflation rate drops by 50% at each halving — historically, the 12–18 months following a halving have seen significant price appreciation as reduced supply issuance meets continued or growing demand. The calculator also shows historical halving dates and price data for context.`
+      `Use it to track the halvings cycle for timing investment decisions or understanding supply dynamics. Bitcoin's inflation rate drops by 50% at each halving, historically, the 12–18 months following a halving have seen significant price appreciation as reduced supply issuance meets continued or growing demand. The calculator also shows historical halving dates and price data for context.`
       ],
       inputs: [
-      `No manual inputs are required — the calculator auto-fetches the current Bitcoin block height from the network and calculates the remaining blocks until the next halving (halving occurs every 210,000 blocks). The estimated date assumes a 10-minute average block time, which may drift slightly based on current hash rate and difficulty.`,
-      `Bitcoin blocks are not mined at a perfectly uniform rate — periods of high hash rate produce blocks faster than 10 minutes, shortening the countdown. The 2024 halving (block 840,000) reduced the reward from 6.25 to 3.125 BTC per block. After the 2028 halving, the reward will be 1.5625 BTC, and the total supply approaches but never exceeds 21 million BTC.`
+      `No manual inputs are required, the calculator auto-fetches the current Bitcoin block height from the network and calculates the remaining blocks until the next halving (halving occurs every 210,000 blocks). The estimated date assumes a 10-minute average block time, which may drift slightly based on current hash rate and difficulty.`,
+      `Bitcoin blocks are not mined at a perfectly uniform rate, periods of high hash rate produce blocks faster than 10 minutes, shortening the countdown. The 2024 halving (block 840,000) reduced the reward from 6.25 to 3.125 BTC per block. After the 2028 halving, the reward will be 1.5625 BTC, and the total supply approaches but never exceeds 21 million BTC.`
       ],
     },
     es: {
@@ -1546,7 +1546,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
       inputs: [
       `Purchase price is the amount you paid for the NFT in ETH or USD, including any gas fees at the time of purchase. Sale price is your planned or actual sale price. Marketplace fee percentage varies by platform (OpenSea: ~1%, Blur: 0.5%, Magic Eden: ~2%). Creator royalty is set by the NFT project and typically ranges from 0% to 10%.`,
-      `Gas fees for the sale transaction are network-dependent — on Ethereum mainnet during peak periods, gas can add $20–100+ to your costs, while Polygon or Arbitrum gas is negligible. For collections trading on multiple marketplaces, compare the fee structures side by side using different fee percentages to find where selling is most profitable.`
+      `Gas fees for the sale transaction are network-dependent, on Ethereum mainnet during peak periods, gas can add $20–100+ to your costs, while Polygon or Arbitrum gas is negligible. For collections trading on multiple marketplaces, compare the fee structures side by side using different fee percentages to find where selling is most profitable.`
       ],
     },
     es: {
@@ -1610,11 +1610,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Estimate GPU mining profitability for Ethereum Classic, Ravencoin, and other PoW coins. An RTX 4090 at 130 MH/s earns roughly $1–3/day depending on the coin and difficulty.',
       how: [
       `The GPU Mining Calculator estimates profitability for Ethereum Classic, Kaspa, Ravencoin, Ergo, and other GPU-mineable coins. Enter your GPU hashrate, power consumption, electricity rate, and pool fee to see daily, weekly, and monthly revenue and profit projections alongside a hardware payback period.`,
-      `Use it to compare mining different coins with the same GPU setup — a 3080 Ti might earn more mining Kaspa than ETC depending on current difficulty and price. Run the calculator with today's coin price and a 20% lower price to ensure profitability holds up under moderate price decline. Factor in cooling overhead (typically 10–15% extra power consumption for enclosed rigs).`
+      `Use it to compare mining different coins with the same GPU setup, a 3080 Ti might earn more mining Kaspa than ETC depending on current difficulty and price. Run the calculator with today's coin price and a 20% lower price to ensure profitability holds up under moderate price decline. Factor in cooling overhead (typically 10–15% extra power consumption for enclosed rigs).`
       ],
       inputs: [
-      `GPU hashrate must match the specific algorithm used by the target coin — your GPU may hash at 100 MH/s on Ethash but only 1.5 GH/s on KHeavyHash (Kaspa). Refer to benchmark databases like WhatToMine for algorithm-specific hashrates for your GPU model. Power consumption should include the full system draw, not just the GPU TDP.`,
-      `Pool fee varies by pool — major pools like 2Miners, F2Pool, and Ethermine charge between 0.5% and 2%. The calculator auto-fills network difficulty and coin price from live data for the most popular GPU coins. For coins not listed, enter manual difficulty and block reward values from the coin's block explorer.`
+      `GPU hashrate must match the specific algorithm used by the target coin, your GPU may hash at 100 MH/s on Ethash but only 1.5 GH/s on KHeavyHash (Kaspa). Refer to benchmark databases like WhatToMine for algorithm-specific hashrates for your GPU model. Power consumption should include the full system draw, not just the GPU TDP.`,
+      `Pool fee varies by pool, major pools like 2Miners, F2Pool, and Ethermine charge between 0.5% and 2%. The calculator auto-fills network difficulty and coin price from live data for the most popular GPU coins. For coins not listed, enter manual difficulty and block reward values from the coin's block explorer.`
       ],
     },
     es: {
@@ -1677,7 +1677,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Compare trading fees across major exchanges for your trade size. A 0.1% fee difference on a $100,000 trade saves $100. Binance charges 0.1% base; Coinbase 0.4–0.6% for instant trades.',
       how: [
-      `The Exchange Fees Calculator compares the trading fee cost across multiple cryptocurrency exchanges for a given trade size. Enter your trade amount and select your trading tier (maker vs taker, or your VIP level) on each exchange to instantly see the fee in dollars and as a percentage — identifying which platform offers the best deal for your order type and volume.`,
+      `The Exchange Fees Calculator compares the trading fee cost across multiple cryptocurrency exchanges for a given trade size. Enter your trade amount and select your trading tier (maker vs taker, or your VIP level) on each exchange to instantly see the fee in dollars and as a percentage, identifying which platform offers the best deal for your order type and volume.`,
       `Use it when deciding where to execute a large trade: a 0.1% fee difference on a $100,000 trade is $100 in direct cost. Also use it to evaluate whether holding an exchange's native token (like BNB on Binance or KCS on KuCoin) for a fee discount is worth the opportunity cost versus deploying that capital elsewhere.`
       ],
       inputs: [
@@ -1746,11 +1746,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Calculate token vesting schedules and unlock values. A 4-year vest with 1-year cliff and monthly unlocks releases 0% for 12 months, then ~2.78% monthly for the remaining 36 months.',
       how: [
       `The Vesting Calculator shows the token unlock schedule for a crypto project, breaking down exactly how many tokens become available at each vesting milestone. Enter the total token allocation, cliff period, vesting duration, and vesting frequency to see a month-by-month or quarter-by-quarter token release table alongside the USD value at current prices.`,
-      `Use it before participating in an ICO, IDO, or token round to understand when your tokens will be liquid. For project tokens with large team or VC allocations vesting over 2–4 years, compare the scheduled unlock rate against daily trading volume — if monthly unlocks exceed 5% of daily volume, there may be consistent sell pressure at each vesting date.`
+      `Use it before participating in an ICO, IDO, or token round to understand when your tokens will be liquid. For project tokens with large team or VC allocations vesting over 2–4 years, compare the scheduled unlock rate against daily trading volume, if monthly unlocks exceed 5% of daily volume, there may be consistent sell pressure at each vesting date.`
       ],
       inputs: [
-      `Total allocation is the number of tokens you or a specific stakeholder group will receive. Cliff period is the initial lockup duration during which no tokens are released — typically 6–12 months for team allocations. Vesting duration is the total time over which tokens are released after the cliff. Frequency options include monthly, quarterly, or linear continuous vesting.`,
-      `TGE (Token Generation Event) unlock percentage is the portion released immediately at launch — seed round investors often receive 5–10% at TGE with the remainder vesting over 12–24 months. Token price is auto-filled from live CoinGecko data for listed tokens. For unlisted tokens, enter the round price or target listing price manually.`
+      `Total allocation is the number of tokens you or a specific stakeholder group will receive. Cliff period is the initial lockup duration during which no tokens are released, typically 6–12 months for team allocations. Vesting duration is the total time over which tokens are released after the cliff. Frequency options include monthly, quarterly, or linear continuous vesting.`,
+      `TGE (Token Generation Event) unlock percentage is the portion released immediately at launch, seed round investors often receive 5–10% at TGE with the remainder vesting over 12–24 months. Token price is auto-filled from live CoinGecko data for listed tokens. For unlisted tokens, enter the round price or target listing price manually.`
       ],
     },
     es: {
@@ -1811,14 +1811,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'risk-reward-calculator': {
     en: {
-      quickAnswer: 'Risk-reward ratio = (Target Price − Entry) / (Entry − Stop Loss). A trade entering BTC at $70,000 with a $68,000 stop and $76,000 target has a 3:1 R:R — most pros aim for 2:1 minimum.',
+      quickAnswer: 'Risk-reward ratio = (Target Price − Entry) / (Entry − Stop Loss). A trade entering BTC at $70,000 with a $68,000 stop and $76,000 target has a 3:1 R:R, most pros aim for 2:1 minimum.',
       how: [
       `The Risk/Reward Calculator measures the ratio between your potential profit and potential loss for any trade setup. Enter your entry price, take profit target, and stop-loss level to instantly see the risk/reward ratio and whether the trade meets a minimum acceptable threshold. Most professional traders require at least a 1:2 risk/reward ratio before entering a trade.`,
-      `Use it to filter out low-quality setups before they consume capital. A trade risking 5% to potentially gain 5% is a 1:1 ratio — break-even at best after fees. A trade risking 3% to potentially gain 12% is a 1:4 ratio — meaning you can be wrong 3 times and still profit from 1 win. Run every planned entry through this calculator before opening a position.`
+      `Use it to filter out low-quality setups before they consume capital. A trade risking 5% to potentially gain 5% is a 1:1 ratio, break-even at best after fees. A trade risking 3% to potentially gain 12% is a 1:4 ratio, meaning you can be wrong 3 times and still profit from 1 win. Run every planned entry through this calculator before opening a position.`
       ],
       inputs: [
       `Entry price is your planned buy price. Take profit is your upside target where you plan to close the trade for a profit. Stop-loss is the downside level where you will exit if the trade moves against you. All three prices determine the ratio: reward = (take profit - entry) / entry, risk = (entry - stop loss) / entry.`,
-      `The calculator also shows the dollar amounts at risk and potential profit given your position size. For short trades, the reward is below the entry price and the risk is above it — enter the values accordingly and the calculator adjusts. A risk/reward of 1:3 means you need a win rate above 25% to be profitable over time.`
+      `The calculator also shows the dollar amounts at risk and potential profit given your position size. For short trades, the reward is below the entry price and the risk is above it, enter the values accordingly and the calculator adjusts. A risk/reward of 1:3 means you need a win rate above 25% to be profitable over time.`
       ],
     },
     es: {
@@ -1882,11 +1882,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Required margin = Position Size / Leverage. Opening a $50,000 BTC position at 10x leverage requires $5,000 margin. Your margin ratio (equity/position) determines how close you are to liquidation.',
       how: [
       `The Margin Calculator computes the required initial margin, maintenance margin, and available leverage for any leveraged crypto position. Enter your account balance, desired position size, and leverage ratio to see the exact margin required to open the trade and how much buffer you have before a margin call.`,
-      `Use it to plan positions that use a defined portion of your account margin — never over-allocating. For cross-margin accounts, factor in all open positions when calculating remaining available margin. For isolated-margin positions, the margin required is fixed at open regardless of your total account balance.`
+      `Use it to plan positions that use a defined portion of your account margin, never over-allocating. For cross-margin accounts, factor in all open positions when calculating remaining available margin. For isolated-margin positions, the margin required is fixed at open regardless of your total account balance.`
       ],
       inputs: [
       `Account balance is your total margin account equity. Position size is the notional value of the trade (e.g., $50,000 worth of BTC). Leverage is the multiplier (e.g., 10× means you control $50,000 with $5,000 margin). Initial margin = position size / leverage. Maintenance margin is typically 50% of initial margin for most exchanges.`,
-      `The margin ratio (maintenance margin / equity) triggers a margin call when it exceeds 100% — at that point, the exchange auto-liquidates. Monitor margin ratio in real time as price moves. A 1% adverse move with 10× leverage consumes 10% of your position margin.`
+      `The margin ratio (maintenance margin / equity) triggers a margin call when it exceeds 100%, at that point, the exchange auto-liquidates. Monitor margin ratio in real time as price moves. A 1% adverse move with 10× leverage consumes 10% of your position margin.`
       ],
     },
     es: {
@@ -1947,7 +1947,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'hodl-vs-trade': {
     en: {
-      quickAnswer: 'Compare HODL vs active trading returns for any crypto asset over any time period. Factor in trading fees, tax implications, and time spent — many studies show 70–80% of active traders underperform buy-and-hold.',
+      quickAnswer: 'Compare HODL vs active trading returns for any crypto asset over any time period. Factor in trading fees, tax implications, and time spent, many studies show 70–80% of active traders underperform buy-and-hold.',
       how: [
       `The HODL vs Trade Calculator compares the final portfolio value of a buy-and-hold strategy against an active trading strategy over the same period. Enter the starting amount, the coin's price return over the period, and the simulated active trading performance (win rate, average gain/loss, number of trades) to see which approach would have outperformed.`,
       `Use it to reality-check whether active trading is worth the time and stress compared to simply holding. Most retail traders underperform buy-and-hold due to trading fees, emotional decisions, and opportunity costs. The calculator quantifies the performance gap and shows the breakeven active trading win rate needed to match holding.`
@@ -2017,12 +2017,12 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Portfolio rebalancing restores target allocations. If your 60/40 BTC/ETH split drifted to 70/30 after a BTC rally, rebalancing means selling 10% of BTC value into ETH.',
       how: [
-      `The Portfolio Rebalancing Calculator shows how to restore your target asset allocation after market movements have caused your actual weights to drift. Enter each asset, its current value, and your target percentage allocation — the calculator shows exactly how much to buy or sell of each asset to return to your desired balance without adding or withdrawing capital.`,
+      `The Portfolio Rebalancing Calculator shows how to restore your target asset allocation after market movements have caused your actual weights to drift. Enter each asset, its current value, and your target percentage allocation, the calculator shows exactly how much to buy or sell of each asset to return to your desired balance without adding or withdrawing capital.`,
       `Use it quarterly or whenever any asset drifts more than 5% from its target. Rebalancing forces disciplined sell-high/buy-low behavior: assets that have outperformed will be trimmed, and underperformers will be topped up. The calculator also shows the tax implications of each rebalancing trade, helping you minimize taxable events.`
       ],
       inputs: [
       `For each asset in your portfolio, enter the current market value and your target allocation percentage. The calculator supports up to 20 assets and automatically validates that target percentages sum to 100%. The 'rebalance by' field lets you choose between selling winners to buy laggards or adding new capital to underweight positions.`,
-      `The deviation threshold field filters out trades below a minimum size — many investors ignore rebalancing signals for drifts under 2–3% to reduce transaction costs. The calculator shows estimated fees for each rebalancing trade and flags assets where the rebalancing cost exceeds the diversification benefit.`
+      `The deviation threshold field filters out trades below a minimum size, many investors ignore rebalancing signals for drifts under 2–3% to reduce transaction costs. The calculator shows estimated fees for each rebalancing trade and flags assets where the rebalancing cost exceeds the diversification benefit.`
       ],
     },
     es: {
@@ -2085,12 +2085,12 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Set take-profit and stop-loss levels based on your risk tolerance. For a BTC long at $73,000 with 2:1 R:R, a $71,000 stop-loss means your take-profit should be at $77,000.',
       how: [
-      `The Take Profit / Stop Loss Calculator helps you set precise exit levels for your trades, showing the exact price targets for both your upside take-profit and downside stop-loss based on your desired percentage moves from entry. Enter your entry price and define your TP and SL as percentage distances from entry — the calculator returns the exact target prices in the coin's currency.`,
+      `The Take Profit / Stop Loss Calculator helps you set precise exit levels for your trades, showing the exact price targets for both your upside take-profit and downside stop-loss based on your desired percentage moves from entry. Enter your entry price and define your TP and SL as percentage distances from entry, the calculator returns the exact target prices in the coin's currency.`,
       `Use it to pre-calculate exit levels before entering a position, then place the orders immediately after opening the trade. Setting both exit orders simultaneously eliminates the emotional decision-making that causes traders to hold losing positions too long or exit winners too early. For multiple take-profit levels, run separate calculations for each TP tier.`
       ],
       inputs: [
-      `Entry price is your position open price. Take profit percentage is how much you want the price to increase (for a long) before you exit — e.g., 15% means TP triggers at 1.15× entry. Stop loss percentage is how much adverse movement you'll tolerate — e.g., 5% means SL triggers at 0.95× entry for a long position.`,
-      `For short positions, take profit is below the entry price and stop-loss is above it — toggle the Long/Short mode and the percentage directions reverse automatically. The risk/reward ratio is calculated automatically: a 15% TP and 5% SL gives a 3:1 ratio. This calculator pairs perfectly with the Position Size Calculator for complete trade planning.`
+      `Entry price is your position open price. Take profit percentage is how much you want the price to increase (for a long) before you exit, e.g., 15% means TP triggers at 1.15× entry. Stop loss percentage is how much adverse movement you'll tolerate, e.g., 5% means SL triggers at 0.95× entry for a long position.`,
+      `For short positions, take profit is below the entry price and stop-loss is above it, toggle the Long/Short mode and the percentage directions reverse automatically. The risk/reward ratio is calculated automatically: a 15% TP and 5% SL gives a 3:1 ratio. This calculator pairs perfectly with the Position Size Calculator for complete trade planning.`
       ],
     },
     es: {
@@ -2151,9 +2151,9 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'ico-roi-calculator': {
     en: {
-      quickAnswer: 'ICO ROI = ((Current Price − ICO Price) / ICO Price) × 100%. An ICO investment of $0.10/token now worth $2.50 represents a 2,400% return — but most ICOs underperform within 2 years.',
+      quickAnswer: 'ICO ROI = ((Current Price − ICO Price) / ICO Price) × 100%. An ICO investment of $0.10/token now worth $2.50 represents a 2,400% return, but most ICOs underperform within 2 years.',
       how: [
-      `The ICO/IDO ROI Calculator measures the return on investment from participating in token launches — comparing the price paid at the offering stage (ICO, IDO, seed, or private round) against the current market price or a target exit price. Enter your investment amount, ICO price per token, and current/exit price to see both gross and post-vesting ROI.`,
+      `The ICO/IDO ROI Calculator measures the return on investment from participating in token launches, comparing the price paid at the offering stage (ICO, IDO, seed, or private round) against the current market price or a target exit price. Enter your investment amount, ICO price per token, and current/exit price to see both gross and post-vesting ROI.`,
       `Use it to evaluate whether a token allocation is worth claiming and selling, or whether waiting for further vesting unlocks is strategically better. For locked allocations, enter the percentage unlocked to date to see the realized versus unrealized portion of your return. Compare multiple ICO investments side-by-side to see which has the best remaining upside.`
       ],
       inputs: [
@@ -2221,11 +2221,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Estimate the dollar value of token airdrops based on allocation amount and expected token price. If you qualify for 1,000 tokens worth $2.50 each, your airdrop is valued at $2,500 pre-tax.',
       how: [
-      `The Airdrop Calculator values your airdrop token allocation in USD based on the current market price, and estimates your net profit after any gas fees paid to claim the tokens. Enter the number of tokens received, the current token price, and your gas cost to claim — the calculator shows gross value, net value, and ROI if you participated in a qualifying activity that had a known cost.`,
+      `The Airdrop Calculator values your airdrop token allocation in USD based on the current market price, and estimates your net profit after any gas fees paid to claim the tokens. Enter the number of tokens received, the current token price, and your gas cost to claim, the calculator shows gross value, net value, and ROI if you participated in a qualifying activity that had a known cost.`,
       `Use it to decide whether claiming an airdrop is economically rational given the current gas fees. When Ethereum gas is high ($50–200+ for complex claim transactions), small airdrops may not be worth claiming. The calculator breaks even analysis shows the minimum token value required to justify your gas cost.`
       ],
       inputs: [
-      `Token quantity is the number of tokens in your airdrop allocation (check the project's claim portal for your exact amount). Current token price is fetched automatically for listed tokens or entered manually for pre-TGE airdrops. Gas fee to claim is the estimated cost of the claim transaction in USD — check current gas prices on Etherscan Gas Tracker before claiming.`,
+      `Token quantity is the number of tokens in your airdrop allocation (check the project's claim portal for your exact amount). Current token price is fetched automatically for listed tokens or entered manually for pre-TGE airdrops. Gas fee to claim is the estimated cost of the claim transaction in USD, check current gas prices on Etherscan Gas Tracker before claiming.`,
       `If you completed qualifying activities (e.g., liquidity provision, governance votes, trading volumes) to earn the airdrop, enter the total costs you incurred to qualify. The calculator then shows your true ROI on the activity-based airdrop strategy, accounting for all costs from qualification through claiming.`
       ],
     },
@@ -2294,7 +2294,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
       inputs: [
       `Node collateral is the required minimum stake to run the validator — 32 ETH for Ethereum, variable for Solana and other networks. Annual APY is the expected validator reward rate, which varies based on total network stake and validator count. Monthly hosting costs cover server, bandwidth, and optional monitoring services.`,
-      `Hardware cost applies to home validation setups — enter the amortized monthly cost of your validator hardware. For cloud-hosted nodes, this is typically $50–200/month. The calculator also accounts for slashing risk exposure: validators that go offline or behave incorrectly lose a portion of their stake, so the slashing risk field adjusts the expected return downward by a probability-weighted penalty.`
+      `Hardware cost applies to home validation setups, enter the amortized monthly cost of your validator hardware. For cloud-hosted nodes, this is typically $50–200/month. The calculator also accounts for slashing risk exposure: validators that go offline or behave incorrectly lose a portion of their stake, so the slashing risk field adjusts the expected return downward by a probability-weighted penalty.`
       ],
     },
     es: {
@@ -2358,10 +2358,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Compare ASIC profitability across models and algorithms. The Antminer S21 Pro (234 TH/s, 3,510W) earns roughly $10–14/day at $0.06/kWh — ROI depends on BTC price and difficulty.',
       how: [
       `The ASIC Mining Calculator estimates profitability for Bitcoin and other ASIC-mineable coins based on your hardware's rated hashrate and power consumption. Enter the ASIC model's hashrate (TH/s for SHA-256), power draw in watts, electricity rate, pool fee, and the current hardware acquisition cost to get daily profit and break-even timeline.`,
-      `Use it before purchasing ASIC hardware to evaluate payback periods under different price scenarios. An S21 Pro at current difficulty might break even in 6 months at current prices but require 18+ months at a 50% lower BTC price — the calculator models both. Always check the manufacturer's hashrate versus independently benchmarked community results, which often run 5–10% lower.`
+      `Use it before purchasing ASIC hardware to evaluate payback periods under different price scenarios. An S21 Pro at current difficulty might break even in 6 months at current prices but require 18+ months at a 50% lower BTC price, the calculator models both. Always check the manufacturer's hashrate versus independently benchmarked community results, which often run 5–10% lower.`
       ],
       inputs: [
-      `Hashrate for SHA-256 ASIC miners is measured in TH/s (terahashes per second). Modern top-tier miners range from 100 to 300+ TH/s. Power consumption is the rated TDP from the manufacturer's spec sheet — add 10% for PSU inefficiency. Pool fee is typically 1–2% for major Bitcoin pools (Foundry, Antpool, F2Pool).`,
+      `Hashrate for SHA-256 ASIC miners is measured in TH/s (terahashes per second). Modern top-tier miners range from 100 to 300+ TH/s. Power consumption is the rated TDP from the manufacturer's spec sheet, add 10% for PSU inefficiency. Pool fee is typically 1–2% for major Bitcoin pools (Foundry, Antpool, F2Pool).`,
       `Hardware cost is used to calculate the payback period and ROI. Enter the current used market price for a realistic payback estimate, since new ASIC prices vary significantly during bull and bear markets. The calculator also models the effect of the next Bitcoin halving on your hardware's future revenue, showing pre- and post-halving profit projections.`
       ],
     },
@@ -2425,12 +2425,12 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Crypto lending yield = Principal × APY × Duration/365. Lending $10,000 USDC at 8% APY for 90 days earns ~$197. Compare rates across Aave, Compound, and centralized platforms.',
       how: [
-      `The Crypto Lending Calculator computes interest earned or owed for cryptocurrency lending and borrowing positions on DeFi protocols or CeFi platforms. Enter your principal, APY rate, duration, and compounding frequency to project final balance and total interest — comparing lending versus borrowing economics in one view.`,
+      `The Crypto Lending Calculator computes interest earned or owed for cryptocurrency lending and borrowing positions on DeFi protocols or CeFi platforms. Enter your principal, APY rate, duration, and compounding frequency to project final balance and total interest, comparing lending versus borrowing economics in one view.`,
       `Use it to evaluate whether depositing crypto on Aave, Compound, or Morpho at a given supply APY generates meaningful returns compared to simply holding. For borrowers, it shows the total interest obligation over the loan term and the effective annualized cost of the loan. Compare multiple platforms side-by-side to optimize your lending or borrowing allocation.`
       ],
       inputs: [
-      `Principal is your deposit amount (for lenders) or loan amount (for borrowers) in USD or crypto value. APY is the supply APY for deposits or borrow APY for loans — these fluctuate based on utilization rates and are available on the protocol's dashboard. Duration can be set in days, weeks, months, or years.`,
-      `For variable-rate protocols, the calculator uses the current APY as a constant approximation — actual earnings may vary as rates change. Compound interest mode reinvests accrued interest back into the principal each period. For borrowers, the health factor threshold field lets you see the collateral requirements and liquidation risk alongside the interest cost.`
+      `Principal is your deposit amount (for lenders) or loan amount (for borrowers) in USD or crypto value. APY is the supply APY for deposits or borrow APY for loans, these fluctuate based on utilization rates and are available on the protocol's dashboard. Duration can be set in days, weeks, months, or years.`,
+      `For variable-rate protocols, the calculator uses the current APY as a constant approximation, actual earnings may vary as rates change. Compound interest mode reinvests accrued interest back into the principal each period. For borrowers, the health factor threshold field lets you see the collateral requirements and liquidation risk alongside the interest cost.`
       ],
     },
     es: {
@@ -2491,14 +2491,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'leverage-calculator': {
     en: {
-      quickAnswer: 'Leveraged P&amp;L = Price Change % × Leverage × Position Size. A 5% price rise with 10x leverage yields 50% return on collateral — but a 10% drop triggers liquidation.',
+      quickAnswer: 'Leveraged P&amp;L = Price Change % × Leverage × Position Size. A 5% price rise with 10x leverage yields 50% return on collateral, but a 10% drop triggers liquidation.',
       how: [
         `The Leverage Calculator shows the amplified profit, loss, and liquidation price for a leveraged crypto trade. Enter your collateral amount, leverage multiplier (2x–125x), entry price, and target or stop-loss exit price to see the magnified outcome compared to a spot position. The calculator instantly reveals your effective position size, margin requirement, and the exact price level where your entire collateral would be wiped out.`,
-        `Use it before opening any leveraged position on exchanges like Binance, Bybit, or dYdX to understand the true risk. A 10x long that moves 5% against you loses 50% of your collateral — and a 10% adverse move triggers liquidation. The calculator makes these dynamics concrete by showing dollar amounts rather than abstract multipliers, helping you size leverage appropriately for your risk tolerance.`
+        `Use it before opening any leveraged position on exchanges like Binance, Bybit, or dYdX to understand the true risk. A 10x long that moves 5% against you loses 50% of your collateral, and a 10% adverse move triggers liquidation. The calculator makes these dynamics concrete by showing dollar amounts rather than abstract multipliers, helping you size leverage appropriately for your risk tolerance.`
       ],
       inputs: [
-        `Collateral is the margin you deposit to open the position — your maximum possible loss. Leverage multiplier determines how much larger your effective position is versus your collateral: 10x on $1,000 collateral controls a $10,000 position. Entry price is the price at which you open the trade. Direction (long or short) determines which price movement is profitable.`,
-        `The liquidation price field shows where the exchange will forcibly close your position to prevent losses exceeding your collateral. Maintenance margin rate varies by exchange and position size — typically 0.4–1% on major platforms. The calculator also outputs break-even price including the trading fee on entry and exit, since fees consume margin that would otherwise cushion against liquidation.`
+        `Collateral is the margin you deposit to open the position, your maximum possible loss. Leverage multiplier determines how much larger your effective position is versus your collateral: 10x on $1,000 collateral controls a $10,000 position. Entry price is the price at which you open the trade. Direction (long or short) determines which price movement is profitable.`,
+        `The liquidation price field shows where the exchange will forcibly close your position to prevent losses exceeding your collateral. Maintenance margin rate varies by exchange and position size, typically 0.4–1% on major platforms. The calculator also outputs break-even price including the trading fee on entry and exit, since fees consume margin that would otherwise cushion against liquidation.`
       ],
     },
     es: { quickAnswer: 'P&amp;L apalancado = Cambio de Precio % × Apalancamiento × Tamaño de Posición. Un aumento del 5% con apalancamiento 10x genera un 50% de retorno sobre el colateral — pero una caída del 10% activa la liquidación.', how: [`La Calculadora de Apalancamiento muestra el beneficio, la pérdida y el precio de liquidación amplificados para una operación cripto apalancada. Introduce tu colateral, multiplicador de apalancamiento (2x-125x), precio de entrada y precio objetivo para ver el resultado magnificado.`, `Úsala antes de abrir cualquier posición apalancada en exchanges como Binance, Bybit o dYdX. Un long 10x que se mueve un 5% en contra pierde el 50% de tu colateral, y un 10% activa la liquidación.`], inputs: [`El colateral es el margen que depositas — tu pérdida máxima posible. El multiplicador determina cuánto mayor es tu posición efectiva. El precio de entrada es donde abres la operación. La dirección (largo o corto) determina qué movimiento es rentable.`, `El precio de liquidación muestra dónde el exchange cerrará forzosamente tu posición. La tasa de margen de mantenimiento varía por exchange — típicamente 0,4-1% en plataformas principales. El calculador también muestra el punto de equilibrio incluyendo comisiones.`] },
@@ -2509,14 +2509,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'yield-farming-calculator': {
     en: {
-      quickAnswer: 'Yield farming return = (Principal × APY × Duration/365) − Gas Costs. Farming $10,000 at 50% APY for 30 days yields ~$411 — subtract ~$50 in gas for a net return of $361.',
+      quickAnswer: 'Yield farming return = (Principal × APY × Duration/365) − Gas Costs. Farming $10,000 at 50% APY for 30 days yields ~$411, subtract ~$50 in gas for a net return of $361.',
       how: [
       `The Yield Farming Calculator projects the returns from depositing liquidity into DeFi protocols that offer additional token rewards on top of base trading fees. Enter your deposit amount, the base fee APR from trading activity, the reward token APR, current token price, and your expected duration to see total projected returns and the impact of compounding your rewards.`,
-      `Use it to compare different farming opportunities across protocols: Uniswap v3 concentrated liquidity positions often offer higher base fee yields than Uniswap v2 but require active management. Factor in gas costs for claiming and compounding rewards — frequent compounding is only optimal above a certain minimum position size where gas doesn't erode gains.`
+      `Use it to compare different farming opportunities across protocols: Uniswap v3 concentrated liquidity positions often offer higher base fee yields than Uniswap v2 but require active management. Factor in gas costs for claiming and compounding rewards, frequent compounding is only optimal above a certain minimum position size where gas doesn't erode gains.`
       ],
       inputs: [
       `Deposit amount is your total capital in the farming position. Base APR is the annualized fee income from trading activity in the pool. Reward APR is the additional incentive token yield distributed by the protocol. Both APR figures are typically shown in the protocol's UI or on DeFiLlama's yield page.`,
-      `Token price for rewards is important when reward tokens are native governance tokens that may depreciate — model both current price and a 50% lower price scenario to see downside returns. Gas cost per compound shows how frequently you should harvest and reinvest rewards based on your position size, with the optimal compounding interval increasing as gas prices rise.`
+      `Token price for rewards is important when reward tokens are native governance tokens that may depreciate, model both current price and a 50% lower price scenario to see downside returns. Gas cost per compound shows how frequently you should harvest and reinvest rewards based on your position size, with the optimal compounding interval increasing as gas prices rise.`
       ],
     },
     es: {
@@ -2579,12 +2579,12 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Convert crypto salary to local currency and estimate tax withholding. A $100,000/year salary paid in BTC at $77,300 means receiving ~0.0498 BTC biweekly before taxes.',
       how: [
-      `The Crypto Salary Calculator converts a traditional fiat salary into its cryptocurrency equivalent, or shows how much fiat a given crypto salary is worth. Enter your fiat salary (annual or monthly), select a cryptocurrency, and see the equivalent in crypto at today's price — useful for employees or contractors paid in cryptocurrency or businesses offering crypto salary packages.`,
+      `The Crypto Salary Calculator converts a traditional fiat salary into its cryptocurrency equivalent, or shows how much fiat a given crypto salary is worth. Enter your fiat salary (annual or monthly), select a cryptocurrency, and see the equivalent in crypto at today's price, useful for employees or contractors paid in cryptocurrency or businesses offering crypto salary packages.`,
       `Use it to understand your real purchasing power when offered a salary in BTC, ETH, or stablecoins. For volatile assets like BTC or ETH, also calculate the value at 20% below current price to understand your downside risk. For stablecoin salaries (USDC, USDT), the conversion is near 1:1 with USD, providing predictable income.`
       ],
       inputs: [
-      `Fiat salary amount is your gross pay before tax — enter either annual or monthly and the calculator converts. Select the payment currency (BTC, ETH, USDC, or any token) and the reference fiat currency. The exchange rate is auto-filled from live CoinGecko prices.`,
-      `For tax planning purposes, note that cryptocurrency wages are typically taxed as income at the fair market value at the time of receipt in most jurisdictions. The calculator shows the monthly and annual value at current prices but does not account for tax withholding — consult your local tax authority for crypto salary tax treatment.`
+      `Fiat salary amount is your gross pay before tax, enter either annual or monthly and the calculator converts. Select the payment currency (BTC, ETH, USDC, or any token) and the reference fiat currency. The exchange rate is auto-filled from live CoinGecko prices.`,
+      `For tax planning purposes, note that cryptocurrency wages are typically taxed as income at the fair market value at the time of receipt in most jurisdictions. The calculator shows the monthly and annual value at current prices but does not account for tax withholding, consult your local tax authority for crypto salary tax treatment.`
       ],
     },
     es: {
@@ -2645,13 +2645,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'inflation-hedge': {
     en: {
-      quickAnswer: 'Compare crypto vs fiat purchasing power over time. $10,000 in USD from 2014 is worth ~$6,200 in real terms due to inflation — the same amount in BTC would be worth dramatically more.',
+      quickAnswer: 'Compare crypto vs fiat purchasing power over time. $10,000 in USD from 2014 is worth ~$6,200 in real terms due to inflation, the same amount in BTC would be worth dramatically more.',
       how: [
-      `The Inflation Hedge Calculator shows how much purchasing power you would have preserved — or gained — by holding cryptocurrency instead of fiat currency over any historical period. Enter a starting year or date, an initial fiat amount, select a country for inflation data, and choose a cryptocurrency to compare against — the calculator shows the inflation-adjusted fiat value versus the crypto value over the same period.`,
+      `The Inflation Hedge Calculator shows how much purchasing power you would have preserved, or gained, by holding cryptocurrency instead of fiat currency over any historical period. Enter a starting year or date, an initial fiat amount, select a country for inflation data, and choose a cryptocurrency to compare against, the calculator shows the inflation-adjusted fiat value versus the crypto value over the same period.`,
       `Use it to visualize the long-term argument for Bitcoin as digital gold or a store of value. If $10,000 held in USD in 2014 would be worth $6,200 in real purchasing power today due to inflation, while $10,000 in Bitcoin would be worth substantially more, the calculator makes this comparison concrete and data-driven rather than theoretical.`
       ],
       inputs: [
-      `Starting period is the month and year of your hypothetical investment. Fiat amount is the initial capital. Country selection loads historical CPI (Consumer Price Index) data for accurate inflation rates — available for 30+ countries. Cryptocurrency selection determines the price comparison against the inflation-adjusted fiat value.`,
+      `Starting period is the month and year of your hypothetical investment. Fiat amount is the initial capital. Country selection loads historical CPI (Consumer Price Index) data for accurate inflation rates, available for 30+ countries. Cryptocurrency selection determines the price comparison against the inflation-adjusted fiat value.`,
       `The calculator uses official CPI data from government statistical agencies for each country, providing a reliable inflation baseline. For USD, Euro, GBP, and JPY, historical data extends back to the early Bitcoin era. Results are displayed as both absolute values and real purchasing power equivalents, making the comparison immediate and intuitive.`
       ],
     },
@@ -2720,7 +2720,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
       inputs: [
       `Select Coin A (the coin whose hypothetical price you want to calculate) and Coin B (the coin whose market cap you want Coin A to reach). Both market caps and circulating supplies are automatically fetched from CoinGecko's live data.`,
-      `The result is Coin A's implied price = Coin B's market cap / Coin A's circulating supply. Be aware that a coin's supply may differ significantly from the comparison target — a coin with 100 billion tokens reaching Bitcoin's market cap would have a very different per-token price than a coin with 21 million tokens.`
+      `The result is Coin A's implied price = Coin B's market cap / Coin A's circulating supply. Be aware that a coin's supply may differ significantly from the comparison target, a coin with 100 billion tokens reaching Bitcoin's market cap would have a very different per-token price than a coin with 21 million tokens.`
       ],
     },
     es: {
@@ -2781,14 +2781,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'reverse-roi': {
     en: {
-      quickAnswer: 'Find the maximum buy price to achieve your target ROI. If you want 100% return and the current price is $77,300, you need to buy at $36,850 or lower — works backwards from your desired outcome.',
+      quickAnswer: 'Find the maximum buy price to achieve your target ROI. If you want 100% return and the current price is $77,300, you need to buy at $36,850 or lower, works backwards from your desired outcome.',
       how: [
       `The Reverse ROI Calculator solves for the buy price required to achieve a target return. Instead of asking 'what is my ROI if I buy at X?', it asks 'what price must I buy at to achieve Y% ROI?' — working backwards from a desired outcome. Enter your target ROI percentage and the current price, and the calculator returns the maximum entry price.`,
-      `Use it when averaging down into a falling position to find the required average cost basis needed to return to profitability. If you bought ETH at $3,500 and it's now at $2,200, entering your target breakeven ROI lets you see exactly what average price you need to achieve by buying more — validating whether doubling down makes mathematical sense.`
+      `Use it when averaging down into a falling position to find the required average cost basis needed to return to profitability. If you bought ETH at $3,500 and it's now at $2,200, entering your target breakeven ROI lets you see exactly what average price you need to achieve by buying more, validating whether doubling down makes mathematical sense.`
       ],
       inputs: [
-      `Target ROI is the percentage return you are seeking — e.g., 100% means you want to double your money. Current price is the live market price (auto-filled) or the expected exit price at which you plan to sell. The calculator solves for the maximum buy price.`,
-      `For dollar-cost averaging scenarios, enter your target profit percentage and the expected sell price, and the calculator shows the required average entry. You can also use it to find the required DCA price after factoring in fees — enter your total fee percentage in the fee field to include round-trip trading costs in the target entry calculation.`
+      `Target ROI is the percentage return you are seeking, e.g., 100% means you want to double your money. Current price is the live market price (auto-filled) or the expected exit price at which you plan to sell. The calculator solves for the maximum buy price.`,
+      `For dollar-cost averaging scenarios, enter your target profit percentage and the expected sell price, and the calculator shows the required average entry. You can also use it to find the required DCA price after factoring in fees, enter your total fee percentage in the fee field to include round-trip trading costs in the target entry calculation.`
       ],
     },
     es: {
@@ -2852,11 +2852,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Crypto-backed loan interest = Principal × APR × (Term/12). Borrowing $20,000 against BTC collateral at 8% APR for 12 months costs $1,600 in interest. Compare LTV ratios across platforms.',
       how: [
       `The Crypto Loan Calculator computes the interest cost, liquidation price, and LTV (loan-to-value) dynamics for a cryptocurrency-backed loan. Enter your collateral asset and amount, the loan amount in USD or stablecoin, the annual interest rate, and your loan duration to see total interest owed, effective APR, and the collateral price level that would trigger liquidation.`,
-      `Use it before taking a crypto loan on platforms like Nexo, BlockFi, or Compound to understand the true cost and risk of leverage. The liquidation price calculation is especially valuable — it shows how much your collateral can drop before the lender liquidates your position to cover the loan, helping you maintain a safe margin of safety.`
+      `Use it before taking a crypto loan on platforms like Nexo, BlockFi, or Compound to understand the true cost and risk of leverage. The liquidation price calculation is especially valuable, it shows how much your collateral can drop before the lender liquidates your position to cover the loan, helping you maintain a safe margin of safety.`
       ],
       inputs: [
-      `Collateral amount is the crypto you're pledging as security (e.g., 1 BTC). Collateral value is auto-filled at current price. Loan amount in USD is how much you're borrowing. LTV ratio (loan amount / collateral value) typically must stay below 50–80% depending on the platform — the calculator shows your current LTV and the critical liquidation LTV threshold.`,
-      `Annual interest rate varies by platform and collateral type — ranges from 6–18% for major assets on CeFi platforms to 2–5% on DeFi protocols. Loan duration determines total interest. The maintenance LTV field shows at what LTV ratio the lender will liquidate — typically 10–15% above your initial LTV to provide a buffer for market volatility.`
+      `Collateral amount is the crypto you're pledging as security (e.g., 1 BTC). Collateral value is auto-filled at current price. Loan amount in USD is how much you're borrowing. LTV ratio (loan amount / collateral value) typically must stay below 50–80% depending on the platform, the calculator shows your current LTV and the critical liquidation LTV threshold.`,
+      `Annual interest rate varies by platform and collateral type, ranges from 6–18% for major assets on CeFi platforms to 2–5% on DeFi protocols. Loan duration determines total interest. The maintenance LTV field shows at what LTV ratio the lender will liquidate, typically 10–15% above your initial LTV to provide a buffer for market volatility.`
       ],
     },
     es: {
@@ -2917,14 +2917,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'loan-calculator': {
     en: {
-      quickAnswer: 'Crypto loan amount = Collateral Value × LTV%. Depositing $10,000 in BTC at 50% LTV gets you a $5,000 loan. Watch your margin call level — a 30% BTC drop could trigger liquidation.',
+      quickAnswer: 'Crypto loan amount = Collateral Value × LTV%. Depositing $10,000 in BTC at 50% LTV gets you a $5,000 loan. Watch your margin call level, a 30% BTC drop could trigger liquidation.',
       how: [
         `The Loan Calculator models a traditional repayment schedule for crypto-backed borrowing. Enter the loan principal, annual interest rate, repayment term in months, and any origination fee to generate a full amortization table showing each monthly payment split between principal and interest. Unlike simple interest estimates, this calculator uses standard amortization so you can see exactly how your balance decreases over time.`,
         `Use it to compare loan offers from different crypto lending platforms by entering each one's rate and term. The calculator also shows total interest paid over the life of the loan and the effective cost including fees. If you plan to repay early, check the remaining balance at your target payoff month to see how much interest you save versus carrying the loan to full term.`
       ],
       inputs: [
         `Loan principal is the total amount you are borrowing in USD or stablecoins. Annual interest rate (APR) reflects the lender's stated rate — CeFi platforms typically charge 6-15% for major collateral assets, while DeFi protocols offer variable rates from 2-8%. Loan term in months determines how many installments you make; shorter terms mean higher monthly payments but less total interest.`,
-        `Origination fee is a one-time upfront charge some platforms apply, typically 1-3% of the loan amount. The collateral ratio field optionally shows how much crypto you need to pledge to secure the loan — most platforms require 150-200% overcollateralization. The amortization schedule output lets you verify any monthly payment amount before committing.`
+        `Origination fee is a one-time upfront charge some platforms apply, typically 1-3% of the loan amount. The collateral ratio field optionally shows how much crypto you need to pledge to secure the loan, most platforms require 150-200% overcollateralization. The amortization schedule output lets you verify any monthly payment amount before committing.`
       ],
     },
     es: { quickAnswer: 'Monto del préstamo cripto = Valor del Colateral × LTV%. Depositar $10.000 en BTC al 50% LTV te da un préstamo de $5.000. Vigila tu nivel de margin call — una caída del 30% en BTC podría activar la liquidación.', how: [`La Calculadora de Préstamo modela un calendario de amortización para préstamos con respaldo cripto. Introduce el capital, la tasa de interés anual, el plazo en meses y cualquier comisión de originación para generar una tabla completa mostrando cada cuota mensual dividida entre capital e intereses.`, `Úsala para comparar ofertas de préstamo de diferentes plataformas introduciendo la tasa y el plazo de cada una. El calculador muestra el interés total pagado y el costo efectivo incluyendo comisiones.`], inputs: [`El capital del préstamo es el monto total que estás pidiendo prestado. La tasa de interés anual refleja la tasa declarada del prestamista — plataformas CeFi cobran 6-15% para colaterales principales, protocolos DeFi ofrecen tasas variables del 2-8%.`, `La comisión de originación es un cargo único que algunas plataformas aplican, típicamente 1-3% del monto. El ratio de colateral muestra cuánto cripto necesitas como garantía — la mayoría requiere 150-200% de sobrecolateralización.`] },
@@ -2937,11 +2937,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Pip value = (One Pip / Exchange Rate) × Position Size. For a 100,000 EUR/USD position, one pip (0.0001) = $10. Use pip values to set accurate stop-losses and take-profits.',
       how: [
-      `The Pip Calculator determines the monetary value of a price movement (pip) for cryptocurrency trading pairs, translating raw price changes into dollar profit or loss for your position size. Enter the trading pair, lot size or position quantity, and pip size — the calculator returns the exact USD value per pip so you can accurately size your stop-loss distance.`,
+      `The Pip Calculator determines the monetary value of a price movement (pip) for cryptocurrency trading pairs, translating raw price changes into dollar profit or loss for your position size. Enter the trading pair, lot size or position quantity, and pip size, the calculator returns the exact USD value per pip so you can accurately size your stop-loss distance.`,
       `Use it alongside the Position Size Calculator to convert your stop-loss distance in pips into a dollar risk amount, ensuring your position size aligns with your maximum acceptable loss. For crypto pairs not priced in USD, the calculator applies the cross-rate to normalize pip values to your account currency.`
       ],
       inputs: [
-      `Trading pair specifies the base and quote currencies (e.g., BTC/USD, ETH/BTC). Position size is the quantity of the base currency you hold. Pip size is the minimum price increment for that pair — typically $1 for BTC/USD, $0.01 for ETH/USD, or 0.00001 for pairs with 5 decimal places.`,
+      `Trading pair specifies the base and quote currencies (e.g., BTC/USD, ETH/BTC). Position size is the quantity of the base currency you hold. Pip size is the minimum price increment for that pair, typically $1 for BTC/USD, $0.01 for ETH/USD, or 0.00001 for pairs with 5 decimal places.`,
       `For perpetual futures, pip value also depends on the contract size and whether it's a linear (USDT-margined) or inverse (coin-margined) contract. Linear contracts calculate P&L in USDT while inverse contracts calculate P&L in the base asset. Ensure you're using the correct contract type for accurate pip value calculations.`
       ],
     },
@@ -3008,13 +3008,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'portfolio-calculator': {
     en: {
-      quickAnswer: 'Allocate your crypto portfolio across multiple assets with target percentages. A balanced portfolio might be 40% BTC, 25% ETH, 15% SOL, 20% stablecoins — adjust based on your risk tolerance.',
+      quickAnswer: 'Allocate your crypto portfolio across multiple assets with target percentages. A balanced portfolio might be 40% BTC, 25% ETH, 15% SOL, 20% stablecoins, adjust based on your risk tolerance.',
       how: [
         `The Portfolio Calculator tracks your entire crypto portfolio in one place by computing current value, total profit or loss, and allocation percentages across all your holdings. Add each asset with its purchase price, quantity, and current market price to see individual and aggregate performance. The calculator displays your portfolio's total value, unrealized P&L, percentage gain, and a visual allocation breakdown.`,
         `Use it to evaluate portfolio diversification and identify concentration risk. If a single asset represents more than 30-40% of your portfolio, the calculator highlights this imbalance. Run "what-if" scenarios by adjusting individual asset prices to see how a 50% drop in your largest position or a 2x gain in an altcoin would affect your total portfolio value and allocation weights.`
       ],
       inputs: [
-        `For each holding, enter the asset name or ticker, the quantity you own, and your average purchase price. The calculator fetches live prices from CoinGecko to compute current value automatically. You can add unlimited assets — from major coins like BTC and ETH to small-cap altcoins and stablecoins — building a complete picture of your holdings.`,
+        `For each holding, enter the asset name or ticker, the quantity you own, and your average purchase price. The calculator fetches live prices from CoinGecko to compute current value automatically. You can add unlimited assets, from major coins like BTC and ETH to small-cap altcoins and stablecoins, building a complete picture of your holdings.`,
         `The average cost basis field accepts either the exact price per unit or a total investment amount divided by quantity. For assets purchased in multiple batches at different prices, calculate your weighted average cost before entering. The portfolio summary shows overall ROI, best and worst performing assets, and allocation percentages to help inform rebalancing decisions.`
       ],
     },
@@ -3029,10 +3029,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Mining ROI = (Total Revenue − Total Costs) / Hardware Cost × 100%. An $8,000 ASIC earning $10/day with $6/day costs has a daily profit of $4 — ROI breakeven in ~2,000 days (5.5 years).',
       how: [
       `The Mining ROI Calculator measures the total return on investment for a mining operation, factoring in hardware acquisition cost, ongoing electricity expenses, pool fees, and revenue from mined coins. Enter all cost components and your projected mining duration to see cumulative profit, ROI percentage, and break-even timeline displayed month by month.`,
-      `Use it to make the go/no-go decision on hardware purchases. A useful exercise is to calculate ROI at three price points: current coin price, 50% below, and 100% above — to see under what scenarios the hardware pays off. For large operations, compare the mining ROI against simply buying and holding the equivalent coin value to see which approach delivers better risk-adjusted returns.`
+      `Use it to make the go/no-go decision on hardware purchases. A useful exercise is to calculate ROI at three price points: current coin price, 50% below, and 100% above, to see under what scenarios the hardware pays off. For large operations, compare the mining ROI against simply buying and holding the equivalent coin value to see which approach delivers better risk-adjusted returns.`
       ],
       inputs: [
-      `Hardware cost is the total capital expenditure on mining equipment. Monthly electricity cost is calculated from your hashrate, power consumption, and electricity rate — or you can enter it directly if you already know your monthly power bill for the rig. Monthly pool fees are automatically calculated from your expected monthly revenue and pool fee percentage.`,
+      `Hardware cost is the total capital expenditure on mining equipment. Monthly electricity cost is calculated from your hashrate, power consumption, and electricity rate, or you can enter it directly if you already know your monthly power bill for the rig. Monthly pool fees are automatically calculated from your expected monthly revenue and pool fee percentage.`,
       `Expected monthly revenue is auto-calculated from your hashrate, current network difficulty, block reward, and coin price. Difficulty adjustment frequency varies by coin — Bitcoin adjusts every ~2 weeks, making it relatively predictable. Altcoins can see more dramatic difficulty changes. The calculator models difficulty as constant unless you manually adjust the 'expected difficulty change' field.`
       ],
     },
@@ -3099,14 +3099,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'electricity-cost-calculator': {
     en: {
-      quickAnswer: 'Mining electricity cost = Power (kW) × Hours × Rate ($/kWh). A 3,500W ASIC running 24/7 at $0.08/kWh costs $6.72/day — that\'s $2,453/year, often 60–80% of total mining expenses.',
+      quickAnswer: 'Mining electricity cost = Power (kW) × Hours × Rate ($/kWh). A 3,500W ASIC running 24/7 at $0.08/kWh costs $6.72/day, that\'s $2,453/year, often 60–80% of total mining expenses.',
       how: [
-      `The Electricity Cost Calculator determines the exact monthly and annual electricity expense for any mining rig or power-intensive crypto operation. Enter the total power draw in watts and your electricity rate in $/kWh to see hourly, daily, monthly, and annual electricity costs — the single largest operating expense for most miners.`,
+      `The Electricity Cost Calculator determines the exact monthly and annual electricity expense for any mining rig or power-intensive crypto operation. Enter the total power draw in watts and your electricity rate in $/kWh to see hourly, daily, monthly, and annual electricity costs, the single largest operating expense for most miners.`,
       `Use it to compare mining economics across different geographic locations. A rig consuming 3,000 watts costs $131/month at $0.06/kWh in cheaper regions like Kazakhstan or parts of the US, versus $394/month at $0.18/kWh in high-cost electricity markets. The break-even electricity rate field shows the maximum rate at which your mining operation remains profitable.`
       ],
       inputs: [
-      `Power consumption in watts is the total draw from the wall — not the GPU or ASIC rated TDP, but the actual system-level power including fans, frame, and PSU inefficiency. Use a smart plug power meter for accurate measurement. Electricity rate in $/kWh is your actual billing rate including delivery charges and taxes, not the advertised base rate.`,
-      `For time-of-use pricing (where electricity is cheaper during off-peak hours), enter the weighted average rate based on your typical hours of operation. For large operations, industrial electricity contracts may offer lower rates but have minimum demand requirements — consult your utility for commercial rate schedules before assuming residential rates apply.`
+      `Power consumption in watts is the total draw from the wall, not the GPU or ASIC rated TDP, but the actual system-level power including fans, frame, and PSU inefficiency. Use a smart plug power meter for accurate measurement. Electricity rate in $/kWh is your actual billing rate including delivery charges and taxes, not the advertised base rate.`,
+      `For time-of-use pricing (where electricity is cheaper during off-peak hours), enter the weighted average rate based on your typical hours of operation. For large operations, industrial electricity contracts may offer lower rates but have minimum demand requirements, consult your utility for commercial rate schedules before assuming residential rates apply.`
       ],
     },
     es: {
@@ -3175,7 +3175,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Bitcoin mining difficulty adjusts every 2,016 blocks (~2 weeks). Current difficulty: ~145T. A 10% difficulty increase reduces daily mining revenue by approximately 10% for the same hash rate.',
       how: [
       `The Mining Difficulty Calculator estimates how Bitcoin's network difficulty will change at the next adjustment and projects its impact on your mining revenue. It calculates the expected difficulty adjustment percentage based on the time elapsed since the last adjustment and the current block production rate compared to the target 10-minute interval.`,
-      `Use it to anticipate revenue changes before the next difficulty adjustment. If blocks are being mined faster than the 10-minute target, difficulty will increase and your share of the block reward will decrease proportionally. During rapid hash rate growth periods, difficulty can jump 5–10% per adjustment — the calculator helps you model this impact on profitability.`
+      `Use it to anticipate revenue changes before the next difficulty adjustment. If blocks are being mined faster than the 10-minute target, difficulty will increase and your share of the block reward will decrease proportionally. During rapid hash rate growth periods, difficulty can jump 5–10% per adjustment, the calculator helps you model this impact on profitability.`
       ],
       inputs: [
       `Current block height and last adjustment block are auto-fetched from the Bitcoin network. The expected block time (10 minutes for Bitcoin) is preset. Current average block time, derived from recent blocks, determines whether difficulty is expected to increase or decrease.`,
@@ -3247,11 +3247,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Convert mining speed units between H/s, KH/s, MH/s, GH/s, TH/s, PH/s, and EH/s. Each tier is exactly 1,000× the previous. The Bitcoin network runs at ~856 EH/s as of April 2026.',
       how: [
-      `The Hashrate Converter translates mining speed units between H/s, KH/s, MH/s, GH/s, TH/s, PH/s, and EH/s — eliminating confusion when comparing hardware that reports in different units. Enter a value in any unit and all other units update instantly, making it easy to convert a GPU rig's MH/s into the TH/s used by ASIC miners or network-level statistics.`,
-      `Use it when reading pool statistics, block explorer data, or mining calculator inputs that use different units than your hardware reports. Bitcoin network hashrate is reported in EH/s (exahashes per second), while individual miners work in TH/s — knowing the conversion is essential for understanding your share of the network.`
+      `The Hashrate Converter translates mining speed units between H/s, KH/s, MH/s, GH/s, TH/s, PH/s, and EH/s, eliminating confusion when comparing hardware that reports in different units. Enter a value in any unit and all other units update instantly, making it easy to convert a GPU rig's MH/s into the TH/s used by ASIC miners or network-level statistics.`,
+      `Use it when reading pool statistics, block explorer data, or mining calculator inputs that use different units than your hardware reports. Bitcoin network hashrate is reported in EH/s (exahashes per second), while individual miners work in TH/s, knowing the conversion is essential for understanding your share of the network.`
       ],
       inputs: [
-      `Enter a hashrate value in any unit — H/s (hashes/sec), KH/s (kilohashes), MH/s (megahashes), GH/s (gigahashes), TH/s (terahashes), PH/s (petahashes), EH/s (exahashes) — and all others fill automatically. The multiplier between each tier is exactly 1,000.`,
+      `Enter a hashrate value in any unit — H/s (hashes/sec), KH/s (kilohashes), MH/s (megahashes), GH/s (gigahashes), TH/s (terahashes), PH/s (petahashes), EH/s (exahashes), and all others fill automatically. The multiplier between each tier is exactly 1,000.`,
       `Different mining algorithms report hashrate in different units: Ethereum used MH/s, Bitcoin uses TH/s, Kaspa uses GH/s or TH/s, Monero uses KH/s or MH/s. Always verify the algorithm-specific unit to avoid entering a value that is 1,000× off from your actual hardware performance.`
       ],
     },
@@ -3320,12 +3320,12 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Convert between Unix timestamps and human-readable dates. Blockchain transactions use Unix time (seconds since Jan 1, 1970). Supports both 10-digit (seconds) and 13-digit (milliseconds) formats.',
       how: [
-      `The Timestamp Converter translates between Unix timestamps (seconds since January 1, 1970 UTC) and human-readable date/time formats. Blockchain data universally uses Unix timestamps — every transaction, block, and smart contract event stores time as a Unix integer. This calculator makes those timestamps immediately interpretable.`,
+      `The Timestamp Converter translates between Unix timestamps (seconds since January 1, 1970 UTC) and human-readable date/time formats. Blockchain data universally uses Unix timestamps, every transaction, block, and smart contract event stores time as a Unix integer. This calculator makes those timestamps immediately interpretable.`,
       `Use it when analyzing blockchain data in explorers, reading smart contract logs, or debugging transaction history exports. Paste a Unix timestamp from Etherscan, a DeFi contract, or a CSV export and instantly see the corresponding date and time in your local timezone or UTC.`
       ],
       inputs: [
-      `Enter a Unix timestamp (integer seconds) to get the human-readable date and time, or enter a date and time to get the corresponding Unix timestamp. The calculator supports timestamps in both seconds (10 digits) and milliseconds (13 digits) — common in JavaScript-based applications and some exchange APIs.`,
-      `The output displays time in UTC and optionally in your browser's local timezone. For smart contract interactions, Solidity uses seconds-based Unix timestamps while JavaScript uses milliseconds — dividing a 13-digit timestamp by 1,000 converts it to seconds format. The calculator auto-detects the format based on the input length.`
+      `Enter a Unix timestamp (integer seconds) to get the human-readable date and time, or enter a date and time to get the corresponding Unix timestamp. The calculator supports timestamps in both seconds (10 digits) and milliseconds (13 digits), common in JavaScript-based applications and some exchange APIs.`,
+      `The output displays time in UTC and optionally in your browser's local timezone. For smart contract interactions, Solidity uses seconds-based Unix timestamps while JavaScript uses milliseconds, dividing a 13-digit timestamp by 1,000 converts it to seconds format. The calculator auto-detects the format based on the input length.`
       ],
     },
     es: {
@@ -3393,11 +3393,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Convert between all crypto denomination units: BTC/mBTC/satoshi, ETH/Gwei/Wei, and ERC-20 token decimals. 1 ETH = 10^18 Wei. Essential for reading smart contract values and raw blockchain data.',
       how: [
-      `The Crypto Unit Converter handles conversions between all common cryptocurrency denominations for multiple blockchain networks simultaneously. It covers Bitcoin denomination units (BTC, mBTC, μBTC, satoshi), Ethereum units (ETH, gwei, wei), and common ERC-20 token decimal conversions — all in one place.`,
-      `Use it when working with raw blockchain data, reading smart contract values, or verifying wallet amounts. Smart contracts store token amounts in their smallest denomination (wei for ETH, base units for ERC-20 tokens) — the converter translates these raw numbers into human-readable amounts and back again for debugging contract interactions.`
+      `The Crypto Unit Converter handles conversions between all common cryptocurrency denominations for multiple blockchain networks simultaneously. It covers Bitcoin denomination units (BTC, mBTC, μBTC, satoshi), Ethereum units (ETH, gwei, wei), and common ERC-20 token decimal conversions, all in one place.`,
+      `Use it when working with raw blockchain data, reading smart contract values, or verifying wallet amounts. Smart contracts store token amounts in their smallest denomination (wei for ETH, base units for ERC-20 tokens), the converter translates these raw numbers into human-readable amounts and back again for debugging contract interactions.`
       ],
       inputs: [
-      `Select the blockchain network (Bitcoin, Ethereum, or a specific ERC-20 token), then enter a value in any denomination. For ERC-20 tokens, the decimal precision varies by contract — most tokens use 18 decimals like ETH, but USDC and USDT use 6 decimals, and some tokens use non-standard values. Enter the token's decimal count in the custom decimals field.`,
+      `Select the blockchain network (Bitcoin, Ethereum, or a specific ERC-20 token), then enter a value in any denomination. For ERC-20 tokens, the decimal precision varies by contract, most tokens use 18 decimals like ETH, but USDC and USDT use 6 decimals, and some tokens use non-standard values. Enter the token's decimal count in the custom decimals field.`,
       `The raw value field shows the integer representation used by the blockchain (e.g., 1 ETH = 1,000,000,000,000,000,000 wei). This is critical for smart contract interactions where the input must be in base units. The human-readable field shows the decimal-formatted value as displayed in wallets and exchanges.`
       ],
     },
@@ -3467,11 +3467,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Estimate Uniswap LP returns including fees and impermanent loss. Providing $10,000 to a 50/50 ETH/USDC pool earning 20% APR in fees might net 12–15% after impermanent loss.',
       how: [
       `The Uniswap Calculator estimates the output amount, price impact, and effective exchange rate for a token swap on Uniswap v2 or v3, allowing you to preview the trade before executing it. Enter the input token, input amount, output token, and pool fee tier (0.05%, 0.3%, or 1%) to see your expected output and the slippage impact for your position size.`,
-      `Use it to compare different fee tiers for the same pair — a 0.05% fee tier may have deeper liquidity and lower slippage for stablecoin pairs, while a 1% tier may be the only pool available for exotic pairs. For large trades, compare the price impact across different split routes to determine whether routing through multiple pools reduces your effective cost.`
+      `Use it to compare different fee tiers for the same pair, a 0.05% fee tier may have deeper liquidity and lower slippage for stablecoin pairs, while a 1% tier may be the only pool available for exotic pairs. For large trades, compare the price impact across different split routes to determine whether routing through multiple pools reduces your effective cost.`
       ],
       inputs: [
       `Input token and output token define the swap pair. Input amount is the quantity you want to sell. Pool fee tier determines which Uniswap v3 pool to use — 0.05% for stable pairs, 0.3% for standard pairs, and 1% for illiquid or exotic pairs. Pool liquidity depth is auto-fetched from on-chain data.`,
-      `Price impact percentage shows how much your trade moves the pool price — above 3% is considered high impact and may indicate insufficient pool liquidity. Slippage tolerance (set separately in the Uniswap UI) determines the maximum price deterioration you'll accept. For swaps with high price impact, reduce the trade size or split across multiple transactions.`
+      `Price impact percentage shows how much your trade moves the pool price, above 3% is considered high impact and may indicate insufficient pool liquidity. Slippage tolerance (set separately in the Uniswap UI) determines the maximum price deterioration you'll accept. For swaps with high price impact, reduce the trade size or split across multiple transactions.`
       ],
     },
     es: {
@@ -3540,11 +3540,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Estimate cross-chain bridge fees and slippage before moving assets. Bridging 1 ETH from Ethereum to Arbitrum typically costs $2–10 in gas plus 0.1–0.3% bridge fee.',
       how: [
       `The Bridge Comparator calculates and compares the total cost of moving assets between blockchain networks across multiple bridge protocols, helping you identify the cheapest and fastest cross-chain transfer option. Enter your source network, destination network, asset, and amount to see a side-by-side comparison of bridge fees, estimated transfer times, and net amounts received.`,
-      `Use it before every cross-chain move to avoid overpaying on bridge fees, which can range from under 0.05% to over 1% depending on the bridge and network congestion. For large transfers ($10,000+), even a 0.3% fee difference between bridges represents $30 in direct savings — always compare before bridging.`
+      `Use it before every cross-chain move to avoid overpaying on bridge fees, which can range from under 0.05% to over 1% depending on the bridge and network congestion. For large transfers ($10,000+), even a 0.3% fee difference between bridges represents $30 in direct savings, always compare before bridging.`
       ],
       inputs: [
       `Source network and destination network define the bridge direction (e.g., Ethereum → Arbitrum, Polygon → Optimism). Asset is the token being transferred — USDC, ETH, WBTC, etc. Transfer amount determines the applicable fee tier, as some bridges have minimum amounts and tiered fee structures for larger transfers.`,
-      `Bridge protocols listed include major options like Stargate, Across, Hop, Connext, and Synapse. Each shows gas fees on both source and destination chains, protocol fees, estimated transfer time, and any slippage risk. Some bridges use liquidity pools with variable fees while others use canonical bridges with fixed fees — the calculator distinguishes between these types.`
+      `Bridge protocols listed include major options like Stargate, Across, Hop, Connext, and Synapse. Each shows gas fees on both source and destination chains, protocol fees, estimated transfer time, and any slippage risk. Some bridges use liquidity pools with variable fees while others use canonical bridges with fixed fees, the calculator distinguishes between these types.`
       ],
     },
     es: {
@@ -3612,11 +3612,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Estimate MEV (Maximal Extractable Value) exposure on your DeFi trades. Sandwich attacks can cost 0.3–2% per swap. Using private mempools or MEV-protected DEXs can reduce this by 80–95%.',
       how: [
-      `The MEV (Maximal Extractable Value) Calculator estimates the potential MEV exposure in your DeFi transactions and calculates the cost of MEV protection services. MEV bots can front-run, sandwich, or back-run your trades to extract value from price movements you trigger — this calculator quantifies that risk based on your transaction type and size.`,
+      `The MEV (Maximal Extractable Value) Calculator estimates the potential MEV exposure in your DeFi transactions and calculates the cost of MEV protection services. MEV bots can front-run, sandwich, or back-run your trades to extract value from price movements you trigger, this calculator quantifies that risk based on your transaction type and size.`,
       `Use it to decide whether to route your trade through MEV-protected infrastructure (like Flashbots Protect, MEV Blocker, or CoW Protocol) versus standard mempool submission. For large swaps on DEXes, the savings from MEV protection can significantly exceed the marginal cost of the protection service.`
       ],
       inputs: [
-      `Transaction type (DEX swap, LP add/remove, arbitrage) determines MEV risk profile. Trade size and the pool's liquidity depth determine how much price impact your transaction creates and therefore how attractive it is to MEV bots. Token pair volatility is a secondary factor — more volatile pairs attract more sandwich attacks.`,
+      `Transaction type (DEX swap, LP add/remove, arbitrage) determines MEV risk profile. Trade size and the pool's liquidity depth determine how much price impact your transaction creates and therefore how attractive it is to MEV bots. Token pair volatility is a secondary factor, more volatile pairs attract more sandwich attacks.`,
       `The calculator shows estimated sandwich attack loss as a percentage and dollar amount for unprotected mempool transactions. MEV protection cost is typically 0–0.05% of transaction value depending on the service. The net savings from protection equals estimated MEV exposure minus protection cost.`
       ],
     },
@@ -3683,14 +3683,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'gamefi-calculator': {
     en: {
-      quickAnswer: 'Estimate GameFi earnings based on play time, token rewards, and current prices. Earning 100 tokens/hour at $0.05 each yields $5/hour — factor in gas costs and token price volatility.',
+      quickAnswer: 'Estimate GameFi earnings based on play time, token rewards, and current prices. Earning 100 tokens/hour at $0.05 each yields $5/hour, factor in gas costs and token price volatility.',
       how: [
       `The GameFi ROI Calculator estimates your return from play-to-earn games by factoring in upfront NFT or asset costs, daily token earnings, token price, and monthly operating costs. Enter your starting investment, expected daily earnings in tokens, current token price, and any ongoing expenses to see your break-even timeline and monthly profit projection.`,
-      `Use it before investing in a new GameFi project to evaluate whether the scholarship or player economics are viable. High token earning rates often decline as more players join and token supply inflates — the calculator includes a 'token price decay' field to model earnings under gradual price depreciation, giving a more realistic projection than assuming stable token prices.`
+      `Use it before investing in a new GameFi project to evaluate whether the scholarship or player economics are viable. High token earning rates often decline as more players join and token supply inflates, the calculator includes a 'token price decay' field to model earnings under gradual price depreciation, giving a more realistic projection than assuming stable token prices.`
       ],
       inputs: [
       `Initial investment covers NFT purchase prices, in-game assets, and any equipment required to start playing. Daily token earnings are based on the game's current scholar rates or your own estimated play hours and efficiency. Token price is auto-filled for listed tokens or entered manually for newer projects.`,
-      `Monthly costs include transaction fees for claiming rewards, any renewal or energy costs within the game, and time cost if you factor in the opportunity cost of playing time. The token price decay field lets you model a linear price decline over your investment horizon — many P2E tokens have historically declined 50–90% within their first year of launch.`
+      `Monthly costs include transaction fees for claiming rewards, any renewal or energy costs within the game, and time cost if you factor in the opportunity cost of playing time. The token price decay field lets you model a linear price decline over your investment horizon, many P2E tokens have historically declined 50–90% within their first year of launch.`
       ],
     },
     es: {
@@ -3759,11 +3759,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Gas fee = Gas Price × Gas Limit × Token Price. For Ethereum, a basic transfer costs ~21,000 gas units. At 1 Gwei and $2,419/ETH, that\'s about $0.05 per transaction.',
       how: [
         `The Gas Fee Calculator estimates the transaction cost on Ethereum and other EVM-compatible blockchains before you submit a transaction. Enter the current gas price in Gwei, the gas limit for your transaction type, and the native token's USD price to see the total fee in both the native currency and dollars. The calculator includes standard gas benchmarks for common transaction types and lets you enter the current gas price manually for accurate estimates.`,
-        `Use it to time transactions for lower fees — gas prices fluctuate throughout the day, often dropping 60-80% during off-peak hours. The calculator supports common transaction types (simple transfer, ERC-20 transfer, Uniswap swap, NFT mint) with pre-set gas limits, or enter a custom gas limit for contract interactions. Compare costs across networks like Ethereum, Polygon, Arbitrum, and BSC to find the cheapest execution path.`
+        `Use it to time transactions for lower fees, gas prices fluctuate throughout the day, often dropping 60-80% during off-peak hours. The calculator supports common transaction types (simple transfer, ERC-20 transfer, Uniswap swap, NFT mint) with pre-set gas limits, or enter a custom gas limit for contract interactions. Compare costs across networks like Ethereum, Polygon, Arbitrum, and BSC to find the cheapest execution path.`
       ],
       inputs: [
-        `Gas price in Gwei is the per-unit cost of computation on the network — enter the current rate from any gas tracker. Gas limit is the maximum units of gas your transaction can consume: 21,000 for a simple ETH transfer, 65,000 for an ERC-20 transfer, and 150,000–300,000 for DEX swaps. The network selector switches between supported chains with their respective gas mechanics.`,
-        `The ETH price field converts the gas cost from ETH into USD for easier comparison. For EIP-1559 transactions, the calculator uses the base fee plus priority tip model. During network congestion, actual gas prices may exceed the oracle reading — add a 10-20% buffer to estimates for time-sensitive transactions to avoid stuck pending transactions.`
+        `Gas price in Gwei is the per-unit cost of computation on the network, enter the current rate from any gas tracker. Gas limit is the maximum units of gas your transaction can consume: 21,000 for a simple ETH transfer, 65,000 for an ERC-20 transfer, and 150,000–300,000 for DEX swaps. The network selector switches between supported chains with their respective gas mechanics.`,
+        `The ETH price field converts the gas cost from ETH into USD for easier comparison. For EIP-1559 transactions, the calculator uses the base fee plus priority tip model. During network congestion, actual gas prices may exceed the oracle reading, add a 10-20% buffer to estimates for time-sensitive transactions to avoid stuck pending transactions.`
       ],
     },
     es: { quickAnswer: 'Comisión gas = Precio Gas (Gwei) × Límite Gas × Precio ETH. Una transferencia ETH estándar (21.000 gas) a 1 Gwei cuesta alrededor de $0,05. Swaps DeFi complejos pueden costar $2–15 según la congestión.', how: [`La Calculadora de Comisiones de Gas estima el costo de transacción en Ethereum y otras blockchains compatibles con EVM. Introduce el precio del gas en Gwei, el límite de gas y el precio del token nativo en USD para ver la comisión total en moneda nativa y en dólares.`, `Úsala para programar transacciones en horarios de menor costo — los precios del gas fluctúan durante el día, cayendo un 60-80% en horas valle. Compara costos entre Ethereum, Polygon, Arbitrum y BSC para encontrar la ruta más barata.`], inputs: [`El precio del gas en Gwei es el costo por unidad de computación. El límite de gas es el máximo de unidades que tu transacción puede consumir: 21.000 para una transferencia simple, 65.000 para ERC-20, 150.000-300.000 para swaps en DEX.`, `El campo de precio ETH convierte el costo de gas de ETH a USD. Para transacciones EIP-1559, se usa el modelo de tarifa base más propina de prioridad. Añade un 10-20% de margen en transacciones urgentes.`] },
@@ -3777,10 +3777,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Sharpe Ratio = (Return − Risk-Free Rate) / Standard Deviation. A Sharpe above 1.0 is good, above 2.0 is very good, and above 3.0 is excellent. Compare your portfolio against benchmarks.',
       how: [
         `The Sharpe Ratio Calculator measures how much excess return you earn per unit of volatility. Enter your portfolio or strategy returns, the risk-free rate (typically a Treasury yield or stablecoin lending rate), and the observation period. The calculator outputs a single number: positive means your returns exceeded the risk-free benchmark after adjusting for volatility; negative means you took on risk for sub-benchmark results. In crypto, a Sharpe above 1.0 is considered solid, above 2.0 is excellent, and below 0.5 suggests the strategy does not compensate adequately for its risk.`,
-        `Use this calculator to compare strategies on an apples-to-apples basis. A 200% annual return with extreme drawdowns may have a lower Sharpe than a steady 40% return with minimal volatility. The Sharpe Ratio penalizes both upside and downside volatility equally, which is why pairing it with the Sortino Ratio — which only penalizes downside — gives a more complete picture of risk-adjusted performance.`
+        `Use this calculator to compare strategies on an apples-to-apples basis. A 200% annual return with extreme drawdowns may have a lower Sharpe than a steady 40% return with minimal volatility. The Sharpe Ratio penalizes both upside and downside volatility equally, which is why pairing it with the Sortino Ratio, which only penalizes downside, gives a more complete picture of risk-adjusted performance.`
       ],
       inputs: [
-        `Portfolio return is the total percentage gain over the measurement period. Risk-free rate should match the same period — use annualized rates only if your return is also annualized. Standard deviation of returns captures the volatility of your strategy; if you track daily returns, use daily standard deviation and annualize by multiplying by the square root of 365.`,
+        `Portfolio return is the total percentage gain over the measurement period. Risk-free rate should match the same period, use annualized rates only if your return is also annualized. Standard deviation of returns captures the volatility of your strategy; if you track daily returns, use daily standard deviation and annualize by multiplying by the square root of 365.`,
         `For crypto-specific analysis, consider using a stablecoin lending rate (3-8% APY) as the risk-free proxy rather than traditional Treasury rates. The observation window matters: a 30-day Sharpe during a bull run will differ dramatically from a 12-month figure that spans a full cycle. Longer windows produce more reliable estimates.`
       ],
     },
@@ -3792,13 +3792,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'sortino-calculator': {
     en: {
-      quickAnswer: 'Sortino Ratio = (Return − Target) / Downside Deviation. Unlike Sharpe, Sortino only penalizes downside volatility — a ratio above 2.0 indicates strong risk-adjusted performance.',
+      quickAnswer: 'Sortino Ratio = (Return − Target) / Downside Deviation. Unlike Sharpe, Sortino only penalizes downside volatility, a ratio above 2.0 indicates strong risk-adjusted performance.',
       how: [
-        `The Sortino Ratio Calculator refines the Sharpe Ratio by penalizing only downside volatility — the kind of risk investors actually fear. Enter your returns, a minimum acceptable return (MAR), and the calculator separates upside moves from downside moves, computing downside deviation instead of total standard deviation. This means a strategy with large positive spikes but controlled losses scores higher on Sortino than Sharpe, which treats all volatility as equally undesirable.`,
-        `For crypto traders, Sortino is often more useful than Sharpe because crypto returns are heavily right-skewed — large upside moves are common during bull runs, and penalizing those as "risk" distorts the picture. A Sortino above 2.0 indicates strong downside risk management, while below 1.0 suggests the strategy fails to adequately protect against losses relative to the return it generates.`
+        `The Sortino Ratio Calculator refines the Sharpe Ratio by penalizing only downside volatility, the kind of risk investors actually fear. Enter your returns, a minimum acceptable return (MAR), and the calculator separates upside moves from downside moves, computing downside deviation instead of total standard deviation. This means a strategy with large positive spikes but controlled losses scores higher on Sortino than Sharpe, which treats all volatility as equally undesirable.`,
+        `For crypto traders, Sortino is often more useful than Sharpe because crypto returns are heavily right-skewed, large upside moves are common during bull runs, and penalizing those as "risk" distorts the picture. A Sortino above 2.0 indicates strong downside risk management, while below 1.0 suggests the strategy fails to adequately protect against losses relative to the return it generates.`
       ],
       inputs: [
-        `Portfolio returns should be periodic (daily, weekly, or monthly). The minimum acceptable return (MAR) is typically set to 0% or to the risk-free rate — it represents the threshold below which returns count as "bad." Downside deviation is calculated only from returns that fall below the MAR, ignoring positive returns entirely.`,
+        `Portfolio returns should be periodic (daily, weekly, or monthly). The minimum acceptable return (MAR) is typically set to 0% or to the risk-free rate, it represents the threshold below which returns count as "bad." Downside deviation is calculated only from returns that fall below the MAR, ignoring positive returns entirely.`,
         `When comparing Sortino across strategies, use the same MAR and the same return frequency. A daily Sortino cannot be directly compared to a monthly one without annualization. For DeFi yield strategies, set MAR to the stablecoin baseline yield so Sortino measures excess risk-adjusted performance above the safe alternative.`
       ],
     },
@@ -3812,11 +3812,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Calmar Ratio = Annualized Return / Maximum Drawdown. A ratio above 3.0 is excellent. If your portfolio returns 40% annually with a 15% max drawdown, the Calmar is 2.67.',
       how: [
-        `The Calmar Ratio Calculator divides your annualized return by your maximum drawdown, producing a single number that captures how well your strategy compensates for its worst historical loss. A Calmar of 3.0 means your annual return was three times greater than your deepest peak-to-trough decline — strong for any asset class. In crypto, where 50-80% drawdowns are common, a Calmar above 1.0 is respectable and above 2.0 is exceptional.`,
-        `This ratio is particularly valuable for evaluating systematic trading strategies and managed funds over 3+ year horizons. Unlike Sharpe and Sortino which measure average volatility, Calmar focuses on the single worst event — the maximum drawdown. This makes it a better gauge of tail risk and survivability, answering the question: can this strategy survive its own worst-case scenario and still produce meaningful returns?`
+        `The Calmar Ratio Calculator divides your annualized return by your maximum drawdown, producing a single number that captures how well your strategy compensates for its worst historical loss. A Calmar of 3.0 means your annual return was three times greater than your deepest peak-to-trough decline, strong for any asset class. In crypto, where 50-80% drawdowns are common, a Calmar above 1.0 is respectable and above 2.0 is exceptional.`,
+        `This ratio is particularly valuable for evaluating systematic trading strategies and managed funds over 3+ year horizons. Unlike Sharpe and Sortino which measure average volatility, Calmar focuses on the single worst event, the maximum drawdown. This makes it a better gauge of tail risk and survivability, answering the question: can this strategy survive its own worst-case scenario and still produce meaningful returns?`
       ],
       inputs: [
-        `Annualized return is your compounded annual growth rate over the measurement period. Maximum drawdown is the largest percentage decline from a portfolio peak to a subsequent trough. Both should cover the same time window — typically 3 years minimum for a reliable Calmar.`,
+        `Annualized return is your compounded annual growth rate over the measurement period. Maximum drawdown is the largest percentage decline from a portfolio peak to a subsequent trough. Both should cover the same time window, typically 3 years minimum for a reliable Calmar.`,
         `Short measurement windows produce misleadingly high Calmar ratios because the strategy may not yet have experienced its worst drawdown. In crypto, a strategy that has not lived through a -70% bear market has an untested Calmar. Always check whether your measurement period includes at least one significant market correction.`
       ],
     },
@@ -3834,7 +3834,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `Treynor is most useful when comparing diversified portfolios or funds. If two crypto portfolios have the same return but different betas, the one with lower beta (less market exposure) has a higher Treynor, indicating it generated alpha rather than simply riding the market wave. For concentrated single-asset positions, Sharpe or Sortino are more appropriate since beta measures systematic risk only.`
       ],
       inputs: [
-        `Portfolio return is the total return over the measurement period. Risk-free rate should match the same timeframe. Beta measures your portfolio's sensitivity to the benchmark — a beta of 1.5 means your portfolio moves 1.5x for every 1x move in the market.`,
+        `Portfolio return is the total return over the measurement period. Risk-free rate should match the same timeframe. Beta measures your portfolio's sensitivity to the benchmark, a beta of 1.5 means your portfolio moves 1.5x for every 1x move in the market.`,
         `For crypto, use BTC as the benchmark if your portfolio is altcoin-heavy, or use a broad crypto index (e.g., CoinDesk 20) for diversified portfolios. Beta can be estimated from historical correlation and relative volatility using at least 60 data points.`
       ],
     },
@@ -3853,7 +3853,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
       inputs: [
         `Portfolio return and benchmark return should cover identical periods. Tracking error is computed from the series of period-by-period differences between portfolio and benchmark returns.`,
-        `Higher IR with lower tracking error means the outperformance is consistent. High IR with high tracking error means returns are lumpy — some periods brilliant, others terrible. Use at least 12 monthly data points for meaningful results.`
+        `Higher IR with lower tracking error means the outperformance is consistent. High IR with high tracking error means returns are lumpy, some periods brilliant, others terrible. Use at least 12 monthly data points for meaningful results.`
       ],
     },
     es: { quickAnswer: 'Ratio de Información = (Rendimiento del Portafolio − Rendimiento del Benchmark) / Tracking Error. Un IR superior a 0,5 indica gestión activa hábil; superior a 1,0 es excepcional.', how: [`La calculadora del Ratio de Información mide cuán consistentemente un portafolio supera su benchmark por unidad de tracking error. Un IR superior a 0.5 es bueno; superior a 1.0 es excepcional.`, `En cripto, usa BTC o ETH como benchmark para evaluar si tus picks generan valor.`], inputs: [`Retornos del portafolio y benchmark deben cubrir períodos idénticos.`, `IR alto con tracking error bajo significa outperformance consistente.`] },
@@ -3866,11 +3866,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Kelly Criterion: f* = (bp − q) / b, where b = win/loss ratio, p = win probability, q = 1−p. With 55% win rate and 1.5:1 payoff, Kelly suggests risking 18.3% of capital per trade.',
       how: [
-        `The Kelly Criterion Calculator computes the mathematically optimal fraction of your capital to risk on each trade, given your win rate and average win-to-loss ratio. The Kelly formula — f = (bp - q) / b, where b is the win/loss ratio, p is win probability, and q is loss probability — maximizes long-term compound growth while avoiding ruin. For a 55% win rate with 2:1 reward-to-risk, Kelly recommends risking ~32.5% of capital per trade.`,
-        `In practice, most traders use fractional Kelly (25-50% of the full Kelly fraction) because the formula assumes perfect knowledge of your edge — which you rarely have. Full Kelly is extremely aggressive and leads to massive drawdowns even with a genuine edge. Half-Kelly typically achieves 75% of the growth with dramatically less volatility. This calculator shows both full and fractional Kelly values for comparison.`
+        `The Kelly Criterion Calculator computes the mathematically optimal fraction of your capital to risk on each trade, given your win rate and average win-to-loss ratio. The Kelly formula, f = (bp - q) / b, where b is the win/loss ratio, p is win probability, and q is loss probability, maximizes long-term compound growth while avoiding ruin. For a 55% win rate with 2:1 reward-to-risk, Kelly recommends risking ~32.5% of capital per trade.`,
+        `In practice, most traders use fractional Kelly (25-50% of the full Kelly fraction) because the formula assumes perfect knowledge of your edge, which you rarely have. Full Kelly is extremely aggressive and leads to massive drawdowns even with a genuine edge. Half-Kelly typically achieves 75% of the growth with dramatically less volatility. This calculator shows both full and fractional Kelly values for comparison.`
       ],
       inputs: [
-        `Win rate is the percentage of trades that are profitable over a statistically significant sample — use at least 100 trades for reliability. Win/loss ratio (or payoff ratio) is your average winning trade size divided by your average losing trade size.`,
+        `Win rate is the percentage of trades that are profitable over a statistically significant sample, use at least 100 trades for reliability. Win/loss ratio (or payoff ratio) is your average winning trade size divided by your average losing trade size.`,
         `If your win rate is below 50%, you need a higher win/loss ratio to get a positive Kelly output. A negative Kelly means your strategy has negative expected value and should not be traded. The "bankroll" input represents your total trading capital, from which the calculator computes the dollar amount to risk per trade.`
       ],
     },
@@ -3888,7 +3888,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `This calculator supports parametric (variance-covariance) VaR, which assumes returns are normally distributed. In crypto, returns are fat-tailed and often non-normal, so VaR tends to underestimate extreme loss scenarios. Use it as a floor estimate, not a ceiling, and complement it with the Drawdown Calculator and Risk of Ruin Calculator for a complete risk assessment.`
       ],
       inputs: [
-        `Portfolio value is your total position size in USD. Expected return and volatility (standard deviation) should be based on historical data for the same asset over a representative period. The confidence level — typically 95% or 99% — determines how extreme the loss scenario you are modeling.`,
+        `Portfolio value is your total position size in USD. Expected return and volatility (standard deviation) should be based on historical data for the same asset over a representative period. The confidence level, typically 95% or 99%, determines how extreme the loss scenario you are modeling.`,
         `Holding period defines the time horizon: 1-day VaR for active traders, 10-day for swing traders, 30-day for position holders. Longer periods amplify VaR proportionally to the square root of time. For multi-asset portfolios, the calculator accounts for individual asset volatilities.`
       ],
     },
@@ -3906,8 +3906,8 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `Maximum drawdown is arguably the most important risk metric for long-term investors because it answers a visceral question: how much did I lose at the worst moment, and how long did it take to recover? A strategy with 100% annual returns but an 80% maximum drawdown may be theoretically profitable but psychologically and financially unsurvivable for most participants.`
       ],
       inputs: [
-        `Portfolio peak value is the highest equity your account has reached. Current or trough value is the lowest point after that peak. The calculator computes drawdown as (peak - trough) / peak × 100%. Recovery return needed is calculated as trough / peak - 1 — note that a 50% loss requires a 100% gain to recover.`,
-        `Average return rate is used to estimate recovery time. If your strategy averages 2% monthly, recovering from a 50% drawdown takes approximately 35 months. This asymmetry — losses require disproportionately larger gains to recover — is why drawdown management is more important than return maximization.`
+        `Portfolio peak value is the highest equity your account has reached. Current or trough value is the lowest point after that peak. The calculator computes drawdown as (peak - trough) / peak × 100%. Recovery return needed is calculated as trough / peak - 1, note that a 50% loss requires a 100% gain to recover.`,
+        `Average return rate is used to estimate recovery time. If your strategy averages 2% monthly, recovering from a 50% drawdown takes approximately 35 months. This asymmetry, losses require disproportionately larger gains to recover, is why drawdown management is more important than return maximization.`
       ],
     },
     es: { quickAnswer: 'Drawdown máximo = (Pico − Valle) / Pico × 100%. Si tu portafolio alcanzó $50.000 y cayó a $30.000, tu drawdown máximo es 40%. La recuperación requiere una ganancia del 67% para volver al equilibrio.', how: [`La calculadora mide caídas pico-a-valle del portafolio y el tiempo de recuperación. La máxima caída es posiblemente la métrica de riesgo más importante para inversores a largo plazo.`, `Una estrategia con 100% de retorno anual pero 80% de drawdown máximo puede ser insuperable psicológicamente.`], inputs: [`El valor pico es el patrimonio más alto alcanzado. El drawdown se calcula como (pico - valle) / pico × 100%.`, `Una pérdida del 50% requiere una ganancia del 100% para recuperarse. Esta asimetría es clave.`] },
@@ -3918,7 +3918,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'risk-of-ruin-calculator': {
     en: {
-      quickAnswer: 'Risk of ruin = ((1 − Edge) / (1 + Edge))^(Capital/Risk). With a 55% win rate risking 2% per trade, the risk of total ruin drops below 0.1% — position sizing is survival.',
+      quickAnswer: 'Risk of ruin = ((1 − Edge) / (1 + Edge))^(Capital/Risk). With a 55% win rate risking 2% per trade, the risk of total ruin drops below 0.1%, position sizing is survival.',
       how: [
         `The Risk of Ruin Calculator computes the probability of losing your entire trading capital (or a defined percentage of it) given your win rate, average win/loss size, and risk per trade. This is the ultimate survivability metric: even a positive-expectancy strategy can go bust if individual trade risk is too high and an unlucky streak occurs.`,
         `For example, risking 10% per trade with a 55% win rate and 1.5:1 reward-to-risk has a surprisingly high ruin probability. Reducing risk to 2% per trade drops ruin probability to near zero while only moderately reducing long-term growth. This calculator makes the tradeoff between aggression and survival explicit and quantifiable.`
@@ -3938,11 +3938,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Slippage = (Executed Price − Expected Price) / Expected Price × 100%. A $50,000 market order on a thin order book might slip 0.5–2%. Use limit orders to eliminate slippage entirely.',
       how: [
-        `The DEX Slippage Calculator estimates the price impact of your trade based on pool liquidity depth, trade size, and fee tier. On automated market makers like Uniswap, every trade moves the price along a bonding curve — larger trades relative to pool liquidity cause greater slippage. A $10,000 swap in a $50M pool has negligible impact, but the same swap in a $500K pool can cost 2%+ in price impact alone.`,
+        `The DEX Slippage Calculator estimates the price impact of your trade based on pool liquidity depth, trade size, and fee tier. On automated market makers like Uniswap, every trade moves the price along a bonding curve, larger trades relative to pool liquidity cause greater slippage. A $10,000 swap in a $50M pool has negligible impact, but the same swap in a $500K pool can cost 2%+ in price impact alone.`,
         `This calculator helps you decide whether to split a large trade into smaller chunks, use a DEX aggregator, or wait for deeper liquidity. It also shows the difference between your slippage tolerance setting and actual expected slippage, preventing costly situations where your tolerance is set too wide and you pay more than necessary.`
       ],
       inputs: [
-        `Trade size is the USD value of your swap. Pool liquidity is the total value locked in the trading pair's pool — check the DEX interface or DeFi Llama for current figures. Fee tier (0.01%, 0.05%, 0.3%, 1%) affects the minimum cost floor of the trade.`,
+        `Trade size is the USD value of your swap. Pool liquidity is the total value locked in the trading pair's pool, check the DEX interface or DeFi Llama for current figures. Fee tier (0.01%, 0.05%, 0.3%, 1%) affects the minimum cost floor of the trade.`,
         `Slippage tolerance is the maximum acceptable price deviation from the quoted price. Setting it too low causes failed transactions during volatile periods; setting it too high exposes you to sandwich attacks. The calculator recommends an optimal tolerance based on your trade size and current pool conditions.`
       ],
     },
@@ -3956,11 +3956,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Trade expectancy = (Win Rate × Avg Win) − (Loss Rate × Avg Loss). Positive expectancy means profitability over time. A 45% win rate with 2:1 R:R gives expectancy of $0.35 per dollar risked.',
       how: [
-        `The Trade Expectancy Calculator computes the expected dollar return per trade based on your historical win rate, average winning trade, and average losing trade. The formula — Expectancy = (Win Rate × Average Win) - (Loss Rate × Average Loss) — produces a single number that tells you whether your trading system is profitable on a per-trade basis and by how much.`,
+        `The Trade Expectancy Calculator computes the expected dollar return per trade based on your historical win rate, average winning trade, and average losing trade. The formula — Expectancy = (Win Rate × Average Win) - (Loss Rate × Average Loss), produces a single number that tells you whether your trading system is profitable on a per-trade basis and by how much.`,
         `A positive expectancy means every trade has a statistical edge; a negative one means you are guaranteed to lose money over a large enough sample. For example, a 40% win rate with $300 average wins and $100 average losses yields: (0.4 × 300) - (0.6 × 100) = $60 per trade. Despite losing more often than winning, the system is profitable because wins are 3x larger than losses.`
       ],
       inputs: [
-        `Win rate is determined from at least 50-100 historical trades — smaller samples produce unreliable estimates. Average winning trade and average losing trade are computed separately from your trade journal.`,
+        `Win rate is determined from at least 50-100 historical trades, smaller samples produce unreliable estimates. Average winning trade and average losing trade are computed separately from your trade journal.`,
         `The calculator also shows expectancy as a percentage of average trade size (expectancy ratio) and the annual projected profit given your trade frequency. Combine with the Kelly Criterion Calculator to determine optimal position sizing once your expectancy is established, and with the Risk of Ruin Calculator to verify your risk per trade keeps ruin probability acceptably low.`
       ],
     },
@@ -4050,7 +4050,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Estimate cross-chain bridge fees and slippage before moving assets. Bridging 1 ETH from Ethereum to Arbitrum typically costs $2–10 in gas plus 0.1–0.3% bridge fee.',
       how: [
         `The Cross-Chain Bridge Calculator estimates the total cost and time of bridging tokens between blockchains such as Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana, and Avalanche. Select your source and destination chains, enter the token and amount, and the tool returns estimated bridge fees, gas costs on both chains, and expected transfer duration.`,
-        `Compare multiple bridging paths side by side — for example, bridging ETH from mainnet to Arbitrum via the native bridge (free but 7-day withdrawal) versus a third-party bridge like Stargate or Across (instant but 0.05-0.15% fee). The calculator helps you decide whether speed or cost savings matter more for your specific transfer size.`
+        `Compare multiple bridging paths side by side, for example, bridging ETH from mainnet to Arbitrum via the native bridge (free but 7-day withdrawal) versus a third-party bridge like Stargate or Across (instant but 0.05-0.15% fee). The calculator helps you decide whether speed or cost savings matter more for your specific transfer size.`
       ],
       inputs: [
         `Source chain and destination chain are selected from dropdown menus covering 10+ supported networks. The token field accepts any bridgeable asset on the source chain. Amount determines the dollar value being transferred, which directly affects whether percentage-based bridge fees or flat minimum fees dominate the cost.`,
@@ -4128,7 +4128,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
       inputs: [
         `The two asset fields accept any cryptocurrency ticker available on CoinGecko (5,000+ coins). The time window determines the lookback period for daily closing prices used in the correlation calculation. Shorter windows (7-30 days) capture recent regime changes; longer windows (90-365 days) provide more stable, statistically significant results.`,
-        `The output includes the correlation coefficient, a scatter plot of daily returns, and a rolling correlation chart. When the rolling correlation diverges sharply from its historical average, it may signal a structural market shift — such as a sector rotation where altcoins decouple from Bitcoin's trend.`
+        `The output includes the correlation coefficient, a scatter plot of daily returns, and a rolling correlation chart. When the rolling correlation diverges sharply from its historical average, it may signal a structural market shift, such as a sector rotation where altcoins decouple from Bitcoin's trend.`
       ],
     },
     es: {
@@ -4197,11 +4197,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Model a market-cap-weighted crypto index fund. A top-10 index with quarterly rebalancing provides diversified exposure while reducing single-asset risk by 40–60% versus holding only BTC.',
       how: [
-        `The Crypto Index Fund Calculator simulates the performance of a custom-weighted basket of cryptocurrencies over any historical period. Select 2-20 assets, assign percentage weights (must total 100%), choose a start date, and the tool computes how your index would have performed — including total return, annualized return, max drawdown, and Sharpe ratio.`,
+        `The Crypto Index Fund Calculator simulates the performance of a custom-weighted basket of cryptocurrencies over any historical period. Select 2-20 assets, assign percentage weights (must total 100%), choose a start date, and the tool computes how your index would have performed, including total return, annualized return, max drawdown, and Sharpe ratio.`,
         `Use it to backtest passive strategies before committing capital. For example, a 60% BTC / 30% ETH / 10% SOL portfolio rebalanced quarterly would have returned differently than an equal-weight top-10 basket. The calculator shows which weighting scheme delivered the best risk-adjusted returns for your chosen period, helping you design an allocation before executing trades.`
       ],
       inputs: [
-        `Each asset row requires a ticker (any CoinGecko-supported coin) and a weight percentage. Weights must sum to exactly 100%. The start date and end date define the backtest window — historical data availability varies by coin, with BTC data going back to 2013 and newer altcoins having shorter histories.`,
+        `Each asset row requires a ticker (any CoinGecko-supported coin) and a weight percentage. Weights must sum to exactly 100%. The start date and end date define the backtest window, historical data availability varies by coin, with BTC data going back to 2013 and newer altcoins having shorter histories.`,
         `The rebalancing frequency selector offers daily, weekly, monthly, or quarterly options. More frequent rebalancing captures momentum but incurs higher trading costs; quarterly rebalancing is the most common passive strategy. The output table compares your index against a BTC-only benchmark to quantify the diversification benefit.`
       ],
     },
@@ -4272,10 +4272,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Plan digital asset inheritance: estimate transfer taxes, storage requirements, and access procedures. A $500,000 crypto estate may face 18–40% estate tax depending on jurisdiction.',
       how: [
         `The Crypto Inheritance Calculator helps plan the transfer of digital assets to heirs by estimating portfolio value at projected future dates, tax implications, and the steps needed to ensure safe custody transfer. Enter your current holdings, expected annual growth rate, and the planning horizon (5-30 years), and the tool projects how much your crypto estate will be worth when inheritance is triggered.`,
-        `Use the results to determine whether a multi-signature wallet setup, dead man's switch, or traditional trust structure makes sense for your estate size. For a portfolio currently worth $100,000 growing at 15% annually, the projected value in 20 years exceeds $1.6 million — justifying the cost of professional estate planning and secure key management solutions.`
+        `Use the results to determine whether a multi-signature wallet setup, dead man's switch, or traditional trust structure makes sense for your estate size. For a portfolio currently worth $100,000 growing at 15% annually, the projected value in 20 years exceeds $1.6 million, justifying the cost of professional estate planning and secure key management solutions.`
       ],
       inputs: [
-        `Portfolio value accepts the current total dollar value of all crypto holdings. The annual growth rate should reflect your realistic expectation — historical BTC CAGR since 2015 is roughly 50%, but conservative planning uses 10-20%. The planning horizon sets how many years into the future to project. Tax rate represents the expected estate or inheritance tax bracket in your jurisdiction.`,
+        `Portfolio value accepts the current total dollar value of all crypto holdings. The annual growth rate should reflect your realistic expectation, historical BTC CAGR since 2015 is roughly 50%, but conservative planning uses 10-20%. The planning horizon sets how many years into the future to project. Tax rate represents the expected estate or inheritance tax bracket in your jurisdiction.`,
         `The output breaks down projected value year by year, estimated tax liability, and net inheritance amount. It also provides a checklist: secure seed phrase backup locations, designate a crypto-literate executor, consider multi-sig setups requiring M-of-N keys, and document wallet addresses and exchange accounts for heirs.`
       ],
     },
@@ -4350,7 +4350,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
       inputs: [
         `Each row requires the asset name, current dollar value, and target weight as a percentage. Weights must sum to 100%. The fee field applies a uniform trading fee percentage (e.g., 0.1% for Binance VIP) to all rebalance trades. The minimum trade threshold filters out micro-adjustments below a set dollar value to avoid dust positions.`,
-        `The output table shows for each asset: current weight, target weight, deviation, and the exact dollar trade needed (positive = buy, negative = sell). The total rebalance turnover and estimated fee cost help decide whether the drift is large enough to justify action — most strategies trigger rebalancing only when any single asset deviates by more than 5% from its target.`
+        `The output table shows for each asset: current weight, target weight, deviation, and the exact dollar trade needed (positive = buy, negative = sell). The total rebalance turnover and estimated fee cost help decide whether the drift is large enough to justify action, most strategies trigger rebalancing only when any single asset deviates by more than 5% from its target.`
       ],
     },
     es: {
@@ -4420,11 +4420,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Gauge market sentiment using the Fear &amp; Greed Index (0–100). Extreme Fear (&lt;20) historically correlates with buying opportunities; Extreme Greed (&gt;80) often precedes corrections.',
       how: [
         `The Crypto Sentiment Calculator aggregates multiple market sentiment indicators into a single composite score from 0 (Extreme Fear) to 100 (Extreme Greed). It combines the Fear & Greed Index, social media mention volume, funding rates across perpetual futures exchanges, put/call ratio, and on-chain metrics like exchange inflow/outflow to produce a real-time market mood reading.`,
-        `Use the score as a contrarian signal: historically, buying when the composite falls below 20 (Extreme Fear) and taking profits above 80 (Extreme Greed) has outperformed dollar-cost averaging. For example, the index dropped below 15 during the March 2020 crash and the June 2022 bottom — both turned out to be excellent long-term entry points within weeks.`
+        `Use the score as a contrarian signal: historically, buying when the composite falls below 20 (Extreme Fear) and taking profits above 80 (Extreme Greed) has outperformed dollar-cost averaging. For example, the index dropped below 15 during the March 2020 crash and the June 2022 bottom, both turned out to be excellent long-term entry points within weeks.`
       ],
       inputs: [
         `The primary input is the cryptocurrency you want to analyze (default: BTC). The tool automatically fetches the latest data for each sentiment component. You can adjust the weight of each indicator (social, funding rate, Fear & Greed, on-chain) using slider controls if you believe certain signals are more relevant to current market conditions.`,
-        `The output displays the composite score, a historical chart of sentiment over 30/90/365 days, and a breakdown showing each component's individual reading. The trend direction (improving or deteriorating sentiment) matters as much as the absolute score — a rising score from 15 to 35 suggests accumulation phase even though sentiment is still technically fearful.`
+        `The output displays the composite score, a historical chart of sentiment over 30/90/365 days, and a breakdown showing each component's individual reading. The trend direction (improving or deteriorating sentiment) matters as much as the absolute score, a rising score from 15 to 35 suggests accumulation phase even though sentiment is still technically fearful.`
       ],
     },
     es: {
@@ -4493,11 +4493,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Compare DeFi yield farming opportunities across Aave, Compound, Curve, and Yearn. A $5,000 USDC deposit at 8% APY with $15 gas needs at least 14 days to break even on entry costs.',
       how: [
-        `The DeFi Yield Aggregator Calculator compares yield farming opportunities across major DeFi protocols — Aave, Compound, Curve, Yearn, Convex, Lido, and others — to find the highest risk-adjusted return for your capital. Enter the token you want to deploy, your deposit amount, and the tool displays current APY, TVL, protocol age, and audit status for every matching pool.`,
+        `The DeFi Yield Aggregator Calculator compares yield farming opportunities across major DeFi protocols — Aave, Compound, Curve, Yearn, Convex, Lido, and others, to find the highest risk-adjusted return for your capital. Enter the token you want to deploy, your deposit amount, and the tool displays current APY, TVL, protocol age, and audit status for every matching pool.`,
         `The calculator accounts for auto-compounding effects, which can turn a 12% base APR into 12.75% effective APY with daily compounding. It also estimates gas costs for deposit and withdrawal transactions so you can calculate the minimum holding period needed to break even on gas. For a $5,000 USDC deposit at 8% APY with $15 in gas costs, you need at least 14 days before the yield exceeds the entry fee.`
       ],
       inputs: [
-        `The token selector covers major assets: ETH, WBTC, USDC, USDT, DAI, and popular LP tokens. Deposit amount in dollars determines which pools are practical — small deposits under $500 may lose most yield to gas fees on Ethereum mainnet. The chain filter lets you narrow results to specific networks (Ethereum, Arbitrum, Polygon, Base) where gas costs differ dramatically.`,
+        `The token selector covers major assets: ETH, WBTC, USDC, USDT, DAI, and popular LP tokens. Deposit amount in dollars determines which pools are practical, small deposits under $500 may lose most yield to gas fees on Ethereum mainnet. The chain filter lets you narrow results to specific networks (Ethereum, Arbitrum, Polygon, Base) where gas costs differ dramatically.`,
         `Risk tolerance slider filters pools by protocol audit status, TVL floor, and time since launch. Conservative mode shows only audited protocols with $100M+ TVL and 6+ months of operation. Aggressive mode includes newer protocols with higher yields but higher smart contract risk. The output table ranks results by net APY after estimated gas costs.`
       ],
     },
@@ -4567,11 +4567,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Analyze potential dust attack transactions on your wallet. Dust attacks send tiny amounts (&lt;546 satoshis for BTC) to track wallet activity. Consolidation cost often exceeds the dust value.',
       how: [
-        `The Dust Attack Calculator helps you decide whether the tiny "dust" UTXOs in your Bitcoin wallet are worth consolidating. Enter how many dust UTXOs you hold, their average size in satoshis, and the current network fee rate — the tool weighs the combined dust value against the fee to sweep it all into one output, so you can see at a glance whether consolidation nets you anything.`,
-        `Dust attacks work by sending minuscule amounts to thousands of addresses, then watching which outputs get combined in later transactions to deanonymise the owners. Because a dust UTXO often costs more in fees to spend than it is worth, this calculator focuses on the economics — showing when sweeping dust is profitable, when to wait for lower fees, and when it is cheapest to leave the dust untouched.`
+        `The Dust Attack Calculator helps you decide whether the tiny "dust" UTXOs in your Bitcoin wallet are worth consolidating. Enter how many dust UTXOs you hold, their average size in satoshis, and the current network fee rate, the tool weighs the combined dust value against the fee to sweep it all into one output, so you can see at a glance whether consolidation nets you anything.`,
+        `Dust attacks work by sending minuscule amounts to thousands of addresses, then watching which outputs get combined in later transactions to deanonymise the owners. Because a dust UTXO often costs more in fees to spend than it is worth, this calculator focuses on the economics, showing when sweeping dust is profitable, when to wait for lower fees, and when it is cheapest to leave the dust untouched.`
       ],
       inputs: [
-        `Five numeric inputs drive the result: the number of dust UTXOs, the average dust amount in satoshis (Bitcoin Core's relay floor is 546 sats), the current fee rate in sat/vByte, and the input/output sizes in vBytes (a P2WPKH input is ~68 vB, an output ~31 vB). No wallet address is required — you read these figures from your own wallet's coin-control view.`,
+        `Five numeric inputs drive the result: the number of dust UTXOs, the average dust amount in satoshis (Bitcoin Core's relay floor is 546 sats), the current fee rate in sat/vByte, and the input/output sizes in vBytes (a P2WPKH input is ~68 vB, an output ~31 vB). No wallet address is required, you read these figures from your own wallet's coin-control view.`,
         `The output shows the total dust value (in sats and USD at the live BTC price), the size and fee of a consolidation transaction, the net value left after that fee, the fee as a percentage of the dust, and a clear verdict — Consolidate Now, Wait for Lower Fees, or Not Worth It. When the fee exceeds the dust value, sweeping destroys value and the tool flags it as uneconomical.`
       ],
     },
@@ -4639,14 +4639,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
   'exchange-fee-comparator': {
     en: {
-      quickAnswer: 'Compare trading fees side-by-side across Binance, Coinbase, Kraken, and more. Enter your trade size and tier to find the cheapest exchange — a 0.1% difference on $100K saves $100 per trade.',
+      quickAnswer: 'Compare trading fees side-by-side across Binance, Coinbase, Kraken, and more. Enter your trade size and tier to find the cheapest exchange, a 0.1% difference on $100K saves $100 per trade.',
       how: [
-        `The Exchange Fee Comparator calculates the real trading cost across major exchanges — Binance, Coinbase, Kraken, Bybit, OKX, and others — for any trade size and trading pair. Enter your trade amount, select the pair (e.g., BTC/USDT), and the tool shows maker fees, taker fees, withdrawal fees, and total round-trip cost for each exchange side by side.`,
-        `The true cost of a trade goes beyond the posted fee schedule. A $10,000 BTC purchase on Coinbase Pro at 0.50% costs $50, while Binance at 0.10% costs just $10 — saving $40 per trade. Over 50 trades per year, that difference compounds to $2,000. The comparator also factors in withdrawal fees, which vary from $0 (Binance for certain networks) to $25+ for BTC on some platforms.`
+        `The Exchange Fee Comparator calculates the real trading cost across major exchanges — Binance, Coinbase, Kraken, Bybit, OKX, and others, for any trade size and trading pair. Enter your trade amount, select the pair (e.g., BTC/USDT), and the tool shows maker fees, taker fees, withdrawal fees, and total round-trip cost for each exchange side by side.`,
+        `The true cost of a trade goes beyond the posted fee schedule. A $10,000 BTC purchase on Coinbase Pro at 0.50% costs $50, while Binance at 0.10% costs just $10, saving $40 per trade. Over 50 trades per year, that difference compounds to $2,000. The comparator also factors in withdrawal fees, which vary from $0 (Binance for certain networks) to $25+ for BTC on some platforms.`
       ],
       inputs: [
-        `Trade amount accepts any dollar value. The pair selector covers major crypto-crypto and crypto-fiat pairs. VIP tier toggle lets you see fee rates at different volume levels — most exchanges offer 5-8 tiers where fees drop from 0.10% to as low as 0.02% for monthly volumes above $10M. The maker/taker switch shows whether you're placing limit or market orders.`,
-        `The output comparison table ranks exchanges by total cost (entry fee + exit fee + withdrawal fee). A separate column shows the spread cost if applicable — some exchanges quote wider spreads that act as hidden fees. For fiat on/off ramp comparisons, the tool also includes bank transfer and card payment fees where available.`
+        `Trade amount accepts any dollar value. The pair selector covers major crypto-crypto and crypto-fiat pairs. VIP tier toggle lets you see fee rates at different volume levels, most exchanges offer 5-8 tiers where fees drop from 0.10% to as low as 0.02% for monthly volumes above $10M. The maker/taker switch shows whether you're placing limit or market orders.`,
+        `The output comparison table ranks exchanges by total cost (entry fee + exit fee + withdrawal fee). A separate column shows the spread cost if applicable, some exchanges quote wider spreads that act as hidden fees. For fiat on/off ramp comparisons, the tool also includes bank transfer and card payment fees where available.`
       ],
     },
     es: {
@@ -4713,13 +4713,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
   'flash-loan-calculator': {
     en: {
-      quickAnswer: 'Model flash loan arbitrage profitability. Flash loans let you borrow without collateral in a single transaction. A 0.09% Aave fee on a $1M flash loan costs $900 — profit must exceed this plus gas.',
+      quickAnswer: 'Model flash loan arbitrage profitability. Flash loans let you borrow without collateral in a single transaction. A 0.09% Aave fee on a $1M flash loan costs $900, profit must exceed this plus gas.',
       how: [
-        `The Flash Loan Calculator estimates the profitability of atomic flash loan arbitrage opportunities across DeFi protocols. Enter the loan amount, the price spread between two DEXes (e.g., Uniswap vs. SushiSwap), and the gas cost — the tool calculates whether the arbitrage profit exceeds the flash loan fee (typically 0.05-0.09% on Aave) plus gas costs.`,
+        `The Flash Loan Calculator estimates the profitability of atomic flash loan arbitrage opportunities across DeFi protocols. Enter the loan amount, the price spread between two DEXes (e.g., Uniswap vs. SushiSwap), and the gas cost, the tool calculates whether the arbitrage profit exceeds the flash loan fee (typically 0.05-0.09% on Aave) plus gas costs.`,
         `A flash loan borrows and repays within a single transaction, requiring zero collateral. For example, borrowing $100,000 USDC to exploit a 0.3% price difference on ETH between two DEXes yields $300 gross profit minus ~$9 flash loan fee minus ~$30 in gas = $261 net. The calculator helps you determine the minimum spread needed for profitability at different loan sizes.`
       ],
       inputs: [
-        `Loan amount sets the borrowed capital — flash loans on Aave V3 support up to the full liquidity pool size, often $100M+. The price spread percentage is the difference between buy and sell prices across the two venues. Gas cost in gwei converts to a dollar amount based on current ETH price and estimated transaction complexity (~300,000-500,000 gas units for a typical flash loan arbitrage).`,
+        `Loan amount sets the borrowed capital, flash loans on Aave V3 support up to the full liquidity pool size, often $100M+. The price spread percentage is the difference between buy and sell prices across the two venues. Gas cost in gwei converts to a dollar amount based on current ETH price and estimated transaction complexity (~300,000-500,000 gas units for a typical flash loan arbitrage).`,
         `The protocol fee is preset by the lending protocol (Aave: 0.05%, dYdX: 0%). The output shows gross revenue, total costs (fee + gas), net profit, and the breakeven spread. It also calculates the maximum gas price you can pay while remaining profitable, helping you set gas limits for your MEV bot or arbitrage script.`
       ],
     },
@@ -4794,7 +4794,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
       inputs: [
         `Transaction type presets set the gas limit automatically: simple ETH transfer (21,000 gas), ERC-20 transfer (65,000), Uniswap V3 swap (150,000-300,000), NFT mint (100,000-200,000). For custom transactions, enter the gas limit manually. Enter the current gas price manually or use the default benchmark; you can adjust it anytime for simulation.`,
-        `The output shows: current cost in USD, average cost by hour-of-day and day-of-week (heatmap), recommended execution windows, and savings potential. The L2 comparison section shows the same transaction cost on Arbitrum, Optimism, Base, and Polygon — often 50-100x cheaper than mainnet, making L2s the obvious choice for routine operations.`
+        `The output shows: current cost in USD, average cost by hour-of-day and day-of-week (heatmap), recommended execution windows, and savings potential. The L2 comparison section shows the same transaction cost on Arbitrum, Optimism, Base, and Polygon, often 50-100x cheaper than mainnet, making L2s the obvious choice for routine operations.`
       ],
     },
     es: {
@@ -4861,13 +4861,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
   'governance-voting-calculator': {
     en: {
-      quickAnswer: 'Calculate your voting power as a share of total token supply, the tokens needed to hit the proposal threshold, and the quorum. Holding 10,000 of a 1-billion-token supply gives just 0.001% voting power — far below a typical 2.5M-token proposal threshold, so you would delegate or join a voting bloc to have real influence.',
+      quickAnswer: 'Calculate your voting power as a share of total token supply, the tokens needed to hit the proposal threshold, and the quorum. Holding 10,000 of a 1-billion-token supply gives just 0.001% voting power, far below a typical 2.5M-token proposal threshold, so you would delegate or join a voting bloc to have real influence.',
       how: [
         `The Governance Voting Calculator estimates the voting power and potential influence of your token holdings in DAO governance proposals. Enter the governance token (e.g., UNI, AAVE, COMP, MKR, ARB), your token balance, and the tool shows your percentage of total supply, voting weight relative to the quorum threshold, and historical participation rates for that protocol.`,
-        `Understanding your governance power helps decide whether to participate directly or delegate. If you hold 1,000 UNI tokens out of a 1 billion total supply, your voting power is 0.0001% — meaningful in tight votes but unlikely to sway outcomes alone. The calculator shows how many tokens are needed to reach the proposal threshold (e.g., 2.5M UNI to create a new proposal on Uniswap) and the typical quorum (40M UNI for Uniswap votes).`
+        `Understanding your governance power helps decide whether to participate directly or delegate. If you hold 1,000 UNI tokens out of a 1 billion total supply, your voting power is 0.0001%, meaningful in tight votes but unlikely to sway outcomes alone. The calculator shows how many tokens are needed to reach the proposal threshold (e.g., 2.5M UNI to create a new proposal on Uniswap) and the typical quorum (40M UNI for Uniswap votes).`
       ],
       inputs: [
-        `The token selector covers major governance tokens across DeFi, L2s, and DAOs. Token balance is the number of tokens you hold (or plan to acquire). The tool fetches current total supply, circulating supply, and delegation data automatically. Some protocols (Compound, Aave) require explicit delegation before tokens count toward voting — the calculator flags whether self-delegation is needed.`,
+        `The token selector covers major governance tokens across DeFi, L2s, and DAOs. Token balance is the number of tokens you hold (or plan to acquire). The tool fetches current total supply, circulating supply, and delegation data automatically. Some protocols (Compound, Aave) require explicit delegation before tokens count toward voting, the calculator flags whether self-delegation is needed.`,
         `The output displays: your voting power percentage, the quorum threshold and your share of it, average voter turnout for recent proposals, and the top delegate addresses for comparison. For protocols with delegated voting (Optimism, Arbitrum), it also shows how delegation could amplify your influence by combining with aligned voters.`
       ],
     },
@@ -4935,9 +4935,9 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
   'nft-rarity-calculator': {
     en: {
-      quickAnswer: 'Estimate NFT rarity score based on trait frequency. A trait found in only 1% of a 10,000-item collection contributes a rarity score of 100 — rarer traits correlate with higher floor prices.',
+      quickAnswer: 'Estimate NFT rarity score based on trait frequency. A trait found in only 1% of a 10,000-item collection contributes a rarity score of 100, rarer traits correlate with higher floor prices.',
       how: [
-        `The NFT Rarity Calculator scores individual NFTs based on the statistical rarity of their combined traits within a collection. Enter the collection name or contract address, then select a specific token ID — the tool computes a rarity score by analyzing how uncommon each trait is relative to the total supply. A CryptoPunk with the "Alien" skin type (9 out of 10,000) scores far higher than one with "Male" skin (6,039 out of 10,000).`,
+        `The NFT Rarity Calculator scores individual NFTs based on the statistical rarity of their combined traits within a collection. Enter the collection name or contract address, then select a specific token ID, the tool computes a rarity score by analyzing how uncommon each trait is relative to the total supply. A CryptoPunk with the "Alien" skin type (9 out of 10,000) scores far higher than one with "Male" skin (6,039 out of 10,000).`,
         `Rarity scoring uses the Information Content method: each trait's rarity contribution = -log2(trait frequency). The total rarity score is the sum across all trait categories. This penalizes common traits more heavily than simple percentage ranking. Use it before bidding on NFTs to verify that the listed "rare" traits genuinely make the item uncommon within its collection.`
       ],
       inputs: [
@@ -5009,9 +5009,9 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
   'token-unlock-calculator': {
     en: {
-      quickAnswer: 'Estimate token unlock impact on price. If 10% of total supply unlocks and historical sell pressure is 30%, expect ~3% of supply hitting the market — model the dilution before investing.',
+      quickAnswer: 'Estimate token unlock impact on price. If 10% of total supply unlocks and historical sell pressure is 30%, expect ~3% of supply hitting the market, model the dilution before investing.',
       how: [
-        `The Token Unlock Calculator projects the circulating supply impact and potential price pressure from upcoming token vesting events. Enter the token name, and the tool displays the full unlock schedule — showing how many tokens unlock on each date, what percentage of total supply they represent, and who receives them (team, investors, ecosystem fund, community rewards).`,
+        `The Token Unlock Calculator projects the circulating supply impact and potential price pressure from upcoming token vesting events. Enter the token name, and the tool displays the full unlock schedule, showing how many tokens unlock on each date, what percentage of total supply they represent, and who receives them (team, investors, ecosystem fund, community rewards).`,
         `Large unlocks create selling pressure because early investors and team members often liquidate portions of their vested tokens. A 10% supply unlock (e.g., 100M tokens from a 1B supply) with $50M in daily trading volume could take 5-10 trading days to absorb, historically causing 10-25% price declines around cliff unlock dates. The calculator helps you avoid buying before major unlocks or identify post-unlock entry opportunities.`
       ],
       inputs: [
@@ -5083,13 +5083,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
   'whale-alert-calculator': {
     en: {
-      quickAnswer: 'Track large crypto transactions and estimate market impact. Whale movements of 1,000+ BTC (>$73M) can shift price 1–3% on thin order books — monitor exchange inflows for sell signals.',
+      quickAnswer: 'Track large crypto transactions and estimate market impact. Whale movements of 1,000+ BTC (>$73M) can shift price 1–3% on thin order books, monitor exchange inflows for sell signals.',
       how: [
         `The Whale Alert Calculator analyzes large cryptocurrency transactions to estimate their potential market impact. Enter a transaction amount (e.g., 5,000 BTC moved to Binance), and the tool calculates what percentage of the 24-hour trading volume it represents, the estimated price slippage if sold as a market order, and the likely time to fully liquidate the position without moving the market more than 2%.`,
-        `Whale movements to exchanges often precede selling — historically, BTC deposits to exchange hot wallets exceeding 1,000 BTC have been followed by 3-8% price drops within 48 hours about 60% of the time. The calculator helps you contextualize whale alerts by comparing the transaction size against current market depth and order book liquidity, turning raw numbers into actionable risk assessments.`
+        `Whale movements to exchanges often precede selling, historically, BTC deposits to exchange hot wallets exceeding 1,000 BTC have been followed by 3-8% price drops within 48 hours about 60% of the time. The calculator helps you contextualize whale alerts by comparing the transaction size against current market depth and order book liquidity, turning raw numbers into actionable risk assessments.`
       ],
       inputs: [
-        `The amount field accepts either token quantity (e.g., 5,000 BTC) or dollar value (e.g., $350M). The token selector covers all major cryptocurrencies. The destination type (exchange deposit, exchange withdrawal, wallet-to-wallet, or cold storage) affects the analysis — exchange deposits are bearish signals while withdrawals to cold storage are bullish (reducing sell-side supply).`,
+        `The amount field accepts either token quantity (e.g., 5,000 BTC) or dollar value (e.g., $350M). The token selector covers all major cryptocurrencies. The destination type (exchange deposit, exchange withdrawal, wallet-to-wallet, or cold storage) affects the analysis, exchange deposits are bearish signals while withdrawals to cold storage are bullish (reducing sell-side supply).`,
         `The output shows: transaction value in USD, percentage of 24h volume, estimated market impact (slippage) for immediate liquidation, recommended TWAP (time-weighted average price) execution time to minimize impact, and a historical context showing how many transactions of similar size have occurred in the past 30 days. The alert severity rating (Low/Medium/High/Critical) provides a quick risk assessment.`
       ],
     },
@@ -5156,10 +5156,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'arbitrage-calculator': {
     en: {
-      quickAnswer: 'Enter the same asset\'s price on two exchanges to calculate the arbitrage spread, net profit after fees, and ROI. A 0.5% price gap on a $10,000 position (~$50 gross) nets only about $20 after 0.1% trading fees on both legs plus withdrawal costs — so the spread must clear your break-even first.',
+      quickAnswer: 'Enter the same asset\'s price on two exchanges to calculate the arbitrage spread, net profit after fees, and ROI. A 0.5% price gap on a $10,000 position (~$50 gross) nets only about $20 after 0.1% trading fees on both legs plus withdrawal costs, so the spread must clear your break-even first.',
       how: [
         `The Arbitrage Calculator identifies profit opportunities from price discrepancies of the same cryptocurrency across different exchanges. Enter the buy price on one exchange and the sell price on another, along with trading fees and transfer costs, to see the net profit and percentage return. The tool accounts for maker/taker fees on both legs plus network withdrawal fees.`,
-        `Real arbitrage windows typically last seconds to minutes. Use this calculator to determine your minimum profitable spread — the price gap needed to cover all fees and still make money. Compare multiple exchange pairs to find the most consistent opportunities, and factor in transfer times: a 30-minute BTC confirmation window means the price gap must be wide enough to survive volatility during the transfer.`
+        `Real arbitrage windows typically last seconds to minutes. Use this calculator to determine your minimum profitable spread, the price gap needed to cover all fees and still make money. Compare multiple exchange pairs to find the most consistent opportunities, and factor in transfer times: a 30-minute BTC confirmation window means the price gap must be wide enough to survive volatility during the transfer.`
       ],
       inputs: [
         `The two required prices are the buy price (lower exchange) and sell price (higher exchange). Fee fields accept separate percentages for each exchange's trading fee plus a flat withdrawal/network fee in USD. Position size determines the dollar amount you plan to move.`,
@@ -5226,11 +5226,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'The Stock-to-Flow model divides existing supply (stock) by annual production (flow) to quantify scarcity. Bitcoin\'s S2F ratio after the 2024 halving is ~120, comparable to gold (~62), projecting higher value as new issuance falls.',
       how: [
-        `The Stock-to-Flow Calculator applies PlanB's scarcity model to Bitcoin. Enter the circulating supply and the annual new issuance (flow) — the calculator computes the S2F ratio, derives a model price from a power-law fit, and shows the percentage by which the live market price sits above or below that model line. It also projects the next halving's effect by halving the flow and recomputing the ratio and model price.`,
+        `The Stock-to-Flow Calculator applies PlanB's scarcity model to Bitcoin. Enter the circulating supply and the annual new issuance (flow), the calculator computes the S2F ratio, derives a model price from a power-law fit, and shows the percentage by which the live market price sits above or below that model line. It also projects the next halving's effect by halving the flow and recomputing the ratio and model price.`,
         `S2F quantifies how many years of current production it would take to double the existing supply. Higher ratios mean greater scarcity. After each Bitcoin halving, the flow is cut in half while stock continues to grow, mechanically doubling the ratio. The model has historically tracked BTC's macro price trajectory, though short-term deviations are common and expected.`
       ],
       inputs: [
-        `Circulating supply is the total number of tokens currently in existence — for Bitcoin this is approximately 19.85 million as of April 2026. Annual production (flow) is the number of new coins mined per year: at 3.125 BTC per block and ~144 blocks/day, flow is approximately 164,250 BTC/year post-halving.`,
+        `Circulating supply is the total number of tokens currently in existence, for Bitcoin this is approximately 19.85 million as of April 2026. Annual production (flow) is the number of new coins mined per year: at 3.125 BTC per block and ~144 blocks/day, flow is approximately 164,250 BTC/year post-halving.`,
         `The calculator auto-fills Bitcoin's parameters but allows custom overrides for modeling other scarce assets (e.g., Litecoin, gold). The output includes the raw S2F ratio, the model price derived from the regression formula, the current market price, and the deviation percentage showing whether the asset trades above or below the model prediction.`
       ],
     },
@@ -5294,7 +5294,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Price crypto options using the Black-Scholes model. Enter strike price, spot price, time to expiry, volatility, and risk-free rate to get theoretical call/put premiums, Greeks (delta, gamma, theta, vega), and break-even levels.',
       how: [
-        `The Options Calculator prices cryptocurrency call and put options using the Black-Scholes-Merton framework adapted for crypto markets. Enter the current spot price, strike price, days to expiration, implied volatility, and risk-free rate — the calculator returns theoretical premiums, all five Greeks, and break-even prices for both directions.`,
+        `The Options Calculator prices cryptocurrency call and put options using the Black-Scholes-Merton framework adapted for crypto markets. Enter the current spot price, strike price, days to expiration, implied volatility, and risk-free rate, the calculator returns theoretical premiums, all five Greeks, and break-even prices for both directions.`,
         `Use it to evaluate whether a Deribit or OKX option is overpriced or underpriced relative to the model. Compare the model's implied volatility to the market-quoted IV to spot mispricing. Run scenarios with different expiry dates and strike prices to construct spreads (bull call, bear put, straddle) and see the combined P&L profile before committing capital.`
       ],
       inputs: [
@@ -5360,13 +5360,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'tax-loss-harvesting-calculator': {
     en: {
-      quickAnswer: 'Estimate tax savings by strategically selling crypto at a loss to offset gains. If you have $15,000 in realized gains and harvest $8,000 in losses, you reduce taxable income by $8,000 — saving $1,760–$2,960 depending on your tax bracket.',
+      quickAnswer: 'Estimate tax savings by strategically selling crypto at a loss to offset gains. If you have $15,000 in realized gains and harvest $8,000 in losses, you reduce taxable income by $8,000, saving $1,760–$2,960 depending on your tax bracket.',
       how: [
-        `The Tax-Loss Harvesting Calculator quantifies how much you can save on taxes by selling underperforming crypto positions at a loss to offset realized gains. Enter your total capital gains, unrealized losses across your portfolio, and your tax bracket — the tool calculates the net taxable gain, estimated tax saved, and the excess loss you can carry forward to future years.`,
+        `The Tax-Loss Harvesting Calculator quantifies how much you can save on taxes by selling underperforming crypto positions at a loss to offset realized gains. Enter your total capital gains, unrealized losses across your portfolio, and your tax bracket, the tool calculates the net taxable gain, estimated tax saved, and the excess loss you can carry forward to future years.`,
         `In the US, you can deduct crypto losses against capital gains dollar-for-dollar, plus up to $3,000 against ordinary income annually. The calculator models both scenarios: offsetting short-term gains (taxed at up to 37%) and long-term gains (taxed at 15–20%). Unlike stocks, crypto is not subject to the wash-sale rule in most jurisdictions as of 2026, so you can repurchase the same token immediately after harvesting.`
       ],
       inputs: [
-        `Enter your realized capital gains for the tax year (both short-term and long-term if you want separate calculations). Then list your unrealized losses — positions currently underwater that you could sell to generate deductible losses. Your marginal tax bracket determines the actual dollar savings.`,
+        `Enter your realized capital gains for the tax year (both short-term and long-term if you want separate calculations). Then list your unrealized losses, positions currently underwater that you could sell to generate deductible losses. Your marginal tax bracket determines the actual dollar savings.`,
         `Optional fields include state tax rate (for combined federal + state savings), carry-forward losses from prior years, and the $3,000 ordinary income deduction cap. The output shows total tax saved, effective tax rate reduction, and a year-over-year carry-forward schedule if losses exceed gains.`
       ],
     },
@@ -5430,11 +5430,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Estimate additional yield from restaking ETH through EigenLayer or similar protocols. Restaking 32 ETH earning 3.5% base staking plus 2–6% restaking rewards can compound to 6–10% total APY, with added slashing risk.',
       how: [
-        `The Restaking Calculator models the additional yield earned by re-deploying staked ETH to secure other protocols via restaking layers like EigenLayer. Enter your staked ETH amount and the base staking APY, then add the restaking protocol's reward rate — the tool computes total combined yield, compounded returns over your chosen time horizon, and a risk-adjusted comparison against plain staking.`,
+        `The Restaking Calculator models the additional yield earned by re-deploying staked ETH to secure other protocols via restaking layers like EigenLayer. Enter your staked ETH amount and the base staking APY, then add the restaking protocol's reward rate, the tool computes total combined yield, compounded returns over your chosen time horizon, and a risk-adjusted comparison against plain staking.`,
         `Restaking amplifies rewards but introduces compounding slashing risk: your ETH secures both Ethereum's consensus layer and one or more Actively Validated Services (AVS). The calculator displays the worst-case loss scenario alongside the projected gains, helping you decide whether the extra 2–6% yield justifies the added smart contract and operator risk.`
       ],
       inputs: [
-        `The ETH amount field accepts any quantity, though validator economics assume 32 ETH minimums for native staking. Base staking APY (currently ~3.5% on Ethereum) reflects the consensus layer reward. The restaking reward rate varies by AVS and operator — check your restaking dashboard for the current figure.`,
+        `The ETH amount field accepts any quantity, though validator economics assume 32 ETH minimums for native staking. Base staking APY (currently ~3.5% on Ethereum) reflects the consensus layer reward. The restaking reward rate varies by AVS and operator, check your restaking dashboard for the current figure.`,
         `Time horizon (in months or years) controls the compounding projection. The slashing risk toggle models a configurable percentage loss if a slashing event occurs. The output shows total yield in ETH and USD, effective APY, and a side-by-side comparison of restaking vs. plain staking vs. liquid staking alternatives.`
       ],
     },
@@ -5498,12 +5498,12 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Compare liquid staking yields across Lido (stETH), Rocket Pool (rETH), and Coinbase (cbETH). Staking 10 ETH via Lido at 3.4% APY earns ~0.34 ETH/year while keeping your capital liquid through the LST derivative token.',
       how: [
-        `The Liquid Staking Calculator compares yields and fee structures across major liquid staking protocols. Enter your ETH amount and select a protocol — the tool shows the net APY after protocol fees, your projected annual rewards in ETH, the current LST exchange rate, and the effective cost of using liquid staking versus running your own validator.`,
+        `The Liquid Staking Calculator compares yields and fee structures across major liquid staking protocols. Enter your ETH amount and select a protocol, the tool shows the net APY after protocol fees, your projected annual rewards in ETH, the current LST exchange rate, and the effective cost of using liquid staking versus running your own validator.`,
         `Liquid staking tokens (LSTs) like stETH represent your staked position while remaining transferable and usable in DeFi. The calculator helps you evaluate the opportunity cost: you earn staking rewards while simultaneously providing liquidity on Curve/Uniswap or depositing into lending protocols like Aave, effectively stacking yield on top of yield.`
       ],
       inputs: [
         `The ETH amount is the quantity you want to stake. Protocol selection (Lido, Rocket Pool, Coinbase, etc.) determines the fee rate and current APY. Each protocol takes a different cut: Lido charges 10% of rewards, Rocket Pool takes 5–20% depending on node operator terms.`,
-        `Optional DeFi yield inputs let you model combined strategies — e.g., staking via Lido (3.4% APY) then depositing stETH into Aave (additional ~1–2% supply APY). The output shows gross rewards, protocol fees, net rewards, and total combined APY across your stacked strategy.`
+        `Optional DeFi yield inputs let you model combined strategies, e.g., staking via Lido (3.4% APY) then depositing stETH into Aave (additional ~1–2% supply APY). The output shows gross rewards, protocol fees, net rewards, and total combined APY across your stacked strategy.`
       ],
     },
     es: {
@@ -5566,11 +5566,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Calculate P&L, liquidation price, and funding costs for perpetual futures positions. A 10x long BTC at $77,000 with $5,000 margin has a liquidation at ~$69,930 and pays/receives funding every 8 hours based on the current rate.',
       how: [
-        `The Perpetual Futures Calculator models the complete economics of a perp position including entry, leverage, liquidation price, and cumulative funding rate costs. Enter your margin, leverage multiple, and entry price — the tool computes your notional exposure, liquidation price, and projects the total funding cost over your expected holding period.`,
+        `The Perpetual Futures Calculator models the complete economics of a perp position including entry, leverage, liquidation price, and cumulative funding rate costs. Enter your margin, leverage multiple, and entry price, the tool computes your notional exposure, liquidation price, and projects the total funding cost over your expected holding period.`,
         `Perps have no expiry date but charge a funding rate every 8 hours that can significantly erode profits on longer holds. The calculator shows how many funding periods you can afford before your margin is consumed, and compares the total cost of holding a perp position vs. opening a quarterly futures contract or simply spot buying with leverage on margin.`
       ],
       inputs: [
-        `Margin is the collateral you deposit (in USD or USDT). Leverage ranges from 1x to 125x depending on the exchange and asset. Entry price is where you open the position. Direction (long/short) determines how funding flows affect your balance — longs pay shorts when funding is positive, and vice versa.`,
+        `Margin is the collateral you deposit (in USD or USDT). Leverage ranges from 1x to 125x depending on the exchange and asset. Entry price is where you open the position. Direction (long/short) determines how funding flows affect your balance, longs pay shorts when funding is positive, and vice versa.`,
         `The funding rate field accepts a percentage per 8-hour period (typically 0.01% in neutral markets, but can spike to 0.1%+ during volatile moves). Holding period in days lets the calculator project cumulative funding costs. The output shows P&L at a target exit price, liquidation price, total funding paid/received, and effective break-even price including all costs.`
       ],
     },
@@ -5634,8 +5634,8 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Calculate how long it takes to recoup your crypto investment from staking, mining, or DeFi yields. A $10,000 investment earning 8% APY reaches payback in 12.5 years without compounding, or ~9 years with daily compounding.',
       how: [
-        `The Payback Period Calculator determines how many months or years your crypto investment needs to generate enough returns to recover the initial capital. Enter your upfront investment, the expected annual yield, and choose between simple or compound interest — the tool shows the exact break-even date and projects your balance growth over time.`,
-        `Use it to compare hardware purchases (mining rigs, validator nodes) against DeFi yield strategies. A $5,000 ASIC miner earning $12/day has a 417-day payback, while the same capital in a 10% staking pool takes 10 years — but without hardware depreciation risk. The calculator helps you choose the optimal capital deployment by normalizing different return profiles into a single payback metric.`
+        `The Payback Period Calculator determines how many months or years your crypto investment needs to generate enough returns to recover the initial capital. Enter your upfront investment, the expected annual yield, and choose between simple or compound interest, the tool shows the exact break-even date and projects your balance growth over time.`,
+        `Use it to compare hardware purchases (mining rigs, validator nodes) against DeFi yield strategies. A $5,000 ASIC miner earning $12/day has a 417-day payback, while the same capital in a 10% staking pool takes 10 years, but without hardware depreciation risk. The calculator helps you choose the optimal capital deployment by normalizing different return profiles into a single payback metric.`
       ],
       inputs: [
         `Initial investment is the total capital deployed in USD. Annual yield/revenue can be entered as a percentage (for staking/DeFi) or as a flat dollar amount per day/month (for mining). The compounding toggle switches between simple interest and daily/monthly/annual compound interest calculations.`,
@@ -5700,13 +5700,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'dva-calculator': {
     en: {
-      quickAnswer: 'Dollar Value Averaging (DVA) adjusts purchase amounts based on portfolio performance — buying more when prices drop and less when prices rise. DVA targeting $500/month growth on a $10,000 BTC portfolio adjusts each investment to hit the target value path.',
+      quickAnswer: 'Dollar Value Averaging (DVA) adjusts purchase amounts based on portfolio performance, buying more when prices drop and less when prices rise. DVA targeting $500/month growth on a $10,000 BTC portfolio adjusts each investment to hit the target value path.',
       how: [
         `The Dollar Value Averaging Calculator implements a value-based DCA strategy where you invest variable amounts to keep your portfolio on a predetermined growth path. Unlike standard DCA which invests the same amount each period, DVA calculates how much you need to invest (or sell) each period to reach a target portfolio value that grows by a fixed amount monthly.`,
-        `Enter your target monthly growth amount and starting portfolio value — the calculator shows the required investment for the current period based on actual portfolio performance. When prices drop, you invest more to reach the target; when prices surge, you invest less or even take profits. Historically, DVA has outperformed standard DCA by 1–3% annually due to its contrarian buy-low-sell-high mechanism.`
+        `Enter your target monthly growth amount and starting portfolio value, the calculator shows the required investment for the current period based on actual portfolio performance. When prices drop, you invest more to reach the target; when prices surge, you invest less or even take profits. Historically, DVA has outperformed standard DCA by 1–3% annually due to its contrarian buy-low-sell-high mechanism.`
       ],
       inputs: [
-        `Starting portfolio value is your current holdings in USD. Target growth per period (monthly or biweekly) is the fixed dollar amount by which you want your portfolio to grow each interval — e.g., $500/month means your target is $10,500 after month 1, $11,000 after month 2, etc.`,
+        `Starting portfolio value is your current holdings in USD. Target growth per period (monthly or biweekly) is the fixed dollar amount by which you want your portfolio to grow each interval, e.g., $500/month means your target is $10,500 after month 1, $11,000 after month 2, etc.`,
         `Current asset price is used to calculate the exact number of tokens to buy or sell. The output shows the required investment this period, cumulative invested amount, current portfolio value vs. target value, and a comparison chart showing DVA performance against standard fixed-amount DCA over the same timeframe.`
       ],
     },
@@ -5768,13 +5768,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'bitcoin-energy-calculator': {
     en: {
-      quickAnswer: 'Estimate Bitcoin\'s energy consumption per transaction, per block, and network-wide. At ~850 EH/s and ~150 J/TH efficiency, the Bitcoin network consumes approximately 130–180 TWh/year — comparable to a mid-sized country like Argentina.',
+      quickAnswer: 'Estimate Bitcoin\'s energy consumption per transaction, per block, and network-wide. At ~850 EH/s and ~150 J/TH efficiency, the Bitcoin network consumes approximately 130–180 TWh/year, comparable to a mid-sized country like Argentina.',
       how: [
-        `The Bitcoin Energy Calculator models the network's total electricity consumption based on hashrate, hardware efficiency, and power costs. Enter the current network hashrate and the average ASIC efficiency in joules per terahash — the tool computes total network power draw, energy per transaction, energy per block, and annual consumption in terawatt-hours.`,
+        `The Bitcoin Energy Calculator models the network's total electricity consumption based on hashrate, hardware efficiency, and power costs. Enter the current network hashrate and the average ASIC efficiency in joules per terahash, the tool computes total network power draw, energy per transaction, energy per block, and annual consumption in terawatt-hours.`,
         `Use it to contextualize Bitcoin's environmental footprint by comparing against national energy consumption, VISA transaction costs, or gold mining energy use. The calculator also models the impact of renewable energy adoption: adjust the renewable mix percentage to see how carbon emissions change even as total energy consumption remains constant.`
       ],
       inputs: [
-        `Network hashrate in EH/s (exahashes per second) — currently approximately 850 EH/s as of April 2026. Average hardware efficiency in joules per terahash reflects the fleet mix: latest-gen ASICs (Antminer S21 Pro) achieve ~15 J/TH, while older units run at 30–60 J/TH. A fleet average of ~25 J/TH is realistic.`,
+        `Network hashrate in EH/s (exahashes per second), currently approximately 850 EH/s as of April 2026. Average hardware efficiency in joules per terahash reflects the fleet mix: latest-gen ASICs (Antminer S21 Pro) achieve ~15 J/TH, while older units run at 30–60 J/TH. A fleet average of ~25 J/TH is realistic.`,
         `Optional inputs include average electricity cost ($/kWh), which doesn't affect energy consumption but helps estimate the network's total electricity spend. Renewable energy percentage (currently estimated at ~55% of mining) adjusts the carbon emissions calculation. Daily transactions (~350,000–500,000) divide total energy into a per-transaction figure.`
       ],
     },
@@ -5836,14 +5836,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'on-chain-metrics-calculator': {
     en: {
-      quickAnswer: 'Analyze on-chain health indicators: NVT ratio, MVRV Z-score, SOPR, and realized cap vs. market cap. An NVT ratio below 25 suggests the network is undervalued relative to its transaction throughput — a historically bullish signal for BTC.',
+      quickAnswer: 'Analyze on-chain health indicators: NVT ratio, MVRV Z-score, SOPR, and realized cap vs. market cap. An NVT ratio below 25 suggests the network is undervalued relative to its transaction throughput, a historically bullish signal for BTC.',
       how: [
-        `The On-Chain Metrics Calculator computes key blockchain valuation and activity indicators from raw inputs. Enter market cap, realized cap, transaction volume, and active addresses — the tool calculates NVT (Network Value to Transactions) ratio, MVRV (Market Value to Realized Value) Z-score, and the SOPR (Spent Output Profit Ratio) to assess whether the network is overvalued or undervalued.`,
+        `The On-Chain Metrics Calculator computes key blockchain valuation and activity indicators from raw inputs. Enter market cap, realized cap, transaction volume, and active addresses, the tool calculates NVT (Network Value to Transactions) ratio, MVRV (Market Value to Realized Value) Z-score, and the SOPR (Spent Output Profit Ratio) to assess whether the network is overvalued or undervalued.`,
         `These metrics provide a fundamental analysis layer that complements technical chart analysis. An MVRV Z-score above 7 has historically preceded major tops, while values below 0.1 have marked generational bottoms. Use the calculator to check multiple metrics simultaneously and build a conviction score for macro timing decisions.`
       ],
       inputs: [
         `Market capitalization is the current total value of all circulating tokens (price times supply). Realized capitalization values each coin at the price it last moved on-chain, capturing the aggregate cost basis. Transaction volume is the 24-hour total value transferred on-chain in USD.`,
-        `Active addresses (unique addresses sending or receiving in 24 hours) measure network usage. The SOPR input requires the ratio of spent output value to creation value — above 1 means holders are selling at profit, below 1 at loss. The output dashboard shows each metric with a historical percentile ranking and a bull/bear/neutral signal.`
+        `Active addresses (unique addresses sending or receiving in 24 hours) measure network usage. The SOPR input requires the ratio of spent output value to creation value, above 1 means holders are selling at profit, below 1 at loss. The output dashboard shows each metric with a historical percentile ranking and a bull/bear/neutral signal.`
       ],
     },
     es: {
@@ -5906,11 +5906,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Configure grid trading bot parameters: price range, grid count, and investment amount. A 20-grid bot on BTC between $70,000–$85,000 with $10,000 capital places orders every $750 apart, earning ~0.5–2% per grid fill in a ranging market.',
       how: [
-        `The Grid Trading Calculator helps you configure an automated grid bot by computing order spacing, capital per grid level, and projected returns in a range-bound market. Enter the upper and lower price bounds, number of grid levels, and total capital — the tool shows each order's price, size, and the profit per grid when a buy-then-sell cycle completes.`,
+        `The Grid Trading Calculator helps you configure an automated grid bot by computing order spacing, capital per grid level, and projected returns in a range-bound market. Enter the upper and lower price bounds, number of grid levels, and total capital, the tool shows each order's price, size, and the profit per grid when a buy-then-sell cycle completes.`,
         `Grid trading profits from sideways volatility by placing staggered buy and sell orders across a price range. Each completed grid cycle captures the price difference as profit. The calculator models arithmetic (equal spacing) and geometric (percentage spacing) grids, and projects annualized returns based on historical volatility and fill frequency estimates.`
       ],
       inputs: [
-        `Upper price and lower price define the trading range — set these around the expected support and resistance levels. Grid count determines how many orders are placed (more grids = smaller profit per fill but higher fill frequency). Total investment is split equally across all grid levels.`,
+        `Upper price and lower price define the trading range, set these around the expected support and resistance levels. Grid count determines how many orders are placed (more grids = smaller profit per fill but higher fill frequency). Total investment is split equally across all grid levels.`,
         `Grid type (arithmetic vs. geometric) affects spacing: arithmetic places equal dollar gaps, geometric places equal percentage gaps (better for volatile assets). The output shows each grid level's buy/sell prices, order sizes, profit per completed grid cycle, estimated fills per day based on historical volatility, and projected monthly/annual returns.`
       ],
     },
@@ -5972,10 +5972,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'inheritance-tax-calculator': {
     en: {
-      quickAnswer: 'Estimate inheritance and estate tax liability on cryptocurrency holdings. In the US, estates above $13.61M (2024 exemption) face a 40% federal estate tax — a $20M crypto estate could owe ~$2.56M in federal taxes alone.',
+      quickAnswer: 'Estimate inheritance and estate tax liability on cryptocurrency holdings. In the US, estates above $13.61M (2024 exemption) face a 40% federal estate tax, a $20M crypto estate could owe ~$2.56M in federal taxes alone.',
       how: [
-        `The Inheritance Tax Calculator estimates the tax impact of passing cryptocurrency assets to heirs. Enter the total estate value (including crypto), the applicable jurisdiction, and the number of beneficiaries — the tool calculates the estate tax liability at federal and state levels, and shows the step-up in cost basis that eliminates capital gains on inherited assets.`,
-        `Cryptocurrency inherits a "stepped-up" cost basis equal to the fair market value at the date of death. This means unrealized gains accumulated over years are wiped out for tax purposes. The calculator quantifies this tax benefit: if you bought BTC at $5,000 and it's worth $77,000 at death, your heirs' cost basis resets to $77,000 — eliminating $72,000 of taxable gains per coin.`
+        `The Inheritance Tax Calculator estimates the tax impact of passing cryptocurrency assets to heirs. Enter the total estate value (including crypto), the applicable jurisdiction, and the number of beneficiaries, the tool calculates the estate tax liability at federal and state levels, and shows the step-up in cost basis that eliminates capital gains on inherited assets.`,
+        `Cryptocurrency inherits a "stepped-up" cost basis equal to the fair market value at the date of death. This means unrealized gains accumulated over years are wiped out for tax purposes. The calculator quantifies this tax benefit: if you bought BTC at $5,000 and it's worth $77,000 at death, your heirs' cost basis resets to $77,000, eliminating $72,000 of taxable gains per coin.`
       ],
       inputs: [
         `Total estate value includes all assets (crypto, real estate, investments, cash). Crypto holdings can be entered separately to see their proportion and specific tax impact. The jurisdiction selector covers US federal, US state-level estate taxes, and UK inheritance tax (40% above £325,000).`,
@@ -6042,7 +6042,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Estimate validator node rewards, costs, and ROI for Ethereum and other PoS networks. Running a solo Ethereum validator with 32 ETH earns ~3.5% APY ($6,700/year at $6,000/ETH) minus ~$50–100/month in server costs.',
       how: [
-        `The Validator Calculator models the economics of running a proof-of-stake validator node. Enter the network (Ethereum, Solana, Cosmos, etc.), your staked amount, and infrastructure costs — the tool computes gross annual rewards, net profit after hosting expenses, effective APY, and the estimated time to recoup your hardware or VPS investment.`,
+        `The Validator Calculator models the economics of running a proof-of-stake validator node. Enter the network (Ethereum, Solana, Cosmos, etc.), your staked amount, and infrastructure costs, the tool computes gross annual rewards, net profit after hosting expenses, effective APY, and the estimated time to recoup your hardware or VPS investment.`,
         `For Ethereum, the calculator factors in consensus layer rewards (attestation, proposals) and execution layer tips (MEV). It also models the impact of validator count on rewards: as more validators join the network, individual returns decline. Compare running a solo validator versus delegating to a staking pool to see when the infrastructure overhead is justified.`
       ],
       inputs: [
@@ -6108,7 +6108,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'token-valuation-calculator': {
     en: {
-      quickAnswer: 'Estimate fair token value using fully diluted valuation (FDV), circulating market cap, and comparable protocol analysis. A DeFi token with $50M TVL and $500M FDV trades at 10x TVL — compare against sector median (5–15x) to assess if it is overvalued.',
+      quickAnswer: 'Estimate fair token value using fully diluted valuation (FDV), circulating market cap, and comparable protocol analysis. A DeFi token with $50M TVL and $500M FDV trades at 10x TVL, compare against sector median (5–15x) to assess if it is overvalued.',
       how: [
         `The Token Valuation Calculator applies multiple frameworks to estimate a token's fair value: fully diluted valuation (FDV) analysis, TVL-to-market-cap ratios for DeFi tokens, P/E ratios for revenue-generating protocols, and comparable protocol multiples. Enter the token's metrics and the calculator shows how it stacks up against sector benchmarks.`,
         `Use it to evaluate new token launches and existing positions. A token trading at 50x revenue while the sector median is 20x may be overvalued unless growth justifies the premium. The calculator also models the impact of token unlocks: if 60% of supply is still locked, today's market cap at full dilution could be 2.5x the current circulating value.`
@@ -6176,9 +6176,9 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'if-i-had-bought': {
     en: {
-      quickAnswer: 'See what your investment would be worth today if you had bought a cryptocurrency at a past date. $1,000 invested in Bitcoin on January 1, 2020 ($7,200) would be worth ~$10,700 today — a 970% return in 6 years.',
+      quickAnswer: 'See what your investment would be worth today if you had bought a cryptocurrency at a past date. $1,000 invested in Bitcoin on January 1, 2020 ($7,200) would be worth ~$10,700 today, a 970% return in 6 years.',
       how: [
-        `The "If I Had Bought" Calculator shows the hypothetical value of a past cryptocurrency investment using real historical price data. Select a coin, enter the amount you would have invested, and pick the date — the tool fetches the historical price, calculates how many tokens you would have purchased, and multiplies by today's price to show your unrealized gain or loss.`,
+        `The "If I Had Bought" Calculator shows the hypothetical value of a past cryptocurrency investment using real historical price data. Select a coin, enter the amount you would have invested, and pick the date, the tool fetches the historical price, calculates how many tokens you would have purchased, and multiplies by today's price to show your unrealized gain or loss.`,
         `Use it to analyze missed opportunities or validate your past decisions. It's also a powerful educational tool: seeing that $100 in ETH in January 2017 would be worth $40,000+ today illustrates crypto's asymmetric return potential. The calculator includes a percentage return, annualized CAGR, and a comparison against simply holding the S&P 500 over the same period.`
       ],
       inputs: [
@@ -6244,10 +6244,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'millionaire-calculator': {
     en: {
-      quickAnswer: 'Calculate how much crypto you need — or how long you must hold — to reach $1,000,000. At current prices, you need ~12.9 BTC ($77,500 each) or ~515 ETH ($1,940 each) to be a crypto millionaire today.',
+      quickAnswer: 'Calculate how much crypto you need, or how long you must hold, to reach $1,000,000. At current prices, you need ~12.9 BTC ($77,500 each) or ~515 ETH ($1,940 each) to be a crypto millionaire today.',
       how: [
         `The Millionaire Calculator works backward from a $1,000,000 target to determine how much you need to invest, at what price point you achieve millionaire status, or how long your current holdings need to grow. Choose your approach: enter a token and quantity to see the required price, enter a dollar budget to see how many tokens you need, or enter current holdings with an expected annual return to see the timeline.`,
-        `The calculator also models the impact of regular contributions — monthly DCA into your position accelerates the timeline dramatically. A $500/month BTC investment at 30% annual growth (crypto's historical average) projects millionaire status in approximately 10–12 years. Compare different scenarios: all-in BTC vs. diversified portfolio vs. high-risk altcoin bets.`
+        `The calculator also models the impact of regular contributions, monthly DCA into your position accelerates the timeline dramatically. A $500/month BTC investment at 30% annual growth (crypto's historical average) projects millionaire status in approximately 10–12 years. Compare different scenarios: all-in BTC vs. diversified portfolio vs. high-risk altcoin bets.`
       ],
       inputs: [
         `Target wealth defaults to $1,000,000 but can be adjusted to any goal ($100K, $5M, $10M). Token selection and current price are auto-filled from CoinGecko. Current holdings (if any) represent your starting position. Expected annual return can range from conservative (10%) to aggressive (50%+).`,
@@ -6312,14 +6312,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'pizza-day-calculator': {
     en: {
-      quickAnswer: 'On May 22, 2010, Laszlo Hanyecz paid 10,000 BTC for two pizzas (~$41 at the time). Those same bitcoins at today\'s price of ~$77,000 would be worth $770,000,000 — making each pizza slice worth roughly $48 million.',
+      quickAnswer: 'On May 22, 2010, Laszlo Hanyecz paid 10,000 BTC for two pizzas (~$41 at the time). Those same bitcoins at today\'s price of ~$77,000 would be worth $770,000,000, making each pizza slice worth roughly $48 million.',
       how: [
-        `The Pizza Day Calculator computes the present-day value of the famous 10,000 BTC pizza purchase from May 22, 2010 — the first known real-world Bitcoin transaction. Enter today's BTC price (auto-filled from CoinGecko) and the calculator shows the total value of those 10,000 BTC today, the price per pizza, per slice, and per bite. It contextualizes the astronomical opportunity cost in relatable comparisons.`,
-        `Beyond the novelty, this calculator serves as an interactive lesson in Bitcoin's exponential growth. You can enter any historical BTC price to see how the pizza purchase value has changed over time. Toggle the CAGR view to see the annualized return rate from $0.0041/BTC (the pizza price) to today — demonstrating why early adoption and long-term holding are central to the Bitcoin thesis.`
+        `The Pizza Day Calculator computes the present-day value of the famous 10,000 BTC pizza purchase from May 22, 2010, the first known real-world Bitcoin transaction. Enter today's BTC price (auto-filled from CoinGecko) and the calculator shows the total value of those 10,000 BTC today, the price per pizza, per slice, and per bite. It contextualizes the astronomical opportunity cost in relatable comparisons.`,
+        `Beyond the novelty, this calculator serves as an interactive lesson in Bitcoin's exponential growth. You can enter any historical BTC price to see how the pizza purchase value has changed over time. Toggle the CAGR view to see the annualized return rate from $0.0041/BTC (the pizza price) to today, demonstrating why early adoption and long-term holding are central to the Bitcoin thesis.`
       ],
       inputs: [
         `Current BTC price is auto-filled from live market data but can be overridden for scenario modeling (e.g., what if BTC hits $100K, $250K, $1M?). The original purchase details are hardcoded: 10,000 BTC for 2 large pizzas valued at ~$41 on May 22, 2010, establishing a price of $0.0041 per BTC.`,
-        `The output shows: total value of 10,000 BTC today, value per pizza, value per slice (8 slices per pizza), percentage gain since purchase, CAGR over the period, and fun comparisons — how many Lamborghinis, houses, or private islands the pizza money could buy. A timeline chart shows key price milestones from $0.0041 to present.`
+        `The output shows: total value of 10,000 BTC today, value per pizza, value per slice (8 slices per pizza), percentage gain since purchase, CAGR over the period, and fun comparisons, how many Lamborghinis, houses, or private islands the pizza money could buy. A timeline chart shows key price milestones from $0.0041 to present.`
       ],
     },
     es: {
@@ -6383,11 +6383,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Your FIRE number = Annual Withdrawal / Safe Withdrawal Rate. To retire on $48,000/year at a 4% withdrawal rate, you need $1.2M. This calculator projects when your crypto portfolio reaches that target based on monthly contributions and expected returns.',
       how: [
         `The Crypto Retirement/FIRE Calculator estimates how long it will take your crypto portfolio to reach financial independence. Enter your current age, target retirement age, existing portfolio value, monthly contribution, expected annual return, the annual amount you plan to withdraw in retirement, and estimated inflation. The tool projects your portfolio value at the target date, your FIRE number, how many years until you reach it, and whether you finish with a surplus or a shortfall.`,
-        `Use it to stress-test different scenarios: a conservative 8% annual return vs. a bullish 20%, or increasing monthly contributions over time. The calculator highlights the impact of compounding — starting 5 years earlier can dramatically cut the monthly savings you need. The FIRE number applies the classic 4% rule to your withdrawal; because crypto is far more volatile than stocks, treat 4% as optimistic and build in a margin by planning for a slightly higher withdrawal.`
+        `Use it to stress-test different scenarios: a conservative 8% annual return vs. a bullish 20%, or increasing monthly contributions over time. The calculator highlights the impact of compounding, starting 5 years earlier can dramatically cut the monthly savings you need. The FIRE number applies the classic 4% rule to your withdrawal; because crypto is far more volatile than stocks, treat 4% as optimistic and build in a margin by planning for a slightly higher withdrawal.`
       ],
       inputs: [
-        `Current Age and Target Retirement Age define the accumulation window. Current Portfolio Value is the total crypto and investment balance you start with. Monthly Contribution is the amount you add each month — consistent DCA into your portfolio. Expected Annual Return models your average growth rate (8–15% for diversified crypto, higher for aggressive allocations).`,
-        `Annual Withdrawal in Retirement is what you plan to spend each year; the FIRE number applies the 4% rule to it (Annual Withdrawal / 0.04). Inflation Rate (default 3%) erodes purchasing power over time — keep it in mind when reading the nominal projections. The output includes your portfolio value at retirement, the FIRE number, years to FIRE, monthly passive income at 4%, how long the portfolio would last, and your surplus or deficit versus the FIRE target.`
+        `Current Age and Target Retirement Age define the accumulation window. Current Portfolio Value is the total crypto and investment balance you start with. Monthly Contribution is the amount you add each month, consistent DCA into your portfolio. Expected Annual Return models your average growth rate (8–15% for diversified crypto, higher for aggressive allocations).`,
+        `Annual Withdrawal in Retirement is what you plan to spend each year; the FIRE number applies the 4% rule to it (Annual Withdrawal / 0.04). Inflation Rate (default 3%) erodes purchasing power over time, keep it in mind when reading the nominal projections. The output includes your portfolio value at retirement, the FIRE number, years to FIRE, monthly passive income at 4%, how long the portfolio would last, and your surplus or deficit versus the FIRE target.`
       ],
     },
     es: {
@@ -6448,9 +6448,9 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'rainbow-chart-calculator': {
     en: {
-      quickAnswer: 'The Bitcoin Rainbow Chart uses logarithmic regression (ln(price) = a × ln(days) + b) to divide price action into 9 bands from \'Fire Sale\' to \'Maximum Bubble.\' At $84,000, BTC sits in the \'Accumulate\' zone — historically a favorable buying range.',
+      quickAnswer: 'The Bitcoin Rainbow Chart uses logarithmic regression (ln(price) = a × ln(days) + b) to divide price action into 9 bands from \'Fire Sale\' to \'Maximum Bubble.\' At $84,000, BTC sits in the \'Accumulate\' zone, historically a favorable buying range.',
       how: [
-        `The Bitcoin Rainbow Chart Calculator overlays logarithmic regression bands on Bitcoin's price history to visualize long-term valuation zones. The model fits a curve to BTC's entire price history since 2010, then divides the area above and below the regression line into 9 color-coded bands — from deep blue ("Fire Sale") through green ("Accumulate") and yellow ("HODL") to red ("Maximum Bubble"). Enter today's BTC price to see which band the current price falls into.`,
+        `The Bitcoin Rainbow Chart Calculator overlays logarithmic regression bands on Bitcoin's price history to visualize long-term valuation zones. The model fits a curve to BTC's entire price history since 2010, then divides the area above and below the regression line into 9 color-coded bands, from deep blue ("Fire Sale") through green ("Accumulate") and yellow ("HODL") to red ("Maximum Bubble"). Enter today's BTC price to see which band the current price falls into.`,
         `The rainbow is a sentiment and valuation heuristic, not a prediction model. Historically, buying in the blue-green bands and selling in the orange-red bands has been profitable over multi-year horizons. Use the investment amount field to model how a purchase at today's band would perform if BTC moves to a higher band over time. The chart updates dynamically as you adjust the price.`
       ],
       inputs: [
@@ -6516,13 +6516,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'etf-fee-calculator': {
     en: {
-      quickAnswer: 'Bitcoin ETF fees compound over time: $10,000 in IBIT (0.25% fee) costs $25/year, while GBTC (1.50%) costs $150/year. Over 10 years, the fee difference can exceed $1,500 — this calculator shows the exact drag for each fund.',
+      quickAnswer: 'Bitcoin ETF fees compound over time: $10,000 in IBIT (0.25% fee) costs $25/year, while GBTC (1.50%) costs $150/year. Over 10 years, the fee difference can exceed $1,500, this calculator shows the exact drag for each fund.',
       how: [
         `The Bitcoin ETF Fee Calculator compares the long-term cost of holding different spot Bitcoin ETFs by modeling how expense ratios compound over time. Enter your investment amount, select one or more ETFs (IBIT, FBTC, ARKB, GBTC, BITB, etc.), choose a holding period, and the tool calculates total fees paid, net asset value after fees, and the performance gap between the cheapest and most expensive options.`,
         `Fee drag is deceptively large on long horizons: a 1.25% annual fee difference on $100,000 compounds to over $15,000 in lost returns over 10 years (assuming 10% annual growth). Use this calculator to pick the most cost-efficient ETF for your time horizon, or to decide whether direct BTC ownership (with self-custody costs) is cheaper than ETF convenience.`
       ],
       inputs: [
-        `Investment Amount is the dollar value you plan to allocate to a Bitcoin ETF. Holding Period sets the projection window in years (1–30). ETF Selection lets you compare 2–6 funds side by side — each pre-loaded with its current expense ratio (IBIT 0.25%, FBTC 0.25%, ARKB 0.21%, GBTC 1.50%, BITB 0.20%, HODL 0.25%).`,
+        `Investment Amount is the dollar value you plan to allocate to a Bitcoin ETF. Holding Period sets the projection window in years (1–30). ETF Selection lets you compare 2–6 funds side by side, each pre-loaded with its current expense ratio (IBIT 0.25%, FBTC 0.25%, ARKB 0.21%, GBTC 1.50%, BITB 0.20%, HODL 0.25%).`,
         `Optional fields include expected annual BTC return (default 10%) for modeling total return after fees, and a custom expense ratio field for new or lesser-known ETFs. Output shows: annual fee per fund, cumulative fees over the holding period, net portfolio value, and a ranked comparison chart highlighting the cheapest option for your chosen time horizon.`
       ],
     },
@@ -6586,11 +6586,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Token burn reduces circulating supply, creating scarcity. If a token burns 2% of supply annually from 1B tokens, after 5 years supply drops to ~904M. This calculator shows projected supply, implied price impact, and deflation pressure score.',
       how: [
-        `The Token Burn Rate Calculator models the long-term impact of deflationary token mechanics on supply and price. Enter the total supply, circulating supply, annual burn rate, and current token price — the tool projects how supply decreases over time and estimates the theoretical price appreciation assuming constant market cap. It also calculates a deflation pressure score that rates the aggressiveness of the burn mechanism.`,
+        `The Token Burn Rate Calculator models the long-term impact of deflationary token mechanics on supply and price. Enter the total supply, circulating supply, annual burn rate, and current token price, the tool projects how supply decreases over time and estimates the theoretical price appreciation assuming constant market cap. It also calculates a deflation pressure score that rates the aggressiveness of the burn mechanism.`,
         `Use it to evaluate whether a project's burn schedule is meaningful or purely cosmetic. A 0.5% annual burn barely moves the needle over 5 years, while a 5% burn halves supply in ~14 years. The calculator differentiates between total supply burns (reducing max cap) and circulating supply burns (removing tokens from active markets), which have different price dynamics.`
       ],
       inputs: [
-        `Total Supply is the maximum number of tokens that exist (including locked, vesting, and treasury). Circulating Supply is the number actively tradable on the market. Burn Rate is the annualized percentage of tokens destroyed — sourced from the project's tokenomics or smart contract data. Current Price is the token's market price, used to model implied valuation changes.`,
+        `Total Supply is the maximum number of tokens that exist (including locked, vesting, and treasury). Circulating Supply is the number actively tradable on the market. Burn Rate is the annualized percentage of tokens destroyed, sourced from the project's tokenomics or smart contract data. Current Price is the token's market price, used to model implied valuation changes.`,
         `Projection Period (1–20 years) sets the forecast window. Output includes: projected supply curve, year-by-year burn amounts, implied price at constant market cap, cumulative tokens burned, deflation pressure score (0–100), and comparison against other deflationary tokens like BNB and ETH post-merge burn rates.`
       ],
     },
@@ -6654,11 +6654,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'Futures basis = (Futures Price − Spot Price) / Spot Price. A BTC spot at $84,000 and quarterly future at $85,680 gives a 2% basis or ~8% annualized. Positive basis (contango) signals bullish sentiment; negative (backwardation) signals bearish.',
       how: [
-        `The Futures Basis Calculator computes the spread between a cryptocurrency's spot price and its futures contract price, then annualizes the result to give you a standardized comparison across different expiry dates. Enter the spot price, futures price, and days to expiry — the tool instantly shows the raw basis percentage, the annualized basis (APR), and whether the market is in contango (futures above spot) or backwardation (futures below spot).`,
+        `The Futures Basis Calculator computes the spread between a cryptocurrency's spot price and its futures contract price, then annualizes the result to give you a standardized comparison across different expiry dates. Enter the spot price, futures price, and days to expiry, the tool instantly shows the raw basis percentage, the annualized basis (APR), and whether the market is in contango (futures above spot) or backwardation (futures below spot).`,
         `Traders use the basis to identify cash-and-carry arbitrage opportunities: if the annualized basis exceeds your cost of capital plus trading fees, you can buy spot, sell the future, and lock in a risk-free return at expiry. The calculator also helps compare basis across exchanges and contract maturities to find the most attractive spread. A shrinking basis typically signals declining bullish conviction.`
       ],
       inputs: [
-        `Spot Price is the current market price of the cryptocurrency on the spot exchange. Futures Price is the quoted price of the futures contract (quarterly, monthly, or perpetual with funding). Days to Expiry is the time remaining until the futures contract settles — required for annualizing the basis. For perpetual contracts, use the 8-hour funding rate instead.`,
+        `Spot Price is the current market price of the cryptocurrency on the spot exchange. Futures Price is the quoted price of the futures contract (quarterly, monthly, or perpetual with funding). Days to Expiry is the time remaining until the futures contract settles, required for annualizing the basis. For perpetual contracts, use the 8-hour funding rate instead.`,
         `Trading Fees (optional) are deducted from the gross basis to show your net arbitrage return. Enter maker/taker fees for both the spot and futures legs. Output includes: raw basis (%), annualized basis (APR), contango/backwardation label, net basis after fees, and a breakeven fee threshold showing the maximum fee where the trade remains profitable.`
       ],
     },
@@ -6722,11 +6722,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
     en: {
       quickAnswer: 'DeFi insurance break-even: if your annual premium is 2.5% on a $50,000 position ($1,250/year), insurance pays off if there\'s a >2.5% chance of a total loss. With DeFi hack rates averaging 3–5% annually, coverage often makes economic sense.',
       how: [
-        `The DeFi Insurance Calculator helps you decide whether buying smart contract cover is worth the premium by comparing your expected loss without insurance to the cost of the policy. Enter your position size, the annual premium rate offered by providers like Nexus Mutual or InsurAce, the coverage ratio (what percentage of your position is protected), and the protocol's risk tier — the tool calculates your break-even hack probability, expected value of insurance, and net cost/benefit over different time horizons.`,
+        `The DeFi Insurance Calculator helps you decide whether buying smart contract cover is worth the premium by comparing your expected loss without insurance to the cost of the policy. Enter your position size, the annual premium rate offered by providers like Nexus Mutual or InsurAce, the coverage ratio (what percentage of your position is protected), and the protocol's risk tier, the tool calculates your break-even hack probability, expected value of insurance, and net cost/benefit over different time horizons.`,
         `Use it when deploying capital to new or unaudited DeFi protocols where smart contract risk is elevated. The calculator factors in partial coverage scenarios (many policies cover 80–90%, not 100%), deductibles, and claim success rates based on historical data. Compare premiums across providers to find the most cost-efficient coverage for your risk profile.`
       ],
       inputs: [
-        `Position Size is the total dollar value of your DeFi deposit at risk. Annual Premium Rate is the yearly cost of coverage as a percentage (typically 2–10% depending on protocol risk). Coverage Ratio is the fraction of your position the policy actually protects (often 80–100%). Protocol Risk Tier categorizes the protocol by audit status, TVL, and age — higher risk tiers justify higher premiums.`,
+        `Position Size is the total dollar value of your DeFi deposit at risk. Annual Premium Rate is the yearly cost of coverage as a percentage (typically 2–10% depending on protocol risk). Coverage Ratio is the fraction of your position the policy actually protects (often 80–100%). Protocol Risk Tier categorizes the protocol by audit status, TVL, and age, higher risk tiers justify higher premiums.`,
         `Optional fields include claim success rate (historical probability that a valid claim gets paid — ~85% for major providers), holding period (how long you plan to stay in the protocol), and alternative yield (the opportunity cost of premium capital). Output shows: annual premium cost, break-even hack probability, expected value analysis, net insurance benefit at various loss probabilities, and a recommendation based on your risk tier.`
       ],
     },
@@ -6788,14 +6788,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'ai-token-sector-calculator': {
       en: {
-        quickAnswer: `Spread a USD budget across AI tokens like Bittensor (TAO), Render, Fetch.ai, NEAR and Worldcoin, then apply a uniform sector price scenario to see the outcome. Example: $10,000 split evenly across five names, run at the 150% scenario, becomes $15,000 — a +$5,000 (+50%) gain, with an HHI of 2000 flagged as Moderate concentration.`,
+        quickAnswer: `Spread a USD budget across AI tokens like Bittensor (TAO), Render, Fetch.ai, NEAR and Worldcoin, then apply a uniform sector price scenario to see the outcome. Example: $10,000 split evenly across five names, run at the 150% scenario, becomes $15,000, a +$5,000 (+50%) gain, with an HHI of 2000 flagged as Moderate concentration.`,
         how: [
           `This AI Token Sector Calculator models a basket of AI-narrative cryptocurrencies as one portfolio and stress-tests it with a single sector-wide price move. You set a total USD budget and a percentage allocation to each of eight tokens — Bittensor (TAO), Render, Fetch.ai (FET), NEAR, Worldcoin (WLD), Akash, Grass and Virtuals Protocol. Allocations are normalized to sum to 100%, the budget is split by those weights, and each slice is divided by the token's price to derive a quantity.`,
           `The scenario percentage is a uniform multiplier applied to every token price at once: 100% means flat, 150% adds 50%, 50% halves them. New value per position is quantity times scenario price, and summing all positions gives portfolio value, dollar P&L and percent P&L. It also reports the aggregate AI sector market cap, a concentration score using HHI (sum of each weight squared; under 1500 is Diversified, under 2500 Moderate, above is Concentrated), and a subsector split across compute, agents, infra, identity and data.`
         ],
         inputs: [
-          `Total Investment (USD) defaults to $10,000 and is the pool divided among tokens. Each token has its own allocation field in percent; the default loads 20% each across TAO, RENDER, FET, NEAR and WLD with the rest at zero. Preset chips — Pure Compute, Diversified Top-5, Agents Focus and Equal Weight All — fill those fields instantly. The Sector Price Scenario field, with 50/75/100/150/200/300% chips, drives the uniform multiplier and lets you model a sector rally or drawdown.`,
-          `Weights do not need to add to 100 — the tool normalizes whatever you enter, so 20/20/20 simply becomes 33.3% each. Token prices are fixed reference values baked in (TAO $350, RENDER $7.50, FET $1.20, and so on), not a live feed, so results are a relative scenario model rather than a real-time quote. The scenario applies one multiplier to all tokens equally, which mirrors how correlated AI names move together but ignores divergence; for a single coin use the <a href="/profit-calculator/">profit calculator</a> or rebalance with the <a href="/portfolio-calculator/">portfolio calculator</a>.`
+          `Total Investment (USD) defaults to $10,000 and is the pool divided among tokens. Each token has its own allocation field in percent; the default loads 20% each across TAO, RENDER, FET, NEAR and WLD with the rest at zero. Preset chips — Pure Compute, Diversified Top-5, Agents Focus and Equal Weight All, fill those fields instantly. The Sector Price Scenario field, with 50/75/100/150/200/300% chips, drives the uniform multiplier and lets you model a sector rally or drawdown.`,
+          `Weights do not need to add to 100, the tool normalizes whatever you enter, so 20/20/20 simply becomes 33.3% each. Token prices are fixed reference values baked in (TAO $350, RENDER $7.50, FET $1.20, and so on), not a live feed, so results are a relative scenario model rather than a real-time quote. The scenario applies one multiplier to all tokens equally, which mirrors how correlated AI names move together but ignores divergence; for a single coin use the <a href="/profit-calculator/">profit calculator</a> or rebalance with the <a href="/portfolio-calculator/">portfolio calculator</a>.`
         ],
       },
       es: {
@@ -6863,7 +6863,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
         inputs: [
           `Choose a card preset to load its annual fee, base rewards rate, and top bonus category, or type your own. The seven editable fields are annual fee (USD), base rewards rate (%), bonus category rate (%), bonus category spend share (%), monthly spend (USD), BTC or reward-asset price (USD), and annual crypto appreciation (%). Rates are capped at 0–10%; spend must be non-negative and the asset price positive, otherwise the panel asks for valid inputs instead of showing results.`,
-          `The appreciation field is a forward assumption, not live market data, so the 1/5/10-year projections are scenarios — set it to 0 to see pure cash-back value. Rewards are modeled gross of tax; in most jurisdictions card crypto rewards are taxable as income at receipt and again as capital gains at sale, so size positions accordingly with our <a href="/tax-calculator/">crypto tax calculator</a>. Don't overspend to chase points — if you wouldn't buy the coin separately, a flat 2% USD-back card may beat a volatile reward. Compare steady accumulation with our <a href="/dca-calculator/">DCA calculator</a>.`
+          `The appreciation field is a forward assumption, not live market data, so the 1/5/10-year projections are scenarios, set it to 0 to see pure cash-back value. Rewards are modeled gross of tax; in most jurisdictions card crypto rewards are taxable as income at receipt and again as capital gains at sale, so size positions accordingly with our <a href="/tax-calculator/">crypto tax calculator</a>. Don't overspend to chase points, if you wouldn't buy the coin separately, a flat 2% USD-back card may beat a volatile reward. Compare steady accumulation with our <a href="/dca-calculator/">DCA calculator</a>.`
         ],
       },
       es: {
@@ -6924,14 +6924,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'depin-earnings-calculator': {
       en: {
-        quickAnswer: `Pick a DePIN network (or enter your own numbers) to project passive income from a node. Example: a Helium IoT hotspot earning 0.5 HNT/day at $4.50 grosses $2.25/day; after $0.014 electricity (5 W at $0.12/kWh) net is $2.24/day, about $67/month — so a $500 device pays back in ~224 days (7.5 months) for +63% Year-1 ROI.`,
+        quickAnswer: `Pick a DePIN network (or enter your own numbers) to project passive income from a node. Example: a Helium IoT hotspot earning 0.5 HNT/day at $4.50 grosses $2.25/day; after $0.014 electricity (5 W at $0.12/kWh) net is $2.24/day, about $67/month, so a $500 device pays back in ~224 days (7.5 months) for +63% Year-1 ROI.`,
         how: [
           `This DePIN Earnings Calculator turns a node's daily token rewards into real USD profit after running costs, then tells you how long the hardware takes to pay for itself. It multiplies your daily token emission by the token price for daily gross revenue, subtracts electricity (power in watts times 24 hours, divided by 1,000, times your kWh rate) and an allocated slice of monthly internet, and reports daily, monthly, and yearly net figures plus profit margin.`,
           `Hardware payback is device cost divided by daily net earnings, shown in days and months, and a rating flags it as Excellent (under 6 months), Good (under 12), Acceptable, or Negative carry when costs exceed rewards. It also computes Year-1 and 5-year ROI on the device, total tokens accrued per year, and an optional price-adjusted yearly net that applies your expected annual token appreciation at roughly half its value to approximate dollar-cost-averaged selling rather than a single year-end exit.`
         ],
         inputs: [
-          `Six preset networks — Helium IoT, Helium Mobile, Hivemapper, NATIX, Geodnet, and XNET — auto-fill realistic daily token, token price, hardware cost, and power draw, which you can override field by field. Core inputs are daily token earnings, token price in USD, hardware cost, power consumption in watts, and electricity rate per kWh. Optional fields are monthly internet cost (allocated at 1/30 per day) and an annual token price change percentage for the scenario row.`,
-          `Treat the preset emissions as starting estimates, not guarantees — real rewards swing with coverage area, network density, and protocol issuance schedules, so pull your own recent daily average from the network explorer. All values must be non-negative or the calculator shows an empty state; if daily net is zero or negative, payback reads infinity. Electricity is modeled at a flat 24/7 draw. To pressure-test the energy side, cross-check with our <a href="/electricity-cost-calculator/">electricity cost calculator</a> or compare a fixed payback target via the <a href="/break-even-calculator/">break-even calculator</a>.`
+          `Six preset networks — Helium IoT, Helium Mobile, Hivemapper, NATIX, Geodnet, and XNET, auto-fill realistic daily token, token price, hardware cost, and power draw, which you can override field by field. Core inputs are daily token earnings, token price in USD, hardware cost, power consumption in watts, and electricity rate per kWh. Optional fields are monthly internet cost (allocated at 1/30 per day) and an annual token price change percentage for the scenario row.`,
+          `Treat the preset emissions as starting estimates, not guarantees, real rewards swing with coverage area, network density, and protocol issuance schedules, so pull your own recent daily average from the network explorer. All values must be non-negative or the calculator shows an empty state; if daily net is zero or negative, payback reads infinity. Electricity is modeled at a flat 24/7 draw. To pressure-test the energy side, cross-check with our <a href="/electricity-cost-calculator/">electricity cost calculator</a> or compare a fixed payback target via the <a href="/break-even-calculator/">break-even calculator</a>.`
         ],
       },
       es: {
@@ -6992,13 +6992,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'mining-coin-switcher-calculator': {
       en: {
-        quickAnswer: `Pick your hardware and electricity rate to see which coin pays the most right now. Example: an RTX 4090 at $0.10/kWh draws 10.8 kWh/day ($1.08 cost) and nets the most on KAS at roughly +$0.11/day after a 1% pool fee, beating the #2 coin — while an Antminer S21 nets about +$0.51/day on BTC.`,
+        quickAnswer: `Pick your hardware and electricity rate to see which coin pays the most right now. Example: an RTX 4090 at $0.10/kWh draws 10.8 kWh/day ($1.08 cost) and nets the most on KAS at roughly +$0.11/day after a 1% pool fee, beating the #2 coin, while an Antminer S21 nets about +$0.51/day on BTC.`,
         how: [
-          `This Multi-Coin Mining Switcher ranks six coins — BTC (SHA-256), KAS (kHeavyHash), RVN (KAWPOW), ERG (Autolykos), FLUX (ZelHash) and ALPH (Blake3) — by daily net profit for the rig you select, then names the single best coin to mine now. For each coin it computes gross reward as your hashrate times a per-hash daily reward constant times that coin's price, subtracts the pool fee, then subtracts your daily power bill. It sorts every coin by daily net and shows the switching advantage over the #2 option.`,
+          `This Multi-Coin Mining Switcher ranks six coins — BTC (SHA-256), KAS (kHeavyHash), RVN (KAWPOW), ERG (Autolykos), FLUX (ZelHash) and ALPH (Blake3), by daily net profit for the rig you select, then names the single best coin to mine now. For each coin it computes gross reward as your hashrate times a per-hash daily reward constant times that coin's price, subtracts the pool fee, then subtracts your daily power bill. It sorts every coin by daily net and shows the switching advantage over the #2 option.`,
           `The math is daily net = (hashrate × dailyPerHash × price) × (1 − pool fee) − (watts × 24 ÷ 1000 × electricity rate). Hashrate is the rig's per-coin spec scaled by your efficiency slider, so 90% efficiency trims every coin's reward proportionally. A rating band (Highly profitable, Profitable, Marginal, or Unprofitable) compares daily net against your electricity cost, and the best coin's figures are extended to monthly net (×30), yearly net (×365) and profit margin. Pair it with our <a href="/asic-mining-calculator/">ASIC mining calculator</a> for single-rig depth.`
         ],
         inputs: [
-          `Mining Hardware is a preset pill — RTX 4090, RTX 4080, RTX 3090, RTX 3080, Antminer S21 (BTC) or Antminer KS5 (KAS) — and choosing it auto-fills the read-only Power Draw in watts (450W for the 4090, 3500W for the S21). Electricity Rate (USD/kWh) has quick chips from $0.05 to $0.40 plus free entry, Pool Fee (%) defaults to 1%, and Hash Rate Efficiency (%) lets you derate from 100% to model real-world undervolting, thermals or pool luck.`,
+          `Mining Hardware is a preset pill — RTX 4090, RTX 4080, RTX 3090, RTX 3080, Antminer S21 (BTC) or Antminer KS5 (KAS), and choosing it auto-fills the read-only Power Draw in watts (450W for the 4090, 3500W for the S21). Electricity Rate (USD/kWh) has quick chips from $0.05 to $0.40 plus free entry, Pool Fee (%) defaults to 1%, and Hash Rate Efficiency (%) lets you derate from 100% to model real-world undervolting, thermals or pool luck.`,
           `GPUs are scored only on the altcoins they can mine, while the two ASICs are locked to their native coin (S21 to BTC, KS5 to KAS), so the ranking reflects what each rig can physically run. Estimates use illustrative network difficulty and built-in prices, so actual yields drift hourly with real difficulty, coin price and your network share. Treat the output as a relative comparison, then verify live numbers and your true power draw before committing. To weigh passive yield instead, see our <a href="/staking-calculator/">staking calculator</a>.`
         ],
       },
@@ -7060,14 +7060,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'polymarket-odds-calculator': {
       en: {
-        quickAnswer: `Enter a Polymarket YES price (0–1), your bet size, and your own probability estimate to see payout, expected value, and edge. Example: $500 on YES at $0.65 buys 769.23 shares paying $769.23 if it resolves YES — a +$269.23 profit. If you think YES is truly 70%, your EV is +$38.46 (+7.69%), a +5% edge over the market.`,
+        quickAnswer: `Enter a Polymarket YES price (0–1), your bet size, and your own probability estimate to see payout, expected value, and edge. Example: $500 on YES at $0.65 buys 769.23 shares paying $769.23 if it resolves YES, a +$269.23 profit. If you think YES is truly 70%, your EV is +$38.46 (+7.69%), a +5% edge over the market.`,
         how: [
           `This Polymarket Odds Calculator turns a prediction-market share price into the numbers you actually need to bet. Because each winning YES or NO share redeems for exactly $1 in USDC, the YES price doubles as the implied probability — $0.65 means the market prices the event at 65%, and the NO price is simply 1 − YES. From your bet size and the side price it computes shares purchased (bet ÷ price), payout if win, profit if win, and loss if lose, then restates the same price as decimal, American, and fractional odds.`,
           `The edge analysis is where it earns its keep. You supply your own YES probability estimate, and the tool compares it to the market's implied probability to compute expected value = (true prob × profit) − (loss prob × stake), plus your percentage edge and a +EV / Negative-EV rating. It also runs the Kelly criterion, f = (b·p − q) ÷ b, to suggest the bankroll fraction to stake, and an optional hedge calculation that buys the opposite side at a later price to lock profit across both outcomes.`
         ],
         inputs: [
-          `Bet Side toggles YES or NO; YES Market Price (USD, 0–1) is the share price you pay; Bet Size (USD) is your stake. Your YES Probability Estimate (%) feeds the EV, edge, and Kelly math — this is your forecast, not the market's. The optional Hedge at Future YES Price field models laying off the bet on the opposite side later: leave it blank to skip hedging entirely. Built for binary Polymarket-style markets where YES and NO shares each settle at $1.`,
-          `Prices must sit strictly between 0.01 and 0.99, and probabilities between 0 and 100% — values outside that show an "enter valid inputs" message. The tool models a single binary market and assumes shares redeem at exactly $1; it does not deduct Polymarket's 2% fee on winnings, gas, or slippage, so treat profit and EV as gross. For sizing discipline check the suggested stake against our <a href="/kelly-calculator/">Kelly criterion calculator</a>, and spot cross-market mispricings with the <a href="/arbitrage-calculator/">arbitrage calculator</a>.`
+          `Bet Side toggles YES or NO; YES Market Price (USD, 0–1) is the share price you pay; Bet Size (USD) is your stake. Your YES Probability Estimate (%) feeds the EV, edge, and Kelly math, this is your forecast, not the market's. The optional Hedge at Future YES Price field models laying off the bet on the opposite side later: leave it blank to skip hedging entirely. Built for binary Polymarket-style markets where YES and NO shares each settle at $1.`,
+          `Prices must sit strictly between 0.01 and 0.99, and probabilities between 0 and 100%, values outside that show an "enter valid inputs" message. The tool models a single binary market and assumes shares redeem at exactly $1; it does not deduct Polymarket's 2% fee on winnings, gas, or slippage, so treat profit and EV as gross. For sizing discipline check the suggested stake against our <a href="/kelly-calculator/">Kelly criterion calculator</a>, and spot cross-market mispricings with the <a href="/arbitrage-calculator/">arbitrage calculator</a>.`
         ],
       },
       es: {
@@ -7130,12 +7130,12 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       en: {
         quickAnswer: `Pick an RWA protocol (Ondo USDY, BlackRock BUIDL, Maple, Centrifuge), set deposit, gross APY, fee, holding period, tax rate and compounding to see net APY and after-tax value. Example: $10,000 at 4.85% gross, 0% fee, daily compounding for 5 years grows to ~$12,742; at a 22% income-tax rate the after-tax value is ~$10,000 + ~$2,140 = ~$12,140.`,
         how: [
-          `This RWA Yield Calculator models the real return on tokenized real-world assets — tokenized US Treasuries, private credit, real estate and gold. From your deposit, gross APY, management fee and compounding frequency it computes net APY (gross minus fee), the compounded future value using FV = deposit × (1 + netAPY/n)^(n×years), the CAGR, and the annual, monthly and daily net interest cash flow so you can see income on a per-period basis, not just the lump-sum total at the end.`,
+          `This RWA Yield Calculator models the real return on tokenized real-world assets, tokenized US Treasuries, private credit, real estate and gold. From your deposit, gross APY, management fee and compounding frequency it computes net APY (gross minus fee), the compounded future value using FV = deposit × (1 + netAPY/n)^(n×years), the CAGR, and the annual, monthly and daily net interest cash flow so you can see income on a per-period basis, not just the lump-sum total at the end.`,
           `It then layers on tax and a risk check. Because RWA yield is usually interest, the tool taxes the total gain at your ordinary income rate, returning tax owed, after-tax gain, after-tax value and after-tax APY. It also measures excess return versus the 4.5% T-bill rate and a Sharpe-style risk-adjusted score (excess return divided by an assumed volatility of 2% / 8% / 18% for low / medium / high risk), labelling the result from "Below T-bill rate" up to "Excellent risk-adj return".`
         ],
         inputs: [
           `Choose one of eight protocol presets to auto-fill APY, management fee and minimum deposit (e.g. Ondo USDY 4.85%, Maple 11.5%, Goldfinch 12%), or type your own. Then set Deposit Amount in USD, Gross APY, Management Fee, Holding Period (1–20 year chips or custom), Compounding Frequency (annual, monthly, weekly, daily) and your Income Tax Rate. Net APY, future value and the risk score all recalculate live as you change any field.`,
-          `All figures assume a flat APY held for the whole period — they ignore price changes in the underlying asset, gate/redemption delays and rate resets. Tax is applied as ordinary income on the full gain, which is the typical treatment for interest-style yield; verify your own bracket with our <a href="/tax-calculator/">crypto tax calculator</a>. Some presets (BlackRock BUIDL, Maple) require accreditation or large minimums, and the Sharpe estimate uses assumed volatility, not realized history. Compare it against liquid-staking returns using our <a href="/liquid-staking-calculator/">liquid staking calculator</a>.`
+          `All figures assume a flat APY held for the whole period, they ignore price changes in the underlying asset, gate/redemption delays and rate resets. Tax is applied as ordinary income on the full gain, which is the typical treatment for interest-style yield; verify your own bracket with our <a href="/tax-calculator/">crypto tax calculator</a>. Some presets (BlackRock BUIDL, Maple) require accreditation or large minimums, and the Sharpe estimate uses assumed volatility, not realized history. Compare it against liquid-staking returns using our <a href="/liquid-staking-calculator/">liquid staking calculator</a>.`
         ],
       },
       es: {
@@ -7196,14 +7196,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'trailing-stop-loss-calculator': {
       en: {
-        quickAnswer: `Enter entry price, current price, trailing distance %, and position size to see the profit you would lock in if the stop fires. Example: a $10,000 long from $95,000 with BTC now at $105,000 and a 5% trail sets the stop at $99,750 — locking +$500 (+5.00%) even though unrealized P&L is +$1,052 (+10.53%), so the trail captures about 47% of the run.`,
+        quickAnswer: `Enter entry price, current price, trailing distance %, and position size to see the profit you would lock in if the stop fires. Example: a $10,000 long from $95,000 with BTC now at $105,000 and a 5% trail sets the stop at $99,750, locking +$500 (+5.00%) even though unrealized P&L is +$1,052 (+10.53%), so the trail captures about 47% of the run.`,
         how: [
           `This Trailing Stop Loss Calculator shows how much profit a trailing stop would protect on a crypto trade. You pick long or short, then enter entry price, current price, a trailing distance percentage, and your position size in USD. It finds the high watermark (the best price reached), places the stop that distance below it for a long or above it for a short, and reports the stop trigger price, the dollar and percent profit secured at that level, and how far current price sits from the stop.`,
           `The core math is simple. Quantity equals position size divided by entry price, and the stop sits at high watermark times (1 minus trail%) for longs. Profit at stop equals (stop price minus entry) times quantity. It also computes current unrealized P&L, the profit-captured ratio (locked profit divided by current profit), and the profit giveback you accept if the stop fires from the high. A rating flags whether you have a strong locked profit, secured profit, tight risk, or are still below entry.`
         ],
         inputs: [
-          `Position side toggles the long or short formula. Entry price and current price set unrealized P&L; trailing distance (preset chips 1–15% or a custom value) controls how tightly the stop follows price. Position size in USD is divided by entry to derive quantity. The optional Highest Price Reached field lets you pin a real intraday high — leave it blank and the tool uses current price as the high watermark, which understates the stop on positions that already peaked higher.`,
-          `Trailing distance must be between 0 and 100, and all prices and sizes must be positive, or the result panel asks for valid inputs. The model assumes spot-style sizing with no leverage, fees, or funding — pair it with our <a href="/position-size-calculator/">position size calculator</a> to set the trade and our <a href="/risk-reward-calculator/">risk reward calculator</a> to plan targets. Remember a fixed-percent trail does not adapt to volatility the way an ATR-based trail would, so very tight trails risk premature exits on noise.`
+          `Position side toggles the long or short formula. Entry price and current price set unrealized P&L; trailing distance (preset chips 1–15% or a custom value) controls how tightly the stop follows price. Position size in USD is divided by entry to derive quantity. The optional Highest Price Reached field lets you pin a real intraday high, leave it blank and the tool uses current price as the high watermark, which understates the stop on positions that already peaked higher.`,
+          `Trailing distance must be between 0 and 100, and all prices and sizes must be positive, or the result panel asks for valid inputs. The model assumes spot-style sizing with no leverage, fees, or funding, pair it with our <a href="/position-size-calculator/">position size calculator</a> to set the trade and our <a href="/risk-reward-calculator/">risk reward calculator</a> to plan targets. Remember a fixed-percent trail does not adapt to volatility the way an ATR-based trail would, so very tight trails risk premature exits on noise.`
         ],
       },
       es: {
@@ -7270,7 +7270,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
           `Concentration is measured with the Herfindahl-Hirschman Index: it squares each position's percentage share and sums them, so a wallet split evenly across ten coins scores low while one dominated by a single asset scores high. Below 1,500 reads Diversified, 1,500–2,500 Moderate, above 2,500 Concentrated. The tool also splits stablecoins (USDC, USDT, DAI and similar) from volatile assets and aggregates value per chain, mirroring the diversification math in our <a href="/portfolio-calculator/">portfolio calculator</a>.`
         ],
         inputs: [
-          `Each holding has four fields: chain (Bitcoin, Ethereum, Solana, BSC, Polygon, Arbitrum — type any name), token ticker, quantity, and current USD price. Add or remove rows freely, or load a preset like BTC + ETH Only, Multi-Chain Diversified, DeFi Heavy, or Stablecoin Heavy. Prices are entered manually, not fetched live, so pull current quotes from your exchange or our <a href="/converter/">crypto converter</a> before reading the totals.`,
+          `Each holding has four fields: chain (Bitcoin, Ethereum, Solana, BSC, Polygon, Arbitrum, type any name), token ticker, quantity, and current USD price. Add or remove rows freely, or load a preset like BTC + ETH Only, Multi-Chain Diversified, DeFi Heavy, or Stablecoin Heavy. Prices are entered manually, not fetched live, so pull current quotes from your exchange or our <a href="/converter/">crypto converter</a> before reading the totals.`,
           `Only rows with a positive quantity and price count toward net worth; blank or zero rows are ignored, and if nothing is valid the result panel asks for at least one holding. Stablecoin detection is ticker-based against a fixed list (USDC, USDT, DAI, TUSD, BUSD, FRAX, USDY, PYUSD), so an off-list stable is treated as volatile. Remember public addresses are visible on-chain, so anyone can already estimate the net worth you compute here.`
         ],
       },
@@ -7339,7 +7339,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
         inputs: [
           `Current Spot Price and Your Cost Basis anchor the position: spot drives premium-on-spot yield and downside-protection percentages, while cost basis drives premium-on-cost yield and the called-away profit. Call Strike Price sets where your upside is capped and, relative to spot, decides moneyness and assignment risk. Premium Received per Contract is the income you collect for selling the call, and it directly lowers your breakeven and lifts your effective sale price if the shares are called away at expiry.`,
-          `Days to Expiry annualizes the premium yield, so a $1,500 premium over 14 days annualizes far higher than the same premium over 60 days. Number of Contracts/Shares scales premium and profit linearly. The model assumes European-style settlement at expiry with no early assignment, ignores fees, slippage and dividends, and uses a ratio heuristic — not Black-Scholes implied volatility — for assignment risk, so treat the risk label as a rough guide. Pair sizing with our <a href="/position-size-calculator/">position size calculator</a> before writing the call.`
+          `Days to Expiry annualizes the premium yield, so a $1,500 premium over 14 days annualizes far higher than the same premium over 60 days. Number of Contracts/Shares scales premium and profit linearly. The model assumes European-style settlement at expiry with no early assignment, ignores fees, slippage and dividends, and uses a ratio heuristic, not Black-Scholes implied volatility, for assignment risk, so treat the risk label as a rough guide. Pair sizing with our <a href="/position-size-calculator/">position size calculator</a> before writing the call.`
         ],
       },
       es: {
@@ -7400,14 +7400,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'geometric-mean-return-calculator': {
       en: {
-        quickAnswer: `Enter your per-period percentage returns and the tool computes the true compound (geometric) mean versus the misleading arithmetic mean. Example: the +150%, -65%, +95%, -77%, +155% "Volatile (BTC)" sequence averages +51.6% arithmetically but the geometric mean is roughly 0% — a ~51.6-point volatility drag, so $10,000 ends near $10,007, not the $76,000 the average implies.`,
+        quickAnswer: `Enter your per-period percentage returns and the tool computes the true compound (geometric) mean versus the misleading arithmetic mean. Example: the +150%, -65%, +95%, -77%, +155% "Volatile (BTC)" sequence averages +51.6% arithmetically but the geometric mean is roughly 0%, a ~51.6-point volatility drag, so $10,000 ends near $10,007, not the $76,000 the average implies.`,
         how: [
           `This Geometric Mean Return Calculator converts a list of period returns into the single annualized-style rate that actually compounds your money. It computes the arithmetic mean (a simple average) and the geometric mean using (∏(1 + r/100))^(1/n) − 1, where r is each period's percent return and n is the number of periods. The geometric figure is the real per-period growth rate, because returns chain multiplicatively rather than add up. For volatile crypto it is always lower than the arithmetic average.`,
-          `It then reports the gap between the two as volatility drag (arithmetic minus geometric) — the performance you lose to swings — alongside the population standard deviation of your returns. It also shows the total compound return over all periods and what a $10,000 start would become, so the abstract percentage becomes a dollar figure. A drag under 1% is rated minimal, under 5% low, under 15% moderate, and higher than that high. See our <a href="/dca-calculator/">DCA calculator</a> to model contributions on top of these rates.`
+          `It then reports the gap between the two as volatility drag (arithmetic minus geometric), the performance you lose to swings, alongside the population standard deviation of your returns. It also shows the total compound return over all periods and what a $10,000 start would become, so the abstract percentage becomes a dollar figure. A drag under 1% is rated minimal, under 5% low, under 15% moderate, and higher than that high. See our <a href="/dca-calculator/">DCA calculator</a> to model contributions on top of these rates.`
         ],
         inputs: [
-          `The only inputs are period returns in percent — one box per period, and you can add up to 20 or remove down to 2. Type each period's gain or loss (e.g. 12 for +12%, -65 for a 65% drawdown); blank or non-numeric boxes are ignored, and at least two valid numbers are required before results appear. Four preset chips — Steady Growth, Volatile (BTC), Choppy Market, and Bear Then Bull — load realistic five-period sequences you can edit as a starting point.`,
-          `Periods are treated as equal-length units (months, quarters or years — the math is unit-agnostic), so keep them consistent for a meaningful compound rate. One edge case is built in: any single -100% return drives the product to zero, wiping the position out, so the calculator floors geometric and total return at -100%. The standard deviation uses the population formula across your entered periods, making it a descriptive measure of this exact sequence, not a forward-looking forecast.`
+          `The only inputs are period returns in percent, one box per period, and you can add up to 20 or remove down to 2. Type each period's gain or loss (e.g. 12 for +12%, -65 for a 65% drawdown); blank or non-numeric boxes are ignored, and at least two valid numbers are required before results appear. Four preset chips — Steady Growth, Volatile (BTC), Choppy Market, and Bear Then Bull, load realistic five-period sequences you can edit as a starting point.`,
+          `Periods are treated as equal-length units (months, quarters or years, the math is unit-agnostic), so keep them consistent for a meaningful compound rate. One edge case is built in: any single -100% return drives the product to zero, wiping the position out, so the calculator floors geometric and total return at -100%. The standard deviation uses the population formula across your entered periods, making it a descriptive measure of this exact sequence, not a forward-looking forecast.`
         ],
       },
       es: {
@@ -7543,7 +7543,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
         inputs: [
           `Payment Amount (sats) is the value you are sending; Base Fee is entered in millisatoshis (1,000 msat = 1 sat) and represents the flat charge per channel; PPM Rate is the proportional fee in parts per million, so 100 ppm equals 0.01% of the amount; Number of Hops is how many forwarding nodes sit along the route; and BTC Price (USD) converts the sat fee into dollars. Quick-scenario presets cover Strike, Wallet of Satoshi, Phoenix, and a tiny tip.`,
-          `The model assumes every hop charges the same base fee and ppm you entered, which is a simplification — real routes blend different node policies, and pathfinding may pick cheaper or more expensive channels. The on-chain comparison uses a fixed 28,000-sat estimate, so actual mempool fees vary with congestion. Self-hosted nodes can route at near-zero cost, while custodial wallets often add a 0.1–1% spread on top of the raw routing fee, which this tool does not include.`
+          `The model assumes every hop charges the same base fee and ppm you entered, which is a simplification, real routes blend different node policies, and pathfinding may pick cheaper or more expensive channels. The on-chain comparison uses a fixed 28,000-sat estimate, so actual mempool fees vary with congestion. Self-hosted nodes can route at near-zero cost, while custodial wallets often add a 0.1–1% spread on top of the raw routing fee, which this tool does not include.`
         ],
       },
       es: {
@@ -7604,13 +7604,13 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'looping-yield-calculator': {
       en: {
-        quickAnswer: `Enter a deposit, supply APY, borrow APR, target LTV, liquidation LTV and a loop count to see amplified DeFi yield. Example: $10,000 at 6% supply, 4% borrow, 60% LTV over 3 loops builds 2.18× leverage ($21,760 collateral, $11,760 borrowed), lifting net APR from 6% to about +8.35% — with liquidation only if collateral drops ~36%.`,
+        quickAnswer: `Enter a deposit, supply APY, borrow APR, target LTV, liquidation LTV and a loop count to see amplified DeFi yield. Example: $10,000 at 6% supply, 4% borrow, 60% LTV over 3 loops builds 2.18× leverage ($21,760 collateral, $11,760 borrowed), lifting net APR from 6% to about +8.35%, with liquidation only if collateral drops ~36%.`,
         how: [
-          `This Looping / Recursive Lending Calculator models the DeFi strategy of depositing collateral, borrowing against it at a target LTV, re-depositing the borrowed funds, and repeating to amplify yield. From your initial deposit and the LTV per loop it sums a geometric series — total collateral = deposit × (1 − LTV^(loops+1)) / (1 − LTV) — to derive effective leverage, total collateral, total borrowed, and net equity. Theoretical max leverage at any LTV is 1 / (1 − LTV), so 80% LTV caps near 5×.`,
-          `The headline figure is net APR: gross supply yield (total collateral × supply APY) minus borrow cost (total borrowed × borrow APR), divided by your deposit. It also shows the yield multiplier versus a plain unleveraged supply, one-time gas across all loops (two operations per loop), and a full liquidation panel — current LTV, health factor (liquidation LTV ÷ current LTV) and the collateral drop that triggers liquidation. Compare a single-position alternative with our <a href="/leverage-calculator/">leverage calculator</a>.`
+          `This Looping / Recursive Lending Calculator models the DeFi strategy of depositing collateral, borrowing against it at a target LTV, re-depositing the borrowed funds, and repeating to amplify yield. From your initial deposit and the LTV per loop it sums a geometric series, total collateral = deposit × (1 − LTV^(loops+1)) / (1 − LTV), to derive effective leverage, total collateral, total borrowed, and net equity. Theoretical max leverage at any LTV is 1 / (1 − LTV), so 80% LTV caps near 5×.`,
+          `The headline figure is net APR: gross supply yield (total collateral × supply APY) minus borrow cost (total borrowed × borrow APR), divided by your deposit. It also shows the yield multiplier versus a plain unleveraged supply, one-time gas across all loops (two operations per loop), and a full liquidation panel, current LTV, health factor (liquidation LTV ÷ current LTV) and the collateral drop that triggers liquidation. Compare a single-position alternative with our <a href="/leverage-calculator/">leverage calculator</a>.`
         ],
         inputs: [
-          `Initial deposit (USD) seeds the loop; supply APY is what your collateral earns and borrow APR is what the debt costs — the spread between them is what makes looping profitable or a negative carry. Target LTV per loop sets how much you borrow each round (preset chips 30–80%), liquidation LTV is the protocol's danger threshold, and number of loops (0–20) controls how many times you recurse. Gas cost per loop estimates the one-time transaction expense, counted as two operations per loop.`,
+          `Initial deposit (USD) seeds the loop; supply APY is what your collateral earns and borrow APR is what the debt costs, the spread between them is what makes looping profitable or a negative carry. Target LTV per loop sets how much you borrow each round (preset chips 30–80%), liquidation LTV is the protocol's danger threshold, and number of loops (0–20) controls how many times you recurse. Gas cost per loop estimates the one-time transaction expense, counted as two operations per loop.`,
           `The calculator assumes a constant LTV and flat rates across every loop, so it is a steady-state estimate, not a live position tracker. Liquidation LTV must exceed target LTV or no result is returned, and target LTV must sit between 0 and 95%. It does not model rate changes, oracle lag, or asset depeg, so use it for stable→stable or tightly correlated pairs and verify with our <a href="/liquidation-calculator/">liquidation calculator</a> before deploying capital.`
         ],
       },
@@ -7675,11 +7675,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Divide Bitcoin's spot price by its 200-day moving average to get the Mayer Multiple. Example: $77,000 ÷ $70,000 = 1.100, a +10% deviation that sits in the Normal (fair-value) band; the next boundary at 1.5× would print near $105,000. Above 2.4× is the historical sell zone, below 1.0× is undervalued.`,
         how: [
           `This Mayer Multiple Calculator divides Bitcoin's current price by its 200-day moving average to produce a single ratio that flags how stretched price is from its long-term trend. You enter the spot price and the 200-day MA; it returns the multiple to three decimals, the percent deviation above or below the average, and a zone label. The classic thresholds split the result into four bands: under 1.0 is undervalued, 1.0–1.5 is normal, 1.5–2.4 is elevated, and above 2.4 is overheated.`,
-          `The methodology mirrors Trace Mayer's original work: Mayer Multiple = price ÷ 200-day MA, with the 2.4 ceiling chosen because Bitcoin has historically closed above it only about 18% of days, and below 1.0 about 22% of days. The tool also computes the dollar price at the next zone boundary — for a $70,000 MA, the 1.5× line sits at $105,000 and the 2.4× overheated line at $168,000 — so you can see how far price must travel before the signal changes.`
+          `The methodology mirrors Trace Mayer's original work: Mayer Multiple = price ÷ 200-day MA, with the 2.4 ceiling chosen because Bitcoin has historically closed above it only about 18% of days, and below 1.0 about 22% of days. The tool also computes the dollar price at the next zone boundary, for a $70,000 MA, the 1.5× line sits at $105,000 and the 2.4× overheated line at $168,000, so you can see how far price must travel before the signal changes.`
         ],
         inputs: [
-          `Current BTC Price (USD) is Bitcoin's spot quote, and 200-Day Moving Average (USD) is the simple average of the last 200 daily closes — pull it from any charting tool. Four price presets ($50K–$150K) and MA presets ($45K–$100K) speed up entry, and the scenario chips load full market regimes: Bear Bottom (40k/60k = 0.667×), Accumulation (70k/70k = 1.000×), Bull Cycle (120k/80k = 1.500×) and Mania Top (250k/90k = 2.778×).`,
-          `Both fields must be positive numbers or the result stays blank. The indicator is descriptive, not predictive: it tells you where price sits relative to trend, not what happens next, since only a minority of days fall in the extreme bands. Treat the overheated and undervalued readings as context to combine with other tools — pair it with our <a href="/halving-calculator/">halving calculator</a> for cycle timing or the <a href="/dca-calculator/">DCA calculator</a> to plan entries across zones rather than acting on a single ratio.`
+          `Current BTC Price (USD) is Bitcoin's spot quote, and 200-Day Moving Average (USD) is the simple average of the last 200 daily closes, pull it from any charting tool. Four price presets ($50K–$150K) and MA presets ($45K–$100K) speed up entry, and the scenario chips load full market regimes: Bear Bottom (40k/60k = 0.667×), Accumulation (70k/70k = 1.000×), Bull Cycle (120k/80k = 1.500×) and Mania Top (250k/90k = 2.778×).`,
+          `Both fields must be positive numbers or the result stays blank. The indicator is descriptive, not predictive: it tells you where price sits relative to trend, not what happens next, since only a minority of days fall in the extreme bands. Treat the overheated and undervalued readings as context to combine with other tools, pair it with our <a href="/halving-calculator/">halving calculator</a> for cycle timing or the <a href="/dca-calculator/">DCA calculator</a> to plan entries across zones rather than acting on a single ratio.`
         ],
       },
       es: {
@@ -7743,11 +7743,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Divide a Bitcoin treasury company's market cap by the dollar value of its BTC stack to get mNAV. Example: MicroStrategy at a $95B market cap holding 440,000 BTC at $77,300 has a BTC NAV of $34.01B, so mNAV = 2.79× — a +179% premium, or about $60.99B of value priced in above the coins themselves.`,
         how: [
           `This mNAV calculator measures how much premium or discount the market puts on a Bitcoin treasury stock like MicroStrategy, MetaPlanet or Semler Scientific versus the raw Bitcoin it owns. It computes BTC NAV as holdings times BTC price, then mNAV = market cap divided by BTC NAV. An mNAV of 1.0× means the stock trades exactly at the value of its coins; above 1.5× is a premium, below 1.0× is a discount. Premium percent is (mNAV − 1) × 100, and premium amount is the dollar gap.`,
-          `If you add total debt, it also reports Enterprise NAV (BTC NAV minus debt) and an enterprise mNAV, which is stricter because leverage shrinks the net asset base. With shares outstanding it derives BTC per share, the share price (market cap ÷ shares), and the implied BTC price baked into each share. The tool deliberately ignores the operating business, future coin purchases and convertible-debt mechanics — pair it with our <a href="/market-cap-calculator/">market cap calculator</a> to sanity-check the inputs.`
+          `If you add total debt, it also reports Enterprise NAV (BTC NAV minus debt) and an enterprise mNAV, which is stricter because leverage shrinks the net asset base. With shares outstanding it derives BTC per share, the share price (market cap ÷ shares), and the implied BTC price baked into each share. The tool deliberately ignores the operating business, future coin purchases and convertible-debt mechanics, pair it with our <a href="/market-cap-calculator/">market cap calculator</a> to sanity-check the inputs.`
         ],
         inputs: [
-          `Company Market Cap (USD) and BTC Holdings are required, along with BTC Price — these three drive the headline mNAV multiple. Total Debt (optional) feeds the Enterprise NAV view; Shares Outstanding (optional) unlocks the per-share rows. Four quick scenario chips (Pure NAV 1.0×, Healthy Premium, High Premium, Discount to NAV) and company presets for MSTR, MetaPlanet and Semler load approximate May 2026 figures you should verify against live data before trading.`,
-          `Treasury stocks routinely trade above NAV because investors price in expected accretion — more BTC per share from future raises — so a 2–3× mNAV is common, not automatically irrational. The model treats holdings and price as a snapshot, so re-run it whenever BTC moves or the company reports new buys. To frame the position against a plain spot purchase, compare with our <a href="/what-if/">what-if calculator</a>; the deposit math here is an estimate from reported state, not audited filings.`
+          `Company Market Cap (USD) and BTC Holdings are required, along with BTC Price, these three drive the headline mNAV multiple. Total Debt (optional) feeds the Enterprise NAV view; Shares Outstanding (optional) unlocks the per-share rows. Four quick scenario chips (Pure NAV 1.0×, Healthy Premium, High Premium, Discount to NAV) and company presets for MSTR, MetaPlanet and Semler load approximate May 2026 figures you should verify against live data before trading.`,
+          `Treasury stocks routinely trade above NAV because investors price in expected accretion, more BTC per share from future raises, so a 2–3× mNAV is common, not automatically irrational. The model treats holdings and price as a snapshot, so re-run it whenever BTC moves or the company reports new buys. To frame the position against a plain spot purchase, compare with our <a href="/what-if/">what-if calculator</a>; the deposit math here is an estimate from reported state, not audited filings.`
         ],
       },
       es: {
@@ -7811,11 +7811,11 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Long spot plus short perp is delta-neutral, so you harvest funding without price risk. Example: a $10,000-per-leg position at 0.05% funding, 3 intervals/day for 30 days collects $5 per interval = $450, minus $16 in fees (4 trades) = $434 net (+4.34%), about a +52.8% annualized net APR.`,
         how: [
           `This Perpetual Funding Arbitrage Calculator models the cash-and-carry trade: you go long the same dollar amount on spot and short it on a perpetual future, cancelling directional price exposure so the only return is the funding payment. Per interval it computes position size times funding rate (size × funding%/100); since you are short the perp, a positive funding rate pays you and a negative rate costs you. It multiplies that by intervals per day times days held to get total funding income.`,
-          `From there it subtracts trading costs — fee% applied four times (entry and exit on both the spot leg and the perp leg) — to give net P&L and net return %. It annualizes funding APR as daily funding / size × 365, and net APR as net profit / size × 365/days. The break-even funding per interval = fee% × 4 / (intervals × days) tells you the minimum rate that just covers fees. Compare the headline yield against our <a href="/apy-apr-calculator/">APY/APR calculator</a> to weigh it versus simpler staking.`
+          `From there it subtracts trading costs, fee% applied four times (entry and exit on both the spot leg and the perp leg), to give net P&L and net return %. It annualizes funding APR as daily funding / size × 365, and net APR as net profit / size × 365/days. The break-even funding per interval = fee% × 4 / (intervals × days) tells you the minimum rate that just covers fees. Compare the headline yield against our <a href="/apy-apr-calculator/">APY/APR calculator</a> to weigh it versus simpler staking.`
         ],
         inputs: [
-          `Position Size (each leg) is the dollar notional placed on both spot and perp — keep them equal for true delta-neutrality. Funding Rate per interval (%) is the rate the exchange charges; preset chips cover -0.03% to 0.1%. Funding Intervals per Day maps to settlement cadence: 1 = every 24h, 3 = every 8h (the common default), 24 = hourly. Trading Fee per Side (%) is your taker/maker fee per fill; Days Held drives both the totals and the annualization.`,
-          `The model assumes a perfectly hedged 50/50 position with no slippage, no borrow cost on the spot leg, and a constant funding rate over the whole period — real funding swings interval to interval and can flip negative, turning income into a cost. Fees are counted as four discrete trades; spreads and partial fills are ignored. It also excludes liquidation risk on the perp leg: keep at least 3× maintenance margin, since a margin call can break the hedge and erase the carry.`
+          `Position Size (each leg) is the dollar notional placed on both spot and perp, keep them equal for true delta-neutrality. Funding Rate per interval (%) is the rate the exchange charges; preset chips cover -0.03% to 0.1%. Funding Intervals per Day maps to settlement cadence: 1 = every 24h, 3 = every 8h (the common default), 24 = hourly. Trading Fee per Side (%) is your taker/maker fee per fill; Days Held drives both the totals and the annualization.`,
+          `The model assumes a perfectly hedged 50/50 position with no slippage, no borrow cost on the spot leg, and a constant funding rate over the whole period, real funding swings interval to interval and can flip negative, turning income into a cost. Fees are counted as four discrete trades; spreads and partial fills are ignored. It also excludes liquidation risk on the perp leg: keep at least 3× maintenance margin, since a margin call can break the hedge and erase the carry.`
         ],
       },
       es: {
@@ -7882,8 +7882,8 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
           `Alongside the ratio it reports gross profit, gross loss, net profit and expectancy per trade. Expectancy uses the R-multiple form p × (avgWin / avgLoss) − q, telling you the average reward (in R) every trade is worth. The tool grades the result: below 1 is a losing system, 1.1–1.5 marginal, 1.5–2.0 good and above 2.0 excellent. Pair it with our <a href="/risk-reward-calculator/">risk-reward calculator</a> to size the avgWin and avgLoss inputs from real trade plans.`
         ],
         inputs: [
-          `Four fields drive the math: Win Rate as a percentage (preset pills 40–70%), Average Win and Average Loss expressed in R-multiples or dollars, and Total Trades (sample) for the gross figures. Average Win of 1.8 with Average Loss of 1.0 means winners are 1.8 times the size of losers. Because Profit Factor is a ratio, the trade count never changes it — sample size only scales the gross profit and gross loss rows and improves how reliable the estimate is.`,
-          `Win rate must sit strictly between 0 and 100%, and both average sizes must be positive; otherwise the result panel stays empty. Above a Profit Factor of 4 the tool warns of likely overfitting on a tiny sample, so use at least 30 trades. The numbers are descriptive averages, not a forward guarantee — drawdowns, fees and slippage are not modelled here. To translate the edge into per-trade stake sizing, feed expectancy into our <a href="/position-size-calculator/">position size calculator</a>.`
+          `Four fields drive the math: Win Rate as a percentage (preset pills 40–70%), Average Win and Average Loss expressed in R-multiples or dollars, and Total Trades (sample) for the gross figures. Average Win of 1.8 with Average Loss of 1.0 means winners are 1.8 times the size of losers. Because Profit Factor is a ratio, the trade count never changes it, sample size only scales the gross profit and gross loss rows and improves how reliable the estimate is.`,
+          `Win rate must sit strictly between 0 and 100%, and both average sizes must be positive; otherwise the result panel stays empty. Above a Profit Factor of 4 the tool warns of likely overfitting on a tiny sample, so use at least 30 trades. The numbers are descriptive averages, not a forward guarantee, drawdowns, fees and slippage are not modelled here. To translate the edge into per-trade stake sizing, feed expectancy into our <a href="/position-size-calculator/">position size calculator</a>.`
         ],
       },
       es: {
@@ -7950,8 +7950,8 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
           `The core formula is k = 30 times 1.073B; adding your SOL to the virtual SOL reserve lowers the virtual token reserve, and the difference is the tokens you receive. Graduation to Raydium fires at a $69K market cap, historically near 85 SOL in the curve, so the tool reports SOL still needed and dollars remaining. It also projects position value and ROI if the coin reaches that $69K graduation price. Model the exit side with our <a href="/profit-calculator/">profit calculator</a>.`
         ],
         inputs: [
-          `Three fields drive the math: SOL to Invest (your buy size, with 0.1 to 10 SOL quick pills), SOL Price in USD (default $155, used to convert curve prices and caps to dollars), and Current SOL in Bonding Curve (how far along the curve is, 0 to 85). Preset scenarios — Early Sniper, Mid Pump, Pre-Graduation, and Whale Entry — load realistic combinations so you can compare an entry at 0.1 SOL versus 85 SOL of curve progress instantly.`,
-          `Earlier entries buy far more tokens per SOL because the curve is steepest near the start, so a large buy late in the curve shows heavy slippage. The model uses Pump.fun's published virtual reserves and the ~85 SOL graduation benchmark; real fills vary with the 1% trade fee, MEV, and protocol tweaks. Remember roughly 99% of Pump.fun coins never graduate and most that do still lose value within days — treat ROI-at-graduation as a ceiling, not a forecast. Size positions with our <a href="/position-size-calculator/">position size calculator</a>.`
+          `Three fields drive the math: SOL to Invest (your buy size, with 0.1 to 10 SOL quick pills), SOL Price in USD (default $155, used to convert curve prices and caps to dollars), and Current SOL in Bonding Curve (how far along the curve is, 0 to 85). Preset scenarios — Early Sniper, Mid Pump, Pre-Graduation, and Whale Entry, load realistic combinations so you can compare an entry at 0.1 SOL versus 85 SOL of curve progress instantly.`,
+          `Earlier entries buy far more tokens per SOL because the curve is steepest near the start, so a large buy late in the curve shows heavy slippage. The model uses Pump.fun's published virtual reserves and the ~85 SOL graduation benchmark; real fills vary with the 1% trade fee, MEV, and protocol tweaks. Remember roughly 99% of Pump.fun coins never graduate and most that do still lose value within days, treat ROI-at-graduation as a ceiling, not a forecast. Size positions with our <a href="/position-size-calculator/">position size calculator</a>.`
         ],
       },
       es: {

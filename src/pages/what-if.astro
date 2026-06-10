@@ -7,6 +7,7 @@ import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
@@ -79,12 +80,12 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         </div>
         <h2>How to Use the What If Calculator</h2>
         <ol>
-          <li><strong>Select your cryptocurrency</strong> — Search for any coin by name or symbol (Bitcoin, Ethereum, Solana, etc.)</li>
-          <li><strong>Enter your investment amount</strong> — Input how much you would have invested in USD</li>
-          <li><strong>Choose a past date</strong> — Pick any date from the coin's listing history to present day</li>
-          <li><strong>Click Calculate</strong> — View your hypothetical returns, ROI percentage, and a visual chart</li>
-          <li><strong>Explore scenarios</strong> — Use the quick scenario buttons to test popular dates like "Bitcoin 2013" or "Ethereum ICO"</li>
-          <li><strong>Share your results</strong> — Generate a shareable snapshot of your calculation to post on social media</li>
+          <li><strong>Select your cryptocurrency</strong>: Search for any coin by name or symbol (Bitcoin, Ethereum, Solana, etc.)</li>
+          <li><strong>Enter your investment amount</strong>: Input how much you would have invested in USD</li>
+          <li><strong>Choose a past date</strong>: Pick any date from the coin's listing history to present day</li>
+          <li><strong>Click Calculate</strong>: View your hypothetical returns, ROI percentage, and a visual chart</li>
+          <li><strong>Explore scenarios</strong>: Use the quick scenario buttons to test popular dates like "Bitcoin 2013" or "Ethereum ICO"</li>
+          <li><strong>Share your results</strong>: Generate a shareable snapshot of your calculation to post on social media</li>
         </ol>
 
         <h2>What If I Had Invested in Crypto Earlier?</h2>
@@ -146,23 +147,25 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <h2>The Power of Early Adoption</h2>
         <p>Why did early crypto investors make such extraordinary returns? The answer lies in network effects and adoption curves. Bitcoin started as a niche experiment known only to cryptography enthusiasts and libertarians. Ethereum was a whitepaper proposal that most people dismissed. Solana was an unknown challenger in a sea of "Ethereum killers."</p>
-        <p>When you invest in a technology before mass adoption, you're taking on maximum risk — but also maximum potential reward. Early Bitcoin buyers faced uncertainty about whether the protocol would survive, whether governments would ban it, and whether it had any real use case beyond dark web transactions. Those who held through the Mt. Gox collapse, the China mining bans, and countless "Bitcoin is dead" articles were rewarded with generational wealth.</p>
+        <p>When you invest in a technology before mass adoption, you're taking on maximum risk, but also maximum potential reward. Early Bitcoin buyers faced uncertainty about whether the protocol would survive, whether governments would ban it, and whether it had any real use case beyond dark web transactions. Those who held through the Mt. Gox collapse, the China mining bans, and countless "Bitcoin is dead" articles were rewarded with generational wealth.</p>
         <p>The adoption curve works like this: innovators and early adopters take the biggest risks at the lowest prices. As the technology proves itself and enters the "early majority" phase, prices rise exponentially. By the time mainstream adoption occurs, most of the gains have already been realized. This is why a $100 investment in Bitcoin in 2013 could be worth over $500,000 today, while a $100 investment in 2021 might be down 50%.</p>
 
         <h2>Why Timing the Market Is Nearly Impossible</h2>
         <p>Looking at historical returns creates a powerful illusion: that market timing is easy. With perfect hindsight, we can see exactly when to buy and sell. But real-world investing is nothing like that. In 2013, when Bitcoin hit $1,000, most people thought it was too late. In 2017, when it reached $20,000, experts declared it a bubble. Those who sold at these "tops" missed the subsequent run to $69,000 in 2021.</p>
         <p>FOMO (fear of missing out) and hindsight bias cloud our judgment. We see the success stories and forget the countless failed projects. For every Bitcoin, there are a hundred altcoins that went to zero. BitConnect promised massive returns and collapsed as a Ponzi scheme. Countless ICO projects from 2017 are now worthless. Even high-profile projects like Terra/LUNA imploded overnight, wiping out billions in value.</p>
-        <p>Survivorship bias makes us believe timing is easier than it is. We remember Bitcoin, Ethereum, and Solana because they succeeded. We forget about Verge, Bitconnect, and thousands of other projects that failed. This calculator shows you what your gains would have been if you had picked the winners — but in reality, you would have been choosing from a sea of unknowns, most of which would have lost you money.</p>
+        <p>Survivorship bias makes us believe timing is easier than it is. We remember Bitcoin, Ethereum, and Solana because they succeeded. We forget about Verge, Bitconnect, and thousands of other projects that failed. This calculator shows you what your gains would have been if you had picked the winners, but in reality, you would have been choosing from a sea of unknowns, most of which would have lost you money.</p>
 
         <h2>Lessons from Historical Crypto Returns</h2>
         <p>Despite the impossibility of perfect timing, historical returns teach us valuable lessons. First, <strong>HODLing through volatility</strong> is crucial. Bitcoin has experienced drawdowns of 80% or more multiple times in its history. Investors who sold in panic during these crashes missed the subsequent recoveries. Those who held (or "HODLed" in crypto slang) through the pain were rewarded.</p>
-        <p>Second, <strong>conviction matters</strong>. Understanding why you're investing helps you hold through downturns. If you bought Bitcoin in 2017 at $20,000 simply because prices were rising, you likely sold in fear when it crashed to $3,200 in 2018. But if you believed in the fundamental value proposition — decentralized money, limited supply, censorship resistance — you might have held through to $69,000 in 2021.</p>
+        <p>Second, <strong>conviction matters</strong>. Understanding why you're investing helps you hold through downturns. If you bought Bitcoin in 2017 at $20,000 simply because prices were rising, you likely sold in fear when it crashed to $3,200 in 2018. But if you believed in the fundamental value proposition, decentralized money, limited supply, censorship resistance, you might have held through to $69,000 in 2021.</p>
         <p>Third, <strong>bear markets are accumulation opportunities</strong>. The best time to invest is when everyone else is fearful and prices are depressed. Bitcoin's journey from the 2017 all-time high of $20,000 to the 2018 bottom of $3,200 felt catastrophic to those who bought the top. But investors who accumulated during the 2018-2020 bear market saw their holdings increase 20x by 2021. The market rewards patience and contrarian thinking.</p>
 
         <h2>DCA vs Lump Sum: A Better Approach</h2>
-        <p>Since timing the market is nearly impossible, many successful crypto investors use dollar-cost averaging (DCA) instead of trying to buy the perfect bottom. DCA means investing a fixed amount at regular intervals — for example, $100 every week or $500 every month — regardless of price. This strategy reduces timing risk and removes emotion from the equation.</p>
+        <p>Since timing the market is nearly impossible, many successful crypto investors use dollar-cost averaging (DCA) instead of trying to buy the perfect bottom. DCA means investing a fixed amount at regular intervals, for example, $100 every week or $500 every month, regardless of price. This strategy reduces timing risk and removes emotion from the equation.</p>
         <p>Historically, DCA has outperformed most attempts at market timing. While a lump sum investment at the perfect bottom would yield higher returns, most investors lack the discipline or luck to execute that strategy. DCA ensures you buy more when prices are low and less when prices are high, resulting in a better average entry price over time.</p>
         <p>Our <a href="/dca-calculator/">DCA Calculator</a> lets you compare dollar-cost averaging to lump sum investing across different time periods and cryptocurrencies. You can see exactly how consistent investing would have performed versus trying to time the market. For most investors, especially those with a long-term horizon, DCA combined with strong conviction in the asset is the winning strategy.</p>
+
+        <AuthoritativeSources category="profit-loss" />
 
         <h2>Frequently Asked Questions</h2>
         <details>
@@ -175,7 +178,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         </details>
         <details>
           <summary>Does this account for fees and taxes?</summary>
-          <p>No — this is a simplified "what if" scenario. Real-world returns would be reduced by exchange fees, network fees, and capital gains taxes. Use our <a href="/tax-calculator/">Tax Calculator</a> to estimate your tax liability.</p>
+          <p>No, this is a simplified "what if" scenario. Real-world returns would be reduced by exchange fees, network fees, and capital gains taxes. Use our <a href="/tax-calculator/">Tax Calculator</a> to estimate your tax liability.</p>
         </details>
         <details>
           <summary>Should I invest based on past performance?</summary>
@@ -183,7 +186,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         </details>
         <details>
           <summary>Why did some cryptos have million-percent returns?</summary>
-          <p>Million-percent returns occurred when projects went from near-zero valuations to mass adoption. Bitcoin went from a $0.08 experiment to a $69,000 global asset. Ethereum went from a $0.31 ICO to a $4,800 platform powering DeFi and NFTs. These weren't overnight gains — they took years of development, community building, and surviving multiple bear markets. Early investors took enormous risk betting on unproven technology.</p>
+          <p>Million-percent returns occurred when projects went from near-zero valuations to mass adoption. Bitcoin went from a $0.08 experiment to a $69,000 global asset. Ethereum went from a $0.31 ICO to a $4,800 platform powering DeFi and NFTs. These weren't overnight gains, they took years of development, community building, and surviving multiple bear markets. Early investors took enormous risk betting on unproven technology.</p>
         </details>
         <details>
           <summary>What about coins that went to zero?</summary>
@@ -750,7 +753,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
       "name": "Does this account for fees and taxes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No — this is a simplified what-if scenario. Real-world returns would be reduced by exchange fees, network fees, and capital gains taxes."
+        "text": "No, this is a simplified what-if scenario. Real-world returns would be reduced by exchange fees, network fees, and capital gains taxes."
       }
     },
     {
@@ -766,7 +769,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
       "name": "Why did some cryptos have million-percent returns?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Million-percent returns occurred when projects went from near-zero valuations to mass adoption. Bitcoin went from a $0.08 experiment to a $69,000 global asset. Ethereum went from a $0.31 ICO to a $4,800 platform powering DeFi and NFTs. These weren't overnight gains — they took years of development, community building, and surviving multiple bear markets. Early investors took enormous risk betting on unproven technology."
+        "text": "Million-percent returns occurred when projects went from near-zero valuations to mass adoption. Bitcoin went from a $0.08 experiment to a $69,000 global asset. Ethereum went from a $0.31 ICO to a $4,800 platform powering DeFi and NFTs. These weren't overnight gains, they took years of development, community building, and surviving multiple bear markets. Early investors took enormous risk betting on unproven technology."
       }
     },
     {

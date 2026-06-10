@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
@@ -75,26 +76,26 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <h2>How to Use the Satoshi Converter</h2>
         <p>Our free Satoshi converter makes it easy to translate between Bitcoin's smallest unit and fiat currencies like USD and EUR. Whether you want to know how many satoshis your dollars can buy or what your sats are worth in Bitcoin, this tool gives you instant answers using live market data from CoinGecko.</p>
         <ol>
-          <li><strong>Choose your input mode</strong> — select Satoshi, BTC, or USD using the pill buttons at the top of the calculator. This determines which unit you are entering.</li>
-          <li><strong>Enter an amount</strong> — type a number or use the quick amount buttons to select common values like 10K sats, 100K sats, or $100.</li>
-          <li><strong>Select your fiat currency</strong> — toggle between USD and EUR to see conversions in your preferred currency.</li>
-          <li><strong>Read the results</strong> — the converter instantly displays the equivalent value in all three units: satoshis, BTC, and fiat. A quick reference table shows how common fiat and satoshi amounts compare at the current price.</li>
-          <li><strong>Refresh the price</strong> — click the refresh button to fetch the latest BTC price from CoinGecko at any time.</li>
+          <li><strong>Choose your input mode</strong>: select Satoshi, BTC, or USD using the pill buttons at the top of the calculator. This determines which unit you are entering.</li>
+          <li><strong>Enter an amount</strong>: type a number or use the quick amount buttons to select common values like 10K sats, 100K sats, or $100.</li>
+          <li><strong>Select your fiat currency</strong>: toggle between USD and EUR to see conversions in your preferred currency.</li>
+          <li><strong>Read the results</strong>: the converter instantly displays the equivalent value in all three units: satoshis, BTC, and fiat. A quick reference table shows how common fiat and satoshi amounts compare at the current price.</li>
+          <li><strong>Refresh the price</strong>: click the refresh button to fetch the latest BTC price from CoinGecko at any time.</li>
         </ol>
 
         <h3>Key Features</h3>
         <ul>
-          <li><strong>Bidirectional conversion</strong> — enter any of the three units (satoshis, BTC, or USD) and instantly see the equivalent in the other two.</li>
-          <li><strong>Live BTC price</strong> — real-time Bitcoin price fetched from CoinGecko's API, aggregated from hundreds of exchanges worldwide.</li>
-          <li><strong>Quick reference tables</strong> — see at a glance how many satoshis you get for $1, $10, $100, and $1,000, plus the fiat value of 1, 100, 1K, 10K, 100K, and 1M sats.</li>
-          <li><strong>Quick amount buttons</strong> — one-click presets for common satoshi amounts (1K to 50M), BTC amounts (0.001 to 1), and USD amounts ($1 to $500).</li>
-          <li><strong>Multi-currency support</strong> — toggle between USD and EUR for fiat conversions.</li>
-          <li><strong>Refresh on demand</strong> — fetch the latest BTC price at any moment without reloading the page.</li>
+          <li><strong>Bidirectional conversion</strong>: enter any of the three units (satoshis, BTC, or USD) and instantly see the equivalent in the other two.</li>
+          <li><strong>Live BTC price</strong>: real-time Bitcoin price fetched from CoinGecko's API, aggregated from hundreds of exchanges worldwide.</li>
+          <li><strong>Quick reference tables</strong>: see at a glance how many satoshis you get for $1, $10, $100, and $1,000, plus the fiat value of 1, 100, 1K, 10K, 100K, and 1M sats.</li>
+          <li><strong>Quick amount buttons</strong>: one-click presets for common satoshi amounts (1K to 50M), BTC amounts (0.001 to 1), and USD amounts ($1 to $500).</li>
+          <li><strong>Multi-currency support</strong>: toggle between USD and EUR for fiat conversions.</li>
+          <li><strong>Refresh on demand</strong>: fetch the latest BTC price at any moment without reloading the page.</li>
         </ul>
 
         <h2>What Is a Satoshi?</h2>
         <p>A satoshi (often abbreviated as "sat") is the smallest unit of Bitcoin. Named after Bitcoin's pseudonymous creator Satoshi Nakamoto, one satoshi represents one hundred-millionth of a single Bitcoin. Just as a dollar is divided into 100 cents, a Bitcoin is divided into 100,000,000 satoshis. This granularity allows Bitcoin to be used for microtransactions and makes it practical even as the price of a whole Bitcoin reaches tens or hundreds of thousands of dollars.</p>
-        <p>Satoshis have become increasingly important as Bitcoin's price has risen. When Bitcoin costs $100,000, a single satoshi is worth $0.001 — small enough for everyday purchases, tips, and Lightning Network micropayments. Many Bitcoiners now price goods and services in satoshis rather than full Bitcoin, since most people hold fractions of a coin and dealing with numbers like "0.00015 BTC" is less intuitive than "15,000 sats."</p>
+        <p>Satoshis have become increasingly important as Bitcoin's price has risen. When Bitcoin costs $100,000, a single satoshi is worth $0.001, small enough for everyday purchases, tips, and Lightning Network micropayments. Many Bitcoiners now price goods and services in satoshis rather than full Bitcoin, since most people hold fractions of a coin and dealing with numbers like "0.00015 BTC" is less intuitive than "15,000 sats."</p>
 
         <h3>Satoshi Denominations</h3>
         <div class="table-responsive">
@@ -132,13 +133,15 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
         <h2>Why Satoshis Matter</h2>
         <p>As Bitcoin adoption grows, thinking in satoshis becomes more natural and practical for several reasons. First, most people cannot afford to buy a whole Bitcoin, but they can easily understand owning 50,000 or 500,000 satoshis. Denominating in sats removes the psychological barrier of fractional ownership and makes Bitcoin feel more accessible.</p>
-        <p>Second, the Lightning Network — Bitcoin's layer-2 scaling solution — operates natively in satoshis. Lightning payments can be as small as 1 satoshi, enabling true micropayments for content tipping, pay-per-use APIs, streaming money, and machine-to-machine transactions. Understanding satoshi denominations is essential for anyone using Lightning.</p>
+        <p>Second, the Lightning Network — Bitcoin's layer-2 scaling solution, operates natively in satoshis. Lightning payments can be as small as 1 satoshi, enabling true micropayments for content tipping, pay-per-use APIs, streaming money, and machine-to-machine transactions. Understanding satoshi denominations is essential for anyone using Lightning.</p>
         <p>Third, many Bitcoin exchanges and wallets now display balances in satoshis by default. Platforms like Strike, Cash App, and River allow users to buy and send specific satoshi amounts, and the "stacking sats" movement encourages people to regularly accumulate small amounts of Bitcoin over time through dollar-cost averaging.</p>
 
         <h2>Satoshis and the Lightning Network</h2>
         <p>The Lightning Network is a payment protocol built on top of Bitcoin that enables instant, low-cost transactions. While on-chain Bitcoin transactions can take 10-60 minutes to confirm and cost several dollars in fees, Lightning transactions settle in milliseconds for fees measured in fractions of a satoshi. This makes Lightning ideal for small everyday payments.</p>
         <p>On Lightning, the base unit is the millisatoshi (msat), which is one-thousandth of a satoshi. While millisatoshis cannot exist on the Bitcoin blockchain (the minimum on-chain unit is 1 sat), they allow Lightning nodes to route payments with sub-satoshi precision. This ultra-fine granularity enables use cases like streaming payments where you pay per second of content consumption.</p>
         <p>Popular Lightning wallets and exchanges include Phoenix, Breez, Wallet of Satoshi, and Kraken. These platforms make it easy to send and receive satoshis instantly, and many support both on-chain and Lightning transactions. Converting between satoshis and fiat helps users understand exactly how much value they are sending or receiving through Lightning channels.</p>
+
+        <AuthoritativeSources category="converters" />
 
         <h2>Frequently Asked Questions</h2>
 

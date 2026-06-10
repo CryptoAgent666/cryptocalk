@@ -7,6 +7,7 @@ import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
@@ -78,22 +79,22 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
           <strong>Quick answer:</strong> Enter any cryptocurrency amount to instantly convert between 500+ coins and fiat currencies using live CoinGecko prices. Supports BTC, ETH, SOL, and all major tokens with real-time exchange rates.
         </div>
         <h2>How to Use the Crypto Converter</h2>
-        <p>Our free crypto converter lets you calculate the value of any cryptocurrency in your local fiat currency. Simply select a coin, choose your target currency, and enter an amount — the conversion happens instantly using live market data from CoinGecko.</p>
+        <p>Our free crypto converter lets you calculate the value of any cryptocurrency in your local fiat currency. Simply select a coin, choose your target currency, and enter an amount, the conversion happens instantly using live market data from CoinGecko.</p>
         <ol>
-          <li><strong>Pick a quick pair</strong> — use the preset buttons (BTC/USD, ETH/USD, SOL/USD, etc.) for the most popular conversions, or search for any coin.</li>
-          <li><strong>Select your currencies</strong> — choose the cryptocurrency you want to convert from and the fiat currency you want to convert to.</li>
-          <li><strong>Enter an amount</strong> — type the number of coins or the fiat amount. The converter works in both directions.</li>
-          <li><strong>Read the result</strong> — see the converted value, the exchange rate, and the 24-hour price change percentage instantly.</li>
+          <li><strong>Pick a quick pair</strong>: use the preset buttons (BTC/USD, ETH/USD, SOL/USD, etc.) for the most popular conversions, or search for any coin.</li>
+          <li><strong>Select your currencies</strong>: choose the cryptocurrency you want to convert from and the fiat currency you want to convert to.</li>
+          <li><strong>Enter an amount</strong>: type the number of coins or the fiat amount. The converter works in both directions.</li>
+          <li><strong>Read the result</strong>: see the converted value, the exchange rate, and the 24-hour price change percentage instantly.</li>
         </ol>
 
         <h3>Key Features</h3>
         <ul>
-          <li><strong>500+ cryptocurrencies</strong> — search and convert any coin tracked by CoinGecko, from Bitcoin to the latest DeFi tokens.</li>
-          <li><strong>10+ fiat currencies</strong> — USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR, RUB, and more.</li>
-          <li><strong>Quick pair buttons</strong> — one-click access to the most popular conversion pairs.</li>
-          <li><strong>24h price change</strong> — see whether the price has gone up or down in the last 24 hours.</li>
-          <li><strong>Swap direction</strong> — instantly reverse the conversion with the swap button.</li>
-          <li><strong>Refresh on demand</strong> — click refresh to get the latest price at any time.</li>
+          <li><strong>500+ cryptocurrencies</strong>: search and convert any coin tracked by CoinGecko, from Bitcoin to the latest DeFi tokens.</li>
+          <li><strong>10+ fiat currencies</strong>: USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR, RUB, and more.</li>
+          <li><strong>Quick pair buttons</strong>: one-click access to the most popular conversion pairs.</li>
+          <li><strong>24h price change</strong>: see whether the price has gone up or down in the last 24 hours.</li>
+          <li><strong>Swap direction</strong>: instantly reverse the conversion with the swap button.</li>
+          <li><strong>Refresh on demand</strong>: click refresh to get the latest price at any time.</li>
         </ul>
 
         <h3>Supported Cryptocurrencies</h3>
@@ -103,7 +104,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         <p>Convert to fiat currencies used by the largest crypto markets worldwide: US Dollar (USD), Euro (EUR), British Pound (GBP), Japanese Yen (JPY), Australian Dollar (AUD), Canadian Dollar (CAD), Brazilian Real (BRL), Turkish Lira (TRY), Indian Rupee (INR), and Russian Ruble (RUB). Each currency uses the official exchange rate as reported by CoinGecko.</p>
 
         <h2>How Cryptocurrency Prices Are Calculated</h2>
-        <p>Cryptocurrency prices are not set by a single authority — they emerge from supply and demand across hundreds of exchanges worldwide. CoinGecko aggregates price data from over 900 exchanges, weighting each by trading volume and liquidity to produce a reliable average price for every trading pair.</p>
+        <p>Cryptocurrency prices are not set by a single authority, they emerge from supply and demand across hundreds of exchanges worldwide. CoinGecko aggregates price data from over 900 exchanges, weighting each by trading volume and liquidity to produce a reliable average price for every trading pair.</p>
         <p>The price you see on this converter reflects the volume-weighted average across all exchanges where the coin is traded. This means it may differ slightly from the price on any individual exchange due to factors like regional demand, liquidity depth, and maker/taker ratios.</p>
 
         <h3>Conversion Formula</h3>
@@ -113,7 +114,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         <p>For example, if Bitcoin is trading at $65,000 and you want to convert 0.5 BTC to USD: 0.5 × $65,000 = $32,500. The same principle applies to any crypto-to-fiat pair.</p>
 
         <h3>Why Prices Differ Between Exchanges</h3>
-        <p>Several factors cause price differences between exchanges. Regional demand can push prices higher in countries with capital controls or strong retail interest. Liquidity depth affects how much the price moves with each trade — thin order books on smaller exchanges lead to wider spreads. Deposit and withdrawal speeds also matter: if it takes hours to move funds between exchanges, arbitrageurs cannot instantly equalize prices.</p>
+        <p>Several factors cause price differences between exchanges. Regional demand can push prices higher in countries with capital controls or strong retail interest. Liquidity depth affects how much the price moves with each trade, thin order books on smaller exchanges lead to wider spreads. Deposit and withdrawal speeds also matter: if it takes hours to move funds between exchanges, arbitrageurs cannot instantly equalize prices.</p>
         <p>These differences are usually small (0.1-0.5%) for major coins on large exchanges but can be significant (1-5%+) for low-cap tokens on regional exchanges.</p>
 
         <h2>Popular Cryptocurrency Conversions</h2>
@@ -130,9 +131,9 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
               <tr><td>SOL to USD</td><td>Valuing Solana ecosystem investments</td></tr>
               <tr><td>XRP to USD</td><td>Tracking Ripple value for remittance use cases</td></tr>
               <tr><td>DOGE to USD</td><td>Checking meme coin value and profits</td></tr>
-              <tr><td>BTC to BRL</td><td>Brazilian investors — one of the top crypto markets</td></tr>
+              <tr><td>BTC to BRL</td><td>Brazilian investors, one of the top crypto markets</td></tr>
               <tr><td>BTC to TRY</td><td>Turkish investors hedging against lira inflation</td></tr>
-              <tr><td>BTC to INR</td><td>Indian investors — the largest crypto user base</td></tr>
+              <tr><td>BTC to INR</td><td>Indian investors, the largest crypto user base</td></tr>
             </tbody>
           </table>
         </div>
@@ -143,12 +144,14 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <h2>Tips for Accurate Crypto Conversions</h2>
         <ul>
-          <li><strong>Always refresh before making decisions</strong> — crypto prices can move 1-5% in minutes during volatile periods. Click the refresh button for the latest rate.</li>
-          <li><strong>Account for exchange fees</strong> — the converter shows the mid-market rate. When you actually buy or sell on an exchange, you will pay maker/taker fees (typically 0.1-0.5%) on top of this price.</li>
-          <li><strong>Consider spread costs</strong> — the buy price (ask) is always slightly higher than the sell price (bid). The difference is the spread, which is an additional cost beyond exchange fees.</li>
-          <li><strong>Watch out for slippage on large orders</strong> — converting large amounts on exchanges with thin liquidity can cause the actual price to deviate from the displayed rate.</li>
-          <li><strong>Use limit orders for precision</strong> — if the exact conversion rate matters, use limit orders on your exchange instead of market orders to control the execution price.</li>
+          <li><strong>Always refresh before making decisions</strong>: crypto prices can move 1-5% in minutes during volatile periods. Click the refresh button for the latest rate.</li>
+          <li><strong>Account for exchange fees</strong>: the converter shows the mid-market rate. When you actually buy or sell on an exchange, you will pay maker/taker fees (typically 0.1-0.5%) on top of this price.</li>
+          <li><strong>Consider spread costs</strong>: the buy price (ask) is always slightly higher than the sell price (bid). The difference is the spread, which is an additional cost beyond exchange fees.</li>
+          <li><strong>Watch out for slippage on large orders</strong>: converting large amounts on exchanges with thin liquidity can cause the actual price to deviate from the displayed rate.</li>
+          <li><strong>Use limit orders for precision</strong>: if the exact conversion rate matters, use limit orders on your exchange instead of market orders to control the execution price.</li>
         </ul>
+
+        <AuthoritativeSources category="converters" />
 
         <h2>Frequently Asked Questions</h2>
         <details>
@@ -169,7 +172,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         </details>
         <details>
           <summary>Can I use this to convert Ethereum to USD?</summary>
-          <p>Yes. Search for Ethereum in the crypto dropdown, select it, and the converter will show the current ETH/USD rate. You can convert any amount in either direction — enter ETH to see USD, or enter USD to see how much ETH you could buy. Over 500 cryptocurrencies are supported including SOL, XRP, DOGE, ADA, and all major tokens.</p>
+          <p>Yes. Search for Ethereum in the crypto dropdown, select it, and the converter will show the current ETH/USD rate. You can convert any amount in either direction, enter ETH to see USD, or enter USD to see how much ETH you could buy. Over 500 cryptocurrencies are supported including SOL, XRP, DOGE, ADA, and all major tokens.</p>
         </details>
         <details>
           <summary>Does this converter account for exchange fees when buying crypto?</summary>

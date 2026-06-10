@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -72,22 +73,22 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <h2>How to Use the Risk-Reward Ratio Calculator</h2>
         <p>Our free risk-reward calculator helps crypto traders evaluate trade setups before entering a position. By comparing the distance to your stop-loss against the distance to your take-profit, the calculator determines whether a trade is worth taking based on the potential reward relative to the risk involved.</p>
         <ol>
-          <li><strong>Enter your entry price</strong> — the price at which you plan to open the trade. This is the reference point for all risk and reward calculations.</li>
-          <li><strong>Set your stop-loss price</strong> — the price where you will exit the trade to limit your loss. Place it below entry for long trades, or above entry for short trades. The calculator automatically detects the direction.</li>
-          <li><strong>Set your take-profit price</strong> — the target price where you plan to close the trade for a profit. Place it above entry for long trades, or below entry for short trades.</li>
-          <li><strong>Optionally enter your position size</strong> — in USD. When provided, the simulator shows P&L in dollar terms instead of price units, giving you a concrete view of potential outcomes.</li>
-          <li><strong>Read the results</strong> — view the R:R ratio with a color indicator, the required win rate to break even, and a simulation table showing expected P&L over 100 trades at six different win rates.</li>
+          <li><strong>Enter your entry price</strong>: the price at which you plan to open the trade. This is the reference point for all risk and reward calculations.</li>
+          <li><strong>Set your stop-loss price</strong>: the price where you will exit the trade to limit your loss. Place it below entry for long trades, or above entry for short trades. The calculator automatically detects the direction.</li>
+          <li><strong>Set your take-profit price</strong>: the target price where you plan to close the trade for a profit. Place it above entry for long trades, or below entry for short trades.</li>
+          <li><strong>Optionally enter your position size</strong>: in USD. When provided, the simulator shows P&L in dollar terms instead of price units, giving you a concrete view of potential outcomes.</li>
+          <li><strong>Read the results</strong>: view the R:R ratio with a color indicator, the required win rate to break even, and a simulation table showing expected P&L over 100 trades at six different win rates.</li>
         </ol>
 
         <h3>Key Features</h3>
         <ul>
-          <li><strong>Instant R:R calculation</strong> — results update in real time as you type, with no need to click a button.</li>
-          <li><strong>Color-coded ratio indicator</strong> — green for favorable ratios (1:2 or better), yellow for neutral (1:1 to 1:2), and red for unfavorable setups (below 1:1).</li>
-          <li><strong>Visual R:R bar</strong> — a proportional bar chart that instantly shows the balance between risk and reward.</li>
-          <li><strong>Required win rate</strong> — shows the exact win percentage you need to break even with the given risk-reward ratio.</li>
-          <li><strong>100-trade simulation</strong> — a table projecting net P&L across 30%, 40%, 50%, 60%, 70%, and 80% win rates.</li>
-          <li><strong>Automatic direction detection</strong> — the calculator determines whether you are going long or short based on your stop-loss placement relative to entry.</li>
-          <li><strong>Optional position sizing</strong> — add a dollar amount to see risk, reward, and simulation results in USD.</li>
+          <li><strong>Instant R:R calculation</strong>: results update in real time as you type, with no need to click a button.</li>
+          <li><strong>Color-coded ratio indicator</strong>: green for favorable ratios (1:2 or better), yellow for neutral (1:1 to 1:2), and red for unfavorable setups (below 1:1).</li>
+          <li><strong>Visual R:R bar</strong>: a proportional bar chart that instantly shows the balance between risk and reward.</li>
+          <li><strong>Required win rate</strong>: shows the exact win percentage you need to break even with the given risk-reward ratio.</li>
+          <li><strong>100-trade simulation</strong>: a table projecting net P&L across 30%, 40%, 50%, 60%, 70%, and 80% win rates.</li>
+          <li><strong>Automatic direction detection</strong>: the calculator determines whether you are going long or short based on your stop-loss placement relative to entry.</li>
+          <li><strong>Optional position sizing</strong>: add a dollar amount to see risk, reward, and simulation results in USD.</li>
         </ul>
 
         <h2>What Is the Risk-Reward Ratio?</h2>
@@ -166,6 +167,8 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <p>Many beginner traders focus solely on finding trades with high win rates, but the risk-reward ratio is equally, if not more, important. A strategy that wins 80% of the time but has a 1:0.2 R:R (risking $5 for every $1 of profit) would still lose money over time. Conversely, a strategy that only wins 35% of trades but maintains a 1:3 R:R can be highly profitable.</p>
         <p>The relationship between win rate and risk-reward is mathematical. Professional traders optimize both variables, but when forced to choose, a favorable R:R ratio provides a larger margin of safety. It allows for consecutive losses without destroying the account, and it ensures that a few good trades can recover from a string of bad ones.</p>
 
+        <AuthoritativeSources category="trading-tools" />
+
         <h2>Frequently Asked Questions</h2>
 
         <details>
@@ -195,7 +198,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <details>
           <summary>Can I use this calculator for short positions?</summary>
-          <p>Yes. The calculator automatically detects whether you are going long or short based on your stop-loss placement relative to your entry price. If your stop-loss is above entry, it detects a short trade. If your stop-loss is below entry, it detects a long trade. The R:R calculation works identically for both directions — it measures the absolute distance to stop-loss versus take-profit.</p>
+          <p>Yes. The calculator automatically detects whether you are going long or short based on your stop-loss placement relative to your entry price. If your stop-loss is above entry, it detects a short trade. If your stop-loss is below entry, it detects a long trade. The R:R calculation works identically for both directions, it measures the absolute distance to stop-loss versus take-profit.</p>
         </details>
 
         <h2>Related Calculators</h2>

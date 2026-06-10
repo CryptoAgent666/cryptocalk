@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
@@ -74,23 +75,23 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         </div>
         <h2>How to Use the Funding Rate Calculator</h2>
         <ol>
-          <li><strong>Enter your position size</strong> — The total value of your perpetual futures position in USD. For example, if you hold 1 BTC at $50,000, enter 50,000.</li>
-          <li><strong>Input the current funding rate</strong> — This is typically displayed as a percentage on your exchange. Most show it as 0.01%, 0.05%, etc. Check your exchange's perpetual contract page for the current rate.</li>
-          <li><strong>Set the funding interval</strong> — Choose how often funding is paid. Most major exchanges use 8-hour intervals (3 times per day), but some like dYdX and Hyperliquid use 1-hour intervals.</li>
-          <li><strong>Select your time period</strong> — Choose whether you want to calculate costs for 1 day, 7 days, 30 days, or a custom period based on how long you plan to hold the position.</li>
-          <li><strong>Review your results</strong> — The calculator will show your total funding cost (or earnings if negative) for the selected period. Use this to factor funding into your trading decisions.</li>
+          <li><strong>Enter your position size</strong>: The total value of your perpetual futures position in USD. For example, if you hold 1 BTC at $50,000, enter 50,000.</li>
+          <li><strong>Input the current funding rate</strong>: This is typically displayed as a percentage on your exchange. Most show it as 0.01%, 0.05%, etc. Check your exchange's perpetual contract page for the current rate.</li>
+          <li><strong>Set the funding interval</strong>: Choose how often funding is paid. Most major exchanges use 8-hour intervals (3 times per day), but some like dYdX and Hyperliquid use 1-hour intervals.</li>
+          <li><strong>Select your time period</strong>: Choose whether you want to calculate costs for 1 day, 7 days, 30 days, or a custom period based on how long you plan to hold the position.</li>
+          <li><strong>Review your results</strong>: The calculator will show your total funding cost (or earnings if negative) for the selected period. Use this to factor funding into your trading decisions.</li>
         </ol>
 
         <h2>What Is the Funding Rate?</h2>
-        <p>The funding rate is a periodic payment exchanged between long and short positions in perpetual futures markets. It serves as the primary mechanism that keeps the perpetual contract price anchored to the underlying spot price. Unlike traditional futures contracts that have a fixed expiry date and settle at predetermined times, perpetual futures contracts have no expiration — they can be held indefinitely.</p>
+        <p>The funding rate is a periodic payment exchanged between long and short positions in perpetual futures markets. It serves as the primary mechanism that keeps the perpetual contract price anchored to the underlying spot price. Unlike traditional futures contracts that have a fixed expiry date and settle at predetermined times, perpetual futures contracts have no expiration, they can be held indefinitely.</p>
         <p>This creates a unique challenge: without a settlement date to force convergence between the futures price and spot price, perpetual contracts could drift significantly away from the underlying asset's true value. The funding rate solves this problem by creating economic incentives that naturally pull the perpetual price back toward spot.</p>
         <p>When the perpetual contract trades at a premium to spot (indicating bullish sentiment), the funding rate becomes positive, and traders holding long positions pay those holding shorts. Conversely, when the perpetual trades at a discount (bearish sentiment), the rate goes negative and shorts pay longs. This payment mechanism encourages arbitrage activity that helps maintain price alignment between perpetual and spot markets.</p>
 
         <h2>How Funding Payments Work</h2>
         <ul>
-          <li><strong>Positive funding rate</strong> — Longs pay shorts. This happens when the perpetual price trades above spot, indicating bullish market sentiment. Traders are willing to pay a premium to maintain long exposure, so they compensate short sellers for providing that liquidity.</li>
-          <li><strong>Negative funding rate</strong> — Shorts pay longs. This occurs when the perpetual price trades below spot, indicating bearish sentiment. Short sellers are paying a premium for the ability to maintain bearish positions, so they compensate long holders.</li>
-          <li><strong>Payment frequency</strong> — Most major exchanges including Binance, Bybit, and OKX settle funding every 8 hours at 00:00, 08:00, and 16:00 UTC (3 times per day). Some exchanges like dYdX and Hyperliquid use 1-hour intervals for more granular price tracking. You only pay or receive funding if you hold a position at the exact settlement timestamp.</li>
+          <li><strong>Positive funding rate</strong>: Longs pay shorts. This happens when the perpetual price trades above spot, indicating bullish market sentiment. Traders are willing to pay a premium to maintain long exposure, so they compensate short sellers for providing that liquidity.</li>
+          <li><strong>Negative funding rate</strong>: Shorts pay longs. This occurs when the perpetual price trades below spot, indicating bearish sentiment. Short sellers are paying a premium for the ability to maintain bearish positions, so they compensate long holders.</li>
+          <li><strong>Payment frequency</strong>: Most major exchanges including Binance, Bybit, and OKX settle funding every 8 hours at 00:00, 08:00, and 16:00 UTC (3 times per day). Some exchanges like dYdX and Hyperliquid use 1-hour intervals for more granular price tracking. You only pay or receive funding if you hold a position at the exact settlement timestamp.</li>
         </ul>
 
         <h2>Funding Rate Formula</h2>
@@ -187,6 +188,8 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         </ul>
         <p>This demonstrates why funding rates matter: even in the low-rate scenario, you're giving up nearly half a percent of your position. In high-volatility periods with extreme rates, funding can eliminate your entire profit margin or turn a winning trade into a loss. Always factor funding costs into your position sizing and expected returns.</p>
 
+        <AuthoritativeSources category="trading-tools" />
+
         <h2>Frequently Asked Questions</h2>
 
         <details>
@@ -211,7 +214,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <details>
           <summary>What causes funding rates to spike?</summary>
-          <p>Funding rates spike when there's a significant imbalance between long and short interest in the perpetual market. The most common cause is strong directional momentum — during rapid bull runs, overwhelming demand for long positions pushes the perpetual price above spot, triggering high positive funding. Market events like major announcements, regulatory news, or macro developments can cause sudden shifts. Liquidation cascades can also create temporary spikes as one-sided liquidations force the perpetual price away from spot. High leverage usage amplifies these effects.</p>
+          <p>Funding rates spike when there's a significant imbalance between long and short interest in the perpetual market. The most common cause is strong directional momentum, during rapid bull runs, overwhelming demand for long positions pushes the perpetual price above spot, triggering high positive funding. Market events like major announcements, regulatory news, or macro developments can cause sudden shifts. Liquidation cascades can also create temporary spikes as one-sided liquidations force the perpetual price away from spot. High leverage usage amplifies these effects.</p>
         </details>
 
         <details>

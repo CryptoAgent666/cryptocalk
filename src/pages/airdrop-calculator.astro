@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
@@ -74,12 +75,12 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         </div>
         <h2>How to Use the Airdrop Calculator</h2>
         <ol>
-          <li><strong>Search for the airdropped token</strong> — Use the coin search to find and select the token you received. This auto-fills the current market price from CoinGecko.</li>
-          <li><strong>Enter the amount received</strong> — Input the exact number of tokens you received in the airdrop. Check your wallet history or the claiming transaction for the precise amount.</li>
-          <li><strong>Set the price at receipt</strong> — Enter the token's market price on the date you received/claimed the airdrop. This value determines your taxable income in most jurisdictions.</li>
-          <li><strong>Indicate if you sold</strong> — Toggle whether you've already sold the tokens. If sold, enter the sell price to calculate realized gains. If not, the calculator uses the current market price for unrealized P&L.</li>
-          <li><strong>Select your tax jurisdiction</strong> — Choose your country to apply the appropriate income tax and capital gains tax rates for an estimated tax liability calculation.</li>
-          <li><strong>Review your results</strong> — The calculator shows your current value, profit/loss, income tax on the airdrop, capital gains tax (if sold at a profit), and net value after tax obligations.</li>
+          <li><strong>Search for the airdropped token</strong>: Use the coin search to find and select the token you received. This auto-fills the current market price from CoinGecko.</li>
+          <li><strong>Enter the amount received</strong>: Input the exact number of tokens you received in the airdrop. Check your wallet history or the claiming transaction for the precise amount.</li>
+          <li><strong>Set the price at receipt</strong>: Enter the token's market price on the date you received/claimed the airdrop. This value determines your taxable income in most jurisdictions.</li>
+          <li><strong>Indicate if you sold</strong>: Toggle whether you've already sold the tokens. If sold, enter the sell price to calculate realized gains. If not, the calculator uses the current market price for unrealized P&L.</li>
+          <li><strong>Select your tax jurisdiction</strong>: Choose your country to apply the appropriate income tax and capital gains tax rates for an estimated tax liability calculation.</li>
+          <li><strong>Review your results</strong>: The calculator shows your current value, profit/loss, income tax on the airdrop, capital gains tax (if sold at a profit), and net value after tax obligations.</li>
         </ol>
 
         <h2>What Are Crypto Airdrops?</h2>
@@ -202,10 +203,12 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <h2>Strategies for Maximizing Airdrop Value</h2>
         <p>While no airdrop is guaranteed, there are strategies that active crypto users employ to position themselves for potential token distributions. Engaging with new protocols early, providing liquidity, participating in testnets, and actively using bridges and DEXes across multiple chains are all common approaches. Many of the most valuable airdrops have rewarded users who performed specific on-chain actions months or even years before the token launch.</p>
-        <p>Once you receive an airdrop, the decision of when to sell is crucial. Historical data shows mixed results — some airdrops like UNI increased significantly after claiming, while others like ARB traded near or below their claim price. Consider your tax situation, market conditions, and the project's long-term potential when deciding whether to hold, sell immediately, or sell gradually.</p>
+        <p>Once you receive an airdrop, the decision of when to sell is crucial. Historical data shows mixed results, some airdrops like UNI increased significantly after claiming, while others like ARB traded near or below their claim price. Consider your tax situation, market conditions, and the project's long-term potential when deciding whether to hold, sell immediately, or sell gradually.</p>
 
         <h2>Recording Airdrops for Tax Purposes</h2>
         <p>Proper record-keeping is essential for airdrop tax compliance. For each airdrop you receive, document the following: the exact date and time of receipt (or claiming), the number of tokens received, the fair market value per token at the time of receipt, the transaction hash, and the total dollar value. This information establishes both your taxable income and your cost basis for future capital gains calculations. Consider using crypto tax software like CoinLedger, Koinly, or CoinTracking to automate this process.</p>
+
+        <AuthoritativeSources category="tax-reporting" />
 
         <h2>Frequently Asked Questions</h2>
 
@@ -221,7 +224,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <details>
           <summary>What if I received an airdrop but haven't claimed it?</summary>
-          <p>Tax treatment of unclaimed airdrops varies by jurisdiction. In the US, the IRS generally considers airdrops taxable when you gain "dominion and control" over the tokens — meaning when you can access and sell them. If tokens were sent directly to your wallet, they may be considered received immediately. If you need to actively claim them via a transaction, the taxable event likely occurs at the time of claiming. Consult a tax advisor for clarity on your specific situation.</p>
+          <p>Tax treatment of unclaimed airdrops varies by jurisdiction. In the US, the IRS generally considers airdrops taxable when you gain "dominion and control" over the tokens, meaning when you can access and sell them. If tokens were sent directly to your wallet, they may be considered received immediately. If you need to actively claim them via a transaction, the taxable event likely occurs at the time of claiming. Consult a tax advisor for clarity on your specific situation.</p>
         </details>
 
         <details>
@@ -231,12 +234,12 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <details>
           <summary>What are the best upcoming airdrops?</summary>
-          <p>Predicting future airdrops is speculative, but you can position yourself by being an active user of protocols that haven't launched tokens yet. Look for well-funded projects with active testnets or mainnets but no governance token. Engage genuinely with protocols — bridge assets, make swaps, provide liquidity, participate in governance proposals, and interact across multiple chains. However, never invest more than you can afford to lose in pursuit of potential airdrops, as many protocols never distribute tokens.</p>
+          <p>Predicting future airdrops is speculative, but you can position yourself by being an active user of protocols that haven't launched tokens yet. Look for well-funded projects with active testnets or mainnets but no governance token. Engage genuinely with protocols, bridge assets, make swaps, provide liquidity, participate in governance proposals, and interact across multiple chains. However, never invest more than you can afford to lose in pursuit of potential airdrops, as many protocols never distribute tokens.</p>
         </details>
 
         <details>
           <summary>Can I claim a tax loss on an airdrop that lost value?</summary>
-          <p>If you sell airdropped tokens for less than their value at receipt, you can claim a capital loss in most jurisdictions. For example, if you received tokens worth $1,000 (your cost basis) and sold them for $300, you have a $700 capital loss that can offset other capital gains. However, be aware of "wash sale" rules — in some jurisdictions, you cannot claim a loss if you repurchase the same or substantially identical asset within 30 days.</p>
+          <p>If you sell airdropped tokens for less than their value at receipt, you can claim a capital loss in most jurisdictions. For example, if you received tokens worth $1,000 (your cost basis) and sold them for $300, you have a $700 capital loss that can offset other capital gains. However, be aware of "wash sale" rules, in some jurisdictions, you cannot claim a loss if you repurchase the same or substantially identical asset within 30 days.</p>
         </details>
 
         <h2>Related Calculators</h2>
@@ -338,7 +341,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
       "name": "What are the best upcoming airdrops?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Predicting future airdrops is speculative. Position yourself by actively using protocols that haven't launched tokens yet — bridge assets, make swaps, provide liquidity, and participate in governance. Never invest more than you can afford to lose."
+        "text": "Predicting future airdrops is speculative. Position yourself by actively using protocols that haven't launched tokens yet, bridge assets, make swaps, provide liquidity, and participate in governance. Never invest more than you can afford to lose."
       }
     },
     {

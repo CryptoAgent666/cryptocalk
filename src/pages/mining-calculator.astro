@@ -7,6 +7,7 @@ import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
@@ -80,25 +81,25 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         <h2>How to Use the Mining Calculator</h2>
         <ol>
           <li><strong>Select your ASIC miner</strong> from the dropdown (e.g., Antminer S21, Whatsminer M60S), or choose "Custom" to enter your own hashrate and power consumption.</li>
-          <li><strong>Enter your electricity cost</strong> in dollars per kilowatt-hour ($/kWh). This varies by location — check your utility bill or see the table below for regional averages.</li>
+          <li><strong>Enter your electricity cost</strong> in dollars per kilowatt-hour ($/kWh). This varies by location, check your utility bill or see the table below for regional averages.</li>
           <li><strong>Set the pool fee</strong> percentage. Most mining pools charge 1-2%, though some offer 0% promotional periods.</li>
           <li><strong>Enter your hardware cost</strong> (optional) to see break-even estimates. This helps you understand how long it will take to recover your initial investment.</li>
           <li><strong>Review your results</strong> in the table, which shows daily, weekly, monthly, and yearly estimates for BTC mined, revenue, electricity costs, and net profit.</li>
-          <li><strong>Monitor changes</strong> — Bitcoin's price, network difficulty, and hashrate fluctuate constantly. Re-run calculations weekly to stay informed.</li>
+          <li><strong>Monitor changes</strong>: Bitcoin's price, network difficulty, and hashrate fluctuate constantly. Re-run calculations weekly to stay informed.</li>
         </ol>
 
         <h2>How Bitcoin Mining Profitability Works</h2>
         <p>Bitcoin mining profitability depends on four key factors: hashrate, electricity cost, pool fees, and network conditions (difficulty, block reward, BTC price). Our calculator uses live BTC price data from CoinGecko and up-to-date difficulty benchmarks for accurate estimates.</p>
-        <p>Miners compete to solve cryptographic puzzles. The first to find a valid solution earns the block reward (currently 3.125 BTC) plus transaction fees. Your chance of solving a block is proportional to your share of the total network hashrate. With difficulty exceeding 100 trillion, solo mining is impractical — mining pools exist to provide steady income.</p>
-        <p>Profitability = revenue minus electricity. A 3,500W miner at $0.12/kWh costs $10.08/day. If it earns $12/day in BTC, net profit is $1.92/day. At $0.20/kWh, costs jump to $16.80 — a $4.80/day loss. Location matters tremendously.</p>
+        <p>Miners compete to solve cryptographic puzzles. The first to find a valid solution earns the block reward (currently 3.125 BTC) plus transaction fees. Your chance of solving a block is proportional to your share of the total network hashrate. With difficulty exceeding 100 trillion, solo mining is impractical, mining pools exist to provide steady income.</p>
+        <p>Profitability = revenue minus electricity. A 3,500W miner at $0.12/kWh costs $10.08/day. If it earns $12/day in BTC, net profit is $1.92/day. At $0.20/kWh, costs jump to $16.80, a $4.80/day loss. Location matters tremendously.</p>
 
         <h2>Key Factors Affecting Mining Profitability</h2>
         <ul class="seo-list">
-          <li><strong>Hashrate (TH/s)</strong> — the mining power of your hardware. Higher hashrate = more BTC mined per day.</li>
-          <li><strong>Power Consumption (Watts)</strong> — how much electricity your miner uses. This is your biggest ongoing cost.</li>
-          <li><strong>Electricity Cost ($/kWh)</strong> — varies by region. Average US rate is ~$0.12/kWh, but mining-friendly locations can be as low as $0.03-0.05/kWh.</li>
-          <li><strong>Pool Fee (%)</strong> — most mining pools charge 1-3% of your rewards. Solo mining is possible but impractical for most miners.</li>
-          <li><strong>Network Difficulty</strong> — adjusts every ~2 weeks. Higher difficulty means less BTC per hash.</li>
+          <li><strong>Hashrate (TH/s)</strong>: the mining power of your hardware. Higher hashrate = more BTC mined per day.</li>
+          <li><strong>Power Consumption (Watts)</strong>: how much electricity your miner uses. This is your biggest ongoing cost.</li>
+          <li><strong>Electricity Cost ($/kWh)</strong>: varies by region. Average US rate is ~$0.12/kWh, but mining-friendly locations can be as low as $0.03-0.05/kWh.</li>
+          <li><strong>Pool Fee (%)</strong>: most mining pools charge 1-3% of your rewards. Solo mining is possible but impractical for most miners.</li>
+          <li><strong>Network Difficulty</strong>: adjusts every ~2 weeks. Higher difficulty means less BTC per hash.</li>
         </ul>
 
         <h2>Mining Revenue Formula</h2>
@@ -168,11 +169,13 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         <p>Mining pools solve this problem by combining hashrate from thousands of miners. When the pool finds a block, the reward is distributed proportionally based on each miner's contributed work. This creates predictable, steady income rather than rare, massive payouts.</p>
         <p>Pools use different reward distribution methods:</p>
         <ul class="seo-list">
-          <li><strong>PPS (Pay Per Share)</strong> — you're paid a fixed amount for each share submitted, regardless of whether the pool finds a block. Lowest variance, but pools charge higher fees (2-3%).</li>
-          <li><strong>PPLNS (Pay Per Last N Shares)</strong> — rewards are distributed only when the pool finds a block, based on shares submitted in the recent window. Lower fees (1-2%) but slightly more variance.</li>
-          <li><strong>FPPS (Full Pay Per Share)</strong> — like PPS, but includes transaction fees in addition to the block reward.</li>
+          <li><strong>PPS (Pay Per Share)</strong>: you're paid a fixed amount for each share submitted, regardless of whether the pool finds a block. Lowest variance, but pools charge higher fees (2-3%).</li>
+          <li><strong>PPLNS (Pay Per Last N Shares)</strong>: rewards are distributed only when the pool finds a block, based on shares submitted in the recent window. Lower fees (1-2%) but slightly more variance.</li>
+          <li><strong>FPPS (Full Pay Per Share)</strong>: like PPS, but includes transaction fees in addition to the block reward.</li>
         </ul>
         <p>Popular pools include Foundry USA, F2Pool, Antpool, and ViaBTC. Most charge 1-2% fees and pay out daily or weekly once you reach the minimum threshold (typically 0.001-0.01 BTC).</p>
+
+        <AuthoritativeSources category="mining" />
 
         <h2>Frequently Asked Questions</h2>
         <details>
@@ -185,7 +188,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         </details>
         <details>
           <summary>What is the best ASIC miner to buy right now?</summary>
-          <p>The most efficient miners available in 2026 are the Antminer S21 XP at 13.5 J/TH (270 TH/s, ~$4,800) and the Antminer S21 Pro at 15 J/TH. For the best balance of price and performance, the standard Antminer S21 at 200 TH/s (~$3,500) remains popular. The key metric is joules per terahash (J/TH) — lower means more energy-efficient and more profitable at any electricity rate.</p>
+          <p>The most efficient miners available in 2026 are the Antminer S21 XP at 13.5 J/TH (270 TH/s, ~$4,800) and the Antminer S21 Pro at 15 J/TH. For the best balance of price and performance, the standard Antminer S21 at 200 TH/s (~$3,500) remains popular. The key metric is joules per terahash (J/TH), lower means more energy-efficient and more profitable at any electricity rate.</p>
         </details>
         <details>
           <summary>How much electricity does a Bitcoin miner use per month?</summary>
@@ -692,7 +695,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
       "name": "What is the best ASIC miner to buy right now?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The most efficient miners available in 2026 are the Antminer S21 XP at 13.5 J/TH (270 TH/s, ~$4,800) and the Antminer S21 Pro at 15 J/TH. The key metric is joules per terahash (J/TH) — lower means more energy-efficient and more profitable at any electricity rate."
+        "text": "The most efficient miners available in 2026 are the Antminer S21 XP at 13.5 J/TH (270 TH/s, ~$4,800) and the Antminer S21 Pro at 15 J/TH. The key metric is joules per terahash (J/TH), lower means more energy-efficient and more profitable at any electricity rate."
       }
     },
     {

@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
@@ -75,24 +76,24 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         <h2>How to Use the Pip / Tick Value Calculator</h2>
         <p>Our free pip value calculator helps crypto traders understand exactly how much money they gain or lose for every price tick. This is critical for setting accurate take-profit and stop-loss levels, and for managing risk across different position sizes.</p>
         <ol>
-          <li><strong>Select a trading pair</strong> — use the quick buttons (BTC, ETH, SOL, XRP, DOGE) or search for any coin. The current price is fetched automatically.</li>
-          <li><strong>Enter your position size</strong> — in USD or in coins. Toggle between the two modes with one click.</li>
-          <li><strong>Choose your tick/pip size</strong> — use the preset buttons or enter a custom value. The tick size depends on your exchange and the pair you trade.</li>
-          <li><strong>Read the results</strong> — see the dollar value of 1 pip, and a full table showing P&L for 1, 10, 50, 100, 500, and 1,000 pip moves.</li>
+          <li><strong>Select a trading pair</strong>: use the quick buttons (BTC, ETH, SOL, XRP, DOGE) or search for any coin. The current price is fetched automatically.</li>
+          <li><strong>Enter your position size</strong>: in USD or in coins. Toggle between the two modes with one click.</li>
+          <li><strong>Choose your tick/pip size</strong>: use the preset buttons or enter a custom value. The tick size depends on your exchange and the pair you trade.</li>
+          <li><strong>Read the results</strong>: see the dollar value of 1 pip, and a full table showing P&L for 1, 10, 50, 100, 500, and 1,000 pip moves.</li>
         </ol>
 
         <h3>Key Features</h3>
         <ul>
-          <li><strong>Auto-price fetching</strong> — real-time prices for 500+ cryptocurrencies via CoinGecko.</li>
-          <li><strong>Smart tick presets</strong> — tick sizes adapt to the selected coin's price magnitude.</li>
-          <li><strong>USD or Coins input</strong> — enter your position in whichever unit you prefer.</li>
-          <li><strong>Long/Short direction</strong> — see P&L labeled correctly for your trade direction.</li>
-          <li><strong>Quick reference table</strong> — common tick sizes for popular trading pairs.</li>
+          <li><strong>Auto-price fetching</strong>: real-time prices for 500+ cryptocurrencies via CoinGecko.</li>
+          <li><strong>Smart tick presets</strong>: tick sizes adapt to the selected coin's price magnitude.</li>
+          <li><strong>USD or Coins input</strong>: enter your position in whichever unit you prefer.</li>
+          <li><strong>Long/Short direction</strong>: see P&L labeled correctly for your trade direction.</li>
+          <li><strong>Quick reference table</strong>: common tick sizes for popular trading pairs.</li>
         </ul>
 
         <h2>What Is a Pip (Tick) in Crypto Trading?</h2>
         <p>A pip (or tick) is the smallest price increment a trading pair can move on an exchange. Unlike forex where a pip has a standardized definition (0.0001 for most pairs), crypto tick sizes vary by exchange and pair.</p>
-        <p>For example, on most exchanges BTC/USDT moves in increments of $0.10 or $1.00, while a low-cap altcoin might have a tick size of $0.00000001. The tick size determines the minimum price change — and knowing its dollar value for your position is essential for risk management.</p>
+        <p>For example, on most exchanges BTC/USDT moves in increments of $0.10 or $1.00, while a low-cap altcoin might have a tick size of $0.00000001. The tick size determines the minimum price change, and knowing its dollar value for your position is essential for risk management.</p>
 
         <h3>Pip Value Formula</h3>
         <div class="formula-block">
@@ -152,7 +153,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         </div>
 
         <h2>Why Pip Value Matters for Risk Management</h2>
-        <p>Understanding the dollar value of each tick is the foundation of position sizing. When you set a stop-loss 50 ticks away, you need to know whether that means a $25 loss or a $2,500 loss — the difference comes entirely from your position size.</p>
+        <p>Understanding the dollar value of each tick is the foundation of position sizing. When you set a stop-loss 50 ticks away, you need to know whether that means a $25 loss or a $2,500 loss, the difference comes entirely from your position size.</p>
         <p>Professional traders use pip value to reverse-engineer their position size: decide the maximum dollar loss first, then determine how many coins to trade based on the stop distance in ticks.</p>
 
         <h3>Connecting Pip Value to Position Sizing</h3>
@@ -162,11 +163,13 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         </div>
         <p>Use our <a href="/position-size-calculator/">Position Size Calculator</a> to automate this calculation with live prices.</p>
 
+        <AuthoritativeSources category="trading-tools" />
+
         <h2>Frequently Asked Questions</h2>
 
         <details>
           <summary>What is the difference between a pip and a tick in crypto?</summary>
-          <p>In crypto, the terms "pip" and "tick" are often used interchangeably. Both refer to the minimum price increment a trading pair can move on an exchange. Unlike forex, there is no standardized pip definition in crypto — it varies by exchange and pair.</p>
+          <p>In crypto, the terms "pip" and "tick" are often used interchangeably. Both refer to the minimum price increment a trading pair can move on an exchange. Unlike forex, there is no standardized pip definition in crypto, it varies by exchange and pair.</p>
         </details>
 
         <details>

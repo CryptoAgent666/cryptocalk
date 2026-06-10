@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -72,23 +73,23 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <h2>How to Use the Portfolio Allocation Calculator</h2>
         <p>Our free portfolio calculator helps you visualize your current crypto holdings, set target allocation percentages, and get precise rebalancing instructions. Whether you are building a new portfolio from scratch or adjusting an existing one, this tool makes it easy to maintain disciplined asset allocation.</p>
         <ol>
-          <li><strong>Add your assets</strong> — search for cryptocurrencies and enter the current value of each holding in USD. You can add as many assets as you like.</li>
-          <li><strong>View current allocation</strong> — see each asset's weight as a percentage of your total portfolio, with a visual breakdown.</li>
-          <li><strong>Set target weights</strong> — choose a preset allocation strategy (Conservative, Balanced, Aggressive) or define your own custom targets that add up to 100%.</li>
-          <li><strong>Get rebalancing actions</strong> — the calculator shows exactly which assets to buy or sell and by how much to reach your target allocation.</li>
+          <li><strong>Add your assets</strong>: search for cryptocurrencies and enter the current value of each holding in USD. You can add as many assets as you like.</li>
+          <li><strong>View current allocation</strong>: see each asset's weight as a percentage of your total portfolio, with a visual breakdown.</li>
+          <li><strong>Set target weights</strong>: choose a preset allocation strategy (Conservative, Balanced, Aggressive) or define your own custom targets that add up to 100%.</li>
+          <li><strong>Get rebalancing actions</strong>: the calculator shows exactly which assets to buy or sell and by how much to reach your target allocation.</li>
         </ol>
 
         <h3>Key Features</h3>
         <ul>
-          <li><strong>Preset portfolios</strong> — choose from Conservative (BTC-heavy), Balanced, or Aggressive (altcoin-heavy) starting points.</li>
-          <li><strong>Custom targets</strong> — set any allocation percentages you want with real-time validation.</li>
-          <li><strong>Buy-only rebalancing</strong> — optionally add new capital and rebalance without selling existing positions (tax-efficient).</li>
-          <li><strong>Visual allocation chart</strong> — see your current vs target allocation at a glance.</li>
-          <li><strong>Live prices</strong> — asset values update with real-time CoinGecko data.</li>
+          <li><strong>Preset portfolios</strong>: choose from Conservative (BTC-heavy), Balanced, or Aggressive (altcoin-heavy) starting points.</li>
+          <li><strong>Custom targets</strong>: set any allocation percentages you want with real-time validation.</li>
+          <li><strong>Buy-only rebalancing</strong>: optionally add new capital and rebalance without selling existing positions (tax-efficient).</li>
+          <li><strong>Visual allocation chart</strong>: see your current vs target allocation at a glance.</li>
+          <li><strong>Live prices</strong>: asset values update with real-time CoinGecko data.</li>
         </ul>
 
         <h2>Why Portfolio Allocation Matters in Crypto</h2>
-        <p>Research across traditional and crypto markets consistently shows that asset allocation is the single largest determinant of portfolio returns over time — more important than individual asset selection or market timing. In the highly volatile crypto market, proper allocation becomes even more critical because individual assets can drop 50-90% in bear markets.</p>
+        <p>Research across traditional and crypto markets consistently shows that asset allocation is the single largest determinant of portfolio returns over time, more important than individual asset selection or market timing. In the highly volatile crypto market, proper allocation becomes even more critical because individual assets can drop 50-90% in bear markets.</p>
         <p>A well-allocated portfolio balances risk and reward by spreading investments across assets with different risk profiles. Bitcoin and Ethereum serve as the "blue chips" of crypto with relatively lower volatility, while smaller altcoins offer higher potential returns but with significantly more risk. Stablecoins provide a buffer and liquidity for buying opportunities during dips.</p>
 
         <h3>Common Crypto Allocation Strategies</h3>
@@ -113,9 +114,9 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <h3>Rebalancing Methods</h3>
         <ul>
-          <li><strong>Calendar rebalancing</strong> — rebalance on a fixed schedule (monthly, quarterly, or annually). Simple to implement and avoids over-trading.</li>
-          <li><strong>Threshold rebalancing</strong> — rebalance whenever any asset drifts more than 5-10% from its target weight. More responsive to market moves but requires regular monitoring.</li>
-          <li><strong>Buy-only rebalancing</strong> — instead of selling overweight assets, direct new investments to underweight assets. This is the most tax-efficient method since you avoid triggering capital gains events.</li>
+          <li><strong>Calendar rebalancing</strong>: rebalance on a fixed schedule (monthly, quarterly, or annually). Simple to implement and avoids over-trading.</li>
+          <li><strong>Threshold rebalancing</strong>: rebalance whenever any asset drifts more than 5-10% from its target weight. More responsive to market moves but requires regular monitoring.</li>
+          <li><strong>Buy-only rebalancing</strong>: instead of selling overweight assets, direct new investments to underweight assets. This is the most tax-efficient method since you avoid triggering capital gains events.</li>
         </ul>
 
         <h3>Rebalancing Formula</h3>
@@ -125,30 +126,32 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <p>If your target for ETH is 25% but it currently represents 35% of a $10,000 portfolio, you would sell $1,000 worth of ETH (10% × $10,000) and redistribute it to underweight assets.</p>
 
         <h2>Portfolio Diversification Guidelines</h2>
-        <p>Diversification reduces the impact of any single asset's poor performance on your overall portfolio. However, in crypto, many assets are highly correlated — when Bitcoin drops, most altcoins drop harder. True diversification requires thoughtful asset selection across different categories:</p>
+        <p>Diversification reduces the impact of any single asset's poor performance on your overall portfolio. However, in crypto, many assets are highly correlated, when Bitcoin drops, most altcoins drop harder. True diversification requires thoughtful asset selection across different categories:</p>
         <ul>
-          <li><strong>Store of value</strong> — Bitcoin (BTC) serves as the foundation.</li>
-          <li><strong>Smart contract platforms</strong> — Ethereum (ETH), Solana (SOL), Avalanche (AVAX) provide exposure to different ecosystems.</li>
-          <li><strong>DeFi tokens</strong> — protocol tokens like AAVE, UNI, or MKR for decentralized finance exposure.</li>
-          <li><strong>Infrastructure</strong> — Layer 2 solutions, oracles (LINK), and cross-chain protocols.</li>
-          <li><strong>Stablecoins</strong> — USDT, USDC, or DAI for stability and buying-dip opportunities.</li>
+          <li><strong>Store of value</strong>: Bitcoin (BTC) serves as the foundation.</li>
+          <li><strong>Smart contract platforms</strong>: Ethereum (ETH), Solana (SOL), Avalanche (AVAX) provide exposure to different ecosystems.</li>
+          <li><strong>DeFi tokens</strong>: protocol tokens like AAVE, UNI, or MKR for decentralized finance exposure.</li>
+          <li><strong>Infrastructure</strong>: Layer 2 solutions, oracles (LINK), and cross-chain protocols.</li>
+          <li><strong>Stablecoins</strong>: USDT, USDC, or DAI for stability and buying-dip opportunities.</li>
         </ul>
         <p>A well-diversified crypto portfolio typically has 5-10 assets. Fewer than 4 concentrates risk, while more than 15 makes it difficult to track and may dilute returns from your best picks.</p>
 
         <h2>Common Portfolio Mistakes to Avoid</h2>
         <ul>
-          <li><strong>No rebalancing at all</strong> — letting winners run indefinitely creates concentration risk. The 2021 cycle showed that today's top performer can lose 90% in the next bear market.</li>
-          <li><strong>Over-diversifying into 30+ coins</strong> — spreading capital too thin means even a 10x on one asset barely moves the portfolio. Focus on quality over quantity.</li>
-          <li><strong>100% altcoins, 0% BTC/ETH</strong> — altcoins can outperform in bull markets but typically lose 90-99% in bear markets. A core BTC/ETH position provides stability.</li>
-          <li><strong>No stablecoin allocation</strong> — having 5-20% in stablecoins gives you liquidity to buy during major dips without selling other positions at a loss.</li>
-          <li><strong>Emotional rebalancing</strong> — selling everything that has dropped and buying everything that has pumped is the opposite of disciplined rebalancing.</li>
+          <li><strong>No rebalancing at all</strong>: letting winners run indefinitely creates concentration risk. The 2021 cycle showed that today's top performer can lose 90% in the next bear market.</li>
+          <li><strong>Over-diversifying into 30+ coins</strong>: spreading capital too thin means even a 10x on one asset barely moves the portfolio. Focus on quality over quantity.</li>
+          <li><strong>100% altcoins, 0% BTC/ETH</strong>: altcoins can outperform in bull markets but typically lose 90-99% in bear markets. A core BTC/ETH position provides stability.</li>
+          <li><strong>No stablecoin allocation</strong>: having 5-20% in stablecoins gives you liquidity to buy during major dips without selling other positions at a loss.</li>
+          <li><strong>Emotional rebalancing</strong>: selling everything that has dropped and buying everything that has pumped is the opposite of disciplined rebalancing.</li>
         </ul>
+
+        <AuthoritativeSources category="investment" />
 
         <h2>Frequently Asked Questions</h2>
 
         <details>
           <summary>How often should I rebalance my crypto portfolio?</summary>
-          <p>Most investors rebalance monthly or quarterly. Calendar-based rebalancing is simple and effective. Some prefer threshold-based rebalancing — only adjusting when an asset drifts 5-10% from its target. In highly volatile crypto markets, quarterly rebalancing strikes a good balance between maintaining targets and avoiding excessive trading fees.</p>
+          <p>Most investors rebalance monthly or quarterly. Calendar-based rebalancing is simple and effective. Some prefer threshold-based rebalancing, only adjusting when an asset drifts 5-10% from its target. In highly volatile crypto markets, quarterly rebalancing strikes a good balance between maintaining targets and avoiding excessive trading fees.</p>
         </details>
 
         <details>

@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -72,17 +73,17 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <div class="quick-answer"><strong>Quick answer:</strong> Gas fee = Gas Price &times; Gas Limit &times; Token Price. For Ethereum, a basic transfer costs ~21,000 gas units. At 1 Gwei and $2,419/ETH, that's about $0.05 per transaction.</div>
         <h2>How to Use the Gas Fee Calculator</h2>
         <ol>
-          <li><strong>Select a Network</strong> — Choose from Ethereum, Arbitrum, Optimism, Base, Polygon, BNB Chain, or Solana to see network-specific gas estimates.</li>
-          <li><strong>Pick a Transaction Type</strong> — Select the action you want to perform: simple transfer, token swap, NFT minting, contract deployment, or bridging assets.</li>
-          <li><strong>Choose a Speed Tier</strong> — Pick between slow, standard, or fast confirmation speeds. Faster speeds cost more but confirm quicker.</li>
-          <li><strong>View Real-Time Results</strong> — See estimated costs in both native tokens (ETH, MATIC, BNB, SOL) and USD equivalents.</li>
-          <li><strong>Compare Networks</strong> — Toggle between networks to find the most cost-effective option for your transaction.</li>
-          <li><strong>Adjust Parameters</strong> — Fine-tune gas limits or priority fees if you need custom settings for advanced transactions.</li>
+          <li><strong>Select a Network</strong>: Choose from Ethereum, Arbitrum, Optimism, Base, Polygon, BNB Chain, or Solana to see network-specific gas estimates.</li>
+          <li><strong>Pick a Transaction Type</strong>: Select the action you want to perform: simple transfer, token swap, NFT minting, contract deployment, or bridging assets.</li>
+          <li><strong>Choose a Speed Tier</strong>: Pick between slow, standard, or fast confirmation speeds. Faster speeds cost more but confirm quicker.</li>
+          <li><strong>View Real-Time Results</strong>: See estimated costs in both native tokens (ETH, MATIC, BNB, SOL) and USD equivalents.</li>
+          <li><strong>Compare Networks</strong>: Toggle between networks to find the most cost-effective option for your transaction.</li>
+          <li><strong>Adjust Parameters</strong>: Fine-tune gas limits or priority fees if you need custom settings for advanced transactions.</li>
         </ol>
 
         <h2>Understanding Crypto Gas Fees</h2>
         <p>Gas fees are transaction costs paid to network validators for processing and securing blockchain transactions. Every operation on a blockchain network requires computational resources, and gas fees compensate validators for providing those resources. Think of gas as the "fuel" that powers transactions on decentralized networks.</p>
-        <p>These fees aren't arbitrary — they serve critical functions in blockchain ecosystems. Gas fees prevent spam attacks by making it expensive to flood the network with junk transactions. They also create economic incentives for validators to maintain network security and process transactions reliably. When network demand is high, fees rise to prioritize transactions that users value most.</p>
+        <p>These fees aren't arbitrary, they serve critical functions in blockchain ecosystems. Gas fees prevent spam attacks by making it expensive to flood the network with junk transactions. They also create economic incentives for validators to maintain network security and process transactions reliably. When network demand is high, fees rise to prioritize transactions that users value most.</p>
         <p>Gas costs vary dramatically based on network congestion, transaction complexity, and the blockchain you're using. A simple ETH transfer on Ethereum mainnet might cost $1-50 during normal conditions, while the same transaction on a Layer 2 network like Base or Arbitrum costs fractions of a cent. Understanding how gas works helps you choose the right network and timing for your transactions.</p>
 
         <h2>Gas Fee Formula</h2>
@@ -160,22 +161,22 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <h2>Gas Costs by Transaction Type</h2>
         <p>Different blockchain operations consume varying amounts of gas based on their computational complexity. Understanding these differences helps you budget for transaction costs and choose the most efficient way to accomplish your goals.</p>
-        <p><strong>Simple Transfer (21,000 gas)</strong> — Sending ETH or native tokens from one wallet to another is the cheapest operation on any EVM network. This consumes a fixed 21,000 gas units regardless of the amount transferred.</p>
-        <p><strong>ERC-20 Transfer (~65,000 gas)</strong> — Sending tokens like USDC, DAI, or LINK requires interacting with a smart contract, which costs roughly 3× more gas than a simple ETH transfer. The first interaction with a token contract costs more due to storage initialization.</p>
-        <p><strong>DEX Swap (150,000-300,000 gas)</strong> — Swapping tokens on Uniswap, SushiSwap, or similar decentralized exchanges involves multiple contract interactions: approving token spending, executing the swap, and updating liquidity pool states. Complex routes with multiple hops cost even more.</p>
-        <p><strong>NFT Mint (100,000-250,000 gas)</strong> — Minting NFTs writes new data to the blockchain permanently, requiring significant gas. Batch minting multiple NFTs in one transaction is more efficient than minting individually.</p>
-        <p><strong>Contract Deployment (500,000-5,000,000 gas)</strong> — Deploying new smart contracts is the most expensive operation, as it permanently stores contract code on-chain. Large contracts with extensive logic can cost hundreds or even thousands of dollars on Ethereum mainnet.</p>
+        <p><strong>Simple Transfer (21,000 gas)</strong>: Sending ETH or native tokens from one wallet to another is the cheapest operation on any EVM network. This consumes a fixed 21,000 gas units regardless of the amount transferred.</p>
+        <p><strong>ERC-20 Transfer (~65,000 gas)</strong>: Sending tokens like USDC, DAI, or LINK requires interacting with a smart contract, which costs roughly 3× more gas than a simple ETH transfer. The first interaction with a token contract costs more due to storage initialization.</p>
+        <p><strong>DEX Swap (150,000-300,000 gas)</strong>: Swapping tokens on Uniswap, SushiSwap, or similar decentralized exchanges involves multiple contract interactions: approving token spending, executing the swap, and updating liquidity pool states. Complex routes with multiple hops cost even more.</p>
+        <p><strong>NFT Mint (100,000-250,000 gas)</strong>: Minting NFTs writes new data to the blockchain permanently, requiring significant gas. Batch minting multiple NFTs in one transaction is more efficient than minting individually.</p>
+        <p><strong>Contract Deployment (500,000-5,000,000 gas)</strong>: Deploying new smart contracts is the most expensive operation, as it permanently stores contract code on-chain. Large contracts with extensive logic can cost hundreds or even thousands of dollars on Ethereum mainnet.</p>
 
         <h2>How to Save on Gas Fees</h2>
         <ul>
-          <li><strong>Use Layer 2 Networks</strong> — Arbitrum, Optimism, Base, and Polygon offer 10-100× lower fees than Ethereum mainnet while maintaining security through Ethereum settlement.</li>
-          <li><strong>Time Your Transactions</strong> — Gas fees are lowest during weekends and late-night hours (UTC). Avoid peak trading times (weekday afternoons in the US and Europe) when fees spike.</li>
-          <li><strong>Batch Operations</strong> — Combine multiple transactions into one when possible. Approving and swapping in separate transactions wastes gas; use interfaces that batch these operations together.</li>
-          <li><strong>Set Custom Gas Limits</strong> — Wallets often overestimate gas limits. If you know a transaction's requirements, manually setting a tighter limit can save 10-20% on fees.</li>
-          <li><strong>Use Gas Tokens Strategically</strong> — Some protocols offer gas rebates or allow you to mint "gas tokens" when fees are low and redeem them when fees are high, effectively hedging against volatility.</li>
-          <li><strong>Choose Efficient Protocols</strong> — Some DEXs and DeFi protocols are more gas-efficient than others. Research which implementations use optimized contracts before committing to a platform.</li>
-          <li><strong>Avoid Failed Transactions</strong> — Double-check wallet addresses, token approvals, and slippage settings before submitting transactions. Failed transactions still consume gas but accomplish nothing.</li>
-          <li><strong>Leverage Account Abstraction</strong> — Newer wallet standards like ERC-4337 allow transaction batching, gasless approvals, and sponsored transactions that can dramatically reduce costs for frequent users.</li>
+          <li><strong>Use Layer 2 Networks</strong>: Arbitrum, Optimism, Base, and Polygon offer 10-100× lower fees than Ethereum mainnet while maintaining security through Ethereum settlement.</li>
+          <li><strong>Time Your Transactions</strong>: Gas fees are lowest during weekends and late-night hours (UTC). Avoid peak trading times (weekday afternoons in the US and Europe) when fees spike.</li>
+          <li><strong>Batch Operations</strong>: Combine multiple transactions into one when possible. Approving and swapping in separate transactions wastes gas; use interfaces that batch these operations together.</li>
+          <li><strong>Set Custom Gas Limits</strong>: Wallets often overestimate gas limits. If you know a transaction's requirements, manually setting a tighter limit can save 10-20% on fees.</li>
+          <li><strong>Use Gas Tokens Strategically</strong>: Some protocols offer gas rebates or allow you to mint "gas tokens" when fees are low and redeem them when fees are high, effectively hedging against volatility.</li>
+          <li><strong>Choose Efficient Protocols</strong>: Some DEXs and DeFi protocols are more gas-efficient than others. Research which implementations use optimized contracts before committing to a platform.</li>
+          <li><strong>Avoid Failed Transactions</strong>: Double-check wallet addresses, token approvals, and slippage settings before submitting transactions. Failed transactions still consume gas but accomplish nothing.</li>
+          <li><strong>Leverage Account Abstraction</strong>: Newer wallet standards like ERC-4337 allow transaction batching, gasless approvals, and sponsored transactions that can dramatically reduce costs for frequent users.</li>
         </ul>
 
         <h2>Understanding EIP-1559</h2>
@@ -183,6 +184,8 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <p>The <strong>base fee</strong> is burned (permanently removed from circulation) rather than paid to validators. This creates deflationary pressure on ETH supply during high network usage. When blocks are more than 50% full, the base fee increases by up to 12.5% per block; when blocks are less than 50% full, it decreases proportionally. This mechanism stabilizes fees and makes them more predictable.</p>
         <p><strong>Priority fees</strong> (tips) go directly to validators and incentivize faster inclusion. Users can set low tips during calm periods or boost tips during congestion to jump the queue. Wallets now display "max fee" (the ceiling you're willing to pay) and "priority fee" separately, giving you fine-grained control over transaction costs and confirmation speed.</p>
         <p>EIP-1559 also improved user experience by eliminating most gas price guesswork. Wallets can estimate the base fee for upcoming blocks with high accuracy, meaning you no longer need to manually adjust gas prices or risk transactions getting stuck in the mempool for hours.</p>
+
+        <AuthoritativeSources category="gas-fees" />
 
         <h2>Frequently Asked Questions</h2>
 

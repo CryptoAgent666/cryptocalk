@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -71,12 +72,12 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <div class="quick-answer"><strong>Quick answer:</strong> Calculate token vesting schedules and unlock values. A 4-year vest with 1-year cliff and monthly unlocks releases 0% for 12 months, then ~2.78% monthly for the remaining 36 months.</div>
         <h2>How to Use the Vesting Calculator</h2>
         <ol>
-          <li><strong>Enter total token allocation</strong> — The number of tokens you received or the total allocation you're analyzing (e.g., from a presale, team allocation, or advisor grant).</li>
-          <li><strong>Set the token price</strong> — Enter the current market price per token. This is used to calculate dollar values for each unlock event.</li>
-          <li><strong>Configure TGE unlock percentage</strong> — Choose what percentage of tokens unlock immediately at the Token Generation Event. Common values range from 0% (fully locked) to 25%.</li>
-          <li><strong>Set the cliff period</strong> — The number of months before any vesting begins. During the cliff, zero additional tokens unlock beyond the TGE allocation.</li>
-          <li><strong>Define vesting duration</strong> — The total months over which the remaining tokens will unlock after the cliff ends. Typical durations range from 6 to 48 months.</li>
-          <li><strong>Choose unlock frequency</strong> — Select monthly, quarterly, or linear (daily) vesting. Monthly and quarterly create step-function unlocks, while linear provides continuous gradual release.</li>
+          <li><strong>Enter total token allocation</strong>: The number of tokens you received or the total allocation you're analyzing (e.g., from a presale, team allocation, or advisor grant).</li>
+          <li><strong>Set the token price</strong>: Enter the current market price per token. This is used to calculate dollar values for each unlock event.</li>
+          <li><strong>Configure TGE unlock percentage</strong>: Choose what percentage of tokens unlock immediately at the Token Generation Event. Common values range from 0% (fully locked) to 25%.</li>
+          <li><strong>Set the cliff period</strong>: The number of months before any vesting begins. During the cliff, zero additional tokens unlock beyond the TGE allocation.</li>
+          <li><strong>Define vesting duration</strong>: The total months over which the remaining tokens will unlock after the cliff ends. Typical durations range from 6 to 48 months.</li>
+          <li><strong>Choose unlock frequency</strong>: Select monthly, quarterly, or linear (daily) vesting. Monthly and quarterly create step-function unlocks, while linear provides continuous gradual release.</li>
         </ol>
 
         <h2>What Is Token Vesting?</h2>
@@ -88,7 +89,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <p>The TGE unlock is the initial percentage of tokens released at the moment the token becomes tradeable. For public sale participants, TGE unlocks typically range from 10% to 100%, depending on the project. Private sale investors usually receive lower TGE unlocks (5-20%) to prevent immediate selling. A 0% TGE means all tokens remain locked until the cliff period ends.</p>
 
         <h3>Cliff Period</h3>
-        <p>The cliff is a waiting period after TGE during which no additional tokens are released. It acts as a commitment mechanism — if you leave the project or sell before the cliff ends, you forfeit unvested tokens (in employee/contributor contexts). Common cliff periods are 3, 6, or 12 months. For team tokens, 12-month cliffs are standard to demonstrate long-term commitment.</p>
+        <p>The cliff is a waiting period after TGE during which no additional tokens are released. It acts as a commitment mechanism, if you leave the project or sell before the cliff ends, you forfeit unvested tokens (in employee/contributor contexts). Common cliff periods are 3, 6, or 12 months. For team tokens, 12-month cliffs are standard to demonstrate long-term commitment.</p>
 
         <h3>Vesting Duration</h3>
         <p>After the cliff ends, tokens begin unlocking according to the vesting schedule. The duration can range from 6 months for aggressive short-term unlocks to 48 months or more for conservative long-term vesting. The total schedule length (cliff + vesting) determines when the last tokens become available.</p>
@@ -99,10 +100,10 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <h2>How Token Unlocks Affect Price</h2>
         <p>Token unlock events can significantly impact market prices due to the sudden increase in circulating supply. When a large batch of previously locked tokens becomes available for trading, holders who want to take profits or realize their investment gains may sell, creating downward price pressure. The magnitude of this impact depends on several factors:</p>
         <ul>
-          <li><strong>Unlock size relative to circulating supply</strong> — A 5% unlock when 80% of tokens are already circulating has minimal impact. A 10% unlock when only 20% is circulating can be dramatic.</li>
-          <li><strong>Who receives the unlocked tokens</strong> — Team and investor unlocks tend to create more sell pressure than community or ecosystem unlocks, as early investors are more likely to realize profits.</li>
-          <li><strong>Market conditions</strong> — During bull markets, sell pressure from unlocks is often absorbed by new buying demand. In bear markets, even small unlocks can accelerate price declines.</li>
-          <li><strong>Token utility and staking</strong> — If unlocked tokens can be staked or used in governance, holders may choose to keep them rather than sell, reducing actual sell pressure.</li>
+          <li><strong>Unlock size relative to circulating supply</strong>: A 5% unlock when 80% of tokens are already circulating has minimal impact. A 10% unlock when only 20% is circulating can be dramatic.</li>
+          <li><strong>Who receives the unlocked tokens</strong>: Team and investor unlocks tend to create more sell pressure than community or ecosystem unlocks, as early investors are more likely to realize profits.</li>
+          <li><strong>Market conditions</strong>: During bull markets, sell pressure from unlocks is often absorbed by new buying demand. In bear markets, even small unlocks can accelerate price declines.</li>
+          <li><strong>Token utility and staking</strong>: If unlocked tokens can be staked or used in governance, holders may choose to keep them rather than sell, reducing actual sell pressure.</li>
         </ul>
 
         <h2>Common Vesting Schedules by Category</h2>
@@ -169,6 +170,8 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <p>Before buying a token, check what percentage of total supply is currently circulating versus locked. A token with only 10% circulating supply will face significant dilution as the remaining 90% unlocks over time. Even if the project is successful, the constant influx of new tokens can suppress price growth. Compare this to a fully circulated token where all potential sell pressure has already been absorbed by the market.</p>
         <p>For projects you're already invested in, track upcoming unlock dates and plan accordingly. Some traders reduce positions before large unlock events and re-enter afterward if the project fundamentals remain strong. Others view post-unlock dips as buying opportunities, knowing that the selling pressure is temporary.</p>
 
+        <AuthoritativeSources category="tax-reporting" />
+
         <h2>Frequently Asked Questions</h2>
 
         <details>
@@ -183,7 +186,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <details>
           <summary>What happens when tokens unlock?</summary>
-          <p>When tokens unlock, they move from a locked state to a freely tradeable state. The holder can now sell, transfer, stake, or use them in DeFi protocols. In practice, not all unlocked tokens are sold immediately — some holders may continue to hold or stake them. However, large unlock events often create temporary downward price pressure as some holders sell. The actual impact depends on the unlock size relative to circulating supply, market conditions, and holder profiles.</p>
+          <p>When tokens unlock, they move from a locked state to a freely tradeable state. The holder can now sell, transfer, stake, or use them in DeFi protocols. In practice, not all unlocked tokens are sold immediately, some holders may continue to hold or stake them. However, large unlock events often create temporary downward price pressure as some holders sell. The actual impact depends on the unlock size relative to circulating supply, market conditions, and holder profiles.</p>
         </details>
 
         <details>
@@ -193,7 +196,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <details>
           <summary>What is the difference between linear and monthly vesting?</summary>
-          <p>Monthly vesting releases a fixed batch of tokens once per month, creating discrete unlock events. For example, 100,000 tokens over 24 months means 4,167 tokens unlock on the same day each month. Linear (daily) vesting continuously releases tokens — in the same example, roughly 137 tokens would unlock every day. Monthly creates larger, more noticeable sell pressure events, while linear distributes the pressure more evenly. Most projects use monthly for simplicity, but some DeFi protocols implement linear vesting through smart contracts.</p>
+          <p>Monthly vesting releases a fixed batch of tokens once per month, creating discrete unlock events. For example, 100,000 tokens over 24 months means 4,167 tokens unlock on the same day each month. Linear (daily) vesting continuously releases tokens, in the same example, roughly 137 tokens would unlock every day. Monthly creates larger, more noticeable sell pressure events, while linear distributes the pressure more evenly. Most projects use monthly for simplicity, but some DeFi protocols implement linear vesting through smart contracts.</p>
         </details>
 
         <details>

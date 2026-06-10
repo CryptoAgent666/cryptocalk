@@ -7,6 +7,7 @@ import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
@@ -79,33 +80,33 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         </div>
         <h2>How to Use the DCA Calculator</h2>
         <ol>
-          <li><strong>Select a cryptocurrency</strong> — Choose from Bitcoin, Ethereum, or 500+ altcoins using the search dropdown</li>
-          <li><strong>Set your start date</strong> — Pick when you would have begun investing (historical data goes back several years)</li>
-          <li><strong>Choose purchase frequency</strong> — Daily, weekly, bi-weekly, or monthly intervals</li>
-          <li><strong>Enter your investment amount</strong> — How much you invest per purchase (or use quick amounts)</li>
-          <li><strong>Review results</strong> — See total invested, current value, ROI, average price, and performance vs lump sum</li>
-          <li><strong>Analyze the chart</strong> — Track your portfolio value over time compared to total invested</li>
+          <li><strong>Select a cryptocurrency</strong>: Choose from Bitcoin, Ethereum, or 500+ altcoins using the search dropdown</li>
+          <li><strong>Set your start date</strong>: Pick when you would have begun investing (historical data goes back several years)</li>
+          <li><strong>Choose purchase frequency</strong>: Daily, weekly, bi-weekly, or monthly intervals</li>
+          <li><strong>Enter your investment amount</strong>: How much you invest per purchase (or use quick amounts)</li>
+          <li><strong>Review results</strong>: See total invested, current value, ROI, average price, and performance vs lump sum</li>
+          <li><strong>Analyze the chart</strong>: Track your portfolio value over time compared to total invested</li>
         </ol>
 
         <h2>What Is Dollar Cost Averaging (DCA)?</h2>
-        <p>Dollar-cost averaging (DCA) is an investment strategy where you invest a fixed amount of money at regular intervals, regardless of the asset's price. Instead of trying to time the market, you buy consistently — whether prices are high or low.</p>
+        <p>Dollar-cost averaging (DCA) is an investment strategy where you invest a fixed amount of money at regular intervals, regardless of the asset's price. Instead of trying to time the market, you buy consistently, whether prices are high or low.</p>
         <p>This strategy reduces the impact of volatility and removes emotional decision-making from investing. It's especially popular in crypto, where price swings can be extreme. By spreading purchases over time, you avoid the risk of investing all your capital at a market peak.</p>
 
         <h2>How DCA Works in Crypto</h2>
         <ul class="seo-list">
-          <li><strong>Choose your amount</strong> — e.g., $100 per month</li>
-          <li><strong>Set a schedule</strong> — daily, weekly, bi-weekly, or monthly</li>
-          <li><strong>Buy automatically</strong> — most exchanges support recurring purchases</li>
-          <li><strong>Stay consistent</strong> — the key benefit comes from long-term discipline</li>
+          <li><strong>Choose your amount</strong>: e.g., $100 per month</li>
+          <li><strong>Set a schedule</strong>: daily, weekly, bi-weekly, or monthly</li>
+          <li><strong>Buy automatically</strong>: most exchanges support recurring purchases</li>
+          <li><strong>Stay consistent</strong>: the key benefit comes from long-term discipline</li>
         </ul>
 
         <h2>DCA vs Lump Sum Investing</h2>
         <p>Research shows that lump sum investing often outperforms DCA in traditionally rising markets. However, DCA has key advantages in volatile markets like crypto:</p>
         <ul class="seo-list">
-          <li><strong>Lower risk</strong> — you avoid investing all your money at a market peak</li>
-          <li><strong>Reduced stress</strong> — no need to time the market</li>
-          <li><strong>Consistent habit</strong> — builds a disciplined investment routine</li>
-          <li><strong>Dollar-cost benefit</strong> — you buy more coins when prices are low, fewer when prices are high</li>
+          <li><strong>Lower risk</strong>: you avoid investing all your money at a market peak</li>
+          <li><strong>Reduced stress</strong>: no need to time the market</li>
+          <li><strong>Consistent habit</strong>: builds a disciplined investment routine</li>
+          <li><strong>Dollar-cost benefit</strong>: you buy more coins when prices are low, fewer when prices are high</li>
         </ul>
 
         <div class="table-responsive">
@@ -159,25 +160,27 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
         <h2>The Psychology of DCA</h2>
         <p>DCA succeeds not just because of the math, but because of human psychology. The strategy works with human nature instead of against it.</p>
-        <p><strong>Removes decision fatigue:</strong> You don't need to analyze charts, read news, or make judgment calls. The decision is already made — you buy on schedule, every time.</p>
-        <p><strong>Avoids regret:</strong> Because you're spreading purchases over time, you never have to worry about "I should have waited" or "I bought at the top." Some purchases will be high, some will be low — and that's the point.</p>
+        <p><strong>Removes decision fatigue:</strong> You don't need to analyze charts, read news, or make judgment calls. The decision is already made, you buy on schedule, every time.</p>
+        <p><strong>Avoids regret:</strong> Because you're spreading purchases over time, you never have to worry about "I should have waited" or "I bought at the top." Some purchases will be high, some will be low, and that's the point.</p>
         <p><strong>Builds discipline:</strong> DCA creates a consistent investing habit that compounds over time. The ritual of regular purchases keeps you engaged with your portfolio without obsessing over daily price movements.</p>
 
         <h2>How to Automate DCA</h2>
         <p>Most cryptocurrency exchanges now offer automated recurring purchase features, making DCA effortless. You set your parameters once, and the exchange executes purchases on your behalf.</p>
-        <p>Popular platforms with auto-DCA include Coinbase (Recurring Buy), Binance (Auto-Invest), Kraken (Buy Crypto), Gemini (Recurring Buy), and Cash App (Auto-Invest for Bitcoin). These tools let you choose your cryptocurrency, purchase amount, and frequency — then handle everything automatically.</p>
+        <p>Popular platforms with auto-DCA include Coinbase (Recurring Buy), Binance (Auto-Invest), Kraken (Buy Crypto), Gemini (Recurring Buy), and Cash App (Auto-Invest for Bitcoin). These tools let you choose your cryptocurrency, purchase amount, and frequency, then handle everything automatically.</p>
         <p>When setting up automation, consider exchange fees, minimum purchase amounts, and whether the platform supports your preferred coins. Some platforms offer fee discounts for recurring purchases or higher-tier accounts.</p>
 
         <h2>Common DCA Mistakes</h2>
         <p>Even with a simple strategy like DCA, there are pitfalls to avoid:</p>
         <ul class="seo-list">
-          <li><strong>Stopping during dips:</strong> The worst time to stop DCA is during a bear market. Lower prices mean you're accumulating more coins — exactly when the strategy provides the most benefit.</li>
+          <li><strong>Stopping during dips:</strong> The worst time to stop DCA is during a bear market. Lower prices mean you're accumulating more coins, exactly when the strategy provides the most benefit.</li>
           <li><strong>DCA into bad projects:</strong> DCA doesn't fix a fundamentally flawed investment. Apply the strategy to established cryptocurrencies with long-term potential, not speculative meme coins.</li>
           <li><strong>Not rebalancing:</strong> If you DCA into multiple assets, periodically review your portfolio allocation. Market movements can shift your target percentages over time.</li>
           <li><strong>Using only one asset:</strong> While Bitcoin-only DCA is popular, diversifying across 2-3 quality projects can reduce concentration risk.</li>
           <li><strong>Ignoring fees:</strong> Small recurring purchases can be eaten by fees. Calculate whether daily purchases make sense compared to weekly or monthly.</li>
           <li><strong>Never taking profits:</strong> DCA is great for accumulation, but consider having an exit strategy or taking partial profits during strong bull markets.</li>
         </ul>
+
+        <AuthoritativeSources category="investment" />
 
         <h2>Frequently Asked Questions</h2>
         <details>
@@ -190,7 +193,7 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         </details>
         <details>
           <summary>How much should I invest in crypto per month?</summary>
-          <p>Only invest what you can afford to lose entirely. A common guideline is allocating 5-15% of your investable income to high-risk assets like cryptocurrency. Even $25-50/week ($100-200/month) builds meaningful positions over time. The critical factor is consistency — maintaining your DCA schedule through both bull and bear markets is more important than the dollar amount.</p>
+          <p>Only invest what you can afford to lose entirely. A common guideline is allocating 5-15% of your investable income to high-risk assets like cryptocurrency. Even $25-50/week ($100-200/month) builds meaningful positions over time. The critical factor is consistency, maintaining your DCA schedule through both bull and bear markets is more important than the dollar amount.</p>
         </details>
         <details>
           <summary>Should I DCA daily, weekly, or monthly?</summary>
@@ -202,7 +205,7 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         </details>
         <details>
           <summary>Does DCA work for Ethereum and altcoins too?</summary>
-          <p>DCA works for any asset with long-term growth potential. Ethereum has rewarded DCA investors over multi-year periods similarly to Bitcoin. However, avoid DCA into highly speculative low-cap tokens — the strategy assumes the asset will recover from drawdowns, which many altcoins never do. Stick to top-10 established cryptocurrencies for DCA strategies.</p>
+          <p>DCA works for any asset with long-term growth potential. Ethereum has rewarded DCA investors over multi-year periods similarly to Bitcoin. However, avoid DCA into highly speculative low-cap tokens, the strategy assumes the asset will recover from drawdowns, which many altcoins never do. Stick to top-10 established cryptocurrencies for DCA strategies.</p>
         </details>
 
         <h2>Related Calculators</h2>

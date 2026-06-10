@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -71,9 +72,9 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <div class="quick-answer"><strong>Quick answer:</strong> Required margin = Position Size / Leverage. Opening a $50,000 BTC position at 10x leverage requires $5,000 margin. Your margin ratio (equity/position) determines how close you are to liquidation.</div>
         <h2>How to Use the Margin Calculator</h2>
         <ol>
-          <li>Enter your <strong>position size</strong> — the total value of your leveraged trade in dollars or your preferred currency.</li>
-          <li>Select your <strong>leverage multiplier</strong> — common options include 5x, 10x, 20x, 50x, or 100x depending on your exchange and risk tolerance.</li>
-          <li>Input your <strong>account balance</strong> (equity) — this is the total funds available in your trading account.</li>
+          <li>Enter your <strong>position size</strong>: the total value of your leveraged trade in dollars or your preferred currency.</li>
+          <li>Select your <strong>leverage multiplier</strong>: common options include 5x, 10x, 20x, 50x, or 100x depending on your exchange and risk tolerance.</li>
+          <li>Input your <strong>account balance</strong> (equity), this is the total funds available in your trading account.</li>
           <li>Review the calculated <strong>required margin</strong>, which shows how much collateral is needed to open the position.</li>
           <li>Check your <strong>margin level</strong> to assess position health and see how much buffer you have before liquidation.</li>
           <li>View the <strong>margin call price</strong> to understand at what price point your position becomes at risk of liquidation.</li>
@@ -82,17 +83,17 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <h2>Understanding Margin in Crypto Trading</h2>
         <p>Margin is the collateral required to open and maintain a leveraged position in cryptocurrency futures or perpetual contracts. Unlike spot trading where you need the full value of an asset to purchase it, margin trading allows you to control a larger position with a smaller amount of capital. This borrowed capital comes from the exchange or other traders, and you're required to maintain a minimum balance (margin) to keep the position open.</p>
 
-        <p>Margin exists to protect both traders and exchanges from excessive losses. When you trade with leverage, you're essentially borrowing money to amplify your potential profits — but this also amplifies potential losses. The margin acts as a good-faith deposit that ensures you can cover losses up to a certain point. If the market moves against you and your margin drops below the maintenance level, the exchange will liquidate your position to prevent you from owing more than your collateral.</p>
+        <p>Margin exists to protect both traders and exchanges from excessive losses. When you trade with leverage, you're essentially borrowing money to amplify your potential profits, but this also amplifies potential losses. The margin acts as a good-faith deposit that ensures you can cover losses up to a certain point. If the market moves against you and your margin drops below the maintenance level, the exchange will liquidate your position to prevent you from owing more than your collateral.</p>
 
         <p>The key difference from spot trading is that margin trading involves leverage and the risk of liquidation. In spot trading, you own the asset outright and can hold it indefinitely regardless of price fluctuations. With margin trading, you must maintain sufficient collateral or face automatic position closure. This makes margin trading both more capital-efficient and significantly riskier, requiring careful position sizing and risk management.</p>
 
         <h2>Key Margin Concepts</h2>
         <ul>
-          <li><strong>Initial Margin</strong> — The minimum collateral required to open a leveraged position. This is calculated as Position Value ÷ Leverage. For example, a $10,000 position with 10x leverage requires $1,000 in initial margin. The higher your leverage, the lower the initial margin requirement, but this also means less room for adverse price movement.</li>
-          <li><strong>Maintenance Margin</strong> — The minimum equity level required to keep a position open. This is always lower than the initial margin. If your account equity falls below the maintenance margin due to unrealized losses, your position will be automatically liquidated. Exchanges typically set maintenance margins between 0.4% to 2% of position value depending on leverage and asset.</li>
-          <li><strong>Margin Level</strong> — A percentage calculated as (Equity ÷ Used Margin) × 100%. This metric shows the health of your position. A margin level of 100% means your used margin equals your equity, indicating high liquidation risk. Most traders aim to maintain margin levels well above 200% for safety.</li>
-          <li><strong>Free Margin</strong> — The portion of your account balance not currently locked in open positions. Calculated as Equity − Used Margin. Free margin allows you to open additional positions or acts as a buffer against unrealized losses on existing positions. When free margin reaches zero, you cannot open new positions.</li>
-          <li><strong>Margin Call</strong> — A warning or notification when your equity approaches the maintenance margin threshold. Some exchanges issue margin calls before liquidation, giving you time to add funds or close positions. However, many crypto exchanges liquidate immediately at the maintenance margin level without a formal margin call step, making continuous monitoring essential.</li>
+          <li><strong>Initial Margin</strong>: The minimum collateral required to open a leveraged position. This is calculated as Position Value ÷ Leverage. For example, a $10,000 position with 10x leverage requires $1,000 in initial margin. The higher your leverage, the lower the initial margin requirement, but this also means less room for adverse price movement.</li>
+          <li><strong>Maintenance Margin</strong>: The minimum equity level required to keep a position open. This is always lower than the initial margin. If your account equity falls below the maintenance margin due to unrealized losses, your position will be automatically liquidated. Exchanges typically set maintenance margins between 0.4% to 2% of position value depending on leverage and asset.</li>
+          <li><strong>Margin Level</strong>: A percentage calculated as (Equity ÷ Used Margin) × 100%. This metric shows the health of your position. A margin level of 100% means your used margin equals your equity, indicating high liquidation risk. Most traders aim to maintain margin levels well above 200% for safety.</li>
+          <li><strong>Free Margin</strong>: The portion of your account balance not currently locked in open positions. Calculated as Equity − Used Margin. Free margin allows you to open additional positions or acts as a buffer against unrealized losses on existing positions. When free margin reaches zero, you cannot open new positions.</li>
+          <li><strong>Margin Call</strong>: A warning or notification when your equity approaches the maintenance margin threshold. Some exchanges issue margin calls before liquidation, giving you time to add funds or close positions. However, many crypto exchanges liquidate immediately at the maintenance margin level without a formal margin call step, making continuous monitoring essential.</li>
         </ul>
 
         <h2>Margin Formulas</h2>
@@ -196,13 +197,15 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <h2>How to Avoid Margin Calls</h2>
         <p>Preventing margin calls requires proactive risk management and disciplined trading practices. Here are essential strategies:</p>
         <ul>
-          <li><strong>Use Lower Leverage</strong> — While 100x leverage might seem attractive, it leaves almost no room for market fluctuations. Starting with 5x-10x leverage provides a much larger buffer and reduces liquidation risk significantly.</li>
-          <li><strong>Set Stop-Loss Orders</strong> — Always use stop-loss orders to automatically close positions if they move against you. This ensures you exit with a controlled loss rather than facing liquidation and exchange fees. Place stop-losses beyond your liquidation price as a safety net.</li>
-          <li><strong>Diversify Positions</strong> — Don't concentrate all margin in a single position. Spreading capital across multiple uncorrelated trades reduces the impact of any single position going wrong, especially when using cross margin mode.</li>
-          <li><strong>Monitor Margin Level Continuously</strong> — Set up alerts on your exchange for margin level thresholds. Many platforms allow push notifications when your margin level drops below 200% or other custom levels. Regular monitoring helps you react before it's too late.</li>
-          <li><strong>Keep Reserve Funds Available</strong> — Don't use 100% of your account balance as margin. Maintain at least 20-30% as free margin to handle unexpected volatility. This buffer can be the difference between weathering a temporary drawdown and forced liquidation.</li>
-          <li><strong>Understand Exchange-Specific Rules</strong> — Different exchanges have varying maintenance margin requirements, liquidation mechanisms, and fee structures. Binance, Bybit, and OKX each handle margin differently. Read your exchange's documentation to understand exactly when and how liquidation occurs.</li>
+          <li><strong>Use Lower Leverage</strong>: While 100x leverage might seem attractive, it leaves almost no room for market fluctuations. Starting with 5x-10x leverage provides a much larger buffer and reduces liquidation risk significantly.</li>
+          <li><strong>Set Stop-Loss Orders</strong>: Always use stop-loss orders to automatically close positions if they move against you. This ensures you exit with a controlled loss rather than facing liquidation and exchange fees. Place stop-losses beyond your liquidation price as a safety net.</li>
+          <li><strong>Diversify Positions</strong>: Don't concentrate all margin in a single position. Spreading capital across multiple uncorrelated trades reduces the impact of any single position going wrong, especially when using cross margin mode.</li>
+          <li><strong>Monitor Margin Level Continuously</strong>: Set up alerts on your exchange for margin level thresholds. Many platforms allow push notifications when your margin level drops below 200% or other custom levels. Regular monitoring helps you react before it's too late.</li>
+          <li><strong>Keep Reserve Funds Available</strong>: Don't use 100% of your account balance as margin. Maintain at least 20-30% as free margin to handle unexpected volatility. This buffer can be the difference between weathering a temporary drawdown and forced liquidation.</li>
+          <li><strong>Understand Exchange-Specific Rules</strong>: Different exchanges have varying maintenance margin requirements, liquidation mechanisms, and fee structures. Binance, Bybit, and OKX each handle margin differently. Read your exchange's documentation to understand exactly when and how liquidation occurs.</li>
         </ul>
+
+        <AuthoritativeSources category="trading-tools" />
 
         <h2>Frequently Asked Questions</h2>
 
@@ -213,7 +216,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <details>
           <summary>What triggers a margin call?</summary>
-          <p>A margin call is triggered when your account equity falls below the maintenance margin requirement set by the exchange. This happens when your unrealized losses reduce your equity to a dangerous level. In traditional finance, brokers issue a margin call giving you time to deposit more funds. However, most crypto exchanges liquidate positions automatically at the maintenance margin level without warning, making the term "margin call" somewhat of a misnomer in crypto — it's more accurately an immediate liquidation.</p>
+          <p>A margin call is triggered when your account equity falls below the maintenance margin requirement set by the exchange. This happens when your unrealized losses reduce your equity to a dangerous level. In traditional finance, brokers issue a margin call giving you time to deposit more funds. However, most crypto exchanges liquidate positions automatically at the maintenance margin level without warning, making the term "margin call" somewhat of a misnomer in crypto, it's more accurately an immediate liquidation.</p>
         </details>
 
         <details>
@@ -233,7 +236,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <details>
           <summary>Is margin trading available on all exchanges?</summary>
-          <p>No, not all cryptocurrency exchanges offer margin trading. Major exchanges like Binance, Bybit, OKX, Kraken, and Bitfinex provide margin and futures trading with leverage ranging from 2x to 125x. However, some exchanges offer only spot trading. Additionally, margin trading availability varies by region due to regulations — for example, Binance restricts leverage limits for users in certain countries. Always verify that margin trading is available in your jurisdiction and understand your exchange's specific leverage limits, margin requirements, and liquidation policies.</p>
+          <p>No, not all cryptocurrency exchanges offer margin trading. Major exchanges like Binance, Bybit, OKX, Kraken, and Bitfinex provide margin and futures trading with leverage ranging from 2x to 125x. However, some exchanges offer only spot trading. Additionally, margin trading availability varies by region due to regulations, for example, Binance restricts leverage limits for users in certain countries. Always verify that margin trading is available in your jurisdiction and understand your exchange's specific leverage limits, margin requirements, and liquidation policies.</p>
         </details>
 
         <h2>Related Calculators</h2>

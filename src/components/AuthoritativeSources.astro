@@ -1,0 +1,26 @@
+---
+// E-E-A-T: authoritative external sources for standalone EN calculator pages.
+// Mirrors the block LocalizedCalculatorPage.astro renders for template pages
+// (same heading id + markup), sourced from the shared category map.
+import { CATEGORY_SOURCES } from '../data/category-sources';
+
+interface Props {
+  category: keyof typeof CATEGORY_SOURCES | string;
+}
+const { category } = Astro.props;
+const sources = CATEGORY_SOURCES[category] ?? [];
+---
+
+{sources.length > 0 && (
+  <>
+    <h2 id="authoritative-sources">Authoritative sources</h2>
+    <ul class="authoritative-sources-list">
+      {sources.map((s) => (
+        <li>
+          <a href={s.url} target="_blank" rel="noopener nofollow">{s.name}</a>
+          {' — '}<span class="source-note">{s.note}</span>
+        </li>
+      ))}
+    </ul>
+  </>
+)}

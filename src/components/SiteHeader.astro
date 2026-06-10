@@ -23,14 +23,14 @@ const allToolsHref = `${homeHref}#categories`;
       <Calculator size={24} />
       <span class="logo-text">Crypto<b>Calk</b></span>
     </a>
-    <div class="site-header-actions">
+    <nav class="site-header-actions" aria-label="Main navigation">
       <a href={allToolsHref} class="site-header-link">
         <ArrowLeft size={14} />
         {t.allToolsTitle}
       </a>
       <LanguageSwitcher client:idle currentLang={lang} currentPath={currentPath} />
       <ThemeToggle client:idle />
-    </div>
+    </nav>
   </div>
 </header>
 

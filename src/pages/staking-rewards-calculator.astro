@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-27'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -72,16 +73,16 @@ const buildDate = '2026-04-27'; // honest last-content-change date from git hist
         <div class="quick-answer"><strong>Quick answer:</strong> Net staking reward = (Staked Amount &times; APY &times; Duration/365) &minus; Validator Fee. Staking 32 ETH at 3.2% APY with a 10% validator fee earns ~0.94 ETH/year net.</div>
         <h2>How to Use the Crypto Staking Rewards Calculator</h2>
         <ol>
-          <li><strong>Select a coin</strong> — Pick from quick buttons (ETH, SOL, DOT, ATOM, ADA) or search 500+ PoS cryptocurrencies.</li>
-          <li><strong>Enter your staking amount</strong> — Input the number of coins you plan to stake.</li>
-          <li><strong>Set the APY</strong> — The calculator pre-fills typical APY for popular coins, or enter a custom rate.</li>
-          <li><strong>Adjust validator commission</strong> — Most validators charge 2-10%. This reduces your effective yield.</li>
-          <li><strong>Choose compounding</strong> — Toggle auto-compound on or off to compare linear vs exponential growth.</li>
-          <li><strong>Review your rewards</strong> — See daily, weekly, monthly, and yearly earnings in both coins and USD.</li>
+          <li><strong>Select a coin</strong>: Pick from quick buttons (ETH, SOL, DOT, ATOM, ADA) or search 500+ PoS cryptocurrencies.</li>
+          <li><strong>Enter your staking amount</strong>: Input the number of coins you plan to stake.</li>
+          <li><strong>Set the APY</strong>: The calculator pre-fills typical APY for popular coins, or enter a custom rate.</li>
+          <li><strong>Adjust validator commission</strong>: Most validators charge 2-10%. This reduces your effective yield.</li>
+          <li><strong>Choose compounding</strong>: Toggle auto-compound on or off to compare linear vs exponential growth.</li>
+          <li><strong>Review your rewards</strong>: See daily, weekly, monthly, and yearly earnings in both coins and USD.</li>
         </ol>
 
         <h2>What Is Crypto Staking?</h2>
-        <p>Staking is the process of locking cryptocurrency in a Proof-of-Stake (PoS) network to help validate transactions and secure the blockchain. In return for committing your tokens, the network distributes rewards — typically quoted as an Annual Percentage Yield (APY). Unlike Proof-of-Work mining that requires expensive hardware and electricity, staking lets anyone participate with just a wallet and tokens.</p>
+        <p>Staking is the process of locking cryptocurrency in a Proof-of-Stake (PoS) network to help validate transactions and secure the blockchain. In return for committing your tokens, the network distributes rewards, typically quoted as an Annual Percentage Yield (APY). Unlike Proof-of-Work mining that requires expensive hardware and electricity, staking lets anyone participate with just a wallet and tokens.</p>
         <p>When you stake, your tokens are delegated to a validator node that proposes and validates blocks. The more tokens staked on a network, the more secure it becomes. Rewards compensate stakers for the opportunity cost of locking their funds and for contributing to network security.</p>
 
         <h2>Popular Staking Coins & APY Rates</h2>
@@ -121,23 +122,25 @@ const buildDate = '2026-04-27'; // honest last-content-change date from git hist
         <p>When choosing a validator, consider more than just the lowest commission. Important factors include uptime history, total stake (avoid over-concentrated validators), governance participation, and community reputation. A validator with 5% commission and 99.9% uptime is better than one with 0% commission and frequent downtime that causes missed rewards.</p>
 
         <h2>Compounding vs Non-Compounding Staking</h2>
-        <p>Compounding means automatically reinvesting your staking rewards so that your rewards also earn rewards — creating exponential growth. Non-compounding (simple interest) pays out rewards linearly without reinvestment. The difference becomes significant over time.</p>
+        <p>Compounding means automatically reinvesting your staking rewards so that your rewards also earn rewards, creating exponential growth. Non-compounding (simple interest) pays out rewards linearly without reinvestment. The difference becomes significant over time.</p>
         <p>Example: Stake $10,000 at 8% APY. With simple interest, you earn $800/year every year. With daily compounding, your effective APY becomes 8.33%, earning $833 in year 1, then compounding on the new total. Over 3 years, simple interest yields $2,400 total while daily compounding yields $2,682. Over 5 years, the gap widens to $4,000 vs $4,898.</p>
         <p>For native chain staking, you typically need to manually claim and restake rewards. The optimal restaking frequency depends on your position size and gas fees. If claiming costs $2 and your daily reward is $0.50, compound weekly or monthly instead of daily.</p>
 
         <h2>Staking Risks You Should Know</h2>
         <ul>
-          <li><strong>Slashing</strong> — Validators that misbehave (double-signing, extended downtime) can have a portion of delegated tokens destroyed. Choose reputable validators to minimize this risk.</li>
-          <li><strong>Price volatility</strong> — Your staking rewards are paid in the native token. If the token price drops 30% while you earn 10% APY, you still lose value in dollar terms.</li>
-          <li><strong>Unbonding period lockup</strong> — Most networks require a waiting period (7-28 days) before unstaked tokens become transferable. You cannot sell during this period.</li>
-          <li><strong>Smart contract risk</strong> — Liquid staking protocols (Lido, Rocket Pool) add a layer of smart contract risk. Bugs or exploits could result in loss of funds.</li>
-          <li><strong>Inflation dilution</strong> — High staking rewards often come from high inflation schedules. If everyone is staking, your percentage of the total supply remains constant while token supply grows, potentially diluting value.</li>
-          <li><strong>Opportunity cost</strong> — Staked tokens cannot be used for trading or other DeFi strategies. Consider whether staking yields justify the lock-up.</li>
+          <li><strong>Slashing</strong>: Validators that misbehave (double-signing, extended downtime) can have a portion of delegated tokens destroyed. Choose reputable validators to minimize this risk.</li>
+          <li><strong>Price volatility</strong>: Your staking rewards are paid in the native token. If the token price drops 30% while you earn 10% APY, you still lose value in dollar terms.</li>
+          <li><strong>Unbonding period lockup</strong>: Most networks require a waiting period (7-28 days) before unstaked tokens become transferable. You cannot sell during this period.</li>
+          <li><strong>Smart contract risk</strong>: Liquid staking protocols (Lido, Rocket Pool) add a layer of smart contract risk. Bugs or exploits could result in loss of funds.</li>
+          <li><strong>Inflation dilution</strong>: High staking rewards often come from high inflation schedules. If everyone is staking, your percentage of the total supply remains constant while token supply grows, potentially diluting value.</li>
+          <li><strong>Opportunity cost</strong>: Staked tokens cannot be used for trading or other DeFi strategies. Consider whether staking yields justify the lock-up.</li>
         </ul>
 
         <h2>Liquid Staking vs Native Staking</h2>
-        <p>Native staking locks your tokens directly on the blockchain. Liquid staking protocols give you a derivative token (like stETH for Ethereum) that represents your staked position. This derivative can be used in DeFi — as collateral for borrowing, in liquidity pools, or for additional yield farming — while your original tokens continue earning staking rewards.</p>
+        <p>Native staking locks your tokens directly on the blockchain. Liquid staking protocols give you a derivative token (like stETH for Ethereum) that represents your staked position. This derivative can be used in DeFi, as collateral for borrowing, in liquidity pools, or for additional yield farming, while your original tokens continue earning staking rewards.</p>
         <p>The trade-off is an additional layer of smart contract risk and a potential de-peg risk where the liquid staking token trades below the value of the underlying asset. For most users with moderate amounts, liquid staking offers the best balance of yield and flexibility.</p>
+
+        <AuthoritativeSources category="defi-yield" />
 
         <h2>Frequently Asked Questions</h2>
         <details>
@@ -158,11 +161,11 @@ const buildDate = '2026-04-27'; // honest last-content-change date from git hist
         </details>
         <details>
           <summary>What is liquid staking?</summary>
-          <p>Liquid staking allows you to stake tokens and receive a derivative token (like stETH for Ethereum) that represents your staked position. This derivative can be used in DeFi — as collateral, in liquidity pools, or for yield farming — while your original tokens continue earning staking rewards. The trade-off is added smart contract risk.</p>
+          <p>Liquid staking allows you to stake tokens and receive a derivative token (like stETH for Ethereum) that represents your staked position. This derivative can be used in DeFi, as collateral, in liquidity pools, or for yield farming, while your original tokens continue earning staking rewards. The trade-off is added smart contract risk.</p>
         </details>
         <details>
           <summary>Should I choose a high-APY coin for staking?</summary>
-          <p>Not necessarily. High APY often comes from high inflation, which can dilute token value. A coin with 20% APY but 25% inflation may be worse than one with 5% APY and low inflation. Consider the total supply growth, token utility, network security, and project fundamentals — not just the advertised APY.</p>
+          <p>Not necessarily. High APY often comes from high inflation, which can dilute token value. A coin with 20% APY but 25% inflation may be worse than one with 5% APY and low inflation. Consider the total supply growth, token utility, network security, and project fundamentals, not just the advertised APY.</p>
         </details>
 
         <h2>Related Calculators</h2>
@@ -259,7 +262,7 @@ const buildDate = '2026-04-27'; // honest last-content-change date from git hist
         "name": "What is liquid staking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Liquid staking allows you to stake tokens and receive a derivative token (like stETH for Ethereum) that represents your staked position. This derivative can be used in DeFi — as collateral, in liquidity pools, or for yield farming — while your original tokens continue earning staking rewards. The trade-off is added smart contract risk."
+          "text": "Liquid staking allows you to stake tokens and receive a derivative token (like stETH for Ethereum) that represents your staked position. This derivative can be used in DeFi, as collateral, in liquidity pools, or for yield farming, while your original tokens continue earning staking rewards. The trade-off is added smart contract risk."
         }
       },
       {
@@ -267,7 +270,7 @@ const buildDate = '2026-04-27'; // honest last-content-change date from git hist
         "name": "Should I choose a high-APY coin for staking?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not necessarily. High APY often comes from high inflation, which can dilute token value. A coin with 20% APY but 25% inflation may be worse than one with 5% APY and low inflation. Consider the total supply growth, token utility, network security, and project fundamentals — not just the advertised APY."
+          "text": "Not necessarily. High APY often comes from high inflation, which can dilute token value. A coin with 20% APY but 25% inflation may be worse than one with 5% APY and low inflation. Consider the total supply growth, token utility, network security, and project fundamentals, not just the advertised APY."
         }
       }
     ]

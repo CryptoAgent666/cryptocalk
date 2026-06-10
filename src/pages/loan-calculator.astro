@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -73,20 +74,20 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <h2>How to Use the Crypto Loan Calculator</h2>
         <p>Our free crypto loan calculator helps you plan crypto-backed loans by estimating interest costs, margin call thresholds, and liquidation prices. Whether you are borrowing against Bitcoin, Ethereum, or other collateral assets, this tool shows you the full cost and risk picture before you commit.</p>
         <ol>
-          <li><strong>Select your collateral</strong> — choose the cryptocurrency you will deposit as collateral and enter the amount.</li>
-          <li><strong>Set the LTV ratio</strong> — choose a Loan-to-Value percentage. Lower LTV means a smaller loan but a safer distance from liquidation.</li>
-          <li><strong>Enter the interest rate</strong> — input the annual percentage rate (APR) offered by your lending platform.</li>
-          <li><strong>Choose the loan period</strong> — select how long you plan to hold the loan.</li>
-          <li><strong>Review results</strong> — see your loan amount, total interest cost, monthly payments, margin call price, and liquidation price.</li>
+          <li><strong>Select your collateral</strong>: choose the cryptocurrency you will deposit as collateral and enter the amount.</li>
+          <li><strong>Set the LTV ratio</strong>: choose a Loan-to-Value percentage. Lower LTV means a smaller loan but a safer distance from liquidation.</li>
+          <li><strong>Enter the interest rate</strong>: input the annual percentage rate (APR) offered by your lending platform.</li>
+          <li><strong>Choose the loan period</strong>: select how long you plan to hold the loan.</li>
+          <li><strong>Review results</strong>: see your loan amount, total interest cost, monthly payments, margin call price, and liquidation price.</li>
         </ol>
 
         <h3>Key Features</h3>
         <ul>
-          <li><strong>Platform presets</strong> — quick-select configurations for Nexo, Aave, Binance, and other popular lending platforms.</li>
-          <li><strong>Margin call calculator</strong> — see the exact collateral price that triggers a margin call for your specific LTV.</li>
-          <li><strong>Liquidation price</strong> — know the price at which your collateral gets automatically sold.</li>
-          <li><strong>Interest breakdown</strong> — see monthly and total interest costs over your chosen period.</li>
-          <li><strong>Real-time prices</strong> — collateral values update with live CoinGecko data.</li>
+          <li><strong>Platform presets</strong>: quick-select configurations for Nexo, Aave, Binance, and other popular lending platforms.</li>
+          <li><strong>Margin call calculator</strong>: see the exact collateral price that triggers a margin call for your specific LTV.</li>
+          <li><strong>Liquidation price</strong>: know the price at which your collateral gets automatically sold.</li>
+          <li><strong>Interest breakdown</strong>: see monthly and total interest costs over your chosen period.</li>
+          <li><strong>Real-time prices</strong>: collateral values update with live CoinGecko data.</li>
         </ul>
 
         <h2>How Crypto-Backed Loans Work</h2>
@@ -143,24 +144,26 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <h2>Safety Tips for Crypto Borrowing</h2>
         <ul>
-          <li><strong>Keep LTV below 50%</strong> — this gives you a significant buffer before margin calls. At 50% LTV with a 75% margin call threshold, your collateral can drop 33% before issues arise.</li>
-          <li><strong>Set price alerts</strong> — configure notifications on your phone for the margin call price so you have time to react.</li>
-          <li><strong>Keep reserve collateral ready</strong> — have additional crypto available to deposit quickly if the market drops.</li>
-          <li><strong>Monitor during volatile periods</strong> — check your loan health factor during major market moves. Flash crashes can trigger liquidations faster than you can react.</li>
-          <li><strong>Understand the liquidation process</strong> — some platforms liquidate the entire position at once, while others gradually liquidate only enough to bring LTV back below the threshold.</li>
-          <li><strong>Consider using stablecoins as collateral</strong> — if you need a fiat loan, using stablecoins as collateral eliminates price volatility risk entirely.</li>
-          <li><strong>Factor in all costs</strong> — beyond APR, account for origination fees, withdrawal fees, and any spread on the borrowed assets.</li>
+          <li><strong>Keep LTV below 50%</strong>: this gives you a significant buffer before margin calls. At 50% LTV with a 75% margin call threshold, your collateral can drop 33% before issues arise.</li>
+          <li><strong>Set price alerts</strong>: configure notifications on your phone for the margin call price so you have time to react.</li>
+          <li><strong>Keep reserve collateral ready</strong>: have additional crypto available to deposit quickly if the market drops.</li>
+          <li><strong>Monitor during volatile periods</strong>: check your loan health factor during major market moves. Flash crashes can trigger liquidations faster than you can react.</li>
+          <li><strong>Understand the liquidation process</strong>: some platforms liquidate the entire position at once, while others gradually liquidate only enough to bring LTV back below the threshold.</li>
+          <li><strong>Consider using stablecoins as collateral</strong>: if you need a fiat loan, using stablecoins as collateral eliminates price volatility risk entirely.</li>
+          <li><strong>Factor in all costs</strong>: beyond APR, account for origination fees, withdrawal fees, and any spread on the borrowed assets.</li>
         </ul>
 
         <h2>When Does a Crypto Loan Make Sense?</h2>
         <p>Crypto loans are most useful in these scenarios:</p>
         <ul>
-          <li><strong>Avoiding taxable events</strong> — borrowing against crypto instead of selling avoids triggering capital gains taxes in most jurisdictions.</li>
-          <li><strong>Maintaining long-term positions</strong> — if you are bullish on Bitcoin long-term but need short-term liquidity, a loan lets you access cash without selling.</li>
-          <li><strong>Leveraging positions</strong> — borrow stablecoins, buy more crypto. This is essentially leverage and carries additional risk.</li>
-          <li><strong>Bridging expenses</strong> — cover a temporary cash need (home repair, business expense) without disrupting your investment strategy.</li>
+          <li><strong>Avoiding taxable events</strong>: borrowing against crypto instead of selling avoids triggering capital gains taxes in most jurisdictions.</li>
+          <li><strong>Maintaining long-term positions</strong>: if you are bullish on Bitcoin long-term but need short-term liquidity, a loan lets you access cash without selling.</li>
+          <li><strong>Leveraging positions</strong>: borrow stablecoins, buy more crypto. This is essentially leverage and carries additional risk.</li>
+          <li><strong>Bridging expenses</strong>: cover a temporary cash need (home repair, business expense) without disrupting your investment strategy.</li>
         </ul>
         <p>Crypto loans are NOT recommended when you need funds for an extended period during a bear market, when you cannot afford to add collateral if prices drop, or when the interest rate exceeds the expected appreciation of your collateral.</p>
+
+        <AuthoritativeSources category="defi-yield" />
 
         <h2>Frequently Asked Questions</h2>
 
@@ -176,17 +179,17 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <details>
           <summary>Can I repay a crypto loan early?</summary>
-          <p>Most platforms allow early repayment without penalties. DeFi protocols like Aave and Compound have no fixed terms — you can repay at any time and only pay interest for the duration you held the loan. Some CeFi platforms may have minimum loan periods (typically 1-3 months).</p>
+          <p>Most platforms allow early repayment without penalties. DeFi protocols like Aave and Compound have no fixed terms, you can repay at any time and only pay interest for the duration you held the loan. Some CeFi platforms may have minimum loan periods (typically 1-3 months).</p>
         </details>
 
         <details>
           <summary>Is the interest rate fixed or variable?</summary>
-          <p>It depends on the platform. CeFi platforms like Nexo typically offer fixed rates for specific loan tiers. DeFi platforms like Aave use variable rates that change based on pool utilization — rates increase when more capital is borrowed and decrease when liquidity returns. Variable rates can fluctuate significantly during high-demand periods.</p>
+          <p>It depends on the platform. CeFi platforms like Nexo typically offer fixed rates for specific loan tiers. DeFi platforms like Aave use variable rates that change based on pool utilization, rates increase when more capital is borrowed and decrease when liquidity returns. Variable rates can fluctuate significantly during high-demand periods.</p>
         </details>
 
         <details>
           <summary>Do I still earn staking rewards on my collateral?</summary>
-          <p>On most CeFi platforms, no — your collateral is locked and does not earn rewards. However, some DeFi protocols allow you to use liquid staking tokens (like stETH for Ethereum) as collateral, meaning you continue earning staking rewards while borrowing against your position.</p>
+          <p>On most CeFi platforms, no, your collateral is locked and does not earn rewards. However, some DeFi protocols allow you to use liquid staking tokens (like stETH for Ethereum) as collateral, meaning you continue earning staking rewards while borrowing against your position.</p>
         </details>
 
         <details>
@@ -276,7 +279,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         "name": "Can I repay a crypto loan early?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most platforms allow early repayment without penalties. DeFi protocols like Aave and Compound have no fixed terms — you can repay at any time and only pay interest for the duration you held the loan. Some CeFi platforms may have minimum loan periods of 1-3 months."
+          "text": "Most platforms allow early repayment without penalties. DeFi protocols like Aave and Compound have no fixed terms, you can repay at any time and only pay interest for the duration you held the loan. Some CeFi platforms may have minimum loan periods of 1-3 months."
         }
       },
       {
@@ -284,7 +287,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         "name": "Is the interest rate fixed or variable?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It depends on the platform. CeFi platforms like Nexo typically offer fixed rates for specific loan tiers. DeFi platforms like Aave use variable rates that change based on pool utilization — rates increase when more capital is borrowed and decrease when liquidity returns."
+          "text": "It depends on the platform. CeFi platforms like Nexo typically offer fixed rates for specific loan tiers. DeFi platforms like Aave use variable rates that change based on pool utilization, rates increase when more capital is borrowed and decrease when liquidity returns."
         }
       },
       {
@@ -292,7 +295,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         "name": "Do I still earn staking rewards on my collateral?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "On most CeFi platforms, no — your collateral is locked and does not earn rewards. However, some DeFi protocols allow you to use liquid staking tokens (like stETH) as collateral, meaning you continue earning staking rewards while borrowing against your position."
+          "text": "On most CeFi platforms, no, your collateral is locked and does not earn rewards. However, some DeFi protocols allow you to use liquid staking tokens (like stETH) as collateral, meaning you continue earning staking rewards while borrowing against your position."
         }
       },
       {

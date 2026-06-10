@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -72,17 +73,17 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <h2>How to Use the Crypto Break-Even Calculator</h2>
         <p>Our free break-even calculator helps crypto traders understand two critical concepts: how much gain is needed to recover from a portfolio loss, and the exact exit price required to cover all trading fees. Both modes are essential for realistic trading expectations and proper risk management.</p>
         <ol>
-          <li><strong>Choose your mode</strong> — select "Loss Recovery" to see how much gain you need after a drawdown, or "Fee Break-Even" to find the exit price that covers your trading costs.</li>
-          <li><strong>Enter your values</strong> — for loss recovery, enter the percentage loss you've experienced. For fee break-even, enter your entry price, position size, and fee percentages.</li>
-          <li><strong>Read the results</strong> — the calculator instantly shows the required gain percentage, the actual dollar amounts, and a visual comparison to make the asymmetry clear.</li>
+          <li><strong>Choose your mode</strong>: select "Loss Recovery" to see how much gain you need after a drawdown, or "Fee Break-Even" to find the exit price that covers your trading costs.</li>
+          <li><strong>Enter your values</strong>: for loss recovery, enter the percentage loss you've experienced. For fee break-even, enter your entry price, position size, and fee percentages.</li>
+          <li><strong>Read the results</strong>: the calculator instantly shows the required gain percentage, the actual dollar amounts, and a visual comparison to make the asymmetry clear.</li>
         </ol>
 
         <h3>Key Features</h3>
         <ul>
-          <li><strong>Loss recovery mode</strong> — instantly see the exact gain percentage needed to recover from any drawdown.</li>
-          <li><strong>Fee break-even mode</strong> — calculate the minimum exit price that covers all entry and exit trading fees.</li>
-          <li><strong>Visual loss-recovery table</strong> — see the non-linear relationship between losses and required recovery gains at a glance.</li>
-          <li><strong>Multiple entry support</strong> — add several buy entries at different prices to calculate your averaged break-even.</li>
+          <li><strong>Loss recovery mode</strong>: instantly see the exact gain percentage needed to recover from any drawdown.</li>
+          <li><strong>Fee break-even mode</strong>: calculate the minimum exit price that covers all entry and exit trading fees.</li>
+          <li><strong>Visual loss-recovery table</strong>: see the non-linear relationship between losses and required recovery gains at a glance.</li>
+          <li><strong>Multiple entry support</strong>: add several buy entries at different prices to calculate your averaged break-even.</li>
         </ul>
 
         <h2>Understanding Break-Even in Crypto Trading</h2>
@@ -115,7 +116,7 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
           </table>
         </div>
 
-        <p>Notice how losses beyond 50% become almost impossible to recover from in practical terms. A 90% loss — common in altcoin bear markets — requires a 900% gain (a 10x) just to get back to the starting point. This is why professional traders emphasize cutting losses early and never letting a small loss turn into a large one.</p>
+        <p>Notice how losses beyond 50% become almost impossible to recover from in practical terms. A 90% loss, common in altcoin bear markets, requires a 900% gain (a 10x) just to get back to the starting point. This is why professional traders emphasize cutting losses early and never letting a small loss turn into a large one.</p>
 
         <h3>How Trading Fees Affect Break-Even</h3>
         <p>Every trade involves fees: maker/taker commissions, spread costs, slippage, and sometimes withdrawal fees. These costs must be overcome before you start profiting. Many beginners overlook fees, but for active traders they compound quickly.</p>
@@ -130,15 +131,15 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <div class="formula-block">
           <code>Average Break-Even = Total Cost / Total Coins</code>
         </div>
-        <p>For example, if you buy 0.1 BTC at $60,000 ($6,000) and then buy another 0.15 BTC at $50,000 ($7,500), your total cost is $13,500 for 0.25 BTC. Your break-even price is $13,500 / 0.25 = $54,000 — not the simple average of $55,000, because you bought more at the lower price.</p>
+        <p>For example, if you buy 0.1 BTC at $60,000 ($6,000) and then buy another 0.15 BTC at $50,000 ($7,500), your total cost is $13,500 for 0.25 BTC. Your break-even price is $13,500 / 0.25 = $54,000, not the simple average of $55,000, because you bought more at the lower price.</p>
 
         <h2>Common Break-Even Mistakes in Crypto</h2>
         <ul>
-          <li><strong>Ignoring fees in break-even calculations</strong> — fees push your actual break-even further from your entry than most traders realize, especially with frequent trading.</li>
-          <li><strong>Averaging down without a plan</strong> — buying more as the price drops lowers your break-even but increases your total exposure. Always have a maximum position size and a stop-loss for the averaged position.</li>
-          <li><strong>Forgetting funding fees on futures</strong> — perpetual futures charge funding every 8 hours. Over days or weeks, this can meaningfully shift your break-even price.</li>
-          <li><strong>Not accounting for slippage</strong> — large market orders or illiquid pairs can move your actual fill price 0.1-0.5% from the expected price, effectively raising your break-even.</li>
-          <li><strong>Tax implications</strong> — in many jurisdictions, each trade creates a taxable event. Your after-tax break-even is higher than the pre-tax number.</li>
+          <li><strong>Ignoring fees in break-even calculations</strong>: fees push your actual break-even further from your entry than most traders realize, especially with frequent trading.</li>
+          <li><strong>Averaging down without a plan</strong>: buying more as the price drops lowers your break-even but increases your total exposure. Always have a maximum position size and a stop-loss for the averaged position.</li>
+          <li><strong>Forgetting funding fees on futures</strong>: perpetual futures charge funding every 8 hours. Over days or weeks, this can meaningfully shift your break-even price.</li>
+          <li><strong>Not accounting for slippage</strong>: large market orders or illiquid pairs can move your actual fill price 0.1-0.5% from the expected price, effectively raising your break-even.</li>
+          <li><strong>Tax implications</strong>: in many jurisdictions, each trade creates a taxable event. Your after-tax break-even is higher than the pre-tax number.</li>
         </ul>
 
         <h2>Break-Even Strategies for Different Trading Styles</h2>
@@ -150,6 +151,8 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
         <h3>Long-Term Investors</h3>
         <p>For investors holding positions for months or years, dollar-cost averaging naturally creates a favorable break-even through regular purchases at varying prices. The key metric is the average cost basis compared to the current price.</p>
+
+        <AuthoritativeSources category="profit-loss" />
 
         <h2>Frequently Asked Questions</h2>
 
@@ -165,7 +168,7 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
         <details>
           <summary>How much do trading fees add to my break-even price?</summary>
-          <p>Fees push your break-even above your entry price. With 0.1% entry and exit fees on a $10,000 trade, you need $20 in price movement just to cover fees. On Coinbase at 0.6% fees, that jumps to $120. For leveraged positions, fees apply to the full notional value — a 10x position multiplies fee impact by 10x, making the break-even gap even wider.</p>
+          <p>Fees push your break-even above your entry price. With 0.1% entry and exit fees on a $10,000 trade, you need $20 in price movement just to cover fees. On Coinbase at 0.6% fees, that jumps to $120. For leveraged positions, fees apply to the full notional value, a 10x position multiplies fee impact by 10x, making the break-even gap even wider.</p>
         </details>
 
         <details>

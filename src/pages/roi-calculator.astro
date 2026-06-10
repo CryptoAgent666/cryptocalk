@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -71,11 +72,11 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <div class="quick-answer"><strong>Quick answer:</strong> ROI = ((Current Value &minus; Initial Investment) / Initial Investment) &times; 100%. Bought $5,000 of ETH now worth $8,500? That's a 70% ROI.</div>
         <h2>How to Use the ROI Calculator</h2>
         <ol>
-          <li><strong>Enter your initial investment</strong> — The total amount in USD (or your local currency) that you invested in the cryptocurrency.</li>
-          <li><strong>Enter the current value</strong> — The present value of your investment. If you sold already, enter the sale value. If you are still holding, enter the current portfolio value.</li>
-          <li><strong>Input fees (optional)</strong> — Add any trading fees, withdrawal fees, or gas fees you paid during the investment. These are subtracted from your profit to give a true net ROI.</li>
-          <li><strong>Set the investment period</strong> — Enter the start and end dates of your investment. This is required for calculating annualized ROI, which lets you compare performance across different holding periods.</li>
-          <li><strong>Review your results</strong> — The calculator displays your total ROI percentage, annualized ROI, absolute profit or loss, and how your performance compares to traditional benchmarks like the S&P 500, Gold, and Real Estate.</li>
+          <li><strong>Enter your initial investment</strong>: The total amount in USD (or your local currency) that you invested in the cryptocurrency.</li>
+          <li><strong>Enter the current value</strong>: The present value of your investment. If you sold already, enter the sale value. If you are still holding, enter the current portfolio value.</li>
+          <li><strong>Input fees (optional)</strong>: Add any trading fees, withdrawal fees, or gas fees you paid during the investment. These are subtracted from your profit to give a true net ROI.</li>
+          <li><strong>Set the investment period</strong>: Enter the start and end dates of your investment. This is required for calculating annualized ROI, which lets you compare performance across different holding periods.</li>
+          <li><strong>Review your results</strong>: The calculator displays your total ROI percentage, annualized ROI, absolute profit or loss, and how your performance compares to traditional benchmarks like the S&P 500, Gold, and Real Estate.</li>
         </ol>
 
         <h2>Understanding ROI in Cryptocurrency</h2>
@@ -160,8 +161,10 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
         <h2>Why Fees Matter in ROI Calculations</h2>
         <p>Trading fees, withdrawal fees, gas fees, and spread costs silently erode your returns. Many investors track their entry and exit prices but ignore the cumulative impact of fees, which can be substantial for active traders.</p>
-        <p>Consider an active trader who makes 200 trades per year on a $10,000 account. If each trade costs 0.1% in fees (a typical taker rate), that is $10 per trade in fees. Over 200 trades, fees total $2,000 — a 20% drag on the portfolio before any profit or loss from actual trading. Even for a profitable trader, this fee burden can reduce a 30% gross return to a 10% net return.</p>
+        <p>Consider an active trader who makes 200 trades per year on a $10,000 account. If each trade costs 0.1% in fees (a typical taker rate), that is $10 per trade in fees. Over 200 trades, fees total $2,000, a 20% drag on the portfolio before any profit or loss from actual trading. Even for a profitable trader, this fee burden can reduce a 30% gross return to a 10% net return.</p>
         <p>For long-term holders, fees are less impactful because you only pay entry and exit fees. But withdrawal fees and network gas costs can still add up, especially when moving assets between exchanges and wallets. Always include all fees in your ROI calculation to get an accurate picture of your true performance. The difference between gross ROI and net ROI often surprises investors who have never tracked their total fee expenditure.</p>
+
+        <AuthoritativeSources category="profit-loss" />
 
         <h2>Frequently Asked Questions</h2>
 
@@ -182,7 +185,7 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
         <details>
           <summary>How does crypto ROI compare to stocks?</summary>
-          <p>Over the past decade, Bitcoin has dramatically outperformed the stock market on an annualized basis. The S&P 500 has averaged roughly 10% per year, while Bitcoin has averaged 50-80% depending on the measurement period. However, this comes with massive volatility — Bitcoin has experienced drawdowns exceeding 70% multiple times, while the worst S&P 500 drawdowns in recent history have been around 30-35%. Individual altcoins have even wider return dispersion: some return thousands of percent, while most underperform or go to zero. The key difference is risk-adjusted returns — crypto returns more, but you endure far greater price swings and uncertainty.</p>
+          <p>Over the past decade, Bitcoin has dramatically outperformed the stock market on an annualized basis. The S&P 500 has averaged roughly 10% per year, while Bitcoin has averaged 50-80% depending on the measurement period. However, this comes with massive volatility — Bitcoin has experienced drawdowns exceeding 70% multiple times, while the worst S&P 500 drawdowns in recent history have been around 30-35%. Individual altcoins have even wider return dispersion: some return thousands of percent, while most underperform or go to zero. The key difference is risk-adjusted returns, crypto returns more, but you endure far greater price swings and uncertainty.</p>
         </details>
 
         <details>

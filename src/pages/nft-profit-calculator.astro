@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 // Honest last-reviewed date. Bump ONLY when the page's content/data is actually revised —
 // NOT on every build. (Was `new Date()`, which faked "Updated today" on every deploy → a
@@ -79,12 +80,12 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
         <h2>How to Use the NFT Profit Calculator</h2>
         <p>Our free NFT profit calculator shows you the true profit or loss from buying and selling NFTs after every fee is deducted. Most NFT traders focus on the buy and sell prices but forget that marketplace commissions, creator royalties, and gas costs can take a significant bite out of their returns. This tool makes the math transparent.</p>
         <ol>
-          <li><strong>Enter the buy price</strong> — input the price you paid (or plan to pay) for the NFT in ETH or SOL, depending on the blockchain.</li>
-          <li><strong>Enter the sell price</strong> — input the price at which you sold or plan to sell the NFT.</li>
-          <li><strong>Select the marketplace</strong> — choose from OpenSea, Blur, Magic Eden, LooksRare, or X2Y2. The calculator auto-fills the marketplace fee for your selection.</li>
-          <li><strong>Set the creator royalty</strong> — enter the collection's creator royalty percentage. This varies by collection and may be optional on some marketplaces.</li>
-          <li><strong>Add gas costs</strong> — input the gas fee paid for both the buy and sell transactions. The calculator sums both to show total gas expenditure.</li>
-          <li><strong>Review your profit</strong> — the calculator shows gross profit, total fees deducted, net profit in ETH/SOL and USD, the break-even sell price, and the effective total fee rate.</li>
+          <li><strong>Enter the buy price</strong>: input the price you paid (or plan to pay) for the NFT in ETH or SOL, depending on the blockchain.</li>
+          <li><strong>Enter the sell price</strong>: input the price at which you sold or plan to sell the NFT.</li>
+          <li><strong>Select the marketplace</strong>: choose from OpenSea, Blur, Magic Eden, LooksRare, or X2Y2. The calculator auto-fills the marketplace fee for your selection.</li>
+          <li><strong>Set the creator royalty</strong>: enter the collection's creator royalty percentage. This varies by collection and may be optional on some marketplaces.</li>
+          <li><strong>Add gas costs</strong>: input the gas fee paid for both the buy and sell transactions. The calculator sums both to show total gas expenditure.</li>
+          <li><strong>Review your profit</strong>: the calculator shows gross profit, total fees deducted, net profit in ETH/SOL and USD, the break-even sell price, and the effective total fee rate.</li>
         </ol>
 
         <h2>Understanding NFT Trading Fees</h2>
@@ -109,7 +110,7 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
             </tbody>
           </table>
         </div>
-        <p>On a 1 ETH sale, the difference between OpenSea (2.5%) and Blur (0.5%) is 0.02 ETH — roughly $50 to $70 at typical ETH prices. For active traders making dozens of trades per month, this fee difference compounds into a substantial amount over time.</p>
+        <p>On a 1 ETH sale, the difference between OpenSea (2.5%) and Blur (0.5%) is 0.02 ETH, roughly $50 to $70 at typical ETH prices. For active traders making dozens of trades per month, this fee difference compounds into a substantial amount over time.</p>
 
         <h2>The Hidden Cost of Creator Royalties</h2>
         <p>Creator royalties were designed to provide ongoing revenue to NFT artists and project teams, but they have become one of the most debated topics in the NFT space. A 5% creator royalty on a 1 ETH sale costs the seller 0.05 ETH. Combined with a 2.5% marketplace fee, the total deduction reaches 7.5% before the seller receives their proceeds.</p>
@@ -117,7 +118,7 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
         <p>From a pure trading perspective, lower fees mean a lower break-even price, which means you can profit from smaller price movements. However, collections with strong royalty enforcement often have more engaged communities and development teams, which can support long-term floor price stability.</p>
 
         <h2>How Gas Fees Affect NFT Profitability</h2>
-        <p>Gas fees are a fixed cost per transaction, meaning they disproportionately impact lower-priced NFTs. Buying and selling a 0.05 ETH NFT with $20 in total gas costs means you are paying roughly 12% of the NFT's value just in gas — before any marketplace fees or royalties.</p>
+        <p>Gas fees are a fixed cost per transaction, meaning they disproportionately impact lower-priced NFTs. Buying and selling a 0.05 ETH NFT with $20 in total gas costs means you are paying roughly 12% of the NFT's value just in gas, before any marketplace fees or royalties.</p>
         <p>The break-even sell price must cover your original purchase price plus all buy-side gas, sell-side gas, marketplace fees, and creator royalties. The formula is:</p>
         <div class="formula-block">
           <code>Break-Even Price = (Buy Price + Gas Buy + Gas Sell) / (1 - Marketplace Fee% - Royalty%)</code>
@@ -126,13 +127,15 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
 
         <h2>Tips to Maximize NFT Trading Profits</h2>
         <ul>
-          <li><strong>Time your transactions for low gas</strong> — Ethereum gas prices fluctuate dramatically throughout the day. Weekends and late-night UTC hours typically see the lowest gas costs. Use gas trackers to find optimal windows.</li>
-          <li><strong>Use low-fee marketplaces for trading</strong> — if you are actively trading (not collecting), platforms like Blur and X2Y2 with 0.5% fees significantly reduce your cost basis compared to OpenSea's 2.5%.</li>
-          <li><strong>Account for royalties in your target price</strong> — always calculate your net profit after royalties. A 10% price gain on a collection with 7.5% combined fees leaves you with only 2.5% actual profit.</li>
-          <li><strong>Consider bulk listing tools</strong> — some platforms offer bulk listing that can save gas by batching multiple operations into a single transaction.</li>
-          <li><strong>Factor in opportunity cost</strong> — capital locked in an illiquid NFT cannot be deployed elsewhere. If an NFT sits unsold for months, the true cost includes the opportunity cost of that capital.</li>
-          <li><strong>Trade on L2 or Solana for small-value NFTs</strong> — gas costs on Polygon or Solana are negligible, making them far more efficient for trading NFTs priced under 0.1 ETH equivalent.</li>
+          <li><strong>Time your transactions for low gas</strong>: Ethereum gas prices fluctuate dramatically throughout the day. Weekends and late-night UTC hours typically see the lowest gas costs. Use gas trackers to find optimal windows.</li>
+          <li><strong>Use low-fee marketplaces for trading</strong>: if you are actively trading (not collecting), platforms like Blur and X2Y2 with 0.5% fees significantly reduce your cost basis compared to OpenSea's 2.5%.</li>
+          <li><strong>Account for royalties in your target price</strong>: always calculate your net profit after royalties. A 10% price gain on a collection with 7.5% combined fees leaves you with only 2.5% actual profit.</li>
+          <li><strong>Consider bulk listing tools</strong>: some platforms offer bulk listing that can save gas by batching multiple operations into a single transaction.</li>
+          <li><strong>Factor in opportunity cost</strong>: capital locked in an illiquid NFT cannot be deployed elsewhere. If an NFT sits unsold for months, the true cost includes the opportunity cost of that capital.</li>
+          <li><strong>Trade on L2 or Solana for small-value NFTs</strong>: gas costs on Polygon or Solana are negligible, making them far more efficient for trading NFTs priced under 0.1 ETH equivalent.</li>
         </ul>
+
+        <AuthoritativeSources category="profit-loss" />
 
         <h2>Frequently Asked Questions</h2>
 

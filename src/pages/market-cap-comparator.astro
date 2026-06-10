@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -71,11 +72,11 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <div class="quick-answer"><strong>Quick answer:</strong> Answer &ldquo;if Coin A had Coin B's market cap, what would its price be?&rdquo; Implied price = Coin B market cap / Coin A circulating supply. Useful for setting realistic price targets for altcoins.</div>
         <h2>How to Use the Market Cap Comparator</h2>
         <ol>
-          <li><strong>Select your base token</strong> — Choose the cryptocurrency you want to analyze. This is the token whose hypothetical price you want to calculate.</li>
-          <li><strong>Select a comparison token</strong> — Choose the cryptocurrency whose market cap you want to apply. For example, select Ethereum to answer "What if my token had ETH's market cap?"</li>
-          <li><strong>Review the results</strong> — The calculator displays the hypothetical price your base token would reach if it had the comparison token's market capitalization, along with the growth multiplier required to get there.</li>
-          <li><strong>Compare multiple scenarios</strong> — Try different comparison tokens to see a range of potential outcomes. Compare against Bitcoin for the absolute ceiling, or against similar-category tokens for more realistic targets.</li>
-          <li><strong>Evaluate feasibility</strong> — A 2x multiplier is very different from a 500x multiplier. Use the results to gauge whether your price expectations are grounded in reality or driven by wishful thinking.</li>
+          <li><strong>Select your base token</strong>: Choose the cryptocurrency you want to analyze. This is the token whose hypothetical price you want to calculate.</li>
+          <li><strong>Select a comparison token</strong>: Choose the cryptocurrency whose market cap you want to apply. For example, select Ethereum to answer "What if my token had ETH's market cap?"</li>
+          <li><strong>Review the results</strong>: The calculator displays the hypothetical price your base token would reach if it had the comparison token's market capitalization, along with the growth multiplier required to get there.</li>
+          <li><strong>Compare multiple scenarios</strong>: Try different comparison tokens to see a range of potential outcomes. Compare against Bitcoin for the absolute ceiling, or against similar-category tokens for more realistic targets.</li>
+          <li><strong>Evaluate feasibility</strong>: A 2x multiplier is very different from a 500x multiplier. Use the results to gauge whether your price expectations are grounded in reality or driven by wishful thinking.</li>
         </ol>
 
         <h2>What Is Market Capitalization?</h2>
@@ -93,18 +94,18 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
           <code>Price = Market Cap ÷ Circulating Supply</code>
         </div>
         <p>This is the fundamental equation that the Market Cap Comparator uses. When you ask "What if Token A had Token B's market cap?", the calculator takes Token B's market cap and divides it by Token A's circulating supply to produce the hypothetical price. The growth multiplier is then the ratio of the hypothetical price to the current price.</p>
-        <p>Understanding this formula reveals why tokens with vastly different supplies can have vastly different prices even at the same market cap. Bitcoin has roughly 19.8 million coins in circulation. Shiba Inu has hundreds of trillions. If both had a $1 trillion market cap, Bitcoin would be worth roughly $50,000 per coin, while each SHIB token would be worth a fraction of a cent. The price per token is meaningless without considering the supply — and that is exactly what market cap captures.</p>
+        <p>Understanding this formula reveals why tokens with vastly different supplies can have vastly different prices even at the same market cap. Bitcoin has roughly 19.8 million coins in circulation. Shiba Inu has hundreds of trillions. If both had a $1 trillion market cap, Bitcoin would be worth roughly $50,000 per coin, while each SHIB token would be worth a fraction of a cent. The price per token is meaningless without considering the supply, and that is exactly what market cap captures.</p>
 
         <h2>Why Market Cap Matters More Than Price</h2>
         <p>One of the most common mistakes beginners make in cryptocurrency investing is comparing tokens by their unit price. A new investor might look at Bitcoin at $60,000 and Cardano at $0.50 and conclude that Cardano is "cheaper" and therefore has more room to grow. This reasoning is fundamentally flawed because it ignores circulating supply entirely.</p>
-        <p>Consider two hypothetical tokens: Token X trades at $0.001 with 100 billion tokens in circulation. Token Y trades at $500 with 10 million tokens in circulation. Token X looks "cheaper," but its market cap is $100 million, while Token Y's market cap is $5 billion. Token Y is actually 50 times larger by total market value. For Token X to reach $1, its market cap would need to grow to $100 billion — a 1,000x increase that would place it among the top five cryptocurrencies globally. That is not "cheap"; it is astronomically ambitious.</p>
+        <p>Consider two hypothetical tokens: Token X trades at $0.001 with 100 billion tokens in circulation. Token Y trades at $500 with 10 million tokens in circulation. Token X looks "cheaper," but its market cap is $100 million, while Token Y's market cap is $5 billion. Token Y is actually 50 times larger by total market value. For Token X to reach $1, its market cap would need to grow to $100 billion, a 1,000x increase that would place it among the top five cryptocurrencies globally. That is not "cheap"; it is astronomically ambitious.</p>
         <p>This is precisely why the Market Cap Comparator exists. Instead of looking at price, you compare market caps. If your favorite altcoin has a $500 million market cap and you want it to match Solana's $80 billion market cap, that requires a 160x growth multiplier. The tool makes this math instant and visual, preventing you from falling into the "low price = high potential" trap.</p>
 
         <h2>Fully Diluted vs Circulating Market Cap</h2>
         <p>There are two versions of market cap you should understand:</p>
         <p><strong>Circulating Market Cap</strong> uses the number of tokens currently available and trading on the open market. This is the standard metric used for rankings and the default in most calculators. It reflects the current state of supply and is the most relevant for short-to-medium-term price analysis.</p>
         <p><strong>Fully Diluted Valuation (FDV)</strong> uses the maximum possible supply of a token. If a project has 1 billion tokens in circulation but a maximum supply of 10 billion, the FDV is 10 times the circulating market cap. FDV represents the theoretical market cap if all tokens were in circulation at the current price.</p>
-        <p>Why does this distinction matter? Many projects release tokens on a vesting schedule — team tokens, investor allocations, staking rewards, and ecosystem funds that unlock over months or years. When these tokens enter circulation, they increase the supply, which puts downward pressure on price if demand does not keep pace. A project with a $1 billion circulating market cap but a $20 billion FDV has 95% of its tokens yet to be released. That impending supply dilution is a significant risk factor that circulating market cap alone does not capture.</p>
+        <p>Why does this distinction matter? Many projects release tokens on a vesting schedule, team tokens, investor allocations, staking rewards, and ecosystem funds that unlock over months or years. When these tokens enter circulation, they increase the supply, which puts downward pressure on price if demand does not keep pace. A project with a $1 billion circulating market cap but a $20 billion FDV has 95% of its tokens yet to be released. That impending supply dilution is a significant risk factor that circulating market cap alone does not capture.</p>
         <p>When using the Market Cap Comparator, be mindful of which metric you are comparing. Comparing the circulating market cap of a fully-vested token like Bitcoin against a project that has released only 10% of its supply can produce misleading results. For the most accurate analysis, compare like-for-like: circulating-to-circulating or FDV-to-FDV.</p>
 
         <h2>Common Market Cap Comparison Scenarios</h2>
@@ -142,7 +143,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
                 <td>Bitcoin dominance test</td>
                 <td>Any altcoin</td>
                 <td>BTC</td>
-                <td>The absolute theoretical maximum — what it would take for any token to match Bitcoin's market cap</td>
+                <td>The absolute theoretical maximum, what it would take for any token to match Bitcoin's market cap</td>
               </tr>
               <tr>
                 <td>Peer comparison</td>
@@ -159,7 +160,9 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
             </tbody>
           </table>
         </div>
-        <p>The most useful comparisons are between tokens in the same category. Comparing a meme coin to Bitcoin is interesting but unrealistic — meme coins derive value from community and speculation, not the same fundamentals as a global store-of-value asset. A more instructive comparison would be PEPE vs DOGE, or a new Layer 1 vs Solana, since these tokens compete for similar investor capital and serve comparable market functions.</p>
+        <p>The most useful comparisons are between tokens in the same category. Comparing a meme coin to Bitcoin is interesting but unrealistic, meme coins derive value from community and speculation, not the same fundamentals as a global store-of-value asset. A more instructive comparison would be PEPE vs DOGE, or a new Layer 1 vs Solana, since these tokens compete for similar investor capital and serve comparable market functions.</p>
+
+        <AuthoritativeSources category="investment" />
 
         <h2>Frequently Asked Questions</h2>
 
@@ -180,7 +183,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <details>
           <summary>Is a low market cap coin a good investment?</summary>
-          <p>A low market cap can indicate higher growth potential, but it also comes with significantly higher risk. Small-cap cryptocurrencies (under $100 million market cap) are more volatile, less liquid, and more susceptible to manipulation than large-cap assets like Bitcoin or Ethereum. Many low-cap projects fail entirely — teams abandon development, funds run out, or the market simply loses interest. However, the tokens that do succeed from small-cap to mid-cap or large-cap deliver the largest percentage returns. The key is thorough research: evaluate the team, technology, tokenomics, community, and competitive landscape before investing. Never allocate more than you can afford to lose, and diversify across multiple projects to spread risk.</p>
+          <p>A low market cap can indicate higher growth potential, but it also comes with significantly higher risk. Small-cap cryptocurrencies (under $100 million market cap) are more volatile, less liquid, and more susceptible to manipulation than large-cap assets like Bitcoin or Ethereum. Many low-cap projects fail entirely, teams abandon development, funds run out, or the market simply loses interest. However, the tokens that do succeed from small-cap to mid-cap or large-cap deliver the largest percentage returns. The key is thorough research: evaluate the team, technology, tokenomics, community, and competitive landscape before investing. Never allocate more than you can afford to lose, and diversify across multiple projects to spread risk.</p>
         </details>
 
         <details>

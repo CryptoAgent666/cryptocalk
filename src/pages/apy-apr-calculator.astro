@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -72,27 +73,27 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <h2>How to Use the APY vs APR Calculator</h2>
         <p>Our free APR to APY converter helps crypto investors and DeFi users understand the true yield they earn after compounding. Whether you are comparing lending protocols, staking options, or savings accounts, this tool shows the real numbers behind advertised rates.</p>
         <ol>
-          <li><strong>Choose your conversion mode</strong> — select "APR to APY" if you have an annual percentage rate and want to see the effective yield, or "APY to APR" if you want to find the nominal rate behind a quoted APY.</li>
-          <li><strong>Enter the rate</strong> — type the advertised interest rate or use the quick preset buttons for common rates (3%, 5%, 8%, 12%, 20%, 50%, 100%).</li>
-          <li><strong>Select compounding frequency</strong> — choose how often interest is compounded: daily, weekly, monthly, quarterly, or yearly. DeFi protocols typically compound daily or per block.</li>
-          <li><strong>Enter your principal</strong> — type the amount you plan to deposit or stake in USD.</li>
-          <li><strong>Set the period</strong> — choose how long you plan to hold the position. Use the preset buttons or enter a custom number of years.</li>
-          <li><strong>Read the results</strong> — see the converted rate, earnings breakdown, compounding frequency comparison table, and monthly or yearly growth projections.</li>
+          <li><strong>Choose your conversion mode</strong>: select "APR to APY" if you have an annual percentage rate and want to see the effective yield, or "APY to APR" if you want to find the nominal rate behind a quoted APY.</li>
+          <li><strong>Enter the rate</strong>: type the advertised interest rate or use the quick preset buttons for common rates (3%, 5%, 8%, 12%, 20%, 50%, 100%).</li>
+          <li><strong>Select compounding frequency</strong>: choose how often interest is compounded: daily, weekly, monthly, quarterly, or yearly. DeFi protocols typically compound daily or per block.</li>
+          <li><strong>Enter your principal</strong>: type the amount you plan to deposit or stake in USD.</li>
+          <li><strong>Set the period</strong>: choose how long you plan to hold the position. Use the preset buttons or enter a custom number of years.</li>
+          <li><strong>Read the results</strong>: see the converted rate, earnings breakdown, compounding frequency comparison table, and monthly or yearly growth projections.</li>
         </ol>
 
         <h3>Key Features</h3>
         <ul>
-          <li><strong>Two-way conversion</strong> — convert APR to APY or APY to APR with a single toggle.</li>
-          <li><strong>Compounding comparison table</strong> — see how daily, weekly, monthly, quarterly, and yearly compounding affect your yield side by side.</li>
-          <li><strong>Earnings breakdown</strong> — view compounded vs. simple interest earnings and the exact dollar advantage of compounding.</li>
-          <li><strong>Monthly and yearly growth tables</strong> — track how your balance grows over time with detailed period-by-period projections.</li>
-          <li><strong>DeFi-focused presets</strong> — rate presets cover common DeFi yields from conservative 3% to aggressive 100% APR.</li>
-          <li><strong>Instant results</strong> — all calculations update in real time as you adjust inputs.</li>
+          <li><strong>Two-way conversion</strong>: convert APR to APY or APY to APR with a single toggle.</li>
+          <li><strong>Compounding comparison table</strong>: see how daily, weekly, monthly, quarterly, and yearly compounding affect your yield side by side.</li>
+          <li><strong>Earnings breakdown</strong>: view compounded vs. simple interest earnings and the exact dollar advantage of compounding.</li>
+          <li><strong>Monthly and yearly growth tables</strong>: track how your balance grows over time with detailed period-by-period projections.</li>
+          <li><strong>DeFi-focused presets</strong>: rate presets cover common DeFi yields from conservative 3% to aggressive 100% APR.</li>
+          <li><strong>Instant results</strong>: all calculations update in real time as you adjust inputs.</li>
         </ul>
 
         <h2>APR vs APY: What Is the Difference?</h2>
         <p>APR (Annual Percentage Rate) and APY (Annual Percentage Yield) both express annualized interest rates, but they account for compounding differently. Understanding the distinction is critical for comparing DeFi protocols, staking rewards, and crypto lending platforms accurately.</p>
-        <p><strong>APR</strong> is the simple annual rate without compounding. If a protocol advertises 12% APR, you earn exactly 12% of your principal over one year — but only if interest is paid once at the end. APR does not reflect the benefit of reinvesting earned interest.</p>
+        <p><strong>APR</strong> is the simple annual rate without compounding. If a protocol advertises 12% APR, you earn exactly 12% of your principal over one year, but only if interest is paid once at the end. APR does not reflect the benefit of reinvesting earned interest.</p>
         <p><strong>APY</strong> includes the effect of compounding. When interest is reinvested (compounded), you earn interest on your interest. The more frequently compounding occurs, the higher the effective APY relative to the stated APR. A 12% APR compounded daily produces an APY of approximately 12.7475%, meaning you earn more than the nominal 12%.</p>
         <p>In DeFi, most protocols quote APY because it reflects what users actually earn. However, some platforms quote APR, especially for lending and borrowing rates. Always check which metric is being used before comparing yields across platforms.</p>
 
@@ -167,6 +168,8 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <h2>APR and APY in DeFi and Crypto Staking</h2>
         <p>DeFi protocols, liquidity pools, and staking platforms use APR and APY in different contexts. Lending protocols like Aave and Compound typically display both metrics. Yield aggregators like Yearn Finance optimize compounding frequency to maximize APY. Staking platforms may quote APR for the base reward rate, with actual APY depending on whether you manually restake or use auto-compounding vaults.</p>
         <p>When evaluating crypto yield opportunities, always consider: the quoted metric (APR vs APY), the compounding frequency, whether auto-compounding is available, any fees for compounding transactions (gas costs on Ethereum can erode gains from frequent compounding), and the sustainability of the advertised rate.</p>
+
+        <AuthoritativeSources category="defi-yield" />
 
         <h2>Frequently Asked Questions</h2>
 

@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -75,25 +76,25 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
       <div class="section-container">
         <div class="quick-answer"><strong>Quick answer:</strong> Position size = (Account Balance &times; Risk %) / (Entry &minus; Stop Loss). Risking 2% of a $10,000 account with a $500 stop distance means a $400 position &mdash; this keeps you in the game long-term.</div>
         <h2>How to Use the Position Size Calculator</h2>
-        <p>Our free position size calculator helps you determine the optimal trade size for any cryptocurrency trade. Proper position sizing is the cornerstone of risk management — it ensures that no single trade can blow up your account. Whether you're trading Bitcoin, Ethereum, or any altcoin on spot or futures markets, this tool calculates the exact position size that aligns with your risk tolerance and trading strategy.</p>
+        <p>Our free position size calculator helps you determine the optimal trade size for any cryptocurrency trade. Proper position sizing is the cornerstone of risk management, it ensures that no single trade can blow up your account. Whether you're trading Bitcoin, Ethereum, or any altcoin on spot or futures markets, this tool calculates the exact position size that aligns with your risk tolerance and trading strategy.</p>
 
         <p>Follow these steps to calculate your ideal position size:</p>
         <ol>
-          <li><strong>Enter your account balance</strong> — Input the total capital you're trading with (e.g., $10,000 USDT).</li>
-          <li><strong>Set your risk per trade</strong> — Choose how much of your account you're willing to lose on this trade (1-2% recommended).</li>
-          <li><strong>Input entry price</strong> — Enter your planned entry price or search for a crypto to auto-fill the current market price.</li>
-          <li><strong>Set your stop-loss</strong> — Define where you'll exit if the trade moves against you. This is critical for risk calculation.</li>
-          <li><strong>Choose leverage (optional)</strong> — If trading futures or perpetuals, set your leverage multiplier (1x for spot trading).</li>
-          <li><strong>Add take-profit (optional)</strong> — Enter your target exit price to see the risk:reward ratio for your trade setup.</li>
+          <li><strong>Enter your account balance</strong>: Input the total capital you're trading with (e.g., $10,000 USDT).</li>
+          <li><strong>Set your risk per trade</strong>: Choose how much of your account you're willing to lose on this trade (1-2% recommended).</li>
+          <li><strong>Input entry price</strong>: Enter your planned entry price or search for a crypto to auto-fill the current market price.</li>
+          <li><strong>Set your stop-loss</strong>: Define where you'll exit if the trade moves against you. This is critical for risk calculation.</li>
+          <li><strong>Choose leverage (optional)</strong>: If trading futures or perpetuals, set your leverage multiplier (1x for spot trading).</li>
+          <li><strong>Add take-profit (optional)</strong>: Enter your target exit price to see the risk:reward ratio for your trade setup.</li>
         </ol>
 
         <h2>Key Features</h2>
         <ul>
-          <li><strong>Risk-based sizing</strong> — Set your risk per trade (1-3% recommended) and the calculator determines the exact position size.</li>
-          <li><strong>Leverage support</strong> — Calculate position sizes for leveraged trades up to 125x with liquidation price estimates.</li>
-          <li><strong>Risk:Reward visualization</strong> — See your R:R ratio with a visual bar when you enter a take-profit level.</li>
-          <li><strong>Real-time prices</strong> — Search for any cryptocurrency and auto-fill the current market price.</li>
-          <li><strong>Fee calculation</strong> — Include exchange fees to see your actual effective risk.</li>
+          <li><strong>Risk-based sizing</strong>: Set your risk per trade (1-3% recommended) and the calculator determines the exact position size.</li>
+          <li><strong>Leverage support</strong>: Calculate position sizes for leveraged trades up to 125x with liquidation price estimates.</li>
+          <li><strong>Risk:Reward visualization</strong>: See your R:R ratio with a visual bar when you enter a take-profit level.</li>
+          <li><strong>Real-time prices</strong>: Search for any cryptocurrency and auto-fill the current market price.</li>
+          <li><strong>Fee calculation</strong>: Include exchange fees to see your actual effective risk.</li>
         </ul>
 
         <h2>Position Size Formulas</h2>
@@ -112,7 +113,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <p><strong>Worked Example:</strong> Let's say you have a $10,000 account and want to risk 2% ($200) on a Bitcoin trade. Your entry price is $60,000 and your stop-loss is at $57,000. First, calculate the stop-loss distance: ($60,000 - $57,000) ÷ $60,000 × 100 = 5%. Then calculate position size: $200 ÷ 0.05 = $4,000. Your optimal position size is $4,000 worth of Bitcoin, which at $60,000 per BTC equals 0.0667 BTC. If the trade hits your stop-loss, you'll lose exactly $200 (2% of your account).</p>
 
         <h2>The 1-2% Rule Explained</h2>
-        <p>Professional traders understand that protecting capital is more important than chasing profits. The 1-2% rule — risking only 1-2% of your account per trade — is the golden standard of risk management. This approach ensures your trading career survives inevitable losing streaks and gives you enough runway to let your edge play out over hundreds of trades.</p>
+        <p>Professional traders understand that protecting capital is more important than chasing profits. The 1-2% rule, risking only 1-2% of your account per trade, is the golden standard of risk management. This approach ensures your trading career survives inevitable losing streaks and gives you enough runway to let your edge play out over hundreds of trades.</p>
 
         <p>Here's why amateur traders who risk 5-10% per trade eventually blow up: trading is a probabilistic game where even the best strategies have losing streaks. If you risk too much per trade, a normal variance can destroy your account before you have a chance to recover. The math is unforgiving:</p>
 
@@ -150,12 +151,12 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
           </table>
         </div>
 
-        <p>Notice that after losing 50% of your account, you need a 100% return just to break even. A trader risking 10% per trade hits this devastating drawdown after just 7 losses — a streak that happens more often than you think. Meanwhile, a disciplined 1% risk trader can withstand 69 consecutive losses before reaching the same drawdown. This margin of safety is what separates long-term successful traders from those who blow up and quit.</p>
+        <p>Notice that after losing 50% of your account, you need a 100% return just to break even. A trader risking 10% per trade hits this devastating drawdown after just 7 losses, a streak that happens more often than you think. Meanwhile, a disciplined 1% risk trader can withstand 69 consecutive losses before reaching the same drawdown. This margin of safety is what separates long-term successful traders from those who blow up and quit.</p>
 
         <h2>Position Sizing with Leverage</h2>
-        <p>Leverage is one of the most misunderstood concepts in crypto trading. Many beginners think leverage automatically increases their risk, but that's not quite accurate. Leverage changes your margin requirement, not your risk — if you calculate position size correctly.</p>
+        <p>Leverage is one of the most misunderstood concepts in crypto trading. Many beginners think leverage automatically increases their risk, but that's not quite accurate. Leverage changes your margin requirement, not your risk, if you calculate position size correctly.</p>
 
-        <p>Here's how leverage actually works: Without leverage (1x), if you want to open a $10,000 position, you need $10,000 in margin. With 10x leverage, you only need $1,000 in margin to control that same $10,000 position. The key insight: your dollar risk remains identical if you set the same stop-loss distance. What changes is your liquidation price — the point where the exchange forcibly closes your position.</p>
+        <p>Here's how leverage actually works: Without leverage (1x), if you want to open a $10,000 position, you need $10,000 in margin. With 10x leverage, you only need $1,000 in margin to control that same $10,000 position. The key insight: your dollar risk remains identical if you set the same stop-loss distance. What changes is your liquidation price, the point where the exchange forcibly closes your position.</p>
 
         <p><strong>Example: Same Risk, Different Leverage</strong></p>
         <p>Scenario: You have a $10,000 account and want to risk $200 (2%) on a Bitcoin long from $60,000 with a stop-loss at $57,000 (5% away).</p>
@@ -165,15 +166,15 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
           <li><strong>50x Leverage:</strong> Position size = $4,000. Margin required = $80. Liquidation price ≈ $58,800. If stop-loss hits, you lose $200.</li>
         </ul>
 
-        <p>Notice that your actual risk ($200) stays the same across all leverage levels — but with higher leverage, your liquidation price creeps dangerously close to your entry. At 50x, a mere 2% move against you triggers liquidation, potentially closing your position before your stop-loss even triggers. This is why experienced traders keep leverage moderate (5-20x) and always place stop-losses well before liquidation levels.</p>
+        <p>Notice that your actual risk ($200) stays the same across all leverage levels, but with higher leverage, your liquidation price creeps dangerously close to your entry. At 50x, a mere 2% move against you triggers liquidation, potentially closing your position before your stop-loss even triggers. This is why experienced traders keep leverage moderate (5-20x) and always place stop-losses well before liquidation levels.</p>
 
         <h2>Risk:Reward Ratio Guide</h2>
-        <p>Your risk:reward ratio (R:R) determines how often you need to win to be profitable. A 1:2 R:R means you risk $1 to make $2 — if this trade wins, it covers two losing trades. Understanding R:R transforms your trading from gambling to a calculated probabilistic edge.</p>
+        <p>Your risk:reward ratio (R:R) determines how often you need to win to be profitable. A 1:2 R:R means you risk $1 to make $2, if this trade wins, it covers two losing trades. Understanding R:R transforms your trading from gambling to a calculated probabilistic edge.</p>
         <ul>
-          <li><strong>1:1 R:R</strong> — Break-even strategy. You need a >50% win rate to profit after fees. Not recommended for most strategies.</li>
-          <li><strong>1:2 R:R</strong> — Good ratio for swing trading. You only need a 34% win rate to break even (before fees). Every 1 winner covers 2 losers.</li>
-          <li><strong>1:3 R:R</strong> — Excellent ratio. Profitable with just a 25% win rate. Common for position traders with wider stops.</li>
-          <li><strong>1:5+ R:R</strong> — Asymmetric setups favored by patient traders. Even a 17% win rate is profitable, but requires discipline to hold for large targets.</li>
+          <li><strong>1:1 R:R</strong>: Break-even strategy. You need a >50% win rate to profit after fees. Not recommended for most strategies.</li>
+          <li><strong>1:2 R:R</strong>: Good ratio for swing trading. You only need a 34% win rate to break even (before fees). Every 1 winner covers 2 losers.</li>
+          <li><strong>1:3 R:R</strong>: Excellent ratio. Profitable with just a 25% win rate. Common for position traders with wider stops.</li>
+          <li><strong>1:5+ R:R</strong>: Asymmetric setups favored by patient traders. Even a 17% win rate is profitable, but requires discipline to hold for large targets.</li>
         </ul>
 
         <p>The trap many traders fall into: chasing high R:R ratios with unrealistic take-profit targets. A 1:10 R:R looks amazing on paper, but if your win rate drops to 5% because targets rarely hit, you'll bleed capital. The sweet spot for most crypto day traders is 1:2 to 1:3 R:R with a 40-50% win rate. Swing traders often target 1:3 to 1:5 R:R with 30-40% win rates.</p>
@@ -181,13 +182,15 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <h2>Common Position Sizing Mistakes</h2>
         <p>Even traders who understand position sizing theory make critical mistakes in practice. Avoid these common pitfalls:</p>
         <ul>
-          <li><strong>Sizing by "feeling" instead of math</strong> — Trading $100 on one setup and $5,000 on another because you "feel confident" is a recipe for disaster. Confidence doesn't predict outcomes. Stick to your calculated position size based on your risk percentage and stop-loss distance, regardless of conviction.</li>
-          <li><strong>Ignoring trading fees</strong> — Exchange fees (maker/taker fees, funding rates on perpetuals) eat into your risk budget. A 0.1% entry and exit fee means 0.2% of your position is gone before the market even moves. Account for fees when calculating true risk, especially on smaller trades where fees represent a larger percentage.</li>
-          <li><strong>Using the same position size for all trades</strong> — Not all setups are equal. A setup with a tight 2% stop-loss can have a larger position size than one requiring a 10% stop for the same dollar risk. Always recalculate position size based on your specific stop-loss distance for each trade.</li>
-          <li><strong>Revenge sizing after losses</strong> — After a losing streak, the temptation to "make it back" by doubling your position size is overwhelming — and deadly. This martingale approach guarantees eventual account destruction. Losing streaks are normal; maintain consistent risk per trade regardless of recent results.</li>
-          <li><strong>Overleveraging on high-conviction trades</strong> — "This setup is guaranteed" — famous last words before a blown account. No trade is guaranteed. Using 50-100x leverage because you're "sure" this one will work violates risk management principles. High leverage should only be used with proportionally smaller position sizes to maintain consistent dollar risk.</li>
-          <li><strong>Forgetting about correlated positions</strong> — Opening 5 different altcoin longs when everything is correlated to Bitcoin means you're actually risking 5x your intended amount if BTC dumps. Your real risk is the sum of all correlated positions, not individual trades.</li>
+          <li><strong>Sizing by "feeling" instead of math</strong>: Trading $100 on one setup and $5,000 on another because you "feel confident" is a recipe for disaster. Confidence doesn't predict outcomes. Stick to your calculated position size based on your risk percentage and stop-loss distance, regardless of conviction.</li>
+          <li><strong>Ignoring trading fees</strong>: Exchange fees (maker/taker fees, funding rates on perpetuals) eat into your risk budget. A 0.1% entry and exit fee means 0.2% of your position is gone before the market even moves. Account for fees when calculating true risk, especially on smaller trades where fees represent a larger percentage.</li>
+          <li><strong>Using the same position size for all trades</strong>: Not all setups are equal. A setup with a tight 2% stop-loss can have a larger position size than one requiring a 10% stop for the same dollar risk. Always recalculate position size based on your specific stop-loss distance for each trade.</li>
+          <li><strong>Revenge sizing after losses</strong>: After a losing streak, the temptation to "make it back" by doubling your position size is overwhelming, and deadly. This martingale approach guarantees eventual account destruction. Losing streaks are normal; maintain consistent risk per trade regardless of recent results.</li>
+          <li><strong>Overleveraging on high-conviction trades</strong>: "This setup is guaranteed" — famous last words before a blown account. No trade is guaranteed. Using 50-100x leverage because you're "sure" this one will work violates risk management principles. High leverage should only be used with proportionally smaller position sizes to maintain consistent dollar risk.</li>
+          <li><strong>Forgetting about correlated positions</strong>: Opening 5 different altcoin longs when everything is correlated to Bitcoin means you're actually risking 5x your intended amount if BTC dumps. Your real risk is the sum of all correlated positions, not individual trades.</li>
         </ul>
+
+        <AuthoritativeSources category="trading-tools" />
 
         <h2>Frequently Asked Questions</h2>
 
@@ -203,7 +206,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <details>
           <summary>Does leverage increase my risk in crypto trading?</summary>
-          <p>Leverage itself does not increase your dollar risk if you keep position size constant. A $4,000 position at 1x and 10x leverage risks the same $200 at a 5% stop-loss. However, leverage moves your liquidation price closer to entry — at 10x, a 10% drop liquidates you; at 50x, a 2% drop does. The danger is that liquidation can occur before your stop-loss triggers during flash crashes.</p>
+          <p>Leverage itself does not increase your dollar risk if you keep position size constant. A $4,000 position at 1x and 10x leverage risks the same $200 at a 5% stop-loss. However, leverage moves your liquidation price closer to entry, at 10x, a 10% drop liquidates you; at 50x, a 2% drop does. The danger is that liquidation can occur before your stop-loss triggers during flash crashes.</p>
         </details>
 
         <details>

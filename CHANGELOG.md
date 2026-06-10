@@ -2,6 +2,26 @@
 
 All notable changes to this project are documented here.
 
+## [2026-06-10] (update 149) — CalkCheck quality pass: E-E-A-T sources on all EN pages, em-dash thinning, a11y/link hygiene
+
+Driven by the full CalkCheck audit (AUDIT-2026-06-10.md, 160+ criteria). Changes:
+
+### Added
+- **"Authoritative sources" block on all 35 standalone EN pages** (dca, airdrop, break-even, halving, tax…): new shared `src/data/category-sources.ts` (extracted from LocalizedCalculatorPage) + `AuthoritativeSources.astro` component inserted before FAQ. EN coverage now 128/128 (was 93/128) — biggest E-E-A-T gap from the audit.
+- `dns-prefetch` hints for googletagmanager + pagead2 in Layout.
+
+### Fixed
+- **`<nav>` landmark in SiteHeader.astro** (about/privacy/terms/methodology pages had no navigation landmark — A11Y-2 fail).
+- **16 internal links pointed to noindex en-slug aliases**: 5 hardcoded prose links on localized homepages (`/xx/mining-calculator/` → real localized slugs) + 11 links in `/ru/updates` (en slugs → ru slugs). Canonical pages now link only to canonical localized URLs.
+
+### Changed
+- **Em-dash thinning in EN content (−1,899 "—")**: guarded patterns only (`</strong> — ` → `</strong>: `; ` — `+lowercase → `, `), EN blocks of calculator-seo-content/ext + seo-body-text + EN .astro pages. Density on dca: 19.3 → 7.7/1k (AI-detection threshold 15). Es/pt/tr/hi/ru content untouched; UI-string keys untouched.
+
+### Notes
+- Build 1296 pages, 32/32 tests, browser-verified (sources block renders before FAQ, console clean, localized template still renders its sources — shared-module refactor safe).
+- Audit false-positives identified (no action): about/ schema "missing WebPage" (uses correct ProfilePage), noopener "missing" (rel on next line), icon-buttons aria (only theme-toggle exists, has aria).
+- **Security headers (P1) still pending — infra task:** all 6 defined in `public/_headers` but nginx host ignores the file; needs Cloudflare Transform Rules (token lacks permission) — and the stale CSP there must be rewritten first (lacks AdSense domains).
+
 ## [2026-05-31] (update 148) — Audit #14 fixes: pip price/tick i18n, ROI holding-years localization
 
 Browser audit #14 (15 pages) — **math correct on all 15, zero functional bugs (7th clean math audit)**. Found i18n formatting leaks, fixed here.

@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -73,12 +74,12 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <h2>How to Use the Compound Interest Calculator</h2>
         <p>Our crypto compound interest calculator helps you visualize how your investments can grow over time with the power of compounding. Follow these simple steps to get started:</p>
         <ol>
-          <li><strong>Enter your initial principal</strong> — The amount you're starting with or planning to invest initially.</li>
-          <li><strong>Input your expected APY</strong> — The annual percentage yield you expect to earn from staking, yield farming, or lending. Be realistic with this number based on current market conditions.</li>
-          <li><strong>Select compounding frequency</strong> — Choose how often your rewards will be reinvested: daily, weekly, monthly, quarterly, or annually. Most DeFi protocols compound daily.</li>
-          <li><strong>Set your time period</strong> — How many years you plan to let your investment compound. Longer time periods show the true power of exponential growth.</li>
-          <li><strong>Add recurring contributions (optional)</strong> — If you plan to deposit additional funds regularly, enter the amount and frequency. This dramatically accelerates growth.</li>
-          <li><strong>Review the results</strong> — See your projected final balance, total interest earned, and year-by-year breakdown showing how your investment compounds over time.</li>
+          <li><strong>Enter your initial principal</strong>: The amount you're starting with or planning to invest initially.</li>
+          <li><strong>Input your expected APY</strong>: The annual percentage yield you expect to earn from staking, yield farming, or lending. Be realistic with this number based on current market conditions.</li>
+          <li><strong>Select compounding frequency</strong>: Choose how often your rewards will be reinvested: daily, weekly, monthly, quarterly, or annually. Most DeFi protocols compound daily.</li>
+          <li><strong>Set your time period</strong>: How many years you plan to let your investment compound. Longer time periods show the true power of exponential growth.</li>
+          <li><strong>Add recurring contributions (optional)</strong>: If you plan to deposit additional funds regularly, enter the amount and frequency. This dramatically accelerates growth.</li>
+          <li><strong>Review the results</strong>: See your projected final balance, total interest earned, and year-by-year breakdown showing how your investment compounds over time.</li>
         </ol>
 
         <h2>What Is Compound Interest?</h2>
@@ -181,13 +182,15 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <h2>Common Mistakes with Compound Interest</h2>
         <p>While compound interest is powerful, many investors make critical mistakes that reduce or eliminate its benefits. Avoid these common pitfalls:</p>
         <ul>
-          <li><strong>Ignoring fees and gas costs</strong> — Protocol fees, performance fees, and transaction costs can significantly reduce your effective APY. A 20% APY with 5% fees is really 15%. On high-fee networks, frequent compounding can cost more than the extra interest earned.</li>
-          <li><strong>Chasing unsustainably high yields</strong> — A protocol offering 500% APY is either extremely risky, paying in rapidly inflating tokens, or an outright scam. If yields seem too good to be true, they probably are. Stick to established protocols with realistic returns.</li>
-          <li><strong>Not accounting for impermanent loss</strong> — If you're earning compound interest through liquidity pools, impermanent loss can exceed your earned fees, especially in volatile markets. This is a hidden cost that many overlook.</li>
-          <li><strong>Forgetting about inflation</strong> — Your investment might grow 6% annually, but if inflation is 4%, your real return is only 2%. Consider your returns in both nominal and real (inflation-adjusted) terms.</li>
-          <li><strong>Expecting constant rates</strong> — Crypto yields are variable and can change dramatically. Today's 12% APY might be 4% next month. Don't extrapolate current rates too far into the future when planning.</li>
-          <li><strong>Overlooking tax implications</strong> — In many jurisdictions, compounded rewards are taxable events. That 10% APY might effectively be 7% after taxes, depending on your tax bracket and local regulations.</li>
+          <li><strong>Ignoring fees and gas costs</strong>: Protocol fees, performance fees, and transaction costs can significantly reduce your effective APY. A 20% APY with 5% fees is really 15%. On high-fee networks, frequent compounding can cost more than the extra interest earned.</li>
+          <li><strong>Chasing unsustainably high yields</strong>: A protocol offering 500% APY is either extremely risky, paying in rapidly inflating tokens, or an outright scam. If yields seem too good to be true, they probably are. Stick to established protocols with realistic returns.</li>
+          <li><strong>Not accounting for impermanent loss</strong>: If you're earning compound interest through liquidity pools, impermanent loss can exceed your earned fees, especially in volatile markets. This is a hidden cost that many overlook.</li>
+          <li><strong>Forgetting about inflation</strong>: Your investment might grow 6% annually, but if inflation is 4%, your real return is only 2%. Consider your returns in both nominal and real (inflation-adjusted) terms.</li>
+          <li><strong>Expecting constant rates</strong>: Crypto yields are variable and can change dramatically. Today's 12% APY might be 4% next month. Don't extrapolate current rates too far into the future when planning.</li>
+          <li><strong>Overlooking tax implications</strong>: In many jurisdictions, compounded rewards are taxable events. That 10% APY might effectively be 7% after taxes, depending on your tax bracket and local regulations.</li>
         </ul>
+
+        <AuthoritativeSources category="defi-yield" />
 
         <h2>Frequently Asked Questions</h2>
 

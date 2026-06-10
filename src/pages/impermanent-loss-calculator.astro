@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -84,9 +85,9 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <h2>What Is Impermanent Loss?</h2>
         <p>Impermanent loss (IL) is a unique risk that occurs when you provide liquidity to automated market maker (AMM) decentralized exchanges like Uniswap, SushiSwap, PancakeSwap, or Trader Joe. When you deposit two tokens into a liquidity pool, you're exposing yourself to price divergence risk. If the price ratio between your two deposited tokens changes compared to when you deposited them, you will have less value than if you had simply held (HODLed) the tokens in your wallet.</p>
 
-        <p>The term "impermanent" is somewhat misleading — the loss only remains impermanent if token prices return to their original ratio. Once you withdraw your liquidity, any loss becomes permanent. In reality, prices rarely return exactly to entry levels, so impermanent loss often becomes realized loss. Understanding how IL works is critical for anyone participating in DeFi liquidity provision or yield farming strategies.</p>
+        <p>The term "impermanent" is somewhat misleading, the loss only remains impermanent if token prices return to their original ratio. Once you withdraw your liquidity, any loss becomes permanent. In reality, prices rarely return exactly to entry levels, so impermanent loss often becomes realized loss. Understanding how IL works is critical for anyone participating in DeFi liquidity provision or yield farming strategies.</p>
 
-        <p>AMMs operate using mathematical formulas rather than order books. The most common formula is the constant product market maker (CPMM) model used by Uniswap V2, where x × y = k. Here, x and y represent the quantities of two tokens in the pool, and k is a constant. When traders swap tokens, they change the ratio of x to y, which changes the price. Arbitrageurs continuously rebalance pools to match external market prices, and during this process, liquidity providers end up with more of the depreciating asset and less of the appreciating one — this rebalancing is what creates impermanent loss.</p>
+        <p>AMMs operate using mathematical formulas rather than order books. The most common formula is the constant product market maker (CPMM) model used by Uniswap V2, where x × y = k. Here, x and y represent the quantities of two tokens in the pool, and k is a constant. When traders swap tokens, they change the ratio of x to y, which changes the price. Arbitrageurs continuously rebalance pools to match external market prices, and during this process, liquidity providers end up with more of the depreciating asset and less of the appreciating one, this rebalancing is what creates impermanent loss.</p>
 
         <h2>The Impermanent Loss Formula</h2>
         <div class="formula-block">
@@ -145,14 +146,14 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
             </tbody>
           </table>
         </div>
-        <p>Notice that impermanent loss is symmetrical — a 2× price increase or a 0.5× price decrease both result in approximately 5.7% IL. The further the price diverges from your entry point in either direction, the greater the impermanent loss.</p>
+        <p>Notice that impermanent loss is symmetrical, a 2× price increase or a 0.5× price decrease both result in approximately 5.7% IL. The further the price diverges from your entry point in either direction, the greater the impermanent loss.</p>
 
         <h2>When Is Providing Liquidity Still Profitable?</h2>
         <p>Despite impermanent loss, liquidity provision can still be highly profitable if trading fee earnings exceed the IL. Every swap that occurs in the pool generates fees (typically 0.05%, 0.3%, or 1% per trade depending on the pool and protocol), and these fees are distributed proportionally to liquidity providers. High-volume pools generate substantial fee income that can easily overcome impermanent loss over time.</p>
 
-        <p>For example, a pool with a 0.3% fee tier and $10 million in daily trading volume generates $30,000 in daily fees. If the total liquidity in that pool is $50 million, and you provide $10,000 of that liquidity (0.02% of the pool), you would earn approximately $6 per day in fees, or about $2,190 annually — a 21.9% APR from fees alone. If your impermanent loss over that year is only 5%, you're still net positive by about 17% compared to your initial deposit.</p>
+        <p>For example, a pool with a 0.3% fee tier and $10 million in daily trading volume generates $30,000 in daily fees. If the total liquidity in that pool is $50 million, and you provide $10,000 of that liquidity (0.02% of the pool), you would earn approximately $6 per day in fees, or about $2,190 annually, a 21.9% APR from fees alone. If your impermanent loss over that year is only 5%, you're still net positive by about 17% compared to your initial deposit.</p>
 
-        <p>The key is to target pools where fee APR significantly exceeds expected IL. Pools with high trading volume relative to their total liquidity (high volume-to-liquidity ratio) tend to generate the best risk-adjusted returns for LPs. Additionally, many DeFi protocols offer liquidity mining rewards — additional token incentives on top of trading fees — which can further offset impermanent loss and boost overall yields.</p>
+        <p>The key is to target pools where fee APR significantly exceeds expected IL. Pools with high trading volume relative to their total liquidity (high volume-to-liquidity ratio) tend to generate the best risk-adjusted returns for LPs. Additionally, many DeFi protocols offer liquidity mining rewards, additional token incentives on top of trading fees, which can further offset impermanent loss and boost overall yields.</p>
 
         <h2>Strategies to Minimize Impermanent Loss</h2>
         <p><strong>Provide liquidity to stablecoin pairs:</strong> Pairs like USDC/USDT, DAI/USDC, or USDC/BUSD have minimal price divergence, resulting in near-zero impermanent loss. While fee APRs are typically lower on stablecoin pools (since they're less volatile), returns are more predictable and safer for conservative LPs.</p>
@@ -163,14 +164,16 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
         <p><strong>Consider single-sided staking:</strong> Some protocols (like Bancor, though it has since changed its model) offered single-sided liquidity provision with IL protection. While less common now, single-asset staking vaults and lending protocols allow you to earn yield without IL exposure, though typically at lower rates than AMM LP positions.</p>
 
-        <p><strong>Actively rebalance your positions:</strong> Advanced LPs monitor their positions and rebalance when IL becomes significant. By withdrawing, rebalancing manually, and re-depositing, you can mitigate some IL — though this incurs gas fees and transaction costs, so it's only worthwhile for larger positions or on low-fee chains.</p>
+        <p><strong>Actively rebalance your positions:</strong> Advanced LPs monitor their positions and rebalance when IL becomes significant. By withdrawing, rebalancing manually, and re-depositing, you can mitigate some IL, though this incurs gas fees and transaction costs, so it's only worthwhile for larger positions or on low-fee chains.</p>
 
         <h2>Concentrated Liquidity and IL (Uniswap V3)</h2>
-        <p>Uniswap V3 introduced concentrated liquidity, allowing LPs to allocate their capital to specific price ranges. Instead of providing liquidity across the entire 0 to infinity price curve, you can concentrate your position between, say, $1,800 and $2,200 for an ETH/USDC pool. This makes your capital far more efficient — if prices stay within your range, you earn significantly higher fees per dollar of capital than you would in a V2-style pool.</p>
+        <p>Uniswap V3 introduced concentrated liquidity, allowing LPs to allocate their capital to specific price ranges. Instead of providing liquidity across the entire 0 to infinity price curve, you can concentrate your position between, say, $1,800 and $2,200 for an ETH/USDC pool. This makes your capital far more efficient, if prices stay within your range, you earn significantly higher fees per dollar of capital than you would in a V2-style pool.</p>
 
-        <p>However, concentrated liquidity also amplifies impermanent loss. When prices move outside your chosen range, your position stops earning fees entirely, and you're left holding 100% of one asset. The narrower your range, the higher your capital efficiency and fee earnings, but also the greater your IL risk and the higher the chance of going out of range. Managing a concentrated liquidity position requires active monitoring and rebalancing — it's closer to options market making than passive liquidity provision.</p>
+        <p>However, concentrated liquidity also amplifies impermanent loss. When prices move outside your chosen range, your position stops earning fees entirely, and you're left holding 100% of one asset. The narrower your range, the higher your capital efficiency and fee earnings, but also the greater your IL risk and the higher the chance of going out of range. Managing a concentrated liquidity position requires active monitoring and rebalancing, it's closer to options market making than passive liquidity provision.</p>
 
         <p>For LPs seeking to maximize returns on Uniswap V3, a common strategy is to set ranges slightly wider than recent price action, monitor positions daily, and rebalance when prices approach range boundaries. Alternatively, some LPs use automated liquidity management protocols like Arrakis, Gamma, or Charm that algorithmically adjust ranges to maximize fee capture while controlling IL.</p>
+
+        <AuthoritativeSources category="defi-yield" />
 
         <h2>Frequently Asked Questions</h2>
 

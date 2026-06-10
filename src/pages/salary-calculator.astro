@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
@@ -75,31 +76,31 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         <h2>How to Use the Crypto Salary Calculator</h2>
         <p>The crypto salary calculator offers two modes: fiat-to-crypto conversion and crypto accumulation projection. Whether you want a quick snapshot of what your salary looks like in Bitcoin or a detailed projection of how much crypto you could stack over months or years, this tool covers both scenarios. Follow these steps to get started:</p>
         <ol>
-          <li><strong>Select your conversion mode</strong> — choose "Fiat to Crypto" to convert a lump-sum salary figure into its current crypto equivalent, or choose "Accumulation Projection" to model how regular paycheck conversions add up over time with dollar-cost averaging.</li>
-          <li><strong>Enter your salary details</strong> — input your gross or net salary in your local fiat currency (USD, EUR, GBP, etc.) and select your pay frequency: weekly, bi-weekly, semi-monthly, or monthly. The calculator adjusts all figures to match your pay cycle.</li>
-          <li><strong>Choose the percentage to convert</strong> — decide what portion of each paycheck you want to convert to cryptocurrency. Most people start with 5-20% of their net pay. The slider lets you experiment with different allocation levels to see the impact.</li>
-          <li><strong>Select your target cryptocurrency</strong> — pick from popular options such as Bitcoin (BTC), Ethereum (ETH), or stablecoins like USDT and USDC. The calculator fetches current market prices to give you accurate conversion figures.</li>
-          <li><strong>Set conversion fees</strong> — enter the fee percentage charged by your exchange or payroll conversion service. Typical fees range from 0.1% on major exchanges to 1-2% on payroll services. This ensures your projection reflects real-world costs rather than idealized numbers.</li>
-          <li><strong>Review your results</strong> — the calculator displays your per-paycheck crypto amount, monthly and annual accumulation totals, total fees paid, and a projection chart showing your crypto balance growth over the selected time horizon. Use these figures to decide whether the allocation level fits your financial goals.</li>
+          <li><strong>Select your conversion mode</strong>: choose "Fiat to Crypto" to convert a lump-sum salary figure into its current crypto equivalent, or choose "Accumulation Projection" to model how regular paycheck conversions add up over time with dollar-cost averaging.</li>
+          <li><strong>Enter your salary details</strong>: input your gross or net salary in your local fiat currency (USD, EUR, GBP, etc.) and select your pay frequency: weekly, bi-weekly, semi-monthly, or monthly. The calculator adjusts all figures to match your pay cycle.</li>
+          <li><strong>Choose the percentage to convert</strong>: decide what portion of each paycheck you want to convert to cryptocurrency. Most people start with 5-20% of their net pay. The slider lets you experiment with different allocation levels to see the impact.</li>
+          <li><strong>Select your target cryptocurrency</strong>: pick from popular options such as Bitcoin (BTC), Ethereum (ETH), or stablecoins like USDT and USDC. The calculator fetches current market prices to give you accurate conversion figures.</li>
+          <li><strong>Set conversion fees</strong>: enter the fee percentage charged by your exchange or payroll conversion service. Typical fees range from 0.1% on major exchanges to 1-2% on payroll services. This ensures your projection reflects real-world costs rather than idealized numbers.</li>
+          <li><strong>Review your results</strong>: the calculator displays your per-paycheck crypto amount, monthly and annual accumulation totals, total fees paid, and a projection chart showing your crypto balance growth over the selected time horizon. Use these figures to decide whether the allocation level fits your financial goals.</li>
         </ol>
 
         <h2>Getting Paid in Crypto — How It Works</h2>
         <p>Receiving part or all of your salary in cryptocurrency has moved from a niche experiment to a legitimate payroll option offered by a growing number of companies. Several platforms and services now bridge the gap between traditional employer payroll systems and employee crypto wallets, making the process straightforward for both parties.</p>
 
         <h3>Crypto Payroll Services</h3>
-        <p>Platforms like Bitwage, Request Network, and Deel allow employees to receive a portion of their paycheck directly in crypto. The employer continues to process payroll in fiat as usual. The payroll service intercepts the designated amount, converts it to the chosen cryptocurrency at market rates, and deposits it into the employee's wallet. This means the employer does not need to hold or manage crypto at all — the conversion happens at the payroll layer.</p>
+        <p>Platforms like Bitwage, Request Network, and Deel allow employees to receive a portion of their paycheck directly in crypto. The employer continues to process payroll in fiat as usual. The payroll service intercepts the designated amount, converts it to the chosen cryptocurrency at market rates, and deposits it into the employee's wallet. This means the employer does not need to hold or manage crypto at all, the conversion happens at the payroll layer.</p>
         <p>Some larger companies, particularly in the tech and Web3 sectors, handle crypto payroll in-house. They purchase the required crypto on an exchange and distribute it to employee wallets on payday. This approach gives the company more control over timing and execution but requires treasury management capabilities and compliance infrastructure.</p>
 
         <h3>Partial Salary Conversion</h3>
-        <p>The most popular approach is partial salary conversion, where an employee designates a fixed percentage — commonly 10-30% — of each paycheck to be converted to crypto. The remainder is paid in fiat as usual, covering rent, bills, and everyday expenses. This approach offers the benefits of crypto exposure without the volatility risk of relying entirely on a digital asset for living expenses. It also creates an automatic dollar-cost averaging strategy, since the conversion happens at regular intervals regardless of market conditions.</p>
+        <p>The most popular approach is partial salary conversion, where an employee designates a fixed percentage, commonly 10-30%, of each paycheck to be converted to crypto. The remainder is paid in fiat as usual, covering rent, bills, and everyday expenses. This approach offers the benefits of crypto exposure without the volatility risk of relying entirely on a digital asset for living expenses. It also creates an automatic dollar-cost averaging strategy, since the conversion happens at regular intervals regardless of market conditions.</p>
 
         <h2>Benefits of Converting Salary to Crypto</h2>
         <p>Allocating a portion of your salary to cryptocurrency offers several strategic financial advantages that go beyond simple speculation on price appreciation.</p>
         <ul>
-          <li><strong>Built-in dollar-cost averaging</strong> — by converting a fixed fiat amount each pay period, you automatically buy more crypto when prices are low and less when prices are high. Over time, this smooths out your average purchase price and reduces the impact of short-term volatility. You never have to worry about timing the market because the schedule is locked to your payroll cycle.</li>
-          <li><strong>Forced savings discipline</strong> — treating crypto allocation as a payroll deduction removes the temptation to skip or delay investing. The conversion happens before the money ever reaches your spending account, which is the same psychological trick that makes employer retirement contributions so effective. Consistency is the most important factor in long-term wealth building, and automated salary conversion enforces it.</li>
-          <li><strong>Potential long-term appreciation</strong> — Bitcoin and other major cryptocurrencies have historically appreciated over multi-year horizons despite significant short-term drawdowns. Employees who began converting a portion of their salary to BTC in its early years accumulated substantial wealth. While past performance does not guarantee future results, the asymmetric upside potential of crypto as an emerging asset class is a key reason people choose to allocate salary toward it.</li>
-          <li><strong>Portfolio diversification</strong> — most people have their wealth concentrated in fiat-denominated assets: bank accounts, stocks, bonds, and real estate. Adding cryptocurrency introduces an asset with low historical correlation to traditional markets. This diversification can reduce overall portfolio risk and provide a hedge against currency debasement, inflation, and geopolitical uncertainty.</li>
+          <li><strong>Built-in dollar-cost averaging</strong>: by converting a fixed fiat amount each pay period, you automatically buy more crypto when prices are low and less when prices are high. Over time, this smooths out your average purchase price and reduces the impact of short-term volatility. You never have to worry about timing the market because the schedule is locked to your payroll cycle.</li>
+          <li><strong>Forced savings discipline</strong>: treating crypto allocation as a payroll deduction removes the temptation to skip or delay investing. The conversion happens before the money ever reaches your spending account, which is the same psychological trick that makes employer retirement contributions so effective. Consistency is the most important factor in long-term wealth building, and automated salary conversion enforces it.</li>
+          <li><strong>Potential long-term appreciation</strong>: Bitcoin and other major cryptocurrencies have historically appreciated over multi-year horizons despite significant short-term drawdowns. Employees who began converting a portion of their salary to BTC in its early years accumulated substantial wealth. While past performance does not guarantee future results, the asymmetric upside potential of crypto as an emerging asset class is a key reason people choose to allocate salary toward it.</li>
+          <li><strong>Portfolio diversification</strong>: most people have their wealth concentrated in fiat-denominated assets: bank accounts, stocks, bonds, and real estate. Adding cryptocurrency introduces an asset with low historical correlation to traditional markets. This diversification can reduce overall portfolio risk and provide a hedge against currency debasement, inflation, and geopolitical uncertainty.</li>
         </ul>
 
         <h2>Tax Implications of Crypto Salary</h2>
@@ -135,15 +136,17 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         <p>Allocating a quarter to half of net salary requires high conviction in crypto's long-term trajectory and a financial cushion to absorb volatility. People at this level typically have low fixed expenses (no mortgage, no dependents), significant fiat savings already in place, and deep familiarity with crypto market cycles. The accumulation rate is rapid, but the lifestyle impact during bear markets can be stressful if the fiat portion barely covers expenses.</p>
 
         <h3>All-In (100%)</h3>
-        <p>Receiving an entire salary in crypto is rare and requires careful planning. Most people who attempt this maintain a stablecoin buffer — receiving salary in USDT or USDC and converting a portion to volatile assets like BTC or ETH. This preserves the dollar value for expenses while keeping the entire flow within the crypto ecosystem. Without a stablecoin fallback, a 100% volatile crypto salary creates extreme cash flow risk during market downturns.</p>
+        <p>Receiving an entire salary in crypto is rare and requires careful planning. Most people who attempt this maintain a stablecoin buffer, receiving salary in USDT or USDC and converting a portion to volatile assets like BTC or ETH. This preserves the dollar value for expenses while keeping the entire flow within the crypto ecosystem. Without a stablecoin fallback, a 100% volatile crypto salary creates extreme cash flow risk during market downturns.</p>
 
         <h2>The DCA Effect of Regular Salary Conversion</h2>
-        <p>Dollar-cost averaging is one of the simplest and most effective investment strategies, and regular salary conversion implements it automatically. By investing a fixed fiat amount at fixed intervals, you buy more units when the price is low and fewer units when the price is high. Over time, this produces an average cost per coin that is lower than the average price over the same period — a mathematical advantage that benefits patient accumulators.</p>
+        <p>Dollar-cost averaging is one of the simplest and most effective investment strategies, and regular salary conversion implements it automatically. By investing a fixed fiat amount at fixed intervals, you buy more units when the price is low and fewer units when the price is high. Over time, this produces an average cost per coin that is lower than the average price over the same period, a mathematical advantage that benefits patient accumulators.</p>
         <div class="formula-block">
           <code>Average Cost = Total Fiat Invested / Total Crypto Coins Acquired</code>
         </div>
-        <p>For example, suppose you convert $500 per month into Bitcoin. In month one, BTC is $50,000, so you get 0.01 BTC. In month two, BTC drops to $40,000, so you get 0.0125 BTC. In month three, BTC recovers to $45,000, so you get 0.0111 BTC. Your total investment is $1,500 for 0.0336 BTC, giving you an average cost of $44,643 per BTC — lower than the simple average price of $45,000 over those three months.</p>
+        <p>For example, suppose you convert $500 per month into Bitcoin. In month one, BTC is $50,000, so you get 0.01 BTC. In month two, BTC drops to $40,000, so you get 0.0125 BTC. In month three, BTC recovers to $45,000, so you get 0.0111 BTC. Your total investment is $1,500 for 0.0336 BTC, giving you an average cost of $44,643 per BTC, lower than the simple average price of $45,000 over those three months.</p>
         <p>This advantage compounds over longer time horizons. Salary conversion enforces the discipline that most manual DCA plans lack: you cannot skip a period because you feel bearish, and you cannot over-invest because you feel bullish. The automation removes emotion from the equation, which research consistently shows leads to better long-term investment outcomes. The key requirement is a sufficiently long time horizon — DCA works best over full market cycles of three to five years or more.</p>
+
+        <AuthoritativeSources category="tax-reporting" />
 
         <h2>Frequently Asked Questions</h2>
 
@@ -154,7 +157,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <details>
           <summary>What percentage of my salary should I convert to crypto?</summary>
-          <p>There is no universal answer — it depends on your financial situation. A common starting point is 5-10% of net pay for beginners, scaling up to 15-25% as you become more comfortable with volatility and build a sufficient fiat emergency fund (typically three to six months of expenses). Never convert money you need for rent, debt payments, or essential living expenses. The right percentage is one that lets you accumulate crypto consistently without creating financial stress during market downturns.</p>
+          <p>There is no universal answer, it depends on your financial situation. A common starting point is 5-10% of net pay for beginners, scaling up to 15-25% as you become more comfortable with volatility and build a sufficient fiat emergency fund (typically three to six months of expenses). Never convert money you need for rent, debt payments, or essential living expenses. The right percentage is one that lets you accumulate crypto consistently without creating financial stress during market downturns.</p>
         </details>
 
         <details>
@@ -164,7 +167,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <details>
           <summary>Which crypto should I receive my salary in?</summary>
-          <p>The best choice depends on your goals. Bitcoin (BTC) is the most common choice for long-term accumulation due to its fixed supply, high liquidity, and status as the most established cryptocurrency. Ethereum (ETH) appeals to those who also want exposure to DeFi and smart contract ecosystems. Stablecoins like USDT or USDC are ideal if you want to keep your salary in the crypto ecosystem without volatility risk — useful as a base from which to make strategic purchases. Many people split their allocation: for example, 60% BTC, 30% ETH, and 10% stablecoins.</p>
+          <p>The best choice depends on your goals. Bitcoin (BTC) is the most common choice for long-term accumulation due to its fixed supply, high liquidity, and status as the most established cryptocurrency. Ethereum (ETH) appeals to those who also want exposure to DeFi and smart contract ecosystems. Stablecoins like USDT or USDC are ideal if you want to keep your salary in the crypto ecosystem without volatility risk, useful as a base from which to make strategic purchases. Many people split their allocation: for example, 60% BTC, 30% ETH, and 10% stablecoins.</p>
         </details>
 
         <details>

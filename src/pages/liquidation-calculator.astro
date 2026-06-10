@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -76,16 +77,16 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <div class="quick-answer"><strong>Quick answer:</strong> Liquidation price = Entry Price &times; (1 &minus; 1/Leverage) for longs, or Entry Price &times; (1 + 1/Leverage) for shorts. At 10x leverage on a $50,000 BTC long, liquidation hits at ~$45,000.</div>
         <h2>How to Use the Liquidation Calculator</h2>
         <ol>
-          <li><strong>Select your exchange</strong> — Choose Binance, Bybit, or OKX. Each has different maintenance margin rates that directly affect your liquidation price.</li>
-          <li><strong>Choose your margin mode</strong> — Isolated margin limits risk to the position only, while cross margin uses your entire wallet balance as collateral.</li>
-          <li><strong>Enter your entry price</strong> — The price at which you opened (or plan to open) your futures position.</li>
-          <li><strong>Set your leverage</strong> — The multiplier applied to your position. Higher leverage means less margin required but a liquidation price closer to entry.</li>
-          <li><strong>Specify your position size</strong> — The total notional value of your position in USDT or your chosen quote currency.</li>
-          <li><strong>Review the results</strong> — The calculator instantly shows your liquidation price, margin used, and how far the market can move before liquidation occurs.</li>
+          <li><strong>Select your exchange</strong>: Choose Binance, Bybit, or OKX. Each has different maintenance margin rates that directly affect your liquidation price.</li>
+          <li><strong>Choose your margin mode</strong>: Isolated margin limits risk to the position only, while cross margin uses your entire wallet balance as collateral.</li>
+          <li><strong>Enter your entry price</strong>: The price at which you opened (or plan to open) your futures position.</li>
+          <li><strong>Set your leverage</strong>: The multiplier applied to your position. Higher leverage means less margin required but a liquidation price closer to entry.</li>
+          <li><strong>Specify your position size</strong>: The total notional value of your position in USDT or your chosen quote currency.</li>
+          <li><strong>Review the results</strong>: The calculator instantly shows your liquidation price, margin used, and how far the market can move before liquidation occurs.</li>
         </ol>
 
         <h2>How Liquidation Works in Crypto Futures</h2>
-        <p>When you open a leveraged position on a futures exchange, you post a fraction of the total position value as collateral (margin). If the market moves against you enough that your margin can no longer cover potential losses, the exchange forcibly closes your position — this is called <strong>liquidation</strong>.</p>
+        <p>When you open a leveraged position on a futures exchange, you post a fraction of the total position value as collateral (margin). If the market moves against you enough that your margin can no longer cover potential losses, the exchange forcibly closes your position, this is called <strong>liquidation</strong>.</p>
         <p>Liquidation is an automatic risk management mechanism designed to prevent traders from losing more than their account balance. When your margin ratio (the percentage of equity relative to position size) falls below the exchange's maintenance margin requirement, the liquidation engine takes over and closes your position at the current market price.</p>
         <p>The process happens instantly and automatically. You cannot stop it once triggered. In volatile markets, liquidations can occur in seconds, especially with high leverage. This is why understanding and monitoring your liquidation price is critical for risk management in futures trading.</p>
 
@@ -98,7 +99,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <div class="formula-block">
           <code>Liquidation Price = Entry Price × (1 + 1/Leverage − MMR)</code>
         </div>
-        <p>Where MMR is the Maintenance Margin Rate — the minimum margin ratio the exchange requires to keep the position open.</p>
+        <p>Where MMR is the Maintenance Margin Rate, the minimum margin ratio the exchange requires to keep the position open.</p>
 
         <h3>Worked Example: Long BTC Position</h3>
         <p>Let's calculate the liquidation price for a realistic scenario on Binance:</p>
@@ -120,7 +121,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <h2>Isolated vs Cross Margin</h2>
         <p>Understanding the difference between isolated and cross margin is essential for managing liquidation risk. Both modes have distinct advantages and use cases depending on your trading strategy and risk tolerance.</p>
-        <p><strong>Isolated margin</strong> allocates a specific amount of margin to each position. If the position is liquidated, you only lose the margin assigned to that trade — your other positions and wallet balance remain safe. This mode is ideal for high-risk trades where you want to limit downside exposure. The liquidation price is fixed at the time you open the position (unless you manually add more margin).</p>
+        <p><strong>Isolated margin</strong> allocates a specific amount of margin to each position. If the position is liquidated, you only lose the margin assigned to that trade, your other positions and wallet balance remain safe. This mode is ideal for high-risk trades where you want to limit downside exposure. The liquidation price is fixed at the time you open the position (unless you manually add more margin).</p>
         <p><strong>Cross margin</strong> uses your entire available wallet balance as collateral for all open positions. This provides a larger liquidation buffer because unrealized profits from other positions can offset losses. However, if one position is liquidated, you risk losing your entire margin wallet. Cross margin is better suited for experienced traders managing multiple correlated positions or hedging strategies.</p>
 
         <div class="table-responsive">
@@ -220,28 +221,30 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         <h2>How to Avoid Liquidation</h2>
         <p>Preventing liquidation is one of the most important skills in futures trading. Here are proven strategies to protect your positions:</p>
         <ul>
-          <li><strong>Use conservative leverage</strong> — Stick to 3x-10x for most trades. Leverage above 20x leaves almost no room for normal market fluctuations. While 100x leverage may seem appealing, it can liquidate you on a 1% price move.</li>
-          <li><strong>Always set stop-losses</strong> — Place stop-loss orders at least 15-20% away from your liquidation price. Never rely on liquidation as your exit strategy. Stop-losses give you control and prevent total loss of margin.</li>
-          <li><strong>Add margin before it's too late</strong> — In isolated mode, you can manually add margin to push your liquidation price further away. Monitor your margin ratio and add collateral when it approaches 30-40% above maintenance levels.</li>
-          <li><strong>Monitor funding rates</strong> — Perpetual futures charge funding payments every 8 hours. High negative funding can slowly drain your margin, moving your liquidation price closer without any price movement. Factor funding into your risk calculations.</li>
-          <li><strong>Avoid overleveraging during high volatility</strong> — Major news events, liquidation cascades, and low-liquidity periods can cause extreme price swings. Reduce leverage or close positions before known volatility events like FOMC meetings or major token unlocks.</li>
-          <li><strong>Use cross margin strategically</strong> — If you're hedging or running multiple positions, cross margin can prevent individual liquidations by pooling collateral. However, ensure your total exposure doesn't exceed safe levels.</li>
-          <li><strong>Keep extra funds in your wallet</strong> — If using cross margin, maintain a reserve balance that isn't allocated to positions. This acts as a safety buffer during drawdowns.</li>
-          <li><strong>Scale into positions</strong> — Instead of opening your full position at once, scale in with smaller entries. This gives you better average entry prices and reduces the risk of immediate liquidation if you enter at a local extreme.</li>
+          <li><strong>Use conservative leverage</strong>: Stick to 3x-10x for most trades. Leverage above 20x leaves almost no room for normal market fluctuations. While 100x leverage may seem appealing, it can liquidate you on a 1% price move.</li>
+          <li><strong>Always set stop-losses</strong>: Place stop-loss orders at least 15-20% away from your liquidation price. Never rely on liquidation as your exit strategy. Stop-losses give you control and prevent total loss of margin.</li>
+          <li><strong>Add margin before it's too late</strong>: In isolated mode, you can manually add margin to push your liquidation price further away. Monitor your margin ratio and add collateral when it approaches 30-40% above maintenance levels.</li>
+          <li><strong>Monitor funding rates</strong>: Perpetual futures charge funding payments every 8 hours. High negative funding can slowly drain your margin, moving your liquidation price closer without any price movement. Factor funding into your risk calculations.</li>
+          <li><strong>Avoid overleveraging during high volatility</strong>: Major news events, liquidation cascades, and low-liquidity periods can cause extreme price swings. Reduce leverage or close positions before known volatility events like FOMC meetings or major token unlocks.</li>
+          <li><strong>Use cross margin strategically</strong>: If you're hedging or running multiple positions, cross margin can prevent individual liquidations by pooling collateral. However, ensure your total exposure doesn't exceed safe levels.</li>
+          <li><strong>Keep extra funds in your wallet</strong>: If using cross margin, maintain a reserve balance that isn't allocated to positions. This acts as a safety buffer during drawdowns.</li>
+          <li><strong>Scale into positions</strong>: Instead of opening your full position at once, scale in with smaller entries. This gives you better average entry prices and reduces the risk of immediate liquidation if you enter at a local extreme.</li>
         </ul>
 
         <h2>What Happens During a Liquidation Cascade?</h2>
         <p>A liquidation cascade occurs when a large number of leveraged positions are liquidated simultaneously, triggering a chain reaction that accelerates price movement in one direction. This phenomenon is one of the most dangerous dynamics in cryptocurrency futures markets and can cause flash crashes or extreme rallies in minutes.</p>
         <p>Here's how it unfolds: When the market moves sharply in one direction, highly leveraged positions begin hitting their liquidation prices. The exchange forcibly closes these positions by placing market sell orders (for longs) or market buy orders (for shorts). This sudden influx of sell or buy pressure pushes the price further in the same direction, triggering even more liquidations. The cycle repeats, creating a cascading effect.</p>
         <p>During the May 2021 Bitcoin crash, cascading liquidations contributed to BTC dropping from $57,000 to $30,000 in a matter of days, with single-day drops exceeding 20%. Over $9 billion in leveraged positions were liquidated in 24 hours. Similar events occurred in September 2021, November 2022, and August 2024, each time wiping out billions in margin.</p>
-        <p>Liquidation cascades are particularly severe in low-liquidity conditions, such as weekends, Asian trading hours, or during periods of general market fear. Automated liquidation engines don't care about market conditions — they execute at any price. This can result in temporary wicks that liquidate positions before the price recovers, a phenomenon traders call "stop hunts" or "wick liquidations."</p>
+        <p>Liquidation cascades are particularly severe in low-liquidity conditions, such as weekends, Asian trading hours, or during periods of general market fear. Automated liquidation engines don't care about market conditions, they execute at any price. This can result in temporary wicks that liquidate positions before the price recovers, a phenomenon traders call "stop hunts" or "wick liquidations."</p>
         <p>To protect yourself from cascades, avoid clustering your stop-loss and liquidation prices near obvious technical levels where many other traders are positioned. Use lower leverage during uncertain market conditions, and consider reducing or closing positions before historically volatile periods.</p>
+
+        <AuthoritativeSources category="trading-tools" />
 
         <h2>Frequently Asked Questions</h2>
 
         <details>
           <summary>At what price will my Bitcoin futures position get liquidated?</summary>
-          <p>Your liquidation price depends on your entry price, leverage, and the exchange's maintenance margin rate. For example, a 10x long BTC position entered at $70,000 on Binance (0.4% MMR) gets liquidated at approximately $63,280 — a 9.6% drop. At 20x leverage, liquidation moves to $66,640 — only a 4.8% drop. Enter your exact parameters in this liquidation calculator to get a precise number for your specific trade.</p>
+          <p>Your liquidation price depends on your entry price, leverage, and the exchange's maintenance margin rate. For example, a 10x long BTC position entered at $70,000 on Binance (0.4% MMR) gets liquidated at approximately $63,280, a 9.6% drop. At 20x leverage, liquidation moves to $66,640, only a 4.8% drop. Enter your exact parameters in this liquidation calculator to get a precise number for your specific trade.</p>
         </details>
 
         <details>
@@ -256,7 +259,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
 
         <details>
           <summary>Does leverage change how much I can lose?</summary>
-          <p>Higher leverage does not change your dollar loss if you use a stop-loss at the same price. However, it brings your liquidation price dangerously close to your entry. At 100x leverage, a 1% move against you triggers liquidation — complete loss of your margin. At 5x leverage, the market must drop 20% before liquidation. The real danger of high leverage is that your position can be forcibly closed before your stop-loss triggers during fast-moving markets.</p>
+          <p>Higher leverage does not change your dollar loss if you use a stop-loss at the same price. However, it brings your liquidation price dangerously close to your entry. At 100x leverage, a 1% move against you triggers liquidation, complete loss of your margin. At 5x leverage, the market must drop 20% before liquidation. The real danger of high leverage is that your position can be forcibly closed before your stop-loss triggers during fast-moving markets.</p>
         </details>
 
         <details>
@@ -334,7 +337,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
         "name": "At what price will my Bitcoin futures position get liquidated?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Your liquidation price depends on your entry price, leverage, and the exchange's maintenance margin rate. For example, a 10x long BTC position entered at $70,000 on Binance (0.4% MMR) gets liquidated at approximately $63,280 — a 9.6% drop. At 20x leverage, liquidation moves to $66,640 — only a 4.8% drop."
+          "text": "Your liquidation price depends on your entry price, leverage, and the exchange's maintenance margin rate. For example, a 10x long BTC position entered at $70,000 on Binance (0.4% MMR) gets liquidated at approximately $63,280, a 9.6% drop. At 20x leverage, liquidation moves to $66,640, only a 4.8% drop."
         }
       },
       {

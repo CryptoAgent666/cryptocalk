@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
@@ -75,21 +76,21 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         <h2>How to Use the Yield Farming Calculator</h2>
         <p>Our free yield farming calculator helps DeFi participants estimate their real returns after accounting for every cost that eats into farming profits. Whether you are providing liquidity on Uniswap, farming rewards on Aave, or chasing high-APY pools on newer protocols, this tool gives you a clear picture of your net profitability.</p>
         <ol>
-          <li><strong>Enter your deposit amount</strong> — input the total value of the assets you plan to deposit into the farming pool, denominated in USD.</li>
-          <li><strong>Set the pool APR or APY</strong> — enter the advertised annual percentage rate or yield shown by the protocol. Our calculator converts between the two so you can work with either.</li>
-          <li><strong>Add gas costs</strong> — input the estimated gas cost per transaction on your chosen network. The calculator factors in deposit, harvest, and withdrawal transactions.</li>
-          <li><strong>Specify harvest frequency</strong> — choose how often you plan to claim and re-stake rewards (daily, weekly, bi-weekly, or monthly). More frequent harvesting compounds returns but incurs more gas.</li>
-          <li><strong>Review results</strong> — the calculator displays your gross yield, total gas costs, estimated impermanent loss, and net profit over 30, 90, 180, and 365-day periods.</li>
+          <li><strong>Enter your deposit amount</strong>: input the total value of the assets you plan to deposit into the farming pool, denominated in USD.</li>
+          <li><strong>Set the pool APR or APY</strong>: enter the advertised annual percentage rate or yield shown by the protocol. Our calculator converts between the two so you can work with either.</li>
+          <li><strong>Add gas costs</strong>: input the estimated gas cost per transaction on your chosen network. The calculator factors in deposit, harvest, and withdrawal transactions.</li>
+          <li><strong>Specify harvest frequency</strong>: choose how often you plan to claim and re-stake rewards (daily, weekly, bi-weekly, or monthly). More frequent harvesting compounds returns but incurs more gas.</li>
+          <li><strong>Review results</strong>: the calculator displays your gross yield, total gas costs, estimated impermanent loss, and net profit over 30, 90, 180, and 365-day periods.</li>
         </ol>
 
         <h2>What Is Yield Farming?</h2>
-        <p>Yield farming is the practice of depositing cryptocurrency into decentralised finance (DeFi) protocols to earn rewards. At its core, yield farming involves providing liquidity to automated market makers (AMMs) or lending platforms and receiving token incentives in return. Farmers typically deposit a pair of tokens into a liquidity pool — for example, ETH and USDC on Uniswap — and the protocol rewards them with a share of trading fees plus additional governance tokens.</p>
+        <p>Yield farming is the practice of depositing cryptocurrency into decentralised finance (DeFi) protocols to earn rewards. At its core, yield farming involves providing liquidity to automated market makers (AMMs) or lending platforms and receiving token incentives in return. Farmers typically deposit a pair of tokens into a liquidity pool, for example, ETH and USDC on Uniswap, and the protocol rewards them with a share of trading fees plus additional governance tokens.</p>
         <p>The concept originated in 2020 when Compound Finance began distributing its COMP token to users who supplied or borrowed assets on the platform. This sparked the "DeFi Summer" phenomenon, where users rushed to find the highest-yielding opportunities across an expanding ecosystem of protocols. Today, yield farming spans lending markets, DEX liquidity pools, yield optimizers like Yearn Finance, and liquid staking derivatives.</p>
-        <p>While advertised APYs can look incredibly attractive — sometimes exceeding 100% or even 1,000% — the real returns that farmers take home are usually much lower once you account for gas fees, impermanent loss, token price depreciation, and the time value of capital. This calculator exists to bridge the gap between the headline APY and the actual profit you can expect.</p>
+        <p>While advertised APYs can look incredibly attractive, sometimes exceeding 100% or even 1,000%, the real returns that farmers take home are usually much lower once you account for gas fees, impermanent loss, token price depreciation, and the time value of capital. This calculator exists to bridge the gap between the headline APY and the actual profit you can expect.</p>
 
         <h2>Hidden Costs of Yield Farming</h2>
         <p>The advertised APY on a yield farming pool is almost never the return you actually earn. Several hidden costs significantly erode your real yield, and ignoring them is the most common mistake new DeFi participants make.</p>
-        <p><strong>Gas costs</strong> are the most immediate expense. Every on-chain action — depositing liquidity, harvesting rewards, re-staking, and eventually withdrawing — requires a gas fee. On Ethereum mainnet, a single swap or deposit can cost $5 to $50 depending on network congestion, and a full farming cycle (deposit, multiple harvests, withdrawal) can easily consume $100 or more.</p>
+        <p><strong>Gas costs</strong> are the most immediate expense. Every on-chain action, depositing liquidity, harvesting rewards, re-staking, and eventually withdrawing, requires a gas fee. On Ethereum mainnet, a single swap or deposit can cost $5 to $50 depending on network congestion, and a full farming cycle (deposit, multiple harvests, withdrawal) can easily consume $100 or more.</p>
         <p><strong>Impermanent loss (IL)</strong> occurs when the relative price of the two tokens in your liquidity pool changes. The greater the price divergence, the more value you lose compared to simply holding the tokens. In a standard 50/50 pool, a 2x price change in one token results in roughly 5.7% impermanent loss, while a 5x change causes about 25.5% loss.</p>
         <p><strong>Opportunity cost</strong> is often overlooked. Capital locked in a farming pool cannot be used for other trades or investments. If the broader market rallies 50% while your farming pool earns 30% net, you have effectively lost 20% in relative terms.</p>
         <p><strong>Reward token depreciation</strong> is particularly dangerous with high-APY farms. Many protocols emit governance tokens at unsustainable rates, causing continuous sell pressure. A farm advertising 500% APY in its native token is meaningless if that token loses 90% of its value over the farming period.</p>
@@ -100,7 +101,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
           <code>APY = (1 + APR / n)^n - 1</code>
         </div>
         <p>In this formula, <em>n</em> represents the number of compounding periods per year. If you harvest and re-stake daily (n = 365), a 50% APR becomes approximately 64.8% APY. If you compound weekly (n = 52), the same APR produces about 63.2% APY. The difference between daily and weekly compounding is marginal, but the difference between compounding monthly versus not compounding at all can be substantial over a year.</p>
-        <p>Many protocols display APY assuming optimal daily compounding, but this only holds if you actually harvest and re-stake every single day — and each harvest costs gas. For small deposits, the gas cost of daily harvesting can exceed the additional yield from compounding, making less frequent harvesting more profitable in practice.</p>
+        <p>Many protocols display APY assuming optimal daily compounding, but this only holds if you actually harvest and re-stake every single day, and each harvest costs gas. For small deposits, the gas cost of daily harvesting can exceed the additional yield from compounding, making less frequent harvesting more profitable in practice.</p>
 
         <h2>Harvest Frequency Optimization</h2>
         <p>One of the most important decisions in yield farming is how often to harvest and compound your rewards. The optimal frequency depends on three variables: your deposit size, the gas cost per harvest, and the pool's APR.</p>
@@ -133,11 +134,13 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         <p>However, L2 protocols often have lower total value locked (TVL), which can mean higher slippage on large trades, less liquidity depth, and potentially higher smart contract risk from newer, less-audited codebases. There is also bridge risk: moving assets from L1 to L2 requires a bridge transaction, which has its own costs and security considerations.</p>
         <p>For most farmers with deposits under $10,000, L2 farming offers substantially better net returns due to the gas savings alone. Larger depositors may prefer L1 for the deeper liquidity and protocol maturity, accepting the higher gas costs as a small percentage of their total yield.</p>
 
+        <AuthoritativeSources category="defi-yield" />
+
         <h2>Frequently Asked Questions</h2>
 
         <details>
           <summary>What is yield farming?</summary>
-          <p>Yield farming is the practice of depositing cryptocurrency into DeFi protocols — typically liquidity pools on decentralised exchanges or lending platforms — to earn rewards. These rewards come from trading fees generated by the pool and additional token incentives distributed by the protocol. Farmers allocate capital to the highest-yielding opportunities, often moving between protocols to maximise returns.</p>
+          <p>Yield farming is the practice of depositing cryptocurrency into DeFi protocols, typically liquidity pools on decentralised exchanges or lending platforms, to earn rewards. These rewards come from trading fees generated by the pool and additional token incentives distributed by the protocol. Farmers allocate capital to the highest-yielding opportunities, often moving between protocols to maximise returns.</p>
         </details>
 
         <details>
@@ -232,7 +235,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
       "name": "What is yield farming?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yield farming is the practice of depositing cryptocurrency into DeFi protocols — typically liquidity pools or lending platforms — to earn rewards from trading fees and additional token incentives distributed by the protocol."
+        "text": "Yield farming is the practice of depositing cryptocurrency into DeFi protocols, typically liquidity pools or lending platforms, to earn rewards from trading fees and additional token incentives distributed by the protocol."
       }
     },
     {

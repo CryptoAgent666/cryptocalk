@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -96,7 +97,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <h2>How Halving Affects Mining Profitability</h2>
         <p>The most immediate and quantifiable impact of a halving event is on Bitcoin miners. On the day of the halving, mining revenue from block rewards drops by exactly 50%. For miners operating on thin margins, this can mean the difference between profitability and operating at a loss.</p>
-        <p>Consider a mining operation producing 1 BTC per month at a cost of $40,000 in electricity and infrastructure. Before the 2024 halving, with a block reward of 6.25 BTC and a BTC price around $64,000, this operation was comfortably profitable. After the halving reduced the reward to 3.125 BTC, the same hash rate produces only 0.5 BTC per month in block rewards. At the same BTC price, monthly revenue drops from $64,000 to $32,000, while costs remain at $40,000 — turning a profitable operation into a losing one unless the BTC price increases enough to compensate.</p>
+        <p>Consider a mining operation producing 1 BTC per month at a cost of $40,000 in electricity and infrastructure. Before the 2024 halving, with a block reward of 6.25 BTC and a BTC price around $64,000, this operation was comfortably profitable. After the halving reduced the reward to 3.125 BTC, the same hash rate produces only 0.5 BTC per month in block rewards. At the same BTC price, monthly revenue drops from $64,000 to $32,000, while costs remain at $40,000, turning a profitable operation into a losing one unless the BTC price increases enough to compensate.</p>
         <p>This dynamic creates what miners call a "hash rate shakeout." Less efficient miners with higher electricity costs or older hardware are forced to shut down, reducing the total network hash rate. This in turn triggers a difficulty adjustment that makes mining easier (and more profitable) for the surviving, more efficient miners. The network thus self-corrects until a new equilibrium is reached.</p>
         <p>Transaction fees become increasingly important to miners after each halving. As block rewards diminish, fees represent a larger proportion of total mining revenue. In 2024, transaction fees occasionally exceeded 20% of total block rewards during periods of high network activity, a trend that is expected to continue with future halvings.</p>
 
@@ -115,12 +116,14 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <h2>How to Prepare for the Halving as a Miner</h2>
         <ul>
-          <li><strong>Upgrade to latest-generation hardware</strong> — newer ASIC miners like the Antminer S21 series deliver significantly more hash power per watt. Efficiency measured in joules per terahash (J/TH) is the single most important metric for post-halving survival.</li>
-          <li><strong>Secure the lowest possible electricity rate</strong> — after the halving, your electricity cost per BTC mined doubles in fiat terms. Miners with rates above $0.06/kWh may struggle to remain profitable at moderate BTC prices.</li>
-          <li><strong>Build a cash reserve or BTC treasury</strong> — having reserves to cover 3 to 6 months of operating expenses allows you to ride out the period immediately after the halving before a potential price increase restores profitability.</li>
-          <li><strong>Consider hosting or cloud mining contracts</strong> — if running your own operation becomes uneconomical, hosting your machines at a lower-cost facility or transitioning to cloud mining contracts can reduce your overhead.</li>
-          <li><strong>Diversify revenue streams</strong> — explore merged mining, transaction fee optimization, or providing hash rate to mining pools that offer additional token rewards beyond the BTC block reward.</li>
+          <li><strong>Upgrade to latest-generation hardware</strong>: newer ASIC miners like the Antminer S21 series deliver significantly more hash power per watt. Efficiency measured in joules per terahash (J/TH) is the single most important metric for post-halving survival.</li>
+          <li><strong>Secure the lowest possible electricity rate</strong>: after the halving, your electricity cost per BTC mined doubles in fiat terms. Miners with rates above $0.06/kWh may struggle to remain profitable at moderate BTC prices.</li>
+          <li><strong>Build a cash reserve or BTC treasury</strong>: having reserves to cover 3 to 6 months of operating expenses allows you to ride out the period immediately after the halving before a potential price increase restores profitability.</li>
+          <li><strong>Consider hosting or cloud mining contracts</strong>: if running your own operation becomes uneconomical, hosting your machines at a lower-cost facility or transitioning to cloud mining contracts can reduce your overhead.</li>
+          <li><strong>Diversify revenue streams</strong>: explore merged mining, transaction fee optimization, or providing hash rate to mining pools that offer additional token rewards beyond the BTC block reward.</li>
         </ul>
+
+        <AuthoritativeSources category="mining" />
 
         <h2>Frequently Asked Questions</h2>
 

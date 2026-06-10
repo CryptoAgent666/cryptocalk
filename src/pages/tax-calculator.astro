@@ -7,6 +7,7 @@ import { Calculator, ArrowLeft, ChevronRight } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
 const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
@@ -80,16 +81,16 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <h2>How to Use the Tax Calculator</h2>
         <p>Our crypto tax calculator helps you estimate your capital gains tax in seconds. Follow these simple steps to calculate your tax obligation:</p>
         <ol>
-          <li><strong>Select your country</strong> — Choose from 17 countries including the US, UK, Germany, Japan, France, Brazil, Spain, South Korea, Portugal, Italy, Switzerland, Austria, Poland, Netherlands, Australia, Canada, and India. Each country has unique tax rules and rates.</li>
-          <li><strong>Enter your purchase price</strong> — Input the total amount you paid for the cryptocurrency, including all fees paid at the time of purchase.</li>
-          <li><strong>Enter your sale price</strong> — Input the total amount you received when selling the crypto, minus any transaction fees.</li>
-          <li><strong>Choose the holding period</strong> — Select whether you held the asset for less than 1 year (short-term) or 1 year or more (long-term). This affects your tax rate significantly in most countries.</li>
-          <li><strong>Select an accounting method</strong> — Choose between FIFO (First In, First Out) or LIFO (Last In, Last Out) to see how different methods impact your tax liability.</li>
-          <li><strong>Review your results</strong> — The calculator will instantly show your capital gain or loss, applicable tax rate, estimated tax owed, and a comparison between short-term and long-term rates.</li>
+          <li><strong>Select your country</strong>: Choose from 17 countries including the US, UK, Germany, Japan, France, Brazil, Spain, South Korea, Portugal, Italy, Switzerland, Austria, Poland, Netherlands, Australia, Canada, and India. Each country has unique tax rules and rates.</li>
+          <li><strong>Enter your purchase price</strong>: Input the total amount you paid for the cryptocurrency, including all fees paid at the time of purchase.</li>
+          <li><strong>Enter your sale price</strong>: Input the total amount you received when selling the crypto, minus any transaction fees.</li>
+          <li><strong>Choose the holding period</strong>: Select whether you held the asset for less than 1 year (short-term) or 1 year or more (long-term). This affects your tax rate significantly in most countries.</li>
+          <li><strong>Select an accounting method</strong>: Choose between FIFO (First In, First Out) or LIFO (Last In, Last Out) to see how different methods impact your tax liability.</li>
+          <li><strong>Review your results</strong>: The calculator will instantly show your capital gain or loss, applicable tax rate, estimated tax owed, and a comparison between short-term and long-term rates.</li>
         </ol>
 
         <h2>How Is Cryptocurrency Taxed?</h2>
-        <p>In most countries, cryptocurrency is treated as property rather than currency for tax purposes. This classification has important implications: every time you sell, trade, or exchange crypto, it triggers a taxable event. You owe taxes on any capital gains — the difference between your purchase price (cost basis) and sale price. The tax rate applied depends on your holding period, income bracket, and country of residence. Understanding these fundamentals is essential for proper tax planning and compliance.</p>
+        <p>In most countries, cryptocurrency is treated as property rather than currency for tax purposes. This classification has important implications: every time you sell, trade, or exchange crypto, it triggers a taxable event. You owe taxes on any capital gains, the difference between your purchase price (cost basis) and sale price. The tax rate applied depends on your holding period, income bracket, and country of residence. Understanding these fundamentals is essential for proper tax planning and compliance.</p>
 
         <h2>Country-by-Country Tax Rates</h2>
         <div class="tax-table-wrap">
@@ -127,8 +128,8 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <h2>FIFO vs LIFO Accounting</h2>
         <p>The accounting method you choose affects your tax liability:</p>
         <ul class="seo-list">
-          <li><strong>FIFO (First In, First Out)</strong> — assumes you're selling your oldest coins first. Usually results in higher gains in a rising market.</li>
-          <li><strong>LIFO (Last In, First Out)</strong> — assumes you're selling your newest coins first. Can reduce taxable gains if recent purchases were at higher prices.</li>
+          <li><strong>FIFO (First In, First Out)</strong>: assumes you're selling your oldest coins first. Usually results in higher gains in a rising market.</li>
+          <li><strong>LIFO (Last In, First Out)</strong>: assumes you're selling your newest coins first. Can reduce taxable gains if recent purchases were at higher prices.</li>
         </ul>
         <p>Note: Not all countries allow all methods. The IRS (US) permits specific identification per <a href="https://www.irs.gov/individuals/international-taxpayers/frequently-asked-questions-on-virtual-currency-transactions" target="_blank" rel="noopener noreferrer">IRS Virtual Currency FAQ</a>. Check with a tax professional for your jurisdiction.</p>
 
@@ -136,19 +137,19 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <p>Understanding which cryptocurrency activities trigger taxes is crucial for compliance. Not every crypto transaction creates a taxable event. Here's a comprehensive breakdown:</p>
         <p><strong>Taxable Events:</strong></p>
         <ul class="seo-list">
-          <li><strong>Selling crypto for fiat currency</strong> — Converting Bitcoin, Ethereum, or any cryptocurrency to USD, EUR, or other traditional currency creates a capital gain or loss.</li>
-          <li><strong>Trading one crypto for another</strong> — Swapping BTC for ETH, or any crypto-to-crypto exchange, is treated as a sale followed by a purchase in most jurisdictions.</li>
-          <li><strong>Purchasing goods or services with crypto</strong> — Using cryptocurrency as payment is considered a disposal event, triggering capital gains tax on the appreciation since purchase.</li>
-          <li><strong>Receiving crypto as payment or income</strong> — Earnings from mining, staking rewards, airdrops, or salary paid in crypto are taxed as ordinary income at fair market value when received.</li>
-          <li><strong>Liquidations and margin trading</strong> — Forced liquidations and closing leveraged positions create taxable events based on the realized gain or loss.</li>
+          <li><strong>Selling crypto for fiat currency</strong>: Converting Bitcoin, Ethereum, or any cryptocurrency to USD, EUR, or other traditional currency creates a capital gain or loss.</li>
+          <li><strong>Trading one crypto for another</strong>: Swapping BTC for ETH, or any crypto-to-crypto exchange, is treated as a sale followed by a purchase in most jurisdictions.</li>
+          <li><strong>Purchasing goods or services with crypto</strong>: Using cryptocurrency as payment is considered a disposal event, triggering capital gains tax on the appreciation since purchase.</li>
+          <li><strong>Receiving crypto as payment or income</strong>: Earnings from mining, staking rewards, airdrops, or salary paid in crypto are taxed as ordinary income at fair market value when received.</li>
+          <li><strong>Liquidations and margin trading</strong>: Forced liquidations and closing leveraged positions create taxable events based on the realized gain or loss.</li>
         </ul>
         <p><strong>Non-Taxable Events:</strong></p>
         <ul class="seo-list">
-          <li><strong>Buying cryptocurrency with fiat</strong> — Purchasing crypto with traditional currency is not taxable. The purchase establishes your cost basis for future calculations.</li>
-          <li><strong>Holding cryptocurrency</strong> — Unrealized gains from price appreciation are not taxed until you dispose of the asset. You can hold indefinitely without tax consequences.</li>
-          <li><strong>Transferring between your own wallets</strong> — Moving crypto from an exchange to a hardware wallet, or between wallets you control, is not a taxable event.</li>
-          <li><strong>Gifting cryptocurrency</strong> — In most countries, giving crypto as a gift is not taxable for the donor (though the recipient inherits your cost basis and may owe tax when they sell).</li>
-          <li><strong>Donating to qualified charities</strong> — Charitable donations of cryptocurrency are generally not taxable and may provide a deduction based on fair market value in some jurisdictions.</li>
+          <li><strong>Buying cryptocurrency with fiat</strong>: Purchasing crypto with traditional currency is not taxable. The purchase establishes your cost basis for future calculations.</li>
+          <li><strong>Holding cryptocurrency</strong>: Unrealized gains from price appreciation are not taxed until you dispose of the asset. You can hold indefinitely without tax consequences.</li>
+          <li><strong>Transferring between your own wallets</strong>: Moving crypto from an exchange to a hardware wallet, or between wallets you control, is not a taxable event.</li>
+          <li><strong>Gifting cryptocurrency</strong>: In most countries, giving crypto as a gift is not taxable for the donor (though the recipient inherits your cost basis and may owe tax when they sell).</li>
+          <li><strong>Donating to qualified charities</strong>: Charitable donations of cryptocurrency are generally not taxable and may provide a deduction based on fair market value in some jurisdictions.</li>
         </ul>
 
         <h2>Tax-Loss Harvesting Strategies</h2>
@@ -159,12 +160,12 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <h2>How to Reduce Your Crypto Tax Bill</h2>
         <p>Minimizing your cryptocurrency tax burden legally requires strategic planning and awareness of available options. Here are proven strategies to reduce what you owe:</p>
         <ul class="seo-list">
-          <li><strong>Hold assets for more than one year</strong> — In countries like the US, Germany, and Australia, long-term capital gains receive preferential tax treatment. Germany offers the most generous benefit: zero tax on crypto held longer than 12 months. This simple strategy of patience can save you thousands in taxes.</li>
-          <li><strong>Actively harvest tax losses</strong> — Review your portfolio regularly for underperforming assets. Selling at a loss allows you to offset gains from profitable trades. In volatile crypto markets, this strategy can be employed throughout the year, not just at year-end.</li>
-          <li><strong>Utilize tax-advantaged retirement accounts</strong> — Some jurisdictions allow cryptocurrency investments within IRAs, Roth IRAs, or similar retirement accounts. Gains within these accounts can grow tax-deferred or even tax-free, depending on the account type. Check with a financial advisor about crypto IRA options in your country.</li>
-          <li><strong>Donate appreciated cryptocurrency to charity</strong> — In many countries including the US, donating crypto that has increased in value allows you to claim a charitable deduction for the full fair market value while avoiding capital gains tax on the appreciation. This creates a double tax benefit.</li>
-          <li><strong>Track your cost basis meticulously</strong> — Accurate record-keeping ensures you're not overpaying taxes. Include all fees paid when buying and selling, as these reduce your taxable gain. Use cryptocurrency tax software or detailed spreadsheets to maintain transaction history across all exchanges and wallets.</li>
-          <li><strong>Consult a crypto-specialized tax professional</strong> — Cryptocurrency tax law is complex and varies significantly by jurisdiction. A CPA or tax advisor with crypto expertise can identify deductions, credits, and strategies specific to your situation, potentially saving far more than their fee costs.</li>
+          <li><strong>Hold assets for more than one year</strong>: In countries like the US, Germany, and Australia, long-term capital gains receive preferential tax treatment. Germany offers the most generous benefit: zero tax on crypto held longer than 12 months. This simple strategy of patience can save you thousands in taxes.</li>
+          <li><strong>Actively harvest tax losses</strong>: Review your portfolio regularly for underperforming assets. Selling at a loss allows you to offset gains from profitable trades. In volatile crypto markets, this strategy can be employed throughout the year, not just at year-end.</li>
+          <li><strong>Utilize tax-advantaged retirement accounts</strong>: Some jurisdictions allow cryptocurrency investments within IRAs, Roth IRAs, or similar retirement accounts. Gains within these accounts can grow tax-deferred or even tax-free, depending on the account type. Check with a financial advisor about crypto IRA options in your country.</li>
+          <li><strong>Donate appreciated cryptocurrency to charity</strong>: In many countries including the US, donating crypto that has increased in value allows you to claim a charitable deduction for the full fair market value while avoiding capital gains tax on the appreciation. This creates a double tax benefit.</li>
+          <li><strong>Track your cost basis meticulously</strong>: Accurate record-keeping ensures you're not overpaying taxes. Include all fees paid when buying and selling, as these reduce your taxable gain. Use cryptocurrency tax software or detailed spreadsheets to maintain transaction history across all exchanges and wallets.</li>
+          <li><strong>Consult a crypto-specialized tax professional</strong>: Cryptocurrency tax law is complex and varies significantly by jurisdiction. A CPA or tax advisor with crypto expertise can identify deductions, credits, and strategies specific to your situation, potentially saving far more than their fee costs.</li>
         </ul>
 
         <div class="tax-disclaimer-box">
@@ -180,6 +181,8 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
           <code>Tax Owed = Capital Gain × Tax Rate</code>
         </div>
         <p>Your <strong>cost basis</strong> is the original purchase price plus any fees paid to acquire the crypto. The <strong>sale price</strong> is the amount received minus any transaction fees. The resulting capital gain (or loss if negative) is then multiplied by your applicable tax rate, which depends on your holding period and income level. For example, if you bought 1 BTC for $30,000 (plus $50 fee), sold it for $45,000 (minus $75 fee), your capital gain would be $14,875. If you're in the 24% tax bracket for short-term gains, you'd owe approximately $3,570 in taxes.</p>
+
+        <AuthoritativeSources category="tax-reporting" />
 
         <h2>Frequently Asked Questions</h2>
         <details>

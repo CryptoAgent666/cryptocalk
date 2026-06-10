@@ -7,6 +7,7 @@ import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
+import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -71,18 +72,18 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <div class="quick-answer"><strong>Quick answer:</strong> Leveraged P&amp;L = Price Change % &times; Leverage &times; Position Size. A 5% price rise with 10x leverage yields 50% return on collateral &mdash; but a 10% drop triggers liquidation.</div>
         <h2>How to Use the Leverage Calculator</h2>
         <ol>
-          <li>Enter your <strong>position size</strong> — the total value of the crypto position you want to control (e.g., $10,000 worth of Bitcoin).</li>
-          <li>Set your <strong>leverage multiplier</strong> — how many times you want to amplify your position (common options: 2×, 5×, 10×, 25×, 50×, 100×).</li>
-          <li>Input the <strong>price change percentage</strong> — the expected or hypothetical price movement (e.g., +5% gain or -3% loss).</li>
-          <li>Review the <strong>required margin</strong> — the actual capital you need to post to open the position.</li>
+          <li>Enter your <strong>position size</strong>: the total value of the crypto position you want to control (e.g., $10,000 worth of Bitcoin).</li>
+          <li>Set your <strong>leverage multiplier</strong>: how many times you want to amplify your position (common options: 2×, 5×, 10×, 25×, 50×, 100×).</li>
+          <li>Input the <strong>price change percentage</strong>: the expected or hypothetical price movement (e.g., +5% gain or -3% loss).</li>
+          <li>Review the <strong>required margin</strong>: the actual capital you need to post to open the position.</li>
           <li>Compare <strong>spot vs leveraged results</strong> side-by-side, including profit/loss in dollars and ROI percentage.</li>
           <li>Check the <strong>liquidation distance</strong> to understand how far the price can move against you before your position is closed.</li>
         </ol>
 
         <h2>How Leverage Works in Crypto</h2>
         <p>Leverage allows you to control a larger position with less capital by borrowing funds from the exchange. With 10× leverage, $1,000 of your own money controls a $10,000 position. If the price moves 5% in your favor, your profit is $500 (50% ROI on your margin) instead of $50 (5% ROI) without leverage.</p>
-        <p>This borrowed capital acts as a multiplier on both gains and losses. While leverage can accelerate profits dramatically, it equally accelerates losses. The exchange requires you to maintain a minimum margin balance. If your losses bring your account below this threshold, the exchange automatically closes your position to prevent you from owing money — this is called liquidation.</p>
-        <p>For example, imagine you believe Bitcoin will rise from $50,000 to $52,500 (a 5% increase). Without leverage, investing $2,000 would give you 0.04 BTC. When the price hits $52,500, you'd have $2,100 — a $100 profit (5% ROI). But with 25× leverage, your $2,000 margin controls a $50,000 position (1 BTC). The same 5% price increase gives you $2,500 profit — a 125% ROI. However, if Bitcoin drops 5% to $47,500 instead, you'd lose $2,500, completely wiping out your margin and triggering liquidation.</p>
+        <p>This borrowed capital acts as a multiplier on both gains and losses. While leverage can accelerate profits dramatically, it equally accelerates losses. The exchange requires you to maintain a minimum margin balance. If your losses bring your account below this threshold, the exchange automatically closes your position to prevent you from owing money, this is called liquidation.</p>
+        <p>For example, imagine you believe Bitcoin will rise from $50,000 to $52,500 (a 5% increase). Without leverage, investing $2,000 would give you 0.04 BTC. When the price hits $52,500, you'd have $2,100, a $100 profit (5% ROI). But with 25× leverage, your $2,000 margin controls a $50,000 position (1 BTC). The same 5% price increase gives you $2,500 profit, a 125% ROI. However, if Bitcoin drops 5% to $47,500 instead, you'd lose $2,500, completely wiping out your margin and triggering liquidation.</p>
 
         <h2>Leverage Formulas</h2>
         <div class="formula-block">
@@ -153,10 +154,10 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
         <h2>Common Leverage Levels</h2>
         <ul>
-          <li><strong>2×–5×</strong> — Conservative leverage used by experienced traders for swing trading and longer-term positions. Liquidation distance is 20–50%, giving significant room for price fluctuations. Best for traders who want amplified gains without extreme risk. Suitable for those with solid risk management and understanding of market cycles.</li>
-          <li><strong>10×–20×</strong> — Moderate leverage commonly used for day trading and short-term positions. Liquidation occurs at 5–10% adverse price movement. Requires active monitoring and quick decision-making. Appropriate for experienced traders with defined entry/exit strategies and stop-loss discipline.</li>
-          <li><strong>50×–100×</strong> — Aggressive leverage often used for scalping with very tight stop-losses. Liquidation happens at just 1–2% against you, meaning even minor volatility can wipe out your position. Only suitable for professional traders executing high-frequency strategies with sub-1% risk per trade. Not recommended for position holding.</li>
-          <li><strong>125×+</strong> — Extreme leverage where a single volatility spike or market wick can instantly liquidate you. Liquidation distance is less than 1%. Reserved for ultra-short-term scalps in low-volatility conditions. Statistically, most traders using this leverage lose their capital quickly. Not recommended for 99% of traders.</li>
+          <li><strong>2×–5×</strong>: Conservative leverage used by experienced traders for swing trading and longer-term positions. Liquidation distance is 20–50%, giving significant room for price fluctuations. Best for traders who want amplified gains without extreme risk. Suitable for those with solid risk management and understanding of market cycles.</li>
+          <li><strong>10×–20×</strong>: Moderate leverage commonly used for day trading and short-term positions. Liquidation occurs at 5–10% adverse price movement. Requires active monitoring and quick decision-making. Appropriate for experienced traders with defined entry/exit strategies and stop-loss discipline.</li>
+          <li><strong>50×–100×</strong>: Aggressive leverage often used for scalping with very tight stop-losses. Liquidation happens at just 1–2% against you, meaning even minor volatility can wipe out your position. Only suitable for professional traders executing high-frequency strategies with sub-1% risk per trade. Not recommended for position holding.</li>
+          <li><strong>125×+</strong>: Extreme leverage where a single volatility spike or market wick can instantly liquidate you. Liquidation distance is less than 1%. Reserved for ultra-short-term scalps in low-volatility conditions. Statistically, most traders using this leverage lose their capital quickly. Not recommended for 99% of traders.</li>
         </ul>
 
         <h2>The Risks of High Leverage</h2>
@@ -168,22 +169,24 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
         <h2>Leverage Risk Management Tips</h2>
         <p>If you choose to trade with leverage, following strict risk management rules is essential for survival:</p>
-        <p><strong>Always Use Stop-Loss Orders:</strong> Never enter a leveraged position without a predetermined stop-loss. Set it at a level where your loss is acceptable (typically 1-2% of total capital). Don't move your stop-loss further away when losing — this is how accounts get blown up.</p>
+        <p><strong>Always Use Stop-Loss Orders:</strong> Never enter a leveraged position without a predetermined stop-loss. Set it at a level where your loss is acceptable (typically 1-2% of total capital). Don't move your stop-loss further away when losing, this is how accounts get blown up.</p>
         <p><strong>Never Risk More Than 1-2% Per Trade:</strong> Calculate your position size based on your stop-loss distance so that if you're stopped out, you only lose 1-2% of your total trading capital. This allows you to survive 50+ consecutive losses before blowing up your account, giving your edge time to play out.</p>
         <p><strong>Start With Low Leverage:</strong> Begin with 2-3× leverage maximum while you learn. Only increase leverage gradually as you prove consistent profitability. Many professional traders never exceed 5-10× leverage even after years of experience. You don't need 100× to make money.</p>
         <p><strong>Use Isolated Margin Mode:</strong> Isolated margin limits your risk to only the margin allocated to that specific position. Cross margin mode puts your entire account balance at risk. Until you're extremely experienced, always use isolated margin to prevent one bad trade from wiping out your entire account.</p>
         <p><strong>Scale In and Out of Positions:</strong> Don't enter your full position size at once. Scale in with 25-50% of your planned size, and add more only if the trade moves in your favor. Similarly, take partial profits at key levels rather than trying to time the perfect exit. This reduces the impact of being wrong about exact entry and exit points.</p>
 
+        <AuthoritativeSources category="trading-tools" />
+
         <h2>Frequently Asked Questions</h2>
 
         <details>
           <summary>Can I lose more than my margin?</summary>
-          <p>On most crypto exchanges using isolated margin mode, your maximum loss is capped at your margin — you cannot owe the exchange money. However, in cross margin mode, your entire wallet balance acts as collateral and can be lost. In extreme market conditions (flash crashes, exchange outages), it's theoretically possible to lose more than your margin, but reputable exchanges have insurance funds to cover this. Always use isolated margin as a beginner to limit risk to only the margin you allocate to each position.</p>
+          <p>On most crypto exchanges using isolated margin mode, your maximum loss is capped at your margin, you cannot owe the exchange money. However, in cross margin mode, your entire wallet balance acts as collateral and can be lost. In extreme market conditions (flash crashes, exchange outages), it's theoretically possible to lose more than your margin, but reputable exchanges have insurance funds to cover this. Always use isolated margin as a beginner to limit risk to only the margin you allocate to each position.</p>
         </details>
 
         <details>
           <summary>What leverage should beginners use?</summary>
-          <p>Beginners should start with 2×–3× leverage maximum, or better yet, avoid leverage entirely until they're consistently profitable trading spot. Higher leverage requires precise timing, tight risk management, and emotional discipline that comes from experience. Most professional traders use 3×–10× leverage. The myth that you need 50-100× leverage to make meaningful profits is false — proper position sizing with moderate leverage is far more sustainable.</p>
+          <p>Beginners should start with 2×–3× leverage maximum, or better yet, avoid leverage entirely until they're consistently profitable trading spot. Higher leverage requires precise timing, tight risk management, and emotional discipline that comes from experience. Most professional traders use 3×–10× leverage. The myth that you need 50-100× leverage to make meaningful profits is false, proper position sizing with moderate leverage is far more sustainable.</p>
         </details>
 
         <details>
@@ -198,12 +201,12 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
         <details>
           <summary>Do I pay interest on leveraged positions?</summary>
-          <p>Yes, but it works differently than traditional margin loans. Crypto perpetual futures (the most common leveraged product) charge funding rates, typically every 8 hours. The rate varies based on market conditions — when longs dominate, longs pay shorts; when shorts dominate, shorts pay longs. Rates typically range from -0.1% to +0.1% per funding period. Over days or weeks, these can add up to several percent of your position value. Check your exchange's funding rate before holding leveraged positions long-term.</p>
+          <p>Yes, but it works differently than traditional margin loans. Crypto perpetual futures (the most common leveraged product) charge funding rates, typically every 8 hours. The rate varies based on market conditions, when longs dominate, longs pay shorts; when shorts dominate, shorts pay longs. Rates typically range from -0.1% to +0.1% per funding period. Over days or weeks, these can add up to several percent of your position value. Check your exchange's funding rate before holding leveraged positions long-term.</p>
         </details>
 
         <details>
           <summary>Is 100× leverage ever appropriate?</summary>
-          <p>For 99.9% of traders, no. The only theoretical use case is ultra-high-frequency scalping strategies where positions are held for seconds or minutes, with stop-losses tighter than 0.5%. Even then, the liquidation risk from a single volatility spike or exchange lag makes it extremely dangerous. Professional trading firms that do use extreme leverage have sophisticated risk systems, direct exchange connections, and can afford to lose. For retail traders, 100× leverage is essentially gambling with a massive house edge against you. Most exchanges offering 100×+ leverage profit from liquidations — they're not offering it for your benefit.</p>
+          <p>For 99.9% of traders, no. The only theoretical use case is ultra-high-frequency scalping strategies where positions are held for seconds or minutes, with stop-losses tighter than 0.5%. Even then, the liquidation risk from a single volatility spike or exchange lag makes it extremely dangerous. Professional trading firms that do use extreme leverage have sophisticated risk systems, direct exchange connections, and can afford to lose. For retail traders, 100× leverage is essentially gambling with a massive house edge against you. Most exchanges offering 100×+ leverage profit from liquidations, they're not offering it for your benefit.</p>
         </details>
 
         <h2>Related Calculators</h2>
