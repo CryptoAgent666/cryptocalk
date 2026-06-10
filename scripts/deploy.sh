@@ -19,6 +19,16 @@ CREDS=".ftp-credentials"
 [ -f "$CREDS" ] || { echo "❌ $CREDS not found"; exit 1; }
 eval "$(grep -E '^(host|user|pass|remote_path)=' "$CREDS" | sed 's/^/FTP_/')"
 
+# TLS: verify the server certificate and encrypt the data channel by default —
+# otherwise a network MITM can capture the FTP credentials (= full site takeover).
+# Escape hatch while the host cert is broken:  FTP_INSECURE=1 bash scripts/deploy.sh
+if [ "${FTP_INSECURE:-0}" = "1" ]; then
+  echo "⚠️  FTP_INSECURE=1 — TLS certificate verification DISABLED for this run. Fix the host certificate ASAP."
+  LFTP_TLS=$'set ssl:verify-certificate no\nset ftp:ssl-protect-data false'
+else
+  LFTP_TLS=$'set ssl:verify-certificate yes\nset ftp:ssl-protect-data true'
+fi
+
 if [ "${1:-}" != "--no-build" ]; then
   echo "▶ Building…"
   npm run build
@@ -30,8 +40,7 @@ LFTP_SCRIPT="$(mktemp)"
 trap 'rm -f "$LFTP_SCRIPT"' EXIT
 
 cat > "$LFTP_SCRIPT" <<EOF
-set ssl:verify-certificate no
-set ftp:ssl-protect-data false
+${LFTP_TLS}
 set net:timeout 30
 set net:max-retries 3
 set mirror:parallel-transfer-count 10

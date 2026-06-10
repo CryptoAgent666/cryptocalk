@@ -24,6 +24,15 @@ OTA_FTP_DIR="${OTA_FTP_DIR:-ota.cryptocalk.com/httpdocs}"
 load_ftp() {
   [ -f "$CREDS" ] || { echo "❌ $CREDS not found"; exit 1; }
   eval "$(grep -E '^(host|user|pass)=' "$CREDS" | sed 's/^/FTP_/')"
+
+  # TLS: verify certs + encrypt data channel by default; FTP_INSECURE=1 to bypass
+  # while the host certificate is broken (logs a loud warning).
+  if [ "${FTP_INSECURE:-0}" = "1" ]; then
+    echo "⚠️  FTP_INSECURE=1 — TLS certificate verification DISABLED for this run."
+    LFTP_TLS=$'set ssl:verify-certificate no\nset ftp:ssl-protect-data false'
+  else
+    LFTP_TLS=$'set ssl:verify-certificate yes\nset ftp:ssl-protect-data true'
+  fi
 }
 
 # --- one-time backend deploy: upload updates.php + create manifest/ & bundles/ dirs ---
@@ -31,8 +40,7 @@ if [ "${1:-}" = "--deploy-backend" ]; then
   load_ftp
   echo "==> Uploading OTA backend to ${OTA_FTP_DIR} on ${FTP_host}…"
   lftp -u "${FTP_user},${FTP_pass}" "${FTP_host}" <<EOF
-set ssl:verify-certificate no
-set ftp:ssl-protect-data false
+${LFTP_TLS}
 mkdir -p ${OTA_FTP_DIR}
 mkdir -p ${OTA_FTP_DIR}/manifest
 mkdir -p ${OTA_FTP_DIR}/bundles/${APP_KEY}
@@ -70,8 +78,7 @@ else
   echo "==> [3/4] Uploading bundle over FTP to ${OTA_FTP_DIR}…"
   # zip first, manifest LAST — so the manifest never points at a not-yet-uploaded zip.
   lftp -u "${FTP_user},${FTP_pass}" "${FTP_host}" <<EOF
-set ssl:verify-certificate no
-set ftp:ssl-protect-data false
+${LFTP_TLS}
 set net:timeout 30
 set net:max-retries 3
 mkdir -p ${OTA_FTP_DIR}/bundles/${APP_KEY}
