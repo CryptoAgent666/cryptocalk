@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # The Astro build loads ~8 MB of i18n content modules for ~1300 pages.
+      NODE_OPTIONS: --max-old-space-size=4096
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # test + build + verify:slug-migration + verify:localized-styles
+      - name: Run ci:check
+        run: npm run ci:check
+
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high

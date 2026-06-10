@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented here.
 
+## [2026-06-10] (update 150) — Repo audit follow-up: CI gate, registry invariants, slug sync
+
+Implements Milestone 0/1 of the full repo audit (see `~/Projects/TEMP/cryptocalk-audit-2026-06-10.md`). No site-visible changes: build output verified byte-identical to pre-change baseline.
+
+### Added
+- **GitHub Actions CI** (`.github/workflows/ci.yml`): runs `ci:check` (test + build + verify:slug-migration + verify:localized-styles) + `npm audit --omit=dev` on every push/PR to main. First automated gate for this repo.
+- **Registry invariant tests** (`src/test/registry-invariants.test.ts`): astro.config slug set == utils.ts == `[...slug].astro` ALIAS_DEFINITIONS; every slug localized in all 5 languages; localized slugs round-trip; EN_ALIAS_SLUGS == Layout SLUG_ALIASES; legacy `[lang]/<en-slug>.astro` alias pages frozen (new calculators must use localized slugs via `[...slug].astro` only).
+
+### Fixed
+- **astro.config.mjs SPEC_CALCULATOR_SLUGS was 9 slugs behind utils.ts** (depin-earnings, lp-value, trailing-stop-loss, rwa-yield, polymarket-odds, crypto-card-cashback, mining-coin-switcher, ai-token-sector, wallet-net-worth). Latent sitemap-pollution hazard; no built-output change today (verified by full dist diff). Stale "93 slugs" comment replaced with a pointer to the invariant test.
+
+### Notes
+- Known quirk surfaced by the new round-trip test: in `hi`, the alias pairs gas-fee/gas and compound-interest/compound collide on one localized slug, so one of each pair has no own hi page. Accepted while `hi` is fully noindexed (PRUNE-PLAN); revisit with the hi-locale decision.
+
 ## [2026-06-10] (update 149) — CalkCheck quality pass: E-E-A-T sources on all EN pages, em-dash thinning, a11y/link hygiene
 
 Driven by the full CalkCheck audit (AUDIT-2026-06-10.md, 160+ criteria). Changes:

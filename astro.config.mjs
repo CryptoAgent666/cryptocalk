@@ -23,8 +23,9 @@ const ChangeFreq = {
 };
 
 const NON_DEFAULT_LANGS = new Set(['es', 'pt', 'tr', 'hi', 'ru']);
-// Mirror of SPEC_CALCULATOR_SLUGS in src/i18n/utils.ts (93 slugs).
-// Keep this list in sync — it's used to filter out localized EN-slug aliases (e.g. /es/profit-calculator)
+// Mirror of SPEC_CALCULATOR_SLUGS in src/i18n/utils.ts.
+// Kept in sync by src/test/registry-invariants.test.ts (CI fails on drift).
+// Used to filter out localized EN-slug aliases (e.g. /es/profit-calculator)
 // from the sitemap, since they are noindex and canonical to the localized slug.
 const SPEC_CALCULATOR_SLUGS = new Set([
   'converter',
@@ -146,6 +147,15 @@ const SPEC_CALCULATOR_SLUGS = new Set([
   'perpetual-funding-arbitrage-calculator',
   'concentrated-liquidity-calculator',
   'looping-yield-calculator',
+  'depin-earnings-calculator',
+  'lp-value-calculator',
+  'trailing-stop-loss-calculator',
+  'rwa-yield-calculator',
+  'polymarket-odds-calculator',
+  'crypto-card-cashback-calculator',
+  'mining-coin-switcher-calculator',
+  'ai-token-sector-calculator',
+  'wallet-net-worth-calculator',
 ]);
 
 // EN alias pages that have a canonical spec URL (kept for rich SEO content but not indexed separately)
