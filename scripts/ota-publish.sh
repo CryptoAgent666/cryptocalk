@@ -1,27 +1,50 @@
 #!/bin/bash
 set -euo pipefail
 
-# CryptoCalk OTA publisher (VPS) — build the web bundle and ship it to ota.cryptocalk.com.
-# Same self-hosted Capgo pattern as CALK-AU. See ota-backend-vps/README.md.
+# CryptoCalk OTA publisher — shared hosting + Cloudflare edition (FTP/lftp).
+# Self-hosted Capgo pattern (like CALK-AU) but uploads over FTP (reusing the site's
+# .ftp-credentials) instead of rsync-over-SSH, because this site is on shared hosting.
 #
 # Usage:
-#   scripts/ota-publish.sh <version>            publish to the VPS (rsync over SSH)
-#   scripts/ota-publish.sh <version> --local    write into ota-backend-vps/public for local testing
+#   scripts/ota-publish.sh <version>            build + publish a bundle to the VPS (FTP)
+#   scripts/ota-publish.sh <version> --local    write into ota-backend-vps/public for local test
+#   scripts/ota-publish.sh --deploy-backend     one-time: upload updates.php + dirs to the subdomain
 #
-# <version> MUST be greater than the binary's versionName/MARKETING_VERSION (e.g. 1.0.1),
-# so each version is offered to devices exactly once and never downgrades.
+# <version> MUST be greater than the app's versionName (e.g. 1.0.1) so each version is
+# offered to devices exactly once and never downgrades.
 
 APP_KEY="crypto"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+CREDS="$ROOT/.ftp-credentials"
 
-VERSION="${1:?usage: ota-publish.sh <version> [--local]}"
-MODE="${2:-}"
-
-# VPS connection config (override in scripts/ota.env — copy from ota.env.example).
+# OTA subdomain docroot on the FTP server (override in scripts/ota.env — copy from ota.env.example).
 [ -f "$ROOT/scripts/ota.env" ] && . "$ROOT/scripts/ota.env"
-OTA_SSH="${OTA_SSH:-root@176.97.68.234}"
-OTA_REMOTE_DIR="${OTA_REMOTE_DIR:-/var/www/www-root/data/www/ota.cryptocalk.com}"
-OTA_SSH_PORT="${OTA_SSH_PORT:-22}"
+OTA_FTP_DIR="${OTA_FTP_DIR:-ota.cryptocalk.com/httpdocs}"
+
+load_ftp() {
+  [ -f "$CREDS" ] || { echo "❌ $CREDS not found"; exit 1; }
+  eval "$(grep -E '^(host|user|pass)=' "$CREDS" | sed 's/^/FTP_/')"
+}
+
+# --- one-time backend deploy: upload updates.php + create manifest/ & bundles/ dirs ---
+if [ "${1:-}" = "--deploy-backend" ]; then
+  load_ftp
+  echo "==> Uploading OTA backend to ${OTA_FTP_DIR} on ${FTP_host}…"
+  lftp -u "${FTP_user},${FTP_pass}" "${FTP_host}" <<EOF
+set ssl:verify-certificate no
+set ftp:ssl-protect-data false
+mkdir -p ${OTA_FTP_DIR}
+mkdir -p ${OTA_FTP_DIR}/manifest
+mkdir -p ${OTA_FTP_DIR}/bundles/${APP_KEY}
+put "$ROOT/ota-backend-vps/public/updates.php" -o ${OTA_FTP_DIR}/updates.php
+bye
+EOF
+  echo "==> Backend uploaded. Test: curl https://ota.cryptocalk.com/updates.php  -> {\"ok\":true,...}"
+  exit 0
+fi
+
+VERSION="${1:?usage: ota-publish.sh <version> [--local] | --deploy-backend}"
+MODE="${2:-}"
 
 echo "==> [1/4] Building web bundle (astro build)…"
 cd "$ROOT"
@@ -43,14 +66,21 @@ if [ "$MODE" = "--local" ]; then
   cp "$TMP/$APP_KEY.json" "$DEST/manifest/$APP_KEY.json"
   echo "==> [local] wrote bundle + manifest into ota-backend-vps/public"
 else
-  SSH_CMD="ssh -p $OTA_SSH_PORT"
-  echo "==> [3/4] Uploading bundle to VPS ($OTA_SSH)…"
-  $SSH_CMD "$OTA_SSH" "mkdir -p '$OTA_REMOTE_DIR/bundles/$APP_KEY' '$OTA_REMOTE_DIR/manifest'"
-  rsync -az -e "$SSH_CMD" "$BUNDLE" "$OTA_SSH:$OTA_REMOTE_DIR/bundles/$APP_KEY/$VERSION.zip"
-
-  # Upload the manifest LAST, so it never points at a not-yet-uploaded zip.
-  echo "==> [4/4] Updating manifest…"
-  rsync -az -e "$SSH_CMD" "$TMP/$APP_KEY.json" "$OTA_SSH:$OTA_REMOTE_DIR/manifest/$APP_KEY.json"
+  load_ftp
+  echo "==> [3/4] Uploading bundle over FTP to ${OTA_FTP_DIR}…"
+  # zip first, manifest LAST — so the manifest never points at a not-yet-uploaded zip.
+  lftp -u "${FTP_user},${FTP_pass}" "${FTP_host}" <<EOF
+set ssl:verify-certificate no
+set ftp:ssl-protect-data false
+set net:timeout 30
+set net:max-retries 3
+mkdir -p ${OTA_FTP_DIR}/bundles/${APP_KEY}
+mkdir -p ${OTA_FTP_DIR}/manifest
+put "$BUNDLE" -o ${OTA_FTP_DIR}/bundles/${APP_KEY}/${VERSION}.zip
+put "$TMP/$APP_KEY.json" -o ${OTA_FTP_DIR}/manifest/${APP_KEY}.json
+bye
+EOF
+  echo "==> [4/4] Published."
 fi
 
 rm -rf "$TMP"
