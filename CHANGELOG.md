@@ -21,6 +21,10 @@ Implements Milestone 0/1 of the full repo audit (see `~/Projects/TEMP/cryptocalk
 - Added proprietary LICENSE (public repo had none — defaulted to ambiguous all-rights-reserved).
 - README rewritten to match reality (repo-relative paths instead of machine-local ones, real FTPS+Worker deploy story, frozen-alias rule); DEPLOY.md rewritten: actual production topology + the DATA_HUB→prune-noindex.json cross-repo workflow documented.
 
+### Security
+- **FTPS deploys now verify the server certificate and encrypt the data channel** (`deploy.sh`, `ota-publish.sh` ran with `ssl:verify-certificate no` + `ftp:ssl-protect-data false` — MITM could capture credentials = site/OTA takeover). Verified read-only against the production host: the certificate validates, deploys keep working. Escape hatch while a cert is broken: `FTP_INSECURE=1`.
+- **Git history purged** (git-filter-repo, force-push all branches): `dist/`, `appeal/` (personal appeal letters), `DSC_0854.JPG` (personal photo), `app-release.aab` removed from every commit. Pack size 376 MiB → 17 MiB. Local backups in `~/Projects/CRYPTOCALK-private/`; appeal files restored as gitignored local-only files.
+
 ### Fixed (ci:check was silently red on main)
 - **`npm run ci:check` failed on main before this session** — `verify:localized-styles` exited 1, masked locally by pipe exit codes. Two stale assumptions fixed in the script (not the content): EN pages with zero `<style>` blocks are now skipped-with-notice instead of failed (18 pages keep styles in shared components since the E-E-A-T pass), and `updates.astro` joined about/contact/terms in the non-calculator exclusion list (it has its own localized styles).
 - **`converter.astro` shipped corrupted CSS**: style block #1 ended with a dangling `.seo-content p, .seo-content ol,` selector (no declarations) — the invalid empty rule went verbatim into `dist/_astro/converter.*.css`. Removed; browsers were already discarding it, so zero visual change (verified: CSS diff is exactly the garbage rule; all page diffs are hash/island-uid only).
