@@ -1,6 +1,9 @@
 # generated types
 .astro/
 
+# build output — never commit; deploy.sh and wrangler read the local build
+dist/
+
 # dependencies
 node_modules/
 
@@ -31,3 +34,8 @@ pnpm-debug.log*
 scripts/ota.env
 ota-backend-vps/public/bundles/*/
 ota-backend-vps/public/manifest/*.json
+
+# private / personal — must never enter the public repo
+appeal/
+DSC_0854.JPG
+*.aab

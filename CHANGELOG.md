@@ -13,8 +13,21 @@ Implements Milestone 0/1 of the full repo audit (see `~/Projects/TEMP/cryptocalk
 ### Fixed
 - **astro.config.mjs SPEC_CALCULATOR_SLUGS was 9 slugs behind utils.ts** (depin-earnings, lp-value, trailing-stop-loss, rwa-yield, polymarket-odds, crypto-card-cashback, mining-coin-switcher, ai-token-sector, wallet-net-worth). Latent sitemap-pollution hazard; no built-output change today (verified by full dist diff). Stale "93 slugs" comment replaced with a pointer to the invariant test.
 
+### Changed (repo hygiene — no site effect)
+- **`dist/` (346 MB / 1527 files), `play-store-assets/app-release.aab` (36 MB), `DSC_0854.JPG`, `appeal/` untracked** and gitignored. Build output is rebuilt on every deploy; personal/appeal files live only in the local working copy. History purge follows separately.
+- Deleted 15 dead one-off codemods from repo root (`patch-dca*.cjs`, `*onfocus*.cjs`, `fix-all/fix-corruption.cjs`, `rigorous-check.cjs`, `translate.cjs`, `extract.js`, `generate-meta.cjs`, `es-keys.json`) — none referenced by package.json; several hardcoded machine-local paths.
+- Archived stale point-in-time docs to `docs/archive/` (AUDIT-*, FULL-AUDIT-REPORT, SCHEMA-REPORT, ACTION-PLAN, generated-schema.json). Active docs (README, AGENTS, DEPLOY, PRUNE-PLAN, PREPUBLISH_CHECKLIST) stay at root.
+- package.json: renamed `callous-chaos` → `cryptocalk`; dropped unused `@vitalets/google-translate-api`; moved `@capacitor/cli` to devDependencies; `npm audit fix` (vite & friends — 11 of 12 advisories resolved; remaining: astro≤6.1.9 moderate, needs the Astro 6 major upgrade — deferred deliberately).
+- Added proprietary LICENSE (public repo had none — defaulted to ambiguous all-rights-reserved).
+- README rewritten to match reality (repo-relative paths instead of machine-local ones, real FTPS+Worker deploy story, frozen-alias rule); DEPLOY.md rewritten: actual production topology + the DATA_HUB→prune-noindex.json cross-repo workflow documented.
+
+### Fixed (ci:check was silently red on main)
+- **`npm run ci:check` failed on main before this session** — `verify:localized-styles` exited 1, masked locally by pipe exit codes. Two stale assumptions fixed in the script (not the content): EN pages with zero `<style>` blocks are now skipped-with-notice instead of failed (18 pages keep styles in shared components since the E-E-A-T pass), and `updates.astro` joined about/contact/terms in the non-calculator exclusion list (it has its own localized styles).
+- **`converter.astro` shipped corrupted CSS**: style block #1 ended with a dangling `.seo-content p, .seo-content ol,` selector (no declarations) — the invalid empty rule went verbatim into `dist/_astro/converter.*.css`. Removed; browsers were already discarding it, so zero visual change (verified: CSS diff is exactly the garbage rule; all page diffs are hash/island-uid only).
+
 ### Notes
 - Known quirk surfaced by the new round-trip test: in `hi`, the alias pairs gas-fee/gas and compound-interest/compound collide on one localized slug, so one of each pair has no own hi page. Accepted while `hi` is fully noindexed (PRUNE-PLAN); revisit with the hi-locale decision.
+- Full-build verification after all changes: 38/38 tests, `ci:check` exit 0, dist diff vs pre-change baseline = hash renames + astro-island uids only.
 
 ## [2026-06-10] (update 149) — CalkCheck quality pass: E-E-A-T sources on all EN pages, em-dash thinning, a11y/link hygiene
 

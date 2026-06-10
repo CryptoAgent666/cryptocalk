@@ -8,7 +8,9 @@ const EN_PAGES_DIR = path.join(ROOT, 'src', 'pages');
 const LOCALIZED_PAGES_DIR = path.join(ROOT, 'src', 'pages', '[lang]');
 const LANGS = ['es', 'pt', 'tr', 'hi', 'ru'];
 const STYLE_BLOCK_RE = /<style(?:\s[^>]*)?>([\s\S]*?)<\/style>/g;
-const NON_CALCULATOR_LOCALIZED_PAGES = new Set(['about.astro', 'contact.astro', 'terms.astro']);
+// Pages with their own localized .astro source (and own styles) — they don't reuse
+// the EN page's .calc-scope styles, so EN/localized style parity doesn't apply.
+const NON_CALCULATOR_LOCALIZED_PAGES = new Set(['about.astro', 'contact.astro', 'terms.astro', 'updates.astro']);
 
 function extractStyleBlocks(source) {
   return Array.from(source.matchAll(STYLE_BLOCK_RE))
@@ -52,6 +54,7 @@ function readLocalizedSlugs() {
 function verify() {
   const slugs = readLocalizedSlugs();
   const failures = [];
+  const skipped = [];
   let checked = 0;
 
   for (const slug of slugs) {
@@ -67,10 +70,9 @@ function verify() {
     const enSource = fs.readFileSync(enSourcePath, 'utf-8');
     const styleBlocks = extractStyleBlocks(enSource);
     if (styleBlocks.length === 0) {
-      failures.push({
-        scope: slug,
-        message: `No <style> blocks found in ${path.relative(ROOT, enSourcePath)}`,
-      });
+      // Nothing to verify: the EN page has no inline styles (styles live in shared
+      // components). Localized parity is vacuous here — skip instead of failing.
+      skipped.push(slug);
       continue;
     }
 
@@ -136,8 +138,9 @@ function verify() {
     process.exit(1);
   }
 
+  const skippedNote = skipped.length > 0 ? ` (skipped ${skipped.length} style-less EN pages: ${skipped.join(', ')})` : '';
   console.log(
-    `[verify-localized-styles] PASS — checked ${checked} localized calculator pages across ${LANGS.length} languages`
+    `[verify-localized-styles] PASS — checked ${checked} localized calculator pages across ${LANGS.length} languages${skippedNote}`
   );
 }
 
