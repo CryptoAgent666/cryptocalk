@@ -1,14 +1,23 @@
 /**
  * Crypto Price Service with Fallback Chain
- * CoinGecko → CryptoCompare
+ * Static (pre-baked) → Binance → CoinGecko
  *
+ * Static: /data/price-history/<SYM>.json — daily closes pre-baked at build time by
+ * scripts/bake-price-history.mjs (Binance full listing history + one-off CryptoCompare
+ * backfill for pre-listing years: BTC→2010, ETH→2015, and KAS/STETH which Binance
+ * doesn't list). Covers any date up to the last bake with ZERO runtime API calls.
+ * Binance (data-api.binance.vision — public market-data mirror, no key, no geo-block)
+ * provides full daily-candle history back to each pair's listing date, for free.
  * CoinGecko free API limits historical data to 365 days.
- * CryptoCompare provides full historical data going back 10+ years.
+ * CryptoCompare/CoinDesk Data REMOVED from the client (2026-07-02): its free tier is
+ * 100 calls/month, anonymous access returns 401, and the PUBLIC_ key shipped in the
+ * bundle — visitors exhausted the whole monthly quota. The key now lives server-side
+ * only (CRYPTOCOMPARE_API_KEY) for the bake script's rare pre-listing backfills.
  * CoinCap (api.coincap.io) removed — domain is down as of 2026-03.
  */
 
 const COINGECKO_KEY = import.meta.env.PUBLIC_COINGECKO_API_KEY || '';
-const CRYPTOCOMPARE_KEY = import.meta.env.PUBLIC_CRYPTOCOMPARE_API_KEY || '';
+const BINANCE_BASE = 'https://data-api.binance.vision/api/v3';
 
 // ═══════════════════════════════════════════════
 // ID Mapping: CoinGecko ID → CryptoCompare symbol
@@ -31,6 +40,14 @@ const GECKO_TO_CC_SYMBOL: Record<string, string> = {
 
 function getCCSymbol(geckoId: string): string | null {
     return GECKO_TO_CC_SYMBOL[geckoId] || null;
+}
+
+// Binance reuses the same symbol map (its pairs are SYMBOL+USDT). Unlisted
+// symbols (currently KAS, STETH) simply 404/400 and the caller falls through
+// to the next provider in the chain — no separate exclusion list needed.
+function getBinancePair(geckoId: string): string | null {
+    const symbol = getCCSymbol(geckoId);
+    return symbol ? `${symbol}USDT` : null;
 }
 
 // ═══════════════════════════════════════════════
@@ -56,6 +73,66 @@ async function fetchWithTimeout(url: string, timeoutMs = 10000): Promise<Respons
 }
 
 // ═══════════════════════════════════════════════
+// Static pre-baked daily history (public/data/price-history/<SYM>.json)
+// ═══════════════════════════════════════════════
+
+type StaticHistory = { symbol: string; updated: string; prices: [number, number][] };
+const staticHistoryCache = new Map<string, Promise<StaticHistory | null>>();
+
+function loadStaticHistory(geckoId: string): Promise<StaticHistory | null> {
+    const symbol = getCCSymbol(geckoId);
+    if (!symbol) return Promise.resolve(null);
+    if (!staticHistoryCache.has(symbol)) {
+        staticHistoryCache.set(symbol, (async () => {
+            try {
+                const res = await fetchWithTimeout(`/data/price-history/${symbol}.json`, 6000);
+                if (!res.ok) return null;
+                const data = await res.json();
+                return data && Array.isArray(data.prices) && data.prices.length > 0
+                    ? (data as StaticHistory) : null;
+            } catch {
+                return null;
+            }
+        })());
+    }
+    return staticHistoryCache.get(symbol)!;
+}
+
+async function getHistoricalPriceStatic(geckoId: string, dateStr: string): Promise<number> {
+    const hist = await loadStaticHistory(geckoId);
+    if (!hist) throw new Error('No static history file');
+    const target = Math.floor(new Date(`${dateStr}T00:00:00Z`).getTime() / 1000);
+    let best: [number, number] | null = null;
+    for (const p of hist.prices) {
+        if (!best || Math.abs(p[0] - target) < Math.abs(best[0] - target)) best = p;
+        if (p[0] > target + 3 * 86400) break; // sorted — nothing closer further on
+    }
+    // daily candles: accept only a candle within 2 days of the requested date
+    if (!best || Math.abs(best[0] - target) > 2 * 86400) {
+        throw new Error(`Static history has no candle near ${dateStr}`);
+    }
+    if (!best[1]) throw new Error('Static price is 0');
+    return best[1];
+}
+
+async function getPriceChartStatic(geckoId: string, fromTs: number, toTs: number): Promise<[number, number][]> {
+    const hist = await loadStaticHistory(geckoId);
+    if (!hist) throw new Error('No static history file');
+    const first = hist.prices[0][0];
+    const last = hist.prices[hist.prices.length - 1][0];
+    // serve only ranges the bake fully covers (a fresh bake ends yesterday, so
+    // "to today" passes; a stale bake declines and live providers take over)
+    if (fromTs < first - 3 * 86400 || toTs > last + 3 * 86400) {
+        throw new Error('Static history does not cover the requested range');
+    }
+    const pts = hist.prices
+        .filter(([t]) => t >= fromTs - 86400 && t <= toTs + 86400)
+        .map(([t, c]) => [t * 1000, c] as [number, number]);
+    if (pts.length === 0) throw new Error('No static points in range');
+    return pts;
+}
+
+// ═══════════════════════════════════════════════
 // Historical Price on a Specific Date
 // ═══════════════════════════════════════════════
 
@@ -71,33 +148,43 @@ async function getHistoricalPriceCoinGecko(geckoId: string, dateStr: string): Pr
     return price;
 }
 
-async function getHistoricalPriceCryptoCompare(geckoId: string, dateStr: string): Promise<number> {
-    const symbol = getCCSymbol(geckoId);
-    if (!symbol) throw new Error(`No CryptoCompare mapping for ${geckoId}`);
-    const ts = Math.floor(new Date(dateStr).getTime() / 1000);
-    const url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${symbol}&tsym=USD&limit=1&toTs=${ts}&api_key=${CRYPTOCOMPARE_KEY}`;
+async function getHistoricalPriceBinance(geckoId: string, dateStr: string): Promise<number> {
+    const pair = getBinancePair(geckoId);
+    if (!pair) throw new Error(`No Binance mapping for ${geckoId}`);
+    const startTime = new Date(dateStr).getTime();
+    const url = `${BINANCE_BASE}/klines?symbol=${pair}&interval=1d&startTime=${startTime}&limit=1`;
     const res = await fetchWithTimeout(url);
-    if (!res.ok) throw new Error(`CryptoCompare history ${res.status}`);
+    if (!res.ok) throw new Error(`Binance history ${res.status}`);
     const data = await res.json();
-    const entries = data.Data?.Data;
-    if (!entries || entries.length === 0) throw new Error('No CryptoCompare data');
-    // Use the close price of the last entry (closest to target date)
-    const price = entries[entries.length - 1]?.close;
-    if (!price || price === 0) throw new Error('CryptoCompare price is 0');
+    if (!Array.isArray(data) || data.length === 0) throw new Error('No Binance data');
+    // Binance doesn't error when startTime predates the pair's listing — it
+    // silently returns the earliest available candle instead. Reject a candle
+    // that's far from the requested date so the chain falls through to a
+    // provider with real history that far back, instead of misreporting a
+    // much-later price as the requested date's price.
+    const candleTime = data[0][0];
+    if (Math.abs(candleTime - startTime) > 2 * 24 * 60 * 60 * 1000) {
+        throw new Error(`Binance has no data for ${dateStr} on ${pair} (earliest candle is ${new Date(candleTime).toISOString()})`);
+    }
+    const price = parseFloat(data[0][4]); // close price
+    if (!price || price === 0) throw new Error('Binance price is 0');
     return price;
 }
 
 /** Get the historical price with automatic fallback */
 export async function getHistoricalPrice(geckoId: string, dateStr: string): Promise<number> {
     const isOld = isDateOlderThan365Days(dateStr);
+    // Static first in both branches: any date up to the last bake costs zero API calls.
     const providers = isOld
-        ? [ // For old dates, skip CoinGecko (will fail anyway)
-            { name: 'CryptoCompare', fn: () => getHistoricalPriceCryptoCompare(geckoId, dateStr) },
+        ? [ // For old dates, skip CoinGecko (free tier can't reach that far back)
+            { name: 'Static', fn: () => getHistoricalPriceStatic(geckoId, dateStr) },
+            { name: 'Binance', fn: () => getHistoricalPriceBinance(geckoId, dateStr) },
             { name: 'CoinGecko', fn: () => getHistoricalPriceCoinGecko(geckoId, dateStr) },
         ]
-        : [ // For recent dates, prefer CoinGecko
+        : [ // For recent dates, prefer CoinGecko after static
+            { name: 'Static', fn: () => getHistoricalPriceStatic(geckoId, dateStr) },
             { name: 'CoinGecko', fn: () => getHistoricalPriceCoinGecko(geckoId, dateStr) },
-            { name: 'CryptoCompare', fn: () => getHistoricalPriceCryptoCompare(geckoId, dateStr) },
+            { name: 'Binance', fn: () => getHistoricalPriceBinance(geckoId, dateStr) },
         ];
 
     let lastError: Error | null = null;
@@ -127,22 +214,23 @@ async function getCurrentPriceCoinGecko(geckoId: string): Promise<number> {
     return price;
 }
 
-async function getCurrentPriceCryptoCompare(geckoId: string): Promise<number> {
-    const symbol = getCCSymbol(geckoId);
-    if (!symbol) throw new Error(`No CryptoCompare mapping for ${geckoId}`);
-    const url = `https://min-api.cryptocompare.com/data/price?fsym=${symbol}&tsyms=USD&api_key=${CRYPTOCOMPARE_KEY}`;
+async function getCurrentPriceBinance(geckoId: string): Promise<number> {
+    const pair = getBinancePair(geckoId);
+    if (!pair) throw new Error(`No Binance mapping for ${geckoId}`);
+    const url = `${BINANCE_BASE}/ticker/price?symbol=${pair}`;
     const res = await fetchWithTimeout(url);
-    if (!res.ok) throw new Error(`CryptoCompare current ${res.status}`);
+    if (!res.ok) throw new Error(`Binance current ${res.status}`);
     const data = await res.json();
-    if (!data.USD) throw new Error('No CryptoCompare current price');
-    return data.USD;
+    const price = parseFloat(data.price);
+    if (!price || price === 0) throw new Error('No Binance current price');
+    return price;
 }
 
 /** Get the current price with automatic fallback */
 export async function getCurrentPrice(geckoId: string): Promise<number> {
     const providers = [
         { name: 'CoinGecko', fn: () => getCurrentPriceCoinGecko(geckoId) },
-        { name: 'CryptoCompare', fn: () => getCurrentPriceCryptoCompare(geckoId) },
+        { name: 'Binance', fn: () => getCurrentPriceBinance(geckoId) },
     ];
 
     let lastError: Error | null = null;
@@ -170,21 +258,30 @@ async function getPriceChartCoinGecko(geckoId: string, fromTs: number, toTs: num
     return data.prices;
 }
 
-async function getPriceChartCryptoCompare(geckoId: string, fromTs: number, toTs: number): Promise<[number, number][]> {
-    const symbol = getCCSymbol(geckoId);
-    if (!symbol) throw new Error(`No CryptoCompare mapping for ${geckoId}`);
-    const days = Math.ceil((toTs - fromTs) / 86400);
-    const limit = Math.min(days, 2000); // CryptoCompare max limit
-    const url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${symbol}&tsym=USD&limit=${limit}&toTs=${toTs}&api_key=${CRYPTOCOMPARE_KEY}`;
-    const res = await fetchWithTimeout(url);
-    if (!res.ok) throw new Error(`CryptoCompare chart ${res.status}`);
-    const data = await res.json();
-    const entries = data.Data?.Data;
-    if (!entries || entries.length === 0) throw new Error('No CryptoCompare chart data');
-    // Convert to [timestamp_ms, price] format (same as CoinGecko)
-    return entries
-        .filter((e: { close: number; time: number }) => e.close > 0)
-        .map((e: { close: number; time: number }) => [e.time * 1000, e.close] as [number, number]);
+async function getPriceChartBinance(geckoId: string, fromTs: number, toTs: number): Promise<[number, number][]> {
+    const pair = getBinancePair(geckoId);
+    if (!pair) throw new Error(`No Binance mapping for ${geckoId}`);
+    const dayMs = 24 * 60 * 60 * 1000;
+    const endMs = toTs * 1000;
+    let cursor = fromTs * 1000;
+    const results: [number, number][] = [];
+    // Binance caps klines at 1000 candles/request; page through long ranges
+    // (20 pages = ~54 years of daily candles, far beyond any real request).
+    for (let page = 0; page < 20 && cursor < endMs; page++) {
+        const url = `${BINANCE_BASE}/klines?symbol=${pair}&interval=1d&startTime=${cursor}&endTime=${endMs}&limit=1000`;
+        const res = await fetchWithTimeout(url);
+        if (!res.ok) throw new Error(`Binance chart ${res.status}`);
+        const data = await res.json();
+        if (!Array.isArray(data) || data.length === 0) break;
+        for (const k of data) {
+            const close = parseFloat(k[4]);
+            if (close > 0) results.push([k[0], close]);
+        }
+        if (data.length < 1000) break; // reached the end of available candles
+        cursor = data[data.length - 1][0] + dayMs;
+    }
+    if (results.length === 0) throw new Error('No Binance chart data');
+    return results;
 }
 
 /** Get price chart data with automatic fallback */
@@ -192,12 +289,14 @@ export async function getPriceChart(geckoId: string, fromTs: number, toTs: numbe
     const isOld = (Date.now() / 1000 - fromTs) > 365 * 24 * 60 * 60;
     const providers = isOld
         ? [
-            { name: 'CryptoCompare', fn: () => getPriceChartCryptoCompare(geckoId, fromTs, toTs) },
+            { name: 'Static', fn: () => getPriceChartStatic(geckoId, fromTs, toTs) },
+            { name: 'Binance', fn: () => getPriceChartBinance(geckoId, fromTs, toTs) },
             { name: 'CoinGecko', fn: () => getPriceChartCoinGecko(geckoId, fromTs, toTs) },
         ]
         : [
+            { name: 'Static', fn: () => getPriceChartStatic(geckoId, fromTs, toTs) },
             { name: 'CoinGecko', fn: () => getPriceChartCoinGecko(geckoId, fromTs, toTs) },
-            { name: 'CryptoCompare', fn: () => getPriceChartCryptoCompare(geckoId, fromTs, toTs) },
+            { name: 'Binance', fn: () => getPriceChartBinance(geckoId, fromTs, toTs) },
         ];
 
     let lastError: Error | null = null;

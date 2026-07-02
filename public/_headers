@@ -5,7 +5,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://api.coingecko.com https://min-api.cryptocompare.com https://api.coincap.io https://blockchain.info https://api.etherscan.io https://api.allorigins.win https://www.google-analytics.com https://www.whattomine.com; frame-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://api.coingecko.com https://data-api.binance.vision https://blockchain.info https://api.etherscan.io https://api.allorigins.win https://www.google-analytics.com https://www.whattomine.com; frame-src 'none'
 
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
@@ -15,6 +15,10 @@
 
 /og/*
   Cache-Control: public, max-age=2592000
+
+# pre-baked daily price history (re-baked ~monthly; 1 day is a fine staleness bound)
+/data/price-history/*
+  Cache-Control: public, max-age=86400
 
 /favicon.svg
   Cache-Control: public, max-age=2592000

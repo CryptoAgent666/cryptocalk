@@ -39,3 +39,6 @@ ota-backend-vps/public/manifest/*.json
 appeal/
 DSC_0854.JPG
 *.aab
+
+# iOS signing profiles (never commit)
+*.mobileprovision

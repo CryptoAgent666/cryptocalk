@@ -239,15 +239,30 @@ const hreflangBasePath = normalizeBasePathForHreflang(basePath);
         }
       } catch(e) {}
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVPMVV27NH"></script>
+    <!-- GA (gtag.js) + AdSense loaders — active on the website and the Android app,
+         but SKIPPED inside the native iOS app: AdSense isn't permitted in app webviews,
+         and we avoid GA tracking under Apple's ATT. window.Capacitor is injected by the
+         native runtime before page scripts run, so on the public website (where it's
+         undefined) both still load. To also exclude Android, use isNativePlatform(). -->
     <script is:inline>
-      gtag('js', new Date());
-      gtag('config', 'G-BVPMVV27NH');
+      (function () {
+        var isIOSApp = !!(window.Capacitor &&
+          typeof window.Capacitor.getPlatform === 'function' &&
+          window.Capacitor.getPlatform() === 'ios');
+        if (isIOSApp) return; // native iOS app: no GA, no AdSense
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-BVPMVV27NH';
+        document.head.appendChild(ga);
+        gtag('js', new Date());
+        gtag('config', 'G-BVPMVV27NH');
+        var ad = document.createElement('script');
+        ad.async = true;
+        ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4859241862365215';
+        ad.crossOrigin = 'anonymous';
+        document.head.appendChild(ad);
+      })();
     </script>
-
-    <!-- Google AdSense — verification + ads loader -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4859241862365215"
-      crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-4859241862365215" />
 
     <!-- SEO -->
