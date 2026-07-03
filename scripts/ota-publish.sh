@@ -39,8 +39,9 @@ load_ftp() {
 if [ "${1:-}" = "--deploy-backend" ]; then
   load_ftp
   echo "==> Uploading OTA backend to ${OTA_FTP_DIR} on ${FTP_host}…"
-  lftp -u "${FTP_user},${FTP_pass}" "${FTP_host}" <<EOF
+  lftp <<EOF
 ${LFTP_TLS}
+open -u "${FTP_user},${FTP_pass}" "${FTP_host}"
 mkdir -p ${OTA_FTP_DIR}
 mkdir -p ${OTA_FTP_DIR}/manifest
 mkdir -p ${OTA_FTP_DIR}/bundles/${APP_KEY}
@@ -77,8 +78,9 @@ else
   load_ftp
   echo "==> [3/4] Uploading bundle over FTP to ${OTA_FTP_DIR}…"
   # zip first, manifest LAST — so the manifest never points at a not-yet-uploaded zip.
-  lftp -u "${FTP_user},${FTP_pass}" "${FTP_host}" <<EOF
+  lftp <<EOF
 ${LFTP_TLS}
+open -u "${FTP_user},${FTP_pass}" "${FTP_host}"
 set net:timeout 30
 set net:max-retries 3
 mkdir -p ${OTA_FTP_DIR}/bundles/${APP_KEY}

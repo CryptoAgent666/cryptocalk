@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>CryptoCalk feature graphic</title>
+<style>
+  :root{--indigo:#6366f1;--indigo-d:#4f46e5;--violet:#8b5cf6;--deep:#1e1b4b;--ink:#0F172A;--gold:#FBBF24;--mute:#64748B;--line:#E2E8F0;}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+  html,body{width:1024px;height:500px;}
+  body{font-family:-apple-system,"SF Pro Display","Roboto","Helvetica Neue",Arial,sans-serif;color:#fff;overflow:hidden;}
+  .wrap{position:relative;width:1024px;height:500px;overflow:hidden;
+    background:radial-gradient(120% 140% at 12% -20%,#818cf8 0%,var(--indigo) 36%,var(--indigo-d) 66%,var(--deep) 100%);}
+  .grain{position:absolute;inset:0;opacity:.06;background-image:radial-gradient(#fff 1.3px,transparent 1.4px);background-size:26px 26px;}
+  .glow{position:absolute;border-radius:50%;filter:blur(80px);}
+  .glow.g1{width:420px;height:420px;left:-120px;top:-140px;background:#a78bfa;opacity:.5;}
+  .glow.g2{width:360px;height:360px;right:-80px;bottom:-150px;background:var(--gold);opacity:.18;}
+
+  .left{position:absolute;z-index:3;left:64px;top:0;height:100%;width:600px;display:flex;flex-direction:column;justify-content:center;}
+  .brand{display:flex;align-items:center;gap:16px;margin-bottom:26px;}
+  .brand img{width:64px;height:64px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.3);}
+  .brand b{font-size:40px;font-weight:800;letter-spacing:-.01em;}
+  .head{font-size:76px;font-weight:800;letter-spacing:-.03em;line-height:1.0;}
+  .head .hl{color:var(--gold);}
+  .sub{font-size:27px;font-weight:500;color:#e0e7ff;margin-top:22px;line-height:1.3;}
+  .tagrow{display:flex;gap:12px;margin-top:26px;}
+  .tag{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:999px;
+    padding:11px 20px;font-size:21px;font-weight:700;color:#eef2ff;}
+
+  .cards{position:absolute;z-index:3;right:56px;top:50%;transform:translateY(-50%);
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;width:320px;}
+  .card{background:#fff;border-radius:24px;padding:24px 20px;box-shadow:0 18px 40px rgba(15,23,42,.28);color:var(--ink);}
+  .card .e{font-size:44px;line-height:1;}
+  .card .n{font-size:24px;font-weight:800;margin-top:12px;}
+  .card .c{font-size:18px;color:var(--mute);margin-top:2px;}
+</style></head>
+<body>
+<div class="wrap">
+  <div class="grain"></div><div class="glow g1"></div><div class="glow g2"></div>
+  <div class="left">
+    <div class="brand"><img src="logo.png"><b>CryptoCalk</b></div>
+    <div class="head"><span class="hl">128</span> free crypto<br>calculators</div>
+    <div class="sub">Trading, DeFi, mining, tax &amp; more. Works offline.</div>
+    <div class="tagrow"><span class="tag">&#128200; Profit / Loss</span><span class="tag">&#9935; Mining</span><span class="tag">&#127806; Staking</span></div>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="e">&#128200;</div><div class="n">Profit</div><div class="c">ROI &amp; P/L</div></div>
+    <div class="card"><div class="e">&#9889;</div><div class="n">Futures</div><div class="c">Liquidation</div></div>
+    <div class="card"><div class="e">&#9935;</div><div class="n">Mining</div><div class="c">Profit/day</div></div>
+    <div class="card"><div class="e">&#129534;</div><div class="n">Tax</div><div class="c">Estimates</div></div>
+  </div>
+</div>
+</body></html>

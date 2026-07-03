@@ -1,0 +1,62 @@
+---
+// Google AdMob — NATIVE ANDROID ONLY.
+// On the public website and on iOS this is a no-op and the @capacitor-community/admob chunk is
+// never fetched. iOS stays gated off until a real iOS AdMob app ID + ad units exist (Info.plist
+// currently has a placeholder app ID purely so the Google Mobile Ads SDK won't crash on launch).
+---
+<script>
+  (async () => {
+    const cap = (window as any).Capacitor;
+    if (cap?.getPlatform?.() !== 'android') return; // web + iOS: no ads
+
+    const BANNER_ID = 'ca-app-pub-4859241862365215/5286587474';
+    const INTERSTITIAL_ID = 'ca-app-pub-4859241862365215/3290979529';
+
+    // Re-apply the banner's reserved space on each page load so content isn't covered by it.
+    const savedH = sessionStorage.getItem('cc_banner_h');
+    if (savedH) document.body.style.paddingBottom = savedH + 'px';
+
+    try {
+      const { AdMob, BannerAdSize, BannerAdPosition, BannerAdPluginEvents } =
+        await import('@capacitor-community/admob');
+      await AdMob.initialize();
+
+      // Reserve space equal to the banner height (fires once the banner lays out).
+      AdMob.addListener(BannerAdPluginEvents.SizeChanged, (info: any) => {
+        const h = info && info.height ? info.height : 0;
+        sessionStorage.setItem('cc_banner_h', String(h));
+        document.body.style.paddingBottom = h + 'px';
+      });
+
+      // Bottom banner — shown once per app session; the native banner persists across in-app
+      // page navigations, so we don't re-request it on every page load.
+      if (!sessionStorage.getItem('cc_banner')) {
+        sessionStorage.setItem('cc_banner', '1');
+        await AdMob.showBanner({
+          adId: BANNER_ID,
+          adSize: BannerAdSize.ADAPTIVE_BANNER,
+          position: BannerAdPosition.BOTTOM_CENTER,
+          margin: 0,
+        });
+      }
+
+      // Interstitial — conservative cadence: every 6th navigation, never in the first 2 of a
+      // session, and min 120s apart. Keeps within AdMob's interstitial frequency policy.
+      const nav = parseInt(localStorage.getItem('cc_nav') || '0', 10) + 1;
+      localStorage.setItem('cc_nav', String(nav));
+      const sNav = parseInt(sessionStorage.getItem('cc_snav') || '0', 10) + 1;
+      sessionStorage.setItem('cc_snav', String(sNav));
+      const last = parseInt(localStorage.getItem('cc_int_ts') || '0', 10);
+      const now = Date.now();
+      if (sNav > 2 && nav % 6 === 0 && now - last > 120000) {
+        try {
+          await AdMob.prepareInterstitial({ adId: INTERSTITIAL_ID });
+          await AdMob.showInterstitial();
+          localStorage.setItem('cc_int_ts', String(now));
+        } catch { /* not ready / no fill — skip this time */ }
+      }
+    } catch {
+      /* plugin unavailable on this build — ignore */
+    }
+  })();
+</script>

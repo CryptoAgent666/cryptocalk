@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CryptoCalk Google Play screenshots</title>
+<style>
+  :root{
+    --indigo:#6366f1; --indigo-d:#4f46e5; --violet:#8b5cf6; --deep:#1e1b4b; --ink:#0F172A;
+    --gold:#FBBF24; --gold-d:#F59E0B; --mute:#64748B; --line:#E2E8F0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+  /* Google Play phone screenshot: 1242×2208 (9:16-ish, within Play's 2:1 max) */
+  html,body{width:1242px;height:2208px;}
+  body{font-family:-apple-system,"SF Pro Display","Roboto","Helvetica Neue",Arial,sans-serif;overflow:hidden;color:#fff;}
+  .slide{position:relative;width:1242px;height:2208px;overflow:hidden;display:block;}
+
+  .bg{position:absolute;inset:0;z-index:0;}
+  .bg-a{background:radial-gradient(120% 80% at 50% -8%,#818cf8 0%,var(--indigo) 40%,var(--indigo-d) 74%,var(--deep) 100%);}
+  .bg-b{background:radial-gradient(110% 75% at 80% 0%,#a78bfa 0%,var(--violet) 46%,#6d28d9 82%,var(--deep) 100%);}
+  .bg-c{background:radial-gradient(120% 85% at 20% 0%,var(--indigo) 0%,#7c3aed 52%,#4c1d95 100%);}
+  .grain{position:absolute;inset:0;z-index:1;opacity:.06;background-image:radial-gradient(#fff 1.5px,transparent 1.6px);background-size:34px 34px;}
+  .glow{position:absolute;z-index:1;border-radius:50%;filter:blur(95px);opacity:.42;}
+  .glow.g1{width:640px;height:640px;left:-180px;top:-150px;background:#818cf8;}
+  .glow.g2{width:500px;height:500px;right:-150px;top:500px;background:var(--gold);opacity:.2;}
+
+  .cap{position:relative;z-index:3;padding:96px 96px 0;}
+  .eyebrow{display:inline-block;font-size:28px;font-weight:700;letter-spacing:.16em;color:#e0e7ff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:13px 26px;border-radius:999px;text-transform:uppercase;}
+  .headline{font-size:90px;line-height:1.04;font-weight:800;letter-spacing:-.03em;margin-top:30px;}
+  .headline .hl{color:var(--gold);}
+  .sub{font-size:36px;line-height:1.3;font-weight:500;color:#e0e7ff;margin-top:26px;max-width:980px;}
+
+  .brandmark{position:absolute;z-index:4;top:54px;right:80px;display:flex;align-items:center;gap:16px;}
+  .brandmark img{width:64px;height:64px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.3);}
+  .brandmark b{font-size:34px;font-weight:800;letter-spacing:-.01em;}
+
+  .stage{position:absolute;z-index:3;left:50%;top:506px;transform:translateX(-50%);}
+  .phone{position:relative;width:760px;height:1580px;border-radius:108px;background:#0b0b0d;padding:22px;box-shadow:0 60px 120px rgba(0,0,0,.45),0 0 0 3px rgba(255,255,255,.06) inset;}
+  .island{position:absolute;top:50px;left:50%;transform:translateX(-50%);width:230px;height:62px;background:#000;border-radius:34px;z-index:10;}
+  .screen{position:relative;width:100%;height:100%;border-radius:88px;overflow:hidden;background:#F4F7FA;}
+
+  .scr{height:100%;display:flex;flex-direction:column;color:var(--ink);text-align:left;}
+  .statusbar{height:96px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 56px 16px;font-size:30px;font-weight:600;color:#fff;}
+  .ahead{background:linear-gradient(180deg,var(--indigo),var(--indigo-d));padding:18px 44px 30px;color:#fff;display:flex;align-items:center;gap:22px;}
+  .ahead img{width:64px;height:64px;border-radius:15px;}
+  .ahead .t{font-size:40px;font-weight:800;}
+  .ahead .s{font-size:26px;opacity:.85;font-weight:500;}
+  .abody{flex:1;padding:40px 44px;overflow:hidden;}
+  .pill{display:inline-flex;align-items:center;gap:14px;background:#EEF2FF;color:#4338ca;font-weight:700;font-size:28px;padding:16px 30px;border-radius:999px;}
+  .h1{font-size:62px;font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:30px 0 6px;}
+  .h1 .g{color:var(--indigo-d);}
+  .muted{color:var(--mute);font-size:30px;line-height:1.35;}
+  .search{margin-top:34px;background:#fff;border:2px solid var(--line);border-radius:28px;padding:30px 36px;color:#94A3B8;font-size:30px;display:flex;align-items:center;gap:20px;}
+  .sectlabel{font-size:30px;font-weight:800;margin:42px 0 22px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:30px;padding:34px;box-shadow:0 8px 24px rgba(15,23,42,.05);margin-bottom:24px;}
+  .row{display:flex;align-items:center;gap:26px;}
+  .ic{width:84px;height:84px;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:42px;flex:none;}
+  .ic.indigo{background:#E0E7FF;}.ic.gold{background:#FEF3C7;}.ic.green{background:#DCFCE7;}.ic.blue{background:#DBEAFE;}.ic.violet{background:#EDE9FE;}.ic.rose{background:#FFE4E6;}
+  .ttl{font-size:34px;font-weight:800;}
+  .desc{font-size:27px;color:var(--mute);margin-top:6px;}
+  .badge{margin-left:auto;background:var(--gold);color:#3a2a00;font-weight:800;font-size:24px;padding:12px 22px;border-radius:999px;flex:none;}
+  .field{display:flex;justify-content:space-between;align-items:center;background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px 34px;margin-bottom:22px;}
+  .field .l{font-size:30px;color:var(--mute);font-weight:600;}
+  .field .v{font-size:38px;font-weight:800;}
+  .btn{background:var(--indigo);color:#fff;font-size:34px;font-weight:800;text-align:center;padding:34px;border-radius:26px;box-shadow:0 14px 30px rgba(99,102,241,.35);}
+  .result{background:linear-gradient(180deg,#312e81,#4338ca);color:#fff;border-radius:34px;padding:46px;margin-top:10px;}
+  .result .k{font-size:30px;opacity:.85;font-weight:600;}
+  .result .big{font-size:96px;font-weight:800;letter-spacing:-.02em;line-height:1;margin-top:10px;}
+  .result .big small{font-size:40px;opacity:.8;font-weight:700;}
+  .brk{display:flex;justify-content:space-between;font-size:30px;padding:22px 4px;border-top:1px solid #EEF2F6;}
+  .brk:first-child{border-top:0;}
+  .brk b{font-weight:800;}
+  .neg{color:#dc2626;}.pos{color:#059669;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:10px;}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px 18px;text-align:center;box-shadow:0 8px 20px rgba(15,23,42,.05);}
+  .tile .e{font-size:62px;}
+  .tile .n{font-size:28px;font-weight:800;margin-top:14px;}
+  .tile .c{font-size:22px;color:var(--mute);}
+  .offbar{display:flex;align-items:center;gap:18px;background:#DCFCE7;color:#065F46;border-radius:22px;padding:26px 32px;font-size:30px;font-weight:700;margin-bottom:24px;}
+  .toast{display:flex;align-items:center;gap:18px;background:#EEF2FF;color:#4338ca;border-radius:22px;padding:26px 32px;font-size:28px;font-weight:700;}
+
+  .store{position:absolute;z-index:5;left:50%;bottom:48px;transform:translateX(-50%);display:flex;align-items:center;gap:20px;background:#000;border:1px solid rgba(255,255,255,.25);padding:22px 44px;border-radius:22px;}
+  .store .ai{font-size:56px;line-height:1;}
+  .store .tx small{font-size:22px;opacity:.85;}
+  .store .tx b{font-size:42px;font-weight:700;display:block;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const LOGO = "logo.png";
+const appHead = (title, sub) => `
+  <div class="ahead"><img src="${LOGO}"><div><div class="t">${title}</div>${sub?`<div class="s">${sub}</div>`:''}</div></div>`;
+
+const SLIDES = [
+  { bg:"bg-a", eyebrow:"128 calculators",
+    headline:`Every crypto<br>number, <span class="hl">sorted.</span>`,
+    sub:"Trading, DeFi, mining, tax &amp; more — every crypto calculator in one app.",
+    screen:`<div class="scr">
+      <div class="statusbar"><span>9:41</span><span>&#128246; &#128267;</span></div>
+      ${appHead("CryptoCalk","Crypto Calculators")}
+      <div class="abody">
+        <div class="pill">&#10024; 128 free crypto calculators</div>
+        <div class="h1">Free calculators<br>for <span class="g">crypto</span></div>
+        <div class="muted">Trading, DeFi, mining, tax and more.</div>
+        <div class="search">&#128269; Search calculators&#8230;</div>
+        <div class="sectlabel">Most popular</div>
+        <div class="card row"><div class="ic green">&#128200;</div><div><div class="ttl">Profit / Loss</div><div class="desc">ROI across any coin</div></div></div>
+        <div class="card row"><div class="ic indigo">&#128181;</div><div><div class="ttl">DCA Calculator</div><div class="desc">Average entry over time</div></div></div>
+        <div class="card row"><div class="ic gold">&#9935;</div><div><div class="ttl">Mining Profitability</div><div class="desc">Rewards minus power cost</div></div></div>
+      </div></div>`},
+
+  { bg:"bg-c", eyebrow:"Profit & loss",
+    headline:`Know your real<br><span class="hl">profit.</span>`,
+    sub:"Entry, exit, fees and ROI — across every coin and position.",
+    screen:`<div class="scr">
+      <div class="statusbar"><span>9:41</span><span>&#128246; &#128267;</span></div>
+      ${appHead("Profit / Loss","")}
+      <div class="abody">
+        <div class="field"><span class="l">Buy price</span><span class="v">$42,000</span></div>
+        <div class="field"><span class="l">Sell price &middot; Amount</span><span class="v">$61,500 &middot; 0.5 BTC</span></div>
+        <div class="result">
+          <div class="k">Total profit</div>
+          <div class="big">+$9,750<small> &#9650; 46.4%</small></div>
+        </div>
+        <div class="card" style="margin-top:24px">
+          <div class="brk"><span>Cost basis</span><b>$21,000</b></div>
+          <div class="brk"><span>Exit value</span><b>$30,750</b></div>
+          <div class="brk"><span>Trading fees</span><b class="neg">&#8211; $52</b></div>
+          <div class="brk"><span>Net ROI</span><b class="pos">+46.4%</b></div>
+        </div>
+      </div></div>`},
+
+  { bg:"bg-b", eyebrow:"Always ready",
+    headline:`Works 100%<br><span class="hl">offline.</span>`,
+    sub:"Crunch numbers anywhere — formulas update automatically over the air.",
+    screen:`<div class="scr">
+      <div class="statusbar"><span>9:41</span><span>&#9992;&#65039; &#128267;</span></div>
+      ${appHead("Liquidation Price","")}
+      <div class="abody">
+        <div class="offbar">&#10003; Works offline &#8212; no connection needed</div>
+        <div class="field"><span class="l">Entry price</span><span class="v">$61,500</span></div>
+        <div class="field"><span class="l">Leverage &middot; Side</span><span class="v">10&times; &middot; Long</span></div>
+        <div class="result">
+          <div class="k">Liquidation price</div>
+          <div class="big">$55,650<small> &#8211;9.5%</small></div>
+        </div>
+        <div class="toast" style="margin-top:24px">&#128260; Formulas update automatically</div>
+      </div></div>`},
+
+  { bg:"bg-a", eyebrow:"App-only",
+    headline:`Save, star<br>&amp; <span class="hl">share.</span>`,
+    sub:"Keep a history, star your go-to tools and share results in a single tap.",
+    screen:`<div class="scr">
+      <div class="statusbar"><span>9:41</span><span>&#128246; &#128267;</span></div>
+      ${appHead("Your calculations","")}
+      <div class="abody">
+        <div class="card row"><div class="ic indigo">&#128336;</div><div><div class="ttl">Save to history</div><div class="desc">Every calculation, one tap</div></div><span class="badge">APP</span></div>
+        <div class="card row"><div class="ic gold">&#11088;</div><div><div class="ttl">Favorite calculators</div><div class="desc">Pin your most-used tools</div></div><span class="badge">APP</span></div>
+        <div class="card row"><div class="ic green">&#128228;</div><div><div class="ttl">Share results</div><div class="desc">Telegram, email or copy</div></div><span class="badge">APP</span></div>
+        <div class="card row"><div class="ic blue">&#128196;</div><div><div class="ttl">Copy &amp; export</div><div class="desc">Clean, ready-to-paste figures</div></div></div>
+        <div class="card row"><div class="ic violet">&#127769;</div><div><div class="ttl">Light &amp; dark</div><div class="desc">Easy on the eyes</div></div></div>
+      </div></div>`},
+
+  { bg:"bg-c", eyebrow:"DeFi & staking",
+    headline:`Grow your<br><span class="hl">yield.</span>`,
+    sub:"Staking, APY, yield farming and lending — see exactly what you&#8217;ll earn.",
+    screen:`<div class="scr">
+      <div class="statusbar"><span>9:41</span><span>&#128246; &#128267;</span></div>
+      ${appHead("Staking Rewards","")}
+      <div class="abody">
+        <div class="field"><span class="l">Staked</span><span class="v">10 ETH</span></div>
+        <div class="field"><span class="l">APR</span><span class="v">4.2%</span></div>
+        <div class="result">
+          <div class="k">Yearly rewards</div>
+          <div class="big">+0.42 ETH<small> &#8776; $1,430</small></div>
+        </div>
+        <div class="card" style="margin-top:24px">
+          <div class="brk"><span>Monthly</span><b>+0.035 ETH</b></div>
+          <div class="brk"><span>Compounded APY</span><b class="pos">4.28%</b></div>
+          <div class="brk"><span>After 5 years</span><b>+2.28 ETH</b></div>
+        </div>
+      </div></div>`},
+
+  { bg:"bg-b", eyebrow:"All in one",
+    headline:`9 categories.<br><span class="hl">128</span> calculators.`,
+    sub:"Trading &middot; Futures &middot; DeFi &middot; Mining &middot; Tax &middot; Portfolio &middot; Gas &amp; more.",
+    screen:`<div class="scr">
+      <div class="statusbar"><span>9:41</span><span>&#128246; &#128267;</span></div>
+      ${appHead("Browse categories","")}
+      <div class="abody">
+        <div class="grid">
+          <div class="tile"><div class="e">&#128200;</div><div class="n">Trading</div><div class="c">Profit / Loss</div></div>
+          <div class="tile"><div class="e">&#9889;</div><div class="n">Futures</div><div class="c">Liquidation</div></div>
+          <div class="tile"><div class="e">&#127806;</div><div class="n">DeFi</div><div class="c">Staking &middot; APY</div></div>
+          <div class="tile"><div class="e">&#9935;</div><div class="n">Mining</div><div class="c">Profitability</div></div>
+          <div class="tile"><div class="e">&#129534;</div><div class="n">Tax</div><div class="c">Crypto tax</div></div>
+          <div class="tile"><div class="e">&#128202;</div><div class="n">Portfolio</div><div class="c">Rebalancing</div></div>
+          <div class="tile"><div class="e">&#128259;</div><div class="n">Convert</div><div class="c">Coin &#8596; fiat</div></div>
+          <div class="tile"><div class="e">&#9981;</div><div class="n">Gas</div><div class="c">Network fees</div></div>
+          <div class="tile"><div class="e">&#129689;</div><div class="n">Airdrops</div><div class="c">Airdrop value</div></div>
+        </div>
+      </div></div>`},
+];
+
+const n = Math.max(1, Math.min(SLIDES.length, parseInt(new URLSearchParams(location.search).get('n')||'1',10)));
+const s = SLIDES[n-1];
+document.getElementById('root').innerHTML = `
+  <div class="slide on">
+    <div class="bg ${s.bg}"></div><div class="grain"></div>
+    <div class="glow g1"></div><div class="glow g2"></div>
+    <div class="brandmark"><img src="${LOGO}"><b>CryptoCalk</b></div>
+    <div class="cap">
+      <span class="eyebrow">${s.eyebrow}</span>
+      <div class="headline">${s.headline}</div>
+      <div class="sub">${s.sub}</div>
+    </div>
+    <div class="stage"><div class="phone"><div class="island"></div><div class="screen">${s.screen}</div></div></div>
+    <div class="store"><span class="ai">&#9654;</span><div class="tx"><small>GET IT ON</small><b>Google Play</b></div></div>
+  </div>`;
+</script>
+</body>
+</html>

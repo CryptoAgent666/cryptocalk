@@ -2,6 +2,7 @@
 import { SUPPORTED_LANGS, DEFAULT_LANG, getLocalizedPath, getPathWithoutLang, type Lang } from '../i18n/utils';
 import CookieBanner from '../components/CookieBanner.astro';
 import CapgoUpdater from '../components/CapgoUpdater.astro';
+import AdMobAds from '../components/AdMobAds.astro';
 import prunePaths from '../data/prune-noindex.json';
 const PRUNE_NOINDEX = new Set((prunePaths.paths as string[]));
 
@@ -239,17 +240,17 @@ const hreflangBasePath = normalizeBasePathForHreflang(basePath);
         }
       } catch(e) {}
     </script>
-    <!-- GA (gtag.js) + AdSense loaders — active on the website and the Android app,
-         but SKIPPED inside the native iOS app: AdSense isn't permitted in app webviews,
-         and we avoid GA tracking under Apple's ATT. window.Capacitor is injected by the
-         native runtime before page scripts run, so on the public website (where it's
-         undefined) both still load. To also exclude Android, use isNativePlatform(). -->
+    <!-- GA (gtag.js) + AdSense loaders — active on the public website ONLY, and SKIPPED
+         inside the native app (iOS AND Android): AdSense isn't permitted in app webviews
+         (apps must use AdMob), and we avoid analytics tracking under app-store privacy rules.
+         window.Capacitor is injected by the native runtime before page scripts run, so on
+         the public website (where it's undefined) both still load. -->
     <script is:inline>
       (function () {
-        var isIOSApp = !!(window.Capacitor &&
-          typeof window.Capacitor.getPlatform === 'function' &&
-          window.Capacitor.getPlatform() === 'ios');
-        if (isIOSApp) return; // native iOS app: no GA, no AdSense
+        var isNativeApp = !!(window.Capacitor &&
+          typeof window.Capacitor.isNativePlatform === 'function' &&
+          window.Capacitor.isNativePlatform());
+        if (isNativeApp) return; // native app (iOS + Android): no GA, no AdSense
         var ga = document.createElement('script');
         ga.async = true;
         ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-BVPMVV27NH';
@@ -314,12 +315,21 @@ const hreflangBasePath = normalizeBasePathForHreflang(basePath);
       installCoinGeckoFetchInterceptor();
     </script>
 
-    <!-- Service Worker: offline caching -->
+    <!-- Service Worker: offline caching on the public website only.
+         In the native app (Capacitor) a web SW would shadow Capgo OTA updates, so we
+         unregister any SW a previous build may have installed and never register one. -->
     <script is:inline>
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js').catch(function() {});
-        });
+        var isNativeApp = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+        if (isNativeApp) {
+          navigator.serviceWorker.getRegistrations().then(function (rs) {
+            rs.forEach(function (r) { r.unregister(); });
+          }).catch(function () {});
+        } else {
+          window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js').catch(function () {});
+          });
+        }
       }
     </script>
   </head>
@@ -328,6 +338,7 @@ const hreflangBasePath = normalizeBasePathForHreflang(basePath);
     <slot />
     <CookieBanner lang={lang} />
     <CapgoUpdater />
+    <AdMobAds />
     <script is:inline>
       (() => {
         const MOBILE_QUERY = '(max-width: 768px)';

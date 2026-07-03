@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cryptocalk-v3';
+const CACHE_NAME = 'cryptocalk-v4';
 
 // Critical pages to pre-cache on install (local assets)
 const PRECACHE_URLS = [
@@ -30,7 +30,7 @@ self.addEventListener('activate', (event) => {
 // Fetch strategy:
 // - External requests (API, fonts, etc.): pass through, no caching in SW
 // - _astro/* (hashed assets): Cache-first (immutable, content hashes in filenames)
-// - HTML pages: Cache-first for instant load, no network fallback needed (local files)
+// - HTML pages: Network-first (always fetch fresh; fall back to cache only when offline)
 // - Other same-origin assets: Cache-first
 self.addEventListener('fetch', (event) => {
   const { request } = event;
@@ -56,18 +56,17 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // HTML pages — cache-first (local bundle is always available)
+  // HTML pages — NETWORK-FIRST so deploys/OTA appear immediately; cache is offline fallback
+  // only. (Cache-first here served stale pages forever after a deploy — the v3 bug.)
   if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
-      caches.match(request).then((cached) => {
-        return cached || fetch(request).then((response) => {
-          if (response.ok) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          }
-          return response;
-        }).catch(() => caches.match('/'));
-      })
+      fetch(request).then((response) => {
+        if (response.ok) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+        }
+        return response;
+      }).catch(() => caches.match(request).then((cached) => cached || caches.match('/')))
     );
     return;
   }
