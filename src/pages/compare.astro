@@ -29,7 +29,7 @@ const allCalcs = SPEC_CALCULATOR_SLUGS.map((s) => ({
 })).sort((a, b) => a.title.localeCompare(b.title));
 
 const title = 'Compare Crypto Calculators — Side-by-Side Tools — CryptoCalk';
-const description = 'Compare 117 free crypto calculators side-by-side: DCA vs Lump Sum, HODL vs Trading, ASIC vs GPU Mining, Sharpe vs Sortino, and more. Pick the right tool for any crypto decision.';
+const description = 'Compare 128 free crypto calculators side-by-side: DCA vs Lump Sum, HODL vs Trading, ASIC vs GPU Mining, Sharpe vs Sortino, and more. Pick the right tool for any crypto decision.';
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -76,7 +76,7 @@ const collectionSchema = {
         <span>Compare Calculators</span>
       </nav>
       <h1>Compare Crypto Calculators</h1>
-      <p class="hero-intro">Pick the right tool for any crypto decision. Browse popular calculator comparisons below or build your own pairing from all 108 calculators.</p>
+      <p class="hero-intro">Pick the right tool for any crypto decision. Browse popular calculator comparisons below or build your own pairing from all 128 calculators.</p>
     </section>
 
     <section class="compare-popular">
@@ -104,7 +104,7 @@ const collectionSchema = {
 
     <section class="compare-all">
       <h2>All Calculators (A–Z)</h2>
-      <p class="section-sub">Open any two in separate tabs to compare side-by-side. 108 free tools across 6 languages.</p>
+      <p class="section-sub">Open any two in separate tabs to compare side-by-side. 128 free tools across 6 languages.</p>
       <ul class="all-calcs-list">
         {allCalcs.map((c) => (
           <li><a href={`/${c.slug}/`}>{c.title}</a></li>

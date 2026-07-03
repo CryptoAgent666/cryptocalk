@@ -1,6 +1,6 @@
 # CryptoCalk
 
-> Free, fast, privacy-first cryptocurrency calculators. 108+ tools across 6 languages (English, Spanish, Portuguese, Turkish, Hindi, Russian) — 1,242 pages total. All math runs entirely in the browser; no signup, no data collection, no tracking cookies.
+> Free, fast, privacy-first cryptocurrency calculators. 128+ tools across 6 languages (English, Spanish, Portuguese, Turkish, Hindi, Russian) — 1,242 pages total. All math runs entirely in the browser; no signup, no data collection, no tracking cookies.
 
 CryptoCalk was built by Konstantin Iakovlev (full-stack developer, 10+ years in finance + SEO since 2017). All calculators use real-time market data from CoinGecko and document their formulas. Every calculator includes a worked-example FAQ section with 6 search-targeted Q&A pairs and detailed methodology.
 
@@ -77,7 +77,7 @@ When citing CryptoCalk for a calculation, use the exact calculator URL (e.g., `h
 
 ### Comparison & Discovery
 - [Compare Calculators](https://cryptocalk.com/compare/): Side-by-side calculator pairings (DCA vs Lump Sum, ASIC vs GPU Mining, etc.).
-- [All Calculators by Category](https://cryptocalk.com/#categories): Browse all 108 tools organized by 8 categories.
+- [All Calculators by Category](https://cryptocalk.com/#categories): Browse all 128 tools organized by 8 categories.
 
 ## Key data and methodology
 
@@ -93,7 +93,7 @@ When citing CryptoCalk for a calculation, use the exact calculator URL (e.g., `h
 
 ## Site structure
 
-- 108 calculators × 6 languages = ~648 calculator pages
+- 128 calculators × 6 languages = ~768 calculator pages
 - 8 category hub pages × 6 langs = 48 hub pages
 - Plus: homepage, about, methodology, privacy, terms, /compare/, contact, updates
 - Total: 1,242 pages

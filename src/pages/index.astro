@@ -99,7 +99,7 @@ const websiteSchema = {
   name: 'CryptoCalk',
   url: homepageUrl,
   description:
-    'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 108 more tools.',
+    'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 128 more tools.',
   inLanguage: 'en',
   publisher: { '@type': 'Organization', '@id': `${siteUrl}/#organization` },
   potentialAction: {
@@ -182,7 +182,7 @@ const softwareAppSchema = {
   url: homepageUrl,
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'All',
-  description: 'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 108 more tools.',
+  description: 'Free online cryptocurrency calculators: profit & loss, mining profitability, DCA simulator, tax estimator, staking rewards, and 128 more tools.',
   inLanguage: 'en',
   datePublished: '2025-11-01T00:00:00+00:00',
   dateModified: buildDateTime,
@@ -204,7 +204,7 @@ const homepageFaqSchema = {
       name: 'Is CryptoCalk free to use?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, completely free. All 108 calculators work without signup, payment, or ads. The site is open-source and the codebase is publicly available on GitHub.',
+        text: 'Yes, completely free. All 128 calculators work without signup, payment, or ads. The site is open-source and the codebase is publicly available on GitHub.',
       },
     },
     {
@@ -246,8 +246,8 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
 ---
 
 <Layout
-  title="CryptoCalk — 108 Free Crypto Calculators"
-  description="Free crypto calculators: profit & loss, mining, DCA, tax, staking, and 108 more tools. Fast, accurate, no signup required."
+  title="CryptoCalk — 128 Free Crypto Calculators"
+  description="Free crypto calculators: profit & loss, mining, DCA, tax, staking, and 128 more tools. Fast, accurate, no signup required."
   lang="en"
 >
   <!-- Header -->
@@ -281,10 +281,10 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
       <div class="hero-inner">
         <div class="hero-badge">
           <Globe size={14} />
-          <span>108 Free Calculators • No Signup Required</span>
+          <span>128 Free Calculators • No Signup Required</span>
         </div>
         <h1>
-          108 Free <span class="hero-accent">Crypto</span><br />
+          128 Free <span class="hero-accent">Crypto</span><br />
           Calculators
         </h1>
         <p class="hero-subtitle">
@@ -422,7 +422,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
       <div class="section-container">
         <h2 class="section-title">What Is CryptoCalk?</h2>
         <div class="about-prose">
-          <p>CryptoCalk is a free, open-source suite of <strong>108 cryptocurrency calculators</strong> available in <strong>6 languages</strong> (English, Spanish, Portuguese, Turkish, Hindi, and Russian), totaling over 1,100 pages of tools and educational content. Every calculation runs entirely in your browser: no data is sent to our servers and no account is required.</p>
+          <p>CryptoCalk is a free, open-source suite of <strong>128 cryptocurrency calculators</strong> available in <strong>6 languages</strong> (English, Spanish, Portuguese, Turkish, Hindi, and Russian), totaling over 1,100 pages of tools and educational content. Every calculation runs entirely in your browser: no data is sent to our servers and no account is required.</p>
           <p>Our tools cover the full spectrum of crypto decision-making: <a href="/profit-calculator/">profit and loss analysis</a>, <a href="/mining-calculator/">mining profitability</a>, <a href="/asic-mining-calculator/">ASIC miner profitability</a>, <a href="/dca-calculator/">dollar-cost averaging simulation</a>, <a href="/tax-calculator/">tax estimation for 17 countries</a>, <a href="/staking-calculator/">staking rewards projection</a>, <a href="/rebalancing-calculator/">portfolio rebalancing</a>, <a href="/leverage-calculator/">leverage and liquidation</a>, risk-adjusted performance metrics (Sharpe, Sortino, VaR), and DeFi yield comparison. Each calculator includes detailed methodology, worked examples, and search-targeted FAQ.</p>
           <p>Useful conversion tools include the <a href="/satoshi-converter/">Satoshi-to-USD converter</a>, <a href="/apy-apr-calculator/">APR to APY converter</a>, and <a href="/converter/">live crypto-to-fiat converter</a> for quick lookups during research.</p>
           <p>Built with <a href="/methodology/">documented formulas</a> and real-time market data from CoinGecko, CryptoCalk is designed for traders, investors, and researchers who want reliable numbers without signup walls, premium tiers, or tracking cookies.</p>
@@ -432,7 +432,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
         <div class="home-faq">
           <details class="faq-item">
             <summary>Is CryptoCalk free to use?</summary>
-            <p>Yes, completely free. All 108 calculators work without signup, payment, or ads. The site is open-source and the codebase is publicly available on GitHub.</p>
+            <p>Yes, completely free. All 128 calculators work without signup, payment, or ads. The site is open-source and the codebase is publicly available on GitHub.</p>
           </details>
           <details class="faq-item">
             <summary>Are my calculations private?</summary>
@@ -534,6 +534,8 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
       if (!input) return;
 
       const items = Array.from(document.querySelectorAll('[data-search-item]'));
+      const resultSections = Array.from(document.querySelectorAll('.popular-section, .categories-section'));
+      const header = document.querySelector('.site-header');
       const normalize = (value) => String(value || '').toLowerCase().trim();
       const applyFilter = (query) => {
         let visibleCount = 0;
@@ -551,6 +553,12 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
               toolCount += 1;
             }
           }
+        });
+        // Collapse a whole section (heading included) when the search hides all
+        // its items, so the user never lands on an empty "Popular"/"Categories" heading.
+        resultSections.forEach((section) => {
+          const hasMatch = section.querySelector('[data-search-item]:not([hidden])');
+          section.hidden = Boolean(query) && !hasMatch;
         });
         if (clearButton) clearButton.hidden = !query;
         if (status) {
@@ -575,16 +583,32 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
         window.history.replaceState({}, '', `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
       };
 
+      // Results live far below the hero; when a search starts, bring the first
+      // matching section up to just under the sticky header so results are visible
+      // immediately instead of an unchanged hero.
+      const scrollToResults = () => {
+        const target = resultSections.find((section) => !section.hidden) || status;
+        if (!target) return;
+        // Offset for the sticky header (its height differs between desktop and a
+        // wrapped mobile header), then bring the section up to just below it.
+        const headerH = header ? header.getBoundingClientRect().height : 0;
+        target.style.scrollMarginTop = (headerH + 12) + 'px';
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+
+      let queryWasEmpty = true;
       const initialQuery = normalize(new URL(window.location.href).searchParams.get('q'));
       if (initialQuery) {
         input.value = initialQuery;
         applyFilter(initialQuery);
+        queryWasEmpty = false;
       }
 
       const clearSearch = () => {
         input.value = '';
         applyFilter('');
         syncQueryParam('');
+        queryWasEmpty = true;
         input.focus();
       };
 
@@ -592,6 +616,10 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
         const query = normalize(event.target.value);
         applyFilter(query);
         syncQueryParam(query);
+        // Scroll only on the empty->typing transition so refining a query doesn't
+        // yank the page on every keystroke.
+        if (query && queryWasEmpty) scrollToResults();
+        queryWasEmpty = !query;
       });
 
       input.addEventListener('keydown', (event) => {
