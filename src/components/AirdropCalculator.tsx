@@ -32,7 +32,7 @@ interface TaxCountry {
 
 const TAX_COUNTRIES: Record<string, TaxCountry> = {
     usa: { label: 'USA', incomeTaxRate: 37, capitalGainsRate: 20, note: 'Max federal bracket (37% income, 20% LTCG)' },
-    uk: { label: 'UK', incomeTaxRate: 20, capitalGainsRate: 20, note: '20% higher rate for income & CGT' },
+    uk: { label: 'UK', incomeTaxRate: 20, capitalGainsRate: 24, note: '20% income (basic rate), 24% CGT (higher rate)' },
     germany: { label: 'Germany', incomeTaxRate: 45, capitalGainsRate: 0, note: '0% capital gains if held >1yr, else income tax' },
     australia: { label: 'Australia', incomeTaxRate: 45, capitalGainsRate: 22.5, note: 'Max 45% income; 50% CGT discount if held >12mo' },
     canada: { label: 'Canada', incomeTaxRate: 33, capitalGainsRate: 16.5, note: '50% inclusion rate on capital gains' },

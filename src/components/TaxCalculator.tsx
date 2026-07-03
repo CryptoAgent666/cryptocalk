@@ -37,12 +37,12 @@ const COUNTRIES: Record<string, CountryConfig> = {
         longTermLabel: 'Long-term (≥ 1 year)',
         longTermThreshold: '1 year',
         brackets: [
-            { label: '$0 – $48,475', shortTermRate: 12, longTermRate: 0 },
-            { label: '$48,476 – $103,350', shortTermRate: 22, longTermRate: 15 },
-            { label: '$103,351 – $197,300', shortTermRate: 24, longTermRate: 15 },
-            { label: '$197,301 – $250,525', shortTermRate: 32, longTermRate: 15 },
-            { label: '$250,526 – $626,350', shortTermRate: 35, longTermRate: 20 },
-            { label: '$626,351+', shortTermRate: 37, longTermRate: 20 },
+            { label: '$0 – $50,400', shortTermRate: 12, longTermRate: 0 },
+            { label: '$50,401 – $105,700', shortTermRate: 22, longTermRate: 15 },
+            { label: '$105,701 – $201,775', shortTermRate: 24, longTermRate: 15 },
+            { label: '$201,776 – $256,225', shortTermRate: 32, longTermRate: 15 },
+            { label: '$256,226 – $640,600', shortTermRate: 35, longTermRate: 15 },
+            { label: '$640,601+', shortTermRate: 37, longTermRate: 20 },
         ],
         notes: 'US taxes crypto as property. Short-term gains taxed as ordinary income. NIIT (3.8%) may apply to high earners. Brackets updated for 2026 tax year (single filer).',
     },
@@ -57,7 +57,7 @@ const COUNTRIES: Record<string, CountryConfig> = {
             { label: '£37,701 – £125,140', shortTermRate: 24, longTermRate: 24 },
             { label: '£125,141+', shortTermRate: 24, longTermRate: 24 },
         ],
-        notes: 'UK has a £3,000 annual CGT exemption (2025/26). No distinction for holding period. 18% basic / 24% higher rate (updated Oct 2024 Budget).',
+        notes: 'UK has a £3,000 annual CGT exemption (2026/27). No distinction for holding period. 18% basic / 24% higher rate (updated Oct 2024 Budget).',
     },
     de: {
         name: 'Germany',
@@ -66,9 +66,9 @@ const COUNTRIES: Record<string, CountryConfig> = {
         longTermLabel: 'Held ≥ 1 year',
         longTermThreshold: '1 year',
         brackets: [
-            { label: '€0 – €12,084 (exempt)', shortTermRate: 0, longTermRate: 0 },
-            { label: '€12,085 – €68,430', shortTermRate: 25, longTermRate: 0 },
-            { label: '€68,431 – €277,825', shortTermRate: 42, longTermRate: 0 },
+            { label: '€0 – €12,348 (exempt)', shortTermRate: 0, longTermRate: 0 },
+            { label: '€12,349 – €69,878', shortTermRate: 25, longTermRate: 0 },
+            { label: '€69,879 – €277,825', shortTermRate: 42, longTermRate: 0 },
             { label: '€277,826+', shortTermRate: 45, longTermRate: 0 },
         ],
         notes: 'Germany: crypto held over 1 year is TAX FREE. Short-term gains under €1,000/year are exempt (raised from €600 in 2024). One of the most crypto-friendly tax regimes. Brackets updated for 2026.',
@@ -91,8 +91,8 @@ const COUNTRIES: Record<string, CountryConfig> = {
     ca: {
         name: 'Canada',
         currency: 'CAD',
-        shortTermLabel: 'Capital gains (50%/66.67% inclusion)',
-        longTermLabel: 'Capital gains (50%/66.67% inclusion)',
+        shortTermLabel: 'Capital gains (50% inclusion)',
+        longTermLabel: 'Capital gains (50% inclusion)',
         longTermThreshold: 'N/A (no holding period benefit)',
         brackets: [
             { label: 'C$0 – C$55,867', shortTermRate: 7.5, longTermRate: 7.5 },
@@ -101,7 +101,7 @@ const COUNTRIES: Record<string, CountryConfig> = {
             { label: 'C$154,907 – C$220,000', shortTermRate: 14.5, longTermRate: 14.5 },
             { label: 'C$220,001+', shortTermRate: 16.5, longTermRate: 16.5 },
         ],
-        notes: 'Canada: 50% of capital gains are taxable up to C$250K; gains above C$250K have a 66.67% inclusion rate (effective Jan 1, 2026). Rates shown use the 50% inclusion. No distinction by holding period.',
+        notes: 'Canada: 50% of all capital gains are taxable (the proposed 66.67% inclusion above C$250K was cancelled in 2025 and never enacted). No distinction by holding period.',
     },
     in: {
         name: 'India',
@@ -134,13 +134,16 @@ const COUNTRIES: Record<string, CountryConfig> = {
     br: {
         name: 'Brazil',
         currency: 'BRL',
-        shortTermLabel: 'Flat rate',
-        longTermLabel: 'Flat rate',
-        longTermThreshold: 'N/A (flat rate)',
+        shortTermLabel: 'Progressive rate',
+        longTermLabel: 'Progressive rate',
+        longTermThreshold: 'N/A (progressive)',
         brackets: [
-            { label: 'All gains', shortTermRate: 17.5, longTermRate: 17.5 },
+            { label: 'Up to R$5M (R$35k/mo exempt)', shortTermRate: 15, longTermRate: 15 },
+            { label: 'R$5M – R$10M', shortTermRate: 17.5, longTermRate: 17.5 },
+            { label: 'R$10M – R$30M', shortTermRate: 20, longTermRate: 20 },
+            { label: 'Above R$30M', shortTermRate: 22.5, longTermRate: 22.5 },
         ],
-        notes: 'Brazil: flat 17.5% on all crypto gains (2026 reform). No cross-asset loss offsetting. Losses carry forward 5 quarters.',
+        notes: 'Brazil: progressive 15%–22.5% on crypto gains (the 17.5% flat from MP 1303 was rejected by Congress in Oct 2025). R$35,000/month in disposals is exempt. Losses carry forward 5 quarters.',
     },
     fr: {
         name: 'France',
@@ -149,9 +152,9 @@ const COUNTRIES: Record<string, CountryConfig> = {
         longTermLabel: 'Flat tax (PFU)',
         longTermThreshold: 'N/A (flat rate)',
         brackets: [
-            { label: 'All gains', shortTermRate: 30, longTermRate: 30 },
+            { label: 'All gains', shortTermRate: 31.4, longTermRate: 31.4 },
         ],
-        notes: 'France: 30% flat tax (PFU). Crypto-to-crypto swaps are NOT taxable. Gains under €305/year exempt.',
+        notes: 'France: 31.4% flat tax (PFU, raised from 30% effective 2026). Crypto-to-crypto swaps are NOT taxable. Gains under €305/year exempt.',
     },
     es_country: {
         name: 'Spain',
@@ -175,9 +178,9 @@ const COUNTRIES: Record<string, CountryConfig> = {
         longTermLabel: 'Flat rate (delayed)',
         longTermThreshold: 'N/A (flat rate)',
         brackets: [
-            { label: 'All gains above ₩50M', shortTermRate: 22, longTermRate: 22 },
+            { label: 'All gains above ₩2.5M', shortTermRate: 22, longTermRate: 22 },
         ],
-        notes: 'South Korea: 22% (incl. local tax) on gains above ₩50M. Currently delayed to 2027. No crypto tax enforced yet.',
+        notes: 'South Korea: 22% (incl. local tax) on gains above ₩2.5M (the basic deduction; ₩50M is the listed-stocks figure). Currently delayed to 2027. No crypto tax enforced yet.',
     },
     pt_country: {
         name: 'Portugal',
@@ -197,9 +200,9 @@ const COUNTRIES: Record<string, CountryConfig> = {
         longTermLabel: 'Flat rate',
         longTermThreshold: 'N/A (flat rate)',
         brackets: [
-            { label: 'All gains', shortTermRate: 26, longTermRate: 26 },
+            { label: 'All gains', shortTermRate: 33, longTermRate: 33 },
         ],
-        notes: 'Italy: flat 26% on all crypto gains (rising to 33% in 2026). No annual exemption since 2025.',
+        notes: 'Italy: flat 33% on all crypto gains (raised from 26% effective 2026). No annual exemption since 2025.',
     },
     ch: {
         name: 'Switzerland',
@@ -241,9 +244,9 @@ const COUNTRIES: Record<string, CountryConfig> = {
         longTermLabel: 'Deemed return',
         longTermThreshold: 'N/A (wealth-based)',
         brackets: [
-            { label: 'Above €57,684 threshold', shortTermRate: 2.12, longTermRate: 2.12 },
+            { label: 'Above €59,357 threshold', shortTermRate: 2.16, longTermRate: 2.16 },
         ],
-        notes: 'Netherlands: taxed on deemed return (~5.88%), not actual gains. Effective rate ~2.12%. Tax-free threshold: €57,684 per person.',
+        notes: 'Netherlands: taxed on deemed return (6.00%), not actual gains. Effective rate ~2.16%. Tax-free threshold: €59,357 per person.',
     },
 };
 

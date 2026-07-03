@@ -59,11 +59,11 @@ const GPU_PRESETS: GpuPreset[] = [
 ];
 
 const COINS: Record<string, CoinData> = {
-    ETC: { symbol: 'ETC', name: 'Ethereum Classic', price: 8.75, blockReward: 2.56, networkHashrate: 200000, algo: 'Ethash', blockTime: 13 },
-    RVN: { symbol: 'RVN', name: 'Ravencoin', price: 0.006, blockReward: 2500, networkHashrate: 5000000, algo: 'KawPow', blockTime: 60 },
-    ERGO: { symbol: 'ERGO', name: 'Ergo', price: 0.33, blockReward: 27, networkHashrate: 15000, algo: 'Autolykos2', blockTime: 120 },
-    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.036, blockReward: 200, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 1 },
-    FLUX: { symbol: 'FLUX', name: 'Flux', price: 0.023, blockReward: 37.5, networkHashrate: 2500000, algo: 'ZelHash', blockTime: 120 },
+    ETC: { symbol: 'ETC', name: 'Ethereum Classic', price: 8.75, blockReward: 2.048, networkHashrate: 200000, algo: 'Ethash', blockTime: 13 },
+    RVN: { symbol: 'RVN', name: 'Ravencoin', price: 0.006, blockReward: 1250, networkHashrate: 5000000, algo: 'KawPow', blockTime: 60 },
+    ERGO: { symbol: 'ERGO', name: 'Ergo', price: 0.33, blockReward: 3, networkHashrate: 15000, algo: 'Autolykos2', blockTime: 120 },
+    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.036, blockReward: 2.49, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 0.1 }, // 10 BPS post-Crescendo (May 2025); per-block reward ~2.49 KAS (≈24.9 KAS/sec emission ÷ 10 BPS), drifts down monthly via chromatic halving — live value preferred
+    // FLUX removed 2026-06: Proof-of-Useful-Work v2 hard fork (block 2,020,000, ~Oct 2025) eliminated GPU mining entirely; Flux now produced by FluxNodes (Proof of Nodes), not GPUs.
 };
 
 // Map whattomine generic names to our symbols
@@ -71,8 +71,7 @@ const COIN_MAPPING: Record<string, string> = {
     EthereumClassic: 'ETC',
     Ravencoin: 'RVN',
     Ergo: 'ERGO',
-    Kaspa: 'KAS',
-    Flux: 'FLUX'
+    Kaspa: 'KAS'
 };
 
 const COIN_KEYS = Object.keys(COINS);

@@ -19,13 +19,13 @@ const webPageSchema = {
   description: 'See what\'s new on CryptoCalk, new calculators, features, and improvements to our free crypto calculator suite.',
   url: 'https://cryptocalk.com/updates/',
   inLanguage: 'en',
-  dateModified: '2026-04-19T00:00:00+00:00',
+  dateModified: '2026-07-02T00:00:00+00:00',
 };
 ---
 
 <Layout
   title="Updates — What's New on CryptoCalk"
-  description="See what's new on CryptoCalk, new calculators, features, and improvements to our free crypto calculator suite of 93 tools in 6 languages."
+  description="See what's new on CryptoCalk, new calculators, features, and improvements to our free crypto calculator suite of 128 tools in 6 languages."
   lang="en"
 >
   <SiteHeader lang="en" currentPath="/updates" />
@@ -39,9 +39,59 @@ const webPageSchema = {
 
       <article class="update-entry">
         <div class="update-date">
+          <time datetime="2026-07-02">July 2, 2026</time>
+        </div>
+        <h2>More Reliable Historical Prices</h2>
+        <p>Behind-the-scenes reliability fix for our backtesting tools:</p>
+        <ul>
+          <li>DCA Calculator and What If Calculator now pull deep historical prices from a more reliable free market-data source, so backtests for dates over a year old keep working.</li>
+          <li>Fixed a data-accuracy issue where a very old date (e.g. Bitcoin in 2013) could occasionally show a price from a later year instead of the actual historical price on that date.</li>
+        </ul>
+        <p>All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-06-30">June 30, 2026</time>
+        </div>
+        <h2>Smarter Search &amp; Mining Data Accuracy</h2>
+        <p>A few improvements to make CryptoCalk faster and more accurate:</p>
+        <ul>
+          <li><strong>Search now jumps straight to results</strong> — start typing a calculator name and matching tools scroll into view instantly, no more scrolling to find them.</li>
+          <li>Kaspa (KAS) mining reward corrected to its current per-block emission for accurate GPU mining estimates.</li>
+          <li>Flux (FLUX) removed from the GPU mining calculator — Flux moved to a node-based consensus in late 2025 and is no longer GPU-mineable.</li>
+          <li>UK capital gains note refreshed for the <strong>2026/27</strong> tax year.</li>
+        </ul>
+        <p>All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-06-23">June 23, 2026</time>
+        </div>
+        <h2>2026 Tax Rates &amp; Mining Rewards Refreshed</h2>
+        <p>We re-verified and updated the regulatory data behind the tax, inheritance, and mining calculators for 2026:</p>
+        <ul>
+          <li>France flat tax (PFU) <strong>30% → 31.4%</strong> and Italy crypto tax <strong>26% → 33%</strong> (2026 budget laws)</li>
+          <li>US 2026 federal brackets refreshed; federal estate exemption raised to <strong>$15M</strong> (One Big Beautiful Bill)</li>
+          <li>Germany &amp; Netherlands 2026 thresholds; Canada stays at <strong>50% inclusion</strong> (the proposed 66.67% increase was cancelled)</li>
+          <li>Brazil reverted to <strong>progressive 15–22.5%</strong> (the 17.5% flat rate was rejected); South Korea deduction corrected to ₩2.5M; UK higher-rate CGT 24%</li>
+          <li>Mining block rewards refreshed after recent halvings — Zcash, Ravencoin, Ergo, Ethereum Classic, Flux, Kaspa, Dash</li>
+        </ul>
+        <p>All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
           <time datetime="2026-04-19">April 19, 2026</time>
         </div>
-        <h2>6 More Calculators — Now 93 Tools Total</h2>
+        <h2>6 More Specialized Calculators</h2>
         <p>Six new specialized calculators have been added:</p>
         <ul>
           <li><a href="/retirement-calculator/">Crypto Retirement / FIRE Calculator</a> — plan your path to financial independence</li>
@@ -61,7 +111,7 @@ const webPageSchema = {
           <time datetime="2026-04-18">April 18, 2026</time>
         </div>
         <h2>18 New Calculators</h2>
-        <p>We've added 18 brand-new calculators, bringing the total to <strong>93 free tools</strong> across <strong>1,175+ pages</strong> in 6 languages. New additions include:</p>
+        <p>We've added 18 brand-new calculators, expanding our free suite across <strong>1,175+ pages</strong> in 6 languages. New additions include:</p>
         <ul>
           <li><a href="/arbitrage-calculator/">Crypto Arbitrage Calculator</a> — find price differences across exchanges</li>
           <li><a href="/stock-to-flow-calculator/">Stock-to-Flow Calculator</a> — model Bitcoin's scarcity valuation</li>
@@ -92,7 +142,7 @@ const webPageSchema = {
           <time datetime="2026-04-04">April 4, 2026</time>
         </div>
         <h2>Android App Available on Google Play</h2>
-        <p>CryptoCalk is now available as a free Android app. Get instant access to all 93 calculators with offline support, no internet required after the first load.</p>
+        <p>CryptoCalk is now available as a free Android app. Get instant access to all 128 calculators with offline support, no internet required after the first load.</p>
         <p><a href="https://play.google.com/store/apps/details?id=com.cryptocalk.calculator" target="_blank" rel="noopener noreferrer" class="cta-link">Download on Google Play →</a></p>
       </article>
 

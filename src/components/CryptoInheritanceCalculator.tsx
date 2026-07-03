@@ -259,7 +259,7 @@ function CryptoInheritanceCalculator({ lang = 'en' }: { lang?: string }) {
 
                             <p className="calc-disclaimer">
                                 <Info size={12} />
-                                {getUiString(lang, 'Estate tax rules vary by country and estate size. US estates under $12.92M are generally exempt. Consult an estate attorney for personalized advice.')}
+                                {getUiString(lang, 'Estate tax rules vary by country and estate size. US estates under $15M are generally exempt. Consult an estate attorney for personalized advice.')}
                             </p>
                         </>
                     ) : (

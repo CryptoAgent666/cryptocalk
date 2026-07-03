@@ -15,10 +15,10 @@ interface CountryRule {
 const COUNTRIES: Record<string, CountryRule> = {
   us: {
     name: 'United States',
-    exemption: () => 13990000,
+    exemption: () => 15000000,
     rate: (taxable) => taxable > 0 ? 40 : 0,
     stepUp: true,
-    notes: 'US estate tax applies above $13.99M exemption (2026 inflation-adjusted). Inherited assets receive a step-up in cost basis to FMV at death. Note: TCJA exemption sunsets after 2025 unless extended.',
+    notes: 'US estate tax applies above the $15M exemption (2026, made permanent by the One Big Beautiful Bill). Inherited assets receive a step-up in cost basis to FMV at death.',
   },
   uk: {
     name: 'United Kingdom',
@@ -60,6 +60,7 @@ const COUNTRIES: Record<string, CountryRule> = {
       if (taxable <= 100000000) return 30;
       if (taxable <= 200000000) return 40;
       if (taxable <= 300000000) return 45;
+      if (taxable <= 600000000) return 50;
       return 55;
     },
     stepUp: false,

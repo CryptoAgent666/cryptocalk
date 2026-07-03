@@ -1,0 +1,555 @@
+[
+ {
+  "id": "AirdropCalculator__TAX_COUNTRIES",
+  "verdict": "stale",
+  "official_value": "{usa:{income:37,cgt:20}, uk:{income:20,cgt:24}, germany:{income:45,cgt:0}, australia:{income:45,cgt:22.5}, canada:{income:33,cgt:16.5}}",
+  "source_url": "https://www.gov.uk/capital-gains-tax/rates",
+  "note": "UK CGT is STALE: higher/additional-rate CGT rose 20%->24% (announced 30 Oct 2024 Budget, in force; 24% for 2025/26 and 2026/27). Other cells verify as CURRENT: USA 37% top federal ordinary income + 20% top LTCG (correct); Germany income=top marginal 45% for <1yr private sale, CGT=0 if held >1yr tax-free per EStG s.23 (correct); Australia 45% top marginal + 50% CGT discount >12mo = 22.5% effective (correct; 50% discount still in force, indexation reform only proposed from Jul 2027); Canada 33% bracket x 50% inclusion = 16.5% (correct; 50% inclusion still law, the 66.67% hike was abandoned Mar 2025). UK income=20% is basic-rate (not top) but that is a modelling choice, not a stale rate."
+ },
+ {
+  "id": "AsicMiningCalculator__NETWORK_DATA.BTC.blockReward",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.blockchain.com/explorer/assets/btc",
+  "note": "3.125 BTC is correct for the post-4th-halving era (block 840,000, Apr 2024). Next halving ~2028 -> 1.5625. Current."
+ },
+ {
+  "id": "AsicMiningCalculator__NETWORK_DATA.BTC.blockTime",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.blockchain.com/explorer",
+  "note": "600s (10 min) is the Bitcoin protocol target block time. Unchanged consensus constant."
+ },
+ {
+  "id": "AsicMiningCalculator__NETWORK_DATA.DASH.blockReward",
+  "verdict": "stale",
+  "official_value": "~1.55",
+  "source_url": "https://bitinfocharts.com/dash/",
+  "note": "Dash total block reward is now ~1.553 DASH (as of ~May 2026), not 2.31. Dash reduces ~7.14% every 210,240 blocks (~383 days), so 2.31 is several reduction periods old. Total reward split 45% miner / 45% masternode / 10% treasury."
+ },
+ {
+  "id": "AsicMiningCalculator__NETWORK_DATA.DASH.blockTime",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://docs.dash.org/",
+  "note": "150s (2.5 min) is the Dash protocol target block time. Unchanged."
+ },
+ {
+  "id": "AsicMiningCalculator__NETWORK_DATA.LTC.blockReward",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.litecoinblockhalf.com/",
+  "note": "6.25 LTC is correct for the era after the Aug 2023 halving. Next halving ~Jul/Sep 2027 -> 3.125. Current."
+ },
+ {
+  "id": "AsicMiningCalculator__NETWORK_DATA.LTC.blockTime",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.litecoinblockhalf.com/",
+  "note": "150s (2.5 min) is the Litecoin protocol target block time. Unchanged."
+ },
+ {
+  "id": "AsicMiningCalculator__NETWORK_DATA.ZEC.blockReward",
+  "verdict": "stale",
+  "official_value": "1.5625",
+  "source_url": "https://bitinfocharts.com/zcash/",
+  "note": "ZEC block reward halved 3.125 -> 1.5625 on 18 Nov 2024 (block 2,726,400, NU6). 2.5 was never an exact halving value and is stale; current subsidy is 1.5625 ZEC/block. Next halving ~late 2028 -> 0.78125."
+ },
+ {
+  "id": "AsicMiningCalculator__NETWORK_DATA.ZEC.blockTime",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://bitinfocharts.com/zcash/",
+  "note": "75s block target (post-Blossom) is correct. Unchanged."
+ },
+ {
+  "id": "AsicMiningCalculator__hashrateMultiplier_difficultyTarget",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://en.bitcoin.it/wiki/Difficulty",
+  "note": "2^32 = 4294967296 is the fixed PoW difficulty-to-hashes relationship for SHA-256-family chains. Mathematical constant, not subject to change."
+ },
+ {
+  "id": "DustAttackCalculator__avgDustSats (default)",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://github.com/bitcoin/bitcoin/blob/master/src/policy/policy.cpp",
+  "note": "546 sats is the canonical Bitcoin Core dust threshold for a standard legacy P2PKH output at the default 3000 sat/kB dust-relay-fee. Unchanged default; used here only as a preset input."
+ },
+ {
+  "id": "GpuMiningCalculator__COINS.ERGO.blockReward / blockTime",
+  "verdict": "stale",
+  "official_value": "blockReward 3, blockTime 120",
+  "source_url": "https://docs.ergoplatform.com/mining/emission/",
+  "note": "ERGO block reward STALE: 27 is a long-outdated emission step. Reward stepped 9 -> 6 ERG on 3 Jan 2026 and reached the final 3 ERG tail/floor on 3 Apr 2026; as of Jun 2026 it is 3 ERG/block (ergo.watch shows current reward = 3). blockTime 120s is correct/unchanged."
+ },
+ {
+  "id": "GpuMiningCalculator__COINS.ETC.blockReward / blockTime",
+  "verdict": "stale",
+  "official_value": "blockReward 2.048, blockTime 13",
+  "source_url": "https://bitinfocharts.com/ethereum%20classic/",
+  "note": "ETC block reward STALE: current era is 2.048 ETC (after the 4th '5M20' reduction), not 2.56. 2.56 was the prior era. The 5th reduction ('Fifthening', block 25,000,001) to 1.6384 is expected ~Jul-Oct 2026 and has NOT happened as of Jun 2026, so 2.048 is current. blockTime ~13s correct/unchanged."
+ },
+ {
+  "id": "GpuMiningCalculator__COINS.FLUX.blockReward / blockTime",
+  "verdict": "stale",
+  "official_value": "blockReward 18.75, blockTime 120",
+  "source_url": "https://altcoinsbox.com/flux-halving-countdown-clock-dates-and-price-history/",
+  "note": "FLUX block reward STALE: Flux halved on 6 Aug 2025, cutting the total block reward 37.5 -> 18.75 FLUX/block. As of Jun 2026 the total is 18.75 (miner portion ~9.375 since ~50% goes to nodes). blockTime 120s correct/unchanged. (If the field is meant to be the miner-only share rather than total, 37.5 was already wrong on both readings post-Aug-2025.)"
+ },
+ {
+  "id": "GpuMiningCalculator__COINS.KAS.blockReward / blockTime",
+  "verdict": "stale",
+  "official_value": "blockReward ~55, blockTime 1",
+  "source_url": "https://minerstat.com/coin/KAS",
+  "note": "KAS block reward STALE: Kaspa's chromatic phase reduces the reward smoothly every month by (1/2)^(1/12). As of ~Jun 2026 the reward is ~55 KAS/block, far below the ledger's 200 (200 corresponds to a much earlier date). blockTime 1s (1 block/sec) correct/unchanged. Note value drifts monthly, so any hardcoded figure decays."
+ },
+ {
+  "id": "GpuMiningCalculator__COINS.RVN.blockReward / blockTime",
+  "verdict": "stale",
+  "official_value": "blockReward 1250, blockTime 60",
+  "source_url": "https://www.nicehash.com/countdown/rvn-halving-2026-01-11-12-00",
+  "note": "RVN block reward STALE: Ravencoin's 2nd halving hit block 4,200,000 on 15 Jan 2026, cutting 2500 -> 1250 RVN/block. As of Jun 2026 explorers show 1250. blockTime 60s correct/unchanged. Next halving ~2030 -> 625."
+ },
+ {
+  "id": "StockToFlowCalculator__CURRENT_REWARD",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.blockchain.com/explorer/assets/btc",
+  "note": "3.125 BTC/block is correct post-4th-halving (Apr 2024), paired with 144 blocks/day. The 1.5625/0.78125 future-subsidy constants in the same model are the correct upcoming halving values. Current."
+ },
+ {
+  "id": "CryptoInheritanceCalculator__estate_tax_rate_default",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+  "note": "US federal estate tax top rate is 40% (IRC §2001(c)); unchanged for 2026. A 40% default input value is correct."
+ },
+ {
+  "id": "CryptoInheritanceCalculator__us_estate_exemption_disclaimer_mention",
+  "verdict": "stale",
+  "official_value": "15000000",
+  "source_url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+  "note": "Disclaimer hardcodes $12.92M (the 2023 exemption). The 2026 basic exclusion amount is $15,000,000 per OBBBA (made permanent, up from $13.99M in 2025). Confirmed stale; correct 2026 value is $15M (note: even the ledger's own 'correct' reference of $13.99M is the 2025 figure, not 2026)."
+ },
+ {
+  "id": "InheritanceTaxCalculator__us.estate_tax_exemption",
+  "verdict": "stale",
+  "official_value": "15000000",
+  "source_url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+  "note": "Ledger has $13,990,000, which is the 2025 basic exclusion amount. For decedents dying in 2026 the exclusion is $15,000,000: OBBBA (signed Jul 2025) replaced the TCJA sunset with a permanent $15M base effective 2026-01-01, indexed from 2027. The TCJA-sunset note in the code is obsolete (no sunset occurred)."
+ },
+ {
+  "id": "InheritanceTaxCalculator__us.estate_tax_rate",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.irs.gov/newsroom/estate-and-gift-tax-faqs",
+  "note": "Flat top federal estate tax rate is 40% (IRC §2001(c)); unchanged for 2026. Step-up in basis to FMV at death (IRC §1014) also correct."
+ },
+ {
+  "id": "TaxCalculator__us.brackets",
+  "verdict": "stale",
+  "official_value": "[{'label': '$0 – $50,400', 'shortTermRate': 12, 'longTermRate': 0}, {'label': '$50,401 – $105,700', 'shortTermRate': 22, 'longTermRate': 15}, {'label': '$105,701 – $201,775', 'shortTermRate': 24, 'longTermRate': 15}, {'label': '$201,776 – $256,225', 'shortTermRate': 32, 'longTermRate': 15}, {'label': '$256,226 – $640,600', 'shortTermRate': 35, 'longTermRate': 15}, {'label': '$640,601+', 'shortTermRate': 37, 'longTermRate': 20}]",
+  "source_url": "https://taxfoundation.org/data/all/federal/2026-tax-brackets/",
+  "note": "Rates (12/22/24/32/35/37 short-term; 0/15/20 long-term) are correct, but the bracket-edge dollar amounts are the 2025 single-filer thresholds, not 2026. Correct 2026 single-filer ordinary thresholds: 12% to $50,400, 22% to $105,700, 24% to $201,775, 32% to $256,225, 35% to $640,600, 37% above (Rev. Proc. 2025-32, confirmed via IRS newsroom + Tax Foundation). Also the LT-rate mapping is imprecise: the 0% LTCG ceiling is $49,450 and the 20% LTCG rate begins above $545,500, so they do not align with the ordinary-bracket edges shown. Top-bracket 37% threshold $626,351 should be $640,601."
+ },
+ {
+  "id": "TaxCalculator__us.longTermThreshold",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.irs.gov/taxtopics/tc409",
+  "note": "Holding period for long-term treatment is more than 1 year (>1yr long-term, <=1yr short-term). Unchanged statutory rule (IRC §1222). Crypto taxed as property (Notice 2014-21). Correct."
+ },
+ {
+  "id": "TaxCalculator__us.niit",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.irs.gov/taxtopics/tc409",
+  "note": "Net Investment Income Tax is 3.8% (IRC §1411) on net investment income when MAGI exceeds $200,000 (single); rate and $200k threshold are statutory and not inflation-indexed, unchanged for 2026."
+ },
+ {
+  "id": "TaxLossHarvestingCalculator__us.capital_loss_annual_ordinary_income_deduction",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.irs.gov/taxtopics/tc409",
+  "note": "$3,000/year capital-loss deduction against ordinary income ($1,500 MFS) per IRC §1211(b); not indexed for inflation, unchanged since 1978. Correct for 2026."
+ },
+ {
+  "id": "TaxLossHarvestingCalculator__us.tax_bracket_presets",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://taxfoundation.org/data/all/federal/2026-tax-brackets/",
+  "note": "Preset is the list of ordinary marginal rates [12,22,24,32,35,37], with no dollar thresholds attached. The 2026 marginal-rate set is 10/12/22/24/32/35/37%; the six pills shown (omitting the 10% bracket as user-selectable presets) are all valid current rates. Correct."
+ },
+ {
+  "id": "TaxLossHarvestingCalculator__us.wash_sale_window_days",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://reedcorp.tax/helpful-guides/crypto-wash-sale-rule/",
+  "note": "Wash-sale window is +/-30 days (IRC §1091). As of mid-2026 crypto remains EXEMPT from the wash-sale rule because digital assets are classified as property, not stock/securities; no legislation extending §1091 to digital assets has passed. The 30-day value and the code's 'crypto not subject to wash-sale' note are both current. (Legislative risk noted but not enacted.)"
+ },
+ {
+  "id": "BitcoinEnergyCalculator__BTC_PER_DAY_NETWORK",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.bitcoinblockhalf.com/",
+  "note": "144 blocks/day x 3.125 BTC = 450 BTC/day. bitcoinblockhalf.com explicitly states current daily generation is 450 BTC and will drop to 225 after the next halving. Correct."
+ },
+ {
+  "id": "HalvingCalculator__BLOCKS_PER_DAY",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.bitcoinblockhalf.com/",
+  "note": "144 blocks/day = 86400s / 600s target block time. Confirmed as the standard derived figure on block-reward/explorer sources."
+ },
+ {
+  "id": "HalvingCalculator__CURRENT_REWARD",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.bitcoinblockhalf.com/",
+  "note": "3.125 BTC is the current block subsidy after the 4th halving at block 840,000 (Apr 20 2024, 6.25 -> 3.125). Correct as of 2026-06."
+ },
+ {
+  "id": "HalvingCalculator__HALVINGS",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.bitcoinblockhalf.com/",
+  "note": "Historical table verified exactly: 210,000=2012-11-28 (50->25), 420,000=2016-07-09 (25->12.5), 630,000=2020-05-11 (12.5->6.25), 840,000=2024-04-20 (6.25->3.125). Every 210,000 blocks. All match."
+ },
+ {
+  "id": "HalvingCalculator__NEXT_HALVING_BLOCK",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.bitcoinblockhalf.com/",
+  "note": "5th halving at block 1,050,000 (840,000 + 210,000). Deterministic consensus fact, confirmed by all sources. Calendar ETA ~Apr 2028 is an estimate but the block height is fixed."
+ },
+ {
+  "id": "HalvingCalculator__POST_HALVING_REWARD",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.bitcoinblockhalf.com/",
+  "note": "3.125 / 2 = 1.5625 BTC after the 5th halving. Confirmed by bitcoinblockhalf.com and multiple halving-schedule sources."
+ },
+ {
+  "id": "HalvingCalculator__REFERENCE_BLOCK",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.bitcoinblockhalf.com/",
+  "note": "840,000 is the 4th-halving (anchor) block height. Confirmed historical fact."
+ },
+ {
+  "id": "HalvingCalculator__REFERENCE_DATE",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.bitcoinblockhalf.com/",
+  "note": "Block 840,000 was mined 2024-04-20 (UTC), the 4th halving. Fixed historical event date. Correct."
+ },
+ {
+  "id": "HalvingCalculator__blockTime_assumed",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.bitcoinblockhalf.com/",
+  "note": "600 s (~10 min) is the protocol target inter-block time; difficulty retargets every 2016 blocks to hold it. Basis for 144 blocks/day. Correct."
+ },
+ {
+  "id": "MiningCalculator__blockReward",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.bitcoinblockhalf.com/",
+  "note": "3.125 BTC current subsidy (post-840,000). Same as CURRENT_REWARD; consistent. Correct."
+ },
+ {
+  "id": "MiningCalculator__secondsPerDay",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://en.bitcoin.it/wiki/Difficulty",
+  "note": "86400 = seconds/day, a fixed time constant in the canonical PoW expected-reward formula dailyBtc = (hashrate*86400*reward)/(difficulty*2^32). Trivially correct."
+ },
+ {
+  "id": "RestakingCalculator__eth_validator_stake_references",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://ethereum.org/en/staking/",
+  "note": "32 ETH remains the validator activation minimum after Pectra (May 2025). EIP-7251 raised the MAX effective balance to 2048 ETH but left the 32 ETH activation floor unchanged. As a contextual reference 32 is still correct."
+ },
+ {
+  "id": "ValidatorCalculator__NETWORKS.avalanche.minStake",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://docs.avax.network/nodes/validate/how-to-stake",
+  "note": "2000 AVAX remains the Avalanche primary-network validator minimum (delegation minimum 25 AVAX). Unchanged consensus/protocol parameter."
+ },
+ {
+  "id": "ValidatorCalculator__NETWORKS.ethereum.minStake",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://ethereum.org/en/staking/solo/",
+  "note": "32 ETH is the consensus-defined effective balance to activate a full validator (deposit-contract minimum). Pectra/EIP-7251 raised the cap to 2048 ETH but the 32 ETH activation floor is intact. Correct."
+ },
+ {
+  "id": "InheritanceTaxCalculator__au.inheritance_tax",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://taxsummaries.pwc.com/australia/individual/other-taxes",
+  "note": "Australia has no inheritance/estate/death duty (abolished federally 1979). Rate 0 / exemption 0 is correct. CGT can apply on later disposal of inherited assets, with cost base generally inherited from the deceased (no general step-up). Ledger is accurate."
+ },
+ {
+  "id": "InheritanceTaxCalculator__br.itcmd_rate",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://taxsummaries.pwc.com/brazil/individual/other-taxes",
+  "note": "ITCMD is a state-level tax on inheritance/gifts, capped at 8% (Senate Resolution 9/1992) and varying 0-8% by state. No federal inheritance tax. Ledger's flat 8% is the legal maximum and a defensible conservative default; actual rate depends on state. Acceptable as 'current'."
+ },
+ {
+  "id": "InheritanceTaxCalculator__ca.inheritance_tax",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://taxsummaries.pwc.com/canada/individual/other-taxes",
+  "note": "Canada has no inheritance/estate tax. Instead there is a deemed disposition at death: the estate realizes capital gains on unrealized appreciation, taxed at the deceased's marginal rate via the final return. Rate 0 / exemption 0 for an inheritance tax is correct."
+ },
+ {
+  "id": "InheritanceTaxCalculator__in.inheritance_tax",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://cleartax.in/s/cryptocurrency-taxation-guide",
+  "note": "India abolished estate duty in 1985; no tax on receiving an inheritance. Rate 0 / exemption 0 correct. On later disposal of inherited VDAs the 30% flat tax (s.115BBH) applies; cost basis carries over from the deceased. Ledger is accurate."
+ },
+ {
+  "id": "InheritanceTaxCalculator__jp.inheritance_basic_exemption",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://taxsummaries.pwc.com/japan/individual/other-taxes",
+  "note": "Statutory basic exemption is JPY 30,000,000 + JPY 6,000,000 per statutory heir (unchanged for 2025/2026). The stored base+per_heir constants are correct. Caveat noted in ledger: code adds only ONE 6M increment rather than multiplying by actual heir count — that is an implementation detail, but the constant values themselves are current."
+ },
+ {
+  "id": "InheritanceTaxCalculator__jp.inheritance_rates",
+  "verdict": "stale",
+  "official_value": "[{up_to:10000000,rate:10},{up_to:30000000,rate:15},{up_to:50000000,rate:20},{up_to:100000000,rate:30},{up_to:200000000,rate:40},{up_to:300000000,rate:45},{up_to:600000000,rate:50},{above:600000000,rate:55}]",
+  "source_url": "https://taxsummaries.pwc.com/japan/individual/other-taxes",
+  "note": "Rates 10/15/20/30/40/45/55 and the lower thresholds are correct, BUT the ledger is MISSING the 50% bracket for JPY 300M-600M and applies 55% from JPY 300M instead of from JPY 600M. Official ladder: ...45% on 200M-300M, 50% on 300M-600M, 55% above 600M. Overstates tax in the 300M-600M band."
+ },
+ {
+  "id": "TaxCalculator__au.brackets",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents",
+  "note": "2025-26 resident rates confirmed: 0% to $18,200; 16% $18,201-45,000; 30% $45,001-135,000; 37% $135,001-190,000; 45% $190,001+ (Stage 3 cuts, effective 2024-07-01, unchanged for 2025-26). Long-term = half (50% CGT discount): 8/15/18.5/22.5% correct. Rates exclude the 2% Medicare levy. Note: from 2026-07-01 the 16% bracket drops to 15% (future FY)."
+ },
+ {
+  "id": "TaxCalculator__au.longTermThreshold",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://taxsummaries.pwc.com/australia/individual/income-determination",
+  "note": "50% CGT discount for individuals on assets (incl. crypto) held at least 12 months, acquired on/after 21 Sep 1999. Confirmed by ATO/PwC. '12 months' threshold and the half-rate derivation are correct."
+ },
+ {
+  "id": "TaxCalculator__br.flat_rate",
+  "verdict": "stale",
+  "official_value": "progressive 15%-22.5% (with R$35,000/month de minimis exemption still in force)",
+  "source_url": "https://newsletter.brazilcrypto.io/p/211-congress-strikes-down-controversial",
+  "note": "The flat 17.5% came from Provisional Measure 1303 (Jun/Jul 2025), which Brazil's Chamber of Deputies REJECTED on 2025-10-08 (251-193), so it never converted into law and lapsed. The PRIOR regime remains in force for 2026: progressive 15%-22.5% capital-gains rates with the R$35,000/month exemption for small disposals. Ledger's 17.5% flat (and 'no exemption') is NOT enacted law. Hint '2026 reform' is wrong."
+ },
+ {
+  "id": "TaxCalculator__ca.brackets",
+  "verdict": "stale",
+  "official_value": "50% inclusion rate on ALL capital gains (no 66.67% tier)",
+  "source_url": "https://www.canada.ca/en/department-finance/news/2025/01/government-of-canada-announces-deferral-in-implementation-of-change-to-capital-gains-inclusion-rate.html",
+  "note": "Effective-rate values (marginal x 0.5) are fine, but the embedded hint/notes about '66.67% inclusion above C$250K from 2026' are WRONG. The proposed 66.67% increase was first deferred (31 Jan 2025) then CANCELLED outright (21 Mar 2025); Budget 2025 confirms cancellation. The 50% inclusion rate applies to all gains in 2026. Remove the 66.67%/C$250K hint."
+ },
+ {
+  "id": "TaxCalculator__ca.capital_gains_inclusion_rate",
+  "verdict": "stale",
+  "official_value": "{\"standard\": 50}",
+  "source_url": "https://www.canada.ca/en/department-finance/news/2025/01/government-of-canada-announces-deferral-in-implementation-of-change-to-capital-gains-inclusion-rate.html",
+  "note": "The 'above_250k_from_2026: 66.67' tier is STALE/incorrect. The proposed two-thirds inclusion rate was cancelled 21 Mar 2025 and never enacted; CRA reverted to administering the 50% rate. Only {standard: 50} is correct; the above_250k_from_2026 and threshold_cad fields should be dropped."
+ },
+ {
+  "id": "TaxCalculator__in.flat_rate",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://cleartax.in/s/cryptocurrency-taxation-guide",
+  "note": "Flat 30% on VDA gains under s.115BBH + 4% health & education cess (=31.2% base, more with surcharge), no deduction except cost of acquisition, no loss set-off or carry-forward, no holding-period distinction. All confirmed current for FY2025-26/AY2026-27."
+ },
+ {
+  "id": "TaxCalculator__in.tds_rate",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://cleartax.in/s/cryptocurrency-taxation-guide",
+  "note": "1% TDS under s.194S and 4% cess on the 30% (=31.2% effective base) confirmed. TDS threshold: ledger uses INR 10,000, which is the standard-payer threshold (the higher INR 50,000/year threshold applies only to 'specified persons' — small/individual non-business payers). The 10,000 default is correct for the general case."
+ },
+ {
+  "id": "TaxCalculator__jp.brackets",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://mailmate.jp/blog/japan-crypto-tax",
+  "note": "For 2026 crypto remains MISCELLANEOUS INCOME taxed at progressive national rates (5-45%) plus 10% local inhabitant tax = combined 15-55%, matching the ledger ladder. The flat 20% reform is only a PROPOSAL in the 2026 Tax Reform Outline (released 19 Dec 2025), pending Diet legislation and limited to 'specified crypto assets'; individual implementation projected ~2027/2028. NOT enacted for 2026 — progressive treatment is current."
+ },
+ {
+  "id": "TaxCalculator__jp.filing_exemption_threshold",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://taxsummaries.pwc.com/japan/individual/income-determination",
+  "note": "JPY 200,000 filing exemption applies to a salaried person whose total non-employment (incl. misc/crypto) income for the year does not exceed JPY 200,000 (national income tax). Note it does not exempt the 10% local inhabitant tax. Threshold value is current."
+ },
+ {
+  "id": "TaxCalculator__kr.annual_exemption",
+  "verdict": "stale",
+  "official_value": "2500000",
+  "source_url": "https://www.koreatimes.co.kr/economy/cryptocurrency/20251118/after-3-delays-korea-still-unprepared-for-2027-crypto-tax-rollout",
+  "note": "WRONG amount. The crypto basic deduction is KRW 2,500,000/year (only gains above KRW 2.5M are taxed), NOT KRW 50,000,000. KRW 50M is the deduction for domestic LISTED STOCKS — a different regime; the ~20x gap is a well-known point of public contention. Also note the tax itself is not yet in force (starts 1 Jan 2027). Replace 50,000,000 with 2,500,000."
+ },
+ {
+  "id": "TaxCalculator__kr.flat_rate",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.cryptopolitan.com/south-korea-locks-22-crypto-tax-for-2027/",
+  "note": "22% (20% national 'other income' + 2% local) is the confirmed rate, taking effect 1 Jan 2027 (delayed from 2025; Finance Ministry reaffirmed Nov 2025 it proceeds as scheduled, though repeal/abolition bills are pending). Rate is correct; hint 'delayed to 2027' is accurate. No crypto gains tax is enforced in 2026."
+ },
+ {
+  "id": "InheritanceTaxCalculator__de.erbschaftsteuer_exemptions",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.gesetze-im-internet.de/erbstg_1974/__16.html",
+  "note": "ErbStG §16 personal allowances unchanged for 2026: spouse €500,000, child €400,000, Steuerklasse III/unrelated €20,000. Matches input."
+ },
+ {
+  "id": "InheritanceTaxCalculator__de.erbschaftsteuer_rates",
+  "verdict": "uncertain",
+  "official_value": null,
+  "source_url": "https://www.gesetze-im-internet.de/erbstg_1974/__19.html",
+  "note": "Class I bands 7/11/15/19/23/27/30% by taxable value are correct per ErbStG §19 (unchanged 2026). BUT the 'other_unrelated' (Steuerklasse III) breakpoint between 30% and 50% is officially €6,000,000, not the €600,000 shown in the input — likely an error/simplification in the config; cannot confirm the €600,000 cutoff against law."
+ },
+ {
+  "id": "InheritanceTaxCalculator__uk.iht_nil_rate_band",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.gov.uk/government/publications/inheritance-tax-thresholds/inheritance-tax-thresholds",
+  "note": "IHT nil-rate band remains £325,000; frozen (Autumn Budget 2024 to 2029/30, extended by Budget 2025 to 2030/31). Current for 2026/27."
+ },
+ {
+  "id": "InheritanceTaxCalculator__uk.iht_rate",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.gov.uk/inheritance-tax",
+  "note": "Standard IHT rate 40% above the nil-rate band. Unchanged for 2026/27."
+ },
+ {
+  "id": "TaxCalculator__at.flat_rate",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.blockpit.io/tax-guides/crypto-tax-austria",
+  "note": "Austria flat 27.5% (KESt / Sondersteuersatz) on crypto gains (Neubestand, acquired after 28 Feb 2021) unchanged for 2026; crypto-to-crypto swaps not taxed; Altbestand (pre-1 Mar 2021) generally exempt."
+ },
+ {
+  "id": "TaxCalculator__ch.private_investor_rate",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://koinly.io/guides/switzerland-crypto-tax-guide/",
+  "note": "Private investors pay 0% capital gains tax on crypto (Art. 16(3) DBG); unchanged for 2026. Professional traders taxed as income; wealth tax applies separately."
+ },
+ {
+  "id": "TaxCalculator__ch.wealth_tax_range",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://koinly.io/guides/switzerland-crypto-tax-guide/",
+  "note": "Cantonal wealth tax roughly 0.1%-1% per year (e.g. ~0.1% Nidwalden to ~1% Geneva); input range 0.15-1.0% is within the accepted ballpark. Cantonal, no single official figure; current."
+ },
+ {
+  "id": "TaxCalculator__de.brackets",
+  "verdict": "stale",
+  "official_value": "[{'label': '€0 – €12,348 (exempt)', 'shortTermRate': 0, 'longTermRate': 0}, {'label': '€12,349 – €69,878', 'shortTermRate': 25, 'longTermRate': 0}, {'label': '€69,879 – €277,825', 'shortTermRate': 42, 'longTermRate': 0}, {'label': '€277,826+', 'shortTermRate': 45, 'longTermRate': 0}]",
+  "source_url": "https://esth.bundesfinanzministerium.de/lsth/2026/A-Einkommensteuergesetz/IV-Tarif-31-34b/Paragraf-32a/inhalt.html",
+  "note": "2026 §32a EStG: Grundfreibetrag rose to €12,348 (input €12,084 is the prior-year value) and the 42% zone starts at €69,879 (input bracket boundary €68,430 is outdated). 45% (Reichensteuer) threshold €277,826 is correct. Long-term 0% (>1yr tax-free) still correct."
+ },
+ {
+  "id": "TaxCalculator__de.longTermThreshold",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://koinly.io/guides/crypto-tax-germany/",
+  "note": "Germany §23 EStG: crypto held >1 year is tax-free; 1-year Spekulationsfrist unchanged for 2026. Short-term (<1yr) taxed at personal income rate."
+ },
+ {
+  "id": "TaxCalculator__de.short_term_exemption_freigrenze",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://koinly.io/guides/crypto-tax-germany/",
+  "note": "€1,000 Freigrenze for private-sale (§23) gains, raised from €600 effective 2024, remains €1,000 for 2026. It is a Freigrenze (whole gain taxable once exceeded), as the input notes."
+ },
+ {
+  "id": "TaxCalculator__es.brackets",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://taxsummaries.pwc.com/spain/individual/taxes-on-personal-income",
+  "note": "Spain savings-income (base del ahorro) bands 19/21/23/27/30% unchanged for 2026 (19% ≤0-6k, 21% 6k-50k, 23% 50k-200k, 27% 200k-300k, 30% >300k). Matches input."
+ },
+ {
+  "id": "TaxCalculator__fr.annual_exemption",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.blockpit.io/tax-guides/crypto-tax-france",
+  "note": "France €305 annual disposal de-minimis (on total proceeds/cessions, CGI art. 150 VH bis) unchanged for 2026. Matches input."
+ },
+ {
+  "id": "TaxCalculator__fr.flat_tax_pfu",
+  "verdict": "stale",
+  "official_value": "31.4",
+  "source_url": "https://koinly.io/guides/crypto-tax-france/",
+  "note": "PFU rose from 30% to 31.4% effective 1 Jan 2026 via PLFSS 2026 (CSG raised, social contributions 12.8% IR + 18.6% social). Input 30% is the 2025 value; 2026 value is 31.4%."
+ },
+ {
+  "id": "TaxCalculator__it.flat_rate",
+  "verdict": "stale",
+  "official_value": "33",
+  "source_url": "https://koinly.io/guides/crypto-tax-italy/",
+  "note": "Italy crypto substitute tax rises from 26% to 33% effective 1 Jan 2026 (Legge di Bilancio 2026 / 2025 Budget Law); the €2,000 exemption is abolished from 2026. Input 26% is the through-2025 value. (Note: 26% retained only for MiCA EMT euro stablecoins.)"
+ },
+ {
+  "id": "TaxCalculator__nl.box3_tax_free_threshold",
+  "verdict": "stale",
+  "official_value": "59357",
+  "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/en/income-in-box-3/content/box-3-provisional-assessment-2026",
+  "note": "Box 3 heffingvrij vermogen for 2026 is €59,357 per person (€118,714 for partners) per Belastingdienst. Input €57,684 is the 2025 figure."
+ },
+ {
+  "id": "TaxCalculator__nl.deemed_return_effective_rate",
+  "verdict": "stale",
+  "official_value": "2.16",
+  "source_url": "https://www.belastingdienst.nl/wps/wcm/connect/en/income-in-box-3/content/box-3-provisional-assessment-2026",
+  "note": "2026 Box 3: deemed return on investments/other assets is 6.00% and the Box 3 rate is 36%, giving an effective rate of ~2.16% on investment assets (6.00% × 36%). Input 2.12% reflected the 2025 deemed return (~5.88%). Tax rate 36% unchanged."
+ },
+ {
+  "id": "TaxCalculator__pl.flat_rate",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://koinly.io/guides/crypto-tax-poland/",
+  "note": "Poland flat 19% tax on crypto-to-fiat gains (PIT-38) unchanged for 2026; crypto-to-crypto swaps tax-neutral; acquisition costs deductible. Matches input."
+ },
+ {
+  "id": "TaxCalculator__pt.longTermThreshold",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://koinly.io/guides/portugal-crypto-tax/",
+  "note": "Portugal (Cat. G): crypto held ≥365 days exempt; <365 days taxed at flat 28%. 365-day rule unchanged for 2026. Crypto-to-crypto not taxed. Matches input."
+ },
+ {
+  "id": "TaxCalculator__pt.short_term_rate",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://koinly.io/guides/portugal-crypto-tax/",
+  "note": "Portugal short-term (<365 days) crypto gains flat 28% (Cat. G optional autonomous rate); long-term 0%. Unchanged for 2026. Matches input."
+ },
+ {
+  "id": "TaxCalculator__uk.brackets",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://uktax.tools/tax-insights/capital-gains-tax-basics/",
+  "note": "UK CGT on crypto 18% basic / 24% higher (from 30 Oct 2024 Budget) unchanged for 2025/26 and 2026/27; basic-rate band £37,700, additional rate above £125,140. Matches input."
+ },
+ {
+  "id": "TaxCalculator__uk.cgt_annual_exemption",
+  "verdict": "current",
+  "official_value": null,
+  "source_url": "https://www.gov.uk/capital-gains-tax/allowances",
+  "note": "CGT Annual Exempt Amount £3,000, applies to 2024/25, 2025/26 and 2026/27. Matches input."
+ }
+]

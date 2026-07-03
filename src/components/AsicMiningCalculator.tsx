@@ -68,8 +68,8 @@ const ASIC_PRESETS: AsicPreset[] = [
 const NETWORK_DATA: Record<string, NetworkData> = {
     BTC: { difficulty: 145000000000000, blockReward: 3.125, price: 77300, blockTime: 600 },
     LTC: { difficulty: 30000000, blockReward: 6.25, price: 56, blockTime: 150 },
-    DASH: { difficulty: 220000000, blockReward: 2.31, price: 37, blockTime: 150 },
-    ZEC: { difficulty: 90000000, blockReward: 2.5, price: 337, blockTime: 75 },
+    DASH: { difficulty: 220000000, blockReward: 1.77, price: 37, blockTime: 150 },
+    ZEC: { difficulty: 90000000, blockReward: 1.5625, price: 337, blockTime: 75 },
 };
 
 // Map whattomine generic names to our symbols
