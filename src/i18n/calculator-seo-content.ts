@@ -1607,9 +1607,9 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'gpu-mining-calculator': {
     en: {
-      quickAnswer: 'Estimate GPU mining profitability for Ethereum Classic, Ravencoin, and other PoW coins. An RTX 4090 at 130 MH/s earns roughly $1–3/day depending on the coin and difficulty.',
+      quickAnswer: 'GPU mining profit = coin reward per day × price − electricity − pool fee. For Ravencoin, Ergo, Ethereum Classic, and Kaspa, an RTX 4090 nets roughly $1–3/day at $0.10/kWh, depending on the coin and network difficulty.',
       how: [
-      `The GPU Mining Calculator estimates profitability for Ethereum Classic, Kaspa, Ravencoin, Ergo, and other GPU-mineable coins. Enter your GPU hashrate, power consumption, electricity rate, and pool fee to see daily, weekly, and monthly revenue and profit projections alongside a hardware payback period.`,
+      `The GPU Mining Calculator estimates profitability for Ravencoin, Ergo, Ethereum Classic, and Kaspa. Enter your GPU hashrate, power consumption, electricity rate, and pool fee to see daily, weekly, and monthly revenue and profit projections alongside a hardware payback period.`,
       `Use it to compare mining different coins with the same GPU setup, a 3080 Ti might earn more mining Kaspa than ETC depending on current difficulty and price. Run the calculator with today's coin price and a 20% lower price to ensure profitability holds up under moderate price decline. Factor in cooling overhead (typically 10–15% extra power consumption for enclosed rigs).`
       ],
       inputs: [
@@ -1662,9 +1662,9 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Оцените прибыльность майнинга на GPU для Ethereum Classic, Ravencoin и других PoW-монет. RTX 4090 при 130 MH/s приносит примерно $1–3/день в зависимости от монеты и сложности.',
+      quickAnswer: 'Прибыль GPU-майнинга = доход в монетах за день × цена − электричество − комиссия пула. Для Ravencoin, Ergo, Ethereum Classic и Kaspa видеокарта уровня RTX 4090 приносит примерно $1–3/день при $0,10/кВт·ч — зависит от монеты и сложности сети.',
       how: [
-      `Калькулятор майнинга на GPU оценивает прибыльность для Ethereum Classic, Kaspa, Ravencoin, Ergo и других монет, добываемых на видеокартах.`,
+      `Калькулятор майнинга на GPU оценивает прибыльность для Ravencoin, Ergo, Ethereum Classic и Kaspa.`,
       `Используйте для сравнения майнинга разных монет на одинаковой конфигурации GPU. Протестируйте при текущей цене монеты и на 20% ниже, чтобы убедиться в устойчивости прибыльности.`
       ],
       inputs: [

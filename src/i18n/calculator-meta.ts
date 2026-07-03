@@ -91,8 +91,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Crypto Lending Calculator. Calculate projected lending returns using APY, compounding model, term length, and platform performance fees.'
     },
     'gpu-mining-calculator': {
-      title: 'GPU Mining Calculator',
-      description: 'Free GPU Mining Calculator. Estimate GPU mining profitability with live assumptions for hashrate, power draw, electricity rates, and pool fees.'
+      title: 'GPU Mining Profitability Calculator — RVN, ERGO, ETC, KAS',
+      description: 'GPU mining profitability calculator: turn hashrate and power draw into daily profit for Ravencoin, Ergo, Ethereum Classic, and Kaspa, with live network data.'
     },
     'asic-mining-calculator': {
       title: 'ASIC Miner Calculator — Profitability & Value',
@@ -103,8 +103,8 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Free Mining ROI Calculator. Model mining hardware return on investment with scenario analysis for revenue, costs, and break-even timing.'
     },
     'electricity-cost-calculator': {
-      title: 'Mining Electricity Cost Calculator',
-      description: 'Free Mining Electricity Cost Calculator. Calculate power consumption and operating cost by device count, power usage, uptime, and local energy price.'
+      title: 'Bitcoin Mining Electricity Cost Calculator — kWh to $/day',
+      description: 'Mining electricity cost = watts × 24 ÷ 1,000 × your kWh rate. Work out daily, monthly, and yearly power costs for any ASIC or GPU rig, plus your break-even rate.'
     },
     'difficulty-calculator': {
       title: 'Bitcoin Difficulty Estimator — Next Adjustment',

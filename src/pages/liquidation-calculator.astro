@@ -8,12 +8,12 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 import AuthoritativeSources from '../components/AuthoritativeSources.astro';
-const buildDate = '2026-04-19'; // honest last-content-change date from git history (not the build date)
+const buildDate = '2026-07-03'; // honest last-content-change date from git history (not the build date)
 ---
 
 <Layout
-  title="Crypto Liquidation Price Calculator — Know Your Risk"
-  description="Free liquidation price calculator for crypto futures. Supports Binance, Bybit, OKX with Isolated and Cross margin. Know when your position gets liquidated."
+  title="Crypto Liquidation Price Calculator — Formula, Long & Short"
+  description="Liquidation price = entry × (1 − 1/leverage) for longs, × (1 + 1/leverage) for shorts. Free calculator for Binance, Bybit, and OKX with isolated and cross margin."
   lang="en"
   pageType="calculator"
   dateModified={`${buildDate}T00:00:00+00:00`}
@@ -74,7 +74,7 @@ const buildDate = '2026-04-19'; // honest last-content-change date from git hist
     <!-- SEO Content -->
     <section class="seo-content">
       <div class="section-container">
-        <div class="quick-answer"><strong>Quick answer:</strong> Liquidation price = Entry Price &times; (1 &minus; 1/Leverage) for longs, or Entry Price &times; (1 + 1/Leverage) for shorts. At 10x leverage on a $50,000 BTC long, liquidation hits at ~$45,000.</div>
+        <div class="quick-answer"><strong>Quick answer:</strong> Liquidation price = Entry Price &times; (1 &minus; 1/Leverage) for longs, or Entry Price &times; (1 + 1/Leverage) for shorts. At 10x leverage on a $50,000 BTC long, liquidation hits at ~$45,000. Exchanges add a maintenance margin, so the real level sits slightly closer to entry; the calculator below includes it.</div>
         <h2>How to Use the Liquidation Calculator</h2>
         <ol>
           <li><strong>Select your exchange</strong>: Choose Binance, Bybit, or OKX. Each has different maintenance margin rates that directly affect your liquidation price.</li>

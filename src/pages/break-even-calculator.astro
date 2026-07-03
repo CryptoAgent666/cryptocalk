@@ -8,12 +8,12 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 import AuthoritativeSources from '../components/AuthoritativeSources.astro';
-const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
+const buildDate = '2026-07-03'; // honest last-content-change date from git history (not the build date)
 ---
 
 <Layout
-  title="Crypto Break-Even Calculator — Including Trading Fees"
-  description="Free crypto break-even price calculator that factors in entry, exit, and trading fees. See the exact gain % needed to recover a loss or the exit price that covers all fees on long or short trades."
+  title="Crypto Break-Even Price Calculator — Trading Fees Formula"
+  description="Break-even price = Entry × (1 + entry fee) ÷ (1 − exit fee). See the exact exit price that covers your trading fees and the gain needed to recover any loss."
   lang="en"
   pageType="calculator"
   dateModified={`${buildDate}T00:00:00+00:00`}
@@ -49,8 +49,8 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
     <section class="calculator-section">
       <div class="section-container">
         <div class="calc-header">
-          <h1>Crypto Break-Even Calculator</h1>
-          <p>Two modes: calculate the gain needed to recover from a loss, or find the exact exit price that covers your trading fees.</p>
+          <h1>Crypto Break-Even Price Calculator</h1>
+          <p>Two modes: calculate the gain needed to recover from a loss, or find the exact exit price that covers your entry and exit trading fees.</p>
           <div class="calc-byline">
             <a href="/about/" class="byline-link">
               <span class="byline-by">By</span>
@@ -69,7 +69,7 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
 
     <section class="seo-content">
       <div class="section-container">
-        <div class="quick-answer"><strong>Quick answer:</strong> Break-even price = Buy Price &times; (1 + Total Fee %). After buying BTC at $73,000 with 0.2% total fees, you need the price to reach $73,146 just to break even.</div>
+        <div class="quick-answer"><strong>Quick answer:</strong> Break-even price = Entry Price &times; (1 + entry fee) &divide; (1 &minus; exit fee). Buying BTC at $73,000 with 0.1% fees on each side, you break even at $73,146; at 0.2% each side it is $73,293. To recover a 20% account loss you need a 25% gain.</div>
         <h2>How to Use the Crypto Break-Even Calculator</h2>
         <p>Our free break-even calculator helps crypto traders understand two critical concepts: how much gain is needed to recover from a portfolio loss, and the exact exit price required to cover all trading fees. Both modes are essential for realistic trading expectations and proper risk management.</p>
         <ol>

@@ -9,12 +9,12 @@ import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
-const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
+const buildDate = '2026-07-03'; // honest last-content-change date from git history (not the build date)
 ---
 
 <Layout
-  title="Bitcoin Mining Calculator"
-  description="Free Bitcoin mining profitability calculator. Enter hashrate, power, and electricity cost to estimate daily and monthly BTC revenue. ASIC presets included."
+  title="Bitcoin Mining Profitability Calculator 2026 — BTC per Day"
+  description="Free Bitcoin mining profitability calculator for 2026. Turn hashrate, power, and electricity cost into daily and monthly BTC profit at the 3.125 BTC block reward."
   lang="en"
   pageType="calculator"
   dateModified={`${buildDate}T00:00:00+00:00`}
@@ -76,7 +76,7 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
     <section class="seo-content">
       <div class="section-container">
         <div class="quick-answer">
-          <strong>Quick answer:</strong> At current difficulty (~145T) and $0.05/kWh, an Antminer S21 (200 TH/s) earns roughly $3-5/day net profit. At $0.12/kWh, the same miner operates at a loss. Enter your hardware specs below to see your personalized estimate with live BTC price data.
+          <strong>Quick answer:</strong> Bitcoin mining pays 3.125 BTC per block until the next halving (~April 2028). At $0.05/kWh an efficient ASIC like the Antminer S21 (200 TH/s) typically nets a few dollars a day; above roughly $0.12/kWh most miners run at a loss. Enter your hardware specs below for exact numbers with live difficulty and BTC price.
         </div>
         <h2>How to Use the Mining Calculator</h2>
         <ol>
@@ -206,9 +206,11 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
         <h2>Related Calculators</h2>
         <p>Explore more crypto calculators to optimize your investment and trading strategies:</p>
         <ul class="seo-list">
+          <li><a href="/gpu-mining-calculator/"><strong>GPU Mining Calculator</strong></a> — compare profitability for Ravencoin, Ergo, Ethereum Classic, and Kaspa on your video cards.</li>
+          <li><a href="/electricity-cost-calculator/"><strong>Electricity Cost Calculator</strong></a> — work out the power bill that decides whether your rig is profitable.</li>
+          <li><a href="/asic-mining-calculator/"><strong>ASIC Mining Calculator</strong></a> — model dedicated SHA-256 miners like the Antminer S21.</li>
           <li><a href="/profit-calculator/"><strong>Profit Calculator</strong></a> — calculate gains/losses from buying and selling Bitcoin or altcoins.</li>
           <li><a href="/break-even-calculator/"><strong>Break-Even Calculator</strong></a> — determine the price you need to sell at to recover your investment.</li>
-          <li><a href="/compound-calculator/"><strong>Compound Interest Calculator</strong></a> — see how regular DCA or staking rewards grow over time.</li>
         </ul>
       </div>
     </section>
