@@ -517,9 +517,11 @@ const howToSchema = howToSteps.length >= 3 ? {
       </div>
     </nav>
 
+    <!-- UI translations: external cacheable file (was a ~210KB per-page inline blob).
+         Classic blocking script populates window.__uiStringRegistry before module hydration.
+         NB: the comment sits OUTSIDE the expression — Astro 7's Rust compiler allows only a
+         single node inside {…}, and rejected the comment that used to live in there. -->
     {lang !== 'en' && (
-      <!-- UI translations: external cacheable file (was a ~210KB per-page inline blob).
-           Classic blocking script populates window.__uiStringRegistry before module hydration. -->
       <script is:inline src={`/i18n/${lang}.js?v=${DICT_VERSIONS[lang]}`}></script>
     )}
     <section class="calculator-section">
