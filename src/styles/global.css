@@ -16,6 +16,9 @@
   --color-primary: #0891b2;
   --color-primary-hover: #0e7490;
   --color-primary-light: #ecfeff;
+  /* Accessible variant of the brand colour for TEXT: #0891b2 on white is 3.68:1, below
+     WCAG AA for anything under 18px. Use this for small link/label text, not for fills. */
+  --color-primary-text: #0e7490;
   --color-accent-green: #047857;
   --color-accent-red: #b91c1c;
   --color-accent-amber: #b45309;
@@ -50,6 +53,7 @@
   --color-primary: #22d3ee;
   --color-primary-hover: #06b6d4;
   --color-primary-light: rgba(6, 182, 212, 0.15);
+  --color-primary-text: #22d3ee;   /* already high-contrast on the dark surfaces */
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-card-hover: 0 10px 25px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.3);
   --shadow-header: 0 1px 3px rgba(0, 0, 0, 0.3);

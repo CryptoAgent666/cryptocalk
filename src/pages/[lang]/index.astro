@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import ThemeToggle from "../../components/ThemeToggle.tsx";
 import LanguageSwitcher from "../../components/LanguageSwitcher.tsx";
 import { getHomepageCategories } from "../../data/category-hubs";
+import { CALCULATOR_UPDATED } from "../../data/calculator-updated";
 import { getTranslations } from "../../i18n/translations";
 import { getLocalizedPath, type Lang } from "../../i18n/utils";
 import {
@@ -324,7 +325,20 @@ const homepageFaqSchema = {
   })),
 };
 
-const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, homepageFaqSchema];
+// The localized homepages carried no WebPage node at all, so they had no dateModified
+// (added 2026-08-23). The date is the same honest per-slug value the EN homepage uses.
+const homeWebPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: `CryptoCalk — ${t.heroTitle}`,
+  description: t.heroSubtitle,
+  url: `https://cryptocalk.com/${lang}/`,
+  inLanguage: lang,
+  dateModified: `${CALCULATOR_UPDATED['index']}T00:00:00+00:00`,
+  isPartOf: { '@type': 'WebSite', name: 'CryptoCalk', url: 'https://cryptocalk.com/' },
+};
+
+const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, homepageFaqSchema, homeWebPageSchema];
 ---
 
 <Layout
@@ -754,14 +768,8 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, home
 
   .logo-text b {
     font-weight: 800;
-    background: linear-gradient(
-      135deg,
-      var(--color-primary),
-      var(--color-accent-purple)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    /* Solid brand colour: the wordmark keeps its accent without gradient-filled text. */
+    color: var(--color-primary);
   }
 
   .header-search {
@@ -848,20 +856,9 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, home
     overflow: hidden;
   }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, var(--color-primary) 1px, transparent 1px);
-    background-size: 24px 24px;
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  [data-theme="dark"] .hero::before {
-    opacity: 0.07;
-  }
+  /* The hero used a tiled dot-grid overlay (radial-gradient on a fixed 24px cell). A grid
+     field belongs on a canvas, map or blueprint surface, not behind marketing copy, so the
+     hero now sits on a plain surface — removed 2026-08-24. */
 
   .hero-inner {
     position: relative;
@@ -929,7 +926,9 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, home
   .btn-primary:hover {
     color: white;
     transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(8, 145, 178, 0.4);
+    /* Neutral elevation instead of a cyan-tinted halo — the lift should read as the button
+       rising, not as the button glowing. */
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
   }
 
   .btn-secondary {

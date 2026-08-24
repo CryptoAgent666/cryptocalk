@@ -74,10 +74,8 @@ const allToolsHref = `${homeHref}#categories`;
 
   .logo-text b {
     font-weight: 800;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    /* Solid brand colour: the wordmark keeps its accent without gradient-filled text. */
+    color: var(--color-primary);
   }
 
   .site-header-actions {

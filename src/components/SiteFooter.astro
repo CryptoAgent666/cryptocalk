@@ -40,7 +40,7 @@ const exploreLinks = [
                 class="gplay-badge"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Get CryptoCalk on Google Play"
+                aria-label="Get it on Google Play — CryptoCalk for Android"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" class="gplay-icon">
                     <path d="M46.3 2.1c-3.5 2.1-8.3 7.3-8.3 20.5v466.8c0 13.2 4.8 18.4 8.3 20.5L271 256z" fill="#4285F4"/>
@@ -116,14 +116,8 @@ const exploreLinks = [
 
     .footer-logo b {
         font-weight: 800;
-        background: linear-gradient(
-            135deg,
-            var(--color-primary),
-            var(--color-accent-purple)
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        /* Solid brand colour: the wordmark keeps its accent without gradient-filled text. */
+        color: var(--color-primary);
     }
 
     .footer-brand p {

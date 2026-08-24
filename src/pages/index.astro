@@ -482,7 +482,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
           class="gplay-badge"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Get CryptoCalk on Google Play"
+          aria-label="Get it on Google Play — CryptoCalk for Android"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" class="gplay-icon">
             <path d="M46.3 2.1c-3.5 2.1-8.3 7.3-8.3 20.5v466.8c0 13.2 4.8 18.4 8.3 20.5L271 256z" fill="#4285F4"/>
@@ -686,10 +686,8 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
 
   .logo-text b {
     font-weight: 800;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    /* Solid brand colour: the wordmark keeps its accent without gradient-filled text. */
+    color: var(--color-primary);
   }
 
   .header-search {
@@ -776,20 +774,9 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
     overflow: hidden;
   }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, var(--color-primary) 1px, transparent 1px);
-    background-size: 24px 24px;
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  [data-theme="dark"] .hero::before {
-    opacity: 0.07;
-  }
+  /* The hero used a tiled dot-grid overlay (radial-gradient on a fixed 24px cell). A grid
+     field belongs on a canvas, map or blueprint surface, not behind marketing copy, so the
+     hero now sits on a plain surface — removed 2026-08-24. */
 
   .hero-inner {
     position: relative;
@@ -853,7 +840,9 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
   .btn-primary:hover {
     color: white;
     transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(8, 145, 178, 0.4);
+    /* Neutral elevation instead of a cyan-tinted halo — the lift should read as the button
+       rising, not as the button glowing. */
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
   }
 
   .btn-secondary {
@@ -958,7 +947,9 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
 
   .popular-tag[data-tag="popular"] {
     background-color: rgba(8, 145, 178, 0.15);
-    color: #0e7490;
+    /* #0e7490 on the chip's own tint (#daeff3) is 4.49:1 — one hundredth under WCAG AA
+       for this 11.2px bold text. cyan-800 clears it at ~6.2:1. */
+    color: #155e75;
   }
 
   .popular-tag[data-tag="trending"] {
@@ -969,6 +960,23 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
   .popular-tag[data-tag="new"] {
     background-color: rgba(16, 185, 129, 0.15);
     color: #047857;
+  }
+
+  /* Dark mode: the tag colours above are tuned for a white card. On the dark card they
+     drop to ~2.6-3.1:1 — below WCAG AA. Lighten the text instead of the chip.
+     NOTE the :global() — the theme attribute lives on <html>, which does not carry this
+     component's scope id, so a plain `[data-theme="dark"] .x` selector compiles to
+     `[data-astro-cid-…][data-theme="dark"] .x` and can never match. */
+  :global([data-theme="dark"]) .popular-tag[data-tag="popular"] {
+    color: #67e8f9;
+  }
+
+  :global([data-theme="dark"]) .popular-tag[data-tag="trending"] {
+    color: #93c5fd;
+  }
+
+  :global([data-theme="dark"]) .popular-tag[data-tag="new"] {
+    color: #6ee7b7;
   }
 
   .popular-arrow {
@@ -1144,7 +1152,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
     align-items: center;
     gap: 4px;
     text-decoration: none;
-    color: var(--color-primary);
+    color: var(--color-primary-text);
     font-size: 0.82rem;
     font-weight: 600;
   }
@@ -1208,7 +1216,13 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
     font-size: 0.92rem;
   }
   .about-prose p { margin-bottom: 16px; }
-  .about-prose a { color: var(--color-primary); }
+  /* Underlined, not colour-only: inside a paragraph the link colour alone gives 1.15:1
+     against the surrounding text in dark mode (WCAG needs 3:1 for colour-only links). */
+  .about-prose a {
+    color: var(--color-primary-text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
   .about-prose strong { color: var(--color-text); }
 
   .home-faq {
@@ -1279,7 +1293,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
     align-items: center;
     gap: 4px;
     font-size: 0.85rem;
-    color: var(--color-primary);
+    color: var(--color-primary-text);
     white-space: nowrap;
   }
 
