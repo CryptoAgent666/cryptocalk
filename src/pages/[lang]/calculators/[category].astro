@@ -9,8 +9,9 @@ import {
   getCategorySlugs,
   isCategorySlug,
 } from '../../../data/category-hubs';
+import { CALCULATOR_UPDATED } from '../../../data/calculator-updated';
 import { CATEGORY_HUB_BODY_LOCALIZED } from '../../../data/category-hub-body';
-import { NON_DEFAULT_LANGS, getLocalizedPath, type Lang } from '../../../i18n/utils';
+import { DEFAULT_LANG, NON_DEFAULT_LANGS, getLocalizedPath, type Lang } from '../../../i18n/utils';
 import Layout from '../../../layouts/Layout.astro';
 
 const SITE_URL = 'https://cryptocalk.com';
@@ -54,6 +55,16 @@ const categoriesHref = `${homeHref}#categories`;
 const categoryPageUrl = `${SITE_URL}${category.href}`;
 const bodyCopy = CATEGORY_HUB_BODY_LOCALIZED[lang]?.[category.slug];
 
+// Same honest hub date as the EN hub: a localized hub lists the same calculators, so its
+// freshness is the newest change among them. Slugs are read off the EN hub because the
+// localized hrefs carry translated slugs.
+const enCategory = getCategoryHubBySlug(categoryParam, DEFAULT_LANG);
+const hubDates = (enCategory?.tools ?? [])
+  .map((tool) => CALCULATOR_UPDATED[tool.href.replace(/^\/|\/$/g, '').split('/').pop() ?? ''])
+  .filter(Boolean)
+  .sort();
+const hubModified = hubDates.length ? hubDates[hubDates.length - 1] : null;
+
 const schemas = [
   {
     '@context': 'https://schema.org',
@@ -62,6 +73,7 @@ const schemas = [
     description: category.metaDescription,
     url: categoryPageUrl,
     inLanguage: lang,
+    ...(hubModified ? { dateModified: `${hubModified}T00:00:00+00:00` } : {}),
     isPartOf: {
       '@type': 'WebSite',
       name: 'CryptoCalk',

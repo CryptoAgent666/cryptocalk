@@ -24,6 +24,13 @@ interface PolicyContent {
 }
 
 const LAST_UPDATED = '20/02/2026';
+// Only the pages whose text actually changed carry a newer date — a shared constant would
+// stamp fake freshness on the ones that did not change (tr/pt gained the source-standard,
+// corrections and funding sections on 2026-08-24).
+const UPDATED_OVERRIDES: Partial<Record<PolicyKey, Partial<Record<LocalizedLang, string>>>> = {
+  'editorial-policy': { tr: '24/08/2026', pt: '24/08/2026' },
+  methodology: { tr: '24/08/2026', pt: '24/08/2026' },
+};
 
 const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> = {
   privacy: {
@@ -235,7 +242,7 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
   },
   'editorial-policy': {
     es: {
-      pageTitle: 'Política Editorial — CryptoCalk',
+      pageTitle: 'Política Editorial — Cómo revisamos las calculadoras',
       metaDescription: 'Política editorial de CryptoCalk: cómo escribimos, revisamos, actualizamos y corregimos el contenido de las páginas de calculadoras.',
       heading: 'Política Editorial',
       updatedLabel: 'Última actualización',
@@ -277,7 +284,7 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
       ],
     },
     pt: {
-      pageTitle: 'Política Editorial — CryptoCalk',
+      pageTitle: 'Política Editorial — Como revisamos as calculadoras',
       metaDescription: 'Política editorial do CryptoCalk: como escrevemos, revisamos, atualizamos e corrigimos o conteúdo das páginas de calculadoras.',
       heading: 'Política Editorial',
       updatedLabel: 'Última atualização',
@@ -303,16 +310,32 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
           ],
         },
         {
-          heading: '3. Atualizações e correções',
+          heading: '3. Padrão de fontes',
+          paragraphs: [
+            'Os preços de mercado vêm de APIs públicas (sobretudo a CoinGecko). Mas para tudo o que é definido por lei ou por consenso de protocolo — taxas de imposto, períodos de detenção, isenções sucessórias, recompensas por bloco, mínimos de validador — aplicamos um padrão mais exigente.',
+          ],
+          bullets: [
+            'Apenas fontes primárias: o texto legal, a autoridade fiscal ou o próprio código do protocolo. Um artigo de guia fiscal pode alertar-nos para uma mudança, mas nunca é a fonte que registamos.',
+            'Cada um dos 101 valores acompanhados guarda a fonte contra a qual foi verificado e a data dessa verificação.',
+            'A reverificação é programada: um monitor automático relê as páginas de origem; mudanças com data conhecida — um halving, uma era de emissão, um ano fiscal que começa a 1 de julho — são seguidas por calendário, porque nenhum vigia de página consegue ver uma data que ainda não chegou.',
+            'Um alerta não é uma alteração: quando o monitor assinala que uma fonte mudou, uma pessoa relê a fonte primária antes de qualquer número mudar no site. As verificações que confirmam o valor existente também ficam registadas.',
+          ],
+          links: [{ href: '/pt/methodology/', label: 'Metodologia: as fontes usadas em cada jurisdição' }],
+        },
+        {
+          heading: '4. Atualizações e correções',
           paragraphs: [
             'Atualizamos páginas quando mudam suposições, APIs ou requisitos técnicos.',
-            'Correções relevantes ficam registradas no changelog do projeto.',
+            'Correções relevantes ficam registadas no changelog público, com data. Não reescrevemos o histórico em silêncio: a entrada antiga permanece como foi escrita e a correção entra como uma nova entrada datada.',
+            'Publicamos os nossos próprios erros. Correções passadas incluem uma recompensa de mineração da Dash que exagerava a receita do mineiro em cerca de quatro vezes (o valor guardado era todo o coinbase do bloco, do qual o mineiro recebe um quarto), uma estimativa de imposto sucessório japonês cerca de três vezes alta demais (uma única taxa de escalão era aplicada a toda a herança, em vez do método estatutário por herdeiro) e uma recompensa por bloco da Kaspa registada dez vezes abaixo do valor real.',
+            'Se acredita que algum número aqui está errado, escreva-nos indicando a fonte com que o compara. Relatos que apontam uma fonte primária concreta são tratados primeiro.',
           ],
         },
         {
-          heading: '4. Divulgação de afiliados e risco',
+          heading: '5. Divulgação de afiliados e risco',
           paragraphs: [
-            'Não usamos links de afiliado nas calculadoras. A monetização nunca alterará a lógica dos cálculos.',
+            'O site é gratuito e financiado exclusivamente por publicidade de display. Não usamos links de afiliado em lado nenhum do CryptoCalk: não há parâmetros de referência em qualquer ligação externa e não ganhamos nada se abrir conta numa corretora, exchange ou carteira. Também não há colocações pagas, inclusão paga em comparações, nem influência de anunciantes sobre valores predefinidos ou recomendações.',
+            'A monetização nunca alterará a lógica dos cálculos.',
             'Resultados são estimativas e devem ser validados antes de qualquer decisão.',
           ],
         },
@@ -345,16 +368,32 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
           ],
         },
         {
-          heading: '3. Güncelleme ve düzeltmeler',
+          heading: '3. Kaynak standardı',
+          paragraphs: [
+            'Piyasa fiyatları herkese açık API kaynaklarından (öncelikle CoinGecko) gelir. Ancak yasayla veya protokol mutabakatıyla belirlenen her değer için — vergi oranları, elde tutma süreleri, miras istisnaları, blok ödülleri, doğrulayıcı minimumları — daha katı bir standart uygularız.',
+          ],
+          bullets: [
+            'Yalnızca birincil kaynak: kanun metni, vergi idaresi ya da protokolün kendi kodu. Bir vergi rehberi bizi bir değişiklikten haberdar edebilir, ama kaydettiğimiz kaynak asla o değildir.',
+            'Takip edilen 101 değerin her biri, doğrulandığı kaynak ve doğrulama tarihiyle birlikte tutulur.',
+            'Yeniden doğrulama programlıdır: otomatik bir izleyici kaynak sayfalarını yeniden okur; halving, emisyon dönemi ya da 1 Temmuz\'da başlayan bir vergi yılı gibi takvime bağlı değişiklikler ise ayrı olarak tarihleriyle izlenir — çünkü hiçbir sayfa izleyicisi henüz gelmemiş bir tarihi göremez.',
+            'Uyarı, değişiklik demek değildir: izleyici bir kaynağın değiştiğini bildirdiğinde, sitedeki hiçbir sayı oynamadan önce birincil kaynak elle yeniden okunur. Mevcut değeri doğrulayan kontroller de kayda geçer.',
+          ],
+          links: [{ href: '/tr/methodology/', label: 'Metodoloji: juridiksiyon başına kullanılan kaynaklar' }],
+        },
+        {
+          heading: '4. Güncelleme ve düzeltmeler',
           paragraphs: [
             'Varsayımlar, API davranışı veya teknik gereksinimler değiştiğinde içerik güncellenir.',
-            'Önemli düzeltmeler proje changelog\'unda kaydedilir.',
+            'Önemli düzeltmeler herkese açık changelog\'da tarihiyle kaydedilir. Geçmişi sessizce yeniden yazmayız: eski kayıt olduğu gibi kalır, düzeltme yeni ve tarihli bir kayıt olarak eklenir.',
+            'Kendi hatalarımızı da yayımlarız. Geçmiş düzeltmeler arasında madencinin gelirini yaklaşık dört kat abartan bir Dash blok ödülü (saklanan değer blok içi coinbase\'in tamamıydı; madenci bunun dörtte birini alır), tek bir dilim oranının tüm mirasa uygulanması yüzünden yaklaşık üç kat yüksek çıkan bir Japonya veraset tahmini ve on kat düşük kaydedilmiş bir Kaspa blok ödülü yer alır.',
+            'Buradaki bir sayının yanlış olduğunu düşünüyorsanız, karşılaştırdığınız kaynağı belirterek bize yazın. Belirli bir birincil kaynağı gösteren bildirimler önce ele alınır.',
           ],
         },
         {
-          heading: '4. İş ortaklığı ve risk bildirimi',
+          heading: '5. İş ortaklığı ve risk bildirimi',
           paragraphs: [
-            'Hesaplayıcılarda affiliate bağlantısı kullanmıyoruz. Monetizasyon hesaplama mantığını etkilemez.',
+            'Site ücretsizdir ve yalnızca görüntülü reklamla finanse edilir. CryptoCalk\'ta hiçbir yerde affiliate bağlantısı kullanmıyoruz: hiçbir dış bağlantıda referans parametresi yoktur ve bir borsada, aracı kurumda ya da cüzdanda hesap açmanızdan kazancımız olmaz. Ücretli yerleşim, karşılaştırmalara ücretli dahil olma veya varsayılan değerlere reklamveren müdahalesi de yoktur.',
+            'Monetizasyon hesaplama mantığını asla etkilemez.',
             'Sonuçlar tahmindir; karar öncesi bağımsız doğrulama yapılmalıdır.',
           ],
         },
@@ -506,23 +545,51 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
         {
           heading: '2. Fontes e cache',
           paragraphs: [
-            'Preços em tempo real são obtidos principalmente via CoinGecko API. O cliente usa cache e deduplicação para melhorar estabilidade.',
+            'Entram nestas calculadoras dois tipos de números, e cada um é mantido de forma completamente diferente.',
+            'Dados de mercado em tempo real: os preços vêm sobretudo da API da CoinGecko e os rendimentos de mineração são cruzados com a WhatToMine. O cliente usa cache e deduplicação; estes valores nunca são editados à mão.',
           ],
           links: [{ href: 'https://www.coingecko.com/en/api/documentation', label: 'Documentação da API CoinGecko' }],
         },
         {
-          heading: '3. Famílias de fórmulas',
+          heading: '3. Constantes regulatórias e de protocolo',
+          paragraphs: [
+            'Taxas de imposto, limites de detenção, isenções sucessórias e factos de protocolo não podem vir de uma API de preços — vêm da lei e das regras de consenso. O CryptoCalk acompanha 101 constantes deste tipo (79 regulatórias em 17 jurisdições, mais valores de protocolo e de fórmula) num registo versionado, cada uma com a fonte primária contra a qual foi verificada e a data dessa verificação.',
+            'Lemos a fonte primária, não um resumo dela.',
+          ],
+          bullets: [
+            'A taxa de 28% e a exclusão aos 365 dias em Portugal são lidas no próprio Código do IRS consolidado (art. 72.º n.º 1 al. c) e art. 10.º n.º 22) — e não num blogue de guias fiscais.',
+            'Os escalões australianos vêm das tabelas da ATO; os valores alemães de rendimento e sucessões dos textos legais do EStG §32a e do ErbStG §16/§19.',
+            'A inclusão de 50% das mais-valias no Canadá é retirada do Income Tax Act s.38; os escalões sucessórios e as regras de declaração do Japão vêm da NTA; os 15–22,5% progressivos do Brasil, da Lei 8.981.',
+            'Os factos de protocolo são lidos no protocolo: o limite de poeira de 546 satoshis vem do ficheiro policy.cpp do Bitcoin Core e as recompensas por bloco são reconciliadas com as saídas coinbase on-chain.',
+          ],
+        },
+        {
+          heading: '4. Como essas constantes são mantidas atuais',
+          paragraphs: [
+            'Um monitor automático relê cada página de origem de forma programada e assinala as que mudaram. Um alerta nunca é aplicado às cegas: cada valor assinalado é reverificado à mão contra a fonte primária antes de qualquer número mudar. Mudanças ditadas pelo calendário — um halving, uma era de emissão, um ano fiscal que começa a 1 de julho — são seguidas por datas, porque nenhum vigia de página consegue vê-las antes de acontecerem.',
+            'Toda alteração que chega ao site fica datada no registo e é publicada no changelog. As verificações que não encontram nada de errado também são registadas, para que «verificado e inalterado» se distinga de «nunca verificado».',
+            'Este processo existe porque já encontrámos erros reais nos nossos próprios números e preferimos registá-los a corrigi-los em silêncio: uma recompensa de mineração da Dash que exagerava a receita do mineiro em quatro vezes, uma estimativa de imposto sucessório japonês cerca de três vezes alta demais e uma recompensa por bloco da Kaspa dez vezes abaixo do valor real.',
+          ],
+        },
+        {
+          heading: '5. Famílias de fórmulas',
           paragraphs: [
             'Cobertura principal: Lucro/ROI, DCA/histórico e ferramentas de risco/margem.',
             'Exemplos: Lucro, ROI, DCA, E Se, Tamanho da Posição e Liquidação.',
           ],
         },
         {
-          heading: '4. Limitações e uso responsável',
+          heading: '6. Limitações conhecidas e uso responsável',
           paragraphs: [
-            'Execução real pode divergir por spread, slippage, taxas e timing de mercado.',
-            'Use os resultados como estimativas para planejamento, não como garantia.',
+            'A execução real pode divergir por spread, slippage, taxas e timing de mercado.',
           ],
+          bullets: [
+            'Sucessões — moeda: a calculadora de imposto sucessório pede o valor da carteira em USD, mas aplica os limiares de cada país na moeda desse país (iene, euro, libra). Para uma comparação aproximada chega; para uma herança real perto de um limiar, converta primeiro para a moeda local.',
+            'Sucessões — Japão: assume-se que os herdeiros recebem quotas legais iguais e o crédito fiscal do cônjuge (配偶者の税額軽減) não é modelado; ambos podem reduzir bastante uma obrigação real.',
+            'Alterações anunciadas mas ainda não em vigor não são aplicadas antecipadamente. Quando há data de início conhecida (por exemplo, um escalão australiano que desce a 1 de julho de 2027), usa-se o valor do ano corrente até essa data chegar.',
+            'O tratamento fiscal varia com a jurisdição e a estrutura da conta.',
+          ],
+          links: [{ href: '/pt/editorial-policy/', label: 'Política editorial: padrão de fontes e correções' }],
         },
       ],
     },
@@ -546,23 +613,51 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
         {
           heading: '2. Veri kaynağı ve önbellek',
           paragraphs: [
-            'Canlı fiyatlar ağırlıklı olarak CoinGecko API üzerinden alınır. Tarayıcı tarafında önbellek ve istek birleştirme uygulanır.',
+            'Bu hesaplayıcılara iki tür sayı girer ve ikisi tamamen farklı biçimde bakımı yapılır.',
+            'Canlı piyasa verisi: fiyatlar ağırlıklı olarak CoinGecko API üzerinden alınır, madencilik getirileri WhatToMine ile karşılaştırılır. Tarayıcı tarafında önbellek ve istek birleştirme uygulanır; bu değerler asla elle düzenlenmez.',
           ],
           links: [{ href: 'https://www.coingecko.com/en/api/documentation', label: 'CoinGecko API Dokümantasyonu' }],
         },
         {
-          heading: '3. Formül grupları',
+          heading: '3. Düzenleyici ve protokol sabitleri',
+          paragraphs: [
+            'Vergi oranları, elde tutma eşikleri, miras istisnaları ve protokol gerçekleri bir fiyat API\'sinden gelemez — bunlar kanundan ve mutabakat kurallarından gelir. CryptoCalk bu tür 101 sabiti (17 juridiksiyonda 79 düzenleyici değer ile protokol ve formül değerleri) sürümlenmiş bir kayıt defterinde tutar; her biri doğrulandığı birincil kaynak ve doğrulama tarihiyle birlikte.',
+            'Kaynağın özetini değil, kaynağın kendisini okuruz.',
+          ],
+          bullets: [
+            'Portekiz\'in %28 oranı ve 365 günlük istisnası doğrudan konsolide Código do IRS metninden okunur (md. 72.º ve 10.º) — bir vergi rehberi blogundan değil.',
+            'Avustralya dilimleri ATO\'nun kendi tablolarından; Almanya\'nın gelir ve veraset rakamları EStG §32a ile ErbStG §16/§19 kanun metinlerinden alınır.',
+            'Kanada\'nın %50 sermaye kazancı dahil etme oranı Gelir Vergisi Kanunu md. 38\'den, Japonya\'nın veraset dilimleri ve beyan kuralları NTA\'dan, Brezilya\'nın kademeli %15–22,5 oranı Lei 8.981\'den gelir.',
+            'Protokol gerçekleri protokolün kendisinden okunur: 546 satoshi\'lik dust eşiği Bitcoin Core\'un policy.cpp dosyasından, madencilik blok ödülleri ise zincir üzerindeki coinbase çıktılarıyla karşılaştırılarak doğrulanır.',
+          ],
+        },
+        {
+          heading: '4. Bu sabitler nasıl güncel tutuluyor',
+          paragraphs: [
+            'Otomatik bir izleyici, takip edilen her kaynak sayfasını programlı olarak yeniden okur ve değişenleri işaretler. Bir işaret asla körlemesine uygulanmaz: her işaretlenen değer, tek bir sayı bile oynamadan önce birincil kaynağa karşı elle yeniden doğrulanır. Hiçbir sayfa izleyicisinin göremeyeceği takvime bağlı değişiklikler — bir halving, bir emisyon dönemi, 1 Temmuz\'da başlayan bir vergi yılı — bunun yerine planlı tarihler olarak izlenir.',
+            'Siteye ulaşan her değişiklik kayıt defterinde tarihlenir ve changelog\'da yayımlanır. Hiçbir sorun bulmayan doğrulamalar da kaydedilir; böylece «kontrol edildi, değişmedi» ile «hiç kontrol edilmedi» birbirinden ayırt edilebilir.',
+            'Bu süreç var, çünkü kendi rakamlarımızda gerçek hatalar bulduk ve onları sessizce yamalamak yerine kaydediyoruz: madenci gelirini dört kat abartan bir Dash blok ödülü, yaklaşık üç kat yüksek çıkan bir Japonya veraset tahmini ve on kat düşük kaydedilmiş bir Kaspa blok ödülü.',
+          ],
+        },
+        {
+          heading: '5. Formül grupları',
           paragraphs: [
             'Ana kapsam: Kâr/ROI, DCA/tarihsel senaryolar ve risk/marjin araçları.',
             'Örnekler: Kâr, ROI, DCA, Ya Öyle Olsaydı, Pozisyon Boyutu ve Likidasyon.',
           ],
         },
         {
-          heading: '4. Sınırlar ve sorumlu kullanım',
+          heading: '6. Bilinen sınırlar ve sorumlu kullanım',
           paragraphs: [
             'Gerçek piyasa koşulları spread, slippage, komisyon ve zamanlamadan etkilenir.',
-            'Sonuçları planlama tahmini olarak kullanın; kesin sonuç olarak değil.',
           ],
+          bullets: [
+            'Veraset — para birimi: veraset hesaplayıcısı portföy değerini USD olarak ister, ancak her ülkenin eşiklerini o ülkenin kendi para biriminde (yen, euro, sterlin) uygular. Kaba karşılaştırma için yeterlidir; bir eşiğin yakınındaki gerçek bir miras için önce yerel para birimine çevirin.',
+            'Veraset — Japonya: mirasçıların eşit yasal paylar aldığı varsayılır ve eş vergi indirimi (配偶者の税額軽減) modellenmez; ikisi de gerçek bir yükümlülüğü belirgin biçimde azaltabilir.',
+            'Açıklanmış ama henüz yürürlüğe girmemiş değişiklikler erkenden uygulanmaz. Başlangıç tarihi bilinen durumlarda (örneğin 1 Temmuz 2027\'de düşecek bir Avustralya dilimi) o tarih gelene kadar cari yıl rakamı kullanılır.',
+            'Vergi uygulaması juridiksiyona ve hesap yapısına göre değişebilir.',
+          ],
+          links: [{ href: '/tr/editorial-policy/', label: 'Editör politikası: kaynak standardı ve düzeltmeler' }],
         },
       ],
     },
@@ -663,6 +758,8 @@ if (!content) {
 }
 
 const pageUrl = `https://cryptocalk.com/${lang}/${policy}/`;
+// dd/mm/yyyy -> ISO, so the schema date and the visible date can never disagree.
+const [updDay, updMonth, updYear] = (UPDATED_OVERRIDES[policy]?.[lang] ?? LAST_UPDATED).split('/');
 const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
@@ -670,6 +767,8 @@ const webPageSchema = {
   url: pageUrl,
   description: content.metaDescription,
   inLanguage: lang,
+  dateModified: `${updYear}-${updMonth}-${updDay}`,
+  author: { '@type': 'Person', name: 'Konstantin Iakovlev', url: 'https://cryptocalk.com/about/' },
 };
 ---
 
@@ -678,7 +777,7 @@ const webPageSchema = {
   <main id="main-content" class="policy-page">
     <article class="policy-card">
       <h1>{content.heading}</h1>
-      <p class="meta">{content.updatedLabel}: {LAST_UPDATED}</p>
+      <p class="meta">{content.updatedLabel}: {UPDATED_OVERRIDES[policy]?.[lang] ?? LAST_UPDATED}</p>
 
       <p>{content.intro}</p>
 

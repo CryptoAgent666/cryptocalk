@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-const lastUpdated = '20/02/2026';
+const lastUpdated = '23/08/2026';
 const pageUrl = 'https://cryptocalk.com/editorial-policy/';
 const webPageSchema = {
   '@context': 'https://schema.org',
@@ -12,6 +12,8 @@ const webPageSchema = {
   url: pageUrl,
   description: 'CryptoCalk editorial policy: how calculator pages are written, reviewed, updated, and corrected.',
   inLanguage: 'en',
+  dateModified: '2026-08-23',
+  author: { '@type': 'Person', name: 'Konstantin Iakovlev', url: 'https://cryptocalk.com/about/' },
 };
 ---
 
@@ -42,6 +44,18 @@ const webPageSchema = {
       <p>
         Market prices and selected metadata are pulled from public API sources (primarily CoinGecko). Formula definitions are based on standard financial and trading math used in public documentation and exchange education centers.
       </p>
+      <p>
+        For anything set by law or by protocol consensus — tax rates, holding periods, inheritance allowances, block rewards, validator minimums — we hold a stricter standard:
+      </p>
+      <ul>
+        <li><strong>Primary sources only.</strong> The statute, the tax authority, or the protocol's own code. A tax-guide article may point us at a change, but it is never the source we record.</li>
+        <li><strong>Every constant is dated.</strong> Each of the 101 tracked values carries the source it was verified against and the date of that verification.</li>
+        <li><strong>Re-verification is scheduled, not incidental.</strong> An automated monitor re-reads the source pages; separately, changes with known effective dates (halvings, emission eras, tax years) are tracked on a calendar, because no page-watcher can see a date that has not arrived yet.</li>
+        <li><strong>A flag is not a change.</strong> When the monitor reports that a source moved, a human re-reads the primary source before any number on the site moves. Checks that confirm the existing value are recorded too.</li>
+      </ul>
+      <p>
+        The <a href="/methodology/">methodology page</a> lists the specific sources used per jurisdiction.
+      </p>
 
       <h2>3. Review Process</h2>
       <p>
@@ -67,12 +81,18 @@ const webPageSchema = {
 
       <h2>5. Corrections Policy</h2>
       <p>
-        If an error is found, we prioritise correction over rewrite. Material corrections are reflected in project changelog records so updates remain auditable.
+        If an error is found, we prioritise correction over rewrite. Material corrections are reflected in the public <a href="/updates/">changelog</a> so updates remain auditable, and we do not silently restate history: an old dated entry stays as written and a new dated entry records the fix.
+      </p>
+      <p>
+        We publish our own mistakes. Past corrections include a Dash mining reward that overstated miner revenue roughly fourfold (the stored figure was the whole in-block coinbase, of which a miner receives a quarter), a Japanese inheritance estimate about three times too high (a single band rate had been applied to the whole estate instead of the statutory per-heir method), and a Kaspa block reward recorded ten times too low. Each is described in the <a href="/methodology/">methodology</a>.
+      </p>
+      <p>
+        If you believe a number here is wrong, <a href="/contact/">write to us</a> with the source you are comparing against. Reports that identify a specific primary source are acted on first.
       </p>
 
       <h2>6. Conflict and Monetisation Disclosure</h2>
       <p>
-        We do not use affiliate links in calculator experiences. Monetisation will never alter formula logic or ranking methodology for calculator outputs.
+        This site is free and funded solely by display advertising. We do not use affiliate links anywhere on CryptoCalk — there are no referral parameters on any outbound link, and we earn nothing if you open an account with an exchange, broker, or wallet. There are no sponsored placements, no paid inclusion in any comparison, and no advertiser input into default values or recommendations. Monetisation will never alter formula logic or ranking methodology for calculator outputs.
       </p>
 
       <h2>7. Financial Risk Notice</h2>

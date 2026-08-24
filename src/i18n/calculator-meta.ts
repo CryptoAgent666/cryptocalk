@@ -20,7 +20,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'tax-calculator': {
       title: 'Crypto Tax Calculator 2026 — US, UK, EU Capital Gains',
-      description: 'Free 2026 crypto tax calculator for 17 countries. Estimate capital gains tax on Bitcoin, Ethereum, and altcoin trades. Compare short-term vs long-term rates for US, UK, Germany, Japan, and more.'
+      description: 'Free 2026 crypto tax calculator for 17 countries. Estimate capital gains tax on Bitcoin, Ethereum, and altcoin trades.'
     },
     'what-if': {
       title: 'What If Calculator',
@@ -36,7 +36,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'funding-rate-calculator': {
       title: 'Funding Rate Calculator — Perpetual Futures Cost',
-      description: 'Free funding rate calculator for crypto perpetual futures (Binance, Bybit, OKX). Calculate the overnight, daily, weekly, monthly, and annual cost of holding a leveraged BTC, ETH, or altcoin position.'
+      description: 'Free funding rate calculator for crypto perpetual futures (Binance, Bybit, OKX). Calculate the overnight, daily, weekly, monthly.'
     },
     'tp-sl-calculator': {
       title: 'TP / SL Calculator',
@@ -68,19 +68,19 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'apy-apr-calculator': {
       title: 'APR to APY Calculator — Convert with Compounding',
-      description: 'Free APR to APY converter and reverse APY to APR calculator. Compare daily, monthly, quarterly, and continuous compounding to find real DeFi yields and staking rewards.'
+      description: 'Free APR to APY converter and reverse APY to APR calculator. Compare daily, monthly, quarterly, and continuous compounding to find real DeFi yields.'
     },
     'yield-farming-calculator': {
       title: 'Yield Farming Calculator — Farm Profit & True APY',
-      description: 'Free DeFi yield farming and farm profit calculator. Compute net APY after gas costs, impermanent loss, and harvest frequency for Uniswap, Curve, Aave, and Yearn pools.'
+      description: 'Free DeFi yield farming and farm profit calculator. Compute net APY after gas costs, impermanent loss, and harvest frequency for Uniswap, Curve, Aave.'
     },
     'gas-calculator': {
       title: 'Gas Fee Calculator — ETH, BSC, Polygon, Arbitrum',
-      description: 'Free gas fee calculator for Ethereum, BSC, Polygon, Arbitrum, Base, and Optimism. Estimate swap, transfer, NFT mint, and DeFi costs in Gwei and USD before confirming.'
+      description: 'Free gas fee calculator for Ethereum, BSC, Polygon, Arbitrum, Base, and Optimism. Estimate swap, transfer, NFT mint.'
     },
     'uniswap-calculator': {
       title: 'Uniswap V3 Fee Calculator — LP Returns & IL',
-      description: 'Free Uniswap V3 fee calculator. Estimate LP fee income, impermanent loss, break-even time, and net returns for concentrated liquidity ranges on any V3 pool pair.'
+      description: 'Free Uniswap V3 fee calculator. Estimate LP fee income, impermanent loss, break-even time, and net returns for concentrated liquidity ranges on any V3 pool.'
     },
     'bridge-comparator': {
       title: 'Bridge Cost Comparator',
@@ -96,7 +96,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'asic-mining-calculator': {
       title: 'ASIC Miner Calculator — Profitability & Value',
-      description: 'Free ASIC miner profitability calculator for Antminer S21, Whatsminer M66, and all top models. Calculate daily profit, electricity cost, ROI, ASIC value, and break-even time.'
+      description: 'Free ASIC miner profitability calculator for Antminer S21, Whatsminer M66, and all top models. Calculate daily profit, electricity cost, ROI, ASIC value.'
     },
     'mining-roi-calculator': {
       title: 'Mining ROI Calculator',
@@ -104,11 +104,11 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'electricity-cost-calculator': {
       title: 'Bitcoin Mining Electricity Cost Calculator — kWh to $/day',
-      description: 'Mining electricity cost = watts × 24 ÷ 1,000 × your kWh rate. Work out daily, monthly, and yearly power costs for any ASIC or GPU rig, plus your break-even rate.'
+      description: 'Mining electricity cost = watts × 24 ÷ 1,000 × your kWh rate. Work out daily, monthly, and yearly power costs for any ASIC or GPU rig.'
     },
     'difficulty-calculator': {
       title: 'Bitcoin Difficulty Estimator — Next Adjustment',
-      description: 'Free Bitcoin mining difficulty estimator. Predict the next difficulty adjustment from current block intervals and see how it impacts mining revenue and breakeven hashrate.'
+      description: 'Free Bitcoin mining difficulty estimator. Predict the next difficulty adjustment from current block intervals and see how it impacts mining revenue.'
     },
     'hashrate-converter': {
       title: 'Hashrate Converter',
@@ -116,7 +116,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'market-cap-calculator': {
       title: 'Crypto Market Cap Calculator — Price from Supply',
-      description: 'Free crypto market cap calculator. Find token price from market cap and circulating supply, or calculate market cap from current price. Live data for BTC, ETH, SOL, and any altcoin.'
+      description: 'Free crypto market cap calculator. Find token price from market cap and circulating supply, or calculate market cap from current price.'
     },
     'market-cap-comparator': {
       title: 'Market Cap Comparator',
@@ -132,11 +132,11 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'hodl-vs-trade': {
       title: 'HODL vs Trade Calculator — Buy-and-Hold vs Active',
-      description: 'Free HODL vs trading simulator for Bitcoin and crypto. Compare buy-and-hold with active trading strategies. Simulate scenarios with custom win rates, profit targets, fees, and tax impact.'
+      description: 'Free HODL vs trading simulator for Bitcoin and crypto. Compare buy-and-hold with active trading strategies. Simulate scenarios with custom win rates.'
     },
     'rebalancing-calculator': {
       title: 'Crypto Portfolio Rebalancing Calculator — Lazy & Target',
-      description: 'Free crypto portfolio rebalancing tool. Calculate exact buy/sell amounts to hit target allocations or use buy-only mode for lazy rebalancing. Works with BTC, ETH, and any altcoin.'
+      description: 'Free crypto portfolio rebalancing tool. Calculate exact buy/sell amounts to hit target allocations or use buy-only mode for lazy rebalancing.'
     },
     'compound-calculator': {
       title: 'Compound Interest Calculator (Crypto)',
@@ -192,7 +192,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'gamefi-calculator': {
       title: 'GameFi ROI Calculator — Play-to-Earn Profitability',
-      description: 'Free GameFi and play-to-earn (P2E) ROI calculator. Estimate payback period and annual return for crypto game strategies based on setup cost, token rewards, energy drops, and running expenses.'
+      description: 'Free GameFi and play-to-earn (P2E) ROI calculator. Estimate payback period and annual return for crypto game strategies based on setup cost, token rewards.'
     },
     'node-calculator': {
       title: 'Validator Node Calculator',
@@ -232,7 +232,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'leverage-calculator': {
       title: 'Crypto Leverage Calculator — Position Size & Liquidation',
-      description: 'Free crypto leverage trading calculator. See how 5x, 10x, 25x, 50x leverage amplifies gains and losses, find your liquidation distance, and compare PnL side-by-side.'
+      description: 'Free crypto leverage trading calculator. See how 5x, 10x, 25x, 50x leverage amplifies gains and losses, find your liquidation distance.'
     },
     'loan-calculator': {
       title: 'Crypto Loan Repayment Calculator',
@@ -480,7 +480,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'depin-earnings-calculator': {
       title: 'DePIN Earnings Calculator — Helium, Hivemapper, NATIX',
-      description: 'Free DePIN passive income calculator for Helium, Hivemapper, NATIX, Geodnet, XNET. Estimate daily/monthly earnings, hardware payback, ROI on decentralized physical infrastructure.'
+      description: 'Free DePIN passive income calculator for Helium, Hivemapper, NATIX, Geodnet, XNET. Estimate daily/monthly earnings, hardware payback.'
     },
     'lp-value-calculator': {
       title: 'LP Value Calculator — Uniswap, Curve, Balancer Pools',
@@ -488,31 +488,31 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'trailing-stop-loss-calculator': {
       title: 'Trailing Stop Loss Calculator — Crypto Profit Lock',
-      description: 'Free crypto trailing stop loss calculator. Lock in profits as price rises while limiting downside. Compute trailing distance, breakeven, and profit at trigger for BTC, ETH, altcoins.'
+      description: 'Free crypto trailing stop loss calculator. Lock in profits as price rises while limiting downside. Compute trailing distance, breakeven.'
     },
     'rwa-yield-calculator': {
       title: 'RWA Yield Calculator — Tokenized Treasuries & Private Credit',
-      description: 'Free Real-World Assets (RWA) yield calculator. Compare tokenized US Treasuries (Ondo, BlackRock BUIDL), private credit (Maple, Centrifuge), real estate. 4-12% APY ranges with risk modeling.'
+      description: 'Free Real-World Assets (RWA) yield calculator. Compare tokenized US Treasuries (Ondo, BlackRock BUIDL), private credit (Maple, Centrifuge), real estate.'
     },
     'polymarket-odds-calculator': {
       title: 'Polymarket Odds Calculator — Probability & Payout',
-      description: 'Free Polymarket odds calculator. Convert market prices ($0.65) to implied probability (65%), calculate bet payout, hedge positions, and find arbitrage opportunities across prediction markets.'
+      description: 'Free Polymarket odds calculator. Convert market prices ($0.65) to implied probability (65%), calculate bet payout, hedge positions.'
     },
     'crypto-card-cashback-calculator': {
       title: 'Crypto Card Cashback Calculator — Gemini, Coinbase, Venmo',
-      description: 'Free crypto credit card cashback calculator. Compare Gemini (4% gas/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase rewards. Find annual BTC/ETH earnings from your spending profile.'
+      description: 'Free crypto credit card cashback calculator. Compare Gemini (4% gas/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase rewards.'
     },
     'mining-coin-switcher-calculator': {
       title: 'Multi-Coin Mining Switcher — Best Coin to Mine Now',
-      description: 'Free multi-coin mining profitability switcher. Find the most profitable coin to mine right now with your hardware (RTX 4090, RTX 3080, Antminer S21). Live difficulty + price across BTC, KAS, RVN, ERG, FLUX.'
+      description: 'Free multi-coin mining profitability switcher. Find the most profitable coin to mine right now with your hardware (RTX 4090, RTX 3080, Antminer S21).'
     },
     'ai-token-sector-calculator': {
       title: 'AI Crypto Token Sector Calculator — TAO, RENDER, FET',
-      description: 'Free AI crypto sector calculator. Track Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin portfolio. Sector market cap aggregation, scenario modeling, sector rotation analysis.'
+      description: 'Free AI crypto sector calculator. Track Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin portfolio.'
     },
     'wallet-net-worth-calculator': {
       title: 'Crypto Wallet Net Worth Calculator — Multi-Chain Tracker',
-      description: 'Free crypto wallet net worth tracker. Calculate total holdings value across Ethereum, Solana, BSC, Polygon. Multi-chain portfolio aggregation with live prices for any wallet address.'
+      description: 'Free crypto wallet net worth tracker. Calculate total holdings value across Ethereum, Solana, BSC and Polygon, with live prices and multi-chain totals.'
     },
   },
   'es': {
@@ -553,7 +553,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Calculadora de Funding Rate gratuita para futuros perpetuos. Calcula el coste diario, semanal, mensual y anual de mantener una posición apalancada.'
     },
     'tp-sl-calculator': {
-      title: 'Calculadora TP / SL',
+      title: 'Calculadora TP / SL — Take Profit y Stop Loss',
       description: 'Calculadora TP/SL gratuita para traders de cripto. Establece niveles óptimos de take-profit y stop-loss con ratio R:R, TPs parciales y escala visual de precios.'
     },
     'margin-calculator': {
@@ -950,7 +950,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'mayer-multiple-calculator': {
       title: 'Calculadora del Múltiplo de Mayer',
-      description: 'Calculadora del Múltiplo de Mayer: precio actual de BTC ÷ media móvil de 200 días. Por encima de 2,4 = zona de venta histórica; por debajo de 1,0 = zona de compra.'
+      description: 'Calculadora del Múltiplo de Mayer: precio actual de BTC ÷ media móvil de 200 días. Por encima de 2,4 = zona de venta histórica; por debajo de 1.'
     },
     'geometric-mean-return-calculator': {
       title: 'Calculadora de Media Geométrica de Retornos',
@@ -994,7 +994,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'depin-earnings-calculator': {
       title: 'Calculadora de Ingresos DePIN — Helium, Hivemapper, NATIX',
-      description: 'Calculadora gratis de ingresos pasivos DePIN para Helium, Hivemapper, NATIX, Geodnet, XNET. Estima ganancias diarias/mensuales, recuperación de hardware y ROI de infraestructura física descentralizada.'
+      description: 'Calculadora gratis de ingresos pasivos DePIN para Helium, Hivemapper, NATIX, Geodnet, XNET. Estima ganancias diarias/mensuales.'
     },
     'lp-value-calculator': {
       title: 'Calculadora de Valor LP — Pools Uniswap, Curve, Balancer',
@@ -1002,31 +1002,31 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'trailing-stop-loss-calculator': {
       title: 'Calculadora de Trailing Stop Loss — Bloqueo de Ganancias Cripto',
-      description: 'Calculadora gratis de trailing stop loss para crypto. Bloquea ganancias mientras el precio sube limitando el riesgo. Calcula distancia de trailing, breakeven y profit al disparo para BTC, ETH, altcoins.'
+      description: 'Calculadora gratis de trailing stop loss para crypto. Bloquea ganancias mientras el precio sube limitando el riesgo.'
     },
     'rwa-yield-calculator': {
       title: 'Calculadora de Rendimiento RWA — Treasuries y Crédito Privado',
-      description: 'Calculadora gratis de rendimiento RWA (Activos del Mundo Real). Compara Treasuries tokenizados (Ondo, BlackRock BUIDL), crédito privado (Maple, Centrifuge), inmuebles. APY de 4-12% con modelado de riesgo.'
+      description: 'Calculadora gratis de rendimiento RWA (Activos del Mundo Real). Compara Treasuries tokenizados (Ondo, BlackRock BUIDL), crédito privado (Maple, Centrifuge).'
     },
     'polymarket-odds-calculator': {
       title: 'Calculadora de Cuotas Polymarket — Probabilidad y Pago',
-      description: 'Calculadora gratis de cuotas Polymarket. Convierte precios de mercado ($0.65) a probabilidad implícita (65%), calcula payout de apuestas, cobertura y arbitraje en mercados de predicción.'
+      description: 'Calculadora gratis de cuotas Polymarket. Convierte precios de mercado ($0.65) a probabilidad implícita (65%), calcula payout de apuestas.'
     },
     'crypto-card-cashback-calculator': {
       title: 'Calculadora de Cashback Tarjeta Cripto — Gemini, Coinbase, Venmo',
-      description: 'Calculadora gratis de cashback de tarjetas cripto. Compara Gemini (4% gas/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase. Encuentra ganancias anuales en BTC/ETH según tu perfil de gasto.'
+      description: 'Calculadora gratis de cashback de tarjetas cripto. Compara Gemini (4% gas/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase.'
     },
     'mining-coin-switcher-calculator': {
       title: 'Selector de Minería Multi-Moneda — Mejor Moneda para Minar',
-      description: 'Selector gratis de rentabilidad de minería multi-moneda. Encuentra la moneda más rentable para minar ahora con tu hardware (RTX 4090, RTX 3080, Antminer S21). Dificultad y precio en vivo para BTC, KAS, RVN, ERG, FLUX.'
+      description: 'Selector gratis de rentabilidad de minería multi-moneda. Encuentra la moneda más rentable para minar ahora con tu hardware (RTX 4090, RTX 3080, Antminer S21).'
     },
     'ai-token-sector-calculator': {
       title: 'Calculadora del Sector de Tokens IA — TAO, RENDER, FET',
-      description: 'Calculadora gratis del sector cripto de IA. Rastrea Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin. Agregación de capitalización del sector, modelado de escenarios, análisis de rotación.'
+      description: 'Calculadora gratis del sector cripto de IA. Rastrea Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin.'
     },
     'wallet-net-worth-calculator': {
       title: 'Calculadora de Patrimonio de Wallet Cripto — Multi-Cadena',
-      description: 'Rastreador gratis de patrimonio de wallet cripto. Calcula el valor total de holdings en Ethereum, Solana, BSC, Polygon. Agregación multi-cadena con precios en vivo para cualquier dirección de wallet.'
+      description: 'Rastreador gratis de patrimonio de wallet cripto. Calcula el valor total de holdings en Ethereum, Solana, BSC, Polygon.'
     },
   },
   'pt': {
@@ -1067,7 +1067,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
       description: 'Calculadora de Funding Rate gratuita para futuros perpétuos. Calcule o custo diário, semanal, mensal e anual de manter uma posição alavancada.'
     },
     'tp-sl-calculator': {
-      title: 'Calculadora TP / SL',
+      title: 'Calculadora TP / SL — Take Profit e Stop Loss',
       description: 'Calculadora TP/SL gratuita para traders de cripto. Defina níveis ideais de take-profit e stop-loss com razão R:R, TPs parciais e escala visual de preços.'
     },
     'margin-calculator': {
@@ -1508,7 +1508,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'depin-earnings-calculator': {
       title: 'Calculadora de Rendimentos DePIN — Helium, Hivemapper, NATIX',
-      description: 'Calculadora gratuita de renda passiva DePIN para Helium, Hivemapper, NATIX, Geodnet, XNET. Estime ganhos diários/mensais, payback de hardware e ROI de infraestrutura física descentralizada.'
+      description: 'Calculadora gratuita de renda passiva DePIN para Helium, Hivemapper, NATIX, Geodnet, XNET. Estime ganhos diários/mensais.'
     },
     'lp-value-calculator': {
       title: 'Calculadora de Valor LP — Pools Uniswap, Curve, Balancer',
@@ -1516,31 +1516,31 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'trailing-stop-loss-calculator': {
       title: 'Calculadora Trailing Stop Loss — Trava de Lucro Cripto',
-      description: 'Calculadora gratuita de trailing stop loss para crypto. Trave lucros enquanto o preço sobe limitando o risco. Calcule distância de trailing, breakeven e profit no gatilho para BTC, ETH, altcoins.'
+      description: 'Calculadora gratuita de trailing stop loss para crypto. Trave lucros enquanto o preço sobe limitando o risco. Calcule distância de trailing.'
     },
     'rwa-yield-calculator': {
       title: 'Calculadora de Rendimento RWA — Treasuries Tokenizados',
-      description: 'Calculadora gratuita de rendimento RWA (Ativos do Mundo Real). Compare Treasuries tokenizados (Ondo, BlackRock BUIDL), crédito privado (Maple, Centrifuge), imóveis. APY 4-12% com modelagem de risco.'
+      description: 'Calculadora gratuita de rendimento RWA (Ativos do Mundo Real). Compare Treasuries tokenizados (Ondo, BlackRock BUIDL), crédito privado (Maple, Centrifuge).'
     },
     'polymarket-odds-calculator': {
       title: 'Calculadora de Odds Polymarket — Probabilidade e Payout',
-      description: 'Calculadora gratuita de odds Polymarket. Converta preços de mercado ($0.65) em probabilidade implícita (65%), calcule payout de apostas, hedge e arbitragem em mercados de previsão.'
+      description: 'Calculadora gratuita de odds Polymarket. Converta preços de mercado ($0.65) em probabilidade implícita (65%), calcule payout de apostas.'
     },
     'crypto-card-cashback-calculator': {
       title: 'Calculadora de Cashback Cartão Cripto — Gemini, Coinbase, Venmo',
-      description: 'Calculadora gratuita de cashback de cartões cripto. Compare Gemini (4% gás/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase. Descubra ganhos anuais em BTC/ETH conforme seu perfil de gasto.'
+      description: 'Calculadora gratuita de cashback de cartões cripto. Compare Gemini (4% gás/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase.'
     },
     'mining-coin-switcher-calculator': {
       title: 'Seletor de Mineração Multi-Moeda — Melhor Moeda Para Minerar',
-      description: 'Seletor gratuito de rentabilidade de mineração multi-moeda. Encontre a moeda mais lucrativa para minerar agora com seu hardware (RTX 4090, RTX 3080, Antminer S21). Dificuldade e preço ao vivo para BTC, KAS, RVN, ERG, FLUX.'
+      description: 'Seletor gratuito de rentabilidade de mineração multi-moeda. Encontre a moeda mais lucrativa para minerar agora com seu hardware (RTX 4090, RTX 3080, Antminer.'
     },
     'ai-token-sector-calculator': {
       title: 'Calculadora do Setor de Tokens IA — TAO, RENDER, FET',
-      description: 'Calculadora gratuita do setor cripto de IA. Acompanhe Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin. Agregação de market cap, modelagem de cenários, análise de rotação setorial.'
+      description: 'Calculadora gratuita do setor cripto de IA. Acompanhe Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin.'
     },
     'wallet-net-worth-calculator': {
       title: 'Calculadora de Patrimônio de Wallet Cripto — Multi-Chain',
-      description: 'Rastreador gratuito de patrimônio de wallet cripto. Calcule o valor total de holdings em Ethereum, Solana, BSC, Polygon. Agregação multi-chain com preços ao vivo para qualquer endereço.'
+      description: 'Rastreador gratuito de patrimônio de wallet cripto. Calcule o valor total de holdings em Ethereum, Solana, BSC, Polygon.'
     },
   },
   'tr': {
@@ -2022,39 +2022,39 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'depin-earnings-calculator': {
       title: 'DePIN Kazanç Hesaplayıcı — Helium, Hivemapper, NATIX',
-      description: 'Helium, Hivemapper, NATIX, Geodnet, XNET için ücretsiz DePIN pasif gelir hesaplayıcı. Günlük/aylık kazanç, donanım geri ödemesi ve merkeziyetsiz fiziksel altyapı ROI tahminleri.'
+      description: 'Helium, Hivemapper, NATIX, Geodnet, XNET için ücretsiz DePIN pasif gelir hesaplayıcı. Günlük/aylık kazanç, donanım geri ödemesi ve merkeziyetsiz fiziksel.'
     },
     'lp-value-calculator': {
       title: 'LP Değer Hesaplayıcı — Uniswap, Curve, Balancer Havuzları',
-      description: 'Uniswap V2/V3, Curve, Balancer, Sushi havuzları için ücretsiz LP pozisyon değer takibi. Mevcut LP token değeri, kazanılan ücretler ve HODL\'a karşı net P&L hesaplayın.'
+      description: 'Uniswap V2/V3, Curve, Balancer, Sushi havuzları için ücretsiz LP pozisyon değer takibi. Mevcut LP token değeri ve kazanılan ücretleri hesaplayın.'
     },
     'trailing-stop-loss-calculator': {
       title: 'Takip Eden Stop Loss Hesaplayıcı — Kripto Kâr Kilitleme',
-      description: 'Kripto için ücretsiz takip eden stop loss hesaplayıcı. Fiyat yükselirken kârları kilitleyin ve riski sınırlayın. BTC, ETH ve altcoinler için trailing mesafesi, breakeven ve tetiklenme kârını hesaplayın.'
+      description: 'Kripto için ücretsiz takip eden stop loss hesaplayıcı. Fiyat yükselirken kârları kilitleyin ve riski sınırlayın.'
     },
     'rwa-yield-calculator': {
       title: 'RWA Getiri Hesaplayıcı — Tokenize Hazine & Özel Kredi',
-      description: 'Ücretsiz Gerçek Dünya Varlıkları (RWA) getiri hesaplayıcı. Tokenize ABD Hazinelerini (Ondo, BlackRock BUIDL), özel krediyi (Maple, Centrifuge), gayrimenkulü karşılaştırın. Risk modellemesi ile %4-12 APY aralıkları.'
+      description: 'Ücretsiz Gerçek Dünya Varlıkları (RWA) getiri hesaplayıcı. Tokenize ABD Hazinelerini (Ondo, BlackRock BUIDL), özel krediyi (Maple, Centrifuge).'
     },
     'polymarket-odds-calculator': {
       title: 'Polymarket Oran Hesaplayıcı — Olasılık ve Ödeme',
-      description: 'Ücretsiz Polymarket oran hesaplayıcı. Pazar fiyatlarını ($0.65) örtülü olasılığa (%65) dönüştürün, bahis ödemesi, hedge pozisyonları ve tahmin pazarlarında arbitraj fırsatlarını hesaplayın.'
+      description: 'Ücretsiz Polymarket oran hesaplayıcı. Pazar fiyatlarını ($0.65) örtülü olasılığa (%65) dönüştürün, bahis ödemesi.'
     },
     'crypto-card-cashback-calculator': {
       title: 'Kripto Kart Cashback Hesaplayıcı — Gemini, Coinbase, Venmo',
-      description: 'Ücretsiz kripto kredi kartı cashback hesaplayıcı. Gemini (%4 gaz/EV), Coinbase One (%4), Venmo (%3/%2/%1), Coinbase ödüllerini karşılaştırın. Harcama profilinizden yıllık BTC/ETH kazançlarını bulun.'
+      description: 'Ücretsiz kripto kredi kartı cashback hesaplayıcı. Gemini (%4 gaz/EV), Coinbase One (%4), Venmo (%3/%2/%1), Coinbase ödüllerini karşılaştırın.'
     },
     'mining-coin-switcher-calculator': {
       title: 'Çoklu-Coin Madencilik Seçici — En Kârlı Coin Hangisi',
-      description: 'Ücretsiz çoklu-coin madencilik kârlılık seçici. Donanımınızla (RTX 4090, RTX 3080, Antminer S21) şu an madenciliği en kârlı coini bulun. BTC, KAS, RVN, ERG, FLUX için canlı zorluk ve fiyat.'
+      description: 'Ücretsiz çoklu-coin madencilik kârlılık seçici. Donanımınızla (RTX 4090, RTX 3080, Antminer S21) şu an madenciliği en kârlı coini bulun.'
     },
     'ai-token-sector-calculator': {
       title: 'AI Kripto Token Sektör Hesaplayıcı — TAO, RENDER, FET',
-      description: 'Ücretsiz AI kripto sektör hesaplayıcı. Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin portföyünü takip edin. Sektör piyasa değeri toplama, senaryo modelleme, sektör rotasyon analizi.'
+      description: 'Ücretsiz AI kripto sektör hesaplayıcı. Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin portföyünü takip edin.'
     },
     'wallet-net-worth-calculator': {
       title: 'Kripto Cüzdan Net Değer Hesaplayıcı — Çoklu-Zincir Takip',
-      description: 'Ücretsiz kripto cüzdan net değer takipçisi. Ethereum, Solana, BSC, Polygon\'daki toplam holding değerini hesaplayın. Herhangi bir cüzdan adresi için çoklu-zincir portföy toplama.'
+      description: 'Ücretsiz kripto cüzdan net değer takipçisi. Ethereum, Solana, BSC, Polygon\'daki toplam holding değerini hesaplayın. toplama.'
     },
   },
   'hi': {
@@ -2536,7 +2536,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'depin-earnings-calculator': {
       title: 'DePIN कमाई कैलकुलेटर — Helium, Hivemapper, NATIX',
-      description: 'Helium, Hivemapper, NATIX, Geodnet, XNET के लिए मुफ़्त DePIN पैसिव इनकम कैलकुलेटर। दैनिक/मासिक कमाई, हार्डवेयर पेबैक और विकेंद्रीकृत भौतिक अवसंरचना ROI का अनुमान लगाएँ।'
+      description: 'Helium, Hivemapper, NATIX, Geodnet, XNET के लिए मुफ़्त DePIN पैसिव इनकम कैलकुलेटर। दैनिक/मासिक कमाई, हार्डवेयर पेबैक और विकेंद्रीकृत भौतिक अवसंरचना ROI का.'
     },
     'lp-value-calculator': {
       title: 'LP मूल्य कैलकुलेटर — Uniswap, Curve, Balancer पूल',
@@ -2544,31 +2544,31 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'trailing-stop-loss-calculator': {
       title: 'Trailing Stop Loss कैलकुलेटर — क्रिप्टो प्रॉफिट लॉक',
-      description: 'क्रिप्टो के लिए मुफ़्त trailing stop loss कैलकुलेटर। कीमत बढ़ने पर मुनाफ़ा लॉक करें और नुकसान सीमित करें। BTC, ETH, altcoins के लिए trailing distance, breakeven और trigger पर profit की गणना करें।'
+      description: 'क्रिप्टो के लिए मुफ़्त trailing stop loss कैलकुलेटर। कीमत बढ़ने पर मुनाफ़ा लॉक करें और नुकसान सीमित करें। BTC, ETH, altcoins के लिए trailing distance.'
     },
     'rwa-yield-calculator': {
       title: 'RWA यील्ड कैलकुलेटर — टोकनाइज़्ड ट्रेज़री और प्राइवेट क्रेडिट',
-      description: 'मुफ़्त रियल-वर्ल्ड एसेट्स (RWA) यील्ड कैलकुलेटर। टोकनाइज़्ड US Treasuries (Ondo, BlackRock BUIDL), private credit (Maple, Centrifuge), रियल एस्टेट की तुलना करें। जोखिम मॉडलिंग के साथ 4-12% APY रेंज।'
+      description: 'मुफ़्त रियल-वर्ल्ड एसेट्स (RWA) यील्ड कैलकुलेटर। टोकनाइज़्ड US Treasuries (Ondo, BlackRock BUIDL), private credit (Maple, Centrifuge).'
     },
     'polymarket-odds-calculator': {
       title: 'Polymarket Odds कैलकुलेटर — संभावना और पेआउट',
-      description: 'मुफ़्त Polymarket odds कैलकुलेटर। मार्केट प्राइस ($0.65) को निहित संभावना (65%) में बदलें, बेट पेआउट, हेज पोज़िशन और प्रिडिक्शन मार्केट्स में आर्बिट्राज अवसरों की गणना करें।'
+      description: 'मुफ़्त Polymarket odds कैलकुलेटर। मार्केट प्राइस ($0.65) को निहित संभावना (65%) में बदलें, बेट पेआउट, हेज पोज़िशन और प्रिडिक्शन मार्केट्स में आर्बिट्राज.'
     },
     'crypto-card-cashback-calculator': {
       title: 'Crypto Card Cashback कैलकुलेटर — Gemini, Coinbase, Venmo',
-      description: 'मुफ़्त crypto credit card cashback कैलकुलेटर। Gemini (4% gas/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase रिवॉर्ड्स की तुलना करें। अपने खर्च प्रोफ़ाइल से सालाना BTC/ETH कमाई पाएँ।'
+      description: 'मुफ़्त crypto credit card cashback कैलकुलेटर। Gemini (4% gas/EV), Coinbase One (4%), Venmo (3%/2%/1%), Coinbase रिवॉर्ड्स की तुलना करें। अपने खर्च प्रोफ़ाइल.'
     },
     'mining-coin-switcher-calculator': {
       title: 'मल्टी-कॉइन माइनिंग स्विचर — अभी सबसे लाभदायक कॉइन',
-      description: 'मुफ़्त मल्टी-कॉइन माइनिंग प्रॉफिटेबिलिटी स्विचर। अपने हार्डवेयर (RTX 4090, RTX 3080, Antminer S21) से अभी माइन करने के लिए सबसे लाभदायक कॉइन खोजें। BTC, KAS, RVN, ERG, FLUX के लिए लाइव डिफिकल्टी और प्राइस।'
+      description: 'मुफ़्त मल्टी-कॉइन माइनिंग प्रॉफिटेबिलिटी स्विचर। अपने हार्डवेयर (RTX 4090, RTX 3080, Antminer S21) से अभी माइन करने के लिए सबसे लाभदायक कॉइन खोजें। BTC, KAS.'
     },
     'ai-token-sector-calculator': {
       title: 'AI Crypto Token सेक्टर कैलकुलेटर — TAO, RENDER, FET',
-      description: 'मुफ़्त AI crypto sector कैलकुलेटर। Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin पोर्टफोलियो ट्रैक करें। सेक्टर मार्केट कैप एकत्रीकरण, परिदृश्य मॉडलिंग, सेक्टर रोटेशन विश्लेषण।'
+      description: 'मुफ़्त AI crypto sector कैलकुलेटर। Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin पोर्टफोलियो ट्रैक करें। सेक्टर मार्केट कैप एकत्रीकरण.'
     },
     'wallet-net-worth-calculator': {
       title: 'Crypto Wallet नेट वर्थ कैलकुलेटर — मल्टी-चेन ट्रैकर',
-      description: 'मुफ़्त crypto wallet net worth ट्रैकर। Ethereum, Solana, BSC, Polygon पर कुल holdings मूल्य की गणना करें। किसी भी wallet address के लिए live prices के साथ multi-chain portfolio एकत्रीकरण।'
+      description: 'मुफ़्त crypto wallet net worth ट्रैकर। Ethereum, Solana, BSC, Polygon पर कुल holdings मूल्य की गणना करें। किसी भी wallet address के लिए live prices के साथ.'
     },
   },
   'ru': {
@@ -3050,39 +3050,39 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'depin-earnings-calculator': {
       title: 'Калькулятор доходов DePIN — Helium, Hivemapper, NATIX',
-      description: 'Бесплатный калькулятор пассивного дохода DePIN для Helium, Hivemapper, NATIX, Geodnet, XNET. Оцените ежедневные/месячные награды, окупаемость оборудования и ROI децентрализованной физической инфраструктуры.'
+      description: 'Бесплатный калькулятор пассивного дохода DePIN для Helium, Hivemapper, NATIX, Geodnet, XNET. Оцените ежедневные/месячные награды.'
     },
     'lp-value-calculator': {
       title: 'Калькулятор стоимости LP — пулы Uniswap, Curve, Balancer',
-      description: 'Бесплатный трекер стоимости LP-позиций для пулов Uniswap V2/V3, Curve, Balancer, Sushi. Рассчитайте текущую стоимость LP-токенов, накопленные комиссии и чистый P&L против HODL.'
+      description: 'Бесплатный трекер стоимости LP-позиций для пулов Uniswap V2/V3, Curve, Balancer, Sushi. Рассчитайте текущую стоимость LP-токенов.'
     },
     'trailing-stop-loss-calculator': {
       title: 'Калькулятор Trailing Stop Loss — фиксация прибыли',
-      description: 'Бесплатный калькулятор скользящего стоп-лосса для крипто. Фиксируйте прибыль при росте цены, ограничивая просадку. Рассчитайте дистанцию trailing, точку безубытка и прибыль при срабатывании для BTC, ETH, альткоинов.'
+      description: 'Бесплатный калькулятор скользящего стоп-лосса для крипто. Фиксируйте прибыль при росте цены, ограничивая просадку.'
     },
     'rwa-yield-calculator': {
       title: 'Калькулятор доходности RWA — токенизированные казначейские бумаги',
-      description: 'Бесплатный калькулятор доходности RWA (реальные активы). Сравнение токенизированных Treasuries (Ondo, BlackRock BUIDL), частного кредита (Maple, Centrifuge), недвижимости. APY 4-12% с моделированием рисков.'
+      description: 'Бесплатный калькулятор доходности RWA (реальные активы). Сравнение токенизированных Treasuries (Ondo, BlackRock BUIDL), частного кредита (Maple, Centrifuge).'
     },
     'polymarket-odds-calculator': {
       title: 'Калькулятор коэффициентов Polymarket — вероятность и выплата',
-      description: 'Бесплатный калькулятор коэффициентов Polymarket. Конвертируйте цену рынка ($0,65) в вероятность (65%), рассчитайте выплату ставки, хеджирование и арбитраж на прогнозных рынках.'
+      description: 'Бесплатный калькулятор коэффициентов Polymarket. Конвертируйте цену рынка ($0,65) в вероятность (65%), рассчитайте выплату ставки.'
     },
     'crypto-card-cashback-calculator': {
       title: 'Калькулятор кешбэка крипто-карт — Gemini, Coinbase, Venmo',
-      description: 'Бесплатный калькулятор кешбэка крипто-кредитных карт. Сравните Gemini (4% бензин/EV), Coinbase One (4%), Venmo (3%/2%/1%), Bitcoin Rewards Visa. Узнайте годовой доход в BTC/ETH из вашего профиля трат.'
+      description: 'Бесплатный калькулятор кешбэка крипто-кредитных карт. Сравните Gemini (4% бензин/EV), Coinbase One (4%), Venmo (3%/2%/1%), Bitcoin Rewards Visa.'
     },
     'mining-coin-switcher-calculator': {
       title: 'Мульти-коин майнинг свитчер — лучшая монета для майнинга',
-      description: 'Бесплатный мульти-коин калькулятор прибыльности майнинга. Найдите самую прибыльную монету для майнинга прямо сейчас с вашим оборудованием (RTX 4090, RTX 3080, Antminer S21). Живая сложность и цена для BTC, KAS, RVN, ERG, FLUX.'
+      description: 'Бесплатный мульти-коин калькулятор прибыльности майнинга. Найдите самую прибыльную монету для майнинга прямо сейчас с вашим оборудованием (RTX 4090, RTX.'
     },
     'ai-token-sector-calculator': {
       title: 'Калькулятор сектора AI-токенов — TAO, RENDER, FET',
-      description: 'Бесплатный калькулятор крипто-сектора AI. Отслеживайте портфель Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin. Агрегация капитализации сектора, моделирование сценариев, анализ ротации секторов.'
+      description: 'Бесплатный калькулятор крипто-сектора AI. Отслеживайте портфель Bittensor (TAO), Render (RENDER), Fetch.ai (FET), NEAR, Worldcoin.'
     },
     'wallet-net-worth-calculator': {
       title: 'Калькулятор баланса крипто-кошелька — мульти-чейн',
-      description: 'Бесплатный трекер баланса крипто-кошелька. Рассчитайте общую стоимость холдингов в Ethereum, Solana, BSC, Polygon. Агрегация мульти-чейн портфеля с живыми ценами для любого адреса кошелька.'
+      description: 'Бесплатный трекер баланса крипто-кошелька. Рассчитайте общую стоимость холдингов в Ethereum, Solana, BSC, Polygon.'
     },
   },
 };

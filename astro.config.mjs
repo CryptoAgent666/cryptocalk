@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
-import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
+import sitemap from '@astrojs/sitemap';
 import fs from 'node:fs';
 
 // Phase-1 prune: pathnames to drop from the sitemap (also noindexed in Layout.astro). See DATA_HUB/_cryptocalk_prune_set.py.
@@ -16,11 +16,81 @@ function isPrunedUrl(pageUrl) {
   return PRUNE_NOINDEX.has(pathname);
 }
 
-const ChangeFreq = {
-  DAILY: ChangeFreqEnum.DAILY,
-  WEEKLY: ChangeFreqEnum.WEEKLY,
-  MONTHLY: ChangeFreqEnum.MONTHLY,
-};
+// Honest per-URL <lastmod> (2026-08-23). Parsed — not imported — from the two TS modules that
+// already hold the truth, so the sitemap cannot drift from what the pages themselves render:
+//   src/data/calculator-updated.ts  slug -> real last content/logic change date (from git)
+//   src/i18n/utils.ts               LOCALIZED_SPEC_SLUGS: lang -> baseSlug -> localized slug
+// Omitting lastmod (the state since the June fake-freshness fix) threw away a real crawl-scheduling
+// signal along with the fake one; stamping the build date would bring the fake one back.
+const UPDATED_BY_SLUG = (() => {
+  const src = fs.readFileSync(new URL('./src/data/calculator-updated.ts', import.meta.url), 'utf-8');
+  /** @type {Record<string,string>} */
+  const map = {};
+  for (const m of src.matchAll(/"([^"]+)":\s*"(\d{4}-\d{2}-\d{2})"/g)) map[m[1]] = m[2];
+  return map;
+})();
+
+/** lang -> localized slug -> base slug */
+const BASE_SLUG_BY_LOCALIZED = (() => {
+  const src = fs.readFileSync(new URL('./src/i18n/utils.ts', import.meta.url), 'utf-8');
+  const block = src.slice(src.indexOf('const LOCALIZED_SPEC_SLUGS'));
+  /** @type {Record<string, Record<string,string>>} */
+  const out = {};
+  let lang = null;
+  for (const line of block.split('\n')) {
+    const langMatch = line.match(/^\s{4}(es|pt|tr|hi|ru):\s*\{/);
+    if (langMatch) { lang = langMatch[1]; out[lang] = {}; continue; }
+    if (/^\s{4}\},?\s*$/.test(line)) { lang = null; continue; }
+    const pair = lang ? line.match(/'([^']+)':\s*'([^']+)'/) : null;
+    if (lang && pair) out[lang][pair[2]] = pair[1];
+    if (line.startsWith('};')) break;
+  }
+  return out;
+})();
+
+/** category slug -> newest CALCULATOR_UPDATED date among the tools that hub lists */
+const HUB_UPDATED = (() => {
+  const src = fs.readFileSync(new URL('./src/data/category-hubs.ts', import.meta.url), 'utf-8');
+  /** @type {Record<string,string>} */
+  const out = {};
+  let slug = null;
+  for (const line of src.split('\n')) {
+    const s = line.match(/^\s{4}slug:\s*'([a-z0-9-]+)'/);
+    if (s) { slug = s[1]; continue; }
+    const h = slug ? line.match(/href:\s*'\/([a-z0-9-]+)\/?'/) : null;
+    if (slug && h) {
+      const d = UPDATED_BY_SLUG[h[1]];
+      if (d && (!out[slug] || d > out[slug])) out[slug] = d;
+    }
+  }
+  return out;
+})();
+
+/**
+ * Real last-modified date for a sitemap URL, or null when we have no honest date for it —
+ * an omitted lastmod is valid; an invented one is not.
+ * @param {string} path
+ */
+function lastmodFor(path) {
+  // Cyrillic slugs arrive percent-encoded in the sitemap; the slug tables hold them decoded.
+  const parts = path
+    .replace(/^\/|\/$/g, '')
+    .split('/')
+    .filter(Boolean)
+    .map((seg) => {
+      try { return decodeURIComponent(seg); } catch { return seg; }
+    });
+  let lang = 'en';
+  if (parts.length && NON_DEFAULT_LANGS.has(parts[0])) lang = parts.shift() ?? 'en';
+  if (parts.length === 0) return UPDATED_BY_SLUG['index'] ?? null;
+  // /calculators/<category>/ (EN and localized): the hub is as fresh as the newest
+  // calculator it lists — the same date its CollectionPage schema reports.
+  if (parts.length === 2 && parts[0] === 'calculators') return HUB_UPDATED[parts[1]] ?? null;
+  if (parts.length > 1) return null;
+  const slug = parts[0];
+  const base = lang === 'en' ? slug : (BASE_SLUG_BY_LOCALIZED[lang]?.[slug] ?? slug);
+  return UPDATED_BY_SLUG[base] ?? null;
+}
 
 const NON_DEFAULT_LANGS = new Set(['es', 'pt', 'tr', 'hi', 'ru']);
 // Mirror of SPEC_CALCULATOR_SLUGS in src/i18n/utils.ts.
@@ -193,41 +263,16 @@ export default defineConfig({
     react(),
     sitemap({
       filter: (pageUrl) => !isLegacyLocalizedSpecUrl(pageUrl) && !isAliasUrl(pageUrl) && !isPrunedUrl(pageUrl),
-      // Per-page priority + changefreq for crawl-budget hints.
-      // Homepage = 1.0, top calc pages = 0.8, localized calc = 0.7, info = 0.5, others = 0.5.
+      // Only <lastmod>, and only where a real date exists. `priority` and `changefreq` were
+      // dropped on 2026-08-23: Google ignores both, and hand-tuned crawl-budget hints on a site
+      // this size were pure noise. The date is the same honest per-slug value the page renders
+      // in its schema dateModified and byline — see lastmodFor() above.
       serialize(item) {
-        const url = item.url;
-        const path = url.replace(/^https?:\/\/[^/]+/, '');
-        // Homepage (EN or localized)
-        if (path === '/' || /^\/[a-z]{2}\/$/.test(path)) {
-          item.priority = 1.0;
-          item.changefreq = ChangeFreq.DAILY;
-        }
-        // Category hubs
-        else if (path.includes('/calculators/')) {
-          item.priority = 0.8;
-          item.changefreq = ChangeFreq.WEEKLY;
-        }
-        // Top-tier EN calc pages (high-traffic, no /lang/ prefix)
-        else if (/^\/[a-z][a-z0-9-]+-calculator\/$/.test(path) || /^\/(converter|hodl-vs-trade|what-if|inflation-hedge|exchange-fees|if-i-had-bought|reverse-roi|rainbow-chart-calculator|pizza-day-calculator|millionaire-calculator)\/$/.test(path)) {
-          item.priority = 0.8;
-          item.changefreq = ChangeFreq.WEEKLY;
-        }
-        // Localized calculator pages
-        else if (/^\/[a-z]{2}\//.test(path)) {
-          item.priority = 0.7;
-          item.changefreq = ChangeFreq.WEEKLY;
-        }
-        // Info/legal pages
-        else if (/(about|contact|privacy|terms|methodology|editorial-policy|updates)/.test(path)) {
-          item.priority = 0.4;
-          item.changefreq = ChangeFreq.MONTHLY;
-        } else {
-          item.priority = 0.6;
-          item.changefreq = ChangeFreq.WEEKLY;
-        }
-        // No build-time lastmod: stamping every URL with the build date is a fake-freshness signal.
-        // (Omitting lastmod is valid; honest per-page dates live in page schema dateModified.)
+        const path = item.url.replace(/^https?:\/\/[^/]+/, '');
+        delete item.priority;
+        delete item.changefreq;
+        const lastmod = lastmodFor(path);
+        if (lastmod) item.lastmod = `${lastmod}T00:00:00+00:00`;
         return item;
       },
     }),

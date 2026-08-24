@@ -10,7 +10,7 @@ import { CALCULATOR_CATEGORY, CATEGORY_NAMES } from "../data/calculator-category
 import { CALCULATOR_UPDATED } from "../data/calculator-updated";
 import { getActiveSections } from "../data/calculator-sections";
 import { defaultFaqByLang } from "../i18n/faq-dictionary";
-import { CATEGORY_SOURCES } from "../data/category-sources";
+import { CATEGORY_SOURCES, localizedSourceNote } from "../data/category-sources";
 import { CALCULATOR_FAQ } from "../i18n/calculator-faq";
 import { seoBodyText } from "../i18n/seo-body-text";
 import { calculatorSeoContent } from "../i18n/calculator-seo-content";
@@ -57,6 +57,11 @@ const localizedMeta = getLocalizedCalculatorMeta(
   description
 );
 const localizedTitle = localizedMeta.title;
+// Google truncates the title around 60 characters, and the brand suffix is the half that
+// gets cut — so on long descriptive titles it costs a keyword and buys nothing. Append it
+// only when the whole thing still fits (21 pages were over the limit before 2026-08-23).
+const brandedTitle =
+  `${localizedTitle} — CryptoCalk`.length <= 60 ? `${localizedTitle} — CryptoCalk` : localizedTitle;
 const localizedDescription = localizedMeta.description;
 
 const STYLE_BLOCK_RE = /<style(?:\s[^>]*)?>([\s\S]*?)<\/style>/g;
@@ -472,7 +477,7 @@ const howToSchema = howToSteps.length >= 3 ? {
 ---
 
 <Layout
-  title={`${localizedTitle} — CryptoCalk`}
+  title={brandedTitle}
   description={localizedDescription}
   lang={lang}
 >
@@ -611,7 +616,7 @@ const howToSchema = howToSteps.length >= 3 ? {
               {categorySources.map((s) => (
                 <li>
                   <a href={s.url} target="_blank" rel="noopener nofollow">{s.name}</a>
-                  {' — '}<span class="source-note">{s.note}</span>
+                  {' — '}<span class="source-note">{localizedSourceNote(s.note, lang)}</span>
                 </li>
               ))}
             </ul>

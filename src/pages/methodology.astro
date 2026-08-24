@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-const lastUpdated = '20/02/2026';
+const lastUpdated = '23/08/2026';
 const pageUrl = 'https://cryptocalk.com/methodology/';
 const webPageSchema = {
   '@context': 'https://schema.org',
@@ -13,6 +13,8 @@ const webPageSchema = {
   description:
     'How CryptoCalk calculator outputs are computed, validated, and interpreted across profit, DCA, tax, mining, and risk tools.',
   inLanguage: 'en',
+  dateModified: '2026-08-23',
+  author: { '@type': 'Person', name: 'Konstantin Iakovlev', url: 'https://cryptocalk.com/about/' },
 };
 ---
 
@@ -41,11 +43,51 @@ const webPageSchema = {
 
       <h2>2. Data Sources</h2>
       <p>
-        Live prices are primarily sourced from CoinGecko API endpoints. For stability and speed, client requests are cached and deduplicated in-browser.
+        Two kinds of numbers enter these calculators, and they are maintained in completely different ways.
+      </p>
+
+      <h3>Live market data</h3>
+      <p>
+        Prices, network difficulty and mining yields are fetched at page load. Prices come primarily from CoinGecko; mining yields are cross-checked against WhatToMine. Client requests are cached and deduplicated in-browser. These values are as fresh as the upstream API and are never hand-edited.
       </p>
       <ul>
         <li><a href="https://www.coingecko.com/en/api/documentation" target="_blank" rel="nofollow noopener noreferrer">CoinGecko API Documentation</a></li>
       </ul>
+
+      <h3>Regulatory and protocol constants</h3>
+      <p>
+        Tax rates, holding-period thresholds, inheritance allowances and protocol facts cannot come from a price API — they come from law and from consensus rules. CryptoCalk tracks <strong>101 such constants</strong> (79 regulatory across 17 jurisdictions, plus protocol and formula values) in a versioned ledger, each with the primary source it was verified against and the date of that verification.
+      </p>
+      <p>
+        We read the primary source, not a summary of it. Examples of what that means in practice:
+      </p>
+      <ul>
+        <li>Portugal's 28% rate and 365-day exclusion are read from the consolidated <em>Código do IRS</em> itself (art. 72.º n.º 1 al. c) and art. 10.º n.º 22) — not from a tax-guide blog.</li>
+        <li>Australian resident bands come from the ATO's own rate tables; Germany's income and inheritance figures from the statutory texts of EStG §32a and ErbStG §16/§19.</li>
+        <li>Canada's 50% capital-gains inclusion is taken from the Income Tax Act s.38; Japan's inheritance bands and filing rules from the NTA; Brazil's progressive 15–22.5% from Lei 8.981.</li>
+        <li>Protocol facts are read from the protocol: the 546-satoshi dust threshold comes from Bitcoin Core's <code>policy.cpp</code>, and mining block rewards are reconciled against on-chain coinbase outputs.</li>
+      </ul>
+
+      <h3>How those constants are kept current</h3>
+      <p>
+        An automated monitor re-reads every tracked source page on a schedule and flags any that changed. A flag is never applied blindly: each flagged value is re-verified against the primary source by hand before a single number moves. Calendar-driven changes that no page-watcher can see — a halving, an emission-era rollover, a tax year starting on 1 July — are tracked as scheduled dates instead.
+      </p>
+      <p>
+        Every change that reaches the site is dated in the ledger and published in the <a href="/updates/">changelog</a>. Verification that finds nothing wrong is also recorded, so "checked and unchanged" is distinguishable from "never checked".
+      </p>
+
+      <h3>Corrections we have published</h3>
+      <p>
+        This process exists because we have found real errors in our own numbers. Rather than quietly patching them, we record them:
+      </p>
+      <ul>
+        <li><strong>Dash mining revenue was overstated 4×.</strong> Our fallback block reward held the full in-block coinbase, but a Dash miner receives only 25% of it (masternodes and the treasury take the rest). Found by reading coinbase outputs on-chain, corrected, and the same class of bug then checked across every coin — which also caught Zcash (dev fund) and Ethereum Classic (a missed emission era).</li>
+        <li><strong>A Japanese inheritance estimate was ~3× too high.</strong> The calculator applied one band rate to the whole estate; Japan's statutory method splits the estate into per-heir shares, taxes each share, then sums. Rewritten to the NTA's method and checked against the NTA's own worked example.</li>
+        <li><strong>A Kaspa block reward was 10× too low</strong> — a per-second emission figure had been recorded as a per-block reward.</li>
+      </ul>
+      <p>
+        If you find a number you believe is wrong, <a href="/contact/">tell us</a> and include the source you are comparing against; that is how several of the above were caught.
+      </p>
 
       <h2>3. Formula Families</h2>
       <h3>Profit and ROI</h3>
@@ -88,6 +130,9 @@ const webPageSchema = {
         <li>Exchange execution differs from theoretical values (slippage, spread, funding timing).</li>
         <li>Tax treatment can vary by jurisdiction and account structure.</li>
         <li>Market conditions can change faster than API refresh cadence.</li>
+        <li><strong>Inheritance tax, currency:</strong> the inheritance calculator asks for a portfolio value in USD but applies each country's thresholds in that country's own currency (yen, euro, pound). For a rough comparison this is fine; for a real estate near a threshold, convert to the local currency first.</li>
+        <li><strong>Inheritance tax, Japan:</strong> heirs are assumed to take equal statutory shares, and the spouse tax credit (配偶者の税額軽減) is not modelled — both can materially reduce a real liability.</li>
+        <li>Announced-but-not-yet-in-force changes are not applied early. Where a change has a known start date (for example an Australian band stepping down on 1 July 2027), the current-year figure is used until that date arrives.</li>
       </ul>
 
       <h2>6. How to Use Outputs Correctly</h2>

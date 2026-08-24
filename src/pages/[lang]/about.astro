@@ -34,6 +34,14 @@ interface AboutContent {
   highlightProjectsTitle: string;
   highlightProjectsDesc: string;
   contactMe: string;
+  /* Optional trust/funding sections — added for tr and pt on 2026-08-24 to match the
+     depth of the EN /about/ page. Locales without them simply render nothing. */
+  trustTitle?: string;
+  trustItems?: string[];
+  fundingTitle?: string;
+  fundingIntro?: string;
+  fundingItems?: string[];
+  fundingOutro?: string;
 }
 
 const content: Record<Exclude<Lang, 'en'>, AboutContent> = {
@@ -80,6 +88,23 @@ const content: Record<Exclude<Lang, 'en'>, AboutContent> = {
     highlightProjectsTitle: 'Outros Projetos',
     highlightProjectsDesc: 'Criador de <a href="https://zanimaem.kz" target="_blank" rel="noopener noreferrer" class="project-link">zanimaem.kz</a> e <a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="project-link">calk.kz</a> — plataformas líderes de comparação financeira e calculadoras.',
     contactMe: 'Fale Comigo',
+    trustTitle: 'Por que confiar no CryptoCalk',
+    trustItems: [
+      '<strong>Cálculos transparentes</strong>: cada fórmula fica visível na página a que pertence. Pode verificar a matemática por si.',
+      '<strong>Fontes primárias, não resumos</strong>: taxas e limiares fiscais são lidos na lei ou na própria autoridade fiscal — os valores portugueses no Código do IRS, os alemães no EStG e no ErbStG, os canadianos no Income Tax Act, os japoneses na NTA. Os factos de protocolo são lidos no protocolo, até ao limite de poeira do próprio Bitcoin Core.',
+      '<strong>Verificado por calendário, e datado</strong>: 101 constantes regulatórias e de protocolo são mantidas num registo com a fonte e a data da última confirmação. Um monitor automático vigia essas fontes; cada alerta é reconferido à mão contra a fonte primária antes de qualquer número mudar. Ver a <a href="/pt/methodology/" class="project-link">metodologia</a>.',
+      '<strong>As correções são publicadas, não enterradas</strong>: quando erramos um número — uma recompensa de mineração da Dash exagerada em quatro vezes, uma estimativa sucessória japonesa cerca de três vezes alta demais — a correção e o seu raciocínio entram no <a href="/pt/updates/" class="project-link">changelog</a>.',
+      '<strong>Privacidade primeiro</strong>: todos os cálculos correm no seu navegador. Os seus números nunca são enviados para os nossos servidores.',
+    ],
+    fundingTitle: 'Como este site é financiado',
+    fundingIntro: 'O CryptoCalk é gratuito e tem publicidade de display. É esse o modelo de negócio por inteiro — e vale a pena dizer explicitamente o que ele <em>não</em> inclui:',
+    fundingItems: [
+      '<strong>Sem links de afiliado.</strong> Não recebemos comissão se abrir conta numa exchange, corretora ou carteira. Não há parâmetros de referência em lado nenhum do site.',
+      '<strong>Sem colocações pagas nem resultados patrocinados.</strong> Nenhuma exchange, mineradora ou protocolo paga para aparecer numa comparação, num valor predefinido ou numa recomendação.',
+      '<strong>A publicidade nunca toca na matemática.</strong> Os anúncios ficam à volta do conteúdo; não têm acesso aos seus dados nem influência sobre uma fórmula, um pressuposto de taxa ou uma taxa de imposto.',
+      '<strong>Sem conta e sem rastreio dos seus números.</strong> Nada do que escreve numa calculadora é transmitido ou guardado.',
+    ],
+    fundingOutro: 'Se alguma vez encontrar aqui um número que pareça escolhido para lhe vender algo em vez de estar correto, <a href="/pt/contact/" class="project-link">escreva-nos</a> — isso é um defeito, e será corrigido e registado como qualquer outro.',
   },
   tr: {
     pageTitle: 'Hakkımızda — CryptoCalk',
@@ -102,6 +127,23 @@ const content: Record<Exclude<Lang, 'en'>, AboutContent> = {
     highlightProjectsTitle: 'Diğer Projeler',
     highlightProjectsDesc: '<a href="https://zanimaem.kz" target="_blank" rel="noopener noreferrer" class="project-link">zanimaem.kz</a> ve <a href="https://calk.kz" target="_blank" rel="noopener noreferrer" class="project-link">calk.kz</a> — önde gelen finansal karşılaştırma ve hesap makinesi platformlarının yaratıcısı.',
     contactMe: 'Bana Ulaşın',
+    trustTitle: 'CryptoCalk\'a neden güvenmelisiniz',
+    trustItems: [
+      '<strong>Şeffaf hesaplama</strong>: her formül ait olduğu sayfada görünür. Matematiği kendiniz doğrulayabilirsiniz.',
+      '<strong>Özet değil, birincil kaynak</strong>: vergi oranları ve eşikler kanunun ya da vergi idaresinin kendisinden okunur — Portekiz rakamları Código do IRS\'ten, Almanya\'nınkiler EStG ve ErbStG\'den, Kanada\'nınkiler Gelir Vergisi Kanunu\'ndan, Japonya\'nınkiler NTA\'dan. Protokol gerçekleri protokolün kendisinden, Bitcoin Core\'un dust eşiğine kadar.',
+      '<strong>Programlı doğrulama, tarihiyle</strong>: 101 düzenleyici ve protokol sabiti, kaynağı ve son doğrulama tarihiyle bir kayıt defterinde tutulur. Otomatik izleyici kaynakları izler; her uyarı, bir sayı değişmeden önce elle birincil kaynağa karşı yeniden kontrol edilir. Ayrıntılar <a href="/tr/methodology/" class="project-link">metodoloji</a> sayfasında.',
+      '<strong>Düzeltmeler gizlenmez, yayımlanır</strong>: bir rakamı yanlış yaptığımızda — dört kat abartılmış bir Dash madencilik ödülü, yaklaşık üç kat yüksek bir Japonya veraset tahmini — düzeltme ve gerekçesi <a href="/tr/updates/" class="project-link">changelog</a>\'a girer.',
+      '<strong>Önce gizlilik</strong>: tüm hesaplamalar tarayıcınızda çalışır. Girdiğiniz sayılar sunucularımıza hiç gönderilmez.',
+    ],
+    fundingTitle: 'Bu site nasıl finanse ediliyor',
+    fundingIntro: 'CryptoCalk ücretsizdir ve görüntülü reklam taşır. İş modeli bundan ibarettir — ve neleri <em>içermediğini</em> açıkça söylemekte fayda var:',
+    fundingItems: [
+      '<strong>Affiliate bağlantısı yok.</strong> Bir borsada, aracı kurumda veya cüzdanda hesap açmanızdan komisyon almıyoruz. Sitenin hiçbir yerinde referans parametresi yoktur.',
+      '<strong>Ücretli yerleşim veya sponsorlu sonuç yok.</strong> Hiçbir borsa, madenci ya da protokol bir karşılaştırmada, varsayılan değerde veya öneride yer almak için ödeme yapmaz.',
+      '<strong>Reklam matematiğe dokunmaz.</strong> Reklam alanları içeriğin çevresine yerleştirilir; girdilerinize erişimleri yoktur ve bir formülü, komisyon varsayımını ya da vergi oranını etkilemezler.',
+      '<strong>Hesap yok, rakamlarınız izlenmez.</strong> Bir hesaplayıcıya yazdığınız hiçbir şey iletilmez veya saklanmaz.',
+    ],
+    fundingOutro: 'Burada bir sayının doğru olmak yerine size bir şey satmak için seçildiğini düşündüğünüz olursa, <a href="/tr/contact/" class="project-link">bize yazın</a> — bu bir hatadır ve diğerleri gibi düzeltilip kayda geçirilir.',
   },
   hi: {
     pageTitle: 'हमारे बारे में — CryptoCalk',
@@ -158,7 +200,7 @@ const webPageSchema = {
   description: c.metaDescription,
   url: `https://cryptocalk.com/${lang}/about/`,
   inLanguage: lang,
-  dateModified: '2026-02-26',
+  dateModified: (lang === 'tr' || lang === 'pt') ? '2026-08-24' : '2026-02-26',
 };
 ---
 
@@ -238,6 +280,32 @@ const webPageSchema = {
           </div>
         </div>
       </section>
+
+      {c.trustTitle && c.trustItems && (
+        <>
+          <div class="divider"></div>
+          <section class="mission-section">
+            <h2>{c.trustTitle}</h2>
+            <ul class="trust-list">
+              {c.trustItems.map((item) => <li set:html={item} />)}
+            </ul>
+          </section>
+        </>
+      )}
+
+      {c.fundingTitle && c.fundingItems && (
+        <>
+          <div class="divider"></div>
+          <section class="mission-section">
+            <h2>{c.fundingTitle}</h2>
+            {c.fundingIntro && <p set:html={c.fundingIntro} />}
+            <ul class="trust-list">
+              {c.fundingItems.map((item) => <li set:html={item} />)}
+            </ul>
+            {c.fundingOutro && <p set:html={c.fundingOutro} />}
+          </section>
+        </>
+      )}
     </div>
   </main>
 
@@ -246,6 +314,29 @@ const webPageSchema = {
 </Layout>
 
 <style>
+  /* Same list style as the EN /about/ page (trust + funding sections). */
+  .trust-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .trust-list li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    padding-left: 24px;
+    position: relative;
+  }
+  .trust-list li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
   .about-container {
     max-width: 900px;
     margin: 0 auto;

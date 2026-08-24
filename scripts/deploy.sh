@@ -103,6 +103,22 @@ else
   echo "ℹ️ No .cf-credentials — skipping Cloudflare purge (add zone_id + api_token to enable edge-cache refresh)."
 fi
 
+# --- STEP 3b: re-warm the edge for the pages that matter ---
+# A purge_everything leaves every HTML page cold, and Cloudflare evicts unpopular objects
+# anyway — a 2026-08-23 crawl of all 294 sitemap URLs got cf-cache MISS on 291 of them, with
+# origin TTFB p90 1.77s (warm hits are ~0.1s). The first visitor to a long-tail calculator
+# pays that. Warming the sitemap costs one cheap GET per URL and runs after the purge.
+echo "▶ Warming edge cache from sitemap…"
+# NB: the sitemap is emitted as ONE long line, so a line-based sed only ever returns a single
+# match (that bug shipped in the first version of this step and warmed exactly 1 URL).
+warm_urls="$(grep -o '<loc>[^<]*</loc>' dist/sitemap-0.xml 2>/dev/null | sed 's:</\?loc>::g' || true)"
+warm_n=0
+for u in $warm_urls; do
+  curl -s -o /dev/null --max-time 20 -A "CryptoCalk-cache-warmer" "$u" || true
+  warm_n=$((warm_n+1))
+done
+if [ "$warm_n" -gt 0 ]; then echo "✅ Warmed $warm_n URLs."; else echo "ℹ️ No dist/sitemap-0.xml — skipped warming."; fi
+
 # --- STEP 4: verify no _astro chunk 404s through the CDN ---
 echo "▶ Verifying _astro chunks через CDN…"
 miss=0

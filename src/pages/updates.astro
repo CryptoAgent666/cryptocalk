@@ -19,7 +19,7 @@ const webPageSchema = {
   description: 'See what\'s new on CryptoCalk, new calculators, features, and improvements to our free crypto calculator suite.',
   url: 'https://cryptocalk.com/updates/',
   inLanguage: 'en',
-  dateModified: '2026-07-02T00:00:00+00:00',
+  dateModified: '2026-08-23T00:00:00+00:00',
 };
 ---
 
@@ -36,6 +36,76 @@ const webPageSchema = {
     </header>
 
     <div class="updates-content">
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-08-23">August 23, 2026</time>
+        </div>
+        <h2>Per-Coin Guidance in the Profit Calculator, and a Fuller Account of Where Our Numbers Come From</h2>
+        <p>The <a href="/profit-calculator/">profit calculator</a> now has a <strong>per-coin section</strong>. The arithmetic is the same for every asset, but the costs around it are not — and that is what quietly ruins a profit estimate.</p>
+        <ul>
+          <li>Moving <strong>LINK</strong> or <strong>ANKR</strong> costs ETH, not the token itself, so an on-chain round trip on a cheap token can cost more than the trade earns.</li>
+          <li>Staked <strong>ATOM</strong> takes 21 days to unbond — your real exit price is the price three weeks after you decide to sell.</li>
+          <li>Staked <strong>ICP</strong> cannot be sold at all until its neuron dissolves.</li>
+          <li>For thin-liquidity meme coins like <strong>BONK</strong>, slippage usually costs more than the trading fee.</li>
+          <li><strong>USDC</strong> and other dollar stablecoins have no price gain to calculate — set both prices to 1.00 and the calculator shows what the fees alone cost you.</li>
+        </ul>
+        <p>We also expanded the pages that explain how this site works. The <a href="/methodology/">methodology</a> now lists the actual primary source behind each tax and protocol figure — Portugal's from the Código do IRS, Germany's from the statutory texts, Canada's from the Income Tax Act, Japan's from the NTA, and Bitcoin's dust threshold from Bitcoin Core itself — plus how those 101 tracked values are re-checked on a schedule, the known limits of each model, and the mistakes we have found in our own numbers.</p>
+        <p>The <a href="/about/">about page</a> and <a href="/editorial-policy/">editorial policy</a> now state plainly how the site is funded: display advertising only. No affiliate links, no referral parameters, no paid placements, and no advertiser input into any default value or result.</p>
+        <p>All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-08-18">August 18, 2026</time>
+        </div>
+        <h2>Dash Mining Rewards Updated for the New Emission Era</h2>
+        <p>Dash cuts its block reward by about <strong>7.1%</strong> roughly every 383 days. The latest cut took effect on <strong>16 August 2026</strong>, and our ASIC mining calculator now reflects it.</p>
+        <p>A miner's share per block has gone from <strong>0.4426 DASH</strong> to <strong>0.4109 DASH</strong>. We confirmed this by reading the actual reward payouts recorded on the Dash blockchain, rather than relying on third-party figures.</p>
+        <p>If you are estimating Dash mining returns, expect slightly lower daily coin output than before. The calculator uses live network data whenever it is available, so your estimates stay current either way.</p>
+        <p>The next reduction is expected around <strong>September 2027</strong>.</p>
+        <p>All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-08-02">August 2, 2026</time>
+        </div>
+        <h2>Mining Rewards Corrected for Dash, Zcash &amp; Ethereum Classic</h2>
+        <p>Our mining calculators were crediting miners with coins that never reach them. Three fixes, all checked against the chains themselves:</p>
+        <ul>
+          <li><strong>Dash</strong> — a miner receives only <strong>20%</strong> of each block; masternodes take 60% and the treasury 20%. We were using the whole in-block payout, which overstated Dash mining revenue roughly <strong>four-fold</strong>. Now corrected to the miner's actual share.</li>
+          <li><strong>Zcash</strong> — 20% of each block goes to the development fund, so miners receive <strong>1.25 ZEC</strong>, not the full 1.5625 block subsidy (a 25% overstatement).</li>
+          <li><strong>Ethereum Classic</strong> — the block reward dropped 20% to <strong>1.6384 ETC</strong> when era 6 began on 22 July 2026. We were still showing the previous era's 2.048.</li>
+          <li><strong>Kaspa</strong> — refreshed to <strong>2.3125 KAS</strong> from the network itself. Kaspa trims its reward a little every month, so this figure is a snapshot; the calculator uses live network data whenever it can reach it.</li>
+        </ul>
+        <p>Also re-checked and confirmed unchanged: Portugal's crypto tax (28% under 365 days, exempt at 365+) and Avalanche's 2,000 AVAX validator minimum.</p>
+        <p>Heads-up: Dash reduces its reward again around 16 August 2026 — the calculators use live network data when available, so estimates follow along automatically.</p>
+        <p>All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+
+      <div class="divider"></div>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-07-20">July 20, 2026</time>
+        </div>
+        <h2>Japan Inheritance Tax — Now Follows the Official Method</h2>
+        <p>A significant accuracy fix for anyone estimating Japanese inheritance tax:</p>
+        <ul>
+          <li><strong>The number of statutory heirs now matters.</strong> Japan's tax-free allowance is ¥30M plus ¥6M for each statutory heir, but the calculator previously always assumed a single heir. You can now enter the real number.</li>
+          <li><strong>Tax is calculated Japan's way</strong> — the estate is split into statutory shares and each share is taxed separately using the National Tax Agency's official rate table, instead of applying one flat rate to the whole estate.</li>
+          <li>Together these corrections make a large difference: a ¥100M estate with three heirs previously showed roughly ¥19.2M of tax and now correctly shows <strong>¥6.3M</strong>, matching the National Tax Agency's own worked example.</li>
+          <li>Japan's ¥200,000 crypto note was clarified — it applies to salaried employees, waives the <em>filing</em> requirement rather than the tax itself, and local inhabitant tax must still be declared.</li>
+        </ul>
+        <p>All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+
+      <div class="divider"></div>
 
       <article class="update-entry">
         <div class="update-date">

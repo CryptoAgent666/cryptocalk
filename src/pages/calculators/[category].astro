@@ -9,6 +9,7 @@ import {
   getCategorySlugs,
   isCategorySlug,
 } from '../../data/category-hubs';
+import { CALCULATOR_UPDATED } from '../../data/calculator-updated';
 import { CATEGORY_HUB_BODY } from '../../data/category-hub-body';
 import { DEFAULT_LANG } from '../../i18n/utils';
 import Layout from '../../layouts/Layout.astro';
@@ -42,6 +43,14 @@ const homeHref = '/';
 const categoriesHref = '/#categories';
 const categoryPageUrl = `${SITE_URL}${category.href}`;
 
+// Honest hub freshness: the newest real change among the calculators this hub lists.
+// (Hubs shipped with no dateModified at all until 2026-08-23.)
+const hubDates = category.tools
+  .map((tool) => CALCULATOR_UPDATED[tool.href.replace(/^\/|\/$/g, '').split('/').pop() ?? ''])
+  .filter(Boolean)
+  .sort();
+const hubModified = hubDates.length ? hubDates[hubDates.length - 1] : null;
+
 const schemas = [
   {
     '@context': 'https://schema.org',
@@ -50,6 +59,7 @@ const schemas = [
     description: category.metaDescription,
     url: categoryPageUrl,
     inLanguage: DEFAULT_LANG,
+    ...(hubModified ? { dateModified: `${hubModified}T00:00:00+00:00` } : {}),
     isPartOf: {
       '@type': 'WebSite',
       name: 'CryptoCalk',

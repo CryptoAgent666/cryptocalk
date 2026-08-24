@@ -22,7 +22,7 @@ const webPageSchema = {
   url: 'https://cryptocalk.com/about/',
   inLanguage: 'en',
   dateCreated: '2024-02-01T00:00:00+00:00',
-  dateModified: '2026-05-17T00:00:00+00:00',
+  dateModified: '2026-08-23T00:00:00+00:00',
   mainEntity: {
     '@type': 'Person',
     '@id': 'https://cryptocalk.com/about/#founder',
@@ -150,11 +150,26 @@ const webPageSchema = {
       <section class="mission-section">
         <h2>Why Trust CryptoCalk</h2>
         <ul class="trust-list">
-          <li><strong>Transparent calculations</strong>: every formula is visible. You can verify the math yourself.</li>
-          <li><strong>Privacy-first</strong>: all calculations run in your browser. Nothing is sent to our servers.</li>
-          <li><strong>Regularly updated</strong>: formulas, tax rules, and market data are audited and refreshed on an ongoing basis.</li>
-          <li><strong>Used worldwide</strong>: available in 6 languages, serving traders and investors in 50+ countries.</li>
+          <li><strong>Transparent calculations</strong>: every formula is visible on the page it belongs to. You can verify the math yourself.</li>
+          <li><strong>Primary sources, not summaries</strong>: tax rates and thresholds are read from the statute or the tax authority itself — Portugal's figures from the <em>Código do IRS</em>, Germany's from EStG and ErbStG, Canada's from the Income Tax Act, Japan's from the NTA. Protocol facts are read from the protocol, down to Bitcoin Core's own dust threshold.</li>
+          <li><strong>Verified on a schedule, and dated</strong>: 101 regulatory and protocol constants are tracked in a ledger with the source and date each was last confirmed. An automated monitor watches those sources; every flag is re-checked by hand against the primary source before a number changes. See the <a href="/methodology/" class="project-link">methodology</a>.</li>
+          <li><strong>Corrections are published, not buried</strong>: when we have got a number wrong — a Dash mining reward overstated 4×, a Japanese inheritance estimate ~3× too high — the fix and its reasoning go into the <a href="/updates/" class="project-link">changelog</a>.</li>
+          <li><strong>Privacy-first</strong>: all calculations run in your browser. Your numbers are never sent to our servers.</li>
         </ul>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="mission-section">
+        <h2>How This Site Is Funded</h2>
+        <p>CryptoCalk is free and carries display advertising. That is the entire business model, and it is worth being explicit about what it does <em>not</em> include:</p>
+        <ul class="trust-list">
+          <li><strong>No affiliate links.</strong> We do not earn a commission when you open an account at an exchange, a broker, or a wallet. There are no referral parameters anywhere on this site.</li>
+          <li><strong>No paid placements or sponsored results.</strong> No exchange, miner, or protocol pays to appear in a comparison, a default value, or a recommendation.</li>
+          <li><strong>Advertising never touches the math.</strong> Ad slots are placed around content; they have no access to your inputs and no influence on a formula, a fee assumption, or a tax rate.</li>
+          <li><strong>No account, no tracking of your figures.</strong> Nothing you type into a calculator is transmitted or stored.</li>
+        </ul>
+        <p>If you ever find a number here that looks like it was chosen to sell you something rather than to be correct, <a href="/contact/" class="project-link">write to us</a> — that is a bug, and it will be fixed and logged like any other.</p>
       </section>
     </div>
   </main>

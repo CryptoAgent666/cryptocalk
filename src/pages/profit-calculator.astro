@@ -9,12 +9,12 @@ import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
-const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
+const buildDate = '2026-08-23'; // honest last-content-change date from git history (not the build date)
 ---
 
 <Layout
-  title="Crypto Profit Calculator — CryptoCalk"
-  description="Free crypto profit and loss calculator. Enter your buy/sell price, see your ROI, total fees, and net profit. Supports 500+ cryptocurrencies. No signup required."
+  title="Crypto Profit Calculator — ADA, ATOM, SUI, Any Coin"
+  description="Free crypto profit calculator for ADA, ATOM, SUI, LINK, BONK and 500+ coins. Enter buy and sell price to see net profit, ROI and fees. No signup."
   lang="en"
   pageType="calculator"
   dateModified={`${buildDate}T00:00:00+00:00`}
@@ -102,6 +102,74 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
           <li><strong>ROI calculation</strong>: See your return on investment as a percentage, not just absolute profit in dollars.</li>
           <li><strong>Effective price display</strong>: View your true cost basis and exit price after fees are applied.</li>
         </ul>
+
+        <h2 id="by-coin">Profit Calculator by Coin</h2>
+        <p>The arithmetic below is identical for every asset — price in, price out, fees off. What differs per coin is <em>which costs and delays you must include</em> before the number means anything. Search any of these in the calculator above to auto-fill its live price, then apply the caveat in the last column.</p>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr><th>Coin</th><th>Network &amp; gas token</th><th>What changes your profit math</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="ada-profit-calculator"><strong>Cardano (ADA)</strong></td>
+                <td>Cardano · fees in ADA</td>
+                <td>Amounts are denominated to 6 decimals (lovelace). Delegated ADA is never locked, so staking rewards accrue while you hold — count them as part of the return, not just the price difference.</td>
+              </tr>
+              <tr>
+                <td id="atom-profit-calculator"><strong>Cosmos (ATOM)</strong></td>
+                <td>Cosmos Hub · fees in ATOM</td>
+                <td>Staked ATOM has a <strong>21-day unbonding period</strong>. Your exit price is the price 21 days after you decide to sell, not the price on screen — model the worst case before treating staking yield as free money.</td>
+              </tr>
+              <tr>
+                <td id="sui-profit-calculator"><strong>Sui (SUI)</strong></td>
+                <td>Sui · fees in SUI (9 decimals, MIST)</td>
+                <td>Staking runs on epochs, so rewards and withdrawals land on epoch boundaries rather than instantly.</td>
+              </tr>
+              <tr>
+                <td id="link-profit-calculator"><strong>Chainlink (LINK)</strong></td>
+                <td>Ethereum ERC-20 · gas paid in <strong>ETH</strong></td>
+                <td>You need an ETH balance to move LINK at all. On-chain entry and exit cost ETH, so your true fee is the exchange fee <em>plus</em> gas priced in a different asset.</td>
+              </tr>
+              <tr>
+                <td id="bonk-profit-calculator"><strong>Bonk (BONK)</strong></td>
+                <td>Solana SPL · fees in SOL</td>
+                <td>Prices quote in small fractions of a cent, so rounding and quoted precision matter more than the fee itself. Thin order books mean slippage usually costs more than the 0.1% trading fee.</td>
+              </tr>
+              <tr>
+                <td id="ckb-profit-calculator"><strong>Nervos (CKB)</strong></td>
+                <td>Nervos CKB · fees in CKB</td>
+                <td>CKB doubles as on-chain state capacity: coins backing occupied cells are not freely spendable, so your sellable balance can be smaller than your wallet balance.</td>
+              </tr>
+              <tr>
+                <td id="xtz-profit-calculator"><strong>Tezos (XTZ)</strong></td>
+                <td>Tezos · fees in XTZ (6 decimals, mutez)</td>
+                <td>Delegation pays rewards without locking your coins, but rewards arrive on a cycle delay — include pending cycles when you compute realised return.</td>
+              </tr>
+              <tr>
+                <td id="icp-profit-calculator"><strong>Internet Computer (ICP)</strong></td>
+                <td>Internet Computer · fees in ICP</td>
+                <td>Staked ICP sits in a neuron with a <strong>dissolve delay</strong> you chose when staking. Until it dissolves, that position cannot be sold at any price — treat it as illiquid in your profit model.</td>
+              </tr>
+              <tr>
+                <td id="zil-profit-calculator"><strong>Zilliqa (ZIL)</strong></td>
+                <td>Zilliqa · fees in ZIL</td>
+                <td>Small unit price means exchange minimum-order and withdrawal minimums can eat a visible share of a small position.</td>
+              </tr>
+              <tr>
+                <td id="ankr-profit-calculator"><strong>Ankr (ANKR)</strong></td>
+                <td>Ethereum ERC-20 · gas paid in <strong>ETH</strong></td>
+                <td>Same ETH-gas rule as LINK: an on-chain round trip on a low-priced token can cost more in gas than the trade earns.</td>
+              </tr>
+              <tr>
+                <td id="usdc-profit-calculator"><strong>USD Coin (USDC)</strong></td>
+                <td>Multi-chain · gas in the host chain's token</td>
+                <td>A dollar stablecoin has no price appreciation to calculate. Your return comes from lending or LP yield, and your risk is depeg plus bridge/chain choice — set entry and exit to 1.00 and let fees show you the real cost of moving it.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Meme coins in general:</strong> the calculator handles them the same way, but two inputs dominate the result — slippage on thin liquidity and the exit fee. Model a pessimistic exit price rather than the mid-price you see quoted.</p>
 
         <h2>Crypto Profit Formula</h2>
         <p>The basic formula for calculating cryptocurrency profit is:</p>
@@ -234,6 +302,18 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
         <details>
           <summary>How do exchange fees affect my crypto profit?</summary>
           <p>Exchange fees reduce your profit on every trade. With 0.1% maker fees on Binance, a $10,000 round-trip trade costs $20 in fees. On Coinbase at 0.6%, that same trade costs $120 in fees. Over 50 trades per month, the difference adds up to $5,000 annually. Always factor in both entry and exit fees when calculating true net profit.</p>
+        </details>
+        <details>
+          <summary>How do I calculate ADA, ATOM or any altcoin profit?</summary>
+          <p>Exactly as you would for Bitcoin: buy price, sell price, quantity, fees. Search the coin by name above to auto-fill its live price. What differs per coin is the surrounding cost — ERC-20 tokens like LINK and ANKR need ETH for gas, staked ATOM cannot be sold for 21 days after you unbond, and staked ICP is locked for its dissolve delay. See the <a href="#by-coin">per-coin table</a> for what to add to the arithmetic.</p>
+        </details>
+        <details>
+          <summary>Does this work for meme coins like BONK?</summary>
+          <p>Yes. The formula is identical, but for a thin-liquidity meme coin two inputs dominate the answer: slippage and the exit fee. The mid-price you see quoted is rarely the price you get on the way out, so enter a pessimistic exit price. Prices in fractions of a cent also mean rounding in your exchange's quoted precision can move the result more than the trading fee does.</p>
+        </details>
+        <details>
+          <summary>Can I calculate profit on a stablecoin like USDC?</summary>
+          <p>You can, but there is no price appreciation to compute — a dollar stablecoin is designed to stay at $1. Set entry and exit to 1.00 and the calculator will show you what fees alone cost you. Real USDC returns come from lending or liquidity provision, and the real risks are depeg and the chain you bridge it to, neither of which is a price-difference calculation.</p>
         </details>
         <details>
           <summary>Can I calculate profit on short positions?</summary>
@@ -722,7 +802,7 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
   },
   "description": "Free crypto profit and loss calculator. Enter your buy/sell price, see your ROI, total fees, and net profit.",
   "datePublished": "2025-11-01",
-  "dateModified": "2026-05-11",
+  "dateModified": "2026-08-23",
   "author": {
     "@type": "Person",
     "name": "Konstantin Iakovlev",
@@ -773,6 +853,30 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Exchange fees reduce your profit on every trade. With 0.1% maker fees on Binance, a $10,000 round-trip trade costs $20 in fees. On Coinbase at 0.6%, that same trade costs $120. Over 50 trades per month, the difference adds up to $5,000 annually. Always factor in both entry and exit fees when calculating true net profit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate ADA, ATOM or any altcoin profit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exactly as you would for Bitcoin: buy price, sell price, quantity, fees. Search the coin by name to auto-fill its live price. What differs per coin is the surrounding cost — ERC-20 tokens like LINK and ANKR need ETH for gas, staked ATOM cannot be sold for 21 days after you unbond, and staked ICP is locked for its dissolve delay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this work for meme coins like BONK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The formula is identical, but for a thin-liquidity meme coin two inputs dominate the answer: slippage and the exit fee. The mid-price you see quoted is rarely the price you get on the way out, so enter a pessimistic exit price. Prices in fractions of a cent also mean rounding in your exchange's quoted precision can move the result more than the trading fee does."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate profit on a stablecoin like USDC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can, but there is no price appreciation to compute — a dollar stablecoin is designed to stay at $1. Set entry and exit to 1.00 and the calculator will show you what fees alone cost you. Real USDC returns come from lending or liquidity provision, and the real risks are depeg and the chain you bridge it to."
       }
     },
     {

@@ -38,6 +38,60 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     subtitle: 'Últimas actualizaciones, nuevas calculadoras y mejoras en CryptoCalk.',
     updates: [
       {
+        date: '2026-08-23',
+        dateLabel: '23 de agosto de 2026',
+        title: 'Guía por moneda en la calculadora de beneficios y más transparencia sobre nuestras cifras',
+        body: 'La <a href="/es/calculadora-beneficio-cripto/">calculadora de beneficios</a> ahora incluye una <strong>sección por moneda</strong>. La fórmula es la misma para todos los activos, pero los costes que la rodean no lo son — y ahí es donde se estropea una estimación.',
+        items: [
+          'Mover <strong>LINK</strong> o <strong>ANKR</strong> cuesta ETH, no el propio token: una operación on-chain puede costar más de lo que gana.',
+          '<strong>ATOM</strong> en staking tarda 21 días en desbloquearse: tu precio real de salida es el de tres semanas después.',
+          '<strong>ICP</strong> en staking no se puede vender hasta que el neurón se disuelva.',
+          'En memecoins con poca liquidez como <strong>BONK</strong>, el slippage suele costar más que la comisión.',
+          '<strong>USDC</strong> y otras stablecoins no tienen revalorización: pon 1,00 en ambos precios y verás lo que cuestan solo las comisiones.',
+        ],
+        footer: 'También hemos ampliado las páginas que explican cómo funciona el sitio. La <a href="/es/methodology/">metodología</a> ya detalla la fuente primaria de cada cifra fiscal y de protocolo, cómo se revisan 101 valores de forma programada, los límites conocidos de cada modelo y los errores que hemos encontrado en nuestros propios números. En <a href="/es/about/">quiénes somos</a> y en la <a href="/es/editorial-policy/">política editorial</a> indicamos con claridad cómo se financia el sitio: solo publicidad, sin enlaces de afiliación ni contenidos pagados. Todas las cifras son estimaciones de carácter general, no asesoramiento financiero ni fiscal.',
+      },
+      {
+        date: '2026-08-18',
+        dateLabel: '18 de agosto de 2026',
+        title: 'Recompensas de Minería de Dash Actualizadas para la Nueva Era de Emisión',
+        body: 'Dash reduce su recompensa por bloque alrededor de un <strong>7,1%</strong> cada 383 días aproximadamente. El último recorte entró en vigor el <strong>16 de agosto de 2026</strong> y nuestra calculadora de minería ASIC ya lo refleja.',
+        items: [
+          'La parte que recibe el minero por bloque pasa de <strong>0,4426 DASH</strong> a <strong>0,4109 DASH</strong>.',
+          'Lo verificamos leyendo los pagos realmente registrados en la cadena de bloques de Dash, en lugar de fiarnos de cifras de terceros.',
+          'Si calculas rendimientos de minería de Dash, espera una producción diaria de monedas algo menor que antes. La calculadora usa datos de red en vivo siempre que están disponibles.',
+          'La próxima reducción se espera hacia <strong>septiembre de 2027</strong>.',
+        ],
+        footer: 'Todas las cifras son estimaciones de carácter general, no asesoramiento financiero ni fiscal.',
+      },
+      {
+        date: '2026-08-02',
+        dateLabel: '2 de agosto de 2026',
+        title: 'Recompensas de Minería Corregidas: Dash, Zcash y Ethereum Classic',
+        body: 'Nuestras calculadoras de minería atribuían al minero monedas que nunca le llegan. Tres correcciones, todas verificadas contra las propias cadenas:',
+        items: [
+          '<strong>Dash</strong>: el minero recibe solo el <strong>20%</strong> de cada bloque; los masternodos se llevan el 60% y la tesorería el 20%. Usábamos el pago completo del bloque, lo que sobrestimaba los ingresos de minería de Dash <strong>unas cuatro veces</strong>.',
+          '<strong>Zcash</strong>: el 20% de cada bloque va al fondo de desarrollo, así que el minero recibe <strong>1,25 ZEC</strong>, no los 1,5625 completos (sobrestimación del 25%).',
+          '<strong>Ethereum Classic</strong>: la recompensa bajó un 20% hasta <strong>1,6384 ETC</strong> al comenzar la era 6 el 22 de julio de 2026. Seguíamos mostrando los 2,048 de la era anterior.',
+          '<strong>Kaspa</strong>: actualizado a <strong>2,3125 KAS</strong> desde la propia red. Kaspa recorta su recompensa un poco cada mes, así que esta cifra es una instantánea; la calculadora usa datos en vivo siempre que puede.',
+          'También revisado y sin cambios: el impuesto cripto de Portugal (28% por debajo de 365 días, exento a partir de 365) y el mínimo de 2.000 AVAX para validadores de Avalanche.',
+        ],
+        footer: 'Todas las cifras son estimaciones de carácter general, no asesoramiento financiero ni fiscal.',
+      },
+      {
+        date: '2026-07-20',
+        dateLabel: '20 de julio de 2026',
+        title: 'Impuesto de Sucesiones de Japón — Ahora Sigue el Método Oficial',
+        body: 'Una corrección importante de precisión para quien estime el impuesto de sucesiones japonés:',
+        items: [
+          '<strong>Ahora cuenta el número de herederos legales.</strong> El mínimo exento japonés es de ¥30M más ¥6M por cada heredero legal, pero la calculadora asumía siempre un único heredero. Ya puedes introducir el número real.',
+          '<strong>El impuesto se calcula al modo japonés</strong>: la herencia se divide en cuotas legales y cada cuota tributa por separado con la tabla oficial de la Agencia Tributaria Nacional, en lugar de aplicar un tipo único a toda la herencia.',
+          'Juntas, estas correcciones cambian mucho el resultado: una herencia de ¥100M con tres herederos mostraba unos ¥19,2M de impuesto y ahora muestra correctamente <strong>¥6,3M</strong>, coincidiendo con el ejemplo oficial de la Agencia Tributaria Nacional.',
+          'Se aclaró la nota japonesa de los ¥200.000: se aplica a asalariados, exime de <em>declarar</em> y no del impuesto, y el impuesto local de residencia debe declararse igualmente.',
+        ],
+        footer: 'Todas las cifras son estimaciones de carácter general, no asesoramiento financiero ni fiscal.',
+      },
+      {
         date: '2026-07-02',
         dateLabel: '2 de julio de 2026',
         title: 'Precios Históricos Más Fiables',
@@ -161,6 +215,60 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     heading: 'Novidades',
     subtitle: 'Últimas atualizações, novas calculadoras e melhorias no CryptoCalk.',
     updates: [
+      {
+        date: '2026-08-23',
+        dateLabel: '23 de agosto de 2026',
+        title: 'Orientação por moeda na calculadora de lucro e mais transparência sobre os nossos números',
+        body: 'A <a href="/pt/calculadora-lucro-cripto/">calculadora de lucro</a> passa a ter uma <strong>secção por moeda</strong>. A fórmula é igual para todos os ativos, mas os custos à volta dela não são — e é aí que uma estimativa se estraga.',
+        items: [
+          'Movimentar <strong>LINK</strong> ou <strong>ANKR</strong> custa ETH, não o próprio token: uma ida e volta on-chain pode custar mais do que rende.',
+          '<strong>ATOM</strong> em staking demora 21 dias a desbloquear: o teu preço real de saída é o de três semanas depois.',
+          '<strong>ICP</strong> em staking não pode ser vendido até o neurónio se dissolver.',
+          'Em memecoins com pouca liquidez como o <strong>BONK</strong>, o slippage costuma custar mais do que a comissão.',
+          '<strong>USDC</strong> e outras stablecoins não têm valorização: coloca 1,00 nos dois preços e vês quanto custam apenas as comissões.',
+        ],
+        footer: 'Também alargámos as páginas que explicam como o site funciona. A <a href="/pt/methodology/">metodologia</a> passa a indicar a fonte primária de cada valor fiscal e de protocolo, como 101 valores são reverificados de forma programada, os limites conhecidos de cada modelo e os erros que encontrámos nos nossos próprios números. Em <a href="/pt/about/">sobre nós</a> e na <a href="/pt/editorial-policy/">política editorial</a> dizemos com clareza como o site é financiado: apenas publicidade, sem links de afiliação nem colocações pagas. Todos os valores são estimativas de carácter geral, não constituem aconselhamento financeiro ou fiscal.',
+      },
+      {
+        date: '2026-08-18',
+        dateLabel: '18 de agosto de 2026',
+        title: 'Recompensas de Mineração da Dash Atualizadas para a Nova Era de Emissão',
+        body: 'A Dash reduz a recompensa por bloco em cerca de <strong>7,1%</strong> a cada 383 dias, aproximadamente. O último corte entrou em vigor em <strong>16 de agosto de 2026</strong> e a nossa calculadora de mineração ASIC já reflete essa mudança.',
+        items: [
+          'A parte que o minerador recebe por bloco passou de <strong>0,4426 DASH</strong> para <strong>0,4109 DASH</strong>.',
+          'Confirmámos o valor lendo os pagamentos realmente registados na blockchain da Dash, em vez de confiar em números de terceiros.',
+          'Se estima retornos de mineração de Dash, conte com uma produção diária de moedas um pouco menor do que antes. A calculadora usa dados da rede em tempo real sempre que possível.',
+          'A próxima redução é esperada por volta de <strong>setembro de 2027</strong>.',
+        ],
+        footer: 'Todos os valores são estimativas de caráter geral, não constituem aconselhamento financeiro ou fiscal.',
+      },
+      {
+        date: '2026-08-02',
+        dateLabel: '2 de agosto de 2026',
+        title: 'Recompensas de Mineração Corrigidas: Dash, Zcash e Ethereum Classic',
+        body: 'Nossas calculadoras de mineração creditavam ao minerador moedas que nunca chegam até ele. Três correções, todas verificadas nas próprias redes:',
+        items: [
+          '<strong>Dash</strong>: o minerador recebe apenas <strong>20%</strong> de cada bloco; os masternodes ficam com 60% e a tesouraria com 20%. Usávamos o pagamento integral do bloco, o que superestimava a receita de mineração da Dash em <strong>cerca de quatro vezes</strong>.',
+          '<strong>Zcash</strong>: 20% de cada bloco vai para o fundo de desenvolvimento, então o minerador recebe <strong>1,25 ZEC</strong>, e não os 1,5625 completos (superestimação de 25%).',
+          '<strong>Ethereum Classic</strong>: a recompensa caiu 20% para <strong>1,6384 ETC</strong> quando a era 6 começou em 22 de julho de 2026. Ainda mostrávamos os 2,048 da era anterior.',
+          '<strong>Kaspa</strong>: atualizado para <strong>2,3125 KAS</strong> a partir da própria rede. A Kaspa reduz um pouco a recompensa todo mês, então este número é um retrato do momento; a calculadora usa dados ao vivo sempre que consegue.',
+          'Também reconferido e sem alterações: o imposto cripto de Portugal (28% abaixo de 365 dias, isento a partir de 365) e o mínimo de 2.000 AVAX para validadores da Avalanche.',
+        ],
+        footer: 'Todos os valores são estimativas de caráter geral, não constituem aconselhamento financeiro ou fiscal.',
+      },
+      {
+        date: '2026-07-20',
+        dateLabel: '20 de julho de 2026',
+        title: 'Imposto sobre Herança do Japão — Agora Segue o Método Oficial',
+        body: 'Uma correção importante de precisão para quem estima o imposto sobre herança japonês:',
+        items: [
+          '<strong>O número de herdeiros legais agora conta.</strong> A isenção japonesa é de ¥30M mais ¥6M por herdeiro legal, mas a calculadora sempre assumia um único herdeiro. Agora você pode informar o número real.',
+          '<strong>O imposto é calculado do jeito japonês</strong>: a herança é dividida em quotas legais e cada quota é tributada separadamente pela tabela oficial da Agência Nacional de Impostos, em vez de aplicar uma alíquota única sobre toda a herança.',
+          'Juntas, essas correções mudam muito o resultado: uma herança de ¥100M com três herdeiros mostrava cerca de ¥19,2M de imposto e agora mostra corretamente <strong>¥6,3M</strong>, coincidindo com o exemplo oficial da Agência Nacional de Impostos.',
+          'A nota japonesa dos ¥200.000 foi esclarecida: aplica-se a assalariados, dispensa a <em>declaração</em> e não o imposto, e o imposto local de residência ainda deve ser declarado.',
+        ],
+        footer: 'Todos os valores são estimativas de caráter geral, não constituem aconselhamento financeiro ou fiscal.',
+      },
       {
         date: '2026-07-02',
         dateLabel: '2 de julho de 2026',
@@ -286,6 +394,60 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     subtitle: 'En son güncellemeler, yeni hesap makineleri ve CryptoCalk iyileştirmeleri.',
     updates: [
       {
+        date: '2026-08-23',
+        dateLabel: '23 Ağustos 2026',
+        title: 'Kâr hesaplayıcıda coin bazlı rehber ve rakamlarımızın kaynağı hakkında daha fazla şeffaflık',
+        body: '<a href="/tr/kripto-kar-hesaplayici/">Kâr hesaplayıcıya</a> artık <strong>coin bazlı bir bölüm</strong> eklendi. Formül her varlık için aynıdır; ancak etrafındaki maliyetler değişir — bir kâr tahminini sessizce bozan da tam olarak budur.',
+        items: [
+          '<strong>LINK</strong> veya <strong>ANKR</strong> transferi ETH ile ödenir, tokenin kendisiyle değil: zincir üzerindeki bir gidiş-dönüş kazandığından fazlasına mal olabilir.',
+          'Stake edilmiş <strong>ATOM</strong> için unbonding 21 gün sürer: gerçek çıkış fiyatınız üç hafta sonrasının fiyatıdır.',
+          'Stake edilmiş <strong>ICP</strong>, neuron çözülene kadar hiçbir fiyattan satılamaz.',
+          '<strong>BONK</strong> gibi düşük likiditeli meme coinlerde slippage genellikle işlem ücretinden pahalıdır.',
+          '<strong>USDC</strong> ve diğer dolar stablecoinlerinde hesaplanacak fiyat artışı yoktur: her iki fiyata 1,00 yazın, hesaplayıcı size yalnızca ücretlerin maliyetini gösterir.',
+        ],
+        footer: 'Sitenin nasıl çalıştığını anlatan sayfaları da genişlettik. <a href="/tr/methodology/">Metodoloji</a> sayfası artık her vergi ve protokol rakamının birincil kaynağını, 101 değerin programlı olarak nasıl yeniden doğrulandığını, her modelin bilinen sınırlarını ve kendi rakamlarımızda bulduğumuz hataları listeliyor. <a href="/tr/about/">Hakkımızda</a> ve <a href="/tr/editorial-policy/">yayın politikası</a> sayfalarında sitenin nasıl finanse edildiğini açıkça belirtiyoruz: yalnızca reklam; affiliate bağlantısı veya ücretli yerleşim yok. Tüm rakamlar genel bilgi amaçlı tahminlerdir; finansal veya vergi tavsiyesi değildir.',
+      },
+      {
+        date: '2026-08-18',
+        dateLabel: '18 Ağustos 2026',
+        title: 'Dash Madencilik Ödülleri Yeni Emisyon Dönemine Göre Güncellendi',
+        body: 'Dash, blok ödülünü yaklaşık her 383 günde bir <strong>%7,1</strong> oranında azaltıyor. Son azaltma <strong>16 Ağustos 2026</strong> tarihinde yürürlüğe girdi ve ASIC madencilik hesaplayıcımız artık bunu yansıtıyor.',
+        items: [
+          'Madencinin blok başına aldığı pay <strong>0,4426 DASH</strong> seviyesinden <strong>0,4109 DASH</strong> seviyesine indi.',
+          'Bunu üçüncü taraf verilerine güvenmek yerine, Dash blok zincirine gerçekten kaydedilen ödeme kayıtlarını okuyarak doğruladık.',
+          'Dash madencilik getirisi hesaplıyorsanız, günlük coin üretiminin eskisinden bir miktar daha düşük olmasını bekleyin. Hesaplayıcı, erişilebildiği sürece canlı ağ verilerini kullanır.',
+          'Bir sonraki azaltmanın <strong>Eylül 2027</strong> civarında olması bekleniyor.',
+        ],
+        footer: 'Tüm rakamlar genel bilgi amaçlı tahminlerdir; finansal veya vergi tavsiyesi değildir.',
+      },
+      {
+        date: '2026-08-02',
+        dateLabel: '2 Ağustos 2026',
+        title: 'Madencilik Ödülleri Düzeltildi: Dash, Zcash ve Ethereum Classic',
+        body: 'Madencilik hesaplayıcılarımız, madenciye hiç ulaşmayan coinleri de ona yazıyordu. Üç düzeltme, hepsi zincirlerin kendisinden doğrulandı:',
+        items: [
+          '<strong>Dash</strong>: madenci her bloğun yalnızca <strong>%20</strong>\'sini alır; %60 masternode\'lara, %20 hazineye gider. Biz blok ödemesinin tamamını kullanıyorduk; bu, Dash madencilik gelirini yaklaşık <strong>dört kat</strong> fazla gösteriyordu.',
+          '<strong>Zcash</strong>: her bloğun %20\'si geliştirme fonuna gider, yani madenci tam 1,5625 yerine <strong>1,25 ZEC</strong> alır (%25 fazla gösterim).',
+          '<strong>Ethereum Classic</strong>: 22 Temmuz 2026\'da 6. dönem başlayınca ödül %20 düşerek <strong>1,6384 ETC</strong> oldu. Biz hâlâ önceki dönemin 2,048 değerini gösteriyorduk.',
+          '<strong>Kaspa</strong>: ağın kendisinden <strong>2,3125 KAS</strong> olarak güncellendi. Kaspa ödülünü her ay biraz azaltır, bu yüzden bu değer anlık bir görüntüdür; hesaplayıcı ulaşabildiği sürece canlı ağ verisini kullanır.',
+          'Ayrıca kontrol edildi ve değişmedi: Portekiz kripto vergisi (365 günün altında %28, 365 gün ve üzerinde muaf) ve Avalanche\'ın 2.000 AVAX doğrulayıcı alt sınırı.',
+        ],
+        footer: 'Tüm rakamlar genel bilgi amaçlı tahminlerdir; finansal veya vergi tavsiyesi değildir.',
+      },
+      {
+        date: '2026-07-20',
+        dateLabel: '20 Temmuz 2026',
+        title: 'Japonya Veraset Vergisi — Artık Resmî Yöntemi İzliyor',
+        body: 'Japonya veraset vergisini hesaplayanlar için önemli bir doğruluk düzeltmesi:',
+        items: [
+          '<strong>Yasal mirasçı sayısı artık dikkate alınıyor.</strong> Japonya\'daki istisna ¥30M artı her yasal mirasçı için ¥6M\'dir; ancak hesaplayıcı önceden hep tek mirasçı varsayıyordu. Artık gerçek sayıyı girebilirsiniz.',
+          '<strong>Vergi Japon usulüne göre hesaplanıyor</strong>: miras yasal paylara bölünüyor ve her pay, tüm mirasa tek bir oran uygulamak yerine Ulusal Vergi Dairesi\'nin resmî tablosuyla ayrı ayrı vergilendiriliyor.',
+          'Bu düzeltmeler birlikte sonucu çok değiştiriyor: üç mirasçılı ¥100M\'lik bir mirasta önceden yaklaşık ¥19,2M vergi görünüyordu, artık doğru şekilde <strong>¥6,3M</strong> gösteriliyor — Ulusal Vergi Dairesi\'nin kendi örneğiyle birebir aynı.',
+          'Japonya\'nın ¥200.000 notu netleştirildi: ücretlilere uygulanır, vergiyi değil <em>beyan</em> yükümlülüğünü kaldırır ve yerel ikamet vergisi yine de beyan edilmelidir.',
+        ],
+        footer: 'Tüm rakamlar genel bilgi amaçlı tahminlerdir; finansal veya vergi tavsiyesi değildir.',
+      },
+      {
         date: '2026-07-02',
         dateLabel: '2 Temmuz 2026',
         title: 'Daha Güvenilir Geçmiş Fiyatlar',
@@ -409,6 +571,60 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     heading: 'नया क्या है',
     subtitle: 'नवीनतम अपडेट, नए कैलकुलेटर और CryptoCalk में सुधार।',
     updates: [
+      {
+        date: '2026-08-23',
+        dateLabel: '23 अगस्त 2026',
+        title: 'प्रॉफ़िट कैलकुलेटर में प्रति-कॉइन मार्गदर्शन और हमारे आंकड़ों के स्रोत पर अधिक पारदर्शिता',
+        body: '<a href="/hi/kripto-labh-calculator-hindi/">प्रॉफ़िट कैलकुलेटर</a> में अब एक <strong>प्रति-कॉइन सेक्शन</strong> है। गणित हर एसेट के लिए एक जैसा है, लेकिन उसके आसपास की लागतें अलग होती हैं — और यही चुपचाप आपके अनुमान को बिगाड़ती हैं।',
+        items: [
+          '<strong>LINK</strong> या <strong>ANKR</strong> भेजने पर गैस ETH में लगती है, टोकन में नहीं — ऑन-चेन आना-जाना कमाई से ज़्यादा महँगा पड़ सकता है।',
+          'स्टेक किए गए <strong>ATOM</strong> को अनबॉन्ड होने में 21 दिन लगते हैं: आपका असली एग्ज़िट प्राइस तीन हफ़्ते बाद वाला होता है।',
+          'स्टेक किया गया <strong>ICP</strong> न्यूरॉन डिज़ॉल्व होने तक किसी भी क़ीमत पर नहीं बेचा जा सकता।',
+          '<strong>BONK</strong> जैसे कम लिक्विडिटी वाले मीम कॉइन में स्लिपेज आमतौर पर ट्रेडिंग फ़ीस से ज़्यादा महँगा पड़ता है।',
+          '<strong>USDC</strong> जैसी स्टेबलकॉइन में क़ीमत नहीं बढ़ती — दोनों प्राइस में 1.00 डालें और कैलकुलेटर सिर्फ़ फ़ीस की लागत दिखा देगा।',
+        ],
+        footer: 'हमने वे पेज भी विस्तार से लिखे हैं जो बताते हैं कि यह साइट कैसे काम करती है। <a href="/hi/methodology/">मेथडोलॉजी</a> में अब हर टैक्स और प्रोटोकॉल आंकड़े का प्राथमिक स्रोत, 101 वैल्यू की निर्धारित पुनःजाँच, हर मॉडल की ज्ञात सीमाएँ और हमारे अपने आंकड़ों में मिली ग़लतियाँ दर्ज हैं। <a href="/hi/about/">हमारे बारे में</a> और <a href="/hi/editorial-policy/">संपादकीय नीति</a> में साफ़ लिखा है कि साइट कैसे चलती है: केवल विज्ञापन से — कोई एफ़िलिएट लिंक या पेड प्लेसमेंट नहीं। सभी आंकड़े सामान्य जानकारी के लिए अनुमान हैं, वित्तीय या कर सलाह नहीं।',
+      },
+      {
+        date: '2026-08-18',
+        dateLabel: '18 अगस्त 2026',
+        title: 'नए उत्सर्जन युग के लिए Dash माइनिंग रिवॉर्ड अपडेट किया गया',
+        body: 'Dash हर लगभग 383 दिन में अपना ब्लॉक रिवॉर्ड करीब <strong>7.1%</strong> घटाता है। नवीनतम कटौती <strong>16 अगस्त 2026</strong> को लागू हुई, और हमारा ASIC माइनिंग कैलकुलेटर अब इसे दर्शाता है।',
+        items: [
+          'प्रति ब्लॉक माइनर का हिस्सा <strong>0.4426 DASH</strong> से घटकर <strong>0.4109 DASH</strong> हो गया है।',
+          'हमने यह किसी तीसरे पक्ष के आँकड़ों पर भरोसा करने के बजाय, Dash ब्लॉकचेन पर दर्ज वास्तविक भुगतानों को पढ़कर सत्यापित किया।',
+          'यदि आप Dash माइनिंग रिटर्न का अनुमान लगा रहे हैं, तो पहले की तुलना में दैनिक कॉइन उत्पादन थोड़ा कम रहने की अपेक्षा करें। कैलकुलेटर उपलब्ध होने पर लाइव नेटवर्क डेटा का उपयोग करता है।',
+          'अगली कटौती लगभग <strong>सितंबर 2027</strong> में अपेक्षित है।',
+        ],
+        footer: 'सभी आँकड़े सामान्य जानकारी के लिए अनुमान हैं, वित्तीय या कर सलाह नहीं।',
+      },
+      {
+        date: '2026-08-02',
+        dateLabel: '2 अगस्त 2026',
+        title: 'माइनिंग रिवॉर्ड सुधारे गए: Dash, Zcash और Ethereum Classic',
+        body: 'हमारे माइनिंग कैलकुलेटर माइनर के खाते में वे सिक्के भी जोड़ रहे थे जो उस तक पहुँचते ही नहीं। तीन सुधार, सभी सीधे चेन से सत्यापित:',
+        items: [
+          '<strong>Dash</strong>: माइनर को हर ब्लॉक का केवल <strong>20%</strong> मिलता है; 60% मास्टरनोड्स और 20% ट्रेज़री को जाता है। हम पूरा ब्लॉक भुगतान ले रहे थे, जिससे Dash माइनिंग आय लगभग <strong>चार गुना</strong> ज़्यादा दिख रही थी।',
+          '<strong>Zcash</strong>: हर ब्लॉक का 20% डेवलपमेंट फंड में जाता है, इसलिए माइनर को पूरे 1.5625 नहीं बल्कि <strong>1.25 ZEC</strong> मिलते हैं (25% अधिक आकलन)।',
+          '<strong>Ethereum Classic</strong>: 22 जुलाई 2026 को युग 6 शुरू होने पर रिवॉर्ड 20% घटकर <strong>1.6384 ETC</strong> हो गया। हम अब भी पिछले युग का 2.048 दिखा रहे थे।',
+          '<strong>Kaspa</strong>: नेटवर्क से सीधे <strong>2.3125 KAS</strong> पर अपडेट किया गया। Kaspa हर महीने अपना रिवॉर्ड थोड़ा घटाता है, इसलिए यह आँकड़ा एक स्नैपशॉट है; कैलकुलेटर जब भी संभव हो लाइव नेटवर्क डेटा इस्तेमाल करता है।',
+          'यह भी जाँचा गया और अपरिवर्तित मिला: पुर्तगाल का क्रिप्टो कर (365 दिन से कम पर 28%, 365+ पर छूट) और Avalanche की 2,000 AVAX वैलिडेटर न्यूनतम सीमा।',
+        ],
+        footer: 'सभी आँकड़े सामान्य जानकारी के लिए अनुमान हैं, वित्तीय या कर सलाह नहीं।',
+      },
+      {
+        date: '2026-07-20',
+        dateLabel: '20 जुलाई 2026',
+        title: 'जापान विरासत कर — अब आधिकारिक तरीके से',
+        body: 'जापानी विरासत कर का अनुमान लगाने वालों के लिए एक अहम सुधार:',
+        items: [
+          '<strong>अब कानूनी उत्तराधिकारियों की संख्या मायने रखती है।</strong> जापान में छूट ¥30M और प्रत्येक कानूनी उत्तराधिकारी के लिए ¥6M है, पर कैलकुलेटर हमेशा एक ही उत्तराधिकारी मानता था। अब आप वास्तविक संख्या दर्ज कर सकते हैं।',
+          '<strong>कर की गणना जापानी तरीके से होती है</strong> — पूरी संपत्ति पर एक ही दर लगाने के बजाय, संपत्ति को कानूनी हिस्सों में बाँटकर हर हिस्से पर राष्ट्रीय कर एजेंसी की आधिकारिक तालिका से अलग-अलग कर लगाया जाता है।',
+          'इन सुधारों से नतीजा काफी बदलता है: तीन उत्तराधिकारियों वाली ¥100M की संपत्ति पर पहले लगभग ¥19.2M कर दिखता था, अब सही रूप से <strong>¥6.3M</strong> दिखता है — जो राष्ट्रीय कर एजेंसी के अपने उदाहरण से मेल खाता है।',
+          'जापान का ¥200,000 वाला नोट स्पष्ट किया गया: यह वेतनभोगी कर्मचारियों पर लागू होता है, कर नहीं बल्कि <em>रिटर्न भरने</em> की बाध्यता हटाता है, और स्थानीय निवासी कर फिर भी घोषित करना होता है।',
+        ],
+        footer: 'सभी आँकड़े सामान्य जानकारी के लिए अनुमान हैं, वित्तीय या कर सलाह नहीं।',
+      },
       {
         date: '2026-07-02',
         dateLabel: '2 जुलाई 2026',
@@ -534,6 +750,60 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     subtitle: 'Последние обновления, новые калькуляторы и улучшения CryptoCalk.',
     updates: [
       {
+        date: '2026-08-23',
+        dateLabel: '23 августа 2026',
+        title: 'Подсказки по монетам в калькуляторе прибыли и больше прозрачности о наших цифрах',
+        body: 'В <a href="/ru/kalkulyator-pribyli-kripto/">калькуляторе прибыли</a> появился <strong>раздел по монетам</strong>. Формула одинакова для любого актива, а вот издержки вокруг неё — нет, и именно они незаметно портят расчёт.',
+        items: [
+          'Перевод <strong>LINK</strong> или <strong>ANKR</strong> оплачивается в ETH, а не в самом токене: путь «туда и обратно» в сети может стоить дороже прибыли.',
+          'Застейканный <strong>ATOM</strong> разблокируется 21 день: ваша реальная цена выхода — та, что будет через три недели.',
+          'Застейканный <strong>ICP</strong> нельзя продать ни по какой цене, пока не растворится нейрон.',
+          'У мемкоинов с тонкой ликвидностью вроде <strong>BONK</strong> проскальзывание обычно дороже комиссии.',
+          'У <strong>USDC</strong> и других долларовых стейблкоинов нет роста цены: поставьте 1,00 в оба поля — и увидите, во сколько обходятся одни лишь комиссии.',
+        ],
+        footer: 'Мы также расширили страницы о том, как устроен сайт. В <a href="/ru/methodology/">методологии</a> теперь указан первоисточник каждой налоговой и протокольной величины, описано, как 101 значение перепроверяется по расписанию, перечислены известные ограничения моделей и ошибки, которые мы нашли в собственных цифрах. На страницах <a href="/ru/about/">о проекте</a> и <a href="/ru/editorial-policy/">редакционной политики</a> прямо сказано, на что живёт сайт: только реклама — без партнёрских ссылок и оплаченных размещений. Все цифры — оценки общего характера, а не финансовая или налоговая консультация.',
+      },
+      {
+        date: '2026-08-18',
+        dateLabel: '18 августа 2026',
+        title: 'Награда за майнинг Dash обновлена под новую эпоху эмиссии',
+        body: 'Dash снижает награду за блок примерно на <strong>7,1%</strong> каждые ~383 дня. Последнее снижение вступило в силу <strong>16 августа 2026 года</strong>, и наш калькулятор ASIC-майнинга уже это учитывает.',
+        items: [
+          'Доля майнера за блок снизилась с <strong>0,4426 DASH</strong> до <strong>0,4109 DASH</strong>.',
+          'Мы проверили это, прочитав реальные выплаты, записанные в блокчейне Dash, а не полагаясь на данные сторонних сайтов.',
+          'Если вы оцениваете доходность майнинга Dash, ожидайте немного меньшую дневную добычу монет, чем раньше. Калькулятор использует актуальные данные сети, когда они доступны.',
+          'Следующее снижение ожидается примерно в <strong>сентябре 2027 года</strong>.',
+        ],
+        footer: 'Все цифры — оценки для общего сведения, не финансовая или налоговая консультация.',
+      },
+      {
+        date: '2026-08-02',
+        dateLabel: '2 августа 2026',
+        title: 'Исправлены награды за майнинг: Dash, Zcash и Ethereum Classic',
+        body: 'Наши калькуляторы майнинга записывали майнеру монеты, которые до него не доходят. Три исправления, все сверены прямо по сетям:',
+        items: [
+          '<strong>Dash</strong>: майнер получает только <strong>20%</strong> каждого блока; 60% уходит мастернодам и 20% в казну. Мы брали всю выплату блока, из-за чего доход от майнинга Dash завышался примерно <strong>вчетверо</strong>.',
+          '<strong>Zcash</strong>: 20% каждого блока идёт в фонд разработки, поэтому майнер получает <strong>1,25 ZEC</strong>, а не полные 1,5625 (завышение на 25%).',
+          '<strong>Ethereum Classic</strong>: с началом эры 6 22 июля 2026 награда упала на 20% до <strong>1,6384 ETC</strong>. Мы всё ещё показывали 2,048 из предыдущей эры.',
+          '<strong>Kaspa</strong>: обновлён до <strong>2,3125 KAS</strong> по данным самой сети. Kaspa каждый месяц немного срезает награду, так что это снимок на дату; калькулятор использует живые данные сети, когда может до них дотянуться.',
+          'Также перепроверено и без изменений: крипто-налог Португалии (28% при владении менее 365 дней, освобождение от 365) и минимум 2 000 AVAX для валидаторов Avalanche.',
+        ],
+        footer: 'Все цифры — оценки для общего сведения, не финансовая или налоговая консультация.',
+      },
+      {
+        date: '2026-07-20',
+        dateLabel: '20 июля 2026',
+        title: 'Налог на наследство в Японии — теперь по официальной методике',
+        body: 'Важное исправление точности для тех, кто считает японский налог на наследство:',
+        items: [
+          '<strong>Теперь учитывается число законных наследников.</strong> Необлагаемый минимум в Японии — ¥30 млн плюс ¥6 млн за каждого законного наследника, но калькулятор всегда считал одного. Теперь можно указать реальное число.',
+          '<strong>Налог считается по-японски</strong>: наследство делится на законные доли, и каждая доля облагается отдельно по официальной таблице Национального налогового агентства — вместо единой ставки на всю сумму.',
+          'Вместе эти правки сильно меняют результат: для наследства ¥100 млн с тремя наследниками раньше показывалось около ¥19,2 млн налога, а теперь корректные <strong>¥6,3 млн</strong> — ровно как в официальном примере Национального налогового агентства.',
+          'Уточнено примечание про ¥200 000: оно касается наёмных работников, освобождает от <em>подачи декларации</em>, а не от налога, и местный налог на жителей всё равно нужно декларировать.',
+        ],
+        footer: 'Все цифры — оценки для общего сведения, не финансовая или налоговая консультация.',
+      },
+      {
         date: '2026-07-02',
         dateLabel: '2 июля 2026',
         title: 'Более надёжные исторические цены',
@@ -653,6 +923,29 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
 };
 
 const c = content[lang];
+
+// The localized changelogs shipped without any JSON-LD (the EN page has always had it).
+// dateModified comes from the newest entry, so it stays honest without a build-time date.
+const pageUrl = `https://cryptocalk.com/${lang}/updates/`;
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: c.pageTitle,
+  description: c.metaDescription,
+  url: pageUrl,
+  inLanguage: lang,
+  dateModified: `${c.updates[0].date}T00:00:00+00:00`,
+  isPartOf: { '@type': 'WebSite', name: 'CryptoCalk', url: 'https://cryptocalk.com/' },
+  author: { '@type': 'Person', name: 'Konstantin Iakovlev', url: 'https://cryptocalk.com/about/' },
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'CryptoCalk', item: `https://cryptocalk.com/${lang}/` },
+    { '@type': 'ListItem', position: 2, name: c.heading, item: pageUrl },
+  ],
+};
 ---
 
 <Layout
@@ -694,6 +987,8 @@ const c = content[lang];
     </div>
   </main>
   <SiteFooter lang={lang} />
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </Layout>
 
 <style>
