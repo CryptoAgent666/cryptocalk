@@ -6,11 +6,38 @@ import { loc, fmtPctValue } from '../i18n/format';
 
 interface CountryRule {
   name: string;
-  exemption: (rel: string) => number;
-  rate: (taxable: number, rel: string) => number;
+  exemption: (rel: string, heirs: number) => number;
+  rate: (taxable: number, rel: string, heirs: number) => number;
+  /**
+   * Statutory override for jurisdictions whose tax is NOT simply
+   * `taxableEstate × rate`. Japan splits the taxable estate across the
+   * statutory heirs and taxes each share separately, so a flat rate on the
+   * whole estate overstates the bill. When absent, the flat model is used.
+   */
+  computeTax?: (taxable: number, rel: string, heirs: number) => number;
+  /** Show the "statutory heirs" input — only meaningful where heirs affect the maths. */
+  usesHeirCount?: boolean;
   stepUp: boolean;
   notes: string;
 }
+
+/**
+ * Japan 相続税の速算表 (NTA No.4155): [upper bound of the heir's share, rate %, quick-calc deduction].
+ * Applied per statutory heir's share, not to the whole estate.
+ */
+const JP_RATE_TABLE: ReadonlyArray<readonly [number, number, number]> = [
+  [10_000_000, 10, 0],
+  [30_000_000, 15, 500_000],
+  [50_000_000, 20, 2_000_000],
+  [100_000_000, 30, 7_000_000],
+  [200_000_000, 40, 17_000_000],
+  [300_000_000, 45, 27_000_000],
+  [600_000_000, 50, 42_000_000],
+  [Number.POSITIVE_INFINITY, 55, 72_000_000],
+];
+
+const jpBandFor = (share: number) =>
+  JP_RATE_TABLE.find(([cap]) => share <= cap) ?? JP_RATE_TABLE[JP_RATE_TABLE.length - 1];
 
 const COUNTRIES: Record<string, CountryRule> = {
   us: {
@@ -33,9 +60,8 @@ const COUNTRIES: Record<string, CountryRule> = {
     rate: (taxable, rel) => {
       if (taxable <= 0) return 0;
       if (rel === 'other') {
-        if (taxable <= 75000) return 30;
-        if (taxable <= 300000) return 30;
-        if (taxable <= 600000) return 30;
+        // ErbStG §19 Steuerklasse III: flat 30% up to €6,000,000, then 50% above.
+        if (taxable <= 6000000) return 30;
         return 50;
       }
       if (taxable <= 75000) return 7;
@@ -51,20 +77,25 @@ const COUNTRIES: Record<string, CountryRule> = {
   },
   jp: {
     name: 'Japan',
-    exemption: () => 30000000 + 6000000,
-    rate: (taxable) => {
+    // 基礎控除 = ¥30M + ¥6M × number of statutory heirs (NTA No.4152).
+    exemption: (_rel, heirs) => 30000000 + 6000000 * heirs,
+    // Marginal band of a single heir's statutory share — shown as "Tax Rate".
+    rate: (taxable, _rel, heirs) => {
       if (taxable <= 0) return 0;
-      if (taxable <= 10000000) return 10;
-      if (taxable <= 30000000) return 15;
-      if (taxable <= 50000000) return 20;
-      if (taxable <= 100000000) return 30;
-      if (taxable <= 200000000) return 40;
-      if (taxable <= 300000000) return 45;
-      if (taxable <= 600000000) return 50;
-      return 55;
+      return jpBandFor(taxable / Math.max(1, heirs))[1];
     },
+    // 相続税の総額: split the taxable estate into statutory shares, tax each
+    // share via the 速算表 (rate − quick-calc deduction), then sum (NTA No.4155).
+    computeTax: (taxable, _rel, heirs) => {
+      if (taxable <= 0) return 0;
+      const n = Math.max(1, heirs);
+      const share = taxable / n;
+      const [, rate, deduction] = jpBandFor(share);
+      return Math.max(0, share * (rate / 100) - deduction) * n;
+    },
+    usesHeirCount: true,
     stepUp: false,
-    notes: 'Japan: basic exemption ¥30M + ¥6M per heir. Progressive rates 10%-55%. No step-up in basis; heirs inherit original cost basis.',
+    notes: 'Japan: basic exemption ¥30M + ¥6M per statutory heir. The taxable estate is split into statutory shares and each share is taxed at 10%-55% with the NTA quick-calc deduction. Assumes equal shares; the spouse tax credit (tax-free up to ¥160M or the statutory share) is not modelled, so a spouse\'s bill is lower in practice. No step-up in basis; heirs inherit original cost basis.',
   },
   au: {
     name: 'Australia',
@@ -134,6 +165,7 @@ function InheritanceTaxCalculator({ lang = 'en' }: { lang?: string }) {
   const [relationship, setRelationship] = useState('child');
   const [costBasis, setCostBasis] = useState('100000');
   const [holdingYears, setHoldingYears] = useState('5');
+  const [heirCount, setHeirCount] = useState('1');
 
   const applyScenario = (s: (typeof SCENARIOS)[number]) => {
     setPortfolioValue(s.portfolioValue); setCountry(s.country);
@@ -152,10 +184,13 @@ function InheritanceTaxCalculator({ lang = 'en' }: { lang?: string }) {
 
     if (value <= 0) return null;
 
-    const exemption = config.exemption(relationship);
+    const heirs = Math.max(1, Math.floor(parseFloat(heirCount) || 1));
+    const exemption = config.exemption(relationship, heirs);
     const taxableEstate = Math.max(0, value - exemption);
-    const taxRate = config.rate(taxableEstate, relationship);
-    const estimatedTax = taxableEstate * (taxRate / 100);
+    const taxRate = config.rate(taxableEstate, relationship, heirs);
+    const estimatedTax = config.computeTax
+      ? config.computeTax(taxableEstate, relationship, heirs)
+      : taxableEstate * (taxRate / 100);
     const effectiveRate = value > 0 ? (estimatedTax / value) * 100 : 0;
     const netInheritance = value - estimatedTax;
     const stepUpBenefit = config.stepUp ? (value - basis) : 0;
@@ -170,11 +205,11 @@ function InheritanceTaxCalculator({ lang = 'en' }: { lang?: string }) {
       stepUpBenefit,
       unrealizedGain: value - basis,
     };
-  }, [portfolioValue, country, relationship, costBasis, config]);
+  }, [portfolioValue, country, relationship, costBasis, heirCount, config]);
 
   const reset = () => {
     setPortfolioValue('500000'); setCountry('us'); setRelationship('child');
-    setCostBasis('100000'); setHoldingYears('5');
+    setCostBasis('100000'); setHoldingYears('5'); setHeirCount('1');
   };
 
   return (
@@ -219,6 +254,14 @@ function InheritanceTaxCalculator({ lang = 'en' }: { lang?: string }) {
               ))}
             </div>
           </div>
+
+          {config.usesHeirCount && (
+            <div className="input-group">
+              <label htmlFor="inh-heirs">{getUiString(lang, 'Statutory Heirs')}</label>
+              <input type="number" inputMode="numeric" id="inh-heirs" value={heirCount} onChange={(e) => setHeirCount(e.target.value)} min="1" step="1" onFocus={(e) => e.target.select()} />
+              <span className="input-hint">{getUiString(lang, 'Raises the basic exemption by ¥6M each and splits the estate into statutory shares.')}</span>
+            </div>
+          )}
 
           <div className="input-group">
             <label htmlFor="inh-basis">{getUiString(lang, 'Cost Basis (USD)')}</label>

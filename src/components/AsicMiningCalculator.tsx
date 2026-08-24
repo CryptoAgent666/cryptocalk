@@ -68,8 +68,13 @@ const ASIC_PRESETS: AsicPreset[] = [
 const NETWORK_DATA: Record<string, NetworkData> = {
     BTC: { difficulty: 145000000000000, blockReward: 3.125, price: 77300, blockTime: 600 },
     LTC: { difficulty: 30000000, blockReward: 6.25, price: 56, blockTime: 150 },
-    DASH: { difficulty: 220000000, blockReward: 1.77, price: 37, blockTime: 150 },
-    ZEC: { difficulty: 90000000, blockReward: 1.5625, price: 337, blockTime: 75 },
+    // blockReward here is the MINER's share per block — calcDailyCoins multiplies it by the
+    // miner's expected blocks/day, and the live whattomine override (block_reward) is
+    // miner-facing too. For chains that split the subsidy, storing the full subsidy inflates
+    // mining revenue: Dash pays the miner only 20% (masternodes 60%, treasury 20%) and Zcash
+    // routes 20% to the ZIP-1015 dev fund.
+    DASH: { difficulty: 220000000, blockReward: 0.4109, price: 37, blockTime: 150 }, // 20% of the 2.05472550 era-12 subsidy (era 12 began at block 2,522,881, 16 Aug 2026); drops to ~0.3816 at block 2,733,121 (~Sep 2027)
+    ZEC: { difficulty: 90000000, blockReward: 1.25, price: 337, blockTime: 75 }, // 80% of the 1.5625 subsidy after the ZIP-1015/NU6 dev fund; next halving ~Nov 2028
 };
 
 // Map whattomine generic names to our symbols

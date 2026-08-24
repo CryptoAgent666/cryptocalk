@@ -59,10 +59,13 @@ const GPU_PRESETS: GpuPreset[] = [
 ];
 
 const COINS: Record<string, CoinData> = {
-    ETC: { symbol: 'ETC', name: 'Ethereum Classic', price: 8.75, blockReward: 2.048, networkHashrate: 200000, algo: 'Ethash', blockTime: 13 },
+    ETC: { symbol: 'ETC', name: 'Ethereum Classic', price: 8.75, blockReward: 1.6384, networkHashrate: 200000, algo: 'Ethash', blockTime: 13 }, // ECIP-1017 era 6 since block 25,000,000 (22 Jul 2026); -20% to 1.31072 at block 30,000,001 (~2028)
     RVN: { symbol: 'RVN', name: 'Ravencoin', price: 0.006, blockReward: 1250, networkHashrate: 5000000, algo: 'KawPow', blockTime: 60 },
     ERGO: { symbol: 'ERGO', name: 'Ergo', price: 0.33, blockReward: 3, networkHashrate: 15000, algo: 'Autolykos2', blockTime: 120 },
-    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.036, blockReward: 2.49, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 0.1 }, // 10 BPS post-Crescendo (May 2025); per-block reward ~2.49 KAS (≈24.9 KAS/sec emission ÷ 10 BPS), drifts down monthly via chromatic halving — live value preferred
+    // Kaspa's chromatic halving steps the reward down ~5.6% EVERY MONTH, so this fallback is a
+    // dated snapshot by nature — the live whattomine/API value is authoritative. 2.31246515 per
+    // api.kaspa.org on 2026-08-02; next step 2026-09-04 → 2.18267645. 10 BPS since Crescendo (May 2025).
+    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.036, blockReward: 2.3125, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 0.1 },
     // FLUX removed 2026-06: Proof-of-Useful-Work v2 hard fork (block 2,020,000, ~Oct 2025) eliminated GPU mining entirely; Flux now produced by FluxNodes (Proof of Nodes), not GPUs.
 };
 

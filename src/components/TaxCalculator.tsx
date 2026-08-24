@@ -81,12 +81,12 @@ const COUNTRIES: Record<string, CountryConfig> = {
         longTermThreshold: '12 months',
         brackets: [
             { label: 'A$0 – A$18,200 (tax-free)', shortTermRate: 0, longTermRate: 0 },
-            { label: 'A$18,201 – A$45,000', shortTermRate: 16, longTermRate: 8 },
+            { label: 'A$18,201 – A$45,000', shortTermRate: 15, longTermRate: 7.5 },
             { label: 'A$45,001 – A$135,000', shortTermRate: 30, longTermRate: 15 },
             { label: 'A$135,001 – A$190,000', shortTermRate: 37, longTermRate: 18.5 },
             { label: 'A$190,001+', shortTermRate: 45, longTermRate: 22.5 },
         ],
-        notes: 'Australia: 50% CGT discount for assets held over 12 months. Crypto treated as CGT asset. Stage 3 tax cuts (effective 2024-07-01): 19%→16% for low bracket, threshold raised to A$135K/A$190K.',
+        notes: 'Australia: 50% CGT discount for assets held over 12 months. Crypto treated as CGT asset. The A$18,201–A$45,000 bracket was cut to 15% from 1 Jul 2026 (16% in 2024–26), dropping again to 14% from 1 Jul 2027.',
     },
     ca: {
         name: 'Canada',
@@ -129,7 +129,7 @@ const COUNTRIES: Record<string, CountryConfig> = {
             { label: '¥18,000,001 – ¥40,000,000', shortTermRate: 50, longTermRate: 50 },
             { label: '¥40,000,001+', shortTermRate: 55, longTermRate: 55 },
         ],
-        notes: 'Japan classifies crypto as miscellaneous income. Rates include 10% local inhabitant tax. Gains under ¥200,000 exempt from filing.',
+        notes: 'Japan classifies crypto as miscellaneous income (雑所得). Rates include 10% local inhabitant tax. A salaried employee (one employer, salary ≤¥20M, year-end adjustment completed) need not file an income tax return if TOTAL non-salary income is ¥200,000 or less — this waives the filing requirement, not the tax, and local inhabitant tax (住民税) must still be declared with your municipality.',
     },
     br: {
         name: 'Brazil',

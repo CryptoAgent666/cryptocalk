@@ -9,9 +9,8 @@
     "formula_or_market": 22,
     "conflicts": 9,
     "status_summary": {
-      "current": 77,
+      "current": 78,
       "removed": 1,
-      "uncertain": 1,
       "unverified": 22
     },
     "themes": {
@@ -72,9 +71,15 @@
       "DustAttackCalculator": 1
     },
     "verified_date": "2026-06-23",
-    "last_reconciled": "2026-06-30",
+    "last_reconciled": "2026-08-19",
     "reconcile_note": "16 Tier-2 stale constants re-verified + fixed in .tsx + deployed 2026-06-23 (web + OTA 1.6.4). KAS also updated for Crescendo 10 BPS.",
-    "reconcile_note_2026_06_30": "DATA_HUB monitor flagged 9 sources; LLM-verified (workflow) + adversarial. 7 current, 2 stale fixed: KAS 0.2596->2.49 (prior 10x error corrected), FLUX removed (PoUW v2 ended GPU mining Oct 2025). us.brackets ledger synced to 2026. UK note year label refreshed."
+    "reconcile_note_2026_06_30": "DATA_HUB monitor flagged 9 sources; LLM-verified (workflow) + adversarial. 7 current, 2 stale fixed: KAS 0.2596->2.49 (prior 10x error corrected), FLUX removed (PoUW v2 ended GPU mining Oct 2025). us.brackets ledger synced to 2026. UK note year label refreshed.",
+    "reconcile_note_2026_07_06": "DATA_HUB flagged 17 constants. 8 skipped as web-verified 2026-06-30 (BTC 3.125, dust 546, KAS 2.49, au.inheritance 0, eth 32, uk.brackets — protocol/tax unchanged in 4 days). 4 groups (9 constants: US estate, India, Korea, Brazil) LLM+adversarially re-verified — ALL CURRENT, 0 stale. Fixed monitor trap: us.estate_tax_rate source repointed off stale IRS FAQ page to IR-2025-103.",
+    "reconcile_note_2026_07_06b": "Gov-source batch: applied AU 2nd band 16→15/8→7.5 (ATO, eff 1 Jul 2026) + DE inheritance Steuerklasse III 50%-threshold €600k→€6M (ErbStG §19 ×10 fix). REJECTED ES 30→28 (AEAT: top is 30% since 2025). Confirmed already-correct: UK 24, DE income €12,348/€69,879 (EStG §32a), CA flat 50, BR progressive. Synced stale de.brackets ledger.",
+    "reconcile_note_2026_07_06c": "DATA_HUB flagged 11 → 9 skipped as verified 2026-06-30/07-06 (incl. FLUX which is REMOVED — monitor still holds the dead constant, prune it in DATA_HUB config). 2 genuinely-new (jp.brackets, us.wash_sale) LLM+gov re-verified → BOTH CURRENT, 0 stale. No .tsx change, no deploy. Watch: Japan flat-20% (FIEA, ~2028), US crypto wash-sale bills (119th Congress).",
+    "reconcile_note_2026_07_20": "DATA_HUB flagged 9 → 5 skipped as verified 30.06/06.07 (btc, KAS, au.inheritance, br.itcmd, au.longTerm, es.brackets). 4 genuinely-new (CA inheritance, JP inheritance exemption+rates, JP filing threshold) gov-verified → ALL CURRENT, 0 stale. Sources repointed PwC → gov primaries (laws-lois.justice.gc.ca, nta.go.jp) = also hash-stable for the monitor. Found 3 CODE defects (not staleness): JP exemption ignores heir count; JP rate applied flat w/o 控除額+share split; JP filing-threshold copy misleading. | FOLLOW-UP same day: all 3 JP code defects FIXED + deployed (heir-count input, statutory per-share method w/ 控除額, filing-threshold copy); verified against NTA worked example; changelog added in 6 locales.",
+    "reconcile_note_2026_08_02": "Monitor flagged 6 sources → au.brackets skipped (gov-verified 2026-07-06, locked to 1 Jul 2027). 5 groups verified: 3 STALE FIXED (DASH 1.77→0.4426, ZEC 1.5625→1.25, ETC 2.048→1.6384), 2 current (Portugal 28%/365d — first primary-source check vs CIRS; Avalanche 2000 AVAX). SYSTEMIC BUG CLASS FOUND: blockReward fields feed calcDailyCoins as MINER yield, but DASH/ZEC stored the full subsidy → 4x and 25% overstatement. ETC was pure era staleness (era 6 started 22 Jul 2026). Mining sources repointed off bitinfocharts.",
+    "reconcile_note_2026_08_19": "Monitor flagged 2 sources / 3 constants (au.brackets; pt.longTermThreshold + pt.short_term_rate) → ALL CURRENT, 0 changes, no .tsx edit, no deploy. AU verified vs ATO 2026–27 resident rates (15c band in force 1 Jul 2026 → 30 Jun 2027; drops to 14c on 1 Jul 2027 as already noted). PT verified for the FIRST time against the consolidated CIRS PDF: art. 72.º n.º 1 al. c) = 28% autonomous rate on the positive mais-valias balance incl. al. k) of art. 10.º n.º 1 (crypto that are not securities), and art. 10.º n.º 22 = gains AND losses excluded when held ≥365 days. Code text current to Lei n.º 26/2026 de 3/06 (a DAC8/CARF reporting-obligations amendment — no rate or holding-period change). BOTH FLAGS WERE PURE NOISE, and worse, both constants are monitor BLIND SPOTS: the render-assist entries hold 242-char (ATO) and 255-char (koinly) bodies — an Akamai \"Access Denied\" page whose rotating Reference #18.caa4c11.<epoch>.<id> is what produced the alert figures 068.178 / 740.286, and a Cloudflare \"Just a moment...\" interstitial whose rotating ray-id flips the txt: hash every cycle. Neither page has ever been hashed with real content. Recommended de-noise: drop source-hash for both (calendar-only — AU keyed to the legislated 1 Jul 2027 step-down, PT to the annual OE window), and teach the monitor to classify sub-~600-char bodies / \"Access Denied\" / \"Just a moment\" as blocked rather than changed (this bug class is fleet-wide, not cryptocalk-specific)."
   },
   "constants": [
     {
@@ -145,7 +150,7 @@
       "id": "AsicMiningCalculator__NETWORK_DATA.DASH.blockReward",
       "calculator": "AsicMiningCalculator",
       "key": "NETWORK_DATA.DASH.blockReward",
-      "value": 1.77,
+      "value": "0.4109",
       "unit": "DASH",
       "jurisdiction": "",
       "law": "Dash consensus / emission curve",
@@ -154,13 +159,13 @@
       "surfaces": [
         "src/components/AsicMiningCalculator.tsx:71"
       ],
-      "last_updated_hint": "2026-06-23",
-      "source_hint": "Dash emission schedule (-7.14%/yr). whattomine block_reward (live) preferred.",
+      "last_updated_hint": "2026-08-18",
+      "source_hint": "Dash emission schedule (-1/14 every 210,240 blocks). whattomine block_reward (live) preferred. Verify via coinbase reads.",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4).",
-      "official_value": "~1.55",
-      "source_url": "https://bitinfocharts.com/dash/"
+      "notes": "ROLLED OVER 2026-08-18 (era 11 -> era 12), on-chain verified: era 12 began at block 2,522,881, mined 2026-08-16T16:05:22Z. Derived from real coinbases (insight.dash.org; blockchair was unreachable): in-block coinbase generation 1.64378041 DASH (164,378,041 duffs) confirmed fee-free on blocks 2,522,881 and 2,523,050 by subtracting each block's tx fees; the miner output is EXACTLY 25% of the coinbase on every block sampled (2,522,881/890/950, 2,523,000/020/050/060), with masternode+Platform taking 75% (Platform credit-pool OP_RETURN = 37.5% of the MN portion). miner = in-block/4 = 0.41094510 -> stored 0.4109 (was 0.4426). Boundary proven: block 2,522,880 subsidy 1.77022505 (miner 0.44255626) vs 2,522,881 subsidy 1.64378041, ratio exactly 13/14. Era 12 full subsidy 2.05472550; split miner 20% / masternodes 60% / treasury 20% (in-block = 80%). This field feeds calcDailyCoins as the MINER's per-block yield, matching the live whattomine block_reward semantics. ⚠ NEXT REDUCTION block 2,733,121 (~2027-09-04, ~209k blocks at ~157.7s): miner 0.4109 -> ~0.3816. Scheduled task cryptocalk-dash-emission-2027-09.",
+      "official_value": "miner share 0.41094510 (era-12 subsidy 2.05472550; in-block coinbase miner+MN+Platform 1.64378041)",
+      "source_url": "https://docs.dash.org/en/stable/docs/user/introduction/features.html"
     },
     {
       "id": "AsicMiningCalculator__NETWORK_DATA.DASH.blockTime",
@@ -226,7 +231,7 @@
       "id": "AsicMiningCalculator__NETWORK_DATA.ZEC.blockReward",
       "calculator": "AsicMiningCalculator",
       "key": "NETWORK_DATA.ZEC.blockReward",
-      "value": 1.5625,
+      "value": "1.25",
       "unit": "ZEC",
       "jurisdiction": "",
       "law": "Zcash consensus / halving schedule",
@@ -235,13 +240,13 @@
       "surfaces": [
         "src/components/AsicMiningCalculator.tsx:72"
       ],
-      "last_updated_hint": "2026-06-23",
+      "last_updated_hint": "2026-08-02",
       "source_hint": "Zcash protocol; halving Nov 2024 → 1.5625 ZEC. Current value likely 1.5625, not 2.5.",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4).",
-      "official_value": "1.5625",
-      "source_url": "https://bitinfocharts.com/zcash/"
+      "notes": "FIXED 2026-08-02: was 1.5625 = the TOTAL block subsidy (correct as a protocol fact since the 2nd halving, block 2,726,400 / 23 Nov 2024), but this field is consumed as MINER yield and ZIP-1015 (NU6, continued by ZIP-1016/271) routes 20% to the dev fund → miner-facing 1.25. Overstated ZEC mining yield by 25%. Next halving: block 4,406,400, ~23 Nov 2028.",
+      "official_value": "miner share 1.25 (total subsidy 1.5625, 20% to the ZIP-1015/NU6 dev fund)",
+      "source_url": "https://zips.z.cash/zip-1015"
     },
     {
       "id": "AsicMiningCalculator__NETWORK_DATA.ZEC.blockTime",
@@ -256,12 +261,12 @@
       "surfaces": [
         "src/components/AsicMiningCalculator.tsx:72"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-08-02",
       "source_hint": "Zcash post-Blossom 75-second target block time.",
       "conflict": false,
       "status": "current",
-      "notes": "Zcash target block time (75s = 1.25 min, post-Blossom). Protocol consensus target.",
-      "source_url": "https://bitinfocharts.com/zcash/"
+      "notes": "Re-verified 2026-08-02: 75 s target since Blossom (NU) — CORRECT, unchanged.",
+      "source_url": "https://zips.z.cash/protocol/protocol.pdf"
     },
     {
       "id": "AsicMiningCalculator__hashrateMultiplier_difficultyTarget",
@@ -318,7 +323,7 @@
         "src/components/CryptoInheritanceCalculator.tsx:77",
         "src/components/CryptoInheritanceCalculator.tsx:152-155"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-07-06",
       "source_hint": "IRS",
       "conflict": false,
       "status": "current",
@@ -338,7 +343,7 @@
       "surfaces": [
         "src/components/CryptoInheritanceCalculator.tsx:262"
       ],
-      "last_updated_hint": "2026-06-23",
+      "last_updated_hint": "2026-07-06",
       "source_hint": "IRS",
       "conflict": false,
       "status": "current",
@@ -395,7 +400,7 @@
       "id": "GpuMiningCalculator__COINS.ETC.blockReward / blockTime",
       "calculator": "GpuMiningCalculator",
       "key": "COINS.ETC.blockReward / blockTime",
-      "value": "blockReward 2.048, blockTime 13",
+      "value": "blockReward 1.6384, blockTime 13",
       "unit": "ETC per block / seconds",
       "jurisdiction": "",
       "law": "Ethereum Classic consensus (Ethash PoW)",
@@ -404,13 +409,13 @@
       "surfaces": [
         "src/components/GpuMiningCalculator.tsx:62"
       ],
-      "last_updated_hint": "2026-06-23",
+      "last_updated_hint": "2026-08-02",
       "source_hint": "Ethereum Classic 5M20 monetary policy; ~13s block time. whattomine block_reward (live).",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4).",
-      "official_value": "blockReward 2.048, blockTime 13",
-      "source_url": "https://bitinfocharts.com/ethereum%20classic/"
+      "notes": "FIXED 2026-08-02: was 2.048 = ECIP-1017 ERA 5. Era 6 began at block 25,000,000 on 22 Jul 2026 (-20%) → 1.6384; our value went stale 11 days before this check. blockTime 13 s confirmed (measured avg 13.09). ⚠ Era 7 at block 30,000,001 → 1.31072, estimated Aug-Sep 2028. Source repointed off bitinfocharts to the ECIP.",
+      "official_value": "blockReward 1.6384 (ECIP-1017 era 6), blockTime 13",
+      "source_url": "https://ecips.ethereumclassic.org/ECIPs/ecip-1017"
     },
     {
       "id": "GpuMiningCalculator__COINS.FLUX.blockReward / blockTime",
@@ -437,7 +442,7 @@
       "id": "GpuMiningCalculator__COINS.KAS.blockReward / blockTime",
       "calculator": "GpuMiningCalculator",
       "key": "COINS.KAS.blockReward / blockTime",
-      "value": "blockReward 2.49, blockTime 0.1",
+      "value": "blockReward 2.3125, blockTime 0.1",
       "unit": "KAS per block / seconds",
       "jurisdiction": "",
       "law": "Kaspa consensus (kHeavyHash, chromatic emission)",
@@ -446,13 +451,13 @@
       "surfaces": [
         "src/components/GpuMiningCalculator.tsx:65"
       ],
-      "last_updated_hint": "2026-06-30",
+      "last_updated_hint": "2026-08-02",
       "source_hint": "Kaspa chromatic/monthly halving; 10 BPS (0.1s) post-Crescendo. whattomine block_reward (live) strongly preferred (decays ~5.6%/month).",
       "conflict": false,
       "status": "current",
-      "notes": "Re-verified 2026-06-30 (web + adversarial). CORRECTION of 2026-06-23 error: the prior 0.2596 was 10x too low — the API value ~2.596 is the per-BLOCK reward at 10 BPS (NOT per-second). Current per-block ~2.49 KAS (per-sec emission ~24.9 KAS/s via chromatic halving 440*0.5^(months/12)). minerstat shows anomalous ~55 — use whattomine/formula, not minerstat.",
-      "official_value": "blockReward ~2.49 per block @ 10 BPS (WhatToMine live, 24h avg ~2.55), blockTime 0.1",
-      "source_url": "https://whattomine.com/coins/394-kas-kheavyhash"
+      "notes": "Updated 2026-08-02 from the official Kaspa API: 2.49 (30 Jun) → 2.31246515, a 7.4% drift in ~1 month. ⚠ CHROMATIC HALVING: Kaspa steps the reward down ~5.6% EVERY MONTH, so any hardcoded fallback is stale within weeks by design — the live whattomine/API value is authoritative and the fallback is only a dated snapshot. Next step 2026-09-04 → 2.18267645. Monitor should treat this as monthly-calendar, never source-hash.",
+      "official_value": "2.31246515 per api.kaspa.org 2026-08-02; next step 2026-09-04 → 2.18267645",
+      "source_url": "https://api.kaspa.org/info/blockreward"
     },
     {
       "id": "GpuMiningCalculator__COINS.RVN.blockReward / blockTime",
@@ -680,11 +685,11 @@
       "surfaces": [
         "src/components/InheritanceTaxCalculator.tsx:89-95"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-07-06",
       "source_hint": "State tax authorities (Receita Estadual) Brazil",
       "conflict": false,
       "status": "current",
-      "notes": "Code uses flat 8% (exemption 0). ITCMD varies by state, typically 4-8%. No federal inheritance tax. Cost basis passes to heirs. No step-up.",
+      "notes": "Re-verified 2026-07-06: max ITCMD 8% (CF Art.155 §1 / Senate Res. 9/1992). EC 132/2023 (LC 227/2026) made progressive rates mandatory but did NOT raise the 8% ceiling.",
       "source_url": "https://taxsummaries.pwc.com/brazil/individual/other-taxes"
     },
     {
@@ -700,12 +705,12 @@
       "surfaces": [
         "src/components/InheritanceTaxCalculator.tsx:75-80"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-07-20",
       "source_hint": "CRA",
       "conflict": false,
       "status": "current",
-      "notes": "No inheritance tax (exemption 0, rate 0). Deemed disposition at death — estate pays capital gains tax on unrealized gains at deceased's marginal rate. No step-up modeled.",
-      "source_url": "https://taxsummaries.pwc.com/canada/individual/other-taxes"
+      "notes": "Re-verified 2026-07-20 (ITA s.70(5) + s.38(a), laws-lois gov primary): NO federal or provincial inheritance/estate/gift tax. Mechanism = deemed disposition at FMV immediately before death (s.70(5)), taxed on the terminal T1; inclusion rate still ½ per s.38(a) (the 66.67% hike was cancelled 2025-03-21 and never enacted). Provincial probate/estate-administration fees (e.g. Ontario EAT $15/$1,000 over $50k) are administration charges, NOT inheritance tax. Source repointed off PwC → stable primary law (also hash-stable for the monitor). ⚠ canada.ca CRA deep links rot (T4011 / deceased-final-return now 404) — do not key the monitor off them.",
+      "source_url": "https://laws-lois.justice.gc.ca/eng/acts/i-3.3/section-70.html"
     },
     {
       "id": "InheritanceTaxCalculator__de.erbschaftsteuer_exemptions",
@@ -731,7 +736,7 @@
       "id": "InheritanceTaxCalculator__de.erbschaftsteuer_rates",
       "calculator": "InheritanceTaxCalculator",
       "key": "de.erbschaftsteuer_rates",
-      "value": "{'class_I_II_relatives': [{'up_to': 75000, 'rate': 7}, {'up_to': 300000, 'rate': 11}, {'up_to': 600000, 'rate': 15}, {'up_to': 6000000, 'rate': 19}, {'up_to': 13000000, 'rate': 23}, {'up_to': 26000000, 'rate': 27}, {'above': 26000000, 'rate': 30}], 'other_unrelated': [{'up_to': 600000, 'rate': 30}, {'above': 600000, 'rate': 50}]}",
+      "value": "{'class_I_II_relatives': [{'up_to': 75000, 'rate': 7}, {'up_to': 300000, 'rate': 11}, {'up_to': 600000, 'rate': 15}, {'up_to': 6000000, 'rate': 19}, {'up_to': 13000000, 'rate': 23}, {'up_to': 26000000, 'rate': 27}, {'above': 26000000, 'rate': 30}], 'other_unrelated': [{'up_to': 6000000, 'rate': 30}, {'above': 6000000, 'rate': 50}]}",
       "unit": "percent_progressive",
       "jurisdiction": "DE",
       "law": "ErbStG progressive inheritance tax rates by tax class & taxable amount",
@@ -740,11 +745,11 @@
       "surfaces": [
         "src/components/InheritanceTaxCalculator.tsx:33-48"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-07-06",
       "source_hint": "Bundesfinanzministerium / ErbStG",
       "conflict": false,
-      "status": "uncertain",
-      "notes": "Spouse/child (related): 7/11/15/19/23/27/30% bands by taxable value. 'other' (unrelated, Steuerklasse III): 30% up to €600K, 50% above. stepUp:true. Note: code's 'other' branch returns 30% for all bands <=600K (three identical 30% returns) then 50%.",
+      "status": "current",
+      "notes": "Applied 2026-07-06 (ErbStG §19 gov-verified): fixed Steuerklasse III (unrelated) ×10 error — 50% now starts above €6,000,000 (was €600,000); 30% flat up to €6,000,000. Klasse I unchanged (7/11/15/19/23/27/30). Was 'uncertain' → 'current'.",
       "source_url": "https://www.gesetze-im-internet.de/erbstg_1974/__19.html"
     },
     {
@@ -760,11 +765,11 @@
       "surfaces": [
         "src/components/InheritanceTaxCalculator.tsx:82-87"
       ],
-      "last_updated_hint": "abolished 1985",
+      "last_updated_hint": "2026-07-06",
       "source_hint": "CBDT India",
       "conflict": false,
       "status": "current",
-      "notes": "No tax on receiving crypto inheritance (exemption 0, rate 0). 30% applies when heirs sell (cost basis inherited). No step-up.",
+      "notes": "Re-verified 2026-07-06: no inheritance/estate tax (Estate Duty abolished 1985). No reintroduction proposal.",
       "source_url": "https://cleartax.in/s/cryptocurrency-taxation-guide"
     },
     {
@@ -780,12 +785,12 @@
       "surfaces": [
         "src/components/InheritanceTaxCalculator.tsx:52-54"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-07-20",
       "source_hint": "National Tax Agency (NTA) Japan",
       "conflict": false,
       "status": "current",
-      "notes": "Code uses exemption = 30,000,000 + 6,000,000 (i.e. base + ONE heir, not multiplied by actual heir count). Statutory formula is ¥30M + ¥6M per statutory heir. No step-up (heirs inherit original cost basis).",
-      "source_url": "https://taxsummaries.pwc.com/japan/individual/other-taxes"
+      "notes": "Re-verified 2026-07-20 (NTA No.4152, gov): 基礎控除 = ¥30,000,000 + ¥6,000,000 × number of statutory heirs; unchanged since 2015. ✅ CODE DEFECT FIXED 2026-07-20: InheritanceTaxCalculator.tsx now takes a 'Statutory Heirs' input (default 1) and computes 30M + 6M×N instead of hardcoding one heir. Heir-count rules not modelled in UI: renouncing heirs still count; adopted children capped at 1 (or 2 if no biological children).",
+      "source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4152.htm"
     },
     {
       "id": "InheritanceTaxCalculator__jp.inheritance_rates",
@@ -800,13 +805,13 @@
       "surfaces": [
         "src/components/InheritanceTaxCalculator.tsx:55-63"
       ],
-      "last_updated_hint": "2026-06-23",
+      "last_updated_hint": "2026-07-20",
       "source_hint": "NTA Japan",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). Added missing 50% band ¥300M–600M; 55% now from ¥600M.",
+      "notes": "Re-verified 2026-07-20 (NTA No.4155 速算表, gov): 8 bands 10/15/20/30/40/45/50/55% at ¥10M/30M/50M/100M/200M/300M/600M with 控除額 0/¥500k/¥2M/¥7M/¥17M/¥27M/¥42M/¥72M, applied to each heir's statutory share. Unchanged since 2015-01-01. ✅ METHODOLOGY FIXED 2026-07-20: .tsx now splits the taxable estate into statutory shares and applies (share×rate − 控除額) per share, then sums — verified against the NTA worked example (¥100M estate, 3 heirs → ¥6,300,000; previously ¥19,200,000, a ~3× overstatement). Simplifications documented in the UI note: equal shares assumed; 配偶者の税額軽減 (spouse credit) not modelled.",
       "official_value": "[{up_to:10000000,rate:10},{up_to:30000000,rate:15},{up_to:50000000,rate:20},{up_to:100000000,rate:30},{up_to:200000000,rate:40},{up_to:300000000,rate:45},{up_to:600000000,rate:50},{above:600000000,rate:55}]",
-      "source_url": "https://taxsummaries.pwc.com/japan/individual/other-taxes"
+      "source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4155.htm"
     },
     {
       "id": "InheritanceTaxCalculator__uk.iht_nil_rate_band",
@@ -861,7 +866,7 @@
       "surfaces": [
         "src/components/InheritanceTaxCalculator.tsx:18-21"
       ],
-      "last_updated_hint": "2026-06-23",
+      "last_updated_hint": "2026-07-06",
       "source_hint": "IRS",
       "conflict": false,
       "status": "current",
@@ -882,12 +887,12 @@
       "surfaces": [
         "src/components/InheritanceTaxCalculator.tsx:19"
       ],
-      "last_updated_hint": "2026",
+      "last_updated_hint": "2026-07-06",
       "source_hint": "IRS",
       "conflict": false,
       "status": "current",
-      "notes": "Flat 40% on taxable estate above the $13.99M exemption. stepUp:true (cost-basis step-up to FMV at death).",
-      "source_url": "https://www.irs.gov/newsroom/estate-and-gift-tax-faqs"
+      "notes": "Re-verified 2026-07-06: 40% top rate + $15M exemption per IR-2025-103 / Rev. Proc. 2025-32 (OBBBA). ⚠ Source repointed OFF irs.gov/newsroom/estate-and-gift-tax-faqs — that FAQ page still serves STALE pre-OBBBA text ($5M revert) and was likely the false monitor trigger; use IR-2025-103 instead.",
+      "source_url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill"
     },
     {
       "id": "MiningCalculator__blockReward",
@@ -1002,7 +1007,7 @@
       "id": "TaxCalculator__au.brackets",
       "calculator": "TaxCalculator",
       "key": "au.brackets",
-      "value": "[{'label': 'A$0 – A$18,200 (tax-free)', 'shortTermRate': 0, 'longTermRate': 0}, {'label': 'A$18,201 – A$45,000', 'shortTermRate': 16, 'longTermRate': 8}, {'label': 'A$45,001 – A$135,000', 'shortTermRate': 30, 'longTermRate': 15}, {'label': 'A$135,001 – A$190,000', 'shortTermRate': 37, 'longTermRate': 18.5}, {'label': 'A$190,001+', 'shortTermRate': 45, 'longTermRate': 22.5}]",
+      "value": "[{'label': 'A$0 – A$18,200 (tax-free)', 'shortTermRate': 0, 'longTermRate': 0}, {'label': 'A$18,201 – A$45,000', 'shortTermRate': 15, 'longTermRate': 7.5}, {'label': 'A$45,001 – A$135,000', 'shortTermRate': 30, 'longTermRate': 15}, {'label': 'A$135,001 – A$190,000', 'shortTermRate': 37, 'longTermRate': 18.5}, {'label': 'A$190,001+', 'shortTermRate': 45, 'longTermRate': 22.5}]",
       "unit": "percent_by_income_bracket",
       "jurisdiction": "AU",
       "law": "Income tax rates + CGT 50% discount; Stage 3 cuts",
@@ -1011,11 +1016,11 @@
       "surfaces": [
         "src/components/TaxCalculator.tsx:82-88"
       ],
-      "last_updated_hint": "Stage 3 tax cuts effective 2024-07-01 (19%->16% low bracket, thresholds raised to A$135K/A$190K)",
+      "last_updated_hint": "2026-08-19",
       "source_hint": "ATO",
       "conflict": false,
       "status": "current",
-      "notes": "A$18,200 tax-free threshold. Marginal rates 16/30/37/45%; long-term = 50% of those (8/15/18.5/22.5%).",
+      "notes": "Applied 2026-07-06 (ATO gov-verified): 2nd band A$18,201–45,000 cut 16%→15% short / 8%→7.5% long (50% CGT discount) effective 1 Jul 2026 (Treasury Laws Amendment (Cost of Living Tax Cuts) Act 2024). ⚠ ROLLOVER: drops again to 14% short / 7% long from 1 Jul 2027 — schedule recheck mid-2027. RE-VERIFIED 2026-08-19 vs the ATO 2026–27 resident table (read via r.jina.ai; ato.gov.au 403s both the DATA_HUB server and the render-assist path): $0–18,200 nil / $18,201–45,000 15c / $45,001–135,000 $4,020+30c / $135,001–190,000 $31,020+37c / $190,001+ $51,370+45c — matches the .tsx exactly. NO CHANGE.",
       "source_url": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents"
     },
     {
@@ -1145,7 +1150,7 @@
       "id": "TaxCalculator__de.brackets",
       "calculator": "TaxCalculator",
       "key": "de.brackets",
-      "value": "[{'label': '€0 – €12,084 (exempt)', 'shortTermRate': 0, 'longTermRate': 0}, {'label': '€12,085 – €68,430', 'shortTermRate': 25, 'longTermRate': 0}, {'label': '€68,431 – €277,825', 'shortTermRate': 42, 'longTermRate': 0}, {'label': '€277,826+', 'shortTermRate': 45, 'longTermRate': 0}]",
+      "value": "[{'label': '€0 – €12,348 (exempt)', 'shortTermRate': 0, 'longTermRate': 0}, {'label': '€12,349 – €69,878', 'shortTermRate': 25, 'longTermRate': 0}, {'label': '€69,879 – €277,825', 'shortTermRate': 42, 'longTermRate': 0}, {'label': '€277,826+', 'shortTermRate': 45, 'longTermRate': 0}]",
       "unit": "percent_by_income_bracket",
       "jurisdiction": "DE",
       "law": "EStG income tax brackets (Grundfreibetrag + progressive rates)",
@@ -1154,13 +1159,13 @@
       "surfaces": [
         "src/components/TaxCalculator.tsx:68-73"
       ],
-      "last_updated_hint": "2026-06-23",
+      "last_updated_hint": "2026-07-06",
       "source_hint": "Bundesfinanzministerium",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 2026 §32a: Grundfreibetrag €12,348, 42% from €69,879.",
+      "notes": "Re-verified 2026-07-06 vs EStG §32a (VZ 2026, gov): Grundfreibetrag €12,348; 42%-Eckwert begins at zvE €69,879. Ledger previously held stale 2025 figures (€12,084/€68,430) — synced to 2026 (.tsx already correct).",
       "official_value": "[{'label': '€0 – €12,348 (exempt)', 'shortTermRate': 0, 'longTermRate': 0}, {'label': '€12,349 – €69,878', 'shortTermRate': 25, 'longTermRate': 0}, {'label': '€69,879 – €277,825', 'shortTermRate': 42, 'longTermRate': 0}, {'label': '€277,826+', 'shortTermRate': 45, 'longTermRate': 0}]",
-      "source_url": "https://esth.bundesfinanzministerium.de/lsth/2026/A-Einkommensteuergesetz/IV-Tarif-31-34b/Paragraf-32a/inhalt.html"
+      "source_url": "https://www.gesetze-im-internet.de/estg/__32a.html"
     },
     {
       "id": "TaxCalculator__de.longTermThreshold",
@@ -1215,12 +1220,12 @@
       "surfaces": [
         "src/components/TaxCalculator.tsx:162-168"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-07-06",
       "source_hint": "Agencia Tributaria Spain",
       "conflict": false,
       "status": "current",
-      "notes": "Progressive savings tax 19/21/23/27/30%. No holding-period benefit. FIFO required. Losses carry forward 4 years. Config key in code is 'es_country'.",
-      "source_url": "https://taxsummaries.pwc.com/spain/individual/taxes-on-personal-income"
+      "notes": "Re-verified 2026-07-06 (AEAT gov): top savings (ahorro) rate >€300k is 30% (raised 28%→30% from 1 Jan 2025, Ley 7/2024). ⚠ DO NOT lower to 28% — that is the obsolete pre-2025 value. Schedule 19/21/23/27/30 is correct.",
+      "source_url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025.html"
     },
     {
       "id": "TaxCalculator__fr.annual_exemption",
@@ -1276,11 +1281,11 @@
       "surfaces": [
         "src/components/TaxCalculator.tsx:112-115"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-07-06",
       "source_hint": "Income Tax Department India / CBDT",
       "conflict": false,
       "status": "current",
-      "notes": "Flat 30% on all crypto gains + 4% cess = 31.2% effective. No deductions except cost of acquisition. 1% TDS on transfers above ₹10,000. No holding-period distinction.",
+      "notes": "Re-verified 2026-07-06: 30% flat on VDA gains (§115BBH) + 4% cess ≈ 31.2% effective. Unchanged through Budget 2025 & Budget 2026 (Feb 2026 budget: zero crypto mentions).",
       "source_url": "https://cleartax.in/s/cryptocurrency-taxation-guide"
     },
     {
@@ -1296,11 +1301,11 @@
       "surfaces": [
         "src/components/TaxCalculator.tsx:115"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-07-06",
       "source_hint": "CBDT India",
       "conflict": false,
       "status": "current",
-      "notes": "1% TDS on transfers above ₹10,000; 4% health & education cess on top of 30% => 31.2% effective. Stated in notes string.",
+      "notes": "Re-verified 2026-07-06: 1% TDS (§194S), thresholds ₹10,000 general / ₹50,000 specified persons. Unchanged. New compliance penalties from 01-Apr-2026 (₹200/day late; ₹50k inaccurate) — no rate impact.",
       "source_url": "https://cleartax.in/s/cryptocurrency-taxation-guide"
     },
     {
@@ -1337,12 +1342,12 @@
       "surfaces": [
         "src/components/TaxCalculator.tsx:123-131"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-07-06",
       "source_hint": "National Tax Agency (NTA) Japan",
       "conflict": false,
       "status": "current",
-      "notes": "Crypto = miscellaneous income, taxed at progressive 15-55% (rates include 10% local inhabitant tax). Gains under ¥200,000 exempt from filing. No holding-period distinction.",
-      "source_url": "https://mailmate.jp/blog/japan-crypto-tax"
+      "notes": "Re-verified 2026-07-06 (NTA Tax Answer 1524, gov): crypto still 雑所得 (miscellaneous income) under 総合課税, progressive 15/20/30/33/43/50/55% (national 5-45% + 10% local) for TY2026. ⚠ WATCH: ruling-party 令和8年度大綱 (19-Dec-2025) proposes flat ~20% 申告分離課税, conditional on the FIEA/金商法 amendment (Lower House passed 11-Jun-2026, Upper House pending) — earliest effective 2028, only for 'specified crypto' on registered domestic exchanges. Recheck late 2027.",
+      "source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1524.htm"
     },
     {
       "id": "TaxCalculator__jp.filing_exemption_threshold",
@@ -1357,12 +1362,12 @@
       "surfaces": [
         "src/components/TaxCalculator.tsx:132"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-07-20",
       "source_hint": "NTA Japan",
       "conflict": false,
       "status": "current",
-      "notes": "Gains under ¥200,000 exempt from filing (for salaried taxpayers). Stated in notes string.",
-      "source_url": "https://taxsummaries.pwc.com/japan/individual/income-determination"
+      "notes": "Re-verified 2026-07-20 (NTA No.1900, gov): ¥200,000 unchanged — a 給与所得者 (one payer, salary ≤¥20M, 年末調整 done) need not file 確定申告 when COMBINED net non-salary income is ¥200,000 or LESS. ✅ COPY FIXED 2026-07-20: TaxCalculator.tsx:132 now states it applies to salaried employees, waives FILING not the tax, and that 住民税 must still be declared.",
+      "source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1900.htm"
     },
     {
       "id": "TaxCalculator__kr.annual_exemption",
@@ -1398,11 +1403,11 @@
       "surfaces": [
         "src/components/TaxCalculator.tsx:171-180"
       ],
-      "last_updated_hint": "delayed to 2027",
+      "last_updated_hint": "2026-07-06",
       "source_hint": "National Tax Service (NTS) Korea",
       "conflict": false,
       "status": "current",
-      "notes": "22% (incl. local tax) on gains above ₩50M. Currently delayed to 2027 — no crypto tax enforced yet. No holding-period distinction.",
+      "notes": "Re-verified 2026-07-06: 22% (20%+2% local) on annual gains >₩2.5M, effective 1 Jan 2027 (MOEF confirmed May 2026), NOT in force in 2026. ⚠ A 4th delay is discussed but NOT enacted — recheck late 2026.",
       "source_url": "https://www.cryptopolitan.com/south-korea-locks-22-crypto-tax-for-2027/"
     },
     {
@@ -1480,12 +1485,12 @@
       "surfaces": [
         "src/components/TaxCalculator.tsx:185-189"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-08-19",
       "source_hint": "Autoridade Tributária Portugal",
       "conflict": false,
       "status": "current",
-      "notes": "Crypto held >= 365 days is TAX FREE (longTermRate 0%). Short-term (<365 days) taxed at flat 28%. Crypto-to-crypto swaps not taxable. Config key in code is 'pt_country'.",
-      "source_url": "https://koinly.io/guides/portugal-crypto-tax/"
+      "notes": "First PRIMARY-source verification 2026-08-02: holdings of 365 days or more are EXCLUDED from taxation (gains AND losses) — Art. 10.º n.º 22 CIRS. Unchanged by OE2026; next legislative window is OE2027. RE-VERIFIED 2026-08-19 against the consolidated Código do IRS PDF (info.portaldasfinancas.gov.pt .../Cod_download/Documents/CIRS.pdf, \"Última atualização: Lei n.º 26/2026, de 3 de junho\"). ⚠ Paragraph renumbering by Decreto-Lei n.º 97/2026 de 20 de maio: the crypto exclusion is now art. 10.º n.º 22 (ex-n.º 19). WATCH (not law): Bloco de Esquerda / Livre have tabled proposals to tax >365-day crypto gains at 28% — proposals only, nothing enacted; next real window is OE2027.",
+      "source_url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/Cod_download/Documents/CIRS.pdf"
     },
     {
       "id": "TaxCalculator__pt.short_term_rate",
@@ -1500,12 +1505,12 @@
       "surfaces": [
         "src/components/TaxCalculator.tsx:188-189"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-08-19",
       "source_hint": "Autoridade Tributária Portugal",
       "conflict": false,
       "status": "current",
-      "notes": "shortTermRate 28% / longTermRate 0% (single bracket 'All gains').",
-      "source_url": "https://koinly.io/guides/portugal-crypto-tax/"
+      "notes": "First PRIMARY-source verification 2026-08-02 (CIRS): 28% autonomous rate on the positive mais-valias balance for crypto that are not securities — Art. 72.º n.º 1 al. c) CIRS, cross-referencing Art. 10.º n.º 1 al. k). Unchanged by OE2026. Englobamento option exists; professional/mining income is Categoria B. Previously only koinly-sourced. RE-VERIFIED 2026-08-19 against the consolidated Código do IRS PDF (info.portaldasfinancas.gov.pt .../Cod_download/Documents/CIRS.pdf, \"Última atualização: Lei n.º 26/2026, de 3 de junho\"). ⚠ Paragraph renumbering by Decreto-Lei n.º 97/2026 de 20 de maio: the crypto exclusion is now art. 10.º n.º 22 (ex-n.º 19). WATCH (not law): Bloco de Esquerda / Livre have tabled proposals to tax >365-day crypto gains at 28% — proposals only, nothing enacted; next real window is OE2027.",
+      "source_url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/Cod_download/Documents/CIRS.pdf"
     },
     {
       "id": "TaxCalculator__uk.brackets",
@@ -1663,12 +1668,12 @@
         "src/components/TaxLossHarvestingCalculator.tsx:27-37",
         "src/components/TaxLossHarvestingCalculator.tsx:364"
       ],
-      "last_updated_hint": "as of 2026, US crypto NOT subject to wash sale (classified as property, not security)",
+      "last_updated_hint": "2026-07-06",
       "source_hint": "IRS",
       "conflict": false,
       "status": "current",
-      "notes": "detectWashSale() flags loss disallowed if rebuy within <=30 days of sale. Code comment notes US crypto is currently NOT subject to wash-sale (property, not security) but IRS may apply it; UK/AU have similar 'bed and breakfasting' rules. Window is symmetric (±30 days).",
-      "source_url": "https://reedcorp.tax/helpful-guides/crypto-wash-sale-rule/"
+      "notes": "Re-verified 2026-07-06 (IRS gov + congress.gov): US crypto still EXEMPT from wash-sale (§1091 applies only to stock/securities; crypto = property). OBBBA (P.L. 119-21, Jul 2025) did NOT include crypto wash-sale — Lummis amendment stripped → standalone S.2207 (in Senate Finance Cmte). ⚠ WATCH: S.2207 / H.R.9172 (Arrington) / H.R.8899 (PARITY) all pending in 119th Congress — recheck before any 2026 enactment. NB: spot crypto ETFs (IBIT) ARE securities → already wash-sale.",
+      "source_url": "https://www.irs.gov/filing/digital-assets"
     },
     {
       "id": "ValidatorCalculator__NETWORKS.avalanche.minStake",
@@ -1683,12 +1688,12 @@
       "surfaces": [
         "src/components/ValidatorCalculator.tsx:23"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-08-02",
       "source_hint": "Avalanche P-Chain: 2000 AVAX min to validate primary network.",
       "conflict": false,
       "status": "current",
-      "notes": "2000 AVAX is the protocol minimum to run a primary-network validator on Avalanche (delegation minimum is 25 AVAX). This validator minimum is a consensus/protocol parameter. is_regulatory=true.",
-      "source_url": "https://docs.avax.network/nodes/validate/how-to-stake"
+      "notes": "First verification 2026-08-02: 2,000 AVAX minimum self-stake for a PRIMARY NETWORK validator — unchanged. Min delegation 25 AVAX; max validator stake 3,000,000; min commission 2%; stake duration 14-365 days. NB: ACP-77/Etna (Dec 2024) removed the 2,000-AVAX requirement for L1/subnet validators (continuous-fee model) but did NOT change the Primary Network minimum; ACPs 247 and 285 explicitly list it as unchanged.",
+      "source_url": "https://build.avax.network/docs/nodes/validate/how-to-stake"
     },
     {
       "id": "ValidatorCalculator__NETWORKS.ethereum.minStake",
