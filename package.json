@@ -21,8 +21,8 @@
     "ota:publish": "bash scripts/ota-publish.sh"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.2",
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/react": "^6.0.4",
+    "@astrojs/sitemap": "^3.7.3",
     "@capacitor-community/admob": "^8.0.0",
     "@capacitor/android": "^8.4.0",
     "@capacitor/core": "^8.4.0",
@@ -31,7 +31,7 @@
     "@capacitor/status-bar": "^8.0.1",
     "@capgo/capacitor-updater": "^8.49.1",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.17.1",
+    "astro": "^7.2.4",
     "clsx": "^2.1.1",
     "lucide-react": "^0.564.0",
     "react": "^19.2.4",
