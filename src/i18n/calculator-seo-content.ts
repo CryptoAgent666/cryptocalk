@@ -7,7 +7,7 @@ type CalcContent = Partial<Record<Lang, CalcOverride>>;
 export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   'lp-value-calculator': {
     en: {
-      quickAnswer: `Enter your current token quantities, prices, and entry prices to see whether your Uniswap V2 LP position beat just holding. Example: a $10,000 ETH/USDC position earns $450 in fees over 90 days, impermanent loss is -$104, so total LP return is +$346 (+3.46%), still beating HODL by +$242 once you account for the fees that offset the divergence loss.`,
+      quickAnswer: `Enter your current token quantities, prices, and entry prices to see whether your Uniswap V2 LP position beat just holding. Example: 5 ETH + 17,500 USDC entered at $3,000 ETH is worth $35,000 today; $450 of fees over 90 days against -$104 of impermanent loss gives a total LP return of +$3,046 (+9.40%) — which beats simply holding by +$346 (+1.07%).`,
       how: [
         `This LP Value Calculator measures whether providing liquidity to a Uniswap V2-style constant-product pool (x times y = k) actually paid off versus simply holding the two tokens. You enter the current quantity and price of each token, the price each token had when you deposited, the fees you have collected, and how many days the position has run. From the current quantities and the entry-to-now price ratio it back-calculates your original 50/50 deposit, then reconstructs what those starting coins would be worth today if you had never pooled them.`,
         `The headline figure is net P&L versus HODL: total LP return (current value plus fees, minus your estimated deposit) compared to the pure-holding return. Because an AMM rebalances automatically, selling the rising asset and buying the falling one to keep k constant, your token mix today differs from what you deposited. The tool isolates that drift as impermanent loss, then shows whether trading fees covered it. Pair it with our <a href="/impermanent-loss-calculator/">impermanent loss calculator</a> to model divergence before you commit capital.`
@@ -4565,7 +4565,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
   'dust-attack-calculator': {
     en: {
-      quickAnswer: 'Analyze potential dust attack transactions on your wallet. Dust attacks send tiny amounts (&lt;546 satoshis for BTC) to track wallet activity. Consolidation cost often exceeds the dust value.',
+      quickAnswer: 'Analyze potential dust attack transactions on your wallet. Bitcoin Core will not relay an output below 546 satoshis, so a dust attack sends exactly that much — or barely more — to tag your addresses and track activity. Consolidating those UTXOs usually costs more in fees than the dust is worth.',
       how: [
         `The Dust Attack Calculator helps you decide whether the tiny "dust" UTXOs in your Bitcoin wallet are worth consolidating. Enter how many dust UTXOs you hold, their average size in satoshis, and the current network fee rate, the tool weighs the combined dust value against the fee to sweep it all into one output, so you can see at a glance whether consolidation nets you anything.`,
         `Dust attacks work by sending minuscule amounts to thousands of addresses, then watching which outputs get combined in later transactions to deanonymise the owners. Because a dust UTXO often costs more in fees to spend than it is worth, this calculator focuses on the economics, showing when sweeping dust is profitable, when to wait for lower fees, and when it is cheapest to leave the dust untouched.`
@@ -5292,21 +5292,21 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'options-calculator': {
     en: {
-      quickAnswer: 'Price crypto options using the Black-Scholes model. Enter strike price, spot price, time to expiry, volatility, and risk-free rate to get theoretical call/put premiums, Greeks (delta, gamma, theta, vega), and break-even levels.',
+      quickAnswer: 'Enter the option you actually bought or sold — spot, strike, the premium you paid, contracts and days to expiry — to see break-even, maximum loss and P&L at expiry across price levels. A $65,000 BTC call bought for $2,000 breaks even at $67,000; below the strike it expires worthless and you lose the $2,000 premium.',
       how: [
-        `The Options Calculator prices cryptocurrency call and put options using the Black-Scholes-Merton framework adapted for crypto markets. Enter the current spot price, strike price, days to expiration, implied volatility, and risk-free rate, the calculator returns theoretical premiums, all five Greeks, and break-even prices for both directions.`,
-        `Use it to evaluate whether a Deribit or OKX option is overpriced or underpriced relative to the model. Compare the model's implied volatility to the market-quoted IV to spot mispricing. Run scenarios with different expiry dates and strike prices to construct spreads (bull call, bear put, straddle) and see the combined P&L profile before committing capital.`
+        `The Options Calculator works out what a crypto call or put actually pays you. You enter the trade you are looking at — spot price, strike, the premium quoted or paid, number of contracts and days to expiry — and it returns break-even, maximum loss, and profit or loss at expiry across a range of underlying prices. It does not price the option for you: the premium is an input, taken from the exchange's order book.`,
+        `Use it before committing capital to a Deribit or OKX position: check how far the underlying has to move before the trade breaks even, what the worst case costs you, and how the payoff changes if you buy a different strike or a longer expiry. Because the premium is your input, you can also compare two live quotes side by side and see which one needs the smaller move to pay off.`
       ],
       inputs: [
-        `Spot price is the current market price of the underlying asset (e.g., BTC at $77,000). Strike price is the level at which the option can be exercised. Days to expiration accepts any value from 1 to 365+. Implied volatility should be entered as a percentage — BTC's 30-day IV typically ranges from 40% to 90%.`,
-        `The risk-free rate defaults to the current US Treasury yield (~4.3%) but can be adjusted. The output shows call premium, put premium, and all five Greeks: delta (directional exposure), gamma (delta's rate of change), theta (daily time decay), vega (sensitivity to IV changes), and rho (interest rate sensitivity).`
+        `Spot price is the current market price of the underlying asset (e.g., BTC at $77,000). Strike price is the level at which the option can be exercised. Premium is what you pay (or receive) per contract — copy it from the exchange quote. Days to expiration accepts any value from 1 to 365+. Implied volatility is entered as a percentage — BTC's 30-day IV typically ranges from 40% to 90%.`,
+        `Implied volatility is recorded alongside the trade for context — it is what the market is charging for the option, not something the calculator re-derives. The output shows break-even price, maximum loss (the premium paid, for a long option), and P&L at expiry for the spot level you enter, per contract and in total.`
       ],
     },
     es: {
-      quickAnswer: 'Calcula el precio de opciones cripto con el modelo Black-Scholes. Introduce precio de ejercicio, precio spot, tiempo hasta el vencimiento, volatilidad y tasa libre de riesgo para obtener primas teóricas call/put, Griegas y niveles de equilibrio.',
+      quickAnswer: 'Introduce la opción que realmente compras o vendes — precio spot, strike, la prima pagada, número de contratos y días hasta el vencimiento — para ver el punto de equilibrio, la pérdida máxima y el P&L al vencimiento en distintos precios. Una call de BTC a $65.000 comprada por $2.000 equilibra en $67.000; por debajo del strike expira sin valor y pierdes la prima.',
       how: [
-        `La Calculadora de Opciones valora opciones call y put de criptomonedas usando el marco Black-Scholes-Merton adaptado a mercados cripto. Introduce el precio spot actual, el precio de ejercicio, los días hasta el vencimiento, la volatilidad implícita y la tasa libre de riesgo — devuelve las primas teóricas, las cinco Griegas y los precios de equilibrio.`,
-        `Úsala para evaluar si una opción en Deribit u OKX está sobrevalorada o infravalorada respecto al modelo. Compara la volatilidad implícita del modelo con la cotizada para detectar discrepancias. Ejecuta escenarios con distintas fechas y strikes para construir spreads y ver el perfil de P&L combinado.`
+        `La Calculadora de Opciones muestra lo que realmente paga una call o una put cripto. Introduces la operación que estás mirando — precio spot, strike, la prima cotizada o pagada, número de contratos y días hasta el vencimiento — y devuelve el punto de equilibrio, la pérdida máxima y el P&L al vencimiento en un rango de precios. No valora la opción por ti: la prima es un dato de entrada, tomado del libro de órdenes.`,
+        `Úsala antes de abrir posición en Deribit u OKX: cuánto debe moverse el subyacente para salir en tablas, cuánto cuesta el peor caso y cómo cambia el pago con otro strike o un vencimiento más largo. Como la prima es tu dato de entrada, puedes comparar dos cotizaciones reales y ver cuál necesita el movimiento más pequeño.`
       ],
       inputs: [
         `El precio spot es el precio de mercado actual del activo subyacente (BTC a $77.000). El precio de ejercicio es el nivel al que se puede ejercer la opción. Los días hasta el vencimiento aceptan valores de 1 a 365+. La volatilidad implícita se introduce como porcentaje — la IV de 30 días de BTC varía típicamente entre 40% y 90%.`,
@@ -5314,9 +5314,9 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Precifique opções cripto usando o modelo Black-Scholes. Insira preço de exercício, preço spot, tempo até o vencimento, volatilidade e taxa livre de risco para obter prêmios teóricos call/put, Gregas e níveis de equilíbrio.',
+      quickAnswer: 'Insira a opção que realmente comprou ou vendeu — preço spot, strike, o prémio pago, número de contratos e dias até ao vencimento — para ver o ponto de equilíbrio, a perda máxima e o P&L no vencimento em vários preços. Uma call de BTC a $65.000 comprada por $2.000 equilibra em $67.000; abaixo do strike expira sem valor e perde o prémio.',
       how: [
-        `A Calculadora de Opções precifica opções call e put de criptomoedas usando o modelo Black-Scholes-Merton adaptado para mercados cripto. Insira o preço spot atual, preço de exercício, dias até o vencimento, volatilidade implícita e taxa livre de risco — a calculadora retorna prêmios teóricos, as cinco Gregas e preços de equilíbrio.`,
+        `A Calculadora de Opções mostra o que uma call ou put cripto realmente paga. Insere a operação que está a avaliar — preço spot, strike, o prémio cotado ou pago, número de contratos e dias até ao vencimento — e devolve o ponto de equilíbrio, a perda máxima e o P&L no vencimento numa gama de preços. Não precifica a opção por si: o prémio é um dado de entrada, retirado do livro de ordens.`,
         `Use-a para avaliar se uma opção na Deribit ou OKX está sobrevalorizada ou subvalorizada em relação ao modelo. Compare a volatilidade implícita do modelo com a cotada no mercado. Execute cenários com diferentes datas e strikes para construir spreads e ver o perfil de P&L combinado.`
       ],
       inputs: [
@@ -5325,9 +5325,9 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Black-Scholes modeli ile kripto opsiyonlarını fiyatlayın. Kullanım fiyatı, spot fiyat, vadeye kalan süre, oynaklık ve risksiz oran girerek teorik call/put primleri, Yunancalar ve başabaş seviyeleri elde edin.',
+      quickAnswer: 'Gerçekten aldığınız veya sattığınız opsiyonu girin — spot fiyat, kullanım fiyatı, ödediğiniz prim, kontrat sayısı ve vadeye kalan gün — başabaş noktasını, azami zararı ve farklı fiyatlarda vade sonu kâr/zararını görün. 2.000 dolara alınan 65.000 dolar kullanım fiyatlı BTC call opsiyonu 67.000 dolarda başabaşa gelir; kullanım fiyatının altında değersiz sona erer ve primi kaybedersiniz.',
       how: [
-        `Opsiyon Hesaplayıcısı, kripto piyasalarına uyarlanmış Black-Scholes-Merton çerçevesi kullanarak call ve put opsiyonlarını fiyatlar. Mevcut spot fiyatı, kullanım fiyatını, vadeye kalan gün sayısını, zımni oynaklığı ve risksiz oranı girin — teorik primler, beş Yunanca ve başabaş fiyatları hesaplanır.`,
+        `Opsiyon Hesaplayıcısı, bir kripto call ya da put opsiyonunun gerçekte ne kazandırdığını gösterir. Değerlendirdiğiniz işlemi girersiniz — spot fiyat, kullanım fiyatı, borsadan aldığınız prim, kontrat sayısı ve vadeye kalan gün — ve başabaş noktasını, azami zararı ve farklı dayanak fiyatlarında vade sonu kâr/zararını alırsınız. Opsiyonu sizin için fiyatlamaz: prim, borsa kotasyonundan aldığınız bir giriştir.`,
         `Deribit veya OKX'teki bir opsiyonun modele göre pahalı mı ucuz mu olduğunu değerlendirmek için kullanın. Modelin zımni oynaklığını piyasa kotasyonuyla karşılaştırarak yanlış fiyatlandırmayı tespit edin. Farklı vadeler ve kullanım fiyatlarıyla senaryolar çalıştırarak spreadler oluşturun.`
       ],
       inputs: [
@@ -5336,9 +5336,9 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'Black-Scholes मॉडल का उपयोग करके क्रिप्टो ऑप्शन की कीमत निकालें। स्ट्राइक प्राइस, स्पॉट प्राइस, एक्सपायरी तक समय, वोलैटिलिटी और रिस्क-फ्री रेट दर्ज करें और थ्योरेटिकल call/put प्रीमियम, ग्रीक्स और ब्रेक-ईवन लेवल पाएं।',
+      quickAnswer: 'वह ऑप्शन दर्ज करें जो आप वास्तव में खरीद या बेच रहे हैं — स्पॉट प्राइस, स्ट्राइक, चुकाया गया प्रीमियम, कॉन्ट्रैक्ट की संख्या और एक्सपायरी तक दिन — और ब्रेक-ईवन, अधिकतम नुकसान तथा अलग-अलग कीमतों पर एक्सपायरी का P&L देखें। $2,000 में खरीदा गया $65,000 स्ट्राइक वाला BTC कॉल $67,000 पर ब्रेक-ईवन होता है; स्ट्राइक से नीचे वह बेकार समाप्त होता है और प्रीमियम चला जाता है।',
       how: [
-        `ऑप्शन कैलकुलेटर क्रिप्टो मार्केट के लिए अनुकूलित Black-Scholes-Merton फ्रेमवर्क का उपयोग करके क्रिप्टोकरेंसी call और put ऑप्शन की कीमत निकालता है। करंट स्पॉट प्राइस, स्ट्राइक प्राइस, एक्सपायरी तक दिन, इम्प्लाइड वोलैटिलिटी और रिस्क-फ्री रेट दर्ज करें।`,
+        `ऑप्शन कैलकुलेटर दिखाता है कि कोई क्रिप्टो कॉल या पुट वास्तव में क्या देता है। आप जिस ट्रेड पर विचार कर रहे हैं उसे दर्ज करें — स्पॉट प्राइस, स्ट्राइक, एक्सचेंज से लिया गया प्रीमियम, कॉन्ट्रैक्ट की संख्या और एक्सपायरी तक दिन — और ब्रेक-ईवन, अधिकतम नुकसान तथा अलग-अलग कीमतों पर एक्सपायरी का लाभ/हानि पाएं। यह ऑप्शन की कीमत खुद नहीं निकालता: प्रीमियम आपका इनपुट है, जो एक्सचेंज की क्वोट से लिया जाता है।`,
         `Deribit या OKX पर कोई ऑप्शन मॉडल की तुलना में ओवरप्राइस्ड है या अंडरप्राइस्ड, यह मूल्यांकन करने के लिए उपयोग करें। मॉडल की इम्प्लाइड वोलैटिलिटी की मार्केट IV से तुलना करके गलत प्राइसिंग पहचानें। अलग-अलग एक्सपायरी और स्ट्राइक से स्प्रेड बनाएं।`
       ],
       inputs: [
@@ -5347,14 +5347,14 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Оцените криптоопционы по модели Блэка-Шоулза. Введите цену страйка, спот-цену, срок до экспирации, волатильность и безрисковую ставку для получения теоретических премий call/put, греков и уровней безубыточности.',
+      quickAnswer: 'Введите опцион, который реально покупаете или продаёте — спот, страйк, уплаченную премию, число контрактов и дни до экспирации — и получите точку безубыточности, максимальный убыток и P&L на экспирации по разным ценам. Колл на BTC со страйком $65 000, купленный за $2 000, окупается при $67 000; ниже страйка он сгорает, и вы теряете премию.',
       how: [
-        `Опционный калькулятор рассчитывает стоимость криптовалютных call- и put-опционов по модели Блэка-Шоулза-Мертона, адаптированной для крипторынков. Введите текущую спот-цену, цену страйка, дни до экспирации, подразумеваемую волатильность и безрисковую ставку — калькулятор вернёт теоретические премии, все пять греков и цены безубыточности.`,
-        `Используйте для оценки, завышена ли цена опциона на Deribit или OKX относительно модели. Сравните подразумеваемую волатильность модели с рыночной для выявления неправильной оценки. Стройте спреды (бычий колл, медвежий пут, стрэддл) с разными экспирациями и страйками.`
+        `Опционный калькулятор показывает, что реально принесёт крипто-колл или пут. Вы вводите сделку, которую рассматриваете: спот-цену, страйк, премию из стакана биржи, число контрактов и дни до экспирации — и получаете точку безубыточности, максимальный убыток и прибыль или убыток на экспирации при разных ценах базового актива. Он не оценивает справедливую стоимость опциона: премия — это ваш ввод, взятый из котировок биржи.`,
+        `Используйте до входа в позицию на Deribit или OKX: насколько должен сдвинуться базовый актив, чтобы сделка вышла в ноль, во что обойдётся худший сценарий и как изменится выплата при другом страйке или более длинном сроке. Поскольку премия — ваш ввод, можно сравнить две живые котировки и увидеть, какой из них нужен меньший ход цены.`
       ],
       inputs: [
-        `Спот-цена — текущая рыночная цена базового актива (напр., BTC по $77 000). Цена страйка — уровень исполнения опциона. Дни до экспирации — от 1 до 365+. Подразумеваемая волатильность вводится в процентах — 30-дневная IV биткоина обычно в диапазоне 40–90%.`,
-        `Безрисковая ставка по умолчанию равна доходности казначейских облигаций США (~4,3%), но может быть изменена. Результат: премии call и put, а также пять греков: дельта, гамма, тета, вега и ро.`
+        `Спот-цена — текущая рыночная цена базового актива (напр., BTC по $77 000). Цена страйка — уровень исполнения опциона. Премия — сколько вы платите (или получаете) за контракт; возьмите её из котировки биржи. Дни до экспирации — от 1 до 365+. Подразумеваемая волатильность вводится в процентах — 30-дневная IV биткоина обычно в диапазоне 40–90%.`,
+        `Подразумеваемая волатильность записывается рядом со сделкой как контекст — это то, сколько рынок берёт за опцион, а не величина, которую калькулятор пересчитывает. Результат: цена безубыточности, максимальный убыток (для купленного опциона — уплаченная премия) и P&L на экспирации для указанной вами цены, на контракт и суммарно.`
       ],
     },
   },

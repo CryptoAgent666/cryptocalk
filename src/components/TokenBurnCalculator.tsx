@@ -18,9 +18,9 @@ interface Results {
     supply1yr: number;
     supply3yr: number;
     supply5yr: number;
-    mcap1yr: number;
-    mcap3yr: number;
-    mcap5yr: number;
+    impliedPrice1yr: number;
+    impliedPrice3yr: number;
+    impliedPrice5yr: number;
     currentMcap: number;
     pressureScore: string;
 }
@@ -92,11 +92,15 @@ function TokenBurnCalculator({ lang = 'en' }: { lang?: string }) {
         const supply3yr = Math.max(circ - burn * 36, 0);
         const supply5yr = Math.max(circ - burn * 60, 0);
 
-        // Market cap impact (price constant)
+        // Market cap and price impact.
+        // Showing "market cap in N years" at a CONSTANT price (the previous behaviour) made a burn
+        // look like it DESTROYS market cap — 500M -> 200M on the default inputs — which is the
+        // opposite of what the page explains. The meaningful figure is the mirror image: if the
+        // market keeps valuing the project the same, a smaller supply implies a higher price.
         const currentMcap = circ * price;
-        const mcap1yr = supply1yr * price;
-        const mcap3yr = supply3yr * price;
-        const mcap5yr = supply5yr * price;
+        const impliedPrice1yr = supply1yr > 0 ? currentMcap / supply1yr : 0;
+        const impliedPrice3yr = supply3yr > 0 ? currentMcap / supply3yr : 0;
+        const impliedPrice5yr = supply5yr > 0 ? currentMcap / supply5yr : 0;
 
         // Deflationary pressure score
         let pressureScore: string;
@@ -113,9 +117,9 @@ function TokenBurnCalculator({ lang = 'en' }: { lang?: string }) {
             supply1yr,
             supply3yr,
             supply5yr,
-            mcap1yr,
-            mcap3yr,
-            mcap5yr,
+            impliedPrice1yr,
+            impliedPrice3yr,
+            impliedPrice5yr,
             currentMcap,
             pressureScore,
         };
@@ -137,6 +141,14 @@ function TokenBurnCalculator({ lang = 'en' }: { lang?: string }) {
             maximumFractionDigits: 2,
         }).format(n);
     };
+
+    const formatPrice = (n: number) =>
+        new Intl.NumberFormat(loc, {
+            style: 'currency', currency: 'USD',
+            minimumFractionDigits: n < 1 ? 4 : 2,
+            maximumFractionDigits: n < 1 ? 6 : 2,
+        }).format(n);
+
 
     const formatCompact = (n: number) => {
         if (!Number.isFinite(n)) return '\u2014';
@@ -312,16 +324,16 @@ function TokenBurnCalculator({ lang = 'en' }: { lang?: string }) {
                                     <span className="result-value">{formatCompact(results.currentMcap)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{getUiString(lang, 'Market Cap in 1 Year')}</span>
-                                    <span className="result-value">{formatCompact(results.mcap1yr)}</span>
+                                    <span className="result-label">{getUiString(lang, 'Implied Price in 1 Year (same market cap)')}</span>
+                                    <span className="result-value">{formatPrice(results.impliedPrice1yr)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{getUiString(lang, 'Market Cap in 3 Years')}</span>
-                                    <span className="result-value">{formatCompact(results.mcap3yr)}</span>
+                                    <span className="result-label">{getUiString(lang, 'Implied Price in 3 Years (same market cap)')}</span>
+                                    <span className="result-value">{formatPrice(results.impliedPrice3yr)}</span>
                                 </div>
                                 <div className="result-row">
-                                    <span className="result-label">{getUiString(lang, 'Market Cap in 5 Years')}</span>
-                                    <span className="result-value">{formatCompact(results.mcap5yr)}</span>
+                                    <span className="result-label">{getUiString(lang, 'Implied Price in 5 Years (same market cap)')}</span>
+                                    <span className="result-value">{formatPrice(results.impliedPrice5yr)}</span>
                                 </div>
                             </div>
 

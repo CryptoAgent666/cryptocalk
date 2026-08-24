@@ -118,14 +118,20 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
 
     const hasInputs = depositVal > 0 && rate > 0;
 
+    // Growth over `d` days for the entered rate.
+    //   APR is a NOMINAL rate — compounding it (daily, as rewards are re-deposited) is what turns
+    //   it into an effective yield.
+    //   APY is ALREADY the effective annual yield — compounding it again would double-count the
+    //   compounding, so it is only converted pro-rata to the holding period.
+    // These two were swapped until 2026-08-24: "APY" compounded daily (50% in → 64.8% out, a ~30%
+    // overstatement of every gross-yield figure on the page) while "APR" stayed flat.
+    const growth = (principal: number, d: number) =>
+        rateType === 'APR'
+            ? principal * (Math.pow(1 + rate / 365, d) - 1)
+            : principal * (Math.pow(1 + rate, d / 365) - 1);
+
     // Gross yield calculation
-    let grossYield = 0;
-    if (rateType === 'APR') {
-        grossYield = depositVal * (rate / 365) * days;
-    } else {
-        // APY: compound daily
-        grossYield = depositVal * (Math.pow(1 + rate / 365, days) - 1);
-    }
+    const grossYield = growth(depositVal, days);
 
     // Harvest count & gas
     const numHarvests = Math.floor(days / currentFreq.days);
@@ -144,12 +150,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
             const harvests = Math.floor(days / freq.days);
             if (harvests === 0) continue;
             // Reward per harvest with this frequency
-            let rewardPerHarvest: number;
-            if (rateType === 'APR') {
-                rewardPerHarvest = depositVal * (rate / 365) * freq.days;
-            } else {
-                rewardPerHarvest = depositVal * (Math.pow(1 + rate / 365, freq.days) - 1);
-            }
+            const rewardPerHarvest = growth(depositVal, freq.days);
             // If gas doesn't eat > 50% of reward per harvest, this is viable
             if (harvestGas <= rewardPerHarvest * 0.5) {
                 optimal = freq;
@@ -165,12 +166,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
     const findBreakEven = () => {
         const fixedGas = entryGas + exitGas;
         for (let d = 1; d <= days * 2 && d <= 3650; d++) {
-            let yieldAtDay: number;
-            if (rateType === 'APR') {
-                yieldAtDay = depositVal * (rate / 365) * d;
-            } else {
-                yieldAtDay = depositVal * (Math.pow(1 + rate / 365, d) - 1);
-            }
+            const yieldAtDay = growth(depositVal, d);
             const harvestsAtDay = Math.floor(d / currentFreq.days);
             const gasAtDay = fixedGas + (harvestGas * harvestsAtDay);
             if (yieldAtDay >= gasAtDay) return d;
@@ -182,12 +178,7 @@ function YieldFarmingCalculator({ lang = 'en' }: { lang?: string }) {
 
     // Reference table: gas impact at different deposit sizes
     const referenceRows = REFERENCE_DEPOSITS.map(dep => {
-        let gross: number;
-        if (rateType === 'APR') {
-            gross = dep * (rate / 365) * days;
-        } else {
-            gross = dep * (Math.pow(1 + rate / 365, days) - 1);
-        }
+        const gross = growth(dep, days);
         const gas = entryGas + exitGas + (harvestGas * numHarvests);
         const gasPctOfYield = gross > 0 ? (gas / gross) * 100 : 100;
         const net = gross - gas - (dep * (ilPct / 100));

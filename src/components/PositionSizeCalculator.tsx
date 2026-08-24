@@ -308,10 +308,15 @@ function PositionSizeCalculator({ lang = 'en' }: { lang?: string }) {
             maximumFractionDigits: 2,
         }).format(n);
 
+    // Coin amounts were the one number on the page still printed with a dot decimal while
+    // every currency figure around them used the locale separator (es/pt/ru show "5000,00 US$"
+    // next to "0.100000 monedas"). Same digit rules, locale-aware separator.
     const formatCoins = (n: number) => {
-        if (n >= 1) return n.toFixed(4);
-        if (n >= 0.001) return n.toFixed(6);
-        return n.toFixed(8);
+        const digits = n >= 1 ? 4 : n >= 0.001 ? 6 : 8;
+        return new Intl.NumberFormat(loc(lang), {
+            minimumFractionDigits: digits,
+            maximumFractionDigits: digits,
+        }).format(n);
     };
 
     const formatPercent = (n: number) => fmtPercent(n, lang, { decimals: 2 });

@@ -345,7 +345,7 @@ function CryptoConverter({ lang = 'en' }: { lang?: string }) {
                                 </button>
                                 {lastUpdated && (
                                     <span className="last-updated">
-                                        {getUiString(lang, 'Updated')} {lastUpdated.toLocaleTimeString()}
+                                        {getUiString(lang, 'Updated')} {lastUpdated.toLocaleTimeString(loc(lang))}
                                     </span>
                                 )}
                             </div>

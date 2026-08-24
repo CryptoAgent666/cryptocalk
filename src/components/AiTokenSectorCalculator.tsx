@@ -174,7 +174,7 @@ function AiTokenSectorCalculator({ lang = 'en' }: { lang?: string }) {
 
               <div className="result-breakdown">
                 <div className="result-row">
-                  <span className="result-label">{getUiString(lang, 'AI sector market cap')}</span>
+                  <span className="result-label">{getUiString(lang, 'AI sector market cap (reference snapshot)')}</span>
                   <span className="result-value">${result.sectorMcapBn.toFixed(2)}B</span>
                 </div>
                 <div className="result-row">

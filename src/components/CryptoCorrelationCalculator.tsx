@@ -62,6 +62,11 @@ function getInterpretation(r: number, lang: string): string {
 }
 
 function getDiversificationBenefit(r: number, lang: string): string {
+    // A negative r is a HEDGE, not independence — only r near zero means the assets move
+    // independently. Before 2026-08-24 everything below +0.2 (down to a perfect -1) was
+    // described as "assets move independently", which is the opposite of what it means.
+    if (r <= -0.5) return getUiString(lang, 'Strong hedge. The assets move in opposite directions — one tends to rise when the other falls.');
+    if (r < -0.2) return getUiString(lang, 'Partial hedge. The assets often move in opposite directions.');
     if (r < 0.2) return getUiString(lang, 'Excellent diversification benefit. Assets move independently.');
     if (r < 0.5) return getUiString(lang, 'Good diversification benefit. Moderate independence between assets.');
     if (r < 0.8) return getUiString(lang, 'Limited diversification. Assets tend to move together.');

@@ -1,4 +1,5 @@
 import { getUiString } from '../i18n/ui-strings';
+import { loc } from '../i18n/format';
 import { useState, useCallback, useEffect } from 'react';
 import {
     DollarSign,
@@ -231,7 +232,7 @@ function SatoshiConverter({ lang = 'en' }: { lang?: string }) {
                         </div>
                         {lastUpdated && (
                             <span style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
-                                {getUiString(lang, 'Updated')} {lastUpdated.toLocaleTimeString()}
+                                {getUiString(lang, 'Updated')} {lastUpdated.toLocaleTimeString(loc(lang))}
                             </span>
                         )}
                     </div>
