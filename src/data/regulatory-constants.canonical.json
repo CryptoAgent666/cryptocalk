@@ -124,7 +124,7 @@
       "conflict": false,
       "status": "current",
       "notes": "BTC block subsidy in the multi-coin fallback table (used when whattomine API is unavailable). Consensus value post-840,000 halving. Overwritten by live block_reward24 when the API responds.",
-      "source_url": "https://www.blockchain.com/explorer/assets/btc"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
     },
     {
       "id": "AsicMiningCalculator__NETWORK_DATA.BTC.blockTime",
@@ -164,8 +164,11 @@
       "conflict": false,
       "status": "current",
       "notes": "ROLLED OVER 2026-08-18 (era 11 -> era 12), on-chain verified: era 12 began at block 2,522,881, mined 2026-08-16T16:05:22Z. Derived from real coinbases (insight.dash.org; blockchair was unreachable): in-block coinbase generation 1.64378041 DASH (164,378,041 duffs) confirmed fee-free on blocks 2,522,881 and 2,523,050 by subtracting each block's tx fees; the miner output is EXACTLY 25% of the coinbase on every block sampled (2,522,881/890/950, 2,523,000/020/050/060), with masternode+Platform taking 75% (Platform credit-pool OP_RETURN = 37.5% of the MN portion). miner = in-block/4 = 0.41094510 -> stored 0.4109 (was 0.4426). Boundary proven: block 2,522,880 subsidy 1.77022505 (miner 0.44255626) vs 2,522,881 subsidy 1.64378041, ratio exactly 13/14. Era 12 full subsidy 2.05472550; split miner 20% / masternodes 60% / treasury 20% (in-block = 80%). This field feeds calcDailyCoins as the MINER's per-block yield, matching the live whattomine block_reward semantics. ⚠ NEXT REDUCTION block 2,733,121 (~2027-09-04, ~209k blocks at ~157.7s): miner 0.4109 -> ~0.3816. Scheduled task cryptocalk-dash-emission-2027-09.",
-      "official_value": "miner share 0.41094510 (era-12 subsidy 2.05472550; in-block coinbase miner+MN+Platform 1.64378041)",
-      "source_url": "https://docs.dash.org/en/stable/docs/user/introduction/features.html"
+      "official_value": "1.77",
+      "source_url": "https://docs.dash.org/en/stable/docs/user/introduction/features.html",
+      "official_source": "https://www.coinwarz.com/mining/dash/calculator",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "id": "AsicMiningCalculator__NETWORK_DATA.DASH.blockTime",
@@ -307,7 +310,7 @@
       "conflict": false,
       "status": "current",
       "notes": "Total network BTC issued per day = 144 blocks/day × 3.125 BTC = 450 BTC/day. This is a deterministic consequence of the block reward and ~10-min block time (consensus), used to estimate a miner's BTC share. Will drop to 225 BTC/day after the 5th halving. Marked regulatory (derived from consensus issuance), though it ignores transaction fees.",
-      "source_url": "https://www.bitcoinblockhalf.com/"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
     },
     {
       "id": "CryptoInheritanceCalculator__estate_tax_rate_default",
@@ -503,7 +506,7 @@
       "conflict": false,
       "status": "current",
       "notes": "144 blocks/day = 86400s / 600s target block time. Derived from the protocol ~10-minute block-time target (difficulty retargets every 2016 blocks to hold this). Drives the halving countdown (current block estimate, blocks remaining) and daily reward estimate.",
-      "source_url": "https://www.bitcoinblockhalf.com/"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/kernel/chainparams.cpp"
     },
     {
       "id": "HalvingCalculator__CURRENT_REWARD",
@@ -525,7 +528,7 @@
       "conflict": false,
       "status": "current",
       "notes": "Current block subsidy (post-840,000 / 4th halving). Used in current daily-BTC estimate and shown as 'Current Block Reward'.",
-      "source_url": "https://www.bitcoinblockhalf.com/"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
     },
     {
       "id": "HalvingCalculator__HALVINGS",
@@ -545,7 +548,7 @@
       "conflict": false,
       "status": "current",
       "notes": "Full historical halving table: block heights (210k/420k/630k/840k = every 210,000 blocks), dates, and reward-before/reward-after each era (50->25->12.5->6.25->3.125). These block heights and reward values are hard consensus facts. NOTE: the priceAtHalving / priceAfter6m/12m/18m fields on each row are MARKET history (e.g. 2024: $64k at halving) and are not regulatory; only block, date, rewardBefore, rewardAfter are consensus.",
-      "source_url": "https://www.bitcoinblockhalf.com/"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
     },
     {
       "id": "HalvingCalculator__NEXT_HALVING_BLOCK",
@@ -566,7 +569,7 @@
       "conflict": false,
       "status": "current",
       "notes": "Block height of the 5th halving (840,000 + 210,000 = 1,050,000). Deterministic consensus fact; the calendar ETA derived from it is an estimate but the block height itself is fixed.",
-      "source_url": "https://www.bitcoinblockhalf.com/"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
     },
     {
       "id": "HalvingCalculator__POST_HALVING_REWARD",
@@ -588,7 +591,7 @@
       "conflict": false,
       "status": "current",
       "notes": "Block subsidy after the 5th halving (3.125 / 2 = 1.5625 BTC, ~2028). Consensus-determined.",
-      "source_url": "https://www.bitcoinblockhalf.com/"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
     },
     {
       "id": "HalvingCalculator__REFERENCE_BLOCK",
@@ -609,7 +612,7 @@
       "conflict": false,
       "status": "current",
       "notes": "Anchor block for the countdown's current-block extrapolation: the 4th halving height (840,000). Consensus fact paired with REFERENCE_DATE.",
-      "source_url": "https://www.bitcoinblockhalf.com/"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
     },
     {
       "id": "HalvingCalculator__REFERENCE_DATE",
@@ -650,7 +653,7 @@
       "conflict": false,
       "status": "current",
       "notes": "Stated in disclaimer text ('~10 min/block (144 blocks/day)'). The protocol target inter-block time of 10 minutes is the basis for BLOCKS_PER_DAY=144. Encoded implicitly (not a numeric const) but is a consensus fact surfaced to users.",
-      "source_url": "https://www.bitcoinblockhalf.com/"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/kernel/chainparams.cpp"
     },
     {
       "id": "InheritanceTaxCalculator__au.inheritance_tax",
@@ -914,7 +917,7 @@
       "conflict": false,
       "status": "current",
       "notes": "Hardcoded BTC block subsidy used in daily-BTC mining formula (set inside both the success and catch branches of the network fetch). 3.125 BTC is the consensus reward after the 4th halving at block 840,000 (Apr 20 2024). Next change to 1.5625 at the 5th halving (~2028, block 1,050,000).",
-      "source_url": "https://www.bitcoinblockhalf.com/"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
     },
     {
       "id": "MiningCalculator__secondsPerDay",
@@ -981,7 +984,7 @@
       "conflict": true,
       "status": "current",
       "notes": "Protocol-consensus block reward (3.125 BTC) plus 144 blocks/day and the 1.5625/0.78125 post-halving subsidies, baked into a market/model (Stock-to-Flow) calculator rather than a mining one. The S2F regression coefficients (3.21, -1.71) are model parameters and NOT regulatory. Reporting only the consensus block-reward + block-cadence facts. Will go stale at the next halving (~2028 -> 1.5625).",
-      "source_url": "https://www.blockchain.com/explorer/assets/btc"
+      "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
     },
     {
       "id": "TaxCalculator__at.flat_rate",
@@ -1061,8 +1064,11 @@
       "conflict": false,
       "status": "current",
       "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 17.5% flat (MP1303) rejected Oct 2025; reverted to progressive 15–22.5% + R$35k/mo exemption.",
-      "official_value": "progressive 15%-22.5% (with R$35,000/month de minimis exemption still in force)",
-      "source_url": "https://newsletter.brazilcrypto.io/p/211-congress-strikes-down-controversial"
+      "official_value": "progressive 15%–22.5%",
+      "source_url": "https://newsletter.brazilcrypto.io/p/211-congress-strikes-down-controversial",
+      "official_source": "lbm-legal.com.br (MP1303 expiration); orbitax.com; ey.com tax alert",
+      "verified_date": "2026-07-08",
+      "verify_method": "tier2-llm"
     },
     {
       "id": "TaxCalculator__ca.brackets",
