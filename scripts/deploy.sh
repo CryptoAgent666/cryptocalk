@@ -15,6 +15,14 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
+# --- STEP 0 (BLOCKING): stale-values prose guard — fleet rollout 2026-08-29 ---
+# Ищет в src/ конкретные устаревшие значения (пары «было→стало» из
+# scripts/stale-values.json). Один факт живёт в 5+ местах (компонент, статья,
+# FAQ, worked example, локали) — правка регулярно доезжает не до всех.
+# Деплой с известным устаревшим значением ЗАПРЕЩЁН.
+echo "▶ Stale-values guard…"
+node scripts/check-stale-values.mjs || { echo "❌ Deploy blocked: stale values found (see above)."; exit 1; }
+
 CREDS=".ftp-credentials"
 [ -f "$CREDS" ] || { echo "❌ $CREDS not found"; exit 1; }
 eval "$(grep -E '^(host|user|pass|remote_path)=' "$CREDS" | sed 's/^/FTP_/')"

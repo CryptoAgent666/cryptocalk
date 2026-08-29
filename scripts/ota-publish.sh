@@ -17,6 +17,13 @@ APP_KEY="crypto"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 CREDS="$ROOT/.ftp-credentials"
 
+# --- STEP 0 (BLOCKING): stale-values prose guard — fleet rollout 2026-08-29 ---
+# Тот же гард, что в deploy.sh: OTA-бандл собирается из тех же src/, и приложение
+# не должно уехать с устаревшими значениями в прозе. Сабшелл с cd обязателен:
+# roots в scripts/stale-values.json относительные, а cwd здесь ещё не корень репо.
+echo "==> [0/4] Stale-values guard…"
+( cd "$ROOT" && node scripts/check-stale-values.mjs ) || { echo "ERROR: stale values found — OTA publish blocked."; exit 1; }
+
 # OTA subdomain docroot on the FTP server (override in scripts/ota.env — copy from ota.env.example).
 [ -f "$ROOT/scripts/ota.env" ] && . "$ROOT/scripts/ota.env"
 OTA_FTP_DIR="${OTA_FTP_DIR:-ota.cryptocalk.com/httpdocs}"
