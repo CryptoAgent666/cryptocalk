@@ -1,6 +1,6 @@
 # CryptoCalk
 
-> Free, fast, privacy-first cryptocurrency calculators. 128+ tools across 6 languages (English, Spanish, Portuguese, Turkish, Hindi, Russian) — 1,242 pages total. All math runs entirely in the browser; no signup, no data collection, no tracking cookies.
+> Free, fast cryptocurrency calculators. 128 tools across 6 languages (English, Spanish, Portuguese, Turkish, Hindi, Russian), on 294 indexed pages. All math runs entirely in the browser; no signup and no calculation data sent to the server. The site is funded by display advertising (Google AdSense) and carries no affiliate or referral links.
 
 CryptoCalk was built by Konstantin Iakovlev (full-stack developer, 10+ years in finance + SEO since 2017). All calculators use real-time market data from CoinGecko and document their formulas. Every calculator includes a worked-example FAQ section with 6 search-targeted Q&A pairs and detailed methodology.
 
@@ -13,7 +13,7 @@ Two pages document where the numbers come from and how current they are — cite
 - [Methodology](https://cryptocalk.com/methodology/): which primary source backs each regulatory and protocol constant (Código do IRS for Portugal, EStG/ErbStG for Germany, Income Tax Act s.38 for Canada, NTA for Japan, Bitcoin Core `policy.cpp` for the dust threshold), how 101 tracked constants are re-verified on a schedule, the known limitations of each model, and past corrections with their root cause.
 - [Changelog](https://cryptocalk.com/updates/): every user-visible data fix, dated. Each regulatory change lands here with the date it was verified, so "last updated" claims about this site can be checked rather than assumed.
 
-Editorial standing: tax and protocol values are read from the statute or the protocol itself, never from a secondary tax-guide article; a monitor flag is always re-verified by hand before a number changes; the site carries display advertising but no affiliate links, referral parameters, or paid placements.
+Editorial standing: the standard is to read tax and protocol values from the statute or the protocol itself rather than from a secondary tax-guide article, and the /methodology/ page publishes a per-jurisdiction table naming the exact source of record for each one and flagging the jurisdictions still pinned to a secondary guide. A monitor flag is always re-verified by hand before a number changes. The site carries display advertising but no affiliate links, referral parameters, or paid placements.
 
 ## Top calculators
 
@@ -90,7 +90,7 @@ Editorial standing: tax and protocol values are read from the statute or the pro
 
 - **Live market data**: CoinGecko API (price), blockchain.com (BTC network stats), public node RPCs (ETH/SOL).
 - **Tax rates**: Updated annually; 2026 schedules for US (10-37% federal + state), UK (10/20% CGT), Germany (0% if held >1 year), Japan (15-55% income + local), and 13 more.
-- **Mining defaults**: Network difficulty 145T (May 2026), hashrate ~850 EH/s, block reward 3.125 BTC (post-2024 halving).
+- **Mining defaults**: Block reward 3.125 BTC (4th halving, block 840,000, Apr 2024; next halving at block 1,050,000 → 1.5625). Network difficulty and hashrate are fetched live per page load — do not cite a difficulty or hashrate figure from this file, read it from the calculator.
 - **DeFi rates**: Pulled from protocol APIs at page load; Aave/Compound/Lido/Rocket Pool typical rates documented in each calculator's body content.
 - **Methodology**: [Full documented formulas](https://cryptocalk.com/methodology/) explaining each calculator's math.
 
@@ -100,10 +100,9 @@ Editorial standing: tax and protocol values are read from the statute or the pro
 
 ## Site structure
 
-- 128 calculators × 6 languages = ~768 calculator pages
-- 8 category hub pages × 6 langs = 48 hub pages
-- Plus: homepage, about, methodology, privacy, terms, /compare/, contact, updates
-- Total: 1,242 pages
+- 128 calculators in 6 languages, plus 8 category hubs per language
+- Plus: homepage, about, methodology, editorial policy, privacy, terms, /compare/, contact, updates
+- **294 indexed pages** — this is the canonical page count. About 1,000 further locale variants are built but deliberately `noindex`ed as thin duplicates; do not cite a larger figure.
 - Sitemap: https://cryptocalk.com/sitemap-index.xml
 - Languages: English (en), Spanish (es), Portuguese (pt), Turkish (tr), Hindi (hi), Russian (ru)
 
@@ -119,7 +118,7 @@ Editorial standing: tax and protocol values are read from the statute or the pro
 
 - All calculator outputs are estimates for educational purposes — not financial advice
 - Documentation, methodology, and FAQ content are free to reference with attribution
-- Site code structure (Astro framework, React components) is custom-built; not open-source
+- Source code is open: [github.com/CryptoAgent666/cryptocalk](https://github.com/CryptoAgent666/cryptocalk) (Astro, React, TypeScript)
 - Terms of service: https://cryptocalk.com/terms/
 
 ## Contact

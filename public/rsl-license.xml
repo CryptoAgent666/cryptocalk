@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  RSL 1.0 (Really Simple Licensing) — machine-readable restatement of the terms already published
+  at https://cryptocalk.com/terms/ and https://cryptocalk.com/editorial-policy/. It introduces no
+  new terms.
+
+  Scope note: this file is a site-wide statement. Per-agent access is governed by /robots.txt,
+  which allows the AI search/citation crawlers and the major training crawlers while disallowing
+  CCBot, Bytespider, anthropic-ai and cohere-ai. Where the two differ, robots.txt is the operative
+  control for that agent.
+-->
+<rsl xmlns="https://rslstandard.org/rsl">
+  <content url="https://cryptocalk.com/">
+    <license>
+      <permits type="usage">search</permits>
+      <permits type="usage">ai-input</permits>
+      <permits type="usage">ai-summarize</permits>
+      <permits type="usage">ai-train</permits>
+      <permits type="user">commercial</permits>
+      <permits type="user">non-commercial</permits>
+      <payment type="attribution">
+        <standard>https://cryptocalk.com/terms/</standard>
+      </payment>
+    </license>
+    <copyright type="organization">CryptoCalk</copyright>
+  </content>
+</rsl>

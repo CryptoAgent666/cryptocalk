@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-const lastUpdated = '31/03/2026';
+const lastUpdated = '25/08/2026';
 const pageUrl = 'https://cryptocalk.com/privacy/';
 const webPageSchema = {
   '@context': 'https://schema.org',
@@ -13,7 +13,7 @@ const webPageSchema = {
   description:
     'Read CryptoCalk privacy policy: what data is and is not collected, how cookies and advertising work, and third-party data provider details.',
   inLanguage: 'en',
-  dateModified: '2026-03-31T00:00:00+00:00',
+  dateModified: '2026-08-25T00:00:00+00:00',
 };
 ---
 
@@ -83,6 +83,37 @@ const webPageSchema = {
         <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google Advertising Policies</a></li>
         <li><a href="https://www.coingecko.com/en/privacy" target="_blank" rel="nofollow noopener noreferrer">CoinGecko Privacy Policy</a></li>
       </ul>
+
+      <h3>5a. Advertising in the Android app</h3>
+      <p>
+        The CryptoCalk Android app does <strong>not</strong> use Google AdSense. It serves ads through
+        <strong>Google AdMob</strong> (a banner and an occasional interstitial), which is a separate product with
+        a different data model from the website's ads. The website's cookie banner does not apply to it.
+      </p>
+      <p>
+        For ad serving, measurement and fraud prevention, the Google Mobile Ads SDK collects and shares with Google
+        your device's <strong>advertising identifier</strong>, your IP address (from which an approximate location is
+        derived), your interactions with the ads shown, and diagnostic information about the app and the SDK. Google's
+        own description of what the SDK collects is published in its
+        <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure" target="_blank" rel="noopener noreferrer">Play data disclosure</a>.
+        The numbers you type into a calculator are never part of this: they stay on your device and are not sent
+        anywhere, in the app or on the website.
+      </p>
+      <p>
+        <strong>If you are in the EEA, the UK or Switzerland</strong>, the app asks for your consent before requesting
+        any ad, using Google's User Messaging Platform. If you decline, ads are limited to non-personalised ones or are
+        not shown at all. You can change your choice at any time from the <em>Ad privacy settings</em> button at the
+        bottom of any screen in the app.
+      </p>
+      <p>
+        Anywhere in the world you can reset or delete your advertising identifier in Android under
+        <em>Settings → Privacy → Ads</em>, which also lets you opt out of personalised advertising for every app on the
+        device. Google's <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">partner policy</a>
+        and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">advertising policies</a> describe how it uses this data.
+      </p>
+      <p>
+        The iOS app shows no ads at all and does not initialise any advertising SDK.
+      </p>
 
       <h2>6. Data Retention and Security</h2>
       <p>

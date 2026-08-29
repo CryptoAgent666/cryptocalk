@@ -205,6 +205,15 @@ const privacyHref = lang === 'en' ? '/privacy/' : `/${lang}/privacy/`;
     }
   }
 
+  // Inside the native app this banner is worse than useless: GA and AdSense are skipped there
+  // (see Layout.astro), so it asks consent for things that never load — while AdMob, which DOES
+  // run on Android, is not covered by it at all. It was also cited in the iOS 5.1.2 rejection.
+  // Hide it here; the correct consent surface for AdMob is Google's UMP form, which is not wired
+  // up yet — until it is, EEA/UK users see no ad-consent prompt in the app.
+  if (document.documentElement.getAttribute('data-native') === '1') {
+    banner?.remove();
+  } else
+
   // On page load: restore consent or show banner
   if (hasConsent()) {
     banner?.classList.add('hidden');

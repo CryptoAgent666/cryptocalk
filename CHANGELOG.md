@@ -1,3 +1,8 @@
+> **Each entry describes CryptoCalk as it stood on that entry's date.** Counts and claims in old
+> entries ("69 calculators", "935 pages", ad-free) were accurate when written and are deliberately
+> not rewritten. For what is true now, see [`play-store-assets/listing.md`](play-store-assets/listing.md),
+> https://cryptocalk.com/about/ and https://cryptocalk.com/llms.txt.
+
 # Changelog — CryptoCalk
 
 All notable changes to this project are documented here.

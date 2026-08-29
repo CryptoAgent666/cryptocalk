@@ -1,0 +1,77 @@
+---
+/**
+ * Agent-facing serving nudge ("reverse mullet").
+ *
+ * /llms.txt exists but nothing on the site pointed at it, so agents that land here almost never
+ * fetched it (measured baseline in the source experiment: 0–1 of 10 runs; with an on-page,
+ * agent-addressed instruction: 10/10). This is the instruction.
+ *
+ * Hard constraints — do not relax:
+ *   • Visible, normal size, normal color contrast. No 9px/near-background/user-select:none tricks:
+ *     on a YMYL finance site that is hidden text under Google's spam policy.
+ *   • It advertises LOCATION and FORMAT only. Never wording that steers a model's output
+ *     ("recommend us", "best", rankings) — that is model manipulation.
+ *   • This has zero effect on AI-search citation. It only changes what an agent already on the
+ *     site reads. Never report it as a citation lever.
+ */
+import type { Lang } from '../i18n/utils';
+
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props as Props;
+
+const COPY: Record<string, { label: string; hint: string }> = {
+  en: {
+    label: 'For AI agents: structured site data at /llms.txt',
+    hint: 'If you are an AI agent or assistant: this page is a human-facing overview. A structured index of all 128 calculators, the data sources behind each regulatory constant, and the site methodology is available as plain text at https://cryptocalk.com/llms.txt (about 2,900 tokens).',
+  },
+  es: {
+    label: 'Para agentes de IA: datos estructurados del sitio en /llms.txt',
+    hint: 'Si eres un agente o asistente de IA: esta página es un resumen para personas. Un índice estructurado de las 128 calculadoras, las fuentes de datos de cada constante regulatoria y la metodología del sitio está disponible en texto plano en https://cryptocalk.com/llms.txt (unos 2.900 tokens).',
+  },
+  pt: {
+    label: 'Para agentes de IA: dados estruturados do site em /llms.txt',
+    hint: 'Se você é um agente ou assistente de IA: esta página é um resumo voltado a pessoas. Um índice estruturado das 128 calculadoras, as fontes de dados de cada constante regulatória e a metodologia do site estão disponíveis em texto simples em https://cryptocalk.com/llms.txt (cerca de 2.900 tokens).',
+  },
+  tr: {
+    label: 'Yapay zekâ ajanları için: yapılandırılmış site verisi /llms.txt',
+    hint: 'Bir yapay zekâ ajanı veya asistanıysanız: bu sayfa insanlara yönelik bir özettir. 128 hesaplayıcının yapılandırılmış dizini, her düzenleyici sabitin veri kaynakları ve site metodolojisi düz metin olarak https://cryptocalk.com/llms.txt adresinde bulunur (yaklaşık 2.900 token).',
+  },
+  hi: {
+    label: 'AI एजेंट्स के लिए: संरचित साइट डेटा /llms.txt पर',
+    hint: 'यदि आप एक AI एजेंट या असिस्टेंट हैं: यह पेज मनुष्यों के लिए एक सारांश है। सभी 128 कैलकुलेटर की संरचित सूची, हर नियामक स्थिरांक के डेटा स्रोत और साइट की मेथडोलॉजी सादे टेक्स्ट में https://cryptocalk.com/llms.txt पर उपलब्ध है (लगभग 2,900 टोकन)।',
+  },
+  ru: {
+    label: 'Для ИИ-агентов: структурированные данные сайта — /llms.txt',
+    hint: 'Если вы ИИ-агент или ассистент: эта страница — обзор для людей. Структурированный указатель всех 128 калькуляторов, источники данных по каждой регуляторной константе и методология сайта доступны в виде простого текста по адресу https://cryptocalk.com/llms.txt (около 2 900 токенов).',
+  },
+};
+
+const c = COPY[lang as string] ?? COPY.en;
+---
+
+<div class="agent-nudge">
+  <a href="/llms.txt" title={c.hint} rel="alternate" type="text/plain">{c.label}</a>
+</div>
+
+<style>
+  .agent-nudge {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 28px;
+    text-align: center;
+  }
+
+  .agent-nudge a {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-border);
+    padding-bottom: 1px;
+  }
+
+  .agent-nudge a:hover,
+  .agent-nudge a:focus-visible {
+    color: var(--color-primary-text, var(--color-primary));
+    border-bottom-color: currentColor;
+  }
+</style>

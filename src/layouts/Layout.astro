@@ -3,6 +3,7 @@ import { SUPPORTED_LANGS, DEFAULT_LANG, getLocalizedPath, getPathWithoutLang, ty
 import CookieBanner from '../components/CookieBanner.astro';
 import CapgoUpdater from '../components/CapgoUpdater.astro';
 import AdMobAds from '../components/AdMobAds.astro';
+import AgentNudge from '../components/AgentNudge.astro';
 import prunePaths from '../data/prune-noindex.json';
 const PRUNE_NOINDEX = new Set((prunePaths.paths as string[]));
 
@@ -185,6 +186,19 @@ const hreflangBasePath = normalizeBasePathForHreflang(basePath);
         } catch(e) {}
       })();
     </script>
+    <!-- Native-app flag: set in the SAME synchronous block as the theme so anything gated on it
+         (the Play badge, the cookie banner) never flashes before being hidden. window.Capacitor is
+         injected by the runtime before page scripts run, so on the public website this is a no-op. -->
+    <script is:inline>
+      (function() {
+        try {
+          if (window.Capacitor && typeof window.Capacitor.isNativePlatform === 'function'
+              && window.Capacitor.isNativePlatform()) {
+            document.documentElement.setAttribute('data-native', '1');
+          }
+        } catch(e) {}
+      })();
+    </script>
     <meta name="description" content={description} />
     {shouldNoindex && <meta name="robots" content={isPruned ? 'noindex, follow' : 'noindex, nofollow'} />}
 
@@ -336,9 +350,10 @@ const hreflangBasePath = normalizeBasePathForHreflang(basePath);
   <body>
     <a href="#main-content" class="skip-to-content">{({es:'Ir al contenido principal',pt:'Ir para o conteúdo principal',tr:'Ana içeriğe geç',hi:'मुख्य सामग्री पर जाएं',ru:'Перейти к основному содержанию'})[lang as string] || 'Skip to main content'}</a>
     <slot />
+    <AgentNudge lang={lang} />
     <CookieBanner lang={lang} />
     <CapgoUpdater />
-    <AdMobAds />
+    <AdMobAds lang={lang} />
     <script is:inline>
       (() => {
         const MOBILE_QUERY = '(max-width: 768px)';

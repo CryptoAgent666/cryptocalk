@@ -2254,3 +2254,18 @@
     scroll-behavior: auto;
   }
 }
+
+/* ── Inside the native app ────────────────────────────────────────────────────
+ * The same HTML serves the website and the Capacitor webview. Two things must not
+ * appear in the app:
+ *   .gplay-badge  — a "Get it on Google Play" badge shown inside the app the user is
+ *                   already running. Harmless on Play, but this is exactly the pattern
+ *                   App Review cited as 2.3.10 on the iOS build (a store badge for
+ *                   another platform on every page), so it stays gated everywhere.
+ *   .native-hide  — one-off web-only calls to action (e.g. the changelog's app CTA).
+ * Set by the data-native flag in Layout.astro, before first paint.
+ */
+[data-native='1'] .gplay-badge,
+[data-native='1'] .native-hide {
+  display: none !important;
+}

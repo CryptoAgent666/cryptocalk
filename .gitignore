@@ -42,3 +42,8 @@ DSC_0854.JPG
 
 # iOS signing profiles (never commit)
 *.mobileprovision
+
+# Ledger/config backups taken before constants edits (calk-constants-check) — transient
+*.bak-*
+# Playwright MCP artifacts
+.playwright-mcp/

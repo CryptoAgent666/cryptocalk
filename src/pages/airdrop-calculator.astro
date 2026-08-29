@@ -8,6 +8,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 import AuthoritativeSources from '../components/AuthoritativeSources.astro';
+import DataVerification from '../components/DataVerification.astro';
 
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
@@ -207,6 +208,9 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
 
         <h2>Recording Airdrops for Tax Purposes</h2>
         <p>Proper record-keeping is essential for airdrop tax compliance. For each airdrop you receive, document the following: the exact date and time of receipt (or claiming), the number of tokens received, the fair market value per token at the time of receipt, the transaction hash, and the total dollar value. This information establishes both your taxable income and your cost basis for future capital gains calculations. Consider using crypto tax software like CoinLedger, Koinly, or CoinTracking to automate this process.</p>
+
+        <DataVerification calculator="AirdropCalculator" lang="en" limit={6} />
+
 
         <AuthoritativeSources category="tax-reporting" />
 

@@ -6,6 +6,8 @@ import ProfitCalculator from '../components/ProfitCalculator.tsx';
 import { Calculator, ChevronRight, ArrowLeft } from 'lucide-react';
 import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
+import TradeWaterfall from '../components/diagrams/TradeWaterfall.astro';
+import LongShortPayoff from '../components/diagrams/LongShortPayoff.astro';
 import '../styles/calculator-page.css';
 import AuthoritativeSources from '../components/AuthoritativeSources.astro';
 
@@ -93,7 +95,7 @@ const buildDate = '2026-08-23'; // honest last-content-change date from git hist
 
         <p><strong>Note:</strong> Toggle between Long and Short mode to see how your profit or loss changes based on your trading strategy. The calculator instantly updates all values as you type.</p>
 
-        <h2>Key Features</h2>
+        <h2 id="features">What does this calculator include?</h2>
         <ul>
           <li><strong>Long & Short positions</strong>: Calculate profit from both buying low and selling high (long) or selling high and buying low (short).</li>
           <li><strong>Real-time prices</strong>: Search for any cryptocurrency and auto-fill the current market price from CoinGecko. Supports 500+ cryptocurrencies.</li>
@@ -103,7 +105,7 @@ const buildDate = '2026-08-23'; // honest last-content-change date from git hist
           <li><strong>Effective price display</strong>: View your true cost basis and exit price after fees are applied.</li>
         </ul>
 
-        <h2 id="by-coin">Profit Calculator by Coin</h2>
+        <h2 id="by-coin">Which coin are you calculating profit for?</h2>
         <p>The arithmetic below is identical for every asset — price in, price out, fees off. What differs per coin is <em>which costs and delays you must include</em> before the number means anything. Search any of these in the calculator above to auto-fill its live price, then apply the caveat in the last column.</p>
         <div class="table-responsive">
           <table>
@@ -171,7 +173,7 @@ const buildDate = '2026-08-23'; // honest last-content-change date from git hist
         </div>
         <p><strong>Meme coins in general:</strong> the calculator handles them the same way, but two inputs dominate the result — slippage on thin liquidity and the exit fee. Model a pessimistic exit price rather than the mid-price you see quoted.</p>
 
-        <h2>Crypto Profit Formula</h2>
+        <h2 id="how-to-calculate">How do you calculate crypto profit?</h2>
         <p>The basic formula for calculating cryptocurrency profit is:</p>
         <div class="formula-block">
           <code>Profit = (Sell Price × Quantity) − (Buy Price × Quantity) − Total Fees</code>
@@ -181,7 +183,7 @@ const buildDate = '2026-08-23'; // honest last-content-change date from git hist
           <code>ROI = (Profit ÷ Total Cost) × 100%</code>
         </div>
 
-        <h2>Worked Example</h2>
+        <h2 id="worked-example">Worked example: 0.5 BTC from $60,000 to $72,000</h2>
         <p>Let's say you buy 0.5 BTC at $60,000 and sell at $72,000 with 0.1% fees on both entry and exit:</p>
         <ul>
           <li><strong>Investment:</strong> 0.5 × $60,000 = $30,000</li>
@@ -195,7 +197,9 @@ const buildDate = '2026-08-23'; // honest last-content-change date from git hist
         </ul>
         <p>Without fees, your profit would have been $6,000, but the $66 in total fees reduced your net profit by 1.1%.</p>
 
-        <h2>Long vs Short Positions Explained</h2>
+        <TradeWaterfall />
+
+        <h2 id="long-vs-short">What is the difference between a long and a short position?</h2>
         <p>In cryptocurrency trading, you can profit in two ways: going long or going short. Understanding the difference is crucial for calculating your returns correctly.</p>
 
         <p><strong>Long positions</strong> are the traditional buy-low-sell-high strategy. You purchase a cryptocurrency expecting its price to rise, then sell it later at a higher price. Your profit is the difference between your sell price and buy price, multiplied by the quantity you hold. Long positions are ideal when you believe the market is bullish or a specific cryptocurrency has strong fundamentals.</p>
@@ -203,6 +207,8 @@ const buildDate = '2026-08-23'; // honest last-content-change date from git hist
         <p><strong>Short positions</strong> work in reverse. You profit when the price goes down. In practice, you borrow cryptocurrency from a broker or exchange, sell it at the current high price, then buy it back later at a lower price to return to the lender. The difference is your profit. For example, if you short BTC at $70,000 and close your position at $63,000, you profit $7,000 per BTC (minus fees and borrowing costs). Shorting is used when you expect a market downturn or want to hedge against losses in your long positions.</p>
 
         <p><strong>Example:</strong> You short 1 BTC at $70,000. The price drops to $63,000, and you close your position. Your profit is ($70,000 − $63,000) × 1 = $7,000 before fees. If you had gone long instead and the price dropped, you would have lost $7,000.</p>
+
+        <LongShortPayoff />
 
         <h2>How Trading Fees Impact Your Profit</h2>
         <p>Trading fees can significantly eat into your profits, especially for high-frequency traders or those trading on exchanges with higher fee structures. Most exchanges charge a percentage fee on both your entry (buy) and exit (sell) transactions.</p>
@@ -256,7 +262,7 @@ const buildDate = '2026-08-23'; // honest last-content-change date from git hist
           <li><strong>Compare exchanges</strong>: Fees vary widely. Kraken, Binance, and Bybit often have lower fees than Coinbase or Gemini.</li>
         </ul>
 
-        <h2>Understanding ROI in Crypto Trading</h2>
+        <h2 id="good-roi">What is a good ROI on a crypto trade?</h2>
         <p>ROI (Return on Investment) is a percentage that shows how much profit you made relative to your initial investment. While absolute profit tells you how many dollars you earned, ROI tells you how efficient your trade was.</p>
 
         <p>For example, earning $500 profit on a $1,000 investment (50% ROI) is far more impressive than earning $500 on a $10,000 investment (5% ROI), even though the dollar amount is the same. ROI is crucial for comparing trades of different sizes and evaluating your trading strategy's effectiveness.</p>
@@ -269,7 +275,7 @@ const buildDate = '2026-08-23'; // honest last-content-change date from git hist
         </div>
         <p>A 10% ROI over 30 days equals 121.7% annualized ROI, while a 10% ROI over 365 days equals 10% annualized ROI. This helps you compare a quick swing trade to a long-term hold.</p>
 
-        <h2>Common Profit Calculation Mistakes</h2>
+        <h2 id="common-mistakes">What mistakes make crypto profit calculations wrong?</h2>
         <p>Even experienced traders sometimes miscalculate their profits. Here are the most common mistakes to avoid:</p>
         <ul>
           <li><strong>Forgetting to include fees</strong>: Entry and exit fees can reduce your profit by 0.2% to 2% or more. Always factor them in to see your true net profit.</li>

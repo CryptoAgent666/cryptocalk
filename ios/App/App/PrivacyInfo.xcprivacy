@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+		Privacy Manifest for the CryptoCalk iOS app.
+		Mandatory since iOS 17 / App Store from 1 May 2024.
+		Docs: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
+
+		Tracking = false, no data collected: the iOS app serves NO ads and runs NO
+		analytics. AdMob is Android-only (src/components/AdMobAds.astro gates on
+		getPlatform() === 'android'), GA + AdSense loaders are skipped inside the
+		native app (isNativePlatform() gate in the page head), there is no ATT
+		request and no IAP. Calculators run on-device; the only network calls are
+		CoinGecko price lookups (no user data) and Capgo OTA bundle checks.
+
+		⚠️ If ads / ATT / RevenueCat are ever enabled on iOS, rewrite this to the
+		fleet standard (tracking=true + Google domains + DeviceID/
+		ProductInteraction/PurchaseHistory/CrashData — see calk-uz 1.3.1 or
+		KZ-CALK commit ed781e8) and update App Privacy in App Store Connect.
+	-->
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<!-- Required Reason APIs used by Capacitor + plugins (Capgo updater). -->
+		<dict>
+			<!-- UserDefaults — Capacitor Preferences / WebView state -->
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+		<dict>
+			<!-- FileTimestamp — Capgo OTA bundle files / WebView cache -->
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>C617.1</string>
+			</array>
+		</dict>
+		<dict>
+			<!-- DiskSpace — free-space checks when caching / unzipping OTA bundles -->
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryDiskSpace</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>E174.1</string>
+			</array>
+		</dict>
+		<dict>
+			<!-- SystemBootTime — session/diagnostic timing -->
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategorySystemBootTime</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>35F9.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

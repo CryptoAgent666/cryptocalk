@@ -1,0 +1,314 @@
+---
+/**
+ * "Where these numbers come from" — per-calculator source-of-record block.
+ *
+ * Renders the ledger rows that actually feed THIS calculator: the value on the page, the source
+ * it was read from, whether that source is a statute/protocol spec or a secondary guide, and the
+ * date it was last verified by hand. Server-rendered, so it is readable without JavaScript.
+ *
+ * It is also the site's freshness mechanism: when a constant is re-verified, this block changes,
+ * which is a real content change — so the page's dateModified may move honestly rather than being
+ * stamped with a build date.
+ */
+import { verificationFor, TIER_LABEL, type SourceTier } from '../data/source-ledger';
+
+interface Props {
+  /** React component name as recorded in the constants ledger, e.g. "TaxCalculator". */
+  calculator: string;
+  lang?: string;
+  /** How many rows to show inline before pointing at the full table. */
+  limit?: number;
+}
+const { calculator, lang = 'en', limit = 6 } = Astro.props as Props;
+const v = verificationFor(calculator);
+
+const LOCALE: Record<string, string> = {
+  en: 'en-GB', es: 'es-ES', pt: 'pt-BR', tr: 'tr-TR', hi: 'hi-IN', ru: 'ru-RU',
+};
+const fmt = (iso: string | null) =>
+  iso
+    ? new Date(`${iso}T00:00:00Z`).toLocaleDateString(LOCALE[lang] ?? 'en-GB', {
+        day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
+      }).replace(/\.$/, '')
+    : null;
+
+interface Copy {
+  heading: string;
+  drivenBy: (n: number) => string;
+  across: (n: number) => string;
+  lastVerified: (d: string) => string;
+  checkIt: string;
+  methodologyLink: string;
+  capAll: (n: number) => string;
+  capSome: (shown: number, total: number) => string;
+  thValue: string; thOnPage: string; thSource: string; thVerified: string;
+  showing: (shown: number, total: number) => string;
+  queued: (n: number) => string;
+  dashNote: string;
+  howWeVerify: string;
+  tierShort: Record<SourceTier, string>;
+  methodologyHref: string;
+  editorialHref: string;
+}
+
+const COPY: Record<string, Copy> = {
+  en: {
+    heading: 'Where these numbers come from',
+    drivenBy: (n) => `This calculator is driven by ${n} tracked ${n === 1 ? 'value' : 'values'}`,
+    across: (n) => ` across ${n} ${n === 1 ? 'jurisdiction' : 'jurisdictions'}`,
+    lastVerified: (d) => ` The most recent hand verification was ${d}.`,
+    checkIt: ' Each value records the page it was read from, so you can check it rather than take our word for it — the full ledger is on the ',
+    methodologyLink: 'methodology page',
+    capAll: (n) => `All ${n} tracked ${n === 1 ? 'value' : 'values'}`,
+    capSome: (sh, t) => `${sh} of ${t} tracked values, most recently verified first`,
+    thValue: 'Value', thOnPage: 'On this page', thSource: 'Source of record', thVerified: 'Verified',
+    showing: (sh, t) => `Showing ${sh} of ${t}. `,
+    queued: (n) => `${n} of these ${n === 1 ? 'is' : 'are'} still pinned to a secondary guide rather than the statute itself and ${n === 1 ? 'is' : 'are'} in the re-verification queue. `,
+    dashNote: 'A dash under \u201cVerified\u201d means the value carries over from the initial audit without an individually dated re-check \u2014 not that it is known to be stale. See ',
+    howWeVerify: 'how we verify',
+    tierShort: { gov: 'statute', protocol: 'protocol', secondary: 'secondary', market: 'market data' },
+    methodologyHref: '/methodology/#data-sources',
+    editorialHref: '/editorial-policy/',
+  },
+  es: {
+    heading: 'De dónde salen estas cifras',
+    drivenBy: (n) => `Esta calculadora funciona con ${n} ${n === 1 ? 'valor rastreado' : 'valores rastreados'}`,
+    across: (n) => ` en ${n} ${n === 1 ? 'jurisdicción' : 'jurisdicciones'}`,
+    lastVerified: (d) => ` La última verificación manual fue el ${d}.`,
+    checkIt: ' Cada valor guarda la página de la que se leyó, para que puedas comprobarlo en lugar de creernos: el registro completo está en la ',
+    methodologyLink: 'página de metodología',
+    capAll: (n) => (n === 1 ? 'El único valor rastreado' : `Los ${n} valores rastreados`),
+    capSome: (sh, t) => `${sh} de ${t} valores rastreados, empezando por el verificado más recientemente`,
+    thValue: 'Valor', thOnPage: 'En esta página', thSource: 'Fuente de registro', thVerified: 'Verificado',
+    showing: (sh, t) => `Mostrando ${sh} de ${t}. `,
+    queued: (n) => `${n} de ellos sigue apoyándose en una guía secundaria en lugar de en la ley y está en la cola de reverificación. `,
+    dashNote: 'Un guion en \u00abVerificado\u00bb significa que el valor viene de la auditoría inicial sin una revisión fechada individualmente, no que se sepa desactualizado. Consulta ',
+    howWeVerify: 'cómo verificamos',
+    tierShort: { gov: 'ley', protocol: 'protocolo', secondary: 'secundaria', market: 'dato de mercado' },
+    methodologyHref: '/es/methodology/#data-sources',
+    editorialHref: '/es/editorial-policy/',
+  },
+  pt: {
+    heading: 'De onde vêm estes números',
+    drivenBy: (n) => `Esta calculadora é movida por ${n} ${n === 1 ? 'valor rastreado' : 'valores rastreados'}`,
+    across: (n) => ` em ${n} ${n === 1 ? 'jurisdição' : 'jurisdições'}`,
+    lastVerified: (d) => ` A verificação manual mais recente foi em ${d}.`,
+    checkIt: ' Cada valor registra a página de onde foi lido, para você conferir em vez de acreditar: o registro completo está na ',
+    methodologyLink: 'página de metodologia',
+    capAll: (n) => (n === 1 ? 'O único valor rastreado' : `Todos os ${n} valores rastreados`),
+    capSome: (sh, t) => `${sh} de ${t} valores rastreados, do verificado mais recentemente em diante`,
+    thValue: 'Valor', thOnPage: 'Nesta página', thSource: 'Fonte de registro', thVerified: 'Verificado',
+    showing: (sh, t) => `Mostrando ${sh} de ${t}. `,
+    queued: (n) => `${n} ${n === 1 ? 'ainda depende' : 'ainda dependem'} de um guia secundário em vez da lei e ${n === 1 ? 'está' : 'estão'} na fila de reverificação. `,
+    dashNote: 'Um traço em \u201cVerificado\u201d significa que o valor vem da auditoria inicial sem uma reverificação datada individualmente, não que esteja desatualizado. Veja ',
+    howWeVerify: 'como verificamos',
+    tierShort: { gov: 'lei', protocol: 'protocolo', secondary: 'secundária', market: 'dado de mercado' },
+    methodologyHref: '/pt/methodology/#data-sources',
+    editorialHref: '/pt/editorial-policy/',
+  },
+  tr: {
+    heading: 'Bu sayılar nereden geliyor',
+    drivenBy: (n) => `Bu hesaplayıcı ${n} izlenen değerle çalışır`,
+    across: (n) => ` (${n} ülke/bölge)`,
+    lastVerified: (d) => ` En son elle doğrulama: ${d}.`,
+    checkIt: ' Her değer, okunduğu sayfayı kaydeder; bize güvenmek yerine kendiniz kontrol edebilirsiniz — tam kayıt defteri ',
+    methodologyLink: 'metodoloji sayfasında',
+    capAll: (n) => (n === 1 ? 'İzlenen tek değer' : `İzlenen ${n} değerin tamamı`),
+    capSome: (sh, t) => `${t} izlenen değerden ${sh} tanesi, en son doğrulanandan başlayarak`,
+    thValue: 'Değer', thOnPage: 'Bu sayfada', thSource: 'Kayıt kaynağı', thVerified: 'Doğrulandı',
+    showing: (sh, t) => `${t} değerden ${sh} tanesi gösteriliyor. `,
+    queued: (n) => `Bunlardan ${n} tanesi hâlâ kanun metni yerine ikincil bir rehbere bağlı ve yeniden doğrulama sırasında. `,
+    dashNote: '\u201cDoğrulandı\u201d sütunundaki tire, değerin ilk denetimden geldiğini ve ayrıca tarihlenmiş bir yeniden kontrolünün olmadığını gösterir; eskimiş olduğu anlamına gelmez. Bkz. ',
+    howWeVerify: 'nasıl doğruluyoruz',
+    tierShort: { gov: 'kanun', protocol: 'protokol', secondary: 'ikincil', market: 'piyasa verisi' },
+    methodologyHref: '/tr/methodology/#data-sources',
+    editorialHref: '/tr/editorial-policy/',
+  },
+  hi: {
+    heading: 'ये आंकड़े कहाँ से आते हैं',
+    drivenBy: (n) => `यह कैलकुलेटर ${n} ट्रैक किए गए मानों पर चलता है`,
+    across: (n) => ` — ${n} क्षेत्राधिकारों में`,
+    lastVerified: (d) => ` सबसे हालिया मैनुअल सत्यापन: ${d}।`,
+    checkIt: ' हर मान उस पेज को दर्ज करता है जहाँ से वह पढ़ा गया, ताकि आप हमारी बात मानने के बजाय स्वयं जाँच सकें — पूरा लेजर ',
+    methodologyLink: 'मेथडोलॉजी पेज पर है',
+    capAll: (n) => (n === 1 ? 'एकमात्र ट्रैक किया गया मान' : `सभी ${n} ट्रैक किए गए मान`),
+    capSome: (sh, t) => `${t} में से ${sh} मान, सबसे हाल में सत्यापित पहले`,
+    thValue: 'मान', thOnPage: 'इस पेज पर', thSource: 'रिकॉर्ड स्रोत', thVerified: 'सत्यापित',
+    showing: (sh, t) => `${t} में से ${sh} दिखाए जा रहे हैं। `,
+    queued: (n) => `इनमें से ${n} अब भी कानून के बजाय एक द्वितीयक गाइड पर आधारित हैं और पुनः सत्यापन की कतार में हैं। `,
+    dashNote: '\u201cसत्यापित\u201d में डैश का अर्थ है कि मान प्रारंभिक ऑडिट से आया है और उसकी अलग से दिनांकित पुनर्जाँच नहीं हुई — यह नहीं कि वह पुराना है। देखें ',
+    howWeVerify: 'हम कैसे सत्यापित करते हैं',
+    tierShort: { gov: 'कानून', protocol: 'प्रोटोकॉल', secondary: 'द्वितीयक', market: 'मार्केट डेटा' },
+    methodologyHref: '/hi/methodology/#data-sources',
+    editorialHref: '/hi/editorial-policy/',
+  },
+  ru: {
+    heading: 'Откуда взяты эти цифры',
+    drivenBy: (n) => `Этот калькулятор работает на ${n} отслеживаемых значениях`,
+    across: (n) => ` из ${n} юрисдикций`,
+    lastVerified: (d) => ` Последняя ручная проверка — ${d}.`,
+    checkIt: ' У каждого значения записана страница, с которой оно прочитано, — вы можете проверить сами, а не верить нам на слово. Полный реестр — на ',
+    methodologyLink: 'странице методологии',
+    capAll: (n) => (n === 1 ? 'Единственное отслеживаемое значение' : `Все ${n} отслеживаемых значений`),
+    capSome: (sh, t) => `${sh} из ${t} отслеживаемых значений, сначала проверенные недавно`,
+    thValue: 'Значение', thOnPage: 'На этой странице', thSource: 'Источник записи', thVerified: 'Проверено',
+    showing: (sh, t) => `Показано ${sh} из ${t}. `,
+    queued: (n) => `${n} из них по-прежнему опираются на вторичный справочник, а не на текст закона, и стоят в очереди на перепроверку. `,
+    dashNote: 'Прочерк в столбце \u00abПроверено\u00bb означает, что значение перешло из первоначального аудита без отдельно датированной перепроверки, а не что оно устарело. См. ',
+    howWeVerify: 'как мы проверяем',
+    tierShort: { gov: 'закон', protocol: 'протокол', secondary: 'вторичный', market: 'рыночные данные' },
+    methodologyHref: '/ru/methodology/#data-sources',
+    editorialHref: '/ru/editorial-policy/',
+  },
+};
+
+const c = COPY[lang] ?? COPY.en;
+const shown = v ? v.rows.slice(0, limit) : [];
+---
+
+{v && (
+  <section class="data-verification" aria-labelledby="data-verification-heading">
+    <h2 id="data-verification-heading">{c.heading}</h2>
+    <p class="dv-summary">
+      {c.drivenBy(v.total)}{v.jurisdictions > 0 && c.across(v.jurisdictions)}.
+      {v.latest && c.lastVerified(fmt(v.latest) as string)}
+      {c.checkIt}<a href={c.methodologyHref}>{c.methodologyLink}</a>.
+    </p>
+
+    <div class="dv-scroll">
+      <table class="dv-table">
+        <caption>{shown.length < v.total ? c.capSome(shown.length, v.total) : c.capAll(v.total)}</caption>
+        <thead>
+          <tr>
+            <th scope="col">{c.thValue}</th>
+            <th scope="col">{c.thOnPage}</th>
+            <th scope="col">{c.thSource}</th>
+            <th scope="col">{c.thVerified}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {shown.map((r) => (
+            <tr>
+              <th scope="row">
+                {r.jurisdiction && <span class="dv-juris">{r.jurisdiction}</span>}
+                {r.what}
+              </th>
+              <td class="dv-num">{r.value}</td>
+              <td>
+                {r.sourceUrl
+                  ? <a href={r.sourceUrl} target="_blank" rel="nofollow noopener noreferrer">{r.sourceHost}</a>
+                  : '\u2014'}
+                {' '}<span class={`dv-tier dv-tier-${r.tier}`} title={TIER_LABEL[r.tier]}>{c.tierShort[r.tier]}</span>
+              </td>
+              <td class="dv-num">{r.verified ?? '\u2014'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="dv-note">
+      {shown.length < v.total && c.showing(shown.length, v.total)}
+      {v.secondaryCount > 0 && c.queued(v.secondaryCount)}
+      {c.dashNote}<a href={c.editorialHref}>{c.howWeVerify}</a>.
+    </p>
+  </section>
+)}
+
+<style>
+  .data-verification {
+    margin: 32px 0;
+  }
+
+  .dv-summary {
+    margin: 0 0 14px;
+  }
+
+  .dv-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dv-table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .dv-table caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    padding-bottom: 8px;
+  }
+
+  .dv-table th,
+  .dv-table td {
+    border-bottom: 1px solid var(--color-border);
+    padding: 9px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .dv-table thead th {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    border-bottom-width: 2px;
+    white-space: nowrap;
+  }
+
+  .dv-table tbody th {
+    font-weight: 500;
+  }
+
+  .dv-juris {
+    display: inline-block;
+    font-weight: 700;
+    margin-right: 6px;
+  }
+
+  .dv-num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .dv-tier {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 1px 7px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    white-space: nowrap;
+  }
+
+  .dv-tier-gov,
+  .dv-tier-protocol {
+    color: var(--color-primary-text, var(--color-primary));
+    border-color: currentColor;
+  }
+
+
+  .dv-tier-market {
+    color: var(--color-text-muted);
+    border-color: var(--color-border);
+  }
+
+  .dv-tier-secondary {
+    color: #92400e;
+    border-color: #92400e;
+  }
+
+  :global([data-theme='dark']) .dv-tier-secondary {
+    color: #fbbf24;
+    border-color: #fbbf24;
+  }
+
+  .dv-note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 8px;
+  }
+</style>

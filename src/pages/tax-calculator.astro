@@ -8,6 +8,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 import AuthoritativeSources from '../components/AuthoritativeSources.astro';
+import DataVerification from '../components/DataVerification.astro';
 
 const buildDate = '2026-05-11'; // honest last-content-change date from git history (not the build date)
 ---
@@ -181,6 +182,9 @@ const buildDate = '2026-05-11'; // honest last-content-change date from git hist
           <code>Tax Owed = Capital Gain × Tax Rate</code>
         </div>
         <p>Your <strong>cost basis</strong> is the original purchase price plus any fees paid to acquire the crypto. The <strong>sale price</strong> is the amount received minus any transaction fees. The resulting capital gain (or loss if negative) is then multiplied by your applicable tax rate, which depends on your holding period and income level. For example, if you bought 1 BTC for $30,000 (plus $50 fee), sold it for $45,000 (minus $75 fee), your capital gain would be $14,875. If you're in the 24% tax bracket for short-term gains, you'd owe approximately $3,570 in taxes.</p>
+
+        <DataVerification calculator="TaxCalculator" lang="en" limit={8} />
+
 
         <AuthoritativeSources category="tax-reporting" />
 

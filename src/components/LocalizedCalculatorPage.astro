@@ -11,6 +11,8 @@ import { CALCULATOR_UPDATED } from "../data/calculator-updated";
 import { getActiveSections } from "../data/calculator-sections";
 import { defaultFaqByLang } from "../i18n/faq-dictionary";
 import { CATEGORY_SOURCES, localizedSourceNote } from "../data/category-sources";
+import DataVerification from "./DataVerification.astro";
+import { LEDGER_COMPONENT_BY_SLUG } from "../data/source-ledger";
 import { CALCULATOR_FAQ } from "../i18n/calculator-faq";
 import { seoBodyText } from "../i18n/seo-body-text";
 import { calculatorSeoContent } from "../i18n/calculator-seo-content";
@@ -171,12 +173,12 @@ function buildHeadings(lt: string, lang: Lang) {
   const maps: Record<Lang, ReturnType<typeof buildHeadings>> = {
     en: {
       how: `How to use ${lt}`,
-      inputs: "Input guide and assumptions",
+      inputs: "What do the inputs mean?",
       interpret: "How to interpret results correctly",
-      scenarios: "Practical scenarios and planning workflow",
-      checklist: "Risk and execution checklist",
-      mistakes: "Common mistakes to avoid",
-      benchmarks: "Performance benchmarks and expectation ranges",
+      scenarios: "What scenarios can you model?",
+      checklist: "What should you check before you act?",
+      mistakes: "What mistakes make this calculation wrong?",
+      benchmarks: "What is a realistic range to expect?",
       execution: "Execution templates you can reuse",
       hygiene: "Data hygiene and model maintenance",
       validation: "Final validation before capital deployment",
@@ -185,12 +187,12 @@ function buildHeadings(lt: string, lang: Lang) {
     },
     es: {
       how: `Cómo usar ${lt}`,
-      inputs: "Guía de entradas y supuestos",
+      inputs: "¿Qué significa cada dato que introduces?",
       interpret: "Cómo interpretar correctamente los resultados",
-      scenarios: "Escenarios prácticos y flujo de planificación",
-      checklist: "Checklist de riesgo y ejecución",
-      mistakes: "Errores comunes a evitar",
-      benchmarks: "Rangos de referencia y expectativas",
+      scenarios: "¿Qué escenarios puedes modelar?",
+      checklist: "¿Qué comprobar antes de actuar?",
+      mistakes: "¿Qué errores estropean este cálculo?",
+      benchmarks: "¿Qué rango es realista esperar?",
       execution: "Plantillas de ejecución reutilizables",
       hygiene: "Higiene de datos y mantenimiento del modelo",
       validation: "Validación final antes de desplegar capital",
@@ -199,12 +201,12 @@ function buildHeadings(lt: string, lang: Lang) {
     },
     pt: {
       how: `Como usar ${lt}`,
-      inputs: "Guia de entradas e premissas",
+      inputs: "O que significa cada campo?",
       interpret: "Como interpretar os resultados corretamente",
-      scenarios: "Cenários práticos e fluxo de planejamento",
-      checklist: "Checklist de risco e execução",
-      mistakes: "Erros comuns para evitar",
-      benchmarks: "Referências de desempenho e faixas esperadas",
+      scenarios: "Que cenários você pode simular?",
+      checklist: "O que verificar antes de agir?",
+      mistakes: "Que erros estragam esse cálculo?",
+      benchmarks: "Que faixa é realista esperar?",
       execution: "Modelos de execução reutilizáveis",
       hygiene: "Higiene de dados e manutenção do modelo",
       validation: "Validação final antes de alocar capital",
@@ -213,12 +215,12 @@ function buildHeadings(lt: string, lang: Lang) {
     },
     tr: {
       how: `${lt} nasıl kullanılır`,
-      inputs: "Girdi rehberi ve varsayımlar",
+      inputs: "Girdiler ne anlama geliyor?",
       interpret: "Sonuçları doğru yorumlama",
-      scenarios: "Pratik senaryolar ve planlama akışı",
-      checklist: "Risk ve uygulama kontrol listesi",
-      mistakes: "Kaçınılması gereken yaygın hatalar",
-      benchmarks: "Performans kıyasları ve beklenti aralıkları",
+      scenarios: "Hangi senaryoları modelleyebilirsiniz?",
+      checklist: "Harekete geçmeden önce neyi kontrol etmelisiniz?",
+      mistakes: "Hangi hatalar bu hesabı bozar?",
+      benchmarks: "Gerçekçi olarak hangi aralık beklenir?",
       execution: "Tekrar kullanılabilir uygulama şablonları",
       hygiene: "Veri hijyeni ve model bakımı",
       validation: "Sermaye dağıtımı öncesi son doğrulama",
@@ -227,12 +229,12 @@ function buildHeadings(lt: string, lang: Lang) {
     },
     hi: {
       how: `${lt} का उपयोग कैसे करें`,
-      inputs: "इनपुट गाइड और मान्यताएँ",
+      inputs: "इनपुट का क्या मतलब है?",
       interpret: "परिणामों को सही तरीके से समझना",
-      scenarios: "व्यावहारिक परिदृश्य और योजना प्रक्रिया",
-      checklist: "जोखिम और निष्पादन चेकलिस्ट",
-      mistakes: "बचने योग्य सामान्य गलतियाँ",
-      benchmarks: "प्रदर्शन बेंचमार्क और अपेक्षित रेंज",
+      scenarios: "आप कौन-से परिदृश्य मॉडल कर सकते हैं?",
+      checklist: "कार्रवाई से पहले क्या जाँचें?",
+      mistakes: "कौन-सी गलतियाँ इस गणना को गलत बनाती हैं?",
+      benchmarks: "वास्तविक रूप से कौन-सी रेंज अपेक्षित है?",
       execution: "पुन: उपयोग योग्य निष्पादन टेम्पलेट",
       hygiene: "डेटा हाइजीन और मॉडल मेंटेनेंस",
       validation: "पूंजी लगाने से पहले अंतिम सत्यापन",
@@ -241,12 +243,12 @@ function buildHeadings(lt: string, lang: Lang) {
     },
     ru: {
       how: `Как использовать ${lt}`,
-      inputs: "Гайд по входным параметрам и допущениям",
+      inputs: "Что означает каждый параметр?",
       interpret: "Как правильно интерпретировать результаты",
-      scenarios: "Практические сценарии и рабочий процесс",
-      checklist: "Чек-лист по рискам и исполнению",
-      mistakes: "Типичные ошибки",
-      benchmarks: "Бенчмарки доходности и диапазоны ожиданий",
+      scenarios: "Какие сценарии можно смоделировать?",
+      checklist: "Что проверить перед сделкой?",
+      mistakes: "Какие ошибки портят этот расчёт?",
+      benchmarks: "Какой диапазон реалистичен?",
       execution: "Повторяемые шаблоны исполнения",
       hygiene: "Гигиена данных и поддержка модели",
       validation: "Финальная проверка перед входом в позицию",
@@ -610,6 +612,10 @@ const howToSchema = howToSteps.length >= 3 ? {
           <h2 id={hId.validation}>{h.validation}</h2>
           {txt.validation.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
         </>}
+
+        {LEDGER_COMPONENT_BY_SLUG[slug] && (
+          <DataVerification calculator={LEDGER_COMPONENT_BY_SLUG[slug]} lang={lang} />
+        )}
 
         {categorySources.length > 0 && (
           <>

@@ -1,4 +1,5 @@
 ---
+import { ORG_SAME_AS, PERSON_SAME_AS, PUBLISHING_PRINCIPLES, CORRECTIONS_POLICY } from '../data/entity';
 import Layout from '../layouts/Layout.astro';
 import ThemeToggle from '../components/ThemeToggle.tsx';
 import LanguageSwitcher from '../components/LanguageSwitcher.tsx';
@@ -127,11 +128,9 @@ const organizationSchema = {
     height: 200,
   },
   email: 'support@cryptocalk.com',
-  sameAs: [
-    'https://x.com/yakovlevka3',
-    'https://github.com/CryptoAgent666/cryptocalk',
-    'https://www.linkedin.com/in/konstantin-iakovlev/',
-  ],
+  sameAs: [...ORG_SAME_AS],
+  publishingPrinciples: PUBLISHING_PRINCIPLES,
+  correctionsPolicy: CORRECTIONS_POLICY,
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'support@cryptocalk.com',
@@ -142,6 +141,8 @@ const organizationSchema = {
     '@type': 'Person',
     '@id': `${siteUrl}/about/#founder`,
     name: 'Konstantin Iakovlev',
+    url: `${siteUrl}/about/`,
+    sameAs: [...PERSON_SAME_AS],
   },
 };
 
@@ -206,7 +207,7 @@ const homepageFaqSchema = {
       name: 'Is CryptoCalk free to use?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, completely free. All 128 calculators work without signup, payment, or ads. The site is open-source and the codebase is publicly available on GitHub.',
+        text: 'Yes, completely free. All 128 calculators work without signup, payment, or a premium tier. The site is funded by display advertising, and the codebase is open source on GitHub.',
       },
     },
     {
@@ -303,7 +304,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
         </div>
 
         <!-- Trusted by users worldwide -->
-        <p class="hero-trust">Free, open tools, no signup, no tracking, privacy-first.</p>
+        <p class="hero-trust">Free, open-source tools. No signup, no account, no calculation data sent to our servers.</p>
       </div>
     </section>
 
@@ -403,7 +404,7 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
           <div class="feature-card">
             <div class="feature-icon feature-icon--cyan" aria-hidden="true">🔒</div>
             <h3>Privacy First</h3>
-            <p>All calculations run in your browser. No data leaves your device. No tracking.</p>
+            <p>All calculations run in your browser. Your trade data never leaves your device. Analytics and ads load only after you consent.</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon feature-icon--amber" aria-hidden="true">🌍</div>
@@ -424,17 +425,17 @@ const homepageSchemas = [websiteSchema, organizationSchema, itemListSchema, newC
       <div class="section-container">
         <h2 class="section-title">What Is CryptoCalk?</h2>
         <div class="about-prose">
-          <p>CryptoCalk is a free, open-source suite of <strong>128 cryptocurrency calculators</strong> available in <strong>6 languages</strong> (English, Spanish, Portuguese, Turkish, Hindi, and Russian), totaling over 1,100 pages of tools and educational content. Every calculation runs entirely in your browser: no data is sent to our servers and no account is required.</p>
+          <p>CryptoCalk is a free, open-source suite of <strong>128 cryptocurrency calculators</strong> available in <strong>6 languages</strong> (English, Spanish, Portuguese, Turkish, Hindi, and Russian). Every calculation runs entirely in your browser: no data is sent to our servers and no account is required.</p>
           <p>Our tools cover the full spectrum of crypto decision-making: <a href="/profit-calculator/">profit and loss analysis</a>, <a href="/mining-calculator/">mining profitability</a>, <a href="/asic-mining-calculator/">ASIC miner profitability</a>, <a href="/dca-calculator/">dollar-cost averaging simulation</a>, <a href="/tax-calculator/">tax estimation for 17 countries</a>, <a href="/staking-calculator/">staking rewards projection</a>, <a href="/rebalancing-calculator/">portfolio rebalancing</a>, <a href="/leverage-calculator/">leverage and liquidation</a>, risk-adjusted performance metrics (Sharpe, Sortino, VaR), and DeFi yield comparison. Each calculator includes detailed methodology, worked examples, and search-targeted FAQ.</p>
           <p>Useful conversion tools include the <a href="/satoshi-converter/">Satoshi-to-USD converter</a>, <a href="/apy-apr-calculator/">APR to APY converter</a>, and <a href="/converter/">live crypto-to-fiat converter</a> for quick lookups during research.</p>
-          <p>Built with <a href="/methodology/">documented formulas</a> and real-time market data from CoinGecko, CryptoCalk is designed for traders, investors, and researchers who want reliable numbers without signup walls, premium tiers, or tracking cookies.</p>
+          <p>Built with <a href="/methodology/">documented formulas</a> and real-time market data from CoinGecko, CryptoCalk is designed for traders, investors, and researchers who want reliable numbers without signup walls or premium tiers.</p>
         </div>
 
         <h2 class="section-title" style="margin-top: 48px;">Frequently Asked Questions</h2>
         <div class="home-faq">
           <details class="faq-item">
             <summary>Is CryptoCalk free to use?</summary>
-            <p>Yes, completely free. All 128 calculators work without signup, payment, or ads. The site is open-source and the codebase is publicly available on GitHub.</p>
+            <p>Yes, completely free. All 128 calculators work without signup, payment, or a premium tier. The site is funded by display advertising, and the codebase is open source on GitHub.</p>
           </details>
           <details class="faq-item">
             <summary>Are my calculations private?</summary>

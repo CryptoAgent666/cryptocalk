@@ -28,7 +28,8 @@ const LAST_UPDATED = '20/02/2026';
 // stamp fake freshness on the ones that did not change (tr/pt gained the source-standard,
 // corrections and funding sections on 2026-08-24).
 const UPDATED_OVERRIDES: Partial<Record<PolicyKey, Partial<Record<LocalizedLang, string>>>> = {
-  'editorial-policy': { tr: '24/08/2026', pt: '24/08/2026' },
+  'editorial-policy': { tr: '25/08/2026', pt: '25/08/2026' },
+  privacy: { es: '25/08/2026', pt: '25/08/2026', tr: '25/08/2026', hi: '25/08/2026', ru: '25/08/2026' },
   methodology: { tr: '24/08/2026', pt: '24/08/2026' },
 };
 
@@ -73,6 +74,14 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
             'CryptoCalk ofrece herramientas educativas. No es asesoramiento financiero, legal ni fiscal.',
           ],
         },
+        {
+          heading: '5. Publicidad y aplicación para Android',
+          paragraphs: [
+            'En el sitio web mostramos anuncios de <strong>Google AdSense</strong>, que utiliza cookies para personalizarlos. El banner de consentimiento te permite rechazar las cookies no esenciales.',
+            'La aplicación para Android no usa AdSense: muestra anuncios mediante <strong>Google AdMob</strong>. Para servirlos, medirlos y prevenir el fraude, el SDK de Google recopila y comparte con Google el <strong>identificador publicitario</strong> del dispositivo, la dirección IP (de la que se deduce una ubicación aproximada), tus interacciones con los anuncios e información de diagnóstico. Los importes que escribes en una calculadora nunca forman parte de esto: no salen de tu dispositivo.',
+            '<strong>En el EEE, el Reino Unido y Suiza</strong> la aplicación pide tu consentimiento antes de solicitar cualquier anuncio, mediante la plataforma de mensajes de Google. Puedes cambiar tu decisión cuando quieras con el botón <em>Configuración de privacidad de anuncios</em>. En cualquier país puedes restablecer o borrar tu identificador publicitario en Android, en <em>Ajustes → Privacidad → Anuncios</em>. La aplicación de iOS no muestra anuncios.',
+          ],
+        },
       ],
     },
     pt: {
@@ -112,6 +121,14 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
           paragraphs: [
             'A retenção principal depende do seu navegador e de logs técnicos padrão de hospedagem.',
             'CryptoCalk oferece ferramentas educacionais e não fornece aconselhamento financeiro, jurídico ou fiscal.',
+          ],
+        },
+        {
+          heading: '5. Publicidade e aplicativo Android',
+          paragraphs: [
+            'No site exibimos anúncios do <strong>Google AdSense</strong>, que usa cookies para personalizá-los. O banner de consentimento permite recusar cookies não essenciais.',
+            'O aplicativo Android não usa AdSense: ele exibe anúncios via <strong>Google AdMob</strong>. Para veicular, medir e prevenir fraudes, o SDK do Google coleta e compartilha com o Google o <strong>identificador de publicidade</strong> do dispositivo, o endereço IP (do qual se deduz uma localização aproximada), suas interações com os anúncios e informações de diagnóstico. Os valores que você digita numa calculadora nunca fazem parte disso: eles não saem do seu dispositivo.',
+            '<strong>No EEE, no Reino Unido e na Suíça</strong> o aplicativo pede seu consentimento antes de solicitar qualquer anúncio, usando a plataforma de mensagens do Google. Você pode mudar sua escolha quando quiser pelo botão <em>Configurações de privacidade de anúncios</em>. Em qualquer país é possível redefinir ou apagar seu identificador de publicidade no Android, em <em>Configurações → Privacidade → Anúncios</em>. O aplicativo iOS não exibe anúncios.',
           ],
         },
       ],
@@ -155,6 +172,14 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
             'CryptoCalk eğitsel araçlar sunar; finansal, hukuki veya vergi danışmanlığı değildir.',
           ],
         },
+        {
+          heading: '5. Reklamlar ve Android uygulaması',
+          paragraphs: [
+            'Web sitesinde <strong>Google AdSense</strong> reklamları gösteriyoruz; kişiselleştirme için çerez kullanır. Onay bandı, zorunlu olmayan çerezleri reddetmenizi sağlar.',
+            'Android uygulaması AdSense kullanmaz: reklamları <strong>Google AdMob</strong> üzerinden gösterir. Reklam sunumu, ölçüm ve sahtekârlık önleme için Google\'ın SDK\'sı cihazınızın <strong>reklam kimliğini</strong>, IP adresinizi (buradan yaklaşık konum çıkarılır), reklamlarla etkileşimlerinizi ve tanılama bilgilerini toplayıp Google ile paylaşır. Hesaplayıcıya girdiğiniz tutarlar buna dahil değildir — cihazınızdan hiç çıkmaz.',
+            '<strong>AEA, Birleşik Krallık ve İsviçre\'de</strong> uygulama, herhangi bir reklam istemeden önce Google\'ın mesaj platformu aracılığıyla onayınızı ister. Kararınızı istediğiniz zaman <em>Reklam gizliliği ayarları</em> düğmesinden değiştirebilirsiniz. Her ülkede reklam kimliğinizi Android\'de <em>Ayarlar → Gizlilik → Reklamlar</em> altından sıfırlayabilir veya silebilirsiniz. iOS uygulaması reklam göstermez.',
+          ],
+        },
       ],
     },
     hi: {
@@ -196,6 +221,14 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
             'CryptoCalk केवल शैक्षिक टूल प्रदान करता है; यह वित्तीय, कानूनी या टैक्स सलाह नहीं है।',
           ],
         },
+        {
+          heading: '5. विज्ञापन और Android ऐप',
+          paragraphs: [
+            'वेबसाइट पर हम <strong>Google AdSense</strong> के विज्ञापन दिखाते हैं, जो उन्हें वैयक्तिकृत करने के लिए कुकीज़ का उपयोग करता है। सहमति बैनर से आप ग़ैर-ज़रूरी कुकीज़ अस्वीकार कर सकते हैं।',
+            'Android ऐप AdSense का उपयोग नहीं करता — वह <strong>Google AdMob</strong> के ज़रिए विज्ञापन दिखाता है। विज्ञापन दिखाने, मापने और धोखाधड़ी रोकने के लिए Google का SDK आपके डिवाइस की <strong>विज्ञापन आईडी</strong>, IP पता (जिससे अनुमानित स्थान निकाला जाता है), विज्ञापनों के साथ आपकी अंतःक्रियाएँ और डायग्नोस्टिक जानकारी एकत्र करता है और Google के साथ साझा करता है। कैलकुलेटर में आप जो आंकड़े लिखते हैं, वे इसमें शामिल नहीं हैं — वे आपके डिवाइस से बाहर नहीं जाते।',
+            '<strong>EEA, यूके और स्विट्ज़रलैंड में</strong> ऐप कोई भी विज्ञापन माँगने से पहले Google के मैसेजिंग प्लेटफ़ॉर्म से आपकी सहमति लेता है। आप <em>विज्ञापन गोपनीयता सेटिंग्स</em> बटन से अपना निर्णय कभी भी बदल सकते हैं। किसी भी देश में आप Android में <em>सेटिंग्स → गोपनीयता → विज्ञापन</em> से अपनी विज्ञापन आईडी रीसेट या हटा सकते हैं। iOS ऐप विज्ञापन नहीं दिखाता।',
+          ],
+        },
       ],
     },
     ru: {
@@ -235,6 +268,14 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
           paragraphs: [
             'Основные данные ограничены локальным хранилищем браузера и стандартными техническими логами хостинга.',
             'CryptoCalk — образовательный сервис и не является финансовой, юридической или налоговой консультацией.',
+          ],
+        },
+        {
+          heading: '5. Реклама и приложение для Android',
+          paragraphs: [
+            'На сайте мы показываем рекламу <strong>Google AdSense</strong>, которая использует cookie для персонализации. Баннер согласия позволяет отказаться от необязательных cookie.',
+            'Приложение для Android не использует AdSense — оно показывает рекламу через <strong>Google AdMob</strong>. Для показа, измерения и защиты от мошенничества SDK Google собирает и передаёт Google <strong>рекламный идентификатор</strong> устройства, IP-адрес (из него выводится приблизительное местоположение), ваши взаимодействия с рекламой и диагностическую информацию. Суммы, которые вы вводите в калькулятор, к этому не относятся — они не покидают устройство.',
+            '<strong>В ЕЭЗ, Великобритании и Швейцарии</strong> приложение запрашивает согласие до обращения за рекламой — через платформу сообщений Google. Изменить решение можно в любой момент кнопкой <em>Настройки приватности рекламы</em>. В любой стране рекламный идентификатор можно сбросить или удалить в Android: <em>Настройки → Конфиденциальность → Реклама</em>. Приложение для iOS рекламу не показывает.',
           ],
         },
       ],
@@ -315,7 +356,7 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
             'Os preços de mercado vêm de APIs públicas (sobretudo a CoinGecko). Mas para tudo o que é definido por lei ou por consenso de protocolo — taxas de imposto, períodos de detenção, isenções sucessórias, recompensas por bloco, mínimos de validador — aplicamos um padrão mais exigente.',
           ],
           bullets: [
-            'Apenas fontes primárias: o texto legal, a autoridade fiscal ou o próprio código do protocolo. Um artigo de guia fiscal pode alertar-nos para uma mudança, mas nunca é a fonte que registamos.',
+            'Fontes primárias são o padrão: o texto legal, a autoridade fiscal ou o próprio código do protocolo. Um artigo de guia fiscal pode alertar-nos para uma mudança, mas a fonte que queremos registar é sempre a lei. Quando uma jurisdição ainda depende de um guia secundário, a tabela de fontes na página de metodologia identifica-a — essas jurisdições são a fila de reverificação.',
             'Cada um dos 101 valores acompanhados guarda a fonte contra a qual foi verificado e a data dessa verificação.',
             'A reverificação é programada: um monitor automático relê as páginas de origem; mudanças com data conhecida — um halving, uma era de emissão, um ano fiscal que começa a 1 de julho — são seguidas por calendário, porque nenhum vigia de página consegue ver uma data que ainda não chegou.',
             'Um alerta não é uma alteração: quando o monitor assinala que uma fonte mudou, uma pessoa relê a fonte primária antes de qualquer número mudar no site. As verificações que confirmam o valor existente também ficam registadas.',
@@ -373,7 +414,7 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
             'Piyasa fiyatları herkese açık API kaynaklarından (öncelikle CoinGecko) gelir. Ancak yasayla veya protokol mutabakatıyla belirlenen her değer için — vergi oranları, elde tutma süreleri, miras istisnaları, blok ödülleri, doğrulayıcı minimumları — daha katı bir standart uygularız.',
           ],
           bullets: [
-            'Yalnızca birincil kaynak: kanun metni, vergi idaresi ya da protokolün kendi kodu. Bir vergi rehberi bizi bir değişiklikten haberdar edebilir, ama kaydettiğimiz kaynak asla o değildir.',
+            'Birincil kaynak esastır: kanun metni, vergi idaresi ya da protokolün kendi kodu. Bir vergi rehberi bizi bir değişiklikten haberdar edebilir, ama kaydetmek istediğimiz kaynak her zaman kanunun kendisidir. Bir ülke hâlâ ikincil bir rehbere bağlıysa, metodoloji sayfasındaki kaynak tablosu bunu açıkça belirtir — o ülkeler yeniden doğrulama sırasındadır.',
             'Takip edilen 101 değerin her biri, doğrulandığı kaynak ve doğrulama tarihiyle birlikte tutulur.',
             'Yeniden doğrulama programlıdır: otomatik bir izleyici kaynak sayfalarını yeniden okur; halving, emisyon dönemi ya da 1 Temmuz\'da başlayan bir vergi yılı gibi takvime bağlı değişiklikler ise ayrı olarak tarihleriyle izlenir — çünkü hiçbir sayfa izleyicisi henüz gelmemiş bir tarihi göremez.',
             'Uyarı, değişiklik demek değildir: izleyici bir kaynağın değiştiğini bildirdiğinde, sitedeki hiçbir sayı oynamadan önce birincil kaynak elle yeniden okunur. Mevcut değeri doğrulayan kontroller de kayda geçer.',

@@ -1,0 +1,565 @@
+[
+ {
+  "model": "openai/gpt-4o-mini",
+  "arm": "nudge",
+  "run": 0,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "openai/gpt-4o-mini",
+  "arm": "nudge",
+  "run": 1,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "openai/gpt-4o-mini",
+  "arm": "nudge",
+  "run": 2,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "openai/gpt-4o-mini",
+  "arm": "nudge",
+  "run": 3,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "openai/gpt-4o-mini",
+  "arm": "nudge",
+  "run": 4,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "google/gemini-2.5-flash-lite",
+  "arm": "nudge",
+  "run": 0,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "google/gemini-2.5-flash-lite",
+  "arm": "nudge",
+  "run": 1,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "google/gemini-2.5-flash-lite",
+  "arm": "nudge",
+  "run": 2,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "google/gemini-2.5-flash-lite",
+  "arm": "nudge",
+  "run": 3,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "google/gemini-2.5-flash-lite",
+  "arm": "nudge",
+  "run": 4,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "anthropic/claude-haiku-4.5",
+  "arm": "nudge",
+  "run": 0,
+  "fetched": [
+   "https://cryptocalk.com",
+   "https://cryptocalk.com/about/",
+   "https://cryptocalk.com/methodology/",
+   "https://cryptocalk.com/contact/",
+   "https://cryptocalk.com/privacy/",
+   "https://cryptocalk.com/updates/"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "anthropic/claude-haiku-4.5",
+  "arm": "nudge",
+  "run": 1,
+  "fetched": [
+   "https://cryptocalk.com",
+   "https://cryptocalk.com/about/",
+   "https://cryptocalk.com/methodology/",
+   "https://cryptocalk.com/llms.txt",
+   "https://cryptocalk.com/updates/",
+   "https://cryptocalk.com/privacy/"
+  ],
+  "llms_hit": true,
+  "error": null
+ },
+ {
+  "model": "anthropic/claude-haiku-4.5",
+  "arm": "nudge",
+  "run": 2,
+  "fetched": [
+   "https://cryptocalk.com",
+   "https://cryptocalk.com/about/",
+   "https://cryptocalk.com/methodology/",
+   "https://cryptocalk.com/llms.txt",
+   "https://cryptocalk.com/updates/",
+   "https://cryptocalk.com/privacy/",
+   "https://cryptocalk.com/terms/",
+   "https://cryptocalk.com/editorial-policy/"
+  ],
+  "llms_hit": true,
+  "error": null
+ },
+ {
+  "model": "anthropic/claude-haiku-4.5",
+  "arm": "nudge",
+  "run": 3,
+  "fetched": [
+   "https://cryptocalk.com",
+   "https://cryptocalk.com/about/",
+   "https://cryptocalk.com/llms.txt",
+   "https://cryptocalk.com/methodology/",
+   "https://cryptocalk.com/updates/",
+   "https://cryptocalk.com/privacy/"
+  ],
+  "llms_hit": true,
+  "error": null
+ },
+ {
+  "model": "anthropic/claude-haiku-4.5",
+  "arm": "nudge",
+  "run": 4,
+  "fetched": [
+   "https://cryptocalk.com",
+   "https://cryptocalk.com/about/",
+   "https://cryptocalk.com/methodology/",
+   "https://cryptocalk.com/profit-calculator/",
+   "https://cryptocalk.com/privacy/",
+   "https://cryptocalk.com/dca-calculator/",
+   "https://cryptocalk.com/tax-calculator/",
+   "https://cryptocalk.com/updates/"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "mistralai/mistral-small-3.2-24b-instruct",
+  "arm": "nudge",
+  "run": 0,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "mistralai/mistral-small-3.2-24b-instruct",
+  "arm": "nudge",
+  "run": 1,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "mistralai/mistral-small-3.2-24b-instruct",
+  "arm": "nudge",
+  "run": 2,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "mistralai/mistral-small-3.2-24b-instruct",
+  "arm": "nudge",
+  "run": 3,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "mistralai/mistral-small-3.2-24b-instruct",
+  "arm": "nudge",
+  "run": 4,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arm": "nudge",
+  "run": 0,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arm": "nudge",
+  "run": 1,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arm": "nudge",
+  "run": 2,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arm": "nudge",
+  "run": 3,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arm": "nudge",
+  "run": 4,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "openai/gpt-4o-mini",
+  "arm": "control",
+  "run": 0,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "openai/gpt-4o-mini",
+  "arm": "control",
+  "run": 1,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "openai/gpt-4o-mini",
+  "arm": "control",
+  "run": 2,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "openai/gpt-4o-mini",
+  "arm": "control",
+  "run": 3,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "openai/gpt-4o-mini",
+  "arm": "control",
+  "run": 4,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "google/gemini-2.5-flash-lite",
+  "arm": "control",
+  "run": 0,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "google/gemini-2.5-flash-lite",
+  "arm": "control",
+  "run": 1,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "google/gemini-2.5-flash-lite",
+  "arm": "control",
+  "run": 2,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "google/gemini-2.5-flash-lite",
+  "arm": "control",
+  "run": 3,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "google/gemini-2.5-flash-lite",
+  "arm": "control",
+  "run": 4,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "anthropic/claude-haiku-4.5",
+  "arm": "control",
+  "run": 0,
+  "fetched": [
+   "https://cryptocalk.com",
+   "https://cryptocalk.com/about/",
+   "https://cryptocalk.com/methodology/",
+   "https://cryptocalk.com/privacy/",
+   "https://cryptocalk.com/calculators/profit-loss/",
+   "https://cryptocalk.com/calculators/mining/",
+   "https://cryptocalk.com/calculators/trading-tools/",
+   "https://cryptocalk.com/updates/"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "anthropic/claude-haiku-4.5",
+  "arm": "control",
+  "run": 1,
+  "fetched": [
+   "https://cryptocalk.com",
+   "https://cryptocalk.com/about/",
+   "https://cryptocalk.com/methodology/",
+   "https://cryptocalk.com/profit-calculator/",
+   "https://cryptocalk.com/calculators/mining/",
+   "https://cryptocalk.com/updates/",
+   "https://cryptocalk.com/contact/",
+   "https://cryptocalk.com/calculators/defi-yield/"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "anthropic/claude-haiku-4.5",
+  "arm": "control",
+  "run": 2,
+  "fetched": [
+   "https://cryptocalk.com",
+   "https://cryptocalk.com/about/",
+   "https://cryptocalk.com/methodology/",
+   "https://cryptocalk.com/calculators/profit-loss/",
+   "https://cryptocalk.com/calculators/mining/",
+   "https://cryptocalk.com/privacy/",
+   "https://cryptocalk.com/updates/"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "anthropic/claude-haiku-4.5",
+  "arm": "control",
+  "run": 3,
+  "fetched": [
+   "https://cryptocalk.com",
+   "https://cryptocalk.com/about/",
+   "https://cryptocalk.com/methodology/",
+   "https://cryptocalk.com/profit-calculator/",
+   "https://cryptocalk.com/calculators/mining/",
+   "https://cryptocalk.com/privacy/",
+   "https://cryptocalk.com/updates/",
+   "https://cryptocalk.com/calculators/trading-tools/"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "anthropic/claude-haiku-4.5",
+  "arm": "control",
+  "run": 4,
+  "fetched": [
+   "https://cryptocalk.com",
+   "https://cryptocalk.com/about/",
+   "https://cryptocalk.com/methodology/",
+   "https://cryptocalk.com/privacy/",
+   "https://cryptocalk.com/calculators/profit-loss/",
+   "https://cryptocalk.com/calculators/mining/",
+   "https://cryptocalk.com/calculators/trading-tools/",
+   "https://cryptocalk.com/updates/"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "mistralai/mistral-small-3.2-24b-instruct",
+  "arm": "control",
+  "run": 0,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "mistralai/mistral-small-3.2-24b-instruct",
+  "arm": "control",
+  "run": 1,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "mistralai/mistral-small-3.2-24b-instruct",
+  "arm": "control",
+  "run": 2,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "mistralai/mistral-small-3.2-24b-instruct",
+  "arm": "control",
+  "run": 3,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "mistralai/mistral-small-3.2-24b-instruct",
+  "arm": "control",
+  "run": 4,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arm": "control",
+  "run": 0,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arm": "control",
+  "run": 1,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arm": "control",
+  "run": 2,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arm": "control",
+  "run": 3,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ },
+ {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "arm": "control",
+  "run": 4,
+  "fetched": [
+   "https://cryptocalk.com"
+  ],
+  "llms_hit": false,
+  "error": null
+ }
+]

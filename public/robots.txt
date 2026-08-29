@@ -1,6 +1,15 @@
+# Machine-readable licensing terms (RSL 1.0). Restates /terms/; adds nothing new.
+License: https://cryptocalk.com/rsl-license.xml
+
 User-agent: *
 Allow: /
+Allow: /llms.txt
 Disallow: /api/
+
+# Machine-readable index of this site for automated clients:
+#   https://cryptocalk.com/llms.txt  (plain text, ~2,900 tokens)
+# Google Search ignores this file for that purpose and says so; it is here because agents that
+# read robots.txt directly do follow it — measured 2026-08-25, see tools/geo-agent-probe.py.
 
 # Google Ad crawlers — must have full access for AdSense
 User-agent: Mediapartners-Google
@@ -12,30 +21,67 @@ Allow: /
 User-agent: AdsBot-Google-Mobile
 Allow: /
 
-# AI Search Crawlers — explicitly allowed
-User-agent: GPTBot
-Allow: /
+# ── AI SEARCH / CITATION CRAWLERS ────────────────────────────────────────────
+# These are the bots that put pages into AI answers. Groups are NOT inherited in
+# the robots.txt spec, so every group repeats its own Disallow lines.
 
+# OpenAI — OAI-SearchBot builds the ChatGPT search index (citations);
+# ChatGPT-User is the user-triggered fetch; GPTBot is training.
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /api/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /api/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+# Anthropic — Claude-SearchBot builds the Claude search index (citations);
+# Claude-User is the user-triggered fetch; ClaudeBot is training.
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /api/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /api/
+
+# Google-Extended is NOT a Search control. It gates whether this content may be
+# used for Gemini model training, grounding in Gemini Apps, and grounding in
+# Google Search on Vertex AI. Blocking it does nothing for Search, AI Overviews
+# or AI Mode — it only removes us from Gemini-app grounded answers. Allowed.
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+User-agent: Google-CloudVertexBot
+Allow: /
+Disallow: /api/
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+Disallow: /api/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /api/
 
-# Training-only crawlers — blocked (no search benefit)
+# ── TRAINING-ONLY CRAWLERS — blocked ─────────────────────────────────────────
+# These feed model training corpora but are not citation paths, so blocking them
+# costs no AI-search visibility.
 User-agent: CCBot
-Disallow: /
-
-User-agent: Google-Extended
 Disallow: /
 
 User-agent: Bytespider

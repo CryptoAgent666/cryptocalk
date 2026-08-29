@@ -86,3 +86,129 @@ What's new in 1.6
   collected for "Advertising or marketing". (Web-only AdSense was removed from the app.)
 - iOS does NOT show ads yet — gated off until a real iOS AdMob app ID + ad units exist.
 - Recommended before scaling: add a UMP/GDPR consent message in AdMob for EEA/UK users.
+
+---
+
+## Russian listing (ru-RU)
+
+> Moved here from the former root-level `play-store-listing.md` (2026-08-25) so there is a single
+> source of truth. The old file claimed "69+ калькуляторов / без рекламы" — both were wrong for the
+> shipped build and were being quoted back by AI search engines.
+
+**Short description (80 chars max)**
+```
+128 бесплатных крипто-калькуляторов: P&L, DeFi, майнинг, налоги. Офлайн.
+```
+
+**Full description (4000 chars max)**
+```
+CryptoCalk — 128 бесплатных калькуляторов для всего, что связано с криптовалютами: прибыль и убыток, майнинг, DCA, налоги, стейкинг, газовые комиссии, ликвидация, конвертеры и многое другое.
+
+Без регистрации и без платных тарифов. Все вычисления выполняются прямо на вашем устройстве, поэтому приложение работает полностью офлайн. Когда меняется формула или сетевой параметр, приложение обновляет себя автоматически.
+
+ПРИБЫЛЬ И УБЫТОК
+• Калькулятор прибыли/убытка, ROI и точки безубыточности
+• Фьючерсы: цена ликвидации, плечо, ставка финансирования
+• Размер позиции и риск на сделку
+• Усреднение (DCA) и средняя цена входа
+
+СТЕЙКИНГ И DEFI
+• APY / APR и сложные проценты
+• Награды за стейкинг и yield farming
+• Непостоянный убыток и предоставление ликвидности
+• Стоимость аирдропа, мосты и газовые комиссии
+
+МАЙНИНГ И ON-CHAIN
+• Прибыльность майнинга, ROI ASIC и стоимость электроэнергии
+• Оценка сложности и точки безубыточности
+• Газовые комиссии и on-chain метрики
+
+ПОРТФЕЛЬ И НАЛОГИ
+• Ребалансировка портфеля и корреляция
+• Оценка налога на криптовалюту
+• Конвертер монет и фиатных валют
+• И многое другое — всего 9 категорий
+
+ДЛЯ МОБИЛЬНЫХ
+• Полностью офлайн — ваши цифры не покидают устройство
+• Светлая и тёмная темы
+• Подробная разбивка: видно, как получено каждое число
+• 6 языков: английский, испанский, португальский, турецкий, хинди, русский
+
+РЕКЛАМА И ДАННЫЕ
+Приложение бесплатное и содержит рекламу (AdMob: баннер и межстраничная). Рекламный идентификатор используется для показа рекламы. Введённые вами значения расчётов остаются на устройстве и никуда не отправляются.
+
+CryptoCalk даёт оценки исключительно в информационных целях и не является финансовой, инвестиционной или налоговой рекомендацией. Приложение не подключается к биржам и кошелькам и никогда не хранит и не перемещает ваши средства.
+```
+
+## Keywords / tags
+
+crypto calculator · bitcoin calculator · DCA calculator · crypto profit calculator · crypto tax calculator
+
+**Primary category:** Finance  ·  **Secondary tag:** Tools
+
+---
+
+## Release notes — 1.7 (versionCode 12), 2026-08-25
+
+> Play limit: 500 characters per language. Paste into Play Console → Release → What's new.
+
+**en** (426 chars)
+```
+What's new in 1.7
+• Calculators based on tax law or protocol rules now show where each number came from and when it was last verified
+• In the EEA, UK and Switzerland the app now asks for ad consent, with an "Ad privacy settings" button to change it any time
+• Corrected our own wording: free, no sign-up, no paywall — funded by ads
+• Mining rewards updated for Dash, Zcash and Ethereum Classic
+• Search fixes and faster pages
+```
+
+**es** (461 chars)
+```
+Novedades de la 1.7
+• Las calculadoras basadas en normativa fiscal o de protocolo ahora muestran de dónde sale cada cifra y cuándo se verificó
+• En el EEE, Reino Unido y Suiza pedimos tu consentimiento para los anuncios, con un botón para cambiarlo cuando quieras
+• Corregimos nuestra descripción: gratis, sin registro ni muro de pago, financiada con publicidad
+• Recompensas de minería actualizadas (Dash, Zcash, ETC)
+• Búsqueda corregida y páginas más rápidas
+```
+
+**pt** (443 chars)
+```
+Novidades da 1.7
+• Calculadoras baseadas em lei tributária ou regras de protocolo agora mostram de onde vem cada número e quando foi verificado
+• No EEE, Reino Unido e Suíça pedimos seu consentimento para anúncios, com um botão para alterá-lo quando quiser
+• Corrigimos nossa descrição: grátis, sem cadastro nem paywall, financiado por anúncios
+• Recompensas de mineração atualizadas (Dash, Zcash, ETC)
+• Busca corrigida e páginas mais rápidas
+```
+
+**tr** (455 chars)
+```
+1.7 sürümündeki yenilikler
+• Vergi hukukuna veya protokol kurallarına dayanan hesaplayıcılar artık her sayının kaynağını ve doğrulama tarihini gösteriyor
+• AEA, Birleşik Krallık ve İsviçre'de reklam onayı soruyoruz; istediğiniz zaman değiştirebileceğiniz bir düğme var
+• Tanımımızı düzelttik: ücretsiz, kayıt ve ödeme duvarı yok, reklamlarla finanse ediliyor
+• Madencilik ödülleri güncellendi (Dash, Zcash, ETC)
+• Arama düzeltmeleri ve daha hızlı sayfalar
+```
+
+**hi** (399 chars)
+```
+1.7 में नया क्या है
+• कर कानून या प्रोटोकॉल नियमों पर आधारित कैलकुलेटर अब दिखाते हैं कि हर आंकड़ा कहाँ से आया और आखिरी बार कब जाँचा गया
+• EEA, यूके और स्विट्ज़रलैंड में अब विज्ञापन सहमति माँगी जाती है, जिसे «विज्ञापन गोपनीयता सेटिंग्स» से कभी भी बदला जा सकता है
+• विवरण सुधारा: मुफ़्त, बिना साइनअप और पेवॉल, विज्ञापनों से वित्तपोषित
+• माइनिंग रिवॉर्ड अपडेट (Dash, Zcash, ETC)
+• खोज सुधार और तेज़ पेज
+```
+
+**ru** (450 chars)
+```
+Что нового в 1.7
+• Калькуляторы на основе налогового права и правил протокола теперь показывают, откуда взята каждая цифра и когда её проверяли
+• В ЕЭЗ, Великобритании и Швейцарии спрашиваем согласие на рекламу; изменить решение можно в любой момент кнопкой
+• Исправили собственное описание: бесплатно, без регистрации и подписки, зарабатываем на рекламе
+• Обновлены награды за майнинг (Dash, Zcash, ETC)
+• Исправления поиска и более быстрые страницы
+```

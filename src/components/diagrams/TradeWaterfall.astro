@@ -1,0 +1,114 @@
+---
+/**
+ * Fee waterfall for the page's worked example — the site had ZERO <figure>/<img>/<svg> diagrams,
+ * and multi-modal pages are measurably more likely to be selected by AI answer surfaces.
+ *
+ * Numbers are hard-tied to the "Worked example" section above it (0.5 BTC, $60k → $72k, 0.1% both
+ * sides). If that example changes, change these with it — a diagram that disagrees with the prose
+ * beside it is worse than no diagram.
+ */
+---
+<figure class="diagram">
+  <svg
+    viewBox="0 0 720 300"
+    role="img"
+    aria-labelledby="waterfall-title waterfall-desc"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <title id="waterfall-title">What a 0.5 BTC trade from $60,000 to $72,000 actually returns</title>
+    <desc id="waterfall-desc">
+      Two bars drawn to the same scale. The gross gain of $6,000 and the net profit of $5,934 are almost
+      the same height: the $66 paid in entry and exit fees is 1.1% of the gain. The return is 19.76%,
+      measured against the $30,030 actually committed rather than the $30,000 nominally invested.
+    </desc>
+
+    <line x1="60" y1="238" x2="690" y2="238" class="axis" />
+
+    <!-- Bars are proportional: 180px = $6,000, so $5,934 = 178px. -->
+    <rect x="130" y="58" width="150" height="180" rx="4" class="bar bar-gain" />
+    <text x="205" y="46" class="lbl lbl-value">+$6,000</text>
+    <text x="205" y="262" class="lbl">What the price move implies</text>
+
+    <rect x="440" y="60" width="150" height="178" rx="4" class="bar bar-net" />
+    <text x="515" y="46" class="lbl lbl-value">$5,934</text>
+    <text x="515" y="262" class="lbl">What actually lands</text>
+    <text x="515" y="156" class="lbl lbl-inbar">19.76% ROI</text>
+
+    <!-- the gap, annotated because at this scale it is almost invisible -->
+    <path d="M296 58 H424" class="tie" />
+    <path d="M296 60 H424" class="tie" />
+    <path d="M360 58 V60" class="gap" />
+    <text x="360" y="106" class="lbl lbl-fee lbl-value">−$66 in fees</text>
+    <text x="360" y="126" class="lbl lbl-fee">$30 entry + $36 exit</text>
+    <text x="360" y="146" class="lbl lbl-fee">= 1.1% of the gain</text>
+  </svg>
+  <figcaption>
+    Fees are not what makes this trade different from the chart —{' '}<strong>$66</strong>{' '}is 1.1% of the gain.
+    The number that moves is the denominator: the ROI is <strong>19.76%</strong> because <strong>$30,030</strong>{' '}
+    was committed, not the $30,000 you meant to invest.
+  </figcaption>
+</figure>
+
+<style>
+  .diagram {
+    margin: 24px 0;
+  }
+
+  .diagram svg {
+    width: 100%;
+    height: auto;
+    max-width: 720px;
+    display: block;
+  }
+
+  .diagram figcaption {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 10px;
+    max-width: 62ch;
+  }
+
+  .axis {
+    stroke: var(--color-border);
+    stroke-width: 1.5;
+  }
+
+  .bar-gain { fill: var(--color-primary); opacity: 0.28; }
+  .bar-net  { fill: var(--color-primary); }
+
+  .gap {
+    stroke: #b45309;
+    stroke-width: 3;
+  }
+
+  .tie {
+    stroke: var(--color-border);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+    fill: none;
+  }
+
+  .lbl {
+    fill: var(--color-text-muted);
+    font-size: 14px;
+    text-anchor: middle;
+    font-family: inherit;
+  }
+
+  .lbl-value {
+    fill: var(--color-text);
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .lbl-fee { fill: #b45309; }
+
+  .lbl-inbar {
+    fill: #fff;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  :global([data-theme='dark']) .bar-fee,
+  :global([data-theme='dark']) .lbl-fee { fill: #fbbf24; }
+</style>

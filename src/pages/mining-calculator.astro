@@ -8,6 +8,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 import AuthoritativeSources from '../components/AuthoritativeSources.astro';
+import DataVerification from '../components/DataVerification.astro';
 
 const buildDate = '2026-07-03'; // honest last-content-change date from git history (not the build date)
 ---
@@ -174,6 +175,9 @@ const buildDate = '2026-07-03'; // honest last-content-change date from git hist
           <li><strong>FPPS (Full Pay Per Share)</strong>: like PPS, but includes transaction fees in addition to the block reward.</li>
         </ul>
         <p>Popular pools include Foundry USA, F2Pool, Antpool, and ViaBTC. Most charge 1-2% fees and pay out daily or weekly once you reach the minimum threshold (typically 0.001-0.01 BTC).</p>
+
+        <DataVerification calculator="MiningCalculator" lang="en" limit={6} />
+
 
         <AuthoritativeSources category="mining" />
 

@@ -127,6 +127,46 @@ for u in $warm_urls; do
 done
 if [ "$warm_n" -gt 0 ]; then echo "✅ Warmed $warm_n URLs."; else echo "ℹ️ No dist/sitemap-0.xml — skipped warming."; fi
 
+# --- STEP 3c: IndexNow — tell Bing/Copilot (and Yandex) which pages actually changed ---
+# The key file /7397f0c5ed569a8e602961eac8858f4b.txt has been deployed since the Bing Webmaster
+# setup, but nothing ever pinged the API, so the freshness signal it exists for was never sent.
+# Submit ONLY URLs whose sitemap <lastmod> moved in the last 7 days — IndexNow is for changed
+# URLs, and re-submitting all 294 on every deploy is exactly the abuse its docs warn about.
+echo "▶ Submitting changed URLs to IndexNow…"
+INDEXNOW_KEY="7397f0c5ed569a8e602961eac8858f4b"
+if [ -f "dist/sitemap-0.xml" ] && [ -f "dist/${INDEXNOW_KEY}.txt" ]; then
+  IN_PAYLOAD="$(python3 - "$INDEXNOW_KEY" <<'PY'
+import re, sys, json, datetime
+key = sys.argv[1]
+xml = open('dist/sitemap-0.xml', encoding='utf-8').read()
+cutoff = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
+urls = [m.group(1) for m in re.finditer(
+    r'<url>\s*<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>', xml)
+    if m.group(2)[:10] >= cutoff]
+print(json.dumps({
+    "host": "cryptocalk.com",
+    "key": key,
+    "keyLocation": "https://cryptocalk.com/%s.txt" % key,
+    "urlList": urls[:10000],
+}) if urls else "")
+PY
+)"
+  if [ -n "$IN_PAYLOAD" ]; then
+    IN_N="$(printf '%s' "$IN_PAYLOAD" | python3 -c 'import json,sys; print(len(json.load(sys.stdin)["urlList"]))')"
+    IN_CODE="$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 -X POST \
+      -H 'Content-Type: application/json; charset=utf-8' \
+      --data "$IN_PAYLOAD" https://api.indexnow.org/indexnow || true)"
+    case "$IN_CODE" in
+      200|202) echo "✅ IndexNow accepted $IN_N changed URL(s) (HTTP $IN_CODE)." ;;
+      *)       echo "⚠️ IndexNow returned HTTP $IN_CODE for $IN_N URL(s) — 403 means the key file is unreachable." ;;
+    esac
+  else
+    echo "ℹ️ No URLs with a <lastmod> in the last 7 days — nothing to submit."
+  fi
+else
+  echo "ℹ️ Missing dist/sitemap-0.xml or the IndexNow key file — skipping IndexNow."
+fi
+
 # --- STEP 4: verify no _astro chunk 404s through the CDN ---
 echo "▶ Verifying _astro chunks через CDN…"
 miss=0

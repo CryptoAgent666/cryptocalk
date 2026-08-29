@@ -1,0 +1,101 @@
+---
+/**
+ * Long vs short payoff lines. Uses the same numbers as the prose beside it
+ * (short 1 BTC at $70,000, close at $63,000 → +$7,000; the mirror-image long loses $7,000).
+ */
+---
+<figure class="diagram">
+  <svg
+    viewBox="0 0 720 320"
+    role="img"
+    aria-labelledby="payoff-title payoff-desc"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <title id="payoff-title">Profit and loss of a long and a short position as the price moves</title>
+    <desc id="payoff-desc">
+      Two mirrored straight lines crossing at the $70,000 entry price. The long position gains as the
+      price rises and loses as it falls; the short does the opposite. At $63,000 the short is up $7,000
+      per BTC and the long is down $7,000 per BTC.
+    </desc>
+
+    <!-- axes -->
+    <line x1="70" y1="160" x2="690" y2="160" class="axis" />
+    <line x1="380" y1="30" x2="380" y2="290" class="axis axis-dim" />
+
+    <!-- payoff lines -->
+    <line x1="90" y1="270" x2="670" y2="50" class="line line-long" />
+    <line x1="90" y1="50" x2="670" y2="270" class="line line-short" />
+
+    <!-- entry marker -->
+    <circle cx="380" cy="160" r="5" class="dot" />
+    <text x="380" y="308" class="lbl">Entry $70,000</text>
+
+    <!-- the $63,000 read-off -->
+    <line x1="205" y1="94" x2="205" y2="226" class="tie" />
+    <circle cx="205" cy="226" r="5" class="dot dot-long" />
+    <circle cx="205" cy="94" r="5" class="dot dot-short" />
+    <text x="205" y="308" class="lbl">$63,000</text>
+    <text x="194" y="116" class="lbl lbl-value lbl-short" text-anchor="end">short +$7,000</text>
+    <text x="194" y="210" class="lbl lbl-value lbl-long" text-anchor="end">long −$7,000</text>
+
+    <!-- line labels -->
+    <text x="676" y="46" class="lbl lbl-value lbl-long" text-anchor="end">Long</text>
+    <text x="676" y="286" class="lbl lbl-value lbl-short" text-anchor="end">Short</text>
+
+    <text x="78" y="154" class="lbl lbl-axis" text-anchor="start">profit</text>
+    <text x="78" y="176" class="lbl lbl-axis" text-anchor="start">loss</text>
+  </svg>
+  <figcaption>
+    Both positions use the same arithmetic — the sign of the price difference flips. A short that
+    closes $7,000 below entry earns what the equivalent long would have lost, before fees and
+    borrowing costs.
+  </figcaption>
+</figure>
+
+<style>
+  .diagram { margin: 24px 0; }
+
+  .diagram svg {
+    width: 100%;
+    height: auto;
+    max-width: 720px;
+    display: block;
+  }
+
+  .diagram figcaption {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-top: 10px;
+    max-width: 62ch;
+  }
+
+  .axis { stroke: var(--color-border); stroke-width: 1.5; }
+  .axis-dim { stroke-dasharray: 4 4; }
+
+  .line { stroke-width: 3; fill: none; stroke-linecap: round; }
+  .line-long { stroke: var(--color-primary); }
+  .line-short { stroke: #b45309; }
+
+  .tie { stroke: var(--color-border); stroke-width: 1.5; stroke-dasharray: 3 4; }
+
+  .dot { fill: var(--color-text-muted); }
+  .dot-long { fill: var(--color-primary); }
+  .dot-short { fill: #b45309; }
+
+  .lbl {
+    fill: var(--color-text-muted);
+    font-size: 14px;
+    text-anchor: middle;
+    font-family: inherit;
+  }
+
+  .lbl-value { font-weight: 700; }
+  .lbl-long { fill: var(--color-primary); }
+  .lbl-short { fill: #b45309; }
+  .lbl-axis { font-size: 12px; }
+
+  :global([data-theme='dark']) .line-short,
+  :global([data-theme='dark']) .lbl-short,
+  :global([data-theme='dark']) .dot-short { stroke: #fbbf24; fill: #fbbf24; }
+  :global([data-theme='dark']) .line-short { fill: none; }
+</style>

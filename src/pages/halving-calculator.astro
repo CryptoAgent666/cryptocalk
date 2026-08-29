@@ -8,6 +8,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 import AuthoritativeSources from '../components/AuthoritativeSources.astro';
+import DataVerification from '../components/DataVerification.astro';
 const buildDate = '2026-03-31'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -122,6 +123,9 @@ const buildDate = '2026-03-31'; // honest last-content-change date from git hist
           <li><strong>Consider hosting or cloud mining contracts</strong>: if running your own operation becomes uneconomical, hosting your machines at a lower-cost facility or transitioning to cloud mining contracts can reduce your overhead.</li>
           <li><strong>Diversify revenue streams</strong>: explore merged mining, transaction fee optimization, or providing hash rate to mining pools that offer additional token rewards beyond the BTC block reward.</li>
         </ul>
+
+        <DataVerification calculator="HalvingCalculator" lang="en" limit={6} />
+
 
         <AuthoritativeSources category="mining" />
 

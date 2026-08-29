@@ -8,6 +8,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import ShareCalculator from '../components/ShareCalculator.astro';
 import '../styles/calculator-page.css';
 import AuthoritativeSources from '../components/AuthoritativeSources.astro';
+import DataVerification from '../components/DataVerification.astro';
 const buildDate = '2026-04-27'; // honest last-content-change date from git history (not the build date)
 ---
 
@@ -139,6 +140,9 @@ const buildDate = '2026-04-27'; // honest last-content-change date from git hist
         <h2>Liquid Staking vs Native Staking</h2>
         <p>Native staking locks your tokens directly on the blockchain. Liquid staking protocols give you a derivative token (like stETH for Ethereum) that represents your staked position. This derivative can be used in DeFi, as collateral for borrowing, in liquidity pools, or for additional yield farming, while your original tokens continue earning staking rewards.</p>
         <p>The trade-off is an additional layer of smart contract risk and a potential de-peg risk where the liquid staking token trades below the value of the underlying asset. For most users with moderate amounts, liquid staking offers the best balance of yield and flexibility.</p>
+
+        <DataVerification calculator="StakingRewardsCalculator" lang="en" limit={6} />
+
 
         <AuthoritativeSources category="defi-yield" />
 

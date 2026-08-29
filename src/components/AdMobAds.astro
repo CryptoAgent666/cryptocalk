@@ -3,11 +3,36 @@
 // On the public website and on iOS this is a no-op and the @capacitor-community/admob chunk is
 // never fetched. iOS stays gated off until a real iOS AdMob app ID + ad units exist (Info.plist
 // currently has a placeholder app ID purely so the Google Mobile Ads SDK won't crash on launch).
+//
+// UMP consent (added 2026-08-25). Until now the app called AdMob.initialize() and showed a banner
+// with no consent step at all, so EEA/UK users were served ads without ever being asked. The cookie
+// banner never covered this — it only drove gtag consent, and GA/AdSense do not run in the app.
+// The UMP SDK is already inside the shipped binary (verified in the June AAB: 31 references to
+// com/google/android/ump), so this ships over OTA without a new release.
+import type { Lang } from '../i18n/utils';
+
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props as Props;
+
+const PRIVACY_LABEL: Record<string, string> = {
+  en: 'Ad privacy settings',
+  es: 'Configuración de privacidad de anuncios',
+  pt: 'Configurações de privacidade de anúncios',
+  tr: 'Reklam gizliliği ayarları',
+  hi: 'विज्ञापन गोपनीयता सेटिंग्स',
+  ru: 'Настройки приватности рекламы',
+};
+const privacyLabel = PRIVACY_LABEL[lang as string] ?? PRIVACY_LABEL.en;
 ---
+
+<!-- Ongoing consent entry point. Google requires a persistent way to change consent wherever the
+     privacy options form is required; it stays hidden everywhere else, including the website. -->
+<button type="button" id="cc-ad-privacy" class="cc-ad-privacy" hidden>{privacyLabel}</button>
+
 <script>
   (async () => {
     const cap = (window as any).Capacitor;
-    if (cap?.getPlatform?.() !== 'android') return; // web + iOS: no ads
+    if (cap?.getPlatform?.() !== 'android') return; // web + iOS: no ads, no consent form
 
     const BANNER_ID = 'ca-app-pub-4859241862365215/5286587474';
     const INTERSTITIAL_ID = 'ca-app-pub-4859241862365215/3290979529';
@@ -19,6 +44,38 @@
     try {
       const { AdMob, BannerAdSize, BannerAdPosition, BannerAdPluginEvents } =
         await import('@capacitor-community/admob');
+
+      // ── Consent FIRST. No ad may be requested before this resolves. ──────────────
+      let canRequestAds = false;
+      let privacyOptionsRequired = false;
+      try {
+        let info = await AdMob.requestConsentInfo();
+        // Only shown where a message applies (EEA/UK) AND a GDPR message is published in the
+        // AdMob console. Outside those regions status comes back NOT_REQUIRED and nothing appears.
+        if (info.isConsentFormAvailable && info.status === 'REQUIRED') {
+          info = await AdMob.showConsentForm();
+        }
+        canRequestAds = info.canRequestAds !== false;
+        privacyOptionsRequired = info.privacyOptionsRequirementStatus === 'REQUIRED';
+      } catch {
+        // UMP could not resolve (offline, or no message published yet). We deliberately do NOT
+        // fall through to serving ads: the app has no cached grant to rely on, and showing ads to
+        // a possibly-EEA user without consent is exactly the risk this code exists to remove.
+        // Cost of being wrong here is one session without ads; the other way round it is a breach.
+        canRequestAds = false;
+      }
+
+      // Wire up the ongoing entry point regardless of whether ads run this session.
+      const privacyBtn = document.getElementById('cc-ad-privacy');
+      if (privacyBtn && privacyOptionsRequired) {
+        privacyBtn.hidden = false;
+        privacyBtn.addEventListener('click', () => {
+          AdMob.showPrivacyOptionsForm().catch(() => { /* form unavailable — leave the app alone */ });
+        });
+      }
+
+      if (!canRequestAds) return; // no consent → no ads. Intentional.
+
       await AdMob.initialize();
 
       // Reserve space equal to the banner height (fires once the banner lays out).
@@ -60,3 +117,29 @@
     }
   })();
 </script>
+
+<style>
+  .cc-ad-privacy {
+    display: block;
+    margin: 0 auto 28px;
+    padding: 8px 16px;
+    font: inherit;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    cursor: pointer;
+    min-height: 44px;
+  }
+
+  .cc-ad-privacy[hidden] {
+    display: none;
+  }
+
+  .cc-ad-privacy:hover,
+  .cc-ad-privacy:focus-visible {
+    color: var(--color-primary-text, var(--color-primary));
+    border-color: currentColor;
+  }
+</style>

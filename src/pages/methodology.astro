@@ -2,19 +2,64 @@
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { JURISDICTION_ROWS, PROTOCOL_ROWS, LEDGER_STATS, TIER_LABEL } from '../data/source-ledger';
+import { PERSON_SAME_AS, PUBLISHING_PRINCIPLES, CORRECTIONS_POLICY, AUTHOR_NAME, AUTHOR_URL, AUTHOR_ID } from '../data/entity';
 
-const lastUpdated = '23/08/2026';
+const lastUpdated = '25/08/2026';
 const pageUrl = 'https://cryptocalk.com/methodology/';
+const authorNode = {
+  '@type': 'Person',
+  '@id': AUTHOR_ID,
+  name: AUTHOR_NAME,
+  url: AUTHOR_URL,
+  sameAs: [...PERSON_SAME_AS],
+};
+
+// TechArticle, not a bare WebPage: this page documents a method and is the page other pages cite.
 const webPageSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
+  '@type': 'TechArticle',
+  '@id': `${pageUrl}#article`,
+  headline: 'How CryptoCalk Computes Results',
   name: 'Calculator Methodology',
   url: pageUrl,
   description:
     'How CryptoCalk calculator outputs are computed, validated, and interpreted across profit, DCA, tax, mining, and risk tools.',
   inLanguage: 'en',
-  dateModified: '2026-08-23',
-  author: { '@type': 'Person', name: 'Konstantin Iakovlev', url: 'https://cryptocalk.com/about/' },
+  datePublished: '2025-11-01',
+  dateModified: '2026-08-25',
+  author: authorNode,
+  publisher: { '@type': 'Organization', '@id': 'https://cryptocalk.com/#organization', name: 'CryptoCalk' },
+  publishingPrinciples: PUBLISHING_PRINCIPLES,
+  correctionsPolicy: CORRECTIONS_POLICY,
+};
+
+// The constants ledger is genuine original data — sourced, dated and published per value.
+const datasetSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  '@id': `${pageUrl}#constants-ledger`,
+  name: 'CryptoCalk regulatory and protocol constants ledger',
+  description:
+    `${LEDGER_STATS.total} constants used by CryptoCalk calculators (${LEDGER_STATS.regulatory} regulatory across ` +
+    `${LEDGER_STATS.jurisdictions} jurisdictions, plus protocol and formula values). Each value records the source ` +
+    'it was verified against, the tier of that source (government statute, protocol specification, or secondary guide) ' +
+    'and the date of the last verification.',
+  url: pageUrl,
+  license: 'https://cryptocalk.com/terms/',
+  isAccessibleForFree: true,
+  creator: authorNode,
+  publisher: { '@type': 'Organization', '@id': 'https://cryptocalk.com/#organization', name: 'CryptoCalk' },
+  dateModified: '2026-08-25',
+  variableMeasured: [
+    'crypto capital gains tax rate',
+    'crypto long-term holding threshold',
+    'crypto inheritance and estate tax threshold',
+    'blockchain block subsidy',
+    'validator minimum stake',
+    'dust relay threshold',
+  ],
+  spatialCoverage: JURISDICTION_ROWS.map((r) => r.name),
 };
 ---
 
@@ -33,7 +78,7 @@ const webPageSchema = {
         CryptoCalk calculators are deterministic tools: outputs are generated from explicit formulas plus user input values. This page outlines our methodology, data inputs, and limitations.
       </p>
 
-      <h2>1. Core Approach</h2>
+      <h2 id="core-approach">1. Core Approach</h2>
       <ul>
         <li>Define domain formula (profit, ROI, liquidation, compounding, etc.).</li>
         <li>Normalise all inputs into consistent units.</li>
@@ -41,7 +86,7 @@ const webPageSchema = {
         <li>Display key assumptions next to results.</li>
       </ul>
 
-      <h2>2. Data Sources</h2>
+      <h2 id="data-sources">2. Data Sources</h2>
       <p>
         Two kinds of numbers enter these calculators, and they are maintained in completely different ways.
       </p>
@@ -59,7 +104,7 @@ const webPageSchema = {
         Tax rates, holding-period thresholds, inheritance allowances and protocol facts cannot come from a price API — they come from law and from consensus rules. CryptoCalk tracks <strong>101 such constants</strong> (79 regulatory across 17 jurisdictions, plus protocol and formula values) in a versioned ledger, each with the primary source it was verified against and the date of that verification.
       </p>
       <p>
-        We read the primary source, not a summary of it. Examples of what that means in practice:
+        The standard is to read the primary source, not a summary of it. Examples of what that means in practice:
       </p>
       <ul>
         <li>Portugal's 28% rate and 365-day exclusion are read from the consolidated <em>Código do IRS</em> itself (art. 72.º n.º 1 al. c) and art. 10.º n.º 22) — not from a tax-guide blog.</li>
@@ -67,6 +112,100 @@ const webPageSchema = {
         <li>Canada's 50% capital-gains inclusion is taken from the Income Tax Act s.38; Japan's inheritance bands and filing rules from the NTA; Brazil's progressive 15–22.5% from Lei 8.981.</li>
         <li>Protocol facts are read from the protocol: the 546-satoshi dust threshold comes from Bitcoin Core's <code>policy.cpp</code>, and mining block rewards are reconciled against on-chain coinbase outputs.</li>
       </ul>
+
+      <h3>Which source backs which jurisdiction</h3>
+      <p>
+        That standard is met for most, but not all, of what we track — so here is the ledger itself rather
+        than a claim about it. The <strong>Source of record</strong> column is the page a human re-reads when
+        the monitor flags a change, and the tier is derived from that page's host, not asserted by hand.
+        {LEDGER_STATS.secondaryBacked > 0 && (
+          <>
+            {' '}Where a row still reads <em>secondary guide</em>, the value on the site may well be correct,
+            but it has not yet been traced back to the statute; those {LEDGER_STATS.secondaryBacked} of{' '}
+            {LEDGER_STATS.jurisdictions} jurisdictions are the current re-verification queue, and saying so
+            here is more useful than claiming a standard we have not finished applying.
+          </>
+        )}
+      </p>
+      <p class="table-note">
+        <span class="tier tier-gov">statute</span> = a tax authority, ministry or statute database ·
+        <span class="tier tier-protocol">protocol</span> = the chain's own specification or client source ·
+        <span class="tier tier-secondary">secondary</span> = a tax-guide or news article, usable as a tripwire but not as a source of record.
+      </p>
+      <div class="table-scroll">
+        <table class="source-table">
+          <caption>Tax jurisdictions tracked by CryptoCalk ({LEDGER_STATS.jurisdictions} jurisdictions, {LEDGER_STATS.regulatory} regulatory constants)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Jurisdiction</th>
+              <th scope="col">Headline rule modelled</th>
+              <th scope="col">Values tracked</th>
+              <th scope="col">Source of record</th>
+              <th scope="col">Source tiers</th>
+              <th scope="col">Last verified</th>
+            </tr>
+          </thead>
+          <tbody>
+            {JURISDICTION_ROWS.map((r) => (
+              <tr>
+                <th scope="row">{r.name}</th>
+                <td>{r.headline}</td>
+                <td class="num">{r.tracked}</td>
+                <td>
+                  {r.sources.length === 0 ? '—' : r.sources.map((src, i) => (
+                    <>
+                      {i > 0 && <span aria-hidden="true">, </span>}
+                      <a href={src.url} target="_blank" rel="nofollow noopener noreferrer">{src.host}</a>
+                    </>
+                  ))}
+                </td>
+                <td><span class={`tier tier-${r.tier}`}>{r.tierSummary || '—'}</span></td>
+                <td class="num">{r.verified ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">
+        “Last verified” shows only dates we actually recorded as an ISO date during a verification pass;
+        a dash means the value carries over from the initial audit without an individually dated re-check,
+        not that it is known to be stale.
+      </p>
+
+      <h3>Protocol constants</h3>
+      <p>
+        These do not come from law at all — they come from consensus rules, so the source of record is the
+        chain's own specification, client source or improvement proposal.
+      </p>
+      <div class="table-scroll">
+        <table class="source-table">
+          <caption>Protocol facts and where each is read from</caption>
+          <thead>
+            <tr>
+              <th scope="col">Constant</th>
+              <th scope="col">Value on the site</th>
+              <th scope="col">Source of record</th>
+              <th scope="col">Source tier</th>
+              <th scope="col">Last verified</th>
+            </tr>
+          </thead>
+          <tbody>
+            {PROTOCOL_ROWS.map((r) => (
+              <tr>
+                <th scope="row">{r.what}</th>
+                <td class="num">{r.value}</td>
+                <td>
+                  {r.sourceUrl
+                    ? <a href={r.sourceUrl} target="_blank" rel="nofollow noopener noreferrer">{r.sourceHost}</a>
+                    : '—'}
+                </td>
+                <td><span class={`tier tier-${r.tier}`}>{TIER_LABEL[r.tier]}</span></td>
+                <td class="num">{r.verified ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <h3>How those constants are kept current</h3>
       <p>
@@ -89,7 +228,7 @@ const webPageSchema = {
         If you find a number you believe is wrong, <a href="/contact/">tell us</a> and include the source you are comparing against; that is how several of the above were caught.
       </p>
 
-      <h2>3. Formula Families</h2>
+      <h2 id="formula-families">3. Formula Families</h2>
       <h3>Profit and ROI</h3>
       <p>
         Used in <a href="/profit-calculator/">Profit Calculator</a>, <a href="/roi-calculator/">ROI Calculator</a>, and related tools:
@@ -117,7 +256,7 @@ const webPageSchema = {
         <li>Leverage and maintenance constraints are modelled with exchange-style logic where applicable.</li>
       </ul>
 
-      <h2>4. Validation Workflow</h2>
+      <h2 id="validation-workflow">4. Validation Workflow</h2>
       <ul>
         <li>Known-value tests against manual spreadsheet calculations.</li>
         <li>Edge-case checks: zero values, negative outcomes, extreme percentages.</li>
@@ -125,7 +264,7 @@ const webPageSchema = {
         <li>Build-time verification before publishing.</li>
       </ul>
 
-      <h2>5. Known Limitations</h2>
+      <h2 id="known-limitations">5. Known Limitations</h2>
       <ul>
         <li>Exchange execution differs from theoretical values (slippage, spread, funding timing).</li>
         <li>Tax treatment can vary by jurisdiction and account structure.</li>
@@ -135,7 +274,7 @@ const webPageSchema = {
         <li>Announced-but-not-yet-in-force changes are not applied early. Where a change has a known start date (for example an Australian band stepping down on 1 July 2027), the current-year figure is used until that date arrives.</li>
       </ul>
 
-      <h2>6. How to Use Outputs Correctly</h2>
+      <h2 id="using-outputs">6. How to Use Outputs Correctly</h2>
       <p>
         Treat calculator outputs as planning estimates, not guarantees. For robust decisions, cross-check with at least one supporting tool (for example: profit + tax, or position size + liquidation).
       </p>
@@ -144,6 +283,7 @@ const webPageSchema = {
 
   <SiteFooter lang="en" />
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(datasetSchema)} />
 </Layout>
 
 <style>
@@ -194,5 +334,93 @@ const webPageSchema = {
 
   a {
     color: var(--color-primary);
+  }
+
+  /* ── Source-of-record tables ───────────────────────────────────────────── */
+  .table-scroll {
+    overflow-x: auto;
+    margin: 18px 0 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .source-table {
+    width: 100%;
+    min-width: 780px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .source-table caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    padding-bottom: 8px;
+  }
+
+  .source-table th,
+  .source-table td {
+    border-bottom: 1px solid var(--color-border);
+    padding: 9px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .source-table thead th {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    border-bottom-width: 2px;
+    white-space: nowrap;
+  }
+
+  .source-table tbody th {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .source-table td.num {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .tier {
+    display: inline-block;
+    font-size: 0.75rem;
+    line-height: 1.35;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    /* a wrapped pill clips its own rounded border and reads as a rendering bug */
+    white-space: nowrap;
+  }
+
+  .tier-gov,
+  .tier-protocol {
+    color: var(--color-primary-text, var(--color-primary));
+    border-color: currentColor;
+  }
+
+
+  .tier-market {
+    color: var(--color-text-muted);
+    border-color: var(--color-border);
+  }
+
+  .tier-secondary {
+    color: #92400e;
+    border-color: #92400e;
+  }
+
+  :global([data-theme='dark']) .tier-secondary {
+    color: #fbbf24;
+    border-color: #fbbf24;
+  }
+
+  .table-note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 6px;
   }
 </style>
