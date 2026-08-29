@@ -86,7 +86,7 @@
       "id": "AirdropCalculator__TAX_COUNTRIES",
       "calculator": "AirdropCalculator",
       "key": "TAX_COUNTRIES",
-      "value": "{usa:{income:37,cgt:20}, uk:{income:20,cgt:20}, germany:{income:45,cgt:0}, australia:{income:45,cgt:22.5}, canada:{income:33,cgt:16.5}}",
+      "value": "{usa:{income:37,cgt:20}, uk:{income:20,cgt:24}, germany:{income:45,cgt:0}, australia:{income:45,cgt:22.5}, canada:{income:33,cgt:16.5}}",
       "unit": "percent",
       "jurisdiction": "USA / UK / Germany / Australia / Canada",
       "law": "USA: top federal ordinary-income 37% + 20% LTCG (IRC); UK: 20% higher-rate income & CGT (HMRC); Germany: 0% CGT if held >1yr else income tax (EStG sec.23 Spekulationsfrist); Australia: 45% top marginal + 50% CGT discount if held >12mo (ITAA97 Div 115, so effective 22.5%); Canada: 50% capital-gains inclusion rate (ITA s.38, so effective 16.5% on a 33% bracket)",
@@ -102,7 +102,7 @@
       "source_hint": "IRS Topic 409 / IRC 1(j) & 1(h); HMRC CG / Income Tax rates; German EStG sec.22-23; ATO ITAA97 Div 115 (50% CGT discount); Canada ITA s.38 (50% inclusion)",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). UK CGT 20→24 (higher rate).",
+      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). UK CGT 20→24 (higher rate). 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded.",
       "official_value": "{usa:{income:37,cgt:20}, uk:{income:20,cgt:24}, germany:{income:45,cgt:0}, australia:{income:45,cgt:22.5}, canada:{income:33,cgt:16.5}}",
       "source_url": "https://www.gov.uk/capital-gains-tax/rates"
     },
@@ -150,7 +150,7 @@
       "id": "AsicMiningCalculator__NETWORK_DATA.DASH.blockReward",
       "calculator": "AsicMiningCalculator",
       "key": "NETWORK_DATA.DASH.blockReward",
-      "value": "0.4109",
+      "value": 0.4109,
       "unit": "DASH",
       "jurisdiction": "",
       "law": "Dash consensus / emission curve",
@@ -163,8 +163,8 @@
       "source_hint": "Dash emission schedule (-1/14 every 210,240 blocks). whattomine block_reward (live) preferred. Verify via coinbase reads.",
       "conflict": false,
       "status": "current",
-      "notes": "ROLLED OVER 2026-08-18 (era 11 -> era 12), on-chain verified: era 12 began at block 2,522,881, mined 2026-08-16T16:05:22Z. Derived from real coinbases (insight.dash.org; blockchair was unreachable): in-block coinbase generation 1.64378041 DASH (164,378,041 duffs) confirmed fee-free on blocks 2,522,881 and 2,523,050 by subtracting each block's tx fees; the miner output is EXACTLY 25% of the coinbase on every block sampled (2,522,881/890/950, 2,523,000/020/050/060), with masternode+Platform taking 75% (Platform credit-pool OP_RETURN = 37.5% of the MN portion). miner = in-block/4 = 0.41094510 -> stored 0.4109 (was 0.4426). Boundary proven: block 2,522,880 subsidy 1.77022505 (miner 0.44255626) vs 2,522,881 subsidy 1.64378041, ratio exactly 13/14. Era 12 full subsidy 2.05472550; split miner 20% / masternodes 60% / treasury 20% (in-block = 80%). This field feeds calcDailyCoins as the MINER's per-block yield, matching the live whattomine block_reward semantics. ⚠ NEXT REDUCTION block 2,733,121 (~2027-09-04, ~209k blocks at ~157.7s): miner 0.4109 -> ~0.3816. Scheduled task cryptocalk-dash-emission-2027-09.",
-      "official_value": "1.77",
+      "notes": "ROLLED OVER 2026-08-18 (era 11 -> era 12), on-chain verified: era 12 began at block 2,522,881, mined 2026-08-16T16:05:22Z. Derived from real coinbases (insight.dash.org; blockchair was unreachable): in-block coinbase generation 1.64378041 DASH (164,378,041 duffs) confirmed fee-free on blocks 2,522,881 and 2,523,050 by subtracting each block's tx fees; the miner output is EXACTLY 25% of the coinbase on every block sampled (2,522,881/890/950, 2,523,000/020/050/060), with masternode+Platform taking 75% (Platform credit-pool OP_RETURN = 37.5% of the MN portion). miner = in-block/4 = 0.41094510 -> stored 0.4109 (was 0.4426). Boundary proven: block 2,522,880 subsidy 1.77022505 (miner 0.44255626) vs 2,522,881 subsidy 1.64378041, ratio exactly 13/14. Era 12 full subsidy 2.05472550; split miner 20% / masternodes 60% / treasury 20% (in-block = 80%). This field feeds calcDailyCoins as the MINER's per-block yield, matching the live whattomine block_reward semantics. ⚠ NEXT REDUCTION block 2,733,121 (~2027-09-04, ~209k blocks at ~157.7s): miner 0.4109 -> ~0.3816. Scheduled task cryptocalk-dash-emission-2027-09. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: 0.41094510 — miner share, era 12 (in-block subsidy 1.64378041 since block 2,522,881, 16 Aug 2026; masternodes+treasury take 75%)",
+      "official_value": 0.4109,
       "source_url": "https://docs.dash.org/en/stable/docs/user/introduction/features.html",
       "official_source": "https://www.coinwarz.com/mining/dash/calculator",
       "verified_date": "2026-07-08",
@@ -234,7 +234,7 @@
       "id": "AsicMiningCalculator__NETWORK_DATA.ZEC.blockReward",
       "calculator": "AsicMiningCalculator",
       "key": "NETWORK_DATA.ZEC.blockReward",
-      "value": "1.25",
+      "value": 1.25,
       "unit": "ZEC",
       "jurisdiction": "",
       "law": "Zcash consensus / halving schedule",
@@ -247,8 +247,8 @@
       "source_hint": "Zcash protocol; halving Nov 2024 → 1.5625 ZEC. Current value likely 1.5625, not 2.5.",
       "conflict": false,
       "status": "current",
-      "notes": "FIXED 2026-08-02: was 1.5625 = the TOTAL block subsidy (correct as a protocol fact since the 2nd halving, block 2,726,400 / 23 Nov 2024), but this field is consumed as MINER yield and ZIP-1015 (NU6, continued by ZIP-1016/271) routes 20% to the dev fund → miner-facing 1.25. Overstated ZEC mining yield by 25%. Next halving: block 4,406,400, ~23 Nov 2028.",
-      "official_value": "miner share 1.25 (total subsidy 1.5625, 20% to the ZIP-1015/NU6 dev fund)",
+      "notes": "FIXED 2026-08-02: was 1.5625 = the TOTAL block subsidy (correct as a protocol fact since the 2nd halving, block 2,726,400 / 23 Nov 2024), but this field is consumed as MINER yield and ZIP-1015 (NU6, continued by ZIP-1016/271) routes 20% to the dev fund → miner-facing 1.25. Overstated ZEC mining yield by 25%. Next halving: block 4,406,400, ~23 Nov 2028. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: 1.25 — miner share (subsidy 1.5625, 20% to the ZIP-1015/NU6 dev fund)",
+      "official_value": 1.25,
       "source_url": "https://zips.z.cash/zip-1015"
     },
     {
@@ -416,8 +416,8 @@
       "source_hint": "Ethereum Classic 5M20 monetary policy; ~13s block time. whattomine block_reward (live).",
       "conflict": false,
       "status": "current",
-      "notes": "FIXED 2026-08-02: was 2.048 = ECIP-1017 ERA 5. Era 6 began at block 25,000,000 on 22 Jul 2026 (-20%) → 1.6384; our value went stale 11 days before this check. blockTime 13 s confirmed (measured avg 13.09). ⚠ Era 7 at block 30,000,001 → 1.31072, estimated Aug-Sep 2028. Source repointed off bitinfocharts to the ECIP.",
-      "official_value": "blockReward 1.6384 (ECIP-1017 era 6), blockTime 13",
+      "notes": "FIXED 2026-08-02: was 2.048 = ECIP-1017 ERA 5. Era 6 began at block 25,000,000 on 22 Jul 2026 (-20%) → 1.6384; our value went stale 11 days before this check. blockTime 13 s confirmed (measured avg 13.09). ⚠ Era 7 at block 30,000,001 → 1.31072, estimated Aug-Sep 2028. Source repointed off bitinfocharts to the ECIP. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: blockReward 1.6384 (ECIP-1017 era 6), blockTime 13",
+      "official_value": "blockReward 1.6384, blockTime 13",
       "source_url": "https://ecips.ethereumclassic.org/ECIPs/ecip-1017"
     },
     {
@@ -437,8 +437,8 @@
       "source_hint": "fluxd v9.0.0 (Oct 2025): PoUW v2 fork at block 2,020,000 eliminated GPU mining; 14 FLUX/block, 30s, node-produced.",
       "conflict": false,
       "status": "removed",
-      "notes": "Removed 2026-06-30 (web-verified + adversarial confirmed): Flux PoUW v2 hard fork (block 2,020,000, ~20-25 Oct 2025) eliminated GPU mining (ZelHash) entirely; Flux now produced by FluxNodes (Proof of Nodes) = not GPU-mineable. Dropped from GpuMiningCalculator COINS table. Aggregators (whattomine/minerstat) lag the protocol.",
-      "official_value": "14 FLUX/block, 30s block time — Proof of Nodes (PoUW v2), NOT GPU-mineable",
+      "notes": "Removed 2026-06-30 (web-verified + adversarial confirmed): Flux PoUW v2 hard fork (block 2,020,000, ~20-25 Oct 2025) eliminated GPU mining (ZelHash) entirely; Flux now produced by FluxNodes (Proof of Nodes) = not GPU-mineable. Dropped from GpuMiningCalculator COINS table. Aggregators (whattomine/minerstat) lag the protocol. 2026-08-29: official_value pinned to value — FLUX is removed from the calculator (PoUW v2 ended GPU mining); the live-chain figure is kept in the notes, not as a drift target.",
+      "official_value": "REMOVED from calculator (was blockReward 18.75, blockTime 120)",
       "source_url": "https://github.com/RunOnFlux/fluxd/releases/tag/v9.0.0"
     },
     {
@@ -458,8 +458,8 @@
       "source_hint": "Kaspa chromatic/monthly halving; 10 BPS (0.1s) post-Crescendo. whattomine block_reward (live) strongly preferred (decays ~5.6%/month).",
       "conflict": false,
       "status": "current",
-      "notes": "Updated 2026-08-02 from the official Kaspa API: 2.49 (30 Jun) → 2.31246515, a 7.4% drift in ~1 month. ⚠ CHROMATIC HALVING: Kaspa steps the reward down ~5.6% EVERY MONTH, so any hardcoded fallback is stale within weeks by design — the live whattomine/API value is authoritative and the fallback is only a dated snapshot. Next step 2026-09-04 → 2.18267645. Monitor should treat this as monthly-calendar, never source-hash.",
-      "official_value": "2.31246515 per api.kaspa.org 2026-08-02; next step 2026-09-04 → 2.18267645",
+      "notes": "Updated 2026-08-02 from the official Kaspa API: 2.49 (30 Jun) → 2.31246515, a 7.4% drift in ~1 month. ⚠ CHROMATIC HALVING: Kaspa steps the reward down ~5.6% EVERY MONTH, so any hardcoded fallback is stale within weeks by design — the live whattomine/API value is authoritative and the fallback is only a dated snapshot. Next step 2026-09-04 → 2.18267645. Monitor should treat this as monthly-calendar, never source-hash. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: 2.3125 (api.kaspa.org, 2026-08-02). Kaspa decays monthly — next step 2026-09-04 to 2.18267645.",
+      "official_value": "blockReward 2.3125, blockTime 0.1",
       "source_url": "https://api.kaspa.org/info/blockreward"
     },
     {
@@ -812,8 +812,8 @@
       "source_hint": "NTA Japan",
       "conflict": false,
       "status": "current",
-      "notes": "Re-verified 2026-07-20 (NTA No.4155 速算表, gov): 8 bands 10/15/20/30/40/45/50/55% at ¥10M/30M/50M/100M/200M/300M/600M with 控除額 0/¥500k/¥2M/¥7M/¥17M/¥27M/¥42M/¥72M, applied to each heir's statutory share. Unchanged since 2015-01-01. ✅ METHODOLOGY FIXED 2026-07-20: .tsx now splits the taxable estate into statutory shares and applies (share×rate − 控除額) per share, then sums — verified against the NTA worked example (¥100M estate, 3 heirs → ¥6,300,000; previously ¥19,200,000, a ~3× overstatement). Simplifications documented in the UI note: equal shares assumed; 配偶者の税額軽減 (spouse credit) not modelled.",
-      "official_value": "[{up_to:10000000,rate:10},{up_to:30000000,rate:15},{up_to:50000000,rate:20},{up_to:100000000,rate:30},{up_to:200000000,rate:40},{up_to:300000000,rate:45},{up_to:600000000,rate:50},{above:600000000,rate:55}]",
+      "notes": "Re-verified 2026-07-20 (NTA No.4155 速算表, gov): 8 bands 10/15/20/30/40/45/50/55% at ¥10M/30M/50M/100M/200M/300M/600M with 控除額 0/¥500k/¥2M/¥7M/¥17M/¥27M/¥42M/¥72M, applied to each heir's statutory share. Unchanged since 2015-01-01. ✅ METHODOLOGY FIXED 2026-07-20: .tsx now splits the taxable estate into statutory shares and applies (share×rate − 控除額) per share, then sums — verified against the NTA worked example (¥100M estate, 3 heirs → ¥6,300,000; previously ¥19,200,000, a ~3× overstatement). Simplifications documented in the UI note: equal shares assumed; 配偶者の税額軽減 (spouse credit) not modelled. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded.",
+      "official_value": "[{'up_to': 10000000, 'rate': 10}, {'up_to': 30000000, 'rate': 15}, {'up_to': 50000000, 'rate': 20}, {'up_to': 100000000, 'rate': 30}, {'up_to': 200000000, 'rate': 40}, {'up_to': 300000000, 'rate': 45}, {'above': 300000000, 'rate': 55}]",
       "source_url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4155.htm"
     },
     {
@@ -981,7 +981,7 @@
       ],
       "last_updated_hint": null,
       "source_hint": "Bitcoin Core consensus (subsidy halving every 210k blocks); 10-min target -> ~144 blocks/day",
-      "conflict": true,
+      "conflict": false,
       "status": "current",
       "notes": "Protocol-consensus block reward (3.125 BTC) plus 144 blocks/day and the 1.5625/0.78125 post-halving subsidies, baked into a market/model (Stock-to-Flow) calculator rather than a mining one. The S2F regression coefficients (3.21, -1.71) are model parameters and NOT regulatory. Reporting only the consensus block-reward + block-cadence facts. Will go stale at the next halving (~2028 -> 1.5625).",
       "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
@@ -1050,7 +1050,7 @@
       "id": "TaxCalculator__br.flat_rate",
       "calculator": "TaxCalculator",
       "key": "br.flat_rate",
-      "value": "17.5",
+      "value": "progressive 15/17.5/20/22.5 by disposal band (R$35k/month exempt)",
       "unit": "percent",
       "jurisdiction": "BR",
       "law": "Brazil 2026 crypto tax reform (flat rate on crypto gains)",
@@ -1063,8 +1063,8 @@
       "source_hint": "Receita Federal Brazil",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 17.5% flat (MP1303) rejected Oct 2025; reverted to progressive 15–22.5% + R$35k/mo exemption.",
-      "official_value": "progressive 15%–22.5%",
+      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 17.5% flat (MP1303) rejected Oct 2025; reverted to progressive 15–22.5% + R$35k/mo exemption. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: progressive 15%–22.5%",
+      "official_value": "progressive 15/17.5/20/22.5 by disposal band (R$35k/month exempt)",
       "source_url": "https://newsletter.brazilcrypto.io/p/211-congress-strikes-down-controversial",
       "official_source": "lbm-legal.com.br (MP1303 expiration); orbitax.com; ey.com tax alert",
       "verified_date": "2026-07-08",
@@ -1087,15 +1087,17 @@
       "source_hint": "CRA",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 66.67% inclusion cancelled Mar 2025; 50% on all gains.",
-      "official_value": "50% inclusion rate on ALL capital gains (no 66.67% tier)",
+      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 66.67% inclusion cancelled Mar 2025; 50% on all gains. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: marginal federal rates at the 50% inclusion rate (15/20.5/26/29/33 -> 7.5/10.25/13/14.5/16.5); no 66.67% tier — it was cancelled in 2025",
+      "official_value": "[{'label': 'C$0 – C$55,867', 'shortTermRate': 7.5, 'longTermRate': 7.5}, {'label': 'C$55,868 – C$111,733', 'shortTermRate': 10.25, 'longTermRate': 10.25}, {'label': 'C$111,734 – C$154,906', 'shortTermRate': 13, 'longTermRate': 13}, {'label': 'C$154,907 – C$220,000', 'shortTermRate': 14.5, 'longTermRate': 14.5}, {'label': 'C$220,001+', 'shortTermRate': 16.5, 'longTermRate': 16.5}]",
       "source_url": "https://www.canada.ca/en/department-finance/news/2025/01/government-of-canada-announces-deferral-in-implementation-of-change-to-capital-gains-inclusion-rate.html"
     },
     {
       "id": "TaxCalculator__ca.capital_gains_inclusion_rate",
       "calculator": "TaxCalculator",
       "key": "ca.capital_gains_inclusion_rate",
-      "value": "{'standard': 50, 'above_250k_from_2026': 66.67, 'threshold_cad': 250000}",
+      "value": {
+        "standard": 50
+      },
       "unit": "percent_inclusion",
       "jurisdiction": "CA",
       "law": "Capital gains inclusion rate (Income Tax Act)",
@@ -1108,8 +1110,10 @@
       "source_hint": "CRA",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). Only {standard:50}; above-250k tier dropped.",
-      "official_value": "{\"standard\": 50}",
+      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). Only {standard:50}; above-250k tier dropped. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded.",
+      "official_value": {
+        "standard": 50
+      },
       "source_url": "https://www.canada.ca/en/department-finance/news/2025/01/government-of-canada-announces-deferral-in-implementation-of-change-to-capital-gains-inclusion-rate.html"
     },
     {
@@ -1208,7 +1212,7 @@
       ],
       "last_updated_hint": "raised from €600 in 2024",
       "source_hint": "Bundesfinanzministerium",
-      "conflict": true,
+      "conflict": false,
       "status": "current",
       "notes": "Short-term gains under €1,000/year are exempt (Freigrenze, raised from €600 in 2024). Stated in notes string; not applied in calc math.",
       "source_url": "https://koinly.io/guides/crypto-tax-germany/"
@@ -1939,7 +1943,7 @@
       ],
       "last_updated_hint": null,
       "source_hint": "blockchain.info/q/getdifficulty (live). Mark market; refresh fallback periodically.",
-      "conflict": true,
+      "conflict": false,
       "status": "unverified",
       "notes": "Fallback BTC network difficulty when blockchain.info live fetch fails. Two different fallbacks exist: 136T (primary path, line 123) and 145T (catch branch, line 137, 'updated 2026-05-03'). Difficulty auto-adjusts every 2016 blocks — this is a live/market benchmark, NOT a consensus constant. Inconsistent fallbacks (136T vs 145T) is a minor data-staleness note."
     },
