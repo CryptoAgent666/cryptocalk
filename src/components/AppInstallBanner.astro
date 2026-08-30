@@ -1,0 +1,197 @@
+---
+/**
+ * Android app-install banner — compact, dismissible, bottom of the viewport.
+ *
+ * Deliberately NOT a popup/overlay. Google's "avoid intrusive interstitials" guidance names a small
+ * app-install banner (the Chrome/Safari style) as an acceptable form, and a dialog that covers the
+ * content on mobile as a ranking negative. This site's whole SEO/GEO position depends on that not
+ * happening, so the banner never covers content: it is a bar, and while it is visible the body gets
+ * matching bottom padding so nothing is hidden behind it.
+ *
+ * Shown ONLY when all of these hold:
+ *   • the visitor is on Android — there is no iOS app (the App Store record was terminated in
+ *     July 2026 and is not resubmittable), so an iPhone visitor would be sent to a store page for
+ *     an app they cannot install;
+ *   • we are not inside the native app itself (data-native), where advertising the store is the
+ *     exact pattern App Review cited as 2.3.10;
+ *   • the cookie banner is not currently on screen — two stacked bars at the bottom is worse than
+ *     either alone, so this one waits its turn;
+ *   • the visitor has not dismissed it before (localStorage).
+ */
+import type { Lang } from '../i18n/utils';
+
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props as Props;
+
+const COPY: Record<string, { title: string; subtitle: string; cta: string; dismiss: string }> = {
+  en: { title: 'CryptoCalk for Android', subtitle: 'Works offline', cta: 'Install', dismiss: 'Dismiss' },
+  es: { title: 'CryptoCalk para Android', subtitle: 'Funciona sin conexión', cta: 'Instalar', dismiss: 'Cerrar' },
+  pt: { title: 'CryptoCalk para Android', subtitle: 'Funciona offline', cta: 'Instalar', dismiss: 'Fechar' },
+  tr: { title: 'Android için CryptoCalk', subtitle: 'Çevrimdışı çalışır', cta: 'Yükle', dismiss: 'Kapat' },
+  hi: { title: 'Android के लिए CryptoCalk', subtitle: 'ऑफ़लाइन काम करता है', cta: 'इंस्टॉल', dismiss: 'बंद करें' },
+  ru: { title: 'CryptoCalk для Android', subtitle: 'Работает офлайн', cta: 'Установить', dismiss: 'Закрыть' },
+};
+const c = COPY[lang as string] ?? COPY.en;
+
+// referrer lets Play attribute installs to the site rather than to "organic"
+const PLAY_URL =
+  'https://play.google.com/store/apps/details?id=com.cryptocalk.calculator' +
+  '&referrer=utm_source%3Dcryptocalk.com%26utm_medium%3Dweb_banner';
+---
+
+<div id="cc-app-banner" class="cc-app-banner" hidden role="region" aria-label={c.title}>
+  <img src="/icon-192.png" alt="" width="36" height="36" class="cc-app-icon" loading="lazy" decoding="async" />
+  <div class="cc-app-text">
+    <strong>{c.title}</strong>
+    <span>{c.subtitle}</span>
+  </div>
+  <a href={PLAY_URL} class="cc-app-cta" target="_blank" rel="noopener">{c.cta}</a>
+  <button type="button" id="cc-app-close" class="cc-app-close" aria-label={c.dismiss}>&times;</button>
+</div>
+
+<script>
+  (() => {
+    const KEY = 'cc_app_banner_dismissed';
+    const el = document.getElementById('cc-app-banner');
+    if (!el) return;
+
+    // Inside the native app the store badge is hidden by CSS already; bail out before any work.
+    if (document.documentElement.getAttribute('data-native') === '1') return;
+
+    // Android only — there is no iOS build to send anyone to.
+    if (!/Android/i.test(navigator.userAgent)) return;
+
+    try { if (localStorage.getItem(KEY)) return; } catch { /* private mode — just show it */ }
+
+    const cookieVisible = () => {
+      const cb = document.getElementById('cookie-banner');
+      return !!cb && !cb.classList.contains('hidden') && getComputedStyle(cb).display !== 'none';
+    };
+
+    const show = () => {
+      if (cookieVisible()) return false;
+      el.hidden = false;
+      // Reserve the space instead of covering content — the banner is a bar, not an overlay.
+      document.body.style.paddingBottom = el.offsetHeight + 'px';
+      return true;
+    };
+
+    const hide = (remember: boolean) => {
+      el.hidden = true;
+      document.body.style.paddingBottom = '';
+      if (remember) { try { localStorage.setItem(KEY, '1'); } catch { /* ignore */ } }
+    };
+
+    document.getElementById('cc-app-close')?.addEventListener('click', () => hide(true));
+    // Following the link is intent, not annoyance — don't nag afterwards either.
+    el.querySelector('.cc-app-cta')?.addEventListener('click', () => hide(true));
+
+    if (!show()) {
+      // Cookie banner is up: wait for it to go away rather than stacking under it.
+      const obs = new MutationObserver(() => { if (show()) obs.disconnect(); });
+      const cb = document.getElementById('cookie-banner');
+      if (cb) obs.observe(cb, { attributes: true, attributeFilter: ['class', 'style'] });
+    }
+  })();
+</script>
+
+<style>
+  .cc-app-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998; /* below the cookie banner (9999) — consent outranks promotion */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px calc(10px + env(safe-area-inset-bottom));
+    background: var(--color-bg-card);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -2px 12px rgba(15, 23, 42, 0.1);
+  }
+
+  /* `hidden` must win over the flex display above, or the bar shows on every page. */
+  .cc-app-banner[hidden] {
+    display: none;
+  }
+
+  .cc-app-icon {
+    border-radius: 9px;
+    flex-shrink: 0;
+  }
+
+  .cc-app-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+    min-width: 0;
+  }
+
+  .cc-app-text strong,
+  .cc-app-text span {
+    /* Never wrap: Hindi and Russian are ~40% longer than English and would otherwise
+       turn a 64px bar into a 90px one that eats real screen space. */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cc-app-text strong {
+    font-size: 0.88rem;
+    color: var(--color-text);
+  }
+
+  .cc-app-text span {
+    font-size: 0.76rem;
+    color: var(--color-text-muted);
+  }
+
+  .cc-app-cta {
+    margin-left: auto;
+    flex-shrink: 0;
+    padding: 8px 13px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .cc-app-close {
+    flex-shrink: 0;
+    width: 40px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* On the narrowest phones the CTA and close button leave ~160px for text. The title carries the
+     whole message ("... for Android" is the point of the banner), so the subtitle yields rather than
+     letting the title truncate to "CryptoCalk for …". */
+  @media (max-width: 409px) {
+    .cc-app-text span { display: none; }
+    /* The icon is decorative (alt=""); on a 375px screen the Russian and Hindi titles need its
+       46px more than the layout needs the icon. Measured: title wants 166px, had 141px. */
+    .cc-app-icon { display: none; }
+    /* Hindi fits in exactly 178 of 178px at 0.88rem — no margin at all, and a different system
+       font on a real device would clip it. Drop a step for headroom. */
+    .cc-app-text strong { font-size: 0.83rem; }
+  }
+
+  /* Desktop never sees it (the script also gates on the UA), but belt and braces. */
+  @media (min-width: 768px) {
+    .cc-app-banner { display: none; }
+  }
+</style>

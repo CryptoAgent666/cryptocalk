@@ -4,6 +4,7 @@ import CookieBanner from '../components/CookieBanner.astro';
 import CapgoUpdater from '../components/CapgoUpdater.astro';
 import AdMobAds from '../components/AdMobAds.astro';
 import AgentNudge from '../components/AgentNudge.astro';
+import AppInstallBanner from '../components/AppInstallBanner.astro';
 import prunePaths from '../data/prune-noindex.json';
 const PRUNE_NOINDEX = new Set((prunePaths.paths as string[]));
 
@@ -352,6 +353,7 @@ const hreflangBasePath = normalizeBasePathForHreflang(basePath);
     <slot />
     <AgentNudge lang={lang} />
     <CookieBanner lang={lang} />
+    <AppInstallBanner lang={lang} />
     <CapgoUpdater />
     <AdMobAds lang={lang} />
     <script is:inline>
