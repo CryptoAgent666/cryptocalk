@@ -990,7 +990,7 @@
       "id": "TaxCalculator__at.flat_rate",
       "calculator": "TaxCalculator",
       "key": "at.flat_rate",
-      "value": "27.5",
+      "value": 27.5,
       "unit": "percent",
       "jurisdiction": "AT",
       "law": "Austria crypto capital gains flat rate (KESt, Öko-Steuerreform 2022)",
@@ -1003,8 +1003,10 @@
       "source_hint": "BMF Austria",
       "conflict": false,
       "status": "current",
-      "notes": "Flat 27.5% on crypto gains. Crypto-to-crypto swaps NOT taxed. Legacy assets (pre-March 2021) may be exempt. No holding-period distinction.",
-      "source_url": "https://www.blockpit.io/tax-guides/crypto-tax-austria"
+      "notes": "Flat 27.5% on crypto gains. Crypto-to-crypto swaps NOT taxed. Legacy assets (pre-March 2021) may be exempt. No holding-period distinction. 2026-08-29 verified against the statute: EStG § 27a Abs. 1 Z 2 — «in allen anderen Fällen einem besonderen Steuersatz von 27,5%»; Kryptowährungen fall under § 27a (13 mentions). The 25% rate in Z 1 applies to bank deposits only, not crypto. ⚠ RIS returns 503 to both our fetcher and the DATA_HUB server — readable only via r.jina.ai, so this citation is the authority while the monitor keeps hashing the secondary guide. No server-readable Austrian primary found (BMF 404, findok 301).",
+      "source_url": "https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10004570&Paragraf=27a",
+      "official_value": 27.5,
+      "verified_date": "2026-08-29"
     },
     {
       "id": "TaxCalculator__au.brackets",
@@ -1241,7 +1243,7 @@
       "id": "TaxCalculator__fr.annual_exemption",
       "calculator": "TaxCalculator",
       "key": "fr.annual_exemption",
-      "value": "305",
+      "value": 305,
       "unit": "EUR_per_year",
       "jurisdiction": "FR",
       "law": "Crypto disposal de-minimis exemption",
@@ -1254,8 +1256,10 @@
       "source_hint": "DGFiP France",
       "conflict": false,
       "status": "current",
-      "notes": "Total annual crypto disposals under €305 are exempt. Stated in notes string.",
-      "source_url": "https://www.blockpit.io/tax-guides/crypto-tax-france"
+      "notes": "Total annual crypto disposals under €305 are exempt. Stated in notes string. 2026-08-29 verified against BOFiP (official tax-administration doctrine): «cessions dont la somme des prix n'excède pas 305 €», citing CGI art. 150 VH bis, B du II. Source migrated off blockpit.io — BOFiP answers 200 with the figure from the DATA_HUB server, so this one no longer depends on a secondary guide or on the reader proxy.",
+      "source_url": "https://bofip.impots.gouv.fr/bofip/11969-PGP.html/identifiant=BOI-RPPM-PVBMC-30-30-20240423",
+      "official_value": 305,
+      "verified_date": "2026-08-29"
     },
     {
       "id": "TaxCalculator__fr.flat_tax_pfu",
