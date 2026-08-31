@@ -24,6 +24,12 @@ CREDS="$ROOT/.ftp-credentials"
 echo "==> [0/4] Stale-values guard…"
 ( cd "$ROOT" && node scripts/check-stale-values.mjs ) || { echo "ERROR: stale values found — OTA publish blocked."; exit 1; }
 
+# Гард реестра (тираж 31.08.2026): value не должен расходиться с official_value.
+# На calk.kg правка семи констант тронула только value — пять расхождений нашёл
+# внешний loop_closer, а не предеплой. Известные расхождения перечислены в
+# scripts/ledger-consistency-baseline.json и НЕ блокируют; блокируют новые.
+node "$(dirname "$0")/check-ledger-consistency.mjs" || { echo "деплой остановлен: реестр рассогласован (value ≠ official_value)"; exit 1; }
+
 # OTA subdomain docroot on the FTP server (override in scripts/ota.env — copy from ota.env.example).
 [ -f "$ROOT/scripts/ota.env" ] && . "$ROOT/scripts/ota.env"
 OTA_FTP_DIR="${OTA_FTP_DIR:-ota.cryptocalk.com/httpdocs}"

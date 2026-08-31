@@ -23,6 +23,12 @@ cd "$(dirname "$0")/.."
 echo "▶ Stale-values guard…"
 node scripts/check-stale-values.mjs || { echo "❌ Deploy blocked: stale values found (see above)."; exit 1; }
 
+# Гард реестра (тираж 31.08.2026): value не должен расходиться с official_value.
+# На calk.kg правка семи констант тронула только value — пять расхождений нашёл
+# внешний loop_closer, а не предеплой. Известные расхождения перечислены в
+# scripts/ledger-consistency-baseline.json и НЕ блокируют; блокируют новые.
+node "$(dirname "$0")/check-ledger-consistency.mjs" || { echo "деплой остановлен: реестр рассогласован (value ≠ official_value)"; exit 1; }
+
 CREDS=".ftp-credentials"
 [ -f "$CREDS" ] || { echo "❌ $CREDS not found"; exit 1; }
 eval "$(grep -E '^(host|user|pass|remote_path)=' "$CREDS" | sed 's/^/FTP_/')"
