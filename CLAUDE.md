@@ -32,7 +32,7 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
      `MiningRoiCalculator`, `ValidatorCalculator`, `StockToFlowCalculator`, `DustAttackCalculator`,
      `StakingRewardsCalculator` (block reward, halving schedule, 21M supply, 32-ETH validator, dust 546).
 
-### Монитор 2026-08-29 — 2 флага, ОБА ложные (SVG-координаты как «суммы»)
+### Монитор 2026-08-31 — 2 флага, ОБА ложные (SVG-координаты как «суммы»)
 - Алерт: `at.flat_rate` и `fr.annual_exemption` «изменились». 🚩 Первый признак подделки — у **двух
   несвязанных страниц** (AT и FR) совпало «было» побайтно: `€199, €2,395, €2,395, 300.000`.
   Две разные налоговые страницы не могут содержать одинаковый набор цифр.
@@ -50,7 +50,7 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
   Проверено на живых URL: AT теперь отдаёт `27.5%` ×6 и брекеты, FR — `30%/12.8%/17.2%/€305`.
   ⚠️ Фикс общефлотовый — проверить, что он гасит такой же шум на других доменах.
 - **Обе константы верны и переверифицированы по первоисточникам** (это настоящее чтение, поэтому
-  `verified_date: 2026-08-29` проставлен честно):
+  `verified_date: 2026-08-31` проставлен честно):
   **AT 27,5%** — EStG § 27a Abs. 1 Z 2, «in allen anderen Fällen einem besonderen Steuersatz von
   27,5%»; Kryptowährungen в этом же параграфе. Ставка 25% (Z 1) — только банковские вклады.
   ⚠️ RIS отдаёт **503** и нам, и с сервера DATA_HUB — читается только через `r.jina.ai`; сервер-
@@ -429,7 +429,7 @@ margin (уровень 160%, call 50 700), position-size ES (5 000 $ / 0,1 BTC /
   Зафиксирован `typescript@^5`.
   ⚠️ **Следующая OTA — только 1.7.1+**: `cmp_versions` в updates.php дополняет нулями, поэтому
   бинарю с versionName 1.7 бандл 1.7.0 не предлагается (проверено на живом эндпоинте).
-- **Баннер установки приложения (29.08)** — `AppInstallBanner.astro` в `Layout.astro`, все 1294
+- **Баннер установки приложения (31.08)** — `AppInstallBanner.astro` в `Layout.astro`, все 1294
   страницы, 6 языков, по умолчанию `hidden`. Показывается ТОЛЬКО при совпадении всех условий:
   UA содержит `Android` (**iOS-приложения не существует** — app record убит, слать айфон в Play
   бессмысленно), нет `data-native` (внутри приложения реклама стора = паттерн реджекта 2.3.10),
