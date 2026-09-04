@@ -6,6 +6,11 @@
 // authoritative-sources list, the new per-calculator "Where these numbers come from" block, and the
 // two SVG diagrams on /profit-calculator/. The 5 slugs left alone are the ones where nothing on the
 // rendered page changed; they were verified by scanning the built HTML for those markers, not assumed.
+//
+// 2026-09-05: gpu-mining-calculator + updates moved to 2026-09-05. Kaspa's monthly emission step
+// changed the KAS fallback block reward (2.3125 -> 2.18267645), which is rendered on the GPU mining
+// page both in the calculator and in its "Where these numbers come from" block; /updates/ gained a
+// new entry. Both are real rendered-content changes, not a build stamp.
 export const CALCULATOR_UPDATED: Record<string, string> = {
   "404": "2026-05-11",
   "about": "2026-08-25",
@@ -56,7 +61,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "gas-optimization-calculator": "2026-08-25",
   "geometric-mean-return-calculator": "2026-08-25",
   "governance-voting-calculator": "2026-08-25",
-  "gpu-mining-calculator": "2026-08-25",
+  "gpu-mining-calculator": "2026-09-05",
   "grid-trading-calculator": "2026-08-25",
   "gwei-converter": "2026-08-25",
   "halving-calculator": "2026-08-25",
@@ -137,7 +142,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "treynor-calculator": "2026-08-25",
   "uniswap-calculator": "2026-08-25",
   "unit-converter": "2026-08-25",
-  "updates": "2026-08-25",
+  "updates": "2026-09-05",
   "validator-calculator": "2026-08-25",
   "var-calculator": "2026-08-25",
   "vesting-calculator": "2026-08-25",

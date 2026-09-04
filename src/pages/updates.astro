@@ -19,7 +19,7 @@ const webPageSchema = {
   description: 'See what\'s new on CryptoCalk, new calculators, features, and improvements to our free crypto calculator suite.',
   url: 'https://cryptocalk.com/updates/',
   inLanguage: 'en',
-  dateModified: '2026-08-25T00:00:00+00:00',
+  dateModified: '2026-09-05T00:00:00+00:00',
 };
 ---
 
@@ -36,6 +36,19 @@ const webPageSchema = {
     </header>
 
     <div class="updates-content">
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-09-05">September 5, 2026</time>
+        </div>
+        <h2>Kaspa's Monthly Reward Step: Mining Estimates Updated to 2.18267645 KAS</h2>
+        <p>Most coins cut their block reward in half every few years, and you can see it coming years out. <strong>Kaspa reduces its reward a little bit every single month</strong> instead — about 5.6% each time, a smooth glide rather than a cliff. The step scheduled for early September has happened, so our GPU mining calculator's fallback figure moved from <strong>2.3125</strong> to <strong>2.18267645 KAS per block</strong>.</p>
+        <p>We read the new number straight from the Kaspa network's own API rather than from a mining-stats site, and checked it against Kaspa's published emission formula before applying it — it lands exactly on month 52 of the schedule, which is how we know it was a real scheduled step and not a bad reading.</p>
+        <p>In practice most visitors were already seeing a correct figure: the calculator pulls live network data whenever it can reach it, and this hardcoded value is the fallback for when it cannot. Because Kaspa drifts every month, that fallback goes slightly stale by design — so we refresh it on a monthly schedule. The next step is due around 5 October 2026.</p>
+        <p>All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+
+      <div class="divider"></div>
 
       <article class="update-entry">
         <div class="update-date">

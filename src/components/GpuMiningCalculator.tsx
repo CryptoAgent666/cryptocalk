@@ -65,7 +65,7 @@ const COINS: Record<string, CoinData> = {
     // Kaspa's chromatic halving steps the reward down ~5.6% EVERY MONTH, so this fallback is a
     // dated snapshot by nature — the live whattomine/API value is authoritative. 2.31246515 per
     // api.kaspa.org on 2026-08-02; next step 2026-09-04 → 2.18267645. 10 BPS since Crescendo (May 2025).
-    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.036, blockReward: 2.3125, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 0.1 },
+    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.036, blockReward: 2.18267645, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 0.1 },
     // FLUX removed 2026-06: Proof-of-Useful-Work v2 hard fork (block 2,020,000, ~Oct 2025) eliminated GPU mining entirely; Flux now produced by FluxNodes (Proof of Nodes), not GPUs.
 };
 

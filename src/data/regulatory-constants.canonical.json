@@ -445,7 +445,7 @@
       "id": "GpuMiningCalculator__COINS.KAS.blockReward / blockTime",
       "calculator": "GpuMiningCalculator",
       "key": "COINS.KAS.blockReward / blockTime",
-      "value": "blockReward 2.3125, blockTime 0.1",
+      "value": "blockReward 2.18267645, blockTime 0.1",
       "unit": "KAS per block / seconds",
       "jurisdiction": "",
       "law": "Kaspa consensus (kHeavyHash, chromatic emission)",
@@ -454,12 +454,13 @@
       "surfaces": [
         "src/components/GpuMiningCalculator.tsx:65"
       ],
-      "last_updated_hint": "2026-08-02",
+      "last_updated_hint": "2026-09-05",
+      "verified_date": "2026-09-05",
       "source_hint": "Kaspa chromatic/monthly halving; 10 BPS (0.1s) post-Crescendo. whattomine block_reward (live) strongly preferred (decays ~5.6%/month).",
       "conflict": false,
       "status": "current",
-      "notes": "Updated 2026-08-02 from the official Kaspa API: 2.49 (30 Jun) → 2.31246515, a 7.4% drift in ~1 month. ⚠ CHROMATIC HALVING: Kaspa steps the reward down ~5.6% EVERY MONTH, so any hardcoded fallback is stale within weeks by design — the live whattomine/API value is authoritative and the fallback is only a dated snapshot. Next step 2026-09-04 → 2.18267645. Monitor should treat this as monthly-calendar, never source-hash. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: 2.3125 (api.kaspa.org, 2026-08-02). Kaspa decays monthly — next step 2026-09-04 to 2.18267645.",
-      "official_value": "blockReward 2.3125, blockTime 0.1",
+      "notes": "Scheduled monthly rollover applied 2026-09-05: read directly from the official Kaspa API (GET https://api.kaspa.org/info/blockreward) → 2.18267645 KAS/block, replacing 2.3125 (-5.61%). ⚠ CHROMATIC HALVING: Kaspa does not halve — it steps the subsidy down by 2^(-1/12) EVERY month, so any hardcoded fallback is stale within weeks BY DESIGN and no source-hash monitor can ever see it coming; the live whattomine/API value is authoritative and this figure is only a dated snapshot. Monitor treats this as monthly-calendar, never source-hash. DERIVATION (checked against the API figure, 2026-09-05): the emission table is 440 KAS/sec × 2^(-m/12) for deflationary month m, divided by 10 for the post-Crescendo 10 BPS block rate; solving for the API value gives m = 52.0000 exactly, which confirms the reading is a genuine schedule step and not an API glitch. The whole subsidy goes to the miner (no dev fund, no masternodes), so the API figure is used as-is — NOT divided, unlike DASH. Next step: month 53 ≈ 2026-10-05 → ~2.06017223 (440e8 × 2^(-53/12) sompi/sec / 10); verify against the API before applying, do not copy this projection. Source detail: 2.18267645 (api.kaspa.org/info/blockreward, read 2026-09-05); block height at read 24,029,102, virtualDaaScore 531,389,521.",
+      "official_value": "blockReward 2.18267645, blockTime 0.1",
       "source_url": "https://api.kaspa.org/info/blockreward"
     },
     {
