@@ -4,46 +4,75 @@ import { Cpu, Info, RotateCcw, Pickaxe } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 import { loc } from '../i18n/format';
 
-// Illustrative model constants — NOT live data and NOT protocol constants.
-// `dailyPerHash` folds network difficulty + block reward into a single tuned
-// per-hash yield, and `price` is a hand-refreshed spot snapshot. Neither is
-// fetched at runtime, so the UI labels the prices as a dated snapshot rather
-// than presenting them as live quotes. ASIC hash values are scaled to the same
-// per-hash reward constant (NOT raw Th/s) so the linear model stays coherent.
+// Model constants re-derived from live network state on 2026-09-10. `dailyPerHash`
+// is no longer a tuned figure: it is (daily network emission / network hashrate),
+// so hashRate x dailyPerHash is the real expected coin yield for that hash rate.
+// Prices are a hand-refreshed spot snapshot (still not fetched at runtime), which
+// is why the UI labels them as a dated snapshot rather than a live quote.
 //
-// Prices re-checked 2026-09-10, two independent sources each (CoinGecko +
-// Binance/KuCoin/CoinPaprika). The previous values dated from the 2026-05-29
-// calibration and had drifted badly — ALPH alone was overstated 34x — which
-// inverted the coin ranking this calculator exists to produce.
-// NOTE: the older "calibrated so a RTX 4090 lands near break-even" premise was
-// dropped with those prices. At real 2026 prices a 4090 at $0.10/kWh loses
-// ~$0.85/day on the best coin, and the model now says so.
-const PRICE_SNAPSHOT = '2026-09-10';
-
-const HARDWARE = [
-  { id: 'rtx-4090', label: 'RTX 4090', power: '450', hashes: { kaspa: '1450', ravencoin: '70', ergo: '320', alephium: '12' } },
-  { id: 'rtx-4080', label: 'RTX 4080', power: '320', hashes: { kaspa: '1100', ravencoin: '52', ergo: '240', alephium: '9' } },
-  { id: 'rtx-3090', label: 'RTX 3090', power: '350', hashes: { kaspa: '900', ravencoin: '50', ergo: '200', alephium: '7' } },
-  { id: 'rtx-3080', label: 'RTX 3080', power: '320', hashes: { kaspa: '650', ravencoin: '45', ergo: '180', alephium: '6' } },
-  { id: 'antminer-s21', label: 'Antminer S21 (BTC)', power: '3500', hashes: { bitcoin: '200' } },
-  { id: 'antminer-ks5', label: 'Antminer KS5 (KAS)', power: '3000', hashes: { kaspa: '29000' } },
-] as const;
-
-// KAS dailyPerHash tracks Kaspa's monthly "chromatic halving": the 2026-05-29
-// calibration sat in emission month 48 (44 x 2^-48/12 = 2.75 KAS/block at 10 BPS).
-// Month 52 (since 2026-09-05) pays 2.18267645, so the yield is scaled by exactly
-// 2^(-4/12): 0.0045977 -> 0.0036492. Next step ~2026-10-05 (month 53, 2.06017223)
-// -> 0.0034444, handled by the cryptocalk-kaspa-emission-* scheduled task.
+// Why this was re-derived: the previous constants were calibrated by hand and had
+// drifted apart from the chains by 1.4x (ERG) to ~500x (KAS). Because the page
+// exists to RANK coins, that inverted the ranking - it advertised KAS as the #2
+// GPU coin when a GPU on Kaspa now earns fractions of a cent per day. The net
+// $/day still looked plausible only because at $0.10/kWh the electricity bill
+// swamps every altcoin's revenue.
+//
+// Network state, two independent reads each (2026-09-10):
+//   BTC  difficulty 127,450,789,715,843 (mempool.space == blockchain.info),
+//        3.125 BTC/block -> 1/(D x 2^32) x 86400 x 3.125 = 4.93247e-7 BTC per TH/s
+//   KAS  hashrate 3.23569e17 H/s (api.kaspa.org; == difficulty 1.6125e16 x 2 x 10 BPS),
+//        2.18267645 KAS/block x 10 BPS x 86400 = 1,885,832 KAS/day -> 0.005828216 per GH/s
+//   RVN  hashrate 628.8 / 655.0 GH/s (whattomine / 2miners), 1250 RVN per 60s block
+//        = 1,800,000 RVN/day -> 2.804003 per MH/s
+//   ERG  hashrate 538.4 / 536.4 GH/s (whattomine / ergoplatform node), 3 ERG per
+//        117s block = 2,215 ERG/day -> 0.004122396 per MH/s
+//   ALPH hashrate 5.19025e15 H/s (alephium backend); emission measured directly from
+//        the supply series, 23,215 / 23,537 / 24,137 ALPH over three days
+//        -> 23,630 ALPH/day -> 0.004552680 per GH/s
+//
+// KAS and ALPH are kept in the table precisely because the honest numbers are tiny:
+// both chains are ASIC-dominated (an Antminer KS7 is 40 TH/s against a 4090's
+// 1.79 GH/s), so a GPU earns ~$0.0004/day on Kaspa. Showing that is the useful
+// answer to "should I point my GPU at Kaspa?", and it is three orders of magnitude
+// below Ravencoin - not the near-tie the old constants implied.
+//
+// KAS tracks Kaspa's monthly "chromatic halving": month 52 (since 2026-09-05) pays
+// 2.18267645/block. Month 53 opens at DAA 557,505,000 (~2026-10-05) -> 2.06017223,
+// which scales dailyPerHash by 2^(-1/12) to 0.005501475 if the hashrate is unchanged
+// - but re-read the hashrate too, since that is now a real input. Handled by the
+// cryptocalk-kaspa-emission-* scheduled task.
 // FLUX removed 2026-09-10: the PoUW v2 hard fork at block 2,020,000 (Oct 2025)
-// ended GPU mining entirely — blocks are produced by FluxNodes (Proof of Nodes).
+// ended GPU mining entirely - blocks are produced by FluxNodes (Proof of Nodes).
 // Verified on-chain: the coinbase pays 14 FLUX split across node tiers + dev
 // fund with no miner output at all. Same removal as GpuMiningCalculator (2026-06-30).
+const PRICE_SNAPSHOT = '2026-09-10';
+
+// Device hash rates are measured third-party benchmarks, not nameplate figures:
+// minerstat (per-algorithm, updated 2026-08-29) and 2CryptoCalc, averaged where both
+// carry the algorithm. Two minerstat entries were rejected as internally impossible
+// and the other source used instead: RTX 4090 KAWPOW 120 MH/s (its own ProgPoW-family
+// siblings sit at 64-68 MH/s, and KawPow is memory-bandwidth-bound while a 4090 has
+// only 1.08x a 3090's bandwidth), and RTX 4080 Blake3 3.6 GH/s (above its own 4090
+// figure of 2.8) - the 4080 is scaled from the 4090 by the same-architecture
+// kHeavyHash ratio instead. Power stays at card TDP / vendor spec, so these are
+// stock-cooling numbers; an undervolted rig does better than the page shows.
+// Antminer KS5 corrected 29 TH/s -> 20 TH/s (Bitmain spec, 20 Th/s at 3150 W;
+// minerstat lists the same 20 TH/s). 29 TH/s matched no shipped KS-series model.
+const HARDWARE = [
+  { id: 'rtx-4090', label: 'RTX 4090', power: '450', hashes: { kaspa: '1.79', ravencoin: '65', ergo: '325', alephium: '2.8' } },
+  { id: 'rtx-4080', label: 'RTX 4080', power: '320', hashes: { kaspa: '1.42', ravencoin: '45', ergo: '168', alephium: '2.2' } },
+  { id: 'rtx-3090', label: 'RTX 3090', power: '350', hashes: { kaspa: '0.99', ravencoin: '64', ergo: '248', alephium: '1.6' } },
+  { id: 'rtx-3080', label: 'RTX 3080', power: '320', hashes: { kaspa: '0.83', ravencoin: '52', ergo: '192', alephium: '1.3' } },
+  { id: 'antminer-s21', label: 'Antminer S21 (BTC)', power: '3500', hashes: { bitcoin: '200' } },
+  { id: 'antminer-ks5', label: 'Antminer KS5 (KAS)', power: '3150', hashes: { kaspa: '20000' } },
+] as const;
+
 const COINS = [
-  { id: 'bitcoin', label: 'BTC', algo: 'SHA-256', price: '78000', dailyPerHash: 0.00000045, hashUnit: 'TH/s' },
-  { id: 'kaspa', label: 'KAS', algo: 'kHeavyHash', price: '0.036', dailyPerHash: 0.0036492, hashUnit: 'GH/s' },
-  { id: 'ravencoin', label: 'RVN', algo: 'KAWPOW', price: '0.0030', dailyPerHash: 0.616883, hashUnit: 'MH/s' },
-  { id: 'ergo', label: 'ERG', algo: 'Autolykos', price: '0.25', dailyPerHash: 0.0029830, hashUnit: 'GH/s' },
-  { id: 'alephium', label: 'ALPH', algo: 'Blake3', price: '0.054', dailyPerHash: 0.0495495, hashUnit: 'GH/s' },
+  { id: 'bitcoin', label: 'BTC', algo: 'SHA-256', price: '78080', dailyPerHash: 0.000000493247, hashUnit: 'TH/s' },
+  { id: 'kaspa', label: 'KAS', algo: 'kHeavyHash', price: '0.036', dailyPerHash: 0.005828216, hashUnit: 'GH/s' },
+  { id: 'ravencoin', label: 'RVN', algo: 'KAWPOW', price: '0.0030', dailyPerHash: 2.804003, hashUnit: 'MH/s' },
+  { id: 'ergo', label: 'ERG', algo: 'Autolykos', price: '0.2483', dailyPerHash: 0.004122396, hashUnit: 'MH/s' },
+  { id: 'alephium', label: 'ALPH', algo: 'Blake3', price: '0.0554', dailyPerHash: 0.004552680, hashUnit: 'GH/s' },
 ] as const;
 
 function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {
@@ -174,7 +203,7 @@ function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {
 
           <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            {getUiString(lang, 'Estimates use illustrative network difficulty and prices. Actual yields fluctuate hourly with difficulty, price, and network share.')}
+            {getUiString(lang, 'Estimates use a dated snapshot of network difficulty and prices, not live quotes. Actual yields fluctuate hourly with difficulty, price, and network share.')}
           </span>
           <span className="input-hint">
             {getUiString(lang, 'Coin prices are a reference snapshot, not live quotes')} — {PRICE_SNAPSHOT}

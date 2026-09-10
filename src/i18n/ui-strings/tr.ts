@@ -2994,7 +2994,7 @@ const dict: Record<string, string> = {
   'Distance to stop': 'Stop mesafesi',
   'Electricity Rate': 'Elektrik Tarifesi',
   'Enter your wallet holdings manually. For live multi-chain pricing, use Zerion, DeBank, or Zapper. This calc tracks net worth and concentration.': 'Cüzdan varlıklarınızı manuel olarak girin. Canlı çoklu zincir fiyatlandırması için Zerion, DeBank veya Zapper kullanın. Bu hesaplayıcı net değeri ve yoğunlaşmayı takip eder.',
-  'Estimates use illustrative network difficulty and prices. Actual yields fluctuate hourly with difficulty, price, and network share.': 'Tahminler örnek ağ zorluğu ve fiyatlarını kullanır. Gerçek getiriler zorluk, fiyat ve ağ payına göre saatlik olarak dalgalanır.',
+  'Estimates use a dated snapshot of network difficulty and prices, not live quotes. Actual yields fluctuate hourly with difficulty, price, and network share.': 'Tahminler, canlı kotasyonlar değil, ağ zorluğu ve fiyatların tarihli bir anlık görüntüsünü kullanır. Gerçek getiriler zorluk, fiyat ve ağ payına göre saatlik olarak dalgalanır.',
   'Excess vs T-bills (4.5%)': 'T-bono karşısında fazla (%4,5)',
   'Expected value (EV)': 'Beklenen değer (EV)',
   'Fees Earned to Date': 'Bugüne Kadar Kazanılan Ücretler',

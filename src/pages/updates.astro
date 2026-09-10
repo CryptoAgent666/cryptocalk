@@ -41,6 +41,19 @@ const webPageSchema = {
         <div class="update-date">
           <time datetime="2026-09-10">September 10, 2026</time>
         </div>
+        <h2>Mining Coin Switcher: Real Network Data Replaces Our Estimates, and the Ranking Changed Again</h2>
+        <p>Earlier today we refreshed the coin prices in our multi-coin mining switcher. That fixed what the coins were worth, but it left something else untouched: <strong>how much of each coin your hardware actually earns per day</strong>. Those figures had been set by hand rather than measured, and when we finally checked them against the live networks they were off by anywhere from 1.4 times to roughly 500 times.</p>
+        <p>So the page was still recommending the wrong coin. We have now rebuilt those figures from the networks themselves — each chain's real difficulty and its real daily coin issuance, read from two independent sources apiece. <strong>Ravencoin is in fact the best coin for a graphics card, not Ergo</strong>, and it was previously ranked third.</p>
+        <p>The bigger finding is about Kaspa and Alephium. Both used to be graphics-card coins; both are now dominated by purpose-built mining machines. A single dedicated Kaspa miner does roughly twenty thousand times the work of a high-end graphics card, so a graphics card on those networks now earns <strong>well under a cent a day</strong> — not the near-tie our old figures suggested. They still appear on the page, because seeing how far behind they are is the useful answer to "should I point my card at Kaspa?"</p>
+        <p>We also fixed the hardware table. Some graphics-card speeds were labelled in the wrong units, and the Antminer KS5 was listed at 29 TH/s — a machine that does not exist. It is 20 TH/s.</p>
+        <p>Finally, we rewrote the questions and answers underneath the calculator in <strong>all six languages</strong>. They had been written separately from the calculator and contradicted both it and each other: the Portuguese version promised a graphics card would earn $1.50–$3.00 a day, the Spanish version $0.80–$2.50, and several still quoted Bitcoin at $60,000 when it is near $78,000. Every number there now comes from the same measurements as the calculator above it.</p>
+        <p>What it all adds up to: at 10 cents per kWh nothing on this page is profitable. A graphics card needs power at about 5 cents, an Antminer S21 about 9 cents, and a KS5 about 5.5 cents.</p>
+        <p>All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-09-10">September 10, 2026</time>
+        </div>
         <h2>Mining Coin Switcher: Flux Removed and Every Coin Price Refreshed</h2>
         <p>Our multi-coin mining switcher was still offering <strong>Flux (FLUX)</strong> as a coin you could mine with a graphics card. You cannot. Flux stopped using graphics cards entirely back in October 2025, when a network upgrade handed block production over to its own node operators. We removed Flux from our GPU mining calculator at the time, but this second calculator was missed — so it kept quoting a mining yield for a coin that no longer has any mining.</p>
         <p>We re-checked before changing anything, and confirmed it three ways: the Flux software release notes, the project's own announcement, and the Flux blockchain itself, where each block now pays out purely to node operators with nothing going to a miner.</p>

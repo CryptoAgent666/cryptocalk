@@ -40,6 +40,19 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-09-10',
         dateLabel: '10 de septiembre de 2026',
+        title: 'Selector de minería: datos reales de red sustituyen a nuestras estimaciones y el orden vuelve a cambiar',
+        body: 'Esta misma mañana actualizamos los precios de nuestro selector de minería multi-moneda. Eso corrigió cuánto valía cada moneda, pero dejó intacto algo distinto: <strong>cuántas monedas gana realmente tu equipo cada día</strong>. Esas cifras estaban puestas a mano, no medidas, y al contrastarlas por fin con las redes en vivo fallaban entre 1,4 veces y unas 500 veces.',
+        items: [
+          'Es decir, la página seguía recomendando la moneda equivocada. Hemos reconstruido esas cifras a partir de las propias redes —la dificultad real de cada cadena y su emisión diaria real, leídas de dos fuentes independientes cada una—. <strong>Ravencoin es de hecho la mejor moneda para una tarjeta gráfica, no Ergo</strong>, y antes aparecía en tercer lugar.',
+          'El hallazgo mayor es sobre Kaspa y Alephium. Ambas fueron monedas para tarjeta gráfica; hoy las dominan máquinas de minería especializadas. Un solo minero dedicado de Kaspa hace unas veinte mil veces el trabajo de una tarjeta gráfica tope, así que una tarjeta gana en esas redes <strong>bastante menos de un céntimo al día</strong>, no el casi-empate que sugerían nuestras cifras antiguas. Siguen en la página porque ver lo lejos que quedan es la respuesta útil a «¿apunto mi tarjeta a Kaspa?».',
+          'También corregimos la tabla de hardware: algunas velocidades de tarjetas estaban etiquetadas en las unidades equivocadas, y el Antminer KS5 figuraba con 29 TH/s, una máquina que no existe. Son 20 TH/s.',
+          'Por último, reescribimos las preguntas y respuestas bajo la calculadora en <strong>los seis idiomas</strong>. Se habían escrito aparte de la calculadora y la contradecían a ella y entre sí: la versión portuguesa prometía 1,50–3,00 USD al día con una tarjeta gráfica, la española 0,80–2,50 USD, y varias seguían citando Bitcoin a 60.000 USD cuando ronda los 78.000. Cada número de ahí sale ya de las mismas mediciones que la calculadora de arriba.',
+        ],
+        footer: 'En resumen: a 10 céntimos por kWh nada de esta página es rentable. Una tarjeta gráfica necesita electricidad a unos 5 céntimos, un Antminer S21 a unos 9 céntimos y un KS5 a unos 5,5 céntimos. Todas las cifras son estimaciones de carácter general, no asesoramiento financiero ni fiscal.',
+      },
+      {
+        date: '2026-09-10',
+        dateLabel: '10 de septiembre de 2026',
         title: 'Selector de minería: Flux eliminado y todos los precios actualizados',
         body: 'Nuestro selector de minería multi-moneda seguía ofreciendo <strong>Flux (FLUX)</strong> como una moneda minable con tarjeta gráfica. No lo es. Flux dejó de usar tarjetas gráficas por completo en octubre de 2025, cuando una actualización de red pasó la producción de bloques a sus propios operadores de nodos. Lo quitamos entonces de la calculadora de minería GPU, pero esta segunda calculadora se nos pasó, y siguió mostrando un rendimiento de minería para una moneda que ya no se mina.',
         items: [
@@ -250,6 +263,19 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     heading: 'Novidades',
     subtitle: 'Últimas atualizações, novas calculadoras e melhorias no CryptoCalk.',
     updates: [
+      {
+        date: '2026-09-10',
+        dateLabel: '10 de setembro de 2026',
+        title: 'Seletor de mineração: dados reais de rede substituem nossas estimativas e a ordem mudou de novo',
+        body: 'Ainda hoje atualizamos os preços do nosso seletor de mineração multi-moeda. Isso corrigiu quanto cada moeda valia, mas deixou intocada outra coisa: <strong>quantas moedas o seu equipamento realmente ganha por dia</strong>. Esses números tinham sido definidos à mão, não medidos, e quando enfim os conferimos contra as redes ao vivo estavam errados entre 1,4 vez e cerca de 500 vezes.',
+        items: [
+          'Ou seja, a página continuava recomendando a moeda errada. Reconstruímos esses números a partir das próprias redes — a dificuldade real de cada cadeia e a emissão diária real, lidas de duas fontes independentes cada uma. <strong>A Ravencoin é de fato a melhor moeda para uma placa de vídeo, não a Ergo</strong>, e antes aparecia em terceiro.',
+          'A descoberta maior é sobre Kaspa e Alephium. As duas já foram moedas de placa de vídeo; hoje são dominadas por máquinas de mineração dedicadas. Um único minerador dedicado de Kaspa faz cerca de vinte mil vezes o trabalho de uma placa de vídeo de topo, então uma placa ganha nessas redes <strong>bem menos de um centavo por dia</strong> — não o quase-empate que nossos números antigos sugeriam. Elas continuam na página, porque ver o quanto ficaram para trás é a resposta útil para «devo apontar minha placa para a Kaspa?».',
+          'Também corrigimos a tabela de hardware: algumas velocidades de placas estavam rotuladas nas unidades erradas, e o Antminer KS5 aparecia com 29 TH/s — uma máquina que não existe. São 20 TH/s.',
+          'Por fim, reescrevemos as perguntas e respostas abaixo da calculadora em <strong>todos os seis idiomas</strong>. Elas tinham sido escritas separadamente da calculadora e contradiziam tanto ela quanto umas às outras: a versão portuguesa prometia US$ 1,50–3,00 por dia com uma placa de vídeo, a espanhola US$ 0,80–2,50, e várias ainda citavam o Bitcoin a US$ 60.000 quando ele está perto de US$ 78.000. Cada número ali agora vem das mesmas medições da calculadora acima.',
+        ],
+        footer: 'No conjunto: a 10 centavos por kWh nada nesta página é lucrativo. Uma placa de vídeo precisa de energia a cerca de 5 centavos, um Antminer S21 a cerca de 9 centavos e um KS5 a cerca de 5,5 centavos. Todos os números são estimativas de caráter geral, não aconselhamento financeiro ou fiscal.',
+      },
       {
         date: '2026-09-10',
         dateLabel: '10 de setembro de 2026',
@@ -466,6 +492,19 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-09-10',
         dateLabel: '10 Eylül 2026',
+        title: 'Madencilik seçici: tahminlerimizin yerini gerçek ağ verisi aldı ve sıralama yine değişti',
+        body: 'Bugün erken saatlerde çok-coinli madencilik seçicimizdeki coin fiyatlarını güncelledik. Bu, coinlerin ne ettiğini düzeltti ama başka bir şeye dokunmadı: <strong>donanımınızın gerçekte günde ne kadar coin kazandığına</strong>. O rakamlar ölçülmüş değil elle konulmuştu ve nihayet canlı ağlarla karşılaştırdığımızda 1,4 kat ile yaklaşık 500 kat arasında sapıyorlardı.',
+        items: [
+          'Yani sayfa hâlâ yanlış coin\'i öneriyordu. Bu rakamları artık ağların kendisinden yeniden türettik: her zincirin gerçek zorluğu ve gerçek günlük emisyonu, her biri iki bağımsız kaynaktan okundu. <strong>Bir ekran kartı için en iyi coin aslında Ravencoin, Ergo değil</strong> — ve daha önce üçüncü sıradaydı.',
+          'Daha büyük bulgu Kaspa ve Alephium hakkında. İkisi de bir zamanlar ekran kartı coin\'iydi; bugün ikisine de özel amaçlı madencilik makineleri hâkim. Tek bir adanmış Kaspa madencisi, üst seviye bir ekran kartının yaklaşık yirmi bin katı iş yapıyor; dolayısıyla bir ekran kartı bu ağlarda <strong>günde bir sentin epey altında</strong> kazanıyor — eski rakamlarımızın ima ettiği başa baş yarış değil. Yine de sayfada kalıyorlar, çünkü ne kadar geride kaldıklarını görmek «kartımı Kaspa\'ya yönlendireyim mi?» sorusunun işe yarar cevabı.',
+          'Donanım tablosunu da düzelttik: bazı ekran kartı hızları yanlış birimle etiketlenmişti ve Antminer KS5, var olmayan bir makine olan 29 TH/s ile listelenmişti. Doğrusu 20 TH/s.',
+          'Son olarak, hesaplayıcının altındaki soru-cevapları <strong>altı dilin hepsinde</strong> yeniden yazdık. Bunlar hesaplayıcıdan ayrı yazılmıştı ve hem ona hem birbirlerine ters düşüyordu: Portekizce sürüm bir ekran kartı için günde 1,50–3,00 dolar, İspanyolca sürüm 0,80–2,50 dolar vaat ediyordu ve birkaçı Bitcoin\'i 78.000 dolara yakınken hâlâ 60.000 dolar diye anıyordu. Oradaki her rakam artık üstündeki hesaplayıcıyla aynı ölçümlerden geliyor.',
+        ],
+        footer: 'Toplamda: 0,10 dolar/kWh\'de bu sayfadaki hiçbir şey kârlı değil. Bir ekran kartının yaklaşık 5 sent, bir Antminer S21\'in yaklaşık 9 sent, bir KS5\'in ise yaklaşık 5,5 sent elektriğe ihtiyacı var. Tüm rakamlar genel bilgi amaçlı tahminlerdir; finansal veya vergisel tavsiye değildir.',
+      },
+      {
+        date: '2026-09-10',
+        dateLabel: '10 Eylül 2026',
         title: 'Madencilik seçici: Flux kaldırıldı ve tüm fiyatlar güncellendi',
         body: 'Çoklu coin madencilik seçicimiz hâlâ <strong>Flux (FLUX)</strong> coinini ekran kartıyla çıkarılabilir gibi gösteriyordu. Çıkarılamıyor. Flux, Ekim 2025 tarihli bir ağ yükseltmesiyle blok üretimini kendi düğüm işletmecilerine devrettiğinde ekran kartı kullanımını tamamen bıraktı. Flux o zaman GPU madencilik hesaplayıcımızdan kaldırıldı, ama bu ikinci hesaplayıcı gözden kaçtı ve artık hiç madenciliği olmayan bir coin için getiri göstermeye devam etti.',
         items: [
@@ -679,6 +718,19 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-09-10',
         dateLabel: '10 सितंबर 2026',
+        title: 'माइनिंग स्विचर: हमारे अनुमानों की जगह असली नेटवर्क डेटा, और रैंकिंग फिर बदली',
+        body: 'आज ही सुबह हमने अपने मल्टी-कॉइन माइनिंग स्विचर की कॉइन कीमतें अपडेट कीं। उससे यह ठीक हुआ कि कॉइन की कीमत क्या है, पर एक और चीज़ अछूती रह गई: <strong>आपका हार्डवेयर हर दिन असल में कितने कॉइन कमाता है</strong>। वे आँकड़े मापे नहीं, हाथ से रखे गए थे, और जब हमने आख़िरकार उन्हें लाइव नेटवर्क से मिलाया तो वे 1.4 गुना से लेकर करीब 500 गुना तक गलत निकले।',
+        items: [
+          'यानी पेज अब भी गलत कॉइन की सिफ़ारिश कर रहा था। हमने वे आँकड़े अब नेटवर्क से ही दोबारा निकाले हैं — हर चेन की असली डिफिकल्टी और असली दैनिक एमिशन, हर एक दो स्वतंत्र स्रोतों से पढ़ा गया। <strong>ग्राफ़िक्स कार्ड के लिए सबसे अच्छा कॉइन दरअसल Ravencoin है, Ergo नहीं</strong> — और वह पहले तीसरे स्थान पर था।',
+          'बड़ी खोज Kaspa और Alephium को लेकर है। दोनों कभी GPU कॉइन थे; अब दोनों पर विशेष माइनिंग मशीनों का कब्ज़ा है। एक अकेली समर्पित Kaspa मशीन एक टॉप ग्राफ़िक्स कार्ड से करीब बीस हज़ार गुना काम करती है, इसलिए इन नेटवर्क पर एक कार्ड <strong>दिन में एक सेंट से भी काफ़ी कम</strong> कमाता है — वह लगभग-बराबरी नहीं जो हमारे पुराने आँकड़े दिखाते थे। वे पेज पर बने हुए हैं, क्योंकि «क्या मैं अपना कार्ड Kaspa पर लगाऊँ?» का उपयोगी उत्तर यही देखना है कि वे कितने पीछे हैं।',
+          'हमने हार्डवेयर तालिका भी ठीक की: कुछ ग्राफ़िक्स कार्ड की गति गलत इकाइयों में लिखी थी, और Antminer KS5 को 29 TH/s पर सूचीबद्ध किया गया था — ऐसी मशीन है ही नहीं। वह 20 TH/s है।',
+          'अंत में, कैलकुलेटर के नीचे के प्रश्न-उत्तर हमने <strong>सभी छह भाषाओं</strong> में दोबारा लिखे। वे कैलकुलेटर से अलग लिखे गए थे और उसका तथा आपस में भी खंडन करते थे: पुर्तगाली संस्करण ग्राफ़िक्स कार्ड से रोज़ $1.50–$3.00 का वादा करता था, स्पेनिश $0.80–$2.50 का, और कई अब भी Bitcoin को $60,000 बताते थे जबकि वह $78,000 के आसपास है। वहाँ की हर संख्या अब ऊपर वाले कैलकुलेटर के उन्हीं मापों से आती है।',
+        ],
+        footer: 'कुल मिलाकर: $0.10/kWh पर इस पेज पर कुछ भी लाभदायक नहीं है। एक ग्राफ़िक्स कार्ड को करीब 5 सेंट, Antminer S21 को करीब 9 सेंट और KS5 को करीब 5.5 सेंट की बिजली चाहिए। सभी आँकड़े सामान्य जानकारी के अनुमान हैं, वित्तीय या कर सलाह नहीं।',
+      },
+      {
+        date: '2026-09-10',
+        dateLabel: '10 सितंबर 2026',
         title: 'माइनिंग स्विचर: Flux हटाया गया और सभी कीमतें अपडेट',
         body: 'हमारा मल्टी-कॉइन माइनिंग स्विचर अब भी <strong>Flux (FLUX)</strong> को ग्राफ़िक्स कार्ड से माइन होने वाला कॉइन बता रहा था। ऐसा नहीं है। अक्टूबर 2025 में एक नेटवर्क अपग्रेड ने ब्लॉक बनाने का काम Flux के अपने नोड ऑपरेटरों को सौंप दिया, और तभी से ग्राफ़िक्स कार्ड का उपयोग पूरी तरह बंद हो गया। तब हमने Flux को अपने GPU माइनिंग कैलकुलेटर से हटा दिया था, पर यह दूसरा कैलकुलेटर छूट गया और उस कॉइन के लिए माइनिंग रिटर्न दिखाता रहा जिसकी माइनिंग होती ही नहीं।',
         items: [
@@ -889,6 +941,19 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     heading: 'Что нового',
     subtitle: 'Последние обновления, новые калькуляторы и улучшения CryptoCalk.',
     updates: [
+      {
+        date: '2026-09-10',
+        dateLabel: '10 сентября 2026',
+        title: 'Майнинг-свитчер: вместо наших оценок — реальные данные сетей, и рейтинг снова изменился',
+        body: 'Сегодня утром мы обновили цены монет в мульти-коин майнинг-свитчере. Это исправило, сколько монеты стоят, но не тронуло другое: <strong>сколько монет ваше оборудование реально добывает за день</strong>. Эти величины были проставлены вручную, а не измерены, и когда мы наконец сверили их с живыми сетями, расхождение оказалось от 1,4 раза до примерно 500 раз.',
+        items: [
+          'То есть страница по-прежнему советовала не ту монету. Теперь мы вывели эти величины из самих сетей — из реальной сложности каждой цепи и её реальной дневной эмиссии, прочитанных из двух независимых источников для каждой. <strong>Лучшая монета для видеокарты — на самом деле Ravencoin, а не Ergo</strong>, и раньше она стояла третьей.',
+          'Более важная находка — про Kaspa и Alephium. Обе когда-то были монетами для видеокарт; сегодня в обеих сетях правят специализированные майнинг-машины. Один выделенный майнер Kaspa выполняет примерно в двадцать тысяч раз больше работы, чем топовая видеокарта, поэтому в этих сетях видеокарта зарабатывает <strong>заметно меньше цента в день</strong>, а не почти вровень, как показывали наши прежние цифры. Они остались на странице: увидеть, насколько сильно они отстали, — и есть полезный ответ на вопрос «стоит ли направить карту на Kaspa?».',
+          'Мы также исправили таблицу оборудования: у части видеокарт скорости были подписаны не в тех единицах, а Antminer KS5 значился как 29 TH/s — такой машины не существует. У него 20 TH/s.',
+          'Наконец, мы переписали вопросы и ответы под калькулятором на <strong>всех шести языках</strong>. Они писались отдельно от калькулятора и противоречили и ему, и друг другу: португальская версия обещала видеокарте $1,50–3,00 в день, испанская — $0,80–2,50, а в нескольких Bitcoin по-прежнему стоил $60 000, хотя он около $78 000. Каждое число там теперь взято из тех же измерений, что и калькулятор выше.',
+        ],
+        footer: 'Итог: при $0,10/кВт·ч на этой странице не прибыльно ничего. Видеокарте нужно электричество примерно по 5 центов, Antminer S21 — примерно по 9 центов, KS5 — примерно по 5,5 цента. Все цифры — оценки общего характера, а не финансовая или налоговая консультация.',
+      },
       {
         date: '2026-09-10',
         dateLabel: '10 сентября 2026 г.',

@@ -3026,7 +3026,7 @@ const dict: Record<string, string> = {
   'Distance to stop': 'Расстояние до стопа',
   'Electricity Rate': 'Тариф на электроэнергию',
   'Enter your wallet holdings manually. For live multi-chain pricing, use Zerion, DeBank, or Zapper. This calc tracks net worth and concentration.': 'Введите содержимое кошельков вручную. Для актуальных цен по нескольким сетям используйте Zerion, DeBank или Zapper. Этот калькулятор отслеживает общий капитал и концентрацию.',
-  'Estimates use illustrative network difficulty and prices. Actual yields fluctuate hourly with difficulty, price, and network share.': 'В оценках используются иллюстративные значения сложности сети и цен. Фактическая доходность меняется ежечасно вместе со сложностью, ценой и долей в сети.',
+  'Estimates use a dated snapshot of network difficulty and prices, not live quotes. Actual yields fluctuate hourly with difficulty, price, and network share.': 'В оценках используется датированный снимок сложности сети и цен, а не биржевые котировки в реальном времени. Фактическая доходность меняется ежечасно вместе со сложностью, ценой и долей в сети.',
   'Excess vs T-bills (4.5%)': 'Превышение над казначейскими векселями (4,5%)',
   'Expected value (EV)': 'Математическое ожидание (EV)',
   'Fees Earned to Date': 'Заработанные комиссии на текущий момент',
