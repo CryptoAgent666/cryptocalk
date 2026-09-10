@@ -115,15 +115,20 @@ EOF
   fi
   echo "==> [4/4] Verifying against the live endpoint…"
   BUNDLE_URL="https://${OTA_HOST}/bundles/${APP_KEY}/${VERSION}.zip"
-  REMOTE_CODE="$(curl -s -o /dev/null -w '%{http_code}' -m 180 "$BUNDLE_URL" || echo 000)"
+  # ota.<domain> sits behind Cloudflare, which edge-caches both the zip URL and the manifest JSON
+  # (seen 2026-09-10: cf-cache-status HIT, age ~19 min, still serving the previous manifest). A plain
+  # GET therefore reads the PREVIOUS publish and fails a good one. Always bust the cache. Devices are
+  # not affected by that cache: updates.php reads the manifest file on the server.
+  CB="cb=$(date +%s)$$"
+  REMOTE_CODE="$(curl -s -o /dev/null -w '%{http_code}' -m 180 "${BUNDLE_URL}?${CB}" || echo 000)"
   if [ "$REMOTE_CODE" != "200" ]; then
     echo "❌ bundle unreachable: $BUNDLE_URL -> HTTP $REMOTE_CODE. NOT published." >&2
     exit 1
   fi
-  REMOTE_MANIFEST="$(curl -s -m 30 "https://${OTA_HOST}/manifest/${APP_KEY}.json" || true)"
+  REMOTE_MANIFEST="$(curl -s -m 30 "https://${OTA_HOST}/manifest/${APP_KEY}.json?${CB}" || true)"
   case "$REMOTE_MANIFEST" in
-    *"\"version\":\"${VERSION}\""*) ;;
-    *) echo "❌ manifest reads: $REMOTE_MANIFEST (expected $VERSION). NOT published." >&2; exit 1 ;;
+    *"\"version\":\"${VERSION}\""*"\"checksum\":\"${CHECKSUM}\""*) ;;
+    *) echo "❌ manifest reads: $REMOTE_MANIFEST (expected $VERSION / $CHECKSUM). NOT published." >&2; exit 1 ;;
   esac
   echo "✅ [4/4] Published and verified: bundle 200, manifest = $VERSION."
 fi
