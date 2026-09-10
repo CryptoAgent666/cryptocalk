@@ -33,7 +33,7 @@ const HARDWARE = [
 // calibration sat in emission month 48 (44 x 2^-48/12 = 2.75 KAS/block at 10 BPS).
 // Month 52 (since 2026-09-05) pays 2.18267645, so the yield is scaled by exactly
 // 2^(-4/12): 0.0045977 -> 0.0036492. Next step ~2026-10-05 (month 53, 2.06017223)
-// -> 0.0034441, handled by the cryptocalk-kaspa-emission-* scheduled task.
+// -> 0.0034444, handled by the cryptocalk-kaspa-emission-* scheduled task.
 // FLUX removed 2026-09-10: the PoUW v2 hard fork at block 2,020,000 (Oct 2025)
 // ended GPU mining entirely — blocks are produced by FluxNodes (Proof of Nodes).
 // Verified on-chain: the coinbase pays 14 FLUX split across node tiers + dev
