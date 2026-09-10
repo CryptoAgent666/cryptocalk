@@ -102,7 +102,30 @@ put "$BUNDLE" -o ${OTA_FTP_DIR}/bundles/${APP_KEY}/${VERSION}.zip
 put "$TMP/$APP_KEY.json" -o ${OTA_FTP_DIR}/manifest/${APP_KEY}.json
 bye
 EOF
-  echo "==> [4/4] Published."
+  LFTP_RC=$?
+
+  # lftp can fail every transfer and still land us here. On a flaky host it does:
+  # 2026-09-10 a 27M bundle never arrived while this script printed "Published" and
+  # exited 0 — indistinguishable from success for anything downstream. Never announce
+  # a publish that has not been confirmed against the live endpoint.
+  OTA_HOST="${OTA_FTP_DIR%%/*}"
+  if [ "$LFTP_RC" -ne 0 ]; then
+    echo "❌ [4/4] lftp exited $LFTP_RC — bundle NOT published." >&2
+    exit 1
+  fi
+  echo "==> [4/4] Verifying against the live endpoint…"
+  BUNDLE_URL="https://${OTA_HOST}/bundles/${APP_KEY}/${VERSION}.zip"
+  REMOTE_CODE="$(curl -s -o /dev/null -w '%{http_code}' -m 180 "$BUNDLE_URL" || echo 000)"
+  if [ "$REMOTE_CODE" != "200" ]; then
+    echo "❌ bundle unreachable: $BUNDLE_URL -> HTTP $REMOTE_CODE. NOT published." >&2
+    exit 1
+  fi
+  REMOTE_MANIFEST="$(curl -s -m 30 "https://${OTA_HOST}/manifest/${APP_KEY}.json" || true)"
+  case "$REMOTE_MANIFEST" in
+    *"\"version\":\"${VERSION}\""*) ;;
+    *) echo "❌ manifest reads: $REMOTE_MANIFEST (expected $VERSION). NOT published." >&2; exit 1 ;;
+  esac
+  echo "✅ [4/4] Published and verified: bundle 200, manifest = $VERSION."
 fi
 
 rm -rf "$TMP"
