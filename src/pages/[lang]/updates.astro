@@ -38,6 +38,18 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     subtitle: 'Últimas actualizaciones, nuevas calculadoras y mejoras en CryptoCalk.',
     updates: [
       {
+        date: '2026-09-10',
+        dateLabel: '10 de septiembre de 2026',
+        title: 'Selector de minería: Flux eliminado y todos los precios actualizados',
+        body: 'Nuestro selector de minería multi-moneda seguía ofreciendo <strong>Flux (FLUX)</strong> como una moneda minable con tarjeta gráfica. No lo es. Flux dejó de usar tarjetas gráficas por completo en octubre de 2025, cuando una actualización de red pasó la producción de bloques a sus propios operadores de nodos. Lo quitamos entonces de la calculadora de minería GPU, pero esta segunda calculadora se nos pasó, y siguió mostrando un rendimiento de minería para una moneda que ya no se mina.',
+        items: [
+          'Lo verificamos antes de tocar nada, por tres vías: las notas de la versión del software de Flux, el anuncio del propio proyecto, y la cadena de bloques de Flux, donde cada bloque paga ya únicamente a operadores de nodos y nada a un minero.',
+          'La misma revisión destapó algo mayor: <strong>todos los precios de esta calculadora eran de finales de mayo de 2026 y nunca se habían actualizado</strong>. Uno de ellos, Alephium, estaba 34 veces por encima de su precio real.',
+          'Como esta página existe para <em>ordenar</em> monedas entre sí, los precios caducados no solo inflaban las cifras: colocaban las monedas <strong>en el orden equivocado</strong>. La página recomendaba Kaspa y situaba Alephium en segundo lugar, cuando en realidad Ergo va primera y Alephium última.',
+        ],
+        footer: 'Todos los precios están actualizados y cada uno se contrastó con dos fuentes de mercado independientes. También corregimos el rendimiento de Kaspa por las cuatro reducciones mensuales de recompensa ocurridas desde mayo. El resultado honesto es menos alegre que antes: a 10 céntimos por kWh, <strong>ninguna tarjeta gráfica de esta página cubre hoy su propia factura eléctrica</strong>, así que el ranking muestra con cuál pierdes menos. Reescribimos los textos que prometían rendimientos «claramente positivos» para que coincidan. Para que esto no vuelva a pasar desapercibido, la calculadora indica ahora la fecha de su última actualización de precios y hemos añadido estos valores al registro público de nuestra <a href="/es/methodology/">metodología</a>. Todas las cifras son estimaciones de carácter general, no asesoramiento financiero ni fiscal.',
+      },
+      {
         date: '2026-09-05',
         dateLabel: '5 de septiembre de 2026',
         title: 'El escalón mensual de Kaspa: estimaciones de minería actualizadas a 2,18267645 KAS',
@@ -238,6 +250,18 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     heading: 'Novidades',
     subtitle: 'Últimas atualizações, novas calculadoras e melhorias no CryptoCalk.',
     updates: [
+      {
+        date: '2026-09-10',
+        dateLabel: '10 de setembro de 2026',
+        title: 'Seletor de mineração: Flux removido e todos os preços atualizados',
+        body: 'Nosso seletor de mineração multi-moeda ainda oferecia <strong>Flux (FLUX)</strong> como uma moeda minerável com placa de vídeo. Não é. O Flux deixou de usar placas de vídeo por completo em outubro de 2025, quando uma atualização de rede passou a produção de blocos aos seus próprios operadores de nós. Removemos o Flux da calculadora de mineração GPU na época, mas esta segunda calculadora passou despercebida e continuou a mostrar um rendimento de mineração para uma moeda que já não tem mineração alguma.',
+        items: [
+          'Conferimos antes de mudar qualquer coisa, por três caminhos: as notas de versão do software do Flux, o anúncio do próprio projeto, e a própria blockchain do Flux, onde cada bloco agora paga somente a operadores de nós e nada a um minerador.',
+          'A mesma revisão revelou um problema maior: <strong>todos os preços desta calculadora eram do fim de maio de 2026 e nunca haviam sido atualizados</strong>. Um deles, Alephium, estava 34 vezes acima do preço real.',
+          'Como esta página existe para <em>ordenar</em> moedas entre si, preços defasados não apenas inflavam os números: colocavam as moedas <strong>na ordem errada</strong>. A página recomendava Kaspa e punha Alephium em segundo, quando na verdade Ergo é a primeira e Alephium a última.',
+        ],
+        footer: 'Todos os preços estão atualizados e cada um foi conferido em duas fontes de mercado independentes. Também corrigimos o rendimento do Kaspa pelas quatro reduções mensais de recompensa ocorridas desde maio. O resultado honesto é menos animador que antes: a 10 centavos por kWh, <strong>nenhuma placa de vídeo desta página cobre hoje a própria conta de energia</strong>, então o ranking mostra com qual você perde menos. Reescrevemos os textos que prometiam retornos «claramente positivos» para corresponder. Para que isso não passe batido de novo, a calculadora agora mostra a data da última atualização de preços e adicionamos esses valores ao registro público da nossa <a href="/pt/methodology/">metodologia</a>. Todos os números são estimativas de caráter geral, não aconselhamento financeiro ou fiscal.',
+      },
       {
         date: '2026-09-05',
         dateLabel: '5 de setembro de 2026',
@@ -440,6 +464,18 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     subtitle: 'En son güncellemeler, yeni hesap makineleri ve CryptoCalk iyileştirmeleri.',
     updates: [
       {
+        date: '2026-09-10',
+        dateLabel: '10 Eylül 2026',
+        title: 'Madencilik seçici: Flux kaldırıldı ve tüm fiyatlar güncellendi',
+        body: 'Çoklu coin madencilik seçicimiz hâlâ <strong>Flux (FLUX)</strong> coinini ekran kartıyla çıkarılabilir gibi gösteriyordu. Çıkarılamıyor. Flux, Ekim 2025 tarihli bir ağ yükseltmesiyle blok üretimini kendi düğüm işletmecilerine devrettiğinde ekran kartı kullanımını tamamen bıraktı. Flux o zaman GPU madencilik hesaplayıcımızdan kaldırıldı, ama bu ikinci hesaplayıcı gözden kaçtı ve artık hiç madenciliği olmayan bir coin için getiri göstermeye devam etti.',
+        items: [
+          'Hiçbir şeye dokunmadan önce üç yoldan doğruladık: Flux yazılımının sürüm notları, projenin kendi duyurusu ve Flux blok zincirinin kendisi. Zincirde her blok artık yalnızca düğüm işletmecilerine ödeme yapıyor, madenciye hiçbir şey gitmiyor.',
+          'Aynı inceleme daha büyük bir sorunu ortaya çıkardı: <strong>bu hesaplayıcıdaki tüm fiyatlar Mayıs 2026 sonundan kalmaydı ve hiç yenilenmemişti</strong>. Bunlardan biri, Alephium, gerçek fiyatının 34 katıydı.',
+          'Bu sayfanın amacı coinleri birbirine göre <em>sıralamak</em> olduğundan, eski fiyatlar sadece rakamları şişirmiyordu: coinleri <strong>yanlış sıraya</strong> koyuyordu. Sayfa Kaspa öneriyor ve Alephium\'u ikinci sıraya koyuyordu; oysa gerçekte Ergo birinci, Alephium sonuncu.',
+        ],
+        footer: 'Tüm fiyatlar yenilendi ve her biri iki bağımsız piyasa kaynağıyla karşılaştırıldı. Kaspa\'nın getirisini de mayıstan bu yana gerçekleşen dört aylık ödül azalması için düzelttik. Dürüst sonuç eskisinden daha az sevindirici: kWh başına 10 sentte <strong>bu sayfadaki hiçbir ekran kartı kendi elektrik faturasını karşılamıyor</strong>, bu yüzden sıralama artık hangisinin en az kaybettirdiğini gösteriyor. «Açıkça pozitif» getiri vaat eden çevre metinleri de buna göre yeniden yazdık. Bunun bir daha gözden kaçmaması için hesaplayıcı fiyatların en son ne zaman yenilendiğini gösteriyor ve bu değerleri <a href="/tr/methodology/">metodoloji</a> sayfamızdaki kamuya açık kayda ekledik. Tüm rakamlar genel bilgi amaçlı tahminlerdir; finansal veya vergi tavsiyesi değildir.',
+      },
+      {
         date: '2026-09-05',
         dateLabel: '5 Eylül 2026',
         title: 'Kaspa\'nın aylık ödül basamağı: madencilik tahminleri 2,18267645 KAS\'a güncellendi',
@@ -641,6 +677,18 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     subtitle: 'नवीनतम अपडेट, नए कैलकुलेटर और CryptoCalk में सुधार।',
     updates: [
       {
+        date: '2026-09-10',
+        dateLabel: '10 सितंबर 2026',
+        title: 'माइनिंग स्विचर: Flux हटाया गया और सभी कीमतें अपडेट',
+        body: 'हमारा मल्टी-कॉइन माइनिंग स्विचर अब भी <strong>Flux (FLUX)</strong> को ग्राफ़िक्स कार्ड से माइन होने वाला कॉइन बता रहा था। ऐसा नहीं है। अक्टूबर 2025 में एक नेटवर्क अपग्रेड ने ब्लॉक बनाने का काम Flux के अपने नोड ऑपरेटरों को सौंप दिया, और तभी से ग्राफ़िक्स कार्ड का उपयोग पूरी तरह बंद हो गया। तब हमने Flux को अपने GPU माइनिंग कैलकुलेटर से हटा दिया था, पर यह दूसरा कैलकुलेटर छूट गया और उस कॉइन के लिए माइनिंग रिटर्न दिखाता रहा जिसकी माइनिंग होती ही नहीं।',
+        items: [
+          'कुछ भी बदलने से पहले हमने तीन तरीकों से पुष्टि की: Flux सॉफ़्टवेयर के रिलीज़ नोट्स, प्रोजेक्ट की अपनी घोषणा, और खुद Flux ब्लॉकचेन, जहाँ अब हर ब्लॉक केवल नोड ऑपरेटरों को भुगतान करता है और माइनर को कुछ नहीं।',
+          'इसी समीक्षा में एक बड़ी समस्या मिली: <strong>इस कैलकुलेटर की सभी कीमतें मई 2026 के अंत की थीं और कभी अपडेट नहीं हुई थीं</strong>। इनमें से एक, Alephium, अपनी असली कीमत से 34 गुना ज़्यादा थी।',
+          'चूँकि इस पेज का काम कॉइनों को आपस में <em>क्रम</em> देना है, पुरानी कीमतों ने केवल आँकड़े नहीं बढ़ाए — उन्होंने कॉइनों को <strong>गलत क्रम</strong> में रखा। पेज Kaspa की सलाह देता था और Alephium को दूसरे स्थान पर रखता था, जबकि असल में Ergo पहले और Alephium आख़िरी है।',
+        ],
+        footer: 'सभी कीमतें अब अपडेट हैं और हर एक को दो स्वतंत्र बाज़ार स्रोतों से मिलाया गया। मई के बाद हुई चार मासिक रिवॉर्ड कटौतियों के लिए Kaspa का रिटर्न भी ठीक किया गया। ईमानदार नतीजा पहले से कम सुखद है: 10 सेंट प्रति kWh पर <strong>इस पेज का कोई भी ग्राफ़िक्स कार्ड फ़िलहाल अपना बिजली बिल नहीं निकाल पाता</strong>, इसलिए रैंकिंग अब दिखाती है कि किसमें सबसे कम नुकसान है। «स्पष्ट रूप से पॉज़िटिव» रिटर्न का वादा करने वाले आसपास के विवरण भी हमने इसी के अनुसार दोबारा लिखे। आगे यह छूट न जाए, इसके लिए कैलकुलेटर अब बताता है कि कीमतें आख़िरी बार कब अपडेट हुईं, और ये मान हमारे <a href="/hi/methodology/">मेथडोलॉजी</a> पेज के सार्वजनिक रजिस्टर में जोड़ दिए गए हैं। सभी आँकड़े सामान्य जानकारी के अनुमान हैं, वित्तीय या कर सलाह नहीं।',
+      },
+      {
         date: '2026-09-05',
         dateLabel: '5 सितंबर 2026',
         title: 'Kaspa का मासिक रिवॉर्ड चरण: माइनिंग अनुमान 2.18267645 KAS पर अपडेट',
@@ -841,6 +889,18 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     heading: 'Что нового',
     subtitle: 'Последние обновления, новые калькуляторы и улучшения CryptoCalk.',
     updates: [
+      {
+        date: '2026-09-10',
+        dateLabel: '10 сентября 2026 г.',
+        title: 'Переключатель майнинга: Flux убран, все цены обновлены',
+        body: 'Наш мультимонетный переключатель майнинга всё ещё предлагал <strong>Flux (FLUX)</strong> как монету, которую можно майнить видеокартой. Нельзя. Flux полностью отказался от видеокарт ещё в октябре 2025 года, когда обновление сети передало производство блоков собственным операторам узлов. Тогда мы убрали Flux из калькулятора GPU-майнинга, но этот второй калькулятор пропустили — и он продолжал показывать доходность майнинга для монеты, которую никто не майнит.',
+        items: [
+          'Перед тем как что-то менять, мы перепроверили это тремя способами: примечания к выпуску программного обеспечения Flux, объявление самого проекта и сам блокчейн Flux, где каждый блок теперь платит только операторам узлов и ничего — майнеру.',
+          'Та же проверка вскрыла проблему покрупнее: <strong>все цены монет в этом калькуляторе остались с конца мая 2026 года и ни разу не обновлялись</strong>. Одна из них, Alephium, была завышена в 34 раза.',
+          'Поскольку смысл этой страницы — <em>ранжировать</em> монеты между собой, устаревшие цены не просто завышали цифры: они ставили монеты <strong>в неверном порядке</strong>. Страница советовала Kaspa и ставила Alephium на второе место, тогда как на деле первая — Ergo, а Alephium последняя.',
+        ],
+        footer: 'Все цены обновлены, и каждая сверена с двумя независимыми рыночными источниками. Мы также скорректировали доходность Kaspa на четыре ежемесячных снижения награды, произошедших с мая. Честный результат менее приятен, чем прежде: при 10 центах за кВт·ч <strong>ни одна видеокарта на этой странице сейчас не окупает собственный счёт за электричество</strong>, поэтому рейтинг показывает, где потери меньше. Тексты вокруг, обещавшие «явно положительную» доходность, переписаны соответственно. Чтобы это больше не проходило незамеченным, калькулятор теперь показывает дату последнего обновления цен, а сами значения добавлены в публичный реестр на странице <a href="/ru/methodology/">методологии</a>. Все цифры — оценки общего характера, а не финансовая или налоговая консультация.',
+      },
       {
         date: '2026-09-05',
         dateLabel: '5 сентября 2026 года',

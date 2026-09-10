@@ -3141,6 +3141,7 @@ const dict: Record<string, string> = {
   'Unprofitable at this rate': 'इस दर पर लाभहीन',
   'Whale tier': 'व्हेल टियर',
   'Flat / no change': 'स्थिर / कोई बदलाव नहीं',
+  'Coin prices are a reference snapshot, not live quotes': 'कॉइन कीमतें एक संदर्भ स्नैपशॉट हैं, लाइव भाव नहीं',
 };
 
 _registerLang('hi', dict);

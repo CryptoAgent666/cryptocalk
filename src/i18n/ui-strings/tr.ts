@@ -3140,6 +3140,7 @@ const dict: Record<string, string> = {
   'Unprofitable at this rate': 'Bu oranda kârsız',
   'Whale tier': 'Balina seviyesi',
   'Flat / no change': 'Sabit / değişim yok',
+  'Coin prices are a reference snapshot, not live quotes': 'Coin fiyatları referans anlık görüntüdür, canlı kotasyon değildir',
 };
 
 _registerLang('tr', dict);

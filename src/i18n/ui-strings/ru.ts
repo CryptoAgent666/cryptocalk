@@ -3172,6 +3172,7 @@ const dict: Record<string, string> = {
   'Unprofitable at this rate': 'Убыточно при этой ставке',
   'Whale tier': 'Уровень кита',
   'Flat / no change': 'Без изменений',
+  'Coin prices are a reference snapshot, not live quotes': 'Цены монет — справочный срез, а не живые котировки',
 };
 
 _registerLang('ru', dict);

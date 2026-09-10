@@ -92,7 +92,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "mev-calculator": "2026-08-25",
   "millionaire-calculator": "2026-08-25",
   "mining-calculator": "2026-08-25",
-  "mining-coin-switcher-calculator": "2026-08-25",
+  "mining-coin-switcher-calculator": "2026-09-10",
   "mining-roi-calculator": "2026-08-25",
   "mstr-mnav-calculator": "2026-08-25",
   "nft-profit-calculator": "2026-08-25",

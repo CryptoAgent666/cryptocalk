@@ -19,7 +19,7 @@ const webPageSchema = {
   description: 'See what\'s new on CryptoCalk, new calculators, features, and improvements to our free crypto calculator suite.',
   url: 'https://cryptocalk.com/updates/',
   inLanguage: 'en',
-  dateModified: '2026-09-05T00:00:00+00:00',
+  dateModified: '2026-09-10T00:00:00+00:00',
 };
 ---
 
@@ -36,6 +36,21 @@ const webPageSchema = {
     </header>
 
     <div class="updates-content">
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-09-10">September 10, 2026</time>
+        </div>
+        <h2>Mining Coin Switcher: Flux Removed and Every Coin Price Refreshed</h2>
+        <p>Our multi-coin mining switcher was still offering <strong>Flux (FLUX)</strong> as a coin you could mine with a graphics card. You cannot. Flux stopped using graphics cards entirely back in October 2025, when a network upgrade handed block production over to its own node operators. We removed Flux from our GPU mining calculator at the time, but this second calculator was missed — so it kept quoting a mining yield for a coin that no longer has any mining.</p>
+        <p>We re-checked before changing anything, and confirmed it three ways: the Flux software release notes, the project's own announcement, and the Flux blockchain itself, where each block now pays out purely to node operators with nothing going to a miner.</p>
+        <p>The same review turned up a bigger problem. <strong>Every coin price in this calculator was left over from late May 2026 and had never been refreshed.</strong> Prices had fallen a long way since — one coin, Alephium, was priced 34 times too high. Because the whole point of this page is to rank coins against each other, stale prices did not just make the numbers too big, they put the coins <strong>in the wrong order</strong>: the page recommended Kaspa and ranked Alephium second, when in fact Ergo ranks first and Alephium ranks last.</p>
+        <p>All prices are now refreshed and were each checked against two independent market sources. We also corrected Kaspa's yield for the four monthly reward reductions that had happened since May. The honest result is less cheerful than before: at 10 cents per kWh, <strong>no graphics card on this page currently covers its own electricity bill</strong>, so the ranking now shows which coin loses you the least. We rewrote the surrounding explanations, which had promised "clearly positive" returns, to match.</p>
+        <p>To make this harder to miss in future, the calculator now shows the date its prices were last refreshed, and we have added these values to the public register on our <a href="/methodology/">methodology page</a>.</p>
+        <p>All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+
+      <div class="divider"></div>
 
       <article class="update-entry">
         <div class="update-date">

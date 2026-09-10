@@ -4,27 +4,46 @@ import { Cpu, Info, RotateCcw, Pickaxe } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 import { loc } from '../i18n/format';
 
-// Hash values + dailyPerHash constants are calibrated so a RTX 4090 at $0.10/kWh
-// lands near break-even on the best coin (realistic GPU mining economics in 2026),
-// and ASICs (S21/KS5) show clearly positive returns. ASIC hash values are scaled
-// to the same per-hash reward constant (NOT raw Th/s) so the linear model stays
-// realistic — see "illustrative network difficulty" disclaimer.
+// Illustrative model constants — NOT live data and NOT protocol constants.
+// `dailyPerHash` folds network difficulty + block reward into a single tuned
+// per-hash yield, and `price` is a hand-refreshed spot snapshot. Neither is
+// fetched at runtime, so the UI labels the prices as a dated snapshot rather
+// than presenting them as live quotes. ASIC hash values are scaled to the same
+// per-hash reward constant (NOT raw Th/s) so the linear model stays coherent.
+//
+// Prices re-checked 2026-09-10, two independent sources each (CoinGecko +
+// Binance/KuCoin/CoinPaprika). The previous values dated from the 2026-05-29
+// calibration and had drifted badly — ALPH alone was overstated 34x — which
+// inverted the coin ranking this calculator exists to produce.
+// NOTE: the older "calibrated so a RTX 4090 lands near break-even" premise was
+// dropped with those prices. At real 2026 prices a 4090 at $0.10/kWh loses
+// ~$0.85/day on the best coin, and the model now says so.
+const PRICE_SNAPSHOT = '2026-09-10';
+
 const HARDWARE = [
-  { id: 'rtx-4090', label: 'RTX 4090', power: '450', hashes: { kaspa: '1450', ravencoin: '70', ergo: '320', flux: '90', alephium: '12' } },
-  { id: 'rtx-4080', label: 'RTX 4080', power: '320', hashes: { kaspa: '1100', ravencoin: '52', ergo: '240', flux: '70', alephium: '9' } },
-  { id: 'rtx-3090', label: 'RTX 3090', power: '350', hashes: { kaspa: '900', ravencoin: '50', ergo: '200', flux: '60', alephium: '7' } },
-  { id: 'rtx-3080', label: 'RTX 3080', power: '320', hashes: { kaspa: '650', ravencoin: '45', ergo: '180', flux: '50', alephium: '6' } },
+  { id: 'rtx-4090', label: 'RTX 4090', power: '450', hashes: { kaspa: '1450', ravencoin: '70', ergo: '320', alephium: '12' } },
+  { id: 'rtx-4080', label: 'RTX 4080', power: '320', hashes: { kaspa: '1100', ravencoin: '52', ergo: '240', alephium: '9' } },
+  { id: 'rtx-3090', label: 'RTX 3090', power: '350', hashes: { kaspa: '900', ravencoin: '50', ergo: '200', alephium: '7' } },
+  { id: 'rtx-3080', label: 'RTX 3080', power: '320', hashes: { kaspa: '650', ravencoin: '45', ergo: '180', alephium: '6' } },
   { id: 'antminer-s21', label: 'Antminer S21 (BTC)', power: '3500', hashes: { bitcoin: '200' } },
   { id: 'antminer-ks5', label: 'Antminer KS5 (KAS)', power: '3000', hashes: { kaspa: '29000' } },
 ] as const;
 
+// KAS dailyPerHash tracks Kaspa's monthly "chromatic halving": the 2026-05-29
+// calibration sat in emission month 48 (44 x 2^-48/12 = 2.75 KAS/block at 10 BPS).
+// Month 52 (since 2026-09-05) pays 2.18267645, so the yield is scaled by exactly
+// 2^(-4/12): 0.0045977 -> 0.0036492. Next step ~2026-10-05 (month 53, 2.06017223)
+// -> 0.0034441, handled by the cryptocalk-kaspa-emission-* scheduled task.
+// FLUX removed 2026-09-10: the PoUW v2 hard fork at block 2,020,000 (Oct 2025)
+// ended GPU mining entirely — blocks are produced by FluxNodes (Proof of Nodes).
+// Verified on-chain: the coinbase pays 14 FLUX split across node tiers + dev
+// fund with no miner output at all. Same removal as GpuMiningCalculator (2026-06-30).
 const COINS = [
-  { id: 'bitcoin', label: 'BTC', algo: 'SHA-256', price: '100000', dailyPerHash: 0.00000045, hashUnit: 'TH/s' },
-  { id: 'kaspa', label: 'KAS', algo: 'kHeavyHash', price: '0.18', dailyPerHash: 0.0045977, hashUnit: 'GH/s' },
-  { id: 'ravencoin', label: 'RVN', algo: 'KAWPOW', price: '0.022', dailyPerHash: 0.616883, hashUnit: 'MH/s' },
-  { id: 'ergo', label: 'ERG', algo: 'Autolykos', price: '1.10', dailyPerHash: 0.0029830, hashUnit: 'GH/s' },
-  { id: 'flux', label: 'FLUX', algo: 'ZelHash', price: '0.65', dailyPerHash: 0.0145299, hashUnit: 'sol/s' },
-  { id: 'alephium', label: 'ALPH', algo: 'Blake3', price: '1.85', dailyPerHash: 0.0495495, hashUnit: 'GH/s' },
+  { id: 'bitcoin', label: 'BTC', algo: 'SHA-256', price: '78000', dailyPerHash: 0.00000045, hashUnit: 'TH/s' },
+  { id: 'kaspa', label: 'KAS', algo: 'kHeavyHash', price: '0.036', dailyPerHash: 0.0036492, hashUnit: 'GH/s' },
+  { id: 'ravencoin', label: 'RVN', algo: 'KAWPOW', price: '0.0030', dailyPerHash: 0.616883, hashUnit: 'MH/s' },
+  { id: 'ergo', label: 'ERG', algo: 'Autolykos', price: '0.25', dailyPerHash: 0.0029830, hashUnit: 'GH/s' },
+  { id: 'alephium', label: 'ALPH', algo: 'Blake3', price: '0.054', dailyPerHash: 0.0495495, hashUnit: 'GH/s' },
 ] as const;
 
 function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {
@@ -71,7 +90,12 @@ function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {
     const best = coinResults[0];
     const second = coinResults[1];
     const advantage = second ? best.dailyNet - second.dailyNet : 0;
+    // A percentage is only meaningful against a positive baseline: when the #2 coin is itself
+    // losing money, `advantage / second.dailyNet` flips sign and reads as nonsense. The old guard
+    // returned 0, which printed a flat "(0.0%)" next to a real dollar advantage — worse than
+    // printing nothing. Track whether the ratio is meaningful and omit it when it is not.
     const advantagePct = second && second.dailyNet > 0 ? (advantage / second.dailyNet) * 100 : 0;
+    const advantagePctMeaningful = !!second && second.dailyNet > 0;
 
     let zone: 'profit' | 'neutral' | 'loss' = 'neutral';
     let rating = '';
@@ -82,7 +106,7 @@ function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {
 
     return {
       dailyKwh, dailyElectricity, coinResults, best, second, advantage, advantagePct,
-      zone, rating, hardwareLabel: hw.label,
+      advantagePctMeaningful, zone, rating, hardwareLabel: hw.label,
     };
   }, [hardware, electricityRate, poolFee, efficiency]);
 
@@ -152,6 +176,9 @@ function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {
           <span className="input-hint">
             {getUiString(lang, 'Estimates use illustrative network difficulty and prices. Actual yields fluctuate hourly with difficulty, price, and network share.')}
           </span>
+          <span className="input-hint">
+            {getUiString(lang, 'Coin prices are a reference snapshot, not live quotes')} — {PRICE_SNAPSHOT}
+          </span>
         </div>
 
         <div className="calc-results-panel">
@@ -184,7 +211,11 @@ function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row">
                   <span className="result-label">{getUiString(lang, 'Switching advantage vs #2')}</span>
                   <span className="result-value">
-                    {result.second ? `+${formatUSD(result.advantage)}/day (${result.advantagePct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%)` : '—'}
+                    {result.second
+                      ? `+${formatUSD(result.advantage)}/day${result.advantagePctMeaningful
+                          ? ` (${result.advantagePct.toLocaleString(loc(lang), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%)`
+                          : ''}`
+                      : '—'}
                   </span>
                 </div>
                 <div className="result-divider" />

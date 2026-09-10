@@ -3134,6 +3134,7 @@ const dict: Record<string, string> = {
   'Unprofitable at this rate': 'Não lucrativo nesta tarifa',
   'Whale tier': 'Nível baleia',
   'Flat / no change': 'Estável / sem mudança',
+  'Coin prices are a reference snapshot, not live quotes': 'Os preços das moedas são uma instantânea de referência, não cotações ao vivo',
 };
 
 _registerLang('pt', dict);

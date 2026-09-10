@@ -4,28 +4,28 @@
     "type": "crypto / cross-jurisdiction",
     "generated": "2026-06-23",
     "note": "Audit ledger (NOT imported by site). Regulatory surface = per-country crypto TAX rules + BTC/ETH PROTOCOL consensus facts. The bulk of 131 calculators are formula/market (no regulatory constants). Live values are hardcoded in src/components/*.tsx — apply fixes there.",
-    "total": 101,
+    "total": 108,
     "regulatory": 79,
-    "formula_or_market": 22,
-    "conflicts": 9,
+    "formula_or_market": 29,
+    "conflicts": 0,
     "status_summary": {
-      "current": 78,
-      "removed": 1,
-      "unverified": 22
+      "current": 85,
+      "removed": 2,
+      "unverified": 21
     },
     "themes": {
+      "network": 27,
       "capital_gains": 23,
       "inheritance_tax": 14,
       "block_reward": 12,
-      "network": 8,
+      "staking_protocol": 12,
       "allowance": 7,
-      "income_tax": 4,
+      "income_tax": 5,
       "halving": 4,
-      "staking_protocol": 3,
-      "supply": 1,
       "income_tax_and_capital_gains": 1,
-      "protocol_block_reward_and_issuance": 1,
-      "protocol_dust_limit": 1
+      "supply": 1,
+      "protocol_dust_limit": 1,
+      "protocol_block_reward_and_issuance": 1
     },
     "jurisdictions": {
       "US": 10,
@@ -55,23 +55,23 @@
       "AsicMiningCalculator": 11,
       "HalvingCalculator": 9,
       "ValidatorCalculator": 9,
+      "MiningCoinSwitcherCalculator": 9,
       "GpuMiningCalculator": 6,
-      "MiningCalculator": 4,
       "BitcoinEnergyCalculator": 4,
+      "MiningCalculator": 4,
       "TaxLossHarvestingCalculator": 3,
       "CryptoInheritanceCalculator": 2,
-      "MiningCoinSwitcherCalculator": 2,
-      "RetirementCalculator": 1,
-      "StakingRewardsCalculator": 1,
-      "LiquidStakingCalculator": 1,
-      "RestakingCalculator": 1,
-      "DifficultyEstimatorCalculator": 1,
       "AirdropCalculator": 1,
+      "DustAttackCalculator": 1,
+      "RestakingCalculator": 1,
       "StockToFlowCalculator": 1,
-      "DustAttackCalculator": 1
+      "DifficultyEstimatorCalculator": 1,
+      "LiquidStakingCalculator": 1,
+      "RetirementCalculator": 1,
+      "StakingRewardsCalculator": 1
     },
     "verified_date": "2026-06-23",
-    "last_reconciled": "2026-08-19",
+    "last_reconciled": "2026-09-10",
     "reconcile_note": "16 Tier-2 stale constants re-verified + fixed in .tsx + deployed 2026-06-23 (web + OTA 1.6.4). KAS also updated for Crescendo 10 BPS.",
     "reconcile_note_2026_06_30": "DATA_HUB monitor flagged 9 sources; LLM-verified (workflow) + adversarial. 7 current, 2 stale fixed: KAS 0.2596->2.49 (prior 10x error corrected), FLUX removed (PoUW v2 ended GPU mining Oct 2025). us.brackets ledger synced to 2026. UK note year label refreshed.",
     "reconcile_note_2026_07_06": "DATA_HUB flagged 17 constants. 8 skipped as web-verified 2026-06-30 (BTC 3.125, dust 546, KAS 2.49, au.inheritance 0, eth 32, uk.brackets — protocol/tax unchanged in 4 days). 4 groups (9 constants: US estate, India, Korea, Brazil) LLM+adversarially re-verified — ALL CURRENT, 0 stale. Fixed monitor trap: us.estate_tax_rate source repointed off stale IRS FAQ page to IR-2025-103.",
@@ -80,7 +80,8 @@
     "reconcile_note_2026_07_20": "DATA_HUB flagged 9 → 5 skipped as verified 30.06/06.07 (btc, KAS, au.inheritance, br.itcmd, au.longTerm, es.brackets). 4 genuinely-new (CA inheritance, JP inheritance exemption+rates, JP filing threshold) gov-verified → ALL CURRENT, 0 stale. Sources repointed PwC → gov primaries (laws-lois.justice.gc.ca, nta.go.jp) = also hash-stable for the monitor. Found 3 CODE defects (not staleness): JP exemption ignores heir count; JP rate applied flat w/o 控除額+share split; JP filing-threshold copy misleading. | FOLLOW-UP same day: all 3 JP code defects FIXED + deployed (heir-count input, statutory per-share method w/ 控除額, filing-threshold copy); verified against NTA worked example; changelog added in 6 locales.",
     "reconcile_note_2026_08_02": "Monitor flagged 6 sources → au.brackets skipped (gov-verified 2026-07-06, locked to 1 Jul 2027). 5 groups verified: 3 STALE FIXED (DASH 1.77→0.4426, ZEC 1.5625→1.25, ETC 2.048→1.6384), 2 current (Portugal 28%/365d — first primary-source check vs CIRS; Avalanche 2000 AVAX). SYSTEMIC BUG CLASS FOUND: blockReward fields feed calcDailyCoins as MINER yield, but DASH/ZEC stored the full subsidy → 4x and 25% overstatement. ETC was pure era staleness (era 6 started 22 Jul 2026). Mining sources repointed off bitinfocharts.",
     "reconcile_note_2026_08_19": "Monitor flagged 2 sources / 3 constants (au.brackets; pt.longTermThreshold + pt.short_term_rate) → ALL CURRENT, 0 changes, no .tsx edit, no deploy. AU verified vs ATO 2026–27 resident rates (15c band in force 1 Jul 2026 → 30 Jun 2027; drops to 14c on 1 Jul 2027 as already noted). PT verified for the FIRST time against the consolidated CIRS PDF: art. 72.º n.º 1 al. c) = 28% autonomous rate on the positive mais-valias balance incl. al. k) of art. 10.º n.º 1 (crypto that are not securities), and art. 10.º n.º 22 = gains AND losses excluded when held ≥365 days. Code text current to Lei n.º 26/2026 de 3/06 (a DAC8/CARF reporting-obligations amendment — no rate or holding-period change). BOTH FLAGS WERE PURE NOISE, and worse, both constants are monitor BLIND SPOTS: the render-assist entries hold 242-char (ATO) and 255-char (koinly) bodies — an Akamai \"Access Denied\" page whose rotating Reference #18.caa4c11.<epoch>.<id> is what produced the alert figures 068.178 / 740.286, and a Cloudflare \"Just a moment...\" interstitial whose rotating ray-id flips the txt: hash every cycle. Neither page has ever been hashed with real content. Recommended de-noise: drop source-hash for both (calendar-only — AU keyed to the legislated 1 Jul 2027 step-down, PT to the annual OE window), and teach the monitor to classify sub-~600-char bodies / \"Access Denied\" / \"Just a moment\" as blocked rather than changed (this bug class is fleet-wide, not cryptocalk-specific).",
-    "reconcile_note_2026_09_10": "Monitor calendar flag: 1 market constant (COINS.KAS.blockReward / blockTime), overdue only because the monitor had no per-constant verification stamp and fell back to the 2026-07-20 domain baseline. Re-verified against the Kaspa consensus source: value CURRENT (2.18267645), 0 code changes, no deploy. Source of record upgraded api.kaspa.org → kaspanet/rusty-kaspa coinbase.rs (the rule, not an indexer's report of it); exact month-boundary DAA arithmetic recorded so the next step (month 53, DAA 557,505,000, ~2026-10-05, → 2.06017223) is checkable rather than projected. Monitor config repointed off minerstat (it carried a bogus 'blockReward ~55, blockTime 1') and stamped last_verified=2026-09-10."
+    "reconcile_note_2026_09_10": "Monitor calendar flag: 1 market constant (COINS.KAS.blockReward / blockTime), overdue only because the monitor had no per-constant verification stamp and fell back to the 2026-07-20 domain baseline. Re-verified against the Kaspa consensus source: value CURRENT (2.18267645), 0 code changes, no deploy. Source of record upgraded api.kaspa.org → kaspanet/rusty-kaspa coinbase.rs (the rule, not an indexer's report of it); exact month-boundary DAA arithmetic recorded so the next step (month 53, DAA 557,505,000, ~2026-10-05, → 2.06017223) is checkable rather than projected. Monitor config repointed off minerstat (it carried a bogus 'blockReward ~55, blockTime 1') and stamped last_verified=2026-09-10.",
+    "reconcile_note_2026_09_10b": "MiningCoinSwitcherCalculator inventoried properly (2 -> 9 entries). It had only the bitcoin pair and the S21 hashrate, so the 2026-06-30 fleet-wide FLUX removal never reached it and it kept selling ZelHash GPU mining for 10 months after the chain stopped having any. Also caught by the same gap: every price in the table dated from the 2026-05-29 calibration and had drifted 1.3x-34x, which INVERTED the coin ranking this calculator exists to produce (KAS #1 -> ERG #1; ALPH #2 -> last). NOTE: the previous identity '22 unverified == 22 is_regulatory:false' no longer holds — the new market entries carry a real verified_date because they were genuinely re-read against two independent sources on 2026-09-10."
   },
   "constants": [
     {
@@ -1957,20 +1958,23 @@
       "id": "MiningCoinSwitcherCalculator__COINS.bitcoin (price/dailyPerHash)",
       "calculator": "MiningCoinSwitcherCalculator",
       "key": "COINS.bitcoin (price/dailyPerHash)",
-      "value": "price 100000, dailyPerHash 0.00000045",
+      "value": "price 78000, dailyPerHash 0.00000045",
       "unit": "USD / coin-per-hash-unit per day",
       "jurisdiction": "",
-      "law": "Illustrative model constants (NOT protocol)",
+      "law": "BTC price + per-hash yield (illustrative model constant)",
       "theme": "network",
       "is_regulatory": false,
       "surfaces": [
-        "src/components/MiningCoinSwitcherCalculator.tsx:22-27"
+        "src/components/MiningCoinSwitcherCalculator.tsx:41-47"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-09-10",
       "source_hint": "None — these are deliberately illustrative; not sourced from protocol.",
       "conflict": false,
-      "status": "unverified",
-      "notes": "COINS table here holds NO real protocol constants: 'dailyPerHash' values are explicitly described (header comment lines 7-11) as calibrated/illustrative reward-per-hash constants so a 4090 lands near break-even and ASICs show positive returns — they fold in difficulty+reward+price into one tuned number. Prices are market defaults. The disclaimer (line 153) says 'illustrative network difficulty'. ENTIRE table is is_regulatory=false (market/model). No block reward, halving, or block time encoded."
+      "status": "current",
+      "notes": "COINS table here holds NO real protocol constants: 'dailyPerHash' values are explicitly described (header comment lines 7-11) as calibrated/illustrative reward-per-hash constants so a 4090 lands near break-even and ASICs show positive returns — they fold in difficulty+reward+price into one tuned number. Prices are market defaults. The disclaimer (line 153) says 'illustrative network difficulty'. ENTIRE table is is_regulatory=false (market/model). No block reward, halving, or block time encoded. 2026-09-10: price 100000 -> 78000 (CoinGecko 78,048 / Binance 78,070). dailyPerHash unchanged (BTC subsidy 3.125 until ~2028). This table is NOT live-fetched — the component makes no network call, so these are the figures users actually see.",
+      "official_value": "price 78000, dailyPerHash 0.00000045",
+      "verified_date": "2026-09-10",
+      "verify_method": "two independent market sources (CoinGecko + Binance)"
     },
     {
       "id": "MiningCoinSwitcherCalculator__HARDWARE.antminer-s21.hashes.bitcoin",
@@ -1983,7 +1987,7 @@
       "theme": "network",
       "is_regulatory": false,
       "surfaces": [
-        "src/components/MiningCoinSwitcherCalculator.tsx:17-18"
+        "src/components/MiningCoinSwitcherCalculator.tsx:23-30"
       ],
       "last_updated_hint": null,
       "source_hint": "Bitmain spec sheets.",
@@ -2165,6 +2169,165 @@
       "conflict": false,
       "status": "unverified",
       "notes": "Estimated slash severity. ETH 0.0312 (~1 ETH on a 32 ETH validator = initial slash) gestures at the protocol's ~1 ETH initial penalty, but is encoded as a stake fraction and is an approximation (correlation penalty can reach 100%). is_regulatory=false (estimate)."
+    },
+    {
+      "id": "MiningCoinSwitcherCalculator__COINS.kaspa (price/dailyPerHash)",
+      "calculator": "MiningCoinSwitcherCalculator",
+      "key": "COINS.kaspa (price/dailyPerHash)",
+      "value": "price 0.036, dailyPerHash 0.0036492",
+      "unit": "USD / coin-per-hash-unit per day",
+      "jurisdiction": "",
+      "law": "KAS price + per-hash yield (illustrative; tracks Kaspa monthly emission)",
+      "theme": "network",
+      "is_regulatory": false,
+      "surfaces": [
+        "src/components/MiningCoinSwitcherCalculator.tsx:41-47"
+      ],
+      "last_updated_hint": "2026-09-10",
+      "source_hint": "Kaspa consensus emission table (kaspanet/rusty-kaspa coinbase.rs) for the ratio; price from market sources.",
+      "conflict": false,
+      "status": "current",
+      "notes": "dailyPerHash stepped 0.0045977 -> 0.0036492 on 2026-09-10. The 2026-05-29 calibration sat in Kaspa emission month 48 (44 x 2^-48/12 = 2.75 KAS/block at 10 BPS); month 52 (since 2026-09-05) pays 2.18267645, so the yield is scaled by exactly 2^(-4/12) = 0.7937005. Next step ~2026-10-05 -> month 53 (2.06017223) -> 0.0034441. NOTE: the cryptocalk-kaspa-emission-* scheduled task historically only touched GpuMiningCalculator; a grep for the raw block reward can never match this DERIVED constant, which is why it rotted for 4 months. Task extended 2026-09-10 to cover this file.",
+      "official_value": "price 0.036, dailyPerHash 0.0036492",
+      "source_url": null,
+      "verified_date": "2026-09-10",
+      "verify_method": "two independent market sources (CoinGecko + Binance/KuCoin/CoinPaprika)"
+    },
+    {
+      "id": "MiningCoinSwitcherCalculator__COINS.ravencoin (price/dailyPerHash)",
+      "calculator": "MiningCoinSwitcherCalculator",
+      "key": "COINS.ravencoin (price/dailyPerHash)",
+      "value": "price 0.0030, dailyPerHash 0.616883",
+      "unit": "USD / coin-per-hash-unit per day",
+      "jurisdiction": "",
+      "law": "RVN price + per-hash yield (illustrative model constant)",
+      "theme": "network",
+      "is_regulatory": false,
+      "surfaces": [
+        "src/components/MiningCoinSwitcherCalculator.tsx:41-47"
+      ],
+      "last_updated_hint": "2026-09-10",
+      "source_hint": "Market price snapshot; dailyPerHash is a tuned model constant, not a protocol figure.",
+      "conflict": false,
+      "status": "current",
+      "notes": "Prices are a hand-refreshed spot snapshot, NOT fetched at runtime — the component has no network call, so this is exactly the figure users see. Re-checked 2026-09-10 against two independent sources. The UI labels it as a dated snapshot (PRICE_SNAPSHOT). RVN block reward 1250 unchanged (3rd halving ~Jan 2030); only the price moved.",
+      "official_value": "price 0.0030, dailyPerHash 0.616883",
+      "source_url": null,
+      "verified_date": "2026-09-10",
+      "verify_method": "two independent market sources (CoinGecko + Binance/KuCoin/CoinPaprika)"
+    },
+    {
+      "id": "MiningCoinSwitcherCalculator__COINS.ergo (price/dailyPerHash)",
+      "calculator": "MiningCoinSwitcherCalculator",
+      "key": "COINS.ergo (price/dailyPerHash)",
+      "value": "price 0.25, dailyPerHash 0.0029830",
+      "unit": "USD / coin-per-hash-unit per day",
+      "jurisdiction": "",
+      "law": "ERG price + per-hash yield (illustrative model constant)",
+      "theme": "network",
+      "is_regulatory": false,
+      "surfaces": [
+        "src/components/MiningCoinSwitcherCalculator.tsx:41-47"
+      ],
+      "last_updated_hint": "2026-09-10",
+      "source_hint": "Market price snapshot; dailyPerHash is a tuned model constant, not a protocol figure.",
+      "conflict": false,
+      "status": "current",
+      "notes": "Prices are a hand-refreshed spot snapshot, NOT fetched at runtime — the component has no network call, so this is exactly the figure users see. Re-checked 2026-09-10 against two independent sources. The UI labels it as a dated snapshot (PRICE_SNAPSHOT). ERG tail emission ~3/block unchanged; only the price moved.",
+      "official_value": "price 0.25, dailyPerHash 0.0029830",
+      "source_url": null,
+      "verified_date": "2026-09-10",
+      "verify_method": "two independent market sources (CoinGecko + Binance/KuCoin/CoinPaprika)"
+    },
+    {
+      "id": "MiningCoinSwitcherCalculator__COINS.alephium (price/dailyPerHash)",
+      "calculator": "MiningCoinSwitcherCalculator",
+      "key": "COINS.alephium (price/dailyPerHash)",
+      "value": "price 0.054, dailyPerHash 0.0495495",
+      "unit": "USD / coin-per-hash-unit per day",
+      "jurisdiction": "",
+      "law": "ALPH price + per-hash yield (illustrative model constant)",
+      "theme": "network",
+      "is_regulatory": false,
+      "surfaces": [
+        "src/components/MiningCoinSwitcherCalculator.tsx:41-47"
+      ],
+      "last_updated_hint": "2026-09-10",
+      "source_hint": "Market price snapshot; dailyPerHash is a tuned model constant, not a protocol figure.",
+      "conflict": false,
+      "status": "current",
+      "notes": "Prices are a hand-refreshed spot snapshot, NOT fetched at runtime — the component has no network call, so this is exactly the figure users see. Re-checked 2026-09-10 against two independent sources. The UI labels it as a dated snapshot (PRICE_SNAPSHOT). ALPH price had drifted 34x (1.85 -> 0.054), the largest single error in this table.",
+      "official_value": "price 0.054, dailyPerHash 0.0495495",
+      "source_url": null,
+      "verified_date": "2026-09-10",
+      "verify_method": "two independent market sources (CoinGecko + Binance/KuCoin/CoinPaprika)"
+    },
+    {
+      "id": "MiningCoinSwitcherCalculator__COINS.FLUX (price/dailyPerHash)",
+      "calculator": "MiningCoinSwitcherCalculator",
+      "key": "COINS.FLUX (price/dailyPerHash)",
+      "value": "price 0.65, dailyPerHash 0.0145299",
+      "unit": "USD / coin-per-hash-unit per day",
+      "jurisdiction": "",
+      "law": "FLUX price + per-hash yield — removed (PoUW v2 ended GPU mining)",
+      "theme": "network",
+      "is_regulatory": false,
+      "surfaces": [
+        "src/components/MiningCoinSwitcherCalculator.tsx:41-47"
+      ],
+      "last_updated_hint": null,
+      "source_hint": "fluxd v9.0.0 release notes + RunOnFlux announcement + Flux mainnet coinbase (explorer.runonflux.io).",
+      "conflict": false,
+      "status": "removed",
+      "notes": "Removed 2026-09-10. Flux PoUW v2 hard fork at block 2,020,000 (Oct 2025) ended GPU mining entirely; blocks are produced by FluxNodes (Proof of Nodes). Re-verified 2026-09-10 on three levels: fluxd v9.0.0 release notes ('Activation height (mainnet): 2,020,000', 'No external PoW miners'); the RunOnFlux fork announcement (14 FLUX split 1 Cumulus / 3.5 Nimbus / 9 Stratus / 0.5 dev fund); and the chain itself — at height 2,937,264 the coinbase pays exactly 14 FLUX to those four addresses with NO miner output, block spacing is 30s, and difficulty is ~0.032. Same removal GpuMiningCalculator got on 2026-06-30; this component was missed because it was almost absent from this ledger.",
+      "official_value": "price 0.65, dailyPerHash 0.0145299",
+      "source_url": null
+    },
+    {
+      "id": "MiningCoinSwitcherCalculator__HARDWARE.gpu.hashes",
+      "calculator": "MiningCoinSwitcherCalculator",
+      "key": "HARDWARE.{rtx-4090,rtx-4080,rtx-3090,rtx-3080}.hashes",
+      "value": "RTX 4090: kaspa 1450 / ravencoin 70 / ergo 320 / alephium 12; RTX 4080: 1100/52/240/9; RTX 3090: 900/50/200/7; RTX 3080: 650/45/180/6",
+      "unit": "per-coin hash units (see COINS.hashUnit)",
+      "jurisdiction": "",
+      "law": "GPU per-coin hashrate presets (illustrative, scaled to the model's reward constants)",
+      "theme": "network",
+      "is_regulatory": false,
+      "surfaces": [
+        "src/components/MiningCoinSwitcherCalculator.tsx:23-30"
+      ],
+      "last_updated_hint": "2026-09-10",
+      "source_hint": "Model calibration, not a vendor spec sheet.",
+      "conflict": false,
+      "status": "current",
+      "notes": "flux: entries dropped from all four GPUs on 2026-09-10 alongside the FLUX coin removal. These are NOT raw vendor specs: they are scaled to the same per-hash reward constants as COINS.dailyPerHash so the linear model stays coherent (a real RTX 4090 does ~1.4 GH/s on kHeavyHash, not 1450). Treat as model inputs, never as hardware benchmarks.",
+      "official_value": "RTX 4090: kaspa 1450 / ravencoin 70 / ergo 320 / alephium 12; RTX 4080: 1100/52/240/9; RTX 3090: 900/50/200/7; RTX 3080: 650/45/180/6",
+      "source_url": null,
+      "verified_date": "2026-09-10",
+      "verify_method": "two independent market sources (CoinGecko + Binance/KuCoin/CoinPaprika)"
+    },
+    {
+      "id": "MiningCoinSwitcherCalculator__HARDWARE.antminer-ks5.hashes.kaspa",
+      "calculator": "MiningCoinSwitcherCalculator",
+      "key": "HARDWARE.antminer-ks5.hashes.kaspa",
+      "value": "29000",
+      "unit": "GH/s (nominal)",
+      "jurisdiction": "",
+      "law": "Antminer KS5 nominal hashrate (market spec)",
+      "theme": "network",
+      "is_regulatory": false,
+      "surfaces": [
+        "src/components/MiningCoinSwitcherCalculator.tsx:23-30"
+      ],
+      "last_updated_hint": "2026-09-10",
+      "source_hint": "Bitmain spec sheets.",
+      "conflict": false,
+      "status": "current",
+      "notes": "Bitmain KS5 / KS5 Pro class (20-21 TH/s real). Included so the ASIC row is inventoried; model input.",
+      "official_value": "29000",
+      "source_url": null,
+      "verified_date": "2026-09-10",
+      "verify_method": "two independent market sources (CoinGecko + Binance/KuCoin/CoinPaprika)"
     }
   ]
 }
