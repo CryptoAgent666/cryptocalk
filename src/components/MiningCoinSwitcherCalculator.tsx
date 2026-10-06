@@ -4,48 +4,48 @@ import { Cpu, Info, RotateCcw, Pickaxe } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 import { loc } from '../i18n/format';
 
-// Model constants re-derived from live network state on 2026-09-10. `dailyPerHash`
-// is no longer a tuned figure: it is (daily network emission / network hashrate),
-// so hashRate x dailyPerHash is the real expected coin yield for that hash rate.
-// Prices are a hand-refreshed spot snapshot (still not fetched at runtime), which
-// is why the UI labels them as a dated snapshot rather than a live quote.
+// Model constants re-derived from live network state on 2026-10-06 (first done
+// 2026-09-10). `dailyPerHash` is not a tuned figure: it is (daily network emission
+// / network hashrate), so hashRate x dailyPerHash is the real expected coin yield
+// for that hash rate. Prices are a hand-refreshed spot snapshot (still not fetched
+// at runtime), which is why the UI labels them as a dated snapshot rather than a
+// live quote.
 //
-// Why this was re-derived: the previous constants were calibrated by hand and had
-// drifted apart from the chains by 1.4x (ERG) to ~500x (KAS). Because the page
-// exists to RANK coins, that inverted the ranking - it advertised KAS as the #2
-// GPU coin when a GPU on Kaspa now earns fractions of a cent per day. The net
-// $/day still looked plausible only because at $0.10/kWh the electricity bill
-// swamps every altcoin's revenue.
+// Why this is derived rather than tuned: the pre-September constants were calibrated
+// by hand and had drifted apart from the chains by 1.4x (ERG) to ~500x (KAS). Because
+// the page exists to RANK coins, that inverted the ranking.
 //
-// Network state, two independent reads each (2026-09-10):
-//   BTC  difficulty 127,450,789,715,843 (mempool.space == blockchain.info),
-//        3.125 BTC/block -> 1/(D x 2^32) x 86400 x 3.125 = 4.93247e-7 BTC per TH/s
-//   KAS  hashrate 3.23569e17 H/s (api.kaspa.org; == difficulty 1.6125e16 x 2 x 10 BPS),
-//        2.18267645 KAS/block x 10 BPS x 86400 = 1,885,832 KAS/day -> 0.005828216 per GH/s
-//   RVN  hashrate 628.8 / 655.0 GH/s (whattomine / 2miners), 1250 RVN per 60s block
-//        = 1,800,000 RVN/day -> 2.804003 per MH/s
-//   ERG  hashrate 538.4 / 536.4 GH/s (whattomine / ergoplatform node), 3 ERG per
-//        117s block = 2,215 ERG/day -> 0.004122396 per MH/s
-//   ALPH hashrate 5.19025e15 H/s (alephium backend); emission measured directly from
-//        the supply series, 23,215 / 23,537 / 24,137 ALPH over three days
-//        -> 23,630 ALPH/day -> 0.004552680 per GH/s
+// Network state, two independent reads each (2026-10-06):
+//   BTC  difficulty 132,716,002,350,731 (mempool.space == blockchain.info),
+//        3.125 BTC/block -> 1/(D x 2^32) x 86400 x 3.125 = 4.736752e-7 BTC per TH/s
+//   KAS  hashrate 3.24637e17 H/s (api.kaspa.org/info/hashrate; == difficulty
+//        1.62407e16 x 2 x 10 BPS = 3.24814e17), 2.06017223 KAS/block x 10 BPS x 86400
+//        = 1,779,989 KAS/day -> 0.005483011 per GH/s
+//   RVN  hashrate 711.3 / 716.9 GH/s (whattomine / 2miners node), 1250 RVN per 60s
+//        block = 1,800,000 RVN/day -> 2.520743 per MH/s
+//   ERG  hashrate 534.3 / 546.3 GH/s (whattomine / ergoplatform node), 3 ERG miner
+//        reward per block, 125.6s measured over the last 700 blocks = 2,063 ERG/day
+//        -> 0.003818203 per MH/s
+//   ALPH hashrate 5.61848e15 / 5.22593e15 H/s (explorer backend daily / full node
+//        current, mean 5.42221e15); emission measured off the supply series,
+//        23,966 / 23,992 / 24,057 ALPH over three days -> 24,005 ALPH/day
+//        -> 0.004427129 per GH/s
 //
 // KAS and ALPH are kept in the table precisely because the honest numbers are tiny:
 // both chains are ASIC-dominated (an Antminer KS7 is 40 TH/s against a 4090's
 // 1.79 GH/s), so a GPU earns ~$0.0004/day on Kaspa. Showing that is the useful
-// answer to "should I point my GPU at Kaspa?", and it is three orders of magnitude
-// below Ravencoin - not the near-tie the old constants implied.
+// answer to "should I point my GPU at Kaspa?".
 //
-// KAS tracks Kaspa's monthly "chromatic halving": month 52 (since 2026-09-05) pays
-// 2.18267645/block. Month 53 opens at DAA 557,505,000 (~2026-10-05) -> 2.06017223,
-// which scales dailyPerHash by 2^(-1/12) to 0.005501475 if the hashrate is unchanged
-// - but re-read the hashrate too, since that is now a real input. Handled by the
+// KAS tracks Kaspa's monthly "chromatic halving": month 53 (since DAA 557,505,000,
+// 2026-10-05) pays 2.06017223/block. Month 54 opens at DAA 583,803,000 (~2026-11-04)
+// -> 1.94454365 (consensus table entry 1944543648 sompi / 10 BPS). Re-derive from the
+// hashrate at that point, do not scale this value. Handled by the
 // cryptocalk-kaspa-emission-* scheduled task.
 // FLUX removed 2026-09-10: the PoUW v2 hard fork at block 2,020,000 (Oct 2025)
 // ended GPU mining entirely - blocks are produced by FluxNodes (Proof of Nodes).
 // Verified on-chain: the coinbase pays 14 FLUX split across node tiers + dev
 // fund with no miner output at all. Same removal as GpuMiningCalculator (2026-06-30).
-const PRICE_SNAPSHOT = '2026-09-10';
+const PRICE_SNAPSHOT = '2026-10-06';
 
 // Device hash rates are measured third-party benchmarks, not nameplate figures:
 // minerstat (per-algorithm, updated 2026-08-29) and 2CryptoCalc, averaged where both
@@ -68,11 +68,11 @@ const HARDWARE = [
 ] as const;
 
 const COINS = [
-  { id: 'bitcoin', label: 'BTC', algo: 'SHA-256', price: '78080', dailyPerHash: 0.000000493247, hashUnit: 'TH/s' },
-  { id: 'kaspa', label: 'KAS', algo: 'kHeavyHash', price: '0.036', dailyPerHash: 0.005828216, hashUnit: 'GH/s' },
-  { id: 'ravencoin', label: 'RVN', algo: 'KAWPOW', price: '0.0030', dailyPerHash: 2.804003, hashUnit: 'MH/s' },
-  { id: 'ergo', label: 'ERG', algo: 'Autolykos', price: '0.2483', dailyPerHash: 0.004122396, hashUnit: 'MH/s' },
-  { id: 'alephium', label: 'ALPH', algo: 'Blake3', price: '0.0554', dailyPerHash: 0.004552680, hashUnit: 'GH/s' },
+  { id: 'bitcoin', label: 'BTC', algo: 'SHA-256', price: '85816', dailyPerHash: 0.0000004736752, hashUnit: 'TH/s' },
+  { id: 'kaspa', label: 'KAS', algo: 'kHeavyHash', price: '0.0429', dailyPerHash: 0.005483011, hashUnit: 'GH/s' },
+  { id: 'ravencoin', label: 'RVN', algo: 'KAWPOW', price: '0.00245', dailyPerHash: 2.520743, hashUnit: 'MH/s' },
+  { id: 'ergo', label: 'ERG', algo: 'Autolykos', price: '0.330', dailyPerHash: 0.003818203, hashUnit: 'MH/s' },
+  { id: 'alephium', label: 'ALPH', algo: 'Blake3', price: '0.0739', dailyPerHash: 0.004427129, hashUnit: 'GH/s' },
 ] as const;
 
 function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {

@@ -11,6 +11,10 @@
 // changed the KAS fallback block reward (2.3125 -> 2.18267645), which is rendered on the GPU mining
 // page both in the calculator and in its "Where these numbers come from" block; /updates/ gained a
 // new entry. Both are real rendered-content changes, not a build stamp.
+// 2026-10-06: gpu-mining-calculator, mining-coin-switcher-calculator + updates moved to 2026-10-06.
+// Kaspa emission month 53 (2.18267645 -> 2.06017223) changed the rendered KAS reward on both pages;
+// the switcher's five per-hash yields and prices were re-derived, which moved its results, its FAQ
+// and its "Where these numbers come from" block; /updates/ gained a new entry.
 export const CALCULATOR_UPDATED: Record<string, string> = {
   "404": "2026-05-11",
   "about": "2026-08-25",
@@ -61,7 +65,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "gas-optimization-calculator": "2026-08-25",
   "geometric-mean-return-calculator": "2026-08-25",
   "governance-voting-calculator": "2026-08-25",
-  "gpu-mining-calculator": "2026-09-05",
+  "gpu-mining-calculator": "2026-10-06",
   "grid-trading-calculator": "2026-08-25",
   "gwei-converter": "2026-08-25",
   "halving-calculator": "2026-08-25",
@@ -92,7 +96,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "mev-calculator": "2026-08-25",
   "millionaire-calculator": "2026-08-25",
   "mining-calculator": "2026-08-25",
-  "mining-coin-switcher-calculator": "2026-09-10",
+  "mining-coin-switcher-calculator": "2026-10-06",
   "mining-roi-calculator": "2026-08-25",
   "mstr-mnav-calculator": "2026-08-25",
   "nft-profit-calculator": "2026-08-25",
@@ -142,7 +146,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "treynor-calculator": "2026-08-25",
   "uniswap-calculator": "2026-08-25",
   "unit-converter": "2026-08-25",
-  "updates": "2026-09-05",
+  "updates": "2026-10-06",
   "validator-calculator": "2026-08-25",
   "var-calculator": "2026-08-25",
   "vesting-calculator": "2026-08-25",

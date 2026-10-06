@@ -448,22 +448,22 @@
       "id": "GpuMiningCalculator__COINS.KAS.blockReward / blockTime",
       "calculator": "GpuMiningCalculator",
       "key": "COINS.KAS.blockReward / blockTime",
-      "value": "blockReward 2.18267645, blockTime 0.1",
+      "value": "blockReward 2.06017223, blockTime 0.1",
       "unit": "KAS per block / seconds",
       "jurisdiction": "",
       "law": "Kaspa consensus SUBSIDY_BY_MONTH_TABLE (kHeavyHash, chromatic emission)",
       "theme": "block_reward",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/GpuMiningCalculator.tsx:65"
+        "src/components/GpuMiningCalculator.tsx:68"
       ],
-      "last_updated_hint": "2026-09-10",
-      "verified_date": "2026-09-10",
+      "last_updated_hint": "2026-10-06",
+      "verified_date": "2026-10-06",
       "source_hint": "Kaspa consensus SUBSIDY_BY_MONTH_TABLE (div_ceil by BPS; 10 BPS = 0.1 s since Crescendo). Live figure for the monthly rollover: GET https://api.kaspa.org/info/blockreward. Decays ~5.6%/month by design.",
       "conflict": false,
       "status": "current",
-      "notes": "Re-verified 2026-09-10 (monitor calendar flag, market cadence): value UNCHANGED, no code change, no deploy. This pass upgraded the source of record from the indexer API to the consensus rule itself — kaspanet/rusty-kaspa consensus/src/processes/coinbase.rs, SUBSIDY_BY_MONTH_TABLE[52] = 2182676446 sompi, divided by BPS with div_ceil → 218267645 sompi = 2.18267645 KAS/block exactly, byte-for-byte the applied value. The same file fixes blockTime: Crescendo raised BPS from 1 to 10, so 0.1 s. Confirmed independently on-chain — virtualDaaScore moved 531,389,521 → 535,828,153 between the 2026-09-05 and 2026-09-10 reads, i.e. 10.0 DAA/s. ⚠ CHROMATIC HALVING: Kaspa does not halve — the subsidy steps down by 2^(-1/12) EVERY deflationary month, so any hardcoded fallback is stale within weeks BY DESIGN and no source-hash monitor can ever see it coming. Calendar-only; the live figure is authoritative and this is a dated snapshot. MONTH BOUNDARIES (derived from mainnet params: deflationary_phase_daa_score 15,519,600, crescendo_activation 110,165,000, SECONDS_PER_MONTH 2,629,800): month = ((crescendo−defl)/1 + (daa−crescendo)/10) / 2,629,800. Month 52 opened at DAA 531,207,000 — the 2026-09-05 rollover was read 5.07 h after that boundary, which is what confirms the derivation rather than merely fitting it. Month 53 opens at DAA 557,505,000, ~2026-10-05 03:30 UTC, → 2.06017223 EXACTLY (table entry 2060172230 sompi ÷ 10, not an approximation). Scheduled task cryptocalk-kaspa-emission-2026-10 fires 2026-10-06 04:00 UTC, i.e. ~24 h after the step — verify-first, correct. The whole subsidy goes to the miner (no dev fund, no masternodes), so the figure is used AS IS — NOT divided, unlike DASH. Live cross-check endpoint: GET https://api.kaspa.org/info/blockreward (returned 2.18267645 on 2026-09-10; block height 1,236,959 headers, virtualDaaScore 535,828,153). Prior entry: applied 2026-09-05 from api.kaspa.org, replacing 2.3125 (−5.61%).",
-      "official_value": "blockReward 2.18267645, blockTime 0.1",
+      "notes": "Monthly emission step applied 2026-10-06 (scheduled task cryptocalk-kaspa-emission-2026-10): GET api.kaspa.org/info/blockreward = 2.06017223. Checked against the consensus rule, not a float fit: kaspanet/rusty-kaspa consensus/src/processes/coinbase.rs SUBSIDY_BY_MONTH_TABLE (426 entries) [53] = 2060172230 sompi, div_ceil(10 BPS) = 206017223 sompi = 2.06017223 KAS — digit-for-digit equal to the API. Step confirmed by DAA score, not calendar: virtualDaaScore 558,554,972 (api.kaspa.org/info/network, 2026-10-06 08:38 UTC) is past the month-53 boundary 557,505,000; month = floor(((110165000-15519600) + (558554972-110165000)/10) / 2629800) = 53. Whole subsidy goes to the miner (no dev fund / masternodes), so the figure is used as-is. blockTime 0.1 s = 10 BPS since Crescendo. ⚠ CHROMATIC HALVING: steps down every month. Month 54 opens at DAA 583,803,000 (~2026-11-04 14:00 UTC) -> table 1944543648 sompi / 10 = 1.94454365. Previous: 2.18267645 (month 52, applied 2026-09-05, re-verified 2026-09-10).",
+      "official_value": "blockReward 2.06017223, blockTime 0.1",
       "source_url": "https://raw.githubusercontent.com/kaspanet/rusty-kaspa/master/consensus/src/processes/coinbase.rs"
     },
     {
@@ -1959,7 +1959,7 @@
       "id": "MiningCoinSwitcherCalculator__COINS.bitcoin (price/dailyPerHash)",
       "calculator": "MiningCoinSwitcherCalculator",
       "key": "COINS.bitcoin (price/dailyPerHash)",
-      "value": "price 78080, dailyPerHash 0.000000493247",
+      "value": "price 85816, dailyPerHash 0.0000004736752",
       "unit": "USD / coin-per-hash-unit per day",
       "jurisdiction": "",
       "law": "BTC price + real per-TH/s daily yield (network-derived)",
@@ -1968,14 +1968,15 @@
       "surfaces": [
         "src/components/MiningCoinSwitcherCalculator.tsx:60-75"
       ],
-      "last_updated_hint": "2026-09-10",
+      "last_updated_hint": "2026-10-06",
       "source_hint": "mempool.space + blockchain.info (difficulty); CoinGecko + CoinPaprika (price).",
       "conflict": false,
       "status": "current",
-      "notes": "Derived from measured network state on 2026-09-10, not calibrated: dailyPerHash = daily network emission / network hashrate, so hashRate x dailyPerHash is the real expected coin yield. Two independent reads per chain. Prices cross-checked on CoinGecko + CoinPaprika (agree within 0.3%). BTC: difficulty 127,450,789,715,843 (mempool.space == blockchain.info), 3.125 BTC/block -> 1/(D x 2^32) x 86400 x 3.125 = 4.93247e-7 BTC per TH/s. Previous 4.5e-7 was ~9% low — the only coin the old calibration got close.",
-      "official_value": "price 78080, dailyPerHash 0.000000493247",
-      "verified_date": "2026-09-10",
-      "verify_method": "two independent market sources (CoinGecko + Binance)"
+      "notes": "Re-derived from measured network state on 2026-10-06 (Kaspa month-53 rollover pass): dailyPerHash = daily network emission / network hashrate, two independent hashrate reads per chain; price = CoinGecko cross-checked against CoinPaprika (ERG: whattomine BTC rate x BTC price, CoinPaprika has no ERG ticker). BTC: difficulty 132,716,002,350,731 (mempool.space == blockchain.info), 3.125 BTC/block -> 1/(D x 2^32) x 86400 x 3.125 = 4.736752e-7 BTC per TH/s. Price 85,816 (CoinGecko) / 85,818 (CoinPaprika). Previous 2026-09-10: price 78080, 4.93247e-7.",
+      "official_value": "price 85816, dailyPerHash 0.0000004736752",
+      "verified_date": "2026-10-06",
+      "verify_method": "two independent network reads + two price sources (CoinGecko + CoinPaprika/whattomine)",
+      "source_url": null
     },
     {
       "id": "MiningCoinSwitcherCalculator__HARDWARE.antminer-s21.hashes.bitcoin",
@@ -2176,7 +2177,7 @@
       "id": "MiningCoinSwitcherCalculator__COINS.kaspa (price/dailyPerHash)",
       "calculator": "MiningCoinSwitcherCalculator",
       "key": "COINS.kaspa (price/dailyPerHash)",
-      "value": "price 0.036, dailyPerHash 0.005828216",
+      "value": "price 0.0429, dailyPerHash 0.005483011",
       "unit": "USD / coin-per-hash-unit per day",
       "jurisdiction": "",
       "law": "KAS price + real per-GH/s daily yield (network-derived; tracks monthly emission step)",
@@ -2185,21 +2186,21 @@
       "surfaces": [
         "src/components/MiningCoinSwitcherCalculator.tsx:60-75"
       ],
-      "last_updated_hint": "2026-09-10",
+      "last_updated_hint": "2026-10-06",
       "source_hint": "api.kaspa.org hashrate + difficulty; CoinGecko + CoinPaprika (price).",
       "conflict": false,
       "status": "current",
-      "notes": "Derived from measured network state on 2026-09-10, not calibrated: dailyPerHash = daily network emission / network hashrate, so hashRate x dailyPerHash is the real expected coin yield. Two independent reads per chain. Prices cross-checked on CoinGecko + CoinPaprika (agree within 0.3%). KAS: hashrate 3.23569e17 H/s (api.kaspa.org, corroborated by difficulty 1.6125e16 x 2 x 10 BPS); 2.18267645 KAS/block x 10 BPS x 86400 = 1,885,832 KAS/day -> 0.005828216 per GH/s. The old value overstated a GPU's Kaspa yield by ~500x: at real network state a 4090 (1.79 GH/s) earns ~$0.0004/day because Kaspa is ASIC-dominated (KS7 = 40 TH/s). Month 53 (~2026-10-05) pays 2.06017223 -> scales this by 2^(-1/12) if hashrate is unchanged, but re-read the hashrate too.",
-      "official_value": "price 0.036, dailyPerHash 0.005828216",
+      "notes": "Re-derived from measured network state on 2026-10-06 (Kaspa month-53 rollover pass): dailyPerHash = daily network emission / network hashrate, two independent hashrate reads per chain; price = CoinGecko cross-checked against CoinPaprika (ERG: whattomine BTC rate x BTC price, CoinPaprika has no ERG ticker). KAS: hashrate 3.24637e17 H/s (api.kaspa.org/info/hashrate 324,637 TH/s) vs difficulty 1.62407e16 x 2 x 10 BPS = 3.24814e17 (agree 0.05%); emission 2.06017223 KAS/block (month 53) x 10 BPS x 86400 = 1,779,989 KAS/day -> 0.005483011 per GH/s. Price 0.04292 (CoinGecko) / 0.04293 (CoinPaprika). A 4090 (1.79 GH/s) still earns ~$0.0004/day — Kaspa is ASIC-dominated. Previous 2026-09-10: price 0.036, 0.005828216 (month 52). Month 54 (~2026-11-04, 1.94454365): re-derive from the hashrate then, do not scale.",
+      "official_value": "price 0.0429, dailyPerHash 0.005483011",
       "source_url": null,
-      "verified_date": "2026-09-10",
-      "verify_method": "two independent market sources (CoinGecko + Binance/KuCoin/CoinPaprika)"
+      "verified_date": "2026-10-06",
+      "verify_method": "two independent network reads + two price sources (CoinGecko + CoinPaprika/whattomine)"
     },
     {
       "id": "MiningCoinSwitcherCalculator__COINS.ravencoin (price/dailyPerHash)",
       "calculator": "MiningCoinSwitcherCalculator",
       "key": "COINS.ravencoin (price/dailyPerHash)",
-      "value": "price 0.0030, dailyPerHash 2.804003",
+      "value": "price 0.00245, dailyPerHash 2.520743",
       "unit": "USD / coin-per-hash-unit per day",
       "jurisdiction": "",
       "law": "RVN price + real per-MH/s daily yield (network-derived)",
@@ -2208,21 +2209,21 @@
       "surfaces": [
         "src/components/MiningCoinSwitcherCalculator.tsx:60-75"
       ],
-      "last_updated_hint": "2026-09-10",
+      "last_updated_hint": "2026-10-06",
       "source_hint": "whattomine + 2miners (nethash, block reward); CoinGecko + CoinPaprika (price).",
       "conflict": false,
       "status": "current",
-      "notes": "Derived from measured network state on 2026-09-10, not calibrated: dailyPerHash = daily network emission / network hashrate, so hashRate x dailyPerHash is the real expected coin yield. Two independent reads per chain. Prices cross-checked on CoinGecko + CoinPaprika (agree within 0.3%). RVN: hashrate 628.8 / 655.0 GH/s (whattomine / 2miners), 1250 RVN per 60s block = 1,800,000 RVN/day -> 2.804003 per MH/s. The old value UNDERSTATED this 4.55x, which is why RVN ranked 3rd when it is in fact the best GPU coin on the page.",
-      "official_value": "price 0.0030, dailyPerHash 2.804003",
+      "notes": "Re-derived from measured network state on 2026-10-06 (Kaspa month-53 rollover pass): dailyPerHash = daily network emission / network hashrate, two independent hashrate reads per chain; price = CoinGecko cross-checked against CoinPaprika (ERG: whattomine BTC rate x BTC price, CoinPaprika has no ERG ticker). RVN: hashrate 711.26 GH/s (whattomine nethash) / 716.89 GH/s (2miners node networkhashps), mean 714.08; 1250 RVN per 60s block = 1,800,000 RVN/day -> 2.520743 per MH/s. Price 0.002451 (CoinGecko) / 0.002451 (CoinPaprika). Previous 2026-09-10: price 0.0030, 2.804003.",
+      "official_value": "price 0.00245, dailyPerHash 2.520743",
       "source_url": null,
-      "verified_date": "2026-09-10",
-      "verify_method": "two independent market sources (CoinGecko + Binance/KuCoin/CoinPaprika)"
+      "verified_date": "2026-10-06",
+      "verify_method": "two independent network reads + two price sources (CoinGecko + CoinPaprika/whattomine)"
     },
     {
       "id": "MiningCoinSwitcherCalculator__COINS.ergo (price/dailyPerHash)",
       "calculator": "MiningCoinSwitcherCalculator",
       "key": "COINS.ergo (price/dailyPerHash)",
-      "value": "price 0.2483, dailyPerHash 0.004122396",
+      "value": "price 0.330, dailyPerHash 0.003818203",
       "unit": "USD / coin-per-hash-unit per day",
       "jurisdiction": "",
       "law": "ERG price + real per-MH/s daily yield (network-derived)",
@@ -2231,21 +2232,21 @@
       "surfaces": [
         "src/components/MiningCoinSwitcherCalculator.tsx:60-75"
       ],
-      "last_updated_hint": "2026-09-10",
+      "last_updated_hint": "2026-10-06",
       "source_hint": "whattomine + api.ergoplatform.com (nethash); CoinGecko + CoinPaprika (price).",
       "conflict": false,
       "status": "current",
-      "notes": "Derived from measured network state on 2026-09-10, not calibrated: dailyPerHash = daily network emission / network hashrate, so hashRate x dailyPerHash is the real expected coin yield. Two independent reads per chain. Prices cross-checked on CoinGecko + CoinPaprika (agree within 0.3%). ERG: hashrate 538.4 / 536.4 GH/s (whattomine / ergoplatform node, agreeing to 0.4%), 3 ERG per 117s block = 2,215 ERG/day -> 0.004122396 per MH/s. Old value was 1.4x low.",
-      "official_value": "price 0.2483, dailyPerHash 0.004122396",
+      "notes": "Re-derived from measured network state on 2026-10-06 (Kaspa month-53 rollover pass): dailyPerHash = daily network emission / network hashrate, two independent hashrate reads per chain; price = CoinGecko cross-checked against CoinPaprika (ERG: whattomine BTC rate x BTC price, CoinPaprika has no ERG ticker). ERG: hashrate 534.28 GH/s (whattomine) / 546.32 GH/s (api.ergoplatform.com/info), mean 540.30; miner reward 3 ERG/block (explorer minerReward 3000000000), block interval measured 125.64 s over heights 1,887,865-1,888,565 -> 2,063 ERG/day -> 0.003818203 per MH/s. Price 0.3302 (CoinGecko) / 0.3278 (whattomine 3.8194e-6 BTC x 85,816). Previous 2026-09-10: price 0.2483, 0.004122396.",
+      "official_value": "price 0.330, dailyPerHash 0.003818203",
       "source_url": null,
-      "verified_date": "2026-09-10",
-      "verify_method": "two independent market sources (CoinGecko + Binance/KuCoin/CoinPaprika)"
+      "verified_date": "2026-10-06",
+      "verify_method": "two independent network reads + two price sources (CoinGecko + CoinPaprika/whattomine)"
     },
     {
       "id": "MiningCoinSwitcherCalculator__COINS.alephium (price/dailyPerHash)",
       "calculator": "MiningCoinSwitcherCalculator",
       "key": "COINS.alephium (price/dailyPerHash)",
-      "value": "price 0.0554, dailyPerHash 0.004552680",
+      "value": "price 0.0739, dailyPerHash 0.004427129",
       "unit": "USD / coin-per-hash-unit per day",
       "jurisdiction": "",
       "law": "ALPH price + real per-GH/s daily yield (network-derived)",
@@ -2254,15 +2255,15 @@
       "surfaces": [
         "src/components/MiningCoinSwitcherCalculator.tsx:60-75"
       ],
-      "last_updated_hint": "2026-09-10",
+      "last_updated_hint": "2026-10-06",
       "source_hint": "backend.mainnet.alephium.org (hashrate + supply series); CoinGecko + CoinPaprika (price).",
       "conflict": false,
       "status": "current",
-      "notes": "Derived from measured network state on 2026-09-10, not calibrated: dailyPerHash = daily network emission / network hashrate, so hashRate x dailyPerHash is the real expected coin yield. Two independent reads per chain. Prices cross-checked on CoinGecko + CoinPaprika (agree within 0.3%). ALPH: hashrate 5.19025e15 H/s; emission measured directly off the supply series (23,215 / 23,537 / 24,137 ALPH on three consecutive days) -> 23,630 ALPH/day -> 0.004552680 per GH/s. Old value overstated a GPU's yield ~47x; Alephium is ASIC-dominated too, so a 4090 earns ~$0.0007/day.",
-      "official_value": "price 0.0554, dailyPerHash 0.004552680",
+      "notes": "Re-derived from measured network state on 2026-10-06 (Kaspa month-53 rollover pass): dailyPerHash = daily network emission / network hashrate, two independent hashrate reads per chain; price = CoinGecko cross-checked against CoinPaprika (ERG: whattomine BTC rate x BTC price, CoinPaprika has no ERG ticker). ALPH: hashrate 5.61848e15 H/s (backend.mainnet.alephium.org/charts/hashrates daily) / 5.22593e15 (node.mainnet.alephium.org/infos/current-hashrate), mean 5.42221e15; emission from day-over-day deltas of /infos/supply total: 23,966 / 23,992 / 24,057 ALPH -> 24,005 ALPH/day -> 0.004427129 per GH/s. Price 0.07370 (CoinGecko) / 0.07404 (CoinPaprika). Previous 2026-09-10: price 0.0554, 0.004552680.",
+      "official_value": "price 0.0739, dailyPerHash 0.004427129",
       "source_url": null,
-      "verified_date": "2026-09-10",
-      "verify_method": "two independent market sources (CoinGecko + Binance/KuCoin/CoinPaprika)"
+      "verified_date": "2026-10-06",
+      "verify_method": "two independent network reads + two price sources (CoinGecko + CoinPaprika/whattomine)"
     },
     {
       "id": "MiningCoinSwitcherCalculator__COINS.FLUX (price/dailyPerHash)",

@@ -63,9 +63,10 @@ const COINS: Record<string, CoinData> = {
     RVN: { symbol: 'RVN', name: 'Ravencoin', price: 0.006, blockReward: 1250, networkHashrate: 5000000, algo: 'KawPow', blockTime: 60 },
     ERGO: { symbol: 'ERGO', name: 'Ergo', price: 0.33, blockReward: 3, networkHashrate: 15000, algo: 'Autolykos2', blockTime: 120 },
     // Kaspa's chromatic halving steps the reward down ~5.6% EVERY MONTH, so this fallback is a
-    // dated snapshot by nature — the live whattomine/API value is authoritative. 2.31246515 per
-    // api.kaspa.org on 2026-08-02; next step 2026-09-04 → 2.18267645. 10 BPS since Crescendo (May 2025).
-    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.036, blockReward: 2.18267645, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 0.1 },
+    // dated snapshot by nature — the live whattomine/API value is authoritative. 2.06017223 = emission
+    // month 53 (consensus SUBSIDY_BY_MONTH_TABLE[53] / 10 BPS; api.kaspa.org 2026-10-06, DAA past
+    // 557,505,000). Next step month 54 at DAA 583,803,000 (~2026-11-04) → 1.94454365.
+    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.036, blockReward: 2.06017223, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 0.1 },
     // FLUX removed 2026-06: Proof-of-Useful-Work v2 hard fork (block 2,020,000, ~Oct 2025) eliminated GPU mining entirely; Flux now produced by FluxNodes (Proof of Nodes), not GPUs.
 };
 
