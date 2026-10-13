@@ -37,6 +37,14 @@
 // liquidation-calculator, funding-rate-calculator, exchange-fees): their only fixes were in the English entry,
 // which their hand-written EN pages do not render, so no rendered page changed. For the 27 bumped slugs whose
 // EN page is hand-written, the change is on the five locale pages; the date is per slug, so it moves for EN too.
+// 2026-10-13 (third pass): 86 slugs moved to 2026-10-13 because the later prose sections from
+// calculator-seo-ext.ts (interpret, scenarios, checklist, mistakes, benchmarks, execution, hygiene, validation)
+// were checked against the components the same way: 1,065 paragraphs in 90 slugs named outputs, fields, modes or
+// live data the calculator does not have, or attributed figures to it that its own formula does not produce.
+// Four touched slugs are NOT bumped (reverse-roi, portfolio-calculator, funding-rate-calculator,
+// apy-apr-calculator): only their unrendered English entries changed. asic-mining-calculator is excluded here (its
+// copy was rewritten on a separate branch). The two dead Hindi links repaired in the same pass are a link fix, not a
+// content change, so converter (whose only change it was) keeps its date.
 // 2026-10-13 (copy fix): asic-mining-calculator's explanation rewritten in all 6 languages. It claimed a
 // pre/post-halving projection and difficulty / block-reward inputs the calculator does not have (those come
 // from the live feed), the EN subtitle promised an "ASIC value" output and EN validation a daily coin amount.
@@ -45,6 +53,11 @@
 // DOGE rows in the "Where these numbers come from" block. Still 2026-10-13. /methodology/ and the pt/tr
 // editorial-policy pages print the ledger total, which ticked 108 -> 110; that counter is not treated as an
 // editorial change, so their dates were left alone.
+// 2026-10-14: compound-calculator, nft-profit-calculator + updates moved to 2026-10-14. Both pages' later prose
+// sections (seo-ext) were about a different tool (leverage trading; NFT rarity) and were rewritten for their own
+// calculator in 6 languages; the compound-calculator FAQ's daily-vs-monthly figures were corrected; the hand-written
+// EN nft-profit page now shows the calculator's fee presets (OpenSea 1%) instead of 2.5% / SOL / X2Y2; /updates/ gained
+// an entry.
 // 2026-10-14: 19 slugs + updates moved to 2026-10-14 after the second calkcheck data-currency pass changed their
 // rendered content: Polymarket fee/odds/legal text, card-cashback preset bugs and 10-year formula, validator-node
 // yields/slashing/Rocket Pool, the "if I had bought" price snapshot and holding periods, mining/difficulty/energy
@@ -53,7 +66,7 @@
 export const CALCULATOR_UPDATED: Record<string, string> = {
   "404": "2026-05-11",
   "about": "2026-08-25",
-  "ai-token-sector-calculator": "2026-08-25",
+  "ai-token-sector-calculator": "2026-10-13",
   "airdrop-calculator": "2026-10-13",
   "apy-apr-calculator": "2026-08-25",
   "arbitrage-calculator": "2026-10-13",
@@ -64,7 +77,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "bridge-comparator": "2026-10-14",
   "calmar-calculator": "2026-08-25",
   "compare": "2026-05-22",
-  "compound-calculator": "2026-10-13",
+  "compound-calculator": "2026-10-14",
   "compound-interest-calculator": "2026-10-13",
   "concentrated-liquidity-calculator": "2026-10-13",
   "contact": "2026-05-11",
@@ -78,13 +91,13 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "crypto-loan-calculator": "2026-10-14",
   "crypto-portfolio-rebalance-calculator": "2026-10-14",
   "crypto-sentiment-calculator": "2026-10-13",
-  "dca-calculator": "2026-08-25",
+  "dca-calculator": "2026-10-13",
   "defi-insurance-calculator": "2026-10-13",
   "defi-yield-aggregator": "2026-10-13",
   "depin-earnings-calculator": "2026-10-13",
   "difficulty-calculator": "2026-10-14",
   "drawdown-calculator": "2026-10-13",
-  "dust-attack-calculator": "2026-08-25",
+  "dust-attack-calculator": "2026-10-13",
   "dva-calculator": "2026-10-13",
   "editorial-policy": "2026-08-25",
   "electricity-cost-calculator": "2026-10-13",
@@ -98,7 +111,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "gas-calculator": "2026-10-14",
   "gas-fee-calculator": "2026-10-13",
   "gas-optimization-calculator": "2026-10-13",
-  "geometric-mean-return-calculator": "2026-08-25",
+  "geometric-mean-return-calculator": "2026-10-13",
   "governance-voting-calculator": "2026-10-13",
   "gpu-mining-calculator": "2026-10-13",
   "grid-trading-calculator": "2026-10-13",
@@ -119,10 +132,10 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "leverage-calculator": "2026-10-13",
   "lightning-network-fee-calculator": "2026-10-13",
   "liquid-staking-calculator": "2026-10-13",
-  "liquidation-calculator": "2026-08-25",
+  "liquidation-calculator": "2026-10-13",
   "loan-calculator": "2026-10-13",
   "looping-yield-calculator": "2026-10-13",
-  "lp-value-calculator": "2026-08-25",
+  "lp-value-calculator": "2026-10-13",
   "margin-calculator": "2026-10-13",
   "market-cap-calculator": "2026-10-13",
   "market-cap-comparator": "2026-08-25",
@@ -134,19 +147,19 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "mining-coin-switcher-calculator": "2026-10-13",
   "mining-roi-calculator": "2026-10-13",
   "mstr-mnav-calculator": "2026-10-13",
-  "nft-profit-calculator": "2026-10-13",
+  "nft-profit-calculator": "2026-10-14",
   "nft-rarity-calculator": "2026-10-13",
   "node-calculator": "2026-10-14",
   "on-chain-metrics-calculator": "2026-10-13",
   "options-calculator": "2026-10-13",
   "payback-period-calculator": "2026-10-13",
-  "perpetual-funding-arbitrage-calculator": "2026-08-25",
+  "perpetual-funding-arbitrage-calculator": "2026-10-13",
   "perpetual-futures-calculator": "2026-10-13",
   "pip-calculator": "2026-10-13",
   "pizza-day-calculator": "2026-10-14",
   "polymarket-odds-calculator": "2026-10-14",
   "portfolio-calculator": "2026-10-13",
-  "position-size-calculator": "2026-08-25",
+  "position-size-calculator": "2026-10-13",
   "privacy": "2026-05-17",
   "profit-calculator": "2026-10-13",
   "profit-factor-calculator": "2026-10-13",
@@ -167,7 +180,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "sortino-calculator": "2026-10-13",
   "staking-calculator": "2026-10-13",
   "staking-rewards-calculator": "2026-10-13",
-  "stock-to-flow-calculator": "2026-08-25",
+  "stock-to-flow-calculator": "2026-10-13",
   "tax-calculator": "2026-10-13",
   "tax-loss-harvesting-calculator": "2026-10-13",
   "terms": "2026-05-17",
@@ -177,7 +190,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "token-valuation-calculator": "2026-10-13",
   "tp-sl-calculator": "2026-10-13",
   "trade-expectancy-calculator": "2026-10-13",
-  "trailing-stop-loss-calculator": "2026-08-25",
+  "trailing-stop-loss-calculator": "2026-10-13",
   "treynor-calculator": "2026-10-13",
   "uniswap-calculator": "2026-10-13",
   "unit-converter": "2026-10-13",
@@ -185,7 +198,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "validator-calculator": "2026-10-13",
   "var-calculator": "2026-10-13",
   "vesting-calculator": "2026-10-13",
-  "wallet-net-worth-calculator": "2026-08-25",
+  "wallet-net-worth-calculator": "2026-10-13",
   "whale-alert-calculator": "2026-10-13",
   "what-if": "2026-10-13",
   "yield-farming-calculator": "2026-10-13",
