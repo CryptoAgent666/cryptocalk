@@ -19,7 +19,7 @@ const webPageSchema = {
   description: 'See what\'s new on CryptoCalk, new calculators, features, and improvements to our free crypto calculator suite.',
   url: 'https://cryptocalk.com/updates/',
   inLanguage: 'en',
-  dateModified: '2026-10-13T00:00:00+00:00',
+  dateModified: '2026-10-14T00:00:00+00:00',
 };
 ---
 
@@ -39,6 +39,18 @@ const webPageSchema = {
 
       <article class="update-entry">
         <div class="update-date">
+          <time datetime="2026-10-14">October 14, 2026</time>
+        </div>
+        <h2>Compound Interest and NFT Profit Pages: Explanations Rewritten</h2>
+        <p>Two calculator pages had long explanations that were written for a different tool. We replaced them with guidance for the calculator on the page:</p>
+        <ul>
+          <li><strong>Compound interest (crypto):</strong> the sections under the calculator were about leverage trading. They now explain how crypto yields compound: what the compounding frequency does to a quoted rate, monthly top-ups, and how much of the result is interest on interest. We also corrected the answer about daily versus monthly compounding: at 5–15% a year the difference is only about 0.01–0.1 percentage points, and about 10 points at 100%.</li>
+          <li><strong>NFT profit:</strong> the English page's fee table now shows the fees the calculator actually uses (OpenSea 1%, Blur 0.5%, Magic Eden 2%, or any fee you type), notes OpenSea's rise from 0.5% to 1% in September 2025, and drops X2Y2, which closed in April 2025. The quick answer now includes the creator royalty. In our other five languages, the longer explanations were about NFT rarity scores; they now explain what a flip or a hold really nets after the marketplace fee, royalty and gas, and how to read the break-even price.</li>
+        </ul>
+        <p>The calculations themselves did not change. Marketplace fees change often, so check the current fee on the listing screen before you sell. All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
+      <article class="update-entry">
+        <div class="update-date">
           <time datetime="2026-10-13">October 13, 2026</time>
         </div>
         <h2>The Explanations Further Down Each Page Now Match the Calculator Too</h2>
@@ -53,6 +65,33 @@ const webPageSchema = {
         </ul>
         <p>We also repaired two broken links on Hindi pages. The calculations themselves did not change, only the text around them. All figures are estimates for general information, not financial or tax advice.</p>
       </article>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-10-13">October 13, 2026</time>
+        </div>
+        <h2>ASIC Mining Calculator: Litecoin Miners Now Include Dogecoin</h2>
+        <p>Litecoin miners also earn Dogecoin for the same work through merged mining, and nearly every Litecoin pool pays it out. The ASIC calculator counted Litecoin only, so the Antminer L9 looked like a money-loser.</p>
+        <ul>
+          <li><strong>Antminer L9:</strong> with Dogecoin included it brings in about $8.50 a day instead of $1.40, which turns a loss of almost $5 a day at 8 cents per kWh into a profit of about $2.</li>
+          <li><strong>Your choice:</strong> if your pool does not pay Dogecoin, pick "Only LTC" under Merged Mining. The comparison table follows the same setting.</li>
+        </ul>
+      </article>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-10-13">October 13, 2026</time>
+        </div>
+        <h2>ASIC Mining Calculator: The Explanation Now Matches the Tool</h2>
+        <p>The text below the ASIC mining calculator promised features it does not have. It said the calculator shows your profit before and after the next Bitcoin halving, and it told you to enter network difficulty and a halved block reward. There are no such fields: difficulty, block reward and coin price load automatically from live network data, and the break-even estimate assumes they stay where they are today. The page now says so in all six languages and explains what to do instead.</p>
+        <ul>
+          <li><strong>Halving:</strong> for Bitcoin, the <a href="/halving-calculator/">halving calculator</a> shows your daily profit now and after the next halving side by side.</li>
+          <li><strong>Lower prices or rising difficulty:</strong> income in the ASIC calculator rises and falls in step with hashrate, while electricity depends only on power. Enter half your hashrate with the same power to see what you would earn at half the coin price or half the block reward. About 75% of your hashrate approximates a year of 5% monthly difficulty growth.</li>
+          <li><strong>Payback example:</strong> the text said an Antminer S21 Pro could pay for itself in about six months. At 6 cents per kWh with Bitcoin near $80,000 it takes more than three years, and at half that price it does not cover its electricity.</li>
+          <li><strong>Smaller fixes:</strong> the page summary no longer promises an "ASIC value" figure the calculator does not produce, and the tip for checking your pool's payout now compares dollars, because the calculator shows income in dollars, not coins.</li>
+        </ul>
+      </article>
+
       <article class="update-entry">
         <div class="update-date">
           <time datetime="2026-10-13">October 13, 2026</time>
@@ -69,6 +108,31 @@ const webPageSchema = {
         </ul>
         <p>The calculations themselves did not change, only the explanations around them. All figures are estimates for general information, not financial or tax advice.</p>
       </article>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-10-13">October 13, 2026</time>
+        </div>
+        <h2>ASIC Mining Calculator: Zcash and Dash Miners Fixed</h2>
+        <p>Two of the eleven miners in the ASIC calculator showed almost no income, so they looked like money-losers when they are not. Both now match what the network actually pays.</p>
+        <ul>
+          <li><strong>Antminer Z15 (Zcash):</strong> Zcash measures mining difficulty differently from Bitcoin, but the calculator used the Bitcoin formula for it. Income came out about half a million times too small, so all you saw was the electricity bill. The Z15 actually mines about 0.02 ZEC a day, roughly $24 at mid-October prices, which puts it at the top of the comparison table.</li>
+          <li><strong>Antminer D9 (Dash):</strong> its speed was read in the wrong unit, a thousand times too slow. It is now 1,770 GH/s (1.77 TH/s) and brings in about $5.80 a day, close to its power bill at 8 cents per kWh.</li>
+          <li><strong>Antminer L9 (Litecoin):</strong> now listed as 16 GH/s instead of 16,000 MH/s. That is the same speed in the unit Bitmain uses, so its results do not change. Efficiency is now shown in the right unit for each machine (J/TH, J/GH or J/KSol).</li>
+        </ul>
+      </article>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-10-13">October 13, 2026</time>
+        </div>
+        <h2>Mining Calculators: Live Network Data Is Back</h2>
+        <p>The ASIC and GPU mining calculators load current difficulty, network hashrate, block rewards and coin prices again. The public relay they depended on had stopped working, so every visitor waited about 20 seconds and then got figures from May. The data now comes through our own server and is refreshed every ten minutes. If the feed is ever unreachable, the calculator tells you which date its backup figures are from instead of showing an error.</p>
+        <ul>
+          <li><strong>GPU mining backup figures:</strong> network hashrate for Ethereum Classic, Ergo and Kaspa had been entered roughly a thousand times too low, which made GPU mining look far more profitable than it is. An RTX 4090 on Ethereum Classic brings in a few cents a day before electricity, not the $57 the old figures implied.</li>
+        </ul>
+      </article>
+
       <article class="update-entry">
         <div class="update-date">
           <time datetime="2026-10-13">October 13, 2026</time>

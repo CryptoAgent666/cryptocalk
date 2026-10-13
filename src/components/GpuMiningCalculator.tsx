@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 import { fmtPctValue } from '../i18n/format';
+import { fetchWhattomine, formatSnapshotDate } from '../utils/whattomine';
 
 interface GpuPreset {
     name: string;
@@ -58,19 +59,29 @@ const GPU_PRESETS: GpuPreset[] = [
     { name: 'RX 6800 XT', hashrate: 63, power: 250, algo: 'Ethash' },
 ];
 
+// Network data snapshot, used only when the live feed (/api/whattomine) is unreachable —
+// the calculator then tells the visitor which date the figures are from. Price and
+// networkHashrate are whattomine's exchange_rate / nethash on NETWORK_SNAPSHOT_DATE (prices
+// matched CoinGecko within 0.3% that day). networkHashrate is in MH/s like the GPU presets:
+// whattomine's nethash is H/s, so divide by 1e6. (The previous snapshot had ETC at 200,000,
+// ERGO 15,000 and KAS 300,000,000 — GH/s-scale numbers in an MH/s field, which overstated
+// GPU revenue ~700–1,100× whenever the snapshot was in use.)
+const NETWORK_SNAPSHOT_DATE = '2026-10-13';
 const COINS: Record<string, CoinData> = {
-    ETC: { symbol: 'ETC', name: 'Ethereum Classic', price: 8.75, blockReward: 1.6384, networkHashrate: 200000, algo: 'Ethash', blockTime: 13 }, // ECIP-1017 era 6 since block 25,000,000 (22 Jul 2026); -20% to 1.31072 at block 30,000,001 (~2028)
-    RVN: { symbol: 'RVN', name: 'Ravencoin', price: 0.006, blockReward: 1250, networkHashrate: 5000000, algo: 'KawPow', blockTime: 60 },
-    ERGO: { symbol: 'ERGO', name: 'Ergo', price: 0.33, blockReward: 3, networkHashrate: 15000, algo: 'Autolykos2', blockTime: 120 },
+    ETC: { symbol: 'ETC', name: 'Ethereum Classic', price: 8.23, blockReward: 1.6384, networkHashrate: 146800000, algo: 'Ethash', blockTime: 13 }, // ECIP-1017 era 6 since block 25,000,000 (22 Jul 2026); -20% to 1.31072 at block 30,000,001 (~2028)
+    RVN: { symbol: 'RVN', name: 'Ravencoin', price: 0.0016, blockReward: 1250, networkHashrate: 609400, algo: 'KawPow', blockTime: 60 },
+    ERGO: { symbol: 'ERGO', name: 'Ergo', price: 0.303, blockReward: 3, networkHashrate: 515300, algo: 'Autolykos2', blockTime: 120 },
     // Kaspa's chromatic halving steps the reward down ~5.6% EVERY MONTH, so this fallback is a
     // dated snapshot by nature — the live whattomine/API value is authoritative. 2.06017223 = emission
     // month 53 (consensus SUBSIDY_BY_MONTH_TABLE[53] / 10 BPS; api.kaspa.org 2026-10-06, DAA past
     // 557,505,000). Next step month 54 at DAA 583,803,000 (~2026-11-04) → 1.94454365.
-    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.036, blockReward: 2.06017223, networkHashrate: 300000000, algo: 'kHeavyHash', blockTime: 0.1 },
+    KAS: { symbol: 'KAS', name: 'Kaspa', price: 0.039, blockReward: 2.06017223, networkHashrate: 341600000000, algo: 'kHeavyHash', blockTime: 0.1 },
     // FLUX removed 2026-06: Proof-of-Useful-Work v2 hard fork (block 2,020,000, ~Oct 2025) eliminated GPU mining entirely; Flux now produced by FluxNodes (Proof of Nodes), not GPUs.
 };
 
-// Map whattomine generic names to our symbols
+// Map whattomine generic names to our symbols. Kaspa is ASIC-mined now and whattomine lists
+// it only in asic.json (per-block reward at 10 BPS, matching blockTime 0.1 here), so the GPU
+// feed is checked first and the ASIC feed second.
 const COIN_MAPPING: Record<string, string> = {
     EthereumClassic: 'ETC',
     Ravencoin: 'RVN',
@@ -126,7 +137,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
     // Live Data & Results
     const [coinData, setCoinData] = useState<Record<string, CoinData>>(COINS);
-    const [liveDataStatus, setLiveDataStatus] = useState<'loading' | 'live' | 'error'>('loading');
+    const [liveDataStatus, setLiveDataStatus] = useState<'loading' | 'live' | 'fallback'>('loading');
 
     const [results, setResults] = useState<PeriodResult[]>([]);
     const [coinRanking, setCoinRanking] = useState<CoinRanking[]>([]);
@@ -136,59 +147,32 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
         let isMounted = true;
         setLiveDataStatus('loading');
 
-        const proxyFetch = async (url: string) => {
-            // Primary: codetabs CORS proxy
-            try {
-                const res = await fetch("https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(url));
-                if (res.ok) return await res.json();
-            } catch { /* fall through */ }
-            // Fallback: corsproxy.io
-            const res2 = await fetch("https://corsproxy.io/?" + encodeURIComponent(url));
-            if (!res2.ok) throw new Error('All proxies failed');
-            return await res2.json();
-        };
-        Promise.all([
-            proxyFetch("https://whattomine.com/asic.json"),
-            proxyFetch("https://whattomine.com/coins.json")
-        ])
-            .then(([asicParsed, coinsParsed]) => {
+        Promise.all([fetchWhattomine('asic'), fetchWhattomine('gpu')])
+            .then(([asicFeed, gpuFeed]) => {
                 if (!isMounted) return;
-                try {
-                    const btcPrice = asicParsed.coins['Bitcoin']?.exchange_rate || 65000;
+                const btcPrice = asicFeed.coins['Bitcoin']?.exchange_rate;
+                if (!btcPrice) throw new Error('whattomine: no BTC price');
+                const updatedData = { ...COINS };
 
-                    const wtCoins = coinsParsed.coins;
-
-                    const updatedData = { ...COINS };
-
-                    for (const [name, info] of Object.entries(wtCoins)) {
-                        const symbol = COIN_MAPPING[name];
-                        if (symbol && info) {
-                            const coinInfo = info as { nethash?: number; block_reward24?: number; block_reward?: number; exchange_rate: number };
-                            let networkHr = coinInfo.nethash;
-                            // WhatToMine returns network hashrate in H/s, while this component uses MH/s. We divide by 1_000_000.
-                            if (networkHr) {
-                                networkHr = networkHr / 1000000;
-                            } else {
-                                networkHr = updatedData[symbol].networkHashrate;
-                            }
-                            updatedData[symbol] = {
-                                ...updatedData[symbol],
-                                blockReward: coinInfo.block_reward24 || coinInfo.block_reward || 0,
-                                price: coinInfo.exchange_rate * btcPrice,
-                                networkHashrate: networkHr
-                            };
-                        }
-                    }
-
-                    setCoinData(updatedData);
-                    setLiveDataStatus('live');
-                } catch {
-                    // parse failure — fallback to defaults
-                    setLiveDataStatus('error');
+                for (const [name, symbol] of Object.entries(COIN_MAPPING)) {
+                    const coinInfo = gpuFeed.coins[name] ?? asicFeed.coins[name];
+                    if (!coinInfo) continue;
+                    const snapshot = updatedData[symbol];
+                    updatedData[symbol] = {
+                        ...snapshot,
+                        blockReward: coinInfo.block_reward24 || coinInfo.block_reward || snapshot.blockReward,
+                        // exchange_rate is quoted in BTC
+                        price: coinInfo.exchange_rate ? coinInfo.exchange_rate * btcPrice : snapshot.price,
+                        // whattomine's nethash is H/s; this component works in MH/s
+                        networkHashrate: coinInfo.nethash ? coinInfo.nethash / 1e6 : snapshot.networkHashrate,
+                    };
                 }
+
+                setCoinData(updatedData);
+                setLiveDataStatus('live');
             })
             .catch(() => {
-                if (isMounted) setLiveDataStatus('error');
+                if (isMounted) setLiveDataStatus('fallback');
             });
 
         return () => { isMounted = false; };
@@ -573,7 +557,7 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
                 {/* Right: Results */}
                 <div className="calc-results-panel">
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                         <h2 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{getUiString(lang, 'Estimated Profitability')}</h2>
                         {liveDataStatus === 'live' && (
                             <span style={{ color: 'var(--color-accent-green)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(52, 211, 153, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
@@ -581,10 +565,9 @@ function GpuMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                 {getUiString(lang, 'Live Network Data')}
                             </span>
                         )}
-                        {liveDataStatus === 'error' && (
-                            <span style={{ color: 'var(--color-accent-red, #ef4444)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(239,68,68,0.1)', padding: '2px 8px', borderRadius: '12px' }}>
-                                <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-accent-red, #ef4444)' }}></span>
-                                {getUiString(lang, 'Using fallback data. Live feed unavailable.')}
+                        {liveDataStatus === 'fallback' && (
+                            <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'var(--color-bg)', border: '1px solid var(--color-border)', padding: '2px 8px', borderRadius: '12px' }}>
+                                {getUiString(lang, 'Showing network data from {date}').replace('{date}', formatSnapshotDate(NETWORK_SNAPSHOT_DATE, lang))}
                             </span>
                         )}
                     </div>

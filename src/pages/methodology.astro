@@ -5,7 +5,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import { JURISDICTION_ROWS, PROTOCOL_ROWS, LEDGER_STATS, TIER_LABEL } from '../data/source-ledger';
 import { PERSON_SAME_AS, PUBLISHING_PRINCIPLES, CORRECTIONS_POLICY, AUTHOR_NAME, AUTHOR_URL, AUTHOR_ID } from '../data/entity';
 
-const lastUpdated = '25/08/2026';
+const lastUpdated = '13/10/2026';
 const pageUrl = 'https://cryptocalk.com/methodology/';
 const authorNode = {
   '@type': 'Person',
@@ -27,7 +27,7 @@ const webPageSchema = {
     'How CryptoCalk calculator outputs are computed, validated, and interpreted across profit, DCA, tax, mining, and risk tools.',
   inLanguage: 'en',
   datePublished: '2025-11-01',
-  dateModified: '2026-08-25',
+  dateModified: '2026-10-13',
   author: authorNode,
   publisher: { '@type': 'Organization', '@id': 'https://cryptocalk.com/#organization', name: 'CryptoCalk' },
   publishingPrinciples: PUBLISHING_PRINCIPLES,
@@ -50,7 +50,7 @@ const datasetSchema = {
   isAccessibleForFree: true,
   creator: authorNode,
   publisher: { '@type': 'Organization', '@id': 'https://cryptocalk.com/#organization', name: 'CryptoCalk' },
-  dateModified: '2026-08-25',
+  dateModified: '2026-10-13',
   variableMeasured: [
     'crypto capital gains tax rate',
     'crypto long-term holding threshold',
@@ -93,10 +93,11 @@ const datasetSchema = {
 
       <h3>Live market data</h3>
       <p>
-        Prices are fetched at page load, primarily from CoinGecko; client requests are cached and deduplicated in-browser, and these values are as fresh as the upstream API. Mining calculators are the exception: their network figures (difficulty, hashrate, block reward) are snapshots maintained by hand, because the live mining feed they were built against is currently unavailable — and the calculator says so on screen when it is using a snapshot.
+        Prices are fetched at page load, primarily from CoinGecko; client requests are cached and deduplicated in-browser, and these values are as fresh as the upstream API. The ASIC and GPU mining calculators take network difficulty, hashrate, block reward and coin prices from WhatToMine, fetched through our own server, which keeps a copy for up to ten minutes. If that feed cannot be reached, the calculator falls back to a dated snapshot and shows the snapshot's date on screen.
       </p>
       <ul>
         <li><a href="https://www.coingecko.com/en/api/documentation" target="_blank" rel="nofollow noopener noreferrer">CoinGecko API Documentation</a></li>
+        <li><a href="https://whattomine.com/" target="_blank" rel="nofollow noopener noreferrer">WhatToMine</a> (mining network data)</li>
       </ul>
 
       <h3>Regulatory and protocol constants</h3>

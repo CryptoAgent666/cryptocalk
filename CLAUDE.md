@@ -66,6 +66,25 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
 - 🔴 **Живой фид майнинга мёртв:** ASIC и GPU тянут whattomine через `api.codetabs.com` (таймаут 20 с) и
   `corsproxy.io` (403 keyless_legacy_url) — каждый посетитель видит «Failed to fetch…» и майские фолбэки. Нужен
   серверный прокси. Методология больше не утверждает обратного. KAS-ролловер это не затрагивает (значение в коде).
+  ✅ **Починено в тот же день (НЕ задеплоено):** `GET /api/whattomine?kind=asic|gpu` в существующем Worker
+  (`functions/api/whattomine.js`). PHP не подходил: маршрут Worker'а `cryptocalk.com/api/*` перехватывает ВСЁ под
+  `/api/`, файл на хостинге туда не дойдёт. Фид выбирается по имени (не URL); Cache API 10 мин, при падении
+  whattomine — stale-копия до 24 ч, не-JSON не кэшируется; CORS только сайт + `https://localhost` (Android).
+  Клиент — `src/utils/whattomine.ts`: в приложении (`data-native`) зовёт `https://cryptocalk.com/api/…` абсолютно.
+  Фолбэк = плашка «Showing network data from <дата>» (`NETWORK_SNAPSHOT_DATE` в обоих компонентах).
+  🔴 Попутно: в GPU-снимке `networkHashrate` стояли числа масштаба GH/s в поле MH/s (ETC 200 000 при живых
+  146,8 млн, ERGO, KAS так же) → доход GPU завышен ~700–1 100× (RTX 4090 на ETC $57/день вместо ~$0,07), и это
+  видел КАЖДЫЙ посетитель, пока прокси были мертвы. Снимки обоих компонентов обновлены на 13.10.2026. Kaspa
+  есть только в `asic.json` — GPU-калькулятор теперь берёт её оттуда (раньше живой путь её не обновлял).
+  ⚠️ Деплой Worker'а: `wrangler deploy` (заливает `dist/` как ассеты контакт-страниц — тот же `dist`, что ушёл
+  по FTP). Текущий логин wrangler — только `account (read)`/`user (read)`: и `dev --remote`, и deploy упадут,
+  нужен `wrangler login` с правами Workers. Не проверено с edge: принимает ли whattomine запросы из Workers —
+  первая проверка после деплоя: `curl -sD- 'https://cryptocalk.com/api/whattomine?kind=asic' -o /dev/null`
+  (200 + `x-cache: MISS`, повтор — `HIT`). Если 502 — калькуляторы просто покажут датированный снимок.
+  ⚠️ Не чинил: ASIC-формула для Equihash (Z15) делит на `difficulty·2³²`, а у Zcash сеть = difficulty·2¹³/время
+  блока (сверено с nethash whattomine) → доход ZEC занижен в 2¹⁹ раз, Z15 всегда «убыточен» (−$2,90 = ровно
+  электричество). И пресет Antminer D9 = `1770` при множителе X11 1e6 (MH/s), а D9 — 1,77 TH/s → доход DASH
+  занижен в 1000×. Обе дыры видны в таблице сравнения ASIC на живых данных.
 - 🔴 **Регуляторное в коде:** шкала Канады в `TaxCalculator.tsx` была смесью 2022/2024 и 15% → CRA 2026
   (14% до $58,523 …). Остальное — DATA-1: виджет чинили в июне, а таблицы/FAQ/quick answers под ним — нет
   (UK 18/24, FR 31,4, IT 33, BR 15–22,5, KR ₩2,5M, NL €59 357, US $15M/$19k на 6 языках).
@@ -848,6 +867,28 @@ freed L1 validators but left the Primary Network minimum).
   proof the fees are out), and `miner = in_block_subsidy / 4` — the miner's first coinbase vout is EXACTLY
   25% of valueOut on every block sampled (MN+Platform take 75%; the Platform credit-pool OP_RETURN is 37.5%
   of that). Era 12: in-block 1.64378041 → miner 0.41094510.
+
+### ⚠️ ASIC difficulty factor and hashrate units are per algorithm (bug class, fixed 2026-10-13)
+`AsicMiningCalculator.calcDailyCoins` used `difficulty × 2^32` for every coin. Right for BTC, LTC, DASH and
+DOGE, wrong for Zcash: ZEC revenue was 2^19 = 524,288× too small (the Z15 showed only its electricity bill).
+**The factor is 2^256 ÷ the target the client's `getdifficulty` calls 1, NOT 2^256 ÷ `powLimit`.**
+Bitcoin Core's `GetDifficulty` hardcodes `0x1d00ffff` (~2^224), and Bitcoin-derived clients inherit it whatever
+their own `powLimit` (Litecoin, Dash, Dogecoin: 2^236 − 1, which by the powLimit rule would wrongly give 2^20)
+→ **2^32**. zcashd's `GetDifficultyINTERNAL` divides by its own `powLimit`, 2^243 − 1 → **2^13**. (The first
+version of this note and of the code comment said "2^256 / powLimit" — wrong, corrected the same evening.)
+Same day, same symptom: the D9 preset said `1770` in an MH/s field — it is 1,770 **GH/s**. Scrypt and X11 are
+now GH/s (L9 = 16, D9 = 1770). **When adding a coin or algorithm:** read the client's `getdifficulty`, then
+confirm `difficulty × factor / block_time` reproduces whattomine's `nethash`
+(`curl https://whattomine.com/asic.json`) — that check, not the derivation, is what caught everything; enter
+preset hashrate in the unit printed by `getHashrateUnit`. `src/test/asic-mining.test.ts` pins five nethash
+identities (BTC, LTC, DOGE, DASH, ZEC) plus a 1–100 USD/day gross band per preset that any 1000× slip falls out of.
+- **DOGE merged mining (added 2026-10-13):** `MERGE_MINED = { LTC: ['DOGE'] }`. An LTC miner earns DOGE at
+  `hashrate / (DOGE difficulty × 2^32) × 86400 × 10,000` on top of LTC, at no extra power. On 2026-10-13 that
+  was ~$7.1/day vs ~$1.4 from LTC, turning the L9 from −$4.85 into ~+$2/day at $0.08/kWh. A pill switch
+  ("LTC + DOGE" / "Only LTC", default on) appears only for LTC; the comparison table follows it. DOGE reward
+  is a flat 10,000 since block 600,000 (no halvings, no split); it comes live from whattomine `Dogecoin`.
+  Left out on purpose: the smaller AuxPoW Scrypt chains some pools add (Bellscoin, Pepecoin, Luckycoin…).
+  ⚠️ DOGE difficulty swings a lot within a day (34M–46M seen on 2026-10-13); the code uses `difficulty24`.
 
 ## Key crypto context
 - BTC block reward **3.125** (4th halving Apr 2024, block 840,000); next halving block **1,050,000 → 1.5625**

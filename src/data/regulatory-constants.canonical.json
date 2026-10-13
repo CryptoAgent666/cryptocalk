@@ -4,20 +4,20 @@
     "type": "crypto / cross-jurisdiction",
     "generated": "2026-06-23",
     "note": "Audit ledger (NOT imported by site). Regulatory surface = per-country crypto TAX rules + BTC/ETH PROTOCOL consensus facts. The bulk of 131 calculators are formula/market (no regulatory constants). Live values are hardcoded in src/components/*.tsx — apply fixes there.",
-    "total": 108,
-    "regulatory": 79,
+    "total": 110,
+    "regulatory": 81,
     "formula_or_market": 29,
     "conflicts": 0,
     "status_summary": {
-      "current": 85,
+      "current": 89,
       "removed": 2,
-      "unverified": 21
+      "unverified": 19
     },
     "themes": {
-      "network": 27,
+      "network": 28,
       "capital_gains": 23,
       "inheritance_tax": 14,
-      "block_reward": 12,
+      "block_reward": 13,
       "staking_protocol": 12,
       "allowance": 7,
       "income_tax": 5,
@@ -52,7 +52,7 @@
     "by_calculator": {
       "TaxCalculator": 31,
       "InheritanceTaxCalculator": 12,
-      "AsicMiningCalculator": 11,
+      "AsicMiningCalculator": 13,
       "HalvingCalculator": 9,
       "ValidatorCalculator": 9,
       "MiningCoinSwitcherCalculator": 9,
@@ -120,7 +120,7 @@
       "theme": "block_reward",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:69"
+        "src/components/AsicMiningCalculator.tsx:82"
       ],
       "last_updated_hint": null,
       "source_hint": "Bitcoin protocol. whattomine.com block_reward (live).",
@@ -140,7 +140,7 @@
       "theme": "network",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:69"
+        "src/components/AsicMiningCalculator.tsx:82"
       ],
       "last_updated_hint": null,
       "source_hint": "Bitcoin 10-minute target block time.",
@@ -160,7 +160,7 @@
       "theme": "block_reward",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:71"
+        "src/components/AsicMiningCalculator.tsx:89"
       ],
       "last_updated_hint": "2026-08-18",
       "source_hint": "Dash emission schedule (-1/14 every 210,240 blocks). whattomine block_reward (live) preferred. Verify via coinbase reads.",
@@ -184,7 +184,7 @@
       "theme": "network",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:71"
+        "src/components/AsicMiningCalculator.tsx:89"
       ],
       "last_updated_hint": null,
       "source_hint": "Dash 2.5-minute target block time.",
@@ -204,7 +204,7 @@
       "theme": "block_reward",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:70"
+        "src/components/AsicMiningCalculator.tsx:83"
       ],
       "last_updated_hint": null,
       "source_hint": "Litecoin protocol; halving every 840,000 blocks (Aug 2023 → 6.25 LTC).",
@@ -224,7 +224,7 @@
       "theme": "network",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:70"
+        "src/components/AsicMiningCalculator.tsx:83"
       ],
       "last_updated_hint": null,
       "source_hint": "Litecoin 2.5-minute target block time.",
@@ -244,7 +244,7 @@
       "theme": "block_reward",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:72"
+        "src/components/AsicMiningCalculator.tsx:90"
       ],
       "last_updated_hint": "2026-08-02",
       "source_hint": "Zcash protocol; halving Nov 2024 → 1.5625 ZEC. Current value likely 1.5625, not 2.5.",
@@ -265,7 +265,7 @@
       "theme": "network",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:72"
+        "src/components/AsicMiningCalculator.tsx:90"
       ],
       "last_updated_hint": "2026-08-02",
       "source_hint": "Zcash post-Blossom 75-second target block time.",
@@ -275,24 +275,74 @@
       "source_url": "https://zips.z.cash/protocol/protocol.pdf"
     },
     {
-      "id": "AsicMiningCalculator__hashrateMultiplier_difficultyTarget",
+      "id": "AsicMiningCalculator__NETWORK_DATA.DOGE.blockReward",
       "calculator": "AsicMiningCalculator",
-      "key": "hashrateMultiplier_difficultyTarget",
-      "value": "4294967296",
-      "unit": "2^32 (hashes per difficulty-1 block)",
+      "key": "NETWORK_DATA.DOGE.blockReward",
+      "value": 10000,
+      "unit": "DOGE",
       "jurisdiction": "",
-      "law": "PoW mining math (SHA-256 family)",
+      "law": "Dogecoin consensus / constant block reward",
+      "theme": "block_reward",
+      "is_regulatory": true,
+      "surfaces": [
+        "src/components/AsicMiningCalculator.tsx:91"
+      ],
+      "last_updated_hint": "2026-10-13",
+      "source_hint": "Dogecoin Core GetDogecoinBlockSubsidy: constant 10,000 DOGE from block 600,000 (6 x nSubsidyHalvingInterval 100,000). whattomine block_reward (live) preferred.",
+      "conflict": false,
+      "status": "current",
+      "notes": "ADDED 2026-10-13 with DOGE merged mining for Scrypt/LTC miners (MERGE_MINED.LTC = ['DOGE']). dogecoin.cpp GetDogecoinBlockSubsidy returns 10000 * COIN once nHeight >= 6 * nSubsidyHalvingInterval (100,000) = block 600,000 (Feb 2018): no further halvings, and there is no dev-fund or masternode split, so the miner gets the whole subsidy (this field is consumed as MINER yield). Merged mining (AuxPoW) has been mandatory since block 371,337 (auxpowConsensus.nHeightEffective). whattomine block_reward24 for Dogecoin = 10000.0 on 2026-10-13.",
+      "official_value": 10000,
+      "source_url": "https://raw.githubusercontent.com/dogecoin/dogecoin/master/src/dogecoin.cpp",
+      "verified_date": "2026-10-13",
+      "verify_method": "primary source (Dogecoin Core dogecoin.cpp + chainparams.cpp) + whattomine block_reward"
+    },
+    {
+      "id": "AsicMiningCalculator__NETWORK_DATA.DOGE.blockTime",
+      "calculator": "AsicMiningCalculator",
+      "key": "NETWORK_DATA.DOGE.blockTime",
+      "value": "60",
+      "unit": "seconds",
+      "jurisdiction": "",
+      "law": "Dogecoin consensus / target block time",
       "theme": "network",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:123"
+        "src/components/AsicMiningCalculator.tsx:91"
       ],
-      "last_updated_hint": null,
-      "source_hint": "Bitcoin/SHA-256 difficulty definition (difficulty * 2^32 expected hashes per block).",
+      "last_updated_hint": "2026-10-13",
+      "source_hint": "Dogecoin Core chainparams nPowTargetSpacing = 60.",
       "conflict": false,
       "status": "current",
-      "notes": "Math.pow(2,32) in calcDailyCoins: daily_coins = (hashrate_hps/(difficulty*2^32))*86400*blockReward. 2^32 is the protocol-defined relationship between difficulty and expected hashes per block for SHA-256-style chains. Fixed math constant.",
-      "source_url": "https://en.bitcoin.it/wiki/Difficulty"
+      "notes": "Dogecoin 1-minute target (chainparams.cpp nPowTargetSpacing = 60). Like the other blockTime fields it is not used by calcDailyCoins, which needs only difficulty and reward.",
+      "official_value": "60",
+      "source_url": "https://raw.githubusercontent.com/dogecoin/dogecoin/master/src/chainparams.cpp",
+      "verified_date": "2026-10-13",
+      "verify_method": "primary source (Dogecoin Core chainparams.cpp)"
+    },
+    {
+      "id": "AsicMiningCalculator__hashrateMultiplier_difficultyTarget",
+      "calculator": "AsicMiningCalculator",
+      "key": "hashrateMultiplier_difficultyTarget",
+      "value": "2^32 (SHA-256, Scrypt, X11); 2^13 (Equihash)",
+      "unit": "expected hashes (Equihash: solutions) per block at difficulty 1 = 2^256 / the target the client's getdifficulty treats as 1",
+      "jurisdiction": "",
+      "law": "PoW difficulty-to-work factor, per algorithm",
+      "theme": "network",
+      "is_regulatory": true,
+      "surfaces": [
+        "src/components/AsicMiningCalculator.tsx:152"
+      ],
+      "last_updated_hint": "2026-10-13",
+      "source_hint": "How each client defines difficulty 1. Bitcoin Core GetDifficulty (rpc/blockchain.cpp) divides by the hardcoded 0x1d00ffff (~2^224) and Bitcoin-derived clients (Litecoin, Dash, Dogecoin) inherit it, whatever their own powLimit -> 2^32. zcashd GetDifficultyINTERNAL divides by its powLimit 0x0007ff..ff = 2^243 - 1 -> 2^13.",
+      "conflict": false,
+      "status": "current",
+      "notes": "FIXED 2026-10-13: was a single 4294967296 (2^32) applied to every algorithm in calcDailyCoins. Correct for SHA-256 (BTC), Scrypt (LTC, DOGE) and X11 (DASH): their getdifficulty is Bitcoin's, measured against the hardcoded 0x1d00ffff (~2^224) even though Litecoin, Dash and Dogecoin set powLimit to 2^236 - 1. zcashd instead measures difficulty against its own powLimit, 2^243 - 1, so one unit of difficulty is 2^256 / powLimit = 8192 = 2^13 expected solutions. Using 2^32 for ZEC understated revenue 2^19 = 524,288x: the Antminer Z15 (420 KSol/s) showed $0.00 revenue and -$2.90/day (its electricity at $0.08/kWh) instead of ~0.0198 ZEC = ~$24/day. Now getDifficultyFactor(algo). Cross-checked against whattomine asic.json on 2026-10-13: difficulty * factor / block_time reproduces whattomine's nethash to 6 significant digits for BTC (2^32, 565 s), LTC (2^32, 153 s), DASH (2^32, 157 s) and ZEC (2^13, 75 s) - pinned in src/test/asic-mining.test.ts. Bitcoin's exact difficulty-1 target is 0xffff * 2^208, i.e. 2^32 * 65536/65535; the 0.0015% gap is ignored, as whattomine does. Old source en.bitcoin.it/wiki/Difficulty (a wiki) replaced by the clients' own chainparams. | 2026-10-13 (later): derivation wording corrected — the first version said 2^256 / powLimit for every chain, which is wrong for LTC/DASH/DOGE (powLimit 2^236 - 1 would give 2^20); the numbers were right because whattomine nethash was the check. DOGE (Scrypt, 2^32) added to the cross-check: 34,010,079.36 * 2^32 / 63 s = whattomine nethash 2,318,606,009,231,917.",
+      "official_value": "2^32 (SHA-256, Scrypt, X11); 2^13 (Equihash)",
+      "source_url": "https://raw.githubusercontent.com/zcash/zcash/master/src/chainparams.cpp",
+      "official_source": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/kernel/chainparams.cpp",
+      "verified_date": "2026-10-13",
+      "verify_method": "primary source (zcashd + Bitcoin Core chainparams powLimit) + whattomine nethash cross-check for BTC/LTC/DASH/ZEC"
     },
     {
       "id": "BitcoinEnergyCalculator__BTC_PER_DAY_NETWORK",
@@ -1741,39 +1791,39 @@
       "id": "AsicMiningCalculator__NETWORK_DATA.*.difficulty",
       "calculator": "AsicMiningCalculator",
       "key": "NETWORK_DATA.*.difficulty",
-      "value": "BTC 145e12, LTC 30e6, DASH 220e6, ZEC 90e6",
+      "value": "BTC 132.72e12, LTC 87.86e6, DASH 127.2e6, ZEC 279.18e6, DOGE 38.51e6",
       "unit": "raw difficulty",
       "jurisdiction": "",
       "law": "Network difficulty (market/live)",
       "theme": "network",
       "is_regulatory": false,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:69-72"
+        "src/components/AsicMiningCalculator.tsx:81-92"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-10-13",
       "source_hint": "whattomine difficulty (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Per-coin fallback difficulties ('updated 2026-05-03'). Auto-adjusting market metric, not consensus. is_regulatory=false. | 2026-10-13 calkcheck: these fallbacks are what EVERY visitor sees — both CORS proxies of the live whattomine path are dead (api.codetabs.com times out after 20 s; corsproxy.io answers 403 keyless_legacy_url). Live on 2026-10-13: BTC difficulty 132.7T, price ~$83,500 (vs 145T / $77,300 here). Not refreshed in this pass; needs a server-side proxy or a dated-snapshot refresh."
+      "notes": "Per-coin fallback difficulties ('updated 2026-05-03'). Auto-adjusting market metric, not consensus. is_regulatory=false. | 2026-10-13 calkcheck: these fallbacks are what EVERY visitor sees — both CORS proxies of the live whattomine path are dead (api.codetabs.com times out after 20 s; corsproxy.io answers 403 keyless_legacy_url). Live on 2026-10-13: BTC difficulty 132.7T, price ~$83,500 (vs 145T / $77,300 here). Not refreshed in this pass; needs a server-side proxy or a dated-snapshot refresh. | 2026-10-13 (later): live path restored — both mining calculators now read whattomine through our own Cloudflare Worker (/api/whattomine?kind=asic|gpu, whitelist of the two feeds, 10-min cache), so these numbers are only the last-resort snapshot. Refreshed to whattomine on 2026-10-13 (prices matched CoinGecko within 0.3%); the calculator labels the snapshot with that date when it falls back. Values are whattomine difficulty24. | 2026-10-13 (later): DOGE added for merged mining (whattomine difficulty24 38,510,343). DOGE difficulty swings widely within a day (34.0M-46.1M seen on 2026-10-13), hence difficulty24."
     },
     {
       "id": "AsicMiningCalculator__NETWORK_DATA.*.price",
       "calculator": "AsicMiningCalculator",
       "key": "NETWORK_DATA.*.price",
-      "value": "BTC 77300, LTC 56, DASH 37, ZEC 337",
+      "value": "BTC 83960, LTC 62.45, DASH 50.52, ZEC 1227.7, DOGE 0.0845",
       "unit": "USD",
       "jurisdiction": "",
       "law": "Coin market price",
       "theme": "network",
       "is_regulatory": false,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:69-72"
+        "src/components/AsicMiningCalculator.tsx:81-92"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-10-13",
       "source_hint": "whattomine exchange_rate / CoinGecko (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Per-coin fallback USD prices. Market data — is_regulatory=false. | 2026-10-13 calkcheck: these fallbacks are what EVERY visitor sees — both CORS proxies of the live whattomine path are dead (api.codetabs.com times out after 20 s; corsproxy.io answers 403 keyless_legacy_url). Live on 2026-10-13: BTC difficulty 132.7T, price ~$83,500 (vs 145T / $77,300 here). Not refreshed in this pass; needs a server-side proxy or a dated-snapshot refresh."
+      "notes": "Per-coin fallback USD prices. Market data — is_regulatory=false. | 2026-10-13 calkcheck: these fallbacks are what EVERY visitor sees — both CORS proxies of the live whattomine path are dead (api.codetabs.com times out after 20 s; corsproxy.io answers 403 keyless_legacy_url). Live on 2026-10-13: BTC difficulty 132.7T, price ~$83,500 (vs 145T / $77,300 here). Not refreshed in this pass; needs a server-side proxy or a dated-snapshot refresh. | 2026-10-13 (later): live path restored — both mining calculators now read whattomine through our own Cloudflare Worker (/api/whattomine?kind=asic|gpu, whitelist of the two feeds, 10-min cache), so these numbers are only the last-resort snapshot. Refreshed to whattomine on 2026-10-13 (prices matched CoinGecko within 0.3%); the calculator labels the snapshot with that date when it falls back. | 2026-10-13 (later): DOGE added for merged mining: whattomine 1.0112e-6 BTC = $0.08455 at 21:53 NZDT; CoinGecko $0.08407 at 22:2x."
     },
     {
       "id": "BitcoinEnergyCalculator__CO2_PER_KWH",
@@ -1860,20 +1910,20 @@
       "id": "GpuMiningCalculator__COINS.*.price / networkHashrate",
       "calculator": "GpuMiningCalculator",
       "key": "COINS.*.price / networkHashrate",
-      "value": "ETC 8.75, RVN 0.006, ERGO 0.33, KAS 0.036, FLUX 0.023 (USD); plus per-coin networkHashrate",
+      "value": "price ETC 8.23, RVN 0.0016, ERGO 0.303, KAS 0.039 (USD); networkHashrate ETC 146.8e6, RVN 609.4e3, ERGO 515.3e3, KAS 341.6e9 (MH/s)",
       "unit": "USD / MH/s",
       "jurisdiction": "",
       "law": "Coin market price + network hashrate (market/live)",
       "theme": "network",
       "is_regulatory": false,
       "surfaces": [
-        "src/components/GpuMiningCalculator.tsx:62-66"
+        "src/components/GpuMiningCalculator.tsx:71-78"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-10-13",
       "source_hint": "whattomine nethash + exchange_rate, CoinGecko (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Per-coin fallback USD prices and network hashrates. Both are market/live metrics — is_regulatory=false. networkHashrate auto-moves with miners; price is exchange-driven."
+      "notes": "Per-coin fallback USD prices and network hashrates. Both are market/live metrics — is_regulatory=false. networkHashrate auto-moves with miners; price is exchange-driven. | 2026-10-13 (later): live path restored — both mining calculators now read whattomine through our own Cloudflare Worker (/api/whattomine?kind=asic|gpu, whitelist of the two feeds, 10-min cache), so these numbers are only the last-resort snapshot. Refreshed to whattomine on 2026-10-13 (prices matched CoinGecko within 0.3%); the calculator labels the snapshot with that date when it falls back. Unit bug fixed in the same pass: the old networkHashrate values (ETC 200,000, ERGO 15,000, KAS 300,000,000) were GH/s-scale numbers in an MH/s field (live: ETC 146.8 TH/s, ERGO 515 GH/s, KAS 341.6 PH/s), so whenever the snapshot was in use — i.e. for every visitor while the proxies were dead — GPU revenue on ETC/ERGO/KAS was overstated ~700–1,100× (RTX 4090 on ETC: ~$57/day instead of ~$0.07). RVN was 8× the other way."
     },
     {
       "id": "HalvingCalculator__NETWORK_HASHRATE_THS",
