@@ -50,6 +50,32 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-10-13',
         dateLabel: '13 de octubre de 2026',
+        title: 'Calculadora de minería ASIC: la explicación ya coincide con la herramienta',
+        body: 'El texto bajo la calculadora de minería ASIC prometía funciones que no tiene. Decía que la calculadora muestra tu beneficio antes y después del próximo halving de Bitcoin, y pedía introducir la dificultad de la red y una recompensa por bloque reducida a la mitad. Esos campos no existen: la dificultad, la recompensa por bloque y el precio de la moneda se cargan solos desde datos de red en vivo, y la estimación de recuperación supone que se mantienen como hoy. Ahora la página lo dice en los seis idiomas y explica qué hacer en su lugar.',
+        items: [
+          '<strong>Halving:</strong> para Bitcoin, la <a href="/es/calculadora-halving-bitcoin/">calculadora de halving</a> muestra tu beneficio diario actual y el posterior al próximo halving lado a lado.',
+          '<strong>Precios más bajos o más dificultad:</strong> en la calculadora ASIC los ingresos suben y bajan en proporción al hashrate, mientras que la electricidad solo depende de la potencia. Introduce la mitad de tu hashrate con la misma potencia para ver lo que ganarías con la mitad del precio de la moneda o de la recompensa por bloque. Un 75% de tu hashrate se aproxima a un año de crecimiento de la dificultad del 5% mensual.',
+          '<strong>Ejemplo de recuperación:</strong> la página ahora incluye uno: a 6 céntimos por kWh y con Bitcoin cerca de $80.000, un Antminer S21 Pro tarda más de tres años en pagarse, y con la mitad de ese precio no cubre su electricidad.',
+        ],
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 de octubre de 2026',
+        title: 'Las guías «Cómo usar» describen ahora la calculadora que ves',
+        body: 'Debajo de cada calculadora hay una guía breve: «Cómo usar» y «¿Qué significa cada dato que introduces?». La comparamos campo por campo con la propia calculadora. En 105 de nuestras 128 calculadoras describía algo que la calculadora no tiene: un campo de más, un interruptor, datos en vivo o un resultado que nunca aparece. Reescribimos esos pasajes en los seis idiomas para que nombren solo los campos que puedes rellenar y los resultados que verás. Algunos ejemplos:',
+        items: [
+          '<strong>Staking:</strong> el importe se introduce en dólares estadounidenses, no en tokens, y no existe un campo de «precio al final del periodo».',
+          '<strong>Calculadora de impuestos:</strong> calcula una venta cada vez con los tipos de tu país. No admite una lista de operaciones con fechas, no tiene campos de tipo impositivo ni exportación.',
+          '<strong>ROI de minería:</strong> los ingresos y gastos mensuales los introduces tú. La calculadora no deduce los ingresos del hashrate y no incluye valor de reventa ni comparación con comprar y mantener.',
+          '<strong>Validador:</strong> no hay interruptor de MEV-boost ni campo de electricidad; inclúyelos en el rendimiento y en el coste mensual del hardware.',
+          '<strong>Uniswap:</strong> la guía describía una vista previa de swap. En realidad la calculadora estima los ingresos por comisiones y la pérdida impermanente de una posición de liquidez.',
+          '<strong>Comisiones de ETF de Bitcoin:</strong> siempre se comparan las catorce opciones a la vez, y la rentabilidad anual esperada por defecto es del 12%, no del 10%.',
+        ],
+        footer: 'Los cálculos no han cambiado, solo las explicaciones que los acompañan. Todas las cifras son estimaciones de carácter general, no asesoramiento financiero ni fiscal.',
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 de octubre de 2026',
         title: 'Calculadora de minería ASIC: corregidos los mineros de Zcash y Dash',
         body: 'Dos de los once mineros de la calculadora ASIC mostraban casi ningún ingreso, así que parecían dar pérdidas cuando no es así. Ahora ambos coinciden con lo que paga la red.',
         items: [
@@ -331,6 +357,32 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
           '<strong>Antminer L9:</strong> com Dogecoin incluído, rende cerca de $8,50 por dia em vez de $1,40, o que transforma um prejuízo de quase $5 por dia a 8 centavos por kWh num lucro de cerca de $2.',
           '<strong>Você escolhe:</strong> se o seu pool não paga Dogecoin, escolha «Somente LTC» em Mineração combinada. A tabela comparativa segue a mesma opção.',
         ],
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 de outubro de 2026',
+        title: 'Calculadora de mineração ASIC: a explicação agora corresponde à ferramenta',
+        body: 'O texto abaixo da calculadora de mineração ASIC prometia funções que ela não tem. Dizia que a calculadora mostra seu lucro antes e depois do próximo halving do Bitcoin e pedia para inserir a dificuldade da rede e uma recompensa de bloco reduzida à metade. Esses campos não existem: dificuldade, recompensa de bloco e preço da moeda são carregados automaticamente de dados de rede ao vivo, e a estimativa de retorno supõe que eles continuem como hoje. Agora a página diz isso nos seis idiomas e explica o que fazer no lugar.',
+        items: [
+          '<strong>Halving:</strong> para o Bitcoin, a <a href="/pt/calculadora-halving-bitcoin/">calculadora de halving</a> mostra seu lucro diário atual e após o próximo halving lado a lado.',
+          '<strong>Preços menores ou mais dificuldade:</strong> na calculadora ASIC, a receita sobe e desce na mesma proporção do hashrate, enquanto a eletricidade depende só da potência. Insira metade do seu hashrate com a mesma potência para ver quanto ganharia com metade do preço da moeda ou da recompensa de bloco. Cerca de 75% do seu hashrate aproxima um ano de crescimento da dificuldade de 5% ao mês.',
+          '<strong>Exemplo de retorno:</strong> a página agora traz um: a 6 centavos por kWh e com o Bitcoin perto de $80.000, um Antminer S21 Pro leva mais de três anos para se pagar e, com metade desse preço, não cobre a eletricidade.',
+        ],
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 de outubro de 2026',
+        title: 'Os guias «Como usar» agora descrevem a calculadora que você vê',
+        body: 'Abaixo de cada calculadora há um guia curto: «Como usar» e «O que significa cada campo?». Comparamos esses guias, campo por campo, com as próprias calculadoras. Em 105 das nossas 128 calculadoras eles descreviam algo que a calculadora não tem: um campo a mais, um botão, dados ao vivo ou um resultado que nunca aparece. Reescrevemos esses trechos nos seis idiomas, e agora eles citam só os campos que você pode preencher e os resultados que vai ver. Alguns exemplos:',
+        items: [
+          '<strong>Staking:</strong> o valor é informado em dólares americanos, não em tokens, e não existe campo de «preço no fim do período».',
+          '<strong>Calculadora de impostos:</strong> calcula uma venda por vez com as alíquotas do seu país. Não recebe uma lista de operações com datas, não tem campos de alíquota e não exporta nada.',
+          '<strong>ROI de mineração:</strong> você digita a própria receita e as despesas mensais. A calculadora não deriva a receita do hashrate e não há valor de revenda nem comparação com comprar e segurar.',
+          '<strong>Validador:</strong> não há botão de MEV-boost nem campo de eletricidade; inclua esses valores no rendimento e no custo mensal de hardware.',
+          '<strong>Uniswap:</strong> o guia descrevia uma prévia de swap. Na verdade a calculadora estima a receita de taxas e a perda impermanente de uma posição de liquidez.',
+          '<strong>Taxas de ETF de Bitcoin:</strong> as catorze opções são sempre comparadas lado a lado, e o retorno anual esperado padrão é de 12%, não 10%.',
+        ],
+        footer: 'Os cálculos não mudaram, apenas as explicações ao redor deles. Todos os números são estimativas de caráter geral, não aconselhamento financeiro ou fiscal.',
       },
       {
         date: '2026-10-13',
@@ -620,6 +672,32 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-10-13',
         dateLabel: '13 Ekim 2026',
+        title: 'ASIC madencilik hesaplayıcısı: açıklama artık aracın yaptığıyla örtüşüyor',
+        body: 'ASIC madencilik hesaplayıcısının altındaki metin, aracın sahip olmadığı özellikler vaat ediyordu. Hesaplayıcının bir sonraki Bitcoin halving\'inden önceki ve sonraki kârınızı gösterdiğini söylüyor, ağ zorluğunu ve yarıya inmiş blok ödülünü girmenizi istiyordu. Böyle alanlar yok: zorluk, blok ödülü ve coin fiyatı canlı ağ verilerinden otomatik yüklenir ve geri ödeme tahmini bunların bugünkü seviyede kaldığını varsayar. Sayfa artık bunu altı dilde de söylüyor ve bunun yerine ne yapabileceğinizi açıklıyor.',
+        items: [
+          '<strong>Halving:</strong> Bitcoin için <a href="/tr/bitcoin-halving-hesaplayici/">halving hesaplayıcısı</a>, bugünkü ve bir sonraki halving sonrasındaki günlük kârınızı yan yana gösterir.',
+          '<strong>Düşük fiyat veya artan zorluk:</strong> ASIC hesaplayıcısında gelir hashrate ile aynı oranda artıp azalır, elektrik ise yalnızca güce bağlıdır. Coin fiyatı ya da blok ödülü yarıya indiğinde ne kazanacağınızı görmek için aynı güçle hashrate\'inizin yarısını girin. Hashrate\'inizin yaklaşık %75\'i, aylık %5 zorluk artışıyla geçen bir yılı yaklaşık olarak verir.',
+          '<strong>Geri ödeme örneği:</strong> sayfada artık bir örnek var: kWh başına 6 sentte ve Bitcoin ~$80.000 iken bir Antminer S21 Pro\'nun kendini amorti etmesi üç yılı aşar; fiyat bunun yarısına inerse elektriğini bile karşılamaz.',
+        ],
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 Ekim 2026',
+        title: '«Nasıl kullanılır» kılavuzları artık gördüğünüz hesaplayıcıyı anlatıyor',
+        body: 'Her hesaplayıcının altında kısa bir kılavuz bulunur: «nasıl kullanılır» ve «Girdiler ne anlama geliyor?». Bu kılavuzları alan alan hesaplayıcıların kendisiyle karşılaştırdık. 128 hesaplayıcımızın 105\'inde kılavuz, hesaplayıcıda olmayan bir şeyi anlatıyordu: fazladan bir alan, bir anahtar, canlı veri ya da hiç görünmeyen bir sonuç. Bu bölümleri altı dilde yeniden yazdık; artık yalnızca doldurabileceğiniz alanları ve göreceğiniz sonuçları anlatıyorlar. Birkaç örnek:',
+        items: [
+          '<strong>Staking:</strong> tutar token olarak değil ABD doları olarak girilir ve «dönem sonu fiyatı» diye bir alan yoktur.',
+          '<strong>Vergi hesaplayıcısı:</strong> ülkenizin oranlarıyla her seferinde tek bir satışı hesaplar. Tarihli işlem listesi almaz; vergi oranı alanı ve dışa aktarma özelliği yoktur.',
+          '<strong>Madencilik ROI:</strong> aylık gelirinizi ve giderlerinizi kendiniz girersiniz. Hesaplayıcı geliri hash oranından türetmez; yeniden satış değeri veya al-ve-tut karşılaştırması da yoktur.',
+          '<strong>Doğrulayıcı:</strong> MEV-boost anahtarı ve elektrik alanı yoktur; bunları getiri oranına ve aylık donanım maliyetine dahil edin.',
+          '<strong>Uniswap:</strong> kılavuz bir takas önizlemesini anlatıyordu. Hesaplayıcı aslında bir likidite pozisyonunun ücret gelirini ve geçici kaybını tahmin eder.',
+          '<strong>Bitcoin ETF ücretleri:</strong> on dört seçeneğin tamamı her zaman yan yana karşılaştırılır ve varsayılan beklenen yıllık getiri %10 değil %12\'dir.',
+        ],
+        footer: 'Hesaplamaların kendisi değişmedi, yalnızca onları anlatan açıklamalar değişti. Tüm rakamlar genel bilgi amaçlı tahminlerdir; finansal veya vergi tavsiyesi değildir.',
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 Ekim 2026',
         title: 'ASIC madencilik hesaplayıcısı: Zcash ve Dash madencileri düzeltildi',
         body: 'ASIC hesaplayıcısındaki on bir madenciden ikisi neredeyse hiç gelir göstermiyordu; bu yüzden zarar ediyormuş gibi görünüyorlardı, oysa öyle değil. İkisi de artık ağın gerçekte ödediğiyle örtüşüyor.',
         items: [
@@ -905,6 +983,32 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-10-13',
         dateLabel: '13 अक्टूबर 2026',
+        title: 'ASIC माइनिंग कैलकुलेटर: विवरण अब टूल से मेल खाता है',
+        body: 'ASIC माइनिंग कैलकुलेटर के नीचे का टेक्स्ट ऐसी सुविधाओं का वादा करता था जो इसमें नहीं हैं। उसमें लिखा था कि कैलकुलेटर अगली Bitcoin हाल्विंग से पहले और बाद का आपका मुनाफ़ा दिखाता है, और नेटवर्क डिफिकल्टी व आधा ब्लॉक रिवॉर्ड दर्ज करने को कहा गया था। ऐसे कोई फ़ील्ड नहीं हैं: डिफिकल्टी, ब्लॉक रिवॉर्ड और कॉइन कीमत लाइव नेटवर्क डेटा से अपने-आप लोड होती हैं, और ब्रेक-ईवन का अनुमान मानता है कि वे आज के स्तर पर बनी रहेंगी। अब पेज सभी छह भाषाओं में यही बताता है और समझाता है कि इसकी जगह क्या करें।',
+        items: [
+          '<strong>हाल्विंग:</strong> Bitcoin के लिए <a href="/hi/bitcoin-halving-calculator-hindi/">हाल्विंग कैलकुलेटर</a> आपका आज का और अगली हाल्विंग के बाद का दैनिक मुनाफ़ा साथ-साथ दिखाता है।',
+          '<strong>कम कीमत या बढ़ती डिफिकल्टी:</strong> ASIC कैलकुलेटर में कमाई हैशरेट के अनुपात में घटती-बढ़ती है, जबकि बिजली केवल पावर पर निर्भर करती है। आधी कॉइन कीमत या आधे ब्लॉक रिवॉर्ड पर कमाई देखने के लिए उसी पावर के साथ अपना आधा हैशरेट दर्ज करें। हैशरेट का लगभग 75% हर महीने 5% डिफिकल्टी वृद्धि वाले एक साल का अनुमान देता है।',
+          '<strong>पेबैक उदाहरण:</strong> पेज पर अब एक उदाहरण है: 6 सेंट प्रति kWh और लगभग $80,000 Bitcoin पर Antminer S21 Pro को अपनी लागत निकालने में तीन साल से ज़्यादा लगते हैं, और उस कीमत के आधे पर वह अपनी बिजली का खर्च भी नहीं निकाल पाता।',
+        ],
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 अक्टूबर 2026',
+        title: '"उपयोग कैसे करें" गाइड अब वही कैलकुलेटर बताती हैं जो आप देखते हैं',
+        body: 'हर कैलकुलेटर के नीचे एक छोटी गाइड होती है: "उपयोग कैसे करें" और "इनपुट का क्या मतलब है?"। हमने इन गाइडों को फील्ड-दर-फील्ड खुद कैलकुलेटरों से मिलाकर देखा। हमारे 128 में से 105 कैलकुलेटरों पर गाइड ऐसी चीज़ बताती थी जो कैलकुलेटर में है ही नहीं: कोई अतिरिक्त फील्ड, कोई स्विच, लाइव डेटा या ऐसा परिणाम जो कभी दिखता नहीं। हमने ये हिस्से सभी छह भाषाओं में दोबारा लिखे हैं, ताकि अब वे सिर्फ़ वही फील्ड बताएं जिन्हें आप भर सकते हैं और वही परिणाम जो आपको दिखेंगे। कुछ उदाहरण:',
+        items: [
+          '<strong>स्टेकिंग:</strong> राशि टोकन में नहीं, अमेरिकी डॉलर में दर्ज की जाती है, और "अवधि के अंत की कीमत" जैसा कोई फील्ड नहीं है।',
+          '<strong>टैक्स कैलकुलेटर:</strong> यह आपके देश की दरों से एक बार में एक बिक्री का हिसाब लगाता है। यह तारीखों वाली ट्रेड सूची नहीं लेता, इसमें टैक्स-दर फील्ड नहीं हैं और एक्सपोर्ट भी नहीं है।',
+          '<strong>माइनिंग ROI:</strong> मासिक आय और खर्च आप खुद दर्ज करते हैं। कैलकुलेटर हैशरेट से आय नहीं निकालता, और इसमें रीसेल वैल्यू या खरीदो-और-रखो तुलना नहीं है।',
+          '<strong>वैलिडेटर:</strong> इसमें MEV-boost स्विच और बिजली का फील्ड नहीं है; इन्हें यील्ड और मासिक हार्डवेयर लागत में शामिल करें।',
+          '<strong>Uniswap:</strong> गाइड एक स्वैप प्रीव्यू बताती थी। असल में कैलकुलेटर किसी लिक्विडिटी पोजीशन की फीस आय और इम्परमानेंट लॉस का अनुमान लगाता है।',
+          '<strong>बिटकॉइन ETF फीस:</strong> सभी चौदह विकल्प हमेशा साथ-साथ तुलना में दिखते हैं, और डिफ़ॉल्ट अपेक्षित वार्षिक रिटर्न 10% नहीं, 12% है।',
+        ],
+        footer: 'गणनाएं खुद नहीं बदलीं, सिर्फ़ उनके आसपास की व्याख्याएं बदली हैं। सभी आंकड़े सामान्य जानकारी के लिए अनुमान हैं, वित्तीय या टैक्स सलाह नहीं।',
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 अक्टूबर 2026',
         title: 'ASIC माइनिंग कैलकुलेटर: Zcash और Dash माइनर ठीक किए गए',
         body: 'ASIC कैलकुलेटर के ग्यारह माइनरों में से दो लगभग कोई कमाई नहीं दिखा रहे थे, इसलिए वे घाटे वाले लगते थे, जबकि ऐसा नहीं है। अब दोनों वही दिखाते हैं जो नेटवर्क वास्तव में देता है।',
         items: [
@@ -1186,6 +1290,32 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
           '<strong>Antminer L9:</strong> с Dogecoin он приносит около $8,50 в день вместо $1,40, и убыток почти в $5 в день при 8 центах за кВт·ч превращается в прибыль около $2.',
           '<strong>Выбор за вами:</strong> если ваш пул не платит Dogecoin, выберите «Только LTC» в блоке «Совмещённый майнинг». Сравнительная таблица следует той же настройке.',
         ],
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 октября 2026',
+        title: 'Калькулятор ASIC-майнинга: описание теперь соответствует инструменту',
+        body: 'Текст под калькулятором ASIC-майнинга обещал функции, которых у него нет. Там говорилось, что калькулятор показывает прибыль до и после следующего халвинга Bitcoin, и предлагалось ввести сложность сети и уменьшенную вдвое награду за блок. Таких полей нет: сложность, награда за блок и цена монеты подгружаются автоматически из живых сетевых данных, а срок окупаемости считается так, будто они останутся на сегодняшнем уровне. Теперь страница говорит об этом на всех шести языках и объясняет, что делать вместо этого.',
+        items: [
+          '<strong>Халвинг:</strong> для Bitcoin <a href="/ru/kalkulyator-khalvinga-bitkoina/">калькулятор халвинга</a> показывает вашу дневную прибыль сейчас и после следующего халвинга рядом.',
+          '<strong>Падение цены или рост сложности:</strong> в ASIC-калькуляторе доход растёт и падает пропорционально хешрейту, а электричество зависит только от мощности. Введите половину своего хешрейта при той же мощности, чтобы увидеть доход при вдвое меньшей цене монеты или награде за блок. Около 75% хешрейта приближённо соответствует году с ростом сложности на 5% в месяц.',
+          '<strong>Пример окупаемости:</strong> теперь на странице есть пример: при 6 центах за кВт·ч и Bitcoin около $80 000 Antminer S21 Pro окупается дольше трёх лет, а при вдвое меньшей цене не покрывает даже электричество.',
+        ],
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 октября 2026',
+        title: 'Разделы «Как использовать» теперь описывают тот калькулятор, который вы видите',
+        body: 'Под каждым калькулятором есть короткая инструкция: «Как использовать» и «Что означает каждый параметр?». Мы сверили эти инструкции с самими калькуляторами, поле за полем. На 105 из наших 128 калькуляторов они описывали то, чего в калькуляторе нет: лишнее поле, переключатель, загрузку данных в реальном времени или результат, который нигде не показывается. Мы переписали эти фрагменты на всех шести языках, и теперь в них названы только поля, которые можно заполнить, и результаты, которые вы увидите. Несколько примеров:',
+        items: [
+          '<strong>Стейкинг:</strong> сумма вводится в долларах США, а не в токенах, и поля «цена в конце периода» нет.',
+          '<strong>Налоговый калькулятор:</strong> считает одну продажу за раз по ставкам выбранной страны. Он не принимает список сделок с датами, в нём нет полей налоговой ставки и нет экспорта.',
+          '<strong>ROI майнинга:</strong> месячный доход и расходы вы вводите сами. Калькулятор не выводит доход из хешрейта, и в нём нет ни стоимости перепродажи оборудования, ни сравнения с покупкой и удержанием.',
+          '<strong>Валидатор:</strong> переключателя MEV-boost и поля для электричества нет; учитывайте их в доходности и в ежемесячной стоимости оборудования.',
+          '<strong>Uniswap:</strong> инструкция описывала предпросмотр обмена. На самом деле калькулятор оценивает доход от комиссий и непостоянные потери позиции ликвидности.',
+          '<strong>Комиссии биткоин-ETF:</strong> все четырнадцать вариантов всегда сравниваются рядом, а ожидаемая годовая доходность по умолчанию — 12%, а не 10%.',
+        ],
+        footer: 'Сами расчёты не изменились — только пояснения к ним. Все цифры — оценки для общего ознакомления, а не финансовая или налоговая консультация.',
       },
       {
         date: '2026-10-13',
