@@ -1741,39 +1741,39 @@
       "id": "AsicMiningCalculator__NETWORK_DATA.*.difficulty",
       "calculator": "AsicMiningCalculator",
       "key": "NETWORK_DATA.*.difficulty",
-      "value": "BTC 145e12, LTC 30e6, DASH 220e6, ZEC 90e6",
+      "value": "BTC 132.72e12, LTC 87.86e6, DASH 127.2e6, ZEC 279.18e6",
       "unit": "raw difficulty",
       "jurisdiction": "",
       "law": "Network difficulty (market/live)",
       "theme": "network",
       "is_regulatory": false,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:69-72"
+        "src/components/AsicMiningCalculator.tsx:74-82"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-10-13",
       "source_hint": "whattomine difficulty (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Per-coin fallback difficulties ('updated 2026-05-03'). Auto-adjusting market metric, not consensus. is_regulatory=false. | 2026-10-13 calkcheck: these fallbacks are what EVERY visitor sees — both CORS proxies of the live whattomine path are dead (api.codetabs.com times out after 20 s; corsproxy.io answers 403 keyless_legacy_url). Live on 2026-10-13: BTC difficulty 132.7T, price ~$83,500 (vs 145T / $77,300 here). Not refreshed in this pass; needs a server-side proxy or a dated-snapshot refresh."
+      "notes": "Per-coin fallback difficulties ('updated 2026-05-03'). Auto-adjusting market metric, not consensus. is_regulatory=false. | 2026-10-13 calkcheck: these fallbacks are what EVERY visitor sees — both CORS proxies of the live whattomine path are dead (api.codetabs.com times out after 20 s; corsproxy.io answers 403 keyless_legacy_url). Live on 2026-10-13: BTC difficulty 132.7T, price ~$83,500 (vs 145T / $77,300 here). Not refreshed in this pass; needs a server-side proxy or a dated-snapshot refresh. | 2026-10-13 (later): live path restored — both mining calculators now read whattomine through our own Cloudflare Worker (/api/whattomine?kind=asic|gpu, whitelist of the two feeds, 10-min cache), so these numbers are only the last-resort snapshot. Refreshed to whattomine on 2026-10-13 (prices matched CoinGecko within 0.3%); the calculator labels the snapshot with that date when it falls back. Values are whattomine difficulty24."
     },
     {
       "id": "AsicMiningCalculator__NETWORK_DATA.*.price",
       "calculator": "AsicMiningCalculator",
       "key": "NETWORK_DATA.*.price",
-      "value": "BTC 77300, LTC 56, DASH 37, ZEC 337",
+      "value": "BTC 83960, LTC 62.45, DASH 50.52, ZEC 1227.7",
       "unit": "USD",
       "jurisdiction": "",
       "law": "Coin market price",
       "theme": "network",
       "is_regulatory": false,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:69-72"
+        "src/components/AsicMiningCalculator.tsx:74-82"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-10-13",
       "source_hint": "whattomine exchange_rate / CoinGecko (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Per-coin fallback USD prices. Market data — is_regulatory=false. | 2026-10-13 calkcheck: these fallbacks are what EVERY visitor sees — both CORS proxies of the live whattomine path are dead (api.codetabs.com times out after 20 s; corsproxy.io answers 403 keyless_legacy_url). Live on 2026-10-13: BTC difficulty 132.7T, price ~$83,500 (vs 145T / $77,300 here). Not refreshed in this pass; needs a server-side proxy or a dated-snapshot refresh."
+      "notes": "Per-coin fallback USD prices. Market data — is_regulatory=false. | 2026-10-13 calkcheck: these fallbacks are what EVERY visitor sees — both CORS proxies of the live whattomine path are dead (api.codetabs.com times out after 20 s; corsproxy.io answers 403 keyless_legacy_url). Live on 2026-10-13: BTC difficulty 132.7T, price ~$83,500 (vs 145T / $77,300 here). Not refreshed in this pass; needs a server-side proxy or a dated-snapshot refresh. | 2026-10-13 (later): live path restored — both mining calculators now read whattomine through our own Cloudflare Worker (/api/whattomine?kind=asic|gpu, whitelist of the two feeds, 10-min cache), so these numbers are only the last-resort snapshot. Refreshed to whattomine on 2026-10-13 (prices matched CoinGecko within 0.3%); the calculator labels the snapshot with that date when it falls back."
     },
     {
       "id": "BitcoinEnergyCalculator__CO2_PER_KWH",
@@ -1860,20 +1860,20 @@
       "id": "GpuMiningCalculator__COINS.*.price / networkHashrate",
       "calculator": "GpuMiningCalculator",
       "key": "COINS.*.price / networkHashrate",
-      "value": "ETC 8.75, RVN 0.006, ERGO 0.33, KAS 0.036, FLUX 0.023 (USD); plus per-coin networkHashrate",
+      "value": "price ETC 8.23, RVN 0.0016, ERGO 0.303, KAS 0.039 (USD); networkHashrate ETC 146.8e6, RVN 609.4e3, ERGO 515.3e3, KAS 341.6e9 (MH/s)",
       "unit": "USD / MH/s",
       "jurisdiction": "",
       "law": "Coin market price + network hashrate (market/live)",
       "theme": "network",
       "is_regulatory": false,
       "surfaces": [
-        "src/components/GpuMiningCalculator.tsx:62-66"
+        "src/components/GpuMiningCalculator.tsx:71-78"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-10-13",
       "source_hint": "whattomine nethash + exchange_rate, CoinGecko (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Per-coin fallback USD prices and network hashrates. Both are market/live metrics — is_regulatory=false. networkHashrate auto-moves with miners; price is exchange-driven."
+      "notes": "Per-coin fallback USD prices and network hashrates. Both are market/live metrics — is_regulatory=false. networkHashrate auto-moves with miners; price is exchange-driven. | 2026-10-13 (later): live path restored — both mining calculators now read whattomine through our own Cloudflare Worker (/api/whattomine?kind=asic|gpu, whitelist of the two feeds, 10-min cache), so these numbers are only the last-resort snapshot. Refreshed to whattomine on 2026-10-13 (prices matched CoinGecko within 0.3%); the calculator labels the snapshot with that date when it falls back. Unit bug fixed in the same pass: the old networkHashrate values (ETC 200,000, ERGO 15,000, KAS 300,000,000) were GH/s-scale numbers in an MH/s field (live: ETC 146.8 TH/s, ERGO 515 GH/s, KAS 341.6 PH/s), so whenever the snapshot was in use — i.e. for every visitor while the proxies were dead — GPU revenue on ETC/ERGO/KAS was overstated ~700–1,100× (RTX 4090 on ETC: ~$57/day instead of ~$0.07). RVN was 8× the other way."
     },
     {
       "id": "HalvingCalculator__NETWORK_HASHRATE_THS",

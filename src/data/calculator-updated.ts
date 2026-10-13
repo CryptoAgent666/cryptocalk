@@ -21,6 +21,10 @@
 // hashrate, ASIC profitability, Lightning on-chain benchmark, ETF lowest-fee fund + the $0 hero bug, MSTR
 // snapshot), methodology counts made ledger-driven. Other template pages only had raw <a href> text start
 // rendering as links — a markup fix, deliberately NOT treated as a content change here.
+// 2026-10-13 (later): gpu-mining-calculator moved to 2026-10-13. The ASIC and GPU calculators read live
+// whattomine data again (own Worker at /api/whattomine instead of two dead public CORS proxies), and the GPU
+// fallback snapshot was refreshed with its network hashrates corrected to MH/s; both change the numbers the
+// page shows and its "Where these numbers come from" block. asic-mining-calculator was already 2026-10-13.
 export const CALCULATOR_UPDATED: Record<string, string> = {
   "404": "2026-05-11",
   "about": "2026-08-25",
@@ -71,7 +75,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "gas-optimization-calculator": "2026-08-25",
   "geometric-mean-return-calculator": "2026-08-25",
   "governance-voting-calculator": "2026-08-25",
-  "gpu-mining-calculator": "2026-10-06",
+  "gpu-mining-calculator": "2026-10-13",
   "grid-trading-calculator": "2026-08-25",
   "gwei-converter": "2026-08-25",
   "halving-calculator": "2026-10-13",

@@ -42,6 +42,25 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
 - 🔴 **Живой фид майнинга мёртв:** ASIC и GPU тянут whattomine через `api.codetabs.com` (таймаут 20 с) и
   `corsproxy.io` (403 keyless_legacy_url) — каждый посетитель видит «Failed to fetch…» и майские фолбэки. Нужен
   серверный прокси. Методология больше не утверждает обратного. KAS-ролловер это не затрагивает (значение в коде).
+  ✅ **Починено в тот же день (НЕ задеплоено):** `GET /api/whattomine?kind=asic|gpu` в существующем Worker
+  (`functions/api/whattomine.js`). PHP не подходил: маршрут Worker'а `cryptocalk.com/api/*` перехватывает ВСЁ под
+  `/api/`, файл на хостинге туда не дойдёт. Фид выбирается по имени (не URL); Cache API 10 мин, при падении
+  whattomine — stale-копия до 24 ч, не-JSON не кэшируется; CORS только сайт + `https://localhost` (Android).
+  Клиент — `src/utils/whattomine.ts`: в приложении (`data-native`) зовёт `https://cryptocalk.com/api/…` абсолютно.
+  Фолбэк = плашка «Showing network data from <дата>» (`NETWORK_SNAPSHOT_DATE` в обоих компонентах).
+  🔴 Попутно: в GPU-снимке `networkHashrate` стояли числа масштаба GH/s в поле MH/s (ETC 200 000 при живых
+  146,8 млн, ERGO, KAS так же) → доход GPU завышен ~700–1 100× (RTX 4090 на ETC $57/день вместо ~$0,07), и это
+  видел КАЖДЫЙ посетитель, пока прокси были мертвы. Снимки обоих компонентов обновлены на 13.10.2026. Kaspa
+  есть только в `asic.json` — GPU-калькулятор теперь берёт её оттуда (раньше живой путь её не обновлял).
+  ⚠️ Деплой Worker'а: `wrangler deploy` (заливает `dist/` как ассеты контакт-страниц — тот же `dist`, что ушёл
+  по FTP). Текущий логин wrangler — только `account (read)`/`user (read)`: и `dev --remote`, и deploy упадут,
+  нужен `wrangler login` с правами Workers. Не проверено с edge: принимает ли whattomine запросы из Workers —
+  первая проверка после деплоя: `curl -sD- 'https://cryptocalk.com/api/whattomine?kind=asic' -o /dev/null`
+  (200 + `x-cache: MISS`, повтор — `HIT`). Если 502 — калькуляторы просто покажут датированный снимок.
+  ⚠️ Не чинил: ASIC-формула для Equihash (Z15) делит на `difficulty·2³²`, а у Zcash сеть = difficulty·2¹³/время
+  блока (сверено с nethash whattomine) → доход ZEC занижен в 2¹⁹ раз, Z15 всегда «убыточен» (−$2,90 = ровно
+  электричество). И пресет Antminer D9 = `1770` при множителе X11 1e6 (MH/s), а D9 — 1,77 TH/s → доход DASH
+  занижен в 1000×. Обе дыры видны в таблице сравнения ASIC на живых данных.
 - 🔴 **Регуляторное в коде:** шкала Канады в `TaxCalculator.tsx` была смесью 2022/2024 и 15% → CRA 2026
   (14% до $58,523 …). Остальное — DATA-1: виджет чинили в июне, а таблицы/FAQ/quick answers под ним — нет
   (UK 18/24, FR 31,4, IT 33, BR 15–22,5, KR ₩2,5M, NL €59 357, US $15M/$19k на 6 языках).

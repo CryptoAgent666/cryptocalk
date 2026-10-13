@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 import { fmtPctValue } from '../i18n/format';
+import { fetchWhattomine, formatSnapshotDate } from '../utils/whattomine';
 
 interface AsicPreset {
     name: string;
@@ -64,17 +65,21 @@ const ASIC_PRESETS: AsicPreset[] = [
     { name: 'Antminer Z15', hashrate: 420, power: 1510, algo: 'Equihash', coin: 'ZEC', price: 3200 },
 ];
 
-// Network data fallbacks updated 2026-05-03 (used when whattomine API unavailable).
+// Network data snapshot, used only when the live feed (/api/whattomine) is unreachable —
+// the calculator then tells the visitor which date the figures are from. Difficulty and
+// price are whattomine's difficulty24 / exchange_rate on NETWORK_SNAPSHOT_DATE (prices
+// matched CoinGecko within 0.3% that day); block rewards are the protocol values below.
+const NETWORK_SNAPSHOT_DATE = '2026-10-13';
 const NETWORK_DATA: Record<string, NetworkData> = {
-    BTC: { difficulty: 145000000000000, blockReward: 3.125, price: 77300, blockTime: 600 },
-    LTC: { difficulty: 30000000, blockReward: 6.25, price: 56, blockTime: 150 },
+    BTC: { difficulty: 132720000000000, blockReward: 3.125, price: 83960, blockTime: 600 },
+    LTC: { difficulty: 87860000, blockReward: 6.25, price: 62.45, blockTime: 150 },
     // blockReward here is the MINER's share per block — calcDailyCoins multiplies it by the
     // miner's expected blocks/day, and the live whattomine override (block_reward) is
     // miner-facing too. For chains that split the subsidy, storing the full subsidy inflates
     // mining revenue: Dash pays the miner only 20% (masternodes 60%, treasury 20%) and Zcash
     // routes 20% to the ZIP-1015 dev fund.
-    DASH: { difficulty: 220000000, blockReward: 0.4109, price: 37, blockTime: 150 }, // 20% of the 2.05472550 era-12 subsidy (era 12 began at block 2,522,881, 16 Aug 2026); drops to ~0.3816 at block 2,733,121 (~Sep 2027)
-    ZEC: { difficulty: 90000000, blockReward: 1.25, price: 337, blockTime: 75 }, // 80% of the 1.5625 subsidy after the ZIP-1015/NU6 dev fund; next halving ~Nov 2028
+    DASH: { difficulty: 127200000, blockReward: 0.4109, price: 50.52, blockTime: 150 }, // 20% of the 2.05472550 era-12 subsidy (era 12 began at block 2,522,881, 16 Aug 2026); drops to ~0.3816 at block 2,733,121 (~Sep 2027)
+    ZEC: { difficulty: 279180000, blockReward: 1.25, price: 1227.7, blockTime: 75 }, // 80% of the 1.5625 subsidy after the ZIP-1015/NU6 dev fund; next halving ~Nov 2028
 };
 
 // Map whattomine generic names to our symbols
@@ -141,7 +146,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
 
     // Live Data & Results
     const [networkData, setNetworkData] = useState<Record<string, NetworkData>>(NETWORK_DATA);
-    const [liveDataStatus, setLiveDataStatus] = useState<'loading' | 'live' | 'error'>('loading');
+    const [liveDataStatus, setLiveDataStatus] = useState<'loading' | 'live' | 'fallback'>('loading');
 
     const [results, setResults] = useState<PeriodResult[]>([]);
     const [roiDays, setRoiDays] = useState<number | null>(null);
@@ -151,49 +156,33 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
     useEffect(() => {
         let isMounted = true;
         setLiveDataStatus('loading');
-        const wtUrl = "https://whattomine.com/asic.json";
-        const tryFetch = async () => {
-            // Primary: codetabs CORS proxy
-            try {
-                const res = await fetch("https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(wtUrl));
-                if (res.ok) return await res.json();
-            } catch { /* fall through */ }
-            // Fallback: corsproxy.io
-            const res2 = await fetch("https://corsproxy.io/?" + encodeURIComponent(wtUrl));
-            if (!res2.ok) throw new Error('All proxies failed');
-            return await res2.json();
-        };
-        tryFetch()
-            .then(parsed => {
+        fetchWhattomine('asic')
+            .then(({ coins }) => {
                 if (!isMounted) return;
-                try {
-                    const coins = parsed.coins;
-                    const btcPrice = coins['Bitcoin']?.exchange_rate || NETWORK_DATA['BTC'].price;
+                const btcPrice = coins['Bitcoin']?.exchange_rate || NETWORK_DATA['BTC'].price;
+                const updatedData = { ...NETWORK_DATA };
 
-                    const updatedData = { ...NETWORK_DATA };
-
-                    for (const [name, info] of Object.entries(coins)) {
-                        const symbol = COIN_MAPPING[name];
-                        if (symbol && info) {
-                            const coinInfo = info as { difficulty24?: number; difficulty?: number; block_reward24?: number; block_reward?: number; exchange_rate: number };
-                            updatedData[symbol] = {
-                                ...updatedData[symbol],
-                                difficulty: coinInfo.difficulty24 || coinInfo.difficulty || 0,
-                                blockReward: coinInfo.block_reward24 || coinInfo.block_reward || 0,
-                                price: symbol === 'BTC' ? coinInfo.exchange_rate : (coinInfo.exchange_rate * btcPrice),
-                            };
-                        }
-                    }
-
-                    setNetworkData(updatedData);
-                    setLiveDataStatus('live');
-                } catch {
-                    // parse failure — fallback to defaults
-                    setLiveDataStatus('error');
+                for (const [name, symbol] of Object.entries(COIN_MAPPING)) {
+                    const coinInfo = coins[name];
+                    if (!coinInfo) continue;
+                    const snapshot = updatedData[symbol];
+                    // exchange_rate is quoted in BTC for every coin except Bitcoin itself.
+                    const price = coinInfo.exchange_rate
+                        ? (symbol === 'BTC' ? coinInfo.exchange_rate : coinInfo.exchange_rate * btcPrice)
+                        : snapshot.price;
+                    updatedData[symbol] = {
+                        ...snapshot,
+                        difficulty: coinInfo.difficulty24 || coinInfo.difficulty || snapshot.difficulty,
+                        blockReward: coinInfo.block_reward24 || coinInfo.block_reward || snapshot.blockReward,
+                        price,
+                    };
                 }
+
+                setNetworkData(updatedData);
+                setLiveDataStatus('live');
             })
             .catch(() => {
-                if (isMounted) setLiveDataStatus('error');
+                if (isMounted) setLiveDataStatus('fallback');
             });
 
         return () => { isMounted = false; };
@@ -547,21 +536,21 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                     <span className="input-hint">
                         {getUiString(lang, 'Auto-calculates as you type. Pick a preset first for realistic ASIC assumptions.')}
                     </span>
-                    {liveDataStatus === 'error' && (
-                        <span className="input-hint" style={{ color: 'var(--color-accent-red, #ef4444)', marginTop: '8px', display: 'block' }}>
-                            {getUiString(lang, 'Failed to fetch live network data. Using fallback metrics.')}
-                        </span>
-                    )}
                 </div>
 
                 {/* Right: Results */}
                 <div className="calc-results-panel">
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                         <h2 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>{getUiString(lang, 'Estimated Profitability')}</h2>
                         {liveDataStatus === 'live' && (
                             <span style={{ color: 'var(--color-accent-green)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(52, 211, 153, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
                                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--color-accent-green)' }}></span>
                                 {getUiString(lang, 'Live Network Data')}
+                            </span>
+                        )}
+                        {liveDataStatus === 'fallback' && (
+                            <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '4px', background: 'var(--color-bg)', border: '1px solid var(--color-border)', padding: '2px 8px', borderRadius: '12px' }}>
+                                {getUiString(lang, 'Showing network data from {date}').replace('{date}', formatSnapshotDate(NETWORK_SNAPSHOT_DATE, lang))}
                             </span>
                         )}
                     </div>

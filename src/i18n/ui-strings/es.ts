@@ -1454,7 +1454,6 @@ const dict: Record<string, string> = {
   'Number of GPUs': 'Número de GPUs',
   'Pool Fee (%)': 'Comisión del pool (%)',
   'Power per GPU (W)': 'Potencia por GPU (W)',
-  'Using fallback data. Live feed unavailable.': 'Usando datos de respaldo. Feed en vivo no disponible.',
   // Risk-Reward / Position Size Calculator
   'Break-even at': 'Punto de equilibrio en',
   'Direction auto-detects from Entry and Stop-Loss.': 'La dirección se detecta automáticamente desde la entrada y el stop-loss.',
@@ -1572,7 +1571,7 @@ const dict: Record<string, string> = {
   // ASIC Mining Calculator
   'ASIC Model': 'Modelo ASIC',
   'ASIC Purchase Price': 'Precio de compra del ASIC',
-  'Failed to fetch live network data. Using fallback metrics.': 'Error al obtener datos de red. Usando métricas de respaldo.',
+  'Showing network data from {date}': 'Mostrando datos de red del {date}',
   'For ROI calculation': 'Para cálculo de ROI',
   // Break-Even Calculator
   'Loss Percentage': 'Porcentaje de pérdida',

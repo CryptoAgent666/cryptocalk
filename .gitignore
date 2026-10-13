@@ -4,6 +4,9 @@
 # build output — never commit; deploy.sh and wrangler read the local build
 dist/
 
+# wrangler dev local state (Miniflare cache/KV)
+.wrangler/
+
 # dependencies
 node_modules/
 

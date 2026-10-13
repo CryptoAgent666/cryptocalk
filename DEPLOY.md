@@ -9,6 +9,7 @@
 |---|---|
 | Static site (all pages) | Shared hosting (nginx) behind Cloudflare. Live docroot is `~/cryptocalk.com/dist/` on the host; `httpdocs/` is a secondary synced copy. |
 | `/api/contact` + `/{lang}/contact` POST | Cloudflare Worker (`worker.js`, routes in `wrangler.toml`) → `functions/api/contact.js` (Resend + optional Turnstile). |
+| `/api/whattomine?kind=asic\|gpu` GET | Same Worker → `functions/api/whattomine.js`: relays whattomine `asic.json` / `coins.json` for the ASIC and GPU mining calculators (feed chosen by name, never by URL; 10-min Cache API copy, stale copy up to 24 h if whattomine is down; CORS for the app's `https://localhost`). |
 | Android app | Capacitor wrapper; web bundle updated OTA from `https://ota.cryptocalk.com` (self-hosted, `ota-backend-vps/`). |
 
 ## Site deploy
@@ -28,7 +29,7 @@ The script's upload order is load-bearing — don't "simplify" it:
 3. Same two steps again into the secondary `httpdocs/` copy.
 4. Cloudflare `purge_everything`, then a CDN check that every `/_astro/*.js` returns 200.
 
-Worker deploy (only when `worker.js`/`functions/` change): `npx wrangler deploy` (reads `./dist` for the assets binding — build first). Secrets (`RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL`, `TURNSTILE_SECRET`) live in Cloudflare, not in the repo. Local function testing: copy `.dev.vars.example` → `.dev.vars`, then `npm run build && npx wrangler dev`.
+Worker deploy (only when `worker.js`/`functions/` change): `npx wrangler deploy` (reads `./dist` for the assets binding — build first; the `/contact` pages are served from that upload, so deploy from the same `dist/` that went to FTP). Needs a wrangler login with Workers write scopes — `wrangler whoami` must list more than `account (read)` / `user (read)`. Secrets (`RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL`, `TURNSTILE_SECRET`) live in Cloudflare, not in the repo. Local function testing: copy `.dev.vars.example` → `.dev.vars`, then `npm run build && npx wrangler dev`.
 
 ## Android OTA
 

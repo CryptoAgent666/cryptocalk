@@ -39,7 +39,7 @@ const LAST_UPDATED = '20/02/2026';
 const UPDATED_OVERRIDES: Partial<Record<PolicyKey, Partial<Record<LocalizedLang, string>>>> = {
   'editorial-policy': { tr: '25/08/2026', pt: '25/08/2026' },
   privacy: { es: '25/08/2026', pt: '25/08/2026', tr: '25/08/2026', hi: '25/08/2026', ru: '25/08/2026' },
-  methodology: { tr: '24/08/2026', pt: '24/08/2026' },
+  methodology: { tr: '13/10/2026', pt: '13/10/2026' },
 };
 
 const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> = {
@@ -596,9 +596,12 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
           heading: '2. Fontes e cache',
           paragraphs: [
             'Entram nestas calculadoras dois tipos de números, e cada um é mantido de forma completamente diferente.',
-            'Dados de mercado em tempo real: os preços vêm sobretudo da API da CoinGecko, com cache e deduplicação no navegador. As calculadoras de mineração são a exceção: dificuldade, hashrate e recompensa por bloco são instantâneos atualizados à mão, porque o feed de mineração em tempo real está indisponível — e a calculadora avisa na tela quando usa um instantâneo.',
+            'Dados de mercado em tempo real: os preços vêm sobretudo da API da CoinGecko, com cache e deduplicação no navegador. As calculadoras de mineração ASIC e GPU obtêm dificuldade, hashrate, recompensa por bloco e preços das moedas do WhatToMine, através do nosso próprio servidor, que guarda uma cópia por até dez minutos. Se esse feed não estiver acessível, a calculadora usa um instantâneo datado e mostra a data dele na tela.',
           ],
-          links: [{ href: 'https://www.coingecko.com/en/api/documentation', label: 'Documentação da API CoinGecko' }],
+          links: [
+            { href: 'https://www.coingecko.com/en/api/documentation', label: 'Documentação da API CoinGecko' },
+            { href: 'https://whattomine.com/', label: 'WhatToMine (dados de rede de mineração)' },
+          ],
         },
         {
           heading: '3. Constantes regulatórias e de protocolo',
@@ -664,9 +667,12 @@ const contentByPolicy: Record<PolicyKey, Record<LocalizedLang, PolicyContent>> =
           heading: '2. Veri kaynağı ve önbellek',
           paragraphs: [
             'Bu hesaplayıcılara iki tür sayı girer ve ikisi tamamen farklı biçimde bakımı yapılır.',
-            'Canlı piyasa verisi: fiyatlar ağırlıklı olarak CoinGecko API üzerinden alınır; tarayıcıda önbellek ve istek birleştirme uygulanır. Madencilik hesaplayıcıları istisnadır: zorluk, hashrate ve blok ödülü elle güncellenen anlık görüntülerdir, çünkü canlı madencilik verisi şu anda kullanılamıyor — hesaplayıcı bir anlık görüntü kullandığında bunu ekranda belirtir.',
+            'Canlı piyasa verisi: fiyatlar ağırlıklı olarak CoinGecko API üzerinden alınır; tarayıcıda önbellek ve istek birleştirme uygulanır. ASIC ve GPU madencilik hesaplayıcıları ağ zorluğunu, hashrate\'i, blok ödülünü ve coin fiyatlarını WhatToMine\'dan, bir kopyayı en fazla on dakika saklayan kendi sunucumuz üzerinden alır. Bu veri akışına ulaşılamazsa hesaplayıcı tarihli bir anlık görüntüye geçer ve bu görüntünün tarihini ekranda gösterir.',
           ],
-          links: [{ href: 'https://www.coingecko.com/en/api/documentation', label: 'CoinGecko API Dokümantasyonu' }],
+          links: [
+            { href: 'https://www.coingecko.com/en/api/documentation', label: 'CoinGecko API Dokümantasyonu' },
+            { href: 'https://whattomine.com/', label: 'WhatToMine (madencilik ağ verileri)' },
+          ],
         },
         {
           heading: '3. Düzenleyici ve protokol sabitleri',
