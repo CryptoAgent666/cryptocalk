@@ -1552,6 +1552,9 @@ const dict: Record<string, string> = {
   'ASIC Model': 'Модель ASIC',
   'ASIC Purchase Price': 'Цена покупки ASIC',
   'Showing network data from {date}': 'Данные сети на {date}',
+  'Merged Mining': 'Совмещённый майнинг',
+  'Only {coin}': 'Только {coin}',
+  'Most {coin} pools also pay {merged} for the same hashes, at no extra power cost.': 'Большинство пулов {coin} за те же хеши платят ещё и {merged} — без лишнего расхода электричества.',
   'For ROI calculation': 'Для расчёта окупаемости',
   // BreakEvenCalculator
   'Loss Percentage': 'Процент убытка',

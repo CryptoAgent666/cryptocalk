@@ -29,6 +29,10 @@
 // 2^32 -> 2^13 and Scrypt/X11 read in GH/s. The server-rendered model list now reads "16 GH/s" / "1770 GH/s"
 // and the difficulty-factor row of its "Where these numbers come from" block changed; the Z15 and D9
 // profits change once the calculator runs. The date was already 2026-10-13; updates is too.
+// Same evening: DOGE merged mining for the L9 (new "Merged Mining" pills, LTC + DOGE revenue rows, own /updates/ entry) and two
+// DOGE rows in the "Where these numbers come from" block. Still 2026-10-13. /methodology/ and the pt/tr
+// editorial-policy pages print the ledger total, which ticked 108 -> 110; that counter is not treated as an
+// editorial change, so their dates were left alone.
 export const CALCULATOR_UPDATED: Record<string, string> = {
   "404": "2026-05-11",
   "about": "2026-08-25",

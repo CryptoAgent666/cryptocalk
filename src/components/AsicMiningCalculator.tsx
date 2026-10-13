@@ -35,9 +35,16 @@ interface NetworkData {
 interface PeriodResult {
     period: string;
     revenue: number;
+    revenueByCoin: CoinRevenue[];
     electricity: number;
     poolFee: number;
     netProfit: number;
+}
+
+export interface CoinRevenue {
+    coin: string;
+    coins: number;
+    usd: number;
 }
 
 interface AsicComparison {
@@ -81,6 +88,16 @@ export const NETWORK_DATA: Record<string, NetworkData> = {
     // routes 20% to the ZIP-1015 dev fund.
     DASH: { difficulty: 127200000, blockReward: 0.4109, price: 50.52, blockTime: 150 }, // 20% of the 2.05472550 era-12 subsidy (era 12 began at block 2,522,881, 16 Aug 2026); drops to ~0.3816 at block 2,733,121 (~Sep 2027)
     ZEC: { difficulty: 279180000, blockReward: 1.25, price: 1227.7, blockTime: 75 }, // 80% of the 1.5625 subsidy after the ZIP-1015/NU6 dev fund; next halving ~Nov 2028
+    DOGE: { difficulty: 38510000, blockReward: 10000, price: 0.0845, blockTime: 60 }, // flat 10,000 DOGE per block since block 600,000 (Feb 2018): no halvings, no dev-fund split
+};
+
+// Coins paid for the same hashes through merged mining (AuxPoW): a Scrypt share that meets
+// Dogecoin's target is also a valid Dogecoin block, so an LTC miner earns DOGE in proportion to
+// hashrate / DOGE difficulty at no extra power. Dogecoin has accepted merge-mined blocks since
+// block 371,337 (2014) and every large Litecoin pool pays it. The smaller AuxPoW Scrypt chains
+// some pools add (Bellscoin, Pepecoin, Luckycoin…) are left out.
+export const MERGE_MINED: Record<string, string[]> = {
+    LTC: ['DOGE'],
 };
 
 // Map whattomine generic names to our symbols
@@ -88,7 +105,8 @@ const COIN_MAPPING: Record<string, string> = {
     Bitcoin: 'BTC',
     Litecoin: 'LTC',
     Dash: 'DASH',
-    Zcash: 'ZEC'
+    Zcash: 'ZEC',
+    Dogecoin: 'DOGE',
 };
 
 const ELECTRICITY_PILLS = [0.04, 0.06, 0.08, 0.10, 0.15];
@@ -123,11 +141,13 @@ export function getHashrateUnit(algo: string): string {
 }
 
 /**
- * Expected hashes (Equihash: solutions) per block at difficulty 1, i.e. 2^256 / powLimit.
- * SHA-256, Scrypt and X11 chains all use Bitcoin's difficulty-1 target (~2^224), so 2^32.
- * Zcash's powLimit is 0x0007ff…ff = 2^243 - 1 (zcashd chainparams), so 2^13: using 2^32
- * there understated ZEC revenue 2^19 = 524,288x. Both match whattomine's
- * nethash = difficulty * factor / block_time for BTC, LTC, DASH and ZEC.
+ * Expected hashes (Equihash: solutions) per block at difficulty 1, i.e. 2^256 divided by the
+ * target that the coin's client reports as difficulty 1. Bitcoin-derived clients (BTC, LTC,
+ * DASH, DOGE) hardcode Bitcoin's 0x1d00ffff (~2^224) in getdifficulty whatever their own
+ * powLimit is (Litecoin's and Dogecoin's is 2^236 - 1), so 2^32. zcashd measures difficulty
+ * against its own powLimit, 2^243 - 1, so 2^13: using 2^32 there understated ZEC revenue
+ * 2^19 = 524,288x. Both match whattomine's nethash = difficulty * factor / block_time for
+ * BTC, LTC, DASH, DOGE and ZEC.
  */
 export function getDifficultyFactor(algo: string): number {
     switch (algo) {
@@ -148,6 +168,23 @@ export function calcDailyCoins(
     return (hashrateHps / (difficulty * getDifficultyFactor(algo))) * 86400 * blockReward;
 }
 
+/** Daily coins and USD for the mined coin, plus its merge-mined coins when included. */
+export function dailyRevenueByCoin(
+    hashrate: number,
+    algo: string,
+    coin: string,
+    network: Record<string, NetworkData>,
+    includeMerged: boolean,
+): CoinRevenue[] {
+    const symbols = includeMerged ? [coin, ...(MERGE_MINED[coin] ?? [])] : [coin];
+    return symbols.flatMap((symbol) => {
+        const net = network[symbol];
+        if (!net) return [];
+        const coins = calcDailyCoins(hashrate, algo, net.difficulty, net.blockReward);
+        return [{ coin: symbol, coins, usd: coins * net.price }];
+    });
+}
+
 function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
     // Inputs
     const [selectedAsic, setSelectedAsic] = useState(ASIC_PRESETS[0].name);
@@ -158,6 +195,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
     const [asicPrice, setAsicPrice] = useState(String(ASIC_PRESETS[0].price));
     const [activeCoin, setActiveCoin] = useState(ASIC_PRESETS[0].coin);
     const [activeAlgo, setActiveAlgo] = useState(ASIC_PRESETS[0].algo);
+    const [mergeMining, setMergeMining] = useState(true);
 
     // Live Data & Results
     const [networkData, setNetworkData] = useState<Record<string, NetworkData>>(NETWORK_DATA);
@@ -245,9 +283,9 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
             return;
         }
 
-        // Daily coins mined
-        const dailyCoins = calcDailyCoins(hr, activeAlgo, network.difficulty, network.blockReward);
-        const dailyRevenueUsd = dailyCoins * network.price;
+        // Daily revenue: the mined coin plus any merge-mined coins
+        const dailyByCoin = dailyRevenueByCoin(hr, activeAlgo, activeCoin, networkData, mergeMining);
+        const dailyRevenueUsd = dailyByCoin.reduce((sum, r) => sum + r.usd, 0);
         const dailyElectricity = ((pw || 0) / 1000) * 24 * (elCost || 0);
         const dailyPoolFee = dailyRevenueUsd * ((pFee || 0) / 100);
         const dailyNet = dailyRevenueUsd - dailyElectricity - dailyPoolFee;
@@ -263,6 +301,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
         const newResults = periods.map(({ period, multiplier: mult }) => ({
             period,
             revenue: dailyRevenueUsd * mult,
+            revenueByCoin: dailyByCoin.map((r) => ({ ...r, coins: r.coins * mult, usd: r.usd * mult })),
             electricity: dailyElectricity * mult,
             poolFee: dailyPoolFee * mult,
             netProfit: dailyNet * mult,
@@ -283,9 +322,8 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
         const elRate = elCost || 0;
         const feeRate = pFee || 0;
         const comparisonData: AsicComparison[] = ASIC_PRESETS.map((preset) => {
-            const net = networkData[preset.coin];
-            const dCoins = calcDailyCoins(preset.hashrate, preset.algo, net.difficulty, net.blockReward);
-            const dRevenue = dCoins * net.price;
+            const byCoin = dailyRevenueByCoin(preset.hashrate, preset.algo, preset.coin, networkData, mergeMining);
+            const dRevenue = byCoin.reduce((sum, r) => sum + r.usd, 0);
             const dElec = (preset.power / 1000) * 24 * elRate;
             const dFee = dRevenue * (feeRate / 100);
             const dProfit = dRevenue - dElec - dFee;
@@ -296,14 +334,14 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                 hashrate: preset.hashrate,
                 power: preset.power,
                 algo: preset.algo,
-                coin: preset.coin,
+                coin: byCoin.map((r) => r.coin).join(' + '),
                 dailyProfit: dProfit,
                 efficiency,
             };
         }).sort((a, b) => b.dailyProfit - a.dailyProfit);
 
         setComparison(comparisonData);
-    }, [hashrate, power, electricityCost, poolFee, asicPrice, activeCoin, activeAlgo, networkData]);
+    }, [hashrate, power, electricityCost, poolFee, asicPrice, activeCoin, activeAlgo, networkData, mergeMining]);
 
     // Auto-calculate on input change
     useEffect(() => {
@@ -321,6 +359,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
         setAsicPrice(String(first.price));
         setActiveCoin(first.coin);
         setActiveAlgo(first.algo);
+        setMergeMining(true);
         setResults([]);
         setRoiDays(null);
         setDailyProfit(0);
@@ -339,6 +378,8 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
     const isProfit = results.length > 0 && results[0].netProfit >= 0;
     const currentPreset = ASIC_PRESETS.find((a) => a.name === selectedAsic);
     const hashrateUnit = getHashrateUnit(activeAlgo);
+    const mergeCoins = MERGE_MINED[activeCoin] ?? [];
+    const minedCoins = (mergeMining ? [activeCoin, ...mergeCoins] : [activeCoin]).join(' + ');
     const efficiency = currentPreset && currentPreset.hashrate > 0
         ? (currentPreset.power / currentPreset.hashrate).toFixed(1)
         : '—';
@@ -447,6 +488,34 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                             </span>
                         </div>
                     </div>
+
+                    {/* Merged mining: only for coins whose pools also pay an AuxPoW coin */}
+                    {mergeCoins.length > 0 && (
+                        <div className="input-group">
+                            <label>{getUiString(lang, 'Merged Mining')}</label>
+                            <div className="pills-row">
+                                <button
+                                    className={`pill-btn ${mergeMining ? 'active' : ''}`}
+                                    aria-pressed={mergeMining}
+                                    onClick={() => setMergeMining(true)}
+                                >
+                                    {[activeCoin, ...mergeCoins].join(' + ')}
+                                </button>
+                                <button
+                                    className={`pill-btn ${!mergeMining ? 'active' : ''}`}
+                                    aria-pressed={!mergeMining}
+                                    onClick={() => setMergeMining(false)}
+                                >
+                                    {getUiString(lang, 'Only {coin}').replace('{coin}', activeCoin)}
+                                </button>
+                            </div>
+                            <span className="input-hint">
+                                {getUiString(lang, 'Most {coin} pools also pay {merged} for the same hashes, at no extra power cost.')
+                                    .replace('{coin}', activeCoin)
+                                    .replace('{merged}', mergeCoins.join(', '))}
+                            </span>
+                        </div>
+                    )}
 
                     {/* Electricity Cost */}
                     <div className="input-group">
@@ -571,7 +640,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                             {/* Hero */}
                             <div className={`result-hero ${isProfit ? 'profit' : 'fee'}`}>
                                 <span className="result-hero-label">
-                                    {getUiString(lang, 'Daily Profit')} ({activeCoin})
+                                    {getUiString(lang, 'Daily Profit')} ({minedCoins})
                                 </span>
                                 <span className="result-hero-value">
                                     {isProfit ? <TrendingUp size={28} /> : <Zap size={28} />}
@@ -591,10 +660,17 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                             <span className="result-label"><strong>{getUiString(lang, r.period)}</strong></span>
                                             <span className="result-value"><strong>{getUiString(lang, r.period)}</strong></span>
                                         </div>
-                                        <div className="result-row">
-                                            <span className="result-label">{getUiString(lang, 'Revenue')}</span>
-                                            <span className="result-value profit">{formatUSD(r.revenue)}</span>
-                                        </div>
+                                        {r.revenueByCoin.length > 1 ? r.revenueByCoin.map((c) => (
+                                            <div className="result-row" key={c.coin}>
+                                                <span className="result-label">{getUiString(lang, 'Revenue')} ({c.coin})</span>
+                                                <span className="result-value profit">{formatUSD(c.usd)}</span>
+                                            </div>
+                                        )) : (
+                                            <div className="result-row">
+                                                <span className="result-label">{getUiString(lang, 'Revenue')}</span>
+                                                <span className="result-value profit">{formatUSD(r.revenue)}</span>
+                                            </div>
+                                        )}
                                         <div className="result-row">
                                             <span className="result-label">{getUiString(lang, 'Electricity')}</span>
                                             <span className="result-value fee">-{formatUSD(r.electricity)}</span>
@@ -774,7 +850,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                         </div>
                                         <div className="result-row">
                                             <span className="result-label">{getUiString(lang, 'Coin')}</span>
-                                            <span className="result-value">{currentPreset.coin}</span>
+                                            <span className="result-value">{currentPreset.coin === activeCoin ? minedCoins : currentPreset.coin}</span>
                                         </div>
                                         <div className="result-row">
                                             <span className="result-label">{getUiString(lang, 'Efficiency')}</span>

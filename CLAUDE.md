@@ -845,19 +845,26 @@ freed L1 validators but left the Primary Network minimum).
   of that). Era 12: in-block 1.64378041 → miner 0.41094510.
 
 ### ⚠️ ASIC difficulty factor and hashrate units are per algorithm (bug class, fixed 2026-10-13)
-`AsicMiningCalculator.calcDailyCoins` used `difficulty × 2^32` for every coin. Right for SHA-256 / Scrypt /
-X11 (all inherit Bitcoin's difficulty-1 target), wrong for Zcash: its Equihash `powLimit` is 2^243 − 1, so
-the factor is **2^13** and ZEC revenue was 2^19 = 524,288× too small (Z15 showed only its electricity bill).
+`AsicMiningCalculator.calcDailyCoins` used `difficulty × 2^32` for every coin. Right for BTC, LTC, DASH and
+DOGE, wrong for Zcash: ZEC revenue was 2^19 = 524,288× too small (the Z15 showed only its electricity bill).
+**The factor is 2^256 ÷ the target the client's `getdifficulty` calls 1, NOT 2^256 ÷ `powLimit`.**
+Bitcoin Core's `GetDifficulty` hardcodes `0x1d00ffff` (~2^224), and Bitcoin-derived clients inherit it whatever
+their own `powLimit` (Litecoin, Dash, Dogecoin: 2^236 − 1, which by the powLimit rule would wrongly give 2^20)
+→ **2^32**. zcashd's `GetDifficultyINTERNAL` divides by its own `powLimit`, 2^243 − 1 → **2^13**. (The first
+version of this note and of the code comment said "2^256 / powLimit" — wrong, corrected the same evening.)
 Same day, same symptom: the D9 preset said `1770` in an MH/s field — it is 1,770 **GH/s**. Scrypt and X11 are
-now GH/s (L9 = 16, D9 = 1770). **When adding a coin or algorithm:** take the factor from the client's
-`chainparams` `powLimit` (2^256 / powLimit) and confirm `difficulty × factor / block_time` reproduces
-whattomine's `nethash` (`curl https://whattomine.com/asic.json`); enter preset hashrate in the unit printed by
-`getHashrateUnit`. `src/test/asic-mining.test.ts` pins both: the four nethash identities, plus a 1–100 USD/day
-gross band per preset that any 1000× unit slip falls out of.
-⚠️ **Known model gap (not fixed):** the L9 earns LTC only. DOGE merge-mining is not modelled, and on
-2026-10-13 it was worth ~$7.07/day vs ~$1.42 from LTC, so the L9 shows −$4.85/day where real L9 owners net
-roughly +$2 at $0.08/kWh. The page copy makes no merge-mining claim, so nothing on the page is false, but
-the number is low.
+now GH/s (L9 = 16, D9 = 1770). **When adding a coin or algorithm:** read the client's `getdifficulty`, then
+confirm `difficulty × factor / block_time` reproduces whattomine's `nethash`
+(`curl https://whattomine.com/asic.json`) — that check, not the derivation, is what caught everything; enter
+preset hashrate in the unit printed by `getHashrateUnit`. `src/test/asic-mining.test.ts` pins five nethash
+identities (BTC, LTC, DOGE, DASH, ZEC) plus a 1–100 USD/day gross band per preset that any 1000× slip falls out of.
+- **DOGE merged mining (added 2026-10-13):** `MERGE_MINED = { LTC: ['DOGE'] }`. An LTC miner earns DOGE at
+  `hashrate / (DOGE difficulty × 2^32) × 86400 × 10,000` on top of LTC, at no extra power. On 2026-10-13 that
+  was ~$7.1/day vs ~$1.4 from LTC, turning the L9 from −$4.85 into ~+$2/day at $0.08/kWh. A pill switch
+  ("LTC + DOGE" / "Only LTC", default on) appears only for LTC; the comparison table follows it. DOGE reward
+  is a flat 10,000 since block 600,000 (no halvings, no split); it comes live from whattomine `Dogecoin`.
+  Left out on purpose: the smaller AuxPoW Scrypt chains some pools add (Bellscoin, Pepecoin, Luckycoin…).
+  ⚠️ DOGE difficulty swings a lot within a day (34M–46M seen on 2026-10-13); the code uses `difficulty24`.
 
 ## Key crypto context
 - BTC block reward **3.125** (4th halving Apr 2024, block 840,000); next halving block **1,050,000 → 1.5625**

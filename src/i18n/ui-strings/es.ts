@@ -1572,6 +1572,9 @@ const dict: Record<string, string> = {
   'ASIC Model': 'Modelo ASIC',
   'ASIC Purchase Price': 'Precio de compra del ASIC',
   'Showing network data from {date}': 'Mostrando datos de red del {date}',
+  'Merged Mining': 'Minería combinada',
+  'Only {coin}': 'Solo {coin}',
+  'Most {coin} pools also pay {merged} for the same hashes, at no extra power cost.': 'La mayoría de los pools de {coin} también pagan {merged} por los mismos hashes, sin gastar más electricidad.',
   'For ROI calculation': 'Para cálculo de ROI',
   // Break-Even Calculator
   'Loss Percentage': 'Porcentaje de pérdida',
