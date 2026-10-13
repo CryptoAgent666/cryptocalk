@@ -32,6 +32,26 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
      `MiningRoiCalculator`, `ValidatorCalculator`, `StockToFlowCalculator`, `DustAttackCalculator`,
      `StakingRewardsCalculator` (block reward, halving schedule, 21M supply, 32-ETH validator, dust 546).
 
+### Проза vs компонент 2026-10-13 — how/inputs ЗАДЕПЛОЕНО + OTA 1.7.7; seo-ext в ветке, НЕ задеплоено
+- **how/inputs** (`ae23f6436`, отчёт `AUDIT-2026-10-13-how-inputs.md`): 105 из 128 калькуляторов описывали
+  несуществующие поля/выходы, 1 436 абзацев на 6 языках переписаны. `deploy.sh --no-build` из основного чекаута 13.10
+  (~22:52; CF purge, 294 прогреты, IndexNow 220, чанки 200; живые страницы сверены с `?cb=`). **OTA 1.7.7**
+  (sha256 `67c579ea…6efa3589`, ключ в 28 чанках; `updates.php`: 1.7.6 → 1.7.7, 1.7.7 → `{}`). **1.7.8 занята** сессией
+  eloquent-hypatia (ASIC/GPU/Worker/DOGE поверх main), **1.7.9** — сессией infallible-blackburn (из main после
+  fast-forward до `a11df1062`) → OTA для seo-ext — **1.7.10+**; перед публикацией POST в `updates.php` с последней
+  версией и объявить номер остальным сессиям.
+- **seo-ext** (`1911ee6f4`, ветка `claude/affectionate-heyrovsky-ba7018`, отчёт `AUDIT-2026-10-13-seo-ext.md`): 8
+  нижних секций, 1 065 абзацев в 90 слагах; asic-mining исключён (переписан в `claude/infallible-blackburn-ce8d67`).
+  Перед деплоем — смержить ветку с ASIC/DOGE-ветками (конфликты только в верхних записях `calculator-updated.ts` и
+  обоих `updates.astro`, сам `calculator-seo-ext.ts` мержится чисто), иначе откатим чужой деплой.
+- ⏸ Решение за владельцем: блоки seo-ext не по теме — `compound-calculator` (текст про плечо) и
+  `nft-profit-calculator` (текст про редкость NFT): переписать или выключить секции в `calculator-sections.ts`.
+- 🔧 Метод (переиспользовать): правки как JSON `{slug,lang,field,idx,old,new}`, применение скриптом с поиском литерала
+  в блоке slug→lang→section (бэктик / `"…"` с `\"` / `\'`), затем ребандл esbuild и сверка «все new на месте, остальные
+  абзацы побайтно равны»; после сборки — `grep -rl '&lt;a href' dist` и скан мёртвых внутренних ссылок по `dist`.
+  Локальные href вида `/hi/crypto-…/` в прозе НЕ локализуются `localizeLinks()` (он берёт только односегментные пути) —
+  писать только английский слаг.
+
 ### CalkCheck 2026-10-13 (20 страниц, ручной проход актуальности) — ЗАДЕПЛОЕНО + OTA 1.7.6
 Отчёт `AUDIT-2026-10-13.md`. Коммит `008227cbf`, `deploy.sh --no-build` 13.10 (CF purge, 294 URL прогреты, IndexNow 70,
 все чанки 200); проверено на живом сайте с `?cb=`: правки на месте, **294/294 URL = 200**, экранированной разметки 0.
