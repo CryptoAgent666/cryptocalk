@@ -9,7 +9,7 @@ All notable changes to this project are documented here.
 
 ## [2026-10-14] — CalkCheck pass 2 (20 more pages, 6 languages)
 
-Full report: `AUDIT-2026-10-14.md`. Branch `claude/calkcheck-2-20261013`; not deployed in this entry.
+Full report: `AUDIT-2026-10-14.md`. Deployed 2026-10-14 (main `309a055d9`, together with the how/seo-ext branch) + OTA 1.7.9.
 
 ### Fixed
 - **Card cashback calculator:** the Crypto.com preset turned a subscription rebate into a 100% cashback rate

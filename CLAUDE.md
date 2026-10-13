@@ -32,7 +32,7 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
      `MiningRoiCalculator`, `ValidatorCalculator`, `StockToFlowCalculator`, `DustAttackCalculator`,
      `StakingRewardsCalculator` (block reward, halving schedule, 21M supply, 32-ETH validator, dust 546).
 
-### CalkCheck #2 2026-10-13/14 (ещё 20 страниц) — ветка `claude/calkcheck-2-20261013`, НЕ ЗАДЕПЛОЕНО
+### CalkCheck #2 2026-10-13/14 (ещё 20 страниц) — ЗАДЕПЛОЕНО 14.10 + OTA 1.7.9
 Отчёт `AUDIT-2026-10-14.md`. Сборка 1294 стр., экранированной разметки 0; виджеты проверены в браузере на локальной сборке.
 - 🔴 **Два бага расчёта:** card-cashback — пресет Crypto.com брал подписочный рибейт за 100% кэшбэка ($11 052/год),
   10-летняя стоимость компаундила все 10 лет с первого дня (×2). what-if — «текущие» цены были майским снимком
@@ -44,8 +44,11 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
 - Рынок/протокол на 13.10.2026 (переиспользовать): BTC $83,600 · ETH $2,510 · difficulty 132.7T (~950–1,000 EH/s) ·
   газ ~0.1 Gwei, лимит блока 60M · Lido stETH 2.25% net (~2.5% gross) · T-bills 4.05–4.31% · Kraken Pro $0+ 0.40/0.80 ·
   Coinbase Advanced US entry 0.50/0.90 (с 16.09.2026, таблица только под логином) · Pectra: штраф слэшинга 1/4096.
-- ⏸ 19 PT-FAQ без диакритики — отдельная задача. **Перед деплоем — смержить `claude/eloquent-hypatia-587952`**
-  (a11df1062: ASIC/DOGE), иначе откатятся чужие правки; **следующая OTA — 1.7.9** (1.7.8 опубликована соседней сессией 14.10, 1.7.9 никто не занял; проверять POST в `updates.php`). Main (a11df1062) уже влит в ветку.
+- ✅ **Выкачено одним деплоем 14.10 (main `309a055d9` = a11df1062 + этот проход + ветка how/seo-ext `affectionate-heyrovsky`, 37 общих абзацев сведены: их формулировки + мои цифры).** `deploy.sh` полный: CF purge, 294 URL прогреты,
+  IndexNow 247, все чанки 200; живые страницы проверены с `?cb=`. **OTA 1.7.9** (sha256 `b21980fb…84bc362`, ключ CoinGecko
+  в 28 чанках; `updates.php`: 1.7.8 → 1.7.9, 1.7.9 → `{}`). **Следующая OTA — 1.7.10+.** origin/main НЕ запушен (ждёт решения).
+- ⏸ 19 PT-FAQ без диакритики — отдельная задача (запущена 14.10).
+
 ### Проза vs компонент 2026-10-13 — how/inputs ЗАДЕПЛОЕНО + OTA 1.7.7; seo-ext в ветке, НЕ задеплоено
 - **how/inputs** (`ae23f6436`, отчёт `AUDIT-2026-10-13-how-inputs.md`): 105 из 128 калькуляторов описывали
   несуществующие поля/выходы, 1 436 абзацев на 6 языках переписаны. `deploy.sh --no-build` из основного чекаута 13.10
