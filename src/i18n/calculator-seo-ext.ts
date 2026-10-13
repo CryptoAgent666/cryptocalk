@@ -5806,7 +5806,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Ignoring ASIC resale depreciation in ROI calculations. Bitcoin ASICs lose 70–90% of value in the first 18–24 months as newer, more efficient models release. Factor this depreciation into your total cost model, the machine's value at the end of your mining period matters."
       ],
       benchmarks: [
-      "Bitcoin ASIC efficiency benchmarks (2026): frontier machines (Antminer S21, WhatsMiner M60) achieve 16–22 J/TH efficiency. Previous generation (Antminer S19 Pro) runs at 29.5 J/TH. At $0.05/kWh, S21-class miners generate $8–15/day net profit per unit at $73,000 BTC. At $0.10/kWh, profitability halves.",
+      "Bitcoin ASIC efficiency benchmarks (2026): frontier machines (Antminer S21, WhatsMiner M60) achieve 16–22 J/TH efficiency. Previous generation (Antminer S19 Pro) runs at 29.5 J/TH. At $0.05/kWh, S21-class miners net roughly $2.50–4.50/day per unit with BTC near $80,000; at $0.10/kWh they sit at or below break-even.",
       "For institutional viability, break-even under 12 months at current prices is the industry benchmark. Retail miners with higher electricity rates (above $0.08/kWh) find it difficult to compete with industrial operations at $0.02–0.04/kWh, which become profitable even in bear markets."
       ],
       execution: [
@@ -5908,7 +5908,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "ROI hesaplamalarında ASIC ikinci el değer kaybını görmezden gelmek."
       ],
       benchmarks: [
-      "Bitcoin ASIC verimlilik kıyaslamaları (2026): sınır makineleri %16–22 J/TH verimliliği elde eder.",
+      "Bitcoin ASIC verimlilik kıyaslamaları (2026): sınır makineleri 16–22 J/TH verimliliği elde eder.",
       "Kurumsal uygulanabilirlik için mevcut fiyatlarda 12 ayın altında başabaş sektör kıyaslamasıdır."
       ],
       execution: [
@@ -5976,7 +5976,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Игнорирование амортизации ASIC при расчёте ROI. Bitcoin ASIC теряют 70–90% стоимости в первые 18–24 месяца."
       ],
       benchmarks: [
-      "Ориентиры эффективности Bitcoin ASIC (2026): передовые машины (Antminer S21, WhatsMiner M60) достигают 16–22 Дж/ТХ. При $0.05/кВт·ч генерируют $8–15/сут чистой прибыли на единицу при BTC $60 000.",
+      "Ориентиры эффективности Bitcoin ASIC (2026): передовые машины (Antminer S21, WhatsMiner M60) достигают 16–22 Дж/ТХ. При $0,05/кВт·ч дают примерно $2,50–4,50/сут чистыми на единицу при BTC около $80 000; при $0,10/кВт·ч — на уровне безубыточности или в минусе.",
       "Для институциональной жизнеспособности, окупаемость менее 12 месяцев при текущих ценах — отраслевой ориентир."
       ],
       execution: [
@@ -6218,7 +6218,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Not accounting for efficiency losses in the power supply unit (PSU). Mining hardware PSUs are typically 90–93% efficient, so a miner rated at 3,000W from the miner specification actually draws 3,000/0.92 ≈ 3,261W at the wall. Using the device specification overstates efficiency and understates electricity cost."
       ],
       benchmarks: [
-      "Electricity cost benchmarks by region (2026): US residential average: $0.12/kWh. US industrial: $0.08/kWh. China industrial (Sichuan wet season): $0.02–0.04/kWh. Nordic hydro power: $0.03–0.06/kWh. US Sun Belt (natural gas generation): $0.05–0.07/kWh. Mining profitability is heavily geographically dependent.",
+      "Electricity cost benchmarks by region (2026): US residential average: ~$0.17/kWh (EIA). US industrial: $0.08/kWh. China industrial (Sichuan wet season): $0.02–0.04/kWh. Nordic hydro power: $0.03–0.06/kWh. US Sun Belt (natural gas generation): $0.05–0.07/kWh. Mining profitability is heavily geographically dependent.",
       "At $0.05/kWh (favorable rate), a 3,500W ASIC costs $0.175/hour = $4.20/day = $126/month in electricity. At $0.10/kWh, the same machine costs $252/month. A $126 difference can be the entire profit margin for many machines, underscoring why electricity cost is the primary determinant of mining viability."
       ],
       execution: [
@@ -6252,7 +6252,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "No tener en cuenta las pérdidas de eficiencia en la unidad de fuente de alimentación (PSU)."
       ],
       benchmarks: [
-      "Benchmarks de coste de electricidad por región (2026): EE.UU. residencial promedio: $0.12/kWh. EE.UU. industrial: $0.08/kWh. Energía hidroeléctrica nórdica: $0.03–0.06/kWh.",
+      "Benchmarks de coste de electricidad por región (2026): EE.UU. residencial promedio: ~$0,17/kWh (EIA). EE.UU. industrial: $0.08/kWh. Energía hidroeléctrica nórdica: $0.03–0.06/kWh.",
       "A $0.05/kWh (tarifa favorable), un ASIC de 3,500W cuesta $126/mes en electricidad."
       ],
       execution: [
@@ -6286,7 +6286,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Não contabilizar as perdas de eficiência na unidade de fonte de alimentação (PSU)."
       ],
       benchmarks: [
-      "Benchmarks de custo de eletricidade por região (2026): média residencial dos EUA: $0.12/kWh. Industrial nos EUA: $0.08/kWh. Energia hidrelétrica nórdica: $0.03–0.06/kWh.",
+      "Benchmarks de custo de eletricidade por região (2026): média residencial dos EUA: ~$0,17/kWh (EIA). Industrial nos EUA: $0.08/kWh. Energia hidrelétrica nórdica: $0.03–0.06/kWh.",
       "A $0.05/kWh (tarifa favorável), um ASIC de 3.500W custa $126/mês em eletricidade."
       ],
       execution: [
@@ -6320,7 +6320,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Güç kaynağı birimindeki (PSU) verimlilik kayıplarını hesaba katmamak."
       ],
       benchmarks: [
-      "Bölgeye göre elektrik maliyeti kıyaslamaları (2026): ABD konut ortalaması: 0.12 $/kWh. ABD endüstriyel: 0.07 $/kWh. İskandinav hidroelektrik gücü: 0.03–0.06 $/kWh.",
+      "Bölgeye göre elektrik maliyeti kıyaslamaları (2026): ABD konut ortalaması: ~0,17 $/kWh (EIA). ABD endüstriyel: 0.07 $/kWh. İskandinav hidroelektrik gücü: 0.03–0.06 $/kWh.",
       "0.05 $/kWh'de (avantajlı tarife), 3.500W'lık bir ASIC elektrikte aylık 126 dolara mal olur."
       ],
       execution: [
@@ -6354,7 +6354,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "पावर सप्लाई यूनिट (PSU) में दक्षता हानि के लिए खाता न करना।"
       ],
       benchmarks: [
-      "क्षेत्र के अनुसार बिजली लागत बेंचमार्क (2026): US आवासीय औसत: $0.12/kWh। US औद्योगिक: $0.08/kWh। नॉर्डिक हाइड्रो पावर: $0.03–0.06/kWh।",
+      "क्षेत्र के अनुसार बिजली लागत बेंचमार्क (2026): US आवासीय औसत: ~$0.17/kWh (EIA)। US औद्योगिक: $0.08/kWh। नॉर्डिक हाइड्रो पावर: $0.03–0.06/kWh।",
       "$0.05/kWh (अनुकूल दर) पर, 3,500W ASIC बिजली में $126/माह खर्च करता है।"
       ],
       execution: [
@@ -6388,7 +6388,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Игнорирование потерь эффективности блока питания (PSU). Майнинговые PSU имеют КПД 90–93%, что означает более высокое фактическое потребление от розетки."
       ],
       benchmarks: [
-      "Ориентиры стоимости электроэнергии по регионам (2026): средний жилой тариф в США: $0.12/кВт·ч. Промышленный в США: $0.08/кВт·ч. Скандинавская гидроэлектростанция: $0.03–0.06/кВт·ч.",
+      "Ориентиры стоимости электроэнергии по регионам (2026): средний жилой тариф в США: ~$0,17/кВт·ч (EIA). Промышленный в США: $0.08/кВт·ч. Скандинавская гидроэлектростанция: $0.03–0.06/кВт·ч.",
       "При $0.05/кВт·ч (благоприятный тариф) ASIC мощностью 3 500 Вт обходится в $126/мес. на электроэнергию."
       ],
       execution: [
@@ -6615,7 +6615,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     en: {
       interpret: [
       "The hashrate converter translates between different hashing power units: H/s (hashes per second), KH/s (kilohashes), MH/s (megahashes), GH/s (gigahashes), TH/s (terahashes), PH/s (petahashes), and EH/s (exahashes). Each step is a 1000× increase. Bitcoin network hashrate is currently measured in EH/s (exahashes), while individual GPU miners might operate at MH/s, and ASICs at TH/s. Misreading the unit prefix by one step is a 1000× error that completely invalidates profitability calculations.",
-      "The \"network share\" output shows what percentage of the total network hashrate your hardware represents, which directly determines your expected block reward share. A single S21 ASIC at 200 TH/s against an 856 EH/s Bitcoin network has a share of 200 TH/s / 800,000,000 TH/s = 0.000000025%, meaning you statistically earn one block reward every 38 years solo mining, demonstrating why pool mining is essential for predictable income."
+      "The \"network share\" output shows what percentage of the total network hashrate your hardware represents, which directly determines your expected block reward share. A single S21 ASIC at 200 TH/s against a ~1,000 EH/s Bitcoin network (1,000,000,000 TH/s) has a share of 0.00002%, meaning you would statistically find one block about every 95 years solo mining, demonstrating why pool mining is essential for predictable income."
       ],
       scenarios: [
       "Pool comparison: mining pools report contributed hashrate in different units. Use this converter to normalize all pool contributors to the same unit (TH/s) before comparing your contribution across pools and verifying the pool's reported hashrate matches your hardware's expected output.",
@@ -11560,12 +11560,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
   'crypto-inheritance-calculator': {
     en: {
       interpret: [
-        "The inheritance calculator estimates the future value of crypto holdings passed to heirs, factoring in growth projections, tax implications, and estate planning costs. If the projected value at the planned transfer date exceeds estate tax thresholds ($13.61M for US federal in 2026), the calculator flags the need for trust structures or gifting strategies to minimize tax erosion.",
+        "The inheritance calculator estimates the future value of crypto holdings passed to heirs, factoring in growth projections, tax implications, and estate planning costs. If the projected value at the planned transfer date exceeds estate tax thresholds ($15M for US federal in 2026), the calculator flags the need for trust structures or gifting strategies to minimize tax erosion.",
         "Review the tax jurisdiction output carefully. Crypto inheritance tax treatment varies dramatically: the US provides a stepped-up cost basis at death (heirs pay zero capital gains on pre-death appreciation), while some European countries tax inherited crypto at 30–55%. This single variable can change the optimal strategy from 'hold until death' to 'gift annually' depending on jurisdiction. Cross-check projected gains with our <a href=\"/tax-calculator/\">tax calculator</a>."
       ],
       scenarios: [
         "Long-term estate planning: you hold 5 BTC ($368,500) and want to ensure your children can access it. Without planning, heirs may not know your wallet exists, cannot access hardware wallet PINs, or face probate delays of 6–18 months. The calculator shows that creating a multi-sig wallet with a dead man's switch plus documented recovery procedures reduces inheritance risk from 'likely total loss' to 'accessible within 30 days'.",
-        "Annual gifting strategy: the US allows $18,000 per recipient per year tax-free. Gifting 0.24 BTC ($17,688) annually to each child creates a tax-efficient transfer that also distributes risk. Over 10 years at current prices, this transfers 2.4 BTC per child ($176,880) with zero gift tax. The calculator models cumulative transfers and projected growth."
+        "Annual gifting strategy: the US allows $19,000 per recipient per year tax-free (2026). Gifting 0.24 BTC ($17,688) annually to each child creates a tax-efficient transfer that also distributes risk. Over 10 years at current prices, this transfers 2.4 BTC per child ($176,880) with zero gift tax. The calculator models cumulative transfers and projected growth."
       ],
       checklist: [
         "Before using inheritance projections: 1) Confirm your jurisdiction's crypto inheritance tax rules, many changed in 2024–2025. 2) Verify that your growth rate assumption is conservative (use 5–10% for planning, not 50%). 3) Include all crypto holdings across all wallets and exchanges, not just the largest position.",
@@ -11576,7 +11576,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Another critical error is using optimistic growth projections for estate planning. Planning around 'BTC to $500K' creates unrealistic expectations and may lead to inadequate tax preparation. Use conservative estimates (5–10% annual growth) for planning purposes and treat higher outcomes as upside rather than baseline expectations."
       ],
       benchmarks: [
-        "Estate tax thresholds by jurisdiction: US federal $13.61M (2026), UK £325K nil-rate band, Germany €400K for children, Japan 10–55% graduated. For crypto-heavy estates near these thresholds, proactive planning can save 20–40% of the estate's value versus reactive tax preparation after death.",
+        "Estate tax thresholds by jurisdiction: US federal $15M (2026), UK £325K nil-rate band, Germany €400K for children, Japan 10–55% graduated. For crypto-heavy estates near these thresholds, proactive planning can save 20–40% of the estate's value versus reactive tax preparation after death.",
         "Crypto recovery success rates: properly documented multi-sig setups have near-100% heir recovery rates. Hardware wallets with documented PINs/seeds: ~95%. Exchange accounts with named beneficiaries: ~80% (subject to platform policies). Undocumented wallets: <5% recovery rate. Invest in documentation proportional to your holdings' value."
       ],
       execution: [
@@ -11599,7 +11599,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Planificación patrimonial a largo plazo: tienes 5 BTC ($368,500) y quieres asegurar que tus hijos puedan acceder. Sin planificación, los herederos pueden no saber que existe tu wallet o no poder acceder a ella.",
-        "Estrategia de donación anual: EE.UU. permite $18,000 por beneficiario al año libres de impuestos. Donar 0.24 BTC anualmente crea una transferencia fiscalmente eficiente."
+        "Estrategia de donación anual: EE.UU. permite $19,000 por beneficiario al año (2026) libres de impuestos. Donar 0.24 BTC anualmente crea una transferencia fiscalmente eficiente."
       ],
       checklist: [
         "Antes de usar proyecciones: 1) Confirma las reglas fiscales de herencia cripto de tu jurisdicción. 2) Verifica que tu supuesto de crecimiento sea conservador (5–10%). 3) Incluye todas las tenencias cripto.",
@@ -11610,7 +11610,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Otro error crítico es usar proyecciones de crecimiento optimistas. Usa estimaciones conservadoras (5–10% anual) para planificación."
       ],
       benchmarks: [
-        "Umbrales de impuesto patrimonial por jurisdicción: EE.UU. $13.61M, UK £325K, Alemania €400K para hijos. La planificación proactiva puede ahorrar 20–40% del valor del patrimonio.",
+        "Umbrales de impuesto patrimonial por jurisdicción: EE.UU. $15M, UK £325K, Alemania €400K para hijos. La planificación proactiva puede ahorrar 20–40% del valor del patrimonio.",
         "Tasas de recuperación: configuraciones multifirma documentadas ~100%, wallets hardware documentadas ~95%, exchanges con beneficiarios ~80%, wallets no documentadas <5%."
       ],
       execution: [
@@ -11633,7 +11633,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Planejamento patrimonial de longo prazo: você tem 5 BTC ($386.500) e quer garantir que seus filhos possam acessá-los. Sem planejamento, herdeiros podem não saber que sua carteira existe.",
-        "Estratégia de doação anual: os EUA permitem $18.000 por beneficiário por ano isentos de impostos. Doar 0,24 BTC anualmente cria uma transferência eficiente fiscalmente."
+        "Estratégia de doação anual: os EUA permitem $19.000 por beneficiário por ano (2026) isentos de impostos. Doar 0,24 BTC anualmente cria uma transferência eficiente fiscalmente."
       ],
       checklist: [
         "Antes de usar projeções: 1) Confirme as regras fiscais de herança cripto da sua jurisdição. 2) Verifique que sua premissa de crescimento seja conservadora (5–10%). 3) Inclua todas as holdings.",
@@ -11644,7 +11644,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Outro erro crítico é usar projeções otimistas de crescimento. Use estimativas conservadoras (5–10% anual) para planejamento."
       ],
       benchmarks: [
-        "Limites de imposto patrimonial: EUA $13,61M, UK £325K, Alemanha €400K para filhos. Planejamento proativo pode economizar 20–40% do valor do espólio.",
+        "Limites de imposto patrimonial: EUA $15M, UK £325K, Alemanha €400K para filhos. Planejamento proativo pode economizar 20–40% do valor do espólio.",
         "Taxas de recuperação: multi-assinatura documentado ~100%, carteiras hardware documentadas ~95%, exchanges com beneficiários ~80%, carteiras não documentadas <5%."
       ],
       execution: [
@@ -11667,7 +11667,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Uzun vadeli miras planlaması: 5 BTC ($386.500) tutuyorsunuz ve çocuklarınızın erişebilmesini istiyorsunuz. Planlama olmadan, varisler cüzdanınızın varlığını bilemeyebilir.",
-        "Yıllık hediye stratejisi: ABD alıcı başına yıllık $18.000 vergisiz izin verir. Yıllık 0,24 BTC hediye etmek vergi açısından verimli bir transfer yaratır."
+        "Yıllık hediye stratejisi: ABD alıcı başına yıllık $19.000 (2026) vergisiz izin verir. Yıllık 0,24 BTC hediye etmek vergi açısından verimli bir transfer yaratır."
       ],
       checklist: [
         "Projeksiyonları kullanmadan önce: 1) Yetki alanınızın kripto miras vergisi kurallarını doğrulayın. 2) Büyüme oranı varsayımınızın muhafazakâr olduğunu kontrol edin (%5–10). 3) Tüm kripto varlıklarınızı dahil edin.",
@@ -11678,7 +11678,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Bir diğer kritik hata iyimser büyüme projeksiyonları kullanmaktır. Planlama için muhafazakâr tahminler kullanın (%5–10 yıllık)."
       ],
       benchmarks: [
-        "Yetki alanına göre miras vergisi eşikleri: ABD $13,61M, İngiltere £325K, Almanya çocuklar için €400K. Proaktif planlama miras değerinin %20–40'ını kurtarabilir.",
+        "Yetki alanına göre miras vergisi eşikleri: ABD $15M, İngiltere £325K, Almanya çocuklar için €400K. Proaktif planlama miras değerinin %20–40'ını kurtarabilir.",
         "Kurtarma oranları: belgelenmiş çoklu imza ~%100, belgelenmiş donanım cüzdanları ~%95, lehtarı belirlenmiş exchange'ler ~%80, belgelenmemiş cüzdanlar <%5."
       ],
       execution: [
@@ -11701,7 +11701,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "दीर्घकालिक संपत्ति योजना: आपके पास 5 BTC ($368,500) है और आप अपने बच्चों की पहुंच सुनिश्चित करना चाहते हैं। योजना के बिना, उत्तराधिकारी आपकी वॉलेट के अस्तित्व के बारे में नहीं जान सकते।",
-        "वार्षिक उपहार रणनीति: US प्रति प्राप्तकर्ता प्रति वर्ष $18,000 कर-मुक्त की अनुमति देता है। वार्षिक 0.24 BTC उपहार देना कर-कुशल हस्तांतरण बनाता है।"
+        "वार्षिक उपहार रणनीति: US प्रति प्राप्तकर्ता प्रति वर्ष $19,000 (2026) कर-मुक्त की अनुमति देता है। वार्षिक 0.24 BTC उपहार देना कर-कुशल हस्तांतरण बनाता है।"
       ],
       checklist: [
         "अनुमानों का उपयोग करने से पहले: 1) अपने क्षेत्राधिकार के क्रिप्टो विरासत कर नियमों की पुष्टि करें। 2) सत्यापित करें कि आपकी वृद्धि दर धारणा रूढ़िवादी है (5–10%)। 3) सभी क्रिप्टो होल्डिंग्स शामिल करें।",
@@ -11712,7 +11712,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "एक और गंभीर गलती संपत्ति नियोजन के लिए आशावादी वृद्धि अनुमानों का उपयोग करना है। नियोजन के लिए रूढ़िवादी अनुमान (5–10% वार्षिक) का उपयोग करें।"
       ],
       benchmarks: [
-        "क्षेत्राधिकार के अनुसार संपत्ति कर सीमाएं: US $13.61M, UK £325K, जर्मनी बच्चों के लिए €400K। सक्रिय योजना संपत्ति मूल्य का 20–40% बचा सकती है।",
+        "क्षेत्राधिकार के अनुसार संपत्ति कर सीमाएं: US $15M, UK £325K, जर्मनी बच्चों के लिए €400K। सक्रिय योजना संपत्ति मूल्य का 20–40% बचा सकती है।",
         "पुनर्प्राप्ति दरें: प्रलेखित मल्टी-सिग ~100%, प्रलेखित हार्डवेयर वॉलेट ~95%, नामित लाभार्थियों वाले एक्सचेंज ~80%, अप्रलेखित वॉलेट <5%।"
       ],
       execution: [
@@ -11735,7 +11735,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Долгосрочное планирование: у вас 5 BTC ($368 500), и вы хотите обеспечить доступ для детей. Без планирования наследники могут не знать о кошельке или не смочь получить к нему доступ.",
-        "Стратегия ежегодного дарения: в США разрешено $18 000 на получателя в год без налога. Ежегодное дарение 0,24 BTC создаёт налогово-эффективную передачу."
+        "Стратегия ежегодного дарения: в США разрешено $19 000 на получателя в год (2026) без налога. Ежегодное дарение 0,24 BTC создаёт налогово-эффективную передачу."
       ],
       checklist: [
         "Перед использованием прогнозов: 1) Подтвердите правила налога на криптонаследство вашей юрисдикции. 2) Используйте консервативную ставку роста (5–10%). 3) Включите все криптоактивы.",
@@ -11746,7 +11746,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Другая критическая ошибка — использование оптимистичных прогнозов роста. Для планирования используйте консервативные оценки (5–10% годовых)."
       ],
       benchmarks: [
-        "Пороги налога на наследство: США $13,61M, Великобритания £325K, Германия €400K для детей. Проактивное планирование может сэкономить 20–40% стоимости наследства.",
+        "Пороги налога на наследство: США $15 млн, Великобритания £325K, Германия €400K для детей. Проактивное планирование может сэкономить 20–40% стоимости наследства.",
         "Показатели восстановления: документированный мультиподпись ~100%, документированные аппаратные кошельки ~95%, биржи с указанными бенефициарами ~80%, недокументированные кошельки <5%."
       ],
       execution: [
@@ -15207,7 +15207,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Accretive issuance test: MSTR at mNAV 2.0 issues $1B equity, buys $1B BTC. New BTC per share rises by 50% of dilution (since 2× premium means each new share converts to 2× its NAV in BTC). Premium-driven flywheel works only while mNAV > 1.0; if mNAV drops below 1, issuance becomes dilutive.",
-        "Comparison framework: MSTR mNAV 1.8, MetaPlanet 3.0, Semler Scientific 1.4 — MetaPlanet's premium is highest, suggesting either: (a) Japanese retail bid disconnected from fundamentals, (b) faster expected accumulation rate, or (c) overvaluation. Compare with <a href=\"/etf-fee-calculator/\">spot BTC ETFs</a> at mNAV 1.0 (no premium) for the no-premium baseline."
+        "Comparison framework (illustrative numbers): if MSTR trades at 1.8, MetaPlanet at 3.0 and a smaller treasury at 1.4, the highest premium suggests either: (a) Japanese retail bid disconnected from fundamentals, (b) faster expected accumulation rate, or (c) overvaluation. Compare with <a href=\"/etf-fee-calculator/\">spot BTC ETFs</a> at mNAV 1.0 (no premium) for the no-premium baseline."
       ],
       checklist: [
         "Before mNAV-based trades: 1) Verify BTC holdings count is current (companies disclose monthly/quarterly). 2) Use most recent BTC price, not stale quote. 3) Subtract debt for enterprise NAV calculation if treasury has significant leverage. 4) Account for share class dilution if convertible bonds outstanding.",
@@ -15218,8 +15218,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Treating high mNAV as automatic buy or sell signal. Premium can compress (mean revert) OR expand if BTC price rises faster than market cap (mNAV decreases without share price falling). Always combine with directional view on BTC and broader equity beta."
       ],
       benchmarks: [
-        "MSTR mNAV historical ranges: Q4 2022 bear: 0.7-0.9 (discount era), Q1-Q3 2024 base: 1.5-1.8, Q4 2024 mania: 2.5-3.2 (peak), Q1 2026: 1.8-2.2. Mean reversion plays best when mNAV exceeds 2.5 with declining BTC inflows, or below 1.0 with accelerating BTC accumulation.",
-        "Other BTC treasuries 2026 baseline: MicroStrategy 1.8-2.2, MetaPlanet 2.0-3.0, Semler Scientific 1.2-1.5, smaller treasuries (KULR, MARA non-mining segment) 1.0-1.4. Anomalies above these ranges may signal local euphoria or below them may signal undervaluation worth investigating."
+        "MSTR mNAV historical ranges: Q4 2022 bear: 0.7-0.9 (discount era), Q1-Q3 2024 base: 1.5-1.8, Q4 2024 mania: 2.5-3.2 (peak), October 2026: ~1.1× on an enterprise-value basis (~0.9× on simple market cap). Mean reversion plays best when mNAV exceeds 2.5 with declining BTC inflows, or below 1.0 with accelerating BTC accumulation.",
+        "Snapshot, 13 October 2026 (bitcointreasuries.net, enterprise-value basis): Strategy ~1.1×, Strive (incl. Semler) ~1.4×, Metaplanet ~0.7×, below NAV. Premiums compressed sharply from the late-2024 peak, so treat any multiple as a dated reading, not a norm."
       ],
       execution: [
         "Position sizing for mNAV trade: never go all-in on a premium compression bet. A 30% mNAV decline can take 6-18 months. Allocate 5-15% of risk capital to a short-mNAV / long-BTC pairs trade, with 6-month time horizon and stop loss if mNAV expands further by 50%.",
@@ -15230,8 +15230,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Track convertible bond conversion thresholds. MSTR has multiple converts at strike $400-700; conversions effectively dilute shareholders without cash. A 'fully diluted' share count gives more accurate mNAV than basic share count, especially when stock is well above conversion strikes."
       ],
       validation: [
-        "Quick check: 440K BTC × $77K = $33.9B BTC NAV. MSTR market cap $95B → mNAV = 95/33.9 = 2.80. If your tool shows materially different, verify BTC count (check most recent 8-K) and BTC price source.",
-        "Premium decomposition: total premium ($95B - $33.9B = $61B) divided into: (a) operating business value (~$2-5B based on Cap IQ), (b) tax-deferred structure value (~$5-10B for unrealized gains protection), (c) future accumulation expectation (rest). Sanity-check the residual against credible BTC purchase pace."
+        "Quick check: 848,250 BTC × $83,600 = $70.9B BTC NAV. MSTR market cap $62.9B → mNAV = 62.9/70.9 = 0.89 (13 Oct 2026). If your tool shows materially different, verify BTC count (check most recent 8-K) and BTC price source.",
+        "Premium decomposition (late-2024 example, when MSTR traded near 2.8×): total premium ($95B - $33.9B = $61B) divided into: (a) operating business value (~$2-5B based on Cap IQ), (b) tax-deferred structure value (~$5-10B for unrealized gains protection), (c) future accumulation expectation (rest). Sanity-check the residual against credible BTC purchase pace."
       ],
     },
     es: {
@@ -15241,7 +15241,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Prueba de emisión accretiva: MSTR con mNAV 2.0 emite $1B en equity, compra $1B en BTC. El nuevo BTC por acción sube en un 50% de la dilución (ya que una prima de 2× significa que cada nueva acción se convierte en 2× su NAV en BTC). El flywheel impulsado por prima funciona solo mientras mNAV > 1.0; si mNAV cae por debajo de 1, la emisión se vuelve dilutiva.",
-        "Marco comparativo: MSTR mNAV 1.8, MetaPlanet 3.0, Semler Scientific 1.4: la prima de MetaPlanet es la más alta, sugiriendo: (a) demanda retail japonesa desconectada de fundamentales, (b) tasa de acumulación esperada más rápida, o (c) sobrevaloración. Compara con <a href=\"/etf-fee-calculator/\">ETFs spot de BTC</a> con mNAV 1.0 (sin prima) como línea base sin prima."
+        "Marco comparativo (cifras ilustrativas): si MSTR cotiza a 1,8, MetaPlanet a 3,0 y una tesorería menor a 1,4, la prima más alta sugiere: (a) demanda retail japonesa desconectada de fundamentales, (b) tasa de acumulación esperada más rápida, o (c) sobrevaloración. Compara con <a href=\"/etf-fee-calculator/\">ETFs spot de BTC</a> con mNAV 1.0 (sin prima) como línea base sin prima."
       ],
       checklist: [
         "Antes de operaciones basadas en mNAV: 1) Verifica que el conteo de tenencias de BTC sea actual (las empresas reportan mensual/trimestralmente). 2) Usa el precio más reciente de BTC, no una cotización obsoleta. 3) Resta la deuda para el cálculo de NAV de empresa si la tesorería tiene apalancamiento significativo. 4) Considera la dilución por clases de acciones si hay bonos convertibles pendientes.",
@@ -15252,8 +15252,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Tratar un mNAV alto como señal automática de compra o venta. La prima puede comprimirse (reversión a la media) O expandirse si el precio de BTC sube más rápido que la capitalización (mNAV disminuye sin que el precio de la acción caiga). Combínalo siempre con visión direccional sobre BTC y beta más amplia de equity."
       ],
       benchmarks: [
-        "Rangos históricos del mNAV de MSTR: Q4 2022 oso: 0.7-0.9 (era de descuento), Q1-Q3 2024 base: 1.5-1.8, Q4 2024 manía: 2.5-3.2 (pico), Q1 2026: 1.8-2.2. Los plays de reversión a la media funcionan mejor cuando mNAV excede 2.5 con flujos de BTC decrecientes, o por debajo de 1.0 con acumulación de BTC acelerándose.",
-        "Otras tesorerías de BTC línea base 2026: MicroStrategy 1.8-2.2, MetaPlanet 2.0-3.0, Semler Scientific 1.2-1.5, tesorerías más pequeñas (KULR, segmento no-minero de MARA) 1.0-1.4. Anomalías por encima de estos rangos pueden señalar euforia local o por debajo pueden señalar infravaloración a investigar."
+        "Rangos históricos del mNAV de MSTR: Q4 2022 oso: 0.7-0.9 (era de descuento), Q1-Q3 2024 base: 1.5-1.8, Q4 2024 manía: 2.5-3.2 (pico), octubre de 2026: ~1,1× en base de valor empresarial (~0,9× sobre capitalización simple). Los plays de reversión a la media funcionan mejor cuando mNAV excede 2.5 con flujos de BTC decrecientes, o por debajo de 1.0 con acumulación de BTC acelerándose.",
+        "Foto del 13 de octubre de 2026 (bitcointreasuries.net, base de valor empresarial): Strategy ~1,1×, Strive (incl. Semler) ~1,4×, Metaplanet ~0,7×, por debajo del NAV. Las primas se comprimieron con fuerza desde el pico de finales de 2024: toma cualquier múltiplo como una lectura fechada, no como una norma."
       ],
       execution: [
         "Dimensionamiento de posición para trade de mNAV: nunca apuestes todo a una compresión de prima. Una caída de mNAV del 30% puede tomar 6-18 meses. Asigna 5-15% del capital de riesgo a un pair trade corto-mNAV / largo-BTC, con horizonte de 6 meses y stop loss si mNAV se expande más allá de un 50% adicional.",
@@ -15264,8 +15264,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Sigue los umbrales de conversión de bonos convertibles. MSTR tiene múltiples convertibles con strike $400-700; las conversiones diluyen efectivamente a los accionistas sin efectivo. Un conteo de acciones 'totalmente diluidas' da un mNAV más preciso que el conteo básico, especialmente cuando la acción está bastante por encima de los strikes de conversión."
       ],
       validation: [
-        "Verificación rápida: 440K BTC × $77K = $33.9B NAV en BTC. Capitalización MSTR $95B → mNAV = 95/33.9 = 2.80. Si tu herramienta muestra algo materialmente diferente, verifica el conteo de BTC (revisa el 8-K más reciente) y la fuente del precio de BTC.",
-        "Descomposición de prima: prima total ($95B - $33.9B = $61B) dividida en: (a) valor del negocio operativo (~$2-5B según Cap IQ), (b) valor de estructura fiscalmente diferida (~$5-10B por protección de ganancias no realizadas), (c) expectativa de acumulación futura (el resto). Verifica el residual contra un ritmo creíble de compra de BTC."
+        "Verificación rápida: 848.250 BTC × $83.600 = $70.900M de NAV en BTC. Capitalización MSTR $62.900M → mNAV = 62,9/70,9 = 0,89 (13 oct 2026). Si tu herramienta muestra algo materialmente diferente, verifica el conteo de BTC (revisa el 8-K más reciente) y la fuente del precio de BTC.",
+        "Descomposición de prima (ejemplo de finales de 2024, con MSTR cerca de 2,8×): prima total ($95B - $33.9B = $61B) dividida en: (a) valor del negocio operativo (~$2-5B según Cap IQ), (b) valor de estructura fiscalmente diferida (~$5-10B por protección de ganancias no realizadas), (c) expectativa de acumulación futura (el resto). Verifica el residual contra un ritmo creíble de compra de BTC."
       ],
     },
     pt: {
@@ -15275,7 +15275,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Teste de emissão acretiva: MSTR com mNAV 2,0 emite $1B em ações, compra $1B em BTC. Novo BTC por ação sobe em 50% da diluição (já que prêmio 2× significa que cada nova ação converte em 2× seu NAV em BTC). O flywheel impulsionado por prêmio só funciona enquanto mNAV > 1,0; se mNAV cair abaixo de 1, a emissão se torna diluitiva.",
-        "Estrutura comparativa: MSTR mNAV 1,8, MetaPlanet 3,0, Semler Scientific 1,4 — o prêmio da MetaPlanet é o maior, sugerindo: (a) demanda do varejo japonês desconectada dos fundamentos, (b) taxa de acumulação esperada mais rápida, ou (c) sobrevalorização. Compare com <a href=\"/etf-fee-calculator/\">ETFs spot de BTC</a> a mNAV 1,0 (sem prêmio) para a linha de base sem prêmio."
+        "Estrutura comparativa (números ilustrativos): se a MSTR negocia a 1,8, a MetaPlanet a 3,0 e uma tesouraria menor a 1,4, o maior prêmio sugere: (a) demanda do varejo japonês desconectada dos fundamentos, (b) taxa de acumulação esperada mais rápida, ou (c) sobrevalorização. Compare com <a href=\"/etf-fee-calculator/\">ETFs spot de BTC</a> a mNAV 1,0 (sem prêmio) para a linha de base sem prêmio."
       ],
       checklist: [
         "Antes de trades baseados em mNAV: 1) Verifique se a contagem de BTC detido é atual (empresas divulgam mensalmente/trimestralmente). 2) Use o preço mais recente do BTC, não cotação desatualizada. 3) Subtraia a dívida para o cálculo de NAV da empresa se a tesouraria tem alavancagem significativa. 4) Considere diluição por classe de ações se houver títulos conversíveis em circulação.",
@@ -15286,8 +15286,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Tratar mNAV alto como sinal automático de compra ou venda. O prêmio pode comprimir (reverter à média) OU expandir se o preço do BTC sobe mais rápido que a cap de mercado (mNAV diminui sem que o preço da ação caia). Sempre combine com visão direcional sobre BTC e beta de ações em geral."
       ],
       benchmarks: [
-        "Faixas históricas de mNAV da MSTR: bear Q4 2022: 0,7-0,9 (era de desconto), base Q1-Q3 2024: 1,5-1,8, mania Q4 2024: 2,5-3,2 (pico), Q1 2026: 1,8-2,2. A reversão à média funciona melhor quando o mNAV excede 2,5 com fluxos de BTC em declínio, ou abaixo de 1,0 com acumulação de BTC acelerando.",
-        "Outras tesourarias de BTC linha-base 2026: MicroStrategy 1,8-2,2, MetaPlanet 2,0-3,0, Semler Scientific 1,2-1,5, tesourarias menores (KULR, segmento não-mineração da MARA) 1,0-1,4. Anomalias acima dessas faixas podem sinalizar euforia local; abaixo delas podem sinalizar subvalorização digna de investigação."
+        "Faixas históricas de mNAV da MSTR: bear Q4 2022: 0,7-0,9 (era de desconto), base Q1-Q3 2024: 1,5-1,8, mania Q4 2024: 2,5-3,2 (pico), outubro de 2026: ~1,1× em base de valor da empresa (~0,9× sobre o valor de mercado simples). A reversão à média funciona melhor quando o mNAV excede 2,5 com fluxos de BTC em declínio, ou abaixo de 1,0 com acumulação de BTC acelerando.",
+        "Retrato de 13 de outubro de 2026 (bitcointreasuries.net, base de valor da empresa): Strategy ~1,1×, Strive (incl. Semler) ~1,4×, Metaplanet ~0,7×, abaixo do NAV. Os prêmios se comprimiram fortemente desde o pico do fim de 2024 — trate qualquer múltiplo como uma leitura datada, não como norma."
       ],
       execution: [
         "Dimensionamento de posição para trade de mNAV: nunca aposte tudo em uma compressão de prêmio. Um declínio de 30% no mNAV pode levar 6-18 meses. Aloque 5-15% do capital de risco para um pairs trade short-mNAV / long-BTC, com horizonte de 6 meses e stop loss se o mNAV expandir mais 50%.",
@@ -15298,8 +15298,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Acompanhe os limiares de conversão de títulos conversíveis. A MSTR tem múltiplos conversíveis com strikes $400-700; conversões efetivamente diluem acionistas sem caixa. Uma contagem de ações 'totalmente diluída' fornece mNAV mais preciso do que a contagem básica de ações, especialmente quando a ação está bem acima dos strikes de conversão."
       ],
       validation: [
-        "Verificação rápida: 440K BTC × $77K = $33,9B de NAV em BTC. Cap de mercado MSTR $95B → mNAV = 95/33,9 = 2,80. Se sua ferramenta mostra algo materialmente diferente, verifique a contagem de BTC (consulte o 8-K mais recente) e a fonte do preço do BTC.",
-        "Decomposição do prêmio: prêmio total ($95B - $33,9B = $61B) dividido em: (a) valor do negócio operacional (~$2-5B com base em Cap IQ), (b) valor da estrutura de impostos diferidos (~$5-10B para proteção de ganhos não realizados), (c) expectativa de acumulação futura (o restante). Verifique o resíduo contra um ritmo crível de compra de BTC."
+        "Verificação rápida: 848.250 BTC × $83.600 = $70,9B de NAV em BTC. Cap de mercado MSTR $62,9B → mNAV = 62,9/70,9 = 0,89 (13 out 2026). Se sua ferramenta mostra algo materialmente diferente, verifique a contagem de BTC (consulte o 8-K mais recente) e a fonte do preço do BTC.",
+        "Decomposição do prêmio (exemplo do fim de 2024, com a MSTR perto de 2,8×): prêmio total ($95B - $33,9B = $61B) dividido em: (a) valor do negócio operacional (~$2-5B com base em Cap IQ), (b) valor da estrutura de impostos diferidos (~$5-10B para proteção de ganhos não realizados), (c) expectativa de acumulação futura (o restante). Verifique o resíduo contra um ritmo crível de compra de BTC."
       ],
     },
     tr: {
@@ -15309,7 +15309,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Artırıcı ihraç testi: mNAV 2,0'da MSTR, 1 milyar dolar öz sermaye ihraç eder, 1 milyar dolar BTC alır. Hisse başına yeni BTC, sulandırmanın %50'si oranında artar (çünkü 2× prim, her yeni hissenin BTC'de NAV'ının 2 katına dönüştüğü anlamına gelir). Prim odaklı çarpan etkisi yalnızca mNAV > 1,0 iken çalışır; mNAV 1'in altına düşerse ihraç sulandırıcı hale gelir.",
-        "Karşılaştırma çerçevesi: MSTR mNAV 1,8, MetaPlanet 3,0, Semler Scientific 1,4 — MetaPlanet'in primi en yüksek, bu da şunlardan birini önerir: (a) temellerden kopuk Japon perakende talebi, (b) daha hızlı beklenen birikim oranı veya (c) aşırı değerleme. Primsiz temel için mNAV 1,0'daki <a href=\"/etf-fee-calculator/\">spot BTC ETF'leri</a> ile karşılaştırın (prim yok)."
+        "Karşılaştırma çerçevesi (örnek rakamlar): MSTR 1,8'de, MetaPlanet 3,0'da ve daha küçük bir hazine 1,4'te işlem görüyorsa, en yüksek prim şunlardan birini önerir: (a) temellerden kopuk Japon perakende talebi, (b) daha hızlı beklenen birikim oranı veya (c) aşırı değerleme. Primsiz temel için mNAV 1,0'daki <a href=\"/etf-fee-calculator/\">spot BTC ETF'leri</a> ile karşılaştırın (prim yok)."
       ],
       checklist: [
         "mNAV tabanlı işlemlerden önce: 1) BTC varlık sayısının güncel olduğunu doğrulayın (şirketler aylık/üç aylık açıklar). 2) Bayat fiyat değil, en son BTC fiyatını kullanın. 3) Hazinenin önemli kaldıracı varsa kurumsal NAV hesaplaması için borcu çıkarın. 4) Dönüştürülebilir tahviller varsa hisse sınıfı sulandırmasını hesaba katın.",
@@ -15320,8 +15320,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Yüksek mNAV'ı otomatik alış veya satış sinyali olarak ele almak. Prim sıkışabilir (ortalamaya döner) VEYA BTC fiyatı piyasa değerinden daha hızlı yükselirse genişleyebilir (mNAV hisse fiyatı düşmeden azalır). Her zaman BTC üzerine yönlü görüş ve daha geniş hisse senedi beta ile birleştirin."
       ],
       benchmarks: [
-        "MSTR mNAV tarihsel aralıkları: Q4 2022 ayı: 0,7-0,9 (iskonto dönemi), Q1-Q3 2024 taban: 1,5-1,8, Q4 2024 çılgınlığı: 2,5-3,2 (zirve), Q1 2026: 1,8-2,2. mNAV 2,5'i aştığında BTC girişleri azalıyorsa veya 1,0'ın altında BTC birikimi hızlanıyorsa ortalamaya dönüş en iyi oynanır.",
-        "Diğer BTC hazineleri 2026 temeli: MicroStrategy 1,8-2,2, MetaPlanet 2,0-3,0, Semler Scientific 1,2-1,5, daha küçük hazineler (KULR, MARA madencilik dışı segment) 1,0-1,4. Bu aralıkların üzerindeki anomaliler yerel öforiyi veya altındakiler araştırmaya değer eksik değerlemeyi işaret edebilir."
+        "MSTR mNAV tarihsel aralıkları: Q4 2022 ayı: 0,7-0,9 (iskonto dönemi), Q1-Q3 2024 taban: 1,5-1,8, Q4 2024 çılgınlığı: 2,5-3,2 (zirve), Ekim 2026: işletme değeri bazında ~1,1× (basit piyasa değerinde ~0,9×). mNAV 2,5'i aştığında BTC girişleri azalıyorsa veya 1,0'ın altında BTC birikimi hızlanıyorsa ortalamaya dönüş en iyi oynanır.",
+        "13 Ekim 2026 görüntüsü (bitcointreasuries.net, işletme değeri bazında): Strategy ~1,1×, Strive (Semler dahil) ~1,4×, Metaplanet ~0,7× — NAV'ın altında. Primler 2024 sonundaki zirveden sert biçimde daraldı; herhangi bir çarpanı norm değil, tarihli bir okuma olarak görün."
       ],
       execution: [
         "mNAV işlemi için pozisyon boyutlandırma: bir prim sıkıştırma bahsine asla tamamen girmeyin. %30'luk bir mNAV düşüşü 6-18 ay sürebilir. Risk sermayesinin %5-15'ini kısa mNAV / uzun BTC çift işlemine tahsis edin, 6 aylık zaman ufku ve mNAV %50 daha genişlerse stop loss ile.",
@@ -15332,8 +15332,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Dönüştürülebilir tahvil dönüşüm eşiklerini takip edin. MSTR'ın 400-700 dolar kullanım fiyatlarında birden fazla dönüştürülebilir tahvili var; dönüşümler hissedarları nakit olmadan etkin şekilde sulandırır. 'Tamamen sulandırılmış' hisse sayısı, özellikle hisse senedi dönüşüm kullanım fiyatlarının çok üzerinde olduğunda, temel hisse sayısından daha doğru mNAV verir."
       ],
       validation: [
-        "Hızlı kontrol: 440 bin BTC × 77.000 dolar = 33,9 milyar dolar BTC NAV. MSTR piyasa değeri 95 milyar dolar → mNAV = 95/33,9 = 2,80. Aracınız önemli ölçüde farklı gösteriyorsa, BTC sayısını (en son 8-K'yı kontrol edin) ve BTC fiyat kaynağını doğrulayın.",
-        "Prim ayrıştırması: toplam prim (95 milyar dolar - 33,9 milyar dolar = 61 milyar dolar) şunlara bölünür: (a) işletme değeri (~2-5 milyar dolar, Cap IQ'ya dayalı), (b) vergi ertelenmiş yapı değeri (~5-10 milyar dolar, gerçekleşmemiş kazanç koruması için), (c) gelecek birikim beklentisi (geri kalan). Kalanı güvenilir BTC alım hızına karşı mantık kontrolünden geçirin."
+        "Hızlı kontrol: 848.250 BTC × 83.600 dolar = 70,9 milyar dolar BTC NAV. MSTR piyasa değeri 62,9 milyar dolar → mNAV = 62,9/70,9 = 0,89 (13 Ekim 2026). Aracınız önemli ölçüde farklı gösteriyorsa, BTC sayısını (en son 8-K'yı kontrol edin) ve BTC fiyat kaynağını doğrulayın.",
+        "Prim ayrıştırması (2024 sonu örneği, MSTR ~2,8×'te işlem görürken): toplam prim (95 milyar dolar - 33,9 milyar dolar = 61 milyar dolar) şunlara bölünür: (a) işletme değeri (~2-5 milyar dolar, Cap IQ'ya dayalı), (b) vergi ertelenmiş yapı değeri (~5-10 milyar dolar, gerçekleşmemiş kazanç koruması için), (c) gelecek birikim beklentisi (geri kalan). Kalanı güvenilir BTC alım hızına karşı mantık kontrolünden geçirin."
       ],
     },
     hi: {
@@ -15343,7 +15343,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Accretive issuance परीक्षण: MSTR mNAV 2.0 पर $1B इक्विटी जारी करता है, $1B BTC खरीदता है। नया BTC प्रति शेयर तनुकरण के 50% तक बढ़ता है (चूँकि 2× प्रीमियम का मतलब है प्रत्येक नया शेयर NAV में BTC के 2× में परिवर्तित होता है)। प्रीमियम-संचालित फ्लाईव्हील केवल तभी काम करता है जब mNAV > 1.0; यदि mNAV 1 से नीचे गिर जाता है, तो issuance तनुकारी हो जाता है।",
-        "तुलना ढाँचा: MSTR mNAV 1.8, MetaPlanet 3.0, Semler Scientific 1.4 — MetaPlanet का प्रीमियम सबसे अधिक है, सुझाव देता है: (a) जापानी रिटेल बोली मूलभूत बातों से अलग हो गई, (b) तेज़ अपेक्षित संचय दर, या (c) ओवरवैल्यूएशन। बिना-प्रीमियम आधाररेखा के लिए <a href=\"/etf-fee-calculator/\">स्पॉट BTC ETFs</a> की mNAV 1.0 (कोई प्रीमियम नहीं) से तुलना करें।"
+        "तुलना ढाँचा (उदाहरण के आंकड़े): यदि MSTR 1.8 पर, MetaPlanet 3.0 पर और कोई छोटा treasury 1.4 पर ट्रेड करे, तो सबसे ऊँचा प्रीमियम सुझाव देता है: (a) जापानी रिटेल बोली मूलभूत बातों से अलग हो गई, (b) तेज़ अपेक्षित संचय दर, या (c) ओवरवैल्यूएशन। बिना-प्रीमियम आधाररेखा के लिए <a href=\"/etf-fee-calculator/\">स्पॉट BTC ETFs</a> की mNAV 1.0 (कोई प्रीमियम नहीं) से तुलना करें।"
       ],
       checklist: [
         "mNAV-आधारित ट्रेड से पहले: 1) सत्यापित करें कि BTC होल्डिंग्स संख्या वर्तमान है (कंपनियाँ मासिक/त्रैमासिक प्रकट करती हैं)। 2) सबसे हाल की BTC कीमत का उपयोग करें, पुराना कोट नहीं। 3) यदि treasury में महत्वपूर्ण लीवरेज है तो enterprise NAV गणना के लिए ऋण घटाएँ। 4) यदि कन्वर्टिबल बॉन्ड बकाया हैं तो शेयर क्लास तनुकरण का हिसाब रखें।",
@@ -15354,8 +15354,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "उच्च mNAV को स्वचालित खरीद या बिक्री सिग्नल मानना। प्रीमियम संकुचित (मीन रिवर्ट) हो सकता है या विस्तारित हो सकता है यदि BTC कीमत market cap से तेज़ी से बढ़ती है (शेयर कीमत गिरे बिना mNAV घटता है)। हमेशा BTC और व्यापक इक्विटी बीटा पर दिशात्मक दृष्टिकोण के साथ संयोजित करें।"
       ],
       benchmarks: [
-        "MSTR mNAV ऐतिहासिक श्रेणियाँ: Q4 2022 बेयर: 0.7-0.9 (डिस्काउंट युग), Q1-Q3 2024 आधार: 1.5-1.8, Q4 2024 उन्माद: 2.5-3.2 (चरम), Q1 2026: 1.8-2.2। Mean reversion सर्वश्रेष्ठ खेलता है जब mNAV घटते BTC प्रवाह के साथ 2.5 से अधिक हो, या तेज़ी से बढ़ते BTC संचय के साथ 1.0 से नीचे हो।",
-        "अन्य BTC treasuries 2026 आधाररेखा: MicroStrategy 1.8-2.2, MetaPlanet 2.0-3.0, Semler Scientific 1.2-1.5, छोटे treasuries (KULR, MARA non-mining सेगमेंट) 1.0-1.4। इन श्रेणियों से ऊपर की विसंगतियाँ स्थानीय उत्साह का संकेत दे सकती हैं या उनसे नीचे जाँच करने योग्य अंडरवैल्यूएशन का संकेत दे सकती हैं।"
+        "MSTR mNAV ऐतिहासिक श्रेणियाँ: Q4 2022 बेयर: 0.7-0.9 (डिस्काउंट युग), Q1-Q3 2024 आधार: 1.5-1.8, Q4 2024 उन्माद: 2.5-3.2 (चरम), अक्टूबर 2026: एंटरप्राइज़-वैल्यू आधार पर ~1.1× (साधारण मार्केट कैप पर ~0.9×)। Mean reversion सर्वश्रेष्ठ खेलता है जब mNAV घटते BTC प्रवाह के साथ 2.5 से अधिक हो, या तेज़ी से बढ़ते BTC संचय के साथ 1.0 से नीचे हो।",
+        "13 अक्टूबर 2026 का स्नैपशॉट (bitcointreasuries.net, एंटरप्राइज़-वैल्यू आधार): Strategy ~1.1×, Strive (Semler सहित) ~1.4×, Metaplanet ~0.7× — NAV से नीचे। 2024 के अंत के शिखर से प्रीमियम तेज़ी से सिकुड़े, इसलिए किसी भी गुणक को मानक नहीं, तारीख वाली रीडिंग मानें।"
       ],
       execution: [
         "mNAV ट्रेड के लिए पोजीशन साइज़िंग: प्रीमियम संकुचन बेट पर कभी all-in न जाएँ। 30% mNAV गिरावट 6-18 महीने ले सकती है। शॉर्ट-mNAV / लॉन्ग-BTC जोड़े ट्रेड के लिए जोखिम पूँजी का 5-15% आवंटित करें, 6-महीने का समय क्षितिज और स्टॉप लॉस यदि mNAV 50% अधिक विस्तारित होता है।",
@@ -15366,8 +15366,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "कन्वर्टिबल बॉन्ड रूपांतरण थ्रेशोल्ड को ट्रैक करें। MSTR के पास स्ट्राइक $400-700 पर कई कन्वर्ट्स हैं; रूपांतरण नकद के बिना शेयरधारकों को प्रभावी रूप से तनुकरण करते हैं। 'पूरी तरह से तनुकृत' शेयर गणना मूल शेयर गणना की तुलना में अधिक सटीक mNAV देती है, विशेष रूप से जब स्टॉक रूपांतरण स्ट्राइक से अच्छी तरह ऊपर हो।"
       ],
       validation: [
-        "त्वरित जाँच: 440K BTC × $77K = $33.9B BTC NAV। MSTR market cap $95B → mNAV = 95/33.9 = 2.80। यदि आपका उपकरण काफी अलग दिखाता है, तो BTC संख्या (सबसे हाल का 8-K जाँचें) और BTC कीमत स्रोत सत्यापित करें।",
-        "प्रीमियम विघटन: कुल प्रीमियम ($95B - $33.9B = $61B) में विभाजित: (a) परिचालन व्यवसाय मूल्य (Cap IQ के आधार पर ~$2-5B), (b) कर-स्थगित संरचना मूल्य (अप्राप्त लाभ सुरक्षा के लिए ~$5-10B), (c) भविष्य संचय अपेक्षा (शेष)। विश्वसनीय BTC खरीद गति के विरुद्ध अवशिष्ट की सेनिटी-जाँच करें।"
+        "त्वरित जाँच: 848,250 BTC × $83,600 = $70.9B BTC NAV। MSTR market cap $62.9B → mNAV = 62.9/70.9 = 0.89 (13 अक्टूबर 2026)। यदि आपका उपकरण काफी अलग दिखाता है, तो BTC संख्या (सबसे हाल का 8-K जाँचें) और BTC कीमत स्रोत सत्यापित करें।",
+        "प्रीमियम विघटन (2024 के अंत का उदाहरण, जब MSTR लगभग 2.8× पर था): कुल प्रीमियम ($95B - $33.9B = $61B) में विभाजित: (a) परिचालन व्यवसाय मूल्य (Cap IQ के आधार पर ~$2-5B), (b) कर-स्थगित संरचना मूल्य (अप्राप्त लाभ सुरक्षा के लिए ~$5-10B), (c) भविष्य संचय अपेक्षा (शेष)। विश्वसनीय BTC खरीद गति के विरुद्ध अवशिष्ट की सेनिटी-जाँच करें।"
       ],
     },
     ru: {
@@ -15377,7 +15377,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Тест аккреционного выпуска: MSTR при mNAV 2,0 выпускает акций на $1 млрд, покупает BTC на $1 млрд. BTC на акцию растёт на 50% от размытия (поскольку 2-кратная премия означает, что каждая новая акция конвертируется в 2× NAV в BTC). Маховик премии работает только при mNAV > 1,0; если mNAV опускается ниже 1, выпуск становится размывающим.",
-        "Сравнительная схема: MSTR mNAV 1,8, MetaPlanet 3,0, Semler Scientific 1,4 — премия MetaPlanet выше всех, что подсказывает: (а) японский розничный спрос оторвался от фундаментала, (б) более быстрый ожидаемый темп накопления, либо (в) переоценка. Сравните со <a href=\"/etf-fee-calculator/\">спот-ETF на BTC</a> при mNAV 1,0 (без премии) как с базовым ориентиром без премии."
+        "Сравнительная схема (условные цифры): если MSTR торгуется по 1,8, MetaPlanet — по 3,0, а небольшое казначейство — по 1,4, наибольшая премия подсказывает: (а) японский розничный спрос оторвался от фундаментала, (б) более быстрый ожидаемый темп накопления, либо (в) переоценка. Сравните со <a href=\"/etf-fee-calculator/\">спот-ETF на BTC</a> при mNAV 1,0 (без премии) как с базовым ориентиром без премии."
       ],
       checklist: [
         "Перед сделками на основе mNAV: 1) Проверьте, что количество BTC актуально (компании раскрывают данные ежемесячно/ежеквартально). 2) Используйте свежую цену BTC, а не устаревшую котировку. 3) Вычтите долг для расчёта enterprise NAV, если у казначейства значительное плечо. 4) Учтите размытие по классам акций, если есть конвертируемые облигации в обращении.",
@@ -15388,8 +15388,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Трактовка высокого mNAV как автоматического сигнала на покупку или продажу. Премия может сжиматься (возврат к среднему) ИЛИ расширяться, если цена BTC растёт быстрее рыночной капитализации (mNAV снижается без падения цены акций). Всегда сочетайте с направленным взглядом на BTC и общей бетой по акциям."
       ],
       benchmarks: [
-        "Исторические диапазоны mNAV MSTR: медвежий 4 кв. 2022: 0,7–0,9 (эра дисконта), база 1–3 кв. 2024: 1,5–1,8, мания 4 кв. 2024: 2,5–3,2 (пик), 1 кв. 2026: 1,8–2,2. Возврат к среднему лучше всего отыгрывается, когда mNAV превышает 2,5 при затухающих притоках BTC или ниже 1,0 при ускоряющемся накоплении.",
-        "Другие BTC-казначейства в 2026 году, базовые значения: MicroStrategy 1,8–2,2, MetaPlanet 2,0–3,0, Semler Scientific 1,2–1,5, более мелкие казначейства (KULR, не-майнинговый сегмент MARA) 1,0–1,4. Аномалии выше этих диапазонов могут сигнализировать локальную эйфорию, ниже — недооценку, заслуживающую изучения."
+        "Исторические диапазоны mNAV MSTR: медвежий 4 кв. 2022: 0,7–0,9 (эра дисконта), база 1–3 кв. 2024: 1,5–1,8, мания 4 кв. 2024: 2,5–3,2 (пик), октябрь 2026: ~1,1× по стоимости предприятия (~0,9× по простой капитализации). Возврат к среднему лучше всего отыгрывается, когда mNAV превышает 2,5 при затухающих притоках BTC или ниже 1,0 при ускоряющемся накоплении.",
+        "Снимок на 13 октября 2026 года (bitcointreasuries.net, по стоимости предприятия): Strategy ~1,1×, Strive (включая Semler) ~1,4×, Metaplanet ~0,7× — ниже NAV. Премии резко сжались с пика конца 2024 года, поэтому любой мультипликатор — это датированное значение, а не норма."
       ],
       execution: [
         "Размер позиции для сделки по mNAV: никогда не входите ва-банк в ставку на сжатие премии. Падение mNAV на 30% может занять 6–18 месяцев. Выделяйте 5–15% рискового капитала на парную сделку «шорт mNAV / лонг BTC» с горизонтом 6 месяцев и стоп-лоссом, если mNAV дополнительно расширится ещё на 50%.",
@@ -15400,19 +15400,19 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Отслеживайте пороги конвертации конвертируемых облигаций. У MSTR несколько выпусков со страйками $400–700; конвертации фактически размывают акционеров без денежного потока. «Полностью разводнённое» число акций даёт более точный mNAV, чем базовое количество акций, особенно когда акции значительно выше страйков конвертации."
       ],
       validation: [
-        "Быстрая проверка: 440K BTC × $77K = $33,9 млрд BTC NAV. Рыночная капитализация MSTR $95 млрд → mNAV = 95/33,9 = 2,80. Если ваш инструмент показывает существенно иное, проверьте число BTC (смотрите свежий 8-K) и источник цены BTC.",
-        "Разложение премии: общая премия ($95 млрд − $33,9 млрд = $61 млрд) делится на: (а) стоимость операционного бизнеса (~$2–5 млрд по Cap IQ), (б) ценность налогово-отсроченной структуры (~$5–10 млрд за защиту нереализованных прибылей), (в) ожидание будущего накопления (остаток). Сверьте остаток с правдоподобным темпом покупок BTC."
+        "Быстрая проверка: 848 250 BTC × $83 600 = $70,9 млрд BTC NAV. Рыночная капитализация MSTR $62,9 млрд → mNAV = 62,9/70,9 = 0,89 (13 октября 2026). Если ваш инструмент показывает существенно иное, проверьте число BTC (смотрите свежий 8-K) и источник цены BTC.",
+        "Разложение премии (пример конца 2024 года, когда MSTR торговалась около 2,8×): общая премия ($95 млрд − $33,9 млрд = $61 млрд) делится на: (а) стоимость операционного бизнеса (~$2–5 млрд по Cap IQ), (б) ценность налогово-отсроченной структуры (~$5–10 млрд за защиту нереализованных прибылей), (в) ожидание будущего накопления (остаток). Сверьте остаток с правдоподобным темпом покупок BTC."
       ],
     },
   },
   'lightning-network-fee-calculator': {
     en: {
       interpret: [
-        "Lightning Network fees follow a base + proportional formula per hop: total = base_fee_msat + (amount_sat × ppm / 1,000,000), where ppm = parts per million of the routing fee rate. A typical 3-hop payment of 100K sats with 1000 msat base + 100 ppm per hop costs about 33 sats, roughly $0.025 at $77K BTC, vs $20+ on-chain.",
+        "Lightning Network fees follow a base + proportional formula per hop: total = base_fee_msat + (amount_sat × ppm / 1,000,000), where ppm = parts per million of the routing fee rate. A typical 3-hop payment of 100K sats with 1000 msat base + 100 ppm per hop costs about 33 sats, roughly $0.025 at $77K BTC, vs about $1 on-chain at a busy 10 sat/vB (pennies when the mempool is quiet).",
         "Routing economics matter: nodes set their own ppm rates based on liquidity and capital risk. Cheaper paths (sub-100 ppm) usually exist via hub nodes (Strike, ACINQ, Lightning Labs). Higher fees (500-2000 ppm) appear on small or rebalancing-needed channels. The wallet's pathfinder optimizes for cost, manual routing rarely beats automated paths in modern wallets."
       ],
       scenarios: [
-        "Microtransaction use case: $5 (~6.5K sats at $77K BTC) tip via Lightning costs ~2-5 sats ($0.0015-0.004), feasible. Same payment on-chain costs $5-25 in fees alone — Lightning enables economic models impossible with base layer Bitcoin.",
+        "Microtransaction use case: $5 (~6.5K sats at $77K BTC) tip via Lightning costs ~2-5 sats ($0.0015-0.004), feasible. Same payment on-chain costs roughly $0.10–1 in fees (1–10 sat/vB), 25–250× the Lightning cost — Lightning enables economic models impossible with base layer Bitcoin.",
         "Strike/Wallet of Satoshi cross-payment scenario: typical 3-4 hops, 1 sat base + 200 ppm avg → 100K sat payment costs ~80 sats. Compared to on-chain at 30 sat/vB × 140 vB = 4,200 sats fee. Lightning is 50× cheaper for $77 payment, 1000× cheaper at $5 payments."
       ],
       checklist: [
@@ -15428,7 +15428,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Routing success rates: 95-99% for amounts under 500K sats, 80-90% for 1M-10M sats, drops sharply above 10M sats due to fragmented liquidity. For large payments, prefer on-chain or use a service that batches Lightning channels (Submarine Swap services like Lightning Loop)."
       ],
       execution: [
-        "Workflow for sending: open Lightning wallet → paste invoice → review fee estimate → confirm. Modern wallets (Phoenix, Mutiny, Wallet of Satoshi) abstract the routing complexity, you just see total cost. For self-hosted (LND, CLN), verify pathfinder selected reasonable route in logs.",
+        "Workflow for sending: open Lightning wallet → paste invoice → review fee estimate → confirm. Modern wallets (Phoenix, Breez, Wallet of Satoshi) abstract the routing complexity, you just see total cost. For self-hosted (LND, CLN), verify pathfinder selected reasonable route in logs.",
         "For receivers: generate Lightning invoice with explicit amount when possible (avoids 'amount-less' invoices that some wallets struggle with). Set invoice expiry (default 1 hour) to avoid stale invoices being paid by mistake. Use unique invoice per payment to track receipts."
       ],
       hygiene: [
@@ -15442,11 +15442,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     es: {
       interpret: [
-        "Las tarifas de Lightning Network siguen una fórmula base + proporcional por salto: total = base_fee_msat + (cantidad_sat × ppm / 1,000,000), donde ppm = partes por millón de la tasa de tarifa de enrutamiento. Un pago típico de 3 saltos de 100K sats con 1000 msat base + 100 ppm por salto cuesta unos 33 sats: aproximadamente $0.025 con BTC a $77K, frente a $20+ on-chain.",
+        "Las tarifas de Lightning Network siguen una fórmula base + proporcional por salto: total = base_fee_msat + (cantidad_sat × ppm / 1,000,000), donde ppm = partes por millón de la tasa de tarifa de enrutamiento. Un pago típico de 3 saltos de 100K sats con 1000 msat base + 100 ppm por salto cuesta unos 33 sats: aproximadamente $0.025 con BTC a $77K, frente a ~$1 on-chain a 10 sat/vB en hora punta (céntimos con el mempool tranquilo).",
         "La economía del enrutamiento importa: los nodos establecen sus propias tasas ppm en función de la liquidez y el riesgo de capital. Suelen existir rutas más baratas (sub-100 ppm) a través de nodos hub (Strike, ACINQ, Lightning Labs). Tarifas más altas (500-2000 ppm) aparecen en canales pequeños o que necesitan rebalanceo. El pathfinder del wallet optimiza por costo: el enrutamiento manual rara vez supera las rutas automatizadas en wallets modernos."
       ],
       scenarios: [
-        "Caso de uso de microtransacciones: una propina de $5 (~6.5K sats con BTC a $77K) vía Lightning cuesta ~2-5 sats ($0.0015-0.004), viable. El mismo pago on-chain cuesta $5-25 solo en tarifas: Lightning habilita modelos económicos imposibles con la capa base de Bitcoin.",
+        "Caso de uso de microtransacciones: una propina de $5 (~6.5K sats con BTC a $77K) vía Lightning cuesta ~2-5 sats ($0.0015-0.004), viable. El mismo pago on-chain cuesta ~$0,10–1 en tarifas (1–10 sat/vB), 25–250× el coste en Lightning: Lightning habilita modelos económicos imposibles con la capa base de Bitcoin.",
         "Escenario de pago cruzado Strike/Wallet of Satoshi: típicamente 3-4 saltos, 1 sat base + 200 ppm promedio → pago de 100K sats cuesta ~80 sats. Comparado con on-chain a 30 sat/vB × 140 vB = 4,200 sats de tarifa. Lightning es 50× más barato para un pago de $77, 1000× más barato en pagos de $5."
       ],
       checklist: [
@@ -15462,7 +15462,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Tasas de éxito de enrutamiento: 95-99% para montos bajo 500K sats, 80-90% para 1M-10M sats, cae bruscamente por encima de 10M sats debido a liquidez fragmentada. Para pagos grandes, prefiere on-chain o usa un servicio que agrupe canales Lightning (servicios de Submarine Swap como Lightning Loop)."
       ],
       execution: [
-        "Flujo para enviar: abre wallet Lightning → pega factura → revisa estimación de tarifa → confirma. Los wallets modernos (Phoenix, Mutiny, Wallet of Satoshi) abstraen la complejidad del enrutamiento: solo ves el costo total. Para self-hosted (LND, CLN), verifica en los logs que el pathfinder seleccionó una ruta razonable.",
+        "Flujo para enviar: abre wallet Lightning → pega factura → revisa estimación de tarifa → confirma. Los wallets modernos (Phoenix, Breez, Wallet of Satoshi) abstraen la complejidad del enrutamiento: solo ves el costo total. Para self-hosted (LND, CLN), verifica en los logs que el pathfinder seleccionó una ruta razonable.",
         "Para receptores: genera una factura Lightning con monto explícito cuando sea posible (evita facturas 'sin monto' con las que algunos wallets tienen dificultades). Establece expiración de factura (por defecto 1 hora) para evitar que facturas obsoletas se paguen por error. Usa una factura única por pago para rastrear los recibos."
       ],
       hygiene: [
@@ -15476,11 +15476,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     pt: {
       interpret: [
-        "As taxas da Lightning Network seguem uma fórmula base + proporcional por salto: total = base_fee_msat + (valor_sat × ppm / 1.000.000), onde ppm = partes por milhão da taxa de roteamento. Um pagamento típico de 3 saltos de 100K sats com 1000 msat base + 100 ppm por salto custa cerca de 33 sats — aproximadamente $0,025 com BTC a $77K, vs $20+ on-chain.",
+        "As taxas da Lightning Network seguem uma fórmula base + proporcional por salto: total = base_fee_msat + (valor_sat × ppm / 1.000.000), onde ppm = partes por milhão da taxa de roteamento. Um pagamento típico de 3 saltos de 100K sats com 1000 msat base + 100 ppm por salto custa cerca de 33 sats — aproximadamente $0,025 com BTC a $77K, vs ~$1 on-chain a 10 sat/vB no pico (centavos com o mempool calmo).",
         "A economia de roteamento importa: nós definem suas próprias taxas ppm com base em liquidez e risco de capital. Caminhos mais baratos (sub-100 ppm) geralmente existem via nós hub (Strike, ACINQ, Lightning Labs). Taxas mais altas (500-2000 ppm) aparecem em canais pequenos ou que precisam de rebalanceamento. O pathfinder da carteira otimiza para custo — roteamento manual raramente supera caminhos automatizados em carteiras modernas."
       ],
       scenarios: [
-        "Caso de uso de microtransação: gorjeta de $5 (~6,5K sats com BTC a $77K) via Lightning custa ~2-5 sats ($0,0015-0,004), viável. O mesmo pagamento on-chain custa $5-25 apenas em taxas — a Lightning viabiliza modelos econômicos impossíveis com o Bitcoin de camada base.",
+        "Caso de uso de microtransação: gorjeta de $5 (~6,5K sats com BTC a $77K) via Lightning custa ~2-5 sats ($0,0015-0,004), viável. O mesmo pagamento on-chain custa ~$0,10–1 em taxas (1–10 sat/vB), 25–250× o custo na Lightning — a Lightning viabiliza modelos econômicos impossíveis com o Bitcoin de camada base.",
         "Cenário Strike/Wallet of Satoshi com pagamento cruzado: tipicamente 3-4 saltos, 1 sat base + 200 ppm em média → pagamento de 100K sats custa ~80 sats. Comparado a on-chain a 30 sat/vB × 140 vB = 4.200 sats de taxa. A Lightning é 50× mais barata para pagamento de $77, 1000× mais barata em pagamentos de $5."
       ],
       checklist: [
@@ -15496,7 +15496,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Taxas de sucesso de roteamento: 95-99% para valores abaixo de 500K sats, 80-90% para 1M-10M sats, caem acentuadamente acima de 10M sats devido à liquidez fragmentada. Para pagamentos grandes, prefira on-chain ou use um serviço que agrupa canais Lightning (serviços de Submarine Swap como Lightning Loop)."
       ],
       execution: [
-        "Fluxo para enviar: abra a carteira Lightning → cole o invoice → revise a estimativa de taxa → confirme. Carteiras modernas (Phoenix, Mutiny, Wallet of Satoshi) abstraem a complexidade do roteamento — você só vê o custo total. Para auto-hospedadas (LND, CLN), verifique nos logs se o pathfinder selecionou uma rota razoável.",
+        "Fluxo para enviar: abra a carteira Lightning → cole o invoice → revise a estimativa de taxa → confirme. Carteiras modernas (Phoenix, Breez, Wallet of Satoshi) abstraem a complexidade do roteamento — você só vê o custo total. Para auto-hospedadas (LND, CLN), verifique nos logs se o pathfinder selecionou uma rota razoável.",
         "Para destinatários: gere invoice Lightning com valor explícito quando possível (evita invoices 'sem valor' com os quais algumas carteiras têm dificuldade). Defina expiração do invoice (padrão 1 hora) para evitar que invoices obsoletos sejam pagos por engano. Use invoice único por pagamento para rastrear recebimentos."
       ],
       hygiene: [
@@ -15510,11 +15510,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     tr: {
       interpret: [
-        "Lightning Network ücretleri her atlama için temel + orantılı formülü izler: toplam = base_fee_msat + (amount_sat × ppm / 1.000.000), burada ppm = yönlendirme ücret oranının milyonda parçalarıdır. 1000 msat baz + atlama başına 100 ppm ile 100 bin satlık tipik 3 atlamalı bir ödeme yaklaşık 33 sat tutar — 77.000 dolar BTC'de kabaca 0,025 dolar, zincir üzerinde 20+ dolara karşı.",
+        "Lightning Network ücretleri her atlama için temel + orantılı formülü izler: toplam = base_fee_msat + (amount_sat × ppm / 1.000.000), burada ppm = yönlendirme ücret oranının milyonda parçalarıdır. 1000 msat baz + atlama başına 100 ppm ile 100 bin satlık tipik 3 atlamalı bir ödeme yaklaşık 33 sat tutar — 77.000 dolar BTC'de kabaca 0,025 dolar; zincir üzerinde yoğun saatte 10 sat/vB ile ~1 dolar (mempool sakinken birkaç sent).",
         "Yönlendirme ekonomisi önemlidir: düğümler likidite ve sermaye riskine dayalı olarak kendi ppm oranlarını belirler. Daha ucuz yollar (sub-100 ppm) genellikle hub düğümleri (Strike, ACINQ, Lightning Labs) üzerinden mevcuttur. Daha yüksek ücretler (500-2000 ppm) küçük veya yeniden dengeleme gerektiren kanallarda görünür. Cüzdanın yol bulucusu maliyet için optimize eder — manuel yönlendirme modern cüzdanlardaki otomatik yolları nadiren geçer."
       ],
       scenarios: [
-        "Mikro işlem kullanım durumu: Lightning üzerinden 5 dolar (77.000 dolar BTC'de ~6.500 sat) bahşiş ~2-5 sat (0,0015-0,004 dolar) tutar, uygulanabilir. Zincir üzerinde aynı ödeme tek başına ücretlerde 5-25 dolar tutar — Lightning, temel katman Bitcoin ile imkânsız ekonomik modelleri mümkün kılar.",
+        "Mikro işlem kullanım durumu: Lightning üzerinden 5 dolar (77.000 dolar BTC'de ~6.500 sat) bahşiş ~2-5 sat (0,0015-0,004 dolar) tutar, uygulanabilir. Zincir üzerinde aynı ödeme ücretlerde ~0,10–1 dolar tutar (1–10 sat/vB), Lightning maliyetinin 25–250 katı — Lightning, temel katman Bitcoin ile imkânsız ekonomik modelleri mümkün kılar.",
         "Strike/Wallet of Satoshi çapraz ödeme senaryosu: tipik 3-4 atlama, ortalama 1 sat baz + 200 ppm → 100 bin satlık ödeme ~80 sat tutar. Zincir üzerinde 30 sat/vB × 140 vB = 4.200 sat ücretle karşılaştırıldığında. Lightning, 77 dolarlık ödeme için 50 kat daha ucuz, 5 dolarlık ödemelerde 1000 kat daha ucuzdur."
       ],
       checklist: [
@@ -15530,7 +15530,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Yönlendirme başarı oranları: 500 bin sat altındaki miktarlar için %95-99, 1M-10M sat için %80-90, parçalanmış likidite nedeniyle 10M sat üzerinde keskin düşüş. Büyük ödemeler için zincir üzerini tercih edin veya Lightning kanallarını yığınlayan bir hizmet kullanın (Lightning Loop gibi Denizaltı Takas hizmetleri)."
       ],
       execution: [
-        "Gönderme iş akışı: Lightning cüzdanı açın → faturayı yapıştırın → ücret tahminini inceleyin → onaylayın. Modern cüzdanlar (Phoenix, Mutiny, Wallet of Satoshi) yönlendirme karmaşıklığını soyutlar — sadece toplam maliyeti görürsünüz. Kendinden barındırılan (LND, CLN) için, yol bulucunun günlüklerde makul bir rota seçtiğini doğrulayın.",
+        "Gönderme iş akışı: Lightning cüzdanı açın → faturayı yapıştırın → ücret tahminini inceleyin → onaylayın. Modern cüzdanlar (Phoenix, Breez, Wallet of Satoshi) yönlendirme karmaşıklığını soyutlar — sadece toplam maliyeti görürsünüz. Kendinden barındırılan (LND, CLN) için, yol bulucunun günlüklerde makul bir rota seçtiğini doğrulayın.",
         "Alıcılar için: mümkün olduğunda açık tutarlı Lightning faturası oluşturun (bazı cüzdanların zorlandığı 'tutarsız' faturalardan kaçınır). Bayat faturaların yanlışlıkla ödenmesini önlemek için fatura geçerlilik süresi (varsayılan 1 saat) belirleyin. Makbuzları izlemek için ödeme başına benzersiz fatura kullanın."
       ],
       hygiene: [
@@ -15544,11 +15544,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     hi: {
       interpret: [
-        "Lightning Network शुल्क प्रति हॉप base + proportional सूत्र का पालन करते हैं: total = base_fee_msat + (amount_sat × ppm / 1,000,000), जहाँ ppm = रूटिंग शुल्क दर के parts per million। 1000 msat base + 100 ppm प्रति हॉप के साथ 100K sats का एक विशिष्ट 3-हॉप भुगतान लगभग 33 sats खर्च करता है — BTC $77K पर लगभग $0.025, on-chain पर $20+ की तुलना में।",
+        "Lightning Network शुल्क प्रति हॉप base + proportional सूत्र का पालन करते हैं: total = base_fee_msat + (amount_sat × ppm / 1,000,000), जहाँ ppm = रूटिंग शुल्क दर के parts per million। 1000 msat base + 100 ppm प्रति हॉप के साथ 100K sats का एक विशिष्ट 3-हॉप भुगतान लगभग 33 sats खर्च करता है — BTC $77K पर लगभग $0.025, जबकि व्यस्त समय में 10 sat/vB पर on-chain ~$1 (शांत mempool में कुछ सेंट)।",
         "रूटिंग अर्थशास्त्र मायने रखता है: नोड्स अपनी तरलता और पूँजी जोखिम के आधार पर अपनी ppm दरें निर्धारित करते हैं। सस्ते पथ (sub-100 ppm) आमतौर पर हब नोड्स (Strike, ACINQ, Lightning Labs) के माध्यम से मौजूद होते हैं। उच्च शुल्क (500-2000 ppm) छोटे या रीबैलेंसिंग-आवश्यक चैनलों पर दिखाई देते हैं। वॉलेट का पथखोजक लागत के लिए अनुकूलित करता है — आधुनिक वॉलेट में मैनुअल रूटिंग शायद ही कभी स्वचालित पथों को मात देती है।"
       ],
       scenarios: [
-        "Microtransaction उपयोग मामला: Lightning के माध्यम से $5 (BTC $77K पर ~6.5K sats) टिप ~2-5 sats ($0.0015-0.004) खर्च करता है, संभव। On-chain पर समान भुगतान केवल शुल्क में $5-25 खर्च करता है — Lightning ऐसे आर्थिक मॉडल सक्षम करता है जो बेस लेयर Bitcoin के साथ असंभव हैं।",
+        "Microtransaction उपयोग मामला: Lightning के माध्यम से $5 (BTC $77K पर ~6.5K sats) टिप ~2-5 sats ($0.0015-0.004) खर्च करता है, संभव। On-chain पर समान भुगतान शुल्क में ~$0.10–1 (1–10 sat/vB) खर्च करता है, Lightning लागत का 25–250× — Lightning ऐसे आर्थिक मॉडल सक्षम करता है जो बेस लेयर Bitcoin के साथ असंभव हैं।",
         "Strike/Wallet of Satoshi क्रॉस-भुगतान परिदृश्य: विशिष्ट 3-4 हॉप्स, 1 sat base + 200 ppm औसत → 100K sat भुगतान ~80 sats खर्च करता है। 30 sat/vB × 140 vB = 4,200 sats शुल्क पर on-chain की तुलना में। Lightning $77 भुगतान के लिए 50× सस्ता है, $5 भुगतान पर 1000× सस्ता है।"
       ],
       checklist: [
@@ -15564,7 +15564,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "रूटिंग सफलता दर: 500K sats से कम राशियों के लिए 95-99%, 1M-10M sats के लिए 80-90%, 10M sats से ऊपर खंडित तरलता के कारण तेज़ी से गिरती है। बड़े भुगतानों के लिए, on-chain को प्राथमिकता दें या ऐसी सेवा का उपयोग करें जो Lightning चैनलों को बैच करती है (Submarine Swap सेवाएँ जैसे Lightning Loop)।"
       ],
       execution: [
-        "भेजने के लिए कार्यप्रवाह: Lightning वॉलेट खोलें → इनवॉइस पेस्ट करें → शुल्क अनुमान की समीक्षा करें → पुष्टि करें। आधुनिक वॉलेट (Phoenix, Mutiny, Wallet of Satoshi) रूटिंग जटिलता को सार करते हैं — आप केवल कुल लागत देखते हैं। स्व-होस्टेड (LND, CLN) के लिए, लॉग में पथखोजक द्वारा चयनित उचित मार्ग को सत्यापित करें।",
+        "भेजने के लिए कार्यप्रवाह: Lightning वॉलेट खोलें → इनवॉइस पेस्ट करें → शुल्क अनुमान की समीक्षा करें → पुष्टि करें। आधुनिक वॉलेट (Phoenix, Breez, Wallet of Satoshi) रूटिंग जटिलता को सार करते हैं — आप केवल कुल लागत देखते हैं। स्व-होस्टेड (LND, CLN) के लिए, लॉग में पथखोजक द्वारा चयनित उचित मार्ग को सत्यापित करें।",
         "प्राप्तकर्ताओं के लिए: जब संभव हो तो स्पष्ट राशि के साथ Lightning इनवॉइस जनरेट करें ('राशि-रहित' इनवॉइस से बचता है जिनके साथ कुछ वॉलेट संघर्ष करते हैं)। पुराने इनवॉइस को गलती से भुगतान किए जाने से बचने के लिए इनवॉइस समाप्ति (डिफ़ॉल्ट 1 घंटा) सेट करें। रसीदों को ट्रैक करने के लिए प्रति भुगतान अद्वितीय इनवॉइस का उपयोग करें।"
       ],
       hygiene: [
@@ -15578,11 +15578,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     },
     ru: {
       interpret: [
-        "Комиссии Lightning Network считаются по формуле «база + пропорциональная часть» на каждый хоп: total = base_fee_msat + (amount_sat × ppm / 1 000 000), где ppm — миллионные доли ставки маршрутизации. Типичный платёж на 100K сатоши через 3 хопа с базой 1 000 msat и 100 ppm на хоп стоит около 33 сатоши — примерно $0,025 при BTC $77K, против $20+ on-chain.",
+        "Комиссии Lightning Network считаются по формуле «база + пропорциональная часть» на каждый хоп: total = base_fee_msat + (amount_sat × ppm / 1 000 000), где ppm — миллионные доли ставки маршрутизации. Типичный платёж на 100K сатоши через 3 хопа с базой 1 000 msat и 100 ppm на хоп стоит около 33 сатоши — примерно $0,025 при BTC $77K, против ~$1 on-chain при 10 sat/vB в час пик (центы, когда mempool спокоен).",
         "Экономика маршрутизации имеет значение: узлы устанавливают свои ppm-ставки, исходя из ликвидности и риска капитала. Более дешёвые пути (менее 100 ppm) обычно проходят через хаб-узлы (Strike, ACINQ, Lightning Labs). Более высокие комиссии (500–2000 ppm) появляются на мелких или нуждающихся в ребалансе каналах. Pathfinder кошелька оптимизирует стоимость — ручная маршрутизация редко превосходит автоматические пути современных кошельков."
       ],
       scenarios: [
-        "Микротранзакции: чаевые в $5 (~6,5K сатоши при BTC $77K) через Lightning стоят ~2–5 сатоши ($0,0015–0,004), это осуществимо. Тот же платёж on-chain стоит только в комиссии $5–25 — Lightning делает возможными экономические модели, недоступные на базовом слое биткоина.",
+        "Микротранзакции: чаевые в $5 (~6,5K сатоши при BTC $77K) через Lightning стоят ~2–5 сатоши ($0,0015–0,004), это осуществимо. Тот же платёж on-chain стоит ~$0,10–1 комиссии (1–10 sat/vB) — в 25–250 раз дороже Lightning — Lightning делает возможными экономические модели, недоступные на базовом слое биткоина.",
         "Сценарий перевода между Strike и Wallet of Satoshi: обычно 3–4 хопа, база 1 сатоши + 200 ppm в среднем → платёж 100K сатоши стоит ~80 сатоши. По сравнению с on-chain при 30 sat/vB × 140 vB = 4 200 сатоши комиссии. Lightning в 50 раз дешевле для платежа в $77 и в 1000 раз дешевле при платежах в $5."
       ],
       checklist: [
@@ -15598,7 +15598,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Показатели успешности маршрутизации: 95–99% для сумм до 500K сатоши, 80–90% для 1M–10M сатоши, резко падает выше 10M сатоши из-за фрагментированной ликвидности. Для крупных платежей предпочитайте on-chain или используйте сервисы, объединяющие Lightning-каналы (сервисы подводных свопов, такие как Lightning Loop)."
       ],
       execution: [
-        "Рабочий процесс отправки: откройте Lightning-кошелёк → вставьте счёт → проверьте оценку комиссии → подтвердите. Современные кошельки (Phoenix, Mutiny, Wallet of Satoshi) абстрагируют сложность маршрутизации — вы видите только итоговую стоимость. Для самостоятельно размещённых (LND, CLN) проверьте в логах, что pathfinder выбрал разумный маршрут.",
+        "Рабочий процесс отправки: откройте Lightning-кошелёк → вставьте счёт → проверьте оценку комиссии → подтвердите. Современные кошельки (Phoenix, Breez, Wallet of Satoshi) абстрагируют сложность маршрутизации — вы видите только итоговую стоимость. Для самостоятельно размещённых (LND, CLN) проверьте в логах, что pathfinder выбрал разумный маршрут.",
         "Для получателей: по возможности генерируйте счёт Lightning с явной суммой (это позволяет избежать «безсуммовых» счетов, с которыми некоторые кошельки работают плохо). Задавайте срок действия счёта (по умолчанию 1 час), чтобы избежать ошибочной оплаты устаревших счетов. Используйте уникальный счёт для каждого платежа для отслеживания поступлений."
       ],
       hygiene: [
@@ -19116,7 +19116,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
   'inheritance-tax-calculator': {
       en: {
         interpret: [
-          `The headline output is Estimated Inheritance Tax, shown beside an effective rate, that rate is tax divided by your full portfolio value, not the marginal bracket. Read it alongside Taxable Estate, which is portfolio value minus the Exemption Applied for your chosen relationship. A US child sees the $13.99M exemption swallow most estates to zero, while a German 'other' heir clears only €20K before progressive rates bite. The effective rate is the honest burden; the Tax Rate row is just the top bracket reached.`,
+          `The headline output is Estimated Inheritance Tax, shown beside an effective rate, that rate is tax divided by your full portfolio value, not the marginal bracket. Read it alongside Taxable Estate, which is portfolio value minus the Exemption Applied for your chosen relationship. A US child sees the $15M exemption swallow most estates to zero, while a German 'other' heir clears only €20K before progressive rates bite. The effective rate is the honest burden; the Tax Rate row is just the top bracket reached.`,
           `Net Inheritance is what the heir actually keeps, portfolio value minus Estimated Tax. Two rows reward closer reading: Step-Up Benefit (only shown for US and Germany, where basis resets to market value at death) is the embedded gain wiped out, and Unrealized Gain is portfolio value minus your Cost Basis. In no-estate-tax countries like Australia, Canada, or India the tax line reads $0, but that does not mean heirs owe nothing later when they sell. Check the <a href="/tax-calculator/">crypto tax calculator</a> for that disposal event.`
         ],
         scenarios: [
@@ -19132,8 +19132,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `The second error is ignoring relationship class. People plug in 'other' (a friend, sibling, or unmarried partner) and are shocked by Germany's €20K exemption and 30–50% rates, or forget the UK fully exempts spouses while taxing everyone else at 40%. A third trap is entering current market price as portfolio value when the estate settles months later at a very different valuation, re-run it whenever Bitcoin moves materially, since a 30% price swing reshapes the entire bracket math.`
         ],
         benchmarks: [
-          `Realistic figures by jurisdiction: the US exemption sits at $13.99M for 2026 (40% above it, with a step-up that can erase decades of gains), the UK nil-rate band is £325K with a flat 40% IHT, and Germany ranges 7–30% for close kin but 30–50% for distant heirs. Japan runs a ¥30M + ¥6M-per-heir basic deduction with progressive 10–55% rates. Brazil's state ITCMD typically lands around 4–8%.`,
-          `Effective rate, not headline rate, is the realistic gauge. A $500K UK estate left to a child shows only £175K taxable after the £325K band, so the effective rate lands well under 40% even though the Tax Rate row reads 40%. Expect most modest estates in zero-tax countries to show 0.0% effective, and only US estates above roughly $14M or distant-heir transfers in Germany and Japan to push effective rates into the double digits.`
+          `Realistic figures by jurisdiction: the US exemption sits at $15M for 2026 (40% above it, with a step-up that can erase decades of gains), the UK nil-rate band is £325K with a flat 40% IHT, and Germany ranges 7–30% for close kin but 30–50% for distant heirs. Japan runs a ¥30M + ¥6M-per-heir basic deduction with progressive 10–55% rates. Brazil's state ITCMD typically lands around 4–8%.`,
+          `Effective rate, not headline rate, is the realistic gauge. A $500K UK estate left to a child shows only £175K taxable after the £325K band, so the effective rate lands well under 40% even though the Tax Rate row reads 40%. Expect most modest estates in zero-tax countries to show 0.0% effective, and only US estates above roughly $15M or distant-heir transfers in Germany and Japan to push effective rates into the double digits.`
         ],
         execution: [
           `Workflow: 1) Estimate the portfolio's fair market value at the planning horizon, using the <a href="/converter/">crypto converter</a> to total holdings in USD. 2) Select the decedent's country of tax residence. 3) Set Relationship to the actual heir class. 4) Enter the aggregate Cost Basis so Unrealized Gain and Step-Up Benefit compute correctly. 5) Read Estimated Tax, effective rate, and Net Inheritance together, then re-run for each candidate heir.`,
@@ -19141,16 +19141,16 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         ],
         hygiene: [
           `Keep portfolio value current: crypto valuations drift fast, and an estate plan built on last year's price can over- or under-state the bill by a full tax bracket. Re-enter the figure after any material price move, and recompute the total in USD with the <a href="/converter/">converter</a> rather than trusting a stale spreadsheet. Refresh Cost Basis whenever you add to positions, since it directly drives the Unrealized Gain and Step-Up Benefit rows.`,
-          `Treat the country rules as a snapshot, not gospel. The US notes flag that the elevated TCJA exemption sunsets after 2025 unless extended, German thresholds and rate bands shift with legislation, and Brazil's ITCMD varies by state. Date-stamp each calculation, note which exemption year you assumed, and re-verify against current statute before any irrevocable gift, trust funding, or relocation decision an estate professional will ultimately sign off on.`
+          `Treat the country rules as a snapshot, not gospel. The US note records that the One Big Beautiful Bill Act made the higher exemption permanent from 2026 ($15M, indexed for inflation in later years), German thresholds and rate bands shift with legislation, and Brazil's ITCMD varies by state. Date-stamp each calculation, note which exemption year you assumed, and re-verify against current statute before any irrevocable gift, trust funding, or relocation decision an estate professional will ultimately sign off on.`
         ],
         validation: [
           `Sanity-check the math by hand: the calculator computes Taxable Estate = portfolio value − Exemption Applied, then Estimated Tax = Taxable Estate × Tax Rate ÷ 100, and effective rate = Estimated Tax ÷ portfolio value. Verify Net Inheritance equals portfolio value minus Estimated Tax. For a UK £500K estate to a child, that is (500,000 − 325,000) × 40% = £70K tax, an effective rate near 14%, confirm the rows reproduce this.`,
-          `Cross-check the exemption logic against the country notes. If you select the US, Exemption Applied should jump to $13.99M (capped at portfolio value for smaller estates), driving tax to zero below that line. For zero-tax countries the Tax Rate and Estimated Tax must read 0, while Unrealized Gain still shows the latent gain heirs carry. If Step-Up Benefit appears, confirm the country is US or Germany; it equals portfolio value minus Cost Basis only where a basis reset applies.`
+          `Cross-check the exemption logic against the country notes. If you select the US, Exemption Applied should jump to $15M (capped at portfolio value for smaller estates), driving tax to zero below that line. For zero-tax countries the Tax Rate and Estimated Tax must read 0, while Unrealized Gain still shows the latent gain heirs carry. If Step-Up Benefit appears, confirm the country is US or Germany; it equals portfolio value minus Cost Basis only where a basis reset applies.`
         ],
       },
       es: {
         interpret: [
-          `El resultado principal es el Impuesto de Herencia Estimado, junto a una tasa efectiva — esa tasa es el impuesto dividido por el valor total de la cartera, no el tramo marginal. Léela junto al Patrimonio Imponible, que es el valor de la cartera menos la Exención Aplicada según el parentesco elegido. Un hijo en EE. UU. ve cómo la exención de $13,99M reduce casi todo a cero, mientras que un heredero 'otro' en Alemania solo libera €20K antes de que muerdan las tasas progresivas. La tasa efectiva es la carga honesta; la fila Tasa de Impuesto es solo el tramo máximo alcanzado.`,
+          `El resultado principal es el Impuesto de Herencia Estimado, junto a una tasa efectiva — esa tasa es el impuesto dividido por el valor total de la cartera, no el tramo marginal. Léela junto al Patrimonio Imponible, que es el valor de la cartera menos la Exención Aplicada según el parentesco elegido. Un hijo en EE. UU. ve cómo la exención de $15M reduce casi todo a cero, mientras que un heredero 'otro' en Alemania solo libera €20K antes de que muerdan las tasas progresivas. La tasa efectiva es la carga honesta; la fila Tasa de Impuesto es solo el tramo máximo alcanzado.`,
           `La Herencia Neta es lo que el heredero realmente conserva — valor de la cartera menos Impuesto Estimado. Dos filas merecen atención: el Beneficio de Step-Up (solo en EE. UU. y Alemania, donde la base se reinicia al valor de mercado al fallecer) es la plusvalía latente eliminada, y la Ganancia No Realizada es el valor menos tu Base de Costo. En países sin impuesto de herencia como Australia, Canadá o India la línea de impuesto marca $0, pero eso no significa que los herederos no deban nada al vender después. Revisa la <a href="/tax-calculator/">calculadora de impuestos cripto</a> para ese evento.`
         ],
         scenarios: [
@@ -19166,8 +19166,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `El segundo error es ignorar la clase de parentesco. La gente pone 'otro' (un amigo, hermano o pareja no casada) y se asombra con la exención de €20K de Alemania y tasas del 30–50%, u olvida que el Reino Unido exime por completo al cónyuge mientras grava al resto al 40%. Una tercera trampa es introducir el precio actual como valor de cartera cuando el patrimonio se liquida meses después a una valoración muy distinta — recalcula cuando Bitcoin se mueva de forma relevante, ya que una oscilación del 30% reconfigura toda la matemática de tramos.`
         ],
         benchmarks: [
-          `Cifras realistas por jurisdicción: la exención de EE. UU. es de $13,99M para 2026 (40% por encima, con un step-up que borra décadas de plusvalías), la banda libre del Reino Unido es £325K con un IHT plano del 40%, y Alemania va del 7–30% para parientes cercanos pero 30–50% para herederos lejanos. Japón aplica una deducción básica de ¥30M + ¥6M por heredero con tasas progresivas del 10–55%. El ITCMD estatal de Brasil suele situarse en torno al 4–8%.`,
-          `La tasa efectiva, no la nominal, es el indicador realista. Un patrimonio británico de $500K dejado a un hijo muestra solo £175K imponibles tras la banda de £325K, por lo que la tasa efectiva queda muy por debajo del 40% aunque la fila Tasa de Impuesto marque 40%. Espera que la mayoría de patrimonios modestos en países sin impuesto muestren 0,0% efectivo, y que solo los patrimonios de EE. UU. por encima de ~$14M o las transferencias a herederos lejanos en Alemania y Japón empujen la tasa efectiva a dos dígitos.`
+          `Cifras realistas por jurisdicción: la exención de EE. UU. es de $15M para 2026 (40% por encima, con un step-up que borra décadas de plusvalías), la banda libre del Reino Unido es £325K con un IHT plano del 40%, y Alemania va del 7–30% para parientes cercanos pero 30–50% para herederos lejanos. Japón aplica una deducción básica de ¥30M + ¥6M por heredero con tasas progresivas del 10–55%. El ITCMD estatal de Brasil suele situarse en torno al 4–8%.`,
+          `La tasa efectiva, no la nominal, es el indicador realista. Un patrimonio británico de $500K dejado a un hijo muestra solo £175K imponibles tras la banda de £325K, por lo que la tasa efectiva queda muy por debajo del 40% aunque la fila Tasa de Impuesto marque 40%. Espera que la mayoría de patrimonios modestos en países sin impuesto muestren 0,0% efectivo, y que solo los patrimonios de EE. UU. por encima de ~$15M o las transferencias a herederos lejanos en Alemania y Japón empujen la tasa efectiva a dos dígitos.`
         ],
         execution: [
           `Flujo: 1) Estima el valor de mercado de la cartera en el horizonte de planificación, usando el <a href="/converter/">conversor de cripto</a> para totalizar las tenencias en USD. 2) Selecciona el país de residencia fiscal del fallecido. 3) Fija el Parentesco a la clase de heredero real. 4) Introduce la Base de Costo agregada para que la Ganancia No Realizada y el Beneficio de Step-Up se calculen bien. 5) Lee el Impuesto Estimado, la tasa efectiva y la Herencia Neta juntos, y recalcula para cada heredero candidato.`,
@@ -19175,16 +19175,16 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         ],
         hygiene: [
           `Mantén el valor de la cartera actualizado: las valoraciones cripto cambian rápido, y un plan patrimonial basado en el precio del año pasado puede sobre- o subestimar la factura en un tramo entero. Reintroduce la cifra tras cualquier movimiento de precio relevante, y recalcula el total en USD con el <a href="/converter/">conversor</a> en vez de fiarte de una hoja desactualizada. Actualiza la Base de Costo cada vez que añadas a posiciones, ya que impulsa directamente las filas Ganancia No Realizada y Beneficio de Step-Up.`,
-          `Trata las reglas de país como una foto fija, no como dogma. Las notas de EE. UU. señalan que la exención elevada del TCJA expira tras 2025 salvo prórroga, los umbrales y tramos alemanes cambian con la legislación, y el ITCMD de Brasil varía por estado. Pon fecha a cada cálculo, anota qué año de exención asumiste, y revérifica contra la normativa vigente antes de cualquier donación irrevocable, dotación de fideicomiso o decisión de mudanza que un profesional patrimonial deba firmar.`
+          `Trata las reglas de país como una foto fija, no como dogma. La nota de EE. UU. recoge que la One Big Beautiful Bill Act hizo permanente la exención elevada desde 2026 ($15M, indexada a la inflación en años posteriores), los umbrales y tramos alemanes cambian con la legislación, y el ITCMD de Brasil varía por estado. Pon fecha a cada cálculo, anota qué año de exención asumiste, y revérifica contra la normativa vigente antes de cualquier donación irrevocable, dotación de fideicomiso o decisión de mudanza que un profesional patrimonial deba firmar.`
         ],
         validation: [
           `Verifica la matemática a mano: la calculadora computa Patrimonio Imponible = valor de cartera − Exención Aplicada, luego Impuesto Estimado = Patrimonio Imponible × Tasa de Impuesto ÷ 100, y tasa efectiva = Impuesto Estimado ÷ valor de cartera. Confirma que la Herencia Neta equivale al valor de cartera menos el Impuesto Estimado. Para un patrimonio británico de £500K a un hijo, eso es (500.000 − 325.000) × 40% = £70K de impuesto, una tasa efectiva cercana al 14% — confirma que las filas reproducen esto.`,
-          `Contrasta la lógica de exención con las notas del país. Si seleccionas EE. UU., la Exención Aplicada debe saltar a $13,99M (limitada al valor de cartera en patrimonios menores), llevando el impuesto a cero por debajo de esa línea. Para países sin impuesto la Tasa de Impuesto y el Impuesto Estimado deben marcar 0, mientras la Ganancia No Realizada sigue mostrando la plusvalía latente que cargan los herederos. Si aparece el Beneficio de Step-Up, confirma que el país es EE. UU. o Alemania; equivale al valor menos la Base de Costo solo donde aplica un reinicio de base.`
+          `Contrasta la lógica de exención con las notas del país. Si seleccionas EE. UU., la Exención Aplicada debe saltar a $15M (limitada al valor de cartera en patrimonios menores), llevando el impuesto a cero por debajo de esa línea. Para países sin impuesto la Tasa de Impuesto y el Impuesto Estimado deben marcar 0, mientras la Ganancia No Realizada sigue mostrando la plusvalía latente que cargan los herederos. Si aparece el Beneficio de Step-Up, confirma que el país es EE. UU. o Alemania; equivale al valor menos la Base de Costo solo donde aplica un reinicio de base.`
         ],
       },
       pt: {
         interpret: [
-          `O resultado principal é o Imposto de Herança Estimado, ao lado de uma taxa efetiva — essa taxa é o imposto dividido pelo valor total da carteira, não a faixa marginal. Leia-a junto ao Patrimônio Tributável, que é o valor da carteira menos a Isenção Aplicada conforme o parentesco escolhido. Um filho nos EUA vê a isenção de $13,99M reduzir quase tudo a zero, enquanto um herdeiro 'outro' na Alemanha só libera €20K antes de as taxas progressivas morderem. A taxa efetiva é o ônus honesto; a linha Taxa de Imposto é só a faixa máxima alcançada.`,
+          `O resultado principal é o Imposto de Herança Estimado, ao lado de uma taxa efetiva — essa taxa é o imposto dividido pelo valor total da carteira, não a faixa marginal. Leia-a junto ao Patrimônio Tributável, que é o valor da carteira menos a Isenção Aplicada conforme o parentesco escolhido. Um filho nos EUA vê a isenção de $15M reduzir quase tudo a zero, enquanto um herdeiro 'outro' na Alemanha só libera €20K antes de as taxas progressivas morderem. A taxa efetiva é o ônus honesto; a linha Taxa de Imposto é só a faixa máxima alcançada.`,
           `A Herança Líquida é o que o herdeiro realmente fica — valor da carteira menos Imposto Estimado. Duas linhas pedem atenção: o Benefício de Step-Up (só nos EUA e Alemanha, onde a base é reiniciada ao valor de mercado na morte) é o ganho latente eliminado, e o Ganho Não Realizado é o valor menos sua Base de Custo. Em países sem imposto de herança como Austrália, Canadá ou Índia a linha de imposto marca $0, mas isso não significa que os herdeiros não devam nada ao vender depois. Confira a <a href="/tax-calculator/">calculadora de impostos cripto</a> para esse evento.`
         ],
         scenarios: [
@@ -19200,8 +19200,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `O segundo erro é ignorar a classe de parentesco. As pessoas colocam 'outro' (um amigo, irmão ou parceiro não casado) e se chocam com a isenção de €20K da Alemanha e taxas de 30–50%, ou esquecem que o Reino Unido isenta totalmente o cônjuge enquanto tributa o resto a 40%. Uma terceira armadilha é inserir o preço atual como valor da carteira quando o patrimônio é liquidado meses depois a uma avaliação muito diferente — recalcule sempre que o Bitcoin se mover de forma relevante, pois uma oscilação de 30% remodela toda a matemática das faixas.`
         ],
         benchmarks: [
-          `Números realistas por jurisdição: a isenção dos EUA é de $13,99M para 2026 (40% acima, com um step-up que apaga décadas de ganhos), a faixa livre do Reino Unido é £325K com um IHT plano de 40%, e a Alemanha vai de 7–30% para parentes próximos mas 30–50% para herdeiros distantes. O Japão aplica uma dedução básica de ¥30M + ¥6M por herdeiro com taxas progressivas de 10–55%. O ITCMD estadual do Brasil costuma ficar em torno de 4–8%.`,
-          `A taxa efetiva, não a nominal, é o indicador realista. Um patrimônio britânico de $500K deixado a um filho mostra só £175K tributáveis após a faixa de £325K, então a taxa efetiva fica bem abaixo de 40% mesmo que a linha Taxa de Imposto marque 40%. Espere que a maioria dos patrimônios modestos em países sem imposto mostre 0,0% efetivo, e que só patrimônios dos EUA acima de ~$14M ou transferências a herdeiros distantes na Alemanha e no Japão empurrem a taxa efetiva para dois dígitos.`
+          `Números realistas por jurisdição: a isenção dos EUA é de $15M para 2026 (40% acima, com um step-up que apaga décadas de ganhos), a faixa livre do Reino Unido é £325K com um IHT plano de 40%, e a Alemanha vai de 7–30% para parentes próximos mas 30–50% para herdeiros distantes. O Japão aplica uma dedução básica de ¥30M + ¥6M por herdeiro com taxas progressivas de 10–55%. O ITCMD estadual do Brasil costuma ficar em torno de 4–8%.`,
+          `A taxa efetiva, não a nominal, é o indicador realista. Um patrimônio britânico de $500K deixado a um filho mostra só £175K tributáveis após a faixa de £325K, então a taxa efetiva fica bem abaixo de 40% mesmo que a linha Taxa de Imposto marque 40%. Espere que a maioria dos patrimônios modestos em países sem imposto mostre 0,0% efetivo, e que só patrimônios dos EUA acima de ~$15M ou transferências a herdeiros distantes na Alemanha e no Japão empurrem a taxa efetiva para dois dígitos.`
         ],
         execution: [
           `Fluxo: 1) Estime o valor de mercado da carteira no horizonte de planejamento, usando o <a href="/converter/">conversor de cripto</a> para totalizar os ativos em USD. 2) Selecione o país de residência fiscal do falecido. 3) Defina o Parentesco para a classe de herdeiro real. 4) Insira a Base de Custo agregada para que o Ganho Não Realizado e o Benefício de Step-Up calculem certo. 5) Leia o Imposto Estimado, a taxa efetiva e a Herança Líquida juntos, e recalcule para cada herdeiro candidato.`,
@@ -19209,16 +19209,16 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         ],
         hygiene: [
           `Mantenha o valor da carteira atualizado: avaliações cripto mudam rápido, e um plano patrimonial baseado no preço do ano passado pode super- ou subestimar a conta em uma faixa inteira. Reinsira o número após qualquer movimento de preço relevante, e recalcule o total em USD com o <a href="/converter/">conversor</a> em vez de confiar numa planilha desatualizada. Atualize a Base de Custo sempre que adicionar a posições, pois ela impulsiona diretamente as linhas Ganho Não Realizado e Benefício de Step-Up.`,
-          `Trate as regras de país como uma foto, não como dogma. As notas dos EUA sinalizam que a isenção elevada do TCJA expira após 2025 salvo prorrogação, os limiares e faixas alemãs mudam com a legislação, e o ITCMD do Brasil varia por estado. Date cada cálculo, anote qual ano de isenção você assumiu, e reverifique contra a legislação vigente antes de qualquer doação irrevogável, aporte de fideicomisso ou decisão de mudança que um profissional patrimonial vá assinar.`
+          `Trate as regras de país como uma foto, não como dogma. A nota dos EUA registra que a One Big Beautiful Bill Act tornou permanente a isenção elevada a partir de 2026 ($15M, indexada à inflação nos anos seguintes), os limiares e faixas alemãs mudam com a legislação, e o ITCMD do Brasil varia por estado. Date cada cálculo, anote qual ano de isenção você assumiu, e reverifique contra a legislação vigente antes de qualquer doação irrevogável, aporte de fideicomisso ou decisão de mudança que um profissional patrimonial vá assinar.`
         ],
         validation: [
           `Verifique a matemática à mão: a calculadora computa Patrimônio Tributável = valor da carteira − Isenção Aplicada, depois Imposto Estimado = Patrimônio Tributável × Taxa de Imposto ÷ 100, e taxa efetiva = Imposto Estimado ÷ valor da carteira. Confirme que a Herança Líquida equivale ao valor da carteira menos o Imposto Estimado. Para um patrimônio britânico de £500K a um filho, isso é (500.000 − 325.000) × 40% = £70K de imposto, uma taxa efetiva perto de 14% — confirme que as linhas reproduzem isso.`,
-          `Cruze a lógica de isenção com as notas do país. Se você selecionar os EUA, a Isenção Aplicada deve saltar para $13,99M (limitada ao valor da carteira em patrimônios menores), levando o imposto a zero abaixo dessa linha. Para países sem imposto a Taxa de Imposto e o Imposto Estimado devem marcar 0, enquanto o Ganho Não Realizado ainda mostra o ganho latente que os herdeiros carregam. Se o Benefício de Step-Up aparecer, confirme que o país é EUA ou Alemanha; equivale ao valor menos a Base de Custo só onde um reinício de base se aplica.`
+          `Cruze a lógica de isenção com as notas do país. Se você selecionar os EUA, a Isenção Aplicada deve saltar para $15M (limitada ao valor da carteira em patrimônios menores), levando o imposto a zero abaixo dessa linha. Para países sem imposto a Taxa de Imposto e o Imposto Estimado devem marcar 0, enquanto o Ganho Não Realizado ainda mostra o ganho latente que os herdeiros carregam. Se o Benefício de Step-Up aparecer, confirme que o país é EUA ou Alemanha; equivale ao valor menos a Base de Custo só onde um reinício de base se aplica.`
         ],
       },
       tr: {
         interpret: [
-          `Ana çıktı, bir efektif oranın yanında gösterilen Tahmini Veraset Vergisidir — bu oran, marjinal dilim değil, verginin toplam portföy değerine bölümüdür. Bunu, seçtiğiniz akrabalık için portföy değeri eksi Uygulanan İstisna olan Vergiye Tabi Mirasla birlikte okuyun. ABD'de bir çocuk, $13,99M istisnasının çoğu mirası sıfıra indirdiğini görür; Almanya'da bir 'diğer' mirasçı ise artan oranlar devreye girmeden önce yalnızca €20K'yı geçer. Efektif oran dürüst yüktür; Vergi Oranı satırı yalnızca ulaşılan en üst dilimdir.`,
+          `Ana çıktı, bir efektif oranın yanında gösterilen Tahmini Veraset Vergisidir — bu oran, marjinal dilim değil, verginin toplam portföy değerine bölümüdür. Bunu, seçtiğiniz akrabalık için portföy değeri eksi Uygulanan İstisna olan Vergiye Tabi Mirasla birlikte okuyun. ABD'de bir çocuk, $15M istisnasının çoğu mirası sıfıra indirdiğini görür; Almanya'da bir 'diğer' mirasçı ise artan oranlar devreye girmeden önce yalnızca €20K'yı geçer. Efektif oran dürüst yüktür; Vergi Oranı satırı yalnızca ulaşılan en üst dilimdir.`,
           `Net Miras, mirasçının gerçekte elinde kalandır — portföy değeri eksi Tahmini Vergi. İki satır daha dikkatli okumayı hak eder: Step-Up Faydası (yalnızca ABD ve Almanya'da gösterilir; orada maliyet, ölümde piyasa değerine sıfırlanır) silinen gömülü değer artışıdır ve Gerçekleşmemiş Kazanç, portföy değeri eksi Maliyet Esasınızdır. Avustralya, Kanada veya Hindistan gibi veraset vergisi olmayan ülkelerde vergi satırı $0 okur, ancak bu, mirasçıların daha sonra sattıklarında hiçbir şey borçlu olmadığı anlamına gelmez. O elden çıkarma olayı için <a href="/tax-calculator/">kripto vergi hesaplayıcısına</a> bakın.`
         ],
         scenarios: [
@@ -19234,8 +19234,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `İkinci hata, akrabalık sınıfını göz ardı etmektir. İnsanlar 'diğer'i (bir arkadaş, kardeş veya evli olmayan partner) girer ve Almanya'nın €20K istisnası ile %30–50 oranlarına şaşırır ya da Birleşik Krallık'ın eşi tamamen muaf tutarken herkesi %40'ta vergilendirdiğini unutur. Üçüncü tuzak, miras aylar sonra çok farklı bir değerleme ile sonuçlanırken portföy değeri olarak güncel piyasa fiyatını girmektir — Bitcoin önemli ölçüde hareket ettiğinde yeniden hesaplayın, çünkü %30'luk bir oynama tüm dilim matematiğini yeniden şekillendirir.`
         ],
         benchmarks: [
-          `Yargı bölgesine göre gerçekçi rakamlar: ABD istisnası 2026 için $13,99M'dir (üzerinde %40, onlarca yıllık kazancı silebilen bir step-up ile), Birleşik Krallık sıfır oranlı bandı £325K ve sabit %40 IHT'dir, Almanya ise yakın akraba için %7–30 ama uzak mirasçılar için %30–50 arasıdır. Japonya, %10–55 artan oranlarla ¥30M + mirasçı başına ¥6M temel indirim uygular. Brezilya'nın eyalet ITCMD'si genellikle %4–8 civarına oturur.`,
-          `Gerçekçi gösterge, nominal oran değil efektif orandır. Bir çocuğa bırakılan $500K'lık bir Birleşik Krallık mirası, £325K bandından sonra yalnızca £175K vergiye tabi gösterir, bu yüzden Vergi Oranı satırı %40 okusa bile efektif oran %40'ın çok altına düşer. Vergisiz ülkelerdeki çoğu mütevazı mirasın %0,0 efektif göstermesini ve yalnızca ABD'de ~$14M üzeri mirasların veya Almanya ve Japonya'daki uzak mirasçı transferlerinin efektif oranları çift haneye itmesini bekleyin.`
+          `Yargı bölgesine göre gerçekçi rakamlar: ABD istisnası 2026 için $15M'dir (üzerinde %40, onlarca yıllık kazancı silebilen bir step-up ile), Birleşik Krallık sıfır oranlı bandı £325K ve sabit %40 IHT'dir, Almanya ise yakın akraba için %7–30 ama uzak mirasçılar için %30–50 arasıdır. Japonya, %10–55 artan oranlarla ¥30M + mirasçı başına ¥6M temel indirim uygular. Brezilya'nın eyalet ITCMD'si genellikle %4–8 civarına oturur.`,
+          `Gerçekçi gösterge, nominal oran değil efektif orandır. Bir çocuğa bırakılan $500K'lık bir Birleşik Krallık mirası, £325K bandından sonra yalnızca £175K vergiye tabi gösterir, bu yüzden Vergi Oranı satırı %40 okusa bile efektif oran %40'ın çok altına düşer. Vergisiz ülkelerdeki çoğu mütevazı mirasın %0,0 efektif göstermesini ve yalnızca ABD'de ~$15M üzeri mirasların veya Almanya ve Japonya'daki uzak mirasçı transferlerinin efektif oranları çift haneye itmesini bekleyin.`
         ],
         execution: [
           `İş akışı: 1) Varlıkları USD cinsinden toplamak için <a href="/converter/">kripto dönüştürücüyü</a> kullanarak portföyün planlama ufkundaki gerçeğe uygun piyasa değerini tahmin edin. 2) Vefat edenin vergi ikametgâhının ülkesini seçin. 3) Akrabalığı gerçek mirasçı sınıfına ayarlayın. 4) Gerçekleşmemiş Kazanç ve Step-Up Faydası doğru hesaplansın diye toplu Maliyet Esasını girin. 5) Tahmini Vergi, efektif oran ve Net Mirası birlikte okuyun, ardından her aday mirasçı için yeniden hesaplayın.`,
@@ -19243,16 +19243,16 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         ],
         hygiene: [
           `Portföy değerini güncel tutun: kripto değerlemeleri hızla kayar ve geçen yılın fiyatına dayanan bir miras planı, faturayı tam bir vergi dilimi kadar fazla veya az gösterebilir. Önemli bir fiyat hareketinden sonra rakamı yeniden girin ve eski bir tabloya güvenmek yerine <a href="/converter/">dönüştürücü</a> ile USD toplamını yeniden hesaplayın. Pozisyonlara her ekleme yaptığınızda Maliyet Esasını yenileyin, çünkü Gerçekleşmemiş Kazanç ve Step-Up Faydası satırlarını doğrudan yönlendirir.`,
-          `Ülke kurallarını dogma değil, bir anlık görüntü olarak görün. ABD notları, yükseltilmiş TCJA istisnasının uzatılmadıkça 2025'ten sonra sona erdiğini, Alman eşiklerinin ve oran bantlarının mevzuatla kaydığını ve Brezilya'nın ITCMD'sinin eyalete göre değiştiğini işaret eder. Her hesaplamaya tarih atın, hangi istisna yılını varsaydığınızı not edin ve bir miras uzmanının nihayetinde onaylayacağı geri alınamaz bir bağış, vakıf finansmanı veya taşınma kararından önce güncel mevzuata karşı yeniden doğrulayın.`
+          `Ülke kurallarını dogma değil, bir anlık görüntü olarak görün. ABD notu, One Big Beautiful Bill Act'in yükseltilmiş istisnayı 2026'dan itibaren kalıcı hale getirdiğini ($15M, sonraki yıllarda enflasyona endeksli), Alman eşiklerinin ve oran bantlarının mevzuatla kaydığını ve Brezilya'nın ITCMD'sinin eyalete göre değiştiğini işaret eder. Her hesaplamaya tarih atın, hangi istisna yılını varsaydığınızı not edin ve bir miras uzmanının nihayetinde onaylayacağı geri alınamaz bir bağış, vakıf finansmanı veya taşınma kararından önce güncel mevzuata karşı yeniden doğrulayın.`
         ],
         validation: [
           `Matematiği elle doğrulayın: hesaplayıcı, Vergiye Tabi Miras = portföy değeri − Uygulanan İstisna, ardından Tahmini Vergi = Vergiye Tabi Miras × Vergi Oranı ÷ 100 ve efektif oran = Tahmini Vergi ÷ portföy değeri hesaplar. Net Mirasın portföy değeri eksi Tahmini Vergiye eşit olduğunu doğrulayın. Bir çocuğa £500K'lık bir Birleşik Krallık mirası için bu (500.000 − 325.000) × %40 = £70K vergi, %14'e yakın bir efektif orandır — satırların bunu ürettiğini teyit edin.`,
-          `İstisna mantığını ülke notlarıyla çapraz kontrol edin. ABD'yi seçerseniz, Uygulanan İstisna $13,99M'ye sıçramalı (daha küçük miraslarda portföy değeriyle sınırlı), bu çizginin altında vergiyi sıfıra indirir. Vergisiz ülkelerde Vergi Oranı ve Tahmini Vergi 0 okumalı, Gerçekleşmemiş Kazanç ise mirasçıların taşıdığı gizli kazancı göstermeye devam etmeli. Step-Up Faydası görünürse, ülkenin ABD veya Almanya olduğunu doğrulayın; yalnızca bir maliyet sıfırlaması uygulanan yerde portföy değeri eksi Maliyet Esasına eşittir.`
+          `İstisna mantığını ülke notlarıyla çapraz kontrol edin. ABD'yi seçerseniz, Uygulanan İstisna $15M'ye sıçramalı (daha küçük miraslarda portföy değeriyle sınırlı), bu çizginin altında vergiyi sıfıra indirir. Vergisiz ülkelerde Vergi Oranı ve Tahmini Vergi 0 okumalı, Gerçekleşmemiş Kazanç ise mirasçıların taşıdığı gizli kazancı göstermeye devam etmeli. Step-Up Faydası görünürse, ülkenin ABD veya Almanya olduğunu doğrulayın; yalnızca bir maliyet sıfırlaması uygulanan yerde portföy değeri eksi Maliyet Esasına eşittir.`
         ],
       },
       hi: {
         interpret: [
-          `मुख्य परिणाम अनुमानित विरासत कर है, जो एक प्रभावी दर के साथ दिखता है — वह दर सीमांत स्लैब नहीं, बल्कि कर को आपके पूरे पोर्टफोलियो मूल्य से भाग देने पर मिलती है। इसे कर योग्य संपत्ति के साथ पढ़ें, जो पोर्टफोलियो मूल्य में से आपके चुने रिश्ते के लिए लागू छूट घटाने पर मिलती है। अमेरिका में एक संतान देखती है कि $13.99M की छूट अधिकांश संपत्ति को शून्य कर तक कर देती है, जबकि जर्मनी में एक 'अन्य' वारिस प्रगतिशील दरों के लगने से पहले केवल €20K ही पार करता है। प्रभावी दर असली बोझ है; कर दर पंक्ति केवल पहुँचा सर्वोच्च स्लैब है।`,
+          `मुख्य परिणाम अनुमानित विरासत कर है, जो एक प्रभावी दर के साथ दिखता है — वह दर सीमांत स्लैब नहीं, बल्कि कर को आपके पूरे पोर्टफोलियो मूल्य से भाग देने पर मिलती है। इसे कर योग्य संपत्ति के साथ पढ़ें, जो पोर्टफोलियो मूल्य में से आपके चुने रिश्ते के लिए लागू छूट घटाने पर मिलती है। अमेरिका में एक संतान देखती है कि $15M की छूट अधिकांश संपत्ति को शून्य कर तक कर देती है, जबकि जर्मनी में एक 'अन्य' वारिस प्रगतिशील दरों के लगने से पहले केवल €20K ही पार करता है। प्रभावी दर असली बोझ है; कर दर पंक्ति केवल पहुँचा सर्वोच्च स्लैब है।`,
           `शुद्ध विरासत वही है जो वारिस वास्तव में रखता है — पोर्टफोलियो मूल्य में से अनुमानित कर। दो पंक्तियाँ ध्यान से पढ़ने लायक हैं: स्टेप-अप लाभ (केवल अमेरिका और जर्मनी में दिखता है, जहाँ मृत्यु पर लागत आधार बाजार मूल्य पर रीसेट होता है) मिटा दिया गया अंतर्निहित लाभ है, और अवास्तविक लाभ पोर्टफोलियो मूल्य में से आपका लागत आधार है। ऑस्ट्रेलिया, कनाडा या भारत जैसे बिना विरासत कर वाले देशों में कर पंक्ति $0 दिखाती है, पर इसका मतलब यह नहीं कि वारिस बाद में बेचने पर कुछ नहीं देते। उस बिक्री घटना के लिए <a href="/tax-calculator/">क्रिप्टो कर कैलकुलेटर</a> देखें।`
         ],
         scenarios: [
@@ -19268,8 +19268,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `दूसरी गलती रिश्ते की श्रेणी को नज़रअंदाज़ करना है। लोग 'अन्य' (एक दोस्त, भाई या अविवाहित साथी) डालते हैं और जर्मनी की €20K छूट और 30–50% दरों से चौंक जाते हैं, या भूल जाते हैं कि यूके जीवनसाथी को पूरी तरह छूट देता है जबकि बाकी सबको 40% पर कर लगाता है। तीसरा जाल पोर्टफोलियो मूल्य के रूप में वर्तमान बाजार कीमत दर्ज करना है जब संपत्ति महीनों बाद बहुत भिन्न मूल्यांकन पर निपटती है — जब भी बिटकॉइन उल्लेखनीय रूप से चले, फिर से गणना करें, क्योंकि 30% का झूल पूरी स्लैब गणित को नया आकार देता है।`
         ],
         benchmarks: [
-          `क्षेत्राधिकार के अनुसार यथार्थवादी आँकड़े: अमेरिका की छूट 2026 के लिए $13.99M है (इसके ऊपर 40%, ऐसे स्टेप-अप के साथ जो दशकों के लाभ मिटा सकता है), यूके का शून्य-दर बैंड £325K है और सपाट 40% IHT, जबकि जर्मनी करीबी रिश्तेदारों के लिए 7–30% पर पर दूर के वारिसों के लिए 30–50% तक जाता है। जापान प्रति वारिस ¥30M + ¥6M की मूल कटौती और 10–55% प्रगतिशील दरें लगाता है। ब्राज़ील का राज्य ITCMD आमतौर पर लगभग 4–8% पर बैठता है।`,
-          `यथार्थवादी पैमाना नाममात्र दर नहीं, प्रभावी दर है। एक संतान को छोड़ी गई $500K की यूके संपत्ति £325K बैंड के बाद केवल £175K कर योग्य दिखाती है, इसलिए कर दर पंक्ति 40% पढ़ने पर भी प्रभावी दर 40% से काफी नीचे आती है। उम्मीद करें कि बिना-कर देशों में अधिकांश मामूली संपत्तियाँ 0.0% प्रभावी दिखाएँगी, और केवल ~$14M से ऊपर की अमेरिकी संपत्तियाँ या जर्मनी और जापान में दूर के वारिस हस्तांतरण ही प्रभावी दरों को दोहरे अंकों में धकेलेंगे।`
+          `क्षेत्राधिकार के अनुसार यथार्थवादी आँकड़े: अमेरिका की छूट 2026 के लिए $15M है (इसके ऊपर 40%, ऐसे स्टेप-अप के साथ जो दशकों के लाभ मिटा सकता है), यूके का शून्य-दर बैंड £325K है और सपाट 40% IHT, जबकि जर्मनी करीबी रिश्तेदारों के लिए 7–30% पर पर दूर के वारिसों के लिए 30–50% तक जाता है। जापान प्रति वारिस ¥30M + ¥6M की मूल कटौती और 10–55% प्रगतिशील दरें लगाता है। ब्राज़ील का राज्य ITCMD आमतौर पर लगभग 4–8% पर बैठता है।`,
+          `यथार्थवादी पैमाना नाममात्र दर नहीं, प्रभावी दर है। एक संतान को छोड़ी गई $500K की यूके संपत्ति £325K बैंड के बाद केवल £175K कर योग्य दिखाती है, इसलिए कर दर पंक्ति 40% पढ़ने पर भी प्रभावी दर 40% से काफी नीचे आती है। उम्मीद करें कि बिना-कर देशों में अधिकांश मामूली संपत्तियाँ 0.0% प्रभावी दिखाएँगी, और केवल ~$15M से ऊपर की अमेरिकी संपत्तियाँ या जर्मनी और जापान में दूर के वारिस हस्तांतरण ही प्रभावी दरों को दोहरे अंकों में धकेलेंगे।`
         ],
         execution: [
           `कार्यप्रवाह: 1) USD में होल्डिंग्स का कुल जोड़ने के लिए <a href="/converter/">क्रिप्टो कन्वर्टर</a> का उपयोग करते हुए योजना क्षितिज पर पोर्टफोलियो का उचित बाजार मूल्य अनुमानित करें। 2) मृतक के कर निवास का देश चुनें। 3) रिश्ते को असली वारिस श्रेणी पर सेट करें। 4) सकल लागत आधार दर्ज करें ताकि अवास्तविक लाभ और स्टेप-अप लाभ सही गणना करें। 5) अनुमानित कर, प्रभावी दर और शुद्ध विरासत एक साथ पढ़ें, फिर हर संभावित वारिस के लिए फिर से गणना करें।`,
@@ -19277,16 +19277,16 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         ],
         hygiene: [
           `पोर्टफोलियो मूल्य अद्यतन रखें: क्रिप्टो मूल्यांकन तेजी से बदलते हैं, और पिछले साल की कीमत पर बनी संपत्ति योजना बिल को पूरे एक कर स्लैब तक अधिक या कम दिखा सकती है। किसी भी उल्लेखनीय मूल्य चाल के बाद आँकड़ा फिर से दर्ज करें, और पुरानी स्प्रेडशीट पर भरोसा करने के बजाय <a href="/converter/">कन्वर्टर</a> से USD में कुल फिर से गणना करें। जब भी आप पोजीशन में जोड़ें तो लागत आधार ताज़ा करें, क्योंकि यह सीधे अवास्तविक लाभ और स्टेप-अप लाभ पंक्तियों को चलाता है।`,
-          `देश नियमों को स्नैपशॉट मानें, धर्मग्रंथ नहीं। अमेरिका के नोट्स चिह्नित करते हैं कि बढ़ी हुई TCJA छूट विस्तार न होने पर 2025 के बाद समाप्त होती है, जर्मन सीमाएँ और दर बैंड कानून के साथ बदलते हैं, और ब्राज़ील का ITCMD राज्य के अनुसार बदलता है। हर गणना पर तारीख डालें, नोट करें कि आपने कौन-सा छूट वर्ष माना, और किसी अपरिवर्तनीय उपहार, ट्रस्ट वित्तपोषण या स्थानांतरण निर्णय से पहले — जिस पर एक संपत्ति पेशेवर अंततः हस्ताक्षर करेगा — वर्तमान कानून के विरुद्ध फिर से सत्यापित करें।`
+          `देश नियमों को स्नैपशॉट मानें, धर्मग्रंथ नहीं। अमेरिका का नोट दर्ज करता है कि One Big Beautiful Bill Act ने बढ़ी हुई छूट को 2026 से स्थायी बना दिया ($15M, आगे के वर्षों में मुद्रास्फीति से समायोजित), जर्मन सीमाएँ और दर बैंड कानून के साथ बदलते हैं, और ब्राज़ील का ITCMD राज्य के अनुसार बदलता है। हर गणना पर तारीख डालें, नोट करें कि आपने कौन-सा छूट वर्ष माना, और किसी अपरिवर्तनीय उपहार, ट्रस्ट वित्तपोषण या स्थानांतरण निर्णय से पहले — जिस पर एक संपत्ति पेशेवर अंततः हस्ताक्षर करेगा — वर्तमान कानून के विरुद्ध फिर से सत्यापित करें।`
         ],
         validation: [
           `गणित को हाथ से जाँचें: कैलकुलेटर कर योग्य संपत्ति = पोर्टफोलियो मूल्य − लागू छूट, फिर अनुमानित कर = कर योग्य संपत्ति × कर दर ÷ 100, और प्रभावी दर = अनुमानित कर ÷ पोर्टफोलियो मूल्य गणना करता है। पुष्टि करें कि शुद्ध विरासत पोर्टफोलियो मूल्य में से अनुमानित कर के बराबर है। एक संतान को £500K की यूके संपत्ति के लिए, यह (500,000 − 325,000) × 40% = £70K कर है, लगभग 14% की प्रभावी दर — पुष्टि करें कि पंक्तियाँ इसे दोहराती हैं।`,
-          `छूट तर्क को देश नोट्स के विरुद्ध क्रॉस-चेक करें। यदि आप अमेरिका चुनते हैं, तो लागू छूट $13.99M तक उछलनी चाहिए (छोटी संपत्तियों में पोर्टफोलियो मूल्य पर सीमित), उस रेखा के नीचे कर को शून्य तक ले जाती है। बिना-कर देशों के लिए कर दर और अनुमानित कर 0 पढ़ने चाहिए, जबकि अवास्तविक लाभ अब भी वह छिपा लाभ दिखाता है जो वारिस वहन करते हैं। यदि स्टेप-अप लाभ दिखे, तो पुष्टि करें कि देश अमेरिका या जर्मनी है; यह पोर्टफोलियो मूल्य में से लागत आधार के बराबर केवल वहाँ होता है जहाँ आधार रीसेट लागू होता है।`
+          `छूट तर्क को देश नोट्स के विरुद्ध क्रॉस-चेक करें। यदि आप अमेरिका चुनते हैं, तो लागू छूट $15M तक उछलनी चाहिए (छोटी संपत्तियों में पोर्टफोलियो मूल्य पर सीमित), उस रेखा के नीचे कर को शून्य तक ले जाती है। बिना-कर देशों के लिए कर दर और अनुमानित कर 0 पढ़ने चाहिए, जबकि अवास्तविक लाभ अब भी वह छिपा लाभ दिखाता है जो वारिस वहन करते हैं। यदि स्टेप-अप लाभ दिखे, तो पुष्टि करें कि देश अमेरिका या जर्मनी है; यह पोर्टफोलियो मूल्य में से लागत आधार के बराबर केवल वहाँ होता है जहाँ आधार रीसेट लागू होता है।`
         ],
       },
       ru: {
         interpret: [
-          `Главный результат — Оценочный налог на наследство, показанный рядом с эффективной ставкой: эта ставка — налог, делённый на полную стоимость портфеля, а не предельная шкала. Читайте её вместе с Налогооблагаемым наследством, которое равно стоимости портфеля минус Применённое освобождение для выбранной степени родства. Ребёнок в США видит, как освобождение $13,99 млн сводит большинство наследств к нулевому налогу, тогда как наследник 'прочий' в Германии получает лишь €20K до того, как вступают прогрессивные ставки. Эффективная ставка — честное бремя; строка Налоговая ставка — лишь достигнутая верхняя шкала.`,
+          `Главный результат — Оценочный налог на наследство, показанный рядом с эффективной ставкой: эта ставка — налог, делённый на полную стоимость портфеля, а не предельная шкала. Читайте её вместе с Налогооблагаемым наследством, которое равно стоимости портфеля минус Применённое освобождение для выбранной степени родства. Ребёнок в США видит, как освобождение $15 млн сводит большинство наследств к нулевому налогу, тогда как наследник 'прочий' в Германии получает лишь €20K до того, как вступают прогрессивные ставки. Эффективная ставка — честное бремя; строка Налоговая ставка — лишь достигнутая верхняя шкала.`,
           `Чистое наследство — это то, что наследник реально оставляет себе: стоимость портфеля минус Оценочный налог. Две строки заслуживают внимания: Выгода Step-Up (показана только для США и Германии, где база сбрасывается до рыночной стоимости на момент смерти) — это стёртый встроенный прирост, а Нереализованная прибыль — стоимость портфеля минус ваша Стоимостная база. В странах без налога на наследство, таких как Австралия, Канада или Индия, строка налога показывает $0, но это не значит, что наследники ничего не должны позже при продаже. Для этого события продажи смотрите <a href="/tax-calculator/">калькулятор крипто-налогов</a>.`
         ],
         scenarios: [
@@ -19302,8 +19302,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `Вторая ошибка — игнорировать класс родства. Люди вводят 'прочий' (друга, брата или невенчанного партнёра) и поражаются освобождению €20K Германии и ставкам 30–50%, или забывают, что Великобритания полностью освобождает супруга, облагая всех остальных по 40%. Третья ловушка — вводить текущую рыночную цену как стоимость портфеля, когда наследство оформляется месяцами позже при совсем иной оценке — пересчитывайте всякий раз, когда биткоин существенно движется, ведь колебание в 30% переформатирует всю математику шкал.`
         ],
         benchmarks: [
-          `Реалистичные цифры по юрисдикциям: освобождение США составляет $13,99 млн на 2026 год (40% сверх него, со step-up, способным стереть десятилетия прибыли), необлагаемая полоса Великобритании — £325K при плоском 40% IHT, а Германия идёт от 7–30% для близких родственников до 30–50% для дальних наследников. Япония применяет базовый вычет ¥30 млн + ¥6 млн на наследника с прогрессивными ставками 10–55%. Региональный ITCMD Бразилии обычно оседает около 4–8%.`,
-          `Реалистичный ориентир — эффективная ставка, а не номинальная. Британское наследство $500K, оставленное ребёнку, показывает лишь £175K налогооблагаемых после полосы £325K, поэтому эффективная ставка оказывается заметно ниже 40%, даже если строка Налоговая ставка показывает 40%. Ожидайте, что большинство скромных наследств в безналоговых странах покажут 0,0% эффективных, и лишь наследства США свыше ~$14 млн или передачи дальним наследникам в Германии и Японии выведут эффективные ставки в двузначные.`
+          `Реалистичные цифры по юрисдикциям: освобождение США составляет $15 млн на 2026 год (40% сверх него, со step-up, способным стереть десятилетия прибыли), необлагаемая полоса Великобритании — £325K при плоском 40% IHT, а Германия идёт от 7–30% для близких родственников до 30–50% для дальних наследников. Япония применяет базовый вычет ¥30 млн + ¥6 млн на наследника с прогрессивными ставками 10–55%. Региональный ITCMD Бразилии обычно оседает около 4–8%.`,
+          `Реалистичный ориентир — эффективная ставка, а не номинальная. Британское наследство $500K, оставленное ребёнку, показывает лишь £175K налогооблагаемых после полосы £325K, поэтому эффективная ставка оказывается заметно ниже 40%, даже если строка Налоговая ставка показывает 40%. Ожидайте, что большинство скромных наследств в безналоговых странах покажут 0,0% эффективных, и лишь наследства США свыше ~$15 млн или передачи дальним наследникам в Германии и Японии выведут эффективные ставки в двузначные.`
         ],
         execution: [
           `Рабочий процесс: 1) Оцените рыночную стоимость портфеля на горизонте планирования, используя <a href="/converter/">крипто-конвертер</a> для суммирования активов в USD. 2) Выберите страну налогового резидентства умершего. 3) Установите Степень родства на реальный класс наследника. 4) Введите совокупную Стоимостную базу, чтобы Нереализованная прибыль и Выгода Step-Up считались верно. 5) Читайте Оценочный налог, эффективную ставку и Чистое наследство вместе, затем пересчитайте для каждого кандидата-наследника.`,
@@ -19311,11 +19311,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         ],
         hygiene: [
           `Держите стоимость портфеля актуальной: крипто-оценки быстро дрейфуют, и план наследства, построенный на прошлогодней цене, может завысить или занизить счёт на целую налоговую шкалу. Перевводите цифру после любого существенного движения цены и пересчитывайте итог в USD через <a href="/converter/">конвертер</a>, а не доверяйте устаревшей таблице. Обновляйте Стоимостную базу всякий раз, когда добавляете к позициям, поскольку она напрямую определяет строки Нереализованная прибыль и Выгода Step-Up.`,
-          `Считайте правила стран моментальным снимком, а не догмой. Примечания США отмечают, что повышенное освобождение TCJA истекает после 2025 года, если не продлено, немецкие пороги и шкалы ставок смещаются с законодательством, а ITCMD Бразилии варьируется по штатам. Ставьте дату на каждый расчёт, отмечайте, какой год освобождения вы предположили, и перепроверяйте по действующему законодательству перед любым безотзывным дарением, финансированием траста или решением о переезде, которое в итоге подпишет специалист по наследству.`
+          `Считайте правила стран моментальным снимком, а не догмой. Примечание по США фиксирует, что One Big Beautiful Bill Act сделал повышенное освобождение постоянным с 2026 года ($15 млн, далее с индексацией на инфляцию), немецкие пороги и шкалы ставок смещаются с законодательством, а ITCMD Бразилии варьируется по штатам. Ставьте дату на каждый расчёт, отмечайте, какой год освобождения вы предположили, и перепроверяйте по действующему законодательству перед любым безотзывным дарением, финансированием траста или решением о переезде, которое в итоге подпишет специалист по наследству.`
         ],
         validation: [
           `Проверьте математику вручную: калькулятор вычисляет Налогооблагаемое наследство = стоимость портфеля − Применённое освобождение, затем Оценочный налог = Налогооблагаемое наследство × Налоговая ставка ÷ 100, и эффективная ставка = Оценочный налог ÷ стоимость портфеля. Подтвердите, что Чистое наследство равно стоимости портфеля минус Оценочный налог. Для британского наследства £500K ребёнку это (500 000 − 325 000) × 40% = £70K налога, эффективная ставка около 14% — убедитесь, что строки это воспроизводят.`,
-          `Сверьте логику освобождения с примечаниями страны. Если выбрать США, Применённое освобождение должно подскочить до $13,99 млн (ограничено стоимостью портфеля для меньших наследств), сводя налог к нулю ниже этой черты. Для безналоговых стран Налоговая ставка и Оценочный налог должны показывать 0, тогда как Нереализованная прибыль всё равно отображает скрытый прирост, который несут наследники. Если появляется Выгода Step-Up, подтвердите, что страна — США или Германия; она равна стоимости портфеля минус Стоимостная база только там, где применяется сброс базы.`
+          `Сверьте логику освобождения с примечаниями страны. Если выбрать США, Применённое освобождение должно подскочить до $15 млн (ограничено стоимостью портфеля для меньших наследств), сводя налог к нулю ниже этой черты. Для безналоговых стран Налоговая ставка и Оценочный налог должны показывать 0, тогда как Нереализованная прибыль всё равно отображает скрытый прирост, который несут наследники. Если появляется Выгода Step-Up, подтвердите, что страна — США или Германия; она равна стоимости портфеля минус Стоимостная база только там, где применяется сброс базы.`
         ],
       },
   },

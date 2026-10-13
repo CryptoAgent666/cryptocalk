@@ -330,6 +330,16 @@ function localizeLinks(paragraphs: string[], pageLang: Lang): string[] {
   );
 }
 
+// Prose strings carry internal links as `<a href="/slug/">text</a>` (1,735 of them in the
+// seo-content/seo-ext dictionaries). Rendering them as `<p>{p}</p>` escaped the markup, so readers
+// saw raw `<a href=...>` text on every calculator page that had a contextual link (found by calkcheck
+// 2026-10-13). Escape everything, then restore ONLY same-site anchors with a root-relative href:
+// no attributes beyond href, no external URLs, no other tags.
+function renderProse(p: string): string {
+  const esc = p.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  return esc.replace(/&lt;a href=&quot;(\/(?!\/)[^&<>\s]*)&quot;&gt;(.*?)&lt;\/a&gt;/g, '<a href="$1">$2</a>');
+}
+
 const txt = Object.fromEntries(
   Object.entries(rawTxt).map(([key, val]) => [key, Array.isArray(val) ? localizeLinks(val, lang) : val])
 ) as typeof rawTxt;
@@ -557,29 +567,29 @@ const howToSchema = howToSteps.length >= 3 ? {
         )}
         {has('how') && <>
           <h2 id={hId.how}>{h.how}</h2>
-          {txt.how.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+          {txt.how.map((p) => <p set:html={renderProse(p.replace(/{title}/g, localizedTitle))} />)}
         </>}
 
         {has('inputs') && <>
           <h2 id={hId.inputs}>{h.inputs}</h2>
-          {txt.inputs.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+          {txt.inputs.map((p) => <p set:html={renderProse(p.replace(/{title}/g, localizedTitle))} />)}
         </>}
 
         {has('interpret') && <>
           <h2 id={hId.interpret}>{h.interpret}</h2>
-          {txt.interpret.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+          {txt.interpret.map((p) => <p set:html={renderProse(p.replace(/{title}/g, localizedTitle))} />)}
         </>}
 
         {has('scenarios') && <>
           <h2 id={hId.scenarios}>{h.scenarios}</h2>
-          {txt.scenarios.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+          {txt.scenarios.map((p) => <p set:html={renderProse(p.replace(/{title}/g, localizedTitle))} />)}
         </>}
 
         {has('checklist') && <>
           <h2 id={hId.checklist}>{h.checklist}</h2>
           <ol class="checklist-list">
             {txt.checklist.map((p) => (
-              <li>{p.replace(/{title}/g, localizedTitle)}</li>
+              <li set:html={renderProse(p.replace(/{title}/g, localizedTitle))} />
             ))}
           </ol>
         </>}
@@ -588,29 +598,29 @@ const howToSchema = howToSteps.length >= 3 ? {
           <h2 id={hId.mistakes}>{h.mistakes}</h2>
           <ul class="mistakes-list">
             {txt.mistakes.map((p) => (
-              <li>{p.replace(/{title}/g, localizedTitle)}</li>
+              <li set:html={renderProse(p.replace(/{title}/g, localizedTitle))} />
             ))}
           </ul>
         </>}
 
         {has('benchmarks') && <>
           <h2 id={hId.benchmarks}>{h.benchmarks}</h2>
-          {txt.benchmarks.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+          {txt.benchmarks.map((p) => <p set:html={renderProse(p.replace(/{title}/g, localizedTitle))} />)}
         </>}
 
         {has('execution') && <>
           <h2 id={hId.execution}>{h.execution}</h2>
-          {txt.execution.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+          {txt.execution.map((p) => <p set:html={renderProse(p.replace(/{title}/g, localizedTitle))} />)}
         </>}
 
         {has('hygiene') && <>
           <h2 id={hId.hygiene}>{h.hygiene}</h2>
-          {txt.hygiene.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+          {txt.hygiene.map((p) => <p set:html={renderProse(p.replace(/{title}/g, localizedTitle))} />)}
         </>}
 
         {has('validation') && <>
           <h2 id={hId.validation}>{h.validation}</h2>
-          {txt.validation.map((p) => <p>{p.replace(/{title}/g, localizedTitle)}</p>)}
+          {txt.validation.map((p) => <p set:html={renderProse(p.replace(/{title}/g, localizedTitle))} />)}
         </>}
 
         {LEDGER_COMPONENT_BY_SLUG[slug] && (

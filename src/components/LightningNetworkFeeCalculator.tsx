@@ -48,8 +48,10 @@ function LightningNetworkFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
     const feePctOfPayment = amt > 0 ? (totalFeeSat / amt) * 100 : 0;
 
-    // On-chain comparison: typical 200 sats/vB × 140 vB transaction = 28000 sats
-    const typicalOnchainSat = 28000;
+    // On-chain comparison: 10 sats/vB × 140 vB = 1,400 sats — a deliberately busy-hour rate (mempool.space
+    // recommended 1 sat/vB on every tier on 2026-10-13). Until then this assumed 200 sats/vB (28,000 sats,
+    // ~$21.64), which overstated the on-chain alternative ~20x and contradicted the page's own "$1–10" text.
+    const typicalOnchainSat = 1400;
     const typicalOnchainUsd = (typicalOnchainSat / 1e8) * price;
     const savingsVsOnchainPct = typicalOnchainSat > 0 ? ((typicalOnchainSat - totalFeeSat) / typicalOnchainSat) * 100 : 0;
 

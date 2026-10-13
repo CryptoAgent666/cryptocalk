@@ -12,27 +12,33 @@ interface CompanyPreset {
   debt: string;
 }
 
-// Preset values approximate as of May 2026 — for illustration only.
+// Preset snapshot 2026-10-13 (bitcointreasuries.net company pages) — approximate, for illustration only.
+// Until then these were labelled "May 2026" but held December-2024 figures (440,000 BTC, $95B), which
+// put MSTR at a 2.79x "Extreme Premium" while it actually traded near NAV. Semler Scientific merged into
+// Strive (ASST), so its row now shows the combined company. Debt is MSTR's convertible notes only.
 const COMPANY_PRESETS: CompanyPreset[] = [
-  { name: 'MicroStrategy (MSTR)', ticker: 'MSTR', marketCap: '95000000000', btcHoldings: '440000', debt: '8000000000' },
-  { name: 'MetaPlanet (3350.T)', ticker: '3350', marketCap: '6500000000', btcHoldings: '15000', debt: '0' },
-  { name: 'Semler Scientific (SMLR)', ticker: 'SMLR', marketCap: '650000000', btcHoldings: '3500', debt: '0' },
+  { name: 'Strategy (MSTR)', ticker: 'MSTR', marketCap: '62900000000', btcHoldings: '848250', debt: '8000000000' },
+  { name: 'MetaPlanet (3350.T)', ticker: '3350', marketCap: '1900000000', btcHoldings: '44000', debt: '0' },
+  { name: 'Strive (ASST, incl. Semler)', ticker: 'ASST', marketCap: '2600000000', btcHoldings: '29462', debt: '0' },
   { name: 'Custom', ticker: 'CUSTOM', marketCap: '', btcHoldings: '', debt: '0' },
 ];
 
+// Illustrative multiples on the default 848,250 BTC x $83,600 (~$70.9B NAV): 1.0x / 1.5x / 2.5x / 0.8x.
 const MNAV_SCENARIOS = [
-  { label: 'Pure NAV (1.0×)', marketCap: '34000000000', btcHoldings: '440000', debt: '0' },
-  { label: 'Healthy Premium', marketCap: '50000000000', btcHoldings: '440000', debt: '0' },
-  { label: 'High Premium', marketCap: '95000000000', btcHoldings: '440000', debt: '8000000000' },
-  { label: 'Discount to NAV', marketCap: '25000000000', btcHoldings: '440000', debt: '0' },
+  { label: 'Pure NAV (1.0×)', marketCap: '70900000000', btcHoldings: '848250', debt: '0' },
+  { label: 'Healthy Premium', marketCap: '106000000000', btcHoldings: '848250', debt: '0' },
+  { label: 'High Premium', marketCap: '177000000000', btcHoldings: '848250', debt: '8000000000' },
+  { label: 'Discount to NAV', marketCap: '56700000000', btcHoldings: '848250', debt: '0' },
 ] as const;
 
 function MstrMnavCalculator({ lang = 'en' }: { lang?: string }) {
-  const [marketCap, setMarketCap] = useState('95000000000');
-  const [btcHoldings, setBtcHoldings] = useState('440000');
-  const [btcPrice, setBtcPrice] = useState('77300');
+  const [marketCap, setMarketCap] = useState('62900000000');
+  const [btcHoldings, setBtcHoldings] = useState('848250');
+  const [btcPrice, setBtcPrice] = useState('83600');
   const [debt, setDebt] = useState('8000000000');
-  const [sharesOut, setSharesOut] = useState('270000000');
+  // No verified share count for the 2026-10-13 snapshot, so the optional per-share rows start empty
+  // rather than showing a share price derived from a stale count.
+  const [sharesOut, setSharesOut] = useState('');
 
   const applyPreset = (p: CompanyPreset) => {
     if (!p.marketCap) return; // Custom = no-op
@@ -75,8 +81,8 @@ function MstrMnavCalculator({ lang = 'en' }: { lang?: string }) {
   }, [marketCap, btcHoldings, btcPrice, debt, sharesOut]);
 
   const reset = () => {
-    setMarketCap('95000000000'); setBtcHoldings('440000'); setBtcPrice('77300');
-    setDebt('8000000000'); setSharesOut('270000000');
+    setMarketCap('62900000000'); setBtcHoldings('848250'); setBtcPrice('83600');
+    setDebt('8000000000'); setSharesOut('');
   };
 
   const formatBig = (v: number) => {

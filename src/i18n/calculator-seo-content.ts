@@ -1471,7 +1471,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'halving-calculator': {
     en: {
-      quickAnswer: 'Bitcoin halving cuts the block reward every 210,000 blocks (~4 years). After the April 2024 halving, the reward dropped from 6.25 to 3.125 BTC. The next halving is expected around March 2028.',
+      quickAnswer: 'Bitcoin halving cuts the block reward every 210,000 blocks (~4 years). After the April 2024 halving, the reward dropped from 6.25 to 3.125 BTC. The next halving is expected around March–April 2028.',
       how: [
       `The Bitcoin Halving Calculator counts down the exact time and blocks remaining until the next Bitcoin halving event, when the block reward paid to miners is cut in half. It displays the current block height, estimated next halving block, days remaining, estimated halving date, and the post-halving block reward.`,
       `Use it to track the halvings cycle for timing investment decisions or understanding supply dynamics. Bitcoin's inflation rate drops by 50% at each halving, historically, the 12–18 months following a halving have seen significant price appreciation as reduced supply issuance meets continued or growing demand. The calculator also shows historical halving dates and price data for context.`
@@ -1482,7 +1482,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'El halving de Bitcoin reduce la recompensa por bloque cada 210.000 bloques (~4 años). Tras el halving de abril 2024, la recompensa cayó de 6,25 a 3,125 BTC. El próximo halving se espera alrededor de marzo 2028.',
+      quickAnswer: 'El halving de Bitcoin reduce la recompensa por bloque cada 210.000 bloques (~4 años). Tras el halving de abril 2024, la recompensa cayó de 6,25 a 3,125 BTC. El próximo halving se espera alrededor de marzo-abril de 2028.',
       how: [
       `La Calculadora de Halving de Bitcoin cuenta regresivamente el tiempo y bloques exactos restantes hasta el próximo evento de halving de Bitcoin, cuando la recompensa de bloque pagada a los mineros se reduce a la mitad.`,
       `Úsala para rastrear el ciclo de halvings para cronometrar decisiones de inversión. La tasa de inflación de Bitcoin se reduce a la mitad en cada halving.`
@@ -1493,7 +1493,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'O halving do Bitcoin corta a recompensa por bloco a cada 210.000 blocos (~4 anos). Após o halving de abril de 2024, a recompensa caiu de 6,25 para 3,125 BTC. O próximo halving é esperado por volta de março de 2028.',
+      quickAnswer: 'O halving do Bitcoin corta a recompensa por bloco a cada 210.000 blocos (~4 anos). Após o halving de abril de 2024, a recompensa caiu de 6,25 para 3,125 BTC. O próximo halving é esperado por volta de março-abril de 2028.',
       how: [
       `A Calculadora de Halving do Bitcoin conta regressivamente o tempo e blocos exatos restantes até o próximo evento de halving do Bitcoin, quando a recompensa de bloco paga aos mineradores é reduzida pela metade.`,
       `Use-a para acompanhar o ciclo de halvings para cronometrar decisões de investimento.`
@@ -1504,7 +1504,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Bitcoin halving, her 210.000 blokta (~4 yıl) blok ödülünü yarıya indirir. Nisan 2024 halvinginden sonra ödül 6,25\'ten 3,125 BTC\'ye düştü. Bir sonraki halving Mart 2028 civarında bekleniyor.',
+      quickAnswer: 'Bitcoin halving, her 210.000 blokta (~4 yıl) blok ödülünü yarıya indirir. Nisan 2024 halvinginden sonra ödül 6,25\'ten 3,125 BTC\'ye düştü. Bir sonraki halving Mart-Nisan 2028 civarında bekleniyor.',
       how: [
       `Bitcoin Halving Hesaplayıcısı, madencilere ödenen blok ödülünün yarıya indirildiği bir sonraki Bitcoin halving etkinliğine kadar kalan tam süreyi ve blokları geri sayar.`,
       `Yatırım kararlarını zamanlamak için halving döngüsünü takip etmek üzere kullanın.`
@@ -1515,7 +1515,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'Bitcoin हाल्विंग हर 210,000 ब्लॉक (~4 साल) पर ब्लॉक रिवॉर्ड को आधा करता है। अप्रैल 2024 हाल्विंग के बाद रिवॉर्ड 6.25 से 3.125 BTC हो गई। अगला हाल्विंग मार्च 2028 के आसपास अपेक्षित है।',
+      quickAnswer: 'Bitcoin हाल्विंग हर 210,000 ब्लॉक (~4 साल) पर ब्लॉक रिवॉर्ड को आधा करता है। अप्रैल 2024 हाल्विंग के बाद रिवॉर्ड 6.25 से 3.125 BTC हो गई। अगला हाल्विंग मार्च-अप्रैल 2028 के आसपास अपेक्षित है।',
       how: [
       `Bitcoin हाल्विंग कैलकुलेटर अगले Bitcoin हाल्विंग इवेंट तक बचे सटीक समय और ब्लॉक की काउंटडाउन करता है, जब माइनर्स को भुगतान की गई ब्लॉक रिवॉर्ड आधी हो जाती है।`,
       `निवेश निर्णयों के समय के लिए हाल्विंग साइकिल ट्रैक करने के लिए इसका उपयोग करें।`
@@ -1526,7 +1526,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Халвинг Bitcoin уменьшает награду за блок вдвое каждые 210 000 блоков (~4 года). После халвинга апреля 2024 награда снизилась с 6,25 до 3,125 BTC. Следующий халвинг ожидается около марта 2028.',
+      quickAnswer: 'Халвинг Bitcoin уменьшает награду за блок вдвое каждые 210 000 блоков (~4 года). После халвинга апреля 2024 награда снизилась с 6,25 до 3,125 BTC. Следующий халвинг ожидается около марта–апреля 2028.',
       how: [
       `Калькулятор халвинга Bitcoin ведёт обратный отсчёт точного времени и блоков до следующего события халвинга, когда награда майнерам за блок уменьшается вдвое.`,
       `Используйте для отслеживания цикла халвингов при принятии инвестиционных решений. Уровень инфляции Bitcoin снижается вдвое на каждом халвинге.`
@@ -2355,7 +2355,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'asic-mining-calculator': {
     en: {
-      quickAnswer: 'Compare ASIC profitability across models and algorithms. The Antminer S21 Pro (234 TH/s, 3,510W) earns roughly $10–14/day at $0.06/kWh — ROI depends on BTC price and difficulty.',
+      quickAnswer: 'Compare ASIC profitability across models and algorithms. The Antminer S21 Pro (234 TH/s, 3,510W) grosses about $8–9/day and nets roughly $3–4/day at $0.06/kWh with BTC near $80K — ROI depends on BTC price and difficulty.',
       how: [
       `The ASIC Mining Calculator estimates profitability for Bitcoin and other ASIC-mineable coins based on your hardware's rated hashrate and power consumption. Enter the ASIC model's hashrate (TH/s for SHA-256), power draw in watts, electricity rate, pool fee, and the current hardware acquisition cost to get daily profit and break-even timeline.`,
       `Use it before purchasing ASIC hardware to evaluate payback periods under different price scenarios. An S21 Pro at current difficulty might break even in 6 months at current prices but require 18+ months at a 50% lower BTC price, the calculator models both. Always check the manufacturer's hashrate versus independently benchmarked community results, which often run 5–10% lower.`
@@ -2366,7 +2366,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Compara la rentabilidad de ASIC entre modelos y algoritmos. El Antminer S21 Pro (234 TH/s, 3.510W) genera aproximadamente $10–14/día a $0,06/kWh — el ROI depende del precio de BTC y la dificultad.',
+      quickAnswer: 'Compara la rentabilidad de ASIC entre modelos y algoritmos. El Antminer S21 Pro (234 TH/s, 3.510W) genera unos $8–9/día brutos y $3–4/día netos a $0,06/kWh con BTC cerca de $80K — el ROI depende del precio de BTC y la dificultad.',
       how: [
       `La Calculadora de Minería ASIC estima la rentabilidad para Bitcoin y otras monedas minables por ASIC basándose en el hashrate y consumo de energía de tu hardware.`,
       `Úsala antes de comprar hardware ASIC para evaluar períodos de recuperación bajo diferentes escenarios de precio.`
@@ -2377,7 +2377,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Compare a lucratividade ASIC entre modelos e algoritmos. O Antminer S21 Pro (234 TH/s, 3.510W) gera aproximadamente $10–14/dia a $0,06/kWh — o ROI depende do preço do BTC e da dificuldade.',
+      quickAnswer: 'Compare a lucratividade ASIC entre modelos e algoritmos. O Antminer S21 Pro (234 TH/s, 3.510W) gera cerca de $8–9/dia brutos e $3–4/dia líquidos a $0,06/kWh com BTC perto de $80K — o ROI depende do preço do BTC e da dificuldade.',
       how: [
       `A Calculadora de Mineração ASIC estima a lucratividade para Bitcoin e outras moedas mineráveis por ASIC com base no hashrate e consumo de energia do seu hardware.`,
       `Use-a antes de comprar hardware ASIC para avaliar períodos de retorno em diferentes cenários de preço.`
@@ -2388,7 +2388,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Modeller ve algoritmalar arasında ASIC kârlılığını karşılaştırın. Antminer S21 Pro (234 TH/s, 3.510W) $0,06/kWh\'de günde yaklaşık $10–14 kazandırır — ROI, BTC fiyatı ve zorluğa bağlıdır.',
+      quickAnswer: 'Modeller ve algoritmalar arasında ASIC kârlılığını karşılaştırın. Antminer S21 Pro (234 TH/s, 3.510W) $0,06/kWh\'de ve ~$80K BTC fiyatında günde yaklaşık $8–9 brüt, $3–4 net kazandırır — ROI, BTC fiyatı ve zorluğa bağlıdır.',
       how: [
       `ASIC Madencilik Hesaplayıcısı, Bitcoin ve diğer ASIC ile madencilik yapılabilir coinler için donanımınızın hashrate ve güç tüketimine göre kârlılığı tahmin eder.`,
       `Farklı fiyat senaryoları altında geri ödeme sürelerini değerlendirmek için ASIC donanımı satın almadan önce kullanın.`
@@ -2399,7 +2399,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'मॉडल और एल्गोरिदम के बीच ASIC प्रॉफिटेबिलिटी की तुलना करें। Antminer S21 Pro (234 TH/s, 3,510W) $0.06/kWh पर लगभग $10–14/दिन कमाता है — ROI BTC प्राइस और डिफिकल्टी पर निर्भर करता है।',
+      quickAnswer: 'मॉडल और एल्गोरिदम के बीच ASIC प्रॉफिटेबिलिटी की तुलना करें। Antminer S21 Pro (234 TH/s, 3,510W) $0.06/kWh और लगभग $80K BTC पर रोज़ लगभग $8–9 ग्रॉस और $3–4 नेट कमाता है — ROI BTC प्राइस और डिफिकल्टी पर निर्भर करता है।',
       how: [
       `ASIC माइनिंग कैलकुलेटर आपके हार्डवेयर के रेटेड हैशरेट और पावर कंजम्प्शन के आधार पर Bitcoin और अन्य ASIC-माइनेबल कॉइन के लिए लाभप्रदता का अनुमान लगाता है।`,
       `विभिन्न मूल्य परिदृश्यों के तहत पेबैक पीरियड का मूल्यांकन करने के लिए ASIC हार्डवेयर खरीदने से पहले इसका उपयोग करें।`
@@ -2410,7 +2410,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Сравните прибыльность ASIC по моделям и алгоритмам. Antminer S21 Pro (234 TH/s, 3 510 Вт) приносит примерно $10–14/день при $0,06/кВт·ч — ROI зависит от цены BTC и сложности.',
+      quickAnswer: 'Сравните прибыльность ASIC по моделям и алгоритмам. Antminer S21 Pro (234 TH/s, 3 510 Вт) приносит примерно $8–9/день брутто и $3–4/день чистыми при $0,06/кВт·ч и BTC около $80K — ROI зависит от цены BTC и сложности.',
       how: [
       `Калькулятор майнинга ASIC оценивает прибыльность для Bitcoin и других монет на ASIC на основе хешрейта и энергопотребления вашего оборудования.`,
       `Используйте перед покупкой ASIC для оценки срока окупаемости при разных ценовых сценариях.`
@@ -4269,74 +4269,74 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
   'crypto-inheritance-calculator': {
     en: {
-      quickAnswer: 'Plan digital asset inheritance: estimate transfer taxes, storage requirements, and access procedures. A $500,000 crypto estate may face 18–40% estate tax depending on jurisdiction.',
+      quickAnswer: 'Plan how a crypto estate reaches your heirs: estimate the estate tax, each beneficiary\'s share and a custody setup they can actually open. Enter the rate that would really apply — a US estate under the $15M federal exemption (2026) owes 0% federal estate tax, while the UK charges 40% only on the part above the £325,000 nil-rate band.',
       how: [
-        `The Crypto Inheritance Calculator helps plan the transfer of digital assets to heirs by estimating portfolio value at projected future dates, tax implications, and the steps needed to ensure safe custody transfer. Enter your current holdings, expected annual growth rate, and the planning horizon (5-30 years), and the tool projects how much your crypto estate will be worth when inheritance is triggered.`,
-        `Use the results to determine whether a multi-signature wallet setup, dead man's switch, or traditional trust structure makes sense for your estate size. For a portfolio currently worth $100,000 growing at 15% annually, the projected value in 20 years exceeds $1.6 million, justifying the cost of professional estate planning and secure key management solutions.`
+        `The Crypto Inheritance Calculator plans how a crypto estate passes to heirs. Enter the total crypto value, the number of beneficiaries, the estate tax rate that applies to you, whether a will or estate plan exists, and how the coins are held (exchange, hardware wallet or multi-sig). It returns the estate tax, the net estate, each beneficiary's share, and a custody and multi-sig recommendation sized to the estate.`,
+        `Use the results to decide whether a multi-signature setup, a documented recovery plan or a trust is worth it at your estate size. A $500,000 estate split between three heirs at 0% (a US estate far below the federal exemption) leaves about $166,667 each; at an effective 25% it leaves $125,000 each. Either way, an estate heirs cannot access is worth nothing, which is why the custody recommendation sits next to the tax figure.`
       ],
       inputs: [
-        `Portfolio value accepts the current total dollar value of all crypto holdings. The annual growth rate should reflect your realistic expectation, historical BTC CAGR since 2015 is roughly 50%, but conservative planning uses 10-20%. The planning horizon sets how many years into the future to project. Tax rate represents the expected estate or inheritance tax bracket in your jurisdiction.`,
-        `The output breaks down projected value year by year, estimated tax liability, and net inheritance amount. It also provides a checklist: secure seed phrase backup locations, designate a crypto-literate executor, consider multi-sig setups requiring M-of-N keys, and document wallet addresses and exchange accounts for heirs.`
+        `Total Crypto Value is the current dollar value of all holdings. Estate Tax Rate is applied to that whole value, so enter the effective rate you expect rather than the top bracket: 0% for most US estates (the 2026 federal exemption is $15M, made permanent by the One Big Beautiful Bill Act); for the UK, 40% applies only to the excess over the £325,000 nil-rate band. Number of Beneficiaries splits the net estate equally.`,
+        `Has Will / Estate Plan and Custody Method do not change the tax; they drive the recommendations. The output shows Total Estate Value, Estate Tax Owed, Effective Tax Rate, Net Estate, the amount per beneficiary, a custody recommendation and a suggested multi-sig arrangement. For country exemptions and heir-relationship tiers, use the inheritance tax calculator.`
       ],
     },
     es: {
-      quickAnswer: 'Planifica la herencia de activos digitales: estima impuestos de transferencia, requisitos de almacenamiento y procedimientos de acceso. Un patrimonio cripto de $500.000 puede enfrentar un 18–40% de impuesto sucesorio según la jurisdicción.',
+      quickAnswer: 'Planifica cómo llega un patrimonio cripto a tus herederos: estima el impuesto sucesorio, la parte de cada beneficiario y una custodia que realmente puedan abrir. Introduce el tipo que de verdad aplicaría: un patrimonio en EE. UU. por debajo de la exención federal de $15M (2026) paga 0% de impuesto federal, y el Reino Unido cobra 40% solo sobre lo que supera la banda libre de £325.000.',
 
       how: [
-        `La Calculadora de Herencia Cripto ayuda a planificar la transferencia de activos digitales a herederos estimando el valor del portafolio en fechas futuras, implicaciones fiscales y los pasos necesarios para asegurar la custodia. Ingresa tus holdings actuales, tasa de crecimiento anual esperada y horizonte de planificación (5-30 años).`,
-        `Usa los resultados para determinar si una wallet multi-firma, un dead man's switch o un fideicomiso tradicional tiene sentido. Un portafolio de $100.000 creciendo al 15% anual supera $1,6 millones en 20 años — justificando la planificación patrimonial profesional.`
+        `La Calculadora de Herencia Cripto planifica cómo pasa un patrimonio cripto a los herederos. Introduce el valor total en cripto, el número de beneficiarios, el tipo del impuesto sucesorio que te aplica, si existe testamento o plan sucesorio y cómo se custodian las monedas (exchange, hardware wallet o multi-sig). Devuelve el impuesto, el patrimonio neto, la parte de cada beneficiario y una recomendación de custodia y multi-sig acorde al tamaño.`,
+        `Usa el resultado para decidir si una configuración multifirma, un plan de recuperación documentado o un fideicomiso compensan a tu escala. Un patrimonio de $500.000 repartido entre tres herederos al 0% (EE. UU., muy por debajo de la exención federal) deja unos $166.667 a cada uno; con un tipo efectivo del 25%, $125.000. En cualquier caso, un patrimonio al que los herederos no pueden acceder no vale nada; por eso la recomendación de custodia acompaña a la cifra del impuesto.`
       ],
       inputs: [
-        `El valor del portafolio acepta el valor total actual en dólares. La tasa de crecimiento debe ser realista — el CAGR histórico de BTC es ~50% pero la planificación conservadora usa 10-20%. La tasa impositiva representa el tramo esperado de impuesto de herencia.`,
-        `La salida muestra el valor proyectado año por año, obligación fiscal estimada y monto neto de herencia. También incluye una lista de verificación: ubicaciones de backup de seed phrase, designar un ejecutor y documentar wallets para herederos.`
+        `El Valor total en cripto es el valor actual en dólares de todas las tenencias. El Tipo del impuesto sucesorio se aplica a todo ese valor, así que introduce el tipo efectivo que esperas y no el tramo máximo: 0% para la mayoría de patrimonios en EE. UU. (la exención federal de 2026 es $15M, hecha permanente por la One Big Beautiful Bill Act); en el Reino Unido el 40% solo grava el exceso sobre £325.000. El Número de beneficiarios reparte el patrimonio neto a partes iguales.`,
+        `Testamento / plan sucesorio y Método de custodia no cambian el impuesto; alimentan las recomendaciones. El resultado muestra Valor total del patrimonio, Impuesto sucesorio, Tipo efectivo, Patrimonio neto, el importe por beneficiario, una recomendación de custodia y un esquema multifirma sugerido. Para exenciones por país y por parentesco, usa la calculadora de impuesto de herencia.`
       ],
     },
     pt: {
-      quickAnswer: 'Planeje a herança de ativos digitais: estime impostos de transferência, requisitos de armazenamento e procedimentos de acesso. Um patrimônio cripto de $500.000 pode enfrentar 18–40% de imposto sobre herança dependendo da jurisdição.',
+      quickAnswer: 'Planeje como um patrimônio cripto chega aos herdeiros: estime o imposto sobre herança, a parte de cada beneficiário e uma custódia que eles consigam realmente abrir. Use a alíquota que de fato se aplicaria — um espólio nos EUA abaixo da isenção federal de $15M (2026) paga 0% de imposto federal, e o Reino Unido cobra 40% só sobre o que exceder a faixa livre de £325.000.',
 
       how: [
-        `A Calculadora de Herança Cripto ajuda a planejar a transferência de ativos digitais para herdeiros estimando o valor do portfólio em datas futuras, implicações fiscais e passos para garantir transferência segura de custódia. Insira seus holdings atuais, taxa de crescimento anual esperada e horizonte de planejamento (5-30 anos).`,
-        `Use os resultados para determinar se uma carteira multi-assinatura, dead man's switch ou estrutura fiduciária faz sentido. Um portfólio de $100.000 crescendo a 15% ao ano ultrapassa $1,6 milhão em 20 anos — justificando planejamento patrimonial profissional.`
+        `A Calculadora de Herança Cripto planeja como um patrimônio cripto passa aos herdeiros. Insira o valor total em cripto, o número de beneficiários, a alíquota do imposto sobre herança que se aplica a você, se há testamento ou plano sucessório e como as moedas estão guardadas (exchange, hardware wallet ou multi-sig). Ela retorna o imposto, o patrimônio líquido, a parte de cada beneficiário e uma recomendação de custódia e multi-sig proporcional ao patrimônio.`,
+        `Use o resultado para decidir se uma configuração multiassinatura, um plano de recuperação documentado ou um trust compensa no seu porte. Um patrimônio de $500.000 dividido entre três herdeiros a 0% (EUA, muito abaixo da isenção federal) deixa cerca de $166.667 para cada; a uma alíquota efetiva de 25%, $125.000. Em qualquer caso, um patrimônio que os herdeiros não conseguem acessar não vale nada — por isso a recomendação de custódia fica ao lado do imposto.`
       ],
       inputs: [
-        `O valor do portfólio aceita o total atual em dólares. A taxa de crescimento deve ser realista — CAGR histórico do BTC é ~50%, mas planejamento conservador usa 10-20%. A taxa tributária representa a faixa esperada de imposto sobre herança.`,
-        `A saída mostra valor projetado ano a ano, obrigação fiscal estimada e valor líquido da herança. Inclui checklist: backup de seed phrase, designar executor familiarizado com cripto e documentar carteiras para herdeiros.`
+        `O Valor total em cripto é o valor atual em dólares de todas as posições. A Alíquota do imposto sobre herança é aplicada a esse valor inteiro, então informe a alíquota efetiva esperada, não a faixa máxima: 0% para a maioria dos espólios nos EUA (a isenção federal de 2026 é $15M, tornada permanente pela One Big Beautiful Bill Act); no Reino Unido os 40% incidem só sobre o excedente de £325.000. O Número de beneficiários divide o patrimônio líquido em partes iguais.`,
+        `Testamento / plano sucessório e Método de custódia não mudam o imposto; eles alimentam as recomendações. A saída mostra Valor total do patrimônio, Imposto devido, Alíquota efetiva, Patrimônio líquido, o valor por beneficiário, uma recomendação de custódia e um arranjo multiassinatura sugerido. Para isenções por país e por parentesco, use a calculadora de imposto sobre herança.`
       ],
     },
     tr: {
-      quickAnswer: 'Dijital varlık mirasını planlayın: transfer vergilerini, depolama gereksinimlerini ve erişim prosedürlerini tahmin edin. $500.000\'lık bir kripto miras, yargı bölgesine bağlı olarak %18–40 veraset vergisiyle karşılaşabilir.',
+      quickAnswer: 'Kripto mirasınızın mirasçılara nasıl ulaşacağını planlayın: veraset vergisini, her yararlanıcının payını ve gerçekten açabilecekleri bir saklama düzenini tahmin edin. Gerçekte uygulanacak oranı girin — ABD\'de 15 milyon dolarlık federal muafiyetin (2026) altındaki bir miras %0 federal vergi öder, Birleşik Krallık ise %40\'ı yalnızca £325.000\'lik sıfır oranlı bandı aşan kısma uygular.',
 
       how: [
-        `Kripto Miras Hesaplayıcısı, dijital varlıkların mirasçılara transferini planlamaya yardımcı olur — portföy değerini gelecek tarihlerde, vergi sonuçlarını ve güvenli saklama transferi adımlarını tahmin eder. Mevcut varlıklarınızı, beklenen yıllık büyüme oranını ve planlama ufkunu (5-30 yıl) girin.`,
-        `Sonuçları, çoklu imza cüzdanı, dead man's switch veya geleneksel güven yapısının mantıklı olup olmadığını belirlemek için kullanın. %15 yıllık büyümeyle $100.000'lık bir portföy 20 yılda $1,6 milyonu aşar.`
+        `Kripto Miras Hesaplayıcısı, kripto mirasın mirasçılara nasıl geçeceğini planlar. Toplam kripto değerini, yararlanıcı sayısını, size uygulanan veraset vergisi oranını, vasiyet veya miras planı olup olmadığını ve coinlerin nasıl tutulduğunu (borsa, donanım cüzdanı veya multi-sig) girin. Araç vergiyi, net mirası, her yararlanıcının payını ve mirasın büyüklüğüne uygun bir saklama ve multi-sig önerisini döndürür.`,
+        `Sonuçları, bu büyüklükte çok imzalı bir düzenin, belgelenmiş bir kurtarma planının veya bir vakfın değip değmeyeceğine karar vermek için kullanın. Üç mirasçı arasında %0 oranla (federal muafiyetin çok altındaki bir ABD mirası) bölünen 500.000 dolarlık miras her birine yaklaşık 166.667 dolar bırakır; %25 efektif oranla 125.000 dolar. Her durumda mirasçıların erişemediği bir miras değersizdir; bu yüzden saklama önerisi vergi rakamının yanında durur.`
       ],
       inputs: [
-        `Portföy değeri tüm kripto varlıkların güncel dolar toplamını kabul eder. Büyüme oranı gerçekçi olmalıdır — BTC'nin tarihi CAGR'si ~%50'dir ama muhafazakâr planlama %10-20 kullanır. Vergi oranı beklenen miras vergisi dilimini temsil eder.`,
-        `Çıktı yıldan yıla tahmini değeri, vergi yükümlülüğünü ve net miras tutarını gösterir. Ayrıca kontrol listesi sunar: seed phrase yedek konumları, kripto bilen bir vasiyetname yürütücüsü atamak ve mirasçılar için cüzdanları belgelemek.`
+        `Toplam Kripto Değeri, tüm varlıkların güncel dolar değeridir. Veraset Vergisi Oranı bu değerin tamamına uygulanır; bu yüzden en üst dilimi değil, beklediğiniz efektif oranı girin: ABD'deki çoğu miras için %0 (2026 federal muafiyeti 15 milyon dolardır ve One Big Beautiful Bill Act ile kalıcı hale gelmiştir); Birleşik Krallık'ta %40 yalnızca £325.000'i aşan kısma uygulanır. Yararlanıcı Sayısı net mirası eşit böler.`,
+        `Vasiyet / Miras Planı ve Saklama Yöntemi vergiyi değiştirmez; önerileri belirler. Çıktı Toplam Miras Değeri, Ödenecek Veraset Vergisi, Efektif Vergi Oranı, Net Miras, yararlanıcı başına tutar, bir saklama önerisi ve önerilen multi-sig düzenini gösterir. Ülke muafiyetleri ve akrabalık kademeleri için veraset vergisi hesaplayıcısını kullanın.`
       ],
     },
     hi: {
-      quickAnswer: 'डिजिटल एसेट इनहेरिटेंस प्लान करें: ट्रांसफर टैक्स, स्टोरेज रिक्वायरमेंट्स और एक्सेस प्रोसीजर्स का अनुमान लगाएं। $500,000 के क्रिप्टो एस्टेट पर न्यायक्षेत्र के अनुसार 18–40% एस्टेट टैक्स लग सकता है।',
+      quickAnswer: 'योजना बनाएं कि क्रिप्टो संपत्ति आपके वारिसों तक कैसे पहुँचे: एस्टेट टैक्स, हर लाभार्थी का हिस्सा और ऐसी कस्टडी जिसे वे सच में खोल सकें। वही दर दर्ज करें जो वास्तव में लागू होगी — $15M की फेडरल छूट (2026) से कम वाली US संपत्ति पर 0% फेडरल एस्टेट टैक्स लगता है, जबकि UK 40% केवल £325,000 के शून्य-दर बैंड से ऊपर वाले हिस्से पर लेता है।',
 
       how: [
-        `क्रिप्टो इनहेरिटेंस कैलकुलेटर डिजिटल एसेट को वारिसों को ट्रांसफर करने की योजना बनाने में मदद करता है — भविष्य की तारीखों पर पोर्टफोलियो वैल्यू, टैक्स प्रभाव और सुरक्षित कस्टडी ट्रांसफर के कदमों का अनुमान लगाता है। अपनी करंट होल्डिंग्स, अपेक्षित वार्षिक ग्रोथ रेट और प्लानिंग होराइजन (5-30 वर्ष) दर्ज करें।`,
-        `$100,000 का पोर्टफोलियो 15% वार्षिक ग्रोथ पर 20 वर्षों में $1.6 मिलियन से अधिक होगा — प्रोफेशनल एस्टेट प्लानिंग को जस्टिफाई करता है।`
+        `क्रिप्टो इनहेरिटेंस कैलकुलेटर योजना बनाता है कि क्रिप्टो संपत्ति वारिसों तक कैसे पहुँचे। कुल क्रिप्टो वैल्यू, लाभार्थियों की संख्या, आप पर लागू एस्टेट टैक्स दर, वसीयत या एस्टेट प्लान है या नहीं, और कॉइन कैसे रखे गए हैं (एक्सचेंज, हार्डवेयर वॉलेट या मल्टी-सिग) दर्ज करें। यह टैक्स, नेट एस्टेट, हर लाभार्थी का हिस्सा और संपत्ति के आकार के हिसाब से कस्टडी व मल्टी-सिग सुझाव देता है।`,
+        `नतीजों से तय करें कि आपके आकार पर मल्टी-सिग सेटअप, लिखित रिकवरी प्लान या ट्रस्ट उचित है या नहीं। $500,000 की संपत्ति तीन वारिसों में 0% पर (फेडरल छूट से बहुत नीचे की US संपत्ति) बाँटने पर हर एक को लगभग $166,667 मिलते हैं; 25% प्रभावी दर पर $125,000। दोनों हालात में, जिस संपत्ति तक वारिस पहुँच न सकें उसका कोई मूल्य नहीं — इसीलिए कस्टडी सुझाव टैक्स के आँकड़े के साथ दिखता है।`
       ],
       inputs: [
-        `पोर्टफोलियो वैल्यू सभी क्रिप्टो होल्डिंग्स का करंट डॉलर वैल्यू स्वीकार करता है। ग्रोथ रेट रियलिस्टिक होनी चाहिए — BTC का ऐतिहासिक CAGR ~50% है लेकिन कंज़र्वेटिव प्लानिंग 10-20% इस्तेमाल करती है। टैक्स रेट इनहेरिटेंस टैक्स ब्रैकेट दर्शाता है।`,
-        `आउटपुट साल-दर-साल प्रोजेक्टेड वैल्यू, अनुमानित टैक्स लायबिलिटी और नेट इनहेरिटेंस अमाउंट दिखाता है। चेकलिस्ट भी शामिल है: सीड फ्रेज बैकअप लोकेशन, क्रिप्टो-जानकार एक्जीक्यूटर नामित करना और वारिसों के लिए वॉलेट डॉक्यूमेंट करना।`
+        `कुल क्रिप्टो वैल्यू सभी होल्डिंग्स का मौजूदा डॉलर मूल्य है। एस्टेट टैक्स दर पूरे मूल्य पर लगती है, इसलिए सबसे ऊँची स्लैब नहीं बल्कि अपेक्षित प्रभावी दर दर्ज करें: अधिकांश US संपत्तियों के लिए 0% (2026 की फेडरल छूट $15M है, जिसे One Big Beautiful Bill Act ने स्थायी बनाया); UK में 40% केवल £325,000 से ऊपर के हिस्से पर। लाभार्थियों की संख्या नेट एस्टेट को बराबर बाँटती है।`,
+        `वसीयत / एस्टेट प्लान और कस्टडी तरीका टैक्स नहीं बदलते; वे सुझाव तय करते हैं। आउटपुट में कुल एस्टेट वैल्यू, देय एस्टेट टैक्स, प्रभावी टैक्स दर, नेट एस्टेट, प्रति लाभार्थी राशि, कस्टडी सुझाव और सुझाई गई मल्टी-सिग व्यवस्था दिखती है। देश-वार छूट और रिश्ते की श्रेणियों के लिए इनहेरिटेंस टैक्स कैलकुलेटर इस्तेमाल करें।`
       ],
     },
     ru: {
-      quickAnswer: 'Планируйте наследование цифровых активов: оцените налоги на передачу, требования к хранению и процедуры доступа. Криптонаследство в $500 000 может облагаться налогом 18–40% в зависимости от юрисдикции.',
+      quickAnswer: 'Спланируйте, как криптонаследство дойдёт до наследников: оцените налог на наследство, долю каждого получателя и схему хранения, которую они смогут реально открыть. Вводите ставку, которая действительно применится: наследство в США ниже федерального освобождения $15 млн (2026) облагается федеральным налогом 0%, а Великобритания берёт 40% только с суммы сверх необлагаемой полосы £325 000.',
 
       how: [
-        `Калькулятор наследования криптовалют помогает спланировать передачу цифровых активов наследникам — оценивает стоимость портфеля на будущие даты, налоговые последствия и шаги для безопасной передачи. Введите текущие активы, ожидаемый темп роста и горизонт планирования (5-30 лет).`,
-        `Портфель $100 000 при росте 15% в год превысит $1,6 млн через 20 лет — это оправдывает профессиональное планирование наследования и решения для безопасного хранения ключей.`
+        `Калькулятор криптонаследства планирует, как криптоактивы перейдут к наследникам. Введите общую стоимость криптовалюты, число получателей, применимую к вам ставку налога на наследство, есть ли завещание или план наследования и как хранятся монеты (биржа, аппаратный кошелёк или мультиподпись). Он покажет налог, чистую стоимость наследства, долю каждого получателя и рекомендации по хранению и мультиподписи с учётом размера наследства.`,
+        `Используйте результат, чтобы решить, оправданы ли при вашем размере мультиподпись, задокументированный план восстановления или траст. Наследство $500 000, поделённое между тремя наследниками по ставке 0% (американское наследство намного ниже федерального освобождения), оставляет каждому около $166 667; при эффективной ставке 25% — по $125 000. В любом случае наследство, к которому наследники не могут получить доступ, ничего не стоит, — поэтому рекомендация по хранению стоит рядом с суммой налога.`
       ],
       inputs: [
-        `Стоимость портфеля — текущая общая долларовая стоимость. Темп роста должен быть реалистичным — исторический CAGR BTC ~50%, но консервативное планирование использует 10-20%. Ставка налога — ожидаемый уровень налога на наследство.`,
-        `На выходе — прогноз стоимости по годам, расчётная налоговая нагрузка и чистая сумма наследства. Также чек-лист: места хранения сид-фразы, назначение крипто-грамотного исполнителя, документирование кошельков для наследников.`
+        `Общая стоимость криптовалюты — текущая долларовая стоимость всех активов. Ставка налога на наследство применяется ко всей этой сумме, поэтому вводите ожидаемую эффективную ставку, а не верхнюю: 0% для большинства наследств в США (федеральное освобождение на 2026 год — $15 млн, закреплено One Big Beautiful Bill Act); в Великобритании 40% берутся только с превышения £325 000. Число получателей делит чистое наследство поровну.`,
+        `«Есть завещание / план» и «Способ хранения» не меняют налог — они определяют рекомендации. Результат показывает общую стоимость наследства, налог к уплате, эффективную ставку, чистое наследство, сумму на одного получателя, рекомендацию по хранению и предлагаемую схему мультиподписи. Для освобождений по странам и степеням родства используйте калькулятор налога на наследство.`
       ],
     },
   },
@@ -5972,75 +5972,75 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'inheritance-tax-calculator': {
     en: {
-      quickAnswer: 'Estimate inheritance and estate tax liability on cryptocurrency holdings. In the US, estates above $13.61M (2024 exemption) face a 40% federal estate tax, a $20M crypto estate could owe ~$2.56M in federal taxes alone.',
+      quickAnswer: 'Estimate inheritance and estate tax liability on cryptocurrency holdings. In the US, estates above $15M (the 2026 exemption, made permanent by the One Big Beautiful Bill Act) face a 40% federal estate tax: a $20M crypto estate could owe ~$2M in federal taxes alone.',
       how: [
-        `The Inheritance Tax Calculator estimates the tax impact of passing cryptocurrency assets to heirs. Enter the total estate value (including crypto), the applicable jurisdiction, and the number of beneficiaries, the tool calculates the estate tax liability at federal and state levels, and shows the step-up in cost basis that eliminates capital gains on inherited assets.`,
+        `The Inheritance Tax Calculator estimates the tax impact of passing cryptocurrency to heirs. Enter the portfolio value, pick one of eight countries (US, UK, Germany, Japan, Australia, Canada, India, Brazil) and the heir's relationship to the decedent; the tool applies that country's exemption for the relationship, taxes the remainder at the country's rate, and shows the step-up in cost basis where one applies.`,
         `Cryptocurrency inherits a "stepped-up" cost basis equal to the fair market value at the date of death. This means unrealized gains accumulated over years are wiped out for tax purposes. The calculator quantifies this tax benefit: if you bought BTC at $5,000 and it's worth $77,000 at death, your heirs' cost basis resets to $77,000, eliminating $72,000 of taxable gains per coin.`
       ],
       inputs: [
-        `Total estate value includes all assets (crypto, real estate, investments, cash). Crypto holdings can be entered separately to see their proportion and specific tax impact. The jurisdiction selector covers US federal, US state-level estate taxes, and UK inheritance tax (40% above £325,000).`,
-        `The exemption threshold field auto-fills based on jurisdiction (US: $13.61M federal, UK: £325,000) but can be overridden. Number of beneficiaries affects gift-splitting strategies. The output shows total tax due, effective tax rate, stepped-up basis savings, and recommended estate planning strategies (trusts, annual gifting, charitable donations).`
+        `Portfolio Value (USD) is the crypto you expect to pass on, at date-of-death value. Country selects the decedent's tax residence; Relationship (spouse, child or other) picks the exemption tier, which matters most in Germany (€500K / €400K / €20K) and the UK (spouses fully exempt).`,
+        `Cost Basis drives the Unrealized Gain row and, where a basis reset applies (US, Germany), the Step-Up Benefit. Holding Period is context only and does not change the rate. The US exemption is $15M for 2026, made permanent by the One Big Beautiful Bill Act; the UK nil-rate band is £325,000. Thresholds are applied in each country's own currency, so convert first if you are near one.`
       ],
     },
     es: {
-      quickAnswer: 'Estima el impuesto de sucesiones sobre tenencias de criptomonedas. En EE.UU., patrimonios superiores a $13,61M (exención 2024) enfrentan un 40% de impuesto federal — un patrimonio cripto de $20M podría deber ~$2,56M solo en impuestos federales.',
+      quickAnswer: 'Estima el impuesto de sucesiones sobre tenencias de criptomonedas. En EE.UU., patrimonios superiores a $15M (exención 2026, hecha permanente por la One Big Beautiful Bill Act) enfrentan un 40% de impuesto federal — un patrimonio cripto de $20M podría deber ~$2M solo en impuestos federales.',
       how: [
-        `La Calculadora de Impuesto de Herencia estima el impacto fiscal de transferir activos cripto a herederos. Introduce el valor total del patrimonio, la jurisdicción aplicable y el número de beneficiarios — la herramienta calcula la obligación tributaria a nivel federal y estatal, y muestra el ajuste de base de costo que elimina las ganancias de capital en activos heredados.`,
+        `La Calculadora de Impuesto de Herencia estima el impacto fiscal de transmitir criptomonedas a herederos. Introduce el valor de la cartera, elige uno de ocho países (EE. UU., Reino Unido, Alemania, Japón, Australia, Canadá, India, Brasil) y el parentesco del heredero; la herramienta aplica la exención de ese país para ese parentesco, grava el resto al tipo del país y muestra el ajuste de base de costo cuando corresponde.`,
         `Las criptomonedas heredan una base de costo "ajustada" igual al valor justo de mercado en la fecha del fallecimiento, eliminando las ganancias no realizadas acumuladas. La calculadora cuantifica este beneficio fiscal: si compraste BTC a $5.000 y vale $77.000 al fallecer, la base de costo de tus herederos se ajusta a $77.000.`
       ],
       inputs: [
-        `El valor total del patrimonio incluye todos los activos. Las tenencias cripto pueden ingresarse por separado para ver su proporción e impacto fiscal específico. El selector de jurisdicción cubre impuesto federal de EE.UU., impuestos estatales y el impuesto de herencia del Reino Unido (40% por encima de £325.000).`,
-        `El umbral de exención se autocompleta según la jurisdicción pero puede modificarse. El número de beneficiarios afecta las estrategias de división de donaciones. La salida muestra impuesto total, tasa efectiva, ahorro por ajuste de base y estrategias recomendadas de planificación patrimonial.`
+        `El Valor de la cartera (USD) es la cripto que esperas transmitir, valorada a la fecha del fallecimiento. País fija la residencia fiscal del causante; Parentesco (cónyuge, hijo u otro) elige el tramo de exención, decisivo en Alemania (€500K / €400K / €20K) y en el Reino Unido (cónyuges exentos).`,
+        `La Base de costo alimenta la fila de Ganancia no realizada y, donde la base se reajusta (EE. UU., Alemania), el Beneficio del step-up. El Período de tenencia es solo informativo y no cambia el tipo. La exención de EE. UU. es de $15M en 2026, hecha permanente por la One Big Beautiful Bill Act; la banda libre del Reino Unido es £325.000. Los umbrales se aplican en la moneda de cada país: cerca de un umbral, convierte primero.`
       ],
     },
     pt: {
-      quickAnswer: 'Estime o imposto sobre herança em criptomoedas. Nos EUA, espólios acima de $13,61M (isenção 2024) enfrentam 40% de imposto federal — um espólio cripto de $20M pode dever ~$2,56M só em impostos federais.',
+      quickAnswer: 'Estime o imposto sobre herança em criptomoedas. Nos EUA, espólios acima de $15M (isenção 2026, tornada permanente pela One Big Beautiful Bill Act) enfrentam 40% de imposto federal — um espólio cripto de $20M pode dever ~$2M só em impostos federais.',
       how: [
-        `A Calculadora de Imposto sobre Herança estima o impacto fiscal da transferência de ativos cripto para herdeiros. Insira o valor total do espólio, a jurisdição aplicável e o número de beneficiários — a ferramenta calcula a obrigação tributária nos níveis federal e estadual, e mostra o ajuste de base de custo que elimina ganhos de capital em ativos herdados.`,
+        `A Calculadora de Imposto sobre Herança estima o impacto fiscal de transmitir criptomoedas a herdeiros. Insira o valor da carteira, escolha um de oito países (EUA, Reino Unido, Alemanha, Japão, Austrália, Canadá, Índia, Brasil) e o parentesco do herdeiro; a ferramenta aplica a isenção daquele país para esse parentesco, tributa o restante pela alíquota do país e mostra o ajuste de base de custo quando ele existe.`,
         `Criptomoedas herdam uma base de custo "ajustada" igual ao valor justo de mercado na data do óbito, eliminando ganhos não realizados acumulados. A calculadora quantifica esse benefício: se você comprou BTC a $5.000 e vale $77.000 no óbito, a base de custo dos herdeiros é reajustada para $77.000.`
       ],
       inputs: [
-        `O valor total do espólio inclui todos os ativos. As criptomoedas podem ser inseridas separadamente para ver sua proporção. O seletor de jurisdição cobre imposto federal dos EUA, estaduais e imposto sobre herança do Reino Unido (40% acima de £325.000).`,
-        `O limite de isenção é preenchido automaticamente pela jurisdição, mas pode ser alterado. O número de beneficiários afeta estratégias de doação. A saída mostra imposto total, alíquota efetiva, economia do ajuste de base e estratégias recomendadas de planejamento sucessório.`
+        `O Valor da carteira (USD) é a cripto que você espera transmitir, ao valor da data do óbito. País define a residência fiscal do falecido; Parentesco (cônjuge, filho ou outro) escolhe a faixa de isenção, decisiva na Alemanha (€500K / €400K / €20K) e no Reino Unido (cônjuges isentos).`,
+        `A Base de custo alimenta a linha de Ganho não realizado e, onde a base é reajustada (EUA, Alemanha), o Benefício do step-up. O Período de posse é apenas informativo e não muda a alíquota. A isenção dos EUA é de $15M em 2026, tornada permanente pela One Big Beautiful Bill Act; a faixa livre do Reino Unido é £325.000. Os limites são aplicados na moeda de cada país: perto de um limite, converta antes.`
       ],
     },
     tr: {
-      quickAnswer: 'Kripto varlıkları üzerindeki veraset ve intikal vergisi yükümlülüğünü tahmin edin. ABD\'de $13,61M (2024 muafiyeti) üzerindeki mülkler %40 federal veraset vergisine tabidir — $20M kripto mülk sadece federal vergide ~$2,56M borçlanabilir.',
+      quickAnswer: 'Kripto varlıkları üzerindeki veraset ve intikal vergisi yükümlülüğünü tahmin edin. ABD\'de $15M (2026 muafiyeti, One Big Beautiful Bill Act ile kalıcı) üzerindeki mülkler %40 federal veraset vergisine tabidir — $20M kripto mülk sadece federal vergide ~$2M borçlanabilir.',
       how: [
-        `Veraset Vergisi Hesaplayıcısı, kripto varlıkların mirasçılara aktarılmasının vergi etkisini tahmin eder. Toplam mülk değerini, geçerli yargı alanını ve yararlanıcı sayısını girin — araç federal ve eyalet düzeyinde vergi yükümlülüğünü ve miras alınan varlıklarda sermaye kazançlarını ortadan kaldıran maliyet bazı düzeltmesini hesaplar.`,
+        `Veraset Vergisi Hesaplayıcısı, kripto varlıkların mirasçılara aktarılmasının vergi etkisini tahmin eder. Portföy değerini girin, sekiz ülkeden birini (ABD, Birleşik Krallık, Almanya, Japonya, Avustralya, Kanada, Hindistan, Brezilya) ve mirasçının akrabalık derecesini seçin; araç o ülkenin bu akrabalık için istisnasını uygular, kalanı ülkenin oranıyla vergilendirir ve geçerli olduğunda maliyet bazı düzeltmesini gösterir.`,
         `Kripto, ölüm tarihindeki adil piyasa değerine eşit "düzeltilmiş" maliyet bazı devralır, yıllar içinde biriken gerçekleşmemiş kazançları vergi açısından siler. Hesaplayıcı bu vergi avantajını ölçer: BTC'yi $5.000'den aldıysanız ve ölümde $77.000 değerindeyse, mirasçılarınızın maliyet bazı $77.000'e sıfırlanır.`
       ],
       inputs: [
-        `Toplam mülk değeri tüm varlıkları içerir. Kripto varlıklar ayrı girilebilir. Yargı alanı seçici ABD federal, ABD eyalet ve Birleşik Krallık veraset vergisini (£325.000 üzeri %40) kapsar.`,
-        `Muafiyet eşiği yargı alanına göre otomatik doldurulur ancak değiştirilebilir. Yararlanıcı sayısı hediye bölme stratejilerini etkiler. Çıktı toplam vergi, efektif vergi oranı, düzeltilmiş baz tasarrufu ve önerilen mülk planlama stratejilerini gösterir.`
+        `Portföy Değeri (USD), ölüm tarihindeki değeriyle aktarmayı beklediğiniz kriptodur. Ülke, müteveffanın vergi mukimliğini belirler; Akrabalık (eş, çocuk veya diğer) istisna kademesini seçer — bu özellikle Almanya'da (€500K / €400K / €20K) ve Birleşik Krallık'ta (eşler tamamen muaf) belirleyicidir.`,
+        `Maliyet Bazı, Gerçekleşmemiş Kazanç satırını ve bazın sıfırlandığı yerlerde (ABD, Almanya) Step-Up Avantajını besler. Elde Tutma Süresi yalnızca bilgi amaçlıdır ve oranı değiştirmez. ABD istisnası 2026 için $15M'dir ve One Big Beautiful Bill Act ile kalıcı hale gelmiştir; Birleşik Krallık sıfır oranlı bandı £325.000'dir. Eşikler her ülkenin kendi para biriminde uygulanır; bir eşiğe yakınsanız önce çevirin.`
       ],
     },
     hi: {
-      quickAnswer: 'क्रिप्टोकरेंसी होल्डिंग्स पर इनहेरिटेंस और एस्टेट टैक्स लायबिलिटी का अनुमान लगाएं। US में $13.61M (2024 एग्जेम्प्शन) से ऊपर के एस्टेट पर 40% फेडरल एस्टेट टैक्स लगता है — $20M क्रिप्टो एस्टेट पर सिर्फ फेडरल टैक्स में ~$2.56M देना पड़ सकता है।',
+      quickAnswer: 'क्रिप्टोकरेंसी होल्डिंग्स पर इनहेरिटेंस और एस्टेट टैक्स लायबिलिटी का अनुमान लगाएं। US में $15M (2026 एग्जेम्प्शन, One Big Beautiful Bill Act से स्थायी) से ऊपर के एस्टेट पर 40% फेडरल एस्टेट टैक्स लगता है — $20M क्रिप्टो एस्टेट पर सिर्फ फेडरल टैक्स में ~$2M देना पड़ सकता है।',
       how: [
-        `इनहेरिटेंस टैक्स कैलकुलेटर क्रिप्टोकरेंसी एसेट्स को उत्तराधिकारियों को ट्रांसफर करने के टैक्स इम्पैक्ट का अनुमान लगाता है। टोटल एस्टेट वैल्यू, लागू जूरिसडिक्शन और बेनिफिशियरीज की संख्या दर्ज करें — टूल फेडरल और स्टेट लेवल पर एस्टेट टैक्स लायबिलिटी कैलकुलेट करता है और स्टेप-अप इन कॉस्ट बेसिस दिखाता है।`,
+        `इनहेरिटेंस टैक्स कैलकुलेटर क्रिप्टोकरेंसी को उत्तराधिकारियों को सौंपने के टैक्स इम्पैक्ट का अनुमान लगाता है। पोर्टफोलियो वैल्यू दर्ज करें, आठ देशों (US, UK, जर्मनी, जापान, ऑस्ट्रेलिया, कनाडा, भारत, ब्राज़ील) में से एक और वारिस का रिश्ता चुनें; टूल उस देश में उस रिश्ते की छूट लागू करता है, बाकी पर देश की दर से टैक्स लगाता है और जहाँ लागू हो वहाँ स्टेप्ड-अप कॉस्ट बेसिस दिखाता है।`,
         `क्रिप्टोकरेंसी को डेथ की तारीख पर फेयर मार्केट वैल्यू के बराबर "स्टेप्ड-अप" कॉस्ट बेसिस मिलता है। इसका मतलब सालों में जमा अनरियलाइज्ड गेन्स टैक्स उद्देश्यों से समाप्त हो जाते हैं। कैलकुलेटर इस टैक्स बेनिफिट को क्वांटिफाई करता है।`
       ],
       inputs: [
-        `टोटल एस्टेट वैल्यू सभी एसेट्स शामिल करती है। क्रिप्टो होल्डिंग्स अलग से दर्ज की जा सकती हैं। जूरिसडिक्शन सिलेक्टर US फेडरल, US स्टेट-लेवल और UK इनहेरिटेंस टैक्स (£325,000 से ऊपर 40%) कवर करता है।`,
-        `एग्जेम्प्शन थ्रेशोल्ड जूरिसडिक्शन के आधार पर ऑटो-फिल होता है लेकिन ओवरराइड किया जा सकता है। बेनिफिशियरीज की संख्या गिफ्ट-स्प्लिटिंग स्ट्रैटेजी प्रभावित करती है। आउटपुट टोटल टैक्स, इफेक्टिव टैक्स रेट, स्टेप्ड-अप बेसिस सेविंग्स और एस्टेट प्लानिंग स्ट्रैटेजी दिखाता है।`
+        `पोर्टफोलियो वैल्यू (USD) वह क्रिप्टो है जिसे आप मृत्यु की तारीख के मूल्य पर सौंपने की उम्मीद करते हैं। देश मृतक का टैक्स निवास तय करता है; रिश्ता (जीवनसाथी, संतान या अन्य) छूट की श्रेणी चुनता है, जो जर्मनी (€500K / €400K / €20K) और UK (जीवनसाथी पूरी तरह छूट) में सबसे अहम है।`,
+        `कॉस्ट बेसिस अनरियलाइज्ड गेन वाली पंक्ति तय करता है और जहाँ बेसिस रीसेट होता है (US, जर्मनी) वहाँ स्टेप-अप बेनिफिट भी। होल्डिंग पीरियड सिर्फ जानकारी के लिए है और दर नहीं बदलता। US छूट 2026 के लिए $15M है, जिसे One Big Beautiful Bill Act ने स्थायी बनाया; UK का शून्य-दर बैंड £325,000 है। सीमाएँ हर देश की अपनी मुद्रा में लागू होती हैं, इसलिए किसी सीमा के पास हों तो पहले मुद्रा बदल लें।`
       ],
     },
     ru: {
-      quickAnswer: 'Оцените налог на наследство криптовалютных активов. В США имущество свыше $13,61 млн (освобождение 2024) облагается 40% федеральным налогом — криптоимущество на $20 млн может задолжать ~$2,56 млн только федеральных налогов.',
+      quickAnswer: 'Оцените налог на наследство криптовалютных активов. В США имущество свыше $15 млн (освобождение 2026, закреплено One Big Beautiful Bill Act) облагается 40% федеральным налогом — криптоимущество на $20 млн может задолжать ~$2 млн только федеральных налогов.',
       how: [
-        `Калькулятор налога на наследство оценивает налоговые последствия передачи криптоактивов наследникам. Введите общую стоимость имущества, юрисдикцию и число бенефициаров — инструмент рассчитает налоговое обязательство на федеральном и региональном уровне и покажет повышение базы стоимости, устраняющее налог на прирост капитала.`,
+        `Калькулятор налога на наследство оценивает налоговые последствия передачи криптовалюты наследникам. Введите стоимость портфеля, выберите одну из восьми стран (США, Великобритания, Германия, Япония, Австралия, Канада, Индия, Бразилия) и степень родства наследника — инструмент применит освобождение этой страны для данной степени родства, обложит остаток по ставке страны и покажет повышение базы стоимости там, где оно применяется.`,
         `Криптовалюта наследует "повышенную" базу стоимости, равную справедливой рыночной цене на дату смерти. Нереализованная прибыль за годы обнуляется для налоговых целей. Калькулятор количественно оценивает эту выгоду: если BTC куплен за $5 000, а на момент смерти стоит $77 000, база наследников сбрасывается до $77 000.`
       ],
       inputs: [
-        `Общая стоимость имущества включает все активы. Криптоактивы можно ввести отдельно для оценки их доли. Выбор юрисдикции: федеральный налог США, налоги штатов, налог на наследство Великобритании (40% свыше £325 000).`,
-        `Порог освобождения заполняется автоматически, но может быть изменён. Число бенефициаров влияет на стратегии дарения. Результат: общий налог, эффективная ставка, экономия от повышения базы и рекомендуемые стратегии планирования наследства (трасты, ежегодное дарение, благотворительность).`
+        `Стоимость портфеля (USD) — криптовалюта, которую вы рассчитываете передать, по стоимости на дату смерти. Страна задаёт налоговое резидентство наследодателя; Родство (супруг, ребёнок или другое) выбирает уровень освобождения — решающий в Германии (€500K / €400K / €20K) и в Великобритании (супруги полностью освобождены).`,
+        `Себестоимость определяет строку «Нереализованная прибыль» и — там, где база пересчитывается (США, Германия), — «Выгоду от повышения базы». Срок владения носит справочный характер и не меняет ставку. Освобождение в США на 2026 год — $15 млн, закреплено One Big Beautiful Bill Act; необлагаемая полоса Великобритании — £325 000. Пороги применяются в валюте каждой страны, поэтому рядом с порогом сначала пересчитайте сумму.`
       ],
     },
   },
   'validator-calculator': {
     en: {
-      quickAnswer: 'Estimate validator node rewards, costs, and ROI for Ethereum and other PoS networks. Running a solo Ethereum validator with 32 ETH earns ~3.5% APY ($6,700/year at $6,000/ETH) minus ~$50–100/month in server costs.',
+      quickAnswer: 'Estimate validator node rewards, costs, and ROI for Ethereum and other PoS networks. Running a solo Ethereum validator with 32 ETH earns ~3% APY (about 0.96 ETH, ~$2,300/year at $2,400/ETH) minus ~$50–100/month in server costs.',
       how: [
         `The Validator Calculator models the economics of running a proof-of-stake validator node. Enter the network (Ethereum, Solana, Cosmos, etc.), your staked amount, and infrastructure costs, the tool computes gross annual rewards, net profit after hosting expenses, effective APY, and the estimated time to recoup your hardware or VPS investment.`,
         `For Ethereum, the calculator factors in consensus layer rewards (attestation, proposals) and execution layer tips (MEV). It also models the impact of validator count on rewards: as more validators join the network, individual returns decline. Compare running a solo validator versus delegating to a staking pool to see when the infrastructure overhead is justified.`
@@ -6051,7 +6051,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Estima recompensas, costos y ROI de un nodo validador para Ethereum y otras redes PoS. Ejecutar un validador Ethereum con 32 ETH genera ~3,5% APY ($6.700/año a $6.000/ETH) menos ~$50–100/mes en costos de servidor.',
+      quickAnswer: 'Estima recompensas, costos y ROI de un nodo validador para Ethereum y otras redes PoS. Ejecutar un validador Ethereum con 32 ETH genera ~3% APY (unos 0,96 ETH, ~$2.300/año a $2.400/ETH) menos ~$50–100/mes en costos de servidor.',
       how: [
         `La Calculadora de Validador modela la economía de ejecutar un nodo validador proof-of-stake. Introduce la red (Ethereum, Solana, Cosmos), tu cantidad stakeada y los costos de infraestructura — la herramienta calcula las recompensas anuales brutas, el beneficio neto, el APY efectivo y el tiempo estimado para recuperar la inversión en hardware.`,
         `Para Ethereum, la calculadora incluye recompensas de la capa de consenso (attestation, propuestas) y propinas de la capa de ejecución (MEV). También modela el impacto del número de validadores: a más validadores, menores retornos individuales. Compara ejecutar un validador propio versus delegar a un pool.`
@@ -6062,7 +6062,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Estime recompensas, custos e ROI de nó validador para Ethereum e outras redes PoS. Executar um validador Ethereum com 32 ETH gera ~3,5% APY ($6.700/ano a $6.000/ETH) menos ~$50–100/mês em custos de servidor.',
+      quickAnswer: 'Estime recompensas, custos e ROI de nó validador para Ethereum e outras redes PoS. Executar um validador Ethereum com 32 ETH gera ~3% APY (cerca de 0,96 ETH, ~$2.300/ano a $2.400/ETH) menos ~$50–100/mês em custos de servidor.',
       how: [
         `A Calculadora de Validador modela a economia de executar um nó validador proof-of-stake. Insira a rede (Ethereum, Solana, Cosmos), sua quantidade em stake e custos de infraestrutura — a ferramenta calcula recompensas anuais brutas, lucro líquido, APY efetivo e tempo estimado para recuperar o investimento.`,
         `Para Ethereum, inclui recompensas da camada de consenso (attestation, propostas) e gorjetas da camada de execução (MEV). Modela o impacto do número de validadores nos retornos. Compare executar validador solo versus delegar a um pool.`
@@ -6073,7 +6073,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Ethereum ve diğer PoS ağları için doğrulayıcı düğüm ödüllerini, maliyetlerini ve ROI\'sini tahmin edin. 32 ETH ile solo Ethereum doğrulayıcısı çalıştırmak ~%3,5 APY ($6.000/ETH\'de $6.700/yıl) kazandırır, eksi ~$50–100/ay sunucu maliyeti.',
+      quickAnswer: 'Ethereum ve diğer PoS ağları için doğrulayıcı düğüm ödüllerini, maliyetlerini ve ROI\'sini tahmin edin. 32 ETH ile solo Ethereum doğrulayıcısı çalıştırmak ~%3 APY ($2.400/ETH\'de yaklaşık 0,96 ETH, ~$2.300/yıl) kazandırır, eksi ~$50–100/ay sunucu maliyeti.',
       how: [
         `Doğrulayıcı Hesaplayıcısı, bir proof-of-stake doğrulayıcı düğümü çalıştırmanın ekonomisini modeller. Ağı (Ethereum, Solana, Cosmos), stake miktarınızı ve altyapı maliyetlerini girin — araç brüt yıllık ödülleri, barındırma giderleri sonrası net kârı, efektif APY'yi ve yatırımınızı geri kazanma süresini hesaplar.`,
         `Ethereum için konsensüs katmanı ödülleri (attestation, teklif) ve yürütme katmanı bahşişleri (MEV) dahildir. Doğrulayıcı sayısının ödüller üzerindeki etkisini de modeller. Solo doğrulayıcı çalıştırmayı staking havuzuna delege etmeyle karşılaştırın.`
@@ -6084,7 +6084,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'Ethereum और अन्य PoS नेटवर्क के लिए वैलिडेटर नोड रिवॉर्ड, कॉस्ट और ROI का अनुमान लगाएं। 32 ETH के साथ सोलो Ethereum वैलिडेटर चलाना ~3.5% APY ($6,000/ETH पर $6,700/वर्ष) कमाता है, ~$50–100/महीना सर्वर कॉस्ट घटाकर।',
+      quickAnswer: 'Ethereum और अन्य PoS नेटवर्क के लिए वैलिडेटर नोड रिवॉर्ड, कॉस्ट और ROI का अनुमान लगाएं। 32 ETH के साथ सोलो Ethereum वैलिडेटर चलाना ~3% APY ($2,400/ETH पर लगभग 0.96 ETH, ~$2,300/वर्ष) कमाता है, ~$50–100/महीना सर्वर कॉस्ट घटाकर।',
       how: [
         `वैलिडेटर कैलकुलेटर proof-of-stake वैलिडेटर नोड चलाने की इकोनॉमिक्स मॉडल करता है। नेटवर्क (Ethereum, Solana, Cosmos), स्टेक्ड अमाउंट और इंफ्रास्ट्रक्चर कॉस्ट दर्ज करें — टूल ग्रॉस एनुअल रिवॉर्ड, होस्टिंग खर्चों के बाद नेट प्रॉफिट, इफेक्टिव APY और हार्डवेयर इन्वेस्टमेंट रिकवरी का एस्टिमेटेड टाइम कैलकुलेट करता है।`,
         `Ethereum के लिए, कैलकुलेटर कंसेंसस लेयर रिवॉर्ड (attestation, प्रपोजल) और एक्ज़ीक्यूशन लेयर टिप्स (MEV) शामिल करता है। वैलिडेटर काउंट के रिवॉर्ड पर प्रभाव को भी मॉडल करता है। सोलो वैलिडेटर vs. स्टेकिंग पूल को डेलीगेट करने की तुलना करें।`
@@ -6095,7 +6095,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Оцените вознаграждение, затраты и ROI ноды валидатора для Ethereum и других PoS-сетей. Соло-валидатор Ethereum с 32 ETH приносит ~3,5% APY ($6 700/год при $6 000/ETH) минус ~$50–100/мес. на серверные расходы.',
+      quickAnswer: 'Оцените вознаграждение, затраты и ROI ноды валидатора для Ethereum и других PoS-сетей. Соло-валидатор Ethereum с 32 ETH приносит ~3% APY (около 0,96 ETH, ~$2 300/год при $2 400/ETH) минус ~$50–100/мес. на серверные расходы.',
       how: [
         `Калькулятор валидатора моделирует экономику запуска PoS-ноды. Введите сеть (Ethereum, Solana, Cosmos), сумму стейка и расходы на инфраструктуру — инструмент рассчитает валовое годовое вознаграждение, чистую прибыль после хостинга, эффективную APY и время окупаемости оборудования.`,
         `Для Ethereum учитываются вознаграждения уровня консенсуса (аттестации, предложения блоков) и чаевые уровня исполнения (MEV). Моделируется влияние числа валидаторов на доходность. Сравните соло-валидатор с делегированием в стейкинг-пул.`
@@ -7536,69 +7536,69 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'lightning-network-fee-calculator': {
       en: {
-        quickAnswer: `Enter the payment size in sats, a channel's base fee, ppm rate, and the number of hops to size a Lightning routing fee. Example: a 100,000-sat payment over 3 hops at 1 sat base + 100 ppm costs 11 sat per hop = 33 sat total (~$0.03 at $77,300/BTC), just 0.033% of the payment and ~99.9% cheaper than a typical 28,000-sat on-chain fee.`,
+        quickAnswer: `Enter the payment size in sats, a channel's base fee, ppm rate, and the number of hops to size a Lightning routing fee. Example: a 100,000-sat payment over 3 hops at 1 sat base + 100 ppm costs 11 sat per hop = 33 sat total (~$0.03 at $77,300/BTC), just 0.033% of the payment and ~97.6% cheaper than a typical 1,400-sat on-chain fee (10 sat/vB).`,
         how: [
           `This Lightning Network Fee Calculator estimates what a Bitcoin payment costs to route across the Lightning Network instead of settling on-chain. Each forwarding node charges a fixed base fee plus a proportional rate, so the per-hop cost is base_fee + (amount times ppm divided by 1,000,000). It converts the base fee you enter in millisatoshis to sats (msat / 1000), adds the proportional part, then multiplies the per-hop fee by your number of hops to get the total routing fee in sats and in USD.`,
-          `Alongside the total it shows the fee per hop, the fee as a percentage of the payment, and a rating from Negligible to High fee %. It then benchmarks against a typical on-chain transaction (assumed 28,000 sats, about 200 sats/vB on a 140-vB spend) and reports your percentage savings versus settling on layer 1. For converting any sat figure to dollars or another currency, pair it with our <a href="/converter/">crypto converter</a>.`
+          `Alongside the total it shows the fee per hop, the fee as a percentage of the payment, and a rating from Negligible to High fee %. It then benchmarks against a typical on-chain transaction (assumed 1,400 sats: 10 sats/vB on a 140-vB spend, a busy-hour rate; quiet periods run at 1–2 sats/vB) and reports your percentage savings versus settling on layer 1. For converting any sat figure to dollars or another currency, pair it with our <a href="/converter/">crypto converter</a>.`
         ],
         inputs: [
           `Payment Amount (sats) is the value you are sending; Base Fee is entered in millisatoshis (1,000 msat = 1 sat) and represents the flat charge per channel; PPM Rate is the proportional fee in parts per million, so 100 ppm equals 0.01% of the amount; Number of Hops is how many forwarding nodes sit along the route; and BTC Price (USD) converts the sat fee into dollars. Quick-scenario presets cover Strike, Wallet of Satoshi, Phoenix, and a tiny tip.`,
-          `The model assumes every hop charges the same base fee and ppm you entered, which is a simplification, real routes blend different node policies, and pathfinding may pick cheaper or more expensive channels. The on-chain comparison uses a fixed 28,000-sat estimate, so actual mempool fees vary with congestion. Self-hosted nodes can route at near-zero cost, while custodial wallets often add a 0.1–1% spread on top of the raw routing fee, which this tool does not include.`
+          `The model assumes every hop charges the same base fee and ppm you entered, which is a simplification, real routes blend different node policies, and pathfinding may pick cheaper or more expensive channels. The on-chain comparison uses a fixed 1,400-sat estimate, so actual mempool fees vary with congestion. Self-hosted nodes can route at near-zero cost, while custodial wallets often add a 0.1–1% spread on top of the raw routing fee, which this tool does not include.`
         ],
       },
       es: {
-        quickAnswer: `Introduce el importe del pago en sats, la tarifa base de un canal, la tasa ppm y el número de saltos para estimar la comisión de enrutamiento Lightning. Ejemplo: un pago de 100.000 sats por 3 saltos con 1 sat base + 100 ppm cuesta 11 sats por salto = 33 sats en total (~$0,03 a $77.300/BTC), solo el 0,033% del pago y ~99,9% más barato que una comisión on-chain típica de 28.000 sats.`,
+        quickAnswer: `Introduce el importe del pago en sats, la tarifa base de un canal, la tasa ppm y el número de saltos para estimar la comisión de enrutamiento Lightning. Ejemplo: un pago de 100.000 sats por 3 saltos con 1 sat base + 100 ppm cuesta 11 sats por salto = 33 sats en total (~$0,03 a $77.300/BTC), solo el 0,033% del pago y ~97,6% más barato que una comisión on-chain típica de 1.400 sats (10 sat/vB).`,
         how: [
           `Esta calculadora estima cuánto cuesta enrutar un pago de Bitcoin por la Lightning Network en lugar de liquidarlo on-chain. Cada nodo de reenvío cobra una tarifa base fija más una tasa proporcional, así que el coste por salto es tarifa_base + (importe por ppm dividido entre 1.000.000). Convierte la tarifa base que introduces en milisatoshis a sats (msat / 1000), suma la parte proporcional y multiplica la comisión por salto por tu número de saltos para obtener la comisión total de enrutamiento en sats y en USD.`,
-          `Junto al total muestra la comisión por salto, la comisión como porcentaje del pago y una valoración de Insignificante a Comisión % alta. Luego compara con una transacción on-chain típica (se asume 28.000 sats, unos 200 sats/vB en un gasto de 140 vB) e informa tu ahorro porcentual frente a liquidar en la capa 1. Para convertir cualquier cifra en sats a dólares u otra moneda, combínala con nuestro <a href="/converter/">conversor de cripto</a>.`
+          `Junto al total muestra la comisión por salto, la comisión como porcentaje del pago y una valoración de Insignificante a Comisión % alta. Luego compara con una transacción on-chain típica (se asumen 1.400 sats: 10 sats/vB en un gasto de 140 vB, tarifa de hora punta; en periodos tranquilos baja a 1–2 sats/vB) e informa tu ahorro porcentual frente a liquidar en la capa 1. Para convertir cualquier cifra en sats a dólares u otra moneda, combínala con nuestro <a href="/converter/">conversor de cripto</a>.`
         ],
         inputs: [
           `El Importe del Pago (sats) es el valor que envías; la Tarifa Base se introduce en milisatoshis (1.000 msat = 1 sat) y es el cargo fijo por canal; la Tasa PPM es la comisión proporcional en partes por millón, así que 100 ppm equivale al 0,01% del importe; el Número de Saltos es cuántos nodos de reenvío hay en la ruta; y el Precio BTC (USD) convierte la comisión en sats a dólares. Los escenarios rápidos cubren Strike, Wallet of Satoshi, Phoenix y una propina mínima.`,
-          `El modelo asume que cada salto cobra la misma tarifa base y ppm que introdujiste, lo cual es una simplificación — las rutas reales mezclan políticas de distintos nodos, y la búsqueda de ruta puede elegir canales más baratos o más caros. La comparación on-chain usa una estimación fija de 28.000 sats, así que las comisiones reales del mempool varían con la congestión. Los nodos propios pueden enrutar a coste casi nulo, mientras que las carteras custodiales suelen añadir un diferencial del 0,1–1% sobre la comisión bruta de enrutamiento, que esta herramienta no incluye.`
+          `El modelo asume que cada salto cobra la misma tarifa base y ppm que introdujiste, lo cual es una simplificación — las rutas reales mezclan políticas de distintos nodos, y la búsqueda de ruta puede elegir canales más baratos o más caros. La comparación on-chain usa una estimación fija de 1.400 sats, así que las comisiones reales del mempool varían con la congestión. Los nodos propios pueden enrutar a coste casi nulo, mientras que las carteras custodiales suelen añadir un diferencial del 0,1–1% sobre la comisión bruta de enrutamiento, que esta herramienta no incluye.`
         ],
       },
       pt: {
-        quickAnswer: `Insira o valor do pagamento em sats, a taxa base de um canal, a taxa ppm e o número de saltos para estimar a taxa de roteamento Lightning. Exemplo: um pagamento de 100.000 sats por 3 saltos com 1 sat base + 100 ppm custa 11 sats por salto = 33 sats no total (~$0,03 a $77.300/BTC), apenas 0,033% do pagamento e ~99,9% mais barato que uma taxa on-chain típica de 28.000 sats.`,
+        quickAnswer: `Insira o valor do pagamento em sats, a taxa base de um canal, a taxa ppm e o número de saltos para estimar a taxa de roteamento Lightning. Exemplo: um pagamento de 100.000 sats por 3 saltos com 1 sat base + 100 ppm custa 11 sats por salto = 33 sats no total (~$0,03 a $77.300/BTC), apenas 0,033% do pagamento e ~97,6% mais barato que uma taxa on-chain típica de 1.400 sats (10 sat/vB).`,
         how: [
           `Esta calculadora estima quanto custa rotear um pagamento de Bitcoin pela Lightning Network em vez de liquidar on-chain. Cada nó de encaminhamento cobra uma taxa base fixa mais uma taxa proporcional, então o custo por salto é taxa_base + (valor vezes ppm dividido por 1.000.000). Ela converte a taxa base que você insere em milissatoshis para sats (msat / 1000), soma a parte proporcional e multiplica a taxa por salto pelo seu número de saltos para obter a taxa total de roteamento em sats e em USD.`,
-          `Junto ao total ela mostra a taxa por salto, a taxa como porcentagem do pagamento e uma classificação de Insignificante a Taxa % alta. Depois compara com uma transação on-chain típica (assumida em 28.000 sats, cerca de 200 sats/vB num gasto de 140 vB) e relata sua economia percentual frente a liquidar na camada 1. Para converter qualquer valor em sats para dólares ou outra moeda, combine com nosso <a href="/converter/">conversor de cripto</a>.`
+          `Junto ao total ela mostra a taxa por salto, a taxa como porcentagem do pagamento e uma classificação de Insignificante a Taxa % alta. Depois compara com uma transação on-chain típica (assumida em 1.400 sats: 10 sats/vB num gasto de 140 vB, tarifa de horário de pico; em períodos calmos fica em 1–2 sats/vB) e relata sua economia percentual frente a liquidar na camada 1. Para converter qualquer valor em sats para dólares ou outra moeda, combine com nosso <a href="/converter/">conversor de cripto</a>.`
         ],
         inputs: [
           `O Valor do Pagamento (sats) é o que você envia; a Taxa Base é inserida em milissatoshis (1.000 msat = 1 sat) e representa o encargo fixo por canal; a Taxa PPM é a taxa proporcional em partes por milhão, então 100 ppm equivale a 0,01% do valor; o Número de Saltos é quantos nós de encaminhamento há na rota; e o Preço BTC (USD) converte a taxa em sats para dólares. Os cenários rápidos cobrem Strike, Wallet of Satoshi, Phoenix e uma gorjeta mínima.`,
-          `O modelo assume que cada salto cobra a mesma taxa base e ppm que você inseriu, o que é uma simplificação — rotas reais misturam políticas de nós diferentes, e a busca de caminho pode escolher canais mais baratos ou mais caros. A comparação on-chain usa uma estimativa fixa de 28.000 sats, então as taxas reais do mempool variam com o congestionamento. Nós próprios podem rotear a custo quase nulo, enquanto carteiras custodiais costumam adicionar um spread de 0,1–1% sobre a taxa bruta de roteamento, que esta ferramenta não inclui.`
+          `O modelo assume que cada salto cobra a mesma taxa base e ppm que você inseriu, o que é uma simplificação — rotas reais misturam políticas de nós diferentes, e a busca de caminho pode escolher canais mais baratos ou mais caros. A comparação on-chain usa uma estimativa fixa de 1.400 sats, então as taxas reais do mempool variam com o congestionamento. Nós próprios podem rotear a custo quase nulo, enquanto carteiras custodiais costumam adicionar um spread de 0,1–1% sobre a taxa bruta de roteamento, que esta ferramenta não inclui.`
         ],
       },
       tr: {
-        quickAnswer: `Bir Lightning yönlendirme ücretini boyutlandırmak için ödeme tutarını sats cinsinden, bir kanalın taban ücretini, ppm oranını ve atlama sayısını girin. Örnek: 1 sat taban + 100 ppm ile 3 atlamada 100.000 satlık bir ödeme atlama başına 11 sat = toplam 33 sat tutar (77.300 dolar/BTC'de ~0,03 dolar), ödemenin yalnızca yüzde 0,033'ü ve tipik 28.000 satlık zincir-üstü ücretten ~yüzde 99,9 daha ucuzdur.`,
+        quickAnswer: `Bir Lightning yönlendirme ücretini boyutlandırmak için ödeme tutarını sats cinsinden, bir kanalın taban ücretini, ppm oranını ve atlama sayısını girin. Örnek: 1 sat taban + 100 ppm ile 3 atlamada 100.000 satlık bir ödeme atlama başına 11 sat = toplam 33 sat tutar (77.300 dolar/BTC'de ~0,03 dolar), ödemenin yalnızca yüzde 0,033'ü ve tipik 1.400 satlık (10 sat/vB) zincir-üstü ücretten ~yüzde 97,6 daha ucuzdur.`,
         how: [
           `Bu hesaplayıcı, bir Bitcoin ödemesini zincir üstünde sonuçlandırmak yerine Lightning Network üzerinden yönlendirmenin maliyetini tahmin eder. Her iletim düğümü sabit bir taban ücreti artı orantısal bir oran alır, bu yüzden atlama başına maliyet taban_ücreti + (tutar çarpı ppm bölü 1.000.000) olur. Milisatoshi cinsinden girdiğiniz taban ücretini sats'e çevirir (msat / 1000), orantısal kısmı ekler ve atlama başına ücreti atlama sayınızla çarparak toplam yönlendirme ücretini sats ve USD cinsinden verir.`,
-          `Toplamın yanında atlama başına ücreti, ödemenin yüzdesi olarak ücreti ve Önemsiz'den Yüksek ücret yüzdesine kadar bir derecelendirme gösterir. Ardından tipik bir zincir-üstü işlemle karşılaştırır (140 vB'lik bir harcamada yaklaşık 200 sats/vB olan 28.000 sat varsayılır) ve katman 1'de sonuçlandırmaya kıyasla yüzde tasarrufunuzu bildirir. Herhangi bir sat tutarını dolara veya başka bir para birimine çevirmek için <a href="/converter/">kripto dönüştürücümüz</a> ile birlikte kullanın.`
+          `Toplamın yanında atlama başına ücreti, ödemenin yüzdesi olarak ücreti ve Önemsiz'den Yüksek ücret yüzdesine kadar bir derecelendirme gösterir. Ardından tipik bir zincir-üstü işlemle karşılaştırır (140 vB'lik bir harcamada 10 sats/vB ile 1.400 sat varsayılır — yoğun saat oranı; sakin dönemlerde 1–2 sats/vB) ve katman 1'de sonuçlandırmaya kıyasla yüzde tasarrufunuzu bildirir. Herhangi bir sat tutarını dolara veya başka bir para birimine çevirmek için <a href="/converter/">kripto dönüştürücümüz</a> ile birlikte kullanın.`
         ],
         inputs: [
           `Ödeme Tutarı (sats) gönderdiğiniz değerdir; Taban Ücreti milisatoshi cinsinden girilir (1.000 msat = 1 sat) ve kanal başına sabit ücreti temsil eder; PPM Oranı milyonda parça cinsinden orantısal ücrettir, yani 100 ppm tutarın yüzde 0,01'ine eşittir; Atlama Sayısı rota üzerinde kaç iletim düğümü olduğudur; ve BTC Fiyatı (USD) sat ücretini dolara çevirir. Hızlı senaryolar Strike, Wallet of Satoshi, Phoenix ve minik bir bahşişi kapsar.`,
-          `Model, her atlamanın girdiğiniz aynı taban ücreti ve ppm'i aldığını varsayar; bu bir basitleştirmedir — gerçek rotalar farklı düğüm politikalarını harmanlar ve yol bulma daha ucuz veya daha pahalı kanallar seçebilir. Zincir-üstü karşılaştırma sabit 28.000 satlık bir tahmin kullanır, bu yüzden gerçek mempool ücretleri tıkanıklıkla değişir. Kendi barındırdığınız düğümler neredeyse sıfır maliyetle yönlendirebilirken, saklamalı cüzdanlar genellikle ham yönlendirme ücretinin üstüne yüzde 0,1–1 fark ekler ki bu araç bunu içermez.`
+          `Model, her atlamanın girdiğiniz aynı taban ücreti ve ppm'i aldığını varsayar; bu bir basitleştirmedir — gerçek rotalar farklı düğüm politikalarını harmanlar ve yol bulma daha ucuz veya daha pahalı kanallar seçebilir. Zincir-üstü karşılaştırma sabit 1.400 satlık bir tahmin kullanır, bu yüzden gerçek mempool ücretleri tıkanıklıkla değişir. Kendi barındırdığınız düğümler neredeyse sıfır maliyetle yönlendirebilirken, saklamalı cüzdanlar genellikle ham yönlendirme ücretinin üstüne yüzde 0,1–1 fark ekler ki bu araç bunu içermez.`
         ],
       },
       hi: {
-        quickAnswer: `Lightning रूटिंग शुल्क का अनुमान लगाने के लिए भुगतान राशि sats में, चैनल का बेस शुल्क, ppm दर और हॉप्स की संख्या दर्ज करें। उदाहरण: 1 sat बेस + 100 ppm पर 3 हॉप्स में 100,000-sat का भुगतान प्रति हॉप 11 sat = कुल 33 sat ($77,300/BTC पर ~$0.03) खर्च करता है, जो भुगतान का केवल 0.033% है और सामान्य 28,000-sat ऑन-चेन शुल्क से ~99.9% सस्ता है।`,
+        quickAnswer: `Lightning रूटिंग शुल्क का अनुमान लगाने के लिए भुगतान राशि sats में, चैनल का बेस शुल्क, ppm दर और हॉप्स की संख्या दर्ज करें। उदाहरण: 1 sat बेस + 100 ppm पर 3 हॉप्स में 100,000-sat का भुगतान प्रति हॉप 11 sat = कुल 33 sat ($77,300/BTC पर ~$0.03) खर्च करता है, जो भुगतान का केवल 0.033% है और सामान्य 1,400-sat (10 sat/vB) ऑन-चेन शुल्क से ~97.6% सस्ता है।`,
         how: [
           `यह कैलकुलेटर अनुमान लगाता है कि किसी Bitcoin भुगतान को ऑन-चेन निपटाने के बजाय Lightning Network पर रूट करने में कितना खर्च आता है। हर फॉरवर्डिंग नोड एक स्थिर बेस शुल्क और एक आनुपातिक दर लेता है, इसलिए प्रति-हॉप लागत बेस_शुल्क + (राशि गुणा ppm भाग 1,000,000) होती है। यह आपके द्वारा मिलीसातोशी में दर्ज बेस शुल्क को sats में बदलता है (msat / 1000), आनुपातिक भाग जोड़ता है, और प्रति-हॉप शुल्क को आपकी हॉप्स संख्या से गुणा करके कुल रूटिंग शुल्क sats और USD में देता है।`,
-          `कुल के साथ यह प्रति-हॉप शुल्क, भुगतान के प्रतिशत के रूप में शुल्क, और नगण्य से उच्च शुल्क % तक की रेटिंग दिखाता है। फिर यह एक सामान्य ऑन-चेन लेनदेन से तुलना करता है (28,000 sats माना गया, 140-vB खर्च पर लगभग 200 sats/vB) और लेयर 1 पर निपटान की तुलना में आपकी प्रतिशत बचत बताता है। किसी भी sat राशि को डॉलर या अन्य मुद्रा में बदलने के लिए हमारे <a href="/converter/">क्रिप्टो कनवर्टर</a> के साथ इस्तेमाल करें।`
+          `कुल के साथ यह प्रति-हॉप शुल्क, भुगतान के प्रतिशत के रूप में शुल्क, और नगण्य से उच्च शुल्क % तक की रेटिंग दिखाता है। फिर यह एक सामान्य ऑन-चेन लेनदेन से तुलना करता है (1,400 sats माना गया: 140-vB खर्च पर 10 sats/vB, व्यस्त समय की दर; शांत समय में 1–2 sats/vB) और लेयर 1 पर निपटान की तुलना में आपकी प्रतिशत बचत बताता है। किसी भी sat राशि को डॉलर या अन्य मुद्रा में बदलने के लिए हमारे <a href="/converter/">क्रिप्टो कनवर्टर</a> के साथ इस्तेमाल करें।`
         ],
         inputs: [
           `भुगतान राशि (sats) वह मूल्य है जो आप भेज रहे हैं; बेस शुल्क मिलीसातोशी में दर्ज होता है (1,000 msat = 1 sat) और प्रति चैनल स्थिर शुल्क दर्शाता है; PPM दर पार्ट्स प्रति मिलियन में आनुपातिक शुल्क है, इसलिए 100 ppm राशि के 0.01% के बराबर है; हॉप्स की संख्या बताती है कि रूट पर कितने फॉरवर्डिंग नोड हैं; और BTC मूल्य (USD) sat शुल्क को डॉलर में बदलता है। त्वरित परिदृश्य Strike, Wallet of Satoshi, Phoenix और एक छोटी टिप को कवर करते हैं।`,
-          `मॉडल मानता है कि हर हॉप वही बेस शुल्क और ppm लेता है जो आपने दर्ज किया — यह एक सरलीकरण है, क्योंकि असली रूट अलग-अलग नोड नीतियों को मिलाते हैं और पाथफाइंडिंग सस्ते या महंगे चैनल चुन सकती है। ऑन-चेन तुलना स्थिर 28,000-sat अनुमान का उपयोग करती है, इसलिए वास्तविक mempool शुल्क भीड़भाड़ के साथ बदलते हैं। स्व-होस्टेड नोड लगभग शून्य लागत पर रूट कर सकते हैं, जबकि कस्टोडियल वॉलेट अक्सर कच्चे रूटिंग शुल्क के ऊपर 0.1–1% स्प्रेड जोड़ते हैं, जिसे यह टूल शामिल नहीं करता।`
+          `मॉडल मानता है कि हर हॉप वही बेस शुल्क और ppm लेता है जो आपने दर्ज किया — यह एक सरलीकरण है, क्योंकि असली रूट अलग-अलग नोड नीतियों को मिलाते हैं और पाथफाइंडिंग सस्ते या महंगे चैनल चुन सकती है। ऑन-चेन तुलना स्थिर 1,400-sat अनुमान का उपयोग करती है, इसलिए वास्तविक mempool शुल्क भीड़भाड़ के साथ बदलते हैं। स्व-होस्टेड नोड लगभग शून्य लागत पर रूट कर सकते हैं, जबकि कस्टोडियल वॉलेट अक्सर कच्चे रूटिंग शुल्क के ऊपर 0.1–1% स्प्रेड जोड़ते हैं, जिसे यह टूल शामिल नहीं करता।`
         ],
       },
       ru: {
-        quickAnswer: `Введите сумму платежа в сатоши, базовую комиссию канала, ставку ppm и число хопов, чтобы оценить комиссию маршрутизации в Lightning. Пример: платёж 100 000 сат через 3 хопа при базе 1 сат + 100 ppm стоит 11 сат за хоп = 33 сат всего (~$0,03 при $77 300/BTC), всего 0,033% от платежа и на ~99,9% дешевле типичной ончейн-комиссии в 28 000 сат.`,
+        quickAnswer: `Введите сумму платежа в сатоши, базовую комиссию канала, ставку ppm и число хопов, чтобы оценить комиссию маршрутизации в Lightning. Пример: платёж 100 000 сат через 3 хопа при базе 1 сат + 100 ppm стоит 11 сат за хоп = 33 сат всего (~$0,03 при $77 300/BTC), всего 0,033% от платежа и на ~97,6% дешевле типичной ончейн-комиссии в 1 400 сат (10 сат/vB).`,
         how: [
           `Этот калькулятор оценивает, во сколько обойдётся маршрутизация платежа Bitcoin через Lightning Network вместо расчёта в ончейне. Каждый пересылающий узел берёт фиксированную базовую комиссию плюс пропорциональную ставку, поэтому стоимость за хоп равна базовая_комиссия + (сумма умножить на ppm разделить на 1 000 000). Он переводит введённую вами базовую комиссию из миллисатоши в сат (msat / 1000), прибавляет пропорциональную часть и умножает комиссию за хоп на число хопов, давая полную комиссию маршрутизации в сат и в USD.`,
-          `Рядом с итогом он показывает комиссию за хоп, комиссию как процент от платежа и оценку от Незначительной до Высокий процент комиссии. Затем он сравнивает с типичной ончейн-транзакцией (принято 28 000 сат, около 200 сат/vB при расходе 140 vB) и сообщает вашу процентную экономию по сравнению с расчётом на уровне 1. Чтобы перевести любую сумму в сат в доллары или другую валюту, используйте вместе с нашим <a href="/converter/">крипто-конвертером</a>.`
+          `Рядом с итогом он показывает комиссию за хоп, комиссию как процент от платежа и оценку от Незначительной до Высокий процент комиссии. Затем он сравнивает с типичной ончейн-транзакцией (принято 1 400 сат: 10 сат/vB при расходе 140 vB — ставка часа пик; в спокойные периоды 1–2 сат/vB) и сообщает вашу процентную экономию по сравнению с расчётом на уровне 1. Чтобы перевести любую сумму в сат в доллары или другую валюту, используйте вместе с нашим <a href="/converter/">крипто-конвертером</a>.`
         ],
         inputs: [
           `Сумма платежа (сат) — это переводимое значение; Базовая комиссия вводится в миллисатоши (1 000 msat = 1 сат) и означает фиксированную плату за канал; Ставка PPM — пропорциональная комиссия в частях на миллион, так что 100 ppm равны 0,01% суммы; Число хопов — сколько пересылающих узлов на маршруте; а Цена BTC (USD) переводит комиссию в сат в доллары. Быстрые сценарии охватывают Strike, Wallet of Satoshi, Phoenix и крошечные чаевые.`,
-          `Модель предполагает, что каждый хоп берёт ту же базовую комиссию и ppm, что вы ввели, — это упрощение, ведь реальные маршруты смешивают политики разных узлов, а поиск пути может выбрать более дешёвые или дорогие каналы. Ончейн-сравнение использует фиксированную оценку в 28 000 сат, поэтому реальные комиссии mempool меняются с загруженностью. Собственные узлы могут маршрутизировать почти бесплатно, тогда как кастодиальные кошельки часто добавляют спред 0,1–1% сверх чистой комиссии маршрутизации, который этот инструмент не учитывает.`
+          `Модель предполагает, что каждый хоп берёт ту же базовую комиссию и ppm, что вы ввели, — это упрощение, ведь реальные маршруты смешивают политики разных узлов, а поиск пути может выбрать более дешёвые или дорогие каналы. Ончейн-сравнение использует фиксированную оценку в 1 400 сат, поэтому реальные комиссии mempool меняются с загруженностью. Собственные узлы могут маршрутизировать почти бесплатно, тогда как кастодиальные кошельки часто добавляют спред 0,1–1% сверх чистой комиссии маршрутизации, который этот инструмент не учитывает.`
         ],
       },
   },
@@ -7740,68 +7740,68 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'mstr-mnav-calculator': {
       en: {
-        quickAnswer: `Divide a Bitcoin treasury company's market cap by the dollar value of its BTC stack to get mNAV. Example: MicroStrategy at a $95B market cap holding 440,000 BTC at $77,300 has a BTC NAV of $34.01B, so mNAV = 2.79× — a +179% premium, or about $60.99B of value priced in above the coins themselves.`,
+        quickAnswer: `Divide a Bitcoin treasury company's market cap by the dollar value of its BTC stack to get mNAV. Example: Strategy (MSTR) at a $62.9B market cap holding 848,250 BTC at $83,600 has a BTC NAV of about $70.9B, so mNAV ≈ 0.89× — an ~11% discount to the coins themselves (snapshot of 13 Oct 2026). In late 2024 the same stock traded near 2.8×.`,
         how: [
           `This mNAV calculator measures how much premium or discount the market puts on a Bitcoin treasury stock like MicroStrategy, MetaPlanet or Semler Scientific versus the raw Bitcoin it owns. It computes BTC NAV as holdings times BTC price, then mNAV = market cap divided by BTC NAV. An mNAV of 1.0× means the stock trades exactly at the value of its coins; above 1.5× is a premium, below 1.0× is a discount. Premium percent is (mNAV − 1) × 100, and premium amount is the dollar gap.`,
           `If you add total debt, it also reports Enterprise NAV (BTC NAV minus debt) and an enterprise mNAV, which is stricter because leverage shrinks the net asset base. With shares outstanding it derives BTC per share, the share price (market cap ÷ shares), and the implied BTC price baked into each share. The tool deliberately ignores the operating business, future coin purchases and convertible-debt mechanics, pair it with our <a href="/market-cap-calculator/">market cap calculator</a> to sanity-check the inputs.`
         ],
         inputs: [
-          `Company Market Cap (USD) and BTC Holdings are required, along with BTC Price, these three drive the headline mNAV multiple. Total Debt (optional) feeds the Enterprise NAV view; Shares Outstanding (optional) unlocks the per-share rows. Four quick scenario chips (Pure NAV 1.0×, Healthy Premium, High Premium, Discount to NAV) and company presets for MSTR, MetaPlanet and Semler load approximate May 2026 figures you should verify against live data before trading.`,
+          `Company Market Cap (USD) and BTC Holdings are required, along with BTC Price, these three drive the headline mNAV multiple. Total Debt (optional) feeds the Enterprise NAV view; Shares Outstanding (optional) unlocks the per-share rows. Four quick scenario chips (Pure NAV 1.0×, Healthy Premium, High Premium, Discount to NAV) and company presets for MSTR, MetaPlanet and Strive (which absorbed Semler) load an approximate 13 October 2026 snapshot you should verify against live data before trading.`,
           `Treasury stocks routinely trade above NAV because investors price in expected accretion, more BTC per share from future raises, so a 2–3× mNAV is common, not automatically irrational. The model treats holdings and price as a snapshot, so re-run it whenever BTC moves or the company reports new buys. To frame the position against a plain spot purchase, compare with our <a href="/what-if/">what-if calculator</a>; the deposit math here is an estimate from reported state, not audited filings.`
         ],
       },
       es: {
-        quickAnswer: `Divide la capitalización de una empresa tesorería de Bitcoin entre el valor en dólares de sus BTC para obtener el mNAV. Ejemplo: MicroStrategy con $95.000M de capitalización y 440.000 BTC a $77.300 tiene un BTC NAV de $34.010M, así que el mNAV = 2,79×, una prima del +179%, unos $60.990M valorados por encima de las propias monedas.`,
+        quickAnswer: `Divide la capitalización de una empresa tesorería de Bitcoin entre el valor en dólares de sus BTC para obtener el mNAV. Ejemplo: Strategy (MSTR) con $62.900M de capitalización y 848.250 BTC a $83.600 tiene un BTC NAV de unos $70.900M, así que el mNAV ≈ 0,89×: un descuento de ~11% frente a las propias monedas (foto del 13 oct 2026). A finales de 2024 la misma acción cotizaba cerca de 2,8×.`,
         how: [
           `Esta calculadora de mNAV mide cuánta prima o descuento aplica el mercado a una acción tesorería de Bitcoin como MicroStrategy, MetaPlanet o Semler Scientific frente al Bitcoin que posee. Calcula el BTC NAV como tenencias por precio de BTC, y luego mNAV = capitalización dividida entre BTC NAV. Un mNAV de 1,0× significa que la acción cotiza justo al valor de sus monedas; por encima de 1,5× es prima, por debajo de 1,0× es descuento. El porcentaje de prima es (mNAV − 1) × 100 y el importe de prima es la diferencia en dólares.`,
           `Si añades la deuda total, también muestra el Enterprise NAV (BTC NAV menos deuda) y un mNAV empresarial, más estricto porque el apalancamiento reduce la base de activos. Con las acciones en circulación deriva el BTC por acción, el precio por acción (capitalización ÷ acciones) y el precio de BTC implícito en cada acción. La herramienta ignora a propósito el negocio operativo, las compras futuras y la deuda convertible — combínala con nuestra <a href="/market-cap-calculator/">calculadora de capitalización</a> para verificar los datos.`
         ],
         inputs: [
-          `La Capitalización (USD) y las Tenencias de BTC son obligatorias, junto con el Precio de BTC — estos tres impulsan el múltiplo mNAV principal. La Deuda Total (opcional) alimenta la vista de Enterprise NAV; las Acciones en Circulación (opcional) habilitan las filas por acción. Cuatro escenarios rápidos (NAV puro 1,0×, prima saludable, prima alta, descuento sobre NAV) y presets de MSTR, MetaPlanet y Semler cargan cifras aproximadas de mayo de 2026 que debes verificar con datos en vivo.`,
+          `La Capitalización (USD) y las Tenencias de BTC son obligatorias, junto con el Precio de BTC — estos tres impulsan el múltiplo mNAV principal. La Deuda Total (opcional) alimenta la vista de Enterprise NAV; las Acciones en Circulación (opcional) habilitan las filas por acción. Cuatro escenarios rápidos (NAV puro 1,0×, prima saludable, prima alta, descuento sobre NAV) y presets de MSTR, MetaPlanet y Strive (que absorbió a Semler) cargan una foto aproximada del 13 de octubre de 2026 que debes verificar con datos en vivo.`,
           `Las acciones tesorería suelen cotizar por encima del NAV porque los inversores descuentan acreción esperada — más BTC por acción de futuras emisiones — así que un mNAV de 2–3× es común, no irracional por sí mismo. El modelo trata tenencias y precio como una instantánea, así que vuelve a ejecutarlo cuando el BTC se mueva o la empresa anuncie compras. Para comparar la posición con una compra spot simple, usa nuestra <a href="/what-if/">calculadora what-if</a>; el cálculo aquí es una estimación del estado reportado, no de informes auditados.`
         ],
       },
       pt: {
-        quickAnswer: `Divida o valor de mercado de uma empresa tesouraria de Bitcoin pelo valor em dólares dos seus BTC para obter o mNAV. Exemplo: a MicroStrategy com $95B de valor de mercado e 440.000 BTC a $77.300 tem um BTC NAV de $34,01B, logo mNAV = 2,79× — um prêmio de +179%, cerca de $60,99B precificados acima das próprias moedas.`,
+        quickAnswer: `Divida o valor de mercado de uma empresa tesouraria de Bitcoin pelo valor em dólares dos seus BTC para obter o mNAV. Exemplo: a Strategy (MSTR) com $62,9B de valor de mercado e 848.250 BTC a $83.600 tem um BTC NAV de cerca de $70,9B, logo mNAV ≈ 0,89× — um desconto de ~11% sobre as próprias moedas (retrato de 13 out 2026). No fim de 2024 a mesma ação negociava perto de 2,8×.`,
         how: [
           `Esta calculadora de mNAV mede quanto prêmio ou desconto o mercado aplica a uma ação tesouraria de Bitcoin como MicroStrategy, MetaPlanet ou Semler Scientific frente ao Bitcoin que ela detém. Calcula o BTC NAV como participações vezes preço do BTC e então mNAV = valor de mercado dividido pelo BTC NAV. Um mNAV de 1,0× significa que a ação negocia exatamente ao valor das moedas; acima de 1,5× é prêmio, abaixo de 1,0× é desconto. O percentual de prêmio é (mNAV − 1) × 100 e o valor do prêmio é a diferença em dólares.`,
           `Se você adicionar a dívida total, ela também mostra o Enterprise NAV (BTC NAV menos dívida) e um mNAV empresarial, mais rigoroso porque a alavancagem reduz a base de ativos. Com ações em circulação deriva o BTC por ação, o preço por ação (valor de mercado ÷ ações) e o preço de BTC implícito em cada ação. A ferramenta ignora de propósito o negócio operacional, compras futuras e dívida conversível — combine com nossa <a href="/market-cap-calculator/">calculadora de valor de mercado</a> para conferir os dados.`
         ],
         inputs: [
-          `O Valor de Mercado (USD) e as Participações em BTC são obrigatórios, junto com o Preço do BTC — esses três impulsionam o múltiplo mNAV principal. A Dívida Total (opcional) alimenta a visão de Enterprise NAV; as Ações em Circulação (opcional) liberam as linhas por ação. Quatro cenários rápidos (NAV puro 1,0×, prêmio saudável, prêmio alto, desconto sobre NAV) e presets de MSTR, MetaPlanet e Semler carregam números aproximados de maio de 2026 que você deve verificar com dados ao vivo.`,
+          `O Valor de Mercado (USD) e as Participações em BTC são obrigatórios, junto com o Preço do BTC — esses três impulsionam o múltiplo mNAV principal. A Dívida Total (opcional) alimenta a visão de Enterprise NAV; as Ações em Circulação (opcional) liberam as linhas por ação. Quatro cenários rápidos (NAV puro 1,0×, prêmio saudável, prêmio alto, desconto sobre NAV) e presets de MSTR, MetaPlanet e Strive (que absorveu a Semler) carregam um retrato aproximado de 13 de outubro de 2026 que você deve verificar com dados ao vivo.`,
           `Ações tesouraria frequentemente negociam acima do NAV porque os investidores precificam acreção esperada — mais BTC por ação de futuras emissões — então um mNAV de 2–3× é comum, não automaticamente irracional. O modelo trata participações e preço como um instantâneo, então execute-o de novo quando o BTC se mover ou a empresa relatar compras. Para enquadrar a posição contra uma compra spot simples, use nossa <a href="/what-if/">calculadora what-if</a>; o cálculo aqui é uma estimativa do estado reportado, não de relatórios auditados.`
         ],
       },
       tr: {
-        quickAnswer: `Bir Bitcoin hazine şirketinin piyasa değerini elindeki BTC'nin dolar değerine bölerek mNAV'ı bulun. Örnek: 95 milyar dolar piyasa değerine ve 77.300 dolardan 440.000 BTC'ye sahip MicroStrategy'nin BTC NAV'ı 34,01 milyar dolardır, yani mNAV = 2,79× — yüzde 179 prim, yani coinlerin kendi değerinin yaklaşık 60,99 milyar dolar üzerinde fiyatlanan değer.`,
+        quickAnswer: `Bir Bitcoin hazine şirketinin piyasa değerini elindeki BTC'nin dolar değerine bölerek mNAV'ı bulun. Örnek: 62,9 milyar dolar piyasa değerine ve 83.600 dolardan 848.250 BTC'ye sahip Strategy'nin (MSTR) BTC NAV'ı yaklaşık 70,9 milyar dolardır, yani mNAV ≈ 0,89× — coinlerin kendisine göre yaklaşık yüzde 11 iskonto (13 Ekim 2026 görüntüsü). 2024 sonunda aynı hisse 2,8× civarında işlem görüyordu.`,
         how: [
           `Bu mNAV hesaplayıcısı, MicroStrategy, MetaPlanet veya Semler Scientific gibi bir Bitcoin hazine hissesine piyasanın sahip olduğu Bitcoin'e kıyasla ne kadar prim veya iskonto verdiğini ölçer. BTC NAV'ı varlıklar çarpı BTC fiyatı olarak hesaplar, ardından mNAV = piyasa değeri bölü BTC NAV. 1,0× mNAV, hissenin tam olarak coinlerinin değerinden işlem gördüğü anlamına gelir; 1,5× üzeri primdir, 1,0× altı iskontodur. Prim yüzdesi (mNAV − 1) × 100, prim tutarı ise dolar farkıdır.`,
           `Toplam borcu eklerseniz, kaldıraç net varlık tabanını küçülttüğü için daha katı olan Enterprise NAV'ı (BTC NAV eksi borç) ve bir kurumsal mNAV'ı da gösterir. Dolaşımdaki hisselerle hisse başına BTC'yi, hisse fiyatını (piyasa değeri ÷ hisse) ve her hisseye gömülü ima edilen BTC fiyatını türetir. Araç işletme değerini, gelecekteki coin alımlarını ve dönüştürülebilir borç mekaniğini bilerek göz ardı eder — girdileri doğrulamak için <a href="/market-cap-calculator/">piyasa değeri hesaplayıcımızla</a> birlikte kullanın.`
         ],
         inputs: [
-          `Şirket Piyasa Değeri (USD) ve BTC Varlıkları, BTC Fiyatı ile birlikte zorunludur — bu üçü ana mNAV katsayısını belirler. Toplam Borç (isteğe bağlı) Enterprise NAV görünümünü besler; Dolaşımdaki Hisseler (isteğe bağlı) hisse başına satırları açar. Dört hızlı senaryo (Saf NAV 1,0×, Sağlıklı Prim, Yüksek Prim, NAV'a İskonto) ve MSTR, MetaPlanet, Semler için hazır ayarlar, işlem yapmadan önce canlı verilerle doğrulamanız gereken yaklaşık Mayıs 2026 rakamlarını yükler.`,
+          `Şirket Piyasa Değeri (USD) ve BTC Varlıkları, BTC Fiyatı ile birlikte zorunludur — bu üçü ana mNAV katsayısını belirler. Toplam Borç (isteğe bağlı) Enterprise NAV görünümünü besler; Dolaşımdaki Hisseler (isteğe bağlı) hisse başına satırları açar. Dört hızlı senaryo (Saf NAV 1,0×, Sağlıklı Prim, Yüksek Prim, NAV'a İskonto) ve MSTR, MetaPlanet ve Strive (Semler'i bünyesine kattı) için hazır ayarlar, işlem yapmadan önce canlı verilerle doğrulamanız gereken yaklaşık 13 Ekim 2026 görüntüsünü yükler.`,
           `Hazine hisseleri genellikle NAV'ın üzerinde işlem görür çünkü yatırımcılar beklenen artışı — gelecekteki ihraçlardan hisse başına daha fazla BTC — fiyatlar, yani 2–3× mNAV yaygındır, otomatik olarak mantıksız değildir. Model varlıkları ve fiyatı bir anlık görüntü olarak ele alır, bu yüzden BTC hareket ettiğinde veya şirket yeni alımları açıkladığında yeniden çalıştırın. Pozisyonu düz bir spot alımla karşılaştırmak için <a href="/what-if/">what-if hesaplayıcımızı</a> kullanın; buradaki hesap, denetlenmiş raporlardan değil, raporlanan durumdan bir tahmindir.`
         ],
       },
       hi: {
-        quickAnswer: `किसी बिटकॉइन ट्रेजरी कंपनी के मार्केट कैप को उसके BTC के डॉलर मूल्य से भाग देकर mNAV निकालें। उदाहरण: $95B मार्केट कैप वाली और $77,300 पर 440,000 BTC रखने वाली MicroStrategy का BTC NAV $34.01B है, तो mNAV = 2.79× — यानी +179% प्रीमियम, या कॉइन के अपने मूल्य से ऊपर लगभग $60.99B।`,
+        quickAnswer: `किसी बिटकॉइन ट्रेजरी कंपनी के मार्केट कैप को उसके BTC के डॉलर मूल्य से भाग देकर mNAV निकालें। उदाहरण: $62.9B मार्केट कैप वाली और $83,600 पर 848,250 BTC रखने वाली Strategy (MSTR) का BTC NAV लगभग $70.9B है, तो mNAV ≈ 0.89× — यानी कॉइन के अपने मूल्य पर ~11% डिस्काउंट (13 अक्टूबर 2026 का स्नैपशॉट)। 2024 के अंत में यही स्टॉक लगभग 2.8× पर ट्रेड करता था।`,
         how: [
           `यह mNAV कैलकुलेटर मापता है कि बाजार MicroStrategy, MetaPlanet या Semler Scientific जैसे बिटकॉइन ट्रेजरी स्टॉक पर उसके पास मौजूद बिटकॉइन की तुलना में कितना प्रीमियम या डिस्काउंट लगाता है। यह BTC NAV को होल्डिंग्स गुणा BTC कीमत के रूप में निकालता है, फिर mNAV = मार्केट कैप भाग BTC NAV। 1.0× का mNAV मतलब स्टॉक ठीक अपने कॉइन के मूल्य पर ट्रेड हो रहा है; 1.5× से ऊपर प्रीमियम, 1.0× से नीचे डिस्काउंट है। प्रीमियम प्रतिशत (mNAV − 1) × 100 है और प्रीमियम राशि डॉलर का अंतर है।`,
           `अगर आप कुल कर्ज जोड़ते हैं, तो यह Enterprise NAV (BTC NAV माइनस कर्ज) और एक एंटरप्राइज mNAV भी दिखाता है, जो सख्त है क्योंकि लीवरेज शुद्ध संपत्ति आधार को घटाता है। शेयर आउटस्टैंडिंग के साथ यह प्रति शेयर BTC, शेयर कीमत (मार्केट कैप ÷ शेयर) और हर शेयर में निहित BTC कीमत निकालता है। टूल जानबूझकर ऑपरेटिंग बिजनेस, भविष्य की खरीद और कन्वर्टिबल कर्ज को नजरअंदाज करता है — इनपुट जांचने के लिए हमारे <a href="/market-cap-calculator/">मार्केट कैप कैलकुलेटर</a> के साथ इस्तेमाल करें।`
         ],
         inputs: [
-          `कंपनी मार्केट कैप (USD) और BTC होल्डिंग्स अनिवार्य हैं, BTC कीमत के साथ — ये तीनों मुख्य mNAV मल्टिपल चलाते हैं। कुल कर्ज (वैकल्पिक) Enterprise NAV दृश्य को फीड करता है; शेयर आउटस्टैंडिंग (वैकल्पिक) प्रति-शेयर पंक्तियों को खोलता है। चार त्वरित परिदृश्य (शुद्ध NAV 1.0×, स्वस्थ प्रीमियम, उच्च प्रीमियम, NAV पर डिस्काउंट) और MSTR, MetaPlanet, Semler के प्रीसेट मई 2026 के अनुमानित आंकड़े लोड करते हैं जिन्हें ट्रेडिंग से पहले लाइव डेटा से जांचें।`,
+          `कंपनी मार्केट कैप (USD) और BTC होल्डिंग्स अनिवार्य हैं, BTC कीमत के साथ — ये तीनों मुख्य mNAV मल्टिपल चलाते हैं। कुल कर्ज (वैकल्पिक) Enterprise NAV दृश्य को फीड करता है; शेयर आउटस्टैंडिंग (वैकल्पिक) प्रति-शेयर पंक्तियों को खोलता है। चार त्वरित परिदृश्य (शुद्ध NAV 1.0×, स्वस्थ प्रीमियम, उच्च प्रीमियम, NAV पर डिस्काउंट) और MSTR, MetaPlanet और Strive (जिसने Semler को समाहित किया) के प्रीसेट 13 अक्टूबर 2026 का अनुमानित स्नैपशॉट लोड करते हैं जिन्हें ट्रेडिंग से पहले लाइव डेटा से जांचें।`,
           `ट्रेजरी स्टॉक अक्सर NAV से ऊपर ट्रेड होते हैं क्योंकि निवेशक अपेक्षित एक्रीशन को कीमत में लेते हैं — भविष्य की इश्यू से प्रति शेयर अधिक BTC — इसलिए 2–3× mNAV आम है, अपने आप में अतार्किक नहीं। मॉडल होल्डिंग्स और कीमत को एक स्नैपशॉट मानता है, इसलिए जब BTC बदले या कंपनी नई खरीद बताए तो इसे फिर से चलाएं। पोजीशन को सीधी स्पॉट खरीद के मुकाबले देखने के लिए हमारे <a href="/what-if/">what-if कैलकुलेटर</a> का उपयोग करें; यहां का गणित रिपोर्ट की गई स्थिति से अनुमान है, ऑडिट की गई फाइलिंग से नहीं।`
         ],
       },
       ru: {
-        quickAnswer: `Разделите рыночную капитализацию биткоин-казначейской компании на долларовую стоимость её BTC, чтобы получить mNAV. Пример: MicroStrategy с капитализацией $95 млрд и 440 000 BTC по $77 300 имеет BTC NAV $34,01 млрд, значит mNAV = 2,79× — премия +179%, или около $60,99 млрд стоимости, заложенной сверх самих монет.`,
+        quickAnswer: `Разделите рыночную капитализацию биткоин-казначейской компании на долларовую стоимость её BTC, чтобы получить mNAV. Пример: Strategy (MSTR) с капитализацией $62,9 млрд и 848 250 BTC по $83 600 имеет BTC NAV около $70,9 млрд, значит mNAV ≈ 0,89× — дисконт ~11% к самим монетам (снимок на 13 октября 2026). В конце 2024 года та же акция торговалась около 2,8×.`,
         how: [
           `Этот калькулятор mNAV показывает, какую премию или дисконт рынок присваивает биткоин-казначейской акции вроде MicroStrategy, MetaPlanet или Semler Scientific по сравнению с принадлежащим ей биткоином. Он считает BTC NAV как количество монет умножить на цену BTC, затем mNAV = капитализация делить на BTC NAV. mNAV 1,0× означает, что акция торгуется ровно по стоимости монет; выше 1,5× — премия, ниже 1,0× — дисконт. Процент премии равен (mNAV − 1) × 100, а сумма премии — это долларовая разница.`,
           `Если добавить общий долг, он также показывает Enterprise NAV (BTC NAV минус долг) и корпоративный mNAV, который строже, потому что кредитное плечо сокращает чистую базу активов. С числом акций в обращении он выводит BTC на акцию, цену акции (капитализация ÷ акции) и подразумеваемую цену BTC, заложенную в каждую акцию. Инструмент намеренно игнорирует операционный бизнес, будущие покупки монет и конвертируемый долг — используйте вместе с нашим <a href="/market-cap-calculator/">калькулятором рыночной капитализации</a>, чтобы проверить вводимые данные.`
         ],
         inputs: [
-          `Рыночная капитализация компании (USD) и Запасы BTC обязательны, вместе с Ценой BTC — эти три значения формируют основной множитель mNAV. Общий долг (необязательно) питает представление Enterprise NAV; Акции в обращении (необязательно) открывают строки на акцию. Четыре быстрых сценария (Чистый NAV 1,0×, Здоровая премия, Высокая премия, Дисконт к NAV) и пресеты MSTR, MetaPlanet и Semler загружают приблизительные цифры на май 2026, которые перед торговлей следует сверить с актуальными данными.`,
+          `Рыночная капитализация компании (USD) и Запасы BTC обязательны, вместе с Ценой BTC — эти три значения формируют основной множитель mNAV. Общий долг (необязательно) питает представление Enterprise NAV; Акции в обращении (необязательно) открывают строки на акцию. Четыре быстрых сценария (Чистый NAV 1,0×, Здоровая премия, Высокая премия, Дисконт к NAV) и пресеты MSTR, MetaPlanet и Strive (поглотившей Semler) загружают приблизительный снимок на 13 октября 2026 года, которые перед торговлей следует сверить с актуальными данными.`,
           `Казначейские акции часто торгуются выше NAV, потому что инвесторы закладывают ожидаемую аккрецию — больше BTC на акцию от будущих эмиссий — поэтому mNAV 2–3× обычен и сам по себе не иррационален. Модель рассматривает запасы и цену как моментальный снимок, поэтому пересчитывайте при движении BTC или объявлении новых покупок. Чтобы сопоставить позицию с обычной спотовой покупкой, используйте наш <a href="/what-if/">what-if калькулятор</a>; расчёт здесь — это оценка из заявленного состояния, а не из аудированной отчётности.`
         ],
       },

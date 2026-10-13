@@ -94,12 +94,16 @@ const COUNTRIES: Record<string, CountryConfig> = {
         shortTermLabel: 'Capital gains (50% inclusion)',
         longTermLabel: 'Capital gains (50% inclusion)',
         longTermThreshold: 'N/A (no holding period benefit)',
+        // 2026 federal brackets (CRA "Tax rates and income brackets — current year", read 2026-10-13;
+        // cross-checked on taxtips.ca) x 50% inclusion. The lowest federal rate fell 15% -> 14% on
+        // 1 Jul 2025 (14.5% blended for 2025), so the first band is 7%, not 7.5%. Federal only —
+        // provincial tax is not modelled. Until 2026-10-13 these were a mix of 2022/2024 thresholds.
         brackets: [
-            { label: 'C$0 – C$55,867', shortTermRate: 7.5, longTermRate: 7.5 },
-            { label: 'C$55,868 – C$111,733', shortTermRate: 10.25, longTermRate: 10.25 },
-            { label: 'C$111,734 – C$154,906', shortTermRate: 13, longTermRate: 13 },
-            { label: 'C$154,907 – C$220,000', shortTermRate: 14.5, longTermRate: 14.5 },
-            { label: 'C$220,001+', shortTermRate: 16.5, longTermRate: 16.5 },
+            { label: 'C$0 – C$58,523', shortTermRate: 7, longTermRate: 7 },
+            { label: 'C$58,524 – C$117,045', shortTermRate: 10.25, longTermRate: 10.25 },
+            { label: 'C$117,046 – C$181,440', shortTermRate: 13, longTermRate: 13 },
+            { label: 'C$181,441 – C$258,482', shortTermRate: 14.5, longTermRate: 14.5 },
+            { label: 'C$258,483+', shortTermRate: 16.5, longTermRate: 16.5 },
         ],
         notes: 'Canada: 50% of all capital gains are taxable (the proposed 66.67% inclusion above C$250K was cancelled in 2025 and never enacted). No distinction by holding period.',
     },

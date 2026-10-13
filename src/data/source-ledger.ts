@@ -37,6 +37,9 @@ const GOV_HOSTS = [
   'gesetze-im-internet.de', 'belastingdienst.nl', 'planalto.gov.br',
   'laws-lois.justice.gc.ca', 'agenciatributaria', 'portaldasfinancas',
   'canada.ca', 'hmrc.', 'nta.go.jp',
+  // French (bofip.impots.gouv.fr) and Austrian (ris.bka.gv.at) official hosts do not contain '.gov',
+  // so BOFiP and the RIS statute database rendered as 'secondary guide' until 2026-10-13.
+  '.gouv.fr', '.gv.at',
 ];
 const PROTOCOL_HOSTS = [
   'github.com/bitcoin', 'zips.z.cash', 'ecips.ethereumclassic.org', 'docs.dash.org',

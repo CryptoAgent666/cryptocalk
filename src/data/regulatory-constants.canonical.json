@@ -343,19 +343,20 @@
       "value": 15000000,
       "unit": "USD",
       "jurisdiction": "US",
-      "law": "US federal estate tax exemption (disclaimer text — stale 2023 figure)",
+      "law": "US federal estate tax basic exclusion (disclaimer text)",
       "theme": "inheritance_tax",
       "is_regulatory": true,
       "surfaces": [
         "src/components/CryptoInheritanceCalculator.tsx:262"
       ],
-      "last_updated_hint": "2026-07-06",
+      "last_updated_hint": "2026-10-13",
       "source_hint": "IRS",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4).",
+      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). | 2026-10-13: label no longer reads \"stale 2023 figure\" (it was rendered on the live page in the \"Where these numbers come from\" table). Re-read IR (TY2026 inflation adjustments incl. OBBBA): \"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\"; annual gift exclusion remains $19,000.",
       "official_value": "15000000",
-      "source_url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill"
+      "source_url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+      "verified_date": "2026-10-13"
     },
     {
       "id": "DustAttackCalculator__avgDustSats (default)",
@@ -551,7 +552,7 @@
       "source_hint": "Bitcoin protocol; halving = every 210,000 blocks. Block heights & rewards verifiable on any block explorer.",
       "conflict": false,
       "status": "current",
-      "notes": "Full historical halving table: block heights (210k/420k/630k/840k = every 210,000 blocks), dates, and reward-before/reward-after each era (50->25->12.5->6.25->3.125). These block heights and reward values are hard consensus facts. NOTE: the priceAtHalving / priceAfter6m/12m/18m fields on each row are MARKET history (e.g. 2024: $64k at halving) and are not regulatory; only block, date, rewardBefore, rewardAfter are consensus.",
+      "notes": "Full historical halving table: block heights (210k/420k/630k/840k = every 210,000 blocks), dates, and reward-before/reward-after each era (50->25->12.5->6.25->3.125). These block heights and reward values are hard consensus facts. NOTE: the priceAtHalving / priceAfter6m/12m/18m fields on each row are MARKET history (e.g. 2024: $64k at halving) and are not regulatory; only block, date, rewardBefore, rewardAfter are consensus. | 2026-10-13: post-halving PRICE columns in the component corrected (Binance BTCUSDT daily close UTC, cross-checked mempool.space/CoinGecko): #2 +18m 6,000→14,400; #3 +6m 19,000→15,700, +12m 58,000→56,700, +18m 30,000→64,800; #4 +6m 67,000→69,000, +12m 100,000→85,200, +18m 84,000→110,500. Block heights/rewards (this record's value) unchanged.",
       "source_url": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/validation.cpp"
     },
     {
@@ -1059,7 +1060,7 @@
       "value": "progressive 15/17.5/20/22.5 by disposal band (R$35k/month exempt)",
       "unit": "percent",
       "jurisdiction": "BR",
-      "law": "Brazil 2026 crypto tax reform (flat rate on crypto gains)",
+      "law": "Brazil — capital gains on crypto, progressive 15–22.5% (Lei 8.981/1995 art. 21; MP 1303 flat 17.5% rejected Oct 2025)",
       "theme": "capital_gains",
       "is_regulatory": true,
       "surfaces": [
@@ -1069,9 +1070,9 @@
       "source_hint": "Receita Federal Brazil",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 17.5% flat (MP1303) rejected Oct 2025; reverted to progressive 15–22.5% + R$35k/mo exemption. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: progressive 15%–22.5%",
+      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 17.5% flat (MP1303) rejected Oct 2025; reverted to progressive 15–22.5% + R$35k/mo exemption. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: progressive 15%–22.5% | 2026-10-13: law label still described the REJECTED flat-rate reform and the source pointed at a dead newsletter (SSL-fail) — the monitor was repointed to planalto l8981 on 2026-08-19 but this ledger row never was; /methodology/ rendered the wrong headline. Value unchanged; verified_date left as recorded (no fresh read today).",
       "official_value": "progressive 15/17.5/20/22.5 by disposal band (R$35k/month exempt)",
-      "source_url": "https://newsletter.brazilcrypto.io/p/211-congress-strikes-down-controversial",
+      "source_url": "https://www.planalto.gov.br/ccivil_03/leis/l8981.htm",
       "official_source": "lbm-legal.com.br (MP1303 expiration); orbitax.com; ey.com tax alert",
       "verified_date": "2026-07-08",
       "verify_method": "tier2-llm"
@@ -1080,22 +1081,23 @@
       "id": "TaxCalculator__ca.brackets",
       "calculator": "TaxCalculator",
       "key": "ca.brackets",
-      "value": "[{'label': 'C$0 – C$55,867', 'shortTermRate': 7.5, 'longTermRate': 7.5}, {'label': 'C$55,868 – C$111,733', 'shortTermRate': 10.25, 'longTermRate': 10.25}, {'label': 'C$111,734 – C$154,906', 'shortTermRate': 13, 'longTermRate': 13}, {'label': 'C$154,907 – C$220,000', 'shortTermRate': 14.5, 'longTermRate': 14.5}, {'label': 'C$220,001+', 'shortTermRate': 16.5, 'longTermRate': 16.5}]",
+      "value": "[{'label': 'C$0 – C$58,523', 'shortTermRate': 7, 'longTermRate': 7}, {'label': 'C$58,524 – C$117,045', 'shortTermRate': 10.25, 'longTermRate': 10.25}, {'label': 'C$117,046 – C$181,440', 'shortTermRate': 13, 'longTermRate': 13}, {'label': 'C$181,441 – C$258,482', 'shortTermRate': 14.5, 'longTermRate': 14.5}, {'label': 'C$258,483+', 'shortTermRate': 16.5, 'longTermRate': 16.5}]",
       "unit": "percent_by_income_bracket",
       "jurisdiction": "CA",
-      "law": "Income Tax Act — capital gains 50% inclusion rate (66.67% above C$250K from 2026)",
+      "law": "Income Tax Act — 2026 federal brackets × 50% capital-gains inclusion (66.67% tier cancelled 21 Mar 2025)",
       "theme": "capital_gains",
       "is_regulatory": true,
       "surfaces": [
         "src/components/TaxCalculator.tsx:97-103"
       ],
-      "last_updated_hint": "2026-06-23",
+      "last_updated_hint": "2026-10-13",
       "source_hint": "CRA",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 66.67% inclusion cancelled Mar 2025; 50% on all gains. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: marginal federal rates at the 50% inclusion rate (15/20.5/26/29/33 -> 7.5/10.25/13/14.5/16.5); no 66.67% tier — it was cancelled in 2025",
-      "official_value": "[{'label': 'C$0 – C$55,867', 'shortTermRate': 7.5, 'longTermRate': 7.5}, {'label': 'C$55,868 – C$111,733', 'shortTermRate': 10.25, 'longTermRate': 10.25}, {'label': 'C$111,734 – C$154,906', 'shortTermRate': 13, 'longTermRate': 13}, {'label': 'C$154,907 – C$220,000', 'shortTermRate': 14.5, 'longTermRate': 14.5}, {'label': 'C$220,001+', 'shortTermRate': 16.5, 'longTermRate': 16.5}]",
-      "source_url": "https://www.canada.ca/en/department-finance/news/2025/01/government-of-canada-announces-deferral-in-implementation-of-change-to-capital-gains-inclusion-rate.html"
+      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 66.67% inclusion cancelled Mar 2025; 50% on all gains. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: marginal federal rates at the 50% inclusion rate (15/20.5/26/29/33 -> 7.5/10.25/13/14.5/16.5); no 66.67% tier — it was cancelled in 2025 | 2026-10-13 STALE→FIXED in TaxCalculator.tsx: thresholds were a mix of 2022/2024 values (55,867 / 111,733 / 154,906 / 220,000) and the first band 7.5% (15%×50%). CRA current-year table (read via r.jina.ai; canada.ca blocks direct fetch) = 14% to $58,523 / 20.5% to $117,045 / 26% to $181,440 / 29% to $258,482 / 33%; taxtips.ca agrees (lists 29.29% for the 4th band = effective incl. BPA phase-out; statutory 29%). Lowest rate cut 15%→14% from 1 Jul 2025 (14.5% blended 2025). ×50% → 7 / 10.25 / 13 / 14.5 / 16.5. Federal only.",
+      "official_value": "[{'label': 'C$0 – C$58,523', 'shortTermRate': 7, 'longTermRate': 7}, {'label': 'C$58,524 – C$117,045', 'shortTermRate': 10.25, 'longTermRate': 10.25}, {'label': 'C$117,046 – C$181,440', 'shortTermRate': 13, 'longTermRate': 13}, {'label': 'C$181,441 – C$258,482', 'shortTermRate': 14.5, 'longTermRate': 14.5}, {'label': 'C$258,483+', 'shortTermRate': 16.5, 'longTermRate': 16.5}]",
+      "source_url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html",
+      "verified_date": "2026-10-13"
     },
     {
       "id": "TaxCalculator__ca.capital_gains_inclusion_rate",
@@ -1116,11 +1118,11 @@
       "source_hint": "CRA",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). Only {standard:50}; above-250k tier dropped. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded.",
+      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). Only {standard:50}; above-250k tier dropped. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. | 2026-10-13: source repointed from the Jan-2025 deferral press release (pre-cancellation) to ITA s.38 itself, matching the monitor (2026-08-19).",
       "official_value": {
         "standard": 50
       },
-      "source_url": "https://www.canada.ca/en/department-finance/news/2025/01/government-of-canada-announces-deferral-in-implementation-of-change-to-capital-gains-inclusion-rate.html"
+      "source_url": "https://laws-lois.justice.gc.ca/eng/acts/i-3.3/section-38.html"
     },
     {
       "id": "TaxCalculator__ch.private_investor_rate",
@@ -1752,7 +1754,7 @@
       "source_hint": "whattomine difficulty (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Per-coin fallback difficulties ('updated 2026-05-03'). Auto-adjusting market metric, not consensus. is_regulatory=false."
+      "notes": "Per-coin fallback difficulties ('updated 2026-05-03'). Auto-adjusting market metric, not consensus. is_regulatory=false. | 2026-10-13 calkcheck: these fallbacks are what EVERY visitor sees — both CORS proxies of the live whattomine path are dead (api.codetabs.com times out after 20 s; corsproxy.io answers 403 keyless_legacy_url). Live on 2026-10-13: BTC difficulty 132.7T, price ~$83,500 (vs 145T / $77,300 here). Not refreshed in this pass; needs a server-side proxy or a dated-snapshot refresh."
     },
     {
       "id": "AsicMiningCalculator__NETWORK_DATA.*.price",
@@ -1771,7 +1773,7 @@
       "source_hint": "whattomine exchange_rate / CoinGecko (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Per-coin fallback USD prices. Market data — is_regulatory=false."
+      "notes": "Per-coin fallback USD prices. Market data — is_regulatory=false. | 2026-10-13 calkcheck: these fallbacks are what EVERY visitor sees — both CORS proxies of the live whattomine path are dead (api.codetabs.com times out after 20 s; corsproxy.io answers 403 keyless_legacy_url). Live on 2026-10-13: BTC difficulty 132.7T, price ~$83,500 (vs 145T / $77,300 here). Not refreshed in this pass; needs a server-side proxy or a dated-snapshot refresh."
     },
     {
       "id": "BitcoinEnergyCalculator__CO2_PER_KWH",
@@ -1877,8 +1879,8 @@
       "id": "HalvingCalculator__NETWORK_HASHRATE_THS",
       "calculator": "HalvingCalculator",
       "key": "NETWORK_HASHRATE_THS",
-      "value": "856000000",
-      "unit": "TH/s (=856 EH/s)",
+      "value": "1000000000",
+      "unit": "TH/s (=1,000 EH/s)",
       "jurisdiction": "",
       "law": "Bitcoin network hashrate (market/live)",
       "theme": "network",
@@ -1888,11 +1890,13 @@
         "src/components/HalvingCalculator.tsx:146",
         "src/components/HalvingCalculator.tsx:541"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-10-13",
       "source_hint": "blockchain.com / mempool.space network hashrate (live). Refresh periodically.",
       "conflict": false,
-      "status": "unverified",
-      "notes": "Assumed total network hashrate (856 EH/s) for revenue-share estimation, 'updated 2026-04-18'. Network hashrate is a constantly-moving market metric, NOT a consensus constant — is_regulatory=false."
+      "status": "current",
+      "notes": "Market input for the halving widget revenue estimate. 2026-10-13: 856 EH/s (2026-04-18) -> 1,000 EH/s; mempool.space 3-day average 1,008 EH/s (difficulty 132.7T, +4.9% expected at next retarget). The old value overstated miner revenue ~17%. Assumed total network hashrate (856 EH/s) for revenue-share estimation, 'updated 2026-04-18'. Network hashrate is a constantly-moving market metric, NOT a consensus constant — is_regulatory=false.",
+      "official_value": "1000000000",
+      "verified_date": "2026-10-13"
     },
     {
       "id": "LiquidStakingCalculator__PROTOCOL_DEFAULTS",

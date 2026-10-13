@@ -29,6 +29,9 @@ const ETF_DATA: EtfEntry[] = [
   { ticker: 'ARKB', name: 'ARK 21Shares Bitcoin (BTC)', expenseRatio: 0.0021 },
   { ticker: 'BITB', name: 'Bitwise Bitcoin (BTC)', expenseRatio: 0.0020 },
   { ticker: 'BTCO', name: 'Invesco Galaxy Bitcoin (BTC)', expenseRatio: 0.0025 },
+  // Grayscale's spin-off from GBTC (Jul 2024): 0.15%, the lowest gross fee among US spot BTC ETFs
+  // (Grayscale FWP fact sheet filed with the SEC, 2026). Added 2026-10-13.
+  { ticker: 'BTC', name: 'Grayscale Bitcoin Mini (BTC)', expenseRatio: 0.0015 },
   // ETH ETFs (added 2026-05-04)
   { ticker: 'ETHA', name: 'BlackRock iShares Ethereum (ETH)', expenseRatio: 0.0025 },
   { ticker: 'FETH', name: 'Fidelity Ethereum (ETH)', expenseRatio: 0.0025 },
@@ -98,9 +101,17 @@ function EtfFeeCalculator({ lang = 'en' }: { lang?: string }) {
     });
 
     // Find direct BTC result and GBTC result for comparison
-    const directBtc = etfResults.find(e => e.ticker === 'BTC');
+    // The self-custody row was renamed 'BTC' -> 'BTC-DIRECT' when the ETH funds were added
+    // (2026-05-04); this lookup kept the old ticker, so the hero read $0 until 2026-10-13.
+    const directBtc = etfResults.find(e => e.ticker === 'BTC-DIRECT');
     const gbtc = etfResults.find(e => e.ticker === 'GBTC');
     const savingsVsGbtc = directBtc && gbtc ? gbtc.totalFees : 0;
+
+    // Cheapest spot-BTC fund, computed from the table. It used to be a hardcoded 'BITB (0.20%)',
+    // which silently went false the moment a cheaper fund was listed.
+    const lowestBtcEtf = etfResults
+      .filter(e => !e.ticker.endsWith('-DIRECT') && e.name.endsWith('(BTC)'))
+      .reduce((lo, e) => (e.expenseRatio < lo.expenseRatio ? e : lo));
 
     // Find the max fee for the bar visualization
     const maxFee = Math.max(...etfResults.map(e => e.totalFees), 1);
@@ -108,6 +119,7 @@ function EtfFeeCalculator({ lang = 'en' }: { lang?: string }) {
     return {
       etfResults,
       savingsVsGbtc,
+      lowestBtcEtf,
       maxFee,
       grossFinalValue: invest * Math.pow(1 + grossReturn, years),
     };
@@ -221,7 +233,7 @@ function EtfFeeCalculator({ lang = 'en' }: { lang?: string }) {
                       {results.etfResults.map((etf) => (
                         <tr key={etf.ticker} style={{
                           borderBottom: '1px solid var(--color-border)',
-                          background: etf.ticker === 'BTC' ? 'rgba(16, 185, 129, 0.05)' : etf.ticker === 'GBTC' ? 'rgba(239, 68, 68, 0.05)' : 'transparent',
+                          background: etf.ticker.endsWith('-DIRECT') ? 'rgba(16, 185, 129, 0.05)' : etf.ticker === 'GBTC' ? 'rgba(239, 68, 68, 0.05)' : 'transparent',
                         }}>
                           <td style={{ padding: '8px', fontWeight: 600 }}>
                             {etf.ticker}
@@ -294,7 +306,7 @@ function EtfFeeCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-row">
                   <span className="result-label"><strong>{getUiString(lang, 'Lowest-Fee ETF')}</strong></span>
-                  <span className="result-value"><strong>BITB (0.20%)</strong></span>
+                  <span className="result-value"><strong>{results.lowestBtcEtf.ticker} ({(results.lowestBtcEtf.expenseRatio * 100).toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%)</strong></span>
                 </div>
               </div>
 

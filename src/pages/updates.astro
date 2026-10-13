@@ -19,7 +19,7 @@ const webPageSchema = {
   description: 'See what\'s new on CryptoCalk, new calculators, features, and improvements to our free crypto calculator suite.',
   url: 'https://cryptocalk.com/updates/',
   inLanguage: 'en',
-  dateModified: '2026-10-06T00:00:00+00:00',
+  dateModified: '2026-10-13T00:00:00+00:00',
 };
 ---
 
@@ -37,6 +37,24 @@ const webPageSchema = {
 
     <div class="updates-content">
 
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-10-13">October 13, 2026</time>
+        </div>
+        <h2>Tax, Inheritance, Mining and ETF Pages: Outdated Figures Corrected</h2>
+        <p>We re-read twenty pages line by line and checked every number against its official source. In several places the text below a calculator had fallen behind, even where the calculator itself was already right. Here is what changed:</p>
+        <ul>
+          <li><strong>Canada:</strong> the tax calculator now uses the 2026 federal brackets. The lowest federal rate fell from 15% to 14% in July 2025, so Canadian estimates come out slightly lower.</li>
+          <li><strong>Country tax table:</strong> UK capital gains 18% / 24%, France 31.4%, Italy 33%, Brazil's progressive 15–22.5% (the proposed flat rate was rejected), South Korea's ₩2.5M deduction and the Netherlands' €59,357 threshold now match the calculator.</li>
+          <li><strong>US inheritance:</strong> the federal estate tax exemption is $15 million for 2026 and the annual gift allowance is $19,000. Several answers still quoted 2024 figures.</li>
+          <li><strong>Bitcoin halving:</strong> the price-after-halving table was wrong in five places. For example, eighteen months after the 2024 halving Bitcoin was about $110,000, not $84,000. Mining revenue on that page now uses today's network size (about 1,000 EH/s).</li>
+          <li><strong>ASIC mining:</strong> the text overstated daily profit several times over. It now matches the calculator: an Antminer S21 Pro nets roughly $3–4 a day at 6 cents per kWh.</li>
+          <li><strong>Bitcoin ETF fees:</strong> the "Self-custody saves you" figure always showed $0 because of a bug. That is fixed, and Grayscale's Bitcoin Mini Trust (0.15%) is now listed as the cheapest spot Bitcoin ETF.</li>
+          <li><strong>Lightning:</strong> payments are now compared with a realistic on-chain fee (10 sat/vB) instead of 200 sat/vB, which exaggerated the savings.</li>
+          <li><strong>Strategy (MicroStrategy) mNAV:</strong> the presets now reflect October 2026 (848,250 BTC, trading close to the value of its bitcoin) instead of late-2024 figures.</li>
+        </ul>
+        <p>We also fixed a display problem on many calculator pages where links inside the explanations appeared as raw code. All figures are estimates for general information, not financial or tax advice.</p>
+      </article>
       <article class="update-entry">
         <div class="update-date">
           <time datetime="2026-10-06">October 6, 2026</time>

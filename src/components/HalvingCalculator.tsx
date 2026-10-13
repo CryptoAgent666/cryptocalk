@@ -32,6 +32,9 @@ interface HalvingEvent {
     priceAfter18m: number | null;
 }
 
+// Post-halving prices re-checked 2026-10-13 against Binance BTCUSDT daily closes (UTC) and
+// mempool.space historical prices; CoinGecko agreed on 2025-10-20 ($108.7K at 00:00 UTC). Before that
+// the +18m column read $6,000 / $30,000 / $84,000 and #4 +12m read $100,000 — each off by 2–4x.
 const HALVINGS: HalvingEvent[] = [
     {
         number: 1, block: 210_000, date: 'Nov 28, 2012',
@@ -43,19 +46,19 @@ const HALVINGS: HalvingEvent[] = [
         number: 2, block: 420_000, date: 'Jul 9, 2016',
         timestamp: Date.UTC(2016, 6, 9),
         rewardBefore: 25, rewardAfter: 12.5,
-        priceAtHalving: 650, priceAfter6m: 900, priceAfter12m: 2500, priceAfter18m: 6000,
+        priceAtHalving: 650, priceAfter6m: 900, priceAfter12m: 2500, priceAfter18m: 14400,
     },
     {
         number: 3, block: 630_000, date: 'May 11, 2020',
         timestamp: Date.UTC(2020, 4, 11),
         rewardBefore: 12.5, rewardAfter: 6.25,
-        priceAtHalving: 8600, priceAfter6m: 19000, priceAfter12m: 58000, priceAfter18m: 30000,
+        priceAtHalving: 8600, priceAfter6m: 15700, priceAfter12m: 56700, priceAfter18m: 64800,
     },
     {
         number: 4, block: 840_000, date: 'Apr 20, 2024',
         timestamp: Date.UTC(2024, 3, 20),
         rewardBefore: 6.25, rewardAfter: 3.125,
-        priceAtHalving: 64000, priceAfter6m: 67000, priceAfter12m: 100000, priceAfter18m: 84000,
+        priceAtHalving: 64000, priceAfter6m: 69000, priceAfter12m: 85200, priceAfter18m: 110500,
     },
 ];
 
@@ -66,8 +69,9 @@ const BLOCKS_PER_DAY = 144;
 const REFERENCE_BLOCK = 840_000;
 const REFERENCE_DATE = Date.UTC(2024, 3, 20); // Apr 20 2024
 
-// Simplified network hashrate for revenue estimation (updated 2026-04-18)
-const NETWORK_HASHRATE_THS = 856_000_000; // 856 EH/s in TH/s (updated 2026-04-18)
+// Simplified network hashrate for revenue estimation. 1,000 EH/s ≈ mempool.space 3-day average
+// (1,008 EH/s) on 2026-10-13; was 856 EH/s (2026-04-18), which overstated miner revenue ~17%.
+const NETWORK_HASHRATE_THS = 1_000_000_000; // 1,000 EH/s in TH/s
 const HASHRATE_PRESETS = ['50', '100', '200', '500', '1000'];
 const ELECTRICITY_COST_PRESETS = ['0.04', '0.06', '0.08', '0.10', '0.15'];
 const POWER_PRESETS = ['1800', '2500', '3000', '4500', '6000'];
@@ -538,7 +542,7 @@ function HalvingCalculator({ lang = 'en' }: { lang?: string }) {
                     {/* Disclaimer */}
                     <p className="calc-disclaimer">
                         <Info size={12} />
-                        {getUiString(lang, 'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~856 EH/s network hashrate. Not financial advice.')}
+                        {getUiString(lang, 'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~1,000 EH/s network hashrate. Not financial advice.')}
                     </p>
                 </div>
             </div>

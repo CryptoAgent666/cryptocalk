@@ -493,7 +493,7 @@ const dict: Record<string, string> = {
   'Best Route': 'सर्वश्रेष्ठ रूट',
   'Beta-adjusted exposure': 'बीटा-समायोजित एक्सपोज़र',
   'Bitcoin': 'Bitcoin',
-  'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~856 EH/s network hashrate. Not financial advice.': 'ब्लॉक अनुमान ~10 मिनट/ब्लॉक (144 ब्लॉक/दिन) मानते हैं। वास्तविक हॉल्विंग तिथि भिन्न हो सकती है। माइनिंग राजस्व ~856 EH/s नेटवर्क हैशरेट पर आधारित सरलीकृत अनुमान है। वित्तीय सलाह नहीं।',
+  'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~1,000 EH/s network hashrate. Not financial advice.': 'ब्लॉक अनुमान ~10 मिनट/ब्लॉक (144 ब्लॉक/दिन) मानते हैं। वास्तविक हॉल्विंग तिथि भिन्न हो सकती है। माइनिंग राजस्व ~1,000 EH/s नेटवर्क हैशरेट पर आधारित सरलीकृत अनुमान है। वित्तीय सलाह नहीं।',
   'Block estimates use average intervals (BTC 10 min, ETH 12 sec). Use explorers for exact block mapping.': 'ब्लॉक अनुमान औसत अंतराल (BTC 10 मिनट, ETH 12 सेकंड) का उपयोग करते हैं। सटीक ब्लॉक मैपिंग के लिए एक्सप्लोरर का उपयोग करें।',
   'Blocks Remaining': 'शेष ब्लॉक',
   'Break-Even Period (Realistic)': 'ब्रेक-ईवन अवधि (यथार्थवादी)',

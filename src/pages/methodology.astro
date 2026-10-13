@@ -93,7 +93,7 @@ const datasetSchema = {
 
       <h3>Live market data</h3>
       <p>
-        Prices, network difficulty and mining yields are fetched at page load. Prices come primarily from CoinGecko; mining yields are cross-checked against WhatToMine. Client requests are cached and deduplicated in-browser. These values are as fresh as the upstream API and are never hand-edited.
+        Prices are fetched at page load, primarily from CoinGecko; client requests are cached and deduplicated in-browser, and these values are as fresh as the upstream API. Mining calculators are the exception: their network figures (difficulty, hashrate, block reward) are snapshots maintained by hand, because the live mining feed they were built against is currently unavailable — and the calculator says so on screen when it is using a snapshot.
       </p>
       <ul>
         <li><a href="https://www.coingecko.com/en/api/documentation" target="_blank" rel="nofollow noopener noreferrer">CoinGecko API Documentation</a></li>
@@ -101,7 +101,7 @@ const datasetSchema = {
 
       <h3>Regulatory and protocol constants</h3>
       <p>
-        Tax rates, holding-period thresholds, inheritance allowances and protocol facts cannot come from a price API — they come from law and from consensus rules. CryptoCalk tracks <strong>101 such constants</strong> (79 regulatory across 17 jurisdictions, plus protocol and formula values) in a versioned ledger, each with the primary source it was verified against and the date of that verification.
+        Tax rates, holding-period thresholds, inheritance allowances and protocol facts cannot come from a price API — they come from law and from consensus rules. CryptoCalk tracks <strong>{LEDGER_STATS.total} such constants</strong> ({LEDGER_STATS.regulatory} regulatory across {LEDGER_STATS.jurisdictions} jurisdictions, plus protocol, formula and market values) in a versioned ledger, each with the primary source it was verified against and the date of that verification.
       </p>
       <p>
         The standard is to read the primary source, not a summary of it. Examples of what that means in practice:

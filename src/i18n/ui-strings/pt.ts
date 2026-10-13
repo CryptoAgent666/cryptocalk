@@ -494,7 +494,7 @@ const dict: Record<string, string> = {
   'Best Route': 'Melhor Rota',
   'Beta-adjusted exposure': 'Exposição ajustada por beta',
   'Bitcoin': 'Bitcoin',
-  'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~856 EH/s network hashrate. Not financial advice.': 'As estimativas assumem ~10 min/bloco. A data real pode variar. Receita simplificada baseada em hashrate de rede ~856 EH/s. Não é aconselhamento financeiro.',
+  'Block estimates assume ~10 min/block (144 blocks/day). Actual halving date may vary. Mining revenue is a simplified estimate based on ~1,000 EH/s network hashrate. Not financial advice.': 'As estimativas assumem ~10 min/bloco. A data real pode variar. Receita simplificada baseada em hashrate de rede ~1.000 EH/s. Não é aconselhamento financeiro.',
   'Block estimates use average intervals (BTC 10 min, ETH 12 sec). Use explorers for exact block mapping.': 'Estimativas baseadas em médias (BTC 10 min, ETH 12 s). Use exploradores para mapeamento exato.',
   'Blocks Remaining': 'Blocos Restantes',
   'Break-Even Period (Realistic)': 'Período de Equilíbrio (Realista)',

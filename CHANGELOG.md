@@ -7,6 +7,30 @@
 
 All notable changes to this project are documented here.
 
+## [2026-10-13] — CalkCheck data-currency pass (20 pages, 6 languages)
+
+Full report: `AUDIT-2026-10-13.md`. Not deployed in this entry; ships with the next `scripts/deploy.sh` + OTA.
+
+### Fixed
+- **Raw HTML visible to readers.** Calculator explanations rendered internal links as literal `<a href=…>` text
+  (1,735 links, every template page since 2026-03-10); locale /updates/ footers and locale privacy pages did the
+  same with links and `<strong>`. Now rendered through escaping helpers that restore only same-site links and
+  `<strong>/<em>`. Built output: 0 escaped tags.
+- **Canada tax brackets** in the tax calculator updated to 2026 (CRA): first federal band 14% (was 15%) on
+  $0–58,523 → 7% on gains; thresholds were a mix of 2022/2024 values.
+- **ETF fee calculator:** "Self-custody saves you" always showed $0 (lookup used a renamed ticker); the lowest-fee
+  fund is now computed, and Grayscale's Bitcoin Mini Trust (0.15%) was added.
+- Stale figures below calculators that already had the right value: country tax table (UK 18/24%, FR 31.4%,
+  IT 33%, BR 15–22.5%, KR ₩2.5M, NL €59,357), US estate exemption $15M / gift exclusion $19k (6 languages),
+  halving post-halving prices (5 cells, off 2–4×) and hashrate, ASIC profitability (overstated several-fold),
+  Lightning on-chain benchmark (200 → 10 sat/vB), validator yields, MSTR presets (Dec-2024 → Oct-2026 snapshot).
+- /methodology/: constant counts come from the ledger; mining-data description matches reality; `.gouv.fr` and
+  `.gv.at` sources classed as statute; Brazil/Canada ledger rows reconciled.
+
+### Known, not fixed
+- Live whattomine feed (ASIC/GPU mining) is dead: both CORS proxies fail; calculators fall back to May-2026 data.
+- "How to use / inputs" sections on many calculators describe fields that do not exist (9 of 20 sampled pages).
+
 ## [2026-06-10] (update 150) — Repo audit follow-up: CI gate, registry invariants, slug sync
 
 Implements Milestone 0/1 of the full repo audit (see `~/Projects/TEMP/cryptocalk-audit-2026-06-10.md`). No site-visible changes: build output verified byte-identical to pre-change baseline.
