@@ -29,6 +29,10 @@
 // 2^32 -> 2^13 and Scrypt/X11 read in GH/s. The server-rendered model list now reads "16 GH/s" / "1770 GH/s"
 // and the difficulty-factor row of its "Where these numbers come from" block changed; the Z15 and D9
 // profits change once the calculator runs. The date was already 2026-10-13; updates is too.
+// 2026-10-13 (copy fix): asic-mining-calculator's explanation rewritten in all 6 languages. It claimed a
+// pre/post-halving projection and difficulty / block-reward inputs the calculator does not have (those come
+// from the live feed), the EN subtitle promised an "ASIC value" output and EN validation a daily coin amount.
+// Rendered text changed; the date was already 2026-10-13; updates is too.
 export const CALCULATOR_UPDATED: Record<string, string> = {
   "404": "2026-05-11",
   "about": "2026-08-25",
