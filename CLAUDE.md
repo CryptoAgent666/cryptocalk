@@ -32,8 +32,12 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
      `MiningRoiCalculator`, `ValidatorCalculator`, `StockToFlowCalculator`, `DustAttackCalculator`,
      `StakingRewardsCalculator` (block reward, halving schedule, 21M supply, 32-ETH validator, dust 546).
 
-### CalkCheck 2026-10-13 (20 страниц, ручной проход актуальности) — ИСПРАВЛЕНО, НЕ ЗАДЕПЛОЕНО
-Отчёт `AUDIT-2026-10-13.md`. Сборка чистая; виджеты проверены на `dist` (ETF, Канада, халвинг, MSTR, Lightning).
+### CalkCheck 2026-10-13 (20 страниц, ручной проход актуальности) — ЗАДЕПЛОЕНО + OTA 1.7.6
+Отчёт `AUDIT-2026-10-13.md`. Коммит `008227cbf`, `deploy.sh --no-build` 13.10 (CF purge, 294 URL прогреты, IndexNow 70,
+все чанки 200); проверено на живом сайте с `?cb=`: правки на месте, **294/294 URL = 200**, экранированной разметки 0.
+**OTA 1.7.6** (sha256 `b90f3cf8…ade5154`, ключ CoinGecko в 28 чанках; `updates.php`: 1.7.5 → 1.7.6, 1.7.6 → `{}`).
+**Следующая OTA — только 1.7.7+.** Монитор: `ca.brackets` (значение = шкала 2026) и два ключа освобождения США
+отмечены `--verify` 2026-10-13 (бэкап `.bak-20261013-calkcheck`).
 - 🔴 **Класс «экранированная разметка» (самая массовая находка):** `LocalizedCalculatorPage.astro` выводил
   абзацы seo-content/seo-ext как `<p>{p}</p>`, а в них 1 735 внутренних `<a href>` → читатель видел сырой код на
   каждой шаблонной странице с марта (`9325f042d`). Тот же баг: `footer` в локальных /updates/ и `<strong>` на 5
