@@ -60,8 +60,8 @@ function RwaYieldCalculator({ lang = 'en' }: { lang?: string }) {
     const afterTaxValue = d + afterTaxGain;
     const afterTaxApy = Math.pow(afterTaxValue / d, 1 / yrs) - 1;
 
-    // Risk-adjusted return (Sharpe-like, RFR=4.5% T-bills)
-    const rfr = 0.045;
+    // Risk-adjusted return (Sharpe-like, RFR = 4.1% T-bills: 4- to 26-week auctions ran 4.05–4.31% in early Oct 2026, FiscalData)
+    const rfr = 0.041;
     const excessReturn = netApy - rfr;
     const riskScore = RWA_PROTOCOLS.find((x) => x.id === protocol)?.riskScore || 'medium';
     const assumedVol = riskScore === 'low' ? 0.02 : riskScore === 'medium' ? 0.08 : 0.18;
@@ -230,7 +230,7 @@ function RwaYieldCalculator({ lang = 'en' }: { lang?: string }) {
                 </div>
                 <div className="result-divider" />
                 <div className="result-row">
-                  <span className="result-label">{getUiString(lang, 'Excess vs T-bills (4.5%)')}</span>
+                  <span className="result-label">{getUiString(lang, 'Excess vs T-bills (4.1%)')}</span>
                   <span className={`result-value ${result.excessReturn > 0 ? 'profit' : 'loss'}`}>
                     {result.excessReturn >= 0 ? '+' : ''}{result.excessReturn.toLocaleString(loc(lang), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
                   </span>

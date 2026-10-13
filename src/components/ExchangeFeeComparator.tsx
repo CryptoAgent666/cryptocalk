@@ -27,8 +27,9 @@ const EXCHANGES: ExchangeData[] = [
     { name: 'Binance', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.05 }, discount: { token: 'BNB', percent: 25 } },
     { name: 'Bybit', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.055 } },
     { name: 'OKX', spot: { maker: 0.08, taker: 0.10 }, futures: { maker: 0.02, taker: 0.05 }, discount: { token: 'OKB', percent: 25 } },
-    { name: 'Coinbase', spot: { maker: 0.40, taker: 0.60 }, futures: { maker: 0.02, taker: 0.05 } },
-    { name: 'Kraken', spot: { maker: 0.25, taker: 0.40 }, futures: { maker: 0.02, taker: 0.05 } },
+    // Coinbase Advanced US entry pricing from 16 Sep 2026 (0.25/0.50 in EU/UK); Kraken Pro $0+ tier, falls to 0.22/0.38 from $10K/month. Checked 2026-10-13.
+    { name: 'Coinbase', spot: { maker: 0.50, taker: 0.90 }, futures: { maker: 0.02, taker: 0.05 } },
+    { name: 'Kraken', spot: { maker: 0.40, taker: 0.80 }, futures: { maker: 0.02, taker: 0.05 } },
     { name: 'KuCoin', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.06 }, discount: { token: 'KCS', percent: 20 } },
     { name: 'Gate.io', spot: { maker: 0.20, taker: 0.20 }, futures: { maker: 0.015, taker: 0.05 }, discount: { token: 'GT', percent: 25 } },
     { name: 'Bitget', spot: { maker: 0.10, taker: 0.10 }, futures: { maker: 0.02, taker: 0.06 }, discount: { token: 'BGB', percent: 20 } },

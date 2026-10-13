@@ -249,7 +249,7 @@ function PolymarketOddsCalculator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <p className="calc-disclaimer"><Info size={14} />
-                {getUiString(lang, 'Prediction markets are taxed as gambling income in many jurisdictions. Polymarket charges 2% on winnings; UMA disputes can affect resolution. US-restricted (use VPN at own legal risk).')}
+                {getUiString(lang, 'Prediction-market winnings are often taxed as gambling income (US). Polymarket charges no fee on winnings, but most categories carry a small taker fee when you buy; UMA disputes can affect resolution. Availability depends on your country and, in the US, your state.')}
               </p>
             </>
           ) : (

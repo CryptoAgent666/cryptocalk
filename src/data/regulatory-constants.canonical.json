@@ -1818,8 +1818,8 @@
       "id": "BitcoinEnergyCalculator__NETWORK_HASHRATE_THS",
       "calculator": "BitcoinEnergyCalculator",
       "key": "NETWORK_HASHRATE_THS",
-      "value": "850000000",
-      "unit": "TH/s (=850 EH/s)",
+      "value": "1000000000",
+      "unit": "TH/s (=1,000 EH/s)",
       "jurisdiction": "",
       "law": "Bitcoin network hashrate (market/live)",
       "theme": "network",
@@ -1833,13 +1833,13 @@
       "source_hint": "blockchain.com / mempool.space (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Assumed network hashrate (850 EH/s) for BTC-mined share estimate. Market metric (note: 850 EH/s here vs 856 EH/s in HalvingCalculator — minor inconsistency). is_regulatory=false."
+      "notes": "Assumed network hashrate for the BTC-mined share estimate. Market metric, is_regulatory=false. | 2026-10-14 calkcheck-2: 850 -> 1,000 EH/s (difficulty 132.7T on 13 Oct 2026 implies ~950 EH/s; mempool.space 3-day ~1,008 EH/s), same figure as HalvingCalculator since 2026-10-13."
     },
     {
       "id": "DifficultyEstimatorCalculator__DIFFICULTY_PILLS / scenarios (145T)",
       "calculator": "DifficultyEstimatorCalculator",
       "key": "DIFFICULTY_PILLS / scenarios (145T)",
-      "value": "pills 100/120/145/170 T; default currentDifficulty 145T",
+      "value": "pills 100/120/133/145/170 T; default currentDifficulty 133T",
       "unit": "T (trillions, raw difficulty)",
       "jurisdiction": "",
       "law": "Bitcoin network difficulty (market/live)",
@@ -1854,7 +1854,7 @@
       "source_hint": "blockchain.com difficulty (live). Update preset baseline periodically.",
       "conflict": false,
       "status": "unverified",
-      "notes": "Difficulty preset values and 145T default ('post-halving difficulty stabilized around 145T'). Difficulty auto-adjusts every 2016 blocks — market metric, NOT consensus. is_regulatory=false. No protocol constants (block reward / halving / supply) exist in this component; it is purely a what-if difficulty-change model."
+      "notes": "Difficulty preset values and default. | 2026-10-14 calkcheck-2: default 145T -> 133T (132.7T on 13 Oct 2026, mempool.space; ~145T was the mid-2026 peak), 133 added to the pills. Difficulty auto-adjusts every 2016 blocks — market metric, NOT consensus. is_regulatory=false. No protocol constants (block reward / halving / supply) exist in this component; it is purely a what-if difficulty-change model."
     },
     {
       "id": "GpuMiningCalculator__COINS.*.price / networkHashrate",
@@ -1921,7 +1921,7 @@
       "id": "MiningCalculator__btcPrice_fallback",
       "calculator": "MiningCalculator",
       "key": "btcPrice_fallback",
-      "value": "77300",
+      "value": "83600",
       "unit": "USD",
       "jurisdiction": "",
       "law": "BTC market price (CoinGecko)",
@@ -1937,14 +1937,14 @@
       "source_hint": "CoinGecko simple/price (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Fallback BTC/USD price ($77,300) when CoinGecko fetch fails. Pure market price — is_regulatory=false."
+      "notes": "Fallback BTC/USD price when CoinGecko fetch fails. Pure market price — is_regulatory=false. | 2026-10-13 calkcheck-2: refreshed 77300 -> 83600 (CoinGecko/Binance spot 13 Oct 2026); it is shown in the 'Where these numbers come from' block beside the live widget, so a stale value read as a contradiction."
     },
     {
       "id": "MiningCalculator__difficulty_fallback",
       "calculator": "MiningCalculator",
       "key": "difficulty_fallback",
-      "value": "136000000000000",
-      "unit": "raw difficulty (~136T)",
+      "value": "132700000000000",
+      "unit": "raw difficulty (~132.7T)",
       "jurisdiction": "",
       "law": "Bitcoin network difficulty (market/live)",
       "theme": "network",
@@ -1957,7 +1957,7 @@
       "source_hint": "blockchain.info/q/getdifficulty (live). Mark market; refresh fallback periodically.",
       "conflict": false,
       "status": "unverified",
-      "notes": "Fallback BTC network difficulty when blockchain.info live fetch fails. Two different fallbacks exist: 136T (primary path, line 123) and 145T (catch branch, line 137, 'updated 2026-05-03'). Difficulty auto-adjusts every 2016 blocks — this is a live/market benchmark, NOT a consensus constant. Inconsistent fallbacks (136T vs 145T) is a minor data-staleness note."
+      "notes": "Fallback BTC network difficulty when blockchain.info live fetch fails. Difficulty auto-adjusts every 2016 blocks — this is a live/market benchmark, NOT a consensus constant. | 2026-10-13 calkcheck-2: both fallbacks (were 136T primary / 145T catch) unified at 132.7T (mempool.space, 13 Oct 2026)."
     },
     {
       "id": "MiningCoinSwitcherCalculator__COINS.bitcoin (price/dailyPerHash)",

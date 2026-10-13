@@ -7,6 +7,31 @@
 
 All notable changes to this project are documented here.
 
+## [2026-10-14] — CalkCheck pass 2 (20 more pages, 6 languages)
+
+Full report: `AUDIT-2026-10-14.md`. Branch `claude/calkcheck-2-20261013`; not deployed in this entry.
+
+### Fixed
+- **Card cashback calculator:** the Crypto.com preset turned a subscription rebate into a 100% cashback rate
+  ($11,052/yr of "rewards" → $360), and the 10-year value compounded all ten years from day 0 ($42,351 → $21,307).
+  Coinbase One Card (2% + paid membership), Fold (2%) and Gemini's $300/month 4% cap updated.
+- **"What if I had bought":** prices were a May snapshot presented as today's (DOT 3.6× high); refreshed to
+  13 Oct 2026, relative presets moved to Oct 2025 / Apr 2026, holding periods measured in decimal years to the
+  snapshot date (were whole years to a hardcoded 2026), ETH ICO labelled 2014.
+- Stale or wrong figures in prose/FAQ (6 languages): Polymarket "2% fee on winnings" (none; taker fee on entry),
+  "$0.65 → +54" (−186), Polymarket US; ETH staking yields and slashing after Pectra, Rocket Pool Saturn 1; mining
+  per-BTC cost/time and difficulty (~133T, ~1,000 EH/s), energy (~175 TWh); gas, bridge and DeFi-loan costs at
+  ~0.1 Gwei; 60M gas limit; loan liquidation distance (39%, not 17.5%); Kraken Pro / Coinbase Advanced fees;
+  retirement (one extra decade, BTC $83.6K, 2022 drawdown ~26%, UK ISA ETNs); salary page features; rebalance
+  arithmetic; RWA T-bill reference 4.5% → 4.1%; Bitcoin Pizza Day value.
+- Widgets: energy network hashrate 850 → 1,000 EH/s; difficulty default 145T → 133T; restaking base APY 3.2 → 2.7%;
+  mining fallbacks $77,300/136T → $83,600/132.7T; exchange-fee Kraken/Coinbase rows; RWA risk-free rate.
+- Portuguese FAQs of bridge-comparator, exchange-fee-comparator and portfolio-rebalance had no diacritics; restored.
+
+### Known, not fixed
+- 19 more Portuguese FAQ blocks without diacritics (separate task). Coinbase Advanced's full fee table is
+  login-only; the 0.50/0.90 US entry pricing comes from Coinbase's 16 Sep 2026 announcement as reported.
+
 ## [2026-10-13] — CalkCheck data-currency pass (20 pages, 6 languages)
 
 Full report: `AUDIT-2026-10-13.md`. Not deployed in this entry; ships with the next `scripts/deploy.sh` + OTA.

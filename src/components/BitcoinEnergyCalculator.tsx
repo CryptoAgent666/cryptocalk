@@ -14,8 +14,8 @@ const CO2_PER_KWH: Record<EnergySource, number> = {
 
 // Average US household uses ~10,632 kWh/year
 const HOUSEHOLD_KWH_YEAR = 10632;
-// Rough estimate: network hashrate 850 EH/s, ~450 BTC/day
-const NETWORK_HASHRATE_THS = 850_000_000;
+// Rough estimate: network hashrate ~1,000 EH/s (Oct 2026: difficulty 132.7T ⇒ ~950 EH/s, mempool.space 3-day ~1,008 EH/s), ~450 BTC/day
+const NETWORK_HASHRATE_THS = 1_000_000_000;
 const BTC_PER_DAY_NETWORK = 450;
 
 const SCENARIOS = [
@@ -170,7 +170,7 @@ function BitcoinEnergyCalculator({ lang = 'en' }: { lang?: string }) {
                 <div className="result-row"><span className="result-label">{getUiString(lang, 'Household Equivalent')}</span><span className="result-value">{fmtNum(result.householdEquiv, 1)} {getUiString(lang, 'homes')}</span></div>
               </div>
 
-              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'CO2 emission factors are lifecycle averages. Actual emissions vary by region and equipment. Network hashrate assumed at 850 EH/s.')}</p>
+              <p className="calc-disclaimer"><Info size={14} />{getUiString(lang, 'CO2 emission factors are lifecycle averages. Actual emissions vary by region and equipment. Network hashrate assumed at 1,000 EH/s (October 2026).')}</p>
             </>
           ) : (
             <div className="results-empty">

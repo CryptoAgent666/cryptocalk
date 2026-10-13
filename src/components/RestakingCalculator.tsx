@@ -17,7 +17,7 @@ const SCENARIOS = [
     {
         label: 'Conservative 1 AVS',
         ethStaked: '10',
-        baseApy: '3.2',
+        baseApy: '2.7',
         restakingApy: '2',
         avsCount: '1',
         avsRewardRate: '1.5',
@@ -26,7 +26,7 @@ const SCENARIOS = [
     {
         label: 'Balanced 3 AVS',
         ethStaked: '32',
-        baseApy: '3.2',
+        baseApy: '2.7',
         restakingApy: '3.5',
         avsCount: '3',
         avsRewardRate: '2',
@@ -35,7 +35,7 @@ const SCENARIOS = [
     {
         label: 'Aggressive 5 AVS',
         ethStaked: '32',
-        baseApy: '3.2',
+        baseApy: '2.7',
         restakingApy: '5',
         avsCount: '5',
         avsRewardRate: '3',
@@ -47,7 +47,7 @@ const ETH_PILLS = ['1', '5', '10', '32', '100'];
 
 function RestakingCalculator({ lang = 'en' }: { lang?: string }) {
     const [ethStaked, setEthStaked] = useState('32');
-    const [baseApy, setBaseApy] = useState('3.2');
+    const [baseApy, setBaseApy] = useState('2.7');
     const [restakingApy, setRestakingApy] = useState('3.5');
     const [avsCount, setAvsCount] = useState('3');
     const [avsRewardRate, setAvsRewardRate] = useState('2');
@@ -128,7 +128,7 @@ function RestakingCalculator({ lang = 'en' }: { lang?: string }) {
         : '#ef4444';
 
     const reset = () => {
-        setEthStaked('32'); setBaseApy('3.2'); setRestakingApy('3.5');
+        setEthStaked('32'); setBaseApy('2.7'); setRestakingApy('3.5');
         setAvsCount('3'); setAvsRewardRate('2'); setProtocolFee('10');
         setEthPrice(''); setPriceError(''); fetchedRef.current = false;
     };

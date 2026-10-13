@@ -6,10 +6,12 @@ import { loc } from '../i18n/format';
 
 const CARDS = [
   { id: 'gemini', label: 'Gemini Credit Card', annualFee: '0', baseRate: '1', categoryRates: { gas: 4, dining: 3, groceries: 2 }, minSpend: '0' },
-  { id: 'coinbase', label: 'Coinbase One Card', annualFee: '0', baseRate: '4', categoryRates: { gas: 4, dining: 4, groceries: 4 }, minSpend: '0' },
+  // Coinbase One Card (Amex, 2025): 2% base in BTC, 2.5–4% only with $10K+ held on Coinbase; needs a paid Coinbase One membership ($49.99/yr basic). coinbase.com/creditcard, checked 2026-10-13.
+  { id: 'coinbase', label: 'Coinbase One Card', annualFee: '49.99', baseRate: '2', categoryRates: {}, minSpend: '0' },
   { id: 'venmo', label: 'Venmo Credit Card', annualFee: '0', baseRate: '1', categoryRates: { dining: 3, groceries: 2, gas: 1 }, minSpend: '0' },
-  { id: 'bitcoin-rewards', label: 'Bitcoin Rewards Visa (Fold)', annualFee: '0', baseRate: '1.5', categoryRates: {}, minSpend: '0' },
-  { id: 'crypto-com', label: 'Crypto.com Visa (Ruby)', annualFee: '0', baseRate: '1', categoryRates: { netflix: 100, spotify: 100 }, minSpend: '0' },
+  // Fold Bitcoin Rewards credit card (Visa, live 2026): 2% unlimited, up to 3.5% when paid from Fold checking.
+  { id: 'bitcoin-rewards', label: 'Bitcoin Rewards Visa (Fold)', annualFee: '0', baseRate: '2', categoryRates: {}, minSpend: '0' },
+  { id: 'crypto-com', label: 'Crypto.com Visa (Ruby)', annualFee: '0', baseRate: '1', categoryRates: {}, minSpend: '0' },
   { id: 'amex-gold', label: 'Amex Gold (Comparison)', annualFee: '325', baseRate: '1', categoryRates: { dining: 4, groceries: 4 }, minSpend: '0' },
 ] as const;
 
@@ -69,7 +71,10 @@ function CryptoCardCashbackCalculator({ lang = 'en' }: { lang?: string }) {
     const fiveYearRewards = netRewards * 5;
     const tenYearRewards = netRewards * 10;
     const tenYearBtcEarned = (totalRewards * 10) / btc;
-    const tenYearAtAppreciation = (totalRewards * 10) * Math.pow(1 + app, 10);
+    // Each year's rewards grow only from the year they were earned (same start-of-year convention as the 1-year row).
+    const tenYearAtAppreciation = app === 0
+      ? totalRewards * 10
+      : totalRewards * (1 + app) * (Math.pow(1 + app, 10) - 1) / app;
 
     let zone: 'profit' | 'neutral' | 'loss' = 'neutral';
     let rating = '';
@@ -165,7 +170,7 @@ function CryptoCardCashbackCalculator({ lang = 'en' }: { lang?: string }) {
 
           <button className="reset-btn" onClick={reset}><RotateCcw size={14} /> {getUiString(lang, 'Reset')}</button>
           <span className="input-hint">
-            {getUiString(lang, 'Crypto card rewards are taxable upon receipt at fair market value, then again at sale (capital gains).')}
+            {getUiString(lang, 'In the US, card rewards earned on spending are usually treated as a rebate, not income; selling the coin later is a taxable disposal (capital gains).')}
           </span>
         </div>
 

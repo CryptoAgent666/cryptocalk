@@ -14,7 +14,7 @@ import { withErrorBoundary } from './ErrorBoundary';
 /*  Constants                                                          */
 /* ------------------------------------------------------------------ */
 
-const BTC_FALLBACK_PRICE = 77300;
+const BTC_FALLBACK_PRICE = 83600; // Oct 2026
 const ORIGINAL_BTC = 10000;
 const ORIGINAL_PIZZAS = 2;
 const ORIGINAL_DATE = 'May 22, 2010';

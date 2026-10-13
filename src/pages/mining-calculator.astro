@@ -77,7 +77,7 @@ const buildDate = '2026-07-03'; // honest last-content-change date from git hist
     <section class="seo-content">
       <div class="section-container">
         <div class="quick-answer">
-          <strong>Quick answer:</strong> Bitcoin mining pays 3.125 BTC per block until the next halving (~April 2028). At $0.05/kWh an efficient ASIC like the Antminer S21 (200 TH/s) typically nets a few dollars a day; above roughly $0.12/kWh most miners run at a loss. Enter your hardware specs below for exact numbers with live difficulty and BTC price.
+          <strong>Quick answer:</strong> Bitcoin mining pays 3.125 BTC per block until the next halving (~April 2028). At $0.05/kWh an efficient ASIC like the Antminer S21 (200 TH/s) typically nets a few dollars a day; above roughly $0.09/kWh even an S21 no longer covers its power bill. Enter your hardware specs below for exact numbers with live difficulty and BTC price.
         </div>
         <h2>How to Use the Mining Calculator</h2>
         <ol>
@@ -166,7 +166,7 @@ const buildDate = '2026-07-03'; // honest last-content-change date from git hist
         <p>Miners must plan for halvings by upgrading to more efficient hardware, securing cheaper electricity, or scaling operations. The 2024 halving eliminated many older-generation ASICs (like the S19 series) from profitability at average electricity rates. Only the most efficient miners (S21, M60S) remain competitive.</p>
 
         <h2>Mining Pool vs Solo Mining</h2>
-        <p>Solo mining means operating independently and keeping 100% of block rewards if you find a block. However, with current network difficulty, even a 200 TH/s miner has less than a 0.01% chance of finding a block per year. Most miners would go months or years without earning anything, making solo mining economically unviable for individuals.</p>
+        <p>Solo mining means operating independently and keeping 100% of block rewards if you find a block. However, with current network difficulty, a 200 TH/s miner has only about a 1% chance of finding a single block in a year (October 2026 difficulty). Most miners would go months or years without earning anything, making solo mining economically unviable for individuals.</p>
         <p>Mining pools solve this problem by combining hashrate from thousands of miners. When the pool finds a block, the reward is distributed proportionally based on each miner's contributed work. This creates predictable, steady income rather than rare, massive payouts.</p>
         <p>Pools use different reward distribution methods:</p>
         <ul class="seo-list">
@@ -188,7 +188,7 @@ const buildDate = '2026-07-03'; // honest last-content-change date from git hist
         </details>
         <details>
           <summary>How much does it cost to mine 1 Bitcoin?</summary>
-          <p>At current network difficulty (~145 trillion), mining 1 BTC requires enormous hashpower over time. A single Antminer S21 at 200 TH/s earns approximately 0.00028 BTC per day, meaning it would take roughly 10 years to mine a full Bitcoin solo. Electricity cost per BTC mined varies by rate: at $0.05/kWh it costs roughly $28,000-35,000 in power alone, while at $0.12/kWh it exceeds $65,000.</p>
+          <p>At October 2026 network difficulty (~133 trillion), mining 1 BTC requires enormous hashpower over time. A single Antminer S21 at 200 TH/s earns approximately 0.000095 BTC per day, so it would take roughly 29 years to accumulate a full Bitcoin. Electricity cost per BTC mined varies by rate: at $0.05/kWh it costs roughly $44,000 in power alone, while at $0.12/kWh it exceeds $100,000.</p>
         </details>
         <details>
           <summary>What is the best ASIC miner to buy right now?</summary>
@@ -200,7 +200,7 @@ const buildDate = '2026-07-03'; // honest last-content-change date from git hist
         </details>
         <details>
           <summary>How long does it take to break even on a mining rig?</summary>
-          <p>Break-even time depends on your hardware cost, electricity rate, and current BTC price. For an Antminer S21 ($3,500) running at $0.05/kWh, typical break-even is 12-18 months at current conditions. At $0.10/kWh, break-even stretches to 24-36 months or may never be reached. Enter your hardware cost in this calculator to see a personalized break-even estimate based on current network difficulty and BTC price.</p>
+          <p>Break-even time depends on your hardware cost, electricity rate, and current BTC price. For an Antminer S21 ($3,500) running at $0.05/kWh, break-even is about 32 months at October 2026 difficulty and price (roughly $3.60/day after power). At $0.10/kWh the same machine no longer covers its electricity, so it never pays back unless BTC rises or difficulty falls. Enter your hardware cost in this calculator to see a personalized break-even estimate based on current network difficulty and BTC price.</p>
         </details>
         <details>
           <summary>What happens to mining profitability after the next halving?</summary>
@@ -667,7 +667,7 @@ const buildDate = '2026-07-03'; // honest last-content-change date from git hist
   },
   "description": "Free Bitcoin mining profitability calculator. Enter your hashrate, power consumption, and electricity cost to estimate daily, monthly, and yearly BTC mining revenue.",
   "datePublished": "2025-11-01",
-  "dateModified": "2026-03-31",
+  "dateModified": "2026-10-14",
   "author": {
     "@type": "Person",
     "name": "Konstantin Iakovlev",
@@ -693,7 +693,7 @@ const buildDate = '2026-07-03'; // honest last-content-change date from git hist
       "name": "How much does it cost to mine 1 Bitcoin?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "At current network difficulty (~145 trillion), a single Antminer S21 at 200 TH/s earns approximately 0.00028 BTC per day. Electricity cost per BTC mined varies by rate: at $0.05/kWh it costs roughly $28,000-35,000 in power alone, while at $0.12/kWh it exceeds $65,000."
+        "text": "At October 2026 network difficulty (~133 trillion), a single Antminer S21 at 200 TH/s earns approximately 0.000095 BTC per day. Electricity cost per BTC mined varies by rate: at $0.05/kWh it costs roughly $44,000 in power alone, while at $0.12/kWh it exceeds $100,000."
       }
     },
     {
@@ -717,7 +717,7 @@ const buildDate = '2026-07-03'; // honest last-content-change date from git hist
       "name": "How long does it take to break even on a mining rig?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Break-even time depends on hardware cost, electricity rate, and BTC price. For an Antminer S21 ($3,500) at $0.05/kWh, typical break-even is 12-18 months. At $0.10/kWh, break-even stretches to 24-36 months or may never be reached."
+        "text": "Break-even time depends on hardware cost, electricity rate, and BTC price. For an Antminer S21 ($3,500) at $0.05/kWh, break-even is about 32 months at October 2026 difficulty and price. At $0.10/kWh it no longer covers its electricity, so it never pays back unless BTC rises or difficulty falls."
       }
     },
     {

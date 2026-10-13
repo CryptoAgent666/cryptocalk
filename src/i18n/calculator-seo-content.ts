@@ -279,7 +279,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'mining-calculator': {
     en: {
-      quickAnswer: 'Enter your hash rate, power consumption, and electricity cost to estimate daily Bitcoin mining revenue. At 140 TH/s and $0.06/kWh, a modern ASIC earns roughly $8–12/day before difficulty adjustments.',
+      quickAnswer: 'Enter your hash rate, power consumption, and electricity cost to estimate daily Bitcoin mining revenue. At 140 TH/s (an Antminer S19 XP, 3,010 W) and $0.06/kWh, revenue is about $5.50/day and roughly $1.20/day is left after power, at October 2026 difficulty and price.',
       how: [
       `The Mining Calculator shows whether your hardware setup is profitable by comparing estimated daily revenue against your electricity and operational costs. Enter your hashrate, power consumption in watts, electricity rate per kWh, and pool fee percentage, the calculator returns daily, weekly, and monthly profit or loss projections alongside a break-even timeline.`,
       `Use it to evaluate hardware purchases before buying: enter the specs and price of the ASIC you're considering and your local electricity rate to see the payback period. The Bitcoin price is pulled live and cannot be edited, so to stress-test a 30% lower price, take 70% of the USD revenue figure and subtract the electricity cost. Revisit the calculator whenever difficulty adjusts or your power rate changes.`
@@ -290,7 +290,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Introduce tu hash rate, consumo eléctrico y coste de electricidad para estimar los ingresos diarios de minería de Bitcoin. A 140 TH/s y $0,06/kWh, un ASIC moderno genera aproximadamente $8–12/día antes de ajustes de dificultad.',
+      quickAnswer: 'Introduce tu hash rate, consumo eléctrico y coste de electricidad para estimar los ingresos diarios de minería de Bitcoin. A 140 TH/s (un Antminer S19 XP, 3.010 W) y $0,06/kWh, los ingresos son de unos $5,50/día y quedan aproximadamente $1,20/día tras pagar la electricidad, con la dificultad y el precio de octubre de 2026.',
       how: [
       `La Calculadora de Minería muestra si tu configuración de hardware es rentable comparando los ingresos diarios estimados con tus costos de electricidad y operativos. Introduce tu hashrate, consumo de energía en vatios, tarifa eléctrica por kWh y porcentaje de comisión del pool para obtener proyecciones de ganancias o pérdidas.`,
       `Úsala para evaluar compras de hardware antes de adquirirlas: introduce las especificaciones y el precio del ASIC que estás considerando y tu tarifa eléctrica local para ver el período de recuperación de la inversión. El precio de Bitcoin se obtiene en tiempo real y no se puede editar; para simular un precio un 30% más bajo, toma el 70% de los ingresos en USD y réstale el costo de electricidad.`
@@ -301,7 +301,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Insira seu hash rate, consumo de energia e custo de eletricidade para estimar a receita diária de mineração de Bitcoin. A 140 TH/s e $0,06/kWh, um ASIC moderno gera cerca de $8–12/dia antes dos ajustes de dificuldade.',
+      quickAnswer: 'Insira seu hash rate, consumo de energia e custo de eletricidade para estimar a receita diária de mineração de Bitcoin. A 140 TH/s (um Antminer S19 XP, 3.010 W) e $0,06/kWh, a receita é de cerca de $5,50/dia e sobra aproximadamente $1,20/dia após a energia, com a dificuldade e o preço de outubro de 2026.',
       how: [
       `A Calculadora de Mineração mostra se sua configuração de hardware é lucrativa comparando a receita diária estimada com seus custos de eletricidade e operacionais. Insira seu hashrate, consumo de energia em watts, tarifa de eletricidade por kWh e porcentagem de taxa do pool.`,
       `Use-a para avaliar compras de hardware: insira as especificações e o preço do ASIC que está considerando e sua tarifa elétrica local para ver o período de retorno do investimento. O preço do Bitcoin vem ao vivo e não pode ser editado; para simular um preço 30% mais baixo, pegue 70% da receita em USD e subtraia o custo de eletricidade.`
@@ -312,7 +312,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Hash rate, güç tüketimi ve elektrik maliyetinizi girerek günlük Bitcoin madencilik gelirini tahmin edin. 140 TH/s ve $0,06/kWh ile modern bir ASIC, zorluk ayarlamalarından önce günde yaklaşık $8–12 kazanır.',
+      quickAnswer: 'Hash rate, güç tüketimi ve elektrik maliyetinizi girerek günlük Bitcoin madencilik gelirini tahmin edin. 140 TH/s (3.010 W\'lık bir Antminer S19 XP) ve $0,06/kWh ile günlük gelir yaklaşık $5,50, elektrik sonrası kalan ise Ekim 2026 zorluk ve fiyatında günde yaklaşık $1,20\'dir.',
       how: [
       `Madencilik Hesaplayıcısı, tahmini günlük geliri elektrik ve operasyonel maliyetlerinizle karşılaştırarak donanım kurulumunuzun kârlı olup olmadığını gösterir. Hashrate'inizi, watt cinsinden güç tüketiminizi, kWh başına elektrik tarifinizi ve havuz ücreti yüzdesini girin.`,
       `Donanım satın almadan önce değerlendirmek için kullanın: düşündüğünüz ASIC'in özelliklerini ve fiyatını, yerel elektrik tarifinizle birlikte girerek geri ödeme süresini görün. Bitcoin fiyatı canlı olarak alınır ve düzenlenemez; %30 daha düşük bir fiyatı test etmek için USD gelirinin %70'ini alıp elektrik maliyetini çıkarın.`
@@ -323,7 +323,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'अपना हैश रेट, बिजली खपत और बिजली लागत दर्ज करके दैनिक Bitcoin माइनिंग राजस्व का अनुमान लगाएं। 140 TH/s और $0.06/kWh पर एक आधुनिक ASIC डिफिकल्टी एडजस्टमेंट से पहले लगभग $8–12/दिन कमाता है।',
+      quickAnswer: 'अपना हैश रेट, बिजली खपत और बिजली लागत दर्ज करके दैनिक Bitcoin माइनिंग राजस्व का अनुमान लगाएं। 140 TH/s (Antminer S19 XP, 3,010 W) और $0.06/kWh पर अक्टूबर 2026 की डिफिकल्टी और कीमत पर राजस्व लगभग $5.50/दिन है और बिजली के बाद लगभग $1.20/दिन बचता है।',
       how: [
       `माइनिंग कैलकुलेटर अनुमानित दैनिक राजस्व की तुलना आपकी बिजली और परिचालन लागत से करके दिखाता है कि आपका हार्डवेयर सेटअप लाभदायक है या नहीं। अपना हैशरेट, वाट में पावर कंजम्प्शन, प्रति kWh बिजली दर और पूल फीस प्रतिशत दर्ज करें।`,
       `हार्डवेयर खरीदने से पहले मूल्यांकन के लिए उपयोग करें: जिस ASIC पर विचार कर रहे हैं उसकी स्पेसिफिकेशन और कीमत तथा अपनी स्थानीय बिजली दर दर्ज करें। Bitcoin मूल्य लाइव आता है और बदला नहीं जा सकता; 30% कम मूल्य की जांच के लिए USD राजस्व का 70% लें और उसमें से बिजली लागत घटाएं।`
@@ -334,7 +334,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Введите хешрейт, энергопотребление и стоимость электричества для оценки суточного дохода от майнинга Bitcoin. При 140 TH/s и $0,06/кВтч современный ASIC приносит примерно $8–12/день до корректировки сложности.',
+      quickAnswer: 'Введите хешрейт, энергопотребление и стоимость электричества для оценки суточного дохода от майнинга Bitcoin. При 140 TH/s (Antminer S19 XP, 3010 Вт) и $0,06/кВт·ч выручка — около $5,50 в день, а после оплаты электричества остаётся примерно $1,20 в день (сложность и цена октября 2026).',
       how: [
       `Калькулятор майнинга показывает, прибыльна ли ваша конфигурация оборудования, сравнивая расчётный суточный доход с затратами на электроэнергию и операционными расходами. Введите хешрейт, потребляемую мощность в ваттах, тариф на электричество и процент комиссии пула.`,
       `Используйте для оценки покупки оборудования: введите характеристики и цену рассматриваемого ASIC и ваш тариф на электроэнергию, чтобы увидеть срок окупаемости. Цена Bitcoin подтягивается в реальном времени и не редактируется, поэтому для стресс-теста при цене на 30% ниже возьмите 70% дохода в USD и вычтите стоимость электричества.`
@@ -1403,7 +1403,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'gas-calculator': {
     en: {
-      quickAnswer: 'Ethereum gas fee = Gas Price (Gwei) × Gas Limit × ETH Price. A standard ETH transfer (21,000 gas) at 1 Gwei costs about $0.05. Complex DeFi swaps can cost $2–15 depending on congestion.',
+      quickAnswer: 'Ethereum gas fee = Gas Price (Gwei) × Gas Limit × ETH Price. A standard ETH transfer (21,000 gas) at 1 Gwei costs about $0.05. At the ~0.1 Gwei base fee of October 2026 a DeFi swap costs only a few cents; it takes a congestion spike to 10–20 Gwei to push a complex swap to $3–15.',
       how: [
       `The Gas Calculator estimates the total transaction fee in USD for Ethereum and EVM-compatible network transactions. Enter the current gas price in gwei, the gas limit for your transaction type, and the current ETH price to instantly see the total fee, allowing you to decide whether to proceed now or wait for network congestion to ease.`,
       `Use it to compare transaction costs across different networks: enter the same gas limit with the native token price for Polygon, BNB Chain, or Arbitrum to see how much cheaper layer-2 transactions are compared to Ethereum mainnet. For time-sensitive trades, use the 'fast' gas preset; for non-urgent transfers, 'standard' saves significant fees during peak hours.`
@@ -1414,7 +1414,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Comisión de gas Ethereum = Precio del Gas (Gwei) × Límite de Gas × Precio ETH. Una transferencia ETH estándar (21.000 gas) a 1 Gwei cuesta unos $0,05. Los swaps DeFi complejos cuestan $2–15 según la congestión.',
+      quickAnswer: 'Comisión de gas Ethereum = Precio del Gas (Gwei) × Límite de Gas × Precio ETH. Una transferencia ETH estándar (21.000 gas) a 1 Gwei cuesta unos $0,05. Con la tarifa base de ~0,1 Gwei de octubre de 2026 un swap DeFi cuesta apenas unos centavos; hace falta un pico de congestión de 10–20 Gwei para que un swap complejo llegue a $3–15.',
       how: [
       `La Calculadora de Gas estima la comisión total de transacción en USD para transacciones en Ethereum y redes compatibles con EVM.`,
       `Úsala para comparar costos de transacción entre diferentes redes: introduce el mismo límite de gas con el precio del token nativo para Polygon, BNB Chain o Arbitrum.`
@@ -1425,7 +1425,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Taxa de gas Ethereum = Preço do Gas (Gwei) × Limite de Gas × Preço ETH. Uma transferência ETH padrão (21.000 gas) a 1 Gwei custa cerca de $0,05. Swaps DeFi complexos custam $2–15 dependendo do congestionamento.',
+      quickAnswer: 'Taxa de gas Ethereum = Preço do Gas (Gwei) × Limite de Gas × Preço ETH. Uma transferência ETH padrão (21.000 gas) a 1 Gwei custa cerca de $0,05. Com a taxa base de ~0,1 Gwei de outubro de 2026 um swap DeFi custa só alguns centavos; é preciso um pico de congestionamento de 10–20 Gwei para um swap complexo chegar a $3–15.',
       how: [
       `A Calculadora de Gas estima a taxa de transação total em USD para transações Ethereum e redes compatíveis com EVM.`,
       `Use-a para comparar custos de transação entre diferentes redes: insira o mesmo limite de gas com o preço do token nativo para Polygon, BNB Chain ou Arbitrum.`
@@ -1436,7 +1436,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Ethereum gas ücreti = Gas Fiyatı (Gwei) × Gas Limiti × ETH Fiyatı. Standart bir ETH transferi (21.000 gas) 1 Gwei\'de yaklaşık $0,05\'tir. Karmaşık DeFi swap\'ları yoğunluğa göre $2–15 arası maliyet getirir.',
+      quickAnswer: 'Ethereum gas ücreti = Gas Fiyatı (Gwei) × Gas Limiti × ETH Fiyatı. Standart bir ETH transferi (21.000 gas) 1 Gwei\'de yaklaşık $0,05\'tir. Ekim 2026\'daki ~0,1 Gwei taban ücretle bir DeFi swap\'ı yalnızca birkaç sente mal olur; karmaşık bir swap\'ın $3–15\'e çıkması için 10–20 Gwei\'lik bir yoğunluk zirvesi gerekir.',
       how: [
       `Gas Hesaplayıcısı, Ethereum ve EVM uyumlu ağ işlemleri için USD cinsinden toplam işlem ücretini tahmin eder.`,
       `Farklı ağlar arasındaki işlem maliyetlerini karşılaştırmak için kullanın: Polygon, BNB Chain veya Arbitrum için yerel token fiyatıyla aynı gas limitini girin.`
@@ -1447,7 +1447,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'Ethereum गैस फीस = गैस प्राइस (Gwei) × गैस लिमिट × ETH प्राइस। स्टैंडर्ड ETH ट्रांसफर (21,000 gas) 1 Gwei पर लगभग $0.05 खर्च करता है। जटिल DeFi स्वैप कंजेशन के अनुसार $2–15 खर्च कर सकते हैं।',
+      quickAnswer: 'Ethereum गैस फीस = गैस प्राइस (Gwei) × गैस लिमिट × ETH प्राइस। स्टैंडर्ड ETH ट्रांसफर (21,000 gas) 1 Gwei पर लगभग $0.05 खर्च करता है। अक्टूबर 2026 की ~0.1 Gwei बेस फीस पर एक DeFi स्वैप केवल कुछ सेंट का होता है; जटिल स्वैप को $3–15 तक पहुँचने के लिए 10–20 Gwei का कंजेशन चाहिए।',
       how: [
       `गैस कैलकुलेटर Ethereum और EVM-compatible नेटवर्क ट्रांजेक्शन के लिए USD में कुल ट्रांजेक्शन फीस का अनुमान लगाता है।`,
       `विभिन्न नेटवर्क पर ट्रांजेक्शन लागत की तुलना करने के लिए इसका उपयोग करें: Polygon, BNB Chain, या Arbitrum के लिए नेटिव टोकन मूल्य के साथ समान गैस लिमिट दर्ज करें।`
@@ -1458,7 +1458,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Комиссия газа Ethereum = Цена газа (Gwei) × Лимит газа × Цена ETH. Стандартный перевод ETH (21 000 газа) при 1 Gwei стоит около $0,05. Сложные DeFi-свопы — $2–15 в зависимости от загрузки сети.',
+      quickAnswer: 'Комиссия газа Ethereum = Цена газа (Gwei) × Лимит газа × Цена ETH. Стандартный перевод ETH (21 000 газа) при 1 Gwei стоит около $0,05. При базовой плате ~0,1 Gwei, как в октябре 2026, DeFi-своп стоит считанные центы; чтобы сложный своп обошёлся в $3–15, нужен всплеск загрузки до 10–20 Gwei.',
       how: [
       `Калькулятор газа оценивает общую стоимость транзакции в USD для Ethereum и EVM-совместимых сетей. Введите текущую цену газа в gwei, лимит газа и цену ETH.`,
       `Используйте для сравнения стоимости транзакций в разных сетях: введите одинаковый лимит газа с ценой нативного токена для Polygon, BNB Chain или Arbitrum.`
@@ -1675,18 +1675,18 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'exchange-fees': {
     en: {
-      quickAnswer: 'Compare trading fees across major exchanges for your trade size. A 0.1% fee difference on a $100,000 trade saves $100. Binance charges 0.1% base; Coinbase 0.4–0.6% for instant trades.',
+      quickAnswer: 'Compare trading fees across major exchanges for your trade size. A 0.1% fee difference on a $100,000 trade saves $100. Binance charges 0.1% base; Coinbase Advanced 0.5–0.9% at US entry pricing, and more on its simple buy screen.',
       how: [
       `The Exchange Fees Calculator compares the trading fee cost across multiple cryptocurrency exchanges for a given trade size. Enter your trade amount, choose Spot or Futures, Maker or Taker, and one 30-day volume tier that applies to all ten exchanges, to instantly see each exchange's fee rate and fee in dollars, with and without its native-token discount, identifying which platform offers the best deal for your order type and volume.`,
       `Use it when deciding where to execute a large trade: a 0.1% fee difference on a $100,000 trade is $100 in direct cost. Also use it to evaluate whether holding an exchange's native token (like BNB on Binance or KCS on KuCoin) for a fee discount is worth the opportunity cost versus deploying that capital elsewhere.`
       ],
       inputs: [
-      `Trade amount is the total value of your order in USD. Select maker fees for limit orders that add liquidity to the order book and taker fees for market orders that remove liquidity. Most tier 1 exchanges (Binance, Coinbase, Kraken) charge 0.04–0.10% for makers and 0.06–0.20% for takers at baseline.`,
+      `Trade amount is the total value of your order in USD. Select maker fees for limit orders that add liquidity to the order book and taker fees for market orders that remove liquidity. Base-tier spot fees differ a lot between big exchanges: Binance charges 0.10% on both sides, while Kraken Pro starts at 0.40% maker / 0.80% taker and Coinbase Advanced at 0.50% / 0.90% in the US; both fall steeply with monthly volume.`,
       `Some exchanges offer flat fee structures (Coinbase Advanced), tiered volume discounts (Binance, OKX), or token-based discounts (BNB discount on Binance reduces fees by 25%). For high-frequency traders, the distinction between maker and taker is critical since maker fees are often zero or even negative (rebates) on the highest tiers.`
       ],
     },
     es: {
-      quickAnswer: 'Compara comisiones de trading entre exchanges principales para tu tamaño de operación. Una diferencia de 0,1% en una operación de $100.000 ahorra $100. Binance cobra 0,1% base; Coinbase 0,4–0,6% para trades instantáneos.',
+      quickAnswer: 'Compara comisiones de trading entre exchanges principales para tu tamaño de operación. Una diferencia de 0,1% en una operación de $100.000 ahorra $100. Binance cobra 0,1% base; Coinbase Advanced 0,5–0,9% con el precio de entrada en EE. UU., y más en su pantalla de compra simple.',
       how: [
       `La Calculadora de Comisiones de Exchange compara el costo de comisiones de trading en múltiples exchanges de criptomonedas para un tamaño de operación dado.`,
       `Úsala cuando decidas dónde ejecutar una operación grande: una diferencia de comisión del 0.1% en una operación de $100,000 son $100 en costo directo.`
@@ -1697,7 +1697,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Compare taxas de negociação entre exchanges principais para seu tamanho de operação. Uma diferença de 0,1% em uma operação de $100.000 economiza $100. Binance cobra 0,1% base; Coinbase 0,4–0,6% para trades instantâneos.',
+      quickAnswer: 'Compare taxas de negociação entre exchanges principais para seu tamanho de operação. Uma diferença de 0,1% em uma operação de $100.000 economiza $100. Binance cobra 0,1% base; Coinbase Advanced 0,5–0,9% no preço de entrada nos EUA, e mais na tela de compra simples.',
       how: [
       `A Calculadora de Taxas de Exchange compara o custo de taxas de negociação em múltiplas exchanges de criptomoedas para um determinado tamanho de negociação.`,
       `Use-a ao decidir onde executar uma negociação grande: uma diferença de taxa de 0,1% em uma negociação de $100.000 é $100 em custo direto.`
@@ -1708,7 +1708,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'İşlem büyüklüğünüz için büyük borsalardaki işlem ücretlerini karşılaştırın. $100.000\'lık bir işlemde %0,1 ücret farkı $100 tasarruf sağlar. Binance baz %0,1; Coinbase anlık işlemler için %0,4–0,6 alır.',
+      quickAnswer: 'İşlem büyüklüğünüz için büyük borsalardaki işlem ücretlerini karşılaştırın. $100.000\'lık bir işlemde %0,1 ücret farkı $100 tasarruf sağlar. Binance baz %0,1; Coinbase Advanced ABD giriş fiyatında %0,5–0,9 alır, basit alım ekranında daha fazlası.',
       how: [
       `Exchange Ücretleri Hesaplayıcısı, belirli bir işlem boyutu için birden fazla kripto para borsasındaki işlem ücreti maliyetini karşılaştırır.`,
       `Büyük bir işlemi nerede gerçekleştireceğinize karar verirken kullanın: 100.000 dolarlık bir işlemde %0.1 ücret farkı doğrudan 100 dolar maliyettir.`
@@ -1719,7 +1719,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'अपने ट्रेड साइज के लिए प्रमुख एक्सचेंजों पर ट्रेडिंग फीस की तुलना करें। $100,000 ट्रेड पर 0.1% फीस अंतर $100 बचाता है। Binance बेस 0.1% लेता है; Coinbase इंस्टेंट ट्रेड के लिए 0.4–0.6%।',
+      quickAnswer: 'अपने ट्रेड साइज के लिए प्रमुख एक्सचेंजों पर ट्रेडिंग फीस की तुलना करें। $100,000 ट्रेड पर 0.1% फीस अंतर $100 बचाता है। Binance बेस 0.1% लेता है; Coinbase Advanced US entry pricing पर 0.5–0.9%, और simple buy screen पर इससे ज़्यादा।',
       how: [
       `एक्सचेंज फीस कैलकुलेटर दी गई ट्रेड साइज के लिए कई क्रिप्टोकरेंसी एक्सचेंज पर ट्रेडिंग फीस लागत की तुलना करता है।`,
       `बड़ा ट्रेड कहां एक्जीक्यूट करना है यह तय करते समय इसका उपयोग करें: $100,000 ट्रेड पर 0.1% फीस अंतर $100 की प्रत्यक्ष लागत है।`
@@ -1730,7 +1730,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Сравните торговые комиссии на ведущих биржах для вашего объёма сделки. Разница в 0,1% при сделке на $100 000 экономит $100. Binance берёт 0,1% базовых; Coinbase — 0,4–0,6% за мгновенные сделки.',
+      quickAnswer: 'Сравните торговые комиссии на ведущих биржах для вашего объёма сделки. Разница в 0,1% при сделке на $100 000 экономит $100. Binance берёт 0,1% базовых; Coinbase Advanced — 0,5–0,9% по начальному тарифу в США, а в простом интерфейсе покупки ещё дороже.',
       how: [
       `Калькулятор комиссий биржи сравнивает стоимость торговых комиссий на нескольких криптовалютных биржах для заданного объёма сделки.`,
       `Используйте при выборе биржи для крупной сделки: разница в 0,1% комиссии при сделке на $100 000 — это $100 прямых затрат.`
@@ -2287,7 +2287,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'node-calculator': {
     en: {
-      quickAnswer: 'Estimate node operator costs and revenue. Running an Ethereum validator requires 32 ETH (~$74,400) plus ~$50/month server costs. At 3.2% APY, annual rewards are approximately $2,381.',
+      quickAnswer: 'Estimate node operator costs and revenue. Running an Ethereum validator requires 32 ETH (~$80,000 at $2,500) plus ~$50/month server costs. At ~2.7% APY, annual rewards are about $2,160 before costs.',
       how: [
       `The Node / Validator Calculator estimates the net income and break-even stake for running a blockchain validator node or masternode. Enter your staked tokens, the token price, the network APR, the validator commission, your node uptime and the monthly infrastructure cost to see net monthly and annual income, the effective APR on your stake, and the stake value needed to break even.`,
       `Use it to evaluate whether node economics justify the setup investment and ongoing costs. For proof-of-stake validators (Ethereum, Solana, Cardano), compare validator rewards against liquid staking alternatives (Lido, Rocket Pool) to see if the added complexity of self-custody validation is worth the premium return.`
@@ -2298,7 +2298,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Estima costos e ingresos de operador de nodo. Ejecutar un validador Ethereum requiere 32 ETH (~$74.400) más ~$50/mes de servidor. Al 3,2% APY, las recompensas anuales son aproximadamente $2.381.',
+      quickAnswer: 'Estima costos e ingresos de operador de nodo. Ejecutar un validador Ethereum requiere 32 ETH (~$80.000 a $2.500) más ~$50/mes de servidor. Al ~2,7% APY, las recompensas anuales son unos $2.160 antes de costos.',
       how: [
       `La Calculadora de Nodo/Validador estima el ingreso neto y el valor de stake de equilibrio para ejecutar un nodo validador de blockchain o masternode.`,
       `Úsala para evaluar si la economía del nodo justifica la inversión de configuración y los costos continuos.`
@@ -2309,7 +2309,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Estime custos e receita de operador de nó. Executar um validador Ethereum requer 32 ETH (~$74.400) mais ~$50/mês de servidor. A 3,2% APY, as recompensas anuais são aproximadamente $2.381.',
+      quickAnswer: 'Estime custos e receita de operador de nó. Executar um validador Ethereum requer 32 ETH (~$80.000 a $2.500) mais ~$50/mês de servidor. A ~2,7% APY, as recompensas anuais são cerca de $2.160 antes dos custos.',
       how: [
       `A Calculadora de Nó/Validador estima a receita líquida e o valor de stake de equilíbrio para executar um nó validador de blockchain ou masternode.`,
       `Use-a para avaliar se a economia do nó justifica o investimento de configuração e os custos contínuos.`
@@ -2320,7 +2320,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Düğüm operatörü maliyetlerini ve gelirini tahmin edin. Ethereum doğrulayıcı çalıştırmak 32 ETH (~$74.400) artı ~$50/ay sunucu maliyeti gerektirir. %3,2 APY\'de yıllık ödüller yaklaşık $2.381\'dir.',
+      quickAnswer: 'Düğüm operatörü maliyetlerini ve gelirini tahmin edin. Ethereum doğrulayıcı çalıştırmak 32 ETH ($2.500\'den ~$80.000) artı ~$50/ay sunucu maliyeti gerektirir. ~%2,7 APY\'de yıllık ödüller maliyetlerden önce yaklaşık $2.160\'tır.',
       how: [
       `Düğüm/Doğrulayıcı Hesaplayıcısı, bir blockchain doğrulayıcı düğümü veya masternode çalıştırmanın net gelirini ve başa baş stake değerini tahmin eder.`,
       `Düğüm ekonomisinin kurulum yatırımını ve devam eden maliyetleri haklı kılıp kılmadığını değerlendirmek için kullanın.`
@@ -2331,7 +2331,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'नोड ऑपरेटर लागत और राजस्व का अनुमान लगाएं। Ethereum वैलिडेटर चलाने के लिए 32 ETH (~$74,400) प्लस ~$50/माह सर्वर लागत चाहिए। 3.2% APY पर, वार्षिक रिवॉर्ड लगभग $2,381 है।',
+      quickAnswer: 'नोड ऑपरेटर लागत और राजस्व का अनुमान लगाएं। Ethereum वैलिडेटर चलाने के लिए 32 ETH ($2,500 पर ~$80,000) प्लस ~$50/माह सर्वर लागत चाहिए। ~2.7% APY पर, लागत से पहले वार्षिक रिवॉर्ड लगभग $2,160 है।',
       how: [
       `नोड/वैलिडेटर कैलकुलेटर ब्लॉकचेन वैलिडेटर नोड या मास्टरनोड चलाने से होने वाली शुद्ध आय और ब्रेक-ईवन स्टेक मूल्य का अनुमान लगाता है।`,
       `यह मूल्यांकन करने के लिए इसका उपयोग करें कि क्या नोड इकोनॉमिक्स सेटअप निवेश और चल रही लागत को उचित ठहराती है।`
@@ -2342,7 +2342,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Оцените затраты и доход оператора ноды. Запуск валидатора Ethereum требует 32 ETH (~$74 400) плюс ~$50/месяц серверных расходов. При 3,2% APY годовые награды составляют примерно $2 381.',
+      quickAnswer: 'Оцените затраты и доход оператора ноды. Запуск валидатора Ethereum требует 32 ETH (~$80 000 при $2 500) плюс ~$50/месяц серверных расходов. При ~2,7% APY годовые награды до расходов — около $2 160.',
       how: [
       `Калькулятор ноды/валидатора оценивает чистый доход и безубыточную стоимость стейка при запуске валидаторской ноды или мастерноды блокчейна.`,
       `Используйте для оценки, оправдывают ли экономика ноды начальные инвестиции в настройку и текущие расходы.`
@@ -2577,7 +2577,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'salary-calculator': {
     en: {
-      quickAnswer: 'Convert crypto salary to local currency and estimate tax withholding. A $100,000/year salary paid in BTC at $77,300 means receiving ~0.0498 BTC biweekly before taxes.',
+      quickAnswer: 'Convert a salary between fiat and crypto at the live price. A $100,000/year salary paid in BTC at ~$83,600 (October 2026) means receiving ~0.046 BTC biweekly before taxes; the tool does not estimate tax withholding.',
       how: [
       `The Crypto Salary Calculator converts a traditional fiat salary into its cryptocurrency equivalent, or shows how much fiat a given crypto salary is worth. Enter your annual salary, the share to convert, the target coin (BTC, ETH or USDT), the conversion fee and your pay frequency to see the crypto you receive per pay period at today's price, useful for employees or contractors paid in cryptocurrency or businesses offering crypto salary packages.`,
       `Use it to understand your real purchasing power when offered a salary in BTC, ETH, or stablecoins. For volatile assets like BTC or ETH, keep in mind that the calculator uses today's live price only, so a 20% price drop would cut the fiat value of the same coins by 20%. For stablecoin salaries (USDC, USDT), the conversion is near 1:1 with USD, providing predictable income.`
@@ -2588,7 +2588,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Convierte un salario cripto a moneda local y estima la retención de impuestos. Un salario de $100.000/año pagado en BTC a $73.700 significa recibir ~0,0259 BTC quincenal antes de impuestos.',
+      quickAnswer: 'Convierte un salario entre fíat y cripto al precio en vivo. Un salario de $100.000/año pagado en BTC a ~$83.600 (octubre de 2026) significa recibir ~0,046 BTC quincenal antes de impuestos; la herramienta no estima retenciones.',
       how: [
       `La Calculadora de Salario Cripto convierte un salario fiat tradicional a su equivalente en criptomoneda, o muestra cuánto fiat vale un salario cripto dado.`,
       `Úsala para entender tu poder adquisitivo real cuando se te ofrece un salario en BTC, ETH o stablecoins.`
@@ -2599,7 +2599,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Converta salário cripto para moeda local e estime retenção de impostos. Um salário de $100.000/ano pago em BTC a $73.700 significa receber ~0,0259 BTC quinzenalmente antes dos impostos.',
+      quickAnswer: 'Converta um salário entre moeda fiduciária e cripto ao preço ao vivo. Um salário de $100.000/ano pago em BTC a ~$83.600 (outubro de 2026) significa receber ~0,046 BTC quinzenalmente antes dos impostos; a ferramenta não estima retenções.',
       how: [
       `A Calculadora de Salário Cripto converte um salário fiat tradicional para seu equivalente em criptomoeda, ou mostra quanto fiat um determinado salário cripto vale.`,
       `Use-a para entender seu poder de compra real quando oferecido um salário em BTC, ETH ou stablecoins.`
@@ -2610,7 +2610,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Kripto maaşınızı yerel para birimine dönüştürün ve vergi kesintisini tahmin edin. $73.700/BTC\'de yılda $100.000 maaş, vergi öncesi iki haftada bir ~0,0259 BTC almak anlamına gelir.',
+      quickAnswer: 'Maaşı canlı fiyattan itibari para ile kripto arasında çevirin. ~$83.600/BTC\'de (Ekim 2026) yılda $100.000 maaş, vergi öncesi iki haftada bir ~0,046 BTC almak anlamına gelir; araç vergi kesintisini hesaplamaz.',
       how: [
       `Kripto Maaş Hesaplayıcısı, geleneksel bir fiat maaşını kripto para eşdeğerine dönüştürür veya belirli bir kripto para maaşının ne kadar fiat değerinde olduğunu gösterir.`,
       `BTC, ETH veya stablecoin cinsinden bir maaş teklif edildiğinde gerçek satın alma gücünüzü anlamak için kullanın.`
@@ -2621,7 +2621,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'क्रिप्टो सैलरी को स्थानीय मुद्रा में कन्वर्ट करें और टैक्स विदहोल्डिंग का अनुमान लगाएं। $77,300/BTC पर $100,000/वर्ष सैलरी का मतलब है टैक्स से पहले हर दो सप्ताह में ~0.0498 BTC प्राप्त करना।',
+      quickAnswer: 'लाइव कीमत पर सैलरी को fiat और crypto के बीच कन्वर्ट करें। ~$83,600/BTC (अक्टूबर 2026) पर $100,000/वर्ष सैलरी का मतलब है टैक्स से पहले हर दो सप्ताह ~0.046 BTC; टूल टैक्स विदहोल्डिंग का अनुमान नहीं लगाता।',
       how: [
       `क्रिप्टो सैलरी कैलकुलेटर एक पारंपरिक फिएट सैलरी को उसके क्रिप्टोकरेंसी इक्विवेलेंट में कन्वर्ट करता है, या दिखाता है कि दिए गए क्रिप्टो सैलरी की कितनी फिएट वैल्यू है।`,
       `BTC, ETH, या स्टेबलकॉइन में सैलरी ऑफर किए जाने पर अपनी वास्तविक क्रय शक्ति समझने के लिए इसका उपयोग करें।`
@@ -2632,7 +2632,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Конвертируйте крипто-зарплату в местную валюту и оцените налоговые удержания. Зарплата $100 000/год в BTC по $73 700 означает получение ~0,0259 BTC раз в две недели до вычета налогов.',
+      quickAnswer: 'Переводите зарплату между фиатом и криптой по текущему курсу. Зарплата $100 000/год в BTC по ~$83 600 (октябрь 2026) означает ~0,046 BTC раз в две недели до вычета налогов; налоговые удержания инструмент не рассчитывает.',
       how: [
       `Калькулятор зарплаты в криптовалюте переводит традиционную фиатную зарплату в её криптовалютный эквивалент, или показывает, сколько фиата стоит указанная крипто-зарплата.`,
       `Используйте для понимания реальной покупательной способности при зарплате в BTC, ETH или стейблкоинах.`
@@ -2852,7 +2852,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Crypto-backed loan interest = Principal × APR × (Term/12). Borrowing $20,000 against BTC collateral at 8% APR for 12 months costs $1,600 in interest. Compare LTV ratios across platforms.',
       how: [
       `The Crypto Loan Calculator computes the interest cost, liquidation price, and LTV (loan-to-value) dynamics for a cryptocurrency-backed loan. Enter your collateral value in USD, the loan-to-value ratio you want, the annual interest rate, the loan term and your platform's margin-call and liquidation LTVs to see the loan amount, monthly and total interest, total repayment, and the collateral value at which a margin call or liquidation would trigger.`,
-      `Use it before taking a crypto loan on platforms like Nexo, BlockFi, or Compound to understand the true cost and risk of leverage. The liquidation price calculation is especially valuable, it shows how much your collateral can drop before the lender liquidates your position to cover the loan, helping you maintain a safe margin of safety.`
+      `Use it before taking a crypto loan on platforms like Nexo, Aave, or Compound to understand the true cost and risk of leverage. The liquidation price calculation is especially valuable, it shows how much your collateral can drop before the lender liquidates your position to cover the loan, helping you maintain a safe margin of safety.`
       ],
       inputs: [
       `Collateral Value (USD) is the dollar value of the crypto you're pledging as security (e.g., 1 BTC at today's price); you type it in, as no price is fetched. Loan-to-Value sets how much you borrow: the loan amount is the collateral value times the LTV, so 50% on $10,000 gives a $5,000 loan. LTV ratio (loan amount / collateral value) typically must stay below 50–80% depending on the platform, the calculator shows your current LTV and the critical liquidation LTV threshold.`,
@@ -2863,7 +2863,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Interés de préstamo cripto = Principal × APR × (Plazo/12). Pedir prestados $20.000 con colateral BTC al 8% APR por 12 meses cuesta $1.600 en intereses. Compara ratios LTV entre plataformas.',
       how: [
       `La Calculadora de Préstamo Cripto calcula el costo de interés, el precio de liquidación y la dinámica LTV para un préstamo respaldado por criptomonedas.`,
-      `Úsala antes de tomar un préstamo cripto en plataformas como Nexo, BlockFi o Compound para entender el costo real y el riesgo del apalancamiento.`
+      `Úsala antes de tomar un préstamo cripto en plataformas como Nexo, Aave o Compound para entender el costo real y el riesgo del apalancamiento.`
       ],
       inputs: [
       `El valor del colateral (USD) es el valor en dólares del cripto que das como garantía; lo introduces tú. La relación préstamo-valor (LTV) fija cuánto pides: el monto del préstamo es el valor del colateral por el LTV, así que un 50% sobre $10.000 da un préstamo de $5.000. La relación LTV debe mantenerse por debajo del 50-80% según la plataforma.`,
@@ -2874,7 +2874,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Juros de empréstimo cripto = Principal × APR × (Prazo/12). Tomar emprestado $20.000 com colateral BTC a 8% APR por 12 meses custa $1.600 em juros. Compare razões LTV entre plataformas.',
       how: [
       `A Calculadora de Empréstimo Cripto calcula o custo de juros, o preço de liquidação e a dinâmica LTV para um empréstimo garantido por criptomoeda.`,
-      `Use-a antes de fazer um empréstimo cripto em plataformas como Nexo, BlockFi ou Compound para entender o custo real e o risco da alavancagem.`
+      `Use-a antes de fazer um empréstimo cripto em plataformas como Nexo, Aave ou Compound para entender o custo real e o risco da alavancagem.`
       ],
       inputs: [
       `O valor do colateral (USD) é o valor em dólares do cripto que você dá como garantia; você mesmo o digita. A relação empréstimo-valor (LTV) define quanto você toma: o valor do empréstimo é o valor do colateral vezes o LTV, então 50% sobre $10.000 dá um empréstimo de $5.000. A relação LTV deve permanecer abaixo de 50-80% dependendo da plataforma.`,
@@ -2885,7 +2885,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Kripto teminatlı kredi faizi = Anapara × APR × (Vade/12). BTC teminatıyla $20.000 borçlanmak %8 APR\'de 12 ayda $1.600 faize mal olur. Platformlar arasında LTV oranlarını karşılaştırın.',
       how: [
       `Kripto Kredi Hesaplayıcısı, kripto para destekli bir kredi için faiz maliyetini, likidasyon fiyatını ve LTV dinamiklerini hesaplar.`,
-      `Nexo, BlockFi veya Compound gibi platformlarda kripto kredi almadan önce kaldıracın gerçek maliyetini ve riskini anlamak için kullanın.`
+      `Nexo, Aave veya Compound gibi platformlarda kripto kredi almadan önce kaldıracın gerçek maliyetini ve riskini anlamak için kullanın.`
       ],
       inputs: [
       `Teminat değeri (USD), güvence olarak verdiğiniz kripto paranın dolar değeridir ve bunu kendiniz girersiniz. Kredi-değer oranı (LTV) ne kadar borç aldığınızı belirler: kredi tutarı teminat değeri çarpı LTV'dir, yani 10.000 dolar üzerinde %50, 5.000 dolarlık kredi demektir. LTV oranı platforma bağlı olarak %50-80'in altında kalmalıdır.`,
@@ -2896,7 +2896,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'क्रिप्टो-बैक्ड लोन ब्याज = प्रिंसिपल × APR × (अवधि/12)। BTC कोलैटरल पर $20,000 उधार 8% APR पर 12 महीने के लिए $1,600 ब्याज खर्च करता है। प्लेटफॉर्म पर LTV अनुपात की तुलना करें।',
       how: [
       `क्रिप्टो लोन कैलकुलेटर क्रिप्टोकरेंसी-बैक्ड लोन के लिए ब्याज लागत, लिक्विडेशन प्राइस और LTV डायनामिक्स की गणना करता है।`,
-      `Nexo, BlockFi, या Compound जैसे प्लेटफॉर्म पर क्रिप्टो लोन लेने से पहले लीवरेज की वास्तविक लागत और जोखिम समझने के लिए इसका उपयोग करें।`
+      `Nexo, Aave, या Compound जैसे प्लेटफॉर्म पर क्रिप्टो लोन लेने से पहले लीवरेज की वास्तविक लागत और जोखिम समझने के लिए इसका उपयोग करें।`
       ],
       inputs: [
       `कोलैटरल मूल्य (USD) उस क्रिप्टो का डॉलर मूल्य है जिसे आप सुरक्षा के रूप में गिरवी रखते हैं; इसे आप खुद दर्ज करते हैं। LTV तय करता है कि आप कितना उधार लेते हैं: लोन राशि = कोलैटरल मूल्य × LTV, यानी $10,000 पर 50% से $5,000 का लोन मिलता है। LTV अनुपात प्लेटफॉर्म के आधार पर 50-80% से नीचे रहना चाहिए।`,
@@ -2907,7 +2907,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Проценты по криптозайму = Основная сумма × APR × (Срок/12). Заём $20 000 под залог BTC при 8% APR на 12 месяцев обойдётся в $1 600 процентов. Сравните коэффициенты LTV на разных платформах.',
       how: [
       `Калькулятор криптозайма рассчитывает стоимость процентов, цену ликвидации и динамику LTV для займа под залог криптовалюты.`,
-      `Используйте перед получением криптозайма на платформах Nexo, BlockFi или Compound для понимания реальной стоимости и рисков.`
+      `Используйте перед получением криптозайма на платформах Nexo, Aave или Compound для понимания реальной стоимости и рисков.`
       ],
       inputs: [
       `Стоимость залога (USD) — долларовая стоимость криптовалюты, которую вы закладываете; её вводите вы сами. LTV определяет размер займа: сумма займа равна стоимости залога, умноженной на LTV, так что 50% от $10 000 дают заём $5 000. Коэффициент LTV должен оставаться ниже 50–80% в зависимости от платформы.`,
@@ -3172,73 +3172,73 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'difficulty-calculator': {
     en: {
-      quickAnswer: 'Bitcoin mining difficulty adjusts every 2,016 blocks (~2 weeks). Current difficulty: ~145T. A 10% difficulty increase reduces daily mining revenue by approximately 10% for the same hash rate.',
+      quickAnswer: 'Bitcoin mining difficulty adjusts every 2,016 blocks (~2 weeks). Difficulty in October 2026: ~133T. A 10% difficulty increase reduces daily mining revenue by approximately 10% for the same hash rate.',
       how: [
       `The Mining Difficulty Calculator shows what a Bitcoin difficulty adjustment of the size you expect does to network difficulty and to your mining revenue. You enter the current difficulty in trillions (T), the expected change in percent and your current daily revenue in USD, and it returns the projected difficulty, the projected daily revenue with its daily change, and the monthly revenue delta; it does not fetch block data or predict the adjustment itself.`,
       `Use it to anticipate revenue changes before the next difficulty adjustment. If blocks are being mined faster than the 10-minute target, difficulty will increase and your share of the block reward will decrease proportionally. During rapid hash rate growth periods, difficulty can jump 5–10% per adjustment, the calculator helps you model this impact on profitability.`
       ],
       inputs: [
-      `Current Difficulty (T) is Bitcoin's network difficulty in trillions, typed in or picked from presets between 100T and 170T (default 145T); nothing is fetched from the network, so check a block explorer for today's figure. Current Daily Revenue (USD) is what your hardware earns per day at that difficulty. Your Network Share (fraction) is your slice of total hashrate, for example 0.0025 = 0.25%; it is shown back as a percentage and does not change the revenue math.`,
+      `Current Difficulty (T) is Bitcoin's network difficulty in trillions, typed in or picked from presets between 100T and 170T (default 133T, the October 2026 level); nothing is fetched from the network, so check a block explorer for today's figure. Current Daily Revenue (USD) is what your hardware earns per day at that difficulty. Your Network Share (fraction) is your slice of total hashrate, for example 0.0025 = 0.25%; it is shown back as a percentage and does not change the revenue math.`,
       `Expected Difficulty Change (%) is your own estimate of the next adjustment (presets from -10% to +15%, default +8%); the calculator multiplies difficulty by (1 + change) and divides your daily revenue by the same factor. A positive percentage means difficulty will increase; negative means it will decrease. This directly impacts your hashrate's share of the network and therefore your daily coin earnings.`
       ],
     },
     es: {
-      quickAnswer: 'La dificultad de minería de Bitcoin se ajusta cada 2.016 bloques (~2 semanas). Dificultad actual: ~145T. Un aumento del 10% en la dificultad reduce los ingresos diarios de minería aproximadamente un 10% para la misma tasa de hash.',
+      quickAnswer: 'La dificultad de minería de Bitcoin se ajusta cada 2.016 bloques (~2 semanas). Dificultad en octubre de 2026: ~133T. Un aumento del 10% en la dificultad reduce los ingresos diarios de minería aproximadamente un 10% para la misma tasa de hash.',
 
       how: [
       `La Calculadora de Dificultad de Minería muestra qué le hace un ajuste de dificultad de Bitcoin del tamaño que esperas a la dificultad de la red y a tus ingresos de minería: introduces la dificultad actual, el cambio esperado y tus ingresos diarios, y obtienes la dificultad proyectada, los ingresos diarios proyectados y el delta de ingresos mensual.`,
       `Úsala para anticipar cambios de ingresos antes del próximo ajuste de dificultad.`
       ],
       inputs: [
-      `La dificultad actual (T) es la dificultad de la red Bitcoin en billones, que escribes o eliges entre 100T y 170T (145T por defecto); no se obtiene nada de la red, así que consulta la cifra del día en un explorador de bloques. Los ingresos diarios actuales (USD) son lo que gana tu equipo por día con esa dificultad, y tu participación en la red (fracción), por ejemplo 0,0025 = 0,25%, solo se muestra como porcentaje y no cambia el cálculo.`,
+      `La dificultad actual (T) es la dificultad de la red Bitcoin en billones, que escribes o eliges entre 100T y 170T (133T por defecto, el nivel de octubre de 2026); no se obtiene nada de la red, así que consulta la cifra del día en un explorador de bloques. Los ingresos diarios actuales (USD) son lo que gana tu equipo por día con esa dificultad, y tu participación en la red (fracción), por ejemplo 0,0025 = 0,25%, solo se muestra como porcentaje y no cambia el cálculo.`,
       `El cambio de dificultad esperado (%) es tu propia estimación del próximo ajuste (de −10% a +15% en los preajustes, +8% por defecto): la calculadora multiplica la dificultad por (1 + cambio) y divide tus ingresos diarios por el mismo factor.`
       ],
     },
     pt: {
-      quickAnswer: 'A dificuldade de mineração do Bitcoin ajusta-se a cada 2.016 blocos (~2 semanas). Dificuldade atual: ~145T. Um aumento de 10% na dificuldade reduz a receita diária de mineração em aproximadamente 10% para a mesma taxa de hash.',
+      quickAnswer: 'A dificuldade de mineração do Bitcoin ajusta-se a cada 2.016 blocos (~2 semanas). Dificuldade em outubro de 2026: ~133T. Um aumento de 10% na dificuldade reduz a receita diária de mineração em aproximadamente 10% para a mesma taxa de hash.',
 
       how: [
       `A Calculadora de Dificuldade de Mineração mostra o que um ajuste de dificuldade do Bitcoin do tamanho que você espera faz com a dificuldade da rede e com sua receita de mineração: você informa a dificuldade atual, a mudança esperada e sua receita diária, e obtém a dificuldade projetada, a receita diária projetada e o delta de receita mensal.`,
       `Use-a para antecipar mudanças de receita antes do próximo ajuste de dificuldade.`
       ],
       inputs: [
-      `A dificuldade atual (T) é a dificuldade da rede Bitcoin em trilhões, digitada ou escolhida entre 100T e 170T (padrão 145T); nada é obtido da rede, então confira o valor do dia em um explorador de blocos. A receita diária atual (USD) é o que seu equipamento ganha por dia nessa dificuldade, e sua participação na rede (fração), por exemplo 0,0025 = 0,25%, aparece apenas como porcentagem e não altera o cálculo.`,
+      `A dificuldade atual (T) é a dificuldade da rede Bitcoin em trilhões, digitada ou escolhida entre 100T e 170T (padrão 133T, o nível de outubro de 2026); nada é obtido da rede, então confira o valor do dia em um explorador de blocos. A receita diária atual (USD) é o que seu equipamento ganha por dia nessa dificuldade, e sua participação na rede (fração), por exemplo 0,0025 = 0,25%, aparece apenas como porcentagem e não altera o cálculo.`,
       `A mudança de dificuldade esperada (%) é a sua própria estimativa do próximo ajuste (de −10% a +15% nos atalhos, +8% por padrão): a calculadora multiplica a dificuldade por (1 + mudança) e divide sua receita diária pelo mesmo fator.`
       ],
     },
     tr: {
-      quickAnswer: 'Bitcoin madencilik zorluğu her 2.016 blokta (~2 hafta) ayarlanır. Mevcut zorluk: ~145T. %10 zorluk artışı aynı hash oranı için günlük madencilik gelirini yaklaşık %10 azaltır.',
+      quickAnswer: 'Bitcoin madencilik zorluğu her 2.016 blokta (~2 hafta) ayarlanır. Ekim 2026 zorluğu: ~133T. %10 zorluk artışı aynı hash oranı için günlük madencilik gelirini yaklaşık %10 azaltır.',
 
       how: [
       `Madencilik Zorluğu Hesaplayıcısı, beklediğiniz büyüklükteki bir Bitcoin zorluk ayarlamasının ağ zorluğunu ve madencilik gelirinizi nasıl etkileyeceğini gösterir: mevcut zorluğu, beklenen değişimi ve günlük gelirinizi girersiniz; tahmini zorluk, tahmini günlük gelir ve aylık gelir deltası hesaplanır.`,
       `Bir sonraki zorluk ayarlamasından önce gelir değişikliklerini öngörmek için kullanın.`
       ],
       inputs: [
-      `Mevcut zorluk (T), Bitcoin ağ zorluğunun trilyon cinsinden değeridir; elle girilir veya 100T ile 170T arasındaki hazır değerlerden seçilir (varsayılan 145T). Ağdan hiçbir veri çekilmez, bu yüzden güncel değeri bir blok gezgininden kontrol edin. Mevcut günlük gelir (USD), ekipmanınızın bu zorlukta günde kazandığı tutardır; ağ payınız (kesir), örneğin 0,0025 = %0,25, yalnızca yüzde olarak gösterilir ve hesabı değiştirmez.`,
+      `Mevcut zorluk (T), Bitcoin ağ zorluğunun trilyon cinsinden değeridir; elle girilir veya 100T ile 170T arasındaki hazır değerlerden seçilir (varsayılan 133T, Ekim 2026 düzeyi). Ağdan hiçbir veri çekilmez, bu yüzden güncel değeri bir blok gezgininden kontrol edin. Mevcut günlük gelir (USD), ekipmanınızın bu zorlukta günde kazandığı tutardır; ağ payınız (kesir), örneğin 0,0025 = %0,25, yalnızca yüzde olarak gösterilir ve hesabı değiştirmez.`,
       `Beklenen zorluk değişimi (%), bir sonraki ayarlama için sizin kendi tahmininizdir (hazır değerler −%10 ile +%15 arası, varsayılan +%8): hesaplayıcı zorluğu (1 + değişim) ile çarpar ve günlük gelirinizi aynı katsayıya böler.`
       ],
     },
     hi: {
-      quickAnswer: 'बिटकॉइन माइनिंग डिफिकल्टी हर 2,016 ब्लॉक (~2 सप्ताह) में एडजस्ट होती है। वर्तमान डिफिकल्टी: ~145T। 10% डिफिकल्टी वृद्धि समान हैश रेट के लिए दैनिक माइनिंग राजस्व को लगभग 10% कम करती है।',
+      quickAnswer: 'बिटकॉइन माइनिंग डिफिकल्टी हर 2,016 ब्लॉक (~2 सप्ताह) में एडजस्ट होती है। अक्टूबर 2026 में डिफिकल्टी: ~133T। 10% डिफिकल्टी वृद्धि समान हैश रेट के लिए दैनिक माइनिंग राजस्व को लगभग 10% कम करती है।',
 
       how: [
       `माइनिंग डिफिकल्टी कैलकुलेटर दिखाता है कि आपकी अपेक्षा के आकार का Bitcoin डिफिकल्टी एडजस्टमेंट नेटवर्क डिफिकल्टी और आपके माइनिंग राजस्व पर क्या असर डालेगा: आप वर्तमान डिफिकल्टी, अपेक्षित परिवर्तन और दैनिक राजस्व दर्ज करते हैं, और अनुमानित डिफिकल्टी, अनुमानित दैनिक राजस्व और मासिक राजस्व डेल्टा देखते हैं।`,
       `अगले डिफिकल्टी एडजस्टमेंट से पहले राजस्व परिवर्तनों का अनुमान लगाने के लिए इसका उपयोग करें।`
       ],
       inputs: [
-      `वर्तमान कठिनाई (T) Bitcoin नेटवर्क की डिफिकल्टी ट्रिलियन में है, जिसे आप दर्ज करते हैं या 100T से 170T के प्रीसेट में से चुनते हैं (डिफ़ॉल्ट 145T); नेटवर्क से कुछ भी फेच नहीं होता, इसलिए आज का आंकड़ा किसी ब्लॉक एक्सप्लोरर में देख लें। वर्तमान दैनिक राजस्व (USD) वह राशि है जो आपका उपकरण उस डिफिकल्टी पर प्रति दिन कमाता है, और आपकी नेटवर्क हिस्सेदारी (अंश), जैसे 0.0025 = 0.25%, केवल प्रतिशत के रूप में दिखती है और गणना नहीं बदलती।`,
+      `वर्तमान कठिनाई (T) Bitcoin नेटवर्क की डिफिकल्टी ट्रिलियन में है, जिसे आप दर्ज करते हैं या 100T से 170T के प्रीसेट में से चुनते हैं (डिफ़ॉल्ट 133T, अक्टूबर 2026 का स्तर); नेटवर्क से कुछ भी फेच नहीं होता, इसलिए आज का आंकड़ा किसी ब्लॉक एक्सप्लोरर में देख लें। वर्तमान दैनिक राजस्व (USD) वह राशि है जो आपका उपकरण उस डिफिकल्टी पर प्रति दिन कमाता है, और आपकी नेटवर्क हिस्सेदारी (अंश), जैसे 0.0025 = 0.25%, केवल प्रतिशत के रूप में दिखती है और गणना नहीं बदलती।`,
       `अपेक्षित कठिनाई परिवर्तन (%) अगले एडजस्टमेंट का आपका अपना अनुमान है (प्रीसेट −10% से +15%, डिफ़ॉल्ट +8%): कैलकुलेटर डिफिकल्टी को (1 + परिवर्तन) से गुणा करता है और आपके दैनिक राजस्व को उसी गुणक से भाग देता है।`
       ],
     },
     ru: {
-      quickAnswer: 'Сложность майнинга биткоина корректируется каждые 2 016 блоков (~2 недели). Текущая сложность: ~145T. Рост сложности на 10% снижает дневной доход от майнинга примерно на 10% при том же хешрейте.',
+      quickAnswer: 'Сложность майнинга биткоина корректируется каждые 2 016 блоков (~2 недели). Сложность в октябре 2026: ~133T. Рост сложности на 10% снижает дневной доход от майнинга примерно на 10% при том же хешрейте.',
 
       how: [
       `Калькулятор сложности майнинга показывает, что корректировка сложности Bitcoin ожидаемого вами размера сделает со сложностью сети и с вашим доходом от майнинга: вы вводите текущую сложность, ожидаемое изменение и дневной доход, а получаете прогнозируемую сложность, прогнозируемый дневной доход и дельту дохода за месяц.`,
       `Используйте для прогнозирования изменений дохода до следующей корректировки сложности.`
       ],
       inputs: [
-      `Текущая сложность (T) — сложность сети Bitcoin в триллионах: её вводят вручную или выбирают из пресетов от 100T до 170T (по умолчанию 145T); из сети ничего не загружается, поэтому сверьте актуальное значение в блок-эксплорере. Текущий дневной доход (USD) — сколько ваше оборудование зарабатывает в день при этой сложности, а ваша доля в сети (дробь), например 0,0025 = 0,25%, лишь показывается в процентах и на расчёт не влияет.`,
+      `Текущая сложность (T) — сложность сети Bitcoin в триллионах: её вводят вручную или выбирают из пресетов от 100T до 170T (по умолчанию 133T — уровень октября 2026); из сети ничего не загружается, поэтому сверьте актуальное значение в блок-эксплорере. Текущий дневной доход (USD) — сколько ваше оборудование зарабатывает в день при этой сложности, а ваша доля в сети (дробь), например 0,0025 = 0,25%, лишь показывается в процентах и на расчёт не влияет.`,
       `Ожидаемое изменение сложности (%) — ваша собственная оценка следующей корректировки (пресеты от −10% до +15%, по умолчанию +8%): калькулятор умножает сложность на (1 + изменение) и делит ваш дневной доход на тот же множитель.`
       ],
     },
@@ -3537,7 +3537,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'bridge-comparator': {
     en: {
-      quickAnswer: 'Estimate cross-chain bridge fees and slippage before moving assets. Bridging 1 ETH from Ethereum to Arbitrum typically costs $2–10 in gas plus 0.1–0.3% bridge fee.',
+      quickAnswer: 'Estimate cross-chain bridge fees and slippage before moving assets. Bridging 1 ETH from Ethereum to Arbitrum costs only cents in gas at October 2026\'s ~0.1 Gwei (several dollars during congestion) plus a 0.04–0.3% bridge fee.',
       how: [
       `The Bridge Comparator calculates and compares the total cost of moving assets between blockchain networks across multiple bridge protocols, helping you identify the cheapest and fastest cross-chain transfer option. Enter your source network, destination network, asset, and amount to see a side-by-side comparison of bridge fees, estimated transfer times, and net amounts received.`,
       `Use it before every cross-chain move to avoid overpaying on bridge fees, which can range from under 0.05% to over 1% depending on the bridge and network congestion. For large transfers ($10,000+), even a 0.3% fee difference between bridges represents $30 in direct savings, always compare before bridging.`
@@ -3548,7 +3548,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Estima comisiones y slippage de puentes cross-chain antes de mover activos. Transferir 1 ETH de Ethereum a Arbitrum típicamente cuesta $2–10 en gas más 0,1–0,3% de comisión del puente.',
+      quickAnswer: 'Estima comisiones y slippage de puentes cross-chain antes de mover activos. Transferir 1 ETH de Ethereum a Arbitrum cuesta apenas centavos de gas con los ~0,1 Gwei de octubre de 2026 (varios dólares en congestión) más 0,04–0,3% de comisión del puente.',
 
       how: [
       `El Comparador de Puentes calcula y compara el costo total de mover activos entre redes de blockchain en múltiples protocolos de puente, ayudándote a identificar la opción de transferencia entre cadenas más barata y rápida.`,
@@ -3560,7 +3560,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Estime taxas e slippage de bridges cross-chain antes de mover ativos. Transferir 1 ETH do Ethereum para Arbitrum tipicamente custa $2–10 em gas mais 0,1–0,3% de taxa de bridge.',
+      quickAnswer: 'Estime taxas e slippage de bridges cross-chain antes de mover ativos. Transferir 1 ETH do Ethereum para Arbitrum custa só centavos de gas com os ~0,1 Gwei de outubro de 2026 (alguns dólares em congestionamento) mais 0,04–0,3% de taxa de bridge.',
 
       how: [
       `O Comparador de Pontes calcula e compara o custo total de mover ativos entre redes blockchain em múltiplos protocolos de ponte, ajudando você a identificar a opção de transferência entre cadeias mais barata e rápida.`,
@@ -3572,7 +3572,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Varlıkları taşımadan önce çapraz zincir köprü ücretlerini ve kaymayı tahmin edin. 1 ETH\'yi Ethereum\'dan Arbitrum\'a aktarmak genellikle $2–10 gas artı %0,1–0,3 köprü ücreti tutar.',
+      quickAnswer: 'Varlıkları taşımadan önce çapraz zincir köprü ücretlerini ve kaymayı tahmin edin. 1 ETH\'yi Ethereum\'dan Arbitrum\'a aktarmak Ekim 2026\'nın ~0,1 Gwei\'siyle yalnızca birkaç sentlik gas (yoğunlukta birkaç dolar) artı %0,04–0,3 köprü ücreti tutar.',
 
       how: [
       `Köprü Karşılaştırıcısı, en ucuz ve hızlı zincirler arası transfer seçeneğini belirlemenize yardımcı olmak için birden fazla köprü protokolü üzerinden blokzincir ağları arasında varlıkları taşımanın toplam maliyetini hesaplar ve karşılaştırır.`,
@@ -3584,7 +3584,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'एसेट्स ट्रांसफर करने से पहले क्रॉस-चेन ब्रिज फीस और स्लिपेज का अनुमान लगाएं। 1 ETH को Ethereum से Arbitrum में ब्रिज करने की लागत आमतौर पर गैस में $2–10 प्लस 0.1–0.3% ब्रिज फीस होती है।',
+      quickAnswer: 'एसेट्स ट्रांसफर करने से पहले क्रॉस-चेन ब्रिज फीस और स्लिपेज का अनुमान लगाएं। 1 ETH को Ethereum से Arbitrum में ब्रिज करने पर अक्टूबर 2026 के ~0.1 Gwei पर गैस में केवल कुछ सेंट (कंजेशन में कुछ डॉलर) प्लस 0.04–0.3% ब्रिज फीस लगती है।',
 
       how: [
       `ब्रिज कम्पेरेटर कई ब्रिज प्रोटोकॉल पर ब्लॉकचेन नेटवर्क के बीच एसेट मूव करने की कुल लागत की गणना और तुलना करता है।`,
@@ -3596,7 +3596,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Оценивайте комиссии и проскальзывание кросс-чейн мостов перед переводом активов. Перевод 1 ETH из Ethereum в Arbitrum обычно стоит $2–10 за газ плюс 0,1–0,3% комиссии моста.',
+      quickAnswer: 'Оценивайте комиссии и проскальзывание кросс-чейн мостов перед переводом активов. Перевод 1 ETH из Ethereum в Arbitrum при ~0,1 Gwei (октябрь 2026) стоит считанные центы за газ (несколько долларов при загрузке сети) плюс 0,04–0,3% комиссии моста.',
 
       how: [
       `Сравнитель мостов рассчитывает и сравнивает общую стоимость перевода активов между блокчейн-сетями через несколько протоколов мостов, помогая найти самый дешёвый и быстрый вариант кросс-чейн перевода.`,
@@ -4047,7 +4047,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
   'cross-chain-bridge-calculator': {
     en: {
-      quickAnswer: 'Estimate cross-chain bridge fees and slippage before moving assets. Bridging 1 ETH from Ethereum to Arbitrum typically costs $2–10 in gas plus 0.1–0.3% bridge fee.',
+      quickAnswer: 'Estimate cross-chain bridge fees and slippage before moving assets. Bridging 1 ETH from Ethereum to Arbitrum costs only cents in gas at October 2026\'s ~0.1 Gwei (several dollars during congestion) plus a 0.04–0.3% bridge fee.',
       how: [
         `The Cross-Chain Bridge Calculator estimates the total cost and time of bridging tokens between blockchains such as Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana, and Avalanche. Select your source and destination chains, enter the transfer amount in dollars, the bridge fee percentage and the gas fee you expect on each chain, and the tool returns the bridge fee in dollars, total gas, total cost, cost as a percentage of the transfer, the amount that arrives and a typical transfer time for the route.`,
         `The calculator handles one route at a time, so to compare bridging paths, for example, bridging ETH from mainnet to Arbitrum via the native bridge (free but 7-day withdrawal) versus a third-party bridge like Stargate or Across (instant but 0.05-0.15% fee), run it once per option with that bridge's fee. The calculator helps you decide whether speed or cost savings matter more for your specific transfer size.`
@@ -4058,7 +4058,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Estima comisiones y slippage de puentes cross-chain antes de mover activos. Transferir 1 ETH de Ethereum a Arbitrum típicamente cuesta $2–10 en gas más 0,1–0,3% de comisión del puente.',
+      quickAnswer: 'Estima comisiones y slippage de puentes cross-chain antes de mover activos. Transferir 1 ETH de Ethereum a Arbitrum cuesta apenas centavos de gas con los ~0,1 Gwei de octubre de 2026 (varios dólares en congestión) más 0,04–0,3% de comisión del puente.',
 
       how: [
         `La Calculadora de Puente Cross-Chain estima el costo total y tiempo de transferir tokens entre blockchains como Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana y Avalanche. Selecciona las cadenas de origen y destino, introduce el monto en dólares, el porcentaje de comisión del puente y el gas que esperas pagar en cada cadena, y la herramienta devuelve la comisión del puente en dólares, el gas total, el costo total, el costo como porcentaje de la transferencia, el monto que llega y un tiempo típico para la ruta.`,
@@ -4070,7 +4070,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Estime taxas e slippage de bridges cross-chain antes de mover ativos. Transferir 1 ETH do Ethereum para Arbitrum tipicamente custa $2–10 em gas mais 0,1–0,3% de taxa de bridge.',
+      quickAnswer: 'Estime taxas e slippage de bridges cross-chain antes de mover ativos. Transferir 1 ETH do Ethereum para Arbitrum custa só centavos de gas com os ~0,1 Gwei de outubro de 2026 (alguns dólares em congestionamento) mais 0,04–0,3% de taxa de bridge.',
 
       how: [
         `A Calculadora de Ponte Cross-Chain estima o custo total e tempo de transferência de tokens entre blockchains como Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana e Avalanche. Selecione as redes de origem e destino, insira o valor em dólares, a porcentagem da taxa da bridge e o gas que espera pagar em cada rede, e a ferramenta retorna a taxa da bridge em dólares, o gas total, o custo total, o custo como porcentagem da transferência, o valor que chega e um tempo típico para a rota.`,
@@ -4082,7 +4082,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Varlıkları taşımadan önce çapraz zincir köprü ücretlerini ve kaymayı tahmin edin. 1 ETH\'yi Ethereum\'dan Arbitrum\'a aktarmak genellikle $2–10 gas artı %0,1–0,3 köprü ücreti tutar.',
+      quickAnswer: 'Varlıkları taşımadan önce çapraz zincir köprü ücretlerini ve kaymayı tahmin edin. 1 ETH\'yi Ethereum\'dan Arbitrum\'a aktarmak Ekim 2026\'nın ~0,1 Gwei\'siyle yalnızca birkaç sentlik gas (yoğunlukta birkaç dolar) artı %0,04–0,3 köprü ücreti tutar.',
 
       how: [
         `Cross-Chain Köprü Hesaplayıcısı, Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana ve Avalanche gibi blok zincirleri arasında token transfer maliyetini ve süresini tahmin eder. Kaynak ve hedef zincirleri seçin, dolar cinsinden transfer tutarını, köprü ücreti yüzdesini ve her zincirde ödemeyi beklediğiniz gas ücretini girin; araç dolar cinsinden köprü ücretini, toplam gas'ı, toplam maliyeti, maliyetin transfere oranını, karşı tarafa ulaşan tutarı ve rota için tipik transfer süresini gösterir.`,
@@ -4094,7 +4094,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'एसेट्स ट्रांसफर करने से पहले क्रॉस-चेन ब्रिज फीस और स्लिपेज का अनुमान लगाएं। 1 ETH को Ethereum से Arbitrum में ब्रिज करने की लागत आमतौर पर गैस में $2–10 प्लस 0.1–0.3% ब्रिज फीस होती है।',
+      quickAnswer: 'एसेट्स ट्रांसफर करने से पहले क्रॉस-चेन ब्रिज फीस और स्लिपेज का अनुमान लगाएं। 1 ETH को Ethereum से Arbitrum में ब्रिज करने पर अक्टूबर 2026 के ~0.1 Gwei पर गैस में केवल कुछ सेंट (कंजेशन में कुछ डॉलर) प्लस 0.04–0.3% ब्रिज फीस लगती है।',
 
       how: [
         `क्रॉस-चेन ब्रिज कैलकुलेटर Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana और Avalanche जैसी ब्लॉकचेन के बीच टोकन ट्रांसफर की कुल लागत और समय का अनुमान लगाता है। सोर्स और डेस्टिनेशन चेन चुनें, डॉलर में ट्रांसफर राशि, ब्रिज फीस का प्रतिशत और हर चेन पर अपेक्षित गैस फीस दर्ज करें; टूल डॉलर में ब्रिज फीस, कुल गैस, कुल लागत, ट्रांसफर के % के रूप में लागत, पहुँचने वाली राशि और रूट का सामान्य ट्रांसफर समय दिखाता है।`,
@@ -4106,7 +4106,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Оценивайте комиссии и проскальзывание кросс-чейн мостов перед переводом активов. Перевод 1 ETH из Ethereum в Arbitrum обычно стоит $2–10 за газ плюс 0,1–0,3% комиссии моста.',
+      quickAnswer: 'Оценивайте комиссии и проскальзывание кросс-чейн мостов перед переводом активов. Перевод 1 ETH из Ethereum в Arbitrum при ~0,1 Gwei (октябрь 2026) стоит считанные центы за газ (несколько долларов при загрузке сети) плюс 0,04–0,3% комиссии моста.',
 
       how: [
         `Калькулятор кроссчейн-моста оценивает общую стоимость и время перевода токенов между блокчейнами: Ethereum, Arbitrum, Optimism, Polygon, BSC, Solana, Avalanche. Выберите исходную и целевую сети, введите сумму перевода в долларах, процент комиссии моста и ожидаемую плату за газ в каждой сети — инструмент покажет комиссию моста в долларах, суммарный газ, общую стоимость, её долю от перевода, сумму, которая дойдёт, и типичное время перевода по маршруту.`,
@@ -4343,7 +4343,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
   'crypto-portfolio-rebalance-calculator': {
     en: {
-      quickAnswer: 'Calculate rebalancing trades to restore target allocations. If BTC grew from 40% to 55% of your portfolio, rebalancing means selling ~15% of BTC holdings into underweight assets.',
+      quickAnswer: 'Calculate rebalancing trades to restore target allocations. If BTC grew from 40% to 55% of your portfolio, rebalancing means selling 15 percentage points of the portfolio — about 27% of your BTC position — into underweight assets.',
       how: [
         `The Crypto Portfolio Rebalance Calculator shows exactly which trades to execute to restore your portfolio to its target allocation. Enter each asset's current value and target weight percentage, and the tool calculates the dollar amount to buy or sell for every position. If BTC drifted from a 50% target to 62% during a rally while ETH fell from 30% to 22%, the calculator tells you to sell $X of BTC and buy $X of ETH.`,
         `Rebalancing forces a "sell high, buy low" discipline that most traders struggle to follow manually. Research shows quarterly rebalancing of a diversified crypto portfolio can reduce annualized volatility by 15-25% versus a buy-and-hold approach, while maintaining comparable returns. The calculator also estimates trading fees so you can verify the rebalance cost doesn't exceed the expected benefit.`
@@ -4354,7 +4354,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Calcula operaciones de rebalanceo para restaurar las asignaciones objetivo. Si BTC creció del 40% al 55% de tu portafolio, rebalancear significa vender ~15% de tus tenencias de BTC en activos con menor peso.',
+      quickAnswer: 'Calcula operaciones de rebalanceo para restaurar las asignaciones objetivo. Si BTC creció del 40% al 55% de tu portafolio, rebalancear significa vender 15 puntos porcentuales de la cartera — cerca del 27% de tu posición en BTC — en activos con menor peso.',
 
       how: [
         `La Calculadora de Rebalanceo de Portafolio Cripto muestra exactamente qué operaciones ejecutar para restaurar tu portafolio a su asignación objetivo. Ingresa el valor actual de cada activo y el peso objetivo, y la herramienta calcula el monto en dólares a comprar o vender por cada posición.`,
@@ -4366,7 +4366,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Calcule operações de rebalanceamento para restaurar alocações alvo. Se o BTC cresceu de 40% para 55% do seu portfólio, rebalancear significa vender ~15% das suas posições em BTC para ativos subponderados.',
+      quickAnswer: 'Calcule operações de rebalanceamento para restaurar alocações alvo. Se o BTC cresceu de 40% para 55% do seu portfólio, rebalancear significa vender 15 pontos percentuais do portfólio — cerca de 27% da sua posição em BTC — para ativos subponderados.',
 
       how: [
         `A Calculadora de Rebalanceamento de Portfólio Cripto mostra exatamente quais trades executar para restaurar seu portfólio à alocação alvo. Insira o valor atual de cada ativo e o peso alvo percentual, e a ferramenta calcula o valor em dólares a comprar ou vender.`,
@@ -4378,7 +4378,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Hedef dağılımları geri yüklemek için yeniden dengeleme işlemlerini hesaplayın. BTC portföyünüzün %40\'ından %55\'ine büyüdüyse, yeniden dengeleme BTC varlıklarınızın ~%15\'ini düşük ağırlıklı varlıklara satmak demektir.',
+      quickAnswer: 'Hedef dağılımları geri yüklemek için yeniden dengeleme işlemlerini hesaplayın. BTC portföyünüzün %40\'ından %55\'ine büyüdüyse, yeniden dengeleme portföyün 15 yüzde puanını — BTC pozisyonunuzun yaklaşık %27\'sini — düşük ağırlıklı varlıklara satmak demektir.',
 
       how: [
         `Kripto Portföy Yeniden Dengeleme Hesaplayıcısı, portföyünüzü hedef dağılımına geri döndürmek için hangi işlemleri yapacağınızı tam olarak gösterir. Her varlığın güncel değerini ve hedef ağırlık yüzdesini girin; araç her pozisyon için alınacak veya satılacak dolar tutarını hesaplar.`,
@@ -4390,7 +4390,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'टारगेट एलोकेशन बहाल करने के लिए रीबैलेंसिंग ट्रेड्स कैलकुलेट करें। यदि BTC आपके पोर्टफोलियो के 40% से 55% तक बढ़ गया, तो रीबैलेंसिंग का मतलब है BTC होल्डिंग्स का ~15% अंडरवेट एसेट्स में बेचना।',
+      quickAnswer: 'टारगेट एलोकेशन बहाल करने के लिए रीबैलेंसिंग ट्रेड्स कैलकुलेट करें। यदि BTC आपके पोर्टफोलियो के 40% से 55% तक बढ़ गया, तो रीबैलेंसिंग का मतलब है पोर्टफोलियो के 15 प्रतिशत अंक — यानी आपकी BTC पोज़िशन का लगभग 27% — अंडरवेट एसेट्स में बेचना।',
 
       how: [
         `क्रिप्टो पोर्टफोलियो रीबैलेंस कैलकुलेटर दिखाता है कि आपके पोर्टफोलियो को टार्गेट एलोकेशन पर वापस लाने के लिए कौन से ट्रेड करने हैं। हर एसेट की करंट वैल्यू और टार्गेट वेट परसेंटेज दर्ज करें — टूल हर पोजीशन के लिए खरीदने या बेचने की डॉलर राशि कैलकुलेट करता है।`,
@@ -4402,7 +4402,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Рассчитайте сделки для ребалансировки и восстановления целевых долей. Если BTC вырос с 40% до 55% портфеля, ребалансировка означает продажу ~15% BTC в недовзвешенные активы.',
+      quickAnswer: 'Рассчитайте сделки для ребалансировки и восстановления целевых долей. Если BTC вырос с 40% до 55% портфеля, ребалансировка означает продажу 15 процентных пунктов портфеля — около 27% вашей позиции в BTC — в недовзвешенные активы.',
 
       how: [
         `Калькулятор ребалансировки крипто-портфеля показывает, какие именно сделки нужно совершить, чтобы вернуть портфель к целевому распределению. Введите текущую стоимость каждого актива и целевой вес — инструмент рассчитает сумму покупки или продажи для каждой позиции в долларах.`,
@@ -4642,7 +4642,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Compare trading fees side-by-side across Binance, Coinbase, Kraken, and more. Enter your trade size and tier to find the cheapest exchange, a 0.1% difference on $100K saves $100 per trade.',
       how: [
         `The Exchange Fee Comparator calculates the trading fee across 10 major exchanges — Binance, Coinbase, Kraken, Bybit, OKX, and others, for any trade size. Choose spot or futures, maker or taker and your 30-day volume tier, enter the trade amount, and the tool ranks every exchange by fee, showing the fee rate, the fee in dollars and, where an exchange token discount exists (such as BNB or OKB), the discounted fee, plus the cheapest exchange and how much it saves versus the most expensive.`,
-        `The true cost of a trade goes beyond the posted fee schedule. A $10,000 BTC purchase on Coinbase Pro at 0.50% costs $50, while Binance at 0.10% costs just $10, saving $40 per trade. Over 50 trades per year, that difference compounds to $2,000. Withdrawal fees, which vary from $0 (Binance for certain networks) to $25+ for BTC on some platforms, are not part of the comparison, so add them yourself if you will move coins off the exchange.`
+        `The true cost of a trade goes beyond the posted fee schedule. A $10,000 BTC purchase at a 0.50% fee costs $50, while Binance at 0.10% costs just $10, saving $40 per trade. Over 50 trades per year, that difference compounds to $2,000. Withdrawal fees, which vary from $0 (Binance for certain networks) to $25+ for BTC on some platforms, are not part of the comparison, so add them yourself if you will move coins off the exchange.`
       ],
       inputs: [
         `Trade amount accepts any dollar value. There is no pair selector; the Trade Type switch chooses between spot and futures fee schedules. VIP tier toggle lets you see fee rates at different volume levels, most exchanges offer 5-8 tiers where fees drop from 0.10% to as low as 0.02% for monthly volumes above $10M. The maker/taker switch shows whether you're placing limit or market orders.`,
@@ -4654,7 +4654,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
       how: [
         `El Comparador de Comisiones de Exchange calcula el costo real de trading en exchanges principales — Binance, Coinbase, Kraken, Bybit, OKX — para cualquier tamaño de operación. Elige spot o futuros, maker o taker y tu nivel de volumen a 30 días, ingresa el monto y la herramienta ordena los exchanges por comisión, con la tasa, la comisión en dólares y, si el exchange tiene token de descuento (como BNB u OKB), la comisión rebajada, además del exchange más barato y cuánto ahorras frente al más caro.`,
-        `El costo real va más allá del esquema publicado. Una compra de $10.000 BTC en Coinbase Pro al 0,50% cuesta $50, mientras Binance al 0,10% cuesta solo $10. En 50 operaciones anuales, la diferencia suma $2.000. Las comisiones de retiro, que varían de $0 a $25+, no entran en la comparación, así que súmalas tú si vas a sacar las monedas del exchange.`
+        `El costo real va más allá del esquema publicado. Una compra de $10.000 BTC con una comisión del 0,50% cuesta $50, mientras Binance al 0,10% cuesta solo $10. En 50 operaciones anuales, la diferencia suma $2.000. Las comisiones de retiro, que varían de $0 a $25+, no entran en la comparación, así que súmalas tú si vas a sacar las monedas del exchange.`
       ],
       inputs: [
         `El monto acepta cualquier valor en dólares. No hay selector de par; el interruptor Tipo de Operación elige entre las tarifas spot y de futuros. El toggle de nivel VIP muestra tasas a diferentes volúmenes — la mayoría ofrece 5-8 niveles donde las comisiones bajan de 0,10% a 0,02% para volúmenes mensuales superiores a $10M.`,
@@ -4666,7 +4666,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
       how: [
         `O Comparador de Taxas de Exchange calcula o custo real de negociação em exchanges principais — Binance, Coinbase, Kraken, Bybit, OKX — para qualquer tamanho de operação. Escolha spot ou futuros, maker ou taker e a sua faixa de volume de 30 dias, insira o valor e a ferramenta ordena as exchanges por taxa, com a alíquota, a taxa em dólares e, quando a exchange tem token de desconto (como BNB ou OKB), a taxa com desconto, além da exchange mais barata e quanto você economiza em relação à mais cara.`,
-        `O custo real vai além da tabela publicada. Uma compra de $10.000 BTC na Coinbase Pro a 0,50% custa $50, enquanto Binance a 0,10% custa apenas $10. Em 50 operações anuais, a diferença acumula $2.000. As taxas de saque, que variam de $0 a $25+, não entram na comparação; some-as você se for tirar as moedas da exchange.`
+        `O custo real vai além da tabela publicada. Uma compra de $10.000 BTC com taxa de 0,50% custa $50, enquanto Binance a 0,10% custa apenas $10. Em 50 operações anuais, a diferença acumula $2.000. As taxas de saque, que variam de $0 a $25+, não entram na comparação; some-as você se for tirar as moedas da exchange.`
       ],
       inputs: [
         `O valor aceita qualquer montante em dólares. Não há seletor de par; a opção Tipo de Operação alterna entre as tabelas de taxas spot e de futuros. O toggle de nível VIP mostra taxas em diferentes volumes — a maioria oferece 5-8 níveis com taxas de 0,10% até 0,02% para volumes mensais acima de $10M.`,
@@ -4678,7 +4678,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
       how: [
         `Exchange Ücret Karşılaştırma Hesaplayıcısı, büyük borsalar — Binance, Coinbase, Kraken, Bybit, OKX — arasında herhangi bir işlem boyutu için gerçek trading maliyetini hesaplar. Spot veya vadeli, maker veya taker ve 30 günlük hacim seviyenizi seçip işlem tutarını girin; araç borsaları ücrete göre sıralar, ücret oranını, dolar cinsinden ücreti ve borsa token indirimi varsa (BNB veya OKB gibi) indirimli ücreti, ayrıca en ucuz borsayı ve en pahalıya göre tasarrufu gösterir.`,
-        `Gerçek maliyet ilan edilen ücret tarifesinin ötesindedir. Coinbase Pro'da %0,50 ile $10.000 BTC alımı $50, Binance'da %0,10 ile sadece $10 tutar. Yılda 50 işlemde fark $2.000'e ulaşır. Çekim ücretleri $0'dan $25+'ya kadar değişir.`
+        `Gerçek maliyet ilan edilen ücret tarifesinin ötesindedir. %0,50 ücretle $10.000 BTC alımı $50, Binance'da %0,10 ile sadece $10 tutar. Yılda 50 işlemde fark $2.000'e ulaşır. Çekim ücretleri $0'dan $25+'ya kadar değişir.`
       ],
       inputs: [
         `İşlem tutarı herhangi bir dolar değerini kabul eder. Çift seçici yoktur; İşlem Türü anahtarı spot ve vadeli ücret tarifeleri arasında seçim yapar. VIP seviye anahtarı farklı hacimlerdeki ücret oranlarını gösterir — çoğu borsa aylık $10M üzeri hacimlerde %0,10'dan %0,02'ye düşen 5-8 seviye sunar.`,
@@ -4690,7 +4690,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
       how: [
         `एक्सचेंज फीस कम्पेरेटर प्रमुख एक्सचेंजों — Binance, Coinbase, Kraken, Bybit, OKX — पर किसी भी ट्रेड साइज के लिए रियल ट्रेडिंग कॉस्ट कैलकुलेट करता है। स्पॉट या फ्यूचर्स, maker या taker और अपना 30-दिन वॉल्यूम टियर चुनें, ट्रेड अमाउंट दर्ज करें; टूल एक्सचेंजों को फीस के हिसाब से रैंक करता है और फीस रेट, डॉलर में फीस और जहाँ एक्सचेंज टोकन डिस्काउंट है (जैसे BNB या OKB) वहाँ डिस्काउंट वाली फीस, साथ ही सबसे सस्ता एक्सचेंज और सबसे महंगे की तुलना में बचत दिखाता है।`,
-        `असली कॉस्ट पोस्टेड फीस शेड्यूल से परे है। Coinbase Pro पर 0.50% से $10,000 BTC खरीदना $50 कॉस्ट है, Binance पर 0.10% से सिर्फ $10। साल में 50 ट्रेड पर फर्क $2,000 तक पहुंचता है। विड्रॉल फीस $0 से $25+ तक वैरी करती हैं।`
+        `असली कॉस्ट पोस्टेड फीस शेड्यूल से परे है। 0.50% फीस पर $10,000 BTC खरीदना $50 कॉस्ट है, Binance पर 0.10% से सिर्फ $10। साल में 50 ट्रेड पर फर्क $2,000 तक पहुंचता है। विड्रॉल फीस $0 से $25+ तक वैरी करती हैं।`
       ],
       inputs: [
         `ट्रेड अमाउंट कोई भी डॉलर वैल्यू स्वीकार करता है। VIP टियर टॉगल अलग-अलग वॉल्यूम लेवल पर फीस रेट दिखाता है — ज्यादातर एक्सचेंज $10M+ मंथली वॉल्यूम पर 0.10% से 0.02% तक के 5-8 टियर ऑफर करते हैं।`,
@@ -4702,7 +4702,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
 
       how: [
         `Сравнитель комиссий бирж рассчитывает реальную стоимость торговли на крупных площадках — Binance, Coinbase, Kraken, Bybit, OKX — для любого объёма. Выберите спот или фьючерсы, мейкер или тейкер и свой уровень 30-дневного объёма, введите сумму — инструмент ранжирует биржи по комиссии и покажет ставку, комиссию в долларах и, если у биржи есть токен скидки (например, BNB или OKB), комиссию со скидкой, а также самую дешёвую биржу и экономию относительно самой дорогой.`,
-        `Реальная стоимость выходит за рамки тарифной сетки. Покупка BTC на $10 000 на Coinbase Pro (0,50%) стоит $50, а на Binance (0,10%) — лишь $10. При 50 сделках в год разница составляет $2 000. Комиссии за вывод варьируются от $0 до $25+.`
+        `Реальная стоимость выходит за рамки тарифной сетки. Покупка BTC на $10 000 при комиссии 0,50% стоит $50, а на Binance (0,10%) — лишь $10. При 50 сделках в год разница составляет $2 000. Комиссии за вывод варьируются от $0 до $25+.`
       ],
       inputs: [
         `Сумма сделки принимает любое долларовое значение. Переключатель VIP-уровня показывает ставки при разных объёмах — большинство бирж предлагают 5-8 уровней с комиссиями от 0,10% до 0,02% при месячном объёме более $10M.`,
@@ -5768,68 +5768,68 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'bitcoin-energy-calculator': {
     en: {
-      quickAnswer: 'Estimate Bitcoin\'s energy consumption per transaction, per block, and network-wide. At ~850 EH/s and ~150 J/TH efficiency, the Bitcoin network consumes approximately 130–180 TWh/year, comparable to a mid-sized country like Argentina.',
+      quickAnswer: 'Estimate Bitcoin\'s energy consumption per transaction, per block, and network-wide. At ~1,000 EH/s and a fleet average of roughly 20 J/TH, the network draws about 20 GW, or roughly 175 TWh a year, comparable to a mid-sized country like Argentina.',
       how: [
         `The Bitcoin Energy Calculator models the electricity use and carbon footprint of your own mining setup based on hashrate, power draw, energy source and power costs. Enter your hashrate in TH/s, the machine's power consumption in watts, the electricity source, hours of operation per day, the electricity cost and a carbon offset price, and the tool computes daily and annual energy use, annual CO2 emissions, electricity and offset costs, the energy cost per BTC mined and a household equivalent.`,
         `Use it to contextualize a mining operation's environmental footprint: the Household Equivalent row converts its annual energy into average US homes (10,632 kWh a year each). The calculator also models the impact of the energy source: switch the Electricity Source between coal, gas, nuclear, hydro, solar, wind and the grid mix to see how carbon emissions change even as total energy consumption remains constant.`
       ],
       inputs: [
-        `Hashrate (TH/s) is your own miner's or farm's hashrate (140 TH/s by default), and the tool assumes a network hashrate of 850 EH/s to estimate your share of the ~450 BTC mined per day. Power Consumption (W) is the machine's wall power, which you can derive from efficiency: latest-gen ASICs (Antminer S21 Pro) achieve ~15 J/TH, while older units run at 30–60 J/TH, so 140 TH/s at about 24 J/TH draws roughly 3,400 W. A fleet average of ~25 J/TH is realistic.`,
+        `Hashrate (TH/s) is your own miner's or farm's hashrate (140 TH/s by default), and the tool assumes a network hashrate of 1,000 EH/s to estimate your share of the ~450 BTC mined per day. Power Consumption (W) is the machine's wall power, which you can derive from efficiency: latest-gen ASICs (Antminer S21 Pro) achieve ~15 J/TH, while older units run at 30–60 J/TH, so 140 TH/s at about 24 J/TH draws roughly 3,400 W. A fleet average of ~25 J/TH is realistic.`,
         `Electricity Cost ($/kWh) doesn't affect energy consumption but sets your Annual Electricity Cost and the Energy Cost per BTC Mined. Electricity Source applies a lifecycle CO2 factor, from 0.011 kg/kWh for wind to 0.95 kg/kWh for coal (0.42 for the grid mix), and Carbon Offset Price ($/ton) turns the emissions into an offset cost. Hours of Operation per Day scales the energy use, and three Quick Scenarios (Home Miner Solar, Farm Coal China, Hydro Iceland) load sample setups.`
       ],
     },
     es: {
-      quickAnswer: 'Estima el consumo energético de Bitcoin por transacción, por bloque y a nivel de red. A ~850 EH/s y ~150 J/TH de eficiencia, la red Bitcoin consume aproximadamente 130–180 TWh/año — comparable a un país mediano como Argentina.',
+      quickAnswer: 'Estima el consumo energético de Bitcoin por transacción, por bloque y a nivel de red. A ~1.000 EH/s y una eficiencia media de flota de unos 20 J/TH, la red consume unos 20 GW, es decir, unos 175 TWh al año — comparable a un país mediano como Argentina.',
       how: [
         `La Calculadora de Energía Bitcoin modela el consumo eléctrico y la huella de carbono de tu propio equipo de minería a partir del hashrate, la potencia, la fuente de energía y el costo de la electricidad. Introduce tu hashrate en TH/s, el consumo de energía en vatios, la fuente de electricidad, las horas de operación por día, el costo de la electricidad y el precio de compensación de carbono — la herramienta calcula la energía diaria y anual, las emisiones anuales de CO2, el costo de la electricidad y de la compensación, el costo energético por BTC minado y el equivalente en hogares.`,
         `Úsala para poner en contexto la huella ambiental de una operación de minería: la fila de equivalente en hogares traduce su energía anual a hogares estadounidenses promedio (10.632 kWh al año cada uno). Cambia la fuente de electricidad entre carbón, gas, nuclear, hidroeléctrica, solar, eólica y red eléctrica mixta para ver cómo cambian las emisiones de carbono con el mismo consumo de energía.`
       ],
       inputs: [
-        `El hashrate (TH/s) es el de tu propio minero o granja (140 TH/s por defecto), y la herramienta supone un hashrate de red de 850 EH/s para estimar tu parte de los ~450 BTC minados al día. El consumo de energía (W) es la potencia del equipo en el enchufe y puedes derivarlo de la eficiencia: los ASICs de última generación logran ~15 J/TH y los más antiguos funcionan a 30–60 J/TH, así que 140 TH/s a unos 24 J/TH consumen unos 3.400 W. Un promedio de flota de ~25 J/TH es realista.`,
+        `El hashrate (TH/s) es el de tu propio minero o granja (140 TH/s por defecto), y la herramienta supone un hashrate de red de 1.000 EH/s para estimar tu parte de los ~450 BTC minados al día. El consumo de energía (W) es la potencia del equipo en el enchufe y puedes derivarlo de la eficiencia: los ASICs de última generación logran ~15 J/TH y los más antiguos funcionan a 30–60 J/TH, así que 140 TH/s a unos 24 J/TH consumen unos 3.400 W. Un promedio de flota de ~25 J/TH es realista.`,
         `El costo de electricidad ($/kWh) no cambia el consumo, pero fija el costo anual de electricidad y el costo energético por BTC minado. La fuente de electricidad aplica un factor de CO2 de ciclo de vida, de 0,011 kg/kWh en eólica a 0,95 kg/kWh en carbón (0,42 en la red eléctrica mixta), y el precio de compensación de carbono ($/ton) convierte las emisiones en un costo de compensación. Las horas de operación por día escalan el consumo, y tres escenarios rápidos (Minero casero solar, Granja carbón China, Hidroeléctrica Islandia) cargan configuraciones de ejemplo.`
       ],
     },
     pt: {
-      quickAnswer: 'Estime o consumo de energia do Bitcoin por transação, por bloco e em toda a rede. A ~850 EH/s e ~150 J/TH de eficiência, a rede Bitcoin consome aproximadamente 130–180 TWh/ano — comparável a um país de médio porte como a Argentina.',
+      quickAnswer: 'Estime o consumo de energia do Bitcoin por transação, por bloco e em toda a rede. A ~1.000 EH/s e uma eficiência média de frota de cerca de 20 J/TH, a rede consome uns 20 GW, ou cerca de 175 TWh por ano — comparável a um país de médio porte como a Argentina.',
       how: [
         `A Calculadora de Energia Bitcoin modela o consumo de eletricidade e a pegada de carbono do seu próprio equipamento de mineração com base no hashrate, na potência, na fonte de energia e no custo da eletricidade. Insira seu hashrate em TH/s, o consumo de energia em watts, a fonte de eletricidade, as horas de operação por dia, o custo da eletricidade e o preço de compensação de carbono — a ferramenta calcula a energia diária e anual, as emissões anuais de CO2, o custo da eletricidade e da compensação, o custo energético por BTC minerado e o equivalente em residências.`,
         `Use para contextualizar a pegada ambiental de uma operação de mineração: a linha de equivalente em residências converte a energia anual em residências médias dos EUA (10.632 kWh por ano cada). Troque a fonte de eletricidade entre carvão, gás, nuclear, hidrelétrica, solar, eólica e rede elétrica mista para ver como as emissões de carbono mudam com o mesmo consumo de energia.`
       ],
       inputs: [
-        `O hashrate (TH/s) é o do seu próprio minerador ou fazenda (140 TH/s por padrão), e a ferramenta supõe um hashrate de rede de 850 EH/s para estimar sua parte dos ~450 BTC minerados por dia. O consumo de energia (W) é a potência do equipamento na tomada e pode ser derivado da eficiência: ASICs de última geração atingem ~15 J/TH e unidades mais antigas operam a 30–60 J/TH, então 140 TH/s a cerca de 24 J/TH consomem uns 3.400 W. Uma média de frota de ~25 J/TH é realista.`,
+        `O hashrate (TH/s) é o do seu próprio minerador ou fazenda (140 TH/s por padrão), e a ferramenta supõe um hashrate de rede de 1.000 EH/s para estimar sua parte dos ~450 BTC minerados por dia. O consumo de energia (W) é a potência do equipamento na tomada e pode ser derivado da eficiência: ASICs de última geração atingem ~15 J/TH e unidades mais antigas operam a 30–60 J/TH, então 140 TH/s a cerca de 24 J/TH consomem uns 3.400 W. Uma média de frota de ~25 J/TH é realista.`,
         `O custo de eletricidade ($/kWh) não altera o consumo, mas define o custo anual de eletricidade e o custo energético por BTC minerado. A fonte de eletricidade aplica um fator de CO2 de ciclo de vida, de 0,011 kg/kWh na eólica a 0,95 kg/kWh no carvão (0,42 na rede elétrica mista), e o preço de compensação de carbono ($/ton) transforma as emissões em custo de compensação. As horas de operação por dia escalam o consumo, e três cenários rápidos (Minerador caseiro solar, Fazenda carvão China, Hidrelétrica Islândia) carregam configurações de exemplo.`
       ],
     },
     tr: {
-      quickAnswer: 'Bitcoin\'in işlem başına, blok başına ve ağ genelinde enerji tüketimini tahmin edin. ~850 EH/s ve ~150 J/TH verimlilikle Bitcoin ağı yılda yaklaşık 130–180 TWh tüketir — Arjantin gibi orta büyüklükte bir ülkeye eşdeğer.',
+      quickAnswer: 'Bitcoin\'in işlem başına, blok başına ve ağ genelinde enerji tüketimini tahmin edin. ~1.000 EH/s ve yaklaşık 20 J/TH filo ortalamasıyla ağ yaklaşık 20 GW, yani yılda kabaca 175 TWh çeker — Arjantin gibi orta büyüklükte bir ülkeye eşdeğer.',
       how: [
         `Bitcoin Enerji Hesaplayıcısı, hashrate, güç tüketimi, enerji kaynağı ve elektrik maliyetine dayanarak kendi madencilik kurulumunuzun elektrik tüketimini ve karbon ayak izini modeller. TH/s cinsinden hashrate'inizi, watt cinsinden güç tüketimini, elektrik kaynağını, günlük çalışma saatini, elektrik maliyetini ve karbon denkleştirme fiyatını girin — araç günlük ve yıllık enerjiyi, yıllık CO2 emisyonlarını, elektrik ve denkleştirme maliyetini, BTC başına enerji maliyetini ve hane eşdeğerini hesaplar.`,
         `Bir madencilik operasyonunun çevresel ayak izini bağlamına oturtmak için kullanın: hane eşdeğeri satırı yıllık enerjiyi ortalama ABD hanesine (her biri yılda 10.632 kWh) çevirir. Elektrik kaynağını kömür, gaz, nükleer, hidroelektrik, güneş, rüzgâr ve şebeke karışımı arasında değiştirerek aynı enerji tüketiminde karbon emisyonlarının nasıl değiştiğini görün.`
       ],
       inputs: [
-        `Hashrate (TH/s) kendi madencinizin veya çiftliğinizin hashrate'idir (varsayılan 140 TH/s); araç, günde çıkarılan ~450 BTC'den payınızı tahmin etmek için 850 EH/s ağ hashrate'i varsayar. Güç tüketimi (W) cihazın prizden çektiği güçtür ve verimlilikten türetilebilir: son nesil ASIC'ler ~15 J/TH, eski birimler 30–60 J/TH ile çalışır, yani yaklaşık 24 J/TH'deki 140 TH/s yaklaşık 3.400 W çeker. ~25 J/TH filo ortalaması gerçekçidir.`,
+        `Hashrate (TH/s) kendi madencinizin veya çiftliğinizin hashrate'idir (varsayılan 140 TH/s); araç, günde çıkarılan ~450 BTC'den payınızı tahmin etmek için 1.000 EH/s ağ hashrate'i varsayar. Güç tüketimi (W) cihazın prizden çektiği güçtür ve verimlilikten türetilebilir: son nesil ASIC'ler ~15 J/TH, eski birimler 30–60 J/TH ile çalışır, yani yaklaşık 24 J/TH'deki 140 TH/s yaklaşık 3.400 W çeker. ~25 J/TH filo ortalaması gerçekçidir.`,
         `Elektrik maliyeti ($/kWh) tüketimi değiştirmez ama yıllık elektrik maliyetini ve BTC başına enerji maliyetini belirler; elektrik kaynağı rüzgârda 0,011 kg/kWh'tan kömürde 0,95 kg/kWh'a (şebeke karışımında 0,42) uzanan yaşam döngüsü CO2 katsayısını uygular, karbon denkleştirme fiyatı ($/ton) ise emisyonları denkleştirme maliyetine çevirir. Günlük çalışma saati tüketimi ölçeklendirir; üç hızlı senaryo (Ev madencisi güneş, Çiftlik kömür Çin, Hidroelektrik İzlanda) örnek kurulumlar yükler.`
       ],
     },
     hi: {
-      quickAnswer: 'प्रति ट्रांजैक्शन, प्रति ब्लॉक और नेटवर्क-वाइड Bitcoin की एनर्जी कंजम्प्शन का अनुमान लगाएं। ~850 EH/s और ~150 J/TH एफिशिएंसी पर Bitcoin नेटवर्क लगभग 130–180 TWh/वर्ष कंज्यूम करता है — अर्जेंटीना जैसे मध्यम आकार के देश के बराबर।',
+      quickAnswer: 'प्रति ट्रांजैक्शन, प्रति ब्लॉक और नेटवर्क-वाइड Bitcoin की एनर्जी कंजम्प्शन का अनुमान लगाएं। ~1,000 EH/s और लगभग 20 J/TH के फ्लीट एवरेज पर नेटवर्क लगभग 20 GW, यानी सालाना करीब 175 TWh खपत करता है — अर्जेंटीना जैसे मध्यम आकार के देश के बराबर।',
       how: [
         `Bitcoin एनर्जी कैलकुलेटर हैशरेट, बिजली खपत, बिजली स्रोत और पावर कॉस्ट के आधार पर आपके अपने माइनिंग सेटअप की बिजली खपत और कार्बन फुटप्रिंट मॉडल करता है। TH/s में अपना हैशरेट, वॉट में बिजली खपत, बिजली स्रोत, प्रतिदिन संचालन के घंटे, बिजली लागत और कार्बन ऑफसेट मूल्य दर्ज करें — टूल दैनिक और वार्षिक ऊर्जा, वार्षिक CO2 उत्सर्जन, बिजली और ऑफसेट लागत, प्रति BTC माइन ऊर्जा लागत और घरेलू समकक्ष कैलकुलेट करता है।`,
         `किसी माइनिंग ऑपरेशन के एनवायरनमेंटल फुटप्रिंट को संदर्भ में रखने के लिए इसका उपयोग करें: घरेलू समकक्ष वाली पंक्ति सालाना एनर्जी को औसत US घरों में बदलती है (हर घर साल में 10,632 kWh)। बिजली स्रोत को कोयला, गैस, परमाणु, जलविद्युत, सौर, पवन और ग्रिड मिश्रण के बीच बदलकर देखें कि उतनी ही एनर्जी पर कार्बन एमिशन कैसे बदलता है।`
       ],
       inputs: [
-        `हैशरेट (TH/s) आपके अपने माइनर या फार्म का हैशरेट है (डिफ़ॉल्ट 140 TH/s), और टूल रोज़ माइन होने वाले ~450 BTC में आपका हिस्सा आंकने के लिए 850 EH/s नेटवर्क हैशरेट मानता है। बिजली खपत (W) मशीन की वॉल पावर है, जिसे एफिशिएंसी से निकाला जा सकता है: लेटेस्ट-जेन ASICs ~15 J/TH, पुरानी यूनिट्स 30–60 J/TH पर चलती हैं, यानी ~24 J/TH पर 140 TH/s लगभग 3,400 W खींचता है। ~25 J/TH फ्लीट एवरेज यथार्थवादी है।`,
+        `हैशरेट (TH/s) आपके अपने माइनर या फार्म का हैशरेट है (डिफ़ॉल्ट 140 TH/s), और टूल रोज़ माइन होने वाले ~450 BTC में आपका हिस्सा आंकने के लिए 1,000 EH/s नेटवर्क हैशरेट मानता है। बिजली खपत (W) मशीन की वॉल पावर है, जिसे एफिशिएंसी से निकाला जा सकता है: लेटेस्ट-जेन ASICs ~15 J/TH, पुरानी यूनिट्स 30–60 J/TH पर चलती हैं, यानी ~24 J/TH पर 140 TH/s लगभग 3,400 W खींचता है। ~25 J/TH फ्लीट एवरेज यथार्थवादी है।`,
         `बिजली लागत ($/kWh) खपत नहीं बदलती, लेकिन वार्षिक बिजली लागत और प्रति BTC माइन ऊर्जा लागत तय करती है; बिजली स्रोत लाइफसाइकल CO2 फैक्टर लगाता है, पवन के 0.011 kg/kWh से कोयले के 0.95 kg/kWh तक (ग्रिड मिश्रण 0.42), और कार्बन ऑफसेट मूल्य ($/टन) एमिशन को ऑफसेट लागत में बदलता है। प्रतिदिन संचालन के घंटे खपत को घटाते-बढ़ाते हैं, और तीन त्वरित परिदृश्य (घरेलू माइनर सौर, फार्म कोयला चीन, जलविद्युत आइसलैंड) उदाहरण सेटअप भरते हैं।`
       ],
     },
     ru: {
-      quickAnswer: 'Оцените энергопотребление Bitcoin на транзакцию, на блок и по всей сети. При ~850 EH/s и ~150 Дж/ТХ сеть Bitcoin потребляет примерно 130–180 ТВт·ч/год — сопоставимо со страной размером с Аргентину.',
+      quickAnswer: 'Оцените энергопотребление Bitcoin на транзакцию, на блок и по всей сети. При ~1000 EH/s и средней эффективности парка около 20 Дж/ТХ сеть потребляет около 20 ГВт, то есть примерно 175 ТВт·ч в год — сопоставимо со страной размером с Аргентину.',
       how: [
         `Калькулятор энергопотребления Bitcoin моделирует расход электроэнергии и углеродный след вашей собственной майнинг-установки на основе хешрейта, потребляемой мощности, источника энергии и стоимости электроэнергии. Введите свой хешрейт в TH/s, потребляемую мощность в ваттах, источник электроэнергии, часы работы в день, стоимость электроэнергии и цену углеродного зачёта — инструмент рассчитает дневную и годовую энергию, годовые выбросы CO2, затраты на электричество и зачёт, энергозатраты на 1 BTC и эквивалент в домохозяйствах.`,
         `Используйте его, чтобы оценить экологический след майнинговой установки в понятных единицах: строка «Эквивалент домохозяйств» переводит годовую энергию в средние домохозяйства США (по 10 632 кВт·ч в год). Переключайте источник электроэнергии между углём, газом, атомной, гидро-, солнечной, ветровой энергией и смесью сети, чтобы увидеть, как меняются выбросы углерода при том же энергопотреблении.`
       ],
       inputs: [
-        `Хешрейт (TH/s) — это хешрейт вашего майнера или фермы (по умолчанию 140 TH/s), а для оценки вашей доли из ~450 BTC, добываемых в сутки, инструмент принимает хешрейт сети равным 850 EH/s. Потребляемая мощность (Вт) — мощность устройства от розетки, и её можно вывести из эффективности: новейшие ASIC достигают ~15 Дж/ТХ, старые — 30–60 Дж/ТХ, так что 140 TH/s при ~24 Дж/ТХ потребляют около 3 400 Вт. Средний показатель ~25 Дж/ТХ реалистичен.`,
+        `Хешрейт (TH/s) — это хешрейт вашего майнера или фермы (по умолчанию 140 TH/s), а для оценки вашей доли из ~450 BTC, добываемых в сутки, инструмент принимает хешрейт сети равным 1000 EH/s. Потребляемая мощность (Вт) — мощность устройства от розетки, и её можно вывести из эффективности: новейшие ASIC достигают ~15 Дж/ТХ, старые — 30–60 Дж/ТХ, так что 140 TH/s при ~24 Дж/ТХ потребляют около 3 400 Вт. Средний показатель ~25 Дж/ТХ реалистичен.`,
         `Стоимость электроэнергии ($/кВт·ч) не меняет потребление, но задаёт годовые затраты на электричество и энергозатраты на 1 BTC; источник электроэнергии применяет коэффициент CO2 полного жизненного цикла — от 0,011 кг/кВт·ч у ветровой до 0,95 кг/кВт·ч у угля (0,42 у смеси сети), а цена углеродного зачёта ($/тонна) переводит выбросы в стоимость зачёта. Часы работы в день масштабируют потребление, а три быстрых сценария («Домашний майнер солнечная», «Ферма уголь Китай», «Гидро Исландия») подставляют примерные конфигурации.`
       ],
     },
@@ -6176,10 +6176,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'if-i-had-bought': {
     en: {
-      quickAnswer: 'See what your investment would be worth today if you had bought a cryptocurrency at a past date. $1,000 invested in Bitcoin on January 1, 2020 ($7,200) would be worth ~$10,700 today, a 970% return in 6 years.',
+      quickAnswer: 'See what your investment would be worth today if you had bought a cryptocurrency at a past date. $1,000 invested in Bitcoin on January 1, 2020 ($7,200) would be worth ~$11,600 today (BTC ~$83,600), a ~1,060% return in under 7 years.',
       how: [
         `The "If I Had Bought" Calculator shows the hypothetical value of a past cryptocurrency investment using approximate historical prices stored in the tool. Select one of seven coins, enter the amount you would have invested, and pick one of nine preset moments (from Bitcoin's 2009 launch to six months ago); the tool takes the stored price for that moment, calculates how many coins you would have purchased, and multiplies by a stored recent price to show your gain or loss.`,
-        `Use it to analyze missed opportunities or validate your past decisions. It's also a powerful educational tool: seeing that $100 in ETH in January 2017 would be worth $40,000+ today illustrates crypto's asymmetric return potential. The calculator includes a percentage return, the annualized return (CAGR) and two fun comparisons: the equivalent in Tesla shares and in months of rent.`
+        `Use it to analyze missed opportunities or validate your past decisions. It's also a powerful educational tool: seeing that $100 in ETH in January 2017 would be worth about $25,000 today illustrates crypto's asymmetric return potential. The calculator includes a percentage return, the annualized return (CAGR) and two fun comparisons: the equivalent in Tesla shares and in months of rent.`
       ],
       inputs: [
         `The Investment Amount in USD is what you hypothetically would have spent; quick buttons fill in $100 to $10,000. The coin selector covers seven coins (BTC, ETH, SOL, BNB, ADA, DOT, DOGE). Purchase Date is a choice of nine preset moments, from Bitcoin Launch 2009 and BTC $1 (2011) through the ETH ICO, the COVID crash and the 2021 peak to six months ago; coins that did not exist yet at the chosen moment are greyed out.`,
@@ -6187,10 +6187,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Descubre cuánto valdría hoy tu inversión si hubieras comprado una criptomoneda en una fecha pasada. $1.000 invertidos en Bitcoin el 1 de enero de 2020 ($7.200) valdrían ~$10.700 hoy — un retorno del 970% en 6 años.',
+      quickAnswer: 'Descubre cuánto valdría hoy tu inversión si hubieras comprado una criptomoneda en una fecha pasada. $1.000 invertidos en Bitcoin el 1 de enero de 2020 ($7.200) valdrían ~$11.600 hoy (BTC ~$83.600) — un retorno de ~1.060% en menos de 7 años.',
       how: [
         `La Calculadora "Si Hubiera Comprado" muestra el valor hipotético de una inversión pasada en criptomonedas usando precios históricos aproximados guardados en la herramienta. Selecciona una de siete monedas, introduce el monto que habrías invertido y elige uno de nueve momentos predefinidos (del lanzamiento de Bitcoin en 2009 a hace seis meses) — la herramienta toma el precio guardado de ese momento, calcula cuántas monedas habrías comprado y, con un precio reciente de referencia, muestra tu ganancia o pérdida.`,
-        `Úsala para analizar oportunidades perdidas o validar decisiones pasadas. También es una herramienta educativa: ver que $100 en ETH en enero de 2017 valdría $40.000+ hoy ilustra el potencial asimétrico del cripto. Incluye retorno porcentual, retorno anualizado (CAGR) y dos comparaciones divertidas: el equivalente en acciones de Tesla y en meses de alquiler.`
+        `Úsala para analizar oportunidades perdidas o validar decisiones pasadas. También es una herramienta educativa: ver que $100 en ETH en enero de 2017 valdrían unos $25.000 hoy ilustra el potencial asimétrico del cripto. Incluye retorno porcentual, retorno anualizado (CAGR) y dos comparaciones divertidas: el equivalente en acciones de Tesla y en meses de alquiler.`
       ],
       inputs: [
         `El monto de inversión en USD es lo que hipotéticamente habrías gastado. El selector cubre siete monedas (BTC, ETH, SOL, BNB, ADA, DOT, DOGE) y hay botones rápidos de $100 a $10.000. La fecha de compra se elige entre nueve momentos predefinidos, del Lanzamiento de Bitcoin 2009 y BTC $1 (2011), pasando por la ICO de ETH, el crash COVID y el máximo de 2021, hasta hace seis meses; las monedas que aún no existían en ese momento aparecen desactivadas.`,
@@ -6198,10 +6198,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Veja quanto seu investimento valeria hoje se tivesse comprado uma criptomoeda em uma data passada. $1.000 investidos em Bitcoin em 1 de janeiro de 2020 ($7.200) valeriam ~$10.700 hoje — retorno de 970% em 6 anos.',
+      quickAnswer: 'Veja quanto seu investimento valeria hoje se tivesse comprado uma criptomoeda em uma data passada. $1.000 investidos em Bitcoin em 1 de janeiro de 2020 ($7.200) valeriam ~$11.600 hoje (BTC ~$83.600) — retorno de ~1.060% em menos de 7 anos.',
       how: [
         `A Calculadora "E Se Eu Tivesse Comprado" mostra o valor hipotético de um investimento passado em criptomoedas usando preços históricos aproximados armazenados na ferramenta. Selecione uma de sete moedas, insira o valor que teria investido e escolha um de nove momentos predefinidos (do lançamento do Bitcoin em 2009 a seis meses atrás) — a ferramenta usa o preço armazenado daquele momento, calcula quantas moedas teria comprado e, com um preço recente de referência, mostra o ganho ou a perda.`,
-        `Use para analisar oportunidades perdidas ou validar decisões passadas. É uma ferramenta educacional poderosa: ver que $100 em ETH em janeiro de 2017 valeria $40.000+ hoje ilustra o potencial assimétrico do cripto. Inclui retorno percentual, retorno anualizado (CAGR) e duas comparações divertidas: o equivalente em ações da Tesla e em meses de aluguel.`
+        `Use para analisar oportunidades perdidas ou validar decisões passadas. É uma ferramenta educacional poderosa: ver que $100 em ETH em janeiro de 2017 valeriam cerca de $25.000 hoje ilustra o potencial assimétrico do cripto. Inclui retorno percentual, retorno anualizado (CAGR) e duas comparações divertidas: o equivalente em ações da Tesla e em meses de aluguel.`
       ],
       inputs: [
         `O valor do investimento em USD é o que hipoteticamente teria gasto. O seletor cobre sete moedas (BTC, ETH, SOL, BNB, ADA, DOT, DOGE) e há botões rápidos de $100 a $10.000. A data de compra é escolhida entre nove momentos predefinidos, do Lançamento do Bitcoin 2009 e BTC $1 (2011), passando pela ICO do ETH, o crash da COVID e o pico de 2021, até seis meses atrás; moedas que ainda não existiam naquele momento ficam desativadas.`,
@@ -6209,10 +6209,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Geçmişte bir kripto para satın almış olsaydınız yatırımınızın bugün ne kadar değerli olacağını görün. 1 Ocak 2020\'de Bitcoin\'e yatırılan $1.000 ($7.200) bugün ~$10.700 eder — 6 yılda %970 getiri.',
+      quickAnswer: 'Geçmişte bir kripto para satın almış olsaydınız yatırımınızın bugün ne kadar değerli olacağını görün. 1 Ocak 2020\'de Bitcoin\'e yatırılan $1.000 ($7.200) bugün ~$11.600 eder (BTC ~$83.600) — 7 yıldan kısa sürede ~%1.060 getiri.',
       how: [
         `"Alsaydım Ne Olurdu" Hesaplayıcısı, araçta saklanan yaklaşık tarihsel fiyatları kullanarak geçmişteki varsayımsal bir kripto yatırımının değerini gösterir. Yedi coinden birini seçin, yatırım yapacağınız tutarı girin ve dokuz hazır andan birini seçin (2009'daki Bitcoin lansmanından altı ay öncesine kadar) — araç o anın kayıtlı fiyatını alır, kaç coin alacağınızı hesaplar ve kayıtlı güncel bir referans fiyatla çarparak kazanç veya kaybınızı gösterir.`,
-        `Kaçırılan fırsatları analiz etmek veya geçmiş kararlarınızı değerlendirmek için kullanın. Aynı zamanda güçlü bir eğitim aracıdır: Ocak 2017'de ETH'ye $100 yatırmanın bugün $40.000+ edeceğini görmek kripto'nun asimetrik getiri potansiyelini gösterir. Yüzde getiri, yıllık getiri (CAGR) ve iki eğlenceli karşılaştırma içerir: Tesla hisse eşdeğeri ve kaç aylık kiraya denk geldiği.`
+        `Kaçırılan fırsatları analiz etmek veya geçmiş kararlarınızı değerlendirmek için kullanın. Aynı zamanda güçlü bir eğitim aracıdır: Ocak 2017'de ETH'ye $100 yatırmanın bugün yaklaşık $25.000 edeceğini görmek kripto'nun asimetrik getiri potansiyelini gösterir. Yüzde getiri, yıllık getiri (CAGR) ve iki eğlenceli karşılaştırma içerir: Tesla hisse eşdeğeri ve kaç aylık kiraya denk geldiği.`
       ],
       inputs: [
         `USD cinsinden yatırım tutarı varsayımsal olarak harcayacağınız miktardır. Kripto seçici yedi coini kapsar (BTC, ETH, SOL, BNB, ADA, DOT, DOGE) ve $100 ile $10.000 arası hızlı tutar düğmeleri vardır. Satın alma tarihi dokuz hazır an arasından seçilir: Bitcoin Lansmanı 2009 ve BTC $1 (2011) ile başlayıp ETH ICO, COVID çöküşü ve 2021 zirvesi üzerinden altı ay öncesine uzanır; o tarihte henüz var olmayan coinler devre dışı görünür.`,
@@ -6220,10 +6220,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'देखें कि अगर आपने किसी पिछली तारीख पर क्रिप्टोकरेंसी खरीदी होती तो आज आपका निवेश कितना होता। 1 जनवरी 2020 को Bitcoin में $1,000 ($7,200) इन्वेस्ट किए होते तो आज ~$10,700 होते — 6 साल में 970% रिटर्न।',
+      quickAnswer: 'देखें कि अगर आपने किसी पिछली तारीख पर क्रिप्टोकरेंसी खरीदी होती तो आज आपका निवेश कितना होता। 1 जनवरी 2020 को Bitcoin में $1,000 ($7,200) इन्वेस्ट किए होते तो आज ~$11,600 होते (BTC ~$83,600) — 7 साल से कम में ~1,060% रिटर्न।',
       how: [
         `"अगर मैंने खरीदा होता" कैलकुलेटर टूल में सेव किए गए अनुमानित हिस्टोरिकल प्राइस से पास्ट क्रिप्टो इन्वेस्टमेंट की हाइपोथेटिकल वैल्यू दिखाता है। सात कॉइन में से एक सेलेक्ट करें, इन्वेस्ट की जाने वाली राशि दर्ज करें और नौ प्रीसेट मौकों में से एक चुनें (2009 के Bitcoin लॉन्च से छह महीने पहले तक) — टूल उस मौके की सेव की गई कीमत लेता है, कैलकुलेट करता है कितने कॉइन खरीदे होते, और एक सेव की गई हालिया कीमत से गेन/लॉस दिखाता है।`,
-        `मिस्ड ऑपर्च्युनिटीज एनालाइज करने या पास्ट डिसीजन वैलिडेट करने के लिए उपयोग करें। यह एक शक्तिशाली एजुकेशनल टूल भी है: जनवरी 2017 में ETH में $100 आज $40,000+ होते, यह देखना क्रिप्टो की एसिमेट्रिक रिटर्न पोटेंशियल दर्शाता है। परसेंटेज रिटर्न, वार्षिक रिटर्न (CAGR) और दो मज़ेदार तुलनाएँ शामिल हैं: Tesla शेयर समकक्ष और किराए के महीने।`
+        `मिस्ड ऑपर्च्युनिटीज एनालाइज करने या पास्ट डिसीजन वैलिडेट करने के लिए उपयोग करें। यह एक शक्तिशाली एजुकेशनल टूल भी है: जनवरी 2017 में ETH में $100 आज लगभग $25,000 होते, यह देखना क्रिप्टो की एसिमेट्रिक रिटर्न पोटेंशियल दर्शाता है। परसेंटेज रिटर्न, वार्षिक रिटर्न (CAGR) और दो मज़ेदार तुलनाएँ शामिल हैं: Tesla शेयर समकक्ष और किराए के महीने।`
       ],
       inputs: [
         `USD में इन्वेस्टमेंट अमाउंट वह है जो आपने हाइपोथेटिकली खर्च किया होता। क्रिप्टोकरेंसी सिलेक्टर में सात कॉइन हैं (BTC, ETH, SOL, BNB, ADA, DOT, DOGE) और $100 से $10,000 तक के क्विक बटन हैं। खरीद तिथि नौ प्रीसेट मौकों में से चुनी जाती है — Bitcoin लॉन्च 2009 और BTC $1 (2011) से लेकर ETH ICO, COVID गिरावट और 2021 के शिखर होते हुए छह महीने पहले तक; जो कॉइन उस समय मौजूद नहीं थे, वे डिसेबल दिखते हैं।`,
@@ -6231,10 +6231,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Узнайте, сколько бы стоила ваша инвестиция сегодня, если бы вы купили криптовалюту в прошлом. $1 000, вложенные в Bitcoin 1 января 2020 ($7 200), сейчас стоили бы ~$10 700 — доходность 970% за 6 лет.',
+      quickAnswer: 'Узнайте, сколько бы стоила ваша инвестиция сегодня, если бы вы купили криптовалюту в прошлом. $1 000, вложенные в Bitcoin 1 января 2020 ($7 200), сейчас стоили бы ~$11 600 (BTC ~$83 600) — доходность ~1060% меньше чем за 7 лет.',
       how: [
         `Калькулятор «Если бы я купил» показывает гипотетическую стоимость прошлой криптоинвестиции по приблизительным историческим ценам, сохранённым в инструменте. Выберите одну из семи монет, введите сумму вложения и один из девяти готовых моментов (от запуска Bitcoin в 2009 году до полугода назад) — инструмент возьмёт сохранённую цену этого момента, рассчитает количество купленных монет и по сохранённой недавней цене покажет прибыль или убыток.`,
-        `Анализируйте упущенные возможности или проверяйте прошлые решения. Это мощный образовательный инструмент: $100 в ETH в январе 2017 года сейчас стоили бы $40 000+, что наглядно демонстрирует асимметричный потенциал криптовалют. Включает процент доходности, годовую доходность (CAGR) и два занимательных сравнения: эквивалент в акциях Tesla и в месяцах аренды.`
+        `Анализируйте упущенные возможности или проверяйте прошлые решения. Это мощный образовательный инструмент: $100 в ETH в январе 2017 года сейчас стоили бы около $25 000, что наглядно демонстрирует асимметричный потенциал криптовалют. Включает процент доходности, годовую доходность (CAGR) и два занимательных сравнения: эквивалент в акциях Tesla и в месяцах аренды.`
       ],
       inputs: [
         `Сумма инвестиции в USD — гипотетические расходы. На выбор семь монет (BTC, ETH, SOL, BNB, ADA, DOT, DOGE), а кнопки быстрого ввода подставляют суммы от $100 до $10 000. Дата покупки выбирается из девяти готовых моментов — от «Запуск Bitcoin 2009» и «BTC $1 (2011)» через ICO ETH, COVID-обвал и пик 2021 года до полугода назад; монеты, которых в тот момент ещё не было, неактивны.`,
@@ -6312,7 +6312,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'pizza-day-calculator': {
     en: {
-      quickAnswer: 'On May 22, 2010, Laszlo Hanyecz paid 10,000 BTC for two pizzas (~$41 at the time). Those same bitcoins at today\'s price of ~$77,000 would be worth $770,000,000, making each pizza slice worth roughly $48 million.',
+      quickAnswer: 'On May 22, 2010, Laszlo Hanyecz paid 10,000 BTC for two pizzas (~$41 at the time). Those same bitcoins at today\'s price of ~$83,600 would be worth $836,000,000, making each pizza slice worth roughly $52 million.',
       how: [
         `The Pizza Day Calculator computes the present-day value of the famous 10,000 BTC pizza purchase from May 22, 2010, the first known real-world Bitcoin transaction. Today's BTC price is auto-filled from CoinGecko (you can overwrite it), and the calculator shows what those 10,000 BTC are worth today, the cost per pizza then in BTC and in satoshis, and how many pizzas the coins would buy at today's pizza price. It contextualizes the astronomical opportunity cost in relatable comparisons.`,
         `Beyond the novelty, this calculator serves as an interactive lesson in Bitcoin's exponential growth. You can enter any historical BTC price to see how the pizza purchase value has changed over time. The Opportunity Cost row sets today's value against the roughly $41 the coins were worth in 2010 ($0.0041/BTC, the pizza price), demonstrating why early adoption and long-term holding are central to the Bitcoin thesis.`
@@ -6323,7 +6323,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'El 22 de mayo de 2010, Laszlo Hanyecz pagó 10.000 BTC por dos pizzas (~$41 en ese momento). Esos mismos bitcoins a $77.000 de hoy valdrían $770.000.000 — haciendo que cada porción valga aproximadamente $48 millones.',
+      quickAnswer: 'El 22 de mayo de 2010, Laszlo Hanyecz pagó 10.000 BTC por dos pizzas (~$41 en ese momento). Esos mismos bitcoins a $83.600 de hoy valdrían $836.000.000 — haciendo que cada porción valga aproximadamente $52 millones.',
       how: [
         `La Calculadora del Día de la Pizza calcula el valor actual de la famosa compra de 10.000 BTC por dos pizzas del 22 de mayo de 2010 — la primera transacción conocida de Bitcoin en el mundo real. El precio actual de BTC se completa desde CoinGecko (puedes cambiarlo) y la calculadora muestra cuánto valen hoy esos 10.000 BTC, el costo por pizza de entonces en BTC y en satoshis, y cuántas pizzas comprarían hoy esas monedas al precio actual de la pizza. Contextualiza el astronómico costo de oportunidad con comparaciones comprensibles.`,
         `Más allá de la curiosidad, esta calculadora sirve como lección interactiva sobre el crecimiento exponencial de Bitcoin. Ingresa cualquier precio histórico para ver cómo ha cambiado el valor de la compra. La fila Costo de oportunidad compara el valor de hoy con los ~$41 que valían esas monedas en 2010 ($0,0041/BTC).`
@@ -6334,7 +6334,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Em 22 de maio de 2010, Laszlo Hanyecz pagou 10.000 BTC por duas pizzas (~$41 na época). Esses mesmos bitcoins ao preço de hoje de ~$77.000 valeriam $770.000.000 — tornando cada fatia equivalente a ~$48 milhões.',
+      quickAnswer: 'Em 22 de maio de 2010, Laszlo Hanyecz pagou 10.000 BTC por duas pizzas (~$41 na época). Esses mesmos bitcoins ao preço de hoje de ~$83.600 valeriam $836.000.000 — tornando cada fatia equivalente a ~$52 milhões.',
       how: [
         `A Calculadora do Dia da Pizza calcula o valor atual da famosa compra de 10.000 BTC por duas pizzas em 22 de maio de 2010 — a primeira transação conhecida do Bitcoin no mundo real. O preço atual do BTC vem preenchido pelo CoinGecko (você pode alterá-lo) e a calculadora mostra quanto valem hoje esses 10.000 BTC, o custo por pizza na época em BTC e em satoshis, e quantas pizzas essas moedas comprariam hoje pelo preço atual da pizza. Contextualiza o custo de oportunidade astronômico com comparações compreensíveis.`,
         `Além da curiosidade, funciona como uma lição interativa sobre o crescimento exponencial do Bitcoin. Insira qualquer preço histórico para ver como o valor mudou. A linha Custo de oportunidade compara o valor de hoje com os ~$41 que essas moedas valiam em 2010 ($0,0041/BTC).`
@@ -6345,7 +6345,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: '22 Mayıs 2010\'da Laszlo Hanyecz iki pizza için 10.000 BTC ödedi (o zamanki ~$41). Aynı bitcoinler bugünkü ~$77.000 fiyatıyla $770.000.000 eder — her pizza dilimini yaklaşık $48 milyon yapar.',
+      quickAnswer: '22 Mayıs 2010\'da Laszlo Hanyecz iki pizza için 10.000 BTC ödedi (o zamanki ~$41). Aynı bitcoinler bugünkü ~$83.600 fiyatıyla $836.000.000 eder — her pizza dilimini yaklaşık $52 milyon yapar.',
       how: [
         `Pizza Günü Hesaplayıcısı, 22 Mayıs 2010'daki ünlü 10.000 BTC pizza satın alımının — Bitcoin'in bilinen ilk gerçek dünya işleminin — bugünkü değerini hesaplar. Güncel BTC fiyatı CoinGecko'dan otomatik gelir (değiştirebilirsiniz); hesaplayıcı 10.000 BTC'nin bugünkü değerini, o zamanki pizza başına maliyeti BTC ve satoshi cinsinden ve bu coinlerle bugünkü pizza fiyatından kaç pizza alınabileceğini gösterir. Astronomik fırsat maliyetini anlaşılır karşılaştırmalarla bağlamlandırır.`,
         `Yenilikçi olmanın ötesinde, Bitcoin'in üstel büyümesi hakkında interaktif bir ders niteliğindedir. Herhangi bir tarihsel BTC fiyatını girerek pizza alımının değerinin nasıl değiştiğini görün. Fırsat maliyeti satırı bugünkü değeri, bu coinlerin 2010'daki ~$41'lık değeriyle ($0,0041/BTC) karşılaştırır.`
@@ -6356,7 +6356,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: '22 मई 2010 को Laszlo Hanyecz ने दो पिज्जा के लिए 10,000 BTC दिए (~उस समय $41)। वही बिटकॉइन आज ~$77,000 की कीमत पर $770,000,000 होते — हर पिज्जा स्लाइस लगभग $48 मिलियन।',
+      quickAnswer: '22 मई 2010 को Laszlo Hanyecz ने दो पिज्जा के लिए 10,000 BTC दिए (~उस समय $41)। वही बिटकॉइन आज ~$83,600 की कीमत पर $836,000,000 होते — हर पिज्जा स्लाइस लगभग $52 मिलियन।',
       how: [
         `पिज्जा डे कैलकुलेटर 22 मई 2010 की मशहूर 10,000 BTC पिज्जा खरीद — Bitcoin का पहला ज्ञात रियल-वर्ल्ड ट्रांजैक्शन — का प्रेजेंट-डे वैल्यू कैलकुलेट करता है। आज का BTC प्राइस CoinGecko से अपने-आप भरता है (आप इसे बदल सकते हैं), और कैलकुलेटर 10,000 BTC की आज की टोटल वैल्यू, उस समय प्रति पिज्जा लागत BTC और सातोशी में, और आज के पिज्जा प्राइस पर इन कॉइन से कितने पिज्जा खरीदे जा सकते हैं, यह दिखाता है।`,
         `नॉवेल्टी से परे, यह कैलकुलेटर Bitcoin की एक्सपोनेंशियल ग्रोथ का इंटरैक्टिव लेसन है। कोई भी हिस्टोरिकल BTC प्राइस दर्ज करके देखें पिज्जा परचेज वैल्यू कैसे बदली है। अवसर लागत वाली पंक्ति आज की वैल्यू की तुलना 2010 में इन कॉइन की ~$41 वैल्यू ($0.0041/BTC) से करती है।`
@@ -6367,7 +6367,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: '22 мая 2010 года Ласло Ханеч заплатил 10 000 BTC за две пиццы (~$41 на тот момент). Те же биткоины по сегодняшней цене ~$77 000 стоили бы $770 000 000 — каждый кусок пиццы обошёлся примерно в $48 миллионов.',
+      quickAnswer: '22 мая 2010 года Ласло Ханеч заплатил 10 000 BTC за две пиццы (~$41 на тот момент). Те же биткоины по сегодняшней цене ~$83 600 стоили бы $836 000 000 — каждый кусок пиццы обошёлся примерно в $52 миллионов.',
       how: [
         `Калькулятор Дня пиццы вычисляет текущую стоимость знаменитой покупки двух пицц за 10 000 BTC 22 мая 2010 года — первой известной реальной транзакции биткоина. Текущая цена BTC подставляется из CoinGecko (её можно изменить) — калькулятор покажет стоимость тех 10 000 BTC сегодня, цену пиццы тогда в BTC и сатоши и сколько пицц можно купить на эти монеты по сегодняшней цене пиццы.`,
         `Помимо занимательности, калькулятор — интерактивный урок экспоненциального роста биткоина. Введите любую историческую цену BTC, чтобы увидеть, как менялась стоимость покупки. Строка «Альтернативные издержки» сравнивает сегодняшнюю стоимость с теми ~$41, которых эти монеты стоили в 2010 году ($0,0041/BTC).`
@@ -6856,69 +6856,69 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'crypto-card-cashback-calculator': {
       en: {
-        quickAnswer: `Pick a card preset (Gemini, Coinbase One, Venmo, Fold) or enter your own base and bonus rates, then your monthly spend, BTC price, and expected appreciation. Example: $3,000/month at 1% base + 4% on 30% bonus spend earns $792 gross a year, ~0.0079 BTC; at $100,000 BTC and 20% growth that's worth about $950 after one year.`,
+        quickAnswer: `Pick a card preset (Gemini, Coinbase One, Venmo, Fold) or enter your own base and bonus rates, then your monthly spend, BTC price, and expected appreciation. Example: $3,000/month at 1% base + 4% on 30% bonus spend earns $684 gross a year, ~0.0068 BTC; at $100,000 BTC and 20% growth that's worth about $821 after one year.`,
         how: [
           `This Crypto Card Cashback Calculator estimates the yearly rewards a crypto rewards credit card pays on your real spending, then converts that cash value into BTC (or your chosen reward asset) and projects its future worth. It splits annual spend into a bonus-category bucket and a base bucket, applies each rate, sums gross rewards, subtracts the annual fee, and reports net rewards plus an effective % rate that powers a rating from 'Fee exceeds rewards' to 'Excellent rewards rate'.`,
-          `The math is straightforward: annual spend = monthly spend × 12; bonus spend = annual spend × bonus share; base spend = the remainder. Gross rewards = base spend × base rate + bonus spend × bonus rate, then net = gross − annual fee. Crypto earned = gross rewards ÷ asset price, and the one-year and 10-year values apply your appreciation input (the 5-year and 10-year net rewards rows stay in plain dollars, with no growth), e.g. 10-year value = gross × 10 × (1 + growth)^10. Preset pills auto-fill realistic rates you can override.`
+          `The math is straightforward: annual spend = monthly spend × 12; bonus spend = annual spend × bonus share; base spend = the remainder. Gross rewards = base spend × base rate + bonus spend × bonus rate, then net = gross − annual fee. Crypto earned = gross rewards ÷ asset price, and the one-year and 10-year values apply your appreciation input (the 5-year and 10-year net rewards rows stay in plain dollars, with no growth), and the 10-year value grows each year's reward only from the year it was earned: gross × [(1 + growth)^10 + (1 + growth)^9 + … + (1 + growth)]. Preset pills auto-fill realistic rates you can override.`
         ],
         inputs: [
           `Choose one of six card presets (Gemini, Coinbase One, Venmo, Fold, Crypto.com Ruby and an Amex Gold comparison) to load its annual fee, base rewards rate and the rate of its top bonus category, or type your own. The seven editable fields are annual fee (USD), base rewards rate (%), bonus category rate (%), bonus category spend share (%), monthly spend (USD), BTC or reward-asset price (USD), and annual crypto appreciation (%). The rate fields are meant for 0–10% but are not hard-capped; spend must be non-negative and the asset price positive, otherwise the panel asks for valid inputs instead of showing results.`,
-          `The appreciation field is a forward assumption, not live market data, so the 1/5/10-year projections are scenarios, set it to 0 to see pure cash-back value. Rewards are modeled gross of tax; in most jurisdictions card crypto rewards are taxable as income at receipt and again as capital gains at sale, so size positions accordingly with our <a href="/tax-calculator/">crypto tax calculator</a>. Don't overspend to chase points, if you wouldn't buy the coin separately, a flat 2% USD-back card may beat a volatile reward. Compare steady accumulation with our <a href="/dca-calculator/">DCA calculator</a>.`
+          `The appreciation field is a forward assumption, not live market data, so the 1/5/10-year projections are scenarios, set it to 0 to see pure cash-back value. Rewards are modeled gross of tax; in the US, card rewards earned on spending are generally treated as a purchase rebate rather than income (the IRS has not ruled on crypto rewards specifically), but every later sale of the coin is a taxable disposal, so size positions accordingly with our <a href="/tax-calculator/">crypto tax calculator</a>. Don't overspend to chase points, if you wouldn't buy the coin separately, a flat 2% USD-back card may beat a volatile reward. Compare steady accumulation with our <a href="/dca-calculator/">DCA calculator</a>.`
         ],
       },
       es: {
-        quickAnswer: `Elige una tarjeta predefinida (Gemini, Coinbase One, Venmo, Fold) o introduce tus propias tasas base y bonus, más tu gasto mensual, el precio de BTC y la apreciación esperada. Ejemplo: $3.000/mes al 1% base + 4% sobre el 30% de gasto bonus genera $792 brutos al año, ~0,0079 BTC; con BTC a $100.000 y 20% de crecimiento valdría unos $950 tras un año.`,
+        quickAnswer: `Elige una tarjeta predefinida (Gemini, Coinbase One, Venmo, Fold) o introduce tus propias tasas base y bonus, más tu gasto mensual, el precio de BTC y la apreciación esperada. Ejemplo: $3.000/mes al 1% base + 4% sobre el 30% de gasto bonus genera $684 brutos al año, ~0,0068 BTC; con BTC a $100.000 y 20% de crecimiento valdría unos $821 tras un año.`,
         how: [
           `Esta calculadora estima las recompensas anuales que paga una tarjeta de crédito con cashback en cripto sobre tu gasto real, convierte ese valor en efectivo a BTC (o el activo que elijas) y proyecta su valor futuro. Divide el gasto anual en un bloque de categoría bonus y uno base, aplica cada tasa, suma las recompensas brutas, resta la cuota anual y muestra las recompensas netas más una tasa efectiva % que genera una calificación desde 'La cuota supera las recompensas' hasta 'Tasa de recompensas excelente'.`,
-          `El cálculo es directo: gasto anual = gasto mensual × 12; gasto bonus = gasto anual × porcentaje bonus; gasto base = el resto. Recompensas brutas = gasto base × tasa base + gasto bonus × tasa bonus, y netas = brutas − cuota anual. Cripto ganada = recompensas brutas ÷ precio del activo, y el valor a 1 año y el valor a 10 años aplican tu apreciación (las filas de recompensas netas a 5 y 10 años quedan en dólares, sin crecimiento), p. ej. valor a 10 años = brutas × 10 × (1 + crecimiento)^10. Las tarjetas predefinidas rellenan tasas realistas que puedes editar.`
+          `El cálculo es directo: gasto anual = gasto mensual × 12; gasto bonus = gasto anual × porcentaje bonus; gasto base = el resto. Recompensas brutas = gasto base × tasa base + gasto bonus × tasa bonus, y netas = brutas − cuota anual. Cripto ganada = recompensas brutas ÷ precio del activo, y el valor a 1 año y el valor a 10 años aplican tu apreciación (las filas de recompensas netas a 5 y 10 años quedan en dólares, sin crecimiento), y el valor a 10 años hace crecer la recompensa de cada año solo desde el año en que se ganó: brutas × [(1 + crecimiento)^10 + (1 + crecimiento)^9 + … + (1 + crecimiento)]. Las tarjetas predefinidas rellenan tasas realistas que puedes editar.`
         ],
         inputs: [
           `Elige una de seis tarjetas predefinidas (Gemini, Coinbase One, Venmo, Fold, Crypto.com Ruby y una Amex Gold de comparación) para cargar su cuota anual, su tasa base y la tasa de su categoría bonus principal, o escribe las tuyas. Los siete campos editables son cuota anual (USD), tasa base de recompensas (%), tasa de categoría bonus (%), porcentaje de gasto en categoría bonus (%), gasto mensual (USD), precio de BTC o del activo de recompensa (USD) y apreciación anual de la cripto (%). Los campos de tasa están pensados para 0–10%, pero no tienen un tope estricto; el gasto debe ser no negativo y el precio del activo positivo, o el panel pedirá datos válidos.`,
-          `El campo de apreciación es una suposición a futuro, no datos de mercado en vivo, así que las proyecciones a 1/5/10 años son escenarios — ponlo en 0 para ver el valor puro en efectivo. Las recompensas se modelan antes de impuestos; en la mayoría de jurisdicciones tributan como ingreso al recibirlas y de nuevo como ganancia de capital al venderlas, así que dimensiona con nuestra <a href="/tax-calculator/">calculadora de impuestos cripto</a>. No gastes de más por puntos — si no comprarías la moneda por separado, una tarjeta plana del 2% en USD puede superar una recompensa volátil. Compara la acumulación constante con nuestra <a href="/dca-calculator/">calculadora DCA</a>.`
+          `El campo de apreciación es una suposición a futuro, no datos de mercado en vivo, así que las proyecciones a 1/5/10 años son escenarios — ponlo en 0 para ver el valor puro en efectivo. Las recompensas se modelan antes de impuestos; en EE. UU. las recompensas por gasto con tarjeta suelen tratarse como un reembolso de la compra y no como ingreso (el IRS no se ha pronunciado sobre las recompensas en cripto en concreto), pero cada venta posterior de la moneda es una transmisión gravable, así que dimensiona con nuestra <a href="/tax-calculator/">calculadora de impuestos cripto</a>. No gastes de más por puntos — si no comprarías la moneda por separado, una tarjeta plana del 2% en USD puede superar una recompensa volátil. Compara la acumulación constante con nuestra <a href="/dca-calculator/">calculadora DCA</a>.`
         ],
       },
       pt: {
-        quickAnswer: `Escolha um cartão predefinido (Gemini, Coinbase One, Venmo, Fold) ou insira suas próprias taxas base e bônus, além do gasto mensal, preço do BTC e valorização esperada. Exemplo: $3.000/mês a 1% base + 4% sobre 30% de gasto bônus gera $792 brutos por ano, ~0,0079 BTC; com BTC a $100.000 e 20% de crescimento valeria cerca de $950 após um ano.`,
+        quickAnswer: `Escolha um cartão predefinido (Gemini, Coinbase One, Venmo, Fold) ou insira suas próprias taxas base e bônus, além do gasto mensal, preço do BTC e valorização esperada. Exemplo: $3.000/mês a 1% base + 4% sobre 30% de gasto bônus gera $684 brutos por ano, ~0,0068 BTC; com BTC a $100.000 e 20% de crescimento valeria cerca de $821 após um ano.`,
         how: [
           `Esta calculadora estima as recompensas anuais que um cartão de crédito com cashback em cripto paga sobre seu gasto real, converte esse valor em dinheiro para BTC (ou o ativo que você escolher) e projeta seu valor futuro. Ela divide o gasto anual em um bloco de categoria bônus e um base, aplica cada taxa, soma as recompensas brutas, subtrai a anuidade e mostra as recompensas líquidas mais uma taxa efetiva % que gera uma nota de 'Anuidade supera as recompensas' até 'Taxa de recompensas excelente'.`,
-          `A conta é direta: gasto anual = gasto mensal × 12; gasto bônus = gasto anual × percentual bônus; gasto base = o restante. Recompensas brutas = gasto base × taxa base + gasto bônus × taxa bônus, e líquidas = brutas − anuidade. Cripto ganha = recompensas brutas ÷ preço do ativo, e o valor em 1 ano e o valor em 10 anos aplicam sua valorização (as linhas de recompensas líquidas em 5 e 10 anos ficam em dólares, sem crescimento), ex. valor em 10 anos = brutas × 10 × (1 + crescimento)^10. Os cartões predefinidos preenchem taxas realistas que você pode editar.`
+          `A conta é direta: gasto anual = gasto mensal × 12; gasto bônus = gasto anual × percentual bônus; gasto base = o restante. Recompensas brutas = gasto base × taxa base + gasto bônus × taxa bônus, e líquidas = brutas − anuidade. Cripto ganha = recompensas brutas ÷ preço do ativo, e o valor em 1 ano e o valor em 10 anos aplicam sua valorização (as linhas de recompensas líquidas em 5 e 10 anos ficam em dólares, sem crescimento), e o valor em 10 anos faz crescer a recompensa de cada ano só a partir do ano em que foi ganha: brutas × [(1 + crescimento)^10 + (1 + crescimento)^9 + … + (1 + crescimento)]. Os cartões predefinidos preenchem taxas realistas que você pode editar.`
         ],
         inputs: [
           `Escolha um de seis cartões predefinidos (Gemini, Coinbase One, Venmo, Fold, Crypto.com Ruby e um Amex Gold de comparação) para carregar sua anuidade, a taxa base e a taxa da principal categoria bônus, ou digite as suas. Os sete campos editáveis são anuidade (USD), taxa base de recompensas (%), taxa de categoria bônus (%), percentual de gasto na categoria bônus (%), gasto mensal (USD), preço do BTC ou do ativo de recompensa (USD) e valorização anual da cripto (%). Os campos de taxa foram pensados para 0–10%, mas não têm limite rígido; o gasto deve ser não negativo e o preço do ativo positivo, ou o painel pedirá dados válidos.`,
-          `O campo de valorização é uma suposição futura, não dados de mercado ao vivo, então as projeções de 1/5/10 anos são cenários — defina como 0 para ver o valor puro em dinheiro. As recompensas são modeladas antes de impostos; na maioria das jurisdições são tributadas como renda no recebimento e de novo como ganho de capital na venda, então dimensione com nossa <a href="/tax-calculator/">calculadora de impostos cripto</a>. Não gaste demais por pontos — se você não compraria a moeda separadamente, um cartão fixo de 2% em USD pode superar uma recompensa volátil. Compare o acúmulo constante com nossa <a href="/dca-calculator/">calculadora DCA</a>.`
+          `O campo de valorização é uma suposição futura, não dados de mercado ao vivo, então as projeções de 1/5/10 anos são cenários — defina como 0 para ver o valor puro em dinheiro. As recompensas são modeladas antes de impostos; nos EUA, recompensas de cartão sobre gastos costumam ser tratadas como reembolso da compra e não como renda (o IRS não se pronunciou sobre recompensas em cripto especificamente), mas cada venda posterior da moeda é uma alienação tributável, então dimensione com nossa <a href="/tax-calculator/">calculadora de impostos cripto</a>. Não gaste demais por pontos — se você não compraria a moeda separadamente, um cartão fixo de 2% em USD pode superar uma recompensa volátil. Compare o acúmulo constante com nossa <a href="/dca-calculator/">calculadora DCA</a>.`
         ],
       },
       tr: {
-        quickAnswer: `Bir kart ön ayarı seçin (Gemini, Coinbase One, Venmo, Fold) ya da kendi temel ve bonus oranlarınızı, aylık harcamanızı, BTC fiyatını ve beklenen değer artışını girin. Örnek: aylık 3.000 dolar, yüzde 1 temel artı bonus harcamanın yüzde 30'una yüzde 4, yılda 792 dolar brüt yani ~0,0079 BTC kazandırır; BTC 100.000 dolar ve yüzde 20 büyümeyle bir yıl sonra yaklaşık 950 dolar eder.`,
+        quickAnswer: `Bir kart ön ayarı seçin (Gemini, Coinbase One, Venmo, Fold) ya da kendi temel ve bonus oranlarınızı, aylık harcamanızı, BTC fiyatını ve beklenen değer artışını girin. Örnek: aylık 3.000 dolar, yüzde 1 temel artı bonus harcamanın yüzde 30'una yüzde 4, yılda 684 dolar brüt yani ~0,0068 BTC kazandırır; BTC 100.000 dolar ve yüzde 20 büyümeyle bir yıl sonra yaklaşık 821 dolar eder.`,
         how: [
           `Bu hesaplayıcı, kripto ödüllü bir kredi kartının gerçek harcamanız üzerinden ödediği yıllık ödülleri tahmin eder, bu nakit değeri BTC'ye (veya seçtiğiniz ödül varlığına) çevirir ve gelecekteki değerini öngörür. Yıllık harcamayı bonus kategori dilimi ve temel dilim olarak ayırır, her orana uygular, brüt ödülleri toplar, yıllık ücreti çıkarır ve net ödülleri 'Ücret ödülleri aşıyor'dan 'Mükemmel ödül oranı'na uzanan bir derecelendirmeyi besleyen etkin yüzde oranıyla birlikte gösterir.`,
-          `Hesap basittir: yıllık harcama = aylık harcama × 12; bonus harcama = yıllık harcama × bonus payı; temel harcama = kalanı. Brüt ödüller = temel harcama × temel oran + bonus harcama × bonus oran, net ise = brüt − yıllık ücret. Kazanılan kripto = brüt ödüller ÷ varlık fiyatı; 1 yıllık ve 10 yıllık değerler değer artışı girdinizi uygular (5 ve 10 yıllık net ödül satırları büyümesiz, düz dolar tutarı olarak kalır), örn. 10 yıllık değer = brüt × 10 × (1 + büyüme)^10. Ön ayar pilleri düzenleyebileceğiniz gerçekçi oranları otomatik doldurur.`
+          `Hesap basittir: yıllık harcama = aylık harcama × 12; bonus harcama = yıllık harcama × bonus payı; temel harcama = kalanı. Brüt ödüller = temel harcama × temel oran + bonus harcama × bonus oran, net ise = brüt − yıllık ücret. Kazanılan kripto = brüt ödüller ÷ varlık fiyatı; 1 yıllık ve 10 yıllık değerler değer artışı girdinizi uygular (5 ve 10 yıllık net ödül satırları büyümesiz, düz dolar tutarı olarak kalır), 10 yıllık değer ise her yılın ödülünü yalnızca kazanıldığı yıldan itibaren büyütür: brüt × [(1 + büyüme)^10 + (1 + büyüme)^9 + … + (1 + büyüme)]. Ön ayar pilleri düzenleyebileceğiniz gerçekçi oranları otomatik doldurur.`
         ],
         inputs: [
           `Yıllık ücreti, temel ödül oranını ve en üst bonus kategorisinin oranını yüklemek için altı kart ön ayarından birini (Gemini, Coinbase One, Venmo, Fold, Crypto.com Ruby ve karşılaştırma için Amex Gold) seçin ya da kendiniz girin. Düzenlenebilir yedi alan şunlardır: yıllık ücret (USD), temel ödül oranı (%), bonus kategori oranı (%), bonus kategori harcama payı (%), aylık harcama (USD), BTC veya ödül varlığı fiyatı (USD) ve yıllık kripto değer artışı (%). Oran alanları yüzde 0–10 için tasarlanmıştır ama kesin bir sınırları yoktur; harcama negatif olamaz ve varlık fiyatı pozitif olmalıdır, aksi halde panel sonuç yerine geçerli veri ister.`,
-          `Değer artışı alanı ileriye dönük bir varsayımdır, canlı piyasa verisi değil, bu yüzden 1/5/10 yıllık öngörüler senaryolardır — saf nakit geri değerini görmek için 0 yapın. Ödüller vergi öncesi modellenir; çoğu ülkede kart kripto ödülleri alındığında gelir, satıldığında yeniden sermaye kazancı olarak vergilendirilir, bu yüzden <a href="/tax-calculator/">kripto vergi hesaplayıcımızla</a> boyutlandırın. Puan için fazla harcamayın — coini ayrıca satın almazdınız diyorsanız, sabit yüzde 2 USD geri veren bir kart oynak bir ödülü geçebilir. İstikrarlı biriktirmeyi <a href="/dca-calculator/">DCA hesaplayıcımızla</a> karşılaştırın.`
+          `Değer artışı alanı ileriye dönük bir varsayımdır, canlı piyasa verisi değil, bu yüzden 1/5/10 yıllık öngörüler senaryolardır — saf nakit geri değerini görmek için 0 yapın. Ödüller vergi öncesi modellenir; ABD\'de harcamaya bağlı kart ödülleri genellikle gelir değil alış indirimi sayılır (IRS kripto ödülleri için ayrıca hüküm vermedi), ancak coinin sonraki her satışı vergiye tabi bir elden çıkarmadır, bu yüzden <a href="/tax-calculator/">kripto vergi hesaplayıcımızla</a> boyutlandırın. Puan için fazla harcamayın — coini ayrıca satın almazdınız diyorsanız, sabit yüzde 2 USD geri veren bir kart oynak bir ödülü geçebilir. İstikrarlı biriktirmeyi <a href="/dca-calculator/">DCA hesaplayıcımızla</a> karşılaştırın.`
         ],
       },
       hi: {
-        quickAnswer: `एक कार्ड प्रीसेट चुनें (Gemini, Coinbase One, Venmo, Fold) या अपनी बेस और बोनस दरें, मासिक खर्च, BTC कीमत और अपेक्षित वृद्धि दर्ज करें। उदाहरण: $3,000/माह पर 1% बेस + 30% बोनस खर्च पर 4% सालाना $792 ग्रॉस यानी ~0.0079 BTC कमाता है; BTC $100,000 और 20% वृद्धि पर एक साल बाद लगभग $950 का होगा।`,
+        quickAnswer: `एक कार्ड प्रीसेट चुनें (Gemini, Coinbase One, Venmo, Fold) या अपनी बेस और बोनस दरें, मासिक खर्च, BTC कीमत और अपेक्षित वृद्धि दर्ज करें। उदाहरण: $3,000/माह पर 1% बेस + 30% बोनस खर्च पर 4% सालाना $684 ग्रॉस यानी ~0.0068 BTC कमाता है; BTC $100,000 और 20% वृद्धि पर एक साल बाद लगभग $821 का होगा।`,
         how: [
           `यह कैलकुलेटर अनुमान लगाता है कि एक क्रिप्टो रिवॉर्ड क्रेडिट कार्ड आपके असली खर्च पर सालाना कितने रिवॉर्ड देता है, उस नकद मूल्य को BTC (या आपके चुने रिवॉर्ड एसेट) में बदलता है और उसका भविष्य मूल्य प्रोजेक्ट करता है। यह सालाना खर्च को बोनस-कैटेगरी हिस्से और बेस हिस्से में बांटता है, हर दर लगाता है, ग्रॉस रिवॉर्ड जोड़ता है, सालाना फीस घटाता है और नेट रिवॉर्ड के साथ एक इफेक्टिव % दर दिखाता है जो 'फीस रिवॉर्ड से ज्यादा' से 'उत्कृष्ट रिवॉर्ड दर' तक की रेटिंग देती है।`,
-          `गणित सीधा है: सालाना खर्च = मासिक खर्च × 12; बोनस खर्च = सालाना खर्च × बोनस हिस्सा; बेस खर्च = बाकी। ग्रॉस रिवॉर्ड = बेस खर्च × बेस दर + बोनस खर्च × बोनस दर, और नेट = ग्रॉस − सालाना फीस। कमाई गई क्रिप्टो = ग्रॉस रिवॉर्ड ÷ एसेट कीमत, और 1 साल व 10 साल की वैल्यू पर आपका वृद्धि इनपुट लागू होता है (5 और 10 साल के नेट रिवॉर्ड वाली पंक्तियाँ बिना ग्रोथ के सीधे डॉलर में रहती हैं), जैसे 10-साल मूल्य = ग्रॉस × 10 × (1 + वृद्धि)^10। प्रीसेट पिल्स वास्तविक दरें भर देती हैं जिन्हें आप बदल सकते हैं।`
+          `गणित सीधा है: सालाना खर्च = मासिक खर्च × 12; बोनस खर्च = सालाना खर्च × बोनस हिस्सा; बेस खर्च = बाकी। ग्रॉस रिवॉर्ड = बेस खर्च × बेस दर + बोनस खर्च × बोनस दर, और नेट = ग्रॉस − सालाना फीस। कमाई गई क्रिप्टो = ग्रॉस रिवॉर्ड ÷ एसेट कीमत, और 1 साल व 10 साल की वैल्यू पर आपका वृद्धि इनपुट लागू होता है (5 और 10 साल के नेट रिवॉर्ड वाली पंक्तियाँ बिना ग्रोथ के सीधे डॉलर में रहती हैं), और 10-साल मूल्य हर साल के रिवॉर्ड को केवल उसी साल से बढ़ाता है जब वह मिला: ग्रॉस × [(1 + वृद्धि)^10 + (1 + वृद्धि)^9 + … + (1 + वृद्धि)]। प्रीसेट पिल्स वास्तविक दरें भर देती हैं जिन्हें आप बदल सकते हैं।`
         ],
         inputs: [
           `छह कार्ड प्रीसेट (Gemini, Coinbase One, Venmo, Fold, Crypto.com Ruby और तुलना के लिए Amex Gold) में से कोई चुनें ताकि उसकी सालाना फीस, बेस रिवॉर्ड दर और टॉप बोनस कैटेगरी की दर लोड हो जाए, या खुद दर्ज करें। सात संपादन-योग्य फील्ड हैं: सालाना फीस (USD), बेस रिवॉर्ड दर (%), बोनस कैटेगरी दर (%), बोनस कैटेगरी खर्च हिस्सा (%), मासिक खर्च (USD), BTC या रिवॉर्ड एसेट की कीमत (USD) और सालाना क्रिप्टो वृद्धि (%)। दर वाले फील्ड 0–10% के लिए बने हैं, पर उन पर सख्त सीमा नहीं है; खर्च गैर-नकारात्मक और एसेट कीमत धनात्मक होनी चाहिए, वरना पैनल परिणाम के बजाय मान्य इनपुट मांगेगा।`,
-          `वृद्धि फील्ड एक भविष्य की धारणा है, लाइव मार्केट डेटा नहीं, इसलिए 1/5/10 साल की प्रोजेक्शन परिदृश्य हैं — शुद्ध कैश-बैक मूल्य देखने के लिए इसे 0 करें। रिवॉर्ड कर-पूर्व मॉडल किए जाते हैं; अधिकांश देशों में कार्ड क्रिप्टो रिवॉर्ड प्राप्ति पर आय और बिक्री पर फिर से कैपिटल गेन के रूप में कर योग्य होते हैं, इसलिए हमारे <a href="/tax-calculator/">क्रिप्टो टैक्स कैलकुलेटर</a> से आकार तय करें। पॉइंट के लिए ज्यादा खर्च न करें — अगर आप कॉइन अलग से नहीं खरीदते, तो एक फ्लैट 2% USD-बैक कार्ड एक अस्थिर रिवॉर्ड से बेहतर हो सकता है। स्थिर संचय की तुलना हमारे <a href="/dca-calculator/">DCA कैलकुलेटर</a> से करें।`
+          `वृद्धि फील्ड एक भविष्य की धारणा है, लाइव मार्केट डेटा नहीं, इसलिए 1/5/10 साल की प्रोजेक्शन परिदृश्य हैं — शुद्ध कैश-बैक मूल्य देखने के लिए इसे 0 करें। रिवॉर्ड कर-पूर्व मॉडल किए जाते हैं; US में खर्च पर मिलने वाले कार्ड रिवॉर्ड आमतौर पर आय नहीं, खरीद पर छूट माने जाते हैं (IRS ने क्रिप्टो रिवॉर्ड पर अलग से कोई फ़ैसला नहीं दिया), लेकिन बाद में कॉइन की हर बिक्री कर योग्य निपटान है, इसलिए हमारे <a href="/tax-calculator/">क्रिप्टो टैक्स कैलकुलेटर</a> से आकार तय करें। पॉइंट के लिए ज्यादा खर्च न करें — अगर आप कॉइन अलग से नहीं खरीदते, तो एक फ्लैट 2% USD-बैक कार्ड एक अस्थिर रिवॉर्ड से बेहतर हो सकता है। स्थिर संचय की तुलना हमारे <a href="/dca-calculator/">DCA कैलकुलेटर</a> से करें।`
         ],
       },
       ru: {
-        quickAnswer: `Выберите пресет карты (Gemini, Coinbase One, Venmo, Fold) или введите свои базовую и бонусную ставки, месячные траты, цену BTC и ожидаемый рост. Пример: $3000/мес при 1% базовых + 4% на 30% бонусных трат дают $792 валовых в год, ~0,0079 BTC; при BTC $100 000 и росте 20% это около $950 через год.`,
+        quickAnswer: `Выберите пресет карты (Gemini, Coinbase One, Venmo, Fold) или введите свои базовую и бонусную ставки, месячные траты, цену BTC и ожидаемый рост. Пример: $3000/мес при 1% базовых + 4% на 30% бонусных трат дают $684 валовых в год, ~0,0068 BTC; при BTC $100 000 и росте 20% это около $821 через год.`,
         how: [
           `Этот калькулятор оценивает, сколько годовых вознаграждений выплачивает крипто-кэшбэк-карта на ваши реальные траты, переводит эту денежную сумму в BTC (или выбранный актив) и прогнозирует её будущую стоимость. Он делит годовые траты на бонусную категорию и базовую часть, применяет каждую ставку, суммирует валовые вознаграждения, вычитает годовую плату и показывает чистые вознаграждения вместе с эффективной % ставкой, которая формирует оценку от «Плата превышает вознаграждения» до «Отличная ставка вознаграждений».`,
-          `Расчёт прост: годовые траты = месячные траты × 12; бонусные траты = годовые траты × доля бонуса; базовые траты = остаток. Валовые вознаграждения = базовые траты × базовая ставка + бонусные траты × бонусная ставка, а чистые = валовые − годовая плата. Заработанная крипта = валовые вознаграждения ÷ цена актива, а стоимость через 1 год и за 10 лет учитывает ваш ввод роста (строки чистых вознаграждений за 5 и 10 лет остаются в долларах, без роста), напр. стоимость за 10 лет = валовые × 10 × (1 + рост)^10. Пресеты заполняют реалистичные ставки, которые можно изменить.`
+          `Расчёт прост: годовые траты = месячные траты × 12; бонусные траты = годовые траты × доля бонуса; базовые траты = остаток. Валовые вознаграждения = базовые траты × базовая ставка + бонусные траты × бонусная ставка, а чистые = валовые − годовая плата. Заработанная крипта = валовые вознаграждения ÷ цена актива, а стоимость через 1 год и за 10 лет учитывает ваш ввод роста (строки чистых вознаграждений за 5 и 10 лет остаются в долларах, без роста), а стоимость за 10 лет наращивает награду каждого года только с того года, когда она получена: валовые × [(1 + рост)^10 + (1 + рост)^9 + … + (1 + рост)]. Пресеты заполняют реалистичные ставки, которые можно изменить.`
         ],
         inputs: [
           `Выберите одну из шести карт-пресетов (Gemini, Coinbase One, Venmo, Fold, Crypto.com Ruby и Amex Gold для сравнения), чтобы загрузить её годовую плату, базовую ставку вознаграждений и ставку главной бонусной категории, либо введите свои. Семь редактируемых полей: годовая плата (USD), базовая ставка вознаграждений (%), ставка бонусной категории (%), доля трат в бонусной категории (%), месячные траты (USD), цена BTC или актива вознаграждения (USD) и годовой рост крипты (%). Поля ставок рассчитаны на 0–10%, но жёсткого ограничения нет; траты должны быть неотрицательными, а цена актива положительной, иначе панель попросит корректные данные.`,
-          `Поле роста — это прогнозное допущение, а не живые рыночные данные, поэтому проекции на 1/5/10 лет являются сценариями — установите 0, чтобы увидеть чистую сумму кэшбэка. Вознаграждения моделируются до налогов; в большинстве юрисдикций крипто-вознаграждения по карте облагаются как доход при получении и снова как прирост капитала при продаже, поэтому планируйте размер с нашим <a href="/tax-calculator/">калькулятором крипто-налогов</a>. Не тратьте лишнее ради баллов — если вы не купили бы монету отдельно, фиксированная карта с 2% в USD может обойти волатильное вознаграждение. Сравните стабильное накопление с нашим <a href="/dca-calculator/">калькулятором DCA</a>.`
+          `Поле роста — это прогнозное допущение, а не живые рыночные данные, поэтому проекции на 1/5/10 лет являются сценариями — установите 0, чтобы увидеть чистую сумму кэшбэка. Вознаграждения моделируются до налогов; в США награды за траты по карте обычно считаются скидкой на покупку, а не доходом (отдельной позиции IRS по крипто-наградам нет), но каждая последующая продажа монеты — налогооблагаемая операция, поэтому планируйте размер с нашим <a href="/tax-calculator/">калькулятором крипто-налогов</a>. Не тратьте лишнее ради баллов — если вы не купили бы монету отдельно, фиксированная карта с 2% в USD может обойти волатильное вознаграждение. Сравните стабильное накопление с нашим <a href="/dca-calculator/">калькулятором DCA</a>.`
         ],
       },
   },
@@ -7067,7 +7067,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
         inputs: [
           `Bet Side toggles YES or NO; YES Market Price (USD, 0–1) is the share price you pay; Bet Size (USD) is your stake. Your YES Probability Estimate (%) feeds the EV, edge, and Kelly math, this is your forecast, not the market's. The optional Hedge at Future YES Price field models laying off the bet on the opposite side later: leave it blank to skip hedging entirely. Built for binary Polymarket-style markets where YES and NO shares each settle at $1.`,
-          `The YES price must sit strictly between 0 and 1, the bet size must be above zero and probabilities between 0 and 100%, values outside that show an "enter valid inputs" message. The tool models a single binary market and assumes shares redeem at exactly $1; it does not deduct Polymarket's 2% fee on winnings, gas, or slippage, so treat profit and EV as gross. For sizing discipline check the suggested stake against our <a href="/kelly-calculator/">Kelly criterion calculator</a>, and spot cross-market mispricings with the <a href="/arbitrage-calculator/">arbitrage calculator</a>.`
+          `The YES price must sit strictly between 0 and 1, the bet size must be above zero and probabilities between 0 and 100%, values outside that show an "enter valid inputs" message. The tool models a single binary market and assumes shares redeem at exactly $1; it does not deduct the taker fee Polymarket charges on most market categories when you buy (there is no fee on winnings), gas, or slippage, so treat profit and EV as gross. For sizing discipline check the suggested stake against our <a href="/kelly-calculator/">Kelly criterion calculator</a>, and spot cross-market mispricings with the <a href="/arbitrage-calculator/">arbitrage calculator</a>.`
         ],
       },
       es: {
@@ -7078,7 +7078,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
         inputs: [
           `El Lado de la Apuesta alterna entre YES y NO; el Precio de Mercado YES (USD, 0–1) es el precio de la acción que pagas; el Tamaño de Apuesta (USD) es tu capital. Tu Estimación de Probabilidad YES (%) alimenta el EV, la ventaja y el cálculo de Kelly; es tu pronóstico, no el del mercado. El campo opcional Cobertura a Precio YES Futuro modela cubrir la apuesta en el lado opuesto más tarde: déjalo en blanco para omitir la cobertura. Diseñado para mercados binarios estilo Polymarket donde las acciones YES y NO liquidan a $1.`,
-          `El precio YES debe estar estrictamente entre 0 y 1, el tamaño de apuesta debe ser mayor que cero y las probabilidades deben estar entre 0 y 100%; valores fuera de ese rango muestran un mensaje de "introduce datos válidos". La herramienta modela un único mercado binario y asume que las acciones se canjean a exactamente $1; no descuenta la comisión del 2% de Polymarket sobre ganancias, el gas ni el slippage, así que toma la ganancia y el EV como brutos. Para disciplina de tamaño compara la apuesta sugerida con nuestra <a href="/kelly-calculator/">calculadora del criterio de Kelly</a>, y detecta desajustes entre mercados con la <a href="/arbitrage-calculator/">calculadora de arbitraje</a>.`
+          `El precio YES debe estar estrictamente entre 0 y 1, el tamaño de apuesta debe ser mayor que cero y las probabilidades deben estar entre 0 y 100%; valores fuera de ese rango muestran un mensaje de "introduce datos válidos". La herramienta modela un único mercado binario y asume que las acciones se canjean a exactamente $1; no descuenta la comisión de taker que Polymarket cobra al comprar en la mayoría de categorías (las ganancias no pagan comisión), el gas ni el slippage, así que toma la ganancia y el EV como brutos. Para disciplina de tamaño compara la apuesta sugerida con nuestra <a href="/kelly-calculator/">calculadora del criterio de Kelly</a>, y detecta desajustes entre mercados con la <a href="/arbitrage-calculator/">calculadora de arbitraje</a>.`
         ],
       },
       pt: {
@@ -7089,7 +7089,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
         inputs: [
           `O Lado da Aposta alterna entre YES e NO; o Preço de Mercado YES (USD, 0–1) é o preço da ação que você paga; o Tamanho da Aposta (USD) é o seu capital. Sua Estimativa de Probabilidade YES (%) alimenta o EV, a vantagem e o cálculo de Kelly; é a sua previsão, não a do mercado. O campo opcional Hedge a Preço YES Futuro modela cobrir a aposta no lado oposto depois: deixe em branco para pular o hedge. Feito para mercados binários estilo Polymarket onde as ações YES e NO liquidam a $1.`,
-          `O preço YES deve ficar estritamente entre 0 e 1, o tamanho da aposta deve ser maior que zero e as probabilidades devem ficar entre 0 e 100%; valores fora disso mostram uma mensagem de "insira dados válidos". A ferramenta modela um único mercado binário e assume que as ações são resgatadas a exatamente $1; não desconta a taxa de 2% da Polymarket sobre ganhos, o gas nem o slippage, então trate lucro e EV como brutos. Para disciplina de dimensionamento compare a aposta sugerida com nossa <a href="/kelly-calculator/">calculadora do critério de Kelly</a>, e detecte distorções entre mercados com a <a href="/arbitrage-calculator/">calculadora de arbitragem</a>.`
+          `O preço YES deve ficar estritamente entre 0 e 1, o tamanho da aposta deve ser maior que zero e as probabilidades devem ficar entre 0 e 100%; valores fora disso mostram uma mensagem de "insira dados válidos". A ferramenta modela um único mercado binário e assume que as ações são resgatadas a exatamente $1; não desconta a taxa de taker que a Polymarket cobra na compra na maioria das categorias (os ganhos não pagam taxa), o gas nem o slippage, então trate lucro e EV como brutos. Para disciplina de dimensionamento compare a aposta sugerida com nossa <a href="/kelly-calculator/">calculadora do critério de Kelly</a>, e detecte distorções entre mercados com a <a href="/arbitrage-calculator/">calculadora de arbitragem</a>.`
         ],
       },
       tr: {
@@ -7111,7 +7111,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
         inputs: [
           `बेट साइड YES या NO के बीच बदलता है; YES मार्केट प्राइस (USD, 0–1) वह शेयर मूल्य है जो आप चुकाते हैं; बेट साइज (USD) आपकी पूंजी है। आपका YES प्रायिकता अनुमान (%) EV, एज और केली गणना को चलाता है; यह आपका पूर्वानुमान है, बाजार का नहीं। वैकल्पिक भविष्य के YES मूल्य पर हेज फील्ड बाद में विपरीत पक्ष पर बेट को संतुलित करने को मॉडल करता है: हेज छोड़ने के लिए इसे खाली छोड़ दें। बाइनरी Polymarket-शैली बाजारों के लिए बना है जहां YES और NO शेयर $1 पर सेटल होते हैं।`,
-          `YES मूल्य सख्ती से 0 और 1 के बीच, बेट साइज़ शून्य से अधिक, और प्रायिकता 0 और 100% के बीच होनी चाहिए; इस सीमा के बाहर के मान "मान्य इनपुट दर्ज करें" संदेश दिखाते हैं। टूल एकल बाइनरी बाजार को मॉडल करता है और मानता है कि शेयर ठीक $1 पर भुनाए जाते हैं; यह Polymarket की जीत पर 2% फीस, गैस या स्लिपेज नहीं घटाता, इसलिए लाभ और EV को सकल मानें। आकार अनुशासन के लिए सुझाई गई बेट की जांच हमारे <a href="/kelly-calculator/">केली क्राइटेरियन कैलकुलेटर</a> से करें, और बाजारों के बीच गलत मूल्य निर्धारण <a href="/arbitrage-calculator/">आर्बिट्राज कैलकुलेटर</a> से पकड़ें।`
+          `YES मूल्य सख्ती से 0 और 1 के बीच, बेट साइज़ शून्य से अधिक, और प्रायिकता 0 और 100% के बीच होनी चाहिए; इस सीमा के बाहर के मान "मान्य इनपुट दर्ज करें" संदेश दिखाते हैं। टूल एकल बाइनरी बाजार को मॉडल करता है और मानता है कि शेयर ठीक $1 पर भुनाए जाते हैं; यह अधिकांश श्रेणियों में खरीदते समय लगने वाला Polymarket का taker शुल्क (जीत पर कोई शुल्क नहीं), गैस या स्लिपेज नहीं घटाता, इसलिए लाभ और EV को सकल मानें। आकार अनुशासन के लिए सुझाई गई बेट की जांच हमारे <a href="/kelly-calculator/">केली क्राइटेरियन कैलकुलेटर</a> से करें, और बाजारों के बीच गलत मूल्य निर्धारण <a href="/arbitrage-calculator/">आर्बिट्राज कैलकुलेटर</a> से पकड़ें।`
         ],
       },
       ru: {
@@ -7122,7 +7122,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
         inputs: [
           `Сторона ставки переключает YES или NO; Рыночная цена YES (USD, 0–1) — это цена акции, которую вы платите; Размер ставки (USD) — ваш капитал. Ваша оценка вероятности YES (%) питает расчёт EV, преимущества и Келли; это ваш прогноз, а не рыночный. Необязательное поле Хедж по будущей цене YES моделирует закрытие ставки на противоположной стороне позже: оставьте его пустым, чтобы пропустить хедж. Создан для бинарных рынков в стиле Polymarket, где акции YES и NO погашаются по $1.`,
-          `Цена YES должна быть строго между 0 и 1, размер ставки — больше нуля, а вероятности — между 0 и 100%; значения вне этого диапазона показывают сообщение «введите корректные данные». Инструмент моделирует один бинарный рынок и предполагает погашение акций ровно по $1; он не вычитает комиссию Polymarket 2% с выигрыша, газ или проскальзывание, поэтому считайте прибыль и EV валовыми. Для дисциплины размера сверьте предложенную ставку с нашим <a href="/kelly-calculator/">калькулятором критерия Келли</a>, а расхождения цен между рынками ловите <a href="/arbitrage-calculator/">калькулятором арбитража</a>.`
+          `Цена YES должна быть строго между 0 и 1, размер ставки — больше нуля, а вероятности — между 0 и 100%; значения вне этого диапазона показывают сообщение «введите корректные данные». Инструмент моделирует один бинарный рынок и предполагает погашение акций ровно по $1; он не вычитает тейкерскую комиссию, которую Polymarket берёт при покупке в большинстве категорий (с выигрыша комиссии нет), газ или проскальзывание, поэтому считайте прибыль и EV валовыми. Для дисциплины размера сверьте предложенную ставку с нашим <a href="/kelly-calculator/">калькулятором критерия Келли</a>, а расхождения цен между рынками ловите <a href="/arbitrage-calculator/">калькулятором арбитража</a>.`
         ],
       },
   },
@@ -7131,7 +7131,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Pick an RWA protocol (Ondo USDY, BlackRock BUIDL, Maple, Centrifuge), set deposit, gross APY, fee, holding period, tax rate and compounding to see net APY and after-tax value. Example: $10,000 at 4.85% gross, 0% fee, daily compounding for 5 years grows to ~$12,742; at a 22% income-tax rate the after-tax value is ~$10,000 + ~$2,140 = ~$12,140.`,
         how: [
           `This RWA Yield Calculator models the real return on tokenized real-world assets, tokenized US Treasuries, private credit, real estate and gold. From your deposit, gross APY, management fee and compounding frequency it computes net APY (gross minus fee), the compounded future value using FV = deposit × (1 + netAPY/n)^(n×years), the CAGR, and the annual, monthly and daily net interest cash flow so you can see income on a per-period basis, not just the lump-sum total at the end.`,
-          `It then layers on tax and a risk check. Because RWA yield is usually interest, the tool taxes the total gain at your ordinary income rate, returning tax owed, after-tax gain, after-tax value and after-tax APY. It also measures excess return versus the 4.5% T-bill rate and a Sharpe-style risk-adjusted score (excess return divided by an assumed volatility of 2% / 8% / 18% for low / medium / high risk), labelling the result from "Below T-bill rate" up to "Excellent risk-adj return".`
+          `It then layers on tax and a risk check. Because RWA yield is usually interest, the tool taxes the total gain at your ordinary income rate, returning tax owed, after-tax gain, after-tax value and after-tax APY. It also measures excess return versus the 4.1% T-bill rate and a Sharpe-style risk-adjusted score (excess return divided by an assumed volatility of 2% / 8% / 18% for low / medium / high risk), labelling the result from "Below T-bill rate" up to "Excellent risk-adj return".`
         ],
         inputs: [
           `Choose one of eight protocol presets to auto-fill APY, management fee and minimum deposit (e.g. Ondo USDY 4.85%, Maple 11.5%, Goldfinch 12%), or type your own. Then set Deposit Amount in USD, Gross APY, Management Fee, Holding Period (1–20 year chips or custom), Compounding Frequency (annual, monthly, weekly, daily) and your Income Tax Rate. Net APY, future value and the risk score all recalculate live as you change any field.`,
@@ -7142,7 +7142,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Elige un protocolo RWA (Ondo USDY, BlackRock BUIDL, Maple, Centrifuge), fija depósito, APY bruto, comisión, plazo, tasa fiscal y capitalización para ver el APY neto y el valor después de impuestos. Ejemplo: $10.000 al 4,85% bruto, 0% de comisión, capitalización diaria durante 5 años crece a ~$12.742; con una tasa de impuesto sobre la renta del 22%, el valor neto es ~$12.140.`,
         how: [
           `Esta calculadora de rendimiento RWA modela el retorno real de activos del mundo real tokenizados — bonos del Tesoro de EE.UU. tokenizados, crédito privado, inmuebles y oro. A partir de tu depósito, APY bruto, comisión de gestión y frecuencia de capitalización calcula el APY neto (bruto menos comisión), el valor futuro compuesto con FV = depósito × (1 + APYneto/n)^(n×años), la CAGR, y el interés neto anual, mensual y diario para que veas el ingreso por período, no solo el total final.`,
-          `Luego añade impuestos y una verificación de riesgo. Como el rendimiento RWA suele ser interés, la herramienta grava la ganancia total a tu tasa de renta ordinaria, devolviendo impuestos a pagar, ganancia neta, valor neto y APY neto. También mide el exceso de retorno frente al 4,5% de los bonos del Tesoro y un puntaje tipo Sharpe ajustado por riesgo (exceso de retorno dividido por una volatilidad supuesta de 2% / 8% / 18% para riesgo bajo / medio / alto), etiquetando el resultado desde "Por debajo del Tesoro" hasta "Excelente retorno ajustado al riesgo".`
+          `Luego añade impuestos y una verificación de riesgo. Como el rendimiento RWA suele ser interés, la herramienta grava la ganancia total a tu tasa de renta ordinaria, devolviendo impuestos a pagar, ganancia neta, valor neto y APY neto. También mide el exceso de retorno frente al 4,1% de los bonos del Tesoro y un puntaje tipo Sharpe ajustado por riesgo (exceso de retorno dividido por una volatilidad supuesta de 2% / 8% / 18% para riesgo bajo / medio / alto), etiquetando el resultado desde "Por debajo del Tesoro" hasta "Excelente retorno ajustado al riesgo".`
         ],
         inputs: [
           `Elige uno de ocho protocolos predefinidos para autocompletar APY, comisión y depósito mínimo (p. ej. Ondo USDY 4,85%, Maple 11,5%, Goldfinch 12%), o escribe los tuyos. Luego fija el monto del depósito en USD, APY bruto, comisión de gestión, plazo (chips de 1–20 años o personalizado), frecuencia de capitalización (anual, mensual, semanal, diaria) y tu tasa de impuesto sobre la renta. El APY neto, el valor futuro y el puntaje de riesgo se recalculan en vivo al cambiar cualquier campo.`,
@@ -7153,7 +7153,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Escolha um protocolo RWA (Ondo USDY, BlackRock BUIDL, Maple, Centrifuge), defina depósito, APY bruto, taxa, prazo, alíquota e capitalização para ver o APY líquido e o valor após impostos. Exemplo: $10.000 a 4,85% bruto, 0% de taxa, capitalização diária por 5 anos cresce para ~$12.742; com uma alíquota de renda de 22%, o valor líquido fica em ~$12.140.`,
         how: [
           `Esta calculadora de rendimento RWA modela o retorno real de ativos do mundo real tokenizados — títulos do Tesouro dos EUA tokenizados, crédito privado, imóveis e ouro. A partir do seu depósito, APY bruto, taxa de gestão e frequência de capitalização ela calcula o APY líquido (bruto menos taxa), o valor futuro composto com FV = depósito × (1 + APYlíquido/n)^(n×anos), a CAGR, e o juro líquido anual, mensal e diário para você ver a renda por período, não só o total no fim.`,
-          `Depois adiciona imposto e uma verificação de risco. Como o rendimento RWA costuma ser juro, a ferramenta tributa o ganho total à sua alíquota de renda ordinária, retornando imposto devido, ganho líquido, valor líquido e APY líquido. Também mede o retorno excedente frente aos 4,5% do Tesouro e uma pontuação tipo Sharpe ajustada ao risco (retorno excedente dividido por uma volatilidade suposta de 2% / 8% / 18% para risco baixo / médio / alto), rotulando o resultado de "Abaixo do Tesouro" até "Excelente retorno ajustado ao risco".`
+          `Depois adiciona imposto e uma verificação de risco. Como o rendimento RWA costuma ser juro, a ferramenta tributa o ganho total à sua alíquota de renda ordinária, retornando imposto devido, ganho líquido, valor líquido e APY líquido. Também mede o retorno excedente frente aos 4,1% do Tesouro e uma pontuação tipo Sharpe ajustada ao risco (retorno excedente dividido por uma volatilidade suposta de 2% / 8% / 18% para risco baixo / médio / alto), rotulando o resultado de "Abaixo do Tesouro" até "Excelente retorno ajustado ao risco".`
         ],
         inputs: [
           `Escolha um de oito protocolos predefinidos para preencher automaticamente APY, taxa e depósito mínimo (ex.: Ondo USDY 4,85%, Maple 11,5%, Goldfinch 12%), ou digite os seus. Depois defina o valor do depósito em USD, APY bruto, taxa de gestão, prazo (chips de 1–20 anos ou personalizado), frequência de capitalização (anual, mensal, semanal, diária) e sua alíquota de renda. O APY líquido, o valor futuro e a pontuação de risco recalculam ao vivo ao mudar qualquer campo.`,
@@ -7164,7 +7164,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Bir RWA protokolü seçin (Ondo USDY, BlackRock BUIDL, Maple, Centrifuge); yatırım, brüt APY, ücret, vade, vergi oranı ve bileşik sıklığını ayarlayarak net APY ve vergi sonrası değeri görün. Örnek: 4,85% brüt, %0 ücret, günlük bileşikle 5 yılda 10.000 dolar ~12.742 dolara çıkar; %22 gelir vergisi oranında vergi sonrası değer ~12.140 dolardır.`,
         how: [
           `Bu RWA Getiri Hesaplayıcısı, tokenleştirilmiş gerçek dünya varlıklarının — tokenleştirilmiş ABD Hazine tahvilleri, özel kredi, gayrimenkul ve altın — gerçek getirisini modeller. Yatırımınız, brüt APY, yönetim ücreti ve bileşik sıklığından net APY'yi (brüt eksi ücret), GD = yatırım × (1 + netAPY/n)^(n×yıl) ile bileşik gelecek değeri, CAGR'yi ve yıllık, aylık, günlük net faiz nakit akışını hesaplar; böylece geliri yalnızca sondaki toplam olarak değil dönem bazında görürsünüz.`,
-          `Ardından vergi ve bir risk kontrolü ekler. RWA getirisi genellikle faiz olduğundan araç, toplam kazancı olağan gelir oranınızdan vergilendirir; ödenecek vergi, vergi sonrası kazanç, vergi sonrası değer ve vergi sonrası APY döndürür. Ayrıca %4,5'lik Hazine bonosu oranına karşı fazla getiriyi ve Sharpe tarzı riske göre ayarlı bir skoru (fazla getiri, düşük / orta / yüksek risk için varsayılan %2 / %8 / %18 oynaklığa bölünür) ölçer ve sonucu "Hazine oranının altında" ile "Mükemmel riske göre getiri" arasında etiketler.`
+          `Ardından vergi ve bir risk kontrolü ekler. RWA getirisi genellikle faiz olduğundan araç, toplam kazancı olağan gelir oranınızdan vergilendirir; ödenecek vergi, vergi sonrası kazanç, vergi sonrası değer ve vergi sonrası APY döndürür. Ayrıca %4,1'lik Hazine bonosu oranına karşı fazla getiriyi ve Sharpe tarzı riske göre ayarlı bir skoru (fazla getiri, düşük / orta / yüksek risk için varsayılan %2 / %8 / %18 oynaklığa bölünür) ölçer ve sonucu "Hazine oranının altında" ile "Mükemmel riske göre getiri" arasında etiketler.`
         ],
         inputs: [
           `APY, yönetim ücreti ve minimum yatırımı otomatik doldurmak için sekiz hazır protokolden birini seçin (örn. Ondo USDY %4,85, Maple %11,5, Goldfinch %12) veya kendi değerlerinizi girin. Sonra USD cinsinden Yatırım Tutarı, Brüt APY, Yönetim Ücreti, Vade (1–20 yıl çipleri veya özel), Bileşik Sıklığı (yıllık, aylık, haftalık, günlük) ve Gelir Vergisi Oranınızı belirleyin. Herhangi bir alanı değiştirdiğinizde net APY, gelecek değer ve risk skoru anında yeniden hesaplanır.`,
@@ -7175,7 +7175,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `एक RWA प्रोटोकॉल चुनें (Ondo USDY, BlackRock BUIDL, Maple, Centrifuge); डिपॉजिट, ग्रॉस APY, फीस, अवधि, टैक्स दर और कंपाउंडिंग सेट करके नेट APY और टैक्स-बाद मूल्य देखें। उदाहरण: 4.85% ग्रॉस, 0% फीस, दैनिक कंपाउंडिंग पर 5 साल में $10,000 बढ़कर ~$12,742 हो जाता है; 22% आय-कर दर पर टैक्स-बाद मूल्य ~$12,140 रहता है।`,
         how: [
           `यह RWA यील्ड कैलकुलेटर टोकनाइज़्ड रियल-वर्ल्ड एसेट्स — टोकनाइज़्ड US ट्रेज़री, प्राइवेट क्रेडिट, रियल एस्टेट और सोना — का वास्तविक रिटर्न मॉडल करता है। आपके डिपॉजिट, ग्रॉस APY, मैनेजमेंट फीस और कंपाउंडिंग आवृत्ति से यह नेट APY (ग्रॉस माइनस फीस), FV = डिपॉजिट × (1 + नेटAPY/n)^(n×वर्ष) से कंपाउंडेड भविष्य मूल्य, CAGR, और वार्षिक, मासिक व दैनिक नेट ब्याज कैश फ्लो निकालता है ताकि आप आय को प्रति-अवधि देख सकें, केवल अंत के कुल योग के रूप में नहीं।`,
-          `फिर यह टैक्स और एक रिस्क जांच जोड़ता है। चूंकि RWA यील्ड आमतौर पर ब्याज होती है, टूल कुल लाभ पर आपकी सामान्य आय दर से टैक्स लगाता है और देय टैक्स, टैक्स-बाद लाभ, टैक्स-बाद मूल्य और टैक्स-बाद APY लौटाता है। यह 4.5% ट्रेज़री दर के मुकाबले अतिरिक्त रिटर्न और एक Sharpe-शैली रिस्क-समायोजित स्कोर (अतिरिक्त रिटर्न ÷ निम्न / मध्यम / उच्च जोखिम के लिए मानी गई 2% / 8% / 18% अस्थिरता) भी मापता है, और परिणाम को "ट्रेज़री दर से नीचे" से लेकर "उत्कृष्ट रिस्क-समायोजित रिटर्न" तक लेबल करता है।`
+          `फिर यह टैक्स और एक रिस्क जांच जोड़ता है। चूंकि RWA यील्ड आमतौर पर ब्याज होती है, टूल कुल लाभ पर आपकी सामान्य आय दर से टैक्स लगाता है और देय टैक्स, टैक्स-बाद लाभ, टैक्स-बाद मूल्य और टैक्स-बाद APY लौटाता है। यह 4.1% ट्रेज़री दर के मुकाबले अतिरिक्त रिटर्न और एक Sharpe-शैली रिस्क-समायोजित स्कोर (अतिरिक्त रिटर्न ÷ निम्न / मध्यम / उच्च जोखिम के लिए मानी गई 2% / 8% / 18% अस्थिरता) भी मापता है, और परिणाम को "ट्रेज़री दर से नीचे" से लेकर "उत्कृष्ट रिस्क-समायोजित रिटर्न" तक लेबल करता है।`
         ],
         inputs: [
           `APY, मैनेजमेंट फीस और न्यूनतम डिपॉजिट को ऑटो-भरने के लिए आठ प्रीसेट प्रोटोकॉल में से एक चुनें (जैसे Ondo USDY 4.85%, Maple 11.5%, Goldfinch 12%), या अपने मान टाइप करें। फिर USD में डिपॉजिट राशि, ग्रॉस APY, मैनेजमेंट फीस, होल्डिंग अवधि (1–20 वर्ष चिप्स या कस्टम), कंपाउंडिंग आवृत्ति (वार्षिक, मासिक, साप्ताहिक, दैनिक) और अपनी आय-कर दर सेट करें। कोई भी फील्ड बदलने पर नेट APY, भविष्य मूल्य और रिस्क स्कोर लाइव पुनर्गणना होते हैं।`,
@@ -7186,7 +7186,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Выберите RWA-протокол (Ondo USDY, BlackRock BUIDL, Maple, Centrifuge), задайте депозит, валовый APY, комиссию, срок, ставку налога и капитализацию, чтобы увидеть чистый APY и стоимость после налогов. Пример: $10 000 под 4,85% валовых, 0% комиссии, ежедневная капитализация за 5 лет вырастают до ~$12 742; при ставке подоходного налога 22% стоимость после налогов ~$12 140.`,
         how: [
           `Этот калькулятор доходности RWA моделирует реальную доходность токенизированных реальных активов — токенизированных гособлигаций США, частного кредита, недвижимости и золота. По вашему депозиту, валовому APY, комиссии за управление и частоте капитализации он вычисляет чистый APY (валовый минус комиссия), сложную будущую стоимость по формуле БС = депозит × (1 + чистыйAPY/n)^(n×лет), CAGR, а также годовой, месячный и дневной чистый процентный денежный поток, чтобы вы видели доход по периодам, а не только итог в конце.`,
-          `Затем он добавляет налог и проверку риска. Поскольку доходность RWA обычно является процентом, инструмент облагает общую прибыль по вашей ставке обычного дохода и выдаёт сумму налога, прибыль после налогов, стоимость после налогов и APY после налогов. Он также измеряет избыточную доходность относительно ставки гособлигаций 4,5% и оценку в стиле Шарпа с поправкой на риск (избыточная доходность, делённая на предполагаемую волатильность 2% / 8% / 18% для низкого / среднего / высокого риска), помечая результат от «Ниже ставки гособлигаций» до «Отличная доходность с поправкой на риск».`
+          `Затем он добавляет налог и проверку риска. Поскольку доходность RWA обычно является процентом, инструмент облагает общую прибыль по вашей ставке обычного дохода и выдаёт сумму налога, прибыль после налогов, стоимость после налогов и APY после налогов. Он также измеряет избыточную доходность относительно ставки гособлигаций 4,1% и оценку в стиле Шарпа с поправкой на риск (избыточная доходность, делённая на предполагаемую волатильность 2% / 8% / 18% для низкого / среднего / высокого риска), помечая результат от «Ниже ставки гособлигаций» до «Отличная доходность с поправкой на риск».`
         ],
         inputs: [
           `Выберите один из восьми пресетов протоколов для автозаполнения APY, комиссии и минимального депозита (например, Ondo USDY 4,85%, Maple 11,5%, Goldfinch 12%) или введите свои значения. Затем задайте сумму депозита в USD, валовый APY, комиссию за управление, срок (чипы 1–20 лет или произвольно), частоту капитализации (годовая, месячная, недельная, дневная) и вашу ставку подоходного налога. Чистый APY, будущая стоимость и оценка риска пересчитываются вживую при изменении любого поля.`,
