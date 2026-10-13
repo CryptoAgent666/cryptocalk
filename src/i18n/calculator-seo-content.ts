@@ -2358,66 +2358,66 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       quickAnswer: 'Compare ASIC profitability across models and algorithms. The Antminer S21 Pro (234 TH/s, 3,510W) grosses about $8–9/day and nets roughly $3–4/day at $0.06/kWh with BTC near $80K — ROI depends on BTC price and difficulty.',
       how: [
       `The ASIC Mining Calculator estimates profitability for Bitcoin and other ASIC-mineable coins based on your hardware's rated hashrate and power consumption. Enter the ASIC model's hashrate (TH/s for SHA-256), power draw in watts, electricity rate, pool fee, and the current hardware acquisition cost to get daily profit and break-even timeline.`,
-      `Use it before purchasing ASIC hardware to evaluate payback periods under different price scenarios. The calculator uses live network difficulty, block reward and coin price (with built-in fallbacks if the feed is down) and has no coin-price input, so its break-even reflects today's conditions only; a 50% lower BTC price would stretch the payback considerably. Always check the manufacturer's hashrate versus independently benchmarked community results, which often run 5–10% lower.`
+      `Use it before purchasing ASIC hardware to see how long a machine takes to pay for itself at today's coin price and network difficulty, which the calculator loads from a live network feed. At $0.06/kWh with BTC near $80K, a $4,500 S21 Pro needs more than three years to break even, and at half that BTC price it no longer covers its electricity. There is no coin-price field, but revenue scales in direct proportion to hashrate while electricity depends only on the power figure, so entering half your hashrate with the same power shows the result at half the coin price. Always check the manufacturer's hashrate versus independently benchmarked community results, which often run 5–10% lower.`
       ],
       inputs: [
       `Hashrate for SHA-256 ASIC miners is measured in TH/s (terahashes per second). Modern top-tier miners range from 100 to 300+ TH/s. Power consumption is the rated TDP from the manufacturer's spec sheet, add 10% for PSU inefficiency. Pool fee is typically 1–2% for major Bitcoin pools (Foundry, Antpool, F2Pool).`,
-      `Hardware cost is used to calculate the payback period and ROI. Enter the current used market price for a realistic payback estimate, since new ASIC prices vary significantly during bull and bear markets. The calculator does not model the next Bitcoin halving, which cuts the block reward in half, so re-run it after the event; the ASIC Comparison table ranks all 11 preset models by daily profit at your electricity rate.`
+      `Hardware cost is used to calculate the payback period and ROI. Enter the current used market price for a realistic payback estimate, since new ASIC prices vary significantly during bull and bear markets. The calculator does not model the next halving: network difficulty, block reward and coin price come from the live feed (or a dated snapshot if the feed is down) rather than from your inputs, and the break-even figure assumes they stay at today's level. For Bitcoin, the <a href="/halving-calculator/">halving calculator</a> shows your current and post-halving daily profit side by side. The ASIC Comparison table ranks all 11 preset models by daily profit at your electricity rate.`
       ],
     },
     es: {
       quickAnswer: 'Compara la rentabilidad de ASIC entre modelos y algoritmos. El Antminer S21 Pro (234 TH/s, 3.510W) genera unos $8–9/día brutos y $3–4/día netos a $0,06/kWh con BTC cerca de $80K — el ROI depende del precio de BTC y la dificultad.',
       how: [
       `La Calculadora de Minería ASIC estima la rentabilidad para Bitcoin y otras monedas minables por ASIC basándose en el hashrate y consumo de energía de tu hardware.`,
-      `Úsala antes de comprar hardware ASIC para evaluar períodos de recuperación bajo diferentes escenarios de precio.`
+      `Úsala antes de comprar hardware ASIC para ver cuánto tarda una máquina en pagarse con el precio de la moneda y la dificultad de red actuales, que la calculadora carga de una fuente de datos de red en vivo. Con $0,06/kWh y BTC cerca de $80K, un S21 Pro de $4.500 tarda más de tres años en recuperarse, y con la mitad de ese precio de BTC ya no cubre su electricidad. No hay campo para el precio de la moneda, pero los ingresos son proporcionales al hashrate y la electricidad solo depende de la potencia: si introduces la mitad de tu hashrate con la misma potencia, verás el resultado con la mitad del precio.`
       ],
       inputs: [
       `El hashrate para los mineros ASIC SHA-256 se mide en TH/s. El consumo de energía es el TDP nominal de la hoja de especificaciones del fabricante — añade un 10% por ineficiencia de la fuente de alimentación.`,
-      `El costo de hardware se usa para calcular el período de recuperación. La calculadora no modela el próximo halving de Bitcoin, que reduce a la mitad la recompensa por bloque, así que vuelve a calcular cuando ocurra; la tabla Comparación ASIC ordena los 11 modelos predefinidos por beneficio diario a tu tarifa eléctrica.`
+      `El costo de hardware se usa para calcular el período de recuperación. La calculadora no modela el próximo halving: la dificultad de red, la recompensa por bloque y el precio de la moneda vienen de la fuente en vivo (o de una instantánea fechada si la fuente no responde), no de tus datos, y la recuperación supone que se mantienen en el nivel actual. Para Bitcoin, la <a href="/halving-calculator/">calculadora de halving</a> muestra tu beneficio diario actual y posterior al halving lado a lado. La tabla Comparación ASIC ordena los 11 modelos predefinidos por beneficio diario a tu tarifa eléctrica.`
       ],
     },
     pt: {
       quickAnswer: 'Compare a lucratividade ASIC entre modelos e algoritmos. O Antminer S21 Pro (234 TH/s, 3.510W) gera cerca de $8–9/dia brutos e $3–4/dia líquidos a $0,06/kWh com BTC perto de $80K — o ROI depende do preço do BTC e da dificuldade.',
       how: [
       `A Calculadora de Mineração ASIC estima a lucratividade para Bitcoin e outras moedas mineráveis por ASIC com base no hashrate e consumo de energia do seu hardware.`,
-      `Use-a antes de comprar hardware ASIC para avaliar períodos de retorno em diferentes cenários de preço.`
+      `Use-a antes de comprar hardware ASIC para ver quanto tempo uma máquina leva para se pagar com o preço da moeda e a dificuldade de rede atuais, que a calculadora carrega de uma fonte de dados de rede ao vivo. Com $0,06/kWh e BTC perto de $80K, um S21 Pro de $4.500 leva mais de três anos para se pagar e, com metade desse preço do BTC, deixa de cobrir a eletricidade. Não há campo para o preço da moeda, mas a receita é proporcional ao hashrate e a eletricidade depende só da potência: ao inserir metade do seu hashrate com a mesma potência, você vê o resultado com metade do preço.`
       ],
       inputs: [
       `O hashrate para mineradores ASIC SHA-256 é medido em TH/s. O consumo de energia é o TDP nominal da folha de especificações do fabricante — adicione 10% para ineficiência da fonte de alimentação.`,
-      `O custo do hardware é usado para calcular o período de retorno. A calculadora não modela o próximo halving do Bitcoin, que corta pela metade a recompensa por bloco, então refaça o cálculo quando ele ocorrer; a tabela Comparação ASIC ordena os 11 modelos predefinidos por lucro diário na sua tarifa de energia.`
+      `O custo do hardware é usado para calcular o período de retorno. A calculadora não modela o próximo halving: a dificuldade da rede, a recompensa de bloco e o preço da moeda vêm da fonte ao vivo (ou de um instantâneo datado se a fonte estiver fora do ar), não dos seus dados, e o período de retorno supõe que eles fiquem no nível atual. Para o Bitcoin, a <a href="/halving-calculator/">calculadora de halving</a> mostra seu lucro diário atual e pós-halving lado a lado. A tabela Comparação ASIC ordena os 11 modelos predefinidos por lucro diário na sua tarifa de energia.`
       ],
     },
     tr: {
       quickAnswer: 'Modeller ve algoritmalar arasında ASIC kârlılığını karşılaştırın. Antminer S21 Pro (234 TH/s, 3.510W) $0,06/kWh\'de ve ~$80K BTC fiyatında günde yaklaşık $8–9 brüt, $3–4 net kazandırır — ROI, BTC fiyatı ve zorluğa bağlıdır.',
       how: [
       `ASIC Madencilik Hesaplayıcısı, Bitcoin ve diğer ASIC ile madencilik yapılabilir coinler için donanımınızın hashrate ve güç tüketimine göre kârlılığı tahmin eder.`,
-      `Farklı fiyat senaryoları altında geri ödeme sürelerini değerlendirmek için ASIC donanımı satın almadan önce kullanın.`
+      `Bir makinenin, hesaplayıcının canlı ağ veri akışından aldığı güncel coin fiyatı ve ağ zorluğuyla kendini ne kadar sürede amorti ettiğini görmek için ASIC donanımı satın almadan önce kullanın. $0,06/kWh elektrik ve ~$80K BTC fiyatında $4.500'lük bir S21 Pro'nun geri ödemesi üç yılı aşar; BTC bu fiyatın yarısına inerse elektrik maliyetini bile karşılamaz. Coin fiyatı için bir alan yoktur, ancak gelir hashrate ile doğru orantılıdır ve elektrik yalnızca güç değerine bağlıdır: aynı güçle hashrate'inizin yarısını girerseniz, coin fiyatı yarıya indiğindeki sonucu görürsünüz.`
       ],
       inputs: [
       `SHA-256 ASIC madencileri için hashrate TH/s olarak ölçülür. Güç tüketimi üreticinin özellik sayfasındaki nominal TDP'dir — güç kaynağı verimsizliği için %10 ekleyin.`,
-      `Donanım maliyeti geri ödeme süresini hesaplamak için kullanılır. Hesaplayıcı, blok ödülünü yarıya indiren bir sonraki Bitcoin halvingini modellemez, bu yüzden halvingden sonra yeniden hesaplayın; ASIC Karşılaştırması tablosu 11 hazır modeli elektrik tarifenize göre günlük kâra göre sıralar.`
+      `Donanım maliyeti geri ödeme süresini hesaplamak için kullanılır. Hesaplayıcı bir sonraki halving'i modellemez: ağ zorluğu, blok ödülü ve coin fiyatı sizin girdilerinizden değil, canlı veri akışından (akış kapalıysa tarihli bir anlık görüntüden) gelir ve geri ödeme süresi bunların bugünkü seviyede kaldığını varsayar. Bitcoin için <a href="/halving-calculator/">halving hesaplayıcısı</a>, mevcut ve halving sonrası günlük kârınızı yan yana gösterir. ASIC Karşılaştırması tablosu 11 hazır modeli elektrik tarifenize göre günlük kâra göre sıralar.`
       ],
     },
     hi: {
       quickAnswer: 'मॉडल और एल्गोरिदम के बीच ASIC प्रॉफिटेबिलिटी की तुलना करें। Antminer S21 Pro (234 TH/s, 3,510W) $0.06/kWh और लगभग $80K BTC पर रोज़ लगभग $8–9 ग्रॉस और $3–4 नेट कमाता है — ROI BTC प्राइस और डिफिकल्टी पर निर्भर करता है।',
       how: [
       `ASIC माइनिंग कैलकुलेटर आपके हार्डवेयर के रेटेड हैशरेट और पावर कंजम्प्शन के आधार पर Bitcoin और अन्य ASIC-माइनेबल कॉइन के लिए लाभप्रदता का अनुमान लगाता है।`,
-      `विभिन्न मूल्य परिदृश्यों के तहत पेबैक पीरियड का मूल्यांकन करने के लिए ASIC हार्डवेयर खरीदने से पहले इसका उपयोग करें।`
+      `ASIC हार्डवेयर खरीदने से पहले इसका उपयोग करें, ताकि पता चले कि आज की कॉइन कीमत और नेटवर्क डिफिकल्टी पर मशीन अपनी लागत कितने समय में निकालती है — ये दोनों कैलकुलेटर लाइव नेटवर्क डेटा फ़ीड से लेता है। $0.06/kWh और लगभग $80K BTC पर $4,500 का S21 Pro तीन साल से ज़्यादा में ब्रेक-ईवन करता है, और BTC उस कीमत के आधे पर आ जाए तो वह अपनी बिजली का खर्च भी नहीं निकाल पाता। कॉइन कीमत के लिए कोई फ़ील्ड नहीं है, लेकिन राजस्व हैशरेट के सीधे अनुपात में बदलता है और बिजली केवल पावर पर निर्भर करती है: उसी पावर के साथ अपना आधा हैशरेट दर्ज करें, तो आधी कॉइन कीमत वाला नतीजा दिखेगा।`
       ],
       inputs: [
       `SHA-256 ASIC माइनर्स के लिए हैशरेट TH/s में मापा जाता है। पावर कंजम्प्शन निर्माता की स्पेक शीट से नॉमिनल TDP है — PSU अक्षमता के लिए 10% जोड़ें।`,
-      `हार्डवेयर लागत पेबैक पीरियड की गणना के लिए उपयोग की जाती है। कैलकुलेटर अगले Bitcoin हाल्विंग को मॉडल नहीं करता, जो ब्लॉक रिवॉर्ड आधा कर देता है, इसलिए हाल्विंग के बाद दोबारा गणना करें; ASIC तुलना तालिका सभी 11 प्रीसेट मॉडल को आपकी बिजली दर पर दैनिक लाभ के क्रम में दिखाती है।`
+      `हार्डवेयर लागत पेबैक पीरियड की गणना के लिए उपयोग की जाती है। कैलकुलेटर अगली हाल्विंग को मॉडल नहीं करता: नेटवर्क डिफिकल्टी, ब्लॉक रिवॉर्ड और कॉइन कीमत आपके इनपुट से नहीं, बल्कि लाइव फ़ीड से आती हैं (फ़ीड बंद हो तो तारीख वाले स्नैपशॉट से), और ब्रेक-ईवन यह मानकर निकलता है कि वे आज के स्तर पर बनी रहेंगी। Bitcoin के लिए <a href="/halving-calculator/">हाल्विंग कैलकुलेटर</a> आपका मौजूदा और हाल्विंग के बाद का दैनिक मुनाफ़ा साथ-साथ दिखाता है। ASIC तुलना तालिका सभी 11 प्रीसेट मॉडल को आपकी बिजली दर पर दैनिक लाभ के क्रम में दिखाती है।`
       ],
     },
     ru: {
       quickAnswer: 'Сравните прибыльность ASIC по моделям и алгоритмам. Antminer S21 Pro (234 TH/s, 3 510 Вт) приносит примерно $8–9/день брутто и $3–4/день чистыми при $0,06/кВт·ч и BTC около $80K — ROI зависит от цены BTC и сложности.',
       how: [
       `Калькулятор майнинга ASIC оценивает прибыльность для Bitcoin и других монет на ASIC на основе хешрейта и энергопотребления вашего оборудования.`,
-      `Используйте перед покупкой ASIC для оценки срока окупаемости при разных ценовых сценариях.`
+      `Используйте перед покупкой ASIC, чтобы увидеть, за сколько времени машина окупится при текущей цене монеты и сложности сети — калькулятор берёт их из живого потока сетевых данных. При $0,06/кВт·ч и BTC около $80K S21 Pro за $4 500 окупается дольше трёх лет, а при вдвое более низкой цене BTC не покрывает даже электричество. Поля для цены монеты нет, но доход пропорционален хешрейту, а электричество зависит только от мощности: введите половину своего хешрейта при той же мощности — и увидите результат при вдвое меньшей цене.`
       ],
       inputs: [
       `Хешрейт ASIC для SHA-256 измеряется в TH/s. Мощность потребления — номинальный TDP из спецификации производителя плюс 10% на КПД блока питания.`,
-      `Стоимость оборудования используется для расчёта срока окупаемости. Следующий халвинг Bitcoin, который вдвое сокращает награду за блок, калькулятор не моделирует, поэтому после него пересчитайте результат; таблица «Сравнение ASIC» ранжирует все 11 предустановленных моделей по дневной прибыли при вашем тарифе на электричество.`
+      `Стоимость оборудования используется для расчёта срока окупаемости. Следующий халвинг калькулятор не моделирует: сложность сети, награда за блок и цена монеты берутся из живого потока данных (или из датированного снимка, если поток недоступен), а не из ваших вводных, и срок окупаемости считается так, будто они останутся на сегодняшнем уровне. Для Bitcoin <a href="/halving-calculator/">калькулятор халвинга</a> показывает текущую и послехалвинговую дневную прибыль рядом. Таблица «Сравнение ASIC» ранжирует все 11 предустановленных моделей по дневной прибыли при вашем тарифе на электричество.`
       ],
     },
   },

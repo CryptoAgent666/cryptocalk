@@ -37,7 +37,7 @@ npm run ci:check     # test + build + slug-migration & localized-styles verify
 - Technical: `public/robots.txt`, `public/llms.txt`, auto-generated sitemap with prune/alias filtering, `src/pages/404.astro`.
 
 ## Deployment
-See [DEPLOY.md](DEPLOY.md). Short version: `bash scripts/deploy.sh` (builds first; `--no-build` to skip) uploads `dist/` over FTPS (credentials in gitignored `.ftp-credentials`) with hashed assets first, then purges Cloudflare cache and verifies chunks through the CDN. The Cloudflare Worker (`worker.js`, `wrangler.toml`) serves only `/api/contact` + contact routes. Android OTA: `npm run ota:publish`.
+See [DEPLOY.md](DEPLOY.md). Short version: `bash scripts/deploy.sh` (builds first; `--no-build` to skip) uploads `dist/` over FTPS (credentials in gitignored `.ftp-credentials`) with hashed assets first, then purges Cloudflare cache and verifies chunks through the CDN. The Cloudflare Worker (`worker.js`, `wrangler.toml`) serves `/api/contact` + contact routes and `/api/whattomine` (live network data for the mining calculators). Android OTA: `npm run ota:publish`.
 
 ## Operational Rules
 - Follow [AGENTS.md](AGENTS.md) (mandatory for AI agents).

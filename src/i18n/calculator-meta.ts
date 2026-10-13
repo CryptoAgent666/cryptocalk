@@ -96,7 +96,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'asic-mining-calculator': {
       title: 'ASIC Miner Calculator — Profitability & Value',
-      description: 'Free ASIC miner profitability calculator for Antminer S21, Whatsminer M66, and all top models. Calculate daily profit, electricity cost, ROI, ASIC value.'
+      description: 'Free ASIC miner profitability calculator: daily profit, power cost and break-even. 11 presets ranked by profit, incl. Antminer S21, or enter any model.'
     },
     'mining-roi-calculator': {
       title: 'Mining ROI Calculator',

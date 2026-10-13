@@ -1,4 +1,5 @@
 import { onRequestPost } from "./functions/api/contact.js";
+import { handleWhattomine } from "./functions/api/whattomine.js";
 
 function isContactEndpoint(pathname) {
   return pathname === "/api/contact";
@@ -18,6 +19,10 @@ export default {
         env,
         waitUntil: (promise) => ctx.waitUntil(promise),
       });
+    }
+
+    if (url.pathname === "/api/whattomine") {
+      return handleWhattomine(request, ctx);
     }
 
     return env.ASSETS.fetch(request);

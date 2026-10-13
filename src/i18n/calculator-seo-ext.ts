@@ -5794,12 +5794,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "The \"days to break even\" metric is the most actionable for ASIC investment decisions. Hardware pays for itself when (daily net profit × days) = hardware purchase price. At current conditions, if break-even exceeds 18 months, the investment carries significant risk because: 1) coin price may fall further; 2) network difficulty will increase as more ASICs deploy; 3) the next halving may cut block rewards. Always model break-even at 50% current coin price."
       ],
       scenarios: [
-      "New ASIC purchase evaluation: enter the miner's hashrate (TH/s for Bitcoin, GH/s for Litecoin, etc.), power consumption, purchase price, and your electricity rate. Run the break-even analysis at current price, 50% below current, and 30% below current. If break-even exceeds 24 months even at current price, the investment is highly speculative.",
+      "New ASIC purchase evaluation: enter the miner's hashrate (TH/s for Bitcoin, GH/s for Litecoin, etc.), power consumption, purchase price, and your electricity rate. Read the break-even at today's coin price, then at 30% and 50% below it: the calculator has no price field, so keep the power figure and enter 70%, then 50%, of the hashrate, which moves revenue exactly as those price drops would. If break-even exceeds 24 months even at current price, the investment is highly speculative.",
       "Existing ASIC shutdown threshold: for miners you already own, the shutdown price is the coin price at which electricity cost equals mining revenue. Below this price, you pay more in electricity than you earn, mining is destroying capital. Calculate this threshold and set a price alert to notify you when to power down."
       ],
       checklist: [
       "Before buying an ASIC: 1) Verify ASIC availability, secondary market prices often reflect manufacturer MSRP plus significant premium during bull markets. 2) Calculate the network's current hash difficulty growth rate (published monthly by mining analytics sites). 3) Factor in the next <a href=\"/halving-calculator/\">halving date</a> and its impact on block rewards for the target coin.",
-      "After calculating initial profitability: run a 6-month and 12-month projection assuming 5% monthly difficulty growth. If 12-month average profit remains positive after this growth assumption, the investment maintains reasonable return."
+      "After calculating initial profitability, stress-test it for difficulty growth. The calculator holds today's difficulty fixed (its monthly and yearly rows are the daily figure × 30.44 and × 365), so apply the growth by hand: at 5% a month, revenue drops to about 75% of today's by month 6 and about 56% by month 12, averaging roughly 75% over the year. Enter 75% of your hashrate with the same power figure; if the 12-month average profit is still positive under this assumption, the investment maintains reasonable return."
       ],
       mistakes: [
       "Buying ASICs at market cycle peaks when prices and profitability are highest. ASICs ordered during bull markets often arrive 3–6 months later (manufacturer lead times), by which time the coin may be in a bear market and profitability negative. Time ASIC purchases to coin bear markets when hardware prices are depressed.",
@@ -5810,15 +5810,15 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "For institutional viability, break-even under 12 months at current prices is the industry benchmark. Retail miners with higher electricity rates (above $0.08/kWh) find it difficult to compete with industrial operations at $0.02–0.04/kWh, which become profitable even in bear markets."
       ],
       execution: [
-      "ASIC profitability workflow: 1) Get exact specs (hashrate, power draw) from the manufacturer test report, not marketing materials. 2) Confirm your <a href=\"/electricity-cost-calculator/\">electricity rate</a> including demand charges if applicable. 3) Enter current network difficulty and projection. 4) Calculate break-even at current and 50% lower price. 5) Compare to buying and holding equivalent BTC for the same capital.",
-      "Halving preparation: 6 months before the next halving, re-run this calculator with 50% block reward as input. If profitability at halved reward + expected difficulty reduction is still positive at your electricity rate, mining through the halving is rational; otherwise, plan to sell the ASIC before the halving, when market prices are still inflated."
+      "ASIC profitability workflow: 1) Get exact specs (hashrate, power draw) from the manufacturer test report, not marketing materials. 2) Confirm your <a href=\"/electricity-cost-calculator/\">electricity rate</a> including demand charges if applicable. 3) Check the network data badge: difficulty, block reward and coin price load automatically from a live feed (a dated badge means a snapshot is in use), so there is nothing to enter; to allow for future difficulty growth, enter a proportionally lower hashrate. 4) Calculate break-even at current and 50% lower price (half the hashrate, same power). 5) Compare to buying and holding equivalent BTC for the same capital.",
+      "Halving preparation: 6 months before the next halving, re-run the numbers at half the block reward. This calculator has no block-reward input: for Bitcoin, the <a href=\"/halving-calculator/\">halving calculator</a> shows current and post-halving profit side by side, and for any coin, entering half your hashrate with the same power approximates a halved reward at today's price and difficulty. If profitability at halved reward + expected difficulty reduction is still positive at your electricity rate, mining through the halving is rational; otherwise, plan to sell the ASIC before the halving, when market prices are still inflated."
       ],
       hygiene: [
       "Monitor actual power consumption monthly using smart plugs with energy monitoring. ASIC power draw can creep up 5–10% as chips age and thermal paste degrades, recalibrate your electricity cost estimate accordingly.",
       "Track hashrate output daily via pool dashboard. A sudden hashrate drop (>5%) without hardware changes indicates chip degradation, overheating, or firmware issues. Addressing these early prevents permanent efficiency loss."
       ],
       validation: [
-      "Verify miner output: connect the ASIC to a mining pool and check the pool's reported hashrate against the manufacturer spec. Consistent 5%+ variance below spec indicates miner issues. Cross-check against the calculator's daily coin output for the same pool efficiency factor.",
+      "Verify miner output: connect the ASIC to a mining pool and check the pool's reported hashrate against the manufacturer spec. Consistent 5%+ variance below spec indicates miner issues. Then compare the pool's daily earnings, converted to US dollars, with the calculator's daily revenue; the calculator reports dollars, not coin amounts.",
       "Validate break-even formula: (hardware cost) / (daily net profit) = days to break even. For a $3,000 ASIC earning $10/day net: 3,000/10 = 300 days. Confirm the calculator shows the same figure."
       ],
     },
@@ -5828,12 +5828,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "El \"días para recuperar la inversión\" es la métrica más accionable para las decisiones de inversión en ASIC."
       ],
       scenarios: [
-      "Evaluación de compra de nuevo ASIC: introduce el hashrate del minero, el consumo de energía, el precio de compra y tu tarifa eléctrica. Ejecuta el análisis de recuperación al precio actual, un 50% por debajo y un 30% por debajo.",
+      "Evaluación de compra de nuevo ASIC: introduce el hashrate del minero, el consumo de energía, el precio de compra y tu tarifa eléctrica. Mira la recuperación al precio actual de la moneda y luego un 30% y un 50% por debajo: la calculadora no tiene campo de precio, así que mantén la potencia e introduce el 70% y después el 50% del hashrate, lo que mueve los ingresos igual que esas caídas de precio.",
       "Umbral de apagado del ASIC existente: el precio de apagado es el precio de la moneda al que el coste de electricidad es igual a los ingresos de minería."
       ],
       checklist: [
       "Antes de comprar un ASIC: 1) Verifica la disponibilidad del ASIC. 2) Calcula la tasa de crecimiento de dificultad de hash de la red actual. 3) Ten en cuenta la próxima fecha de halving y su impacto en las recompensas de bloque.",
-      "Después de calcular la rentabilidad inicial: ejecuta una proyección de 6 meses y 12 meses asumiendo un crecimiento de dificultad mensual del 5%."
+      "Después de calcular la rentabilidad inicial: ponla a prueba frente al crecimiento de la dificultad. La calculadora mantiene fija la dificultad actual, así que aplica el crecimiento a mano: con un 5% mensual, los ingresos bajan a cerca del 75% de los actuales al sexto mes y al 56% al duodécimo, con una media de alrededor del 75% en el año. Introduce el 75% de tu hashrate con la misma potencia; si el beneficio sigue siendo positivo, la inversión mantiene un retorno razonable."
       ],
       mistakes: [
       "Comprar ASICs en los picos del ciclo de mercado cuando los precios y la rentabilidad son más altos.",
@@ -5844,8 +5844,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Para viabilidad institucional, la recuperación en menos de 12 meses al precio actual es el benchmark de la industria."
       ],
       execution: [
-      "Flujo de trabajo de rentabilidad de ASIC: 1) Obtén especificaciones exactas del informe de prueba del fabricante. 2) Confirma tu tarifa eléctrica. 3) Introduce la dificultad de red actual y la proyección. 4) Calcula la recuperación al precio actual y un 50% por debajo.",
-      "Preparación para el halving: 6 meses antes del próximo halving, vuelve a ejecutar este calculador con el 50% de la recompensa de bloque como entrada."
+      "Flujo de trabajo de rentabilidad de ASIC: 1) Obtén especificaciones exactas del informe de prueba del fabricante. 2) Confirma tu tarifa eléctrica. 3) Revisa los datos de red: la dificultad, la recompensa por bloque y el precio se cargan solos desde una fuente en vivo (una etiqueta con fecha indica que se usa una instantánea), así que no hay nada que introducir; para prever el aumento de dificultad, introduce un hashrate proporcionalmente menor. 4) Calcula la recuperación al precio actual y un 50% por debajo (la mitad del hashrate, la misma potencia).",
+      "Preparación para el halving: 6 meses antes del próximo halving, recalcula con la mitad de la recompensa por bloque. Esta calculadora no tiene campo de recompensa: para Bitcoin, la <a href=\"/halving-calculator/\">calculadora de halving</a> muestra el beneficio actual y posterior al halving lado a lado; para cualquier moneda, introducir la mitad del hashrate con la misma potencia aproxima una recompensa reducida a la mitad con el precio y la dificultad actuales."
       ],
       hygiene: [
       "Monitoriza el consumo real de energía mensualmente usando enchufes inteligentes con monitoreo de energía.",
@@ -5867,7 +5867,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       checklist: [
       "Antes de comprar um ASIC: 1) Verifique a disponibilidade do ASIC. 2) Calcule a taxa de crescimento de dificuldade de hash da rede atual. 3) Considere a próxima data de halving.",
-      "Após calcular a lucratividade inicial: execute uma projeção de 6 e 12 meses assumindo crescimento mensal de 5% na dificuldade."
+      "Após calcular a lucratividade inicial: teste-a contra o crescimento da dificuldade. A calculadora mantém fixa a dificuldade atual, então aplique o crescimento à mão: com 5% ao mês, a receita cai para cerca de 75% da atual no 6º mês e 56% no 12º, com média de cerca de 75% no ano. Insira 75% do seu hashrate com a mesma potência; se o lucro continuar positivo, o investimento mantém um retorno razoável."
       ],
       mistakes: [
       "Comprar ASICs nos picos do ciclo de mercado.",
@@ -5878,8 +5878,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Para viabilidade institucional, payback abaixo de 12 meses ao preço atual é o benchmark da indústria."
       ],
       execution: [
-      "Fluxo de trabalho de lucratividade ASIC: 1) Obtenha especificações exatas do relatório de teste do fabricante. 2) Confirme sua tarifa de eletricidade. 3) Insira a dificuldade atual da rede e projeção. 4) Calcule o payback ao preço atual e 50% abaixo.",
-      "Preparação para o halving: 6 meses antes do próximo halving, execute novamente esta calculadora com 50% da recompensa de bloco."
+      "Fluxo de trabalho de lucratividade ASIC: 1) Obtenha especificações exatas do relatório de teste do fabricante. 2) Confirme sua tarifa de eletricidade. 3) Confira os dados da rede: dificuldade, recompensa de bloco e preço são carregados automaticamente de uma fonte ao vivo (um selo com data indica que um instantâneo está em uso), então não há nada a inserir; para prever o aumento da dificuldade, insira um hashrate proporcionalmente menor. 4) Calcule o payback ao preço atual e 50% abaixo (metade do hashrate, mesma potência).",
+      "Preparação para o halving: 6 meses antes do próximo halving, refaça as contas com metade da recompensa de bloco. Esta calculadora não tem campo de recompensa: para o Bitcoin, a <a href=\"/halving-calculator/\">calculadora de halving</a> mostra o lucro atual e pós-halving lado a lado; para qualquer moeda, inserir metade do hashrate com a mesma potência aproxima uma recompensa reduzida à metade com o preço e a dificuldade atuais."
       ],
       hygiene: [
       "Monitore o consumo real de energia mensalmente usando tomadas inteligentes.",
@@ -5896,12 +5896,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "\"Başabaşa ulaşma günleri\" metriği, ASIC yatırım kararları için en işlemsel olanıdır."
       ],
       scenarios: [
-      "Yeni ASIC satın alma değerlendirmesi: madencinin hashrate'ini, güç tüketimini, satın alma fiyatını ve elektrik tarifinizi girin. Mevcut fiyatta, %50 düşükte ve %30 düşükte başabaş analizini çalıştırın.",
+      "Yeni ASIC satın alma değerlendirmesi: madencinin hashrate'ini, güç tüketimini, satın alma fiyatını ve elektrik tarifinizi girin. Başabaşı önce bugünkü coin fiyatında, sonra %30 ve %50 düşükte okuyun: hesaplayıcıda fiyat alanı yoktur, bu yüzden güç değerini koruyup hashrate'in önce %70'ini, sonra %50'sini girin; bu, geliri o fiyat düşüşleriyle tam olarak aynı ölçüde değiştirir.",
       "Mevcut ASIC kapatma eşiği: kapatma fiyatı, elektrik maliyetinin madencilik gelirine eşit olduğu coin fiyatıdır."
       ],
       checklist: [
       "ASIC satın almadan önce: 1) ASIC kullanılabilirliğini doğrulayın. 2) Ağın mevcut hash zorluğu büyüme oranını hesaplayın. 3) Sonraki halving tarihini ve blok ödülleri üzerindeki etkisini hesaba katın.",
-      "Başlangıç karlılığını hesapladıktan sonra: aylık %5 zorluk büyümesi varsayarak 6 aylık ve 12 aylık bir projeksiyon çalıştırın."
+      "Başlangıç karlılığını hesapladıktan sonra: zorluk artışına karşı test edin. Hesaplayıcı bugünkü zorluğu sabit tutar, bu yüzden artışı elle uygulayın: aylık %5'te gelir 6. ayda bugünkünün yaklaşık %75'ine, 12. ayda %56'sına düşer ve yıl boyunca ortalaması yaklaşık %75 olur. Aynı güçle hashrate'inizin %75'ini girin; kâr hâlâ pozitifse yatırım makul bir getiri sağlar."
       ],
       mistakes: [
       "Fiyatlar ve karlılık en yüksek olduğunda piyasa döngüsü zirvelerinde ASIC satın almak.",
@@ -5912,8 +5912,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Kurumsal uygulanabilirlik için mevcut fiyatlarda 12 ayın altında başabaş sektör kıyaslamasıdır."
       ],
       execution: [
-      "ASIC karlılık iş akışı: 1) Üreticinin test raporundan tam özellikleri alın. 2) Elektrik tarifinizi onaylayın. 3) Mevcut ağ zorluğunu ve projeksiyonu girin. 4) Mevcut ve %50 daha düşük fiyatta başabaşı hesaplayın.",
-      "Halving hazırlığı: bir sonraki halving'den 6 ay önce, blok ödülünün %50'si giriş olarak bu hesaplayıcıyı yeniden çalıştırın."
+      "ASIC karlılık iş akışı: 1) Üreticinin test raporundan tam özellikleri alın. 2) Elektrik tarifinizi onaylayın. 3) Ağ verilerini kontrol edin: zorluk, blok ödülü ve fiyat canlı bir veri akışından otomatik yüklenir (tarihli bir etiket, anlık görüntü kullanıldığını gösterir), yani girilecek bir şey yoktur; gelecekteki zorluk artışını hesaba katmak için orantılı olarak daha düşük bir hashrate girin. 4) Mevcut ve %50 daha düşük fiyatta başabaşı hesaplayın (hashrate'in yarısı, aynı güç).",
+      "Halving hazırlığı: bir sonraki halving'den 6 ay önce hesabı blok ödülünün yarısıyla yeniden yapın. Bu hesaplayıcıda blok ödülü alanı yoktur: Bitcoin için <a href=\"/halving-calculator/\">halving hesaplayıcısı</a> mevcut ve halving sonrası kârı yan yana gösterir; herhangi bir coin için aynı güçle hashrate'in yarısını girmek, bugünkü fiyat ve zorlukta yarıya inmiş ödülü yaklaşık olarak verir."
       ],
       hygiene: [
       "Enerji izleme özellikli akıllı fiş kullanarak gerçek güç tüketimini aylık olarak izleyin.",
@@ -5930,12 +5930,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "\"ब्रेक इवन के लिए दिन\" मेट्रिक ASIC निवेश निर्णयों के लिए सबसे कार्रवाई योग्य है।"
       ],
       scenarios: [
-      "नए ASIC खरीद मूल्यांकन: माइनर का हैशरेट, पावर खपत, खरीद मूल्य और आपकी बिजली दर दर्ज करें। वर्तमान मूल्य, 50% नीचे और 30% नीचे ब्रेक-ईवन विश्लेषण चलाएं।",
+      "नए ASIC खरीद मूल्यांकन: माइनर का हैशरेट, पावर खपत, खरीद मूल्य और आपकी बिजली दर दर्ज करें। ब्रेक-ईवन पहले आज की कॉइन कीमत पर देखें, फिर 30% और 50% कम कीमत पर: कैलकुलेटर में कीमत का फ़ील्ड नहीं है, इसलिए पावर वही रखें और हैशरेट का पहले 70%, फिर 50% दर्ज करें — इससे राजस्व ठीक उतना ही बदलता है जितना उन कीमत गिरावटों से।",
       "मौजूदा ASIC शटडाउन थ्रेशोल्ड: शटडाउन मूल्य वह कॉइन मूल्य है जिस पर बिजली लागत माइनिंग राजस्व के बराबर होती है।"
       ],
       checklist: [
       "ASIC खरीदने से पहले: 1) ASIC उपलब्धता सत्यापित करें। 2) नेटवर्क के वर्तमान हैश कठिनाई वृद्धि दर की गणना करें। 3) अगली हाल्विंग तारीख और ब्लॉक रिवार्ड पर इसके प्रभाव के लिए खाता करें।",
-      "प्रारंभिक लाभप्रदता की गणना के बाद: 5% मासिक कठिनाई वृद्धि मानते हुए 6-महीने और 12-महीने का अनुमान चलाएं।"
+      "प्रारंभिक लाभप्रदता की गणना के बाद: इसे कठिनाई वृद्धि के सामने परखें। कैलकुलेटर आज की कठिनाई को स्थिर रखता है, इसलिए वृद्धि खुद जोड़ें: 5% मासिक वृद्धि पर राजस्व छठे महीने तक आज के लगभग 75% और बारहवें महीने तक 56% रह जाता है, और साल भर का औसत लगभग 75% होता है। उसी पावर के साथ अपने हैशरेट का 75% दर्ज करें; अगर लाभ तब भी सकारात्मक रहे, तो निवेश उचित रिटर्न देता है।"
       ],
       mistakes: [
       "बाजार चक्र के शिखर पर ASIC खरीदना जब कीमतें और लाभप्रदता सबसे अधिक हो।",
@@ -5946,8 +5946,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "संस्थागत व्यवहार्यता के लिए, वर्तमान कीमतों पर 12 महीनों से कम में ब्रेक-ईवन उद्योग बेंचमार्क है।"
       ],
       execution: [
-      "ASIC लाभप्रदता वर्कफ़्लो: 1) निर्माता परीक्षण रिपोर्ट से सटीक स्पेक प्राप्त करें। 2) अपनी बिजली दर की पुष्टि करें। 3) वर्तमान नेटवर्क कठिनाई और प्रक्षेपण दर्ज करें। 4) वर्तमान और 50% कम मूल्य पर ब्रेक-ईवन की गणना करें।",
-      "हाल्विंग तैयारी: अगली हाल्विंग से 6 महीने पहले, इनपुट के रूप में 50% ब्लॉक रिवार्ड के साथ इस कैलकुलेटर को पुनः चलाएं।"
+      "ASIC लाभप्रदता वर्कफ़्लो: 1) निर्माता परीक्षण रिपोर्ट से सटीक स्पेक प्राप्त करें। 2) अपनी बिजली दर की पुष्टि करें। 3) नेटवर्क डेटा जांचें: कठिनाई, ब्लॉक रिवार्ड और कीमत लाइव फ़ीड से अपने-आप लोड होते हैं (तारीख वाला बैज बताता है कि स्नैपशॉट इस्तेमाल हो रहा है), इसलिए कुछ दर्ज नहीं करना है; भविष्य की कठिनाई वृद्धि के लिए अनुपात में कम हैशरेट दर्ज करें। 4) वर्तमान और 50% कम मूल्य पर ब्रेक-ईवन की गणना करें (आधा हैशरेट, वही पावर)।",
+      "हाल्विंग तैयारी: अगली हाल्विंग से 6 महीने पहले आधे ब्लॉक रिवार्ड पर हिसाब दोबारा लगाएं। इस कैलकुलेटर में ब्लॉक रिवार्ड का फ़ील्ड नहीं है: Bitcoin के लिए <a href=\"/halving-calculator/\">हाल्विंग कैलकुलेटर</a> मौजूदा और हाल्विंग के बाद का लाभ साथ-साथ दिखाता है, और किसी भी कॉइन के लिए उसी पावर के साथ आधा हैशरेट दर्ज करने से आज की कीमत और कठिनाई पर आधे रिवार्ड का अनुमान मिलता है।"
       ],
       hygiene: [
       "एनर्जी मॉनिटरिंग के साथ स्मार्ट प्लग का उपयोग करके वास्तविक पावर खपत मासिक रूप से निगरानी करें।",
@@ -5964,12 +5964,12 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Метрика \"дней до окупаемости\" наиболее важна для инвестиционных решений по ASIC. Оборудование окупается, когда (чистая суточная прибыль × дни) = цена покупки. При ожидании окупаемости свыше 18 месяцев инвестиция несёт значительный риск."
       ],
       scenarios: [
-      "Оценка покупки нового ASIC: введите хешрейт, потребление энергии, цену покупки и тариф на электроэнергию. Запустите анализ окупаемости при текущей цене, -50% и -30%.",
+      "Оценка покупки нового ASIC: введите хешрейт, потребление энергии, цену покупки и тариф на электроэнергию. Посмотрите окупаемость при текущей цене монеты, затем при цене на 30% и на 50% ниже: поля для цены в калькуляторе нет, поэтому оставьте мощность прежней и введите 70%, а затем 50% хешрейта — доход изменится ровно так же, как при таком падении цены.",
       "Порог отключения существующего ASIC: это цена монеты, при которой стоимость электроэнергии равна доходу от майнинга."
       ],
       checklist: [
       "Перед покупкой ASIC: 1) Проверьте наличие ASIC. 2) Рассчитайте текущий темп роста сложности сети. 3) Учтите следующую дату халвинга и его влияние на вознаграждения за блок.",
-      "После расчёта начальной доходности: выполните 6- и 12-месячный прогноз, предполагая 5% ежемесячный рост сложности."
+      "После расчёта начальной доходности проверьте её на рост сложности. Калькулятор держит сегодняшнюю сложность неизменной, поэтому учтите рост вручную: при 5% в месяц доход к 6-му месяцу падает примерно до 75% от сегодняшнего, к 12-му — до 56%, а в среднем за год составляет около 75%. Введите 75% своего хешрейта при той же мощности; если прибыль остаётся положительной, вложение сохраняет разумную доходность."
       ],
       mistakes: [
       "Покупка ASIC на пиках рыночного цикла, когда цены и доходность максимальны. ASIC, заказанные во время бычьего рынка, часто поступают через 3–6 месяцев, когда монета может уже находиться в медвежьем рынке.",
@@ -5980,8 +5980,8 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       "Для институциональной жизнеспособности, окупаемость менее 12 месяцев при текущих ценах — отраслевой ориентир."
       ],
       execution: [
-      "Процесс оценки доходности ASIC: 1) Получите точные характеристики из протокола испытаний производителя. 2) Подтвердите тариф на электроэнергию. 3) Введите текущую сложность сети и прогноз. 4) Рассчитайте окупаемость при текущей и 50% более низкой цене.",
-      "Подготовка к халвингу: за 6 месяцев до следующего халвинга запустите калькулятор с 50% вознаграждения за блок."
+      "Процесс оценки доходности ASIC: 1) Получите точные характеристики из протокола испытаний производителя. 2) Подтвердите тариф на электроэнергию. 3) Проверьте сетевые данные: сложность, награда за блок и цена подгружаются автоматически из живого потока (метка с датой означает, что используется снимок), вводить их не нужно; чтобы учесть будущий рост сложности, введите пропорционально меньший хешрейт. 4) Рассчитайте окупаемость при текущей и на 50% более низкой цене (половина хешрейта, та же мощность).",
+      "Подготовка к халвингу: за 6 месяцев до следующего халвинга пересчитайте доходность при половинной награде за блок. Поля для награды в этом калькуляторе нет: для Bitcoin <a href=\"/halving-calculator/\">калькулятор халвинга</a> показывает текущую и послехалвинговую прибыль рядом, а для любой монеты половина хешрейта при той же мощности приближённо даёт половинную награду при сегодняшних цене и сложности."
       ],
       hygiene: [
       "Ежемесячно контролируйте фактическое потребление энергии с помощью умных розеток с мониторингом энергопотребления.",

@@ -21,6 +21,14 @@
 // hashrate, ASIC profitability, Lightning on-chain benchmark, ETF lowest-fee fund + the $0 hero bug, MSTR
 // snapshot), methodology counts made ledger-driven. Other template pages only had raw <a href> text start
 // rendering as links — a markup fix, deliberately NOT treated as a content change here.
+// 2026-10-13 (later): gpu-mining-calculator moved to 2026-10-13. The ASIC and GPU calculators read live
+// whattomine data again (own Worker at /api/whattomine instead of two dead public CORS proxies), and the GPU
+// fallback snapshot was refreshed with its network hashrates corrected to MH/s; both change the numbers the
+// page shows and its "Where these numbers come from" block. asic-mining-calculator was already 2026-10-13.
+// 2026-10-13 (later still): asic-mining-calculator changed again the same day — Zcash difficulty factor
+// 2^32 -> 2^13 and Scrypt/X11 read in GH/s. The server-rendered model list now reads "16 GH/s" / "1770 GH/s"
+// and the difficulty-factor row of its "Where these numbers come from" block changed; the Z15 and D9
+// profits change once the calculator runs. The date was already 2026-10-13; updates is too.
 // 2026-10-13 (second pass): 101 slugs moved to 2026-10-13 because their "How to use" / "What do the inputs
 // mean?" text was rewritten. On 105 of the 128 calculators that text described fields, toggles, outputs or
 // features the calculator does not have (end-price fields, MEV-boost toggles, per-trade entry and export, live
@@ -29,6 +37,14 @@
 // liquidation-calculator, funding-rate-calculator, exchange-fees): their only fixes were in the English entry,
 // which their hand-written EN pages do not render, so no rendered page changed. For the 27 bumped slugs whose
 // EN page is hand-written, the change is on the five locale pages; the date is per slug, so it moves for EN too.
+// 2026-10-13 (copy fix): asic-mining-calculator's explanation rewritten in all 6 languages. It claimed a
+// pre/post-halving projection and difficulty / block-reward inputs the calculator does not have (those come
+// from the live feed), the EN subtitle promised an "ASIC value" output and EN validation a daily coin amount.
+// Rendered text changed; the date was already 2026-10-13; updates is too.
+// Same evening: DOGE merged mining for the L9 (new "Merged Mining" pills, LTC + DOGE revenue rows, own /updates/ entry) and two
+// DOGE rows in the "Where these numbers come from" block. Still 2026-10-13. /methodology/ and the pt/tr
+// editorial-policy pages print the ledger total, which ticked 108 -> 110; that counter is not treated as an
+// editorial change, so their dates were left alone.
 // 2026-10-14: 19 slugs + updates moved to 2026-10-14 after the second calkcheck data-currency pass changed their
 // rendered content: Polymarket fee/odds/legal text, card-cashback preset bugs and 10-year formula, validator-node
 // yields/slashing/Rocket Pool, the "if I had bought" price snapshot and holding periods, mining/difficulty/energy
