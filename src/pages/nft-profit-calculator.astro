@@ -18,7 +18,7 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
 
 <Layout
   title="NFT Profit Calculator — OpenSea, Blur, Magic Eden Fees"
-  description="Free NFT profit calculator. Get real trading profit after marketplace fees (OpenSea 2.5%, Blur 0%, Magic Eden), creator royalties, and gas costs. Compare ETH and Solana NFT trades side-by-side."
+  description="Free NFT profit calculator. See your real profit in ETH and USD after marketplace fees (OpenSea, Blur, Magic Eden presets), creator royalties and gas, plus the break-even price."
   lang="en"
   pageType="calculator"
   dateModified={lastReviewedISO}
@@ -75,45 +75,45 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
     <section class="seo-content">
       <div class="section-container">
         <div class="quick-answer">
-          <strong>Quick answer:</strong> NFT profit = Sale Price &minus; (Buy Price + Gas + Marketplace Fee). Selling an NFT for 2 ETH that cost 1.2 ETH with 2.5% marketplace fee nets 0.75 ETH profit after fees.
+          <strong>Quick answer:</strong> NFT profit = Sale Price &minus; Buy Price &minus; Marketplace Fee &minus; Creator Royalty &minus; Gas. Selling for 2 ETH an NFT that cost 1.2 ETH, with the 1% OpenSea fee, a 5% creator royalty and $2 of gas on each side at $2,419 per ETH, nets about 0.678 ETH.
         </div>
         <h2>How to Use the NFT Profit Calculator</h2>
         <p>Our free NFT profit calculator shows you the true profit or loss from buying and selling NFTs after every fee is deducted. Most NFT traders focus on the buy and sell prices but forget that marketplace commissions, creator royalties, and gas costs can take a significant bite out of their returns. This tool makes the math transparent.</p>
         <ol>
-          <li><strong>Enter the buy price</strong>: input the price you paid (or plan to pay) for the NFT in ETH or SOL, depending on the blockchain.</li>
+          <li><strong>Enter the buy price</strong>: input the price you paid (or plan to pay) for the NFT in ETH.</li>
           <li><strong>Enter the sell price</strong>: input the price at which you sold or plan to sell the NFT.</li>
-          <li><strong>Select the marketplace</strong>: choose from OpenSea, Blur, Magic Eden, LooksRare, or X2Y2. The calculator auto-fills the marketplace fee for your selection.</li>
+          <li><strong>Select the marketplace</strong>: choose OpenSea, Blur or Magic Eden and the calculator fills in that preset's fee, or choose Custom and type any fee. A comparison table below the result also lists LooksRare for reference.</li>
           <li><strong>Set the creator royalty</strong>: enter the collection's creator royalty percentage. This varies by collection and may be optional on some marketplaces.</li>
-          <li><strong>Add gas costs</strong>: input the gas fee paid for both the buy and sell transactions. The calculator sums both to show total gas expenditure.</li>
-          <li><strong>Review your profit</strong>: the calculator shows gross profit, total fees deducted, net profit in ETH/SOL and USD, the break-even sell price, and the effective total fee rate.</li>
+          <li><strong>Add gas costs</strong>: input the gas paid for the buy and the sell transaction in US dollars. The calculator converts both to ETH at the ETH price field and adds them up.</li>
+          <li><strong>Review your profit</strong>: the calculator shows gross profit, total fees deducted, net profit in ETH and USD, the break-even sell price, and the effective fee rate (total fees as a share of your gross profit).</li>
         </ol>
 
         <h2>Understanding NFT Trading Fees</h2>
         <p>NFT trading involves three distinct layers of fees that reduce your profit on every sale. Understanding each layer is critical for setting realistic profit targets and identifying which trades are actually worth making.</p>
-        <p><strong>Marketplace fees</strong> are the commissions charged by the platform that facilitates the trade. These range from 0.5% on aggregator-style marketplaces like Blur to 2.5% on OpenSea. The fee is typically deducted from the seller's proceeds at the time of sale.</p>
+        <p><strong>Marketplace fees</strong> are the commissions charged by the platform that facilitates the trade. They differ by platform and change over time: OpenSea, for example, raised its selling fee from 0.5% to 1% on 15 September 2025. The fee is typically deducted from the seller's proceeds at the time of sale.</p>
         <p><strong>Creator royalties</strong> are payments to the original NFT creator or collection team, set when the smart contract is deployed. Royalties typically range from 2.5% to 10% of the sale price. In 2023 and 2024, many marketplaces made royalties optional to attract traders, leading to a significant debate within the NFT community about the sustainability of creator revenue models.</p>
-        <p><strong>Gas fees</strong> are the blockchain transaction costs paid to network validators. On Ethereum, gas costs for NFT transactions can range from $2 to $50 depending on network congestion and the complexity of the smart contract interaction. On Solana, gas costs are typically under $0.01, making them negligible for trading calculations.</p>
+        <p><strong>Gas fees</strong> are the blockchain transaction costs paid to network validators. On Ethereum, gas costs for NFT transactions can range from $2 to $50 depending on network congestion and the complexity of the smart contract interaction. On low-fee networks gas can be a fraction of a cent. This calculator works in ETH, so enter Ethereum trades.</p>
 
         <h2>NFT Marketplace Fee Comparison</h2>
-        <p>Choosing the right marketplace can meaningfully impact your net profit. Here is a comparison of the major NFT marketplaces and their fee structures as of 2025:</p>
+        <p>Choosing the right marketplace can meaningfully impact your net profit. These are the marketplace fees the calculator uses. Platforms change their fees and royalty rules, so check the current figure on the listing screen before you sell and type it in with Custom if it differs:</p>
         <div class="table-responsive">
           <table>
             <thead>
-              <tr><th>Marketplace</th><th>Platform Fee</th><th>Creator Royalties</th><th>Blockchain</th><th>Notes</th></tr>
+              <tr><th>Marketplace</th><th>Fee in the calculator</th><th>How it appears</th><th>Notes</th></tr>
             </thead>
             <tbody>
-              <tr><td>OpenSea</td><td>2.5%</td><td>Enforced (collection-set)</td><td>Ethereum, Polygon, others</td><td>Largest marketplace by volume</td></tr>
-              <tr><td>Blur</td><td>0.5%</td><td>Optional (min 0.5%)</td><td>Ethereum</td><td>Pro-trader focus, BLUR token rewards</td></tr>
-              <tr><td>Magic Eden</td><td>2.0%</td><td>Optional</td><td>Solana, Ethereum, Bitcoin</td><td>Multi-chain, low gas on Solana</td></tr>
-              <tr><td>LooksRare</td><td>2.0%</td><td>Enforced</td><td>Ethereum</td><td>LOOKS token staking rewards</td></tr>
-              <tr><td>X2Y2</td><td>0.5%</td><td>Optional</td><td>Ethereum</td><td>Low fees, flexible royalties</td></tr>
+              <tr><td>OpenSea</td><td>1%</td><td>Selectable preset</td><td>Raised from 0.5% to 1% on 15 September 2025</td></tr>
+              <tr><td>Blur</td><td>0.5%</td><td>Selectable preset</td><td>Check Blur's current fee and minimum royalty before listing</td></tr>
+              <tr><td>Magic Eden</td><td>2%</td><td>Selectable preset</td><td>Check the fee for the chain you trade on</td></tr>
+              <tr><td>LooksRare</td><td>0.5%</td><td>Comparison table only</td><td>Choose Custom and type the fee to model it</td></tr>
+              <tr><td>Custom</td><td>Any</td><td>Selectable</td><td>For any other marketplace or a changed fee</td></tr>
             </tbody>
           </table>
         </div>
-        <p>On a 1 ETH sale, the difference between OpenSea (2.5%) and Blur (0.5%) is 0.02 ETH, roughly $50 to $70 at typical ETH prices. For active traders making dozens of trades per month, this fee difference compounds into a substantial amount over time.</p>
+        <p>On a 1 ETH sale, the difference between the OpenSea preset (1%) and the Blur preset (0.5%) is 0.005 ETH, about $12 at $2,419 per ETH. For active traders making dozens of trades per month, this fee difference adds up. X2Y2, once a common low-fee choice, closed its marketplace on 30 April 2025.</p>
 
         <h2>The Hidden Cost of Creator Royalties</h2>
-        <p>Creator royalties were designed to provide ongoing revenue to NFT artists and project teams, but they have become one of the most debated topics in the NFT space. A 5% creator royalty on a 1 ETH sale costs the seller 0.05 ETH. Combined with a 2.5% marketplace fee, the total deduction reaches 7.5% before the seller receives their proceeds.</p>
+        <p>Creator royalties were designed to provide ongoing revenue to NFT artists and project teams, but they have become one of the most debated topics in the NFT space. A 5% creator royalty on a 1 ETH sale costs the seller 0.05 ETH. Combined with the 1% OpenSea fee, the total deduction reaches 6% before the seller receives their proceeds.</p>
         <p>On marketplaces where royalties are optional, some traders choose to pay zero royalties to maximise their profit. Others voluntarily honour royalties to support creators. When calculating your profit, it is important to know whether the marketplace you are using enforces royalties or leaves them to the buyer or seller's discretion.</p>
         <p>From a pure trading perspective, lower fees mean a lower break-even price, which means you can profit from smaller price movements. However, collections with strong royalty enforcement often have more engaged communities and development teams, which can support long-term floor price stability.</p>
 
@@ -123,13 +123,13 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
         <div class="formula-block">
           <code>Break-Even Price = (Buy Price + Gas Buy + Gas Sell) / (1 - Marketplace Fee% - Royalty%)</code>
         </div>
-        <p>For example, if you buy an NFT for 0.5 ETH with 0.005 ETH gas on each side, and the marketplace charges 2.5% fee plus 5% royalty, your break-even is (0.5 + 0.005 + 0.005) / (1 - 0.025 - 0.05) = 0.51 / 0.925 = 0.5514 ETH. You need a 10.3% price increase just to break even.</p>
+        <p>For example, if you buy an NFT for 0.5 ETH with 0.005 ETH of gas on each side, and the marketplace charges a 1% fee plus a 5% royalty, your break-even is (0.5 + 0.005 + 0.005) / (1 - 0.01 - 0.05) = 0.51 / 0.94 = 0.5426 ETH. You need an 8.5% price increase just to break even. In the calculator, enter that gas in US dollars (0.005 ETH is about $12.10 at $2,419 per ETH).</p>
 
         <h2>Tips to Maximize NFT Trading Profits</h2>
         <ul>
           <li><strong>Time your transactions for low gas</strong>: Ethereum gas prices fluctuate dramatically throughout the day. Weekends and late-night UTC hours typically see the lowest gas costs. Use gas trackers to find optimal windows.</li>
-          <li><strong>Use low-fee marketplaces for trading</strong>: if you are actively trading (not collecting), platforms like Blur and X2Y2 with 0.5% fees significantly reduce your cost basis compared to OpenSea's 2.5%.</li>
-          <li><strong>Account for royalties in your target price</strong>: always calculate your net profit after royalties. A 10% price gain on a collection with 7.5% combined fees leaves you with only 2.5% actual profit.</li>
+          <li><strong>Use low-fee marketplaces for trading</strong>: if you are actively trading (not collecting), a lower marketplace fee lowers your break-even price on every trade. Compare the presets, then confirm each platform's current fee before you list.</li>
+          <li><strong>Account for royalties in your target price</strong>: always calculate your net profit after royalties. A 10% price gain on a collection with 7.5% combined fees leaves you with only about 1.75% actual profit, because the fees are charged on the higher sale price.</li>
           <li><strong>Consider bulk listing tools</strong>: some platforms offer bulk listing that can save gas by batching multiple operations into a single transaction.</li>
           <li><strong>Factor in opportunity cost</strong>: capital locked in an illiquid NFT cannot be deployed elsewhere. If an NFT sits unsold for months, the true cost includes the opportunity cost of that capital.</li>
           <li><strong>Trade on L2 or Solana for small-value NFTs</strong>: gas costs on Polygon or Solana are negligible, making them far more efficient for trading NFTs priced under 0.1 ETH equivalent.</li>
@@ -146,17 +146,17 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
 
         <details>
           <summary>What are NFT marketplace fees?</summary>
-          <p>Marketplace fees are commissions charged by the platform where you sell your NFT. They typically range from 0.5% (Blur, X2Y2) to 2.5% (OpenSea) of the sale price. These fees are deducted from the seller's proceeds at the time of the sale and go to the marketplace operator.</p>
+          <p>Marketplace fees are commissions charged by the platform where you sell your NFT. They differ by platform and change over time; the calculator's presets are 1% for OpenSea, 0.5% for Blur and 2% for Magic Eden, and Custom takes any other figure. These fees are deducted from the seller's proceeds at the time of the sale and go to the marketplace operator.</p>
         </details>
 
         <details>
           <summary>Are creator royalties mandatory?</summary>
-          <p>It depends on the marketplace and the collection's smart contract. OpenSea enforces creator-set royalties, while Blur and X2Y2 make them optional with a minimum of 0.5%. Some newer smart contract standards (like ERC-2981) encode royalties on-chain, but enforcement ultimately depends on the marketplace honouring those settings.</p>
+          <p>It depends on the marketplace and the collection's smart contract. Several large marketplaces have made creator royalties optional or set minimums for some collections, and their rules change, so check the royalty shown on the listing screen. Some newer smart contract standards (like ERC-2981) encode royalties on-chain, but enforcement ultimately depends on the marketplace honouring those settings.</p>
         </details>
 
         <details>
           <summary>Which NFT marketplace has the lowest fees?</summary>
-          <p>Blur and X2Y2 both charge 0.5% marketplace fees, making them the cheapest major Ethereum NFT marketplaces. On Solana, Magic Eden charges 2% but gas costs are near zero. For the lowest total cost of trading, Blur on Ethereum or Magic Eden on Solana are typically the most cost-effective options.</p>
+          <p>Fees change, so compare the platforms you actually use on the day you sell. Among the calculator's presets, Blur is the lowest at 0.5% and Magic Eden the highest at 2%. Remember that the marketplace fee is only one layer: creator royalty and gas often cost more, especially on cheaper NFTs.</p>
         </details>
 
         <details>
@@ -243,7 +243,7 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
       "name": "What are NFT marketplace fees?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Marketplace fees are commissions charged by the platform where you sell your NFT. They typically range from 0.5% (Blur, X2Y2) to 2.5% (OpenSea) of the sale price and are deducted from the seller's proceeds."
+        "text": "Marketplace fees are commissions charged by the platform where you sell your NFT. They differ by platform and change over time; the calculator's presets are 1% for OpenSea, 0.5% for Blur and 2% for Magic Eden. They are deducted from the seller's proceeds."
       }
     },
     {
@@ -251,7 +251,7 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
       "name": "Are creator royalties mandatory?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It depends on the marketplace. OpenSea enforces creator-set royalties, while Blur and X2Y2 make them optional with a minimum of 0.5%. Enforcement ultimately depends on the marketplace honouring the collection's smart contract settings."
+        "text": "It depends on the marketplace and the collection's smart contract. Several large marketplaces have made creator royalties optional or set minimums for some collections, and their rules change, so check the royalty shown on the listing screen."
       }
     },
     {
@@ -259,7 +259,7 @@ const lastReviewedISO = `${lastReviewed}T00:00:00+00:00`;
       "name": "Which NFT marketplace has the lowest fees?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Blur and X2Y2 both charge 0.5% marketplace fees, making them the cheapest major Ethereum NFT marketplaces. On Solana, Magic Eden charges 2% but gas costs are near zero."
+        "text": "Fees change, so compare the platforms you actually use on the day you sell. Among the calculator's presets, Blur is the lowest at 0.5% and Magic Eden the highest at 2%."
       }
     },
     {
