@@ -40,6 +40,17 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-10-13',
         dateLabel: '13 de octubre de 2026',
+        title: 'Calculadora de minería ASIC: corregidos los mineros de Zcash y Dash',
+        body: 'Dos de los once mineros de la calculadora ASIC mostraban casi ningún ingreso, así que parecían dar pérdidas cuando no es así. Ahora ambos coinciden con lo que paga la red.',
+        items: [
+          '<strong>Antminer Z15 (Zcash):</strong> Zcash mide la dificultad de minado de forma distinta a Bitcoin, pero la calculadora le aplicaba la fórmula de Bitcoin. El ingreso salía unas quinientas mil veces más bajo y solo se veía la factura de la luz. En realidad, el Z15 mina unos 0,02 ZEC al día, unos $24 a precios de mediados de octubre, lo que lo coloca en lo más alto de la tabla comparativa.',
+          '<strong>Antminer D9 (Dash):</strong> su velocidad se leía en la unidad equivocada, mil veces más lenta. Ahora es de 1.770 GH/s (1,77 TH/s) e ingresa unos $5,80 al día, cerca de su gasto eléctrico a 8 céntimos por kWh.',
+          '<strong>Antminer L9 (Litecoin):</strong> ahora figura como 16 GH/s en lugar de 16.000 MH/s. Es la misma velocidad en la unidad que usa Bitmain, así que sus resultados no cambian. La eficiencia se muestra ahora en la unidad correcta para cada equipo (J/TH, J/GH o J/KSol).',
+        ],
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 de octubre de 2026',
         title: 'Calculadoras de minería: vuelven los datos de red en vivo',
         body: 'Las calculadoras de minería ASIC y GPU vuelven a cargar la dificultad, el hashrate de la red, las recompensas por bloque y los precios actuales. El servicio público intermedio del que dependían había dejado de funcionar, así que cada visitante esperaba unos 20 segundos y recibía cifras de mayo. Ahora los datos pasan por nuestro propio servidor y se actualizan cada diez minutos. Si alguna vez la fuente no está disponible, la calculadora indica de qué fecha son sus cifras de respaldo en lugar de mostrar un error.',
         items: [
@@ -301,6 +312,17 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     heading: 'Novidades',
     subtitle: 'Últimas atualizações, novas calculadoras e melhorias no CryptoCalk.',
     updates: [
+      {
+        date: '2026-10-13',
+        dateLabel: '13 de outubro de 2026',
+        title: 'Calculadora de mineração ASIC: mineradores de Zcash e Dash corrigidos',
+        body: 'Dois dos onze mineradores da calculadora ASIC mostravam quase nenhuma receita, por isso pareciam dar prejuízo quando não dão. Agora os dois batem com o que a rede realmente paga.',
+        items: [
+          '<strong>Antminer Z15 (Zcash):</strong> o Zcash mede a dificuldade de mineração de forma diferente do Bitcoin, mas a calculadora usava para ele a fórmula do Bitcoin. A receita saía cerca de meio milhão de vezes menor, e só aparecia a conta de luz. Na verdade, o Z15 minera cerca de 0,02 ZEC por dia, uns $24 aos preços de meados de outubro, o que o coloca no topo da tabela comparativa.',
+          '<strong>Antminer D9 (Dash):</strong> a velocidade dele era lida na unidade errada, mil vezes mais lenta. Agora é de 1.770 GH/s (1,77 TH/s) e rende cerca de $5,80 por dia, perto do custo de energia a 8 centavos por kWh.',
+          '<strong>Antminer L9 (Litecoin):</strong> agora aparece como 16 GH/s em vez de 16.000 MH/s. É a mesma velocidade na unidade usada pela Bitmain, então os resultados não mudam. A eficiência agora aparece na unidade certa para cada máquina (J/TH, J/GH ou J/KSol).',
+        ],
+      },
       {
         date: '2026-10-13',
         dateLabel: '13 de outubro de 2026',
@@ -568,6 +590,17 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-10-13',
         dateLabel: '13 Ekim 2026',
+        title: 'ASIC madencilik hesaplayıcısı: Zcash ve Dash madencileri düzeltildi',
+        body: 'ASIC hesaplayıcısındaki on bir madenciden ikisi neredeyse hiç gelir göstermiyordu; bu yüzden zarar ediyormuş gibi görünüyorlardı, oysa öyle değil. İkisi de artık ağın gerçekte ödediğiyle örtüşüyor.',
+        items: [
+          '<strong>Antminer Z15 (Zcash):</strong> Zcash madencilik zorluğunu Bitcoin\'den farklı ölçer, ancak hesaplayıcı ona Bitcoin formülünü uyguluyordu. Gelir yaklaşık yarım milyon kat düşük çıkıyor, ekranda yalnızca elektrik faturası görünüyordu. Z15 aslında günde yaklaşık 0,02 ZEC kazar; ekim ortası fiyatlarıyla bu yaklaşık 24 dolar eder ve onu karşılaştırma tablosunun en üstüne taşır.',
+          '<strong>Antminer D9 (Dash):</strong> hızı yanlış birimde, bin kat yavaş okunuyordu. Artık 1.770 GH/s (1,77 TH/s) ve günde yaklaşık 5,80 dolar getiriyor; bu, kWh başına 8 sentteki elektrik faturasına yakın.',
+          '<strong>Antminer L9 (Litecoin):</strong> artık 16.000 MH/s yerine 16 GH/s olarak listeleniyor. Bitmain\'in kullandığı birimde aynı hız olduğu için sonuçları değişmiyor. Verimlilik artık her makine için doğru birimde gösteriliyor (J/TH, J/GH veya J/KSol).',
+        ],
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 Ekim 2026',
         title: 'Madencilik hesaplayıcıları: canlı ağ verileri geri döndü',
         body: 'ASIC ve GPU madencilik hesaplayıcıları güncel zorluğu, ağ hashrate\'ini, blok ödüllerini ve coin fiyatlarını yeniden yüklüyor. Dayandıkları herkese açık aracı hizmet çalışmayı durdurmuştu; bu yüzden her ziyaretçi yaklaşık 20 saniye bekliyor ve ardından mayıs ayına ait rakamları görüyordu. Veriler artık kendi sunucumuz üzerinden geliyor ve on dakikada bir yenileniyor. Kaynağa ulaşılamazsa hesaplayıcı hata göstermek yerine yedek rakamların hangi tarihe ait olduğunu belirtiyor.',
         items: [
@@ -832,6 +865,17 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-10-13',
         dateLabel: '13 अक्टूबर 2026',
+        title: 'ASIC माइनिंग कैलकुलेटर: Zcash और Dash माइनर ठीक किए गए',
+        body: 'ASIC कैलकुलेटर के ग्यारह माइनरों में से दो लगभग कोई कमाई नहीं दिखा रहे थे, इसलिए वे घाटे वाले लगते थे, जबकि ऐसा नहीं है। अब दोनों वही दिखाते हैं जो नेटवर्क वास्तव में देता है।',
+        items: [
+          '<strong>Antminer Z15 (Zcash):</strong> Zcash माइनिंग डिफिकल्टी को Bitcoin से अलग तरीके से मापता है, लेकिन कैलकुलेटर उस पर Bitcoin का फ़ॉर्मूला लगा रहा था। कमाई लगभग पाँच लाख गुना कम निकलती थी, और सिर्फ़ बिजली का बिल दिखता था। असल में Z15 रोज़ लगभग 0.02 ZEC माइन करता है, यानी अक्टूबर के मध्य की कीमतों पर लगभग $24, जिससे यह तुलना तालिका में सबसे ऊपर आ जाता है।',
+          '<strong>Antminer D9 (Dash):</strong> इसकी स्पीड गलत यूनिट में पढ़ी जा रही थी, हज़ार गुना धीमी। अब यह 1,770 GH/s (1.77 TH/s) है और रोज़ लगभग $5.80 कमाता है, जो 8 सेंट प्रति kWh पर इसके बिजली बिल के करीब है।',
+          '<strong>Antminer L9 (Litecoin):</strong> अब 16,000 MH/s की जगह 16 GH/s के रूप में दिखता है। यह Bitmain की यूनिट में वही स्पीड है, इसलिए इसके नतीजे नहीं बदलते। एफिशिएंसी अब हर मशीन के लिए सही यूनिट में दिखती है (J/TH, J/GH या J/KSol)।',
+        ],
+      },
+      {
+        date: '2026-10-13',
+        dateLabel: '13 अक्टूबर 2026',
         title: 'माइनिंग कैलकुलेटर: लाइव नेटवर्क डेटा वापस आ गया',
         body: 'ASIC और GPU माइनिंग कैलकुलेटर फिर से मौजूदा डिफिकल्टी, नेटवर्क हैशरेट, ब्लॉक रिवॉर्ड और कॉइन की कीमतें लोड करते हैं। जिस सार्वजनिक बिचौलिया सेवा पर वे निर्भर थे, वह काम करना बंद कर चुकी थी, इसलिए हर विज़िटर लगभग 20 सेकंड इंतज़ार करता था और फिर उसे मई के आंकड़े मिलते थे। अब डेटा हमारे अपने सर्वर से आता है और हर दस मिनट में अपडेट होता है। अगर स्रोत कभी उपलब्ध न हो, तो कैलकुलेटर त्रुटि दिखाने के बजाय बताता है कि उसके बैकअप आंकड़े किस तारीख के हैं।',
         items: [
@@ -1093,6 +1137,17 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     heading: 'Что нового',
     subtitle: 'Последние обновления, новые калькуляторы и улучшения CryptoCalk.',
     updates: [
+      {
+        date: '2026-10-13',
+        dateLabel: '13 октября 2026',
+        title: 'Калькулятор ASIC-майнинга: исправлены майнеры Zcash и Dash',
+        body: 'Два из одиннадцати майнеров в ASIC-калькуляторе показывали почти нулевой доход и выглядели убыточными, хотя это не так. Теперь оба совпадают с тем, что реально платит сеть.',
+        items: [
+          '<strong>Antminer Z15 (Zcash):</strong> Zcash считает сложность майнинга иначе, чем Bitcoin, а калькулятор применял к нему формулу Bitcoin. Доход выходил примерно в полмиллиона раз меньше, и на экране оставался только счёт за электричество. На деле Z15 добывает около 0,02 ZEC в день — примерно $24 по ценам середины октября, и это первое место в сравнительной таблице.',
+          '<strong>Antminer D9 (Dash):</strong> его скорость читалась не в той единице — в тысячу раз ниже. Теперь это 1 770 GH/s (1,77 TH/s), и он приносит около $5,80 в день — почти столько же, сколько стоит электричество при 8 центах за кВт·ч.',
+          '<strong>Antminer L9 (Litecoin):</strong> теперь указан как 16 GH/s вместо 16 000 MH/s. Это та же скорость в единицах, которые использует Bitmain, поэтому результаты не меняются. Эффективность теперь показывается в правильной единице для каждой машины (J/TH, J/GH или J/KSol).',
+        ],
+      },
       {
         date: '2026-10-13',
         dateLabel: '13 октября 2026',

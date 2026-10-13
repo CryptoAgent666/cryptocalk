@@ -25,6 +25,10 @@
 // whattomine data again (own Worker at /api/whattomine instead of two dead public CORS proxies), and the GPU
 // fallback snapshot was refreshed with its network hashrates corrected to MH/s; both change the numbers the
 // page shows and its "Where these numbers come from" block. asic-mining-calculator was already 2026-10-13.
+// 2026-10-13 (later still): asic-mining-calculator changed again the same day — Zcash difficulty factor
+// 2^32 -> 2^13 and Scrypt/X11 read in GH/s. The server-rendered model list now reads "16 GH/s" / "1770 GH/s"
+// and the difficulty-factor row of its "Where these numbers come from" block changed; the Z15 and D9
+// profits change once the calculator runs. The date was already 2026-10-13; updates is too.
 export const CALCULATOR_UPDATED: Record<string, string> = {
   "404": "2026-05-11",
   "about": "2026-08-25",

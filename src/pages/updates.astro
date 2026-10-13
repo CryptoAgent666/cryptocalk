@@ -41,6 +41,19 @@ const webPageSchema = {
         <div class="update-date">
           <time datetime="2026-10-13">October 13, 2026</time>
         </div>
+        <h2>ASIC Mining Calculator: Zcash and Dash Miners Fixed</h2>
+        <p>Two of the eleven miners in the ASIC calculator showed almost no income, so they looked like money-losers when they are not. Both now match what the network actually pays.</p>
+        <ul>
+          <li><strong>Antminer Z15 (Zcash):</strong> Zcash measures mining difficulty differently from Bitcoin, but the calculator used the Bitcoin formula for it. Income came out about half a million times too small, so all you saw was the electricity bill. The Z15 actually mines about 0.02 ZEC a day, roughly $24 at mid-October prices, which puts it at the top of the comparison table.</li>
+          <li><strong>Antminer D9 (Dash):</strong> its speed was read in the wrong unit, a thousand times too slow. It is now 1,770 GH/s (1.77 TH/s) and brings in about $5.80 a day, close to its power bill at 8 cents per kWh.</li>
+          <li><strong>Antminer L9 (Litecoin):</strong> now listed as 16 GH/s instead of 16,000 MH/s. That is the same speed in the unit Bitmain uses, so its results do not change. Efficiency is now shown in the right unit for each machine (J/TH, J/GH or J/KSol).</li>
+        </ul>
+      </article>
+
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-10-13">October 13, 2026</time>
+        </div>
         <h2>Mining Calculators: Live Network Data Is Back</h2>
         <p>The ASIC and GPU mining calculators load current difficulty, network hashrate, block rewards and coin prices again. The public relay they depended on had stopped working, so every visitor waited about 20 seconds and then got figures from May. The data now comes through our own server and is refreshed every ten minutes. If the feed is ever unreachable, the calculator tells you which date its backup figures are from instead of showing an error.</p>
         <ul>

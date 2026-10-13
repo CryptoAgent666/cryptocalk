@@ -844,6 +844,21 @@ freed L1 validators but left the Primary Network minimum).
   25% of valueOut on every block sampled (MN+Platform take 75%; the Platform credit-pool OP_RETURN is 37.5%
   of that). Era 12: in-block 1.64378041 → miner 0.41094510.
 
+### ⚠️ ASIC difficulty factor and hashrate units are per algorithm (bug class, fixed 2026-10-13)
+`AsicMiningCalculator.calcDailyCoins` used `difficulty × 2^32` for every coin. Right for SHA-256 / Scrypt /
+X11 (all inherit Bitcoin's difficulty-1 target), wrong for Zcash: its Equihash `powLimit` is 2^243 − 1, so
+the factor is **2^13** and ZEC revenue was 2^19 = 524,288× too small (Z15 showed only its electricity bill).
+Same day, same symptom: the D9 preset said `1770` in an MH/s field — it is 1,770 **GH/s**. Scrypt and X11 are
+now GH/s (L9 = 16, D9 = 1770). **When adding a coin or algorithm:** take the factor from the client's
+`chainparams` `powLimit` (2^256 / powLimit) and confirm `difficulty × factor / block_time` reproduces
+whattomine's `nethash` (`curl https://whattomine.com/asic.json`); enter preset hashrate in the unit printed by
+`getHashrateUnit`. `src/test/asic-mining.test.ts` pins both: the four nethash identities, plus a 1–100 USD/day
+gross band per preset that any 1000× unit slip falls out of.
+⚠️ **Known model gap (not fixed):** the L9 earns LTC only. DOGE merge-mining is not modelled, and on
+2026-10-13 it was worth ~$7.07/day vs ~$1.42 from LTC, so the L9 shows −$4.85/day where real L9 owners net
+roughly +$2 at $0.08/kWh. The page copy makes no merge-mining claim, so nothing on the page is false, but
+the number is low.
+
 ## Key crypto context
 - BTC block reward **3.125** (4th halving Apr 2024, block 840,000); next halving block **1,050,000 → 1.5625**
   (~Apr 2028). Max supply 21M. ETH validator activation **32 ETH** (EIP-7251 raised MAX to 2048, not the floor).

@@ -50,8 +50,9 @@ interface AsicComparison {
     efficiency: number;
 }
 
-// Difficulty & price fallbacks updated 2026-04-18. Fetch live data when available.
-const ASIC_PRESETS: AsicPreset[] = [
+// Preset hashrate is in the algorithm's display unit (getHashrateUnit): TH/s for SHA-256,
+// GH/s for Scrypt and X11, KSol/s for Equihash — the units on the manufacturers' spec sheets.
+export const ASIC_PRESETS: AsicPreset[] = [
     { name: 'Antminer S21 Hyd', hashrate: 335, power: 5360, algo: 'SHA-256', coin: 'BTC', price: 5500 },
     { name: 'Antminer S21 Pro', hashrate: 234, power: 3510, algo: 'SHA-256', coin: 'BTC', price: 4500 },
     { name: 'Antminer S21', hashrate: 200, power: 3500, algo: 'SHA-256', coin: 'BTC', price: 4200 },
@@ -60,7 +61,7 @@ const ASIC_PRESETS: AsicPreset[] = [
     { name: 'Whatsminer M60S', hashrate: 186, power: 3420, algo: 'SHA-256', coin: 'BTC', price: 3800 },
     { name: 'Whatsminer M50S', hashrate: 126, power: 3276, algo: 'SHA-256', coin: 'BTC', price: 2200 },
     { name: 'Avalon A1466', hashrate: 150, power: 3230, algo: 'SHA-256', coin: 'BTC', price: 3000 },
-    { name: 'Antminer L9', hashrate: 16000, power: 3260, algo: 'Scrypt', coin: 'LTC', price: 6500 },
+    { name: 'Antminer L9', hashrate: 16, power: 3260, algo: 'Scrypt', coin: 'LTC', price: 6500 },
     { name: 'Antminer D9', hashrate: 1770, power: 2839, algo: 'X11', coin: 'DASH', price: 4000 },
     { name: 'Antminer Z15', hashrate: 420, power: 1510, algo: 'Equihash', coin: 'ZEC', price: 3200 },
 ];
@@ -70,7 +71,7 @@ const ASIC_PRESETS: AsicPreset[] = [
 // price are whattomine's difficulty24 / exchange_rate on NETWORK_SNAPSHOT_DATE (prices
 // matched CoinGecko within 0.3% that day); block rewards are the protocol values below.
 const NETWORK_SNAPSHOT_DATE = '2026-10-13';
-const NETWORK_DATA: Record<string, NetworkData> = {
+export const NETWORK_DATA: Record<string, NetworkData> = {
     BTC: { difficulty: 132720000000000, blockReward: 3.125, price: 83960, blockTime: 600 },
     LTC: { difficulty: 87860000, blockReward: 6.25, price: 62.45, blockTime: 150 },
     // blockReward here is the MINER's share per block — calcDailyCoins multiplies it by the
@@ -100,37 +101,51 @@ const ASIC_SCENARIOS = [
 ] as const;
 
 /** Returns the hashrate multiplier (H/s) for a given algorithm */
-function getHashrateMultiplier(algo: string): number {
+export function getHashrateMultiplier(algo: string): number {
     switch (algo) {
         case 'SHA-256': return 1e12;   // TH/s
-        case 'Scrypt': return 1e6;     // MH/s
-        case 'X11': return 1e6;        // MH/s
+        case 'Scrypt': return 1e9;     // GH/s
+        case 'X11': return 1e9;        // GH/s
         case 'Equihash': return 1e3;   // KSol/s
         default: return 1e12;
     }
 }
 
 /** Returns the hashrate unit label for a given algorithm */
-function getHashrateUnit(algo: string): string {
+export function getHashrateUnit(algo: string): string {
     switch (algo) {
         case 'SHA-256': return 'TH/s';
-        case 'Scrypt': return 'MH/s';
-        case 'X11': return 'MH/s';
+        case 'Scrypt': return 'GH/s';
+        case 'X11': return 'GH/s';
         case 'Equihash': return 'KSol/s';
         default: return 'TH/s';
     }
 }
 
-/** Calculate daily coin mined using the generic PoW formula */
-function calcDailyCoins(
+/**
+ * Expected hashes (Equihash: solutions) per block at difficulty 1, i.e. 2^256 / powLimit.
+ * SHA-256, Scrypt and X11 chains all use Bitcoin's difficulty-1 target (~2^224), so 2^32.
+ * Zcash's powLimit is 0x0007ff…ff = 2^243 - 1 (zcashd chainparams), so 2^13: using 2^32
+ * there understated ZEC revenue 2^19 = 524,288x. Both match whattomine's
+ * nethash = difficulty * factor / block_time for BTC, LTC, DASH and ZEC.
+ */
+export function getDifficultyFactor(algo: string): number {
+    switch (algo) {
+        case 'Equihash': return 2 ** 13;
+        default: return 2 ** 32;
+    }
+}
+
+/** Calculate daily coins mined using the generic PoW formula */
+export function calcDailyCoins(
     hashrate: number,
-    multiplier: number,
+    algo: string,
     difficulty: number,
     blockReward: number,
 ): number {
-    // daily_coins = (hashrate_in_hps / (difficulty * 2^32)) * 86400 * blockReward
-    const hashrateHps = hashrate * multiplier;
-    return (hashrateHps / (difficulty * Math.pow(2, 32))) * 86400 * blockReward;
+    // daily_coins = (hashrate_in_hps / (difficulty * difficultyFactor)) * 86400 * blockReward
+    const hashrateHps = hashrate * getHashrateMultiplier(algo);
+    return (hashrateHps / (difficulty * getDifficultyFactor(algo))) * 86400 * blockReward;
 }
 
 function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
@@ -230,10 +245,8 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
             return;
         }
 
-        const multiplier = getHashrateMultiplier(activeAlgo);
-
         // Daily coins mined
-        const dailyCoins = calcDailyCoins(hr, multiplier, network.difficulty, network.blockReward);
+        const dailyCoins = calcDailyCoins(hr, activeAlgo, network.difficulty, network.blockReward);
         const dailyRevenueUsd = dailyCoins * network.price;
         const dailyElectricity = ((pw || 0) / 1000) * 24 * (elCost || 0);
         const dailyPoolFee = dailyRevenueUsd * ((pFee || 0) / 100);
@@ -271,8 +284,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
         const feeRate = pFee || 0;
         const comparisonData: AsicComparison[] = ASIC_PRESETS.map((preset) => {
             const net = networkData[preset.coin];
-            const mult = getHashrateMultiplier(preset.algo);
-            const dCoins = calcDailyCoins(preset.hashrate, mult, net.difficulty, net.blockReward);
+            const dCoins = calcDailyCoins(preset.hashrate, preset.algo, net.difficulty, net.blockReward);
             const dRevenue = dCoins * net.price;
             const dElec = (preset.power / 1000) * 24 * elRate;
             const dFee = dRevenue * (feeRate / 100);
@@ -767,7 +779,7 @@ function AsicMiningCalculator({ lang = 'en' }: { lang?: string }) {
                                         <div className="result-row">
                                             <span className="result-label">{getUiString(lang, 'Efficiency')}</span>
                                             <span className="result-value">
-                                                {efficiency} {currentPreset.algo === 'SHA-256' ? 'J/TH' : 'J/MH'}
+                                                {efficiency} J/{getHashrateUnit(currentPreset.algo).replace('/s', '')}
                                             </span>
                                         </div>
                                     </div>

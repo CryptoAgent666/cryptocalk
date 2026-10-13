@@ -120,7 +120,7 @@
       "theme": "block_reward",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:69"
+        "src/components/AsicMiningCalculator.tsx:75"
       ],
       "last_updated_hint": null,
       "source_hint": "Bitcoin protocol. whattomine.com block_reward (live).",
@@ -140,7 +140,7 @@
       "theme": "network",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:69"
+        "src/components/AsicMiningCalculator.tsx:75"
       ],
       "last_updated_hint": null,
       "source_hint": "Bitcoin 10-minute target block time.",
@@ -160,7 +160,7 @@
       "theme": "block_reward",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:71"
+        "src/components/AsicMiningCalculator.tsx:82"
       ],
       "last_updated_hint": "2026-08-18",
       "source_hint": "Dash emission schedule (-1/14 every 210,240 blocks). whattomine block_reward (live) preferred. Verify via coinbase reads.",
@@ -184,7 +184,7 @@
       "theme": "network",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:71"
+        "src/components/AsicMiningCalculator.tsx:82"
       ],
       "last_updated_hint": null,
       "source_hint": "Dash 2.5-minute target block time.",
@@ -204,7 +204,7 @@
       "theme": "block_reward",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:70"
+        "src/components/AsicMiningCalculator.tsx:76"
       ],
       "last_updated_hint": null,
       "source_hint": "Litecoin protocol; halving every 840,000 blocks (Aug 2023 → 6.25 LTC).",
@@ -224,7 +224,7 @@
       "theme": "network",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:70"
+        "src/components/AsicMiningCalculator.tsx:76"
       ],
       "last_updated_hint": null,
       "source_hint": "Litecoin 2.5-minute target block time.",
@@ -244,7 +244,7 @@
       "theme": "block_reward",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:72"
+        "src/components/AsicMiningCalculator.tsx:83"
       ],
       "last_updated_hint": "2026-08-02",
       "source_hint": "Zcash protocol; halving Nov 2024 → 1.5625 ZEC. Current value likely 1.5625, not 2.5.",
@@ -265,7 +265,7 @@
       "theme": "network",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:72"
+        "src/components/AsicMiningCalculator.tsx:83"
       ],
       "last_updated_hint": "2026-08-02",
       "source_hint": "Zcash post-Blossom 75-second target block time.",
@@ -278,21 +278,25 @@
       "id": "AsicMiningCalculator__hashrateMultiplier_difficultyTarget",
       "calculator": "AsicMiningCalculator",
       "key": "hashrateMultiplier_difficultyTarget",
-      "value": "4294967296",
-      "unit": "2^32 (hashes per difficulty-1 block)",
+      "value": "2^32 (SHA-256, Scrypt, X11); 2^13 (Equihash)",
+      "unit": "expected hashes (Equihash: solutions) per block at difficulty 1 = 2^256 / powLimit",
       "jurisdiction": "",
-      "law": "PoW mining math (SHA-256 family)",
+      "law": "PoW difficulty-to-work factor, per algorithm",
       "theme": "network",
       "is_regulatory": true,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:123"
+        "src/components/AsicMiningCalculator.tsx:132"
       ],
-      "last_updated_hint": null,
-      "source_hint": "Bitcoin/SHA-256 difficulty definition (difficulty * 2^32 expected hashes per block).",
+      "last_updated_hint": "2026-10-13",
+      "source_hint": "Each chain's powLimit (difficulty-1 target) in its client's chainparams: Bitcoin 0x00000000ff..ff = 2^224 - 1 -> 2^32; Zcash 0x0007ff..ff = 2^243 - 1 -> 2^13.",
       "conflict": false,
       "status": "current",
-      "notes": "Math.pow(2,32) in calcDailyCoins: daily_coins = (hashrate_hps/(difficulty*2^32))*86400*blockReward. 2^32 is the protocol-defined relationship between difficulty and expected hashes per block for SHA-256-style chains. Fixed math constant.",
-      "source_url": "https://en.bitcoin.it/wiki/Difficulty"
+      "notes": "FIXED 2026-10-13: was a single 4294967296 (2^32) applied to every algorithm in calcDailyCoins. Correct for SHA-256 (BTC), Scrypt (LTC) and X11 (DASH), which all inherit Bitcoin's difficulty-1 target, but Zcash's Equihash powLimit is 2^243 - 1, so one unit of difficulty is 2^256 / powLimit = 8192 = 2^13 expected solutions. Using 2^32 for ZEC understated revenue 2^19 = 524,288x: the Antminer Z15 (420 KSol/s) showed $0.00 revenue and -$2.90/day (its electricity at $0.08/kWh) instead of ~0.0198 ZEC = ~$24/day. Now getDifficultyFactor(algo). Cross-checked against whattomine asic.json on 2026-10-13: difficulty * factor / block_time reproduces whattomine's nethash to 6 significant digits for BTC (2^32, 565 s), LTC (2^32, 153 s), DASH (2^32, 157 s) and ZEC (2^13, 75 s) - pinned in src/test/asic-mining.test.ts. Bitcoin's exact difficulty-1 target is 0xffff * 2^208, i.e. 2^32 * 65536/65535; the 0.0015% gap is ignored, as whattomine does. Old source en.bitcoin.it/wiki/Difficulty (a wiki) replaced by the clients' own chainparams.",
+      "official_value": "2^32 (SHA-256, Scrypt, X11); 2^13 (Equihash)",
+      "source_url": "https://raw.githubusercontent.com/zcash/zcash/master/src/chainparams.cpp",
+      "official_source": "https://raw.githubusercontent.com/bitcoin/bitcoin/master/src/kernel/chainparams.cpp",
+      "verified_date": "2026-10-13",
+      "verify_method": "primary source (zcashd + Bitcoin Core chainparams powLimit) + whattomine nethash cross-check for BTC/LTC/DASH/ZEC"
     },
     {
       "id": "BitcoinEnergyCalculator__BTC_PER_DAY_NETWORK",
@@ -1748,7 +1752,7 @@
       "theme": "network",
       "is_regulatory": false,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:74-82"
+        "src/components/AsicMiningCalculator.tsx:74-84"
       ],
       "last_updated_hint": "2026-10-13",
       "source_hint": "whattomine difficulty (live).",
@@ -1767,7 +1771,7 @@
       "theme": "network",
       "is_regulatory": false,
       "surfaces": [
-        "src/components/AsicMiningCalculator.tsx:74-82"
+        "src/components/AsicMiningCalculator.tsx:74-84"
       ],
       "last_updated_hint": "2026-10-13",
       "source_hint": "whattomine exchange_rate / CoinGecko (live).",
