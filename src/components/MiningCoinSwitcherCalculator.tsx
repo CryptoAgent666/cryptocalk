@@ -4,7 +4,7 @@ import { Cpu, Info, RotateCcw, Pickaxe } from 'lucide-react';
 import { withErrorBoundary } from './ErrorBoundary';
 import { loc } from '../i18n/format';
 
-// Model constants re-derived from live network state on 2026-10-06 (first done
+// Model constants re-derived from live network state on 2026-11-17 (first done
 // 2026-09-10). `dailyPerHash` is not a tuned figure: it is (daily network emission
 // / network hashrate), so hashRate x dailyPerHash is the real expected coin yield
 // for that hash rate. Prices are a hand-refreshed spot snapshot (still not fetched
@@ -15,37 +15,37 @@ import { loc } from '../i18n/format';
 // by hand and had drifted apart from the chains by 1.4x (ERG) to ~500x (KAS). Because
 // the page exists to RANK coins, that inverted the ranking.
 //
-// Network state, two independent reads each (2026-10-06):
-//   BTC  difficulty 132,716,002,350,731 (mempool.space == blockchain.info),
-//        3.125 BTC/block -> 1/(D x 2^32) x 86400 x 3.125 = 4.736752e-7 BTC per TH/s
-//   KAS  hashrate 3.24637e17 H/s (api.kaspa.org/info/hashrate; == difficulty
-//        1.62407e16 x 2 x 10 BPS = 3.24814e17), 2.06017223 KAS/block x 10 BPS x 86400
-//        = 1,779,989 KAS/day -> 0.005483011 per GH/s
-//   RVN  hashrate 711.3 / 716.9 GH/s (whattomine / 2miners node), 1250 RVN per 60s
-//        block = 1,800,000 RVN/day -> 2.520743 per MH/s
-//   ERG  hashrate 534.3 / 546.3 GH/s (whattomine / ergoplatform node), 3 ERG miner
-//        reward per block, 125.6s measured over the last 700 blocks = 2,063 ERG/day
-//        -> 0.003818203 per MH/s
-//   ALPH hashrate 5.61848e15 / 5.22593e15 H/s (explorer backend daily / full node
-//        current, mean 5.42221e15); emission measured off the supply series,
-//        23,966 / 23,992 / 24,057 ALPH over three days -> 24,005 ALPH/day
-//        -> 0.004427129 per GH/s
+// Network state, two independent reads each (2026-11-17):
+//   BTC  difficulty 134,823,837,323,273 (mempool.space == blockchain.info),
+//        3.125 BTC/block -> 1/(D x 2^32) x 86400 x 3.125 = 4.6626973e-7 BTC per TH/s
+//   KAS  hashrate 3.39258e17 H/s (api.kaspa.org/info/hashrate; == difficulty
+//        1.69629e16 x 2 x 10 BPS = 3.39258e17), 1.94454365 KAS/block x 10 BPS x 86400
+//        = 1,680,086 KAS/day -> 0.004952239 per GH/s
+//   RVN  hashrate 528.1 / 533.3 GH/s (whattomine / 2miners node difficulty x 2^32 / 60s),
+//        1250 RVN per 60s block = 1,800,000 RVN/day -> 3.391812 per MH/s
+//   ERG  hashrate 599.2 / 575.3 GH/s (whattomine / ergoplatform explorer), 3 ERG miner
+//        reward per block, 119.1s measured over the last 700 blocks = 2,176 ERG/day
+//        -> 0.003705866 per MH/s
+//   ALPH hashrate 5.30687e15 / 4.72381e15 H/s (explorer backend daily / full node
+//        current, mean 5.01534e15); emission measured off the supply series,
+//        23,976 / 23,790 / 23,973 ALPH over three days -> 23,913 ALPH/day
+//        -> 0.004767941 per GH/s
 //
 // KAS and ALPH are kept in the table precisely because the honest numbers are tiny:
 // both chains are ASIC-dominated (an Antminer KS7 is 40 TH/s against a 4090's
-// 1.79 GH/s), so a GPU earns ~$0.0004/day on Kaspa. Showing that is the useful
+// 1.79 GH/s), so a GPU earns ~$0.0002/day on Kaspa (2026-11-17). Showing that is the useful
 // answer to "should I point my GPU at Kaspa?".
 //
-// KAS tracks Kaspa's monthly "chromatic halving": month 53 (since DAA 557,505,000,
-// 2026-10-05) pays 2.06017223/block. Month 54 opens at DAA 583,803,000 (~2026-11-04)
-// -> 1.94454365 (consensus table entry 1944543648 sompi / 10 BPS). Re-derive from the
+// KAS tracks Kaspa's monthly "chromatic halving": month 54 (since DAA 583,803,000,
+// 2026-11-04) pays 1.94454365/block. Month 55 opens at DAA 610,101,000 (~2026-12-05)
+// -> 1.83540480 (consensus table entry 1835404799 sompi / 10 BPS). Re-derive from the
 // hashrate at that point, do not scale this value. Handled by the
 // cryptocalk-kaspa-emission-* scheduled task.
 // FLUX removed 2026-09-10: the PoUW v2 hard fork at block 2,020,000 (Oct 2025)
 // ended GPU mining entirely - blocks are produced by FluxNodes (Proof of Nodes).
 // Verified on-chain: the coinbase pays 14 FLUX split across node tiers + dev
 // fund with no miner output at all. Same removal as GpuMiningCalculator (2026-06-30).
-const PRICE_SNAPSHOT = '2026-10-06';
+const PRICE_SNAPSHOT = '2026-11-17';
 
 // Device hash rates are measured third-party benchmarks, not nameplate figures:
 // minerstat (per-algorithm, updated 2026-08-29) and 2CryptoCalc, averaged where both
@@ -68,11 +68,11 @@ const HARDWARE = [
 ] as const;
 
 const COINS = [
-  { id: 'bitcoin', label: 'BTC', algo: 'SHA-256', price: '85816', dailyPerHash: 0.0000004736752, hashUnit: 'TH/s' },
-  { id: 'kaspa', label: 'KAS', algo: 'kHeavyHash', price: '0.0429', dailyPerHash: 0.005483011, hashUnit: 'GH/s' },
-  { id: 'ravencoin', label: 'RVN', algo: 'KAWPOW', price: '0.00245', dailyPerHash: 2.520743, hashUnit: 'MH/s' },
-  { id: 'ergo', label: 'ERG', algo: 'Autolykos', price: '0.330', dailyPerHash: 0.003818203, hashUnit: 'MH/s' },
-  { id: 'alephium', label: 'ALPH', algo: 'Blake3', price: '0.0739', dailyPerHash: 0.004427129, hashUnit: 'GH/s' },
+  { id: 'bitcoin', label: 'BTC', algo: 'SHA-256', price: '65230', dailyPerHash: 0.00000046626973, hashUnit: 'TH/s' },
+  { id: 'kaspa', label: 'KAS', algo: 'kHeavyHash', price: '0.0268', dailyPerHash: 0.004952239, hashUnit: 'GH/s' },
+  { id: 'ravencoin', label: 'RVN', algo: 'KAWPOW', price: '0.00109', dailyPerHash: 3.391812, hashUnit: 'MH/s' },
+  { id: 'ergo', label: 'ERG', algo: 'Autolykos', price: '0.195', dailyPerHash: 0.003705866, hashUnit: 'MH/s' },
+  { id: 'alephium', label: 'ALPH', algo: 'Blake3', price: '0.0282', dailyPerHash: 0.004767941, hashUnit: 'GH/s' },
 ] as const;
 
 function MiningCoinSwitcherCalculator({ lang = 'en' }: { lang?: string }) {

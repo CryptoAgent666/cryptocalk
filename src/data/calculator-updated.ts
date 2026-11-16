@@ -11,6 +11,9 @@
 // changed the KAS fallback block reward (2.3125 -> 2.18267645), which is rendered on the GPU mining
 // page both in the calculator and in its "Where these numbers come from" block; /updates/ gained a
 // new entry. Both are real rendered-content changes, not a build stamp.
+// 2026-11-17: gpu-mining-calculator, mining-coin-switcher-calculator + updates moved to 2026-11-17. Kaspa
+// emission month 54 (2.06017223 -> 1.94454365) changed the rendered KAS reward on both pages, and the
+// switcher's five coins were re-derived from live network state (ranking flipped to RVN on every GPU).
 // 2026-10-06: gpu-mining-calculator, mining-coin-switcher-calculator + updates moved to 2026-10-06.
 // Kaspa emission month 53 (2.18267645 -> 2.06017223) changed the rendered KAS reward on both pages;
 // the switcher's five per-hash yields and prices were re-derived, which moved its results, its FAQ
@@ -113,7 +116,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "gas-optimization-calculator": "2026-10-13",
   "geometric-mean-return-calculator": "2026-10-13",
   "governance-voting-calculator": "2026-10-13",
-  "gpu-mining-calculator": "2026-10-13",
+  "gpu-mining-calculator": "2026-11-17",
   "grid-trading-calculator": "2026-10-13",
   "gwei-converter": "2026-10-13",
   "halving-calculator": "2026-10-13",
@@ -144,7 +147,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "mev-calculator": "2026-10-13",
   "millionaire-calculator": "2026-10-13",
   "mining-calculator": "2026-10-14",
-  "mining-coin-switcher-calculator": "2026-10-13",
+  "mining-coin-switcher-calculator": "2026-11-17",
   "mining-roi-calculator": "2026-10-13",
   "mstr-mnav-calculator": "2026-10-13",
   "nft-profit-calculator": "2026-10-14",
@@ -194,7 +197,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "treynor-calculator": "2026-10-13",
   "uniswap-calculator": "2026-10-13",
   "unit-converter": "2026-10-13",
-  "updates": "2026-10-14",
+  "updates": "2026-11-17",
   "validator-calculator": "2026-10-13",
   "var-calculator": "2026-10-13",
   "vesting-calculator": "2026-10-13",
