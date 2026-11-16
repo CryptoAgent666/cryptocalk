@@ -40,6 +40,10 @@ const GOV_HOSTS = [
   // French (bofip.impots.gouv.fr) and Austrian (ris.bka.gv.at) official hosts do not contain '.gov',
   // so BOFiP and the RIS statute database rendered as 'secondary guide' until 2026-10-13.
   '.gouv.fr', '.gv.at',
+  // Brazil's Chamber of Deputies publishes the consolidated federal statutes (legin). It became the
+  // Brazilian source on 2026-11-17, when every planalto.gov.br law URL started redirecting to the
+  // gov.br home page after the Novo Portal da Legislacao launch; '.leg.br' does not contain '.gov'.
+  'camara.leg.br',
 ];
 const PROTOCOL_HOSTS = [
   'github.com/bitcoin', 'zips.z.cash', 'ecips.ethereumclassic.org', 'docs.dash.org',

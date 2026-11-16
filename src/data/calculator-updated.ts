@@ -11,6 +11,8 @@
 // changed the KAS fallback block reward (2.3125 -> 2.18267645), which is rendered on the GPU mining
 // page both in the calculator and in its "Where these numbers come from" block; /updates/ gained a
 // new entry. Both are real rendered-content changes, not a build stamp.
+// 2026-11-17 (later): tax-calculator + methodology moved to 2026-11-17 — the Brazil source in their
+// "Where these numbers come from" tables changed from planalto.gov.br to camara.leg.br, re-read the same day.
 // 2026-11-17: gpu-mining-calculator, mining-coin-switcher-calculator + updates moved to 2026-11-17. Kaspa
 // emission month 54 (2.06017223 -> 1.94454365) changed the rendered KAS reward on both pages, and the
 // switcher's five coins were re-derived from live network state (ranking flipped to RVN on every GPU).
@@ -143,7 +145,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "market-cap-calculator": "2026-10-13",
   "market-cap-comparator": "2026-08-25",
   "mayer-multiple-calculator": "2026-08-25",
-  "methodology": "2026-10-13",
+  "methodology": "2026-11-17",
   "mev-calculator": "2026-10-13",
   "millionaire-calculator": "2026-10-13",
   "mining-calculator": "2026-10-14",
@@ -184,7 +186,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "staking-calculator": "2026-10-13",
   "staking-rewards-calculator": "2026-10-13",
   "stock-to-flow-calculator": "2026-10-13",
-  "tax-calculator": "2026-10-13",
+  "tax-calculator": "2026-11-17",
   "tax-loss-harvesting-calculator": "2026-10-13",
   "terms": "2026-05-17",
   "timestamp-converter": "2026-08-25",

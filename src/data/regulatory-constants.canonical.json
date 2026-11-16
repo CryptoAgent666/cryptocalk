@@ -1120,11 +1120,11 @@
       "source_hint": "Receita Federal Brazil",
       "conflict": false,
       "status": "current",
-      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 17.5% flat (MP1303) rejected Oct 2025; reverted to progressive 15–22.5% + R$35k/mo exemption. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: progressive 15%–22.5% | 2026-10-13: law label still described the REJECTED flat-rate reform and the source pointed at a dead newsletter (SSL-fail) — the monitor was repointed to planalto l8981 on 2026-08-19 but this ledger row never was; /methodology/ rendered the wrong headline. Value unchanged; verified_date left as recorded (no fresh read today).",
+      "notes": "Reconciled 2026-06-23: re-verified (web), fixed in .tsx, deployed (web + OTA 1.6.4). 17.5% flat (MP1303) rejected Oct 2025; reverted to progressive 15–22.5% + R$35k/mo exemption. 2026-08-29 reconcile: ledger aligned to the value applied in src/components (verified by reading the .tsx); no code change. Primary-source verification date left as recorded. Source detail: progressive 15%–22.5% | 2026-10-13: law label still described the REJECTED flat-rate reform and the source pointed at a dead newsletter (SSL-fail) — the monitor was repointed to planalto l8981 on 2026-08-19 but this ledger row never was; /methodology/ rendered the wrong headline. Value unchanged; verified_date left as recorded (no fresh read today). 2026-11-17: source moved planalto.gov.br -> camara.leg.br consolidated text (normaatualizada); since the Novo Portal da Legislacao launch on 2026-11-13 every planalto.gov.br law URL redirects to the gov.br home page. Art. 21 re-read there: 15% up to R$5M, 17.5% to R$10M, 20% to R$30M, 22.5% above (Lei 13.259/2016), unchanged.",
       "official_value": "progressive 15/17.5/20/22.5 by disposal band (R$35k/month exempt)",
-      "source_url": "https://www.planalto.gov.br/ccivil_03/leis/l8981.htm",
+      "source_url": "https://www2.camara.leg.br/legin/fed/lei/1995/lei-8981-20-janeiro-1995-374786-normaatualizada-pl.html",
       "official_source": "lbm-legal.com.br (MP1303 expiration); orbitax.com; ey.com tax alert",
-      "verified_date": "2026-07-08",
+      "verified_date": "2026-11-17",
       "verify_method": "tier2-llm"
     },
     {
