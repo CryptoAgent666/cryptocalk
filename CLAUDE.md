@@ -32,7 +32,16 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
      `MiningRoiCalculator`, `ValidatorCalculator`, `StockToFlowCalculator`, `DustAttackCalculator`,
      `StakingRewardsCalculator` (block reward, halving schedule, 21M supply, 32-ETH validator, dust 546).
 
-### Gas optimization 2026-11-17 — переписан под суб-гвей газ, в main, НЕ задеплоено
+### Деплой 17.11 (2-й прогон) — gas-optimization + BTC-свип ЗАДЕПЛОЕНЫ + OTA 1.7.12
+- ✅ Полный `deploy.sh` из main `0ac272221` (выполнила сессия BTC-свипа, ~15:01–15:34 NZDT): CF purge, 294 прогреты, IndexNow 115,
+  чанки 200. Включает `e277189b1` (gas-optimization) и `66162e4fc` (BTC-свип: примеры $77 300/$73 700/$84 000 в 12 калькуляторах
+  пересчитаны на $65 000, дефолты 77300 → 65000 в BitcoinUnitConverter/Lightning/FuturesBasis). Gas-страница сверена вживую с `?cb=`
+  на 6 языках (новые цифры есть, 15 gwei / $2 400 — 0, экранированной разметки 0), чанк компонента отдаёт датированную подсказку.
+- ✅ **OTA 1.7.12** (sha256 `8b5ae87a…5b2c8fb`, 1295 html, ключ CoinGecko в 28 чанках; gas-страница и BTC-свип внутри — проверено
+  скачиванием бандла; `updates.php`: 1.7.10/1.7.11 → 1.7.12, 1.7.12 → `{}`). **Следующая OTA — 1.7.13+.**
+- ⚠️ origin/main НЕ запушен (пушит только по просьбе пользователя).
+
+### Gas optimization 2026-11-17 — переписан под суб-гвей газ (ЗАДЕПЛОЕНО 17.11, OTA 1.7.12 — см. выше)
 - Пресеты `GasOptimizationCalculator.tsx`: 15 gwei / ETH $2 400 → **0,14 gwei / $1 820** (base 0,131 + tip 0,013, eth_feeHistory
   1 025 блоков; ETH Coinbase/Kraken $1 818) + датированная подсказка под полем (новый ui-string × 5). Логика не менялась.
 - Вся проза/FAQ/meta 6 языков пересчитана (gas × gwei × ETH). Замер 28 дней до 17.11 (201 728 блоков, drpc): медиана base fee
@@ -49,8 +58,7 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
 - ✅ `deploy.sh --no-build` из `3740f1760` (CF purge, 294 прогреты, IndexNow 82, чанки 200), живые страницы и чанки сверены с `?cb=`.
   **OTA 1.7.11** собрана во временном worktree на том же `3740f1760` (sha256 `415224fc…8e8f`, ключ в 28 чанках; `updates.php`:
   1.7.10 → 1.7.11, 1.7.11 → `{}`). origin/main = `3740f1760`. **Следующая OTA — 1.7.12+.**
-  ⚠️ Во время деплоя сессия gas-optimization fast-forward'нула main до `e277189b1` (правка gas-страницы) — она НЕ задеплоена,
-  НЕ в OTA и НЕ запушена: ждёт решения пользователя.
+  (Gas-страница `e277189b1`, тогда ещё не задеплоенная, уехала вторым прогоном 17.11 + OTA 1.7.12 — см. блок выше.)
 Отчёт `AUDIT-2026-11-17.md`. Сборка 1294 стр., экранированной разметки 0, ключ в 28 чанках; виджеты pump.fun / inflation /
 DePIN / rainbow проверены в браузере на локальной сборке.
 - 🔴 **Баг расчёта pump.fun:** выпуск с кривой стоил фиксированные $69K при любой цене SOL. Кривая завершается при ~85 SOL
