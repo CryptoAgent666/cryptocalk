@@ -22,29 +22,31 @@ interface Results {
     optimalGasThreshold: string;
 }
 
+// Scenario/default gas price and ETH price: measured 2026-11-17 (eth_feeHistory over 1,025 blocks:
+// median base fee 0.131 gwei, median tip 0.013 gwei; ETH ~$1,818 Coinbase/Kraken). Re-measure before changing.
 const SCENARIOS = [
     {
         label: 'Simple Transfers',
         numTxs: '10',
         gasPerTx: '21000',
-        gasPrice: '15',
-        ethPrice: '2400',
+        gasPrice: '0.14',
+        ethPrice: '1820',
         batchSize: '5',
     },
     {
         label: 'DeFi Swaps (150K gas)',
         numTxs: '10',
         gasPerTx: '150000',
-        gasPrice: '15',
-        ethPrice: '2400',
+        gasPrice: '0.14',
+        ethPrice: '1820',
         batchSize: '5',
     },
     {
         label: 'NFT Mints (200K gas)',
         numTxs: '10',
         gasPerTx: '200000',
-        gasPrice: '15',
-        ethPrice: '2400',
+        gasPrice: '0.14',
+        ethPrice: '1820',
         batchSize: '5',
     },
 ] as const;
@@ -52,8 +54,8 @@ const SCENARIOS = [
 function GasOptimizationCalculator({ lang = 'en' }: { lang?: string }) {
     const [numTxs, setNumTxs] = useState('10');
     const [gasPerTx, setGasPerTx] = useState('21000');
-    const [gasPrice, setGasPrice] = useState('15');
-    const [ethPrice, setEthPrice] = useState('2400');
+    const [gasPrice, setGasPrice] = useState('0.14');
+    const [ethPrice, setEthPrice] = useState('1820');
     const [batchSize, setBatchSize] = useState('5');
 
     const loc = lang === 'en' ? 'en-US' : lang;
@@ -136,8 +138,8 @@ function GasOptimizationCalculator({ lang = 'en' }: { lang?: string }) {
     const reset = () => {
         setNumTxs('10');
         setGasPerTx('21000');
-        setGasPrice('15');
-        setEthPrice('2400');
+        setGasPrice('0.14');
+        setEthPrice('1820');
         setBatchSize('5');
     };
 
@@ -214,10 +216,13 @@ function GasOptimizationCalculator({ lang = 'en' }: { lang?: string }) {
                             value={gasPrice}
                             onChange={(e) => setGasPrice(e.target.value)}
                             id="gasopt-gas-price"
-                            step="0.1"
-                            min="0.1"
+                            step="0.01"
+                            min="0"
                             onFocus={(e) => e.target.select()}
                         />
+                        <span className="input-hint">
+                            {getUiString(lang, 'Defaults measured on 17 Nov 2026: 0.14 Gwei (base fee ~0.13 + tip ~0.01) and ETH at $1,820. Enter the gas price your wallet shows now.')}
+                        </span>
                     </div>
 
                     <div className="input-group">

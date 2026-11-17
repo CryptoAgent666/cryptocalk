@@ -2535,6 +2535,7 @@ const dict: Record<string, string> = {
   'Number of Batches': 'Número de lotes',
   'Target Gas Price (for <$1/tx)': 'Preço-alvo de gas (para <$1/tx)',
   'Batching savings assume multicall-style contracts. Actual savings vary by contract and network conditions. Base overhead is ~30K gas per batch.': 'A economia com agrupamento assume contratos estilo multicall. A economia real varia conforme o contrato e condições da rede. Overhead base é ~30K gas por lote.',
+  'Defaults measured on 17 Nov 2026: 0.14 Gwei (base fee ~0.13 + tip ~0.01) and ETH at $1,820. Enter the gas price your wallet shows now.': 'Valores padrão medidos em 17 nov 2026: 0,14 Gwei (base fee ~0,13 + gorjeta ~0,01) e ETH a $1.820. Insira o preço do gas que sua carteira mostra agora.',
   'Optimize Gas Costs': 'Otimizar custos de gas',
   'Enter transaction details to compare individual vs. batched gas costs and find optimal strategies.': 'Insira detalhes de transação para comparar custos de gas individuais vs. em lote e encontrar estratégias ótimas.',
   'Simple Transfers': 'Transferências simples',

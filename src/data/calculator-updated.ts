@@ -121,7 +121,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "gamefi-calculator": "2026-10-13",
   "gas-calculator": "2026-10-14",
   "gas-fee-calculator": "2026-10-13",
-  "gas-optimization-calculator": "2026-10-13",
+  "gas-optimization-calculator": "2026-11-17",
   "geometric-mean-return-calculator": "2026-10-13",
   "governance-voting-calculator": "2026-10-13",
   "gpu-mining-calculator": "2026-11-17",

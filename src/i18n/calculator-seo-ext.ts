@@ -13010,31 +13010,31 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     en: {
       interpret: [
         "The gas optimization calculator shows how much you can save by batching operations: it prices the same set of transactions sent one by one and grouped into multicall batches. The Savings from Batching figure is the difference between those two totals, in dollars and as a percentage. It does not model timing or gas settings, so rerun it at a lower Gas Price (Gwei) to see what a quieter window is worth; with about 30,000 gas of overhead per batch, the built-in scenarios save only about 1–5% from batching, so the gas price you pay usually matters more.",
-        "Of the three levers, timing (executing during low-gas windows), batching (combining multiple transactions into one), and settings (using appropriate priority fees instead of overpaying), the calculator quantifies only batching; it also shows the cost per transaction both ways, the Number of Batches and a Target Gas Price at which one transaction costs under $1. For most users, timing alone captures 40–60% of total possible savings. Compare base results with our <a href=\"/gas-calculator/\">gas fee calculator</a> for current network conditions."
+        "Of the three levers, timing (executing during low-gas windows), batching (combining multiple transactions into one), and settings (using appropriate priority fees instead of overpaying), the calculator quantifies only batching; it also shows the cost per transaction both ways, the Number of Batches and a Target Gas Price at which one transaction costs under $1. With the base fee around 0.1 gwei in late 2026, settings matter most: if your wallet adds a fixed 1–2 gwei tip, that tip is most of what you pay. Compare base results with our <a href=\"/gas-calculator/\">gas fee calculator</a> for current network conditions."
       ],
       scenarios: [
-        "Weekly DeFi user: you make 8 transactions per week (swaps, claims, deposits) averaging 150,000 gas each at a median 15 gwei gas price. Current weekly cost: ~$40. By batching 3 claim transactions into one multicall, shifting non-urgent transactions to Sunday morning UTC (typical low: 8 gwei), and using EIP-1559 base-fee-only tips, the optimized weekly cost drops to ~$22, a 45% savings or $936/year.",
-        "NFT minter: you plan to mint 5 NFTs from a collection launch at expected gas of 50+ gwei. Each mint costs ~200,000 gas. At 50 gwei: $23 per mint × 5 = $115 in gas alone. Waiting about 2 hours post-launch, when gas typically drops to 20 gwei, brings it to $9.20 per mint × 5 = $46; rerun the calculator at both gas prices with your ETH price to check. Savings: $69 (60%) for 2 hours of patience. If the NFTs are not time-sensitive, this is the highest-ROI decision available."
+        "Weekly DeFi user: you make 8 transactions per week (swaps, claims, deposits) averaging 150,000 gas each. At 0.14 gwei and ETH $1,820 that is 1.2 million gas, about $0.31 a week or $16 a year. If your wallet adds a fixed 2 gwei tip, the same activity costs about $4.65 a week ($242 a year); lowering the tip to around 0.05 gwei brings it back to about $0.40 a week. Batching 3 claims into one multicall saves only a fraction of a cent at these prices, so the tip setting is the lever worth checking first.",
+        "NFT minter: you plan to mint 5 NFTs at about 200,000 gas each, 1 million gas in total. On a normal day at 0.14 gwei and ETH $1,820 that costs about $0.25. If the launch coincides with a spike like the one on 29 October 2026 (base fee around 29 gwei for hours), it would be about $53, and at 50 gwei $91. Waiting until the base fee is back under 1 gwei caps it at about $1.82; rerun the calculator at both gas prices with your ETH price to check. If the NFTs are not time-sensitive, waiting out the spike is the highest-ROI decision available."
       ],
       checklist: [
         "Before optimizing: 1) Export your last 30 days of transactions with gas costs from Etherscan. 2) Categorize each transaction as time-sensitive (trades, liquidation protection) or non-urgent (claims, approvals, transfers). 3) Note which transactions could be batched (multiple claims, multiple approvals). 4) Identify your typical gas price versus the weekly low, the gap is your timing opportunity.",
         "After calculating: set up gas price alerts (via Blocknative, Etherscan Gas Tracker, or wallet notifications) at your optimal gas threshold. When gas drops below your target, execute batched non-urgent transactions. For time-sensitive transactions, use Flashbots Protect to avoid overpaying for priority inclusion."
       ],
       mistakes: [
-        "The most expensive mistake is using 'fast' or 'aggressive' gas settings for non-urgent transactions. Your wallet's 'fast' option may pay 2–5x the base fee for inclusion in the next block, when waiting 2–3 blocks (30–45 seconds longer) at standard gas would cost 50–70% less. Reserve fast gas only for genuinely time-sensitive operations like liquidation protection or arbitrage.",
-        "Another common error is making many small transactions when batching is available. Approving 5 tokens individually costs 5 × 46,000 gas = 230,000 gas in approvals alone. Using a multicall contract or a protocol's batch-approve function can reduce this to ~80,000 gas total. Always check if the protocol supports batching before executing individual transactions."
+        "The most expensive mistake is a fixed 'fast' or 'aggressive' tip on a non-urgent transaction. With the base fee around 0.13 gwei (17 November 2026), a 1–2 gwei tip makes a transaction about 8–15x more expensive than the base fee plus the typical 0.01 gwei tip, and blocks were running below their 50% target, so small tips were being included promptly. Reserve high tips for genuinely time-sensitive operations like liquidation protection or arbitrage.",
+        "Another common error is making many small transactions when batching is available. Approving 5 tokens individually costs about 5 × 46,000 gas = 230,000 gas. A wallet that batches calls (a Safe or an EIP-7702 smart account) pays the 21,000-gas base once, bringing this to roughly 160,000 gas, about 30% less ($0.06 → $0.04 at 0.14 gwei and ETH $1,820). Always check if the protocol or wallet supports batching before executing individual transactions."
       ],
       benchmarks: [
-        "Ethereum gas price patterns: weekday peaks typically occur 14:00–18:00 UTC (US market hours), averaging 15–25 gwei. Weekend lows occur Saturday–Sunday 04:00–10:00 UTC, averaging 5–12 gwei. The spread between peak and trough is typically 50–70%, representing the maximum timing-based savings available. L2 networks (Arbitrum, Optimism, Base) cost 10–50x less than mainnet for the same operations.",
-        "Transaction cost benchmarks at 10 gwei: simple ETH transfer $0.50, ERC-20 transfer $1.10, DEX swap $2–$5, Uniswap LP deposit $4–$8, complex DeFi interaction $5–$15. At 50 gwei, multiply all by 5x. Knowing these ranges helps you immediately spot when a transaction quote seems abnormally expensive."
+        "Ethereum gas patterns over the 28 days to 17 November 2026: the median base fee was 0.075 gwei, with the middle half of blocks between 0.044 and 0.17 gwei. Fees peaked at 15:00–17:00 UTC (0.23–0.34 gwei, US trading hours) and were lowest at 00:00–08:00 UTC (~0.045 gwei); weekends ran at about half the weekday level. Only 3% of blocks had a base fee above 1 gwei, but a spike on 29–30 October reached ~253 gwei. On L2s an ERC-20 transfer cost from under $0.0001 (Optimism) to about $0.002 (Arbitrum), versus about $0.01 on mainnet.",
+        "Transaction cost benchmarks at 0.14 gwei and ETH $1,820: simple ETH transfer (21,000 gas) $0.005, ERC-20 transfer (~46,000 gas) $0.012, DEX swap (85,000–210,000) $0.02–$0.05, Uniswap LP deposit (170,000–330,000) $0.04–$0.08, complex DeFi interaction (210,000–625,000) $0.05–$0.16. At the ~29 gwei of the 29 October spike, multiply all by about 200. Knowing these ranges helps you spot a wallet quote that is abnormally expensive, usually because of a high tip."
       ],
       execution: [
-        "Gas optimization workflow: 1) Create a weekly 'gas batch' list of non-urgent transactions. 2) Set a gas alert at 30% below the current 7-day average. 3) When the alert triggers (typically weekends), execute all batched transactions. 4) For recurring operations (weekly claims, monthly rebalancing), schedule them for your chain's known low-gas windows. This simple discipline saves the average DeFi user $500–$2,000 per year.",
-        "For developers and power users: implement gas-efficient contract interactions. Use multicall for batch operations, calldata compression for L2 submissions, and EIP-4844 blob transactions for rollup data. On <a href=\"/mining-calculator/\">Ethereum L1</a>, consider whether the operation can be performed on an L2 instead, migrating recurring transactions to Arbitrum or Base can reduce gas costs by 95%."
+        "Gas optimization workflow: 1) Keep a list of non-urgent transactions. 2) Set your wallet's priority fee manually (0.01–0.1 gwei was enough in November 2026) instead of a fixed 'fast' preset. 3) Set an alert for a base fee above 1 gwei and postpone non-urgent transactions while it is on: in the 28 days to 17 November that was only 3% of blocks, but they included the 29 October spike. 4) Schedule recurring operations for 00:00–08:00 UTC or weekends. For the weekly DeFi user above, steps 2 and 3 are worth more than everything else combined.",
+        "For developers and power users: implement gas-efficient contract interactions. Use multicall for batch operations, calldata compression for L2 submissions, and EIP-4844 blob transactions for rollup data. For frequent small transactions, consider whether the operation can run on an L2: on 17 November 2026 an ERC-20 transfer cost about $0.002 on Arbitrum and $0.0007 on Base versus about $0.01 on mainnet, 80–93% less, though in absolute terms that is about a cent per transaction."
       ],
       hygiene: [
-        "Review your gas spending monthly. Export transaction history, sum gas costs, and calculate gas as a percentage of portfolio value. If gas exceeds 2% annually, you are either overtrading for your portfolio size or consistently overpaying for gas. Target under 1% annual gas costs relative to portfolio value.",
-        "Keep a gas price log to identify patterns specific to your activity schedule. If you consistently trade during US market hours (highest gas), shifting routine operations to off-peak hours produces the single largest gas savings with zero effort beyond schedule adjustment."
+        "Review your gas spending monthly. Export transaction history, sum gas costs, and calculate gas as a percentage of portfolio value. At late-2026 fee levels, gas above 1% a year usually means you are trading a small balance very often, paying a high fixed tip, or transacting during spikes. Target well under 1% annual gas costs relative to portfolio value.",
+        "Keep a gas price log to identify patterns specific to your activity schedule. If you usually transact during US market hours (15:00–17:00 UTC was the most expensive window in the 28 days to 17 November 2026), moving routine operations to 00:00–08:00 UTC cut the base fee by about 80%, although at current prices that is worth fractions of a cent per transaction."
       ],
       validation: [
         "Validate optimization savings by comparing 30-day average gas cost per transaction before and after you start batching and timing transactions as planned. If average cost per transaction drops by at least 20%, the optimization is working. If savings are less than 10%, review whether your actual execution windows match the gas price you planned for.",
@@ -13044,30 +13044,30 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     es: {
       interpret: [
         "La calculadora de optimización de gas muestra cuánto puedes ahorrar agrupando operaciones: compara el coste de enviar las transacciones una a una con el de agruparlas en lotes multicall, y el Ahorro por lotes es esa diferencia en dólares y en porcentaje. No modela la temporización ni la configuración del gas, así que repite el cálculo con un Precio del gas (Gwei) más bajo para ver cuánto vale esperar a una ventana tranquila.",
-        "De las tres palancas de ahorro (temporización, agrupación y configuración), la calculadora solo cuantifica la agrupación. Para la mayoría, solo la temporización captura 40–60% del ahorro total posible."
+        "De las tres palancas de ahorro (temporización, agrupación y configuración), la calculadora solo cuantifica la agrupación. Con la base fee en torno a 0,1 gwei a finales de 2026, la que más pesa es la configuración: si tu wallet añade una propina fija de 1–2 gwei, esa propina es la mayor parte de lo que pagas."
       ],
       scenarios: [
-        "Usuario DeFi semanal: 8 transacciones/semana promediando 150,000 gas a 15 gwei. Costo actual: ~$40/semana. Optimizado con agrupación y temporización: ~$22 — ahorro del 45% o $936/año.",
-        "Acuñador de NFT: 5 mints a 50 gwei = $115 en gas. Esperar 2 horas post-lanzamiento (20 gwei) = $46. Ahorro: $69 (60%)."
+        "Usuario DeFi semanal: 8 transacciones/semana de unos 150.000 de gas, 1,2 millones de gas en total. A 0,14 gwei y ETH a $1.820: ~$0,31/semana (~$16/año). Con una propina fija de 2 gwei: ~$4,65/semana ($242/año); bajarla a ~0,05 gwei lo deja en ~$0,40/semana.",
+        "Acuñador de NFT: 5 mints de 200.000 de gas = $0,25 en un día normal (0,14 gwei). En un pico como el del 29 de octubre de 2026 (~29 gwei) serían ~$53. Esperar a que la base fee baje de 1 gwei lo limita a ~$1,82."
       ],
       checklist: [
         "Antes de optimizar: 1) Exporta tus últimos 30 días de transacciones. 2) Categoriza como urgentes o no urgentes. 3) Identifica transacciones agrupables. 4) Nota tu precio de gas típico vs el mínimo semanal.",
         "Después: configura alertas de precio de gas en tu umbral óptimo."
       ],
       mistakes: [
-        "El error más caro es usar configuración 'rápida' para transacciones no urgentes. Tu wallet puede pagar 2–5x la tarifa base cuando esperar 30–45 segundos costaría 50–70% menos.",
+        "El error más caro es usar una propina 'rápida' fija para transacciones no urgentes. Con la base fee en ~0,13 gwei, una propina de 1–2 gwei encarece la transacción unas 8–15 veces frente a la base fee más la propina típica de 0,01 gwei.",
         "Otro error es hacer muchas transacciones pequeñas cuando la agrupación está disponible."
       ],
       benchmarks: [
-        "Patrones de gas Ethereum: picos en días laborables 14:00–18:00 UTC (15–25 gwei). Mínimos de fin de semana 04:00–10:00 UTC (5–12 gwei). Redes L2 cuestan 10–50x menos.",
-        "Costos a 10 gwei: transferencia ETH $0,50, swap DEX $2–$5, interacción DeFi compleja $5–$15."
+        "Patrones de gas Ethereum (28 días hasta el 17/11/2026): base fee mediana 0,075 gwei; pico de 15:00–17:00 UTC (0,23–0,34 gwei); mínimo de 00:00–08:00 UTC (~0,045 gwei); fines de semana, la mitad que entre semana. Solo el 3% de los bloques superó 1 gwei, pero el pico del 29–30 de octubre llegó a ~253 gwei. En L2 una transferencia ERC-20 cuesta de menos de $0,0001 a ~$0,002, frente a ~$0,01 en mainnet.",
+        "Costos a 0,14 gwei y ETH a $1.820: transferencia ETH $0,005, swap DEX $0,02–$0,05, interacción DeFi compleja $0,05–$0,16. A ~29 gwei (pico del 29 de octubre), multiplica por unas 200."
       ],
       execution: [
-        "Flujo de optimización: 1) Crear lista semanal de transacciones no urgentes. 2) Configurar alerta de gas al 30% bajo el promedio. 3) Ejecutar lote cuando se active. 4) Programar operaciones recurrentes en ventanas de gas bajo.",
-        "Para usuarios avanzados: implementar interacciones de contratos eficientes en gas. Considerar migrar operaciones recurrentes a L2."
+        "Flujo de optimización: 1) Crear lista de transacciones no urgentes. 2) Fijar la propina a mano (0,01–0,1 gwei bastaba en noviembre de 2026). 3) Configurar una alerta de base fee por encima de 1 gwei y aplazar lo no urgente mientras dure. 4) Programar operaciones recurrentes de 00:00 a 08:00 UTC o en fin de semana.",
+        "Para usuarios avanzados: implementar interacciones de contratos eficientes en gas. Llevar operaciones frecuentes a L2 abarata una transferencia ERC-20 un 80–93%, aunque hoy eso es alrededor de un centavo por transacción."
       ],
       hygiene: [
-        "Revisa tu gasto de gas mensualmente. Si excede el 2% anual del portafolio, estás sobreoperando o sobrepagando.",
+        "Revisa tu gasto de gas mensualmente. Con las comisiones de finales de 2026, si supera el 1% anual del portafolio, estás operando muy a menudo con un saldo pequeño, pagando una propina alta o transaccionando en picos.",
         "Mantén un registro de precios de gas para identificar patrones en tu horario de actividad."
       ],
       validation: [
@@ -13078,30 +13078,30 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     pt: {
       interpret: [
         "A calculadora de otimização de gas mostra quanto você pode economizar agrupando operações: compara o custo de enviar as transações uma a uma com o de agrupá-las em lotes multicall, e a Economia com agrupamento é essa diferença em dólares e em porcentagem. Ela não modela cronometragem nem configurações de gas, então refaça o cálculo com um Preço do gas (Gwei) mais baixo para ver quanto vale esperar por uma janela tranquila.",
-        "Das três alavancas de economia (cronometragem, agrupamento e configurações), a calculadora quantifica apenas o agrupamento. Para a maioria, cronometragem captura 40–60% da economia total."
+        "Das três alavancas de economia (cronometragem, agrupamento e configurações), a calculadora quantifica apenas o agrupamento. Com a base fee perto de 0,1 gwei no fim de 2026, o que mais pesa são as configurações: se a sua carteira coloca uma gorjeta fixa de 1–2 gwei, essa gorjeta é a maior parte do que você paga."
       ],
       scenarios: [
-        "Usuário DeFi semanal: 8 transações/semana de 150.000 gas a 15 gwei. Custo atual: ~$40/semana. Otimizado: ~$22 — economia de 45% ou $936/ano.",
-        "Mintador de NFT: 5 mints a 50 gwei = $115 em gas. Esperar 2 horas (20 gwei) = $46. Economia: $69 (60%)."
+        "Usuário DeFi semanal: 8 transações/semana de cerca de 150.000 de gas, 1,2 milhão de gas no total. A 0,14 gwei e ETH a $1.820: ~$0,31/semana (~$16/ano). Com gorjeta fixa de 2 gwei: ~$4,65/semana ($242/ano); baixá-la para ~0,05 gwei volta a ~$0,40/semana.",
+        "Mintador de NFT: 5 mints de 200.000 de gas = $0,25 num dia normal (0,14 gwei). Num pico como o de 29 de outubro de 2026 (~29 gwei) seriam ~$53. Esperar a base fee voltar abaixo de 1 gwei limita o custo a ~$1,82."
       ],
       checklist: [
         "Antes de otimizar: 1) Exporte últimos 30 dias de transações. 2) Categorize como urgentes ou não. 3) Identifique transações agrupáveis. 4) Note seu gas típico vs mínimo semanal.",
         "Após: configure alertas de gas no seu limite ideal."
       ],
       mistakes: [
-        "O erro mais caro é usar 'rápido' para transações não urgentes. Esperar 30–45 segundos custaria 50–70% menos.",
+        "O erro mais caro é usar uma gorjeta 'rápida' fixa em transações não urgentes. Com a base fee em ~0,13 gwei, uma gorjeta de 1–2 gwei deixa a transação cerca de 8–15 vezes mais cara que a base fee mais a gorjeta típica de 0,01 gwei.",
         "Outro erro é fazer muitas transações pequenas quando agrupamento está disponível."
       ],
       benchmarks: [
-        "Padrões Ethereum: picos em dias úteis 14:00–18:00 UTC (15–25 gwei). Mínimos de fim de semana 04:00–10:00 UTC (5–12 gwei). L2s custam 10–50x menos.",
-        "Custos a 10 gwei: transferência ETH $0,50, swap DEX $2–$5, DeFi complexo $5–$15."
+        "Padrões Ethereum (28 dias até 17/11/2026): base fee mediana de 0,075 gwei; pico das 15:00–17:00 UTC (0,23–0,34 gwei); mínimo das 00:00–08:00 UTC (~0,045 gwei); fins de semana, metade do nível dos dias úteis. Só 3% dos blocos passaram de 1 gwei, mas o pico de 29–30 de outubro chegou a ~253 gwei. Em L2s uma transferência ERC-20 custa de menos de $0,0001 a ~$0,002, contra ~$0,01 na mainnet.",
+        "Custos a 0,14 gwei e ETH a $1.820: transferência ETH $0,005, swap DEX $0,02–$0,05, DeFi complexo $0,05–$0,16. A ~29 gwei (pico de 29 de outubro), multiplique por cerca de 200."
       ],
       execution: [
-        "Fluxo: 1) Lista semanal de transações não urgentes. 2) Alerta de gas 30% abaixo da média. 3) Executar lote quando ativar. 4) Agendar operações recorrentes em janelas de gas baixo.",
-        "Para avançados: implementar interações eficientes. Considerar migrar para L2."
+        "Fluxo: 1) Lista de transações não urgentes. 2) Definir a gorjeta manualmente (0,01–0,1 gwei bastava em novembro de 2026). 3) Alerta para base fee acima de 1 gwei e adiar o que não é urgente enquanto durar. 4) Agendar operações recorrentes para 00:00–08:00 UTC ou fins de semana.",
+        "Para avançados: implementar interações eficientes. Levar operações frequentes para L2 barateia uma transferência ERC-20 em 80–93%, embora hoje isso seja cerca de um centavo por transação."
       ],
       hygiene: [
-        "Revise gasto de gas mensalmente. Se excede 2% anual do portfólio, está pagando demais.",
+        "Revise gasto de gas mensalmente. Com as taxas do fim de 2026, se passa de 1% ao ano do portfólio, você está operando com muita frequência um saldo pequeno, pagando gorjeta alta ou transacionando em picos.",
         "Mantenha registro de preços para identificar padrões."
       ],
       validation: [
@@ -13112,30 +13112,30 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     tr: {
       interpret: [
         "Gas optimizasyon hesaplayıcı, işlemleri gruplayarak ne kadar tasarruf edebileceğinizi gösterir: işlemleri tek tek göndermenin maliyetini multicall yığınlarıyla göndermeninkiyle karşılaştırır ve Yığınlamadan tasarruf bu farkı dolar ve yüzde olarak verir. Zamanlamayı ve gas ayarlarını modellemez; sakin bir saatte işlem yapmanın ne kazandıracağını görmek için daha düşük bir Gas fiyatı (Gwei) ile yeniden hesaplayın.",
-        "Üç tasarruf kolundan (zamanlama, gruplama ve ayarlar) hesaplayıcı yalnızca gruplamayı ölçer. Çoğu kullanıcı için yalnızca zamanlama toplam tasarrufun %40–60'ını yakalar."
+        "Üç tasarruf kolundan (zamanlama, gruplama ve ayarlar) hesaplayıcı yalnızca gruplamayı ölçer. 2026 sonunda taban ücret 0,1 gwei civarındayken en çok ayarlar önemlidir: cüzdanınız sabit 1–2 gwei bahşiş ekliyorsa, ödediğinizin çoğu bu bahşiştir."
       ],
       scenarios: [
-        "Haftalık DeFi kullanıcısı: haftada 8 işlem, 150.000 gas, 15 gwei. Mevcut: ~$40/hafta. Optimize: ~$22 — %45 tasarruf veya yıllık $936.",
-        "NFT mintçisi: 50 gwei'de 5 mint = $115. 2 saat bekleme (20 gwei) = $46. Tasarruf: $69 (%60)."
+        "Haftalık DeFi kullanıcısı: haftada 8 işlem, her biri ~150.000 gas, toplam 1,2 milyon gas. 0,14 gwei ve $1.820 ETH ile: ~$0,31/hafta (~$16/yıl). Sabit 2 gwei bahşişle: ~$4,65/hafta ($242/yıl); bahşişi ~0,05 gwei'ye indirmek ~$0,40/haftaya geri getirir.",
+        "NFT mintçisi: 200.000 gas'lık 5 mint normal bir günde (0,14 gwei) = $0,25. 29 Ekim 2026'daki gibi bir sıçramada (~29 gwei) ~$53 olurdu. Taban ücretin 1 gwei'nin altına inmesini beklemek maliyeti ~$1,82 ile sınırlar."
       ],
       checklist: [
         "Optimize etmeden önce: 1) Son 30 günlük işlemleri dışa aktarın. 2) Acil veya acil değil olarak kategorize edin. 3) Gruplanabilir işlemleri belirleyin. 4) Tipik gas fiyatınızı haftalık minimumla karşılaştırın.",
         "Sonra: optimal eşiğinizde gas fiyat uyarıları kurun."
       ],
       mistakes: [
-        "En pahalı hata acil olmayan işlemler için 'hızlı' ayar kullanmaktır. 30–45 saniye beklemek %50–70 daha az maliyetli olurdu.",
+        "En pahalı hata, acil olmayan işlemlerde sabit 'hızlı' bahşiş kullanmaktır. Taban ücret ~0,13 gwei iken 1–2 gwei bahşiş, işlemi taban ücret artı tipik 0,01 gwei bahşişe göre yaklaşık 8–15 kat pahalı yapar.",
         "Bir diğer hata gruplama mümkünken çok sayıda küçük işlem yapmaktır."
       ],
       benchmarks: [
-        "Ethereum gas kalıpları: hafta içi zirve 14:00–18:00 UTC (15–25 gwei). Hafta sonu dip 04:00–10:00 UTC (5–12 gwei). L2'ler 10–50x daha ucuz.",
-        "10 gwei'de maliyetler: ETH transferi $0,50, DEX swap $2–$5, karmaşık DeFi $5–$15."
+        "Ethereum gas kalıpları (17.11.2026'ya kadar 28 gün): medyan taban ücret 0,075 gwei; zirve 15:00–17:00 UTC (0,23–0,34 gwei); dip 00:00–08:00 UTC (~0,045 gwei); hafta sonları hafta içinin yarısı. Blokların yalnızca %3'ünde taban ücret 1 gwei'yi aştı, ancak 29–30 Ekim sıçraması ~253 gwei'ye ulaştı. L2'lerde bir ERC-20 transferi $0,0001'in altından ~$0,002'ye kadar tutar; mainnet'te ~$0,01.",
+        "0,14 gwei ve $1.820 ETH ile maliyetler: ETH transferi $0,005, DEX swap $0,02–$0,05, karmaşık DeFi $0,05–$0,16. ~29 gwei'de (29 Ekim sıçraması) yaklaşık 200 ile çarpın."
       ],
       execution: [
-        "Optimizasyon akışı: 1) Acil olmayan haftalık işlem listesi oluşturun. 2) Ortalamanın %30 altında gas uyarısı kurun. 3) Tetiklendiğinde toplu yürütün. 4) Tekrarlayan işlemleri düşük gas pencerelerine planlayın.",
-        "İleri düzey: gas verimli sözleşme etkileşimleri uygulayın. Tekrarlayan işlemleri L2'ye taşımayı düşünün."
+        "Optimizasyon akışı: 1) Acil olmayan işlemlerin listesini tutun. 2) Bahşişi elle ayarlayın (Kasım 2026'da 0,01–0,1 gwei yeterliydi). 3) Taban ücret 1 gwei'yi aşınca uyarı kurun ve sürdüğü sürece acil olmayanları erteleyin. 4) Tekrarlayan işlemleri 00:00–08:00 UTC'ye veya hafta sonuna planlayın.",
+        "İleri düzey: gas verimli sözleşme etkileşimleri uygulayın. Sık yapılan işlemleri L2'ye taşımak bir ERC-20 transferini %80–93 ucuzlatır, ancak bugün bu işlem başına yaklaşık bir sent demektir."
       ],
       hygiene: [
-        "Gas harcamanızı aylık gözden geçirin. Portföy değerinin yıllık %2'sini aşıyorsa fazla işlem yapıyor veya fazla ödüyorsunuz.",
+        "Gas harcamanızı aylık gözden geçirin. 2026 sonu ücretleriyle portföy değerinin yıllık %1'ini aşıyorsa, küçük bir bakiyeyle çok sık işlem yapıyor, yüksek bahşiş ödüyor veya sıçramalarda işlem yapıyorsunuz.",
         "Aktivite programınızdaki kalıpları tespit etmek için gas fiyat kaydı tutun."
       ],
       validation: [
@@ -13146,30 +13146,30 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     hi: {
       interpret: [
         "गैस ऑप्टिमाइज़ेशन कैलकुलेटर दिखाता है कि बैचिंग से आप कितनी बचत कर सकते हैं: यह लेनदेन को एक-एक करके भेजने की लागत की तुलना उन्हें multicall बैच में भेजने की लागत से करता है, और बैचिंग से बचत यही अंतर डॉलर और प्रतिशत में बताती है। यह समय और गैस सेटिंग्स को मॉडल नहीं करता, इसलिए कम गैस वाली विंडो का फ़ायदा देखने के लिए कम गैस मूल्य (Gwei) के साथ दोबारा गणना करें।",
-        "बचत के तीन लीवर (समय, बैचिंग और सेटिंग्स) में से कैलकुलेटर केवल बैचिंग को मापता है। अधिकांश उपयोगकर्ताओं के लिए, केवल समय कुल संभव बचत का 40–60% कैप्चर करता है।"
+        "बचत के तीन लीवर (समय, बैचिंग और सेटिंग्स) में से कैलकुलेटर केवल बैचिंग को मापता है। 2026 के अंत में बेस फीस लगभग 0.1 gwei होने पर सबसे ज़्यादा असर सेटिंग्स का है: अगर आपका वॉलेट तय 1–2 gwei टिप जोड़ता है, तो आपके भुगतान का ज़्यादातर हिस्सा वही टिप है।"
       ],
       scenarios: [
-        "साप्ताहिक DeFi उपयोगकर्ता: 8 लेनदेन/सप्ताह, 150,000 गैस, 15 gwei। वर्तमान: ~$40/सप्ताह। अनुकूलित: ~$22 — 45% बचत या $936/वर्ष।",
-        "NFT मिंटर: 50 gwei पर 5 मिंट = गैस में $115। 2 घंटे प्रतीक्षा (20 gwei) = $46। बचत: $69 (60%)।"
+        "साप्ताहिक DeFi उपयोगकर्ता: 8 लेनदेन/सप्ताह, हर एक ~150,000 गैस, कुल 1.2 मिलियन गैस। 0.14 gwei और ETH $1,820 पर: ~$0.31/सप्ताह (~$16/वर्ष)। तय 2 gwei टिप के साथ: ~$4.65/सप्ताह ($242/वर्ष); टिप ~0.05 gwei करने पर फिर ~$0.40/सप्ताह।",
+        "NFT मिंटर: 200,000 गैस के 5 मिंट सामान्य दिन (0.14 gwei) पर = $0.25। 29 अक्टूबर 2026 जैसे उछाल (~29 gwei) में ~$53। बेस फीस के 1 gwei से नीचे आने का इंतज़ार करने पर लागत ~$1.82 तक सीमित रहती है।"
       ],
       checklist: [
         "अनुकूलन से पहले: 1) पिछले 30 दिनों के लेनदेन निर्यात करें। 2) तत्काल या गैर-तत्काल वर्गीकृत करें। 3) बैच करने योग्य लेनदेन पहचानें। 4) अपनी सामान्य गैस कीमत vs साप्ताहिक निम्न नोट करें।",
         "गणना के बाद: अपने इष्टतम थ्रेशोल्ड पर गैस मूल्य अलर्ट सेट करें।"
       ],
       mistakes: [
-        "सबसे महंगी गलती गैर-तत्काल लेनदेन के लिए 'तेज़' सेटिंग उपयोग करना है। 30–45 सेकंड प्रतीक्षा करने पर 50–70% कम लागत होती।",
+        "सबसे महंगी गलती गैर-तत्काल लेनदेन पर तय 'तेज़' टिप लगाना है। बेस फीस ~0.13 gwei होने पर 1–2 gwei की टिप लेनदेन को बेस फीस और सामान्य 0.01 gwei टिप के मुकाबले लगभग 8–15 गुना महंगा कर देती है।",
         "एक और गलती बैचिंग उपलब्ध होने पर कई छोटे लेनदेन करना है।"
       ],
       benchmarks: [
-        "Ethereum गैस पैटर्न: सप्ताह के दिन शिखर 14:00–18:00 UTC (15–25 gwei)। सप्ताहांत निम्न 04:00–10:00 UTC (5–12 gwei)। L2 नेटवर्क 10–50x सस्ते।",
-        "10 gwei पर लागत: ETH ट्रांसफर $0.50, DEX स्वैप $2–$5, जटिल DeFi $5–$15।"
+        "Ethereum गैस पैटर्न (17.11.2026 तक 28 दिन): बेस फीस का मीडियन 0.075 gwei; शिखर 15:00–17:00 UTC (0.23–0.34 gwei); निम्न 00:00–08:00 UTC (~0.045 gwei); वीकेंड पर कार्यदिवसों का लगभग आधा। सिर्फ़ 3% ब्लॉकों में बेस फीस 1 gwei से ऊपर गई, लेकिन 29–30 अक्टूबर का उछाल ~253 gwei तक पहुँचा। L2 पर ERC-20 ट्रांसफर $0.0001 से कम से ~$0.002 तक, जबकि mainnet पर ~$0.01।",
+        "0.14 gwei और ETH $1,820 पर लागत: ETH ट्रांसफर $0.005, DEX स्वैप $0.02–$0.05, जटिल DeFi $0.05–$0.16। ~29 gwei (29 अक्टूबर का उछाल) पर लगभग 200 से गुणा करें।"
       ],
       execution: [
-        "ऑप्टिमाइज़ेशन वर्कफ़्लो: 1) गैर-तत्काल लेनदेन की साप्ताहिक सूची बनाएं। 2) औसत से 30% नीचे गैस अलर्ट सेट करें। 3) अलर्ट ट्रिगर होने पर बैच निष्पादित करें। 4) पुनरावर्ती संचालन कम-गैस विंडो में शेड्यूल करें।",
-        "पावर उपयोगकर्ताओं के लिए: गैस-कुशल अनुबंध इंटरैक्शन लागू करें। पुनरावर्ती लेनदेन L2 पर माइग्रेट करने पर विचार करें।"
+        "ऑप्टिमाइज़ेशन वर्कफ़्लो: 1) गैर-तत्काल लेनदेन की सूची रखें। 2) टिप ख़ुद तय करें (नवंबर 2026 में 0.01–0.1 gwei काफ़ी थी)। 3) बेस फीस 1 gwei से ऊपर जाने पर अलर्ट सेट करें और तब तक गैर-ज़रूरी लेनदेन टालें। 4) पुनरावर्ती संचालन 00:00–08:00 UTC या वीकेंड पर शेड्यूल करें।",
+        "पावर उपयोगकर्ताओं के लिए: गैस-कुशल अनुबंध इंटरैक्शन लागू करें। बार-बार होने वाले लेनदेन L2 पर ले जाने से ERC-20 ट्रांसफर 80–93% सस्ता होता है, हालाँकि आज यह प्रति लेनदेन लगभग एक सेंट है।"
       ],
       hygiene: [
-        "गैस खर्च की मासिक समीक्षा करें। पोर्टफोलियो मूल्य का वार्षिक 2% से अधिक होने पर आप अधिक ट्रेड कर रहे हैं या अधिक भुगतान कर रहे हैं।",
+        "गैस खर्च की मासिक समीक्षा करें। 2026 के अंत की फीस पर अगर यह पोर्टफोलियो मूल्य के सालाना 1% से ज़्यादा है, तो आप छोटे बैलेंस से बहुत बार ट्रेड कर रहे हैं, ऊँची टिप दे रहे हैं या उछाल के समय लेनदेन कर रहे हैं।",
         "अपने गतिविधि शेड्यूल में पैटर्न पहचानने के लिए गैस मूल्य लॉग रखें।"
       ],
       validation: [
@@ -13180,30 +13180,30 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
     ru: {
       interpret: [
         "Калькулятор оптимизации газа показывает, сколько можно сэкономить на группировке операций: он сравнивает стоимость отправки транзакций по одной и пакетами через multicall, а Экономия от пакетирования — это разница в долларах и процентах. Тайминг и настройки газа он не моделирует, поэтому пересчитайте с более низкой Ценой газа (Gwei), чтобы увидеть, сколько даёт ожидание спокойного окна.",
-        "Из трёх рычагов экономии (тайминг, группировка и настройки) калькулятор считает только группировку. Для большинства тайминг захватывает 40–60% общей возможной экономии."
+        "Из трёх рычагов экономии (тайминг, группировка и настройки) калькулятор считает только группировку. При base fee около 0,1 gwei в конце 2026 года важнее всего настройки: если кошелёк добавляет фиксированные чаевые 1–2 gwei, именно они составляют большую часть платежа."
       ],
       scenarios: [
-        "Еженедельный DeFi-пользователь: 8 транзакций/неделю по 150 000 газа при 15 gwei. Текущие: ~$40/нед. Оптимизированные: ~$22 — экономия 45% или $936/год.",
-        "Минтер NFT: 5 минтов при 50 gwei = $115. Ожидание 2 часа (20 gwei) = $46. Экономия: $69 (60%)."
+        "Еженедельный DeFi-пользователь: 8 транзакций/неделю примерно по 150 000 газа, всего 1,2 млн газа. При 0,14 gwei и ETH $1 820: ~$0,31/нед. (~$16/год). С фиксированными чаевыми 2 gwei: ~$4,65/нед. ($242/год); снижение чаевых до ~0,05 gwei возвращает к ~$0,40/нед.",
+        "Минтер NFT: 5 минтов по 200 000 газа в обычный день (0,14 gwei) = $0,25. Во время скачка, как 29 октября 2026 года (~29 gwei), — ~$53. Если дождаться, пока base fee опустится ниже 1 gwei, расход не превысит ~$1,82."
       ],
       checklist: [
         "Перед оптимизацией: 1) Экспортируйте транзакции за 30 дней. 2) Разделите на срочные и несрочные. 3) Определите группируемые. 4) Сравните типичную цену газа с недельным минимумом.",
         "После: настройте оповещения о цене газа на оптимальном пороге."
       ],
       mistakes: [
-        "Самая дорогая ошибка — «быстрая» настройка для несрочных транзакций. Ожидание 30–45 секунд стоило бы на 50–70% меньше.",
+        "Самая дорогая ошибка — фиксированные «быстрые» чаевые для несрочных транзакций. При base fee ~0,13 gwei чаевые 1–2 gwei делают транзакцию примерно в 8–15 раз дороже, чем base fee плюс обычные чаевые 0,01 gwei.",
         "Другая ошибка — много мелких транзакций при доступности группировки."
       ],
       benchmarks: [
-        "Паттерны газа Ethereum: пики в будни 14:00–18:00 UTC (15–25 gwei). Минимумы выходных 04:00–10:00 UTC (5–12 gwei). L2 в 10–50 раз дешевле.",
-        "Стоимости при 10 gwei: перевод ETH $0,50, DEX swap $2–$5, сложный DeFi $5–$15."
+        "Паттерны газа Ethereum (28 дней до 17.11.2026): медианная base fee 0,075 gwei; пик в 15:00–17:00 UTC (0,23–0,34 gwei); минимум в 00:00–08:00 UTC (~0,045 gwei); в выходные примерно вдвое ниже, чем в будни. Лишь в 3% блоков base fee превышала 1 gwei, но скачок 29–30 октября дошёл до ~253 gwei. На L2 перевод ERC-20 стоит от менее $0,0001 до ~$0,002, на mainnet — ~$0,01.",
+        "Стоимость при 0,14 gwei и ETH $1 820: перевод ETH $0,005, DEX swap $0,02–$0,05, сложный DeFi $0,05–$0,16. При ~29 gwei (скачок 29 октября) умножайте примерно на 200."
       ],
       execution: [
-        "Процесс: 1) Еженедельный список несрочных транзакций. 2) Оповещение на 30% ниже средней цены. 3) Выполнить пакет при срабатывании. 4) Планировать регулярные операции на окна низкого газа.",
-        "Для продвинутых: газ-эффективные взаимодействия. Рассмотрите перенос регулярных транзакций на L2."
+        "Процесс: 1) Ведите список несрочных транзакций. 2) Задавайте чаевые вручную (в ноябре 2026 года хватало 0,01–0,1 gwei). 3) Настройте оповещение о base fee выше 1 gwei и откладывайте несрочное, пока оно горит. 4) Планируйте регулярные операции на 00:00–08:00 UTC или выходные.",
+        "Для продвинутых: газ-эффективные взаимодействия. Перенос частых операций на L2 удешевляет перевод ERC-20 на 80–93%, хотя сегодня это около цента на транзакцию."
       ],
       hygiene: [
-        "Ежемесячно проверяйте расходы на газ. Если >2% портфеля в год — вы переторговываете или переплачиваете.",
+        "Ежемесячно проверяйте расходы на газ. При комиссиях конца 2026 года больше 1% портфеля в год означает, что вы слишком часто торгуете небольшим балансом, платите высокие чаевые или отправляете транзакции во время скачков.",
         "Ведите журнал цен газа для выявления паттернов в вашем расписании."
       ],
       validation: [

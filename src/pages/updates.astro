@@ -41,6 +41,20 @@ const webPageSchema = {
         <div class="update-date">
           <time datetime="2026-11-17">November 17, 2026</time>
         </div>
+        <h2>Gas Optimization Calculator Rebuilt for Today's Low Ethereum Fees</h2>
+        <p>Ethereum fees have fallen far below what this page assumed. It was built on gas prices of 10–50 gwei and ETH at $2,400; on November 17 the base fee was about 0.13 gwei and ETH about $1,820. We measured the network ourselves and rewrote the calculator's defaults and every figure on the page, in all six languages:</p>
+        <ul>
+          <li><strong>Defaults:</strong> the gas price is now 0.14 gwei (base fee plus a typical tip) and ETH $1,820, with the measurement date shown under the field. A simple transfer costs about $0.005 and a 150,000-gas swap about $0.04, instead of the dollars quoted before.</li>
+          <li><strong>When gas is cheapest:</strong> over the last 28 days, weekends ran at about half the weekday fee and nights (00:00–08:00 UTC) were the quietest, but the difference is now fractions of a cent. Waiting still pays during spikes such as October 29, when the base fee reached about 253 gwei.</li>
+          <li><strong>The setting that matters most:</strong> many wallets still add a fixed 1–2 gwei tip, which makes a transfer 8–15 times more expensive than it needs to be. The FAQ explains what to set instead.</li>
+          <li><strong>Batching and L2 costs:</strong> the batching examples, the L2 comparison (from real transfers on Arbitrum, Base, Optimism, zkSync and Polygon) and the cost tables are recalculated. Claims of saving hundreds of dollars a month are gone: at today's fees they no longer hold.</li>
+        </ul>
+        <p>Gas fees change from block to block, so enter the price your wallet shows. All figures are estimates for general information, not financial advice.</p>
+      </article>
+      <article class="update-entry">
+        <div class="update-date">
+          <time datetime="2026-11-17">November 17, 2026</time>
+        </div>
         <h2>Third Accuracy Check: Inflation, Market Indicators, Staking and DePIN</h2>
         <p>We checked twenty more calculators line by line against live data and official statistics. Several were still built on 2025 or May 2026 figures, and one had a calculation error:</p>
         <ul>

@@ -320,7 +320,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'gas-optimization-calculator': {
       title: 'Gas Optimization Calculator',
-      description: 'Free Gas Optimization Calculator. Find the cheapest time to transact on Ethereum and L2s. Compare gas costs by hour, batch transactions, and save on fees.'
+      description: 'Free Gas Optimization Calculator. Compare what Ethereum transactions cost sent one by one versus batched, and find the gas price that keeps a tx under $1.'
     },
     'governance-voting-calculator': {
       title: 'Governance Voting Calculator',
@@ -834,7 +834,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'gas-optimization-calculator': {
       title: 'Calculadora de Optimización de Gas',
-      description: 'Calculadora de Optimización de Gas gratuita. Encuentra la hora más económica para operar en Ethereum y L2. Compara costes por hora y ahorra en comisiones.'
+      description: 'Calculadora de Optimización de Gas gratuita. Compara el coste de transacciones de Ethereum una a una o en lotes y el precio del gas para pagar menos de $1.'
     },
     'governance-voting-calculator': {
       title: 'Calculadora de Votación de Gobernanza',
@@ -1348,7 +1348,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'gas-optimization-calculator': {
       title: 'Calculadora de Otimização de Gas',
-      description: 'Calculadora de Otimização de Gas gratuita. Encontre o horário mais barato para transacionar no Ethereum e L2s. Compare custos por hora e economize em taxas.'
+      description: 'Calculadora de Otimização de Gas gratuita. Compare o custo de transações Ethereum uma a uma ou em lotes e o preço do gas para pagar menos de $1 por tx.'
     },
     'governance-voting-calculator': {
       title: 'Calculadora de Votação de Governança',
@@ -1862,7 +1862,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'gas-optimization-calculator': {
       title: 'Gas Optimizasyon Hesaplayıcı',
-      description: 'Ücretsiz Gas Optimizasyon Hesaplayıcı. Ethereum ve L2lerde en ucuz işlem saatini bulun. Saatlik gas maliyetlerini karşılaştırın ve ücretlerden tasarruf edin.'
+      description: 'Ücretsiz Gas Optimizasyon Hesaplayıcı. Ethereum işlemlerini tek tek ve toplu göndermenin maliyetini karşılaştırın, işlem başına $1 altı gas fiyatını bulun.'
     },
     'governance-voting-calculator': {
       title: 'Yönetişim Oylama Hesaplayıcı',
@@ -2376,7 +2376,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'gas-optimization-calculator': {
       title: 'गैस ऑप्टिमाइज़ेशन कैलकुलेटर',
-      description: 'मुफ्त गैस ऑप्टिमाइज़ेशन कैलकुलेटर। Ethereum और L2 पर सबसे सस्ते लेनदेन समय का पता लगाएं। घंटे के अनुसार गैस लागत तुलना करें और बचत करें।'
+      description: 'मुफ्त गैस ऑप्टिमाइज़ेशन कैलकुलेटर। Ethereum लेनदेन एक-एक करके और बैच में भेजने की लागत की तुलना करें और $1 से कम प्रति tx वाला गैस मूल्य जानें।'
     },
     'governance-voting-calculator': {
       title: 'गवर्नेंस वोटिंग कैलकुलेटर',
@@ -2890,7 +2890,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'gas-optimization-calculator': {
       title: 'Калькулятор оптимизации газа',
-      description: 'Бесплатный калькулятор оптимизации газа. Найдите самое дешёвое время для транзакций в Ethereum и L2. Сравните стоимость газа по часам и экономьте.'
+      description: 'Бесплатный калькулятор оптимизации газа. Сравните стоимость транзакций Ethereum по одной и пакетом и узнайте цену газа, при которой tx дешевле $1.'
     },
     'governance-voting-calculator': {
       title: 'Калькулятор голосования DAO',

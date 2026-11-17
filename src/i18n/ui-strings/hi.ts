@@ -2546,6 +2546,7 @@ const dict: Record<string, string> = {
   'saved': 'बचत',
   'Enter transaction details to compare individual vs. batched gas costs and find optimal strategies.': 'व्यक्तिगत बनाम बैच गैस लागत की तुलना और इष्टतम रणनीतियां खोजने के लिए लेनदेन विवरण दर्ज करें।',
   'Batching savings assume multicall-style contracts. Actual savings vary by contract and network conditions. Base overhead is ~30K gas per batch.': 'बैचिंग बचत मल्टीकॉल-शैली कॉन्ट्रैक्ट मानती है। वास्तविक बचत कॉन्ट्रैक्ट और नेटवर्क स्थितियों के अनुसार भिन्न होती है। बेस ओवरहेड ~30K गैस प्रति बैच है।',
+  'Defaults measured on 17 Nov 2026: 0.14 Gwei (base fee ~0.13 + tip ~0.01) and ETH at $1,820. Enter the gas price your wallet shows now.': 'डिफ़ॉल्ट मान 17 नवंबर 2026 को मापे गए: 0.14 Gwei (बेस फीस ~0.13 + टिप ~0.01) और ETH $1,820। अपना वॉलेट अभी जो गैस प्राइस दिखा रहा है, वह दर्ज करें।',
   'Auto-calculates as you type. Compare gas costs between individual transactions and batched strategies.': 'टाइप करते समय ऑटो-गणना। व्यक्तिगत लेनदेन और बैच रणनीतियों के बीच गैस लागत की तुलना करें।',
   'Simple Transfers': 'सरल ट्रांसफर',
   'DeFi Swaps (150K gas)': 'DeFi स्वैप (150K गैस)',

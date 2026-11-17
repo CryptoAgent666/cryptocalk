@@ -2598,6 +2598,7 @@ const dict: Record<string, string> = {
   'Auto-calculates as you type. Compare gas costs between individual transactions and batched strategies.': 'Yazarken otomatik hesaplar. Bireysel işlemler ile yığınlanmış stratejiler arasındaki gas maliyetlerini karşılaştırın.',
   'Enter transaction details to compare individual vs. batched gas costs and find optimal strategies.': 'Bireysel ve yığınlanmış gas maliyetlerini karşılaştırmak ve optimal stratejileri bulmak için işlem detaylarını girin.',
   'Batching savings assume multicall-style contracts. Actual savings vary by contract and network conditions. Base overhead is ~30K gas per batch.': 'Yığınlama tasarrufları multicall tarzı sözleşmeleri varsayar. Gerçek tasarruflar sözleşmeye ve ağ koşullarına göre değişir. Temel ek yük yığın başına ~30K gas\'tır.',
+  'Defaults measured on 17 Nov 2026: 0.14 Gwei (base fee ~0.13 + tip ~0.01) and ETH at $1,820. Enter the gas price your wallet shows now.': 'Varsayılanlar 17 Kasım 2026\'da ölçüldü: 0,14 Gwei (taban ücret ~0,13 + bahşiş ~0,01) ve ETH $1.820. Cüzdanınızın şu an gösterdiği gas fiyatını girin.',
 
   // --- DefiYieldAggregatorCalculator ---
   'APY %': 'APY %',

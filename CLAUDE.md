@@ -32,6 +32,19 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
      `MiningRoiCalculator`, `ValidatorCalculator`, `StockToFlowCalculator`, `DustAttackCalculator`,
      `StakingRewardsCalculator` (block reward, halving schedule, 21M supply, 32-ETH validator, dust 546).
 
+### Gas optimization 2026-11-17 — переписан под суб-гвей газ, в main, НЕ задеплоено
+- Пресеты `GasOptimizationCalculator.tsx`: 15 gwei / ETH $2 400 → **0,14 gwei / $1 820** (base 0,131 + tip 0,013, eth_feeHistory
+  1 025 блоков; ETH Coinbase/Kraken $1 818) + датированная подсказка под полем (новый ui-string × 5). Логика не менялась.
+- Вся проза/FAQ/meta 6 языков пересчитана (gas × gwei × ETH). Замер 28 дней до 17.11 (201 728 блоков, drpc): медиана base fee
+  **0,075 gwei**, выходные ≈ вдвое ниже будней (0,049/0,094), 00–08 UTC ~0,045 vs 15–17 UTC 0,23–0,34; >1 gwei — 3% блоков;
+  **скачок 29.10 ~20:40 → 30.10 ~03:40 UTC, медиана ~29, пик 252,8 gwei**. Методика: feeHistory окнами по 1024 блока
+  (publicnode режет 403 после 3 запросов — брать eth.drpc.org).
+- 🔑 Главный рычаг теперь — чаевые: в 25 блоках ~¾ отправителей простых ETH-переводов платили tip ≥1 gwei (переплата 8–15×).
+  L2 по квитанциям ERC-20: Arbitrum ~$0,002, Base ~$0,0007, OP ~$0,0001, zkSync ~$0,01, Polygon ~$0,001; L1 ~$0,01.
+- Meta description врал «сравнение по часам» (калькулятор этого не делает) → переписан. Ссылка «Ethereum L1» → /mining-calculator/ убрана.
+- ⚠️ PT-FAQ этого слага переписан С диакритикой; ветка `claude/intelligent-saha-84ba83` (диакритика, не в main) правит тот
+  же блок — при её мерже брать ответы из main.
+
 ### CalkCheck #3 2026-11-17 (ещё 20 страниц) — исправлено в main, НЕ задеплоено
 Отчёт `AUDIT-2026-11-17.md`. Сборка 1294 стр., экранированной разметки 0, ключ в 28 чанках; виджеты pump.fun / inflation /
 DePIN / rainbow проверены в браузере на локальной сборке.

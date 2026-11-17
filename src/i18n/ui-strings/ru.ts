@@ -2575,6 +2575,7 @@ const dict: Record<string, string> = {
   'Auto-calculates as you type. Compare gas costs between individual transactions and batched strategies.': 'Авторасчёт при вводе. Сравните стоимость газа между индивидуальными транзакциями и пакетными стратегиями.',
   'Enter transaction details to compare individual vs. batched gas costs and find optimal strategies.': 'Введите данные транзакций для сравнения индивидуальных и пакетных затрат на газ и поиска оптимальных стратегий.',
   'Batching savings assume multicall-style contracts. Actual savings vary by contract and network conditions. Base overhead is ~30K gas per batch.': 'Экономия от пакетирования предполагает контракты типа multicall. Фактическая экономия зависит от контракта и условий сети. Базовые накладные расходы ~30K газа на пакет.',
+  'Defaults measured on 17 Nov 2026: 0.14 Gwei (base fee ~0.13 + tip ~0.01) and ETH at $1,820. Enter the gas price your wallet shows now.': 'Значения по умолчанию измерены 17 ноября 2026: 0,14 Gwei (base fee ~0,13 + чаевые ~0,01) и ETH $1 820. Введите цену газа, которую сейчас показывает ваш кошелёк.',
 
   // --- GovernanceVotingCalculator ---
   'Analyze Governance Power': 'Анализ силы управления',
