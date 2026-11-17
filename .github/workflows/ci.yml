@@ -18,9 +18,9 @@ jobs:
       # The Astro build loads ~8 MB of i18n content modules for ~1300 pages.
       NODE_OPTIONS: --max-old-space-size=4096
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
