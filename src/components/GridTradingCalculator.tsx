@@ -5,11 +5,13 @@ import { withErrorBoundary } from './ErrorBoundary';
 import { fmtPctValue } from '../i18n/format';
 
 const GRID_COUNT_PRESETS = [10, 20, 50, 100];
+// Ranges sit around spot on 17 Nov 2026 (Binance/CoinGecko): BTC ~$65,000, ETH ~$1,815, SOL ~$72.
+// Until then they were 80–90k / 2,000–4,000 / 100–250, i.e. every preset sat entirely above the market.
 const SCENARIOS = [
   {
     label: 'BTC Tight Range',
-    upperPrice: '90000',
-    lowerPrice: '80000',
+    upperPrice: '70000',
+    lowerPrice: '60000',
     gridCount: '20',
     investment: '10000',
     gridType: 'arithmetic' as const,
@@ -18,8 +20,8 @@ const SCENARIOS = [
   },
   {
     label: 'ETH Wide Swing',
-    upperPrice: '4000',
-    lowerPrice: '2000',
+    upperPrice: '2400',
+    lowerPrice: '1200',
     gridCount: '50',
     investment: '5000',
     gridType: 'arithmetic' as const,
@@ -28,8 +30,8 @@ const SCENARIOS = [
   },
   {
     label: 'SOL Volatile',
-    upperPrice: '250',
-    lowerPrice: '100',
+    upperPrice: '100',
+    lowerPrice: '40',
     gridCount: '30',
     investment: '3000',
     gridType: 'geometric' as const,
@@ -49,8 +51,8 @@ function GridTradingCalculator({ lang = 'en' }: { lang?: string }) {
       minimumFractionDigits: digits, maximumFractionDigits: digits,
     }).format(value);
 
-  const [upperPrice, setUpperPrice] = useState('90000');
-  const [lowerPrice, setLowerPrice] = useState('80000');
+  const [upperPrice, setUpperPrice] = useState('70000');
+  const [lowerPrice, setLowerPrice] = useState('60000');
   const [gridCount, setGridCount] = useState('20');
   const [investment, setInvestment] = useState('10000');
   const [gridType, setGridType] = useState<'arithmetic' | 'geometric'>('arithmetic');
@@ -112,7 +114,7 @@ function GridTradingCalculator({ lang = 'en' }: { lang?: string }) {
   }, [upperPrice, lowerPrice, gridCount, investment, gridType, tradingFee, volatility]);
 
   const reset = () => {
-    setUpperPrice('90000'); setLowerPrice('80000'); setGridCount('20');
+    setUpperPrice('70000'); setLowerPrice('60000'); setGridCount('20');
     setInvestment('10000'); setGridType('arithmetic'); setTradingFee('0.1');
     setVolatility('60');
   };

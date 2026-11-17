@@ -5904,7 +5904,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'grid-trading-calculator': {
     en: {
-      quickAnswer: 'Configure grid trading bot parameters: price range, grid count, and investment amount. A 20-grid bot on BTC between $70,000–$85,000 with $10,000 capital places orders every $750 apart, earning ~0.5–2% per grid fill in a ranging market.',
+      quickAnswer: 'Configure grid trading bot parameters: price range, grid count, and investment amount. A 20-grid bot on BTC between $60,000 and $70,000 (around the November 2026 price of ~$65,000) with $10,000 capital places orders $500 apart; each completed grid earns about $3.84 after 0.1% fees, or 0.77% of the $500 behind it, and all 20 grids together about $77.',
       how: [
         `The Grid Trading Calculator helps you configure an automated grid bot by computing order spacing, capital per grid level, and projected returns in a range-bound market. Enter the upper and lower price bounds, number of grid levels, and total capital, the tool lists the grid price levels (the first ten, plus a count of the rest), the investment per grid and the profit per grid when a buy-then-sell cycle completes.`,
         `Grid trading profits from sideways volatility by placing staggered buy and sell orders across a price range. Each completed grid cycle captures the price difference as profit. The calculator models arithmetic (equal spacing) and geometric (percentage spacing) grids, and projects annualized returns based on historical volatility and fill frequency estimates.`
@@ -5915,7 +5915,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Configura los parámetros de un bot de grid trading: rango de precios, cantidad de grids e inversión. Un bot de 20 grids en BTC entre $70.000–$85.000 con $10.000 coloca órdenes cada $750, generando ~0,5–2% por ejecución en mercado lateral.',
+      quickAnswer: 'Configura los parámetros de un bot de grid trading: rango de precios, cantidad de grids e inversión. Un bot de 20 grids en BTC entre $60.000 y $70.000 (en torno al precio de ~$65.000 de noviembre de 2026) con $10.000 coloca órdenes cada $500; cada grid completado gana unos $3,84 tras comisiones del 0,1%, el 0,77% de los $500 asignados, y los 20 grids juntos unos $77.',
       how: [
         `La Calculadora de Grid Trading ayuda a configurar un bot automatizado calculando el espaciado de órdenes, capital por nivel y rendimientos proyectados en mercados laterales. Introduce los límites superior e inferior de precio, el número de niveles y el capital total — la herramienta lista los niveles de precio de la grilla (los diez primeros y cuántos quedan), la inversión por grid y el beneficio por ciclo completado.`,
         `El grid trading genera beneficios de la volatilidad lateral colocando órdenes escalonadas de compra y venta. Cada ciclo completado captura la diferencia de precio como ganancia. La calculadora modela grids aritméticos y geométricos, y proyecta retornos anualizados basados en volatilidad histórica.`
@@ -5926,7 +5926,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Configure parâmetros de grid trading: faixa de preço, número de grids e valor investido. Um bot de 20 grids no BTC entre $70.000–$85.000 com $10.000 coloca ordens a cada $750, gerando ~0,5–2% por execução em mercado lateral.',
+      quickAnswer: 'Configure parâmetros de grid trading: faixa de preço, número de grids e valor investido. Um bot de 20 grids no BTC entre $60.000 e $70.000 (em torno do preço de ~$65.000 de novembro de 2026) com $10.000 coloca ordens a cada $500; cada grid completado rende cerca de $3,84 após taxas de 0,1%, 0,77% dos $500 alocados, e os 20 grids juntos cerca de $77.',
       how: [
         `A Calculadora de Grid Trading ajuda a configurar um bot automatizado calculando o espaçamento de ordens, capital por nível e retornos projetados em mercado lateral. Insira os limites superior e inferior de preço, número de níveis de grid e capital total — a ferramenta lista os níveis de preço da grade (os dez primeiros e quantos restam), o investimento por grid e o lucro por ciclo completado.`,
         `Grid trading lucra com volatilidade lateral colocando ordens escalonadas de compra e venda. Cada ciclo completado captura a diferença de preço como lucro. A calculadora modela grids aritméticos e geométricos, e projeta retornos anualizados baseados em volatilidade histórica.`
@@ -5937,7 +5937,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Grid trading bot parametrelerini yapılandırın: fiyat aralığı, grid sayısı ve yatırım tutarı. $70.000–$85.000 arasında 20 gridli BTC botu $10.000 sermayeyle her $750\'de emir yerleştirerek yatay piyasada grid başına ~%0,5–2 kazanır.',
+      quickAnswer: 'Grid trading bot parametrelerini yapılandırın: fiyat aralığı, grid sayısı ve yatırım tutarı. $60.000 ile $70.000 arasında (Kasım 2026 fiyatı ~$65.000 civarı) 20 gridli BTC botu $10.000 sermayeyle her $500\'de emir yerleştirir; tamamlanan her grid %0,1 komisyon sonrası yaklaşık $3,84, yani ayrılan $500\'ün %0,77\'sini kazandırır, 20 gridin tamamı ise yaklaşık $77.',
       how: [
         `Grid Trading Hesaplayıcısı, emir aralığını, grid seviyesi başına sermayeyi ve yatay piyasada öngörülen getirileri hesaplayarak otomatik grid bot yapılandırmanıza yardımcı olur. Üst ve alt fiyat sınırlarını, grid sayısını ve toplam sermayeyi girin — araç ızgara fiyat seviyelerini (ilk onunu ve kalanların sayısını), grid başına yatırımı ve alım-satım döngüsü tamamlandığında grid başına kârı gösterir.`,
         `Grid trading, bir fiyat aralığında kademeli alım-satım emirleri yerleştirerek yatay oynaklıktan kâr eder. Her tamamlanan grid döngüsü fiyat farkını kâr olarak yakalar. Hesaplayıcı aritmetik ve geometrik gridleri modeller ve tarihsel oynaklığa dayalı yıllık getiri projeksiyonu yapar.`
@@ -5948,7 +5948,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'ग्रिड ट्रेडिंग बॉट पैरामीटर कॉन्फिगर करें: प्राइस रेंज, ग्रिड काउंट और इन्वेस्टमेंट अमाउंट। $70,000–$85,000 के बीच 20-ग्रिड BTC बॉट $10,000 कैपिटल के साथ हर $750 पर ऑर्डर लगाता है और रेंजिंग मार्केट में प्रति ग्रिड ~0.5–2% कमाता है।',
+      quickAnswer: 'ग्रिड ट्रेडिंग बॉट पैरामीटर कॉन्फिगर करें: प्राइस रेंज, ग्रिड काउंट और इन्वेस्टमेंट अमाउंट। $60,000 और $70,000 के बीच (नवंबर 2026 के ~$65,000 मूल्य के आसपास) 20-ग्रिड BTC बॉट $10,000 कैपिटल के साथ हर $500 पर ऑर्डर लगाता है; हर पूरा ग्रिड 0.1% फ़ीस के बाद लगभग $3.84 कमाता है, यानी उसके $500 का 0.77%, और सभी 20 ग्रिड मिलाकर लगभग $77।',
       how: [
         `ग्रिड ट्रेडिंग कैलकुलेटर ऑर्डर स्पेसिंग, प्रति ग्रिड लेवल कैपिटल और रेंज-बाउंड मार्केट में प्रोजेक्टेड रिटर्न कैलकुलेट करके ऑटोमेटेड ग्रिड बॉट कॉन्फिगर करने में मदद करता है। अपर और लोअर प्राइस बाउंड, ग्रिड लेवल की संख्या और टोटल कैपिटल दर्ज करें।`,
         `ग्रिड ट्रेडिंग प्राइस रेंज में स्टैगर्ड बाय-सेल ऑर्डर लगाकर साइडवेज वोलैटिलिटी से प्रॉफिट करती है। हर कम्प्लीटेड ग्रिड साइकल प्राइस डिफरेंस को प्रॉफिट के रूप में कैप्चर करता है। कैलकुलेटर अरिथमेटिक और जियोमेट्रिक ग्रिड मॉडल करता है।`
@@ -5959,7 +5959,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Настройте параметры грид-бота: ценовой диапазон, количество уровней и сумму инвестиции. 20-уровневый бот на BTC от $70 000 до $85 000 с капиталом $10 000 размещает ордера каждые $750, зарабатывая ~0,5–2% за каждое срабатывание в боковом рынке.',
+      quickAnswer: 'Настройте параметры грид-бота: ценовой диапазон, количество уровней и сумму инвестиции. 20-уровневый бот на BTC от $60 000 до $70 000 (вокруг цены ~$65 000 в ноябре 2026) с капиталом $10 000 размещает ордера каждые $500; каждый отработавший грид приносит около $3,84 после комиссий 0,1%, то есть 0,77% от выделенных на него $500, а все 20 гридов вместе — около $77.',
       how: [
         `Калькулятор грид-трейдинга помогает настроить автоматического бота, рассчитывая интервал ордеров, капитал на каждый уровень и прогнозируемую доходность в боковом рынке. Введите верхнюю и нижнюю границы цены, количество уровней и общий капитал — инструмент покажет ценовые уровни сетки (первые десять и сколько осталось), инвестицию на сетку и прибыль за завершённый цикл.`,
         `Грид-трейдинг извлекает прибыль из бокового движения, размещая ступенчатые ордера на покупку и продажу. Каждый завершённый цикл фиксирует ценовую разницу как прибыль. Калькулятор моделирует арифметические и геометрические сетки и проецирует годовую доходность на основе исторической волатильности.`

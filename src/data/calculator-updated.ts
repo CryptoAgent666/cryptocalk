@@ -14,6 +14,9 @@
 // 2026-11-17 (calkcheck #3): market-cap-comparator, inflation-hedge, millionaire-calculator, rainbow-chart-calculator, mayer-multiple-calculator, stock-to-flow-calculator, liquid-staking-calculator, lending-calculator, depin-earnings-calculator, electricity-cost-calculator, pumpfun-bonding-curve-calculator, market-cap-calculator, looping-yield-calculator, validator-calculator, on-chain-metrics-calculator
 // moved to 2026-11-17 after a data-currency pass changed their rendered figures (live CPI, token prices, staking
 // yields, Mayer history from CryptoCompare closes, pump.fun graduation fixed in SOL).
+// 2026-11-17 (grid presets): grid-trading-calculator moved to 2026-11-17 — default range and the BTC/ETH/SOL
+// presets sat entirely above the market (80–90k, 2,000–4,000, 100–250); now 60–70k / 1,200–2,400 / 40–100, with the
+// quick-answer example recomputed from the component formula in 6 languages.
 // 2026-11-17 (BTC snapshot sweep): converter, satoshi-converter, bitcoin-unit-converter, options-calculator,
 // reverse-roi, futures-basis-calculator, lightning-network-fee-calculator, leverage-calculator, loan-calculator,
 // portfolio-calculator, crypto-inheritance-calculator, pip-calculator (+ salary-calculator, already dated) moved to
@@ -130,7 +133,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "geometric-mean-return-calculator": "2026-10-13",
   "governance-voting-calculator": "2026-10-13",
   "gpu-mining-calculator": "2026-11-17",
-  "grid-trading-calculator": "2026-10-13",
+  "grid-trading-calculator": "2026-11-17",
   "gwei-converter": "2026-10-13",
   "halving-calculator": "2026-10-13",
   "hashrate-converter": "2026-10-13",
