@@ -452,7 +452,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'pumpfun-bonding-curve-calculator': {
       title: 'Pump.fun Bonding Curve Calculator',
-      description: 'Free Pump.fun bonding curve calculator. Calculate tokens received per SOL invested, slippage, and distance to $69K graduation to Raydium DEX.'
+      description: 'Free Pump.fun bonding curve calculator. Calculate tokens received per SOL invested, slippage, and distance to graduation (~85 SOL) and migration to PumpSwap.'
     },
     'profit-factor-calculator': {
       title: 'Profit Factor Calculator',
@@ -966,7 +966,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'pumpfun-bonding-curve-calculator': {
       title: 'Calculadora de Curva Bonding de Pump.fun',
-      description: 'Calculadora de curva bonding de Pump.fun: tokens recibidos por SOL invertido, slippage y distancia hasta los $69K para graduarse a Raydium.'
+      description: 'Calculadora de curva bonding de Pump.fun: tokens recibidos por SOL invertido, slippage y distancia hasta la graduación (~85 SOL) a PumpSwap.'
     },
     'profit-factor-calculator': {
       title: 'Calculadora de Factor de Beneficio',
@@ -1480,7 +1480,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'pumpfun-bonding-curve-calculator': {
       title: 'Calculadora de Curva Bonding do Pump.fun',
-      description: 'Calculadora da curva bonding do Pump.fun: tokens recebidos por SOL investido, slippage e distância para os $69K para graduar para Raydium.'
+      description: 'Calculadora da curva bonding do Pump.fun: tokens recebidos por SOL investido, slippage e distância até a graduação (~85 SOL) para a PumpSwap.'
     },
     'profit-factor-calculator': {
       title: 'Calculadora de Fator de Lucro',
@@ -1994,7 +1994,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'pumpfun-bonding-curve-calculator': {
       title: 'Pump.fun Bonding Eğrisi Hesaplayıcı',
-      description: 'Pump.fun bonding eğrisi: yatırılan SOL başına alınan token, slippage ve Raydium\'a geçiş için $69K\'ya kalan mesafe.'
+      description: 'Pump.fun bonding eğrisi: yatırılan SOL başına alınan token, slippage ve PumpSwap\'a geçiş için (~85 SOL) kalan mesafe.'
     },
     'profit-factor-calculator': {
       title: 'Kâr Faktörü Hesaplayıcı',
@@ -2508,7 +2508,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'pumpfun-bonding-curve-calculator': {
       title: 'Pump.fun बॉन्डिंग कर्व कैलकुलेटर',
-      description: 'Pump.fun बॉन्डिंग कर्व: निवेशित SOL प्रति प्राप्त टोकन, स्लिपेज और Raydium पर ग्रेजुएट होने तक $69K की दूरी।'
+      description: 'Pump.fun बॉन्डिंग कर्व: निवेशित SOL प्रति प्राप्त टोकन, स्लिपेज और PumpSwap पर ग्रेजुएशन (~85 SOL) तक की दूरी।'
     },
     'profit-factor-calculator': {
       title: 'प्रॉफिट फैक्टर कैलकुलेटर',
@@ -3022,7 +3022,7 @@ export const CALCULATOR_META: Record<Lang, Record<SpecCalculatorSlug, { title: s
     },
     'pumpfun-bonding-curve-calculator': {
       title: 'Калькулятор бондинг-кривой Pump.fun',
-      description: 'Бондинг-кривая Pump.fun: токенов на инвестированный SOL, проскальзывание и расстояние до $69K для перехода на Raydium.'
+      description: 'Бондинг-кривая Pump.fun: токенов на инвестированный SOL, проскальзывание и расстояние до выхода с кривой (~85 SOL) на PumpSwap.'
     },
     'profit-factor-calculator': {
       title: 'Калькулятор фактора прибыли',

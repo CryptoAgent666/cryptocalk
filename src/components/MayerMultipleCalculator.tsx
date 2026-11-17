@@ -157,7 +157,7 @@ function MayerMultipleCalculator({ lang = 'en' }: { lang?: string }) {
               </div>
 
               <p className="calc-disclaimer"><Info size={14} />
-                {getUiString(lang, 'Mayer Multiple is a historical indicator. Only ~18% of days BTC closed above 2.4×; ~22% below 1.0×. Not a guarantee — combine with other signals.')}
+                {getUiString(lang, 'Mayer Multiple is a historical indicator. Since 2011 BTC closed above 2.4× on only ~6% of days and below 1.0× on ~37%. Not a guarantee — combine with other signals.')}
               </p>
             </>
           ) : (

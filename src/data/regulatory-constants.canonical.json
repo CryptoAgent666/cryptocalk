@@ -2097,7 +2097,7 @@
       "id": "ValidatorCalculator__NETWORKS.*.defaultApy / defaultPrice",
       "calculator": "ValidatorCalculator",
       "key": "NETWORKS.*.defaultApy / defaultPrice",
-      "value": "ETH 2.8%, SOL 6.8%, DOT 13%, ATOM 17%, AVAX 6.5% APY; prices 2400/140/5/7/28",
+      "value": "ETH 2.8%, SOL 6.8%, DOT 13%, ATOM 17%, AVAX 6.5% APY; prices 1815/71.5/0.73/1.32/7.1",
       "unit": "% APY / USD",
       "jurisdiction": "",
       "law": "Staking yields + market price (market)",
@@ -2106,11 +2106,11 @@
       "surfaces": [
         "src/components/ValidatorCalculator.tsx:19-23"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-11-17",
       "source_hint": "Live staking dashboards (e.g. stakingrewards.com) + CoinGecko.",
       "conflict": false,
       "status": "unverified",
-      "notes": "Default staking APYs and token prices ('Yields updated 2026-05-03'). Yields float with network participation; prices are market. is_regulatory=false."
+      "notes": "Default staking APYs and token prices ('Yields updated 2026-05-03'). Yields float with network participation; prices are market. is_regulatory=false. | 2026-11-17: prices refreshed from CoinGecko (ETH 1,814, SOL 71.47, DOT 0.728, ATOM 1.32, AVAX 7.08); APYs unchanged."
     },
     {
       "id": "ValidatorCalculator__NETWORKS.cosmos.minStake",

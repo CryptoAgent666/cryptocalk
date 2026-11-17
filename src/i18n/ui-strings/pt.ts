@@ -1445,7 +1445,7 @@ const dict: Record<string, string> = {
   'Asset name': 'Nome do ativo',
   'Assets': 'Ativos',
   'Assumed Monthly Return for Recovery (%)': 'Retorno mensal assumido para recuperação (%)',
-  'Assumptions: BTC 50%, ETH 40%, USDC Yield 8%, Gold 8%, S&P 500 10% (annual)': 'Premissas: BTC 50%, ETH 40%, USDC Yield 8%, Ouro 8%, S&P 500 10% (anual)',
+  'Assumptions: BTC 50%, ETH 40%, USDC Yield 4%, Gold 8%, S&P 500 10% (annual)': 'Premissas: BTC 50%, ETH 40%, USDC Yield 4%, Ouro 8%, S&P 500 10% (anual)',
   'Auto-calculates as you type. Add position size to get USD risk/profit.': 'Calcula automaticamente. Adicione o tamanho da posição para ver risco/lucro em USD.',
   'Auto-calculates as you type. Test multiple price-ratio scenarios to see when fee APR can or cannot offset impermanent loss.': 'Calcula automaticamente. Teste vários cenários de razão de preço para ver quando o APR de taxas pode ou não compensar a perda impermanente.',
   'Auto-updates as you type. Fees are included in break-even price.': 'Atualiza automaticamente. As taxas estão incluídas no preço de equilíbrio.',
@@ -2628,7 +2628,7 @@ const dict: Record<string, string> = {
   '200-Day Moving Average': 'Média Móvel de 200 Dias',
   'Mayer Multiple': 'Múltiplo de Mayer',
   'Mayer Multiple = current price / 200-day moving average. Above 2.4 historically signals overbought; below 1.0 is undervalued.': 'Múltiplo de Mayer = preço atual / média móvel de 200 dias. Acima de 2,4 historicamente sinaliza sobrecompra; abaixo de 1,0 indica subvalorização.',
-  'Mayer Multiple is a historical indicator. Only ~18% of days BTC closed above 2.4×; ~22% below 1.0×. Not a guarantee — combine with other signals.': 'O Múltiplo de Mayer é um indicador histórico. Apenas ~18% dos dias o BTC fechou acima de 2,4×; ~22% abaixo de 1,0×. Não é garantia — combine com outros sinais.',
+  'Mayer Multiple is a historical indicator. Since 2011 BTC closed above 2.4× on only ~6% of days and below 1.0× on ~37%. Not a guarantee — combine with other signals.': 'O Múltiplo de Mayer é um indicador histórico. Desde 2011 o BTC fechou acima de 2,4× em apenas ~6% dos dias e abaixo de 1,0× em ~37%. Não é garantia — combine com outros sinais.',
   'Provide current BTC price and 200-day moving average.': 'Forneça o preço atual do BTC e a média móvel de 200 dias.',
   'Current Spot Price': 'Preço Spot Atual',
   'Price vs 200d MA': 'Preço vs MA 200d',
@@ -2655,7 +2655,7 @@ const dict: Record<string, string> = {
 
   // === Pump.fun Bonding Curve Calculator (May 2026) ===
   'Pump.fun bonding curve: 30 SOL × 1.073B tokens virtual reserves. Earlier entry = more tokens per SOL.': 'Curva de bonding do Pump.fun: 30 SOL × 1,073B tokens de reservas virtuais. Entrada antecipada = mais tokens por SOL.',
-  'Curve graduates to Raydium at ~85 SOL ($69K USD market cap).': 'A curva gradua para Raydium em ~85 SOL (capitalização de mercado de ~$69K USD).',
+  'Curve graduates to PumpSwap at ~85 SOL (about 411 SOL of market cap).': 'A curva se gradua para a PumpSwap com ~85 SOL (cerca de 411 SOL de market cap).',
   'Pump.fun memecoins are extremely high risk. ~99% fail to graduate. Even after graduation, most lose value within days. Never invest more than you can afford to lose.': 'Memecoins do Pump.fun são extremamente arriscadas. ~99% não conseguem graduar. Mesmo após a graduação, a maioria perde valor em poucos dias. Nunca invista mais do que você pode perder.',
   'Provide SOL invested, SOL price, and current curve state.': 'Forneça SOL investidos, preço do SOL e o estado atual da curva.',
   'SOL to Invest': 'SOL para Investir',
@@ -2666,7 +2666,7 @@ const dict: Record<string, string> = {
   'Position value at graduation': 'Valor da posição na graduação',
   'ROI at graduation': 'ROI na graduação',
   'SOL needed to graduate': 'SOL necessários para graduar',
-  'Remaining to $69K graduation': 'Restante para graduação em $69K',
+  'Remaining to graduation': 'Restante até a graduação',
   'Graduated': 'Graduado',
   'Effective price (your buy)': 'Preço efetivo (sua compra)',
 

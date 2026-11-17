@@ -2645,7 +2645,7 @@ const dict: Record<string, string> = {
   '200-Day Moving Average': 'Media móvil de 200 días',
   'Mayer Multiple': 'Múltiplo de Mayer',
   'Mayer Multiple = current price / 200-day moving average. Above 2.4 historically signals overbought; below 1.0 is undervalued.': 'Múltiplo de Mayer = precio actual / media móvil de 200 días. Por encima de 2,4 históricamente indica sobrecompra; por debajo de 1,0 indica infravaloración.',
-  'Mayer Multiple is a historical indicator. Only ~18% of days BTC closed above 2.4×; ~22% below 1.0×. Not a guarantee — combine with other signals.': 'El Múltiplo de Mayer es un indicador histórico. Solo ~18% de los días BTC cerró por encima de 2,4×; ~22% por debajo de 1,0×. No es una garantía — combínalo con otras señales.',
+  'Mayer Multiple is a historical indicator. Since 2011 BTC closed above 2.4× on only ~6% of days and below 1.0× on ~37%. Not a guarantee — combine with other signals.': 'El Múltiplo de Mayer es un indicador histórico. Desde 2011 BTC cerró por encima de 2,4× solo en ~6% de los días y por debajo de 1,0× en ~37%. No es una garantía: combínalo con otras señales.',
   'Provide current BTC price and 200-day moving average.': 'Proporciona el precio actual de BTC y la media móvil de 200 días.',
   'Price vs 200d MA': 'Precio vs MA 200d',
   'Overheated': 'Sobrecalentado',
@@ -2830,7 +2830,7 @@ const dict: Record<string, string> = {
 
   // === PumpFunBondingCurveCalculator ===
   'Current SOL in Bonding Curve': 'SOL actual en la bonding curve',
-  'Curve graduates to Raydium at ~85 SOL ($69K USD market cap).': 'La curva se gradúa a Raydium a ~85 SOL (capitalización de $69K USD).',
+  'Curve graduates to PumpSwap at ~85 SOL (about 411 SOL of market cap).': 'La curva se gradúa a PumpSwap con ~85 SOL (unos 411 SOL de capitalización).',
   'Graduated': 'Graduado',
   'Next zone at': 'Próxima zona en',
   'Position value at graduation': 'Valor de la posición en la graduación',
@@ -2840,7 +2840,7 @@ const dict: Record<string, string> = {
   'Pump.fun bonding curve: 30 SOL × 1.073B tokens virtual reserves. Earlier entry = more tokens per SOL.': 'Bonding curve de Pump.fun: 30 SOL × 1.073B tokens en reservas virtuales. Entrada más temprana = más tokens por SOL.',
   'Pump.fun memecoins are extremely high risk. ~99% fail to graduate. Even after graduation, most lose value within days. Never invest more than you can afford to lose.': 'Los memecoins de Pump.fun son de riesgo extremadamente alto. ~99% no logra graduarse. Incluso después de graduarse, la mayoría pierde valor en días. Nunca inviertas más de lo que puedas permitirte perder.',
   'ROI at graduation': 'ROI en la graduación',
-  'Remaining to $69K graduation': 'Restante para graduación de $69K',
+  'Remaining to graduation': 'Restante hasta la graduación',
   'Return on Capital': 'Retorno sobre el capital',
   'SOL Price': 'Precio de SOL',
   'SOL needed to graduate': 'SOL necesarios para graduarse',

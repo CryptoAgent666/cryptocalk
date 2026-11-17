@@ -14,7 +14,7 @@ import { loc } from '../i18n/format';
 
 const BLOCKS_PER_DAY = 144;
 const CURRENT_REWARD = 3.125;
-const DEFAULT_SUPPLY = '19800000';
+const DEFAULT_SUPPLY = '20110000'; // ~20.11M circulating, 17 Nov 2026 (height ~975,500)
 const DEFAULT_FLOW = String(Math.round(CURRENT_REWARD * BLOCKS_PER_DAY * 365)); // 164,250
 
 const SCENARIOS = [

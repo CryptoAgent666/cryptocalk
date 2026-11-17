@@ -2670,7 +2670,7 @@ const dict: Record<string, string> = {
   'Zone': 'Зона',
   'Next zone at': 'Следующая зона на',
   'Mayer Multiple = current price / 200-day moving average. Above 2.4 historically signals overbought; below 1.0 is undervalued.': 'Mayer Multiple = текущая цена / 200-дневная скользящая средняя. Выше 2,4 исторически сигнализирует о перекупленности; ниже 1,0 — о недооценённости.',
-  'Mayer Multiple is a historical indicator. Only ~18% of days BTC closed above 2.4×; ~22% below 1.0×. Not a guarantee — combine with other signals.': 'Mayer Multiple — исторический индикатор. Только в ~18% дней BTC закрывался выше 2,4×; в ~22% — ниже 1,0×. Это не гарантия — используйте вместе с другими сигналами.',
+  'Mayer Multiple is a historical indicator. Since 2011 BTC closed above 2.4× on only ~6% of days and below 1.0× on ~37%. Not a guarantee — combine with other signals.': 'Mayer Multiple — исторический индикатор. С 2011 года BTC закрывался выше 2,4× лишь в ~6% дней и ниже 1,0× — в ~37%. Это не гарантия — сочетайте с другими сигналами.',
   'Provide current BTC price and 200-day moving average.': 'Укажите текущую цену BTC и 200-дневную скользящую среднюю.',
 
   // === GeometricMeanCalculator (May 2026) ===
@@ -2788,12 +2788,12 @@ const dict: Record<string, string> = {
   'Post-buy market cap': 'Капитализация после покупки',
   'Effective price (your buy)': 'Эффективная цена (ваша покупка)',
   'SOL needed to graduate': 'SOL необходимо для выхода на DEX',
-  'Remaining to $69K graduation': 'Осталось до выхода на $69K',
+  'Remaining to graduation': 'Осталось до выхода с кривой',
   'Position value at graduation': 'Стоимость позиции при выходе на DEX',
   'ROI at graduation': 'ROI при выходе на DEX',
   'Graduated': 'Выход на DEX состоялся',
   'Pump.fun bonding curve: 30 SOL × 1.073B tokens virtual reserves. Earlier entry = more tokens per SOL.': 'Бондинг-кривая Pump.fun: виртуальные резервы 30 SOL × 1,073 млрд токенов. Чем раньше вход — тем больше токенов за SOL.',
-  'Curve graduates to Raydium at ~85 SOL ($69K USD market cap).': 'Кривая выходит на Raydium при ~85 SOL (капитализация ~$69K).',
+  'Curve graduates to PumpSwap at ~85 SOL (about 411 SOL of market cap).': 'Кривая выходит на PumpSwap при ~85 SOL (капитализация около 411 SOL).',
   'Pump.fun memecoins are extremely high risk. ~99% fail to graduate. Even after graduation, most lose value within days. Never invest more than you can afford to lose.': 'Мемкоины Pump.fun — крайне высокорисковые. ~99% не доходят до выхода на DEX. Даже после выхода большинство теряет стоимость в течение дней. Никогда не инвестируйте больше, чем готовы потерять.',
   'Provide SOL invested, SOL price, and current curve state.': 'Укажите вложенные SOL, цену SOL и текущее состояние кривой.',
 

@@ -2645,7 +2645,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'inflation-hedge': {
     en: {
-      quickAnswer: 'Compare crypto vs fiat purchasing power over time. $10,000 in USD from 2014 is worth ~$6,200 in real terms due to inflation, the same amount in BTC would be worth dramatically more.',
+      quickAnswer: 'Compare crypto vs fiat purchasing power over time. $10,000 in USD from 2014 is worth ~$7,000 in real terms due to inflation, the same amount in BTC would be worth dramatically more.',
       how: [
       `The Inflation Hedge Calculator projects how much purchasing power your savings would lose to inflation over the coming years, and how the same amount would grow if held in crypto or other assets instead. Pick a country, enter a savings amount, choose a period of 1, 3, 5 or 10 years and switch the comparison assets (BTC, ETH, USDC + Yield, Gold, S&P 500) on or off; the calculator shows the purchasing power left after inflation next to each asset's projected value, real return and gap versus fiat.`,
       `Use it to visualize the long-term argument for Bitcoin as digital gold or a store of value. Every projection uses one fixed annual inflation rate per country and a fixed assumed annual return per asset, not historical prices, so treat the result as a forward-looking scenario rather than a backtest.`
@@ -2656,7 +2656,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Compara el poder adquisitivo de cripto vs fiat a lo largo del tiempo. $10.000 en USD de 2014 valen ~$6.200 en términos reales por la inflación — la misma cantidad en BTC valdría dramáticamente más.',
+      quickAnswer: 'Compara el poder adquisitivo de cripto vs fiat a lo largo del tiempo. $10.000 en USD de 2014 valen ~$7.000 en términos reales por la inflación — la misma cantidad en BTC valdría dramáticamente más.',
       how: [
       `La Calculadora de Cobertura de Inflación proyecta cuánto poder adquisitivo perderían tus ahorros por la inflación en los próximos años y cuánto crecería la misma cantidad si la mantuvieras en cripto u otros activos.`,
       `Úsala para visualizar el argumento a largo plazo de Bitcoin como oro digital o reserva de valor.`
@@ -2667,7 +2667,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Compare o poder de compra de cripto vs fiat ao longo do tempo. $10.000 em USD de 2014 valem ~$6.200 em termos reais devido à inflação — o mesmo valor em BTC valeria dramaticamente mais.',
+      quickAnswer: 'Compare o poder de compra de cripto vs fiat ao longo do tempo. $10.000 em USD de 2014 valem ~$7.000 em termos reais devido à inflação — o mesmo valor em BTC valeria dramaticamente mais.',
       how: [
       `A Calculadora de Proteção contra Inflação projeta quanto poder de compra suas economias perderiam para a inflação nos próximos anos e quanto o mesmo valor cresceria se fosse mantido em cripto ou outros ativos.`,
       `Use-a para visualizar o argumento de longo prazo do Bitcoin como ouro digital ou reserva de valor.`
@@ -2678,7 +2678,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Kripto ve fiat satın alma gücünü zaman içinde karşılaştırın. 2014\'ten $10.000 USD, enflasyon nedeniyle reel olarak ~$6.200 değerinde — aynı miktar BTC\'de çok daha fazla değer olurdu.',
+      quickAnswer: 'Kripto ve fiat satın alma gücünü zaman içinde karşılaştırın. 2014\'ten $10.000 USD, enflasyon nedeniyle reel olarak ~$7.000 değerinde — aynı miktar BTC\'de çok daha fazla değer olurdu.',
       how: [
       `Enflasyon Koruması Hesaplayıcısı, birikiminizin önümüzdeki yıllarda enflasyon nedeniyle ne kadar satın alma gücü kaybedeceğini ve aynı tutar kripto ya da başka varlıklarda tutulsaydı ne kadar büyüyeceğini tahmin eder.`,
       `Bitcoin'in dijital altın veya değer deposu olarak uzun vadeli argümanını görselleştirmek için kullanın.`
@@ -2689,7 +2689,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'समय के साथ क्रिप्टो बनाम फिएट की क्रय शक्ति की तुलना करें। 2014 से $10,000 USD इन्फ्लेशन के कारण वास्तविक रूप से ~$6,200 मूल्य का है — BTC में वही राशि काफी अधिक होती।',
+      quickAnswer: 'समय के साथ क्रिप्टो बनाम फिएट की क्रय शक्ति की तुलना करें। 2014 से $10,000 USD इन्फ्लेशन के कारण वास्तविक रूप से ~$7,000 मूल्य का है — BTC में वही राशि काफी अधिक होती।',
       how: [
       `इन्फ्लेशन हेज कैलकुलेटर अनुमान लगाता है कि आने वाले वर्षों में मुद्रास्फीति से आपकी बचत की कितनी क्रय शक्ति घटेगी, और वही राशि क्रिप्टो या अन्य एसेट्स में रखने पर कितनी बढ़ेगी।`,
       `डिजिटल गोल्ड या वैल्यू स्टोर के रूप में Bitcoin के दीर्घकालिक तर्क को विजुअलाइज करने के लिए इसका उपयोग करें।`
@@ -2700,7 +2700,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Сравните покупательную способность крипто и фиата во времени. $10 000 в USD с 2014 года стоят ~$6 200 в реальном выражении из-за инфляции — та же сумма в BTC стоила бы значительно больше.',
+      quickAnswer: 'Сравните покупательную способность крипто и фиата во времени. $10 000 в USD с 2014 года стоят ~$7 000 в реальном выражении из-за инфляции — та же сумма в BTC стоила бы значительно больше.',
       how: [
       `Калькулятор хеджа от инфляции прогнозирует, сколько покупательной способности ваши сбережения потеряют из-за инфляции в ближайшие годы и насколько выросла бы та же сумма в криптовалюте или других активах.`,
       `Используйте для наглядного представления долгосрочного аргумента в пользу Bitcoin как цифрового золота или средства сбережения.`
@@ -5230,7 +5230,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `S2F quantifies how many years of current production it would take to double the existing supply. Higher ratios mean greater scarcity. After each Bitcoin halving, the flow is cut in half while stock continues to grow, mechanically doubling the ratio. The model has historically tracked BTC's macro price trajectory, though short-term deviations are common and expected.`
       ],
       inputs: [
-        `Circulating supply is the total number of tokens currently in existence, for Bitcoin this is approximately 19.85 million as of April 2026. Annual production (flow) is the number of new coins mined per year: at 3.125 BTC per block and ~144 blocks/day, flow is approximately 164,250 BTC/year post-halving.`,
+        `Circulating supply is the total number of tokens currently in existence, for Bitcoin this is approximately 20.1 million as of November 2026. Annual production (flow) is the number of new coins mined per year: at 3.125 BTC per block and ~144 blocks/day, flow is approximately 164,250 BTC/year post-halving.`,
         `The calculator auto-fills Bitcoin's parameters but allows custom overrides for modeling other scarce assets (e.g., Litecoin, gold). The output includes the raw S2F ratio, the model price derived from the regression formula, the current market price, and the deviation percentage showing whether the asset trades above or below the model prediction.`
       ],
     },
@@ -5241,7 +5241,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `S2F cuantifica cuántos años de producción actual se necesitarían para duplicar la oferta existente. Ratios más altas significan mayor escasez. Tras cada halving de Bitcoin, el flujo se reduce a la mitad mientras el stock sigue creciendo, duplicando mecánicamente la ratio. El modelo ha seguido históricamente la trayectoria macro del precio de BTC.`
       ],
       inputs: [
-        `La oferta circulante es el número total de tokens existentes — para Bitcoin son aproximadamente 19,85 millones a abril de 2026. La producción anual (flujo) es la cantidad de nuevas monedas minadas por año: a 3,125 BTC por bloque y ~144 bloques/día, el flujo es ~164.250 BTC/año tras el halving.`,
+        `La oferta circulante es el número total de tokens existentes — para Bitcoin son aproximadamente 20,1 millones a noviembre de 2026. La producción anual (flujo) es la cantidad de nuevas monedas minadas por año: a 3,125 BTC por bloque y ~144 bloques/día, el flujo es ~164.250 BTC/año tras el halving.`,
         `La calculadora autocompleta los parámetros de Bitcoin pero permite ajustes personalizados para modelar otros activos escasos (Litecoin, oro). La salida incluye la ratio S2F bruta, el precio del modelo derivado de la regresión, el precio de mercado actual y el porcentaje de desviación.`
       ],
     },
@@ -5252,7 +5252,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `O S2F quantifica quantos anos de produção atual seriam necessários para dobrar a oferta existente. Proporções maiores indicam maior escassez. Após cada halving do Bitcoin, o fluxo cai pela metade enquanto o estoque continua crescendo, dobrando a proporção mecanicamente.`
       ],
       inputs: [
-        `A oferta circulante é o número total de tokens existentes — para Bitcoin são aproximadamente 19,85 milhões em abril de 2026. A produção anual (fluxo) é a quantidade de novas moedas mineradas por ano: 3,125 BTC por bloco e ~144 blocos/dia resulta em ~164.250 BTC/ano pós-halving.`,
+        `A oferta circulante é o número total de tokens existentes — para Bitcoin são aproximadamente 20,1 milhões em novembro de 2026. A produção anual (fluxo) é a quantidade de novas moedas mineradas por ano: 3,125 BTC por bloco e ~144 blocos/dia resulta em ~164.250 BTC/ano pós-halving.`,
         `A calculadora preenche automaticamente os parâmetros do Bitcoin, mas permite ajustes para modelar outros ativos escassos (Litecoin, ouro). A saída inclui a proporção S2F bruta, o preço do modelo derivado da regressão, o preço atual e a porcentagem de desvio.`
       ],
     },
@@ -5263,7 +5263,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `S2F, mevcut arzı ikiye katlamak için kaç yıllık üretim gerektiğini ölçer. Daha yüksek oranlar daha büyük kıtlık anlamına gelir. Her Bitcoin halving'inden sonra akış yarıya inerken stok büyümeye devam eder ve oran mekanik olarak ikiye katlanır.`
       ],
       inputs: [
-        `Dolaşımdaki arz, mevcut toplam token sayısıdır — Bitcoin için Nisan 2026 itibarıyla yaklaşık 19,85 milyon. Yıllık üretim (akış), yılda yeni çıkarılan coin sayısıdır: blok başına 3,125 BTC ve günde ~144 blokla halving sonrası akış ~164.250 BTC/yıl.`,
+        `Dolaşımdaki arz, mevcut toplam token sayısıdır — Bitcoin için Kasım 2026 itibarıyla yaklaşık 20,1 milyon. Yıllık üretim (akış), yılda yeni çıkarılan coin sayısıdır: blok başına 3,125 BTC ve günde ~144 blokla halving sonrası akış ~164.250 BTC/yıl.`,
         `Hesaplayıcı Bitcoin parametrelerini otomatik doldurur ancak diğer kıt varlıkları modellemek için özel ayarlara izin verir. Çıktı ham S2F oranı, regresyon formülünden türetilen model fiyatı, mevcut piyasa fiyatı ve sapma yüzdesini içerir.`
       ],
     },
@@ -5274,7 +5274,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `S2F मापता है कि मौजूदा सप्लाई को दोगुना करने में वर्तमान उत्पादन के कितने साल लगेंगे। ऊंची रेशियो का मतलब अधिक स्कार्सिटी है। हर Bitcoin हॉल्विंग के बाद फ्लो आधा हो जाता है जबकि स्टॉक बढ़ता रहता है, मैकेनिकली रेशियो दोगुनी हो जाती है।`
       ],
       inputs: [
-        `सर्कुलेटिंग सप्लाई वर्तमान में मौजूद कुल टोकन संख्या है — Bitcoin के लिए अप्रैल 2026 तक लगभग 19.85 मिलियन। एनुअल प्रोडक्शन (फ्लो) प्रति वर्ष माइन की गई नई कॉइन्स है: 3.125 BTC प्रति ब्लॉक और ~144 ब्लॉक/दिन पर हॉल्विंग बाद ~164,250 BTC/वर्ष।`,
+        `सर्कुलेटिंग सप्लाई वर्तमान में मौजूद कुल टोकन संख्या है — Bitcoin के लिए नवंबर 2026 तक लगभग 20.1 मिलियन। एनुअल प्रोडक्शन (फ्लो) प्रति वर्ष माइन की गई नई कॉइन्स है: 3.125 BTC प्रति ब्लॉक और ~144 ब्लॉक/दिन पर हॉल्विंग बाद ~164,250 BTC/वर्ष।`,
         `कैलकुलेटर Bitcoin के पैरामीटर ऑटो-फिल करता है लेकिन अन्य स्कार्स एसेट (Litecoin, गोल्ड) मॉडलिंग के लिए कस्टम ओवरराइड की अनुमति देता है। आउटपुट में रॉ S2F रेशियो, रिग्रेशन फॉर्मूला से डिराइव्ड मॉडल प्राइस, करंट मार्केट प्राइस और डेविएशन परसेंटेज शामिल है।`
       ],
     },
@@ -5285,7 +5285,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         `S2F показывает, сколько лет текущего производства потребуется для удвоения существующего предложения. Чем выше коэффициент, тем больше дефицитность. После каждого халвинга поток сокращается вдвое, а запас продолжает расти, механически удваивая коэффициент.`
       ],
       inputs: [
-        `Циркулирующее предложение — общее число существующих токенов: для биткоина это примерно 19,85 млн по состоянию на апрель 2026 года. Годовое производство (поток) — количество новых монет в год: при 3,125 BTC за блок и ~144 блоках в сутки поток после халвинга составляет ~164 250 BTC/год.`,
+        `Циркулирующее предложение — общее число существующих токенов: для биткоина это примерно 20,1 млн по состоянию на ноябрь 2026 года. Годовое производство (поток) — количество новых монет в год: при 3,125 BTC за блок и ~144 блоках в сутки поток после халвинга составляет ~164 250 BTC/год.`,
         `Калькулятор автоматически заполняет параметры биткоина, но допускает настройку для моделирования других дефицитных активов (Litecoin, золото). Результат включает коэффициент S2F, модельную цену по регрессии, текущую рыночную цену и процент отклонения.`
       ],
     },
@@ -5496,69 +5496,69 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'liquid-staking-calculator': {
     en: {
-      quickAnswer: 'Compare liquid staking yields across Lido (stETH), Rocket Pool (rETH), and Coinbase (cbETH). Staking 10 ETH via Lido at 3.4% APY earns ~0.34 ETH/year while keeping your capital liquid through the LST derivative token.',
+      quickAnswer: 'Compare liquid staking yields across Lido (stETH), Rocket Pool (rETH), and Coinbase (cbETH). Staking 10 ETH via Lido at 2.6% APY earns ~0.26 ETH/year while keeping your capital liquid through the LST derivative token.',
       how: [
         `The Liquid Staking Calculator compares yields and fee structures across major liquid staking protocols. Enter your ETH amount and staking duration and select a protocol (Lido, Rocket Pool, Coinbase or Frax), and the tool shows the net APY after protocol fees, your net staking yield in ETH for that period, the LST tokens you receive after the protocol's premium or discount, and a side-by-side comparison of all four protocols.`,
         `Liquid staking tokens (LSTs) like stETH represent your staked position while remaining transferable and usable in DeFi. The calculator helps you evaluate the opportunity cost: you earn staking rewards while simultaneously providing liquidity on Curve/Uniswap or depositing into lending protocols like Aave, effectively stacking yield on top of yield.`
       ],
       inputs: [
         `The ETH amount is the quantity you want to stake. Protocol selection (Lido, Rocket Pool, Coinbase, etc.) determines the fee rate and current APY. Each protocol takes a different cut: Lido charges 10% of rewards, Rocket Pool takes 5–20% depending on node operator terms.`,
-        `The DeFi Composability APY (%) field (5% by default) lets you model combined strategies, e.g., staking via Lido (3.4% APY) then depositing stETH into Aave (additional ~1–2% supply APY). The output shows gross rewards, protocol fees and net rewards in ETH with the net APY, the LST tokens received, the DeFi Composability Value as a separate ETH figure rather than a combined APY, and a Protocol Comparison of net APY and net yield for Lido, Rocket Pool, Coinbase and Frax at their preset rates.`
+        `The DeFi Composability APY (%) field (5% by default) lets you model combined strategies, e.g., staking via Lido (2.6% APY) then depositing stETH into Aave (additional ~1–2% supply APY). The output shows gross rewards, protocol fees and net rewards in ETH with the net APY, the LST tokens received, the DeFi Composability Value as a separate ETH figure rather than a combined APY, and a Protocol Comparison of net APY and net yield for Lido, Rocket Pool, Coinbase and Frax at their preset rates.`
       ],
     },
     es: {
-      quickAnswer: 'Compara rendimientos de liquid staking entre Lido (stETH), Rocket Pool (rETH) y Coinbase (cbETH). Stakear 10 ETH vía Lido al 3,4% APY genera ~0,34 ETH/año manteniendo tu capital líquido a través del token derivado LST.',
+      quickAnswer: 'Compara rendimientos de liquid staking entre Lido (stETH), Rocket Pool (rETH) y Coinbase (cbETH). Stakear 10 ETH vía Lido al 2,6% APY genera ~0,26 ETH/año manteniendo tu capital líquido a través del token derivado LST.',
       how: [
         `La Calculadora de Liquid Staking compara rendimientos y estructuras de comisiones entre los principales protocolos. Introduce tu cantidad de ETH y la duración del staking y selecciona un protocolo (Lido, Rocket Pool, Coinbase o Frax) — la herramienta muestra el APY neto tras comisiones, tu rendimiento neto de staking en ETH para ese periodo, los tokens LST que recibes tras la prima o el descuento del protocolo y una comparación de los cuatro protocolos.`,
         `Los tokens de liquid staking (LSTs) como stETH representan tu posición stakeada y pueden usarse en DeFi. La calculadora evalúa el costo de oportunidad: ganas recompensas de staking mientras proporcionas liquidez en Curve/Uniswap o depositas en protocolos de préstamo como Aave.`
       ],
       inputs: [
         `La cantidad de ETH es lo que deseas stakear. La selección de protocolo (Lido, Rocket Pool, Coinbase) determina la tasa de comisión y el APY actual. Lido cobra el 10% de las recompensas, Rocket Pool el 5–20% según el operador del nodo.`,
-        `El campo de APY de composabilidad DeFi (%), con un 5% por defecto, permite modelar estrategias combinadas — staking vía Lido (3,4% APY) y depositar stETH en Aave (1–2% APY adicional). La salida muestra recompensas brutas, comisiones y recompensas netas en ETH con el APY neto, los tokens LST recibidos, el valor de composabilidad DeFi como cifra aparte en ETH (no como un APY combinado) y una comparación de protocolos con el APY neto y el rendimiento neto de Lido, Rocket Pool, Coinbase y Frax a sus tasas predefinidas.`
+        `El campo de APY de composabilidad DeFi (%), con un 5% por defecto, permite modelar estrategias combinadas — staking vía Lido (2,6% APY) y depositar stETH en Aave (1–2% APY adicional). La salida muestra recompensas brutas, comisiones y recompensas netas en ETH con el APY neto, los tokens LST recibidos, el valor de composabilidad DeFi como cifra aparte en ETH (no como un APY combinado) y una comparación de protocolos con el APY neto y el rendimiento neto de Lido, Rocket Pool, Coinbase y Frax a sus tasas predefinidas.`
       ],
     },
     pt: {
-      quickAnswer: 'Compare rendimentos de liquid staking entre Lido (stETH), Rocket Pool (rETH) e Coinbase (cbETH). Fazer staking de 10 ETH via Lido a 3,4% APY gera ~0,34 ETH/ano mantendo seu capital líquido através do token derivado LST.',
+      quickAnswer: 'Compare rendimentos de liquid staking entre Lido (stETH), Rocket Pool (rETH) e Coinbase (cbETH). Fazer staking de 10 ETH via Lido a 2,6% APY gera ~0,26 ETH/ano mantendo seu capital líquido através do token derivado LST.',
       how: [
         `A Calculadora de Liquid Staking compara rendimentos e estruturas de taxas entre os principais protocolos. Insira sua quantidade de ETH e a duração do staking e selecione um protocolo (Lido, Rocket Pool, Coinbase ou Frax) — a ferramenta mostra o APY líquido após taxas, seu rendimento líquido de staking em ETH no período, os tokens LST recebidos após o prêmio ou desconto do protocolo e uma comparação dos quatro protocolos.`,
         `Tokens de liquid staking (LSTs) como stETH representam sua posição em stake enquanto permanecem transferíveis e utilizáveis em DeFi. A calculadora avalia o custo de oportunidade: você ganha recompensas de staking enquanto fornece liquidez no Curve/Uniswap ou deposita em protocolos de empréstimo como Aave.`
       ],
       inputs: [
         `A quantidade de ETH é o que você deseja fazer staking. A seleção do protocolo (Lido, Rocket Pool, Coinbase) determina a taxa de comissão e APY atual. Lido cobra 10% das recompensas, Rocket Pool cobra 5–20% dependendo do operador.`,
-        `O campo APY de composabilidade DeFi (%), com 5% por padrão, permite modelar estratégias combinadas — staking via Lido (3,4% APY) e depositar stETH no Aave (1–2% APY adicional). A saída mostra recompensas brutas, taxas e recompensas líquidas em ETH com o APY líquido, os tokens LST recebidos, o valor de composabilidade DeFi como valor separado em ETH (não como APY combinado) e uma comparação de protocolos com APY líquido e rendimento líquido de Lido, Rocket Pool, Coinbase e Frax pelas taxas predefinidas.`
+        `O campo APY de composabilidade DeFi (%), com 5% por padrão, permite modelar estratégias combinadas — staking via Lido (2,6% APY) e depositar stETH no Aave (1–2% APY adicional). A saída mostra recompensas brutas, taxas e recompensas líquidas em ETH com o APY líquido, os tokens LST recebidos, o valor de composabilidade DeFi como valor separado em ETH (não como APY combinado) e uma comparação de protocolos com APY líquido e rendimento líquido de Lido, Rocket Pool, Coinbase e Frax pelas taxas predefinidas.`
       ],
     },
     tr: {
-      quickAnswer: 'Lido (stETH), Rocket Pool (rETH) ve Coinbase (cbETH) arasında likit staking getirilerini karşılaştırın. 10 ETH\'yi Lido üzerinden %3,4 APY ile stake etmek, LST türev token ile sermayenizi likit tutarken yılda ~0,34 ETH kazandırır.',
+      quickAnswer: 'Lido (stETH), Rocket Pool (rETH) ve Coinbase (cbETH) arasında likit staking getirilerini karşılaştırın. 10 ETH\'yi Lido üzerinden %2,6 APY ile stake etmek, LST türev token ile sermayenizi likit tutarken yılda ~0,26 ETH kazandırır.',
       how: [
         `Likit Staking Hesaplayıcısı, büyük likit staking protokolleri arasında getirileri ve ücret yapılarını karşılaştırır. ETH miktarınızı ve staking süresini girip bir protokol seçin (Lido, Rocket Pool, Coinbase veya Frax) — araç, ücretler sonrası net APY'yi, bu süre için ETH cinsinden net staking getirisini, protokolün prim veya iskontosu sonrası alınan LST token miktarını ve dört protokolün karşılaştırmasını gösterir.`,
         `stETH gibi likit staking tokenleri (LST'ler), stake pozisyonunuzu temsil ederken DeFi'de transfer edilebilir ve kullanılabilir kalır. Hesaplayıcı fırsat maliyetini değerlendirmenize yardımcı olur: staking ödülleri kazanırken aynı anda Curve/Uniswap'ta likidite sağlayabilir veya Aave gibi borç verme protokollerine yatırabilirsiniz.`
       ],
       inputs: [
         `ETH miktarı stake etmek istediğiniz tutardır. Protokol seçimi (Lido, Rocket Pool, Coinbase) ücret oranını ve mevcut APY'yi belirler. Lido ödüllerin %10'unu, Rocket Pool operatöre bağlı olarak %5–20'sini alır.`,
-        `DeFi birleşebilirlik APY (%) alanı (varsayılan %5) birleşik stratejileri modellemenize olanak tanır — ör. Lido'da staking (%3,4 APY) sonra stETH'yi Aave'ye yatırma (ek ~%1–2 APY). Çıktı; ETH cinsinden brüt ödülleri, protokol ücretlerini ve net ödülleri net APY ile birlikte, alınan LST token miktarını, birleşik bir APY yerine ayrı bir ETH rakamı olarak DeFi birleşebilirlik değerini ve Lido, Rocket Pool, Coinbase ile Frax için ön ayarlı oranlarla net APY ve net getiriyi içeren protokol karşılaştırmasını gösterir.`
+        `DeFi birleşebilirlik APY (%) alanı (varsayılan %5) birleşik stratejileri modellemenize olanak tanır — ör. Lido'da staking (%2,6 APY) sonra stETH'yi Aave'ye yatırma (ek ~%1–2 APY). Çıktı; ETH cinsinden brüt ödülleri, protokol ücretlerini ve net ödülleri net APY ile birlikte, alınan LST token miktarını, birleşik bir APY yerine ayrı bir ETH rakamı olarak DeFi birleşebilirlik değerini ve Lido, Rocket Pool, Coinbase ile Frax için ön ayarlı oranlarla net APY ve net getiriyi içeren protokol karşılaştırmasını gösterir.`
       ],
     },
     hi: {
-      quickAnswer: 'Lido (stETH), Rocket Pool (rETH) और Coinbase (cbETH) में लिक्विड स्टेकिंग यील्ड की तुलना करें। Lido के माध्यम से 10 ETH को 3.4% APY पर स्टेक करने से LST डेरिवेटिव टोकन के ज़रिए कैपिटल लिक्विड रखते हुए ~0.34 ETH/वर्ष मिलता है।',
+      quickAnswer: 'Lido (stETH), Rocket Pool (rETH) और Coinbase (cbETH) में लिक्विड स्टेकिंग यील्ड की तुलना करें। Lido के माध्यम से 10 ETH को 2.6% APY पर स्टेक करने से LST डेरिवेटिव टोकन के ज़रिए कैपिटल लिक्विड रखते हुए ~0.26 ETH/वर्ष मिलता है।',
       how: [
         `लिक्विड स्टेकिंग कैलकुलेटर प्रमुख लिक्विड स्टेकिंग प्रोटोकॉल में यील्ड और फीस स्ट्रक्चर की तुलना करता है। अपनी ETH मात्रा और स्टेकिंग अवधि दर्ज करें और प्रोटोकॉल चुनें (Lido, Rocket Pool, Coinbase या Frax) — टूल फीस के बाद नेट APY, उस अवधि के लिए ETH में शुद्ध स्टेकिंग यील्ड, प्रोटोकॉल के प्रीमियम या छूट के बाद मिलने वाले LST टोकन और चारों प्रोटोकॉल की तुलना दिखाता है।`,
         `stETH जैसे लिक्विड स्टेकिंग टोकन (LSTs) आपकी स्टेक्ड पोजीशन को रिप्रेजेंट करते हैं और DeFi में ट्रांसफरेबल रहते हैं। कैलकुलेटर ऑपर्च्युनिटी कॉस्ट मूल्यांकन में मदद करता है: आप स्टेकिंग रिवॉर्ड कमाते हुए Curve/Uniswap पर लिक्विडिटी प्रोवाइड कर सकते हैं या Aave में डिपॉजिट कर सकते हैं।`
       ],
       inputs: [
         `ETH अमाउंट वह मात्रा है जिसे आप स्टेक करना चाहते हैं। प्रोटोकॉल सिलेक्शन (Lido, Rocket Pool, Coinbase) फीस रेट और करंट APY निर्धारित करता है। Lido रिवॉर्ड का 10% चार्ज करता है, Rocket Pool नोड ऑपरेटर शर्तों पर 5–20% लेता है।`,
-        `DeFi कंपोजेबिलिटी APY (%) फ़ील्ड (डिफ़ॉल्ट 5%) कंबाइंड स्ट्रैटेजी मॉडल करने देता है — जैसे Lido से स्टेकिंग (3.4% APY) फिर stETH को Aave में डिपॉजिट (अतिरिक्त ~1–2% APY)। आउटपुट ETH में ग्रॉस रिवॉर्ड, प्रोटोकॉल फीस और नेट रिवॉर्ड शुद्ध APY के साथ, प्राप्त LST टोकन, संयुक्त APY की जगह अलग ETH आंकड़े के रूप में DeFi कंपोजेबिलिटी मूल्य, और Lido, Rocket Pool, Coinbase व Frax की पहले से तय दरों पर शुद्ध APY और नेट यील्ड वाली प्रोटोकॉल तुलना दिखाता है।`
+        `DeFi कंपोजेबिलिटी APY (%) फ़ील्ड (डिफ़ॉल्ट 5%) कंबाइंड स्ट्रैटेजी मॉडल करने देता है — जैसे Lido से स्टेकिंग (2.6% APY) फिर stETH को Aave में डिपॉजिट (अतिरिक्त ~1–2% APY)। आउटपुट ETH में ग्रॉस रिवॉर्ड, प्रोटोकॉल फीस और नेट रिवॉर्ड शुद्ध APY के साथ, प्राप्त LST टोकन, संयुक्त APY की जगह अलग ETH आंकड़े के रूप में DeFi कंपोजेबिलिटी मूल्य, और Lido, Rocket Pool, Coinbase व Frax की पहले से तय दरों पर शुद्ध APY और नेट यील्ड वाली प्रोटोकॉल तुलना दिखाता है।`
       ],
     },
     ru: {
-      quickAnswer: 'Сравните доходность ликвидного стейкинга между Lido (stETH), Rocket Pool (rETH) и Coinbase (cbETH). Стейкинг 10 ETH через Lido под 3,4% APY приносит ~0,34 ETH/год, сохраняя ликвидность капитала через токен-деривативы LST.',
+      quickAnswer: 'Сравните доходность ликвидного стейкинга между Lido (stETH), Rocket Pool (rETH) и Coinbase (cbETH). Стейкинг 10 ETH через Lido под 2,6% APY приносит ~0,26 ETH/год, сохраняя ликвидность капитала через токен-деривативы LST.',
       how: [
         `Калькулятор ликвидного стейкинга сравнивает доходность и структуру комиссий между основными протоколами. Введите количество ETH и срок стейкинга и выберите протокол (Lido, Rocket Pool, Coinbase или Frax) — инструмент покажет чистую APY после комиссий, чистую доходность стейкинга в ETH за этот срок, количество LST-токенов с учётом премии или дисконта протокола и сравнение всех четырёх протоколов.`,
         `Токены ликвидного стейкинга (LST), такие как stETH, представляют вашу стейкинг-позицию, оставаясь передаваемыми и пригодными для DeFi. Калькулятор помогает оценить альтернативную стоимость: вы получаете вознаграждения за стейкинг и одновременно предоставляете ликвидность на Curve/Uniswap или размещаете в протоколах кредитования вроде Aave.`
       ],
       inputs: [
         `Количество ETH — сумма для стейкинга. Выбор протокола (Lido, Rocket Pool, Coinbase) определяет комиссию и текущую APY. Lido берёт 10% от вознаграждений, Rocket Pool — 5–20% в зависимости от оператора ноды.`,
-        `Поле «APY DeFi-композитности (%)» (по умолчанию 5%) позволяет моделировать комбинированные стратегии — стейкинг через Lido (3,4% APY) с последующим депозитом stETH в Aave (ещё ~1–2% APY). Результат: валовые вознаграждения, комиссии протокола и чистые вознаграждения в ETH вместе с чистой APY, полученные LST-токены, стоимость DeFi-композитности отдельной суммой в ETH (а не совокупной APY) и сравнение протоколов — чистая APY и чистая доходность Lido, Rocket Pool, Coinbase и Frax по предустановленным ставкам.`
+        `Поле «APY DeFi-композитности (%)» (по умолчанию 5%) позволяет моделировать комбинированные стратегии — стейкинг через Lido (2,6% APY) с последующим депозитом stETH в Aave (ещё ~1–2% APY). Результат: валовые вознаграждения, комиссии протокола и чистые вознаграждения в ETH вместе с чистой APY, полученные LST-токены, стоимость DeFi-композитности отдельной суммой в ETH (а не совокупной APY) и сравнение протоколов — чистая APY и чистая доходность Lido, Rocket Pool, Coinbase и Frax по предустановленным ставкам.`
       ],
     },
   },
@@ -6040,7 +6040,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'validator-calculator': {
     en: {
-      quickAnswer: 'Estimate validator node rewards, costs, and ROI for Ethereum and other PoS networks. Running a solo Ethereum validator with 32 ETH earns ~3% APY (about 0.96 ETH, ~$2,300/year at $2,400/ETH) minus ~$50–100/month in server costs.',
+      quickAnswer: 'Estimate validator node rewards, costs, and ROI for Ethereum and other PoS networks. Running a solo Ethereum validator with 32 ETH earns ~2.7% APY including MEV (about 0.86 ETH, ~$1,570/year at ~$1,815/ETH, November 2026) minus ~$50–100/month in server costs.',
       how: [
         `The Validator Calculator models the economics of running a proof-of-stake validator node. Pick one of five networks (Ethereum, Solana, Polkadot, Cosmos, Avalanche), enter your stake, the token price, the reward APY and your monthly hardware cost, and the tool computes gross annual rewards, net profit after hosting expenses, ROI on the stake value and a break-even period in months.`,
         `On every network, including Ethereum, rewards come from the single APY you enter (pre-filled with a reference yield for the network), scaled by your uptime and reduced by the commission rate; consensus rewards, MEV tips and the size of the validator set are not modelled separately, so build them into that APY. The tool also shows the network's slashing risk level, a one-year slashing probability and the expected slash loss. Compare running a solo validator versus delegating to a staking pool to see when the infrastructure overhead is justified.`
@@ -6051,7 +6051,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Estima recompensas, costos y ROI de un nodo validador para Ethereum y otras redes PoS. Ejecutar un validador Ethereum con 32 ETH genera ~3% APY (unos 0,96 ETH, ~$2.300/año a $2.400/ETH) menos ~$50–100/mes en costos de servidor.',
+      quickAnswer: 'Estima recompensas, costos y ROI de un nodo validador para Ethereum y otras redes PoS. Ejecutar un validador Ethereum con 32 ETH genera ~2,7% APY con MEV (unos 0,86 ETH, ~$1.570/año a ~$1.815/ETH, noviembre de 2026) menos ~$50–100/mes en costos de servidor.',
       how: [
         `La Calculadora de Validador modela la economía de ejecutar un nodo validador proof-of-stake. Elige una de cinco redes (Ethereum, Solana, Polkadot, Cosmos, Avalanche) e introduce tu cantidad stakeada, el precio del token, el APY de recompensas y el costo mensual de hardware — la herramienta calcula las recompensas anuales brutas, el beneficio neto, el ROI sobre el valor del staking y un punto de equilibrio en meses.`,
         `En todas las redes, Ethereum incluida, las recompensas salen del APY único que introduces (precargado con un rendimiento de referencia para cada red), ajustado por tu tiempo activo y reducido por la tasa de comisión; las recompensas de consenso, las propinas MEV y el número de validadores no se modelan por separado, así que inclúyelos en ese APY. La herramienta también muestra el nivel de riesgo de slashing de la red, la probabilidad de slashing a un año y la pérdida esperada. Compara ejecutar un validador propio versus delegar a un pool.`
@@ -6062,7 +6062,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Estime recompensas, custos e ROI de nó validador para Ethereum e outras redes PoS. Executar um validador Ethereum com 32 ETH gera ~3% APY (cerca de 0,96 ETH, ~$2.300/ano a $2.400/ETH) menos ~$50–100/mês em custos de servidor.',
+      quickAnswer: 'Estime recompensas, custos e ROI de nó validador para Ethereum e outras redes PoS. Executar um validador Ethereum com 32 ETH gera ~2,7% APY com MEV (cerca de 0,86 ETH, ~$1.570/ano a ~$1.815/ETH, novembro de 2026) menos ~$50–100/mês em custos de servidor.',
       how: [
         `A Calculadora de Validador modela a economia de executar um nó validador proof-of-stake. Escolha uma de cinco redes (Ethereum, Solana, Polkadot, Cosmos, Avalanche) e insira sua quantidade em stake, o preço do token, o APY de recompensas e o custo mensal de hardware — a ferramenta calcula recompensas anuais brutas, lucro líquido, ROI sobre o valor do staking e um ponto de equilíbrio em meses.`,
         `Em todas as redes, inclusive Ethereum, as recompensas vêm do APY único que você informa (pré-preenchido com um rendimento de referência para cada rede), ajustado pela disponibilidade e reduzido pela taxa de comissão; recompensas de consenso, gorjetas MEV e o número de validadores não são modelados à parte, então inclua-os nesse APY. A ferramenta também mostra o nível de risco de slashing da rede, a probabilidade de slashing em um ano e a perda esperada. Compare executar validador solo versus delegar a um pool.`
@@ -6073,7 +6073,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Ethereum ve diğer PoS ağları için doğrulayıcı düğüm ödüllerini, maliyetlerini ve ROI\'sini tahmin edin. 32 ETH ile solo Ethereum doğrulayıcısı çalıştırmak ~%3 APY ($2.400/ETH\'de yaklaşık 0,96 ETH, ~$2.300/yıl) kazandırır, eksi ~$50–100/ay sunucu maliyeti.',
+      quickAnswer: 'Ethereum ve diğer PoS ağları için doğrulayıcı düğüm ödüllerini, maliyetlerini ve ROI\'sini tahmin edin. 32 ETH ile solo Ethereum doğrulayıcısı çalıştırmak MEV dahil ~%2,7 APY (~$1.815/ETH\'de yaklaşık 0,86 ETH, ~$1.570/yıl, Kasım 2026) kazandırır, eksi ~$50–100/ay sunucu maliyeti.',
       how: [
         `Doğrulayıcı Hesaplayıcısı, bir proof-of-stake doğrulayıcı düğümü çalıştırmanın ekonomisini modeller. Beş ağdan birini (Ethereum, Solana, Polkadot, Cosmos, Avalanche) seçin; stake miktarınızı, token fiyatını, ödül APY'sini ve aylık donanım maliyetini girin — araç brüt yıllık ödülleri, barındırma giderleri sonrası net kârı, stake değerine göre ROI'yi ve ay cinsinden başa baş süresini hesaplar.`,
         `Ethereum dahil her ağda ödüller, girdiğiniz tek APY değerinden (her ağ için referans bir getiriyle önceden doldurulur) gelir; bu değer çalışma sürenizle ölçeklenir ve komisyon oranı kadar düşürülür. Konsensüs ödülleri, MEV bahşişleri ve doğrulayıcı sayısı ayrıca modellenmez, bu yüzden bunları APY'ye siz katın; araç ayrıca ağın slashing risk düzeyini, bir yıllık slashing olasılığını ve beklenen slash kaybını gösterir. Solo doğrulayıcı çalıştırmayı staking havuzuna delege etmeyle karşılaştırın.`
@@ -6084,7 +6084,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'Ethereum और अन्य PoS नेटवर्क के लिए वैलिडेटर नोड रिवॉर्ड, कॉस्ट और ROI का अनुमान लगाएं। 32 ETH के साथ सोलो Ethereum वैलिडेटर चलाना ~3% APY ($2,400/ETH पर लगभग 0.96 ETH, ~$2,300/वर्ष) कमाता है, ~$50–100/महीना सर्वर कॉस्ट घटाकर।',
+      quickAnswer: 'Ethereum और अन्य PoS नेटवर्क के लिए वैलिडेटर नोड रिवॉर्ड, कॉस्ट और ROI का अनुमान लगाएं। 32 ETH के साथ सोलो Ethereum वैलिडेटर चलाना MEV सहित ~2.7% APY (~$1,815/ETH पर लगभग 0.86 ETH, ~$1,570/वर्ष, नवंबर 2026) कमाता है, ~$50–100/महीना सर्वर कॉस्ट घटाकर।',
       how: [
         `वैलिडेटर कैलकुलेटर proof-of-stake वैलिडेटर नोड चलाने की इकोनॉमिक्स मॉडल करता है। पाँच नेटवर्क (Ethereum, Solana, Polkadot, Cosmos, Avalanche) में से एक चुनें और स्टेक्ड अमाउंट, टोकन मूल्य, रिवॉर्ड APY और मासिक हार्डवेयर लागत दर्ज करें — टूल ग्रॉस एनुअल रिवॉर्ड, होस्टिंग खर्चों के बाद नेट प्रॉफिट, स्टेक मूल्य पर ROI और महीनों में ब्रेक-ईवन कैलकुलेट करता है।`,
         `Ethereum समेत हर नेटवर्क पर रिवॉर्ड उसी एक APY से आता है जो आप दर्ज करते हैं (हर नेटवर्क के लिए एक संदर्भ यील्ड पहले से भरी रहती है), जिसे अपटाइम से स्केल किया जाता है और कमीशन दर से घटाया जाता है; कंसेंसस रिवॉर्ड, MEV टिप्स और वैलिडेटर काउंट अलग से मॉडल नहीं होते, इसलिए इन्हें उसी APY में जोड़ें। टूल नेटवर्क का स्लैशिंग जोखिम स्तर, एक साल की स्लैशिंग संभावना और अपेक्षित स्लैश हानि भी दिखाता है। सोलो वैलिडेटर vs. स्टेकिंग पूल को डेलीगेट करने की तुलना करें।`
@@ -6095,7 +6095,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Оцените вознаграждение, затраты и ROI ноды валидатора для Ethereum и других PoS-сетей. Соло-валидатор Ethereum с 32 ETH приносит ~3% APY (около 0,96 ETH, ~$2 300/год при $2 400/ETH) минус ~$50–100/мес. на серверные расходы.',
+      quickAnswer: 'Оцените вознаграждение, затраты и ROI ноды валидатора для Ethereum и других PoS-сетей. Соло-валидатор Ethereum с 32 ETH приносит ~2,7% APY с учётом MEV (около 0,86 ETH, ~$1 570/год при ~$1 815/ETH, ноябрь 2026) минус ~$50–100/мес. на серверные расходы.',
       how: [
         `Калькулятор валидатора моделирует экономику запуска PoS-ноды. Выберите одну из пяти сетей (Ethereum, Solana, Polkadot, Cosmos, Avalanche), введите сумму стейка, цену токена, APY вознаграждений и ежемесячную стоимость оборудования — инструмент рассчитает валовое годовое вознаграждение, чистую прибыль после хостинга, ROI от стоимости стейка и срок безубыточности в месяцах.`,
         `Во всех сетях, включая Ethereum, вознаграждение считается из одной APY, которую вы вводите (для каждой сети подставлена справочная доходность), с поправкой на аптайм и за вычетом комиссии; вознаграждения консенсуса, чаевые MEV и число валидаторов отдельно не моделируются, поэтому заложите их в эту APY. Инструмент также показывает уровень риска слэшинга сети, вероятность слэшинга за год и ожидаемый убыток от него. Сравните соло-валидатор с делегированием в стейкинг-пул.`
@@ -6244,10 +6244,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'millionaire-calculator': {
     en: {
-      quickAnswer: 'Calculate how much crypto you need, or how long you must hold, to reach $1,000,000. At current prices, you need ~12.9 BTC ($77,500 each) or ~515 ETH ($1,940 each) to be a crypto millionaire today.',
+      quickAnswer: 'Calculate how much crypto you need, or how long you must hold, to reach $1,000,000. At current prices, you need ~15.4 BTC (~$65,000 each) or ~550 ETH (~$1,820 each) to be a crypto millionaire today.',
       how: [
         `The Millionaire Calculator works from a target (default $1,000,000) to determine how long your portfolio needs to grow to reach it, how much you would need to invest each month to get there in 5 or 10 years, and what annual return your current plan would require over 10 years. Enter your current portfolio, a monthly investment, an expected annual return and your crypto allocation, and the tool compounds the balance month by month until the target is reached.`,
-        `The calculator also models the impact of regular contributions, monthly DCA into your position accelerates the timeline dramatically. A $500/month BTC investment at 30% annual growth (crypto's historical average) projects millionaire status in approximately 10–12 years. Compare different scenarios: all-in BTC vs. diversified portfolio vs. high-risk altcoin bets.`
+        `The calculator also models the impact of regular contributions, monthly DCA into your position accelerates the timeline dramatically. A $500/month BTC investment at 30% annual growth (an aggressive assumption) projects millionaire status in about 13 years. Compare different scenarios: all-in BTC vs. diversified portfolio vs. high-risk altcoin bets.`
       ],
       inputs: [
         `Target wealth defaults to $1,000,000 but can be adjusted to any goal ($100K, $5M, $10M). Crypto Allocation (%) sets the share of the money that earns the expected return; the rest is treated as earning nothing, so a 50% allocation halves the effective growth rate. Current holdings (if any) represent your starting position. Expected annual return can range from conservative (10%) to aggressive (50%+).`,
@@ -6255,10 +6255,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Calcula cuánto cripto necesitas — o cuánto tiempo debes mantener — para alcanzar $1.000.000. A precios actuales, necesitas ~12,9 BTC ($77.500 cada uno) o ~515 ETH ($1.940 cada uno) para ser millonario cripto hoy.',
+      quickAnswer: 'Calcula cuánto cripto necesitas — o cuánto tiempo debes mantener — para alcanzar $1.000.000. A precios actuales, necesitas ~15,4 BTC (~$65.000 cada uno) o ~550 ETH (~$1.820 cada uno) para ser millonario cripto hoy.',
       how: [
         `La Calculadora del Millonario trabaja desde un objetivo (por defecto $1.000.000) para determinar cuánto tiempo debe crecer tu portafolio para alcanzarlo, cuánto tendrías que invertir cada mes para lograrlo en 5 o 10 años y qué retorno anual exigiría tu plan actual a 10 años. Introduce tu portafolio actual, una inversión mensual, un retorno anual esperado y tu asignación cripto, y la herramienta capitaliza el saldo mes a mes hasta alcanzar el objetivo.`,
-        `La calculadora modela el impacto de aportes regulares — DCA mensual acelera dramáticamente la línea temporal. Una inversión de $500/mes en BTC con 30% de crecimiento anual proyecta ser millonario en aproximadamente 10–12 años. Compara escenarios: todo en BTC vs. portafolio diversificado vs. altcoins de alto riesgo.`
+        `La calculadora modela el impacto de aportes regulares — DCA mensual acelera dramáticamente la línea temporal. Una inversión de $500/mes en BTC con 30% de crecimiento anual proyecta ser millonario en unos 13 años. Compara escenarios: todo en BTC vs. portafolio diversificado vs. altcoins de alto riesgo.`
       ],
       inputs: [
         `El objetivo de riqueza se establece por defecto en $1.000.000 pero puede ajustarse. La Asignación Cripto (%) fija qué parte del dinero obtiene el retorno esperado; el resto se trata como si no rindiera nada, así que un 50% reduce a la mitad la tasa de crecimiento efectiva. Las tenencias actuales representan tu posición inicial. El retorno anual esperado puede variar de conservador (10%) a agresivo (50%+).`,
@@ -6266,10 +6266,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Calcule quanto cripto você precisa — ou por quanto tempo deve manter — para chegar a $1.000.000. A preços atuais, você precisa de ~12,9 BTC ($77.500 cada) ou ~515 ETH ($1.940 cada) para ser um milionário cripto hoje.',
+      quickAnswer: 'Calcule quanto cripto você precisa — ou por quanto tempo deve manter — para chegar a $1.000.000. A preços atuais, você precisa de ~15,4 BTC (~$65.000 cada) ou ~550 ETH (~$1.820 cada) para ser um milionário cripto hoje.',
       how: [
         `A Calculadora do Milionário parte de uma meta (por padrão $1.000.000) para determinar quanto tempo seu portfólio precisa crescer para atingi-la, quanto você precisaria investir por mês para chegar lá em 5 ou 10 anos e qual retorno anual seu plano atual exigiria em 10 anos. Insira seu portfólio atual, um investimento mensal, um retorno anual esperado e sua alocação cripto, e a ferramenta capitaliza o saldo mês a mês até atingir a meta.`,
-        `A calculadora modela o impacto de contribuições regulares — DCA mensal acelera drasticamente o prazo. Um investimento de $500/mês em BTC com 30% de crescimento anual projeta status de milionário em ~10–12 anos. Compare cenários: tudo em BTC vs. portfólio diversificado vs. altcoins de alto risco.`
+        `A calculadora modela o impacto de contribuições regulares — DCA mensal acelera drasticamente o prazo. Um investimento de $500/mês em BTC com 30% de crescimento anual projeta status de milionário em ~13 anos. Compare cenários: tudo em BTC vs. portfólio diversificado vs. altcoins de alto risco.`
       ],
       inputs: [
         `A meta de riqueza é $1.000.000 por padrão, mas pode ser ajustada. A Alocação Cripto (%) define que parte do dinheiro rende o retorno esperado; o restante é tratado como sem rendimento, então 50% corta pela metade a taxa de crescimento efetiva. Participações atuais representam sua posição inicial. Retorno anual esperado varia de conservador (10%) a agressivo (50%+).`,
@@ -6277,10 +6277,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: '$1.000.000\'a ulaşmak için ne kadar kripto gerektiğini — veya ne kadar süre tutmanız gerektiğini — hesaplayın. Mevcut fiyatlarla kripto milyoner olmak için ~12,9 BTC ($77.500) veya ~515 ETH ($1.940) gerekir.',
+      quickAnswer: '$1.000.000\'a ulaşmak için ne kadar kripto gerektiğini — veya ne kadar süre tutmanız gerektiğini — hesaplayın. Mevcut fiyatlarla kripto milyoner olmak için ~15,4 BTC (~$65.000) veya ~550 ETH (~$1.820) gerekir.',
       how: [
         `Milyoner Hesaplayıcısı bir hedeften (varsayılan $1.000.000) yola çıkarak portföyünüzün bu hedefe ulaşması için ne kadar süre büyümesi gerektiğini, 5 veya 10 yılda oraya varmak için her ay ne kadar yatırım yapmanız gerektiğini ve mevcut planınızın 10 yılda hangi yıllık getiriyi gerektirdiğini belirler. Mevcut portföyünüzü, aylık yatırımı, beklenen yıllık getiriyi ve kripto tahsisinizi girin; araç bakiyeyi hedefe ulaşana kadar ay ay bileşik olarak büyütür.`,
-        `Hesaplayıcı düzenli katkıların etkisini modeller — aylık DCA süreyi dramatik şekilde kısaltır. %30 yıllık büyümeyle aylık $500 BTC yatırımı yaklaşık 10–12 yılda milyoner statüsü öngörür. Farklı senaryoları karşılaştırın: tamamen BTC vs. çeşitlendirilmiş portföy vs. yüksek riskli altcoinler.`
+        `Hesaplayıcı düzenli katkıların etkisini modeller — aylık DCA süreyi dramatik şekilde kısaltır. %30 yıllık büyümeyle aylık $500 BTC yatırımı yaklaşık 13 yılda milyoner statüsü öngörür. Farklı senaryoları karşılaştırın: tamamen BTC vs. çeşitlendirilmiş portföy vs. yüksek riskli altcoinler.`
       ],
       inputs: [
         `Hedef servet varsayılan olarak $1.000.000'dır ancak ayarlanabilir. Kripto tahsisi (%) paranın ne kadarının beklenen getiriyi kazandığını belirler; geri kalanı getirisiz kabul edilir, bu yüzden %50 tahsis efektif büyüme oranını yarıya indirir. Mevcut varlıklar başlangıç pozisyonunuzu temsil eder. Beklenen yıllık getiri muhafazakâr (%10) ile agresif (%50+) arasında değişebilir.`,
@@ -6288,10 +6288,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: '$1,000,000 तक पहुंचने के लिए कितना क्रिप्टो चाहिए — या कितने समय तक होल्ड करना है — कैलकुलेट करें। करंट प्राइस पर आज क्रिप्टो मिलियनेयर बनने के लिए ~12.9 BTC ($77,500 प्रत्येक) या ~515 ETH ($1,940 प्रत्येक) चाहिए।',
+      quickAnswer: '$1,000,000 तक पहुंचने के लिए कितना क्रिप्टो चाहिए — या कितने समय तक होल्ड करना है — कैलकुलेट करें। करंट प्राइस पर आज क्रिप्टो मिलियनेयर बनने के लिए ~15.4 BTC (~$65,000 प्रत्येक) या ~550 ETH (~$1,820 प्रत्येक) चाहिए।',
       how: [
         `मिलियनेयर कैलकुलेटर एक टार्गेट (डिफॉल्ट $1,000,000) से शुरू करके बताता है कि उस तक पहुँचने के लिए पोर्टफोलियो को कितने समय ग्रो करना होगा, 5 या 10 साल में वहाँ पहुँचने के लिए हर महीने कितना इन्वेस्ट करना होगा और आपकी मौजूदा योजना को 10 साल में कितना एनुअल रिटर्न चाहिए। करंट पोर्टफोलियो, मासिक निवेश, एक्स्पेक्टेड एनुअल रिटर्न और क्रिप्टो आवंटन दर्ज करें — टूल टार्गेट तक पहुँचने तक बैलेंस को महीने-दर-महीने कंपाउंड करता है।`,
-        `कैलकुलेटर रेगुलर कंट्रीब्यूशन का इम्पैक्ट भी मॉडल करता है — मंथली DCA टाइमलाइन नाटकीय रूप से तेज करता है। 30% एनुअल ग्रोथ पर $500/महीना BTC इन्वेस्टमेंट लगभग 10–12 साल में मिलियनेयर स्टेटस प्रोजेक्ट करता है।`
+        `कैलकुलेटर रेगुलर कंट्रीब्यूशन का इम्पैक्ट भी मॉडल करता है — मंथली DCA टाइमलाइन नाटकीय रूप से तेज करता है। 30% एनुअल ग्रोथ पर $500/महीना BTC इन्वेस्टमेंट लगभग 13 साल में मिलियनेयर स्टेटस प्रोजेक्ट करता है।`
       ],
       inputs: [
         `टार्गेट वेल्थ डिफॉल्ट $1,000,000 है लेकिन किसी भी गोल ($100K, $5M) में बदला जा सकता है। क्रिप्टो आवंटन (%) तय करता है कि पैसे का कितना हिस्सा एक्स्पेक्टेड रिटर्न कमाता है; बाकी पर कोई रिटर्न नहीं माना जाता, इसलिए 50% आवंटन इफेक्टिव ग्रोथ रेट को आधा कर देता है। करंट होल्डिंग्स स्टार्टिंग पोजीशन हैं। एक्स्पेक्टेड एनुअल रिटर्न कंजर्वेटिव (10%) से एग्रेसिव (50%+) तक हो सकता है।`,
@@ -6299,10 +6299,10 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Рассчитайте, сколько криптовалюты нужно — или как долго держать — чтобы достичь $1 000 000. По текущим ценам для статуса криптомиллионера нужно ~12,9 BTC ($77 500) или ~515 ETH ($1 940).',
+      quickAnswer: 'Рассчитайте, сколько криптовалюты нужно — или как долго держать — чтобы достичь $1 000 000. По текущим ценам для статуса криптомиллионера нужно ~15,4 BTC ($65 000) или ~550 ETH ($1 820).',
       how: [
         `Калькулятор миллионера отталкивается от цели (по умолчанию $1 000 000) и определяет, сколько времени должен расти ваш портфель, сколько нужно вкладывать ежемесячно, чтобы дойти до цели за 5 или 10 лет, и какая годовая доходность потребуется при текущем плане за 10 лет. Введите текущий портфель, ежемесячные инвестиции, ожидаемую годовую доходность и долю криптоактивов — инструмент наращивает баланс помесячно со сложным процентом, пока цель не будет достигнута.`,
-        `Калькулятор моделирует эффект регулярных взносов — ежемесячный DCA кардинально ускоряет достижение цели. $500/месяц в BTC при 30% годового роста прогнозирует статус миллионера примерно через 10–12 лет. Сравнивайте сценарии: всё в BTC vs. диверсифицированный портфель vs. рискованные альткоины.`
+        `Калькулятор моделирует эффект регулярных взносов — ежемесячный DCA кардинально ускоряет достижение цели. $500/месяц в BTC при 30% годового роста прогнозирует статус миллионера примерно через 13 лет. Сравнивайте сценарии: всё в BTC vs. диверсифицированный портфель vs. рискованные альткоины.`
       ],
       inputs: [
         `Целевая сумма по умолчанию $1 000 000, но настраивается ($100K, $5M, $10M). Распределение криптоактивов (%) задаёт, какая часть денег приносит ожидаемую доходность; остаток считается не приносящим ничего, поэтому при 50% эффективная ставка роста вдвое ниже. Текущие активы — стартовая позиция. Ожидаемая годовая доходность: от консервативной (10%) до агрессивной (50%+).`,
@@ -6448,68 +6448,68 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'rainbow-chart-calculator': {
     en: {
-      quickAnswer: 'The Bitcoin Rainbow Chart uses logarithmic regression (ln(price) = a × ln(days) + b) to divide price action into 9 bands from \'Fire Sale\' to \'Maximum Bubble.\' At $84,000, BTC sits in the \'Accumulate\' zone, historically a favorable buying range.',
+      quickAnswer: 'The Bitcoin Rainbow Chart uses logarithmic regression (ln(price) = a × ln(days) + b) to divide price action into 9 bands from \'Fire Sale\' to \'Maximum Bubble.\' At ~$65,000 (November 2026), BTC sits in the \'BUY!\' band, about 0.35× the model price of roughly $185,000, historically a favorable buying range.',
       how: [
         `The Bitcoin Rainbow Chart Calculator applies the rainbow chart's logarithmic regression bands to a BTC price to place it in a long-term valuation zone. The model fits a curve to BTC's entire price history since 2010, then divides the area above and below the regression line into 9 color-coded bands, from deep blue ("Fire Sale") through green ("Accumulate") and yellow ("HODL") to red ("Maximum Bubble"). Enter today's BTC price to see which band the current price falls into.`,
         `The rainbow is a sentiment and valuation heuristic, not a prediction model. Historically, buying in the blue-green bands and selling in the orange-red bands has been profitable over multi-year horizons. The Investment Amount field shows how much BTC that sum buys at the price you entered and at the model price; it does not project returns. The band table and every figure update instantly as you adjust the price.`
       ],
       inputs: [
-        `Current BTC Price starts at a stored reference value ($77,300) rather than a live quote, so type in today's price or a scenario (what if BTC drops to $60K or rallies to $120K?); the presets also load $50K and $150K. The calculator instantly maps any price to its corresponding rainbow band and shows the percentage distance from the regression midline.`,
+        `Current BTC Price starts at a stored reference value ($65,000) rather than a live quote, so type in today's price or a scenario (what if BTC drops to $60K or rallies to $120K?); the presets also load $50K and $150K. The calculator instantly maps any price to its corresponding rainbow band and shows the percentage distance from the regression midline.`,
         `Investment Amount lets you model a hypothetical purchase. The tool shows how many BTC it buys at your price and at the model price. Output includes: the current band label, the Model Price, the Deviation from Model and Price / Model Ratio, the days since the genesis block, and a table of all nine Rainbow Bands with their price ranges.`
       ],
     },
     es: {
-      quickAnswer: 'El Gráfico Arcoíris de Bitcoin usa regresión logarítmica (ln(precio) = a × ln(días) + b) para dividir la acción del precio en 9 bandas desde \'Liquidación\' hasta \'Burbuja Máxima.\' A $84.000, BTC se ubica en la zona \'Acumular\' — históricamente un rango favorable de compra.',
+      quickAnswer: 'El Gráfico Arcoíris de Bitcoin usa regresión logarítmica (ln(precio) = a × ln(días) + b) para dividir la acción del precio en 9 bandas desde \'Liquidación\' hasta \'Burbuja Máxima.\' A ~$65.000 (noviembre de 2026), BTC se ubica en la banda \'¡COMPRA!\', a unas 0,35× del precio del modelo (~$185.000) — históricamente un rango favorable de compra.',
       how: [
         `La Calculadora del Gráfico Arcoíris de Bitcoin aplica las bandas de regresión logarítmica del gráfico arcoíris a un precio de BTC para situarlo en una zona de valoración a largo plazo. El modelo ajusta una curva al historial completo de precios desde 2010 y divide el área en 9 bandas de colores — desde azul profundo ("Liquidación") pasando por verde ("Acumular") y amarillo ("HODL") hasta rojo ("Burbuja Máxima"). Introduce el precio actual de BTC para ver en qué banda se encuentra.`,
         `El arcoíris es una herramienta heurística de sentimiento y valoración, no un modelo predictivo. Históricamente, comprar en bandas azul-verde y vender en naranja-rojo ha sido rentable en horizontes de varios años. El campo Monto de inversión muestra cuántos BTC compra esa suma al precio introducido y al precio del modelo; no proyecta rendimientos.`
       ],
       inputs: [
-        `El Precio Actual de BTC parte de un valor de referencia guardado ($77.300), no de una cotización en vivo, así que escribe el precio de hoy o un escenario (¿y si BTC cae a $60K o sube a $120K?); los presets también cargan $50K y $150K. La calculadora mapea instantáneamente cualquier precio a su banda arcoíris correspondiente y muestra la distancia porcentual desde la línea media de regresión.`,
+        `El Precio Actual de BTC parte de un valor de referencia guardado ($65.000), no de una cotización en vivo, así que escribe el precio de hoy o un escenario (¿y si BTC cae a $60K o sube a $120K?); los presets también cargan $50K y $150K. La calculadora mapea instantáneamente cualquier precio a su banda arcoíris correspondiente y muestra la distancia porcentual desde la línea media de regresión.`,
         `El Monto de Inversión permite modelar una compra hipotética. La herramienta muestra cuántos BTC compra al precio introducido y al precio del modelo. El resultado incluye: etiqueta de banda actual, precio del modelo, desviación del modelo y ratio precio / modelo, días desde el génesis y una tabla con las nueve bandas del arcoíris y sus rangos de precio.`
       ],
     },
     pt: {
-      quickAnswer: 'O Gráfico Arco-Íris do Bitcoin usa regressão logarítmica (ln(preço) = a × ln(dias) + b) para dividir a ação do preço em 9 faixas de \'Queima Total\' a \'Bolha Máxima.\' A $84.000, o BTC está na zona \'Acumular\' — historicamente uma faixa favorável de compra.',
+      quickAnswer: 'O Gráfico Arco-Íris do Bitcoin usa regressão logarítmica (ln(preço) = a × ln(dias) + b) para dividir a ação do preço em 9 faixas de \'Queima Total\' a \'Bolha Máxima.\' A ~$65.000 (novembro de 2026), o BTC está na faixa \'COMPRE!\', cerca de 0,35× o preço do modelo (~$185.000) — historicamente uma faixa favorável de compra.',
       how: [
         `A Calculadora do Gráfico Arco-Íris do Bitcoin aplica as faixas de regressão logarítmica do gráfico arco-íris a um preço de BTC para situá-lo em uma zona de valoração de longo prazo. O modelo ajusta uma curva ao histórico completo de preços desde 2010 e divide a área em 9 faixas coloridas — de azul profundo ("Queima Total") passando por verde ("Acumular") e amarelo ("HODL") até vermelho ("Bolha Máxima"). Insira o preço atual do BTC para ver em qual faixa o preço se encontra.`,
         `O arco-íris é uma heurística de sentimento e valoração, não um modelo preditivo. Historicamente, comprar nas faixas azul-verde e vender nas laranja-vermelho foi lucrativo em horizontes de vários anos. O campo Valor do investimento mostra quantos BTC essa quantia compra ao preço informado e ao preço do modelo; ele não projeta retornos.`
       ],
       inputs: [
-        `O Preço Atual do BTC parte de um valor de referência armazenado ($77.300), não de uma cotação ao vivo, então digite o preço de hoje ou um cenário (e se BTC cair para $60K ou subir para $120K?); os presets também carregam $50K e $150K. A calculadora mapeia instantaneamente qualquer preço para sua faixa arco-íris correspondente e mostra a distância percentual da linha média de regressão.`,
+        `O Preço Atual do BTC parte de um valor de referência armazenado ($65.000), não de uma cotação ao vivo, então digite o preço de hoje ou um cenário (e se BTC cair para $60K ou subir para $120K?); os presets também carregam $50K e $150K. A calculadora mapeia instantaneamente qualquer preço para sua faixa arco-íris correspondente e mostra a distância percentual da linha média de regressão.`,
         `O Valor do Investimento permite modelar uma compra hipotética. A ferramenta mostra quantos BTC essa quantia compra ao preço informado e ao preço do modelo. A saída inclui: rótulo da faixa atual, preço do modelo, desvio do modelo e razão preço / modelo, dias desde o gênesis e uma tabela com as nove faixas do arco-íris e seus intervalos de preço.`
       ],
     },
     tr: {
-      quickAnswer: 'Bitcoin Gökkuşağı Grafiği, fiyat hareketini 9 banda ayırmak için logaritmik regresyon (ln(fiyat) = a × ln(gün) + b) kullanır: \'İndirimli Satış\'tan \'Maksimum Balon\'a. $84.000\'da BTC \'Biriktir\' bölgesinde — tarihsel olarak olumlu bir alım aralığı.',
+      quickAnswer: 'Bitcoin Gökkuşağı Grafiği, fiyat hareketini 9 banda ayırmak için logaritmik regresyon (ln(fiyat) = a × ln(gün) + b) kullanır: \'İndirimli Satış\'tan \'Maksimum Balon\'a. ~$65.000\'da (Kasım 2026) BTC \'AL!\' bandında, model fiyatının (~$185.000) yaklaşık 0,35 katında — tarihsel olarak olumlu bir alım aralığı.',
       how: [
         `Bitcoin Gökkuşağı Grafiği Hesaplayıcısı, gökkuşağı grafiğinin logaritmik regresyon bantlarını bir BTC fiyatına uygulayarak onu uzun vadeli bir değerleme bölgesine yerleştirir. Model, 2010'dan bu yana tüm fiyat geçmişine bir eğri uydurur ve alanı 9 renkli banda böler — koyu maviden ("İndirimli Satış") yeşile ("Biriktir") ve sarıdan ("HODL") kırmızıya ("Maksimum Balon"). BTC'nin güncel fiyatını girerek hangi bantta olduğunu görün.`,
         `Gökkuşağı bir duyarlılık ve değerleme sezgisel aracıdır, tahmin modeli değildir. Tarihsel olarak mavi-yeşil bantlarda alıp turuncu-kırmızı bantlarda satmak çok yıllık ufuklarda kârlı olmuştur. Yatırım tutarı alanı, bu tutarın girdiğiniz fiyatla ve model fiyatıyla kaç BTC aldığını gösterir; getiri projeksiyonu yapmaz.`
       ],
       inputs: [
-        `Güncel BTC Fiyatı canlı bir kotasyondan değil, kayıtlı bir referans değerden ($77.300) başlar; bu yüzden bugünkü fiyatı veya bir senaryoyu kendiniz yazın (BTC $60K'ya düşerse veya $120K'ya çıkarsa?), hazır ayarlar ise ayrıca $50K ve $150K yükler. Hesaplayıcı herhangi bir fiyatı anında ilgili gökkuşağı bandına eşler ve regresyon orta çizgisinden yüzde mesafeyi gösterir.`,
+        `Güncel BTC Fiyatı canlı bir kotasyondan değil, kayıtlı bir referans değerden ($65.000) başlar; bu yüzden bugünkü fiyatı veya bir senaryoyu kendiniz yazın (BTC $60K'ya düşerse veya $120K'ya çıkarsa?), hazır ayarlar ise ayrıca $50K ve $150K yükler. Hesaplayıcı herhangi bir fiyatı anında ilgili gökkuşağı bandına eşler ve regresyon orta çizgisinden yüzde mesafeyi gösterir.`,
         `Yatırım Tutarı varsayımsal bir alımı modellemenize olanak tanır. Araç, bu tutarın girdiğiniz fiyatla ve model fiyatıyla kaç BTC aldığını gösterir. Çıktı: mevcut bant etiketi, model fiyatı, modelden sapma ve fiyat / model oranı, Genesis'ten bu yana gün sayısı ve dokuz gökkuşağı bandının fiyat aralıklarını içeren bir tablo.`
       ],
     },
     hi: {
-      quickAnswer: 'Bitcoin Rainbow Chart लॉगरिदमिक रिग्रेशन (ln(price) = a × ln(days) + b) का उपयोग करके प्राइस एक्शन को 9 बैंड में बांटता है — \'Fire Sale\' से \'Maximum Bubble\' तक। $84,000 पर BTC \'Accumulate\' ज़ोन में है — ऐतिहासिक रूप से एक अनुकूल खरीद सीमा।',
+      quickAnswer: 'Bitcoin Rainbow Chart लॉगरिदमिक रिग्रेशन (ln(price) = a × ln(days) + b) का उपयोग करके प्राइस एक्शन को 9 बैंड में बांटता है — \'Fire Sale\' से \'Maximum Bubble\' तक। ~$65,000 (नवंबर 2026) पर BTC \'खरीदें!\' बैंड में है, मॉडल प्राइस (~$185,000) का लगभग 0.35× — ऐतिहासिक रूप से एक अनुकूल खरीद सीमा।',
       how: [
         `Bitcoin Rainbow Chart कैलकुलेटर रेनबो चार्ट के लॉगरिदमिक रिग्रेशन बैंड किसी BTC प्राइस पर लागू करके बताता है कि वह लंबी अवधि के किस वैल्यूएशन ज़ोन में है। मॉडल 2010 से पूरे प्राइस हिस्ट्री पर कर्व फिट करता है और एरिया को 9 कलर-कोडेड बैंड में बांटता है — गहरे नीले ("Fire Sale") से हरे ("Accumulate") और पीले ("HODL") से लाल ("Maximum Bubble") तक। आज का BTC प्राइस दर्ज करें और देखें कि करंट प्राइस किस बैंड में आता है।`,
         `रेनबो एक सेंटिमेंट और वैल्यूएशन ह्यूरिस्टिक है, प्रेडिक्शन मॉडल नहीं। ऐतिहासिक रूप से, ब्लू-ग्रीन बैंड में खरीदना और ऑरेंज-रेड बैंड में बेचना मल्टी-ईयर होराइज़न पर प्रॉफिटेबल रहा है। इन्वेस्टमेंट अमाउंट फील्ड दिखाता है कि यह राशि आपके दर्ज प्राइस पर और मॉडल प्राइस पर कितने BTC खरीदती है; यह रिटर्न का अनुमान नहीं लगाता।`
       ],
       inputs: [
-        `करंट BTC प्राइस लाइव कोट नहीं, बल्कि एक सेव की गई संदर्भ वैल्यू ($77,300) से शुरू होता है, इसलिए आज का प्राइस या कोई सीनारियो खुद दर्ज करें (BTC $60K पर गिरे या $120K तक रैली हो तो?); प्रीसेट $50K और $150K भी लोड करते हैं। कैलकुलेटर तुरंत किसी भी प्राइस को उसके रेनबो बैंड से मैप करता है और रिग्रेशन मिडलाइन से परसेंटेज डिस्टेंस दिखाता है।`,
+        `करंट BTC प्राइस लाइव कोट नहीं, बल्कि एक सेव की गई संदर्भ वैल्यू ($65,000) से शुरू होता है, इसलिए आज का प्राइस या कोई सीनारियो खुद दर्ज करें (BTC $60K पर गिरे या $120K तक रैली हो तो?); प्रीसेट $50K और $150K भी लोड करते हैं। कैलकुलेटर तुरंत किसी भी प्राइस को उसके रेनबो बैंड से मैप करता है और रिग्रेशन मिडलाइन से परसेंटेज डिस्टेंस दिखाता है।`,
         `इन्वेस्टमेंट अमाउंट से हाइपोथेटिकल परचेज मॉडल कर सकते हैं। टूल दिखाता है कि यह राशि आपके प्राइस पर और मॉडल प्राइस पर कितने BTC खरीदती है। आउटपुट में शामिल: करंट बैंड लेबल, मॉडल मूल्य, मॉडल से विचलन और मूल्य / मॉडल अनुपात, जेनेसिस से दिन, और सभी नौ रेनबो बैंड की मूल्य सीमा वाली टेबल।`
       ],
     },
     ru: {
-      quickAnswer: 'Радужная диаграмма биткоина использует логарифмическую регрессию (ln(цена) = a × ln(дней) + b) для разделения ценового движения на 9 полос — от «Распродажа» до «Максимальный пузырь». При $84 000 BTC находится в зоне «Накопление» — исторически благоприятный диапазон для покупки.',
+      quickAnswer: 'Радужная диаграмма биткоина использует логарифмическую регрессию (ln(цена) = a × ln(дней) + b) для разделения ценового движения на 9 полос — от «Распродажа» до «Максимальный пузырь». При ~$65 000 (ноябрь 2026) BTC находится в полосе «ПОКУПАЙ!», примерно на 0,35× модельной цены (~$185 000) — исторически благоприятный диапазон для покупки.',
       how: [
         `Калькулятор радужной диаграммы биткоина применяет полосы логарифмической регрессии радужной диаграммы к цене BTC и определяет её долгосрочную зону оценки. Модель строит кривую по всей ценовой истории с 2010 года и делит область на 9 цветовых полос — от тёмно-синего («Распродажа») через зелёный («Накопление») и жёлтый («HODL») до красного («Максимальный пузырь»). Введите текущую цену BTC, чтобы увидеть, в какой полосе сейчас находится цена.`,
         `Радуга — это эвристика оценки настроений и стоимости, а не прогнозная модель. Исторически покупка в сине-зелёных полосах и продажа в оранжево-красных приносила прибыль на многолетних горизонтах. Поле суммы инвестиций показывает, сколько BTC можно купить на эту сумму по введённой цене и по цене модели; доходность оно не прогнозирует.`
       ],
       inputs: [
-        `Текущая цена BTC стартует со справочного значения ($77 300), а не с живой котировки, поэтому введите сегодняшнюю цену или сценарий (что если BTC упадёт до $60K или вырастет до $120K?); пресеты также подставляют $50K и $150K. Калькулятор мгновенно определяет радужную полосу для любой цены и показывает процентное расстояние от средней линии регрессии.`,
+        `Текущая цена BTC стартует со справочного значения ($65 000), а не с живой котировки, поэтому введите сегодняшнюю цену или сценарий (что если BTC упадёт до $60K или вырастет до $120K?); пресеты также подставляют $50K и $150K. Калькулятор мгновенно определяет радужную полосу для любой цены и показывает процентное расстояние от средней линии регрессии.`,
         `Сумма инвестиций позволяет моделировать гипотетическую покупку. Инструмент показывает, сколько BTC можно купить на эту сумму по введённой цене и по цене модели. Результат: текущая полоса, модельная цена, отклонение от модели и отношение цены к модели, число дней с генезиса и таблица всех девяти полос радуги с ценовыми диапазонами.`
       ],
     },
@@ -6924,7 +6924,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'depin-earnings-calculator': {
       en: {
-        quickAnswer: `Pick a DePIN network (or enter your own numbers) to project passive income from a node. Example: a Helium IoT hotspot earning 0.5 HNT/day at $4.50 grosses $2.25/day; after $0.014 electricity (5 W at $0.12/kWh) net is $2.24/day, about $67/month, so a $500 device pays back in ~224 days (7.5 months) for +63% Year-1 ROI.`,
+        quickAnswer: `Pick a DePIN network (or enter your own numbers) to project passive income from a node. Example: a Geodnet GPS station earning 8 GEOD/day at ~$0.20 (November 2026) grosses about $1.60/day; after ~$0.02 electricity (6 W at $0.12/kWh) net is about $1.58/day, roughly $47/month, so a $720 station pays back in ~455 days (about 15 months). At today's HNT price (~$0.23) the Helium IoT preset nets only about $3/month.`,
         how: [
           `This DePIN Earnings Calculator turns a node's daily token rewards into real USD profit after running costs, then tells you how long the hardware takes to pay for itself. It multiplies your daily token emission by the token price for daily gross revenue, subtracts electricity (power in watts times 24 hours, divided by 1,000, times your kWh rate) and an allocated slice of monthly internet, and reports daily, monthly, and yearly net figures plus profit margin.`,
           `Hardware payback is device cost divided by daily net earnings, shown in days and months, and a rating flags it as Excellent (under 6 months), Good (under 12), Acceptable (under 24), Slow payback (24 months or more), or Negative carry when costs exceed rewards. It also computes Year-1 and 5-year ROI on the device, total tokens accrued per year, and an optional price-adjusted yearly net that applies your expected annual token appreciation at roughly half its value to approximate dollar-cost-averaged selling rather than a single year-end exit.`
@@ -6935,7 +6935,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
       },
       es: {
-        quickAnswer: `Elige una red DePIN (o introduce tus propios datos) para proyectar el ingreso pasivo de un nodo. Ejemplo: un hotspot Helium IoT que gana 0,5 HNT/día a $4,50 genera $2,25/día bruto; tras $0,014 de electricidad (5 W a $0,12/kWh) el neto es $2,24/día, unos $67/mes — así un equipo de $500 se amortiza en ~224 días (7,5 meses) con un ROI del +63% el primer año.`,
+        quickAnswer: `Elige una red DePIN (o introduce tus propios datos) para proyectar el ingreso pasivo de un nodo. Ejemplo: una estación GPS de Geodnet que gana 8 GEOD/día a ~$0,20 (noviembre de 2026) genera unos $1,60/día bruto; tras ~$0,02 de electricidad (6 W a $0,12/kWh) el neto es de unos $1,58/día, unos $47/mes, así que una estación de $720 se amortiza en ~455 días (unos 15 meses). Con el precio actual de HNT (~$0,23), el preset de Helium IoT deja solo unos $3/mes.`,
         how: [
           `Esta calculadora de ingresos DePIN convierte las recompensas diarias en tokens de un nodo en ganancia real en USD tras los costes de operación, y te dice cuánto tarda el hardware en pagarse solo. Multiplica la emisión diaria de tokens por el precio del token para el ingreso bruto diario, resta la electricidad (potencia en vatios por 24 horas, entre 1.000, por tu tarifa por kWh) y una parte asignada del internet mensual, y muestra cifras netas diarias, mensuales y anuales más el margen de ganancia.`,
           `La amortización del hardware es el coste del equipo dividido entre la ganancia neta diaria, mostrada en días y meses, con una calificación que la marca como ROI excelente (menos de 6 meses), Buen ROI (menos de 12), Aceptable (menos de 24), Recuperación lenta (24 meses o más) o Carry negativo cuando los costes superan las recompensas. También calcula el ROI a 1 y 5 años sobre el equipo, los tokens totales acumulados por año y un neto anual opcional ajustado por precio que aplica tu apreciación anual esperada a la mitad de su valor para aproximar una venta promediada en lugar de una salida única a fin de año.`
@@ -6946,7 +6946,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
       },
       pt: {
-        quickAnswer: `Escolha uma rede DePIN (ou insira seus próprios dados) para projetar a renda passiva de um nó. Exemplo: um hotspot Helium IoT que ganha 0,5 HNT/dia a $4,50 gera $2,25/dia bruto; após $0,014 de eletricidade (5 W a $0,12/kWh) o líquido é $2,24/dia, cerca de $67/mês — então um equipamento de $500 se paga em ~224 dias (7,5 meses) com ROI de +63% no primeiro ano.`,
+        quickAnswer: `Escolha uma rede DePIN (ou insira seus próprios dados) para projetar a renda passiva de um nó. Exemplo: uma estação GPS da Geodnet que ganha 8 GEOD/dia a ~$0,20 (novembro de 2026) gera cerca de $1,60/dia bruto; após ~$0,02 de eletricidade (6 W a $0,12/kWh) o líquido é de cerca de $1,58/dia, uns $47/mês, então uma estação de $720 se paga em ~455 dias (cerca de 15 meses). Com o preço atual do HNT (~$0,23), o preset do Helium IoT rende só cerca de $3/mês.`,
         how: [
           `Esta calculadora de ganhos DePIN transforma as recompensas diárias em tokens de um nó em lucro real em USD após os custos de operação, e diz quanto tempo o hardware leva para se pagar. Multiplica a emissão diária de tokens pelo preço do token para a receita bruta diária, subtrai a eletricidade (potência em watts vezes 24 horas, dividida por 1.000, vezes sua tarifa por kWh) e uma parcela alocada da internet mensal, e mostra valores líquidos diários, mensais e anuais além da margem de lucro.`,
           `O payback do hardware é o custo do equipamento dividido pelo lucro líquido diário, mostrado em dias e meses, com uma classificação que o marca como ROI excelente (menos de 6 meses), Bom ROI (menos de 12), Aceitável (menos de 24), Retorno lento (24 meses ou mais) ou Carry negativo quando os custos superam as recompensas. Também calcula o ROI de 1 e 5 anos sobre o equipamento, o total de tokens acumulados por ano e um líquido anual opcional ajustado por preço que aplica sua valorização anual esperada à metade do seu valor para aproximar uma venda diluída em vez de uma saída única no fim do ano.`
@@ -6957,7 +6957,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
       },
       tr: {
-        quickAnswer: `Bir düğümün pasif gelirini tahmin etmek için bir DePIN ağı seçin (veya kendi sayılarınızı girin). Örnek: günde 0,5 HNT kazanan ve fiyatı 4,50 dolar olan bir Helium IoT hotspot günde 2,25 dolar brüt getirir; 0,014 dolar elektrikten sonra (0,12 dolar/kWh ile 5 W) net 2,24 dolar/gün, yaklaşık 67 dolar/aydır — yani 500 dolarlık cihaz yaklaşık 224 günde (7,5 ay) kendini öder ve ilk yıl yüzde 63 ROI verir.`,
+        quickAnswer: `Bir düğümün pasif gelirini tahmin etmek için bir DePIN ağı seçin (veya kendi sayılarınızı girin). Örnek: günde 8 GEOD kazanan bir Geodnet GPS istasyonu ~0,20 dolardan (Kasım 2026) günde yaklaşık 1,60 dolar brüt getirir; ~0,02 dolar elektrikten sonra (0,12 dolar/kWh ile 6 W) net yaklaşık 1,58 dolar/gün, aylık yaklaşık 47 dolardır; yani 720 dolarlık istasyon ~455 günde (yaklaşık 15 ay) kendini öder. Bugünkü HNT fiyatıyla (~0,23 dolar) Helium IoT ön ayarı ayda yalnızca yaklaşık 3 dolar bırakır.`,
         how: [
           `Bu DePIN Kazanç Hesaplayıcısı, bir düğümün günlük token ödüllerini işletme maliyetlerinden sonra gerçek dolar kârına dönüştürür ve donanımın kendini ödemesinin ne kadar süreceğini söyler. Günlük token üretimini token fiyatıyla çarparak günlük brüt geliri bulur, elektriği (watt cinsinden güç çarpı 24 saat, 1.000'e bölünüp kWh tarifenizle çarpılır) ve aylık internetin tahsis edilen bir dilimini çıkarır, ardından günlük, aylık ve yıllık net rakamlarla kâr marjını gösterir.`,
           `Donanım geri ödemesi, cihaz maliyetinin günlük net kazanca bölünmesidir, gün ve ay olarak gösterilir ve bir derecelendirme bunu Mükemmel ROI (6 aydan az), İyi ROI (12'den az), Kabul Edilebilir (24'ten az), Yavaş geri ödeme (24 ay veya daha uzun) ya da maliyetler ödülleri aştığında Negatif carry olarak işaretler. Ayrıca cihaz üzerinden 1 yıllık ve 5 yıllık ROI'yi, yılda biriken toplam tokenleri ve beklenen yıllık token değer artışınızı değerinin yaklaşık yarısıyla uygulayan, yıl sonunda tek seferlik çıkış yerine maliyet ortalamalı satışı yaklaşık olarak hesaplayan isteğe bağlı bir fiyat ayarlı yıllık net değeri hesaplar.`
@@ -6968,7 +6968,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
       },
       hi: {
-        quickAnswer: `किसी नोड की पैसिव आय का अनुमान लगाने के लिए एक DePIN नेटवर्क चुनें (या अपने आंकड़े दर्ज करें)। उदाहरण: $4.50 पर रोज़ 0.5 HNT कमाने वाला Helium IoT हॉटस्पॉट रोज़ $2.25 ग्रॉस देता है; $0.014 बिजली के बाद (0.12 $/kWh पर 5 W) नेट $2.24/दिन, यानी लगभग $67/माह — तो $500 का डिवाइस ~224 दिन (7.5 महीने) में वसूल हो जाता है और पहले साल +63% ROI देता है।`,
+        quickAnswer: `किसी नोड की पैसिव आय का अनुमान लगाने के लिए एक DePIN नेटवर्क चुनें (या अपने आंकड़े दर्ज करें)। उदाहरण: ~$0.20 (नवंबर 2026) पर रोज़ 8 GEOD कमाने वाला Geodnet GPS स्टेशन रोज़ लगभग $1.60 ग्रॉस देता है; ~$0.02 बिजली के बाद (0.12 $/kWh पर 6 W) नेट लगभग $1.58/दिन, यानी लगभग $47/माह — तो $720 का स्टेशन ~455 दिन (लगभग 15 महीने) में वसूल होता है। आज के HNT दाम (~$0.23) पर Helium IoT प्रीसेट केवल लगभग $3/माह देता है।`,
         how: [
           `यह DePIN अर्निंग्स कैलकुलेटर किसी नोड के दैनिक टोकन रिवॉर्ड को संचालन लागत के बाद असली USD मुनाफे में बदलता है और बताता है कि हार्डवेयर खुद को वसूलने में कितना समय लेगा। यह दैनिक टोकन उत्सर्जन को टोकन कीमत से गुणा कर दैनिक ग्रॉस आय निकालता है, बिजली (वाट में पावर गुणा 24 घंटे, 1,000 से भाग, गुणा आपकी kWh दर) और मासिक इंटरनेट का आवंटित हिस्सा घटाता है, फिर दैनिक, मासिक और वार्षिक नेट आंकड़े तथा प्रॉफिट मार्जिन दिखाता है।`,
           `हार्डवेयर पेबैक डिवाइस लागत को दैनिक नेट कमाई से भाग देकर निकलता है, दिनों और महीनों में दिखाया जाता है, और एक रेटिंग इसे उत्कृष्ट ROI (6 महीने से कम), अच्छा ROI (12 से कम), स्वीकार्य (24 से कम), धीमी पेबैक (24 महीने या अधिक), या लागत रिवॉर्ड से ज़्यादा होने पर नकारात्मक कैरी के रूप में चिह्नित करती है। यह डिवाइस पर 1-साल और 5-साल का ROI, साल भर में जमा कुल टोकन, और एक वैकल्पिक मूल्य-समायोजित वार्षिक नेट भी निकालता है जो आपकी अपेक्षित वार्षिक टोकन मूल्यवृद्धि को उसके लगभग आधे मूल्य पर लागू करता है ताकि साल के अंत में एक बार बेचने के बजाय औसत-लागत बिक्री का अनुमान लगे।`
@@ -6979,7 +6979,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
       },
       ru: {
-        quickAnswer: `Выберите сеть DePIN (или введите свои данные), чтобы спрогнозировать пассивный доход узла. Пример: точка Helium IoT, зарабатывающая 0,5 HNT в день по $4,50, даёт $2,25/день валом; после $0,014 электричества (5 Вт по $0,12/кВтч) чистыми $2,24/день, около $67/месяц — значит устройство за $500 окупается за ~224 дня (7,5 месяца) при ROI +63% за первый год.`,
+        quickAnswer: `Выберите сеть DePIN (или введите свои данные), чтобы спрогнозировать пассивный доход узла. Пример: GPS-станция Geodnet, зарабатывающая 8 GEOD в день по ~$0,20 (ноябрь 2026), даёт около $1,60/день валом; после ~$0,02 электричества (6 Вт по $0,12/кВтч) чистыми около $1,58/день, примерно $47/месяц — значит станция за $720 окупается за ~455 дня (около 15 месяцев). По текущей цене HNT (~$0,23) пресет Helium IoT приносит лишь около $3/месяц.`,
         how: [
           `Этот калькулятор доходности DePIN превращает дневные токен-вознаграждения узла в реальную прибыль в долларах после эксплуатационных расходов и сообщает, за сколько окупится оборудование. Он умножает дневную эмиссию токенов на цену токена для дневной валовой выручки, вычитает электричество (мощность в ваттах умножить на 24 часа, разделить на 1000, умножить на ваш тариф за кВтч) и выделенную долю месячного интернета, затем показывает дневные, месячные и годовые чистые суммы плюс маржу прибыли.`,
           `Окупаемость оборудования — это стоимость устройства, делённая на дневную чистую прибыль, показанная в днях и месяцах, а рейтинг помечает её как «Отличный ROI» (менее 6 месяцев), «Хороший ROI» (менее 12), «Приемлемо» (менее 24), «Медленная окупаемость» (24 месяца и более) или «Отрицательный carry», когда расходы превышают вознаграждения. Также вычисляются ROI за 1 и 5 лет на устройство, всего токенов, накопленных за год, и опциональная скорректированная по цене годовая чистая сумма, применяющая ваш ожидаемый годовой рост цены токена примерно к половине его значения, чтобы приблизить усреднённую продажу, а не разовый выход в конце года.`
@@ -7675,7 +7675,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Divide Bitcoin's spot price by its 200-day moving average to get the Mayer Multiple. Example: $77,000 ÷ $70,000 = 1.100, a +10% deviation that sits in the Normal (fair-value) band; the next boundary at 1.5× would print near $105,000. Above 2.4× is the historical sell zone, below 1.0× is undervalued.`,
         how: [
           `This Mayer Multiple Calculator divides Bitcoin's current price by its 200-day moving average to produce a single ratio that flags how stretched price is from its long-term trend. You enter the spot price and the 200-day MA; it returns the multiple to three decimals, the percent deviation above or below the average, and a zone label. The classic thresholds split the result into four bands: under 1.0 is undervalued, 1.0–1.5 is normal, 1.5–2.4 is elevated, and above 2.4 is overheated.`,
-          `The methodology mirrors Trace Mayer's original work: Mayer Multiple = price ÷ 200-day MA, with the 2.4 ceiling chosen because Bitcoin has historically closed above it only about 18% of days, and below 1.0 about 22% of days. The tool also computes the dollar price at the next zone boundary, for a $70,000 MA, the 1.5× line sits at $105,000 and the 2.4× overheated line at $168,000, so you can see how far price must travel before the signal changes.`
+          `The methodology mirrors Trace Mayer's original work: Mayer Multiple = price ÷ 200-day MA, with the 2.4 ceiling chosen because Bitcoin has historically closed above it only about 6% of days, and below 1.0 about 37% of days. The tool also computes the dollar price at the next zone boundary, for a $70,000 MA, the 1.5× line sits at $105,000 and the 2.4× overheated line at $168,000, so you can see how far price must travel before the signal changes.`
         ],
         inputs: [
           `Current BTC Price (USD) is Bitcoin's spot quote, and 200-Day Moving Average (USD) is the simple average of the last 200 daily closes, pull it from any charting tool. Four price presets ($50K–$150K) and MA presets ($45K–$100K) speed up entry, and the scenario chips load full market regimes: Bear Bottom (40k/60k = 0.667×), Accumulation (70k/70k = 1.000×), Bull Cycle (120k/80k = 1.500×) and Mania Top (250k/90k = 2.778×).`,
@@ -7686,7 +7686,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Divide el precio al contado de Bitcoin entre su media móvil de 200 días para obtener el Múltiplo de Mayer. Ejemplo: $77.000 ÷ $70.000 = 1,100, una desviación de +10% que cae en la banda Normal (valor justo); el siguiente límite en 1,5× rondaría los $105.000. Por encima de 2,4× es la zona histórica de venta, por debajo de 1,0× está infravalorado.`,
         how: [
           `Esta calculadora del Múltiplo de Mayer divide el precio actual de Bitcoin entre su media móvil de 200 días para producir un solo ratio que indica cuán alejado está el precio de su tendencia de largo plazo. Introduces el precio al contado y la media de 200 días; devuelve el múltiplo con tres decimales, la desviación porcentual por encima o por debajo de la media y una etiqueta de zona. Los umbrales clásicos dividen el resultado en cuatro bandas: menos de 1,0 es infravalorado, 1,0–1,5 normal, 1,5–2,4 elevado y más de 2,4 sobrecalentado.`,
-          `La metodología refleja el trabajo original de Trace Mayer: Múltiplo de Mayer = precio ÷ media de 200 días, con el techo de 2,4 elegido porque Bitcoin históricamente ha cerrado por encima solo en torno al 18% de los días, y por debajo de 1,0 cerca del 22%. La herramienta también calcula el precio en dólares en el siguiente límite de zona — para una media de $70.000, la línea de 1,5× está en $105.000 y la de 2,4× sobrecalentado en $168.000 — así ves cuánto debe moverse el precio antes de que cambie la señal.`
+          `La metodología refleja el trabajo original de Trace Mayer: Múltiplo de Mayer = precio ÷ media de 200 días, con el techo de 2,4 elegido porque Bitcoin históricamente ha cerrado por encima solo en torno al 6% de los días, y por debajo de 1,0 cerca del 37%. La herramienta también calcula el precio en dólares en el siguiente límite de zona — para una media de $70.000, la línea de 1,5× está en $105.000 y la de 2,4× sobrecalentado en $168.000 — así ves cuánto debe moverse el precio antes de que cambie la señal.`
         ],
         inputs: [
           `Precio actual de BTC (USD) es la cotización al contado de Bitcoin, y Media Móvil de 200 días (USD) es el promedio simple de los últimos 200 cierres diarios — tómalo de cualquier herramienta de gráficos. Cuatro presets de precio ($50K–$150K) y de media ($45K–$100K) agilizan la entrada, y los chips de escenario cargan regímenes completos de mercado: Suelo Bajista (40k/60k = 0,667×), Acumulación (70k/70k = 1,000×), Ciclo Alcista (120k/80k = 1,500×) y Cima de Manía (250k/90k = 2,778×).`,
@@ -7697,7 +7697,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Divida o preço à vista do Bitcoin pela sua média móvel de 200 dias para obter o Múltiplo de Mayer. Exemplo: $77.000 ÷ $70.000 = 1,100, um desvio de +10% que fica na faixa Normal (valor justo); o próximo limite em 1,5× rondaria os $105.000. Acima de 2,4× é a zona histórica de venda, abaixo de 1,0× está subvalorizado.`,
         how: [
           `Esta calculadora do Múltiplo de Mayer divide o preço atual do Bitcoin pela sua média móvel de 200 dias para produzir um único índice que sinaliza o quanto o preço está esticado em relação à sua tendência de longo prazo. Você insere o preço à vista e a média de 200 dias; ela retorna o múltiplo com três casas decimais, o desvio percentual acima ou abaixo da média e um rótulo de zona. Os limiares clássicos dividem o resultado em quatro faixas: abaixo de 1,0 é subvalorizado, 1,0–1,5 normal, 1,5–2,4 elevado e acima de 2,4 sobreaquecido.`,
-          `A metodologia espelha o trabalho original de Trace Mayer: Múltiplo de Mayer = preço ÷ média de 200 dias, com o teto de 2,4 escolhido porque o Bitcoin historicamente fechou acima dele em apenas cerca de 18% dos dias, e abaixo de 1,0 em cerca de 22%. A ferramenta também calcula o preço em dólares no próximo limite de zona — para uma média de $70.000, a linha de 1,5× fica em $105.000 e a de 2,4× sobreaquecido em $168.000 — assim você vê o quanto o preço precisa andar antes de o sinal mudar.`
+          `A metodologia espelha o trabalho original de Trace Mayer: Múltiplo de Mayer = preço ÷ média de 200 dias, com o teto de 2,4 escolhido porque o Bitcoin historicamente fechou acima dele em apenas cerca de 6% dos dias, e abaixo de 1,0 em cerca de 37%. A ferramenta também calcula o preço em dólares no próximo limite de zona — para uma média de $70.000, a linha de 1,5× fica em $105.000 e a de 2,4× sobreaquecido em $168.000 — assim você vê o quanto o preço precisa andar antes de o sinal mudar.`
         ],
         inputs: [
           `Preço atual do BTC (USD) é a cotação à vista do Bitcoin, e Média Móvel de 200 dias (USD) é a média simples dos últimos 200 fechamentos diários — pegue-a de qualquer ferramenta de gráficos. Quatro presets de preço ($50K–$150K) e de média ($45K–$100K) agilizam a entrada, e os chips de cenário carregam regimes completos de mercado: Fundo de Baixa (40k/60k = 0,667×), Acumulação (70k/70k = 1,000×), Ciclo de Alta (120k/80k = 1,500×) e Topo de Mania (250k/90k = 2,778×).`,
@@ -7708,7 +7708,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Mayer Çarpanını bulmak için Bitcoin'in anlık fiyatını 200 günlük hareketli ortalamasına bölün. Örnek: 77.000 dolar ÷ 70.000 dolar = 1,100; bu +%10 sapma Normal (adil değer) bandına düşer; 1,5× sınırı yaklaşık 105.000 dolarda olur. 2,4× üzeri tarihsel satış bölgesi, 1,0× altı ise değerinin altındadır.`,
         how: [
           `Bu Mayer Çarpanı Hesaplayıcısı, Bitcoin'in güncel fiyatını 200 günlük hareketli ortalamasına bölerek fiyatın uzun vadeli trendinden ne kadar uzaklaştığını gösteren tek bir oran üretir. Anlık fiyatı ve 200 günlük ortalamayı girersiniz; üç ondalıkla çarpanı, ortalamanın üstündeki veya altındaki yüzde sapmayı ve bir bölge etiketi döndürür. Klasik eşikler sonucu dört banda ayırır: 1,0 altı değerinin altında, 1,0–1,5 normal, 1,5–2,4 yüksek ve 2,4 üzeri aşırı ısınmış.`,
-          `Yöntem, Trace Mayer'in özgün çalışmasını yansıtır: Mayer Çarpanı = fiyat ÷ 200 günlük ortalama; 2,4 tavanı, Bitcoin'in tarihsel olarak günlerin yalnızca yaklaşık %18'inde bunun üzerinde, %22'sinde ise 1,0 altında kapanmış olması nedeniyle seçilmiştir. Araç ayrıca bir sonraki bölge sınırındaki dolar fiyatını hesaplar — 70.000 dolarlık ortalama için 1,5× çizgisi 105.000 dolarda, 2,4× aşırı ısınmış çizgisi 168.000 dolardadır — böylece sinyal değişmeden önce fiyatın ne kadar yol alması gerektiğini görürsünüz.`
+          `Yöntem, Trace Mayer'in özgün çalışmasını yansıtır: Mayer Çarpanı = fiyat ÷ 200 günlük ortalama; 2,4 tavanı, Bitcoin'in tarihsel olarak günlerin yalnızca yaklaşık %6'inde bunun üzerinde, %37'sinde ise 1,0 altında kapanmış olması nedeniyle seçilmiştir. Araç ayrıca bir sonraki bölge sınırındaki dolar fiyatını hesaplar — 70.000 dolarlık ortalama için 1,5× çizgisi 105.000 dolarda, 2,4× aşırı ısınmış çizgisi 168.000 dolardadır — böylece sinyal değişmeden önce fiyatın ne kadar yol alması gerektiğini görürsünüz.`
         ],
         inputs: [
           `Güncel BTC Fiyatı (USD) Bitcoin'in anlık kotasyonudur ve 200 Günlük Hareketli Ortalama (USD) son 200 günlük kapanışın basit ortalamasıdır — herhangi bir grafik aracından alın. Dört fiyat ön ayarı (50K–150K dolar) ve ortalama ön ayarı (45K–100K dolar) girişi hızlandırır; senaryo çipleri ise tam piyasa rejimlerini yükler: Ayı Dibi (40k/60k = 0,667×), Birikim (70k/70k = 1,000×), Boğa Döngüsü (120k/80k = 1,500×) ve Mani Zirvesi (250k/90k = 2,778×).`,
@@ -7719,7 +7719,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `मेयर मल्टीपल पाने के लिए बिटकॉइन की मौजूदा कीमत को उसके 200-दिन मूविंग एवरेज से भाग दें। उदाहरण: $77,000 ÷ $70,000 = 1.100, यानी +10% विचलन जो Normal (उचित मूल्य) बैंड में आता है; 1.5× पर अगली सीमा लगभग $105,000 होगी। 2.4× से ऊपर ऐतिहासिक सेल ज़ोन है, 1.0× से नीचे अंडरवैल्यूड है।`,
         how: [
           `यह मेयर मल्टीपल कैलकुलेटर बिटकॉइन की मौजूदा कीमत को उसके 200-दिन मूविंग एवरेज से भाग देकर एक अनुपात निकालता है जो दिखाता है कि कीमत अपने दीर्घकालिक ट्रेंड से कितनी खिंची हुई है। आप स्पॉट कीमत और 200-दिन MA दर्ज करते हैं; यह तीन दशमलव तक मल्टीपल, एवरेज से ऊपर या नीचे प्रतिशत विचलन और एक ज़ोन लेबल लौटाता है। क्लासिक थ्रेशहोल्ड परिणाम को चार बैंड में बांटते हैं: 1.0 से कम अंडरवैल्यूड, 1.0–1.5 नॉर्मल, 1.5–2.4 एलिवेटेड और 2.4 से ऊपर ओवरहीटेड।`,
-          `यह तरीका ट्रेस मेयर के मूल काम पर आधारित है: मेयर मल्टीपल = कीमत ÷ 200-दिन MA, और 2.4 की सीमा इसलिए चुनी गई क्योंकि बिटकॉइन ऐतिहासिक रूप से केवल लगभग 18% दिनों इसके ऊपर और लगभग 22% दिनों 1.0 के नीचे बंद हुआ है। टूल अगली ज़ोन सीमा पर डॉलर कीमत भी निकालता है — $70,000 MA के लिए 1.5× रेखा $105,000 पर और 2.4× ओवरहीटेड रेखा $168,000 पर होती है — ताकि आप देख सकें कि सिग्नल बदलने से पहले कीमत को कितना चलना होगा।`
+          `यह तरीका ट्रेस मेयर के मूल काम पर आधारित है: मेयर मल्टीपल = कीमत ÷ 200-दिन MA, और 2.4 की सीमा इसलिए चुनी गई क्योंकि बिटकॉइन ऐतिहासिक रूप से केवल लगभग 6% दिनों इसके ऊपर और लगभग 37% दिनों 1.0 के नीचे बंद हुआ है। टूल अगली ज़ोन सीमा पर डॉलर कीमत भी निकालता है — $70,000 MA के लिए 1.5× रेखा $105,000 पर और 2.4× ओवरहीटेड रेखा $168,000 पर होती है — ताकि आप देख सकें कि सिग्नल बदलने से पहले कीमत को कितना चलना होगा।`
         ],
         inputs: [
           `मौजूदा BTC कीमत (USD) बिटकॉइन का स्पॉट भाव है, और 200-दिन मूविंग एवरेज (USD) पिछले 200 दैनिक क्लोज़ का साधारण औसत है — इसे किसी भी चार्टिंग टूल से लें। चार कीमत प्रीसेट ($50K–$150K) और MA प्रीसेट ($45K–$100K) एंट्री तेज़ करते हैं, और सिनेरियो चिप्स पूरे मार्केट रेजीम लोड करते हैं: Bear Bottom (40k/60k = 0.667×), Accumulation (70k/70k = 1.000×), Bull Cycle (120k/80k = 1.500×) और Mania Top (250k/90k = 2.778×)।`,
@@ -7730,7 +7730,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         quickAnswer: `Разделите спотовую цену Bitcoin на его 200-дневную скользящую среднюю, чтобы получить Mayer Multiple. Пример: $77 000 ÷ $70 000 = 1,100 — отклонение +10%, попадающее в полосу Normal (справедливая цена); следующая граница при 1,5× будет около $105 000. Выше 2,4× — историческая зона продаж, ниже 1,0× — недооценка.`,
         how: [
           `Этот калькулятор Mayer Multiple делит текущую цену Bitcoin на его 200-дневную скользящую среднюю, давая единый коэффициент, который показывает, насколько цена оторвалась от своего долгосрочного тренда. Вы вводите спотовую цену и 200-дневную MA; он возвращает множитель с тремя знаками после запятой, процентное отклонение выше или ниже средней и метку зоны. Классические пороги делят результат на четыре полосы: меньше 1,0 — недооценка, 1,0–1,5 — норма, 1,5–2,4 — повышенный уровень, выше 2,4 — перегрев.`,
-          `Методика повторяет оригинальную работу Трейса Майера: Mayer Multiple = цена ÷ 200-дневная MA, а потолок 2,4 выбран потому, что Bitcoin исторически закрывался выше него лишь около 18% дней, а ниже 1,0 — около 22% дней. Инструмент также вычисляет цену в долларах на следующей границе зоны — при MA в $70 000 линия 1,5× находится на $105 000, а линия перегрева 2,4× — на $168 000 — так видно, насколько должна сдвинуться цена, прежде чем сигнал изменится.`
+          `Методика повторяет оригинальную работу Трейса Майера: Mayer Multiple = цена ÷ 200-дневная MA, а потолок 2,4 выбран потому, что Bitcoin исторически закрывался выше него лишь около 6% дней, а ниже 1,0 — около 37% дней. Инструмент также вычисляет цену в долларах на следующей границе зоны — при MA в $70 000 линия 1,5× находится на $105 000, а линия перегрева 2,4× — на $168 000 — так видно, насколько должна сдвинуться цена, прежде чем сигнал изменится.`
         ],
         inputs: [
           `Текущая цена BTC (USD) — это спотовая котировка Bitcoin, а 200-дневная скользящая средняя (USD) — простое среднее последних 200 дневных закрытий; возьмите её из любого графического сервиса. Четыре пресета цены ($50K–$150K) и пресеты MA ($45K–$100K) ускоряют ввод, а чипы сценариев загружают целые рыночные режимы: Дно медвежки (40k/60k = 0,667×), Накопление (70k/70k = 1,000×), Бычий цикл (120k/80k = 1,500×) и Вершина мании (250k/90k = 2,778×).`,
@@ -7944,68 +7944,68 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'pumpfun-bonding-curve-calculator': {
       en: {
-        quickAnswer: `Enter SOL to invest, SOL price, and how much SOL is already in the curve to see tokens received, slippage, and distance to the $69K graduation to Raydium. Example: 1 SOL at $155 into a curve holding 20 SOL buys ~12.62M tokens at 2.00% slippage, market cap is ~$12,038, leaving ~$56,962 (about 65 SOL) before graduation.`,
+        quickAnswer: `Enter SOL to invest, SOL price, and how much SOL is already in the curve to see tokens received, slippage, and distance to the ~$64K graduation to PumpSwap. Example: 1 SOL at $155 into a curve holding 20 SOL buys ~12.62M tokens at 2.00% slippage, market cap is ~$12,038, leaving ~$51,643 (about 65 SOL) before graduation.`,
         how: [
           `This Pump.fun Bonding Curve Calculator models the constant-product (x times y = k) curve every Pump.fun memecoin trades on before it graduates. It starts from the protocol's virtual reserves of 30 SOL and ~1.073B tokens, shifts them by the SOL already in the curve, then prices your buy. From the new virtual reserves it derives tokens received, the spot price versus your effective fill price, the resulting slippage, and the current and post-buy market caps in USD.`,
-          `The core formula is k = 30 times 1.073B; adding your SOL to the virtual SOL reserve lowers the virtual token reserve, and the difference is the tokens you receive. Graduation to Raydium fires at a $69K market cap, historically near 85 SOL in the curve, so the tool reports SOL still needed and dollars remaining. It also projects position value and ROI if the coin reaches that $69K graduation price. Model the exit side with our <a href="/profit-calculator/">profit calculator</a>.`
+          `The core formula is k = 30 times 1.073B; adding your SOL to the virtual SOL reserve lowers the virtual token reserve, and the difference is the tokens you receive. Graduation to PumpSwap fires once about 85 SOL has entered the curve (~793M tokens sold), which is about 411 SOL of market cap: ~$64K at $155 per SOL, ~$30K at $72, so the tool reports SOL still needed and dollars remaining. It also projects position value and ROI if the coin reaches that ~$64K graduation price. Model the exit side with our <a href="/profit-calculator/">profit calculator</a>.`
         ],
         inputs: [
-          `Three fields drive the math: SOL to Invest (your buy size, with 0.1 to 10 SOL quick pills), SOL Price in USD (default $155, used to convert curve prices and caps to dollars), and Current SOL in Bonding Curve (how far along the curve is, 0 to 85). Preset scenarios — Early Sniper, Mid Pump, Pre-Graduation, and Whale Entry, load realistic combinations so you can compare an entry at 0.1 SOL versus 85 SOL of curve progress instantly.`,
+          `Three fields drive the math: SOL to Invest (your buy size, with 0.1 to 10 SOL quick pills), SOL Price in USD (default $72, the November 2026 price, used to convert curve prices and caps to dollars), and Current SOL in Bonding Curve (how far along the curve is, 0 to 85). Preset scenarios — Early Sniper, Mid Pump, Pre-Graduation, and Whale Entry, load realistic combinations so you can compare an entry at 0.1 SOL versus 85 SOL of curve progress instantly.`,
           `Earlier entries buy far more tokens per SOL because the curve is steepest near the start, and the same buy also slips more there: the slippage shown is your SOL divided by the virtual SOL reserve (30 SOL plus the SOL already in the curve), so it shrinks as the curve fills. The model uses Pump.fun's published virtual reserves and the ~85 SOL graduation benchmark; real fills vary with the 1% trade fee, MEV, and protocol tweaks. Remember roughly 99% of Pump.fun coins never graduate and most that do still lose value within days, treat ROI-at-graduation as a ceiling, not a forecast. Size positions with our <a href="/position-size-calculator/">position size calculator</a>.`
         ],
       },
       es: {
-        quickAnswer: `Introduce el SOL a invertir, el precio del SOL y cuánto SOL ya hay en la curva para ver los tokens recibidos, el slippage y la distancia a la graduación de $69K a Raydium. Ejemplo: 1 SOL a $155 en una curva con 20 SOL compra ~12,62M tokens con 2,00% de slippage, la capitalización es ~$12.038 y faltan ~$56.962 (unos 65 SOL) para graduar.`,
+        quickAnswer: `Introduce el SOL a invertir, el precio del SOL y cuánto SOL ya hay en la curva para ver los tokens recibidos, el slippage y la distancia a la graduación de ~$64K a PumpSwap. Ejemplo: 1 SOL a $155 en una curva con 20 SOL compra ~12,62M tokens con 2,00% de slippage, la capitalización es ~$12.038 y faltan ~$51.643 (unos 65 SOL) para graduar.`,
         how: [
           `Esta calculadora modela la curva de producto constante (x por y = k) sobre la que opera cada memecoin de Pump.fun antes de graduarse. Parte de las reservas virtuales del protocolo de 30 SOL y ~1.073B tokens, las desplaza según el SOL que ya hay en la curva y luego cotiza tu compra. De las nuevas reservas virtuales deriva los tokens recibidos, el precio spot frente a tu precio efectivo de ejecución, el slippage resultante y la capitalización actual y posterior a la compra en USD.`,
-          `La fórmula central es k = 30 por 1.073B; sumar tu SOL a la reserva virtual de SOL reduce la reserva virtual de tokens, y la diferencia son los tokens que recibes. La graduación a Raydium se activa con una capitalización de $69K, históricamente cerca de 85 SOL en la curva, así que la herramienta indica el SOL que aún falta y los dólares restantes. También proyecta el valor de posición y el ROI si la moneda alcanza ese precio de graduación de $69K. Modela la salida con nuestra <a href="/profit-calculator/">calculadora de ganancias</a>.`
+          `La fórmula central es k = 30 por 1.073B; sumar tu SOL a la reserva virtual de SOL reduce la reserva virtual de tokens, y la diferencia son los tokens que recibes. La graduación a PumpSwap se activa cuando entran unos 85 SOL en la curva (~793M tokens vendidos), unos 411 SOL de capitalización: ~$64K con SOL a $155, ~$30K a $72, así que la herramienta indica el SOL que aún falta y los dólares restantes. También proyecta el valor de posición y el ROI si la moneda alcanza ese precio de graduación de ~$64K. Modela la salida con nuestra <a href="/profit-calculator/">calculadora de ganancias</a>.`
         ],
         inputs: [
-          `Tres campos mueven el cálculo: SOL a Invertir (el tamaño de tu compra, con pills rápidas de 0,1 a 10 SOL), Precio del SOL en USD (por defecto $155, para convertir precios y capitalizaciones a dólares) y SOL Actual en la Curva de Bonding (qué tan avanzada está la curva, de 0 a 85). Los escenarios preestablecidos — Early Sniper, Mid Pump, Pre-Graduation y Whale Entry — cargan combinaciones realistas para comparar al instante una entrada con 0,1 SOL frente a 85 SOL de avance.`,
+          `Tres campos mueven el cálculo: SOL a Invertir (el tamaño de tu compra, con pills rápidas de 0,1 a 10 SOL), Precio del SOL en USD (por defecto $72, el precio de noviembre de 2026, para convertir precios y capitalizaciones a dólares) y SOL Actual en la Curva de Bonding (qué tan avanzada está la curva, de 0 a 85). Los escenarios preestablecidos — Early Sniper, Mid Pump, Pre-Graduation y Whale Entry — cargan combinaciones realistas para comparar al instante una entrada con 0,1 SOL frente a 85 SOL de avance.`,
           `Las entradas tempranas compran muchos más tokens por SOL porque la curva es más empinada cerca del inicio, y ahí la misma compra también sufre más slippage: el slippage mostrado es tu SOL dividido entre la reserva virtual de SOL (30 SOL más el SOL que ya hay en la curva), así que se reduce a medida que la curva se llena. El modelo usa las reservas virtuales publicadas de Pump.fun y el umbral de ~85 SOL para graduar; las ejecuciones reales varían con la comisión del 1%, el MEV y los ajustes del protocolo. Recuerda que cerca del 99% de las monedas de Pump.fun nunca se gradúan y la mayoría de las que lo hacen pierde valor en días — toma el ROI en graduación como un techo, no un pronóstico. Dimensiona con nuestra <a href="/position-size-calculator/">calculadora de tamaño de posición</a>.`
         ],
       },
       pt: {
-        quickAnswer: `Insira o SOL a investir, o preço do SOL e quanto SOL já está na curva para ver os tokens recebidos, o slippage e a distância até a graduação de $69K para a Raydium. Exemplo: 1 SOL a $155 numa curva com 20 SOL compra ~12,62M tokens com 2,00% de slippage, a capitalização é ~$12.038 e faltam ~$56.962 (cerca de 65 SOL) para graduar.`,
+        quickAnswer: `Insira o SOL a investir, o preço do SOL e quanto SOL já está na curva para ver os tokens recebidos, o slippage e a distância até a graduação de ~$64K para a PumpSwap. Exemplo: 1 SOL a $155 numa curva com 20 SOL compra ~12,62M tokens com 2,00% de slippage, a capitalização é ~$12.038 e faltam ~$51.643 (cerca de 65 SOL) para graduar.`,
         how: [
           `Esta calculadora modela a curva de produto constante (x vezes y = k) sobre a qual cada memecoin da Pump.fun opera antes de graduar. Ela parte das reservas virtuais do protocolo de 30 SOL e ~1,073B tokens, desloca-as conforme o SOL já presente na curva e então precifica sua compra. A partir das novas reservas virtuais, deriva os tokens recebidos, o preço spot frente ao seu preço efetivo de execução, o slippage resultante e a capitalização atual e pós-compra em USD.`,
-          `A fórmula central é k = 30 vezes 1,073B; somar seu SOL à reserva virtual de SOL reduz a reserva virtual de tokens, e a diferença são os tokens que você recebe. A graduação para a Raydium ocorre com capitalização de $69K, historicamente perto de 85 SOL na curva, então a ferramenta informa o SOL ainda necessário e os dólares restantes. Ela também projeta o valor da posição e o ROI se a moeda atingir esse preço de graduação de $69K. Modele a saída com nossa <a href="/profit-calculator/">calculadora de lucro</a>.`
+          `A fórmula central é k = 30 vezes 1,073B; somar seu SOL à reserva virtual de SOL reduz a reserva virtual de tokens, e a diferença são os tokens que você recebe. A graduação para a PumpSwap ocorre quando cerca de 85 SOL entram na curva (~793M tokens vendidos), uns 411 SOL de market cap: ~$64K com SOL a $155, ~$30K a $72, então a ferramenta informa o SOL ainda necessário e os dólares restantes. Ela também projeta o valor da posição e o ROI se a moeda atingir esse preço de graduação de ~$64K. Modele a saída com nossa <a href="/profit-calculator/">calculadora de lucro</a>.`
         ],
         inputs: [
-          `Três campos movem o cálculo: SOL a Investir (o tamanho da sua compra, com pills rápidas de 0,1 a 10 SOL), Preço do SOL em USD (padrão $155, para converter preços e capitalizações em dólares) e SOL Atual na Curva de Bonding (quão avançada está a curva, de 0 a 85). Os cenários predefinidos — Early Sniper, Mid Pump, Pre-Graduation e Whale Entry — carregam combinações realistas para comparar na hora uma entrada com 0,1 SOL frente a 85 SOL de progresso.`,
+          `Três campos movem o cálculo: SOL a Investir (o tamanho da sua compra, com pills rápidas de 0,1 a 10 SOL), Preço do SOL em USD (padrão $72, o preço de novembro de 2026, para converter preços e capitalizações em dólares) e SOL Atual na Curva de Bonding (quão avançada está a curva, de 0 a 85). Os cenários predefinidos — Early Sniper, Mid Pump, Pre-Graduation e Whale Entry — carregam combinações realistas para comparar na hora uma entrada com 0,1 SOL frente a 85 SOL de progresso.`,
           `Entradas mais cedo compram muito mais tokens por SOL porque a curva é mais íngreme perto do início, e ali a mesma compra também sofre mais slippage: o slippage exibido é o seu SOL dividido pela reserva virtual de SOL (30 SOL mais o SOL já presente na curva), então ele diminui à medida que a curva enche. O modelo usa as reservas virtuais publicadas da Pump.fun e o limiar de ~85 SOL para graduar; execuções reais variam com a taxa de 1%, o MEV e ajustes do protocolo. Lembre-se de que cerca de 99% das moedas da Pump.fun nunca graduam e a maioria das que graduam ainda perde valor em dias — trate o ROI na graduação como um teto, não uma previsão. Dimensione com nossa <a href="/position-size-calculator/">calculadora de tamanho de posição</a>.`
         ],
       },
       tr: {
-        quickAnswer: `Yatırılacak SOL'u, SOL fiyatını ve eğride zaten bulunan SOL miktarını girerek alınan token, slipaj ve Raydium'a 69 bin dolarlık mezuniyete olan mesafeyi görün. Örnek: 20 SOL içeren bir eğriye 155 dolardan 1 SOL girişi, yüzde 2,00 slipajla ~12,62M token alır, piyasa değeri ~12.038 dolardır ve mezuniyete ~56.962 dolar (yaklaşık 65 SOL) kalır.`,
+        quickAnswer: `Yatırılacak SOL'u, SOL fiyatını ve eğride zaten bulunan SOL miktarını girerek alınan token, slipaj ve PumpSwap'a ~64 bin dolarlık mezuniyete olan mesafeyi görün. Örnek: 20 SOL içeren bir eğriye 155 dolardan 1 SOL girişi, yüzde 2,00 slipajla ~12,62M token alır, piyasa değeri ~12.038 dolardır ve mezuniyete ~51.643 dolar (yaklaşık 65 SOL) kalır.`,
         how: [
           `Bu hesaplayıcı, her Pump.fun memecoin'inin mezun olmadan önce işlem gördüğü sabit çarpım (x çarpı y eşittir k) eğrisini modeller. Protokolün 30 SOL ve ~1,073 milyar tokenlik sanal rezervlerinden başlar, bunları eğride zaten bulunan SOL'a göre kaydırır ve ardından alımınızı fiyatlandırır. Yeni sanal rezervlerden alınan tokeni, etkin gerçekleşme fiyatınıza karşı spot fiyatı, ortaya çıkan slipajı ve mevcut ile alım sonrası piyasa değerlerini dolar cinsinden türetir.`,
-          `Temel formül k eşittir 30 çarpı 1,073 milyardır; SOL'unuzu sanal SOL rezervine eklemek sanal token rezervini düşürür ve fark, aldığınız tokenlerdir. Raydium'a mezuniyet 69 bin dolarlık piyasa değerinde, tarihsel olarak eğride yaklaşık 85 SOL civarında gerçekleşir, bu yüzden araç hâlâ gereken SOL'u ve kalan doları bildirir. Ayrıca coin bu 69 bin dolarlık mezuniyet fiyatına ulaşırsa pozisyon değerini ve getiriyi öngörür. Çıkış tarafını <a href="/profit-calculator/">kâr hesaplayıcımızla</a> modelleyin.`
+          `Temel formül k eşittir 30 çarpı 1,073 milyardır; SOL'unuzu sanal SOL rezervine eklemek sanal token rezervini düşürür ve fark, aldığınız tokenlerdir. PumpSwap'a mezuniyet, eğriye yaklaşık 85 SOL girdiğinde (~793 milyon token satılmış) gerçekleşir; bu yaklaşık 411 SOL piyasa değeridir (SOL 155 dolarken ~64 bin, 72 dolarken ~30 bin dolar), yani eğride yaklaşık 85 SOL civarında gerçekleşir, bu yüzden araç hâlâ gereken SOL'u ve kalan doları bildirir. Ayrıca coin bu ~64 bin dolarlık mezuniyet fiyatına ulaşırsa pozisyon değerini ve getiriyi öngörür. Çıkış tarafını <a href="/profit-calculator/">kâr hesaplayıcımızla</a> modelleyin.`
         ],
         inputs: [
-          `Üç alan hesabı yönlendirir: Yatırılacak SOL (alım büyüklüğünüz, 0,1 ile 10 SOL hızlı butonlarıyla), Dolar cinsinden SOL Fiyatı (varsayılan 155 dolar, eğri fiyatlarını ve piyasa değerlerini dolara çevirmek için) ve Eğrideki Mevcut SOL (eğrinin ne kadar ilerlediği, 0 ile 85 arası). Hazır senaryolar — Early Sniper, Mid Pump, Pre-Graduation ve Whale Entry — gerçekçi kombinasyonlar yükler, böylece 0,1 SOL girişini 85 SOL eğri ilerlemesiyle anında karşılaştırırsınız.`,
+          `Üç alan hesabı yönlendirir: Yatırılacak SOL (alım büyüklüğünüz, 0,1 ile 10 SOL hızlı butonlarıyla), Dolar cinsinden SOL Fiyatı (varsayılan 72 dolar, Kasım 2026 fiyatı, eğri fiyatlarını ve piyasa değerlerini dolara çevirmek için) ve Eğrideki Mevcut SOL (eğrinin ne kadar ilerlediği, 0 ile 85 arası). Hazır senaryolar — Early Sniper, Mid Pump, Pre-Graduation ve Whale Entry — gerçekçi kombinasyonlar yükler, böylece 0,1 SOL girişini 85 SOL eğri ilerlemesiyle anında karşılaştırırsınız.`,
           `Erken girişler SOL başına çok daha fazla token alır çünkü eğri başlangıca yakın en diktir; aynı alım orada daha fazla slipaj da görür: gösterilen slipaj, SOL'unuzun sanal SOL rezervine (30 SOL artı eğride zaten bulunan SOL) bölümüdür, dolayısıyla eğri doldukça küçülür. Model, Pump.fun'ın yayımladığı sanal rezervleri ve ~85 SOL mezuniyet eşiğini kullanır; gerçek gerçekleşmeler yüzde 1 işlem ücreti, MEV ve protokol değişiklikleriyle farklılaşır. Pump.fun coinlerinin yaklaşık yüzde 99'unun asla mezun olmadığını ve mezun olanların çoğunun bile günler içinde değer kaybettiğini unutmayın — mezuniyetteki getiriyi bir tahmin değil, bir tavan olarak görün. Pozisyonları <a href="/position-size-calculator/">pozisyon büyüklüğü hesaplayıcımızla</a> boyutlandırın.`
         ],
       },
       hi: {
-        quickAnswer: `निवेश करने वाला SOL, SOL की कीमत और कर्व में पहले से मौजूद SOL दर्ज करें ताकि प्राप्त टोकन, स्लिपेज और Raydium पर $69K ग्रेजुएशन तक की दूरी देख सकें। उदाहरण: 20 SOL वाले कर्व में $155 पर 1 SOL डालने से 2.00% स्लिपेज पर ~12.62M टोकन मिलते हैं, मार्केट कैप ~$12,038 है और ग्रेजुएशन तक ~$56,962 (लगभग 65 SOL) बाकी रहते हैं।`,
+        quickAnswer: `निवेश करने वाला SOL, SOL की कीमत और कर्व में पहले से मौजूद SOL दर्ज करें ताकि प्राप्त टोकन, स्लिपेज और PumpSwap पर ~$64K ग्रेजुएशन तक की दूरी देख सकें। उदाहरण: 20 SOL वाले कर्व में $155 पर 1 SOL डालने से 2.00% स्लिपेज पर ~12.62M टोकन मिलते हैं, मार्केट कैप ~$12,038 है और ग्रेजुएशन तक ~$51,643 (लगभग 65 SOL) बाकी रहते हैं।`,
         how: [
           `यह कैलकुलेटर उस कॉन्स्टेंट-प्रोडक्ट (x गुणा y = k) कर्व को मॉडल करता है जिस पर हर Pump.fun मीमकॉइन ग्रेजुएट होने से पहले ट्रेड करता है। यह प्रोटोकॉल के 30 SOL और ~1.073B टोकन के वर्चुअल रिज़र्व से शुरू होता है, उन्हें कर्व में पहले से मौजूद SOL के अनुसार शिफ्ट करता है और फिर आपकी खरीद की कीमत तय करता है। नए वर्चुअल रिज़र्व से यह प्राप्त टोकन, आपके प्रभावी फिल मूल्य बनाम स्पॉट मूल्य, परिणामी स्लिपेज और मौजूदा व खरीद-बाद मार्केट कैप USD में निकालता है।`,
-          `मूल सूत्र है k = 30 गुणा 1.073B; आपका SOL वर्चुअल SOL रिज़र्व में जोड़ने से वर्चुअल टोकन रिज़र्व घटता है, और अंतर ही वे टोकन हैं जो आपको मिलते हैं। Raydium पर ग्रेजुएशन $69K मार्केट कैप पर होता है, ऐतिहासिक रूप से कर्व में लगभग 85 SOL के पास, इसलिए टूल बताता है कि कितना SOL अभी चाहिए और कितने डॉलर बाकी हैं। यह उस $69K ग्रेजुएशन मूल्य तक पहुंचने पर पोजीशन वैल्यू और ROI का अनुमान भी लगाता है। एग्जिट साइड को हमारे <a href="/profit-calculator/">प्रॉफिट कैलकुलेटर</a> से मॉडल करें।`
+          `मूल सूत्र है k = 30 गुणा 1.073B; आपका SOL वर्चुअल SOL रिज़र्व में जोड़ने से वर्चुअल टोकन रिज़र्व घटता है, और अंतर ही वे टोकन हैं जो आपको मिलते हैं। PumpSwap पर ग्रेजुएशन तब होता है जब कर्व में लगभग 85 SOL आ जाते हैं (~793M टोकन बिके), यानी लगभग 411 SOL मार्केट कैप ($155 SOL पर ~$64K, $72 पर ~$30K), कर्व में लगभग 85 SOL के पास, इसलिए टूल बताता है कि कितना SOL अभी चाहिए और कितने डॉलर बाकी हैं। यह उस ~$64K ग्रेजुएशन मूल्य तक पहुंचने पर पोजीशन वैल्यू और ROI का अनुमान भी लगाता है। एग्जिट साइड को हमारे <a href="/profit-calculator/">प्रॉफिट कैलकुलेटर</a> से मॉडल करें।`
         ],
         inputs: [
-          `तीन फील्ड गणित चलाते हैं: निवेश करने वाला SOL (आपकी खरीद का आकार, 0.1 से 10 SOL की क्विक पिल्स के साथ), SOL की कीमत USD में (डिफ़ॉल्ट $155, कर्व कीमतों और कैप को डॉलर में बदलने के लिए) और कर्व में मौजूदा SOL (कर्व कितना आगे बढ़ा है, 0 से 85 तक)। प्रीसेट परिदृश्य — Early Sniper, Mid Pump, Pre-Graduation और Whale Entry — यथार्थवादी संयोजन लोड करते हैं ताकि आप 0.1 SOL की एंट्री बनाम 85 SOL कर्व प्रगति की तुरंत तुलना कर सकें।`,
+          `तीन फील्ड गणित चलाते हैं: निवेश करने वाला SOL (आपकी खरीद का आकार, 0.1 से 10 SOL की क्विक पिल्स के साथ), SOL की कीमत USD में (डिफ़ॉल्ट $72, नवंबर 2026 की कीमत, कर्व कीमतों और कैप को डॉलर में बदलने के लिए) और कर्व में मौजूदा SOL (कर्व कितना आगे बढ़ा है, 0 से 85 तक)। प्रीसेट परिदृश्य — Early Sniper, Mid Pump, Pre-Graduation और Whale Entry — यथार्थवादी संयोजन लोड करते हैं ताकि आप 0.1 SOL की एंट्री बनाम 85 SOL कर्व प्रगति की तुरंत तुलना कर सकें।`,
           `जल्दी एंट्री प्रति SOL कहीं अधिक टोकन खरीदती है क्योंकि कर्व शुरुआत के पास सबसे तीव्र होता है, और वहीं वही खरीद ज़्यादा स्लिपेज भी झेलती है: दिखाया गया स्लिपेज आपका SOL भाग वर्चुअल SOL रिज़र्व (30 SOL प्लस कर्व में पहले से मौजूद SOL) है, इसलिए कर्व भरने के साथ यह घटता जाता है। मॉडल Pump.fun के प्रकाशित वर्चुअल रिज़र्व और ~85 SOL ग्रेजुएशन बेंचमार्क का उपयोग करता है; वास्तविक फिल 1% ट्रेड फीस, MEV और प्रोटोकॉल बदलावों से भिन्न होते हैं। याद रखें कि लगभग 99% Pump.fun कॉइन कभी ग्रेजुएट नहीं होते और जो होते हैं उनमें से अधिकांश भी दिनों में मूल्य खो देते हैं — ग्रेजुएशन-पर-ROI को पूर्वानुमान नहीं, बल्कि सीमा मानें। पोजीशन का आकार हमारे <a href="/position-size-calculator/">पोजीशन साइज कैलकुलेटर</a> से तय करें।`
         ],
       },
       ru: {
-        quickAnswer: `Введите SOL для инвестиций, цену SOL и сколько SOL уже в кривой, чтобы увидеть полученные токены, проскальзывание и расстояние до выпуска на Raydium при капитализации $69K. Пример: 1 SOL по $155 в кривую с 20 SOL покупает ~12,62 млн токенов с проскальзыванием 2,00%, капитализация ~$12 038, до выпуска остаётся ~$56 962 (около 65 SOL).`,
+        quickAnswer: `Введите SOL для инвестиций, цену SOL и сколько SOL уже в кривой, чтобы увидеть полученные токены, проскальзывание и расстояние до выпуска на PumpSwap при капитализации ~$64K. Пример: 1 SOL по $155 в кривую с 20 SOL покупает ~12,62 млн токенов с проскальзыванием 2,00%, капитализация ~$12 038, до выпуска остаётся ~$51 643 (около 65 SOL).`,
         how: [
           `Этот калькулятор моделирует кривую постоянного произведения (x умножить на y = k), по которой торгуется каждый мемкоин Pump.fun до выпуска. Он отталкивается от виртуальных резервов протокола в 30 SOL и ~1,073 млрд токенов, сдвигает их на SOL, уже находящийся в кривой, и затем оценивает вашу покупку. Из новых виртуальных резервов он выводит полученные токены, спот-цену против вашей эффективной цены исполнения, итоговое проскальзывание и текущую и после-покупочную капитализацию в долларах.`,
-          `Базовая формула: k = 30 умножить на 1,073 млрд; добавление вашего SOL к виртуальному резерву SOL снижает виртуальный резерв токенов, и разница — это полученные вами токены. Выпуск на Raydium срабатывает при капитализации $69K, исторически около 85 SOL в кривой, поэтому инструмент сообщает, сколько SOL ещё нужно и сколько долларов осталось. Он также прогнозирует стоимость позиции и доходность, если монета достигнет этой цены выпуска в $69K. Смоделируйте сторону выхода нашим <a href="/profit-calculator/">калькулятором прибыли</a>.`
+          `Базовая формула: k = 30 умножить на 1,073 млрд; добавление вашего SOL к виртуальному резерву SOL снижает виртуальный резерв токенов, и разница — это полученные вами токены. Выпуск на PumpSwap срабатывает, когда в кривую поступает около 85 SOL (~793 млн проданных токенов), то есть около 411 SOL капитализации: ~$64K при SOL по $155 и ~$30K при $72, поэтому инструмент сообщает, сколько SOL ещё нужно и сколько долларов осталось. Он также прогнозирует стоимость позиции и доходность, если монета достигнет этой цены выпуска в ~$64K. Смоделируйте сторону выхода нашим <a href="/profit-calculator/">калькулятором прибыли</a>.`
         ],
         inputs: [
-          `Расчёт ведут три поля: SOL для инвестиций (размер покупки, с быстрыми кнопками от 0,1 до 10 SOL), Цена SOL в USD (по умолчанию $155, для перевода цен кривой и капитализаций в доллары) и Текущий SOL в кривой бондинга (насколько продвинулась кривая, от 0 до 85). Готовые сценарии — Early Sniper, Mid Pump, Pre-Graduation и Whale Entry — загружают реалистичные комбинации, чтобы мгновенно сравнить вход при 0,1 SOL с прогрессом кривой в 85 SOL.`,
+          `Расчёт ведут три поля: SOL для инвестиций (размер покупки, с быстрыми кнопками от 0,1 до 10 SOL), Цена SOL в USD (по умолчанию $72 — цена ноября 2026, для перевода цен кривой и капитализаций в доллары) и Текущий SOL в кривой бондинга (насколько продвинулась кривая, от 0 до 85). Готовые сценарии — Early Sniper, Mid Pump, Pre-Graduation и Whale Entry — загружают реалистичные комбинации, чтобы мгновенно сравнить вход при 0,1 SOL с прогрессом кривой в 85 SOL.`,
           `Ранний вход покупает гораздо больше токенов за SOL, потому что кривая круче всего у старта, и там же та же покупка даёт большее проскальзывание: показанное проскальзывание — это ваш SOL, делённый на виртуальный резерв SOL (30 SOL плюс SOL, уже находящийся в кривой), поэтому по мере заполнения кривой оно уменьшается. Модель использует опубликованные виртуальные резервы Pump.fun и ориентир выпуска ~85 SOL; реальные исполнения отличаются из-за комиссии 1%, MEV и обновлений протокола. Помните, что около 99% монет Pump.fun никогда не выпускаются, а большинство выпущенных всё равно теряет ценность за дни — считайте доходность при выпуске потолком, а не прогнозом. Рассчитайте размер позиции нашим <a href="/position-size-calculator/">калькулятором размера позиции</a>.`
         ],
       },

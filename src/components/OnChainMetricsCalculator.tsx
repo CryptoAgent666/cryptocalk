@@ -23,10 +23,11 @@ const SCENARIOS = [
     txCount: '250000',
   },
   {
+    // 2026-11-17: BTC ~$65,000, market cap ~$1.30T, realized cap ~$1.08T (bitcoin-data.com, 15 Nov 2026) -> MVRV ~1.2.
     label: 'Current Estimate',
-    btcPrice: '84000',
-    marketCap: '1650000000000',
-    realizedCap: '650000000000',
+    btcPrice: '65000',
+    marketCap: '1300000000000',
+    realizedCap: '1080000000000',
     onChainVolume: '25000000000',
     activeAddresses: '950000',
     txCount: '400000',
@@ -48,9 +49,9 @@ function OnChainMetricsCalculator({ lang = 'en' }: { lang?: string }) {
       maximumFractionDigits: 2,
     }).format(value);
 
-  const [btcPrice, setBtcPrice] = useState('84000');
-  const [marketCap, setMarketCap] = useState('1650000000000');
-  const [realizedCap, setRealizedCap] = useState('650000000000');
+  const [btcPrice, setBtcPrice] = useState('65000');
+  const [marketCap, setMarketCap] = useState('1300000000000');
+  const [realizedCap, setRealizedCap] = useState('1080000000000');
   const [onChainVolume, setOnChainVolume] = useState('25000000000');
   const [activeAddresses, setActiveAddresses] = useState('950000');
   const [txCount, setTxCount] = useState('400000');
@@ -120,7 +121,7 @@ function OnChainMetricsCalculator({ lang = 'en' }: { lang?: string }) {
   }, [marketCap, realizedCap, onChainVolume, txCount]);
 
   const reset = () => {
-    setBtcPrice('84000'); setMarketCap('1650000000000'); setRealizedCap('650000000000');
+    setBtcPrice('65000'); setMarketCap('1300000000000'); setRealizedCap('1080000000000');
     setOnChainVolume('25000000000'); setActiveAddresses('950000'); setTxCount('400000');
   };
 

@@ -40,6 +40,21 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-11-17',
         dateLabel: '17 de noviembre de 2026',
+        title: 'Tercera revisión de exactitud: inflación, indicadores de mercado, staking y DePIN',
+        body: 'Revisamos otras veinte calculadoras línea por línea con datos en vivo y estadísticas oficiales. Varias seguían con cifras de 2025 o de mayo de 2026, y una tenía un error de cálculo:',
+        items: [
+          '<strong>Curva bonding de Pump.fun:</strong> el valor de graduación estaba fijo en $69.000 sin importar el precio de SOL. Un token se gradúa cuando entran unos 85 SOL en la curva, así que su valor en dólares cambia con SOL: unos $64.000 con SOL a $155, pero unos $30.000 hoy. Los tokens migran ahora a PumpSwap, no a Raydium.',
+          '<strong>Cobertura contra la inflación:</strong> las tasas por país son las últimas cifras oficiales (Argentina ~33%, Turquía 30%, Nigeria 14%, EE. UU. 3,7%), en lugar de datos como el "100%" de Argentina. Se corrigieron errores aritméticos en tres ejemplos. Los rendimientos de stablecoins rondan hoy el 3–5% anual, no el 4–10%.',
+          '<strong>Ganancias DePIN:</strong> los precios de los tokens de todos los presets estaban entre 2 y 23 veces por encima (HNT a $4,50 en vez de ~$0,23). A precios actuales, un hotspot Helium IoT gana unos $3 al mes, no $67.',
+          '<strong>Múltiplo de Mayer y Rainbow Chart:</strong> las cifras históricas se recalcularon con precios diarios desde 2011. Bitcoin cerró por encima de un Múltiplo de Mayer de 2,4 en ~6% de los días (decíamos 8–18%) y el pico de 2021 fue ~2,9, no 3,5. Con unos $65.000, Bitcoin está en la banda "¡COMPRA!" del Rainbow Chart.',
+          '<strong>Staking y préstamos:</strong> los presets de liquid staking usan rendimientos actuales (Lido ~2,3% tras comisiones) y los loops de stETH rinden ahora ~2,5–3%, no 5–8%. La página de validadores refleja la penalización por slashing más baja vigente desde mayo de 2025.',
+          '<strong>Datos de mercado:</strong> se actualizaron capitalizaciones, la oferta de Bitcoin (~20,1 millones) y los precios en las páginas de capitalización, millonario, stock-to-flow y métricas on-chain. $1 millón equivale ahora a unos 15,4 BTC.',
+        ],
+        footer: 'Todas las cifras son estimaciones fechadas en noviembre de 2026, de carácter general, no asesoramiento financiero ni fiscal.',
+      },
+      {
+        date: '2026-11-17',
+        dateLabel: '17 de noviembre de 2026',
         title: 'Precios actualizados tras la caída de Bitcoin a unos $65.000',
         body: 'En octubre actualizamos muchos ejemplos a un precio de Bitcoin de unos $83.600. Desde entonces Bitcoin ha caído a unos $65.000, así que esos ejemplos exageraban lo que valen hoy tus monedas. Recalculamos cada cifra que dependía de ese precio, en los seis idiomas:',
         items: [
@@ -414,6 +429,21 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     heading: 'Novidades',
     subtitle: 'Últimas atualizações, novas calculadoras e melhorias no CryptoCalk.',
     updates: [
+      {
+        date: '2026-11-17',
+        dateLabel: '17 de novembro de 2026',
+        title: 'Terceira revisão de precisão: inflação, indicadores de mercado, staking e DePIN',
+        body: 'Revisamos mais vinte calculadoras linha por linha com dados ao vivo e estatísticas oficiais. Várias ainda usavam números de 2025 ou de maio de 2026, e uma tinha um erro de cálculo:',
+        items: [
+          '<strong>Curva bonding do Pump.fun:</strong> o valor de graduação estava fixo em $69.000 qualquer que fosse o preço do SOL. Um token se gradua quando cerca de 85 SOL entram na curva, então o valor em dólares muda com o SOL: cerca de $64.000 com SOL a $155, mas cerca de $30.000 hoje. Os tokens agora migram para a PumpSwap, não para a Raydium.',
+          '<strong>Proteção contra inflação:</strong> as taxas por país são as leituras oficiais mais recentes (Argentina ~33%, Turquia 30%, Nigéria 14%, EUA 3,7%), no lugar de dados como os "100%" da Argentina. Três exemplos tinham erros de conta e foram corrigidos. Os rendimentos de stablecoins giram hoje em torno de 3–5% ao ano, não 4–10%.',
+          '<strong>Ganhos DePIN:</strong> os preços dos tokens de todos os presets estavam de 2 a 23 vezes acima (HNT a $4,50 em vez de ~$0,23). Aos preços atuais, um hotspot Helium IoT ganha cerca de $3 por mês, não $67.',
+          '<strong>Múltiplo de Mayer e Rainbow Chart:</strong> os números históricos foram recalculados com preços diários desde 2011. O Bitcoin fechou acima de um Múltiplo de Mayer de 2,4 em ~6% dos dias (dizíamos 8–18%) e o pico de 2021 foi ~2,9, não 3,5. A cerca de $65.000, o Bitcoin está na faixa "COMPRE!" do Rainbow Chart.',
+          '<strong>Staking e empréstimos:</strong> os presets de liquid staking usam rendimentos atuais (Lido ~2,3% após taxas) e os loops de stETH rendem agora ~2,5–3%, não 5–8%. A página de validadores reflete a penalidade de slashing menor em vigor desde maio de 2025.',
+          '<strong>Dados de mercado:</strong> foram atualizados market caps, a oferta de Bitcoin (~20,1 milhões) e os preços nas páginas de market cap, milionário, stock-to-flow e métricas on-chain. $1 milhão equivale agora a cerca de 15,4 BTC.',
+        ],
+        footer: 'Todos os valores são estimativas datadas de novembro de 2026, de caráter geral, não aconselhamento financeiro ou tributário.',
+      },
       {
         date: '2026-11-17',
         dateLabel: '17 de novembro de 2026',
@@ -794,6 +824,21 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-11-17',
         dateLabel: '17 Kasım 2026',
+        title: 'Üçüncü doğruluk kontrolü: enflasyon, piyasa göstergeleri, staking ve DePIN',
+        body: 'Yirmi hesaplayıcıyı daha satır satır canlı veriler ve resmi istatistiklerle karşılaştırdık. Birkaçı hâlâ 2025 veya Mayıs 2026 rakamlarına dayanıyordu ve birinde hesaplama hatası vardı:',
+        items: [
+          '<strong>Pump.fun bonding eğrisi:</strong> geçiş değeri SOL fiyatından bağımsız olarak 69.000 dolarda sabitti. Bir token, eğriye yaklaşık 85 SOL girdiğinde geçiş yapar; bu yüzden dolar değeri SOL ile değişir: SOL 155 dolarken yaklaşık 64.000 dolar, bugün ise yaklaşık 30.000 dolar. Tokenler artık Raydium\'a değil PumpSwap\'a taşınıyor.',
+          '<strong>Enflasyondan korunma:</strong> ülke enflasyon oranları en son resmi verilerdir (Arjantin ~%33, Türkiye %30, Nijerya %14, ABD %3,7); Arjantin için "%100" gibi rakamların yerini aldı. Üç örnekteki aritmetik hatalar düzeltildi. Stablecoin getirileri bugün yılda %4–10 değil, yaklaşık %3–5.',
+          '<strong>DePIN kazançları:</strong> tüm ön ayarlardaki token fiyatları 2 ila 23 kat yüksekti (HNT ~0,23 dolar yerine 4,50 dolar). Bugünkü fiyatlarla bir Helium IoT hotspot ayda 67 dolar değil, yaklaşık 3 dolar kazanıyor.',
+          '<strong>Mayer Çarpanı ve Gökkuşağı Grafiği:</strong> tarihsel rakamlar 2011\'den bu yana günlük fiyatlarla yeniden hesaplandı. Bitcoin günlerin yaklaşık %6\'sında 2,4 Mayer Çarpanı\'nın üzerinde kapandı (%8–18 diyorduk) ve 2021 zirvesi 3,5 değil yaklaşık 2,9 idi. Yaklaşık 65.000 dolarla Bitcoin, Gökkuşağı Grafiği\'nin "AL!" bandında.',
+          '<strong>Staking ve borç verme:</strong> likit staking ön ayarları güncel getirileri kullanıyor (Lido ücretler sonrası ~%2,3); stETH döngüleri artık %5–8 değil ~%2,5–3 getiriyor. Doğrulayıcı sayfası Mayıs 2025\'ten beri geçerli olan daha düşük slashing cezasını yansıtıyor.',
+          '<strong>Piyasa verileri:</strong> piyasa değeri, milyoner, stock-to-flow ve zincir üstü metrik sayfalarındaki piyasa değerleri, Bitcoin arzı (~20,1 milyon) ve fiyatlar güncellendi. 1 milyon dolar artık yaklaşık 15,4 BTC.',
+        ],
+        footer: 'Tüm rakamlar Kasım 2026 tarihli, genel bilgi amaçlı tahminlerdir; finansal veya vergi tavsiyesi değildir.',
+      },
+      {
+        date: '2026-11-17',
+        dateLabel: '17 Kasım 2026',
         title: 'Bitcoin yaklaşık 65.000 dolara düştükten sonra fiyatlar güncellendi',
         body: 'Ekim ayında birçok örneği yaklaşık 83.600 dolarlık Bitcoin fiyatına göre güncellemiştik. Bitcoin o zamandan beri yaklaşık 65.000 dolara düştü, bu yüzden o örnekler coinlerinizin bugünkü değerini olduğundan yüksek gösteriyordu. Bu fiyata bağlı her rakamı altı dilde yeniden hesapladık:',
         items: [
@@ -1171,6 +1216,21 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
       {
         date: '2026-11-17',
         dateLabel: '17 नवंबर 2026',
+        title: 'तीसरी सटीकता जाँच: इन्फ्लेशन, मार्केट इंडिकेटर, स्टेकिंग और DePIN',
+        body: 'हमने बीस और कैलकुलेटरों को लाइव डेटा और आधिकारिक आँकड़ों से लाइन-दर-लाइन मिलाया। कई अब भी 2025 या मई 2026 के आँकड़ों पर बने थे, और एक में गणना की गलती थी:',
+        items: [
+          '<strong>Pump.fun बॉन्डिंग कर्व:</strong> ग्रेजुएशन मूल्य SOL की कीमत से बेपरवाह $69,000 पर तय था। टोकन तब ग्रेजुएट होता है जब कर्व में लगभग 85 SOL आ जाते हैं, इसलिए इसका डॉलर मूल्य SOL के साथ बदलता है: $155 SOL पर लगभग $64,000, लेकिन आज लगभग $30,000। टोकन अब Raydium नहीं, PumpSwap पर जाते हैं।',
+          '<strong>इन्फ्लेशन हेज:</strong> देशों की इन्फ्लेशन दरें अब ताज़ा आधिकारिक आँकड़े हैं (अर्जेंटीना ~33%, तुर्की 30%, नाइजीरिया 14%, अमेरिका 3.7%), अर्जेंटीना के "100%" जैसे आँकड़ों की जगह। तीन उदाहरणों में गणित की गलतियाँ ठीक की गईं। Stablecoin यील्ड आज सालाना 4–10% नहीं, लगभग 3–5% है।',
+          '<strong>DePIN कमाई:</strong> हर प्रीसेट में टोकन कीमतें 2 से 23 गुना ज़्यादा थीं (HNT ~$0.23 की जगह $4.50)। आज की कीमतों पर Helium IoT हॉटस्पॉट महीने में $67 नहीं, लगभग $3 कमाता है।',
+          '<strong>मेयर मल्टीपल और रेनबो चार्ट:</strong> ऐतिहासिक आँकड़े 2011 से दैनिक कीमतों पर दोबारा निकाले गए। Bitcoin लगभग 6% दिनों में 2.4 के मेयर मल्टीपल से ऊपर बंद हुआ (हम 8–18% कह रहे थे) और 2021 का शिखर 3.5 नहीं, लगभग 2.9 था। लगभग $65,000 पर Bitcoin रेनबो चार्ट के "खरीदें!" बैंड में है।',
+          '<strong>स्टेकिंग और लेंडिंग:</strong> लिक्विड स्टेकिंग प्रीसेट अब मौजूदा यील्ड इस्तेमाल करते हैं (फीस के बाद Lido ~2.3%), और stETH लूप अब 5–8% नहीं, ~2.5–3% देते हैं। वैलिडेटर पेज मई 2025 से लागू कम slashing पेनल्टी दिखाता है।',
+          '<strong>मार्केट डेटा:</strong> मार्केट कैप, मिलियनेयर, स्टॉक-टू-फ्लो और ऑन-चेन मेट्रिक्स पेजों पर मार्केट कैप, Bitcoin सप्लाई (~2.01 करोड़) और कीमतें अपडेट की गईं। $10 लाख अब लगभग 15.4 BTC है।',
+        ],
+        footer: 'सभी आँकड़े नवंबर 2026 के सामान्य जानकारी के लिए अनुमान हैं, वित्तीय या कर सलाह नहीं।',
+      },
+      {
+        date: '2026-11-17',
+        dateLabel: '17 नवंबर 2026',
         title: 'Bitcoin के लगभग $65,000 तक गिरने के बाद कीमतें अपडेट',
         body: 'अक्टूबर में हमने कई उदाहरण लगभग $83,600 की Bitcoin कीमत पर अपडेट किए थे। तब से Bitcoin गिरकर लगभग $65,000 पर आ गया है, इसलिए वे उदाहरण आपके कॉइन की आज की कीमत को बढ़ा-चढ़ाकर दिखा रहे थे। उस कीमत पर निर्भर हर आँकड़े को हमने छहों भाषाओं में फिर से गणना की:',
         items: [
@@ -1545,6 +1605,21 @@ const content: Record<Exclude<Lang, 'en'>, UpdatesContent> = {
     heading: 'Что нового',
     subtitle: 'Последние обновления, новые калькуляторы и улучшения CryptoCalk.',
     updates: [
+      {
+        date: '2026-11-17',
+        dateLabel: '17 ноября 2026',
+        title: 'Третья проверка точности: инфляция, рыночные индикаторы, стейкинг и DePIN',
+        body: 'Мы построчно сверили ещё двадцать калькуляторов с живыми данными и официальной статистикой. Часть из них всё ещё опиралась на цифры 2025 года или мая 2026, а в одном была ошибка расчёта:',
+        items: [
+          '<strong>Бондинг-кривая Pump.fun:</strong> стоимость выхода с кривой была зашита как $69 000 при любой цене SOL. Токен выходит с кривой, когда в неё поступает около 85 SOL, поэтому в долларах эта точка зависит от SOL: около $64 000 при SOL по $155, но около $30 000 сегодня. Токены теперь переходят на PumpSwap, а не на Raydium.',
+          '<strong>Защита от инфляции:</strong> ставки по странам — последние официальные данные (Аргентина ~33%, Турция 30%, Нигерия 14%, США 3,7%) вместо цифр вроде «100%» для Аргентины. Исправлены арифметические ошибки в трёх примерах. Доходность стейблкоинов сейчас около 3–5% годовых, а не 4–10%.',
+          '<strong>Доход DePIN:</strong> цены токенов во всех пресетах были завышены в 2–23 раза (HNT $4,50 вместо ~$0,23). По текущим ценам точка Helium IoT приносит около $3 в месяц, а не $67.',
+          '<strong>Mayer Multiple и Rainbow Chart:</strong> исторические цифры пересчитаны по дневным ценам с 2011 года. BTC закрывался выше Mayer Multiple 2,4 примерно в 6% дней (мы писали 8–18%), а пик 2021 года был около 2,9, а не 3,5. При ~$65 000 биткоин находится в полосе «ПОКУПАЙ!» радужного графика.',
+          '<strong>Стейкинг и кредитование:</strong> пресеты ликвидного стейкинга используют текущую доходность (Lido ~2,3% после комиссии), а лупы stETH дают теперь ~2,5–3%, а не 5–8%. На странице валидатора учтён меньший штраф за слэшинг, действующий с мая 2025 года.',
+          '<strong>Рыночные данные:</strong> обновлены капитализации, предложение биткоина (~20,1 млн) и цены на страницах капитализации, миллионера, stock-to-flow и он-чейн метрик. $1 млн теперь — это около 15,4 BTC.',
+        ],
+        footer: 'Все цифры — оценки на ноябрь 2026 для общего ознакомления, а не финансовая или налоговая консультация.',
+      },
       {
         date: '2026-11-17',
         dateLabel: '17 ноября 2026',

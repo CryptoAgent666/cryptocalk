@@ -7,6 +7,20 @@
 
 All notable changes to this project are documented here.
 
+## [2026-11-17] — Kaspa month 54, market pass, CalkCheck pass 3
+
+- **Kaspa emission month 54** (1.94454365 KAS/block) applied 13 days late — the scheduled task had vanished from the
+  scheduler. Mining coin switcher re-derived from live network state; Ravencoin now leads on every GPU. Deployed + OTA 1.7.10.
+- **Brazil source**: planalto.gov.br redirects every law to the gov.br home page since the 13 Nov 2026 legislation-portal
+  launch; source moved to the Câmara consolidated text of Lei 8.981 (rates unchanged). Deployed.
+- **Market pass**: BTC ~$83,600 → ~$65,000 — mining, what-if, MSTR, pizza, salary, retirement and ETH-ICO figures recomputed
+  in 6 languages. Deployed + OTA 1.7.10.
+- **CalkCheck pass 3** (20 pages, report `AUDIT-2026-11-17.md`, not deployed yet): pump.fun graduation valued at a fixed
+  $69K regardless of SOL price (calculation bug, now SOL-denominated; PumpSwap); inflation-hedge country CPI and three
+  arithmetic errors; DePIN token prices 2–23× stale; Mayer Multiple history re-measured from daily closes since 2011
+  (>2.4 on 6% of days, not 8–18%); rainbow-chart FAQ formula and history; liquid staking, looping and validator yields and
+  Pectra slashing; market-cap, millionaire, stock-to-flow and on-chain figures.
+
 ## [2026-10-14] — CalkCheck pass 2 (20 more pages, 6 languages)
 
 Full report: `AUDIT-2026-10-14.md`. Deployed 2026-10-14 (main `309a055d9`, together with the how/seo-ext branch) + OTA 1.7.9.

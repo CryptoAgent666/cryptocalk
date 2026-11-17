@@ -8,11 +8,13 @@ const PROTOCOLS = ['Lido', 'Rocket Pool', 'Coinbase', 'Frax'] as const;
 type Protocol = (typeof PROTOCOLS)[number];
 
 // APYs updated 2026-05-03 (post-cycle ETH staking yields normalized).
+// Presets refreshed 2026-11-17: native APY chosen so native x (1 - fee) matches the live holder yield
+// (Lido API 7-day SMA 2.34%; DefiLlama rETH 1.83%, cbETH 2.35%, sfrxETH 2.5%).
 const PROTOCOL_DEFAULTS: Record<Protocol, { apy: number; fee: number; premium: number }> = {
-  Lido: { apy: 2.9, fee: 10, premium: -0.05 },
-  'Rocket Pool': { apy: 2.8, fee: 14, premium: 0.1 },
-  Coinbase: { apy: 2.5, fee: 25, premium: -0.2 },
-  Frax: { apy: 3.2, fee: 10, premium: 0.15 },
+  Lido: { apy: 2.6, fee: 10, premium: -0.05 },
+  'Rocket Pool': { apy: 2.2, fee: 14, premium: 0.1 },
+  Coinbase: { apy: 3.1, fee: 25, premium: -0.2 },
+  Frax: { apy: 2.8, fee: 10, premium: 0.15 },
 };
 
 const SCENARIOS = [
@@ -28,7 +30,7 @@ function LiquidStakingCalculator({ lang = 'en' }: { lang?: string }) {
   const [ethAmount, setEthAmount] = useState('10');
   const [duration, setDuration] = useState('365');
   const [protocol, setProtocol] = useState<Protocol>('Lido');
-  const [nativeApy, setNativeApy] = useState('3.5');
+  const [nativeApy, setNativeApy] = useState('2.6');
   const [protocolFee, setProtocolFee] = useState('10');
   const [lstPremium, setLstPremium] = useState('-0.05');
   const [defiApy, setDefiApy] = useState('5');

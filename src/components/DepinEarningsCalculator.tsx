@@ -5,19 +5,21 @@ import { withErrorBoundary } from './ErrorBoundary';
 import { loc } from '../i18n/format';
 
 const DEPIN_NETWORKS = [
-  { id: 'helium', label: 'Helium IoT', dailyToken: '0.5', tokenSymbol: 'HNT', tokenPrice: '4.50', hardwareCost: '500', powerWatts: '5', electricityRate: '0.12' },
-  { id: 'helium-mobile', label: 'Helium Mobile', dailyToken: '120', tokenSymbol: 'MOBILE', tokenPrice: '0.0003', hardwareCost: '250', powerWatts: '8', electricityRate: '0.12' },
-  { id: 'hivemapper', label: 'Hivemapper', dailyToken: '40', tokenSymbol: 'HONEY', tokenPrice: '0.025', hardwareCost: '549', powerWatts: '6', electricityRate: '0.12' },
-  { id: 'natix', label: 'NATIX (Drive&)', dailyToken: '15', tokenSymbol: 'NATIX', tokenPrice: '0.002', hardwareCost: '120', powerWatts: '4', electricityRate: '0.12' },
-  { id: 'geodnet', label: 'Geodnet GPS', dailyToken: '8', tokenSymbol: 'GEOD', tokenPrice: '0.32', hardwareCost: '720', powerWatts: '6', electricityRate: '0.12' },
-  { id: 'xnet', label: 'XNET 5G', dailyToken: '60', tokenSymbol: 'XNET', tokenPrice: '0.015', hardwareCost: '799', powerWatts: '15', electricityRate: '0.12' },
+  // Token prices refreshed 2026-11-17 (CoinGecko; HNT cross-checked on Coinbase/Kraken/Gate). Daily yields are
+  // illustrative presets, not measured network averages.
+  { id: 'helium', label: 'Helium IoT', dailyToken: '0.5', tokenSymbol: 'HNT', tokenPrice: '0.233', hardwareCost: '500', powerWatts: '5', electricityRate: '0.12' },
+  { id: 'helium-mobile', label: 'Helium Mobile', dailyToken: '120', tokenSymbol: 'MOBILE', tokenPrice: '0.000032', hardwareCost: '250', powerWatts: '8', electricityRate: '0.12' },
+  { id: 'hivemapper', label: 'Hivemapper', dailyToken: '40', tokenSymbol: 'HONEY', tokenPrice: '0.0013', hardwareCost: '549', powerWatts: '6', electricityRate: '0.12' },
+  { id: 'natix', label: 'NATIX (Drive&)', dailyToken: '15', tokenSymbol: 'NATIX', tokenPrice: '0.000087', hardwareCost: '120', powerWatts: '4', electricityRate: '0.12' },
+  { id: 'geodnet', label: 'Geodnet GPS', dailyToken: '8', tokenSymbol: 'GEOD', tokenPrice: '0.20', hardwareCost: '720', powerWatts: '6', electricityRate: '0.12' },
+  { id: 'xnet', label: 'XNET 5G', dailyToken: '60', tokenSymbol: 'XNET', tokenPrice: '0.027', hardwareCost: '799', powerWatts: '15', electricityRate: '0.12' },
 ] as const;
 
 function DepinEarningsCalculator({ lang = 'en' }: { lang?: string }) {
   const [network, setNetwork] = useState<typeof DEPIN_NETWORKS[number]['id']>('helium');
   const [dailyToken, setDailyToken] = useState('0.5');
   const [tokenSymbol, setTokenSymbol] = useState('HNT');
-  const [tokenPrice, setTokenPrice] = useState('4.50');
+  const [tokenPrice, setTokenPrice] = useState('0.233');
   const [hardwareCost, setHardwareCost] = useState('500');
   const [powerWatts, setPowerWatts] = useState('5');
   const [electricityRate, setElectricityRate] = useState('0.12');

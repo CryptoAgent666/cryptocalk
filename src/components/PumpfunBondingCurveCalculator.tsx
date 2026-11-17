@@ -9,18 +9,21 @@ import { loc } from '../i18n/format';
 const VIRTUAL_SOL_RESERVE = 30; // 30 SOL
 const VIRTUAL_TOKEN_RESERVE = 1_073_000_191; // ~1.073B tokens
 const TOTAL_TOKEN_SUPPLY = 1_000_000_000; // 1B fixed supply
-const GRADUATION_MARKET_CAP_USD = 69_000; // $69K USD market cap → migrates to Raydium
+// The curve completes ('graduates') when ~85 real SOL has entered it (~793M of the virtual tokens sold) and the
+// token migrates to PumpSwap (Pump.fun's own AMM since 20 Mar 2025; Raydium before). Graduation is therefore fixed in
+// SOL, not in dollars: its USD market cap is ~410.8 SOL x the SOL price (~$63.7K at $155, ~$29.6K at $72).
+const GRADUATION_SOL = 85;
 
 const PUMPFUN_SCENARIOS = [
-  { label: 'Early Sniper', solInvested: '0.5', solPriceUsd: '155', currentSolInCurve: '0.1' },
-  { label: 'Mid Pump', solInvested: '1', solPriceUsd: '155', currentSolInCurve: '50' },
-  { label: 'Pre-Graduation', solInvested: '2', solPriceUsd: '155', currentSolInCurve: '85' },
-  { label: 'Whale Entry', solInvested: '10', solPriceUsd: '155', currentSolInCurve: '20' },
+  { label: 'Early Sniper', solInvested: '0.5', solPriceUsd: '72', currentSolInCurve: '0.1' },
+  { label: 'Mid Pump', solInvested: '1', solPriceUsd: '72', currentSolInCurve: '50' },
+  { label: 'Pre-Graduation', solInvested: '2', solPriceUsd: '72', currentSolInCurve: '85' },
+  { label: 'Whale Entry', solInvested: '10', solPriceUsd: '72', currentSolInCurve: '20' },
 ] as const;
 
 function PumpfunBondingCurveCalculator({ lang = 'en' }: { lang?: string }) {
   const [solInvested, setSolInvested] = useState('1');
-  const [solPriceUsd, setSolPriceUsd] = useState('155');
+  const [solPriceUsd, setSolPriceUsd] = useState('72');
   const [currentSolInCurve, setCurrentSolInCurve] = useState('20');
 
   const applyScenario = (s: (typeof PUMPFUN_SCENARIOS)[number]) => {
@@ -67,16 +70,17 @@ function PumpfunBondingCurveCalculator({ lang = 'en' }: { lang?: string }) {
     const postBuyPriceSol = newVirtualSol / newVirtualTokens;
     const postBuyMcapUsd = postBuyPriceSol * solUsd * TOTAL_TOKEN_SUPPLY;
 
-    // Distance to $69K graduation
-    const remainingMcap = GRADUATION_MARKET_CAP_USD - currentMcapUsd;
-    const remainingMcapPct = currentMcapUsd > 0 ? (remainingMcap / GRADUATION_MARKET_CAP_USD) * 100 : 100;
+    // Distance to graduation: spot price of the curve once GRADUATION_SOL has entered it
+    const gradVirtualSol = VIRTUAL_SOL_RESERVE + GRADUATION_SOL;
+    const gradPriceSol = gradVirtualSol / (k / gradVirtualSol);
+    const graduationMcapUsd = gradPriceSol * solUsd * TOTAL_TOKEN_SUPPLY;
+    const remainingMcap = Math.max(0, graduationMcapUsd - currentMcapUsd);
+    const remainingMcapPct = graduationMcapUsd > 0 ? (remainingMcap / graduationMcapUsd) * 100 : 100;
 
-    // SOL needed to graduate (rough estimation)
-    // Graduation happens at ~85 SOL in the curve historically (Pump.fun specific value)
-    const solNeededToGraduate = Math.max(0, 85 - currentSol);
+    const solNeededToGraduate = Math.max(0, GRADUATION_SOL - currentSol);
 
     // Position value at graduation (assuming you held to graduation point)
-    const graduationPriceUsd = (GRADUATION_MARKET_CAP_USD / TOTAL_TOKEN_SUPPLY);
+    const graduationPriceUsd = gradPriceSol * solUsd;
     const positionValueAtGrad = tokensReceived * graduationPriceUsd;
     const buyAmountUsd = buyAmount * solUsd;
     const profitAtGrad = positionValueAtGrad - buyAmountUsd;
@@ -84,7 +88,7 @@ function PumpfunBondingCurveCalculator({ lang = 'en' }: { lang?: string }) {
 
     let rating = '';
     let zone: 'profit' | 'neutral' | 'loss' = 'neutral';
-    if (currentMcapUsd >= GRADUATION_MARKET_CAP_USD) { rating = 'Already graduated'; zone = 'neutral'; }
+    if (currentSol >= GRADUATION_SOL) { rating = 'Already graduated'; zone = 'neutral'; }
     else if (slippagePct > 50) { rating = 'High slippage'; zone = 'loss'; }
     else if (currentSol < 5) { rating = 'Early entry'; zone = 'profit'; }
     else if (currentSol < 50) { rating = 'Mid curve'; zone = 'neutral'; }
@@ -100,7 +104,7 @@ function PumpfunBondingCurveCalculator({ lang = 'en' }: { lang?: string }) {
   }, [solInvested, solPriceUsd, currentSolInCurve]);
 
   const reset = () => {
-    setSolInvested('1'); setSolPriceUsd('155'); setCurrentSolInCurve('20');
+    setSolInvested('1'); setSolPriceUsd('72'); setCurrentSolInCurve('20');
   };
 
   const formatUSD = (v: number) =>
@@ -170,7 +174,7 @@ function PumpfunBondingCurveCalculator({ lang = 'en' }: { lang?: string }) {
               onChange={(e) => setCurrentSolInCurve(e.target.value)} min="0" max="85" step="any"
               onFocus={(e) => e.target.select()} />
             <span className="input-hint">
-              {getUiString(lang, 'Curve graduates to Raydium at ~85 SOL ($69K USD market cap).')}
+              {getUiString(lang, 'Curve graduates to PumpSwap at ~85 SOL (about 411 SOL of market cap).')}
             </span>
           </div>
 
@@ -216,7 +220,7 @@ function PumpfunBondingCurveCalculator({ lang = 'en' }: { lang?: string }) {
                   <span className="result-value">{formatUSD(result.postBuyMcapUsd)}</span>
                 </div>
                 <div className="result-row">
-                  <span className="result-label">{getUiString(lang, 'Remaining to $69K graduation')}</span>
+                  <span className="result-label">{getUiString(lang, 'Remaining to graduation')}</span>
                   <span className={`result-value ${result.remainingMcap > 0 ? '' : 'profit'}`}>
                     {result.remainingMcap > 0 ? formatUSD(result.remainingMcap) : getUiString(lang, 'Graduated')}
                   </span>

@@ -1445,7 +1445,7 @@ const dict: Record<string, string> = {
   'Asset name': 'Varlık adı',
   'Assets': 'Varlıklar',
   'Assumed Monthly Return for Recovery (%)': 'Toparlanma için varsayılan aylık getiri (%)',
-  'Assumptions: BTC 50%, ETH 40%, USDC Yield 8%, Gold 8%, S&P 500 10% (annual)': 'Varsayımlar: BTC %50, ETH %40, USDC Getiri %8, Altın %8, S&P 500 %10 (yıllık)',
+  'Assumptions: BTC 50%, ETH 40%, USDC Yield 4%, Gold 8%, S&P 500 10% (annual)': 'Varsayımlar: BTC %50, ETH %40, USDC Getiri %4, Altın %8, S&P 500 %10 (yıllık)',
   'Auto-calculates as you type. Add position size to get USD risk/profit.': 'Yazarken otomatik hesaplar. USD risk/kâr görmek için pozisyon büyüklüğü ekleyin.',
   'Auto-calculates as you type. Test multiple price-ratio scenarios to see when fee APR can or cannot offset impermanent loss.': 'Yazarken otomatik hesaplar. Komisyon APR\'ının geçici kaybı ne zaman telafi edip edemeyeceğini görmek için farklı fiyat oranı senaryolarını test edin.',
   'Auto-updates as you type. Fees are included in break-even price.': 'Yazarken otomatik güncellenir. Komisyonlar başabaş fiyatına dahildir.',
@@ -2638,7 +2638,7 @@ const dict: Record<string, string> = {
   'Zone': 'Bölge',
   'Provide current BTC price and 200-day moving average.': 'Güncel BTC fiyatını ve 200 günlük hareketli ortalamayı girin.',
   'Mayer Multiple = current price / 200-day moving average. Above 2.4 historically signals overbought; below 1.0 is undervalued.': 'Mayer Çarpanı = güncel fiyat / 200 günlük hareketli ortalama. 2,4\'ün üzeri tarihsel olarak aşırı alım; 1,0\'ın altı düşük değerlemedir.',
-  'Mayer Multiple is a historical indicator. Only ~18% of days BTC closed above 2.4×; ~22% below 1.0×. Not a guarantee — combine with other signals.': 'Mayer Çarpanı tarihsel bir göstergedir. BTC günlerin yalnızca ~%18\'inde 2,4×\'in üzerinde, ~%22\'sinde 1,0\'ın altında kapanmıştır. Garanti değildir — diğer sinyallerle birlikte kullanın.',
+  'Mayer Multiple is a historical indicator. Since 2011 BTC closed above 2.4× on only ~6% of days and below 1.0× on ~37%. Not a guarantee — combine with other signals.': 'Mayer Çarpanı tarihsel bir göstergedir. 2011\'den bu yana BTC günlerin yalnızca ~%6\'sında 2,4×\'ün üzerinde, ~%37\'sinde 1,0×\'ın altında kapandı. Garanti değildir — diğer sinyallerle birleştirin.',
 
   // === MnavCalculator (May 2026) ===
   'BTC Holdings': 'BTC varlıkları',
@@ -2797,7 +2797,7 @@ const dict: Record<string, string> = {
 
   // === PumpFunBondingCurveCalculator (May 2026) ===
   'Current SOL in Bonding Curve': 'Bonding curve\'deki güncel SOL',
-  'Curve graduates to Raydium at ~85 SOL ($69K USD market cap).': 'Curve, ~85 SOL\'da (69 bin USD piyasa değeri) Raydium\'a mezun olur.',
+  'Curve graduates to PumpSwap at ~85 SOL (about 411 SOL of market cap).': 'Eğri ~85 SOL\'da PumpSwap\'a geçer (yaklaşık 411 SOL piyasa değeri).',
   'Effective price (your buy)': 'Efektif fiyat (alımınız)',
   'Graduated': 'Mezun oldu',
   'Position value at graduation': 'Mezuniyetteki pozisyon değeri',
@@ -2806,7 +2806,7 @@ const dict: Record<string, string> = {
   'Pump.fun bonding curve: 30 SOL × 1.073B tokens virtual reserves. Earlier entry = more tokens per SOL.': 'Pump.fun bonding curve: 30 SOL × 1,073 milyar token sanal rezerv. Daha erken giriş = SOL başına daha çok token.',
   'Pump.fun memecoins are extremely high risk. ~99% fail to graduate. Even after graduation, most lose value within days. Never invest more than you can afford to lose.': 'Pump.fun memecoin\'leri son derece yüksek risklidir. ~%99\'u mezun olamaz. Mezuniyet sonrasında bile çoğu birkaç gün içinde değer kaybeder. Asla kaybetmeyi göze alabileceğinizden fazlasını yatırmayın.',
   'ROI at graduation': 'Mezuniyette ROI',
-  'Remaining to $69K graduation': '69 bin $ mezuniyetine kalan',
+  'Remaining to graduation': 'Geçişe kalan',
   'SOL Price': 'SOL fiyatı',
   'SOL needed to graduate': 'Mezun olmak için gereken SOL',
   'SOL to Invest': 'Yatırılacak SOL',

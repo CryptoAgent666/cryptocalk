@@ -32,6 +32,21 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
      `MiningRoiCalculator`, `ValidatorCalculator`, `StockToFlowCalculator`, `DustAttackCalculator`,
      `StakingRewardsCalculator` (block reward, halving schedule, 21M supply, 32-ETH validator, dust 546).
 
+### CalkCheck #3 2026-11-17 (ещё 20 страниц) — исправлено в main, НЕ задеплоено
+Отчёт `AUDIT-2026-11-17.md`. Сборка 1294 стр., экранированной разметки 0, ключ в 28 чанках; виджеты pump.fun / inflation /
+DePIN / rainbow проверены в браузере на локальной сборке.
+- 🔴 **Баг расчёта pump.fun:** выпуск с кривой стоил фиксированные $69K при любой цене SOL. Кривая завершается при ~85 SOL
+  (~793 млн токенов) = ~411 SOL капитализации ($63,7K при $155, $29,6K при $72). Теперь `GRADUATION_SOL = 85`; Raydium →
+  PumpSwap (с 20.03.2025).
+- 🔴 **Выдуманная статистика Mayer** (18% и 8% дней выше 2,4 на одной странице) → посчитано по CryptoCompare с 2011:
+  >2,4 — 6,3%, <1,0 — 37%; пик 2021 ~2,85 (янв.), не 3,5. Метод переиспользовать: `histoday allData=true` с ключом из `.env`.
+- 🔴 **Цены токенов DePIN завышены в 2–23×** (HNT $4,50 vs $0,233). ⚠️ Пара HNTUSDT на Binance мёртвая ($27 объёма, $4,67) —
+  сверять HNT по Coinbase/Kraken/Gate.
+- Инфляция по 8 странам (INDEC/TUIK/NBS/MoSPI/IBGE окт. 2026, BLS/ONS сент.), стейкинг (Lido API 2,34% нетто, DefiLlama),
+  Pectra-слэшинг, капитализации/предложение BTC 20,1 млн, реализованная капитализация $1,08T (bitcoin-data.com).
+- ⏸ Вынесено задачами: `/gas-optimization-calculator/` целиком на 10–50 gwei (живой газ ~0,13) и свип ~120 упоминаний
+  BTC $77 300/$73 700/$84 000 в 12 калькуляторах вне выборки + дефолты 3 компонентов.
+
 ### Монитор 2026-11-17 — KAS просрочен на 13 дней (задача пропала из планировщика) + planalto переехал
 - ✅ **ЗАДЕПЛОЕНО 17.11 двумя прогонами `deploy.sh --no-build`** (1: `4dbe23fec` Kaspa; 2: + `24ea97e96` planalto →
   Câmara и `78d30ec42` рыночный проход; оба: CF purge, 294 прогреты, все чанки 200; IndexNow 13 и 48), живые страницы

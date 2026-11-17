@@ -31,20 +31,22 @@ interface AssetConfig {
 }
 
 const COUNTRIES: CountryData[] = [
-    { id: 'turkey', name: 'Turkey', flag: 'TR', currency: 'TRY', inflationRate: 0.30, adoptionRate: 25.6 },
-    { id: 'argentina', name: 'Argentina', flag: 'AR', currency: 'ARS', inflationRate: 0.55, adoptionRate: 18.9 },
-    { id: 'nigeria', name: 'Nigeria', flag: 'NG', currency: 'NGN', inflationRate: 0.24, adoptionRate: 32.0 },
-    { id: 'usa', name: 'USA', flag: 'US', currency: 'USD', inflationRate: 0.025, adoptionRate: 15.5 },
-    { id: 'russia', name: 'Russia', flag: 'RU', currency: 'RUB', inflationRate: 0.10, adoptionRate: 10.0 },
-    { id: 'india', name: 'India', flag: 'IN', currency: 'INR', inflationRate: 0.04, adoptionRate: 7.4 },
-    { id: 'brazil', name: 'Brazil', flag: 'BR', currency: 'BRL', inflationRate: 0.05, adoptionRate: 17.5 },
-    { id: 'uk', name: 'UK', flag: 'GB', currency: 'GBP', inflationRate: 0.03, adoptionRate: 12.0 },
+    // Latest annual CPI prints, refreshed 2026-11-17: INDEC, TUIK, NBS, MoSPI, IBGE (Oct 2026), BLS and ONS (Sep 2026),
+    // Bank of Russia estimate (~7%, Oct 2026). Adoption rates are survey estimates, not re-verified.
+    { id: 'turkey', name: 'Turkey', flag: 'TR', currency: 'TRY', inflationRate: 0.298, adoptionRate: 25.6 },
+    { id: 'argentina', name: 'Argentina', flag: 'AR', currency: 'ARS', inflationRate: 0.331, adoptionRate: 18.9 },
+    { id: 'nigeria', name: 'Nigeria', flag: 'NG', currency: 'NGN', inflationRate: 0.141, adoptionRate: 32.0 },
+    { id: 'usa', name: 'USA', flag: 'US', currency: 'USD', inflationRate: 0.037, adoptionRate: 15.5 },
+    { id: 'russia', name: 'Russia', flag: 'RU', currency: 'RUB', inflationRate: 0.07, adoptionRate: 10.0 },
+    { id: 'india', name: 'India', flag: 'IN', currency: 'INR', inflationRate: 0.061, adoptionRate: 7.4 },
+    { id: 'brazil', name: 'Brazil', flag: 'BR', currency: 'BRL', inflationRate: 0.046, adoptionRate: 17.5 },
+    { id: 'uk', name: 'UK', flag: 'GB', currency: 'GBP', inflationRate: 0.035, adoptionRate: 12.0 },
 ];
 
 const ASSETS: AssetConfig[] = [
     { id: 'btc', label: 'BTC', annualReturn: 0.20, color: '#f59e0b' },
     { id: 'eth', label: 'ETH', annualReturn: 0.15, color: '#0891b2' },
-    { id: 'usdc_yield', label: 'USDC + Yield', annualReturn: 0.08, color: '#3b82f6' },
+    { id: 'usdc_yield', label: 'USDC + Yield', annualReturn: 0.04, color: '#3b82f6' },
     { id: 'gold', label: 'Gold', annualReturn: 0.08, color: '#eab308' },
     { id: 'sp500', label: 'S&P 500', annualReturn: 0.10, color: '#10b981' },
 ];
@@ -402,7 +404,7 @@ function InflationHedgeCalculator({ lang = 'en' }: { lang?: string }) {
                             <Shield size={14} />
                             {getUiString(lang, 'Comparison Assets')}
                         </label>
-                        <span className="label-hint">{getUiString(lang, 'Assumptions: BTC 50%, ETH 40%, USDC Yield 8%, Gold 8%, S&P 500 10% (annual)')}</span>
+                        <span className="label-hint">{getUiString(lang, 'Assumptions: BTC 50%, ETH 40%, USDC Yield 4%, Gold 8%, S&P 500 10% (annual)')}</span>
                         <div className="pills-row">
                             {ASSETS.map(asset => (
                                 <button

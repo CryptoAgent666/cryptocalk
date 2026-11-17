@@ -36,7 +36,7 @@ const BANDS = [
 ] as const;
 
 const SCENARIOS = [
-  { label: 'Current BTC', btcPrice: '77300', investment: '10000' },
+  { label: 'Current BTC', btcPrice: '65000', investment: '10000' },
   { label: 'BTC at $50K', btcPrice: '50000', investment: '10000' },
   { label: 'BTC at $150K', btcPrice: '150000', investment: '10000' },
 ] as const;
@@ -64,7 +64,7 @@ function modelPrice(days: number): number {
 /* ------------------------------------------------------------------ */
 
 function RainbowChartCalculator({ lang = 'en' }: { lang?: string }) {
-  const [btcPrice, setBtcPrice] = useState('77300');
+  const [btcPrice, setBtcPrice] = useState('65000');
   const [investment, setInvestment] = useState('10000');
   // days-since-genesis depends on the current date → compute client-side only
   // (post-mount) to avoid a React #418 hydration mismatch when the build day
@@ -134,7 +134,7 @@ function RainbowChartCalculator({ lang = 'en' }: { lang?: string }) {
   };
 
   const reset = () => {
-    setBtcPrice('77300');
+    setBtcPrice('65000');
     setInvestment('10000');
   };
 
