@@ -32,6 +32,14 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
      `MiningRoiCalculator`, `ValidatorCalculator`, `StockToFlowCalculator`, `DustAttackCalculator`,
      `StakingRewardsCalculator` (block reward, halving schedule, 21M supply, 32-ETH validator, dust 546).
 
+### Зависимости + CI 17.11 — npm audit 0, actions v5, ЗАДЕПЛОЕНО + OTA 1.7.14
+- CI падал с сентября ТОЛЬКО на шаге `npm audit --omit=dev --audit-level=high` (12 уязвимостей: astro, capacitor, vite, zod,
+  undici, devalue…). `9596f6525`: всё в пределах semver (astro 7.4.12, capacitor 8.6.2, devalue 5.9.4). ⚠️ vite закреплён
+  на верхнем уровне `~6.4.6`: `npm update vite` дедуплицирует vitest на vite 8 из astro, и тесты падают на разборе JSX.
+  `d368b15ee`: actions/checkout и setup-node v4 → v5 (Node 24). CI зелёный; осталась лишь пометка про переезд ubuntu-latest.
+- `deploy.sh --no-build` (IndexNow 117, чанки 200; текст 7 страниц = живой сайт до обновления, живые чанки = dist).
+  **OTA 1.7.14** (sha256 `2205bd0a…c41951f`, ключ в 28 чанках; `updates.php`: 1.7.13 → 1.7.14, 1.7.14 → `{}`). **Следующая — 1.7.15+.**
+
 ### Grid-trading 17.11 (3-й прогон) — диапазоны под текущую цену, ЗАДЕПЛОЕНО + OTA 1.7.13, запушено
 - `6d097cf1b`: дефолт и пресет BTC Tight Range 80–90k → **60–70k**, ETH Wide Swing 2 000–4 000 → **1 200–2 400**,
   SOL Volatile 100–250 → **40–100** (все три целиком выше спота: BTC ~64 550, ETH ~1 815, SOL ~71,7). quickAnswer на 6 языках
