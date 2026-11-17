@@ -16,7 +16,7 @@ function LightningNetworkFeeCalculator({ lang = 'en' }: { lang?: string }) {
   const [baseFeeMsat, setBaseFeeMsat] = useState('1000');
   const [ppm, setPpm] = useState('100');
   const [hops, setHops] = useState('3');
-  const [btcPrice, setBtcPrice] = useState('77300');
+  const [btcPrice, setBtcPrice] = useState('65000');
 
   const applyScenario = (s: (typeof LN_SCENARIOS)[number]) => {
     setAmountSat(s.amountSat); setBaseFeeMsat(s.baseFeeMsat);
@@ -69,7 +69,7 @@ function LightningNetworkFeeCalculator({ lang = 'en' }: { lang?: string }) {
 
   const reset = () => {
     setAmountSat('100000'); setBaseFeeMsat('1000');
-    setPpm('100'); setHops('3'); setBtcPrice('77300');
+    setPpm('100'); setHops('3'); setBtcPrice('65000');
   };
 
   const formatUSD = (v: number) =>

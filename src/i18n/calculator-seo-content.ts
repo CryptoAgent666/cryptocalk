@@ -143,7 +143,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'converter': {
     en: {
-      quickAnswer: 'Enter any cryptocurrency amount to instantly convert between coins and fiat currencies using real-time CoinGecko prices. For example, 1 BTC ≈ $77,300 USD (April 2026).',
+      quickAnswer: 'Enter any cryptocurrency amount to instantly convert between coins and fiat currencies using real-time CoinGecko prices. For example, 1 BTC ≈ $65,000 USD (November 2026).',
       how: [
       `The Crypto Converter translates any cryptocurrency amount into one of 10 fiat currencies using real-time market prices. Select your source asset, type an amount, choose your target currency, and the result updates instantly. Use it before placing an order to confirm exactly how much of one asset equals your intended position in another, eliminating manual arithmetic and rounding errors.`,
       `To size an order, open the converter alongside your exchange order form, enter the coin amount you plan to buy or sell, and copy its fiat value directly into your trade ticket. The converter supports 500+ cryptocurrencies and 10 fiat currencies (USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR and RUB), making it equally useful for spot conversions, invoice calculations, and portfolio bookkeeping.`
@@ -154,7 +154,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Introduce cualquier cantidad de criptomoneda para convertir entre monedas y divisas fiat al instante con precios en tiempo real de CoinGecko. Por ejemplo, 1 BTC ≈ $73.700 USD (marzo 2026).',
+      quickAnswer: 'Introduce cualquier cantidad de criptomoneda para convertir entre monedas y divisas fiat al instante con precios en tiempo real de CoinGecko. Por ejemplo, 1 BTC ≈ $65.000 USD (noviembre de 2026).',
       how: [
       `El Conversor Cripto traduce cualquier cantidad de criptomoneda a una de 10 monedas fiat usando precios de mercado en tiempo real. Selecciona tu activo de origen, escribe un importe, elige la moneda objetivo y el resultado se actualiza al instante. Úsalo antes de colocar una orden para confirmar exactamente cuánto equivale tu posición objetivo, eliminando errores aritméticos manuales.`,
       `Para dimensionar una orden, abre el conversor junto con el formulario de orden de tu exchange, introduce la cantidad de monedas que piensas comprar o vender y copia su valor en fiat directamente en tu ticket de trading. El conversor soporta más de 500 criptomonedas y 10 monedas fiat (USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR y RUB), siendo útil para conversiones spot, cálculos de facturas y contabilidad de cartera.`
@@ -165,7 +165,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Insira qualquer quantidade de criptomoeda para converter entre moedas e moedas fiat instantaneamente com preços em tempo real do CoinGecko. Por exemplo, 1 BTC ≈ $73.700 USD (março 2026).',
+      quickAnswer: 'Insira qualquer quantidade de criptomoeda para converter entre moedas e moedas fiat instantaneamente com preços em tempo real do CoinGecko. Por exemplo, 1 BTC ≈ $65.000 USD (novembro de 2026).',
       how: [
       `O Conversor Cripto traduz qualquer valor de criptomoeda para uma de 10 moedas fiat usando preços de mercado em tempo real. Selecione seu ativo de origem, insira um valor, escolha a moeda de destino e o resultado é atualizado instantaneamente. Use-o antes de fazer um pedido para confirmar exatamente quanto equivale sua posição desejada.`,
       `Para dimensionar uma ordem, abra o conversor junto ao formulário de ordem da sua exchange, insira a quantidade de moedas que pretende comprar ou vender e copie o valor em fiat diretamente para o ticket de negociação. O conversor suporta mais de 500 criptomoedas e 10 moedas fiat (USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR e RUB).`
@@ -176,7 +176,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Herhangi bir kripto para miktarını girerek CoinGecko gerçek zamanlı fiyatlarıyla coinler ve fiat para birimleri arasında anında dönüştürün. Örneğin, 1 BTC ≈ $73.700 USD (Mart 2026).',
+      quickAnswer: 'Herhangi bir kripto para miktarını girerek CoinGecko gerçek zamanlı fiyatlarıyla coinler ve fiat para birimleri arasında anında dönüştürün. Örneğin, 1 BTC ≈ $65.000 USD (Kasım 2026).',
       how: [
       `Kripto Dönüştürücü, gerçek zamanlı piyasa fiyatlarını kullanarak herhangi bir kripto para miktarını 10 fiat para biriminden birine çevirir. Kaynak varlığınızı seçin, bir miktar girin, hedef para birimini belirleyin ve sonuç anında güncellenir. Bir emir vermeden önce, hedef pozisyonunuzun tam karşılığını doğrulamak için kullanın.`,
       `Bir emri boyutlandırmak için dönüştürücüyü exchange emir formuyla birlikte açın, alıp satmayı planladığınız coin miktarını girin ve fiat karşılığını doğrudan işlem biletinize kopyalayın. Dönüştürücü 500'den fazla kripto parayı ve 10 fiat para birimini (USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR ve RUB) destekler.`
@@ -187,7 +187,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'CoinGecko के रियल-टाइम प्राइस का उपयोग करके किसी भी क्रिप्टोकरेंसी राशि को कॉइन और फिएट करेंसी के बीच तुरंत कन्वर्ट करें। उदाहरण: 1 BTC ≈ $77,300 USD (अप्रैल 2026)।',
+      quickAnswer: 'CoinGecko के रियल-टाइम प्राइस का उपयोग करके किसी भी क्रिप्टोकरेंसी राशि को कॉइन और फिएट करेंसी के बीच तुरंत कन्वर्ट करें। उदाहरण: 1 BTC ≈ $65,000 USD (नवंबर 2026)।',
       how: [
       `क्रिप्टो कन्वर्टर रियल-टाइम मार्केट प्राइस का उपयोग करके किसी भी क्रिप्टोकरेंसी को 10 फिएट करेंसी में से किसी एक में बदलता है। अपना सोर्स एसेट चुनें, राशि टाइप करें, टार्गेट करेंसी चुनें और रिजल्ट तुरंत अपडेट हो जाता है। ऑर्डर देने से पहले इसका उपयोग करें।`,
       `ऑर्डर का साइज तय करने के लिए, कन्वर्टर को अपने एक्सचेंज ऑर्डर फॉर्म के साथ खोलें, जितनी कॉइन खरीदना या बेचना चाहते हैं वह मात्रा दर्ज करें और उसकी फिएट वैल्यू सीधे ट्रेड टिकट में कॉपी करें। कन्वर्टर 500+ क्रिप्टोकरेंसी और 10 फिएट करेंसी (USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR और RUB) सपोर्ट करता है।`
@@ -198,7 +198,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Введите любое количество криптовалюты для мгновенной конвертации между монетами и фиатными валютами по ценам CoinGecko в реальном времени. Например, 1 BTC ≈ $73 700 USD (март 2026).',
+      quickAnswer: 'Введите любое количество криптовалюты для мгновенной конвертации между монетами и фиатными валютами по ценам CoinGecko в реальном времени. Например, 1 BTC ≈ $65 000 USD (ноябрь 2026).',
       how: [
       `Крипто-конвертер переводит любую сумму криптовалюты в одну из 10 фиатных валют по актуальным рыночным ценам в реальном времени. Выберите исходный актив, введите сумму, укажите целевую валюту — результат обновляется мгновенно. Используйте перед размещением ордера, чтобы точно знать, сколько одного актива эквивалентно нужной позиции в другом.`,
       `Чтобы рассчитать размер ордера, откройте конвертер рядом с формой ордера на бирже, введите количество монет, которое собираетесь купить или продать, и скопируйте их стоимость в фиате прямо в тикет сделки. Конвертер поддерживает 500+ криптовалют и 10 фиатных валют (USD, EUR, GBP, JPY, AUD, CAD, BRL, TRY, INR и RUB).`
@@ -1267,7 +1267,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'satoshi-converter': {
     en: {
-      quickAnswer: 'Convert between Bitcoin and satoshis instantly. 1 BTC = 100,000,000 satoshis. At $77,300/BTC, one satoshi equals $0.000737, useful for pricing micro-transactions and Lightning Network payments.',
+      quickAnswer: 'Convert between Bitcoin and satoshis instantly. 1 BTC = 100,000,000 satoshis. At $65,000/BTC (November 2026), one satoshi equals $0.00065, useful for pricing micro-transactions and Lightning Network payments.',
       how: [
       `The Satoshi Converter translates Bitcoin amounts between satoshis and BTC, and converts either into its current USD or EUR equivalent. Pick an input mode (Satoshi, BTC or USD), type an amount, and the satoshi, BTC and fiat values update together, making it fast to see that 1 satoshi equals 0.00000001 BTC, or that 100,000 satoshis equal 0.001 BTC.`,
       `Use it when reading Bitcoin transaction amounts quoted in satoshis (common in Lightning Network and on-chain inscriptions), or when setting fee rates quoted in sat/vByte. The calculator also converts to and from USD or EUR using the live BTC price so you always know the real-world cost.`
@@ -1278,7 +1278,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Convierte entre Bitcoin y satoshis al instante. 1 BTC = 100.000.000 satoshis. A $73.700/BTC, un satoshi equivale a $0,000737 — útil para micropagos y pagos de Lightning Network.',
+      quickAnswer: 'Convierte entre Bitcoin y satoshis al instante. 1 BTC = 100.000.000 satoshis. A $65.000/BTC (noviembre de 2026), un satoshi equivale a $0,00065 — útil para micropagos y pagos de Lightning Network.',
       how: [
       `El Conversor de Satoshi traduce cantidades de Bitcoin entre satoshis y BTC, y convierte ambas unidades a su equivalente actual en USD o EUR.`,
       `Úsalo al leer cantidades de transacciones de Bitcoin cotizadas en satoshis, o al establecer tasas de comisión cotizadas en sat/vByte.`
@@ -1289,7 +1289,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Converta entre Bitcoin e satoshis instantaneamente. 1 BTC = 100.000.000 satoshis. A $73.700/BTC, um satoshi equivale a $0,000737 — útil para microtransações e pagamentos Lightning Network.',
+      quickAnswer: 'Converta entre Bitcoin e satoshis instantaneamente. 1 BTC = 100.000.000 satoshis. A $65.000/BTC (novembro de 2026), um satoshi equivale a $0,00065 — útil para microtransações e pagamentos Lightning Network.',
       how: [
       `O Conversor de Satoshi traduz quantias de Bitcoin entre satoshis e BTC, e converte ambas as unidades para seu equivalente atual em USD ou EUR.`,
       `Use-o ao ler valores de transações Bitcoin cotados em satoshis, ou ao definir taxas de comissão cotadas em sat/vByte.`
@@ -1300,7 +1300,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Bitcoin ve satoshi arasında anında dönüştürün. 1 BTC = 100.000.000 satoshi. $73.700/BTC\'de bir satoshi $0,000737\'ye eşittir — mikro işlemler ve Lightning Network ödemeleri için kullanışlıdır.',
+      quickAnswer: 'Bitcoin ve satoshi arasında anında dönüştürün. 1 BTC = 100.000.000 satoshi. $65.000/BTC\'de (Kasım 2026) bir satoshi $0,00065\'e eşittir — mikro işlemler ve Lightning Network ödemeleri için kullanışlıdır.',
       how: [
       `Satoshi Dönüştürücüsü, Bitcoin miktarlarını satoshi ve BTC arasında dönüştürür ve her iki birimi de güncel USD veya EUR karşılığına çevirir.`,
       `Lightning Network ve zincir üstü yazıtlarda satoshi cinsinden belirtilen Bitcoin işlem tutarlarını okurken kullanın.`
@@ -1311,7 +1311,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'Bitcoin और satoshis के बीच तुरंत कन्वर्ट करें। 1 BTC = 100,000,000 satoshis। $77,300/BTC पर, एक satoshi = $0.000737 — माइक्रो-ट्रांजेक्शन और Lightning Network पेमेंट के लिए उपयोगी।',
+      quickAnswer: 'Bitcoin और satoshis के बीच तुरंत कन्वर्ट करें। 1 BTC = 100,000,000 satoshis। $65,000/BTC पर (नवंबर 2026), एक satoshi = $0.00065 — माइक्रो-ट्रांजेक्शन और Lightning Network पेमेंट के लिए उपयोगी।',
       how: [
       `सतोशी कन्वर्टर Bitcoin राशियों को satoshis और BTC के बीच ट्रांसलेट करता है, और दोनों को उनके वर्तमान USD या EUR इक्विवेलेंट में कन्वर्ट करता है।`,
       `Lightning Network और ऑन-चेन इंस्क्रिप्शन में satoshis में उद्धृत Bitcoin ट्रांजेक्शन राशियों को पढ़ते समय इसका उपयोग करें।`
@@ -1322,7 +1322,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Мгновенная конвертация между Bitcoin и сатоши. 1 BTC = 100 000 000 сатоши. При цене $73 700/BTC один сатоши равен $0,000737 — удобно для микроплатежей и Lightning Network.',
+      quickAnswer: 'Мгновенная конвертация между Bitcoin и сатоши. 1 BTC = 100 000 000 сатоши. При цене $65 000/BTC (ноябрь 2026) один сатоши равен $0,00065 — удобно для микроплатежей и Lightning Network.',
       how: [
       `Конвертер сатоши переводит суммы Bitcoin между сатоши и BTC, а также конвертирует их в текущий эквивалент в USD или EUR.`,
       `Используйте при чтении сумм транзакций Bitcoin в сатошах (распространено в Lightning Network и надписях), или при установке комиссий в сат/vByte.`
@@ -2781,7 +2781,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'reverse-roi': {
     en: {
-      quickAnswer: 'Find the maximum buy price to achieve your target ROI. If you want 100% return and the current price is $77,300, you need to buy at $36,850 or lower, works backwards from your desired outcome.',
+      quickAnswer: 'Find the price a coin must reach for you to hit a target profit. Example: $1,000 of BTC bought at $65,000 (November 2026) with a $1,000 profit target (100% ROI) needs BTC at $130,000, a 2x move.',
       how: [
       `The Reverse ROI Calculator works backwards from a profit goal to the price a token has to reach. Instead of asking 'what is my ROI if the price hits X?', it asks 'what price does the token need to hit for my investment to earn $Y?' Enter the current token price, your investment amount and your target profit in dollars, and the calculator returns the required token price and the growth multiple needed to get there.`,
       `Use it to sanity-check a profit target before you buy: the results show how many coins your investment buys, what the position would be worth at the target, and a rough likelihood label based on the growth multiple needed. If you pick a coin from the search, it also compares the market cap the token would need with today's, which makes it easy to spot a goal that implies a market cap above Bitcoin's.`
@@ -2792,7 +2792,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Encuentra el precio máximo de compra para lograr tu ROI objetivo. Si quieres un 100% de retorno y el precio actual es $73.700, necesitas comprar a $36.850 o menos — trabaja hacia atrás desde tu resultado deseado.',
+      quickAnswer: 'Encuentra el precio que debe alcanzar una moneda para lograr tu ganancia objetivo. Ejemplo: $1.000 en BTC comprados a $65.000 (noviembre de 2026) con un objetivo de $1.000 de ganancia (ROI del 100%) necesitan que BTC llegue a $130.000, un movimiento de 2x.',
       how: [
       `La Calculadora ROI Inversa parte de una meta de beneficio y calcula el precio que debe alcanzar un token. En lugar de preguntar '¿cuál es mi ROI si el precio llega a X?', pregunta '¿qué precio debe alcanzar el token para que mi inversión gane Y dólares?'`,
       `Úsala para comprobar si una meta de beneficio es realista antes de comprar: muestra cuántas monedas compra tu inversión, cuánto valdría la posición en el objetivo y el crecimiento necesario; si eliges una moneda en el buscador, también compara la capitalización de mercado requerida con la actual.`
@@ -2803,7 +2803,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Encontre o preço máximo de compra para atingir seu ROI alvo. Se você quer 100% de retorno e o preço atual é $73.700, precisa comprar a $36.850 ou menos — trabalha de trás para frente a partir do resultado desejado.',
+      quickAnswer: 'Descubra o preço que uma moeda precisa atingir para você alcançar o lucro desejado. Exemplo: $1.000 em BTC comprados a $65.000 (novembro de 2026) com meta de $1.000 de lucro (ROI de 100%) exigem BTC a $130.000, uma alta de 2x.',
       how: [
       `A Calculadora de ROI Inverso parte de uma meta de lucro e calcula o preço que um token precisa atingir. Em vez de perguntar 'qual é meu ROI se o preço chegar a X?', pergunta 'a que preço o token precisa chegar para meu investimento render Y dólares?'`,
       `Use-a para verificar se uma meta de lucro é realista antes de comprar: ela mostra quantas moedas seu investimento compra, quanto a posição valeria no alvo e o crescimento necessário; se você escolher uma moeda na busca, também compara a capitalização de mercado necessária com a atual.`
@@ -2814,7 +2814,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Hedef ROI\'nize ulaşmak için maksimum alış fiyatını bulun. %100 getiri istiyorsanız ve mevcut fiyat $73.700 ise, $36.850 veya altından satın almanız gerekir — istediğiniz sonuçtan geriye doğru çalışır.',
+      quickAnswer: 'Hedef kârınıza ulaşmak için bir coinin hangi fiyata çıkması gerektiğini bulun. Örnek: $65.000\'dan (Kasım 2026) alınan $1.000\'lık BTC, $1.000 kâr hedefiyle (%100 ROI) BTC\'nin $130.000\'e çıkmasını gerektirir, yani 2 katlık bir hareket.',
       how: [
       `Ters ROI Hesaplayıcısı, bir kâr hedefinden geriye doğru giderek bir tokenın ulaşması gereken fiyatı hesaplar. 'Fiyat X'e çıkarsa ROI'm ne olur?' yerine 'Yatırımımın Y dolar kazandırması için token hangi fiyata ulaşmalı?' sorusunu sorar.`,
       `Satın almadan önce bir kâr hedefinin gerçekçi olup olmadığını kontrol etmek için kullanın: yatırımınızın kaç coin aldığını, pozisyonun hedefte ne kadar edeceğini ve gereken büyümeyi gösterir; aramadan bir coin seçerseniz gereken piyasa değerini mevcut değerle de karşılaştırır.`
@@ -2825,7 +2825,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'अपने टार्गेट ROI के लिए अधिकतम खरीद मूल्य खोजें। अगर आप 100% रिटर्न चाहते हैं और वर्तमान मूल्य $77,300 है, तो आपको $36,850 या उससे कम पर खरीदना होगा — आपके वांछित परिणाम से पीछे की ओर काम करता है।',
+      quickAnswer: 'वह मूल्य खोजें जहाँ तक कॉइन को पहुँचना होगा ताकि आपका टार्गेट मुनाफ़ा पूरा हो। उदाहरण: $65,000 (नवंबर 2026) पर खरीदे गए $1,000 के BTC पर $1,000 मुनाफ़े (100% ROI) के लिए BTC को $130,000 तक पहुँचना होगा, यानी 2x बढ़त।',
       how: [
       `रिवर्स ROI कैलकुलेटर प्रॉफिट लक्ष्य से पीछे की ओर चलकर बताता है कि टोकन को किस कीमत तक पहुंचना होगा। 'प्राइस X पर पहुंचे तो मेरा ROI क्या होगा?' पूछने के बजाय, यह पूछता है 'मेरे निवेश पर Y डॉलर कमाने के लिए टोकन को किस कीमत तक पहुंचना होगा?'`,
       `खरीदने से पहले यह जांचने के लिए इसका उपयोग करें कि प्रॉफिट लक्ष्य यथार्थवादी है या नहीं: यह दिखाता है कि आपके निवेश से कितने कॉइन आते हैं, लक्ष्य पर पोजीशन की कीमत कितनी होगी और कितनी वृद्धि चाहिए; सर्च से कॉइन चुनने पर यह आवश्यक मार्केट कैप की तुलना मौजूदा मार्केट कैप से भी करता है।`
@@ -2836,7 +2836,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Найдите максимальную цену покупки для достижения целевого ROI. Если вы хотите 100% доходности при текущей цене $73 700, вам нужно покупать по $36 850 или ниже — расчёт от желаемого результата к точке входа.',
+      quickAnswer: 'Найдите цену, до которой должна вырасти монета, чтобы получить целевую прибыль. Пример: $1 000 в BTC, купленных по $65 000 (ноябрь 2026), при цели $1 000 прибыли (ROI 100%) требуют роста BTC до $130 000 — то есть в 2 раза.',
       how: [
       `Обратный калькулятор ROI идёт от целевой прибыли к цене, которой должен достичь токен. Вместо вопроса «каков мой ROI, если цена дойдёт до X?» он отвечает на вопрос «до какой цены должен вырасти токен, чтобы мои вложения принесли Y долларов?»`,
       `Используйте, чтобы до покупки проверить, реалистична ли целевая прибыль: калькулятор показывает, сколько монет вы купите, сколько будет стоить позиция при целевой цене и какой нужен рост, а если выбрать монету в поиске, ещё и сравнивает требуемую рыночную капитализацию с текущей.`
@@ -6652,7 +6652,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'futures-basis-calculator': {
     en: {
-      quickAnswer: 'Futures basis = (Futures Price − Spot Price) / Spot Price. A BTC spot at $84,000 and quarterly future at $85,680 gives a 2% basis or ~8% annualized. Positive basis (contango) signals bullish sentiment; negative (backwardation) signals bearish.',
+      quickAnswer: 'Futures basis = (Futures Price − Spot Price) / Spot Price. A BTC spot at $65,000 and a 90-day future at $65,900 gives a 1.4% basis, or ~5.6% annualized (close to Deribit quarterly futures in November 2026). Positive basis (contango) signals bullish sentiment; negative (backwardation) signals bearish.',
       how: [
         `The Futures Basis Calculator computes the spread between a cryptocurrency's spot price and its futures contract price, then annualizes the result to give you a standardized comparison across different expiry dates. Enter the spot price, futures price, and days to expiry, the tool instantly shows the raw basis percentage, the annualized basis (APR), and whether the market is in contango (futures above spot) or backwardation (futures below spot).`,
         `Traders use the basis to identify cash-and-carry arbitrage opportunities: if the annualized basis exceeds your cost of capital plus trading fees, you can buy spot, sell the future, and lock in a risk-free return at expiry. The calculator also helps compare basis across exchanges and contract maturities to find the most attractive spread. A shrinking basis typically signals declining bullish conviction.`
@@ -6663,7 +6663,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Base de futuros = (Precio Futuro − Precio Spot) / Precio Spot. BTC spot a $84.000 y futuro trimestral a $85.680 da una base del 2% o ~8% anualizado. Base positiva (contango) señala sentimiento alcista; negativa (backwardation) señala bajista.',
+      quickAnswer: 'Base de futuros = (Precio Futuro − Precio Spot) / Precio Spot. BTC spot a $65.000 y futuro a 90 días a $65.900 da una base del 1,4% o ~5,6% anualizado (cerca de los futuros trimestrales de Deribit en noviembre de 2026). Base positiva (contango) señala sentimiento alcista; negativa (backwardation) señala bajista.',
       how: [
         `La Calculadora de Base de Futuros calcula el spread entre el precio spot de una criptomoneda y el precio de su contrato de futuros, luego anualiza el resultado para una comparación estandarizada entre distintas fechas de vencimiento. Introduce el precio spot, el precio del futuro y los días hasta el vencimiento — la herramienta muestra la base bruta en porcentaje, la base anualizada (APR) y si el mercado está en contango (futuros por encima del spot) o backwardation (futuros por debajo).`,
         `Los traders usan la base para identificar oportunidades de arbitraje cash-and-carry: si la base anualizada supera tu costo de capital más comisiones, puedes comprar spot, vender el futuro y asegurar un retorno libre de riesgo al vencimiento. La calculadora también te ayuda a comparar la base entre exchanges y vencimientos (introduciendo cada par por separado, ya que la base anualizada los pone en la misma escala) para encontrar el spread más atractivo. Una base en contracción suele indicar convicción alcista decreciente.`
@@ -6674,7 +6674,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Base de futuros = (Preço Futuro − Preço Spot) / Preço Spot. BTC spot a $84.000 e futuro trimestral a $85.680 dá uma base de 2% ou ~8% anualizado. Base positiva (contango) sinaliza sentimento otimista; negativa (backwardation) sinaliza pessimista.',
+      quickAnswer: 'Base de futuros = (Preço Futuro − Preço Spot) / Preço Spot. BTC spot a $65.000 e futuro de 90 dias a $65.900 dá uma base de 1,4% ou ~5,6% anualizado (próximo dos futuros trimestrais da Deribit em novembro de 2026). Base positiva (contango) sinaliza sentimento otimista; negativa (backwardation) sinaliza pessimista.',
       how: [
         `A Calculadora de Base de Futuros calcula o spread entre o preço spot de uma criptomoeda e o preço do seu contrato futuro, depois anualiza o resultado para comparação padronizada entre diferentes datas de vencimento. Insira o preço spot, preço do futuro e dias até o vencimento — a ferramenta mostra instantaneamente a base bruta percentual, a base anualizada (APR) e se o mercado está em contango (futuros acima do spot) ou backwardation (futuros abaixo).`,
         `Traders usam a base para identificar oportunidades de arbitragem cash-and-carry: se a base anualizada supera seu custo de capital mais taxas, você pode comprar spot, vender o futuro e garantir um retorno livre de risco no vencimento. A calculadora também ajuda a comparar a base entre exchanges e vencimentos (inserindo cada par separadamente, já que a base anualizada os coloca na mesma escala) para encontrar o spread mais atrativo. Uma base em contração geralmente sinaliza convicção otimista em declínio.`
@@ -6685,7 +6685,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Vadeli işlem bazı = (Vadeli Fiyat − Spot Fiyat) / Spot Fiyat. BTC spot $84.000 ve çeyreklik vadeli $85.680 ise %2 baz veya yıllıklandırılmış ~%8 verir. Pozitif baz (contango) yükseliş sinyali; negatif (backwardation) düşüş sinyali verir.',
+      quickAnswer: 'Vadeli işlem bazı = (Vadeli Fiyat − Spot Fiyat) / Spot Fiyat. BTC spot $65.000 ve 90 günlük vadeli $65.900 ise %1,4 baz veya yıllıklandırılmış ~%5,6 verir (Kasım 2026\'da Deribit çeyreklik vadelilerine yakın). Pozitif baz (contango) yükseliş sinyali; negatif (backwardation) düşüş sinyali verir.',
       how: [
         `Vadeli İşlem Baz Hesaplayıcısı, bir kripto paranın spot fiyatı ile vadeli kontrat fiyatı arasındaki spreadi hesaplar ve farklı vade tarihleri arasında standart karşılaştırma için sonucu yıllıklandırır. Spot fiyatı, vadeli fiyatı ve vadeye kalan günleri girin — araç ham baz yüzdesini, yıllıklandırılmış bazı (APR) ve piyasanın contango (vadeli > spot) mu yoksa backwardation (vadeli < spot) durumunda mı olduğunu gösterir.`,
         `Traderlar bazı cash-and-carry arbitraj fırsatlarını belirlemek için kullanır: yıllıklandırılmış baz sermaye maliyetiniz artı ücretleri aşarsa, spot alıp vadeli satarak vade sonunda risksiz getiri kilitleyebilirsiniz. Hesaplayıcı, en çekici spreadi bulmak için borsalar ve kontrat vadeleri arasında baz karşılaştırmanıza da yardımcı olur (her çifti ayrı ayrı girersiniz; yıllıklandırılmış baz hepsini aynı ölçeğe getirir). Daralan baz tipik olarak azalan yükseliş inancını işaret eder.`
@@ -6696,7 +6696,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'फ्यूचर्स बेसिस = (फ्यूचर्स प्राइस − स्पॉट प्राइस) / स्पॉट प्राइस। BTC स्पॉट $84,000 और क्वार्टरली फ्यूचर $85,680 पर 2% बेसिस या ~8% एन्युअलाइज्ड देता है। पॉजिटिव बेसिस (contango) बुलिश सेंटिमेंट; निगेटिव (backwardation) बेयरिश सिग्नल।',
+      quickAnswer: 'फ्यूचर्स बेसिस = (फ्यूचर्स प्राइस − स्पॉट प्राइस) / स्पॉट प्राइस। BTC स्पॉट $65,000 और 90-दिन फ्यूचर $65,900 पर 1.4% बेसिस या ~5.6% एन्युअलाइज्ड देता है (नवंबर 2026 में Deribit क्वार्टरली फ्यूचर्स के करीब)। पॉजिटिव बेसिस (contango) बुलिश सेंटिमेंट; निगेटिव (backwardation) बेयरिश सिग्नल।',
       how: [
         `फ्यूचर्स बेसिस कैलकुलेटर किसी क्रिप्टोकरेंसी के स्पॉट प्राइस और उसके फ्यूचर्स कॉन्ट्रैक्ट प्राइस के बीच स्प्रेड कैलकुलेट करता है, फिर विभिन्न एक्सपायरी डेट्स में स्टैंडर्डाइज्ड तुलना के लिए रिजल्ट को एन्युअलाइज करता है। स्पॉट प्राइस, फ्यूचर्स प्राइस और एक्सपायरी तक के दिन दर्ज करें — टूल तुरंत रॉ बेसिस परसेंटेज, एन्युअलाइज्ड बेसिस (APR) और मार्केट contango (फ्यूचर्स > स्पॉट) या backwardation (फ्यूचर्स < स्पॉट) में है, यह दिखाता है।`,
         `ट्रेडर्स बेसिस का उपयोग cash-and-carry आर्बिट्रेज अवसर पहचानने में करते हैं: अगर एन्युअलाइज्ड बेसिस आपके कैपिटल कॉस्ट और ट्रेडिंग फीस से अधिक है, तो स्पॉट खरीदकर फ्यूचर बेचकर एक्सपायरी पर रिस्क-फ्री रिटर्न लॉक कर सकते हैं। कैलकुलेटर एक्सचेंजेज और कॉन्ट्रैक्ट मैच्योरिटीज़ में बेसिस कम्पेयर करने में भी मदद करता है। सिकुड़ता बेसिस आमतौर पर घटती बुलिश कन्विक्शन का संकेत है।`
@@ -6707,7 +6707,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Базис фьючерса = (Цена фьючерса − Спот-цена) / Спот-цена. BTC спот $84 000 и квартальный фьючерс $85 680 дают базис 2% или ~8% в годовом выражении. Положительный базис (контанго) — бычий сигнал; отрицательный (бэквордация) — медвежий.',
+      quickAnswer: 'Базис фьючерса = (Цена фьючерса − Спот-цена) / Спот-цена. BTC спот $65 000 и 90-дневный фьючерс $65 900 дают базис 1,4% или ~5,6% в годовом выражении (близко к квартальным фьючерсам Deribit в ноябре 2026). Положительный базис (контанго) — бычий сигнал; отрицательный (бэквордация) — медвежий.',
       how: [
         `Калькулятор базиса фьючерсов вычисляет спред между спотовой ценой криптовалюты и ценой фьючерсного контракта, а затем аннуализирует результат для стандартного сравнения разных сроков экспирации. Введите спотовую цену, цену фьючерса и количество дней до экспирации — инструмент мгновенно покажет сырой базис в процентах, аннуализированный базис (APR) и состояние рынка: контанго (фьючерс выше спота) или бэквордация (фьючерс ниже спота).`,
         `Трейдеры используют базис для поиска арбитражных возможностей cash-and-carry: если аннуализированный базис превышает стоимость капитала плюс комиссии, можно купить спот, продать фьючерс и зафиксировать безрисковую доходность к экспирации. Калькулятор также помогает сравнивать базис между биржами и сроками контрактов для поиска лучшего спреда. Сужающийся базис обычно говорит об ослаблении бычьих настроений.`
@@ -7536,7 +7536,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'lightning-network-fee-calculator': {
       en: {
-        quickAnswer: `Enter the payment size in sats, a channel's base fee, ppm rate, and the number of hops to size a Lightning routing fee. Example: a 100,000-sat payment over 3 hops at 1 sat base + 100 ppm costs 11 sat per hop = 33 sat total (~$0.03 at $77,300/BTC), just 0.033% of the payment and ~97.6% cheaper than a typical 1,400-sat on-chain fee (10 sat/vB).`,
+        quickAnswer: `Enter the payment size in sats, a channel's base fee, ppm rate, and the number of hops to size a Lightning routing fee. Example: a 100,000-sat payment over 3 hops at 1 sat base + 100 ppm costs 11 sat per hop = 33 sat total (~$0.02 at $65,000/BTC), just 0.033% of the payment and ~97.6% cheaper than a typical 1,400-sat on-chain fee (10 sat/vB).`,
         how: [
           `This Lightning Network Fee Calculator estimates what a Bitcoin payment costs to route across the Lightning Network instead of settling on-chain. Each forwarding node charges a fixed base fee plus a proportional rate, so the per-hop cost is base_fee + (amount times ppm divided by 1,000,000). It converts the base fee you enter in millisatoshis to sats (msat / 1000), adds the proportional part, then multiplies the per-hop fee by your number of hops to get the total routing fee in sats and in USD.`,
           `Alongside the total it shows the fee per hop, the fee as a percentage of the payment, and a rating from Negligible to High fee %. It then benchmarks against a typical on-chain transaction (assumed 1,400 sats: 10 sats/vB on a 140-vB spend, a busy-hour rate; quiet periods run at 1–2 sats/vB) and reports your percentage savings versus settling on layer 1. For converting any sat figure to dollars or another currency, pair it with our <a href="/converter/">crypto converter</a>.`
@@ -7547,7 +7547,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
       },
       es: {
-        quickAnswer: `Introduce el importe del pago en sats, la tarifa base de un canal, la tasa ppm y el número de saltos para estimar la comisión de enrutamiento Lightning. Ejemplo: un pago de 100.000 sats por 3 saltos con 1 sat base + 100 ppm cuesta 11 sats por salto = 33 sats en total (~$0,03 a $77.300/BTC), solo el 0,033% del pago y ~97,6% más barato que una comisión on-chain típica de 1.400 sats (10 sat/vB).`,
+        quickAnswer: `Introduce el importe del pago en sats, la tarifa base de un canal, la tasa ppm y el número de saltos para estimar la comisión de enrutamiento Lightning. Ejemplo: un pago de 100.000 sats por 3 saltos con 1 sat base + 100 ppm cuesta 11 sats por salto = 33 sats en total (~$0,02 a $65.000/BTC), solo el 0,033% del pago y ~97,6% más barato que una comisión on-chain típica de 1.400 sats (10 sat/vB).`,
         how: [
           `Esta calculadora estima cuánto cuesta enrutar un pago de Bitcoin por la Lightning Network en lugar de liquidarlo on-chain. Cada nodo de reenvío cobra una tarifa base fija más una tasa proporcional, así que el coste por salto es tarifa_base + (importe por ppm dividido entre 1.000.000). Convierte la tarifa base que introduces en milisatoshis a sats (msat / 1000), suma la parte proporcional y multiplica la comisión por salto por tu número de saltos para obtener la comisión total de enrutamiento en sats y en USD.`,
           `Junto al total muestra la comisión por salto, la comisión como porcentaje del pago y una valoración de Insignificante a Comisión % alta. Luego compara con una transacción on-chain típica (se asumen 1.400 sats: 10 sats/vB en un gasto de 140 vB, tarifa de hora punta; en periodos tranquilos baja a 1–2 sats/vB) e informa tu ahorro porcentual frente a liquidar en la capa 1. Para convertir cualquier cifra en sats a dólares u otra moneda, combínala con nuestro <a href="/converter/">conversor de cripto</a>.`
@@ -7558,7 +7558,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
       },
       pt: {
-        quickAnswer: `Insira o valor do pagamento em sats, a taxa base de um canal, a taxa ppm e o número de saltos para estimar a taxa de roteamento Lightning. Exemplo: um pagamento de 100.000 sats por 3 saltos com 1 sat base + 100 ppm custa 11 sats por salto = 33 sats no total (~$0,03 a $77.300/BTC), apenas 0,033% do pagamento e ~97,6% mais barato que uma taxa on-chain típica de 1.400 sats (10 sat/vB).`,
+        quickAnswer: `Insira o valor do pagamento em sats, a taxa base de um canal, a taxa ppm e o número de saltos para estimar a taxa de roteamento Lightning. Exemplo: um pagamento de 100.000 sats por 3 saltos com 1 sat base + 100 ppm custa 11 sats por salto = 33 sats no total (~$0,02 a $65.000/BTC), apenas 0,033% do pagamento e ~97,6% mais barato que uma taxa on-chain típica de 1.400 sats (10 sat/vB).`,
         how: [
           `Esta calculadora estima quanto custa rotear um pagamento de Bitcoin pela Lightning Network em vez de liquidar on-chain. Cada nó de encaminhamento cobra uma taxa base fixa mais uma taxa proporcional, então o custo por salto é taxa_base + (valor vezes ppm dividido por 1.000.000). Ela converte a taxa base que você insere em milissatoshis para sats (msat / 1000), soma a parte proporcional e multiplica a taxa por salto pelo seu número de saltos para obter a taxa total de roteamento em sats e em USD.`,
           `Junto ao total ela mostra a taxa por salto, a taxa como porcentagem do pagamento e uma classificação de Insignificante a Taxa % alta. Depois compara com uma transação on-chain típica (assumida em 1.400 sats: 10 sats/vB num gasto de 140 vB, tarifa de horário de pico; em períodos calmos fica em 1–2 sats/vB) e relata sua economia percentual frente a liquidar na camada 1. Para converter qualquer valor em sats para dólares ou outra moeda, combine com nosso <a href="/converter/">conversor de cripto</a>.`
@@ -7569,7 +7569,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
       },
       tr: {
-        quickAnswer: `Bir Lightning yönlendirme ücretini boyutlandırmak için ödeme tutarını sats cinsinden, bir kanalın taban ücretini, ppm oranını ve atlama sayısını girin. Örnek: 1 sat taban + 100 ppm ile 3 atlamada 100.000 satlık bir ödeme atlama başına 11 sat = toplam 33 sat tutar (77.300 dolar/BTC'de ~0,03 dolar), ödemenin yalnızca yüzde 0,033'ü ve tipik 1.400 satlık (10 sat/vB) zincir-üstü ücretten ~yüzde 97,6 daha ucuzdur.`,
+        quickAnswer: `Bir Lightning yönlendirme ücretini boyutlandırmak için ödeme tutarını sats cinsinden, bir kanalın taban ücretini, ppm oranını ve atlama sayısını girin. Örnek: 1 sat taban + 100 ppm ile 3 atlamada 100.000 satlık bir ödeme atlama başına 11 sat = toplam 33 sat tutar (65.000 dolar/BTC'de ~0,02 dolar), ödemenin yalnızca yüzde 0,033'ü ve tipik 1.400 satlık (10 sat/vB) zincir-üstü ücretten ~yüzde 97,6 daha ucuzdur.`,
         how: [
           `Bu hesaplayıcı, bir Bitcoin ödemesini zincir üstünde sonuçlandırmak yerine Lightning Network üzerinden yönlendirmenin maliyetini tahmin eder. Her iletim düğümü sabit bir taban ücreti artı orantısal bir oran alır, bu yüzden atlama başına maliyet taban_ücreti + (tutar çarpı ppm bölü 1.000.000) olur. Milisatoshi cinsinden girdiğiniz taban ücretini sats'e çevirir (msat / 1000), orantısal kısmı ekler ve atlama başına ücreti atlama sayınızla çarparak toplam yönlendirme ücretini sats ve USD cinsinden verir.`,
           `Toplamın yanında atlama başına ücreti, ödemenin yüzdesi olarak ücreti ve Önemsiz'den Yüksek ücret yüzdesine kadar bir derecelendirme gösterir. Ardından tipik bir zincir-üstü işlemle karşılaştırır (140 vB'lik bir harcamada 10 sats/vB ile 1.400 sat varsayılır — yoğun saat oranı; sakin dönemlerde 1–2 sats/vB) ve katman 1'de sonuçlandırmaya kıyasla yüzde tasarrufunuzu bildirir. Herhangi bir sat tutarını dolara veya başka bir para birimine çevirmek için <a href="/converter/">kripto dönüştürücümüz</a> ile birlikte kullanın.`
@@ -7580,7 +7580,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
       },
       hi: {
-        quickAnswer: `Lightning रूटिंग शुल्क का अनुमान लगाने के लिए भुगतान राशि sats में, चैनल का बेस शुल्क, ppm दर और हॉप्स की संख्या दर्ज करें। उदाहरण: 1 sat बेस + 100 ppm पर 3 हॉप्स में 100,000-sat का भुगतान प्रति हॉप 11 sat = कुल 33 sat ($77,300/BTC पर ~$0.03) खर्च करता है, जो भुगतान का केवल 0.033% है और सामान्य 1,400-sat (10 sat/vB) ऑन-चेन शुल्क से ~97.6% सस्ता है।`,
+        quickAnswer: `Lightning रूटिंग शुल्क का अनुमान लगाने के लिए भुगतान राशि sats में, चैनल का बेस शुल्क, ppm दर और हॉप्स की संख्या दर्ज करें। उदाहरण: 1 sat बेस + 100 ppm पर 3 हॉप्स में 100,000-sat का भुगतान प्रति हॉप 11 sat = कुल 33 sat ($65,000/BTC पर ~$0.02) खर्च करता है, जो भुगतान का केवल 0.033% है और सामान्य 1,400-sat (10 sat/vB) ऑन-चेन शुल्क से ~97.6% सस्ता है।`,
         how: [
           `यह कैलकुलेटर अनुमान लगाता है कि किसी Bitcoin भुगतान को ऑन-चेन निपटाने के बजाय Lightning Network पर रूट करने में कितना खर्च आता है। हर फॉरवर्डिंग नोड एक स्थिर बेस शुल्क और एक आनुपातिक दर लेता है, इसलिए प्रति-हॉप लागत बेस_शुल्क + (राशि गुणा ppm भाग 1,000,000) होती है। यह आपके द्वारा मिलीसातोशी में दर्ज बेस शुल्क को sats में बदलता है (msat / 1000), आनुपातिक भाग जोड़ता है, और प्रति-हॉप शुल्क को आपकी हॉप्स संख्या से गुणा करके कुल रूटिंग शुल्क sats और USD में देता है।`,
           `कुल के साथ यह प्रति-हॉप शुल्क, भुगतान के प्रतिशत के रूप में शुल्क, और नगण्य से उच्च शुल्क % तक की रेटिंग दिखाता है। फिर यह एक सामान्य ऑन-चेन लेनदेन से तुलना करता है (1,400 sats माना गया: 140-vB खर्च पर 10 sats/vB, व्यस्त समय की दर; शांत समय में 1–2 sats/vB) और लेयर 1 पर निपटान की तुलना में आपकी प्रतिशत बचत बताता है। किसी भी sat राशि को डॉलर या अन्य मुद्रा में बदलने के लिए हमारे <a href="/converter/">क्रिप्टो कनवर्टर</a> के साथ इस्तेमाल करें।`
@@ -7591,7 +7591,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
         ],
       },
       ru: {
-        quickAnswer: `Введите сумму платежа в сатоши, базовую комиссию канала, ставку ppm и число хопов, чтобы оценить комиссию маршрутизации в Lightning. Пример: платёж 100 000 сат через 3 хопа при базе 1 сат + 100 ppm стоит 11 сат за хоп = 33 сат всего (~$0,03 при $77 300/BTC), всего 0,033% от платежа и на ~97,6% дешевле типичной ончейн-комиссии в 1 400 сат (10 сат/vB).`,
+        quickAnswer: `Введите сумму платежа в сатоши, базовую комиссию канала, ставку ppm и число хопов, чтобы оценить комиссию маршрутизации в Lightning. Пример: платёж 100 000 сат через 3 хопа при базе 1 сат + 100 ppm стоит 11 сат за хоп = 33 сат всего (~$0,02 при $65 000/BTC), всего 0,033% от платежа и на ~97,6% дешевле типичной ончейн-комиссии в 1 400 сат (10 сат/vB).`,
         how: [
           `Этот калькулятор оценивает, во сколько обойдётся маршрутизация платежа Bitcoin через Lightning Network вместо расчёта в ончейне. Каждый пересылающий узел берёт фиксированную базовую комиссию плюс пропорциональную ставку, поэтому стоимость за хоп равна базовая_комиссия + (сумма умножить на ppm разделить на 1 000 000). Он переводит введённую вами базовую комиссию из миллисатоши в сат (msat / 1000), прибавляет пропорциональную часть и умножает комиссию за хоп на число хопов, давая полную комиссию маршрутизации в сат и в USD.`,
           `Рядом с итогом он показывает комиссию за хоп, комиссию как процент от платежа и оценку от Незначительной до Высокий процент комиссии. Затем он сравнивает с типичной ончейн-транзакцией (принято 1 400 сат: 10 сат/vB при расходе 140 vB — ставка часа пик; в спокойные периоды 1–2 сат/vB) и сообщает вашу процентную экономию по сравнению с расчётом на уровне 1. Чтобы перевести любую сумму в сат в доллары или другую валюту, используйте вместе с нашим <a href="/converter/">крипто-конвертером</a>.`

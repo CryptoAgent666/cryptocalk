@@ -24,27 +24,30 @@ interface Results {
     totalFees: number;
 }
 
+// Prices: spot ~$65,000 BTC / ~$1,800 ETH, 17 Nov 2026 (CoinGecko/Binance). Deribit BTC quarterlies then traded at
+// ~5.5% annualized basis, so the default and 'BTC Quarterly' sit near 5.6%; 'Contango Hot' keeps the old ~37% to show
+// an overheated market.
 const SCENARIOS = [
     {
         label: 'BTC Quarterly',
-        spotPrice: '77300',
-        futuresPrice: '79000',
+        spotPrice: '65000',
+        futuresPrice: '65900',
         daysToExpiry: '90',
         positionSize: '10000',
         tradingFee: '0.05',
     },
     {
         label: 'ETH Monthly',
-        spotPrice: '2400',
-        futuresPrice: '2430',
+        spotPrice: '1800',
+        futuresPrice: '1808',
         daysToExpiry: '30',
         positionSize: '10000',
         tradingFee: '0.05',
     },
     {
         label: 'Contango Hot',
-        spotPrice: '77300',
-        futuresPrice: '82000',
+        spotPrice: '65000',
+        futuresPrice: '69000',
         daysToExpiry: '60',
         positionSize: '10000',
         tradingFee: '0.05',
@@ -54,8 +57,8 @@ const SCENARIOS = [
 const POSITION_PILLS = ['5000', '10000', '25000', '50000'];
 
 function FuturesBasisCalculator({ lang = 'en' }: { lang?: string }) {
-    const [spotPrice, setSpotPrice] = useState('77300');
-    const [futuresPrice, setFuturesPrice] = useState('78500');
+    const [spotPrice, setSpotPrice] = useState('65000');
+    const [futuresPrice, setFuturesPrice] = useState('65300');
     const [daysToExpiry, setDaysToExpiry] = useState('30');
     const [positionSize, setPositionSize] = useState('10000');
     const [tradingFee, setTradingFee] = useState('0.05');
@@ -119,8 +122,8 @@ function FuturesBasisCalculator({ lang = 'en' }: { lang?: string }) {
     }, [spotPrice, futuresPrice, daysToExpiry, positionSize, tradingFee]);
 
     const reset = () => {
-        setSpotPrice('77300');
-        setFuturesPrice('78500');
+        setSpotPrice('65000');
+        setFuturesPrice('65300');
         setDaysToExpiry('30');
         setPositionSize('10000');
         setTradingFee('0.05');

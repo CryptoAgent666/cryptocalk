@@ -38,7 +38,7 @@ function BitcoinUnitConverter({ lang = 'en' }: { lang?: string }) {
     const [amount, setAmount] = useState('');
     const [fromUnit, setFromUnit] = useState<BtcUnit>('BTC');
     const [toUnit, setToUnit] = useState<BtcUnit>('sat');
-    const [btcPrice, setBtcPrice] = useState('77300');
+    const [btcPrice, setBtcPrice] = useState('65000');
     const [results, setResults] = useState<Results | null>(null);
 
     const applyScenario = (s: (typeof SCENARIOS)[number]) => {
@@ -71,7 +71,7 @@ function BitcoinUnitConverter({ lang = 'en' }: { lang?: string }) {
 
     const reset = () => {
         setAmount(''); setFromUnit('BTC'); setToUnit('sat');
-        setBtcPrice('77300'); setResults(null);
+        setBtcPrice('65000'); setResults(null);
     };
 
     const formatUSD = (n: number) => {

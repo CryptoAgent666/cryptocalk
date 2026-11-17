@@ -10732,24 +10732,24 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
   'bitcoin-unit-converter': {
     en: {
       interpret: [
-        "The converter output shows exact equivalences between Bitcoin denominations — BTC, millibitcoin (mBTC), microbitcoin (μBTC), and satoshis. If you entered 0.005 BTC and see 500,000 satoshis, the USD Value row puts that at $386.50 with the default BTC Price (USD) of $77,300; type in today's price to get a current figure. Always verify the denomination label before copying a value into a wallet or exchange, sending 500,000 sats is not the same as sending 0.005 BTC if the receiving field expects a different unit.",
-        "Use the output to sanity-check Lightning Network invoices, on-chain transaction amounts, and payment requests. A Lightning invoice for 50,000 sats equals 0.0005 BTC, about $38.65 at $77,300/BTC. If the invoice amount looks off by a factor of 10 or 100, you likely have a unit mismatch. Cross-reference the converted value with our <a href=\"/converter/\">crypto converter</a> to get the current USD equivalent before confirming any payment."
+        "The converter output shows exact equivalences between Bitcoin denominations — BTC, millibitcoin (mBTC), microbitcoin (μBTC), and satoshis. If you entered 0.005 BTC and see 500,000 satoshis, the USD Value row puts that at $325.00 with the default BTC Price (USD) of $65,000; type in today's price to get a current figure. Always verify the denomination label before copying a value into a wallet or exchange, sending 500,000 sats is not the same as sending 0.005 BTC if the receiving field expects a different unit.",
+        "Use the output to sanity-check Lightning Network invoices, on-chain transaction amounts, and payment requests. A Lightning invoice for 50,000 sats equals 0.0005 BTC, about $32.50 at $65,000/BTC. If the invoice amount looks off by a factor of 10 or 100, you likely have a unit mismatch. Cross-reference the converted value with our <a href=\"/converter/\">crypto converter</a> to get the current USD equivalent before confirming any payment."
       ],
       scenarios: [
-        "Lightning Network payments: a merchant quotes 25,000 sats for a coffee. Convert to BTC (0.00025) and then to USD ($19.33) to verify the price is reasonable before paying. For recurring Lightning subscriptions, convert the sat-denominated amount monthly to track whether BTC price changes have made the subscription more expensive in fiat terms.",
-        "Stacking sats strategy: you DCA $50 weekly into Bitcoin. At $77,300/BTC, each purchase nets approximately 64,683 sats. Tracking accumulation in satoshis rather than BTC fractions makes progress feel tangible, crossing the 1-million-sat milestone (0.01 BTC, ~$773) is a meaningful psychological marker. Use our <a href=\"/dca-calculator/\">DCA calculator</a> to project when you will hit your next sat milestone."
+        "Lightning Network payments: a merchant quotes 25,000 sats for a coffee. Convert to BTC (0.00025) and then to USD ($16.25) to verify the price is reasonable before paying. For recurring Lightning subscriptions, convert the sat-denominated amount monthly to track whether BTC price changes have made the subscription more expensive in fiat terms.",
+        "Stacking sats strategy: you DCA $50 weekly into Bitcoin. At $65,000/BTC, each purchase nets approximately 76,923 sats. Tracking accumulation in satoshis rather than BTC fractions makes progress feel tangible, crossing the 1-million-sat milestone (0.01 BTC, ~$650) is a meaningful psychological marker. Use our <a href=\"/dca-calculator/\">DCA calculator</a> to project when you will hit your next sat milestone."
       ],
       checklist: [
-        "Before converting: 1) Confirm which Bitcoin unit the receiving platform expects, some wallets display in BTC, others in sats, others in mBTC. 2) If you need a fiat equivalent, type a fresh BTC/USD rate into the BTC Price (USD) field, since it starts at a fixed $77,300 default and does not update on its own. 3) Double-check that you are converting Bitcoin units and not confusing BTC with wrapped variants like WBTC.",
-        "After converting: compare the satoshi amount to the payment request digit-by-digit. A single misplaced zero changes the payment by 10x. For amounts over 1 million sats ($737+), verify via a second conversion tool before sending."
+        "Before converting: 1) Confirm which Bitcoin unit the receiving platform expects, some wallets display in BTC, others in sats, others in mBTC. 2) If you need a fiat equivalent, type a fresh BTC/USD rate into the BTC Price (USD) field, since it starts at a fixed $65,000 default and does not update on its own. 3) Double-check that you are converting Bitcoin units and not confusing BTC with wrapped variants like WBTC.",
+        "After converting: compare the satoshi amount to the payment request digit-by-digit. A single misplaced zero changes the payment by 10x. For amounts over 1 million sats ($650+), verify via a second conversion tool before sending."
       ],
       mistakes: [
         "The most common mistake is confusing satoshis with other small-unit denominations across blockchains. Satoshis are Bitcoin-only — Ethereum uses gwei/wei, Solana uses lamports. Entering a satoshi value into a gwei field or vice versa produces wildly wrong results. Always confirm which network and denomination you are working with before transacting.",
-        "Another frequent error is assuming 1 sat = $0.01. At $77,300/BTC, 1 satoshi equals $0.000773, roughly 14x less than a penny. This misconception leads to dramatically undersized Lightning payments. Memorize the current sat-to-cent ratio and update it monthly as BTC price changes."
+        "Another frequent error is assuming 1 sat = $0.01. At $65,000/BTC, 1 satoshi equals $0.00065, roughly 15x less than a penny. This misconception leads to dramatically undersized Lightning payments. Memorize the current sat-to-cent ratio and update it monthly as BTC price changes."
       ],
       benchmarks: [
-        "Key unit equivalences to memorize: 1 BTC = 100,000,000 sats = 1,000 mBTC = 1,000,000 μBTC. At $77,300/BTC: 1 sat = $0.000773, 1,000 sats = $0.773, 100,000 sats = $77.30, 1 million sats = $773. These anchor points enable rapid mental estimation without a calculator.",
-        "Lightning Network typical payment ranges: micro-tips 100–1,000 sats ($0.08–$0.77), small purchases 5,000–50,000 sats ($3.87–$38.65), medium purchases 50,000–500,000 sats ($38.65–$386.50). If a Lightning invoice falls outside these ranges for the item type, double-check the amount."
+        "Key unit equivalences to memorize: 1 BTC = 100,000,000 sats = 1,000 mBTC = 1,000,000 μBTC. At $65,000/BTC: 1 sat = $0.00065, 1,000 sats = $0.65, 100,000 sats = $65.00, 1 million sats = $650. These anchor points enable rapid mental estimation without a calculator.",
+        "Lightning Network typical payment ranges: micro-tips 100–1,000 sats ($0.07–$0.65), small purchases 5,000–50,000 sats ($3.25–$32.50), medium purchases 50,000–500,000 sats ($32.50–$325). If a Lightning invoice falls outside these ranges for the item type, double-check the amount."
       ],
       execution: [
         "Standard workflow for Lightning payments: receive invoice → note sat amount → convert to USD using this tool → verify USD amount matches expected price → pay if correct. This 15-second check prevents overpayment errors that are irreversible on Lightning.",
@@ -10771,7 +10771,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Pagos Lightning: un comerciante cobra 25,000 sats por un café. Convierte a BTC (0.00025) y luego a USD para verificar que el precio sea razonable antes de pagar.",
-        "Estrategia de acumulación de sats: haces DCA de $50 semanales en Bitcoin. A $77,300/BTC, cada compra obtiene aproximadamente 64,683 sats. Rastrear en satoshis hace que el progreso se sienta tangible."
+        "Estrategia de acumulación de sats: haces DCA de $50 semanales en Bitcoin. A $65,000/BTC, cada compra obtiene aproximadamente 76,923 sats. Rastrear en satoshis hace que el progreso se sienta tangible."
       ],
       checklist: [
         "Antes de convertir: 1) Confirma qué unidad de Bitcoin espera la plataforma receptora. 2) Verifica que la tasa BTC/USD sea reciente. 3) No confundas BTC con variantes como WBTC.",
@@ -10779,10 +10779,10 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "El error más común es confundir satoshis con denominaciones de otras blockchains. Los satoshis son exclusivos de Bitcoin — Ethereum usa gwei/wei, Solana usa lamports.",
-        "Otro error frecuente es asumir que 1 sat = $0.01. A $77,300/BTC, 1 satoshi equivale a $0.000773 — aproximadamente 14x menos que un centavo."
+        "Otro error frecuente es asumir que 1 sat = $0.01. A $65,000/BTC, 1 satoshi equivale a $0.00065 — aproximadamente 15x menos que un centavo."
       ],
       benchmarks: [
-        "Equivalencias clave: 1 BTC = 100,000,000 sats = 1,000 mBTC. A $77,300/BTC: 1 sat = $0.000773, 100,000 sats = $77.30, 1 millón de sats = $773.",
+        "Equivalencias clave: 1 BTC = 100,000,000 sats = 1,000 mBTC. A $65,000/BTC: 1 sat = $0.00065, 100,000 sats = $65.00, 1 millón de sats = $650.",
         "Rangos típicos de Lightning: micro-propinas 100–1,000 sats, compras pequeñas 5,000–50,000 sats, compras medianas 50,000–500,000 sats."
       ],
       execution: [
@@ -10805,7 +10805,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Pagamentos Lightning: um comerciante cobra 25.000 sats por um café. Converta para BTC (0,00025) e depois para USD para verificar se o preço é razoável.",
-        "Estratégia de acumulação de sats: você faz DCA de $50 semanais em Bitcoin. A $77.300/BTC, cada compra rende aproximadamente 67.844 sats. Rastrear em satoshis torna o progresso tangível."
+        "Estratégia de acumulação de sats: você faz DCA de $50 semanais em Bitcoin. A $65.000/BTC, cada compra rende aproximadamente 76.923 sats. Rastrear em satoshis torna o progresso tangível."
       ],
       checklist: [
         "Antes de converter: 1) Confirme qual unidade de Bitcoin a plataforma receptora espera. 2) Verifique se a taxa BTC/USD está atualizada. 3) Não confunda BTC com variantes como WBTC.",
@@ -10813,10 +10813,10 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "O erro mais comum é confundir satoshis com denominações de outras blockchains. Satoshis são exclusivos do Bitcoin — Ethereum usa gwei/wei, Solana usa lamports.",
-        "Outro erro frequente é assumir que 1 sat = $0,01. A $77.300/BTC, 1 satoshi equivale a $0,000737 — cerca de 14x menos que um centavo."
+        "Outro erro frequente é assumir que 1 sat = $0,01. A $65.000/BTC, 1 satoshi equivale a $0,00065 — cerca de 15x menos que um centavo."
       ],
       benchmarks: [
-        "Equivalências-chave: 1 BTC = 100.000.000 sats = 1.000 mBTC. A $77.300/BTC: 1 sat = $0,000737, 100.000 sats = $73,70, 1 milhão de sats = $773.",
+        "Equivalências-chave: 1 BTC = 100.000.000 sats = 1.000 mBTC. A $65.000/BTC: 1 sat = $0,00065, 100.000 sats = $65,00, 1 milhão de sats = $650.",
         "Faixas típicas da Lightning: micro-gorjetas 100–1.000 sats, compras pequenas 5.000–50.000 sats, compras médias 50.000–500.000 sats."
       ],
       execution: [
@@ -10839,7 +10839,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Lightning ödemeleri: bir satıcı kahve için 25.000 sat talep ediyor. BTC'ye (0,00025) ve ardından USD'ye dönüştürerek fiyatın makul olduğunu doğrulayın.",
-        "Sat biriktirme stratejisi: haftalık $50 DCA yapıyorsunuz. $77.300/BTC'de her alım yaklaşık 67.844 sat getiriyor. Satoshi cinsinden takip, ilerlemeyi somut hale getirir."
+        "Sat biriktirme stratejisi: haftalık $50 DCA yapıyorsunuz. $65.000/BTC'de her alım yaklaşık 76.923 sat getiriyor. Satoshi cinsinden takip, ilerlemeyi somut hale getirir."
       ],
       checklist: [
         "Dönüştürmeden önce: 1) Alıcı platformun hangi Bitcoin birimini beklediğini onaylayın. 2) BTC/USD kurunun güncel olduğunu doğrulayın. 3) BTC'yi WBTC gibi varyantlarla karıştırmayın.",
@@ -10847,10 +10847,10 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "En yaygın hata, satoshileri diğer blokzincirlerin küçük birimleriyle karıştırmaktır. Satoshiler yalnızca Bitcoin'e aittir — Ethereum gwei/wei, Solana lamport kullanır.",
-        "Bir diğer sık hata 1 sat = $0,01 varsaymaktır. $77.300/BTC'de 1 satoshi = $0,000737 — bir sentin yaklaşık 14 katı az."
+        "Bir diğer sık hata 1 sat = $0,01 varsaymaktır. $65.000/BTC'de 1 satoshi = $0,00065 — bir sentten yaklaşık 15 kat az."
       ],
       benchmarks: [
-        "Anahtar birim eşdeğerlikleri: 1 BTC = 100.000.000 sat = 1.000 mBTC. $77.300/BTC'de: 1 sat = $0,000737, 100.000 sat = $73,70, 1 milyon sat = $773.",
+        "Anahtar birim eşdeğerlikleri: 1 BTC = 100.000.000 sat = 1.000 mBTC. $65.000/BTC'de: 1 sat = $0,00065, 100.000 sat = $65,00, 1 milyon sat = $650.",
         "Tipik Lightning aralıkları: mikro-bahşişler 100–1.000 sat, küçük alışverişler 5.000–50.000 sat, orta alışverişler 50.000–500.000 sat."
       ],
       execution: [
@@ -10873,7 +10873,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Lightning भुगतान: एक व्यापारी कॉफी के लिए 25,000 sats चार्ज करता है। भुगतान से पहले कीमत उचित है यह सत्यापित करने के लिए BTC (0.00025) और फिर USD में बदलें।",
-        "सैट संचय रणनीति: आप साप्ताहिक $50 DCA करते हैं। $77,300/BTC पर, प्रत्येक खरीद लगभग 64,683 sats देती है। सतोशी में ट्रैकिंग प्रगति को ठोस बनाती है।"
+        "सैट संचय रणनीति: आप साप्ताहिक $50 DCA करते हैं। $65,000/BTC पर, प्रत्येक खरीद लगभग 76,923 sats देती है। सतोशी में ट्रैकिंग प्रगति को ठोस बनाती है।"
       ],
       checklist: [
         "कन्वर्ट करने से पहले: 1) पुष्टि करें कि प्राप्त करने वाला प्लेटफ़ॉर्म कौन सी Bitcoin इकाई अपेक्षा करता है। 2) सत्यापित करें कि BTC/USD दर ताज़ा है। 3) BTC को WBTC जैसे वेरिएंट से न भ्रमित करें।",
@@ -10881,10 +10881,10 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "सबसे आम गलती सतोशी को अन्य ब्लॉकचेन की छोटी-इकाई मूल्यवर्गों से भ्रमित करना है। सतोशी केवल Bitcoin के हैं — Ethereum gwei/wei उपयोग करता है, Solana lamports उपयोग करता है।",
-        "एक और बार-बार होने वाली गलती यह मानना है कि 1 sat = $0.01। $77,300/BTC पर, 1 सतोशी = $0.000773 — एक पैसे से लगभग 14 गुना कम।"
+        "एक और बार-बार होने वाली गलती यह मानना है कि 1 sat = $0.01। $65,000/BTC पर, 1 सतोशी = $0.00065 — एक सेंट से लगभग 15 गुना कम।"
       ],
       benchmarks: [
-        "मुख्य इकाई समतुल्यताएं: 1 BTC = 100,000,000 sats = 1,000 mBTC। $77,300/BTC पर: 1 sat = $0.000773, 100,000 sats = $77.30, 10 लाख sats = $773।",
+        "मुख्य इकाई समतुल्यताएं: 1 BTC = 100,000,000 sats = 1,000 mBTC। $65,000/BTC पर: 1 sat = $0.00065, 100,000 sats = $65.00, 10 लाख sats = $650।",
         "सामान्य Lightning श्रेणियां: माइक्रो-टिप्स 100–1,000 sats, छोटी खरीदारी 5,000–50,000 sats, मध्यम खरीदारी 50,000–500,000 sats।"
       ],
       execution: [
@@ -10907,7 +10907,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       scenarios: [
         "Платежи Lightning: продавец просит 25 000 сат за кофе. Конвертируйте в BTC (0,00025), а затем в USD, чтобы убедиться в разумности цены перед оплатой.",
-        "Стратегия накопления сатоши: вы делаете DCA на $50 еженедельно. При $73 700/BTC каждая покупка приносит примерно 67 844 сат. Отслеживание в сатоши делает прогресс осязаемым."
+        "Стратегия накопления сатоши: вы делаете DCA на $50 еженедельно. При $65 000/BTC каждая покупка приносит примерно 76 923 сат. Отслеживание в сатоши делает прогресс осязаемым."
       ],
       checklist: [
         "Перед конвертацией: 1) Подтвердите, какую единицу Bitcoin ожидает принимающая платформа. 2) Проверьте актуальность курса BTC/USD. 3) Не путайте BTC с обёрнутыми вариантами вроде WBTC.",
@@ -10915,10 +10915,10 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
       ],
       mistakes: [
         "Самая частая ошибка — путать сатоши с мелкими единицами других блокчейнов. Сатоши принадлежат только Bitcoin — Ethereum использует gwei/wei, Solana — lamports.",
-        "Другая распространённая ошибка — считать, что 1 сат = $0,01. При $73 700/BTC 1 сатоши = $0,000737 — примерно в 14 раз меньше цента."
+        "Другая распространённая ошибка — считать, что 1 сат = $0,01. При $65 000/BTC 1 сатоши = $0,00065 — примерно в 15 раз меньше цента."
       ],
       benchmarks: [
-        "Ключевые эквиваленты: 1 BTC = 100 000 000 сат = 1 000 mBTC. При $73 700/BTC: 1 сат = $0,000737, 100 000 сат = $73,70, 1 млн сат = $773.",
+        "Ключевые эквиваленты: 1 BTC = 100 000 000 сат = 1 000 mBTC. При $65 000/BTC: 1 сат = $0,00065, 100 000 сат = $65,00, 1 млн сат = $650.",
         "Типичные диапазоны Lightning: микро-чаевые 100–1 000 сат, мелкие покупки 5 000–50 000 сат, средние покупки 50 000–500 000 сат."
       ],
       execution: [
@@ -11564,7 +11564,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "There is no jurisdiction setting, so the Estate Tax Rate you type is the only tax input; check it against your own country's rules. Crypto inheritance tax treatment varies dramatically: the US provides a stepped-up cost basis at death (heirs pay zero capital gains on pre-death appreciation), while some European countries tax inherited crypto at 30–55%. This single variable can change the optimal strategy from 'hold until death' to 'gift annually' depending on jurisdiction. Cross-check projected gains with our <a href=\"/tax-calculator/\">tax calculator</a>."
       ],
       scenarios: [
-        "Long-term estate planning: you hold 5 BTC ($368,500) and want to ensure your children can access it. Without planning, heirs may not know your wallet exists, cannot access hardware wallet PINs, or face probate delays of 6–18 months. Enter $368,500 and the Multi-Sig Setup line suggests a 2-of-3 arrangement (one key with you, one with a trusted family member, one with an attorney), while the Custody Recommendation for a hardware wallet asks you to store and document backup seed phrases. The calculator does not score inheritance risk, so the recovery procedures are yours to write.",
+        "Long-term estate planning: you hold 5 BTC ($325,000) and want to ensure your children can access it. Without planning, heirs may not know your wallet exists, cannot access hardware wallet PINs, or face probate delays of 6–18 months. Enter $325,000 and the Multi-Sig Setup line suggests a 2-of-3 arrangement (one key with you, one with a trusted family member, one with an attorney), while the Custody Recommendation for a hardware wallet asks you to store and document backup seed phrases. The calculator does not score inheritance risk, so the recovery procedures are yours to write.",
         "Annual gifting strategy: the US allows $19,000 per recipient per year tax-free (2026). Gifting 0.24 BTC ($17,688) annually to each child creates a tax-efficient transfer that also distributes risk. Over 10 years at current prices, this transfers 2.4 BTC per child ($176,880) with zero gift tax. The calculator does not model gifts or growth, it values the estate on a single date, so track cumulative transfers yourself and enter only what you still hold."
       ],
       checklist: [
@@ -11598,7 +11598,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Revisa cuidadosamente la jurisdicción fiscal. El tratamiento impositivo de herencias cripto varía enormemente: EE.UU. proporciona una base de costo ajustada al fallecimiento, mientras algunos países europeos gravan al 30–55%."
       ],
       scenarios: [
-        "Planificación patrimonial a largo plazo: tienes 5 BTC ($368,500) y quieres asegurar que tus hijos puedan acceder. Sin planificación, los herederos pueden no saber que existe tu wallet o no poder acceder a ella.",
+        "Planificación patrimonial a largo plazo: tienes 5 BTC ($325,000) y quieres asegurar que tus hijos puedan acceder. Sin planificación, los herederos pueden no saber que existe tu wallet o no poder acceder a ella.",
         "Estrategia de donación anual: EE.UU. permite $19,000 por beneficiario al año (2026) libres de impuestos. Donar 0.24 BTC anualmente crea una transferencia fiscalmente eficiente."
       ],
       checklist: [
@@ -11632,7 +11632,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Revise cuidadosamente a jurisdição fiscal. O tratamento tributário de herança cripto varia enormemente: os EUA fornecem base de custo ajustada no falecimento, enquanto alguns países europeus tributam a 30–55%."
       ],
       scenarios: [
-        "Planejamento patrimonial de longo prazo: você tem 5 BTC ($386.500) e quer garantir que seus filhos possam acessá-los. Sem planejamento, herdeiros podem não saber que sua carteira existe.",
+        "Planejamento patrimonial de longo prazo: você tem 5 BTC ($325.000) e quer garantir que seus filhos possam acessá-los. Sem planejamento, herdeiros podem não saber que sua carteira existe.",
         "Estratégia de doação anual: os EUA permitem $19.000 por beneficiário por ano (2026) isentos de impostos. Doar 0,24 BTC anualmente cria uma transferência eficiente fiscalmente."
       ],
       checklist: [
@@ -11666,7 +11666,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Hesaplayıcıda yetki alanı seçimi yoktur; girdiğiniz Veraset vergisi oranı tek vergi girdisidir, bu yüzden onu kendi ülkenizin kurallarıyla dikkatle karşılaştırın. Kripto miras vergisi uygulaması önemli ölçüde farklılık gösterir: ABD ölümde kademeli maliyet bazı sağlar, bazı Avrupa ülkeleri ise %30–55 vergilendirir."
       ],
       scenarios: [
-        "Uzun vadeli miras planlaması: 5 BTC ($386.500) tutuyorsunuz ve çocuklarınızın erişebilmesini istiyorsunuz. Planlama olmadan, varisler cüzdanınızın varlığını bilemeyebilir.",
+        "Uzun vadeli miras planlaması: 5 BTC ($325.000) tutuyorsunuz ve çocuklarınızın erişebilmesini istiyorsunuz. Planlama olmadan, varisler cüzdanınızın varlığını bilemeyebilir.",
         "Yıllık hediye stratejisi: ABD alıcı başına yıllık $19.000 (2026) vergisiz izin verir. Yıllık 0,24 BTC hediye etmek vergi açısından verimli bir transfer yaratır."
       ],
       checklist: [
@@ -11700,7 +11700,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "कैलकुलेटर में क्षेत्राधिकार का कोई विकल्प नहीं है; आप जो संपदा कर दर भरते हैं वही एकमात्र कर इनपुट है, इसलिए उसे अपने देश के नियमों से ध्यान से मिलाएँ। क्रिप्टो विरासत कर उपचार नाटकीय रूप से भिन्न होता है: US मृत्यु पर स्टेप्ड-अप कॉस्ट बेसिस प्रदान करता है, जबकि कुछ यूरोपीय देश 30–55% पर कर लगाते हैं।"
       ],
       scenarios: [
-        "दीर्घकालिक संपत्ति योजना: आपके पास 5 BTC ($368,500) है और आप अपने बच्चों की पहुंच सुनिश्चित करना चाहते हैं। योजना के बिना, उत्तराधिकारी आपकी वॉलेट के अस्तित्व के बारे में नहीं जान सकते।",
+        "दीर्घकालिक संपत्ति योजना: आपके पास 5 BTC ($325,000) है और आप अपने बच्चों की पहुंच सुनिश्चित करना चाहते हैं। योजना के बिना, उत्तराधिकारी आपकी वॉलेट के अस्तित्व के बारे में नहीं जान सकते।",
         "वार्षिक उपहार रणनीति: US प्रति प्राप्तकर्ता प्रति वर्ष $19,000 (2026) कर-मुक्त की अनुमति देता है। वार्षिक 0.24 BTC उपहार देना कर-कुशल हस्तांतरण बनाता है।"
       ],
       checklist: [
@@ -11734,7 +11734,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Внимательно проверьте налоговую юрисдикцию. Налогообложение криптонаследства кардинально различается: в США при смерти предоставляется повышенная стоимостная база, а в некоторых европейских странах налог 30–55%."
       ],
       scenarios: [
-        "Долгосрочное планирование: у вас 5 BTC ($368 500), и вы хотите обеспечить доступ для детей. Без планирования наследники могут не знать о кошельке или не смочь получить к нему доступ.",
+        "Долгосрочное планирование: у вас 5 BTC ($325 000), и вы хотите обеспечить доступ для детей. Без планирования наследники могут не знать о кошельке или не смочь получить к нему доступ.",
         "Стратегия ежегодного дарения: в США разрешено $19 000 на получателя в год (2026) без налога. Ежегодное дарение 0,24 BTC создаёт налогово-эффективную передачу."
       ],
       checklist: [
@@ -13967,7 +13967,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Focus on Liquidation Distance above all else, it is the single most critical number for risk management. Turn it into a price yourself (entry × (1 − distance) for a long, entry × (1 + distance) for a short) and compare that level to recent support/resistance levels and the asset's average daily volatility. If BTC's 30-day average daily range is 3.5% and your liquidation distance is only 5%, you are one above-average volatile day away from liquidation. Use our <a href=\"/liquidation-calculator/\">liquidation calculator</a> for more detailed liquidation scenarios across different exchanges."
       ],
       scenarios: [
-        "Conservative BTC long: you deposit $5,000 margin with 3x leverage, creating a $15,000 position at $77,300/BTC (0.1941 BTC). Liquidation occurs at approximately $51,533, a 33% drop. Given BTC's max drawdown in bull markets is typically 20–30%, 3x leverage provides reasonable buffer. Your potential gain on a 20% BTC rally is $3,000 (60% on margin) versus $1,000 (20%) without leverage.",
+        "Conservative BTC long: you deposit $5,000 margin with 3x leverage, creating a $15,000 position at $65,000/BTC (0.2308 BTC). Liquidation occurs at approximately $43,333, a 33% drop. Given BTC's max drawdown in bull markets is typically 20–30%, 3x leverage provides reasonable buffer. Your potential gain on a 20% BTC rally is $3,000 (60% on margin) versus $1,000 (20%) without leverage.",
         "High-risk altcoin trade: you use 20x leverage on $500 margin for a $10,000 SOL position at $180. Liquidation price is approximately $171, just 5% below entry. SOL regularly moves 5–8% daily, meaning liquidation within hours is likely during volatile sessions. This scenario demonstrates why leverage above 10x on altcoins is essentially gambling. Run this through our <a href=\"/position-size-calculator/\">position size calculator</a> to find the appropriate leverage for your risk tolerance."
       ],
       checklist: [
@@ -13991,7 +13991,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Track your leveraged trade performance separately from spot trades. Calculate the Sharpe ratio and win rate for leveraged positions independently. If your leveraged trade Sharpe ratio is below 0.5 over 90 days, leverage is destroying rather than enhancing your returns, reduce to spot-only trading until you identify and fix the strategy issue."
       ],
       validation: [
-        "Verify the liquidation price manually: for a 10x long at $77,300 entry, liquidation occurs when unrealized loss equals margin. At 10x, a 10% move = 100% loss, so liquidation price = entry × (1 − 1/leverage) = $77,300 × 0.90 = $69,570. The calculator shows this as a 10.00% Liquidation Distance and ignores maintenance margin (typically 0.5–1%), so a real exchange liquidates slightly earlier; check its specific liquidation formula.",
+        "Verify the liquidation price manually: for a 10x long at $65,000 entry, liquidation occurs when unrealized loss equals margin. At 10x, a 10% move = 100% loss, so liquidation price = entry × (1 − 1/leverage) = $65,000 × 0.90 = $58,500. The calculator shows this as a 10.00% Liquidation Distance and ignores maintenance margin (typically 0.5–1%), so a real exchange liquidates slightly earlier; check its specific liquidation formula.",
         "Cross-validate leveraged P&L: a 5% price increase on a 10x long should show 50% profit on margin. If you deposited $1,000 margin at 10x and price rises 5%, your profit should be $500. The calculator deducts no trading fees (0.02–0.06% per trade) or funding costs, so if it shows a different number, check that Position Size holds the $10,000 position rather than the $1,000 margin, which would give $50."
       ],
     },
@@ -14001,7 +14001,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Enfócate en el precio de liquidación — es el número más crítico. Compáralo con niveles recientes de soporte/resistencia y la volatilidad diaria promedio. Si el rango diario promedio de BTC es 3,5% y tu distancia de liquidación es solo 5%, estás a un día volátil de la liquidación. Usa nuestra <a href=\"/es/calculadora-apalancamiento/\">calculadora de liquidación</a> para escenarios más detallados."
       ],
       scenarios: [
-        "BTC long conservador: depositas $5.000 de margen con 3x, creando posición de $15.000 a $77.300/BTC. Liquidación a ~$49.133 (caída del 33%). Con drawdown típico de BTC en mercados alcistas de 20–30%, 3x ofrece colchón razonable.",
+        "BTC long conservador: depositas $5.000 de margen con 3x, creando posición de $15.000 a $65.000/BTC. Liquidación a ~$43.333 (caída del 33%). Con drawdown típico de BTC en mercados alcistas de 20–30%, 3x ofrece colchón razonable.",
         "Operación altcoin de alto riesgo: 20x sobre $500 de margen para posición SOL de $10.000 a $180. Liquidación a ~$171 — solo 5% debajo. SOL se mueve regularmente 5–8% diario, haciendo probable la liquidación en horas."
       ],
       checklist: [
@@ -14025,7 +14025,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Rastrea el rendimiento apalancado separadamente. Si el ratio Sharpe de operaciones apalancadas está bajo 0,5 en 90 días, el apalancamiento destruye tus retornos."
       ],
       validation: [
-        "Verifica manualmente: para 10x long a $77.300, liquidación = entrada × (1 − 1/apalancamiento) = $77.300 × 0,90 = $69.570. La calculadora lo muestra como una Distancia a Liquidación del 10,00% e ignora el margen de mantenimiento, así que un exchange real te liquida algo antes.",
+        "Verifica manualmente: para 10x long a $65.000, liquidación = entrada × (1 − 1/apalancamiento) = $65.000 × 0,90 = $58.500. La calculadora lo muestra como una Distancia a Liquidación del 10,00% e ignora el margen de mantenimiento, así que un exchange real te liquida algo antes.",
         "Valida P&L: 5% de aumento con 10x long = 50% de ganancia sobre margen. Si depositaste $1.000 y el precio sube 5%, la ganancia debe ser $500."
       ],
     },
@@ -14035,7 +14035,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Foque no preço de liquidação — é o número mais crítico. Compare com níveis recentes de suporte/resistência e a volatilidade diária média. Se o range diário médio do BTC é 3,5% e sua distância de liquidação é apenas 5%, você está a um dia volátil da liquidação."
       ],
       scenarios: [
-        "BTC long conservador: você deposita $5.000 de margem com 3x, criando posição de $15.000 a $77.300/BTC. Liquidação a ~$49.133 (queda de 33%). Com drawdown típico de BTC em bull markets de 20–30%, 3x oferece colchão razoável.",
+        "BTC long conservador: você deposita $5.000 de margem com 3x, criando posição de $15.000 a $65.000/BTC. Liquidação a ~$43.333 (queda de 33%). Com drawdown típico de BTC em bull markets de 20–30%, 3x oferece colchão razoável.",
         "Trade altcoin de alto risco: 20x sobre $500 de margem para posição SOL de $10.000 a $180. Liquidação a ~$171 — apenas 5% abaixo. SOL se move regularmente 5–8% diariamente."
       ],
       checklist: [
@@ -14059,7 +14059,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Rastreie performance alavancada separadamente. Se o Sharpe ratio de trades alavancados estiver abaixo de 0,5 em 90 dias, alavancagem está destruindo seus retornos."
       ],
       validation: [
-        "Verifique manualmente: para 10x long a $77.300, liquidação = entrada × (1 − 1/alavancagem) = $77.300 × 0,90 = $69.570. A calculadora mostra isso como uma Distância até Liquidação de 10,00% e ignora a margem de manutenção, então uma exchange real liquida um pouco antes.",
+        "Verifique manualmente: para 10x long a $65.000, liquidação = entrada × (1 − 1/alavancagem) = $65.000 × 0,90 = $58.500. A calculadora mostra isso como uma Distância até Liquidação de 10,00% e ignora a margem de manutenção, então uma exchange real liquida um pouco antes.",
         "Valide P&L: 5% de aumento com 10x long = 50% de lucro sobre margem. Se depositou $1.000 e preço sobe 5%, lucro deve ser $500."
       ],
     },
@@ -14069,7 +14069,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Likidasyon fiyatına odaklanın — risk yönetimi için en kritik sayıdır. Son destek/direnç seviyeleri ve varlığın ortalama günlük oynaklığıyla karşılaştırın. BTC'nin 30 günlük ortalama günlük aralığı %3,5 ve likidasyon mesafeniz sadece %5 ise, ortalamanın üzerinde volatil bir gün likidasyona yeter."
       ],
       scenarios: [
-        "Muhafazakâr BTC long: $5.000 teminatla 3x kaldıraç, $77.300/BTC'de $15.000 pozisyon. Likidasyon ~$49.133'te (%33 düşüş). Boğa piyasasında BTC'nin tipik max drawdown'u %20–30 olduğundan 3x makul tampon sağlar.",
+        "Muhafazakâr BTC long: $5.000 teminatla 3x kaldıraç, $65.000/BTC'de $15.000 pozisyon. Likidasyon ~$43.333'te (%33 düşüş). Boğa piyasasında BTC'nin tipik max drawdown'u %20–30 olduğundan 3x makul tampon sağlar.",
         "Yüksek riskli altcoin işlemi: $500 teminat üzerinde 20x, $180'de $10.000 SOL pozisyonu. Likidasyon ~$171 — girişin sadece %5 altında. SOL günlük düzenli %5–8 hareket eder."
       ],
       checklist: [
@@ -14093,7 +14093,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Kaldıraçlı işlem performansını ayrı takip edin. Kaldıraçlı pozisyonların Sharpe oranı 90 günde 0,5'in altındaysa, kaldıraç getirilerinizi yok ediyor."
       ],
       validation: [
-        "Manuel doğrulama: $77.300 girişte 10x long için likidasyon = giriş × (1 − 1/kaldıraç) = $77.300 × 0,90 = $69.570. Hesaplayıcı bunu %10,00 Likidasyon Mesafesi olarak gösterir ve bakım marjını yok sayar, bu yüzden gerçek bir borsa sizi biraz daha erken likide eder.",
+        "Manuel doğrulama: $65.000 girişte 10x long için likidasyon = giriş × (1 − 1/kaldıraç) = $65.000 × 0,90 = $58.500. Hesaplayıcı bunu %10,00 Likidasyon Mesafesi olarak gösterir ve bakım marjını yok sayar, bu yüzden gerçek bir borsa sizi biraz daha erken likide eder.",
         "P&L doğrulayın: 10x long ile %5 artış = teminat üzerinde %50 kâr. $1.000 yatırdıysanız ve fiyat %5 yükselirse kârınız $500 olmalıdır."
       ],
     },
@@ -14103,7 +14103,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "लिक्विडेशन प्राइस पर सबसे अधिक ध्यान दें — यह रिस्क मैनेजमेंट के लिए सबसे महत्वपूर्ण संख्या है। हाल के सपोर्ट/रेजिस्टेंस लेवल और एसेट की औसत दैनिक वोलैटिलिटी से तुलना करें।"
       ],
       scenarios: [
-        "कंजर्वेटिव BTC लॉन्ग: $5,000 मार्जिन 3x लीवरेज, $77,300/BTC पर $15,000 पोजीशन। लिक्विडेशन ~$51,533 (33% गिरावट)। बुल मार्केट में BTC का मैक्स ड्रॉडाउन आमतौर पर 20–30% है, 3x उचित बफर देता है।",
+        "कंजर्वेटिव BTC लॉन्ग: $5,000 मार्जिन 3x लीवरेज, $65,000/BTC पर $15,000 पोजीशन। लिक्विडेशन ~$43,333 (33% गिरावट)। बुल मार्केट में BTC का मैक्स ड्रॉडाउन आमतौर पर 20–30% है, 3x उचित बफर देता है।",
         "हाई-रिस्क ऑल्टकॉइन ट्रेड: $500 मार्जिन पर 20x, $180 पर $10,000 SOL पोजीशन। लिक्विडेशन ~$171 — एंट्री से केवल 5% नीचे। SOL दैनिक 5–8% मूव करता है।"
       ],
       checklist: [
@@ -14127,7 +14127,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "लीवरेज्ड ट्रेड प्रदर्शन अलग से ट्रैक करें। यदि 90 दिनों में लीवरेज्ड पोजीशन का शार्प रेश्यो 0.5 से कम है, तो लीवरेज आपके रिटर्न नष्ट कर रहा है।"
       ],
       validation: [
-        "मैन्युअल सत्यापन: $77,300 एंट्री पर 10x लॉन्ग के लिए लिक्विडेशन = एंट्री × (1 − 1/लीवरेज) = $77,300 × 0.90 = $69,570। कैलकुलेटर इसे 10.00% लिक्विडेशन दूरी के रूप में दिखाता है और मेंटेनेंस मार्जिन को नज़रअंदाज़ करता है, इसलिए असली एक्सचेंज थोड़ा पहले लिक्विडेट करता है।",
+        "मैन्युअल सत्यापन: $65,000 एंट्री पर 10x लॉन्ग के लिए लिक्विडेशन = एंट्री × (1 − 1/लीवरेज) = $65,000 × 0.90 = $58,500। कैलकुलेटर इसे 10.00% लिक्विडेशन दूरी के रूप में दिखाता है और मेंटेनेंस मार्जिन को नज़रअंदाज़ करता है, इसलिए असली एक्सचेंज थोड़ा पहले लिक्विडेट करता है।",
         "P&L सत्यापित करें: 10x लॉन्ग के साथ 5% वृद्धि = मार्जिन पर 50% लाभ। यदि $1,000 जमा किया और कीमत 5% बढ़ी, तो लाभ $500 होना चाहिए।"
       ],
     },
@@ -14137,7 +14137,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Сфокусируйтесь на цене ликвидации — это самая критическая цифра. Сравните её с недавними уровнями поддержки/сопротивления и средней дневной волатильностью актива. Если средний дневной диапазон BTC 3,5%, а расстояние до ликвидации всего 5%, вас может ликвидировать за один волатильный день."
       ],
       scenarios: [
-        "Консервативный лонг BTC: маржа $5 000 с 3x, позиция $15 000 при $73 700/BTC. Ликвидация при ~$49 133 (падение 33%). Максимальная просадка BTC на бычьем рынке обычно 20–30%, 3x даёт разумный буфер.",
+        "Консервативный лонг BTC: маржа $5 000 с 3x, позиция $15 000 при $65 000/BTC. Ликвидация при ~$43 333 (падение 33%). Максимальная просадка BTC на бычьем рынке обычно 20–30%, 3x даёт разумный буфер.",
         "Высокорисковая сделка с альткоином: 20x на $500 маржи, позиция SOL $10 000 при $180. Ликвидация при ~$171 — всего 5% ниже входа. SOL регулярно двигается на 5–8% в день."
       ],
       checklist: [
@@ -14161,7 +14161,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Отслеживайте результаты с плечом отдельно. Если коэффициент Шарпа позиций с плечом ниже 0,5 за 90 дней, плечо разрушает доходность."
       ],
       validation: [
-        "Ручная проверка: для 10x лонга при входе $73 700 ликвидация = вход × (1 − 1/плечо) = $73 700 × 0,90 = $66 330. Калькулятор показывает это как Расстояние до ликвидации 10,00% и не учитывает поддерживающую маржу, поэтому реальная биржа ликвидирует чуть раньше.",
+        "Ручная проверка: для 10x лонга при входе $65 000 ликвидация = вход × (1 − 1/плечо) = $65 000 × 0,90 = $58 500. Калькулятор показывает это как Расстояние до ликвидации 10,00% и не учитывает поддерживающую маржу, поэтому реальная биржа ликвидирует чуть раньше.",
         "Проверьте P&L: рост на 5% при 10x лонге = 50% прибыли от маржи. Если внесли $1 000 и цена выросла на 5%, прибыль должна быть $500."
       ],
     },
@@ -14170,11 +14170,11 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
   'loan-calculator': {
     en: {
       interpret: [
-        "The crypto loan calculator output shows the loan amount your collateral supports at your loan-to-value (LTV) ratio, the margin-call and liquidation thresholds as collateral values, and the total interest cost. If you borrow $10,000 at 50% LTV using BTC as collateral, you must deposit $20,000 worth of BTC (0.271 BTC at $77,300). The liquidation threshold, typically 75–85% LTV, is the price level at which the protocol sells your collateral to repay the loan. At 80% LTV liquidation, the calculator puts the liquidation point at $12,500 of collateral value, a 37.5% collateral drop, so your BTC is liquidated if its price falls about 37.5% from where you deposited it.",
+        "The crypto loan calculator output shows the loan amount your collateral supports at your loan-to-value (LTV) ratio, the margin-call and liquidation thresholds as collateral values, and the total interest cost. If you borrow $10,000 at 50% LTV using BTC as collateral, you must deposit $20,000 worth of BTC (0.308 BTC at $65,000). The liquidation threshold, typically 75–85% LTV, is the price level at which the protocol sells your collateral to repay the loan. At 80% LTV liquidation, the calculator puts the liquidation point at $12,500 of collateral value, a 37.5% collateral drop, so your BTC is liquidated if its price falls about 37.5% from where you deposited it.",
         "Evaluate the total cost of borrowing by combining the interest rate with the opportunity cost of locked collateral. A 5% annual interest rate on $10,000 costs $500/year in interest, but if the $20,000 BTC collateral appreciates 30%, you also forgo $6,000 in potential <a href=\"/profit-calculator/\">unrealized gains</a> versus holding that BTC unlocked. Conversely, if you need liquidity without triggering a taxable event, borrowing against crypto avoids capital gains tax, potentially saving 15–30% of the amount you would otherwise sell."
       ],
       scenarios: [
-        "Tax-efficient liquidity: you hold 1 BTC ($77,300) and need $25,000 for a home down payment. Selling triggers ~$7,500 in capital gains tax (30% bracket). Instead, you borrow $25,000 at 50% LTV (depositing $50,000 of BTC = 0.647 BTC), pay 6% interest ($1,500/year), and retain full BTC exposure. If BTC rises 20% during the loan term, you save $7,500 in tax minus $1,500 interest = $6,000 net benefit.",
+        "Tax-efficient liquidity: you hold 1 BTC ($65,000) and need $25,000 for a home down payment. Selling triggers ~$7,500 in capital gains tax (30% bracket). Instead, you borrow $25,000 at 50% LTV (depositing $50,000 of BTC = 0.769 BTC), pay 6% interest ($1,500/year), and retain full BTC exposure. If BTC rises 20% during the loan term, you save $7,500 in tax minus $1,500 interest = $6,000 net benefit.",
         "DeFi yield farming leverage: you deposit $30,000 ETH as collateral, borrow $15,000 USDC at 4% interest, and deploy the USDC in a yield farm paying 12% APY. Net yield is 12% − 4% = 8% on borrowed capital = $1,200/year profit. However, if ETH drops 25%, your collateral approaches liquidation, run this scenario through our <a href=\"/liquidation-calculator/\">liquidation calculator</a> to find your exact liquidation price and set alerts accordingly."
       ],
       checklist: [
@@ -14405,7 +14405,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Review your allocation strategy quarterly against your financial goals and risk tolerance. Life changes (job loss, major purchase, retirement approaching) should trigger allocation adjustments. If you cannot check your portfolio daily during volatile markets without anxiety, your allocation is too aggressive, increase the stablecoin allocation by 10 percentage points."
       ],
       validation: [
-        "Verify allocation percentages with mental math: if you have $10,000 total and want 50% BTC, that is $5,000. At $77,300/BTC, that is 0.0647 BTC. The calculator works in dollars only and shows no coin quantity, so do this division yourself, and if your exchange fills a different amount, check whether fees or a price discrepancy is causing the difference. The allocation percentages must sum to exactly 100%, any deviation indicates an input error.",
+        "Verify allocation percentages with mental math: if you have $10,000 total and want 50% BTC, that is $5,000. At $65,000/BTC, that is 0.0769 BTC. The calculator works in dollars only and shows no coin quantity, so do this division yourself, and if your exchange fills a different amount, check whether fees or a price discrepancy is causing the difference. The allocation percentages must sum to exactly 100%, any deviation indicates an input error.",
         "Stress-test your allocation by modeling a 50% crash across all positions. If your worst-case portfolio value makes you uncomfortable, reduce risk by shifting 10–20% from volatile assets to stablecoins. A $50,000 aggressive portfolio dropping to $25,000 is a real possibility, if that number causes panic, you are over-allocated to risk."
       ],
     },
@@ -14439,7 +14439,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Revisa tu estrategia trimestralmente contra tus metas financieras. Si no puedes revisar sin ansiedad, tu asignación es demasiado agresiva."
       ],
       validation: [
-        "Verifica con cálculo mental: $10.000 total, 50% BTC = $5.000. A $77.300/BTC = 0,0679 BTC. Los porcentajes deben sumar exactamente 100%.",
+        "Verifica con cálculo mental: $10.000 total, 50% BTC = $5.000. A $65.000/BTC = 0,0769 BTC. Los porcentajes deben sumar exactamente 100%.",
         "Prueba de estrés: modela una caída del 50%. Si el valor del peor caso te incomoda, cambia 10–20% de activos volátiles a stablecoins."
       ],
     },
@@ -14473,7 +14473,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Revise estratégia trimestralmente contra metas financeiras. Se não consegue verificar sem ansiedade, sua alocação é muito agressiva."
       ],
       validation: [
-        "Verifique com cálculo mental: $10.000 total, 50% BTC = $5.000. A $77.300/BTC = 0,0679 BTC. Percentuais devem somar exatamente 100%.",
+        "Verifique com cálculo mental: $10.000 total, 50% BTC = $5.000. A $65.000/BTC = 0,0769 BTC. Percentuais devem somar exatamente 100%.",
         "Teste de estresse: modele queda de 50%. Se o valor do pior caso causa desconforto, mova 10–20% de voláteis para stablecoins."
       ],
     },
@@ -14507,7 +14507,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Stratejinizi üç aylık olarak finansal hedeflerinize karşı gözden geçirin. Kaygı olmadan kontrol edemiyorsanız, dağılımınız çok agresif."
       ],
       validation: [
-        "Zihinsel hesaplamayla doğrulayın: $10.000 toplam, %50 BTC = $5.000. $77.300/BTC'de 0,0679 BTC. Yüzdeler tam %100 toplamalıdır.",
+        "Zihinsel hesaplamayla doğrulayın: $10.000 toplam, %50 BTC = $5.000. $65.000/BTC'de 0,0769 BTC. Yüzdeler tam %100 toplamalıdır.",
         "Stres testi: %50 çöküş modelleyin. En kötü durum değeri rahatsız ediyorsa, volatil varlıklardan stablecoinlere %10–20 kaydırın."
       ],
     },
@@ -14541,7 +14541,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "अपनी एलोकेशन रणनीति तिमाही अपने वित्तीय लक्ष्यों के विरुद्ध समीक्षा करें। यदि बिना चिंता के जांच नहीं कर सकते, तो एलोकेशन बहुत आक्रामक है।"
       ],
       validation: [
-        "मानसिक गणित से सत्यापित करें: $10,000 कुल, 50% BTC = $5,000। $77,300/BTC पर = 0.0647 BTC। प्रतिशत ठीक 100% होने चाहिए।",
+        "मानसिक गणित से सत्यापित करें: $10,000 कुल, 50% BTC = $5,000। $65,000/BTC पर = 0.0769 BTC। प्रतिशत ठीक 100% होने चाहिए।",
         "स्ट्रेस टेस्ट: 50% क्रैश मॉडल करें। यदि सबसे खराब स्थिति का मूल्य असहज करता है, तो वोलैटाइल से स्टेबलकॉइन में 10–20% शिफ्ट करें।"
       ],
     },
@@ -14575,7 +14575,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Пересматривайте стратегию ежеквартально относительно финансовых целей. Если не можете проверять без тревоги — распределение слишком агрессивное."
       ],
       validation: [
-        "Проверьте устно: $10 000, 50% BTC = $5 000. При $73 700/BTC = 0,0679 BTC. Проценты должны складываться ровно в 100%.",
+        "Проверьте устно: $10 000, 50% BTC = $5 000. При $65 000/BTC = 0,0769 BTC. Проценты должны складываться ровно в 100%.",
         "Стресс-тест: смоделируйте падение 50%. Если худший сценарий вызывает дискомфорт, переведите 10–20% из волатильных активов в стейблкоины."
       ],
     },
