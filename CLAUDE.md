@@ -33,6 +33,10 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
      `StakingRewardsCalculator` (block reward, halving schedule, 21M supply, 32-ETH validator, dust 546).
 
 ### Монитор 2026-11-17 — KAS просрочен на 13 дней (задача пропала из планировщика) + planalto переехал
+- ✅ **ЗАДЕПЛОЕНО 17.11 двумя прогонами `deploy.sh --no-build`** (1: `4dbe23fec` Kaspa; 2: + `24ea97e96` planalto →
+  Câmara и `78d30ec42` рыночный проход; оба: CF purge, 294 прогреты, все чанки 200; IndexNow 13 и 48), живые страницы
+  и чанки сверены с `?cb=`. **OTA 1.7.10** (sha256 `f63821e9…ce337a48`, ключ CoinGecko в 28 чанках; `updates.php`:
+  1.7.9 → 1.7.10, 1.7.10 → `{}`). **Следующая OTA — 1.7.11+.** Запушено в origin/main 17.11.
 - 🔴 **Задача `cryptocalk-kaspa-emission-2026-11` (на 06.11) ИСЧЕЗЛА из планировщика**: `list_scheduled_tasks` её
   не показывал, `list_task_runs` → «not found», а папка с SKILL.md осталась на диске. Не запускалась ни разу →
   сайт и приложение 13 дней показывали месяц 53 (2.06017223). Поймал календарный флаг DATA_HUB.
