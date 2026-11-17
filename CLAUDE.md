@@ -32,6 +32,15 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
      `MiningRoiCalculator`, `ValidatorCalculator`, `StockToFlowCalculator`, `DustAttackCalculator`,
      `StakingRewardsCalculator` (block reward, halving schedule, 21M supply, 32-ETH validator, dust 546).
 
+### Grid-trading 17.11 (3-й прогон) — диапазоны под текущую цену, ЗАДЕПЛОЕНО + OTA 1.7.13, запушено
+- `6d097cf1b`: дефолт и пресет BTC Tight Range 80–90k → **60–70k**, ETH Wide Swing 2 000–4 000 → **1 200–2 400**,
+  SOL Volatile 100–250 → **40–100** (все три целиком выше спота: BTC ~64 550, ETH ~1 815, SOL ~71,7). quickAnswer на 6 языках
+  пересчитан формулой компонента: шаг $500, **$3,84 за грид** после комиссий 0,1%, max ~$77. ⚠️ Годовая доходность в этом
+  компоненте = `vol·(1−2·fee)/grids` — от диапазона НЕ зависит (2,99% и до, и после); проверять это перед «пересчётом» процента.
+- Полный `deploy.sh` из `6d097cf1b` (CF purge, 294 прогреты, IndexNow 117, чанки 200), живые EN/ES/RU сверены с `?cb=`.
+  **OTA 1.7.13** (sha256 `29de0449…542a4616`, 1295 html, ключ в 28 чанках; `updates.php`: 1.7.12 → 1.7.13, 1.7.13 → `{}`).
+  **Следующая OTA — 1.7.14+.** origin/main = `6d097cf1b` (BTC-свип и gas запушены этим же пушем).
+
 ### Деплой 17.11 (2-й прогон) — gas-optimization + BTC-свип ЗАДЕПЛОЕНЫ + OTA 1.7.12
 - ✅ Полный `deploy.sh` из main `0ac272221` (выполнила сессия BTC-свипа, ~15:01–15:34 NZDT): CF purge, 294 прогреты, IndexNow 115,
   чанки 200. Включает `e277189b1` (gas-optimization) и `66162e4fc` (BTC-свип: примеры $77 300/$73 700/$84 000 в 12 калькуляторах
@@ -39,7 +48,7 @@ Crypto calculator site. **Astro 5 + React 19**, multilingual (`src/pages/[lang]`
   на 6 языках (новые цифры есть, 15 gwei / $2 400 — 0, экранированной разметки 0), чанк компонента отдаёт датированную подсказку.
 - ✅ **OTA 1.7.12** (sha256 `8b5ae87a…5b2c8fb`, 1295 html, ключ CoinGecko в 28 чанках; gas-страница и BTC-свип внутри — проверено
   скачиванием бандла; `updates.php`: 1.7.10/1.7.11 → 1.7.12, 1.7.12 → `{}`). **Следующая OTA — 1.7.13+.**
-- ⚠️ origin/main НЕ запушен (пушит только по просьбе пользователя).
+- ✅ Запушено в origin/main 17.11 (`653470e23`, затем `6d097cf1b` — см. блок выше).
 
 ### Gas optimization 2026-11-17 — переписан под суб-гвей газ (ЗАДЕПЛОЕНО 17.11, OTA 1.7.12 — см. выше)
 - Пресеты `GasOptimizationCalculator.tsx`: 15 gwei / ETH $2 400 → **0,14 gwei / $1 820** (base 0,131 + tip 0,013, eth_feeHistory
@@ -70,8 +79,8 @@ DePIN / rainbow проверены в браузере на локальной �
   сверять HNT по Coinbase/Kraken/Gate.
 - Инфляция по 8 странам (INDEC/TUIK/NBS/MoSPI/IBGE окт. 2026, BLS/ONS сент.), стейкинг (Lido API 2,34% нетто, DefiLlama),
   Pectra-слэшинг, капитализации/предложение BTC 20,1 млн, реализованная капитализация $1,08T (bitcoin-data.com).
-- ⏸ Вынесено задачами: `/gas-optimization-calculator/` целиком на 10–50 gwei (живой газ ~0,13) и свип ~120 упоминаний
-  BTC $77 300/$73 700/$84 000 в 12 калькуляторах вне выборки + дефолты 3 компонентов.
+- ✅ Вынесенное задачами закрыто 17.11: `/gas-optimization-calculator/` (`e277189b1`) и свип BTC $77 300/$73 700/$84 000 в
+  12 калькуляторах + дефолты 3 компонентов (`66162e4fc`) — оба задеплоены 2-м прогоном, OTA 1.7.12.
 
 ### Монитор 2026-11-17 — KAS просрочен на 13 дней (задача пропала из планировщика) + planalto переехал
 - ✅ **ЗАДЕПЛОЕНО 17.11 двумя прогонами `deploy.sh --no-build`** (1: `4dbe23fec` Kaspa; 2: + `24ea97e96` planalto →
