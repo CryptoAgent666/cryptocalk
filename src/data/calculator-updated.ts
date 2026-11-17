@@ -11,6 +11,9 @@
 // changed the KAS fallback block reward (2.3125 -> 2.18267645), which is rendered on the GPU mining
 // page both in the calculator and in its "Where these numbers come from" block; /updates/ gained a
 // new entry. Both are real rendered-content changes, not a build stamp.
+// 2026-11-17 (market pass): mining-calculator, salary-calculator, if-i-had-bought, pizza-day-calculator,
+// mstr-mnav-calculator, retirement-calculator moved to 2026-11-17 — BTC fell from ~$83,600 to ~$65,000 and every
+// figure derived from the October price (fallbacks, presets, worked examples, FAQs in 6 languages) was recomputed.
 // 2026-11-17 (later): tax-calculator + methodology moved to 2026-11-17 — the Brazil source in their
 // "Where these numbers come from" tables changed from planalto.gov.br to camara.leg.br, re-read the same day.
 // 2026-11-17: gpu-mining-calculator, mining-coin-switcher-calculator + updates moved to 2026-11-17. Kaspa
@@ -125,7 +128,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "hashrate-converter": "2026-10-13",
   "hodl-vs-trade": "2026-10-13",
   "ico-roi-calculator": "2026-10-13",
-  "if-i-had-bought": "2026-10-14",
+  "if-i-had-bought": "2026-11-17",
   "impermanent-loss-calculator": "2026-10-13",
   "index": "2026-08-25",
   "inflation-hedge": "2026-10-13",
@@ -148,10 +151,10 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "methodology": "2026-11-17",
   "mev-calculator": "2026-10-13",
   "millionaire-calculator": "2026-10-13",
-  "mining-calculator": "2026-10-14",
+  "mining-calculator": "2026-11-17",
   "mining-coin-switcher-calculator": "2026-11-17",
   "mining-roi-calculator": "2026-10-13",
-  "mstr-mnav-calculator": "2026-10-13",
+  "mstr-mnav-calculator": "2026-11-17",
   "nft-profit-calculator": "2026-10-14",
   "nft-rarity-calculator": "2026-10-13",
   "node-calculator": "2026-10-14",
@@ -161,7 +164,7 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "perpetual-funding-arbitrage-calculator": "2026-10-13",
   "perpetual-futures-calculator": "2026-10-13",
   "pip-calculator": "2026-10-13",
-  "pizza-day-calculator": "2026-10-14",
+  "pizza-day-calculator": "2026-11-17",
   "polymarket-odds-calculator": "2026-10-14",
   "portfolio-calculator": "2026-10-13",
   "position-size-calculator": "2026-10-13",
@@ -172,13 +175,13 @@ export const CALCULATOR_UPDATED: Record<string, string> = {
   "rainbow-chart-calculator": "2026-10-13",
   "rebalancing-calculator": "2026-10-13",
   "restaking-calculator": "2026-10-14",
-  "retirement-calculator": "2026-10-14",
+  "retirement-calculator": "2026-11-17",
   "reverse-roi": "2026-10-13",
   "risk-of-ruin-calculator": "2026-10-13",
   "risk-reward-calculator": "2026-08-25",
   "roi-calculator": "2026-10-13",
   "rwa-yield-calculator": "2026-10-14",
-  "salary-calculator": "2026-10-14",
+  "salary-calculator": "2026-11-17",
   "satoshi-converter": "2026-10-13",
   "sharpe-calculator": "2026-10-13",
   "slippage-calculator": "2026-10-13",

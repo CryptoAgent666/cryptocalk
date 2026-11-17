@@ -279,7 +279,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'mining-calculator': {
     en: {
-      quickAnswer: 'Enter your hash rate, power consumption, and electricity cost to estimate daily Bitcoin mining revenue. At 140 TH/s (an Antminer S19 XP, 3,010 W) and $0.06/kWh, revenue is about $5.50/day and roughly $1.20/day is left after power, at October 2026 difficulty and price.',
+      quickAnswer: 'Enter your hash rate, power consumption, and electricity cost to estimate daily Bitcoin mining revenue. At 140 TH/s (an Antminer S19 XP, 3,010 W) and $0.06/kWh, revenue is about $4.25/day, which no longer covers the roughly $4.35/day power bill, at November 2026 difficulty and price (BTC ~$65,000).',
       how: [
       `The Mining Calculator shows whether your hardware setup is profitable by comparing estimated daily revenue against your electricity and operational costs. Enter your hashrate, power consumption in watts, electricity rate per kWh, and pool fee percentage, the calculator returns daily, weekly, and monthly profit or loss projections alongside a break-even timeline.`,
       `Use it to evaluate hardware purchases before buying: enter the specs and price of the ASIC you're considering and your local electricity rate to see the payback period. The Bitcoin price is pulled live and cannot be edited, so to stress-test a 30% lower price, take 70% of the USD revenue figure and subtract the electricity cost. Revisit the calculator whenever difficulty adjusts or your power rate changes.`
@@ -290,7 +290,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Introduce tu hash rate, consumo eléctrico y coste de electricidad para estimar los ingresos diarios de minería de Bitcoin. A 140 TH/s (un Antminer S19 XP, 3.010 W) y $0,06/kWh, los ingresos son de unos $5,50/día y quedan aproximadamente $1,20/día tras pagar la electricidad, con la dificultad y el precio de octubre de 2026.',
+      quickAnswer: 'Introduce tu hash rate, consumo eléctrico y coste de electricidad para estimar los ingresos diarios de minería de Bitcoin. A 140 TH/s (un Antminer S19 XP, 3.010 W) y $0,06/kWh, los ingresos son de unos $4,25/día, que ya no cubren los aproximadamente $4,35/día de electricidad, con la dificultad y el precio de noviembre de 2026 (BTC ~$65.000).',
       how: [
       `La Calculadora de Minería muestra si tu configuración de hardware es rentable comparando los ingresos diarios estimados con tus costos de electricidad y operativos. Introduce tu hashrate, consumo de energía en vatios, tarifa eléctrica por kWh y porcentaje de comisión del pool para obtener proyecciones de ganancias o pérdidas.`,
       `Úsala para evaluar compras de hardware antes de adquirirlas: introduce las especificaciones y el precio del ASIC que estás considerando y tu tarifa eléctrica local para ver el período de recuperación de la inversión. El precio de Bitcoin se obtiene en tiempo real y no se puede editar; para simular un precio un 30% más bajo, toma el 70% de los ingresos en USD y réstale el costo de electricidad.`
@@ -301,7 +301,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Insira seu hash rate, consumo de energia e custo de eletricidade para estimar a receita diária de mineração de Bitcoin. A 140 TH/s (um Antminer S19 XP, 3.010 W) e $0,06/kWh, a receita é de cerca de $5,50/dia e sobra aproximadamente $1,20/dia após a energia, com a dificuldade e o preço de outubro de 2026.',
+      quickAnswer: 'Insira seu hash rate, consumo de energia e custo de eletricidade para estimar a receita diária de mineração de Bitcoin. A 140 TH/s (um Antminer S19 XP, 3.010 W) e $0,06/kWh, a receita é de cerca de $4,25/dia, que já não cobre os aproximadamente $4,35/dia de energia, com a dificuldade e o preço de novembro de 2026 (BTC ~$65.000).',
       how: [
       `A Calculadora de Mineração mostra se sua configuração de hardware é lucrativa comparando a receita diária estimada com seus custos de eletricidade e operacionais. Insira seu hashrate, consumo de energia em watts, tarifa de eletricidade por kWh e porcentagem de taxa do pool.`,
       `Use-a para avaliar compras de hardware: insira as especificações e o preço do ASIC que está considerando e sua tarifa elétrica local para ver o período de retorno do investimento. O preço do Bitcoin vem ao vivo e não pode ser editado; para simular um preço 30% mais baixo, pegue 70% da receita em USD e subtraia o custo de eletricidade.`
@@ -312,7 +312,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Hash rate, güç tüketimi ve elektrik maliyetinizi girerek günlük Bitcoin madencilik gelirini tahmin edin. 140 TH/s (3.010 W\'lık bir Antminer S19 XP) ve $0,06/kWh ile günlük gelir yaklaşık $5,50, elektrik sonrası kalan ise Ekim 2026 zorluk ve fiyatında günde yaklaşık $1,20\'dir.',
+      quickAnswer: 'Hash rate, güç tüketimi ve elektrik maliyetinizi girerek günlük Bitcoin madencilik gelirini tahmin edin. 140 TH/s (3.010 W\'lık bir Antminer S19 XP) ve $0,06/kWh ile günlük gelir yaklaşık $4,25\'tir ve Kasım 2026 zorluk ve fiyatında (BTC ~$65.000) günde yaklaşık $4,35\'lik elektrik faturasını artık karşılamaz.',
       how: [
       `Madencilik Hesaplayıcısı, tahmini günlük geliri elektrik ve operasyonel maliyetlerinizle karşılaştırarak donanım kurulumunuzun kârlı olup olmadığını gösterir. Hashrate'inizi, watt cinsinden güç tüketiminizi, kWh başına elektrik tarifinizi ve havuz ücreti yüzdesini girin.`,
       `Donanım satın almadan önce değerlendirmek için kullanın: düşündüğünüz ASIC'in özelliklerini ve fiyatını, yerel elektrik tarifinizle birlikte girerek geri ödeme süresini görün. Bitcoin fiyatı canlı olarak alınır ve düzenlenemez; %30 daha düşük bir fiyatı test etmek için USD gelirinin %70'ini alıp elektrik maliyetini çıkarın.`
@@ -323,7 +323,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'अपना हैश रेट, बिजली खपत और बिजली लागत दर्ज करके दैनिक Bitcoin माइनिंग राजस्व का अनुमान लगाएं। 140 TH/s (Antminer S19 XP, 3,010 W) और $0.06/kWh पर अक्टूबर 2026 की डिफिकल्टी और कीमत पर राजस्व लगभग $5.50/दिन है और बिजली के बाद लगभग $1.20/दिन बचता है।',
+      quickAnswer: 'अपना हैश रेट, बिजली खपत और बिजली लागत दर्ज करके दैनिक Bitcoin माइनिंग राजस्व का अनुमान लगाएं। 140 TH/s (Antminer S19 XP, 3,010 W) और $0.06/kWh पर नवंबर 2026 की डिफिकल्टी और कीमत (BTC ~$65,000) पर राजस्व लगभग $4.25/दिन है, जो लगभग $4.35/दिन के बिजली बिल को अब नहीं निकाल पाता।',
       how: [
       `माइनिंग कैलकुलेटर अनुमानित दैनिक राजस्व की तुलना आपकी बिजली और परिचालन लागत से करके दिखाता है कि आपका हार्डवेयर सेटअप लाभदायक है या नहीं। अपना हैशरेट, वाट में पावर कंजम्प्शन, प्रति kWh बिजली दर और पूल फीस प्रतिशत दर्ज करें।`,
       `हार्डवेयर खरीदने से पहले मूल्यांकन के लिए उपयोग करें: जिस ASIC पर विचार कर रहे हैं उसकी स्पेसिफिकेशन और कीमत तथा अपनी स्थानीय बिजली दर दर्ज करें। Bitcoin मूल्य लाइव आता है और बदला नहीं जा सकता; 30% कम मूल्य की जांच के लिए USD राजस्व का 70% लें और उसमें से बिजली लागत घटाएं।`
@@ -334,7 +334,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Введите хешрейт, энергопотребление и стоимость электричества для оценки суточного дохода от майнинга Bitcoin. При 140 TH/s (Antminer S19 XP, 3010 Вт) и $0,06/кВт·ч выручка — около $5,50 в день, а после оплаты электричества остаётся примерно $1,20 в день (сложность и цена октября 2026).',
+      quickAnswer: 'Введите хешрейт, энергопотребление и стоимость электричества для оценки суточного дохода от майнинга Bitcoin. При 140 TH/s (Antminer S19 XP, 3010 Вт) и $0,06/кВт·ч выручка — около $4,25 в день, и она уже не покрывает примерно $4,35 в день за электричество (сложность и цена ноября 2026, BTC ~$65 000).',
       how: [
       `Калькулятор майнинга показывает, прибыльна ли ваша конфигурация оборудования, сравнивая расчётный суточный доход с затратами на электроэнергию и операционными расходами. Введите хешрейт, потребляемую мощность в ваттах, тариф на электричество и процент комиссии пула.`,
       `Используйте для оценки покупки оборудования: введите характеристики и цену рассматриваемого ASIC и ваш тариф на электроэнергию, чтобы увидеть срок окупаемости. Цена Bitcoin подтягивается в реальном времени и не редактируется, поэтому для стресс-теста при цене на 30% ниже возьмите 70% дохода в USD и вычтите стоимость электричества.`
@@ -2577,7 +2577,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'salary-calculator': {
     en: {
-      quickAnswer: 'Convert a salary between fiat and crypto at the live price. A $100,000/year salary paid in BTC at ~$83,600 (October 2026) means receiving ~0.046 BTC biweekly before taxes; the tool does not estimate tax withholding.',
+      quickAnswer: 'Convert a salary between fiat and crypto at the live price. A $100,000/year salary paid in BTC at ~$65,000 (November 2026) means receiving ~0.059 BTC biweekly before taxes; the tool does not estimate tax withholding.',
       how: [
       `The Crypto Salary Calculator converts a traditional fiat salary into its cryptocurrency equivalent, or shows how much fiat a given crypto salary is worth. Enter your annual salary, the share to convert, the target coin (BTC, ETH or USDT), the conversion fee and your pay frequency to see the crypto you receive per pay period at today's price, useful for employees or contractors paid in cryptocurrency or businesses offering crypto salary packages.`,
       `Use it to understand your real purchasing power when offered a salary in BTC, ETH, or stablecoins. For volatile assets like BTC or ETH, keep in mind that the calculator uses today's live price only, so a 20% price drop would cut the fiat value of the same coins by 20%. For stablecoin salaries (USDC, USDT), the conversion is near 1:1 with USD, providing predictable income.`
@@ -2588,7 +2588,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Convierte un salario entre fíat y cripto al precio en vivo. Un salario de $100.000/año pagado en BTC a ~$83.600 (octubre de 2026) significa recibir ~0,046 BTC quincenal antes de impuestos; la herramienta no estima retenciones.',
+      quickAnswer: 'Convierte un salario entre fíat y cripto al precio en vivo. Un salario de $100.000/año pagado en BTC a ~$65.000 (noviembre de 2026) significa recibir ~0,059 BTC quincenal antes de impuestos; la herramienta no estima retenciones.',
       how: [
       `La Calculadora de Salario Cripto convierte un salario fiat tradicional a su equivalente en criptomoneda, o muestra cuánto fiat vale un salario cripto dado.`,
       `Úsala para entender tu poder adquisitivo real cuando se te ofrece un salario en BTC, ETH o stablecoins.`
@@ -2599,7 +2599,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Converta um salário entre moeda fiduciária e cripto ao preço ao vivo. Um salário de $100.000/ano pago em BTC a ~$83.600 (outubro de 2026) significa receber ~0,046 BTC quinzenalmente antes dos impostos; a ferramenta não estima retenções.',
+      quickAnswer: 'Converta um salário entre moeda fiduciária e cripto ao preço ao vivo. Um salário de $100.000/ano pago em BTC a ~$65.000 (novembro de 2026) significa receber ~0,059 BTC quinzenalmente antes dos impostos; a ferramenta não estima retenções.',
       how: [
       `A Calculadora de Salário Cripto converte um salário fiat tradicional para seu equivalente em criptomoeda, ou mostra quanto fiat um determinado salário cripto vale.`,
       `Use-a para entender seu poder de compra real quando oferecido um salário em BTC, ETH ou stablecoins.`
@@ -2610,7 +2610,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Maaşı canlı fiyattan itibari para ile kripto arasında çevirin. ~$83.600/BTC\'de (Ekim 2026) yılda $100.000 maaş, vergi öncesi iki haftada bir ~0,046 BTC almak anlamına gelir; araç vergi kesintisini hesaplamaz.',
+      quickAnswer: 'Maaşı canlı fiyattan itibari para ile kripto arasında çevirin. ~$65.000/BTC\'de (Kasım 2026) yılda $100.000 maaş, vergi öncesi iki haftada bir ~0,059 BTC almak anlamına gelir; araç vergi kesintisini hesaplamaz.',
       how: [
       `Kripto Maaş Hesaplayıcısı, geleneksel bir fiat maaşını kripto para eşdeğerine dönüştürür veya belirli bir kripto para maaşının ne kadar fiat değerinde olduğunu gösterir.`,
       `BTC, ETH veya stablecoin cinsinden bir maaş teklif edildiğinde gerçek satın alma gücünüzü anlamak için kullanın.`
@@ -2621,7 +2621,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'लाइव कीमत पर सैलरी को fiat और crypto के बीच कन्वर्ट करें। ~$83,600/BTC (अक्टूबर 2026) पर $100,000/वर्ष सैलरी का मतलब है टैक्स से पहले हर दो सप्ताह ~0.046 BTC; टूल टैक्स विदहोल्डिंग का अनुमान नहीं लगाता।',
+      quickAnswer: 'लाइव कीमत पर सैलरी को fiat और crypto के बीच कन्वर्ट करें। ~$65,000/BTC (नवंबर 2026) पर $100,000/वर्ष सैलरी का मतलब है टैक्स से पहले हर दो सप्ताह ~0.059 BTC; टूल टैक्स विदहोल्डिंग का अनुमान नहीं लगाता।',
       how: [
       `क्रिप्टो सैलरी कैलकुलेटर एक पारंपरिक फिएट सैलरी को उसके क्रिप्टोकरेंसी इक्विवेलेंट में कन्वर्ट करता है, या दिखाता है कि दिए गए क्रिप्टो सैलरी की कितनी फिएट वैल्यू है।`,
       `BTC, ETH, या स्टेबलकॉइन में सैलरी ऑफर किए जाने पर अपनी वास्तविक क्रय शक्ति समझने के लिए इसका उपयोग करें।`
@@ -2632,7 +2632,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Переводите зарплату между фиатом и криптой по текущему курсу. Зарплата $100 000/год в BTC по ~$83 600 (октябрь 2026) означает ~0,046 BTC раз в две недели до вычета налогов; налоговые удержания инструмент не рассчитывает.',
+      quickAnswer: 'Переводите зарплату между фиатом и криптой по текущему курсу. Зарплата $100 000/год в BTC по ~$65 000 (ноябрь 2026) означает ~0,059 BTC раз в две недели до вычета налогов; налоговые удержания инструмент не рассчитывает.',
       how: [
       `Калькулятор зарплаты в криптовалюте переводит традиционную фиатную зарплату в её криптовалютный эквивалент, или показывает, сколько фиата стоит указанная крипто-зарплата.`,
       `Используйте для понимания реальной покупательной способности при зарплате в BTC, ETH или стейблкоинах.`
@@ -6176,7 +6176,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'if-i-had-bought': {
     en: {
-      quickAnswer: 'See what your investment would be worth today if you had bought a cryptocurrency at a past date. $1,000 invested in Bitcoin on January 1, 2020 ($7,200) would be worth ~$11,600 today (BTC ~$83,600), a ~1,060% return in under 7 years.',
+      quickAnswer: 'See what your investment would be worth today if you had bought a cryptocurrency at a past date. $1,000 invested in Bitcoin on January 1, 2020 ($7,200) would be worth ~$9,000 today (BTC ~$65,000), a ~800% return in under 7 years.',
       how: [
         `The "If I Had Bought" Calculator shows the hypothetical value of a past cryptocurrency investment using approximate historical prices stored in the tool. Select one of seven coins, enter the amount you would have invested, and pick one of nine preset moments (from Bitcoin's 2009 launch to six months ago); the tool takes the stored price for that moment, calculates how many coins you would have purchased, and multiplies by a stored recent price to show your gain or loss.`,
         `Use it to analyze missed opportunities or validate your past decisions. It's also a powerful educational tool: seeing that $100 in ETH in January 2017 would be worth about $25,000 today illustrates crypto's asymmetric return potential. The calculator includes a percentage return, the annualized return (CAGR) and two fun comparisons: the equivalent in Tesla shares and in months of rent.`
@@ -6187,7 +6187,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'Descubre cuánto valdría hoy tu inversión si hubieras comprado una criptomoneda en una fecha pasada. $1.000 invertidos en Bitcoin el 1 de enero de 2020 ($7.200) valdrían ~$11.600 hoy (BTC ~$83.600) — un retorno de ~1.060% en menos de 7 años.',
+      quickAnswer: 'Descubre cuánto valdría hoy tu inversión si hubieras comprado una criptomoneda en una fecha pasada. $1.000 invertidos en Bitcoin el 1 de enero de 2020 ($7.200) valdrían ~$9.000 hoy (BTC ~$65.000) — un retorno de ~800% en menos de 7 años.',
       how: [
         `La Calculadora "Si Hubiera Comprado" muestra el valor hipotético de una inversión pasada en criptomonedas usando precios históricos aproximados guardados en la herramienta. Selecciona una de siete monedas, introduce el monto que habrías invertido y elige uno de nueve momentos predefinidos (del lanzamiento de Bitcoin en 2009 a hace seis meses) — la herramienta toma el precio guardado de ese momento, calcula cuántas monedas habrías comprado y, con un precio reciente de referencia, muestra tu ganancia o pérdida.`,
         `Úsala para analizar oportunidades perdidas o validar decisiones pasadas. También es una herramienta educativa: ver que $100 en ETH en enero de 2017 valdrían unos $25.000 hoy ilustra el potencial asimétrico del cripto. Incluye retorno porcentual, retorno anualizado (CAGR) y dos comparaciones divertidas: el equivalente en acciones de Tesla y en meses de alquiler.`
@@ -6198,7 +6198,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Veja quanto seu investimento valeria hoje se tivesse comprado uma criptomoeda em uma data passada. $1.000 investidos em Bitcoin em 1 de janeiro de 2020 ($7.200) valeriam ~$11.600 hoje (BTC ~$83.600) — retorno de ~1.060% em menos de 7 anos.',
+      quickAnswer: 'Veja quanto seu investimento valeria hoje se tivesse comprado uma criptomoeda em uma data passada. $1.000 investidos em Bitcoin em 1 de janeiro de 2020 ($7.200) valeriam ~$9.000 hoje (BTC ~$65.000) — retorno de ~800% em menos de 7 anos.',
       how: [
         `A Calculadora "E Se Eu Tivesse Comprado" mostra o valor hipotético de um investimento passado em criptomoedas usando preços históricos aproximados armazenados na ferramenta. Selecione uma de sete moedas, insira o valor que teria investido e escolha um de nove momentos predefinidos (do lançamento do Bitcoin em 2009 a seis meses atrás) — a ferramenta usa o preço armazenado daquele momento, calcula quantas moedas teria comprado e, com um preço recente de referência, mostra o ganho ou a perda.`,
         `Use para analisar oportunidades perdidas ou validar decisões passadas. É uma ferramenta educacional poderosa: ver que $100 em ETH em janeiro de 2017 valeriam cerca de $25.000 hoje ilustra o potencial assimétrico do cripto. Inclui retorno percentual, retorno anualizado (CAGR) e duas comparações divertidas: o equivalente em ações da Tesla e em meses de aluguel.`
@@ -6209,7 +6209,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: 'Geçmişte bir kripto para satın almış olsaydınız yatırımınızın bugün ne kadar değerli olacağını görün. 1 Ocak 2020\'de Bitcoin\'e yatırılan $1.000 ($7.200) bugün ~$11.600 eder (BTC ~$83.600) — 7 yıldan kısa sürede ~%1.060 getiri.',
+      quickAnswer: 'Geçmişte bir kripto para satın almış olsaydınız yatırımınızın bugün ne kadar değerli olacağını görün. 1 Ocak 2020\'de Bitcoin\'e yatırılan $1.000 ($7.200) bugün ~$9.000 eder (BTC ~$65.000) — 7 yıldan kısa sürede ~%800 getiri.',
       how: [
         `"Alsaydım Ne Olurdu" Hesaplayıcısı, araçta saklanan yaklaşık tarihsel fiyatları kullanarak geçmişteki varsayımsal bir kripto yatırımının değerini gösterir. Yedi coinden birini seçin, yatırım yapacağınız tutarı girin ve dokuz hazır andan birini seçin (2009'daki Bitcoin lansmanından altı ay öncesine kadar) — araç o anın kayıtlı fiyatını alır, kaç coin alacağınızı hesaplar ve kayıtlı güncel bir referans fiyatla çarparak kazanç veya kaybınızı gösterir.`,
         `Kaçırılan fırsatları analiz etmek veya geçmiş kararlarınızı değerlendirmek için kullanın. Aynı zamanda güçlü bir eğitim aracıdır: Ocak 2017'de ETH'ye $100 yatırmanın bugün yaklaşık $25.000 edeceğini görmek kripto'nun asimetrik getiri potansiyelini gösterir. Yüzde getiri, yıllık getiri (CAGR) ve iki eğlenceli karşılaştırma içerir: Tesla hisse eşdeğeri ve kaç aylık kiraya denk geldiği.`
@@ -6220,7 +6220,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: 'देखें कि अगर आपने किसी पिछली तारीख पर क्रिप्टोकरेंसी खरीदी होती तो आज आपका निवेश कितना होता। 1 जनवरी 2020 को Bitcoin में $1,000 ($7,200) इन्वेस्ट किए होते तो आज ~$11,600 होते (BTC ~$83,600) — 7 साल से कम में ~1,060% रिटर्न।',
+      quickAnswer: 'देखें कि अगर आपने किसी पिछली तारीख पर क्रिप्टोकरेंसी खरीदी होती तो आज आपका निवेश कितना होता। 1 जनवरी 2020 को Bitcoin में $1,000 ($7,200) इन्वेस्ट किए होते तो आज ~$9,000 होते (BTC ~$65,000) — 7 साल से कम में ~800% रिटर्न।',
       how: [
         `"अगर मैंने खरीदा होता" कैलकुलेटर टूल में सेव किए गए अनुमानित हिस्टोरिकल प्राइस से पास्ट क्रिप्टो इन्वेस्टमेंट की हाइपोथेटिकल वैल्यू दिखाता है। सात कॉइन में से एक सेलेक्ट करें, इन्वेस्ट की जाने वाली राशि दर्ज करें और नौ प्रीसेट मौकों में से एक चुनें (2009 के Bitcoin लॉन्च से छह महीने पहले तक) — टूल उस मौके की सेव की गई कीमत लेता है, कैलकुलेट करता है कितने कॉइन खरीदे होते, और एक सेव की गई हालिया कीमत से गेन/लॉस दिखाता है।`,
         `मिस्ड ऑपर्च्युनिटीज एनालाइज करने या पास्ट डिसीजन वैलिडेट करने के लिए उपयोग करें। यह एक शक्तिशाली एजुकेशनल टूल भी है: जनवरी 2017 में ETH में $100 आज लगभग $25,000 होते, यह देखना क्रिप्टो की एसिमेट्रिक रिटर्न पोटेंशियल दर्शाता है। परसेंटेज रिटर्न, वार्षिक रिटर्न (CAGR) और दो मज़ेदार तुलनाएँ शामिल हैं: Tesla शेयर समकक्ष और किराए के महीने।`
@@ -6231,7 +6231,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: 'Узнайте, сколько бы стоила ваша инвестиция сегодня, если бы вы купили криптовалюту в прошлом. $1 000, вложенные в Bitcoin 1 января 2020 ($7 200), сейчас стоили бы ~$11 600 (BTC ~$83 600) — доходность ~1060% меньше чем за 7 лет.',
+      quickAnswer: 'Узнайте, сколько бы стоила ваша инвестиция сегодня, если бы вы купили криптовалюту в прошлом. $1 000, вложенные в Bitcoin 1 января 2020 ($7 200), сейчас стоили бы ~$9 000 (BTC ~$65 000) — доходность ~800% меньше чем за 7 лет.',
       how: [
         `Калькулятор «Если бы я купил» показывает гипотетическую стоимость прошлой криптоинвестиции по приблизительным историческим ценам, сохранённым в инструменте. Выберите одну из семи монет, введите сумму вложения и один из девяти готовых моментов (от запуска Bitcoin в 2009 году до полугода назад) — инструмент возьмёт сохранённую цену этого момента, рассчитает количество купленных монет и по сохранённой недавней цене покажет прибыль или убыток.`,
         `Анализируйте упущенные возможности или проверяйте прошлые решения. Это мощный образовательный инструмент: $100 в ETH в январе 2017 года сейчас стоили бы около $25 000, что наглядно демонстрирует асимметричный потенциал криптовалют. Включает процент доходности, годовую доходность (CAGR) и два занимательных сравнения: эквивалент в акциях Tesla и в месяцах аренды.`
@@ -6312,7 +6312,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'pizza-day-calculator': {
     en: {
-      quickAnswer: 'On May 22, 2010, Laszlo Hanyecz paid 10,000 BTC for two pizzas (~$41 at the time). Those same bitcoins at today\'s price of ~$83,600 would be worth $836,000,000, making each pizza slice worth roughly $52 million.',
+      quickAnswer: 'On May 22, 2010, Laszlo Hanyecz paid 10,000 BTC for two pizzas (~$41 at the time). Those same bitcoins at today\'s price of ~$65,000 would be worth $650,000,000, making each pizza slice worth roughly $41 million.',
       how: [
         `The Pizza Day Calculator computes the present-day value of the famous 10,000 BTC pizza purchase from May 22, 2010, the first known real-world Bitcoin transaction. Today's BTC price is auto-filled from CoinGecko (you can overwrite it), and the calculator shows what those 10,000 BTC are worth today, the cost per pizza then in BTC and in satoshis, and how many pizzas the coins would buy at today's pizza price. It contextualizes the astronomical opportunity cost in relatable comparisons.`,
         `Beyond the novelty, this calculator serves as an interactive lesson in Bitcoin's exponential growth. You can enter any historical BTC price to see how the pizza purchase value has changed over time. The Opportunity Cost row sets today's value against the roughly $41 the coins were worth in 2010 ($0.0041/BTC, the pizza price), demonstrating why early adoption and long-term holding are central to the Bitcoin thesis.`
@@ -6323,7 +6323,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     es: {
-      quickAnswer: 'El 22 de mayo de 2010, Laszlo Hanyecz pagó 10.000 BTC por dos pizzas (~$41 en ese momento). Esos mismos bitcoins a $83.600 de hoy valdrían $836.000.000 — haciendo que cada porción valga aproximadamente $52 millones.',
+      quickAnswer: 'El 22 de mayo de 2010, Laszlo Hanyecz pagó 10.000 BTC por dos pizzas (~$41 en ese momento). Esos mismos bitcoins a $65.000 de hoy valdrían $650.000.000 — haciendo que cada porción valga aproximadamente $41 millones.',
       how: [
         `La Calculadora del Día de la Pizza calcula el valor actual de la famosa compra de 10.000 BTC por dos pizzas del 22 de mayo de 2010 — la primera transacción conocida de Bitcoin en el mundo real. El precio actual de BTC se completa desde CoinGecko (puedes cambiarlo) y la calculadora muestra cuánto valen hoy esos 10.000 BTC, el costo por pizza de entonces en BTC y en satoshis, y cuántas pizzas comprarían hoy esas monedas al precio actual de la pizza. Contextualiza el astronómico costo de oportunidad con comparaciones comprensibles.`,
         `Más allá de la curiosidad, esta calculadora sirve como lección interactiva sobre el crecimiento exponencial de Bitcoin. Ingresa cualquier precio histórico para ver cómo ha cambiado el valor de la compra. La fila Costo de oportunidad compara el valor de hoy con los ~$41 que valían esas monedas en 2010 ($0,0041/BTC).`
@@ -6334,7 +6334,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     pt: {
-      quickAnswer: 'Em 22 de maio de 2010, Laszlo Hanyecz pagou 10.000 BTC por duas pizzas (~$41 na época). Esses mesmos bitcoins ao preço de hoje de ~$83.600 valeriam $836.000.000 — tornando cada fatia equivalente a ~$52 milhões.',
+      quickAnswer: 'Em 22 de maio de 2010, Laszlo Hanyecz pagou 10.000 BTC por duas pizzas (~$41 na época). Esses mesmos bitcoins ao preço de hoje de ~$65.000 valeriam $650.000.000 — tornando cada fatia equivalente a ~$41 milhões.',
       how: [
         `A Calculadora do Dia da Pizza calcula o valor atual da famosa compra de 10.000 BTC por duas pizzas em 22 de maio de 2010 — a primeira transação conhecida do Bitcoin no mundo real. O preço atual do BTC vem preenchido pelo CoinGecko (você pode alterá-lo) e a calculadora mostra quanto valem hoje esses 10.000 BTC, o custo por pizza na época em BTC e em satoshis, e quantas pizzas essas moedas comprariam hoje pelo preço atual da pizza. Contextualiza o custo de oportunidade astronômico com comparações compreensíveis.`,
         `Além da curiosidade, funciona como uma lição interativa sobre o crescimento exponencial do Bitcoin. Insira qualquer preço histórico para ver como o valor mudou. A linha Custo de oportunidade compara o valor de hoje com os ~$41 que essas moedas valiam em 2010 ($0,0041/BTC).`
@@ -6345,7 +6345,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     tr: {
-      quickAnswer: '22 Mayıs 2010\'da Laszlo Hanyecz iki pizza için 10.000 BTC ödedi (o zamanki ~$41). Aynı bitcoinler bugünkü ~$83.600 fiyatıyla $836.000.000 eder — her pizza dilimini yaklaşık $52 milyon yapar.',
+      quickAnswer: '22 Mayıs 2010\'da Laszlo Hanyecz iki pizza için 10.000 BTC ödedi (o zamanki ~$41). Aynı bitcoinler bugünkü ~$65.000 fiyatıyla $650.000.000 eder — her pizza dilimini yaklaşık $41 milyon yapar.',
       how: [
         `Pizza Günü Hesaplayıcısı, 22 Mayıs 2010'daki ünlü 10.000 BTC pizza satın alımının — Bitcoin'in bilinen ilk gerçek dünya işleminin — bugünkü değerini hesaplar. Güncel BTC fiyatı CoinGecko'dan otomatik gelir (değiştirebilirsiniz); hesaplayıcı 10.000 BTC'nin bugünkü değerini, o zamanki pizza başına maliyeti BTC ve satoshi cinsinden ve bu coinlerle bugünkü pizza fiyatından kaç pizza alınabileceğini gösterir. Astronomik fırsat maliyetini anlaşılır karşılaştırmalarla bağlamlandırır.`,
         `Yenilikçi olmanın ötesinde, Bitcoin'in üstel büyümesi hakkında interaktif bir ders niteliğindedir. Herhangi bir tarihsel BTC fiyatını girerek pizza alımının değerinin nasıl değiştiğini görün. Fırsat maliyeti satırı bugünkü değeri, bu coinlerin 2010'daki ~$41'lık değeriyle ($0,0041/BTC) karşılaştırır.`
@@ -6356,7 +6356,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     hi: {
-      quickAnswer: '22 मई 2010 को Laszlo Hanyecz ने दो पिज्जा के लिए 10,000 BTC दिए (~उस समय $41)। वही बिटकॉइन आज ~$83,600 की कीमत पर $836,000,000 होते — हर पिज्जा स्लाइस लगभग $52 मिलियन।',
+      quickAnswer: '22 मई 2010 को Laszlo Hanyecz ने दो पिज्जा के लिए 10,000 BTC दिए (~उस समय $41)। वही बिटकॉइन आज ~$65,000 की कीमत पर $650,000,000 होते — हर पिज्जा स्लाइस लगभग $41 मिलियन।',
       how: [
         `पिज्जा डे कैलकुलेटर 22 मई 2010 की मशहूर 10,000 BTC पिज्जा खरीद — Bitcoin का पहला ज्ञात रियल-वर्ल्ड ट्रांजैक्शन — का प्रेजेंट-डे वैल्यू कैलकुलेट करता है। आज का BTC प्राइस CoinGecko से अपने-आप भरता है (आप इसे बदल सकते हैं), और कैलकुलेटर 10,000 BTC की आज की टोटल वैल्यू, उस समय प्रति पिज्जा लागत BTC और सातोशी में, और आज के पिज्जा प्राइस पर इन कॉइन से कितने पिज्जा खरीदे जा सकते हैं, यह दिखाता है।`,
         `नॉवेल्टी से परे, यह कैलकुलेटर Bitcoin की एक्सपोनेंशियल ग्रोथ का इंटरैक्टिव लेसन है। कोई भी हिस्टोरिकल BTC प्राइस दर्ज करके देखें पिज्जा परचेज वैल्यू कैसे बदली है। अवसर लागत वाली पंक्ति आज की वैल्यू की तुलना 2010 में इन कॉइन की ~$41 वैल्यू ($0.0041/BTC) से करती है।`
@@ -6367,7 +6367,7 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
       ],
     },
     ru: {
-      quickAnswer: '22 мая 2010 года Ласло Ханеч заплатил 10 000 BTC за две пиццы (~$41 на тот момент). Те же биткоины по сегодняшней цене ~$83 600 стоили бы $836 000 000 — каждый кусок пиццы обошёлся примерно в $52 миллионов.',
+      quickAnswer: '22 мая 2010 года Ласло Ханеч заплатил 10 000 BTC за две пиццы (~$41 на тот момент). Те же биткоины по сегодняшней цене ~$65 000 стоили бы $650 000 000 — каждый кусок пиццы обошёлся примерно в $41 млн.',
       how: [
         `Калькулятор Дня пиццы вычисляет текущую стоимость знаменитой покупки двух пицц за 10 000 BTC 22 мая 2010 года — первой известной реальной транзакции биткоина. Текущая цена BTC подставляется из CoinGecko (её можно изменить) — калькулятор покажет стоимость тех 10 000 BTC сегодня, цену пиццы тогда в BTC и сатоши и сколько пицц можно купить на эти монеты по сегодняшней цене пиццы.`,
         `Помимо занимательности, калькулятор — интерактивный урок экспоненциального роста биткоина. Введите любую историческую цену BTC, чтобы увидеть, как менялась стоимость покупки. Строка «Альтернативные издержки» сравнивает сегодняшнюю стоимость с теми ~$41, которых эти монеты стоили в 2010 году ($0,0041/BTC).`
@@ -7740,68 +7740,68 @@ export const calculatorSeoContent: Partial<Record<string, CalcContent>> = {
   },
   'mstr-mnav-calculator': {
       en: {
-        quickAnswer: `Divide a Bitcoin treasury company's market cap by the dollar value of its BTC stack to get mNAV. Example: Strategy (MSTR) at a $62.9B market cap holding 848,250 BTC at $83,600 has a BTC NAV of about $70.9B, so mNAV ≈ 0.89× — an ~11% discount to the coins themselves (snapshot of 13 Oct 2026). In late 2024 the same stock traded near 2.8×.`,
+        quickAnswer: `Divide a Bitcoin treasury company's market cap by the dollar value of its BTC stack to get mNAV. Example: Strategy (MSTR) at a $43.5B market cap holding 850,849 BTC at $65,000 has a BTC NAV of about $55.3B, so mNAV ≈ 0.79× — an ~21% discount to the coins themselves (snapshot of 16 Nov 2026). In late 2024 the same stock traded near 2.8×.`,
         how: [
           `This mNAV calculator measures how much premium or discount the market puts on a Bitcoin treasury stock like MicroStrategy, MetaPlanet or Semler Scientific versus the raw Bitcoin it owns. It computes BTC NAV as holdings times BTC price, then mNAV = market cap divided by BTC NAV. An mNAV of 1.0× means the stock trades exactly at the value of its coins; the tool labels the result Discount to NAV below 0.9×, Near NAV (Fair) from 0.9× to 1.2×, Premium from 1.2× to 2.0× and Extreme Premium at 2.0× and above. Premium percent is (mNAV − 1) × 100, and premium amount is the dollar gap.`,
           `If you add total debt, it also reports Enterprise NAV (BTC NAV minus debt), a stricter view because leverage shrinks the net asset base; the headline mNAV itself stays market cap divided by BTC NAV. With shares outstanding it derives BTC per share, the share price (market cap ÷ shares), and the implied BTC price baked into each share. The tool deliberately ignores the operating business, future coin purchases and convertible-debt mechanics, pair it with our <a href="/market-cap-calculator/">market cap calculator</a> to sanity-check the inputs.`
         ],
         inputs: [
-          `Company Market Cap (USD) and BTC Holdings are required, along with BTC Price, these three drive the headline mNAV multiple. Total Debt (optional) feeds the Enterprise NAV view; Shares Outstanding (optional) unlocks the per-share rows. Four quick scenario chips (Pure NAV 1.0×, Healthy Premium, High Premium, Discount to NAV) and company presets for MSTR, MetaPlanet and Strive (which absorbed Semler) load an approximate 13 October 2026 snapshot you should verify against live data before trading.`,
+          `Company Market Cap (USD) and BTC Holdings are required, along with BTC Price, these three drive the headline mNAV multiple. Total Debt (optional) feeds the Enterprise NAV view; Shares Outstanding (optional) unlocks the per-share rows. Four quick scenario chips (Pure NAV 1.0×, Healthy Premium, High Premium, Discount to NAV) and company presets for MSTR, MetaPlanet and Strive (which absorbed Semler) load an approximate 16 November 2026 snapshot you should verify against live data before trading.`,
           `Treasury stocks routinely trade above NAV because investors price in expected accretion, more BTC per share from future raises, so a 2–3× mNAV is common, not automatically irrational. The model treats holdings and price as a snapshot, so re-run it whenever BTC moves or the company reports new buys. To frame the position against a plain spot purchase, compare with our <a href="/what-if/">what-if calculator</a>; the deposit math here is an estimate from reported state, not audited filings.`
         ],
       },
       es: {
-        quickAnswer: `Divide la capitalización de una empresa tesorería de Bitcoin entre el valor en dólares de sus BTC para obtener el mNAV. Ejemplo: Strategy (MSTR) con $62.900M de capitalización y 848.250 BTC a $83.600 tiene un BTC NAV de unos $70.900M, así que el mNAV ≈ 0,89×: un descuento de ~11% frente a las propias monedas (foto del 13 oct 2026). A finales de 2024 la misma acción cotizaba cerca de 2,8×.`,
+        quickAnswer: `Divide la capitalización de una empresa tesorería de Bitcoin entre el valor en dólares de sus BTC para obtener el mNAV. Ejemplo: Strategy (MSTR) con $43.500M de capitalización y 850.849 BTC a $65.000 tiene un BTC NAV de unos $55.300M, así que el mNAV ≈ 0,79×: un descuento de ~21% frente a las propias monedas (foto del 16 nov 2026). A finales de 2024 la misma acción cotizaba cerca de 2,8×.`,
         how: [
           `Esta calculadora de mNAV mide cuánta prima o descuento aplica el mercado a una acción tesorería de Bitcoin como MicroStrategy, MetaPlanet o Semler Scientific frente al Bitcoin que posee. Calcula el BTC NAV como tenencias por precio de BTC, y luego mNAV = capitalización dividida entre BTC NAV. Un mNAV de 1,0× significa que la acción cotiza justo al valor de sus monedas; la herramienta etiqueta el resultado como Descuento al NAV por debajo de 0,9×, Cerca del NAV (justo) entre 0,9× y 1,2×, Prima entre 1,2× y 2,0× y Prima extrema desde 2,0×. El porcentaje de prima es (mNAV − 1) × 100 y el importe de prima es la diferencia en dólares.`,
           `Si añades la deuda total, también muestra el NAV de empresa (BTC NAV menos deuda), una vista más estricta porque el apalancamiento reduce la base de activos; el mNAV principal sigue siendo la capitalización dividida entre el BTC NAV. Con las acciones en circulación deriva el BTC por acción, el precio por acción (capitalización ÷ acciones) y el precio de BTC implícito en cada acción. La herramienta ignora a propósito el negocio operativo, las compras futuras y la deuda convertible — combínala con nuestra <a href="/market-cap-calculator/">calculadora de capitalización</a> para verificar los datos.`
         ],
         inputs: [
-          `La Capitalización (USD) y las Tenencias de BTC son obligatorias, junto con el Precio de BTC — estos tres impulsan el múltiplo mNAV principal. La Deuda Total (opcional) alimenta la vista de Enterprise NAV; las Acciones en Circulación (opcional) habilitan las filas por acción. Cuatro escenarios rápidos (NAV puro 1,0×, prima saludable, prima alta, descuento sobre NAV) y presets de MSTR, MetaPlanet y Strive (que absorbió a Semler) cargan una foto aproximada del 13 de octubre de 2026 que debes verificar con datos en vivo.`,
+          `La Capitalización (USD) y las Tenencias de BTC son obligatorias, junto con el Precio de BTC — estos tres impulsan el múltiplo mNAV principal. La Deuda Total (opcional) alimenta la vista de Enterprise NAV; las Acciones en Circulación (opcional) habilitan las filas por acción. Cuatro escenarios rápidos (NAV puro 1,0×, prima saludable, prima alta, descuento sobre NAV) y presets de MSTR, MetaPlanet y Strive (que absorbió a Semler) cargan una foto aproximada del 16 de noviembre de 2026 que debes verificar con datos en vivo.`,
           `Las acciones tesorería suelen cotizar por encima del NAV porque los inversores descuentan acreción esperada — más BTC por acción de futuras emisiones — así que un mNAV de 2–3× es común, no irracional por sí mismo. El modelo trata tenencias y precio como una instantánea, así que vuelve a ejecutarlo cuando el BTC se mueva o la empresa anuncie compras. Para comparar la posición con una compra spot simple, usa nuestra <a href="/what-if/">calculadora what-if</a>; el cálculo aquí es una estimación del estado reportado, no de informes auditados.`
         ],
       },
       pt: {
-        quickAnswer: `Divida o valor de mercado de uma empresa tesouraria de Bitcoin pelo valor em dólares dos seus BTC para obter o mNAV. Exemplo: a Strategy (MSTR) com $62,9B de valor de mercado e 848.250 BTC a $83.600 tem um BTC NAV de cerca de $70,9B, logo mNAV ≈ 0,89× — um desconto de ~11% sobre as próprias moedas (retrato de 13 out 2026). No fim de 2024 a mesma ação negociava perto de 2,8×.`,
+        quickAnswer: `Divida o valor de mercado de uma empresa tesouraria de Bitcoin pelo valor em dólares dos seus BTC para obter o mNAV. Exemplo: a Strategy (MSTR) com $43,5B de valor de mercado e 850.849 BTC a $65.000 tem um BTC NAV de cerca de $55,3B, logo mNAV ≈ 0,79× — um desconto de ~21% sobre as próprias moedas (retrato de 16 nov 2026). No fim de 2024 a mesma ação negociava perto de 2,8×.`,
         how: [
           `Esta calculadora de mNAV mede quanto prêmio ou desconto o mercado aplica a uma ação tesouraria de Bitcoin como MicroStrategy, MetaPlanet ou Semler Scientific frente ao Bitcoin que ela detém. Calcula o BTC NAV como participações vezes preço do BTC e então mNAV = valor de mercado dividido pelo BTC NAV. Um mNAV de 1,0× significa que a ação negocia exatamente ao valor das moedas; a ferramenta rotula o resultado como Desconto ao NAV abaixo de 0,9×, Próximo do NAV (justo) entre 0,9× e 1,2×, Prêmio entre 1,2× e 2,0× e Prêmio extremo a partir de 2,0×. O percentual de prêmio é (mNAV − 1) × 100 e o valor do prêmio é a diferença em dólares.`,
           `Se você adicionar a dívida total, ela também mostra o NAV Empresarial (BTC NAV menos dívida), uma visão mais rigorosa porque a alavancagem reduz a base de ativos; o mNAV principal continua sendo o valor de mercado dividido pelo BTC NAV. Com ações em circulação deriva o BTC por ação, o preço por ação (valor de mercado ÷ ações) e o preço de BTC implícito em cada ação. A ferramenta ignora de propósito o negócio operacional, compras futuras e dívida conversível — combine com nossa <a href="/market-cap-calculator/">calculadora de valor de mercado</a> para conferir os dados.`
         ],
         inputs: [
-          `O Valor de Mercado (USD) e as Participações em BTC são obrigatórios, junto com o Preço do BTC — esses três impulsionam o múltiplo mNAV principal. A Dívida Total (opcional) alimenta a visão de Enterprise NAV; as Ações em Circulação (opcional) liberam as linhas por ação. Quatro cenários rápidos (NAV puro 1,0×, prêmio saudável, prêmio alto, desconto sobre NAV) e presets de MSTR, MetaPlanet e Strive (que absorveu a Semler) carregam um retrato aproximado de 13 de outubro de 2026 que você deve verificar com dados ao vivo.`,
+          `O Valor de Mercado (USD) e as Participações em BTC são obrigatórios, junto com o Preço do BTC — esses três impulsionam o múltiplo mNAV principal. A Dívida Total (opcional) alimenta a visão de Enterprise NAV; as Ações em Circulação (opcional) liberam as linhas por ação. Quatro cenários rápidos (NAV puro 1,0×, prêmio saudável, prêmio alto, desconto sobre NAV) e presets de MSTR, MetaPlanet e Strive (que absorveu a Semler) carregam um retrato aproximado de 16 de novembro de 2026 que você deve verificar com dados ao vivo.`,
           `Ações tesouraria frequentemente negociam acima do NAV porque os investidores precificam acreção esperada — mais BTC por ação de futuras emissões — então um mNAV de 2–3× é comum, não automaticamente irracional. O modelo trata participações e preço como um instantâneo, então execute-o de novo quando o BTC se mover ou a empresa relatar compras. Para enquadrar a posição contra uma compra spot simples, use nossa <a href="/what-if/">calculadora what-if</a>; o cálculo aqui é uma estimativa do estado reportado, não de relatórios auditados.`
         ],
       },
       tr: {
-        quickAnswer: `Bir Bitcoin hazine şirketinin piyasa değerini elindeki BTC'nin dolar değerine bölerek mNAV'ı bulun. Örnek: 62,9 milyar dolar piyasa değerine ve 83.600 dolardan 848.250 BTC'ye sahip Strategy'nin (MSTR) BTC NAV'ı yaklaşık 70,9 milyar dolardır, yani mNAV ≈ 0,89× — coinlerin kendisine göre yaklaşık yüzde 11 iskonto (13 Ekim 2026 görüntüsü). 2024 sonunda aynı hisse 2,8× civarında işlem görüyordu.`,
+        quickAnswer: `Bir Bitcoin hazine şirketinin piyasa değerini elindeki BTC'nin dolar değerine bölerek mNAV'ı bulun. Örnek: 43,5 milyar dolar piyasa değerine ve 65.000 dolardan 850.849 BTC'ye sahip Strategy'nin (MSTR) BTC NAV'ı yaklaşık 55,3 milyar dolardır, yani mNAV ≈ 0,79× — coinlerin kendisine göre yaklaşık yüzde 21 iskonto (16 Kasım 2026 görüntüsü). 2024 sonunda aynı hisse 2,8× civarında işlem görüyordu.`,
         how: [
           `Bu mNAV hesaplayıcısı, MicroStrategy, MetaPlanet veya Semler Scientific gibi bir Bitcoin hazine hissesine piyasanın sahip olduğu Bitcoin'e kıyasla ne kadar prim veya iskonto verdiğini ölçer. BTC NAV'ı varlıklar çarpı BTC fiyatı olarak hesaplar, ardından mNAV = piyasa değeri bölü BTC NAV. 1,0× mNAV, hissenin tam olarak coinlerinin değerinden işlem gördüğü anlamına gelir; araç sonucu 0,9× altında "NAV altında", 0,9× ile 1,2× arasında "NAV’a yakın (adil)", 1,2× ile 2,0× arasında "Prim", 2,0× ve üzerinde "Aşırı prim" olarak etiketler. Prim yüzdesi (mNAV − 1) × 100, prim tutarı ise dolar farkıdır.`,
           `Toplam borcu eklerseniz, kaldıraç net varlık tabanını küçülttüğü için daha katı bir görünüm olan Kurumsal NAV'ı (BTC NAV eksi borç) da gösterir; ana mNAV ise yine piyasa değeri bölü BTC NAV olarak kalır. Dolaşımdaki hisselerle hisse başına BTC'yi, hisse fiyatını (piyasa değeri ÷ hisse) ve her hisseye gömülü ima edilen BTC fiyatını türetir. Araç işletme değerini, gelecekteki coin alımlarını ve dönüştürülebilir borç mekaniğini bilerek göz ardı eder — girdileri doğrulamak için <a href="/market-cap-calculator/">piyasa değeri hesaplayıcımızla</a> birlikte kullanın.`
         ],
         inputs: [
-          `Şirket Piyasa Değeri (USD) ve BTC Varlıkları, BTC Fiyatı ile birlikte zorunludur — bu üçü ana mNAV katsayısını belirler. Toplam Borç (isteğe bağlı) Enterprise NAV görünümünü besler; Dolaşımdaki Hisseler (isteğe bağlı) hisse başına satırları açar. Dört hızlı senaryo (Saf NAV 1,0×, Sağlıklı Prim, Yüksek Prim, NAV'a İskonto) ve MSTR, MetaPlanet ve Strive (Semler'i bünyesine kattı) için hazır ayarlar, işlem yapmadan önce canlı verilerle doğrulamanız gereken yaklaşık 13 Ekim 2026 görüntüsünü yükler.`,
+          `Şirket Piyasa Değeri (USD) ve BTC Varlıkları, BTC Fiyatı ile birlikte zorunludur — bu üçü ana mNAV katsayısını belirler. Toplam Borç (isteğe bağlı) Enterprise NAV görünümünü besler; Dolaşımdaki Hisseler (isteğe bağlı) hisse başına satırları açar. Dört hızlı senaryo (Saf NAV 1,0×, Sağlıklı Prim, Yüksek Prim, NAV'a İskonto) ve MSTR, MetaPlanet ve Strive (Semler'i bünyesine kattı) için hazır ayarlar, işlem yapmadan önce canlı verilerle doğrulamanız gereken yaklaşık 16 Kasım 2026 görüntüsünü yükler.`,
           `Hazine hisseleri genellikle NAV'ın üzerinde işlem görür çünkü yatırımcılar beklenen artışı — gelecekteki ihraçlardan hisse başına daha fazla BTC — fiyatlar, yani 2–3× mNAV yaygındır, otomatik olarak mantıksız değildir. Model varlıkları ve fiyatı bir anlık görüntü olarak ele alır, bu yüzden BTC hareket ettiğinde veya şirket yeni alımları açıkladığında yeniden çalıştırın. Pozisyonu düz bir spot alımla karşılaştırmak için <a href="/what-if/">what-if hesaplayıcımızı</a> kullanın; buradaki hesap, denetlenmiş raporlardan değil, raporlanan durumdan bir tahmindir.`
         ],
       },
       hi: {
-        quickAnswer: `किसी बिटकॉइन ट्रेजरी कंपनी के मार्केट कैप को उसके BTC के डॉलर मूल्य से भाग देकर mNAV निकालें। उदाहरण: $62.9B मार्केट कैप वाली और $83,600 पर 848,250 BTC रखने वाली Strategy (MSTR) का BTC NAV लगभग $70.9B है, तो mNAV ≈ 0.89× — यानी कॉइन के अपने मूल्य पर ~11% डिस्काउंट (13 अक्टूबर 2026 का स्नैपशॉट)। 2024 के अंत में यही स्टॉक लगभग 2.8× पर ट्रेड करता था।`,
+        quickAnswer: `किसी बिटकॉइन ट्रेजरी कंपनी के मार्केट कैप को उसके BTC के डॉलर मूल्य से भाग देकर mNAV निकालें। उदाहरण: $43.5B मार्केट कैप वाली और $65,000 पर 850,849 BTC रखने वाली Strategy (MSTR) का BTC NAV लगभग $55.3B है, तो mNAV ≈ 0.79× — यानी कॉइन के अपने मूल्य पर ~21% डिस्काउंट (16 नवंबर 2026 का स्नैपशॉट)। 2024 के अंत में यही स्टॉक लगभग 2.8× पर ट्रेड करता था।`,
         how: [
           `यह mNAV कैलकुलेटर मापता है कि बाजार MicroStrategy, MetaPlanet या Semler Scientific जैसे बिटकॉइन ट्रेजरी स्टॉक पर उसके पास मौजूद बिटकॉइन की तुलना में कितना प्रीमियम या डिस्काउंट लगाता है। यह BTC NAV को होल्डिंग्स गुणा BTC कीमत के रूप में निकालता है, फिर mNAV = मार्केट कैप भाग BTC NAV। 1.0× का mNAV मतलब स्टॉक ठीक अपने कॉइन के मूल्य पर ट्रेड हो रहा है; टूल परिणाम को 0.9× से नीचे NAV पर डिस्काउंट, 0.9× से 1.2× तक NAV के पास (उचित), 1.2× से 2.0× तक प्रीमियम और 2.0× व उससे ऊपर अत्यधिक प्रीमियम के रूप में लेबल करता है। प्रीमियम प्रतिशत (mNAV − 1) × 100 है और प्रीमियम राशि डॉलर का अंतर है।`,
           `अगर आप कुल कर्ज जोड़ते हैं, तो यह एंटरप्राइज़ NAV (BTC NAV माइनस कर्ज) भी दिखाता है, जो एक सख्त नज़रिया है क्योंकि लीवरेज शुद्ध संपत्ति आधार को घटाता है; मुख्य mNAV फिर भी मार्केट कैप भाग BTC NAV ही रहता है। शेयर आउटस्टैंडिंग के साथ यह प्रति शेयर BTC, शेयर कीमत (मार्केट कैप ÷ शेयर) और हर शेयर में निहित BTC कीमत निकालता है। टूल जानबूझकर ऑपरेटिंग बिजनेस, भविष्य की खरीद और कन्वर्टिबल कर्ज को नजरअंदाज करता है — इनपुट जांचने के लिए हमारे <a href="/market-cap-calculator/">मार्केट कैप कैलकुलेटर</a> के साथ इस्तेमाल करें।`
         ],
         inputs: [
-          `कंपनी मार्केट कैप (USD) और BTC होल्डिंग्स अनिवार्य हैं, BTC कीमत के साथ — ये तीनों मुख्य mNAV मल्टिपल चलाते हैं। कुल कर्ज (वैकल्पिक) Enterprise NAV दृश्य को फीड करता है; शेयर आउटस्टैंडिंग (वैकल्पिक) प्रति-शेयर पंक्तियों को खोलता है। चार त्वरित परिदृश्य (शुद्ध NAV 1.0×, स्वस्थ प्रीमियम, उच्च प्रीमियम, NAV पर डिस्काउंट) और MSTR, MetaPlanet और Strive (जिसने Semler को समाहित किया) के प्रीसेट 13 अक्टूबर 2026 का अनुमानित स्नैपशॉट लोड करते हैं जिन्हें ट्रेडिंग से पहले लाइव डेटा से जांचें।`,
+          `कंपनी मार्केट कैप (USD) और BTC होल्डिंग्स अनिवार्य हैं, BTC कीमत के साथ — ये तीनों मुख्य mNAV मल्टिपल चलाते हैं। कुल कर्ज (वैकल्पिक) Enterprise NAV दृश्य को फीड करता है; शेयर आउटस्टैंडिंग (वैकल्पिक) प्रति-शेयर पंक्तियों को खोलता है। चार त्वरित परिदृश्य (शुद्ध NAV 1.0×, स्वस्थ प्रीमियम, उच्च प्रीमियम, NAV पर डिस्काउंट) और MSTR, MetaPlanet और Strive (जिसने Semler को समाहित किया) के प्रीसेट 16 नवंबर 2026 का अनुमानित स्नैपशॉट लोड करते हैं जिन्हें ट्रेडिंग से पहले लाइव डेटा से जांचें।`,
           `ट्रेजरी स्टॉक अक्सर NAV से ऊपर ट्रेड होते हैं क्योंकि निवेशक अपेक्षित एक्रीशन को कीमत में लेते हैं — भविष्य की इश्यू से प्रति शेयर अधिक BTC — इसलिए 2–3× mNAV आम है, अपने आप में अतार्किक नहीं। मॉडल होल्डिंग्स और कीमत को एक स्नैपशॉट मानता है, इसलिए जब BTC बदले या कंपनी नई खरीद बताए तो इसे फिर से चलाएं। पोजीशन को सीधी स्पॉट खरीद के मुकाबले देखने के लिए हमारे <a href="/what-if/">what-if कैलकुलेटर</a> का उपयोग करें; यहां का गणित रिपोर्ट की गई स्थिति से अनुमान है, ऑडिट की गई फाइलिंग से नहीं।`
         ],
       },
       ru: {
-        quickAnswer: `Разделите рыночную капитализацию биткоин-казначейской компании на долларовую стоимость её BTC, чтобы получить mNAV. Пример: Strategy (MSTR) с капитализацией $62,9 млрд и 848 250 BTC по $83 600 имеет BTC NAV около $70,9 млрд, значит mNAV ≈ 0,89× — дисконт ~11% к самим монетам (снимок на 13 октября 2026). В конце 2024 года та же акция торговалась около 2,8×.`,
+        quickAnswer: `Разделите рыночную капитализацию биткоин-казначейской компании на долларовую стоимость её BTC, чтобы получить mNAV. Пример: Strategy (MSTR) с капитализацией $43,5 млрд и 850 849 BTC по $65 000 имеет BTC NAV около $55,3 млрд, значит mNAV ≈ 0,79× — дисконт ~21% к самим монетам (снимок на 16 ноября 2026). В конце 2024 года та же акция торговалась около 2,8×.`,
         how: [
           `Этот калькулятор mNAV показывает, какую премию или дисконт рынок присваивает биткоин-казначейской акции вроде MicroStrategy, MetaPlanet или Semler Scientific по сравнению с принадлежащим ей биткоином. Он считает BTC NAV как количество монет умножить на цену BTC, затем mNAV = капитализация делить на BTC NAV. mNAV 1,0× означает, что акция торгуется ровно по стоимости монет; инструмент помечает результат как «Дисконт к NAV» ниже 0,9×, «Близко к NAV (справедливо)» от 0,9× до 1,2×, «Премия» от 1,2× до 2,0× и «Экстремальная премия» от 2,0×. Процент премии равен (mNAV − 1) × 100, а сумма премии — это долларовая разница.`,
           `Если добавить общий долг, он также показывает Enterprise NAV (BTC NAV минус долг) — более строгий взгляд, потому что кредитное плечо сокращает чистую базу активов; основной mNAV при этом по-прежнему равен капитализации, делённой на BTC NAV. С числом акций в обращении он выводит BTC на акцию, цену акции (капитализация ÷ акции) и подразумеваемую цену BTC, заложенную в каждую акцию. Инструмент намеренно игнорирует операционный бизнес, будущие покупки монет и конвертируемый долг — используйте вместе с нашим <a href="/market-cap-calculator/">калькулятором рыночной капитализации</a>, чтобы проверить вводимые данные.`
         ],
         inputs: [
-          `Рыночная капитализация компании (USD) и Запасы BTC обязательны, вместе с Ценой BTC — эти три значения формируют основной множитель mNAV. Общий долг (необязательно) питает представление Enterprise NAV; Акции в обращении (необязательно) открывают строки на акцию. Четыре быстрых сценария (Чистый NAV 1,0×, Здоровая премия, Высокая премия, Дисконт к NAV) и пресеты MSTR, MetaPlanet и Strive (поглотившей Semler) загружают приблизительный снимок на 13 октября 2026 года, которые перед торговлей следует сверить с актуальными данными.`,
+          `Рыночная капитализация компании (USD) и Запасы BTC обязательны, вместе с Ценой BTC — эти три значения формируют основной множитель mNAV. Общий долг (необязательно) питает представление Enterprise NAV; Акции в обращении (необязательно) открывают строки на акцию. Четыре быстрых сценария (Чистый NAV 1,0×, Здоровая премия, Высокая премия, Дисконт к NAV) и пресеты MSTR, MetaPlanet и Strive (поглотившей Semler) загружают приблизительный снимок на 16 ноября 2026 года, которые перед торговлей следует сверить с актуальными данными.`,
           `Казначейские акции часто торгуются выше NAV, потому что инвесторы закладывают ожидаемую аккрецию — больше BTC на акцию от будущих эмиссий — поэтому mNAV 2–3× обычен и сам по себе не иррационален. Модель рассматривает запасы и цену как моментальный снимок, поэтому пересчитывайте при движении BTC или объявлении новых покупок. Чтобы сопоставить позицию с обычной спотовой покупкой, используйте наш <a href="/what-if/">what-if калькулятор</a>; расчёт здесь — это оценка из заявленного состояния, а не из аудированной отчётности.`
         ],
       },

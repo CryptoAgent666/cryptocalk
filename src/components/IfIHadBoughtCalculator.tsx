@@ -25,12 +25,12 @@ interface DatePreset {
 }
 
 // "Price Now" snapshot — the component makes no network call, so this IS what every visitor sees.
-// Binance spot, 2026-10-13. Refresh together with SNAPSHOT_YEAR and the two relative presets below.
+// Binance spot, 2026-11-17. Refresh together with SNAPSHOT_YEAR and the two relative presets below.
 const CURRENT_PRICES: Record<CoinId, number> = {
-  BTC: 83600, ETH: 2510, SOL: 107, BNB: 742, ADA: 0.235, DOT: 1.18, DOGE: 0.084,
+  BTC: 64900, ETH: 1820, SOL: 71.5, BNB: 591, ADA: 0.153, DOT: 0.732, DOGE: 0.0589,
 };
-// Date of the snapshot as a decimal year (13 Oct 2026); holding periods are measured to it.
-const SNAPSHOT_YEAR = 2026.78;
+// Date of the snapshot as a decimal year (17 Nov 2026); holding periods are measured to it.
+const SNAPSHOT_YEAR = 2026.88;
 
 const DATE_PRESETS: DatePreset[] = [
   { key: 'btc-launch', label: 'Bitcoin Launch 2009', year: 2009.0,
@@ -47,11 +47,11 @@ const DATE_PRESETS: DatePreset[] = [
     prices: { BTC: 69000, ETH: 4800, SOL: 260, BNB: 650, ADA: 3.10, DOT: 55, DOGE: 0.73 } },
   { key: 'ftx', label: 'FTX Crash (Nov 2022)', year: 2022.86,
     prices: { BTC: 16000, ETH: 1100, SOL: 10, BNB: 250, ADA: 0.30, DOT: 5, DOGE: 0.08 } },
-  // Relative to SNAPSHOT_YEAR — Binance daily closes on 2025-10-13 and 2026-04-13. Move both with every snapshot refresh.
-  { key: '1y-ago', label: '1 Year Ago (Oct 2025)', year: 2025.78,
-    prices: { BTC: 115200, ETH: 4240, SOL: 209, BNB: 1295, ADA: 0.73, DOT: 3.37, DOGE: 0.214 } },
-  { key: '6m-ago', label: '6 Months Ago (Apr 2026)', year: 2026.28,
-    prices: { BTC: 74400, ETH: 2370, SOL: 86.5, BNB: 615, ADA: 0.249, DOT: 1.23, DOGE: 0.094 } },
+  // Relative to SNAPSHOT_YEAR — Binance daily closes on 2025-11-17 and 2026-05-17. Move both with every snapshot refresh.
+  { key: '1y-ago', label: '1 Year Ago (Nov 2025)', year: 2025.88,
+    prices: { BTC: 92200, ETH: 3030, SOL: 131, BNB: 907, ADA: 0.466, DOT: 2.67, DOGE: 0.152 } },
+  { key: '6m-ago', label: '6 Months Ago (May 2026)', year: 2026.38,
+    prices: { BTC: 77500, ETH: 2130, SOL: 85.2, BNB: 649, ADA: 0.252, DOT: 1.25, DOGE: 0.109 } },
 ];
 
 const COINS: CoinId[] = ['BTC', 'ETH', 'SOL', 'BNB', 'ADA', 'DOT', 'DOGE'];
@@ -63,7 +63,7 @@ const SCENARIOS = [
 ];
 
 const AMOUNT_PILLS = ['100', '500', '1000', '5000', '10000'];
-const TESLA_PRICE = 378; // TSLA close, 2026-10-12
+const TESLA_PRICE = 380; // TSLA close, 2026-11-16
 const MONTHLY_RENT = 1800;
 
 /* ------------------------------------------------------------------ */

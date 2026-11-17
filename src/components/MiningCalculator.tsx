@@ -21,7 +21,7 @@ interface AsicPreset {
     price: number; // USD
 }
 
-// Difficulty & price fallbacks updated 2026-10-13 (CoinGecko $83.6K, mempool.space 132.7T). Fetch live data when available.
+// Difficulty & price fallbacks updated 2026-11-17 (CoinGecko/Binance $64.9K, mempool.space 134.8T). Fetch live data when available.
 const ASIC_PRESETS: AsicPreset[] = [
     { name: 'Custom', hashrate: 0, power: 0, price: 0 },
     { name: 'Antminer S21 Hyd', hashrate: 335, power: 5360, price: 5200 },
@@ -116,11 +116,11 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                         .then(r => r.ok ? r.text() : null).catch(() => null),
                 ]);
 
-                const btcPrice = priceRes?.bitcoin?.usd || 83600;
+                const btcPrice = priceRes?.bitcoin?.usd || 65000;
                 const liveDifficulty = diffRes ? parseFloat(diffRes) : NaN;
                 const difficulty = (!isNaN(liveDifficulty) && liveDifficulty > 0)
                     ? liveDifficulty
-                    : 132_700_000_000_000;
+                    : 134_800_000_000_000;
 
                 // Block reward after 2024 halving: 3.125 BTC
                 setNetwork({
@@ -130,15 +130,15 @@ function MiningCalculator({ lang = 'en' }: { lang?: string }) {
                 });
 
                 if (!priceRes?.bitcoin?.usd && (isNaN(liveDifficulty) || liveDifficulty <= 0)) {
-                    setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($83,600).'));
+                    setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($65,000).'));
                 }
             } catch {
                 setNetwork({
-                    difficulty: 132_700_000_000_000, // updated 2026-10-13
-                    btcPrice: 83600,
+                    difficulty: 134_800_000_000_000, // updated 2026-11-17
+                    btcPrice: 65000,
                     blockReward: 3.125,
                 });
-                setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($83,600).'));
+                setNetworkError(getUiString(lang, 'Failed to fetch live BTC price. Using fallback data ($65,000).'));
             }
             setLoadingNetwork(false);
         };

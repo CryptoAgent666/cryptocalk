@@ -1642,6 +1642,7 @@ const dict: Record<string, string> = {
   'Trade Size (USD)': 'Объём сделки (USD)',
   // Single keys
   '30-Day Volume Tier': '30-дневный объём',
+  'Failed to fetch live BTC price. Using fallback data ($65,000).': 'Не удалось получить текущую цену BTC. Используются резервные данные ($65 000).',
   'Failed to fetch live BTC price. Using fallback.': 'Не удалось получить цену BTC. Используется резерв.',
   'Electricity, internet, maintenance': 'Электричество, интернет, обслуживание',
   'Downside Deviation (%)': 'Отклонение вниз (%)',
@@ -2151,8 +2152,8 @@ const dict: Record<string, string> = {
   'Bitcoin Launch 2009': 'Запуск Bitcoin 2009',
   'BTC $1 (2011)': 'BTC $1 (2011)',
   'ETH ICO (2014)': 'ETH ICO (2014)',
-  '1 Year Ago (Oct 2025)': '1 год назад (октябрь 2025)',
-  '6 Months Ago (Apr 2026)': '6 месяцев назад (апрель 2026)',
+  '1 Year Ago (Nov 2025)': '1 год назад (ноябрь 2025)',
+  '6 Months Ago (May 2026)': '6 месяцев назад (май 2026)',
   'BNB Launch (2017)': 'Запуск BNB (2017)',
   'COVID Crash (Mar 2020)': 'COVID-обвал (март 2020)',
   'BTC ATH (Nov 2021)': 'BTC ATH (ноябрь 2021)',

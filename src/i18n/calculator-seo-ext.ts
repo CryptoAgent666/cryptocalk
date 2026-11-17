@@ -15230,7 +15230,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Track convertible bond conversion thresholds. MSTR has multiple converts at strike $400-700; conversions effectively dilute shareholders without cash. A 'fully diluted' share count gives more accurate mNAV than basic share count, especially when stock is well above conversion strikes."
       ],
       validation: [
-        "Quick check: 848,250 BTC × $83,600 = $70.9B BTC NAV. MSTR market cap $62.9B → mNAV = 62.9/70.9 = 0.89 (13 Oct 2026). If your tool shows materially different, verify BTC count (check most recent 8-K) and BTC price source.",
+        "Quick check: 850,849 BTC × $65,000 = $55.3B BTC NAV. MSTR market cap $43.5B → mNAV = 43.5/55.3 = 0.79 (16 Nov 2026). If your tool shows materially different, verify BTC count (check most recent 8-K) and BTC price source.",
         "Premium decomposition (late-2024 example, when MSTR traded near 2.8×): total premium ($95B - $33.9B = $61B) divided into: (a) operating business value (~$2-5B based on Cap IQ), (b) tax-deferred structure value (~$5-10B for unrealized gains protection), (c) future accumulation expectation (rest). Sanity-check the residual against credible BTC purchase pace."
       ],
     },
@@ -15264,7 +15264,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Sigue los umbrales de conversión de bonos convertibles. MSTR tiene múltiples convertibles con strike $400-700; las conversiones diluyen efectivamente a los accionistas sin efectivo. Un conteo de acciones 'totalmente diluidas' da un mNAV más preciso que el conteo básico, especialmente cuando la acción está bastante por encima de los strikes de conversión."
       ],
       validation: [
-        "Verificación rápida: 848.250 BTC × $83.600 = $70.900M de NAV en BTC. Capitalización MSTR $62.900M → mNAV = 62,9/70,9 = 0,89 (13 oct 2026). Si tu herramienta muestra algo materialmente diferente, verifica el conteo de BTC (revisa el 8-K más reciente) y la fuente del precio de BTC.",
+        "Verificación rápida: 850.849 BTC × $65.000 = $55.300M de NAV en BTC. Capitalización MSTR $43.500M → mNAV = 43,5/55,3 = 0,79 (16 nov 2026). Si tu herramienta muestra algo materialmente diferente, verifica el conteo de BTC (revisa el 8-K más reciente) y la fuente del precio de BTC.",
         "Descomposición de prima (ejemplo de finales de 2024, con MSTR cerca de 2,8×): prima total ($95B - $33.9B = $61B) dividida en: (a) valor del negocio operativo (~$2-5B según Cap IQ), (b) valor de estructura fiscalmente diferida (~$5-10B por protección de ganancias no realizadas), (c) expectativa de acumulación futura (el resto). Verifica el residual contra un ritmo creíble de compra de BTC."
       ],
     },
@@ -15298,7 +15298,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Acompanhe os limiares de conversão de títulos conversíveis. A MSTR tem múltiplos conversíveis com strikes $400-700; conversões efetivamente diluem acionistas sem caixa. Uma contagem de ações 'totalmente diluída' fornece mNAV mais preciso do que a contagem básica de ações, especialmente quando a ação está bem acima dos strikes de conversão."
       ],
       validation: [
-        "Verificação rápida: 848.250 BTC × $83.600 = $70,9B de NAV em BTC. Cap de mercado MSTR $62,9B → mNAV = 62,9/70,9 = 0,89 (13 out 2026). Se sua ferramenta mostra algo materialmente diferente, verifique a contagem de BTC (consulte o 8-K mais recente) e a fonte do preço do BTC.",
+        "Verificação rápida: 850.849 BTC × $65.000 = $55,3B de NAV em BTC. Cap de mercado MSTR $43,5B → mNAV = 43,5/55,3 = 0,79 (16 nov 2026). Se sua ferramenta mostra algo materialmente diferente, verifique a contagem de BTC (consulte o 8-K mais recente) e a fonte do preço do BTC.",
         "Decomposição do prêmio (exemplo do fim de 2024, com a MSTR perto de 2,8×): prêmio total ($95B - $33,9B = $61B) dividido em: (a) valor do negócio operacional (~$2-5B com base em Cap IQ), (b) valor da estrutura de impostos diferidos (~$5-10B para proteção de ganhos não realizados), (c) expectativa de acumulação futura (o restante). Verifique o resíduo contra um ritmo crível de compra de BTC."
       ],
     },
@@ -15332,7 +15332,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Dönüştürülebilir tahvil dönüşüm eşiklerini takip edin. MSTR'ın 400-700 dolar kullanım fiyatlarında birden fazla dönüştürülebilir tahvili var; dönüşümler hissedarları nakit olmadan etkin şekilde sulandırır. 'Tamamen sulandırılmış' hisse sayısı, özellikle hisse senedi dönüşüm kullanım fiyatlarının çok üzerinde olduğunda, temel hisse sayısından daha doğru mNAV verir."
       ],
       validation: [
-        "Hızlı kontrol: 848.250 BTC × 83.600 dolar = 70,9 milyar dolar BTC NAV. MSTR piyasa değeri 62,9 milyar dolar → mNAV = 62,9/70,9 = 0,89 (13 Ekim 2026). Aracınız önemli ölçüde farklı gösteriyorsa, BTC sayısını (en son 8-K'yı kontrol edin) ve BTC fiyat kaynağını doğrulayın.",
+        "Hızlı kontrol: 850.849 BTC × 65.000 dolar = 55,3 milyar dolar BTC NAV. MSTR piyasa değeri 43,5 milyar dolar → mNAV = 43,5/55,3 = 0,79 (16 Kasım 2026). Aracınız önemli ölçüde farklı gösteriyorsa, BTC sayısını (en son 8-K'yı kontrol edin) ve BTC fiyat kaynağını doğrulayın.",
         "Prim ayrıştırması (2024 sonu örneği, MSTR ~2,8×'te işlem görürken): toplam prim (95 milyar dolar - 33,9 milyar dolar = 61 milyar dolar) şunlara bölünür: (a) işletme değeri (~2-5 milyar dolar, Cap IQ'ya dayalı), (b) vergi ertelenmiş yapı değeri (~5-10 milyar dolar, gerçekleşmemiş kazanç koruması için), (c) gelecek birikim beklentisi (geri kalan). Kalanı güvenilir BTC alım hızına karşı mantık kontrolünden geçirin."
       ],
     },
@@ -15366,7 +15366,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "कन्वर्टिबल बॉन्ड रूपांतरण थ्रेशोल्ड को ट्रैक करें। MSTR के पास स्ट्राइक $400-700 पर कई कन्वर्ट्स हैं; रूपांतरण नकद के बिना शेयरधारकों को प्रभावी रूप से तनुकरण करते हैं। 'पूरी तरह से तनुकृत' शेयर गणना मूल शेयर गणना की तुलना में अधिक सटीक mNAV देती है, विशेष रूप से जब स्टॉक रूपांतरण स्ट्राइक से अच्छी तरह ऊपर हो।"
       ],
       validation: [
-        "त्वरित जाँच: 848,250 BTC × $83,600 = $70.9B BTC NAV। MSTR market cap $62.9B → mNAV = 62.9/70.9 = 0.89 (13 अक्टूबर 2026)। यदि आपका उपकरण काफी अलग दिखाता है, तो BTC संख्या (सबसे हाल का 8-K जाँचें) और BTC कीमत स्रोत सत्यापित करें।",
+        "त्वरित जाँच: 850,849 BTC × $65,000 = $55.3B BTC NAV। MSTR market cap $43.5B → mNAV = 43.5/55.3 = 0.79 (16 नवंबर 2026)। यदि आपका उपकरण काफी अलग दिखाता है, तो BTC संख्या (सबसे हाल का 8-K जाँचें) और BTC कीमत स्रोत सत्यापित करें।",
         "प्रीमियम विघटन (2024 के अंत का उदाहरण, जब MSTR लगभग 2.8× पर था): कुल प्रीमियम ($95B - $33.9B = $61B) में विभाजित: (a) परिचालन व्यवसाय मूल्य (Cap IQ के आधार पर ~$2-5B), (b) कर-स्थगित संरचना मूल्य (अप्राप्त लाभ सुरक्षा के लिए ~$5-10B), (c) भविष्य संचय अपेक्षा (शेष)। विश्वसनीय BTC खरीद गति के विरुद्ध अवशिष्ट की सेनिटी-जाँच करें।"
       ],
     },
@@ -15400,7 +15400,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
         "Отслеживайте пороги конвертации конвертируемых облигаций. У MSTR несколько выпусков со страйками $400–700; конвертации фактически размывают акционеров без денежного потока. «Полностью разводнённое» число акций даёт более точный mNAV, чем базовое количество акций, особенно когда акции значительно выше страйков конвертации."
       ],
       validation: [
-        "Быстрая проверка: 848 250 BTC × $83 600 = $70,9 млрд BTC NAV. Рыночная капитализация MSTR $62,9 млрд → mNAV = 62,9/70,9 = 0,89 (13 октября 2026). Если ваш инструмент показывает существенно иное, проверьте число BTC (смотрите свежий 8-K) и источник цены BTC.",
+        "Быстрая проверка: 850 849 BTC × $65 000 = $55,3 млрд BTC NAV. Рыночная капитализация MSTR $43,5 млрд → mNAV = 43,5/55,3 = 0,79 (16 ноября 2026). Если ваш инструмент показывает существенно иное, проверьте число BTC (смотрите свежий 8-K) и источник цены BTC.",
         "Разложение премии (пример конца 2024 года, когда MSTR торговалась около 2,8×): общая премия ($95 млрд − $33,9 млрд = $61 млрд) делится на: (а) стоимость операционного бизнеса (~$2–5 млрд по Cap IQ), (б) ценность налогово-отсроченной структуры (~$5–10 млрд за защиту нереализованных прибылей), (в) ожидание будущего накопления (остаток). Сверьте остаток с правдоподобным темпом покупок BTC."
       ],
     },
@@ -18926,7 +18926,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `A subtler error is over-reading the percentages. A huge Total Return (%) from 2011 is impressive but says nothing about future gains, the Annualized Return is the figure that compares fairly across eras. People also forget the result is pre-tax; a real sale would trigger capital gains. Use the <a href="/tax-calculator/">tax calculator</a> to see what the headline value looks like after the tax authority takes its share.`
         ],
         benchmarks: [
-          `For scale, the presets imply enormous multiples from early dates: a 2011 BTC entry near $1 against a current price around $83,600 is roughly an 84,000x on price alone, while the COVID Crash low near $5,000 is closer to 17x. ETH from its ICO at about $0.30 sits in the thousands-of-x range. These are outliers in all of investing, no asset class produces them reliably, which is exactly why they feel unreal.`,
+          `For scale, the presets imply enormous multiples from early dates: a 2011 BTC entry near $1 against a current price around $65,000 is roughly an 65,000x on price alone, while the COVID Crash low near $5,000 is closer to 13x. ETH from its ICO at about $0.30 sits in the thousands-of-x range. These are outliers in all of investing, no asset class produces them reliably, which is exactly why they feel unreal.`,
           `More grounded expectations: long-run equity benchmarks compound near 7–10% annually, so any Annualized Return the tool shows above that is exceptional and unlikely to repeat. Recent presets are humbler, a buy one year ago can sit roughly flat or modestly negative depending on the coin. Use the <a href="/halving-calculator/">halving calculator</a> to frame why Bitcoin's biggest moves clustered around supply-shock cycles rather than steady growth.`
         ],
         execution: [
@@ -18938,7 +18938,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `Keep your own assumptions fresh: when the live market price has drifted far from the snapshot baked into Price Now, your current value is stale and the gain is overstated or understated. For a precise present-day valuation of holdings, use a live tool like the <a href="/converter/">crypto converter</a>, and re-confirm any decision against current prices rather than the educational figures shown here.`
         ],
         validation: [
-          `Sanity-check the math by hand: Coins Purchased should equal your amount divided by Price Then, and current value should equal that quantity times Price Now. If you put in $1,000 at a Price Then of $5,000, you bought 0.2 coins; at a Price Now of $83,600 that is $16,720, a +1,572% Total Return. If the on-screen number disagrees with that arithmetic, you likely misread which preset is active.`,
+          `Sanity-check the math by hand: Coins Purchased should equal your amount divided by Price Then, and current value should equal that quantity times Price Now. If you put in $1,000 at a Price Then of $5,000, you bought 0.2 coins; at a Price Now of $65,000 that is $13,000, a +1,200% Total Return. If the on-screen number disagrees with that arithmetic, you likely misread which preset is active.`,
           `Validate the Annualized Return against the total: it is (final value over invested) raised to one-over-years, minus one. A roughly 17x over six and a half years is about 53% annualized, not 1,570%, confirm the holding period the tool used, remembering the 0.5-year minimum. Cross-check the same scenario in the <a href="/roi-calculator/">ROI calculator</a> to be sure both tools agree on the compound rate before you trust the figure.`
         ],
       },
@@ -18960,7 +18960,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `Un error más sutil es sobreinterpretar los porcentajes. Un Retorno Total (%) enorme desde 2011 impresiona, pero no dice nada de ganancias futuras — el Retorno Anualizado es la cifra que compara con justicia entre épocas. La gente también olvida que el resultado es antes de impuestos; una venta real generaría plusvalías. Usa la <a href="/tax-calculator/">calculadora de impuestos</a> para ver el valor principal tras la parte que se lleva el fisco.`
         ],
         benchmarks: [
-          `Para dar escala, los presets implican múltiplos enormes desde fechas tempranas: una entrada de BTC en 2011 cerca de $1 frente a un precio actual de unos $83.600 es aproximadamente 84.000x solo en precio, mientras el mínimo del Crash del COVID cerca de $5.000 ronda 17x. ETH desde su ICO a unos $0,30 está en el rango de miles de x. Son valores atípicos en toda la inversión — ninguna clase de activo los produce de forma fiable, y por eso parecen irreales.`,
+          `Para dar escala, los presets implican múltiplos enormes desde fechas tempranas: una entrada de BTC en 2011 cerca de $1 frente a un precio actual de unos $65.000 es aproximadamente 65.000x solo en precio, mientras el mínimo del Crash del COVID cerca de $5.000 ronda 13x. ETH desde su ICO a unos $0,30 está en el rango de miles de x. Son valores atípicos en toda la inversión — ninguna clase de activo los produce de forma fiable, y por eso parecen irreales.`,
           `Expectativas más realistas: los índices bursátiles a largo plazo componen cerca del 7–10% anual, así que cualquier Retorno Anualizado por encima de eso es excepcional e improbable de repetir. Los presets recientes son más humildes — una compra de hace un año puede quedar casi plana o levemente negativa según la moneda. Usa la <a href="/halving-calculator/">calculadora de halving</a> para enmarcar por qué los mayores movimientos de Bitcoin se agruparon en torno a ciclos de shock de oferta.`
         ],
         execution: [
@@ -18972,7 +18972,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `Mantén frescas tus propias suposiciones: cuando el precio de mercado en vivo se ha alejado mucho de la instantánea del Precio Ahora, tu valor actual está obsoleto y la ganancia queda sobre o subestimada. Para una valoración precisa al día de hoy, usa una herramienta en vivo como el <a href="/converter/">conversor de cripto</a>, y vuelve a confirmar cualquier decisión contra precios actuales en lugar de las cifras didácticas mostradas aquí.`
         ],
         validation: [
-          `Verifica la cuenta a mano: las Monedas Compradas deben ser tu monto dividido entre el Precio Entonces, y el valor actual esa cantidad por el Precio Ahora. Si pusiste $1.000 a un Precio Entonces de $5.000, compraste 0,2 monedas; a un Precio Ahora de $83.600 son $16.720, un Retorno Total de +1.572%. Si el número en pantalla no cuadra con esa aritmética, probablemente leíste mal qué preset está activo.`,
+          `Verifica la cuenta a mano: las Monedas Compradas deben ser tu monto dividido entre el Precio Entonces, y el valor actual esa cantidad por el Precio Ahora. Si pusiste $1.000 a un Precio Entonces de $5.000, compraste 0,2 monedas; a un Precio Ahora de $65.000 son $13.000, un Retorno Total de +1.200%. Si el número en pantalla no cuadra con esa aritmética, probablemente leíste mal qué preset está activo.`,
           `Valida el Retorno Anualizado contra el total: es (valor final sobre invertido) elevado a uno entre los años, menos uno. Unas 17x en seis años y medio son cerca del 53% anualizado, no 1.570% — confirma el periodo que usó la herramienta, recordando el mínimo de 0,5 años. Contrasta el mismo escenario en la <a href="/roi-calculator/">calculadora de ROI</a> para asegurarte de que ambas coinciden en la tasa compuesta antes de fiarte de la cifra.`
         ],
       },
@@ -18994,7 +18994,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `Um erro mais sutil é superinterpretar os percentuais. Um Retorno Total (%) enorme desde 2011 impressiona, mas não diz nada sobre ganhos futuros — o Retorno Anualizado é a cifra que compara com justiça entre épocas. As pessoas também esquecem que o resultado é antes de impostos; uma venda real geraria ganho de capital. Use a <a href="/tax-calculator/">calculadora de impostos</a> para ver o valor principal após a parte que o fisco leva.`
         ],
         benchmarks: [
-          `Para dar escala, os presets implicam múltiplos enormes em datas iniciais: uma entrada de BTC em 2011 perto de $1 contra um preço atual de cerca de $83.600 é aproximadamente 84.000x só no preço, enquanto o mínimo do Crash da COVID perto de $5.000 fica em torno de 17x. ETH desde seu ICO a uns $0,30 está na faixa de milhares de x. São valores atípicos em todo o universo de investimento — nenhuma classe de ativo os produz de forma confiável, e por isso parecem irreais.`,
+          `Para dar escala, os presets implicam múltiplos enormes em datas iniciais: uma entrada de BTC em 2011 perto de $1 contra um preço atual de cerca de $65.000 é aproximadamente 65.000x só no preço, enquanto o mínimo do Crash da COVID perto de $5.000 fica em torno de 13x. ETH desde seu ICO a uns $0,30 está na faixa de milhares de x. São valores atípicos em todo o universo de investimento — nenhuma classe de ativo os produz de forma confiável, e por isso parecem irreais.`,
           `Expectativas mais realistas: índices de ações de longo prazo compõem perto de 7–10% ao ano, então qualquer Retorno Anualizado acima disso é excepcional e improvável de repetir. Presets recentes são mais humildes — uma compra de um ano atrás pode ficar quase estável ou levemente negativa conforme a moeda. Use a <a href="/halving-calculator/">calculadora de halving</a> para enquadrar por que os maiores movimentos do Bitcoin se concentraram em ciclos de choque de oferta.`
         ],
         execution: [
@@ -19006,7 +19006,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `Mantenha suas próprias premissas atualizadas: quando o preço de mercado ao vivo se afasta muito do instantâneo embutido no Preço Agora, seu valor atual fica desatualizado e o ganho sai super ou subestimado. Para uma avaliação precisa de hoje, use uma ferramenta ao vivo como o <a href="/converter/">conversor de cripto</a>, e reconfirme qualquer decisão contra preços atuais em vez das cifras didáticas mostradas aqui.`
         ],
         validation: [
-          `Confira a conta na mão: as Moedas Compradas devem ser seu valor dividido pelo Preço Então, e o valor atual essa quantidade vezes o Preço Agora. Se você colocou $1.000 a um Preço Então de $5.000, comprou 0,2 moedas; a um Preço Agora de $83.600 isso dá $16.720, um Retorno Total de +1.572%. Se o número na tela não bate com essa aritmética, você provavelmente leu errado qual preset está ativo.`,
+          `Confira a conta na mão: as Moedas Compradas devem ser seu valor dividido pelo Preço Então, e o valor atual essa quantidade vezes o Preço Agora. Se você colocou $1.000 a um Preço Então de $5.000, comprou 0,2 moedas; a um Preço Agora de $65.000 isso dá $13.000, um Retorno Total de +1.200%. Se o número na tela não bate com essa aritmética, você provavelmente leu errado qual preset está ativo.`,
           `Valide o Retorno Anualizado contra o total: é (valor final sobre investido) elevado a um sobre os anos, menos um. Cerca de 17x em seis anos e meio são uns 53% anualizados, não 1.570% — confirme o período que a ferramenta usou, lembrando do mínimo de 0,5 ano. Cruze o mesmo cenário na <a href="/roi-calculator/">calculadora de ROI</a> para garantir que ambas concordam na taxa composta antes de confiar na cifra.`
         ],
       },
@@ -19028,7 +19028,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `Daha ince bir hata, yüzdeleri abartılı okumaktır. 2011'den gelen kocaman bir Toplam Getiri (%) etkileyicidir ama gelecekteki kazançlar hakkında hiçbir şey söylemez — Yıllıklandırılmış Getiri, dönemler arasında adil karşılaştıran rakamdır. İnsanlar sonucun vergi öncesi olduğunu da unutur; gerçek bir satış sermaye kazancı doğururdu. Vergi dairesinin payını aldıktan sonra ana değerin nasıl göründüğünü görmek için <a href="/tax-calculator/">vergi hesaplayıcı</a> kullanın.`
         ],
         benchmarks: [
-          `Ölçek vermek için, hazır seçenekler erken tarihlerden devasa katlar ima eder: 2011'de yaklaşık 1 dolarlık bir BTC girişi, bugün yaklaşık 83.600 dolar olan fiyata karşı yalnızca fiyatta kabaca 84.000x, COVID Çöküşü dibi olan yaklaşık 5.000 dolar ise 17x'e yakındır. ETH, yaklaşık 0,30 dolardaki ICO'sundan binlerce x aralığındadır. Bunlar tüm yatırım dünyasında aykırı değerlerdir — hiçbir varlık sınıfı bunları güvenilir biçimde üretmez, gerçek dışı hissettirmelerinin nedeni de budur.`,
+          `Ölçek vermek için, hazır seçenekler erken tarihlerden devasa katlar ima eder: 2011'de yaklaşık 1 dolarlık bir BTC girişi, bugün yaklaşık 65.000 dolar olan fiyata karşı yalnızca fiyatta kabaca 65.000x, COVID Çöküşü dibi olan yaklaşık 5.000 dolar ise 13x'e yakındır. ETH, yaklaşık 0,30 dolardaki ICO'sundan binlerce x aralığındadır. Bunlar tüm yatırım dünyasında aykırı değerlerdir — hiçbir varlık sınıfı bunları güvenilir biçimde üretmez, gerçek dışı hissettirmelerinin nedeni de budur.`,
           `Daha gerçekçi beklentiler: uzun vadeli hisse senedi ölçütleri yıllık yaklaşık %7–10 bileşik kazandırır, dolayısıyla aracın gösterdiği bunun üzerindeki herhangi bir Yıllıklandırılmış Getiri istisnaidir ve tekrarlanması olası değildir. Yeni hazır seçenekler daha mütevazıdır — bir yıl önceki bir alım, coin'e göre kabaca yatay veya hafif negatif olabilir. Bitcoin'in en büyük hareketlerinin neden arz şoku döngülerinde kümelendiğini çerçevelemek için <a href="/halving-calculator/">halving hesaplayıcı</a> kullanın.`
         ],
         execution: [
@@ -19040,7 +19040,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `Kendi varsayımlarınızı taze tutun: canlı piyasa fiyatı Şimdiki Fiyat'a gömülü anlık görüntüden çok uzaklaştığında, güncel değeriniz eskimiştir ve kazanç olduğundan fazla ya da az gösterilir. Bugünkü kesin bir değerleme için <a href="/converter/">kripto çevirici</a> gibi canlı bir araç kullanın ve herhangi bir kararı buradaki öğretici rakamlara değil güncel fiyatlara göre yeniden doğrulayın.`
         ],
         validation: [
-          `Matematiği elle kontrol edin: Alınan Coin, tutarınızın O Zamanki Fiyat'a bölümüne; güncel değer ise bu miktarın Şimdiki Fiyat ile çarpımına eşit olmalıdır. O Zamanki Fiyat 5.000 dolarken 1.000 dolar koyduysanız 0,2 coin aldınız; Şimdiki Fiyat 83.600 dolarken bu 16.720 dolar, yani +%1.572 Toplam Getiri eder. Ekrandaki sayı bu aritmetikle uyuşmuyorsa, büyük olasılıkla hangi hazır seçeneğin etkin olduğunu yanlış okudunuz.`,
+          `Matematiği elle kontrol edin: Alınan Coin, tutarınızın O Zamanki Fiyat'a bölümüne; güncel değer ise bu miktarın Şimdiki Fiyat ile çarpımına eşit olmalıdır. O Zamanki Fiyat 5.000 dolarken 1.000 dolar koyduysanız 0,2 coin aldınız; Şimdiki Fiyat 65.000 dolarken bu 13.000 dolar, yani +%1.200 Toplam Getiri eder. Ekrandaki sayı bu aritmetikle uyuşmuyorsa, büyük olasılıkla hangi hazır seçeneğin etkin olduğunu yanlış okudunuz.`,
           `Yıllıklandırılmış Getiri'yi toplamla doğrulayın: (nihai değer bölü yatırılan) üzeri bir bölü yıl, eksi birdir. Altı buçuk yılda kabaca 17x, %1.570 değil yaklaşık %53 yıllıklandırılmıştır — 0,5 yıllık asgariyi hatırlayarak aracın kullandığı tutma süresini doğrulayın. Rakama güvenmeden önce her iki aracın da bileşik oranda hemfikir olduğundan emin olmak için aynı senaryoyu <a href="/roi-calculator/">ROI hesaplayıcı</a> ile çapraz kontrol edin.`
         ],
       },
@@ -19062,7 +19062,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `एक सूक्ष्म गलती प्रतिशतों को ज़रूरत से ज़्यादा पढ़ना है. 2011 से एक बड़ा कुल रिटर्न (%) प्रभावशाली है पर भविष्य के लाभ के बारे में कुछ नहीं कहता — वार्षिकीकृत रिटर्न ही वह आंकड़ा है जो युगों के बीच निष्पक्ष तुलना करता है. लोग यह भी भूल जाते हैं कि परिणाम कर-पूर्व है; असली बिक्री पूंजीगत लाभ पैदा करती. कर विभाग का हिस्सा लेने के बाद मुख्य मूल्य कैसा दिखता है, यह देखने के लिए <a href="/tax-calculator/">टैक्स कैलकुलेटर</a> उपयोग करें.`
         ],
         benchmarks: [
-          `पैमाने के लिए, प्रीसेट शुरुआती तारीखों से विशाल गुणक दर्शाते हैं: 2011 में लगभग $1 पर BTC प्रवेश, आज के लगभग $83,600 दाम के मुकाबले केवल दाम में मोटे तौर पर 84,000x है, जबकि COVID क्रैश का तल लगभग $5,000 पर 17x के करीब है. ETH अपने लगभग $0.30 के ICO से हज़ारों x की सीमा में है. ये पूरे निवेश जगत में अपवाद हैं — कोई परिसंपत्ति वर्ग इन्हें भरोसेमंद रूप से नहीं देता, इसीलिए ये अवास्तविक लगते हैं.`,
+          `पैमाने के लिए, प्रीसेट शुरुआती तारीखों से विशाल गुणक दर्शाते हैं: 2011 में लगभग $1 पर BTC प्रवेश, आज के लगभग $65,000 दाम के मुकाबले केवल दाम में मोटे तौर पर 65,000x है, जबकि COVID क्रैश का तल लगभग $5,000 पर 13x के करीब है. ETH अपने लगभग $0.30 के ICO से हज़ारों x की सीमा में है. ये पूरे निवेश जगत में अपवाद हैं — कोई परिसंपत्ति वर्ग इन्हें भरोसेमंद रूप से नहीं देता, इसीलिए ये अवास्तविक लगते हैं.`,
           `अधिक ज़मीनी अपेक्षाएँ: दीर्घकालिक शेयर मानक सालाना लगभग 7–10% चक्रवृद्धि देते हैं, इसलिए टूल जो भी वार्षिकीकृत रिटर्न इससे ऊपर दिखाए वह असाधारण है और दोहराने की संभावना कम है. हालिया प्रीसेट अधिक विनम्र हैं — एक साल पहले की खरीद सिक्के के अनुसार लगभग सपाट या थोड़ी नकारात्मक रह सकती है. बिटकॉइन की सबसे बड़ी चालें आपूर्ति-झटके चक्रों के आसपास क्यों जमा हुईं, इसे समझने के लिए <a href="/halving-calculator/">हाविंग कैलकुलेटर</a> उपयोग करें.`
         ],
         execution: [
@@ -19074,7 +19074,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `अपनी धारणाओं को ताज़ा रखें: जब लाइव बाज़ार दाम 'अभी का दाम' में बसे स्नैपशॉट से बहुत दूर चला जाए, तो आपका वर्तमान मूल्य बासी है और लाभ अधिक या कम आंका गया है. आज के सटीक मूल्यांकन के लिए <a href="/converter/">क्रिप्टो कन्वर्टर</a> जैसे लाइव टूल का उपयोग करें, और किसी भी फैसले को यहाँ दिखाए शैक्षिक आंकड़ों के बजाय मौजूदा दामों के मुकाबले फिर से पुष्ट करें.`
         ],
         validation: [
-          `गणित को हाथ से जांचें: खरीदे गए सिक्के आपकी राशि बंटा 'तब का दाम' के बराबर होने चाहिए, और वर्तमान मूल्य उस मात्रा गुणा 'अभी का दाम' के. यदि आपने $5,000 के 'तब के दाम' पर $1,000 लगाए, तो 0.2 सिक्के खरीदे; $83,600 के 'अभी के दाम' पर वह $16,720 है, यानी +1,572% कुल रिटर्न. यदि स्क्रीन का आंकड़ा इस गणित से असहमत हो, तो संभवतः आपने ग़लत पढ़ा कि कौन-सा प्रीसेट सक्रिय है.`,
+          `गणित को हाथ से जांचें: खरीदे गए सिक्के आपकी राशि बंटा 'तब का दाम' के बराबर होने चाहिए, और वर्तमान मूल्य उस मात्रा गुणा 'अभी का दाम' के. यदि आपने $5,000 के 'तब के दाम' पर $1,000 लगाए, तो 0.2 सिक्के खरीदे; $65,000 के 'अभी के दाम' पर वह $13,000 है, यानी +1,200% कुल रिटर्न. यदि स्क्रीन का आंकड़ा इस गणित से असहमत हो, तो संभवतः आपने ग़लत पढ़ा कि कौन-सा प्रीसेट सक्रिय है.`,
           `वार्षिकीकृत रिटर्न को कुल के मुकाबले सत्यापित करें: यह (अंतिम मूल्य बंटा निवेशित) को एक बंटा वर्ष की घात, घटा एक है. साढ़े छह साल में मोटे तौर पर 17x लगभग 53% वार्षिकीकृत है, 1,570% नहीं — 0.5 साल का न्यूनतम याद रखते हुए टूल द्वारा प्रयुक्त होल्डिंग अवधि की पुष्टि करें. आंकड़े पर भरोसा करने से पहले यह सुनिश्चित करने के लिए कि दोनों टूल चक्रवृद्धि दर पर सहमत हैं, वही परिदृश्य <a href="/roi-calculator/">ROI कैलकुलेटर</a> में जांचें.`
         ],
       },
@@ -19096,7 +19096,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `Более тонкая ошибка — переоценивать проценты. Огромная Общая доходность (%) с 2011 года впечатляет, но ничего не говорит о будущей прибыли — именно Годовая доходность честно сравнивает разные эпохи. Люди забывают и о том, что результат до налогов; реальная продажа породила бы налог на прирост капитала. Используйте <a href="/tax-calculator/">налоговый калькулятор</a>, чтобы увидеть, как выглядит итоговая стоимость после доли налоговой.`
         ],
         benchmarks: [
-          `Для масштаба пресеты подразумевают огромные множители с ранних дат: вход в BTC в 2011 году около $1 против текущей цены примерно $83 600 — это грубо 84 000x только по цене, тогда как дно Краха COVID около $5000 ближе к 17x. ETH со своего ICO примерно по $0,30 находится в диапазоне тысяч x. Это выбросы во всём мире инвестиций — ни один класс активов не выдаёт их надёжно, именно поэтому они кажутся нереальными.`,
+          `Для масштаба пресеты подразумевают огромные множители с ранних дат: вход в BTC в 2011 году около $1 против текущей цены примерно $65 000 — это грубо 65 000x только по цене, тогда как дно Краха COVID около $5000 ближе к 13x. ETH со своего ICO примерно по $0,30 находится в диапазоне тысяч x. Это выбросы во всём мире инвестиций — ни один класс активов не выдаёт их надёжно, именно поэтому они кажутся нереальными.`,
           `Более приземлённые ожидания: долгосрочные фондовые ориентиры дают сложный рост около 7–10% в год, поэтому любая Годовая доходность выше этого, показанная инструментом, исключительна и вряд ли повторится. Недавние пресеты скромнее — покупка год назад может быть примерно в нуле или слегка в минусе в зависимости от монеты. Используйте <a href="/halving-calculator/">калькулятор халвинга</a>, чтобы понять, почему крупнейшие движения биткоина скучивались вокруг циклов шока предложения.`
         ],
         execution: [
@@ -19108,7 +19108,7 @@ export const calculatorSeoExt: Partial<Record<string, ExtContent>> = {
           `Держите собственные допущения свежими: когда живая рыночная цена сильно отошла от снимка, зашитого в Цену сейчас, ваша текущая стоимость устарела, а прибыль завышена или занижена. Для точной сегодняшней оценки используйте живой инструмент вроде <a href="/converter/">крипто-конвертера</a> и перепроверяйте любое решение по текущим ценам, а не по показанным здесь учебным цифрам.`
         ],
         validation: [
-          `Проверьте математику вручную: Куплено монет должно равняться вашей сумме, делённой на Цену тогда, а текущая стоимость — этому количеству, умноженному на Цену сейчас. Если вы вложили $1000 при Цене тогда $5000, вы купили 0,2 монеты; при Цене сейчас $83 600 это $16 720, то есть Общая доходность +1572%. Если число на экране расходится с этой арифметикой, вы, вероятно, неверно прочли, какой пресет активен.`,
+          `Проверьте математику вручную: Куплено монет должно равняться вашей сумме, делённой на Цену тогда, а текущая стоимость — этому количеству, умноженному на Цену сейчас. Если вы вложили $1000 при Цене тогда $5000, вы купили 0,2 монеты; при Цене сейчас $65 000 это $13 000, то есть Общая доходность +1200%. Если число на экране расходится с этой арифметикой, вы, вероятно, неверно прочли, какой пресет активен.`,
           `Сверьте Годовую доходность с общей: это (итоговая стоимость к вложенному) в степени один делить на годы, минус один. Примерно 17x за шесть с половиной лет — это около 53% годовых, а не 1570% — подтвердите срок удержания, который использовал инструмент, помня про минимум 0,5 года. Перепроверьте тот же сценарий в <a href="/roi-calculator/">калькуляторе ROI</a>, чтобы убедиться, что оба инструмента согласны по сложной ставке, прежде чем доверять цифре.`
         ],
       },

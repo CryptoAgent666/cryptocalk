@@ -1662,6 +1662,7 @@ const dict: Record<string, string> = {
   // Exchange Fee Calculator
   '30-Day Volume Tier': 'Nivel de volumen 30 días',
   // Mining fallback
+  'Failed to fetch live BTC price. Using fallback data ($65,000).': 'Error al obtener el precio de BTC en vivo. Usando datos de respaldo ($65.000).',
   'Failed to fetch live BTC price. Using fallback.': 'Error al obtener precio BTC. Usando respaldo.',
   // Node Calculator (costs)
   'Electricity, internet, maintenance': 'Electricidad, internet, mantenimiento',
@@ -2176,8 +2177,8 @@ const dict: Record<string, string> = {
   'Bitcoin Launch 2009': 'Lanzamiento de Bitcoin 2009',
   'BTC $1 (2011)': 'BTC $1 (2011)',
   'ETH ICO (2014)': 'ETH ICO (2014)',
-  '1 Year Ago (Oct 2025)': 'Hace 1 año (oct 2025)',
-  '6 Months Ago (Apr 2026)': 'Hace 6 meses (abr 2026)',
+  '1 Year Ago (Nov 2025)': 'Hace 1 año (nov 2025)',
+  '6 Months Ago (May 2026)': 'Hace 6 meses (may 2026)',
   'BNB Launch (2017)': 'Lanzamiento de BNB (2017)',
   'COVID Crash (Mar 2020)': 'Crash COVID (mar 2020)',
   'BTC ATH (Nov 2021)': 'BTC ATH (nov 2021)',

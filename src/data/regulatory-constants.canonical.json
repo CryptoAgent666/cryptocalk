@@ -1971,7 +1971,7 @@
       "id": "MiningCalculator__btcPrice_fallback",
       "calculator": "MiningCalculator",
       "key": "btcPrice_fallback",
-      "value": "83600",
+      "value": "65000",
       "unit": "USD",
       "jurisdiction": "",
       "law": "BTC market price (CoinGecko)",
@@ -1983,17 +1983,17 @@
         "src/components/MiningCalculator.tsx:138",
         "src/components/MiningCalculator.tsx:141"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-11-17",
       "source_hint": "CoinGecko simple/price (live).",
       "conflict": false,
       "status": "unverified",
-      "notes": "Fallback BTC/USD price when CoinGecko fetch fails. Pure market price — is_regulatory=false. | 2026-10-13 calkcheck-2: refreshed 77300 -> 83600 (CoinGecko/Binance spot 13 Oct 2026); it is shown in the 'Where these numbers come from' block beside the live widget, so a stale value read as a contradiction."
+      "notes": "Fallback BTC/USD price when CoinGecko fetch fails. Pure market price — is_regulatory=false. | 2026-10-13 calkcheck-2: refreshed 77300 -> 83600 (CoinGecko/Binance spot 13 Oct 2026); it is shown in the 'Where these numbers come from' block beside the live widget, so a stale value read as a contradiction. | 2026-11-17 market pass: refreshed 83600 -> 65000 (CoinGecko 64,871 / Binance 64,916 spot, 17 Nov 2026 NZDT)."
     },
     {
       "id": "MiningCalculator__difficulty_fallback",
       "calculator": "MiningCalculator",
       "key": "difficulty_fallback",
-      "value": "132700000000000",
+      "value": "134800000000000",
       "unit": "raw difficulty (~132.7T)",
       "jurisdiction": "",
       "law": "Bitcoin network difficulty (market/live)",
@@ -2003,11 +2003,11 @@
         "src/components/MiningCalculator.tsx:123",
         "src/components/MiningCalculator.tsx:137"
       ],
-      "last_updated_hint": null,
+      "last_updated_hint": "2026-11-17",
       "source_hint": "blockchain.info/q/getdifficulty (live). Mark market; refresh fallback periodically.",
       "conflict": false,
       "status": "unverified",
-      "notes": "Fallback BTC network difficulty when blockchain.info live fetch fails. Difficulty auto-adjusts every 2016 blocks — this is a live/market benchmark, NOT a consensus constant. | 2026-10-13 calkcheck-2: both fallbacks (were 136T primary / 145T catch) unified at 132.7T (mempool.space, 13 Oct 2026)."
+      "notes": "Fallback BTC network difficulty when blockchain.info live fetch fails. Difficulty auto-adjusts every 2016 blocks — this is a live/market benchmark, NOT a consensus constant. | 2026-10-13 calkcheck-2: both fallbacks (were 136T primary / 145T catch) unified at 132.7T (mempool.space, 13 Oct 2026). | 2026-11-17: refreshed 132.7T -> 134.8T (mempool.space == blockchain.info 134,823,837,323,273)."
     },
     {
       "id": "MiningCoinSwitcherCalculator__COINS.bitcoin (price/dailyPerHash)",
